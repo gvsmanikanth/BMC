@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bmc-dxp.iml" filepath="$PROJECT_DIR$/bmc-dxp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/bmc-dxp.core.iml" filepath="$PROJECT_DIR$/core/bmc-dxp.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui.apps/bmc-dxp.ui.apps.iml" filepath="$PROJECT_DIR$/ui.apps/bmc-dxp.ui.apps.iml" />
+    </modules>
+  </component>
+</project>
