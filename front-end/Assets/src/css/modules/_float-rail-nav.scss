@@ -1,0 +1,111 @@
+.float-rail-nav-container {
+      background-color: #f1f1f1;   
+      //padding: 10px;    
+      padding: 1em 1em .1em 1em;    
+      border: 1px solid #cacaca;
+      border-top: 1px solid #cacaca !important;
+      padding-top: 1em !important;
+      
+      h3{
+         margin-bottom: 1em;
+      }     
+      
+      .float-rail-nav {
+       
+         list-style-type: none;
+         margin-left: 0px;
+         padding-left: 0px;
+         padding-right: 0px;
+       
+        &.ol{
+          
+           
+          li {
+            counter-increment: step-counter;
+            a{
+              	display: flex; 
+              	display: -webkit-box;
+				display: -ms-flexbox;
+				display: -moz-box;
+            }
+          }
+          
+          li::before {
+            content: counter(step-counter);
+            margin-right: 15px;
+            font-size: 100%;
+            background-color: #29A5D6;
+            color: white;
+            font-weight: bold;
+            //padding: 3px 10px;
+            border-radius: 50%;
+            float: left;
+            width: 30px;
+            height: 27px;
+            text-align: center;
+            text-align: center;
+            padding-top: 3px;
+          }
+        }
+        
+        li {
+          //counter-increment: step-counter;
+          font-weight: bold;
+          margin-bottom: 1.33em;
+          //text-indent: -3em;
+          //padding-left: 2em;
+          word-wrap: break-word;
+          
+          a{
+              &::after{
+                //content: " \00203A";
+                position: absolute;
+                white-space: pre;
+              }
+            }
+        }
+      
+        li:hover::before {
+          background-color: #046e96;
+        }
+      
+        a.current {
+          color: #FE5000;
+          white-space: pre-wrap;
+          word-break: keep-all;
+          word-wrap: break-word;
+        }
+      
+        li.current::before {
+          background-color: #FE5000;
+        }
+      }
+}
+
+
+//Additional Styles: Not related to float-nav.
+.stt_container {
+  display: none;
+  opacity: 0.75;
+  position: fixed;
+  height: 48px;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.stt_container:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.stt_image {
+  height: 48px;
+}
+
+@media (max-width: 1200px) {
+  .stt_container {
+    display: none !important;
+  }
+}
+        

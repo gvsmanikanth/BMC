@@ -1,0 +1,58 @@
+// @category modules
+
+// @function documentation
+// Styles specific to the documentation site.  This file is excluded from the "all" partial.
+.doc-header {
+	background-color: $colorPrimary;
+	color: white;
+	max-width: none;
+	padding: 0;
+	position: relative;
+}
+
+.doc-wrapper {
+	@include row();
+	background-color: white;
+
+	.divider, .divider-secondary {
+		margin-top: 1em;
+		padding-top: 1em;
+	}
+
+	th {
+		background-color: color(colorEmphasis);
+	}
+}
+
+.doc-callout {
+	padding: $gutterInPx / 2;
+}
+
+.doc-code {
+	background-color: color(colorEmphasis);
+	color: white;
+	font-family: monospace;
+	margin: ($gutterInPx / 2) 0;
+	padding: $gutterInPx / 2;
+}
+
+.doc-usage {
+	margin-top: $gutterInPx;
+}
+
+.doc-notification-error {
+	background-color: lighten($colorCorporateAction, 25%);
+	border: 1px solid $colorCorporateAction;
+	color: black;
+	padding: 1em;
+}
+
+.doc-footer {
+	background-color: $colorSecondary;
+	color: white;
+	max-width: none;
+}
+
+.badge-action {
+	vertical-align: middle;
+}

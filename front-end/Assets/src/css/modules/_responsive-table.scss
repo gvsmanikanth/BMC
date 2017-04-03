@@ -1,0 +1,334 @@
+//Responsive Table
+//https://css-tricks.com/examples/ResponsiveTables/responsive.php
+.responsive-table{
+ 
+ img{
+   width:18px;
+   margin-right:.5em;
+ }
+ .text-align-left{
+   text-align:left;
+   padding-left: 1.5em;
+ }
+ 
+ .text-align-center{
+   text-align:center;
+ }
+ 
+ .legend
+ 	{
+ 		
+ 	font-size: 0.8rem;
+	margin-top: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	line-height: 0.8rem;
+   
+   div{
+     float:right;
+     padding-left:2em; 
+     :last-child{
+       padding-left:0em; 
+     }
+   }
+   span{
+     padding-top: .3em;
+   }
+   img{
+     padding-right: .5em;
+     vertical-align: middle;
+   }
+ }
+ 
+  /*  Define the background color for all the EVEN background rows  */
+  tr{
+    &:nth-child(even){
+     background: color(lightGrey);
+    }
+    
+    &:hover > td {
+       background-color: inherit;
+    }
+  }
+ 
+  th{
+      background-color:color(abbey);
+       border-left: 2px solid white;
+      border-right: 2px solid white;
+      
+    }
+
+  td{
+     //font-size: 1rem;
+      border-left: 2px solid white;
+      border-right: 2px solid white;
+      background-color: transparent;
+      //text-align:left;
+      
+      &.td-format-opt-1{
+        color:color(mediumOrange);
+      }
+      
+      &.td-format-opt-2{
+        color:color(persian-green);
+      }
+      
+      &.td-format-opt-3{
+        color:color(aluminium);
+        font-size:.6rem;
+      }
+  }
+    
+  @media only screen and (max-width: 640px),
+  (min-device-width: 640px) and (max-device-width: 768px)  {
+
+  .legend{
+    font-size: .7rem;
+  }
+    
+  /* Force table to not be like tables anymore */   
+    table, thead, tbody, th, td, tr {
+      display: block;
+      font-size: .8rem;
+    }
+    
+    /* Force table to not be like tables anymore */
+    
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      text-align:center;
+      
+    }
+    
+    /*  Define the background color for all the EVEN background rows  */
+    tr:nth-child(even){
+      background: transparent;
+    }
+    
+    tr {
+      td:nth-child(1) {
+	      background: color(lightGrey); 
+	      text-align:left;
+	      padding-left: 1.5em;
+      }
+     
+    }
+    
+    br{
+      display:none;
+    }
+     
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      //padding-left: 50%;
+      text-align:left;
+      
+      //WEB-1555 : Resolved issue with big titles on mobile devices
+      padding-left: 90%;
+      font-size: 0.72rem;
+      
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      vertical-align:middle;
+      left: 1.5em;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight:800;
+      color:color(abbey);
+    }
+
+    /*
+    Label the data
+    */
+    td:before { content: attr(data-title); }
+  } 
+}
+
+//Modified Table Properties
+.compititive-table{
+		background-color: #F6F6F6;
+		
+		tbody{
+			border-bottom: 2px solid white;
+		}
+	
+		.table-lagend{
+			font-weight: 700;
+			margin: 2.5em 0px;
+			
+			.partial-indicator {
+			    border-style: solid;
+			    border-width: 0px 22.5px 38px;
+			    border-color: transparent transparent #D5DF0F;
+			    display: inline-block;
+			    height: 0px;
+			    vertical-align: middle;
+			    width: 0px;
+		    }
+		}
+		.compititive-criteria {
+			text-align: left !important;
+			font-size: 1rem;
+			padding: 1.5em;
+		}
+	
+		.table-title {
+			color: #fff !important;
+		}
+		
+		.critical-capability {
+			background-color: #424143 !important;
+			border-top-left-radius: 5px;
+		}
+		
+		.bmc-col-2 {
+			background-color: #fe5000 !important;
+			padding: 1.5em;
+		}
+		
+		.hp-col-3 {
+			background-color: #29a5d6 !important;
+			padding: 1.5em;
+			border-top-right-radius: 5px;
+		}
+}
+
+/*
+	Used in Legal Section.
+*/
+.responsive-table-legal {
+  
+          width: 100%;
+          border-collapse: collapse;
+          /*
+          tr:nth-of-type(odd) {
+            background: #eee;
+            }
+           */
+           
+          thead {
+             tr {   
+              text-align: center; 
+              padding-left: 60px; 
+              background-color: #018ec4;
+              
+	          
+              
+              td{
+              	color: rgb(255, 255, 255); 
+              	border: 1px solid rgb(245, 245, 220); 
+              	background-color: rgb(1, 142, 196); 
+              	text-align: left;
+              }
+            }
+          } 
+           
+           tr{
+			    &:nth-child(even) > td{
+			     background: color(lightGrey);
+			    }
+			    
+			    &:hover > td {
+			       background-color: inherit;
+			    }
+			  }
+            
+          th {
+            background: #333;
+            color: white;
+            font-weight: bold;
+           }
+          
+          td, th {
+            //padding: 6px;
+            border: 1px solid #ccc;
+          }
+          
+          td {
+            border: none;
+            text-align: left !important;
+          }
+          
+          
+          @media only screen and (max-width: 760px) , (min-device-width: 768px) and (max-device-width: 1024px) {
+          	
+          /* Force table to not be like tables anymore */
+          thead, tbody, th, td, tr {
+            display: block;
+          }
+
+          /* Hide table headers (but not display: none;, for accessibility) */
+          thead {
+             tr {
+              position: absolute;
+              top: -9999px;
+              left: -9999px;
+            }
+          }
+
+          tr {
+            
+            border-bottom: 1px solid #f1f1f1;
+            border: 1px solid #ccc;
+            
+           
+            td {
+              /* Behave  like a "row" */
+             
+              
+              border-bottom: 1px solid #eee;
+              border: none;
+              position: relative;
+              padding-left: 10em !important;
+              
+              &:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 40%;
+                white-space: nowrap;
+                font-weight: bold;
+              }
+              
+              &:nth-of-type(1):before {
+                content: "Cookie Name";
+              }
+              
+              &:nth-of-type(2):before {
+                content: "Source";
+              }
+              
+              &:nth-of-type(3):before {
+                content: "Expiry (Days)";
+              }
+              
+              &:nth-of-type(4):before {
+                content: "Purpose";
+              }
+              
+              border: none;
+            }
+          }
+       
+          th, td {
+          border: none;
+          text-align: center;
+        }
+    }
+
+}

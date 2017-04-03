@@ -1,0 +1,9 @@
+.list-plain {
+	padding-left: 0;
+
+	li {
+		&::before {
+			display: none;		// hides custom bullets
+		}
+	}
+}

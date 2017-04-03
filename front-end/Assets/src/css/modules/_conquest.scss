@@ -1,0 +1,463 @@
+%conquest-section {
+
+	color: color(colorCorporate);
+
+	h3 {
+		color: color(colorHeadings);
+	}
+
+	.btn-secondary {
+		background-color: color(mediumOrange);
+		border-color: color(mediumOrange);
+
+		&:hover {
+			background-color: darken(color(mediumOrange), 10%);
+			border-color: darken(color(mediumOrange), 10%);
+		}
+	}
+}
+
+// page overrides
+.conquest-page-wrapper {
+
+	.layout-full-bleed {
+		padding: 2em 0;
+	}
+}
+
+.conquest-header {
+	@extend %conquest-section;
+
+	h1 {
+		color: color(colorHeadings);
+		margin-bottom: 0;
+	}
+
+	h2 {
+		color: lighten(color(colorEmphasis), 10%);
+		font-size: 1.75em;
+		font-weight: 400;
+		margin-bottom: 0.85em;
+		margin-top: 0.5em;
+
+		@include media(breakpointMedium) {
+			font-size: 2.75em;
+			margin-top: 0.15em;
+		}
+	}
+
+	.conquest-header-copy {
+		@include media(breakpointMedium) {
+			float: left;
+			width: columns(7);
+		}
+	}
+
+	.conquest-header-cta {
+		text-align: center;
+
+		img {
+			display: block;
+			margin-bottom: 1.5em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@include media(breakpointMedium) {
+			float: left;
+			margin-left: columns(0.5);
+			width: columns(4.5);
+		}
+	}
+}
+
+.conquest-facts {
+	@extend %conquest-section;
+
+	background-color: color(colorNavigationBar);
+	color: #fff;
+
+	p {
+		width: 100%;
+
+		@include media(breakpointMedium) {
+			width: columns(9);
+		}
+	}
+
+	.charts {
+		margin-bottom: 0;
+		margin-top: 2em;
+		text-align: center;
+
+		.chart {
+			@include box-sizing;
+			display: block;
+			margin-bottom: 2em;
+			padding: 0.5em;
+
+			img {
+				height: 250px;
+			}
+
+			@include media(breakpointMedium) {
+				display: inline-block;
+				margin-right: -0.25em;
+				width: 50%;
+			}
+			@include media(breakpointLarge) {
+				margin-right: -0.25em;
+				width: 25%;
+
+				img {
+					height: 200px;
+				}
+			}
+
+			@include media(breakpointExtraLarge) {
+				img {
+					height: 225px;
+				}
+			}
+		}
+	}
+
+	.conquest-charts-legend {
+		margin-top: 1em;
+		text-align: center;
+
+		.circle {
+			display: inline-block;
+			margin-right: 3em;
+
+			&:before {
+				border-radius: 50%;
+				content: '';
+				display: inline-block;
+				height: 15px;
+				margin-right: 0.75em;
+				width: 15px;
+			}
+
+			&.yellow:before {
+				background-color: #d6dc3e;
+			}
+
+			&.grey:before {
+				background-color: #808185;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.full-width-testimonial {
+	@extend %conquest-section;
+
+	background-color: color(lightTeal);
+	color: #fff;
+	padding: 2em 0;
+
+	p {
+		font-size: em(20);
+
+		@include media(breakpointMedium) {
+			font-size: em(28);
+		}
+	}
+
+	blockquote {
+		margin :0;
+		@include media(breakpointExtraLarge) {
+			//padding: 0 8em; //BMC-527 - to resolve alignment issue
+		}
+	}
+
+	a {
+		color: #fff;
+	}
+
+	cite {
+		font-size: em(18);
+		font-style: normal;
+
+		@include media(breakpointMedium) {
+			font-size: em(22);
+		}
+	}
+}
+
+.conquest-category-section {
+	@extend %conquest-section;
+}
+
+.conquest-feature-message {
+	@extend %conquest-section;
+
+	.brands {
+		padding:0;
+		margin:0;
+	}
+
+	.layout-inner-wrap {
+		padding-top: 1em;
+	}
+}
+
+.conquest-head-to-head {
+	@extend %conquest-section;
+
+	background-color: #f6f6f6;
+
+	.conquest-table-cell-topic,
+	.conquest-table-cell-competitor,
+	.conquest-table-cell-bmc {
+
+		display: block;
+		padding: 1.5em;
+
+		@include media(breakpointMedium) {
+			border-left: 5px solid white;
+			border-right: 5px solid white;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+
+	.conquest-table-cell-topic {
+		border-left: 0 !important;
+		font-size: 1.5em;
+		font-weight: bold;
+
+		@include media(breakpointMedium) {
+			font-weight: normal;
+		}
+		/*
+		.ie8 &, .ie9 & {
+			font-weight: normal !important;
+		}*/
+	}
+
+	.conquest-table-cell-bmc {
+		background-color: #e65033;
+
+		&:before {
+			content: 'BMC:';
+		}
+
+	}
+
+	.conquest-table-cell-competitor {
+		border-right: 0;
+		background-color: #424143;
+
+		&:before {
+			content: 'ServiceNow: ';
+		}
+	}
+
+	.conquest-table-cell-bmc, .conquest-table-cell-competitor {
+
+		&:before {
+			color: #fff;
+			display: inline-block;
+			font-size: 1.2em;
+			font-weight: bold;
+			margin-right: 1em;
+			vertical-align: middle;
+
+			@include media(breakpointMedium) {
+				display: none;
+			}
+
+			/*.ie8 & {
+				content: '';
+			}*/
+		}
+
+		img {
+			vertical-align: middle;
+			width: 25px;
+
+			/*.ie8 & {
+				height: 12px;
+				width: auto;
+			}*/
+		}
+
+		@include media(breakpointMedium) {
+
+			width: 25%;
+
+			img {
+				width: auto;
+
+				/*.ie8 & {
+					height: 35px;
+					width: auto;
+				}*/
+			}
+		}
+	}
+
+	// table-header specific cell styling
+	th {
+
+		&.conquest-table-cell-topic,
+		&.conquest-table-cell-bmc,
+		&.conquest-table-cell-competitor {
+			padding: 0.75em;
+
+			@include media(breakpointMedium) {
+				padding: 1.75em;
+			}
+		}
+
+		&.conquest-table-cell-topic {
+			h3 { color: color(colorCorporate); }
+		}
+
+		&.conquest-table-cell-bmc {
+			background-color: #d0492f;
+		}
+
+		&.conquest-table-cell-competitor {
+			background-color: #3c3b3d;
+		}
+
+		&.conquest-table-cell-bmc,
+		&.conquest-table-cell-competitor {
+			h3 { color: #fff; }
+		}
+	}
+
+	.conquest-table-legend {
+		font-weight: bold;
+		margin: 2.5em 0;
+		text-align: left;
+
+		.partial-indicator {
+			border-style: solid;
+			border-width: 0 22.5px 38px 22.5px;
+			border-color: transparent transparent #d5df0f transparent;
+			display: inline-block;
+			height: 0;
+			vertical-align: middle;
+			width: 0;
+		}
+	}
+
+	.table-wrapper {
+		overflow-x: auto;
+	}
+
+	h3 {
+		margin-bottom: 0;
+	}
+
+	table {
+
+		display: inline-block;
+		margin: auto;
+
+		@include media(breakpointMedium) {
+			display: table;
+		}
+	}
+
+	tr {
+		display: block;
+		margin-bottom: 2em;
+		@include media(breakpointMedium) {
+			display: table-row;
+			margin-bottom: 0;
+		}
+	}
+
+	thead {
+		display: none; // hide table by default
+
+		/*.ie8 & {
+			display: block;
+			td { vertical-align: middle; }
+		}*/
+
+		@include media(breakpointMedium) {
+			display: table-header-group !important;
+		}
+	}
+
+	tbody {
+		display: block;
+
+		@include media(breakpointMedium) {
+			display: table-row-group;
+		}
+	}
+
+	// TABLE CORNER RADIUS
+	// http://stackoverflow.com/questions/628301/css3s-border-radius-property-and-border-collapsecollapse-dont-mix-how-can-i
+
+	@include media(breakpointMedium) {
+		// top left
+		thead th:first-child {
+			border-top-left-radius: 5px;
+		}
+		// top right
+		thead th:last-child {
+			border-top-right-radius: 5px;
+		}
+		// bottom left
+		tbody tr:last-child td:first-child {
+			border-bottom-left-radius: 5px;
+		}
+		// bottom right
+		tbody tr:last-child td:last-child {
+			border-bottom-right-radius: 5px;
+		}
+	}
+}
+
+// DXP-154: Deleted IE-9 Handling as we are not supporting ie-9
+// IE9 Specific handling of table elements on lower viewports
+//:root .conquest-head-to-head thead {display: block\0; }
+//:root .conquest-table-cell-bmc:before {display: none\0; }
+//:root .conquest-table-cell-competitor:before {display: none\0; }
+
+.conquest-page-wrapper-variation1 {
+  .conquest-header .heading-txt { 
+    margin-bottom: 0.3em;
+  }
+
+  div.four-up {
+    padding: 1em 1em 0 1em;
+    
+      .offertype {
+      font-size: .75em;
+      margin-bottom: -.5em; 
+      display: block;
+      font-weight: 800;
+      color: #424043;
+    }
+    
+    @media (max-width: 1200px) {.offertype {font-size: 1em;} }
+    
+    
+    .offerdescription {
+      font-size: 1em;
+      display: block;
+    }
+  }
+
+  .feature-blog a:hover {
+    color: #046e96;
+  }
+  
+  .chart {
+  vertical-align: top;
+}
+  
+}

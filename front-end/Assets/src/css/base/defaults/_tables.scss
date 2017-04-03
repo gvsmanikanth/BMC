@@ -1,0 +1,60 @@
+table {
+	@include font-size(12);
+	width: 100%;
+
+	th {
+		background-color: color(mediumGrey);
+		color: white;
+		vertical-align: middle;
+	}
+
+	td {
+		background-color: white;
+		@include transition();
+	}
+
+	th, td {
+		border: none;
+		padding: em(10 , (context: 12)); //BMC-527 Replaced em(10 12);
+		text-align: center;
+
+		@include media(breakpointMedium) {
+			padding: em(10 , (context: 14)); //BMC-527 Replaced em(10 14);
+		}
+	}
+
+	tr {
+		border-bottom: 1px solid color(seashell);
+
+		&:hover	> td {
+			background-color: color(seashell);
+		}
+	}
+
+	// chat software injects a table in the dom for the chat interface. table based layout can't have padding.
+	&.lpInviteChatTbl {
+		td {
+			padding: 0!important;
+		}
+	}
+
+
+	@include media(breakpointMedium) {
+		@include font-size(14);
+	}
+}
+
+.table {
+	width: 100%;
+	max-width: 100%;
+
+	th,
+	td {
+		text-align: left;
+		vertical-align: top;
+	}
+
+	th {
+		vertical-align: bottom;
+	}
+}

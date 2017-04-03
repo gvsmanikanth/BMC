@@ -1,0 +1,87 @@
+html {
+	font: #{$baseFontPercentage}/#{$baseLineHeight} $baseFontFamily;
+	font-weight: $baseFontWeight;
+}
+
+body {
+	background: color(colorCorporate);
+	color: color(colorBase);
+	line-height: $baseLineHeight;
+	min-width: 0;
+	-webkit-font-smoothing: antialiased;
+	-ms-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	width: 100%;
+
+	&.bmc-nav-loader-nav {
+		padding-top: $navHeaderHeight;
+
+		@include media(breakpointLarge) {
+			padding-top: 0;
+		}
+	}
+
+	&.bmc-nav-loader-navigation {
+		padding-top: $headerHeight;
+
+		@include media(breakpointLarge) {
+			padding-top: 0;
+		}
+	}
+
+	&.nav-open {
+		height: 100%;
+		overflow: hidden;
+		padding-top: $navHeaderHeight;
+
+		@include media(breakpointMedium) {
+			height: auto;
+			overflow: auto;
+		}
+	}
+
+	&.navigation-open {
+		height: 100%;
+		overflow: hidden;
+
+		@include media(breakpointLarge) {
+			height: auto;
+			overflow: auto;
+		}
+	}
+
+	&.video-modal {
+		background: #000;
+		padding-top: 0;
+	}
+
+	&.content-modal {
+		background: white;
+		padding-top: 0;
+	}
+
+	.wait {
+		background: url('broken-js.jpg') no-repeat scroll center center rgba(0, 0, 0, 0);
+		border: medium none;
+		height: 230px;
+		width: 447px;
+	}
+}
+
+// BMC-527. Added additional classes - to replace the .video class effect to HTML and body tags before Pheonix implementation.
+html{
+    height: 0;
+    padding-bottom: 64.22414%;
+    position: relative;
+    width: 100%;
+}
+
+body{
+  height: 100% !important;
+  left: 0;
+  position: absolute !important;
+  top: 0;
+  width: 100% !important;
+}
+
+

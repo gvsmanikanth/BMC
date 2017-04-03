@@ -1,0 +1,81 @@
+.percentage_display{
+	
+	.percentage_display-container{
+		padding-bottom: 0px;
+		
+		.stat{
+  		.border-bottom{
+  			border-bottom: 1px dotted black;
+  		}
+  		
+  	}
+    .px1{
+      .up-arrow{
+        height: 54px;
+      }
+      .number{
+        font-size: 3.25em;
+      } 
+    }
+  }
+  
+  .source-block{
+    font-size: .7em; 
+    text-align: center; 
+    margin-top: 2em;
+  }
+}
+
+.percentage_display-full-width{
+	background: #f1f1f1; 
+	margin-top: 0; 
+	margin-bottom: 0; 
+	padding-bottom: 0;
+	padding-top: 3rem;
+	
+	.layout-inner-wrap{
+		max-width: 1440px; 
+		text-align: center;
+		
+		.lead{
+			max-width: 35em; 
+			margin: 0 auto; 
+			color: #555557;
+			
+			strong{
+				font-weight: 800;
+			}
+		}
+		
+		.card{
+			cursor: default; 
+			margin-bottom: 0; 
+			padding-bottom: 0;
+			
+			>.px1{
+				border-bottom-width: 1px; 
+				border-bottom-style: dotted; 
+				border-bottom-color: black;
+				
+				img{
+					height: 54px;
+				}
+				.number{
+			        font-size: 3.25em;
+			    } 
+			}
+			.py1{
+				font-size: 1em;
+			}
+		}
+	
+	 .source-block{
+	 	
+	 	font-size: 0.7em; 
+	 	text-align: center; 
+	 	margin-top: 2em; 
+	 	padding-bottom: 0.5em;
+	 	
+	  }
+	}
+}

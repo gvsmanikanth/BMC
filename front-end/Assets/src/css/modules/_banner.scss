@@ -1,0 +1,108 @@
+.banner {
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	@include media(breakpointLarge) {
+		text-align: left;
+		.td {
+			padding: 16px 0;
+		}
+	}
+
+	&.-ribbon {
+		background-image: url('#{$imagesFolder}banner-ribbon.png');
+	}
+
+  .mobile-only{
+   max-width:400px;;
+   width:100%
+  }
+	.image {
+		margin-bottom: 16px;
+		@include media(breakpointLarge) {
+			margin: 0;
+			padding: 0;
+			width: 400px;
+		}
+	}
+
+	.content {
+		margin: 0 auto;
+		padding: 0 24px;
+		border: none;
+		
+		@include media(breakpointLarge) {
+			padding-left: 16px;
+			padding-right: 16px;
+			vertical-align: middle;
+			width: 22em;
+		}
+		@include media(breakpointExtraLarge) {
+			padding-left: 24px;
+			width: 26em;
+		}
+		p {
+			font-size: 18px;
+			margin-bottom: 5px;
+			@include media(breakpointLarge) {
+				font-size: 16px;
+			}
+			@include media(breakpointExtraLarge) {
+				font-size: 18px;
+			}
+			@media screen and (min-width: $breakpointDocumentWidth) {
+				font-size: 20px;
+			}
+		}
+		.btn-small {
+			margin-bottom: 0;
+			padding: .25em 1em;
+			color:white;
+		}
+	}
+
+	.countdown {
+		padding: 5px 0 16px;
+		width: 100%;
+		@include media(breakpointLarge) {
+			vertical-align: middle;
+			width: 360px;
+			.cloud-city-countdown {
+				border-left: 1px solid #333;
+				padding: 8px 0 16px;
+			}
+		}
+	}
+
+	.bg-home {
+		@include media(breakpointLarge) {
+			//background: no-repeat url('#{$imagesFolder}2015-engage-home-desk.png') top right;
+			background: no-repeat url('#{$imagesFolder}Engage_Countdown_Desktop_436x183_Final.png') center right;
+			background-size: 100% auto;
+		}
+	}
+	
+	.banner-close::before {
+      content: "";
+      font-family: "icomoon";
+      font-size: 1.66667rem;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: none;
+      position: absolute;
+      right: 0.44444em;
+      top: 0.44444em;
+      font-weight: 700;
+      color: #29a5d6;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px rgba(241, 93, 34, 0.07);
+      transition: color 0.25s ease-out 0s;
+  }
+  
+}
+/*
+.oldie .bg-image {
+	background: none;
+}*/

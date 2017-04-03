@@ -1,0 +1,122 @@
+/*
+ * Wallpaper v3.1.18 - 2014-06-16
+ * A jQuery plugin for smooth-scaling image and video backgrounds. Part of the Formstone Library.
+ * http://formstone.it/wallpaper/
+ *
+ * Copyright 2014 Ben Plum; MIT Licensed
+ */
+.wallpaper {
+	overflow: hidden;
+	position: relative;
+
+	&.-left-center .wallpaper-media {
+		background-position: left center;
+	}
+
+	&.-no-mobile {
+
+
+		.wallpaper-container {
+			display: none;
+
+			@media (min-width: $break-lg) {
+				display: block;
+			}
+		}
+	}
+
+	.wallpaper-container {
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.wallpaper-container,
+	.wallpaper-media {
+		-webkit-transition: none !important;
+				transition: none !important;
+	}
+
+	.wallpaper-media {
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+	}
+
+	.wallpaper-media.animated {
+		-webkit-transition: opacity 0.5s linear !important;
+				transition: opacity 0.5s linear !important;
+	}
+
+	.wallpaper-media img,
+	.wallpaper-media video,
+	.wallpaper-media iframe {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+
+	.wallpaper-embed.ready:after {
+		content: '';
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	.wallpaper-embed.ready iframe {
+		/* pointer-events: none; - safari doesn't like this :/ */
+	}
+
+	.wallpaper-media.native {
+		background-position: center;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+	}
+	.wallpaper-media.native img {
+		display: none;
+	}
+
+	.wallpaper-media.fixed {
+		background-position: center;
+		background-attachment: fixed;
+		height: 100%;
+		width: 100%;
+	}
+	.wallpaper-media.fixed img {
+		display: none;
+	}
+}
+
+.wallpapered {
+	background: #eee;
+	margin: 0;
+	padding-top: 0%;
+	width: 100%;
+
+	.square {
+		padding-top: 100%;
+	}
+	.bar {
+		margin: 0;
+	}
+	.heading {
+		@include font-size(32);
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+			font-weight: 800;
+		}
+
+		@include media(breakpointExtraLarge) {
+			@include font-size(32);
+		}
+
+		color: #fff;
+		margin: 1em 0 1.125em;
+	}
+}

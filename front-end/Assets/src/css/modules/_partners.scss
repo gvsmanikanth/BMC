@@ -1,0 +1,79 @@
+// Customized UI for Course Cards and List
+.partners-cards
+{ 
+  .cards-4-col{
+    display:block;
+  }
+  
+  .logo-block {
+    margin-bottom: 2rem;
+    maring-top: 1rem;
+    
+    &::before
+    {
+      display: block;
+      padding-top: 0;
+    }
+  
+    .copy{
+        position: relative;
+        right:0;
+        left:0;
+        bottom: auto;
+    }
+    
+    .logo-heading{
+      position: relative;
+     
+    }
+    
+    .logo-inner-container{
+      position: relative;
+      height:auto;
+    }
+    
+    .logo-area{
+      height:130px;
+        img{
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+.parnter-modal-details{
+    display:none;
+    .modal-logo-section{
+      text-align:center;
+      img{
+        height:auto;
+        width:100%; 
+        max-width:200px;
+      }
+      .links{
+       // display:inline-block;
+        text-align:left;
+      }
+      span{
+        padding-right:1em;
+      }
+    }
+    
+    .modal-content{
+      .section-header{
+        margin-right:0px; 
+        margin-left:0px;
+      }
+      .section-content{
+        margin-right:0px; 
+        margin-left:0px;
+      }
+     
+     @media (min-width: $break-md) { 
+            padding-left:2rem;  
+      }
+    }   
+  }
+
+

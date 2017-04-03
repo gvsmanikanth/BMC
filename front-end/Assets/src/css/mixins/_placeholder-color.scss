@@ -1,0 +1,10 @@
+/// Adds color control ability across major browsers for placeholder attribute.
+/// @param {Color} $color - The hex color you wish to change placeholder input text into.
+/// @example - scss
+/// placeholder-color(#999);
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder 	{ color: $color; } /* WebKit browsers */
+	&:-moz-placeholder 				{ color: $color; } /* Mozilla Firefox 4 to 18 */
+	&::-moz-placeholder 			{ color: $color; } /* Mozilla Firefox 19+ */
+	&:-ms-input-placeholder 		{ color: $color; } /* Internet Explorer 10+ */
+}

@@ -1,0 +1,40 @@
+////
+/// @group grid
+////
+
+/// The default padding amount in the gutter
+/// @type Ems
+$secondaryGutterInPx: 2.5em !default;
+
+/// The number of columns in the grid system.
+/// @type Integer
+$columns: 12 !default;
+$cols: $columns !default; // legacy
+
+/// The default breakpoint at which columns in the grid and semantic grid systems change from 100% to the column width specified.
+/// @type String
+$columnBreakpoint: medium !default;
+
+/// The default amount of padding within columns in pixels.
+/// @type Pixels
+$columnPadding: 16px !default;
+
+/// The default gutter width between columns in pixels or percent.  If defined as pixels, it will be converted to a percentage and will represent the gutter width at `$rowMaxWidth`.
+/// @type Pixels | Percentage
+$gutterWidth: 16px !default;
+
+/// The maximum width of a row on the page.<p>**NOTE**: if `$gutterWidth` is in pixels, `$rowMaxWidth` must be in pixels.</p>
+/// @type Pixels | Percentage
+$rowMaxWidth: 1440px !default;
+
+/// The default direction in which to float content.
+/// @type String
+$defaultFloat: left;
+
+/// The opposite float of `$defaultFloat`.
+/// @type String
+$switchFloat: right;
+
+/// legacy variable
+/// @type Integer
+$hybridCols: 24 !default;

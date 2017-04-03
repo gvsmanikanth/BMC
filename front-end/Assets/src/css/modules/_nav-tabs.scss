@@ -1,0 +1,110 @@
+// @category modules
+
+// @function tabs
+// Styles related to a sidebar tab menu.
+
+.tabs-nav {
+	list-style-image: none;
+	list-style: none;
+	margin-top: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+
+		a {
+			display: block;
+			outline: none;
+			text-shadow: none;
+		}
+
+		&.active,
+		&.r-tabs-state-active {
+			font-weight: 700;
+			position: relative;
+			z-index: 5;
+		}
+	}
+
+	&.bg-robins-egg-blue {
+		li a {
+			background-color: color(colorCorporateAction);
+			border-bottom: 1px solid #fff;
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				background-color: darken(color(colorCorporateAction), 5);
+			}
+		}
+		li.active a,
+		li.r-tabs-state-active a {
+			background-color: color(seashell);
+			color: color(colorCorporateAction);
+		}
+	}
+	&.bg-white {
+		li a {
+			color: color(darkGrey);
+			&:hover,
+			&:focus {
+				background-color: color(seashell);
+				color: #000;
+			}
+		}
+		li.active a,
+		li.r-tabs-state-active a {
+			background-color: color(colorNavigationBar);
+			color: #fff;
+		}
+	}
+	&.bg-corduroy {
+		li a {
+			color: color(seashell);
+			&:hover,
+			&:focus {
+				color: #fff;
+			}
+		}
+		li.active a,
+		li.r-tabs-state-active a {
+			background-color: color(seashell);
+			color: color(corduroy);
+		}
+	}
+
+	// vertical nav
+	&.-vr {
+		li.active a:after {
+			content:" \00203A";
+		}
+	}
+
+	// horizontal nav
+	&.-hr {
+		margin-bottom: 0;
+
+		li {
+			text-align: center;
+
+			@include media(breakpointLarge) {
+				border-bottom: none;
+				display: inline-block;
+				font-size: 16px;
+				text-align: center;
+			}
+
+			&.active,
+			&.r-tabs-state-active {
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+// Hide horizontal nav on mobile
+@media screen and (max-width: 767px) {
+	.tabs-nav.-hr {
+		display: none;
+	}
+}

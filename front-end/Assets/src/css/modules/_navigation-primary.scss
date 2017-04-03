@@ -1,0 +1,183 @@
+// @category modules
+
+// @function navigation
+// Styles related to the site's navigation.
+
+.layout-navigation {
+	@include media(breakpointLarge) {
+		-webkit-box-shadow: 0px 12px 19px -12px rgba(0, 0, 0, 0.12);
+		-moz-box-shadow: 0px 12px 19px -12px rgba(0, 0, 0, 0.12);
+		box-shadow: 0px 12px 19px -12px rgba(0, 0, 0, 0.12);
+	}
+	.layout-inner-wrap {
+		@include media(breakpointLarge) {
+			padding: 0 em(28);
+		}
+	}
+}
+
+.navigation-primary {
+	list-style: none;
+	margin: 0;
+	padding: 2em 0;
+	position: relative;
+	@include media(breakpointLarge) {
+		height: 50px;
+		padding: 0;
+	}
+	> li {
+		margin: 0;
+		@include media(breakpointLarge) {
+			border-bottom: 6px solid transparent;
+			display: inline-block;
+			float: left;
+			// height: 100%;
+			height: 44px;
+			line-height: 44px;
+			margin-right: em(13);
+		}
+		> a {
+			@include font-size(16);
+			@include transition((property: border-color));
+			font-weight: 700;
+			border-bottom: 3px transparent;
+			display: block;
+			outline: none;
+			padding: .5em 1em;
+			@include media(breakpointLarge) {
+				@include font-size(14);
+				color: #353537;
+				font-weight: 500;
+				margin-right: .5em;
+				padding: 0 .5em;
+			}
+			@include media(breakpointExtraLarge) {
+				@include font-size(16);
+			}
+		}
+		&:hover,
+		&.hinted,
+		&.hinted:hover {
+			@include media(breakpointLarge) {
+				border-bottom-color: #ebebeb;
+			}
+		}
+	}
+}
+
+.navigation-primary .navigation-home {
+	@include transition((property: background-color));
+	display: none;
+	position: relative;
+	width: 0;
+	.navigation-home-link {
+		background-repeat: no-repeat;
+		@include svg-image(bmc_logo_header);
+		height: 30px;
+		left: em(12);
+		padding: 0;
+		position: absolute;
+		top: em(11);
+		width: 90px;
+		@include media(breakpointExtraLarge) {
+			padding: 0;
+		}
+	}
+}
+
+.navigation-primary .navigation-menu {
+	position: relative; // for :after element
+	@include media(breakpointLarge) {
+		border: 0 none; // overwrite li default
+		display: none; // overwrite li default
+		line-height: 49px; // overwrite li default
+		margin-right: 0; // overwrite li default
+		.navigation-menu-link {
+			background: #f3f3f3;
+			border: solid 1px color(mediumGrey);
+			border-bottom: 0;
+			border-top: 0;
+			@include box-sizing;
+			display: none;
+			width: 50px;
+			height: 49px; // BMC-527 -Blog pages issue
+		}
+	}
+	a {
+		padding: 0;
+		&:before {
+			@include icon();
+			@include font-size(32);
+			content: $iconMenu;
+			left: 5px;
+			position: relative;
+			top: 9px;
+		}
+	}
+}
+
+.scrolled-down,
+.scrolled-up {
+	.navigation-home {
+		border-bottom: 0;
+		line-height: 40px;
+		width: auto;
+	}
+	@include media(breakpointLarge) {
+		.navigation-primary > li {
+			opacity: 0;
+			@include transition((property: opacity));
+			&.navigation-menu,
+			&.navigation-home {
+				opacity: 1;
+				@include transition((property: transform));
+				display: inline-block;
+				transform: translateX(0);
+			}
+			&.navigation-home {
+				width: 90px;
+			}
+			.navigation-menu-link {
+				display: block;
+			}
+			> a {
+				margin-left: .25em;
+				padding: 0 .25em;
+			}
+		}
+	}
+}
+
+// Show alternate menu (only shown after scrolled)
+.display-scrolled-menu {
+	.navigation-menu a:before {
+		content: $iconCloseX;
+		left: -3px;
+	}
+	@include media(breakpointLarge) {
+		.navigation-primary > li {
+			line-height: 49px;
+			opacity: 1;
+			transition-delay: .15s;
+			&.navigation-menu {
+				line-height: 49px;
+				transform: translateX(-5px);
+			}
+			&.navigation-home {
+				display: none;
+			}
+		}
+	}
+}
+
+// Mobile navigation is open
+.navigation-open {
+	// Hide desktop toggle button
+	.navigation-primary .navigation-menu {
+		display: none;
+	}
+}
+
+.no-svg .navigation-primary .navigation-home .navigation-home-link {
+	background-image: url('#{$imagesFolder}bmc_logo_header-scrolled.png');
+}

@@ -1,0 +1,154 @@
+// @category modules
+
+// @function video
+// Responsive video for maintaining aspect ratio on all resolutions.
+
+div.video {
+	@include aspect-ratio(928, 596);
+
+	// ensures proper squishiness on Android devices
+	video {
+		height: 100%;
+		width: 100%;
+	}
+	// ensures play button on embedded videos has
+	// proper squishiness on Android devices
+	[id*="play_button_div_embedded_player_"] {
+		height: 100% !important;
+		width: 100% !important;
+	}
+
+  // ensures proper squishiness on Android devices
+  video {
+      height: 100%;
+      width: 100%;
+  }
+  // ensures play button on embedded videos has
+  // proper squishiness on Android devices
+  [id*="play_button_div_embedded_player_"] {
+      height: 100% !important;
+      width: 100% !important;
+  }
+
+  //Cleanup CSS to target a tag inside the video
+  a[id^="embedded_player_"] {
+    position: relative !important;
+  }
+  
+   //Cleanup CSS to target a tag inside the video
+  div[id^="embedded_player_"] {
+     width: 100% !important;
+     height: 100% !important;
+  }
+
+	.page-campaign-landing & {
+		display: none;
+
+		@include media(breakpointLarge) {
+			display: block;
+		}
+	}
+}
+
+.video-caption {
+	p {
+		@include font-size(17);
+		font-weight: 700;
+	}
+}
+.video-container-wrapper {
+	// //background-color: color(colorCorporate); //BMC-527 - Commented to resolve video title error.
+//   
+  // //display:inline-block; //BMC-527 - Commented to resolve video alignment issue.
+  // margin: 2em 0; //BMC-527 - Commented to resolve video alignment issue.
+  // width: 100%;
+  // //padding:0 0 20px 0; //BMC-527 - Commnented to avoid unnecessary bottom padding for videoes.
+ // // padding:0 0 0 0;
+// 
+	// @include media(breakpointMedium) {
+		// margin: 3em columns(1.5); //BMC-527 Commented to resolve video padding issue
+		// width: columns(9);
+	// }
+  
+  width:100%;
+  background-color: color(colorCorporate);
+  display:inline-block;
+  padding:0 0 20px 0;    
+  
+ @include media(breakpointLarge) {
+    margin: 0em columns(1.5) 1em columns(1.5) ; //BMC-527 Commented to resolve video padding issue
+    max-width: 75% !important;
+    background-color: transparent;
+  }
+  
+  padding:0 0 20px 0;
+  
+	.video-container-wrapper-inner {
+		width: 100%;
+		background-color: color(colorCorporate);
+		padding: 0 0 20px 0;
+	}
+
+	.left-column {
+		color: #fff;
+		@include font-size(19);
+		float:left;
+		padding: 10px 0 0 30px;
+		width: 50%;
+	}
+
+	.left-column span{
+		color: color(mediumOrange);
+		font-weight:800;
+
+	}
+
+	.right-column {
+		float: right;
+		padding: 10px 40px 0 0;
+	}
+
+}
+
+.video-outer-wrapper {
+	margin: 0 auto;
+	width: 100%;
+
+	.columnleft {
+		margin: 0 auto;
+		width: 48%;
+		float: left;
+	}
+
+	.columnright {
+		margin: 0 auto;
+		width: 48%;
+		float: right;
+	}
+
+	@include media(breakpointMedium) {
+		width: 80%;
+	}
+
+	@include media(breakpointLarge) {
+		width: 100%;
+	}
+
+}
+
+
+#single-row-video {
+	display: none;
+
+	@include media(breakpointLarge) {
+		display: block;
+	}
+}
+
+#single-column-video {
+	display: block;
+
+	@include media(breakpointLarge) {
+		display: none;
+	}
+}

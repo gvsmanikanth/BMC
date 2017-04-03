@@ -1,0 +1,225 @@
+.customer-story-case-banner {
+	@extend %clearfix;
+
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	padding: 0 !important;
+
+	&.wallpapered { background: transparent; }
+	.wallpaper-container {
+		z-index: -1;
+	}
+
+	.layout-primary {
+
+		margin-bottom: 1em;
+
+		p {
+			font-size: 1.5em;
+			line-height: 1em;
+			margin-top: 0.4em;
+			@include media(breakpointMedium) {
+				font-size: 2.5em;
+			}
+		}
+	}
+
+	.layout-secondary {
+		padding-bottom: 0;
+	}
+
+	.header-logo, .back-link {
+		margin-top: 1.5em;
+	}
+
+	.back-link {
+		a, a:hover {
+			color: #fff;
+			font-weight: bold;
+		}
+	}
+
+	.point {
+		@extend %clearfix;
+		background-color: rgba(#000, 0.65);
+		box-sizing: border-box;
+		padding: 1em 2em;
+		margin-top: 0.25em;
+		text-align: left;
+
+		/*.oldie & {
+			background-color: #000;
+		}*/
+
+		@include media(breakpointMedium) {
+			padding: 1.5em 1em;
+		}
+
+		@include media(breakpointLarge) {
+			text-align: center;
+		}
+
+		@include media(breakpointExtraLarge) {
+			padding: 3em 1em;
+			text-align: left;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.icon, .copy {
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.icon {
+		margin-bottom: 1em;
+		width: 65px;
+
+		@include media(breakpointLarge) {
+			width: 100%;
+		}
+
+		@include media(breakpointExtraLarge) {
+			margin-bottom: auto;
+			width: 15%;
+		}
+
+		img {
+			max-height: 45px;
+			max-width: 45px;
+			vertical-align: middle;
+		}
+	}
+
+	.copy {
+		text-align: left;
+		margin-left: 1.25em;
+
+		@include media(breakpointLarge) {
+			margin-left: 0;
+			text-align: center;
+		}
+
+		@include media(breakpointExtraLarge) {
+			text-align: left;
+			margin-left: 5%;
+			width: 70%
+		}
+
+		h2 {
+			font-size: 1.75em;
+			margin-top: 0 !important;
+
+			@include media(breakpointExtraLarge) {
+				font-size: 1.8em;
+			}
+		}
+	}
+
+	h1, h2 {
+		color: #fff;
+	}
+
+	h1 {
+		font-size: 2em;
+		line-height: 1em;
+		margin-bottom: 0;
+		margin-top: 0.5em;
+
+		@include media(breakpointMedium) {
+			font-size: 3em;
+		}
+	}
+
+	p {
+		color: #fff;
+		margin-bottom: 0;
+	}
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: block;
+	}
+
+	// specific styling setup for customer-story js, and appendAround
+	.customer-story-case-points {
+		&.mobile {
+			display: block;
+			@include media(breakpointLarge) {
+				display: none;
+			}
+		}
+		&.non-mobile {
+			display: none;
+			@include media(breakpointLarge) {
+				display: block;
+			}
+		}
+	}
+
+}
+
+.customer-story-case-content {
+	padding-top: 3em;
+
+	.layout-secondary {
+
+		.btn {
+			display: block;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+
+		.btn.orange {
+			border-color: color(mediumOrange);
+			background-color: color(mediumOrange);
+
+			&:hover {
+				border-color: darken(color(mediumOrange), 10%);
+				background-color: darken(color(mediumOrange), 10%);
+			}
+		}
+
+		.resource {
+			margin-bottom: 2.5em;
+
+			img {
+				display: block;
+				margin: auto;
+			}
+
+			h3 {
+				margin-top: 1em;
+			}
+		}
+
+		// prevent anchors within headings from being bigger, instead font-size should
+		// come from the heading
+		h1 a, h2 a, h3 a {
+			font-size: inherit;
+			letter-spacing: 0;
+		}
+
+		h2 {
+			color: color(colorCorporate);
+			font-size: 1.3em;
+			margin-bottom: 1.25em;
+		}
+
+		p {
+			margin-bottom: 1em;
+		}
+
+		section {
+			margin-top: 1.5em;
+			padding-top: 1.5em;
+		}
+	}
+}

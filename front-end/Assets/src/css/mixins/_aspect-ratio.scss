@@ -1,0 +1,49 @@
+/// Creates the necessary dimensions for an element to have a fixed aspect ratio.
+/// @param {Pixels | Integer} $width - The desired width of the element's aspect ratio.
+/// @param {Pixels | Integer} $height - The desired height of the element's aspect ratio.
+/// @param {String} $selector [false] - The selector of the child.
+/// @example
+/// aspect-ratio(4, 3)
+/// @example
+/// aspect-ratio(4, 3, (selector: iframe))
+@mixin aspect-ratio($width, $height, $options: ()) {
+	$options: map-merge((
+		selector: false
+	), $options);
+
+	$selector: map-get($options, selector);
+
+	position: relative;	// context for direct descendant
+
+	// container to maintain aspect ratio
+	&::before {
+		content: '';
+		display: block;
+		padding-top: percentage(parseInt($height) / parseInt($width));
+	}
+
+	@if $selector == false {
+		& > embed,
+		& > iframe,
+		& > object,
+		& > video,
+		& > a,
+		& > div,
+		& > img {
+			height: 100% !important;
+			left: 0;
+			position: absolute !important;
+			top: 0;
+			width: 100% !important;
+		}
+	}
+	@else if $selector != none {
+		& > #{$selector} {
+			height: 100% !important;
+			left: 0;
+			position: absolute !important;
+			top: 0;
+			width: 100% !important;
+		}
+	}
+}

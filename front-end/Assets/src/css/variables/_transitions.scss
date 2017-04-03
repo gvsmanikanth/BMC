@@ -1,0 +1,19 @@
+////
+/// Default transition properties to be used with the transition mixin.
+/// @group transitions
+////
+
+/// The amount of time for transitions to take.
+/// @type Time
+$transitionDuration: 0.3s;
+
+/// The easing function to use with transitions.
+/// @type String
+$transitionEasing: linear;
+
+/// The amount of time to delay transitions.
+/// @type Time
+$transitionDelay: 0s;
+
+///legacy
+$transitionSpeed: $transitionDuration;

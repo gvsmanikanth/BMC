@@ -1,0 +1,238 @@
+/*
+	Associates with jquery.product-sort.js
+	mixitup jquery plugin expects elements being sorted must be hidden by default:
+	.category-section, .result-item, .alpha-section for the various items being filtered
+ */
+
+.no-js {
+	.category-section,
+	.accordion-item-content,
+	.alpha-section,
+	.result-item {
+		display: block !important;
+	}
+
+	.product-finder-filters {
+		display: none !important;
+	}
+
+	// removes view-all filters
+	.featured-product.view-all {
+		display: none !important;
+	}
+}
+
+.category-sections {
+
+	margin-top: 0;
+	padding: 0;
+
+	.category-section {
+
+		border-top: 2px solid color(mediumGrey);
+		margin: 0;
+		padding: 3em 0;
+
+		h2 {
+			color: color(mediumOrange);
+			display: inline-block;
+			margin-bottom: 0.75em;
+		}
+
+		&:first-child, &.active {
+			border-top: 0;
+		}
+
+		@include media(breakpointMedium) {
+
+			display: none;
+
+			&.active {
+				.view-all {
+					display: none !important; // override inline-style set by plugin
+				}
+			}
+		}
+
+		&.accordion { // shown on mobile viewpoints
+
+			border: none;
+			margin: 0 em(-36); // break out of container, simulates 100% width
+			padding: 0;
+
+			h2 {
+				color: color(colorCorporateAction);
+				font-size: 0.75em;
+				margin: 0;
+			}
+
+			.accordion-item {
+				background-color: #f1f1f1;
+				border-top: 0;
+				border-bottom: 0;
+				padding: 0;
+			}
+
+			.accordion-item-anchor {
+				background-position: em(28, (context: 20));//BMC-527 - em(28 20);
+				background-size: 25px;
+				border-top: 1px solid color(mediumGrey);
+				display: block;
+				padding-bottom: 0.25em;
+				padding-left: em(28, (context: 20));
+				padding-right: em(28, (context: 20));//BMC-527 - em(28 20);
+				padding-top: 0.25em;
+			}
+
+			.accordion-item.open .accordion-item-anchor {
+				border-bottom: 1px solid color(mediumGrey);
+			}
+
+			&:last-of-type .accordion-item-anchor {
+				border-bottom: 1px solid color(mediumGrey);
+			}
+
+			.accordion-item-content {
+				background: #fff;
+				margin: 0;
+				padding: 1.5em em(28, (context: 20));//BMC-527 - em(28 20);
+			}
+		}
+	}
+
+	.category-section-left-column,
+	.category-section-right-column {
+
+		@include box-sizing();
+
+		@include media(breakpointMedium) {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	.category-section-left-column {
+
+		margin: 1.5em 0;
+
+		.product-shot {
+			display: none;
+		}
+
+		@include media(breakpointMedium) {
+			margin-right: -0.5em;
+			width: 40%;
+
+			.product-shot {
+
+				display: block;
+				margin-bottom: 1em;
+				padding-right: 3em;
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.category-section-right-column {
+
+		@include media(breakpointMedium) {
+			padding-left: 2em;
+			width: 60%;
+		}
+	}
+
+	.featured-products {
+
+		margin: 0;
+		padding: 0;
+
+		h4 {
+			color: color(colorCorporateAction);
+		}
+	}
+
+	.featured-product {
+
+		border: none;
+		list-style: none;
+		margin: 0;
+		padding: 0.75em 0;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		@include media(breakpointMedium) {
+
+			border-top: 1px solid darken(color(seashell), 10%);
+			padding: 1.5em 0;
+
+			&:first-child {
+				border-top: none;
+			}
+		}
+
+		.product-detail {
+			color: color(darkGrey);
+			display: table;
+			width: 100%;
+		}
+
+		.description {
+			@include media(breakpointMedium) {
+				display: table-cell;
+			}
+		}
+
+		.actions {
+			@include media(breakpointMedium) {
+				display: table-cell;
+				min-width: 12em;
+				padding-left: 2em;
+				text-align: right;
+			}
+		}
+	}
+}
+
+// hide .alpha-section whether they are contained in .alpha-sections (all products) or not (category filtering)
+// since category filtering doesn't have alpha section filter, it doesn't have the .alpha-sections mixItUp container
+.alpha-section {
+	display: none; // hidden by default, enabled by mixitup plugin
+	width: 100%;
+
+	&:first-child {
+		h3 { margin-top: 0 }
+	}
+
+	h3  {
+		margin-top: 0.5em;
+	}
+}
+
+.result-items {
+
+	padding: 0;
+
+	h2 {
+		margin-bottom: 0.75em;
+		margin-top: 1em;
+	}
+
+	.result-item {
+		display: none; // hidden by default, enabled by mixitup plugin
+		width: 100%;
+	}
+}
+
+.topics-results-heading, .products-results-heading {
+	display: none;
+
+	// show by default on all products landing page, within .alpha-sections filtering
+	.alpha-sections & {
+		display: block;
+	}
+}

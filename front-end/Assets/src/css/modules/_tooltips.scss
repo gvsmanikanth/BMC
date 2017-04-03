@@ -1,0 +1,132 @@
+// measurements
+$tooltipArrowSize: 5px; // note: keep this under 10px to avoid issues
+$tooltipPadding: 10px;
+
+// colors
+$tooltipBackgroundColor: color(primary);
+$tooltipTextColor: white;
+$tooltipShadowColor: black;
+$tooltipShadowBlurRadius: 10px;
+
+.tooltip {
+	cursor: help;
+
+	&.high-res-only {
+		cursor: auto;
+
+		@include media(medium) {
+			cursor: help;
+		}
+	}
+}
+
+.tipsy {
+	@include font-size(14);
+	padding: $tooltipPadding;
+	position: absolute;
+	z-index: z(tooltip);
+}
+	.tipsy-inner {
+		background-color: $tooltipBackgroundColor;
+		border-radius: 3px;
+		color: $tooltipTextColor;
+		max-width: 200px;
+		padding: $tooltipPadding;
+		text-align: center;
+	}
+
+	.tipsy-inner {
+		box-shadow: 0 0 $tooltipShadowBlurRadius $tooltipShadowColor;
+	}
+
+	.tipsy-arrow {
+		border: $tooltipArrowSize dashed $tooltipBackgroundColor;
+		height: 0;
+		line-height: 0;
+		position: absolute;
+		width: 0;
+	}
+
+	// Rules to color arrows
+	.tipsy-arrow-n {
+		border-bottom-color: $tooltipBackgroundColor;
+	}
+	.tipsy-arrow-s {
+		border-top-color: $tooltipBackgroundColor;
+	}
+	.tipsy-arrow-e {
+		border-left-color: $tooltipBackgroundColor;
+	}
+	.tipsy-arrow-w {
+		border-right-color: $tooltipBackgroundColor;
+	}
+
+	.tipsy-n .tipsy-arrow {
+		border-bottom-style: solid;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-top: none;
+		left: 50%;
+		margin-left: -$tooltipArrowSize;
+		top: -$tooltipArrowSize + $tooltipPadding;
+	}
+		.tipsy-nw .tipsy-arrow {
+			border-bottom-style: solid;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top: none;
+			left: $tooltipArrowSize;
+			top: -$tooltipArrowSize + $tooltipPadding;
+		}
+		.tipsy-ne .tipsy-arrow {
+			border-bottom-style: solid;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top: none;
+			right: $tooltipArrowSize;
+			top: -$tooltipArrowSize + $tooltipPadding;
+		}
+
+	.tipsy-s .tipsy-arrow {
+		border-bottom: none;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-top-style: solid;
+		bottom: -$tooltipArrowSize + $tooltipPadding;
+		left: 50%;
+		margin-left: -$tooltipArrowSize;
+	}
+		.tipsy-sw .tipsy-arrow {
+			border-bottom: none;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top-style: solid;
+			bottom: -$tooltipArrowSize + $tooltipPadding;
+			left: $tooltipArrowSize;
+		}
+		.tipsy-se .tipsy-arrow {
+			border-bottom: none;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top-style: solid;
+			bottom: -$tooltipArrowSize + $tooltipPadding;
+			right: $tooltipArrowSize;
+		}
+	.tipsy-e .tipsy-arrow {
+		border-bottom-color: transparent;
+		border-left-style: solid;
+		border-right: none;
+		border-top-color: transparent;
+		margin-top: -$tooltipArrowSize;
+		right: -$tooltipArrowSize + $tooltipPadding;
+		top: 50%;
+	}
+	.tipsy-w .tipsy-arrow {
+		border-bottom-color: transparent;
+		border-left: none;
+		border-right-style: solid;
+		border-top-color: transparent;
+		left: -$tooltipArrowSize + $tooltipPadding;
+		margin-top: -$tooltipArrowSize;
+		top: 50%;
+	}

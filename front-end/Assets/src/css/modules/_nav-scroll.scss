@@ -1,0 +1,33 @@
+
+#scroll-nav {
+	@include transition((property: opacity));
+	width: 100%;
+
+	@include media(breakpointLarge) {
+		// This is a design element from the mockup
+		border-top: 5px solid color(tundora);
+	}
+}
+
+#scroll-nav.fixed {
+	border: 0 none;
+	position: fixed;
+	// Offset from primary nav
+	top: 67px;
+	// Z-index is 1 less than primary nav
+	z-index: (z(nav)-1);
+
+	@include media(breakpointLarge) {
+		// Offset from primary nav
+		top: 50px;
+	}
+
+	.scrolled-down & {
+		opacity: .85;
+	}
+
+	.scrolled-up &,
+	.scrolled-down &:hover {
+		opacity: 1;
+	}
+}

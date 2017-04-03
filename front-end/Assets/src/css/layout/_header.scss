@@ -1,0 +1,148 @@
+// @category layout
+
+// @function header
+// The location to define major column layouts and styles for the header.
+
+// common to 'nav' and 'navigation' navigation keys.
+.layout-header {
+//	@include row();
+	@extend %clearfix;
+	background: #fff;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	@include transition((property: right));
+	width: columns(12);
+	z-index: z(nav);
+
+	@include media(breakpointLarge) {
+		overflow: hidden;
+		position: static;
+		right: 0;
+	}
+}
+
+/**
+ * 'navigation' navigation key
+ */
+body.bmc-nav-loader-navigation .layout-header {
+
+	height: $headerHeight;
+
+	@include media(breakpointLarge) {
+		height: $highResHeaderHeight;
+		overflow: hidden;
+		position: static;
+		right: 0;
+	}
+
+	&:after { // hide the drop shadow underneath the close/open toggle
+
+		bottom: 0px;
+		height: 10px;
+		width: 100%;
+		position: absolute;
+		box-shadow: 0 5px 5px -2px rgba(0,0,0,.4);
+
+		@include media(breakpointLarge) {
+			display: none;
+		}
+	}
+}
+
+body.bmc-nav-loader-navigation.scrolled-down .layout-header,
+body.bmc-nav-loader-navigation.scrolled-up .layout-header {
+	background: #f3f3f3;
+	background: rgba(255, 255, 255, 0.85);
+
+	@include media(breakpointLarge) {
+		background: white;
+	}
+}
+
+.navigation-open .layout-header {
+	z-index: (zIndex(nav)+1);;
+
+	&:after {
+		margin-left: 60px; // pushes shadow out past hamburger/close menu
+	}
+}
+
+
+.layout-navigation-open {
+	background: #f3f3f3; // #FED -- fixes iOS6 see https://jira.isitedesign.com/browse/BMC-106
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #f3f3f3;
+	float: left;
+	outline: none!important;
+	padding-top: 12px;
+
+	width: 60px;
+	height: 47px;
+
+	.navigation-open & {
+		height: 45px;
+		padding-top: 14px;
+		width: 60px;
+	}
+
+	@include media(breakpointLarge) {
+		display: none;
+	}
+
+	&:before {
+		color: #000;
+		@include icon();
+		content: $iconMenu;
+		@include font-size(36);
+		padding: 12px;
+
+		.navigation-open & {
+			content: '\e629';
+			@include font-size(33);
+			padding: 18px 14px 12px 4px;
+
+		}
+	}
+
+	.search-active & {
+		display: none;
+	}
+
+	.rgba .scrolled-down &,
+	.rgba .scrolled-up & {
+		background: rgba(255, 255, 255, 0);		// using this instead of transparent due to iOS6 bug noted above
+	}
+}
+
+/**
+ * 'nav' navigation key
+ */
+
+// 'nav' base .layout-header
+body.bmc-nav-loader-nav .layout-header {
+
+	height: $navHeaderHeight;
+
+	@include media(breakpointLarge) {
+		height: $navHighResHeaderHeight;
+		overflow: hidden;
+		position: static;
+		right: 0;
+	}
+}
+
+// 'nav' .layout-header under scrolled conditions
+html.rgba body.bmc-nav-loader-nav.scrolled-down .layout-header,
+html.rgba body.bmc-nav-loader-nav.scrolled-up .layout-header {
+	background: rgba(255, 255, 255, 0.85);
+
+	@include media(breakpointLarge) {
+		background: white;
+	}
+}
+
+body.bmc-nav-loader-nav	.nav-open .layout-header {
+	right: $lowResNavWidth;
+}

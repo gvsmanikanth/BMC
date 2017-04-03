@@ -1,0 +1,181 @@
+// @category modules
+
+// @function forms
+// Custom-styled form elements, including selects, checkboxes, and radio buttons.
+
+// IE9 and newer supported; IE8 and lower will have standard form elements
+// :not() targets > IE8, #foo is just a random ID
+fieldset:not(#foo) {
+	input[type="radio"],
+	input[type="checkbox"] {
+		float: left;
+		height: 1px;
+		margin: 0;
+		opacity: 0;
+		padding: 0;
+		width: 1px;
+
+		& + label {
+			clear: none;
+			display: inline-block;
+			padding: 6px 5px 4px 27px;
+
+			&:before {
+				@include icon();
+				margin-left: em(-18);
+				margin-right: em(10);
+			}
+
+			&.inline {
+				display: inline-block;
+			}
+		}
+	}
+
+	input[type="radio"] {
+		& + label {
+			&:before {
+				content: $iconRadioUnchecked;
+			}
+		}
+		&:active + label,
+		&:focus + label {
+			color: color(colorCorporateAction);
+		}
+		&:checked + label {
+			&:before {
+				content: $iconRadioChecked;
+			}
+		}
+	}
+
+	input[type="checkbox"] {
+		& + label {
+			&:before {
+				content: $iconCheckboxUnchecked;
+			}
+		}
+		&:active + label,
+		&:focus + label {
+			color: color(colorCorporateAction);
+		}
+		&:checked + label {
+			&:before {
+				content: $iconCheckboxChecked;
+			}
+		}
+	}
+
+	// these decorator styles are for browsers that can have custom selects
+	.decorator-select {
+		&:after {
+			content: url('#{$imagesFolder}bg-select-arrow.png');
+			height: $inputHeight;
+			pointer-events: none;
+			position: absolute;
+			right: 0px;
+			top: -2px;
+			width: 58px;
+			z-index: (z(content)+1);
+		}
+
+		select {
+			outline: none;
+		}
+	}
+}
+
+/*.oldie {
+	fieldset {
+		input[type='radio'],
+		input[type='checkbox'] {
+			& + span {
+				margin-left: em(4);
+				min-height: 20px;
+			}
+		}
+	}
+}*/
+
+fieldset {
+	label {
+		&.inline {
+			display: inline-block;
+			padding-right: 5px;
+		}
+	}
+}
+
+.decorator-select {
+	background: #e6e6e6;
+	border: 2px solid color(mediumGrey);
+	border-radius: $formElementBorderRadius;
+	@include box-sizing();
+	display: inline-block;
+	height: $inputHeight;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&.validation-error {
+		background: #e6e6e6 url('#{$imagesFolder}icon-error.png') em(8) center no-repeat;
+		padding: 0 0 0 em(32); //BMC-527 Replaced em(32 16)
+	}
+
+	&:active {
+		border: 2px solid color(colorCorporateAction);
+	}
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	select {
+		-webkit-appearance: none;
+		background: transparent;
+		border: none;
+		@include box-sizing();
+		color: black;
+		display: block;
+		height: $inputHeight;
+		padding: 6px 10px 6px 10px;
+		position: relative;
+		width: 100%;
+		z-index: zIndex(content);
+	}
+}
+
+input[type="file"] {
+	.js & {
+		visibility: hidden;
+		width: 0px;
+	}
+}
+
+.form-hidden {
+	display: none !important;
+}
+
+
+///Modal form CSS
+.modal-form-header{
+ .layout-inner-wrap{
+  .offset-hero-clear{ 
+    margin: 0px; 
+    width: 100%;
+  }
+  .offset-hero-inner-wrap{
+    width: 100%; 
+    margin-left: 0px; 
+    padding: 0px;
+  }
+  }
+}
+
+.modal-form-thankyou{
+  .layout-full-bleed{
+    padding: 0px;
+  }
+}
+
+

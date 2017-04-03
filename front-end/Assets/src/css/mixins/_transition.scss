@@ -1,0 +1,31 @@
+/// Adds a CSS transition with the given property, time, easing, and delay parameters.
+/// @param {String} $property [all] - The CSS property to which you wish to apply the transition.
+/// @param {Time} $duration [$transitionDuration] - The amount of time for the transition to take.
+/// @param {String} $easing [$transitionEasing] - The easing function to use with the transition.
+/// @param {Time} $delay [$transitionDelay] - The amount of time to delay the transition.
+/// @example
+/// transition()
+/// @example
+/// transition((property: background-color))
+/// @example
+/// transition((property: background-color, duration: 0.5s, easing: ease-in-out))
+@mixin transition($options: ()) {
+	$options: map-merge((
+		property: all,
+		duration: $transitionDuration,
+		easing: $transitionEasing,
+		delay: $transitionDelay
+	), $options);
+
+	$property: map-get($options, property);
+	$duration: map-get($options, duration);
+	$easing: map-get($options, easing);
+	$delay: map-get($options, delay);
+
+	@if (parseInt($delay) > 0) {
+		transition: $property $duration $easing $delay;
+	}
+	@else {
+		transition: $property $duration $easing;
+	}
+}

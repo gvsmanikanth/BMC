@@ -1,0 +1,244 @@
+/**
+ * _marquee.scss
+ * In tandem with jquery.marquee.js
+ * Both are style and js wrappers for the owl carousel jquery library
+ */
+
+ .marquee-container {
+
+ 	background-color: #f1f1f1;
+
+ 	.layout-inner-wrap {
+		padding: 0; // remove outer padding
+	}
+
+}
+
+.marquee {
+
+	position: relative;
+
+	.item {
+
+		display: none; // hide all items except for the first, avoids marquee item flashing on load while js kicks in
+
+		&:first-child {
+			display: block; // show first items
+		}
+
+		.mobile {
+
+			display: block;
+
+			@include media(breakpointLarge) {
+				display: none;
+			}
+		}
+
+		.desktop {
+
+			display: none;
+
+			@include media(breakpointLarge) {
+				display: block;
+			}
+		}
+	}
+
+	.owl-controls {
+		bottom: 20px;
+		left: 0;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	.owl-dots {
+
+		display: inline-block;
+		margin: auto;
+
+		.owl-dot {
+
+			@include box-sizing();
+
+			background-color: darken(#fff, 20%);
+			border: 3px solid #fff;
+			border-radius: 50%;
+			-webkit-box-shadow: 1px 6px 23px 2px rgba(0,0,0,0.7);
+			-moz-box-shadow: 1px 6px 23px 2px rgba(0,0,0,0.7);
+			box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5); 
+			display: inline-block;
+			height: 20px;
+			margin-left: 20px;
+			width: 20px;
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+
+			&.active {
+				background-color: color(mediumOrange);
+			}
+		}
+	}
+}
+
+.marquee.hidden {
+
+	opacity: 0; // faded in by init callback
+
+	.owl-controls {
+		display: none;
+	}
+}
+
+// fix for next slide's image not showing on drag
+// https://github.com/smashingboxes/OwlCarousel2/issues/435
+.owl-carousel .owl-item img {
+	-webkit-backface-visibility: hidden;
+}
+
+
+/**
+ * Animation Classes
+ */
+
+/**
+ * Direction: Right to Left
+ * IN:  slideRightIn
+ * OUT: slideLeftOut
+ */
+ @-webkit-keyframes slideRightIn {
+ 	0% {
+ 		-webkit-transform: translateX(100%);
+ 		        transform: translateX(100%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ }
+ @keyframes slideRightIn {
+ 	0% {
+ 		-webkit-transform: translateX(100%);
+ 		        transform: translateX(100%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ }
+
+ .slideRightIn {
+ 	-webkit-animation-name: slideRightIn;
+ 	        animation-name: slideRightIn;
+ 	animation-timing-function: ease-in-out;
+ 	-webkit-animation-timing-function: ease-in-out;
+
+ 	visibility: visible !important;
+ }
+
+ @-webkit-keyframes slideLeftOut {
+ 	0% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(-100%);
+ 		        transform: translateX(-100%);
+ 	}
+ }
+
+ @keyframes slideLeftOut {
+ 	0% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(-100%);
+ 		        transform: translateX(-100%);
+ 	}
+ }
+
+ .slideLeftOut {
+ 	-webkit-animation-name: slideLeftOut;
+ 	        animation-name: slideLeftOut;
+ 	animation-timing-function: ease-in-out;
+ 	-webkit-animation-timing-function: ease-in-out;
+
+ 	visibility: visible !important;
+
+ }
+
+/**
+ * Direction: Left to Right
+ * IN:  slideLeftIn
+ * OUT: slideRightOut
+ */
+
+ @-webkit-keyframes slideLeftIn {
+ 	0% {
+ 		-webkit-transform: translateX(-100%);
+ 		        transform: translateX(-100%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ }
+
+ @keyframes slideLeftIn {
+ 	0% {
+ 		-webkit-transform: translateX(-100%);
+ 		        transform: translateX(-100%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ }
+
+ .slideLeftIn {
+
+ 	-webkit-animation-name: slideLeftIn;
+
+ 	        animation-name: slideLeftIn;
+ 	animation-timing-function: ease-in-out;
+ 	-webkit-animation-timing-function: ease-in-out;
+
+ 	visibility: visible !important;
+ }
+
+ @-webkit-keyframes slideRightOut {
+ 	0% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(100%);
+ 		        transform: translateX(100%);
+ 	}
+ }
+
+ @keyframes slideRightOut {
+ 	0% {
+ 		-webkit-transform: translateX(0%);
+ 		        transform: translateX(0%);
+ 	}
+ 	100% {
+ 		-webkit-transform: translateX(100%);
+ 		        transform: translateX(100%);
+ 	}
+ }
+
+ .slideRightOut {
+ 	-webkit-animation-name: slideRightOut;
+ 	        animation-name: slideRightOut;
+ 	animation-timing-function: ease-in-out;
+ 	-webkit-animation-timing-function: ease-in-out;
+
+ 	visibility: visible !important;
+
+ }

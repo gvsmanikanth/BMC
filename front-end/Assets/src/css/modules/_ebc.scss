@@ -1,0 +1,453 @@
+//MIXINS
+//output any identifier with padding or font size adjusted by percentage from any base value. Also allows (except for font-size) specifying suffix
+@function multChange($x,$y){
+	$result: parseInt($x) * parseInt($y);
+	@return $result;
+}
+@mixin up-down($base:18,$multiplier:2,$identifier:"padding",$suffix:"px"){
+	$result: multChange($multiplier,$base);
+	
+	@if($identifier == "font-size"){
+		@include font-size($result);
+	}@else{
+		#{$identifier}: $result+unquote($suffix);
+	}
+}
+//use inline block browser compatability fixes
+@mixin inline-block{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+
+//hide or show element at breakpoint. choose display type of table,inline-block, inline or block
+@mixin hide-show($hideshow:show,$breakpoint:breakpointMedium,$type:block){
+	@if($hideshow == hide){		
+        @include media($breakpoint) {
+			display: none;
+        }
+	}@else{
+		display: none;
+        @include media($breakpoint) {
+			@if($type==inline-block){
+				@include inline-block;
+			}@else{
+				display: $type;
+			}
+        }
+	}
+}
+
+//variables
+$basePadding: rem(15); //multChange($baseFontSize/2);
+
+//scss
+.ebc {
+	
+	/*utils */
+	.no-break {
+	   white-space: nowrap;
+	}
+	.bk-ship-grey {
+		background-color: color(ship-gray);
+	}
+	.bk-white {
+		background-color: #fff;
+	}
+	
+	//@include hide-show("hide","breakpointMedium");
+	$hideShowMap:(breakpointTiny,breakpointExtraSmall,breakpointSmall,small,breakpointMedium,breakpointLarge,breakpointExtraLarge,breakpointExtraExtraLarge);
+	@each $break in $hideShowMap{
+		.show-#{$break}{
+			@include hide-show(show,#{$break});
+		}
+		.hide-#{$break}{
+			@include hide-show(hide,#{$break});
+		}
+		.show-inline-#{$break}{
+			@include hide-show(show,#{$break},inline-block);
+		}
+		.hide-inline-#{$break}{
+			@include hide-show(hide,#{$break},inline-block);
+		}
+	}
+	
+	//overriding basic grid breakpoints. had to do this because the breakpoints used in the grid differ from the other main breakpoints. For the map i need to match
+	$break-grid: (1:8.33333,2:16.66667,3:25,4:33.33333,5:41.66667,6:50,7:58.33333,8:66.66667,9:75,10:83.33333,11:91.66667,12:100);
+	@include media(breakpointSmall) {
+		.xs-hide {
+			display: none;
+		}
+		.p1 {
+			padding: .5rem
+		}
+		.py1 {
+			padding-top: .5rem;
+			padding-bottom: .5rem
+		}
+		.px1 {
+			padding-left: .5rem;
+			padding-right: .5rem
+		}
+		.p2 {
+			padding: 1rem
+		}
+		.py2 {
+			padding-top: 1rem;
+			padding-bottom: 1rem
+		}
+		.px2 {
+			padding-left: 1rem;
+			padding-right: 1rem
+		}
+		.p3 {
+			padding: 1.5rem;
+		}
+		.py3 {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+		.px3 {
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+		.p4 {
+			padding: 2rem;
+		}
+		.py4 {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+		.px4 {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.sm-col {
+			float: left;
+		}
+		.sm-col-right {
+			float: right;
+		}
+		.sm-flex {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex
+		}
+		@each $int, $col in $break-grid{
+			.sm-col-#{$int} {
+				width: $col+%;
+			}
+		}
+	}
+	@include media(breakpointMedium) {
+		.sm-hide {
+			display: none;
+		}
+		.p3 {
+			padding: 2rem;
+		}
+		.py3 {
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+		}
+		.px3 {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+		.p4 {
+			padding: 3rem;
+		}
+		.py4 {
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+		}
+		.px4 {
+			padding-left: 3rem;
+			padding-right: 3rem;
+		}
+		.md-mr3 {
+			margin-right: 2em;
+		}
+		.md-col {
+			float: left;
+		}
+		.md-col-right {
+			float: right;
+		}
+		.md-flex {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex
+		}
+		@each $int, $col in $break-grid{
+			.md-col-#{$int} {
+				width: $col+%;
+			}
+		}
+	}
+	@include media(breakpointLarge) {
+		.md-hide {
+		display: none;
+		}
+		.p4 {
+			padding: 4rem;
+		}
+		.py4 {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+		.px4 {
+			padding-left: 4rem;
+			padding-right: 4rem;
+		}
+		.lg-mr3 {
+			margin-right: 3em;
+		}
+		.lg-col {
+			float: left;
+		}
+		.lg-col-right {
+			float: right;
+		}
+		.lg-flex {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex
+		}
+		@each $int, $col in $break-grid{
+			.lg-col-#{$int} {
+				width: $col+%;
+			}
+		}
+	}
+	@include media(breakpointExtraLarge) {
+		.lg-hide {
+			display: none;
+		}
+		.xl-col {
+			float: left;
+		}
+		.xl-col-right {
+			float: right;
+		}
+		@each $int, $col in $break-grid{
+			.xl-col-#{$int} {
+				width: $col+%;
+			}
+		}
+	}
+	
+	/* typeography */
+	.larger {
+		margin-bottom: .5em;
+		@include font-size($baseFontSize);
+		@include media(breakpointLarge) {
+			@include font-size(20);
+		}
+	}
+	
+	/*lead*/
+	.lead {
+		&.-md {
+			@include font-size($baseFontSize);
+			@include media(breakpointMedium) {
+				@include font-size(20);
+			}
+			@include media(breakpointLarge) {
+				@include font-size(24);
+			}
+		}
+		@include media(breakpointLarge) {
+			&.-oll {
+				width: auto;
+			}
+		}
+		@include media(breakpointExtraLarge) {
+			&.-oll {
+				max-width: 1500px;
+			}
+		}
+	}
+	
+	/* section specific */
+	section {
+		p:last-of-type {
+		   margin-bottom: 0;
+		}
+		&.limited {
+		   .layout-inner-wrap {
+			   max-width: 1050px;
+		   }
+		}
+		/* banner */
+		&.layout-full-bleed {
+			padding: $basePadding 0;
+			&.layout-full-bleed-image {
+				padding: $basePadding*17 0 $basePadding*2.5 0;
+				h1 {
+					margin: 15px 0 20px 0;
+					font-weight: 700; 
+					line-height: 1.3em;
+					@include media(breakpointMedium) {
+						margin: 0;
+					}
+				}
+				p {
+					&.hero-caption {
+						&.super {
+							margin-bottom: 0;
+							@include up-down($baseFontSize,1,'font-size');
+							@include media(breakpointMedium) {
+								@include up-down($baseFontSize,1.16,'font-size');
+							}
+						}
+						&.sub {
+							margin-top: 10px;
+						}
+					}
+				}
+			}
+	   }
+	   &.logos {
+			img{
+				margin: 0;
+				max-width: 45%;
+				height: auto;
+				@include media(breakpointExtraExtraLarge) {
+					margin: 0 8px;
+				}
+			}
+		}
+		&.client-quotes {
+			.l-quotes {
+				@include font-size(60);
+				line-height: $baseFontSize+px;
+				margin-bottom: -($baseFontSize/2)+px;
+				vertical-align: bottom;
+				@include inline-block;
+			}
+			.wrapper-nested{
+				margin: 0;
+				.two-up{
+					&:first-of-type{
+						margin-bottom: 15px;
+					}
+				}
+			}
+			footer {
+				@include font-size(16);
+				@include media(breakpointMedium) {
+					@include font-size(18);
+				}
+			}
+		}
+		&.ebc-map{
+			.map-bk{
+				background-image: none;
+				background-position: 50%;
+				background-repeat: no-repeat;
+				background-size: 100% auto;
+				
+				@include media(breakpointExtraLarge) {
+					background-size: auto;
+				}
+				@include media(breakpointMedium) {
+					background-size: 45% auto;
+					background-image: url("#{$imagesFolder}ebc-map.jpg");
+				}
+				.map-highlight{
+					display: block;
+					margin-bottom: 20px;
+					margin-left: auto;
+					margin-right: auto;
+					box-sizing: border-box;
+					max-width: 100%;
+					height: auto;
+					@include media(breakpointMedium) {
+						margin-bottom: 0;
+						&:first-of-type {
+							margin-bottom: 20px;
+						}
+					}
+					&.india{
+						border-color: color(persian-green);
+					}
+					
+				}
+				.map-left{
+					img{
+						border-right: 12px solid color(mediumOrange);
+					}
+				}
+				.map-center{
+					@include hide-show("show","breakpointMedium");
+				}
+				.map-right{
+					img{
+						border-left: 12px solid color(mediumOrange);
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+		
+		//padding top and bottom
+		@each $abr, $side in (pt:padding-top,pb:padding-bottom){
+			@for $i from 1 through 6 {
+				.#{$abr}#{$i}{
+					#{$side}: 12*$i+px;
+				}
+				@include media(breakpointLarge) {
+					.#{$abr}#{$i}{
+						#{$side}: $basePadding*$i;
+					}
+				}
+			}
+		}
+	   .layout-inner-wrap {
+			@include media(breakpointLarge) {
+				&.-oll {
+					width: auto;
+				}
+			}
+			@include media(breakpointExtraLarge) {
+				&.-oll {
+					max-width: 1100px;
+				}
+			}
+		}
+	}
+ 
+	/* bullets */
+	.orange-tick-bullets {
+		padding-top: 0.556rem;
+		&.solid {
+			li {
+				background-image: none;
+				padding-left: 1.3rem;
+				position: relative;
+				&:before {
+					width: 12px;
+					height: 12px;
+					background: color(mediumOrange);
+					-webkit-border-radius: 100%;
+					-moz-border-radius: 100%;
+					border-radius: 100%;
+					position: absolute;
+					left: 0;
+					top: 5px;
+					display: block;
+					content: "";
+					@include media(breakpointLarge) {
+						top: 8px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+// @category base
+
+// @function fonts
+// Loads all of the site's @font-face declarations.  These are loaded first.
+@import "fonts/icomoon";
+
+
+// Implicitly declare the font-face for Safari 5: (https://jira.isitedesign.com/browse/BMC-68)
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://themes.googleusercontent.com/static/fonts/opensans/v6/u-WUoqrET9fUeobQW7jkRT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}

@@ -1,0 +1,706 @@
+// @category modules
+
+// @function utility
+// The place for general utility classes.
+%divider-config {
+	border: none;	// reset border to none; this allows the class to be used on horizontal rules
+	margin-top: $gutterInPx;
+	padding-top: 0;
+}
+
+.divider {
+	@extend %divider-config;
+	border-top: 1px solid color(colorHint);
+
+	&.row {
+		margin-top: 0;
+	}
+}
+
+.divider-large {
+	border: none;
+	border-top: 1px solid color(colorHint);
+	margin-top: em(36);
+	padding-top: em(36);
+
+	@include media(breakpointLarge) {
+		margin-top: em(68);
+		padding-top: em(68);
+	}
+}
+
+.divider-secondary {
+	@extend %divider-config;
+	border-top: 1px dashed color(colorEmphasis);
+}
+
+.footnote {
+	@include font-size(12);
+
+	.layout-secondary & {
+		@include font-size(12);
+	}
+}
+
+.wrapper {
+	@include row();
+}
+
+.wrapper-flush {
+	@include row();
+	padding: 0;
+}
+
+.wrapper-nested {
+	@include row();
+
+	margin-top: $gutterInPx;
+	padding: 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.two-up,
+.three-up,
+.four-up {
+	@include box-sizing();
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+
+	// reset any potential top margin issues
+	&:first-child {
+		margin-top: 0;
+	}
+
+	// starting on the second item
+	&.nth-child-np2 {
+		margin-top: columns(0.4);
+	}
+
+	@include media(breakpointLarge) {
+		left: 0.25em;	// compensate for negative margin-left
+		margin-left: -0.25em;	// eliminate whitespace created by inline-block
+		position: relative;
+
+		// starting on the second item
+		&.nth-child-np2 {
+			margin-top: 0;
+		}
+	}
+}
+
+.two-up {
+	@include media(breakpointLarge) {
+		margin-right: columns(0.4);
+		width: columns(5.8);
+
+		.page-campaign-landing & {
+			//margin: em(12 18) columns(0.4) em(12 18) -0.25em !important; // use of important keeps this simple; always use these margins when on a campaign landing page
+      margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
+			width: columns(5.6); //Changed 5.6 to 5.7
+		}
+
+		// second of each row
+		&.nth-child-2n {
+			margin-right: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np3 {
+			margin-top: columns(0.4);
+		}
+
+		.layout-secondary & {
+			margin-right: 0;
+			width: columns(12);
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.three-up {
+	@include media(breakpointLarge) {
+		margin-right: columns(0.3);
+		width: columns(3.8);
+
+		// last of each row
+		&.nth-child-3n {
+			margin-right: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np4 {
+			margin-top: columns(0.3);
+		}
+	}
+}
+
+.four-up {
+	@include media(breakpointLarge) {
+		margin-right: columns(0.4);
+		width: columns(5.8);
+
+		// last of each row
+		&.nth-child-2n {
+			margin-right: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np3 {
+			margin-top: columns(0.4);
+		}
+	}
+
+	@include media(breakpointExtraLarge) {
+		margin-right: columns(0.26); //BMC-527 - Replaced 0.2666 with 0.26
+		width: columns(2.8);
+
+		// last of each row (override from breakpointLarge)
+		&.nth-child-2n {
+			margin-right: columns(0.26);
+		}
+		// last of each row
+		&.nth-child-4n {
+			margin-right: 0;
+		}
+
+		// starting on the second row (override from breakpointLarge)
+		&.nth-child-np3 {
+			margin-top: 0;
+		}
+		// starting on the second row
+		&.nth-child-np5 {
+			margin-top: columns(0.26);
+		}
+	}
+}
+
+.accessibility {
+	height: 0;
+	left: -9999em;
+	line-height: 0;
+	position: absolute;
+	text-indent: -9999em;
+}
+
+.learn-more:after {
+	content:" \00203A";
+}
+
+.home .learn-more {
+		//font-weight: 800; //WEB-607
+}
+
+.brand {
+	@include svg-image(bmc_logo_header);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	float: left;
+	text-indent: -9999em;
+
+	.search-active & {
+		display: none;
+
+		@include media(breakpointMedium) {
+			display: block;
+		}
+	}
+}
+
+.bmc-nav-loader-navigation .brand {
+	height: 36px;
+	margin: em(10) 0 0 em(16);
+	width: 108px;
+
+	/*.ie8 & {
+		margin-top: em(5);
+		margin-left: em(15);
+		height: 50px;
+		min-width: 125px;
+	}*/
+
+	@include media(breakpointLarge) {
+		height: 45px;
+		margin: 1.1em 0 0;
+		width: 135px;
+
+		/*.ie8 & {
+			margin-top: em(18);
+			margin-left: -1 * em(12);
+		}*/
+	}
+}
+
+.bmc-nav-loader-nav .brand {
+	height: 40px;
+	margin: em(16 , (context: 18)) 0 0; //BMC-527 em(16 18)
+	width: 120px;
+
+	/*.ie8 & {
+		height: 50px;
+		min-width: 140px;
+	}*/
+
+	@include media(breakpointLarge) {
+		height: 50px;
+		margin: 1.5em 0;
+		width: 150px;
+	}
+}
+
+.dl-adjacent {
+	dt {
+		@include media(breakpointMedium) {
+			float: left;
+			//margin: 0 em(24 16) em(16 16) 0;
+			//min-width: em(110 16);
+			margin: 0 em(24) em(16) 0; //BMC - 527
+      min-width: em(110); //BMC -527
+			width: columns(2);
+		}
+	}
+
+	dd {
+		border-bottom: 1px solid color(seashell);
+		margin: 0 0 em(16); //BMC-527
+		padding-bottom: em(16);
+	}
+}
+
+.legal-copyright {
+	color: color(colorFooterLight);
+	@include font-size(12);
+
+	@include media(breakpointLarge) {
+		box-sizing: border-box;
+		float: $defaultFloat;
+		margin: 0;
+		min-height: 1px;
+		width: 100%; //BMC-527 Added default width 100%;
+		padding: 1.5*$gutterInPx $gutterInPx;
+		width: columns(10);
+	}
+}
+
+.right {
+	margin: 0 auto $gutterInPx;
+
+	@include media(breakpointMedium) {
+		float: right;
+		margin: 0 0 $gutterInPx ($gutterInPx / 2);
+	}
+}
+
+.testimonial {
+	@extend %divider-config;
+	background-color: #00a79d;
+	margin: 4em 0;
+	padding: 40px;
+	position: relative;
+
+	&.row {
+		margin-top: 0;
+	}
+
+	p {
+		color:#cfe5e4;
+		@include font-size(36);
+		font-weight: 300;
+		margin-bottom: 0;
+
+
+		@include media(breakpointTiny) {
+			@include font-size(20);
+		}
+
+		@include media(breakpointExtraSmall) {
+			@include font-size(20);
+		}
+
+		@include media(breakpointSmall) {
+			@include font-size(20);
+		}
+
+		@include media(breakpointMedium) {
+			@include font-size(36);
+		}
+
+		@include media(breakpointLarge) {
+			@include font-size(36);
+		}
+	}
+
+	a {
+		color: #ffffff;
+		@include font-size(16);
+		text-decoration: none;
+		//font-weight: 800; //WEB-550
+
+		&:hover, &:active {
+			color: #00655E;
+		}
+
+		&.learn-more {
+			@include font-size(16);
+			//font-weight: 800; //WEB-607
+		}
+	}
+
+	cite {
+		color: #cfe5e4;
+		display: block;
+		@include font-size(16);
+		//margin-top: em(24 16);
+		margin-top: em(24); //BMC-527 Removed 16 from definition
+	}
+
+	@include media(breakpointMedium) {
+		padding: 60px;
+	}
+
+	// specific changes for testimonials contained within .page-campaign-landing
+	.page-campaign-landing & {
+		padding:2em;
+		margin: 2em 0;
+
+		p {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.testimonial-video,
+.testimonial-pdf,
+.testimonial-case-study {
+	// we need to apply the icon to the first child and not the testimonial-pdf class itself because :before is being used for the grey border that hovers above the element
+	> *:first-child {
+		&:before {
+			@include icon();
+			@include font-size(18);
+			position: absolute;
+			top: 18px;
+
+			@include media(breakpointMedium) {
+				top: 24px;
+			}
+		}
+	}
+}
+
+.testimonial-video {
+	> *:first-child {
+		&:before {
+			content: $iconVideo;
+		}
+	}
+}
+
+.testimonial-pdf {
+	> *:first-child {
+		&:before {
+			content: $iconPDF;
+		}
+	}
+}
+
+.link-icon-video {
+	&:before {
+		content: $iconVideo;
+	}
+}
+
+.link-icon-pdf {
+	&:before {
+		content: $iconPDF;
+	}
+}
+
+.link-icon-pdf-lightgrey {
+	&:before {
+		content: $iconPDF;
+		color:#e4e5e6 !important;
+	}
+}
+
+.link-icon-pdf-lightblue {
+	&:before {
+		content: $iconPDF;
+		color:#6290a3 !important;
+	}
+}
+
+.link-icon-document {
+	&:before {
+		content: $iconDocument;
+	}
+}
+
+.link-icon-resource-document {
+      background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
+      background-position: -2px -2px;
+      padding-left: 27px;
+      background-size: 1rem;  
+}
+    
+.link-icon-resource-documents {
+      background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
+      background-position: 0 -3.71rem;
+      padding-left: 27px;
+      background-size: .92rem;
+}
+
+.link-icon-word {
+	&:before {
+		content: $iconWord;
+	}
+}
+
+.link-icon-excel {
+	&:before {
+		content: $iconExcel;
+	}
+}
+
+.link-icon-zip {
+	&:before {
+		content: $iconZip;
+	}
+}
+
+.link-icon-powerpoint {
+	&:before {
+		content: $iconPowerPoint;
+	}
+}
+
+
+.logo-outer-wrap {
+	margin:0 auto;
+	width:100%;
+	text-align:center;
+
+	.columnleft {
+		margin:0 auto;
+		width:40%;
+		margin-right:10%;
+		text-align:center;
+		float: left;
+	}
+
+	.columnright {
+		margin:0 auto;
+		width:40%;
+		margin-right:0%;
+		text-align:center;
+		float: left;
+	}
+
+	.single-line {
+		float: left;
+		width:10%;
+	}
+
+	.two-column {
+		float: left;
+		width:80%;
+	}
+
+	.one-column {
+		width:100%;
+	}
+
+
+}
+
+#single-row {
+	display: none;
+
+
+	@include media(breakpointMedium) {
+		display: none;
+	}
+
+
+	@include media(breakpointLarge) {
+		display: block;
+
+	}
+}
+
+#double-column {
+	display: none;
+
+
+	@include media(breakpointMedium) {
+		display: block;
+
+	}
+
+
+	@include media(breakpointLarge) {
+		display: none;
+
+	}
+}
+
+
+#single-column {
+	display: block;
+
+	@include media(breakpointExtraSmall) {
+		display: block;
+	}
+
+	@include media(breakpointMedium) {
+		display: none;
+	}
+
+
+	@include media(breakpointLarge) {
+		display: none;
+
+	}
+}
+
+
+#three-columns {
+	display: none;
+
+
+	@include media(breakpointMedium) {
+		display: none;
+	}
+
+
+	@include media(breakpointLarge) {
+		display: block;
+
+	}
+
+}
+
+#two-columns {
+	display: none;
+
+
+	@include media(breakpointExtraSmall) {
+		display: block;
+
+	}
+
+	@include media(breakpointSmall) {
+		display: block;
+
+	}
+
+
+	@include media(breakpointMedium) {
+		display: block;
+
+	}
+
+
+	@include media(breakpointLarge) {
+		display: none;
+
+	}
+}
+
+
+.brands {
+	list-style: none;
+	padding: 0 0 0 20px;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0 15px 0 0;
+	}
+}
+
+.three-column {
+
+	ul	{
+		list-style: none;
+		list-style-image:none;
+		line-height:0;
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 1em;
+		padding: 0 ;
+		text-align: left;
+		width:30%;
+		vertical-align:top;
+
+		&:last-child {
+		margin-right: 0;
+	}
+
+  }
+
+  @include media(breakpointExtraSmall) {
+		li {
+			display: block;
+			vertical-align:top;
+			width:100%;
+		}
+	}
+
+	@include media(breakpointSmall) {
+		li {
+			display: block;
+			margin-right: 2em;
+			vertical-align:top;
+			width:100%;
+		}
+	}
+
+
+	@include media(breakpointMedium) {
+		li {
+			display: block;
+			margin-right: 2em;
+			vertical-align:top;
+			width:100%;
+		}
+	}
+
+	@include media(breakpointLarge) {
+		li {
+			display: inline-block;
+			margin-right: 1em;
+			padding: 0 ;
+			text-align: left;
+			vertical-align:top;
+			width:40%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+  		}
+	}
+
+	@include media(breakpointExtraLarge) {
+		li {
+			display: inline-block;
+			margin-right: 1em;
+			padding: 0 ;
+			text-align: left;
+			vertical-align:top;
+			width:31%;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

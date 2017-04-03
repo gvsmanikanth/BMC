@@ -1,0 +1,882 @@
+/**
+ * Support base overrides
+ */
+// Alter default body tag styling
+body.support-central {
+	padding-top: 0;
+}
+
+
+/**
+ * Support Helpers
+ */
+
+// Local logged in/out extensions
+%hide-on-logged-out {
+	.support-logged-out  & {
+		display: none;
+	}
+}
+
+%hide-on-logged-in {
+	.support-logged-in  & {
+		display: none;
+	}
+}
+
+.support-hide-while-loading {
+	display: none;
+}
+
+/**
+ * Support elements
+ * Small and used throughout
+ */
+
+.support-chat-now {
+  right: 0px;
+	background-color: color(mediumOrange);
+	position: fixed;
+	padding: 0.5em;
+	bottom:0px;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0px 0px;
+	color: #fff;
+	transition: right .5s ease;
+	z-index: 20;
+	transform: translateY(0%) translateX(0%) rotate(0deg); 
+	-webkit-transform: translateY(0%) translateX(0%) rotate(0deg);
+	-ms-transform: translateY(0%) translateX(0%) rotate(0deg);
+	-webkit-transition: right .5s ease;
+  
+  .chat-now-close{
+  &:hover{
+        color:yellow;
+      }
+  }
+  
+  .chat-now-close::before {
+      content: "";
+      font-family: "icomoon";
+      font-size: 1rem;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 1;
+      text-transform: none;
+      position: absolute;
+      right: 0.3em;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px rgba(241, 93, 34, 0.07);
+      transition: color 0.25s ease-out 0s;
+      top: 0.5rem;
+  }
+  
+  // only show Chat Now in Large Breakpoint mode.
+  //Start
+    display: none;
+    @include media(breakpointLarge) {
+      display: block;
+    }
+  //End
+  
+  a{
+    color: #fff;
+  }
+  
+  & img{
+    float: right;
+    display: inline-block;
+    width: 60px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top:.8rem;
+  }
+  
+  /*hover effect on Need Help Div*/
+ //.support-content{
+  &:hover{
+    img{
+      -webkit-transform: scale(1.3);
+      transform: scale(1.3);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+    }
+  }
+//  }
+  
+  & b{
+  /*Added for IE - Hover effect*/
+    margin-right:.25em;
+  }
+
+
+	&.on-screen {
+
+		@include media(breakpointMedium) {
+			right: 1em;
+		}
+
+		@include media(breakpointLarge) {
+			padding: 1em;
+			right: 1.5em;
+		}
+	}
+
+	/*.oldie & {
+		background-image:url(#{$imagesFolder}need-help-button.png);
+		background-repeat: no-repeat;
+		height: 117px;
+		margin-top: -117px;
+		overflow: hidden;
+		padding: 1em;
+		right: 0 !important;
+		text-indent: -999px;
+		width: 35px;
+	}*/
+}
+
+// persistent fixed position tab similar to .support-chat-now
+.fixed-tab-chat-now {
+	display: none;
+
+	@include media(breakpointLarge) {
+		display: block;
+	}
+
+	.chat-now-link {
+		background: #19a49a url(#{$imagesFolder}button-fixed-chat-now.png) no-repeat;
+		border-radius: 5px 0 0 5px;
+		@include font-size(15);
+		color: #fff;
+		height: 138px;
+		opacity: .93;
+		outline: 0;
+		position: fixed;
+		right: -14em;
+		text-indent: -999em;
+		top: 35%;
+		transition: right .5s ease;
+		width: 38px;
+		z-index: 20;
+
+	  	-webkit-transition: right .25s ease 2s, background-color .25s ease;
+
+	  	&.on-screen {
+		  	right: 0;
+	  	}
+
+	  	&:hover,
+	  	&:active {
+	  		background-color: #0c7d75;
+	  	}
+
+	  	&:before {
+		  	@include icon();
+		  	content: '\e96d';
+		  	@include font-size(18);
+		  	left: em(8);
+		  	position: absolute;
+		  	top: em(8);
+	  	}
+	}
+}
+
+
+// A simple way to use a full-width section with even top/margin spacing
+// and a border to separate sections.
+.support-section-divider {
+	background-color: #fff;
+	padding: 1em 0 !important;
+
+	&.above-support-section-container {
+		@extend %hide-on-logged-out;
+	}
+
+	.layout-inner-wrap {
+		border-bottom: 1px solid color(seashell);
+	}
+}
+
+/**
+ * Support component container default
+ * Apply to support component containers where necessary to apply consistent
+ * styling
+ */
+.support-section-container {
+
+	&, &.layout-full-bleed {
+		padding: 1em 0;
+	}
+
+	h2 {
+		margin-bottom: 1em;
+		vertical-align: middle;
+	}
+}
+
+
+/**
+ * Support component containers
+ */
+
+.support-account-container {
+
+	padding: 0 !important;
+
+	.account-actions-wrapper, .account-details-wrapper, .acccount-user-wrapper {
+		line-height: 100%;
+		padding-bottom: 0.45em;
+
+		&:first-child {
+			padding-top: 0.45em;
+		}
+	}
+
+	.account-actions-wrapper {
+		background-color: #ececec;
+		text-align: right;
+		a, a:hover {
+			color: color(darkGrey);
+			font-weight: 600;
+		}
+	}
+
+	.account-details-wrapper {
+		@extend %hide-on-logged-out;
+		padding: 0.5em 0;
+	}
+
+
+	.account-actions,
+	.account-user,
+	.action-details {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.list-piped {
+
+		.action {
+			text-align: left;
+
+			@include media(breakpointMedium) {
+				line-height: 48px;
+			}
+		}
+
+		.action-piped {
+			&:after {
+				@include media(breakpointMedium) {
+					color: color(mediumGrey);
+					content: "|";
+					left: 1em;
+					line-height: 48px;
+					position: relative;
+				}
+			}
+		}
+	}
+
+	.account-actions,
+	.account-user {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(breakpointMedium) {
+			width: 50%;
+
+			&:last-child {
+				margin-left: -0.35em; // overcome spacing between inline-block elements
+			}
+		}
+	}
+
+	// list items
+	.action,
+	.account-user li,
+	.action-detail {
+		display: block;
+		margin-bottom: 0.5em;
+		text-align: center;
+		width: 100%;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include media(breakpointMedium) {
+			display: inline-block;
+			margin-bottom: 0;
+			width: auto;
+		}
+	}
+
+	.account-user {
+		margin-bottom: 0.5em;
+		margin-left: 0;
+		margin-top: 0.5em;
+		margin-right: -0;
+		text-align: left;
+
+		@include media(breakpointMedium) {
+			margin: 0;
+			width: 35%;
+
+			.welcome {
+				margin-right: 1.5em;
+			}
+
+			/*.oldie & {
+				margin-right: -0.5em !important;
+			}*/
+		}
+	}
+
+	.account-actions {
+		text-align: center;
+
+		@include media(breakpointMedium) {
+			text-align: right;
+			width: 65%;
+		}
+
+		@include media(breakpointLarge) {
+			text-align: right;
+		}
+
+		.action {
+			display: inline-block;
+			font-size: 0.8em;
+			margin-left: 1.5em;
+			width: auto;
+
+			@include media(breakpointMedium) {
+				margin-left: 0;
+				text-align: right;
+			}
+
+			&:before {
+				content: '';
+
+				@include media(breakpointMedium) {
+					text-align: right;
+					content: '|';
+					color: color(mediumGrey);
+					margin: 0 1.25em;
+				}
+			}
+
+			&:first-child {
+				margin-left: 0;
+				&:before {
+					margin: 0;
+					content: '';
+				}
+			}
+		}
+
+		.alerts {
+			color: color(mediumOrange);
+		}
+	}
+
+	.action-detail {
+		text-align: left;
+		vertical-align: middle;
+
+		.action-label {
+			color: darken(color(mediumGrey), 10%);
+			font-size: 0.85em;
+			font-weight: 800;
+			margin-bottom: 0.35em;
+			text-transform: uppercase;
+		}
+
+		.action-value {
+			font-weight: 600;
+		}
+
+		@include media(breakpointMedium) {
+			display: inline-block;
+			margin-bottom: 2em;
+			margin-right: 2em;
+			margin-left: 0;
+			margin-top: 2em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@include media(breakpointLarge) {
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+	}
+
+	.action-detail.support-id {
+		display: inline-block;
+		margin-bottom: 1.5em;
+		width: 100%;
+
+		@include media(breakpointLarge) {
+			width: auto;
+		}
+
+		.decorator-select {
+			display: inline-block;
+			vertical-align: middle;
+			width: 250px;
+		}
+	}
+
+	// multiple action details
+	.action-detail-group {
+		display: inline-block;
+		margin-bottom: 0;
+		vertical-align: top;
+		width: 100%;
+
+		@include media(breakpointMedium) {
+			margin-right: 2em;
+			width: auto;
+		}
+
+		.action-detail {
+			display: block;
+			margin-top: 1em;
+
+			@include media(breakpointMedium) {
+				display: inline-block;
+				margin-bottom: 1em;
+				margin-top: 0;
+			}
+
+			&:last-child {
+				@include media(breakpointMedium) {
+					clear: left;
+				}
+				@include media(breakpointLarge) {
+					clear: none;
+				}
+			}
+		}
+
+		.action-value {
+			line-height: 18px;
+			@include media(breakpointLarge) {
+				// value matches height of decorator select
+				line-height: 48px;
+			}
+		}
+	}
+}
+
+.support-search {
+
+	&.support-section-container { padding-top: 1em; } // combat specificity to apply top padding
+	text-align: center;
+
+	.support-search-top {
+		display: inline-block;
+		padding: 1em 0;
+		text-align: center;
+		width: 100%;
+
+		@include media(breakpointLarge) {
+			padding: 1.25em 0;
+		}
+	}
+
+	.support-search-header {
+		display: inline-block;
+		margin-bottom: 0.75em;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 3%;
+		vertical-align: middle;
+
+		@include media(breakpointLarge) {
+			margin-bottom: 0.25em;
+			vertical-align: middle;
+		}
+	}
+
+	// used as the container for the search field
+	fieldset {
+		display: inline-block;
+		margin: 0;
+		vertical-align: middle;
+		width: 75%;
+
+		@include media(breakpointLarge) {
+			width: 40%;
+		}
+	}
+
+	// specific tooltip positioning in this context
+	// modifies @module contextual-tooltip
+	.contextual-tooltip {
+		left: -5px;
+		top: -15px;
+	}
+
+	.support-search-tips {
+		@extend %clearfix;
+		margin-top: 0.8em;
+		text-align: right;
+
+		.search-tips-example {
+			color: lighten(color(darkGrey), 15%);
+			margin-right: 1.5em;
+		}
+
+		.search-tips-other {
+			font-weight: 600;
+		}
+	}
+
+	.logged-out-options {
+		@extend %hide-on-logged-in;
+		font-size: 1.25em;
+
+		.btn-login {
+			display: inline-block;
+			margin-left: 1.25em;
+		}
+	}
+
+	.support-search-areas {
+		padding-top: 0;
+
+		h3 {
+			color: color(colorCorporateAction);
+			text-shadow: none;
+			&:after {
+				content: '\00a0\00a0\203A';
+				display: inline;
+			}
+		}
+
+		p {
+			color: color(colorBase);
+		}
+
+		@include media(breakpointExtraLarge) {
+			padding-left: 3em; //WEB-1387: Reduced padding from 8em to 3em for large screens
+			padding-right: 3em;
+		}
+
+		.icon-point-list-item:hover h3 {
+			color: color(darkBlue);
+		}
+	}
+
+	.support-search-drawer-toggle {
+		background-color: #eee;
+		padding: 1em;
+		text-align: center;
+	}
+}
+
+.support-promo {
+	$breakpointSwapContainers: breakpointLarge;
+
+	padding: 0 !important;
+	text-align: center;
+
+	img { width: 100%; }
+
+	.narrow-promo-container {
+		display: flex;
+		@include media($breakpointSwapContainers) {
+			display: none;
+		}
+	}
+
+	.wide-promo-container {
+		display: none;
+		@include media($breakpointSwapContainers) {
+			display: flex;
+		}
+	}
+}
+
+.support-getting-started {
+	padding: 2em 0 !important;
+
+	h2 {
+		margin-bottom: 1em;
+	}
+
+	.support-getting-started-topics {
+		padding-left: 0 !important;
+
+		box-sizing: border-box;
+		padding-bottom: 3em;
+		padding-top: 0;
+		position: relative;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			margin-bottom: 2.5em;
+
+			p {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	.support-getting-started-topics.carousel {
+		li {
+			// extra bottom margin not needed in the carousel version
+			margin-bottom: 0;
+		}
+
+		.owl-dots {
+
+			text-align: center;
+
+			.owl-dot {
+				border: 1px solid black;
+				border-radius: 50%;
+				display: inline-block;
+				height: 10px;
+				width: 10px;
+				margin-left: 5px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				&.active {
+					background-color: #000;
+				}
+			}
+		}
+	}
+}
+
+.support-recent-issues {
+
+	@extend %hide-on-logged-out;
+
+	.support-recent-issues-header {
+		display: inline-block;
+		margin-top: 0;
+		margin-right: 1.5em;
+		margin-left: 0;
+		margin-bottom: 1em;
+		vertical-align: middle;
+	}
+
+	.support-recent-issues-buttons {
+		display: inline-block;
+		margin-bottom: 1.5em;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.support-recent-issues-new {
+		margin-bottom: 0;
+		margin-left: 0;
+		margin-top: 0;
+		vertical-align: middle;
+	}
+
+	.table-wrapper {
+		max-height: 16em;
+		overflow: scroll;
+
+		/*.ie8 & {
+			max-height: none;
+			overflow: visible;
+		}*/
+	}
+
+	.support-recent-issues-actions {
+		margin-top: 1em;
+	}
+
+	td, th {
+		text-align: left;
+	}
+
+	tr.hidden {
+		display: none;
+	}
+
+	th:nth-of-type(1),
+	td:nth-of-type(1),
+	th:nth-of-type(4),
+	td:nth-of-type(4),
+	th:nth-of-type(5),
+	td:nth-of-type(5),
+	th:nth-of-type(6),
+	td:nth-of-type(6) {
+		width: 10%;
+	}
+
+	th:nth-of-type(2),
+	td:nth-of-type(2),
+	th:nth-of-type(3),
+	td:nth-of-type(3) {
+		width: 25%;
+	}
+
+}
+
+.account-error {
+	@extend %hide-on-logged-out;
+	text-align: center;
+	line-height: 1.25em;
+}
+
+.support-no-issues {
+	@extend %hide-on-logged-out;
+	text-align: center;
+
+	.btn {
+		display: block;
+		margin-left: 0;
+		margin-top: 1em;
+
+		@include media(breakpointSmall) {
+			display: inline-block;
+			margin-left: 2em;
+		}
+	}
+
+	p {
+		display: inline-block;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	a {
+		margin-bottom: 0;
+		margin-left: 3em;
+		margin-right: 0;
+		margin-top: 0;
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+	}
+
+	.support-logged-out & {
+		display: none;
+	}
+}
+
+.support-recent-issues-actions {
+	text-align: right;
+	padding-bottom: 2em 0;
+}
+
+.support-news {
+
+	.news-content {
+		@include row();
+		padding: 0;
+	}
+
+	.news-entries {
+		margin-top: 2em;
+		padding: 0;
+
+		@include media(breakpointMedium) {
+			@include column(8);
+		}
+	}
+
+	.news-sidebar {
+		background-color: color(seashell);
+		margin-top: 2em;
+		padding-bottom: 3em;
+		padding-left: 2em;
+		padding-right: 2em;
+		padding-top: 2em;
+
+		@include media(breakpointMedium) {
+			margin-left: columns(1);
+			@include column(3);
+		}
+
+		section:first-child {
+			border-top: 0;
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	.view-all {
+		text-align: left;
+
+		a:after {
+			content: '\00a0\00a0›';
+			display: inline;
+		}
+	}
+
+	.two-up:first-child {
+
+		@include media(breakpointLarge) {
+			border-right: 1px solid color(mediumGrey);
+
+			ul {
+				padding-right: 1.25em;
+			}
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.support-loading-issues {
+	@extend %hide-on-logged-out;
+}
+
+.page-support-news {
+
+	.date {
+		width: 50px;
+	}
+}
+
+//WEB-312
+.support-message-box{
+  background-color: #FFF; 
+  margin-top: 0em;
+  
+  p{
+    border: medium solid #F00;
+    margin-top: 2em !important;
+    margin: 2em;
+    padding: 1em;
+    display: inline-block;
+  }
+}

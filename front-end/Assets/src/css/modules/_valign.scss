@@ -1,0 +1,36 @@
+// @category modules
+
+// @function valign
+// A vertical-alignment helper class.
+%valign-config {
+	display: table;
+	width: 100%;
+
+	> div {
+		display: table-cell;
+
+		&.valign-narrow {
+			width: 100px;
+		}
+
+		&.valign-icon {
+			width: 48px;
+		}
+	}
+}
+
+.valign {
+	@extend %valign-config;
+
+	> div {
+		vertical-align: middle;
+	}
+}
+
+.valign-top {
+	@extend %valign-config;
+
+	> div {
+		vertical-align: top;
+	}
+}

@@ -1,0 +1,415 @@
+// @category modules
+
+// @function navigation
+// Styles related to the site's navigation.
+$utilityNavHeight: 34px;
+$mobileUtilityNavHeight: 49px;
+.navigation-utility {
+	@include box-sizing();
+	border-top: 1px solid;
+	list-style: none;
+	margin: 0;
+	padding: 2em 0;
+	@include media(breakpointLarge) {
+		border: 0;
+		padding: 0;
+		position: absolute;
+		right: 28px;
+		top: -50px;
+	}
+	> li {
+		@include box-sizing();
+		height: $mobileUtilityNavHeight;
+		line-height: $mobileUtilityNavHeight;
+		margin: 0;
+		@include media(breakpointLarge) {
+			float: left;
+			height: $utilityNavHeight;
+			line-height: $utilityNavHeight;
+			margin-left: 12px;
+			position: relative;
+		}
+		> a {
+			@include box-sizing();
+			display: block;
+			padding: .5em 1em;
+			@include media(breakpointLarge) {
+				@include font-size(13);
+				font-weight: 700;
+				padding: 0 1em;
+			}
+			@include media(breakpointExtraLarge) {
+				@include font-size(14);
+			}
+		}
+	}
+//ul, li {  //Commented BMC-527 to add margin and padding.
+  // margin: 0;
+  // padding: 0;
+//}
+	a {
+		color: color(colorCorporateAction);
+		&:hover {
+			color: darken(color(colorCorporateAction), 10);
+		}
+	}
+	.btn-small.btn {
+		@include transition((property: background-color));
+		background: transparent;
+		border: 0;
+		margin: 0;
+		padding: 0;
+		span {
+			border: solid 2px color(colorCorporateAction);
+			border-radius: $formElementBorderRadius;
+			display: block;
+			padding: em(12) em(18);
+			@include transition();
+		}
+		&:hover {
+			color: #fff;
+			span {
+				background-color: color(colorCorporateAction);
+			}
+		}
+	}
+}
+
+// Contact and Support
+// -------------------------------------------------------------- //
+@include media(breakpointLarge) {
+	.navigation-utility .navigation-contact a {
+		padding-left: 56px;
+	}
+	.navigation-utility .navigation-support a {
+		padding-left: 26px;
+	}
+	.navigation-utility .navigation-country a {
+    padding-left: 26px;
+  }
+}
+
+// Icons
+// -------------------------------------------------------------- //
+.navigation-country a:after,
+.navigation-contact a:after,
+.navigation-support a:after {
+	@include icon();
+	@include font-size(16);
+	margin-left: 12px;
+	position: relative;
+	top: 3px;
+
+	@include media(breakpointLarge) {
+		left: 0;
+		margin: 0;
+		position: absolute;
+		top: 10px;
+	}
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+		top: 8px;
+	}
+}
+.navigation-country a:after,
+.navigation-contact a:after,
+.navigation-support a:after {
+	color: #999;
+} 
+
+.navigation-country a:after{
+  content: $iconGlobe; //
+}
+
+.navigation-contact a:after {
+	content: "\e60f  \e610"; // variables break spacing requirements here
+}
+
+.navigation-support a:after {
+	@include font-size(14);
+	content: "\e62a";
+	@include media(breakpointExtraLarge) {
+		@include font-size(16);
+	}
+}
+
+// Trials
+// ------------------------------------------------------------------ //
+
+.navigation-utility .navigation-trials a {
+	color: color(mediumOrange);
+	@include media(breakpointLarge) {
+		@include font-size(14);
+	}
+	@include media(breakpointExtraLarge) {
+		@include font-size(16);
+	}
+	&:hover {
+		color: color(darkOrange);
+	}
+}
+
+// Search
+// -------------------------------------------------------------- //
+
+.navigation-search {
+	position: relative;
+	@include media(breakpointLarge) {
+		width: 200px;
+	}
+	.search-site {
+		position: absolute;
+		right: 0;
+		top: 20px;
+		width: 100%;
+		@include media(breakpointLarge) {
+			top: 0;
+		}
+	}
+	.search-site-b {
+		@include box-sizing();
+		border: solid 1px color(mediumGrey);
+		border-radius: $formElementBorderRadius;
+		box-shadow: 0 0 2px color(mediumGrey);
+		height: $utilityNavHeight;
+		overflow: hidden;
+		padding: 3px $utilityNavHeight 0 12px;
+		&:after {
+			@include icon();
+			color: color(darkGrey);
+			content: $iconSearch;
+			display: block;
+			font-size: 21px;
+			pointer-events: none;
+			position: absolute;
+			right: 8px;
+			top: 6px;
+			z-index: -1;
+
+			/*.ie8 & {
+				display: none;
+			}*/
+		}
+	}
+	.search-focus {
+		position: relative;
+		z-index: 1;
+	}
+	[type="text"] {
+		background: url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw%3D%3D) transparent;
+		border: none;
+		color: color(mediumGrey);
+		font: 16px arial,sans-serif;
+		line-height: 27px;
+		height: auto;
+		left: 0;
+		margin: 0;
+		outline: none;
+		padding: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 6;
+		&:focus {
+			color: color(darkGrey);
+			opacity: 1;
+			@include transition();
+		}
+
+		/*.ie8 & {
+			margin-top: 4px;
+		}*/
+	}
+	button {
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-radius: 0;
+		bottom: 1px;
+		height: $utilityNavHeight - 2px;
+		margin: 0;
+		position: absolute;
+		right: 1px;
+		top: 1px;
+		width: $utilityNavHeight;
+		z-index: 2;
+		&:hover {
+			background-color: rgba(0,0,0,.08);
+			border-left: 1px solid rgba(0,0,0,.1);
+		}
+
+		/*.ie8 & {
+			&:after {
+				@include icon();
+				color: color(darkGrey);
+				content: $iconSearch;
+				display: block;
+				font-size: 21px;
+				pointer-events: none;
+				position: absolute;
+				right: 8px;
+				top: 3px;
+				z-index: -1;
+			}
+		}
+		*/
+	}
+}
+
+// Scrolled effects
+// ------------------------------------------------------------------ //
+
+//Hide override links in non-scroll mode
+.nav-li-override{
+    display: none;
+} 
+
+$scrolledUtilityNavHeight: 49px;
+.scrolled-down,
+.scrolled-up {
+	.navigation-utility > li {
+		height: $mobileUtilityNavHeight;
+		line-height: $mobileUtilityNavHeight;
+
+		@include media(breakpointLarge) {
+			height: $scrolledUtilityNavHeight;
+			line-height: $mobileUtilityNavHeight;
+		}
+	}
+	.navigation-search {
+		@include media(breakpointLarge) {
+			border-right: solid 1px color(mediumGrey);
+			width: 50px;
+
+			&.on {
+				width: 200px;
+				.search-site-b {
+					padding-left: 10px;
+					padding-right: 40px;
+				}
+				button {
+					display: block;
+				}
+			}
+			.search-site-b {
+				border: 0;
+				box-shadow: none;
+				cursor: pointer;
+				height: $scrolledUtilityNavHeight;
+				padding: 12px 14px 10px;
+				&:after {
+					display: block;
+					color: color(darkGrey);
+					right: 13px;
+					top: 13px;
+
+					/*.ie8 & {
+						top: 15px;
+					}*/
+				}
+			}
+			[type="text"] {
+				cursor: pointer;
+				padding-left: 50px;
+				top: 0;
+
+				/*.ie8 & {
+					margin-top: -12px;
+					height: $scrolledUtilityNavHeight;
+					margin-left: -15px;
+				}*/
+
+
+				&:focus {
+					cursor: auto;
+					padding-left: 0;
+
+					/*.ie8 & {
+						margin-left: auto;
+						margin-top: 4px;
+						height: auto;
+					}*/
+				}
+			}
+			button {
+				display: none;
+				height: $scrolledUtilityNavHeight;
+				right: 0;
+				top: 0;
+				width: $scrolledUtilityNavHeight;
+
+				/*.ie8 &:after {
+					display: none;
+				}*/
+			}
+		}
+	}
+	@include media(breakpointLarge) {
+		.navigation-utility {
+			top: 0;
+			@include transition((property: opacity));
+		}
+		.navigation-utility > li {
+			border-left: 1px solid color(mediumGrey);
+		}
+		.navigation-utility .navigation-country a {
+      padding-left: 40px;
+    }
+		.navigation-utility .navigation-contact a {
+			padding-left: 68px;
+		}
+		.navigation-utility .navigation-support,
+		.navigation-utility .navigation-country {
+			// https://jira.connectivedx.com/browse/BMC-313
+			// Hide support nav on scroll
+			display: none;
+		}
+		.navigation-country a:after,
+		.navigation-contact a:after,
+		.navigation-support a:after {
+			left: 12px;
+			top: 16px;
+		}
+		
+		
+		// Changes for WEB-324 - Start
+		
+		.navigation-contact{
+		  margin-left:0px;
+		}
+		
+		.nav-li-override-hide{
+      display: none;
+    }
+    .nav-li-override{
+      display: block;
+    }
+    
+    .nav-li-override a{
+      background-color: color(mediumOrange);
+      color: white !important;  
+      @include media(breakpointLarge) {
+        @include font-size(14);
+      }
+      @include media(breakpointExtraLarge) {
+        @include font-size(16);
+      }
+  
+      &:after {
+          content: url('#{$imagesFolder}play-button-white.png');
+          left: 10px;
+          position: relative;
+          top: 10px;
+      }
+    }
+    // End
+	}
+}
+
+
+.display-scrolled-menu {
+	@include media(breakpointLarge) {
+		// make sure the utility nav is off canvas
+		.navigation-utility {
+			top: -100%;
+		}
+	}
+}

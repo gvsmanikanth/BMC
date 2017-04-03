@@ -1,0 +1,19 @@
+// @category modules
+
+// @function appendAround
+// Styles that are to be used in conjunction with the appendAround jQuery plugin for moving elements around the DOM.
+.append-around-low-resolution {
+	display: block !important;
+
+	@include media(breakpointLarge) {
+		display: none !important;
+	}
+}
+
+.append-around-high-resolution {
+	display: none !important;
+
+	@include media(breakpointLarge) {
+		display: block !important;
+	}
+}

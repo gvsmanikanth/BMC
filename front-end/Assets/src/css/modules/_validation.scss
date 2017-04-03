@@ -1,0 +1,29 @@
+// @category modules
+
+// @function validation
+// Styles for form validation.
+.validation-error {
+	background: white url('#{$imagesFolder}icon-error.png') em(8) center no-repeat;
+	border: 2px solid red;
+	border-radius: $formElementBorderRadius;
+	color: red;
+	padding: em(8) em(8) em(8) em(32);
+}
+
+// mimicing the fildset:not(#foo) used from _forms.scss to isolate IE9+ styles
+// ensures validation-error has room for checkboxes and radio buttons elements
+
+input[type="checkbox"] + .validation-error,
+input[type="radio"] + .validation-error {
+	border: 0;
+
+	fieldset:not(#foo) & {
+		background-position: 0;
+		padding-left: 55px;
+	}
+
+	/*.ie8 & {
+		padding-top: 0;
+		padding-bottom: 0;
+	}*/
+}

@@ -1,0 +1,691 @@
+// @category modules
+
+// @function feature
+// Styles for the homepage features.
+.feature-blog {
+	background: #c8c8c8;
+	color: #7b95ac;
+	padding: 2em 0 2em 0;
+	text-align: center;
+
+	h1 {
+		color:#ffffff !important;
+	}
+
+
+	.section-header {
+		color: #7b95ac;
+		font-weight: 600;
+		margin-bottom: em(40 , (context: 25)); //BMC-527 Replaced em(40 25)
+	}
+
+
+	a {
+		@include transition();
+		color: color(colorCorporateAction);
+
+		&:hover {
+			color: color(mediumOrange);
+		}
+	}
+
+
+	.hentry {
+		margin-bottom: 0;
+		text-align: center;
+
+		h3 {
+			@include font-size(22);
+			margin-top: 0;
+		}
+
+		@include media(breakpointExtraLarge) {
+			text-align: left;
+		}
+	}
+
+	.author {
+		@include font-size(14);
+
+		@include media(breakpointLarge) {
+			margin-bottom: 0;
+		}
+	}
+
+	@include media(breakpointLarge) {
+
+		text-align: left;
+	}
+}
+
+.feature-case-studies {
+	background: transparent;
+	padding: 3em 0;
+	position: relative;
+	text-align: center;
+
+	h3 { color: #fff; }
+
+	.case-study {
+		a {
+		//	@include rgba-background-color(rgb(51,51,51), .26, bg-overlay-50);
+			background-color: rgba(51,51,51,.26);
+			@include box-sizing;
+			display: inline-block;
+			max-width: 100%;
+			padding: .875em;
+		}
+	}
+
+	@include media(breakpointLarge) {
+		text-align: left;
+	}
+}
+
+.feature-contact {
+	background: color(seashell);
+
+	.contact-information,
+	.contact-form {
+		@extend %column-config;
+	}
+
+	.contact-information {
+		width: 100%;
+
+		@include media(breakpointLarge) {
+			margin-right: columns(1);
+			width: columns(4);
+		}
+	}
+
+	.contact-form {
+		width: 100%;
+
+		@include media(breakpointLarge) {
+			width: columns(7);
+		}
+	}
+
+	.contact-options {
+		margin-top: em(22); //BMC 527 - Replaced em(22 16)
+
+		li {
+			margin-bottom: em(16); //BMC-527 Replaced em(16 16)
+		}
+	}
+}
+
+.feature-message {
+	background: #ffffff !important;
+	color: color(mediumOrange);
+	padding: 1.2em 0 1.2em 0;
+	text-align: left;
+
+	h2 {
+		color: color(mediumOrange);
+		font-weight: 400;
+		padding: 0 0 0.5em 0;
+		@include font-size(24);
+		@include media(breakpointMedium) {
+			@include font-size(28);
+		}
+		@include media(breakpointLarge) {
+			@include font-size(32);
+		}
+		
+		span { font-weight: 800; }
+
+
+		
+	}
+
+}
+
+.feature-offerings {
+	background: color(colorCorporate);
+	color: #fff;
+
+	h1, h2, h3, p { color: #7b95ac; }
+	h1 {
+		@include font-size(60);
+
+		margin-bottom: .15em;
+		@include media(breakpointMedium) {
+			@include font-size(90);
+		}
+	}
+
+	h2 {
+		@include font-size(30);
+		margin: 0 0 .85em;
+	}
+
+	p {
+		margin-bottom: 4em;
+		max-width: columns(10);
+	}
+
+	@include media(breakpointLarge) {
+		background: url('#{$imagesFolder}bg-feature-offerings.jpg') center center no-repeat;
+		background-size: cover;
+	}
+
+	.btn:hover {
+		color: #000;
+	}
+}
+
+
+.feature-principles {
+	background: color(colorCorporate);
+	color: #ffffff;
+	padding: 2em 0 2em 0;
+	text-align: left;
+
+	h2 {
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0;
+		color: #ffffff !important;
+
+		span { font-weight: 800; }
+
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+
+	.icon-label {
+	color: #fff;
+	@include font-size(20);
+
+	@include media(breakpointSmall) {
+			@include font-size(20);
+		}
+
+	@include media(breakpointMedium) {
+			@include font-size(20);
+		}
+
+	@include media(breakpointLarge) {
+			@include font-size(20);
+		}
+
+	@include media(breakpointExtraLarge) {
+			@include font-size(32);
+		}
+
+	}
+
+	.columnleft {
+		margin:0 auto;
+		width:50%;
+		margin-right:10%;
+		text-align:left;
+		float: left;
+	}
+
+	.columnright {
+		margin:0 auto;
+		width:40%;
+		margin-right:0%;
+		text-align:left;
+		float: left;
+	}
+
+	.single-line {
+		float: left;
+		width:10%;
+	}
+
+	.two-column {
+		float: left;
+		width:100%;
+	}
+
+	.one-column {
+		width:100%;
+	}
+
+
+}
+
+.feature-solutions {
+	background: color(colorCorporate);
+	color: #ffffff;
+	padding: 2em 0 2em 0;
+	text-align: left;
+
+
+	h1 {
+		color: color(mediumOrange) !important;
+	}
+
+
+	h2 {
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0;
+		color: #ffffff !important;
+
+		span { font-weight: 800; }
+
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+
+	h5 {
+		@include font-size(19);
+		font-weight: 800;
+		padding: 0;
+		color: #ffffff !important;
+
+
+		@include media(breakpointMedium) {
+			@include font-size(19);
+		}
+	}
+
+	.section-header {
+		color: #7b95ac;
+		font-weight:600;
+		margin-bottom:1.6em
+	}
+
+	.hentry {
+		margin-bottom: 0;
+		text-align:center;
+
+		@include media(breakpointExtraLarge) {
+			text-align: left;
+		}
+
+		h3 {
+			font-size: 22px;
+			font-size:1.22222rem;
+			margin-top:0;
+		}
+	}
+
+	.author {
+		font-size: 14px;
+		font-size:.77778rem;
+
+		@include media(breakpointLarge) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.feature-success-stories {
+	text-align: center;
+
+	figure {
+		padding: 1em 0 1.5em;
+	}
+
+	figcaption,
+	figcaption p {
+		color: #413e41;
+		font-size: 13px;
+		line-height: 18px;
+		margin: 0;
+	}
+
+	.va {
+		display: block;
+		height: 100px;
+		margin: auto;
+		white-space: nowrap;
+		width: 150px;
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	.content-primary {
+		background: transparent;
+
+		.layout-inner-wrap {
+			margin: auto;
+			padding-bottom: 2em;
+			padding-top: 3em;
+
+			@include media(breakpointMedium) {
+				max-width: 32em;
+				min-width: 28em;
+			}
+
+			@include media(breakpointExtraLarge) {
+				min-width: 34em;
+			}
+
+			h1 {
+				@include media(breakpointExtraLarge) {
+					font-size: 71px;
+					line-height: 85px;
+				}
+			}
+
+			p {
+				text-shadow: 2px 2px 2px rgba(0,0,0,.5);
+
+				@include media(breakpointExtraLarge) {
+					font-size: 32px;
+					line-height: 36px;
+				}
+
+				strong {
+					display: block;
+				}
+			}
+
+			.actions .btn {
+				font-weight: 700;
+
+				@include media(breakpointExtraLarge) {
+					font-size: 19px;
+				}
+			}
+		}
+	}
+
+	.content-secondary {
+		background-color: rgba(255, 255, 255, .85);
+	}
+}
+
+
+.offerings-list {
+
+	a { color: inherit; @include transition(); }
+
+	a:hover {
+		color: #7b95ac;
+	}
+
+	li a:after { content:"\203A"; padding-left: .5em; }
+
+
+	ul {
+		margin: em(40 14) 0 em(40 14) em(35 14);
+
+		@include media(breakpointLarge) {
+			margin-left: 0;
+		}
+	}
+}
+
+.offerings-list-products,
+.offerings-list-expertise {
+	@extend %column-config;
+	width: columns(12);
+
+	@include media(breakpointSmall) {
+		margin-left: columns(0.5);
+		width: columns(5.5);
+	}
+}
+
+.offerings-highlights {
+
+	strong,em {
+		@include font-size(30);
+		font-style: normal;
+	}
+
+	em { font-weight: 100; }
+
+	span { display: block; }
+
+	li {
+		background-position: left 6px;
+		background-repeat: no-repeat;
+		padding-left: 2.5em;
+	}
+
+	@include media(breakpointMedium) {
+		width: columns(9);
+	}
+
+}
+
+.statistic-time 	{
+	background-image: url('#{$imagesFolder}bg-statistic-time.png');
+}
+
+.statistic-money 	{
+	background-image: url('#{$imagesFolder}bg-statistic-money.png');
+}
+.statistic-arrow-up {
+	background-image: url('#{$imagesFolder}bg-statistic-arrow-up.png');
+}
+
+
+.fourtune-500-home-page {
+  background: #ffffff !important;
+  color: #000000;
+  padding: 1.2em 0 1.2em 0;
+  text-align: center;
+
+  p {
+    @include font-size(32);
+    color: #000000;
+    font-weight: 400;
+    padding: 0 0 0.5em 0;
+    margin-bottom:0px;
+
+    span { 
+      //font-weight: 800; 
+      color: color(mediumOrange);
+    }
+
+
+    @include media(breakpointMedium) {
+      @include font-size(32);
+    }
+  }
+}
+
+.fourtune-500-full-width-banner{
+ background:url('#{$imagesFolder}/fortune-500-bg-july-2016.png') center center no-repeat #ffffff;
+ color: #000000;
+ 
+ .section{
+   width:100%;
+   height:359px;
+   display:table;
+ }
+ 
+ .section-content{
+    display:table-cell;
+    vertical-align: middle;
+ }
+ 
+ .lead{
+   margin-bottom: 0;
+   background: rgba(255,255,255,0.45); 
+   display: inline-block; 
+   padding: .5em;
+   &.-lg {
+		@include font-size(22);
+
+		@include media(breakpointMedium) {
+			@include font-size(28);
+		}
+
+		@include media(breakpointLarge) {
+			@include font-size(36);
+		}
+	}
+    span { 
+      //font-weight: 800; 
+      color: color(mediumOrange);
+    }
+ } 
+}
+
+.fortune-500-seconday-layout{
+  
+  max-width:320px;
+  
+  figcaption{
+    margin-top : -8.5rem;
+    color: white;
+    margin-left: .5em;
+    
+    P{
+      font-size:1.1rem;
+      margin-bottom: 0.5em !important; 
+      //margin-right: 1.5em;
+    } 
+    
+    .note{
+        font-size:.6rem;
+      } 
+  }
+    
+   @include media(breakpointMedium) {
+    figcaption{
+      margin-top : -5rem;
+      P{
+        font-size:.6rem;
+      }
+      
+      .note{
+        font-size:.4rem;
+      }  
+    }
+  }
+  
+  @media (min-width: 880px) and (max-width:960px) {
+    figcaption{
+      margin-top : -6rem;
+      P{
+        font-size:.8rem;
+      }
+      
+      .note{
+        font-size:.5rem;
+      }  
+    }
+  }
+
+  @include media(breakpointLarge) {
+    figcaption{
+      margin-top : -6.9rem;
+      P{
+        font-size:.9rem;
+      } 
+      
+      .note{
+        font-size:.5rem;
+      }  
+      
+    }
+  }
+  
+  @include media(breakpointExtraLarge) {
+  figcaption{
+    margin-top : -8.5rem;
+    P{
+      font-size:1.1rem;
+    } 
+    
+    .note{
+        font-size:.6rem;
+      } 
+  }
+  }
+}
+
+.fortune-500-bg-product{
+	text-align: center;
+	
+	.video-thumbnail{
+		position: relative;
+		
+		div{
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0px;
+			background: rgba(255,255,255,0.5);
+			img{
+				max-height:90%; 
+				margin: 2.5%;
+				width:auto;
+				&:hover {
+				  -moz-transform: scale(1.02);
+				  -webkit-transform: scale(1.02);
+				  transform: scale(1.02);
+				}
+			}
+		}
+	
+		
+	}
+
+	p{
+	  color: #fe5000;
+	  
+		@include font-size(20);
+		line-height: 25px;
+
+		@include media(breakpointMedium) {
+			@include font-size(20);
+			line-height: 33px;
+		}
+
+		@include media(breakpointLarge) {
+			@include font-size(20);
+			line-height: 33px;
+		}
+		
+		margin: 0 auto; 
+		text-align: center;
+		max-width: 100%;
+	}
+	.h2-legacy{
+		font-size: 0.95rem;
+	}
+	image{
+		max-width:100%;
+		//width:100%;  
+		height:"auto"; 
+	}
+	.flex-wrap{
+		&.py2 {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		@include media(breakpointLarge) {
+			padding-top: .5rem;
+			padding-bottom: .5rem;
+		}
+	}
+}
+
+//if no flexbox don't change to table and table cell. this works fine.
+.no-flexbox {
+	.fortune-500-bg-product{
+		.flex{
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			.flex-item {
+				vertical-align: middle;
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+			}
+		}
+	}
+}

@@ -1,0 +1,341 @@
+/**
+ *  BMC Engage Landing Page 2015
+ */
+
+$highlightColor: #fb8629;
+$engageTeal: #30b19c;
+
+// Across all page sections
+.bmc-engage{
+
+	section, section.layout-full-bleed {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.section-heading-wrapper {
+
+		display: table;
+		margin: 1.5em 0;
+
+		@include media(breakpointMedium) {
+			margin-bottom: 2em;
+			margin-top: 3em;
+		}
+
+		h3 {
+			color: color(mediumOrange);
+			font-weight: 800;
+			padding-left: 1em;
+			text-transform: uppercase;
+			vertical-align: middle;
+			width: auto;
+
+			/*.ie8 & {
+				padding-left: 0;
+			}*/
+		}
+
+		.icon-list-round {
+			background-size: 50px;
+			background-position: middle;
+			vertical-align: middle;
+
+			/*.ie8 & {
+				display: none;
+			}*/
+
+			&:before {
+				background-size: 50px 50px;
+				content: '';
+				display: block;
+				height: 50px;
+				width: 50px;
+			}
+		}
+
+		h3, .icon-list-round {
+			display: table-cell;
+			vertical-align: middle;
+			margin: 0;
+		}
+	}
+
+
+	.wallpaper-container {
+		z-index: -1;
+	}
+
+	.btn {
+
+		border-width: 1px;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&, &:hover {
+			background-color: $engageTeal;
+			border-color: $engageTeal;
+		}
+	}
+
+	.btn.filled {
+		background-color: $engageTeal;
+		border-color: $engageTeal;
+		color: #fff;
+	}
+
+}
+
+
+/**
+ * BMC Page Sections
+ */
+
+section.bmc-engage-header.layout-full-bleed {
+
+	$top-padding: 50;
+
+	background-color: transparent;
+	background-position: center 20%;
+	background-size: cover;
+	padding-bottom: em(0.65*$top-padding);
+	padding-top: em($top-padding);
+	text-align: center;
+
+	@include media(breakpointMedium){
+		$top-padding: 100;
+		padding-bottom: em(0.65*$top-padding);
+		padding-top: em($top-padding);
+	}
+
+	h1, h2, p, a {
+		color: #fff;
+	}
+
+	h1, h2 {
+		font-weight: 600;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+
+		@include media(breakpointExtraLarge) {
+			text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+		}
+	}
+
+	h1 {
+
+		@include media(breakpointExtraLarge) {
+			font-size: em(85);
+		}
+	}
+
+	h2 {
+
+		@include media(breakpointExtraLarge) {
+			font-size: em(50);
+		}
+	}
+
+	p {
+		font-size: em(20);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.highlight {
+		color: $highlightColor;
+		font-weight: 700;
+	}
+
+	.btn.btn-hollow {
+
+		background-color: transparent;
+		border: 1px solid #fff;
+		color: #fff;
+
+		&:hover {
+			background-color: transparent;
+			border: 1px solid #fff;
+		}
+	}
+}
+
+.bmc-engage-intro {
+
+	padding: 1.5em 0;
+
+	.icon-list-round:before {
+		background-image: url('#{$imagesFolder}icon-engage-about.png');
+	}
+
+	.btn-hollow {
+
+		background-color: transparent;
+		border: 1px solid $engageTeal;
+		color: $engageTeal;
+
+		&:hover {
+			background-color: transparent;
+			border: 1px solid $engageTeal;
+		}
+	}
+
+	.intro-text {
+		// display: inline-block;
+	}
+
+	.bmc-video-container {
+
+		margin-bottom: 1.5em;
+		width: 100%;
+
+		@include media(breakpointLarge) {
+			float: right;
+			margin-left: 5em;
+			width: 450px;
+		}
+	}
+
+	.btn-wrapper {
+
+		text-align: center;
+
+		@include media(breakpointMedium) {
+			text-align: left;
+		}
+	}
+
+}
+
+.bmc-engage-expect {
+
+	background-color: #f6f6f6;
+
+	/*
+	.ie8 & {
+
+		.featured-images {
+			display: none;
+		}
+
+		.schedule-list {
+			margin-left: 0;
+		}
+	}*/
+
+	.icon-list-round:before {
+		background-image: url('#{$imagesFolder}icon-engage-expect.png');
+	}
+
+	.schedule {
+		background-color: #fff;
+		border-radius: em(5);
+		padding: em(20);
+
+		@include media(breakpointMedium) {
+			padding: em(65) em(30)
+		}
+	}
+
+	.featured-images {
+		display: none;
+		float: left;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		@include media(breakpointMedium) {
+			display: block;
+		}
+	}
+
+	.featured-image {
+		background-size: 150% auto;
+		background-position: center;
+		border-radius: 50%;
+		border-style: solid;
+		border-width: 5px;
+		height: em(120);
+		margin-bottom: 1.5em;
+		width: em(120);
+
+		&.orange {
+			border-color: color(mediumOrange);
+		}
+
+		&.grey {
+			border-color: color(mediumGrey);
+		}
+	}
+
+	.schedule-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		a {
+			display: block;
+			font-size: 0.85em;
+		}
+
+		li {
+			border-bottom: 1px solid color(seashell);
+			font-size: em(22);
+			margin: 0;
+			padding: 0.75em 0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		@include media(breakpointMedium) {
+			margin-left: em(165);
+		}
+	}
+}
+
+.bmc-engage-testimonials {
+
+	background-color: color(mediumOrange);
+
+	.icon-list-round:before {
+		background-image: url('#{$imagesFolder}icon-engage-testimonials.png');
+	}
+
+	.section-heading-wrapper{
+
+		position: relative; // provide anchoring for pagination
+
+		h3 {
+			color: #fff;
+			margin: 0;
+			text-transform: none;
+		}
+	}
+
+	ul.testimonials {
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.conference-testimonial {
+
+		background-color: color(mediumOrange);
+		color: #fff;
+
+		p {
+			margin-bottom: 0.75em;
+		}
+
+		.author {
+			color: #0d1d31;
+		}
+	}
+}
