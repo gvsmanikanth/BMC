@@ -1,0 +1,1165 @@
+// @category modules
+
+// @function product
+// Styles specific to product pages.
+.product-feature-offset {
+	@extend %clearfix;
+	background-color: lighten(color(colorCorporateAction), 5%);
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin-top: em(36, (context: 18));//BMC-527 - em(36 18);
+	padding: $gutterInPx;
+
+	img {
+		@include media(breakpointMedium) {
+			float: right;
+			max-width: percentage(100 / 200);	// this forces its width to be 100% of the column container since the bleeding element is 200% of its parent container
+			position: relative;
+			right: em(-36, (context: 18));//BMC-527 - em(-36 18);
+			top: em(-36, (context: 18));//BMC-527 - em(-36 18);;
+		}
+	}
+
+	@include media(breakpointMedium) {
+		margin-left: -100%;
+		padding: 0;
+		width: 200%;
+	}
+	@include media(breakpointExtraHuge) {
+		background-position-x: 22%;
+	}
+}
+
+.product-feature-offset-sidebox {
+	@extend %clearfix;
+	background-color: color(mediumOrange);
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin-top: em(36, (context: 18));//BMC-527 - em(36 18);;
+	padding: $gutterInPx;
+
+	img {
+		@include media(breakpointMedium) {
+			float: right;
+			max-width: percentage(100 / 200);	// this forces its width to be 100% of the column container since the bleeding element is 200% of its parent container
+			position: relative;
+			right: em(18, (context: 18));//BMC-527 - em(18 18);;
+			top: em(-36, (context: 18));//BMC-527 - em(-36 18);
+		}
+	}
+
+	@include media(breakpointMedium) {
+		margin-left: -100%;
+		padding: 0;
+		width: 247.5%;
+	}
+	@include media(breakpointExtraHuge) {
+		background-position-x: 22%;
+	}
+}
+
+.product-feature-offset-photo {
+	background-color: transparent;
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 200px;
+
+	&:first-child {
+		margin-top: em(18);
+
+		@include media(breakpointMedium) {
+			margin-top: em(36);
+		}
+	}
+
+	@include media(breakpointMedium) {
+		background-size: auto;
+		margin-left: -100%;
+		min-height: 367px;
+		padding: 0;
+		width: 200%;
+	}
+}
+
+
+.product-offer-box-side {
+		background-color: color(colorNavigationBar);
+		display:block;
+		float: right;
+		height: auto;
+		max-width: 50%;
+		padding:30px 40px 30px 40px;
+		position: relative;
+		right: 0;
+		top: 0;
+		width: 12.6%;
+
+
+		h3 {
+			@include font-size(30);
+			color:#ffffff;
+
+			@include media(breakpointMedium) {
+			@include font-size(30);
+
+	}
+
+			@include media(breakpointExtraLarge) {
+				@include font-size(30);
+	}
+
+
+}
+
+
+		.link-container {
+			padding:20px 0 0 0;
+		}
+
+
+			@include media(breakpointTiny) {
+		display:none;
+	}
+
+			@include media(breakpointExtraSmall) {
+		display:none;
+	}
+
+
+			@include media(breakpointSmall) {
+		display:none;
+	}
+
+
+			@include media(breakpointMedium) {
+		display:block;
+		height: auto;
+	}
+
+
+			@include media(breakpointLarge) {
+		display:block;
+		height: auto;
+	}
+
+			@include media(breakpointExtraLarge) {
+		display:block;
+		height: auto;
+	}
+
+
+}
+
+
+.product-offer-box-bottom {
+    background-color: color(colorNavigationBar);
+	display:none;
+    margin-left: 0;
+    padding: 20px 0 25px 30px;
+
+
+	h3 {
+			@include font-size(30);
+			color:#ffffff;
+
+			@include media(breakpointMedium) {
+			@include font-size(30);
+
+	}
+
+			@include media(breakpointExtraLarge) {
+				@include font-size(30);
+	}
+
+
+}
+
+	.link-container {
+			padding:20px 0 0 0;
+		}
+
+
+	@include media(breakpointTiny) {
+		display:block;
+	}
+
+	@include media(breakpointExtraSmall) {
+		display:block;
+	}
+
+
+	@include media(breakpointSmall) {
+		display:block;
+	}
+
+
+	@include media(breakpointMedium) {
+		display:none;
+	}
+
+
+	@include media(breakpointLarge) {
+		display:none;
+	}
+
+	@include media(breakpointExtraLarge) {
+		display:none;
+	}
+
+}
+
+
+.resources-container {
+    background-color: color(colorNavigationBar);
+	display:block;
+    margin-left: 0;
+    padding: 20px 20px 25px 20px;
+
+
+	h3 {
+			@include font-size(22);
+			color:#ffffff !important;
+			font-weight:600;
+			padding:0 0 10px 0;
+
+			@include media(breakpointMedium) {
+			@include font-size(22);
+
+	}
+
+			@include media(breakpointExtraLarge) {
+				@include font-size(20);
+	}
+
+
+}
+
+	.link-container {
+			padding:20px 0 0 0;
+		}
+
+	a {
+		padding:0 0 10px 25px;
+	}
+
+}
+
+
+
+
+.offset-hero {
+	@include rgba-background-color(black, 0.6, bg-overlay-black-60);
+	background-color: rgba(0,0,0,.6);
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+	}
+
+	h1 {
+
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -100%;
+		padding: em(24) em(24) em(24) 0;
+		width: 150%;
+	}
+}
+
+.offset-hero-clear {
+	background-image:none;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+	}
+
+	h1 {
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -100%;
+		padding: em(24) em(24) em(24) 0;
+		width: 150%;
+	}
+}
+
+.offset-hero-medium {
+	background-image: none;
+	background-color: color(mediumOrange);
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+
+	}
+
+	h1 {
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	}
+
+	@include media(breakpointLarge) {
+		background-image: url('#{$imagesFolder}category_banner_bg2.png');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -98%;
+		padding: em(44) em(24) em(40) 0;
+		width: 167%;
+
+	}
+
+
+}
+
+
+.offset-hero-top {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+
+	}
+
+	h1 {
+		color:#ffffff;
+		line-height: 1em;
+		margin: 0 0 .5em 0;
+	}
+
+	p {
+		margin: 0 0 .5em 0;
+	}
+
+
+	@include media(breakpointTiny) {
+	h1 {
+		color:#ffffff;
+		line-height: 1em;
+		margin: 1em 0 .5em 0;
+	}
+
+	}
+
+	@include media(breakpointExtraSmall) {
+	h1 {
+		color:#ffffff;
+		line-height: 1em;
+		margin: 1em 0 .5em 0;
+	}
+
+	}
+
+
+
+	@include media(breakpointMedium) {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	}
+
+
+	@include media(breakpointLarge) {
+		background-image: url('#{$imagesFolder}orange-swirl-column-alternate.png');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -156%;
+		padding: em(70) em(24) 0 0;
+		width: 200%;
+
+		h1 {
+			color:#ffffff;
+			line-height: 1em;
+			margin: 0 0 .5em 0;
+		}
+	}
+
+
+
+
+}
+
+
+.offset-hero-small {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+
+	}
+
+	h1 {
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	}
+
+	@include media(breakpointLarge) {
+		background-image: url('#{$imagesFolder}orange-swirl-column-alternate.png');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -145%;
+		padding: em(190) em(24) em(30) 0;
+		width: 180%;
+	}
+
+
+}
+
+
+.offset-hero-bottom {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+
+	}
+
+	h1 {
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+	background-image: none;
+	background-color:#Fe5000;
+	margin: em(-60) em(-28);
+	padding: em(60) em(28);
+
+	}
+
+	@include media(breakpointLarge) {
+		background-image: url('#{$imagesFolder}orange-swirl-column-alternate.png');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-position: right center;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -145%;
+		padding: em(190) em(24) 0 0;
+		width: 180%;
+	}
+
+
+}
+
+.offset-hero-transparent {
+	background-image: url('#{$imagesFolder}transparent-black3.png');
+	margin: em(0) em(-28); //BMC-527 Replaced em(-60) with em(0)
+	padding: em(60) em(28);
+
+	.page-campaign-landing & {
+		margin: em(-30) em(-28);
+
+		@include media(breakpointMedium) {
+			margin: 0 0 0 -100%;
+		}
+
+	}
+
+	h1 {
+		color:#ffffff;
+	}
+
+	@include media(breakpointMedium) {
+	background-image: url('#{$imagesFolder}transparent-black3.png');
+	background-repeat: repeat;
+	margin: em(0) em(-28); //BMC-527 Replaced em(-60) with em(0)
+	padding: em(60) em(28);
+
+	}
+
+	@include media(breakpointLarge) {
+		background-image: none;
+		background-repeat: repeat;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		/*margin: 0 0 0 -98%;
+		padding: em(44) em(24) em(24) 0;*/
+		margin: em(0) em(-28); //BMC-527 Replaced em(-60) with em(0)
+		padding: em(60) em(28);
+		/*width: 167%;*/
+
+	}
+
+		@include media(breakpointExtraLarge) {
+		background-image: none;
+		background-repeat: repeat;
+		background-position: right center;
+		background-size: auto 100%;
+		@include box-sizing();
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		margin: 0 0 0 -98%;
+		padding: em(44) em(24) em(24) 0;
+		width: 167%;
+
+	}
+
+
+
+
+}
+
+.offset-hero-inner-wrap {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(2 / 3);
+		padding: 0 em(28);
+		width: 40%;
+	}
+
+	&.full-width {
+		width: percentage(2/3);
+	}
+}
+
+.offset-hero-medium-inner-wrap {
+	color: color(colorHeadings);
+
+	p {
+		color:#ffffff;
+		@include font-size(20);
+		margin: 0 0 em(21, (context: 14)) 0; //BMC-527 - em(21 14)
+
+		&:first-child {
+		margin-top: 0;
+		}
+	}
+
+	@include media(breakpointTiny) {
+
+		margin: 0 0 em(25 , (context: 14)) 0;//BMC-527 - em(25 14)
+
+	}
+
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: percentage(1.75 / 3);
+		padding: 0 em(28);
+		width: percentage(1 / 3);
+	}
+}
+
+.offset-hero-small-inner-wrap {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: percentage(2.44 / 3);
+		padding: 0 ;
+		width: percentage(1 / 3);
+	}
+}
+
+.offset-hero-bottom-inner-wrap {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: percentage(2.44 / 3);
+		padding: 0 ;
+		width: percentage(1 / 3);
+	}
+}
+
+.offset-hero-top-inner-wrap {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: percentage(2.33 / 3);
+		padding: 0 em(28);
+		width: percentage(1.2 / 3);
+	}
+
+	h2 {
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0 0 2em 0;
+
+		span { font-weight: 800; }
+
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+}
+
+.offset-hero-top-content {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: 0;
+		padding: 0;
+		width: percentage(2.4 / 3);
+	}
+
+	h2 {
+		color:#ffffff;
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0 0 1em 0;
+		margin:0;
+
+		span { font-weight: 800; }
+
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+}
+
+
+
+.offset-hero-transparent-inner-wrap {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: 0;
+		padding: 0 em(28);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointExtraLarge) {
+		@include box-sizing();
+		margin-left: percentage(1.75 / 3);
+		padding: 0 em(28);
+		width: percentage(1.85 / 3);
+	}
+
+	h2 {
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0 0 2em 0;
+
+		span { font-weight: 800; }
+
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+}
+
+.offset-hero-transparent-content {
+	color: color(colorHeadings);
+
+	@include media(breakpointMedium) {
+		@include box-sizing();
+		margin-left: percentage(0 / 3);
+		padding: em(5) em(5);
+		width: percentage(3 / 3);
+	}
+
+	@include media(breakpointLarge) {
+		@include box-sizing();
+		margin-left: 0;
+		padding: 0;
+		width: percentage(1.2 / 3);
+	}
+
+	h2 {
+		@include font-size(32);
+		font-weight: 400;
+		padding: 0 0 .5em 0;
+
+		span { font-weight: 800; }
+
+		@include media(breakpointMedium) {
+			@include font-size(32);
+		}
+	}
+}
+
+
+.offset-wrapper {
+	position:relative;
+	z-index:1;
+}
+
+// product-finder
+.layout-full-bleed.product-finder-banner {
+	background-color: color(mediumOrange);
+	padding: 2em 0;
+
+	h1 {
+		color: #fff;
+		margin: 0;
+	}
+}
+
+.layout-full-bleed.product-finder-search {
+	background-color: color(seashell);
+}
+
+.list-filter {
+	margin: 0;
+	padding: 0;
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+		margin: .25em 0;
+		width: auto;
+	}
+}
+
+.list-filter-toggle {
+	padding-right: 1em;
+}
+
+.list-filter-alpha, .list-filter-toggle {
+	// targets the anchor or the first div within the li
+	// to have the padding so that the filters are spaced equally
+	a, & > li > div {
+		padding: .25em .5em;
+		white-space: nowrap;
+
+		.touch &,
+		.touchevents & {
+			padding: .5em 1em;
+		}
+	}
+
+	a:hover,
+	a.active {
+		background: color(colorCorporateAction);
+		border-radius: 3px;
+		color: white;
+	}
+
+}
+
+.layout-full-bleed.product-section-wrapper {
+
+	float: none;
+	padding: 0;
+
+	article {
+		padding: 0;
+	}
+}
+
+.product-finder-nav {
+
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	text-align: left;
+
+	@include media(breakpointMedium) {
+		text-align: center;
+	}
+
+}
+
+.product-finder-filters {
+
+	background-color: color(seashell);
+	display: block;
+	padding: 0 !important;
+	text-align: center;
+}
+
+.category-section-filter-wrapper {
+
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: percentage(1/3);
+
+	@include media(breakpointExtraLarge) {
+		display: table-cell;
+		float: none;
+		height: 100%;
+		width: percentage(1/6);
+	}
+}
+
+.category-section-filters {
+
+	display: none;
+	vertical-align: middle;
+
+	@include media(breakpointMedium) {
+		display: inline-block;
+		margin: auto;
+	}
+
+	ul {
+		display: table;
+		height: 100%;
+		margin: 0 auto;
+		padding-left: 0;
+	}
+
+	li {
+
+		border-top: 5px solid transparent;
+		font-weight: 800;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
+
+		&:last-of-type {
+			border-right: 1px solid #fff;
+		}
+
+		a {
+			display: block;
+			height: 100%;
+			padding: 1em;
+			-moz-box-sizing: border-box; // specifically needed for firefox within table-cell, and therefore opting to not use the box-sizing mixin
+
+			// provides center context with 100% height for the .icon inline-block, vertical-align middle
+			&:before {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				margin-right: -0.3em;
+				vertical-align: middle;
+				width: 0;
+			}
+
+			/*.ie7 &, .ie8 & {
+				min-height: 125px;
+			}*/
+
+			&.active {
+				background-color: #fff;
+			}
+
+			.icon {
+
+				display: inline-block;
+				vertical-align: middle;
+
+				img {
+					display: block;
+					height: 60px;
+					margin: auto;
+					margin-bottom: 0.5em;
+				}
+			}
+
+		}
+
+		&:hover {
+			border-top: 5px solid color(colorHint);
+		}
+
+		@include media(breakpointMedium) {
+			border-bottom: 1px solid #fff;
+			border-right: 1px solid #fff;
+
+			&:nth-child(3n+1) {
+				border-left: 1px solid #fff;
+			}
+		}
+
+		@include media(breakpointExtraLarge) {
+			border-left: 1px solid #fff;
+		}
+	}
+}
+
+.list-product-finder, .results {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	// this container li for topics is the exception to the border-bottom
+	li.topics {
+		border-bottom: none;
+	}
+
+	> li {
+		border-bottom: 1px solid color(colorHint);
+		clear: both;
+		margin-bottom: 0;
+		overflow: hidden;
+
+		ul {
+
+			display: block;
+			margin: 0;
+			padding: 0;
+
+			@include media(breakpointMedium) {
+				-webkit-column-count: 3;
+				-webkit-column-gap: 3%;
+				-moz-column-count: 3;
+				-moz-column-gap: 3%;
+				column-count: 3;
+				column-gap: 3%;
+			}
+		}
+
+		li {
+
+			-webkit-column-break-inside:avoid;
+			-moz-column-break-inside:avoid;
+			column-break-inside:avoid;
+
+			overflow: hidden;
+		}
+	}
+}
+
+.link-icon-product-resources {
+	&:before {
+		content: $iconDrawer;
+	}
+}
+
+.link-icon-product-resources-lightgrey {
+	&:before {
+		color:#e4e5e6 !important;
+		content: $iconDrawer;
+	}
+}
+
+.link-icon-product-resources-lightblue {
+	&:before {
+		color:#6290a3 !important;
+		content: $iconDrawer;
+	}
+}
+
+.link-icon-product-page {
+	&:before {
+		content: $iconScreen;
+	}
+}
+
+//DXP-177 it-professional page code
+.product-services-cards{
+  .card-container{
+    .card-image{
+      height:54px;
+      img{
+        height:55px; 
+        width:85px
+      }
+      
+      .fill-mediumOrange {
+        height:54px;
+        width:84px
+      }
+      
+      .fill-keppel{
+        height:54px;
+        width:86px
+      }
+      
+      
+      .fill-tango{
+        height:54px;
+        width:50px
+      }
+      
+      .fill-robins-egg-blue{
+        height:54px;
+        width:74.25px;
+      }
+      
+      .fill-tangerine,.fill-pear{
+        height:54px;
+        width:54px
+      }
+    }
+  }
+}
+
+.product-cards{
+	 .product-card-sub-heading{
+	 	max-width: 970px; 
+	 	margin-left: auto; 
+	 	margin-right: auto;
+	 }
+	.card-wrap{
+		.purchasing-col{
+			padding-bottom: 0 !important;
+			.card-content{
+				h3{
+					font-weight: 400; 
+					text-align: center; 
+					margin-bottom: 1em; 
+					color: #414042
+				}
+			}
+		}
+		
+		@media ( max-width : 832px) {
+			&.m2{
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
+			}
+			
+			.no-flexbox .card-wrap .card {
+				width: 100%;
+			}
+		}
+	}	
+}
+

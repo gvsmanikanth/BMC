@@ -1,0 +1,86 @@
+/// The natural language grid system (using class names like "columns" and "row").  This is enabled or disabled with the `$enableGrid` variable in `variables/_options.scss`.
+/// @group grid
+@mixin grid {
+	.row {
+		@include row();
+
+		& + .row {
+			padding-top: 0;
+		}
+
+		.row {
+			@include row((nested: true));
+
+			.column,
+			.columns {
+				padding: 0;
+			}
+		}
+
+		.column,
+		.columns {
+			@include column($columns, (includeGutterWidth: false));
+
+			@include media($columnBreakpoint) {
+				margin-left: $gutterWidth;
+			}
+
+			&:first-child {
+				@include media($columnBreakpoint) {
+					margin-left: 0;
+				}
+			}
+
+			+ .column,
+			+ .columns {
+				margin-top: $columnPadding;
+
+				@include media($columnBreakpoint) {
+					margin-top: 0;
+				}
+			}
+		}
+
+		// Generate Column Classes
+		@for $i from 1 through $columns{
+			@if $i == 1 and (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.one.column,
+				.one.columns {
+					@include media($columnBreakpoint) {
+						width: columns($i);
+					}
+				}
+			}
+			@else if (index($enabledColumns, $i) or length($enabledColumns) == 0 ) {
+				.#{number-as-word($i)}.columns {
+					@include media($columnBreakpoint) {
+						width: columns($i);
+					}
+				}
+			}
+		}
+
+		// Generate Position Classes
+		@for $i from 1 through $columns {
+			@if ($enablePosition) and (index($enabledPositions, $i) or length($enabledPositions) == 0 ) {
+				.position-#{number-as-word($i)} {
+					@include media($columnBreakpoint) {
+						margin-left: columnPosition($i) !important;	// override :first-child rule
+						margin-right: -100%;
+					}
+				}
+			}
+		}
+
+		// Generate Centered Classes
+		@if ($enableCentered) {
+			@for $i from 1 through $columns - 1 {
+				.#{number-as-word($i)}.centered {
+					@include media($columnBreakpoint) {
+						margin-left: centered($i);
+					}
+				}
+			}
+		}
+	}
+}

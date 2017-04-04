@@ -1,0 +1,78 @@
+.r-tabs {
+	@include transition((property: height));
+}
+
+.r-tabs .r-tabs-tab {
+	list-style: none;
+}
+
+.r-tabs .r-tabs-panel {
+	display: none;
+}
+
+.r-tabs .r-tabs-nav {
+  display: flex;
+}
+
+.r-tabs .r-tabs-accordion-title {
+	display: none;
+}
+
+.r-tabs .r-tabs-panel.r-tabs-state-active {
+	display: block;
+}
+
+/* Accordion responsive breakpoint */
+@media (max-width: $break-md - 1) {
+// @include media(breakpointMedium) {  
+	.r-tabs .r-tabs-nav {
+		display: none;
+	}
+
+	.r-tabs .r-tabs-accordion-title {
+		display: block;
+	}
+}
+
+/* Disabled tab */
+.r-tabs .r-tabs-nav .r-tabs-state-disabled {
+	opacity: 0.5;
+}
+
+/* Active state tab anchor */
+.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor {
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+/* Accordion anchor */
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor {
+	@include svg-image(icon-open);
+	background-color: #fff;
+	background-position: 8px center;
+	background-repeat: no-repeat;
+	border-top: 1px solid color(mediumGrey);
+	display: block;
+	font-size: 16px;
+	font-weight: 800;
+	padding: 16px 8px 16px 3.5em;
+	@media (min-width: $break-sm) {
+//   @include media(breakpointSmall) {
+		font-size: 18px;
+	}
+	@media (min-width: $break-md) {
+//   @include media(breakpointMedium) {
+		font-size: 24px;
+	}
+}
+
+/* Active accordion anchor */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+	@include svg-image(icon-closed);
+	border-bottom: 1px solid color(mediumGrey);
+}
+
+/* Disabled accordion button */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-disabled {
+	opacity: 0.5;
+}

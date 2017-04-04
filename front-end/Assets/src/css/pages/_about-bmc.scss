@@ -1,0 +1,113 @@
+.fasttrack-banner {
+  background: #000;
+  position: relative;
+  
+    .banner-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: .5rem .5rem .5rem 18%;
+    
+        h4 {
+      font-size: .7rem;
+    }
+    
+      .lead {
+      margin-bottom: .5rem;
+      font-size: .6rem;
+    }
+    
+  }
+}
+.fasttrack-banner-img-m {
+  display: none;
+}
+.fasttrack-banner-img-s {
+  display: block;
+}
+
+/*break-lg-1*/
+@media (max-width: 1023px) {
+  .fasttrack-banner.banner-large {
+    display: none;
+  }
+}
+
+
+/*small*/
+@media (min-width: 480px){
+  .fasttrack-banner {
+    .banner-title {
+          h4 {
+        font-size: 1.1rem;
+      }
+      
+         .lead {
+        margin-bottom: 1rem;
+        font-size: .9rem;
+      } 
+    }
+  } 
+}
+/*break-sm*/
+@media (min-width: 640px) {
+  .fasttrack-banner{
+    .banner-title{
+        h4 {
+        font-size: 1rem;
+      }
+      
+       .lead {
+          margin-bottom: .9rem;
+          font-size: .8rem;
+        }  
+    } 
+  } 
+
+  .fasttrack-banner-img-m {
+    display: block;
+  }
+  .fasttrack-banner-img-s {
+    display: none;
+  }
+}
+/*break-md*/
+@media (min-width: 832px) {
+  .fasttrack-banner {
+   .banner-title {
+        h4 {
+        font-size: 1.4rem;
+      } 
+      
+       .lead {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    } 
+  } 
+}
+}
+/*break-lg*/
+@media (min-width: 1024px) {
+  .fasttrack-banner {
+    .banner-title {
+      position: relative;
+      padding-top: 375px;
+    }
+    
+  }
+
+  .fasttrack-banner .banner-title,
+  .fasttrack-banner .modal-video-player, .fasttrack-banner .modal-youtube-video-player{
+    padding-left: 14%;
+  }
+  .fasttrack-banner.banner-small {
+    display: none;
+  }
+}
+/*break-xl*/
+@media (min-width:1496px){
+  .fasttrack-banner .banner-title,
+  .fasttrack-banner .modal-video-player, .fasttrack-banner .modal-youtube-video-player{
+    padding-left: 19%;
+  }
+}

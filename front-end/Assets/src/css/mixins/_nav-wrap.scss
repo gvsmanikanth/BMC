@@ -1,0 +1,6 @@
+// wrap css declarations for a specific navigation instance
+@mixin nav-wrap($nav-key) {
+	.bmc-nav-loader-#{$nav-key} {
+		@content;
+	}
+}

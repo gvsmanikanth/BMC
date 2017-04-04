@@ -1,0 +1,216 @@
+.customer-story-landing-banner {
+	background-color: #fff;
+	background-image: url('bg-customer-story-header.png');
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	padding-bottom: 240px;
+
+	@include media(breakpointLarge) {
+		background-position: top center;
+		background-size: auto 100%;
+		height: 675px;
+		padding-bottom: inherit;
+	}
+
+	.layout-inner-wrap {
+		padding: 2.75em;
+	}
+
+	.layout-inner-wrap {
+		background-color: #fe5000;
+
+		@include media(breakpointLarge) {
+			background-color: transparent;
+		}
+	}
+
+	h1 {
+		color: #fff;
+	}
+
+	p {
+		color: color(colorCorporate);
+		font-size: 1.5em;
+		margin-bottom: 0.5em;
+
+		@include media(breakpointMedium) {
+			font-size: 1.4em;
+			max-width: 65%;
+		}
+
+		@include media(breakpointLarge) {
+			font-size: 1.5em;
+			max-width: 70%;
+		}
+
+		@include media(breakpointLarge) {
+			max-width: 65%;
+		}
+	}
+}
+
+.customer-story-landing-heading {
+
+	@extend %clearfix;
+
+	h2 {
+		display: inline-block;
+		font-size: 2em;
+		font-weight: 700;
+		margin-top: 0.1em;
+	}
+
+	fieldset {
+		float: right;
+		margin-top: 0;
+		width: 100%;
+
+		.decorator-select {
+			margin-bottom: 0.75em;
+			vertical-align: top;
+			width: 100%;
+
+			@include media(breakpointMedium) {
+				width: 45%;
+				margin-right: 1em;
+			}
+
+			@include media(breakpointLarge) {
+				width: 275px;
+				margin-bottom: 1.25em;
+				margin-right: 1.5em;
+
+				// last-child
+				& + .decorator-select {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+.customer-story-landing-logo-blocks {
+	background-color: color(seashell);
+
+	.logo-blocks {
+		margin: 0 -1%; // adjust for the 1% margin on the outer elements
+
+		h5 {
+			font-weight: normal;
+		}
+
+		p {
+			color: color(colorBase);
+			font-weight: bold;
+		}
+	}
+
+	.logo-block {
+		background-color: #fff;
+		&:hover {
+			background-color: darken(#fff, 10%);
+		}
+	}
+
+	.logo-block-featured {
+
+		/**
+		 * z-index layering
+		 * 10: img.image-span (background image)
+		 * 20: .logo-inner-container (text and copy)
+		 * 30: .hover-area (overlay on hover)
+		 */
+
+		background-color: #e1e1e1;
+		background-position: center center;
+		background-size: cover;
+		position: relative; // for .logo-inner-container to be at bottom
+
+		img.background-image {
+			bottom: 0;
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		&:hover .hover-area {
+			@include rgba-background-color(#fff, 0.35);
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 3;
+
+			/*.oldie & {
+				background-color: transparent;
+				border: 15px solid white;
+				box-sizing: border-box;
+			}*/
+		}
+
+		.logo-inner-container {
+			bottom: 0;
+			color: #fff;
+			height: auto;
+			max-width: 325px;
+			padding: 2em;
+			position: absolute;
+			top: auto;
+			z-index: 2;
+
+			.bold-point {
+				color: #fff;
+				color: rgba(#fff, 0.75);
+				font-weight: 800;
+				font-size: 6em;
+				line-height: 1;
+			}
+
+			img {
+				vertical-align: baseline;
+				margin-right: 0.4em;
+				max-width: 125px;
+			}
+		}
+
+		.logo-area, .copy {
+			display: inline-block;
+			height: auto;
+			position: static;
+		}
+
+		.copy {
+			p {
+				color: #fff;
+				font-size: 1.1em;
+				font-weight: normal;
+			}
+		}
+		
+		.logo-heading {
+      position: static;
+      left: 2em;
+      top: 1em;
+      right: 2em;
+      p {
+        font-size: 1.1em;
+        color: #fff;
+      }
+  
+      p:last-child {
+        margin-bottom: 0;
+      }
+    } 
+	}
+
+	.testimonial {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}

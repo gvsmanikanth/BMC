@@ -1,0 +1,49 @@
+.page-about-us {
+	.tabs-nav .-hr li {
+		height: 40px;
+		line-height: 40px;
+	}
+	.leadership-content {
+		@include transition((property: padding));
+		.container {
+			bottom: 4em;
+			position: absolute;
+			right: 0;
+			width: 40px;
+		}
+		.container svg {
+			width: 100%;
+		}
+		.arrow-next .fallback {
+			background-image: url('#{$imagesFolder}s-chevronRight-39x68.png');
+		}
+	}
+	@media (min-width: $break-sm) {
+		.leadership-content {
+			padding-right: 40px;
+		}
+		.leadership-content .container {
+			bottom: 6em;
+		}
+	}
+	@media (min-width: $break-md) {
+		.leadership-content .container {
+			bottom: auto;
+			right: 0;
+			top: 16px;
+			width: 50px;
+		}
+	}
+	@media (min-width: $break-lg) {
+		.tabs-nav .-hr li {
+			height: 50px;
+			line-height: 50px;
+		}
+		.leadership-content {
+			padding-right: 70px;
+		}
+		.leadership-content .container {
+			width: 60px;
+		}
+	}
+}

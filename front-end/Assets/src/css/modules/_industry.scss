@@ -1,0 +1,62 @@
+.page-industry {
+	.section .section-hero-content {
+		@media (min-width: $break-lg) {
+			height: 404px;
+		}
+	}
+}
+
+.industry-tabs {
+
+	width: columns(12);
+	
+	.tab-module-image {
+		width: columns(12);
+		
+		@include media(breakpointMedium) {
+			padding-right: columns(.5);
+		}
+		
+		@include media(breakpointLarge) {
+			min-width: 450px;
+			width: columns(4);
+		}
+	}
+	
+	.tab-module-support {
+		width: columns(12);
+		
+		@include media(breakpointLarge) {
+			width: columns(7.5);
+		}
+	}
+	
+}
+
+
+//DXP-166
+.s-industry-products{
+  .card-image{
+    height:90px;
+    .fill-tangerine{
+      height:90px;
+      width:90px
+    }
+    
+    .fill-pomegranate{
+      height:90px;
+      width:123px
+    }
+    
+    .fill-conifer{
+      height:90px;
+      width:136px
+    }
+    
+    .fill-robins-egg-blue{
+      height:90px;
+      width:128px
+    }
+  }
+}
+//DXP-166

@@ -1,0 +1,107 @@
+// masonry
+
+$mortar-gap : 10px;
+
+.mortar-flex {
+	flex: 0 0 $mortar-gap;
+}
+
+.mortar-top {
+	margin-top: $mortar-gap;
+}
+
+.mortar-right {
+	margin-right: $mortar-gap;
+}
+
+.mortar-bottom {
+	margin-bottom: $mortar-gap;
+}
+
+.mortar-left {
+	margin-left: $mortar-gap;
+}
+
+.masonry {
+	.card {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+	.card-content {
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0 auto;
+		-ms-flex: 1 0 auto;
+		flex: 1 0 auto;
+	}
+}
+
+
+//IE-10 creates padding issue due margin in between.
+.masonry-withgap{
+  @media (min-width: $break-lg) {
+  .lg-col-6{
+      width:49.4%;
+    }
+  }
+  .card{
+      display: flex !important; //IE-10 related issue - Added !important.
+  }
+}
+
+	.flex-col{
+		&.primary{
+			padding-right:0px;
+			@media (min-width: $break-lg){
+				padding-right: 5px;
+			}
+
+		}
+		&.secondary{
+			padding-left: 0px;
+			@media (min-width: $break-lg){
+				padding-left: 5px;
+			}
+		}
+	}
+	
+	.brick{
+		.innerWrap{
+			&.brickLeft {
+				padding-right: 0px;
+				padding-bottom: 10px;
+				@media all and (min-width: $break-md){
+					padding-right: 5px;
+					padding-bottom: 0;
+				} 
+			}
+			&.brickRight{
+				padding-left: 0px;
+				@media all and (min-width: $break-md){
+					padding-left: 5px;
+				} 
+			}
+		}
+		
+		.inner {
+			width: 100%;
+			height: 100%;
+			background-size:cover;
+		}
+	}
+
+
+//IE-10 creates padding issue due margin in between.
+.masonry-withgap{
+  @media (min-width: $break-lg) {
+  .lg-col-6{
+      width:49.4%;
+    }
+  }
+  .card{
+      display: flex !important; //IE-10 related issue - Added !important.
+  }
+}

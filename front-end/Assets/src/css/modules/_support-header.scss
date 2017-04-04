@@ -1,0 +1,337 @@
+// breakpoint for mobile/desktop menu toggle
+$desktopToggle: breakpointLarge;
+$menuHeight: 1.5em;
+$menuBottomPadding: 1em;
+
+
+@mixin hideForMobile() {
+
+	visibility: hidden;
+
+	.support-header.expanded  & {
+		visibility: visible;
+	}
+
+	@include media($desktopToggle) {
+		visibility: visible;
+	}
+
+}
+
+.support-header {
+	background-color: #fff;
+	box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.15);
+	overflow: hidden;
+	position: relative;
+	transition: max-height 0.75s ease-in-out;
+
+	// transition prefixes
+	-webkit-transition: max-height 0.75s ease-in-out;
+	-moz-transition: max-height 0.75s ease-in-out;
+	-o-transition: max-height 0.75s ease-in-out;
+
+	// box-shadow prefixes
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.15);
+	-moz-box-shadow:    0px 2px 5px 0px rgba(50, 50, 50, 0.15);
+
+	@include media($desktopToggle) {
+		padding-top: 0;
+		padding-bottom: 0;
+		overflow: visible;
+	}
+
+	&.expanded {
+		background-color: color(colorHeadingsProduct);
+		padding-bottom: 1em;
+	}
+}
+
+.desktop-global-bar-container,
+.mobile-global-bar-container {
+
+	.global-options {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.global-option {
+		margin: 0;
+
+		.log-out {
+			color: color(mediumOrange);
+
+			&:hover,
+			&:active {
+				color: darken(color(mediumOrange), 10%);
+			}
+		}
+	}
+}
+
+.desktop-global-bar-container {
+	display: none;
+	color: #fff;
+	text-align: right;
+
+	@include media($desktopToggle) {
+		display: block;
+	}
+
+	.global-options {
+		height: 34px;
+		padding: 0.45em 0;
+		line-height: 34px;
+
+		@include media($desktopToggle) {
+			position: relative;
+			margin-bottom: -3em;
+			z-index: 3;
+		}
+
+	}
+
+	.global-option {
+		display: inline-block;
+		font-size: 0.8em;
+		font-weight: 700;
+
+		&:before {
+			content: '|';
+			color: color(darkGrey);
+			display: inline-block;
+			margin: 0 1.25em;
+		}
+
+		&:first-child {
+			&:before {
+				display: none;
+			}
+		}
+
+		&.navigation-search {
+			margin-left: 1em;
+			&:before {
+				content: ''!important;
+			}
+		}
+
+	}
+}
+
+.mobile-global-bar-container {
+
+	@include hideForMobile;
+
+	display: block;
+	padding-top: 0.5em;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	.global-bar {
+		border-top: 1px dashed color(seashell);
+		padding-top: 1.25em;
+		margin-top: 1.25em;
+	}
+
+	.global-option {
+		font-size: 1.25em;
+		font-weight: 600;
+		margin-top: 1em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	a, a:hover { color: color(mediumGrey); }
+
+	@include media($desktopToggle) {
+		display: none;
+	}
+}
+
+.logo-bar-container {
+
+ 	.mobile-logo-bar {
+		@extend %clearfix;
+		position: relative;
+ 	}
+
+	.mobile-logo-bar-wrapper {
+		margin: 0 em(-9);
+		padding: $menuBottomPadding 0;
+
+
+		@include media($desktopToggle) {
+			padding: 2em 0 1em;
+		}
+
+		.support-header.expanded & {
+			border-bottom: 1px dashed color(seashell);
+			margin-bottom: 1.25em;
+			padding-bottom: 1.25em;
+
+			@include media($desktopToggle) {
+				border-bottom: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	@include media($desktopToggle) {
+		background: #fff;
+		margin: 0;
+	}
+}
+
+.support-menu-container {
+
+	@include hideForMobile;
+
+	@include media($desktopToggle) {
+		background: #fff;
+	}
+}
+
+.support-header-logo,
+.support-header-heading,
+.support-menu-toggle {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+.support-header-heading,
+.support-menu-toggle {
+	margin-left: -0.15em;
+}
+
+.support-header-logo {
+
+	background-image: url('#{$imagesFolder}bmc-support-mobile-icon-orange.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	height: 55px;
+	vertical-align: middle;
+	width: 12%;
+
+	@include media(breakpointMedium) {
+		@include svg-image(bmc_logo_header);
+		float: none;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+
+	@include media($desktopToggle) {
+		position: relative;
+		width: 115px;
+		z-index: 10;
+	}
+
+	.support-header.expanded & {
+
+		background-image: url('#{$imagesFolder}bmc-support-mobile-icon-white.png');
+
+		@include media(breakpointMedium) {
+			background-image: url('#{$imagesFolder}bmc-logo-white-on-grey.png');
+			//background-size: 105px auto; //WEB-840: Commented to align logo on mobile view inside menu.
+			background-position-x: -5px;
+		}
+	}
+}
+
+
+.support-header-heading {
+	@include box-sizing();
+	font-size: .7em;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+	width: 33%;
+
+	@include media(breakpointSmall) {
+		font-size: 1em;
+	}
+
+	@include media(breakpointMedium) {
+		border-left: 1px solid color(mediumGrey);
+		font-size: 1.25em;
+		padding: 0 23px;
+		position: relative;
+		text-align: left;
+		top: 0.15em;
+	}
+
+	@include media(breakpointLarge) {
+		width: auto;
+	}
+
+	a {
+		color: color(darkGrey);
+		transition: none;
+
+		&:hover,
+		&:active {
+			color: darken(color(darkGrey), 20%);
+		}
+
+		&.heading-emphasis {
+			color: color(mediumOrange);
+
+			&:hover,
+			&:active {
+				color: darken(color(mediumOrange), 10%);
+			}
+		}
+	}
+
+	.support-header.expanded & {
+		color: seashell;
+	}
+
+	.heading-text {
+		box-sizing: border-box;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+
+		@include media(breakpointMedium) {
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+			width: auto;
+
+			&:before {
+				content: '';
+			}
+		}
+
+	}
+}
+
+.support-menu-toggle {
+	text-align: right;
+	height: 45px;
+	width: 20%;
+	cursor: pointer;
+	background-image: url('#{$imagesFolder}bmc-support-mobile-hamburger.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	content: $iconMenu;
+	font-size: 2.5em;
+	vertical-align: middle;
+	text-align: center;
+  float:right;
+	.support-header.expanded & {
+		background-image: url('#{$imagesFolder}bmc-support-mobile-close.png');
+	}
+
+	@include media($desktopToggle) {
+		display: none;
+	}
+}

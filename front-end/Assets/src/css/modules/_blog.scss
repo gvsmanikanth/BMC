@@ -1,0 +1,53 @@
+// @category modules
+
+// @function blog
+// Styles for the tangential blog snippets.
+.hentry {
+
+	.entry-title {
+		@include font-size(22);
+	}
+
+	.fn {
+		font-style: italic;
+	}
+}
+
+.blog-recent {
+
+	figure {
+		display: none;
+	}
+
+	.hentry {
+		@extend %clearfix;
+		margin-bottom: em(20);
+
+		@include media(breakpointExtraLarge) {
+			figure {
+				display: block;
+				float: right;
+				width: 50%;
+
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	.entry-title {
+		@include font-size(16);
+
+		@include media(breakpointMedium) {
+			@include font-size(18);
+		}
+
+		@include media(breakpointExtraLarge) {
+			@include box-sizing();
+			float: left;
+			padding-right: 10px;
+			width: 50%;
+		}
+	}
+}

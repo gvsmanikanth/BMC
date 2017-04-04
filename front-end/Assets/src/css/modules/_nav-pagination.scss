@@ -1,0 +1,38 @@
+//Pagination 
+.pagination{
+    p{
+        padding-top: 1em;
+     }
+    
+    ul {
+        display: inline-block;
+        padding: 1em 0 1em;
+        margin: 0;
+        float:right;
+        font-size:1em;
+    }
+    
+    ul li {display: inline;}
+    
+    ul li a {
+        float: left;
+        padding: .5em .5em 0 .5em;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size:1em;
+        line-height:1.6em;
+        color:color(curious-blue);
+        font-weight: 800;    
+    }
+    
+    ul li a.active {
+        //background-color: color(lightGrey);
+        color: black;
+        border-radius: 5px;
+    }
+    
+    ul li a:hover:not(.active) {
+     text-decoration: underline;
+      background-color: color(lightGrey);
+    }
+}

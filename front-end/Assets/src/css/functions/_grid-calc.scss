@@ -1,0 +1,82 @@
+////
+/// @group grid
+////
+
+// Change $gutterWidth to a percentage
+@if unit($gutterWidth) == 'px' {
+	$gutterWidth: percentage($gutterWidth / $rowMaxWidth);
+}
+
+/// Calculates the width of a single column.
+/// @param {String} $columns [$columns] - The total number of columns in the grid to use as the basis of a single column width.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column width will include the gutter width in its calculation.
+/// @return {Percentage} The width of a single column.
+@function oneColumn($options: ()) {
+	$options: map-merge((
+		columns: $columns,
+		includeGutterWidth: true
+	), $options);
+
+	$columns: map-get($options, columns);
+
+	@if map-get($options, includeGutterWidth) == true {
+		@return (100% - ($columns - 1) * $gutterWidth) / $columns;
+	}
+	@else {
+		@return 100% / $columns;
+	}
+}
+
+/// Calculates the width of `$n` columns.
+/// @param {Number} $n - The number of columns for which you wish to calculate the width.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column width will include the gutter width in its calculation.
+/// @return {Percentage} The width of n columns.
+@function columns($n, $options: ()){
+	$options: map-merge((
+		includeGutterWidth: false //BMC-527: Changed default setting for gutterwidth to false, causing alignment issue globally.
+	), $options);
+
+	$columnWidth: oneColumn($options) * $n;
+
+	@if map-get($options, includeGutterWidth) == true {
+		$columnWidth: $columnWidth + ($gutterWidth * ($n - 1));
+	}
+	@return floor($columnWidth*10)/10; //Added rounded to two digts calculation
+}
+
+/// Calculates margin to position an element within the grid system.
+/// @param {Number} $n - The column position in which you wish to position an element.
+/// @param {Boolean} $includeGutterWidth [true] - Whether or not the column will include the gutter width in its position.
+/// @return {Percentage} The position in percentage width of the parent container.
+@function columnPosition($n, $options: ()) {
+	$options: map-merge((
+		includeGutterWidth: true
+	), $options);
+
+	// re-index to 0-based for proper margin calculations
+	$n: $n - 1;
+
+	$position: columns($n, $options);
+
+	@if map-get($options, includeGutterWidth) == true {
+		$position: $position + $gutterWidth;
+	}
+
+	@return $position;
+}
+
+/// Calculates the margin to properly center an element.
+/// @param {Number} $n - The width (in columns) of the element being centered.
+/// @return {Percentage} The margin necessary to center an element.
+@function centered($n, $options: ()) {
+	@return 50% - (columns($n, $options) / 2);
+}
+
+/// Changes a numeric value `$n` into its English word representation.
+/// @param {Integer} $n - The number of columns.
+/// @return {String} A word representation of the number of columns requested.
+@function number-as-word($n) {
+	$words: "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one", "twenty-two", "twenty-three", "twenty-four", "twenty-five", "twenty-six", "twenty-seven", "twenty-eight", "twenty-nine", "thirty", "thirty-one", "thirty-two", "thirty-three", "thirty-four", "thirty-five", "thirty-six";
+
+	@return nth($words, $n);
+}

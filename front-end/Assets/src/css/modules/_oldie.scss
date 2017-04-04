@@ -1,0 +1,214 @@
+/*.oldie {
+	.m1 {
+		margin: 8px
+	}
+	.mt1 {
+		margin-top: 8px
+	}
+	.mr1 {
+		margin-right: 8px
+	}
+	.mb1 {
+		margin-bottom: 8px
+	}
+	.ml1 {
+		margin-left: 8px
+	}
+	.m2 {
+		margin: 16px
+	}
+	.mt2 {
+		margin-top: 16px
+	}
+	.mr2 {
+		margin-right: 16px
+	}
+	.mb2 {
+		margin-bottom: 16px
+	}
+	.ml2 {
+		margin-left: 16px
+	}
+	.m3 {
+		margin: 32px
+	}
+	.mt3 {
+		margin-top: 32px
+	}
+	.mr3 {
+		margin-right: 32px
+	}
+	.mb3 {
+		margin-bottom: 32px
+	}
+	.ml3 {
+		margin-left: 32px
+	}
+	.m4 {
+		margin: 64px
+	}
+	.mt4 {
+		margin-top: 64px
+	}
+	.mr4 {
+		margin-right: 64px
+	}
+	.mb4 {
+		margin-bottom: 64px
+	}
+	.ml4 {
+		margin-left: 64px
+	}
+	.mxn1 {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+	.mxn2 {
+		margin-left: -16px;
+		margin-right: -16px;
+	}
+	.mxn3 {
+		margin-left: -32px;
+		margin-right: -32px;
+	}
+	.mxn4 {
+		margin-left: -64px;
+		margin-right: -64px;
+	}
+	.p1 {
+		padding: 8px
+	}
+	.py1 {
+		padding-top: 8px;
+		padding-bottom: 8px
+	}
+	.px1 {
+		padding-left: 8px;
+		padding-right: 8px
+	}
+	.p2 {
+		padding: 16px
+	}
+	.py2 {
+		padding-top: 16px;
+		padding-bottom: 16px
+	}
+	.px2 {
+		padding-left: 16px;
+		padding-right: 16px
+	}
+	.p3 {
+		padding: 16px;
+		@include media(breakpointMedium) {
+			padding: 32px;
+		}
+	}
+	.py3 {
+		padding-top: 16px;
+		padding-bottom: 16px;
+		@include media(breakpointMedium) {
+			padding-top: 32px;
+			padding-bottom: 32px;
+		}
+	}
+	.px3 {
+		padding-left: 16px;
+		padding-right: 16px;
+		@include media(breakpointMedium) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+	}
+	.p4 {
+		padding: 32px;
+		@include media(breakpointMedium) {
+			padding: 64px;
+		}
+	}
+	.py4 {
+		padding-top: 32px;
+		padding-bottom: 32px;
+		@include media(breakpointMedium) {
+			padding-top: 64px;
+			padding-bottom: 64px;
+		}
+	}
+	.px4 {
+		padding-left: 32px;
+		padding-right: 32px;
+		@include media(breakpointMedium) {
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+	}
+	.flex-grow {
+		display: block;
+		float: left;
+	}
+	.flex-justify-center,
+	.flex-x-center {
+		overflow: hidden;
+		text-align: center;
+		white-space: nowrap;
+		.flex {
+			display: inline-block;
+			float: none;
+			text-align: left;
+			white-space: normal;
+			//*display: inline;
+			display: inline; //BMC-527 Removed *
+		}
+	}
+	.btn-icon-right {
+		padding-right: 2em;
+		position: relative;
+		.fallback {
+			height: 100%;
+			margin: auto 0 -.2em .2em;
+			width: 1em;
+			position: absolute;
+			right: .65em;
+			top: 0;
+			@include media(breakpointLarge) {
+				margin: auto 0 -.1em .2em;
+			}
+		}
+	}
+	.section-hero .fallback {
+		float: right;
+		height: 1em;
+		width: 1em;
+	}
+	.card-image .fallback {
+		height: 100%;
+		margin: 0 auto;
+		width: 100%;
+	}
+	@include media(breakpointMedium) {
+		.owl-wallpaper .owl-next {
+			background: url('#{$imagesFolder}s-chevronRight-25x49.png') no-repeat right center;
+		}
+		.owl-wallpaper .owl-prev {
+			background: url('#{$imagesFolder}s-chevronLeft-25x49.png') no-repeat left center;
+		}
+	}
+	// ensures the card height is tall enough for the background image icons since background-size cannot be used
+	#product-services-cards .card-image,
+	#product-services-cards .fallback {
+		min-height: 100px;
+	}
+	#s-industry-products {
+		.s-CloudMgmt {
+			background-image: url('#{$imagesFolder}s-CloudMgmt-129x90.png');
+		}
+		.s-Mainframe {
+			background-image: url('#{$imagesFolder}s-Mainframe-99x90.png');
+		}
+		.s-MyIT {
+			background-image: url('#{$imagesFolder}s-MyIT-90x90.png');
+		}
+		.s-Workload {
+			background-image: url('#{$imagesFolder}s-Workload-136x90.png');
+		}
+	}
+}*/

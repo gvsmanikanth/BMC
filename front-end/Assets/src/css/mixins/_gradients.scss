@@ -1,0 +1,24 @@
+/// Adds a background color gradient. *Note:* Only supports IE10+ syntax. IE9 and below will fallback to a single background color.
+/// @param {String} $direction - The position the gradient starts from (e.g.: top, bottom, left, right, 45deg).
+/// @param {List | String} $colorStops - Variable length list of color stops.
+/// @require {function} is-direction - Uses the `is-direction` function internally.
+/// @example
+/// gradient(#000, #fff);
+/// gradient(right, transparent, color($primary));
+/// gradient(45deg, color(greyLight), darken(color($greyLight), 5%));
+@mixin gradient($direction, $colorStops...) {
+
+	// add "to" prefix on valid $directions and set default fallback
+	@if is-direction($direction) {
+		$direction: to $direction;
+	}
+	@else {
+		$colorStops: join($direction, $colorStops, comma); // ensure colors are passed if no direction is passed
+		$direction: to bottom; // set default direction
+	}
+
+	//Styles
+	background-color: nth(nth($colorStops, 1), 1); // All else fails
+	background-image: linear-gradient($direction, $colorStops);	// W3C
+
+}

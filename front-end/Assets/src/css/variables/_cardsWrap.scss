@@ -1,0 +1,64 @@
+/// Base class for cards.
+
+%cards-wrap {
+  @extend .flex-wrap;
+  justify-content: space-between;
+  //padding-bottom: 4em;
+
+  h1 {
+    color: color(colorHeadings);
+    margin-bottom: .5em;
+  }
+
+  h2 {
+    margin-bottom: 2em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .flex {
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .flex-item {
+    // border-left: .5em solid transparent;
+    // border-right: .5em solid transparent;
+    // @include box-sizing();
+    display: flex;
+    margin: .5em 0;
+    width: 100%;
+    background-color: white;
+    
+    &:hover{
+       &:not(.noHover){ 
+           box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+     }
+    }
+    
+    figure {
+      background: #fff;
+      transition: .3s linear;
+    }
+    figcaption {
+      padding: 1em 2em 2em;
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  .modal-inline {
+
+    &:hover,
+    &:active,
+    &:focus {
+
+      figure {
+        // arbitrary effect for presentation feedback
+        background: #eaeaea;
+      }
+    }
+  }
+}

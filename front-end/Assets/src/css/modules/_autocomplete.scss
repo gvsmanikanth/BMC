@@ -1,0 +1,35 @@
+// @category modules
+
+// @function autocomplete
+// Styles associated with the autocomplete plugin used for the Product Finder.
+.autocomplete-suggestions {
+	background-color: white;
+	border: 1px solid color(colorEmphasis);
+	@include font-size(14);
+	line-height: $baseLineHeight;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: left;
+
+	@include media(breakpointMedium) {
+		@include font-size(18);
+	}
+}
+
+.autocomplete-suggestion {
+	border-top: 1px dashed color(colorEmphasis);
+	cursor: pointer;
+	padding: em(9 , (context: 18)); //BMC-527 - Replaced em(9 18)
+
+	&:first-child {
+		border-top: none;
+	}
+
+	&.autocomplete-selected {
+		background-color: color(colorEmphasis);
+	}
+}
+
+#demandbase-autocomplete .ui-widget {
+	z-index: z(content) + 1 !important;		// override demandBase z-index set with JS
+}

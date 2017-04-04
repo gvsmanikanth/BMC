@@ -1,0 +1,107 @@
+// @category layout
+
+// @function footer
+// The location to define major column layouts and styles for the footer.
+.layout-footer {
+	@extend %column-config;
+	background: color(colorCorporate);
+	// fix rounding errors in wallpaper
+	margin-top: -1px;
+	width: 100%;
+
+	li { margin-bottom: .5em; }
+
+	a {
+		color: white;
+
+		&:hover {
+			color: color(mediumOrange);
+		}
+	}
+	.layout-inner-wrap {
+		overflow: auto;
+	}
+}
+
+.footer-logo {
+	@include svg-image(logo-orange-white);
+	background-position: left 14px;
+	background-repeat: no-repeat;
+	background-size: 150px 50px;
+	height: 75px;
+	margin-bottom: em(16);
+
+	> a {
+		display: block;
+		height: 100%;
+		width: 135px;
+		text-indent: -9999em;
+	}
+
+	@include media(breakpointLarge) {
+		box-sizing: border-box;
+		float: $defaultFloat;
+		margin: 0;
+		min-height: 1px;
+		width: 100%; //BMC-527 Added default width 100%;
+		margin: 0;
+		width: columns(2);
+	}
+}
+
+.meta {
+	@include font-size(14);
+	margin: 0;
+	padding: 0;
+
+	> li {
+		list-style-type: none;
+		margin-bottom: em(12, (context: 14)); //BMC-527 Replaced em(12 14)
+
+		@include media(breakpointMedium) {
+			@include box-sizing();
+			display: inline-block;
+			margin-right: -0.25em;	// remove whitespace created by inline-block
+			padding-right: columns(0.5);
+			vertical-align: top;
+			width: columns(5.9);
+		}
+	}
+
+
+	&.nav-supplemental {
+		> li {
+			width: 100%;
+
+			@include media(breakpointLarge) {
+				width: columns(10);
+			}
+		}
+		// search box from support landing page
+		.search-input-m-glass {
+			@include font-size(14);
+			border-width: 1px;
+			height: em(42);
+			padding: em(4) em(13) em(4) 0;
+
+			input[type=text] {
+				padding: em(3) em(40) em(3) em(12);
+			}
+
+			button {
+				right: em(8);
+
+				&:before {
+					@include font-size(20);
+				}
+			}
+
+		}
+
+	}
+
+	.footer-search {
+		width: 100%;
+	}
+
+}

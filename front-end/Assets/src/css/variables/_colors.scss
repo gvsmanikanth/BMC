@@ -1,0 +1,84 @@
+/// The color palette for the project.
+/// @type Map
+/// @prop {Color} primary [#e55030] - The color palette's primary color.
+/// @prop {Color} secondary [#d1d2d4] - The color palette's secondary color.
+/// @prop {Color} greyLight [#eeeeee] - A light grey intended for use as a shaded background color.
+/// @prop {Color} greyMedium [#cccccc] - A medium grey intended for use as a border or accent color in conjunction with `greyLight`.
+/// @prop {Color} greyDark [#6d6d6d] - A dark grey intended for us as a text or border color in conjunction with `greyLight` or `greyMedium`.
+$colors: (
+
+colorPrimary:			#fefefe,
+seashell: 				#f1f1f1,
+lightGrey:				#eeeeee,
+iron:							#e2e3e4,
+colorTertiary:		#e1e1e1,
+alto:							#e0e0e0,
+mediumGrey:				#cacaca,
+aluminium:				#a7a9ac,
+gray:							#888,
+sirocco: 					#6e6f6f,
+darkGrey:					#6c6c6c,
+corduroy:					#5b5c5c,
+abbey: 						#555557,
+tundora: 					#413e41,
+ship-gray:				#414042,
+mine-shaft:				#333333,
+black-lung:				#2a2a2a,
+colorSecondary:		#292929,
+
+cerulean:					#00b0f0,
+curious-blue: 			#29a5d6,
+shakespeare:			#3cb6ce,
+robins-egg-blue: 		#00bddd,
+boston-blue: 			#3980b2,
+darkBlue:				#046e96,
+danube:					#5898d2,
+
+lightTeal:				#57aa9b,
+keppel: 				#46ad9e,
+persian-green: 		#00a79d,
+viking:					#5ec2d5,
+conifer:				#92d050,
+apple:					#36ba2f,
+
+pomegranate: 			#ee3924,
+
+tangerine: 			#f98700,
+tango: 				#f37021,
+mediumOrange:			#fe5000,
+
+yellow-orange:			#ffad38,
+pear: 					#d7df23,
+
+colorHeadingsProduct:	mine-shaft,	// dark grey
+colorHeadings:			mediumOrange,	// medium orange
+colorCorporate:		ship-gray,		// dark, corporate grey
+colorFooterLight:		aluminium,		// light grey for footer
+colorHint:				alto,			// light grey
+colorNavigationBar: 	tundora,		// light grey for navigation bar
+colorBase:				abbey,			// dark grey for body copy
+colorEmphasis:			black-lung,	// dark grey
+colorAction:			apple,			// light green
+colorCorporateAction: 	curious-blue,	// dark blue, similar to corporate blue
+colorNavigationSecondary: #fcfcfc,
+colorNavigationLink: 	ship-gray, // default secondary navigation text
+colorNavigationEmphasis: #ebebeb, // navigation emphasis
+darkOrange: #f83200,
+
+// default Phoenix colors -- remove these pre-production
+primary: #e55030,
+secondary: #d1d2d4,
+greyLight: #eeeeee,
+greyMedium: #cccccc,
+greyDark: #6d6d6d,
+
+
+lightSeaGreen : #20A99C,
+summerSky : #2AB7CF,
+atlantis: #94CA53,
+summerSky-dark: #1EADE3,
+pictonBlue : #589AD0,
+outrageousOrange: #F05427,
+carrotOrange : #F68721
+
+);

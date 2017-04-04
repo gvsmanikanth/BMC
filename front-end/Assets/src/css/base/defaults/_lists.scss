@@ -1,0 +1,55 @@
+ol, ul, dd {
+	@include font-size(14);
+
+	@include media(breakpointMedium) {
+		@include font-size(16);
+	}
+
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+
+ul, ol {
+	margin: em(16) 0 em(24); //BMC-527 : replaced em(24 16) with em(24)
+	padding: 0 0 0 28px;	// 28px sets the bullets to be flush against the left edge of their container
+
+	&.plain {
+		list-style-image: none;
+		list-style: none;
+		margin-left: 0;
+		padding-left: 0;
+		text-align: left;
+
+		.no-svg & {
+			list-style-image: none;
+			list-style: none;
+			margin: 0;
+		}
+	}
+
+	&.-border-bottom {
+		margin-top: 0;
+		li {
+			border-bottom: 2px solid color(mediumGrey);
+			margin-bottom: 0;
+			padding: .5em 0;
+		}
+	}
+
+	ul {
+		margin-left: em(18);
+	}
+}
+
+li {
+	margin-bottom: 1em;
+}
+
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin: 0 0 em(22); //BMC-527
+}

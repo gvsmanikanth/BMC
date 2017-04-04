@@ -1,0 +1,47 @@
+/// The breakpoints for all resolutions represented as pairs with the breakpoint name and its associated pixel width.
+/// @group grid
+/// @type Map
+/// @prop {Pixels} extraSmall [320px]
+/// @prop {Pixels} small [480px]
+/// @prop {Pixels} medium [768px]
+/// @prop {Pixels} large [960px]
+/// @prop {Pixels} extraLarge [1220px]
+
+$breakpointDocumentWidth: $rowMaxWidth + (28px * 2);
+
+$breakpoints: (
+	breakpointTiny: 200px,
+	breakpointExtraSmall: 320px,
+	breakpointSmall: 480px,
+	small: 480px,
+	breakpointMedium: 768px,
+	breakpointLarge: 960px,
+	breakpointExtraLarge: 1220px,
+	breakpointExtraExtraLarge:1500px
+);
+// 	breakpointDocumentWidth: $breakpointDocumentWidth,
+/*
+	breakpointTiny: 200px,
+	breakpointExtraSmall: 320px,
+	breakpointSmall: 480px,
+	breakpointMedium: 768px,
+	breakpointLarge: 960px,
+	breakpointExtraLarge: 1220px,
+	breakpointHuge: 1920px,
+	breakpointExtraHuge: 2156px
+*/
+// porting legacy variables for inline @media calls
+
+$documentWidth: $rowMaxWidth;
+$maxDeviceWidth: 2880px;
+
+$mobile			: 320px;
+$tablet			: 768px;
+$laptop			: 1280px;
+$laptop-hires	: 1440px;
+$desktop		: 1600px;
+
+$break-sm		: 640px;
+$break-md		: 832px;
+$break-lg		: 1024px;
+$break-xl		: $laptop-hires + 56;

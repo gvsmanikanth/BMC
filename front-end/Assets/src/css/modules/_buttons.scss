@@ -1,0 +1,487 @@
+// @category modules
+
+// @function buttons
+// Class used for rendering a button-shaped element.  Can be used on any element, but is most appropriate with anchors, buttons, and spans.
+// @usage
+// <button>Button</button>
+// <a href="#" class="btn-secondary">Anchor as button-secondary</a>
+%button-config {
+	@include font-size(14);
+	@include transition();
+	border-radius: $formElementBorderRadius;
+	border-style: solid;
+	border-width: 3px;
+	cursor: pointer;
+	display: inline-block;
+	// margin: em(10 14) em(10 14) em(10 14) 0;
+	margin: .7em .7em .7em 0;
+	//padding: em(10 14) em(14 14);
+	padding: em(10 , (context: 14)) em(14, (context: 14)); //BMC-527 Replaced - padding: em(10 14) em(14 14);
+	text-align: center;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color(darkBlue);
+		border-color: color(darkBlue);
+		color: #fff;
+	}
+
+	&.btn-full-width {
+		@include box-sizing();
+		display: block;
+		margin-right: 0;
+		margin-top: em(16);
+		text-align: left;
+		width: 100%;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&.btn-small {
+		@include font-size(14);
+		//padding: em(6 14) em(12 14);
+		padding: em(6 , (context: 14)) em(12, (context: 14)); //BMC-527 Replaced - padding: em(6 14) em(12 14);
+	}
+
+	&.video-play {
+
+		background-image: url("#{$imagesFolder}s-VideoPlay-small.png");
+		background-repeat: no-repeat;
+		background-position: calc(100% - 10px) center;
+		//@include font-size(18); //WEB-411 removed fixed font size for all resolutions
+		//padding-right: em(44);
+		padding-right: em(50); //Added padding to avoid overlapping bg image with text
+	}
+}
+
+%disabled-button-config {
+	background-color: color(mediumGrey);
+	border-color: color(darkGrey);
+	color: #fff;
+	opacity: .5;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color(mediumGrey);
+		border: 3px solid color(darkGrey);;
+		color: #fff;
+	}
+}
+
+button,
+.btn {
+	@extend %button-config;
+	background-color: color(colorCorporateAction);
+	border-color: color(colorCorporateAction);
+	color: #fff;
+
+	&[disabled="disabled"] {
+		@extend %disabled-button-config;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+
+	&.-corduroy {
+		background-color: color(corduroy);
+		border-color: color(corduroy);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: color(tundora);
+			border-color: color(tundora);
+			color: #fff;
+		}
+	}
+
+
+
+	&.btn-green {
+		background-color: color(apple);
+		border-color: color(apple);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: darken(color(apple), 10%);
+			border-color: darken(color(apple), 10%);
+		}
+	}
+	
+	//background: #ffffff; color: #29a5d6; font-weight: bold; padding: .5em 1em .4em 1em; margin-right: 1.5em;
+	&.btn-blue {
+    background-color: #ffffff;
+    border-color: #29a5d6;
+    color: #29a5d6;
+    //padding: .5em 1em .4em 1em; 
+   // margin-right: 1.5em;
+    
+    &.icon-document {
+      background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
+      background-position: 4px 10px;
+      padding-left: 40px;
+    }
+    &.icon-documents {
+      background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
+      background-position: 5px -95px;
+      padding-left: 40px;
+    }
+    
+    
+    &:hover,
+    &:active,
+    &:focus {
+      color: darken(#29a5d6, 10%);
+      border-color: darken(#29a5d6, 10%);
+    }
+  }
+}
+
+.btn-text {
+	@include font-size(14);
+	@include transition();
+	cursor: pointer;
+	display: inline-block;
+	margin: .7em .7em .7em 0;
+	padding: em(10 , (context: 14)) em(14, (context: 14));
+}
+
+.btn-secondary {
+	@extend %button-config;
+	background-color: color(colorAction);
+	border-color: color(colorAction);
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #0B8005;
+		border-color: #0B8005;
+		color: #fff;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+
+.btn-secondary-corporate {
+	@extend %button-config;
+	background-color: transparent;
+	border-color: color(colorCorporateAction);
+	color: color(colorCorporateAction);
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+.btn-corporate {
+	@extend %button-config;
+	background-color: color(mediumOrange);
+	border-color: transparent;
+	color: #fff;
+
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: darken(color(mediumOrange), 20);
+		border-color: transparent;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+
+.btn-white {
+	@extend %button-config;
+	background-color: transparent;
+	border-color: #fff;
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #fff;
+		background-color: rgba(255, 255, 255, .9);
+		border-color: #fff;
+		color: color(colorCorporateAction);
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+
+
+.btn-primary-with-border {
+  @extend %button-config;
+  background-color: color(colorCorporateAction);
+  border-color: #fff;
+  color: #fff;
+
+  &:hover,
+  &:active,
+  &:focus {
+   // background-color: #fff;
+    background-color: color(darkBlue);
+    border-color: #fff;
+    color: #fff;
+  }
+
+  // respond mixin is used here instead of inside %button-config to @extend bug of libsass
+  @include media(breakpointExtraLarge) {
+    @include font-size(18);
+  }
+}
+
+.btn-loading {
+	background-image: url('#{$imagesFolder}fancybox-loading.gif');
+	background-position: 4px center;
+	background-repeat: no-repeat;
+	padding-left: 34px;
+
+	&.btn-small {
+		padding-left: 34px;
+	}
+}
+
+%button-config-sidebar {
+
+	cursor: pointer;
+	display: inline-block;
+	font-weight:600;
+	@include font-size(22);
+	//margin: em(10 14) em(10 14) em(10 14) 0;
+	margin: em(10 , (context: 14)) em(10 , (context: 14)) em(10 , (context: 14)) 0; //BMC-527
+	//padding: em(10 14) em(14 14);
+	padding: em(10 , (context: 14)) em(14, (context: 14)); //BMC-527 Replaced - padding: em(10 14) em(14 14);
+	text-align: center;
+	@include transition();
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color(darkBlue);
+		border-color: color(darkBlue);
+		color: #fff;
+	}
+
+	&.btn-full-width {
+		@include box-sizing();
+		display: block;
+		margin-bottom: 0;
+		margin-right: 0;
+		margin-top: 0;
+		text-align: left;
+		width: 100%;
+		padding:20px;
+
+		@include media(breakpointLarge) {
+			&:first-child {
+				margin-top: 3em;
+			}
+		}
+
+}
+
+	&.btn-small {
+		@include font-size(14);
+		//padding: em(6 14) em(12 14);
+		padding: em(6 , (context: 14)) em(12 , (context: 14)); //BMC-527
+	}
+}
+
+
+
+.btn-sidebar {
+	@extend %button-config-sidebar;
+	background-color: color(colorCorporateAction);
+	background-image: url("#{$imagesFolder}arrow-transparent-cta1.png");
+	background-repeat:no-repeat;
+	background-position:98% 50%;
+	border-bottom: 1px solid #ffffff;
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-bottom: 1px solid #ffffff;
+		color: #fff;
+	}
+
+
+
+	&[disabled="disabled"] {
+		@extend %disabled-button-config;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointMedium) {
+		@include font-size(14);
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(22);
+	}
+}
+
+.btn-secondary-sidebar {
+	@extend %button-config-sidebar;
+	background-color: color(colorAction);
+	background-image: url("#{$imagesFolder}arrow-transparent-cta1.png");
+	background-repeat:no-repeat;
+	background-position:98% 50%;
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #0B8005;
+		border-color: #0B8005;
+		color: #fff;
+	}
+
+
+		// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointMedium) {
+		@include font-size(14);
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(22);
+	}
+}
+
+
+.video-outer-wrapper {
+
+.btn-play-video {
+		font-weight:800;
+		&:after {
+			content: url("#{$imagesFolder}play-button.png");
+			left: 10px;
+			position: relative;
+			top: 10px;
+		}
+
+		span { font-weight:400;}
+	}
+}
+
+.playbutton {
+
+
+	a {
+		color: #ffffff;
+		font-weight:800;
+		line-height:1.1em;
+		letter-spacing:-.03em;
+		text-decoration: none;
+		@include font-size(26);
+		@include transition((property: color));
+		text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: #ffad38;
+	}
+
+	&:after {
+		content: url("#{$imagesFolder}play-button-white.png");
+		margin-left: 8px;
+		position:relative;
+		top:5px;
+}
+
+
+}
+
+	@include media(breakpointMedium) {
+		@include font-size(26);
+	}
+}
+
+
+.learn {
+
+	a {
+	color: #ffffff;
+	font-weight:800;
+	line-height:1.1em;
+	letter-spacing:-.03em;
+	text-decoration: none;
+	@include font-size(26);
+	@include transition((property: color));
+	text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: #ffad38;
+	}
+
+	&:after {
+	content:" \00203A";
+	margin-left: 8px;
+}
+
+
+}
+
+	@include media(breakpointMedium) {
+		@include font-size(26);
+	}
+}
+
+span {
+	.chatbtn {
+    	background-image: url("#{$imagesFolder}home-slide-cta-arrow2.png");
+    	background-position: 5px 13px;
+    	background-repeat: no-repeat;
+			color: #ffffff !important;
+    	display: inline-block;
+    	font-size: 14px;
+    	height: 26px;
+    	padding: 8px 24px 4px 30px;
+    	transition: all 0.2s ease 0s;
+
+		a {
+			color: #ffffff !important;
+			font-weight:800;
+			line-height:1.1em;
+			letter-spacing:-.03em;
+			text-decoration: none;
+			@include font-size(26);
+			@include transition((property: color));
+			text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+
+		}
+
+		&:hover,
+		&:active,
+		&:focus {
+		background-color:#292929;
+		background-image: url("#{$imagesFolder}home-slide-cta-arrow2-hover.png");
+    	background-position: 5px 13px;
+		color: #ffffff !important;
+		}
+
+	}
+
+}

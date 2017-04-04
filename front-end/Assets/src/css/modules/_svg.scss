@@ -1,0 +1,151 @@
+// SVG
+// http://codepen.io/team/css-tricks/pen/eNpmZG
+// https://css-tricks.com/scale-svg/
+
+.svg-defs {
+	position: absolute;
+	height: 0;
+	overflow: hidden;
+	width: 0;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+svg {
+	display: inline-block;
+}
+
+.fallback {
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+}
+
+.arrow-next .fallback {
+	height: 100%;
+	width: 100%;
+}
+
+.svg-inline {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	stroke-width: 0;
+	stroke: currentColor;
+	top: .15em;
+	width: 1em;
+}
+
+// Fallback Background Images
+.s-CloudMgmt {
+	background-image: url('#{$imagesFolder}s-CloudMgmt.png');
+}
+.s-DollarSign {
+	background-image: url('#{$imagesFolder}s-DollarSign.png');
+}
+.s-Globe {
+	background-image: url('#{$imagesFolder}s-Globe.png');
+}
+.s-ITAuto {
+	background-image: url('#{$imagesFolder}s-ITAuto.png');
+}
+.s-ITOps {
+	background-image: url('#{$imagesFolder}s-ITOps.png');
+}
+.s-ITSMgmt {
+	background-image: url('#{$imagesFolder}s-ITSMgmt.png');
+}
+.s-Mainframe {
+	background-image: url('#{$imagesFolder}s-Mainframe.png');
+}
+.s-MyIT {
+	background-image: url('#{$imagesFolder}s-MyIT.png');
+}
+.s-Ribbon {
+	background-image: url('#{$imagesFolder}s-Ribbon.png');
+}
+.s-Star {
+	background-image: url('#{$imagesFolder}s-Star.png');
+}
+.s-User {
+	background-image: url('#{$imagesFolder}s-User.png');
+}
+.s-Users {
+	background-image: url('#{$imagesFolder}s-Users.png');
+}
+.s-VideoPlay {
+	background-image: url('#{$imagesFolder}s-VideoPlay.png');
+}
+.s-Workload {
+	background-image: url('#{$imagesFolder}s-Workload.png');
+}
+.s-caution {
+	background-image: url('#{$imagesFolder}s-caution.png');
+}
+.s-close {
+	background-image: url('#{$imagesFolder}s-close.png');
+}
+.s-chevronLeft {
+	background-image: url('#{$imagesFolder}s-chevronLeft.png');
+}
+.s-chevronRight {
+	background-image: url('#{$imagesFolder}s-chevronRight.png');
+}
+.s-playVideo {
+	background: url("#{$imagesFolder}s-playVideo.png");
+	height: 50px;
+	width: 50px;
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.s-CloudMgmt {
+		background-image: url('#{$imagesFolder}s-CloudMgmt-2x.png');
+	}
+	.s-DollarSign {
+		background-image: url('#{$imagesFolder}s-DollarSign-2x.png');
+	}
+	.s-Globe {
+		background-image: url('#{$imagesFolder}s-Globe-2x.png');
+	}
+	.s-ITAuto {
+		background-image: url('#{$imagesFolder}s-ITAuto-2x.png');
+	}
+	.s-ITOps {
+		background-image: url('#{$imagesFolder}s-ITOps-2x.png');
+	}
+	.s-ITSMgmt {
+		background-image: url('#{$imagesFolder}s-ITSMgmt-2x.png');
+	}
+	.s-Mainframe {
+		background-image: url('#{$imagesFolder}s-Mainframe-2x.png');
+	}
+	.s-MyIT {
+		background-image: url('#{$imagesFolder}s-MyIT-2x.png');
+	}
+	.s-Ribbon {
+		background-image: url('#{$imagesFolder}s-Ribbon-2x.png');
+	}
+	.s-Star {
+		background-image: url('#{$imagesFolder}s-Star-2x.png');
+	}
+	.s-User {
+		background-image: url('#{$imagesFolder}s-User-2x.png');
+	}
+	.s-Users {
+		background-image: url('#{$imagesFolder}s-Users-2x.png');
+	}
+	.s-VideoPlay {
+		background-image: url('#{$imagesFolder}s-VideoPlay-2x.png');
+	}
+	.s-Workload {
+		background-image: url('#{$imagesFolder}s-Workload-2x.png');
+	}
+	.s-caution {
+		background-image: url('#{$imagesFolder}s-caution-2x.png');
+	}
+	.s-close {
+		background-image: url('#{$imagesFolder}s-close-2x.png');
+	}
+}

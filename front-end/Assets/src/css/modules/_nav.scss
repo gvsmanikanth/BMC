@@ -1,0 +1,861 @@
+// @category modules
+
+// @function navigation
+// Styles related to the site's navigation.
+
+
+.section-products li.nav-products > a,
+.section-services li.nav-services > a,
+.section-education li.nav-education > a,
+.section-communities li.nav-communities > a,
+.section-support li.nav-support > a,
+
+// preferred approach, using body-classes. Doesn't work with legacy pages.
+.nav-primary li.active > a				// .active will work across all sections and legacy pages
+
+{
+	@include rgba-background-color(color(colorSecondary), 1);
+	border-bottom: 3px solid color(mediumOrange);
+	@include box-sizing();
+	color: #fff;
+}
+
+.nav-primary {
+//	@extend %clearfix;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	@include transition((property: margin));
+
+	a {
+		color: #fff;
+		@include font-size(18);
+		//padding: em(12 18) em(12 18) em(14 18);
+		padding: em(12 , (context: 18)) em(12 , (context: 18)) em(14 , (context: 18)); //BMC-527
+		text-decoration: none;
+		@include transition((property: background));
+
+		&:hover, &:active {
+			color: #fff;
+			@include rgba-background-color(color(colorSecondary), 1);
+		}
+	}
+
+	li {
+		list-style-type: none;
+	}
+
+	> li {
+		margin-bottom: 0;
+
+		> a {
+			display: block;
+
+			@include media(breakpointLarge) {
+				@include box-sizing();
+				display: inline-block;
+				height: $navPrimaryMenuBarHeight;
+			}
+		}
+
+		@include media(breakpointLarge) {
+			float: left;
+
+			&.nav-primary-contact, &.nav-contact-us {
+				float: right;
+				line-height: 0;
+			}
+		}
+	}
+
+	/*.ie8 & {
+		margin: 0;
+	}*/
+
+	@include media(breakpointLarge) {
+		&::after {
+			clear: both;
+			content: "";
+			display: table;
+		} // cannot use @extend within a media query
+		overflow-y: visible;
+	}
+}
+
+.nav-home {
+	display: block;
+	max-width: 80%;
+	overflow: hidden;
+	@include transition();
+
+	.scrolled-down &,
+	.scrolled-up & {
+		@include media(breakpointLarge) {
+			height: $navPrimaryMenuBarHeight;
+			margin-right: 0.5em;
+			margin-top: .125em;
+			opacity: 1;
+			width: 2em;
+		}
+	}
+
+	a {
+		display: block;
+		max-height: 1em;
+
+		&:hover { background-color: transparent; }
+
+		img {
+			height: 1em;
+		}
+	}
+
+	@include media(breakpointLarge) {
+		opacity: 0;
+		width: 0;
+	}
+}
+
+.nav-column {
+	@include column(4);
+	@include font-size(16);
+	padding: 0 1em;
+
+	ul {
+		margin-top: 0;
+	}
+
+	li {
+		display: block;
+		margin: 0;
+	}
+
+	a {
+		display: block;
+		padding-left: .75em;
+	}
+}
+
+.nav-spanning-column {
+	border-top: 1px solid color(darkGrey);
+	clear: both;
+	margin-bottom: 0;
+	padding: 1em;
+
+	ul {
+			margin-bottom: 0;
+			margin-top: 0;
+	}
+
+	a { float: left; }
+}
+
+.nav-secondary {
+	background-color: color(colorSecondary);
+	@include box-sizing();
+	list-style: none;
+	position: absolute;
+	right: -100%;
+	top: 0;
+	@include transition();
+
+	width: 100%;
+
+	&.nav-active {
+		height: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		right: 0;
+
+		@include media(breakpointLarge) {
+			height: auto;
+			min-height: 0;
+		}
+	}
+
+	li ul {
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	a {
+		color: #fff;
+		display: block;
+		@include font-size(16);
+		transition: none;
+
+		&:hover {
+			background: #fff;
+			color: color(colorHeadings);
+		}
+	}
+
+	@include media(breakpointLarge) {
+		background: transparent;
+		left: 28px;
+		max-height: 0;
+		overflow: hidden;
+		right: 28px;
+		top: 100%;
+		width: auto;
+
+		@include transition((delay: $transitionDelay * 2));
+
+		&.nav-active {
+			left: 28px;
+			right: 28px;
+			max-height: 46em;
+			@include transition();
+		}
+
+		.layout-inner-wrap {
+			background-color: color(colorSecondary);
+			padding: 0;
+		}
+	}
+
+	// breakpointDocumentWidth is used to account for a full width screen width with gutters
+	@include media(breakpointDocumentWidth) {
+		// vertical centering
+		left: 50%;
+		margin-left: -1 * ($documentWidth/2);
+		width: $documentWidth;
+
+		&.nav-active {
+			// vertical centering
+			width: $documentWidth;
+			left: 50%;
+			margin-left: -1 * ($documentWidth/2);
+		}
+
+		.layout-inner-wrap {
+			margin: 0;
+		}
+	}
+}
+
+.nav-secondary-close {
+	@include media(breakpointLarge) {
+		display: none !important;	// #FED - specificity battle?
+	}
+}
+
+.nav-section-header {
+	color: #a7a9ac;
+	font-weight:800;
+	list-style: none;
+	@include font-size(25);
+
+	@include media(breakpointLarge) {
+		border-bottom: 1px solid #a7a9ac;
+		//padding: em(8 12) em(8 12);
+		padding: em(8 , (context: 12)) em(8 , (context: 12)); //BMC-527
+		margin-bottom: 0.5em !important;	// #FED - specificity battle?
+	}
+
+	.nav-spanning-column & {
+		@include media(breakpointMedium) {
+			border-bottom: 0;
+		}
+	}
+
+	a {
+		@include media(breakpointLarge) {
+			margin: -1em 0 -1em -.75em;
+		}
+	}
+}
+
+.nav-section-header-cta {
+	color: #a7a9ac;
+	display:inline-block;
+	margin-top: 0.25em;
+	margin-bottom: 0 !important;
+	font-weight:800;
+	list-style: none;
+	@include font-size(25);
+
+	&:first-child {
+		margin-top: 1em;
+	}
+
+	@include media(breakpointLarge) {
+		border-bottom: 1px solid #a7a9ac;
+		&, &:first-child { margin-top: 0; }
+		//padding: em(16 12) em(8 12);
+		padding: em(16 , (context: 12)) em(8 , (context: 12)); //BMC-527
+	}
+
+	.nav-spanning-column & {
+		@include media(breakpointMedium) {
+			border-bottom: 0;
+		}
+	}
+
+	a {
+		@include media(breakpointLarge) {
+			margin: -1em 0 -1em -.75em;
+		}
+	}
+}
+
+.nav-tertiary {
+	margin: 0;
+	padding: 0;
+
+	h4 {
+		border-bottom: 2px solid color(colorFooterLight);
+		color: color(colorFooterLight);
+		font-weight: 800;
+		//margin: em(20 20) 0 em(30 20);
+		//padding-bottom: em(10 18);
+		margin: em(18 0 27); //BMC-527  corrected the em definition - error resolved.
+		padding-bottom: em(10);
+
+		@include media(breakpointLarge) {
+			margin-top: 0;
+		}
+	}
+
+	// This puts a background image above the footer.
+	.bg-matrix & {
+		@include media(breakpointLarge) {
+			position: relative;
+		}
+
+		&:after {
+			@include media(breakpointLarge) {
+				background: none;
+				content: '';
+				display: block;
+				height: 297px;
+				position: absolute;
+				right: 0;
+				top: -367px;	// height of this image + top padding of layout-inner-wrap that wraps nav-tertiary
+			}
+		}
+	}
+}
+
+.nav-tertiary-col {
+	display: inline-block;
+	list-style: none;
+	margin-right: -0.25em;	// eliminate whitespace created by inline-block
+	vertical-align: top;
+	width: columns(12);
+
+	@include media(breakpointSmall) {
+		margin-left: columns(0.4);
+		width: columns(5.8);
+
+		// first of each row
+		&.nth-child-2np1 {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np3 {
+			margin-top: columns(0.4);
+		}
+	}
+
+	@include media(breakpointLarge) {
+		margin-top: 0;
+	}
+
+	@include media(breakpointExtraLarge) {
+		margin-left: columns(0.8 / 3);	// 12 - (4 * 2.8) = 0.8.  3 spaces available between columns
+		width: columns(2.8);
+
+		// override first of each row from breakpointSmall
+		&.nth-child-2np1 {
+			margin-left: columns(0.8 / 3);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		// override starting on the second row from breakpointSmall
+		&.nth-child-np3 {
+			margin-top: 0;
+		}
+	}
+}
+
+.nav-spotlight {
+	background-position: center center;
+	background-size: cover;
+	min-height: 320px;
+
+	h3 {
+		color: #fff;
+		@include font-size(28);
+		margin-bottom: 0;
+		padding: 3em 1em 2em .5em;
+	}
+
+	a {
+		background: color(colorBase);
+	}
+}
+
+.nav-utility {
+	float: right;
+	@include font-size(24);
+	line-height: em(47 , (context: 24)); // BMC-527 em(47 24)
+	list-style: none;
+	margin: em(16 24) 0 0;
+	padding: 0;
+	text-align: right;
+
+	> li {
+		display: table-cell;
+		padding-left: em(36 , (context: 24)); //BMC-527 em(36 24)
+		vertical-align: middle;
+
+		// hide all list items when the search box is active...
+		.search-active & {
+			// ... except for the search box
+			&[data-set="search-site"] {
+				@include media(breakpointLarge) {
+					border-left: none;
+					display: block !important;	// overrides below !important
+				}
+			}
+
+			@include media(breakpointLarge) {
+				display: none !important;	// overrides .append-around-high-resolution
+			}
+		}
+
+		@include media(breakpointLarge) {
+			border-left: 1px solid color(mediumGrey);
+			float: left;
+			padding-right: em(36 , (context: 24)); //BMC-527 - em(36 24)
+			&:first-child {
+				border-left: none;
+			}
+		}
+	}
+
+	fieldset {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a.nav-free-trials {
+		color:color(mediumOrange) !important;
+		font-weight:800;
+	}
+
+	@include media(breakpointLarge) {
+		@include font-size(18);
+		line-height: 50px; // height of logo
+		margin: em(36 , (context: 24)) 0 0;//BMC-527 - em(36 24)
+	}
+
+	.layout-nav-toggle {
+		@include media(breakpointLarge) {
+			display: none;
+		}
+	}
+}
+
+.nav-login {
+	&:before {
+		.layout-footer & {
+			@include icon();
+			content: $iconUser;
+			@include font-size(18);
+			margin-right: em(12 , (context: 18));//BMC-527 - em(12 18)
+		}
+
+		@include media(breakpointLarge) {
+			margin-right: em(12 , (context: 18));//BMC-527 - em(12 18)
+		}
+	}
+
+	.search-active & {
+		@include media(breakpointLarge) {
+			display: none;
+		}
+	}
+}
+
+.nav-login.nav-login-header {
+	display: none;
+
+	@include media(breakpointLarge) {
+		display: block;
+	}
+}
+
+.nav-login,
+.nav-partners,
+.nav-worldwide,
+.nav-blog,
+.nav-communities {
+
+	&:before {
+		@include icon();
+		@include font-size(18);
+		margin-right: em(9);
+		vertical-align: middle;
+	}
+}
+
+.nav-primary-contact > div {
+	@include media(breakpointLarge) {
+		display: inline-block;
+		margin-right: -0.25em; // close inline-block gap
+	}
+}
+
+.nav-primary-contact a, .nav-contact-us a {
+
+	&, &:hover { background-position: 8px; }
+	display: inline-block;
+	padding: em(16) em(16); //BMC-527
+
+	@include font-size(14);
+
+
+	@include media(breakpointSmall) {
+		color: #717171;
+		padding: em(16) em(16);
+	}
+
+	@include media(breakpointLarge) {
+		&, &:hover { background-position: 0px; }
+		height: $navPrimaryMenuBarHeight;
+		line-height: $navPrimaryMenuBarHeight;
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+
+	@include media(breakpointExtraLarge) {
+		&, &:hover { background-position: 8px; }
+	}
+
+	&:before {
+		@include icon();
+		@include font-size(18);
+
+		@include media(breakpointLarge) {
+			color: #fff;
+		}
+
+		@include media(breakpointExtraLarge) {
+			color: #717171;
+			margin-right: em(8);
+		}
+	}
+
+	&.alert span {
+		color: #f83200;
+		font-weight: 800;
+	}
+
+	&.alert-contact span {
+		color: #f83200;
+		font-weight: 800;
+	}
+
+	span {
+		color: #fff;
+		padding-left: 2em;
+
+		@include media(breakpointLarge) {
+			display: none;
+			opacity: 0;
+			@include transition();
+		}
+
+		@include media(breakpointExtraLarge) {
+			display: inline;
+			opacity: 1;
+		}
+	}
+
+	&.nav-telephone-us span {
+		@include transition();
+	}
+
+	&.nav-chat-live {
+		display: block;
+	}
+}
+
+.nav-chat-live {
+	background-image: url("#{$imagesFolder}nav-chat-grey6.png");
+	background-repeat: no-repeat;
+	color: #ffffff !important;
+}
+
+.nav-chat-live-red {
+	background-image: url("#{$imagesFolder}nav-chat-red3.png");
+	background-repeat: no-repeat;
+	color: #f83200 !important;
+}
+
+.nav-email-us {
+	background-image: url("#{$imagesFolder}nav-email-grey3.png");
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+
+
+.nav-email-us-red {
+	background-image: url("#{$imagesFolder}nav-email-red3.png");
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+
+
+.nav-telephone-link {
+	background-image: url("#{$imagesFolder}nav-telephone-grey3.png");
+	background-repeat: no-repeat;
+	color: #ffffff !important;
+}
+
+.nav-contact-us {
+	@include media(breakpointLarge) {
+		position: relative; // position context for the .nav-secondary drop down menu
+
+		.nav-secondary {
+			position: absolute;
+		}
+	}
+}
+
+
+.nav-contact-us div.nav-secondary {
+
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	position: static;
+	overflow: hidden;
+	width: 100%;
+
+	// specifying parent to win a specificity value and avoid using !important
+	.layout-nav & {
+		left: inherit;
+		right: 0;
+	}
+
+	@include media(breakpointLarge) {
+		background-color: color(colorSecondary);
+		margin-bottom: 0;
+		margin-left: 0;
+		margin-right: 0;
+		position: absolute;
+		width: 225px;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+		}
+
+		@include media(breakpointLarge) {
+			margin: 0 1em;
+		}
+	}
+
+	a {
+		@extend .nav-email-us;
+		height: auto;
+		padding: 0.7em 0.8em;
+		line-height: 1.75em;
+
+		&, & span {
+			color: color(colorCorporateAction);
+			@include media(breakpointLarge) {
+				display: inline-block;
+			}
+		}
+
+		background-color: inherit;
+		display: block;
+
+		&:hover,
+		&:active,
+		&:focus {
+
+			background-color: color(colorSecondary);
+
+			&, & span {
+				color: color(darkBlue);
+			}
+		}
+
+		@include media(breakpointLarge) {
+
+			background-position: 0;
+			display: inline-block;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-position: 0;
+				background-color: transparent;
+			}
+		}
+	}
+
+	// applies to all nav-email-us icon uses
+	.nav-email-us {
+		span {
+			display: inline-block;
+			opacity: 1;
+
+			@include media(breakpointLarge) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.nav-login {
+	&:before {
+		content: $iconUser;
+	}
+}
+.nav-partners {
+	&:before {
+		content: $iconUsers;
+	}
+}
+
+.nav-worldwide {
+	&:before {
+		content: $iconGlobe;
+	}
+}
+
+.nav-blog {
+	&:before {
+		content: $iconComments;
+	}
+}
+
+.nav-search-toggle {
+	display: none;	// override .nav-primary a
+
+	&:before {
+		@include icon();
+		content: $iconSearch;
+		display: block;
+		margin-top: em(18 , (context: 18)); //BMC-527 em(18 18)
+
+
+		@include media(breakpointLarge) {
+			margin-right: em(6 , (context: 18)); //BMC-527 em(6 18)
+		}
+	}
+
+	@include media(breakpointLarge) {
+		display: block;
+		float: left;
+
+		.search-active & {
+			display: none;
+		}
+	}
+}
+
+.nav-login-text {
+	display: none;
+
+	@include media(breakpointLarge) {
+		display: inline;
+	}
+}
+
+.layout-nav-open {
+	background: #fff; // #FED -- fixes iOS6 see https://jira.isitedesign.com/browse/BMC-106
+
+	&:before {
+		@include icon();
+		content: $iconMenu;
+	}
+
+	.search-active & {
+		display: none;
+	}
+
+	.rgba .scrolled-down &,
+	.rgba .scrolled-up & {
+		background: rgba(255, 255, 255, 0);		// using this instead of transparent due to iOS6 bug noted above
+	}
+
+	@include media(breakpointLarge) {
+		display: none;
+	}
+}
+
+.layout-nav-close {
+	color: white;
+	@include font-size(24);
+	position: absolute;
+	right: em(24 , (context: 24)); //BMC-527 em(24 24)
+	top: em(24 , (context: 24)); //BMC-527 em(24 24)
+	z-index: (zIndex(nav)+1);;	// always keep the close button on top of secondary nav items, should be variable
+
+	&:before {
+		@include icon();
+		content: $iconClose;
+	}
+
+	&:hover, &:active, &:focus {
+		color: white;
+		text-decoration: none;
+	}
+
+	@include media(breakpointLarge) {
+		display: none;
+	}
+}
+
+.nav-footer-link-list {
+	@include font-size(14);
+	margin: 0 0 .5em 0;
+	padding: 0;
+
+	a {
+		@include font-size(12);
+		padding: 0 1em 0 0;
+	}
+
+	li {
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& + li {
+
+			a {
+
+				@include media(breakpointSmall) {
+					border-left: 1px solid #cacaca;
+					padding-left: 1em;
+				}
+			}
+		}
+
+		@include media(breakpointSmall) {
+			display: inline-block;
+		}
+
+	}
+
+}

@@ -1,0 +1,178 @@
+// @category modules
+
+// @function search
+// Styles specific to search functionality on the site.
+
+.bmc-nav-loader-nav {
+	.search-site {
+		fieldset {
+			margin: 0;
+			//padding: 0 em(13 14) em(13 14);
+      padding: 0 em(13 , (context: 14)) em(13 , (context: 14)); //BMC-527
+			li {
+				margin: 0;
+			}
+
+			input {
+				background: transparent;
+				border: none;
+				border-bottom: 1px solid color(seashell);
+				border-radius: 0;
+				color: white;
+				@include font-size(18);
+				padding: 0;
+
+				&:active,
+				&:focus {
+					border: none;
+					border-bottom: 1px solid color(seashell);
+				}
+
+				@include media(breakpointLarge) {
+					color: color(colorBase);
+					height: 35px;
+					max-width: none;
+					@include transition((property: width));
+					width: 1px;
+				}
+			}
+
+			@include media(breakpointLarge) {
+				float: left;
+				padding: 0;
+			}
+		}
+	}
+
+	.search-active .search-site input {
+		@include media(breakpointLarge) {
+			width: 250px;
+		}
+	}
+}
+
+.search-input-m-glass {
+	position: relative; // context for the button
+
+	button {
+		background-color: transparent;
+		border: 2px solid transparent;
+		margin: 0;
+		padding: 0.42857em;
+		position: absolute;
+		right: 2px;
+		top: 0;
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: transparent;
+			border-color: transparent;
+			outline: none;
+		}
+
+		&:before {
+			@include icon();
+			color: color(colorCorporateAction);
+			content: $iconSearch;
+			display: block;
+			font-size: em(28);
+		}
+	}
+}
+
+.search-results-header {
+
+	.search-input-m-glass, .decorator-select {
+		display: inline-block;
+		margin-bottom: 1em;
+		vertical-align: top;
+	}
+
+	.search-input-m-glass {
+		width: 100%;
+	}
+
+	.decorator-select {
+		vertical-align: middle;
+		width: 100%;
+	}
+
+	.results-count {
+		color: color(colorFooterLight);
+		font-size: em(14);
+		margin-bottom: 2em;
+	}
+
+	@include media(breakpointMedium) {
+
+		.search-input-m-glass {
+			margin-right: em(25);
+			max-width: 450px;
+			min-width: 300px;
+			width: 60%;
+		}
+
+		.decorator-select {
+			max-width: 300px;
+			min-width: 180px;
+			width: 30%;
+		}
+
+	}
+}
+
+.search-results {
+
+	.results-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.results-item {
+		border-bottom: 1px solid lighten(color(colorFooterLight), 10%);
+		margin: 0;
+		padding: 1em 0;
+
+		&:first-child {
+			border-top: 1px solid lighten(color(colorFooterLight), 10%);
+		}
+	}
+
+	.results-item-heading {
+		font-size: em(22);
+		font-weight: 900;
+		margin-bottom: em(2);
+	}
+
+
+	.results-item-url {
+		font-size: em(16);
+		margin-top: 0.5em;
+	}
+
+	.results-item-desc, .results-item-url {
+		color: color(colorNavigationBar);
+	}
+}
+
+.search-pager {
+
+	display: inline-block;
+	list-style: none;
+	margin: 1em 0;
+	padding: 0;
+
+	li {
+		color: color(colorCorporateAction);
+		display: inline-block;
+		font-size: em(20);
+		font-weight: 800;
+		margin-right: 0.5em;
+
+		&.active span {
+			color: color(colorNavigationBar);
+		}
+	}
+}

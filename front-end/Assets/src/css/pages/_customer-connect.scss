@@ -1,0 +1,20 @@
+.customer-connect{
+  &.layout-full-bleed {
+     padding-top: 1em !important;
+     
+     .layout-primary {
+        section {
+          margin-top: 1em !important;
+        }  
+        
+        .testimonial { 
+          margin-top: 1.5em;
+          }
+     }
+     
+     .layout-secondary {
+       padding-top: 2em;
+     }
+  }
+  
+}

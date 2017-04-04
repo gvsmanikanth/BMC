@@ -1,0 +1,35 @@
+/// Returns a named icon from a specified icon map.
+/// @param {String} $icon - The name of the icon as defined in its icon map.
+/// @param {String} $iconMap [$icons] - The name of the icon map to retrieve the icon from.
+/// @return {String} The value for the named icon.
+/// @example
+/// icon(arrowUp)
+/// // "\e601"
+/// @example
+/// icon(facebook, (iconMap: $socialIcons))
+/// // "\e708" from the `$socialIcons` map
+@function icon($icon, $options: ()) {
+	$options: map-merge((
+		iconMap: $icons
+	), $options);
+
+	$thisIcons: map-get($options, iconMap);
+
+	// check $icon exists in $iconMap
+	@if map-has-key($thisIcons, $icon) {
+		$icon: map-get($thisIcons, $icon);
+
+		// recursive call to check for self-referencing icon keys
+		// i.e.: $icons: ( check: "\e007", tick: check )
+		// @include icon(tick) will return check => "\e007"
+		@if map-has-key($thisIcons, $icon) {
+			$icon: icon($icon);
+		}
+	}
+	@else {
+		@warn "The icon `#{$icon}` is not a key in your icon map.";
+		@return null;
+	}
+
+	@return $icon;
+}

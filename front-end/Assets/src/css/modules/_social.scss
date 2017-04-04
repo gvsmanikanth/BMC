@@ -1,0 +1,92 @@
+// @category modules
+
+// @function social
+// Styles for social media icons.
+.social-facebook:before {
+	content: $iconFacebook;
+}
+.social-twitter:before {
+	content: $iconTwitter;
+}
+.social-linkedin:before {
+	content: $iconLinkedIn;
+}
+.social-googleplus:before {
+	content: $iconGooglePlus;
+}
+.social-youtube:before {
+	content: $iconYoutube;
+}
+.social-slideshare:before {
+	content: $iconSlideshare;
+}
+.social-communities:before {
+	content: $iconPartners;
+}
+
+.nav-social,
+.social-sharing {
+	a {
+		display: block;
+
+		&:before {
+			@include icon();
+			@include font-size(18);
+			vertical-align: middle;
+		}
+	}
+}
+
+.nav-social {
+	a {
+		&:before {
+			display: block;
+			float: left;
+			margin-right: em(12);
+			text-align: center;
+			width: 1.3em;
+		}
+	}
+}
+
+.social-sharing {
+	margin: (2 * $gutterInPx) 0;
+
+	a {
+		color: white;
+		@include font-size(14);
+		height: em(28, (context: 14));//BMC-527 - em(28 14);
+		line-height:  em(28, (context: 14));//BMC-527 - em(28 14);
+		text-align: center;
+		width:  em(28, (context: 14));//BMC-527 - em(28 14);
+	}
+	.social-facebook {
+		background-color: #36609f;
+	}
+	.social-googleplus {
+		background-color: #db5442;
+	}
+	.social-twitter {
+		background-color: #29a9e0;
+	}
+	.social-linkedin {
+		background-color: #056c9a;
+	}
+	ul {
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+		//margin: 0 em(8 16) 0 0;
+		margin: 0 em(8) 0 0; //BMC-527
+	}
+}
+
+.supplement-share {
+	padding-top: 45px;
+
+	&:before {
+		@include icon();
+		content: $iconComments;
+	}
+}

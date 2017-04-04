@@ -1,0 +1,60 @@
+// Lead
+
+.lead {
+	display: block;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.25;
+	margin-bottom: 1.5rem;
+
+	@include media(breakpointMedium) {
+		font-size: 24px;
+	}
+
+	@include media(breakpointLarge) {
+		font-size: 30px;
+	}
+
+	strong {
+		display: block;
+		font-weight: 700;
+	}
+
+	&.-sm {
+		font-size: 14px;
+
+		@include media(breakpointMedium) {
+			font-size: 20px;
+		}
+
+		@include media(breakpointLarge) {
+			font-size: 26px;
+		}
+	}
+
+	&.-lg {
+		font-size: 24px;
+
+		@include media(breakpointMedium) {
+			font-size: 30px;
+		}
+
+		@include media(breakpointLarge) {
+			font-size: 36px;
+		}
+	}
+
+	@include media(breakpointLarge) {
+		// reset p style
+		&.-oll {
+			width: auto;
+		}
+	}
+
+	@include media(breakpointExtraLarge) {
+		// optimal line length
+		&.-oll {
+			max-width: 30em;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+/// Simplifies image import.
+/// @param {String} $imageName - The image's filename.
+/// @param {String} $directory [$imagesFolder] - The directory containing the image.
+/// @return {String} The compiled url()
+/// @example
+/// image('feed.png')
+/// // url('../img/css/feed.png')
+/// @example
+/// image('feed.png', 'img/css/')
+/// // url('img/css/feed.png')
+@function image($imageName, $options: ()) {
+	$options: map-merge((
+		directory: $imagesFolder
+	), $options);
+
+	$directory: map-get($options, directory);
+
+	$imageName: unquote($imageName);
+	$directory: unquote($directory);
+
+	@return url('#{$directory}#{$imageName}');
+}

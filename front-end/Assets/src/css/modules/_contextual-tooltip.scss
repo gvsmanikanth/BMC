@@ -1,0 +1,16 @@
+.contextual-tooltip {
+	border-radius: 50%;
+	background-color: color(colorCorporateAction);
+	color: #fff;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	display: inline-block;
+	text-align: center;
+	font-size: 0.8em;
+	vertical-align: middle;
+	cursor: pointer;
+	position: relative;
+	bottom: 1px;
+	margin: 0 0.5em;
+}

@@ -1,0 +1,20 @@
+img, object, embed {
+	height: auto;
+	max-width: 100%;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+}
+
+figure {
+	margin: em($gutterInPx) 0 em($gutterInPx);
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+figcaption {
+	margin-top: em($gutterInPx);
+}

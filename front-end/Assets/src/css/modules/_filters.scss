@@ -1,0 +1,130 @@
+.filters {
+  //@extend .layout-inner-wrap;
+  
+  //position: fixed;
+  //top: 10em;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+ // display:none;
+  
+  @include media(breakpointMedium){
+      top: 0;
+      position: relative;
+      display:block;
+  }
+  
+  .course-lead {
+    @include media(breakpointLarge) {
+      width: 50%;
+    }
+  }
+
+  h2 {
+    @include media(breakpointLarge) {
+      //margin-top: 2em;
+    }
+  }
+
+  ol {
+
+    @include media(breakpointMedium) {
+      display: flex;
+    }
+  }
+
+  li {
+    @include box-sizing();
+    width: 100%;
+    
+    &.tooltipField{
+           >div:first-child{
+             width:86%;
+              @include media(breakpointMedium) {
+                width:73%;
+              }
+              @include media(breakpointLarge) {
+                width: 78%;
+              }
+               @include media(breakpointExtraLarge) {
+                width: 83%;
+              }
+           }
+              .tooltip-wrapper{
+              float: right;
+              display:inline-block;
+            }
+          }
+          
+    @include media(breakpointMedium) {
+      display:inline-block;
+      margin-right: 2%;
+      width: 25%;
+    }
+    @include media(breakpointLarge) {
+      width: 21%;
+    }
+    
+    select{
+      font-size:0.8em;
+    }
+  }
+  
+  .resetBtnContainer{
+    width:60px;
+    margin-right:1.5em;
+    .resetBtn{
+      margin: 0px;
+      height: 1.1em;
+    }
+  }
+  
+  #versionContainer{
+    display:none;
+    margin-top:1em;
+  }
+}
+
+// persistent fixed position tab similar to .support-chat-now
+.fixed-filter-btn {
+  display: block;
+
+  @include media(breakpointLarge) {
+    display: none;
+  }
+
+  .fixed-filter-link {
+   //background: red url(#{$imagesFolder}button-fixed-chat-now.png) no-repeat;
+    background-color:red;
+    border-radius: 5px;
+    @include font-size(15);
+    color: #fff .5;
+    height: 45px;
+   //opacity: .50;
+    //outline: 0;
+    position: fixed;
+    right: 1em;
+    top:5em;
+    width: 45px;
+    z-index: 1111;
+    border:2px solid white;
+
+     
+
+      &:hover,
+      &:active {
+        background-color: red;
+      }
+
+      &:before {
+        @include icon();
+        content: $iconSearch;
+        @include font-size(25);
+        left: em(7);
+        position: absolute;
+        top: em(7);
+        color:white;
+      }
+  }
+}
+

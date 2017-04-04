@@ -1,0 +1,214 @@
+$iconClose: "\e600";
+$iconCloseX: "\e629";
+$iconArrowDown: "\e601";
+$iconSearch: "\e602";
+$iconArrowUp: "\e603";
+$iconUser: "\e604";
+$iconMenu: "\e605";
+$iconGlobe: "\e606";
+$iconChat: "\e607";
+$iconUsers: "\e608";
+$iconPartners: "\e608";
+$iconTwitter: "\e609";
+$iconFacebook: "\e60a";
+$iconGooglePlus: "\e60b";
+$iconLinkedIn: "\e60c";
+$iconYoutube: "\e60d";
+$iconSlideshare: "\e60e";
+$iconPhone: "\e60f";
+$iconEmail: "\e610";
+$iconVideo: "\e611";
+$iconPDF: "\e612";
+$iconDocument: "\e613";
+$iconWord: "\e614";
+$iconExcel: "\e615";
+$iconZip: "\e616";
+$iconPowerPoint: "\e617";
+$iconDrawer: "\e618";
+$iconComments: "\e619";
+$iconArrowLeft: "\e61a";
+$iconArrowRight: "\e61b";
+$iconScreen: "\e61c";
+$iconSuitcase: "\e61e";
+$iconCheckboxChecked: "\e61d";
+$iconCheckboxUnchecked: "\e61f";
+$iconRadioChecked: "\e620";
+$iconRadioUnchecked: "\e621";
+$iconMapPin: "\e622";
+$iconCalendar: "\e623";
+$iconFontFamily: 'icomoon';
+
+@mixin icon() {
+  font-family: $iconFontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
+
+[class*="link-icon"] {
+  display: block;
+  padding-left: em(28);
+
+  &:before {
+    @include icon();
+    color: color(darkGrey);
+    margin-left: em(-28);
+    margin-right: em(9);
+  }
+}
+
+.icon-large {
+  &:before {
+    @include font-size(32);
+  }
+}
+
+.icon-calendar,
+.icon-map-pin {
+  &:before {
+    @include icon();
+  }
+}
+
+.icon-calendar {
+  &:before {
+    content: $iconCalendar;
+  }
+}
+
+.icon-map-pin {
+  &:before {
+    content: $iconMapPin;
+  }
+}
+
+.icon-caution {
+  background: url('#{$imagesFolder}icon-caution.png') left center no-repeat;
+  padding-left: 22px;
+}
+
+.icon-global {
+
+  position: relative;
+  top: -3px;
+
+  &:before {
+    @include icon();
+    content: $iconGlobe;
+    @include font-size(18);
+    margin-right: em(12);
+    position: relative;
+    top: 3px;
+  }
+}
+
+@mixin fortune-500($left, $top, $height, $width) {
+  background: url(#{$imagesFolder}fortune-500-sprite.png) no-repeat $left $top transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  height: $height;
+  text-shadow: none;
+  width: $width;
+}
+.fortune-500-bnymellon {
+  @include fortune-500(-0px, -0px, 40px, 120px);
+}
+.fortune-500-lockheed {
+  @include fortune-500(-0px, -40px, 40px, 120px);
+}
+.fortune-500-cisco {
+  @include fortune-500(-0px, -80px, 40px, 120px);
+}
+.fortune-500-duke {
+  @include fortune-500(-120px, -0px, 40px, 120px);
+}
+.fortune-500-jbhunt {
+  @include fortune-500(-120px, -40px, 40px, 120px);
+}
+.fortune-500-marriot {
+  @include fortune-500(-120px, -80px, 40px, 120px);
+}
+.fortune-500-southern-co {
+  @include fortune-500(-0px, -120px, 40px, 120px);
+}
+.fortune-500-sands {
+  @include fortune-500(-120px, -120px, 40px, 120px);
+}
+.fortune-500-unum {
+  @include fortune-500(-0px, -160px, 40px, 120px);
+}
+.fortune-500-buckeye {
+  @include fortune-500(-120px, -160px, 40px, 120px);
+}
+
+// New fortune 500 Icons
+
+
+@mixin fortune-500-V2($left, $top, $height, $width) {
+  background: url(#{$imagesFolder}fortune-500-sprite-July-2016.png) no-repeat $left $top transparent;
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  height: $height;
+  text-shadow: none;
+  width: $width;
+}
+
+.fortune-500-carfax{
+  @include fortune-500-V2(-0px, -0px, 40px, 120px);
+}
+
+.fortune-500-ingram {
+  @include fortune-500-V2(-120px, -0px, 40px, 120px);
+}
+
+.fortune-500-google {
+  @include fortune-500-V2(-0px, -45px, 40px, 120px);
+}
+
+.fortune-500-amazon {
+  @include fortune-500-V2(-120px, -50px, 40px, 120px);
+}
+
+.fortune-500-oracle {
+  @include fortune-500-V2(-0px, -88px, 40px, 120px);
+}
+
+.fortune-500-boeing {
+  @include fortune-500-V2(-120px, -90px, 40px, 120px);
+}
+
+.fortune-500-citi {
+  @include fortune-500-V2(-0px, -125px, 40px, 120px);
+}
+
+.fortune-500-ford {
+  @include fortune-500-V2(-120px, -125px, 40px, 120px);
+}
+.fortune-500-eaton {
+  @include fortune-500-V2(-0px, -160px, 40px, 120px);
+}
+
+
+
+//
+
+.icon-evidon {
+  background-image: url(#{$imagesFolder}icon-evidon.png); // production
+  background-position:  left bottom;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-left: 20px!important;
+  
+  @include media(breakpointSmall) {
+    background-position: 1em bottom;
+    padding-left: 32px!important;
+  }
+  
+}

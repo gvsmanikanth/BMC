@@ -1,0 +1,143 @@
+$menuHeight: 1.5em;
+$menuBottomPadding: 1em;
+
+.support-menu-wrapper {
+	position: relative;
+}
+
+.support-menu {
+	background-color: #fff;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	z-index: 20;
+
+	ul, li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&.desktop {
+		height: $menuHeight;
+		margin-bottom: $menuBottomPadding;
+	}
+
+	&.mobile {
+		background-color: color(colorHeadingsProduct);
+		width: 100%;
+		height: auto;
+	}
+}
+
+.support-menu.desktop .menu-item {
+
+	display: inline-block;
+	padding-left: 2em;
+	vertical-align: top;
+	line-height: $menuHeight;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	a {
+		font-weight: 400;
+		color: color(colorHeadingsProduct);
+		outline: 0;
+	}
+
+	a:hover {
+		color: color(mediumOrange);
+	}
+}
+
+.support-menu.mobile .menu-item {
+	padding: 0.5em 0;
+	width: 100%;
+
+	a {
+		color: #fff;
+		font-size: $menuHeight;
+		font-weight: 600;
+		outline: 0;
+	}
+}
+
+
+.sub-menu {
+	display: block;
+	position: absolute;
+	visibility: hidden;
+
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+
+	&.expanded {
+	    visibility: visible;
+	}
+}
+
+.support-menu.desktop .sub-menu {
+	background-color: #f5f5f5;
+	border-top: 3px solid color(mediumOrange);
+	opacity: 0;
+	overflow: hidden;
+	padding-bottom: 0.75em;
+	padding-top: 0.5em;
+	top: $menuHeight + $menuBottomPadding;
+	z-index: 15;
+
+	&.expanded {
+		opacity: 1;
+		color: color(mediumOrange);
+	}
+}
+
+.support-menu.mobile .sub-menu {
+	position: static;
+	max-height: 0;
+	opacity: 1;
+	overflow: hidden;
+	visibility: visible;
+
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	&.expanded {
+		max-height: 1000px;
+		margin-top: 1em;
+	}
+}
+
+.support-menu.desktop .sub-menu-item {
+	font-size: 0.9em;
+	padding: 0.65em 1.25em;
+	line-height: normal;
+
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+
+	&:first-child { margin-top: -2em; }
+}
+
+.support-menu.desktop .sub-menu.expanded .sub-menu-item {
+	margin-top: 0;
+}
+
+.support-menu.mobile .sub-menu-item {
+	padding: 0.5em 1em;
+	font-size: 0.85em;
+	a, a:hover { color: color(mediumGrey); }
+}
+
+.support-menu.mobile .sub-menu-item:last-child,
+.support-menu.mobile .menu-item:last-child {
+	padding-bottom: 0;
+}

@@ -1,0 +1,49 @@
+//Navigation breadcrumb 
+
+ .navigation-breadcrumb {
+    margin: 0;
+    padding: 1em 0px 0px !important;
+  
+    @include media(breakpointLarge) {
+     // margin-bottom: em(-64);
+    }
+    
+    ul{
+      padding-left:0px;
+      margin-bottom: 0px;
+    }  
+    
+    li {
+      display: inline-block;
+      
+      :after {
+        content:" \00203A";
+      }
+    }
+  
+    a {
+      font-weight: bold;
+    }
+    
+    &.white-links{ //Added for partners
+      color:white;
+      
+      margin-top:2em;
+      text-align:left;
+      
+      @include media(breakpointMedium) {
+         margin-top:1em;
+        }
+        
+        @include media(breakpointLarge) {
+         margin-top:0em;
+        }
+     
+      li{
+        margin-bottom:0;
+      }
+      a{
+        color:white;
+      }
+    }
+  }

@@ -1,0 +1,82 @@
+.navigation-tertiary {
+	margin: 0;
+	padding: 0;
+
+	h4 {
+		border-bottom: 2px solid color(colorFooterLight);
+		color: color(colorFooterLight);
+		font-weight: 800;
+		//margin: em(20 20) 0 em(30 20);
+		margin: em(20 , (context: 20)) 0 em(30 , (context: 20)); // BMC-527
+		padding-bottom: em(10 , (context: 18));//BMC-527 - em(10 18);
+
+		@include media(breakpointLarge) {
+			margin-top: 0;
+		}
+	}
+
+	// This puts a background image above the footer.
+	.bg-matrix & {
+		@include media(breakpointLarge) {
+			position: relative;
+		}
+
+		&:after {
+			@include media(breakpointLarge) {
+				background: none;
+				content: '';
+				display: block;
+				height: 297px;
+				position: absolute;
+				right: 0;
+				top: -367px;	// height of this image + top padding of layout-inner-wrap that wraps navigation-tertiary
+			}
+		}
+	}
+}
+
+.navigation-tertiary-col {
+	display: inline-block;
+	list-style: none;
+	margin-right: -0.25em;	// eliminate whitespace created by inline-block
+	vertical-align: top;
+	width: columns(12);
+
+	@include media(breakpointSmall) {
+		margin-left: columns(0.4);
+		width: columns(5.8);
+
+		// first of each row
+		&.nth-child-2np1 {
+			margin-left: 0;
+		}
+
+		// starting on the second row
+		&.nth-child-np3 {
+			margin-top: columns(0.4);
+		}
+	}
+
+	@include media(breakpointLarge) {
+		margin-top: 0;
+	}
+
+	@include media(breakpointExtraLarge) {
+		margin-left: columns(0.8 / 3);	// 12 - (4 * 2.8) = 0.8.  3 spaces available between columns
+		width: columns(2.8);
+
+		// override first of each row from breakpointSmall
+		&.nth-child-2np1 {
+			margin-left: columns(0.8 / 3);
+		}
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		// override starting on the second row from breakpointSmall
+		&.nth-child-np3 {
+			margin-top: 0;
+		}
+	}
+}

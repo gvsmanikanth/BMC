@@ -1,0 +1,132 @@
+// Card
+
+.card {
+	@include box-sizing();
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&.-action {
+		padding-bottom: 2.4rem;
+	}
+}
+
+.no-flexbox {
+	.card {
+		//width: auto; //WEB-907 : Removed width auto for no-flexbox.
+	}
+}
+
+a.card:hover {
+	color: inherit;
+	cursor: pointer;
+}
+
+.card-title {
+	display: block;
+	font-size: 26px;
+	line-height: 1.2;
+	@include media(breakpointMedium) {
+		font-size: 24px;
+	}
+	@include media(breakpointLarge) {
+		font-size: 36px;
+	}
+	&.-sm {
+		font-size: 22px;
+		@include media(breakpointMedium) {
+			font-size: 20px;
+		}
+		@include media(breakpointLarge) {
+			font-size: 32px;
+		}
+	}
+	&.-lg {
+		font-size: 30px;
+		@include media(breakpointMedium) {
+			font-size: 28px;
+		}
+		@include media(breakpointLarge) {
+			font-size: 40px;
+		}
+	}
+	&.-xl {
+		font-size: 40px;
+		@include media(breakpointMedium) {
+			font-size: 38px;
+		}
+		@include media(breakpointLarge) {
+			font-size: 50px;
+		}
+	}
+}
+
+.card-image {
+	overflow: hidden;
+	position: relative;
+
+	img {
+		height: auto;
+	    width: auto;
+	    max-width: 100%;
+	    max-height: 100%;
+	    vertical-align: middle;
+	    
+	    &.max-width-320{
+			max-width: 320px;
+			width:100%;
+		}
+	}
+
+	&.logo-max-height{
+	  height: 130px;
+	  white-space: nowrap;
+	  &:before{
+	    content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 0;
+	  }	  
+	}
+}
+
+.card-content {
+	@include box-sizing(border-box);
+
+	p {
+		line-height: 1.2;
+
+		&.-sm {
+			font-size: 14px;
+			@include media(breakpointMedium) {
+				font-size: 13px;
+			}
+			@include media(breakpointLarge) {
+				font-size: 14px;
+			}
+		}
+
+		&.-lg {
+			font-size: 16px;
+			@include media(breakpointMedium) {
+				font-size: 20px;
+			}
+			@include media(breakpointLarge) {
+				font-size: 24px;
+			}
+			@include media(breakpointExtraLarge) {
+				font-size: 28px;
+			}
+		}
+	}
+}
+
+.card-action {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+}

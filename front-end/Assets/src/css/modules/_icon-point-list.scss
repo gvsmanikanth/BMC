@@ -1,0 +1,45 @@
+	.icon-point-list {
+		text-align: center;
+
+		h3 {
+			font-size: 1.25em;
+		}
+
+		p {
+			font-size: 0.85em;
+		}
+	}
+
+	.icon-point-list-icon {
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+	}
+
+	.icon-point-list-item {
+		display: inline-block;
+		box-sizing: border-box;
+		margin-right: -0.25em;
+		padding: 0.5em;
+		vertical-align: top;
+		text-align: center;
+		width: 100%;
+
+		h3 {
+			margin-top: 0.5em;
+			font-size: 1.1em;
+		}
+
+		@include media(breakpointSmall) {
+			width: 50%;
+		}
+
+		@include media(breakpointMedium) {
+			width: 25%;
+		}
+	}
+
+	.icon-point-list-item-title {
+		font-weight: bold;
+		margin-top: 0.75em;
+	}

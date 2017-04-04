@@ -1,0 +1,94 @@
+// @category modules
+
+// @function accordion
+// Styles related to the accordion, functionality paired with the accordion.js
+
+
+.accordion {
+	padding: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1em;
+
+	&:last-of-type {
+		border-bottom: 1px solid color(mediumGrey);
+	}
+
+	& + & {
+		margin-top: 0;
+	}
+
+	.jump-to {
+		$jumpToGap: $headerHeight + 1em; // Header height + a small bump for space tweaking
+
+		display: block;
+		height: $jumpToGap;
+		margin-top: -1 * $jumpToGap;
+		visibility: hidden;
+	}
+
+	.accordion-item {
+		border-top: 1px solid color(mediumGrey);
+		list-style: none;
+		margin: 0;
+		padding: 1em 0;
+
+		&.open {
+			.accordion-item-anchor:before {
+				content: '\2013';
+				line-height: 1.2;
+			}
+		}
+	}
+
+	.accordion-item-anchor {
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		font-size: em(27);
+		font-weight: 800;
+		text-shadow: none;
+		cursor: pointer; 
+		cursor: hand;
+
+		&:before {
+			border: solid 2px;
+			border-radius: 50%;
+			content: '\2B';
+			display: inline-block;
+			font-size: 1.1em;
+			height: 30px;
+			line-height: 1.25;
+			margin-right: 20px;
+			text-align: center;
+			width: 30px;
+
+
+			@include media(breakpointMedium) {
+				height: 34px;
+				margin-right: 34px;
+				width: 34px;
+			}
+			@include media(breakpointLarge) {
+				height: 36px;
+				width: 36px;
+			}
+			@include media(breakpointExtraLarge) {
+				height: 38px;
+				width: 38px;
+			}
+		}
+
+	}
+
+	.accordion-item-content {
+		display: none; // hide on default, shows/expands via js
+		margin: 1em 0;
+	}
+	
+	&.accordion-no-border{
+	  border-bottom: none; 
+    margin:0;
+	}
+}
