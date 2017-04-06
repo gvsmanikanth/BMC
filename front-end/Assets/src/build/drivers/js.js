@@ -50,7 +50,7 @@ function createBrowserifyStream(path, debug) {
 			gutil.log('Browserify error: ' + error.message);
 			process.exit(1);
 		})
-		.pipe(source(path.replace("./js/", "./")));
+		.pipe(source(path));
 }
 
 module.exports = jsDriver;

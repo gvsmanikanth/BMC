@@ -1,9 +1,9 @@
 		<?php include_once 'footer.php'; ?>
-		<?php include 'php-inc/modal-contact.php'; ?>
-		<?php include 'php-inc/modal-country.php'; ?>
+		<?php include 'modal-contact.php'; ?>
+		<?php // include 'modal-country.php'; ?>
 	</section><!-- / layout-wrapper -->
 
-	<script src="includes/main.js"></script>
+	<script src="Assets/dist/js/main.js"></script>
 
 <?php
 	if (isset($enableDTM) && $enableDTM == true) {
