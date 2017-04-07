@@ -5,4 +5,5 @@ aem-project/core/target
 front-end/*.php
 front-end/Assets/dist
 front-end/documentation
-Front-end/php-inc
+front-end/php-inc
+front-end/includes
