@@ -1,7 +1,7 @@
 // path to the CDN for production files
 // e.g.
 // //media.cms.bmc.com
-var serviceCloudRoot = '../service-cloud';
+var serviceCloudRoot = '../../service-cloud';
 
 var configuration = {
 	output: serviceCloudRoot, // prod output for CSS/JS goes to /includes

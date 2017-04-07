@@ -1,7 +1,7 @@
 // path to the CDN for production files
 // e.g.
 // //media.cms.bmc.com
-var allianceProgramRoot = '../alliance-program';
+var allianceProgramRoot = '../../alliance-program';
 
 var configuration = {
 	output: allianceProgramRoot, // prod output for CSS/JS goes to /includes
@@ -9,7 +9,7 @@ var configuration = {
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
 	cacheBusting: false, // if true rev is used to add a hash to filenames in production builds
 	tasks: [
-
+		
 		{
 			driver: 'css',
 			paths: ['./css/**/*.scss'],
