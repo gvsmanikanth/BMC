@@ -1,5 +1,5 @@
 var configuration = {
-	output: '../../includes', // where to write output to
+	output: '../dist', // where to write output to
 	base: '.', // base path from which globs are considered relative. Usually should be .
 	cleanProduction: true, // if true the output directory is rimraf'd before a build when debug = false
 	cacheBusting: false, // if true rev is used to add a hash to filenames in production builds
@@ -19,7 +19,7 @@ var configuration = {
 			base: './css',
 			autoClean: true,
 			autoCleanPaths: ['./*.css'],
-			assetPathKey: 'cdn'
+			assetPathKey: 'local'
 		},
 		{
 			// fonts are just a plain ol' copy, so they do not need a driver to process them on their way.
