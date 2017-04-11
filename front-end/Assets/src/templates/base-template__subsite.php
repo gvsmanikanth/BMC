@@ -1,3 +1,4 @@
+<!-- base template header -->
 <?php include('php-inc/support/head.php') ?>
 <?php include('php-inc/support/header.php') ?>
 <?php include('php-inc/support/chat-now.php') ?>
@@ -47,7 +48,10 @@
 		}
 	</script>
 <?php endif ?>
+<!--/ end base template header -->
 
+
+<!-- content, essentially -->
 <?php // include('php-inc/support/loading-issues.php') ?>
 <?php // include('php-inc/support/recent-issues.php') ?>
 <?php // include('php-inc/support/no-issues.php') ?>
@@ -56,7 +60,6 @@
 <?php // include('php-inc/support/promo.php') ?>
 <?php // include('php-inc/support/news.php') ?>
 <?php // include('php-inc/support/getting-started.php') ?>
-
 
 <div class="layout-inner-wrap" style="position: relative; min-height: 10em; background: #fff;">
 	<section>
@@ -72,7 +75,12 @@
 	</section>
 </div>
 
+<!--/ end content -->
 
+
+
+
+<!-- base-template footer -->
 <div class="fancybox-content" id="confirm">
 	<script>
 	if (typeof bmcMeta !== undefined && bmcMeta.support !== undefined) {
@@ -90,3 +98,4 @@
 	</script>
 </div>
 <?php include 'php-inc/foot.php'; ?>
+<!-- end base template footer -->
