@@ -15,15 +15,15 @@
 	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 
-	<script src="Assets/dist/js/head.js"></script>
+	<script src="Assets/dist/head.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" media="all" href="Assets/dist/css/style.css">
+	<link rel="stylesheet" media="all" href="Assets/dist/style.css">
 
 	<!-- For everything else -->
-	<link rel="shortcut icon" href="includes/favicon.png">
+	<link rel="shortcut icon" href="Assets/dist/favicon.png">
 	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="Assets/dist/img/touch-icon.png">
+	<link rel="apple-touch-icon-precomposed" href="Assets/dist/touch-icon.png">
 	<?php
 	if (isset($enableDTM) && $enableDTM == true) {
 		?>
