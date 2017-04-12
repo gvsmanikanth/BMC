@@ -1,6 +1,4 @@
-		<?php include_once 'footer.php'; ?>
-		<?php include 'modal-contact.php'; ?>
-		<?php // include 'modal-country.php'; ?>
+
 	</section><!-- / layout-wrapper -->
 
 	<script src="Assets/dist/main.js"></script>
