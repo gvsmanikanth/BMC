@@ -1,9 +1,4 @@
 <!-- base template header -->
-<?php include('php-inc/support/head.php') ?>
-<?php include('php-inc/support/header.php') ?>
-<?php include('php-inc/support/chat-now.php') ?>
-<?php include('php-inc/support/account-header.php') ?>
-
 <?php
 
 	$state = (object) array(
@@ -14,6 +9,9 @@
 	$pageTitle = 'Support Central';
 	$bodyClass = 'support-central';
 	include 'php-inc/support/head.php';
+	include('php-inc/support/header.php');
+	include('php-inc/support/chat-now.php');
+	include('php-inc/support/account-header.php');
 
 ?>
 
