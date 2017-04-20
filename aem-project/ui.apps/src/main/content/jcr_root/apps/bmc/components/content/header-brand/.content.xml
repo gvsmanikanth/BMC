@@ -3,5 +3,5 @@
           jcr:description="Header Brand Component"
           jcr:primaryType="cq:Component"
           jcr:title="HeaderBrand"
-          componentGroup="BMC"
+          componentGroup="BMC.content"
 />
