@@ -13,7 +13,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Default"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:BMC,/libs/wcm/foundation/components/responsivegrid,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/dam/cfm/components/contentfragment]"
+                        components="[group:BMC.content,group:BMC.structure,/libs/wcm/foundation/components/responsivegrid,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/dam/cfm/components/contentfragment]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
