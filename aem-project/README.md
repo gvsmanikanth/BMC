@@ -10,9 +10,15 @@ From the root directory, run ``mvn -PautoInstallPackage clean install`` to build
 
 From the bundle directory, run ``mvn -PautoInstallBundle clean install`` to build *just* the bundle and install to a CQ instance.
 
+## Installing the Uber Jar
+
+This project depends upon the AEM 6.3 UberJar which is not yet publicly released. You can download this from the Beta site and install it using this Maven command:
+
+    mvn install:install-file -Dfile=<filename> -DgroupId=com.adobe.aem -DartifactId=uber-jar -Dversion=6.3.0-summit -Dclassifier=apis -Dpackaging=jar
+
 ## Using with AEM Developer Tools for Eclipse
 
-To use this project with the AEM Developer Tools for Eclipse, import the generated Maven projects via the Import:Maven:Existing Maven Projects wizard. Then enable the Content Package facet on the _content_ project by right-clicking on the project, then select Configure, then Convert to Content Package... In the resulting dialog, select _src/main/content_ as the Content Sync Root.
+To use this project with the AEM Developer Tools for Eclipse, import the generated Maven projects via the Import:Maven:Existing Maven Projects wizard. Then add them to a running Server.
 
 ## Using with VLT
 
@@ -26,5 +32,3 @@ Once the working copy is created, you can use the normal ``vlt up`` and ``vlt ci
 
 The CRX host and port can be specified on the command line with:
 mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
-
-

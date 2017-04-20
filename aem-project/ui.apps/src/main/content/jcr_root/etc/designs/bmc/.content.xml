@@ -6,19 +6,5 @@
         cq:template="/libs/wcm/core/templates/designpage"
         jcr:primaryType="cq:PageContent"
         jcr:title="BMC DXP"
-        sling:resourceType="wcm/core/components/designer">
-        <clientlibs
-            jcr:lastModified="{Date}2013-10-21T08:55:12.602-04:00"
-            jcr:lastModifiedBy="admin"
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="acs-commons/components/utilities/designer/clientlibsmanager">
-            <head
-                jcr:primaryType="nt:unstructured"
-                css="bmc.main"
-                js="bmc.dependencies"/>
-            <body
-                jcr:primaryType="nt:unstructured"
-                js="bmc.main"/>
-        </clientlibs>
-    </jcr:content>
+        sling:resourceType="wcm/core/components/designer" />
 </jcr:root>

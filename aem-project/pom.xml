@@ -7,7 +7,7 @@
     <!-- ====================================================================== -->
 
     <groupId>com.bmc</groupId>
-    <artifactId>bmc-dxp</artifactId>
+    <artifactId>DXP</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -129,46 +129,27 @@
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
-                <version>2.2.4</version>
+                <version>2.2.6</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.2.0</version>
+                <version>6.3.0-summit</version>
                 <scope>provided</scope>
                 <classifier>apis</classifier>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.6</version>
+                <version>1.7.21</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
-                <version>1.7.6</version>
+                <version>1.7.21</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.code.findbugs</groupId>
-                <artifactId>jsr305</artifactId>
-                <version>3.0.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-bundle</artifactId>
-                <version>3.4.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-content</artifactId>
-                <version>3.4.0</version>
-                <scope>provided</scope>
-                <type>content-package</type>
             </dependency>
             <dependency>
                 <groupId>javax.inject</groupId>
@@ -278,72 +259,6 @@
                         </excludePackageNames>
                     </configuration>
                 </plugin>
-
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.7.1.201405082137</version>
-                    <executions>
-                        <execution>
-                            <id>default-prepare-agent</id>
-                            <goals>
-                                <goal>prepare-agent</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.2</version>
-                    <configuration>
-                        <linkXRef>false</linkXRef>
-                        <rulesets>
-                            <ruleset>acs/pmd/rules.xml</ruleset>
-                        </rulesets>
-                        <targetJdk>1.6</targetJdk>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.adobe.acs</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>0.0.1</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>2.12.1</version>
-                    <configuration>
-                        <linkXRef>false</linkXRef>
-                        <configLocation>acs/checkstyle/checks.xml</configLocation>
-                        <includeResources>false</includeResources>
-                        <includeTestResources>false</includeTestResources>
-                    </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.adobe.acs</groupId>
-                            <artifactId>checkstyle-osgi-checks</artifactId>
-                            <version>0.0.3</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.adobe.acs</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>0.0.1</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>jslint-maven-plugin</artifactId>
-                    <version>1.0.1</version>
-                </plugin>
-
             </plugins>
         </pluginManagement>
     </build>
@@ -368,116 +283,6 @@
                 </plugins>
             </build>
         </profile>
-
-        <profile>
-            <id>analysis</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>pmd</goal>
-                                    <goal>cpd</goal>
-                                    <!-- build will fail on warnings -->
-                                    <goal>check</goal> 
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>javadoc</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>checkstyle</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>analysisCI</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-pmd-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>pmd</goal>
-                                    <goal>cpd</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>javadoc</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>findbugs-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>findbugs</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-checkstyle-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>checkstyle</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
     </profiles>
     <modules>
         <module>core</module>

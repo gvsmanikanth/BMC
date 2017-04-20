@@ -1,7 +1,7 @@
 **/.idea
 **/*.iml
-aem-project/ui.apps/target
-aem-project/core/target
+aem-project*/ui.apps/target
+aem-project*/core/target
 front-end/*.php
 front-end/Assets/dist
 front-end/documentation

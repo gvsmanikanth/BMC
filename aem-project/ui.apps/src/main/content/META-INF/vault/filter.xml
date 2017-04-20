@@ -2,9 +2,6 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc"/>
 
-    <filter root="/apps/sling/servlet/errorhandler"/>
-
-
     <filter root="/conf/bmc" mode="merge"/>
 
 
@@ -12,11 +9,11 @@
 
 
     <filter root="/etc/designs/bmc">
+        <include pattern="/etc/designs/bmc"/>
         <include pattern="/etc/designs/bmc/jcr:content"/>
-
-        <include pattern="/etc/designs/bmc/jcr:content/clientlibs"/>
-        <include pattern="/etc/designs/bmc/jcr:content/clientlibs/.*"/>
-
     </filter>
+
+
+    <filter root="/content/bmc" mode="merge" />
 
 </workspaceFilter>
