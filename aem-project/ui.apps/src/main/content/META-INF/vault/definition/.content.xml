@@ -4,10 +4,10 @@
     jcr:primaryType="vlt:PackageDefinition"
     sling:resourceType="cq/packaging/components/pack/definition"
     buildCount="1"
-    cqVersion="6.2"
+    cqVersion="6.3.0"
     group="bmc"
-    name="bmc-dxp"
-    path="/etc/packages/bmc/bmc-dxp-0.0.1-SNAPSHOT"
+    name="DXP"
+    path="/etc/packages/bmc/DXP-0.0.1-SNAPSHOT"
     version="0.0.1-SNAPSHOT">
     <filter jcr:primaryType="nt:unstructured">
         <f0
@@ -15,13 +15,6 @@
             mode="replace"
             root="/apps/bmc"
             rules="[]"/>
-
-        <f1
-            jcr:primaryType="nt:unstructured"
-            mode="replace"
-            root="/apps/sling/servlet/errorhandler"
-            rules="[]"/>
-
 
         <f2
             jcr:primaryType="nt:unstructured"
@@ -41,8 +34,7 @@
             jcr:primaryType="nt:unstructured"
             mode="replace"
             root="/etc/designs/bmc"
-
-            rules="[include:/etc/designs/bmc/jcr:content,include:/etc/designs/bmc/jcr:content/clientlibs,include:/etc/designs/bmc/jcr:content/clientlibs/.*]"/>
+            rules="[include:/etc/designs/bmc/jcr:content]"/>
 
     </filter>
 </jcr:root>

@@ -3,11 +3,11 @@
 <properties>
 <comment>FileVault Package Properties</comment>
 <entry key="buildCount">1</entry>
-<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="version">6.3.0</entry>
 <entry key="dependencies" />
 <entry key="packageFormatVersion">2</entry>
 <entry key="description">BMC DXP Content Package</entry>
 <entry key="group">bmc</entry>
-<entry key="name">bmc-dxp</entry>
-<entry key="path">/etc/packages/bmc/bmc-dxp-0.0.1-SNAPSHOT.zip</entry>
+<entry key="name">DXP</entry>
+<entry key="path">/etc/packages/bmc/DXP-0.0.1-SNAPSHOT.zip</entry>
 </properties>
