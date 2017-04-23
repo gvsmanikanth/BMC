@@ -1,19 +1,660 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-    <title><?php echo $pageTitle; ?></title>
-    <!-- TODO: verify this is the correct way to include this -->
-    <sly data-sly-use.clientlib="../page/customheaderlibs.html" />
-
-</head>
-
-<!-- TODO: determine method to apply dynamic body classes -->
-<body class="<?php echo $bodyClass; ?>">
-
-<section class="layout-wrapper">
     <!-- TODO: includes
 		include_once 'engage-prompt.php';
 		// include_once 'alert-country-prompt.php';
 		include_once 'header.php';
 		include_once 'navigation-primary.php';
+		// Included markup for these sections from homepage.php -BL
 	 -->
+    <header class="header-prompt header-prompt-static desktop-only" data-show-prompt="false" data-day="11" data-month="8" data-year="2016" data-hour="17" data-min="29" data-sec="0">
+        <section class="banner" style="background-color: #eee; display:none;">
+            <!-- <a class="banner-close" href="#"></a> -->
+            <div class="layout-inner-wrap">
+                <div class="table-desktop">
+                    <div class="image bg-image bg-home td">
+                        <img class="mobile-only center-block" src="http://media.cms.bmc.com/designimages/Engage_Countdown_Mobile_768x550_Final.png" alt="2015 Engage"/>
+                    </div>
+                    <div class="content td">
+                        <p><b>Digital Transformation IT Conference</b><br>
+                            Rich Technical Content and Hands-On Labs</p>
+                        <p><b style="color:#f36f21;">Early Bird Pricing Ends August 11, 2016</b></p>
+                        <p><a class="btn btn-small" href="http://engage.bmc.com/">SAVE MY SEAT!</a></p>
+                    </div>
+                    <div class="countdown td">
+                        <div id="8139-countdown" class="tminus_countdown">
+                            <div class="cloud-city-countdown -sm">
+                                <div id="8139-tophtml" class="cloud-city-tophtml">Deadline for early-bird pricing</div>
+                                <div id="8139-dashboard" class="js-countdown cloud-city-dashboard">
+                                    <div class="cloud-city-dash cloud-city-days_dash">
+                                        <div class="cloud-city-dash_title">days</div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="cloud-city-dash cloud-city-hours_dash">
+                                        <div class="cloud-city-dash_title">hours</div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="cloud-city-dash cloud-city-minutes_dash">
+                                        <div class="cloud-city-dash_title">minutes</div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="cloud-city-dash cloud-city-seconds_dash">
+                                        <div class="cloud-city-dash_title">seconds</div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: none;">0</div>
+                                            <div class="bottom" style="display: block;">0</div>
+                                        </div>
+                                        <div class="cloud-city-digit">
+                                            <div class="top" style="display: block; overflow: hidden; height: 34.6219985106085px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">0</div>
+                                            <div class="bottom" style="display: block; overflow: hidden; height: 32.8685772695338px;">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <header class="layout-header">
+        <div class="layout-inner-wrap">
+            <a href="#" class="layout-navigation-open"></a>
+            <a class="brand" href="index.php">BMC</a>
+        </div><!-- / inner-wrap -->
+    </header>
+
+
+    <nav class="layout-navigation">
+        <div class="layout-inner-wrap" style="position: relative;">
+            <ul class="navigation-primary">
+                <li class="navigation-menu"><a href="#" class="navigation-menu-link"></a></li>
+                <li class="navigation-home"><a href="#" class="navigation-home-link"></a></li>
+                <li class="navigation-products navigation-secondary-toggle">
+                    <a href="#">Products &amp; Solutions</a>
+                    <!-- -->
+
+                    <div class="navigation-secondary navigation-tabbed-menu layout-inner-wrap">
+                        <ul class="navigation-tab-controls">
+                            <li class="navigation-mobile-back">
+                                <a href="#" class="navigation-secondary-close">Main Menu</a>
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-featured-offerings default-tab active-tab">Featured Solutions</a>
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#http://www.google.com" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Products:</li>
+                                            <li><a href="#">Remedy ITSM Suite</a></li>
+                                            <li><a href="#">Control-M Workload Automation</a></li>
+                                            <li><a href="#">TrueSight Operations Management</a></li>
+                                            <li><a href="#">Cloud Lifecycle Management</a></li>
+                                            <li><a href="#">Atrium Discovery</a></li>
+                                            <li><a href="#">BladeLogic Server Automation</a></li>
+                                            <li><a href="#">Cost Analyzer for zEnterprise</a></li>
+                                            <li>
+                                                <a href="#" class="btn">View All Products &rsaquo;</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Popular Topics:</li>
+                                            <li><a href="#">IT User Experience</a></li>
+                                            <li><a href="#">Big Data Management</a></li>
+                                            <li><a href="#">DevOps</a></li>
+                                            <li><a href="#">Data Center Automation</a></li>
+                                            <li><a href="#">Mainframe Cost Optimization</a></li>
+                                            <li><a href="#">IT Operations Analytics</a></li>
+                                            <li><a href="#">Intelligent Compliance</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <!-- <ul>
+                                            <li class="navigation-section-header">Industries/segments:</li>
+                                            <li><a href="#">Healthcare</a></li>
+                                            <li><a href="#">Retail</a></li>
+                                            <li><a href="#">Financial Services</a></li>
+                                            <li><a href="#">Telecommunications</a></li>
+                                            <li><a href="#">Federal Government</a></li>
+                                            <li class="navigation-section-header">Customer success:</li>
+                                            <li><a href="#" class="spotlight"><img src="http://fpoimg.com/253x82" alt="FPO"></a></li>
+                                            <li><a href="#" class="link-view-all">View all customer stories &rsaquo;</a></li>
+                                        </ul> -->
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-service-management">IT Service Management</a>
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">Remedy IT Service Management Suite</a></li>
+                                            <li><a href="#">RemedyForce</a></li>
+                                            <li><a href="#">MyIT</a></li>
+                                            <li><a href="#">Atrium Discovery and Dependency Mapping</a></li>
+                                            <li><a href="#">Footprints Service Core</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solution:</li>
+                                            <li><a href="#">Service Resolution Smartflow</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Areas:</li>
+                                            <li><a href="#">IT Customer Experience</a></li>
+                                            <li><a href="#">Service Desk</a></li>
+                                            <li><a href="#">Asset Management</a></li>
+                                            <li><a href="#">Enterprise App Store</a></li>
+                                            <li><a href="#">IT Infrastructure Library &reg; (ITIL &reg;)</a></li>
+                                            <li><a href="#">Software as a Service (SaaS) Solutions</a></li>
+                                            <li><a href="#" class="btn">Explore IT Service Management &rsaquo;</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-workload-automation">Workload Automation</a>
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">Control-M Workload Automation</a></li>
+                                            <li><a href="#">Control-M for Hadoop</a></li>
+                                            <li><a href="#">Control-M Workload Change Manager</a></li>
+                                            <li><a href="#">Control-M Self-Service</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solutions:</li>
+                                            <li><a href="#">No Content</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Areas:</li>
+                                            <li><a href="#">Big Data Management</a></li>
+                                            <li><a href="#">Job Scheduling Software</a></li>
+                                            <li><a class="btn" href="#">Explore Workload Automation</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-it-operations">IT Operations</a>
+
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">TrueSight Operations Management</a></li>
+                                            <li><a href="#">TrueSight App Visibility Manager</a></li>
+                                            <li><a href="#">TrueSight IT Data Analytics</a></li>
+                                            <li><a href="#">TrueSight Capacity Optimization</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solution</li>
+                                            <li><a href="#">Service Resolution Smartflow</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Area:</li>
+                                            <li><a href="#">Application Performance Management</a></li>
+                                            <li><a href="#">Capacity Management</a></li>
+                                            <li><a href="#">IT Operations Analytics</a></li>
+                                            <li><a href="#">Middleware Software</a></li>
+                                            <li><a href="#" class="btn">Explore IT Operations</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-cloud-management">Cloud Management</a>
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">Cloud Lifecycle Management</a></li>
+                                            <li><a href="#">Cloud Operations Management</a></li>
+                                            <li><a href="#">Atrium Orchestrator</a></li>
+                                            <li><a href="#">Atrium Configuration Management Database (CMDB)</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solutions:</li>
+                                            <li><a href="#">No Content</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Areas:</li>
+                                            <li><a href="#">Cloud Management for Service Providers</a></li>
+                                            <li><a href="#">Hybrid Cloud Management</a></li>
+                                            <li><a href="#">Software as a Service (SaaS) Solutions</a></li>
+                                            <li><a href="#">Virtualization Management</a></li>
+                                            <li><a href="#" class="btn">Explore Cloud Management</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-it-automation">IT Automation</a>
+
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">Automation Passport</a></li>
+                                            <li><a href="#">Intelligent Compliance</a></li>
+                                            <li><a href="#">BladeLogic Server Automation</a></li>
+                                            <li><a href="#">Atrium Orchestrator</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solutions:</li>
+                                            <li><a href="#">No Content</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Areas:</li>
+                                            <li><a href="#">Data Center Automation</a></li>
+                                            <li><a href="#">DevOps</a></li>
+                                            <li><a href="#">SecOps</a></li>
+                                            <li><a href="#">Hybrid Cloud Management</a></li>
+                                            <li><a href="#">Virtualization Management</a></li>
+                                            <li><a href="#" class="btn">Explore IT Automation</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul><!-- / navigation-supplementary -->
+                            </li>
+                            <li>
+                                <a href="#" class="tab-control icon-mainframe">Mainframe</a>
+
+                                <ul class="navigation-supplementary">
+                                    <li class="navigation-close-supplementary-container">
+                                        <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                    </li>
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Featured Products:</li>
+                                            <li><a href="#">Data Management for DB2&reg; on z/OS &reg;</a></li>
+                                            <li><a href="#">Data Management for IMS &trade;</a></li>
+                                            <li><a href="#">Mainframe System Management with MainView</a></li>
+                                            <li><a href="#">Mainframe MLC Software Cost Management</a></li>
+                                            <li class="navigation-section-header">Cross-Functional Solutions:</li>
+                                            <li><a href="#">No Content</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="navigation-column">
+                                        <ul>
+                                            <li class="navigation-section-header">Focus Areas:</li>
+                                            <li><a href="#">Mainframe Cost Optimization</a></li>
+                                            <li><a href="#">Mainframe MLC Cost Management</a></li>
+                                            <li><a href="#">Capacity Management</a></li>
+                                            <li><a href="#">Middleware Software</a></li>
+                                            <li><a href="#" class="btn">Explore Mainframe</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="navigation-column navigation-column-emphasis">
+                                        <ul class="nav-supplemental-with-images">
+                                            <li class="navigation-section-header">
+                                                Customer Success
+                                            </li>
+                                            <li>
+                                                <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                            </li>
+                                            <li class="navigation-section-header pt1">
+                                                BMC Marketplace
+                                            </li>
+                                            <li>
+                                                <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul><!-- / navigation-supplementary -->
+                            </li>
+                        </ul>
+
+                        <!-- default content -->
+                        <div class="navigation-tab-content">
+                            <ul class="navigation-supplementary">
+                                <li class="navigation-close-supplementary-container">
+                                    <a href="#" class="navigation-close-supplementary">Products &amp; Solutions</a>
+                                </li>
+                                <li class="navigation-column">
+                                    <ul>
+                                        <li class="navigation-section-header">Products:</li>
+                                        <li><a href="#">Remedy ITSM Suite</a></li>
+                                        <li><a href="#">Control-M Workload Automation</a></li>
+                                        <li><a href="#">TrueSight Operations Management</a></li>
+                                        <li><a href="#">Cloud Lifecycle Management</a></li>
+                                        <li><a href="#">Atrium Discovery</a></li>
+                                        <li><a href="#">BladeLogic Server Automation</a></li>
+                                        <li><a href="#">Cost Analyzer for zEnterprise</a></li>
+                                        <li>
+                                            <a href="#" class="btn">View All Products &rsaquo;</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="navigation-column">
+                                    <ul>
+                                        <li class="navigation-section-header">Focus Areas:</li>
+                                        <li><a href="#">IT User Experience</a></li>
+                                        <li><a href="#">Big Data Management</a></li>
+                                        <li><a href="#">DevOps</a></li>
+                                        <li><a href="#">Data Center Automation</a></li>
+                                        <li><a href="#">Mainframe Cost Optimization</a></li>
+                                        <li><a href="#">IT Operations Analytics</a></li>
+                                        <li><a href="#">Intelligent Compliance</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="navigation-column navigation-column-emphasis">
+                                    <ul class="nav-supplemental-with-images">
+                                        <li class="navigation-section-header">
+                                            Customer Success
+                                        </li>
+                                        <li>
+                                            <a href="/customers/success-stories.html"><img src="http://media.cms.bmc.com/images/nav82StoriesPromoV2.jpg" alt="BMC digital IT powers 82% of the Fortune 500"></a>
+                                        </li>
+                                        <li class="navigation-section-header pt1">
+                                            BMC Marketplace
+                                        </li>
+                                        <li>
+                                            <a href="http://marketplace.bmc.com"><img src="http://media.cms.bmc.com/images/Marketplace_banner_310x180_2-2.jpg" alt="BMC Marketplace" ></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul><!-- / navigation-supplementary -->
+                        </div><!-- / navigation-tabbed-content -->
+
+                    </div>			</li>
+                <li class="navigation-services navigation-secondary-toggle">
+                    <a href="#">Services</a>
+
+
+                    <ul class="navigation-secondary navigation-one-col">
+                        <li class="navigation-column">
+                            <ul>
+                                <li class="navigation-mobile-back">
+                                    <a href="#" class="navigation-secondary-close">Main Menu</a>
+                                </li>
+                                <li class="navigation-section-header">Areas of Expertise:</li>
+                                <li><a href="#">Cloud Consulting Services</a></li>
+                                <li><a href="#">Data Center Automation Services</a></li>
+                                <li><a href="#">Workload Automation Services</a></li>
+                                <li><a href="#">IT Operations Services</a></li>
+                                <li><a href="#">ITSM Consulting Services</a></li>
+                                <li><a href="#" class="btn btn-view-more">View All Services</a></li>
+                            </ul>
+                        </li>
+                    </ul>			</li>
+                <li class="navigation-education navigation-secondary-toggle">
+                    <a href="#">Education</a>
+
+
+                    <ul class="navigation-secondary navigation-two-col">
+                        <li class="navigation-mobile-back">
+                            <a href="#" class="navigation-secondary-close">Main Menu</a>
+                        </li>
+                        <li class="navigation-column">
+                            <ul>
+
+                                <li class="navigation-section-header">Education:</li>
+                                <li><a href="#">Certification Programs</a></li>
+                                <li><a href="#">Learning Paths</a></li>
+                                <li><a href="#">Worldwide Training Centers</a></li>
+                                <li><a href="#">Solution Adoption Framework</a></li>
+                                <li><a href="#" class="btn btn-view-more">Explore Education</a></li>
+                            </ul>
+                        </li>
+                        <li class="navigation-column">
+                            <ul>
+                                <li class="navigation-section-header">BMC Academy:</li>
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Customer Login</a></li>
+                                <li><a href="#">Partner Login</a></li>
+                                <li><a href="#">Search for Courses</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>			</li>
+                <li class="navigation-partners"><a href="#">Partners</a></li>
+                <li class="navigation-community navigation-secondary-toggle">
+                    <a href="#">Communities</a>
+
+
+                    <ul class="navigation-secondary navigation-two-col">
+                        <li class="navigation-mobile-back">
+                            <a href="#" class="navigation-secondary-close">Main Menu</a>
+                        </li>
+                        <li class="navigation-column">
+                            <ul>
+                                <li class="navigation-section-header">Explore BMC Communities:</li>
+                                <li><a href="#">Remedy</a></li>
+                                <li><a href="#">Bladelogic Server Animation</a></li>
+                                <li><a href="#">Remedyforce</a></li>
+                                <li><a href="#">Atrium CMDB</a></li>
+                                <li><a href="#">Truesight Operation Management</a></li>
+                                <li><a href="#" class="btn btn-view-more">View All Communities</a></li>
+                            </ul>
+                        </li>
+                        <li class="navigation-column">
+                            <ul>
+                                <li class="navigation-section-header">Customer Programs:</li>
+                                <li><a href="#">Beta Programs</a></li>
+                                <li><a href="#">Advisory Boards</a></li>
+                                <li><a href="#">Local User Groups</a></li>
+                            </ul>
+                        </li>
+                    </ul>			<li class="navigation-about navigation-secondary-toggle">
+                <a href="#">About BMC</a>
+
+
+                <ul class="navigation-secondary navigation-three-col">
+                    <li class="navigation-column">
+                        <ul>
+                            <li class="navigation-mobile-back">
+                                <a href="#" class="navigation-secondary-close">Main Menu</a>
+                            </li>
+                            <li class="navigation-section-header">Who We Are:</li>
+                            <li><a href="#">Why BMC</a></li>
+                            <li><a href="#">Meet Our Leadership</a></li>
+                            <li><a href="#">Six Principles of Digital Transformation</a></li>
+                            <li><a href="#">Our Commitment To Security</a></li>
+                            <li><a href="#">Corporate Responsibility</a></li>
+                        </ul>
+                    </li>
+                    <li class="navigation-column">
+                        <ul>
+                            <li class="navigation-section-header">Resources:</li>
+                            <li><a href="#">BMC Blogs</a></li>
+                            <li><a href="#">Analyst Reports</a></li>
+                            <li><a href="#">News &amp; Press</a></li>
+                            <li><a href="#">Thought Leadership Books</a></li>
+                            <li><a href="#">BMCtv</a></li>
+                        </ul>
+                    </li>
+                    <li class="navigation-column">
+                        <ul>
+                            <li class="navigation-section-header">Connect With Us:</li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>			</li>
+            </ul>
+            <ul class="navigation-utility">
+                <li class="navigation-trials nav-li-override-hide"><a href="#" class="" style="">Free Trials</a></li>
+                <li class="nav-li-override"><a href="#" class="">Start your free trial of TrueSight Intelligence</a></li>
+                <li class="navigation-contact"><a href="#" class="contact-bmc">Contact BMC</a></li>
+                <li class="navigation-country"><a href="#" class="select-country">Select Country</a></li>
+                <!-- <li class="navigation-support"><a href="#" class="support-login">Support Login</a></li>--> <!-- Removed as per comments in WEB-254 -->
+                <li class="navigation-search js-navigation-search">
+                    <form action="/search/" class="search-site">
+                        <div class="search-site-b" dir="ltr">
+                            <div class="search-focus">
+                                <input maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false" placeholder="Search...">
+                            </div>
+                            <button></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            <!-- end chat now -->
+        </div><!-- / layout-inner-wrap -->
+    </nav><!-- / layout-nav -->

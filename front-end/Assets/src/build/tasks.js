@@ -29,6 +29,24 @@ module.exports = function(configuration) {
 		return masterStream.pipe(gulp.dest(configuration.output));
 	});
 
+	gulp.task('aem', ['default'], function() {
+		// copies files from FED build location to a corresponding location for vlt to bundle and deploy to aem
+		// main client lib
+		gulp.src('./../dist/main.js')
+			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/main/js'));
+
+		// head client lib
+		gulp.src('./../dist/head.js')
+			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/head/js'));
+		gulp.src('./../dist/style.css')
+			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/head/css'));
+
+		// css images
+		gulp.src('./../dist/**/*')
+			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/head'));
+
+	});
+
 	// this is the top level production task (minified, no sourcemaps, rev'd)
 	gulp.task('production', loader.getBuildDependencies(), function() {
 		var masterStream,
