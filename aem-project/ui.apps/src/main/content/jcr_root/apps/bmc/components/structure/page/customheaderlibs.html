@@ -9,9 +9,8 @@
 
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
 
-<!-- TODO: correct paths -->
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientLib.css @ categories=bmc.head}" ></sly>
+     data-sly-call="${clientLib.all @ categories='bmc.head'}" />
 
 <!-- icon and tile color in hex # for Windows phones -->
 <meta name="msapplication-TileImage" content="includes/touch-icon.png">
