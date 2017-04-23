@@ -4,4 +4,4 @@
           jcr:primaryType="cq:Component"
           jcr:title="Page"
           sling:resourceSuperType="core/wcm/components/page/v1/page"
-          componentGroup="BMC.structure"/>
+          componentGroup=".hidden"/>
