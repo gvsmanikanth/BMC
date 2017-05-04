@@ -2,42 +2,68 @@
 <!-- example 1 -->
 <section class="wallpapered wallpaper" style="background: #FE5000;">
     <div class="layout-inner-wrap">
-        <h1 class="heading">Contact BMC</h1>
+        <h1 class="heading">
+            <span>
+                ${properties.text @context='text'}
+            </span>
+            <span data-sly-test="${!properties.text}" data-sly-unwrap>
+                Enter Heading
+            </span>
+        </h1>
     </div>
     <div class="wallpaper-container"></div>
 </section>
-
-
 
 <!-- example 2 -->
 <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
     <div class="layout-inner-wrap">
         <div class="offset-hero-clear">
             <div class="offset-hero-inner-wrap">
-                <h1>Contact BMC Sales</h1>
+                <h1>
+                    <span>
+                        ${properties.text @context='text'}
+                    </span>
+                    <span data-sly-test="${!properties.text}" data-sly-unwrap>
+                        Enter Heading
+                    </span>
+                </h1>
             </div><!-- / offset-hero-inner-wrap -->
         </div>
     </div><!-- / layout-inner-wrap -->
 </section>
 
-
-
-<!-- example 3 (identical to #2 but relies on a body class (.page-campaign-landing) which should be moved to component level)-->
+<!-- example 3 -->
 <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
     <div class="layout-inner-wrap">
         <div class="offset-hero-clear">
             <div class="offset-hero-inner-wrap">
-                <h1>Contact BMC Sales</h1>
-            </div><!-- / offset-hero-inner-wrap -->
+                <h1>
+                    <span>
+                        ${properties.text @context='text'}
+                    </span>
+                    <span data-sly-test="${!properties.text}" data-sly-unwrap>
+                        Enter Heading
+                    </span>
+                </h1>
+            </div><!-- / category-hero-inner-wrap -->
+        </div>
+
+        <div class="layout-campaign-screenshot flush">
+            <img src="http://media.cms.bmc.com/images/form-template-465218.png" width="436" height="211" alt="" title="" border="0">
         </div>
     </div><!-- / layout-inner-wrap -->
 </section>
 
-
-
 <!-- example 4 -->
 <section class="layout-full-bleed product-finder-banner">
     <div class="layout-inner-wrap">
-        <h1>IT Software &amp; Solutions</h1>
+        <h1>
+            <span>
+                ${properties.text @context='text'}
+            </span>
+            <span data-sly-test="${!properties.text}" data-sly-unwrap>
+                Enter Heading
+            </span>
+        </h1>
     </div>
 </section>
