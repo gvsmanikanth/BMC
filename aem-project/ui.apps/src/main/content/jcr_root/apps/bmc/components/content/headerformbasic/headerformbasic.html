@@ -2,7 +2,14 @@
 	<div class="layout-inner-wrap">
 		<div class="offset-hero-clear">
 			<div class="offset-hero-inner-wrap">
-				<h1>Contact BMC Sales</h1>
+				<h1>
+					<span>
+						${properties.text @context='text'}
+					</span>
+					<span data-sly-test="${!properties.text}">
+						Enter Heading
+					</span>
+				</h1>
 			</div><!-- / offset-hero-inner-wrap -->
 		</div>
 	</div><!-- / layout-inner-wrap -->

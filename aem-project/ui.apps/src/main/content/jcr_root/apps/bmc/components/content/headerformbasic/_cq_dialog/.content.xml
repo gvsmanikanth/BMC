@@ -12,9 +12,11 @@
                 type="nav"/>
         <items jcr:primaryType="nt:unstructured">
             <text
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Text"
-                    sling:resourceType="granite/ui/components/foundation/section"/>
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                fieldDescription="Header text."
+                fieldLabel="Header text"
+                name="./text"/>
         </items>
     </content>
 </jcr:root>
