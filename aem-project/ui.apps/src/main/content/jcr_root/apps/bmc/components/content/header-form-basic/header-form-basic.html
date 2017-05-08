@@ -33,26 +33,29 @@
 </section>
 
 <!-- example 3 -->
-<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
-    <div class="layout-inner-wrap">
-        <div class="offset-hero-clear">
-            <div class="offset-hero-inner-wrap">
-                <h1>
-                    <span>
-                        ${properties.text @context='text'}
-                    </span>
-                    <span data-sly-test="${!properties.text}" data-sly-unwrap>
-                        Enter Heading
-                    </span>
-                </h1>
-            </div><!-- / category-hero-inner-wrap -->
-        </div>
+<!-- identical to example 2 but requires the '.page-campaign-landing' parent container -->
+<div class="page-campaign-landing">
+    <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
+        <div class="layout-inner-wrap">
+            <div class="offset-hero-clear">
+                <div class="offset-hero-inner-wrap">
+                    <h1>
+                        <span>
+                            ${properties.text @context='text'}
+                        </span>
+                        <span data-sly-test="${!properties.text}" data-sly-unwrap>
+                            Enter Heading
+                        </span>
+                    </h1>
+                </div><!-- / category-hero-inner-wrap -->
+            </div>
 
-        <div class="layout-campaign-screenshot flush">
-            <img src="http://media.cms.bmc.com/images/form-template-465218.png" width="436" height="211" alt="" title="" border="0">
-        </div>
-    </div><!-- / layout-inner-wrap -->
-</section>
+            <div class="layout-campaign-screenshot flush">
+                <img src="http://media.cms.bmc.com/images/form-template-465218.png" width="436" height="211" alt="" title="" border="0">
+            </div>
+        </div><!-- / layout-inner-wrap -->x
+    </section>
+</div>
 
 <!-- example 4 -->
 <section class="layout-full-bleed product-finder-banner">
