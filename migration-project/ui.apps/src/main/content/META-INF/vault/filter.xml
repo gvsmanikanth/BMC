@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/bmc-migration"/>
+
+    <filter root="/apps/sling/servlet/errorhandler"/>
+
+
+    <filter root="/conf/bmc-migration" mode="merge"/>
+
+
+    <filter root="/etc/clientlibs/bmc-migration"/>
+
+
+    <filter root="/etc/designs/bmc-migration">
+        <include pattern="/etc/designs/bmc-migration/jcr:content"/>
+
+        <include pattern="/etc/designs/bmc-migration/jcr:content/clientlibs"/>
+        <include pattern="/etc/designs/bmc-migration/jcr:content/clientlibs/.*"/>
+
+    </filter>
+
+</workspaceFilter>
