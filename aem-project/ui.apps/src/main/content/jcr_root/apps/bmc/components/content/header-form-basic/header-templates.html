@@ -1,0 +1,28 @@
+<sly data-sly-template.HeaderBanner="${@ headerText, foregroundImage, backgroundImage, isPageCampaignLanding}">
+    <sly data-sly-test="{isPageCampaignLanding}">
+        <div class="page-campaign-landing">
+    </sly>
+        <section data-sly-attribute.class="${ backgroundImage ? 'layout-full-bleed layout-full-bleed-image' : 'wallpapered wallpaper'}" data-sly-attribute.style="background:#FE5000">
+            <div class="layout-inner-wrap">
+                <div class="offset-hero-clear">
+                    <div class="offset-hero-inner-wrap">
+                        <h1>
+                            <span>
+                                ${headerText}
+                            </span>
+                            <span data-sly-test="${!headerText}" data-sly-unwrap>
+                                Enter Heading
+                            </span>
+                        </h1>
+                    </div>
+                </div>
+                <div data-sly-test="${foregroundImage}" class="layout-campaign-screenshot flush">
+                    <img src="${foregroundImage}" width="436" height="211" alt="" title="" border="0">
+                </div>
+            </div>
+            <div class="wallpaper-container"></div>
+        </section>
+    <sly data-sly-test="{isPageCampaignLanding}">
+        </div>
+    </sly>
+</sly>
