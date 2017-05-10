@@ -1,5 +1,5 @@
 <div class="page-campaign-landing">
-<!-- TODO: the background image for this component should be CMS editable -->
+<!-- TODO: display the background image that the author has selected from the DAM or uploaded -->
     <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
         <div class="layout-inner-wrap">
             <div class="offset-hero-clear">
@@ -14,11 +14,15 @@
                     </h1>
                 </div><!-- / category-hero-inner-wrap -->
             </div>
-
-            <div class="layout-campaign-screenshot flush">
-                <!-- TODO: the foreground image for this component should be CMS editable -->
-                <img src="http://media.cms.bmc.com/images/form-template-465218.png" width="436" height="211" alt="" title="" border="0">
+            <!-- TODO: display the foreground image the author has selected from the DAM or uploaded -->
+            <div data-sly-test="${foregroundImage}" class="layout-campaign-screenshot flush">
+                <img src="${foregroundImage}" width="436" height="211" alt="" title="" border="0">
             </div>
+
+            <div data-sly-test="${!foregroundImage}" class="layout-campaign-screenshot flush">
+                <img src="http://fpoimg.com/436x211?text=Select%20Image%20from%20DAM" width="436" height="211" alt="" title="" border="0">
+            </div>
+
         </div><!-- / layout-inner-wrap -->
     </section>
 </div>
