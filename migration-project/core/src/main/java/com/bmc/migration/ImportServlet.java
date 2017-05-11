@@ -128,14 +128,16 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 node.setProperty("fieldType", type);
                 if (type.equals("Item Browser/Complex Field")) {
                     String[] items = value.split(",");
-                    Arrays.stream(items).forEach(s -> {
-
-                    });
+                    Arrays.stream(items).forEach(s -> parseItem(s));
                 }
             } catch (RepositoryException e) {
                 logger.error(e.getMessage() + " " + e.getStackTrace());
             }
         }
+    }
+
+    private void parseItem(String s) {
+
     }
 
 }
