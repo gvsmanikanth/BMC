@@ -1,4 +1,4 @@
-package com.bmc.components;
+package com.bmc.components.untils;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import org.apache.sling.api.resource.Resource;
@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by elambert on 5/9/17.
  */
-public class HeaderFormBasic extends WCMUsePojo {
+public class CompChildNodeProps extends WCMUsePojo {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -18,9 +18,7 @@ public class HeaderFormBasic extends WCMUsePojo {
     private ValueMap childProperties;
 
     @Override
-    public void activate(){
-        logger.info("::EATON:: Activate");
-    }
+    public void activate(){}
 
     public ValueMap getChildProperties(){
         String child = get("childNode", String.class);
