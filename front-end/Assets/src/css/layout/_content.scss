@@ -27,14 +27,14 @@
 // The layout-wrapper-nested classes wraps all other main layout elements on the page.  It provides positioning context for elements that we throw off the page, such as .layout-nav on low resolutions.
 .layout-wrapper-nested {
 	@include row();
-	//padding: 0 em(32); 
+	//padding: 0 em(32);
 	padding: em(32) 0 ; //BMC-527 Changed the order of padding - top-bottom
 }
 
 // The layout-inner-wrap class provides a row context for column layout elements including a maximum width to keep its contents contained within the design area.
 .layout-inner-wrap {
 	//@include box-sizing(); //commented to avoid alignment issue in BMC-527.
-	
+
 	@extend %clearfix;
 	margin: 0 auto;
 	max-width: $rowMaxWidth;
@@ -984,7 +984,7 @@
 	background-color: white;
 	padding: em(30) 0;
   box-sizing: border-box; //BMC-527 - TrueSight Header issue
-  
+
 	@include media(breakpointMedium) {
 		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
 		padding: em(60) 0;
@@ -1387,7 +1387,7 @@
 			width: columns(7);
 		}
 	}
-	
+
 
 
 	.layout-campaign-screenshot {
@@ -1422,7 +1422,7 @@
 			width: columns(5);
 		}
 	}
-	
+
 	 .width-50-percent-large{
     @include media(breakpointLarge) {
       width: columns(6);
@@ -1613,4 +1613,9 @@
 // The layout-right class changes the element's float property to "right.""
 .layout-right {
 	float: right;
+}
+
+// better AEM authoring experience
+.header-form-basic {
+  background-color: color(mediumOrange);
 }
