@@ -2279,6 +2279,10 @@ blockquote cite {
 	float: right;
 }
 
+.header-form-basic {
+	background-color: #fe5000;
+}
+
 .layout-footer {
 	background: #414042;
 	margin-top: -1px;
@@ -8966,7 +8970,7 @@ div.video div[id^="embedded_player_"] {
 }
 
 .wallpapered {
-	background: #fe5000;
+	background: #eee;
 	margin: 0;
 	padding-top: 0%;
 	width: 100%;

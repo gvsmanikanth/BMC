@@ -1,6 +1,12 @@
+<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
+<sly data-sly-use.HeaderImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='img'}"/>
+<sly data-sly-test.fgImg="${HeaderImgChildProps.ChildProperties['fileReference']}"/>
+<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
+
 <div class="page-campaign-landing">
 <!-- TODO: display the background image that the author has selected from the DAM or uploaded -->
-    <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
+
+    <section class="header-form-basic layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}')">
         <div class="layout-inner-wrap">
             <div class="offset-hero-clear">
                 <div class="offset-hero-inner-wrap">
@@ -15,11 +21,11 @@
                 </div><!-- / category-hero-inner-wrap -->
             </div>
             <!-- TODO: display the foreground image the author has selected from the DAM or uploaded -->
-            <div data-sly-test="${foregroundImage}" class="layout-campaign-screenshot flush">
-                <img src="${foregroundImage}" width="436" height="211" alt="" title="" border="0">
+            <div data-sly-test="${fgImg}" class="layout-campaign-screenshot flush">
+                <img src="${fgImg}" width="436" height="211" alt="" title="" border="0">
             </div>
 
-            <div data-sly-test="${!foregroundImage}" class="layout-campaign-screenshot flush">
+            <div data-sly-test="${!fgImg}" class="layout-campaign-screenshot flush">
                 <img src="http://fpoimg.com/436x211?text=Select%20Image%20from%20DAM" width="436" height="211" alt="" title="" border="0">
             </div>
 
