@@ -1,0 +1,5 @@
+<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.HeaderFormBasic' @ childNode='bg'}"/>
+<sly data-sly-use.HeaderImgChildProps="${'com.bmc.components.HeaderFormBasic' @ childNode='img'}"/>
+<sly data-sly-use.HeaderBannerTemplate="header-templates.html">
+    <sly data-sly-call="${HeaderBannerTemplate.HeaderBanner @ headerText=properties.title, foregroundImage=HeaderImgChildProps.ChildProperties['fileReference'], backgroundImage=HeaderBgImgChildProps.ChildProperties['fileReference'], isPageCampaignLanding=false}" data-sly-unwrap/>
+</sly>
