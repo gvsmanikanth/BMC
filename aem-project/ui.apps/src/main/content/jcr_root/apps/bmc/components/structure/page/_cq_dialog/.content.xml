@@ -11,10 +11,7 @@
                 sling:resourceType="granite/ui/components/foundation/layouts/tabs"
                 type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <text
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Text"
-                    sling:resourceType="granite/ui/components/foundation/section"/>
+
         </items>
     </content>
 </jcr:root>
