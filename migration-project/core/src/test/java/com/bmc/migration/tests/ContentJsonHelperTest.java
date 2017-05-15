@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 public class ContentJsonHelperTest {
 
-    private String testUrl = "http://www.bmc.com/templates/HelperBulkContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=304368181";
+    private String testUrl = "http://www.bmc.com/templates/HelperContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=304368181";
     private String testContentId = "304368181";
     private String testContentTitle = "FootPrints service desk Services";
 

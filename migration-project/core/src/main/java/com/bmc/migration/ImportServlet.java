@@ -54,7 +54,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     }
 
     protected void importContent(Session session, SlingHttpServletRequest request) {
-        String testUrl = "http://www.bmc.com/templates/HelperBulkContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=304368181";
+        String testUrl = "http://www.bmc.com/templates/HelperContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=304368181";
         String json = URLLoader.get(testUrl);
         JSONObject item = ContentJsonHelper.getFirstContentItem(json);
         try {
