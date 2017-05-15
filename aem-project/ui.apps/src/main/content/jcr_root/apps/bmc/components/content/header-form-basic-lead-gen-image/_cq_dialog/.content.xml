@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Header Form Basic - Plain"
+    jcr:title="Header Form Basic - Lead Generation w/Image"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="[]">
     <content
@@ -38,7 +38,7 @@
                                                     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
                                                     autoStart="{Boolean}false"
                                                     class="cq-droptarget"
-                                                    fieldLabel="Image asset"
+                                                    fieldLabel="Background image"
                                                     fileNameParameter="./bg/fileName"
                                                     fileReferenceParameter="./bg/fileReference"
                                                     mimeTypes="[image]"
@@ -63,14 +63,6 @@
                                                     name="./bg/alt"
                                                     required="{Boolean}false"
                                                     wrapperClass="core-image-alt"/>
-                                            <linkURL
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Make the image a link to another resource."
-                                                    fieldLabel="Link"
-                                                    name="./bg/linkURL"
-                                                    rootPath="/content"
-                                                    wrapperClass="core-image-link"/>
                                             <caption
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -102,7 +94,7 @@
                                                     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
                                                     autoStart="{Boolean}false"
                                                     class="cq-droptarget"
-                                                    fieldLabel="Image asset"
+                                                    fieldLabel="Thumbnail image"
                                                     fileNameParameter="./fileName"
                                                     fileReferenceParameter="./img/fileReference"
                                                     mimeTypes="[image]"
@@ -127,14 +119,6 @@
                                                     name="./img/alt"
                                                     required="{Boolean}false"
                                                     wrapperClass="core-image-alt"/>
-                                            <linkURL
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Make the image a link to another resource."
-                                                    fieldLabel="Link"
-                                                    name="./img/linkURL"
-                                                    rootPath="/content"
-                                                    wrapperClass="core-image-link"/>
                                             <caption
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
