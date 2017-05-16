@@ -87,6 +87,48 @@
                                     </column>
                                 </items>
                             </bg-image>
+
+                            <cta1text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 1st button text"
+                                    fieldLabel="Optional: Enter the 1st button text"
+                                    name="./cta1text"/>
+
+                            <cta1URL
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 1st button video URL"
+                                    fieldLabel="Optional: Enter the 1st button video URL"
+                                    name="./cta1url"/>
+
+                            <cta2text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 2nd button text"
+                                    fieldLabel="Optional: Enter the 2nd button text"
+                                    name="./cta2text"/>
+
+                            <cta2URL
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 2nd button URL"
+                                    fieldLabel="Optional: Enter the 2nd button URL"
+                                    name="./cta2url"/>
+
+                            <cta3text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 3rd button text"
+                                    fieldLabel="Optional: Enter the 3rd button text"
+                                    name="./cta3text"/>
+
+                            <cta3URL
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 3rd button URL"
+                                    fieldLabel="Optional: Enter the 3rd button URL"
+                                    name="./cta3url"/>
                         </items>
                     </column>
                 </items>

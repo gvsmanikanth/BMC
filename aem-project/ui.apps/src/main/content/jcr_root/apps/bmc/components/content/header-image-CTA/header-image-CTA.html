@@ -1,12 +1,6 @@
 <sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
 <sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
 
-<!--
-<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}')">
-
-</section>
--->
-
 <section class="wallpapered bar full-bleed-page-banner" style="background-image: url('${bgImg @ context='uri'}')">
     <div class="offset-wrapper">
         <div class="layout-inner-wrap">
@@ -30,10 +24,17 @@
                         </span>
                     </h2>
 
-                    <!-- TODO: optional buttons that activate a video modal on click or be a regular link -->
-                    <a class="btn video-play modal-video-player" href="#">Primary Button, Blue </a>
-                    <a class="btn-secondary" href="#">Primary Button, Green </a>
-                    <a class="btn-secondary" href="#">Secondary Button, Green</a>
+                    <sly data-sly-test="${properties.cta1text}">
+                        <a class="btn video-play modal-video-player" href="${properties.cta1url}">${properties.cta1text}</a>
+                    </sly>
+
+                    <sly data-sly-test="${properties.cta2text}">
+                        <a class="btn-secondary" href="${properties.cta2url}">${properties.cta12ext}</a>
+                    </sly>
+
+                    <sly data-sly-test="${properties.cta3text}">
+                        <a class="btn-secondary" href="${properties.cta3url}">${properties.cta3text}</a>
+                    </sly>
                 </div>
             </div>
         </div>
