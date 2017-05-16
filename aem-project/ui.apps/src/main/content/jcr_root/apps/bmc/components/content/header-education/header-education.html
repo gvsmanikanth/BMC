@@ -1,0 +1,32 @@
+<section data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+         data-sly-use.model="com.bmc.components.HeaderEducation" class=" wallpapered bar full-bleed-page-banner functionalHeroHeader" data-wallpaper-options='{"source":"${image.src}"}'>
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap py4">
+            <h1>${properties.heading || 'Heading Text'}</h1>
+            <h4>${properties.subheading || 'Subheading Text'}</h4>
+            <form action="#">
+                <fieldset>
+                    <ol>
+                        <li>
+                            <div>
+                                <div class="m2">
+                                    <div class="decorator-select">
+                                        <select id="products">
+                                            <option value='/education/courses/find-courses.html'>${properties.list_prompt}</option>
+                                            <sly data-sly-list="${model.list}">
+                                                <option value='${item.url}'>${item.label}</option>
+                                            </sly>
+                                        </select>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0)" onclick="location.href=document.getElementById('products').options[document.getElementById('products').selectedIndex].value;" class="ml2 btn-primary-with-border">${properties.btn_label}</a>
+                            </div>
+                        </li>
+
+                    </ol>
+                </fieldset>
+            </form>
+            <h4>${properties.cta} <a href="${properties.cta_url}" class="white-link-underline" title="${properties.cta_link}">${properties.cta_link}</a></h4>
+        </div>
+    </div>
+</section>
