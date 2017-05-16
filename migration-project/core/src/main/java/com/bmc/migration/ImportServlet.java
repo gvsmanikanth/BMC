@@ -18,7 +18,6 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 @SlingServlet(resourceTypes = "/apps/bmc-migration/components/structure/page", selectors = "import", methods = {"POST"})
@@ -126,7 +125,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 node = root.addNode(name);
                 node.setProperty("value", value);
                 node.setProperty("fieldType", type);
-                if (type.equals("Item Browser/Complex Field")) {
+                if (type.equals("Item Browser")) {
                     String[] items = value.split(",");
                     Arrays.stream(items).forEach(s -> parseItem(s));
                 }
