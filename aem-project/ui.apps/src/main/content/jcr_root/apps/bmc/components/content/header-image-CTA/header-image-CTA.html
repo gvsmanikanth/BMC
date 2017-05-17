@@ -26,18 +26,13 @@
                     </h2>
 
                     <sly data-sly-test="${properties.cta1text}">
-                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
-                        <a class="btn video-play modal-video-player" href="${properties.cta1url}">${properties.cta1text}</a>
+                        <a class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
                     </sly>
-
                     <sly data-sly-test="${properties.cta2text}">
-                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
-                        <a class="btn-secondary" href="${properties.cta2url}">${properties.cta2text}</a>
+                        <a class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta2url}">${properties.cta2text}</a>
                     </sly>
-
                     <sly data-sly-test="${properties.cta3text}">
-                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
-                        <a class="btn-secondary" href="${properties.cta3url}">${properties.cta3text}</a>
+                        <a class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta3url}">${properties.cta3text}</a>
                     </sly>
                 </div>
             </div>
