@@ -25,15 +25,10 @@
                         </span>
                     </h2>
 
-                    <sly data-sly-test="${properties.cta1text}">
-                        <a class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
-                    </sly>
-                    <sly data-sly-test="${properties.cta2text}">
-                        <a class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta2url}">${properties.cta2text}</a>
-                    </sly>
-                    <sly data-sly-test="${properties.cta3text}">
-                        <a class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta3url}">${properties.cta3text}</a>
-                    </sly>
+                    <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
+                    <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta2url}">${properties.cta2text}</a>
+                    <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta3url}">${properties.cta3text}</a>
+
                 </div>
             </div>
         </div>
