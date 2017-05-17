@@ -120,8 +120,6 @@
                                     fieldLabel="Optional: Enter the 3rd button URL"
                                     name="./cta3url"/>
 
-
-
                             <cta3isVideo
                                     granite:class="core-image-decorative"
                                     jcr:primaryType="nt:unstructured"

@@ -1,6 +1,7 @@
 <sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
 <sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
 
+
 <section class="wallpapered bar full-bleed-page-banner" style="background-image: url('${bgImg @ context='uri'}')">
     <div class="offset-wrapper">
         <div class="layout-inner-wrap">
@@ -25,14 +26,17 @@
                     </h2>
 
                     <sly data-sly-test="${properties.cta1text}">
+                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
                         <a class="btn video-play modal-video-player" href="${properties.cta1url}">${properties.cta1text}</a>
                     </sly>
 
                     <sly data-sly-test="${properties.cta2text}">
+                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
                         <a class="btn-secondary" href="${properties.cta2url}">${properties.cta2text}</a>
                     </sly>
 
                     <sly data-sly-test="${properties.cta3text}">
+                        <!-- TODO: conditionally add 'video-play modal-video-player' class to these CTA if associated checkbox is true -->
                         <a class="btn-secondary" href="${properties.cta3url}">${properties.cta3text}</a>
                     </sly>
                 </div>
