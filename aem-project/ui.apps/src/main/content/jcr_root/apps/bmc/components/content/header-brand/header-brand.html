@@ -1,0 +1,25 @@
+<section data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap">
+            <div class="offset-hero-medium banner -ribbon">
+                <div class="offset-hero-medium-inner-wrap">
+                    <ul data-sly-test="${properties.show_breadcrumb}" class="navigation-breadcrumb white-links">
+                        <li><a href="http://www.bmc.com/partners/bmc-software-partners.html">Placeholder</a></li>
+                        <li>
+                            Become a BMC Partner
+                        </li>
+                    </ul>
+                    <h1 data-sly-test="${properties.heading}">${properties.heading}</h1>
+                    <p data-sly-test="${properties.subheading}">${properties.subheading}</p>
+                    <a data-sly-test="${properties.cta_link}" class="${properties.cta_mode == 'button' && properties.cta_is_video
+                        ? 'btn-white learn-more modal-youtube-video-player'
+                        : (properties.cta_mode == 'button'
+                            ? 'btn-white learn-more'
+                            : (properties.cta_is_video
+                                ? 'lead -sm bold white yellow-orange-hover inline-block modal-youtube-video-player'
+                                : 'lead -sm bold white yellow-orange-hover inline-block'))}" href="${properties.cta_url}" data-form="xxx" data-location="Page-Body" target="_self">${properties.cta_link}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
