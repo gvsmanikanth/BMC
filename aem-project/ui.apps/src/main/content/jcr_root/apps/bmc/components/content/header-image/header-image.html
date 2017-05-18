@@ -1,33 +1,10 @@
-<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
-<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
-
-
-<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}')">
-    <div class="layout-inner-wrap">
-
-        <h1>
-            <span>
-                ${properties.headerText}
-            </span>
-            <span data-sly-test="${!properties.headerText}">
-                Enter Heading Text
-            </span>
-        </h1>
-        <h2>
-            <span>
-                ${properties.subHeaderText}
-            </span>
-            <span data-sly-test="${!properties.subHeaderText}">
-                Enter Heading Text
-            </span>
-        </h2>
-        <p class="hero-caption">
-            <span>
-                ${properties.paragraphText}
-            </span>
-            <span data-sly-test="${!properties.paragraphText}">
-                Enter the hero paragraph text.
-            </span>
-        </p>
-    </div><!-- / layout-inner-wrap -->
+<section data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="wallpapered bar full-bleed-page-banner bg-white header-style-1" data-wallpaper-options='{"source":"${image.src}"}'>
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap py4 px4">
+            <div class="bgalpha70">
+                <h1 data-sly-test="${properties.heading}">${properties.heading}</h1>
+                <p data-sly-test="${properties.text}">${properties.text}</p>
+            </div>
+        </div>
+    </div>
 </section>
