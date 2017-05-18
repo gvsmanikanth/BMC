@@ -1,6 +1,9 @@
+<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
+<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
+
+
 <div class="page-campaign-landing">
-<!-- TODO: display the background image that the author has selected from the DAM or uploaded -->
-<section class="header-form-basic layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
+<section class="header-form-basic layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}'); background-position: center center;">
     <div class="layout-inner-wrap">
         <div class="offset-hero-clear">
             <div class="offset-hero-inner-wrap">
