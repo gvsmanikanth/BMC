@@ -1622,14 +1622,18 @@
 
 	h1 {
 		color: #fff;
-		@include font-size(32);
+
+		@include media(breakpointLarge) {
+			@include font-size(32);
+		}
 	}
 
 	&.header-emphasis {
-		padding: 2em 0;
 
 		h1 {
-			@include font-size(60);
+			@include media(breakpointLarge) {
+				@include font-size(60);
+			}
 		}
 	}
 }
