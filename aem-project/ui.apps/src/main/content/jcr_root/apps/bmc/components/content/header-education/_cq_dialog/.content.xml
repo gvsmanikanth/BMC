@@ -57,7 +57,7 @@
                             <cta-url
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Enter the CTA Link URL here, beginning with http: or https"
+                                    fieldDescription="Enter the CTA Link URL here, beginning with http or https"
                                     fieldLabel="CTA Link URL"
                                     name="./cta_url"/>
                         </items>
