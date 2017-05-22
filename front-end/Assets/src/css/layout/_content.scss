@@ -1617,5 +1617,23 @@
 
 // better AEM authoring experience
 .header-form-basic {
-  background-color: color(mediumOrange);
+  	background-color: color(mediumOrange);
+	padding: 2em 0;
+
+	h1 {
+		color: #fff;
+
+		@include media(breakpointLarge) {
+			@include font-size(32);
+		}
+	}
+
+	&.header-emphasis {
+
+		h1 {
+			@include media(breakpointLarge) {
+				@include font-size(60);
+			}
+		}
+	}
 }
