@@ -45,20 +45,20 @@
                             <cta
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Enter the CTA text"
-                                    fieldLabel="CTA"
+                                    fieldDescription="Enter the text here that will appear before the CTA link"
+                                    fieldLabel="CTA Intro Text"
                                     name="./cta"/>
                             <cta-link
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Enter the CTA Link text"
+                                    fieldDescription="Enter the text here that will appear as a CTA link"
                                     fieldLabel="CTA Link Text"
                                     name="./cta_link"/>
                             <cta-url
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Enter the CTA Link URL"
-                                    fieldLabel="CTA URL"
+                                    fieldDescription="Enter the CTA Link URL here, beginning with http: or https"
+                                    fieldLabel="CTA Link URL"
                                     name="./cta_url"/>
                         </items>
                     </column>
