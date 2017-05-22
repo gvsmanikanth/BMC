@@ -830,8 +830,8 @@
 	z-index:1;
 }
 
-// product-finder
-.layout-full-bleed.product-finder-banner {
+// header-emphasis
+.layout-full-bleed.header-emphasis{
 	background-color: color(mediumOrange);
 	padding: 2em 0;
 
@@ -1097,31 +1097,31 @@
     .card-image{
       height:54px;
       img{
-        height:55px; 
+        height:55px;
         width:85px
       }
-      
+
       .fill-mediumOrange {
         height:54px;
         width:84px
       }
-      
+
       .fill-keppel{
         height:54px;
         width:86px
       }
-      
-      
+
+
       .fill-tango{
         height:54px;
         width:50px
       }
-      
+
       .fill-robins-egg-blue{
         height:54px;
         width:74.25px;
       }
-      
+
       .fill-tangerine,.fill-pear{
         height:54px;
         width:54px
@@ -1132,8 +1132,8 @@
 
 .product-cards{
 	 .product-card-sub-heading{
-	 	max-width: 970px; 
-	 	margin-left: auto; 
+	 	max-width: 970px;
+	 	margin-left: auto;
 	 	margin-right: auto;
 	 }
 	.card-wrap{
@@ -1141,25 +1141,25 @@
 			padding-bottom: 0 !important;
 			.card-content{
 				h3{
-					font-weight: 400; 
-					text-align: center; 
-					margin-bottom: 1em; 
+					font-weight: 400;
+					text-align: center;
+					margin-bottom: 1em;
 					color: #414042
 				}
 			}
 		}
-		
+
 		@media ( max-width : 832px) {
 			&.m2{
 				margin-left: 0;
 				margin-right: 0;
 				width: 100%;
 			}
-			
+
 			.no-flexbox .card-wrap .card {
 				width: 100%;
 			}
 		}
-	}	
+	}
 }
 

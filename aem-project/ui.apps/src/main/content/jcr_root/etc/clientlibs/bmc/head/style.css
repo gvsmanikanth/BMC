@@ -2281,6 +2281,11 @@ blockquote cite {
 
 .header-form-basic {
 	background-color: #fe5000;
+	padding: 2em 0;
+}
+
+.header-form-basic h1 {
+	color: #fff;
 }
 
 .layout-footer {
@@ -11351,12 +11356,12 @@ section.bmc-engage-header.layout-full-bleed .btn.btn-hollow:hover {
 	z-index: 1;
 }
 
-.layout-full-bleed.product-finder-banner {
+.layout-full-bleed.header-emphasis {
 	background-color: #fe5000;
 	padding: 2em 0;
 }
 
-.layout-full-bleed.product-finder-banner h1 {
+.layout-full-bleed.header-emphasis h1 {
 	color: #fff;
 	margin: 0;
 }
@@ -20936,6 +20941,16 @@ p.-lg {
 
 .layout-offset-hero-transparent {
 	padding: 0;
+}
+
+.header-form-basic h1 {
+	font-size: 32px;
+	font-size: 1.77778rem;
+}
+
+.header-form-basic.header-emphasis h1 {
+	font-size: 60px;
+	font-size: 3.33333rem;
 }
 
 .footer-logo {
