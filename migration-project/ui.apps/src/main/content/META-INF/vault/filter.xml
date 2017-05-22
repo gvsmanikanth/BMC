@@ -7,6 +7,7 @@
 
     <filter root="/conf/bmc-migration" mode="merge"/>
 
+    <filter root="/content/bmc-migration" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc-migration"/>
 

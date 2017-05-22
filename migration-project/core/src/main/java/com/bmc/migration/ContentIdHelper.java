@@ -8,10 +8,11 @@ import org.slf4j.LoggerFactory;
 public class ContentIdHelper {
 
     private static final Logger logger = LoggerFactory.getLogger(ContentIdHelper.class);
+    private static final String SERVICE_URL = "http://www.bmc.com/templates/HelperGetContentID?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&url=";
 
-    public static String getContentId(String src) {
+    public static String getContentId(String url) {
         String contentId = "";
-        String json = URLLoader.get(src);
+        String json = URLLoader.get(SERVICE_URL + url);
         if (!json.isEmpty()) {
             contentId = parseContentIdJson(json);
         }

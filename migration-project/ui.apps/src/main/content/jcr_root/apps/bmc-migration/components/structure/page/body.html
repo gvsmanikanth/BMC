@@ -1,8 +1,29 @@
-<h1>BMC Content Migration Tool</h1>
+<article>
+    <h1>BMC Content Migration Tool</h1>
 
-<p>${request.message}</p>
+    <p>${request.message}</p>
 
-<form method="post" action="bmc-migration/jcr:content.import.html">
-
-    <input type="submit" value="Begin"/>
-</form>
+    <form method="post" action="bmc-migration/jcr:content.import.html">
+        <div>
+            <label>URLs (use a new line for each URL)</label>
+            <textarea rows="8" name="urls">http://www.bmc.com/it-services/footprints-service-desk-consulting.html
+http://www.bmc.com/it-services/myit-consulting-services.html
+http://www.bmc.com/it-solutions/remedy-itsm.html
+http://www.bmc.com/it-solutions/myit.html
+http://www.bmc.com/it-solutions/brands/marimba.html
+http://www.bmc.com/it-solutions/service-management.html
+http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html
+http://www.bmc.com/it-solutions/remedyforce-customer-enablement.html
+http://www.bmc.com/corporate/ebc.html
+http://www.bmc.com/legal/equal-employment-opportunity.html
+http://www.bmc.com/customers/five9.html
+http://www.bmc.com/education/courses/control-m-9x-fundamentals-for-administrators.html
+http://www.bmc.com/education/courses/certified-professional-control-m-workload-automation-9-0.html
+http://www.bmc.com/education/courses/bladeLogic-threat-director-training.html
+</textarea>
+        </div>
+        <div>
+            <input type="submit" value="Import"/>
+        </div>
+    </form>
+</article>
