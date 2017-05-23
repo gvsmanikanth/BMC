@@ -1,42 +1,4 @@
-<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
-<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
-
-
-<section class="wallpapered bar full-bleed-page-banner" style="background-image: url('${bgImg @ context='uri'}')">
-    <div class="offset-wrapper">
-        <div class="layout-inner-wrap">
-            <div class="offset-hero-medium banner -ribbon" style="background-image: url('http://media.cms.bmc.com/images/spacer.gif'); padding-top: 1em; padding-bottom: 1em; ">
-                <div class="offset-hero-medium-inner-wrap">
-                    <h1 class="white">
-                        <span>
-                            ${properties.headerText}
-                        </span>
-                        <span data-sly-test="${!properties.headerText}">
-                            Enter Heading Text
-                        </span>
-                    </h1>
-
-                    <h2>
-                        <span>
-                            ${properties.subHeaderText}
-                        </span>
-                        <span data-sly-test="${!properties.subHeaderText}">
-                            Enter Heading Text
-                        </span>
-                    </h2>
-
-                    <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
-                    <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta2url}">${properties.cta2text}</a>
-                    <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta3url}">${properties.cta3text}</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<div class="layout-inner-wrap">
+<div class="header-generic layout-inner-wrap">
     <h1>
         <span>
             ${properties.headerText}
@@ -46,13 +8,16 @@
         </span>
     </h1>
 
-    <p>Control-M allows you to manage and monitor all your batch services from a single point of control. And that includes IT applications such as backup and recovery, web services, Java, messaging, cloud services, and databases.</p>
-
     <p>
-        <a data-sly-test="${properties.cta1text}" class="link-icon-product-resources mo-product-resources" href="${properties.cta1url}">${properties.cta1text}</a>
+        ${properties.descriptionText}
     </p>
 
-    <a class="btn" href="/info/LP-Demo-CTM.html" target="_self" title="Watch a customizable demo">Watch a customizable demo&nbsp;›</a>
-    <a class="btn-secondary" href="/forms/control-m-self-service-trial.html" target="_self" data-form="" data-location="Page-Body" data-parent-id="290578671" title="Start a free trial">Start a free trial&nbsp;›</a>
+    <p>
+        <a data-sly-test="${properties.cta1text}" class="link-icon-product-resources mo-product-resources" href="${properties.cta1url}" title="${properties.cta1text}">${properties.cta1text}</a>
+    </p>
+
+    <a data-sly-test="${properties.cta2text}" class="btn learn-more" href="${properties.cta2url}" title="${properties.cta2text}">${properties.cta2text}</a>
+    <a data-sly-test="${properties.cta3text}" class="btn-secondary learn-more" href="${properties.cta3url}" title="${properties.cta3text}">${properties.cta3text}</a>
+    <a data-sly-test="${properties.cta4text}" class="btn-secondary learn-more" href="${properties.cta4url}" title="${properties.cta4text}">${properties.cta4text}</a>
 
 </div>

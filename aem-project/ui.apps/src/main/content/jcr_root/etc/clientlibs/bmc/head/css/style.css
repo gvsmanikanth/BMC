@@ -16830,6 +16830,10 @@ iframe[name='google_conversion_frame'] {
 	border-top: 1px dashed #ccc;
 }
 
+.header-generic {
+	background-color: #fff;
+}
+
 .rotate-device {
 	display: none;
 }
