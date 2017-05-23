@@ -30,59 +30,59 @@
                                     fieldLabel="Enter the description text"
                                     name="./descriptionText"/>
 
-                            <cta1text
+                            <link1text
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 1st CTA link text"
                                     fieldLabel="Optional: Enter the 1st CTA link text"
                                     name="./cta1text"/>
-                            <cta1URL
+                            <link1url
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Enter the 1st CTA link URL"
                                     fieldLabel="Optional: Enter the 1st CTA link URL"
                                     name="./cta1url"/>
 
-                            <cta2text
+                            <cta1text
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 2nd button text"
                                     fieldLabel="Optional: Enter the 2nd button text"
-                                    name="./cta2text"/>
+                                    name="./cta1text"/>
 
-                            <cta2URL
+                            <cta1URL
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 2nd button URL"
                                     fieldLabel="Optional: Enter the 2nd button URL"
-                                    name="./cta2url"/>
+                                    name="./cta1url"/>
+
+                            <cta2text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 3rd button text"
+                                    fieldLabel="Optional: Enter the 2nd button text"
+                                    name="./cta3text"/>
+
+                            <cta2URL
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldDescription="Optional: Enter the 3rd button URL"
+                                    fieldLabel="Optional: Enter the 2nd button URL"
+                                    name="./cta3url"/>
 
                             <cta3text
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 3rd button text"
+                                    fieldDescription="Optional: Enter the 4th button text"
                                     fieldLabel="Optional: Enter the 3rd button text"
-                                    name="./cta3text"/>
+                                    name="./cta4text"/>
 
                             <cta3URL
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 3rd button URL"
-                                    fieldLabel="Optional: Enter the 3rd button URL"
-                                    name="./cta3url"/>
-
-                            <cta4text
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 4th button text"
-                                    fieldLabel="Optional: Enter the 24thnd button text"
-                                    name="./cta4text"/>
-
-                            <cta4URL
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 4th button URL"
-                                    fieldLabel="Optional: Enter the 4th button URL"
+                                    fieldLabel="Optional: Enter the 3rd button URL"
                                     name="./cta4url"/>
                         </items>
                     </column>
