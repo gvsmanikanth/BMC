@@ -15378,12 +15378,12 @@ body.support-central {
 	border-left-color: rgba(0, 0, 0, 0.5);
 }
 
-.page-careers .hero {
+.hero {
 	position: relative;
 	text-align: center;
 }
 
-.page-careers .hero-content {
+.hero-content {
 	box-sizing: border-box;
 	background-color: rgba(0, 0, 0, 0.65);
 	color: #fff;
@@ -15391,21 +15391,21 @@ body.support-central {
 	width: 100%;
 }
 
-.page-careers .hero-content .videoInstructions {
+.hero-content .videoInstructions {
 	color: #fe5000;
 	font-weight: 800;
 }
 
-.page-careers .hero-content .videoIcon {
+.hero-content .videoIcon {
 	width: 100px;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	background-color: rgba(254, 80, 0, 0.9);
 	padding: 1.5rem;
 }
 
-.page-careers .hero-image {
+.hero-image {
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -15414,69 +15414,69 @@ body.support-central {
 	z-index: -1;
 }
 
-.page-careers .hero-image:before {
+.hero-image:before {
 	content: '';
 	display: block;
 	padding-top: 75%;
 }
 
-.page-careers .hero-image:before .vidbg-box {
+.hero-image:before .vidbg-box {
 	width: 650px;
 	height: 338px;
 }
 
-.page-careers .hero-image.xs-only {
+.hero-image.xs-only {
 	background-image: url("careers-header.jpg");
 	background-position: center;
 	background-size: cover;
 }
 
-.page-careers .divider--orange,
-.page-careers .divider--white-shade {
+.divider--orange,
+.divider--white-shade {
 	display: inline-block;
 	height: 1px;
 	margin-top: 6px;
 	width: 60px;
 }
 
-.page-careers .divider--orange {
+.divider--orange {
 	background: #fe5000;
 }
 
-.page-careers .divider--white-shade {
+.divider--white-shade {
 	background: rgba(255, 255, 255, 0.5);
 }
 
-.page-careers .btn-flat,
-.page-careers .jq-dropdown-trigger {
+.btn-flat,
+.jq-dropdown-trigger {
 	border-radius: 4px;
 	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.page-careers .card-image img {
+.card-image img {
 	display: block;
 	max-width: 640px;
 	width: 100%;
 }
 
-.page-careers .slide-caption {
+.slide-caption {
 	width: 100%;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 80%;
 	margin: auto;
 }
 
-.page-careers .three-column-layout .card-content {
+.three-column-layout .card-content {
 	text-align: center;
 }
 
-.page-careers .owl-carousel {
+.owl-carousel {
 	position: relative;
 }
 
-.page-careers .owl-carousel .owl-controls {
+.owl-carousel .owl-controls {
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -15484,15 +15484,15 @@ body.support-central {
 	width: 100%;
 }
 
-.page-careers .owl-carousel .owl-nav {
+.owl-carousel .owl-nav {
 	left: 0;
 	position: absolute;
 	width: 100%;
 	z-index: 1;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	box-sizing: border-box;
 	display: block;
 	height: 100%;
@@ -15501,13 +15501,13 @@ body.support-central {
 	top: 0;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 1em;
 	width: 1em;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	left: 50%;
 	position: absolute;
 	text-align: center;
@@ -15517,13 +15517,13 @@ body.support-central {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.page-careers .owl-dots .owl-dot {
+.owl-dots .owl-dot {
 	display: inline-block;
 	zoom: 1;
 	*display: inline;
 }
 
-.page-careers .owl-dots .owl-dot span {
+.owl-dots .owl-dot span {
 	border-radius: 30px;
 	display: block;
 	width: 10px;
@@ -15534,80 +15534,80 @@ body.support-central {
 	transition: opacity 200ms ease;
 }
 
-.page-careers .owl-theme--white .owl-next svg,
-.page-careers .owl-theme--white .owl-prev svg {
+.owl-theme--white .owl-next svg,
+.owl-theme--white .owl-prev svg {
 	fill: #fff;
 }
 
-.page-careers .owl-theme--white .owl-dots .owl-dot span {
+.owl-theme--white .owl-dots .owl-dot span {
 	background: rgba(255, 255, 255, 0.5);
 }
 
-.page-careers .owl-theme--white .owl-dots .owl-dot.active span,
-.page-careers .owl-theme--white .owl-dots .owl-dot:hover span {
+.owl-theme--white .owl-dots .owl-dot.active span,
+.owl-theme--white .owl-dots .owl-dot:hover span {
 	background: #fff;
 }
 
-.page-careers .owl-theme--orange .owl-next svg,
-.page-careers .owl-theme--orange .owl-prev svg {
+.owl-theme--orange .owl-next svg,
+.owl-theme--orange .owl-prev svg {
 	fill: #fe5000;
 }
 
-.page-careers .owl-theme--orange .owl-dots .owl-dot span {
+.owl-theme--orange .owl-dots .owl-dot span {
 	background: #a7a9ac;
 }
 
-.page-careers .owl-theme--orange .owl-dots .owl-dot.active span,
-.page-careers .owl-theme--orange .owl-dots .owl-dot:hover span {
+.owl-theme--orange .owl-dots .owl-dot.active span,
+.owl-theme--orange .owl-dots .owl-dot:hover span {
 	background: #fe5000;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 80px;
 }
 
-.page-careers .owl-responsive .owl-stage {
+.owl-responsive .owl-stage {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-.page-careers #work-for-bmc .owl-stage-outer {
+#work-for-bmc .owl-stage-outer {
 	z-index: 2;
 }
 
-.page-careers #work-for-bmc .owl-controls {
+#work-for-bmc .owl-controls {
 	z-index: 1;
 }
 
-.page-careers #owl-location .owl-stage {
+#owl-location .owl-stage {
 	background: #000;
 }
 
-.page-careers #owl-location .owl-item {
+#owl-location .owl-item {
 	opacity: .5;
 	-webkit-transition: opacity .5s;
 	transition: opacity .5s;
 }
 
-.page-careers #owl-location .owl-item.active {
+#owl-location .owl-item.active {
 	opacity: 1;
 }
 
-.page-careers #owl-location .owl-nav {
+#owl-location .owl-nav {
 	bottom: 0;
 	height: 100%;
 }
 
-.page-careers #owl-location .owl-dots {
+#owl-location .owl-dots {
 	display: none !important;
 }
 
-.page-careers #owl-location .owl-carousel-dropdown {
+#owl-location .owl-carousel-dropdown {
 	max-width: 260px;
 }
 
-.page-careers .icon--playButton {
+.icon--playButton {
 	fill: #fff;
 	height: 60px;
 	stroke: #fff;
@@ -15760,8 +15760,7 @@ body.support-central {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	margin-bottom: .3rem;
@@ -16965,7 +16964,7 @@ a.white:focus,
 .page-homepage .brick_accelerators .title,
 .h2,
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list,
 .h4,
 .h5,
@@ -17000,7 +16999,7 @@ a.white:focus,
 }
 
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list {
 	font-size: 1rem;
 }
@@ -17206,7 +17205,7 @@ a.white:focus,
 }
 
 .pos-bottom,
-.page-careers .slide-caption {
+.slide-caption {
 	bottom: 0;
 	display: block;
 	left: 0;
@@ -17719,7 +17718,7 @@ a.white:focus,
 }
 
 .p2,
-.page-careers .slide-caption {
+.slide-caption {
 	padding: 1rem;
 }
 
@@ -18778,12 +18777,12 @@ iframe[name='google_conversion_frame'] {
 	border-left-color: rgba(0, 0, 0, 0.5);
 }
 
-.page-careers .hero {
+.hero {
 	position: relative;
 	text-align: center;
 }
 
-.page-careers .hero-content {
+.hero-content {
 	box-sizing: border-box;
 	background-color: rgba(0, 0, 0, 0.65);
 	color: #fff;
@@ -18791,21 +18790,21 @@ iframe[name='google_conversion_frame'] {
 	width: 100%;
 }
 
-.page-careers .hero-content .videoInstructions {
+.hero-content .videoInstructions {
 	color: #fe5000;
 	font-weight: 800;
 }
 
-.page-careers .hero-content .videoIcon {
+.hero-content .videoIcon {
 	width: 100px;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	background-color: rgba(254, 80, 0, 0.9);
 	padding: 1.5rem;
 }
 
-.page-careers .hero-image {
+.hero-image {
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -18814,69 +18813,69 @@ iframe[name='google_conversion_frame'] {
 	z-index: -1;
 }
 
-.page-careers .hero-image:before {
+.hero-image:before {
 	content: '';
 	display: block;
 	padding-top: 75%;
 }
 
-.page-careers .hero-image:before .vidbg-box {
+.hero-image:before .vidbg-box {
 	width: 650px;
 	height: 338px;
 }
 
-.page-careers .hero-image.xs-only {
+.hero-image.xs-only {
 	background-image: url("careers-header.jpg");
 	background-position: center;
 	background-size: cover;
 }
 
-.page-careers .divider--orange,
-.page-careers .divider--white-shade {
+.divider--orange,
+.divider--white-shade {
 	display: inline-block;
 	height: 1px;
 	margin-top: 6px;
 	width: 60px;
 }
 
-.page-careers .divider--orange {
+.divider--orange {
 	background: #fe5000;
 }
 
-.page-careers .divider--white-shade {
+.divider--white-shade {
 	background: rgba(255, 255, 255, 0.5);
 }
 
-.page-careers .btn-flat,
-.page-careers .jq-dropdown-trigger {
+.btn-flat,
+.jq-dropdown-trigger {
 	border-radius: 4px;
 	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.page-careers .card-image img {
+.card-image img {
 	display: block;
 	max-width: 640px;
 	width: 100%;
 }
 
-.page-careers .slide-caption {
+.slide-caption {
 	width: 100%;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 80%;
 	margin: auto;
 }
 
-.page-careers .three-column-layout .card-content {
+.three-column-layout .card-content {
 	text-align: center;
 }
 
-.page-careers .owl-carousel {
+.owl-carousel {
 	position: relative;
 }
 
-.page-careers .owl-carousel .owl-controls {
+.owl-carousel .owl-controls {
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -18884,15 +18883,15 @@ iframe[name='google_conversion_frame'] {
 	width: 100%;
 }
 
-.page-careers .owl-carousel .owl-nav {
+.owl-carousel .owl-nav {
 	left: 0;
 	position: absolute;
 	width: 100%;
 	z-index: 1;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	box-sizing: border-box;
 	display: block;
 	height: 100%;
@@ -18901,13 +18900,13 @@ iframe[name='google_conversion_frame'] {
 	top: 0;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 1em;
 	width: 1em;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	left: 50%;
 	position: absolute;
 	text-align: center;
@@ -18917,13 +18916,13 @@ iframe[name='google_conversion_frame'] {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.page-careers .owl-dots .owl-dot {
+.owl-dots .owl-dot {
 	display: inline-block;
 	zoom: 1;
 	*display: inline;
 }
 
-.page-careers .owl-dots .owl-dot span {
+.owl-dots .owl-dot span {
 	border-radius: 30px;
 	display: block;
 	width: 10px;
@@ -18934,80 +18933,80 @@ iframe[name='google_conversion_frame'] {
 	transition: opacity 200ms ease;
 }
 
-.page-careers .owl-theme--white .owl-next svg,
-.page-careers .owl-theme--white .owl-prev svg {
+.owl-theme--white .owl-next svg,
+.owl-theme--white .owl-prev svg {
 	fill: #fff;
 }
 
-.page-careers .owl-theme--white .owl-dots .owl-dot span {
+.owl-theme--white .owl-dots .owl-dot span {
 	background: rgba(255, 255, 255, 0.5);
 }
 
-.page-careers .owl-theme--white .owl-dots .owl-dot.active span,
-.page-careers .owl-theme--white .owl-dots .owl-dot:hover span {
+.owl-theme--white .owl-dots .owl-dot.active span,
+.owl-theme--white .owl-dots .owl-dot:hover span {
 	background: #fff;
 }
 
-.page-careers .owl-theme--orange .owl-next svg,
-.page-careers .owl-theme--orange .owl-prev svg {
+.owl-theme--orange .owl-next svg,
+.owl-theme--orange .owl-prev svg {
 	fill: #fe5000;
 }
 
-.page-careers .owl-theme--orange .owl-dots .owl-dot span {
+.owl-theme--orange .owl-dots .owl-dot span {
 	background: #a7a9ac;
 }
 
-.page-careers .owl-theme--orange .owl-dots .owl-dot.active span,
-.page-careers .owl-theme--orange .owl-dots .owl-dot:hover span {
+.owl-theme--orange .owl-dots .owl-dot.active span,
+.owl-theme--orange .owl-dots .owl-dot:hover span {
 	background: #fe5000;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 80px;
 }
 
-.page-careers .owl-responsive .owl-stage {
+.owl-responsive .owl-stage {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
 
-.page-careers #work-for-bmc .owl-stage-outer {
+#work-for-bmc .owl-stage-outer {
 	z-index: 2;
 }
 
-.page-careers #work-for-bmc .owl-controls {
+#work-for-bmc .owl-controls {
 	z-index: 1;
 }
 
-.page-careers #owl-location .owl-stage {
+#owl-location .owl-stage {
 	background: #000;
 }
 
-.page-careers #owl-location .owl-item {
+#owl-location .owl-item {
 	opacity: .5;
 	-webkit-transition: opacity .5s;
 	transition: opacity .5s;
 }
 
-.page-careers #owl-location .owl-item.active {
+#owl-location .owl-item.active {
 	opacity: 1;
 }
 
-.page-careers #owl-location .owl-nav {
+#owl-location .owl-nav {
 	bottom: 0;
 	height: 100%;
 }
 
-.page-careers #owl-location .owl-dots {
+#owl-location .owl-dots {
 	display: none !important;
 }
 
-.page-careers #owl-location .owl-carousel-dropdown {
+#owl-location .owl-carousel-dropdown {
 	max-width: 260px;
 }
 
-.page-careers .icon--playButton {
+.icon--playButton {
 	fill: #fff;
 	height: 60px;
 	stroke: #fff;
@@ -19160,8 +19159,7 @@ iframe[name='google_conversion_frame'] {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	margin-bottom: .3rem;
@@ -20134,8 +20132,7 @@ iframe[name='google_conversion_frame'] {
 }
 
 .ebc .p2,
-.ebc .page-careers .slide-caption,
-.page-careers .ebc .slide-caption {
+.ebc .slide-caption {
 	padding: 1rem;
 }
 
@@ -25151,11 +25148,11 @@ section.bmc-engage-header.layout-full-bleed h2 {
 
 @media (min-width: 460px) and (max-width: 831px) {
 
-.page-careers #owl-location .owl-stage-outer {
+#owl-location .owl-stage-outer {
 	padding-bottom: 0px;
 }
 
-.page-careers #owl-location .owl-stage-outer {
+#owl-location .owl-stage-outer {
 	padding-bottom: 0px;
 }
 
@@ -25414,29 +25411,29 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 580px;
 }
 
-.page-careers .hero-content {
+.hero-content {
 	padding: 5rem 0;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	padding: 2rem;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 50%;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 50px;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 140px;
 	padding-left: 60px;
 	padding-right: 60px;
 }
 
-.page-careers #work-for-bmc .owl-item {
+#work-for-bmc .owl-item {
 	padding: .5rem;
 }
 
@@ -25459,8 +25456,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	color: #414042;
@@ -25531,7 +25527,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list {
 	font-size: 1.25rem;
 }
@@ -25722,29 +25718,29 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 580px;
 }
 
-.page-careers .hero-content {
+.hero-content {
 	padding: 5rem 0;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	padding: 2rem;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 50%;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 50px;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 140px;
 	padding-left: 60px;
 	padding-right: 60px;
 }
 
-.page-careers #work-for-bmc .owl-item {
+#work-for-bmc .owl-item {
 	padding: .5rem;
 }
 
@@ -25767,8 +25763,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	color: #414042;
@@ -25809,8 +25804,8 @@ section.bmc-engage-header.layout-full-bleed h2 {
 
 @media (min-width: 640px) and (max-width: 831px) {
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	font-size: 24px;
 	height: 42px;
 	line-height: 36px;
@@ -25818,17 +25813,17 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 42px;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 50px;
 }
 
-.page-careers #overview-slides .owl-nav,
-.page-careers #work-for-bmc .owl-nav {
+#overview-slides .owl-nav,
+#work-for-bmc .owl-nav {
 	bottom: 88px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	margin-top: -21px;
 }
 
@@ -25836,8 +25831,8 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	max-width: 500px;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	font-size: 24px;
 	height: 42px;
 	line-height: 36px;
@@ -25845,17 +25840,17 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 42px;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 50px;
 }
 
-.page-careers #overview-slides .owl-nav,
-.page-careers #work-for-bmc .owl-nav {
+#overview-slides .owl-nav,
+#work-for-bmc .owl-nav {
 	bottom: 88px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	margin-top: -21px;
 }
 
@@ -25991,21 +25986,21 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	padding-left: 2rem;
 }
 
-.page-careers .divider--orange,
-.page-careers .divider--white-shade {
+.divider--orange,
+.divider--white-shade {
 	height: 2px;
 }
 
-.page-careers .card-image img {
+.card-image img {
 	max-width: 440px;
 }
 
-.page-careers .owl-carousel .owl-nav {
+.owl-carousel .owl-nav {
 	height: 100%;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 60px;
 	margin-top: -30px;
 	position: absolute;
@@ -26013,70 +26008,70 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 30px;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	width: 60px;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 120px;
 	padding-left: 120px;
 	padding-right: 120px;
 }
 
-.page-careers #overview-slides .owl-next,
-.page-careers #work-for-bmc .owl-next {
+#overview-slides .owl-next,
+#work-for-bmc .owl-next {
 	right: 0;
 }
 
-.page-careers #overview-slides .owl-next svg,
-.page-careers #work-for-bmc .owl-next svg {
+#overview-slides .owl-next svg,
+#work-for-bmc .owl-next svg {
 	left: 0;
 }
 
-.page-careers #overview-slides .owl-prev,
-.page-careers #work-for-bmc .owl-prev {
+#overview-slides .owl-prev,
+#work-for-bmc .owl-prev {
 	left: 0;
 }
 
-.page-careers #overview-slides .owl-prev svg,
-.page-careers #work-for-bmc .owl-prev svg {
+#overview-slides .owl-prev svg,
+#work-for-bmc .owl-prev svg {
 	right: 0;
 }
 
-.page-careers #overview-slides .owl-nav svg {
+#overview-slides .owl-nav svg {
 	fill: #fe5000;
 	margin-top: -150px;
 }
 
-.page-careers #work-for-bmc .owl-nav svg {
+#work-for-bmc .owl-nav svg {
 	margin-top: -120px;
 }
 
-.page-careers #owl-location .owl-nav {
+#owl-location .owl-nav {
 	height: 100%;
 	margin-top: 0;
 	top: 0;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	height: 100%;
 }
 
-.page-careers #owl-location .owl-next {
+#owl-location .owl-next {
 	right: 0;
 }
 
-.page-careers #owl-location .owl-next svg {
+#owl-location .owl-next svg {
 	left: 0;
 }
 
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-prev {
 	left: 0;
 }
 
-.page-careers #owl-location .owl-prev svg {
+#owl-location .owl-prev svg {
 	right: 0;
 }
 
@@ -26142,7 +26137,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list {
 	font-size: 1.25rem;
 }
@@ -26188,7 +26183,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .p2,
-.page-careers .slide-caption {
+.slide-caption {
 	padding: 1.25rem;
 }
 
@@ -26270,21 +26265,21 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	display: flex;
 }
 
-.page-careers .divider--orange,
-.page-careers .divider--white-shade {
+.divider--orange,
+.divider--white-shade {
 	height: 2px;
 }
 
-.page-careers .card-image img {
+.card-image img {
 	max-width: 440px;
 }
 
-.page-careers .owl-carousel .owl-nav {
+.owl-carousel .owl-nav {
 	height: 100%;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 60px;
 	margin-top: -30px;
 	position: absolute;
@@ -26292,70 +26287,70 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 30px;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	width: 60px;
 }
 
-.page-careers .owl-responsive {
+.owl-responsive {
 	padding-bottom: 120px;
 	padding-left: 120px;
 	padding-right: 120px;
 }
 
-.page-careers #overview-slides .owl-next,
-.page-careers #work-for-bmc .owl-next {
+#overview-slides .owl-next,
+#work-for-bmc .owl-next {
 	right: 0;
 }
 
-.page-careers #overview-slides .owl-next svg,
-.page-careers #work-for-bmc .owl-next svg {
+#overview-slides .owl-next svg,
+#work-for-bmc .owl-next svg {
 	left: 0;
 }
 
-.page-careers #overview-slides .owl-prev,
-.page-careers #work-for-bmc .owl-prev {
+#overview-slides .owl-prev,
+#work-for-bmc .owl-prev {
 	left: 0;
 }
 
-.page-careers #overview-slides .owl-prev svg,
-.page-careers #work-for-bmc .owl-prev svg {
+#overview-slides .owl-prev svg,
+#work-for-bmc .owl-prev svg {
 	right: 0;
 }
 
-.page-careers #overview-slides .owl-nav svg {
+#overview-slides .owl-nav svg {
 	fill: #fe5000;
 	margin-top: -150px;
 }
 
-.page-careers #work-for-bmc .owl-nav svg {
+#work-for-bmc .owl-nav svg {
 	margin-top: -120px;
 }
 
-.page-careers #owl-location .owl-nav {
+#owl-location .owl-nav {
 	height: 100%;
 	margin-top: 0;
 	top: 0;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	height: 100%;
 }
 
-.page-careers #owl-location .owl-next {
+#owl-location .owl-next {
 	right: 0;
 }
 
-.page-careers #owl-location .owl-next svg {
+#owl-location .owl-next svg {
 	left: 0;
 }
 
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-prev {
 	left: 0;
 }
 
-.page-careers #owl-location .owl-prev svg {
+#owl-location .owl-prev svg {
 	right: 0;
 }
 
@@ -26404,12 +26399,12 @@ section.bmc-engage-header.layout-full-bleed h2 {
 
 @media (min-width: 832px) and (max-width: 1023px) {
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 100px;
 	margin-right: 100px;
 }
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 100px;
 	margin-right: 100px;
 }
@@ -26446,7 +26441,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 100% !important;
 }
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 150px;
 	margin-right: 150px;
 }
@@ -26463,7 +26458,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 100% !important;
 }
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 150px;
 	margin-right: 150px;
 }
@@ -26621,37 +26616,37 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 940px;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	background-color: rgba(254, 80, 0, 0.8);
 	padding: 4rem 2rem;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 100%;
 }
 
-.page-careers .three-column-layout .card-content {
+.three-column-layout .card-content {
 	text-align: left;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 100px;
 	margin-top: -50px;
 	top: 50%;
 	width: 50px;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	width: 100px;
 }
 
-.page-careers #overview-slides .owl-nav svg {
+#overview-slides .owl-nav svg {
 	margin-top: -160px;
 }
 
-.page-careers #work-for-bmc .owl-nav svg {
+#work-for-bmc .owl-nav svg {
 	margin-top: -145px;
 }
 
@@ -26726,7 +26721,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list {
 	font-size: 1.25rem;
 }
@@ -26762,7 +26757,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .p2,
-.page-careers .slide-caption {
+.slide-caption {
 	padding: 1.5rem;
 }
 
@@ -26915,37 +26910,37 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 940px;
 }
 
-.page-careers .hero_cta {
+.hero_cta {
 	background-color: rgba(254, 80, 0, 0.8);
 	padding: 4rem 2rem;
 }
 
-.page-careers .three-column-layout .card-image img {
+.three-column-layout .card-image img {
 	width: 100%;
 }
 
-.page-careers .three-column-layout .card-content {
+.three-column-layout .card-content {
 	text-align: left;
 }
 
-.page-careers .owl-next svg,
-.page-careers .owl-prev svg {
+.owl-next svg,
+.owl-prev svg {
 	height: 100px;
 	margin-top: -50px;
 	top: 50%;
 	width: 50px;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	width: 100px;
 }
 
-.page-careers #overview-slides .owl-nav svg {
+#overview-slides .owl-nav svg {
 	margin-top: -160px;
 }
 
-.page-careers #work-for-bmc .owl-nav svg {
+#work-for-bmc .owl-nav svg {
 	margin-top: -145px;
 }
 
@@ -26990,12 +26985,12 @@ section.bmc-engage-header.layout-full-bleed h2 {
 
 @media (min-width: 1280px) {
 
-.page-careers .hero-image img {
+.hero-image img {
 	height: auto;
 	width: 100%;
 }
 
-.page-careers .hero-image img {
+.hero-image img {
 	height: auto;
 	width: 100%;
 }
@@ -27132,7 +27127,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .h3,
-.page-careers .slide-caption,
+.slide-caption,
 #join-leader .trophy-list {
 	font-size: 1.25rem;
 }
@@ -27266,12 +27261,12 @@ section.bmc-engage-header.layout-full-bleed h2 {
 
 @media (max-width: 1279px) {
 
-.page-careers .hero-image img {
+.hero-image img {
 	height: 100%;
 	max-width: none;
 }
 
-.page-careers .hero-image img {
+.hero-image img {
 	height: 100%;
 	max-width: none;
 }
@@ -27346,59 +27341,59 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	display: block;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	border: 2px solid #fe5000;
 	border-radius: 50%;
 }
 
-.page-careers .owl-theme--white .owl-next,
-.page-careers .owl-theme--white .owl-prev {
+.owl-theme--white .owl-next,
+.owl-theme--white .owl-prev {
 	border-color: #fff;
 }
 
-.page-careers .owl-theme--white .owl-next svg,
-.page-careers .owl-theme--white .owl-prev svg {
+.owl-theme--white .owl-next svg,
+.owl-theme--white .owl-prev svg {
 	stroke: #fff;
 }
 
-.page-careers .owl-theme--orange .owl-next,
-.page-careers .owl-theme--orange .owl-prev {
+.owl-theme--orange .owl-next,
+.owl-theme--orange .owl-prev {
 	border-color: #fe5000;
 }
 
-.page-careers .owl-theme--orange .owl-next svg,
-.page-careers .owl-theme--orange .owl-prev svg {
+.owl-theme--orange .owl-next svg,
+.owl-theme--orange .owl-prev svg {
 	stroke: #fe5000;
 }
 
-.page-careers #overview-slides .owl-next,
-.page-careers #work-for-bmc .owl-next {
+#overview-slides .owl-next,
+#work-for-bmc .owl-next {
 	margin-right: -150px;
 	right: 50%;
 }
 
-.page-careers #overview-slides .owl-prev,
-.page-careers #work-for-bmc .owl-prev {
+#overview-slides .owl-prev,
+#work-for-bmc .owl-prev {
 	left: 50%;
 	margin-left: -150px;
 }
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 18px;
 	margin-right: 18px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	top: 50%;
 }
 
-.page-careers #owl-location .owl-next {
+#owl-location .owl-next {
 	right: 20px;
 }
 
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-prev {
 	left: 20px;
 }
 
@@ -27406,59 +27401,59 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	display: none;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	border: 2px solid #fe5000;
 	border-radius: 50%;
 }
 
-.page-careers .owl-theme--white .owl-next,
-.page-careers .owl-theme--white .owl-prev {
+.owl-theme--white .owl-next,
+.owl-theme--white .owl-prev {
 	border-color: #fff;
 }
 
-.page-careers .owl-theme--white .owl-next svg,
-.page-careers .owl-theme--white .owl-prev svg {
+.owl-theme--white .owl-next svg,
+.owl-theme--white .owl-prev svg {
 	stroke: #fff;
 }
 
-.page-careers .owl-theme--orange .owl-next,
-.page-careers .owl-theme--orange .owl-prev {
+.owl-theme--orange .owl-next,
+.owl-theme--orange .owl-prev {
 	border-color: #fe5000;
 }
 
-.page-careers .owl-theme--orange .owl-next svg,
-.page-careers .owl-theme--orange .owl-prev svg {
+.owl-theme--orange .owl-next svg,
+.owl-theme--orange .owl-prev svg {
 	stroke: #fe5000;
 }
 
-.page-careers #overview-slides .owl-next,
-.page-careers #work-for-bmc .owl-next {
+#overview-slides .owl-next,
+#work-for-bmc .owl-next {
 	margin-right: -150px;
 	right: 50%;
 }
 
-.page-careers #overview-slides .owl-prev,
-.page-careers #work-for-bmc .owl-prev {
+#overview-slides .owl-prev,
+#work-for-bmc .owl-prev {
 	left: 50%;
 	margin-left: -150px;
 }
 
-.page-careers #overview-slides .section-content {
+#overview-slides .section-content {
 	margin-left: 18px;
 	margin-right: 18px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	top: 50%;
 }
 
-.page-careers #owl-location .owl-next {
+#owl-location .owl-next {
 	right: 20px;
 }
 
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-prev {
 	left: 20px;
 }
 
@@ -27624,13 +27619,13 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 50px;
 }
 
-.page-careers .btn-flat,
-.page-careers .jq-dropdown-trigger {
+.btn-flat,
+.jq-dropdown-trigger {
 	font-size: .875rem;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	font-size: 14px;
 	height: 26px;
 	line-height: 18px;
@@ -27638,17 +27633,17 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 26px;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 30px;
 }
 
-.page-careers #overview-slides .owl-nav,
-.page-careers #work-for-bmc .owl-nav {
+#overview-slides .owl-nav,
+#work-for-bmc .owl-nav {
 	bottom: 60px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	margin-top: -13px;
 }
 
@@ -27662,8 +27657,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	font-weight: 700;
@@ -27702,13 +27696,13 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 50px;
 }
 
-.page-careers .btn-flat,
-.page-careers .jq-dropdown-trigger {
+.btn-flat,
+.jq-dropdown-trigger {
 	font-size: .875rem;
 }
 
-.page-careers .owl-next,
-.page-careers .owl-prev {
+.owl-next,
+.owl-prev {
 	font-size: 14px;
 	height: 26px;
 	line-height: 18px;
@@ -27716,17 +27710,17 @@ section.bmc-engage-header.layout-full-bleed h2 {
 	width: 26px;
 }
 
-.page-careers .owl-dots {
+.owl-dots {
 	bottom: 30px;
 }
 
-.page-careers #overview-slides .owl-nav,
-.page-careers #work-for-bmc .owl-nav {
+#overview-slides .owl-nav,
+#work-for-bmc .owl-nav {
 	bottom: 60px;
 }
 
-.page-careers #owl-location .owl-next,
-.page-careers #owl-location .owl-prev {
+#owl-location .owl-next,
+#owl-location .owl-prev {
 	margin-top: -13px;
 }
 
@@ -27740,8 +27734,7 @@ section.bmc-engage-header.layout-full-bleed h2 {
 }
 
 .careers_teams .h3,
-.careers_teams .page-careers .slide-caption,
-.page-careers .careers_teams .slide-caption,
+.careers_teams .slide-caption,
 .careers_teams #join-leader .trophy-list,
 #join-leader .careers_teams .trophy-list {
 	font-weight: 700;

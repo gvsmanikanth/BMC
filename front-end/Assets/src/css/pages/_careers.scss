@@ -1,4 +1,3 @@
-.page-careers {
 
 	// hero
 	.hero {
@@ -17,12 +16,12 @@
 		@media (min-width: $break-lg) {
 			//padding: 8rem 0;
 		}
-		
+
 		.videoInstructions{
 			color: color(mediumOrange);
 			font-weight:800;
 		}
-	
+
 		.videoIcon{
 			width:100px;
 		}
@@ -49,7 +48,7 @@
 			content: '';
 			display: block;
 			padding-top: 75%;
-			
+
 			.vidbg-box{
             width: 650px;
             height: 338px;
@@ -70,7 +69,7 @@
 			background-position: center;
 			background-size: cover;
 		}
-		
+
 	}
 
 	%career-divider {
@@ -117,8 +116,8 @@
 		@extend .p2;
 		width: 100%;
 	}
-	
-	
+
+
 	.three-column-layout{
     .card-image img {
       width: 80%;
@@ -126,14 +125,14 @@
       // 640px
       @media (min-width: $break-sm) {
         width: 50%;
-        
+
       }
       // 1024px
       @media (min-width: $break-lg) {
         width: 100%;
       }
     }
-    
+
     .card-content{
           text-align:center;
          // 1024px
@@ -167,8 +166,8 @@
 			}
 		}
 	}
-	
-	
+
+
 
 	.owl-next,
 	.owl-prev {
@@ -492,8 +491,8 @@
 		stroke: #fff;
 		width: 60px;
 	}
-}
 
+	
 #join-leader {
 	background-image: url("#{$imagesFolder}careers-trophy-bg.jpg");
 	background-position: center bottom;
