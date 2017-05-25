@@ -6,6 +6,9 @@
     <filter root="/conf/bmc" mode="update"/>
 
 
+    <!--<filter root="/home/users/system/bmc" mode="update"/>-->
+
+
     <filter root="/etc/clientlibs/bmc"/>
 
 
