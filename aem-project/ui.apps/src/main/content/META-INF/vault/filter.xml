@@ -15,7 +15,7 @@
     </filter>
 
     <filter root="/content/bmc" mode="update" />
-    <filter root="/content/experience-fragments" mode="replace" />
+    <filter root="/content/experience-fragments" mode="update" />
 
     <filter root="/content/dam/projects/bmc/" mode="update" />
 </workspaceFilter>

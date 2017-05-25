@@ -148,12 +148,12 @@
                             mergeList="{Boolean}true"/>
                     </bmc-form>
                     <policy_1495585352359
-                        jcr:lastModified="{Date}2017-05-24T11:30:25.019-07:00"
+                        jcr:lastModified="{Date}2017-05-24T17:26:15.676-07:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC-Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/bmc/components/content/header-form-basic-lead-gen-image,group:BMC.structure]">
+                        components="[/apps/bmc/components/content/header-basic,/apps/bmc/components/content/header-brand,/apps/bmc/components/content/header-form,/apps/bmc/components/content/header-generic,group:BMC.structure]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </policy_1495585352359>
                     <policy_1495667349141

@@ -80,13 +80,13 @@
                     </form>
                 </responsivegrid_1546413774>
             </maincontentcontainer>
-            <header_form_basic_le
-                jcr:created="{Date}2017-05-24T11:10:21.279-07:00"
+            <header_form
+                jcr:created="{Date}2017-05-24T17:26:22.073-07:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-05-24T11:30:56.815-07:00"
+                jcr:lastModified="{Date}2017-05-24T17:28:30.977-07:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/content/header-form-basic-lead-gen-image"/>
+                sling:resourceType="bmc/components/content/header-form"/>
         </root>
     </jcr:content>
 </jcr:root>

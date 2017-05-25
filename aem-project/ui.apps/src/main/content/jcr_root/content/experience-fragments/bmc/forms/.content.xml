@@ -3,4 +3,5 @@
     jcr:primaryType="sling:OrderedFolder"
     jcr:title="Forms">
     <experience-fragmentbmcformfield/>
+    <demo-form-fragment/>
 </jcr:root>
