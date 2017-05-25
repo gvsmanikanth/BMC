@@ -70,6 +70,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                 Boolean available;
                 String title;
                 String url;
+                Boolean redirectSent = false;
                 if (nodes.hasNext()) {
                     logger.info("Service node found");
                     node = nodes.nextNode();
@@ -94,24 +95,23 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                                         String qs = getQueryString(request);
                                         url = content.getProperty("destination_url").getString() + qs;
                                         response.sendRedirect(url);
-                                        return;
+                                        redirectSent = true;
                                     }
                                 }
                             }
-                            String path = node.getPath() + ".html";
-                            /* Setup request */
-                            HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
-                            WCMMode.DISABLED.toRequest(req);
-
-                            /* Setup response */
-                            ByteArrayOutputStream out = new ByteArrayOutputStream();
-                            HttpServletResponse resp = requestResponseFactory.createResponse(out);
-
-                            /* Process request through Sling */
-                            requestProcessor.processRequest(req, resp, request.getResourceResolver());
-                            String html = out.toString();
-                            response.getWriter().append(html);
                         }
+                    }
+                    if (!redirectSent) {
+                        String path = node.getPath() + ".html";
+                        HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
+                        WCMMode.DISABLED.toRequest(req);
+
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        HttpServletResponse resp = requestResponseFactory.createResponse(out);
+
+                        requestProcessor.processRequest(req, resp, request.getResourceResolver());
+                        String html = out.toString();
+                        response.getWriter().append(html);
                     }
                 }
             }
