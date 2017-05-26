@@ -2,32 +2,32 @@
 <sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
 
 
-<section class="wallpapered bar full-bleed-page-banner" style="background-image: url('${bgImg @ context='uri'}')">
+<!-- with introText -->
+<section data-sly-test="${properties.introText}" class="bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}');">
+    <div class="layout-inner-wrap">
+        <h1>${properties.headerText}</h1>
+        <h2>${properties.subHeaderText}</h2>
+        <p class="hero-caption">${properties.introText}</p>
+
+        <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
+        <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta2url}">${properties.cta2text}</a>
+        <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta3url}">${properties.cta3text}</a>
+
+    </div><!-- / layout-inner-wrap -->
+</section>
+
+<!-- without introText -->
+<section data-sly-test="${!properties.introText}" class="wallpapered bar full-bleed-page-banner" style="background-color: red; background-image: url('${bgImg @ context='uri'}')">
     <div class="offset-wrapper">
         <div class="layout-inner-wrap">
             <div class="offset-hero-medium banner -ribbon" style="background-image: url('http://media.cms.bmc.com/images/spacer.gif'); padding-top: 1em; padding-bottom: 1em; ">
                 <div class="offset-hero-medium-inner-wrap">
-                    <h1 class="white">
-                        <span>
-                            ${properties.headerText}
-                        </span>
-                        <span data-sly-test="${!properties.headerText}">
-                            Enter Heading Text
-                        </span>
-                    </h1>
-
-                    <h2>
-                        <span>
-                            ${properties.subHeaderText}
-                        </span>
-                        <span data-sly-test="${!properties.subHeaderText}">
-                            Enter Heading Text
-                        </span>
-                    </h2>
+                    <h1 class="white">${properties.headerText}</h1>
+                    <h2>${properties.subHeaderText}</h2>
 
                     <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn'}" href="${properties.cta1url}">${properties.cta1text}</a>
-                    <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta2url}">${properties.cta2text}</a>
-                    <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary'}" href="${properties.cta3url}">${properties.cta3text}</a>
+                    <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta2url}">${properties.cta2text}</a>
+                    <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta3url}">${properties.cta3text}</a>
 
                 </div>
             </div>
