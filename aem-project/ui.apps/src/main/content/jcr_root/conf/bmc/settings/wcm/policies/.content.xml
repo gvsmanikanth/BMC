@@ -144,6 +144,10 @@
                             </assetToComponentMapping>
                         </cq:authoring>
                         <jcr:content
+                            cq:lastReplicated="{Date}2017-05-24T18:03:32.525-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
                             jcr:primaryType="nt:unstructured"
                             mergeList="{Boolean}true"/>
                     </bmc-form>
@@ -178,6 +182,37 @@
             </components>
         </foundation>
     </wcm>
+    <policy_1494919152972
+        jcr:lastModified="{Date}2017-05-16T00:19:43.830-07:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Header Education Header H1"
+        sling:resourceType="wcm/core/components/policy/policy"
+        type="h1">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1494919152972>
+    <bmc jcr:primaryType="nt:unstructured">
+        <components jcr:primaryType="nt:unstructured">
+            <content jcr:primaryType="nt:unstructured">
+                <section jcr:primaryType="nt:unstructured">
+                    <policy_1495673627134
+                        jcr:lastModified="{Date}2017-05-24T17:55:11.586-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Content Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="group:BMC.content">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-05-24T18:03:32.525-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_1495673627134>
+                </section>
+            </content>
+        </components>
+    </bmc>
     <policy_1494571809153
         jcr:lastModified="{Date}2017-05-11T23:51:05.090-07:00"
         jcr:lastModifiedBy="admin"
