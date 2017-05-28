@@ -21,44 +21,9 @@
 <!-- Serve one icon for all Apple devices -->
 <link rel="apple-touch-icon-precomposed" href="Assets/dist/img/touch-icon.png">
 
-
-<script>
-    var bmcMeta= {
-        "page":
-            {
-                "contentId":"257735811",
-                "contentType":"HomePage",
-                "longName":"en-us:home",
-                "cultureCode":"en",
-                "productCategories":"",
-                "productLineCategories":""
-                ,"errorCode":""
-                ,"isPurl":"false"
-                ,"modalOpen":
-                {
-                    "evidon": false,
-                    "contact": false,
-                    "content": false,
-                    "supportAlerts": false,
-                    "salesChat": false,
-                    "qualtrics": false
-                },
-                "GeoIP":
-                    {
-                        "GeoIPRedirectExcluded": false,
-                        "GeoIPLanguageCode": "en-US"
-                    },
-            },
-        "site":
-            {
-                "cultureCode":"en-us",
-                "environment":""
-            }
-        ,"user":
-            {
-                "sVi":""
-            }
-    }
+<sly data-sly-use.PageModel="com.bmc.models.PageModel"/>
+<script data-sly-test.BmcMeta="${PageModel.bmcMetaJson}">
+    var bmcMeta = ${BmcMeta @ context='unsafe'};
 </script>
 
 <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562.js"></script>
