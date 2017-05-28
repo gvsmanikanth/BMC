@@ -59,7 +59,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
             if (session != null) {
                 QueryManager queryManager = session.getWorkspace().getQueryManager();
 
-                String sql = String.format("SELECT * FROM [cq:Page] WHERE ISDESCENDANTNODE('%s') AND name() = '%s'", BASE, service);
+                String sql = String.format("SELECT * FROM [cq:PageMeta] WHERE ISDESCENDANTNODE('%s') AND name() = '%s'", BASE, service);
                 Query query = queryManager.createQuery(sql, "JCR-SQL2");
                 QueryResult result = query.execute();
 
