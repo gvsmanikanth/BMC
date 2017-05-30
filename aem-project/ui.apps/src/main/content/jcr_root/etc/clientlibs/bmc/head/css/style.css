@@ -11022,8 +11022,7 @@ section.bmc-engage-header.layout-full-bleed .btn.btn-hollow:hover {
 }
 
 .industry-tabs.industry-tabs--editing .r-tabs-panel {
-	background-color: pink;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #333;
 	display: block !important;
 }
 

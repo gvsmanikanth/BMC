@@ -17,6 +17,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+
                             <headerText
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
@@ -33,7 +34,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab1hash"/>
                             <tab2title
                                     jcr:primaryType="nt:unstructured"
@@ -45,7 +46,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab2hash"/>
                             <tab3title
                                     jcr:primaryType="nt:unstructured"
@@ -57,7 +58,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab3hash"/>
                             <tab4title
                                     jcr:primaryType="nt:unstructured"
@@ -69,7 +70,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab4hash"/>
                             <tab5title
                                     jcr:primaryType="nt:unstructured"
@@ -81,19 +82,19 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab5hash"/>
                             <tab6title
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Enter the text for tab 6"
                                     fieldLabel="Enter the text for tab 6"
-                                    name="./tab5title"/>
+                                    name="./tab6title"/>
                             <tab6hash
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional custom hash location"
-                                    fieldLabel="Optional custom hash"
+                                    fieldLabel="Optional custom hash (please do not include a '#')"
                                     name="./tab6hash"/>
                         </items>
                     </column>
