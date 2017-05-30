@@ -89,10 +89,6 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.core</artifactId>
-        </dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -144,7 +140,6 @@
                     </excludePackageNames>
                  </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>

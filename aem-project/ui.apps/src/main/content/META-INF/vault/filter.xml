@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/bmc" mode="replace"/>
+    <filter root="/apps/bmc"/>
 
     <!-- TODO: replace this with "merge" after initial editable template dev/deployments -->
-    <filter root="/conf/bmc/" mode="update"/>
+    <filter root="/conf/bmc" mode="update"/>
 
 
     <!--<filter root="/home/users/system/bmc" mode="update"/>-->
@@ -17,8 +17,7 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
-    <filter root="/content/bmc" mode="update" />
-    <filter root="/content/experience-fragments" mode="update" />
 
-    <filter root="/content/dam/projects/bmc/" mode="update" />
+    <filter root="/content/bmc" mode="merge" />
+
 </workspaceFilter>
