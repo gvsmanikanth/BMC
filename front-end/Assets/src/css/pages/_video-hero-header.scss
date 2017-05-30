@@ -1,0 +1,73 @@
+.video-hero-header {
+
+		// hero
+	.hero {
+		position: relative;
+		text-align: center;
+	}
+	.hero-content {
+		@include box-sizing(border-box);
+		background-color: rgba(0,0,0,.65);
+		color: #fff;
+		padding: 2rem;
+		width: 100%;
+		@media (min-width: $break-sm) {
+			padding: 5rem 0;
+		}
+		@media (min-width: $break-lg) {
+			//padding: 8rem 0;
+		}
+		
+		.videoInstructions{
+			color: color(mediumOrange);
+			font-weight:800;
+		}
+	
+		.videoIcon{
+			width:100px;
+		}
+	
+		&.transparent-bg{
+			background-color: rgba(0,0,0,0);
+		}
+	
+		&.bg-alpha-45{
+			background-color: rgba(0,0,0,.45);
+		}
+	}
+
+	.hero-image {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 75%;
+			
+			.vidbg-box{
+            width: 650px;
+            height: 338px;
+      }
+		}
+		img {
+			@media (max-width: 1279px) {
+				height: 100%;
+				max-width: none;
+			}
+			@media (min-width: 1280px) {
+				height: auto;
+				width: 100%;
+			}
+		}
+		&.xs-only {
+			background-image: url("#{$imagesFolder}careers-header.jpg");
+			background-position: center;
+			background-size: cover;
+		}
+		
+	}
+}

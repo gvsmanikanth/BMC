@@ -157,6 +157,9 @@
 	}
 }
 
+
+
+
 .search-pager {
 
 	display: inline-block;
@@ -176,3 +179,92 @@
 		}
 	}
 }
+
+//New styles for Swiftype search
+
+.search-results-header{
+	.st-ui-search-input,
+	.st-default-search-input{
+	background: none;
+	}
+}
+
+.st-position-container {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+
+	font-weight: 400;
+
+	.st-ui-injected-search-summary{
+		.st-query-present{
+			color: color(colorFooterLight);
+			font-size: em(14);
+			padding-bottom: 2em;
+			border-bottom: 1px solid #c1c3c5;
+		}
+	}
+
+	.st-ui-type-heading {
+		font-size: em(22);
+		font-weight: 900;
+		margin-bottom: em(2);
+	}
+
+	.st-ui-type-detail{  
+		color: color(colorNavigationBar);
+		font-size: 1rem;
+		//max-height:none !important;
+		.st-ui-type-detail-bold {
+			color: color(colorNavigationBar);
+			font-size: 1rem;
+		}
+		
+  
+ 	  display: block ; /* or */
+	  text-overflow: ellipsis;
+	  word-wrap: break-word;
+	  overflow: hidden;
+	  max-height: 5.4em !important;
+	  line-height: 1.8em;
+
+	
+	  
+
+	}
+
+	.st-ui-result{
+		border-bottom: 1px solid #c1c3c5;
+	}
+}
+
+.st-ui-container-footer_bar {
+
+	display: inline-block;
+	list-style: none;
+	margin: 1em 0;
+	padding: 0;
+
+	.st-ui-pagination-link  {
+		color: color(colorCorporateAction);
+		display: inline-block;
+		font-size: em(20);
+		font-weight: 800;
+		margin-right: 0.5em;
+
+		&.active {
+			color: color(colorNavigationBar);
+		}
+	}
+
+	.st-ui-arrow{
+		display:none;
+	}
+}
+
+section.st-ui-no-results .st-ui-type-heading, div.st-ui-injected-overlay-container section.st-ui-no-results .st-ui-type-heading{
+	display:none;
+}
+
+
+
+
