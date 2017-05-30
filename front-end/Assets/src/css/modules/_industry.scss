@@ -9,29 +9,39 @@
 .industry-tabs {
 
 	width: columns(12);
-	
+
+
+	&.industry-tabs--editing {
+		.r-tabs-panel {
+			background-color: pink;
+			border-bottom: 1px solid #000;
+			display: block!important;
+		}
+	}
+
 	.tab-module-image {
 		width: columns(12);
-		
+
 		@include media(breakpointMedium) {
 			padding-right: columns(.5);
 		}
-		
+
 		@include media(breakpointLarge) {
 			min-width: 450px;
 			width: columns(4);
 		}
 	}
-	
+
 	.tab-module-support {
 		width: columns(12);
-		
+
 		@include media(breakpointLarge) {
 			width: columns(7.5);
 		}
 	}
-	
+
 }
+
 
 
 //DXP-166
@@ -42,17 +52,17 @@
       height:90px;
       width:90px
     }
-    
+
     .fill-pomegranate{
       height:90px;
       width:123px
     }
-    
+
     .fill-conifer{
       height:90px;
       width:136px
     }
-    
+
     .fill-robins-egg-blue{
       height:90px;
       width:128px
