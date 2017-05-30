@@ -5,6 +5,19 @@ $enableDTM = true;
 include 'php-inc/head.php';
 include 'php-inc/svg.php';
 ?>
+<?php include 'php-inc/svg.php'; ?>
+<section class="wallpapered bar" data-wallpaper-options='{"source":"http://media.cms.bmc.com/images/about-banner.jpg"}'>
+	<div class="offset-wrapper">
+		<div class="layout-inner-wrap">
+			<div class="offset-hero-medium banner -ribbon">
+				<div class="offset-hero-medium-inner-wrap">
+					<h1>Digital Enterprise Management</h1>
+					<p>Fast track digital business for the ultimate competitive advantage</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <section class="fortune-500-bg-product bg-white">
 	<div class="layout-inner-wrap py2">
 		<div class="flex flex-center flex-wrap js-eh py2">
@@ -43,8 +56,8 @@ include 'php-inc/svg.php';
 		</div>
 	</div>
 </section>
-<article class="percentage_display-full-width" >
-	<div class="layout-inner-wrap" >
+<article class="percentage_display-full-width">
+	<div class="layout-inner-wrap">
 		<p class="lead -lg -oll mb0 text-center center-block">
 			<strong>A digital enterprise is a more successful enterprise.</strong>Companies advancing their digital initiatives perform significantly better than companies that are less digitally mature.
 		</p>
@@ -53,37 +66,37 @@ include 'php-inc/svg.php';
 			<div class="flex flex-item sm-col sm-col-12 md-col-3">
 				<div class="p2 m1 card tundora js-ehItem">
 					<div class="px1">
-						<span class="px1 inline-block"><img  src="http://media.cms.bmc.com/images/up-arrow-1.png" alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold">43%</span>
+						<span class="px1 inline-block"><img src="http://media.cms.bmc.com/images/up-arrow-1.png" alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold">43%</span>
 					</div>
-					<div class="ship-gray py1" >
+					<div class="ship-gray py1">
 						of companies saw growth by advancing their digital initiatives<sup>1</sup>
 					</div>
 				</div>
 			</div>
 			<!-- STAT 2 -->
 			<div class="flex flex-item sm-col sm-col-12 md-col-3">
-				<div class="p2 m1 card tundora js-ehItem" >
-					<div class="px1" >
-						<span class="px1 inline-block"><img  src="http://media.cms.bmc.com/images/up-arrow-2.png" alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold">26%</span>
+				<div class="p2 m1 card tundora js-ehItem">
+					<div class="px1">
+						<span class="px1 inline-block"><img src="http://media.cms.bmc.com/images/up-arrow-2.png" alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold">26%</span>
 					</div>
-					<div class="ship-gray py1" style="font-size: 1em;">
+					<div class="ship-gray py1">
 						increase in profitability realized from digital solutions <sup>2</sup>
 					</div>
 				</div>
 			</div>
 			<!-- STAT 3 -->
 			<div class="flex flex-item sm-col sm-col-12 md-col-3">
-				<div class="p2 m1 card tundora js-ehItem" >
-					<div class="px1" >
-						<span class="px1 inline-block"><img  src="http://media.cms.bmc.com/images/up-arrow-3.png"alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold" >25%</span>
+				<div class="p2 m1 card tundora js-ehItem">
+					<div class="px1">
+						<span class="px1 inline-block"><img src="http://media.cms.bmc.com/images/down-arrow-3.png" alt="" /></span>&nbsp;<span class="number inline-block px1 ship-gray bold">25%</span>
 					</div>
-					<div class="ship-gray py1" >
+					<div class="ship-gray py1">
 						of companies will lose rank due to digital incompetence <sup>3</sup>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="source-block" >
+		<div class="source-block">
 			Sources: <sup>1, 3</sup> Gartner; <sup>2</sup> Capgemini and MIT Study
 		</div>
 	</div>
@@ -228,14 +241,14 @@ include 'php-inc/svg.php';
 		</div>
 	</div>
 </section>
-<section id="product-services-cards" class="section bg-seashell">
+<section id="product-services-cards" class="section bg-seashell product-services-cards">
 	<div class="section-content p3 text-center">
 		<h2 class="section-title p2 ship-gray">Explore the products and solutions that can transform your digital enterprise</h2>
-		<div class="flex flex-wrap js-eh">
+		<div class="flex flex-wrap js-eh card-container">
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/service-management.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-mediumOrange" style="height: 54px; width: 84px">
+					<div class="card-image mb2">
+						<svg class="fill-mediumOrange">
 							<use xlink:href="#s-ITSMgmt" />
 						</svg>
 					</div>
@@ -248,8 +261,8 @@ include 'php-inc/svg.php';
 			</div>
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/workload-automation.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-keppel" style="height: 54px; width: 86px">
+					<div class="card-image mb2">
+						<svg class="fill-keppel">
 							<use xlink:href="#s-Workload" />
 						</svg>
 					</div>
@@ -262,8 +275,8 @@ include 'php-inc/svg.php';
 			</div>
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/it-operations-management.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-tango" style="height: 54px; width: 50px">
+					<div class="card-image mb2">
+						<svg class="fill-tango">
 							<use xlink:href="#s-ITOps" />
 						</svg>
 					</div>
@@ -276,8 +289,8 @@ include 'php-inc/svg.php';
 			</div>
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/cloud-computing-software.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-robins-egg-blue" style="height: 54px; width: 74.25px">
+					<div class="card-image mb2">
+						<svg class="fill-robins-egg-blue">
 							<use xlink:href="#s-CloudMgmt" />
 						</svg>
 					</div>
@@ -290,8 +303,8 @@ include 'php-inc/svg.php';
 			</div>
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/it-automation.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-tangerine" style="height: 54px; width: 54px">
+					<div class="card-image mb2">
+						<svg class="fill-tangerine">
 							<use xlink:href="#s-ITAuto" />
 						</svg>
 					</div>
@@ -304,8 +317,8 @@ include 'php-inc/svg.php';
 			</div>
 			<div class="flex flex-item col col-12 sm-col-6 md-col-4 xl-col-2 p1">
 				<a href="/it-solutions/mainframe.html" class="card p2 black bg-iron js-ehItem bg-mediumGrey-hover">
-					<div class="card-image mb2" style="height: 54px">
-						<svg class="fill-pear" style="height: 54px; width: 54px">
+					<div class="card-image mb2">
+						<svg class="fill-pear">
 							<use xlink:href="#s-Mainframe" />
 						</svg>
 					</div>

@@ -16,13 +16,15 @@ $window.on('scroll', function() {
 		highResolution = Modernizr.mq('only screen and (min-width: 60em)');
 
 	// specific to the 'navigation' navigation key
-	if (BMCNavLoader && BMCNavLoader.isLoaded('navigation')) {
-		// clear the display scrolled menu state and close any open navigation-secondarys
-		// should only apply to desktop menu
-		if ($(window).width() > viewportWidthBreakpoint) {
-			$body.removeClass('display-scrolled-menu');
-			$layoutNav.find('.navigation-active').removeClass('navigation-active');
-			$layoutNav.find('.hinted').removeClass('hinted');
+	if(typeof(BMCNavLoader) != "undefined"){
+		if (BMCNavLoader && BMCNavLoader.isLoaded('navigation')) {
+			// clear the display scrolled menu state and close any open navigation-secondarys
+			// should only apply to desktop menu
+			if ($(window).width() > viewportWidthBreakpoint) {
+				$body.removeClass('display-scrolled-menu');
+				$layoutNav.find('.navigation-active').removeClass('navigation-active');
+				$layoutNav.find('.hinted').removeClass('hinted');
+			}
 		}
 	}
 

@@ -43,12 +43,13 @@
 </div>
 
 <div class="row">
+	<section id="product-services-cards" class="section bg-white product-services-cards">
 	<h4>Products and services iconography</h4>
-	<div class="flex js-eh text-center">
+	<div class="flex js-eh text-center card-container">
 		<div class="flex-item col col-12 sm-col-6 md-col-4 lg-col-2 p1">
 			<a href="#" class="card p2 tundora bg-white bg-mediumGrey-hover js-ehItem">
-				<div class="card-image mb2" style="height:54px">
-					<svg class="fill-mediumOrange" style="height:54px;width:54px">
+				<div class="card-image mb2">
+					<svg class="fill-mediumOrange">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-ITSMgmt"></use>
 					</svg>
 				</div>
@@ -57,8 +58,8 @@
 		</div><!-- flex-col -->
 		<div class="flex-item col col-12 sm-col-6 md-col-4 lg-col-2 p1">
 			<a href="#" class="card p2 tundora bg-white bg-mediumGrey-hover js-ehItem">
-				<div class="card-image mb2" style="height:54px">
-					<svg class="fill-keppel" style="height:54px;width:86px">
+				<div class="card-image mb2" >
+					<svg class="fill-keppel" >
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Workload"></use>
 					</svg>
 				</div>
@@ -67,8 +68,8 @@
 		</div><!-- flex-col -->
 		<div class="flex-item col col-12 sm-col-6 md-col-4 lg-col-2 p1">
 			<a href="#" class="card p2 tundora bg-white bg-mediumGrey-hover js-ehItem">
-				<div class="card-image mb2" style="height:54px">
-					<svg class="fill-tango" style="height:54px;width:50px">
+				<div class="card-image mb2" >
+					<svg class="fill-tango" >
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-ITOps"></use>
 					</svg>
 				</div>
@@ -87,8 +88,8 @@
 		</div><!-- flex-col -->
 		<div class="flex-item col col-12 sm-col-6 md-col-4 lg-col-2 p1">
 			<a href="#" class="card p2 tundora bg-white bg-mediumGrey-hover js-ehItem">
-				<div class="card-image mb2" style="height:54px">
-					<svg class="fill-tangerine" style="height:54px;width:54px">
+				<div class="card-image mb2" >
+					<svg class="fill-tangerine" >
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-ITAuto"></use>
 					</svg>
 				</div>
@@ -97,8 +98,8 @@
 		</div><!-- flex-col -->
 		<div class="flex-item col col-12 sm-col-6 md-col-4 lg-col-2 p1">
 			<a href="#" class="card p2 tundora bg-white bg-mediumGrey-hover js-ehItem">
-				<div class="card-image mb2" style="height:54px">
-					<svg class="fill-pear" style="height:54px;width:54px">
+				<div class="card-image mb2" >
+					<svg class="fill-pear" >
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Mainframe"></use>
 					</svg>
 				</div>
@@ -106,4 +107,5 @@
 			</a>
 		</div><!-- flex-col -->
 	</div><!--flex-wrap-->
+	</section>
 </div>

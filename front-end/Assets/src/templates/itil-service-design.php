@@ -12,21 +12,15 @@ include 'php-inc/head.php';
 						ITIL<sup>®</sup> Service Design
 					</h1>
 					<p>
-						<b>Learn about ITIL Service Design and related processes<br> <br>Last Updated: 12/22/2016
-						</b>
+						Last Updated: 12/22/2016<br>
+						<br>Each "Best Practice Insights" booklet highlights important elements from the latest version of ITIL so that you can quickly understand key changes and concepts.
 					</p>
+					<a class="btn-white learn-more " href="/forms/ESM_TL_ITIL_ReferenceBooks_BMCcom_EN_Apr2012_V2.html" data-form="" data-location="Page-Body" data-parent-id="302380931" target="_self">Download free ITIL reference books</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<div class="download-cta">
-	<section>
-		<h3>
-			Free Download: ITIL 5 Book Set <a href='/forms/ESM_TL_ITIL_ReferenceBooks_BMCcom_EN_Apr2012_V2.html?intcmp=inpage' class='btn-secondary' alt='Get the booklets' title='Get the booklets' style=''>Get the booklets</a>
-		</h3>
-	</section>
-</div>
 <section class="layout-full-bleed">
 	<div class="layout-inner-wrap">
 		<article class="layout-primary">
@@ -42,6 +36,7 @@ include 'php-inc/head.php';
 					</div>
 				</div>
 			</section>
+			
 			<div class="inline-menu-box">
 				<section>
 					<a href="/guides/itil-service-design.html"><h2>ITIL Service Design Processes</h2></a>
@@ -50,34 +45,61 @@ include 'php-inc/head.php';
 					</p>
 				</section>
 			</div>
-			<section class="service-design">
+			
+			<!--
+			<div style="text-align: left; background-color: #ffffff;">
+				<section style="background-color: #f1f1f1; border: 1px solid #cacaca; padding: 1em;">
+					<a href="/guides/itil-service-design.html"><h2 style="font-size: 1.2em; margin-bottom: .5em;">ITIL Service Design Processes</h2></a>
+					<p style="font-size: .9em; margin-bottom: 0em; font-weight: bold;">
+						<a href="/guides/itil-service-design.html#level">Service Level Management</a> | <a href="/guides/itil-service-design.html#catalog">Service Catalog Management</a> | <a href="/guides/itil-capacity-management.html">Capacity Management</a> | <a href="/guides/itil-service-design.html#availability">Availability Management</a> | <a href="/guides/itil-service-design.html#continuity">IT Service Continuity Management</a> | <a href="/guides/itil-information-security-management.html">Information Security Management</a> | <a href="/guides/itil-service-design.html#supplier">Supplier Management</a> | <a href="/guides/itil-service-design.html#design">Design Coordination</a>
+					</p>
+				</section>
+			</div>
+			-->
+			
+			<section>
 				<h2>What is Service Design?</h2>
 				<p>Service Design&nbsp;covers the fundamentals of designing services and processes.&nbsp;It provides a holistic design approach to help&nbsp;an organization deliver better services.&nbsp;</p>
 				<p>Designing a service to meet an organization&rsquo;s strategic and customer needs requires coordination and collaboration. &nbsp;Aim for high service maturity when designing services rather than the completion of an IT project. The higher the service maturity the higher&nbsp;customer and user satisfaction will be.</p>
-				<img src="http://media.cms.bmc.com/images/itil-service-design.png" alt="ITIL Service Design" />
-				<p>The five key aspects of Service Design are:</p>
-				<ol>
-					<li>Designing the service solution</li>
-					<li>Management information systems and tools</li>
-					<li>Technology</li>
-					<li>Processes</li>
-					<li>Measurements and metrics</li>
-				</ol>
-				<p>Approach all aspects with service&nbsp;oriented thinking and decision&nbsp;making.</p>
+				<div class="two-up">
+					<p>The five key aspects of Service Design are:</p>
+					<ol>
+						<li>Designing the service solution</li>
+						<li>Management information systems and tools</li>
+						<li>Technology</li>
+						<li>Processes</li>
+						<li>Measurements and metrics</li>
+					</ol>
+					<p>Approach all aspects with service&nbsp;oriented thinking and decision&nbsp;making.</p>
+				</div>
+				<div class="two-up">
+					<img src="http://media.cms.bmc.com/images/itil-service-design.png" alt="ITIL Service Design" />
+				</div>
 			</section>
 			<figure>
 				<h2>Video: ITIL Service Design Capabilities</h2>
 				<p>This video addresses capabilities needed for effectively consuming, designing and building services and systems. Relationship to service strategy, customer service focus, demand management, cloud computing and business intelligence to enable organization collaborative design capabilities are discussed. (11:46)</p>
 				<div class="video">
-					<input id="91d07e9b3676c" type="hidden" value="Find out how BMC can help you. <a      id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
+					<input id="91d07e9b3676c" type="hidden" value="Find out how BMC can help you. <a  id='overlayLink' href='http://stage.www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
 					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
 					<script type="text/javascript">viewNode("91d07e9b3676c", {"server_detection": true, "width": 640, "height": 380});</script>
 				</div>
 			</figure>
-			<section class="accordion-content">
-				<h2>
-					<a name="level"></a>Service Level Management
-				</h2>
+			<!-- SW Note: This HTML matches #376500211 and I suspect this pattern should be templatized   -->
+			<section class="wallpapered bg-darkGrey wallpaper parallax-box" style="background-image: url('http://media.cms.bmc.com/images/itil-cta-background-2.jpg');">
+				<div class="section">
+					<div class="section-content p3">
+						<h2 class="text-center h2-white">
+						<!--<h2 class="text-center h2-black"> -->
+							ITIL Best Practice Insights Book Set <span>Our ITIL e-books help you quickly understand key concepts with commentary and examples provided by BMC experts.</span>
+						</h2>
+						<a class="btn learn-more" href="/forms/ESM_TL_ITIL_ReferenceBooks_BMCcom_EN_Apr2012_V2.html?intcmp=inpage">Download free e-books</a>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h2>Service Level Management</h2>
+				<a name="level"></a>
 				<p>The service level management (SLM) process focuses on researching and understanding requirements.&nbsp;Areas include:</p>
 				<ul>
 					<li>defining, negotiating, agreeing upon and documenting IT service targets</li>
@@ -95,28 +117,28 @@ include 'php-inc/head.php';
 				</ul>
 				<p>Service level management is accountable for monitoring conformance to the SLAs and take action if there is a breach of the SLA. This means working with the service desk, incident management, and problem management.&nbsp;</p>
 				<p>Customer satisfaction is not determined only by SLA performance.&nbsp;Therefore service level management should meet with customers face-to-face on a regular basis. This helps&nbsp;to maintain a positive relationship address any concerns the customer may have.</p>
-				<div class="wrapper-nested" style="">
-					<ul class="accordion">
-						<li class="accordion-item" style=""><a class="accordion-item-anchor" href="#">Atrium Service Level Management: Free Trial</a>
-							<div class="accordion-item-content" style="">
-								<div class="wrapper-nested" style="">
-									<h2>Atrium Service Level Management</h2>
-									<div class="two-up" style="">
-										<a href="/forms/remedy-itsm-trial.html"> <img src="http://media.cms.bmc.com/images/screenshot_atrium_service_level_management.png" alt="Atrium Service Level Management" />
-										</a>
-									</div>
-									<div class="two-up nth-child-np2 nth-child-2n nth-child-np3">
-										<p>Atrium Service Level Management gives you the tools you need to define, track, and report service levels. Real-time insight helps you identify risks, prioritize resources, and deliver the quality of service the business demands.</p>
-										<a href="/it-solutions/atrium-service-level-management.html"><button>Learn More &rsaquo;</button></a> <a href="/forms/remedy-itsm-trial.html">
-											<button class="btn-secondary">Free Trial &rsaquo;</button>
-										</a>
-									</div>
-								</div>
-							</div> <!--/ content --></li>
-					</ul>
-				</div>
 			</section>
-			<section class="accordion-content">
+			<ul class="accordion">
+				<li class="accordion-item"><span class="jump-to" id="Atrium-Service-Level-Management-Free-Trial" name="Atrium-Service-Level-Management-Free-Trial"></span> <a class="accordion-item-anchor" href="#Atrium-Service-Level-Management-Free-Trial"> Atrium Service Level Management: Free Trial </a>
+					<div class="accordion-item-content">
+						<section>
+							<div class="two-up">
+								<p class="text-center">
+									<a class="modal-image" href="http://media.cms.bmc.com/images/AM+Dashboard2.gif"><img src="http://media.cms.bmc.com/images/screenshot_atrium_service_level_management.png" border="0" alt="" /></a>
+								</p>
+							</div>
+							<div class="two-up">
+								<p>Atrium Service Level Management gives you the tools you need to define, track, and report service levels. Real-time insight helps you identify risks, prioritize resources, and deliver the quality of service the business demands.</p>
+								<a href="/it-solutions/atrium-service-level-management.html"><button>Learn More &rsaquo;</button></a> <a href="/forms/remedy-itsm-trial.html">
+									<button class="btn-secondary">Free Trial &rsaquo;</button>
+								</a>
+							</div>
+							<figure>
+							</figure>
+						</section>
+					</div></li>
+			</ul>
+			<section>
 				<h2>
 					<a name="catalog"></a>Service Catalog Management
 				</h2>
@@ -128,28 +150,32 @@ include 'php-inc/head.php';
 					<li>a technical service view that is visible only to IT personnel.&nbsp;</li>
 				</ul>
 				<p>This enables the customer to choose services based on their business requirements.&nbsp;At the same&nbsp;IT personnel can use their view to determine what technical services they need to support a given business service.&nbsp;</p>
-				<div class="wrapper-nested">
-					<ul class="accordion">
-						<li class="accordion-item"><a class="accordion-item-anchor" href="#">Remedy IT Service Catalog: Free Trial</a>
-							<div class="accordion-item-content" style="display: none;">
-								<div class="wrapper-nested">
-									<h2>Remedy IT Service Catalog</h2>
-									<div class="two-up">
-										<a href="/forms/remedy-itsm-trial.html"> <img src="http://media.cms.bmc.com/images/Remedy9-ipad-homepage_3-min.png" alt="Remedy IT Service Catalog" />
-										</a>
-									</div>
-									<div class="two-up nth-child-np2 nth-child-2n nth-child-np3">
-										<p>BMC provides ITIL&reg;-compliant service catalog management solutions that help you improve user satisfaction, streamline service management, and increase opportunities for self-service automation.</p>
-										<a href="/it-solutions/it-service-catalog.html"><button>Learn More &rsaquo;</button></a> <a href="/forms/remedy-itsm-trial.html">
-											<button class="btn-secondary">Free Trial &rsaquo;</button>
-										</a>
-									</div>
-								</div>
-							</div> <!--/ content --></li>
-					</ul>
-				</div>
+			</section>
+			<ul class="accordion">
+				<li class="accordion-item"><span class="jump-to" id="Remedy-IT-Service-Catalog-Free-Trial" name="Remedy-IT-Service-Catalog-Free-Trial"></span> <a class="accordion-item-anchor" href="#Remedy-IT-Service-Catalog-Free-Trial"> Remedy IT Service Catalog: Free Trial </a>
+					<div class="accordion-item-content">
+						<section>
+							<div class="two-up">
+								<p class="text-center">
+									<a class="modal-image" href="http://media.cms.bmc.com/images/AM+Dashboard2.gif"><img src="http://media.cms.bmc.com/images/Remedy9-ipad-homepage_3-min.png" border="0" alt="" /></a>
+								</p>
+							</div>
+							<div class="two-up">
+								<p>BMC provides ITIL&reg;-compliant service catalog management solutions that help you improve user satisfaction, streamline service management, and increase opportunities for self-service automation.</p>
+							</div>
+							<a href="/it-solutions/it-service-catalog.html"><button>Learn More &rsaquo;</button></a> <a href="/forms/remedy-itsm-trial.html">
+								<button class="btn-secondary">Free Trial &rsaquo;</button>
+							</a>
+							<figure>
+							</figure>
+						</section>
+					</div></li>
+			</ul>
+			<section>
 				<h2>Capacity Management</h2>
-				<a class="btn" href="/guides/itil-capacity-management.html">ITIL Capacity Management Processes &amp; Best Practices &rsaquo;</a>
+				<section>
+					<a class="btn" href="/guides/itil-capacity-management.html" target="_self">ITIL Capacity Management Processes & Best Practices&nbsp;&#8250;</a>
+				</section>
 			</section>
 			<section>
 				<h2>
@@ -210,21 +236,46 @@ include 'php-inc/head.php';
 				<h2>Video: ITIL Service Design Management</h2>
 				<p>This video focuses on managing the development of a service product. Design coordination, cloud computing, other best practices are discussed as a component of an overall service management framework. (08:50)</p>
 				<div class="video">
-					<input id="68bffae928ce6" type="hidden" value="Find out how BMC can help you. <a      id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
+					<input id="68bffae928ce6" type="hidden" value="Find out how BMC can help you. <a  id='overlayLink' href='http://stage.www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
 					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
 					<script type="text/javascript">viewNode("68bffae928ce6", {"server_detection": true, "width": 640, "height": 380});</script>
 				</div>
 			</figure>
-			<div class="stt_container">
-				<img class="stt_image" src="http://media.cms.bmc.com/images/backtotop.png">
-			</div>
+			
+			<!-- SW Note: This HTML matches #376500211 and I suspect this pattern should be templatized   -->
+			<section class="wallpapered bg-darkGrey wallpaper parallax-box" style="background-image: url('http://media.cms.bmc.com/images/itil-cta-background-2.jpg');">
+				<div class="section">
+					<div class="section-content p3">
+						<h2 class="text-center h2-white">
+						<!--<h2 class="text-center h2-black"> -->
+							ITIL Best Practice Insights Book Set <span>Our ITIL e-books help you quickly understand key concepts with commentary and examples provided by BMC experts.</span>
+						</h2>
+						<a class="btn learn-more" href="/forms/ESM_TL_ITIL_ReferenceBooks_BMCcom_EN_Apr2012_V2.html?intcmp=inpage">Download free e-books</a>
+					</div>
+				</div>
+			</section>
+			
+			
+			<!-- script type="text/javascript">// <![CDATA[
+               var tmp = "<div style='text-align: center; background-color: #ffffff;'><section style='background-color: #f1f1f1; border: 1px solid #cacaca; padding-bottom: 0em;'><h3 style='margin-bottom: 0em; padding-bottom: 0em;'>Free Download: ITIL 5 Book Set <a href='/forms/ESM_TL_ITIL_ReferenceBooks_BMCcom_EN_Apr2012_V2.html?intcmp=inpage' class='btn-secondary' alt='Get the booklets' title='Get the booklets' style='margin-left: 1em; font-weight: 600;'>Get the booklets</a></h3></section></div>";
+
+               document.onreadystatechange = function () {
+                              if (document.readyState == "interactive") {
+                              $( document ).ready(function() {
+
+                                                            $('aside.layout-secondary section:eq(1)').css({"border-top":"none","margin-top":"0","padding-top":"0"});
+                                                            $('section.wallpapered.bar.wallpaper').after(tmp);
+                                             });
+                              }
+               }
+// ]]></script -->
 			<section class="lower-nav">
 				<h2>BMC's Complete Guide to ITIL</h2>
 				<div class="wrapper-nested">
 					<ul class="accordion">
 						<li class="accordion-item"><a class="accordion-item-anchor" href="#">Table of Contents</a>
-							<div class="accordion-item-content">
-								<ol class="itil-nav">
+							<div class="accordion-item-content" style="display: none;">
+								<ol class="itil-nav" style="margin-left: 3em;">
 									<li><a href="/guides/itil-introduction.html">Introduction to ITIL ›</a></li>
 									<li><a href="/guides/itil-service-strategy.html">ITIL Service Strategy ›</a></li>
 									<li><a href="/guides/itil-demand-management.html">ITIL Demand Management ›</a></li>
@@ -244,11 +295,29 @@ include 'php-inc/head.php';
 									<li><a href="/guides/itil-problem-management.html">ITIL Problem Management ›</a></li>
 									<li><a href="/guides/itil-continual-service-improvement.html">ITIL CSI Service Improvement ›</a></li>
 								</ol>
-							</div> <!--/ content -->
-						</li>
+							</div></li>
 					</ul>
 				</div>
-				
+				<ol class="nav-bottom">
+					<li><a href="/guides/itil-introduction.html">Introduction to ITIL ›</a></li>
+					<li><a href="/guides/itil-service-strategy.html">ITIL Service Strategy ›</a></li>
+					<li><a href="/guides/itil-demand-management.html">ITIL Demand Management ›</a></li>
+					<li><a href="/guides/itil-service-design.html">ITIL Service Design ›</a></li>
+					<li><a href="/guides/itil-capacity-management.html">ITIL Capacity Management ›</a></li>
+					<li><a href="/guides/itil-information-security-management.html">ITIL Information Security Management ›</a></li>
+					<li><a href="/guides/itil-service-transition.html">ITIL Service Transition ›</a></li>
+					<li><a href="/guides/itil-change-management.html">ITIL Change Management ›</a></li>
+					<li><a href="/guides/itil-release-deployment-management.html">ITIL Release and Deployment Management›</a></li>
+					<li><a href="/guides/itil-asset-configuration-management.html">ITIL Asset and Configuration Management›</a></li>
+					<li><a href="/guides/itil-knowledge-management.html">ITIL Knowledge Management ›</a></li>
+					<li><a href="/guides/itil-service-operation.html">ITIL Service Operation ›</a></li>
+					<li><a href="/guides/itil-incident-management.html">ITIL Incident Management ›</a></li>
+					<li><a href="/guides/itil-service-request-fulfillment.html">ITIL Service Request Fulfillment›</a></li>
+					<li><a href="/guides/itil-event-management.html">ITIL Event Management›</a></li>
+					<li><a href="/guides/itil-access-management.html">ITIL Access Management ›</a></li>
+					<li><a href="/guides/itil-problem-management.html">ITIL Problem Management ›</a></li>
+					<li><a href="/guides/itil-continual-service-improvement.html">ITIL CSI Service Improvement ›</a></li>
+				</ol>
 				<div class="itil-introduction-nav" data-showon="itil-introduction">
 					<a href="/guides/itil-service-strategy.html">
 						<div id="arrow4" class="arrow">
@@ -256,21 +325,21 @@ include 'php-inc/head.php';
 						</div>
 					</a>
 				</div>
-				<div class="itil-service-strategy-nav" data-showon="itil-service-strategy" >
+				<div class="itil-service-strategy-nav" data-showon="itil-service-strategy">
 					<a href="/guides/itil-demand-management.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: ITIL Demand Management</div>
 						</div>
 					</a>
 				</div>
-				<div class="itil-demand-management-nav" data-showon="itil-demand-management" >
+				<div class="itil-demand-management-nav" data-showon="itil-demand-management">
 					<a href="/guides/itil-service-design.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: ITIL Service Design</div>
 						</div>
 					</a>
 				</div>
-				<div class="itil-service-design-nav"  data-showon="itil-service-design">
+				<div class="itil-service-design-nav" data-showon="itil-service-design">
 					<a href="/guides/itil-capacity-management.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: ITIL Capacity Management</div>
@@ -347,21 +416,21 @@ include 'php-inc/head.php';
 						</div>
 					</a>
 				</div>
-				<div class="itil-event-management-nav" data-showon="itil-event-management-nav">
-					<a href="/guides/itil-access-management.html" >
+				<div class="itil-event-management-nav" data-showon="itil-event-management">
+					<a href="/guides/itil-access-management.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: ITIL Access Management</div>
 						</div>
 					</a>
 				</div>
-				<div class="itil-access-management-nav" data-showon="itil-access-management-nav">
+				<div class="itil-access-management-nav" data-showon="itil-access-management">
 					<a href="/guides/itil-problem-management.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: ITIL Problem Management</div>
 						</div>
 					</a>
 				</div>
-				<div class="itil-problem-management-nav" data-showon="itil-problem-management" >
+				<div class="itil-problem-management-nav" data-showon="itil-problem-management">
 					<a href="/guides/itil-continual-service-improvement.html">
 						<div id="arrow4" class="arrow">
 							<div class="red">Next: Continual Service Improvement</div>
@@ -394,14 +463,14 @@ include 'php-inc/head.php';
 					<li><a class="learn-more" href="/guides/itil-continual-service-improvement.html" target="_self">ITIL Continual Service Improvement</a></li>
 				</ol>
 			</section>
-			<section class="no-top-border-margin-padding">
+			<section>
 				<figure>
 				</figure>
 				<a href="/guides/guides-main.html">Explore other BMC Guides &rsaquo;</a>
 				<!-- Add This-->
 				<!--   .at_flat_counter:last-of-type {    display:none !important; } -->
 				<script src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=wattssw" type="text/javascript"></script>
-				<h3 class="mt1">Share on Social Media</h3>
+				<h3 style="margin-top: 1em;">Share on Social Media</h3>
 				<div class="addthis_sharing_toolbox"></div>
 			</section>
 			<section>
@@ -416,36 +485,38 @@ include 'php-inc/head.php';
 					<a href="/education/it-certifications/itil-v3-training.html"> <img src="http://media.cms.bmc.com/images/ITIL_featured_asset_320x170.png" alt="ITIL Certification & Training" title="ITIL Certification & Training" width="320" height="170" border="0"></img>
 					</a>
 				</figure>
-				BMC Education Services offers ITIL certification paths for key roles in your organization. <a href="/education/it-certifications/itil-v3-training.html" target="_self">Explore ITIL Training &rsaquo;</a>
+				BMC Education Services offers ITIL certification paths for key roles in your organization. <a href="/education/courses/itil-v3-training.html" target="_self">Explore ITIL Training &rsaquo;</a>
 			</section>
 			<section>
 				<h3>Join the conversation</h3>
 				<a href="https://communities.bmc.com/community/bsm_initiatives/itil_cmdb">Get the scoop on ITIL best practices in our ITIL and CMDB community</a>
 			</section>
-			<section>
-				<h3 class="mb1">Explore ITIL Blog Posts</h3>
+			
+			<section class="blog-post">
+				<h3>Explore ITIL Blog Posts</h3>
 				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 bloghide">
 					<a class="entry-title" href="http://www.bmc.com/blogs/itil-and-devops-lets-not-paper-over-the-differences/">ITIL and DevOps: Let’s Not Paper Over the Differences</a>
 				</div>
-				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3" style="margin-top: .2em; width: 50%;">
+				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 entry-image">
 					<a class="entry-title" href="http://www.bmc.com/blogs/itil-and-devops-lets-not-paper-over-the-differences/"> <img src="http://blogs.bmc.com/wp-content/uploads/2015/06/ITIL_and_DevOps_-320x170.jpg" alt="Delivering Successful IT Change Management">
 					</a>
 				</div>
 				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 bloghide">
 					<a class="entry-title" href="http://www.bmc.com/blogs/service-catalog-vs-service-portfolio-whats-the-difference/">Service Portfolio vs Service Catalog: What's The Difference?</a>
 				</div>
-				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3" style="margin-top: .2em; width: 50%;">
+				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 entry-image">
 					<a class="entry-title" href="http://www.bmc.com/blogs/service-catalog-vs-service-portfolio-whats-the-difference/"> <img src="http://blogs.bmc.com/wp-content/uploads/2015/05/IT-Silos_Part3_Blog_700x400_04272015-320x170.png" alt="Service Catalog vs Service Portfolio">
 					</a>
 				</div>
 				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 bloghide">
 					<a class="entry-title" href="http://www.bmc.com/blogs/itsm-or-itil-that-isnt-the-question/">ITSM or ITIL? That Isn’t the Question</a>
 				</div>
-				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3" style="margin-top: .2em; width: 50%;">
-					<a class="entry-title" href="http://www.bmc.com/blogs/itsm-or-itil-that-isnt-the-question/"> <img src="http://blogs.bmc.com/wp-content/uploads/2015/03/ITIL_ITSL_Blog_700x400_03242015-320x170.png" alt="ITSM or ITIL? That Isn’t the Question">
+				<div class="two-up nth-child-np2 nth-child-2n nth-child-np3 entry-image">
+					<a class="entry-title " href="http://www.bmc.com/blogs/itsm-or-itil-that-isnt-the-question/"> <img src="http://blogs.bmc.com/wp-content/uploads/2015/03/ITIL_ITSL_Blog_700x400_03242015-320x170.png" alt="ITSM or ITIL? That Isn’t the Question">
 					</a>
 				</div>
 			</section>
+			
 			<section>
 				<p>
 					<span class="caption">ITIL&reg; is a registered trade mark of AXELOS Limited<br />
@@ -460,33 +531,38 @@ include 'php-inc/head.php';
 				<h3>
 					<a href="/it-solutions/remedy-itsm.html">Remedy IT Service Management Suite</a>
 				</h3>
-				<p class="mb-pt-3em">Configurable and extensible ITSM platform delivered on premises or in the cloud</p>
+				<p>Configurable and extensible ITSM platform delivered on premises or in the cloud</p>
 				<a href="/it-solutions/remedy-itsm.html">Learn More</a> | <a href="/forms/remedy-itsm-trial.html">Free Trial</a>
 				<h3>
 					<a href="/it-solutions/atrium-cmdb.html">Atrium Configuration Management Database (CMDB)</a>
 				</h3>
-				<p class="mb-pt-3em">Authoritative source of reference for the IT components, systems, and services that make up your business and IT environments</p>
+				<p>Authoritative source of reference for the IT components, systems, and services that make up your business and IT environments</p>
 				<a href="/it-solutions/atrium-cmdb.html">Learn More</a>
 				<h3>
 					<a href="/it-solutions/remedyforce.html">Remedyforce</a>
 				</h3>
-				<p class="mb-pt-3em">Complete IT service management built on the Salesforce cloud platform</p>
+				<p>Complete IT service management built on the Salesforce cloud platform</p>
 				<a href="/it-solutions/remedyforce.html">Learn More</a> | <a href="/forms/ITSM-RF-TrialFY15-BMCCom.html">Free Trial</a>
 				<h3>
-					<a href="/it-solutions/footprints-service-core.html">FootPrints Service Core</a>
+					<a href="/it-solutions/footprints-service-desk.html">FootPrints service desk</a>
 				</h3>
-				<p class="mb-pt-3em">BMC FootPrints Service Core delivers a powerful suite of on-premises tools to help manage the entire lifecycle of your IT services</p>
-				<a href="/it-solutions/footprints-service-core.html">Learn More</a> | <a href="/forms/ITSM-FPSC-TrialFY15.html">Free Trial</a>
+				<p>FootPrints service desk delivers a powerful suite of on-premises tools to help manage the entire lifecycle of your IT services</p>
+				<a href="/it-solutions/footprints-service-desk.html">Learn More</a> | <a href="/forms/ITSM-FPSC-TrialFY15.html">Free Trial</a>
 				<h3>
 					<a href="/it-solutions/client-management.html">Client Management</a>
 				</h3>
-				<p class="mb-pt-3em">BMC Client Management automates management of your IT assets to help control costs, maintain compliance, and reduce financial risks</p>
+				<p>BMC Client Management automates management of your IT assets to help control costs, maintain compliance, and reduce financial risks</p>
 				<a href="/it-solutions/client-management.html">Learn More</a> | <a href="/forms/ITSM-ClientMgmt-Trial-Email.html">Free Trial</a>
 				<h3>
 					<a href="/it-solutions/myit.html">MyIT</a>
 				</h3>
-				<p class="mb-pt-3em">BMC MyIT modernizes your business with formless requests, context-aware services and crowdsourced collaboration</p>
+				<p style="margin-bottom: .3em;">BMC MyIT modernizes your business with formless requests, context-aware services and crowdsourced collaboration</p>
 				<a href="/it-solutions/myit.html">Learn More</a> | <a href="/forms/Try_MyIT.html">Free Trial</a>
+				<h3>
+					<a href="/it-solutions/discovery-dependency-mapping.html">BMC Discovery</a>
+				</h3>
+				<p style="margin-bottom: .3em;">BMC Discovery (formerly ADDM) automatically discovers data center inventory, configuration, and relationship data, and maps business applications to the IT infrastructure</p>
+				<a href="/it-solutions/discovery-dependency-mapping.html">Learn More</a> | <a href="/forms/ITSM-Discovery-Launch-Q4FY16-Trial-Email.html">Free Trial</a>
 			</section>
 		</aside>
 	</div>

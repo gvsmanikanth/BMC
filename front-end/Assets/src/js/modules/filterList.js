@@ -235,6 +235,35 @@ window.FilterList;
 			}
 			return returnVal.join(", ");
 		};
+		
+		//get display name for fields.
+		FilterList.prototype.getFilterObjectForItem = function(source, item) {
+			var self = this;
+			
+			if (!source)
+				return "";
+			var filterSource = [];
+
+			for (var i = 0; i < self.filteringOptions.length; i++) {
+				var opt = self.filteringOptions[i];
+				if (opt.name == source) {
+					filterSource = opt.values;
+				}
+			}
+			if (item) {
+				var ids = item[source];
+
+				var returnVal = [];
+				filterSource.forEach(function(filter) {
+					ids.forEach(function(id) {
+						if (filter.id == id) {
+							returnVal.push(filter);
+						}
+					});
+				});
+			}
+			return returnVal;
+		};
 
 		// It fills up the list list
 		// It recieves one parameter - the data we took from json.
@@ -253,15 +282,7 @@ window.FilterList;
 			self.renderListItems(data);
 			
 		};
-// 		
-		// FilterList.prototype.addTotalItemCount = function(data) {
-			// var self = this;
-			// var listCount = $('.list-count');
-			// listCount.empty();
-// 			
-			// // use displayCount in case of pagination - todo.
-			// listCount.append("<h5>"+data.length+" of "+this.list.length+"</h5>");
-		// };
+
 			
 		FilterList.prototype.renderPaginationControl = function(data) {
 			
@@ -572,6 +593,8 @@ window.FilterList;
 		
 		
 		FilterList.prototype.updateFilterCount = function() {
+			var self = this;
+			if(self.showMatchCountInDropdown){
 					var self = this;
 					self.filteringOptions.forEach(function(item) {
 						$.each(item.values, function(index, object) {
@@ -579,6 +602,7 @@ window.FilterList;
 							$(selector).text(object.name + self.getCount(item.name,object.id));
 						});
 					});
+			}
 		};
 		
 		FilterList.prototype.initializeFilters = function() {
