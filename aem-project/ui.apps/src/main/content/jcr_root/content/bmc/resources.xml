@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:vlt="http://www.day.com/jcr/vault/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[vlt:FullCoverage]"
+    jcr:primaryType="nt:unstructured">
+    <product-interest jcr:primaryType="nt:unstructured">
+        <caption
+            jcr:primaryType="nt:unstructured"
+            disabled="true"
+            selected="true"
+            text="Product interest"/>
+        <BMC-Application-Management-Suite
+            jcr:primaryType="nt:unstructured"
+            text="BMC Application Management Suite"
+            value="APM"/>
+        <BMC-Application-Performance-Management
+            jcr:primaryType="nt:unstructured"
+            text="BMC Application Performance Management"
+            value="TrueSight APM"/>
+        <BMC-Application-Release-Manager
+            jcr:primaryType="nt:unstructured"
+            text="BMC Application Release Manager"
+            value="APM"/>
+        <BMC-AppZone
+            jcr:primaryType="nt:unstructured"
+            text="BMC AppZone"
+            value="SaaS AppZone"/>
+        <BMC-Atrium
+            jcr:primaryType="nt:unstructured"
+            text="BMC Atrium"
+            value="Discovery"/>
+        <BMC-Bladelogic-Automation-Suite
+            jcr:primaryType="nt:unstructured"
+            text="BMC Bladelogic Automation Suite"
+            value="BDA"/>
+        <BMC-BladeLogic-Database-Automation
+            jcr:primaryType="nt:unstructured"
+            text="BMC BladeLogic Database Automation"
+            value="BDA"/>
+        <BMC-BladeLogic-Middleware-Automation
+            jcr:primaryType="nt:unstructured"
+            text="BMC BladeLogic Middleware Automation"
+            value="BMA"/>
+        <BMC-Bladelogic-Network-Automation
+            jcr:primaryType="nt:unstructured"
+            text="BMC Bladelogic Network Automation"
+            value="BNA"/>
+        <BMC-BladeLogic-Server-Automation
+            jcr:primaryType="nt:unstructured"
+            text="BMC BladeLogic Server Automation"
+            value="BSA"/>
+        <BMC-Capacity-Automation
+            jcr:primaryType="nt:unstructured"
+            text="BMC Capacity Optimizer"
+            value="TrueSight Capacity"/>
+        <BMC-Client-Management-Asset-Core
+            jcr:primaryType="nt:unstructured"
+            text="BMC Client Management (Asset Core)"
+            value="BCM"/>
+        <BMC-Cloud-Lifecycle-Management
+            jcr:primaryType="nt:unstructured"
+            text="BMC Cloud Lifecycle Management"
+            value="CLM"/>
+        <BMC-Cloud-Operations-Management
+            jcr:primaryType="nt:unstructured"
+            text="BMC Cloud Operations Management"
+            value="CLM"/>
+        <BMC-Consulting-Services
+            jcr:primaryType="nt:unstructured"
+            text="BMC Consulting Services"
+            value="Consulting"/>
+        <BMC-Control-D
+            jcr:primaryType="nt:unstructured"
+            text="BMC Control-D"
+            value="Control D"/>
+        <BMC-Control-M
+            jcr:primaryType="nt:unstructured"
+            text="BMC Control-M"
+            value="Control M"/>
+        <BMC-Data-Management-Solutions-for-DB2
+            jcr:primaryType="nt:unstructured"
+            text="BMC Data Management Solutions for DB2"
+            value="DB2"/>
+        <BMC-Data-Management-Solutions-for-IMS
+            jcr:primaryType="nt:unstructured"
+            text="BMC Data Management Solutions for IMS"
+            value="IMS"/>
+        <BMC-DM-DS
+            jcr:primaryType="nt:unstructured"
+            text="BMC DM-DS"
+            value="DM - DS"/>
+        <BMC-Education-Services
+            jcr:primaryType="nt:unstructured"
+            text="BMC Education Services"
+            value="Education"/>
+        <BMC-Footprints-Service-Core
+            jcr:primaryType="nt:unstructured"
+            text="BMC Footprints Service Core"
+            value="FootPrints Service Core"/>
+        <BMC-Innovation-Suite
+            jcr:primaryType="nt:unstructured"
+            text="BMC Innovation Suite"
+            value="Innovation Suite"/>
+        <BMC-Mainframe-Solutions
+            jcr:primaryType="nt:unstructured"
+            text="BMC Mainframe Solutions"
+            value="DM - MF"/>
+        <BMC-MainView
+            jcr:primaryType="nt:unstructured"
+            text="BMC MainView"
+            value="Mainview"/>
+        <BMC-Marketplace
+            jcr:primaryType="nt:unstructured"
+            text="BMC Marketplace"
+            value="SaaS Marketplace"/>
+        <BMC-Mobile-Device-Manager
+            jcr:primaryType="nt:unstructured"
+            text="BMC Mobile Device Manager"
+            value="Mobility"/>
+        <BMC-MyIT
+            jcr:primaryType="nt:unstructured"
+            text="BMC MyIT"
+            value="MyIT"/>
+        <BMC-Remedy-ITSM-Suite
+            jcr:primaryType="nt:unstructured"
+            text="BMC Remedy ITSM Suite"
+            value="Remedy"/>
+        <BMC-Remedy-OnDemand
+            jcr:primaryType="nt:unstructured"
+            text="BMC Remedy OnDemand"
+            value="SaaS Remedy On Demand"/>
+        <BMC-Remedyforce
+            jcr:primaryType="nt:unstructured"
+            text="BMC Remedyforce"
+            value="SaaS Remedy Force"/>
+        <BMC-Service-Management
+            jcr:primaryType="nt:unstructured"
+            text="BMC Service Management"
+            value="Remedy"/>
+        <BMC-Track-IT
+            jcr:primaryType="nt:unstructured"
+            text="BMC Track-IT!"
+            value="Track-It!"/>
+        <BMC-TrueSight
+            jcr:primaryType="nt:unstructured"
+            text="BMC TrueSight"
+            value="SaaS TrueSight Intelligence"/>
+        <BMC-TrueSight-Capacity
+            jcr:primaryType="nt:unstructured"
+            text="BMC TrueSight Capacity"
+            value="TrueSight Capacity"/>
+    </product-interest>
+</jcr:root>
