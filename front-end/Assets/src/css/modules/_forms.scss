@@ -19,7 +19,8 @@ fieldset:not(#foo) {
 			clear: none;
 			display: inline-block;
 			padding: 6px 5px 4px 27px;
-
+      width: 100%;
+      
 			&:before {
 				@include icon();
 				margin-left: em(-18);
