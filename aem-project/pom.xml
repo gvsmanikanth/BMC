@@ -133,19 +133,6 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-bundle</artifactId>
-                <version>3.9.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-content</artifactId>
-                <version>3.9.0</version>
-                <scope>provided</scope>
-                <type>content-package</type>
-            </dependency>
-            <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
                 <version>6.3.0</version>
@@ -168,13 +155,6 @@
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- Core components -->
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.core</artifactId>
-                <version>1.0.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
