@@ -311,7 +311,7 @@ audio:not([controls]) {
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
+ *    UserMeta zoom.
  */
 
 html {
@@ -10113,7 +10113,7 @@ svg {
 }
 
 /**
- *  BMC Engage Landing Page 2015
+ *  BMC Engage Landing PageMeta 2015
  */
 
 .bmc-engage section,
@@ -10184,7 +10184,7 @@ svg {
 }
 
 /**
- * BMC Page Sections
+ * BMC PageMeta Sections
  */
 
 section.bmc-engage-header.layout-full-bleed {
@@ -11785,7 +11785,7 @@ section.bmc-engage-header.layout-full-bleed .btn.btn-hollow:hover {
 }
 
 /**
- * Support base overrides
+ * SupportMeta base overrides
  */
 
 body.support-central {
@@ -11793,7 +11793,7 @@ body.support-central {
 }
 
 /**
- * Support Helpers
+ * SupportMeta Helpers
  */
 
 .support-logged-out .support-section-divider.above-support-section-container,
@@ -11816,7 +11816,7 @@ body.support-central {
 }
 
 /**
- * Support elements
+ * SupportMeta elements
  * Small and used throughout
  */
 
@@ -11960,7 +11960,7 @@ body.support-central {
 }
 
 /**
- * Support component container default
+ * SupportMeta component container default
  * Apply to support component containers where necessary to apply consistent
  * styling
  */
@@ -11976,7 +11976,7 @@ body.support-central {
 }
 
 /**
- * Support component containers
+ * SupportMeta component containers
  */
 
 .support-account-container {
