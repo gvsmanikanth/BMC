@@ -33,6 +33,7 @@
             </li>
         </ul>
 
+        <sly data-sly-test="${wcmmode.edit}">
         <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
              data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
              class="${api.cssClass} ${allowed.cssClass}">
@@ -46,6 +47,17 @@
             <sly data-sly-test="${!isAllowedApplicable}"
                  data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
         </div>
+        </sly>
+
+        <sly data-sly-use.tabs="com.bmc.components.Tabs" data-sly-test="${!wcmmode.edit}">
+            <sly data-sly-list.tab="${tabs.tabItems}">
+            <div id="${properties.tab1hash}" class="section bg-seashell" data-sly-test="${properties.tab1title}">
+                <div class="section-content md-flex p3">
+                    <sly data-sly-resource="${tab.path @ resourceType=tab.resourceType, decorationTagName='div', cssClassName=tab.cssClass}"></sly>
+                </div>
+            </div>
+            </sly>
+        </sly>
 
     </div>
 </section>
