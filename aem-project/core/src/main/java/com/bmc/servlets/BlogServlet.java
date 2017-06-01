@@ -13,8 +13,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 @SlingServlet(paths = "/bin/blogs", methods = {"GET"})
@@ -53,10 +55,12 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     private String loadUrl(String src) {
         String html = null;
-        URLConnection connection = new URL(url + "?" + query).openConnection();
-        connection.setRequestProperty("Accept-Charset", charset);
+        HttpURLConnection connection = null;
         try {
+            connection = (HttpURLConnection) new URL(src).openConnection();
+            connection.setRequestProperty("Accept-Charset", StandardCharsets.UTF_8.name());
             InputStream response = connection.getInputStream();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
