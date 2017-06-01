@@ -2688,6 +2688,10 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	margin: 0;
 }
 
+.accordion--editing .accordion-item-content {
+	display: block !important;
+}
+
 .append-around-low-resolution {
 	display: block !important;
 }
