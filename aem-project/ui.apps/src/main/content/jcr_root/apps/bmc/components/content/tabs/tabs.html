@@ -1,0 +1,42 @@
+<section data-sly-use.tabs="com.bmc.components.Tabs">
+    <div id="industry-tabs" class="${wcmmode.edit ? 'industry-tabs--editing industry-tabs bg-corduroy' : 'industry-tabs bg-corduroy'} ">
+        <h2 class="section-title m0 p3 text-center white">${properties.headerText}</h2>
+        <ul class="tabs-nav -hr bg-corduroy center-block overflow-auto flex-table" style="max-width:1200px;">
+
+            <sly data-sly-list.tab="${tabs.tabs}">
+                <li class="bg-sirocco" style="width:1px" data-sly-test="${!tabList.first}"></li>
+                <li class="flex-cell" data-sly-test="${tab.title}">
+                    <a class="p2 white bold no-scroll" href="#${tab.hash}">${tab.title}</a>
+                </li>
+            </sly>
+
+        </ul>
+
+        <sly data-sly-test="${wcmmode.edit}">
+        <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+             data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
+             class="${api.cssClass} ${allowed.cssClass}">
+            <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+                 data-sly-test="${isAllowedApplicable}"
+                 data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+                 data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+            <sly data-sly-test="${!isAllowedApplicable}"
+                 data-sly-repeat.child="${api.paragraphs}"
+                 data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
+            <sly data-sly-test="${!isAllowedApplicable}"
+                 data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+        </div>
+        </sly>
+
+        <sly data-sly-test="${!wcmmode.edit}">
+            <sly data-sly-list.tab="${tabs.tabItems}">
+            <div id="${tabs.tabs[tabList.index].hash}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
+                <div class="section-content md-flex p3">
+                    <sly data-sly-resource="${tab.path @ resourceType=tab.resourceType, decorationTagName='div', cssClassName=tab.cssClass}"></sly>
+                </div>
+            </div>
+            </sly>
+        </sly>
+
+    </div>
+</section>
