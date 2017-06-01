@@ -758,6 +758,11 @@ fieldset label + select {
 	display: inline-block;
 }
 
+fieldset .cmp {
+	padding:0px 5px 10px;
+	line-height: 0.7;
+}
+
 fieldset input[type="text"],
 fieldset input[type="number"],
 fieldset input[type="password"],
