@@ -115,6 +115,7 @@
                 <configuration>
                     <group>bmc</group>
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+
                     <embeddeds>
                         <embedded>
                             <groupId>com.bmc</groupId>
@@ -122,6 +123,15 @@
                             <target>/apps/bmc/install</target>
                         </embedded>
                     </embeddeds>
+
+                    <subPackages>
+                        <subPackage>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-content</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
+
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                 </configuration>
             </plugin>
