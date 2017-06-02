@@ -2688,6 +2688,10 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	margin: 0;
 }
 
+.accordion--editing .accordion-item-content {
+	display: block !important;
+}
+
 .append-around-low-resolution {
 	display: block !important;
 }
@@ -11160,6 +11164,11 @@ section.bmc-engage-header.layout-full-bleed .btn.btn-hollow:hover {
 
 .industry-tabs {
 	width: 100%;
+}
+
+.industry-tabs.industry-tabs--editing .r-tabs-panel {
+	border-bottom: 1px solid #333;
+	display: block !important;
 }
 
 .industry-tabs .tab-module-image {

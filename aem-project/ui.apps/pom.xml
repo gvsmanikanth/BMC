@@ -115,6 +115,7 @@
                 <configuration>
                     <group>bmc</group>
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+
                     <embeddeds>
                         <embedded>
                             <groupId>com.bmc</groupId>
