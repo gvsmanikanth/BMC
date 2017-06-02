@@ -1,6 +1,6 @@
 <form data-sly-use.container="com.adobe.cq.wcm.core.components.models.form.Container"
       data-sly-use.grid="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
-      id="${container.id}" name="${container.name}" method="POST" action="${currentPage.path}.html?PURL=123456"
+      id="${container.id}" name="${container.name}" method="POST" action="${currentPage.path}/jcr_content.wm.html?PURL=123456"
       enctype="${container.enctype}"
       class="${grid.cssClass} customerform" novalidate="novalidate">
     <input data-sly-test="${properties.elqCampaignID}" id="elqCampaignID" name="elqCampaignID" type="hidden" value="${properties.elqCampaignID}"/>
