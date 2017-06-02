@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Form Container"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          helpPath="https://www.adobe.com/go/aem_cmp_form_container_v1">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured" sling:hideChildren="[main]">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maxmized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <main
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Main"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <elqCampaignID
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Title for the workflow."
+                                            fieldLabel="Eloqua Campaign ID"
+                                            name="./elqCampaignID"
+                                            required="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <campaignid
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Title for the workflow."
+                                            fieldLabel="Campaign ID (SFDC Campaign ID)"
+                                            name="./campaignid"
+                                            required="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <C_Lead_Business_Unit1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Title for the workflow."
+                                            fieldLabel="Business Unit"
+                                            name="./C_Lead_Business_Unit1"
+                                            required="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ESO jcr:primaryType="nt:unstructured"
+                                                text="ESO"
+                                                value="ESO"/>
+                                            <ZSO jcr:primaryType="nt:unstructured"
+                                                  text="ZSO"
+                                                  value="ZSO"/>
+                                            <Unknown jcr:primaryType="nt:unstructured"
+                                                  text="Unknown"
+                                                  value="Unknown"/>
+                                        </items>
+                                    </C_Lead_Business_Unit1>
+                                    <productLine1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Product Line"
+                                            fieldLabel="Product Line"
+                                            name="./productLine1"
+                                            required="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <DCA jcr:primaryType="nt:unstructured"
+                                                    value="DCA / Cloud"
+                                                    text="DCA / Cloud"/>
+                                                <DSM jcr:primaryType="nt:unstructured"
+                                                     value="DSM"
+                                                     text="DSM"/>
+                                                <PandA jcr:primaryType="nt:unstructured"
+                                                     value="P&amp;A"
+                                                     text="P&amp;A"/>
+                                                <WLA jcr:primaryType="nt:unstructured"
+                                                     value="WLA"
+                                                     text="WLA"/>
+                                                <DM jcr:primaryType="nt:unstructured"
+                                                     value="DM"
+                                                     text="DM"/>
+                                                <MV jcr:primaryType="nt:unstructured"
+                                                     value="MV"
+                                                     text="MV"/>
+                                                <STG jcr:primaryType="nt:unstructured"
+                                                     value="STG"
+                                                     text="STG"/>
+                                                <Unknown jcr:primaryType="nt:unstructured"
+                                                     value="Unknown"
+                                                     text="Unknown"/>
+                                            </items>
+                                    </productLine1>
+                                    <C_Lead_Offer_Most_Recent1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="Lead Offer"
+                                            fieldLabel="Lead Offer"
+                                            required="{Boolean}true"
+                                            name="./C_Lead_Offer_Most_Recent1"
+                                            wrapperClass="cmp-workflow-title">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <e4 jcr:primaryType="nt:unstructured"
+                                                     value="Analyst Report"
+                                                     text="Analyst Report"/>
+                                                <t5 jcr:primaryType="nt:unstructured"
+                                                value="Contact Me"
+                                                text="Contact Me"/>
+                                                <nn jcr:primaryType="nt:unstructured"
+                                                value="Demo"
+                                                text="Demo"/>
+                                                <mm jcr:primaryType="nt:unstructured"
+                                                value="Eval Request"
+                                                text="Eval Request"/>
+                                                <xx jcr:primaryType="nt:unstructured"
+                                                value="Event"
+                                                text="Event"/>
+                                                <ww jcr:primaryType="nt:unstructured"
+                                                value="Newsletter"
+                                                text="Newsletter"/>
+                                                <ll jcr:primaryType="nt:unstructured"
+                                                value="Offer General"
+                                                text="Offer General"/>
+                                                <ii jcr:primaryType="nt:unstructured"
+                                                value="Pricing Request"
+                                                text="Pricing Request"/>
+                                                <uu jcr:primaryType="nt:unstructured"
+                                                value="ROI Tool"
+                                                text="ROI Tool"/>
+                                                <jj jcr:primaryType="nt:unstructured"
+                                                value="Sales Event"
+                                                text="Sales Event"/>
+                                                <hh jcr:primaryType="nt:unstructured"
+                                                value="Subscription"
+                                                text="Subscription"/>
+                                                <ff jcr:primaryType="nt:unstructured"
+                                                value="Test Drive"
+                                                text="Test Drive"/>
+                                                <rr jcr:primaryType="nt:unstructured"
+                                                value="Tradeshow"
+                                                text="Tradeshow"/>
+                                                <ee jcr:primaryType="nt:unstructured"
+                                                value="Trial Download"
+                                                text="Trial Download"/>
+                                                <ww jcr:primaryType="nt:unstructured"
+                                                value="Unknown"
+                                                text="Unknown"/>
+                                                <qq jcr:primaryType="nt:unstructured"
+                                                value="Value Assessment Tool"
+                                                text="Value Assessment Tool"/>
+                                                <aa jcr:primaryType="nt:unstructured"
+                                                value="Webinar - Recorded"
+                                                text="Webinar - Recorded"/>
+                                                <xx jcr:primaryType="nt:unstructured"
+                                                value="Webinar - Live"
+                                                text="Webinar - Live"/>
+                                                <zz jcr:primaryType="nt:unstructured"
+                                                value="White Paper"
+                                                text="White Paper"/>
+                                            </items>
+                                    </C_Lead_Offer_Most_Recent1>
+                                    <ex_assettype
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="External Activity Type"
+                                            fieldLabel="External Activity Type"
+                                            required="{Boolean}true"
+                                            name="./ex_assettype"
+                                            wrapperClass="cmp-workflow-title">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <aa jcr:primaryType="nt:unstructured"
+                                                value="Request"
+                                                text="Request"/>
+                                            <ss jcr:primaryType="nt:unstructured"
+                                                value="Content"
+                                                text="Content"/>
+                                            <dd jcr:primaryType="nt:unstructured"
+                                                value="Event"
+                                                text="Event"/>
+                                        </items>
+                                    </ex_assettype>
+                                    <ex_act
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldDescription="External Activity"
+                                            fieldLabel="External Activity"
+                                            required="{Boolean}true"
+                                            name="./ex_act"
+                                            wrapperClass="cmp-workflow-title">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <jj jcr:primaryType="nt:unstructured"
+                                                value="Contact Me"
+                                                text="Contact Me"/>
+                                                <hh jcr:primaryType="nt:unstructured"
+                                                value="Pricing Request"
+                                                text="Pricing Request"/>
+                                                <gg jcr:primaryType="nt:unstructured"
+                                                value="Engaged in Trial"
+                                                text="Engaged in Trial"/>
+                                                <ff jcr:primaryType="nt:unstructured"
+                                                value="Demo Request"
+                                                text="Demo Request"/>
+                                                <dd jcr:primaryType="nt:unstructured"
+                                                value="Viewed"
+                                                text="Viewed"/>
+                                                <ss jcr:primaryType="nt:unstructured"
+                                                value="Download"
+                                                text="Download"/>
+                                                <aa jcr:primaryType="nt:unstructured"
+                                                value="Registered"
+                                                text="Registered"/>
+                                                <ww jcr:primaryType="nt:unstructured"
+                                                value="Training Request"
+                                                text="Training Request"/>
+
+                                            </items>
+                                    </ex_act>
+                                    <ex_assetname
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="External Asset Name"
+                                            fieldLabel="External Asset Name"
+                                            required="{Boolean}true"
+                                            name="./ex_assetname"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <LMA_license
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Generate LMA License"
+                                            text="Generate LMA License"
+                                            name="./LMA_license"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <AWS_Trial
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="AWS Trial"
+                                            text="AWS Trial"
+                                            name="./AWS_Trial"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <formname
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Eloqua Form Name (DO NOT USE!)"
+                                            fieldLabel="Eloqua Form Name (DO NOT USE!)"
+                                            name="./formname"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <formid
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Eloqua Form ID (DO NOT USE!)"
+                                            fieldLabel="Eloqua Form ID (DO NOT USE!)"
+                                            name="./formid"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <leadDescription1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Lead Description"
+                                            fieldLabel="Lead Description"
+                                            name="./leadDescription1"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <emailid
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Thank You Email ID"
+                                            fieldLabel="Thank You Email ID"
+                                            name="./emailid"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <C_OptIn
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Force 'Opt In'"
+                                            text="Force 'Opt In'"
+                                            name="./C_OptIn"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <C_Contact_Me1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Force 'Contact Me'"
+                                            text="Force 'Contact Me'"
+                                            value="Yes"
+                                            name="./C_Contact_Me1"
+                                            wrapperClass="cmp-workflow-title"/>
+
+
+                                    <!--//NON-SUBMITTING//-->
+                                    <!--<postButtonText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Submit Button Text"
+                                            fieldLabel="Submit Button Text"
+                                            name="./postButtonText"
+                                            wrapperClass="cmp-workflow-title"/>-->
+                                </items>
+                            </column>
+                        </items>
+                    </main>
+                    <no-render
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Non Rendering"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <PURLRedirectPage
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="PURL Redirect Page"
+                                            fieldLabel="PURL Redirect Page"
+                                            name="./PURLRedirectPage"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <activePURLRedirect
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Active PURL Redirect"
+                                            fieldLabel="Active PURL Redirect"
+                                            name="./activePURLRedirect"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <activePURLPattern
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Active PURL Pattern"
+                                            fieldLabel="Active PURL Pattern"
+                                            name="./activePURLPattern"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <isNonLeadGenForm
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Is Non-Lead-Gen-Form(Emailed form)?"
+                                            text="Is Non-Lead-Gen-Form(Emailed form)?"
+                                            name="./isNonLeadGenForm"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <isParallelEmailForm
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Parallel Email Form"
+                                            text="Parallel Email Form"
+                                            name="./isParallelEmailForm"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <emailSubjectLine
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="Email Subject Line"
+                                            fieldLabel="Email Subject Line"
+                                            name="./emailSubjectLine"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <recipient
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldDescription="BMC Email Notification Recipient"
+                                            fieldLabel="BMC Email Notification Recipient"
+                                            name="./recipient"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <bypassOSB
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Bypass WebMethods (dev only)"
+                                            text="Bypass WebMethods (dev only)"
+                                            name="./bypassOSB"
+                                            wrapperClass="cmp-workflow-title"/>
+                                </items>
+                            </column>
+                        </items>
+                    </no-render>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

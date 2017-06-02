@@ -1,0 +1,28 @@
+<form data-sly-use.container="com.adobe.cq.wcm.core.components.models.form.Container"
+      data-sly-use.grid="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+      id="${container.id}" name="${container.name}" method="POST" action="${currentPage.path}.html?PURL=123456"
+      enctype="${container.enctype}"
+      class="${grid.cssClass} customerform" novalidate="novalidate">
+    <input data-sly-test="${properties.elqCampaignID}" id="elqCampaignID" name="elqCampaignID" type="hidden" value="${properties.elqCampaignID}"/>
+    <input data-sly-test="${properties.campaignid}" id="campaignid" name="campaignid" type="hidden" value="${properties.campaignid}"/>
+    <input data-sly-test="${properties.C_Lead_Business_Unit1}" id="C_Lead_Business_Unit1" name="C_Lead_Business_Unit1" type="hidden" value="${properties.C_Lead_Business_Unit1}"/>
+    <input data-sly-test="${properties.productLine1}" id="productLine1" name="productLine1" type="hidden" value="${properties.productLine1}"/>
+    <input data-sly-test="${properties.C_Lead_Offer_Most_Recent1}" id="C_Lead_Offer_Most_Recent1" name="C_Lead_Offer_Most_Recent1" type="hidden" value="${properties.C_Lead_Offer_Most_Recent1}"/>
+    <input data-sly-test="${properties.ex_assettype}" id="ex_assettype" name="ex_assettype" type="hidden" value="${properties.ex_assettype}"/>
+    <input data-sly-test="${properties.ex_act}" id="ex_act" name="ex_act" type="hidden" value="${properties.ex_act}"/>
+    <input data-sly-test="${properties.ex_assetname}" id="ex_assetname" name="ex_assetname" type="hidden" value="${properties.ex_assetname}"/>
+    <input data-sly-test="${properties.LMA_license}" id="LMA_license" name="LMA_license" type="hidden" value="${properties.LMA_license}"/>
+    <input data-sly-test="${properties.AWS_Trial}" id="AWS_Trial" name="AWS_Trial" type="hidden" value="${properties.AWS_Trial}"/>
+    <input data-sly-test="${properties.formname}" id="formname" name="formname" type="hidden" value="${properties.formname}"/>
+    <input data-sly-test="${properties.leadDescription1}" id="leadDescription1" name="leadDescription1" type="hidden" value="${properties.leadDescription1}"/>
+    <input data-sly-test="${properties.emailid}" id="emailid" name="emailid" type="hidden" value="${properties.emailid}"/>
+    <input data-sly-test="${properties.C_OptIn}" id="C_OptIn" name="C_OptIn" type="hidden" value="${properties.C_OptIn}"/>
+    <input data-sly-test="${properties.C_Contact_Me1}" id="C_Contact_Me1" name="C_Contact_Me1" type="hidden" value="${properties.C_Contact_Me1}"/>
+    <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
+    <sly data-sly-repeat.paragraph="${grid.paragraphs}"
+         data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType, decorationTagName='div', cssClassName=paragraph.cssClass}"></sly>
+    <sly data-sly-resource="${resource.path @ resourceType=container.resourceTypeForDropArea, appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent fieldsetcls'}"
+         data-sly-test="${wcmmode.edit || wcmmode.preview}"></sly>
+    <!--input data-sly-test="${properties.postButtonText}" id="postButtonText" name="postButtonText" type="hidden" value="${properties.postButtonText}"/-->
+    <sly data-sly-resource="${'form-btn' @ resourceType='bmc/components/content/forms/elements/button'}"/>
+</form>

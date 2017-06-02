@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="nt:unstructured"
+          headerText="Headline text"
+          tab1title="tab 1"
+          tab1hash="tab-1"
+          tab2title="tab 2"
+          tab2hash="tab-2"
+          tab3title="tab 3"
+          tab3hash="tab-3"
+          tab4title="tab 4"
+          tab4hash="tab-4"
+          tab5title="tab 5"
+          tab5hash="tab-5"
+          tab6title="tab 6"
+          tab6hash="tab-6"
+/>

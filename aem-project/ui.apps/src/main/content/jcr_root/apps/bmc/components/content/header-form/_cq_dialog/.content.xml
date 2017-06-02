@@ -38,7 +38,7 @@
                                                     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
                                                     autoStart="{Boolean}false"
                                                     class="cq-droptarget"
-                                                    fieldLabel="Background image"
+                                                    fieldLabel="Background image (optional)"
                                                     fileNameParameter="./bg/fileName"
                                                     fileReferenceParameter="./bg/fileReference"
                                                     mimeTypes="[image]"
@@ -53,7 +53,7 @@
                             </bg-image>
                             <image
                                     jcr:primaryType="nt:unstructured"
-                                    jcr:title="Overlay Image"
+                                    jcr:title="Overlay Image (optional)"
                                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
@@ -65,7 +65,7 @@
                                                     sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
                                                     autoStart="{Boolean}false"
                                                     class="cq-droptarget"
-                                                    fieldLabel="Thumbnail image"
+                                                    fieldLabel="Thumbnail image (optional)"
                                                     fileNameParameter="./fileName"
                                                     fileReferenceParameter="./img/fileReference"
                                                     mimeTypes="[image]"

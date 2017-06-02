@@ -56,4 +56,5 @@ require("./modules/modalVideo.js");
 require("./modules/partners.js");
 require("./vendor/vidbg.js");
 require("./modules/category-page.js")
+require("./modules/events.js");
 //require("./modules/youtube.js");

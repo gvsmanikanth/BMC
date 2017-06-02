@@ -55,6 +55,8 @@
 @import "svg";
 @import "youtube";
 @import "_percentage-display";
+@import "parallax-box";
+@import "blog-post";
 
 // Pages
 @import "about-us";
@@ -74,6 +76,7 @@
 @import "education";
 @import "ebc";
 @import "partners";
+@import "events"; 
 
 // Moved Utilities classes at bottom.
 @import "utilities";
