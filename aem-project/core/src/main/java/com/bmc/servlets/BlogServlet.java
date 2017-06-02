@@ -148,7 +148,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     private String processLinks(String source) {
         String replace = "http://www.bmc.com/blogs";
-        String exclude = replace + "wp-content";
+        String exclude = base + "/wp-content";
         String token = "{EXCLUDE_PATH}";
         String processed = source.replace(exclude, token);
         processed = processed.replace(base, replace);
