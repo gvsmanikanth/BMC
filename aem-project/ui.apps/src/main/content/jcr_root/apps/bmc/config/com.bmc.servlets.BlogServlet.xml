@@ -4,6 +4,6 @@
           proxyUrl="http://s7538.p402.sites.pressdns.com"
           retryAttempts="{Long}4"
           retryDelay="{Long}3000"
-          timeout="{Long}30000"
+          timeout="{Long}5000"
 />
         <!--proxyUrl="http://s7538.p402.sites.pressdns.com/"-->
