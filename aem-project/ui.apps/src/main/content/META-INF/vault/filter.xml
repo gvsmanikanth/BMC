@@ -19,5 +19,6 @@
 
 
     <filter root="/content/bmc" mode="merge" />
+    <filter root="/content/experience-fragments" mode="update" />
 
 </workspaceFilter>
