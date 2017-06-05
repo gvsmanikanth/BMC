@@ -4,18 +4,23 @@
 // Styles related to the accordion, functionality paired with the accordion.js
 
 
-.accordion {
-	padding: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 1em;
+div.accordion {
+	background-color: #fff;
 
 	&:last-of-type {
+		background: pink;
 		border-bottom: 1px solid color(mediumGrey);
 	}
+}
 
-	& + & {
+ul.accordion {
+	border-top: 1px solid color(mediumGrey);
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1440px;
+	width: 100%;
+
+	& + ul.accordion {
 		margin-top: 0;
 	}
 
@@ -29,9 +34,8 @@
 	}
 
 	.accordion-item {
-		border-top: 1px solid color(mediumGrey);
 		list-style: none;
-		margin: 0;
+		margin: 0 auto;
 		padding: 1em 0;
 
 		&.open {
@@ -84,8 +88,9 @@
 
 	.accordion-item-content {
 		display: none; // hide on default, shows/expands via js
-		margin: 1em 0;
+		margin: 1em 0;	
 	}
+
 
 	&.accordion-no-border{
 	  border-bottom: none;
@@ -94,7 +99,7 @@
 }
 
 .accordion--editing {
-	
+
 	.accordion-item-content {
 		// display the accordion in the open state during authoring
 		display: block !important;
