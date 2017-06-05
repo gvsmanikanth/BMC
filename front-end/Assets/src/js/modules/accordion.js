@@ -57,7 +57,7 @@ var Accordion;
 				var jumpToElement = self.$container.find('#' + hash);
 				var jumpToItem = $(jumpToElement).parent(self.itemSelector);
 
-				
+
 
 				// if we have an element to jump to, and it has a matching selector for an item
 				if (jumpToElement.length > 0 && jumpToItem.length > 0) {
@@ -99,7 +99,7 @@ var Accordion;
 
 		// open new item
 		//self.openItem(item);
-		
+
 
 		return self;
 
@@ -116,9 +116,9 @@ var Accordion;
 				scrollTop : $(item).find('.accordion-item-content').offset().top - 200
 			 }, 100);
 		});
-		
+
 		self.openedItem = item;
-			
+
 		return this;
 	};
 

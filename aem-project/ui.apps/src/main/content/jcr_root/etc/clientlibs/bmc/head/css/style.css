@@ -2619,42 +2619,46 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	display: flex !important;
 }
 
-.accordion {
-	padding: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 1em;
+div.accordion {
+	background-color: #fff;
 }
 
-.accordion:last-of-type {
+div.accordion:last-of-type {
+	background: pink;
 	border-bottom: 1px solid #cacaca;
 }
 
-.accordion + .accordion {
+ul.accordion {
+	border-top: 1px solid #cacaca;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1440px;
+	width: 100%;
+}
+
+ul.accordion + ul.accordion {
 	margin-top: 0;
 }
 
-.accordion .jump-to {
+ul.accordion .jump-to {
 	display: block;
 	height: 4.35em;
 	margin-top: -4.35em;
 	visibility: hidden;
 }
 
-.accordion .accordion-item {
-	border-top: 1px solid #cacaca;
+ul.accordion .accordion-item {
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 1em 0;
 }
 
-.accordion .accordion-item.open .accordion-item-anchor:before {
+ul.accordion .accordion-item.open .accordion-item-anchor:before {
 	content: '\2013';
 	line-height: 1.2;
 }
 
-.accordion .accordion-item-anchor {
+ul.accordion .accordion-item-anchor {
 	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -2665,7 +2669,7 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	cursor: hand;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	border: solid 2px;
 	border-radius: 50%;
 	content: '\2B';
@@ -2678,12 +2682,12 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	width: 30px;
 }
 
-.accordion .accordion-item-content {
+ul.accordion .accordion-item-content {
 	display: none;
 	margin: 1em 0;
 }
 
-.accordion.accordion-no-border {
+ul.accordion.accordion-no-border {
 	border-bottom: none;
 	margin: 0;
 }
@@ -19702,7 +19706,7 @@ h4 {
 	font-size: 36px;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 34px;
 	margin-right: 34px;
 	width: 34px;
@@ -21371,7 +21375,7 @@ html.rgba body.bmc-nav-loader-nav.scrolled-up .layout-header {
 	font-size: 42px;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 36px;
 	width: 36px;
 }
@@ -23549,7 +23553,7 @@ h4 {
 	color: #fff;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 38px;
 	width: 38px;
 }
