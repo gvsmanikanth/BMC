@@ -753,11 +753,6 @@ fieldset li {
 	width: 100%;
 }
 
-fieldset .cmp {
-	padding:0px 5px 10px;
-	line-height: 0.7;
-}
-
 fieldset label,
 fieldset label + select {
 	display: inline-block;
