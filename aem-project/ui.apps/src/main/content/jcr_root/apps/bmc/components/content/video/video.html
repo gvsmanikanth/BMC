@@ -1,0 +1,31 @@
+<sly data-sly-use.video="com.bmc.components.VideoData"></sly>
+<figure data-sly-test="${video.isValid && !video.useModal}" data-sly-use.resolved="${'resolve-data.js' @ video=video }">
+    <h2 data-sly-test="${video.title != ''}">Video: ${video.title}</h2>
+    <p data-sly-test="${video.description != ''}">${video.description}</p>
+    <div data-sly-test="${video.isYouTube}" id="youtube_${video.videoId}" class="youtube-video inline-youtube-video-player">
+        <div id="${video.videoId}" class="youtubePlayer" data-src="${video.videoId}" data-autoplay=0 data-fullscreen=1></div>
+        <p id="youtubeOverlay_${video.videoId}" class="youtubeOverlay">
+            ${resolved.overlayText @ context='html'}
+        </p>
+    </div>
+    <div data-sly-test="${video.isTwistage}" class="video">
+        <input id="${video.videoId}" type="hidden" value="${resolved.overlayText @ context='attribute'}"></input>
+        <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+        <script type="text/javascript">viewNode("${video.videoId @ context='scriptString'}", {"server_detection": true, "width": 854, "height": 480});</script>
+    </div>
+</figure>
+<div data-sly-test="${video.isValid && video.useModal}" class="resource-video">
+    <div class="icon-document"></div>
+    <strong>Video:</strong>
+    <ul class="plain">
+        <li data-sly-test="${video.isYouTube}">
+            <a class="modal-youtube-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title} &nbsp;›</a>
+        </li>
+        <li data-sly-test="${video.isTwistage}">
+            <a class="modal-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title} &nbsp;›</a>
+        </li>
+    </ul>
+</div>
+<div data-sly-test="${!video.isValid && (wcmmode.edit || wcmmode.design)}" class="video-edit-container" >
+    [Please update Video Data]
+</div>
