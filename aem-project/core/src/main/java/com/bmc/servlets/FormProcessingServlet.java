@@ -83,7 +83,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             logger.trace("Response Status: " + status);
 
             if (status != 200 && status != 302) {
-
+                //
             }
         } catch (Exception e) {
             logger.error(e.getMessage());
@@ -137,12 +137,13 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "emailid",
                 "C_OptIn",
                 "C_Contact_Me1",
-                "PURLRedirectPage",
-                "PURLBody",
-                "PURLprimaryColumn",
-                "PURLsecondaryColumn",
-                "activePURLRedirect",
-                "activePURLPattern",
+                // THESE CONTROL THE REDIRECT POST PROCESSING
+//                "PURLRedirectPage",
+//                "PURLBody",
+//                "PURLprimaryColumn",
+//                "PURLsecondaryColumn",
+//                "activePURLRedirect",
+//                "activePURLPattern",
                 "isNonLeadGenForm",
                 "isParallelEmailForm",
                 "emailSubjectLine",
