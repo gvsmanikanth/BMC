@@ -27,7 +27,7 @@
 				var urlRef = './youtube-video-modal.php?'+hash;
 		    	
 		    	if(this.bmcMeta && typeof(bmcMeta) !== "undefined" && typeof(bmcMeta.site)!== "undefined" && typeof(bmcMeta.site.environment) !== "undefined"){
-		    		urlRef = '/templates/Media_Video_Mobile?'+hash;
+		    		urlRef = '/content/bmc/videos.html?'+hash;
 				}
 				 $.fancybox({
 					width: window.getVideoHeightWidth_16X9().width,
@@ -56,7 +56,7 @@
 				iframe: {
 					preload: false
 				},
-				href: 'http://www.bmc.com/templates/Media_Video_Mobile?'+hash
+				href: '/content/bmc/videos.html?'+hash
 			});
 			}
 		};
