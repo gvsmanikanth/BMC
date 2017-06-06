@@ -36,13 +36,21 @@ ul.accordion {
 	.accordion-item {
 		list-style: none;
 		margin: 0 auto;
-		padding: 1em 0;
+		padding-bottom: 1em;
+		padding-top: 1em;
 
 		&.open {
 			.accordion-item-anchor:before {
 				content: '\2013';
 				line-height: 1.2;
 			}
+
+			.accordion-item-content {
+				margin: 1em 0;
+				max-height: 99em;
+				overflow: auto;
+			}
+
 		}
 	}
 
@@ -87,8 +95,9 @@ ul.accordion {
 	}
 
 	.accordion-item-content {
-		display: none; // hide on default, shows/expands via js
-		margin: 1em 0;	
+		max-height: 0;
+		overflow: hidden;
+		@include transition();
 	}
 
 
