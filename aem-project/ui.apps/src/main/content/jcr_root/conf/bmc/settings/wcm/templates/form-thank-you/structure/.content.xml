@@ -27,7 +27,8 @@
                 jcr:lastModified="{Date}2017-06-06T10:31:49.005-07:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/content/header-brand"/>
+                sling:resourceType="bmc/components/content/header-brand"
+                editable="{Boolean}true"/>
             <maincontentcontainer
                 jcr:created="{Date}2017-06-06T10:32:52.384-07:00"
                 jcr:createdBy="admin"
@@ -41,7 +42,8 @@
                     jcr:lastModified="{Date}2017-06-06T10:33:15.802-07:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    sling:resourceType="wcm/foundation/components/responsivegrid"
+                    editable="{Boolean}true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"
@@ -55,7 +57,8 @@
                     jcr:lastModified="{Date}2017-06-06T10:33:51.208-07:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    sling:resourceType="wcm/foundation/components/responsivegrid"
+                    editable="{Boolean}true">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"
