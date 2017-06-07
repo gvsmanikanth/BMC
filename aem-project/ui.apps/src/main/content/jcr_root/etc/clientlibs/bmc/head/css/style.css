@@ -758,11 +758,6 @@ fieldset label + select {
 	display: inline-block;
 }
 
-fieldset .cmp {
-	padding:0px 5px 10px;
-	line-height: 0.7;
-}
-
 fieldset input[type="text"],
 fieldset input[type="number"],
 fieldset input[type="password"],
@@ -2624,25 +2619,22 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	display: flex !important;
 }
 
-div.accordion {
-	background-color: #fff;
-}
-
-div.accordion:last-of-type {
-	background: pink;
+div.accordion ul.accordion {
+	border-top: 1px solid #cacaca;
 	border-bottom: 1px solid #cacaca;
 }
 
+div.accordion + div.accordion ul.accordion {
+	border-bottom: 1px solid #cacaca;
+	border-top: 1px solid transparent;
+	margin-top: 0;
+}
+
 ul.accordion {
-	border-top: 1px solid #cacaca;
 	padding: 0;
 	margin: 0 auto;
 	max-width: 1440px;
 	width: 100%;
-}
-
-ul.accordion + ul.accordion {
-	margin-top: 0;
 }
 
 ul.accordion .jump-to {

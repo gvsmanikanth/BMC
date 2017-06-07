@@ -3,26 +3,28 @@
 // @function accordion
 // Styles related to the accordion, functionality paired with the accordion.js
 
-
 div.accordion {
-	background-color: #fff;
 
-	&:last-of-type {
-		background: pink;
+	ul.accordion {
+		border-top: 1px solid color(mediumGrey);
 		border-bottom: 1px solid color(mediumGrey);
+	}
+
+	& + div.accordion {
+
+		ul.accordion {
+			border-bottom: 1px solid color(mediumGrey);
+			border-top: 1px solid transparent;
+			margin-top: 0;
+		}
 	}
 }
 
 ul.accordion {
-	border-top: 1px solid color(mediumGrey);
 	padding: 0;
 	margin: 0 auto;
 	max-width: 1440px;
 	width: 100%;
-
-	& + ul.accordion {
-		margin-top: 0;
-	}
 
 	.jump-to {
 		$jumpToGap: $headerHeight + 1em; // Header height + a small bump for space tweaking
