@@ -24,8 +24,8 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                     fieldDescription="Render as a link which opens the video in a modal window?"
                                     name="./useModal"
-                                    text="Useq modal link"
-                                    value="truqe"/>
+                                    text="Use modal link"
+                                    value="true"/>
                             <useModalType
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/hidden"
