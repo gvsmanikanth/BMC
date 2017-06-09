@@ -753,11 +753,6 @@ fieldset li {
 	width: 100%;
 }
 
-fieldset .cmp {
-	padding:0px 5px 10px;
-	line-height: 0.7;
-}
-
 fieldset label,
 fieldset label + select {
 	display: inline-block;
@@ -2624,42 +2619,50 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	display: flex !important;
 }
 
-.accordion {
-	padding: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 1em;
-}
-
-.accordion:last-of-type {
+div.accordion ul.accordion {
+	border-top: 1px solid #cacaca;
 	border-bottom: 1px solid #cacaca;
 }
 
-.accordion + .accordion {
+div.accordion + div.accordion ul.accordion {
+	border-bottom: 1px solid #cacaca;
+	border-top: 1px solid transparent;
 	margin-top: 0;
 }
 
-.accordion .jump-to {
+ul.accordion {
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1440px;
+	width: 100%;
+}
+
+ul.accordion .jump-to {
 	display: block;
 	height: 4.35em;
 	margin-top: -4.35em;
 	visibility: hidden;
 }
 
-.accordion .accordion-item {
-	border-top: 1px solid #cacaca;
+ul.accordion .accordion-item {
 	list-style: none;
-	margin: 0;
-	padding: 1em 0;
+	margin: 0 auto;
+	padding-bottom: 1em;
+	padding-top: 1em;
 }
 
-.accordion .accordion-item.open .accordion-item-anchor:before {
+ul.accordion .accordion-item.open .accordion-item-anchor:before {
 	content: '\2013';
 	line-height: 1.2;
 }
 
-.accordion .accordion-item-anchor {
+ul.accordion .accordion-item.open .accordion-item-content {
+	margin: 1em 0;
+	max-height: 99em;
+	overflow: auto;
+}
+
+ul.accordion .accordion-item-anchor {
 	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -2670,7 +2673,7 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	cursor: hand;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	border: solid 2px;
 	border-radius: 50%;
 	content: '\2B';
@@ -2683,12 +2686,14 @@ body.bmc-nav-loader-nav .nav-open .layout-header {
 	width: 30px;
 }
 
-.accordion .accordion-item-content {
-	display: none;
-	margin: 1em 0;
+ul.accordion .accordion-item-content {
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
 }
 
-.accordion.accordion-no-border {
+ul.accordion.accordion-no-border {
 	border-bottom: none;
 	margin: 0;
 }
@@ -19712,7 +19717,7 @@ h4 {
 	font-size: 36px;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 34px;
 	margin-right: 34px;
 	width: 34px;
@@ -21381,7 +21386,7 @@ html.rgba body.bmc-nav-loader-nav.scrolled-up .layout-header {
 	font-size: 42px;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 36px;
 	width: 36px;
 }
@@ -23559,7 +23564,7 @@ h4 {
 	color: #fff;
 }
 
-.accordion .accordion-item-anchor:before {
+ul.accordion .accordion-item-anchor:before {
 	height: 38px;
 	width: 38px;
 }

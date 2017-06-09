@@ -1,11 +1,10 @@
-<div class="layout-inner-wrap bg-white">
-    <ul class="${wcmmode.edit ? 'accordion accordion--editing' : 'accordion'} ">
-        <li class="accordion-item">
+    <ul class="${wcmmode.edit ? 'accordion--editing' : 'accordion'} ">
+        <li class="accordion-item layout-inner-wrap">
             <span class="jump-to" id="${properties.title}" name="${properties.title}"></span>
             <a class="accordion-item-anchor" href="#Heading-of-ContentAreaExpandable">
                 ${properties.title}
             </a>
-            <div class="accordion-item-content" style="display: none;">
+            <div class="accordion-item-content">
                 <section>
 
                     <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
@@ -26,4 +25,3 @@
             </div>
         </li>
     </ul>
-</div>
