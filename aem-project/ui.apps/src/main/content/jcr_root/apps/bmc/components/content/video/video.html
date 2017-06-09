@@ -13,6 +13,9 @@
         <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
         <script type="text/javascript">viewNode("${video.videoId @ context='scriptString'}", {"server_detection": true, "width": 854, "height": 480});</script>
     </div>
+    <video data-sly-test="${video.isDam}" controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">
+        <source src="${item.name}" type="${item.value}">
+    </video>
 </figure>
 <div data-sly-test="${video.isValid && video.useModal}" class="resource-video">
     <div class="icon-document"></div>
@@ -21,7 +24,7 @@
         <li data-sly-test="${video.isYouTube}">
             <a class="modal-youtube-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title} &nbsp;›</a>
         </li>
-        <li data-sly-test="${video.isTwistage}">
+        <li data-sly-test="${!video.isYouTube}">
             <a class="modal-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title} &nbsp;›</a>
         </li>
     </ul>

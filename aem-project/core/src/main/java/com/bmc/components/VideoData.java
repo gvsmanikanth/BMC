@@ -1,12 +1,17 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.Rendition;
+import com.day.util.NameValuePair;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import javax.jcr.*;
 import javax.jcr.query.qom.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,6 +26,7 @@ public class VideoData extends WCMUsePojo {
     private static final String JCR_CONTENT = "jcr:content";
     private static final String PATH_PROPERTY= "videoPath";
     private static final String VID_PROPERTY= "vID";
+    private static final String DAM_PATH_PROPERTY= "damVideoPath";
     enum VideoType {
         YouTube(1),
         Twistage(2),
@@ -35,6 +41,8 @@ public class VideoData extends WCMUsePojo {
     }
 
     public boolean getIsValid() { return isValid; }
+    public String getVideoPath() { return videoPath; }
+    public boolean getUseModal() { return useModal; }
     public boolean getIsYouTube() { return (type == VideoType.YouTube); }
     public boolean getIsTwistage() { return (type == VideoType.Twistage); }
     public boolean getIsDam() { return (type == VideoType.Dam); }
@@ -44,17 +52,19 @@ public class VideoData extends WCMUsePojo {
     public String getDescription() { return description; }
     public String getOverlayText() { return overlayText; }
     public String getOverlayUrl() { return overlayUrl; }
-    public String getVideoPath() { return videoPath; }
-    public boolean getUseModal() { return useModal; }
+    public String getDamThumbnailPath() { return thumbnailPath; }
+    public NameValuePair[] getDamRenditions() { return (damRenditions == null) ? new NameValuePair[0] : damRenditions; }
     private boolean isValid;
-    private VideoType type;
-    private String videoId;
-    private String title;
-    private String description;
-    private String overlayText;
-    private String overlayUrl;
     private boolean useModal;
-    private String videoPath;
+    private String videoPath = "";
+    private VideoType type;
+    private String videoId = "";
+    private String title = "";
+    private String description = "";
+    private String overlayText = "";
+    private String overlayUrl = "";
+    private String thumbnailPath = "";
+    private NameValuePair[] damRenditions;
 
     @Override
     public void activate() throws Exception {
@@ -63,27 +73,43 @@ public class VideoData extends WCMUsePojo {
             return;
 
         videoPath = resource.getParent().getParent().getPath();
-
         ValueMap map = resource.getValueMap();
 
         type = VideoType.valueOf(map.get("typeId", 0));
-        videoId = map.get(VID_PROPERTY, "");
         title = map.get("title", "");
         description = map.get("description", "");
-        overlayText = map.get("overlayText", "");
 
-        if (map.get("overlayUrlIsPath", false)) {
-            overlayUrl = map.get("overlayUrlPath", "");
-        } else {
-            overlayUrl = map.get("overlayUrl", "");
+        isValid = false;
+
+        switch (type) {
+            case YouTube:
+                overlayText = map.get("overlayText", "");
+
+                if (map.get("overlayUrlIsPath", false)) {
+                    overlayUrl = map.get("overlayUrlPath", "");
+                } else {
+                    overlayUrl = map.get("overlayUrl", "");
+                }
+                videoId = map.get(VID_PROPERTY, "");
+                isValid = !videoId.isEmpty();
+                break;
+            case Twistage:
+                videoId = map.get(VID_PROPERTY, "");
+                isValid = !videoId.isEmpty();
+                break;
+            case Dam:
+                videoId = map.get(DAM_PATH_PROPERTY, "");
+                setDamAssetData(videoId);
+                isValid = (damRenditions != null);
+                break;
+            default:
+                break;
         }
 
         Boolean useModal = getProperties().get("useModal", Boolean.class);
         if (useModal == null)
             useModal = Arrays.asList(getRequest().getRequestPathInfo().getSelectors()).contains("modal");
         this.useModal = useModal;
-
-        isValid = (type != null && !videoId.isEmpty());
     }
 
     private Resource resolveVideoDataResource() throws RepositoryException {
@@ -126,7 +152,11 @@ public class VideoData extends WCMUsePojo {
         if (videoId == null || videoId.isEmpty())
             return null;
 
+        String idProperty = VID_PROPERTY;
         ResourceResolver resourceResolver = getResourceResolver();
+        Resource resource = resourceResolver.getResource(videoId);
+        if (resource != null && resource.getResourceType().equals("dam:Asset"))
+            idProperty = DAM_PATH_PROPERTY;
 
         // http://adobeaemclub.com/jcr-java-query-object-model-jqom-adobe-aem-query/
         Session session = resourceResolver.adaptTo(Session.class);
@@ -136,7 +166,7 @@ public class VideoData extends WCMUsePojo {
         Selector selector = qf.selector("nt:unstructured", "s");
         Constraint constraint = qf.descendantNode("s", VIDEO_PAGES_ROOT);
         constraint = qf.and(constraint, qf.comparison(
-                qf.propertyValue("s", VID_PROPERTY),
+                qf.propertyValue("s", idProperty),
                 QueryObjectModelConstants.JCR_OPERATOR_EQUAL_TO,
                 qf.literal(vf.createValue(videoId))));
 
@@ -147,5 +177,38 @@ public class VideoData extends WCMUsePojo {
 
         Node node = nodes.nextNode();
         return resourceResolver.getResource(node.getIdentifier());
+    }
+    private void setDamAssetData(String assetPath) {
+        List<Rendition> renditions = null;
+        Resource resource = getResourceResolver().getResource(assetPath);
+        if (resource != null) {
+            Asset asset = resource.adaptTo(Asset.class);
+            if (asset != null)
+                renditions = asset.getRenditions();
+        }
+        if (renditions == null || renditions.size() == 0) {
+            thumbnailPath = "";
+            damRenditions = null;
+            return;
+        }
+
+        ArrayList<NameValuePair> renditionInfoList = new ArrayList<>();
+        for (Rendition r : renditions) {
+            String mimeType = r.getMimeType();
+            String path = r.getPath();
+
+            if (mimeType.startsWith("image/")) {
+                if (thumbnailPath.isEmpty())
+                    thumbnailPath = path;
+            } else if (mimeType.startsWith("video/")) {
+                if (path.endsWith("original")) {
+                    renditionInfoList.add(0, new NameValuePair(videoPath, mimeType));
+                } else {
+                    renditionInfoList.add(new NameValuePair(path, mimeType));
+                }
+            }
+        }
+        damRenditions = (renditionInfoList.size() > 0)
+                ? renditionInfoList.toArray(new NameValuePair[renditionInfoList.size()]) : null;
     }
 }

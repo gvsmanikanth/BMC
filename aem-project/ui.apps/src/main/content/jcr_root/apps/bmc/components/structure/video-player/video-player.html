@@ -20,6 +20,9 @@
         <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
         <script type="text/javascript">viewNode("${video.videoId @ context='scriptString'}", {"server_detection": true, "width": 640, "height": 380,"autoplay":true});</script>
     </div>
+    <video data-sly-test="${video.isDam}" autoplay controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">
+        <source src="${item.name}" type="${item.value}">
+    </video>
 </sly>
 <sly data-sly-include="/apps/bmc/components/structure/page/customfooterlibs.html" />
 </body>
