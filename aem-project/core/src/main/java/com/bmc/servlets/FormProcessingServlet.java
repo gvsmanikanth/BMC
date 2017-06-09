@@ -1,11 +1,14 @@
 package com.bmc.servlets;
 
+import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.PageManager;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestParameterMap;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,20 +21,65 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-import java.util.stream.StreamSupport;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
+    public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
 
     private String serviceUrl = "";
     private int timeout = 5000;
+
+    private String redirectPage = "";
+
+    /**
+     * Restricted form fields
+     * These fields are part of the authored form data and may not be submitted as part of the form post.
+     * Filter post data so these are not passed on when posted form submission to webmethods.
+     */
+    private static final List<String> restrictedFormParameters;
+    static {
+        List<String> list = new ArrayList<>();
+        list.add("C_Lead_Business_Unit1");
+        list.add("productLine1");
+        list.add("C_Lead_Offer_Most_Recent1");
+        list.add("ex_assettype");
+        list.add("ex_act");
+        list.add("ex_assetname");
+        list.add("LMA_license");
+        list.add("AWS_Trial");
+        list.add("formname");
+        list.add("formid");
+        list.add(":cq_csrf_token");
+        restrictedFormParameters = Collections.unmodifiableList(list);
+    }
+
+    /**
+     * Overridable form field names
+     * These fields may be included in the submitted form by being passed in via URL query string param.
+     * The keys in the map below are allowed URL parameters that would be submitted with the form.
+     * The values are the Eloqua field values the data should be mapped to.
+     */
+    private static final Map<String, String> overrideFormParameters;
+    static {
+        HashMap<String, String> iMap = new HashMap<>();
+        iMap.put("cc", "C_Commchannel");
+        iMap.put("elqcid", "elqCampaignID");
+        iMap.put("sfcid", "CampaignID");
+        iMap.put("cid", "cid");
+        iMap.put("adcat", "digad_cat");
+        iMap.put("adch", "digad_ch");
+        iMap.put("channel", "channel");
+        iMap.put("CampaignID", "CampaignID");
+        iMap.put("CampaignId", "CampaignID");
+        iMap.put("emid", "ty_emid");
+        overrideFormParameters = Collections.unmodifiableMap(iMap);
+    }
 
     @Activate
     protected void activate(final Map<String, Object> config) {
@@ -46,10 +94,22 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map<String, String> formData = new HashMap<>();
         parameters.forEach((k, v) -> formData.put(k, request.getParameter(k)));
         Node node = request.getResource().adaptTo(Node.class);
+        redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
         Map formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         sendData(data);
+        if (redirectPage != null) {
+            ResourceResolver resourceResolver = request.getResourceResolver();
+            PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+            Page page = pageManager.getPage(redirectPage);
+            if (page != null) {
+                String vanityURL = page.getVanityUrl();
+                redirectPage = (vanityURL == null ? redirectPage + ".html" : vanityURL);
+            }
+
+            response.sendRedirect(redirectPage);
+        }
     }
 
     private void sendData(String data) {
@@ -113,9 +173,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         List<String> pairs = new ArrayList<>();
         properties.entrySet().stream().forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
         data.entrySet().stream()
-                .filter(map -> !map.getKey().equals(":cq_csrf_token"))
-                .forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
+                .filter(map -> isAllowedFieldName(map.getKey()))
+                .forEach(map -> pairs.add(encodeProperty(getEloquoaFieldName(map.getKey()), map.getValue())));
         return String.join("&", pairs);
+    }
+
+    private Boolean isAllowedFieldName(String fieldName) {
+        return !restrictedFormParameters.contains(fieldName);
+    }
+
+    private String getEloquoaFieldName(String fieldName) {
+        if (overrideFormParameters.containsKey(fieldName)) return overrideFormParameters.get(fieldName);
+        return fieldName;
     }
 
     private String encodeProperty(String name, String value) {
