@@ -4,3 +4,4 @@
           serviceUrl="http://localhost/admin/post.php"
           timeout="{Long}5000"
 />
+        <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->

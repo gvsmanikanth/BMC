@@ -25,7 +25,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.StreamSupport;
 
-@SlingServlet(resourceTypes = "bmc/components/content/forms/form", selectors = "post", methods = {"POST"})
+@SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
@@ -83,15 +83,28 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             logger.trace("Response Status: " + status);
 
             if (status != 200 && status != 302) {
-                //
+                // Log errors if not a successful response. 200 & 302 responses are considered success.
+                logger.error("Form data failed to post to webmethods server. URL: " + serviceUrl + " Data: " + data);
             }
         } catch (Exception e) {
             logger.error(e.getMessage());
             try {
                 status = connection.getResponseCode();
                 logger.trace("Response Status: " + status);
+                InputStream error = connection.getErrorStream();
+                String responseBody;
+                if (error != null) {
+                    try (Scanner scanner = new Scanner(error)) {
+                        responseBody = scanner.useDelimiter("\\A").next();
+                    }
+                    logger.info("Error Response: " + responseBody);
+                }
             } catch (IOException e1) {
                 logger.error(e1.getMessage());
+            }
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
             }
         }
     }
