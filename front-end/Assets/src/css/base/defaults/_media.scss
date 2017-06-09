@@ -18,3 +18,10 @@ figure {
 figcaption {
 	margin-top: em($gutterInPx);
 }
+
+video {
+
+	.video-modal & {
+		width: 100%;
+	}
+}

@@ -1,15 +1,15 @@
 /**
  * modalVideo.js
- * 
+ *
  * On window load look for # tag with video id. if found launch in modal window.
  * Expects the following markup:
- * 
+ *
  * URL with #vid=
- * Located inside http://www.bmc.com/templates/Media_Video_Mobile folder. 
+ * Located inside http://www.bmc.com/templates/Media_Video_Mobile folder.
  */
 
 (function($) {
-	
+
 	function getHashValue(key) {
 		  var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
 		  return matches ? matches[1] : null;
@@ -18,17 +18,14 @@
 	$(window).on('load', function(){
 		var hash = window.location.hash.substring(1);
 		if (hash != '') {
-			
+
 			var type = getHashValue("vType");
 			var fallbackType = getHashValue("vID");
-			
+
 			if(type == "yt"){
 
-				var urlRef = './youtube-video-modal.php?'+hash;
-		    	
-		    	if(this.bmcMeta && typeof(bmcMeta) !== "undefined" && typeof(bmcMeta.site)!== "undefined" && typeof(bmcMeta.site.environment) !== "undefined"){
-		    		urlRef = '/content/bmc/videos.html?'+hash;
-				}
+				var urlRef = '/content/bmc/videos.html?'+hash;
+
 				 $.fancybox({
 					width: window.getVideoHeightWidth_16X9().width,
 					height: window.getVideoHeightWidth_16X9().height,
@@ -44,7 +41,7 @@
 						preload: false
 					}
 			    });
-					 
+
 			} else if(type == "t-age" || fallbackType){
 				$.fancybox({
 				width: 690,
@@ -60,13 +57,13 @@
 			});
 			}
 		};
-		
+
 		$('.modal-video-player').on('click', function(e) {
 				var hashValue = this.href.split("?");
 				if (hashValue[1])
 					window.location.hash = hashValue[1]+"&vType=t-age";
 		});
-		
+
 		$('.modal-youtube-video-player').on('click', function(e) {
 				var hashValue = this.href.split("?");
 				if (hashValue[1])
@@ -75,5 +72,3 @@
 	});
 
 })(jQuery);
-
-
