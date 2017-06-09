@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          jcr:description="Video Data Section Template"
+          jcr:description="Video Page Section Template"
           jcr:primaryType="cq:Template"
-          jcr:title="Video Data Section"
+          jcr:title="Video Page Section"
           ranking="{Long}100">
     <jcr:content
-            cq:allowedTemplates="[/apps/bmc/templates/video-data.*]"
+            cq:allowedTemplates="[/apps/bmc/templates/video-page.*]"
             jcr:primaryType="cq:PageContent"
             sling:redirect="true"
             sling:redirectStatus="{Long}302"
