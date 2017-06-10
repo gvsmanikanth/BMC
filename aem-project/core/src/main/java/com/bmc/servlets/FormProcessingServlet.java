@@ -54,8 +54,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         list.add("LMA_license");
         list.add("AWS_Trial");
         list.add("formname");
-        list.add("formid");
         list.add(":cq_csrf_token");
+        list.add("wcmmode");
         restrictedFormParameters = Collections.unmodifiableList(list);
     }
 
@@ -67,7 +67,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
      */
     private static final Map<String, String> overrideFormParameters;
     static {
-        HashMap<String, String> iMap = new HashMap<>();
+        Map<String, String> iMap = new HashMap<>();
         iMap.put("cc", "C_Commchannel");
         iMap.put("elqcid", "elqCampaignID");
         iMap.put("sfcid", "CampaignID");
@@ -113,7 +113,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     }
 
     private void sendData(String data) {
-        logger.trace("Sending Data");
+        logger.trace("Sending Data: " + serviceUrl);
         String charset = StandardCharsets.UTF_8.name();
         HttpURLConnection connection = null;
         int status = 0;
@@ -219,13 +219,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "emailid",
                 "C_OptIn",
                 "C_Contact_Me1",
-                // THESE CONTROL THE REDIRECT POST PROCESSING
-//                "PURLRedirectPage",
-//                "PURLBody",
-//                "PURLprimaryColumn",
-//                "PURLsecondaryColumn",
-//                "activePURLRedirect",
-//                "activePURLPattern",
                 "isNonLeadGenForm",
                 "isParallelEmailForm",
                 "emailSubjectLine",

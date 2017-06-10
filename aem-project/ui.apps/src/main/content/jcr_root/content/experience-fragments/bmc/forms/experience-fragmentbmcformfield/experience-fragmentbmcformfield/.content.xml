@@ -360,9 +360,29 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/forms/elements/hidden"
-                    id="hidden1"
-                    name="Hidden Input-fields"
-                    value="This Value"/>
+                    id=""
+                    name="elqSiteID"
+                    value="1625229226"/>
+                <hidden_23482342342
+                        jcr:created="{Date}2017-05-19T14:15:27.518-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-05-19T14:16:06.142-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/forms/elements/hidden"
+                        id=""
+                        name="elqFormName"
+                        value="FormTemplate1_DXPTesting"/>
+                <hidden_82374987293
+                        jcr:created="{Date}2017-05-19T14:15:27.518-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-05-19T14:16:06.142-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/forms/elements/hidden"
+                        id=""
+                        name="formid"
+                        value="38"/>
             </field_set>
         </root>
     </jcr:content>
