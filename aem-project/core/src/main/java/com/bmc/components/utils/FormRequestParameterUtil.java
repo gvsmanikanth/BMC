@@ -4,10 +4,7 @@ import com.adobe.cq.sightly.WCMUsePojo;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.request.RequestParameterMap;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FormRequestParameterUtil extends WCMUsePojo {
@@ -20,7 +17,7 @@ public class FormRequestParameterUtil extends WCMUsePojo {
         SlingHttpServletRequest request = getRequest();
         Map<String, Object> map = new HashMap<>();
         Set<String> keySet = request.getRequestParameterMap().keySet();
-        List<String> keys = keySet.stream().filter(s -> !s.equals("svc")).collect(Collectors.toList());
+        List<String> keys = new ArrayList<>(keySet);
         keys.forEach(s -> {
             map.put(s, request.getParameter(s));
         });
