@@ -1,1 +1,12 @@
-<div>This is the support component</div>
+<sly data-sly-use.Alerts="com.bmc.models.supportalert.SupportAlertMessagesDisplayModel">
+    <div data-sly-list.AlertItems="${Alerts.alertData}">
+        <div style="padding:5px;margin:10px;background-color:#FFFFFF">
+            <div><strong>Alert Title: </strong>${AlertItems.alertTitle}</div>
+            <div><strong>Alert Message: </strong>${AlertItems.alertMessage}</div>
+            <div><strong>Alert Link Title: </strong>${AlertItems.alertLinkTitle}</div>
+            <div><strong>Alert Link Url: </strong>${AlertItems.alertLinkUrl}</div>
+            <div><strong>Alert Start Date: </strong>${AlertItems.alertStartDate}</div>
+            <div><strong>Alert End Date: </strong>${AlertItems.alertEndDate}</div>
+        </div>
+    </div>
+</sly>

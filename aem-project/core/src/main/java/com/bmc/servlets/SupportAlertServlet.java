@@ -43,7 +43,7 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(SupportAlertServlet.class);
 
-    private final String SUPPORT_NODE_ROOT_LOCATION = "/content/bmc/support-alerts/jcr:content/root/support-object-build/alertdata";
+    private final String SUPPORT_NODE_ROOT_LOCATION = "/content/bmc/support-alerts/jcr:content/root/support_object_build/alertdata";
 
     protected Gson gson;
 
