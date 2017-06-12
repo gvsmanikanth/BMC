@@ -17,7 +17,7 @@
                 jcr:lastModified="{Date}2017-05-17T15:18:48.087-07:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/content/forms/field-set"
+                sling:resourceType="bmc/components/forms/field-set"
                 editable="{Boolean}true">
                 <cq:responsive jcr:primaryType="nt:unstructured"/>
             </field_set>
