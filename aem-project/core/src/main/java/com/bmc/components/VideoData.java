@@ -202,7 +202,7 @@ public class VideoData extends WCMUsePojo {
                     thumbnailPath = path;
             } else if (mimeType.startsWith("video/")) {
                 if (path.endsWith("original")) {
-                    renditionInfoList.add(0, new NameValuePair(videoPath, mimeType));
+                    renditionInfoList.add(0, new NameValuePair(assetPath, mimeType));
                 } else {
                     renditionInfoList.add(new NameValuePair(path, mimeType));
                 }
