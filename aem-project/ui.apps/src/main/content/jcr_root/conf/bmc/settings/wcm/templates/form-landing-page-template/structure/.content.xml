@@ -1,95 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
+    jcr:primaryType="cq:Page">
     <jcr:content
-            cq:deviceGroups="[/etc/mobile/groups/responsive]"
-            cq:lastModified="{Date}2017-05-24T22:14:58.981-07:00"
-            cq:lastModifiedBy="admin"
-            cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template"
-            jcr:primaryType="cq:PageContent"
-            sling:resourceType="bmc/components/structure/page">
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2017-06-12T14:23:39.627-07:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-06-12T08:28:30.487-07:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="bmc/components/structure/page">
         <root
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid">
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
             <plainheader
-                    jcr:created="{Date}2017-05-24T11:06:39.673-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-05-24T11:23:09.135-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/plainheader"/>
+                jcr:created="{Date}2017-06-11T13:30:30.048-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-11T13:30:30.048-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/plainheader"/>
             <header_form
-                    jcr:created="{Date}2017-05-24T17:26:22.073-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-05-24T17:26:22.073-07:00"
+                jcr:created="{Date}2017-06-12T14:22:18.636-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-12T14:23:39.619-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/header-form">
+                <bg
+                    jcr:lastModified="{Date}2017-06-12T14:23:39.619-07:00"
                     jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/content/header-form"
-                    editable="{Boolean}true"/>
+                    jcr:primaryType="nt:unstructured"/>
+                <img
+                    jcr:lastModified="{Date}2017-06-12T14:23:39.619-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"/>
+            </header_form>
             <maincontentcontainer
-                    jcr:created="{Date}2017-05-24T11:06:44.101-07:00"
+                jcr:created="{Date}2017-06-11T13:33:04.796-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-11T13:33:04.796-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <section_layout
+                    jcr:created="{Date}2017-06-11T13:33:22.631-07:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-05-24T11:23:34.186-07:00"
+                    jcr:lastModified="{Date}2017-06-11T13:46:07.945-07:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/maincontentcontainer">
-                <responsivegrid
-                        jcr:created="{Date}2017-05-24T11:10:42.921-07:00"
+                    sling:resourceType="bmc/components/structure/section-layout">
+                    <title
+                        jcr:created="{Date}2017-06-11T13:41:34.009-07:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-05-24T12:00:05.836-07:00"
+                        jcr:lastModified="{Date}2017-06-11T13:43:59.314-07:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/foundation/components/responsivegrid"
-                        editable="{Boolean}true">
+                        sling:resourceType="bmc/components/content/title"
+                        editable="{Boolean}true"/>
+                    <text
+                        jcr:created="{Date}2017-06-11T13:41:44.063-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-06-11T13:41:44.063-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/text"
+                        editable="{Boolean}true"/>
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="1"
-                                width="6"/>
-                        <phone
-                                jcr:primaryType="nt:unstructured"
-                                offset="1"
-                                width="11"/>
+                            jcr:primaryType="nt:unstructured"
+                            offset="2"
+                            width="4"/>
                     </cq:responsive>
-                </responsivegrid>
-                <responsivegrid_1546413774
-                        jcr:created="{Date}2017-05-24T11:10:51.661-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-05-24T15:53:07.362-07:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/foundation/components/responsivegrid"
-                        editable="{Boolean}true">
+                </section_layout>
+                <section_layout_1262318817
+                    jcr:created="{Date}2017-06-11T13:33:31.975-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-06-11T13:33:31.975-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/section-layout">
                     <cq:responsive jcr:primaryType="nt:unstructured">
                         <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="1"
+                            width="4"/>
+                    </cq:responsive>
+                    <form
+                        jcr:created="{Date}2017-06-11T13:37:33.633-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-06-11T13:37:33.633-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/forms/form"
+                        action="/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-page-template/structure/cq-gen1497280762940/"
+                        actionType="foundation/components/form/actions/store"
+                        editable="{Boolean}true">
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
                                 jcr:primaryType="nt:unstructured"
                                 offset="0"
                                 width="4"/>
-                        <phone
-                                jcr:primaryType="nt:unstructured"
-                                offset="1"
-                                width="11"/>
-                    </cq:responsive>
-                </responsivegrid_1546413774>
+                        </cq:responsive>
+                        <experiencefragment
+                            jcr:created="{Date}2017-06-12T08:19:22.936-07:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2017-06-12T08:20:14.473-07:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                    </form>
+                </section_layout_1262318817>
             </maincontentcontainer>
             <plainfooter
-                    jcr:created="{Date}2017-05-24T11:06:59.605-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-05-24T11:06:59.605-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/plainfooter"/>
+                jcr:created="{Date}2017-06-12T08:28:02.419-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-12T08:28:02.419-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/plainfooter"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
-                        jcr:primaryType="nt:unstructured"
-                        title="Smaller Screen"
-                        width="{Long}650"/>
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
                 <tablet
-                        jcr:primaryType="nt:unstructured"
-                        title="Tablet"
-                        width="{Long}1200"/>
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
             </breakpoints>
         </cq:responsive>
     </jcr:content>
