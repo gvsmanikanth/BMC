@@ -2,7 +2,7 @@
     <div class="layout-inner-wrap">
         <h1>
             <span>
-                ${properties.headerText}
+                ${properties.headerText @ context='html'}
             </span>
             <span data-sly-test="${!properties.headerText}">
                 Enter Heading Text
