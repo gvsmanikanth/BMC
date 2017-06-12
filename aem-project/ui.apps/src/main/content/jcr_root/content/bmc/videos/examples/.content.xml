@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+            cq:allowedTemplates="[/apps/bmc/templates/video-page.*]"
+            cq:template="/apps/bmc/templates/video-page-section"
+            jcr:primaryType="cq:PageContent"
+            jcr:title="Examples"
+            sling:redirect="true"
+            sling:redirectStatus="{Long}302"
+            sling:resourceType="foundation/components/redirect"
+            redirectTarget="/content/bmc"/>
+    <youtube jcr:primaryType="cq:Page">
+        <jcr:content
+                cq:allowedTemplates="[none]"
+                cq:template="/apps/bmc/templates/video-page"
+                jcr:primaryType="cq:PageContent"
+                jcr:title="YouTube"
+                sling:resourceType="bmc/components/structure/video-page">
+            <video-data
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/video-data"
+                    typeId="1"
+                    vID="ywKilWkX4jA"
+                    title="Hitchhikers Theme Song"
+                    description="&quot;A PART from a song called JOURNEY OF THE SORCERER by THE EAGLES.&quot; (0:36)"
+                    overlayText="LINK-Don't Panic!-LINK"
+                    overlayUrlIsPath="false"
+                    overlayUrl="https://www.youtube.com/watch?v=MFg6Y7zbRg4"/>
+        </jcr:content>
+    </youtube>
+    <twistage jcr:primaryType="cq:Page">
+        <jcr:content
+                cq:allowedTemplates="[none]"
+                cq:template="/apps/bmc/templates/video-page"
+                jcr:primaryType="cq:PageContent"
+                jcr:title="Twistage"
+                sling:resourceType="bmc/components/structure/video-page">
+            <video-data
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/video-data"
+                    typeId="2"
+                    vID="7b20ebcb8fd61"
+                    title="Easily manage all your endpoints"
+                    description="See how BMC Client Management can quickly and easily solve your endpoint management challenges from provisioning to patching and deployment. (1:44)"/>
+        </jcr:content>
+    </twistage>
+</jcr:root>

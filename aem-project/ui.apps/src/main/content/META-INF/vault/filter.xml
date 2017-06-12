@@ -18,6 +18,7 @@
     </filter>
 
 
+    <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
     <filter root="/content/experience-fragments" mode="update" />
 
