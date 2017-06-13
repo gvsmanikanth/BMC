@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Video Data"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Video Player"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <typeId
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+                                fieldDescription="Video Provider"
+                                fieldLabel="Video Type"
+                                name="./typeId"
+                                class="cq-dialog-radiogroup-showhide"
+                                cq-dialog-radiogroup-showhide-target=".video-type-container"
+                                renderReadOnly="{Boolean}false"
+                                required="{Boolean}true"
+                                text="Video Type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <youtube
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        cq-msm-lockable="typeId"
+                                        name="./typeId"
+                                        renderReadOnly="{Boolean}true"
+                                        text="YouTube"
+                                        value="1"/>
+                                    <twistage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        cq-msm-lockable="typeId"
+                                        name="./typeId"
+                                        renderReadOnly="{Boolean}true"
+                                        text="Twistage"
+                                        value="2"/>
+                                    <dam
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/radio"
+                                            cq-msm-lockable="typeId"
+                                            name="./typeId"
+                                            renderReadOnly="{Boolean}true"
+                                            text="DAM"
+                                            value="3"/>
+                                </items>
+                            </typeId>
+                            <typeIdHint
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./typeId@TypeHint"
+                                value="Integer"/>
+                            <videoId
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Ex: rOohsNwkT5Q"
+                                fieldLabel="Video ID"
+                                name="./vID"
+                                class="hide video-type-container"
+                                showhidetargetvalue="1,2"
+                                required="{Boolean}true"/>
+                            <damVideoPath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldDescription="Please select a video"
+                                    fieldLabel="Video Path"
+                                    name="./damVideoPath"
+                                    rootPath="/content/dam/projects/bmc"
+                                    class="hide video-type-container"
+                                    showhidetargetvalue="3"
+                                    required="{Boolean}true"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Enter the video title"
+                                fieldLabel="Title"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the video description"
+                                fieldLabel="Description"
+                                name="./description"/>
+
+                            <overlayContainer
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/container"
+                                    class="hide video-type-container"
+                                    showhidetargetvalue="1">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <overlayText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Text to be overlaid on video when/if it is paused. Can contain a pair of markers, LINK- and -LINK wrapping some of the text, causing it to link to the Overlay URL"
+                                        fieldLabel="Overlay Text"
+                                        name="./overlayText"/>
+                                    <overlayUrlType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide"
+                                        cq-dialog-dropdown-showhide-target=".overlay-url-field"
+                                        fieldLabel="Overlay URL"
+                                        name="./overlayUrlIsPath">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <option1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Internal Path"
+                                                value="true"/>
+                                            <option2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="External Url"
+                                                value="false"/>
+                                        </items>
+                                    </overlayUrlType>
+                                    <overlayLinkPathContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide overlay-url-field"
+                                        showhidetargetvalue="true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <overlayLinkPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldDescription="Please select the video overlay page"
+                                                fieldName="Overlay Url Path"
+                                                name="./overlayUrlPath"
+                                                rootPath="/content/bmc"/>
+                                        </items>
+                                    </overlayLinkPathContainer>
+                                    <overlayLinkUrlContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide overlay-url-field"
+                                        showhidetargetvalue="false">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <overlayLinkUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldDescription="Enter the video overlay URL"
+                                                fieldName="Overlay Url"
+                                                name="./overlayUrl"/>
+                                        </items>
+                                    </overlayLinkUrlContainer>
+                                    <overlayLinkHint
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                        name="./overlayUrlIsPath@TypeHint"
+                                        value="Boolean"/>
+                                </items>
+                            </overlayContainer>
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>

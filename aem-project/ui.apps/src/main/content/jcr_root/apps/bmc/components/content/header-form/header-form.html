@@ -12,7 +12,7 @@
                 <div class="offset-hero-inner-wrap">
                     <h1>
                         <span>
-                            ${properties.headerText}
+                           ${properties.headerText @ context='html'}
                         </span>
                         <span data-sly-test="${!properties.headerText}">
                             Enter Heading Text
@@ -28,7 +28,7 @@
         <div data-sly-test="${!fgImg}" class="layout-inner-wrap py2">
             <h1>
                 <span>
-                    ${properties.headerText}
+                    ${properties.headerText @ context='html'}
                 </span>
                 <span data-sly-test="${!properties.headerText}">
                     Enter Heading Text
