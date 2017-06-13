@@ -1,8 +1,8 @@
 <div class="header-generic layout-inner-wrap">
-    <h1>${properties.headerText}</h1>
+    <h1>${properties.headerText @ context='html'}</h1>
 
     <p>
-        ${properties.descriptionText}
+        ${properties.descriptionText @ context='html'}
     </p>
 
     <p>
