@@ -30,6 +30,10 @@
         <publish.crx.port>4503</publish.crx.port>
         <publish.crx.username>admin</publish.crx.username>
         <publish.crx.password>admin</publish.crx.password>
+        <publish-dev.crx.host>vl-aus-rds-dv06.bmc.com</publish-dev.crx.host>
+        <publish-dev.crx.port>4503</publish-dev.crx.port>
+        <publish-dev.crx.username>admin</publish-dev.crx.username>
+        <publish-dev.crx.password>admin</publish-dev.crx.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>

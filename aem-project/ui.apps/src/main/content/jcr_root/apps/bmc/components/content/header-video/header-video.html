@@ -15,9 +15,9 @@
         </div>
 
         <div class="hero-content">
-            <strong class="ha mb2">${properties.headerText}</strong>
-            <div class="h3">${properties.subHeaderText}</div>
-            <div class="p2 bolder">${properties.introtext}</div>
+            <strong class="ha mb2">${properties.headerText @ context='html'}</strong>
+            <div class="h3">${properties.subHeaderText @ context='html'}</div>
+            <div class="p2 bolder">${properties.introtext @ context='html'}</div>
 
             <a href="${properties.videolink}" class="modal-youtube-video-player">
                 <img class="videoIcon" src="//media.cms.bmc.com/designimages/icon-slide-video.png">
