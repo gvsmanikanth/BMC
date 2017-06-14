@@ -5,12 +5,12 @@ package com.bmc.models.bmcmeta;
  */
 public class FormMeta {
 
-    private String id; //[corresponding Eloqua form ID]", *4
-    private String name; //[corresponding Eloqua form name]", *5
-    private String type; //[], *legacy
-    private String leadOffer; //[landing page's Lead Offer]",
-    private String disableDemandbase; //[], *legacy
-    private String contactMe; //['on' if contact me checkbox is present on form, else 'off']
+    private String id = ""; //[corresponding Eloqua form ID]", *4
+    private String name = ""; //[corresponding Eloqua form name]", *5
+    private String type = ""; //[], *legacy
+    private String leadOffer = ""; //[landing page's Lead Offer]",
+    private String disableDemandbase = ""; //[], *legacy
+    private String contactMe = ""; //['on' if contact me checkbox is present on form, else 'off']
 
     public String getId() {
         return id;
