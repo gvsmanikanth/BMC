@@ -6,11 +6,11 @@ package com.bmc.models.bmcmeta;
 public class SupportMeta {
 
     private Boolean enableAlerts;//[true]
-    private String alertsUrl; //[HTTP path to CMS-powered support alerts JSON feed]
+    private String alertsUrl = ""; //[HTTP path to CMS-powered support alerts JSON feed]
 
     //if user is authenticated
-    private String issueEnvironment; //[lookup static string based on CMS environment]
-    private String issuePath; //[lookup static string based on CMS environment]
+    private String issueEnvironment = ""; //[lookup static string based on CMS environment]
+    private String issuePath = ""; //[lookup static string based on CMS environment]
     //end if user is authenticated
     private CaseErrorMessagesMeta caseErrorMessages;
 

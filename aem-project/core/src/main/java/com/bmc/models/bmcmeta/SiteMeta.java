@@ -7,7 +7,7 @@ public class SiteMeta {
 
 
    private String cultureCode; //[domain’s four letter xx-yy culture code]"
-   private String environment = ""; //[empty, 'dev.', or 'stage.']"
+   private String environment = "dev"; //[empty, 'dev.', or 'stage.']"
 
 
    public String getCultureCode() {
