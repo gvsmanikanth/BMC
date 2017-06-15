@@ -34,7 +34,7 @@
         <publish-dev.crx.port>4503</publish-dev.crx.port>
         <publish-dev.crx.username>admin</publish-dev.crx.username>
         <publish-dev.crx.password>admin</publish-dev.crx.password>
-        <stage-author.crx.host>author-bmcstage.adobemsbasic.com</stage-author.crx.host>
+        <stage-author.crx.host>author-bmc-stage.adobemsbasic.com</stage-author.crx.host>
         <stage-author.crx.port>4502</stage-author.crx.port>
         <stage-author.crx.username>admin</stage-author.crx.username>
         <stage-author.crx.password>admin</stage-author.crx.password>
