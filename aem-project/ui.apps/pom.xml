@@ -223,7 +223,7 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <targetURL>http://${stage-author.crx.host}:${stage-author.crx.port}/crx/packmgr/service.jsp</targetURL>
+                                    <targetURL>https://${stage-author.crx.host}:${stage-author.crx.port}/crx/packmgr/service.jsp</targetURL>
                                     <userId>${stage-author.crx.username}</userId>
                                     <password>${stage-author.crx.password}</password>
                                 </configuration>
