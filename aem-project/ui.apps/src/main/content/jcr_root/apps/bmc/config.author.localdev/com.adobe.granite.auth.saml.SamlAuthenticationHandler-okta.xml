@@ -7,7 +7,7 @@
           defaultRedirectUrl="/"
           groupMembershipAttribute="GroupName"
           handleLogout="{Boolean}false"
-          idpCertAlias="authentication-service#1492115489116"
+          idpCertAlias="authentication-service#1497542597914"
           idpHttpRedirect="{Boolean}false"
           idpUrl="https://connectivedx.oktapreview.com/app/connectivedxdev569521_aemlocal_1/exk70yscjrkFG8ysm0h7/sso/saml"
           keyStorePassword="admin"
