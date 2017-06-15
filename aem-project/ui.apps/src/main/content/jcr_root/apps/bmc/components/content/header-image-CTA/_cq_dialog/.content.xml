@@ -139,7 +139,7 @@
                                     name="./cta3isVideo"
                                     text="Is this a video?"
                                     value="true"/>
-                            <cta2isVideoType
+                            <cta3isVideoType
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/hidden"
                                     name="./cta3isVideo@TypeHint"
