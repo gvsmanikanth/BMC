@@ -10,6 +10,9 @@
         <artifactId>DXP</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <properties>
+        <properties.basedir>${basedir}/../properties</properties.basedir>
+    </properties>
 
     <!-- ====================================================================== -->
     <!-- P R O J E C T D E S C R I P T I O N -->
