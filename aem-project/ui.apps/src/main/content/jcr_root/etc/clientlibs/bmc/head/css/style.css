@@ -2845,6 +2845,15 @@ ul.accordion {
 .accordion--editing .accordion-item-content {
   display: block !important; }
 
+.aem--no-grid.aem-GridColumn {
+  float: none !important;
+  width: auto !important; }
+
+.aem--no-grid .aem--inline-block {
+  display: inline-block !important;
+  float: none !important;
+  width: auto !important; }
+
 .append-around-low-resolution {
   display: block !important; }
   @media only screen and (min-width: 60em) {

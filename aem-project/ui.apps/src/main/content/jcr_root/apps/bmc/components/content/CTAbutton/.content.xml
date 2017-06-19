@@ -3,6 +3,12 @@
           jcr:description="CTAbutton"
           jcr:primaryType="cq:Component"
           jcr:title="CTAbutton"
-          componentGroup="BMC.content"
-          cq:htmlTag=""
-/>
+          componentGroup="BMC.content">
+
+    <cq:htmlTag
+            class="aem--inline-block aem--no-grid"
+            cq:tagName="span"
+            jcr:primaryType="nt:unstructured"
+    />
+
+</jcr:root>
