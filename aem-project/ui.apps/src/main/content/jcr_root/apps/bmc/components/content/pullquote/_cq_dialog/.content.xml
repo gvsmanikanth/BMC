@@ -19,21 +19,24 @@
                         <items jcr:primaryType="nt:unstructured">
                             <quote
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                     fieldDescription="Enter the quote"
                                     fieldLabel="Quote"
+                                    rows="6"
                                     name="./quote"/>
                             <citation
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                     fieldDescription="Enter the name of the person/entity responsible for the quote"
                                     fieldLabel="Citation"
+                                    rows="2"
                                     name="./citation"/>
                             <sourcelinktext
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
                                     fieldDescription="Enter the static text (in black) or enter the text that will appear as a link (in white)"
                                     fieldLabel="(Optional) Source Text with Optional Link"
+                                    rows="2"
                                     name="./sourcelinktext"/>
                             <sourcelinkeurl
                                     jcr:primaryType="nt:unstructured"
