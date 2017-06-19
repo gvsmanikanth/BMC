@@ -78,6 +78,7 @@ $enablePull: true;
     background: #eaeaea; }
 
 .row {
+  box-sizing: border-box;
   margin-left: 0;
   margin-right: 0;
   min-width: 0;
