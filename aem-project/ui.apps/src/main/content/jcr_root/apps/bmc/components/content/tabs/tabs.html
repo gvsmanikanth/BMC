@@ -6,7 +6,7 @@
             <sly data-sly-list.tab="${tabs.tabs}">
                 <li class="bg-sirocco" style="width:1px" data-sly-test="${!tabList.first}"></li>
                 <li class="flex-cell" data-sly-test="${tab.title}">
-                    <a class="p2 white bold no-scroll" href="#${tab.hash}" onclick="">${tab.title @ context = 'html'}</a>
+                    <a class="p2 white bold no-scroll" href="#tab${tabList.index}" onclick="">${tab.title @ context = 'html'}</a>
                 </li>
             </sly>
 
@@ -30,7 +30,7 @@
 
         <sly data-sly-test="${!wcmmode.edit}">
             <sly data-sly-list.tab="${tabs.tabItems}">
-            <div id="${tabs.tabs[tabList.index].hash}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
+            <div id="tab${tabList.index}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
                 <div class="section-content md-flex p3">
                     <sly data-sly-resource="${tab.path @ resourceType=tab.resourceType, decorationTagName='div', cssClassName=tab.cssClass}"></sly>
                 </div>
