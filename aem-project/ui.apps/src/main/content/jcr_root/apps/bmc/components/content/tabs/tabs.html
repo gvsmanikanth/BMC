@@ -1,12 +1,12 @@
 <section data-sly-use.tabs="com.bmc.components.Tabs">
-    <div id="industry-tabs" class="${wcmmode.edit ? 'industry-tabs--editing industry-tabs bg-corduroy' : 'industry-tabs bg-corduroy'} ">
+    <div id="industry-tabs" class="${wcmmode.edit ? 'industry-tabs--editing industry-tabs bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
         <h2 class="section-title m0 p3 text-center white">${properties.headerText @ context = 'html'}</h2>
         <ul class="tabs-nav -hr bg-corduroy center-block overflow-auto flex-table" style="max-width:1200px;">
 
             <sly data-sly-list.tab="${tabs.tabs}">
                 <li class="bg-sirocco" style="width:1px" data-sly-test="${!tabList.first}"></li>
                 <li class="flex-cell" data-sly-test="${tab.title}">
-                    <a class="p2 white bold no-scroll" href="#${tab.hash}">${tab.title @ context = 'html'}</a>
+                    <a class="p2 white bold no-scroll" href="#tab${tabList.index}" onclick="">${tab.title @ context = 'html'}</a>
                 </li>
             </sly>
 
@@ -30,7 +30,7 @@
 
         <sly data-sly-test="${!wcmmode.edit}">
             <sly data-sly-list.tab="${tabs.tabItems}">
-            <div id="${tabs.tabs[tabList.index].hash}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
+            <div id="tab${tabList.index}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
                 <div class="section-content md-flex p3">
                     <sly data-sly-resource="${tab.path @ resourceType=tab.resourceType, decorationTagName='div', cssClassName=tab.cssClass}"></sly>
                 </div>
