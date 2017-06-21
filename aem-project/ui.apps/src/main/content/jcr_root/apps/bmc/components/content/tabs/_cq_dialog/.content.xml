@@ -47,12 +47,6 @@
                                                         fieldLabel="Title"
                                                         fieldDescription="Tab Title"
                                                         name="./title"/>
-                                                <hash
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                        fieldLabel="ID"
-                                                        fieldDescription="Enter a unique HTML element id for the tab (e.g., 'tab-1', 'tab-2', etc.)"
-                                                        name="./hash"/>
                                             </items>
                                         </column>
                                     </items>
