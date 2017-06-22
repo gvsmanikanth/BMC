@@ -1,7 +1,35 @@
+<section class="${properties.bgcolor} ctabar">
+    <div class="layout-inner-wrap">
+        <div class="cta-content text-center">
+            <h2 data-sly-test="${properties.headerText}">${properties.headerText @ context ='html'}</h2>
+
+            <div class="tagline" data-sly-test="${properties.paragraph}">
+                ${properties.paragraph @ context ='html'}
+            </div>
+
+            <div class="ctabar__buttonwrap">
+                <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
+                    <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
+                    <a class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
+                </div>
+                <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
+                    <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
+                    <a class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<div style="margin-top: 12em;">
 <section class="CTA-simple">
     <div class="layout-inner-wrap">
         <h2>Heading</h2>
-        <a class="btn-secondary learn-more" href="#" data-form="xxx" data-location="Page-Body-KeyFeatures" data-parent-id="401252155" target="_self">Start a free trial</a>
+        <a class="btn-secondary learn-more" href="#">Start a free trial</a>
     </div>
 </section>
 
@@ -82,3 +110,4 @@
         </div>
     </div>
 </section>
+</div>

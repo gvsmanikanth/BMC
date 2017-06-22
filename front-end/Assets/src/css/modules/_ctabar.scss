@@ -1,0 +1,86 @@
+.ctabar {
+  padding: em(24);
+
+  @include media(breakpointMedium) {
+    padding: em(48);
+  }
+
+  /*
+    <white jcr:primaryType="nt:unstructured" text="White" value="bg-white" />
+    <lightgrey jcr:primaryType="nt:unstructured" text="Light Grey" value="bg-seashell" />
+    <darkgrey jcr:primaryType="nt:unstructured" text="Dark Grey" value="bg-ship-gray" />
+    <mediumgrey jcr:primaryType="nt:unstructured" text="Medium Grey" value="bg-corduroy" />
+  */
+
+  &.bg-ship-gray,
+  &.bg-corduroy {
+      color: #fff;
+
+      h2 {
+        color: #fff;
+        display: block;
+      }
+
+      .tagline {
+        display: none;
+      }
+      .ctabar__ctaheader {
+        display: block;
+
+        @include media(breakpointLarge) {
+          @include font-size(30);
+          margin-bottom: .25em;
+        }
+      }
+  }
+
+  &.bg-white,
+  &.bg-seashell {
+
+    .tagline {
+      display: block;
+      @include font-size(30);
+      margin-bottom: .25em;
+    }
+    .ctabar__ctaheader {
+      display: none;
+    }
+
+    .ctabar__buttonwrap-item {
+      padding: 8px;
+    }
+  }
+
+  .tagline {
+    @include font-size(30);
+  }
+
+
+  h2 {
+    display: none;
+  }
+
+  .ctabar__buttonwrap {
+    @include media(breakpointMedium) {
+      display: flex;
+    }
+  }
+  .ctabar__buttonwrap-item {
+    @include box-sizing();
+    padding: 16px 32px;
+    text-align: center;
+
+    & + .ctabar__buttonwrap-item {
+      border-top: 1px solid #5b5c5c;
+
+      @include media(breakpointMedium) {
+        border-top: 0;
+        border-left: 1px solid #5b5c5c;
+      }
+    }
+
+    @include media(breakpointMedium) {
+      flex: 1 1 50%;
+    }
+  }
+}
