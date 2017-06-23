@@ -8,14 +8,14 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <bullets jcr:primaryType="nt:unstructured"
+            <readList jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/foundation/form/multifield"
-                    fieldLabel="Description">
+                    fieldLabel="Column 1 Resources">
                 <field
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/fieldset"
                         acs-commons-nested="NODE_STORE"
-                        name="./keyFeatureSet">
+                        name="./column1">
                     <layout
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
@@ -25,17 +25,134 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/container">
                            <items jcr:primaryType="nt:unstructured">
-                               <bullet
+                               <resourceType
                                        jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
-                                       fieldLabel="Bullet"
+                                       sling:resourceType="granite/ui/components/foundation/form/select"
+                                       fieldLabel="Select Asset Type"
+                                       multiple="{Boolean}false"
+                                       name="./resourceType">
+                                   <items jcr:primaryType="nt:unstructured">
+                                       <dataSheet jcr:primaryType="nt:unstructured" text="Datasheets" value="Datasheets"/>
+                                       <whitePaper jcr:primaryType="nt:unstructured" text="White papers" value="White papers"/>
+                                       <analystResearch jcr:primaryType="nt:unstructured" text="Analyst research" value="Analyst research"/>
+                                       <eBooks jcr:primaryType="nt:unstructured" text="E-books" value="E-books"/>
+                                   </items>
+                               </resourceType>
+                               <resourceText
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Resource Text"
                                        required="{Boolean}true"
-                                       name="./featureBullet"/>
+                                       name="./resourceText"/>
+                               <resourcePath
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                       fieldDescription="Resource Path"
+                                       required="{Boolean}true"
+                                       name="./resourcePath"
+                                       fieldLabel="Resource Path"/>
                            </items>
                    </column>
                  </items>
               </field>
-          </bullets>
+          </readList>
+            <experienceList jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/foundation/form/multifield"
+                     fieldLabel="Column 2 Resources">
+                <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                        acs-commons-nested="NODE_STORE"
+                        name="./column2">
+                    <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            method="absolute"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <resourceType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Select Asset Type"
+                                        multiple="{Boolean}false"
+                                        name="./resourceType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <onDemandDemos jcr:primaryType="nt:unstructured" text="On-demand demos" value="On-demand demos"/>
+                                        <webinars jcr:primaryType="nt:unstructured" text="Webinars" value="Webinars"/>
+                                        <videos jcr:primaryType="nt:unstructured" text="Videos" value="Videos"/>
+                                        <customerStories jcr:primaryType="nt:unstructured" text="Customer stories" value="Customer stories"/>
+                                        <assessmentTool jcr:primaryType="nt:unstructured" text="Assessment tool" value="Assessment tool"/>
+                                    </items>
+                                </resourceType>
+                                <resourceText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Resource Text"
+                                        required="{Boolean}true"
+                                        name="./resourceText"/>
+                                <resourcePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Resource Path"
+                                        required="{Boolean}true"
+                                        name="./resourcePath"
+                                        fieldLabel="Resource Path"/>
+                            </items>
+                        </column>
+                    </items>
+                </field>
+            </experienceList>
+            <exploreList jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/foundation/form/multifield"
+                     fieldLabel="Column 3 Resources">
+                <field
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                        acs-commons-nested="NODE_STORE"
+                        name="./column3">
+                    <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                            method="absolute"/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                            <items jcr:primaryType="nt:unstructured">
+                                <resourceType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Select Asset Type"
+                                        multiple="{Boolean}false"
+                                        name="./resourceType">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <technicalDetails jcr:primaryType="nt:unstructured" text="Technical details" value="Technical details"/>
+                                        <whitePaper jcr:primaryType="nt:unstructured" text="Customer enablement" value="Customer enablement"/>
+                                        <analystResearch jcr:primaryType="nt:unstructured" text="Analyst research" value="Analyst research"/>
+                                        <RelatedProductsAndSolutions jcr:primaryType="nt:unstructured" text="Related products and solutions" value="Related products and solutions"/>
+                                    </items>
+                                </resourceType>
+                                <resourceText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Resource Text"
+                                        required="{Boolean}true"
+                                        name="./resourceText"/>
+                                <resourcePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldDescription="Resource Path"
+                                        required="{Boolean}true"
+                                        name="./resourcePath"
+                                        fieldLabel="Resource Path"/>
+                            </items>
+                        </column>
+                    </items>
+                </field>
+            </exploreList>
         </items>
     </content>
 </jcr:root>
