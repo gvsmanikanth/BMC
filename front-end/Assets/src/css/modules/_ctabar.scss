@@ -41,6 +41,11 @@
       display: block;
       @include font-size(30);
       margin-bottom: .25em;
+
+      p {
+        font-size: inherit;
+        margin-bottom: 0;
+      }
     }
     .ctabar__ctaheader {
       display: none;

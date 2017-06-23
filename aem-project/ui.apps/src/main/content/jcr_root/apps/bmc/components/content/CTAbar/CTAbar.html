@@ -3,20 +3,43 @@
         <div class="cta-content text-center">
             <h2 data-sly-test="${properties.headerText}">${properties.headerText @ context ='html'}</h2>
 
-            <div class="tagline" data-sly-test="${properties.paragraph}">
-                ${properties.paragraph @ context ='html'}
+            <div class="tagline">
+                <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+                     data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
+                     class="${api.cssClass} ${allowed.cssClass}">
+                    <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+                         data-sly-test="${isAllowedApplicable}"
+                         data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+                         data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+                    <sly data-sly-test="${!isAllowedApplicable}"
+                         data-sly-repeat.child="${api.paragraphs}"
+                         data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
+                    <sly data-sly-test="${!isAllowedApplicable}"
+                         data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+                </div>
             </div>
 
-            <div class="ctabar__buttonwrap">
-                <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
-                    <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
-                    <a class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
+            <!-- two buttons, one or more with headers -->
+            <sly data-sly-test="${properties.primaryCTAheader || properties.secondaryCTAheader}">
+                <div class="ctabar__buttonwrap">
+                    <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
+                        <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
+                        <a class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
+                    </div>
+                    <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
+                        <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
+                        <a class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                    </div>
                 </div>
-                <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
-                    <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
+            </sly>
+
+            <!-- one or two buttons, no headers -->
+            <sly data-sly-test="${!properties.primaryCTAheader && !properties.secondaryCTAheader}">
+                <div class="text-center">
+                    <a class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
                     <a class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
                 </div>
-            </div>
+            </sly>
 
         </div>
     </div>
@@ -26,6 +49,7 @@
 
 
 <div style="margin-top: 12em;">
+    <h1>static examples</h1>
 <section class="CTA-simple">
     <div class="layout-inner-wrap">
         <h2>Heading</h2>

@@ -3431,6 +3431,9 @@ span .chatbtn {
     font-size: 30px;
     font-size: 1.66667rem;
     margin-bottom: .25em; }
+    .ctabar.bg-white .tagline p, .ctabar.bg-seashell .tagline p {
+      font-size: inherit;
+      margin-bottom: 0; }
   .ctabar.bg-white .ctabar__ctaheader, .ctabar.bg-seashell .ctabar__ctaheader {
     display: none; }
   .ctabar.bg-white .ctabar__buttonwrap-item, .ctabar.bg-seashell .ctabar__buttonwrap-item {

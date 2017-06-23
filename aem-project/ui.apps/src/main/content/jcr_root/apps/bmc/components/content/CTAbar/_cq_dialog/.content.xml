@@ -41,14 +41,6 @@
                                 </items>
                             </bgcolor>
 
-                            <paragraph
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="(Optional) Enter the paragraph text -- used on white or light grey backgrounds only"
-                                    fieldLabel="(Optional) Paragraph text"
-                                    rows="6"
-                                    name="./paragraph"/>
-
                             <primaryCTAheader
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
