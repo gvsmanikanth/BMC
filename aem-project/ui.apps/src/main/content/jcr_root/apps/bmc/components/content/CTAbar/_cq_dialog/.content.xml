@@ -86,24 +86,6 @@
                     </column>
                 </items>
             </text>
-            <image jcr:primaryType="nt:unstructured">
-                <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured">
-                        <items jcr:primaryType="nt:unstructured">
-                            <decorative jcr:primaryType="nt:unstructured"
-                                 sling:hideResource="{Boolean}true"/>
-                            <alt jcr:primaryType="nt:unstructured"
-                                sling:hideResource="{Boolean}true"/>
-                            <linkURL jcr:primaryType="nt:unstructured"
-                                 sling:hideResource="{Boolean}true"/>
-                            <caption jcr:primaryType="nt:unstructured"
-                                     sling:hideResource="{Boolean}true"/>
-                            <displayCaptionPopup jcr:primaryType="nt:unstructured"
-                                     sling:hideResource="{Boolean}true"/>
-                        </items>
-                    </column>
-                </items>
-            </image>
         </items>
     </content>
 </jcr:root>
