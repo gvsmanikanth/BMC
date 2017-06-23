@@ -22,22 +22,8 @@
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
     <properties>
-        <crx.host>localhost</crx.host>
-        <crx.port>4502</crx.port>
-        <crx.username>admin</crx.username>
-        <crx.password>admin</crx.password>
-        <publish.crx.host>localhost</publish.crx.host>
-        <publish.crx.port>4503</publish.crx.port>
-        <publish.crx.username>admin</publish.crx.username>
-        <publish.crx.password>admin</publish.crx.password>
-        <publish-dev.crx.host>vl-aus-rds-dv06.bmc.com</publish-dev.crx.host>
-        <publish-dev.crx.port>4503</publish-dev.crx.port>
-        <publish-dev.crx.username>admin</publish-dev.crx.username>
-        <publish-dev.crx.password>admin</publish-dev.crx.password>
-        <stage-author.crx.host>author-bmc-stage.adobemsbasic.com</stage-author.crx.host>
-        <stage-author.crx.port>4502</stage-author.crx.port>
-        <stage-author.crx.username>admin</stage-author.crx.username>
-        <stage-author.crx.password>admin</stage-author.crx.password>
+        <!-- See crx.properties -->
+        <properties.basedir>${basedir}/properties</properties.basedir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -233,6 +219,26 @@
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <quiet>true</quiet>
+                            <files>
+                                <file>${properties.basedir}/crx.properties</file>
+                                <file>${properties.basedir}/crx.local.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>
