@@ -1,0 +1,19 @@
+/* Alternating row styles for Multifield */
+ol.coral-Multifield-list {
+    padding-bottom: .625rem;
+}
+    ol.coral-Multifield-list li {
+        background-color: #4b4b4b;
+        color: lightgrey;
+        padding-bottom: 0.1em;
+    }
+        ol.coral-Multifield-list li .coral-Form-fieldlabel {
+            color: lightgrey;
+        }
+    ol.coral-Multifield-list li:nth-child(odd) {
+        background-color: lightgrey;
+        color: rgb(50, 50, 50);
+    }
+        ol.coral-Multifield-list li:nth-child(odd) .coral-Form-fieldlabel {
+            color: rgb(50, 50, 50);
+        }
