@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceSuperType="/apps/bmc/components/content/related-items/related-items-primary/cq:dialog">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <columns jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:hideResource="true" />
+                            <useHorizontalDisplay
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:orderBefore="linkItems"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="Render links horizontally?"
+                                    name="./useHorizontalDisplay"
+                                    text="Horizontal display"
+                                    value="true"/>
+                            <useHorizontalDisplayType
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:orderBefore="linkItems"
+                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                    name="./useHorizontalDisplay@TypeHint"
+                                    value="Boolean"/>
+                        </items>
+                    </column>
+                </items>
+            </columns>
+        </items>
+    </content>
+</jcr:root>
