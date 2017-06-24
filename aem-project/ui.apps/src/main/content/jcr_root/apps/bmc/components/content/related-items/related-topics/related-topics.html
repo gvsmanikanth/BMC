@@ -13,11 +13,12 @@
     </article>
 </section>
 <section data-sly-test="${data.useHorizontalDisplay}">
-    <p data-sly-test="${data.headingText}">${data.headingText}:&nbsp;</p>
+    <p><sly data-sly-test="${data.headingText}">${data.headingText}:&nbsp;</sly>
     <sly data-sly-list.link="${data.links}">
         <sly data-sly-test="${linkList.last && link.isInternal}"><a href="${link.href}" target="_self">${link.text}</a></sly>
         <sly data-sly-test="${linkList.last && link.isExternal}"><a href="${link.href}" target="_blank">${link.text}</a></sly>
         <sly data-sly-test="${!linkList.last && link.isInternal}"><a href="${link.href}" target="_self">${link.text}</a>, </sly>
         <sly data-sly-test="${!linkList.last && link.isExternal}"><a href="${link.href}" target="_blank">${link.text}</a>, </sly>
     </sly>
+    </p>
 </section>
