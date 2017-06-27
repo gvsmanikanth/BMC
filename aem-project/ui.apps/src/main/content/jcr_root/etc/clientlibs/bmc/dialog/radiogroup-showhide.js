@@ -58,11 +58,12 @@
                     .children();
             }
 
-            var hasSelection = (item.$RadioInputs.filter(":checked").length > 0);;
+            var hasSelection = (item.$RadioInputs.filter(":checked").length > 0);
             item.$RadioInputs.each(function (j, radio) {
                 if (item.IsInMultifield) {
                     // early initialize of validation state for hidden fields
-                    showHide(radio, item);
+                    var $inputs = item.$ShowHideTargets.find("input");
+                    hideInputs($inputs, item);
                 }
 
                 // finish init after field values have been loaded
@@ -78,6 +79,8 @@
                         }
                     }
                     if ($radio.is(":checked")) {
+                        if ($hiddenValueInput)
+                            $hiddenValueInput.val(radio.value);
                         showHide(radio, item);
                     }
 
