@@ -15,10 +15,9 @@
 }
 
 //DXP-698
-form {
-	fieldset{
-		.cmp{
-			padding: 0.5rem;
-		}
+fieldset {
+	.cmp {
+	    padding: 0.5rem;
+	    line-height: 0.7;
 	}
 }
