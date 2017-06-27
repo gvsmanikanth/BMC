@@ -8,7 +8,7 @@
                 <a href="${link.href}" target="_self" data-sly-test="${link.isInternal}">${link.text}</a>
                 <a href="${link.href}" target="_blank" data-sly-test="${link.isExternal}">${link.text}</a>
             </dt>
-            <dd>${link.description}</dd>
+            <dd><sly data-sly-test="${data.showLinkDescriptions}">${link.description}</sly></dd>
         </dl>
     </article>
 </section>
