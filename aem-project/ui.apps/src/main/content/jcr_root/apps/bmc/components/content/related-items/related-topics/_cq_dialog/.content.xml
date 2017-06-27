@@ -15,7 +15,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:orderBefore="linkItems"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Render links horizontally?"
+                                    fieldDescription="When checked, all items below display in a single line without descriptions"
                                     name="./useHorizontalDisplay"
                                     text="Horizontal display"
                                     value="true"/>

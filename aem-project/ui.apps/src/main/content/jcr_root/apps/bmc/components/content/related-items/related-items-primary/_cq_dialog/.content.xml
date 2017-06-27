@@ -52,7 +52,7 @@
                                     <customHeadingText
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                            fieldDescription="Custom Heading"
+                                            fieldDescription="Enter a custom heading here"
                                             name="./customHeadingText"/>
                                 </items>
                             </customerHeadingContainer>
@@ -65,7 +65,7 @@
                             <showLinkDescriptions
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Render link descriptions?"
+                                    fieldDescription="Check to display the link descriptions from the list of items below"
                                     name="./showLinkDescriptions"
                                     text="Show Link Descriptions"
                                     value="true"/>
@@ -163,7 +163,7 @@
                                                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                                 fieldDescription="Please select the asset"
                                                                 name="./internalAssetPath"
-                                                                rootPath="/content/dam/projects/bmc"
+                                                                rootPath="/content/dam"
                                                                 required="{Boolean}true"/>
                                                     </items>
                                                 </internalAssetContainer>
