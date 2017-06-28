@@ -3,43 +3,45 @@
         <h2 class="resources-header">Resources</h2>
         <div class="three-up">
             <h2 class="icon-read">Read</h2>
-            <h5>Datasheets:</h5>
-            <ul></ul>
-            <h5>White papers:</h5>
-            <ul></ul>
-            <h5>Analyst research:</h5>
-            <ul></ul>
-            <h5>E-books:</h5>
-            <ul></ul>
-            <h5>Column 1 Open Text Field:</h5>
-            <ul></ul>
+            <sly data-sly-test.ReadResources="${properties.readResources}" data-sly-list="${ReadResources}">
+                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
+                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
+                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
+                        <a  href="${child.resPath}"  target="_self">
+                            ${child.resText} &nbsp;&#8250;
+                        </a>
+                    </ul>
+                </sly>
+            </sly>
         </div>
         <div class="three-up">
             <h2 class="icon-watch">Experience</h2>
-            <h5>On-demand demos:</h5>
-            <ul></ul>
-            <h5>Webinars:</h5>
-            <ul></ul>
-            <h5>Videos:</h5>
-            <ul></ul>
-            <h5>Customer stories:</h5>
-            <ul></ul>
-            <h5>Column 2 Open Text Field:</h5>
-            <ul></ul>
+            <sly data-sly-test.ExperienceResources="${properties.experienceResources}" data-sly-list="${ExperienceResources}">
+                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
+                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
+                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
+                        <a  href="${child.resPath}"  target="_self">
+                            ${child.resText} &nbsp;&#8250;
+                        </a>
+                    </ul>
+                </sly>
+            </sly>
         </div>
         <div class="three-up">
             <h2 class="icon-explore">Explore</h2>
-            <h5>Technical details:</h5>
-            <ul></ul>
-            <h5>Customer enablement:</h5>
-            <ul></ul>
-            <h5>Related products and solutions:</h5>
-            <ul></ul>
-            <h5>Column 3 Open Text Field:</h5>
-            <ul></ul>
+            <sly data-sly-test.ExploreResources="${properties.exploreResources}" data-sly-list="${ExploreResources}">
+                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
+                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
+                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
+                        <a  href="${child.resPath}"  target="_self">
+                            ${child.resText} &nbsp;&#8250;
+                        </a>
+                    </ul>
+                </sly>
+            </sly>
         </div>
     </div>
-    <p class="text-center">
-        <a class="btn" href="#" target="_self">Call to action button to link to an OfferingResources item &nbsp;›</a>
+    <p data-sly-test="${properties.ctaText && properties.ctaPath}" class="text-center">
+        <a class="btn" href="${properties.ctaPath}" target="_self">${properties.ctaText @ context='html'} &nbsp;›</a>
     </p>
 </section>
