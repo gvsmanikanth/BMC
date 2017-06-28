@@ -1,5 +1,6 @@
 **/.idea
 **/*.iml
+*.local.properties
 aem-project*/ui.apps/target
 aem-project*/core/target
 front-end/*.php

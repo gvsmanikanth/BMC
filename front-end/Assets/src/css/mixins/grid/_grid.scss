@@ -2,6 +2,7 @@
 /// @group grid
 @mixin grid {
 	.row {
+		@include box-sizing();
 		@include row();
 
 		& + .row {

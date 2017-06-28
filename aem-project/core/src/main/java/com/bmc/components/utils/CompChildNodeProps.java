@@ -1,4 +1,4 @@
-package com.bmc.components.untils;
+package com.bmc.components.utils;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import org.apache.sling.api.resource.Resource;

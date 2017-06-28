@@ -3,21 +3,28 @@
 // @function accordion
 // Styles related to the accordion, functionality paired with the accordion.js
 
+div.accordion {
 
-.accordion {
-	padding: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 1em;
-
-	&:last-of-type {
+	ul.accordion {
+		border-top: 1px solid color(mediumGrey);
 		border-bottom: 1px solid color(mediumGrey);
 	}
 
-	& + & {
-		margin-top: 0;
+	& + div.accordion {
+
+		ul.accordion {
+			border-bottom: 1px solid color(mediumGrey);
+			border-top: 1px solid transparent;
+			margin-top: 0;
+		}
 	}
+}
+
+ul.accordion {
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1440px;
+	width: 100%;
 
 	.jump-to {
 		$jumpToGap: $headerHeight + 1em; // Header height + a small bump for space tweaking
@@ -29,16 +36,23 @@
 	}
 
 	.accordion-item {
-		border-top: 1px solid color(mediumGrey);
 		list-style: none;
-		margin: 0;
-		padding: 1em 0;
+		margin: 0 auto;
+		padding-bottom: 1em;
+		padding-top: 1em;
 
 		&.open {
 			.accordion-item-anchor:before {
 				content: '\2013';
 				line-height: 1.2;
 			}
+
+			.accordion-item-content {
+				margin: 1em 0;
+				max-height: 99em;
+				overflow: auto;
+			}
+
 		}
 	}
 
@@ -83,9 +97,11 @@
 	}
 
 	.accordion-item-content {
-		display: none; // hide on default, shows/expands via js
-		margin: 1em 0;
+		max-height: 0;
+		overflow: hidden;
+		@include transition();
 	}
+
 
 	&.accordion-no-border{
 	  border-bottom: none;
@@ -94,7 +110,7 @@
 }
 
 .accordion--editing {
-	
+
 	.accordion-item-content {
 		// display the accordion in the open state during authoring
 		display: block !important;

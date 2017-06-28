@@ -1,5 +1,5 @@
-<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='bg'}"/>
-<sly data-sly-use.HeaderImgChildProps="${'com.bmc.components.untils.CompChildNodeProps' @ childNode='img'}"/>
+<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='bg'}"/>
+<sly data-sly-use.HeaderImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='img'}"/>
 <sly data-sly-test.fgImg="${HeaderImgChildProps.ChildProperties['fileReference']}"/>
 <sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
 
@@ -12,7 +12,7 @@
                 <div class="offset-hero-inner-wrap">
                     <h1>
                         <span>
-                            ${properties.headerText}
+                           ${properties.headerText @ context='html'}
                         </span>
                         <span data-sly-test="${!properties.headerText}">
                             Enter Heading Text
@@ -28,7 +28,7 @@
         <div data-sly-test="${!fgImg}" class="layout-inner-wrap py2">
             <h1>
                 <span>
-                    ${properties.headerText}
+                    ${properties.headerText @ context='html'}
                 </span>
                 <span data-sly-test="${!properties.headerText}">
                     Enter Heading Text

@@ -1,0 +1,17 @@
+<sly data-sly-test.authoringActive="${wcmmode.edit || wcmmode.design}"></sly>
+<div class="flex-grid">
+    <div class="lg-flex">
+        <div class="lg-col-9">
+            <a class="btn learn-more" href="#"
+               title="${'Contact an Education Advisor' @ i18n }">${"Contact an Education Advisor" @ i18n }</a>
+
+            <a data-sly-test="${properties.pricingUrl || authoringActive}"
+               class="btn-secondary learn-more" href="${properties.pricingUrl}"
+               title="${'Pricing & Registration' @ i18n}">${"Pricing & Registration" @ i18n}</a>
+        </div>
+        <div class="lg-col-3" data-sly-test="${properties.courseAbstractUrl || authoringActive}">
+            <a class="course-abstract link-icon-pdf" href="${properties.courseAbstractUrl}"
+               title="${'Course Abstract' @ i18n}">${"Course Abstract" @ i18n}</a>
+        </div>
+    </div>
+</div>

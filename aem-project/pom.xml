@@ -22,14 +22,8 @@
     <!-- P R O P E R T I E S -->
     <!-- ====================================================================== -->
     <properties>
-        <crx.host>localhost</crx.host>
-        <crx.port>4502</crx.port>
-        <crx.username>admin</crx.username>
-        <crx.password>admin</crx.password>
-        <publish.crx.host>localhost</publish.crx.host>
-        <publish.crx.port>4503</publish.crx.port>
-        <publish.crx.username>admin</publish.crx.username>
-        <publish.crx.password>admin</publish.crx.password>
+        <!-- See crx.properties -->
+        <properties.basedir>${basedir}/properties</properties.basedir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -152,19 +146,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-bundle</artifactId>
-                <version>3.8.4</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.adobe.acs</groupId>
-                <artifactId>acs-aem-commons-content</artifactId>
-                <version>3.8.4</version>
-                <scope>provided</scope>
-                <type>content-package</type>
-            </dependency>
-            <dependency>
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
@@ -185,6 +166,11 @@
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.models.api -->
             <dependency>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>org.apache.sling.models.api</artifactId>
+                <version>1.3.4</version>
+            </dependency>
+            <dependency>
                 <groupId>com.adobe.acs</groupId>
                 <artifactId>acs-aem-commons-bundle</artifactId>
                 <version>3.8.4</version>
@@ -198,9 +184,10 @@
                 <type>content-package</type>
             </dependency>
             <dependency>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>org.apache.sling.models.api</artifactId>
-                <version>1.3.4</version>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>core.wcm.components.all</artifactId>
+                <type>zip</type>
+                <version>1.0.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -232,6 +219,26 @@
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <quiet>true</quiet>
+                            <files>
+                                <file>${properties.basedir}/crx.properties</file>
+                                <file>${properties.basedir}/crx.local.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <pluginManagement>

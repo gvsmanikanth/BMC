@@ -5,14 +5,14 @@ package com.bmc.models.bmcmeta;
  */
 
 public class PageMeta {
-    private String contentId;
-    private String contentType;
-    private String longName;
-    private String cultureCode;
-    private String productCategories;
-    private String productLineCategories;
-    private String errorCode;
-    private Boolean isPurl;
+    private String contentId = "";
+    private String contentType = "";
+    private String longName = "";
+    private String cultureCode = "";
+    private String productCategories = "";
+    private String productLineCategories = "";
+    private String errorCode = "";
+    private Boolean isPurl = false;
     private ModelOpenMeta modalOpen;
     private GeoIPMeta GeoIP;
 

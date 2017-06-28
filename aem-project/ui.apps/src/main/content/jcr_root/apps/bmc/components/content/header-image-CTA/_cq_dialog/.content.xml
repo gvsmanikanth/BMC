@@ -70,13 +70,13 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 1st button text"
-                                    fieldLabel="Optional: Enter the 1st button text"
+                                    fieldLabel="Optional: Enter the 1st button text (if blank, no button rendered)"
                                     name="./cta1text"/>
-                            <cta1URL
+                            <cta1path
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 1st button video URL"
-                                    fieldLabel="Optional: Enter the 1st button video URL"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="Optional: Select the asset this button links to"
+                                    fieldLabel="Optional: Select the asset the 1st button links to"
                                     name="./cta1url"/>
                             <cta1isVideo
                                     jcr:primaryType="nt:unstructured"
@@ -91,19 +91,18 @@
                                     name="./cta1isVideo@TypeHint"
                                     value="Boolean"/>
 
-
                             <cta2text
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 2nd button text"
-                                    fieldLabel="Optional: Enter the 2nd button text"
+                                    fieldLabel="Optional: Enter the 2nd button text (if blank, no button rendered)"
                                     name="./cta2text"/>
 
-                            <cta2URL
+                            <cta2path
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 2nd button URL"
-                                    fieldLabel="Optional: Enter the 2nd button URL"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="Optional: Select the asset this button links to"
+                                    fieldLabel="Optional: Select the asset the 2nd button links to"
                                     name="./cta2url"/>
                             <cta2isVideo
                                     jcr:primaryType="nt:unstructured"
@@ -122,14 +121,14 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Optional: Enter the 3rd button text"
-                                    fieldLabel="Optional: Enter the 3rd button text"
+                                    fieldLabel="Optional: Enter the 3rd button text (if blank, no button rendered)"
                                     name="./cta3text"/>
 
-                            <cta3URL
+                            <cta3path
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Optional: Enter the 3rd button URL"
-                                    fieldLabel="Optional: Enter the 3rd button URL"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldDescription="Optional: Select the asset this button links to"
+                                    fieldLabel="Optional: Select the asset 3rd button links to"
                                     name="./cta3url"/>
 
                             <cta3isVideo
@@ -139,7 +138,7 @@
                                     name="./cta3isVideo"
                                     text="Is this a video?"
                                     value="true"/>
-                            <cta2isVideoType
+                            <cta3isVideoType
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/hidden"
                                     name="./cta3isVideo@TypeHint"

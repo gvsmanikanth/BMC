@@ -1,0 +1,39 @@
+<sly data-sly-include="svg-definitions.html"></sly>
+
+<header class="layout-header">
+    <div class="layout-inner-wrap">
+        <a class="layout-navigation-open" href="#"></a>
+        <a href="#" class="brand">BMC</a>
+    </div><!-- / inner-wrap -->
+</header>
+<nav class="layout-navigation">
+    <div style="position: relative;" class="layout-inner-wrap">
+        <ul class="navigation-primary">
+            <li class="navigation-home"><a href="#" class="navigation-home-link"></a></li>
+        </ul>
+    </div><!-- / layout-inner-wrap -->
+</nav>
+
+<section class="layout-wrapper">
+    <section class="layout-full-bleed">
+        <div class="layout-inner-wrap">
+
+
+            <article class="layout-primary">
+                <h2>Examples</h2>
+
+                <h3>Modal</h3>
+                <sly data-sly-resource="${@resourceType='bmc/components/content/video', selectors='modal'}"></sly>
+
+                <h3>Inline</h3>
+                <sly data-sly-resource="${@resourceType='bmc/components/content/video'}"></sly>
+
+            </article>
+
+            <aside class="layout-secondary">
+                <div data-sly-resource="${'video-data' @resourceType='bmc/components/content/video-data'}"></div>
+            </aside>
+
+        </div>
+    </section>
+</section>
