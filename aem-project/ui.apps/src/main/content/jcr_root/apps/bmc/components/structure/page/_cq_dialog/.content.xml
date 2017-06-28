@@ -50,7 +50,7 @@
                     </basic>
                     <CTAs
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="CTAs"
+                            jcr:title="Related CTAs"
                             sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
                             sling:orderBefore="advanced">
                         <items jcr:primaryType="nt:unstructured">
@@ -60,14 +60,15 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <secondary
                                             jcr:primaryType="nt:unstructured"
-                                            jcr:title="Secondary CTA"
+                                            jcr:title="Related CTAs - Secondary CTA"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
                                             <text
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                     renderReadOnly="{Boolean}false"
-                                                    fieldLabel="Text"
+                                                    fieldDescription="Enter the text here that will be the CTA Link Text for the Second CTA in the Related CTAs Component"
+                                                    fieldLabel="Secondary CTA Link Text"
                                                     name="./secondaryCtaText">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
@@ -78,7 +79,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                     renderReadOnly="{Boolean}false"
-                                                    fieldLabel="URL"
+                                                    fieldDescription="Enter the URL here for the Secondary CTA to link to"
+                                                    fieldLabel="Secondary CTA URL"
                                                     name="./secondaryCtaHref">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
