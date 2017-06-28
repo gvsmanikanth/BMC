@@ -104,6 +104,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                 // in this case there is no response code to get. server is unresponsive.
                 handleUnresponsiveRequest(src);
             }
+            URL url = connection.getURL();
             logger.error(e.toString() + " " + e.getMessage());
         }
         return html;
