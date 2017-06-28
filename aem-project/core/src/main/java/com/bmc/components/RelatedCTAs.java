@@ -2,19 +2,32 @@ package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
 public class RelatedCTAs extends WCMUsePojo {
+    enum HeadingType {
+        Custom(0),
+        FeaturedOfferings(1);
+
+        public static HeadingType valueOf(int typeId) { return typeMap.get(typeId); }
+        HeadingType(int typeId) { this.typeId = typeId; }
+        private int typeId;
+        static { typeMap = Stream.of(HeadingType.values()).collect(Collectors.toMap(t->t.typeId, t->t)); }
+        private static Map<Integer,HeadingType> typeMap;
+    }
     public static class Item {
         Item(String text, String href, String description, String secondaryCtaText, String secondaryCtaHref) {
             this.text = text;
@@ -39,9 +52,7 @@ public class RelatedCTAs extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception {
-        Resource resource = getResource();
-
-        Resource itemdata = resource.getChild("itemdata");
+        Resource itemdata = getResource().getChild("itemdata");
         if (itemdata == null) {
             items = new ArrayList<>();
         } else {
@@ -51,17 +62,25 @@ public class RelatedCTAs extends WCMUsePojo {
                     .collect(Collectors.toList());
         }
 
-        ValueMap map = resource.getValueMap();
-        String singularHeadingText = map.get("singularHeadingText", "");
-        String pluralHeadingText = map.get("pluralHeadingText", "");
-        if (items.size() == 1) {
-            headingText = singularHeadingText;
-            if (headingText.isEmpty())
-                headingText = pluralHeadingText;
-        } else {
-            headingText = pluralHeadingText;
-            if (headingText.isEmpty())
-                headingText = singularHeadingText;
+        headingText = resolveHeadingText();
+    }
+
+    private String resolveHeadingText() {
+        ValueMap map = getResource().getValueMap();
+
+        HeadingType type = HeadingType.valueOf(map.get("headingTypeId", 0));
+        if (type == null)
+            type = HeadingType.Custom;
+
+        if (type == HeadingType.Custom)
+            return map.get("customHeadingText", "");
+
+        int listSize = (items == null) ? 0 : items.size();
+        switch (type) {
+            case FeaturedOfferings:
+                return (listSize == 1) ? "Featured offering" : "Featured offerings";
+            default:
+                throw new NotImplementedException();
         }
     }
 
