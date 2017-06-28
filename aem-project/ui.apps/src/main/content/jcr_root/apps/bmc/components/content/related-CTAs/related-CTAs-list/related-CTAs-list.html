@@ -1,0 +1,13 @@
+<section data-sly-use.data="com.bmc.components.RelatedCTAs">
+    <h2 data-sly-test="${(wcmmode.edit || wcmmode.design) && !(data.headingText || data.items.size > 0)}">[RelatedCTAsList]</h2>
+    <h2 data-sly-test="${data.headingText}">${data.headingText}:</h2>
+    <sly data-sly-list.item="${data.items}">
+        <h3><a href="${item.href}" target="_self">${item.text}</a></h3>
+        <p data-sly-test="${item.description}">${item.description}</p>
+        <a href="${item.href}">${"Learn More" @ i18n}</a>
+        <sly data-sly-test="${item.hasSecondaryCta}">
+            <span> | </span>
+            <a href="${item.secondaryCtaHref}">${item.secondaryCtaText}</a>
+        </sly>
+    </sly>
+</section>
