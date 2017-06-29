@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
- * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
+ * Provides Related CTAs Component properties (components/content/related-ctas) for Use
  */
 public class RelatedCTAs extends WCMUsePojo {
     enum HeadingType {
