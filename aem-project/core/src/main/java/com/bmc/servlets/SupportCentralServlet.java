@@ -1,12 +1,10 @@
 package com.bmc.servlets;
 
 import com.bmc.services.SupportCentralService;
-import org.apache.commons.codec.binary.Base64;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
-import org.apache.jackrabbit.oak.commons.json.JsonObject;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
@@ -68,9 +66,9 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
             String apiPath = service.getApiPath();
             String apiUser = service.getApiUser();
             String apiPass = service.getApiPass();
-            String credentials = Base64.encodeBase64String((apiUser + ":" + apiPass).getBytes());
             String apiUrl = baseUrl + apiPath + URLEncoder.encode(profileFields.get("email")) + "/OpenCases";
             Authenticator.setDefault (new Authenticator() {
+                @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication (apiUser, apiPass.toCharArray());
                 }
@@ -88,6 +86,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
 
 
                 logger.info(responseBody);
+                response.getWriter().append(responseBody);
             } catch (IOException e) {
                 logger.error(e.getMessage());
                 try {
@@ -105,19 +104,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
             } catch (IOException e) {
                 logger.error(e.getMessage());
             }
-            logger.info("credentials = " + credentials);
-            logger.info("apiUrl = " + apiPath);
         }
-    }
-
-    private JSONObject parseJson(String json) {
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(json);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonObject;
     }
 
     private HashMap<String, String> extractProfileDetails(Authorizable userAcct) throws RepositoryException {
@@ -128,6 +115,16 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
             }
         }
         return profileFields;
+    }
+
+    private JSONObject parseJson(String json) {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
     }
 
     private JSONArray getCases(JSONObject jsonObject) {
