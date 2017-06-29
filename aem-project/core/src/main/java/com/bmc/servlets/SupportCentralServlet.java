@@ -6,9 +6,13 @@ import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
+import org.apache.jackrabbit.oak.commons.json.JsonObject;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.commons.json.JSONArray;
+import org.apache.sling.commons.json.JSONException;
+import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,6 +83,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                     responseBody = scanner.useDelimiter("\\A").next();
                 }
 
+                JSONObject jsonObject = parseJson(responseBody);
 
 
 
@@ -105,6 +110,16 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
         }
     }
 
+    private JSONObject parseJson(String json) {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
+
     private HashMap<String, String> extractProfileDetails(Authorizable userAcct) throws RepositoryException {
         HashMap<String, String> profileFields = new HashMap<>();
         for (Map.Entry<String, String> field : FIELD_MAPPING.entrySet()) {
@@ -114,5 +129,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
         }
         return profileFields;
     }
+
+    private JSONArray 
 
 }
