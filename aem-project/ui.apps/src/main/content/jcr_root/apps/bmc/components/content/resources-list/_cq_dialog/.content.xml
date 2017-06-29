@@ -30,8 +30,8 @@
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Resource Text" required="{Boolean}true" name="./resText" />
-                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Resource Path" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
+                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
+                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
                                                                 </items>
                                                             </column>
                                                         </items>
@@ -74,8 +74,8 @@
                                                         <items jcr:primaryType="nt:unstructured">
                                                             <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Resource Text" required="{Boolean}true" name="./resText" />
-                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Resource Path" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
+                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
+                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
                                                                 </items>
                                                             </column>
                                                         </items>
@@ -117,8 +117,8 @@
                                                          <items jcr:primaryType="nt:unstructured">
                                                              <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
                                                                  <items jcr:primaryType="nt:unstructured">
-                                                                     <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Resource Text" required="{Boolean}true" name="./resText" />
-                                                                     <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Resource Path" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
+                                                                     <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
+                                                                     <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
                                                                  </items>
                                                              </column>
                                                          </items>
@@ -138,8 +138,8 @@
                 <items jcr:primaryType="nt:unstructured">
                     <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <ctaText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="CTA Text" required="{Boolean}true" name="./ctaText" />
-                            <ctaPath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="CTA Path" required="{Boolean}true" name="./ctaPath" fieldLabel="CTA Path" />
+                            <ctaText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="CTA Label" fieldDescription="Enter a name that will appear on the CTA" required="{Boolean}true" name="./ctaText" />
+                            <ctaPath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldLabel="CTA Path" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./ctaPath" />
                         </items>
                     </column>
                 </items>
