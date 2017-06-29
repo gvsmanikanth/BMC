@@ -84,7 +84,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                 }
 
                 JSONObject jsonObject = parseJson(responseBody);
-
+                JSONArray cases = getCases(jsonObject);
 
 
                 logger.info(responseBody);
@@ -130,6 +130,14 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
         return profileFields;
     }
 
-    private JSONArray 
+    private JSONArray getCases(JSONObject jsonObject) {
+        JSONArray array = null;
+        try {
+            array = jsonObject.getJSONArray("Cases");
+        } catch (JSONException e) {
+            logger.error(e.getMessage());
+        }
+        return array;
+    }
 
 }
