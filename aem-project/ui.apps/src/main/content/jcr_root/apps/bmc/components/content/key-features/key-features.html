@@ -9,7 +9,14 @@
     <ul data-sly-test="${ctaButtonSet || properties.aditionalResources}" class="button-set">
         <li>
             <sly data-sly-list.ctaButton="${ctaButtonSet.ChildResources}">
-                <a class="${ctaButton.buttonColor}" href="${ctaButton.ctaPath}"> ${ctaButton.assetType ? ctaButton.assetType : ctaButton.assetName}</a>
+                <a class="${ctaButton.buttonColor}" href="${ctaButton.ctaPath}">
+                    <sly data-sly-test="${ctaButton.assetName && ctaButton.assetType}">
+                    ${ctaButton.assetType} : ${ctaButton.assetName}
+                    </sly>
+                    <sly data-sly-test="${!ctaButton.assetName && ctaButton.assetType}">
+                        ${ctaButton.assetType}
+                    </sly>
+                </a>
             </sly>
             <a data-sly-test="${properties.aditionalResources}" href="#resources" class="resource-downloads-a icon-documents">Explore Additional Resources&nbsp;›</a>
         </li>

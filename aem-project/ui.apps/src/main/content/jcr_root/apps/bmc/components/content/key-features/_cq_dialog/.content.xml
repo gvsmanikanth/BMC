@@ -94,15 +94,15 @@
                                                 <assetName
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                        fieldLabel="Asset Name"
-                                                        fieldDescription="Asset Name"
+                                                        fieldLabel="Custom Asset Name"
+                                                        fieldDescription="Enter a name that will appear on the CTA for the asset"
                                                         name="./assetName"/>
                                                 <ctaPath
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
-                                                        fieldDescription="CTA Path"
+                                                        fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                         name="./ctaPath"
-                                                        fieldLabel="CTA Path"/>
+                                                        fieldLabel="CTA Path or external URL"/>
                                                 <buttonColor
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/foundation/form/select"
