@@ -3,8 +3,5 @@
           jcr:description="Key Features"
           jcr:primaryType="cq:Component"
           jcr:title="Key Features"
-          cq:isContainer="true"
           componentGroup="BMC.content"
-          sling:resourceSuperType="wcm/foundation/components/responsivegrid"
-
 />

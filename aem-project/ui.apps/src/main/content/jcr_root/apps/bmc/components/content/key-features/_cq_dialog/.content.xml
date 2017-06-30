@@ -85,7 +85,7 @@
                                                         multiple="{Boolean}false"
                                                         name="./assetType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <noneSelected jcr:primaryType="nt:unstructured" text="<none selected>" value="" />
+                                                        <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
                                                         <dataSheet jcr:primaryType="nt:unstructured" text="Datasheet" value="Datasheet"/>
                                                         <whitePaper jcr:primaryType="nt:unstructured" text="White Paper" value="White Paper"/>
                                                         <solutionOverview jcr:primaryType="nt:unstructured" text="Solution Overview" value="Solution Overview"/>
@@ -144,7 +144,7 @@
                                 name="./backgroundColor">
 
                                 <items jcr:primaryType="nt:unstructured">
-                                    <noneSelected jcr:primaryType="nt:unstructured" text="<none selected>" value="" />
+                                    <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
                                     <green jcr:primaryType="nt:unstructured" text="White (default color)" value="btn btn-secondary"/>
                                     <orange jcr:primaryType="nt:unstructured" text="Grey" value="btn btn-corporate"/>
                                 </items>
