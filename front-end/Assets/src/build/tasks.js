@@ -104,4 +104,17 @@ module.exports = function(configuration) {
 
 		return masterStream.pipe(gulp.dest(configuration.output));
 	});
+	
+	gulp.task('onGig', loader.getBuildDependencies(), function() {
+		var masterStream,
+		sLoader = new StreamLoader(gulp, configuration);
+
+		sLoader.loadStreams(false);
+
+		masterStream = sLoader.getTaskStreams();
+
+		masterStream = sLoader.executeCustomOutput(masterStream);
+
+		return masterStream.pipe(gulp.dest(configuration.output));
+	});
 };
