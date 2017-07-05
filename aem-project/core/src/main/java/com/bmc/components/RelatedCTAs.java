@@ -75,19 +75,19 @@ public class RelatedCTAs extends CommonUseSuperclass {
         if (linkResource == null)
             return null;
 
-        Page page = getPage(linkResource.getValueMap().get("internalPagePath", ""));
+        String internalPagePath = linkResource.getValueMap().get("internalPagePath", "");
+
+        Page page = getPage(internalPagePath);
         if (page == null)
             return null;
 
-        String text = page.getNavigationTitle();
-        if (text == null || text.isEmpty())
-            text = page.getPageTitle();
-        if (text == null || text.isEmpty())
-            text = page.getTitle();
+        String text = coalesceStringMember(page,
+                Page::getNavigationTitle, Page::getPageTitle,
+                Page::getTitle, Page::getPath)
+                .orElse(internalPagePath);
 
-        String href = page.getVanityUrl();
-        if (href == null || href.isEmpty())
-            href = page.getPath() + ".html";
+        String href = coalesceStringMember(page, Page::getVanityUrl)
+                .orElse(internalPagePath + ".html");
 
         ValueMap map = page.getProperties();
         return new Item(text, href, page.getDescription(), map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));

@@ -93,15 +93,10 @@ public class RelatedItems extends CommonUseSuperclass {
         if (page == null)
             return null;
 
-        String text = page.getNavigationTitle();
-        if (text == null || text.isEmpty())
-            text = page.getPageTitle();
-        if (text == null || text.isEmpty())
-            text = page.getTitle();
-
-        String href = page.getVanityUrl();
-        if (href == null || href.isEmpty())
-            href = pagePath + ".html";
+        String text = coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
+                .orElse(pagePath);
+        String href = coalesceStringMember(page, Page::getVanityUrl)
+                .orElse(pagePath + ".html");
 
         return new LinkItem(text, href, page.getDescription(), LinkType.InternalPath);
     }
@@ -110,9 +105,8 @@ public class RelatedItems extends CommonUseSuperclass {
         if (asset == null)
             return null;
 
-        String text = asset.getMetadataValue("dc:title");
-        if (text == null || text.isEmpty())
-            text = asset.getName();
+        String text = coalesceStringMember(asset, (a) -> a.getMetadataValue("dc:title"), Asset::getName)
+                .orElse(assetPath);
 
         return new LinkItem(text, assetPath, asset.getMetadataValue("dc:description"), LinkType.InternalAsset);
     }
