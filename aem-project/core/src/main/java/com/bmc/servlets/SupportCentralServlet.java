@@ -95,6 +95,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
 
 
                 logger.info(responseBody);
+                response.setContentType("application/json");
                 response.getWriter().append(object.toString());
             } catch (IOException e) {
                 logger.error(e.getMessage());
@@ -107,11 +108,6 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                 } catch (Exception e1) {
                     logger.error(e1.getMessage());
                 }
-            }
-            try {
-                response.getWriter().append(apiUrl);
-            } catch (IOException e) {
-                logger.error(e.getMessage());
             }
         }
     }
