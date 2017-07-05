@@ -1,0 +1,12 @@
+<section data-sly-use.data="com.bmc.components.RelatedItems">
+    <h3 data-sly-test="${data.headingText}">${data.headingText}</h3>
+    <p data-sly-test="${data.descriptionHtml}">${data.descriptionHtml @ context='html'}</p>
+
+    <sly data-sly-list.link="${data.links}">
+        <h4>
+            <a href="${link.href}" target="_self" data-sly-test="${link.isInternal}">${link.text}</a>
+            <a href="${link.href}" target="_blank" data-sly-test="${link.isExternal}">${link.text}</a>
+        </h4>
+        <p data-sly-test="${data.showLinkDescriptions && link.description}">${link.description}</p>
+    </sly>
+</section>

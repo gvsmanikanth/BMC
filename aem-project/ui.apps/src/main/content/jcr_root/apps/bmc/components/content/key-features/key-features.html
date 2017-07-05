@@ -1,0 +1,27 @@
+<sly data-sly-use.keyFeatureSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='keyFeatureSet'}"/>
+<sly data-sly-use.ctaButtonSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='ctaButtonSet'}"/>
+<section>
+    <div class="layout-inner-wrap">
+        <h2 data-sly-test.headerTitle="${properties.headerTitle}" class="h2-variation-1">${properties.headerTitle @ context='html'}</h2>
+        <p data-sly-test.headerSubTitle="${properties.headerSubTitle}">${properties.headerSubTitle @ context='html'}</p>
+        <ul data-sly-test="${keyFeatureSet}" data-sly-list.keyFeature="${keyFeatureSet.ChildResources}" class="orange-tick-bullets">
+            <li>${keyFeature.featureBullet @ context='html'}</li>
+        </ul>
+        <ul data-sly-test="${ctaButtonSet || properties.aditionalResources}" class="button-set">
+            <li>
+                <sly data-sly-list.ctaButton="${ctaButtonSet.ChildResources}">
+                    <a class="${ctaButton.buttonColor}" href="${ctaButton.ctaPath}">
+                        <sly data-sly-test="${ctaButton.assetName && ctaButton.assetType}">
+                        ${ctaButton.assetType} : ${ctaButton.assetName}
+                        </sly>
+                        <sly data-sly-test="${!ctaButton.assetName && ctaButton.assetType}">
+                            ${ctaButton.assetType}
+                        </sly>
+                    </a>
+                </sly>
+                <a data-sly-test="${properties.aditionalResources}" href="#resources" class="resource-downloads-a icon-documents">Explore Additional Resources&nbsp;›</a>
+            </li>
+        </ul>
+    </div>
+    <div data-sly-test="${properties.showlineSeparator}" class="divider-secondary"></div>
+</section>
