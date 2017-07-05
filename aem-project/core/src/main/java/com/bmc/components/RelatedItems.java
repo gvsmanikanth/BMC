@@ -5,13 +5,10 @@ import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
  * Provides Related Items Component properties (components/content/related-items) for Use
@@ -68,21 +65,13 @@ public class RelatedItems extends CommonUseSuperclass {
         showLinkDescriptions = map.get("showLinkDescriptions", false);
         useHorizontalDisplay = map.get("useHorizontalDisplay", false);
 
-        Resource itemdata = resource.getChild("itemdata");
-        if (itemdata == null) {
-            links = new ArrayList<>();
-            return;
-        }
-
-        links = StreamSupport.stream(itemdata.getChildren().spliterator(), false)
-                .map(this::getLinkItem)
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+        links = mapMultiFieldNodes("itemdata", this::getLinkItem);
     }
 
     private LinkItem getLinkItem(Resource linkResource) {
         if (linkResource == null)
             return null;
+
         ValueMap map = linkResource.getValueMap();
         LinkType type = LinkType.valueOf(map.get("linkTypeId", 0));
         if (type == null)

@@ -5,13 +5,10 @@ import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
  * Provides Related CTAs Component properties (components/content/related-ctas) for Use
@@ -51,16 +48,7 @@ public class RelatedCTAs extends CommonUseSuperclass {
 
     @Override
     public void activate() throws Exception {
-        Resource itemdata = getResource().getChild("itemdata");
-        if (itemdata == null) {
-            items = new ArrayList<>();
-        } else {
-            items = StreamSupport.stream(itemdata.getChildren().spliterator(), false)
-                    .map(this::getLinkItem)
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.toList());
-        }
-
+        items = mapMultiFieldNodes("itemdata", this::getLinkItem);
         headingText = resolveHeadingText();
     }
 
