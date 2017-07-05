@@ -113,6 +113,10 @@
             <groupId>org.owasp.encoder</groupId>
             <artifactId>encoder</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -138,6 +142,10 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <!-- Export packages that should be visible to other bundles and JSPs -->
+                        <Export-Package>
+                            org.owasp.encoder
+                        </Export-Package>
                         <Bundle-SymbolicName>com.bmc.DXP</Bundle-SymbolicName>
 
                         <Sling-Model-Packages>

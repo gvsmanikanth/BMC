@@ -11,6 +11,7 @@ import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
+import org.owasp.encoder.Encode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -83,10 +84,18 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
 
                 JSONObject jsonObject = parseJson(responseBody);
                 JSONArray cases = getCases(jsonObject);
+                JSONArray safeCases = sanitizeCases(cases);
+                JSONObject object = new JSONObject();
+
+                try {
+                    object.put("Cases", safeCases);
+                } catch (JSONException e) {
+                    logger.error(e.getMessage());
+                }
 
 
                 logger.info(responseBody);
-                response.getWriter().append(responseBody);
+                response.getWriter().append(object.toString());
             } catch (IOException e) {
                 logger.error(e.getMessage());
                 try {
@@ -135,6 +144,47 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
             logger.error(e.getMessage());
         }
         return array;
+    }
+
+    private JSONArray sanitizeCases(JSONArray cases) {
+        JSONArray safeCases = new JSONArray();
+        for (int i=0;i<cases.length();i++) {
+            try {
+                JSONObject tmp = new JSONObject();
+                JSONObject object = cases.getJSONObject(i);
+                if (object.has("Id"))
+                    tmp.put("Id", Encode.forHtml(object.getString("Id")));
+
+                if (object.has("CaseNumber"))
+                    tmp.put("CaseNumber", Encode.forHtml(object.getString("CaseNumber")));
+
+                if (object.has("ProductName"))
+                    tmp.put("ProductName", Encode.forHtml(object.getString("ProductName")));
+
+                if (object.has("Subject"))
+                    tmp.put("Subject", Encode.forHtml(object.getString("Subject")));
+
+                if (object.has("Status"))
+                    tmp.put("Status", Encode.forHtml(object.getString("Status")));
+
+                if (object.has("CreatedDate"))
+                    tmp.put("CreatedDate", Encode.forHtml(object.getString("CreatedDate")));
+
+                if (object.has("LastModifiedDate"))
+                    tmp.put("LastModifiedDate", Encode.forHtml(object.getString("LastModifiedDate")));
+
+                if (object.has("ContactFirstName"))
+                    tmp.put("ContactFirstName", Encode.forHtml(object.getString("ContactFirstName")));
+
+                if (object.has("ContactLastName"))
+                    tmp.put("ContactLastName", Encode.forHtml(object.getString("ContactLastName")));
+
+                safeCases.put(tmp);
+            } catch (JSONException e) {
+                logger.error(e.getMessage());
+            }
+        }
+        return safeCases;
     }
 
 }
