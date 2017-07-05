@@ -1,6 +1,5 @@
 package com.bmc.components;
 
-import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
 import com.day.util.NameValuePair;
@@ -19,7 +18,7 @@ import java.util.stream.Stream;
 /**
  * Provides Video Data Component properties (components/content/video-data) for Use
  */
-public class VideoData extends WCMUsePojo {
+public class VideoData extends CommonUseSuperclass {
     private static final String COMPONENT_RESOURCE = "bmc/components/content/video-data";
     private static final String VIDEO_PAGES_ROOT = "/content/bmc/videos";
     private static final String DATA_ITEM = "video-data";
@@ -85,11 +84,7 @@ public class VideoData extends WCMUsePojo {
             case YouTube:
                 overlayText = map.get("overlayText", "");
 
-                if (map.get("overlayUrlIsPath", false)) {
-                    overlayUrl = map.get("overlayUrlPath", "");
-                } else {
-                    overlayUrl = map.get("overlayUrl", "");
-                }
+                overlayUrl = resolveHref(map.get("overlayUrl", ""), false).orElse("");
                 videoId = map.get(VID_PROPERTY, "");
                 isValid = !videoId.isEmpty();
                 break;
