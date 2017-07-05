@@ -1,6 +1,5 @@
 package com.bmc.components;
 
-import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.resource.Resource;
@@ -17,7 +16,7 @@ import java.util.stream.StreamSupport;
 /**
  * Provides Related Items Component properties (components/content/related-items) for Use
  */
-public class RelatedItems extends WCMUsePojo {
+public class RelatedItems extends CommonUseSuperclass {
     enum LinkType {
         InternalPath(1),
         InternalAsset(2),
@@ -101,12 +100,7 @@ public class RelatedItems extends WCMUsePojo {
         }
     }
     private LinkItem getInternalPageLinkItem(String pagePath) {
-        Page page = null;
-        if (pagePath != null && !pagePath.isEmpty()) {
-            Resource resource = getResourceResolver().getResource(pagePath);
-            if (resource != null)
-                page = resource.adaptTo(Page.class);
-        }
+        Page page = getPage(pagePath);
         if (page == null)
             return null;
 
@@ -123,12 +117,7 @@ public class RelatedItems extends WCMUsePojo {
         return new LinkItem(text, href, page.getDescription(), LinkType.InternalPath);
     }
     private LinkItem getInternalAssetLinkItem(String assetPath) {
-        Asset asset = null;
-        if (assetPath != null && !assetPath.isEmpty()) {
-            Resource resource = getResourceResolver().getResource(assetPath);
-            if (resource != null)
-                asset = resource.adaptTo(Asset.class);
-        }
+        Asset asset = getAsset(assetPath);
         if (asset == null)
             return null;
 

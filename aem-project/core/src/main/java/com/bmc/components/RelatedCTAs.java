@@ -1,6 +1,5 @@
 package com.bmc.components;
 
-import com.adobe.cq.sightly.WCMUsePojo;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
@@ -17,7 +16,7 @@ import java.util.stream.StreamSupport;
 /**
  * Provides Related CTAs Component properties (components/content/related-ctas) for Use
  */
-public class RelatedCTAs extends WCMUsePojo {
+public class RelatedCTAs extends CommonUseSuperclass {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
@@ -88,13 +87,7 @@ public class RelatedCTAs extends WCMUsePojo {
         if (linkResource == null)
             return null;
 
-        Page page = null;
-        String pagePath = linkResource.getValueMap().get("internalPagePath", "");
-        if (!pagePath.isEmpty()) {
-            Resource pageResource = getResourceResolver().getResource(pagePath);
-            if (pageResource != null)
-                page = pageResource.adaptTo(Page.class);
-        }
+        Page page = getPage(linkResource.getValueMap().get("internalPagePath", ""));
         if (page == null)
             return null;
 
