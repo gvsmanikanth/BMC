@@ -32,17 +32,6 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
 
     private int timeout = 20000;
 
-    private static final Map<String, String> FIELD_MAPPING;
-    static {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("email", "./profile/email");
-        map.put("first_name", "./profile/givenName");
-        map.put("last_name", "./profile/familyName");
-        map.put("phone", "./profile/phone");
-        map.put("company", "./profile/company");
-        FIELD_MAPPING = Collections.unmodifiableMap(map);
-    }
-
     @Reference
     private SupportCentralService service;
 
@@ -114,7 +103,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
 
     private HashMap<String, String> extractProfileDetails(Authorizable userAcct) throws RepositoryException {
         HashMap<String, String> profileFields = new HashMap<>();
-        for (Map.Entry<String, String> field : FIELD_MAPPING.entrySet()) {
+        for (Map.Entry<String, String> field : service.FIELD_MAPPING.entrySet()) {
             if (userAcct.hasProperty(field.getValue())) {
                 profileFields.put(field.getKey(), userAcct.getProperty(field.getValue())[0].getString());
             }

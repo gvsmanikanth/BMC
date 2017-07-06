@@ -1,23 +1,40 @@
 <div class="row icon-list">
-	<div class="three-up">
+	<div class="four-up">
 		<h4>Media links</h4>
-		<a href="#" class="link-icon-video">.link-icon-video</a>
-		<a href="#" class="link-icon-pdf">.link-icon-pdf</a>
-		<a href="#" class="link-icon-document">.link-icon-document</a>
-		<a href="#" class="link-icon-word">.link-icon-word</a>
-		<a href="#" class="link-icon-excel">.link-icon-excel</a>
-		<a href="#" class="link-icon-zip">.link-icon-zip</a>
-		<a href="#" class="link-icon-powerpoint">.link-icon-powerpoint</a>
+<!-- 		<a href="#" class="link-icon-video">.link-icon-video</a> -->
+<!-- 		<a href="#" class="link-icon-pdf">.link-icon-pdf</a> -->
+<!-- 		<a href="#" class="link-icon-word">.link-icon-word</a> -->
+<!-- 		<a href="#" class="link-icon-excel">.link-icon-excel</a> -->
+<!-- 		<a href="#" class="link-icon-zip">.link-icon-zip</a> -->
+<!-- 		<a href="#" class="link-icon-powerpoint">.link-icon-powerpoint</a> -->
+		<a href="#" class="link-icon-resource-document">.icon-document </a>
+		<a href="#" class="link-icon-resource-documents">.icon-documents</a>
+		<a href="#" class="link-icon-email">.link-email</a>
+		<a href="#" class="link-icon-phone">.link-phone</a>
+		<a href="#" class="link-icon-globe">.link-globe</a> 
+		<a href="#" class="link-icon-product-resources">.link-icon-product-resources</a>
+		<a href="#" class="link-icon-resource-video">.link-icon-resource-video</a>
+		<a href="#" class="link-icon-play">.link-icon-play</a>
 	</div>
-	<div class="three-up">
+	<div class="four-up">
 		<h4>Utility links</h4>
 		<a href="#" class="nav-login">.nav-login</a>
 		<a href="#" class="nav-worldwide">.nav-worldwide</a>
 		<a href="#" class="nav-blog">.nav-blog</a>
 		<a href="#" class="nav-partners">.nav-partners</a>
+		
 	</div>
 	
-	<div class="three-up">
+	<div class="four-up">
+		<h4>Utility Icons</h4>
+		<a href="#" class="icon-read">.icon-read</a>
+		<a href="#" class="icon-watch">.icon-watch</a>
+		<a href="#" class="icon-explore">.icon-explore</a>
+		<a href="#" class="icon-play">.icon-play</a>
+		<a href="#" class="icon-magnify">.icon-magnify</a>
+	</div>
+	
+	<div class="four-up">
 		<h4>Social media links</h4>
 		<ul class="nav-social meta">
 			<li>
@@ -38,6 +55,11 @@
 			<li>
 				<a class="social-slideshare" href="http://www.slideshare.net/bmcsoftware">Slideshare</a>
 			</li>
+			<li>
+				<a class="social-weibo" href="http://www.slideshare.net/bmcsoftware">Weibo</a>
+			</li>
+			
+			
 		</ul>
 	</div><!-- three-up -->
 </div>

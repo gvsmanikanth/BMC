@@ -2856,6 +2856,10 @@ ul.accordion {
   float: none !important;
   width: auto !important; }
 
+fieldset .cmp {
+  padding: 0.5rem;
+  line-height: 0.7; }
+
 .append-around-low-resolution {
   display: block !important; }
   @media only screen and (min-width: 60em) {
@@ -15034,6 +15038,9 @@ body.support-central {
     .ebc .lg-col-right {
       float: right; }
     .ebc .lg-flex {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
@@ -17460,6 +17467,9 @@ iframe[name='google_conversion_frame'] {
   .lg-col-12 {
     width: 100%; }
   .lg-flex {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; } }
