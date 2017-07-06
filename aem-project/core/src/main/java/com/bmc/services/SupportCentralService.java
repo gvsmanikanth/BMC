@@ -5,6 +5,8 @@ import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.commons.osgi.PropertiesUtil;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component(
@@ -44,6 +46,17 @@ public class SupportCentralService {
     private String apiPath;
     private String apiUser;
     private String apiPass;
+
+    public static final Map<String, String> FIELD_MAPPING;
+    static {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("email", "./profile/email");
+        map.put("first_name", "./profile/givenName");
+        map.put("last_name", "./profile/familyName");
+        map.put("phone", "./profile/phone");
+        map.put("company", "./profile/company");
+        FIELD_MAPPING = Collections.unmodifiableMap(map);
+    }
 
     @Activate
     public void activate(Map<String, String> config) {
