@@ -2,14 +2,13 @@
 data-sly-use.support="com.bmc.components.SupportCentral">
     <div class="account-actions-wrapper acccount-user-wrapper">
         <div class="layout-inner-wrap">
-            <sly data-sly-test="${loggedIn}">
+            <sly data-sly-test.loggedIn="${support.isLoggedIn}">
             <ul class="account-user">
-                <li class="welcome"><span>Welcome Stephen Watts</span></li>
+                <li class="welcome"><span>Welcome ${support.userInfo.first_name} ${support.userInfo.last_name}</span></li>
             </ul>
             </sly>
             <ul class="account-actions">
                 <sly data-sly-test="${loggedIn}">
-                <?php if (isset($state, $state->loggedIn) && $state->loggedIn): ?>
                 <li class="action"><a href="#">Manage Support ID's</a></li>
                 <li class="action"><a href="#">Edit Profile</a></li>
                 <li class="action"><a href="#">Logout</a></li>

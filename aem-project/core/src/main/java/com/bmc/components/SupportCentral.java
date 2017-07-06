@@ -41,6 +41,16 @@ public class SupportCentral extends WCMUsePojo {
         newCaseUrl = service.getNewCaseUrl();
     }
 
+    public Boolean getIsLoggedIn() {
+        Session session = getRequest().getResourceResolver().adaptTo(Session.class);
+        UserManager userManager = getRequest().getResourceResolver().adaptTo(UserManager.class);
+        HashMap<String, String> profileFields = new HashMap<>();
+        if (session.getUserID().equalsIgnoreCase("Anonymous")) {
+            return false;
+        }
+        return true;
+    }
+
     public Map getUserInfo() {
         Session session = getRequest().getResourceResolver().adaptTo(Session.class);
         UserManager userManager = getRequest().getResourceResolver().adaptTo(UserManager.class);
