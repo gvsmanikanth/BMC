@@ -145,6 +145,7 @@
                         <!-- Export packages that should be visible to other bundles and JSPs -->
                         <Export-Package>
                             com.bmc.components,
+                            com.bmc.components.utils,
                             org.owasp.encoder
                         </Export-Package>
                         <Bundle-SymbolicName>com.bmc.DXP</Bundle-SymbolicName>
