@@ -32,6 +32,11 @@ var assetPath = {
 		images: '../img/',
 		svg: '../img/',
 		fonts: '../fonts/'
+		},
+	onGig:{
+		images: '../img/',
+		svg: '../img/',
+		fonts: '../fonts/'
 	}
 };
 

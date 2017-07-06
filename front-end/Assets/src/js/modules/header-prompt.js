@@ -122,6 +122,8 @@ jQuery(function($) {
 	function hideHeaderPrompt() {
 		$(".header-prompt .banner").slideUp();
 	}
+	//Added call as we disabled the GeoIP implementation. DXP-291. Called this function direclty to check/show/hide headerprompt.
+	window.showHideHeaderPrompt();
 
 });
 // document ready
