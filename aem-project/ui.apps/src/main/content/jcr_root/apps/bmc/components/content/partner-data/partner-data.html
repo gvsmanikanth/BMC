@@ -1,1 +1,10 @@
-<h1>Partner Data</h1>
+<dl data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test="${properties.name}">
+    <dt>Partner name</dt>
+    <dd data-sly-test.name="${properties.name}">${properties.name}</dd>
+    <dd data-sly-test="${!name}">Not set</dd>
+
+
+</dl>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.name, emptyTextAppend = 'Enter partner data.'}"></sly>

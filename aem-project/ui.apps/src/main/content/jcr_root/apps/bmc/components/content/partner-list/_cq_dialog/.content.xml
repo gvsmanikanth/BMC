@@ -3,30 +3,4 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="Partner List"
           sling:resourceType="cq/gui/components/authoring/dialog">
-    <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/container">
-        <items jcr:primaryType="nt:unstructured">
-            <column
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/container">
-                <items jcr:primaryType="nt:unstructured">
-                    <text
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                            fieldDescription="Enter the heading text"
-                            fieldLabel="Enter the heading text"
-                            name="./headerText"/>
-
-                    <isLargeText
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                            fieldDescription="When checked, this component will render the larger text variant."
-                            name="./isLargeText"
-                            text="Display large text variant?"
-                            value="{Boolean}true"/>
-                </items>
-            </column>
-        </items>
-    </content>
 </jcr:root>

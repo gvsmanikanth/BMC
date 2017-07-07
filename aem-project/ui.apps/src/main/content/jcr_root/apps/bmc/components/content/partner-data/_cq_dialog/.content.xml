@@ -24,6 +24,12 @@
                                     fieldDescription=""
                                     fieldLabel="Company name"
                                     name="./name"/>
+                            <shortDescription
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldDescription=""
+                                    fieldLabel="Short description"
+                                    name="./shortDescription"/>
                         </items>
                     </column>
                 </items>
