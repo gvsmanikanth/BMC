@@ -15,6 +15,7 @@ $iconGooglePlus: "\e60b";
 $iconLinkedIn: "\e60c";
 $iconYoutube: "\e60d";
 $iconSlideshare: "\e60e";
+$iconWeibo: "\ea9a";
 $iconPhone: "\e60f";
 $iconEmail: "\e610";
 $iconVideo: "\e611";
@@ -37,6 +38,9 @@ $iconRadioUnchecked: "\e621";
 $iconMapPin: "\e622";
 $iconCalendar: "\e623";
 $iconFontFamily: 'icomoon';
+$iconPlay: '\ea15';
+$iconStar: '\e9d9';
+$iconEye: '\e9ce';
 
 @mixin icon() {
   font-family: $iconFontFamily;

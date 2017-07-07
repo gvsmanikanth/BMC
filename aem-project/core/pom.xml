@@ -144,6 +144,7 @@
                     <instructions>
                         <!-- Export packages that should be visible to other bundles and JSPs -->
                         <Export-Package>
+                            {local-packages},
                             org.owasp.encoder
                         </Export-Package>
                         <Bundle-SymbolicName>com.bmc.DXP</Bundle-SymbolicName>
