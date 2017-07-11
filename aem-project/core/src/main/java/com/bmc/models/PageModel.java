@@ -84,6 +84,13 @@ public class PageModel {
         bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
 
+        if(resourcePage.getPath().contains("/support/")){
+            bmcMeta.getSupport().setEnableAlerts(true);
+            bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
+        }else{
+            bmcMeta.getSupport().setEnableAlerts(false);
+        }
+
         return bmcMeta;
     }
 
