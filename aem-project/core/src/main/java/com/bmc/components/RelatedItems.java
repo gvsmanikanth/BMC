@@ -1,23 +1,24 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.components.mixins.AdaptableResourceProvider;
+import com.bmc.components.mixins.MultifieldNodeProvider;
+import com.bmc.components.utils.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
  * Provides Related Items Component properties (components/content/related-items) for Use
  */
-public class RelatedItems extends WCMUsePojo {
+public class RelatedItems extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum LinkType {
         InternalPath(1),
         InternalAsset(2),
@@ -69,21 +70,13 @@ public class RelatedItems extends WCMUsePojo {
         showLinkDescriptions = map.get("showLinkDescriptions", false);
         useHorizontalDisplay = map.get("useHorizontalDisplay", false);
 
-        Resource itemdata = resource.getChild("itemdata");
-        if (itemdata == null) {
-            links = new ArrayList<>();
-            return;
-        }
-
-        links = StreamSupport.stream(itemdata.getChildren().spliterator(), false)
-                .map(this::getLinkItem)
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
+        links = mapMultiFieldNodes("itemdata", this::getLinkItem);
     }
 
     private LinkItem getLinkItem(Resource linkResource) {
         if (linkResource == null)
             return null;
+
         ValueMap map = linkResource.getValueMap();
         LinkType type = LinkType.valueOf(map.get("linkTypeId", 0));
         if (type == null)
@@ -101,40 +94,24 @@ public class RelatedItems extends WCMUsePojo {
         }
     }
     private LinkItem getInternalPageLinkItem(String pagePath) {
-        Page page = null;
-        if (pagePath != null && !pagePath.isEmpty()) {
-            Resource resource = getResourceResolver().getResource(pagePath);
-            if (resource != null)
-                page = resource.adaptTo(Page.class);
-        }
+        Page page = getPage(pagePath);
         if (page == null)
             return null;
 
-        String text = page.getNavigationTitle();
-        if (text == null || text.isEmpty())
-            text = page.getPageTitle();
-        if (text == null || text.isEmpty())
-            text = page.getTitle();
-
-        String href = page.getVanityUrl();
-        if (href == null || href.isEmpty())
-            href = pagePath + ".html";
+        String text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
+                .orElse(pagePath);
+        String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
+                .orElse(pagePath + ".html");
 
         return new LinkItem(text, href, page.getDescription(), LinkType.InternalPath);
     }
     private LinkItem getInternalAssetLinkItem(String assetPath) {
-        Asset asset = null;
-        if (assetPath != null && !assetPath.isEmpty()) {
-            Resource resource = getResourceResolver().getResource(assetPath);
-            if (resource != null)
-                asset = resource.adaptTo(Asset.class);
-        }
+        Asset asset = getAsset(assetPath);
         if (asset == null)
             return null;
 
-        String text = asset.getMetadataValue("dc:title");
-        if (text == null || text.isEmpty())
-            text = asset.getName();
+        String text = StringHelper.coalesceStringMember(asset, (a) -> a.getMetadataValue("dc:title"), Asset::getName)
+                .orElse(assetPath);
 
         return new LinkItem(text, assetPath, asset.getMetadataValue("dc:description"), LinkType.InternalAsset);
     }
