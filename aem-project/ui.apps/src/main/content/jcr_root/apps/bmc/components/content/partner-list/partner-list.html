@@ -12,9 +12,10 @@
     };
     var bmcPartnersData  = {
         "filterCriteria" : [],
-        "listItems" : ${list.items @ context='scriptToken'}
+        "listItems" : ${list.items @ context='unsafe'}
     }
 </script>
+${list.test @ context='unsafe'}
 <section class="bg-white filterListContainer py3 bg-seashell" style="display: block;">
     <div class="layout-inner-wrap">
         <p class="partner-lead py2">

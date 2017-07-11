@@ -1,10 +1,35 @@
 <dl data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
     data-sly-test="${properties.name}">
-    <dt>Partner name</dt>
-    <dd data-sly-test.name="${properties.name}">${properties.name}</dd>
-    <dd data-sly-test="${!name}">Not set</dd>
 
+    <dt>Partner Name</dt>
+    <dd data-sly-test.name="${properties.name}">${name}</dd>
+    <dd data-sly-test="${!name}"><em>Not set</em></dd>
+
+    <dt>Logo</dt>
+    <dd data-sly-test.logo="${image.src}"><img src="${logo}" width="320" /></dd>
+    <dd data-sly-test="${!logo}"><em>Not set</em></dd>
+
+    <dt>Company URL</dt>
+    <dd data-sly-test.companyURL="${properties.companyURL}">${companyURL}</dd>
+    <dd data-sly-test="${!companyURL}"><em>Not set</em></dd>
+
+    <dt>Company External URL</dt>
+    <dd data-sly-test.companyExternalURL="${properties.companyExternalURL}">${companyExternalURL}</dd>
+    <dd data-sly-test="${!companyExternalURL}"><em>Not set</em></dd>
+
+    <dt>Short Description</dt>
+    <dd data-sly-test.shortDescription="${properties.shortDescription}">${shortDescription}</dd>
+    <dd data-sly-test="${!shortDescription}"><em>Not set</em></dd>
+
+    <dt>Long Description</dt>
+    <dd><p data-sly-test.longDescription="${properties.longDescription}" data-sly-unwrap>${longDescription @ context = 'html'}</p></dd>
+    <dd data-sly-test="${!longDescription}"><em>Not set</em></dd>
+
+
+    <dt>Enabled</dt>
+    <dd data-sly-test.isEnabled="${properties.isEnabled}">${isEnabled}</dd>
+    <dd data-sly-test="${!isEnabled}"><em>Not set</em></dd>
 
 </dl>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.name, emptyTextAppend = 'Enter partner data.'}"></sly>
