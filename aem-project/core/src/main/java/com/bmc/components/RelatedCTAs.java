@@ -1,5 +1,9 @@
 package com.bmc.components;
 
+import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.components.mixins.AdaptableResourceProvider;
+import com.bmc.components.mixins.MultifieldNodeProvider;
+import com.bmc.components.utils.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
@@ -13,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related CTAs Component properties (components/content/related-ctas) for Use
  */
-public class RelatedCTAs extends CommonUseSuperclass {
+public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
@@ -81,12 +85,12 @@ public class RelatedCTAs extends CommonUseSuperclass {
         if (page == null)
             return null;
 
-        String text = coalesceStringMember(page,
+        String text = StringHelper.coalesceStringMember(page,
                 Page::getNavigationTitle, Page::getPageTitle,
                 Page::getTitle, Page::getPath)
                 .orElse(internalPagePath);
 
-        String href = coalesceStringMember(page, Page::getVanityUrl)
+        String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
                 .orElse(internalPagePath + ".html");
 
         ValueMap map = page.getProperties();

@@ -1,10 +1,12 @@
 package com.bmc.components;
 
+import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.components.mixins.MultifieldNodeProvider;
 import org.apache.sling.api.resource.Resource;
 
 import java.util.List;
 
-public class Tabs extends CommonUseSuperclass {
+public class Tabs extends WCMUsePojo implements MultifieldNodeProvider {
 
     @Override
     public void activate() throws Exception {

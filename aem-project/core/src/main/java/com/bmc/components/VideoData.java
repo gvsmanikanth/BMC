@@ -1,5 +1,8 @@
 package com.bmc.components;
 
+import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.components.mixins.AdaptableResourceProvider;
+import com.bmc.components.mixins.UrlResolver;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
 import com.day.util.NameValuePair;
@@ -18,7 +21,7 @@ import java.util.stream.Stream;
 /**
  * Provides Video Data Component properties (components/content/video-data) for Use
  */
-public class VideoData extends CommonUseSuperclass {
+public class VideoData extends WCMUsePojo implements AdaptableResourceProvider, UrlResolver {
     private static final String COMPONENT_RESOURCE = "bmc/components/content/video-data";
     private static final String VIDEO_PAGES_ROOT = "/content/bmc/videos";
     private static final String DATA_ITEM = "video-data";

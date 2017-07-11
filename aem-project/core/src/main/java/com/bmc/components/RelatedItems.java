@@ -1,7 +1,12 @@
 package com.bmc.components;
 
+import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.components.mixins.AdaptableResourceProvider;
+import com.bmc.components.mixins.MultifieldNodeProvider;
+import com.bmc.components.utils.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
@@ -13,7 +18,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related Items Component properties (components/content/related-items) for Use
  */
-public class RelatedItems extends CommonUseSuperclass {
+public class RelatedItems extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum LinkType {
         InternalPath(1),
         InternalAsset(2),
@@ -93,9 +98,9 @@ public class RelatedItems extends CommonUseSuperclass {
         if (page == null)
             return null;
 
-        String text = coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
+        String text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
                 .orElse(pagePath);
-        String href = coalesceStringMember(page, Page::getVanityUrl)
+        String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
                 .orElse(pagePath + ".html");
 
         return new LinkItem(text, href, page.getDescription(), LinkType.InternalPath);
@@ -105,7 +110,7 @@ public class RelatedItems extends CommonUseSuperclass {
         if (asset == null)
             return null;
 
-        String text = coalesceStringMember(asset, (a) -> a.getMetadataValue("dc:title"), Asset::getName)
+        String text = StringHelper.coalesceStringMember(asset, (a) -> a.getMetadataValue("dc:title"), Asset::getName)
                 .orElse(assetPath);
 
         return new LinkItem(text, assetPath, asset.getMetadataValue("dc:description"), LinkType.InternalAsset);
