@@ -6,6 +6,15 @@
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
+                    <policy_4752532909551958
+                        jcr:lastModified="{Date}2017-07-11T10:13:40.326-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Partner Data"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/bmc/components/content/partner-data">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_4752532909551958>
                     <policy_1499290860069
                         jcr:lastModified="{Date}2017-07-06T11:23:09.292-07:00"
                         jcr:lastModifiedBy="admin"
@@ -94,12 +103,12 @@
                             mergeList="{Boolean}true"/>
                     </bmc-default>
                     <policy_331111633697331
-                        jcr:lastModified="{Date}2017-05-24T17:57:41.438-07:00"
+                        jcr:lastModified="{Date}2017-07-11T11:18:42.417-07:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Content"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="group:BMC.content">
+                        components="[group:BMC.content,/apps/bmc/components/content/partner-list]">
                         <jcr:content
                             cq:lastReplicated="{Date}2017-05-24T18:03:32.525-07:00"
                             cq:lastReplicatedBy="admin"
@@ -158,9 +167,20 @@
                             jcr:primaryType="nt:unstructured"/>
                     </policy_28461305654604>
                 </section-layout>
-                <maincontentcontainer jcr:primaryType="nt:unstructured"/>
+                <maincontentcontainer jcr:primaryType="nt:unstructured">
+                    <policy_1499455116016
+                        jcr:lastModified="{Date}2017-07-07T12:19:06.209-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Partner Data"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/bmc/components/content/partner-data">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_1499455116016>
+                </maincontentcontainer>
             </structure>
             <content jcr:primaryType="nt:unstructured">
+                <partner-data jcr:primaryType="nt:unstructured"/>
                 <title jcr:primaryType="nt:unstructured">
                     <policy_1497390381060
                         jcr:lastModified="{Date}2017-06-13T14:47:09.332-07:00"

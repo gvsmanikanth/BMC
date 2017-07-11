@@ -1,15 +1,16 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-//import org.json.simple.JSONArray;
-//import org.json.simple.JSONObject;
 import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.foundation.Image;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 
@@ -33,23 +34,20 @@ public class PartnerList extends WCMUsePojo {
 
 //        json = arr.toJSONString();
 
-        return "[]";
+        return getTest();
     }
 
     public String getTest() {
         String result;
 
-        Partner bar = new Partner("foo");
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        Gson gson = new Gson();
-
-        Resource resource = getResource();
         Iterable<Page> iterable = () -> getCurrentPage().listChildren();
-        List<String> list = StreamSupport.stream(iterable.spliterator(), false)
-                .map(page -> page.getName())
+        List<Partner> list = StreamSupport.stream(iterable.spliterator(), false)
+                .map(page -> new Partner(page.getContentResource("root/maincontentcontainer/partner_data")))
                 .collect(Collectors.toList());
         result = gson.toJson(list);
-        
+
         return result;
     }
 
@@ -57,10 +55,30 @@ public class PartnerList extends WCMUsePojo {
 
 class Partner {
 
-    private String test;
+    private String id;
+    private String name;
+    private String logo_url;
+    private String short_desc;
+    private String long_desc;
+    private String company_url;
+    private String company_external_url;
+    private String partner_type;
+    private String region_name;
 
-    Partner(String test) {
-        this.test = test;
+    Partner(Resource resource) {
+        ValueMap props = resource.getValueMap();
+        Image img = new Image(resource);
+        ResourceResolver resolver = resource.getResourceResolver();
+
+        id = resource.getPath();
+        name = props.get("name", "");
+        logo_url = resolver.map(img.getSrc());
+        short_desc = props.get("shortDescription", "");
+        long_desc = props.get("longDescription", "");
+        company_url = props.get("companyUrl", "");
+        company_external_url = props.get("companyExternalURL", "");
+        partner_type = props.get("partnerType", "");
+        region_name = props.get("regionName", "");
     }
 
 }
