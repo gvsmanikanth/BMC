@@ -2,20 +2,16 @@ package com.bmc.servlets;
 
 import com.bmc.models.supportalert.SupportAlertMessages;
 import com.bmc.models.utils.ContentIdGenerator;
-import com.day.cq.rewriter.linkchecker.LinkCheckerSettings;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
-import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.*;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
-import org.apache.sling.commons.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,11 +20,8 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.Session;
 import javax.servlet.ServletException;
-import javax.swing.text.AbstractDocument;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +36,7 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(SupportAlertServlet.class);
 
-    private final String SUPPORT_NODE_ROOT_LOCATION = "/content/bmc/support-alerts/jcr:content/root/support_object_build/alertdata";
+    private final String SUPPORT_NODE_ROOT_LOCATION = "/content/bmc/support-alerts/jcr:content/root/support-object-build/alertdata";
 
     protected Gson gson;
 
@@ -103,7 +96,7 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
             response.getWriter().close();
 
         } catch (Exception e){
-                e.printStackTrace();
+            logger.error(e.getMessage());
         }
 
     }
