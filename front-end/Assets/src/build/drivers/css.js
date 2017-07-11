@@ -5,12 +5,12 @@
 var base64 = require('gulp-base64'),
 	cssmin = require('gulp-minify-css'),
 	gulpif = require('gulp-if'),
-	prefix = require('gulp-autoprefixer'),
+	postcss = require('gulp-postcss'),
+	prefix = require('autoprefixer'),
 	sass = require('gulp-sass'),
 	sassdoc = require('sassdoc'),
 	sourcemaps = require('gulp-sourcemaps'),
-	replace = require('gulp-replace'),
-	cmq = require('gulp-combine-media-queries');
+	replace = require('gulp-replace');
 
 var assetPath = {
 	local: {
@@ -29,6 +29,11 @@ var assetPath = {
 		fonts: '../fonts/'
 	},
 	allianceProgram: {
+		images: '../img/',
+		svg: '../img/',
+		fonts: '../fonts/'
+		},
+	onGig:{
 		images: '../img/',
 		svg: '../img/',
 		fonts: '../fonts/'
@@ -67,15 +72,14 @@ var cssDriver = {
 				theme: "./sassdoc-theme"
 			})))
 			.pipe(sass())
-			.pipe(prefix({
+			.pipe(postcss([prefix({
 				browsers: ['last 2 versions', 'IE >= 9', 'Android >= 4']
-			}))
+			})]))
 			.pipe(gulpif(debug, sourcemaps.write('./')))
 			.pipe(base64({
 				exclude: [/\icomoon/],
 				extensions: ['svg']
 			}))
-			.pipe(cmq())
 			.pipe(replace('{{$imagesFolder}}', imagesPath))
 			.pipe(replace('{{$svgFolder}}', svgPath))
 			.pipe(replace('{{$fontsFolder}}', fontsPath))

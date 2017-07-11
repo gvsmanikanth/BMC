@@ -6,6 +6,15 @@
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
                 <responsivegrid jcr:primaryType="nt:unstructured">
+                    <policy_31280403352873
+                        jcr:lastModified="{Date}2017-06-13T14:15:12.200-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Empty Form"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,group:BMC.content,/apps/bmc/components/forms/form]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_31280403352873>
                     <bmc-default
                         jcr:description="Policy for editable layout containers"
                         jcr:lastModified="{Date}2016-09-16T07:50:27.551+02:00"
@@ -95,7 +104,84 @@
     </wcm>
     <bmc jcr:primaryType="nt:unstructured">
         <components jcr:primaryType="nt:unstructured">
+            <structure jcr:primaryType="nt:unstructured">
+                <section-layout jcr:primaryType="nt:unstructured">
+                    <policy_1497382729037
+                        jcr:lastModified="{Date}2017-06-13T13:25:16.459-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Form Marting Content Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.content]">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-06-13T14:07:28.485-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_1497382729037>
+                    <policy_27641723690617
+                        jcr:lastModified="{Date}2017-06-14T00:39:38.429-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Form Container Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,/apps/bmc/components/forms/elements/hidden,/apps/bmc/components/forms/elements/options,/apps/bmc/components/forms/elements/input-field]">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-06-14T00:40:41.561-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_27641723690617>
+                    <policy_28461305654604
+                        jcr:lastModified="{Date}2017-06-13T13:29:47.230-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Form Section"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content]">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-06-13T14:07:28.485-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_28461305654604>
+                </section-layout>
+                <maincontentcontainer jcr:primaryType="nt:unstructured"/>
+            </structure>
             <content jcr:primaryType="nt:unstructured">
+                <title jcr:primaryType="nt:unstructured">
+                    <policy_1497390381060
+                        jcr:lastModified="{Date}2017-06-13T14:47:09.332-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Title H2 Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        type="h2">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-06-13T14:53:51.141-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_1497390381060>
+                    <policy_33249283276209
+                        jcr:lastModified="{Date}2017-06-13T14:47:59.772-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC From H5 Title"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        type="h5">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-06-13T14:53:51.141-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_33249283276209>
+                </title>
                 <section jcr:primaryType="nt:unstructured">
                     <policy_1495673627134
                         jcr:lastModified="{Date}2017-05-24T17:55:11.586-07:00"
@@ -252,47 +338,160 @@
                         </rtePlugins>
                     </policy_1496440098452>
                 </text>
+                <wysiwyg jcr:primaryType="nt:unstructured">
+                    <policy_1497986163679
+                        jcr:lastModified="{Date}2017-06-20T12:21:20.527-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Wysiwyg Policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <paraformat
+                                jcr:primaryType="nt:unstructured"
+                                features="*">
+                                <formats
+                                    jcr:primaryType="nt:unstructured"
+                                    override="true">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Paragraph"
+                                        tag="p"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 1"
+                                        tag="h1"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 2"
+                                        tag="h2"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 3"
+                                        tag="h3"/>
+                                    <item4
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 4"
+                                        tag="h4"/>
+                                    <item5
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Heading 5"
+                                        tag="h5"/>
+                                    <item6
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Quote"
+                                        tag="blockquote"/>
+                                    <item7
+                                        jcr:primaryType="nt:unstructured"
+                                        description="Preformatted"
+                                        tag="pre"/>
+                                </formats>
+                            </paraformat>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="sourceedit,specialchars">
+                                <specialCharsConfig jcr:primaryType="nt:unstructured">
+                                    <chars
+                                        jcr:primaryType="nt:unstructured"
+                                        override="true">
+                                        <item0
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;copy;"
+                                            name="copyright"/>
+                                        <item1
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;euro;"
+                                            name="euro"/>
+                                        <item2
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;reg;"
+                                            name="registered"/>
+                                        <item3
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;trade;"
+                                            name="trademark"/>
+                                        <item4
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;amp;"
+                                            name="Ampersand"/>
+                                        <item5
+                                            jcr:primaryType="nt:unstructured"
+                                            entity="&amp;#42;"
+                                            name="Asterisk"/>
+                                    </chars>
+                                </specialCharsConfig>
+                            </misctools>
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                features="paste-plaintext,paste-wordhtml"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="bold,italic,underline"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="modifylink,unlink"/>
+                            <table
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <subsuperscript
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <findreplace
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <spellcheck
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </policy_1497986163679>
+                </wysiwyg>
             </content>
             <forms jcr:primaryType="nt:unstructured">
                 <form jcr:primaryType="nt:unstructured">
                     <policy_1496377446291
-                            jcr:lastModified="{Date}2017-06-01T21:24:24.120-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="BMC Form Policy Test"
-                            sling:resourceType="wcm/core/components/policy/policy"
-                            components="/libs/cq/experience-fragments/editor/components/experiencefragment">
+                        jcr:lastModified="{Date}2017-06-01T21:24:24.120-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Form Policy Test"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/libs/cq/experience-fragments/editor/components/experiencefragment">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </policy_1496377446291>
                     <policy_889053384206067
-                            jcr:lastModified="{Date}2017-06-02T10:37:47.714-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="Fieldset policy"
-                            sling:resourceType="wcm/core/components/policy/policy"
-                            components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/apps/bmc/components/forms/field-set]">
+                        jcr:lastModified="{Date}2017-06-12T14:16:29.052-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Fieldset policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,group:BMC.form.elements]">
                         <jcr:content
-                                cq:lastReplicated="{Date}2017-06-02T11:01:25.839-07:00"
-                                cq:lastReplicatedBy="admin"
-                                cq:lastReplicationAction="Activate"
-                                jcr:mixinTypes="[cq:ReplicationStatus]"
-                                jcr:primaryType="nt:unstructured"/>
+                            cq:lastReplicated="{Date}2017-06-14T00:37:17.563-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
                     </policy_889053384206067>
                 </form>
                 <field-set jcr:primaryType="nt:unstructured">
                     <policy_1496425165806
-                            jcr:lastModified="{Date}2017-06-03T15:00:18.592-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="Fieldset Policy"
-                            sling:resourceType="wcm/core/components/policy/policy"
-                            components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.form.elements]">
+                        jcr:lastModified="{Date}2017-06-03T15:00:18.592-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Fieldset Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.form.elements]">
                         <jcr:content
-                                cq:lastReplicated="{Date}2017-06-02T11:01:25.839-07:00"
-                                cq:lastReplicatedBy="admin"
-                                cq:lastReplicationAction="Activate"
-                                jcr:mixinTypes="[cq:ReplicationStatus]"
-                                jcr:primaryType="nt:unstructured"/>
+                            cq:lastReplicated="{Date}2017-06-02T11:01:25.839-07:00"
+                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
                     </policy_1496425165806>
                 </field-set>
             </forms>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="no-js youtube-video-modal-container" lang="en">
+<sly data-sly-use.video="com.bmc.components.VideoData"></sly>
+<head>
+    <title>Video: ${video.title}</title>
+    <sly data-sly-include="/apps/bmc/components/structure/page/customheaderlibs.html" />
+</head>
+<body class="video-modal">
+<sly data-sly-test="${video.isValid}" data-sly-use.resolved="${'resolve-data.js' @ video=video }">
+    <div data-sly-test="${video.isYouTube}" class="bg-transparent center-block">
+        <div id="youtube_${video.videoId}" class="youtube-video inline-youtube-video-player">
+            <div id="${video.videoId}" class="youtubePlayer" data-src="${video.videoId}" data-autoplay=1 data-fullscreen=1></div>
+            <p id="youtubeOverlay_${video.videoId}" class="youtubeOverlay">
+                ${resolved.overlayText @ context='html'}
+            </p>
+        </div>
+    </div>
+    <div data-sly-test="${video.isTwistage}" class="video">
+        <input id="${video.videoId}" type="hidden" value="${resolved.overlayText @ context='attribute'}"></input>
+        <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+        <script type="text/javascript">viewNode("${video.videoId @ context='scriptString'}", {"server_detection": true, "width": 640, "height": 380,"autoplay":true});</script>
+    </div>
+    <video data-sly-test="${video.isDam}" autoplay controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">
+        <source src="${item.name}" type="${item.value}">
+    </video>
+</sly>
+<sly data-sly-include="/apps/bmc/components/structure/page/customfooterlibs.html" />
+</body>
+</html>

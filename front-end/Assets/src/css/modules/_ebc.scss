@@ -6,7 +6,7 @@
 }
 @mixin up-down($base:18,$multiplier:2,$identifier:"padding",$suffix:"px"){
 	$result: multChange($multiplier,$base);
-	
+
 	@if($identifier == "font-size"){
 		@include font-size($result);
 	}@else{
@@ -22,7 +22,7 @@
 
 //hide or show element at breakpoint. choose display type of table,inline-block, inline or block
 @mixin hide-show($hideshow:show,$breakpoint:breakpointMedium,$type:block){
-	@if($hideshow == hide){		
+	@if($hideshow == hide){
         @include media($breakpoint) {
 			display: none;
         }
@@ -43,7 +43,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 
 //scss
 .ebc {
-	
+
 	/*utils */
 	.no-break {
 	   white-space: nowrap;
@@ -54,7 +54,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 	.bk-white {
 		background-color: #fff;
 	}
-	
+
 	//@include hide-show("hide","breakpointMedium");
 	$hideShowMap:(breakpointTiny,breakpointExtraSmall,breakpointSmall,small,breakpointMedium,breakpointLarge,breakpointExtraLarge,breakpointExtraExtraLarge);
 	@each $break in $hideShowMap{
@@ -71,7 +71,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			@include hide-show(hide,#{$break},inline-block);
 		}
 	}
-	
+
 	//overriding basic grid breakpoints. had to do this because the breakpoints used in the grid differ from the other main breakpoints. For the map i need to match
 	$break-grid: (1:8.33333,2:16.66667,3:25,4:33.33333,5:41.66667,6:50,7:58.33333,8:66.66667,9:75,10:83.33333,11:91.66667,12:100);
 	@include media(breakpointSmall) {
@@ -212,10 +212,11 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			float: right;
 		}
 		.lg-flex {
+			align-items: center;
 			display: -webkit-box;
 			display: -webkit-flex;
 			display: -ms-flexbox;
-			display: flex
+			display: flex;
 		}
 		@each $int, $col in $break-grid{
 			.lg-col-#{$int} {
@@ -239,7 +240,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			}
 		}
 	}
-	
+
 	/* typeography */
 	.larger {
 		margin-bottom: .5em;
@@ -248,7 +249,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			@include font-size(20);
 		}
 	}
-	
+
 	/*lead*/
 	.lead {
 		&.-md {
@@ -271,7 +272,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			}
 		}
 	}
-	
+
 	/* section specific */
 	section {
 		p:last-of-type {
@@ -289,7 +290,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				padding: $basePadding*17 0 $basePadding*2.5 0;
 				h1 {
 					margin: 15px 0 20px 0;
-					font-weight: 700; 
+					font-weight: 700;
 					line-height: 1.3em;
 					@include media(breakpointMedium) {
 						margin: 0;
@@ -350,7 +351,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				background-position: 50%;
 				background-repeat: no-repeat;
 				background-size: 100% auto;
-				
+
 				@include media(breakpointExtraLarge) {
 					background-size: auto;
 				}
@@ -375,7 +376,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 					&.india{
 						border-color: color(persian-green);
 					}
-					
+
 				}
 				.map-left{
 					img{
@@ -395,7 +396,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				}
 			}
 		}
-		
+
 		//padding top and bottom
 		@each $abr, $side in (pt:padding-top,pb:padding-bottom){
 			@for $i from 1 through 6 {
@@ -422,7 +423,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 			}
 		}
 	}
- 
+
 	/* bullets */
 	.orange-tick-bullets {
 		padding-top: 0.556rem;

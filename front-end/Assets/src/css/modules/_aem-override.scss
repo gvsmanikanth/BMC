@@ -1,0 +1,23 @@
+.aem--no-grid {
+
+  &.aem-GridColumn {
+    clear: none!important;
+    float: none!important;
+    width: auto!important;
+  }
+
+  .aem--inline-block {
+    display: inline-block!important;
+    float: none!important;
+    width: auto!important;
+  }
+
+}
+
+//DXP-698
+fieldset {
+	.cmp {
+	    padding: 0.5rem;
+	    line-height: 0.7;
+	}
+}

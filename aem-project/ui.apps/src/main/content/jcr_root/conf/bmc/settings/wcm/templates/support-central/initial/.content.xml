@@ -46,13 +46,6 @@
                     </cq:responsive>
                 </text>
             </maincontentcontainer>
-            <header_brand
-                jcr:created="{Date}2017-06-09T15:14:23.559-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-09T15:17:12.554-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/content/header-brand"/>
         </root>
     </jcr:content>
 </jcr:root>

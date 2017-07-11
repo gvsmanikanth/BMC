@@ -7,8 +7,8 @@ import java.util.HashMap;
  */
 public class GeoIPMeta {
 
-    private Boolean GeoIPRedirectExcluded; //[if section should run GeoIPMeta, true or false, non-prod environments always set to false]
-    private String GeoIPLanguageCode; //[languageCode]
+    private Boolean GeoIPRedirectExcluded = false; //[if section should run GeoIPMeta, true or false, non-prod environments always set to false]
+    private String GeoIPLanguageCode = ""; //[languageCode]
 
 
     public Boolean getGeoIPRedirectExcluded() {
