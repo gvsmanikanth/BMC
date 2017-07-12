@@ -1,14 +1,14 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.models.utils.ContentIdGenerator;
 import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.foundation.Image;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -17,68 +17,46 @@ import java.util.stream.StreamSupport;
 public class PartnerList extends WCMUsePojo {
 
     @Override
-    public void activate() throws Exception {
-
-    }
+    public void activate() throws Exception { }
 
     public String getItems() {
-        String json;
-
-//        JSONObject obj = new JSONObject();
-//        obj.put("id", 1);
-//        obj.put("name", "Test");
-//        obj.put("logo_url", "http://cdn11.g5search.com/assets/232310/tiny-autumn-and-a-gray-cat.jpg?1391986875");
-
-//        JSONArray arr = new JSONArray();
-//        arr.add(obj);
-
-//        json = arr.toJSONString();
-
-        return getTest();
-    }
-
-    public String getTest() {
-        String result;
-
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
         Iterable<Page> iterable = () -> getCurrentPage().listChildren();
         List<Partner> list = StreamSupport.stream(iterable.spliterator(), false)
                 .map(page -> new Partner(page.getContentResource("root/maincontentcontainer/partner_data")))
+                .filter(partner -> partner.enabled)
+                .sorted(Comparator.comparing(partner -> partner.name, String.CASE_INSENSITIVE_ORDER))
                 .collect(Collectors.toList());
-        result = gson.toJson(list);
 
-        return result;
+        return gson.toJson(list);
     }
 
-}
+    private class Partner {
+        final Integer id;
+        final String name;
+        final String logo_url;
+        final String short_desc;
+        final String long_desc;
+        final String company_url;
+        final String company_external_url;
+        final String partner_type;
+        final String region_name;
+        final Boolean enabled;
 
-class Partner {
+        Partner(Resource resource) {
+            ValueMap props = resource.getValueMap();
+            id = Integer.parseInt(new ContentIdGenerator(resource.getPath()).getNewContentID());
+            name = props.get("name", "");
+            logo_url = props.get("fileReference", "");
+            short_desc = props.get("shortDescription", "");
+            long_desc = props.get("longDescription", "");
+            company_url = props.get("companyURL", "");
+            company_external_url = props.get("companyExternalURL", "");
+            partner_type = props.get("partnerType", "");
+            region_name = props.get("regionName", "");
+            enabled = props.get("isEnabled", false);
+        }
 
-    private String id;
-    private String name;
-    private String logo_url;
-    private String short_desc;
-    private String long_desc;
-    private String company_url;
-    private String company_external_url;
-    private String partner_type;
-    private String region_name;
-
-    Partner(Resource resource) {
-        ValueMap props = resource.getValueMap();
-        Image img = new Image(resource);
-        ResourceResolver resolver = resource.getResourceResolver();
-
-        id = resource.getPath();
-        name = props.get("name", "");
-        logo_url = resolver.map(img.getSrc());
-        short_desc = props.get("shortDescription", "");
-        long_desc = props.get("longDescription", "");
-        company_url = props.get("companyUrl", "");
-        company_external_url = props.get("companyExternalURL", "");
-        partner_type = props.get("partnerType", "");
-        region_name = props.get("regionName", "");
     }
 
 }

@@ -7,7 +7,7 @@
     <dd data-sly-test="${!name}"><em>Not set</em></dd>
 
     <dt>Logo</dt>
-    <dd data-sly-test.logo="${image.src}"><img src="${logo}" width="320" /></dd>
+    <dd data-sly-test.logo="${image.src}"><img src="${logo}" height="130" /></dd>
     <dd data-sly-test="${!logo}"><em>Not set</em></dd>
 
     <dt>Company URL</dt>
@@ -28,8 +28,7 @@
 
 
     <dt>Enabled</dt>
-    <dd data-sly-test.isEnabled="${properties.isEnabled}">${isEnabled}</dd>
-    <dd data-sly-test="${!isEnabled}"><em>Not set</em></dd>
+    <dd>${properties.isEnabled}</dd>
 
 </dl>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.name, emptyTextAppend = 'Enter partner data.'}"></sly>
