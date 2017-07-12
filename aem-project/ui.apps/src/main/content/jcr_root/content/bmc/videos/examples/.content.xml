@@ -25,7 +25,6 @@
                     title="Hitchhikers Theme Song"
                     description="&quot;A PART from a song called JOURNEY OF THE SORCERER by THE EAGLES.&quot; (0:36)"
                     overlayText="LINK-Don't Panic!-LINK"
-                    overlayUrlIsPath="false"
                     overlayUrl="https://www.youtube.com/watch?v=MFg6Y7zbRg4"/>
         </jcr:content>
     </youtube>

@@ -74,7 +74,7 @@
 
                                                 <alertLinkUrl
                                                         jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                         fieldLabel="Alert Link Url"
                                                         required="{Boolean}true"
                                                         fieldDescription="Alert Link Url"
