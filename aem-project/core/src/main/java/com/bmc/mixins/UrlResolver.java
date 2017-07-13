@@ -4,13 +4,14 @@ import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 
 import java.util.Optional;
 
 /**
  * Mixin providing url resolution helper methods
  */
-public interface UrlResolver extends AdaptableResourceProvider {
+public interface UrlResolver {
     /**
      * Resolves the given {@code urlOrPath}, yielding a modified or empty result as appropriate:
      * <ul>
@@ -29,6 +30,8 @@ public interface UrlResolver extends AdaptableResourceProvider {
         if (urlOrPath == null)
             return Optional.empty();
 
+        AdaptableResourceProvider resourceProvider = AdaptableResourceProvider.from(getResourceResolver());
+
         // assume these are always fine as is
         if (urlOrPath.startsWith("http") || urlOrPath.startsWith("#") || urlOrPath.contains(".html"))
             return Optional.of(urlOrPath);
@@ -38,7 +41,7 @@ public interface UrlResolver extends AdaptableResourceProvider {
             if (!verifyPath)
                 return Optional.of(urlOrPath);
 
-            Asset asset = getAsset(urlOrPath);
+            Asset asset = resourceProvider.getAsset(urlOrPath);
             if (asset == null)
                 return Optional.empty();
 
@@ -50,7 +53,7 @@ public interface UrlResolver extends AdaptableResourceProvider {
             if (!verifyPath)
                 return Optional.of(urlOrPath + ".html");
 
-            Page page = getPage(urlOrPath);
+            Page page = resourceProvider.getPage(urlOrPath);
             if (page == null)
                 return Optional.empty();
 
@@ -62,4 +65,6 @@ public interface UrlResolver extends AdaptableResourceProvider {
         return Optional.empty();
     }
 
+    static UrlResolver from(ResourceResolver resolver) { return () -> resolver; }
+    ResourceResolver getResourceResolver();
 }

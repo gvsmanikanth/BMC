@@ -12,7 +12,7 @@ import java.util.stream.StreamSupport;
 
 /**
  * Mixin providing {@link Resource} nodes for multifield field which acs-commons-nested="NODE_STORE",
- * via {@link #getResource()} (typically provided by {@link WCMUsePojo})
+ * via {@link #getResource()}
  */
 public interface MultifieldNodeProvider {
     /**
@@ -70,5 +70,6 @@ public interface MultifieldNodeProvider {
                 : Stream.empty();
     }
 
+    static MultifieldNodeProvider from(Resource resource) { return () -> resource; }
     Resource getResource();
 }

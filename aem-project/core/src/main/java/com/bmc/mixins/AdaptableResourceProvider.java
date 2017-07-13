@@ -9,7 +9,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 
 /**
- * Mixin providing {@link Adaptable} instances of {@link Resource} via {@link #getResourceResolver} (typically provided by {@link WCMUsePojo})
+ * Mixin providing {@link Adaptable} instances of {@link Resource} via {@link #getResourceResolver}
  */
 public interface AdaptableResourceProvider {
     /**
@@ -51,5 +51,6 @@ public interface AdaptableResourceProvider {
         return resource.adaptTo(cls);
     }
 
+    static AdaptableResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
     ResourceResolver getResourceResolver();
 }
