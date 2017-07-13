@@ -1,8 +1,8 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.components.mixins.AdaptableResourceProvider;
-import com.bmc.components.mixins.UrlResolver;
+import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.UrlResolver;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
 import com.day.util.NameValuePair;

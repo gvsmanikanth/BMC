@@ -1,8 +1,8 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.components.mixins.AdaptableResourceProvider;
-import com.bmc.components.mixins.MultifieldNodeProvider;
+import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.MultifieldNodeProvider;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;

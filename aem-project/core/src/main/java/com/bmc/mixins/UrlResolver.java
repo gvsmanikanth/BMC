@@ -1,4 +1,4 @@
-package com.bmc.components.mixins;
+package com.bmc.mixins;
 
 import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;

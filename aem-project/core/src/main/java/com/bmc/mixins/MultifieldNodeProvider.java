@@ -1,4 +1,4 @@
-package com.bmc.components.mixins;
+package com.bmc.mixins;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import org.apache.sling.api.resource.Resource;
