@@ -1,6 +1,6 @@
 package com.bmc.components.mixins;
 
-import com.bmc.components.utils.StringHelper;
+import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.resource.Resource;

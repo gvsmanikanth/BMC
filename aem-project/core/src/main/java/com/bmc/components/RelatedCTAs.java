@@ -3,7 +3,7 @@ package com.bmc.components;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.components.mixins.AdaptableResourceProvider;
 import com.bmc.components.mixins.MultifieldNodeProvider;
-import com.bmc.components.utils.StringHelper;
+import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
