@@ -2,7 +2,7 @@
 <script>
     var bmcFilterConfig = {
         "pageType" : "list",
-        "pageSize" : -1, // -1 for rendering the entier list
+        "pageSize" : -1, // -1 for rendering the entire list
         "maxPagesToDisplay" : 5,
         "paginationType" : "onPagination", //"onPagination"
         "showMatchCountInDropdown" : false,
@@ -15,13 +15,13 @@
         "listItems" : ${list.items @ context='unsafe'}
     }
 </script>
-${list.test @ context='unsafe'}
+
 <section class="bg-white filterListContainer py3 bg-seashell" style="display: block;">
     <div class="layout-inner-wrap">
-        <p class="partner-lead py2">
+        <p data-sly-resource="${'blurb' @ resourceType='bmc/components/content/text'}" class="partner-lead py2">
             BMC has formed partnerships with leading technology companies worldwide to deliver added value to our shared customers.
         </p>
-        <h2>
+        <h2 data-sly-resource="${'title' @ resourceType='bmc/components/content/title'}">
             See who we work with around the world
         </h2>
     </div>

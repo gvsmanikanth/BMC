@@ -13,12 +13,25 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-
+/**
+ * PartnerList is a utility class backing the partner-list component. It
+ * is used to gather partner data from child pages of the current page
+ * and return that data in JSON format, for use by the client-provided
+ * Javascript scripts that build the actual partner list HTML.
+ */
 public class PartnerList extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception { }
 
+    /**
+     * Returns a pretty JSON array of Partner objects. Individual partner data
+     * is collected from the child pages of the current page. Child pages should
+     * be instances of the Partner Data template, containing the Partner Data component
+     * at root/maincontentcontainer/partner_data.
+     *
+     * @return a JSON array of partners defined in child pages
+     */
     public String getItems() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Iterable<Page> iterable = () -> getCurrentPage().listChildren();
@@ -31,6 +44,11 @@ public class PartnerList extends WCMUsePojo {
         return gson.toJson(list);
     }
 
+    /**
+     * Partner maps partner data to the correct field names and types prior to
+     * converstion to JSON. Names and types should conform to those expected by
+     * the client-provided Javascript that builds the partner list HTML.
+     */
     private class Partner {
         final Integer id;
         final String name;
