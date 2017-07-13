@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="50/50 Content Area"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    class="50-50contentcontainer aem-Grid aem-Grid--12 aem-Grid--default--12"
+    helpPath="https://www.adobe.com/go/aem_cmp_form_container_v1">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <main
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Main"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+
+                </items>
+            </main>
+        </items>
+    </content>
+</jcr:root>
