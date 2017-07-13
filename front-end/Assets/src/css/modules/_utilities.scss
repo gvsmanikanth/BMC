@@ -442,6 +442,14 @@
 	}
 }
 
+
+.link-icon-resource-video {
+     background: url("#{$imagesFolder}bg-resource-downloads-li-video.png") left top no-repeat;
+     background-position: -4px -2px;
+	 padding-left: 27px;
+	 background-size: 1.5rem;
+}
+
 .link-icon-resource-document {
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
       background-position: -2px -2px;
@@ -453,7 +461,15 @@
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
       background-position: 0 -3.71rem;
       padding-left: 27px;
-      background-size: .92rem;
+      background-size: .94rem;
+}
+
+.link-icon-video-play {
+		background: url("#{$imagesFolder}s-VideoPlay-small.png") left 6px no-repeat;
+		background-repeat: no-repeat;
+		background-position: calc(100% - 10px) center;
+		padding-right: em(50); //Added padding to avoid overlapping bg image with text
+      	padding-left: 27px;
 }
 
 .link-icon-word {
@@ -478,6 +494,79 @@
 	&:before {
 		content: $iconPowerPoint;
 	}
+}
+
+.link-icon-email{
+	&:before {
+		content: $iconEmail;
+	}
+}
+
+.link-icon-phone{
+	&:before {
+		content: $iconPhone; 
+	}
+}
+
+.link-icon-globe{
+	&:before {
+		 content: $iconGlobe;
+	}
+}
+
+.link-icon-play{
+	&:before {
+		 content: $iconPlay;
+	}
+}
+
+.link-icon-star{
+	&:before {
+		 content: $iconStar;
+	}
+}
+
+.link-icon-eye{
+	&:before {
+		 content: $iconEye;
+	}
+}
+
+.icon-play {
+  position: relative;
+
+  &:before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    display: inline-block;
+    height: 65px;
+    width: 55px;
+    padding-right: 10px;
+    position: relative;
+    top: 10px;
+    background-image: url("#{$imagesFolder}icon-slide-video.png");
+  }
+}
+
+.icon-magnify {
+	position: relative;
+
+  &:before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    display: inline-block;
+    height: 65px;
+    width: 55px;
+    padding-right: 10px;
+    position: relative;
+    top: 10px;
+    //background-image: url("#{$imagesFolder}icon-slide-video.png");
+    background-image: url("#{$imagesFolder}icon-slide-glass.png");
+  }
 }
 
 

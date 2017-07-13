@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-06-06T13:36:04.441-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/support-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="support-messages"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <support-object-build
+                jcr:lastModified="{Date}2017-06-06T13:36:04.437-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/support-central/support-object-builder">
+                <alertdata jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        alertEndDate="2017-06-17T13:34:00.000-07:00"
+                        alertLinkTitle="Alert Link Title 1"
+                        alertLinkUrl="/content/bmc/language-masters/en/support/support-central"
+                        alertMessage="Alert Message 1"
+                        alertStartDate="2017-06-02T13:33:00.000-07:00"
+                        alertTitle="Alert Title 1"/>
+                    <_x0032_
+                        jcr:primaryType="nt:unstructured"
+                        alertEndDate="2017-06-23T13:35:00.000-07:00"
+                        alertLinkTitle="Alert Link Title 2"
+                        alertLinkUrl="/content/bmc/language-masters/en/support/support-central"
+                        alertMessage="Alert Message 2"
+                        alertStartDate="2017-06-21T13:35:00.000-07:00"
+                        alertTitle="Alert Title 2"/>
+                </alertdata>
+            </support-object-build>
+        </root>
+    </jcr:content>
+</jcr:root>

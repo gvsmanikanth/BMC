@@ -16,7 +16,8 @@ require('./modules/sift-generator.js');
 require('./vendor/jquery.fancybox.js');
 require('./vendor/jquery.scrollspy.js');
 require('./modules/utilities.js');
-require('./modules/geoip.js'); //added js file for GeoIP.
+//Removed GeoIP implementation. DXP-291
+//require('./modules/geoip.js'); //added js file for GeoIP.
 require('./modules/header-prompt.js'); //added js file for GeoIP.
 require('./modules/menu.js');
 require('./modules/opentip.js');

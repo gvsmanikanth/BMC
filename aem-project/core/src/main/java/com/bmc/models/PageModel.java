@@ -60,10 +60,12 @@ public class PageModel {
     @PostConstruct
     protected void init() {
 
-        if(getContentID().isEmpty()){
-            ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
-            setContentID(contentIdGenerator.getNewContentID());
+        if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
+           //ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
+             setContentID(resource.getValueMap().get("jcr:baseVersion").toString());
         }
+
+        setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template").toString())));
 
         BmcMeta bmcMeta = gatherAnalytics();
         gson = new GsonBuilder()
@@ -74,28 +76,58 @@ public class PageModel {
         bmcMetaJson = gson.toJson(bmcMeta);
     }
 
+    private String getTemplateName(String tempPath){
+        int nameIndex = tempPath.lastIndexOf("/") + 1;
+        return formatPageType(tempPath.substring(nameIndex));
+    }
 
     private BmcMeta gatherAnalytics(){
         BmcMeta bmcMeta = new BmcMeta();
         bmcMeta.getPage().setContentId(getContentID());
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
-        bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
+       // bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
         bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+
+        if(resourcePage.getPath().contains("/support/")){
+            bmcMeta.getSupport().setEnableAlerts(true);
+            bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
+        }else{
+            bmcMeta.getSupport().setEnableAlerts(false);
+        }
 
         return bmcMeta;
     }
 
     private String formatLongName(){
         //TODO: Build this string a better way. Maybe using Absolute Parent.
-        String formattedLongName = "en-us";
+        StringBuilder formattedLongName = new StringBuilder();
         try {
-            formattedLongName = (new StringBuilder()).append(formatMetaLocale().toLowerCase()).append(":" + resourcePage.getName()).toString();
+            formattedLongName.append(formatMetaLocale().toLowerCase());
+            try{
+            if(formatPageType(resourcePage.getParent().getName()) != null) {
+                formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
+            }
+            }catch (Exception t){
+                logger.debug("no parent template", t);
+            }
+            formattedLongName.append(":" + resourcePage.getName()).toString();
         }catch (Exception e){
             logger.error("Error setting contentId: {}", e.getMessage());
         }
-        return formattedLongName;
+        return formattedLongName.toString();
+    }
+
+    private String formatPageType(String path){
+        if (getContentType().equals("form-thank-you")) {
+            resourcePage.getParent().getName();
+            return "form-complete" + ":"+resourcePage.getParent().getName();
+        }else if(path.equals("forms")){
+            return "form-start";
+        }else{
+            return path;
+        }
     }
 
     public Page getResourcePage() {
@@ -108,6 +140,10 @@ public class PageModel {
 
     public String getContentType() {
         return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public String getContentID() {

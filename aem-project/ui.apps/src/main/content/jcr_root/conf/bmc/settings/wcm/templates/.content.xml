@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
-    jcr:mixinTypes="[rep:AccessControllable]"
-    jcr:primaryType="cq:Page"/>
+          jcr:mixinTypes="[rep:AccessControllable]"
+          jcr:primaryType="cq:Page">
+    <bmc-empty-page-template/>
+    <experience-fragment-bmc-form-fieldset/>
+    <form-landing-page-template/>
+    <form-thank-you/>
+    <status-router-service/>
+    <bmc-empty-page-template-1/>
+    <bmc-redirect/>
+    <bmc-support-alerts/>
+    <support-central/>
+    <form-landing-page-template-2/>
+</jcr:root>

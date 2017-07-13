@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Key Features Component"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <KeyFeatures
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Key Features"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <headerTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldLabel="Heading"
+                                    required="{Boolean}true"
+                                    fieldDescription="Title"
+                                    name="./headerTitle"/>
+                            <headerSubTitle
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldLabel="Sub Heading"
+                                    fieldDescription="Sub Title"
+                                    name="./headerSubTitle"/>
+
+                            <bullets jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                    fieldLabel="Description">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                        acs-commons-nested="NODE_STORE"
+                                        name="./keyFeatureSet">
+                                    <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <bullet
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                        fieldLabel="Bullet"
+                                                        required="{Boolean}true"
+                                                        name="./featureBullet"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </bullets>
+
+                            <buttons jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                    fieldLabel="Buttons">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                        acs-commons-nested="NODE_STORE"
+                                        name="./ctaButtonSet">
+                                    <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <assetType
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        fieldLabel="Select Asset Type"
+                                                        multiple="{Boolean}false"
+                                                        name="./assetType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
+                                                        <dataSheet jcr:primaryType="nt:unstructured" text="Datasheet" value="Datasheet"/>
+                                                        <whitePaper jcr:primaryType="nt:unstructured" text="White Paper" value="White Paper"/>
+                                                        <solutionOverview jcr:primaryType="nt:unstructured" text="Solution Overview" value="Solution Overview"/>
+                                                        <solutionBrief jcr:primaryType="nt:unstructured" text="Solution Brief" value="Solution Brief"/>
+                                                    </items>
+                                                </assetType>
+                                                <assetName
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Custom Asset Name"
+                                                        fieldDescription="Enter a name that will appear on the CTA for the asset"
+                                                        name="./assetName"/>
+                                                <ctaPath
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                        fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                        name="./ctaPath"
+                                                        fieldLabel="CTA Path or external URL"/>
+                                                <buttonColor
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        fieldLabel="Select Background color"
+                                                        multiple="{Boolean}false"
+                                                        name="./buttonColor">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <blue jcr:primaryType="nt:unstructured" text="Blue (primary)" value="btn"/>
+                                                            <green jcr:primaryType="nt:unstructured" text="Green (secondary)" value="btn btn-secondary"/>
+                                                            <orange jcr:primaryType="nt:unstructured" text="Orange (corporate)" value="btn btn-corporate"/>
+                                                            <white jcr:primaryType="nt:unstructured" text="White" value="btn btn-blue"/>
+                                                        </items>
+                                                </buttonColor>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </buttons>
+                            <additionalResources
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="Adds 'Explore Additional Resources' link to the Key Features"
+                                    name="./aditionalResources"
+                                    text="Explore Additional Resources"
+                                    value="true"/>
+                            <showlineSeparator
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="Show Line Separator"
+                                    name="./showlineSeparator"
+                                    text="Show Line Separator"
+                                    value="true"/>
+                            <backgroundColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Select Background color"
+                                multiple="{Boolean}false"
+                                name="./backgroundColor">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
+                                    <green jcr:primaryType="nt:unstructured" text="White (default color)" value="btn btn-secondary"/>
+                                    <orange jcr:primaryType="nt:unstructured" text="Grey" value="btn btn-corporate"/>
+                                </items>
+                            </backgroundColor>
+
+                        </items>
+                    </column>
+                </items>
+            </KeyFeatures>
+        </items>
+    </content>
+</jcr:root>

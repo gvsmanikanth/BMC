@@ -7,12 +7,16 @@
                     <h1 data-sly-test="${properties.heading}">${properties.heading}</h1>
                     <p data-sly-test="${properties.subheading}">${properties.subheading}</p>
                     <a data-sly-test="${properties.cta_link}" class="${properties.cta_mode == 'button' && properties.cta_is_video
-                        ? 'btn-white learn-more modal-youtube-video-player'
+                        ? 'btn-white yellow-orange-hover modal-youtube-video-player'
                         : (properties.cta_mode == 'button'
                             ? 'btn-white learn-more'
                             : (properties.cta_is_video
                                 ? 'lead -sm bold white yellow-orange-hover inline-block modal-youtube-video-player'
-                                : 'lead -sm bold white yellow-orange-hover inline-block'))}" href="${properties.cta_url}" data-form="xxx" data-location="Page-Body" target="_self">${properties.cta_link}</a>
+                                : 'lead -sm bold white yellow-orange-hover inline-block'))}" href="${properties.cta_url}" data-form="xxx" data-location="Page-Body" target="_self">
+                                ${properties.cta_link} 
+                                <sly data-sly-test='${properties.cta_is_video}'><svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg></sly>
+</a>
+
                 </div>
             </div>
         </div>
