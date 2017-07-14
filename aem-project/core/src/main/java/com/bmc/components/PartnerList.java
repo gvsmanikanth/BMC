@@ -10,6 +10,7 @@ import org.apache.sling.api.resource.ValueMap;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -36,7 +37,15 @@ public class PartnerList extends WCMUsePojo {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Iterable<Page> iterable = () -> getCurrentPage().listChildren();
         List<Partner> list = StreamSupport.stream(iterable.spliterator(), false)
-                .map(page -> new Partner(page.getContentResource("root/maincontentcontainer/partner_data")))
+                .map(page -> {
+                    Resource partnerData = page.getContentResource("root/maincontentcontainer/partner_data");
+                    if (partnerData != null) {
+                        return new Partner(partnerData);
+                    }
+
+                    return null;
+                })
+                .filter(Objects::nonNull)
                 .filter(partner -> partner.enabled)
                 .sorted(Comparator.comparing(partner -> partner.name, String.CASE_INSENSITIVE_ORDER))
                 .collect(Collectors.toList());
