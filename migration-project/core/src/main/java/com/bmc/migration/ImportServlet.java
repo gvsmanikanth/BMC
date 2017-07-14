@@ -24,7 +24,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(ImportServlet.class);
     public static final String HOME_LOCATION_PAGE = "homeLocationPage";
     public static final String SERVICE_URL = "http://www.bmc.com/templates/HelperContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=";
-    public static final int MAX_DEPTH = 3;
+    public static final int MAX_DEPTH = 6;
 
     @Reference
     private SlingRepository repository;
@@ -118,7 +118,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     }
 
     private String getPath(String url) {
-        return "/content/bmc-migration" + url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
+        return "/content/bmc-migration/forms" + url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
     }
 
     private void processItemFields(JSONObject item, Node jcrNode, Node root, Session session, SlingHttpServletRequest request, int depth) {
@@ -134,6 +134,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     }
 
     private void addField(JSONObject field, Node propertyNode, Node container, Session session, SlingHttpServletRequest request, int depth) {
+        String tabs;
         String type = null;
         String name = null;
         String value = null;
@@ -148,9 +149,17 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     array = field.getJSONArray("Field Array");
                     node = container.addNode(name);
                     node.setProperty("fieldType", type);
-                    String tabs = getTabs(depth);
+                    tabs = getTabs(depth);
                     out(tabs + "adding components for " + type + " " + name);
                     addComponentArray(array, node, session, request, depth);
+                    break;
+                case "Complex Field":
+                    array = field.getJSONArray("Field Array");
+                    node = container.addNode(name);
+                    node.setProperty("fieldType", type);
+                    tabs = getTabs(depth);
+                    out(tabs + "adding fields for " + type + " " + name);
+                    addFormFieldsArray(array, node, session, request, depth);
                     break;
                 case "Empty or Unrecognized Item Browser/Complex Field":
                     // do nothing
@@ -168,6 +177,68 @@ public class ImportServlet extends SlingAllMethodsServlet {
             }
         } catch (JSONException|RepositoryException e) {
             logger.error(e.getMessage());
+        }
+    }
+
+    private void addFormFieldsArray(JSONArray array, Node parent, Session session, SlingHttpServletRequest request, int depth) {
+        JSONObject item = null;
+        Node node = null;
+        String formFieldMacro = "";
+        String formFieldID = "";
+        String formFieldType = "";
+        String formFieldValidationType = "";
+        String formRows = "";
+        String formFieldRequired = "";
+        String formOptionSelected = "";
+        String formOptionDisabled = "";
+        String validationErrorLabel = "";
+        String formOptionValue = "";
+        String formFieldName = "";
+        String formOptionLabel = "";
+        String formFieldLabel = "";
+        String formColumns = "";
+        String maxLength = "";
+        String formFieldNarrow = "";
+        depth++;
+        for (int i=0;i<array.length();i++) {
+            try {
+                item = array.getJSONObject(i).getJSONObject("Row Values");
+                formFieldMacro = item.getString("formFieldMacro");
+                formFieldID = item.getString("formFieldID");
+                formFieldType = item.getString("formFieldType");
+                formFieldValidationType = item.getString("formFieldValidationType");
+                formRows = item.getString("formRows");
+                formFieldRequired = item.getString("formFieldRequired");
+                formOptionSelected = item.getString("formOptionSelected");
+                formOptionDisabled = item.getString("formOptionDisabled");
+                validationErrorLabel = item.getString("validationErrorLabel");
+                formOptionValue = item.getString("formOptionValue");
+                formFieldName = item.getString("formFieldName");
+                formOptionLabel = item.getString("formOptionLabel");
+                formFieldLabel = item.getString("formFieldLabel");
+                formColumns = item.getString("formColumns");
+                maxLength = item.getString("maxLength");
+                formFieldNarrow = item.getString("formFieldNarrow");
+                node = parent.addNode(formFieldType + i);
+                node.setProperty("formFieldMacro", formFieldMacro);
+                node.setProperty("formFieldID", formFieldID);
+                node.setProperty("formFieldType", formFieldType);
+                node.setProperty("formFieldValidationType", formFieldValidationType);
+                node.setProperty("formRows", formRows);
+                node.setProperty("formFieldRequired", formFieldRequired);
+                node.setProperty("formOptionSelected", formOptionSelected);
+                node.setProperty("formOptionDisabled", formOptionDisabled);
+                node.setProperty("validationErrorLabel", validationErrorLabel);
+                node.setProperty("formOptionValue", formOptionValue);
+                node.setProperty("formFieldName", formFieldName);
+                node.setProperty("formOptionLabel", formOptionLabel);
+                node.setProperty("formFieldLabel", formFieldLabel);
+                node.setProperty("formColumns", formColumns);
+                node.setProperty("maxLength", maxLength);
+                node.setProperty("formFieldNarrow", formFieldNarrow);
+            } catch (JSONException|RepositoryException e) {
+                logger.error(e.getMessage());
+            }
         }
     }
 
