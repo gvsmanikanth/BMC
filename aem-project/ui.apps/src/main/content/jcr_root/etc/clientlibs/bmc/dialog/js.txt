@@ -1,2 +1,3 @@
 #base=.
 radiogroup-showhide.js
+resourcelist-button-names.js
