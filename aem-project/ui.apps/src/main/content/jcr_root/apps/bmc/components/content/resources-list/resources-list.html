@@ -1,4 +1,3 @@
-<sly data-sly-use.ResourceValues="${'com.bmc.components.utils.GetResouceByPath'}"/>
 <section class="resources" id="resources">
     <div class="layout-inner-wrap">
         <h2 class="resources-header">Resources</h2>
@@ -9,10 +8,7 @@
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
                         <a  href="${child.resPath}"  target="_self">
-                            <sly data-sly-list="${ResourceValues.resByPath[child.resPath]}">
-                                ${item}
-                            </sly>
-                            &nbsp;&#8250;
+                            ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
                 </sly>
@@ -25,7 +21,7 @@
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
                         <a  href="${child.resPath}"  target="_self">
-                            <!--${child.resText @ context='html'}--> &nbsp;&#8250;
+                            ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
                 </sly>
@@ -38,7 +34,7 @@
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
                         <a  href="${child.resPath}"  target="_self">
-                            <!--${child.resText @ context='html'}--> &nbsp;&#8250;
+                            ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
                 </sly>
