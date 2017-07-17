@@ -1,4 +1,4 @@
-package com.bmc.components.utils;
+package com.bmc.util;
 
 import java.util.Optional;
 import java.util.function.Function;

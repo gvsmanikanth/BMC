@@ -489,7 +489,7 @@ var Support = Support || {};
 			if (typeof bmcMeta !== 'undefined' && typeof bmcMeta.cdxLocal !== 'undefined' && bmcMeta.cdxLocal) {
 				Support.Issues.loadViaUrl('./test/issues.json');
 			} else {
-				Support.Issues.loadViaUrl('/templates/ServiceSupportCases');
+				Support.Issues.loadViaUrl('/bin/supportcases');
 			}
 		},
 
