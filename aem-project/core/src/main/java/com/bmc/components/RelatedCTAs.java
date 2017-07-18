@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Provides Related CTAs Component properties (components/content/related-ctas) for Use
+ * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
 public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum HeadingType {
