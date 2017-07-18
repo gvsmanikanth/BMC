@@ -1,6 +1,5 @@
 package com.bmc.models;
 
-import com.bmc.services.ProfileService;
 import com.day.cq.wcm.api.Page;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -8,7 +7,6 @@ import com.google.gson.GsonBuilder;
 import com.bmc.models.bmcmeta.BmcMeta;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.Resource;
@@ -62,9 +60,6 @@ public class PageModel {
     @Inject @Named("sling:resourceType") @Default(values="No resourceType")
     protected String resourceType;
 
-    @Reference
-    private ProfileService profileService;
-
     public static final Map<String, String> FIELD_MAPPING;
     static {
         HashMap<String, String> map = new HashMap<>();
@@ -113,11 +108,20 @@ public class PageModel {
         bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
 
-        Map<String, String> profile = getProfile(resource.getResourceResolver());
-
         if(resourcePage.getPath().contains("/support/")){
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
+            Map<String, String> profile = getProfile(resource.getResourceResolver());
+            if (profile != null) {
+                if (profile.containsKey("first_name"))
+                    bmcMeta.getUser().setFirstName(profile.get("first_name"));
+                if (profile.containsKey("last_name"))
+                    bmcMeta.getUser().setLastName(profile.get("last_name"));
+                if (profile.containsKey("email"))
+                    bmcMeta.getUser().setEmail(profile.get("email"));
+                bmcMeta.getUser().setSupportAuthenticated(true);
+            }
+
         }else{
             bmcMeta.getSupport().setEnableAlerts(false);
         }
