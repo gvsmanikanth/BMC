@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:58:29.508-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="HCL"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:58:29.506-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="http://www.hcl.com/"
+                    fileReference="/content/dam/bmc/partners/logos/HCL.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>HCL’s Infrastructure Services Division (ISD) has not only executed complex global IT transformation exercises, but also helped run efficient IT services for more than 300 of the world’s leading companies. HCL and BMC have a 10-year partnership with expertise spanning our entire product portfolio where we add value to the below HCL service offerings.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Workplace ServicesData&lt;/li>&#xd;&#xa;&lt;li>Center ServicesCross&lt;/li>&#xd;&#xa;&lt;li>Functional Services&lt;/li>&#xd;&#xa;&lt;li>Network Services&lt;/li>&#xd;&#xa;&lt;li>Integrated Operations Management&lt;/li>&#xd;&#xa;&lt;li>Mainframe &amp;amp; AS/400&lt;/li>&#xd;&#xa;&lt;li>Automation and Orchestration&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>HCL and BMC jointly monitor 50,000 servers, automate 20,000 machines supporting 10,000+ Analysts and 1 million+ end users across their global customer base. BMC and HCL have joint programs running across multiple Centre of Excellence(CoE) units with over 300 HCL engineers trained on multiple BMC solutions.&lt;/p>&#xd;&#xa;"
+                    name="HCL"
+                    shortDescription="HCL’s Infrastructure Services Division (ISD) has executed complex global IT transformation exercises, and helped run efficient IT services for more than 300 of the world’s leading companies."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>

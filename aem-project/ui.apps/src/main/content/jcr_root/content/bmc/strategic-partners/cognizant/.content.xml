@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:59:55.460-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Cognizant"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:59:55.459-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="https://www.cognizant.com/"
+                    fileReference="/content/dam/bmc/partners/logos/cognizant.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Cognizant (NASDAQ: CTSH) is a leading provider of information technology, consulting, and business process services, dedicated to helping the world's leading companies build stronger businesses. Cognizant Infrastructure Services (CIS) provides Infrastructure Management Services and System Integration across all IT functions such as Network and Security, Application, Data Center Operations, Mainframes and more.&lt;/p>&#xd;&#xa;&lt;p>Cognizant’s relationship with BMC focuses on:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Service Management – Providing automation around service management across all business functions including empowering the end user with self service and provisioning functionalities&lt;/li>&#xd;&#xa;&lt;li>Performance &amp;amp; Analytics – Command and control, server and client monitoring services, analytics&lt;/li>&#xd;&#xa;&lt;li>Workload Automation&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                    name="Cognizant"
+                    shortDescription="Cognizant is a leading provider of information technology, consulting, and business process services, dedicated to helping the world\\'s leading companies build stronger businesses."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>
