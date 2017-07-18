@@ -8,6 +8,21 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-11T13:10:49.204-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"/>
+            </maincontentcontainer>
             <partner_data
                 jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
                 jcr:createdBy="admin"
