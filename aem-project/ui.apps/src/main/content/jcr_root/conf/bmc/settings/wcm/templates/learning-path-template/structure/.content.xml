@@ -8,7 +8,7 @@
         cq:lastReplicated="{Date}2017-07-10T16:01:10.459-07:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
-        cq:template="/conf/bmc/settings/wcm/templates/learning-path-template-new"
+        cq:template="/conf/bmc/settings/wcm/templates/learning-path-template"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page">
         <root
