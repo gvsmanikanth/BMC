@@ -9,7 +9,7 @@
           handleLogout="{Boolean}false"
           idpCertAlias="authentication-service#1497569498703"
           idpHttpRedirect="{Boolean}false"
-          idpUrl="https://bmcdev.okta.com/app/bmcdevbmcdevcell3_adobeaemhttpvlausrdsdv05bmccom4502_1/exk1axijc2zplp53y1d8/sso/saml"
+          idpUrl="https://bmcdev.okta.com/app/bmcdevbmcdevcell3_aempublishdev_1/exk1bpuvsf4Yjs0cs1d8/sso/saml"
           keyStorePassword="admin"
           logoutUrl=""
           nameIdFormat="urn:oasis:names:tc:SAML:2.0:nameid-format:transient"

@@ -1,23 +1,23 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.MultifieldNodeProvider;
+import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
- * Provides Related CTAs Component properties (components/content/related-ctas) for Use
+ * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
-public class RelatedCTAs extends WCMUsePojo {
+public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
@@ -52,16 +52,7 @@ public class RelatedCTAs extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception {
-        Resource itemdata = getResource().getChild("itemdata");
-        if (itemdata == null) {
-            items = new ArrayList<>();
-        } else {
-            items = StreamSupport.stream(itemdata.getChildren().spliterator(), false)
-                    .map(this::getLinkItem)
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.toList());
-        }
-
+        items = mapMultiFieldNodes("itemdata", this::getLinkItem);
         headingText = resolveHeadingText();
     }
 
@@ -88,25 +79,19 @@ public class RelatedCTAs extends WCMUsePojo {
         if (linkResource == null)
             return null;
 
-        Page page = null;
-        String pagePath = linkResource.getValueMap().get("internalPagePath", "");
-        if (!pagePath.isEmpty()) {
-            Resource pageResource = getResourceResolver().getResource(pagePath);
-            if (pageResource != null)
-                page = pageResource.adaptTo(Page.class);
-        }
+        String internalPagePath = linkResource.getValueMap().get("internalPagePath", "");
+
+        Page page = getPage(internalPagePath);
         if (page == null)
             return null;
 
-        String text = page.getNavigationTitle();
-        if (text == null || text.isEmpty())
-            text = page.getPageTitle();
-        if (text == null || text.isEmpty())
-            text = page.getTitle();
+        String text = StringHelper.coalesceStringMember(page,
+                Page::getNavigationTitle, Page::getPageTitle,
+                Page::getTitle, Page::getPath)
+                .orElse(internalPagePath);
 
-        String href = page.getVanityUrl();
-        if (href == null || href.isEmpty())
-            href = page.getPath() + ".html";
+        String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
+                .orElse(internalPagePath + ".html");
 
         ValueMap map = page.getProperties();
         return new Item(text, href, page.getDescription(), map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
