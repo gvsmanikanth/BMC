@@ -24,7 +24,7 @@
                                     fieldDescription="Enter the heading text"
                                     fieldLabel="Enter the heading text"
                                     name="./headerText"/>
-                            <tabs jcr:primaryType="nt:unstructured"
+                            <names jcr:primaryType="nt:unstructured"
                                   sling:resourceType="granite/ui/components/foundation/form/multifield"
                                   fieldLabel="Tabs">
                                 <field
@@ -41,17 +41,17 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <title
+                                                <tabTitle
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                         fieldLabel="Title"
                                                         fieldDescription="Tab Title"
-                                                        name="./title"/>
+                                                        name="./tabTitle"/>
                                             </items>
                                         </column>
                                     </items>
                                 </field>
-                            </tabs>
+                            </names>
                         </items>
                     </column>
                 </items>
