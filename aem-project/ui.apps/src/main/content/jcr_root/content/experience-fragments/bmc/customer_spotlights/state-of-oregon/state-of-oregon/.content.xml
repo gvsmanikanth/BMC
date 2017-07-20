@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-19T16:56:05.585-07:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight"
+        cq:xfMasterVariation="{Boolean}true"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="State of Oregon"
+        sling:resourceType="bmc/components/structure/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <customer_spotlight
+                jcr:created="{Date}2017-07-19T14:56:37.162-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T16:56:05.582-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/customer-spotlight"
+                cta_link="CTA Link"
+                cta_mode="button"
+                cta_url="http://www.bmc.com/templates/Media_Video_Mobile?vID=pG8wb2ig2Z8b"
+                fileReference="/content/dam/bmc/customer-logos/Oregon_Detail_Page_Banner_1700x650.png">
+                <logo
+                    jcr:lastModified="{Date}2017-07-19T14:57:37.701-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/image"
+                    alt="Logo"
+                    fileReference="/content/dam/bmc/customer-logos/Oregon_State_Seal.png"/>
+                <heading
+                    jcr:lastModified="{Date}2017-07-19T15:29:52.950-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="BMC Saves Oregon"
+                    sling:resourceType="bmc/components/content/title"
+                    type="h1"/>
+                <point1
+                    jcr:lastModified="{Date}2017-07-19T14:58:14.498-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/customer-spotlight-listitem"
+                    fileReference="/content/dam/bmc/icons/Citizens_served.png"
+                    heading="4 million"
+                    text="citizens served"/>
+                <point2
+                    jcr:lastModified="{Date}2017-07-19T14:59:23.606-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/customer-spotlight-listitem"
+                    fileReference="/content/dam/bmc/icons/2700_Servers.png"
+                    heading="2,700"
+                    text="servers upgraded"/>
+                <point3
+                    jcr:lastModified="{Date}2017-07-19T14:59:59.226-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/customer-spotlight-listitem"
+                    fileReference="/content/dam/bmc/icons/3x_Increase.png"
+                    heading="3x increase"
+                    text="in patching productivity"/>
+            </customer_spotlight>
+        </root>
+    </jcr:content>
+</jcr:root>

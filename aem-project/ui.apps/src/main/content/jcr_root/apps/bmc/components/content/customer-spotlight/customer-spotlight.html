@@ -1,0 +1,30 @@
+<section data-sly-use.customerSpotlight="com.bmc.components.CustomerSpotlight"
+         data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="customer-story-case-banner wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
+    <div class="layout-inner-wrap">
+        <div class="layout-primary">
+            <div class="back-link">
+                <a href="/customers/success-stories.html">
+                    ${'Customer Stories' @ i18n}
+                </a>
+                / ${properties.title || currentPage.title}
+            </div>
+            <div class="header-logo">
+
+                <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image'}" data-sly-unwrap></sly>
+            </div>
+            <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title'}" data-sly-unwrap></sly>
+            <a data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/template/customerstory'}" class="btn video-play modal-youtube-video-player"  href="${properties.cta_url}"  target="_self">
+                ${properties.cta_link}
+            </a>
+        </div>
+        <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
+            <ul class="points js-initial-customer-story-case-points-container">
+                <sly data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
+
+                <sly data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
+
+                <sly data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
+            </ul>
+        </div>
+    </div>
+</section>
