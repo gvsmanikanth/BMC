@@ -265,6 +265,22 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 type = item.getString("Content Type");
                 name = item.getString("Content Name");
                 id = item.getString("Content ID");
+                if (type.equals("FormFieldset")) {
+                    //TODO
+                    // determine path to fieldset XF
+                    String path = "/content/experience-fragments/bmc/forms" + id;
+                    // determine whether node exists
+                    // and create XF node with fields if not
+                    if (!session.nodeExists(path)) {
+
+                    } else {
+                        String fieldsetPath = path + "/" + id + "/jcr:content/root/field_set";
+                        if (session.nodeExists(fieldsetPath)) {
+                            node = session.getNode(path + "/" + id + "/jcr:content/root/field_set");
+                        }
+                    }
+                    // if exists then create XF component node pointed to fieldset XF
+                }
                 if (name.equals(HOME_LOCATION_PAGE)) return;
                 node = parent.addNode(type + i);
                 node.setProperty("migration_content_name", name);
