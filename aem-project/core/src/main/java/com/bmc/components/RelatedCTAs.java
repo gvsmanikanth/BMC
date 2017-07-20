@@ -2,7 +2,7 @@ package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.AdaptableResourceProvider;
-import com.bmc.mixins.MultifieldDataProvider;
+import com.bmc.mixins.MultifieldNodeProvider;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
-public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldDataProvider {
+public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
