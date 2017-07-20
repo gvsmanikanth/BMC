@@ -17,6 +17,6 @@
           service.ranking="{Long}5002"
           serviceProviderEntityId="aemdevauthor"
           spPrivateKeyAlias="okta-author-dev"
-          synchronizeAttributes="[cn=rep:fullname,Email=profile/email,Lastname=profile/familyName,Firstname=profile/givenName,title=profile/jobTitle,telephoneNumber=profile/phoneNumber,streetAddress=profile/street,l=profile/city,postalCode=profile/postalCode,co=profile/country,st=profile/state,department=profile/department]"
+          synchronizeAttributes="[cn=rep:fullname,firstName=profile/givenName,lastName=profile/familyName,email=profile/email,title=profile/jobTitle,displayName=profile/displayName,primaryNumber=profile/phoneNumber,userType=profile/userType,countryGeo=profile/countryGeo,region=profile/region]"
           useEncryption="{Boolean}true"
           userIDAttribute="uid"/>

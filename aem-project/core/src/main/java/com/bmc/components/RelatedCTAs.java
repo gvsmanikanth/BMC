@@ -1,9 +1,9 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.components.mixins.AdaptableResourceProvider;
-import com.bmc.components.mixins.MultifieldNodeProvider;
-import com.bmc.components.utils.StringHelper;
+import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.MultifieldNodeProvider;
+import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.Resource;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Provides Related CTAs Component properties (components/content/related-ctas) for Use
+ * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
 public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldNodeProvider {
     enum HeadingType {

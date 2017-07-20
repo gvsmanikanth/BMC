@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="c958d543-7576-4aad-9dfc-fc14e441cc77">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="bmc/icons/2700_Servers.png"
+        jcr:lastModified="{Date}2017-07-19T13:19:00.740-07:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}32"
+            dam:extracted="{Date}2017-07-19T13:19:00.383-07:00"
+            dam:Fileformat="PNG"
+            dam:MIMEtype="image/png"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}300"
+            dam:Physicalheightininches="{Decimal}0.18333369493484497"
+            dam:Physicalwidthindpi="{Long}300"
+            dam:Physicalwidthininches="{Decimal}0.21666710078716278"
+            dam:Progressive="no"
+            dam:sha1="fe5812d75c6a13bef360f8a294f2df36a2f28ad3"
+            dam:size="{Long}18774"
+            dc:format="image/png"
+            exif:ColorSpace="{Long}1"
+            exif:PixelXDimension="{Long}65"
+            exif:PixelYDimension="{Long}55"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            photoshop:ColorMode="{Long}3"
+            photoshop:ICCProfile="sRGB IEC61966-2.1"
+            tiff:ImageLength="{Long}55"
+            tiff:ImageWidth="{Long}65"
+            tiff:Orientation="{Long}1"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:XResolution="3000000/10000"
+            tiff:YResolution="3000000/10000"
+            xmp:CreateDate="{Date}2016-05-02T18:11:35.000+05:30"
+            xmp:CreatorTool="Adobe Photoshop CC 2015 (Windows)"
+            xmp:MetadataDate="{Date}2016-05-02T18:37:19.000+05:30"
+            xmp:ModifyDate="{Date}2016-05-02T18:37:19.000+05:30"
+            xmpMM:DocumentID="adobe:docid:photoshop:c0f14f72-1066-11e6-8111-8330ed096592"
+            xmpMM:InstanceID="xmp.iid:deb204fb-3a43-7f4f-8a4d-2721a11d710d"
+            xmpMM:OriginalDocumentID="xmp.did:cd3eb6b1-17eb-3148-9bec-368eb8ce6815">
+            <xmpMM:History
+                jcr:primaryType="nt:unstructured"
+                xmpArraySize="{Long}2"
+                xmpArrayType="rdf:Seq"
+                xmpNodeType="xmpArray">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="created"
+                    stEvt:instanceID="xmp.iid:cd3eb6b1-17eb-3148-9bec-368eb8ce6815"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2015 (Windows)"
+                    stEvt:when="{Date}2016-05-02T18:11:35.000+05:30"
+                    xmpNodeType="xmpStruct"/>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    stEvt:action="saved"
+                    stEvt:changed="/"
+                    stEvt:instanceID="xmp.iid:deb204fb-3a43-7f4f-8a4d-2721a11d710d"
+                    stEvt:softwareAgent="Adobe Photoshop CC 2015 (Windows)"
+                    stEvt:when="{Date}2016-05-02T18:37:19.000+05:30"
+                    xmpNodeType="xmpStruct"/>
+            </xmpMM:History>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
