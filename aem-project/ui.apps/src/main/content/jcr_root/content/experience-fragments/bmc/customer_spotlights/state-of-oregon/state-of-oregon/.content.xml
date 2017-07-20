@@ -35,7 +35,7 @@
                     jcr:lastModified="{Date}2017-07-19T15:29:52.950-07:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="BMC Saves Oregon"
+                    jcr:title="BMC services help State of Oregon seamlessly upgrade 2,700 servers"
                     sling:resourceType="bmc/components/content/title"
                     type="h1"/>
                 <point1
