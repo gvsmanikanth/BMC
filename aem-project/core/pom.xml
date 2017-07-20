@@ -146,6 +146,7 @@
                         <Export-Package>
                             com.bmc.components,
                             com.bmc.components.utils,
+                            com.bmc.models,
                             {local-packages},
                             org.owasp.encoder
                         </Export-Package>

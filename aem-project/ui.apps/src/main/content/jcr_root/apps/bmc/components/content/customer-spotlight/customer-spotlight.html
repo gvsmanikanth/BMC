@@ -1,48 +1,29 @@
-<section class="customer-story-case-banner wallpapered bar" data-wallpaper-options="{&quot;source&quot;:&quot;http://media.cms.bmc.com/images/Oregon_Detail_Page_Banner_1700x650.png&quot;}">
+<section data-sly-use.customerSpotlight="com.bmc.components.CustomerSpotlight"
+         data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="customer-story-case-banner wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
     <div class="layout-inner-wrap">
         <div class="layout-primary">
             <div class="back-link">
                 <a href="/customers/success-stories.html">
-                    Customer Stories
+                    ${'Customer Stories' @ i18n}
                 </a>
                 / ${properties.title || currentPage.title}
             </div>
             <div class="header-logo">
 
-                <img width="350" src="http://media.cms.bmc.com/images/Detail_Page_Banner_Logo_White.png" />
+                <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image'}" data-sly-unwrap></sly>
             </div>
-            <h1>${properties.heading}</h1>
-            <p></p>
+            <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title'}" data-sly-unwrap></sly>
+            <a data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/template/customerstory'}" class="btn video-play modal-youtube-video-player"  href="${properties.cta_url}"  target="_self">
+                ${properties.cta_link}
+            </a>
         </div>
         <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
             <ul class="points js-initial-customer-story-case-points-container">
-                <li class="point">
-                    <div class="icon">
-                        <img src="http://media.cms.bmc.com/images/Citizens_served.png" width="65" height="54" alt="" title="" border="0" />
-                    </div>
-                    <div class="copy">
-                        <h2>4 million</h2>
-                        <p>citizens served</p>
-                    </div>
-                </li>
-                <li class="point">
-                    <div class="icon">
-                        <img src="http://media.cms.bmc.com/images/3x_Increase.png" width="65" height="52" alt="" title="" border="0" />
-                    </div>
-                    <div class="copy">
-                        <h2>3x increase</h2>
-                        <p>in patching productivity</p>
-                    </div>
-                </li>
-                <li class="point">
-                    <div class="icon">
-                        <img src="http://media.cms.bmc.com/images/2700_Servers.png" width="65" height="55" alt="" title="" border="0" />
-                    </div>
-                    <div class="copy">
-                        <h2>2,700</h2>
-                        <p>servers upgraded</p>
-                    </div>
-                </li>
+                <sly data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
+
+                <sly data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
+
+                <sly data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
             </ul>
         </div>
     </div>
