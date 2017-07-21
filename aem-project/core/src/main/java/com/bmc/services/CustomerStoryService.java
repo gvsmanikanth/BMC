@@ -13,6 +13,7 @@ import com.day.util.NameValuePair;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.*;
@@ -27,6 +28,8 @@ import java.util.stream.StreamSupport;
 public class CustomerStoryService  {
     private final static String FILTER_TAG_ROOT = "/etc/tags/bmc/customer-story-filters";
     private final static String INDUSTRY_TAG_ROOT = "/etc/tags/bmc/customer-story-filters/industry";
+    private final static String SPOTLIGHT_FRAGMENT_PATH = "root/experiencefragment";
+    private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
     public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
         Tag tag = resourceProvider.getTag(FILTER_TAG_ROOT);
@@ -75,7 +78,9 @@ public class CustomerStoryService  {
         map.put("href", StringHelper.coalesceString(page.getVanityUrl()).orElse(page.getPath() + ".html"));
         map.put("title", StringHelper.coalesceString(pageMap.get("cardTitle", "")).orElse(page.getTitle()));
 
-        String desc = StringHelper.coalesceString(pageMap.get("cardDescription", ""), page.getDescription()).orElse(null);
+        String desc = StringHelper.coalesceString(pageMap.get("cardDescription", "")).orElse(null);
+        if (desc == null)
+            desc = getCardDescriptionFromCustomerSpotlightFragment(page);
         if (desc != null)
             map.put("description", desc);
 
@@ -95,6 +100,23 @@ public class CustomerStoryService  {
         map.put("filterValues", filters);
 
         return map;
+    }
+
+    private String getCardDescriptionFromCustomerSpotlightFragment(Page page) {
+        Resource fragment = page.getContentResource().getChild(SPOTLIGHT_FRAGMENT_PATH);
+        if (fragment == null)
+            return null;
+
+        String spotlightPath = fragment.getValueMap().get("fragmentPath", "");
+        if (spotlightPath.isEmpty())
+            return null;
+
+        spotlightPath = spotlightPath + "/jcr:content/" + SPOTLIGHT_HEADING_PATH;
+        Resource spotlight = fragment.getResourceResolver().getResource(spotlightPath);
+        if (spotlight == null)
+            return null;
+
+        return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
     private CustomerStoryFilter getFilter(Tag tag) {

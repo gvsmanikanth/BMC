@@ -51,7 +51,7 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldLabel="Description"
-                                                    fieldDescription="Enter a card description here to override Basic / Description"
+                                                    fieldDescription="Enter a card description here to override the CustomerSpotlight headline"
                                                     name="./cardDescription">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
