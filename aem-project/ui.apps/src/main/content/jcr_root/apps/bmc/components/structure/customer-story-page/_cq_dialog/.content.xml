@@ -60,6 +60,37 @@
                                             </description>
                                         </items>
                                     </card>
+                                    <secondaryLink
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Secondary Link"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <secondaryLinkText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter the secondary link text"
+                                                    fieldLabel="Secondary Link Text"
+                                                    name="./cardSecondaryLinkText"
+                                                    required="{Boolean}true">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="cardSecondaryLinkText"/>
+                                            </secondaryLinkText>
+                                            <secondaryLinkUrl
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter the secondary link URL"
+                                                    fieldLabel="URL"
+                                                    name="./cardSecondaryLinkUrl"
+                                                    required="{Boolean}true">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="cardSecondaryLinkUrl"/>
+                                            </secondaryLinkUrl>
+                                        </items>
+                                    </secondaryLink>
                                 </items>
                             </column>
                         </items>

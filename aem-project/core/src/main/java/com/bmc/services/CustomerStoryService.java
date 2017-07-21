@@ -99,6 +99,9 @@ public class CustomerStoryService  {
                 .map(Tag::getName).iterator(), ",");
         map.put("filterValues", filters);
 
+        map.put("secondaryLinkText", pageMap.get("cardSecondaryLinkText", ""));
+        map.put("secondaryLinkUrl", pageMap.get("cardSecondaryLinkUrl", ""));
+
         return map;
     }
 
