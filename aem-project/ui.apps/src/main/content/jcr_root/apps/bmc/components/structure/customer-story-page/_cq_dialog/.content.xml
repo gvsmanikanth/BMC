@@ -70,8 +70,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldDescription="Enter the secondary link text"
                                                     fieldLabel="Secondary Link Text"
-                                                    name="./cardSecondaryLinkText"
-                                                    required="{Boolean}true">
+                                                    name="./cardSecondaryLinkText">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
                                                         allowBulkEdit="{Boolean}true"
@@ -82,8 +81,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldDescription="Enter the secondary link URL"
                                                     fieldLabel="URL"
-                                                    name="./cardSecondaryLinkUrl"
-                                                    required="{Boolean}true">
+                                                    name="./cardSecondaryLinkUrl">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
                                                         allowBulkEdit="{Boolean}true"
