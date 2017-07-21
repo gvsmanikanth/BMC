@@ -31,6 +31,10 @@ public class ImportServlet extends SlingAllMethodsServlet {
 
     private static final String PAGE = "cq:Page";
     private static final String PAGECONTENT = "cq:PageContent";
+    private static final String JCR_CONTENT = "jcr:content";
+    private static final String RESOURCE_TYPE = "sling:resourceType";
+
+    private Node currentPage;
 
     private SlingHttpServletResponse response;
 
@@ -86,7 +90,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     protected void writeTestPage(JSONObject item, Session session, SlingHttpServletRequest request) {
         try {
             String url = item.getString("Content URL");
-            String path = getPath(url);
+            String path = getPath(url, session);
             if (session.nodeExists(path)) {
                 session.removeItem(path);
                 session.save();
@@ -94,21 +98,60 @@ public class ImportServlet extends SlingAllMethodsServlet {
             String renderer = "/apps/bmc/components/structure/page";
             Node node = JcrUtil.createPath(path, PAGE, session);
             Node jcrNode = null;
-            if (node.hasNode("jcr:content")) {
-                jcrNode = node.getNode("jcr:content");
+            if (node.hasNode(JCR_CONTENT)) {
+                jcrNode = node.getNode(JCR_CONTENT);
             } else {
-                jcrNode = node.addNode("jcr:content", PAGECONTENT);
+                jcrNode = node.addNode(JCR_CONTENT, PAGECONTENT);
             }
             String title = item.getString("Content Title");
             out("Importing " + title);
             jcrNode.setProperty("jcr:title", title);
-            jcrNode.setProperty("sling:resourceType", renderer);
+            jcrNode.setProperty(RESOURCE_TYPE, renderer);
             jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/test");
             jcrNode.setProperty("migration_content_id", item.getString("Content ID"));
             jcrNode.setProperty("migration_content_url", item.getString("Content URL"));
             jcrNode.setProperty("migration_content_type", item.getString("Content Type"));
             jcrNode.setProperty("migration_content_language_hierarchy_member", item.getString("Content Language Hierarchy Member"));
+            currentPage = node;
+
             Node root = jcrNode.addNode("root");
+            root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
+
+
+            // FORM PAGE HANDLING
+            // TODO: move to method
+            if (item.getString("Content Type").equals("Form-2")) {
+                jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
+                Node header = root.addNode("header_form");
+                header.setProperty("headerText", title);
+                header.setProperty(RESOURCE_TYPE, "bmc/components/content/header-form");
+                Node bg = header.addNode("bg");
+                bg.setProperty("fileReference", "/content/dam/projects/bmc/Generic_form_banner.png");
+                Node main = root.addNode("maincontentcontainer");
+                main.setProperty(RESOURCE_TYPE, "bmc/components/structure/maincontentcontainer");
+                Node primary = main.addNode("section_layout");
+                primary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
+                Node secondary = main.addNode("section_layout_1262318817");
+                secondary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
+                Node form = secondary.addNode("form");
+                form.setProperty(RESOURCE_TYPE, "bmc/components/forms/form");
+                form.setProperty("action", "/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-page-template/structure/cq-gen1497280762940/");
+                form.setProperty("actionType", "foundation/components/form/actions/store");
+                Node titleNode = form.addNode("title");
+                titleNode.setProperty(RESOURCE_TYPE, "bmc/components/content/title");
+                titleNode.setProperty("jcr:title", "Please fill out the form below.");
+                titleNode.setProperty("type", "h5");
+                Node responsive = form.addNode("cq:responsive");
+                Node def = responsive.addNode("default");
+                def.setProperty("offset", "0");
+                def.setProperty("width", "4");
+                Node terms = form.addNode("form-terms");
+                terms.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+                terms.setProperty("text", "<p>By providing my contact information, I have read and agreed to BMC’s policy regarding&nbsp;<a href=\"http://www.bmc.com/legal/personal-information.html\">Personal Information</a>.*</p>");
+                terms.setProperty("textIsRich", "true");
+                Node fragment = form.addNode("experiencefragment");
+                fragment.setProperty(RESOURCE_TYPE, "cq/experience-fragments/editor/components/experiencefragment");
+            }
             processItemFields(item, jcrNode, root, session, request, 0);
         } catch (RepositoryException e) {
             logger.error(e.getMessage());
@@ -117,8 +160,17 @@ public class ImportServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private String getPath(String url) {
-        return "/content/bmc-migration/forms" + url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
+    private String getPath(String url, Session session) {
+        String pageName = url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
+        String f = pageName.substring(1,2);
+        try {
+            if (!session.nodeExists("/content/bmc-migration/forms/" + f)) {
+                JcrUtil.createPath("/content/bmc-migration/forms/" + f, PAGE, session);
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return "/content/bmc-migration/forms/" + f + pageName;
     }
 
     private void processItemFields(JSONObject item, Node jcrNode, Node root, Session session, SlingHttpServletRequest request, int depth) {
@@ -155,8 +207,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     break;
                 case "Complex Field":
                     array = field.getJSONArray("Field Array");
-                    node = container.addNode(name);
-                    node.setProperty("fieldType", type);
+                    node = container;
                     tabs = getTabs(depth);
                     out(tabs + "adding fields for " + type + " " + name);
                     addFormFieldsArray(array, node, session, request, depth);
@@ -170,6 +221,25 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         if (!value.isEmpty()) {
                             propertyNode.setProperty(name, value);
                         }
+                        if (name.equals("browserTitle")) {
+                            propertyNode.setProperty("jcr:title", value);
+                        }
+                        if (name.equals("bannerText")) {
+                            if (propertyNode.hasNode("root/header_form")) {
+                                Node headerNode = propertyNode.getNode("root/header_form");
+                                headerNode.setProperty("headerText", value);
+                            }
+                        }
+                        if (name.equals("formFillEnducement")) {
+                            Node titleNode = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form/title");
+                            titleNode.setProperty("jcr:title", value);
+                        }
+                        if (name.equals("postButtonText")) {
+                            Node btn = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form").addNode("form-btn");
+                            btn.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/button");
+                            btn.setProperty("type", "submit");
+                            btn.setProperty("jcr:title", value);
+                        }
                     } else if (type.equals("Boolean")) {
                         Boolean bool = field.getBoolean("Field Value");
                         propertyNode.setProperty(name, bool);
@@ -181,28 +251,29 @@ public class ImportServlet extends SlingAllMethodsServlet {
     }
 
     private void addFormFieldsArray(JSONArray array, Node parent, Session session, SlingHttpServletRequest request, int depth) {
-        JSONObject item = null;
-        Node node = null;
-        String formFieldMacro = "";
-        String formFieldID = "";
-        String formFieldType = "";
-        String formFieldValidationType = "";
-        String formRows = "";
-        String formFieldRequired = "";
-        String formOptionSelected = "";
-        String formOptionDisabled = "";
-        String validationErrorLabel = "";
-        String formOptionValue = "";
-        String formFieldName = "";
-        String formOptionLabel = "";
-        String formFieldLabel = "";
-        String formColumns = "";
-        String maxLength = "";
-        String formFieldNarrow = "";
+        JSONObject item;
+        Node node;
+        String formFieldMacro;
+        String formFieldID;
+        String formFieldType;
+        String formFieldValidationType;
+        String formRows;
+        String formFieldRequired;
+        String formOptionSelected;
+        String formOptionDisabled;
+        String validationErrorLabel;
+        String formOptionValue;
+        String formFieldName;
+        String formOptionLabel;
+        String formFieldLabel;
+        String formColumns;
+        String maxLength;
+        String formFieldNarrow;
         depth++;
         for (int i=0;i<array.length();i++) {
             try {
                 item = array.getJSONObject(i).getJSONObject("Row Values");
+
                 formFieldMacro = item.getString("formFieldMacro");
                 formFieldID = item.getString("formFieldID");
                 formFieldType = item.getString("formFieldType");
@@ -219,6 +290,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 formColumns = item.getString("formColumns");
                 maxLength = item.getString("maxLength");
                 formFieldNarrow = item.getString("formFieldNarrow");
+
                 node = parent.addNode(formFieldType + i);
                 node.setProperty("formFieldMacro", formFieldMacro);
                 node.setProperty("formFieldID", formFieldID);
@@ -236,10 +308,69 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 node.setProperty("formColumns", formColumns);
                 node.setProperty("maxLength", maxLength);
                 node.setProperty("formFieldNarrow", formFieldNarrow);
+
+                if (formFieldNarrow.equals("Yes")) {
+                   setNarrow(node);
+                }
+
+                node.setProperty("name", formFieldName);
+                switch (formFieldType) {
+                    case "text":
+                        node.setProperty("jcr:title", formFieldLabel);
+                        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
+                        node.setProperty("type", "text");
+                        node.setProperty("helpMessage", formFieldLabel);
+                        node.setProperty("hideTitle", "true");
+                        node.setProperty("rows", "2");
+                        node.setProperty("usePlaceholder", "true");
+                        break;
+                    case "text(email)":
+                        node.setProperty("jcr:title", formFieldLabel);
+                        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
+                        node.setProperty("type", "email");
+                        node.setProperty("helpMessage", formFieldLabel);
+                        node.setProperty("hideTitle", "true");
+                        node.setProperty("rows", "2");
+                        node.setProperty("usePlaceholder", "true");
+                        break;
+                    case "macro":
+                        node.setProperty("jcr:title", formFieldLabel);
+                        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+                        node.setProperty("type", "drop-down");
+                        node.setProperty("source", "datasource");
+                        node.setProperty("datasourceRT", "");
+                        break;
+                    case "checkbox":
+                        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+                        node.setProperty("type", "checkbox");
+                        node.setProperty("source", "local");
+                        Node items = node.addNode("items");
+                        Node cb = items.addNode("item0");
+                        cb.setProperty("text", formFieldLabel);
+                        cb.setProperty("value", formOptionValue);
+                        if (formOptionSelected.equals("Yes")) {
+                            cb.setProperty("selected", "true");
+                        }
+                        break;
+                }
             } catch (JSONException|RepositoryException e) {
                 logger.error(e.getMessage());
             }
         }
+    }
+
+    private void setNarrow(Node node) {
+        try {
+            Node res = node.addNode("cq:responsive");
+            Node def = res.addNode("default");
+            def.setProperty("offset", "0");
+            def.setProperty("width", "6");
+            Node phone = res.addNode("phone");
+            phone.setProperty("width", "12");
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private String getTabs(int depth) {
@@ -248,6 +379,19 @@ public class ImportServlet extends SlingAllMethodsServlet {
             tabs.append("\t");
         }
         return tabs.toString();
+    }
+
+    private Node getFormXFNode(Node page, Session session) {
+        Node node = null;
+        try {
+            String path = page.getPath() + "/jcr:content/root/maincontentcontainer/section_layout_1262318817/form/experiencefragment";
+            if (session.nodeExists(path)) {
+                return session.getNode(path);
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return node;
     }
 
     private void addComponentArray(JSONArray array, Node parent, Session session, SlingHttpServletRequest request, int depth) {
@@ -265,24 +409,40 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 type = item.getString("Content Type");
                 name = item.getString("Content Name");
                 id = item.getString("Content ID");
+                if (name.equals(HOME_LOCATION_PAGE)) return;
                 if (type.equals("FormFieldset")) {
                     //TODO
                     // determine path to fieldset XF
-                    String path = "/content/experience-fragments/bmc/forms" + id;
+                    String path = "/content/experience-fragments/bmc/forms/" + id;
                     // determine whether node exists
                     // and create XF node with fields if not
                     if (!session.nodeExists(path)) {
-
+                        Node xfNode = JcrUtil.createPath(path, PAGE, session);
+                        Node xfContent = xfNode.addNode(JCR_CONTENT, PAGECONTENT);
+                        xfContent.setProperty("cq:template", "/libs/cq/experience-fragments/components/experiencefragment/template");
+                        xfContent.setProperty("jcr:title", id);
+                        xfContent.setProperty(RESOURCE_TYPE, "cq/experience-fragments/components/experiencefragment");
+                        Node fragment = xfNode.addNode(id, PAGE);
+                        Node content = fragment.addNode(JCR_CONTENT, PAGECONTENT);
+                        content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset");
+                        content.setProperty("cq:xfMasterVariation", true);
+                        content.setProperty("jcr:title", id);
+                        content.setProperty(RESOURCE_TYPE, "bmc/components/structure/xfpage");
+                        Node root = content.addNode("root");
+                        root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
+                        node = root.addNode("field_set");
+                        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/field-set");
                     } else {
                         String fieldsetPath = path + "/" + id + "/jcr:content/root/field_set";
                         if (session.nodeExists(fieldsetPath)) {
                             node = session.getNode(path + "/" + id + "/jcr:content/root/field_set");
                         }
                     }
-                    // if exists then create XF component node pointed to fieldset XF
+                    Node xfComponent = getFormXFNode(currentPage, session);
+                    xfComponent.setProperty("fragmentPath", path + "/" + id);
+                } else {
+                    node = parent.addNode(type + i);
                 }
-                if (name.equals(HOME_LOCATION_PAGE)) return;
-                node = parent.addNode(type + i);
                 node.setProperty("migration_content_name", name);
                 node.setProperty("migration_content_id", id);
                 node.setProperty("migration_content_type", type);
