@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Tag"
+    jcr:title="Customer Story Filters"
+    sling:resourceType="cq/tagging/components/tag">
+    <company-size
+            jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+            jcr:title="Company Size" jcr:description="">
+        <_x0035_000_x002b_
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="5000+" jcr:description=""/>
+        <_x0031_000-4999
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="1000-4999" jcr:description=""/>
+        <_x0031_-999
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="1-999" jcr:description=""/>
+    </company-size>
+    <industry
+            jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+            jcr:title="Industry" jcr:description="">
+        <telecommunications-and-media
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Telecommunications and Media" jcr:description=""/>
+        <information-technology
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Information Technology" jcr:description=""/>
+        <military-and-defense
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Military and Defense" jcr:description=""/>
+        <finance
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Finance" jcr:description=""/>
+        <utilities-oil-gas-and-energy
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Utilities- Oil- Gas and Energy" jcr:description=""/>
+        <retail
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Retail" jcr:description=""/>
+        <education
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Education" jcr:description=""/>
+        <government
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Government" jcr:description=""/>
+        <healthcare
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Healthcare" jcr:description=""/>
+        <transportation
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Transportation" jcr:description=""/>
+        <insurance
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Insurance" jcr:description=""/>
+        <manufacturing
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Manufacturing" jcr:description=""/>
+    </industry>
+    <topic
+            jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+            jcr:title="Topic" jcr:description="">
+        <service-management
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Service Management" jcr:description=""/>
+        <cloud-management
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Cloud Management" jcr:description=""/>
+        <it-operations
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="IT Operations" jcr:description=""/>
+        <mainframe
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Mainframe" jcr:description=""/>
+        <workload-automation
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="Workload Automation" jcr:description=""/>
+        <it-automation
+                jcr:primaryType="cq:Tag" sling:resourceType="cq/tagging/components/tag"
+                jcr:title="IT Automation" jcr:description=""/>
+    </topic>
+</jcr:root>

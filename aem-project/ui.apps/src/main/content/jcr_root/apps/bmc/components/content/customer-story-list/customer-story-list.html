@@ -1,0 +1,56 @@
+<section class="layout-full-bleed customer-story-landing-logo-blocks" data-sly-use.data="com.bmc.components.CustomerStoryList">
+    <div class="layout-inner-wrap">
+        <div class="customer-story-landing-heading">
+            <h2>Case Studies/Success Stories</h2>
+
+            <fieldset data-sly-list.filter="${data.filters}">
+                <select class="js-customer-story-filter-select 3">
+                    <option value="">By ${filter.name}</option>
+                    <sly data-sly-list.option="${filter.options}">
+                        <option value="${option.value}">${option.name}</option>
+                    </sly>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="logo-blocks">
+            <a data-sly-test="${data.featuredStory}" href="${data.featuredStory.href}">
+                <div data-filter-values="${data.featuredStory.filterValues}" class="logo-block-featured js-customer-story-filter-element">
+                    <img src="${data.featuredStory.backgroundImageSrc}" alt="${data.featuredStory.backgroundImageAlt}" class="background-image">
+                    <div class="hover-area"></div>
+                    <div class="logo-inner-container">
+                        <div class="logo-heading">
+                            <p>${data.featuredStory.primaryIndustry}</p>
+                        </div>
+                        <div class="logo-area"><img style="max-width: 227px;" src="${data.featuredStory.logoSrc}" alt="${data.featuredStory.logoAlt}" /></div>
+                        <div class="copy">
+                            <p>${data.featuredStory.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <sly data-sly-list.card="${data.stories}">
+                <a href="${card.href}">
+                    <div data-filter-values="${card.filterValues}" class="logo-block js-customer-story-filter-element">
+                        <div class="logo-inner-container">
+                            <div class="logo-heading">
+                                <p>${card.primaryIndustry}</p>
+                            </div>
+                            <div class="logo-area">
+                                <img src="${card.logoSrc}" alt="${card.logoAlt}" title="${card.title}"></img>
+                            </div>
+                            <div class="copy">
+                                <h5>${card.title}</h5>
+                                <p>
+                                    ${card.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </sly>
+
+        </div>
+    </div>
+</section>

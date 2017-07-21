@@ -1,7 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.MultifieldNodeProvider;
+import com.bmc.mixins.MultifieldDataProvider;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import javax.jcr.Session;
 import javax.swing.text.AbstractDocument;
 import java.util.List;
 
-public class Tabs extends WCMUsePojo implements MultifieldNodeProvider {
+public class Tabs extends WCMUsePojo implements MultifieldDataProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(Tabs.class);
 
