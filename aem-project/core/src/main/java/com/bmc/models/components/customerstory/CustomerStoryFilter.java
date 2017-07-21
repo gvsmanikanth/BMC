@@ -1,4 +1,4 @@
-package com.bmc.models.components;
+package com.bmc.models.components.customerstory;
 
 import com.day.util.NameValuePair;
 

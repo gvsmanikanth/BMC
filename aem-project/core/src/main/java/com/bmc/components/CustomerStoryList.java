@@ -2,9 +2,9 @@ package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.*;
-import com.bmc.models.components.CustomerStoryCard;
-import com.bmc.models.components.CustomerStoryFilter;
-import com.bmc.models.components.FeaturedCustomerStoryCard;
+import com.bmc.models.components.customerstory.CustomerStoryCard;
+import com.bmc.models.components.customerstory.CustomerStoryFilter;
+import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
 import com.bmc.services.CustomerStoryService;
 
 import java.util.List;
