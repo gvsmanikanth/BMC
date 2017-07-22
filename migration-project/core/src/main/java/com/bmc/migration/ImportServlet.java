@@ -1,6 +1,7 @@
 package com.bmc.migration;
 
 import com.day.cq.commons.jcr.JcrUtil;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -23,7 +24,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(ImportServlet.class);
     public static final String HOME_LOCATION_PAGE = "homeLocationPage";
-    public static final String SERVICE_URL = "http://www.bmc.com/templates/HelperContentReader?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=";
+    public static final String SERVICE_URL = "http://www.bmc.com/templates/HelperContentMiner?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=";
     public static final int MAX_DEPTH = 6;
 
     @Reference
@@ -119,38 +120,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
 
 
             // FORM PAGE HANDLING
-            // TODO: move to method
             if (item.getString("Content Type").equals("Form-2")) {
-                jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
-                Node header = root.addNode("header_form");
-                header.setProperty("headerText", title);
-                header.setProperty(RESOURCE_TYPE, "bmc/components/content/header-form");
-                Node bg = header.addNode("bg");
-                bg.setProperty("fileReference", "/content/dam/projects/bmc/Generic_form_banner.png");
-                Node main = root.addNode("maincontentcontainer");
-                main.setProperty(RESOURCE_TYPE, "bmc/components/structure/maincontentcontainer");
-                Node primary = main.addNode("section_layout");
-                primary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
-                Node secondary = main.addNode("section_layout_1262318817");
-                secondary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
-                Node form = secondary.addNode("form");
-                form.setProperty(RESOURCE_TYPE, "bmc/components/forms/form");
-                form.setProperty("action", "/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-page-template/structure/cq-gen1497280762940/");
-                form.setProperty("actionType", "foundation/components/form/actions/store");
-                Node titleNode = form.addNode("title");
-                titleNode.setProperty(RESOURCE_TYPE, "bmc/components/content/title");
-                titleNode.setProperty("jcr:title", "Please fill out the form below.");
-                titleNode.setProperty("type", "h5");
-                Node responsive = form.addNode("cq:responsive");
-                Node def = responsive.addNode("default");
-                def.setProperty("offset", "0");
-                def.setProperty("width", "4");
-                Node terms = form.addNode("form-terms");
-                terms.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
-                terms.setProperty("text", "<p>By providing my contact information, I have read and agreed to BMC’s policy regarding&nbsp;<a href=\"http://www.bmc.com/legal/personal-information.html\">Personal Information</a>.*</p>");
-                terms.setProperty("textIsRich", "true");
-                Node fragment = form.addNode("experiencefragment");
-                fragment.setProperty(RESOURCE_TYPE, "cq/experience-fragments/editor/components/experiencefragment");
+                initFormPageStructure(jcrNode, title, root);
             }
             processItemFields(item, jcrNode, root, session, request, 0);
         } catch (RepositoryException e) {
@@ -158,6 +129,42 @@ public class ImportServlet extends SlingAllMethodsServlet {
         } catch (JSONException e) {
             logger.error(e.getMessage());
         }
+    }
+
+    private void initFormPageStructure(Node jcrNode, String title, Node root) throws RepositoryException {
+        jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
+        Node header = root.addNode("header_form");
+        header.setProperty("headerText", title);
+        header.setProperty(RESOURCE_TYPE, "bmc/components/content/header-form");
+        Node bg = header.addNode("bg");
+        bg.setProperty("fileReference", "/content/dam/projects/bmc/Generic_form_banner.png");
+        Node main = root.addNode("maincontentcontainer");
+        main.setProperty(RESOURCE_TYPE, "bmc/components/structure/maincontentcontainer");
+        Node primary = main.addNode("section_layout");
+        primary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
+        Node text = primary.addNode("text");
+        text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+        text.setProperty("textIsRich", "true");
+        Node secondary = main.addNode("section_layout_1262318817");
+        secondary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
+        Node form = secondary.addNode("form");
+        form.setProperty(RESOURCE_TYPE, "bmc/components/forms/form");
+        form.setProperty("action", "/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-page-template/structure/cq-gen1497280762940/");
+        form.setProperty("actionType", "foundation/components/form/actions/store");
+        Node titleNode = form.addNode("title");
+        titleNode.setProperty(RESOURCE_TYPE, "bmc/components/content/title");
+        titleNode.setProperty("jcr:title", "Please fill out the form below.");
+        titleNode.setProperty("type", "h5");
+        Node responsive = form.addNode("cq:responsive");
+        Node def = responsive.addNode("default");
+        def.setProperty("offset", "0");
+        def.setProperty("width", "4");
+        Node terms = form.addNode("form-terms");
+        terms.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+        terms.setProperty("text", "<p>By providing my contact information, I have read and agreed to BMC’s policy regarding&nbsp;<a href=\"http://www.bmc.com/legal/personal-information.html\">Personal Information</a>.*</p>");
+        terms.setProperty("textIsRich", "true");
+        Node fragment = form.addNode("experiencefragment");
+        fragment.setProperty(RESOURCE_TYPE, "cq/experience-fragments/editor/components/experiencefragment");
     }
 
     private String getPath(String url, Session session) {
@@ -199,8 +206,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
             switch (type) {
                 case "Item Browser":
                     array = field.getJSONArray("Field Array");
-                    node = container.addNode(name);
-                    node.setProperty("fieldType", type);
+                    if (name.equals("primaryColumn")) {
+                        node = currentPage.getNode("jcr:content/root/maincontentcontainer/section_layout");
+                    } else {
+                        node = container.addNode(name);
+                        node.setProperty("fieldType", type);
+                    }
                     tabs = getTabs(depth);
                     out(tabs + "adding components for " + type + " " + name);
                     addComponentArray(array, node, session, request, depth);
@@ -239,6 +250,13 @@ public class ImportServlet extends SlingAllMethodsServlet {
                             btn.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/button");
                             btn.setProperty("type", "submit");
                             btn.setProperty("jcr:title", value);
+                        }
+                        if (name.equals("bodyContent")) {
+                            Node text = propertyNode.getNode("root/maincontentcontainer/section_layout/text");
+                            text.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
+                        }
+                        if (name.equals("content")) {
+                            container.setProperty("text", "<p>" + StringEscapeUtils.unescapeHtml4(value) + "</p>");
                         }
                     } else if (type.equals("Boolean")) {
                         Boolean bool = field.getBoolean("Field Value");
@@ -399,6 +417,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
         Node node = null;
         String type;
         String name;
+        String title;
         String id;
         String url;
         String json;
@@ -420,13 +439,13 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         Node xfNode = JcrUtil.createPath(path, PAGE, session);
                         Node xfContent = xfNode.addNode(JCR_CONTENT, PAGECONTENT);
                         xfContent.setProperty("cq:template", "/libs/cq/experience-fragments/components/experiencefragment/template");
-                        xfContent.setProperty("jcr:title", id);
+                        xfContent.setProperty("jcr:title", name);
                         xfContent.setProperty(RESOURCE_TYPE, "cq/experience-fragments/components/experiencefragment");
                         Node fragment = xfNode.addNode(id, PAGE);
                         Node content = fragment.addNode(JCR_CONTENT, PAGECONTENT);
                         content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset");
                         content.setProperty("cq:xfMasterVariation", true);
-                        content.setProperty("jcr:title", id);
+                        content.setProperty("jcr:title", name);
                         content.setProperty(RESOURCE_TYPE, "bmc/components/structure/xfpage");
                         Node root = content.addNode("root");
                         root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
@@ -446,6 +465,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 node.setProperty("migration_content_name", name);
                 node.setProperty("migration_content_id", id);
                 node.setProperty("migration_content_type", type);
+                if (type.equals("HTMLArea")) {
+                    node.setProperty(RESOURCE_TYPE, "bmc/components/content/htmlarea");
+                }
+                if (type.equals("ContentArea")) {
+                    node.setProperty(RESOURCE_TYPE, "bmc/components/content/htmlarea");
+                }
                 url = SERVICE_URL + id;
                 json = URLLoader.get(url);
                 item = ContentJsonHelper.getFirstContentItem(json);
