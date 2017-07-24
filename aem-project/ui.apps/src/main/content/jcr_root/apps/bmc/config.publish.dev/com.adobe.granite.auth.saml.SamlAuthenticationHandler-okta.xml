@@ -5,7 +5,7 @@
           createUser="{Boolean}true"
           defaultGroups="[bmc-everyone]"
           defaultRedirectUrl="/"
-          groupMembershipAttribute="group membership"
+          groupMembershipAttribute="SSOGROUPDN"
           handleLogout="{Boolean}false"
           idpCertAlias="authentication-service#1497569498703"
           idpHttpRedirect="{Boolean}false"
@@ -17,6 +17,6 @@
           service.ranking="{Long}5002"
           serviceProviderEntityId="aemdevpublish"
           spPrivateKeyAlias="okta-publish-dev"
-          synchronizeAttributes="[cn=rep:fullname,firstName=profile/givenName,lastName=profile/familyName,email=profile/email,bmc_contactintegrationid=profile/contactIntegrationId]"
+          synchronizeAttributes="[cn=rep:fullname,SOUSERGIVENNAME=profile/givenName,SSOUSERSURNAME=profile/familyName,SSOUSEREMAIL=profile/email,bmc_contactintegrationid=profile/contactIntegrationId]"
           useEncryption="{Boolean}true"
           userIDAttribute="uid"/>
