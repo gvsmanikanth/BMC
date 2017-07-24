@@ -5,7 +5,7 @@
           createUser="{Boolean}true"
           defaultGroups="[bmc-everyone]"
           defaultRedirectUrl="/"
-          groupMembershipAttribute="GroupName"
+          groupMembershipAttribute="SSOGROUPDN"
           handleLogout="{Boolean}false"
           idpCertAlias="authentication-service#1497567069299"
           idpHttpRedirect="{Boolean}false"
