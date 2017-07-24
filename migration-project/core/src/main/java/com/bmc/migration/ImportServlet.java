@@ -1,11 +1,16 @@
 package com.bmc.migration;
 
 import com.day.cq.commons.jcr.JcrUtil;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.AssetManager;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
+import org.apache.jackrabbit.oak.commons.json.JsonObject;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
@@ -17,6 +22,7 @@ import org.slf4j.LoggerFactory;
 import javax.jcr.*;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 
 @SlingServlet(resourceTypes = "/apps/bmc-migration/components/structure/page", selectors = "import", methods = {"POST"})
@@ -39,8 +45,11 @@ public class ImportServlet extends SlingAllMethodsServlet {
 
     private SlingHttpServletResponse response;
 
+    private ResourceResolver resolver;
+
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+        resolver = request.getResource().getResourceResolver();
         this.response = response;
         Session session = null;
         try {
@@ -172,7 +181,9 @@ public class ImportServlet extends SlingAllMethodsServlet {
         String f = pageName.substring(1,2);
         try {
             if (!session.nodeExists("/content/bmc-migration/forms/" + f)) {
-                JcrUtil.createPath("/content/bmc-migration/forms/" + f, PAGE, session);
+                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, "sling:folder", session);
+                Node folderContent = folder.addNode("jcr:content");
+                folderContent.setProperty("jcr:title", f);
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
@@ -188,6 +199,47 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 addField(field, jcrNode, root, session, request, depth);
             }
         } catch (JSONException e) {
+            logger.error(e.getMessage());
+        }
+        processItemMedia(item, jcrNode, session);
+    }
+
+    private void processItemMedia(JSONObject item, Node jcrNode, Session session) {
+        Node media = null;
+        try {
+            JSONArray array = item.getJSONArray("Media");
+            if (array.length() > 0) {
+                media = jcrNode.addNode("media");
+            }
+            for (int i=0;i<array.length();i++) {
+                JSONObject img = array.getJSONObject(i);
+                String mediaUrl = img.getString("Media URL");
+                String id = img.getString("Media ID");
+                String name = img.getString("Media Name");
+                Node node = JcrUtil.createUniqueNode(media, name, "nt:unstructured", session);
+                node.setProperty("url", mediaUrl);
+                node.setProperty("id", id);
+                node.setProperty("name", name);
+
+                String fileName = mediaUrl.substring(mediaUrl.lastIndexOf("/") + 1);
+                String path = "/content/dam/bmc/images/" + fileName;
+                if (!session.nodeExists(path)) {
+                    URL url = new URL(mediaUrl);
+                    AssetManager assetManager = resolver.adaptTo(AssetManager.class);
+                    Asset asset = assetManager.createAsset(path,
+                            url.openStream(),
+                            fileName,
+                            true);
+                }
+
+                if (name.contains("form-thumbnail")) {
+                    Node headerImg = currentPage.getNode("jcr:content/root/header_form").addNode("img");
+                    headerImg.setProperty("fileReference", path);
+                }
+
+
+            }
+        } catch (Exception e) {
             logger.error(e.getMessage());
         }
     }
@@ -243,7 +295,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         }
                         if (name.equals("formFillEnducement")) {
                             Node titleNode = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form/title");
-                            titleNode.setProperty("jcr:title", value);
+                            titleNode.setProperty("jcr:title", StringEscapeUtils.unescapeHtml4(value));
                         }
                         if (name.equals("postButtonText")) {
                             Node btn = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form").addNode("form-btn");
@@ -256,8 +308,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
                             text.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
                         if (name.equals("content")) {
-                            container.setProperty("text", "<p>" + StringEscapeUtils.unescapeHtml4(value) + "</p>");
+                            container.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
+                        if (name.equals("heading") && container.getProperty("migration_content_type").getString().equals("ContentArea")) {
+                            container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
+                        }
+
                     } else if (type.equals("Boolean")) {
                         Boolean bool = field.getBoolean("Field Value");
                         propertyNode.setProperty(name, bool);
@@ -469,7 +525,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     node.setProperty(RESOURCE_TYPE, "bmc/components/content/htmlarea");
                 }
                 if (type.equals("ContentArea")) {
-                    node.setProperty(RESOURCE_TYPE, "bmc/components/content/htmlarea");
+                    node.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+                    node.setProperty("textIsRich", "true");
                 }
                 url = SERVICE_URL + id;
                 json = URLLoader.get(url);
