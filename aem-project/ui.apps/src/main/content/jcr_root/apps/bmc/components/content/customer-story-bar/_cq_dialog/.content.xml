@@ -26,9 +26,17 @@
                             <linkText
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                    fieldDescription="Please enter the link text for customer stories landing page"
-                                    fieldLabel="Button Link Text"
+                                    fieldDescription="Enter the CTA link text here"
+                                    fieldLabel="CTA Link Text"
                                     name="./linkText"/>
+                            <linkPath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldDescription="Enter the URL, beginning with http:// or use the picker to select a page within the site"
+                                    fieldLabel="CTA Link URL"
+                                    name="./linkPath"
+                                    rootPath="/content/bmc"/>
 
                             <stories jcr:primaryType="nt:unstructured"
                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
