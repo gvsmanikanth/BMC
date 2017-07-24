@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-19T17:18:21.631-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/customerstory"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="bmc/components/structure/customer-story-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2017-07-19T16:08:19.955-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T16:08:24.563-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            <experiencefragment
+                jcr:created="{Date}2017-07-19T17:17:59.714-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T17:18:21.630-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
+                fragmentPath="/content/experience-fragments/bmc/customer_spotlights/state-of-oregon/state-of-oregon"/>
+        </root>
+    </jcr:content>
+</jcr:root>
