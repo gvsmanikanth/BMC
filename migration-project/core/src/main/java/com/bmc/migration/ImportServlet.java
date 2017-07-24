@@ -229,8 +229,17 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     Asset asset = assetManager.createAsset(path,
                             url.openStream(),
                             fileName,
-                            true);
+                            true) ;
                     session.save();
+                }
+
+                Node contentArea = media.getParent();
+                if (contentArea.hasProperty("contentAreaImageLocation") && contentArea.getProperty("contentAreaImageLocation").getString().equals("Above")) {
+                    Node image = contentArea.getParent().addNode("image");
+                    image.setProperty(RESOURCE_TYPE, "bmc/components/content/image");
+                    image.setProperty("isDecorative", "true");
+                    image.setProperty("fileReference", path);
+                    image.getParent().orderBefore("image", "ContentArea0");
                 }
 
                 if (name.contains("form-thumbnail")) {
@@ -261,6 +270,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     array = field.getJSONArray("Field Array");
                     if (name.equals("primaryColumn")) {
                         node = currentPage.getNode("jcr:content/root/maincontentcontainer/section_layout");
+                    } else if (name.equals("PURLprimaryColumn")) {
+                        processPurlPrimaryColumn(array, session, request, depth);
+                        return;
+                    } else if (name.equals("PURLsecondaryColumn")) {
+                        processPurlSecondaryColumn(array, session, request, depth);
+                        return;
                     } else {
                         node = container.addNode(name);
                         node.setProperty("fieldType", type);
@@ -311,8 +326,30 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         if (name.equals("content")) {
                             container.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
-                        if (name.equals("heading") && container.getProperty("migration_content_type").getString().equals("ContentArea")) {
-                            container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
+                        if (container.hasProperty("migration_content_type")) {
+                            String contentType = container.getProperty("migration_content_type").getString();
+                            if (name.equals("heading") && contentType.equals("ContentArea")) {
+                                container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
+                            }
+                            if (contentType.equals("CallToAction")) {
+                                if (name.equals("buttonColor") && value.equals("Green")) {
+                                    container.setProperty("buttonColor", "btn btn-secondary");
+                                }
+                                if (name.equals("callToActionText")) {
+                                    container.setProperty("customButtonText", value);
+                                }
+                            }
+                            if (contentType.equals("ExternalLink") && name.equals("linkURL")) {
+                                Node cta = container.getParent().getParent();
+                                if (cta.hasProperty("migration_content_type") && cta.getProperty("migration_content_type").getString().equals("CallToAction")) {
+                                    cta.setProperty("buttonURL", value);
+                                }
+                            }
+                        }
+                        if (name.equals("PURLBody")) {
+                            Node ty = getThankYouPage();
+                            Node text = ty.getNode("jcr:content/root/maincontentcontainer/responsivegrid/text");
+                            text.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
 
                     } else if (type.equals("Boolean")) {
@@ -323,6 +360,61 @@ public class ImportServlet extends SlingAllMethodsServlet {
         } catch (JSONException|RepositoryException e) {
             logger.error(e.getMessage());
         }
+    }
+
+    private void processPurlPrimaryColumn(JSONArray array, Session session, SlingHttpServletRequest request, int depth) {
+        Node ty;
+        Node node = null;
+        try {
+            ty = getThankYouPage();
+            node = ty.getNode("jcr:content/root/maincontentcontainer/responsivegrid");
+        } catch (RepositoryException e) {
+            out(e.getMessage());
+        }
+        addComponentArray(array, node, session, request, depth);
+    }
+
+    private void processPurlSecondaryColumn(JSONArray array, Session session, SlingHttpServletRequest request, int depth) {
+        Node ty;
+        Node node = null;
+        try {
+            ty = getThankYouPage();
+            node = ty.getNode("jcr:content/root/maincontentcontainer/responsivegrid_1145012037");
+        } catch (RepositoryException e) {
+            out(e.getMessage());
+        }
+        addComponentArray(array, node, session, request, depth);
+    }
+
+    private Node getThankYouPage() throws RepositoryException {
+        Node ty;
+        if (currentPage.hasNode("thank-you")) {
+            ty = currentPage.getNode("thank-you");
+        } else {
+            ty = currentPage.addNode("thank-you", PAGE);
+            Node content = ty.addNode("jcr:content", PAGECONTENT);
+            content.setProperty(RESOURCE_TYPE, "bmc/components/structure/page");
+            content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-thank-you");
+            content.setProperty("jcr:title", "Thank you");
+            Node root = content.addNode("root");
+            root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
+            Node header = root.addNode("header_brand");
+            header.setProperty(RESOURCE_TYPE, "bmc/components/content/header-brand");
+            header.setProperty("cta_mode", "button");
+            header.setProperty("heading", "Thanks.");
+            Node main = root.addNode("maincontentcontainer");
+            Node primary = main.addNode("responsivegrid");
+            primary.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
+            Node text = primary.addNode("text");
+            text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+            text.setProperty("textIsRich", "true");
+            Node secondary = main.addNode("responsivegrid_1145012037");
+            secondary.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
+            text = secondary.addNode("text");
+            text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
+            text.setProperty("textIsRich", "true");
+        }
+        return ty;
     }
 
     private void addFormFieldsArray(JSONArray array, Node parent, Session session, SlingHttpServletRequest request, int depth) {
@@ -528,6 +620,10 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 if (type.equals("ContentArea")) {
                     node.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
                     node.setProperty("textIsRich", "true");
+                }
+                if (type.equals("CallToAction")) {
+                    node.setProperty(RESOURCE_TYPE, "bmc/components/content/CTAbutton");
+                    node.setProperty("learnMore", "true");
                 }
                 url = SERVICE_URL + id;
                 json = URLLoader.get(url);
