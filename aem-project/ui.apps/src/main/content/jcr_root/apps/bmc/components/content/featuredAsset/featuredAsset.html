@@ -1,0 +1,62 @@
+<sly data-sly-test="${properties.bg_color == 'Grey'}">
+    <sly data-sly-test.bgClass="bg-seashell"></sly>
+</sly>
+<sly data-sly-test="${properties.bg_color != 'Grey'}">
+    <sly data-sly-test.bgClass="bg-white"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'above'}">
+    <sly data-sly-test.imageLocation="img-top-bottom"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'left'}">
+    <sly data-sly-test.imageLocation="img-left"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'right'}">
+    <sly data-sly-test.imageLocation="img-right"></sly>
+</sly>
+
+
+<sly data-sly-test="${properties.isTwistageVideo}">
+    <sly data-sly-test.linkGeneratorClass="modal-video-player"></sly>
+</sly>
+
+<sly data-sly-test="${properties.isYoutubeVideo}">
+    <sly data-sly-test.linkGeneratorClass="modal-youtube-video-player"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location != 'below'}">
+    <section class="topcontent ${bgClass}">
+        <div class="layout-inner-wrap">
+            <div class="report ${imageLocation}">
+                <a href="${properties.cta_url}" target="_blank" class="${linkGeneratorClass}">
+                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt}" title="" width="320"  height="170" border="0"></img>
+                </a>
+                <div class="report-text">
+                    <h5> ${properties.heading}</h5>
+                    <p>${properties.subheading}</p>
+                    <a href="${properties.cta_url}"  target="_blank" class="${linkGeneratorClass}">
+                        ${properties.cta_text}
+                        <sly data-sly-test="${properties.cta_text}">&nbsp;&#8250;</sly>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</sly>
+<sly data-sly-test="${properties.image_location == 'below'}">
+    <section class="topcontent ${bgClass}">
+        <div class="layout-inner-wrap">
+            <div class="report img-top-bottom">
+                <div class="report-text">
+                    <h5> ${properties.heading}</h5>
+                    <p>${properties.subheading}</p>
+                    <a href="${properties.cta_url}"  target="_blank" class="${linkGeneratorClass}">
+                        ${properties.cta_text} 
+                        <sly data-sly-test="${properties.cta_text}">&nbsp;&#8250;</sly>
+                    </a>
+                </div>
+                <a href="${properties.cta_text}" target="_blank" class="${linkGeneratorClass}">
+                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt}" title="" width="320"  height="170" border="0"></img>
+                </a>
+            </div>
+        </div>
+    </section>
+</sly>
