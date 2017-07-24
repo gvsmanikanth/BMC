@@ -181,8 +181,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
         String f = pageName.substring(1,2);
         try {
             if (!session.nodeExists("/content/bmc-migration/forms/" + f)) {
-                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, "sling:folder", session);
-                Node folderContent = folder.addNode("jcr:content");
+                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, PAGE, session);
+                Node folderContent = folder.addNode("jcr:content", PAGECONTENT);
                 folderContent.setProperty("jcr:title", f);
             }
         } catch (RepositoryException e) {
@@ -230,6 +230,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                             url.openStream(),
                             fileName,
                             true);
+                    session.save();
                 }
 
                 if (name.contains("form-thumbnail")) {
