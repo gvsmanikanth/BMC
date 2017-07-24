@@ -3,7 +3,7 @@
           jcr:primaryType="sling:OsgiConfig"
           addGroupMemberships="{Boolean}true"
           createUser="{Boolean}true"
-          defaultGroups="[bmc-everyone]"
+          defaultGroups="[SSO_BMC_ALL]"
           defaultRedirectUrl="/"
           groupMembershipAttribute="SSOGROUPDN"
           handleLogout="{Boolean}false"
