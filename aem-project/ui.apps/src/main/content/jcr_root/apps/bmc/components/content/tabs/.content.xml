@@ -4,6 +4,7 @@
           jcr:primaryType="cq:Component"
           jcr:title="Tabs"
           cq:isContainer="true"
+          jcr:mixinTypes="[mix:referenceable]"
           componentGroup="BMC.content"
           sling:resourceSuperType="wcm/foundation/components/responsivegrid"
 />

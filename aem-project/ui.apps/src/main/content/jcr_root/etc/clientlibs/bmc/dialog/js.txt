@@ -1,3 +1,4 @@
 #base=.
 radiogroup-showhide.js
 resourcelist-button-names.js
+remove-browse-for-image.js

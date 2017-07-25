@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="7c1e939a-29e1-3c26-8466-696fffaed4ee"
+    rep:authorizableId="SSO_BMC_ALL"
+    rep:principalName="SSO_BMC_ALL">
+    <profile
+            jcr:mixinTypes="[rep:AccessControllable]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="cq/security/components/profile"
+            aboutMe="SSO_BMC_ALL SSO group"
+            givenName="SSO_BMC_ALL"/>
+</jcr:root>
