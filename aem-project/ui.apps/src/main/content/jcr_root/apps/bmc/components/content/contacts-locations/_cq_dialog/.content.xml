@@ -3,4 +3,67 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="Support Contacts"
           sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    margin="{Boolean}true"
+                    orientation="vertical"
+                    size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <sales
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Sales"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            <fieldset
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./salesPhone">
+                                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="text"
+                                            fieldLabel="Text"/>
+                                    <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="url"
+                                            fieldLabel="URL"/>
+                                </items>
+                            </fieldset>
+                    </sales>
+                    <generalComments
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="General Comments &amp; Feedback"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                    </generalComments>
+                    <corporateHeadquarters
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Corporate Headquarters"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                    </corporateHeadquarters>
+                    <customerSupport
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Customer Support"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                    </customerSupport>
+                    <educationCustomerService
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Education Customer Service"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                    </educationCustomerService>
+                    <otherContacts
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Other Contacts"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                    </otherContacts>
+                </items>
+            </tabs>
+        </items>
+    </content>
 </jcr:root>
