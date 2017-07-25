@@ -29,8 +29,7 @@
                                                     fieldDescription="Please select the logo"
                                                     fieldLabel="Logo"
                                                     name="./cardLogoSrc"
-                                                    rootPath="/content/dam"
-                                                    required="{Boolean}true">
+                                                    rootPath="/content/dam">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
                                                         allowBulkEdit="{Boolean}true"

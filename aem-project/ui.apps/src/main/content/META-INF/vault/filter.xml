@@ -25,4 +25,5 @@
 
     <filter root="/content/dam/bmc" mode="merge" />
 
+    <filter root="/home/groups" mode="merge" />
 </workspaceFilter>
