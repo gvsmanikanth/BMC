@@ -1,7 +1,7 @@
-<section class="section">
-    <div class="section content p3">
-        <div>
-            ${properties.text @context='html'}
+<section class="section" data-sly-unwrap="${properties.migration_content_type == 'HTMLArea'}">
+    <div class="section content p3" data-sly-unwrap="${properties.migration_content_type == 'HTMLArea'}">
+        <div data-sly-unwrap="${properties.migration_content_type == 'HTMLArea'}">
+            ${properties.text @context='unsafe'}
         </div>
         <div data-sly-test="${!properties.text}">
             Enter HTML
