@@ -1,6 +1,5 @@
 package com.bmc.models.components.tabs;
 
-import com.bmc.mixins.MultifieldNodeProvider;
 import com.bmc.models.components.forms.FormModel;
 import com.bmc.models.utils.ContentIdGenerator;
 import com.day.cq.wcm.api.Page;

@@ -5,7 +5,7 @@
           createUser="{Boolean}true"
           defaultGroups="[bmc-everyone]"
           defaultRedirectUrl="/"
-          groupMembershipAttribute="GroupName"
+          groupMembershipAttribute="SSOGROUPDN"
           handleLogout="{Boolean}false"
           idpCertAlias="authentication-service#1497567069299"
           idpHttpRedirect="{Boolean}false"
@@ -17,6 +17,6 @@
           service.ranking="{Long}5002"
           serviceProviderEntityId="aemdevauthor"
           spPrivateKeyAlias="okta-author-dev"
-          synchronizeAttributes="[cn=rep:fullname,firstName=profile/givenName,lastName=profile/familyName,email=profile/email,title=profile/jobTitle,displayName=profile/displayName,primaryNumber=profile/phoneNumber,userType=profile/userType,countryGeo=profile/countryGeo,region=profile/region]"
+          synchronizeAttributes="[cn=rep:fullname,first_name=profile/givenName,last_name=profile/familyName,email_address=profile/email,title=profile/jobTitle,display_name=profile/displayName,primary_phone=profile/phoneNumber,user_type=profile/userType,country_geo=profile/countryGeo,region=profile/region]"
           useEncryption="{Boolean}true"
           userIDAttribute="uid"/>

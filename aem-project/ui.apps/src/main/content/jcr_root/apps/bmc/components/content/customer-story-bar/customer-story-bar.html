@@ -1,0 +1,25 @@
+<section class="wallpapered bg-corduroy bar" data-sly-use.bar="com.bmc.components.CustomerStoryBar">
+    <div class="section">
+        <div class="section-content p3">
+            <h2 class="section-title text-center white">${bar.title}</h2>
+            <div class="flex-wrap flex-justify-center mb2" data-sly-list.card="${bar.stories}">
+                <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
+                    <a href="${card.secondaryHref}" target="_self" class="m1 card tundora bg-white js-ehItem">
+                        <div class="p1 card-image text-center logo-max-height">
+                            <img src="${card.logoSrc}" alt="${card.title}" title="${card.title}"></img>
+                        </div>
+                        <div class="px2 card-content">
+                            <p class="-sm m0 py1">${card.title}</p>
+                            <p class="-sm bold">${card.description}</p>
+                            <p class="-sm bold cust-links" data-sly-test="${card.secondaryLinkText}">${card.secondaryLinkText}</p>
+                            <p class="-sm bold cust-links" data-sly-test="${!card.secondaryLinkText}">Read the story</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <p class="text-center">
+                <a class="btn" href="${bar.linkPath}"  target="_self">${bar.linkText}&nbsp;&#8250;</a>
+            </p>
+        </div>
+    </div>
+</section>
