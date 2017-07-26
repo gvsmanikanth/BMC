@@ -55,7 +55,7 @@
                                                         fieldLabel="Bullet"
                                                         required="{Boolean}true"
                                                         name="./featureBullet"/>
-                                            </items>
+                                            </items>WOR
                                         </column>
                                     </items>
                                 </field>

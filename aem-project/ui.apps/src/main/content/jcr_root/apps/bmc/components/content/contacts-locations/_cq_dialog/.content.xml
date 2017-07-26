@@ -11,56 +11,154 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/tabs"
                     margin="{Boolean}true"
+                    maximized="{Boolean}true"
                     orientation="vertical"
                     size="L">
                 <items jcr:primaryType="nt:unstructured">
                     <sales
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Sales"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
-                            <fieldset
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="Sales">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                    name="./salesPhone">
-                                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"/>
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <text
+                                    <phone
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                            name="text"
-                                            fieldLabel="Text"/>
-                                    <url
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Phone"
+                                            name="./salesPhone">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Text"
+                                                    name="text"/>
+                                            <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Phone Number"
+                                                    name="url"/>
+                                        </items>
+                                    </phone>
+                                    <contactForm
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                            name="url"
-                                            fieldLabel="URL"/>
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Contact Form"
+                                            name="./salesContactForm">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Text"
+                                                    name="text"/>
+                                            <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="URL"
+                                                    name="url"/>
+                                        </items>
+                                    </contactForm>
                                 </items>
-                            </fieldset>
+                            </column>
+                        </items>
                     </sales>
                     <generalComments
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="General Comments &amp; Feedback"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="General Comments &amp; Feedback">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Phone Number"
+                                    name="./feedbackPhone"/>
+                        </items>
                     </generalComments>
                     <corporateHeadquarters
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Corporate Headquarters"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="Corporate Headquarters">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <address
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Corporate Headquarters"
+                                            name="./corporateHeadquarters">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <street1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Street line 1"
+                                                    name="street1"/>
+                                            <street2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Street line 2"
+                                                    name="street2"/>
+                                            <city
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="City"
+                                                    name="city"/>
+                                            <state
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="State/Province"
+                                                    name="state"/>
+                                            <zip
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Zip/Postal Code"
+                                                    name="zip"/>
+                                            <phone
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Phone Number"
+                                                    name="phone"/>
+                                        </items>
+                                    </address>
+                                    <ebc
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Executive Briefing Center"
+                                            name="./executiveBriefingCenter">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <phone
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Phone Number"
+                                                    name="./salesFormText"/>
+                                            <url
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Infomation URL"
+                                                    name="url"/>
+                                        </items>
+                                    </ebc>
+                                </items>
+                            </column>
+                        </items>
                     </corporateHeadquarters>
                     <customerSupport
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Customer Support"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="Customer Support">
                     </customerSupport>
                     <educationCustomerService
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Education Customer Service"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="Education Customer Service">
                     </educationCustomerService>
                     <otherContacts
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Other Contacts"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            jcr:title="Other Contacts">
                     </otherContacts>
                 </items>
             </tabs>
