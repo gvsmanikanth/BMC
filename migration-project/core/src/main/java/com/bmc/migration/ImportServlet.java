@@ -328,6 +328,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         }
                         if (container.hasProperty("migration_content_type")) {
                             String contentType = container.getProperty("migration_content_type").getString();
+                            //TODO: if primary column this is h2 if secondary this is h3
                             if (name.equals("heading") && contentType.equals("ContentArea")) {
                                 container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
                             }
@@ -346,7 +347,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                                 }
                             }
                         }
-                        if (name.equals("PURLBody")) {
+                        if (name.equals("PURLBody") && !value.isEmpty()) {
                             Node ty = getThankYouPage();
                             Node text = ty.getNode("jcr:content/root/maincontentcontainer/responsivegrid/text");
                             text.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
