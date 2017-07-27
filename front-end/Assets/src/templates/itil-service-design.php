@@ -81,7 +81,7 @@ include 'php-inc/head.php';
 				<p>This video addresses capabilities needed for effectively consuming, designing and building services and systems. Relationship to service strategy, customer service focus, demand management, cloud computing and business intelligence to enable organization collaborative design capabilities are discussed. (11:46)</p>
 				<div class="video">
 					<input id="91d07e9b3676c" type="hidden" value="Find out how BMC can help you. <a  id='overlayLink' href='http://stage.www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">viewNode("91d07e9b3676c", {"server_detection": true, "width": 640, "height": 380});</script>
 				</div>
 			</figure>
@@ -237,7 +237,7 @@ include 'php-inc/head.php';
 				<p>This video focuses on managing the development of a service product. Design coordination, cloud computing, other best practices are discussed as a component of an overall service management framework. (08:50)</p>
 				<div class="video">
 					<input id="68bffae928ce6" type="hidden" value="Find out how BMC can help you. <a  id='overlayLink' href='http://stage.www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>"></input>
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">viewNode("68bffae928ce6", {"server_detection": true, "width": 640, "height": 380});</script>
 				</div>
 			</figure>

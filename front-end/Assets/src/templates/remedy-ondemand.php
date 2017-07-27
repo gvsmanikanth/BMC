@@ -96,7 +96,7 @@ include 'php-inc/head.php';
 				<div class="video">
 					<input id="70c6e3c5b51fc" type="hidden" value="Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>">
 					</input>
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">
 						viewNode("70c6e3c5b51fc", {
 							"server_detection" : true,
