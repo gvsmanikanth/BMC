@@ -24,6 +24,20 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <elqProductInterest
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                            name="./C_Product_Interest1"
+                                            renderReadOnly="{Boolean}false"
+                                            fieldDescription="Eloqua Product Interest"
+                                            fieldLabel="Eloqua Product Interest"
+                                            multiple="(Boolean)false"
+                                            dataPath="/content/bmc/resources/eloqua-product-interest">
+                                        <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/bmc/components/datasource"/>
+
+                                    </elqProductInterest>
                                     <elqCampaignID
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
