@@ -1,41 +1,40 @@
-<section data-sly-use.tabs="com.bmc.components.Tabs">
-    <div id="tab1" class="${wcmmode.edit ? 'industry-tabs--editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
+<section data-sly-use.TabsModel="com.bmc.models.components.tabs.TabsModel">
+    <sly data-sly-test.ContentID="${TabsModel.ContentID}"/>
+    <div id="tab1-${ContentID}" class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
         <h2 class="m0 text-center white">${properties.headerText @ context = 'html'}</h2>
         <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table" style="max-width:1200px;">
-
-            <sly data-sly-list.tab="${tabs.tabs}">
-                <li class="p2 flex-cell" data-sly-test="${tab.title}">
-                    <a class="white bold no-scroll" href="#tab${tabList.index}" onclick="">${tab.title @ context = 'html'}</a>
+            <sly data-sly-list.tab="${TabsModel.tabs}">
+                <li class="p2 flex-cell" data-sly-test="${tab.tabTitle}">
+                    <a class="white bold no-scroll" href="#tab-${ContentID}-${tabList.index}" onclick="">${tab.tabTitle @ context = 'html'}</a>
                 </li>
             </sly>
 
         </ul>
 
         <sly data-sly-test="${wcmmode.edit}">
-        <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
-             data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
-             class="${api.cssClass} ${allowed.cssClass}">
-            <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
-                 data-sly-test="${isAllowedApplicable}"
-                 data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
-                 data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
-            <sly data-sly-test="${!isAllowedApplicable}"
-                 data-sly-repeat.child="${api.paragraphs}"
-                 data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
-            <sly data-sly-test="${!isAllowedApplicable}"
-                 data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
-        </div>
+            <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+                 data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
+                 class="${api.cssClass} ${allowed.cssClass}">
+                <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+                     data-sly-test="${isAllowedApplicable}"
+                     data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+                     data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+                <sly data-sly-test="${!isAllowedApplicable}"
+                     data-sly-repeat.child="${api.paragraphs}"
+                     data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
+                <sly data-sly-test="${!isAllowedApplicable}"
+                     data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+            </div>
         </sly>
 
         <sly data-sly-test="${!wcmmode.edit}">
-            <sly data-sly-list.tab="${tabs.tabItems}">
-            <div id="tab${tabList.index}" class="section bg-seashell" data-sly-test="${tabs.tabs[tabList.index].title}">
+            <sly data-sly-list.section="${TabsModel.TabItems}">
+                <div id="tab-${ContentID}-${sectionList.index}" class="section bg-seashell" data-sly-test="${TabsModel.tabs[sectionList.index].tabTitle}">
                 <div class="section-content flex-tab">
-                    <sly data-sly-resource="${tab.path @ resourceType=tab.resourceType, decorationTagName='div', cssClassName=tab.cssClass}"></sly>
+                    <sly data-sly-resource="${section.path @ resourceType=section.resourceType, decorationTagName='div', cssClassName=section.cssClass}"></sly>
                 </div>
             </div>
             </sly>
         </sly>
-
     </div>
 </section>

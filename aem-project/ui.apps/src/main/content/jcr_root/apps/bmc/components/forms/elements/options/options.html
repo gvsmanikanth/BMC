@@ -15,7 +15,7 @@
                 <input type="${options.type.value}" name="${itemName}" id="${itemID}" value="${itemValue}"
                        checked="${optionItem.selected}" disabled="${optionItem.disabled}"/>
                 <label for="${itemID}">
-                    ${optionItem.text}
+                    ${optionItem.text @ context='html'}
                 </label>
             </li>
         </ol>
