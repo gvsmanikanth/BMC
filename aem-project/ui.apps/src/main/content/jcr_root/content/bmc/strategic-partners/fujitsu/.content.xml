@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:58:44.411-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Fujitsu"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:58:44.409-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="http://www.fujitsu.com/global/"
+                    fileReference="/content/dam/bmc/partners/logos/fujitsu.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Fujitsu is a leading information and communication technology (ICT) company offering a full portfolio of business-technology products, solutions, and services, ranging from workplace systems to data center solutions, managed services, and cloud-based software and solutions.&lt;/p>&#xd;&#xa;&lt;p>BMC and Fujitsu have a relationship spanning over 20 years including:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Over 300 staff globally accredited on BMC technology&lt;/li>&#xd;&#xa;&lt;li>Go-to-market initiatives in IT outsourcing and application services&lt;/li>&#xd;&#xa;&lt;li>End-user client engagement services through joint collaborative review&lt;/li>&#xd;&#xa;&lt;li>Data center outsourcing and networking &lt;/li>&#xd;&#xa;&lt;li>BMC Platinum Alliance Partner&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                    name="Fujitsu"
+                    shortDescription="Fujitsu is a leading information and communication technology (ICT) company offering a full portfolio of business-technology products."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>
