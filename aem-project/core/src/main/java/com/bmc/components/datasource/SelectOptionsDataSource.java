@@ -25,7 +25,7 @@ import java.util.stream.StreamSupport;
  *      fieldLabel="Field Name"
  *      emptyText="Select item to add"
  *      multiple="true"
- *      options="/path/to/parent/node/of/options/nodes"
+ *      dataPath="/path/to/parent/of/options/nodes"
  *      useNameAsValue="false"
  *      textProperty="text"
  *      valueProperty="value"
