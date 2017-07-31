@@ -32,10 +32,11 @@
                                             fieldDescription="Eloqua Product Interest"
                                             fieldLabel="Eloqua Product Interest"
                                             multiple="(Boolean)false"
+                                            useNameAsValue="(Boolean)true"
                                             dataPath="/content/bmc/resources/eloqua-product-interest">
                                         <datasource
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="/apps/bmc/components/datasource"/>
+                                                sling:resourceType="/apps/bmc/components/forms/datasource/selectoptions"/>
 
                                     </elqProductInterest>
                                     <elqCampaignID
