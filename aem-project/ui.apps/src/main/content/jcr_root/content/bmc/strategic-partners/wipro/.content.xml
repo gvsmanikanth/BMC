@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:53:04.076-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Wipro"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:53:04.074-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="http://www.wipro.com/"
+                    fileReference="/content/dam/bmc/partners/logos/Wipro.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Wipro has been a strategic partner for BMC for more than a decade. Wipro leverages BMC solutions to provide industry-leading and innovative managed services and outsourcing options to customers worldwide. Wipro works with BMC to transform customers into digital enterprises by effectively leveraging the following:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>ServiceNXT™ Command Centre, that spans across geographies and serves global customers in a multi-tenant mode; delivers ITIL® aligned services which are consistent and predictable &lt;/li>&#xd;&#xa;&lt;li>ServiceNXT™ Cloud Operations Centre leveraging BMC Cloud Lifecycle Management, delivering cloud services across private, public and hybrid environments&lt;/li>&#xd;&#xa;&lt;li>BMC COE for product and beta testing and developing accelerators to reduce time-to-market solution implementation for customers&lt;/li>&#xd;&#xa;&lt;li>Innovative use of BMC solutions for automation and remediation that helps drive efficiency from a service delivery perspective and ensure that people, process and technology are utilized to their fullest potential.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                    name="Wipro"
+                    shortDescription="Wipro has been a strategic partner for BMC for more than a decade and over the years, the partnership has evolved into one of the leading collaborations in the industry."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>
