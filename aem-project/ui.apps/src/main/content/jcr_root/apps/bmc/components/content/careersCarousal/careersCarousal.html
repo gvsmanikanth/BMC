@@ -1,0 +1,26 @@
+<div class="page-careers" data-sly-use.modal="com.bmc.components.CareersCarousal">
+<section id="careers_locations_owl" class="section">
+		<div id="owl-location" class="owl-carousel owl-theme--white owl-loaded text-center">
+			<div>
+            <sly data-sly-list.item="${modal.list}">
+				<img src="${item.imagePath}">
+				<div class="slide-caption">${item.cityName}</div>
+                </sly>
+			</div>
+		</div>
+		<div class="section-content owl-carousel-dropdown">
+			<a href="#" class="jq-dropdown-trigger jq-dropdown-orange" data-jq-dropdown="#careers-dropdown-locations">
+            <span>${properties.headerText}</span>
+            <svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg>
+            </a>
+		</div>
+	</section>
+
+<div id="careers-dropdown-locations" class="jq-dropdown jq-dropdown-tip jq-dropdown-scroll">
+	<ul class="jq-dropdown-menu">
+    <sly data-sly-list.item="${modal.list}">
+		<li><span data-owl-slide="0">${item.cityName}</span></li>
+        </sly>
+	</ul>
+</div>
+</div>
