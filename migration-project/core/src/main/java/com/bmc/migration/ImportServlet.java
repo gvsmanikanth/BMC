@@ -582,7 +582,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 if (type.equals("FormFieldset")) {
                     //TODO
                     // determine path to fieldset XF
-                    String path = "/content/experience-fragments/bmc/forms/" + id;
+                    String path = "/content/experience-fragments/bmc/language-masters/en/forms/" + id;
                     // determine whether node exists
                     // and create XF node with fields if not
                     if (!session.nodeExists(path)) {
