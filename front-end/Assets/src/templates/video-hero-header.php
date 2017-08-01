@@ -6,7 +6,7 @@
 	<section class="hero flex-col">
 		<div class="hero-image xs-only"></div>
 		<div class="hero-image video xs-max-hide">
-			<div class="vidbg-box" style="width: 650px; height: 338px;" data-vidbg-bg="mp4:http://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://media.cms.bmc.com/designimages/careers-header.jpg" data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3"></div>
+			<div class="vidbg-box" style="width: 650px; height: 338px;" data-vidbg-bg="mp4://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized/file.mp4,webm://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://media.cms.bmc.com/designimages/careers-header.jpg" data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3"></div>
 		</div>
 		<div class="hero-content">
 			<strong class="ha mb2">Employees Love Us</strong>

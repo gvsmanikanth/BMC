@@ -362,6 +362,15 @@
                             jcr:mixinTypes="[cq:ReplicationStatus]"
                             jcr:primaryType="nt:unstructured"/>
                     </policy_1499383212913>
+                    <policy_710463152311244
+                        jcr:lastModified="{Date}2017-07-18T16:12:10.862-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Partner Data"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="/apps/bmc/components/content/partner-data">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_710463152311244>
                 </maincontentcontainer>
             </structure>
             <content jcr:primaryType="nt:unstructured">
@@ -609,9 +618,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Text Policy"
                         sling:resourceType="wcm/core/components/policy/policy">
-                        <jcr:content
-                            jcr:mixinTypes="[]"
-                            jcr:primaryType="nt:unstructured"/>
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
                         <rtePlugins jcr:primaryType="nt:unstructured">
                             <paraformat
                                 jcr:primaryType="nt:unstructured"

@@ -2,6 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        bodyClass="section-products page-category"
         cq:lastModified="{Date}2017-07-23T19:25:35.553-07:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/bmc-topicfull-template"

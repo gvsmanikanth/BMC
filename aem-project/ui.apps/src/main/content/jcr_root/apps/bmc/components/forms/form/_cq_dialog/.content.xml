@@ -24,6 +24,20 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <elqProductInterest
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                            name="./C_Product_Interest1"
+                                            renderReadOnly="{Boolean}false"
+                                            fieldDescription="Eloqua Product Interest"
+                                            fieldLabel="Eloqua Product Interest"
+                                            multiple="{Boolean}false"
+                                            useNameAsValue="{Boolean}true"
+                                            dataPath="/content/bmc/resources/eloqua-product-interest">
+                                        <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/bmc/components/forms/datasource/selectoptions"/>
+                                    </elqProductInterest>
                                     <elqCampaignID
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -50,14 +64,14 @@
                                             wrapperClass="cmp-workflow-title">
                                         <items jcr:primaryType="nt:unstructured">
                                             <ESO jcr:primaryType="nt:unstructured"
-                                                text="ESO"
-                                                value="ESO"/>
+                                                 text="ESO"
+                                                 value="ESO"/>
                                             <ZSO jcr:primaryType="nt:unstructured"
-                                                  text="ZSO"
-                                                  value="ZSO"/>
+                                                 text="ZSO"
+                                                 value="ZSO"/>
                                             <Unknown jcr:primaryType="nt:unstructured"
-                                                  text="Unknown"
-                                                  value="Unknown"/>
+                                                     text="Unknown"
+                                                     value="Unknown"/>
                                         </items>
                                     </C_Lead_Business_Unit1>
                                     <productLine1
@@ -68,32 +82,32 @@
                                             name="./productLine1"
                                             required="{Boolean}true"
                                             wrapperClass="cmp-workflow-title">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <DCA jcr:primaryType="nt:unstructured"
-                                                    value="DCA / Cloud"
-                                                    text="DCA / Cloud"/>
-                                                <DSM jcr:primaryType="nt:unstructured"
-                                                     value="DSM"
-                                                     text="DSM"/>
-                                                <PandA jcr:primaryType="nt:unstructured"
-                                                     value="P&amp;A"
-                                                     text="P&amp;A"/>
-                                                <WLA jcr:primaryType="nt:unstructured"
-                                                     value="WLA"
-                                                     text="WLA"/>
-                                                <DM jcr:primaryType="nt:unstructured"
-                                                     value="DM"
-                                                     text="DM"/>
-                                                <MV jcr:primaryType="nt:unstructured"
-                                                     value="MV"
-                                                     text="MV"/>
-                                                <STG jcr:primaryType="nt:unstructured"
-                                                     value="STG"
-                                                     text="STG"/>
-                                                <Unknown jcr:primaryType="nt:unstructured"
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <DCA jcr:primaryType="nt:unstructured"
+                                                 value="DCA / Cloud"
+                                                 text="DCA / Cloud"/>
+                                            <DSM jcr:primaryType="nt:unstructured"
+                                                 value="DSM"
+                                                 text="DSM"/>
+                                            <PandA jcr:primaryType="nt:unstructured"
+                                                   value="P&amp;A"
+                                                   text="P&amp;A"/>
+                                            <WLA jcr:primaryType="nt:unstructured"
+                                                 value="WLA"
+                                                 text="WLA"/>
+                                            <DM jcr:primaryType="nt:unstructured"
+                                                value="DM"
+                                                text="DM"/>
+                                            <MV jcr:primaryType="nt:unstructured"
+                                                value="MV"
+                                                text="MV"/>
+                                            <STG jcr:primaryType="nt:unstructured"
+                                                 value="STG"
+                                                 text="STG"/>
+                                            <Unknown jcr:primaryType="nt:unstructured"
                                                      value="Unknown"
                                                      text="Unknown"/>
-                                            </items>
+                                        </items>
                                     </productLine1>
                                     <C_Lead_Offer_Most_Recent1
                                             jcr:primaryType="nt:unstructured"
@@ -103,65 +117,65 @@
                                             required="{Boolean}true"
                                             name="./C_Lead_Offer_Most_Recent1"
                                             wrapperClass="cmp-workflow-title">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <e4 jcr:primaryType="nt:unstructured"
-                                                     value="Analyst Report"
-                                                     text="Analyst Report"/>
-                                                <t5 jcr:primaryType="nt:unstructured"
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <e4 jcr:primaryType="nt:unstructured"
+                                                value="Analyst Report"
+                                                text="Analyst Report"/>
+                                            <t5 jcr:primaryType="nt:unstructured"
                                                 value="Contact Me"
                                                 text="Contact Me"/>
-                                                <nn jcr:primaryType="nt:unstructured"
+                                            <nn jcr:primaryType="nt:unstructured"
                                                 value="Demo"
                                                 text="Demo"/>
-                                                <mm jcr:primaryType="nt:unstructured"
+                                            <mm jcr:primaryType="nt:unstructured"
                                                 value="Eval Request"
                                                 text="Eval Request"/>
-                                                <xx jcr:primaryType="nt:unstructured"
+                                            <xx jcr:primaryType="nt:unstructured"
                                                 value="Event"
                                                 text="Event"/>
-                                                <ww jcr:primaryType="nt:unstructured"
+                                            <ww jcr:primaryType="nt:unstructured"
                                                 value="Newsletter"
                                                 text="Newsletter"/>
-                                                <ll jcr:primaryType="nt:unstructured"
+                                            <ll jcr:primaryType="nt:unstructured"
                                                 value="Offer General"
                                                 text="Offer General"/>
-                                                <ii jcr:primaryType="nt:unstructured"
+                                            <ii jcr:primaryType="nt:unstructured"
                                                 value="Pricing Request"
                                                 text="Pricing Request"/>
-                                                <uu jcr:primaryType="nt:unstructured"
+                                            <uu jcr:primaryType="nt:unstructured"
                                                 value="ROI Tool"
                                                 text="ROI Tool"/>
-                                                <jj jcr:primaryType="nt:unstructured"
+                                            <jj jcr:primaryType="nt:unstructured"
                                                 value="Sales Event"
                                                 text="Sales Event"/>
-                                                <hh jcr:primaryType="nt:unstructured"
+                                            <hh jcr:primaryType="nt:unstructured"
                                                 value="Subscription"
                                                 text="Subscription"/>
-                                                <ff jcr:primaryType="nt:unstructured"
+                                            <ff jcr:primaryType="nt:unstructured"
                                                 value="Test Drive"
                                                 text="Test Drive"/>
-                                                <rr jcr:primaryType="nt:unstructured"
+                                            <rr jcr:primaryType="nt:unstructured"
                                                 value="Tradeshow"
                                                 text="Tradeshow"/>
-                                                <ee jcr:primaryType="nt:unstructured"
+                                            <ee jcr:primaryType="nt:unstructured"
                                                 value="Trial Download"
                                                 text="Trial Download"/>
-                                                <ww jcr:primaryType="nt:unstructured"
+                                            <ww jcr:primaryType="nt:unstructured"
                                                 value="Unknown"
                                                 text="Unknown"/>
-                                                <qq jcr:primaryType="nt:unstructured"
+                                            <qq jcr:primaryType="nt:unstructured"
                                                 value="Value Assessment Tool"
                                                 text="Value Assessment Tool"/>
-                                                <aa jcr:primaryType="nt:unstructured"
+                                            <aa jcr:primaryType="nt:unstructured"
                                                 value="Webinar - Recorded"
                                                 text="Webinar - Recorded"/>
-                                                <xx jcr:primaryType="nt:unstructured"
+                                            <xx jcr:primaryType="nt:unstructured"
                                                 value="Webinar - Live"
                                                 text="Webinar - Live"/>
-                                                <zz jcr:primaryType="nt:unstructured"
+                                            <zz jcr:primaryType="nt:unstructured"
                                                 value="White Paper"
                                                 text="White Paper"/>
-                                            </items>
+                                        </items>
                                     </C_Lead_Offer_Most_Recent1>
                                     <ex_assettype
                                             jcr:primaryType="nt:unstructured"
@@ -191,33 +205,33 @@
                                             required="{Boolean}true"
                                             name="./ex_act"
                                             wrapperClass="cmp-workflow-title">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <jj jcr:primaryType="nt:unstructured"
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <jj jcr:primaryType="nt:unstructured"
                                                 value="Contact Me"
                                                 text="Contact Me"/>
-                                                <hh jcr:primaryType="nt:unstructured"
+                                            <hh jcr:primaryType="nt:unstructured"
                                                 value="Pricing Request"
                                                 text="Pricing Request"/>
-                                                <gg jcr:primaryType="nt:unstructured"
+                                            <gg jcr:primaryType="nt:unstructured"
                                                 value="Engaged in Trial"
                                                 text="Engaged in Trial"/>
-                                                <ff jcr:primaryType="nt:unstructured"
+                                            <ff jcr:primaryType="nt:unstructured"
                                                 value="Demo Request"
                                                 text="Demo Request"/>
-                                                <dd jcr:primaryType="nt:unstructured"
+                                            <dd jcr:primaryType="nt:unstructured"
                                                 value="Viewed"
                                                 text="Viewed"/>
-                                                <ss jcr:primaryType="nt:unstructured"
+                                            <ss jcr:primaryType="nt:unstructured"
                                                 value="Download"
                                                 text="Download"/>
-                                                <aa jcr:primaryType="nt:unstructured"
+                                            <aa jcr:primaryType="nt:unstructured"
                                                 value="Registered"
                                                 text="Registered"/>
-                                                <ww jcr:primaryType="nt:unstructured"
+                                            <ww jcr:primaryType="nt:unstructured"
                                                 value="Training Request"
                                                 text="Training Request"/>
 
-                                            </items>
+                                        </items>
                                     </ex_act>
                                     <ex_assetname
                                             jcr:primaryType="nt:unstructured"

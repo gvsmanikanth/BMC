@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:57:51.820-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Microsoft"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:57:51.818-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="https://www.microsoft.com/"
+                    fileReference="/content/dam/bmc/partners/logos/Microsoft.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>BMC and Microsoft have a long history of partnering to provide innovative Digital Enterprise Management solutions that optimize customer investments in Microsoft operating systems, applications, and database platforms. Together BMC and Microsoft:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Enable customers to manage digital services delivery, consumption, operations, planning, and compliance across multi-platform, multi-vendor infrastructures&lt;/li>&#xd;&#xa;&lt;li>Provide customers management of the MSFT infrastructure as a part of a complete, heterogeneous ITIL® environment&lt;/li>&#xd;&#xa;&lt;li>Provide customers with choice of a server hypervisor platform through enhanced BMC support&lt;/li>&#xd;&#xa;&lt;li>Deliver early adopter support of new versions of MSFT operating systems, databases, and applications&lt;/li>&#xd;&#xa;&lt;li>Offer faster time-to-value with pre-configured integrations&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                    name="Microsoft"
+                    shortDescription="BMC and Microsoft partner to provide innovative Digital Enterprise Management solutions that optimize customer investments in Microsoft operating systems, applications, and database platforms."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>

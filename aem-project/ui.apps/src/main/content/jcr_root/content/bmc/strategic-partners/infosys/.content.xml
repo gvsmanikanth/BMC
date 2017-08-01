@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:58:15.499-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Infosys"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:58:15.497-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="https://www.infosys.com/"
+                    fileReference="/content/dam/bmc/partners/logos/Infosys-logo-03-02-2017.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Infosys is a global leader in technology services and consulting. We enable clients in more than 50 countries to create and execute strategies for their digital transformation. From engineering to application development, knowledge management and business process management, we help our clients find the right problems to solve, and to solve these effectively. Our team of 199,000+ innovators, across the globe, is differentiated by the imagination, knowledge and experience, across industries and technologies that we bring to every project we undertake.&lt;/p>&#xd;&#xa;&lt;p>Infosys’ infrastructure transformation consulting services primarily focuses on&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Extracting business value from IT infrastructure assets&lt;/li>&#xd;&#xa;&lt;li>Delivering an efficient IT infrastructure&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Infosys has proven expertise in helping organizations reshape their IT infrastructure by aligning business objectives and maximizing value on investments. Infosys infrastructure transformation consulting services offer:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Service transformation- Focused on implementing the ITIL framework through process optimization and leveraging best- of- breed ITSM tools and platforms to drive unified IT operations&lt;/li>&#xd;&#xa;&lt;li>Data center transformation - Led by a consulting- based approach for developing next- generation data centers that are responsive to business requirements&lt;/li>&#xd;&#xa;&lt;li>Security transformation - Focused on compliance, governance, and controls derived from various standards and policies&lt;/li>&#xd;&#xa;&lt;li>Workplace transformation - Focused on providing solutions by leveraging emerging technologies to maximize efficiency, agility, and flexibility&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Infosys has been a Strategic GOSI (Global Outsourcers and System Integrator) partner of BMC Software for over a decade.&lt;/p>&#xd;&#xa;&lt;p>Infosys provides consulting and implementation services around BMC products in:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Digital Service Management&lt;/li>&#xd;&#xa;&lt;li>Data Center Automation and Cloud&lt;/li>&#xd;&#xa;&lt;li>Performance and Availability Management&lt;/li>&#xd;&#xa;&lt;li>Workload Automation&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Infosys has a team of around 300+ professionals working on consulting and implementation around these products. They have successfully completed 100+ projects around the globe.&lt;/p>&#xd;&#xa;&lt;p>Infosys has set up Labs for Training &amp;amp; Development – BMC ITSM Lab (Remedy), Service Assurance (BPPM/TrueSight), Automation (Bladelogic and BMC Atrium Orchestrator), Workload Automation (Control-M).&lt;/p>&#xd;&#xa;&lt;p>Infosys is also a part of BMC’s Readiness Program and gets beta access to new BMC products&lt;/p>&#xd;&#xa;"
+                    name="Infosys"
+                    shortDescription="Infosys is a global leader in technology services and consulting. They enable clients in more than 50 countries to create and execute strategies for their digital transformation."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>
