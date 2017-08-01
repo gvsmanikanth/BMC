@@ -1383,6 +1383,8 @@ blockquote {
 
 .layout-primary {
   padding-top: 0; }
+  .layout-primary.aem-GridColumn {
+    margin-right: 0 !important; }
   .full-width .layout-primary {
     width: 100%; }
   .page-product-landing .layout-primary {

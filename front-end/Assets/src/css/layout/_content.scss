@@ -9,7 +9,6 @@
   @include row((nested: false, padding: 0 0, maxWidth: 100%));
 	overflow: hidden;
 }
-
 .bmc-nav-loader-navigation .layout-header {
 
 	.layout-inner-wrap {
@@ -192,6 +191,10 @@
 .layout-primary {
 	@extend %column-config;
 	padding-top: 0;
+
+	&.aem-GridColumn {
+		margin-right: 0 !important;
+	}
 
 	.full-width & {
 		width: columns(12);
