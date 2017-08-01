@@ -1,3 +1,161 @@
-<!--/*<sly data-sly-use.list="com.bmc.components.PartnerList"></sly>*/-->
+<div class="layout-inner-wrap contact full-width">
+    <section class="layout-primary">
+        <div class="three-up">
+            <h3>Sales</h3>
+            <address>
+                <sly data-sly-test.url="${properties.salesPhoneURL}">
+                    <a href="tel:${url}">
+                        <sly  data-sly-test.text="${properties.salesPhoneText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.salesPhoneText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.salesPhoneURL}">enter phone number</em>
+                <br>
+                <sly data-sly-test.url="${properties.salesContactURL}">
+                    <a href="${url}">
+                        <sly  data-sly-test.text="${properties.salesContactText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.salesContactText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.salesContactURL}">enter URL</em>
+            </address>
+            <br>
 
-Contacts Locations
+            <h3>General Comments and Feedback</h3>
+            <address>
+                <a data-sly-test.phone="${properties.feedbackPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                <em data-sly-test="${!properties.feedbackPhone}">enter phone number</em>
+            </address>
+            <br>
+
+            <h3>Corporate Headquarters</h3>
+            <address>
+                <!--/* Street 1 */-->
+                <sly data-sly-test.street1="${properties.corporateHeadquartersStreet1}">${street1}<br></sly>
+                <!--/* Street 2 */-->
+                <sly data-sly-test.street2="${properties.corporateHeadquartersStreet2}">${street2}<br></sly>
+                <!--/* City */-->
+                <sly data-sly-test.city="${properties.corporateHeadquartersCity}">${city}</sly>
+                <!--/* State */-->
+                <sly data-sly-test.state="${properties.corporateHeadquartersState}"><sly data-sly-test="${city}">, </sly>${state}</sly>
+                <!--/* Zip */-->
+                <sly data-sly-test.zip="${properties.corporateHeadquartersZip}"><sly data-sly-test="${city || state}"> </sly>${zip}</sly>
+                <!--/* Add line break after city/state/zip if necessary */-->
+                <sly data-sly-test="${city || state || zip}"><br></sly>
+                <!--/* Prompt if no address info */-->
+                <sly data-sly-test="${!street1 && !street2 && !city && !state && !zip}"><em>enter address</em><br></sly>
+                <!--/* Phone */-->
+                <a data-sly-test.phone="${properties.corporateHeadquartersPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                <em data-sly-test="${!properties.corporateHeadquartersPhone}">enter phone number</em>
+                <br>
+            </address>
+
+            <strong>Executive Briefing Center</strong>
+            <p>
+                <!--/* Phone */-->
+                <a data-sly-test.phone="${properties.ebcPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                <em data-sly-test="${!properties.ebcPhone}">enter phone number</em>
+                <br>
+                <!--/* Information */-->
+                <a data-sly-test.url="${properties.ebcInformationURL}" href="${url}">Information</a>
+                <em data-sly-test="${!properties.ebcInformationURL}">enter URL</em>
+            </p>
+        </div>
+
+        <div class="three-up">
+            <h3>Customer Support</h3>
+            <strong>Product Documentation</strong>
+            <p>
+                <sly data-sly-test.url="${properties.productDocumentationContactURL}">
+                    <a href="${url}">
+                        <sly  data-sly-test.text="${properties.productDocumentationContactText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.productDocumentationContactText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.productDocumentationContactURL}">enter URL</em>
+            </p>
+
+            <strong>Communities</strong>
+            <p>
+                <sly data-sly-test.url="${properties.communitiesURL}">
+                    <a href="${url}">
+                        <sly  data-sly-test.text="${properties.communitiesText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.communitiesText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.communitiesURL}">enter URL</em>
+            </p>
+
+            <sly data-sly-test="${properties.accountsPayable || properties.accountsReceivable}">
+                <strong>For Accounting Inquiries</strong>
+                <p data-sly-test.email="${properties.accountsPayable}">
+                    Accounts Payable<br>
+                    <a href="mailto:${email}">${email}</a><br>
+                </p>
+                <p data-sly-test.email="${properties.accountsReceivable}">
+                    Accounts Receivable<br>
+                    <a href="mailto:${email}">${email}</a><br>
+                </p>
+            </sly>
+            <br>
+
+            <h3>Education Customer Service</h3>
+            <address>
+
+                <!--/* Phone Numbers */-->
+                <sly data-sly-use.phones="${'com.bmc.components.utils.DescendantResources' @ name='educationCustomerServicePhones'}"
+                   data-sly-repeat.phone="${phones.resources}">
+                    <!--/* Label (if present) */-->
+                    <sly data-sly-test.label="${phone.label}">${label}: </sly>
+                    <!--/* Link (if text is present) */-->
+                    <a data-sly-test.text="${phone.text}" href="tel:${phone.phone}">${text}</a>
+                    <!--/* Link (if only URL is defined) */-->
+                    <a data-sly-test="${!phone.text}" href="tel:${phone.phone}">${phone.phone}</a>
+                    <!--/* Line break (except for last item) */-->
+                    <br data-sly-test="${!phoneList.last}">
+                </sly>
+
+                <!--/* Email */-->
+                <a data-sly-test.email="${properties.educationCustomerServiceEmail}" href="mailto:${email}">${email}</a>
+                <em data-sly-test="${!properties.educationCustomerServiceEmail}">enter email</em>
+            </address>
+            <br>
+
+            <h3>Other Contacts</h3>
+            <strong>Investors</strong>
+            <p>
+                <a data-sly-test.email="${properties.investorsEmail}" href="mailto:${email}">${email}</a>
+                <em data-sly-test="${!properties.investorsEmail}">enter email</em>
+            </p>
+            <strong>Corporate Communications</strong>
+            <p>
+                <sly data-sly-test.url="${properties.corporateCommunicationsURL}">
+                    <a href="${url}">
+                        <sly  data-sly-test.text="${properties.corporateCommunicationsText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.corporateCommunicationsText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.corporateCommunicationsURL}">enter URL</em>
+            </p>
+            <strong>Global Security Support</strong>
+            <p>
+                <a data-sly-test.email="${properties.securityEmail}" href="mailto:${email}">${email}</a>
+                <em data-sly-test="${!properties.securityEmail}">enter email</em>
+            </p>
+            <strong>Analyst Relations</strong>
+            <p>
+                <sly data-sly-test.url="${properties.analystRelationsURL}">
+                    <a href="${url}">
+                        <sly  data-sly-test.text="${properties.analystRelationsText}">${text @ context='html'}</sly>
+                        <sly  data-sly-test="${!properties.analystRelationsText}">${url @ context='html'}</sly>
+                    </a>
+                </sly>
+                <em data-sly-test="${!properties.analystRelationsURL}">enter URL</em>
+            </p>
+        </div>
+
+        <div class="three-up -shaded"></div>
+    </section>
+</div>
+<!-- / layout-inner-wrap -->
+</section>
