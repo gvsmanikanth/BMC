@@ -1,7 +1,7 @@
 <div class="layout-inner-wrap contact full-width">
     <section class="layout-primary">
         <div class="three-up">
-            <h3>Sales</h3>
+            <h3>${'Sales' @ i18n}</h3>
             <address>
                 <sly data-sly-test.url="${properties.salesPhoneURL}">
                     <a href="tel:${url}">
@@ -21,14 +21,14 @@
             </address>
             <br>
 
-            <h3>General Comments and Feedback</h3>
+            <h3>${'General Comments and Feedback' @ i18n}</h3>
             <address>
                 <a data-sly-test.phone="${properties.feedbackPhone}" href="tel:${phone}">${phone @ context='html'}</a>
                 <em data-sly-test="${!properties.feedbackPhone}">enter phone number</em>
             </address>
             <br>
 
-            <h3>Corporate Headquarters</h3>
+            <h3>${'Corporate Headquarters' @ i18n}</h3>
             <address>
                 <!--/* Street 1 */-->
                 <sly data-sly-test.street1="${properties.corporateHeadquartersStreet1}">${street1}<br></sly>
@@ -50,7 +50,7 @@
                 <br>
             </address>
 
-            <strong>Executive Briefing Center</strong>
+            <strong>${'Executive Briefing Center' @ i18n}</strong>
             <p>
                 <!--/* Phone */-->
                 <a data-sly-test.phone="${properties.ebcPhone}" href="tel:${phone}">${phone @ context='html'}</a>
@@ -63,8 +63,8 @@
         </div>
 
         <div class="three-up">
-            <h3>Customer Support</h3>
-            <strong>Product Documentation</strong>
+            <h3>${'Customer Support' @ i18n}</h3>
+            <strong>${'Product Documentation' @ i18n}</strong>
             <p>
                 <sly data-sly-test.url="${properties.productDocumentationContactURL}">
                     <a href="${url}">

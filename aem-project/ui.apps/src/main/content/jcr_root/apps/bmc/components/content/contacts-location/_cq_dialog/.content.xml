@@ -1,6 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured"
-          jcr:title="Support Contacts Location"
-          sling:resourceType="cq/gui/components/authoring/dialog">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured"
+          jcr:title="SupportContactsLocation" sling:resourceType="cq/gui/components/authoring/dialog"
+          mode="edit">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/layouts/tabs"/>
+        <items jcr:primaryType="nt:unstructured">
+            <sales
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    jcr:title="Sales">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <phone
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    jcr:title="Sales Phone">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="(555) 555-1234 — Press Option 1 for sales"
+                                            fieldLabel="Link Text"
+                                            name="./salesPhoneText"/>
+                                    <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="(555) 555-1234"
+                                            fieldLabel="Phone Number"
+                                            name="./salesPhoneURL"/>
+                                </items>
+                            </phone>
+                            <contactForm
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    jcr:title="Sales Contact Form">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <text
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="BMC Sales Contact Form"
+                                            fieldLabel="Link Text"
+                                            name="./salesContactText"/>
+                                    <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            emptyText="/content/bmc/path/to/form"
+                                            fieldLabel="URL"
+                                            name="./salesContactURL"/>
+                                </items>
+                            </contactForm>
+                        </items>
+                    </column>
+                </items>
+            </sales>
+            <!--<generalComments-->
+                    <!--jcr:primaryType="nt:unstructured"-->
+                    <!--sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"-->
+                    <!--jcr:title="General Comments &amp; Feedback">-->
+                <!--<items jcr:primaryType="nt:unstructured">-->
+                    <!--<column-->
+                            <!--jcr:primaryType="nt:unstructured"-->
+                            <!--sling:resourceType="granite/ui/components/coral/foundation/container"-->
+                            <!--maximized="{Boolean}true">-->
+                        <!--<items jcr:primaryType="nt:unstructured">-->
+                            <!--<commentsPhone-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="General Comments &amp; Feedback">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<phone-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--emptyText="(555) 555-1234"-->
+                                            <!--fieldLabel="Phone Number"-->
+                                            <!--name="./feedbackPhone"/>-->
+                                <!--</items>-->
+                            <!--</commentsPhone>-->
+                        <!--</items>-->
+                    <!--</column>-->
+                <!--</items>-->
+            <!--</generalComments>-->
+            <!--<corporateHeadquarters-->
+                    <!--jcr:primaryType="nt:unstructured"-->
+                    <!--sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"-->
+                    <!--jcr:title="Corporate Headquarters">-->
+                <!--<items jcr:primaryType="nt:unstructured">-->
+                    <!--<column-->
+                            <!--jcr:primaryType="nt:unstructured"-->
+                            <!--sling:resourceType="granite/ui/components/coral/foundation/container">-->
+                        <!--<items jcr:primaryType="nt:unstructured">-->
+                            <!--<address-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Corporate Headquarters">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<street1-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Street line 1"-->
+                                            <!--name="./corporateHeadquartersStreet1"/>-->
+                                    <!--<street2-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Street line 2"-->
+                                            <!--name="./corporateHeadquartersStreet2"/>-->
+                                    <!--<city-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="City"-->
+                                            <!--name="./corporateHeadquartersCity"/>-->
+                                    <!--<state-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="State/Province"-->
+                                            <!--name="./corporateHeadquartersState"/>-->
+                                    <!--<zip-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Zip/Postal Code"-->
+                                            <!--name="./corporateHeadquartersZip"/>-->
+                                    <!--<phone-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--emptyText="+1 (555) 555-1234"-->
+                                            <!--fieldLabel="Phone Number"-->
+                                            <!--name="./corporateHeadquartersPhone"/>-->
+                                <!--</items>-->
+                            <!--</address>-->
+                            <!--<ebc-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Executive Briefing Center">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<phone-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--emptyText="+1 (555) 555-1234"-->
+                                            <!--fieldLabel="Phone Number"-->
+                                            <!--name="./ebcPhone"/>-->
+                                    <!--<url-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"-->
+                                            <!--emptyText="/content/bmc/path/to/information"-->
+                                            <!--fieldLabel="Infomation URL"-->
+                                            <!--name="./ebcInformationURL"/>-->
+                                <!--</items>-->
+                            <!--</ebc>-->
+                        <!--</items>-->
+                    <!--</column>-->
+                <!--</items>-->
+            <!--</corporateHeadquarters>-->
+            <customerSupport
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    jcr:title="Customer Support">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <!--<documentation-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Product Documentation Team Contact Form">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--emptyText="Product Documentation Team Contact Form"-->
+                                            <!--fieldLabel="Link Text"-->
+                                            <!--name="./productDocumentationContactText"/>-->
+                                    <!--<url-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"-->
+                                            <!--emptyText="/content/bmc/path/to/form"-->
+                                            <!--fieldLabel="URL"-->
+                                            <!--name="./productDocumentationContactURL"/>-->
+                                <!--</items>-->
+                            <!--</documentation>-->
+                            <!--<communities-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Communities General Request">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--emptyText="BMC Communities General Request"-->
+                                            <!--fieldLabel="Link Text"-->
+                                            <!--name="./communitiesText"/>-->
+                                    <!--<url-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"-->
+                                            <!--emptyText="/content/bmc/path/to/form"-->
+                                            <!--fieldLabel="URL"-->
+                                            <!--name="./communitiesURL"/>-->
+                                <!--</items>-->
+                            <!--</communities>-->
+                            <accounting
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    jcr:title="Accounting Inquiries">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <accountsPayable
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="NA_Accounts_Payable@bmc.com"
+                                            fieldLabel="Accounts Payable"
+                                            name="./accountsPayable"/>
+                                    <accountsReceivable
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            emptyText="Collections_NA@bmc.com"
+                                            fieldLabel="Accounts Receivable"
+                                            name="./accountsReceivable"/>
+                                </items>
+                            </accounting>
+                        </items>
+                    </column>
+                </items>
+            </customerSupport>
+            <educationCustomerService
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                    jcr:title="Education Customer Service">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <education
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    jcr:title="Education Customer Service">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <email
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="education@bmc.com"
+                                            fieldLabel="Email"
+                                            name="./educationCustomerServiceEmail"/>
+                                    <phones
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                            composite="{Boolean}true"
+                                            fieldLabel="Phone Numbers">
+                                        <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                name="./educationCustomerServicePhones">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <label
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="English"
+                                                        fieldLabel="Label (optional)"
+                                                        name="label"/>
+                                                <text
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="+1 (555) 555-1234 (English)"
+                                                        fieldLabel="Link Text"
+                                                        name="text"/>
+                                                <url
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="+1 (555) 555-1234"
+                                                        fieldLabel="Phone Number"
+                                                        name="phone"/>
+                                            </items>
+                                        </field>
+                                    </phones>
+                                </items>
+                            </education>
+                        </items>
+                    </column>
+                </items>
+            </educationCustomerService>
+            <!--<otherContacts-->
+                    <!--jcr:primaryType="nt:unstructured"-->
+                    <!--sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"-->
+                    <!--jcr:title="Other Contacts">-->
+                <!--<items jcr:primaryType="nt:unstructured">-->
+                    <!--<column-->
+                            <!--jcr:primaryType="nt:unstructured"-->
+                            <!--sling:resourceType="granite/ui/components/foundation/container">-->
+                        <!--<items jcr:primaryType="nt:unstructured">-->
+                            <!--<investors-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Investors">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Email"-->
+                                            <!--name="./investorsEmail"/>-->
+                                <!--</items>-->
+                            <!--</investors>-->
+                            <!--<corporateCommunications-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Corporate Communications">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Link Text"-->
+                                            <!--name="./corporateCommunicationsText"/>-->
+                                    <!--<url-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"-->
+                                            <!--fieldLabel="URL"-->
+                                            <!--name="./corporateCommunicationsURL"/>-->
+                                <!--</items>-->
+                            <!--</corporateCommunications>-->
+                            <!--<security-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Global Security Support">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Email"-->
+                                            <!--name="./securityEmail"/>-->
+                                <!--</items>-->
+                            <!--</security>-->
+                            <!--<analystRelations-->
+                                    <!--jcr:primaryType="nt:unstructured"-->
+                                    <!--sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"-->
+                                    <!--jcr:title="Analyst Relations Contact Form">-->
+                                <!--<items jcr:primaryType="nt:unstructured">-->
+                                    <!--<text-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/textfield"-->
+                                            <!--fieldLabel="Link Text"-->
+                                            <!--name="./analystRelationsText"/>-->
+                                    <!--<url-->
+                                            <!--jcr:primaryType="nt:unstructured"-->
+                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"-->
+                                            <!--fieldLabel="URL"-->
+                                            <!--name="./analystRelationsURL"/>-->
+                                <!--</items>-->
+                            <!--</analystRelations>-->
+                        <!--</items>-->
+                    <!--</column>-->
+                <!--</items>-->
+            <!--</otherContacts>-->
+        </items>
+    </content>
 </jcr:root>
