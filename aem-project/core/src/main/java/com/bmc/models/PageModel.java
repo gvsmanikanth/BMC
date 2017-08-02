@@ -78,9 +78,17 @@ public class PageModel {
     @PostConstruct
     protected void init() {
 
-        if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
-           //ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
-             setContentID(resource.getValueMap().get("jcr:baseVersion").toString());
+        try {
+            Node node = resource.adaptTo(Node.class);
+            if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
+               //ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
+                 setContentID(resource.getValueMap().get("jcr:baseVersion").toString());
+            } else if (node != null && !node.hasProperty("jcr:baseVersion")) {
+                node.addMixin("mix:versionable");
+                session.save();
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
         }
 
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template").toString())));
