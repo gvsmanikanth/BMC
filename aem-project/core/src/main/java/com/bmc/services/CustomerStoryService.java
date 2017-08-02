@@ -32,10 +32,9 @@ public class CustomerStoryService  {
     private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
     public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
-        Tag tag = resourceProvider.getTag(FILTER_TAG_ROOT);
-        return  (tag != null)
-                ? streamTagChildren(tag).map(this::getFilter).collect(Collectors.toList())
-                : Collections.emptyList();
+        return resourceProvider.streamTagChildren(FILTER_TAG_ROOT)
+                .map(tag->getFilter(tag, resourceProvider))
+                .collect(Collectors.toList());
     }
 
     public CustomerStoryCard getStoryCard(String pagePath, ModelFactory modelFactory) {
@@ -122,11 +121,11 @@ public class CustomerStoryService  {
         return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
-    private CustomerStoryFilter getFilter(Tag tag) {
+    private CustomerStoryFilter getFilter(Tag tag, AdaptableResourceProvider resourceProvider) {
         if (tag == null)
             return null;
 
-        List<NameValuePair> options = streamTagChildren(tag)
+        List<NameValuePair> options = resourceProvider.streamTagChildren(tag)
                 .map(this::getTagOption)
                 .collect(Collectors.toList());
 
@@ -134,10 +133,5 @@ public class CustomerStoryService  {
     }
     private NameValuePair getTagOption(Tag tag) {
         return new NameValuePair(tag.getTitle(), tag.getName());
-    }
-    private Stream<Tag> streamTagChildren(Tag tag) {
-        Iterable<Tag> iterable = tag::listChildren;
-        return StreamSupport.stream(iterable.spliterator(), false)
-                .filter(Objects::nonNull);
     }
 }
