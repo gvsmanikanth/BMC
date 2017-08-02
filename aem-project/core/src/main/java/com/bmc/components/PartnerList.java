@@ -1,6 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.mixins.AdaptableResourceProvider;
 import com.bmc.models.utils.ContentIdGenerator;
 import com.day.cq.wcm.api.Page;
 import com.google.gson.Gson;
@@ -20,7 +21,7 @@ import java.util.stream.StreamSupport;
  * and return that data in JSON format, for use by the client-provided
  * Javascript scripts that build the actual partner list HTML.
  */
-public class PartnerList extends WCMUsePojo {
+public class PartnerList extends WCMUsePojo implements AdaptableResourceProvider {
 
     @Override
     public void activate() throws Exception { }
@@ -35,8 +36,7 @@ public class PartnerList extends WCMUsePojo {
      */
     public String getItems() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        Iterable<Page> iterable = () -> getCurrentPage().listChildren();
-        List<Partner> list = StreamSupport.stream(iterable.spliterator(), false)
+        List<Partner> list = streamPageChildren(getCurrentPage())
                 .map(page -> {
                     Resource partnerData = page.getContentResource("root/maincontentcontainer/partner_data");
                     if (partnerData != null) {

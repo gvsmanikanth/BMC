@@ -2,7 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        bodyClass="bg-matrix tier-one"
         cq:lastModified="{Date}2017-07-19T17:18:21.631-07:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/customerstory"
@@ -129,6 +128,15 @@
                         <right
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title_558522502
+                                jcr:created="{Date}2017-07-30T17:33:23.257-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-07-30T17:34:25.472-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Optional title here - delete if not needed"
+                                sling:resourceType="bmc/components/content/title"
+                                type="h4"/>
                             <title
                                 jcr:created="{Date}2017-07-24T10:07:56.177-07:00"
                                 jcr:createdBy="admin"

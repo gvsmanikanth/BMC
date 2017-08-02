@@ -2,7 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        bodyClass="page-campaign-landing bmc-nav-loader-nav"
         cq:lastModified="{Date}2017-06-14T00:24:11.829-07:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template"
