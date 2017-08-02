@@ -1,9 +1,23 @@
 package com.bmc.models.bmcmeta;
 
+import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Map;
+
 /**
  * Created by elambert on 5/26/17.
  */
+@Component(
+        label = "BMCMeta Compoonent",
+        description = "Helper Service for BMCMeta Object",
+        immediate = true)
 public class BmcMeta {
+
+    private static final Logger logger = LoggerFactory.getLogger(BmcMeta.class);
 
     public BmcMeta() {
         setPage(new PageMeta());
@@ -11,7 +25,6 @@ public class BmcMeta {
         setUser(new UserMeta());
         setSupport(new SupportMeta());
     }
-
 
     private PageMeta page;
     private SiteMeta site;

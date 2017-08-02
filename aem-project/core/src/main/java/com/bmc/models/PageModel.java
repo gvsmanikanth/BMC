@@ -1,5 +1,6 @@
 package com.bmc.models;
 
+import com.bmc.services.BMCMetaService;
 import com.day.cq.wcm.api.Page;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -13,6 +14,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +43,9 @@ public class PageModel {
 
     @Inject
     private SlingSettingsService settings;
+
+    @OSGiService
+    private BMCMetaService service;
 
     @Inject
     private Page resourcePage;
@@ -75,9 +80,10 @@ public class PageModel {
 
     protected Gson gson;
 
+    private String environment;
+
     @PostConstruct
     protected void init() {
-
         try {
             Node node = resource.adaptTo(Node.class);
             if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
@@ -86,6 +92,9 @@ public class PageModel {
             } else if (node != null && !node.hasProperty("jcr:baseVersion")) {
                 node.addMixin("mix:versionable");
                 session.save();
+                if (node.hasProperty("jcr:baseVersion")) {
+                    setContentID(node.getProperty("jcr:baseVersion").getString());
+                }
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
@@ -115,6 +124,7 @@ public class PageModel {
        // bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
         bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         if(resourcePage.getPath().contains("/support/")){
             bmcMeta.getSupport().setEnableAlerts(true);
