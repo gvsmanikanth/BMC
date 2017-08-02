@@ -10,6 +10,9 @@ import org.apache.sling.api.wrappers.CompositeValueMap;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
  * Mixing with convenience methods for obtaining a model instance from a {@link Resource} and/or {@link ValueMap}.
@@ -122,6 +125,46 @@ public interface ModelFactory {
         ValueMap map = new ValueMapDecorator(values);
         ValueMapResource valueMapResource = new ValueMapResource(getResourceResolver(), resourcePath, resourceType, map);
         return getModel(valueMapResource, cls);
+    }
+
+    /**
+     * Obtains a stream of model instances of the given class, adapted from the children of the {@link Resource}
+     * given by {@code resourcePath}
+     * @param resourcePath the path to the {@link Resource}
+     * @param cls the model class
+     * @param <T> the type of the model class
+     * @return a stream of non-null model instances which were adapted from the resource children
+     */
+    default <T> Stream<T> streamModelChildren(String resourcePath, Class<T> cls) {
+        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
+        return streamModelChildren(resourceProvider.getResource(resourcePath), cls);
+    }
+
+    /**
+     * Obtains a stream of model instances of the given class, adapted from the children of the given {@link Resource}
+     * @param resource the {@link Resource}
+     * @param cls the model class
+     * @param <T> the type of the model class
+     * @return a stream of non-null model instances which were adapted from the resource children
+     */
+    default <T> Stream<T> streamModelChildren(Resource resource, Class<T> cls) {
+        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
+        return resourceProvider.streamChildren(resource)
+                .map(r->getModel(r, cls))
+                .filter(Objects::nonNull);
+    }
+
+    /**
+     * Obtains a stream of model instances of the given class, adapted from the children of the given {@link Page}
+     * @param page the {@link Page}
+     * @param cls the model class
+     * @param <T> the type of the model class
+     * @return a stream of non-null model instances which were adapted from the page children
+     */
+    default <T> Stream<T> streamModelChildren(Page page, Class<T> cls) {
+        return (page != null)
+                ? streamModelChildren(page.getContentResource(), cls)
+                : Stream.empty();
     }
 
     static ModelFactory from(ResourceResolver resourceResolver) { return () -> resourceResolver; }
