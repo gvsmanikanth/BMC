@@ -7,7 +7,7 @@
 %><%
     request.setAttribute(DataSource.class.getName(), EmptyDataSource.instance());
     ValueMap props = resource.adaptTo(ValueMap.class);
-    String path = props.get("options", String.class);
+    String path = props.get("dataPath", String.class);
     if (path != null) {
         Resource res = resourceResolver.getResource(path);
         if (res != null && res.hasChildren()) {

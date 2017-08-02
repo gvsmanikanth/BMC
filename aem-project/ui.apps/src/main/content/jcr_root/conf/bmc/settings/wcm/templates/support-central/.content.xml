@@ -2,13 +2,13 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-            cq:lastModified="{Date}2017-07-06T00:35:20.179-07:00"
-            cq:lastModifiedBy="admin"
-            cq:lastReplicated="{Date}2017-06-09T15:17:45.732-07:00"
-            cq:lastReplicatedBy="admin"
-            cq:lastReplicationAction="Activate"
-            cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
-            jcr:primaryType="cq:PageContent"
-            jcr:title="Support Central"
-            status="enabled"/>
+        cq:lastModified="{Date}2017-07-06T00:35:20.179-07:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-06-09T15:17:45.732-07:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Support Central"
+        status="enabled"/>
 </jcr:root>
