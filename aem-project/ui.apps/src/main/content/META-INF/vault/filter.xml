@@ -2,15 +2,9 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc"/>
 
-    <!-- TODO: replace this with "merge" after initial editable template dev/deployments -->
     <filter root="/conf/bmc" mode="merge"/>
 
-
-    <!--<filter root="/home/users/system/bmc" mode="update"/>-->
-
-
     <filter root="/etc/clientlibs/bmc"/>
-
 
     <filter root="/etc/designs/bmc">
         <include pattern="/etc/designs/bmc"/>
