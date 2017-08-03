@@ -22,6 +22,5 @@ public interface onGigDataService {
 
 	public CareersLocationItem getCareersLocationData(String country, String continent);
 
-	public String checkJcrRepository(String href);
 	}	
 

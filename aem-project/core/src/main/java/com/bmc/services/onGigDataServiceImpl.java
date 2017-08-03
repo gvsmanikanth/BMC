@@ -33,10 +33,9 @@ import org.apache.sling.commons.json.JSONException;
 import com.bmc.components.CareersLocationItem;
 import com.bmc.components.CareersTeamItem;
 import com.bmc.components.onGigDataItem;
-import com.bmc.models.utils.ExternalLinkNodeItem;
+
 
 @Component(immediate = true)
-
 @Service
 public class onGigDataServiceImpl implements onGigDataService {
 
@@ -50,10 +49,9 @@ public class onGigDataServiceImpl implements onGigDataService {
 	private Session session;
 	
 	private static final String BASE = "content";
-	
-	private static final String EXTERNAL_BASE = "/content/externalLink";
+
     
-	private static final String SERVICE_ACCOUNT_IDENTIFIER = "writeservice";
+	private static final String SERVICE_ACCOUNT_IDENTIFIER = "onGigDataService";
 	
     private ArrayList<onGigDataItem> list = new ArrayList<onGigDataItem>();
     
@@ -68,19 +66,15 @@ public class onGigDataServiceImpl implements onGigDataService {
     private String responseBody = "";
 
 	private Scanner scanner;
-    
-	private ExternalLinkNodeItem item;
+
     
 	public int injestonGigData(ArrayList<onGigDataItem> data, String base) {
 		// TODO Auto-generated method stub
 		//Stores customer data in the Adobe CQ JCR
 		logger.info("injest data in the JCR Rep");
-		//Map<String, Object> param = new HashMap<String, Object>(); 
+		 
 		final Map<String, Object> authInfo = Collections.singletonMap( ResourceResolverFactory.SUBSERVICE, (Object) SERVICE_ACCOUNT_IDENTIFIER);
-	   // param.put(ResourceResolverFactory.SUBSERVICE, "writeService");
-
-		        
-		
+	 
 		try { 
 		              
 		    //Invoke the adaptTo method to create a Session 
@@ -97,10 +91,10 @@ public class onGigDataServiceImpl implements onGigDataService {
 		  //Get the content node in the JCR	
 		  Node content = root.getNode(BASE);
 		                      
-		 //Determine if the content/categories node exists
+		
 		 Node categoriesRoot = null;
 		 int custRec = doesDataExist(content, "CategoriesData");
-		
+
 		 //-1 means that content/categories does not exist
 		 if (custRec == -1){
 		     //content/categories does not exist -- create it
@@ -116,8 +110,6 @@ public class onGigDataServiceImpl implements onGigDataService {
 		   int custId = custRec+1; //assign a new id to the categories node
 		          
 		   //Check if the type of the node - category/countries/cities 
-		   
-		  
 		   Node categoryNode;
 		   int checkTypecategory = doesDataExist(categoriesRoot,data.get(0).getType());   
 		   
@@ -135,16 +127,13 @@ public class onGigDataServiceImpl implements onGigDataService {
 			   Node categoryItem ;
 			   //Check if the node exists and if not save the node 
 			   String title = data.get(i).getTitle();
-			   String titleNodeName = title.replace("/", "or");
-			   
+			   String titleNodeName = title;
+			 
 			   int nodeitemExists = doesDataExist(categoryNode, titleNodeName);
 			   if(nodeitemExists == -1)
 			   {
-				   String newTitleName = data.get(i).getTitle();
-				   
-				   
-				   String finalTeamNode = newTitleName.replace("/", "or");
-				categoryItem = categoryNode.addNode(finalTeamNode, "nt:unstructured");
+				   String TitleName = data.get(i).getTitle();
+				   	categoryItem = categoryNode.addNode(TitleName, "nt:unstructured");
 				   
 				   categoryItem.setProperty("title", data.get(i).getTitle());
 				   
@@ -179,39 +168,39 @@ public class onGigDataServiceImpl implements onGigDataService {
 				        	{
 				        		
 				        		titleofNode = prop.getValue().getString();
-				        		//logger.info("Title"+titleofNode);
+				        		
 				        		if(!titleofNode.equalsIgnoreCase(titleNodeName))
 				        				{
 				        			
 				        			categoryItem.getProperty(titleofNode).remove();
 				        			categoryItem.setProperty("title", titleNodeName);
-				        			//logger.info("PROPERTY CHANGED title: "+titleNodeName);
+				        			
 				        				}
 				        		
 				        	}else if(prop.getName().equalsIgnoreCase("url"))
 				        	{
 				        		
 				        		country_URL = prop.getValue().getString();
-				        		//logger.info("countryURL"+country_URL);
+				        	
 				        		if(!country_URL.equalsIgnoreCase(data.get(i).getUrl().toString()))
 		        				{
 				        			
 				        			categoryItem.getProperty("url").remove();
 				        			categoryItem.setProperty("url", data.get(i).getUrl());
-				        			//logger.info("PROPERTY CHANGED Uri"+categoryItem.getProperty("url").toString());
+				        		
 		        				}
 				        		
 				        	}else if (prop.getName().equalsIgnoreCase("number_of_jobs"))
 				        	{
 				        		number_of_jobs = Integer.parseInt(prop.getValue().toString());
-				        		//logger.info("numberOfJobs"+number_of_jobs);
+				        	
 				        		int noOfJobs = data.get(i).getNum_jobs();
 				        		if(number_of_jobs != noOfJobs)
 		        				{
 				        			
 				        			categoryItem.getProperty("number_of_jobs").remove();
 				        			categoryItem.setProperty("number_of_jobs", data.get(i).getNum_jobs());
-				        			//logger.info("PROPERTY CHANGED noOfJobs:"+categoryItem.getProperty("number_of_jobs").toString());
+				        		
 		        				}
 				        		
 				        	}
@@ -303,8 +292,9 @@ public class onGigDataServiceImpl implements onGigDataService {
         	String linkURL = jArrayCategories.getJSONObject(i).getString("url");
         	String type = jArrayCategories.getJSONObject(i).getString("type");
         	String title = jArrayCategories.getJSONObject(i).getString("title");
+        	String titleName = title.replace("/", "or");
         	int num_jobs = Integer.parseInt(jArrayCategories.getJSONObject(i).getString("num_jobs"));
-        	list.add(new onGigDataItem(linkURL, title, type, num_jobs));
+        	list.add(new onGigDataItem(linkURL, titleName, type, num_jobs));
         	
         }
         for(int i=0;i<jArrayCountries.length();i++)
@@ -333,7 +323,7 @@ public class onGigDataServiceImpl implements onGigDataService {
     	
 	}
 	public ArrayList<onGigDataItem> getdataConnection(String baseURL) {
-		// TODO Auto-generated method stub
+		
 		// Implement custom handling of GET requests 
 		logger.info(" goDataConnection method");
 		
@@ -351,7 +341,7 @@ public class onGigDataServiceImpl implements onGigDataService {
 			   
 			    connection.setUseCaches(false);
 			    
-			    //OutputStream response = connection.getOutputStream();
+			    
 			    InputStream response = connection.getInputStream();
 			    
 			    scanner = new Scanner(response);
@@ -388,20 +378,14 @@ public class onGigDataServiceImpl implements onGigDataService {
 	public CareersTeamItem getCareersTeamData(String title) {
 		// TODO Auto-generated method stub
 		//fetch the values of the node 
-		logger.info("getCareersTeamData");
 		
-		//Map<String, Object> param = new HashMap<String, Object>(); 
 		final Map<String, Object> authInfo = Collections.singletonMap( ResourceResolverFactory.SUBSERVICE, (Object) SERVICE_ACCOUNT_IDENTIFIER);
-	   // param.put(ResourceResolverFactory.SUBSERVICE, "writeService");
-
-		        
-		
+	   
 		try { 
             
 		    //Invoke the adaptTo method to create a Session 
 		    ResourceResolver resourceResolver = resolverFactory.getServiceResourceResolver(authInfo);
-		    session = resourceResolver.adaptTo(Session.class);
-		     
+		    session = resourceResolver.adaptTo(Session.class); 
 		    if(resourceResolver != null)
 				logger.info(resourceResolver.getUserID());
 			else
@@ -414,9 +398,7 @@ public class onGigDataServiceImpl implements onGigDataService {
 		                      
 		 //Determine if the content/categories node exists
 		 Node categoriesRoot = null;
-		 int custRec = doesDataExist(content, "CategoriesData");
-		
-		 //-1 means that content/categories does not exist
+		 int custRec = doesDataExist(content, "CategoriesData");		 
 		 if (custRec == -1){
 		     //content/categories does not exist -- create it
 			 
@@ -426,41 +408,33 @@ public class onGigDataServiceImpl implements onGigDataService {
 		   //content/categories does exist -- retrieve it
 		 {
 		   categoriesRoot = content.getNode("CategoriesData");
-		 }
-		 
-		   int custId = custRec+1; //assign a new id to the categories node
-		          
-		   
-		   Node categoryNode = null;
-		   int checkTypecategory = doesDataExist(categoriesRoot,"category");   
+		 }	
+		 	Node categoryNode = null;
+		 	int checkTypecategory = doesDataExist(categoriesRoot,"category");   
 		 
 		  //-1 means that the content/categories doesn't exists
 		   if(checkTypecategory == -1)
 		   {
 			  logger.info("category node does not exists");
 		   }
-		   else{
+		   else
+		   {
 			   categoryNode = categoriesRoot.getNode("category");
 		   }
 
 			   Node categoryItem = null;
 			   //Check if the node exists and if not save the node 
 			   int nodeitemExists = doesDataExist(categoryNode, title);
-			  			   if(nodeitemExists == -1)
+			  	if(nodeitemExists == -1)
 			   {
 				   logger.info("Node with the Team name does not exists in the Repository");
 			   }
 			   else if(nodeitemExists == 0)
-			   {
-				   
+			   {   
 				//Fetch the values from the node 
 				   categoryItem = categoryNode.getNode(title);
-				   String imgSrc = null;
 				   String number_of_jobs = null;
 				   String url = null;
-				 
-				  
-				  
 				   for(PropertyIterator propeIterator = categoryItem.getProperties() ; propeIterator.hasNext();)  
 				   {  
 				        Property prop= propeIterator.nextProperty();  
@@ -484,10 +458,7 @@ public class onGigDataServiceImpl implements onGigDataService {
 				        	}
 				               
 				        }  
-				   }
-				   
-				   
-				  
+				   }  
 				   CareersTeamItem dataItem = new CareersTeamItem(null, title, url, url, number_of_jobs,null);
 				  return dataItem;
 				   
@@ -502,16 +473,10 @@ public class onGigDataServiceImpl implements onGigDataService {
 		return careersTeamItem;
 	}
 	public CareersLocationItem getCareersLocationData(String countryName, String continent) {
-		// TODO Auto-generated method stub
 		//fetch the values of the node 
-			logger.info("INSIDE getCareersLocationData method  "+countryName +continent);
-				
-				//Map<String, Object> param = new HashMap<String, Object>(); 
+			
 				final Map<String, Object> authInfo = Collections.singletonMap( ResourceResolverFactory.SUBSERVICE, (Object) SERVICE_ACCOUNT_IDENTIFIER);
-			   // param.put(ResourceResolverFactory.SUBSERVICE, "writeService");
-
-				        
-				
+			  
 				try { 
 		            
 				    //Invoke the adaptTo method to create a Session 
@@ -608,9 +573,7 @@ public class onGigDataServiceImpl implements onGigDataService {
 						  
 						   careersLocationItem = new CareersLocationItem(country_URL,country_name,number_of_jobs,continent);
 						 return careersLocationItem;
-						   
-					  
-					   }
+					   	}
 					   
 				}catch(Exception ex)
 				{
@@ -620,97 +583,6 @@ public class onGigDataServiceImpl implements onGigDataService {
 				//set the values to the careers Data item and return.
 				return careersLocationItem;
 						}
-	
-	
-	public String checkJcrRepository(String hrefPath)
-    {
-    	final Map<String, Object> authInfo = Collections.singletonMap( ResourceResolverFactory.SUBSERVICE, (Object) SERVICE_ACCOUNT_IDENTIFIER);
- 	   // param.put(ResourceResolverFactory.SUBSERVICE, "writeService");
-    	Boolean itemExists = null;
-    	
-    	String externalLink = null;
- 		
- 		try { 
-             
- 		    //Invoke the adaptTo method to create a Session 
- 		    ResourceResolver resourceResolver = resolverFactory.getServiceResourceResolver(authInfo);
- 		    session = resourceResolver.adaptTo(Session.class);
- 		     
- 		    if(resourceResolver != null)
- 				logger.info(resourceResolver.getUserID());
- 			else
- 				logger.info("Could not obtain a CRX User for the Service: " + SERVICE_ACCOUNT_IDENTIFIER);
- 		  //Create a node that represents the root node
- 		  Node root = session.getRootNode(); 
- 		                     
- 		  //Get the content node in the JCR
- 		  Node content = root.getNode(BASE);
- 		 Node externalNode ;
- 		 int custRec = doesDataExist(content, "externalLinks");
-		 logger.info("if externalLink node exits : "+custRec);
-		 //-1 means that content/categories does not exist
-		 if (custRec == -1){
-		     //content/categories does not exist -- create it
-			 
-			 externalNode = content.addNode("externalLinks","sling:OrderedFolder");
-		 }
-		 else
-		   //content/categories does exist -- retrieve it
-		 {
-			 externalNode = content.getNode("externalLinks");
-		 }
- 		  
- 		  
- 		 //Determine if the content/categories node exists
- 		 Node externalLinkNode = null;
- 		 int externalRec = doesDataExist(externalNode, hrefPath);
- 		
- 		 
- 		 if (externalRec == -1){
- 			
- 		   logger.info("node does not exist");
- 		 }
- 		 else
- 		   //content/categories does exist -- retrieve it
- 		 {
- 		   externalLinkNode = externalNode.getNode(hrefPath);
- 		 }
-   
- 				   for(PropertyIterator propeIterator = externalLinkNode.getProperties() ; propeIterator.hasNext();)  
- 				   {  
- 				        Property prop= propeIterator.nextProperty();  
- 				        if(prop.isMultiple()) // This condition checks for properties whose type is String[](String array)  
- 				        {  
- 				             Property propVal = externalLinkNode.getProperty(prop.getName());     
- 				             Value[] values = propVal.getValues();  
- 				             for(Value val: values){  
- 				            // this will output the value in string format  
- 				        }  
- 				        }else if(!prop.getDefinition().isMultiple()){
- 				        	
- 				        	 if(prop.getName().equalsIgnoreCase("isAllowed"))
- 				        	{
- 				        		itemExists = Boolean.valueOf(prop.getValue().getString());
- 				        		logger.info(itemExists.toString());
- 				        		
- 				        	}else if (prop.getName().equalsIgnoreCase("externalLink"))
- 				        	{
- 				        		
- 				        		externalLink = prop.getValue().toString();
- 				        		logger.info(externalLink);
- 				        	}
- 				               
- 				        }  
- 				   }
- 				 
- 				
- 		}catch(Exception ex)
- 		{
- 			ex.printStackTrace();
- 		}
-		return externalLink;
-    }
-    
 	
 }
 	
