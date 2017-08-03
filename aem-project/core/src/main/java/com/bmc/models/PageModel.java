@@ -122,11 +122,22 @@ public class PageModel {
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
        // bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
-        bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
+//        bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
         bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
+        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+            // todo: setup form object
+            bmcMeta.initFormMeta();
+        }
+        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+            // todo: setup form object using parent form page properties
+            bmcMeta.initFormMeta();
+            bmcMeta.getPage().setPurl("true");
+        }
+
         if(resourcePage.getPath().contains("/support/")){
+            bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
             Map<String, String> profile = getProfile(resource.getResourceResolver());
@@ -141,7 +152,7 @@ public class PageModel {
             }
 
         }else{
-            bmcMeta.getSupport().setEnableAlerts(false);
+//            bmcMeta.getSupport().setEnableAlerts(false);
         }
 
         return bmcMeta;

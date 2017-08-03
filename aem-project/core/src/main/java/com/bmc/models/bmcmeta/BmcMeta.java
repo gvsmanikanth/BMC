@@ -1,12 +1,8 @@
 package com.bmc.models.bmcmeta;
 
-import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Map;
 
 /**
  * Created by elambert on 5/26/17.
@@ -22,10 +18,18 @@ public class BmcMeta {
     public BmcMeta() {
         setPage(new PageMeta());
         setSite(new SiteMeta());
-        setUser(new UserMeta());
-        setSupport(new SupportMeta());
     }
 
+    public void initSupport() {
+        setSupport(new SupportMeta());
+        setUser(new UserMeta());
+    }
+
+    public void initFormMeta() {
+        setFormMeta(new FormMeta());
+    }
+
+    private FormMeta formMeta;
     private PageMeta page;
     private SiteMeta site;
     private UserMeta user;
@@ -61,5 +65,13 @@ public class BmcMeta {
 
     public void setSupport(SupportMeta support) {
         this.support = support;
+    }
+
+    public FormMeta getFormMeta() {
+        return formMeta;
+    }
+
+    public void setFormMeta(FormMeta formMeta) {
+        this.formMeta = formMeta;
     }
 }
