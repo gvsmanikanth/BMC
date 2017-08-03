@@ -3,7 +3,7 @@
     <filter root="/apps/bmc"/>
 
     <!-- TODO: replace this with "merge" after initial editable template dev/deployments -->
-    <filter root="/conf/bmc" mode="update"/>
+    <filter root="/conf/bmc" mode="merge"/>
 
 
     <!--<filter root="/home/users/system/bmc" mode="update"/>-->
