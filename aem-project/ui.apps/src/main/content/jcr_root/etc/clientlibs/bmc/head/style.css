@@ -3608,6 +3608,12 @@ span .chatbtn {
 .divider-secondary {
   border-top: 1px dashed #cccccc; }
 
+/* Component Divider */
+.dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
+  display: block;
+  margin: 0;
+  padding: .65rem 0; }
+
 /* jQuery Dropdown: A simple dropdown plugin
  *
  * Contribute: https://github.com/claviska/jquery-dropdown
