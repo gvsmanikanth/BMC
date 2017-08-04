@@ -127,12 +127,21 @@ public class PageModel {
         bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
-            // todo: setup form object
-            bmcMeta.initFormMeta();
+            try {
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
         }
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
             // todo: setup form object using parent form page properties
-            bmcMeta.initFormMeta();
+            try {
+                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
             bmcMeta.getPage().setPurl("true");
         }
 
@@ -156,6 +165,16 @@ public class PageModel {
         }
 
         return bmcMeta;
+    }
+
+    private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
+        if (form != null) {
+            bmcMeta.initFormMeta();
+            bmcMeta.getFormMeta().setId(form.getProperty("elqCampaignID").getString());
+            bmcMeta.getFormMeta().setName(form.getProperty("formname").getString());
+            bmcMeta.getFormMeta().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
+            bmcMeta.getFormMeta().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
+        }
     }
 
     private Map<String, String> getProfile(ResourceResolver resolver) {
