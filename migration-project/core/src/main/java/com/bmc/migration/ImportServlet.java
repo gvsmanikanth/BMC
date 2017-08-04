@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.json.JsonObject;
+import org.apache.jackrabbit.value.DateValue;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
@@ -24,6 +25,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Calendar;
 
 @SlingServlet(resourceTypes = "/apps/bmc-migration/components/structure/page", selectors = "import", methods = {"POST"})
 public class ImportServlet extends SlingAllMethodsServlet {
@@ -42,6 +44,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     private static final String RESOURCE_TYPE = "sling:resourceType";
 
     private Node currentPage;
+    private Node currentForm;
 
     private SlingHttpServletResponse response;
 
@@ -174,21 +177,22 @@ public class ImportServlet extends SlingAllMethodsServlet {
         terms.setProperty("textIsRich", "true");
         Node fragment = form.addNode("experiencefragment");
         fragment.setProperty(RESOURCE_TYPE, "cq/experience-fragments/editor/components/experiencefragment");
+        currentForm = form;
     }
 
     private String getPath(String url, Session session) {
         String pageName = url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
         String f = pageName.substring(1,2);
         try {
-            if (!session.nodeExists("/content/bmc-migration/forms/" + f)) {
-                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, PAGE, session);
-                Node folderContent = folder.addNode("jcr:content", PAGECONTENT);
-                folderContent.setProperty("jcr:title", f);
+            if (!session.nodeExists("/content/bmc/language-masters/en/forms")) {
+                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, "nt:folder", session);
+//                Node folderContent = folder.addNode("jcr:content", PAGECONTENT);
+//                folderContent.setProperty("jcr:title", f);
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
-        return "/content/bmc-migration/forms/" + f + pageName;
+        return "/content/bmc/language-masters/en/forms" + pageName;
     }
 
     private void processItemFields(JSONObject item, Node jcrNode, Node root, Session session, SlingHttpServletRequest request, int depth) {
@@ -326,8 +330,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         if (name.equals("content")) {
                             container.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
-                        if (container.hasProperty("migration_content_type")) {
-                            String contentType = container.getProperty("migration_content_type").getString();
+                        if (propertyNode.hasProperty("migration_content_type")) {
+                            String contentType = propertyNode.getProperty("migration_content_type").getString();
                             //TODO: if primary column this is h2 if secondary this is h3
                             if (name.equals("heading") && contentType.equals("ContentArea")) {
                                 container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
@@ -346,6 +350,66 @@ public class ImportServlet extends SlingAllMethodsServlet {
                                     cta.setProperty("buttonURL", value);
                                 }
                             }
+
+                            // Handle form String properties
+                            if (contentType.equals("Form-2")) {
+                                switch (name) {
+                                    case "C_Product_Interest1":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "elqCampaignID":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "campaignid":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "C_Lead_Business_Unit1":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "productLine1":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "C_Lead_Offer_Most_Recent1":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "ex_assettype":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "ex_act":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "ex_assetname":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "formname":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "formid":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "leadDescription1":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "emailid":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "PURLRedirectPage":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "activePURLPattern":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "emailSubjectLine":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                    case "recipient":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                }
+                            }
+
+
+
                         }
                         if (name.equals("PURLBody") && !value.isEmpty()) {
                             Node ty = getThankYouPage();
@@ -356,6 +420,46 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     } else if (type.equals("Boolean")) {
                         Boolean bool = field.getBoolean("Field Value");
                         propertyNode.setProperty(name, bool);
+                        // Handle form Boolean properties
+                        String contentType = container.getProperty("migration_content_type").getString();
+                        //TODO: if primary column this is h2 if secondary this is h3
+                        if (contentType.equals("Form-2")) {
+                            switch (name) {
+                                case "disableDemandbase":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "AWS_Trial":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "LMA_license":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "C_OptIn":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "C_Contact_Me1":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "activePURLRedirect":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "allowFormSkip":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "isNonLeadGenForm":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "isParallelEmailForm":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "bypassOSB":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                                case "submitToWebMethods":
+                                    currentForm.setProperty(name, value);
+                                    break;
+                            }
+                        }
                     }
             }
         } catch (JSONException|RepositoryException e) {
@@ -586,17 +690,20 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     // determine whether node exists
                     // and create XF node with fields if not
                     if (!session.nodeExists(path)) {
+                        JcrUtil.createPath("/content/experience-fragments/bmc/language-masters/en/forms", "sling:Folder", session);
                         Node xfNode = JcrUtil.createPath(path, PAGE, session);
                         Node xfContent = xfNode.addNode(JCR_CONTENT, PAGECONTENT);
                         xfContent.setProperty("cq:template", "/libs/cq/experience-fragments/components/experiencefragment/template");
                         xfContent.setProperty("jcr:title", name);
                         xfContent.setProperty(RESOURCE_TYPE, "cq/experience-fragments/components/experiencefragment");
+                        xfContent.setProperty("cq:lastModified", new DateValue(Calendar.getInstance()));
                         Node fragment = xfNode.addNode(id, PAGE);
                         Node content = fragment.addNode(JCR_CONTENT, PAGECONTENT);
                         content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset");
                         content.setProperty("cq:xfMasterVariation", true);
                         content.setProperty("jcr:title", name);
                         content.setProperty(RESOURCE_TYPE, "bmc/components/structure/xfpage");
+                        content.setProperty("cq:lastModified", new DateValue(Calendar.getInstance()));
                         Node root = content.addNode("root");
                         root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
                         node = root.addNode("field_set");
