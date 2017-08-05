@@ -1,0 +1,32 @@
+[{
+			"Value" : "",
+			"Text" : "-- 選択してください --"
+		}, {
+			"Value" : "CH2",
+			"Text" : "中部"
+		}, {
+			"Value" : "CH3",
+			"Text" : "中国地方"
+		}, {
+			"Value" : "HO0",
+			"Text" : "北海道"
+		}, {
+			"Value" : "KA1",
+			"Text" : "関東"
+		},{
+			"Value":"KI0",
+			"Text":"Kinki"
+		}, {
+			"Value" : "KYU",
+			"Text" : "九州"
+		}, {
+			"Value":"Ok0",
+			"Text":"Okinawa"
+		},{
+			"Value" : "SH2",
+			"Text" : "四国"
+		}, {
+			"Value" : "T?0",
+			"Text" : "東北"
+		} 
+	]
