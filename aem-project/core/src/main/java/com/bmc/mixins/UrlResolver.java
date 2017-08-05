@@ -52,7 +52,7 @@ public interface UrlResolver {
         if (urlOrPath == null)
             return Optional.empty();
 
-        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
+        ResourceProvider resourceProvider = this::getResourceResolver;
 
         // assume these are always fine as is
         if (urlOrPath.startsWith("http") || urlOrPath.startsWith("#") || urlOrPath.contains(".html"))

@@ -1,6 +1,6 @@
 package com.bmc.util;
 
-import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.ResourceProvider;
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.adapter.Adaptable;
@@ -13,7 +13,7 @@ import java.util.stream.StreamSupport;
 /**
  * Static helper providing {@link Resource} related convenience methods
  *
- * @see AdaptableResourceProvider
+ * @see ResourceProvider
  */
 public interface ResourceHelper {
     /**

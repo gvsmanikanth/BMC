@@ -1,7 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related Items Component properties (components/content/related-items) for Use
  */
-public class RelatedItems extends WCMUsePojo implements AdaptableResourceProvider, MultifieldDataProvider {
+public class RelatedItems extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider {
     enum LinkType {
         InternalPath(1),
         InternalAsset(2),

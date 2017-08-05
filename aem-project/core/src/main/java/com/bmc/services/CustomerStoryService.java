@@ -1,8 +1,7 @@
 package com.bmc.services;
 
-import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.ModelFactory;
-import com.bmc.mixins.UrlResolver;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.CustomerStoryFilter;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
@@ -21,7 +20,6 @@ import org.apache.sling.api.resource.ValueMap;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 @Component(label = "CustomerStory Service",
         description = "Helper Service for CustomerStoryList component",
@@ -33,14 +31,14 @@ public class CustomerStoryService  {
     private final static String SPOTLIGHT_FRAGMENT_PATH = "root/experiencefragment";
     private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
-    public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
+    public List<CustomerStoryFilter> getFilters(ResourceProvider resourceProvider)  {
         return resourceProvider.streamTagChildren(FILTER_TAG_ROOT)
                 .map(this::getFilter)
                 .collect(Collectors.toList());
     }
 
     public CustomerStoryCard getStoryCard(String pagePath, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+        ResourceProvider resourceProvider = modelFactory::getResourceResolver;
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;
@@ -53,7 +51,7 @@ public class CustomerStoryService  {
     }
 
     public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+        ResourceProvider resourceProvider = modelFactory::getResourceResolver;
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;

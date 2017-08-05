@@ -15,7 +15,7 @@ import java.util.stream.Stream;
  *
  * @see ResourceHelper
  */
-public interface AdaptableResourceProvider {
+public interface ResourceProvider {
     /**
      * Returns a {@link Page} located at {@code pagePath}, if appropriate, or null otherwise
      * @param pagePath the jcr path to the page
@@ -124,7 +124,7 @@ public interface AdaptableResourceProvider {
         return ResourceHelper.streamChildren(getResource(resourcePath));
     }
 
-    static AdaptableResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
-    static AdaptableResourceProvider from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
+    static ResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
+    static ResourceProvider from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

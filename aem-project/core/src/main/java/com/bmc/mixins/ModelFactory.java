@@ -93,7 +93,7 @@ public interface ModelFactory {
      * @return a stream of non-null model instances which were adapted from the resource children
      */
     default <T> Stream<T> streamModelChildren(String resourcePath, Class<T> cls) {
-        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
+        ResourceProvider resourceProvider = this::getResourceResolver;
         return ModelHelper.streamModelChildren(resourceProvider.getResource(resourcePath), cls);
     }
 
@@ -107,7 +107,7 @@ public interface ModelFactory {
      * @return a stream of non-null model instances which were adapted from the resource children
      */
     default <T> Stream<T> streamModelChildren(String resourcePath, Function<Resource,Map<String, Object>> getAdditionalValues, Class<T> cls) {
-        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
+        ResourceProvider resourceProvider = this::getResourceResolver;
         return ModelHelper.streamModelChildren(resourceProvider.getResource(resourcePath), getAdditionalValues, cls);
     }
 
