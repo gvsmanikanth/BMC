@@ -1,11 +1,12 @@
 package com.bmc.services;
 
-import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.ModelFactory;
-import com.bmc.mixins.UrlResolver;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.CustomerStoryFilter;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
+import com.bmc.util.ModelHelper;
+import com.bmc.util.ResourceHelper;
 import com.bmc.util.StringHelper;
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
@@ -19,7 +20,6 @@ import org.apache.sling.api.resource.ValueMap;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 @Component(label = "CustomerStory Service",
         description = "Helper Service for CustomerStoryList component",
@@ -31,46 +31,45 @@ public class CustomerStoryService  {
     private final static String SPOTLIGHT_FRAGMENT_PATH = "root/experiencefragment";
     private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
-    public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
+    public List<CustomerStoryFilter> getFilters(ResourceProvider resourceProvider)  {
         return resourceProvider.streamTagChildren(FILTER_TAG_ROOT)
-                .map(tag->getFilter(tag, resourceProvider))
+                .map(this::getFilter)
                 .collect(Collectors.toList());
     }
 
     public CustomerStoryCard getStoryCard(String pagePath, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+        ResourceProvider resourceProvider = modelFactory::getResourceResolver;
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, modelFactory::getResourceResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
-        return modelFactory.getModel(page, map, CustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, CustomerStoryCard.class);
     }
 
     public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+        ResourceProvider resourceProvider = modelFactory::getResourceResolver;
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;
 
-        UrlResolver urlResolver = modelFactory::getResourceResolver;
-        backgroundImageSrc = urlResolver.resolveHref(backgroundImageSrc, false).orElse(null);
+        backgroundImageSrc = StringHelper.resolveHref(backgroundImageSrc).orElse(null);
         if (backgroundImageSrc == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, urlResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
         map.put("backgroundImageSrc", backgroundImageSrc);
 
-        return modelFactory.getModel(page, map, FeaturedCustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
-    private Map<String, Object> getCustomerStoryCardValueMap(Page page, UrlResolver urlResolver) {
+    private Map<String, Object> getCustomerStoryCardValueMap(Page page) {
         Map<String, Object> map = new HashMap<>();
         ValueMap pageMap = page.getProperties();
 
@@ -83,7 +82,7 @@ public class CustomerStoryService  {
         if (desc != null)
             map.put("description", desc);
 
-        String logoSrc = urlResolver.resolveHref(pageMap.get("cardLogoSrc", ""), true).orElse(null);
+        String logoSrc = StringHelper.resolveHref(pageMap.get("cardLogoSrc", "")).orElse(null);
         if (logoSrc != null)
             map.put("logoSrc", logoSrc);
 
@@ -121,11 +120,11 @@ public class CustomerStoryService  {
         return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
-    private CustomerStoryFilter getFilter(Tag tag, AdaptableResourceProvider resourceProvider) {
+    private CustomerStoryFilter getFilter(Tag tag) {
         if (tag == null)
             return null;
 
-        List<NameValuePair> options = resourceProvider.streamTagChildren(tag)
+        List<NameValuePair> options = ResourceHelper.streamTagChildren(tag)
                 .map(this::getTagOption)
                 .collect(Collectors.toList());
 
