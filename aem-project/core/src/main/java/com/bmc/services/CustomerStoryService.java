@@ -6,6 +6,7 @@ import com.bmc.mixins.UrlResolver;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.CustomerStoryFilter;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
+import com.bmc.util.ResourceHelper;
 import com.bmc.util.StringHelper;
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
@@ -33,7 +34,7 @@ public class CustomerStoryService  {
 
     public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
         return resourceProvider.streamTagChildren(FILTER_TAG_ROOT)
-                .map(tag->getFilter(tag, resourceProvider))
+                .map(this::getFilter)
                 .collect(Collectors.toList());
     }
 
@@ -120,11 +121,11 @@ public class CustomerStoryService  {
         return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
-    private CustomerStoryFilter getFilter(Tag tag, AdaptableResourceProvider resourceProvider) {
+    private CustomerStoryFilter getFilter(Tag tag) {
         if (tag == null)
             return null;
 
-        List<NameValuePair> options = resourceProvider.streamTagChildren(tag)
+        List<NameValuePair> options = ResourceHelper.streamTagChildren(tag)
                 .map(this::getTagOption)
                 .collect(Collectors.toList());
 
