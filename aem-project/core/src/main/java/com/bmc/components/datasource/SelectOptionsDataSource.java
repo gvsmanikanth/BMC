@@ -26,7 +26,7 @@ import java.util.stream.StreamSupport;
  *      emptyText="Select item to add"
  *      multiple="true"
  *      dataPath="/path/to/parent/of/options/nodes"
- *      useNameAsValue="false"
+ *      useNameAsValue="true"
  *      textProperty="text"
  *      valueProperty="value"
  *      name="./fieldName">
@@ -51,7 +51,7 @@ public class SelectOptionsDataSource implements DataSource {
         if (contextProperties != null) {
             this.textProperty = contextProperties.get("textProperty", "text");
             this.valueProperty = contextProperties.get("valueProperty", "value");
-            this.useNameAsValue = contextProperties.get("useNameAsValue", false);
+            this.useNameAsValue = contextProperties.get("useNameAsValue", true);
         }
 
         items = StreamSupport.stream(resource.getChildren().spliterator(), false)
@@ -68,9 +68,8 @@ public class SelectOptionsDataSource implements DataSource {
         ValueMap sourceMap = sourceResource.getValueMap();
         String text = StringHelper.coalesceStringValue(sourceMap, textProperty, NameConstants.PN_TITLE)
                 .orElse(sourceResource.getName());
-        String value = useNameAsValue
-                ? sourceResource.getName()
-                : StringHelper.coalesceStringValue(sourceMap, valueProperty).orElse(text);
+        String value = StringHelper.coalesceStringValue(sourceMap, valueProperty)
+                .orElse(useNameAsValue ? sourceResource.getName() : text);
 
         ValueMap map = new ValueMapDecorator(new HashMap<>());
         map.put("text", text);
