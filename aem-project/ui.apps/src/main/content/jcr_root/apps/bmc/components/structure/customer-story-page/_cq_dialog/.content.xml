@@ -92,6 +92,76 @@
                             </column>
                         </items>
                     </card>
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            cq:showOnCreate="false"
+                            jcr:title="Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            sling:orderBefore="advanced">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <metadata
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Metadata"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <company-size
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Company Size"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyOption="true"
+                                                    multiple="false"
+                                                    metadataName="company-size"
+                                                    name="./companySize">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="topics"/>
+                                            </company-size>
+                                            <industries
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Industries"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select industry to add"
+                                                    multiple="true"
+                                                    metadataName="industry"
+                                                    name="./industries">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="industries"/>
+                                            </industries>
+                                            <topics
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Topics"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select topic to add"
+                                                    multiple="true"
+                                                    metadataName="topic"
+                                                    name="./topics">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="topics"/>
+                                            </topics>
+                                        </items>
+                                    </metadata>
+                                </items>
+                            </column>
+                        </items>
+                    </metadata>
                 </items>
             </tabs>
         </items>
