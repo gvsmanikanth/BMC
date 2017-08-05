@@ -58,9 +58,9 @@ public interface AdaptableResourceProvider {
      * @return a {@link Resource} instance, or null
      */
     default Resource getResource(String resourcePath) {
-        return (resourcePath != null && !resourcePath.isEmpty())
-                ? getResourceResolver().getResource(resourcePath)
-                : null;
+        ResourceResolver resolver = getResourceResolver();
+        return (resolver == null || resourcePath == null || resourcePath.isEmpty())
+                ? null : resolver.getResource(resourcePath);
     }
 
     /**
@@ -174,5 +174,6 @@ public interface AdaptableResourceProvider {
     }
 
     static AdaptableResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
+    static AdaptableResourceProvider from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

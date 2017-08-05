@@ -7,10 +7,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.wrappers.CompositeValueMap;
+import org.apache.sling.models.annotations.Model;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -25,7 +27,11 @@ public interface ModelFactory {
         if (resourcePath == null || resourcePath.isEmpty())
             return null;
 
-        Resource resource = getResourceResolver().getResource(resourcePath);
+        ResourceResolver resolver = getResourceResolver();
+        if (resolver == null)
+            return null;
+
+        Resource resource = resolver.getResource(resourcePath);
         return getModel(resource, cls);
     }
 
@@ -54,8 +60,10 @@ public interface ModelFactory {
             return getModel(resourcePath, cls);
         if (resourcePath == null || resourcePath.isEmpty())
             return null;
-
-        return getModel(getResourceResolver().getResource(resourcePath), additionalValues, cls);
+        ResourceResolver resolver = getResourceResolver();
+        if (resolver == null)
+            return null;
+        return getModel(resolver.getResource(resourcePath), additionalValues, cls);
     }
 
     /**
@@ -168,5 +176,6 @@ public interface ModelFactory {
     }
 
     static ModelFactory from(ResourceResolver resourceResolver) { return () -> resourceResolver; }
+    static ModelFactory from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

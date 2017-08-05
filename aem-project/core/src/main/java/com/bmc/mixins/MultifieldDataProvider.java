@@ -63,9 +63,10 @@ public interface MultifieldDataProvider {
      * @see #getMultiFieldNodes(String)
      */
     default Stream<Resource> streamMultiFieldNodes(String nodeStoreName) {
+        Resource resource = getResource();
         Resource container = null;
-        if (nodeStoreName != null && !nodeStoreName.isEmpty())
-            container = getResource().getChild(nodeStoreName);
+        if (resource != null && nodeStoreName != null && !nodeStoreName.isEmpty())
+            container = resource.getChild(nodeStoreName);
 
         return  (container != null)
                 ? StreamSupport.stream(container.getChildren().spliterator(), false)
@@ -119,10 +120,14 @@ public interface MultifieldDataProvider {
      * @see #getMultiFieldJsonObjects(String)
      */
     default Stream<ValueMap> streamMultiFieldJsonObjects(String jsonStoreName) {
-        String[] jsonStrings = (jsonStoreName != null && !jsonStoreName.isEmpty())
-                ? getResource().getValueMap().get(jsonStoreName, new String[0])
-                : new String[0];
+        if (jsonStoreName == null || jsonStoreName.isEmpty())
+            return Stream.empty();
 
+        Resource resource = getResource();
+        if (resource == null)
+            return Stream.empty();
+
+        String[] jsonStrings = resource.getValueMap().get(jsonStoreName, new String[0]);
         return Stream.of(jsonStrings).flatMap(ValueMapFactory::fromJson);
     }
 

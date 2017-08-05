@@ -30,7 +30,7 @@ public interface UrlResolver {
         if (urlOrPath == null)
             return Optional.empty();
 
-        AdaptableResourceProvider resourceProvider = AdaptableResourceProvider.from(getResourceResolver());
+        AdaptableResourceProvider resourceProvider = this::getResourceResolver;
 
         // assume these are always fine as is
         if (urlOrPath.startsWith("http") || urlOrPath.startsWith("#") || urlOrPath.contains(".html"))
@@ -66,5 +66,6 @@ public interface UrlResolver {
     }
 
     static UrlResolver from(ResourceResolver resolver) { return () -> resolver; }
+    static UrlResolver from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }
