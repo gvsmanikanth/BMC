@@ -80,7 +80,7 @@ public class SelectOptionsDataSource implements DataSource {
             map.put("disabled", disabled);
         Boolean selected = sourceMap.get("selected", Boolean.class);
         if (selected != null)
-            map.put("selected", disabled);
+            map.put("selected", selected);
 
         return new ValueMapResource(sourceResource.getResourceResolver(),
                 sourceResource.getPath(), sourceResource.getResourceType(), map);
