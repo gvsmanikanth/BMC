@@ -1,5 +1,6 @@
 package com.bmc.mixins;
 
+import com.bmc.util.ResourceHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
@@ -7,14 +8,14 @@ import org.apache.sling.api.adapter.Adaptable;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 
-import java.util.Objects;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
- * Mixin providing {@link Adaptable} instances of {@link Resource} via {@link #getResourceResolver}
+ * Mixin providing {@link Resource} and {@link Adaptable} instances from {@code resourcePath} via {@link #getResourceResolver}
+ *
+ * @see ResourceHelper
  */
-public interface AdaptableResourceProvider {
+public interface ResourceProvider {
     /**
      * Returns a {@link Page} located at {@code pagePath}, if appropriate, or null otherwise
      * @param pagePath the jcr path to the page
@@ -58,9 +59,9 @@ public interface AdaptableResourceProvider {
      * @return a {@link Resource} instance, or null
      */
     default Resource getResource(String resourcePath) {
-        return (resourcePath != null && !resourcePath.isEmpty())
-                ? getResourceResolver().getResource(resourcePath)
-                : null;
+        ResourceResolver resolver = getResourceResolver();
+        return (resolver == null || resourcePath == null || resourcePath.isEmpty())
+                ? null : resolver.getResource(resourcePath);
     }
 
     /**
@@ -78,22 +79,9 @@ public interface AdaptableResourceProvider {
 
         Page page = resource.adaptTo(Page.class);
         if (page != null)
-            return streamPageChildren(page);
+            return ResourceHelper.streamPageChildren(page);
 
-        return streamAdaptableChildren(resource, Page.class);
-    }
-
-    /**
-     * Streams {@link Page} children of the given {@link Page}
-     * @param page the {@link Page}
-     * @return a stream of {@link Page} instances
-     */
-    default Stream<Page> streamPageChildren(Page page) {
-        if (page == null)
-            return Stream.empty();
-
-        Iterable<Page> iterable = page::listChildren;
-        return StreamSupport.stream(iterable.spliterator(), false);
+        return ResourceHelper.streamAdaptableChildren(resource, Page.class);
     }
 
     /**
@@ -111,22 +99,9 @@ public interface AdaptableResourceProvider {
 
         Tag tag = resource.adaptTo(Tag.class);
         if (tag != null)
-            return streamTagChildren(tag);
+            return ResourceHelper.streamTagChildren(tag);
 
-        return streamAdaptableChildren(resource, Tag.class);
-    }
-
-    /**
-     * Streams {@link Tag} children of the given {@link Tag}
-     * @param tag the {@link Tag}
-     * @return a stream of {@link Tag} instances
-     */
-    default Stream<Tag> streamTagChildren(Tag tag) {
-        if (tag == null)
-            return Stream.empty();
-
-        Iterable<Tag> iterable = tag::listChildren;
-        return StreamSupport.stream(iterable.spliterator(), false);
+        return ResourceHelper.streamAdaptableChildren(resource, Tag.class);
     }
 
     /**
@@ -137,20 +112,7 @@ public interface AdaptableResourceProvider {
      * @return a stream of {@link T} instances
      */
     default <T extends Adaptable> Stream<T> streamAdaptableChildren(String resourcePath, Class<T> cls) {
-        return streamAdaptableChildren(getResource(resourcePath), cls);
-    }
-
-    /**
-     * Streams {@link Adaptable} instances of the given type, adapted from the given {@link Resource}
-     * @param resource the {@link Resource}
-     * @param cls the {@code Class<T>} instance
-     * @param <T> an implementation of {@link Adaptable}
-     * @return a stream of {@link T} instances
-     */
-    default <T extends Adaptable> Stream<T> streamAdaptableChildren(Resource resource, Class<T> cls) {
-        return streamChildren(resource)
-                .map(r -> r.adaptTo(cls))
-                .filter(Objects::nonNull);
+        return ResourceHelper.streamAdaptableChildren(getResource(resourcePath), cls);
     }
 
     /**
@@ -159,20 +121,10 @@ public interface AdaptableResourceProvider {
      * @return a stream of {@link Resource} instances
      */
     default Stream<Resource> streamChildren(String resourcePath) {
-        return streamChildren(getResource(resourcePath));
+        return ResourceHelper.streamChildren(getResource(resourcePath));
     }
 
-    /**
-     * Streams the children of the given {@link Resource}
-     * @param resource the {@link Resource}
-     * @return a stream of {@link Resource} instances
-     */
-    default Stream<Resource> streamChildren(Resource resource) {
-        return (resource != null)
-                ? StreamSupport.stream(resource.getChildren().spliterator(), false)
-                : Stream.empty();
-    }
-
-    static AdaptableResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
+    static ResourceProvider from(ResourceResolver resolver) { return () -> resolver; }
+    static ResourceProvider from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

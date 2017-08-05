@@ -1,9 +1,8 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.AdaptableResourceProvider;
 import com.bmc.models.utils.ContentIdGenerator;
-import com.day.cq.wcm.api.Page;
+import com.bmc.util.ResourceHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.sling.api.resource.Resource;
@@ -13,7 +12,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * PartnerList is a utility class backing the partner-list component. It
@@ -21,7 +19,7 @@ import java.util.stream.StreamSupport;
  * and return that data in JSON format, for use by the client-provided
  * Javascript scripts that build the actual partner list HTML.
  */
-public class PartnerList extends WCMUsePojo implements AdaptableResourceProvider {
+public class PartnerList extends WCMUsePojo {
 
     @Override
     public void activate() throws Exception { }
@@ -36,7 +34,7 @@ public class PartnerList extends WCMUsePojo implements AdaptableResourceProvider
      */
     public String getItems() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        List<Partner> list = streamPageChildren(getCurrentPage())
+        List<Partner> list = ResourceHelper.streamPageChildren(getCurrentPage())
                 .map(page -> {
                     Resource partnerData = page.getContentResource("root/maincontentcontainer/partner_data");
                     if (partnerData != null) {
