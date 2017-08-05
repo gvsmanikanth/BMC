@@ -6,6 +6,7 @@ import com.bmc.mixins.UrlResolver;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.CustomerStoryFilter;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
+import com.bmc.util.ModelHelper;
 import com.bmc.util.ResourceHelper;
 import com.bmc.util.StringHelper;
 import com.day.cq.tagging.Tag;
@@ -48,7 +49,7 @@ public class CustomerStoryService  {
         if (map == null)
             return null;
 
-        return modelFactory.getModel(page, map, CustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, CustomerStoryCard.class);
     }
 
     public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ModelFactory modelFactory) {
@@ -67,7 +68,7 @@ public class CustomerStoryService  {
 
         map.put("backgroundImageSrc", backgroundImageSrc);
 
-        return modelFactory.getModel(page, map, FeaturedCustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
     private Map<String, Object> getCustomerStoryCardValueMap(Page page) {
