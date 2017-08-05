@@ -20,9 +20,23 @@ public class BMCMetaService {
 
     private String environment;
 
+    private String issueEnvironment;
+
+    public String getIssueEnvironment() {
+        return issueEnvironment;
+    }
+
+    public String getIssuePath() {
+        return issuePath;
+    }
+
+    private String issuePath;
+
     @Activate
     public void activate(Map<String, String> config) {
         environment = PropertiesUtil.toString(config.get("environment"), "");
+        issueEnvironment = PropertiesUtil.toString(config.get("issueEnvironment"), "");
+        issuePath = PropertiesUtil.toString(config.get("issuePath"), "");
     }
 
 }

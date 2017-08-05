@@ -121,12 +121,11 @@ public class PageModel {
         bmcMeta.getPage().setContentId(getContentID());
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
-       // bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
-//        bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
         bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+            bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
                 setFormMeta(bmcMeta, form);
@@ -150,7 +149,7 @@ public class PageModel {
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
             Map<String, String> profile = getProfile(resource.getResourceResolver());
-            if (profile != null) {
+            if (profile != null && profile.containsKey("email")) {
                 if (profile.containsKey("first_name"))
                     bmcMeta.getUser().setFirstName(profile.get("first_name"));
                 if (profile.containsKey("last_name"))
@@ -158,6 +157,8 @@ public class PageModel {
                 if (profile.containsKey("email"))
                     bmcMeta.getUser().setEmail(profile.get("email"));
                 bmcMeta.getUser().setSupportAuthenticated(true);
+                bmcMeta.getSupport().setIssueEnvironment(service.getIssueEnvironment());
+                bmcMeta.getSupport().setIssuePath(service.getIssuePath());
             }
 
         }else{
@@ -170,8 +171,13 @@ public class PageModel {
     private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
         if (form != null) {
             bmcMeta.initFormMeta();
-            bmcMeta.getFormMeta().setId(form.getProperty("elqCampaignID").getString());
-            bmcMeta.getFormMeta().setName(form.getProperty("formname").getString());
+            String xfPath = form.getNode("experiencefragment").getProperty("fragmentPath").getString();
+            Node xf = session.getNode(xfPath);
+            Node fieldset = xf.getNode("jcr:content/root/field_set");
+            // Properties from Fielset
+            bmcMeta.getFormMeta().setId(fieldset.getProperty("formid").getString());
+            bmcMeta.getFormMeta().setName(fieldset.getProperty("formname").getString());
+            // Properties from form container
             bmcMeta.getFormMeta().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
             bmcMeta.getFormMeta().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
         }
@@ -207,6 +213,25 @@ public class PageModel {
             if(formatPageType(resourcePage.getParent().getName()) != null) {
                 formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
             }
+            }catch (Exception t){
+                logger.debug("no parent template", t);
+            }
+            formattedLongName.append(":" + resourcePage.getName()).toString();
+        }catch (Exception e){
+            logger.error("Error setting contentId: {}", e.getMessage());
+        }
+        return formattedLongName.toString();
+    }
+
+    private String formatLongNameFormStart(){
+        //TODO: Build this string a better way. Maybe using Absolute Parent.
+        StringBuilder formattedLongName = new StringBuilder();
+        try {
+            formattedLongName.append(formatMetaLocale().toLowerCase());
+            try{
+                if(formatPageType(resourcePage.getParent().getName()) != null) {
+                    formattedLongName.append(":forms-start:" + formatPageType(resourcePage.getParent().getName()));
+                }
             }catch (Exception t){
                 logger.debug("no parent template", t);
             }
