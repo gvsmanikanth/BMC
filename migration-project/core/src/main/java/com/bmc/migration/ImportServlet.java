@@ -421,42 +421,42 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         Boolean bool = field.getBoolean("Field Value");
                         propertyNode.setProperty(name, bool);
                         // Handle form Boolean properties
-                        String contentType = container.getProperty("migration_content_type").getString();
+                        String contentType = propertyNode.getProperty("migration_content_type").getString();
                         //TODO: if primary column this is h2 if secondary this is h3
                         if (contentType.equals("Form-2")) {
                             switch (name) {
                                 case "disableDemandbase":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "AWS_Trial":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "LMA_license":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "C_OptIn":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "C_Contact_Me1":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "activePURLRedirect":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "allowFormSkip":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "isNonLeadGenForm":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "isParallelEmailForm":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "bypassOSB":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                                 case "submitToWebMethods":
-                                    currentForm.setProperty(name, value);
+                                    currentForm.setProperty(name, bool);
                                     break;
                             }
                         }
@@ -609,8 +609,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         node.setProperty("jcr:title", formFieldLabel);
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
                         node.setProperty("type", "drop-down");
-                        node.setProperty("source", "datasource");
-                        node.setProperty("datasourceRT", "");
+                        node.setProperty("source", "list");
+                        node.setProperty("listPath", "/content/bmc/bmc-macros/"+JcrUtil.createValidName(formFieldMacro) + "_macro");
                         break;
                     case "checkbox":
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
