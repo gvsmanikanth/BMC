@@ -43,7 +43,7 @@ public class CustomerStoryService  {
         if (page == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, modelFactory::getResourceResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
@@ -56,12 +56,11 @@ public class CustomerStoryService  {
         if (page == null)
             return null;
 
-        UrlResolver urlResolver = modelFactory::getResourceResolver;
-        backgroundImageSrc = urlResolver.resolveHref(backgroundImageSrc, false).orElse(null);
+        backgroundImageSrc = StringHelper.resolveHref(backgroundImageSrc).orElse(null);
         if (backgroundImageSrc == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, urlResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
@@ -70,7 +69,7 @@ public class CustomerStoryService  {
         return modelFactory.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
-    private Map<String, Object> getCustomerStoryCardValueMap(Page page, UrlResolver urlResolver) {
+    private Map<String, Object> getCustomerStoryCardValueMap(Page page) {
         Map<String, Object> map = new HashMap<>();
         ValueMap pageMap = page.getProperties();
 
@@ -83,7 +82,7 @@ public class CustomerStoryService  {
         if (desc != null)
             map.put("description", desc);
 
-        String logoSrc = urlResolver.resolveHref(pageMap.get("cardLogoSrc", ""), true).orElse(null);
+        String logoSrc = StringHelper.resolveHref(pageMap.get("cardLogoSrc", "")).orElse(null);
         if (logoSrc != null)
             map.put("logoSrc", logoSrc);
 
