@@ -136,6 +136,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 initFormPageStructure(jcrNode, title, root);
             }
             processItemFields(item, jcrNode, root, session, request, 0);
+
+
+            // TODO: process CategoryArray
+            // where categoryName == "Eloqua Product Interest"
+            // set C_ProductInterest1 = value
+
         } catch (RepositoryException e) {
             logger.error(e.getMessage());
         } catch (JSONException e) {

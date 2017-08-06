@@ -51,7 +51,7 @@ public class SelectOptionsDataSource implements DataSource {
         if (contextProperties != null) {
             this.textProperty = contextProperties.get("textProperty", "text");
             this.valueProperty = contextProperties.get("valueProperty", "value");
-            this.useNameAsValue = contextProperties.get("useNameAsValue", true);
+            this.useNameAsValue = contextProperties.get("useNameAsValue", false);
         }
 
         items = StreamSupport.stream(resource.getChildren().spliterator(), false)
