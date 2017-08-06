@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/offering-2-column-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/offering-page-common">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
