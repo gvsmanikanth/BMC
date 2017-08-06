@@ -134,7 +134,6 @@ public class PageModel {
             }
         }
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
-            // todo: setup form object using parent form page properties
             try {
                 Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
                 setFormMeta(bmcMeta, form);
@@ -230,12 +229,12 @@ public class PageModel {
             formattedLongName.append(formatMetaLocale().toLowerCase());
             try{
                 if(formatPageType(resourcePage.getParent().getName()) != null) {
-                    formattedLongName.append(":forms-start:" + formatPageType(resourcePage.getParent().getName()));
+                    formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
                 }
             }catch (Exception t){
                 logger.debug("no parent template", t);
             }
-            formattedLongName.append(":" + resourcePage.getName()).toString();
+            formattedLongName.append(":forms-start:" + resourcePage.getName()).toString();
         }catch (Exception e){
             logger.error("Error setting contentId: {}", e.getMessage());
         }
@@ -245,9 +244,9 @@ public class PageModel {
     private String formatPageType(String path){
         if (getContentType().equals("form-thank-you")) {
             resourcePage.getParent().getName();
-            return "form-complete" + ":"+resourcePage.getParent().getName();
+            return "forms-complete" + ":"+resourcePage.getParent().getName();
         }else if(path.equals("forms")){
-            return "form-start";
+            return "forms-start";
         }else{
             return path;
         }
