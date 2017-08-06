@@ -1,12 +1,11 @@
 package com.bmc.util;
 
+import com.bmc.mixins.UrlResolver;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public interface StringHelper {
@@ -83,5 +82,24 @@ public interface StringHelper {
                         return valueMap.get(key, String.class);
                     }
                 }));
+    }
+
+
+    /**
+     * Resolves the given {@code urlOrPath}, yielding a modified or empty result as appropriate:
+     * <ul>
+     * <li>If {@code urlOrPath} appears to be an internal page path, ".html" will be appended to the result.</li>
+     * <li>If {@code urlOrPath} appears does not appear to be a content path, external url, or hash ('#') value,
+     * an empty result is returned.</li>
+     * </ul>
+     *
+     * @param urlOrPath the url or path to resolve
+     * @return the resolved url or path, unchanged, modified, or empty as appropriate
+     *
+     * @see UrlResolver#resolveHref(String)
+     */
+    static Optional<String> resolveHref(String urlOrPath) {
+        UrlResolver resolver = () -> null;
+        return resolver.resolveHref(urlOrPath, false);
     }
 }

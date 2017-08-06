@@ -11,8 +11,6 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
-    <filter root="/etc/tags/bmc" mode="merge" />
-
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
     <filter root="/content/experience-fragments/bmc" mode="merge" />

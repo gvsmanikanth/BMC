@@ -285,7 +285,10 @@ public class PageModel {
     }
 
     private String formatMetaLocale(){
+        Page resolvedPage = resourcePage.getAbsoluteParent(1);
+        if (resolvedPage == null)
+            resolvedPage = resourcePage;
 
-        return resourcePage.getAbsoluteParent(1).getLanguage().toString().replace("_","-");
+        return resolvedPage.getLanguage().toString().replace("_","-");
     }
 }

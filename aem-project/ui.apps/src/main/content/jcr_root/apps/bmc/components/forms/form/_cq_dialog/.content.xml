@@ -13,7 +13,7 @@
             <tabs
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                    maxmized="{Boolean}true">
+                    maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
                     <main
                             jcr:primaryType="nt:unstructured"
@@ -32,7 +32,6 @@
                                             fieldDescription="Eloqua Product Interest"
                                             fieldLabel="Eloqua Product Interest"
                                             multiple="{Boolean}false"
-                                            useNameAsValue="{Boolean}true"
                                             dataPath="/content/bmc/resources/eloqua-product-interest">
                                         <datasource
                                                 jcr:primaryType="nt:unstructured"
