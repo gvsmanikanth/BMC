@@ -9,8 +9,7 @@ import com.bmc.services.CustomerStoryService;
 
 import java.util.List;
 
-public class CustomerStoryList extends WCMUsePojo
-        implements AdaptableResourceProvider, ModelFactory, MultifieldDataProvider
+public class CustomerStoryList extends WCMUsePojo implements ModelFactory, MultifieldDataProvider, ResourceProvider
 {
     private CustomerStoryService storyService;
     private FeaturedCustomerStoryCard featuredStory;
