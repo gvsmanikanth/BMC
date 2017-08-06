@@ -173,7 +173,7 @@ public class PageModel {
             String xfPath = form.getNode("experiencefragment").getProperty("fragmentPath").getString();
             Node xf = session.getNode(xfPath);
             Node fieldset = xf.getNode("jcr:content/root/field_set");
-            // Properties from Fielset
+            // Properties from Fieldset
             bmcMeta.getFormMeta().setId(fieldset.getProperty("formid").getString());
             bmcMeta.getFormMeta().setName(fieldset.getProperty("formname").getString());
             // Properties from form container
