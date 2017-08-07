@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <_x0038_26476264
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Application Management Suite"
+        text="﻿APM"/>
+    <_x0038_86391051
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="App_Ops MarketZone License"/>
+    <_x0033_33198058
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Atrium CMDB"/>
+    <_x0035_09118857
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BAO"/>
+    <_x0033_71244413
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BCA"/>
+    <_x0034_79357623
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Client Management (Asset Core)"
+        text="BCM"/>
+    <_x0031_54263921
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Bladelogic Automation Suite"
+        text="BDA"/>
+    <_x0035_89874188
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BladeLogic Threat Director"/>
+    <_x0033_12058641
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BladeLogic UCS Royalty (Cisco)"/>
+    <_x0035_10281938
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC BladeLogic Middleware Automation"
+        text="BMA"/>
+    <_x0031_81234092
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BMC Consulting"/>
+    <_x0037_35319680
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BMC Education"/>
+    <_x0032_07173662
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Bladelogic Network Automation"
+        text="BNA"/>
+    <_x0031_34210619
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BPPM"/>
+    <_x0030_20028804
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC BladeLogic Server Automation"
+        text="BSA"/>
+    <_x0038_80064136
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="BTD OnPrem"/>
+    <_x0037_65494479
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Cloud Lifecycle Management"
+        text="CLM"/>
+    <_x0032_71145800
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Consulting Services"
+        text="Consulting"/>
+    <_x0038_57975923
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Control-D"
+        text="Control D"/>
+    <_x0031_10172083
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Control-M"
+        text="Control M"/>
+    <_x0031_13107407
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Application Integrator"/>
+    <_x0031_31846424
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Automation API"/>
+    <_x0030_20420393
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Batch Impact Manager"/>
+    <_x0031_42451535
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M for Hadoop"/>
+    <_x0038_48582930
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M for SAP"/>
+    <_x0034_88842138
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Managed File Transfer"/>
+    <_x0034_78776691
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Self Service"/>
+    <_x0035_27858407
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Control M Workload Change Manager"/>
+    <_x0035_44377570
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="D&amp;A"/>
+    <_x0034_37643808
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Data Management Solutions for DB2"
+        text="DB2"/>
+    <_x0034_56355092
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DB2 Lob Master"/>
+    <_x0036_60549594
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DB2 NGT"/>
+    <_x0032_30493651
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DB2 SQL Performance-Recovery"/>
+    <_x0033_39034787
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DCA MarketZone"/>
+    <_x0037_10220644
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DevOps"/>
+    <_x0034_58355684
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Atrium"
+        text="Discovery"/>
+    <_x0032_96815892
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC DM-DS"
+        text="DM - DS"/>
+    <_x0039_08330631
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Mainframe Solutions"
+        text="DM - MF"/>
+    <_x0032_00514167
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DM - MF"/>
+    <_x0035_18651913
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DM MarketZone"/>
+    <_x0033_77447044
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="DM Other"/>
+    <_x0038_03182578
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Education Services"
+        text="Education"/>
+    <_x0031_25472841
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Footprints Service Core"
+        text="FootPrints Service Core"/>
+    <_x0037_63411415
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="FootPrints Service Core"/>
+    <_x0033_55732647
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="HR Case Management"/>
+    <_x0034_85638701
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Identify"/>
+    <_x0034_38015372
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="IDM"/>
+    <_x0033_96616248
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Data Management Solutions for IMS"
+        text="IMS"/>
+    <_x0038_13348576
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Innovation Suite"
+        text="Innovation Suite"/>
+    <_x0034_37258203
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="ITBM"/>
+    <_x0034_27228408
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="ITSM MarketZone"/>
+    <_x0035_36422725
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC MainView"
+        text="Mainview"/>
+    <_x0031_84812219
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Mobile Device Manager"
+        text="Mobility"/>
+    <_x0036_46862337
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Mobility Classic"/>
+    <_x0031_38730045
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC MyIT"
+        text="MyIT"/>
+    <_x0034_14173779
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="MyIT Service Broker"/>
+    <_x0034_07307767
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="P&amp;A MarketZone"/>
+    <_x0032_46248856
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="R4"/>
+    <_x0035_66320485
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="R4-AAI"/>
+    <_x0037_97339705
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="R4-CAZE"/>
+    <_x0035_07974916
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="R4-ICAP"/>
+    <_x0036_40679873
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="R4-SUBZERO"/>
+    <_x0037_55806789
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Remedy ITSM Suite"
+        text="Remedy"/>
+    <_x0038_15673798
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Remedy HR Case Mgmt"/>
+    <_x0031_19677746
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS APM"/>
+    <_x0038_89651328
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC AppZone"
+        text="SaaS AppZone"/>
+    <_x0032_94217767
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS BCM"/>
+    <_x0032_12327200
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS EUEM"/>
+    <_x0035_23423017
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Marketplace"
+        text="SaaS Marketplace"/>
+    <_x0033_05875893
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS MyIT"/>
+    <_x0031_97607863
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS MyIT"/>
+    <_x0035_97511095
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Remedyforce"
+        text="SaaS Remedy Force"/>
+    <_x0031_77756507
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS Remedy HR Case Mgmt"/>
+    <_x0038_28658295
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Remedy OnDemand"
+        text="SaaS Remedy On Demand"/>
+    <_x0035_77883838
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS Remedyforce"/>
+    <_x0031_40644269
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS SecOps Policy"/>
+    <_x0036_27018632
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS SecOps Response"/>
+    <_x0038_06504429
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC TrueSight"
+        text="SaaS TrueSight Intelligence"/>
+    <_x0033_51646027
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SaaS TrueSight Pulse"/>
+    <_x0032_11215449
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SCT MarketZone"/>
+    <_x0038_81278133
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SDE"/>
+    <_x0033_33934500
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="SLM"/>
+    <_x0039_07958229
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="TMart"/>
+    <_x0032_15993981
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Track-IT!"
+        text="Track-It!"/>
+    <_x0031_17468809
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC Application Performance Management"
+        text="TrueSight APM"/>
+    <_x0031_81025904
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="Yes"
+        publishedProductName="BMC TrueSight Capacity"
+        text="TrueSight Capacity"/>
+    <_x0034_43237147
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="TrueSight Cloud Cost Control"/>
+    <_x0035_78427708
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="TrueSight Infrastructure"/>
+    <_x0032_97385796
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="TrueSight Middleware"/>
+    <_x0031_73185306
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Turbonomic"/>
+    <_x0033_85832681
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="Unknown"/>
+    <_x0031_25857403
+        jcr:primaryType="nt:unstructured"
+        dropDownDisplay="No"
+        text="WLA MarketZone"/>
+</jcr:root>
