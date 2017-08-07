@@ -605,7 +605,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
                         node.setProperty("type", "drop-down");
                         node.setProperty("source", "list");
-                        node.setProperty("listPath", "/content/bmc/bmc-macros/"+JcrUtil.createValidName(formFieldMacro) + "_macro");
+                        node.setProperty("listPath", "/content/bmc/bmc-macros/"+JcrUtil.createValidName(formFieldMacro, JcrUtil.HYPHEN_LABEL_CHAR_MAPPING) + "-macro");
                         break;
                     case "checkbox":
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");

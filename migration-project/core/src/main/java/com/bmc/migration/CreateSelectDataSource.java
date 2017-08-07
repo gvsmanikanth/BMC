@@ -1,6 +1,7 @@
 package com.bmc.migration;
 
 import com.day.cq.commons.jcr.JcrUtil;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -34,7 +35,7 @@ import java.util.List;
 /**
  * Created by elambert on 5/28/17.
  */
-@SlingServlet(resourceTypes = "/apps/bmc-migration/components/structure/page", selectors = "optioncreator", methods = {"POST"})
+@SlingServlet(paths = "/bin/importformmacros", methods = {"GET"})
 public class CreateSelectDataSource extends SlingAllMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(CreateSelectDataSource.class);
 
@@ -47,7 +48,7 @@ public class CreateSelectDataSource extends SlingAllMethodsServlet {
     private ResourceResolver resolver;
 
     @Override
-    protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         resolver = request.getResource().getResourceResolver();
         this.response = response;
         Session session = null;
@@ -120,16 +121,16 @@ public class CreateSelectDataSource extends SlingAllMethodsServlet {
             Node parentNode = session.getNode(MACRO_REPO_LOCALTION);
             Iterator<HashMap> dI = selectList.iterator();
             try{
-                Node childNode = parentNode.addNode(JcrUtil.createValidName(nodeName).replace("-","-").replace("---","-"),"nt:unstructured");
+                Node childNode = parentNode.addNode(JcrUtil.createValidName(nodeName, JcrUtil.HYPHEN_LABEL_CHAR_MAPPING).replace("---","-"),"nt:unstructured");
                 Node captionNode = childNode.addNode("caption","nt:unstructured");
                 captionNode.setProperty("disabled","true");
                 captionNode.setProperty("selected","true");
-                captionNode.setProperty("text",nodeName);
+                captionNode.setProperty("text", nodeName.substring(0, nodeName.indexOf(" Macro")));
                 while(dI.hasNext()){
                     HashMap<String,String> item = dI.next();
                     String itemID = ContentIdGenerator.getNewContentID(item.get("text"));
                     Node itemNode = childNode.addNode(itemID,"nt:unstructured");
-                    itemNode.setProperty("text",item.get("text"));
+                    itemNode.setProperty("text", StringEscapeUtils.unescapeHtml4(item.get("text")));
                     itemNode.setProperty("value",item.get("value"));
                 }
                 session.save();
