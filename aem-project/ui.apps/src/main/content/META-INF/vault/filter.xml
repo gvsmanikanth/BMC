@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc"/>
+    <filter root="/apps/wcm/core/content/sites"/>
 
     <filter root="/conf/bmc" mode="merge"/>
 
@@ -11,8 +12,6 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
-    <filter root="/etc/tags/bmc" mode="merge" />
-
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
     <filter root="/content/experience-fragments/bmc" mode="merge" />
@@ -20,4 +19,6 @@
     <filter root="/content/dam/bmc" mode="merge" />
 
     <filter root="/home/groups" mode="merge" />
+
+    <filter root="/oak:index/textLucene" />
 </workspaceFilter>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
-          serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"
+          serviceUrl="http://localhost/admin/post.php"
           timeout="{Long}5000"
 />
         <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->

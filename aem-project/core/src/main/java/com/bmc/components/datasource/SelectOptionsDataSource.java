@@ -3,11 +3,15 @@ package com.bmc.components.datasource;
 import com.adobe.cq.commerce.common.ValueMapDecorator;
 import com.adobe.granite.ui.components.ds.DataSource;
 import com.adobe.granite.ui.components.ds.ValueMapResource;
+import com.bmc.mixins.MetadataInfoProvider;
+import com.bmc.models.metadata.MetadataOption;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.NameConstants;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -51,12 +55,29 @@ public class SelectOptionsDataSource implements DataSource {
         if (contextProperties != null) {
             this.textProperty = contextProperties.get("textProperty", "text");
             this.valueProperty = contextProperties.get("valueProperty", "value");
-            this.useNameAsValue = contextProperties.get("useNameAsValue", false);
+            this.useNameAsValue = contextProperties.get("useNameAsValue", true);
         }
 
         items = StreamSupport.stream(resource.getChildren().spliterator(), false)
                 .map(this::resolveResourceData)
                 .collect(Collectors.toList());
+    }
+
+    public SelectOptionsDataSource(Resource resource) {
+        ValueMap map = resource.getValueMap();
+        String metadataName = map.get("metadataName", "");
+        this.textProperty = map.get("textProperty", "text");
+        this.valueProperty = map.get("valueProperty", "value");
+        this.useNameAsValue = map.get("useNameAsValue", true);
+
+        if (metadataName.isEmpty()) {
+            items = Collections.emptyList();
+        } else {
+            ResourceResolver resolver = resource.getResourceResolver();
+            items = MetadataInfoProvider.from(resolver).getMetadataOptions(metadataName, textProperty, valueProperty, useNameAsValue)
+                    .map(option -> resolveResourceData(resolver, option))
+                    .collect(Collectors.toList());
+        }
     }
 
     @Override
@@ -84,5 +105,18 @@ public class SelectOptionsDataSource implements DataSource {
 
         return new ValueMapResource(sourceResource.getResourceResolver(),
                 sourceResource.getPath(), sourceResource.getResourceType(), map);
+    }
+    private ValueMapResource resolveResourceData(ResourceResolver resourceResolver, MetadataOption option) {
+        ValueMap map = new ValueMapDecorator(new HashMap<>());
+        map.put("text", option.getText());
+        map.put("value", option.getValue());
+        Boolean disabled = option.getProperty("disabled", Boolean.class);
+        if (disabled != null)
+            map.put("disabled", disabled);
+        Boolean selected = option.getProperty("selected", Boolean.class);
+        if (selected != null)
+            map.put("selected", selected);
+
+        return new ValueMapResource(resourceResolver, "", "nt:unstructured", map);
     }
 }

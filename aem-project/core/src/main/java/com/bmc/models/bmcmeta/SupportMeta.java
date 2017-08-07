@@ -9,13 +9,13 @@ public class SupportMeta {
     private String alertsUrl = ""; //[HTTP path to CMS-powered support alerts JSON feed]
 
     //if user is authenticated
-    private String issueEnvironment = ""; //[lookup static string based on CMS environment]
-    private String issuePath = ""; //[lookup static string based on CMS environment]
+    private String issueEnvironment = null; //[lookup static string based on CMS environment]
+    private String issuePath = null; //[lookup static string based on CMS environment]
     //end if user is authenticated
     private CaseErrorMessagesMeta caseErrorMessages;
 
     public SupportMeta() {
-        this.caseErrorMessages = new CaseErrorMessagesMeta();
+        caseErrorMessages = new CaseErrorMessagesMeta();
     }
 
     public void setIssuePath(String issuePath) {

@@ -1,5 +1,6 @@
 package com.bmc.models;
 
+import com.bmc.services.BMCMetaService;
 import com.day.cq.wcm.api.Page;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -13,6 +14,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +43,9 @@ public class PageModel {
 
     @Inject
     private SlingSettingsService settings;
+
+    @OSGiService
+    private BMCMetaService service;
 
     @Inject
     private Page resourcePage;
@@ -75,12 +80,24 @@ public class PageModel {
 
     protected Gson gson;
 
+    private String environment;
+
     @PostConstruct
     protected void init() {
-
-        if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
-           //ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
-             setContentID(resource.getValueMap().get("jcr:baseVersion").toString());
+        try {
+            Node node = resource.adaptTo(Node.class);
+            if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null){
+               //ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resourcePage.getPath());
+                 setContentID(resource.getValueMap().get("jcr:baseVersion").toString());
+            } else if (node != null && !node.hasProperty("jcr:baseVersion")) {
+                node.addMixin("mix:versionable");
+                session.save();
+                if (node.hasProperty("jcr:baseVersion")) {
+                    setContentID(node.getProperty("jcr:baseVersion").getString());
+                }
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
         }
 
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template").toString())));
@@ -104,15 +121,34 @@ public class PageModel {
         bmcMeta.getPage().setContentId(getContentID());
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
-       // bmcMeta.getPage().setCultureCode(formatMetaLocale().substring(0,2));
-        bmcMeta.getPage().getGeoIP().setGeoIPLanguageCode(formatMetaLocale());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getSite().setEnvironment(service.getEnvironment());
+
+        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+            bmcMeta.getPage().setLongName(formatLongNameFormStart());
+            try {
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+        }
+        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+            try {
+                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+            bmcMeta.getPage().setPurl("true");
+        }
 
         if(resourcePage.getPath().contains("/support/")){
+            bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
             Map<String, String> profile = getProfile(resource.getResourceResolver());
-            if (profile != null) {
+            if (profile != null && profile.containsKey("email")) {
                 if (profile.containsKey("first_name"))
                     bmcMeta.getUser().setFirstName(profile.get("first_name"));
                 if (profile.containsKey("last_name"))
@@ -120,13 +156,30 @@ public class PageModel {
                 if (profile.containsKey("email"))
                     bmcMeta.getUser().setEmail(profile.get("email"));
                 bmcMeta.getUser().setSupportAuthenticated(true);
+                bmcMeta.getSupport().setIssueEnvironment(service.getIssueEnvironment());
+                bmcMeta.getSupport().setIssuePath(service.getIssuePath());
             }
 
         }else{
-            bmcMeta.getSupport().setEnableAlerts(false);
+//            bmcMeta.getSupport().setEnableAlerts(false);
         }
 
         return bmcMeta;
+    }
+
+    private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
+        if (form != null) {
+            bmcMeta.initFormMeta();
+            String xfPath = form.getNode("experiencefragment").getProperty("fragmentPath").getString();
+            Node xf = session.getNode(xfPath);
+            Node fieldset = xf.getNode("jcr:content/root/field_set");
+            // Properties from Fieldset
+            bmcMeta.getFormMeta().setId(fieldset.getProperty("formid").getString());
+            bmcMeta.getFormMeta().setName(fieldset.getProperty("formname").getString());
+            // Properties from form container
+            bmcMeta.getFormMeta().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
+            bmcMeta.getFormMeta().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
+        }
     }
 
     private Map<String, String> getProfile(ResourceResolver resolver) {
@@ -169,12 +222,31 @@ public class PageModel {
         return formattedLongName.toString();
     }
 
+    private String formatLongNameFormStart(){
+        //TODO: Build this string a better way. Maybe using Absolute Parent.
+        StringBuilder formattedLongName = new StringBuilder();
+        try {
+            formattedLongName.append(formatMetaLocale().toLowerCase());
+            try{
+                if(formatPageType(resourcePage.getParent().getName()) != null) {
+                    formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
+                }
+            }catch (Exception t){
+                logger.debug("no parent template", t);
+            }
+            formattedLongName.append(":forms-start:" + resourcePage.getName()).toString();
+        }catch (Exception e){
+            logger.error("Error setting contentId: {}", e.getMessage());
+        }
+        return formattedLongName.toString();
+    }
+
     private String formatPageType(String path){
         if (getContentType().equals("form-thank-you")) {
             resourcePage.getParent().getName();
-            return "form-complete" + ":"+resourcePage.getParent().getName();
+            return "forms-complete" + ":"+resourcePage.getParent().getName();
         }else if(path.equals("forms")){
-            return "form-start";
+            return "forms-start";
         }else{
             return path;
         }
