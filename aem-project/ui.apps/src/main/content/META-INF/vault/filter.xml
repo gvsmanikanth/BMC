@@ -18,4 +18,6 @@
     <filter root="/content/dam/bmc" mode="merge" />
 
     <filter root="/home/groups" mode="merge" />
+
+    <filter root="/oak:index/textLucene" />
 </workspaceFilter>

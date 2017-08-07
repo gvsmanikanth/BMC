@@ -127,8 +127,7 @@ public class CreateSelectDataSource extends SlingAllMethodsServlet {
                 captionNode.setProperty("text",nodeName);
                 while(dI.hasNext()){
                     HashMap<String,String> item = dI.next();
-                    ContentIdGenerator contentIdGenerator = new ContentIdGenerator(item.get("text"));
-                    String itemID = contentIdGenerator.getNewContentID();
+                    String itemID = ContentIdGenerator.getNewContentID(item.get("text"));
                     Node itemNode = childNode.addNode(itemID,"nt:unstructured");
                     itemNode.setProperty("text",item.get("text"));
                     itemNode.setProperty("value",item.get("value"));
