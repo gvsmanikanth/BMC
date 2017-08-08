@@ -3,7 +3,7 @@
 // @function video
 // Responsive video for maintaining aspect ratio on all resolutions.
 
-div.video {
+div.videos { 
 	@include aspect-ratio(928, 596);
 
 	// ensures proper squishiness on Android devices

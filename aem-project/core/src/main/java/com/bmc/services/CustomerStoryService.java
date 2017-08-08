@@ -1,77 +1,77 @@
 package com.bmc.services;
 
-import com.bmc.mixins.AdaptableResourceProvider;
-import com.bmc.mixins.ModelFactory;
-import com.bmc.mixins.UrlResolver;
+import com.bmc.mixins.ResourceProvider;
+import com.bmc.mixins.MetadataInfoProvider;
+import com.bmc.models.metadata.MetadataInfo;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
-import com.bmc.models.components.customerstory.CustomerStoryFilter;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
+import com.bmc.models.metadata.MetadataOption;
+import com.bmc.models.metadata.MetadataType;
+import com.bmc.util.ModelHelper;
 import com.bmc.util.StringHelper;
-import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
-import com.day.util.NameValuePair;
-import org.apache.commons.lang.StringUtils;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 @Component(label = "CustomerStory Service",
         description = "Helper Service for CustomerStoryList component",
         immediate = true)
 @Service(value=CustomerStoryService.class)
 public class CustomerStoryService  {
-    private final static String FILTER_TAG_ROOT = "/etc/tags/bmc/customer-story-filters";
-    private final static String INDUSTRY_TAG_ROOT = "/etc/tags/bmc/customer-story-filters/industry";
     private final static String SPOTLIGHT_FRAGMENT_PATH = "root/experiencefragment";
     private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
-    public List<CustomerStoryFilter> getFilters(AdaptableResourceProvider resourceProvider)  {
-        Tag tag = resourceProvider.getTag(FILTER_TAG_ROOT);
-        return  (tag != null)
-                ? streamTagChildren(tag).map(this::getFilter).collect(Collectors.toList())
-                : Collections.emptyList();
+    private static final Logger logger = LoggerFactory.getLogger(CustomerStoryService.class);
+
+    public List<MetadataInfo> getFilters(ResourceProvider resourceProvider) {
+        return getFilters(resourceProvider::getResourceResolver, MetadataType.COMPANY_SIZE, MetadataType.INDUSTRY, MetadataType.TOPIC)
+                .collect(Collectors.toList());
     }
 
-    public CustomerStoryCard getStoryCard(String pagePath, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+    public CustomerStoryCard getStoryCard(String pagePath, ResourceProvider resourceProvider) {
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, modelFactory::getResourceResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
-        return modelFactory.getModel(page, map, CustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, CustomerStoryCard.class);
     }
 
-    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ModelFactory modelFactory) {
-        AdaptableResourceProvider resourceProvider = modelFactory::getResourceResolver;
+    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ResourceProvider resourceProvider) {
         Page page = resourceProvider.getPage(pagePath);
         if (page == null)
             return null;
 
-        UrlResolver urlResolver = modelFactory::getResourceResolver;
-        backgroundImageSrc = urlResolver.resolveHref(backgroundImageSrc, false).orElse(null);
+        backgroundImageSrc = StringHelper.resolveHref(backgroundImageSrc).orElse(null);
         if (backgroundImageSrc == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page, urlResolver);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page);
         if (map == null)
             return null;
 
         map.put("backgroundImageSrc", backgroundImageSrc);
 
-        return modelFactory.getModel(page, map, FeaturedCustomerStoryCard.class);
+        return ModelHelper.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
-    private Map<String, Object> getCustomerStoryCardValueMap(Page page, UrlResolver urlResolver) {
+    private Map<String, Object> getCustomerStoryCardValueMap(Page page) {
         Map<String, Object> map = new HashMap<>();
         ValueMap pageMap = page.getProperties();
 
@@ -84,21 +84,22 @@ public class CustomerStoryService  {
         if (desc != null)
             map.put("description", desc);
 
-        String logoSrc = urlResolver.resolveHref(pageMap.get("cardLogoSrc", ""), true).orElse(null);
+        String logoSrc = StringHelper.resolveHref(pageMap.get("cardLogoSrc", "")).orElse(null);
         if (logoSrc != null)
             map.put("logoSrc", logoSrc);
 
-        Tag[] tags = page.getTags();
-        Tag primaryIndustryTag = Stream.of(tags).filter(t->t.getPath().startsWith(INDUSTRY_TAG_ROOT))
-                .findFirst()
-                .orElse(null);
-        if (primaryIndustryTag != null)
-            map.put("primaryIndustry", primaryIndustryTag.getTitle());
+        MetadataInfoProvider metadataResourceProvider = MetadataInfoProvider.from(page.getContentResource());
 
-        String filters = StringUtils.join(Stream.of(tags).filter(t->t.getPath().startsWith(FILTER_TAG_ROOT))
-                .map(Tag::getName).iterator(), ",");
-        map.put("filterValues", filters);
+        MetadataInfo industryFilter = getFilter(MetadataType.INDUSTRY, metadataResourceProvider);
+        if (industryFilter != null) {
+            industryFilter
+                    .getActiveOptions(pageMap)
+                    .map(MetadataOption::getText)
+                    .findFirst()
+                    .ifPresent(name -> map.put("primaryIndustry", name));
+        }
 
+        map.put("filterValues", getFilterValues(pageMap, metadataResourceProvider));
         map.put("secondaryLinkText", pageMap.get("cardSecondaryLinkText", ""));
         map.put("secondaryLinkUrl", pageMap.get("cardSecondaryLinkUrl", ""));
 
@@ -122,22 +123,26 @@ public class CustomerStoryService  {
         return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
-    private CustomerStoryFilter getFilter(Tag tag) {
-        if (tag == null)
+    private String getFilterValues(ValueMap pageMap, MetadataInfoProvider infoProvider) {
+        return getFilters(infoProvider, MetadataType.INDUSTRY, MetadataType.TOPIC, MetadataType.COMPANY_SIZE)
+                .flatMap(info->info.getActiveOptions(pageMap))
+                .map(MetadataOption::getText)
+                .collect(Collectors.joining(","));
+    }
+    private Stream<MetadataInfo> getFilters(MetadataInfoProvider infoProvider, MetadataType...filterTypes) {
+        return Arrays.stream(filterTypes).map(f->getFilter(f, infoProvider));
+    }
+    private MetadataInfo getFilter(MetadataType filterType, MetadataInfoProvider infoProvider) {
+        try {
+            return filterCache.get(filterType, () -> infoProvider.getMetadataInfo(filterType));
+        } catch (CacheLoader.InvalidCacheLoadException ex) {
             return null;
-
-        List<NameValuePair> options = streamTagChildren(tag)
-                .map(this::getTagOption)
-                .collect(Collectors.toList());
-
-        return new CustomerStoryFilter(tag.getTitle(), options);
+        } catch (ExecutionException ex) {
+            logger.error("Unable to populate filterCache", ex);
+            return null;
+        }
     }
-    private NameValuePair getTagOption(Tag tag) {
-        return new NameValuePair(tag.getTitle(), tag.getName());
-    }
-    private Stream<Tag> streamTagChildren(Tag tag) {
-        Iterable<Tag> iterable = tag::listChildren;
-        return StreamSupport.stream(iterable.spliterator(), false)
-                .filter(Objects::nonNull);
-    }
+    private final static Cache<MetadataType, MetadataInfo> filterCache = CacheBuilder.newBuilder()
+            .expireAfterWrite(1, TimeUnit.HOURS)
+            .build();
 }
