@@ -1,25 +1,17 @@
 package com.bmc.models.metadata;
 
-import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 
-public class MetadataOption {
-    private final String text;
-    private final String value;
-    private final ValueMap properties;
+public interface MetadataOption {
+    String getName();
+    String getText();
+    String getValue();
 
-    public MetadataOption(String text, String value, ValueMap properties) {
-        this.text = text;
-        this.value = value;
-        this.properties = properties;
-    }
+    <T> T getProperty(String property, T defaultValue);
+    <T> T getProperty(String property, Class<T> cls);
 
-    public String getText() { return text; }
-    public String getValue() { return value; }
+    boolean matches(String nameOrValueOrText);
 
-    public <T> T getProperty(String property, T defaultValue) {
-        return properties.get(property, defaultValue);
-    }
-    public <T> T getProperty(String property, Class<T> cls) {
-        return properties.get(property, cls);
-    }
+    Resource asResource(ResourceResolver resourceResolver, String parentPath);
 }

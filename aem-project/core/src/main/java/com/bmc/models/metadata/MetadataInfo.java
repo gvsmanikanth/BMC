@@ -12,30 +12,15 @@ import java.util.stream.Stream;
  *
  * @see MetadataInfoProvider
  */
-public class MetadataInfo {
-    public MetadataInfo(MetadataType type, String name, Stream<MetadataOption> options) {
-        this.type = type;
-        this.name = name;
-        if (options == null)
-            options = Stream.empty();
-        this.options = options.collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
-    }
-    public MetadataType getType() { return type; } private MetadataType type;
-    public String getName() { return name; } private String name;
-    public List<MetadataOption> getOptions() { return options; } private List<MetadataOption> options;
+public interface MetadataInfo {
+    MetadataType getType();
+    String getName();
+    List<MetadataOption> getOptions();
 
-    public Optional<String> getTextOfValue(String value) {
-        return options.stream()
-                .filter(p->p.getValue().equals(value))
-                .map(MetadataOption::getText)
-                .findFirst();
-    }
-    public Optional<String> getValueOfText(String text) {
-        return options.stream()
-                .filter(p->p.getText().equals(text))
-                .map(MetadataOption::getValue)
-                .findFirst();
-    }
+    Optional<MetadataOption> findOption(String nameOrValueOrText);
+
+    Optional<String> getTextOfValue(String value);
+    Optional<String> getValueOfText(String text);
 
     /**
      * Streams the {@link MetadataOption} options which are active in the {@code getType().getFieldName()} property
@@ -43,22 +28,12 @@ public class MetadataInfo {
      * @param map the {@link ValueMap} to check for active values
      * @return a stream of {@link MetadataOption}
      */
-    public Stream<MetadataOption> getActiveOptions(ValueMap map) {
-        if (map == null)
-            return Stream.empty();
-        return getActiveOptions(map.get(type.getFieldName(), String[].class));
-    }
+    Stream<MetadataOption> getActiveOptions(ValueMap map);
 
     /**
      * Streams the {@link MetadataOption} options matching any of the given {@code values}
      * @param activeValues the values to match
      * @return a stream of {@link MetadataOption}
      */
-    public Stream<MetadataOption> getActiveOptions(String[] activeValues) {
-        if (activeValues == null || activeValues.length == 0)
-            return Stream.empty();
-
-        Set<String> set = new HashSet<>(Arrays.asList(activeValues));
-        return options.stream().filter(o->set.contains(o.getValue()));
-    }
+    Stream<MetadataOption> getActiveOptions(String[] activeValues);
 }
