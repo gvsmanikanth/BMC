@@ -32,6 +32,12 @@
 </script>
 <div class="st-search-container">
 </div>
+
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel"/>
+
+<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}">
+    ${PageLocale}
+</sly>
 <script type="text/javascript">
     (function(w, d, t, u, n, s, e) {
         w['SwiftypeObject'] = n;
