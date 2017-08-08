@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Industry">>
+    <telecommunications-and-media
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Telecommunications and Media"/>
+    <information-technology
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Information Technology"/>
+    <military-and-defense
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Military and Defense"/>
+    <finance
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Finance"/>
+    <utilities-oil-gas-and-energy
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Utilities- Oil- Gas and Energy"/>
+    <retail
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Retail"/>
+    <education
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Education"/>
+    <government
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Government"/>
+    <healthcare
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Healthcare"/>
+    <transportation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Transportation"/>
+    <insurance
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Insurance"/>
+    <manufacturing
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Manufacturing"/>
+</jcr:root>
