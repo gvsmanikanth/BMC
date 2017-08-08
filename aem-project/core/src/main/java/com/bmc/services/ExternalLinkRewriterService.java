@@ -1,33 +1,14 @@
 package com.bmc.services;
 
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Scanner;
-
-import javax.jcr.AccessDeniedException;
-import javax.jcr.InvalidItemStateException;
-import javax.jcr.ItemExistsException;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
-import javax.jcr.ReferentialIntegrityException;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.Value;
-import javax.jcr.lock.LockException;
-import javax.jcr.nodetype.ConstraintViolationException;
-import javax.jcr.nodetype.NoSuchNodeTypeException;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
-import javax.jcr.version.VersionException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -37,7 +18,7 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.bmc.models.utils.ExternalLinkNodeItem;
-import com.day.cq.wcm.api.WCMMode;
+
 
 @Component(
         label = "External Link rewriter Servie",
@@ -58,11 +39,10 @@ public class ExternalLinkRewriterService {
 	
 	 private static final String NT_CONTENT = "jcr:content";
 	
-	private static final String CONTENT_BMC="/content/bmc/language-masters/en";
-
 	
 	
-	String linkAbstractor = null;
+	
+	 String linkAbstractor = null;
 	   String linkAbstractorExternalURL = null;
 	   String linkAbstractorTarget = null;
 	   String title ="";
@@ -115,13 +95,9 @@ public class ExternalLinkRewriterService {
                 		  			logger.info("Title: " + title);
                 		  			} 
 								logger.info("HREFNAME :"+href);
-										if(href.equals(title))
-										{
-											linkAbstractor = content.getProperty("linkAbstractor").getString();
-			                          		linkAbstractorExternalURL = content.getProperty("linkAbstractorExternalURL").getString();  
-			                          		linkAbstractorTarget = content.getProperty("linkAbstractorTarget").getString(); 
-			                          		
-										}
+										linkAbstractor = content.getProperty("linkAbstractor").getString();
+			                          	linkAbstractorExternalURL = content.getProperty("linkAbstractorExternalURL").getString();  
+			                          	linkAbstractorTarget = content.getProperty("linkAbstractorTarget").getString(); 		
                               }
                           }
 			  }
