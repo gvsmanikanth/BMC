@@ -31,6 +31,9 @@
                                             renderReadOnly="{Boolean}false"
                                             fieldDescription="Eloqua Product Interest"
                                             fieldLabel="Eloqua Product Interest"
+                                            useNameAsValue="true"
+                                            textProperty="textEmpty"
+                                            valueProperty="valueEmpty"
                                             multiple="{Boolean}false"
                                             dataPath="/content/bmc/resources/product-interests">
                                         <datasource

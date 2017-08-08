@@ -3,7 +3,8 @@
     <filter root="/apps/bmc"/>
     <filter root="/apps/wcm/core/content/sites"/>
 
-    <filter root="/conf/bmc" mode="merge"/>
+    <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
+    <!--<filter root="/conf/bmc" mode="merge"/>-->
 
     <filter root="/etc/clientlibs/bmc"/>
 

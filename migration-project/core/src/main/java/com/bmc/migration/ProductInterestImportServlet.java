@@ -129,10 +129,10 @@ public class ProductInterestImportServlet extends SlingSafeMethodsServlet {
             String dropDownDisplay = row[2];
             if (row[2].equals("Yes")) {
                 String publishedProductName = row[1];
-                node.setProperty("publishedProductName", row[1]);
+                node.setProperty("text", row[1]);
+                node.setProperty("value", name);
             }
-            node.setProperty("text", name);
-//            node.setProperty("value", name);
+            node.setProperty("jcr:title", name);
             node.setProperty("dropDownDisplay", row[2]);
         } catch (RepositoryException e) {
             e.printStackTrace();

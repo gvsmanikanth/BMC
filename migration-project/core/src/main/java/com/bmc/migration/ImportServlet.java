@@ -60,6 +60,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
         this.response = response;
         Session session = null;
         try {
+            response.addHeader("Content-Type", "text/plain");
             out("Starting Import");
             session = repository.loginService("migration", repository.getDefaultWorkspace());
             processForm(session, request);
@@ -98,8 +99,9 @@ public class ImportServlet extends SlingAllMethodsServlet {
         try {
             if (item.getBoolean("Content Found")) {
                 writeTestPage(item, session, request);
+                session.save();
             }
-        } catch (JSONException e) {
+        } catch (Exception e) {
             logger.error(e.getMessage());
         }
     }
@@ -159,7 +161,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         // Build a JCR query to retrieve the product configuration details.
                         Query resourceQuery = queryManager.createQuery("SELECT * FROM [nt:unstructured] AS s " +
                                         "WHERE ISDESCENDANTNODE(s,'/content/bmc/resources/product-interests') " +
-                                        "AND s.text = '" + categoryValue + "'",
+                                        "AND s.[jcr:title] = '" + categoryValue + "'",
                                 Query.JCR_SQL2);
                         QueryResult resourceResult = resourceQuery.execute();
 
@@ -291,6 +293,11 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     image.getParent().orderBefore("image", "ContentArea0");
                 }
 
+                if (jcrNode.getParent().getParent().hasProperty("migration_content_type") &&
+                        jcrNode.getParent().getParent().getProperty("migration_content_type").getString().equals("CallToAction")) {
+                    jcrNode.getParent().getParent().setProperty("buttonURL", mediaUrl);
+                }
+
                 if (name.contains("form-thumbnail")) {
                     Node headerImg = currentPage.getNode("jcr:content/root/header_form").addNode("img");
                     headerImg.setProperty("fileReference", path);
@@ -394,6 +401,9 @@ public class ImportServlet extends SlingAllMethodsServlet {
                                 if (cta.hasProperty(MIGRATION_CONTENT_TYPE) && cta.getProperty(MIGRATION_CONTENT_TYPE).getString().equals("CallToAction")) {
                                     cta.setProperty("buttonURL", value);
                                 }
+                            }
+                            if (contentType.equals("MediaDocument")) {
+                                logger.info("here");
                             }
 
                             // Handle form String properties
@@ -536,8 +546,10 @@ public class ImportServlet extends SlingAllMethodsServlet {
         String formColumns;
         String maxLength;
         String formFieldNarrow;
+        Node currentSelectItems = null;
         depth++;
         for (int i=0;i<array.length();i++) {
+            fieldloop:
             try {
                 item = array.getJSONObject(i).getJSONObject("Row Values");
 
@@ -558,7 +570,16 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 maxLength = item.getString("maxLength");
                 formFieldNarrow = item.getString("formFieldNarrow");
 
-                node = parent.addNode(formFieldType + i);
+                switch (formFieldType) {
+                    case "option":
+                        node = currentSelectItems.addNode(formFieldType + i);
+                        break;
+                    case "end select":
+                        break fieldloop;
+                    default:
+                        node = parent.addNode(formFieldType + i);
+                }
+
                 node.setProperty("formFieldMacro", formFieldMacro);
                 node.setProperty("formFieldID", formFieldID);
                 node.setProperty("formFieldType", formFieldType);
@@ -581,6 +602,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 }
 
                 node.setProperty("name", formFieldName);
+                String name;
                 switch (formFieldType) {
                     case "text":
                         node.setProperty(JCR_TITLE, formFieldLabel);
@@ -601,16 +623,31 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         node.setProperty("usePlaceholder", "true");
                         break;
                     case "macro":
+                        setupMacro(node, formFieldMacro, formFieldLabel);
+                        break;
+                    case "select":
                         node.setProperty(JCR_TITLE, formFieldLabel);
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+                        node.setProperty("source", "local");
                         node.setProperty("type", "drop-down");
-                        node.setProperty("source", "list");
-                        node.setProperty("listPath", "/content/bmc/bmc-macros/"+JcrUtil.createValidName(formFieldMacro, JcrUtil.HYPHEN_LABEL_CHAR_MAPPING) + "-macro");
+                        currentSelectItems = node.addNode("items");
+                        break;
+                    case "option":
+                        String value;
+                        node.setProperty("text", formOptionLabel);
+                        if (!formOptionDisabled.isEmpty())
+                            node.setProperty("disabled", "true");
+                        if (formOptionValue.isEmpty())
+                            value = formOptionLabel;
+                        else
+                            value = formOptionValue;
+
+                        node.setProperty("value", value);
                         break;
                     case "checkbox":
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
-                        node.setProperty("type", "checkbox");
                         node.setProperty("source", "local");
+                        node.setProperty("type", "checkbox");
                         Node items = node.addNode("items");
                         Node cb = items.addNode("item0");
                         cb.setProperty("text", formFieldLabel);
@@ -624,6 +661,91 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 logger.error(e.getMessage());
             }
         }
+    }
+
+    private void setupMacro(Node node, String formFieldMacro, String formFieldLabel) throws RepositoryException {
+        String name;
+        switch (formFieldMacro) {
+            case "State":
+                name = "C_State_Prov";
+                node.setProperty(JCR_TITLE, "State");
+                node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
+                node.setProperty("helpMessage", "State or Province (optional)");
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                node.setProperty("hideTitle", "true");
+                node.setProperty("usePlaceholder", "true");
+                break;
+            case "Country":
+            case "Country (Not Required)":
+                name = "C_Country";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Job Level":
+                name = "C_Job_Level1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Product Interest":
+                name = "C_Product_Interest1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                node.setProperty("listPath", "/content/bmc/resources/product-interests");
+                break;
+            case "Timeframe (long)":
+            case "Timeframe (short)":
+                name = "C_Timeframe1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Company Revenue":
+                name = "C_Company_Revenue1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Job Role - Chg Mgmt macro":
+            case "Job Role - HR macro":
+                name = "C_Job_Role";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Print":
+                name = "Print";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Third Party":
+            case "Third Party Track-IT":
+                name = "C_Third_Party_Consent1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+        }
+    }
+
+    private void initDropdown(Node node, String formFieldMacro, String formFieldLabel) throws RepositoryException {
+        node.setProperty(JCR_TITLE, formFieldLabel);
+        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+        node.setProperty("type", "drop-down");
+        node.setProperty("source", "list");
+        node.setProperty("listPath", "/content/bmc/bmc-macros/" + JcrUtil.createValidName(formFieldMacro, JcrUtil.HYPHEN_LABEL_CHAR_MAPPING) + "-macro");
     }
 
     private void setNarrow(Node node) {
