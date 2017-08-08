@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Map;
-
-import javax.jcr.ItemNotFoundException;
-
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
@@ -145,8 +142,8 @@ public class ExternalLinkRewriter implements TransformerFactory {
                     String linkAbstractor = externalNodeItem.getLinkAbstractor();
                     String linkTarget = externalNodeItem.getLinkAbstractorTarget();
                     String linkTitle = externalNodeItem.getLinkTitle();
-                        String cdnPath = exterString;
-                        if (exterString!=null && linkAbstractor.equalsIgnoreCase("external-link")&& fileName.equalsIgnoreCase(linkTitle)) 
+                        String cdnPath = exterString+fileName;
+                        if (exterString!=null && linkAbstractor.equalsIgnoreCase("external-link")) 
                         {
                         	log.info("EXTERNAL LINK FOUND");
                         attributes.setValue(i, cdnPath);
@@ -154,7 +151,12 @@ public class ExternalLinkRewriter implements TransformerFactory {
                         {
                         	log.info("NEW LINK FOUND");
                         	attributes.addAttribute(null, "target", "target", null, "_blank");
-                        	//attributes.addAttribute(null, null, attributes.getQName(i), "target", "_new");
+                        	
+                        }else if(linkTarget.equals("self"))
+                        {
+                        	log.info("SELF LINK FOUND");
+                        	attributes.addAttribute(null, "target", "target", null, "_self");
+                        	
                         }
                         externalNodeItem = new ExternalLinkNodeItem(null, null, null,null);
                       

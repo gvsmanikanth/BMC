@@ -76,10 +76,15 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			        	}
 				   }
                 PrintWriter out = response.getWriter();
+                out.println("<head>");
+                out.println("<meta http-equiv='refresh' content='1' url='http://thetudors.example.com/'>");
+                out.println("</meta>");
+                out.println("</head>");
                 out.println("<html><body>");
-                out.println("<h1>The External Link rwriter is Running</h1>");
-                out.println("<br><h3> External Link URL :  "+linkAbstractorExternalURL+"</h3>");
-                out.println("<br> <h3>External Link Abstractor Target :  "+linkAbstractorTarget+"</h3>");
+                out.println("<h1>External Link</h1>");
+                out.println("<h3>Destination :</h3>");
+                out.println("<br><a href='"+linkAbstractorExternalURL+"'>" +linkAbstractorExternalURL+"</a>");
+                out.println("<br> <h3> Target :  "+linkAbstractorTarget+"</h3>");
                 out.println("</table>"); 
                 out.println("</html></body>");
               
