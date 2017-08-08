@@ -36,10 +36,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.bmc.components.CareersLocationItem;
-import com.bmc.components.CareersTeamItem;
-import com.bmc.components.onGigDataItem;
 import com.bmc.models.utils.ExternalLinkNodeItem;
 import com.day.cq.wcm.api.WCMMode;
 
