@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2017-05-24T18:02:44.097-07:00"
+        cq:lastModifiedBy="admin"
+        cq:templateType="/conf/bmc/settings/wcm/template-types/external-link-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="External Link Service"
+        status="enabled"/>
+</jcr:root>
