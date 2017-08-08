@@ -14,39 +14,18 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <config
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="External Link Rewriter Config"
+                                        jcr:title="External Link "
                                         sling:orderBefore="title"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <linkAbstractorTarget
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                                fieldDescription="Enter the target ."
-                                                fieldLabel="link Abstractor Target reference*"
-                                                name="./linkAbstractorTarget">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="new"
-                                                        value="new"/>
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="no-change"
-                                                        value="no-change"/>
-                                                    <item3
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="self"
-                                                        value="self"/>
-                                                </items>
-                                            </linkAbstractorTarget>
                                             <linkAbstractorExternalURL
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                fieldLabel="Link Abstractor URL "
+                                                fieldDescription="Enter the link URL."
+                                                fieldLabel="Link URL "
                                                 name="./linkAbstractorExternalURL"
-                                                text="Link Abstractor URL"
+                                                text="Link URL"
                                                 value="www.bmc.com"/>
                                             <linkAbstractor
                                                 jcr:primaryType="nt:unstructured"
@@ -54,6 +33,24 @@
                                                 defaultValue="external-link"
                                                 name="./linkAbstractor"
                                                 value="external-link"/>
+                                            <linkAbstractorTarget
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldDescription="Enter the link target."
+                                                fieldLabel="Link Target"
+                                                name="./linkAbstractorTarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Load in a new window (_blank)"
+                                                        value="new"/>
+                                                    <item3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Load in the same window (_self)"
+                                                        value="self"/>
+                                                </items>
+                                            </linkAbstractorTarget>
                                         </items>
                                     </config>
                                 </items>

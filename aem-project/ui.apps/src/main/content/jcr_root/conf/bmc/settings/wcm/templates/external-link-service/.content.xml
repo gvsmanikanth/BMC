@@ -6,6 +6,6 @@
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/bmc/settings/wcm/template-types/external-link-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="External Link Service"
+        jcr:title="External Link "
         status="enabled"/>
 </jcr:root>

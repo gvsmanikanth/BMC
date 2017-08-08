@@ -4,6 +4,6 @@
     <jcr:content
         jcr:description="Template for BMC External Link Service Configurations"
         jcr:primaryType="cq:PageContent"
-        jcr:title="BMC DXP External Link Service Page"
+        jcr:title="External Link "
         status="enabled"/>
 </jcr:root>
