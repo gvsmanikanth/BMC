@@ -17,7 +17,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-
+                            <resourcePath
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    fieldDescription="Select Offering Micro Path"
+                                    name="./resourcePath"
+                                    fieldLabel="Offering Micro Path"
+                                    rootPath="/content/bmc"/>
                         </items>
                     </column>
                 </items>

@@ -3,5 +3,4 @@
           jcr:description="Offering Micro"
           jcr:primaryType="cq:Component"
           jcr:title="Offering Micro"
-          componentGroup="BMC.content"
-/>
+          componentGroup="BMC.content"/>

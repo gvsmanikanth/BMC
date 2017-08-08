@@ -1,1 +1,27 @@
-<div>Offering</div>
+<sly data-sly-use.OfferingModel="com.bmc.models.components.offerings.OfferingMicro"/>
+<sly data-sly-test.ResourceProps = "${OfferingModel.ResourceProps}">
+
+    <sly data-sly-use.OfferingTemplate="offering-templates.html">
+        <sly data-sly-call="${OfferingTemplate.FullDiscription @
+                            productDiscription=ResourceProps['longDiscription'],
+                            productAvailability=ResourceProps['productAvailability'],
+                            productAvailabilityListPicker=ResourceProps['productAvailabilityListPicker'],
+                            productName=ResourceProps['productName'],
+
+                            primaryParentOfferingPage=ResourceProps['primaryParentOfferingPage'],
+
+                            datasheetPicker=ResourceProps['datasheetPicker'],
+                            datasheetLink=ResourceProps['datasheetLink'],
+                            datasheetPrefix=ResourceProps['datasheetPrefix'],
+                            datasheetIconImage=ResourceProps['datasheetIconImage'],
+
+                            assetPicker=ResourceProps['assetPicker'],
+                            assetLinkText=ResourceProps['assetLinkText'],
+                            assetPrefix=ResourceProps['assetPrefix'],
+                            assetIconImage=ResourceProps['assetIconImage'],
+
+                            linkText=ResourceProps['linkText'],
+                            shortDescription=ResourceProps['shortDescription']}"
+             data-sly-unwrap></sly>
+    </sly>
+</sly>

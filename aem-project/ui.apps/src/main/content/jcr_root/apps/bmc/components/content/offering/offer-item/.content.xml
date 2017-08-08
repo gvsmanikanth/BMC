@@ -3,5 +3,5 @@
           jcr:description="Offer Item"
           jcr:primaryType="cq:Component"
           jcr:title="Offer Item"
-          componentGroup="BMC.content"
+          componentGroup="BMC.hidden"
 />

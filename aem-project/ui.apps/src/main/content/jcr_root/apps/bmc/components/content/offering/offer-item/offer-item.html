@@ -1,5 +1,4 @@
 <div data-sly-test="${properties.productName}">${properties.productName}</div>
-<div data-sly-test="${properties.productDiscription}">${properties.productDiscription}</div>
 <div data-sly-test="${properties.productAvailability}">${properties.productAvailability}</div>
 <div data-sly-test="${properties.productAvailabilityListPicker}">${properties.productAvailabilityListPicker}</div>
 <div data-sly-test="${properties.datasheetIconImage}">${properties.datasheetIconImage}</div>
@@ -12,3 +11,5 @@
 <div data-sly-test="${properties.anchorTagText}">${properties.anchorTagText}</div>
 <div data-sly-test="${properties.linkText}">${properties.linkText}</div>
 <div data-sly-test="${properties.shortDescription}">${properties.shortDescription}</div>
+<sly data-sly-resource="${'productDiscription' @resourceType='bmc/components/content/wysiwyg'}"/>
+

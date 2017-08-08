@@ -23,12 +23,6 @@
                                     fieldLabel="Enter the heading text"
                                     name="./productName"
                                     jcr:primaryType="nt:unstructured"/>
-                            <productDiscription
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="Enter the discription text"
-                                    fieldLabel="Enter the discription text"
-                                    name="./productDiscription"
-                                    jcr:primaryType="nt:unstructured"/>
                             <productAvailability
                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                     fieldLabel="Product Availability"
@@ -36,6 +30,9 @@
                                     name="./productAvailability"
                                     jcr:primaryType="nt:unstructured">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                            jcr:primaryType="nt:unstructured"
+                                            text="none selected" value=""/>
                                     <stand
                                            jcr:primaryType="nt:unstructured"
                                            text="This product is available as a standalone offering."
@@ -64,15 +61,15 @@
                                     name="./datasheetIconImage"
                                     jcr:primaryType="nt:unstructured">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <offering
+                                    <none
                                             jcr:primaryType="nt:unstructured"
                                             text="none selected" value=""/>
-                                    <offering
+                                    <paperIcon
                                             jcr:primaryType="nt:unstructured"
-                                            text="Paper Icon" value="Paper Icon"/>
-                                    <offering
+                                            text="Paper Icon" value="link-icon-resource-document"/>
+                                    <playIcon
                                             jcr:primaryType="nt:unstructured"
-                                            text="Play Icon" value="Play Icon"/>
+                                            text="Play Icon" value="link-icon-video"/>
                                 </items>
                             </datasheetIconImage>
                             <datasheetPicker
@@ -82,7 +79,7 @@
                                     fieldLabel="Datasheet Picker"
                                     jcr:primaryType="nt:unstructured"/>
                             <datasheetLink
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     fieldDescription="Only enter text in this field if the Link Text from the item-browser item in the field above will not be acceptable for some reason"
                                     fieldLabel="Datasheet Link"
                                     name="./datasheetLink"
@@ -95,12 +92,15 @@
                                     name="./assetIconImage"
                                     jcr:primaryType="nt:unstructured">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <none jcr:primaryType="nt:unstructured"
-                                    text="none selected" value=""/>
-                                    <paper jcr:primaryType="nt:unstructured"
-                                    text="Paper Icon" value="Paper Icon"/>
-                                    <play jcr:primaryType="nt:unstructured"
-                                           text="Play Icon" value="Play Icon"/>
+                                    <none
+                                            jcr:primaryType="nt:unstructured"
+                                            text="none selected" value=""/>
+                                    <paperIcon
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Paper Icon" value="link-icon-resource-document"/>
+                                    <playIcon
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Play Icon" value="link-icon-video"/>
                                 </items>
                             </assetIconImage>
                             <assetPrefix
@@ -110,27 +110,27 @@
                                     name="./assetPrefix"
                                     jcr:primaryType="nt:unstructured">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <paper
+                                    <none
                                             jcr:primaryType="nt:unstructured"
                                             text="none selected" value=""/>
                                     <datasheet
                                             jcr:primaryType="nt:unstructured"
-                                            text="Datasheet" value="datasheet"/>
+                                            text="Datasheet" value="Datasheet"/>
                                     <whitePaper
                                             jcr:primaryType="nt:unstructured"
-                                            text="White paper" value="White-paper"/>
+                                            text="White paper" value="White paper"/>
                                     <solutionOverview
                                             jcr:primaryType="nt:unstructured"
-                                            text="Solution Overview" value="Solution-overview"/>
+                                            text="Solution Overview" value="Solution overview"/>
                                     <solutionBrief
                                             jcr:primaryType="nt:unstructured"
-                                            text="Solution brief" value="Solution-brief"/>
+                                            text="Solution brief" value="Solution brief"/>
                                     <analystResearch
                                             jcr:primaryType="nt:unstructured"
-                                            text="Analyst research" value="Analyst-research"/>
+                                            text="Analyst research" value="Analyst research"/>
                                     <caseStudy
                                             jcr:primaryType="nt:unstructured"
-                                            text="Case study" value="Case-study"/>
+                                            text="Case study" value="Case study"/>
                                     <video
                                             jcr:primaryType="nt:unstructured"
                                             text="Video" value="Video"/>
@@ -139,6 +139,12 @@
                                             text="Demo" value="Demo"/>
                                 </items>
                             </assetPrefix>
+                            <assetPicker
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                    fieldDescription="Asset Picker"
+                                    name="./assetPicker"
+                                    fieldLabel="Asset Picker"
+                                    jcr:primaryType="nt:unstructured"/>
                             <assetLinkText
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

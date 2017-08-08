@@ -1,0 +1,16 @@
+<sly data-sly-template.FullDiscription="${@ productDiscription, productAvailability, productAvailabilityListPicker, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, linkText, shortDescription}">
+   ${productDiscription @context='html'}
+
+    <p>${productAvailability}</p>
+
+    <div data-sly-test="${datasheetPicker && (datasheetPicker != '')}" class="icon-container">
+        <a href="${datasheetPicker}" target="_blank" class="${datasheetIconImage} " onclick="s_objectID=&quot;http://www.google.com/_1&quot;;return this.s_oc?this.s_oc(e):true">
+            ${datasheetPrefix}: ${datasheetLink}
+        </a>
+    </div>
+    <div  data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
+        <a href="${assetPicker}" target="_self" class="${assetIconImage} modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=47ada5bbb6a98_1&quot;;return this.s_oc?this.s_oc(e):true">
+            ${assetPrefix}: ${assetLinkText}
+        </a>
+    </div>
+</sly>
