@@ -2,8 +2,11 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-07-21T13:14:58.621-07:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-08T17:52:59.766-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-08T17:53:06.226-04:00"
+        cq:lastReplicatedBy="dtayeh"
+        cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/offering-2-column-template"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page">
@@ -46,39 +49,18 @@
                             <htmlarea
                                 jcr:created="{Date}2017-07-30T17:53:56.459-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-30T17:54:40.254-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T19:11:19.906-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/htmlarea"
-                                text="Enter HTML here to create a two-column text layout or delete if not needed"/>
-                            <image
-                                jcr:created="{Date}2017-07-21T12:13:46.619-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:13:46.619-07:00"
-                                jcr:lastModifiedBy="admin"
+                                text="Enter HTML here"/>
+                            <experiencefragment
+                                jcr:created="{Date}2017-08-06T19:03:51.324-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:03:51.324-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/image"/>
-                            <responsivegrid
-                                jcr:created="{Date}2017-07-21T12:16:56.010-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:16:56.010-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/foundation/components/responsivegrid">
-                                <cq:responsive jcr:primaryType="nt:unstructured"/>
-                                <ctabutton
-                                    jcr:created="{Date}2017-07-21T12:17:05.635-07:00"
-                                    jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2017-07-21T12:17:23.256-07:00"
-                                    jcr:lastModifiedBy="admin"
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="bmc/components/content/CTAbutton"
-                                    buttonColor="btn"
-                                    buttonText="Specify text"
-                                    buttonURL="#"
-                                    customButtonText="Contact Sales"
-                                    learnMore="true"/>
-                            </responsivegrid>
+                                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                             <title
                                 jcr:created="{Date}2017-07-21T12:17:34.056-07:00"
                                 jcr:createdBy="admin"
@@ -96,24 +78,6 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Add content here - delete if not needed&lt;/p>&#xa;"
-                                textIsRich="true"/>
-                            <title_1856155152
-                                jcr:created="{Date}2017-07-21T12:19:59.292-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:20:08.693-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="Video: "
-                                sling:resourceType="bmc/components/content/title"
-                                type="h2"/>
-                            <text_92618029
-                                jcr:created="{Date}2017-07-21T12:20:16.659-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:20:27.043-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/text"
-                                text="&lt;p>Video intro text&lt;/p>&#xa;"
                                 textIsRich="true"/>
                             <video
                                 jcr:created="{Date}2017-07-21T12:20:32.899-07:00"
@@ -199,17 +163,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         width="6"/>
                                 </cq:responsive>
-                                <ctabutton
-                                    jcr:created="{Date}2017-07-21T12:24:49.732-07:00"
-                                    jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2017-07-21T12:24:58.611-07:00"
-                                    jcr:lastModifiedBy="admin"
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="bmc/components/content/CTAbutton"
-                                    buttonColor="btn"
-                                    buttonText="Specify text"
-                                    customButtonText="Contact Sales"
-                                    learnMore="true"/>
                             </responsivegrid_1425654426>
                             <related_items_primar
                                 jcr:created="{Date}2017-07-21T12:25:22.819-07:00"
@@ -259,16 +212,6 @@
                                         sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                                 </responsivegrid>
                                 <cq:responsive jcr:primaryType="nt:unstructured"/>
-                                <ctabutton
-                                    jcr:created="{Date}2017-07-21T12:35:08.242-07:00"
-                                    jcr:createdBy="admin"
-                                    jcr:lastModified="{Date}2017-07-21T12:35:20.462-07:00"
-                                    jcr:lastModifiedBy="admin"
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="bmc/components/content/CTAbutton"
-                                    buttonColor="btn"
-                                    buttonText="Specify text"
-                                    customButtonText="Optional CTA - delete if not needed"/>
                                 <title
                                     jcr:created="{Date}2017-07-21T12:35:33.778-07:00"
                                     jcr:createdBy="admin"
@@ -328,6 +271,22 @@
                                     citation="Citation"
                                     list_prompt="Select a Product"
                                     quote="Enter the quotation here"/>
+                                <related_items_primar
+                                    jcr:created="{Date}2017-08-06T19:05:38.521-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-06T19:05:38.521-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/related-items/related-items-primary"
+                                    customHeadingText="Related items"
+                                    showLinkDescriptions="true"/>
+                                <experiencefragment
+                                    jcr:created="{Date}2017-08-06T19:06:21.615-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-06T19:06:21.615-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                             </responsivegrid_1438952446>
                         </left>
                         <right
@@ -336,12 +295,12 @@
                             <title
                                 jcr:created="{Date}2017-07-21T12:38:08.725-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:38:26.883-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T19:06:36.924-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Title"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <image
                                 jcr:created="{Date}2017-07-21T12:38:45.034-07:00"
                                 jcr:createdBy="admin"
@@ -356,15 +315,22 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/text"/>
+                            <dividers
+                                jcr:created="{Date}2017-08-08T17:50:55.512-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T17:50:55.512-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title_1798564144
                                 jcr:created="{Date}2017-07-21T12:38:55.865-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T12:39:18.158-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T19:06:43.708-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Optional Title"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <image_2088743011
                                 jcr:created="{Date}2017-07-21T12:39:29.558-07:00"
                                 jcr:createdBy="admin"
@@ -379,20 +345,86 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/text"/>
+                            <dividers_1577842894
+                                jcr:created="{Date}2017-08-08T17:51:09.901-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T17:51:09.901-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title_1046412762
                                 jcr:created="{Date}2017-07-21T13:14:38.875-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-21T13:14:53.912-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T19:06:48.820-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Additional Optional Title"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
+                            <image_1291216979
+                                jcr:created="{Date}2017-08-06T19:07:25.962-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:07:25.962-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/image"/>
                             <text_1412974202
                                 jcr:created="{Date}2017-07-21T13:14:58.610-07:00"
                                 jcr:createdBy="admin"
                                 jcr:lastModified="{Date}2017-07-21T13:14:58.610-07:00"
                                 jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"/>
+                            <dividers_476601067
+                                jcr:created="{Date}2017-08-08T17:52:10.924-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T17:52:10.924-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
+                            <video
+                                jcr:created="{Date}2017-08-06T19:08:43.503-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:08:43.503-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/video"/>
+                            <dividers_1808661712
+                                jcr:created="{Date}2017-08-08T17:52:17.608-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T17:52:17.608-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
+                            <related_items_second
+                                jcr:created="{Date}2017-08-06T19:08:21.986-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:08:21.986-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/related-items/related-items-secondary"
+                                customHeadingText="Related items"
+                                showLinkDescriptions="true"/>
+                            <dividers_1741876582
+                                jcr:created="{Date}2017-08-08T17:52:59.758-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T17:52:59.758-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
+                            <title_1339120267
+                                jcr:created="{Date}2017-08-06T19:10:22.582-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:10:28.601-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"
+                                type="h3"/>
+                            <text_1806059532
+                                jcr:created="{Date}2017-08-06T19:10:31.879-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T19:10:31.879-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/text"/>
                         </right>
