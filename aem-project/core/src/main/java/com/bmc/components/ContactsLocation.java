@@ -1,6 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.models.components.contactslocations.ContactPhone;
 import com.bmc.models.components.contactslocations.ContactsLocationModel;
 import com.bmc.models.components.contactslocations.ContactsLocationsModel;
 
@@ -19,40 +20,40 @@ public class ContactsLocation extends WCMUsePojo {
         parentModel = getCurrentPage().getParent().getContentResource("root/maincontentcontainer/responsivegrid/contacts_locations").adaptTo(ContactsLocationsModel.class);
     }
 
-    public String getTest() {
-        return parentModel.getCorporateCommunicationsURL();
-    }
+    public String getSalesPhoneText() { return resolveStrings(model.getSalesPhoneText(), parentModel.getSalesPhoneText()); }
+    public String getSalesPhoneURL() { return resolveStrings(model.getSalesPhoneURL(), parentModel.getSalesPhoneURL()); }
+    public String getSalesContactText() { return resolveStrings(model.getSalesContactText(), parentModel.getSalesContactText()); }
+    public String getSalesContactURL() { return resolveStrings(model.getSalesContactURL(), parentModel.getSalesContactURL()); }
+    public String getFeedbackPhone() { return resolveStrings(model.getFeedbackPhone(), parentModel.getFeedbackPhone()); }
+    public String getCorporateHeadquartersStreet1() { return resolveStrings(model.getCorporateHeadquartersStreet1(), parentModel.getCorporateHeadquartersStreet1()); }
+    public String getCorporateHeadquartersStreet2() { return resolveStrings(model.getCorporateHeadquartersStreet2(), parentModel.getCorporateHeadquartersStreet2()); }
+    public String getCorporateHeadquartersCity() { return resolveStrings(model.getCorporateHeadquartersCity(), parentModel.getCorporateHeadquartersCity()); }
+    public String getCorporateHeadquartersState() { return resolveStrings(model.getCorporateHeadquartersState(), parentModel.getCorporateHeadquartersState()); }
+    public String getCorporateHeadquartersZip() { return resolveStrings(model.getCorporateHeadquartersZip(), parentModel.getCorporateHeadquartersZip()); }
+    public String getCorporateHeadquartersPhone() { return resolveStrings(model.getCorporateHeadquartersPhone(), parentModel.getCorporateHeadquartersPhone()); }
+    public String getEbcPhone() { return resolveStrings(model.getEbcPhone(), parentModel.getEbcPhone()); }
+    public String getEbcInformationURL() { return resolveStrings(model.getEbcInformationURL(), parentModel.getEbcInformationURL()); }
+    public String getProductDocumentationContactText() { return resolveStrings(model.getProductDocumentationContactText(), parentModel.getProductDocumentationContactText()); }
+    public String getProductDocumentationContactURL() { return resolveStrings(model.getProductDocumentationContactURL(), parentModel.getProductDocumentationContactURL()); }
+    public String getCommunitiesText() { return resolveStrings(model.getCommunitiesText(), parentModel.getCommunitiesText()); }
+    public String getCommunitiesURL() { return resolveStrings(model.getCommunitiesURL(), parentModel.getCommunitiesURL()); }
+    public String getAccountsPayable() { return resolveStrings(model.getAccountsPayable(), parentModel.getAccountsPayable()); }
+    public String getAccountsReceivable() { return resolveStrings(model.getAccountsReceivable(), parentModel.getAccountsReceivable()); }
+    public String getEducationCustomerServiceEmail() { return resolveStrings(model.getEducationCustomerServiceEmail(), parentModel.getEducationCustomerServiceEmail()); }
+    public String getInvestorsEmail() { return resolveStrings(model.getInvestorsEmail(), parentModel.getInvestorsEmail()); }
+    public String getCorporateCommunicationsText() { return resolveStrings(model.getCorporateCommunicationsText(), parentModel.getCorporateCommunicationsText()); }
+    public String getCorporateCommunicationsURL() { return resolveStrings(model.getCorporateCommunicationsURL(), parentModel.getCorporateCommunicationsURL()); }
+    public String getSecurityEmail() { return resolveStrings(model.getSecurityEmail(), parentModel.getSecurityEmail()); }
+    public String getAnalystRelationsText() { return resolveStrings(model.getAnalystRelationsText(), parentModel.getAnalystRelationsText()); }
+    public String getAnalystRelationsURL() { return resolveStrings(model.getAnalystRelationsURL(), parentModel.getAnalystRelationsURL()); }
 
-    public String getSalesPhoneText() {
-        return exists(model.getSalesPhoneText()) ? salesPhoneText : salesPhoneURL;
-    }
-    public String getSalesPhoneURL() { return salesPhoneURL; }
-    public String getSalesContactText() { return exists(salesContactText) ? salesContactText : salesContactURL; }
-    public String getSalesContactURL() { return salesContactURL; }
-    public String getFeedbackPhone() { return feedbackPhone; }
-    public String getCorporateHeadquartersStreet1() { return corporateHeadquartersStreet1; }
-    public String getCorporateHeadquartersStreet2() { return corporateHeadquartersStreet2; }
-    public String getCorporateHeadquartersCity() { return corporateHeadquartersCity; }
-    public String getCorporateHeadquartersState() { return corporateHeadquartersState; }
-    public String getCorporateHeadquartersZip() { return corporateHeadquartersZip; }
-    public String getCorporateHeadquartersPhone() { return corporateHeadquartersPhone; }
-    public String getEbcPhone() { return ebcPhone; }
-    public String getEbcInformationURL() { return ebcInformationURL; }
-    public String getProductDocumentationContactText() { return exists(productDocumentationContactText) ? productDocumentationContactText : productDocumentationContactURL; }
-    public String getProductDocumentationContactURL() { return productDocumentationContactURL; }
-    public String getCommunitiesText() { return exists(communitiesText) ? communitiesText : communitiesURL; }
-    public String getCommunitiesURL() { return communitiesURL; }
-    public String getAccountsPayable() { return accountsPayable; }
-    public String getAccountsReceivable() { return accountsReceivable; }
-    public String getEducationCustomerServiceEmail() { return educationCustomerServiceEmail; }
-    public String getInvestorsEmail() { return investorsEmail; }
-    public String getCorporateCommunicationsText() { return exists(corporateCommunicationsText) ? corporateCommunicationsText : corporateCommunicationsURL; }
-    public String getCorporateCommunicationsURL() { return corporateCommunicationsURL; }
-    public String getSecurityEmail() { return securityEmail; }
-    public String getAnalystRelationsText() { return exists(analystRelationsText) ? analystRelationsText : analystRelationsURL; }
-    public String getAnalystRelationsURL() { return analystRelationsURL; }
+    public Iterable<ContactPhone> getEducationCustomerServicePhones() { return resolvePhones(model.getEducationCustomerServicePhones(), parentModel.getEducationCustomerServicePhones()); }
 
     private Boolean exists(String s) {
         return s != null && !s.isEmpty();
+    }
+    private String resolveStrings(String a, String b) { return exists(a) ? a : b; }
+    private Iterable<ContactPhone> resolvePhones(Iterable<ContactPhone> a, Iterable<ContactPhone> b) {
+        return (a != null && a.iterator().hasNext()) ? a : b;
     }
 }

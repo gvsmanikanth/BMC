@@ -37,7 +37,6 @@
                                             fieldDescription="Enter support information, such as local business hours and support line hours"
                                             fieldLabel="General Information"
                                             name="./supportInformation"
-                                            required="{Boolean}true"
                                             useFixedInlineToolbar="{Boolean}true">
                                         <rtePlugins jcr:primaryType="nt:unstructured">
                                             <format
