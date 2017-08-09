@@ -13,7 +13,7 @@ import java.util.List;
  * Created by pheide on 8/7/17.
  */
 @Model(adaptables=Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ContactsLocations {
+public class ContactsLocationsModel {
     @ValueMapValue
     private String salesPhoneText;
     @ValueMapValue
