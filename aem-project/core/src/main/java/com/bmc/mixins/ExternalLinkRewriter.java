@@ -130,23 +130,22 @@ public class ExternalLinkRewriter implements TransformerFactory {
             
             
                 for (int i = 0; i < attributes.getLength(); i++) {
-                	String hrefNamej = attributes.getValue(attributes.getQName(i));
+                	String hrefName = attributes.getValue(attributes.getQName(i));
                 	if("href".equalsIgnoreCase(attributes.getQName(i)))
                     {
-                	String fileName = hrefNamej;
-                	logger.info(hrefNamej);
+                	String fileName = hrefName;   
+                	//Fetch the Href resource name to append to the external link URL
                 	fileName = href.substring(href.lastIndexOf("/") + 1);
-                    
-                    externalNodeItem = dataService.checkJcrRepository(fileName);
+                	externalNodeItem = dataService.checkJcrRepository(fileName);
                     String exterString = externalNodeItem.getLinkAbstractorURL();
                     String linkAbstractor = externalNodeItem.getLinkAbstractor();
                     String linkTarget = externalNodeItem.getLinkAbstractorTarget();
-                    String linkTitle = externalNodeItem.getLinkTitle();
+                   
                         String cdnPath = exterString+fileName;
                         if (exterString!=null && linkAbstractor.equalsIgnoreCase("external-link")) 
                         {
                         	log.info("EXTERNAL LINK FOUND");
-                        attributes.setValue(i, cdnPath);
+                        	attributes.setValue(i, cdnPath);
                         if(linkTarget.equals("new"))
                         {
                         	log.info("NEW LINK FOUND");
@@ -183,3 +182,4 @@ public class ExternalLinkRewriter implements TransformerFactory {
    
 	
 }
+

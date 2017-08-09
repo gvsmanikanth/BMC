@@ -46,7 +46,4 @@ public class ExternalLinkNodeItem {
 	public void setLinkTitle(String linkTitle) {
 		this.linkTitle = linkTitle;
 	}
-	
-	
-	
 }

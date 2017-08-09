@@ -4,6 +4,7 @@
     contentTypes="[text/html]"
     enabled="{Boolean}true"
     generatorType="htmlparser"
+    paths="http://localhost:4502/content/bmc/"
     serializerType="htmlwriter"
     transformerTypes="[linkrewriter]">
     <generator-htmlparser

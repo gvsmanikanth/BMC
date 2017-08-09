@@ -39,13 +39,13 @@ public class ExternalLinkRewriterService {
 	
 	 private static final String NT_CONTENT = "jcr:content";
 	
-	
-	
-	
-	 String linkAbstractor = null;
-	   String linkAbstractorExternalURL = null;
-	   String linkAbstractorTarget = null;
-	   String title ="";
+	 private String linkAbstractor = null;
+	 
+	 private String linkAbstractorExternalURL = null;
+	 
+	 private String linkAbstractorTarget = null;
+	 
+	 private String title = null;
     
 	private static final String SERVICE_ACCOUNT_IDENTIFIER = "onGigDataService";
 	
@@ -70,11 +70,11 @@ public class ExternalLinkRewriterService {
 		
 		  if (session != null) {
               QueryManager queryManager = session.getWorkspace().getQueryManager();
-
+              //SQL Query to fetch the cq:Page of type external-link.
               String sql = "SELECT parent.* FROM [cq:Page] AS parent INNER JOIN [nt:base] "
               		+ "AS child ON ISCHILDNODE(child,parent)"
               		+ " WHERE ISDESCENDANTNODE(parent, '/content') AND "
-              		+ "child.[cq:template] = '/conf/bmc/settings/wcm/templates/external-link-service'";
+              		+ "child.[cq:template] = '/conf/bmc/settings/wcm/templates/external-link'";
               Query query = queryManager.createQuery(sql, "JCR-SQL2");
               QueryResult result = query.execute();
 
@@ -94,10 +94,11 @@ public class ExternalLinkRewriterService {
                 		  			title = content.getProperty("jcr:title").getString();
                 		  			logger.info("Title: " + title);
                 		  			} 
-								logger.info("HREFNAME :"+href);
+								
 										linkAbstractor = content.getProperty("linkAbstractor").getString();
 			                          	linkAbstractorExternalURL = content.getProperty("linkAbstractorExternalURL").getString();  
-			                          	linkAbstractorTarget = content.getProperty("linkAbstractorTarget").getString(); 		
+			                          	linkAbstractorTarget = content.getProperty("linkAbstractorTarget").getString();
+			                          	 logger.info(linkAbstractor+linkAbstractor+linkAbstractorTarget);
                               }
                           }
 			  }
@@ -162,3 +163,4 @@ public class ExternalLinkRewriterService {
 	
 	
 }
+
