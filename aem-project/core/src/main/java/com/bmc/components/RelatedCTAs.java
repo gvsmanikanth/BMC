@@ -79,9 +79,12 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
         if (linkResource == null)
             return null;
 
-        String internalPagePath = linkResource.getValueMap().get("internalPagePath", "");
+        return getLinkItem(linkResource.getValueMap(), this);
+    }
+    static Item getLinkItem(ValueMap linkMap, ResourceProvider resourceProvider) {
+        String internalPagePath = linkMap.get("internalPagePath", "");
 
-        Page page = getPage(internalPagePath);
+        Page page = resourceProvider.getPage(internalPagePath);
         if (page == null)
             return null;
 

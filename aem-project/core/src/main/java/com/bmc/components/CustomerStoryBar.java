@@ -1,7 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.ResourceProvider;
+import com.bmc.mixins.MetadataInfoProvider_RequestCached;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.services.CustomerStoryService;
@@ -9,7 +9,7 @@ import com.bmc.util.StringHelper;
 
 import java.util.List;
 
-public class CustomerStoryBar extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider {
+public class CustomerStoryBar extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached {
     private CustomerStoryService storyService;
     private String title;
     private String linkText;

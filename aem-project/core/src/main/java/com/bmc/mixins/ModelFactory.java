@@ -23,15 +23,7 @@ public interface ModelFactory {
      * Obtains a model instance of the given class, adapted from the {@link Resource} given by {@code resourcePath}
      */
     default <T> T getModel(String resourcePath, Class<T> cls) {
-        if (resourcePath == null || resourcePath.isEmpty())
-            return null;
-
-        ResourceResolver resolver = getResourceResolver();
-        if (resolver == null)
-            return null;
-
-        Resource resource = resolver.getResource(resourcePath);
-        return ModelHelper.getModel(resource, cls);
+        return ModelHelper.getModel(getResourceProvider().getResource(resourcePath), cls);
     }
 
     /**
@@ -47,12 +39,8 @@ public interface ModelFactory {
     default <T> T getModel(String resourcePath, Map<String, Object> additionalValues, Class<T> cls) {
         if (additionalValues == null || additionalValues.size() == 0)
             return getModel(resourcePath, cls);
-        if (resourcePath == null || resourcePath.isEmpty())
-            return null;
-        ResourceResolver resolver = getResourceResolver();
-        if (resolver == null)
-            return null;
-        return ModelHelper.getModel(resolver.getResource(resourcePath), additionalValues, cls);
+
+        return ModelHelper.getModel(getResourceProvider().getResource(resourcePath), additionalValues, cls);
     }
 
     /**
@@ -93,8 +81,7 @@ public interface ModelFactory {
      * @return a stream of non-null model instances which were adapted from the resource children
      */
     default <T> Stream<T> streamModelChildren(String resourcePath, Class<T> cls) {
-        ResourceProvider resourceProvider = this::getResourceResolver;
-        return ModelHelper.streamModelChildren(resourceProvider.getResource(resourcePath), cls);
+        return ModelHelper.streamModelChildren(getResourceProvider().getResource(resourcePath), cls);
     }
 
     /**
@@ -107,11 +94,11 @@ public interface ModelFactory {
      * @return a stream of non-null model instances which were adapted from the resource children
      */
     default <T> Stream<T> streamModelChildren(String resourcePath, Function<Resource,Map<String, Object>> getAdditionalValues, Class<T> cls) {
-        ResourceProvider resourceProvider = this::getResourceResolver;
-        return ModelHelper.streamModelChildren(resourceProvider.getResource(resourcePath), getAdditionalValues, cls);
+        return ModelHelper.streamModelChildren(getResourceProvider().getResource(resourcePath), getAdditionalValues, cls);
     }
 
     static ModelFactory from(ResourceResolver resourceResolver) { return () -> resourceResolver; }
     static ModelFactory from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
+    default ResourceProvider getResourceProvider() { return this::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

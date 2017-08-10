@@ -24,8 +24,11 @@ public interface ModelHelper {
      * Obtains a model instance of the given class, adapted from the given {@link Resource}
      */
     static <T> T getModel(Resource resource, Class<T> cls) {
-        if (resource == null)
+        if (resource == null || cls == null)
             return null;
+
+        if (cls.isInstance(resource))
+            return cls.cast(resource);
 
         return resource.adaptTo(cls);
     }

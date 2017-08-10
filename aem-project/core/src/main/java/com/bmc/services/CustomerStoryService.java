@@ -1,30 +1,24 @@
 package com.bmc.services;
 
-import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.MetadataInfoProvider;
-import com.bmc.models.metadata.MetadataInfo;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
+import com.bmc.models.metadata.MetadataInfo;
 import com.bmc.models.metadata.MetadataOption;
 import com.bmc.models.metadata.MetadataType;
 import com.bmc.util.ModelHelper;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component(label = "CustomerStory Service",
         description = "Helper Service for CustomerStoryList component",
@@ -34,27 +28,25 @@ public class CustomerStoryService  {
     private final static String SPOTLIGHT_FRAGMENT_PATH = "root/experiencefragment";
     private final static String SPOTLIGHT_HEADING_PATH = "root/customer_spotlight/heading";
 
-    private static final Logger logger = LoggerFactory.getLogger(CustomerStoryService.class);
-
-    public List<MetadataInfo> getFilters(ResourceProvider resourceProvider) {
-        return getFilters(resourceProvider::getResourceResolver, MetadataType.COMPANY_SIZE, MetadataType.INDUSTRY, MetadataType.TOPIC)
+    public List<MetadataInfo> getFilters(MetadataInfoProvider metadataProvider) {
+        return metadataProvider.getMetadataInfo(MetadataType.COMPANY_SIZE, MetadataType.INDUSTRY, MetadataType.TOPIC)
                 .collect(Collectors.toList());
     }
 
-    public CustomerStoryCard getStoryCard(String pagePath, ResourceProvider resourceProvider) {
-        Page page = resourceProvider.getPage(pagePath);
+    public CustomerStoryCard getStoryCard(String pagePath, MetadataInfoProvider metadataProvider) {
+        Page page = metadataProvider.getResourceProvider().getPage(pagePath);
         if (page == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page, metadataProvider);
         if (map == null)
             return null;
 
         return ModelHelper.getModel(page, map, CustomerStoryCard.class);
     }
 
-    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, ResourceProvider resourceProvider) {
-        Page page = resourceProvider.getPage(pagePath);
+    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, MetadataInfoProvider metadataProvider) {
+        Page page = metadataProvider.getResourceProvider().getPage(pagePath);
         if (page == null)
             return null;
 
@@ -62,7 +54,7 @@ public class CustomerStoryService  {
         if (backgroundImageSrc == null)
             return null;
 
-        Map<String, Object> map = getCustomerStoryCardValueMap(page);
+        Map<String, Object> map = getCustomerStoryCardValueMap(page, metadataProvider);
         if (map == null)
             return null;
 
@@ -71,7 +63,7 @@ public class CustomerStoryService  {
         return ModelHelper.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
-    private Map<String, Object> getCustomerStoryCardValueMap(Page page) {
+    private Map<String, Object> getCustomerStoryCardValueMap(Page page, MetadataInfoProvider metadataProvider) {
         Map<String, Object> map = new HashMap<>();
         ValueMap pageMap = page.getProperties();
 
@@ -88,9 +80,7 @@ public class CustomerStoryService  {
         if (logoSrc != null)
             map.put("logoSrc", logoSrc);
 
-        MetadataInfoProvider metadataResourceProvider = MetadataInfoProvider.from(page.getContentResource());
-
-        MetadataInfo industryFilter = getFilter(MetadataType.INDUSTRY, metadataResourceProvider);
+        MetadataInfo industryFilter = metadataProvider.getMetadataInfo(MetadataType.INDUSTRY);
         if (industryFilter != null) {
             industryFilter
                     .getActiveOptions(pageMap)
@@ -99,7 +89,7 @@ public class CustomerStoryService  {
                     .ifPresent(name -> map.put("primaryIndustry", name));
         }
 
-        map.put("filterValues", getFilterValues(pageMap, metadataResourceProvider));
+        map.put("filterValues", getFilterValues(pageMap, metadataProvider));
         map.put("secondaryLinkText", pageMap.get("cardSecondaryLinkText", ""));
         map.put("secondaryLinkUrl", pageMap.get("cardSecondaryLinkUrl", ""));
 
@@ -123,26 +113,10 @@ public class CustomerStoryService  {
         return spotlight.getValueMap().get("jcr:title", String.class);
     }
 
-    private String getFilterValues(ValueMap pageMap, MetadataInfoProvider infoProvider) {
-        return getFilters(infoProvider, MetadataType.INDUSTRY, MetadataType.TOPIC, MetadataType.COMPANY_SIZE)
+    private String getFilterValues(ValueMap pageMap, MetadataInfoProvider metadataProvider) {
+        return metadataProvider.getMetadataInfo(MetadataType.INDUSTRY, MetadataType.TOPIC, MetadataType.COMPANY_SIZE)
                 .flatMap(info->info.getActiveOptions(pageMap))
                 .map(MetadataOption::getText)
                 .collect(Collectors.joining(","));
     }
-    private Stream<MetadataInfo> getFilters(MetadataInfoProvider infoProvider, MetadataType...filterTypes) {
-        return Arrays.stream(filterTypes).map(f->getFilter(f, infoProvider));
-    }
-    private MetadataInfo getFilter(MetadataType filterType, MetadataInfoProvider infoProvider) {
-        try {
-            return filterCache.get(filterType, () -> infoProvider.getMetadataInfo(filterType));
-        } catch (CacheLoader.InvalidCacheLoadException ex) {
-            return null;
-        } catch (ExecutionException ex) {
-            logger.error("Unable to populate filterCache", ex);
-            return null;
-        }
-    }
-    private final static Cache<MetadataType, MetadataInfo> filterCache = CacheBuilder.newBuilder()
-            .expireAfterWrite(1, TimeUnit.HOURS)
-            .build();
 }
