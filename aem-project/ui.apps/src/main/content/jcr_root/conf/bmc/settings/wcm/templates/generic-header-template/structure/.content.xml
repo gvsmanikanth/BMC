@@ -3,10 +3,10 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:lastModified="{Date}2017-07-31T15:47:22.741-07:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-07-31T15:53:40.219-07:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastModified="{Date}2017-08-04T17:20:43.002-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-04T17:26:45.800-04:00"
+        cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/generic-header-template"
         jcr:primaryType="cq:PageContent"

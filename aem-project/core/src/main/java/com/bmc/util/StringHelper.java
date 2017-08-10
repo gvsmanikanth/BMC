@@ -1,26 +1,64 @@
 package com.bmc.util;
 
+import com.bmc.mixins.UrlResolver;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.stream.Collectors;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public interface StringHelper {
     /**
      * Returns the first string from {@code items} which is not null or empty
      */
-    static Optional<String> coalesceString(String ...items) {
-        for (String item : items) {
-            if (item == null || item.isEmpty())
-                continue;
-            return Optional.of(item);
-        }
+    static Optional<String> coalesceString(String...items) {
+        return coalesceString(Arrays.stream(items));
+    }
+    /**
+     * Returns the first string from {@code items} which is not null or empty
+     */
+    static Optional<String> coalesceString(Stream<String> items) {
+        return items.filter(str->str != null && !str.isEmpty()).findFirst();
+    }
 
-        return Optional.empty();
+    /**
+     * Returns the first result from {@code getItems} which is not null or empty.<br><br>
+     *
+     * Useful to avoid multiple String lookups when unnecessary and expensive:
+     * <pre>
+     * {@code
+     *
+     * String expensiveLookup = coalesceStringLazy(() -> getCheap(), () -> getExpensive(), () -> getReallyExpensive())
+     *      .orElseThrow(someException);
+     * }
+     * </pre>
+     * @param getItems the {@link Supplier} function(s) generating string values
+     * @return the first result from {@code getItems} which is not null or empty
+     */
+    static Optional<String> coalesceStringLazy(Supplier<String>...getItems) {
+        return coalesceStringLazy(Arrays.stream(getItems));
+    }
+
+    /**
+     * Returns the first result from {@code getItems} which is not null or empty.<br><br>
+     *
+     * Useful to avoid multiple String lookups when unnecessary and expensive:
+     * <pre>
+     * {@code
+     *
+     * String expensiveLookup = coalesceStringLazy(() -> getCheap(), () -> getExpensive(), () -> getReallyExpensive())
+     *      .orElseThrow(someException);
+     * }
+     * </pre>
+     * @param getItems the {@link Supplier} function(s) generating string values
+     * @return the first result from {@code getItems} which is not null or empty
+     */
+    static Optional<String> coalesceStringLazy(Stream<Supplier<String>> getItems) {
+        return getItems.map(Supplier::get)
+                .filter(str->str != null && !str.isEmpty())
+                .findFirst();
     }
 
     /**
@@ -83,5 +121,24 @@ public interface StringHelper {
                         return valueMap.get(key, String.class);
                     }
                 }));
+    }
+
+
+    /**
+     * Resolves the given {@code urlOrPath}, yielding a modified or empty result as appropriate:
+     * <ul>
+     * <li>If {@code urlOrPath} appears to be an internal page path, ".html" will be appended to the result.</li>
+     * <li>If {@code urlOrPath} appears does not appear to be a content path, external url, or hash ('#') value,
+     * an empty result is returned.</li>
+     * </ul>
+     *
+     * @param urlOrPath the url or path to resolve
+     * @return the resolved url or path, unchanged, modified, or empty as appropriate
+     *
+     * @see UrlResolver#resolveHref(String)
+     */
+    static Optional<String> resolveHref(String urlOrPath) {
+        UrlResolver resolver = () -> null;
+        return resolver.resolveHref(urlOrPath, false);
     }
 }

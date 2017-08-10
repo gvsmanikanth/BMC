@@ -3,16 +3,19 @@ package com.bmc.components.datasource;
 import com.adobe.cq.commerce.common.ValueMapDecorator;
 import com.adobe.granite.ui.components.ds.DataSource;
 import com.adobe.granite.ui.components.ds.ValueMapResource;
+import com.bmc.mixins.ResourceProvider;
+import com.bmc.models.metadata.MetadataType;
+import com.bmc.util.ResourceHelper;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.NameConstants;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * A simple, reusable datasource for granite/ui/components/foundation/form/select fields, for use like so:
@@ -26,7 +29,7 @@ import java.util.stream.StreamSupport;
  *      emptyText="Select item to add"
  *      multiple="true"
  *      dataPath="/path/to/parent/of/options/nodes"
- *      useNameAsValue="false"
+ *      useNameAsValue="true"
  *      textProperty="text"
  *      valueProperty="value"
  *      name="./fieldName">
@@ -42,7 +45,7 @@ import java.util.stream.StreamSupport;
  * of this {@link DataSource} and behavior.
  */
 public class SelectOptionsDataSource implements DataSource {
-    private final List<Resource> items;
+    private List<Resource> items;
     private String textProperty;
     private String valueProperty;
     private boolean useNameAsValue;
@@ -51,10 +54,31 @@ public class SelectOptionsDataSource implements DataSource {
         if (contextProperties != null) {
             this.textProperty = contextProperties.get("textProperty", "text");
             this.valueProperty = contextProperties.get("valueProperty", "value");
-            this.useNameAsValue = contextProperties.get("useNameAsValue", false);
+            this.useNameAsValue = contextProperties.get("useNameAsValue", true);
         }
 
-        items = StreamSupport.stream(resource.getChildren().spliterator(), false)
+        items = ResourceHelper.streamChildren(resource)
+                .map(this::resolveResourceData)
+                .collect(Collectors.toList());
+    }
+
+    public SelectOptionsDataSource(Resource resource) {
+        ValueMap map = resource.getValueMap();
+        String metadataName = map.get("metadataName", "");
+        this.textProperty = map.get("textProperty", "text");
+        this.valueProperty = map.get("valueProperty", "value");
+        this.useNameAsValue = map.get("useNameAsValue", true);
+
+        items = Collections.emptyList();
+        if (metadataName.isEmpty())
+            return;
+
+        MetadataType type = MetadataType.valueOfResource(metadataName);
+        if (type == null)
+            return;
+
+        items = ResourceProvider.from(resource)
+                .streamChildren(type.getResourcePath())
                 .map(this::resolveResourceData)
                 .collect(Collectors.toList());
     }
@@ -68,13 +92,19 @@ public class SelectOptionsDataSource implements DataSource {
         ValueMap sourceMap = sourceResource.getValueMap();
         String text = StringHelper.coalesceStringValue(sourceMap, textProperty, NameConstants.PN_TITLE)
                 .orElse(sourceResource.getName());
-        String value = useNameAsValue
-                ? sourceResource.getName()
-                : StringHelper.coalesceStringValue(sourceMap, valueProperty).orElse(text);
+        String value = StringHelper.coalesceStringValue(sourceMap, valueProperty)
+                .orElse(useNameAsValue ? sourceResource.getName() : text);
 
         ValueMap map = new ValueMapDecorator(new HashMap<>());
         map.put("text", text);
         map.put("value", value);
+
+        Boolean disabled = sourceMap.get("disabled", Boolean.class);
+        if (disabled != null)
+            map.put("disabled", disabled);
+        Boolean selected = sourceMap.get("selected", Boolean.class);
+        if (selected != null)
+            map.put("selected", selected);
 
         return new ValueMapResource(sourceResource.getResourceResolver(),
                 sourceResource.getPath(), sourceResource.getResourceType(), map);

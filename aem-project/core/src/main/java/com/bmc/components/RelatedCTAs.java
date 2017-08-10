@@ -1,7 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.AdaptableResourceProvider;
+import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
-public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider, MultifieldDataProvider {
+public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
@@ -79,9 +79,12 @@ public class RelatedCTAs extends WCMUsePojo implements AdaptableResourceProvider
         if (linkResource == null)
             return null;
 
-        String internalPagePath = linkResource.getValueMap().get("internalPagePath", "");
+        return getLinkItem(linkResource.getValueMap(), this);
+    }
+    static Item getLinkItem(ValueMap linkMap, ResourceProvider resourceProvider) {
+        String internalPagePath = linkMap.get("internalPagePath", "");
 
-        Page page = getPage(internalPagePath);
+        Page page = resourceProvider.getPage(internalPagePath);
         if (page == null)
             return null;
 

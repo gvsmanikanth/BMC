@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,6 +37,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private int timeout = 5000;
 
     private String redirectPage = "";
+
+    private Session session;
 
     /**
      * Restricted form fields
@@ -90,6 +93,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
+        session = request.getResourceResolver().adaptTo(Session.class);
         RequestParameterMap parameters = request.getRequestParameterMap();
         Map<String, String> formData = new HashMap<>();
         parameters.forEach((k, v) -> formData.put(k, request.getParameter(k)));
@@ -202,7 +206,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private Map getFormProperties(Node node) {
         String[] formProperties = new String[]{
-                "C_Product_Interest1",
+                "product_interest",
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
@@ -227,7 +231,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         };
         Map<String, String> properties = new HashMap<>();
         Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
+        properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
         return properties;
+    }
+
+    private String getProductInterestFromNodeName(String nodeName) {
+        String value = "";
+        try {
+            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("text").getString();
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 
     private String getFormProperty(Node node, String property) {

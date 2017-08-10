@@ -9,28 +9,50 @@ import org.apache.sling.api.resource.ResourceResolver;
 import java.util.Optional;
 
 /**
- * Mixin providing url resolution helper methods
+ * Mixin providing url resolution with {@link Resource} validation/resolution of paths via {@link #getResourceResolver}
+ *
  */
 public interface UrlResolver {
     /**
      * Resolves the given {@code urlOrPath}, yielding a modified or empty result as appropriate:
      * <ul>
      * <li>If {@code urlOrPath} appears to be an internal page path, ".html" will be appended to the result.</li>
-     * <li>If {@code urlOrPath} appears does not appear to be a content path, external url, or hash ('#') value, an empty result is returned.</li>
-     * <li>If {@code verifyPath} is true and {@code urlOrPath} appears to be a path, this method will attempt to load
-     * the {@link Asset} or {@link Page} resource. An empty result is returned if not found. This verification also enables use of
-     * {@link Page#getVanityUrl} if present for a given page path.</li>
+     * <li>If {@code urlOrPath} appears does not appear to be a content path, external url, or hash ('#') value,
+     * an empty result is returned.</li>
+     * <li>If {@code urlOrPath} appears to be a {@link Asset} or {@link Page} resource, this method will attempt to
+     * load it, returning an empty result if not found, and respecting {@link Page#getVanityUrl} if present.</li>
+     * </ul>
+     *
+     * @param urlOrPath the url or path to resolve
+     * @return the resolved url or path, unchanged, modified, or empty as appropriate
+     *
+     * @see StringHelper#resolveHref(String)
+     */
+    default Optional<String> resolveHref(String urlOrPath) {
+        return resolveHref(urlOrPath, true);
+    }
+    /**
+     * Resolves the given {@code urlOrPath}, yielding a modified or empty result as appropriate:
+     * <ul>
+     * <li>If {@code urlOrPath} appears to be an internal page path, ".html" will be appended to the result.</li>
+     * <li>If {@code urlOrPath} appears does not appear to be a content path, external url, or hash ('#') value,
+     * an empty result is returned.</li>
+     * <li>If {@code verifyPath} is true and {@code urlOrPath} appears to be a {@link Asset} or {@link Page} resource,
+     * this method will attempt to load it, returning an empty result if not found, and respecting
+     * {@link Page#getVanityUrl} if present.</li>
      * </ul>
      *
      * @param urlOrPath the url or path to resolve
      * @param verifyPath whether or not to verify an apparent path in {@code urlOrPath} by loading it's {@link Resource}
      * @return the resolved url or path, unchanged, modified, or empty as appropriate
+     *
+     * @see StringHelper#resolveHref(String)
      */
     default Optional<String> resolveHref(String urlOrPath, boolean verifyPath) {
         if (urlOrPath == null)
             return Optional.empty();
 
-        AdaptableResourceProvider resourceProvider = AdaptableResourceProvider.from(getResourceResolver());
+        ResourceProvider resourceProvider = this::getResourceResolver;
 
         // assume these are always fine as is
         if (urlOrPath.startsWith("http") || urlOrPath.startsWith("#") || urlOrPath.contains(".html"))
@@ -66,5 +88,6 @@ public interface UrlResolver {
     }
 
     static UrlResolver from(ResourceResolver resolver) { return () -> resolver; }
+    static UrlResolver from(Resource resource) { return (resource == null) ? null : resource::getResourceResolver; }
     ResourceResolver getResourceResolver();
 }

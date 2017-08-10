@@ -6,13 +6,20 @@
 <%
 %><%
     request.setAttribute(DataSource.class.getName(), EmptyDataSource.instance());
+    DataSource ds = null;
     ValueMap props = resource.adaptTo(ValueMap.class);
-    String path = props.get("dataPath", String.class);
-    if (path != null) {
-        Resource res = resourceResolver.getResource(path);
-        if (res != null && res.hasChildren()) {
-            DataSource ds = new SelectOptionsDataSource(res, props);
-            request.setAttribute(DataSource.class.getName(), ds);
+    String metadataName = props.get("metadataName", String.class);
+    if (metadataName != null) {
+        ds = new SelectOptionsDataSource(resource);
+    } else {
+        String path = props.get("dataPath", String.class);
+        if (path != null) {
+            Resource res = resourceResolver.getResource(path);
+            if (res != null && res.hasChildren()) {
+                ds = new SelectOptionsDataSource(res, props);
+            }
         }
     }
+    if (ds != null)
+        request.setAttribute(DataSource.class.getName(), ds);
 %>

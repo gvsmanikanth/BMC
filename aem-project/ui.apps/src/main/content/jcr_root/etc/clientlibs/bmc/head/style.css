@@ -3609,6 +3609,12 @@ span .chatbtn {
 .divider-secondary {
   border-top: 1px dashed #cccccc; }
 
+/* Component Divider */
+.dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
+  display: block;
+  margin: 0;
+  padding: .65rem 0; }
+
 /* jQuery Dropdown: A simple dropdown plugin
  *
  * Contribute: https://github.com/claviska/jquery-dropdown
@@ -8987,45 +8993,45 @@ input[type="radio"] + textarea.validation-error {
 .valign-top > div {
   vertical-align: top; }
 
-div.video {
+div.videos {
   position: relative; }
-  div.video::before {
+  div.videos::before {
     content: '';
     display: block;
     padding-top: 64.22414%; }
-  div.video > embed,
-  div.video > iframe,
-  div.video > object,
-  div.video > video,
-  div.video > a,
-  div.video > div,
-  div.video > img {
+  div.videos > embed,
+  div.videos > iframe,
+  div.videos > object,
+  div.videos > video,
+  div.videos > a,
+  div.videos > div,
+  div.videos > img {
     height: 100% !important;
     left: 0;
     position: absolute !important;
     top: 0;
     width: 100% !important; }
-  div.video video {
+  div.videos video {
     height: 100%;
     width: 100%; }
-  div.video [id*="play_button_div_embedded_player_"] {
+  div.videos [id*="play_button_div_embedded_player_"] {
     height: 100% !important;
     width: 100% !important; }
-  div.video video {
+  div.videos video {
     height: 100%;
     width: 100%; }
-  div.video [id*="play_button_div_embedded_player_"] {
+  div.videos [id*="play_button_div_embedded_player_"] {
     height: 100% !important;
     width: 100% !important; }
-  div.video a[id^="embedded_player_"] {
+  div.videos a[id^="embedded_player_"] {
     position: relative !important; }
-  div.video div[id^="embedded_player_"] {
+  div.videos div[id^="embedded_player_"] {
     width: 100% !important;
     height: 100% !important; }
-  .page-campaign-landing div.video {
+  .page-campaign-landing div.videos {
     display: none; }
     @media only screen and (min-width: 60em) {
-      .page-campaign-landing div.video {
+      .page-campaign-landing div.videos {
         display: block; } }
 
 .video-caption p {

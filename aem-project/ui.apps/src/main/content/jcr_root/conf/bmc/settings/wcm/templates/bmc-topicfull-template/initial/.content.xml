@@ -3,11 +3,14 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         bodyClass="section-products page-category"
-        cq:lastModified="{Date}2017-07-23T19:25:35.553-07:00"
+        cq:lastModified="{Date}2017-08-01T17:21:14.720-07:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-08-01T17:21:59.509-07:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/bmc-topicfull-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/offering-page-common">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -32,23 +35,21 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/header-brand"/>
-                    <secondarycontentcont
-                        jcr:created="{Date}2017-07-23T12:57:59.440-07:00"
+                    <ctabar_440398097
+                        jcr:created="{Date}2017-08-01T17:08:38.593-07:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-07-23T12:57:59.440-07:00"
+                        jcr:lastModified="{Date}2017-08-01T17:08:38.593-07:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/structure/secondarycontentcontainer">
-                        <wysiwyg
-                            jcr:created="{Date}2017-07-23T12:58:11.388-07:00"
+                        sling:resourceType="bmc/components/content/CTAbar">
+                        <text
+                            jcr:created="{Date}2017-08-01T17:08:52.566-07:00"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-23T14:21:23.306-07:00"
+                            jcr:lastModified="{Date}2017-08-01T17:08:52.566-07:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/wysiwyg"
-                            text="&lt;p style=&quot;text-align: center;&quot;>Add intro copy here&lt;/p>&#xa;"
-                            textIsRich="true"/>
-                    </secondarycontentcont>
+                            sling:resourceType="bmc/components/content/text"/>
+                    </ctabar_440398097>
                     <_66_33contentcontain
                         jcr:created="{Date}2017-07-23T13:02:27.516-07:00"
                         jcr:createdBy="admin"
@@ -276,6 +277,13 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/section">
+                            <title
+                                jcr:created="{Date}2017-08-01T17:16:42.427-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-01T17:16:42.427-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"/>
                             <_33_66contentcontain
                                 jcr:created="{Date}2017-07-23T19:11:17.919-07:00"
                                 jcr:createdBy="admin"
@@ -297,22 +305,13 @@
                                 <right
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                                    <key_features
-                                        jcr:created="{Date}2017-07-23T19:12:15.603-07:00"
+                                    <text
+                                        jcr:created="{Date}2017-08-01T17:17:22.949-07:00"
                                         jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:12:15.603-07:00"
+                                        jcr:lastModified="{Date}2017-08-01T17:17:22.949-07:00"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/key-features"
-                                        headerSubTitle="Key features Subheading"
-                                        headerTitle="Key features Heading"/>
-                                    <wysiwyg
-                                        jcr:created="{Date}2017-07-23T19:12:20.790-07:00"
-                                        jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:12:20.790-07:00"
-                                        jcr:lastModifiedBy="admin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/wysiwyg"/>
+                                        sling:resourceType="bmc/components/content/text"/>
                                 </right>
                             </_33_66contentcontain>
                         </section>
@@ -323,6 +322,13 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/section">
+                            <title
+                                jcr:created="{Date}2017-08-01T17:17:43.904-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-01T17:17:43.904-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"/>
                             <_33_66contentcontain
                                 jcr:created="{Date}2017-07-23T19:12:34.156-07:00"
                                 jcr:createdBy="admin"
@@ -344,15 +350,13 @@
                                 <right
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                                    <key_features
-                                        jcr:created="{Date}2017-07-23T19:13:04.182-07:00"
+                                    <text
+                                        jcr:created="{Date}2017-08-01T17:18:10.561-07:00"
                                         jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:13:04.182-07:00"
+                                        jcr:lastModified="{Date}2017-08-01T17:18:10.561-07:00"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/key-features"
-                                        headerSubTitle="Key features Subheading"
-                                        headerTitle="Key features Heading"/>
+                                        sling:resourceType="bmc/components/content/text"/>
                                 </right>
                             </_33_66contentcontain>
                         </section_1775079877>
@@ -363,6 +367,13 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/section">
+                            <title
+                                jcr:created="{Date}2017-08-01T17:18:27.929-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-01T17:18:27.929-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"/>
                             <_33_66contentcontain
                                 jcr:created="{Date}2017-07-23T19:18:49.317-07:00"
                                 jcr:createdBy="admin"
@@ -384,22 +395,13 @@
                                 <right
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                                    <key_features
-                                        jcr:created="{Date}2017-07-23T19:19:35.565-07:00"
+                                    <text
+                                        jcr:created="{Date}2017-08-01T17:21:14.707-07:00"
                                         jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:19:35.565-07:00"
+                                        jcr:lastModified="{Date}2017-08-01T17:21:14.707-07:00"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/key-features"
-                                        headerSubTitle="Key features Subheading"
-                                        headerTitle="Key features Heading"/>
-                                    <wysiwyg
-                                        jcr:created="{Date}2017-07-23T19:19:46.679-07:00"
-                                        jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:19:46.679-07:00"
-                                        jcr:lastModifiedBy="admin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/wysiwyg"/>
+                                        sling:resourceType="bmc/components/content/text"/>
                                 </right>
                             </_33_66contentcontain>
                         </section_1797476282>
@@ -410,6 +412,13 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/section">
+                            <title
+                                jcr:created="{Date}2017-08-01T17:19:53.624-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-01T17:19:53.624-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"/>
                             <_33_66contentcontain
                                 jcr:created="{Date}2017-07-23T19:20:08.112-07:00"
                                 jcr:createdBy="admin"
@@ -431,22 +440,13 @@
                                 <right
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                                    <key_features
-                                        jcr:created="{Date}2017-07-23T19:20:39.674-07:00"
+                                    <text
+                                        jcr:created="{Date}2017-08-01T17:20:06.985-07:00"
                                         jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:20:39.674-07:00"
+                                        jcr:lastModified="{Date}2017-08-01T17:20:06.985-07:00"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/key-features"
-                                        headerSubTitle="Key features Subheading"
-                                        headerTitle="Key features Heading"/>
-                                    <wysiwyg
-                                        jcr:created="{Date}2017-07-23T19:20:45.509-07:00"
-                                        jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:20:45.509-07:00"
-                                        jcr:lastModifiedBy="admin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/wysiwyg"/>
+                                        sling:resourceType="bmc/components/content/text"/>
                                 </right>
                             </_33_66contentcontain>
                         </section_437458603>
@@ -457,6 +457,13 @@
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/section">
+                            <title
+                                jcr:created="{Date}2017-08-01T17:20:16.526-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-01T17:20:16.526-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/title"/>
                             <_33_66contentcontain
                                 jcr:created="{Date}2017-07-23T19:20:58.660-07:00"
                                 jcr:createdBy="admin"
@@ -478,22 +485,13 @@
                                 <right
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                                    <key_features
-                                        jcr:created="{Date}2017-07-23T19:21:24.841-07:00"
+                                    <text
+                                        jcr:created="{Date}2017-08-01T17:20:46.390-07:00"
                                         jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:21:24.841-07:00"
+                                        jcr:lastModified="{Date}2017-08-01T17:20:46.390-07:00"
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/key-features"
-                                        headerSubTitle="Key features Subheading"
-                                        headerTitle="Key features Heading"/>
-                                    <wysiwyg
-                                        jcr:created="{Date}2017-07-23T19:21:31.814-07:00"
-                                        jcr:createdBy="admin"
-                                        jcr:lastModified="{Date}2017-07-23T19:21:31.814-07:00"
-                                        jcr:lastModifiedBy="admin"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="bmc/components/content/wysiwyg"/>
+                                        sling:resourceType="bmc/components/content/text"/>
                                 </right>
                             </_33_66contentcontain>
                         </section_1151472365>
@@ -515,13 +513,6 @@
                                 tabTitle="Tab 5"/>
                         </tabdata>
                     </tabs>
-                    <experiencefragment
-                        jcr:created="{Date}2017-07-23T19:22:02.545-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-07-23T19:22:02.545-07:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                     <htmlarea
                         jcr:created="{Date}2017-07-23T19:22:19.949-07:00"
                         jcr:createdBy="admin"
@@ -538,14 +529,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/htmlarea"
                         text="HTML Area for Analyst Reports and White Papers"/>
-                    <htmlarea_368124380
-                        jcr:created="{Date}2017-07-23T19:23:24.675-07:00"
+                    <experiencefragment
+                        jcr:created="{Date}2017-07-23T19:22:02.545-07:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-07-23T19:23:39.938-07:00"
+                        jcr:lastModified="{Date}2017-07-23T19:22:02.545-07:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/content/htmlarea"
-                        text="HTML Area for Blog Feed"/>
+                        sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                     <ctabar
                         jcr:created="{Date}2017-07-23T19:23:49.021-07:00"
                         jcr:createdBy="admin"
