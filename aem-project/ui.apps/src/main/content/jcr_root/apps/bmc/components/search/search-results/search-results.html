@@ -33,11 +33,14 @@
 <div class="st-search-container">
 </div>
 
-<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel"/>
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
+<sly data-sly-list="${SearchResultsModel.ParameterMap}">
+    <div><b>${item}:</b> ${SearchResultsModel.ParameterMap[item]}</div>
+</sly>
+    <!--/*<div data-sly-list="${params}">HELLO: ${item}</div>*/-->
 
 <sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}">
-    ${PageLocale}
-</sly>
+
 <script type="text/javascript">
     (function(w, d, t, u, n, s, e) {
         w['SwiftypeObject'] = n;
@@ -57,7 +60,7 @@
                 query_filter: function(query) {
                     //query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'FIELD_NAME', { values: ['VALUE1', 'VALUE2'], type: "and" });
                     query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'source', {
-                        values: ['en-us', 'newsroom', 'docs', 'marketplace', 'communities'],
+                        values: ['${PageLocale @context="unsafe"}', 'newsroom', 'docs', 'marketplace', 'communities'],
                         type: "or"
                     });
                     return query;
@@ -66,3 +69,4 @@
         }
     });
 </script>
+</sly>
