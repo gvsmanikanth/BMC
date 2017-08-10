@@ -77,8 +77,8 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>External Link</h1>");
-                out.println("<h3>Destination :  "+linkAbstractorExternalURL+"</h3>");
-                out.println("<br>");
+                out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
+                out.println("</a><br>");
                 out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
                 out.println("</body></html>");
               
