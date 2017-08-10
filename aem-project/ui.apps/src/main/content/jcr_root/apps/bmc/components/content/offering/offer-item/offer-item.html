@@ -1,16 +1,14 @@
-<div data-sly-test="${properties.productName}">${properties.productName}</div>
-<div data-sly-test="${properties.productAvailability}">${properties.productAvailability}</div>
-<div data-sly-test="${properties.productAvailabilityListPicker}">${properties.productAvailabilityListPicker}</div>
-<div data-sly-test="${properties.datasheetIconImage}">${properties.datasheetIconImage}</div>
-<div data-sly-test="${properties.datasheetPicker}">${properties.datasheetPicker}</div>
-<div data-sly-test="${properties.datasheetLink}">${properties.datasheetLink}</div>
-<div data-sly-test="${properties.assetIconImage}">${properties.assetIconImage}</div>
-<div data-sly-test="${properties.assetPrefix}">${properties.assetPrefix}</div>
-<div data-sly-test="${properties.assetLinkText}">${properties.assetLinkText}</div>
-<div data-sly-test="${properties.primaryParentOfferingPage}">${properties.primaryParentOfferingPage}</div>
-<div data-sly-test="${properties.anchorTagText}">${properties.anchorTagText}</div>
-<div data-sly-test="${properties.linkText}">${properties.linkText}</div>
-<div data-sly-test="${properties.anchorTagText}">${properties.anchorTagText}</div>
-<div data-sly-test="${properties.shortDescription}">${properties.shortDescription}</div>
-<sly data-sly-resource="${'productDiscription' @resourceType='bmc/components/content/wysiwyg'}"/>
+<div style="background-color:#FFFFFF;padding:20px;">
+    <sly data-sly-test="${wcmmode.edit}">
+        <sly data-sly-test.List="${['productName','productAvailability','datasheetIconImage','datasheetPicker','datasheetLink','assetIconImage','assetPrefix','assetLinkText','primaryParentOfferingPage','anchorTagText','linkText','anchorTagText','shortDescription']}"></sly>
+        <sly data-sly-list="${List}">
+            <strong>${item}:</strong>
+            <div id="${item}">${properties[item]}</div>
+        </sly>
+        <strong>Long Description:</strong>
+        <sly data-sly-resource="${'productDiscription' @resourceType='bmc/components/content/wysiwyg'}"/>
+    </sly>
+    <p data-sly-test="${!wcmmode.edit}">This is an offering of <a href="${properties.primaryParentOfferingPage}.html#${properties.anchorTagText}">
+        ${properties.primaryParentOfferingPage}.html#${properties.anchorTagText}</a>.</p>
+</div>
 

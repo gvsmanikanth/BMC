@@ -24,3 +24,14 @@
         </li>
     </ul>
 </sly>
+<sly data-sly-template.Empty="${@ productName, anchorTagText}">
+    <ul class="accordion">
+        <li class="accordion-item">
+            <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
+            <a class="accordion-item-anchor" href="#${anchorTagText}">${productName}</a>
+            <div class="accordion-item-content">
+
+            </div>
+        </li>
+    </ul>
+</sly>
