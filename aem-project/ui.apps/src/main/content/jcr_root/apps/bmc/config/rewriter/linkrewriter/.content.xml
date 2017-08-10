@@ -4,10 +4,11 @@
     contentTypes="[text/html]"
     enabled="{Boolean}true"
     generatorType="htmlparser"
-    paths="http://localhost:4502/content/bmc/"
+    order="{Long}1"
+    paths="/content/bmc/"
     serializerType="htmlwriter"
     transformerTypes="[linkrewriter]">
     <generator-htmlparser
         jcr:primaryType="nt:unstructured"
-        includeTags="META,/META,A,/A,IMG,AREA,FORM,BASE,LINK,SCRIPT,BODY,/BODY,VIDEO,/VIDEO,ASIDE,/ASIDE,SECTION,/SECTION"/>
+        includeTags="[A,/A,IMG,AREA,FORM,BASE,LINK,SCRIPT,BODY,/BODY]"/>
 </jcr:root>

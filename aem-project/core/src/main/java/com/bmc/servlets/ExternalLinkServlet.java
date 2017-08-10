@@ -71,16 +71,16 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			        	}
 				   }
                 PrintWriter out = response.getWriter();
-                out.println("<head>");
+                out.println("<html><head>");
                 out.println("<meta http-equiv='refresh' content='300;URL='http://www.bmc.com/blogs/''>");
                 out.println("</meta>");
                 out.println("</head>");
-                out.println("<html><body>");
+                out.println("<body>");
                 out.println("<h1>External Link</h1>");
                 out.println("<h3>Destination :  "+linkAbstractorExternalURL+"</h3>");
                 out.println("<br>");
                 out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
-                out.println("</html></body>");
+                out.println("</body></html>");
               
            } catch (Exception e) {
                logger.error(e.getMessage());
