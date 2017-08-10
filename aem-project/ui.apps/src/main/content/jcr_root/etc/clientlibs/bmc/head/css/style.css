@@ -1270,7 +1270,8 @@ blockquote {
 .layout-inner-wrap {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 1.55556em; }
+  padding: 0 1.55556em;
+  width: auto; }
   .layout-inner-wrap.-bb {
     border-bottom: 1px solid #f1f1f1; }
   .layout-inner-wrap.-mb {

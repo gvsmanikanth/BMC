@@ -39,7 +39,7 @@
 	margin: 0 auto;
 	max-width: $rowMaxWidth;
 	padding: 0 em(28);
-
+	width: auto; //overloads aem grid's weird use of both display block / width 100%.
 	&.-bb {
 		border-bottom: 1px solid color(seashell);
 	}
