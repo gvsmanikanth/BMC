@@ -8,10 +8,8 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.jcr.Node;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
-import javax.jcr.Session;
+import javax.jcr.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
@@ -31,14 +29,30 @@ public class OfferingMicro {
 
 
     private HashMap<String,String> resourceProps;
+    private List<HashMap> productAvailabilityList;
 
     @PostConstruct
     protected void init() {
         try {
             Node mainNode;
             Node longDiscription;
+            Node productAvailabilityListNode;
             mainNode = session.getNode(resourcePath+"/jcr:content/root/offer_item");
             longDiscription = mainNode.getNode("productDiscription");
+            productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
+
+            NodeIterator productAvailabilityListNI =  productAvailabilityListNode.getNodes();
+            productAvailabilityList = new ArrayList<>();
+
+            while(productAvailabilityListNI.hasNext()) {
+                    HashMap<String,String> pNodeHash = new HashMap<>();
+                    Node pNode = productAvailabilityListNI.nextNode();
+                    Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString()+"/jcr:content/");
+                        pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
+                        pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
+                        productAvailabilityList.add(pNodeHash);
+            }
+
 
             resourceProps = new HashMap<>();
 
@@ -93,13 +107,22 @@ public class OfferingMicro {
             if(mainNode.hasProperty("shortDescription"))
                 resourceProps.put("shortDescription",mainNode.getProperty("shortDescription").getValue().getString());
 
+            if(mainNode.hasProperty("anchorTagText"))
+                resourceProps.put("anchorTagText",mainNode.getProperty("anchorTagText").getValue().getString());
+
             if(longDiscription.hasProperty("text"))
                 resourceProps.put("longDiscription",longDiscription.getProperty("text").getValue().getString());
+
+
 
 
         }catch (Exception e){
             logger.error("ERROR: {}", e);
         }
+    }
+
+    public List<HashMap> getProductAvailabilityList() {
+        return productAvailabilityList;
     }
 
     public HashMap<String, String> getResourceProps() {
