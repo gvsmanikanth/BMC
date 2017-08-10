@@ -4,7 +4,7 @@
     <filter root="/apps/wcm/core/content/sites"/>
 
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
-    <!--<filter root="/conf/bmc" mode="merge"/>-->
+    <filter root="/conf/bmc" mode="update"/>
     <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
 
     <filter root="/etc/clientlibs/bmc"/>
