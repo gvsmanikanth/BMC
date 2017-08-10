@@ -2,5 +2,12 @@
      data-sly-call="${clientLib.js @ categories='bmc.main'}" />
 
 <script type="text/javascript">
+
+try {
   _satellite.pageBottom();
+}
+catch (e) {
+  // can capture any error here
+}
+
 </script>
