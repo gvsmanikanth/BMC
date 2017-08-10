@@ -8,9 +8,9 @@
             ${resolved.overlayText @ context='html'}
         </p>
     </div>
-    <div data-sly-test="${video.isTwistage}" class="video">
+    <div data-sly-test="${video.isTwistage}" class="videos">
         <input id="${video.videoId}" type="hidden" value="${resolved.overlayText @ context='attribute'}"></input>
-        <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+        <script type="text/javascript" src="//service.twistage.com/api/script"></script>
         <script type="text/javascript">viewNode("${video.videoId @ context='scriptString'}", {"server_detection": true, "width": 854, "height": 480});</script>
     </div>
     <video data-sly-test="${video.isDam}" controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">

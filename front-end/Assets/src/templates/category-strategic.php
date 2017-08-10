@@ -37,7 +37,7 @@
 						<p>Understand the potential of a new IT experience (01:55)</p>
 					</figcaption>
 					<div class="video">
-						<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+						<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 						<script type="text/javascript">viewNode("5dc3ac4745bf1", {"server_detection": true, "width": 854, "height": 480});</script>
 					</div>
 				</figure>

@@ -41,7 +41,7 @@
                 <p>Keep your mainframe running at peak performance with MainView’s proactive monitoring, automated problem solving, and storage solutions. (2:23)</p>
                 <div class="video">
                     <input id="5ccb2c081ffa4" type="hidden" value="Find out how BMC can help you. <strong><a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a></strong>">
-                    <script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+                    <script type="text/javascript" src="//service.twistage.com/api/script"></script>
                     <script type="text/javascript">
                     viewNode("5ccb2c081ffa4", {
                         "server_detection": true,
@@ -49,12 +49,12 @@
                         "height": 380
                     });
                     </script>
-                    <script type="text/javascript" charset="utf-8" src="http://service.twistage.com/embeds/videos/5ccb2c081ffa4/979e3ab480d402b8bf883f8cd6ccc7d5.json?voxtoken=system&amp;width=640&amp;height=380&amp;userAgent=Macintosh_Chrome&amp;currentUrl=http://www.bmc.com/it-solutions/mainview.html&amp;flash=18.0 r0&amp;html5=true&amp;silverlight=0&amp;version=3.94"></script>
-                    <object type="application/x-shockwave-flash" id="embedded_player_5ccb2c081ffa4" name="embedded_player_5ccb2c081ffa4" width="640" height="380" data="http://service.twistage.com/plugins/player.swf" class="player-swf">
+                    <script type="text/javascript" charset="utf-8" src="//service.twistage.com/embeds/videos/5ccb2c081ffa4/979e3ab480d402b8bf883f8cd6ccc7d5.json?voxtoken=system&amp;width=640&amp;height=380&amp;userAgent=Macintosh_Chrome&amp;currentUrl=http://www.bmc.com/it-solutions/mainview.html&amp;flash=18.0 r0&amp;html5=true&amp;silverlight=0&amp;version=3.94"></script>
+                    <object type="application/x-shockwave-flash" id="embedded_player_5ccb2c081ffa4" name="embedded_player_5ccb2c081ffa4" width="640" height="380" data="//service.twistage.com/plugins/player.swf" class="player-swf">
                         <param name="allowfullscreen" value="true">
                         <param name="allowscriptaccess" value="always">
-                        <param name="movie" value="http://service.twistage.com/plugins/player.swf">
-                        <param name="base" value="http://service.twistage.com">
+                        <param name="movie" value="//service.twistage.com/plugins/player.swf">
+                        <param name="base" value="//service.twistage.com">
                         <param name="flashVars" value="v=5ccb2c081ffa4&amp;">
                         <param name="bgcolor" value="#000000">
                         <param name="wmode" value="opaque">

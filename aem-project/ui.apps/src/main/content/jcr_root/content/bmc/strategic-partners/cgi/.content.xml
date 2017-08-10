@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T14:00:13.012-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="CGI"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T14:00:13.011-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="http://www.cgi.com/en"
+                    fileReference="/content/dam/bmc/partners/logos/CGI.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>CGI is a strategic BMC system integrator partner with a focused team of highly trained consultants to ensure your BMC solutions are up and running—and driving greater business efficiency and customer experience. The partnership between BMC Software and CGI has extended over 15 years, and focuses on:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Integrated IT service management on premises and in the cloud&lt;/li>&#xd;&#xa;&lt;li>Data center automation&lt;/li>&#xd;&#xa;&lt;li>Enterprise cloud computing&lt;/li>&#xd;&#xa;&lt;li>Proactive operations&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                    name="CGI"
+                    shortDescription="CGI is a strategic BMC system integrator partner with a team of consultants trained to ensure your BMC solutions are up and running—and driving greater business efficiency."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>

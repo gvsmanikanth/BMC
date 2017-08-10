@@ -6,10 +6,9 @@ import com.day.cq.dam.api.AssetManager;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
-import org.apache.jackrabbit.oak.commons.json.JsonObject;
+import org.apache.jackrabbit.value.DateValue;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.commons.json.JSONArray;
@@ -20,28 +19,36 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
+import javax.jcr.query.Query;
+import javax.jcr.query.QueryManager;
+import javax.jcr.query.QueryResult;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Calendar;
 
 @SlingServlet(resourceTypes = "/apps/bmc-migration/components/structure/page", selectors = "import", methods = {"POST"})
 public class ImportServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(ImportServlet.class);
-    public static final String HOME_LOCATION_PAGE = "homeLocationPage";
-    public static final String SERVICE_URL = "http://www.bmc.com/templates/HelperContentMiner?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=";
-    public static final int MAX_DEPTH = 6;
+    private static final String HOME_LOCATION_PAGE = "homeLocationPage";
+    private static final String CQ_TEMPLATE = "cq:template";
+    private static final String JCR_CONTENT = "jcr:content";
+    private static final String JCR_TITLE = "jcr:title";
+    private static final int MAX_DEPTH = 6;
+    private static final String MIGRATION_CONTENT_TYPE = "migration_content_type";
+    private static final String PAGE = "cq:Page";
+    private static final String PAGECONTENT = "cq:PageContent";
+    private static final String RESOURCE_TYPE = "sling:resourceType";
+    private static final String SERVICE_URL = "http://www.bmc.com/templates/HelperContentMiner?token=tzd4mXma_TCbzeQJV6~jYyYH{zzP&contentlist=";
+    private static final String TEXT_IS_RICH = "textIsRich";
 
     @Reference
     private SlingRepository repository;
 
-    private static final String PAGE = "cq:Page";
-    private static final String PAGECONTENT = "cq:PageContent";
-    private static final String JCR_CONTENT = "jcr:content";
-    private static final String RESOURCE_TYPE = "sling:resourceType";
-
     private Node currentPage;
+    private Node currentForm;
 
     private SlingHttpServletResponse response;
 
@@ -53,6 +60,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
         this.response = response;
         Session session = null;
         try {
+            response.addHeader("Content-Type", "text/plain");
             out("Starting Import");
             session = repository.loginService("migration", repository.getDefaultWorkspace());
             processForm(session, request);
@@ -91,8 +99,9 @@ public class ImportServlet extends SlingAllMethodsServlet {
         try {
             if (item.getBoolean("Content Found")) {
                 writeTestPage(item, session, request);
+                session.save();
             }
-        } catch (JSONException e) {
+        } catch (Exception e) {
             logger.error(e.getMessage());
         }
     }
@@ -115,12 +124,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
             }
             String title = item.getString("Content Title");
             out("Importing " + title);
-            jcrNode.setProperty("jcr:title", title);
+            jcrNode.setProperty(JCR_TITLE, title);
             jcrNode.setProperty(RESOURCE_TYPE, renderer);
-            jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/test");
+            jcrNode.setProperty(CQ_TEMPLATE, "/conf/bmc/settings/wcm/templates/test");
             jcrNode.setProperty("migration_content_id", item.getString("Content ID"));
             jcrNode.setProperty("migration_content_url", item.getString("Content URL"));
-            jcrNode.setProperty("migration_content_type", item.getString("Content Type"));
+            jcrNode.setProperty(MIGRATION_CONTENT_TYPE, item.getString("Content Type"));
             jcrNode.setProperty("migration_content_language_hierarchy_member", item.getString("Content Language Hierarchy Member"));
             currentPage = node;
 
@@ -132,7 +141,48 @@ public class ImportServlet extends SlingAllMethodsServlet {
             if (item.getString("Content Type").equals("Form-2")) {
                 initFormPageStructure(jcrNode, title, root);
             }
+
+            // TODO: process CategoryArray
+            // where categoryName == "Eloqua Product Interest"
+            // set C_ProductInterest1 = value
+            if (item.has("CategoryArray")) {
+                JSONArray categories = item.getJSONArray("CategoryArray");
+                for (int i = 0; i < categories.length(); i++) {
+                    JSONObject cat = categories.getJSONObject(i);
+                    String categoryName = cat.getString("categoryName");
+                    String categoryValue = cat.getString("categoryValue");
+                    jcrNode.setProperty(categoryName, categoryValue);
+                    if (categoryName.equals("Eloqua Product Interest")) {
+                        // TODO: lookup product interest id and set for page and form property
+
+                        QueryManager queryManager = null;
+                        queryManager = session.getWorkspace().getQueryManager();
+
+                        // Build a JCR query to retrieve the product configuration details.
+                        Query resourceQuery = queryManager.createQuery("SELECT * FROM [nt:unstructured] AS s " +
+                                        "WHERE ISDESCENDANTNODE(s,'/content/bmc/resources/product-interests') " +
+                                        "AND s.[jcr:title] = '" + categoryValue + "'",
+                                Query.JCR_SQL2);
+                        QueryResult resourceResult = resourceQuery.execute();
+
+                        // Iterate over nodes and attempt to send the necessary messages.
+                        NodeIterator resourceIterator = resourceResult.getNodes();
+                        if (resourceIterator.hasNext()) {
+                            // Get product license and connection details from authored resource.
+                            Node productInterest = resourceIterator.nextNode();
+                            String product_interest = "product_interest";
+                            jcrNode.setProperty(product_interest, productInterest.getName());
+                            Node form = jcrNode.getNode("root/maincontentcontainer/section_layout_1262318817/form");
+                            form.setProperty(product_interest, productInterest.getName());
+                        }
+                    }
+                }
+            }
+
+
             processItemFields(item, jcrNode, root, session, request, 0);
+
+
         } catch (RepositoryException e) {
             logger.error(e.getMessage());
         } catch (JSONException e) {
@@ -141,7 +191,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
     }
 
     private void initFormPageStructure(Node jcrNode, String title, Node root) throws RepositoryException {
-        jcrNode.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
+        jcrNode.setProperty(CQ_TEMPLATE, "/conf/bmc/settings/wcm/templates/form-landing-page-template");
         Node header = root.addNode("header_form");
         header.setProperty("headerText", title);
         header.setProperty(RESOURCE_TYPE, "bmc/components/content/header-form");
@@ -153,7 +203,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
         primary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
         Node text = primary.addNode("text");
         text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
-        text.setProperty("textIsRich", "true");
+        text.setProperty(TEXT_IS_RICH, "true");
         Node secondary = main.addNode("section_layout_1262318817");
         secondary.setProperty(RESOURCE_TYPE, "bmc/components/structure/section-layout");
         Node form = secondary.addNode("form");
@@ -162,7 +212,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
         form.setProperty("actionType", "foundation/components/form/actions/store");
         Node titleNode = form.addNode("title");
         titleNode.setProperty(RESOURCE_TYPE, "bmc/components/content/title");
-        titleNode.setProperty("jcr:title", "Please fill out the form below.");
+        titleNode.setProperty(JCR_TITLE, "Please fill out the form below.");
         titleNode.setProperty("type", "h5");
         Node responsive = form.addNode("cq:responsive");
         Node def = responsive.addNode("default");
@@ -171,24 +221,25 @@ public class ImportServlet extends SlingAllMethodsServlet {
         Node terms = form.addNode("form-terms");
         terms.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
         terms.setProperty("text", "<p>By providing my contact information, I have read and agreed to BMC’s policy regarding&nbsp;<a href=\"http://www.bmc.com/legal/personal-information.html\">Personal Information</a>.*</p>");
-        terms.setProperty("textIsRich", "true");
+        terms.setProperty(TEXT_IS_RICH, "true");
         Node fragment = form.addNode("experiencefragment");
         fragment.setProperty(RESOURCE_TYPE, "cq/experience-fragments/editor/components/experiencefragment");
+        currentForm = form;
     }
 
     private String getPath(String url, Session session) {
         String pageName = url.substring(url.lastIndexOf("/"), url.lastIndexOf("."));
         String f = pageName.substring(1,2);
         try {
-            if (!session.nodeExists("/content/bmc-migration/forms/" + f)) {
-                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, PAGE, session);
-                Node folderContent = folder.addNode("jcr:content", PAGECONTENT);
-                folderContent.setProperty("jcr:title", f);
+            if (!session.nodeExists("/content/bmc/language-masters/en/forms")) {
+                Node folder = JcrUtil.createPath("/content/bmc-migration/forms/" + f, "nt:folder", session);
+//                Node folderContent = folder.addNode("jcr:content", PAGECONTENT);
+//                folderContent.setProperty("jcr:title", f);
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
-        return "/content/bmc-migration/forms/" + f + pageName;
+        return "/content/bmc/language-masters/en/forms" + pageName;
     }
 
     private void processItemFields(JSONObject item, Node jcrNode, Node root, Session session, SlingHttpServletRequest request, int depth) {
@@ -240,6 +291,11 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     image.setProperty("isDecorative", "true");
                     image.setProperty("fileReference", path);
                     image.getParent().orderBefore("image", "ContentArea0");
+                }
+
+                if (jcrNode.getParent().getParent().hasProperty("migration_content_type") &&
+                        jcrNode.getParent().getParent().getProperty("migration_content_type").getString().equals("CallToAction")) {
+                    jcrNode.getParent().getParent().setProperty("buttonURL", mediaUrl);
                 }
 
                 if (name.contains("form-thumbnail")) {
@@ -301,7 +357,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                             propertyNode.setProperty(name, value);
                         }
                         if (name.equals("browserTitle")) {
-                            propertyNode.setProperty("jcr:title", value);
+                            propertyNode.setProperty(JCR_TITLE, value);
                         }
                         if (name.equals("bannerText")) {
                             if (propertyNode.hasNode("root/header_form")) {
@@ -311,13 +367,13 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         }
                         if (name.equals("formFillEnducement")) {
                             Node titleNode = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form/title");
-                            titleNode.setProperty("jcr:title", StringEscapeUtils.unescapeHtml4(value));
+                            titleNode.setProperty(JCR_TITLE, StringEscapeUtils.unescapeHtml4(value));
                         }
                         if (name.equals("postButtonText")) {
                             Node btn = propertyNode.getNode("root/maincontentcontainer/section_layout_1262318817/form").addNode("form-btn");
                             btn.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/button");
                             btn.setProperty("type", "submit");
-                            btn.setProperty("jcr:title", value);
+                            btn.setProperty(JCR_TITLE, value);
                         }
                         if (name.equals("bodyContent")) {
                             Node text = propertyNode.getNode("root/maincontentcontainer/section_layout/text");
@@ -326,8 +382,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         if (name.equals("content")) {
                             container.setProperty("text", StringEscapeUtils.unescapeHtml4(value));
                         }
-                        if (container.hasProperty("migration_content_type")) {
-                            String contentType = container.getProperty("migration_content_type").getString();
+                        if (propertyNode.hasProperty(MIGRATION_CONTENT_TYPE)) {
+                            String contentType = propertyNode.getProperty(MIGRATION_CONTENT_TYPE).getString();
                             //TODO: if primary column this is h2 if secondary this is h3
                             if (name.equals("heading") && contentType.equals("ContentArea")) {
                                 container.getParent().getNode("text").setProperty("text", "<h2>" + value + "</h2>");
@@ -342,10 +398,44 @@ public class ImportServlet extends SlingAllMethodsServlet {
                             }
                             if (contentType.equals("ExternalLink") && name.equals("linkURL")) {
                                 Node cta = container.getParent().getParent();
-                                if (cta.hasProperty("migration_content_type") && cta.getProperty("migration_content_type").getString().equals("CallToAction")) {
+                                if (cta.hasProperty(MIGRATION_CONTENT_TYPE) && cta.getProperty(MIGRATION_CONTENT_TYPE).getString().equals("CallToAction")) {
                                     cta.setProperty("buttonURL", value);
                                 }
                             }
+                            if (contentType.equals("MediaDocument")) {
+                                logger.info("here");
+                            }
+
+                            // Handle form String properties
+                            if (contentType.equals("Form-2")) {
+                                switch (name) {
+                                    case "C_Product_Interest1":
+                                        // ignore this property from Form-2 page in clickabiliy use value from CategoryArray
+                                        // done in earlier step
+                                        break;
+                                    case "elqCampaignID":
+                                    case "campaignid":
+                                    case "C_Lead_Business_Unit1":
+                                    case "productLine1":
+                                    case "C_Lead_Offer_Most_Recent1":
+                                    case "ex_assettype":
+                                    case "ex_act":
+                                    case "ex_assetname":
+                                    case "formname":
+                                    case "formid":
+                                    case "leadDescription1":
+                                    case "emailid":
+                                    case "PURLRedirectPage":
+                                    case "activePURLPattern":
+                                    case "emailSubjectLine":
+                                    case "recipient":
+                                        currentForm.setProperty(name, value);
+                                        break;
+                                }
+                            }
+
+
+
                         }
                         if (name.equals("PURLBody") && !value.isEmpty()) {
                             Node ty = getThankYouPage();
@@ -356,6 +446,25 @@ public class ImportServlet extends SlingAllMethodsServlet {
                     } else if (type.equals("Boolean")) {
                         Boolean bool = field.getBoolean("Field Value");
                         propertyNode.setProperty(name, bool);
+                        // Handle form Boolean properties
+                        String contentType = propertyNode.getProperty(MIGRATION_CONTENT_TYPE).getString();
+                        if (contentType.equals("Form-2")) {
+                            switch (name) {
+                                case "disableDemandbase":
+                                case "AWS_Trial":
+                                case "LMA_license":
+                                case "C_OptIn":
+                                case "C_Contact_Me1":
+                                case "activePURLRedirect":
+                                case "allowFormSkip":
+                                case "isNonLeadGenForm":
+                                case "isParallelEmailForm":
+                                case "bypassOSB":
+                                case "submitToWebMethods":
+                                    currentForm.setProperty(name, bool);
+                                    break;
+                            }
+                        }
                     }
             }
         } catch (JSONException|RepositoryException e) {
@@ -395,8 +504,8 @@ public class ImportServlet extends SlingAllMethodsServlet {
             ty = currentPage.addNode("thank-you", PAGE);
             Node content = ty.addNode("jcr:content", PAGECONTENT);
             content.setProperty(RESOURCE_TYPE, "bmc/components/structure/page");
-            content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/form-thank-you");
-            content.setProperty("jcr:title", "Thank you");
+            content.setProperty(CQ_TEMPLATE, "/conf/bmc/settings/wcm/templates/form-thank-you");
+            content.setProperty(JCR_TITLE, "Thank you");
             Node root = content.addNode("root");
             root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
             Node header = root.addNode("header_brand");
@@ -408,12 +517,12 @@ public class ImportServlet extends SlingAllMethodsServlet {
             primary.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
             Node text = primary.addNode("text");
             text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
-            text.setProperty("textIsRich", "true");
+            text.setProperty(TEXT_IS_RICH, "true");
             Node secondary = main.addNode("responsivegrid_1145012037");
             secondary.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
             text = secondary.addNode("text");
             text.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
-            text.setProperty("textIsRich", "true");
+            text.setProperty(TEXT_IS_RICH, "true");
         }
         return ty;
     }
@@ -437,8 +546,10 @@ public class ImportServlet extends SlingAllMethodsServlet {
         String formColumns;
         String maxLength;
         String formFieldNarrow;
+        Node currentSelectItems = null;
         depth++;
         for (int i=0;i<array.length();i++) {
+            fieldloop:
             try {
                 item = array.getJSONObject(i).getJSONObject("Row Values");
 
@@ -459,7 +570,16 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 maxLength = item.getString("maxLength");
                 formFieldNarrow = item.getString("formFieldNarrow");
 
-                node = parent.addNode(formFieldType + i);
+                switch (formFieldType) {
+                    case "option":
+                        node = currentSelectItems.addNode(formFieldType + i);
+                        break;
+                    case "end select":
+                        break fieldloop;
+                    default:
+                        node = parent.addNode(formFieldType + i);
+                }
+
                 node.setProperty("formFieldMacro", formFieldMacro);
                 node.setProperty("formFieldID", formFieldID);
                 node.setProperty("formFieldType", formFieldType);
@@ -482,9 +602,10 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 }
 
                 node.setProperty("name", formFieldName);
+                String name;
                 switch (formFieldType) {
                     case "text":
-                        node.setProperty("jcr:title", formFieldLabel);
+                        node.setProperty(JCR_TITLE, formFieldLabel);
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
                         node.setProperty("type", "text");
                         node.setProperty("helpMessage", formFieldLabel);
@@ -493,7 +614,7 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         node.setProperty("usePlaceholder", "true");
                         break;
                     case "text(email)":
-                        node.setProperty("jcr:title", formFieldLabel);
+                        node.setProperty(JCR_TITLE, formFieldLabel);
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
                         node.setProperty("type", "email");
                         node.setProperty("helpMessage", formFieldLabel);
@@ -502,16 +623,31 @@ public class ImportServlet extends SlingAllMethodsServlet {
                         node.setProperty("usePlaceholder", "true");
                         break;
                     case "macro":
-                        node.setProperty("jcr:title", formFieldLabel);
+                        setupMacro(node, formFieldMacro, formFieldLabel);
+                        break;
+                    case "select":
+                        node.setProperty(JCR_TITLE, formFieldLabel);
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+                        node.setProperty("source", "local");
                         node.setProperty("type", "drop-down");
-                        node.setProperty("source", "datasource");
-                        node.setProperty("datasourceRT", "");
+                        currentSelectItems = node.addNode("items");
+                        break;
+                    case "option":
+                        String value;
+                        node.setProperty("text", formOptionLabel);
+                        if (!formOptionDisabled.isEmpty())
+                            node.setProperty("disabled", "true");
+                        if (formOptionValue.isEmpty())
+                            value = formOptionLabel;
+                        else
+                            value = formOptionValue;
+
+                        node.setProperty("value", value);
                         break;
                     case "checkbox":
                         node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
-                        node.setProperty("type", "checkbox");
                         node.setProperty("source", "local");
+                        node.setProperty("type", "checkbox");
                         Node items = node.addNode("items");
                         Node cb = items.addNode("item0");
                         cb.setProperty("text", formFieldLabel);
@@ -525,6 +661,91 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 logger.error(e.getMessage());
             }
         }
+    }
+
+    private void setupMacro(Node node, String formFieldMacro, String formFieldLabel) throws RepositoryException {
+        String name;
+        switch (formFieldMacro) {
+            case "State":
+                name = "C_State_Prov";
+                node.setProperty(JCR_TITLE, "State");
+                node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/input-field");
+                node.setProperty("helpMessage", "State or Province (optional)");
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                node.setProperty("hideTitle", "true");
+                node.setProperty("usePlaceholder", "true");
+                break;
+            case "Country":
+            case "Country (Not Required)":
+                name = "C_Country";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Job Level":
+                name = "C_Job_Level1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Product Interest":
+                name = "C_Product_Interest1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                node.setProperty("listPath", "/content/bmc/resources/product-interests");
+                break;
+            case "Timeframe (long)":
+            case "Timeframe (short)":
+                name = "C_Timeframe1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Company Revenue":
+                name = "C_Company_Revenue1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Job Role - Chg Mgmt macro":
+            case "Job Role - HR macro":
+                name = "C_Job_Role";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Print":
+                name = "Print";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+            case "Third Party":
+            case "Third Party Track-IT":
+                name = "C_Third_Party_Consent1";
+                node.setProperty(JCR_TITLE, name);
+                node.setProperty("id", name);
+                node.setProperty("name", name);
+                initDropdown(node, formFieldMacro, formFieldLabel);
+                break;
+        }
+    }
+
+    private void initDropdown(Node node, String formFieldMacro, String formFieldLabel) throws RepositoryException {
+        node.setProperty(JCR_TITLE, formFieldLabel);
+        node.setProperty(RESOURCE_TYPE, "bmc/components/forms/elements/options");
+        node.setProperty("type", "drop-down");
+        node.setProperty("source", "list");
+        node.setProperty("listPath", "/content/bmc/bmc-macros/" + JcrUtil.createValidName(formFieldMacro, JcrUtil.HYPHEN_LABEL_CHAR_MAPPING) + "-macro");
     }
 
     private void setNarrow(Node node) {
@@ -580,23 +801,25 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 id = item.getString("Content ID");
                 if (name.equals(HOME_LOCATION_PAGE)) return;
                 if (type.equals("FormFieldset")) {
-                    //TODO
                     // determine path to fieldset XF
-                    String path = "/content/experience-fragments/bmc/forms/" + id;
+                    String path = "/content/experience-fragments/bmc/language-masters/en/forms/" + id;
                     // determine whether node exists
                     // and create XF node with fields if not
                     if (!session.nodeExists(path)) {
+                        JcrUtil.createPath("/content/experience-fragments/bmc/language-masters/en/forms", "sling:Folder", session);
                         Node xfNode = JcrUtil.createPath(path, PAGE, session);
                         Node xfContent = xfNode.addNode(JCR_CONTENT, PAGECONTENT);
-                        xfContent.setProperty("cq:template", "/libs/cq/experience-fragments/components/experiencefragment/template");
-                        xfContent.setProperty("jcr:title", name);
+                        xfContent.setProperty(CQ_TEMPLATE, "/libs/cq/experience-fragments/components/experiencefragment/template");
+                        xfContent.setProperty(JCR_TITLE, name);
                         xfContent.setProperty(RESOURCE_TYPE, "cq/experience-fragments/components/experiencefragment");
+                        xfContent.setProperty("cq:lastModified", new DateValue(Calendar.getInstance()));
                         Node fragment = xfNode.addNode(id, PAGE);
                         Node content = fragment.addNode(JCR_CONTENT, PAGECONTENT);
-                        content.setProperty("cq:template", "/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset");
+                        content.setProperty(CQ_TEMPLATE, "/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset");
                         content.setProperty("cq:xfMasterVariation", true);
-                        content.setProperty("jcr:title", name);
+                        content.setProperty(JCR_TITLE, name);
                         content.setProperty(RESOURCE_TYPE, "bmc/components/structure/xfpage");
+                        content.setProperty("cq:lastModified", new DateValue(Calendar.getInstance()));
                         Node root = content.addNode("root");
                         root.setProperty(RESOURCE_TYPE, "wcm/foundation/components/responsivegrid");
                         node = root.addNode("field_set");
@@ -614,13 +837,13 @@ public class ImportServlet extends SlingAllMethodsServlet {
                 }
                 node.setProperty("migration_content_name", name);
                 node.setProperty("migration_content_id", id);
-                node.setProperty("migration_content_type", type);
+                node.setProperty(MIGRATION_CONTENT_TYPE, type);
                 if (type.equals("HTMLArea")) {
                     node.setProperty(RESOURCE_TYPE, "bmc/components/content/htmlarea");
                 }
                 if (type.equals("ContentArea")) {
                     node.setProperty(RESOURCE_TYPE, "bmc/components/content/text");
-                    node.setProperty("textIsRich", "true");
+                    node.setProperty(TEXT_IS_RICH, "true");
                 }
                 if (type.equals("CallToAction")) {
                     node.setProperty(RESOURCE_TYPE, "bmc/components/content/CTAbutton");

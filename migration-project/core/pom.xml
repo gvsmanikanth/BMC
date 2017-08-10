@@ -97,6 +97,11 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -122,12 +127,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Export-Package>
+                            com.bmc.migration,
+                            !org.jsoup
+                        </Export-Package>
                         <Bundle-SymbolicName>com.bmc.bmc-migration</Bundle-SymbolicName>
 
                         <Sling-Model-Packages>
                           models
                         </Sling-Model-Packages>
-
+                        <Embed-Dependency>jsoup</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>

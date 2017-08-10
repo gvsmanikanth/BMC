@@ -7,9 +7,9 @@ public class FormMeta {
 
     private String id = ""; //[corresponding Eloqua form ID]", *4
     private String name = ""; //[corresponding Eloqua form name]", *5
-    private String type = ""; //[], *legacy
+//    private String type = ""; //[], *legacy
     private String leadOffer = ""; //[landing page's Lead Offer]",
-    private String disableDemandbase = ""; //[], *legacy
+//    private String disableDemandbase = ""; //[], *legacy
     private String contactMe = ""; //['on' if contact me checkbox is present on form, else 'off']
 
     public String getId() {
@@ -28,13 +28,13 @@ public class FormMeta {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
+//    public String getType() {
+//        return type;
+//    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public String getLeadOffer() {
         return leadOffer;
@@ -44,13 +44,13 @@ public class FormMeta {
         this.leadOffer = leadOffer;
     }
 
-    public String getDisableDemandbase() {
-        return disableDemandbase;
-    }
+//    public String getDisableDemandbase() {
+//        return disableDemandbase;
+//    }
 
-    public void setDisableDemandbase(String disableDemandbase) {
-        this.disableDemandbase = disableDemandbase;
-    }
+//    public void setDisableDemandbase(String disableDemandbase) {
+//        this.disableDemandbase = disableDemandbase;
+//    }
 
     public String getContactMe() {
         return contactMe;

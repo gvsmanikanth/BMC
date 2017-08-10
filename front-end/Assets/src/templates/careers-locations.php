@@ -10,7 +10,7 @@ include 'php-inc/head.php';
 
 	<div class="hero-image video xs-max-hide">
 		<div class="vidbg-box"
-		data-vidbg-bg="mp4:http://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://media.cms.bmc.com/designimages/careers-header.jpg"
+		data-vidbg-bg="mp4://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized/file.mp4,webm:service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://media.cms.bmc.com/designimages/careers-header.jpg"
 		data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0.3"></div>
 	</div>
 	<div class="hero-content">
