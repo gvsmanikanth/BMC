@@ -2,14 +2,15 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-01T17:38:37.220-07:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-07-14T11:31:35.887-07:00"
-        cq:lastReplicatedBy="admin"
+        bodyClass="section-products page-category"
+        cq:lastModified="{Date}2017-08-08T21:13:18.327-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-08T21:13:26.824-04:00"
+        cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/topic-2-column-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/offering-page-common">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -158,50 +159,20 @@
                             <related_items_primar
                                 jcr:created="{Date}2017-07-14T11:27:12.958-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T11:28:05.467-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:13:59.941-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/related-items/related-items-primary"
-                                customHeadingText="Related items"
-                                showLinkDescriptions="true">
-                                <itemdata jcr:primaryType="nt:unstructured">
-                                    <_x0032_
-                                        jcr:primaryType="nt:unstructured"
-                                        externalLinkDescription="Optional description"
-                                        externalLinkText="Add optional content"
-                                        externalLinkUrl="http://www.bmc.com"
-                                        linkTypeId="3"/>
-                                </itemdata>
-                            </related_items_primar>
-                            <ctabutton
-                                jcr:created="{Date}2017-08-01T17:37:30.117-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-08-01T17:38:14.432-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/CTAbutton"
-                                buttonColor="btn"
-                                buttonText="Specify text"
-                                buttonURL="#"
-                                customButtonText="Explore product name"/>
+                                showLinkDescriptions="true"/>
                             <related_topics
                                 jcr:created="{Date}2017-07-14T11:28:31.193-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T11:28:58.942-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:14:21.018-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/related-items/related-topics"
                                 headingText="Related topics"
-                                showLinkDescriptions="true">
-                                <itemdata jcr:primaryType="nt:unstructured">
-                                    <_x0032_
-                                        jcr:primaryType="nt:unstructured"
-                                        externalLinkDescription="Optional Description"
-                                        externalLinkText="Optional Content"
-                                        externalLinkUrl="http://www.bmc.com"
-                                        linkTypeId="3"/>
-                                </itemdata>
-                            </related_topics>
+                                showLinkDescriptions="true"/>
                             <pullquote
                                 jcr:created="{Date}2017-07-14T11:29:17.929-07:00"
                                 jcr:createdBy="admin"
@@ -249,15 +220,22 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/image"/>
+                            <dividers
+                                jcr:created="{Date}2017-08-08T21:12:25.045-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:12:25.045-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title_1363250492
                                 jcr:created="{Date}2017-07-30T16:43:59.384-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-30T16:44:19.184-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:14:45.284-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Additional title here - delete if not needed"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <image_2061489524
                                 jcr:created="{Date}2017-07-30T16:44:31.183-07:00"
                                 jcr:createdBy="admin"
@@ -274,15 +252,22 @@
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Add linked text here&lt;/p>&#xa;"
                                 textIsRich="true"/>
+                            <dividers_111391016
+                                jcr:created="{Date}2017-08-08T21:12:37.259-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:12:37.259-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title_1683825715
                                 jcr:created="{Date}2017-07-30T16:44:44.037-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-30T16:44:55.437-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:14:50.684-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Additional title here - delete if not needed"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <image_1763524468
                                 jcr:created="{Date}2017-07-30T16:45:11.779-07:00"
                                 jcr:createdBy="admin"
@@ -299,6 +284,13 @@
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Add linked text here&lt;/p>&#xa;"
                                 textIsRich="true"/>
+                            <dividers_807275045
+                                jcr:created="{Date}2017-08-08T21:12:50.784-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:12:50.784-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <experiencefragment
                                 jcr:created="{Date}2017-07-30T16:45:41.720-07:00"
                                 jcr:createdBy="admin"
@@ -306,15 +298,22 @@
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                            <dividers_2044492776
+                                jcr:created="{Date}2017-08-08T21:13:00.322-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:13:00.322-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title
                                 jcr:created="{Date}2017-07-14T11:19:59.244-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T11:20:22.247-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:14:56.369-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Additional Content here"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <text
                                 jcr:created="{Date}2017-07-14T11:21:47.906-07:00"
                                 jcr:createdBy="admin"
@@ -324,15 +323,22 @@
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Add linked content here&lt;/p>&#xa;"
                                 textIsRich="true"/>
+                            <dividers_1094207173
+                                jcr:created="{Date}2017-08-08T21:13:09.439-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:13:09.439-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <title_2125393790
                                 jcr:created="{Date}2017-07-14T11:22:02.407-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T11:22:19.087-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:lastModified="{Date}2017-08-06T18:15:02.627-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Optional Additional Content - Delete if not needed"
                                 sling:resourceType="bmc/components/content/title"
-                                type="h4"/>
+                                type="h3"/>
                             <text_917636815
                                 jcr:created="{Date}2017-07-14T11:22:22.635-07:00"
                                 jcr:createdBy="admin"
@@ -342,6 +348,13 @@
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Add optional content and images here&lt;/p>&#xa;"
                                 textIsRich="true"/>
+                            <dividers_1148564469
+                                jcr:created="{Date}2017-08-08T21:13:18.321-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-08T21:13:18.321-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/dividers"/>
                             <experiencefragment_1530347332
                                 jcr:created="{Date}2017-08-01T17:31:22.154-07:00"
                                 jcr:createdBy="admin"

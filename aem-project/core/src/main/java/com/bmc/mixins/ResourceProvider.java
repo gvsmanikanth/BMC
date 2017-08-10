@@ -1,5 +1,6 @@
 package com.bmc.mixins;
 
+import com.bmc.util.ModelHelper;
 import com.bmc.util.ResourceHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.tagging.Tag;
@@ -46,11 +47,7 @@ public interface ResourceProvider {
      * @return a {@link T} instance, or null
      */
     default <T extends Adaptable> T getAdaptableResource(String resourcePath, Class<T> cls) {
-        Resource resource = getResource(resourcePath);
-        if (resource == null)
-            return null;
-
-        return resource.adaptTo(cls);
+        return ModelHelper.getModel(getResource(resourcePath), cls);
     }
 
     /**

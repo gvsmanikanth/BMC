@@ -2,12 +2,13 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        bodyClass="section-education home page-home"
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2017-07-10T17:24:49.564-07:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-07-10T17:24:54.894-07:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastModified="{Date}2017-08-04T13:36:38.184-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-04T13:36:41.984-04:00"
+        cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/learning-path-template"
         jcr:primaryType="cq:PageContent"
@@ -30,148 +31,158 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/structure/maincontentcontainer">
-                    <responsivegrid
-                        jcr:created="{Date}2017-07-10T15:49:54.426-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-07-10T15:49:54.426-07:00"
-                        jcr:lastModifiedBy="admin"
+                    <_75_25contentcontain
+                        jcr:created="{Date}2017-08-04T13:26:55.176-04:00"
+                        jcr:createdBy="dtayeh"
+                        jcr:lastModified="{Date}2017-08-04T13:26:55.176-04:00"
+                        jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/foundation/components/responsivegrid">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                width="8"/>
-                        </cq:responsive>
-                        <section
-                            jcr:created="{Date}2017-07-10T15:52:31.912-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:52:31.912-07:00"
-                            jcr:lastModifiedBy="admin"
+                        sling:resourceType="bmc/components/structure/75-25contentcontainer">
+                        <left
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/section">
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
                             <title
-                                jcr:created="{Date}2017-07-10T15:56:24.301-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-10T17:24:49.556-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:created="{Date}2017-08-04T13:27:27.360-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:36:38.179-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Learning Path Title"
-                                sling:resourceType="bmc/components/content/title"/>
-                            <wysiwyg
-                                jcr:created="{Date}2017-07-10T15:56:28.488-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-10T17:23:12.763-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/wysiwyg"
-                                text="&lt;p>Enter text here&lt;/p>&#xa;"
-                                textIsRich="true"/>
-                            <ctabutton
-                                jcr:created="{Date}2017-07-10T15:56:35.417-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-10T15:56:35.417-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/CTAbutton"
-                                buttonColor="btn"
-                                buttonText="Specify text"/>
+                                sling:resourceType="bmc/components/content/title"
+                                type="h1"/>
                             <text
-                                jcr:created="{Date}2017-07-10T15:58:40.137-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-10T17:22:42.748-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:created="{Date}2017-08-04T13:27:38.865-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:27:38.865-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"/>
+                            <image
+                                jcr:created="{Date}2017-08-04T13:34:52.336-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:34:52.336-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/image"/>
+                            <experiencefragment
+                                jcr:created="{Date}2017-08-04T13:27:45.538-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:27:45.538-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                            <text_281702437
+                                jcr:created="{Date}2017-08-04T13:27:51.192-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:28:10.903-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>Choose your area of interest below.&lt;/p>&#xa;"
                                 textIsRich="true"/>
-                        </section>
-                        <accordion
-                            jcr:created="{Date}2017-07-10T15:59:39.077-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:59:39.077-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/accordion"
-                            heading="Heading"/>
-                        <accordion_720752203
-                            jcr:created="{Date}2017-07-10T15:59:49.273-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:59:49.273-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/accordion"
-                            heading="Heading"/>
-                        <accordion_309341900
-                            jcr:created="{Date}2017-07-10T15:59:54.814-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:59:54.814-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/accordion"
-                            heading="Heading"/>
-                        <accordion_282422562
-                            jcr:created="{Date}2017-07-10T16:00:18.132-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T16:00:18.132-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/accordion"
-                            heading="Heading"/>
-                        <accordion_536418337
-                            jcr:created="{Date}2017-07-10T16:00:24.426-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T16:00:24.426-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/accordion"
-                            heading="Heading"/>
-                    </responsivegrid>
-                    <responsivegrid_213198687
-                        jcr:created="{Date}2017-07-10T15:50:01.463-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-07-10T15:50:01.463-07:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/foundation/components/responsivegrid">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
+                            <accordion
+                                jcr:created="{Date}2017-08-04T13:28:20.849-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:28:20.849-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
-                                offset="1"
-                                width="3"/>
-                        </cq:responsive>
-                        <title
-                            jcr:created="{Date}2017-07-10T15:57:05.052-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T17:21:22.629-07:00"
-                            jcr:lastModifiedBy="admin"
+                                sling:resourceType="bmc/components/content/accordion"
+                                heading="Heading">
+                                <text
+                                    jcr:created="{Date}2017-08-04T13:28:30.219-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-04T13:28:30.219-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion>
+                            <accordion_1198251536
+                                jcr:created="{Date}2017-08-04T13:28:39.565-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:28:39.565-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/accordion"
+                                heading="Heading">
+                                <text
+                                    jcr:created="{Date}2017-08-04T13:28:47.049-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-04T13:28:47.049-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion_1198251536>
+                            <accordion_703677032
+                                jcr:created="{Date}2017-08-04T13:28:53.644-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:28:53.644-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/accordion"
+                                heading="Heading">
+                                <text
+                                    jcr:created="{Date}2017-08-04T13:29:00.049-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-04T13:29:00.049-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion_703677032>
+                            <accordion_1811609741
+                                jcr:created="{Date}2017-08-04T13:29:06.637-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:29:06.637-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/accordion"
+                                heading="Heading">
+                                <text
+                                    jcr:created="{Date}2017-08-04T13:29:19.872-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-04T13:29:19.872-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion_1811609741>
+                            <accordion_2082092345
+                                jcr:created="{Date}2017-08-04T13:29:25.291-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:29:25.291-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/accordion"
+                                heading="Heading">
+                                <text
+                                    jcr:created="{Date}2017-08-04T13:29:32.667-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-04T13:29:32.667-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion_2082092345>
+                        </left>
+                        <right
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Related Certifications"
-                            sling:resourceType="bmc/components/content/title"
-                            type="h4"/>
-                        <text
-                            jcr:created="{Date}2017-07-10T15:57:12.979-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:57:12.979-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/text"/>
-                        <title_315766506
-                            jcr:created="{Date}2017-07-10T15:58:50.086-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T17:21:36.064-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="Related Skills Assessments"
-                            sling:resourceType="bmc/components/content/title"
-                            type="h4"/>
-                        <text_311273194
-                            jcr:created="{Date}2017-07-10T15:58:54.327-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-07-10T15:58:54.327-07:00"
-                            jcr:lastModifiedBy="admin"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="bmc/components/content/text"/>
-                    </responsivegrid_213198687>
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <related_items_second
+                                jcr:created="{Date}2017-08-04T13:32:44.463-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:33:02.123-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/related-items/related-items-secondary"
+                                customHeadingText="Related Certifications"/>
+                            <related_items_second_818303900
+                                jcr:created="{Date}2017-08-04T13:33:06.445-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-04T13:33:20.671-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/related-items/related-items-secondary"
+                                customHeadingText="Related Skills Assessments"
+                                showLinkDescriptions="true"/>
+                        </right>
+                    </_75_25contentcontain>
                 </maincontentcontainer>
             </responsivegrid>
         </root>

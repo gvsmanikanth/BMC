@@ -6,19 +6,19 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Service Management"
             extraCategoryClass="IT-Service-Management"/>
-    <workload-automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Workload Automation"/>
-    <it-operations
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Operations"/>
     <cloud-management
             jcr:primaryType="nt:unstructured"
             jcr:title="Cloud Management"/>
-    <it-automation
+    <it-operations
             jcr:primaryType="nt:unstructured"
-            jcr:title="IT Automation"/>
+            jcr:title="IT Operations"/>
     <mainframe
             jcr:primaryType="nt:unstructured"
             jcr:title="Mainframe"/>
+    <workload-automation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Workload Automation"/>
+    <it-automation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Automation"/>
 </jcr:root>
