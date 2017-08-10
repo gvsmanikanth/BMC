@@ -1,10 +1,6 @@
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.js @ categories='bmc.main'}" />
 
-
-<!-- TODO: determine if DTM is set
-if (isset($enableDTM) && $enableDTM == true) {
-    //end dtm script
-    echo '<script type="text/javascript">_satellite.pageBottom();</script>';
-}
--->
+<script type="text/javascript">
+  _satellite.pageBottom();
+</script>
