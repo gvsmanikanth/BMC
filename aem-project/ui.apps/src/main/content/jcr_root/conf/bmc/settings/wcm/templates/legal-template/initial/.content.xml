@@ -2,10 +2,11 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-07-14T14:48:48.724-07:00"
-        cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-07-14T14:16:40.548-07:00"
-        cq:lastReplicatedBy="admin"
+        bodyClass="page-category"
+        cq:lastModified="{Date}2017-08-08T21:08:45.703-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-08T21:09:08.163-04:00"
+        cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/legal-template"
         jcr:primaryType="cq:PageContent"
@@ -35,6 +36,13 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/header-generic"
                         headerText="Heading"/>
+                    <dividers
+                        jcr:created="{Date}2017-08-08T21:08:45.699-04:00"
+                        jcr:createdBy="dtayeh"
+                        jcr:lastModified="{Date}2017-08-08T21:08:45.699-04:00"
+                        jcr:lastModifiedBy="dtayeh"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/dividers"/>
                     <_75_25contentcontain
                         jcr:created="{Date}2017-07-14T14:10:40.669-07:00"
                         jcr:createdBy="admin"
@@ -45,34 +53,24 @@
                         <right
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
-                            <related_items_second
-                                jcr:created="{Date}2017-07-14T14:11:11.082-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T14:11:51.376-07:00"
-                                jcr:lastModifiedBy="admin"
+                            <experiencefragment
+                                jcr:created="{Date}2017-08-07T18:40:24.559-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-07T18:40:24.559-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/related-items/related-items-secondary"
-                                customHeadingText="Related items"/>
-                            <related_items_primar
-                                jcr:created="{Date}2017-07-14T14:13:27.622-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T14:13:27.622-07:00"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/related-items/related-items-primary"
-                                customHeadingText="Related items"
-                                showLinkDescriptions="true"/>
+                                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                         </right>
                         <left
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
-                            <wysiwyg
-                                jcr:created="{Date}2017-07-14T14:13:55.942-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T14:13:55.942-07:00"
-                                jcr:lastModifiedBy="admin"
+                            <text
+                                jcr:created="{Date}2017-08-06T18:19:44.503-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T18:19:44.503-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/wysiwyg"/>
+                                sling:resourceType="bmc/components/content/text"/>
                             <title
                                 jcr:created="{Date}2017-07-14T14:14:11.664-07:00"
                                 jcr:createdBy="admin"
@@ -82,6 +80,15 @@
                                 jcr:title="Additional Optional Title - delete if not needed"
                                 sling:resourceType="bmc/components/content/title"
                                 type="h2"/>
+                            <text_1409672744
+                                jcr:created="{Date}2017-08-06T18:20:44.214-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-07T18:40:02.248-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>Optional content&lt;/p>&#xa;"
+                                textIsRich="true"/>
                             <accordion
                                 jcr:created="{Date}2017-07-14T14:14:29.951-07:00"
                                 jcr:createdBy="admin"
@@ -90,7 +97,15 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/accordion"
                                 heading="Heading"
-                                title="Optional Accordions - delete if not needed"/>
+                                title="Optional Accordions - delete if not needed">
+                                <text
+                                    jcr:created="{Date}2017-08-06T18:21:49.334-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-06T18:21:49.334-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion>
                             <accordion_1072373057
                                 jcr:created="{Date}2017-07-14T14:14:50.727-07:00"
                                 jcr:createdBy="admin"
@@ -99,7 +114,15 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/accordion"
                                 heading="Heading"
-                                title="Optional 2nd Accordion - delete if not needed"/>
+                                title="Optional 2nd Accordion - delete if not needed">
+                                <text
+                                    jcr:created="{Date}2017-08-06T18:21:53.147-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2017-08-06T18:21:53.147-04:00"
+                                    jcr:lastModifiedBy="dtayeh"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"/>
+                            </accordion_1072373057>
                             <title_298338942
                                 jcr:created="{Date}2017-07-14T14:15:17.872-07:00"
                                 jcr:createdBy="admin"
@@ -109,14 +132,14 @@
                                 jcr:title="Optional Heading - Delete if not needed"
                                 sling:resourceType="bmc/components/content/title"
                                 type="h2"/>
-                            <wysiwyg_1927712950
-                                jcr:created="{Date}2017-07-14T14:15:39.303-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-14T14:15:54.400-07:00"
-                                jcr:lastModifiedBy="admin"
+                            <text_436991037
+                                jcr:created="{Date}2017-08-06T18:20:57.057-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-06T18:21:09.808-04:00"
+                                jcr:lastModifiedBy="dtayeh"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/wysiwyg"
-                                text="&lt;p>Optional content here - delete if not needed&lt;/p>&#xa;"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>Optional content&lt;/p>&#xa;"
                                 textIsRich="true"/>
                         </left>
                     </_75_25contentcontain>
