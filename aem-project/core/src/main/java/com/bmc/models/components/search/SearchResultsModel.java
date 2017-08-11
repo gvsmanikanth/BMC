@@ -40,6 +40,7 @@ public class SearchResultsModel {
            // Node currentNode = request.getResource().adaptTo(Node.class);
             logger.info("SEARCHING");
             pageLocale = formatMetaLocale().toLowerCase();
+            getFilters();
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
@@ -71,7 +72,9 @@ public class SearchResultsModel {
 
     public void getFilters(){
 
-        String labelParam = getParameterMap().get("label").toString();
+        String labelParam = null;
+        if(!getParameterMap().isEmpty())
+        labelParam = getParameterMap().get("label").toString();
 
         String page = "page";
         String fieldName = "source";
@@ -93,8 +96,8 @@ public class SearchResultsModel {
                 values.add("docs");
             }
             else if(labelParam.equals("marketplace")){
-                values.add("productsSolutions");
                 fieldName = "category";
+                values.add("productsSolutions");
             }
             else if(labelParam.equals("productsSolutions")){
                 fieldName = "category";
@@ -110,6 +113,8 @@ public class SearchResultsModel {
             }
             else if(labelParam.equals("blogs")){
                 values.add("blogs");
+            } else {
+                values.addAll(Arrays.asList(pageLocale,"newsroom","docs","marketplace","communities"));
             }
 
             valueMap.put("values",values);
