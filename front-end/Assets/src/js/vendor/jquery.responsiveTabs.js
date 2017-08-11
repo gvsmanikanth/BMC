@@ -215,8 +215,8 @@
             var current = _this._getCurrentTab(); // Fetch current tab
             var activatedTab = e.data.tab;
 
-            // DXP-686
-            // e.preventDefault();
+            // DXP-686, reverting
+            e.preventDefault();
 
             // Make sure this tab isn't disabled
             if(!activatedTab.disabled) {
