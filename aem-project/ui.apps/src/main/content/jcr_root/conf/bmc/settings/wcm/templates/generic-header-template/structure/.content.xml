@@ -5,7 +5,7 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:lastModified="{Date}2017-08-04T17:20:43.002-04:00"
         cq:lastModifiedBy="dtayeh"
-        cq:lastReplicated="{Date}2017-08-04T17:26:45.800-04:00"
+        cq:lastReplicated="{Date}2017-08-10T14:25:16.632-04:00"
         cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/generic-header-template"
