@@ -24,10 +24,14 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
-
 import com.bmc.models.utils.ExternalLinkNodeItem;
 import com.bmc.services.ExternalLinkRewriterService;
 
+/*
+ * Transformer Factory class for the External link rewriter data
+ * Created by samiksha_anvekar@bmc.com
+ * Date-11/Aug/2017
+ */
 
 @Component
 @Service
@@ -117,60 +121,48 @@ public class ExternalLinkRewriter implements TransformerFactory {
             contentHandler.startDocument();
         }
 
-        public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
+        public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException
+        {        	
         	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        	log.info("start Class -- ExternalLinkRewriter"+timeStamp);
-            ExternalLinkNodeItem externalNodeItem = null;
-        	final AttributesImpl attributes = new AttributesImpl(atts);
-        	 
-            final String href = attributes.getValue("href");
-           
-            
-            
-            
-            
-                for (int i = 0; i < attributes.getLength(); i++) {
-                	String hrefName = attributes.getValue(attributes.getQName(i));
+        		log.info("start Class -- ExternalLinkRewriter"+timeStamp);
+        		//Parsing the HTML for hrefs 
+            	ExternalLinkNodeItem externalNodeItem = null;
+            	final AttributesImpl attributes = new AttributesImpl(atts);
+            	final String href = attributes.getValue("href");
+            	//service reference method for JCR lookup.
+            	externalNodeItem = dataService.checkJcrRepository(href);
+                for (int i = 0; i < attributes.getLength(); i++) {                	
                 	if("href".equalsIgnoreCase(attributes.getQName(i)))
                     {
-                	String fileName = hrefName;   
-                	//Fetch the Href resource name to append to the external link URL
-                	fileName = href.substring(href.lastIndexOf("/") + 1);
-                	externalNodeItem = dataService.checkJcrRepository(fileName);
-                    String exterString = externalNodeItem.getLinkAbstractorURL();
-                    String linkAbstractor = externalNodeItem.getLinkAbstractor();
-                    String linkTarget = externalNodeItem.getLinkAbstractorTarget();
-                   
-                        String cdnPath = exterString+fileName;
-                        if (exterString!=null && linkAbstractor.equalsIgnoreCase("external-link")) 
-                        {
-                        	log.info("EXTERNAL LINK FOUND");
-                        	attributes.setValue(i, cdnPath);
-                        if(linkTarget.equals("new"))
-                        {
-                        	log.info("NEW LINK FOUND");
-                        	attributes.addAttribute(null, "target", "target", null, "_blank");
+                		String hrefName = attributes.getValue(attributes.getQName(i));
+                        	if (externalNodeItem.getLinkAbstractorURL()!=null  
+                        		&& externalNodeItem.getLinkPath().equals(hrefName) 
+                        		&& externalNodeItem.getLinkAbstractor().equalsIgnoreCase("external-link")) 
+                        			{
+                        				log.info("EXTERNAL LINK FOUND");
+                        				attributes.setValue(i, externalNodeItem.getLinkAbstractorURL());
+                        				//Condition to check the attribute target=_blank/_self in the href tag.
+                        				if(externalNodeItem.getLinkAbstractorTarget().equals("new"))
+                        					{
+                        						log.info("NEW LINK FOUND");
+                        						attributes.addAttribute(null, "target", "target", null, "_blank");
                         	
-                        }else if(linkTarget.equals("self"))
-                        {
-                        	log.info("SELF LINK FOUND");
-                        	attributes.addAttribute(null, "target", "target", null, "_self");
-                        	
-                        }
-                        externalNodeItem = new ExternalLinkNodeItem(null, null, null,null);
-                      
-                        }
+                        					}else if(externalNodeItem.getLinkAbstractorTarget().equals("self"))
+                        					{
+                        						log.info("SELF LINK FOUND");
+                        						attributes.addAttribute(null, "target", "target", null, "_self");                       	
+                        					}
+                        			
+                        			}
                        
-                        break;
-                    }
+                        		break;
+                    	}	
                 }
-            
-            
-
-            contentHandler.startElement(uri, localName, qName, attributes);
-            String timeStamp_end = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        	
-            log.info("End Class -- ExternalLinkRewriter"+timeStamp_end);
+                		externalNodeItem =  null;
+                		contentHandler.startElement(uri, localName, qName, attributes);
+                String timeStamp_end = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+                
+                log.info("End Class -- ExternalLinkRewriter"+timeStamp_end);
         }
 
         public void startPrefixMapping(String prefix, String uri) throws SAXException {

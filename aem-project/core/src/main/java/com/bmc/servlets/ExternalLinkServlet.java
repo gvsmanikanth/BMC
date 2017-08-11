@@ -17,7 +17,11 @@ import org.slf4j.LoggerFactory;
 import com.bmc.services.ExternalLinkRewriterService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
  
-  
+/*
+ * Servlet class for the External-link template page component.
+ * Created by samiksha_anvekar@bmc.com
+ * Date-9/Aug/2017
+ */ 
 @SlingServlet(methods = {"GET"}, 
 metatype = true,
 resourceTypes = {"bmc/components/structure/external-link-page"},
@@ -37,26 +41,25 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      private SlingRequestProcessor requestProcessor;
 
      private Session session;
-
-    
      
      @Reference
      private ExternalLinkRewriterService dataService;
+     
+     private String linkAbstractorExternalURL = null;
+     
+     private String linkAbstractorTarget = null;
      
      
      @Override
      protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
         
     	   try {
-    			logger.info("START CLASS ----ExternalLinkServlet");
-    		  
-           
+    			logger.info("START CLASS ----ExternalLinkServlet");           
     			Node currentNode = request.getResource().adaptTo(Node.class);
     			session = currentNode.getSession();
     			currentNode.setProperty("linkAbstractor", "external-link");
      			session.save();
-     			String linkAbstractorExternalURL ="";
-     			String linkAbstractorTarget ="";
+     			
      			for(PropertyIterator propeIterator = currentNode.getProperties() ; propeIterator.hasNext();)  
 				   {  
 				        Property prop= propeIterator.nextProperty(); 
@@ -70,23 +73,23 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			        		linkAbstractorTarget = prop.getValue().getString();
 			        	}
 				   }
-                PrintWriter out = response.getWriter();
-                out.println("<html><head>");
-                out.println("<meta http-equiv='refresh' content='300;URL='http://www.bmc.com/blogs/''>");
-                out.println("</meta>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>External Link</h1>");
-                out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
-                out.println("</a><br>");
-                out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
-                out.println("</body></html>");
+			                PrintWriter out = response.getWriter();
+			                out.println("<html><head>");
+			                out.println("<meta http-equiv='refresh' content='300;URL='http://www.bmc.com/blogs/''>");
+			                out.println("</meta>");
+			                out.println("</head>");
+			                out.println("<body>");
+			                out.println("<h1>External Link</h1>");
+			                out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
+			                out.println("</a><br>");
+			                out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
+			                out.println("</body></html>");
               
-           } catch (Exception e) {
-               logger.error(e.getMessage());
-           } finally {
-               if (session != null && session.isLive())
-                   session.logout();
-           }
+		           } catch (Exception e) {
+		               logger.error(e.getMessage());
+		           } finally {
+		               if (session != null && session.isLive())
+		                   session.logout();
+		           }
     }
 }
