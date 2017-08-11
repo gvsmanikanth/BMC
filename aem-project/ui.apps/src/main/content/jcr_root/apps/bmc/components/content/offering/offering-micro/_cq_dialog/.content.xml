@@ -2,8 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Offering Micro"
-    sling:resourceType="cq/gui/components/authoring/dialog"
-    extraClientlibs="[]">
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -23,7 +22,13 @@
                                     fieldDescription="Select Offering Micro Path"
                                     name="./resourcePath"
                                     fieldLabel="Offering Micro Path"
+                                    id="offering-micro-pathfield"
                                     rootPath="/content/bmc"/>
+                            <resourceEdit
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/text"
+                                    id="offering-micro-edit-link"
+                                    class="offering-micro-edit-link"/>
                         </items>
                     </column>
                 </items>

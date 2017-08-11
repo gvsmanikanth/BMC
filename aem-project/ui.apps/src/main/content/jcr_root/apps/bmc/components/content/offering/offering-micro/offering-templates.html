@@ -1,4 +1,4 @@
-<sly data-sly-template.FullDiscription="${@ productDiscription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, linkText, anchorTagText, shortDescription}">
+<sly data-sly-template.FullDiscription="${@ productDiscription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, videoID, linkText, anchorTagText, shortDescription}">
     <ul class="accordion">
         <li class="accordion-item">
             <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
-                    <a href="${assetPicker}" target="_self" class="${assetIconImage} modal-video-player">
+                    <a href="${[assetPicker,videoID] @join=''}" target="_self" class="${assetIconImage} ${videoID !='' ? 'modal-video-player' : ''}" >
                         ${assetPrefix}: ${assetLinkText @ context='html'}
                     </a>
                 </div>

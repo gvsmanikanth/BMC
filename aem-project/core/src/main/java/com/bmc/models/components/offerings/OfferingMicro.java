@@ -12,6 +12,7 @@ import javax.inject.Named;
 
 import javax.jcr.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -29,6 +30,9 @@ public class OfferingMicro {
 
     private HashMap<String,String> resourceProps;
     private List<HashMap> productAvailabilityList;
+    private Boolean isModal = false;
+    private String videoID = "";
+    private List<String> PROP_LIST = new ArrayList<>(Arrays.asList("datasheetIconImage","datasheetPicker","datasheetPrefix","assetIconImage","assetPrefix","assetPicker","primaryParentOfferingPage","productAvailability","productAvailabilityListPicker","productName","linkText","shortDescription","anchorTagText"));
 
     @PostConstruct
     protected void init() {
@@ -36,6 +40,7 @@ public class OfferingMicro {
             if(resourcePath == "" || resourcePath==null){
                 return;
             }
+
             Node mainNode = null;
             Node longDiscription = null;
             Node productAvailabilityListNode;
@@ -62,68 +67,56 @@ public class OfferingMicro {
             resourceProps = new HashMap<>();
 
             if(mainNode != null) {
-                if (mainNode.hasProperty("datasheetIconImage"))
-                    resourceProps.put("datasheetIconImage", mainNode.getProperty("datasheetIconImage").getValue().getString());
 
-                if (mainNode.hasProperty("datasheetLink")) {
-                    Node dataSheet;
-                    if (session.itemExists(mainNode.getProperty("datasheetPicker").getValue().getString() + "/jcr:content/metadata")) {
-                        dataSheet = session.getNode(mainNode.getProperty("datasheetPicker").getValue().getString() + "/jcr:content/metadata");
-                    } else {
-                        dataSheet = session.getNode(mainNode.getProperty("datasheetPicker").getValue().getString() + "/jcr:content");
-                    }
-                    resourceProps.put("datasheetLink", dataSheet.getProperty("jcr:title").getValue().getString() != "" ? dataSheet.getProperty("jcr:title").getValue().getString() : mainNode.getProperty("datasheetLink").getValue().getString());
-                }
+                Node finalMainNode = mainNode;
+                PROP_LIST.forEach(s -> setResourceProps(finalMainNode,null, s));
 
-                if (mainNode.hasProperty("datasheetPicker")) {
-                    resourceProps.put("datasheetPicker", mainNode.getProperty("datasheetPicker").getValue().getString());
-                }
-
-                if (mainNode.hasProperty("datasheetPrefix"))
-                    resourceProps.put("datasheetPrefix", mainNode.getProperty("datasheetPrefix").getValue().getString());
-
-                if (mainNode.hasProperty("assetIconImage"))
-                    resourceProps.put("assetIconImage", mainNode.getProperty("assetIconImage").getValue().getString());
-
-                if (mainNode.hasProperty("assetLinkText")) {
-                    Node assetNode = session.getNode(mainNode.getProperty("assetPicker").getValue().getString() + "/jcr:content/video-data");
-                    resourceProps.put("assetLinkText", assetNode.getProperty("title").getValue().getString() != "" ? assetNode.getProperty("title").getValue().getString() : mainNode.getProperty("assetLinkText").getValue().getString());
-                }
-
-                if (mainNode.hasProperty("assetPrefix"))
-                    resourceProps.put("assetPrefix", mainNode.getProperty("assetPrefix").getValue().getString());
-
-                if (mainNode.hasProperty("assetPicker"))
-                    resourceProps.put("assetPicker", mainNode.getProperty("assetPicker").getValue().getString());
-
-                if (mainNode.hasProperty("primaryParentOfferingPage"))
-                    resourceProps.put("primaryParentOfferingPage", mainNode.getProperty("primaryParentOfferingPage").getValue().getString());
-
-                if (mainNode.hasProperty("productAvailability"))
-                    resourceProps.put("productAvailability", mainNode.getProperty("productAvailability").getValue().getString());
-
-                if (mainNode.hasProperty("productAvailabilityListPicker"))
-                    resourceProps.put("productAvailabilityListPicker", mainNode.getProperty("productAvailabilityListPicker").getValue().getString());
-
-                if (mainNode.hasProperty("productName"))
-                    resourceProps.put("productName", mainNode.getProperty("productName").getValue().getString());
-
-                if (mainNode.hasProperty("linkText"))
-                    resourceProps.put("linkText", mainNode.getProperty("linkText").getValue().getString());
-
-                if (mainNode.hasProperty("shortDescription"))
-                    resourceProps.put("shortDescription", mainNode.getProperty("shortDescription").getValue().getString());
-
-                if (mainNode.hasProperty("anchorTagText"))
-                    resourceProps.put("anchorTagText", mainNode.getProperty("anchorTagText").getValue().getString());
+                setAssetTitleFromPicker(mainNode,"datasheetPicker","datasheetLink");
+                setAssetTitleFromPicker(mainNode,"assetPicker","assetLinkText");
 
                 if ((longDiscription != null) && longDiscription.hasProperty("text"))
-                    resourceProps.put("longDiscription", longDiscription.getProperty("text").getValue().getString());
+                    setResourceProps(longDiscription,"longDiscription", longDiscription.getProperty("text").getValue().getString());
             }
         }catch (Exception e){
             logger.error("ERROR: {}", e);
         }
     }
+
+    private void setResourceProps(Node mainNode, String key, String prop){
+            try {
+                if(key != null) {
+                    resourceProps.put(key, prop);
+                }else if(mainNode.hasProperty(prop)){
+                    resourceProps.put(prop, mainNode.getProperty(prop).getValue().getString());
+                }
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+    }
+
+    private void setAssetTitleFromPicker(Node mainNode, String pickerName, String key){
+        try {
+            if (mainNode.hasProperty(pickerName)) {
+                Node assetNode;
+                String titlePropName = "jcr:title";
+                if (session.itemExists(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/metadata")) {
+                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/metadata");
+                } else if (session.itemExists(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/video-data")){
+                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/video-data");
+                    videoID = "?vID="+assetNode.getProperty("vID").getValue().getString();
+                    titlePropName = "title";
+                    isModal = true;
+                } else {
+                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content");
+                }
+                resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : assetNode.getProperty(titlePropName).getValue().getString());
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public List<HashMap> getProductAvailabilityList() {
         return productAvailabilityList;
@@ -131,5 +124,13 @@ public class OfferingMicro {
 
     public HashMap<String, String> getResourceProps() {
         return resourceProps;
+    }
+
+    public String getVideoID() {
+        return videoID;
+    }
+
+    public Boolean getIsModal() {
+        return isModal;
     }
 }
