@@ -69,6 +69,14 @@ public class ContactsLocationModel {
     @Inject
     private List<ContactPhone> educationCustomerServicePhones;
 
+    @ValueMapValue
+    private String supportInformation;
+    @ValueMapValue
+    private String supportEmail;
+
+    @Inject
+    private List<ContactPhone> supportPhones;
+
     public String getSalesPhoneText() { return exists(salesPhoneText) ? salesPhoneText : salesPhoneURL; }
     public String getSalesPhoneURL() { return salesPhoneURL; }
     public String getSalesContactText() { return exists(salesContactText) ? salesContactText : salesContactURL; }
@@ -97,6 +105,11 @@ public class ContactsLocationModel {
     public String getAnalystRelationsURL() { return analystRelationsURL; }
 
     public Iterable<ContactPhone> getEducationCustomerServicePhones() { return educationCustomerServicePhones; }
+
+    public String getSupportInformation() { return supportInformation; }
+    public String getSupportEmail() { return supportEmail; }
+
+    public Iterable<ContactPhone> getSupportPhones() { return supportPhones; }
 
     private Boolean exists(String s) {
         return s != null && !s.isEmpty();

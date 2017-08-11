@@ -57,6 +57,19 @@
 
         <div class="three-up">
             <h3>${'Customer Support' @ i18n}</h3>
+            <address>
+                <sly data-sly-test.info="${location.supportInformation}">${info @ context = 'html'}</sly>
+                <br data-sly-test="${location.supportInformation && (location.supportEmail || location.hasSupportPhones)}">
+                <sly data-sly-repeat.phone="${location.supportPhones}">
+                    <!--/* Label (if present) */-->
+                    <sly data-sly-test.label="${phone.label}">${label}: </sly>
+                    <!--/* Link */-->
+                    <a href="tel:${phone.phone}">${phone.text}</a>
+                    <!--/* Line break (except for last item) */-->
+                    <br data-sly-test="${!phoneList.last}">
+                </sly>
+                <sly data-sly-test.email="${location.supportEmail}"><a href="mailto:${email}">${email}</a><br></sly>
+            </address>
             <strong>${'Product Documentation' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${location.productDocumentationContactURL}" href="tel:${url}">${location.productDocumentationContactText @ context='html'}</a>
@@ -82,7 +95,7 @@
             </sly>
             <br>
 
-            <h3>Education Customer Service</h3>
+            <h3>${'Education Customer Service' @ i18n}</h3>
             <address>
 
                 <!--/* Phone Numbers */-->
@@ -101,23 +114,23 @@
             </address>
             <br>
 
-            <h3>Other Contacts</h3>
-            <strong>Investors</strong>
+            <h3>${'Other Contacts' @ i18n}</h3>
+            <strong>${'Investors' @ i18n}</strong>
             <p>
                 <a data-sly-test.email="${location.investorsEmail}" href="mailto:${email}">${email}</a>
                 <em data-sly-test="${!location.investorsEmail && isEditing}">enter email</em>
             </p>
-            <strong>Corporate Communications</strong>
+            <strong>${'Corporate Communications' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${location.corporateCommunicationsURL}" href="tel:${url}">${location.corporateCommunicationsText @ context='html'}</a>
                 <em data-sly-test="${!location.corporateCommunicationsURL && isEditing}">enter URL</em>
             </p>
-            <strong>Global Security Support</strong>
+            <strong>${'Global Security Support' @ i18n}</strong>
             <p>
                 <a data-sly-test.email="${location.securityEmail}" href="mailto:${email}">${email}</a>
                 <em data-sly-test="${!location.securityEmail && isEditing}">enter email</em>
             </p>
-            <strong>Analyst Relations</strong>
+            <strong>${'Analyst Relations' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${location.analystRelationsURL}" href="tel:${url}">${location.analystRelationsText @ context='html'}</a>
                 <em data-sly-test="${!location.analystRelationsURL && isEditing}">enter URL</em>

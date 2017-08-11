@@ -49,6 +49,11 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     features="*"/>
                                         </rtePlugins>
+                                        <htmlRules jcr:primaryType="nt:unstructured">
+                                            <blockHandling
+                                                    jcr:primaryType="nt:unstructured"
+                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                        </htmlRules>
                                     </information>
                                     <email
                                             jcr:primaryType="nt:unstructured"
