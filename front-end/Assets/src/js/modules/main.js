@@ -469,7 +469,7 @@ function addFilterToArrayProtoype() {
 		var newstateoptions = '';
 
 		//Assemble file name for state JSON
-		var fname = '/includes/states_' +country+ '.json';
+		var fname = '/etc/designs/bmc/state-lists/states_' +country+ '.json';
 
 		$.getJSON(fname, function(data) {
 			if(data.length > 0)

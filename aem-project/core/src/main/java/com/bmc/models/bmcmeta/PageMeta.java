@@ -11,13 +11,13 @@ public class PageMeta {
     private String productCategories = "";
     private String productLineCategories = "";
     private String errorCode = "";
-    private Boolean isPurl = false;
+    private String isPurl = "false";
     private ModelOpenMeta modalOpen;
     private GeoIPMeta GeoIP;
 
     public PageMeta() {
         this.modalOpen = new ModelOpenMeta();
-        this.GeoIP = new GeoIPMeta(true, "en");
+        this.GeoIP = new GeoIPMeta(false, "");
     }
 
     public String getContentId() {
@@ -69,11 +69,11 @@ public class PageMeta {
         this.errorCode = errorCode;
     }
 
-    public Boolean getPurl() {
+    public String getPurl() {
         return isPurl;
     }
 
-    public void setPurl(Boolean purl) {
+    public void setPurl(String purl) {
         isPurl = purl;
     }
 

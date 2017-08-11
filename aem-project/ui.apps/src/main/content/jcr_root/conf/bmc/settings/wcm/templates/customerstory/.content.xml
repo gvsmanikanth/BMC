@@ -2,8 +2,11 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2017-07-19T17:18:21.632-07:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-09T16:24:35.887-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-06T19:26:36.609-04:00"
+        cq:lastReplicatedBy="dtayeh"
+        cq:lastReplicationAction="Activate"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="CustomerStory"

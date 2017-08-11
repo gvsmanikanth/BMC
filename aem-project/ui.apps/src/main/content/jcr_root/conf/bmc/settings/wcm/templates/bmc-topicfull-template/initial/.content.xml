@@ -2,6 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        bodyClass="section-products page-category"
         cq:lastModified="{Date}2017-08-01T17:21:14.720-07:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-08-01T17:21:59.509-07:00"
@@ -9,7 +10,7 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/bmc-topicfull-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/offering-page-common">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
