@@ -73,14 +73,14 @@ public class ContactsLocation extends WCMUsePojo {
     public Boolean hasSupportPhones() { return iterableExists(getSupportPhones()); }
 
     /**
-     * Indicates if an Iterable exists and has at least one element.
-     * @param i The Iterable to test
+     * Helper function to determine if an Iterable exists and has at least one element.
+     * @param o The Iterable to test
      * @return True if the Iterable exists and has an element
      */
-    private Boolean iterableExists(Iterable i) { return i != null && i.iterator().hasNext(); }
+    private Boolean iterableExists(Iterable o) { return o != null && o.iterator().hasNext(); }
 
     /**
-     * Indicates if a String exists and isn't empty.
+     * Helper function to determine if a String exists and isn't empty.
      * @param s The String to test
      * @return True if the String exists
      */
@@ -88,11 +88,11 @@ public class ContactsLocation extends WCMUsePojo {
 
     /**
      * Returns a string if it exists, or a default if it doesn't.
-     * @param a A string.
-     * @param b A default string.
-     * @return String 'a' if it exists, or 'b' if it doesn't
+     * @param str A string.
+     * @param dflt A default string.
+     * @return str if it exists, or dflt if it doesn't
      */
-    private String resolveStrings(String a, String b) { return stringExists(a) ? a : b; }
+    private String resolveStrings(String str, String dflt) { return stringExists(str) ? str : dflt; }
 
     /**
      * Using a provided method name, fetches string properties from model and
@@ -103,32 +103,29 @@ public class ContactsLocation extends WCMUsePojo {
      */
     private String resolveStrings(String methodName)
     {
-        Method methodA;
-        Method methodB;
+        return resolveStrings(stringForMethod(methodName, model), stringForMethod(methodName, parentModel));
+    }
 
+    private String stringForMethod(String methodName, Object object) {
         try {
-            methodA = model.getClass().getMethod(methodName);
-        } catch (NoSuchMethodException e) { return null; }
-
-        try {
-            methodB = parentModel.getClass().getMethod(methodName);
-        } catch (NoSuchMethodException e) { return null; }
-
-        try {
-            String a = (String) methodA.invoke(model);
-            String b = (String) methodB.invoke(parentModel);
-
-            return resolveStrings(a, b);
-        } catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) { return null; }
+            Method method = object.getClass().getMethod(methodName);
+            try {
+                return (String) method.invoke(object);
+            } catch (IllegalArgumentException | IllegalAccessException | InvocationTargetException e) {
+                return null;
+            }
+        } catch (NoSuchMethodException e) {
+            return null;
+        }
     }
 
     /**
      * Return an Iterable if it exists and has at least one element, or a default if it doesn't.
-     * @param a An Iterable
-     * @param b A default Iterable
-     * @return Iterable 'a' if it exists, or 'b' in it doesn't
+     * @param obj An Iterable
+     * @param dflt A default Iterable
+     * @return obj if it exists, or dflt in it doesn't
      */
-    private Iterable resolveIterable(Iterable a, Iterable b) {
-        return iterableExists(a) ? a : b;
+    private Iterable resolveIterable(Iterable obj, Iterable dflt) {
+        return iterableExists(obj) ? obj : dflt;
     }
 }

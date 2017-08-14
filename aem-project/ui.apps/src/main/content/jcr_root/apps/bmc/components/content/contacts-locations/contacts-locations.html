@@ -60,26 +60,26 @@
                 <em data-sly-test="${!model.productDocumentationContactURL}">enter URL</em>
             </p>
 
-            <strong>Communities</strong>
+            <strong>${'Communities' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${model.communitiesURL}" href="${url}">${model.communitiesText @ context='html'}</a>
                 <em data-sly-test="${!model.communitiesURL}">enter URL</em>
             </p>
 
             <sly data-sly-test="${model.accountsPayable || model.accountsReceivable}">
-                <strong>For Accounting Inquiries</strong>
+                <strong>${'For Accounting Inquiries' @ i18n}</strong>
                 <p data-sly-test.email="${model.accountsPayable}">
-                    Accounts Payable<br>
+                    ${'Accounts Payable' @ i18n}<br>
                     <a href="mailto:${email}">${email}</a><br>
                 </p>
                 <p data-sly-test.email="${model.accountsReceivable}">
-                    Accounts Receivable<br>
+                    ${'Accounts Receivable' @ i18n}<br>
                     <a href="mailto:${email}">${email}</a><br>
                 </p>
             </sly>
             <br>
 
-            <h3>Education Customer Service</h3>
+            <h3>${'Education Customer Service' @ i18n}</h3>
             <address>
 
                 <!--/* Phone Numbers */-->
@@ -98,23 +98,23 @@
             </address>
             <br>
 
-            <h3>Other Contacts</h3>
-            <strong>Investors</strong>
+            <h3>${'Other Contacts' @ i18n}</h3>
+            <strong>${'Investors' @ i18n}</strong>
             <p>
                 <a data-sly-test.email="${model.investorsEmail}" href="mailto:${email}">${email}</a>
                 <em data-sly-test="${!model.investorsEmail}">enter email</em>
             </p>
-            <strong>Corporate Communications</strong>
+            <strong>${'Corporate Communications' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${model.corporateCommunicationsURL}" href="${url}">${model.corporateCommunicationsText @ context='html'}</a>
                 <em data-sly-test="${!model.corporateCommunicationsURL}">enter URL</em>
             </p>
-            <strong>Global Security Support</strong>
+            <strong>${'Global Security Support' @ i18n}</strong>
             <p>
                 <a data-sly-test.email="${model.securityEmail}" href="mailto:${email}">${email}</a>
                 <em data-sly-test="${!model.securityEmail}">enter email</em>
             </p>
-            <strong>Analyst Relations</strong>
+            <strong>${'Analyst Relations' @ i18n}</strong>
             <p>
                 <a data-sly-test.url="${model.analystRelationsURL}" href="${url}">${model.analystRelationsText @ context='html'}</a>
                 <em data-sly-test="${!model.analystRelationsURL}">enter URL</em>

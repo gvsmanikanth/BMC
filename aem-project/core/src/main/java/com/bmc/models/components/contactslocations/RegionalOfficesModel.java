@@ -6,16 +6,16 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables=Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ContactPhone {
+public class RegionalOfficesModel {
     @ValueMapValue
-    private String label;
+    private String regionalWebsiteText;
     @ValueMapValue
-    private String text;
-    @ValueMapValue
-    private String phone;
+    private String regionalWebsiteURL;
 
-    public String getLabel() { return label; }
-    public String getText() { return (text == null || text.isEmpty()) ? phone : text; }
-    public String getPhone() { return phone; }
+    public String getRegionalWebsiteText() { return exists(regionalWebsiteText) ? regionalWebsiteText : regionalWebsiteURL; }
+    public String getRegionalWebsiteURL() { return regionalWebsiteURL; }
+
+    private Boolean exists(String s) {
+        return s != null && !s.isEmpty();
+    }
 }
-

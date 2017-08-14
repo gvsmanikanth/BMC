@@ -9,9 +9,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import javax.inject.Inject;
 import java.util.List;
 
-/**
- * Created by pheide on 8/7/17.
- */
 @Model(adaptables=Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactsLocationsModel {
     @ValueMapValue
