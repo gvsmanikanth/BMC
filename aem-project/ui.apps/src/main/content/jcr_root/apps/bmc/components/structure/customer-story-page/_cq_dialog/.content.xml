@@ -25,7 +25,7 @@
                                         <items jcr:primaryType="nt:unstructured">
                                             <logoSrc
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                     fieldDescription="Please select the logo"
                                                     fieldLabel="Logo"
                                                     name="./cardLogoSrc"
