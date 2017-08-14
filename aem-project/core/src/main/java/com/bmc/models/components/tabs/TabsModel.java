@@ -60,6 +60,7 @@ public class TabsModel {
     public String getContentID(){
         ContentIdGenerator contentIdGenerator = new ContentIdGenerator(resource.getPath());
         return contentIdGenerator.getNewContentID();
+
     }
 
     public Iterable<Resource> getTabs() {
