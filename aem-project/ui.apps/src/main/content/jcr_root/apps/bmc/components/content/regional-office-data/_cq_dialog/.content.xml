@@ -20,6 +20,22 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <label
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Houston"
+                                    fieldLabel="Office Name"
+                                    name="./name"
+                                    required="{Boolean}true"/>
+                            <timezone
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Time Zone"
+                                    name="./timezone">
+                                <datasource
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/apps/bmc/components/forms/datasource/timezones"/>
+                            </timezone>
                         </items>
                     </column>
                 </items>
@@ -33,6 +49,31 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <address
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                    fieldDescription="Enter address information as you want it to appear. Use Shift-Return to create single line breaks."
+                                    fieldLabel="Address"
+                                    name="./address"
+                                    useFixedInlineToolbar="{Boolean}true"
+                                    required="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                    <misctools
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                    <spellcheck
+                                            jcr:primaryType="nt:unstructured"
+                                            features="*"/>
+                                </rtePlugins>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                            jcr:primaryType="nt:unstructured"
+                                            removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </address>
                         </items>
                     </column>
                 </items>
@@ -46,6 +87,38 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                            <phones
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Phone Numbers">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        name="./phones">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Toll-Free"
+                                                fieldLabel="Label (optional)"
+                                                name="label"/>
+                                        <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="1 (800) 555-1234"
+                                                fieldLabel="Link Text (Optional)"
+                                                name="text"/>
+                                        <url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="1 (800) 555-1234"
+                                                fieldLabel="Phone Number"
+                                                name="phone"
+                                                required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                            </phones>
                         </items>
                     </column>
                 </items>
