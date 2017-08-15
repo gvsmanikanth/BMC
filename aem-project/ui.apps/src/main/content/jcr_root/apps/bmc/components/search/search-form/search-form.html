@@ -1,17 +1,7 @@
-<form action="/content/bmc/language-masters/en/search.html" class="search-site">
-    <div class="search-site-b" dir="ltr">
-        <div class="search-focus">
-            <input maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" title="Search" type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false" placeholder="Search...">
-        </div>
-        <button></button>
-    </div>
-</form>
 
-<!--\*<form action="/search/" class="search-site">
-    <fieldset>
-        <div class="search-input-m-glass">
-            <input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
-            <button></button>
-        </div>
-    </fieldset>
-</form>*/-->
+<sly data-sly-use.SearchBoxModel="com.bmc.models.components.search.SearchBoxModel">
+    <sly data-sly-use.FooterTemplates="search-form-templates.html"/>
+
+    <sly data-sly-test="${SearchBoxModel.ParentName == 'header'}" data-sly-call="${FooterTemplates.HeaderSearch}"/>
+    <sly data-sly-test="${SearchBoxModel.ParentName == 'footer'}" data-sly-call="${FooterTemplates.FooterSearch}"/>
+</sly>

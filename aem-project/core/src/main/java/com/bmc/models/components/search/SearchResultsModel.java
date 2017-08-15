@@ -1,9 +1,8 @@
 package com.bmc.models.components.search;
 
 import com.day.cq.wcm.api.Page;
-import org.apache.felix.scr.annotations.Reference;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
@@ -12,8 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.jcr.Session;
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Model(adaptables={ SlingHttpServletRequest.class, Resource.class })
@@ -21,24 +18,23 @@ public class SearchResultsModel {
 
     private static final Logger logger = LoggerFactory.getLogger(SearchResultsModel.class);
 
-    @Inject
-    private Session session;
-
     @Self
     private SlingHttpServletRequest httpServletRequest;
 
     @Inject
     private Page resourcePage;
 
+    private String searchFilter;
     private String pageLocale;
 
     private HashMap<String, Object> queryHashMap = new HashMap<>();
 
+    private List<HashMap> queryMap = new ArrayList<>();
+
+
     @PostConstruct
     protected void init() {
         try {
-           // Node currentNode = request.getResource().adaptTo(Node.class);
-            logger.info("SEARCHING");
             pageLocale = formatMetaLocale().toLowerCase();
             getFilters();
         } catch (Exception e) {
@@ -59,7 +55,7 @@ public class SearchResultsModel {
     }
 
 
-    public Map getParameterMap() {
+        public Map getParameterMap() {
         Map<String, Object> map = new HashMap<>();
         Map pamaMap = httpServletRequest.getParameterMap();
         Set<String> keySet = pamaMap.keySet();
@@ -74,7 +70,8 @@ public class SearchResultsModel {
 
         String labelParam = null;
         if(!getParameterMap().isEmpty())
-        labelParam = getParameterMap().get("label").toString();
+            labelParam = StringUtils.join((String[]) getParameterMap().get("label"));
+        searchFilter = labelParam;
 
         String page = "page";
         String fieldName = "source";
@@ -96,7 +93,6 @@ public class SearchResultsModel {
                 values.add("docs");
             }
             else if(labelParam.equals("marketplace")){
-                fieldName = "category";
                 values.add("productsSolutions");
             }
             else if(labelParam.equals("productsSolutions")){
@@ -117,14 +113,13 @@ public class SearchResultsModel {
                 values.addAll(Arrays.asList(pageLocale,"newsroom","docs","marketplace","communities"));
             }
 
-            valueMap.put("values",values);
-            valueMap.put("type",type);
+            valueMap.put("values", values);
+            valueMap.put("type", type);
             setQueryParams(page, fieldName, valueMap);
     }
 
     private void setQueryParams(String page, String fieldName, HashMap valueMap){
         HashMap<String, Object> queryHashMapItem = new HashMap<>();
-        List<HashMap> queryMap = new ArrayList<>();
 
         queryHashMapItem.put("page",page);
         queryHashMapItem.put("fieldName",fieldName);
@@ -133,4 +128,11 @@ public class SearchResultsModel {
 
     }
 
+    public List<HashMap> getQueryMap() {
+        return queryMap;
+    }
+
+    public String getSearchFilter() {
+        return searchFilter;
+    }
 }

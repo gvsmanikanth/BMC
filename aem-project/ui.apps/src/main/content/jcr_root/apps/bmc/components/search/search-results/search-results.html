@@ -1,3 +1,16 @@
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
+<sly data-sly-list="${SearchResultsModel.QueryMap}">
+    <sly data-sly-test.qFieldName="${SearchResultsModel.QueryMap[0]['fieldName']}"/>
+    <sly data-sly-test.qPage="${SearchResultsModel.QueryMap[0]['page']}"/>
+    <sly data-sly-list.vMapItem="${SearchResultsModel.QueryMap[0]['valueMap']}">
+        <sly data-sly-test="${vMapItem == 'values'}" data-sly-test.qValues="${SearchResultsModel.QueryMap[0]['valueMap']['values']}"/>
+        <sly data-sly-test="${vMapItem == 'type'}" data-sly-test.qType="${SearchResultsModel.QueryMap[0]['valueMap']['type']}"/>
+    </sly>
+</sly>
+
+<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}"/>
+<sly data-sly-test.SearchFilter="${SearchResultsModel.SearchFilter}"/>
+
 <header class="search-results-header">
     <form id="submitForm" name="submitForm" method="get" onsubmit="return validateForm();">
         <fieldset>
@@ -5,27 +18,37 @@
                 <input type="text" id="q" class="st-default-search-input" value="">
             </div>
             <select name="label" title="Search in" onchange="return validateForm();">
-                <option value="all" selected="selected">All Results</option>
-                <option value="corporate">Corporate</option>
-                <option value="communities">Communities</option>
-                <option value="documentation">Documentation</option>
-                <option value="marketplace">Marketplace</option>
-                <option value="productsSolutions">Products/Solutions</option>
-                <option value="services">Services</option>
-                <option value="education">Education</option>
-                <option value="blogs">Blogs</option>
-                <option value="news">News</option>
+                <option value="all" selected="${SearchFilter == 'all'}">All Results</option>
+                <option value="corporate" selected="${SearchFilter == 'corporate'}">Corporate</option>
+                <option value="communities" selected="${SearchFilter == 'communities'}">Communities</option>
+                <option value="documentation" selected="${SearchFilter == 'documentation'}">Documentation</option>
+                <option value="marketplace" selected="${SearchFilter == 'marketplace'}">Marketplace</option>
+                <option value="productsSolutions" selected="${SearchFilter == 'productsSolutions'}">Products/Solutions</option>
+                <option value="services" selected="${SearchFilter == 'services'}">Services</option>
+                <option value="education" selected="${SearchFilter == 'education'}">Education</option>
+                <option value="blogs" selected="${SearchFilter == 'blogs'}">Blogs</option>
+                <option value="news" selected="${SearchFilter == 'news'}">News</option>
             </select>
         </fieldset>
     </form>
 </header>
 <script>
-    if (document.location.search.indexOf('q=') >= 0 || document.location.search.indexOf('keywords=') >= 0) {
-        validateForm();
+    var stq = null;
+    var currentURL = new URL(document.location);
+    if (document.location.search.indexOf('q=') >= 0) {
+        stq = currentURL.searchParams.get("q");
+        validateFromURLParam();
+    } else if(document.location.search.indexOf('keywords=') >= 0){
+        stq = currentURL.searchParams.get("keywords");
+        validateFromURLParam();
     }
 
     function validateForm() {
-        var stq = encodeURIComponent(document.getElementById('q').value);
+        stq = encodeURIComponent(document.getElementById('q').value);
+        validateFromURLParam();
+    }
+
+    function validateFromURLParam() {
         document.getElementById("submitForm").action = "#stq=" + stq;
         document.getElementById("submitForm").submit();
     }
@@ -33,40 +56,7 @@
 <div class="st-search-container">
 </div>
 
-<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
-<sly data-sly-list="${SearchResultsModel.ParameterMap}">
-    <div><b>${item}:</b> ${SearchResultsModel.ParameterMap[item]}</div>
-</sly>
-    <!--/*<div data-sly-list="${params}">HELLO: ${item}</div>*/-->
+<sly data-sly-use.ScriptTemplates="search-script-templates.html"/>
 
-<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}">
-
-<script type="text/javascript">
-    (function(w, d, t, u, n, s, e) {
-        w['SwiftypeObject'] = n;
-        w[n] = w[n] || function() {
-            (w[n].q = w[n].q || []).push(arguments);
-        };
-        s = d.createElement(t);
-        e = d.getElementsByTagName(t)[0];
-        s.async = 1;
-        s.src = u;
-        e.parentNode.insertBefore(s, e);
-    })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
-
-    _st('install', 'V19U4iKAzwWhzxzh8cxY', '2.0.0', {
-        install: {
-            hooks: {
-                query_filter: function(query) {
-                    //query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'FIELD_NAME', { values: ['VALUE1', 'VALUE2'], type: "and" });
-                    query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'source', {
-                        values: ['${PageLocale @context="unsafe"}', 'newsroom', 'docs', 'marketplace', 'communities'],
-                        type: "or"
-                    });
-                    return query;
-                }
-            }
-        }
-    });
-</script>
-</sly>
+<sly data-sly-test="${qFieldName == 'category'}" data-sly-call="${ScriptTemplates.DoubleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
+<sly data-sly-test="${qFieldName != 'category'}" data-sly-call="${ScriptTemplates.SingleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
