@@ -1,10 +1,4 @@
-<section class="section">
-    <div class="section content p3">
-        <div>
-            ${properties.text @context='html'}
-        </div>
-        <div data-sly-test="${!properties.text}">
-            Enter HTML
-        </div>
-    </div>
-</section>
+${properties.text @context='unsafe'}
+<div data-sly-test="${!properties.text}">
+    Enter HTML
+</div>

@@ -329,6 +329,14 @@ a.white:focus,
     fill: color(conifer);
 }
 
+.fill-viking {
+    fill: color(viking);
+}
+
+.fill-danube {
+    fill: color(danube);
+}
+
 // Type sizes
 .hd, .hc, .hb, .ha, .h1, .h2, .h3, .h4, .h5, .h6 {
     display: block;
@@ -1455,7 +1463,7 @@ color: #213443;
 	word-wrap: break-word;
 }
 
-//DXP-390
-.header-generic {
-	background-color: #fff;
+//WEB-1566
+.mt0-imp {
+  margin-top:0 !important;
 }

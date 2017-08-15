@@ -33,7 +33,7 @@ body.support-central {
  * Small and used throughout
  */
 
-.support-chat-now {
+.support-chat-now, .sales-chat-now  {
   right: 0px;
 	background-color: color(mediumOrange);
 	position: fixed;
@@ -54,6 +54,11 @@ body.support-central {
   &:hover{
         color:yellow;
       }
+  }
+  
+  .mobile-only{
+    height:60px;
+    width:60px;
   }
   
   .chat-now-close::before {
@@ -77,9 +82,26 @@ body.support-central {
   
   // only show Chat Now in Large Breakpoint mode.
   //Start
-    display: none;
+    
+   // display: none;
+   bottom:10px;
+   border-radius:50%;
     @include media(breakpointLarge) {
-      display: block;
+      bottom:0px;
+      border-radius: 5px 5px 0px 0px;
+      
+        &:hover{
+        img{
+          -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+          -webkit-transition: .3s ease-in-out;
+          transition: .3s ease-in-out;
+        }
+      }
+    }
+    
+    @include media(breakpointExtraSmall){
+      right:10px;
     }
   //End
   
@@ -98,26 +120,13 @@ body.support-central {
     margin-top:.8rem;
   }
   
-  /*hover effect on Need Help Div*/
- //.support-content{
-  &:hover{
-    img{
-      -webkit-transform: scale(1.3);
-      transform: scale(1.3);
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
-    }
-  }
-//  }
-  
-  & b{
-  /*Added for IE - Hover effect*/
-    margin-right:.25em;
-  }
+	  & b{
+	  /*Added for IE - Hover effect*/
+	    margin-right:.25em;
+	  }
 
 
 	&.on-screen {
-
 		@include media(breakpointMedium) {
 			right: 1em;
 		}
@@ -127,21 +136,10 @@ body.support-central {
 			right: 1.5em;
 		}
 	}
-
-	/*.oldie & {
-		background-image:url(#{$imagesFolder}need-help-button.png);
-		background-repeat: no-repeat;
-		height: 117px;
-		margin-top: -117px;
-		overflow: hidden;
-		padding: 1em;
-		right: 0 !important;
-		text-indent: -999px;
-		width: 35px;
-	}*/
 }
 
 // persistent fixed position tab similar to .support-chat-now
+/*
 .fixed-tab-chat-now {
 	display: none;
 
@@ -186,7 +184,7 @@ body.support-central {
 	  	}
 	}
 }
-
+*/
 
 // A simple way to use a full-width section with even top/margin spacing
 // and a border to separate sections.

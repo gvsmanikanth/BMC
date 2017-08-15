@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2017-08-10T13:37:10.938-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-07-27T19:54:13.597-04:00"
+        cq:lastReplicatedBy="dtayeh"
+        cq:lastReplicationAction="Activate"
+        cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Base Layout Template"
+        status="enabled"/>
+</jcr:root>

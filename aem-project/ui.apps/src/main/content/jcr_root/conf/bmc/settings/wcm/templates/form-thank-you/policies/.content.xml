@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:lastModified="{Date}2017-06-07T11:42:48.693-07:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-06-06T13:55:50.778-07:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastReplicated="{Date}2017-08-11T17:17:14.440-04:00"
+        cq:lastReplicatedBy="workflow-process-service"
         cq:lastReplicationAction="Activate"
-        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus,mix:versionable]"
         jcr:primaryType="nt:unstructured"
+        jcr:uuid="9337d968-d4a3-4b07-b21e-6e3eef438a68"
         sling:resourceType="wcm/core/components/policies/mappings">
         <root
             cq:policy="wcm/foundation/components/responsivegrid/bmc-default"

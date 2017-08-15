@@ -71,7 +71,7 @@
                                 required="{Boolean}true"/>
                             <damVideoPath
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Please select a video"
                                     fieldLabel="Video Path"
                                     name="./damVideoPath"
@@ -105,58 +105,13 @@
                                         fieldDescription="Text to be overlaid on video when/if it is paused. Can contain a pair of markers, LINK- and -LINK wrapping some of the text, causing it to link to the Overlay URL"
                                         fieldLabel="Overlay Text"
                                         name="./overlayText"/>
-                                    <overlayUrlType
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
-                                        class="cq-dialog-dropdown-showhide"
-                                        cq-dialog-dropdown-showhide-target=".overlay-url-field"
-                                        fieldLabel="Overlay URL"
-                                        name="./overlayUrlIsPath">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <option1
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Internal Path"
-                                                value="true"/>
-                                            <option2
-                                                jcr:primaryType="nt:unstructured"
-                                                text="External Url"
-                                                value="false"/>
-                                        </items>
-                                    </overlayUrlType>
-                                    <overlayLinkPathContainer
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/container"
-                                        class="hide overlay-url-field"
-                                        showhidetargetvalue="true">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <overlayLinkPath
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                                fieldDescription="Please select the video overlay page"
-                                                fieldName="Overlay Url Path"
-                                                name="./overlayUrlPath"
-                                                rootPath="/content/bmc"/>
-                                        </items>
-                                    </overlayLinkPathContainer>
-                                    <overlayLinkUrlContainer
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/container"
-                                        class="hide overlay-url-field"
-                                        showhidetargetvalue="false">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <overlayLinkUrl
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                fieldDescription="Enter the video overlay URL"
-                                                fieldName="Overlay Url"
-                                                name="./overlayUrl"/>
-                                        </items>
-                                    </overlayLinkUrlContainer>
-                                    <overlayLinkHint
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                        name="./overlayUrlIsPath@TypeHint"
-                                        value="Boolean"/>
+                                    <overlayUrl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="To create a link from the Overlay Text, enter an external URL here (beginning with http(s):) or use the path picker to link to an internal page"
+                                            fieldLabel="Overlay URL"
+                                            name="./overlayUrl"
+                                            rootPath="/content/bmc"/>
                                 </items>
                             </overlayContainer>
                         </items>

@@ -11,7 +11,7 @@
 				<li><a href="http://www.bmc.com/forms/BMCPreferenceCenter_EN_V2.html">Manage Email Preference</a></li>
 				<li><a href="http://www.bmc.com/corporate/bmc-security.html">Application Security</a></li>
 			</ul>
-			&copy; Copyright 2005-2016 BMC Software, Inc.
+			&copy; Copyright 2005-2017 BMC Software, Inc.
 		</div>
 	</div>
 </footer>

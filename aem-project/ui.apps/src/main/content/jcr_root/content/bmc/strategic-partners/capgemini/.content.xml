@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T14:06:44.107-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Capgemini"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T14:06:44.106-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyExternalURL="https://marketplace.onbmc.com/companies/capgemini"
+                    companyURL="http://www.capgemini.com/"
+                    fileReference="/content/dam/bmc/partners/logos/capgemini.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Capgemini and BMC have built a unique partnership that provides strategic thought leadership around digital transformation. Capgemini manages business process transformation leveraging BMC IT solutions designed to make digital business fast, seamless and optimized. Capgemini’s key technology initiatives built on BMC Digital Enterprise Management (DEM) solutions:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;b>Industrialization (Cost)&lt;/b> delivers the best platform to support an infrastructure-led approach to reduce cost and complexity to deliver a broad set of products and services with increased margin &lt;/li>&#xd;&#xa;&lt;li>&lt;b>Collaboration Platform (Organization)&lt;/b> redefines the interactions at all levels between customers, the DSP staff from sales to support engineers, business partners and subcontractors&lt;/li>&#xd;&#xa;&lt;li>&lt;b>Productization (Shareholder Value)&lt;/b> provides the platform for new customer developments based on PaaS, open source, Big Data, Internet of Things (IoT) to then be offered as-a-Service.&lt;/li>&#xd;&#xa;&lt;li>&lt;b>Contract Improvements (Risk)&lt;/b> aim to standardize SLA, security and compliance, pricing and billing, while allowing flexibility for a rich set of differing configurations.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Certifications:&lt;br />&#xd;&#xa;BMC Certified Professional - ADDM&lt;br />&#xd;&#xa;BMC Certified professional - Cloud Lifecycle Management&lt;br />&#xd;&#xa;BMC Certified Professional - TrueSight Operations Management&lt;br />&#xd;&#xa;BMC Certified Professional - BMC Server Automation&lt;/p>&#xd;&#xa;"
+                    name="Capgemini"
+                    shortDescription="Capgemini and BMC have built a unique partnership that provides strategic thought leadership around digital transformation."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>

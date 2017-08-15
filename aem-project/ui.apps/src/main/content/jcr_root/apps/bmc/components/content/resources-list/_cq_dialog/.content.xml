@@ -1,37 +1,110 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured" jcr:title="Resource List Component" sling:resourceType="cq/gui/components/authoring/dialog" helpPath="">
-    <content jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
-        <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/tabs" type="nav" />
+<?xml version="1.0"
+        encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Resource List Component"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          helpPath="">
+    <content jcr:primaryType="nt:unstructured"
+             sling:resourceType="granite/ui/components/foundation/container">
+        <layout jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                type="nav"
+        />
         <items jcr:primaryType="nt:unstructured">
-            <readResourceList jcr:primaryType="nt:unstructured" jcr:title="Read Resources" sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <readResourceList jcr:primaryType="nt:unstructured"
+                              jcr:title="Read Resources"
+                              sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./readResources">
-                                    <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
+                            <list jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                  class="bmc-cq-dialog-add-heading-name"
+                                  label="Add Heading">
+                                <field jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                       acs-commons-nested="JSON_STORE"
+                                       name="./readResources">
+                                    <layout jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"
+                                    />
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                        <column jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <resType jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/select" fieldLabel="Select Asset Type" multiple="{Boolean}false" name="./resType">
+                                                <resType jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/foundation/form/select"
+                                                         fieldLabel="Select Asset Type"
+                                                         multiple="{Boolean}false"
+                                                         name="./resType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <dataSheet jcr:primaryType="nt:unstructured" text="Datasheets" value="Datasheets" />
-                                                        <whitePaper jcr:primaryType="nt:unstructured" text="White papers" value="White papers" />
-                                                        <analystResearch jcr:primaryType="nt:unstructured" text="Analyst research" value="Analyst research" />
-                                                        <eBooks jcr:primaryType="nt:unstructured" text="E-books" value="E-books" />
-                                                        <customHeader jcr:primaryType="nt:unstructured" text="custom" value="custom" />
+                                                        <dataSheet jcr:primaryType="nt:unstructured"
+                                                                   text="Datasheets"
+                                                                   value="Datasheets"
+                                                        />
+                                                        <whitePaper jcr:primaryType="nt:unstructured"
+                                                                    text="White papers"
+                                                                    value="White papers"
+                                                        />
+                                                        <analystResearch jcr:primaryType="nt:unstructured"
+                                                                         text="Analyst research"
+                                                                         value="Analyst research"
+                                                        />
+                                                        <eBooks jcr:primaryType="nt:unstructured"
+                                                                text="E-books"
+                                                                value="E-books"
+                                                        />
+                                                        <customHeader jcr:primaryType="nt:unstructured"
+                                                                      text="custom"
+                                                                      value="custom"
+                                                        />
                                                     </items>
                                                 </resType>
-                                                <customHeader jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Custom Header" name="./resCustomHeader" />
-                                                <listItems jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield" fieldLabel="Items">
-                                                    <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./resItems">
-                                                        <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
+                                                <customHeader jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                              fieldLabel="Custom Header"
+                                                              name="./resCustomHeader"
+                                                />
+                                                <listItems jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                           fieldLabel="Items"
+                                                           class="bmc-cq-dialog-add-resource-name"
+                                                           label="Add Resource">
+                                                    <field jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                           acs-commons-nested="JSON_STORE"
+                                                           name="./resItems">
+                                                        <layout jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                                method="absolute"
+                                                        />
                                                         <items jcr:primaryType="nt:unstructured">
-                                                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                                            <column jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
-                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
+                                                                    <resourceText jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                  fieldDescription="Enter a name that will appear on the resource"
+                                                                                  fieldLabel="Resource Label"
+                                                                                  required="{Boolean}true"
+                                                                                  name="./resText"
+                                                                    />
+                                                                    <resourcePath jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                  fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                                                  required="{Boolean}true"
+                                                                                  rootPath="/content/bmc"
+                                                                                  name="./resPath"
+                                                                                  fieldLabel="Resource Path"
+                                                                    />
                                                                 </items>
                                                             </column>
                                                         </items>
@@ -46,36 +119,100 @@
                     </column>
                 </items>
             </readResourceList>
-            <experienceResourceList jcr:primaryType="nt:unstructured" jcr:title="Experience Resources" sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <experienceResourceList jcr:primaryType="nt:unstructured"
+                                    jcr:title="Experience Resources"
+                                    sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./experienceResources">
-                                    <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
+                            <list jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                  class="bmc-cq-dialog-add-heading-name"
+                                  label="Add Heading">
+                                <field jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                       acs-commons-nested="JSON_STORE"
+                                       name="./experienceResources">
+                                    <layout jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"
+                                    />
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                        <column jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <resType jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/select" fieldLabel="Select Asset Type" multiple="{Boolean}false" name="./resType">
+                                                <resType jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/foundation/form/select"
+                                                         fieldLabel="Select Asset Type"
+                                                         multiple="{Boolean}false"
+                                                         name="./resType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <onDemandDemos jcr:primaryType="nt:unstructured" text="On-demand demos" value="On-demand demos" />
-                                                        <webinars jcr:primaryType="nt:unstructured" text="Webinars" value="Webinars" />
-                                                        <videos jcr:primaryType="nt:unstructured" text="Videos" value="Videos" />
-                                                        <customerStories jcr:primaryType="nt:unstructured" text="Customer stories" value="Customer stories" />
-                                                        <assessmentTool jcr:primaryType="nt:unstructured" text="Assessment tool" value="Assessment tool" />
-                                                        <customHeader jcr:primaryType="nt:unstructured" text="custom" value="custom" />
+                                                        <onDemandDemos jcr:primaryType="nt:unstructured"
+                                                                       text="On-demand demos"
+                                                                       value="On-demand demos"
+                                                        />
+                                                        <webinars jcr:primaryType="nt:unstructured"
+                                                                  text="Webinars"
+                                                                  value="Webinars"
+                                                        />
+                                                        <videos jcr:primaryType="nt:unstructured"
+                                                                text="Videos"
+                                                                value="Videos"
+                                                        />
+                                                        <customerStories jcr:primaryType="nt:unstructured"
+                                                                         text="Customer stories"
+                                                                         value="Customer stories"
+                                                        />
+                                                        <assessmentTool jcr:primaryType="nt:unstructured"
+                                                                        text="Assessment tool"
+                                                                        value="Assessment tool"
+                                                        />
+                                                        <customHeader jcr:primaryType="nt:unstructured"
+                                                                      text="custom"
+                                                                      value="custom"
+                                                        />
                                                     </items>
                                                 </resType>
-                                                <customHeader jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Custom Header" name="./resCustomHeader" />
-                                                <listItems jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield" fieldLabel="Items">
-                                                    <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./resItems">
-                                                        <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
+                                                <customHeader jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                              fieldLabel="Custom Header"
+                                                              name="./resCustomHeader"
+                                                />
+                                                <listItems jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                           fieldLabel="Items"
+                                                           class="bmc-cq-dialog-add-resource-name"
+                                                           label="Add Resource">
+                                                    <field jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                           acs-commons-nested="JSON_STORE"
+                                                           name="./resItems">
+                                                        <layout jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                                method="absolute"
+                                                        />
                                                         <items jcr:primaryType="nt:unstructured">
-                                                            <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                                                            <column jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                    <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
-                                                                    <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
+                                                                    <resourceText jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                  fieldDescription="Enter a name that will appear on the resource"
+                                                                                  fieldLabel="Resource Label"
+                                                                                  required="{Boolean}true"
+                                                                                  name="./resText"
+                                                                    />
+                                                                    <resourcePath jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                  fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                                                  required="{Boolean}true"
+                                                                                  rootPath="/content/bmc"
+                                                                                  name="./resPath"
+                                                                                  fieldLabel="Resource Path"
+                                                                    />
                                                                 </items>
                                                             </column>
                                                         </items>
@@ -90,56 +227,132 @@
                     </column>
                 </items>
             </experienceResourceList>
-            <exploreResourceList jcr:primaryType="nt:unstructured" jcr:title="Explore Resources" sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <exploreResourceList jcr:primaryType="nt:unstructured"
+                                 jcr:title="Explore Resources"
+                                 sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                             <list jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                 <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./exploreResources">
-                                     <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
-                                     <items jcr:primaryType="nt:unstructured">
-                                         <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
-                                             <items jcr:primaryType="nt:unstructured">
-                                                 <resType jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/select" fieldLabel="Select Asset Type" multiple="{Boolean}false" name="./resType">
-                                                     <items jcr:primaryType="nt:unstructured">
-                                                         <technicalDetails jcr:primaryType="nt:unstructured" text="Technical details" value="Technical details" />
-                                                         <whitePaper jcr:primaryType="nt:unstructured" text="Customer enablement" value="Customer enablement" />
-                                                         <analystResearch jcr:primaryType="nt:unstructured" text="Analyst research" value="Analyst research" />
-                                                         <RelatedProductsAndSolutions jcr:primaryType="nt:unstructured" text="Related products and solutions" value="Related products and solutions" />
-                                                         <customHeader jcr:primaryType="nt:unstructured" text="custom" value="custom" />
-                                                     </items>
-                                                 </resType>
-                                                 <customHeader jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="Custom Header" name="./resCustomHeader" />
-                                                 <listItems jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/multifield" fieldLabel="Items">
-                                                     <field jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/fieldset" acs-commons-nested="JSON_STORE" name="./resItems">
-                                                         <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" method="absolute" />
-                                                         <items jcr:primaryType="nt:unstructured">
-                                                             <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
-                                                                 <items jcr:primaryType="nt:unstructured">
-                                                                     <resourceText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldDescription="Enter a name that will appear on the resource" fieldLabel="Resource Label" required="{Boolean}true" name="./resText" />
-                                                                     <resourcePath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./resPath" fieldLabel="Resource Path" />
-                                                                 </items>
-                                                             </column>
-                                                         </items>
-                                                     </field>
-                                                 </listItems>
-                                             </items>
-                                         </column>
-                                     </items>
-                                 </field>
-                             </list>
+                            <list jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                  class="bmc-cq-dialog-add-heading-name"
+                                  label="Add Heading">
+                                <field jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                       acs-commons-nested="JSON_STORE"
+                                       name="./exploreResources">
+                                    <layout jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"
+                                    />
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <resType jcr:primaryType="nt:unstructured"
+                                                         sling:resourceType="granite/ui/components/foundation/form/select"
+                                                         fieldLabel="Select Asset Type"
+                                                         multiple="{Boolean}false"
+                                                         name="./resType">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <technicalDetails jcr:primaryType="nt:unstructured"
+                                                                          text="Technical details"
+                                                                          value="Technical details"
+                                                        />
+                                                        <whitePaper jcr:primaryType="nt:unstructured"
+                                                                    text="Customer enablement"
+                                                                    value="Customer enablement"
+                                                        />
+                                                        <analystResearch jcr:primaryType="nt:unstructured"
+                                                                         text="Analyst research"
+                                                                         value="Analyst research"
+                                                        />
+                                                        <RelatedProductsAndSolutions jcr:primaryType="nt:unstructured"
+                                                                                     text="Related products and solutions"
+                                                                                     value="Related products and solutions"
+                                                        />
+                                                        <customHeader jcr:primaryType="nt:unstructured"
+                                                                      text="custom"
+                                                                      value="custom"
+                                                        />
+                                                    </items>
+                                                </resType>
+                                                <customHeader jcr:primaryType="nt:unstructured"
+                                                              sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                              fieldLabel="Custom Header"
+                                                              name="./resCustomHeader"
+                                                />
+                                                <listItems jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                           fieldLabel="Items"
+                                                           class="bmc-cq-dialog-add-resource-name"
+                                                           label="Add Resource">
+                                                    <field jcr:primaryType="nt:unstructured"
+                                                           sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                           acs-commons-nested="JSON_STORE"
+                                                           name="./resItems">
+                                                        <layout jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                                method="absolute"
+                                                        />
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <column jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <resourceText jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                  fieldDescription="Enter a name that will appear on the resource"
+                                                                                  fieldLabel="Resource Label"
+                                                                                  required="{Boolean}true"
+                                                                                  name="./resText"
+                                                                    />
+                                                                    <resourcePath jcr:primaryType="nt:unstructured"
+                                                                                  sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                  fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                                                  required="{Boolean}true"
+                                                                                  rootPath="/content/bmc"
+                                                                                  name="./resPath"
+                                                                                  fieldLabel="Resource Path"
+                                                                    />
+                                                                </items>
+                                                            </column>
+                                                        </items>
+                                                    </field>
+                                                </listItems>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </list>
                         </items>
                     </column>
                 </items>
             </exploreResourceList>
-            <cta jcr:primaryType="nt:unstructured" jcr:title="CTA Button" sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <cta jcr:primaryType="nt:unstructured"
+                 jcr:title="CTA Button"
+                 sling:resourceType="granite/ui/components/foundation/container">
+                <layout jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
+                    <column jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <ctaText jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textfield" fieldLabel="CTA Label" fieldDescription="Enter a name that will appear on the CTA" required="{Boolean}true" name="./ctaText" />
-                            <ctaPath jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser" fieldLabel="CTA Path" fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:" required="{Boolean}true" name="./ctaPath" />
+                            <ctaText jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                     fieldLabel="CTA Label"
+                                     fieldDescription="Enter a name that will appear on the CTA"
+                                     name="./ctaText"
+                            />
+                            <ctaPath jcr:primaryType="nt:unstructured"
+                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                     fieldLabel="CTA Path"
+                                     fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                     rootPath="/content/bmc"
+                                     name="./ctaPath"
+                            />
                         </items>
                     </column>
                 </items>

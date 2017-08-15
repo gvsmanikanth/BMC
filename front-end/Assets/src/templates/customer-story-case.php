@@ -111,7 +111,7 @@ include 'php-inc/head.php';
 			<figure>
 				<h2>See how we Bring IT to Life <span class="timestamp">(1:30)</span></h2>
 				<div class="video">
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">
 						viewNode("b0f52c73e3bfe", {
 							"server_detection" : true,

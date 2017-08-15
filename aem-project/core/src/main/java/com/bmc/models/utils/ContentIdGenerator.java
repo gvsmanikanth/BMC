@@ -1,6 +1,7 @@
 package com.bmc.models.utils;
 
 import java.security.SecureRandom;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -16,7 +17,8 @@ public class ContentIdGenerator {
 
     public ContentIdGenerator(String pagePath) {
         Random random = new SecureRandom();
-        random.setSeed(stringToSeed(pagePath));
+        Date currentDate = new Date();
+        random.setSeed(stringToSeed(pagePath+currentDate.toString()));
         int CODE_LENGTH = 9; // Make this static
 
         Long randomLong = random.nextLong();

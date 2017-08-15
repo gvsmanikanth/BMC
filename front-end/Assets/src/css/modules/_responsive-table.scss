@@ -8,7 +8,7 @@
  }
  .text-align-left{
    text-align:left;
-   padding-left: 1.5em;
+   padding-left: 1rem !important
  }
  
  .text-align-center{
@@ -111,9 +111,12 @@
     
     tr {
       td:nth-child(1) {
-	      background: color(lightGrey); 
-	      text-align:left;
-	      padding-left: 1.5em;
+      	display: flex;
+	    flex-direction: row-reverse;
+		padding-left: 1.5em;
+			
+	    background: color(lightGrey); 
+	    text-align:left;
       }
      
     }
@@ -124,6 +127,15 @@
      
 
     td {
+    	
+     padding:0 !important;
+     position: relative !important;
+     text-align: left;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     padding: 10px 0 !important;
+		    	
       /* Behave  like a "row" */
       border: none;
       border-bottom: 1px solid #eee;
@@ -133,19 +145,24 @@
       
       //WEB-1555 : Resolved issue with big titles on mobile devices
       padding-left: 90%;
-      font-size: 0.52rem;
+      font-size: 0.7rem;
       
     }
 
     td:before {
+    	
+    	position:relative !important;
+     	flex:1;
+     	white-space:inherit;
+     	
       /* Now like a table header */
       position: absolute;
       /* Top/left values mimic padding */
       vertical-align:middle;
       left: 1.5em;
       width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
+      padding-right: 20px;
+      //white-space: nowrap;
       font-weight:800;
       color:color(abbey);
     }
@@ -330,5 +347,15 @@
           text-align: center;
         }
     }
+}
 
+@media only screen and (max-width: 640px) , ( max-device-width : 768px)
+	and (min-device-width: 640px) {
+	.generic-table td div {
+		width: 50%;
+	}
+	.generic-table .no-first-row-styling {
+		flex-direction: inherit !important;
+		padding-left: 0rem !important;
+	}
 }

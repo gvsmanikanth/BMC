@@ -102,7 +102,7 @@ include_once 'php-inc/head.php';
 				<div class="video">
 					<input id="f57d6f3e23e54" type="hidden" value="Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>">
 					</input>
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">
 						viewNode("f57d6f3e23e54", {
 							"server_detection" : true,
@@ -255,7 +255,7 @@ include_once 'php-inc/head.php';
 				<div class="video">
 					<input id="9cda6b3c2bd57" type="hidden" value="Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>">
 					</input>
-					<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+					<script type="text/javascript" src="//service.twistage.com/api/script"></script>
 					<script type="text/javascript">
 						viewNode("9cda6b3c2bd57", {
 							"server_detection" : true,

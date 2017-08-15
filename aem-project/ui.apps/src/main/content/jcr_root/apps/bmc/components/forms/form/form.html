@@ -10,13 +10,13 @@
     <!--/* This is the honeypot field. Do not remvoe. */-->
     <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
     <sly data-sly-repeat.paragraph="${grid.paragraphs}">
-        <sly  data-sly-test="${paragraph.name != 'form-terms'}"
+        <sly  data-sly-test="${paragraph.name != 'form-terms' && paragraph.name != 'form-btn'}"
               data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType, decorationTagName='div', cssClassName=paragraph.cssClass}"></sly>
     </sly>
 
     <sly data-sly-resource="${resource.path @ resourceType=container.resourceTypeForDropArea, appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent fieldsetcls'}"
          data-sly-test="${wcmmode.edit || wcmmode.preview}"></sly>
-    <sly data-sly-resource="${'form-btn' @ resourceType='bmc/components/forms/elements/button'}"/>
+    <sly data-sly-resource="${'./form-btn' @ resourceType='bmc/components/forms/elements/button'}"/>
     <sly data-sly-resource="${'./form-terms' @ resourceType='bmc/components/content/text'}"/>
 
 </form>

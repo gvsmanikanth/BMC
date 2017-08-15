@@ -6,7 +6,8 @@
         cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/page"
+        bodyClass="page-campaign-landing bmc-nav-loader-nav">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    cq:isContainer="{Boolean}true"
+    jcr:description="BMC 50/50 Content Container"
+    jcr:primaryType="cq:Component"
+    jcr:title="BMC 50/50 Content Container"
+    class="50-50contentcontainer aem-Grid aem-Grid--12 aem-Grid--default--12"
+    componentGroup="BMC.content"/>

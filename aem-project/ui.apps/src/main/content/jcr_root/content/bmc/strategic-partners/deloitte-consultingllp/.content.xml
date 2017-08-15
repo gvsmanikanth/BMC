@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-07-12T13:58:57.306-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/partner-data"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Deloitte Consulting LLP"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <maincontentcontainer
+                jcr:created="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T13:09:13.117-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer">
+                <partner_data
+                    jcr:created="{Date}2017-07-11T13:10:32.702-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-12T13:58:57.305-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/partner-data"
+                    companyURL="http://www2.deloitte.com/us/en/pages/about-deloitte/solutions/deloitte-technology-alliances-bmc.html"
+                    fileReference="/content/dam/bmc/partners/logos/deloitte.png"
+                    isEnabled="true"
+                    longDescription="&lt;p>Deloitte, the largest consulting organization in the world, helps clients transform complex IT infrastructures into efficient engines for business. From help desk to analytics-driven performance management, Deloitte and BMC can help you transform IT to deliver more business value.&lt;/p>&#xd;&#xa;&lt;p>The Deloitte and BMC alliance brings focus and clarity to IT Service Management (ITSM), offering the experience and tools you need to successfully implement IT Infrastructure Library (ITIL®) principles and align your IT assets, activities, and decisions with business priorities. Our alliance combines Deloitte's portfolio of services for ITSM strategy and implementation with BMC's leading IT service management software.&lt;/p>&#xd;&#xa;&lt;p>Certifications:&lt;br />&#xd;&#xa;BMC Certified Professional: BladeLogic Server Automation&lt;br />&#xd;&#xa;BMC Certified Professional: BMC Remedy Service Desk and Change Management&lt;br />&#xd;&#xa;BMC Certified Professional: BMC Server Automation&lt;/p>&#xd;&#xa;"
+                    name="Deloitte Consulting LLP"
+                    shortDescription="Deloitte, the largest consulting organization in the world, helps clients transform complex IT infrastructures into efficient engines for business."
+                    textIsRich="true"/>
+            </maincontentcontainer>
+            <partner_data
+                jcr:created="{Date}2017-07-11T10:13:45.483-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-11T10:13:49.699-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/partner-data"/>
+        </root>
+    </jcr:content>
+</jcr:root>

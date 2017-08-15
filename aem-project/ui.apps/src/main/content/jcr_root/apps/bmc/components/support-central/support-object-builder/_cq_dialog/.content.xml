@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Alert JSON Object Component"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[]">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <alert
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Alerts"
+                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <alerts jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                  fieldLabel="Alerts">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                        acs-commons-nested="NODE_STORE"
+                                        name="./alertdata">
+                                    <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                            method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <alertStartDate
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                                                        type="datetime"
+                                                        fieldLabel="Alert Start Date"
+                                                        required="{Boolean}true"
+                                                        name="./alertStartDate"/>
+                                                <alertEndDate
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                                                        type="datetime"
+                                                        fieldLabel="Alert End Date"
+                                                        required="{Boolean}true"
+                                                        name="./alertEndDate"/>
+                                                <alertTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Alert Title"
+                                                        required="{Boolean}true"
+                                                        fieldDescription="Alert Title"
+                                                        name="./alertTitle"/>
+
+                                                <alertMessage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                        fieldLabel="Alert Message"
+                                                        required="{Boolean}true"
+                                                        fieldDescription="Alert Message"
+                                                        name="./alertMessage"/>
+
+                                                <alertLinkTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Alert Link Title"
+                                                        required="{Boolean}true"
+                                                        fieldDescription="Alert Link Title"
+                                                        name="./alertLinkTitle"/>
+
+                                                <alertLinkUrl
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                        fieldLabel="Alert Link Url"
+                                                        required="{Boolean}true"
+                                                        fieldDescription="Alert Link Url"
+                                                        name="./alertLinkUrl"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </alerts>
+                        </items>
+                    </column>
+                </items>
+            </alert>
+        </items>
+    </content>
+</jcr:root>

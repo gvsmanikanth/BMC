@@ -5,7 +5,11 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:lastModified="{Date}2017-05-17T15:18:54.637-07:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-08-11T17:13:00.619-04:00"
+        cq:lastReplicatedBy="aviner"
+        cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset"
+        jcr:mixinTypes="[]"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page">
         <root
