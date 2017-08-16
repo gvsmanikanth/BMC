@@ -71,7 +71,7 @@
                                 required="{Boolean}true"/>
                             <damVideoPath
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Please select a video"
                                     fieldLabel="Video Path"
                                     name="./damVideoPath"
@@ -107,7 +107,7 @@
                                         name="./overlayText"/>
                                     <overlayUrl
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldDescription="To create a link from the Overlay Text, enter an external URL here (beginning with http(s):) or use the path picker to link to an internal page"
                                             fieldLabel="Overlay URL"
                                             name="./overlayUrl"

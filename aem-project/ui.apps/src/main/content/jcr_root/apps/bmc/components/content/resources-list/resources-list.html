@@ -7,7 +7,7 @@
                 <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath}"  target="_self">
+                        <a  href="${child.resPath @ extension='html'}"  target="_self">
                             ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
@@ -20,7 +20,7 @@
                 <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath}"  target="_self">
+                        <a  href="${child.resPath @ extension='html'}"  target="_self">
                             ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
@@ -33,7 +33,7 @@
                 <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
                     <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
                     <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath}"  target="_self">
+                        <a  href="${child.resPath @ extension='html'}"  target="_self">
                             ${child.resText @ context='html'} &nbsp;&#8250;
                         </a>
                     </ul>
@@ -42,6 +42,6 @@
         </div>
     </div>
     <p data-sly-test="${properties.ctaText && properties.ctaPath}" class="text-center">
-        <a class="btn" href="${properties.ctaPath}" target="_self">${properties.ctaText @ context='html'} &nbsp;›</a>
+        <a class="btn" href="${properties.ctaPath @ extension='html'}" target="_self">${properties.ctaText @ context='html'} &nbsp;›</a>
     </p>
 </section>

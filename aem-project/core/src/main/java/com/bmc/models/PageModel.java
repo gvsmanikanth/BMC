@@ -284,7 +284,7 @@ public class PageModel {
     }
 
     private String formatMetaLocale(){
-        Page resolvedPage = resourcePage.getAbsoluteParent(1);
+        Page resolvedPage = resourcePage.getAbsoluteParent(3);
         if (resolvedPage == null)
             resolvedPage = resourcePage;
 
