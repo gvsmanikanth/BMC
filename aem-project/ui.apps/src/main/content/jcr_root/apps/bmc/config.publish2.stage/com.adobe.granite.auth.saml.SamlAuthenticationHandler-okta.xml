@@ -17,6 +17,6 @@
           service.ranking="{Long}5002"
           serviceProviderEntityId="aemqapublish"
           spPrivateKeyAlias="okta-publish-stage"
-          synchronizeAttributes="[cn=rep:fullname,SOUSERGIVENNAME=profile/givenName,SSOUSERSURNAME=profile/familyName,SSOUSEREMAIL=profile/email,bmc_contactintegrationid=profile/contactIntegrationId]"
+          synchronizeAttributes="[cn=rep:fullname,SSOUSERGIVENNAME=profile/givenName,SSOUSERSURNAME=profile/familyName,SSOUSEREMAIL=profile/email,bmc_contactintegrationid=profile/contactIntegrationId]"
           useEncryption="{Boolean}true"
           userIDAttribute="uid"/>
