@@ -2846,8 +2846,12 @@ ul.accordion {
     border-bottom:  none;
     margin: 0; }
 
-.accordion--editing .accordion-item-content {
-  display: block !important; }
+.accordion--editing {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .accordion--editing .accordion-item-content {
+    display: block !important; }
 
 .aem--no-grid.aem-GridColumn {
   clear: none !important;
@@ -14113,7 +14117,7 @@ body.support-central {
 
 .tab-wrapper .tabs-nav {
   max-width: 1440px;
-  padding: 0 1em 0 1em;
+  padding: 0;
   margin-bottom: 0;
   text-align: center; }
   .tab-wrapper .tabs-nav li {
