@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          path="/manual/login"
+          service.ranking="{Long}5000"
+          auth.loginselector.defaultloginpage="/libs/granite/core/content/login"
+          auth.loginselector.defaultchangepwpage="/libs/granite/core/content/changepassword"
+          auth.loginselector.handle="[html,htm]"
+          auth.loginselector.handle.all.extensions="{Boolean}false"/>
