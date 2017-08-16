@@ -14,10 +14,10 @@
             <br data-sly-test="${!phoneList.last}">
         </sly>
         <sly data-sly-test="${office.timezone}"><br>timezone</sly>
-        <sly data-sly-repeat.zone="${office.zones}">
-            ${zone}
-            <br data-sly-test="${!zoneList.last}">
-        </sly>
+        <!--/*<sly data-sly-repeat.zone="${office.zones}">*/-->
+            <!--/*${zone}*/-->
+            <!--/*<br data-sly-test="${!zoneList.last}">*/-->
+        <!--/*</sly>*/-->
     </address>
 </fieldset>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !office.name, emptyTextAppend = 'Enter regional office data.'}"></sly>

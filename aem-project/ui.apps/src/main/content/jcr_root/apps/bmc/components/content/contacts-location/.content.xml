@@ -4,3 +4,4 @@
           jcr:primaryType="cq:Component"
           sling:resourceSuperType="bmc/components/content/contacts-locations"
           componentGroup="BMC.content"/>
+
