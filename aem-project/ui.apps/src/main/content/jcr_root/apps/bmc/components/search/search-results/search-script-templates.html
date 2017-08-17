@@ -1,0 +1,65 @@
+<sly data-sly-template.DoubleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+    <script type="text/javascript">
+        (function(w, d, t, u, n, s, e) {
+            w['SwiftypeObject'] = n;
+            w[n] = w[n] || function() {
+                (w[n].q = w[n].q || []).push(arguments);
+            };
+            s = d.createElement(t);
+            e = d.getElementsByTagName(t)[0];
+            s.async = 1;
+            s.src = u;
+            e.parentNode.insertBefore(s, e);
+        })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+        _st('install', 'V19U4iKAzwWhzxzh8cxY', '2.0.0', {
+            install: {
+                hooks: {
+                    query_filter: function(query) {
+                        //query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'FIELD_NAME', { values: ['VALUE1', 'VALUE2'], type: "and" });
+                        query.setFilterDataByDocumentTypeSlugAndFilterField('${qPage @context="unsafe"}', 'source', {
+                                values: ['${PageLocale @context="unsafe"}'],
+                                type: "or"
+                        }),
+                        query.setFilterDataByDocumentTypeSlugAndFilterField('${qPage @context="unsafe"}', '${qFieldName @context="unsafe"}', {
+                            values: ['${qValues @join="','", context="unsafe"}'],
+                            type: "${qType @context='unsafe'}"
+                        });
+                        return query;
+                    }
+                }
+            }
+        });
+    </script>
+</sly>
+
+<sly data-sly-template.SingleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+    <script type="text/javascript">
+        (function(w, d, t, u, n, s, e) {
+            w['SwiftypeObject'] = n;
+            w[n] = w[n] || function() {
+                (w[n].q = w[n].q || []).push(arguments);
+            };
+            s = d.createElement(t);
+            e = d.getElementsByTagName(t)[0];
+            s.async = 1;
+            s.src = u;
+            e.parentNode.insertBefore(s, e);
+        })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+        _st('install', 'V19U4iKAzwWhzxzh8cxY', '2.0.0', {
+            install: {
+                hooks: {
+                    query_filter: function(query) {
+                        //query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'FIELD_NAME', { values: ['VALUE1', 'VALUE2'], type: "and" });
+                            query.setFilterDataByDocumentTypeSlugAndFilterField('${qPage @context="unsafe"}', '${qFieldName @context="unsafe"}', {
+                                values: ['${qValues @join="','", context="unsafe"}'],
+                                type: "${qType @context='unsafe'}"
+                            });
+                        return query;
+                    }
+                }
+            }
+        });
+    </script>
+</sly>
