@@ -329,7 +329,13 @@
                                             fieldDescription="Is Non-Lead-Gen-Form(Emailed form)?"
                                             text="Is Non-Lead-Gen-Form(Emailed form)?"
                                             name="./isNonLeadGenForm"
+                                            value="true"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <leadGenType
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./isNonLeadGenForm@TypeHint"
+                                            value="Boolean"/>
                                     <isParallelEmailForm
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -337,6 +343,11 @@
                                             text="Parallel Email Form"
                                             name="./isParallelEmailForm"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <parallelTypeHint
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./isParallelEmailForm@TypeHint"
+                                            value="Boolean"/>
                                     <emailSubjectLine
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -358,6 +369,11 @@
                                             text="Bypass WebMethods (dev only)"
                                             name="./bypassOSB"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <bypassOSBtype
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./bypassOSB@TypeHint"
+                                            value="Boolean"/>
                                 </items>
                             </column>
                         </items>
