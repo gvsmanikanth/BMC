@@ -31,12 +31,7 @@
                 <h4>Search BMC</h4>
                 <ul class="nav-supplemental meta">
                     <li>
-                        <fieldset>
-                            <div class="search-input-m-glass">
-                                <input type="text" class="search-input-m-glass" placeholder="Search">
-                                <button></button>
-                            </div>
-                        </fieldset>
+                        <sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
                     </li>
                 </ul>
             </li>
