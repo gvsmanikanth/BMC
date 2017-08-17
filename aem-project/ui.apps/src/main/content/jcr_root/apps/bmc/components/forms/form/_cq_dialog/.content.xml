@@ -228,12 +228,14 @@
                                             fieldDescription="Generate LMA License"
                                             text="Generate LMA License"
                                             name="./LMA_license"
+                                            value="Yes"
                                             wrapperClass="cmp-workflow-title"/>
                                     <AWS_Trial
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                             fieldDescription="AWS Trial"
                                             text="AWS Trial"
+                                            value="Yes"
                                             name="./AWS_Trial"
                                             wrapperClass="cmp-workflow-title"/>
                                     <formname
@@ -270,6 +272,7 @@
                                             fieldDescription="Force 'Opt In'"
                                             text="Force 'Opt In'"
                                             name="./C_OptIn"
+                                            value="Yes"
                                             wrapperClass="cmp-workflow-title"/>
                                     <C_Contact_Me1
                                             jcr:primaryType="nt:unstructured"
@@ -329,25 +332,16 @@
                                             fieldDescription="Is Non-Lead-Gen-Form(Emailed form)?"
                                             text="Is Non-Lead-Gen-Form(Emailed form)?"
                                             name="./isNonLeadGenForm"
-                                            value="true"
+                                            value="Yes"
                                             wrapperClass="cmp-workflow-title"/>
-                                    <leadGenType
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                            name="./isNonLeadGenForm@TypeHint"
-                                            value="Boolean"/>
                                     <isParallelEmailForm
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                             fieldDescription="Parallel Email Form"
                                             text="Parallel Email Form"
                                             name="./isParallelEmailForm"
+                                            value="Yes"
                                             wrapperClass="cmp-workflow-title"/>
-                                    <parallelTypeHint
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                            name="./isParallelEmailForm@TypeHint"
-                                            value="Boolean"/>
                                     <emailSubjectLine
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -368,12 +362,8 @@
                                             fieldDescription="Bypass WebMethods (dev only)"
                                             text="Bypass WebMethods (dev only)"
                                             name="./bypassOSB"
+                                            value="Yes"
                                             wrapperClass="cmp-workflow-title"/>
-                                    <bypassOSBtype
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                            name="./bypassOSB@TypeHint"
-                                            value="Boolean"/>
                                 </items>
                             </column>
                         </items>
