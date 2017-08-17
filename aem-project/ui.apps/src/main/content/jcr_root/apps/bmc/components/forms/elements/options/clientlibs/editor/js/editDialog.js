@@ -15,12 +15,11 @@
  ******************************************************************************/
 (function ($, channel, Coral) {
     'use strict';
-    var FIELD_TYPE = '.cmp-form-options-type select';
+    var FIELD_TYPE = '.cmp-form-options-type';
     var EDIT_DIALOG = ".core-wcm-form-options-v1";
     var OPTIONS_REQUIRED = ".cmp-form-textfield-required";
-    var CONSTRAIN_MESSAGE = '.cmp-form-textfield-constraintmessage';
     var VALIDATION_TYPES = '.cmp-form-validation-types';
-    var REQUIRED_MESSAGE = '.cmp-form-textfield-requiredmessage';
+    var REQUIRED_MESSAGE = '.cmp-form-textfield-constraintmessage';
 
 
     /**
@@ -28,26 +27,30 @@
      * @param dialog The dialog on which the operation is to be performed
      */
     function initialise(dialog) {
-        document.querySelector(REQUIRED_MESSAGE).style.display = "none";
-        document.querySelector(CONSTRAIN_MESSAGE).style.display = "none";
-        document.querySelector(CONSTRAIN_MESSAGE).style.display = "none";
+        $(REQUIRED_MESSAGE).hide();
+        $(VALIDATION_TYPES).hide();
 
-        document.querySelector(OPTIONS_REQUIRED).onclick = function(e){
+        $(OPTIONS_REQUIRED).on('click', function(e){
             if(!this.hasAttribute('checked')){
-                document.querySelector(REQUIRED_MESSAGE).style.display = "block";
-                if(document.querySelector(FIELD_TYPE).value == 'drop-down'){
-                    document.querySelector(CONSTRAIN_MESSAGE).style.display = "block";
+                $(REQUIRED_MESSAGE).show();
+                if($(FIELD_TYPE).val() == 'drop-down'){
+                    $(VALIDATION_TYPES).show();
                 }
             }else{
-                document.querySelector(REQUIRED_MESSAGE).style.display = "none";
-                document.querySelector(CONSTRAIN_MESSAGE).style.display = "none";
+                $(REQUIRED_MESSAGE).hide();
+                $(VALIDATION_TYPES).hide();
             }
-        };
+        });
+
+        $(FIELD_TYPE).on('change', function(){
+            $(REQUIRED_MESSAGE).hide();
+            $(VALIDATION_TYPES).hide();
+            $(OPTIONS_REQUIRED).removeAttr('checked');
+        });
     }
 
     channel.on("foundation-contentloaded", function (e) {
         if ($(e.target).find(EDIT_DIALOG).length > 0) {
-            alert('hitting');
             Coral.commons.ready(e.target, function (component) {
                 initialise(component);
             });

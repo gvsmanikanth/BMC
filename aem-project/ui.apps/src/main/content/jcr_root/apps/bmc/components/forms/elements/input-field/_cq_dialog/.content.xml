@@ -36,39 +36,39 @@
                                             <salutation
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Salutation"
-                                                value="Salutation1"/>
+                                                value="C_Salutation1"/>
                                             <title
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Title"
-                                                value="title"/>
+                                                value="C_Title"/>
                                             <address1
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Address 1"
-                                                value="address1"/>
+                                                value="C_Address1"/>
                                             <address2
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Address 2"
-                                                value="address2"/>
+                                                value="C_Address2"/>
                                             <address3
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Address 3"
-                                                value="address3"/>
+                                                value="C_Address3"/>
                                             <zip
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Zip Postal"
-                                                value="Zip_Postal"/>
+                                                value="C_Zip_Postal"/>
                                             <businessphone
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Business Phone"
-                                                value="BusPhone"/>
+                                                value="C_BusPhone"/>
                                             <firstname
                                                 jcr:primaryType="nt:unstructured"
                                                 text="First Name"
-                                                value="firstname"/>
+                                                value="C_FirstName"/>
                                             <lastname
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Last Name"
-                                                value="lastname"/>
+                                                value="C_LastName"/>
                                         </items>
                                     </validationType>                                    
                                 </items>

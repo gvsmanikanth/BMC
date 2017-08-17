@@ -211,15 +211,7 @@
                                     fieldDescription="Message displayed as tooltip when submitting the form if the value is left empty"
                                     fieldLabel="Required Message"
                                     name="./requiredMessage"
-                                    wrapperClass="cmp-form-textfield-requiredmessage"/>                                    
-                                <readonlySelectedAlert
-                                    granite:class="cmp-form-textfield-readonlyselected-alert"
-                                    granite:hidden="{Boolean}true"
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/alert"
-                                    size="S"
-                                    text="Enabling the required option disables the readonly option"
-                                    variant="warning"/>
+                                    wrapperClass="cmp-form-textfield-constraintmessage"/>
 
                                 <validationType
                                     granite:class="cmp-form-validation-types"
@@ -227,7 +219,7 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                     fieldLabel="Validation Type"
                                     name="./validation-type"
-                                    wrapperClass="cmp-form-textfield-constraintmessage"
+                                    wrapperClass="cmp-form-validation-types"
                                     sling:orderBefore="constraintMessage">
                                     <items jcr:primaryType="nt:unstructured">
                                         <none
@@ -237,8 +229,9 @@
                                         <stateprovence
                                             jcr:primaryType="nt:unstructured"
                                             text="State/Provence"
-                                            value="State_Prov"/>
-                                    </items>                                                           
+                                            value="C_State_Prov"/>
+                                    </items>
+                                </validationType>                                                       
                             <aboutHeading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/heading"
