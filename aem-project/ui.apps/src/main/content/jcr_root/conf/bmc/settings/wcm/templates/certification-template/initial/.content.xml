@@ -11,7 +11,7 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/certification-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page"
+        sling:resourceType="bmc/components/structure/education-page-common"
         bodyClass="section-education home page-home"
         showBreadcrumbs="true">
         <root

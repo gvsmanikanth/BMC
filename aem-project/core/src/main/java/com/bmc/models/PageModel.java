@@ -122,6 +122,7 @@ public class PageModel {
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getPage().setCultureCode(formatMetaLocale().toLowerCase());
         bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
