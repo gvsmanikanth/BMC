@@ -1,4 +1,10 @@
-<sly data-sly-use.model="com.bmc.models.components.contactslocations.RegionalOfficesModel">
+<sly data-sly-use.offices="com.bmc.components.RegionalOffices"
+     data-sly-use.model="com.bmc.models.components.contactslocations.RegionalOfficesModel">
     <h3>Regional Website</h3>
     <a data-sly-test.url="${model.regionalWebsiteURL}" href="${url}">${model.regionalWebsiteText @ context='html'}</a>
+    <h3 data-sly-test="${offices.offices.size > 0}">Regional Office<sly data-sly-test="${offices.offices.size > 1}">s</sly></h3>
+    <sly data-sly-repeat.office="${offices.offices}">
+        <sly data-sly-resource="${office @ resourceType='bmc/components/content/regional-office-data'}"></sly>
+    </sly>
+
 </sly>

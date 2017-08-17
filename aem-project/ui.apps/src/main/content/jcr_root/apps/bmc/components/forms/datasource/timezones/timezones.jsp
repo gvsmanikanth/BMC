@@ -22,6 +22,7 @@
     Set<String> allZones = ZoneId.getAvailableZoneIds();
     List<String> zoneList = new ArrayList<>(allZones);
     Collections.sort(zoneList);
+    zoneList.add(0, "- None Selected -");
 
     List<Resource> result = new ArrayList<>();
     ValueMap vm;
