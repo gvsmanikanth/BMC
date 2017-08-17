@@ -27,8 +27,15 @@
      * @param dialog The dialog on which the operation is to be performed
      */
     function initialise(dialog) {
-        $(REQUIRED_MESSAGE).hide();
-        $(VALIDATION_TYPES).hide();
+        
+        if(!$(OPTIONS_REQUIRED).attr('checked')){
+            $(REQUIRED_MESSAGE).hide();
+            $(VALIDATION_TYPES).hide();         
+        }else{
+            if(!$(FIELD_TYPE).val() == 'drop-down'){
+                $(VALIDATION_TYPES).hide();
+            }             
+        }
 
         $(OPTIONS_REQUIRED).on('click', function(e){
             if(!this.hasAttribute('checked')){
