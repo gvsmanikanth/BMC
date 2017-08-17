@@ -50,6 +50,10 @@ public class ExternalLinkRewriter implements TransformerFactory {
   	
   	ExternalLinkNodeItem item ;
   	
+  	 long millisEnd;
+  	
+  	 long millisStart;
+  	
     public Transformer createTransformer() {
     	
         return new ExternalLinkTransformer();
@@ -80,6 +84,10 @@ public class ExternalLinkRewriter implements TransformerFactory {
         }
 
         public void endDocument() throws SAXException {
+        	long millisEnd = Calendar.getInstance().getTimeInMillis();       	
+            log.info("END DOCUMENT SCAN : "+millisEnd);
+            long timeLapsed = (long) (millisEnd - millisStart * 0.001);
+            log.info("Time lapsed in the operation" +timeLapsed);
             contentHandler.endDocument();
         }
 
@@ -117,24 +125,27 @@ public class ExternalLinkRewriter implements TransformerFactory {
         }
 
         public void startDocument() throws SAXException {
-        //	log.info("start Element -- ExternalLinkTransformer");
+        	long millisStart = Calendar.getInstance().getTimeInMillis();
+        	logger.info("START DOCUMENT SCAN : "+millisStart);
             contentHandler.startDocument();
         }
 
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException
         {        	
-        	String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        		log.info("start Class -- ExternalLinkRewriter"+timeStamp);
+        	 
         		//Parsing the HTML for hrefs 
             	ExternalLinkNodeItem externalNodeItem = null;
             	final AttributesImpl attributes = new AttributesImpl(atts);
             	final String href = attributes.getValue("href");
             	//service reference method for JCR lookup.
+            	
             	externalNodeItem = dataService.checkJcrRepository(href);
                 for (int i = 0; i < attributes.getLength(); i++) {                	
-                	if("href".equalsIgnoreCase(attributes.getQName(i)))
+                	if("href".equalsIgnoreCase(attributes.getQName(i)) && !attributes.getValue(attributes.getQName(i)).equals("#")
+                			&& !attributes.getValue(attributes.getQName(i)).equals("/") )
                     {
                 		String hrefName = attributes.getValue(attributes.getQName(i));
+                		log.info("Href name  : "+hrefName);
                         	if (externalNodeItem.getLinkAbstractorURL()!=null  
                         		&& externalNodeItem.getLinkPath().equals(hrefName) 
                         		&& externalNodeItem.getLinkAbstractor().equalsIgnoreCase("external-link")) 
@@ -151,23 +162,21 @@ public class ExternalLinkRewriter implements TransformerFactory {
                         					{
                         						log.info("SELF LINK FOUND");
                         						attributes.addAttribute(null, "target", "target", null, "_self");                       	
-                        					}
-                        			
-                        			}
-                       
+                        					}           			
+                        			}                       
                         		break;
                     	}	
                 }
                 		externalNodeItem =  null;
                 		contentHandler.startElement(uri, localName, qName, attributes);
-                String timeStamp_end = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-                
-                log.info("End Class -- ExternalLinkRewriter"+timeStamp_end);
+                		
         }
 
         public void startPrefixMapping(String prefix, String uri) throws SAXException {
             contentHandler.startPrefixMapping(prefix, uri);
         }
+        
+      
     }
     
     
