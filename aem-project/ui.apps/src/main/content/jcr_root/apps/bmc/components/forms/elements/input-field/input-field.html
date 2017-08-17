@@ -9,7 +9,9 @@
                   readonly="${text.readOnly}"
                   required="${text.required}"
                   data-cmp-required="${text.requiredMessage}"
-                  rows="${text.rows}">${text.value}</textarea>
+                  rows="${text.rows}"
+                  data-validation-type="${properties.validationType}"
+                  required="${properties.required ? '' : 'false'}" >${text.value}</textarea>
         <input data-sly-test="${!useTextarea}"
                aria-label="${text.hideTitle && text.title}"
                type="${text.type}"
@@ -20,5 +22,7 @@
                readonly="${text.readOnly}"
                required="${text.required}"
                data-cmp-required="${text.requiredMessage}"
-               data-cmp-constraint="${text.constraintMessage}"/>
+               data-cmp-constraint="${text.constraintMessage}"
+               data-validation-type="${properties.validationType}"
+               required="${properties.required ? '' : 'false'}" />
 </sly>

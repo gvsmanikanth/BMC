@@ -13,7 +13,7 @@
                 <sly data-sly-test="${isCheckbox}" data-sly-test.itemID="${optionItem.value}" data-sly-test.itemName="${itemID}" data-sly-test.itemValue="${optionItem.value}"/>
 
                 <input type="${options.type.value}" name="${itemName}" id="${itemID}" value="${itemValue}"
-                       checked="${optionItem.selected}" disabled="${optionItem.disabled}"/>
+                       checked="${optionItem.selected}" data-validation-type="${properties.validationType}" disabled="${optionItem.disabled}" required="${properties.required ? '' : 'false'}" />
                 <label for="${itemID}">
                     ${optionItem.text @ context='html'}
                 </label>
@@ -23,7 +23,7 @@
     <sly data-sly-test="${options.type.value == 'drop-down' || options.type.value == 'multi-drop-down'}">
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
         <select name="${options.name}" id="${options.id}" class="form-control" data-sly-list.optionItem="${options.items}"
-                data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}">
+                data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}" data-validation-type="${properties.validationType}" required="${properties.required ? '' : 'false'}">
             <option value="${optionItem.value}" selected="${optionItem.selected}" disabled="${optionItem.disabled}">${optionItem.text}</option>
         </select>
     </sly>
