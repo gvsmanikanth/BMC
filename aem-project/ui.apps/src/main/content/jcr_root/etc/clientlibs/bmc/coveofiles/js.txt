@@ -1,5 +1,0 @@
-#base=js
-support-coveo-custom.js
-support-coveo-searchbox.js
-search.js
-support-coveo-search.js

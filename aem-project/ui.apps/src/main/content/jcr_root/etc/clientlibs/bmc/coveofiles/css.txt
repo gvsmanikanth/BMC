@@ -1,3 +1,0 @@
-#base=css
-support-coveo-custom.css
-support-coveo-search.css
