@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Page"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          extraClientlibs="[]">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            cq:showOnCreate="false"
+                            jcr:title="Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            sling:orderBefore="advanced">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <metadata
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Metadata"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <education-product-name
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Education Products"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select product to add"
+                                                    multiple="true"
+                                                    metadataName="education-products"
+                                                    name="./education-products">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="education-products"/>
+                                            </education-product-name>
+                                            <education-version-number
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Version Numbers"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select applicable version numbers"
+                                                    multiple="true"
+                                                    metadataName="education-version-numbers"
+                                                    name="./education-version-numbers">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="education-version-numbers"/>
+                                            </education-version-number>
+                                            <education-broad-role
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Education Broad Role"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select applicable roles"
+                                                    multiple="true"
+                                                    metadataName="education-broad-role"
+                                                    name="./education-broad-role">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="education-broad-role"/>
+                                            </education-broad-role>
+                                            <education-specific-role
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Education Specific Role"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select applicable roles"
+                                                    multiple="true"
+                                                    metadataName="education-specific-role"
+                                                    name="./education-specific-role">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="education-specific-role"/>
+                                            </education-specific-role>
+                                        </items>
+                                    </metadata>
+                                </items>
+                            </column>
+                        </items>
+                    </metadata>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

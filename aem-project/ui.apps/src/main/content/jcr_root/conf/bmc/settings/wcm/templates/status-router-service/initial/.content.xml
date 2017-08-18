@@ -17,6 +17,38 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
+                <maincontentcontainer
+                    jcr:created="{Date}2017-07-13T12:39:04.389-04:00"
+                    jcr:createdBy="dtayeh"
+                    jcr:lastModified="{Date}2017-07-13T12:39:04.389-04:00"
+                    jcr:lastModifiedBy="dtayeh"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/maincontentcontainer">
+                    <section
+                        jcr:created="{Date}2017-07-13T12:39:10.713-04:00"
+                        jcr:createdBy="dtayeh"
+                        jcr:lastModified="{Date}2017-07-13T12:39:10.713-04:00"
+                        jcr:lastModifiedBy="dtayeh"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/section">
+                        <title
+                            jcr:created="{Date}2017-07-13T12:39:17.983-04:00"
+                            jcr:createdBy="dtayeh"
+                            jcr:lastModified="{Date}2017-07-13T12:39:34.386-04:00"
+                            jcr:lastModifiedBy="dtayeh"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Add message here"
+                            sling:resourceType="bmc/components/content/title"
+                            type="h2"/>
+                        <text
+                            jcr:created="{Date}2017-07-13T12:39:25.416-04:00"
+                            jcr:createdBy="dtayeh"
+                            jcr:lastModified="{Date}2017-07-13T12:39:25.416-04:00"
+                            jcr:lastModifiedBy="dtayeh"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/text"/>
+                    </section>
+                </maincontentcontainer>
                 <header_basic
                     jcr:created="{Date}2017-05-24T18:02:02.568-07:00"
                     jcr:createdBy="admin"

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <_x0031_35765208
+        jcr:primaryType="nt:unstructured"
+        text="DBA"/>
+    <_x0035_01764469
+        jcr:primaryType="nt:unstructured"
+        text="DCA / Cloud"/>
+    <_x0032_59403760
+        jcr:primaryType="nt:unstructured"
+        text="DM"/>
+    <_x0038_54236502
+        jcr:primaryType="nt:unstructured"
+        text="DSM"/>
+    <_x0035_63626456
+        jcr:primaryType="nt:unstructured"
+        text="IT Operations"/>
+    <_x0033_56510492
+        jcr:primaryType="nt:unstructured"
+        text="MV"/>
+    <_x0037_31979597
+        jcr:primaryType="nt:unstructured"
+        text="Other"/>
+    <_x0031_34378251
+        jcr:primaryType="nt:unstructured"
+        text="P&amp;A"/>
+    <_x0035_09328107
+        jcr:primaryType="nt:unstructured"
+        text="SCT"/>
+    <_x0031_53989625
+        jcr:primaryType="nt:unstructured"
+        text="Select Technologies"/>
+    <_x0030_77379163
+        jcr:primaryType="nt:unstructured"
+        text="Service Support Mid Market"/>
+    <_x0038_90648529
+        jcr:primaryType="nt:unstructured"
+        text="STG"/>
+    <_x0033_97155614
+        jcr:primaryType="nt:unstructured"
+        text="Unknown"/>
+    <_x0037_83062258
+        jcr:primaryType="nt:unstructured"
+        text="WLA"/>
+</jcr:root>

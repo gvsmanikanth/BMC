@@ -145,7 +145,7 @@
                                                     <items jcr:primaryType="nt:unstructured">
                                                         <internalPagePath
                                                                 jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                 fieldDescription="Please select the page"
                                                                 name="./internalPagePath"
                                                                 rootPath="/content/bmc"
@@ -160,7 +160,7 @@
                                                     <items jcr:primaryType="nt:unstructured">
                                                         <internalAssetPath
                                                                 jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                 fieldDescription="Please select the asset"
                                                                 name="./internalAssetPath"
                                                                 rootPath="/content/dam"

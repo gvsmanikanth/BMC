@@ -9,7 +9,7 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/adhoc-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/ad-hoc-page">
         <root
             jcr:lastModified="{Date}2017-07-31T11:39:51.135-07:00"
             jcr:lastModifiedBy="admin"

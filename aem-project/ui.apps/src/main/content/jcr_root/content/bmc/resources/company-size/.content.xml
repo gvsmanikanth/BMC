@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Company Size">
+    <_x0035_000_x002b_
+            jcr:primaryType="nt:unstructured"
+            jcr:title="5000+"/>
+    <_x0031_000-4999
+            jcr:primaryType="nt:unstructured"
+            jcr:title="1000-4999"/>
+    <_x0031_-999
+            jcr:primaryType="nt:unstructured"
+            jcr:title="1-999"/>
+</jcr:root>

@@ -7,10 +7,10 @@ public class UserMeta {
 
     private String sVi = ""; //""
     //If user is authenticated and is in /support/ path
-    private Boolean isSupportAuthenticated = false;
-    private String firstName = ""; //[firstName]
-    private String lastName = ""; //[lastName]
-    private String email = ""; //[email]
+    private Boolean isSupportAuthenticated = null;
+    private String firstName = null; //[firstName]
+    private String lastName = null; //[lastName]
+    private String email = null; //[email]
     //end if user authenticated
 
 

@@ -2,8 +2,8 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2017-07-30T17:01:00.154-07:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-10T15:30:43.262-04:00"
+        cq:lastModifiedBy="dtayeh"
         cq:lastReplicated="{Date}2017-07-14T11:31:54.124-07:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
