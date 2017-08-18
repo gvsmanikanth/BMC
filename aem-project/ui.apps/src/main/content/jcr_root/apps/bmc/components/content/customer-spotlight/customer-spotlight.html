@@ -2,7 +2,12 @@
          data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="customer-story-case-banner wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
     <div class="layout-inner-wrap">
         <div class="layout-primary">
-            <sly data-sly-test="${properties.showBreadcrumbs}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='navigation-breadcrumb white-links', decorationTagName='ul' }" class="navigation-breadcrumb" data-sly-unwrap></sly>
+            <div class="back-link">
+                <a href="/customers/success-stories.html">
+                    ${'Customer Stories' @ i18n}
+                </a>
+                / ${properties.title || currentPage.title}
+            </div>
             <div class="header-logo" style="width:350px;">
 
                 <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image'}" data-sly-unwrap></sly>
