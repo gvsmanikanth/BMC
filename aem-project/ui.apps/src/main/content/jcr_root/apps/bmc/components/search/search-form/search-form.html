@@ -1,0 +1,7 @@
+
+<sly data-sly-use.SearchBoxModel="com.bmc.models.components.search.SearchBoxModel">
+    <sly data-sly-use.FooterTemplates="search-form-templates.html"/>
+
+    <sly data-sly-test="${SearchBoxModel.ParentName == 'header'}" data-sly-call="${FooterTemplates.HeaderSearch}"/>
+    <sly data-sly-test="${SearchBoxModel.ParentName == 'footer'}" data-sly-call="${FooterTemplates.FooterSearch}"/>
+</sly>

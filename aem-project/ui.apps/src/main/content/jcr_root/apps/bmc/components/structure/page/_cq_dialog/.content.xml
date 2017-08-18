@@ -48,6 +48,65 @@
                             </column>
                         </items>
                     </basic>
+                    <metadata
+                            jcr:primaryType="nt:unstructured"
+                            cq:showOnCreate="false"
+                            jcr:title="Metadata"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            sling:orderBefore="advanced">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <metadata
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Metadata"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <product-interest
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    name="./product_interest"
+                                                    fieldDescription="Select Related Products"
+                                                    fieldLabel="Product"
+                                                    useNameAsValue="true"
+                                                    emptyText="Select"
+                                                    textProperty="textEmpty"
+                                                    valueProperty="valueEmpty"
+                                                    multiple="{Boolean}true"
+                                                    dataPath="/content/bmc/resources/product-interests">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="product_interest"/>
+                                            </product-interest>
+                                            <productLine1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Select Related Product Lines"
+                                                    fieldLabel="Product Line"
+                                                    emptyText="Select"
+                                                    name="./product_line"
+                                                    multiple="{Boolean}true"
+                                                    dataPath="/content/bmc/resources/product-lines">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="/apps/bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="product_line"/>
+                                            </productLine1>
+                                        </items>
+                                    </metadata>
+                                </items>
+                            </column>
+                        </items>
+                    </metadata>
                     <CTAs
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Related CTAs"

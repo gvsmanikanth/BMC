@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="e262107d-9676-3f7d-868a-45266e0b4b6e"
+    rep:authorizableId="SSO_AEM_AssetManager"
+    rep:principalName="SSO_AEM_AssetManager">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        aboutMe="SSO_AEM_AssetManager SSO group"
+        givenName="SSO_AEM_AssetManager"/>
+</jcr:root>
