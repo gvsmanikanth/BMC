@@ -10,7 +10,7 @@
         <ol class="${isRadio ? 'radio-list' : ''}" id="${options.name}_group">
             <li data-sly-repeat.optionItem="${options.items}">
                 <sly data-sly-test="${isRadio}" data-sly-test.itemID="${[options.name,optionItem.value] @join='_'}" data-sly-test.itemValue="${optionItem.value}" data-sly-test.itemName="${options.name}"/>
-                <sly data-sly-test="${isCheckbox}" data-sly-test.itemID="${optionItem.value}" data-sly-test.itemName="${itemID}" data-sly-test.itemValue="${optionItem.value}"/>
+                <sly data-sly-test="${isCheckbox}" data-sly-test.itemID="${optionItem.value}" data-sly-test.itemName="${options.name}" data-sly-test.itemValue="${optionItem.value}"/>
 
                 <input type="${options.type.value}" name="${itemName}" id="${itemID}" value="${itemValue}"
                        checked="${optionItem.selected}" disabled="${optionItem.disabled}"/>
