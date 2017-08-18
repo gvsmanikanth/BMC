@@ -1,8 +1,8 @@
 <section data-sly-use.TabsModel="com.bmc.models.components.tabs.TabsModel">
     <sly data-sly-test.ContentID="${TabsModel.ContentID}"/>
     <div id="tab1-${ContentID}" class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
-        <h2 class="m0 text-center white">${properties.headerText @ context = 'html'}</h2>
-        <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table" style="max-width:1200px;">
+        <h2 class="text-center white layout-inner-wrap">${properties.headerText @ context = 'html'}</h2>
+        <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table">
             <sly data-sly-list.tab="${TabsModel.tabs}">
                 <li class="flex-cell n-col-${TabsModel.tabs.size}"  data-sly-test="${tab.tabTitle}">
                     <a class="p2 white bold no-scroll" href="#tab-${ContentID}${tabList.index}" onclick="">${tab.tabTitle @ context = 'html'}</a>

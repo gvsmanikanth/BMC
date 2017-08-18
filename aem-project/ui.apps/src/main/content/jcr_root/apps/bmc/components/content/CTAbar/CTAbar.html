@@ -24,11 +24,11 @@
                 <div class="ctabar__buttonwrap">
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
                         <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
                     </div>
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
                         <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
                     </div>
                 </div>
             </sly>
@@ -36,8 +36,8 @@
             <!-- one or two buttons, no headers -->
             <sly data-sly-test="${!properties.primaryCTAheader && !properties.secondaryCTAheader}">
                 <div class="text-center">
-                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
-                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
+                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
                 </div>
             </sly>
 

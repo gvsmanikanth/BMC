@@ -1,16 +1,18 @@
 <blockquote class="testimonial divider">
-    <p>
-        ${properties.quote}
-    </p>
-    <cite>
-        — ${properties.citation}
-    </cite>
+    <div class="layout-inner-wrap">
+        <p>
+            ${properties.quote}
+        </p>
+        <cite>
+            — ${properties.citation}
+        </cite>
 
-    <sly data-sly-test="${properties.sourcelinktext}">
-        <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext}</a></h5>
-    </sly>
+        <sly data-sly-test="${properties.sourcelinktext}">
+            <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext}</a></h5>
+        </sly>
 
-    <section data-sly-test="${properties.ctatext}">
-        <a class="btn-white learn-more" href="${properties.ctaurl}">${properties.ctatext}</a>
-    </section>
+        <section data-sly-test="${properties.ctatext}">
+            <a class="btn-white learn-more" href="${properties.ctaurl}">${properties.ctatext}</a>
+        </section>
+    </div>
 </blockquote>
