@@ -4,9 +4,13 @@ import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.models.components.contactslocations.ContactPhone;
 import com.bmc.models.components.contactslocations.ContactsLocationModel;
 import com.bmc.models.components.contactslocations.ContactsLocationsModel;
+import com.bmc.util.ResourceHelper;
+import com.day.cq.wcm.api.Page;
+import org.apache.sling.api.resource.Resource;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.stream.Collectors;
 
 
 /**
@@ -58,6 +62,23 @@ public class ContactsLocation extends WCMUsePojo {
     public String getSecurityEmail() { return resolveStrings("getSecurityEmail"); }
     public String getAnalystRelationsText() { return resolveStrings("getAnalystRelationsText"); }
     public String getAnalystRelationsURL() { return resolveStrings("getAnalystRelationsURL"); }
+    public String getHeading() {
+        String result = null;
+        if (stringExists(model.getHeading())) {
+            result = model.getHeading();
+        }
+        else if (stringExists(getCurrentPage().getPageTitle())) {
+            result = getCurrentPage().getPageTitle();
+        }
+        else if (stringExists(getCurrentPage().getTitle())) {
+            result = getCurrentPage().getTitle();
+        }
+        else if (stringExists(getCurrentPage().getName())) {
+            result = getCurrentPage().getName();
+        }
+
+        return result;
+    }
     public Iterable<ContactPhone> getEducationCustomerServicePhones() {
         Iterable a = model.getEducationCustomerServicePhones();
         Iterable b = parentModel.getEducationCustomerServicePhones();
@@ -70,7 +91,6 @@ public class ContactsLocation extends WCMUsePojo {
     public String getSupportInformation() { return model.getSupportInformation(); }
     public String getSupportEmail() { return model.getSupportEmail(); }
     public Iterable<ContactPhone> getSupportPhones() { return model.getSupportPhones(); }
-    public Boolean hasSupportPhones() { return iterableExists(getSupportPhones()); }
 
     /**
      * Helper function to determine if an Iterable exists and has at least one element.

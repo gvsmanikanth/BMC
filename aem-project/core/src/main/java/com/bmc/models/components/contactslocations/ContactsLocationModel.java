@@ -62,6 +62,8 @@ public class ContactsLocationModel {
     private String analystRelationsText;
     @ValueMapValue
     private String analystRelationsURL;
+    @ValueMapValue
+    private String heading;
 
     @Inject
     private List<ContactPhone> educationCustomerServicePhones;
@@ -100,6 +102,7 @@ public class ContactsLocationModel {
     public String getSecurityEmail() { return securityEmail; }
     public String getAnalystRelationsText() { return exists(analystRelationsText) ? analystRelationsText : analystRelationsURL; }
     public String getAnalystRelationsURL() { return analystRelationsURL; }
+    public String getHeading() { return heading; }
 
     public Iterable<ContactPhone> getEducationCustomerServicePhones() { return educationCustomerServicePhones; }
 
