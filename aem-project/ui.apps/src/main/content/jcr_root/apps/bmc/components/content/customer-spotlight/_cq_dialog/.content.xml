@@ -20,6 +20,18 @@
                                  sling:hideResource="{Boolean}true"/>
                             <linkURL jcr:primaryType="nt:unstructured"
                                      sling:hideResource="{Boolean}true"/>
+                            <showbreadcrumbs
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    name="./showBreadcrumbs"
+                                    renderReadOnly="{Boolean}false"
+                                    text="Show Breadcrumbs"
+                                    value="true">
+                                <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        allowBulkEdit="{Boolean}true"
+                                        cq-msm-lockable="showBreadcrumbs"/>
+                            </showbreadcrumbs>
                             <caption jcr:primaryType="nt:unstructured"
                                      sling:hideResource="{Boolean}true"/>
                             <displayCaptionPopup jcr:primaryType="nt:unstructured"
@@ -37,6 +49,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+
                             <cta-link
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
