@@ -591,7 +591,6 @@
 //Additional styles for responsive tabs with image-bottom
 
 .tab-wrapper{
-  
   .flex-tab{
     padding-bottom: 0px !important;
     
@@ -687,7 +686,7 @@
   
   .tabs-nav {
       max-width:1440px;
-      padding: 0 1em 0 1em;
+      padding: 0;
       
       margin-bottom: 0;
       text-align: center;

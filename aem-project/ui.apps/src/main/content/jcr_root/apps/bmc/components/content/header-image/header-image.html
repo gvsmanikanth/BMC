@@ -2,8 +2,8 @@
     <div class="offset-wrapper">
         <div class="layout-inner-wrap py4 px4">
             <div class="bgalpha70">
-                <h1 data-sly-test="${properties.heading}">${properties.heading}</h1>
-                <p data-sly-test="${properties.text}">${properties.text}</p>
+                <h1 data-sly-test="${properties.heading}">${properties.heading @ context = 'html'}</h1>
+                <p data-sly-test="${properties.text}">${properties.text @ context = 'html'}</p>
             </div>
         </div>
     </div>
