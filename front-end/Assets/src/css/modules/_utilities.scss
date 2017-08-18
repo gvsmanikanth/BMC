@@ -308,7 +308,9 @@
 	&.row {
 		margin-top: 0;
 	}
-
+	.layout-inner-wrap {
+		padding: 0;
+	}
 	p {
 		color:#cfe5e4;
 		@include font-size(36);
@@ -362,7 +364,7 @@
 	}
 
 	@include media(breakpointMedium) {
-		padding: 60px;
+		padding: 60px 40px;
 	}
 
 	// specific changes for testimonials contained within .page-campaign-landing
