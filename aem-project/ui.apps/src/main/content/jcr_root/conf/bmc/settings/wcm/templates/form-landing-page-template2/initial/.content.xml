@@ -2,8 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-11T17:28:55.893-04:00"
-        cq:lastModifiedBy="dtayeh"
+        cq:lastModified="{Date}2017-08-18T22:39:11.429-07:00"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template2"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page"
@@ -85,6 +85,13 @@
                                 sling:resourceType="bmc/components/content/text"
                                 text="&lt;p>By providing my contact information, I have read and agreed to BMC’s policy regarding&amp;nbsp;&lt;a href=&quot;http://www.bmc.com/legal/personal-information.html&quot;>Personal Information&lt;/a>.*&lt;br>&#xa;&lt;/p>&#xa;"
                                 textIsRich="true"/>
+                            <experiencefragment
+                                jcr:created="{Date}2017-08-18T22:39:11.421-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2017-08-18T22:39:11.421-07:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                         </form>
                     </right>
                 </_50_50contentcontain>

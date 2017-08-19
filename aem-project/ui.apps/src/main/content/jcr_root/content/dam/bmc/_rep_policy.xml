@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <allow
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="SSO_AEM_AssetManager"
+        rep:privileges="{Name}[jcr:versionManagement,crx:replicate,rep:write,jcr:lockManagement]"/>
+    <deny1
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="SSO_AEM_AssetManager"
+        rep:privileges="{Name}[jcr:removeNode]">
+        <rep:restrictions
+            jcr:primaryType="rep:Restrictions"
+            rep:glob=""/>
+    </deny1>
+</jcr:root>
