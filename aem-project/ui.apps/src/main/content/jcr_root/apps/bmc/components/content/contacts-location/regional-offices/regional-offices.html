@@ -1,10 +1,27 @@
-<sly data-sly-use.offices="com.bmc.components.RegionalOffices"
+<sly data-sly-use.obj="com.bmc.components.RegionalOffices"
      data-sly-use.model="com.bmc.models.components.contactslocations.RegionalOfficesModel">
-    <h3>Regional Website</h3>
+    <h3>${'Regional Website' @ i18n}</h3>
     <a data-sly-test.url="${model.regionalWebsiteURL}" href="${url}">${model.regionalWebsiteText @ context='html'}</a>
-    <h3 data-sly-test="${offices.offices.size > 0}">Regional Office<sly data-sly-test="${offices.offices.size > 1}">s</sly></h3>
-    <sly data-sly-repeat.office="${offices.offices}">
-        <sly data-sly-resource="${office @ resourceType='bmc/components/content/regional-office-data'}"></sly>
-    </sly>
+    <h3 data-sly-test="${obj.offices.size > 0}">Regional Office<sly data-sly-test="${obj.offices.size > 1}">s</sly></h3>
+    <template data-sly-template.addresses="${ @ list}">
+        <sly data-sly-repeat.office="${list}">
+            <sly data-sly-resource="${office.path @ resourceType='bmc/components/content/regional-office-data'}"></sly>
+        </sly>
+    </template>
+    <template data-sly-template.stateSelect="${ @ obj}">
+        <form class="js-data-state-select">
+            <fieldset>
+                <div class="form-group">
+                    <label for="state-select" class="select-label">${'Select a state' @ i18n}: </label>
+                    <select id="state-select">
+                        <option data-sly-repeat.group="${obj.groups}">${group}</option>
+                    </select>
+                </div>
+            </fieldset>
+            <sly data-sly-call="${addresses @ list=obj.offices}"></sly>
+        </form>
+    </template>
+    <sly data-sly-test="${model.groupOffices}" data-sly-call="${stateSelect @ obj=obj}"></sly>
+    <sly data-sly-test="${!model.groupOffices}" data-sly-call="${addresses @ list=obj.offices}"></sly>
 
 </sly>

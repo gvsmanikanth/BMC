@@ -1,6 +1,7 @@
 <fieldset data-sly-use.office="com.bmc.models.components.contactslocations.RegionalOfficeDataModel"
           data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-          data-sly-test="${office.name}">
+          data-sly-test="${office.name}"
+          data-state="${office.group}">
     <sly data-sly-test.isEditing="${wcmmode.edit || wcmmode.design}"></sly>
     <strong>${office.name}</strong> <sly data-sly-test="${isEditing && office.group}">(${office.group})</sly>
     <address>

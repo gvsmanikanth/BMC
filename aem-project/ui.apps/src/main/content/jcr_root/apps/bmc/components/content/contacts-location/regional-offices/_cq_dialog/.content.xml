@@ -25,6 +25,20 @@
                             name="./regionalWebsiteURL"/>
                 </items>
             </regionalWebsite>
+            <regionalOffices
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                    jcr:title="Regional Offices">
+                <items jcr:primaryType="nt:unstructured">
+                    <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                            fieldDescription="When checked, regional offices are grouped according to their 'group' properties."
+                            text="Should group offices"
+                            name="./groupOffices"
+                            value="{Boolean}true"/>
+                </items>
+            </regionalOffices>
         </items>
     </content>
 </jcr:root>

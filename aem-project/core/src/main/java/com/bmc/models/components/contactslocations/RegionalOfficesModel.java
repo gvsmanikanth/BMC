@@ -11,9 +11,12 @@ public class RegionalOfficesModel {
     private String regionalWebsiteText;
     @ValueMapValue
     private String regionalWebsiteURL;
+    @ValueMapValue
+    private Boolean groupOffices;
 
     public String getRegionalWebsiteText() { return exists(regionalWebsiteText) ? regionalWebsiteText : regionalWebsiteURL; }
     public String getRegionalWebsiteURL() { return regionalWebsiteURL; }
+    public Boolean getGroupOffices() { return groupOffices; }
 
     private Boolean exists(String s) {
         return s != null && !s.isEmpty();

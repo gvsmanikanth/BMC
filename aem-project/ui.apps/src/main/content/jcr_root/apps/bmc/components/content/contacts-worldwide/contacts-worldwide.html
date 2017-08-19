@@ -153,8 +153,14 @@
                     <em data-sly-test="${!location.analystRelationsURL && isEditing}">enter URL</em>
                 </p>
             </div>
-
-            <sly data-sly-resource="${'regionalOffices' @ resourceType='bmc/components/content/contacts-location/regional-offices', decorationTagName='div', cssClassName='three-up -shaded'}"></sly>
+            <div class="three-up -shaded">
+                <h3>${'Country Websites' @ i18n}</h3>
+                <sly data-sly-repeat.page="${currentPage.parent.listChildren}">
+                    <sly data-sly-test="${page.path != currentPage.path}">
+                        <a href="${page.path @ extension='html'}">${page.navigationTitle||page.pageTitle||page.title||page.name}</a><br>
+                    </sly>
+                </sly>
+            </div>
         </section>
     </div>
 </div>
