@@ -84,6 +84,9 @@
                                             name="./productLine1"
                                             required="{Boolean}true"
                                             multiple="{Boolean}false"
+                                            useNameAsValue="true"
+                                            textProperty="text"
+                                            valueProperty="valueEmpty"
                                             dataPath="/content/bmc/resources/product-lines"
                                             wrapperClass="cmp-workflow-title">
                                         <datasource
