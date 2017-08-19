@@ -84,6 +84,9 @@
                                             name="./productLine1"
                                             required="{Boolean}true"
                                             multiple="{Boolean}false"
+                                            useNameAsValue="true"
+                                            textProperty="text"
+                                            valueProperty="valueEmpty"
                                             dataPath="/content/bmc/resources/product-lines"
                                             wrapperClass="cmp-workflow-title">
                                         <datasource
@@ -156,7 +159,7 @@
                                             <zz jcr:primaryType="nt:unstructured"
                                                 value="White Paper"
                                                 text="White Paper"/>
-                                        </items>
+                                        </items>                                        
                                     </C_Lead_Offer_Most_Recent1>
                                     <ex_assettype
                                             jcr:primaryType="nt:unstructured"
