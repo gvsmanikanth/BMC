@@ -1,31 +1,32 @@
 if($('#leadgen') || $('#nonleadgen'))	{
 	//Add hard limits to form fields, if they are not already defined
-	if(!$('#C_Salutation1').attr('maxlength'))
-		$('#C_Salutation1').attr('maxlength', '15');
-	if(!$('#C_Title').attr('maxlength'))
-		$('#C_Title').attr('maxlength', '75');
-	if(!$('#C_Address1').attr('maxlength'))
-		$('#C_Address1').attr('maxlength', '60');
-	if(!$('#C_Address2').attr('maxlength'))
-		$('#C_Address2').attr('maxlength', '60');
-	if(!$('#C_Address3').attr('maxlength'))
-		$('#C_Address3').attr('maxlength', '60');
-	if(!$('#C_State_Prov').attr('maxlength'))
-		$('#C_State_Prov').attr('maxlength', '20');
-	if(!$('#C_Zip_Postal').attr('maxlength'))
-		$('#C_Zip_Postal').attr('maxlength', '10');
-	if(!$('#C_BusPhone').attr('maxlength'))
-		$('#C_BusPhone').attr('maxlength', '40');
+	if(!$('[data-type="C_Salutation1"]').attr('maxlength'))
+		$('[data-type="C_Salutation1"]').attr('maxlength', '15');
+	if(!$('[data-type="C_Title"]').attr('maxlength'))
+		$('[data-type="C_Title"]').attr('maxlength', '75');
+	if(!$('[data-type="C_Address1"]').attr('maxlength'))
+		$('[data-type="C_Address1"]').attr('maxlength', '60');
+	if(!$('[data-type="C_Address2"]').attr('maxlength'))
+		$('[data-type="C_Address2"]').attr('maxlength', '60');
+	if(!$('[data-type="C_Address3"]').attr('maxlength'))
+		$('[data-type="C_Address3"]').attr('maxlength', '60');
+	if(!$('[data-type="C_State_Prov"]').attr('maxlength'))
+		$('[data-type="C_State_Prov"]').attr('maxlength', '20');
+	if(!$('[data-type="C_Zip_Postal"]').attr('maxlength'))
+		$('[data-type="C_Zip_Postal"]').attr('maxlength', '10');
+	if(!$('[data-type="C_BusPhone"]').attr('maxlength'))
+		$('[data-type="C_BusPhone"]').attr('maxlength', '40');
 	
 
 	//Switch-on reg-ex validations, if not already defined
-	if(!$('#C_FirstName').attr('data-validation-type'))
-		$('#C_FirstName').attr('data-validation-type', 'fname');
-	if(!$('#C_LastName').attr('data-validation-type'))
-		$('#C_LastName').attr('data-validation-type', 'lname');
-	if(!$('#C_BusPhone').attr('data-validation-type'))
-		$('#C_BusPhone').attr('data-validation-type', 'tel');
+	if(!$('[data-type="C_FirstName"]').attr('data-validation-type'))
+		$('[data-type="C_FirstName"]').attr('data-validation-type', 'fname');
+	if(!$('[data-type="C_LastName"]').attr('data-validation-type'))
+		$('[data-type="C_LastName"]').attr('data-validation-type', 'lname');
+	if(!$('[data-type="C_BusPhone"]').attr('data-validation-type'))
+		$('[data-type="C_BusPhone"]').attr('data-validation-type', 'tel');
 	
+
 	//Milind: Commenting out this logic as we will update the FieldSet for Unsubscribe form
 	//Change reg-ex validation pattern for Unsubscribe form
 	/*
@@ -184,46 +185,48 @@ if($('#leadgen') || $('#nonleadgen'))	{
 		// validate each input
 		$inputs
 			.each(function() {
-				var $input = $(this),
-					value = $input.val(),
-					required = $input.attr('required') !== undefined,
-					type = $input.attr('type'),
-					//Milind: Validation type gets higher precedence than type
-					//validationType = (type === 'text') ? $input.data('validation-type') : type,
-					validationType = ($input.data('validation-type')) ? $input.data('validation-type') : type,
-				
-					radioOrCheckbox = (type === 'radio' || type === 'checkbox'),
-					name = $input.attr('name'),
-					pattern;
+				var $input = $(this);
+				if($input.get(0).getAttribute('required') != 'false'){
+					var	value = $input.val(),
+						required = $input.attr('required') !== undefined,
+						type = $input.attr('type'),
+						//Milind: Validation type gets higher precedence than type
+						//validationType = (type === 'text') ? $input.data('validation-type') : type,
+						validationType = ($input.data('validation-type')) ? $input.data('validation-type') : type,
+					
+						radioOrCheckbox = (type === 'radio' || type === 'checkbox'),
+						name = $input.attr('name'),
+						pattern;
 
-				// test if the input is required
-				if (required && (value === '' || value === null)) {
-					setInvalid($input);
-				}
-				else if (required && radioOrCheckbox && $('[name="' + name + '"]:checked').length === 0) {
-					setInvalid($input, radioOrCheckbox, name);
-				}
-
-				// test the input against its regex pattern
-				if (required && $this.patterns[validationType]) {
-					pattern = new RegExp($this.patterns[validationType]);
-
-					if (!pattern.test(value.toLowerCase())) {
+					// test if the input is required
+					if (required && (value === '' || value === null)) {
 						setInvalid($input);
 					}
-				}
+					else if (required && radioOrCheckbox && $('[name="' + name + '"]:checked').length === 0) {
+						setInvalid($input, radioOrCheckbox, name);
+					}
 
-				// test for Unicode input i.e. non-English characters
-				if (type == 'text') {
-					//Char length != No. of Bytes := input is Unicode
-					if (value.length != getLengthInBytes(value)) {
+					// test the input against its regex pattern
+					if (required && $this.patterns[validationType]) {
+						pattern = new RegExp($this.patterns[validationType]);
+
+						if (!pattern.test(value.toLowerCase())) {
+							setInvalid($input);
+						}
+					}
+
+					// test for Unicode input i.e. non-English characters
+					if (type == 'text') {
+						//Char length != No. of Bytes := input is Unicode
+						if (value.length != getLengthInBytes(value)) {
+							setInvalid($input);
+						}
+					}
+
+					// test if the honeypot is filled out
+					if ($input.data('input-honeypot') && $input.val() !== '') {
 						setInvalid($input);
 					}
-				}
-
-				// test if the honeypot is filled out
-				if ($input.data('input-honeypot') && $input.val() !== '') {
-					setInvalid($input);
 				}
 			})
 			.promise()

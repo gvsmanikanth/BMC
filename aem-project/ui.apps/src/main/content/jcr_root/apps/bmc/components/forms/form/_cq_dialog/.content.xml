@@ -159,7 +159,7 @@
                                             <zz jcr:primaryType="nt:unstructured"
                                                 value="White Paper"
                                                 text="White Paper"/>
-                                        </items>
+                                        </items>                                        
                                     </C_Lead_Offer_Most_Recent1>
                                     <ex_assettype
                                             jcr:primaryType="nt:unstructured"
