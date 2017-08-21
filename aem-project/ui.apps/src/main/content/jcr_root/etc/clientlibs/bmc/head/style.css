@@ -2389,6 +2389,13 @@ blockquote {
 .layout-right {
   float: right; }
 
+.25-75contentcontainer,
+.33-66contentcontainer,
+.50-50contentcontainer,
+.66-33contentcontainer,
+.75-25contentcontainer {
+  padding: 2rem 0.88889rem; }
+
 .header-form-basic {
   background-color: #fe5000;
   padding: 2em 0; }
