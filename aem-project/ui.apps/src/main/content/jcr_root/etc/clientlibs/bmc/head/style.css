@@ -4569,6 +4569,9 @@ span .chatbtn {
     zoom: 1;
     *display: inline; }
 
+.key-features .layout-inner-wrap {
+  padding: 0; }
+
 fieldset:not(#foo) input[type="radio"],
 fieldset:not(#foo) input[type="checkbox"] {
   float: left;
@@ -19315,13 +19318,3 @@ iframe[name='google_conversion_frame'] {
     background-size: cover; }
 
 /*# sourceMappingURL=style.css.map */
-
-
-<!--Iframe component-->
-.iframeclass{
-   frameborder="0" ;
-   scrolling="no" ;
-   seamless="seamless";
-   width="100%" ;
-   height="100%";
-       }
