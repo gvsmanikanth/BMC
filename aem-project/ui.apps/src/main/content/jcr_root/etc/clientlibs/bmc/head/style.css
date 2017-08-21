@@ -6632,6 +6632,7 @@ fieldset label.inline {
         border-bottom: 0;
         border-top: 0;
         box-sizing: border-box;
+        margin-left: 0;
         display: none;
         width: 50px;
         height: 49px; } }
