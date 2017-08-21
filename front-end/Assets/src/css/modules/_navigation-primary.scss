@@ -49,7 +49,7 @@
 				color: #353537;
 				font-weight: 500;
 				margin-right: .5em;
-				padding: 0 .5em;
+				padding: 0 1em 0 0;
 			}
 			@include media(breakpointExtraLarge) {
 				@include font-size(16);
