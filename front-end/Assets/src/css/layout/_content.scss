@@ -1618,6 +1618,15 @@
 	float: right;
 }
 
+// AEM responsive layout containers
+.25-75contentcontainer,
+.33-66contentcontainer,
+.50-50contentcontainer,
+.66-33contentcontainer,
+.75-25contentcontainer {
+	padding: rem(36) rem(16);
+}
+
 // better AEM authoring experience
 .header-form-basic {
   	background-color: color(mediumOrange);
