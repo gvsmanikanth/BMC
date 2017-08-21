@@ -2,10 +2,10 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2017-08-11T17:28:55.893-04:00"
-        cq:lastModifiedBy="dtayeh"
+        cq:lastModified="{Date}2017-08-18T22:39:11.430-07:00"
+        cq:lastModifiedBy="admin"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Form Landing Page 50 50 "
-        status="draft"/>
+        status="enabled"/>
 </jcr:root>

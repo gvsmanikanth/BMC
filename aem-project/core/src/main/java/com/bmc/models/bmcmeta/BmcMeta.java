@@ -18,18 +18,18 @@ public class BmcMeta {
     public BmcMeta() {
         setPage(new PageMeta());
         setSite(new SiteMeta());
+        setUser(new UserMeta());
     }
 
     public void initSupport() {
         setSupport(new SupportMeta());
-        setUser(new UserMeta());
     }
 
     public void initFormMeta() {
         setFormMeta(new FormMeta());
     }
 
-    private FormMeta formMeta;
+    private FormMeta form;
     private PageMeta page;
     private SiteMeta site;
     private UserMeta user;
@@ -67,11 +67,11 @@ public class BmcMeta {
         this.support = support;
     }
 
-    public FormMeta getFormMeta() {
-        return formMeta;
+    public FormMeta getForm() {
+        return form;
     }
 
-    public void setFormMeta(FormMeta formMeta) {
-        this.formMeta = formMeta;
+    public void setFormMeta(FormMeta form) {
+        this.form = form;
     }
 }

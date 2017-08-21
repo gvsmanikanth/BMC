@@ -1270,7 +1270,7 @@ blockquote {
 .layout-inner-wrap {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 1.55556em;
+  padding: 0 1.55556rem;
   width: auto; }
   .layout-inner-wrap.-bb {
     border-bottom: 1px solid #f1f1f1; }
@@ -14124,9 +14124,12 @@ body.support-central {
 
 .tab-wrapper .tabs-nav {
   max-width: 1440px;
-  padding: 0;
+  padding: 0 1em;
   margin-bottom: 0;
   text-align: center; }
+  @media only screen and (min-width: 76.25em) {
+    .tab-wrapper .tabs-nav {
+      padding: 0; } }
   .tab-wrapper .tabs-nav li {
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;

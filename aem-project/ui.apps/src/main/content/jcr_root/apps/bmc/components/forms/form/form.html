@@ -5,7 +5,7 @@
       data-sly-use.params="com.bmc.components.utils.FormRequestParameterUtil"
       id="${container.id}" name="${container.name}" method="POST" action="${resource.path}.post.html"
       enctype="${container.enctype}"
-      class="${grid.cssClass} customerform" novalidate="novalidate">
+      class="${grid.cssClass} customerform" data-leadgen="${properties.isNonLeadGenForm ? 'noleadgen' : 'leadgen' }">
     <input data-sly-repeat.param="${params.parameterMap}" name="${param}" value="${params.parameterMap[param]}" type="hidden" />
     <!--/* This is the honeypot field. Do not remvoe. */-->
     <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
