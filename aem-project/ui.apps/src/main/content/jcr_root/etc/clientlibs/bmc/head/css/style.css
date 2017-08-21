@@ -4569,6 +4569,9 @@ span .chatbtn {
     zoom: 1;
     *display: inline; }
 
+.key-features .layout-inner-wrap {
+  padding: 0; }
+
 fieldset:not(#foo) input[type="radio"],
 fieldset:not(#foo) input[type="checkbox"] {
   float: left;
