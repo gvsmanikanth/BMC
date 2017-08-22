@@ -2389,12 +2389,13 @@ blockquote {
 .layout-right {
   float: right; }
 
-.25-75contentcontainer,
-.33-66contentcontainer,
-.50-50contentcontainer,
-.66-33contentcontainer,
-.75-25contentcontainer {
-  padding: 2rem 0.88889rem; }
+[class*="25-75"],
+[class*="33-66"],
+[class*="50-50"],
+[class*="66-33"],
+[class*="75-25"]:not(:first-child) {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
 
 .layout-footer {
   background: #414042;
