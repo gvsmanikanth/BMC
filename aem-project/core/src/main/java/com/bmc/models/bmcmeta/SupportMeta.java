@@ -14,14 +14,8 @@ public class SupportMeta {
     //end if user is authenticated
     private CaseErrorMessagesMeta caseErrorMessages;
 
-    private IssueErrorMessagesMeta issueErrorMessages;
-
-    private ContractErrorMessagesMeta contractErrorMessages;
-
     public SupportMeta() {
         caseErrorMessages = new CaseErrorMessagesMeta();
-        issueErrorMessages = new IssueErrorMessagesMeta();
-        contractErrorMessages = new ContractErrorMessagesMeta();
     }
 
     public void setIssuePath(String issuePath) {
@@ -63,22 +57,5 @@ public class SupportMeta {
     public String getIssuePath() {
         return issuePath;
     }
-
-    public IssueErrorMessagesMeta getIssueErrorMessages() {
-        return issueErrorMessages;
-    }
-
-    public void setIssueErrorMessages(IssueErrorMessagesMeta issueErrorMessages) {
-        this.issueErrorMessages = issueErrorMessages;
-    }
-
-    public ContractErrorMessagesMeta getContractErrorMessages() {
-        return contractErrorMessages;
-    }
-
-    public void setContractErrorMessages(ContractErrorMessagesMeta contractErrorMessages) {
-        this.contractErrorMessages = contractErrorMessages;
-    }
-
 
 }
