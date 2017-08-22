@@ -8,7 +8,7 @@
    </script>
    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.all @ categories='bmc.coveo'}" data-sly-unwrap />
-	<sly data-sly-test.loggedIn="${model.isLoggedIn}">
+	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
 		<sly data-sly-test="${!loggedIn}">
         <script type="text/javascript">
         jQuery( document ).ready(function( $ ) {
