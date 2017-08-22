@@ -243,6 +243,8 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
+            } else if (getContentType().equals("form-thank-you")) {
+                    formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
             } else {
                 String[] pathArr = StringUtils.split(resourcePage.getPath(), "/");
                 pathArr = Arrays.copyOfRange(pathArr, 4, pathArr.length);
