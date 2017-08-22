@@ -37,8 +37,11 @@
 	@extend %clearfix;
 	margin: 0 auto;
 	max-width: $rowMaxWidth;
-	padding: 0 em(28);
+	padding: 0 rem(28);
 	width: auto; //overloads aem grid's weird use of both display block / width 100%.
+
+
+
 	&.-bb {
 		border-bottom: 1px solid color(seashell);
 	}
@@ -1618,25 +1621,14 @@
 	float: right;
 }
 
-// better AEM authoring experience
-.header-form-basic {
-  	background-color: color(mediumOrange);
-	padding: 2em 0;
-
-	h1 {
-		color: #fff;
-
-		@include media(breakpointLarge) {
-			@include font-size(32);
-		}
-	}
-
-	&.header-emphasis {
-
-		h1 {
-			@include media(breakpointLarge) {
-				@include font-size(60);
-			}
-		}
-	}
+// AEM responsive layout containers
+.25-75contentcontainer,
+.33-66contentcontainer,
+.50-50contentcontainer,
+.66-33contentcontainer,
+.75-25contentcontainer {
+	padding: rem(36) rem(16);
 }
+
+// better AEM authoring experience
+
