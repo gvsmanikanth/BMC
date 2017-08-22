@@ -11,4 +11,5 @@ public class CustomerSpotlight extends WCMUsePojo {
     public String getTemplate() {
         return getCurrentPage().getTemplate().getPath();
     }
+    public String getTitle() { return "Something Page Title";}
 }
