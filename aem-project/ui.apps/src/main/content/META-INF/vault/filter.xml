@@ -9,7 +9,7 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
 
-    <filter root="/etc/clientlibs/bmcgi"/>
+    <filter root="/etc/clientlibs/bmc"/>
 
     <filter root="/etc/designs/bmc">
         <include pattern="/etc/designs/bmc"/>
