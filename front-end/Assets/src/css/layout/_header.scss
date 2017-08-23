@@ -147,6 +147,7 @@ body.bmc-nav-loader-nav	.nav-open .layout-header {
 	right: $lowResNavWidth;
 }
 
-.header-generic {
+.header-generic,
+.header-brand {
 	@extend .bg-white;
 }
