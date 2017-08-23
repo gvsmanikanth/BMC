@@ -2,11 +2,8 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-08-04T17:43:26.370-04:00"
+        cq:lastModified="{Date}2017-08-11T17:26:12.229-04:00"
         cq:lastModifiedBy="dtayeh"
-        cq:lastReplicated="{Date}2017-08-04T17:45:48.279-04:00"
-        cq:lastReplicatedBy="dtayeh"
-        cq:lastReplicationAction="Activate"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="wcm/core/components/policies/mappings">
@@ -38,6 +35,16 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/core/components/policies/mapping"/>
                 </section_layout>
+                <_50_50contentcontain jcr:primaryType="nt:unstructured">
+                    <left
+                        cq:policy="/policy_1502486172658"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                    <right
+                        cq:policy="/policy_1502486709566"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/core/components/policies/mapping"/>
+                </_50_50contentcontain>
             </maincontentcontainer>
         </root>
     </jcr:content>

@@ -3,9 +3,9 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:lastModified="{Date}2017-07-06T17:30:17.662-04:00"
-        cq:lastModifiedBy="dtayeh"
-        cq:lastReplicated="{Date}2017-08-10T13:37:28.758-04:00"
+        cq:lastModified="{Date}2017-07-17T15:31:01.766-07:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-08-04T15:29:55.462-04:00"
         cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/base-layout-template"
@@ -15,155 +15,29 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <standardheader
-                jcr:created="{Date}2017-06-28T16:48:34.775-04:00"
-                jcr:createdBy="dtayeh"
-                jcr:lastModified="{Date}2017-06-28T16:48:34.775-04:00"
-                jcr:lastModifiedBy="dtayeh"
+                jcr:created="{Date}2017-07-17T15:30:49.052-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-17T15:30:49.052-07:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/standardheader"/>
             <responsivegrid
-                jcr:created="{Date}2017-06-28T16:53:14.751-04:00"
-                jcr:createdBy="dtayeh"
-                jcr:lastModified="{Date}2017-06-28T16:53:14.751-04:00"
-                jcr:lastModifiedBy="dtayeh"
+                jcr:created="{Date}2017-07-17T15:30:54.517-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-17T15:30:54.517-07:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/foundation/components/responsivegrid">
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
                 <cq:responsive jcr:primaryType="nt:unstructured"/>
-                <maincontentcontainer
-                    jcr:created="{Date}2017-06-28T16:53:22.830-04:00"
-                    jcr:createdBy="dtayeh"
-                    jcr:lastModified="{Date}2017-06-28T16:53:22.830-04:00"
-                    jcr:lastModifiedBy="dtayeh"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/maincontentcontainer"
-                    editable="{Boolean}true"/>
             </responsivegrid>
             <standardfooter
-                jcr:created="{Date}2017-06-28T16:50:19.978-04:00"
-                jcr:createdBy="dtayeh"
-                jcr:lastModified="{Date}2017-07-06T17:30:17.652-04:00"
-                jcr:lastModifiedBy="dtayeh"
+                jcr:created="{Date}2017-07-17T15:31:01.763-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-17T15:31:01.763-07:00"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/standardfooter"
-                copyRightText="© Copyright 2005-2017 BMC Software, Inc. ">
-                <footerCompany jcr:primaryType="nt:unstructured">
-                    <_x0031_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com/corporate/about-bmc-software.html"
-                        linkText="About BMC"
-                        targetType="_blank"/>
-                    <_x0032_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com/careers/careers.html"
-                        linkText="Careers"
-                        targetType="_blank"/>
-                    <_x0033_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="https://bmc.co1.qualtrics.com/jfe/form/SV_eEwTGbSiP9f9xzv"
-                        linkText="Feedback"
-                        targetType="_blank"/>
-                    <_x0034_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Newsroom"
-                        targetType="_blank"/>
-                    <_x0035_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Upcoming Events"
-                        targetType="_blank"/>
-                    <_x0036_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="On-demand Webinars"
-                        targetType="_blank"/>
-                    <_x0037_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Global Contacts"
-                        targetType="_blank"/>
-                </footerCompany>
-                <footerSupport jcr:primaryType="nt:unstructured">
-                    <_x0038_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Support Central"
-                        targetType="_blank"/>
-                    <_x0039_
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Knowledge Base"
-                        targetType="_blank"/>
-                    <_x0031_0
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Documentation"
-                        targetType="_blank"/>
-                    <_x0031_1
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Downloads"
-                        targetType="_blank"/>
-                </footerSupport>
-                <footerSocial jcr:primaryType="nt:unstructured">
-                    <_x0031_2
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Communities"
-                        soccMedsType="social-communities"/>
-                    <_x0031_3
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="https://www.facebook.com/bmcsoftware"
-                        linkText="Facebook"
-                        soccMedsType="social-facebook"/>
-                    <_x0031_4
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="https://www.youtube.com/user/BMCSoftwareBMCtv"
-                        linkText="YouTube"
-                        soccMedsType="social-youtube"/>
-                    <_x0031_5
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="BMC Blogs"
-                        soccMedsType="social-blogs nav-blog"/>
-                    <_x0031_6
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="https://twitter.com/bmcsoftware/"
-                        linkText="Twitter"
-                        soccMedsType="social-twitter"/>
-                    <_x0031_7
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="https://www.linkedin.com/company/1597"
-                        linkText="LinkedIn"
-                        soccMedsType="social-linkedin"/>
-                </footerSocial>
-                <footerLegal jcr:primaryType="nt:unstructured">
-                    <_x0031_8
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Contact"/>
-                    <_x0031_9
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Free Trials"/>
-                    <_x0032_0
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Legal"/>
-                    <_x0032_1
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Update my preferences"/>
-                    <_x0032_2
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Application Security"/>
-                    <_x0032_3
-                        jcr:primaryType="nt:unstructured"
-                        linkPath="http://www.bmc.com"
-                        linkText="Manage Cookies"/>
-                </footerLegal>
-            </standardfooter>
+                sling:resourceType="bmc/components/structure/standardfooter"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
