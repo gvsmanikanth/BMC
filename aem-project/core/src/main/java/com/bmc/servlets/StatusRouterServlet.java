@@ -3,6 +3,7 @@ package com.bmc.servlets;
 import com.bmc.util.StringHelper;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
 import com.day.cq.wcm.api.WCMMode;
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -145,6 +146,17 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                 .filter(s -> !s.equals(SERVICE_PARAM))
                 .collect(Collectors.toMap(Function.identity(), request::getParameter));
         queryMap.putAll(requestMap);
+
+        // handle "ddl case"
+        if (request.getParameter(SERVICE_PARAM).equals("ddl")) {
+            String ddlPath = queryMap.get("path");
+            if (ddlPath != null) {
+                queryMap.remove("path");
+                urlLeftPart = String.format("%s/%s",
+                        StringUtils.stripEnd(urlLeftPart, "/"),
+                        StringUtils.stripStart(ddlPath, "/"));
+            }
+        }
 
         if (queryMap.size() == 0)
             return urlLeftPart;
