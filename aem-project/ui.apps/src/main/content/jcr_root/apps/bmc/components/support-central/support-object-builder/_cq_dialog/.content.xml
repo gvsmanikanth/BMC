@@ -18,69 +18,63 @@
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
                             <alerts jcr:primaryType="nt:unstructured"
-                                  sling:resourceType="granite/ui/components/foundation/form/multifield"
-                                  fieldLabel="Alerts">
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Alerts">
                                 <field
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                        acs-commons-nested="NODE_STORE"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                         name="./alertdata">
                                     <layout
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
                                             method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column
+                                        <alertStartDate
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <alertStartDate
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
-                                                        type="datetime"
-                                                        fieldLabel="Alert Start Date"
-                                                        required="{Boolean}true"
-                                                        name="./alertStartDate"/>
-                                                <alertEndDate
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/datepicker"
-                                                        type="datetime"
-                                                        fieldLabel="Alert End Date"
-                                                        required="{Boolean}true"
-                                                        name="./alertEndDate"/>
-                                                <alertTitle
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                        fieldLabel="Alert Title"
-                                                        required="{Boolean}true"
-                                                        fieldDescription="Alert Title"
-                                                        name="./alertTitle"/>
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                type="datetime"
+                                                fieldLabel="Alert Start Date"
+                                                required="{Boolean}true"
+                                                name="alertStartDate"/>
+                                        <alertEndDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                type="datetime"
+                                                fieldLabel="Alert End Date"
+                                                required="{Boolean}true"
+                                                name="alertEndDate"/>
+                                        <alertTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alert Title"
+                                                required="{Boolean}true"
+                                                fieldDescription="Alert Title"
+                                                name="alertTitle"/>
 
-                                                <alertMessage
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
-                                                        fieldLabel="Alert Message"
-                                                        required="{Boolean}true"
-                                                        fieldDescription="Alert Message"
-                                                        name="./alertMessage"/>
+                                        <alertMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Alert Message"
+                                                required="{Boolean}true"
+                                                fieldDescription="Alert Message"
+                                                name="alertMessage"/>
 
-                                                <alertLinkTitle
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                        fieldLabel="Alert Link Title"
-                                                        required="{Boolean}true"
-                                                        fieldDescription="Alert Link Title"
-                                                        name="./alertLinkTitle"/>
+                                        <alertLinkTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Alert Link Title"
+                                                required="{Boolean}true"
+                                                fieldDescription="Alert Link Title"
+                                                name="alertLinkTitle"/>
 
-                                                <alertLinkUrl
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldLabel="Alert Link Url"
-                                                        required="{Boolean}true"
-                                                        fieldDescription="Alert Link Url"
-                                                        name="./alertLinkUrl"/>
-                                            </items>
-                                        </column>
+                                        <alertLinkUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldLabel="Alert Link Url"
+                                                required="{Boolean}true"
+                                                fieldDescription="Alert Link Url"
+                                                name="alertLinkUrl"/>
                                     </items>
                                 </field>
                             </alerts>
