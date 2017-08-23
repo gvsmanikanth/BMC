@@ -1622,12 +1622,13 @@
 }
 
 // AEM responsive layout containers
-.25-75contentcontainer,
-.33-66contentcontainer,
-.50-50contentcontainer,
-.66-33contentcontainer,
-.75-25contentcontainer {
-	padding: rem(36) rem(16);
+[class*="25-75"],
+[class*="33-66"],
+[class*="50-50"],
+[class*="66-33"],
+[class*="75-25"]:not(:first-child) {
+	padding-top: rem(36);
+	padding-bottom: rem(36);
 }
 
 // better AEM authoring experience
