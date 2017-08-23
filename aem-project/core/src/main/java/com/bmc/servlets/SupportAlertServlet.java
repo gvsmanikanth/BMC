@@ -72,6 +72,11 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
                 SupportAlertMessages supportAlertMessage = getSupportMessages();
                 Node message =  alertMessageIterator.nextNode();
 
+                // get now
+                // convert startDate to date
+                // convert endDate to date
+                // if now < start || > end, continue
+
                 supportAlertMessage.setTitle(message.getProperty("alertTitle").getString());
                 supportAlertMessage.setMessage(message.getProperty("alertMessage").getString());
                 supportAlertMessage.setLink(message.getProperty("alertLinkTitle").getString());
@@ -85,6 +90,7 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
                     message.setProperty("alertId",generateAlertID(message.getProperty("alertTitle").getString()));
                     supportAlertMessage.setId(message.getProperty("alertId").getString());
                 }
+
                 messages.add(supportAlertMessage);
             }
 

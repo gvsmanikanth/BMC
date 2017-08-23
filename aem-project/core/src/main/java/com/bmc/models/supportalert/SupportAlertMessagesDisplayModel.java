@@ -29,7 +29,7 @@ public class SupportAlertMessagesDisplayModel {
 
     @PostConstruct
     protected void init() {
-        logger.error("LODAED");
+        logger.error("LOADED");
     }
     public Resource getResource() {
         return resource;

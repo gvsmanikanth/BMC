@@ -2,7 +2,10 @@ package com.bmc.models.supportalert;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Date;
 
@@ -11,6 +14,7 @@ import java.util.Date;
  */
 @Model(adaptables=Resource.class)
 public class AlertData {
+//    private static final Logger logger = LoggerFactory.getLogger(SupportAlertMessagesDisplayModel.class);
 
     @Inject
     private Date alertStartDate;
@@ -29,6 +33,9 @@ public class AlertData {
 
     @Inject
     private String alertLinkUrl;
+
+//    @Inject
+//    private String alertUuid;
 
     public String getAlertStartDate() {
         return alertStartDate.toString();
@@ -77,4 +84,20 @@ public class AlertData {
     public void setAlertLinkUrl(String alertLinkUrl) {
         this.alertLinkUrl = alertLinkUrl;
     }
+
+//    public void setAlertUuid(String alertUuid) {
+//        this.alertUuid = alertUuid;
+//    }
+
+//    public String getAlertUuid() {
+//        if (alertUuid == null || alertUuid.isEmpty() || alertUuid.equals("undefined")) {
+//            setAlertUuid("foo");
+//        }
+
+//        return alertUuid;
+//    }
+//    @PostConstruct
+//    protected void init() {
+//        logger.error(getAlertUuid());
+//    }
 }
