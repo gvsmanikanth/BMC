@@ -2,10 +2,10 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2017-08-21T19:04:14.751-04:00"
-        cq:lastModifiedBy="dtayeh"
+        cq:lastModified="{Date}2017-08-23T18:11:08.745-04:00"
+        cq:lastModifiedBy="admin"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Form Thank You 75 25"
-        status="enabled"/>
+        jcr:title="Form Landing Template Full Width"
+        status="disabled"/>
 </jcr:root>

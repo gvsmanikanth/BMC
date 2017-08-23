@@ -2,104 +2,116 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2017-06-14T00:24:11.829-07:00"
-        cq:lastModifiedBy="admin"
+        cq:lastModified="{Date}2017-08-23T17:59:54.201-04:00"
+        cq:lastModifiedBy="dtayeh"
+        cq:lastReplicated="{Date}2017-08-23T18:00:47.678-04:00"
+        cq:lastReplicatedBy="dtayeh"
+        cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page"
-        bodyClass="page-campaign-landing bmc-nav-loader-nav">
+        sling:resourceType="bmc/components/structure/page">
         <root
+            jcr:lastModified="{Date}2017-08-23T17:46:06.136-04:00"
+            jcr:lastModifiedBy="dtayeh"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
+            <plainheader
+                jcr:created="{Date}2017-08-23T17:43:30.904-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:43:30.904-04:00"
+                jcr:lastModifiedBy="dtayeh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/plainheader"/>
+            <header_form
+                jcr:created="{Date}2017-08-23T17:54:14.830-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:54:14.830-04:00"
+                jcr:lastModifiedBy="dtayeh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/content/header-form"/>
             <maincontentcontainer
-                jcr:created="{Date}2017-06-11T13:33:04.796-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-11T13:33:04.796-07:00"
-                jcr:lastModifiedBy="admin"
+                jcr:created="{Date}2017-08-23T17:52:00.229-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:52:00.229-04:00"
+                jcr:lastModifiedBy="dtayeh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/maincontentcontainer">
-                <section_layout
-                    jcr:created="{Date}2017-06-11T13:33:22.631-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-06-14T00:18:57.132-07:00"
-                    jcr:lastModifiedBy="admin"
+                <_50_50contentcontain
+                    jcr:created="{Date}2017-08-23T17:56:30.073-04:00"
+                    jcr:createdBy="dtayeh"
+                    jcr:lastModified="{Date}2017-08-23T17:56:30.073-04:00"
+                    jcr:lastModifiedBy="dtayeh"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/section-layout">
-                    <title
-                        jcr:created="{Date}2017-06-11T13:41:34.009-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-06-14T00:21:20.039-07:00"
-                        jcr:lastModifiedBy="admin"
+                    sling:resourceType="bmc/components/structure/50-50contentcontainer">
+                    <left
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Marketing Title Goes Here"
-                        sling:resourceType="bmc/components/content/title"/>
-                    <text
-                        jcr:created="{Date}2017-06-11T13:41:44.063-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-06-14T00:22:03.302-07:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/content/text"
-                        text="&lt;p>Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Quisque velit nisi, pretium ut lacinia in, elementum id enim.&lt;br>&#xa;&lt;/p>&#xa;"
-                        textIsRich="true"/>
-                </section_layout>
-                <section_layout_1262318817
-                    jcr:created="{Date}2017-06-11T13:33:31.975-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-06-14T00:40:00.653-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/section-layout">
-                    <form
-                        jcr:created="{Date}2017-06-11T13:37:33.633-07:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2017-06-11T13:37:33.633-07:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/forms/form"
-                        action="/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-page-template/structure/cq-gen1497280762940/"
-                        actionType="foundation/components/form/actions/store">
+                        sling:resourceType="wcm/foundation/components/responsivegrid">
                         <title
-                            jcr:created="{Date}2017-06-13T14:19:48.922-07:00"
-                            jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2017-06-14T00:22:58.532-07:00"
-                            jcr:lastModifiedBy="admin"
+                            jcr:created="{Date}2017-08-23T17:56:50.784-04:00"
+                            jcr:createdBy="dtayeh"
+                            jcr:lastModified="{Date}2017-08-23T17:57:05.552-04:00"
+                            jcr:lastModifiedBy="dtayeh"
                             jcr:primaryType="nt:unstructured"
-                            jcr:title="Please fill out the form below."
+                            jcr:title="Marketing Title Goes Here"
                             sling:resourceType="bmc/components/content/title"
-                            type="h5"/>
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
-                        </cq:responsive>
-                        <form-terms
-                            jcr:lastModified="{Date}2017-06-14T00:24:11.824-07:00"
-                            jcr:lastModifiedBy="admin"
+                            type="h2"/>
+                        <text
+                            jcr:created="{Date}2017-08-23T17:57:16.713-04:00"
+                            jcr:createdBy="dtayeh"
+                            jcr:lastModified="{Date}2017-08-23T17:57:31.913-04:00"
+                            jcr:lastModifiedBy="dtayeh"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/text"
-                            text="&lt;p>By providing my contact information, I have read and agreed to BMC’s policy regarding&amp;nbsp;&lt;a href=&quot;http://www.bmc.com/legal/personal-information.html&quot;>Personal Information&lt;/a>.*&lt;/p>&#xa;"
+                            text="&lt;p>Add content here.&amp;nbsp;&lt;/p>&#xa;"
                             textIsRich="true"/>
-                    </form>
-                </section_layout_1262318817>
+                    </left>
+                    <right
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid">
+                        <form
+                            jcr:created="{Date}2017-08-23T17:58:15.228-04:00"
+                            jcr:createdBy="dtayeh"
+                            jcr:lastModified="{Date}2017-08-23T17:58:15.228-04:00"
+                            jcr:lastModifiedBy="dtayeh"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/forms/form"
+                            action="/content/usergenerated/conf/bmc/settings/wcm/templates/form-landing-for-ledford/initial/cq-gen1503525495232/"
+                            actionType="foundation/components/form/actions/store">
+                            <cq:responsive jcr:primaryType="nt:unstructured"/>
+                            <title
+                                jcr:created="{Date}2017-08-23T17:58:37.148-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-23T17:58:59.643-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Please fill out the form below. "
+                                sling:resourceType="bmc/components/content/title"
+                                type="h5"/>
+                            <experiencefragment
+                                jcr:created="{Date}2017-08-23T17:59:09.816-04:00"
+                                jcr:createdBy="dtayeh"
+                                jcr:lastModified="{Date}2017-08-23T17:59:09.816-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
+                            <form-terms
+                                jcr:lastModified="{Date}2017-08-23T17:59:54.196-04:00"
+                                jcr:lastModifiedBy="dtayeh"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>By providing my contact information, I have read and agreed to BMC’s policy regarding&amp;nbsp;&lt;a href=&quot;http://www.bmc.com/legal/personal-information.html&quot;>Personal Information&lt;/a>.*&lt;br>&#xa;&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                        </form>
+                    </right>
+                </_50_50contentcontain>
             </maincontentcontainer>
-            <header_form
-                jcr:created="{Date}2017-06-12T14:22:18.636-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-14T00:18:40.252-07:00"
-                jcr:lastModifiedBy="admin"
+            <plainfooter
+                jcr:created="{Date}2017-08-23T17:45:41.140-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:45:41.140-04:00"
+                jcr:lastModifiedBy="dtayeh"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/content/header-form">
-                <bg
-                    jcr:lastModified="{Date}2017-06-12T14:23:39.619-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"/>
-                <img
-                    jcr:lastModified="{Date}2017-06-12T14:23:39.619-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"/>
-            </header_form>
+                sling:resourceType="bmc/components/structure/plainfooter"/>
         </root>
     </jcr:content>
 </jcr:root>
