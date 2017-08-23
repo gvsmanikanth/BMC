@@ -1,14 +1,14 @@
 <section data-sly-use.customerSpotlight="com.bmc.components.CustomerSpotlight"
-         data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="customer-story-case-banner wallpapered bar" cd data-wallpaper-options='{"source":"${image.src}"}'>
+         data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="customer-story-case-banner wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
     <div class="layout-inner-wrap">
         <div class="layout-primary">
-            <div data-sly-test="${properties.showBreadcrumbs}" class="back-link bold" data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}">
-                    ${'Customer Stories' @ i18n} : ${properties.title || currentPage.title}
+            <div class="back-link bold" data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}">
+                    ${'Customer Spotlight' @ i18n}: ${customerSpotlight.ExpTitle}
             </div>
-            <div class="back-link" data-sly-test.template="${customerSpotlight.template == '/conf/bmc/settings/wcm/templates/customerstory'}">
+            <div  data-sly-test="${properties.showBreadcrumbs}" class="back-link" data-sly-test.template="${customerSpotlight.template == '/conf/bmc/settings/wcm/templates/customerstory'}">
                 <a href="/customers/success-stories.html">
-                    ${'Customer Spotlight' @ i18n}
-                </a>/ ${properties.title || currentPage.title}
+                    ${'Customer Stories' @ i18n}
+                </a>/ ${currentPage.title}
             </div>
             <div class="header-logo" style="width:350px;">
 
@@ -24,8 +24,6 @@
                 <sly data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
 
                 <sly data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
-
-                <!--/*<sly data-sly-test="${properties.showBreadcrumbs}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='navigation-breadcrumb white-links', decorationTagName='ul' }" class="navigation-breadcrumb" data-sly-unwrap></sly>/-->
 
                 <sly data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
             </ul>
