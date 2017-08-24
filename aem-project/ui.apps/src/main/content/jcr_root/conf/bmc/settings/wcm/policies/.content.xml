@@ -639,7 +639,9 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Text Policy"
                         sling:resourceType="wcm/core/components/policy/policy">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            jcr:mixinTypes="[]"
+                            jcr:primaryType="nt:unstructured"/>
                         <rtePlugins jcr:primaryType="nt:unstructured">
                             <paraformat
                                 jcr:primaryType="nt:unstructured"
@@ -1021,13 +1023,4 @@
         components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,group:BMC.form]">
         <jcr:content jcr:primaryType="nt:unstructured"/>
     </policy_1502758717559>
-    <policy_1503121051430
-        jcr:lastModified="{Date}2017-08-18T22:38:07.797-07:00"
-        jcr:lastModifiedBy="admin"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Form Policy"
-        sling:resourceType="wcm/core/components/policy/policy"
-        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,/apps/bmc/components/forms/elements/hidden,/apps/bmc/components/forms/elements/options,/apps/bmc/components/forms/elements/input-field]">
-        <jcr:content jcr:primaryType="nt:unstructured"/>
-    </policy_1503121051430>
 </jcr:root>
