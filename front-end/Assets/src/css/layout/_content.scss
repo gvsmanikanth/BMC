@@ -40,7 +40,9 @@
 	padding: 0 rem(28);
 	width: auto; //overloads aem grid's weird use of both display block / width 100%.
 
-
+	.layout-inner-wrap {
+		padding: 0;
+	}
 
 	&.-bb {
 		border-bottom: 1px solid color(seashell);
