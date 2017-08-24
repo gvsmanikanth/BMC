@@ -1272,6 +1272,8 @@ blockquote {
   max-width: 1440px;
   padding: 0 1.55556rem;
   width: auto; }
+  .layout-inner-wrap .layout-inner-wrap {
+    padding: 0; }
   .layout-inner-wrap.-bb {
     border-bottom: 1px solid #f1f1f1; }
   .layout-inner-wrap.-mb {
