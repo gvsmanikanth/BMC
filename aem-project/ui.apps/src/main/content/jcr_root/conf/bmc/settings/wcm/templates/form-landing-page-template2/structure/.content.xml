@@ -41,28 +41,6 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/structure/50-50contentcontainer"
                     editable="{Boolean}true"/>
-                <section_layout
-                    jcr:created="{Date}2017-06-11T13:33:22.631-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-08-11T17:29:34.978-04:00"
-                    jcr:lastModifiedBy="dtayeh"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/section-layout"/>
-                <section_layout_1262318817
-                    jcr:created="{Date}2017-06-11T13:33:31.975-07:00"
-                    jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2017-06-14T00:39:09.682-07:00"
-                    jcr:lastModifiedBy="admin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/section-layout"
-                    editable="{Boolean}true">
-                    <cq:responsive jcr:primaryType="nt:unstructured">
-                        <default
-                            jcr:primaryType="nt:unstructured"
-                            offset="1"
-                            width="4"/>
-                    </cq:responsive>
-                </section_layout_1262318817>
             </maincontentcontainer>
             <plainfooter
                 jcr:created="{Date}2017-06-12T08:28:02.419-07:00"

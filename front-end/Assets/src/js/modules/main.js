@@ -113,7 +113,7 @@ function addFilterToArrayProtoype() {
 	addNthChildClasses();  //BMC-527 - Uncommented code.
 
 	// turn off browser default validation so we can perform our own
-	$('form#leadgen, form#nonleadgen')
+	$('[data-leadgen="noleadgen"], [data-leadgen="leadgen"]')
 		.attr('novalidate', 'novalidate')
 		.on('submit', function(e) {
 			var $form = $(this),
