@@ -12,8 +12,32 @@
             jcr:lastModified="{Date}2017-08-23T17:18:02.039-04:00"
             jcr:lastModifiedBy="dtayeh"
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid"
-            editable="{Boolean}true"/>
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <plainheader
+                jcr:created="{Date}2017-08-23T17:19:42.973-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:19:42.973-04:00"
+                jcr:lastModifiedBy="dtayeh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/plainheader"/>
+            <responsivegrid
+                jcr:created="{Date}2017-07-17T15:30:54.517-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-17T15:30:54.517-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <plainfooter
+                jcr:created="{Date}2017-08-23T17:21:44.209-04:00"
+                jcr:createdBy="dtayeh"
+                jcr:lastModified="{Date}2017-08-23T17:21:44.209-04:00"
+                jcr:lastModifiedBy="dtayeh"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/plainfooter"/>
+        </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
