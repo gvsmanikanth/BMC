@@ -21,7 +21,10 @@ import javax.jcr.NodeIterator;
 import javax.jcr.Session;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -72,10 +75,15 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
                 SupportAlertMessages supportAlertMessage = getSupportMessages();
                 Node message =  alertMessageIterator.nextNode();
 
-                // get now
-                // convert startDate to date
-                // convert endDate to date
-                // if now < start || > end, continue
+                // Only return alerts that are active
+                ZonedDateTime now = ZonedDateTime.now();
+                Calendar startCal = message.getProperty("alertStartDate").getDate();
+                ZonedDateTime start = ZonedDateTime.ofInstant(startCal.toInstant(), startCal.getTimeZone().toZoneId());
+                Calendar endCal = message.getProperty("alertEndDate").getDate();
+                ZonedDateTime end = ZonedDateTime.ofInstant(endCal.toInstant(), endCal.getTimeZone().toZoneId());
+                if (now.isBefore(start) || now.isAfter(end)) {
+                    continue;
+                }
 
                 supportAlertMessage.setTitle(message.getProperty("alertTitle").getString());
                 supportAlertMessage.setMessage(message.getProperty("alertMessage").getString());
@@ -83,13 +91,7 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
                 supportAlertMessage.setUrl(message.getProperty("alertLinkUrl").getString()+".html");
                 supportAlertMessage.setStartDate(message.getProperty("alertStartDate").getString());
                 supportAlertMessage.setEndDate(message.getProperty("alertEndDate").getString());
-
-                if(message.hasProperty("alertId")){
-                    supportAlertMessage.setId(message.getProperty("alertId").getString());
-                } else {
-                    message.setProperty("alertId",generateAlertID(message.getProperty("alertTitle").getString()));
-                    supportAlertMessage.setId(message.getProperty("alertId").getString());
-                }
+                supportAlertMessage.setId(message.getProperty("alertUuid").getString());
 
                 messages.add(supportAlertMessage);
             }
@@ -107,8 +109,4 @@ public class SupportAlertServlet extends SlingSafeMethodsServlet {
 
     }
 
-    private String generateAlertID(String salt){
-        ContentIdGenerator contentIdGenerator = new ContentIdGenerator(salt);
-        return contentIdGenerator.getNewContentID();
-    }
 }

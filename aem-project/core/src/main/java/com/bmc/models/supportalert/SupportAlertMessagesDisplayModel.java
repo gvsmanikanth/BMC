@@ -2,6 +2,7 @@ package com.bmc.models.supportalert;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,7 @@ public class SupportAlertMessagesDisplayModel {
     private Resource resource;
 
     @Inject @Named("alertdata")
+    @Optional
     private List<AlertData> alertData;
 
     public List<AlertData> getAlertData() {
