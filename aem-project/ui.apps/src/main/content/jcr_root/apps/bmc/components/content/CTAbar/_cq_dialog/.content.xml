@@ -61,27 +61,6 @@
                                     fieldDescription="(Optional) Select or enter the URL for the primary CTA"
                                     fieldLabel="(Optional) Primary CTA URL"
                                     name="./primaryCTAURL"/>
-
-                            <secondaryCTAheader
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="(Optional) Enter the heading text"
-                                    fieldLabel="(Optional) Heading over blue button"
-                                    name="./secondaryCTAheader"/>
-
-                            <secondaryCTAtext
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="(Optional) Enter the text for the primary CTA"
-                                    fieldLabel="(Optional) Secondary CTA text"
-                                    name="./secondaryCTAtext"/>
-
-                            <secondaryCTAURL
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldDescription="(Optional) Select or enter the URL for the secondary CTA"
-                                    fieldLabel="(Optional) Secondary CTA URL"
-                                    name="./secondaryCTAURL"/>
                         </items>
                     </column>
                 </items>
