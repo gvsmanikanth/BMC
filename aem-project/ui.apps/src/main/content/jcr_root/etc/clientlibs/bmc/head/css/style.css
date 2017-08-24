@@ -14120,7 +14120,7 @@ body.support-central {
   padding: 0 1em;
   margin-bottom: 0;
   text-align: center; }
-  @media only screen and (min-width: 76.25em) {
+  @media only screen and (min-width: 93.75em) {
     .tab-wrapper .tabs-nav {
       padding: 0; } }
   .tab-wrapper .tabs-nav li {
