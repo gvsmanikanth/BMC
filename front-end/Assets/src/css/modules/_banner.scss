@@ -14,7 +14,7 @@
 	}
 
   .mobile-only{
-   max-width:400px;;
+   max-width:400px;
    width:100%
   }
 	.image {
@@ -102,6 +102,35 @@
   }
   
 }
+
+.header-basic {
+	margin-bottom: rem(30);
+	@include media(breakpointLarge) {
+		margin-bottom: rem(60);
+	}
+}
+.header-form-basic {
+  	background-color: color(mediumOrange);
+	padding: 2em 0;
+
+	h1 {
+		color: #fff;
+
+		@include media(breakpointLarge) {
+			@include font-size(32);
+		}
+	}
+
+	&.header-emphasis {
+
+		h1 {
+			@include media(breakpointLarge) {
+				@include font-size(60);
+			}
+		}
+	}
+}
+
 /*
 .oldie .bg-image {
 	background: none;
