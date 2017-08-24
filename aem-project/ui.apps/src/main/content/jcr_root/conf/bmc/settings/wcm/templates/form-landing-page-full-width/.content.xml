@@ -6,6 +6,5 @@
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Form Landing Template Full Width"
-        status="disabled"/>
+        jcr:title="Form Landing Template Full Width"/>
 </jcr:root>
