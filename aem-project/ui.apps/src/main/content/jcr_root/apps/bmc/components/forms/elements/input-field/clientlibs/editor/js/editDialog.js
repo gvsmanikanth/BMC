@@ -15,8 +15,8 @@
  ******************************************************************************/
 (function ($, channel, Coral) {
     'use strict';
-    var FIELD_TYPE = '.cmp-form-options-type';
-    var EDIT_DIALOG = ".core-wcm-form-options-v1";
+    var FIELD_TYPE = '.cmp-form-textfield-types';
+    var EDIT_DIALOG = ".cmp-form-textfield-editDialog";
     var OPTIONS_REQUIRED = ".cmp-form-textfield-required";
     var VALIDATION_TYPES = '.cmp-form-validation-types';
     var REQUIRED_MESSAGE = '.cmp-form-textfield-constraintmessage';
@@ -27,39 +27,37 @@
      * @param dialog The dialog on which the operation is to be performed
      */
     function initialise(dialog) {
-        
-        if(!$(OPTIONS_REQUIRED).attr('checked')){
-            $(REQUIRED_MESSAGE).hide();
-            $(VALIDATION_TYPES).hide();         
-        }else{
-            if(!$(FIELD_TYPE).val() == 'drop-down'){
-                $(VALIDATION_TYPES).hide();
-            }             
-        }
-
-        $(OPTIONS_REQUIRED).on('click', function(e){
-            if(!this.hasAttribute('checked')){
-                $(REQUIRED_MESSAGE).show();
-                if($(FIELD_TYPE).val() == 'drop-down'){
-                    $(VALIDATION_TYPES).show();
-                }
-            }else{
-                $(REQUIRED_MESSAGE).hide();
-                $(VALIDATION_TYPES).hide();
-            }
-        });
-
+        syncValidationTypes();
         $(FIELD_TYPE).on('change', function(){
-            $(REQUIRED_MESSAGE).hide();
-            $(VALIDATION_TYPES).hide();
-            $(OPTIONS_REQUIRED).removeAttr('checked');
+            syncValidationTypes();
         });
+    }
 
-        //validation types are only for text inputs and select boxes not radios and checkboxes
-        if($(FIELD_TYPE).val() == 'radio' || $(FIELD_TYPE).val() == 'checkbox'){
-            $(VALIDATION_TYPES).hide();
+    function syncValidationTypes(){
+
+        if($(FIELD_TYPE).val() == 'email' || $(FIELD_TYPE).val() == 'textarea' || $(FIELD_TYPE).val() == 'date' || $(FIELD_TYPE).val() == 'password'){
+            $(VALIDATION_TYPES).parent().hide();
+        } else {
+            $(VALIDATION_TYPES).parent().show();
         }
 
+        if($(FIELD_TYPE).val() == 'text'){
+            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(){
+                $(this).show();
+            }); 
+            $(VALIDATION_TYPES).val(0);
+        }
+        if($(FIELD_TYPE).val() == 'number' || $(FIELD_TYPE).val() == 'tel'){
+            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(){
+                $(this).hide();
+            });
+            $(VALIDATION_TYPES).find('coral-selectlist-item').eq(0).show();
+            if($(FIELD_TYPE).val() == 'number'){
+                $(VALIDATION_TYPES).find('coral-selectlist-item').eq(6).show();
+            }
+            $(VALIDATION_TYPES).find('coral-selectlist-item').eq(7).show();
+            $(VALIDATION_TYPES).val(0);
+        }       
     }
 
     channel.on("foundation-contentloaded", function (e) {
