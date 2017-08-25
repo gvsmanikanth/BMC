@@ -1000,7 +1000,8 @@
 	}
 
 	.home & {
-		padding: em(120) 0 em(120);
+    // DXP-949
+    padding: 0;
 
 		&.layout-rotator-container {
 			padding: 0;
@@ -1634,4 +1635,3 @@
 }
 
 // better AEM authoring experience
-
