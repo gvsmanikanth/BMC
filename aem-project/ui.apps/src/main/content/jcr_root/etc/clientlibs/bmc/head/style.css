@@ -1272,6 +1272,8 @@ blockquote {
   max-width: 1440px;
   padding: 0 1.55556rem;
   width: auto; }
+  .layout-inner-wrap .layout-inner-wrap {
+    padding: 0; }
   .layout-inner-wrap.-bb {
     border-bottom: 1px solid #f1f1f1; }
   .layout-inner-wrap.-mb {
@@ -2389,12 +2391,13 @@ blockquote {
 .layout-right {
   float: right; }
 
-.25-75contentcontainer,
-.33-66contentcontainer,
-.50-50contentcontainer,
-.66-33contentcontainer,
-.75-25contentcontainer {
-  padding: 2rem 0.88889rem; }
+[class*="25-75"],
+[class*="33-66"],
+[class*="50-50"],
+[class*="66-33"],
+[class*="75-25"]:not(:first-child) {
+  padding-top: 2rem;
+  padding-bottom: 2rem; }
 
 .layout-footer {
   background: #414042;
@@ -3450,17 +3453,21 @@ span .chatbtn {
           font-size: 30px;
           font-size: 1.66667rem;
           margin-bottom: .25em; } }
-  .ctabar.bg-white .tagline, .ctabar.bg-seashell .tagline {
+  .ctabar.bg-white .tagline, .ctabar.header-generic .tagline,
+  .ctabar.header-brand .tagline, .ctabar.bg-seashell .tagline {
     display: block;
     font-size: 30px;
     font-size: 1.66667rem;
     margin-bottom: .25em; }
-    .ctabar.bg-white .tagline p, .ctabar.bg-seashell .tagline p {
+    .ctabar.bg-white .tagline p, .ctabar.header-generic .tagline p,
+    .ctabar.header-brand .tagline p, .ctabar.bg-seashell .tagline p {
       font-size: inherit;
       margin-bottom: 0; }
-  .ctabar.bg-white .ctabar__ctaheader, .ctabar.bg-seashell .ctabar__ctaheader {
+  .ctabar.bg-white .ctabar__ctaheader, .ctabar.header-generic .ctabar__ctaheader,
+  .ctabar.header-brand .ctabar__ctaheader, .ctabar.bg-seashell .ctabar__ctaheader {
     display: none; }
-  .ctabar.bg-white .ctabar__buttonwrap-item, .ctabar.bg-seashell .ctabar__buttonwrap-item {
+  .ctabar.bg-white .ctabar__buttonwrap-item, .ctabar.header-generic .ctabar__buttonwrap-item,
+  .ctabar.header-brand .ctabar__buttonwrap-item, .ctabar.bg-seashell .ctabar__buttonwrap-item {
     padding: 8px; }
   .ctabar .tagline {
     font-size: 30px;
@@ -10043,13 +10050,18 @@ a.card:hover {
   .tabs-nav.bg-robins-egg-blue li.r-tabs-state-active a {
     background-color: #f1f1f1;
     color: #29a5d6; }
-  .tabs-nav.bg-white li a {
+  .tabs-nav.bg-white li a, .tabs-nav.header-generic li a,
+  .tabs-nav.header-brand li a {
     color: #6c6c6c; }
-    .tabs-nav.bg-white li a:hover, .tabs-nav.bg-white li a:focus {
+    .tabs-nav.bg-white li a:hover, .tabs-nav.header-generic li a:hover,
+    .tabs-nav.header-brand li a:hover, .tabs-nav.bg-white li a:focus, .tabs-nav.header-generic li a:focus,
+    .tabs-nav.header-brand li a:focus {
       background-color: #f1f1f1;
       color: #000; }
-  .tabs-nav.bg-white li.active a,
-  .tabs-nav.bg-white li.r-tabs-state-active a {
+  .tabs-nav.bg-white li.active a, .tabs-nav.header-generic li.active a,
+  .tabs-nav.header-brand li.active a,
+  .tabs-nav.bg-white li.r-tabs-state-active a, .tabs-nav.header-generic li.r-tabs-state-active a,
+  .tabs-nav.header-brand li.r-tabs-state-active a {
     background-color: #413e41;
     color: #fff; }
   .tabs-nav.bg-corduroy li a {
@@ -14141,7 +14153,7 @@ body.support-central {
   padding: 0 1em;
   margin-bottom: 0;
   text-align: center; }
-  @media only screen and (min-width: 76.25em) {
+  @media only screen and (min-width: 93.75em) {
     .tab-wrapper .tabs-nav {
       padding: 0; } }
   .tab-wrapper .tabs-nav li {
@@ -16197,7 +16209,8 @@ a.white:focus,
 .bg-transparent {
   background-color: transparent; }
 
-.bg-white {
+.bg-white, .header-generic,
+.header-brand {
   background-color: #fff; }
 
 .bg-white-hover:hover,

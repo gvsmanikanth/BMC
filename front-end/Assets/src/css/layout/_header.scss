@@ -146,3 +146,8 @@ html.rgba body.bmc-nav-loader-nav.scrolled-up .layout-header {
 body.bmc-nav-loader-nav	.nav-open .layout-header {
 	right: $lowResNavWidth;
 }
+
+.header-generic,
+.header-brand {
+	@extend .bg-white;
+}
