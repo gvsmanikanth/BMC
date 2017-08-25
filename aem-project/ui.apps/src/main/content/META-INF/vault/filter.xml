@@ -18,6 +18,9 @@
 
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
+
+    <!--<filter root="/content/bmc/language-masters/en/footers" mode="merge" />-->
+
     <filter root="/content/experience-fragments/bmc" mode="merge" />
 
     <filter root="/content/dam/bmc" mode="merge" />
