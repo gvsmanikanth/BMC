@@ -16,6 +16,8 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
+    <filter root="/etc/map.publish"/>
+
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
 

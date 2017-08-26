@@ -1,6 +1,5 @@
 <sly data-sly-use.text="com.adobe.cq.wcm.core.components.models.form.Text">
-        <label for="${text.id}" data-sly-test="${text.title && !text.hideTitle}" class="accessibility">${text.title}</label>
-        <p data-sly-test="${!text.placeholder && text.helpMessage}" class="help-block">${text.helpMessage}</p>
+        <label for="${text.id}" class="${text.placeholder? 'accessibility' : ''}">${text.title}</label>
         <textarea data-sly-test.useTextarea="${text.type == 'textarea'}"
                   aria-label="${text.hideTitle && text.title}"
                   id="${text.id}"
@@ -10,7 +9,6 @@
                   required="${text.required}"
                   data-cmp-required="${text.requiredMessage}"
                   rows="${text.rows}"
-                  data-type="${properties.validationType}"
                   required="${properties.required ? 'true' : 'false'}" >${text.value}</textarea>
         <input data-sly-test="${!useTextarea}"
                aria-label="${text.hideTitle && text.title}"
@@ -22,6 +20,6 @@
                readonly="${text.readOnly}"
                data-cmp-required="${text.requiredMessage}"
                data-cmp-constraint="${text.constraintMessage}"
-               data-type="${properties.validationType}"
+               data-validation-type="${properties.validationType ? properties.validationType : ''}"
                required="${properties.required ? 'true' : 'false'}" />
 </sly>
