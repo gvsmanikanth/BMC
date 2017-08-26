@@ -5,7 +5,7 @@
          data-sly-test="${options.type.value == 'checkbox' || options.type.value == 'radio'}">
         <sly data-sly-test.isRadio="${options.type.value == 'radio'}"/>
         <sly data-sly-test.isCheckbox="${options.type.value == 'checkbox'}"/>
-        <label data-sly-test="${options.title}" for="${options.name}_group" class="accessibility"><strong>${options.title}</strong></label>
+        <label data-sly-test="${options.title}" for="${options.name}_group" class="${options.title && options.hideTitle? 'accessibility' : '' }"><strong>${options.title}</strong></label>
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
         <ol class="${isRadio ? 'radio-list' : ''}" id="${options.name}_group">
             <li data-sly-repeat.optionItem="${options.items}">
