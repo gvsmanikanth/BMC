@@ -31,33 +31,47 @@
         $(FIELD_TYPE).on('change', function(){
             syncValidationTypes();
         });
+
+        $(OPTIONS_REQUIRED).on('change', function(){
+            syncValidationTypes();
+        });
     }
 
     function syncValidationTypes(){
+        var ignoredFieldTypes = ['textarea', 'date', 'number', 'tel', 'password'];
+        var textValidationTypes = ['none', 'alpha-only', 'first-name', 'last-name'];
+        var emailValidationTypes = ['none', 'email-all', 'email-business', 'email-business-competitor'];
 
-        if($(FIELD_TYPE).val() == 'email' || $(FIELD_TYPE).val() == 'textarea' || $(FIELD_TYPE).val() == 'date' || $(FIELD_TYPE).val() == 'password'){
-            $(VALIDATION_TYPES).parent().hide();
+        //disable or enable, access to the validation select list, based on of if field type is flagged as an ignored type or not.
+        if($.inArray($(FIELD_TYPE).val(), ignoredFieldTypes) !== -1){
+                $(VALIDATION_TYPES).parent().hide(); //hide validation types select list
         } else {
-            $(VALIDATION_TYPES).parent().show();
+            if($(OPTIONS_REQUIRED).attr('checked')){
+                $(VALIDATION_TYPES).parent().show(); //show validation types select list (but only if required is checked as well)
+            }
         }
 
+        //prime validation select list, based on text field type
         if($(FIELD_TYPE).val() == 'text'){
-            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(){
-                $(this).show();
+            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(i){
+                $(this).hide();               
+               if($.inArray($(this).val(), textValidationTypes) !== -1 || i === 0){
+                    $(this).show();
+                }
             }); 
             $(VALIDATION_TYPES).val(0);
         }
-        if($(FIELD_TYPE).val() == 'number' || $(FIELD_TYPE).val() == 'tel'){
-            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(){
+
+        //prime validation select list, based on email field types
+        if($(FIELD_TYPE).val() == 'email'){
+            $(VALIDATION_TYPES).find('coral-selectlist-item').each(function(i){
                 $(this).hide();
-            });
-            $(VALIDATION_TYPES).find('coral-selectlist-item').eq(0).show();
-            if($(FIELD_TYPE).val() == 'number'){
-                $(VALIDATION_TYPES).find('coral-selectlist-item').eq(6).show();
-            }
-            $(VALIDATION_TYPES).find('coral-selectlist-item').eq(7).show();
-            $(VALIDATION_TYPES).val(0);
-        }       
+                if($.inArray($(this).val(), emailValidationTypes) !== -1 || i === 0){
+                    $(this).show();
+                }
+            }); 
+            $(VALIDATION_TYPES).val(0); //always set validaiton type value to 0 as none to start with
+        }         
     }
 
     channel.on("foundation-contentloaded", function (e) {
