@@ -550,7 +550,8 @@ fieldset {
         width: 96.6%; } }
   fieldset label,
   fieldset label + select {
-    display: inline-block; }
+    display: inline-block;
+    line-height: normal; }
   fieldset input[type="text"],
   fieldset input[type="number"],
   fieldset input[type="password"],
