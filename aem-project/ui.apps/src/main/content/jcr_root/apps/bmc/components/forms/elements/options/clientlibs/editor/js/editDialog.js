@@ -54,6 +54,12 @@
             $(VALIDATION_TYPES).hide();
             $(OPTIONS_REQUIRED).removeAttr('checked');
         });
+
+        //validation types are only for text inputs and select boxes not radios and checkboxes
+        if($(FIELD_TYPE).val() == 'radio' || $(FIELD_TYPE).val() == 'checkbox'){
+            $(VALIDATION_TYPES).hide();
+        }
+
     }
 
     channel.on("foundation-contentloaded", function (e) {
