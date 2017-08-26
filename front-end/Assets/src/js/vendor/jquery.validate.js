@@ -1,32 +1,32 @@
 if($('#leadgen') || $('#nonleadgen'))	{
 	//Add hard limits to form fields, if they are not already defined
-	if(!$('[data-type="C_Salutation1"]').attr('maxlength'))
-		$('[data-type="C_Salutation1"]').attr('maxlength', '15');
-	if(!$('[data-type="C_Title"]').attr('maxlength'))
-		$('[data-type="C_Title"]').attr('maxlength', '75');
-	if(!$('[data-type="C_Address1"]').attr('maxlength'))
-		$('[data-type="C_Address1"]').attr('maxlength', '60');
-	if(!$('[data-type="C_Address2"]').attr('maxlength'))
-		$('[data-type="C_Address2"]').attr('maxlength', '60');
-	if(!$('[data-type="C_Address3"]').attr('maxlength'))
-		$('[data-type="C_Address3"]').attr('maxlength', '60');
-	if(!$('[data-type="C_State_Prov"]').attr('maxlength'))
-		$('[data-type="C_State_Prov"]').attr('maxlength', '20');
-	if(!$('[data-type="C_Zip_Postal"]').attr('maxlength'))
-		$('[data-type="C_Zip_Postal"]').attr('maxlength', '10');
-	if(!$('[data-type="C_BusPhone"]').attr('maxlength'))
-		$('[data-type="C_BusPhone"]').attr('maxlength', '40');
+	//if(!$('[data-type="C_Salutation1"]').attr('maxlength'))
+		//$('[data-type="C_Salutation1"]').attr('maxlength', '15');
+	//if(!$('[data-type="C_Title"]').attr('maxlength'))
+		//$('[data-type="C_Title"]').attr('maxlength', '75');
+	//if(!$('[data-type="C_Address1"]').attr('maxlength'))
+		//$('[data-type="C_Address1"]').attr('maxlength', '60');
+	//if(!$('[data-type="C_Address2"]').attr('maxlength'))
+		//$('[data-type="C_Address2"]').attr('maxlength', '60');
+	//if(!$('[data-type="C_Address3"]').attr('maxlength'))
+		//$('[data-type="C_Address3"]').attr('maxlength', '60');
+	//if(!$('[data-type="C_State_Prov"]').attr('maxlength'))
+		//$('[data-type="C_State_Prov"]').attr('maxlength', '20');
+
+	//if(!$('[data-type="C_Zip_Postal"]').attr('maxlength'))
+		//$('[data-type="C_Zip_Postal"]').attr('maxlength', '10');
+	//if(!$('[data-type="C_BusPhone"]').attr('maxlength'))
+		//$('[data-type="C_BusPhone"]').attr('maxlength', '40');
 	
 
 	//Switch-on reg-ex validations, if not already defined
-	if(!$('[data-type="C_FirstName"]').attr('data-validation-type'))
-		$('[data-type="C_FirstName"]').attr('data-validation-type', 'fname');
-	if(!$('[data-type="C_LastName"]').attr('data-validation-type'))
-		$('[data-type="C_LastName"]').attr('data-validation-type', 'lname');
-	if(!$('[data-type="C_BusPhone"]').attr('data-validation-type'))
-		$('[data-type="C_BusPhone"]').attr('data-validation-type', 'tel');
-	
-
+	//Switch-on reg-ex validations, if not already defined
+	//if(!$('[data-type="first-name"]').attr('data-validation-type'))
+	//	$('[data-type="C_FirstName"]').attr('data-validation-type', 'fname');
+	//if(!$('[data-type="C_LastName"]').attr('data-validation-type'))
+	//	$('[data-type="C_LastName"]').attr('data-validation-type', 'lname');
+	//if(!$('[data-type="C_BusPhone"]').attr('data-validation-type'))
+	//	$('[data-type="C_BusPhone"]').attr('data-validation-type', 'tel');
 	//Milind: Commenting out this logic as we will update the FieldSet for Unsubscribe form
 	//Change reg-ex validation pattern for Unsubscribe form
 	/*
@@ -55,21 +55,13 @@ if($('#leadgen') || $('#nonleadgen'))	{
 
 		// base regex patterns; http://regex101.com/ is a good testing environment
 		$this.patterns = {
-			//'email' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",	// http://stackoverflow.com/a/8829363
-			'email' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@(?!(gmail\\.[a-zA-Z0-9.]+$)|(hotmail\\.[a-zA-Z0-9.]+$)|(zoho\\.[a-zA-Z0-9.]+$)|(yandex\\.[a-zA-Z0-9.]+$)|(outlook\\.[a-zA-Z0-9.]+$)|(aim\\.[a-zA-Z0-9.]+$)|(icloud\\.[a-zA-Z0-9.]+$)|(me\\.[a-zA-Z0-9.]+$)|(mac\\.[a-zA-Z0-9.]+$)|(yahoo\\.[a-zA-Z0-9.]+$)|(mail.com$)|(inbox\\.[a-zA-Z0-9.]+$)|(gmx\\.[a-zA-Z0-9.]+$)|(myway\\.[a-zA-Z0-9.]+$)|(msn\\.[a-zA-Z0-9.]+$))[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
-			'allemails' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
-			//'tel' : "^[0-9-.]+$",	// this will allow numbers, hyphens, and periods
-			'tel'	: "^([0-9-.+ ()]*\\d){10}[-.+ ()]*$",	// this will allow numbers, hyphens, periods, plus, space and open & close parenthesis AND at least 10 digits
-			//'name' : "^[^0-9]+$"	// this will exclude numeric data
-			'fname' : "^[^0-9 ][^0-9]{0,25}$",	// this will exclude numeric data and cannot begin with space
-			'lname' : "^[^0-9 ][^0-9]{0,40}$",	// this will exclude numeric data and cannot begin with space
-			
-			//New regular expressions added to accomodate user-understandable options in CMS
+			'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
+			'first-name' : "^[^0-9 ][^0-9]{0,25}$",	// this will exclude numeric data and cannot begin with space
+			'last-name' : "^[^0-9 ][^0-9]{0,40}$",	// this will exclude numeric data and cannot begin with space
 			'email-business' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@(?!(gmail\\.[a-zA-Z0-9.]+$)|(hotmail\\.[a-zA-Z0-9.]+$)|(zoho\\.[a-zA-Z0-9.]+$)|(yandex\\.[a-zA-Z0-9.]+$)|(outlook\\.[a-zA-Z0-9.]+$)|(aim\\.[a-zA-Z0-9.]+$)|(icloud\\.[a-zA-Z0-9.]+$)|(me\\.[a-zA-Z0-9.]+$)|(mac\\.[a-zA-Z0-9.]+$)|(yahoo\\.[a-zA-Z0-9.]+$)|(mail.com$)|(inbox\\.[a-zA-Z0-9.]+$)|(gmx\\.[a-zA-Z0-9.]+$)|(myway\\.[a-zA-Z0-9.]+$)|(msn\\.[a-zA-Z0-9.]+$))[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
 			'email-business-competitor' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@(?!(gmail\\.[a-zA-Z0-9.]+$)|(hotmail\\.[a-zA-Z0-9.]+$)|(zoho\\.[a-zA-Z0-9.]+$)|(yandex\\.[a-zA-Z0-9.]+$)|(outlook\\.[a-zA-Z0-9.]+$)|(aim\\.[a-zA-Z0-9.]+$)|(icloud\\.[a-zA-Z0-9.]+$)|(me\\.[a-zA-Z0-9.]+$)|(mac\\.[a-zA-Z0-9.]+$)|(yahoo\\.[a-zA-Z0-9.]+$)|(mail.com$)|(inbox\\.[a-zA-Z0-9.]+$)|(gmx\\.[a-zA-Z0-9.]+$)|(myway\\.[a-zA-Z0-9.]+$)|(ibm.com$)|(hpe.com$)|(hp.com$)|(chef.io$)|(tripwire.com$)|(servicenow.com$)|(bmc.com$)|(msn\\.[a-zA-Z0-9.]+$))[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
 			'email-all' : "^[a-zA-Z][a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",
-			'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
-			'telephone-number'	: "^([0-9-.+ ()]*\\d){10}[-.+ ()]*$"	// this will allow numbers, hyphens, periods, plus, space and open & close parenthesis AND at least 10 digits
+			'tel'	: "^([0-9-.+ ()]*\\d){10}[-.+ ()]*$",	// this will allow numbers, hyphens, periods, plus, space and open & close parenthesis AND at least 10 digits
 		};
 
 		function disableLoadingState($element) {

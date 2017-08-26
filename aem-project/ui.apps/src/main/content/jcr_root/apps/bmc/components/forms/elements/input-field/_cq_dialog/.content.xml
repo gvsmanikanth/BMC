@@ -45,43 +45,31 @@
                                             <none
                                                 jcr:primaryType="nt:unstructured"
                                                 text="None"
-                                                value=""/>                                            
-                                            <salutation
+                                                value=""/>  
+                                            <alphaonly
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Salutation"
-                                                value="C_Salutation1"/>
-                                            <title
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Title"
-                                                value="C_Title"/>
-                                            <address1
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Address 1"
-                                                value="C_Address1"/>
-                                            <address2
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Address 2"
-                                                value="C_Address2"/>
-                                            <address3
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Address 3"
-                                                value="C_Address3"/>
-                                            <zip
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Zip Postal"
-                                                value="C_Zip_Postal"/>
-                                            <businessphone
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Business Phone"
-                                                value="C_BusPhone"/>
+                                                text="Alpha only"
+                                                value="alpha-only"/>
                                             <firstname
                                                 jcr:primaryType="nt:unstructured"
-                                                text="First Name"
-                                                value="C_FirstName"/>
+                                                text="First name"
+                                                value="first-name"/>
                                             <lastname
                                                 jcr:primaryType="nt:unstructured"
-                                                text="Last Name"
-                                                value="C_LastName"/>
+                                                text="Last name"
+                                                value="last-name"/>
+                                            <emailall
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Email (all)"
+                                                value="email-all"/> 
+                                            <emailbusiness
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Email (business)"
+                                                value="email-business"/> 
+                                            <emailbusinesscompetitor
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Email (business competitor)"
+                                                value="email-business-competitor"/>                                                       
                                         </items>
                                     </validationType>                                    
                                 </items>
