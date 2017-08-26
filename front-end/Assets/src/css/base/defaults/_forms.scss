@@ -47,6 +47,7 @@ fieldset {
 	label,
 	label + select {
 		display: inline-block;
+		line-height: normal;
 	}
 
 	input[type="text"],

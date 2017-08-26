@@ -5,7 +5,7 @@
          data-sly-test="${options.type.value == 'checkbox' || options.type.value == 'radio'}">
         <sly data-sly-test.isRadio="${options.type.value == 'radio'}"/>
         <sly data-sly-test.isCheckbox="${options.type.value == 'checkbox'}"/>
-        <label data-sly-test="${options.title}" for="${options.name}_group" class="accessibility"><strong>${options.title}</strong></label>
+        <label for="${options.name}_group" class="${properties.hideTitle? 'accessibility' : '' }">${options.title}</label>
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
         <ol class="${isRadio ? 'radio-list' : ''}" id="${options.name}_group">
             <li data-sly-repeat.optionItem="${options.items}">
@@ -21,6 +21,7 @@
         </ol>
     </div>
     <sly data-sly-test="${options.type.value == 'drop-down' || options.type.value == 'multi-drop-down'}">
+        <label for="${options.name}" class="${properties.hideTitle? 'accessibility' : '' }">${options.title}</label>
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
         <select name="${options.name}" id="${options.id}" class="form-control" data-sly-list.optionItem="${options.items}"
                 data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}" data-validation-type="${properties.validationType}" required="${properties.required ? 'true' : 'false'}">
