@@ -1929,13 +1929,15 @@ blockquote {
       padding: 16px;
       padding: 3.33333em 0;
       max-width: none; } }
-  .home .layout-full-bleed.layout-rotator-container {
-    padding: 0; }
-  .home .layout-full-bleed.feature-case-studies {
-    padding: 3.33333em 0; }
-    @media only screen and (min-width: 60em) {
-      .home .layout-full-bleed.feature-case-studies {
-        padding-bottom: 0; } }
+  .home .layout-full-bleed {
+    padding: 6.66667em 0 6.66667em; }
+    .home .layout-full-bleed.layout-rotator-container {
+      padding: 0; }
+    .home .layout-full-bleed.feature-case-studies {
+      padding: 3.33333em 0; }
+      @media only screen and (min-width: 60em) {
+        .home .layout-full-bleed.feature-case-studies {
+          padding-bottom: 0; } }
   .layout-product-finder + .layout-full-bleed {
     padding-top: 0; }
   .layout-full-bleed.layout-full-bleed-image {
