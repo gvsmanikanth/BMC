@@ -25,6 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
@@ -207,6 +208,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private Map getFormProperties(Node node) {
         String[] formProperties = new String[]{
                 "product_interest",
+                "content_prefs",
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
@@ -232,13 +234,37 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map<String, String> properties = new HashMap<>();
         Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
         properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
+        properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
+        properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
+        String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
+        properties.put("form_submitdate", timeStamp);
         return properties;
+    }
+
+    private String getContentPreferenceFromNodeName(String nodeName) {
+        String value = "";
+        try {
+            value = session.getNode("/content/bmc/resources/content-preferences/"+nodeName).getProperty("text").getString();
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return value;
+    }
+
+    private String getProductLineFromNodeName(String nodeName) {
+        String value = "";
+        try {
+            value = session.getNode("/content/bmc/resources/product-lines/"+nodeName).getProperty("text").getString();
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 
     private String getProductInterestFromNodeName(String nodeName) {
         String value = "";
         try {
-            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("text").getString();
+            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("jcr:title").getString();
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
