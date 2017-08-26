@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:Folder"
+          hidden="true">
+    <dev jcr:primaryType="sling:Folder" hidden="true">
+        <http jcr:primaryType="sling:Folder">
+            <dev.cms.bmc.com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/language-masters/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+            </dev.cms.bmc.com>
+            <dev.cms.bmc_com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en.html]"
+                    sling:match="dev.cms.bmc.com/$"/>
+        </http>
+    </dev>
+    <stage jcr:primaryType="sling:Folder" hidden="true">
+        <http jcr:primaryType="sling:Folder">
+            <stage.cms.bmc.com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/language-masters/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+            </stage.cms.bmc.com>
+            <stage.cms.bmc_com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en.html]"
+                    sling:match="stage.cms.bmc.com/$"/>
+        </http>
+    </stage>
+    <prod jcr:primaryType="sling:Folder" hidden="true">
+        <http jcr:primaryType="sling:Folder">
+            <cms.bmc.com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/language-masters/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+            </cms.bmc.com>
+            <cms.bmc_com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/language-masters/en.html]"
+                    sling:match="cms.bmc.com/$"/>
+        </http>
+    </prod>
+</jcr:root>
