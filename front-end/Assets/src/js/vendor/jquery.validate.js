@@ -83,7 +83,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				$input.parent().addClass('validation-error');
 			}
 			else if (radioOrCheckbox) {
-				$('label[for="' + name + '"]').addClass('validation-error');
+				$('[name="' + name + '"]').parent().find('label').addClass('validation-error');
 			}
 			else {
 				$input.addClass('validation-error');
@@ -94,11 +94,11 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			}
 			
 			// reset to Original Label
-      $input
-        .on('keyup change', function() {
-          if($input.val().length == 0)
-            $input.prev('label:first').text($input.attr('placeholder'));
-        });
+			$input
+			.on('keyup change', function() {
+			  if($input.val().length == 0)
+			    $input.prev('label:first').text($input.attr('placeholder'));
+			});
 
 			// remove error styles if a value is changed
 			$input
@@ -108,7 +108,22 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						.removeClass('validation-error')
 						.parent()
 						.removeClass('validation-error');
+
+					//clears out valid all radios in groups
+					if($(this).is('[type="radio"]')){
+						if($(this).parents('.form-group').length){
+							$(this).parents('.form-group').find('label').each(function(i){
+								$(this).removeClass('validation-error');
+							});
+						}
+					}
+					//clears out individual checkboxe in groups
+					if($(this).is('[type="checkbox"]')){
+						$(this).next('label').removeClass('validation-error');
+					}
 				});
+
+			// radios & checkboxes		
 
 			$form
 				.data('valid', false);
@@ -194,7 +209,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					if (required && (value === '' || value === null)) {
 						setInvalid($input);
 					}
-					else if (required && radioOrCheckbox && $('[name="' + name + '"]:checked').length === 0) {
+					else if (required && radioOrCheckbox && $('[name="' + name + '"]').is(':checked') === false) {
 						setInvalid($input, radioOrCheckbox, name);
 					}
 
