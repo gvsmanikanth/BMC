@@ -1,6 +1,5 @@
 <sly data-sly-use.text="com.adobe.cq.wcm.core.components.models.form.Text">
-        <label for="${text.id}" class="accessibility">${text.title}</label>
-        <p data-sly-test="${!text.placeholder && text.helpMessage}" class="help-block">${text.helpMessage}</p>
+        <label for="${text.id}" class="${text.placeholder? 'accessibility' : ''}">${text.title}</label>
         <textarea data-sly-test.useTextarea="${text.type == 'textarea'}"
                   aria-label="${text.hideTitle && text.title}"
                   id="${text.id}"
