@@ -1,14 +1,19 @@
-<blockquote class="testimonial divider">
+<blockquote class="${properties.fullBleedCenterText ? 'fullbleed-blockquote' : 'testimonial divider'}">
     <div class="layout-inner-wrap">
-        <p>
-            ${properties.quote}
-        </p>
-        <cite>
-            — ${properties.citation}
+
+        <sly data-sly-test="${properties.fullBleedCenterText}">
+            ${properties.quote @ context='html'}
+        </sly>
+        <sly data-sly-test="${!properties.fullBleedCenterText}">
+            <p>${properties.quote @ context='html'}</p>
+        </sly>
+
+        <cite data-sly-test="${properties.citation}">
+            — ${properties.citation @ context='html'}
         </cite>
 
         <sly data-sly-test="${properties.sourcelinktext}">
-            <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext}</a></h5>
+            <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext @ context='html'}</a></h5>
         </sly>
 
         <section data-sly-test="${properties.ctatext}">

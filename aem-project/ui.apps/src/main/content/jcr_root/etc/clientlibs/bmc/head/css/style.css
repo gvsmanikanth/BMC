@@ -522,17 +522,7 @@ form {
 fieldset {
   border: none;
   margin: 0.66667em 0 0;
-  padding: 0;
-  /*.ie8 & {
-		input[type="radio"],
-		input[type="checkbox"] {
-			& + label {
-				display: inline;
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}*/ }
+  padding: 0; }
   fieldset:first-child, fieldset.flush {
     margin-top: 0; }
   fieldset legend {
@@ -550,7 +540,8 @@ fieldset {
         width: 96.6%; } }
   fieldset label,
   fieldset label + select {
-    display: inline-block; }
+    display: inline-block;
+    line-height: normal; }
   fieldset input[type="text"],
   fieldset input[type="number"],
   fieldset input[type="password"],
@@ -660,9 +651,6 @@ fieldset {
     resize: vertical; }
   fieldset + button {
     margin-top: 0.66667em; }
-  fieldset .radio-list > li,
-  fieldset .checkbox-list > li {
-    margin: 0 0 0 0.66667em; }
 
 .select-label {
   font-size: 14px;
@@ -1272,6 +1260,8 @@ blockquote {
   max-width: 1440px;
   padding: 0 1.55556rem;
   width: auto; }
+  .layout-inner-wrap .layout-inner-wrap {
+    padding: 0; }
   .layout-inner-wrap.-bb {
     border-bottom: 1px solid #f1f1f1; }
   .layout-inner-wrap.-mb {
@@ -4646,6 +4636,18 @@ fieldset:not(#foo) .decorator-select:after {
 
 fieldset:not(#foo) .decorator-select select {
   outline: none; }
+
+fieldset:not(#foo) .form-group.checkbox li,
+fieldset:not(#foo) .form-group.radio li {
+  margin: 0; }
+  fieldset:not(#foo) .form-group.checkbox li input[type="radio"] + label,
+  fieldset:not(#foo) .form-group.checkbox li input[type="checkbox"] + label,
+  fieldset:not(#foo) .form-group.radio li input[type="radio"] + label,
+  fieldset:not(#foo) .form-group.radio li input[type="checkbox"] + label {
+    padding-left: 23px; }
+
+fieldset:not(#foo) .aem-GridColumn {
+  padding-left: 0; }
 
 /*.oldie {
 	fieldset {
@@ -14154,7 +14156,7 @@ body.support-central {
   padding: 0 1em;
   margin-bottom: 0;
   text-align: center; }
-  @media only screen and (min-width: 76.25em) {
+  @media only screen and (min-width: 93.75em) {
     .tab-wrapper .tabs-nav {
       padding: 0; } }
   .tab-wrapper .tabs-nav li {
