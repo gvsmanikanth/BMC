@@ -8,7 +8,6 @@ public class PageMeta {
     private String contentId = "";
     private String contentType = "";
     private String longName = "";
-    private String cultureCode = "";
     private String productCategories = "";
     private String productLineCategories = "";
     private String errorCode = "";
@@ -35,14 +34,6 @@ public class PageMeta {
 
     public void setContentType(String contentType) {
         this.contentType = contentType;
-    }
-
-    public String getCultureCode() {
-        return cultureCode;
-    }
-
-    public void setCultureCode(String cultureCode) {
-        this.cultureCode = cultureCode;
     }
 
     public String getLongName() {

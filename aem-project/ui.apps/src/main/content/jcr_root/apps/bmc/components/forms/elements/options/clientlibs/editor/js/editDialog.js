@@ -29,23 +29,14 @@
     function initialise(dialog) {
         
         if(!$(OPTIONS_REQUIRED).attr('checked')){
-            $(REQUIRED_MESSAGE).hide();
-            $(VALIDATION_TYPES).hide();         
-        }else{
-            if(!$(FIELD_TYPE).val() == 'drop-down'){
-                $(VALIDATION_TYPES).hide();
-            }             
+            $(REQUIRED_MESSAGE).hide();         
         }
 
         $(OPTIONS_REQUIRED).on('click', function(e){
             if(!this.hasAttribute('checked')){
                 $(REQUIRED_MESSAGE).show();
-                if($(FIELD_TYPE).val() == 'drop-down'){
-                    $(VALIDATION_TYPES).show();
-                }
             }else{
                 $(REQUIRED_MESSAGE).hide();
-                $(VALIDATION_TYPES).hide();
             }
         });
 
@@ -54,6 +45,7 @@
             $(VALIDATION_TYPES).hide();
             $(OPTIONS_REQUIRED).removeAttr('checked');
         });
+
     }
 
     channel.on("foundation-contentloaded", function (e) {
