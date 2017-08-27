@@ -238,6 +238,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
+        // Yes, this is correct, property name Submit = "Action"
+        properties.put("Submit", "Action");
+        properties.put("elqCookieWrite", "0");
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
         return properties;
