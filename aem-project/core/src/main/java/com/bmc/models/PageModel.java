@@ -26,9 +26,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by elambert on 5/26/17.
@@ -116,13 +115,43 @@ public class PageModel {
         return formatPageType(tempPath.substring(nameIndex));
     }
 
+    private String getProductInterestValue(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/product-interests/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    private String getProductLineValue(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/product-lines/" + nodeName).getProperty("text").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+
     private BmcMeta gatherAnalytics(){
         BmcMeta bmcMeta = new BmcMeta();
         bmcMeta.getPage().setContentId(getContentID());
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getPage().setCultureCode(formatMetaLocale().toLowerCase());
         bmcMeta.getSite().setEnvironment(service.getEnvironment());
+
+        String pageTitle = resourcePage.getTitle();
+        if (pageTitle.equals("404")) {
+            bmcMeta.getPage().setErrorCode("page404");
+        }
+
+        String[] products = resourcePage.getContentResource().getValueMap().get("product_interest", new String[] {});
+        String[] productLines = resourcePage.getContentResource().getValueMap().get("product_line", new String[] {});
+
+        String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining(","));
+        String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining(","));
+
+        bmcMeta.getPage().setProductCategories(productsList);
+        bmcMeta.getPage().setProductLineCategories(linesList);
 
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
@@ -143,7 +172,7 @@ public class PageModel {
             bmcMeta.getPage().setPurl("true");
         }
 
-        if(resourcePage.getPath().contains("/support/")){
+        if(resourcePage.getPath().contains("/support")){
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
@@ -174,11 +203,11 @@ public class PageModel {
             Node xf = session.getNode(xfPath);
             Node fieldset = xf.getNode("jcr:content/root/field_set");
             // Properties from Fieldset
-            bmcMeta.getFormMeta().setId(fieldset.getProperty("formid").getString());
-            bmcMeta.getFormMeta().setName(fieldset.getProperty("formname").getString());
+            bmcMeta.getForm().setId(fieldset.getProperty("formid").getString());
+            bmcMeta.getForm().setName(fieldset.getProperty("formname").getString());
             // Properties from form container
-            bmcMeta.getFormMeta().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
-            bmcMeta.getFormMeta().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
+            bmcMeta.getForm().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
+            bmcMeta.getForm().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
         }
     }
 
@@ -219,7 +248,7 @@ public class PageModel {
         }catch (Exception e){
             logger.error("Error setting contentId: {}", e.getMessage());
         }
-        return formattedLongName.toString();
+        return formattedLongName.toString().toLowerCase();
     }
 
     private String formatLongNameFormStart(){
@@ -238,17 +267,17 @@ public class PageModel {
         }catch (Exception e){
             logger.error("Error setting contentId: {}", e.getMessage());
         }
-        return formattedLongName.toString();
+        return formattedLongName.toString().toLowerCase();
     }
 
     private String formatPageType(String path){
         if (getContentType().equals("form-thank-you")) {
             resourcePage.getParent().getName();
-            return "forms-complete" + ":"+resourcePage.getParent().getName();
+            return "forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase();
         }else if(path.equals("forms")){
             return "forms-start";
         }else{
-            return path;
+            return path.toLowerCase();
         }
     }
 
@@ -284,7 +313,7 @@ public class PageModel {
     }
 
     private String formatMetaLocale(){
-        Page resolvedPage = resourcePage.getAbsoluteParent(1);
+        Page resolvedPage = resourcePage.getAbsoluteParent(3);
         if (resolvedPage == null)
             resolvedPage = resourcePage;
 

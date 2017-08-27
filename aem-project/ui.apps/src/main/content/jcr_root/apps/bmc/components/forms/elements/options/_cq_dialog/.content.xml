@@ -3,7 +3,8 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Form Options"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    helpPath="https://www.adobe.com/go/aem_cmp_form_options_v1">
+    helpPath="https://www.adobe.com/go/aem_cmp_form_options_v1"
+    extraClientlibs="[bmc.requiredToggle]">
     <content
         granite:class="core-wcm-form-options-v1"
         jcr:primaryType="nt:unstructured"
@@ -98,9 +99,10 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <fromList
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                         fieldDescription="Path of the static list."
                                         fieldLabel="List"
+                                        rootPath="/content/bmc"
                                         name="./listPath"/>
                                 </items>
                             </fromList>
@@ -189,6 +191,47 @@
                                     </options>
                                 </items>
                             </fromLocal>
+                            <ValidationHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="{Long}3"
+                                text="Validation"/>
+                                <required
+                                    granite:class="cmp-form-textfield-required"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="Whether the user must fill in a value before submitting the form"
+                                    name="./required"
+                                    text="Required"
+                                    value="true"/>
+
+                                <constraintMessage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldDescription="Message displayed as tooltip when submitting the form if the value is left empty"
+                                    fieldLabel="Required Message"
+                                    name="./requiredMessage"
+                                    wrapperClass="cmp-form-textfield-constraintmessage"/>
+
+                                <validationType
+                                    granite:class="cmp-form-validation-types"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldLabel="Validation Type"
+                                    name="./validationType"
+                                    wrapperClass="cmp-form-validation-types"
+                                    sling:orderBefore="constraintMessage">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <none
+                                            jcr:primaryType="nt:unstructured"
+                                            text="None"
+                                            value=""/>                                        
+                                        <stateprovence
+                                            jcr:primaryType="nt:unstructured"
+                                            text="State/Provence"
+                                            value="C_State_Prov"/>
+                                    </items>
+                                </validationType>                                                       
                             <aboutHeading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/heading"

@@ -2,7 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        bodyClass="section-education home page-home"
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
         cq:lastModified="{Date}2017-08-07T16:09:18.603-04:00"
@@ -12,7 +11,8 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/certification-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page"
+        sling:resourceType="bmc/components/structure/education-page-common"
+        bodyClass="section-education home page-home"
         showBreadcrumbs="true">
         <root
             jcr:primaryType="nt:unstructured"

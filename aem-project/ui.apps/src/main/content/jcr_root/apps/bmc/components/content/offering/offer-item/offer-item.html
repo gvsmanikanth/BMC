@@ -1,0 +1,14 @@
+<div style="background-color:#FFFFFF;padding:20px;">
+    <sly data-sly-test="${wcmmode.edit}">
+        <sly data-sly-test.List="${['productName','productAvailability','datasheetIconImage','datasheetPicker','datasheetLink','assetIconImage','assetPrefix','assetLinkText','primaryParentOfferingPage','anchorTagText','linkText','anchorTagText','shortDescription']}"></sly>
+        <sly data-sly-list="${List}">
+            <strong>${item}:</strong>
+            <div id="${item}">${properties[item]}</div>
+        </sly>
+        <strong>Long Description:</strong>
+        <sly data-sly-resource="${'productDiscription' @resourceType='bmc/components/content/wysiwyg'}"/>
+    </sly>
+    <p data-sly-test="${!wcmmode.edit}">This is an offering of <a href="${properties.primaryParentOfferingPage}.html#${properties.anchorTagText}">
+        ${properties.primaryParentOfferingPage}.html#${properties.anchorTagText}</a>.</p>
+</div>
+

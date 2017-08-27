@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="rep:Group"
+    jcr:uuid="3a6aa673-ce5a-3122-b1d9-d798eade2dba"
+    rep:authorizableId="SSO_AEM_AvailEditor"
+    rep:principalName="SSO_AEM_AvailEditor">
+    <profile
+        jcr:primaryType="nt:unstructured"
+        aboutMe="SSO_AEM_AvailEditor SSO group"
+        givenName="SSO_AEM_AvailEditor"/>
+</jcr:root>

@@ -69,16 +69,22 @@
                                 class="hide video-type-container"
                                 showhidetargetvalue="1,2"
                                 required="{Boolean}true"/>
-                            <damVideoPath
+                            <damVideoPathContainer
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                    fieldDescription="Please select a video"
-                                    fieldLabel="Video Path"
-                                    name="./damVideoPath"
-                                    rootPath="/content/dam/projects/bmc"
+                                    sling:resourceType="granite/ui/components/foundation/container"
                                     class="hide video-type-container"
-                                    showhidetargetvalue="3"
-                                    required="{Boolean}true"/>
+                                    showhidetargetvalue="3">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <damVideoPath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldDescription="Please select a video"
+                                            fieldLabel="Video Path"
+                                            name="./damVideoPath"
+                                            rootPath="/content/dam/projects/bmc"
+                                            required="{Boolean}true"/>
+                                </items>
+                            </damVideoPathContainer>
                             <title
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
@@ -107,7 +113,7 @@
                                         name="./overlayText"/>
                                     <overlayUrl
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldDescription="To create a link from the Overlay Text, enter an external URL here (beginning with http(s):) or use the path picker to link to an internal page"
                                             fieldLabel="Overlay URL"
                                             name="./overlayUrl"
