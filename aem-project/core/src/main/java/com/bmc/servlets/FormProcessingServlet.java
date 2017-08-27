@@ -32,12 +32,11 @@ import java.util.*;
 public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
+    public static final String PURL_PAGE_URL = "PURLPageUrl";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
 
     private String serviceUrl = "";
     private int timeout = 5000;
-
-    private String redirectPage = "";
 
     private Session session;
 
@@ -99,21 +98,25 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map<String, String> formData = new HashMap<>();
         parameters.forEach((k, v) -> formData.put(k, request.getParameter(k)));
         Node node = request.getResource().adaptTo(Node.class);
-        redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
+        String pagePath = request.getResource().getPath().substring(0,request.getResource().getPath().indexOf("/jcr:content"));
+        Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
+        String purlPage = getFormProperty(node, PURL_PAGE_URL);
+        String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
         Map formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         sendData(data);
-        if (redirectPage != null) {
+        if (purlPage != null) {
             ResourceResolver resourceResolver = request.getResourceResolver();
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-            Page page = pageManager.getPage(redirectPage);
+            Page page = pageManager.getPage(purlPage);
             if (page != null) {
                 String vanityURL = page.getVanityUrl();
-                redirectPage = (vanityURL == null ? redirectPage + ".html" : vanityURL);
+                String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
+                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + "." + formGUID + ".html" : vanityURL);
             }
 
-            response.sendRedirect(redirectPage);
+            response.sendRedirect(purlPage);
         }
     }
 

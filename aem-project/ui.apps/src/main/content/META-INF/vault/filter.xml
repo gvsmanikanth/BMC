@@ -4,7 +4,7 @@
     <filter root="/apps/wcm/core/content/sites"/>
 
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
-    <!--<filter root="/conf/bmc" mode="merge"/>-->
+    <filter root="/conf/bmc" mode="merge"/>
     <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
@@ -16,7 +16,7 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
-    <filter root="/etc/map.publish"/>
+    <filter root="/etc/map.publish" mode="update"/>
 
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
