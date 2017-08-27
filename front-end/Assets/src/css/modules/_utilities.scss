@@ -301,9 +301,14 @@
 .testimonial {
 	@extend %divider-config;
 	background-color: #00a79d;
-	margin: 4em 0;
+	margin: 0 0 2em;
 	padding: 40px;
 	position: relative;
+
+	@include media(breakpointMedium) {
+		margin: 0 0 4em;
+		padding: 60px 40px;
+	}
 
 	&.row {
 		margin-top: 0;
@@ -361,10 +366,6 @@
 		@include font-size(16);
 		//margin-top: em(24 16);
 		margin-top: em(24); //BMC-527 Removed 16 from definition
-	}
-
-	@include media(breakpointMedium) {
-		padding: 60px 40px;
 	}
 
 	// specific changes for testimonials contained within .page-campaign-landing
