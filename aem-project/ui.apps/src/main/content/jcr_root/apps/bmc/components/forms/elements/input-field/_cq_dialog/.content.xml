@@ -31,8 +31,9 @@
                                         fieldDescription="Needed if the label is required only for accessibility purpose and does not impart any additional visual information about the field"
                                         name="./hideTitle"
                                         text="Hide the label from being displayed"
-                                        value="true"
+                                        value="false"
                                         sling:hideResource="true"/>
+
                                     <usePlaceholder
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -40,7 +41,15 @@
                                         name="./usePlaceholder"
                                         text="Display label as input placeholder"
                                         value="true"
-                                        sling:orderBefore="name"/>                                        
+                                        sling:orderBefore="name"/> 
+                                    
+                                    <helpMessage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                        fieldDescription="A hint to the user of what can be entered in the field"
+                                        type="hidden"
+                                        value="null"
+                                        name="./helpMessage" />                                                
                                 </items>
                             </column>
                         </items>
@@ -50,7 +59,7 @@
                         jcr:title="About"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
                         margin="{Boolean}true"
-                        sling:hideResource="true" />
+                        sling:hideResource="true"/>
                     <Constraints
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Validation"
