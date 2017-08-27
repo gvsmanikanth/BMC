@@ -390,7 +390,7 @@ function addFilterToArrayProtoype() {
 
 	// only use floatlabels when the browser supports transitions and placeholders
 	if (Modernizr.csstransitions && Modernizr.input.placeholder) {
-		$('label + input:not(.search-product)').floatlabel({
+		$('label.accessibility + input:not(.search-product)').floatlabel({
 			labelEndTop: '15px',
 			typeMatches: /text|password|email|number|search|url|tel/
 		});
