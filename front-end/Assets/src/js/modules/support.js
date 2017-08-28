@@ -53,7 +53,9 @@ var Support = Support || {};
 				&& typeof bmcMeta.page !== 'undefined'
 				&& typeof bmcMeta.page.longName === 'string') {
 
-				var pathCheck = /support.*support-central/;
+				//var pathCheck = /support.*support-central/;
+				var pathCheck = /support/; //DXP-812
+				
 				// matches path string with support and support central in it
 				// examples:
 				// "support:support-central" or "support:reg:support-central"
