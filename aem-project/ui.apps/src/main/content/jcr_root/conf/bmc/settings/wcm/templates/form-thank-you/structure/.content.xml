@@ -37,6 +37,13 @@
                 jcr:lastModifiedBy="dtayeh"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/plainfooter"/>
+            <validation
+                    jcr:created="{Date}2017-08-23T17:21:44.209-04:00"
+                    jcr:createdBy="dtayeh"
+                    jcr:lastModified="{Date}2017-08-23T17:21:44.209-04:00"
+                    jcr:lastModifiedBy="dtayeh"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/forms/thank-you-id-check"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
