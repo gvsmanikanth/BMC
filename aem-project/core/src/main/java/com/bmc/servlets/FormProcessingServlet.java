@@ -25,18 +25,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
+    public static final String PURL_PAGE_URL = "PURLPageUrl";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
 
     private String serviceUrl = "";
     private int timeout = 5000;
-
-    private String redirectPage = "";
 
     private Session session;
 
@@ -98,21 +98,25 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map<String, String> formData = new HashMap<>();
         parameters.forEach((k, v) -> formData.put(k, request.getParameter(k)));
         Node node = request.getResource().adaptTo(Node.class);
-        redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
+        String pagePath = request.getResource().getPath().substring(0,request.getResource().getPath().indexOf("/jcr:content"));
+        Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
+        String purlPage = getFormProperty(node, PURL_PAGE_URL);
+        String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
         Map formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         sendData(data);
-        if (redirectPage != null) {
+        if (purlPage != null) {
             ResourceResolver resourceResolver = request.getResourceResolver();
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-            Page page = pageManager.getPage(redirectPage);
+            Page page = pageManager.getPage(purlPage);
             if (page != null) {
                 String vanityURL = page.getVanityUrl();
-                redirectPage = (vanityURL == null ? redirectPage + ".html" : vanityURL);
+                String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
+                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + "." + formGUID + ".html" : vanityURL);
             }
 
-            response.sendRedirect(redirectPage);
+            response.sendRedirect(purlPage);
         }
     }
 
@@ -207,6 +211,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private Map getFormProperties(Node node) {
         String[] formProperties = new String[]{
                 "product_interest",
+                "content_prefs",
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
@@ -232,13 +237,42 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map<String, String> properties = new HashMap<>();
         Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
         properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
+        properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
+        properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
+        properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
+        properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
+        // Yes, this is correct, property name Submit = "Action"
+        properties.put("Submit", "Action");
+        properties.put("elqCookieWrite", "0");
+        String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
+        properties.put("form_submitdate", timeStamp);
         return properties;
+    }
+
+    private String getContentPreferenceFromNodeName(String nodeName) {
+        String value = "";
+        try {
+            value = session.getNode("/content/bmc/resources/content-preferences/"+nodeName).getProperty("text").getString();
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return value;
+    }
+
+    private String getProductLineFromNodeName(String nodeName) {
+        String value = "";
+        try {
+            value = session.getNode("/content/bmc/resources/product-lines/"+nodeName).getProperty("text").getString();
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 
     private String getProductInterestFromNodeName(String nodeName) {
         String value = "";
         try {
-            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("text").getString();
+            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("jcr:title").getString();
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
