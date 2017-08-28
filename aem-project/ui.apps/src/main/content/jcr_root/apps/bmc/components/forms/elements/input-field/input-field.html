@@ -1,9 +1,8 @@
 <sly data-sly-use.text="com.adobe.cq.wcm.core.components.models.form.Text">
         <label for="${text.id}" class="${text.placeholder? 'accessibility' : ''}">${text.title}</label>
         <textarea data-sly-test.useTextarea="${text.type == 'textarea'}"
-                  aria-label="${text.hideTitle && text.title}"
                   id="${text.id}"
-                  placeholder="${text.placeholder}"
+                  placeholder="${text.placeholder? text.title : ''}"
                   name="${text.name}"
                   readonly="${text.readOnly}"
                   required="${text.required}"
@@ -11,10 +10,9 @@
                   rows="${text.rows}"
                   required="${properties.required ? 'true' : 'false'}" >${text.value}</textarea>
         <input data-sly-test="${!useTextarea}"
-               aria-label="${text.hideTitle && text.title}"
                type="${text.type}"
                id="${text.id}"
-               placeholder="${text.placeholder}"
+               placeholder="${text.placeholder? text.title : ''}"
                name="${text.name}"
                value="${text.value}"
                readonly="${text.readOnly}"
