@@ -27,17 +27,17 @@
      * @param dialog The dialog on which the operation is to be performed
      */
     function initialise(dialog) {
-        syncValidationTypes();
+        syncValidationTypes(false);
         $(FIELD_TYPE).on('change', function(){
-            syncValidationTypes();
+            syncValidationTypes(true);
         });
 
         $(OPTIONS_REQUIRED).on('change', function(){
-            syncValidationTypes();
+            syncValidationTypes(true);
         });
     }
 
-    function syncValidationTypes(){
+    function syncValidationTypes(reset){
         var ignoredFieldTypes = ['textarea', 'date', 'number', 'tel', 'password'];
         var textValidationTypes = ['none', 'alpha-only', 'first-name', 'last-name'];
         var emailValidationTypes = ['none', 'email-all', 'email-business', 'email-business-competitor'];
@@ -59,7 +59,7 @@
                     $(this).show();
                 }
             }); 
-            $(VALIDATION_TYPES).val(0);
+            if(reset === true){ $(VALIDATION_TYPES).val(0); }
         }
 
         //prime validation select list, based on email field types
@@ -70,7 +70,7 @@
                     $(this).show();
                 }
             }); 
-            $(VALIDATION_TYPES).val(0); //always set validaiton type value to 0 as none to start with
+           if(reset === true){ $(VALIDATION_TYPES).val(0); } //always set validaiton type value to 0 as none to start with
         }         
     }
 
