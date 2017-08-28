@@ -10908,7 +10908,10 @@ section.bmc-engage-header.layout-full-bleed {
   .customer-story-case-banner.wallpapered {
     background: transparent; }
   .customer-story-case-banner .wallpaper-container {
-    z-index: -1; }
+    z-index: 0; }
+  .customer-story-case-banner .layout-inner-wrap {
+    position: relative;
+    z-index: 1; }
   .customer-story-case-banner .layout-primary {
     margin-bottom: 1em; }
     .customer-story-case-banner .layout-primary p {
