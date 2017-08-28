@@ -156,7 +156,7 @@ public class PageModel {
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
-                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
@@ -164,7 +164,7 @@ public class PageModel {
         }
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
             try {
-                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/maincontentcontainer/section_layout_1262318817/form");
+                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
