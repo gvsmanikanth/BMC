@@ -1,8 +1,65 @@
-
+<!-- Added coveo search js and css only for support pages -->
+<sly data-sly-use.model="com.bmc.components.SupportPagesCheck"/>
 <sly data-sly-use.footerCompanySet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerCompany'}" />
 <sly data-sly-use.footerSupportSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSupport'}" />
 <sly data-sly-use.footerSocialSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSocial'}" />
 <sly data-sly-use.footerLegalSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerLegal'}" />
+<sly data-sly-test="${model.isSupportPage}">
+   <script type="text/javascript">
+           	var supportcentralurl = '${model.searchPageUrl @ context="html"}';
+		    var supportCoveoAccessToken = '${model.supportCoveoAccessToken @ context="html"}';
+   </script>
+   <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.all @ categories='bmc.coveo'}" data-sly-unwrap />
+	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
+		<sly data-sly-test="${!loggedIn}">
+        <script type="text/javascript">
+        jQuery( document ).ready(function( $ ) {
+              $(function () {
+    
+                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/content/bmc/support/support-search.html');
+    
+                 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+                 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+                  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+             });     
+            });  
+        </script>
+      </sly>
+  <sly data-sly-test="${loggedIn}">
+    <script type="text/javascript">
+	jQuery( document ).ready(function( $ ) {
+	      $(function () {
+	     	 $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '${model.searchPageUrl @ context="html"}');
+
+	     	 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	     	 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+			  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	   	 });     
+	    });  
+	</script>
+  </sly>
+</sly>
 <footer class="layout-footer">
     <nav class="layout-inner-wrap">
         <ul class="nav-tertiary">
