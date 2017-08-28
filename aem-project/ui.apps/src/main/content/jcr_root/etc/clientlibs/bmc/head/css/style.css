@@ -4653,6 +4653,9 @@ fieldset label.inline {
 .modal-form-thankyou .layout-full-bleed {
   padding: 0px; }
 
+.cq-Editable-dom.cmp-form-field label {
+  color: #fff; }
+
 .icon-point-list {
   text-align: center; }
   .icon-point-list h3 {
