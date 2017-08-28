@@ -8,9 +8,12 @@
 
 	&.wallpapered { background: transparent; }
 	.wallpaper-container {
-		z-index: -1;
+		z-index: 0;
 	}
-
+    .layout-inner-wrap {
+        position: relative;
+        z-index: 1;
+    }
 	.layout-primary {
 
 		margin-bottom: 1em;
@@ -26,7 +29,7 @@
 	}
 
 	.layout-secondary {
-		padding-bottom: 0;
+		padding-bottom: 0;     
 	}
 
 	.header-logo, .back-link {

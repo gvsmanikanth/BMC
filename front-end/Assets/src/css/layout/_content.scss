@@ -197,6 +197,20 @@
 	@extend %column-config;
 	padding-top: 0;
 
+	&:first-child {
+		padding-bottom: 2rem;
+		@include media(breakpointMedium) {
+			padding-bottom: 0;
+		}
+	}
+
+	@include media(breakpointMedium) {
+		//margin-right: columns(0.8666);
+		width: columns(8.1333);		
+		&:first-child 	{ padding-right: 7.2%;	}
+		&:last-child 	{ padding-left: 7.2%;	}
+	}
+
 	&.aem-GridColumn {
 		margin-right: 0 !important;
 	}
@@ -209,19 +223,13 @@
 		padding-top: em(28);
 	}
 
-	> section {
-		margin-top: em(50);
+	//> section {
+	//	margin-top: em(50);
 
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
-	@include media(breakpointMedium) {
-		margin-right: columns(0.8666);
-		width: columns(8.1333);
-	}
-
+	//	&:first-child {
+	//		margin-top: 0;
+	//	}
+	//}
 	.-shaded {
 		background-color: #f1f1f1;
 		padding: em(30);
@@ -233,6 +241,18 @@
 	@extend %column-config;
 	padding: 2em 0 0 0;
 
+	@include media(breakpointMedium) {
+		width: 65%;
+		&:first-child 	{ padding-right: 10%;	}
+		&:last-child 	{ padding-left: 10%;	}		
+	}
+
+	@include media(breakpointLarge) {
+		width: 66%;
+		&:first-child 	{ padding-right: 2%;	}
+		&:last-child 	{ padding-left: 2%;		}		
+	}
+
 	.full-width & {
 		width: 100%;
 	}
@@ -241,28 +261,12 @@
 		padding-top: em(28);
 	}
 
-	> section {
-		margin-top: em(50);
-
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
-	@include media(breakpointMedium) {
-		margin-right: 10%;
-		width: 65%;
-	}
-
-	@include media(breakpointLarge) {
-		margin-right: 2%;
-		width: 66%;
-	}
-
-	@include media(breakpointExtraLarge) {
-		margin-right: 2%;
-		width: 66%;
-	}
+	//> section {
+	//	margin-top: em(50);
+	//	&:first-child {
+	//		margin-top: 0;
+	//	}
+	//}
 }
 
 // The layout-product-feature-banner class is the column container for a page's primary content.  It can be customized for specific templates using contexts such as .page-product-landing &.
@@ -295,8 +299,28 @@
 // The layout-secondary class is the column container for a page's secondary content, which will usually be an aside with content tangential to that of layout-primary.
 .layout-secondary {
 	@extend %column-config;
-
 	padding-bottom: em(135);
+	
+	&:first-child {
+		padding-bottom: 2rem;
+		@include media(breakpointMedium) {
+			padding-bottom: 0;
+		}
+	}
+
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
+
+	//	&:first-child {
+	//		@include media(breakpointMedium) {
+	//			border-top: none ; 
+	//			margin-top: 0 !important;
+	//			padding-top: 0 ;
+	//		}
+	//	}
+	//}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -313,20 +337,6 @@
 		padding: em(28) 0 0;
 		@extend .divider;
 		border-left: none;
-	}
-
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
-
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none ;
-				margin-top: 0 !important;
-				padding-top: 0 ;
-			}
-		}
 	}
 
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
@@ -376,8 +386,31 @@
 // The layout-secondary-slim-side class is the column container for a page's secondary content that needs extra top padding if an image in a slim banner is used.
 .layout-secondary-slim-side {
 	@extend %column-config;
-
 	padding-bottom: em(135);
+
+	&:first-child {
+		padding-bottom: 0;
+	}
+
+	@include media(breakpointMedium) {
+		width: columns(3);
+	}
+
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
+	//	&:first-child {
+	//		@include media(breakpointSmall) {
+	//			border-top: none; 
+	//			margin-top: 2em;
+	//			padding-top: 0;
+	//		}
+	//		@include media(breakpointLarge) {
+	//			margin-top: 4em;
+	//		}								
+	//	}
+	//}	
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -394,46 +427,6 @@
 		padding: em(28) 0 0;
 		@extend .divider;
 		border-left: none;
-	}
-
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
-
-
-		&:first-child {
-			@include media(breakpointSmall) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-
-
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-
-		&:first-child {
-			@include media(breakpointLarge) {
-				border-top: none;
-				margin-top: 4em;
-				padding-top: 0;
-			}
-		}
-
-		&:first-child {
-			@include media(breakpointExtraLarge) {
-				border-top: none;
-				margin-top: 4em;
-				padding-top: 0;
-			}
-		}
 	}
 
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
@@ -474,10 +467,6 @@
 			@include font-size(14);
 		}
 	}
-
-	@include media(breakpointMedium) {
-		width: columns(3);
-	}
 }
 
 
@@ -490,6 +479,10 @@
 	padding-right: em(20);
 	position:relative;
 	z-index:1;
+
+	&:first-child {
+		padding-bottom: 0;
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -508,19 +501,19 @@
 		border-left: none;
 	}
 
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
 
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-	}
+	//	&:first-child {
+	//		@include media(breakpointMedium) {
+	//			border-top: none;
+	//			margin-top: 2em;
+	//			padding-top: 0;
+	//		}
+	//	}
+	//}
 
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
 	h2:first-of-type {
@@ -687,19 +680,19 @@
 		margin-bottom:0 !important;
 	}
 
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
 
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 0;
-				padding-top: 0;
-			}
-		}
-	}
+	//	&:first-child {
+	//		@include media(breakpointMedium) {
+	//			border-top: none;
+	//			margin-top: 0;
+	//			padding-top: 0;
+	//		}
+	//	}
+	//}
 
 	@include media(breakpointMedium) {
 		left:0em;
@@ -711,33 +704,18 @@
 	}
 
 	@include media(breakpointLarge) {
-		left:0em;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:6.5em;
-		z-index:2;
 	}
 
 	@include media(breakpointExtraLarge) {
 		left:20px;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:4em;
-		z-index:2;
 	}
 
 	@include media(breakpointHuge) {
 		left:0em;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:60px;
-		z-index:2;
 	}
-
-
 }
 
 
@@ -749,7 +727,6 @@
 	width: 27%;
 	z-index: 2;
 
-
 	@include media(breakpointTiny) {
 		float: left;
 		left: 0px;
@@ -759,54 +736,16 @@
 		z-index: 2;
 	}
 
-
-	@include media(breakpointSmall) {
-		float: left;
-		left: 0px;
-		position: relative;
-		top: 0px;
-		width: 100%;
-		z-index: 2;
-	}
-
-
-	@include media(breakpointMedium) {
-		float: left;
-		left: 0px;
-		position: relative;
-		top: 0px;
-		width: 100%;
-		z-index: 2;
-	}
-
 	@include media(breakpointLarge) {
-		float: left;
 		left: 63px;
-		position: relative;
 		top: 130px;
 		width: 27%;
-		z-index: 2;
 	}
 
 	@include media(breakpointExtraLarge) {
-		float: left;
 		left: 85px;
-		position: relative;
 		top: 100px;
-		width: 27%;
-		z-index: 2;
 	}
-
-	@include media(breakpointHuge) {
-		float: left;
-		left: 85px;
-		position: relative;
-		top: 100px;
-		width: 27%;
-		z-index: 2;
-	}
-
-
 }
 
 
@@ -816,6 +755,9 @@
 
 	background-color: #f1f1f1;
 	padding: em(30);
+	&:first-child {
+		padding-bottom: 0;
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -991,14 +933,13 @@
 .layout-full-bleed {
 	background-color: white;
 	padding: em(30) 0;
-  box-sizing: border-box; //BMC-527 - TrueSight Header issue
+  	box-sizing: border-box; //BMC-527 - TrueSight Header issue
 
 	@include media(breakpointMedium) {
 		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
 		padding: em(60) 0;
 		max-width: none;
 	}
-
 	.home & {
 		padding: em(120) 0 em(120);
 
@@ -1232,7 +1173,6 @@
 }
 
 
-
 // The layout-banner-container-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
 .layout-banner-container-slim {
 	background-image: url(#{$imagesFolder}product-bg2.png);
@@ -1303,10 +1243,6 @@
 		h1, h2 { color: #fff; }
 	}
 }
-
-
-
-
 
 
 // The layout-full-bleed-nopadding class is for main content areas where there is no need for top padding.

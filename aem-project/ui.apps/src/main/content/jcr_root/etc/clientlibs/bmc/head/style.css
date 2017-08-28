@@ -522,17 +522,7 @@ form {
 fieldset {
   border: none;
   margin: 0.66667em 0 0;
-  padding: 0;
-  /*.ie8 & {
-		input[type="radio"],
-		input[type="checkbox"] {
-			& + label {
-				display: inline;
-				margin-left: em(4);
-				min-height: 20px;
-			}
-		}
-	}*/ }
+  padding: 0; }
   fieldset:first-child, fieldset.flush {
     margin-top: 0; }
   fieldset legend {
@@ -550,7 +540,8 @@ fieldset {
         width: 96.6%; } }
   fieldset label,
   fieldset label + select {
-    display: inline-block; }
+    display: inline-block;
+    line-height: normal; }
   fieldset input[type="text"],
   fieldset input[type="number"],
   fieldset input[type="password"],
@@ -660,9 +651,6 @@ fieldset {
     resize: vertical; }
   fieldset + button {
     margin-top: 0.66667em; }
-  fieldset .radio-list > li,
-  fieldset .checkbox-list > li {
-    margin: 0 0 0 0.66667em; }
 
 .select-label {
   font-size: 14px;
@@ -1386,46 +1374,48 @@ blockquote {
 
 .layout-primary {
   padding-top: 0; }
+  .layout-primary:first-child {
+    padding-bottom: 2rem; }
+    @media only screen and (min-width: 48em) {
+      .layout-primary:first-child {
+        padding-bottom: 0; } }
+  @media only screen and (min-width: 48em) {
+    .layout-primary {
+      width: 67.7%; }
+      .layout-primary:first-child {
+        padding-right: 7.2%; }
+      .layout-primary:last-child {
+        padding-left: 7.2%; } }
   .layout-primary.aem-GridColumn {
     margin-right: 0 !important; }
   .full-width .layout-primary {
     width: 100%; }
   .page-product-landing .layout-primary {
     padding-top: 1.55556em; }
-  .layout-primary > section {
-    margin-top: 2.77778em; }
-    .layout-primary > section:first-child {
-      margin-top: 0; }
-  @media only screen and (min-width: 48em) {
-    .layout-primary {
-      margin-right: 7.2%;
-      width: 67.7%; } }
   .layout-primary .-shaded {
     background-color: #f1f1f1;
     padding: 1.66667em; }
 
 .layout-primary-slim {
   padding: 2em 0 0 0; }
+  @media only screen and (min-width: 48em) {
+    .layout-primary-slim {
+      width: 65%; }
+      .layout-primary-slim:first-child {
+        padding-right: 10%; }
+      .layout-primary-slim:last-child {
+        padding-left: 10%; } }
+  @media only screen and (min-width: 60em) {
+    .layout-primary-slim {
+      width: 66%; }
+      .layout-primary-slim:first-child {
+        padding-right: 2%; }
+      .layout-primary-slim:last-child {
+        padding-left: 2%; } }
   .full-width .layout-primary-slim {
     width: 100%; }
   .page-product-landing .layout-primary-slim {
     padding-top: 1.55556em; }
-  .layout-primary-slim > section {
-    margin-top: 2.77778em; }
-    .layout-primary-slim > section:first-child {
-      margin-top: 0; }
-  @media only screen and (min-width: 48em) {
-    .layout-primary-slim {
-      margin-right: 10%;
-      width: 65%; } }
-  @media only screen and (min-width: 60em) {
-    .layout-primary-slim {
-      margin-right: 2%;
-      width: 66%; } }
-  @media only screen and (min-width: 76.25em) {
-    .layout-primary-slim {
-      margin-right: 2%;
-      width: 66%; } }
 
 .layout-product-feature-banner {
   padding-top: 0; }
@@ -1444,6 +1434,11 @@ blockquote {
 
 .layout-secondary {
   padding-bottom: 7.5em; }
+  .layout-secondary:first-child {
+    padding-bottom: 2rem; }
+    @media only screen and (min-width: 48em) {
+      .layout-secondary:first-child {
+        padding-bottom: 0; } }
   .page-product-landing .layout-secondary {
     margin-top: 3em;
     width: 100%; }
@@ -1460,15 +1455,6 @@ blockquote {
     padding: 16px;
     padding: 1.55556em 0 0;
     border-left: none; }
-  .layout-secondary > section {
-    border-top: 1px solid #cacaca;
-    margin-top: 2.22222em;
-    padding-top: 2.22222em; }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary > section:first-child {
-        border-top: none;
-        margin-top: 0 !important;
-        padding-top: 0; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary h2:first-of-type {
       margin-top: 0.3em; } }
@@ -1501,6 +1487,11 @@ blockquote {
 
 .layout-secondary-slim-side {
   padding-bottom: 7.5em; }
+  .layout-secondary-slim-side:first-child {
+    padding-bottom: 0; }
+  @media only screen and (min-width: 48em) {
+    .layout-secondary-slim-side {
+      width: 25%; } }
   .page-product-landing .layout-secondary-slim-side {
     margin-top: 3em;
     width: 100%; }
@@ -1517,30 +1508,6 @@ blockquote {
     padding: 16px;
     padding: 1.55556em 0 0;
     border-left: none; }
-  .layout-secondary-slim-side > section {
-    border-top: 1px solid #cacaca;
-    margin-top: 2.22222em;
-    padding-top: 2.22222em; }
-    @media only screen and (min-width: 30em) {
-      .layout-secondary-slim-side > section:first-child {
-        border-top: none;
-        margin-top: 2em;
-        padding-top: 0; } }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary-slim-side > section:first-child {
-        border-top: none;
-        margin-top: 2em;
-        padding-top: 0; } }
-    @media only screen and (min-width: 60em) {
-      .layout-secondary-slim-side > section:first-child {
-        border-top: none;
-        margin-top: 4em;
-        padding-top: 0; } }
-    @media only screen and (min-width: 76.25em) {
-      .layout-secondary-slim-side > section:first-child {
-        border-top: none;
-        margin-top: 4em;
-        padding-top: 0; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary-slim-side h2:first-of-type {
       margin-top: 0.3em; } }
@@ -1567,9 +1534,6 @@ blockquote {
     .layout-secondary-slim-side .blog-recent .author {
       font-size: 14px;
       font-size: 0.77778rem; } }
-  @media only screen and (min-width: 48em) {
-    .layout-secondary-slim-side {
-      width: 25%; } }
 
 .layout-secondary-slim-side-grey {
   background-color: #f1f1f1;
@@ -1578,6 +1542,8 @@ blockquote {
   padding-right: 1.11111em;
   position: relative;
   z-index: 1; }
+  .layout-secondary-slim-side-grey:first-child {
+    padding-bottom: 0; }
   .page-product-landing .layout-secondary-slim-side-grey {
     margin-top: 3em;
     width: 100%; }
@@ -1594,15 +1560,6 @@ blockquote {
     padding: 16px;
     padding: 1.55556em 0 0;
     border-left: none; }
-  .layout-secondary-slim-side-grey > section {
-    border-top: 1px solid #cacaca;
-    margin-top: 2.22222em;
-    padding-top: 2.22222em; }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary-slim-side-grey > section:first-child {
-        border-top: none;
-        margin-top: 2em;
-        padding-top: 0; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary-slim-side-grey h2:first-of-type {
       margin-top: 0.3em; } }
@@ -1713,15 +1670,6 @@ blockquote {
       padding-top: 0; }
   .layout-secondary-slim figure {
     margin-bottom: 0 !important; }
-  .layout-secondary-slim > section {
-    border-top: 1px solid #cacaca;
-    margin-top: 2.22222em;
-    padding-top: 2.22222em; }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary-slim > section:first-child {
-        border-top: none;
-        margin-top: 0;
-        padding-top: 0; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary-slim {
       left: 0em;
@@ -1732,20 +1680,11 @@ blockquote {
       z-index: 2; } }
   @media only screen and (min-width: 60em) {
     .layout-secondary-slim {
-      left: 0em;
-      width: 25%;
-      padding-top: 0em;
-      position: relative;
-      top: 6.5em;
-      z-index: 2; } }
+      top: 6.5em; } }
   @media only screen and (min-width: 76.25em) {
     .layout-secondary-slim {
       left: 20px;
-      width: 25%;
-      padding-top: 0em;
-      position: relative;
-      top: 4em;
-      z-index: 2; } }
+      top: 4em; } }
 
 .layout-slim-side-image {
   float: left;
@@ -1762,42 +1701,21 @@ blockquote {
       top: 0px;
       width: 100%;
       z-index: 2; } }
-  @media only screen and (min-width: 30em) {
-    .layout-slim-side-image {
-      float: left;
-      left: 0px;
-      position: relative;
-      top: 0px;
-      width: 100%;
-      z-index: 2; } }
-  @media only screen and (min-width: 48em) {
-    .layout-slim-side-image {
-      float: left;
-      left: 0px;
-      position: relative;
-      top: 0px;
-      width: 100%;
-      z-index: 2; } }
   @media only screen and (min-width: 60em) {
     .layout-slim-side-image {
-      float: left;
       left: 63px;
-      position: relative;
       top: 130px;
-      width: 27%;
-      z-index: 2; } }
+      width: 27%; } }
   @media only screen and (min-width: 76.25em) {
     .layout-slim-side-image {
-      float: left;
       left: 85px;
-      position: relative;
-      top: 100px;
-      width: 27%;
-      z-index: 2; } }
+      top: 100px; } }
 
 .layout-secondary-shaded {
   background-color: #f1f1f1;
   padding: 1.66667em; }
+  .layout-secondary-shaded:first-child {
+    padding-bottom: 0; }
   .page-product-landing .layout-secondary-shaded {
     margin-top: 3em;
     width: 100%; }
@@ -3635,11 +3553,17 @@ span .chatbtn {
 .divider-secondary {
   border-top: 1px dashed #cccccc; }
 
-/* Component Divider */
+/* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
   display: block;
   margin: 0;
   padding: .65rem 0; }
+
+.layout-full-bleed > .dividers {
+  padding: 0 1.25%; }
+  .layout-full-bleed > .dividers .divider, .layout-full-bleed > .dividers .product-landing .layout-secondary, .product-landing .layout-full-bleed > .dividers .layout-secondary, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side-grey, .layout-full-bleed > .dividers .product-landing .layout-secondary-cta-container, .product-landing .layout-full-bleed > .dividers .layout-secondary-cta-container, .layout-full-bleed > .dividers .product-landing .layout-secondary-shaded, .product-landing .layout-full-bleed > .dividers .layout-secondary-shaded {
+    margin: 1.85rem 0 0;
+    padding: 0 0 1.25rem; }
 
 /* jQuery Dropdown: A simple dropdown plugin
  *
@@ -4649,6 +4573,18 @@ fieldset:not(#foo) .decorator-select:after {
 fieldset:not(#foo) .decorator-select select {
   outline: none; }
 
+fieldset:not(#foo) .form-group.checkbox li,
+fieldset:not(#foo) .form-group.radio li {
+  margin: 0; }
+  fieldset:not(#foo) .form-group.checkbox li input[type="radio"] + label,
+  fieldset:not(#foo) .form-group.checkbox li input[type="checkbox"] + label,
+  fieldset:not(#foo) .form-group.radio li input[type="radio"] + label,
+  fieldset:not(#foo) .form-group.radio li input[type="checkbox"] + label {
+    padding-left: 22px; }
+
+fieldset:not(#foo) .aem-GridColumn {
+  padding-left: 0; }
+
 /*.oldie {
 	fieldset {
 		input[type='radio'],
@@ -4716,6 +4652,9 @@ fieldset label.inline {
 
 .modal-form-thankyou .layout-full-bleed {
   padding: 0px; }
+
+.cq-Editable-dom.cmp-form-field label {
+  color: #fff; }
 
 .icon-point-list {
   text-align: center; }
@@ -10969,7 +10908,10 @@ section.bmc-engage-header.layout-full-bleed {
   .customer-story-case-banner.wallpapered {
     background: transparent; }
   .customer-story-case-banner .wallpaper-container {
-    z-index: -1; }
+    z-index: 0; }
+  .customer-story-case-banner .layout-inner-wrap {
+    position: relative;
+    z-index: 1; }
   .customer-story-case-banner .layout-primary {
     margin-bottom: 1em; }
     .customer-story-case-banner .layout-primary p {
@@ -15777,9 +15719,13 @@ body.support-central {
 
 .testimonial {
   background-color: #00a79d;
-  margin: 4em 0;
+  margin: 0 0 2em;
   padding: 40px;
   position: relative; }
+  @media only screen and (min-width: 48em) {
+    .testimonial {
+      margin: 0 0 4em;
+      padding: 60px 40px; } }
   .testimonial.row {
     margin-top: 0; }
   .testimonial .layout-inner-wrap {
@@ -15826,9 +15772,6 @@ body.support-central {
     font-size: 16px;
     font-size: 0.88889rem;
     margin-top: 1.33333em; }
-  @media only screen and (min-width: 48em) {
-    .testimonial {
-      padding: 60px 40px; } }
   .page-campaign-landing .testimonial {
     padding: 2em;
     margin: 2em 0; }
