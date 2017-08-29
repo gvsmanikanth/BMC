@@ -1,9 +1,12 @@
 package com.bmc.util;
 
 import com.bmc.mixins.UrlResolver;
+import com.google.common.base.Splitter;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -140,5 +143,30 @@ public interface StringHelper {
     static Optional<String> resolveHref(String urlOrPath) {
         UrlResolver resolver = () -> null;
         return resolver.resolveHref(urlOrPath, false);
+    }
+
+    /**
+     * Extracts a {@link Map} of query string parameters from the given string.
+     */
+    static Map<String, String> extractParameterMap(String urlOrQueryString) {
+        if (urlOrQueryString == null || urlOrQueryString.isEmpty())
+            return Collections.emptyMap();
+
+        int queryIndex = urlOrQueryString.indexOf("?");
+        if (queryIndex == -1) { // no '?'
+            if (!urlOrQueryString.contains("&") && !urlOrQueryString.contains("="))
+                return Collections.emptyMap();
+
+            return Splitter.on("&")
+                    .withKeyValueSeparator("=")
+                    .split(urlOrQueryString);
+        }
+
+        if (queryIndex == urlOrQueryString.length() - 1)
+            return Collections.emptyMap(); // '?' as last character
+
+        return Splitter.on("&")
+                .withKeyValueSeparator("=")
+                .split(urlOrQueryString.substring(queryIndex + 1));
     }
 }
