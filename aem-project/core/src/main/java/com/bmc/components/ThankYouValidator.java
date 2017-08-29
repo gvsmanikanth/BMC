@@ -22,7 +22,7 @@ public class ThankYouValidator extends WCMUsePojo {
         String[] selectors = request.getRequestPathInfo().getSelectors();
         SightlyWCMMode mode = getWcmMode();
         logger.info(mode.toString());
-        Boolean isValid = Arrays.asList(selectors).contains(id);
+        Boolean isValid = Arrays.asList(selectors).contains("PURL" + id);
         if (!isValid && mode.isDisabled()) {
             try {
                 String url = getResourceResolver().map(formPage.getPath()) + ".html";
