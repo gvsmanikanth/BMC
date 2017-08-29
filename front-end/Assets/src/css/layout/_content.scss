@@ -192,6 +192,17 @@
 	}
 }
 
+[class*="50-50-layout"] {
+	.layout-primary,
+	.layout-secondary {
+		@include media(breakpointMedium) {	
+			width: columns(6);
+			&:first-child 	{ padding-right: 1.25%;	}
+			&:last-child 	{ padding-left: 1.25%;	}
+		}
+	}	
+}
+
 // The layout-primary class is the column container for a page's primary content.  It can be customized for specific templates using contexts such as .page-product-landing &.
 .layout-primary {
 	@extend %column-config;
