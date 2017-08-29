@@ -113,7 +113,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             if (page != null) {
                 String vanityURL = page.getVanityUrl();
                 String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
-                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + "." + formGUID + ".html" : vanityURL);
+                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
             response.sendRedirect(purlPage);
