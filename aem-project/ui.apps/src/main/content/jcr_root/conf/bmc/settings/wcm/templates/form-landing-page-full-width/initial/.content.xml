@@ -9,7 +9,8 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-full-width"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/page"
+        bodyClass="page-campaign-landing bmc-nav-loader-nav">
         <root
             jcr:lastModified="{Date}2017-08-23T17:46:06.136-04:00"
             jcr:lastModifiedBy="dtayeh"
