@@ -95,11 +95,14 @@
 .two-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.4);
+		.cq-Editable-dom & {
+			margin-right: columns(0.3);
+		}		
 		width: columns(5.8);
 
 		.page-campaign-landing & {
 			//margin: em(12 18) columns(0.4) em(12 18) -0.25em !important; // use of important keeps this simple; always use these margins when on a campaign landing page
-      margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
+     		margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
 			width: columns(5.6); //Changed 5.6 to 5.7
 		}
 
@@ -127,6 +130,9 @@
 .three-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.3);
+		.cq-Editable-dom & {
+			margin-right: columns(0.2);
+		}
 		width: columns(3.8);
 
 		// last of each row
@@ -139,11 +145,15 @@
 			margin-top: columns(0.3);
 		}
 	}
+
 }
 
 .four-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.4);
+		.cq-Editable-dom & {
+			margin-right: columns(0.3);
+		}		
 		width: columns(5.8);
 
 		// last of each row

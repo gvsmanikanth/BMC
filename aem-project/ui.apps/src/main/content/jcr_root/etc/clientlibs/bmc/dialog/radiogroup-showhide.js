@@ -106,13 +106,11 @@
                 $container = $target.parent();
             }
 
-            var $inputs = $container.find("input");
+            var $inputs = $container.find("input, foundation-autocomplete");
 
-            if (!$container.hasClass("hide")) {
-                $container.addClass("hide");
-                if (hideInputs($inputs, item))
-                    needsValidationUpdate = true;
-            }
+            $container.addClass("hide");
+            if (hideInputs($inputs, item))
+                needsValidationUpdate = true;
 
             // show/enable targets as appropriate, supporting multiple values in the target's data-showhidetargetvalue attribute
             var targetValues = $target.attr("data-showhidetargetvalue");
@@ -130,40 +128,39 @@
 
     function hideInputs($inputs, item) {
         var needsValidationUpdate = false;
-        if (item.IsInMultifield) {
-            $inputs.each(function () {
-                var $input = $(this);
-                if ($input.attr("required")) {
-                    $input.attr("data-was-required", "true");
-                    $input.removeAttr("required");
-                    needsValidationUpdate = true;
-                }
-                if ($input.attr("aria-required") === "true") {
-                    $input.attr("aria-was-required", "true");
-                    $input.removeAttr("aria-required");
-                    needsValidationUpdate = true;
-                }
-            });
-        }
+
+        $inputs.each(function () {
+            var $input = $(this);
+            if ($input.attr("required")) {
+                $input.attr("data-was-required", "true");
+                $input.removeAttr("required");
+                needsValidationUpdate = true;
+            }
+            if ($input.attr("aria-required") === "true") {
+                $input.attr("aria-was-required", "true");
+                $input.removeAttr("aria-required");
+                needsValidationUpdate = true;
+            }
+        });
+
         $inputs.attr("disabled", "disabled");
 
         return needsValidationUpdate;
     }
 
     function showInputs($inputs, item) {
-        if (item.IsInMultifield) {
-            $inputs.each(function () {
-                var $input = $(this);
-                if ($input.attr("data-was-required")) {
-                    $input.attr("required", "required");
-                    $input.removeAttr("data-was-required");
-                }
-                if ($input.attr("aria-was-required") === "true") {
-                    $input.attr("aria-required", "true");
-                    $input.removeAttr("aria-was-required");
-                }
-            });
-        }
+        $inputs.each(function () {
+            var $input = $(this);
+            if ($input.attr("data-was-required")) {
+                $input.attr("required", "required");
+                $input.removeAttr("data-was-required");
+            }
+            if ($input.attr("aria-was-required") === "true") {
+                $input.attr("aria-required", "true");
+                $input.removeAttr("aria-was-required");
+            }
+        });
+
         $inputs.removeAttr("disabled");
     }
 
