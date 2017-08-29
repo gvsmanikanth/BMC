@@ -31,6 +31,13 @@
                                     fieldLabel="Citation"
                                     rows="2"
                                     name="./citation"/>
+                            <fullBleedCenterText
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="When checked, this component will render centered text and fullbleed across a one column page."
+                                    name="./fullBleedCenterText"
+                                    text="Fullbleed with centered text?"
+                                    value="{Boolean}true"/>
                             <sourcelinktext
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
@@ -52,9 +59,10 @@
                                     name="./ctatext"/>
                             <ctaurl
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Enter the CTA Link URL here, beginning with http or https"
                                     fieldLabel="(Optional) CTA button URL"
+                                    rootPath="/content/bmc"
                                     name="./ctaurl"/>
                         </items>
                     </column>

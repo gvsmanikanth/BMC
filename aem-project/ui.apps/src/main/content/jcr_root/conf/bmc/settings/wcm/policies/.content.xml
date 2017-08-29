@@ -186,7 +186,7 @@
                     </policy_31280403352873>
                     <bmc-default
                         jcr:description="Policy for BMC Partner List Page"
-                        jcr:lastModified="{Date}2017-08-10T13:59:37.899-04:00"
+                        jcr:lastModified="{Date}2017-08-14T17:22:21.434-04:00"
                         jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Partner List Page Policy"
@@ -246,7 +246,7 @@
                             </assetToComponentMapping>
                         </cq:authoring>
                         <jcr:content
-                            cq:lastReplicated="{Date}2017-08-10T14:00:19.256-04:00"
+                            cq:lastReplicated="{Date}2017-08-14T17:58:19.051-04:00"
                             cq:lastReplicatedBy="dtayeh"
                             cq:lastReplicationAction="Activate"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
@@ -254,19 +254,33 @@
                             mergeList="{Boolean}true"/>
                     </bmc-default>
                     <policy_331111633697331
-                        jcr:lastModified="{Date}2017-08-10T14:05:24.540-04:00"
+                        jcr:lastModified="{Date}2017-08-23T17:22:47.157-04:00"
                         jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Content"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,group:BMC.form,/apps/bmc/components/structure/maincontentcontainer,/apps/bmc/components/structure/secondarycontentcontainer]">
                         <jcr:content
-                            cq:lastReplicated="{Date}2017-08-10T14:05:46.715-04:00"
+                            cq:lastReplicated="{Date}2017-08-23T17:34:37.467-04:00"
                             cq:lastReplicatedBy="dtayeh"
                             cq:lastReplicationAction="Activate"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
                             jcr:primaryType="nt:unstructured"/>
                     </policy_331111633697331>
+                    <policy_1503524795659
+                        jcr:lastModified="{Date}2017-08-23T17:47:26.480-04:00"
+                        jcr:lastModifiedBy="dtayeh"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="BMC Content Plus Form"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,group:BMC.form,group:BMC.structure]">
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-08-23T18:00:47.678-04:00"
+                            cq:lastReplicatedBy="dtayeh"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
+                    </policy_1503524795659>
                 </responsivegrid>
             </components>
         </foundation>
@@ -284,8 +298,8 @@
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.content]">
                         <jcr:content
-                            cq:lastReplicated="{Date}2017-06-13T14:07:28.485-07:00"
-                            cq:lastReplicatedBy="admin"
+                            cq:lastReplicated="{Date}2017-08-14T18:01:20.555-04:00"
+                            cq:lastReplicatedBy="aviner"
                             cq:lastReplicationAction="Activate"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
                             jcr:primaryType="nt:unstructured"/>
@@ -363,8 +377,8 @@
                             jcr:primaryType="nt:unstructured"/>
                     </policy_1499280832350>
                     <policy_1499383212913
-                        jcr:lastModified="{Date}2017-07-07T16:37:22.084-07:00"
-                        jcr:lastModifiedBy="admin"
+                        jcr:lastModified="{Date}2017-08-23T07:02:53.287-04:00"
+                        jcr:lastModifiedBy="sseshadri"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Basic Component Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
@@ -383,8 +397,22 @@
                         jcr:title="Partner Data"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="/apps/bmc/components/content/partner-data">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            cq:lastReplicated="{Date}2017-08-14T17:23:55.944-04:00"
+                            cq:lastReplicatedBy="dtayeh"
+                            cq:lastReplicationAction="Activate"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            jcr:primaryType="nt:unstructured"/>
                     </policy_710463152311244>
+                    <policy_174524709469215
+                        jcr:lastModified="{Date}2017-08-23T14:16:58.050-04:00"
+                        jcr:lastModifiedBy="dtayeh"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Form Plus Content Policy"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,group:BMC.form,group:BMC.structure]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </policy_174524709469215>
                 </maincontentcontainer>
             </structure>
             <content jcr:primaryType="nt:unstructured">
@@ -513,13 +541,13 @@
                 <text jcr:primaryType="nt:unstructured">
                     <policy_1496773879581
                         jcr:description="Added tables, sub/superscript, special characters"
-                        jcr:lastModified="{Date}2017-08-11T14:23:25.023-04:00"
+                        jcr:lastModified="{Date}2017-08-23T18:00:16.711-04:00"
                         jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Text Policy Test 1"
                         sling:resourceType="wcm/core/components/policy/policy">
                         <jcr:content
-                            cq:lastReplicated="{Date}2017-08-11T14:23:53.826-04:00"
+                            cq:lastReplicated="{Date}2017-08-23T18:00:47.678-04:00"
                             cq:lastReplicatedBy="dtayeh"
                             cq:lastReplicationAction="Activate"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
@@ -752,13 +780,13 @@
                 </text>
                 <wysiwyg jcr:primaryType="nt:unstructured">
                     <policy_1497986163679
-                        jcr:lastModified="{Date}2017-08-11T14:23:33.745-04:00"
+                        jcr:lastModified="{Date}2017-08-23T18:00:27.673-04:00"
                         jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Wysiwyg Policy"
                         sling:resourceType="wcm/core/components/policy/policy">
                         <jcr:content
-                            cq:lastReplicated="{Date}2017-08-11T14:23:53.826-04:00"
+                            cq:lastReplicated="{Date}2017-08-23T18:00:47.678-04:00"
                             cq:lastReplicatedBy="dtayeh"
                             cq:lastReplicationAction="Activate"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
@@ -876,8 +904,8 @@
             <forms jcr:primaryType="nt:unstructured">
                 <form jcr:primaryType="nt:unstructured">
                     <policy_1496377446291
-                        jcr:lastModified="{Date}2017-06-01T21:24:24.120-07:00"
-                        jcr:lastModifiedBy="admin"
+                        jcr:lastModified="{Date}2017-08-23T07:05:03.873-04:00"
+                        jcr:lastModifiedBy="sseshadri"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="BMC Form Policy Test"
                         sling:resourceType="wcm/core/components/policy/policy"
@@ -934,7 +962,12 @@
         jcr:title="BMC Form Marketing Content Policy"
         sling:resourceType="wcm/core/components/policy/policy"
         components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.content]">
-        <jcr:content jcr:primaryType="nt:unstructured"/>
+        <jcr:content
+            cq:lastReplicated="{Date}2017-08-14T18:01:20.555-04:00"
+            cq:lastReplicatedBy="aviner"
+            cq:lastReplicationAction="Activate"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured"/>
     </policy_1502485949833>
     <policy_1502486056645
         jcr:lastModified="{Date}2017-08-11T17:14:43.980-04:00"
@@ -943,7 +976,12 @@
         jcr:title="BMC Form Marketing Content Policy"
         sling:resourceType="wcm/core/components/policy/policy"
         components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.content]">
-        <jcr:content jcr:primaryType="nt:unstructured"/>
+        <jcr:content
+            cq:lastReplicated="{Date}2017-08-14T18:01:20.555-04:00"
+            cq:lastReplicatedBy="aviner"
+            cq:lastReplicationAction="Activate"
+            jcr:mixinTypes="[cq:ReplicationStatus]"
+            jcr:primaryType="nt:unstructured"/>
     </policy_1502486056645>
     <policy_1502486172658
         jcr:lastModified="{Date}2017-08-11T17:16:34.922-04:00"
@@ -981,4 +1019,40 @@
         components="[/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,/apps/bmc/components/forms/elements/hidden,/apps/bmc/components/forms/elements/options,/apps/bmc/components/forms/elements/input-field]">
         <jcr:content jcr:primaryType="nt:unstructured"/>
     </policy_1502486709566>
+    <policy_1502758539145
+        jcr:lastModified="{Date}2017-08-14T20:57:31.778-04:00"
+        jcr:lastModifiedBy="dtayeh"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Content Modified"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,group:BMC.structure]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1502758539145>
+    <policy_1502758662769
+        jcr:lastModified="{Date}2017-08-14T20:57:57.929-04:00"
+        jcr:lastModifiedBy="dtayeh"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Content Modified"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/libs/dam/cfm/components/contentfragment,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,group:BMC.structure]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1502758662769>
+    <policy_1502758717559
+        jcr:lastModified="{Date}2017-08-14T20:59:06.910-04:00"
+        jcr:lastModifiedBy="dtayeh"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Content Modified"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,group:BMC.form]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1502758717559>
+    <policy_1503512665997
+        jcr:lastModified="{Date}2017-08-23T14:25:15.220-04:00"
+        jcr:lastModifiedBy="dtayeh"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Content Plus Form"
+        sling:resourceType="wcm/core/components/policy/policy"
+        components="[/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/foundation/components/responsivegrid,group:BMC.content,/apps/bmc/components/forms/form,/apps/bmc/components/forms/elements/hidden,/apps/bmc/components/forms/elements/options,/apps/bmc/components/forms/elements/input-field]">
+        <jcr:content jcr:primaryType="nt:unstructured"/>
+    </policy_1503512665997>
 </jcr:root>

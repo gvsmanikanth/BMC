@@ -58,5 +58,4 @@ public class SupportMeta {
         return issuePath;
     }
 
-
 }

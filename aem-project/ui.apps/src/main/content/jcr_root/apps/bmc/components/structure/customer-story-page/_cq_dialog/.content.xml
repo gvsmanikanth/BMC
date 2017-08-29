@@ -107,12 +107,14 @@
                                             jcr:primaryType="nt:unstructured"
                                             jcr:title="Metadata"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured"
+                                               sling:hideChildren="[product-interest,productLine1]">
                                             <company-size
                                                     jcr:primaryType="nt:unstructured"
                                                     fieldLabel="Company Size"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyOption="true"
+                                                    emptyText="Select company size"
                                                     multiple="false"
                                                     metadataName="company-size"
                                                     name="./companySize">

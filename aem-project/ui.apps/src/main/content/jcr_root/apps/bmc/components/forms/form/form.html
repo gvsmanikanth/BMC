@@ -5,7 +5,7 @@
       data-sly-use.params="com.bmc.components.utils.FormRequestParameterUtil"
       id="${container.id}" name="${container.name}" method="POST" action="${resource.path}.post.html"
       enctype="${container.enctype}"
-      class="${grid.cssClass} customerform" novalidate="novalidate">
+      class="${grid.cssClass} customerform" data-leadgen="${properties.isNonLeadGenForm ? 'noleadgen' : 'leadgen' }">
     <input data-sly-repeat.param="${params.parameterMap}" name="${param}" value="${params.parameterMap[param]}" type="hidden" />
     <!--/* This is the honeypot field. Do not remvoe. */-->
     <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
@@ -18,5 +18,13 @@
          data-sly-test="${wcmmode.edit || wcmmode.preview}"></sly>
     <sly data-sly-resource="${'./form-btn' @ resourceType='bmc/components/forms/elements/button'}"/>
     <sly data-sly-resource="${'./form-terms' @ resourceType='bmc/components/content/text'}"/>
+
+	<input type="hidden" name="C_Lead_Rating_Override1" value="" />
+	<input type="hidden" name="Email_Source" value="" />
+	<input type="hidden" name="elqCustomerGUID" value="" />
+	<input type="hidden" name="C_Source_Name1" value="" />
+	<input type="hidden" name="adobe_unique_hit_id" value="" />
+
+    <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><input type="text" name="Surname" id="Surname"></span>
 
 </form>

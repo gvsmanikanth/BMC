@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <BMC_Atrium_CMDB
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Atrium CMDB"/>
+    <BMC_Atrium_Orchestrator
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Atrium Orchestrator"/>
+    <BladeLogic_Database_Automation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BladeLogic Database Automation"/>
+    <BladeLogic_Network_Automation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BladeLogic Network Automation"/>
+    <BladeLogic_Server_Automation
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BladeLogic Server Automation"/>
+    <BladeLogic_Threat_Director
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BladeLogic Threat Director"/>
+    <Client_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Client Management"/>
+    <Cloud_Lifecycle_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Cloud Lifecycle Management"/>
+    <Control-M
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M"/>
+    <Dashboards_and_Analytics
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Dashboards and Analytics"/>
+    <DevOps
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DevOps"/>
+    <Discovery_ADDM
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Discovery (ADDM)"/>
+    <FootPrints_service_desk
+            jcr:primaryType="nt:unstructured"
+            jcr:title="FootPrints service desk"/>
+    <HR_Case_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="HR Case Management"/>
+    <ITIL
+            jcr:primaryType="nt:unstructured"
+            jcr:title="ITIL®"/>
+    <Innovation_Suite
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Innovation Suite"/>
+    <MyIT
+            jcr:primaryType="nt:unstructured"
+            jcr:title="MyIT"/>
+    <ProactiveNet
+            jcr:primaryType="nt:unstructured"
+            jcr:title="ProactiveNet"/>
+    <Remedy_AR_System
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Remedy AR System"/>
+    <Remedy_ITSM
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Remedy ITSM"/>
+    <Remedyforce
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Remedyforce"/>
+    <Service_Level_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Service Level Management"/>
+    <Smart_IT
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Smart IT"/>
+    <Track-It
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Track-It!"/>
+    <TrueSight_App_Visibility_Manager
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight App Visibility Manager"/>
+    <TrueSight_Capacity_Optimization
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Capacity Optimization"/>
+    <TrueSight_IT_Data_Analytics
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight IT Data Analytics"/>
+    <TrueSight_Infrastructure_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Infrastructure Management"/>
+    <TrueSight_Middleware_Monitoring
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Middleware Monitoring"/>
+    <TrueSight_Operations_Management
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Operations Management"/>
+</jcr:root>

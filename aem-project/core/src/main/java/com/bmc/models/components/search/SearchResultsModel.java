@@ -86,9 +86,6 @@ public class SearchResultsModel {
             else if(labelParam.equals("corporate")){
                 values.add(getPageLocale());
             }
-            else if(labelParam.equals("communities")){
-                values.add("communities");
-            }
             else if(labelParam.equals("documentation")){
                 values.add("docs");
             }
@@ -110,7 +107,7 @@ public class SearchResultsModel {
             else if(labelParam.equals("blogs")){
                 values.add("blogs");
             } else {
-                values.addAll(Arrays.asList(pageLocale,"newsroom","docs","marketplace","communities"));
+                values.addAll(Arrays.asList(pageLocale,"newsroom","docs","marketplace"));
             }
 
             valueMap.put("values", values);

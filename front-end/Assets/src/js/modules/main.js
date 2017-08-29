@@ -113,7 +113,7 @@ function addFilterToArrayProtoype() {
 	addNthChildClasses();  //BMC-527 - Uncommented code.
 
 	// turn off browser default validation so we can perform our own
-	$('form#leadgen, form#nonleadgen')
+	$('[data-leadgen="noleadgen"], [data-leadgen="leadgen"]')
 		.attr('novalidate', 'novalidate')
 		.on('submit', function(e) {
 			var $form = $(this),
@@ -390,7 +390,7 @@ function addFilterToArrayProtoype() {
 
 	// only use floatlabels when the browser supports transitions and placeholders
 	if (Modernizr.csstransitions && Modernizr.input.placeholder) {
-		$('label + input:not(.search-product)').floatlabel({
+		$('label.accessibility + input:not(.search-product)').floatlabel({
 			labelEndTop: '15px',
 			typeMatches: /text|password|email|number|search|url|tel/
 		});

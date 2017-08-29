@@ -24,11 +24,11 @@
                 <div class="ctabar__buttonwrap">
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
                         <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
                     </div>
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
                         <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
                     </div>
                 </div>
             </sly>
@@ -36,103 +36,11 @@
             <!-- one or two buttons, no headers -->
             <sly data-sly-test="${!properties.primaryCTAheader && !properties.secondaryCTAheader}">
                 <div class="text-center">
-                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="#">${properties.primaryCTAtext @ context = 'html'}</a>
-                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="#">${properties.secondaryCTAtext @ context = 'html'}</a>
+                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
+                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
                 </div>
             </sly>
 
         </div>
     </div>
 </section>
-
-
-<!--/*
-
-<div style="margin-top: 12em;">
-<section class="CTA-simple">
-    <div class="layout-inner-wrap">
-        <h2>Heading</h2>
-        <a class="btn-secondary learn-more" href="#">Start a free trial</a>
-    </div>
-</section>
-
-<hr>
-
-<section class="CTA-simple">
-    <div class="layout-inner-wrap">
-        <h2>Heading</h2>
-        <a class="btn learn-more" href="#" data-form="" data-location="Page-Body-KeyFeatures" data-parent-id="401252135" target="_self"> Contact BMC Sales</a>
-    </div>
-</section>
-
-<hr>
-
-<section class="CTA-simple">
-    <div class="layout-inner-wrap">
-        <h2>Heading</h2>
-        <a class="btn-secondary learn-more" href="#" data-form="xxx" data-location="Page-Body-KeyFeatures" data-parent-id="401252495" target="_self">Start your demo</a>
-        <a class="btn learn-more" href="#" data-form="" data-location="Page-Body-KeyFeatures" data-parent-id="401252495">Contact BMC Sales</a>
-    </div>
-</section>
-
-<hr>
-
-<section class="cta-wrapper">
-    <div class="layout-inner-wrap">
-        <div class="cta-content text-center">
-            <p>Heading over Green Button</p>
-            <a class="btn-secondary learn-more" href="#" data-form="xxx" data-location="Page-Body-KeyFeatures" data-parent-id="400568261">Start a free trial</a>
-        </div>
-    </div>
-</section>
-
-<hr>
-
-<section class="cta-wrapper">
-    <div class="layout-inner-wrap">
-        <div class="cta-content text-center">
-            <p>Heading over Blue Button</p>
-            <a class="btn learn-more" href="#" data-form="" data-location="Page-Body-KeyFeatures" data-parent-id="400568421" target="_self">Contact BMC Sales</a>
-        </div>
-    </div>
-</section>
-
-<hr>
-
-<section class="cta-wrapper">
-    <div class="layout-inner-wrap row">
-        <div class="two-up text-center">
-            <p>Heading over Green Button - Start your demo</p>
-            <a class="btn-secondary" href="#" data-form="xxx" data-location="Page-Body-KeyFeatures" data-parent-id="400568211" target="_self">Start your demo  › </a>
-        </div>
-        <div class="two-up text-center">
-            <p>Heading over Blue Button</p>
-            <a class="btn" href="#" data-form="" data-location="Page-Body-KeyFeatures" data-parent-id="400568211" target="_self">Contact BMC Sales  › </a>
-        </div>
-    </div>
-</section>
-
-<hr>
-
-<section class="topcontent bg-seashell">
-    <div class="layout-inner-wrap">
-        <div class="tagline">
-            Content in the Definition WYSIWYG field. Content does not need paragraph tags. Just enter content as is in WYSIWYG. A CallToAction item may be item browsed. Background color may be light grey or white. Content may be <b>bold</b> or <a href="/">linked</a>. <br>
-            <a class="btn learn-more" href="#">CallToAction text that displays as button with an embedded link</a>
-
-        </div>
-    </div>
-</section>
-
-<hr>
-
-<section class="topcontent bg-white">
-    <div class="layout-inner-wrap">
-        <div class="tagline">
-            Content in the Definition WYSIWYG field. This example does not include a CallToAction button. It has a White background.<br> <br>
-        </div>
-    </div>
-</section>
-</div>
-
-*/-->

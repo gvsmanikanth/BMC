@@ -1,16 +1,23 @@
-<blockquote class="testimonial divider">
-    <p>
-        ${properties.quote}
-    </p>
-    <cite>
-        — ${properties.citation}
-    </cite>
+<blockquote class="${properties.fullBleedCenterText ? 'fullbleed-blockquote' : 'testimonial divider'}">
+    <div class="layout-inner-wrap">
 
-    <sly data-sly-test="${properties.sourcelinktext}">
-        <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext}</a></h5>
-    </sly>
+        <sly data-sly-test="${properties.fullBleedCenterText}">
+            ${properties.quote @ context='html'}
+        </sly>
+        <sly data-sly-test="${!properties.fullBleedCenterText}">
+            <p>${properties.quote @ context='html'}</p>
+        </sly>
 
-    <section data-sly-test="${properties.ctatext}">
-        <a class="btn-white learn-more" href="${properties.ctaurl}">${properties.ctatext}</a>
-    </section>
+        <cite data-sly-test="${properties.citation}">
+            — ${properties.citation @ context='html'}
+        </cite>
+
+        <sly data-sly-test="${properties.sourcelinktext}">
+            <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext @ context='html'}</a></h5>
+        </sly>
+
+        <section data-sly-test="${properties.ctatext}">
+            <a class="btn-white learn-more" href="${properties.ctaurl}">${properties.ctatext}</a>
+        </section>
+    </div>
 </blockquote>

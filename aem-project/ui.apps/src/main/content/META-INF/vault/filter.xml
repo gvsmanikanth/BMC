@@ -6,6 +6,10 @@
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
     <!--<filter root="/conf/bmc" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 
@@ -14,8 +18,13 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
+    <filter root="/etc/map.publish" mode="update"/>
+
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
+
+    <!--<filter root="/content/bmc/language-masters/en/footers" mode="merge" />-->
+
     <filter root="/content/experience-fragments/bmc" mode="merge" />
 
     <filter root="/content/dam/bmc" mode="merge" />

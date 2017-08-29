@@ -3,7 +3,8 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Form Options"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    helpPath="https://www.adobe.com/go/aem_cmp_form_options_v1">
+    helpPath="https://www.adobe.com/go/aem_cmp_form_options_v1"
+    extraClientlibs="[bmc.requiredToggle]">
     <content
         granite:class="core-wcm-form-options-v1"
         jcr:primaryType="nt:unstructured"
@@ -49,6 +50,14 @@
                                         value="multi-drop-down"/>
                                 </items>
                             </optionTypes>
+                            <hideLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Needed if the label is required only for accessibility purpose and does not impart any additional visual information about the field"
+                                name="./hideTitle"
+                                text="Hide the label from being displayed"
+                                value="true"
+                                sling:orderBefore="title"/>                            
                             <title
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -190,6 +199,27 @@
                                     </options>
                                 </items>
                             </fromLocal>
+                            <ValidationHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="{Long}3"
+                                text="Validation"/>
+                                <required
+                                    granite:class="cmp-form-textfield-required"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldDescription="Whether the user must fill in a value before submitting the form"
+                                    name="./required"
+                                    text="Required"
+                                    value="true"/>
+
+                                <constraintMessage
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldDescription="Message displayed as tooltip when submitting the form if the value is left empty"
+                                    fieldLabel="Required Message"
+                                    name="./requiredMessage"
+                                    wrapperClass="cmp-form-textfield-constraintmessage"/>                                                    
                             <aboutHeading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/heading"
