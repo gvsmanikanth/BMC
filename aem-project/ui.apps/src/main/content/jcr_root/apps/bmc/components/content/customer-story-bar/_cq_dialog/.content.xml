@@ -38,12 +38,12 @@
                                     rootPath="/content/bmc"/>
 
                             <stories jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
                                        fieldLabel="Stories">
                                 <field
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                        acs-commons-nested="JSON_STORE"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                         name="./stories">
                                     <layout
                                             jcr:primaryType="nt:unstructured"
@@ -52,7 +52,7 @@
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
                                                 <pagePath
                                                         jcr:primaryType="nt:unstructured"
