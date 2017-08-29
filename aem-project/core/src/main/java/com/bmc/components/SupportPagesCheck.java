@@ -1,15 +1,13 @@
 package com.bmc.components;
 import java.util.HashMap;
-
 import javax.jcr.Session;
-
 import org.apache.jackrabbit.api.security.user.UserManager;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.services.SupportCentralService;
-import com.day.cq.wcm.api.Page;
-
 public class SupportPagesCheck extends WCMUsePojo {
+	private static final Logger logger = LoggerFactory.getLogger(SupportPagesCheck.class);
 	public String getSupportCentralUrl() {
         return supportCentralUrl;
     }
@@ -37,7 +35,8 @@ public class SupportPagesCheck extends WCMUsePojo {
         return getCurrentPage().getPath();
     }
     public Boolean getIsSupportPage() {
-    	if(getCurrentPage().getPath().contains("/support/")){
+    	logger.info("templateName"+getResourcePage().getTemplate().getName());
+    	if(getResourcePage().getTemplate().getName().equals("support-central") || getResourcePage().getTemplate().getName().equals("support-search")){
     		return true;
     	}else{
     	return false;
@@ -52,5 +51,5 @@ public class SupportPagesCheck extends WCMUsePojo {
         }
         return true;
     }
-    
+     
 }
