@@ -1,137 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
           xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured"
-          jcr:title="Regional Office" sling:resourceType="cq/gui/components/authoring/dialog"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Regional Office"
+          sling:resourceType="cq/gui/components/authoring/dialog"
           mode="edit">
     <content
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/container">
-        <layout
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/foundation/layouts/tabs"/>
+            sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <general
+            <tabs
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                    jcr:title="General">
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <column
+                    <general
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            jcr:title="General">
                         <items jcr:primaryType="nt:unstructured">
-                            <label
+                            <column
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    emptyText="Houston"
-                                    fieldLabel="Office Name"
-                                    fieldDescription="The name of the regional office. Typically, this is the city in which the office is located."
-                                    name="./name"
-                                    required="{Boolean}true"/>
-                            <group
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    emptyText="Texas"
-                                    fieldLabel="Group Name"
-                                    fieldDescription="Used if grouping is enabled in the regional offices component used to display this office. Typically, this the state or region containing the office."
-                                    name="./group"
-                            />
-                            <timezone
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                    fieldLabel="Time Zone"
-                                    name="./timezone">
-                                <datasource
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="/apps/bmc/components/forms/datasource/timezones"/>
-                            </timezone>
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <label
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Houston"
+                                            fieldLabel="Office Name"
+                                            fieldDescription="The name of the regional office. Typically, this is the city in which the office is located."
+                                            name="./name"
+                                            required="{Boolean}true"/>
+                                    <group
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            emptyText="Texas"
+                                            fieldLabel="Group Name"
+                                            fieldDescription="Used if grouping is enabled in the regional offices component used to display this office. Typically, this the state or region containing the office."
+                                            name="./group"/>
+                                    <timezone
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Time Zone"
+                                            name="./timezone">
+                                        <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/bmc/components/forms/datasource/timezones"/>
+                                    </timezone>
+                                </items>
+                            </column>
                         </items>
-                    </column>
-                </items>
-            </general>
-            <address
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                    jcr:title="Address">
-                <items jcr:primaryType="nt:unstructured">
-                    <column
+                    </general>
+                    <address
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            jcr:title="Address">
                         <items jcr:primaryType="nt:unstructured">
-                            <address
+                            <column
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                    fieldDescription="Enter address information as you want it to appear. Use Shift-Return to create single line breaks."
-                                    fieldLabel="Address"
-                                    name="./address"
-                                    useFixedInlineToolbar="{Boolean}true"
-                                    required="{Boolean}true">
-                                <rtePlugins jcr:primaryType="nt:unstructured">
-                                    <format
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <address
                                             jcr:primaryType="nt:unstructured"
-                                            features="*"/>
-                                    <misctools
-                                            jcr:primaryType="nt:unstructured"
-                                            features="*"/>
-                                    <spellcheck
-                                            jcr:primaryType="nt:unstructured"
-                                            features="*"/>
-                                </rtePlugins>
-                                <htmlRules jcr:primaryType="nt:unstructured">
-                                    <blockHandling
-                                            jcr:primaryType="nt:unstructured"
-                                            removeSingleParagraphContainer="{Boolean}true"/>
-                                </htmlRules>
-                            </address>
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldDescription="Enter address information as you want it to appear. Use Shift-Return to create single line breaks."
+                                            fieldLabel="Address"
+                                            name="./address"
+                                            useFixedInlineToolbar="{Boolean}true"
+                                            required="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            <misctools
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            <spellcheck
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                        </rtePlugins>
+                                        <htmlRules jcr:primaryType="nt:unstructured">
+                                            <blockHandling
+                                                    jcr:primaryType="nt:unstructured"
+                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                        </htmlRules>
+                                    </address>
+                                </items>
+                            </column>
                         </items>
-                    </column>
-                </items>
-            </address>
-            <phones
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                    jcr:title="Phone Numbers">
-                <items jcr:primaryType="nt:unstructured">
-                    <column
+                    </address>
+                    <phones
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            jcr:title="Phone Numbers">
                         <items jcr:primaryType="nt:unstructured">
-                            <phones
+                            <column
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                    composite="{Boolean}true"
-                                    fieldLabel="Phone Numbers">
-                                <field
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                                        name="./phones">
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <label
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <phones
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                            composite="{Boolean}true"
+                                            fieldLabel="Phone Numbers">
+                                        <field
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                emptyText="Toll-Free"
-                                                fieldLabel="Label"
-                                                name="label"/>
-                                        <text
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                emptyText="1 (800) 555-1234"
-                                                fieldLabel="Link Text"
-                                                name="text"/>
-                                        <url
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                emptyText="1 (800) 555-1234"
-                                                fieldLabel="Phone Number"
-                                                name="phone"
-                                                required="{Boolean}true"/>
-                                    </items>
-                                </field>
-                            </phones>
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                name="./phones">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <label
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Toll-Free"
+                                                        fieldLabel="Label"
+                                                        name="label"/>
+                                                <text
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="1 (800) 555-1234"
+                                                        fieldLabel="Link Text"
+                                                        name="text"/>
+                                                <url
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="1 (800) 555-1234"
+                                                        fieldLabel="Phone Number"
+                                                        name="phone"
+                                                        required="{Boolean}true"/>
+                                            </items>
+                                        </field>
+                                    </phones>
+                                </items>
+                            </column>
                         </items>
-                    </column>
+                    </phones>
                 </items>
-            </phones>
+            </tabs>
         </items>
     </content>
 </jcr:root>
