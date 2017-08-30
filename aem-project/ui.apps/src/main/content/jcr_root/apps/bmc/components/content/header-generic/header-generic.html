@@ -1,4 +1,4 @@
-<div class="header-generic layout-inner-wrap">
+<div class="header-generic layout-inner-wrap" data-sly-use.data="com.bmc.components.HeaderGeneric">
     <h1>${properties.headerText @ context='html'}</h1>
 
     <p>
@@ -6,11 +6,11 @@
     </p>
 
     <p>
-        <a data-sly-test="${properties.link1text}" class="link-icon-product-resources mo-product-resources" href="${properties.link1url}" title="${properties.link1text}">${properties.link1text}</a>
+        <a data-sly-test="${data.link1.text}" class="link-icon-product-resources mo-product-resources ${data.link1.cssClass}" href="${data.link1.href}" title="${data.link1.text}">${data.link1.text}</a>
     </p>
 
-    <a data-sly-test="${properties.cta1text}" class="btn learn-more" href="${properties.cta1url}" title="${properties.cta1text}">${properties.cta1text}</a>
-    <a data-sly-test="${properties.cta2text}" class="btn-secondary learn-more" href="${properties.cta2url}" title="${properties.cta2text}">${properties.cta2text}</a>
-    <a data-sly-test="${properties.cta3text}" class="btn-secondary learn-more" href="${properties.cta3url}" title="${properties.cta3text}">${properties.cta3text}</a>
+    <a data-sly-test="${data.cta1.text}" class="btn learn-more ${data.cta1.cssClass}" href="${data.cta1.href}" title="${data.cta1.text}">${data.cta1.text}</a>
+    <a data-sly-test="${data.cta2.text}" class="btn-secondary learn-more ${data.cta2.cssClass}" href="${data.cta2.href}" title="${data.cta2.text}">${data.cta2.text}</a>
+    <a data-sly-test="${data.cta3.text}" class="btn-secondary learn-more ${data.cta3.cssClass}" href="${data.cta3.href}" title="${data.cta3.text}">${data.cta3.text}</a>
 
 </div>
