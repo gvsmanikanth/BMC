@@ -50,14 +50,15 @@
                                                 <showMagnifierIcon
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                                    checked="true"
+                                                    checked="false"
                                                     name="./showMagnifierIcon"
                                                     text="Show the magnifier Icon?"
-                                                    uncheckedValue="true"
+                                                    uncheckedValue="false"
                                                     value="{Boolean}true"/>
                                                 <isfigureVideo
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                    checked="{Boolean}false"
                                                     name="./isfigureVideo"
                                                     text="Is the figure a Video?"
                                                     uncheckedValue="false"
@@ -65,11 +66,11 @@
                                                 <videoImagePath
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                                    class="cq-dialog-checkbox-enabledisable-target"
                                                     fieldDescription="Video Image Path field "
                                                     fieldLabel="Provide a Image to upload the video asset"
+                                                    hidden="{Boolean}false"
                                                     name="./videoImagePath"
-                                                    rootPath="/content/bmc"/>
+                                                    rootPath="/content/dam/bmc"/>
                                                 <xOffset
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"

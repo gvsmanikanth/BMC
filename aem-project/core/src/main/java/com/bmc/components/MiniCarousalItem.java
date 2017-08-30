@@ -1,13 +1,10 @@
 package com.bmc.components;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Optional;
-
-
+/*
+ * Added by samiksha_anvekar@bmc.com
+ * The miniCarousalItem modal class.
+ * Includes parameters to capture the dialog data like figCaptiion,thumbnailimage etc.
+ */
 public class MiniCarousalItem {
 	
 	private String figureCaption;
