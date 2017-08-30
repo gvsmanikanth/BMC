@@ -1,7 +1,6 @@
 <sly data-sly-use.options="com.adobe.cq.wcm.core.components.models.form.Options"
      data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-     data-sly-test.isNotEmpty="${options.items.size}"
-     class="{option.type.value == 'checkbox' ? 'checkbox' : 'radoi' }">
+     data-sly-test.isNotEmpty="${options.items.size}">
     <div class="form-group ${options.type.value}"
          data-sly-test="${options.type.value == 'checkbox' || options.type.value == 'radio'}">
         <sly data-sly-test.isRadio="${options.type.value == 'radio'}"/>
