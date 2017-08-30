@@ -15,9 +15,11 @@
                 <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image'}" data-sly-unwrap></sly>
             </div>
             <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title'}" data-sly-unwrap></sly>
-            <a data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}" class="btn video-play modal-youtube-video-player"  href="${properties.cta_url}"  target="_self">
-                ${properties.cta_link}
-            </a>
+            <sly data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}"
+                 data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='cta_link', urlOrPath='cta_url'}">
+                <a data-sly-test="${cta.isVideo}" class="btn video-play ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text}</a>
+                <a data-sly-test="${!cta.isVideo}" class="btn ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text}</a>
+            </sly>
         </div>
         <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
             <ul class="points js-initial-customer-story-case-points-container">
