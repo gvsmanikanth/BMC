@@ -4602,6 +4602,14 @@ fieldset:not(#foo) .form-group.radio li {
 fieldset:not(#foo) .aem-GridColumn {
   padding-left: 0; }
 
+fieldset:not(#foo) .cmp-options {
+  padding: 0; }
+  fieldset:not(#foo) .cmp-options .form-group.checkbox {
+    margin: 0; }
+  fieldset:not(#foo) .cmp-options .form-group.radio {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+
 /*.oldie {
 	fieldset {
 		input[type='radio'],

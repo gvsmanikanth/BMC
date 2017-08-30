@@ -97,9 +97,23 @@ fieldset:not(#foo) {
 		}
 	}
 
-	//AEM grid tweaks
+	//AEM overloads
 	.aem-GridColumn {
 		padding-left: 0;
+	}
+
+	//makes sure checkboxes don't get an extra bit padding, but radios groups do.
+	.cmp-options {
+		padding: 0;
+		.form-group {
+			&.checkbox {
+				margin: 0;
+			}
+			&.radio {
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+			}
+		}
 	}
 }
 
