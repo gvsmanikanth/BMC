@@ -5,7 +5,11 @@ import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.adapter.Adaptable;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.wrappers.ValueMapDecorator;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -16,6 +20,19 @@ import java.util.stream.StreamSupport;
  * @see ResourceProvider
  */
 public interface ResourceHelper {
+    /**
+     * Returns the {@link ValueMap} of the given child resource, or an empty map.
+     */
+    static ValueMap getChildValueMap(Resource resource, String childName) {
+        Resource child = null;
+        if (resource != null && childName != null && !childName.isEmpty())
+            child = resource.getChild(childName);
+
+        return (child == null)
+                ? new ValueMapDecorator(Collections.emptyMap())
+                : child.getValueMap();
+    }
+
     /**
      * Streams the children of the given {@link Resource}
      * @param resource the {@link Resource}
