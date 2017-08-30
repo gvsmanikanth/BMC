@@ -940,6 +940,10 @@
 	}
 }
 
+.layout-rotator-container {
+	overflow: hidden;
+}
+
 // The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
 .layout-full-bleed {
 	background-color: white;
@@ -987,10 +991,11 @@
 
 		h1, h2 { color: #fff; }
 	}
-}
 
-.layout-rotator-container {
-	overflow: hidden;
+	//AEM overload
+	.maincontainer > & {
+		padding: 0;
+	}
 }
 
 
@@ -1272,7 +1277,7 @@
 		&:first-child {
 			margin-top: 1.5em;
 		}
-}
+	}
 
 
 	.layout-product-finder + & {
@@ -1579,6 +1584,5 @@
 	padding-top: rem(36);
 	padding-bottom: rem(36);
 }
-
 // better AEM authoring experience
 

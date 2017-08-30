@@ -1843,6 +1843,9 @@ blockquote {
     .layout-secondary-shaded {
       width: 25%; } }
 
+.layout-rotator-container {
+  overflow: hidden; }
+
 .layout-full-bleed {
   background-color: white;
   padding: 1.66667em 0;
@@ -1879,9 +1882,8 @@ blockquote {
           position: relative; } }
     .layout-full-bleed.layout-full-bleed-image h1, .layout-full-bleed.layout-full-bleed-image h2 {
       color: #fff; }
-
-.layout-rotator-container {
-  overflow: hidden; }
+  .maincontainer > .layout-full-bleed {
+    padding: 0; }
 
 .layout-full-bleed-medium {
   background-color: #fff;
