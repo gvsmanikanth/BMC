@@ -1,8 +1,10 @@
 package com.bmc.servlets;
 
+import com.adobe.acs.commons.email.EmailService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -39,6 +41,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private int timeout = 5000;
 
     private Session session;
+
+    @Reference
+    private EmailService emailService;
 
     /**
      * Restricted form fields
@@ -106,6 +111,14 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         sendData(data);
+        String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
+        switch (formType) {
+            case "Parallel":
+                break;
+            case "Email Only":
+                sendBasicEmail(formData, formProperties);
+                break;
+        }
         if (purlPage != null) {
             ResourceResolver resourceResolver = request.getResourceResolver();
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
@@ -118,6 +131,17 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
             response.sendRedirect(purlPage);
         }
+    }
+
+    private void sendBasicEmail(Map<String, String> formData, Map formProperties) {
+        String templatePath = "/etc/notification/email/html/form-emailonly.txt";
+        String[] recipients = { "bledford@connectivedx.com" };
+        formData.put("subject", "Basic Email Test");
+        //  Customize the sender email address - if required
+        formData.put("senderEmailAddress","bledford@gmail.com");
+        formData.put("From","bledford@gmail.com");
+        formData.put("senderName","Bryan Ledford");
+        emailService.sendEmail(templatePath, formData, recipients);
     }
 
     private void sendData(String data) {
@@ -224,12 +248,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "AWS_Trial",
                 "formname",
                 "formid",
+                "formType",
                 "leadDescription1",
                 "emailid",
                 "C_OptIn",
                 "C_Contact_Me1",
-                "isNonLeadGenForm",
-                "isParallelEmailForm",
                 "emailSubjectLine",
                 "recipient",
                 "bypassOSB"
