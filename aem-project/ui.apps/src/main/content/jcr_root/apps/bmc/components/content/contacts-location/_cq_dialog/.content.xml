@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Support Contacts Location"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          mode="edit">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured" sling:hideChildren="[generalComments,corporateHeadquarters,otherContacts]">
+                    <customerSupport
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            jcr:title="Customer Support">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured" sling:hideChildren="[documentation,communities]">
+                                    <localSupport
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Customer Support">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <information
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                    fieldDescription="Enter support information, such as local business hours and support line hours"
+                                                    fieldLabel="General Information"
+                                                    name="./supportInformation"
+                                                    useFixedInlineToolbar="{Boolean}true">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <misctools
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                    <spellcheck
+                                                            jcr:primaryType="nt:unstructured"
+                                                            features="*"/>
+                                                </rtePlugins>
+                                                <htmlRules jcr:primaryType="nt:unstructured">
+                                                    <blockHandling
+                                                            jcr:primaryType="nt:unstructured"
+                                                            removeSingleParagraphContainer="{Boolean}true"/>
+                                                </htmlRules>
+                                            </information>
+                                            <email
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    emptyText="customer_support@bmc.com"
+                                                    fieldLabel="Email"
+                                                    name="./supportEmail"/>
+                                            <phones
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                    composite="{Boolean}true"
+                                                    fieldLabel="Phone Numbers">
+                                                <field
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        name="./supportPhones">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <label
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                emptyText="Toll-Free"
+                                                                fieldLabel="Label (optional)"
+                                                                name="label"/>
+                                                        <text
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                emptyText="1 (800) 555-1234"
+                                                                fieldLabel="Link Text (Optional)"
+                                                                name="text"/>
+                                                        <url
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                emptyText="1 (800) 555-1234"
+                                                                fieldLabel="Phone Number"
+                                                                name="phone"/>
+                                                    </items>
+                                                </field>
+                                            </phones>
+                                        </items>
+                                    </localSupport>
+                                    <accounting
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            jcr:title="Accounting Inquiries">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <accountsPayable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    emptyText="NA_Accounts_Payable@bmc.com"
+                                                    fieldLabel="Accounts Payable"
+                                                    name="./accountsPayable"/>
+                                            <accountsReceivable
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    emptyText="Collections_NA@bmc.com"
+                                                    fieldLabel="Accounts Receivable"
+                                                    name="./accountsReceivable"/>
+                                        </items>
+                                    </accounting>
+                                </items>
+                            </column>
+
+                        </items>
+                    </customerSupport>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

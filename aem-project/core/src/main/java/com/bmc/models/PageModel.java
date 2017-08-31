@@ -162,6 +162,15 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
+        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
+            bmcMeta.getPage().setLongName(formatLongNameFormStart());
+            try {
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+        }
         if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
             try {
                 Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");

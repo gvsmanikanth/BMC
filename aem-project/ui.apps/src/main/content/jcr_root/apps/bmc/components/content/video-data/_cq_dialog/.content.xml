@@ -81,7 +81,7 @@
                                             fieldDescription="Please select a video"
                                             fieldLabel="Video Path"
                                             name="./damVideoPath"
-                                            rootPath="/content/dam/projects/bmc"
+                                            rootPath="/content/dam"
                                             required="{Boolean}true"/>
                                 </items>
                             </damVideoPathContainer>

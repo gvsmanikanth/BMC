@@ -103,12 +103,17 @@
   
 }
 
+/*
+// DXP-1057 : HeaderBasic - Extra Margin at bottom 
+// Removed extra padding
 .header-basic {
 	margin-bottom: rem(30);
 	@include media(breakpointLarge) {
 		margin-bottom: rem(60);
 	}
 }
+*/
+
 .header-form-basic {
   	background-color: color(mediumOrange);
 	padding: 2em 0;

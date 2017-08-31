@@ -8,7 +8,8 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
-    <filter root="/conf/bmc/settings/wcm/templates/form-thank-you"/>
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 

@@ -30,7 +30,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Select product to add"
                                                     multiple="true"
-                                                    metadataName="education-products"
+                                                    metadataName="EDUCATION_PRODUCTS"
                                                     name="./education-products">
                                                 <datasource
                                                         jcr:primaryType="nt:unstructured"
@@ -46,7 +46,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Select applicable version numbers"
                                                     multiple="true"
-                                                    metadataName="education-version-numbers"
+                                                    metadataName="EDUCATION_VERSION_NUMBERS"
                                                     name="./education-version-numbers">
                                                 <datasource
                                                         jcr:primaryType="nt:unstructured"
@@ -62,7 +62,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Select applicable roles"
                                                     multiple="true"
-                                                    metadataName="education-broad-role"
+                                                    metadataName="EDUCATION_BROAD_ROLES"
                                                     name="./education-broad-role">
                                                 <datasource
                                                         jcr:primaryType="nt:unstructured"
@@ -78,7 +78,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Select applicable roles"
                                                     multiple="true"
-                                                    metadataName="education-specific-role"
+                                                    metadataName="EDUCATION_SPECIFIC_ROLES"
                                                     name="./education-specific-role">
                                                 <datasource
                                                         jcr:primaryType="nt:unstructured"

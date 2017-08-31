@@ -20,7 +20,10 @@
     var OPTIONS_REQUIRED = ".cmp-form-textfield-required";
     var VALIDATION_TYPES = '.cmp-form-validation-types';
     var REQUIRED_MESSAGE = '.cmp-form-textfield-constraintmessage';
-
+    var MULTI_OPTIONS = 'data-granite-coral-multifield-composite';
+    var MULTI_OPTION = 'coral-multifield-item';
+    var MULTI_REMOVE = '.coral-Multifield-remove';
+    var MULTI_ADD = 'coral-multifield > button';
 
     /**
      * Initialise the conditional display of the various elements of the dialog
@@ -44,7 +47,22 @@
             $(REQUIRED_MESSAGE).hide();
             $(VALIDATION_TYPES).hide();
             $(OPTIONS_REQUIRED).removeAttr('checked');
+            $(MULTI_OPTION).each(function(){
+                $(this).remove();
+            });
+            $(MULTI_ADD).show();
         });
+
+        $('['+MULTI_OPTIONS+']').on('click', function(e){
+            var target = $(e.target); 
+            if($(FIELD_TYPE).val() == 'checkbox'){
+                if($(MULTI_REMOVE).length > 0){
+                    $(MULTI_ADD).hide();
+                }else{
+                    $(MULTI_ADD).show();
+                }
+            }
+        }).trigger('click');
 
     }
 
