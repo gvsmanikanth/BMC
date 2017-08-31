@@ -29,7 +29,7 @@
 	}
 
 	.layout-secondary {
-		padding-bottom: 0;     
+		padding-bottom: 0;
 	}
 
 	.header-logo, .back-link {
@@ -174,7 +174,7 @@
 
 	.layout-secondary {
 
-		.btn {
+		.customer-story-case-content {
 			display: block;
 			margin-top: 0 !important;
 			margin-bottom: 0 !important;
@@ -224,5 +224,15 @@
 			margin-top: 1.5em;
 			padding-top: 1.5em;
 		}
+	}
+}
+
+
+.CTAButton {
+
+	.btn {
+		box-sizing: border-box;
+		margin-bottom: 2em;
+		width: 100%;
 	}
 }

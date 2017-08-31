@@ -1372,17 +1372,6 @@ blockquote {
   .scrolled-down .layout-navigation {
     border-bottom: solid 1px #dedede; }
 
-@media only screen and (min-width: 48em) {
-  [class*="50-50-layout"] .layout-primary,
-  [class*="50-50-layout"] .layout-secondary {
-    width: 50%; }
-    [class*="50-50-layout"] .layout-primary:first-child,
-    [class*="50-50-layout"] .layout-secondary:first-child {
-      padding-right: 1.25%; }
-    [class*="50-50-layout"] .layout-primary:last-child,
-    [class*="50-50-layout"] .layout-secondary:last-child {
-      padding-left: 1.25%; } }
-
 .layout-primary {
   padding-top: 0; }
   .layout-primary:first-child {
@@ -1882,7 +1871,7 @@ blockquote {
           position: relative; } }
     .layout-full-bleed.layout-full-bleed-image h1, .layout-full-bleed.layout-full-bleed-image h2 {
       color: #fff; }
-  .maincontainer > .layout-full-bleed {
+  .maincontentcontainer > .layout-full-bleed {
     padding: 0; }
 
 .layout-full-bleed-medium {
@@ -2329,6 +2318,14 @@ blockquote {
 [class*="75-25"]:not(:first-child) {
   padding-top: 2rem;
   padding-bottom: 2rem; }
+
+@media only screen and (min-width: 48em) {
+  [class*="50-50-layout"] .equal-column {
+    width: 50%; }
+    [class*="50-50-layout"] .equal-column:first-child {
+      padding-right: 1.25%; }
+    [class*="50-50-layout"] .equal-column:last-child {
+      padding-left: 1.25%; } }
 
 .layout-footer {
   background: #414042;
@@ -11041,7 +11038,7 @@ section.bmc-engage-header.layout-full-bleed {
 
 .customer-story-case-content {
   padding-top: 3em; }
-  .customer-story-case-content .layout-secondary .btn {
+  .customer-story-case-content .layout-secondary .customer-story-case-content {
     display: block;
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
@@ -11070,6 +11067,11 @@ section.bmc-engage-header.layout-full-bleed {
   .customer-story-case-content .layout-secondary section {
     margin-top: 1.5em;
     padding-top: 1.5em; }
+
+.CTAButton .btn {
+  box-sizing: border-box;
+  margin-bottom: 2em;
+  width: 100%; }
 
 .customer-story-landing-banner {
   background-color: #fff;
@@ -16935,6 +16937,21 @@ a.white:focus,
 .py2 {
   padding-top: 1rem;
   padding-bottom: 1rem; }
+
+.pyt1 {
+  padding-top: 1rem; }
+
+.pyt2 {
+  padding-top: 2rem; }
+
+.pyt3 {
+  padding-top: 3rem; }
+
+.pyt4 {
+  padding-top: 4rem; }
+
+.pyt5 {
+  padding-top: 5rem; }
 
 .white-link-underline {
   font-weight: 400;

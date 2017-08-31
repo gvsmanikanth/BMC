@@ -1,0 +1,164 @@
+<sly data-sly-use.model="com.bmc.models.components.contactslocations.ContactsLocationsModel"></sly>
+<sly data-sly-test.isEditing="${wcmmode.edit || wcmmode.design}"></sly>
+
+<div class="contact full-width">
+    <div class="layout-inner-wrap -bb -mb -pb">
+        <div class="three-up">
+            <h3>${'Support Contacts' @ i18n}</h3>
+        </div>
+        <div class="three-up"> </div>
+        <div class="three-up">
+            <fieldset>
+                <div class="form-group">
+                    <select name="addressCountry" onchange="location = this.options[this.selectedIndex].value;">
+                        <option value="">Select Another Country</option>${}
+                        <option data-sly-repeat.page="${currentPage.listChildren}" value="${page.path @ extension='html'}">${page.navigationTitle||page.pageTitle||page.title||page.name}</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="layout-inner-wrap">
+        <section class="layout-primary">
+            <div class="three-up">
+                <sly  data-sly-test="${isEditing}">
+                    <h3>${'Sales' @ i18n}</h3>
+                    <address>
+                        <a data-sly-test.url="${model.salesPhoneURL}" href="tel:${url}">${model.salesPhoneText @ context='html'}</a>
+                        <em data-sly-test="${!model.salesPhoneURL}">enter phone number</em>
+                        <br>
+                        <a data-sly-test.url="${model.salesContactURL}" href="${url}">${model.salesContactText @ context='html'}</a>
+                        <em data-sly-test="${!model.salesContactURL}">enter URL</em>
+                    </address>
+                    <br>
+
+                    <h3>${'General Comments and Feedback' @ i18n}</h3>
+                    <address>
+                        <a data-sly-test.phone="${model.feedbackPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                        <em data-sly-test="${!model.feedbackPhone}">enter phone number</em>
+                    </address>
+                    <br>
+
+                    <h3>${'Corporate Headquarters' @ i18n}</h3>
+                    <address>
+                        <!--/* Street 1 */-->
+                        <sly data-sly-test.street1="${model.corporateHeadquartersStreet1}">${street1}<br></sly>
+                        <!--/* Street 2 */-->
+                        <sly data-sly-test.street2="${model.corporateHeadquartersStreet2}">${street2}<br></sly>
+                        <!--/* City */-->
+                        <sly data-sly-test.city="${model.corporateHeadquartersCity}">${city}</sly>
+                        <!--/* State */-->
+                        <sly data-sly-test.state="${model.corporateHeadquartersState}"><sly data-sly-test="${city}">, </sly>${state}</sly>
+                        <!--/* Zip */-->
+                        <sly data-sly-test.zip="${model.corporateHeadquartersZip}"><sly data-sly-test="${city || state}"> </sly>${zip}</sly>
+                        <!--/* Add line break after city/state/zip if necessary */-->
+                        <sly data-sly-test="${city || state || zip}"><br></sly>
+                        <!--/* Prompt if no address info */-->
+                        <sly data-sly-test="${!street1 && !street2 && !city && !state && !zip}"><em>enter address</em><br></sly>
+                        <!--/* Phone */-->
+                        <a data-sly-test.phone="${model.corporateHeadquartersPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                        <em data-sly-test="${!model.corporateHeadquartersPhone}">enter phone number</em>
+                        <br>
+                    </address>
+
+                    <strong>${'Executive Briefing Center' @ i18n}</strong>
+                    <p>
+                        <!--/* Phone */-->
+                        <a data-sly-test.phone="${model.ebcPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                        <em data-sly-test="${!model.ebcPhone}">enter phone number</em>
+                        <br>
+                        <!--/* Information */-->
+                        <a data-sly-test.url="${model.ebcInformationURL}" href="${url}">Information</a>
+                        <em data-sly-test="${!model.ebcInformationURL}">enter URL</em>
+                    </p>
+                </sly>
+                <sly data-sly-test="${!isEditing}">
+                    <h3>${'Get Local Support'}</h3>
+                    <address>
+                        ${'Select a country from the dropdown to find local support contacts.'}
+                    </address>
+                </sly>
+            </div>
+
+            <div class="three-up">
+                <sly data-sly-test="${isEditing}">
+                    <h3>${'Customer Support' @ i18n}</h3>
+                    <strong>${'Product Documentation' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.url="${model.productDocumentationContactURL}" href="${url}">${model.productDocumentationContactText @ context='html'}</a>
+                        <em data-sly-test="${!model.productDocumentationContactURL}">enter URL</em>
+                    </p>
+
+                    <strong>${'Communities' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.url="${model.communitiesURL}" href="${url}">${model.communitiesText @ context='html'}</a>
+                        <em data-sly-test="${!model.communitiesURL}">enter URL</em>
+                    </p>
+
+                    <sly data-sly-test="${model.accountsPayable || model.accountsReceivable}">
+                        <strong>${'For Accounting Inquiries' @ i18n}</strong>
+                        <p data-sly-test.email="${model.accountsPayable}">
+                            ${'Accounts Payable' @ i18n}<br>
+                            <a href="mailto:${email}">${email}</a><br>
+                        </p>
+                        <p data-sly-test.email="${model.accountsReceivable}">
+                            ${'Accounts Receivable' @ i18n}<br>
+                            <a href="mailto:${email}">${email}</a><br>
+                        </p>
+                    </sly>
+                    <br>
+
+                    <h3>${'Education Customer Service' @ i18n}</h3>
+                    <address>
+
+                        <!--/* Phone Numbers */-->
+                        <sly data-sly-repeat.phone="${model.educationCustomerServicePhones}">
+                            <!--/* Label (if present) */-->
+                            <sly data-sly-test.label="${phone.label}">${label}: </sly>
+                            <!--/* Link */-->
+                            <a href="tel:${phone.phone}">${phone.text}</a>
+                            <!--/* Line break (except for last item) */-->
+                            <!--/*<br data-sly-test="${!phoneList.last}">*/-->
+                        </sly>
+
+                        <!--/* Email */-->
+                        <a data-sly-test.email="${model.educationCustomerServiceEmail}" href="mailto:${email}">${email}</a>
+                        <em data-sly-test="${!model.educationCustomerServiceEmail}">enter email</em>
+                    </address>
+                    <br>
+
+                    <h3>${'Other Contacts' @ i18n}</h3>
+                    <strong>${'Investors' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.email="${model.investorsEmail}" href="mailto:${email}">${email}</a>
+                        <em data-sly-test="${!model.investorsEmail}">enter email</em>
+                    </p>
+                    <strong>${'Corporate Communications' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.url="${model.corporateCommunicationsURL}" href="${url}">${model.corporateCommunicationsText @ context='html'}</a>
+                        <em data-sly-test="${!model.corporateCommunicationsURL}">enter URL</em>
+                    </p>
+                    <strong>${'Global Security Support' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.email="${model.securityEmail}" href="mailto:${email}">${email}</a>
+                        <em data-sly-test="${!model.securityEmail}">enter email</em>
+                    </p>
+                    <strong>${'Analyst Relations' @ i18n}</strong>
+                    <p>
+                        <a data-sly-test.url="${model.analystRelationsURL}" href="${url}">${model.analystRelationsText @ context='html'}</a>
+                        <em data-sly-test="${!model.analystRelationsURL}">enter URL</em>
+                    </p>
+                </sly>
+                <sly data-sly-test="${!isEditing}"> </sly>
+            </div>
+
+            <div class="three-up -shaded">
+                <h3>${'Support Central' @ i18n}</h3>
+                <address>
+                    <sly data-sly-resource="${'supportCentralLink' @ resourceType='bmc/components/content/text'}"></sly>
+                </address>
+            </div>
+        </section>
+    </div>
+</div>
