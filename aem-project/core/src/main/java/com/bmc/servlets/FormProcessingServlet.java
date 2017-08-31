@@ -138,9 +138,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String[] recipients = { "bledford@connectivedx.com" };
         formData.put("subject", "Basic Email Test");
         //  Customize the sender email address - if required
-        formData.put("senderEmailAddress","bledford@gmail.com");
-        formData.put("From","bledford@gmail.com");
-        formData.put("senderName","Bryan Ledford");
+//        formData.put("senderEmailAddress","bledford@gmail.com");
+//        formData.put("From","bledford@gmail.com");
+//        formData.put("senderName","Bryan Ledford");
         emailService.sendEmail(templatePath, formData, recipients);
     }
 
