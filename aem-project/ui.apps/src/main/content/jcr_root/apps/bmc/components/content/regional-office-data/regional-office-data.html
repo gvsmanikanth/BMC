@@ -1,0 +1,21 @@
+<fieldset data-sly-use.office="com.bmc.models.components.contactslocations.RegionalOfficeDataModel"
+          data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+          data-sly-test="${office.name}"
+          data-state="${office.group}">
+    <sly data-sly-test.isEditing="${wcmmode.edit || wcmmode.design}"></sly>
+    <strong>${office.name}</strong> <sly data-sly-test="${isEditing && office.group}">(${office.group})</sly>
+    <address>
+        ${office.address @ context='html'}
+        <sly data-sly-test="${office.hasPhones}"><br data-sly-test="${office.hasPhones}"></sly>
+        <sly data-sly-repeat.phone="${office.phones}">
+            <!--/* Label (if present) */-->
+            <sly data-sly-test.label="${phone.label}">${label}: </sly>
+            <!--/* Link */-->
+            <a href="tel:${phone.phone}">${phone.text}</a>
+            <!--/* Line break (except for last item) */-->
+            <br data-sly-test="${!phoneList.last}">
+        </sly>
+        <sly data-sly-test.timezoneString="${office.timezoneString}"><br>${timezoneString}</sly>
+    </address>
+</fieldset>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !office.name, emptyTextAppend = 'Enter regional office data.'}"></sly>

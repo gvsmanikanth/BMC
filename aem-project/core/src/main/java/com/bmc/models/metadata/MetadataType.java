@@ -11,7 +11,11 @@ import java.util.stream.Stream;
 public enum MetadataType {
     COMPANY_SIZE("companySize"),
     INDUSTRY,
-    TOPIC;
+    TOPIC,
+    EDUCATION_PRODUCTS("education-products"),
+    EDUCATION_BROAD_ROLES("education-broad-roles"),
+    EDUCATION_SPECIFIC_ROLES("education-specific-roles"),
+    EDUCATION_VERSION_NUMBERS("education-version-numbers");
 
     /**
      * The jcr resource path associated with this enum value
