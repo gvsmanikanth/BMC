@@ -50,7 +50,7 @@
                                                 <showMagnifierIcon
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                                    checked="false"
+                                                    checked="true"
                                                     name="./showMagnifierIcon"
                                                     text="Show the magnifier Icon?"
                                                     uncheckedValue="false"

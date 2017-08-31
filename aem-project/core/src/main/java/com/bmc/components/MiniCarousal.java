@@ -347,14 +347,6 @@ public class MiniCarousal extends WCMUsePojo {
 				{	
 					//Loggers to print the miniCrousal Items.
 					logger.info("INDEX"+i);
-					logger.info("Figure Captions: "+figureCaptions.get(i));
-					logger.info("Figure paths : "+figurePaths.get(i));
-					logger.info("Video Paths :"+videoImagePaths.get(i));
-					logger.info("Thumbnail : "+thumbnailPaths.get(i));
-					logger.info("Show magnifier Icon : "+showMagnifierIcons.get(i).toString());
-					logger.info("Href class name : "+hrefClass.get(i));
-					logger.info("X offset : "+xOffsets.get(i).toString());
-					logger.info("Y offset : "+yOffsets.get(i).toString());
 					dataItem= new MiniCarousalItem(figureCaptions.get(i),
 					figurePaths.get(i), thumbnailPaths.get(i) ,videoImagePaths.get(i),showMagnifierIcons.get(i),
 					hrefClass.get(i),xOffsets.get(i),yOffsets.get(i));						
@@ -373,7 +365,6 @@ public class MiniCarousal extends WCMUsePojo {
 	 */
 	public static boolean isImageFile(String path) {
 	    String mimeType = URLConnection.guessContentTypeFromName(path);
-	    logger.info(mimeType);
 	    return mimeType != null && mimeType.startsWith("image");
 	}
 	
@@ -381,8 +372,7 @@ public class MiniCarousal extends WCMUsePojo {
 	 * Class to check if the MIME type is Video
 	 */
 	public static boolean isVideoFile(String path) {
-	    String mimeType = URLConnection.guessContentTypeFromName(path);
-	    logger.info(mimeType);
+	    String mimeType = URLConnection.guessContentTypeFromName(path);	    
 	    return mimeType != null && mimeType.startsWith("video");
 	}
 }
