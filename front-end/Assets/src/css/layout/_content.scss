@@ -192,17 +192,6 @@
 	}
 }
 
-[class*="50-50-layout"] {
-	.layout-primary,
-	.layout-secondary {
-		@include media(breakpointMedium) {	
-			width: columns(6);
-			&:first-child 	{ padding-right: 1.25%;	}
-			&:last-child 	{ padding-left: 1.25%;	}
-		}
-	}	
-}
-
 // The layout-primary class is the column container for a page's primary content.  It can be customized for specific templates using contexts such as .page-product-landing &.
 .layout-primary {
 	@extend %column-config;
@@ -993,7 +982,7 @@
 	}
 
 	//AEM overload
-	.maincontainer > & {
+	.maincontentcontainer > & {
 		padding: 0;
 	}
 }
@@ -1584,5 +1573,16 @@
 	padding-top: rem(36);
 	padding-bottom: rem(36);
 }
+
+[class*="50-50-layout"] {
+	.equal-column { //primary column is a substitue for layout-primary beings both columns are of equal size
+		@include media(breakpointMedium) {	
+			width: columns(6);
+			&:first-child 	{ padding-right: 1.25%;	}
+			&:last-child 	{ padding-left: 1.25%;	}
+		}
+	}	
+}
+
 // better AEM authoring experience
 
