@@ -38,7 +38,7 @@
                                     fieldDescription="Please select the image to use for the Topic Filter icon"
                                     fieldLabel="Topic Filter Icon"
                                     name="./topicFilterIcon"
-                                    rootPath="/content/bmc"
+                                    rootPath="/content/dam"
                                     required="{Boolean}true"/>
 
                             <product-shot
@@ -47,7 +47,7 @@
                                     fieldDescription="Please select the image to use for the Product Shot"
                                     fieldLabel="Product Shot"
                                     name="./productShot"
-                                    rootPath="/content/bmc"
+                                    rootPath="/content/dam"
                                     required="{Boolean}true"/>
 
                             <explore-link
