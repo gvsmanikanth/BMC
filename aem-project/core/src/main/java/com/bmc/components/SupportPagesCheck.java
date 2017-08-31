@@ -1,6 +1,8 @@
 package com.bmc.components;
 import java.util.HashMap;
 import javax.jcr.Session;
+
+import com.day.cq.wcm.api.Page;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +38,10 @@ public class SupportPagesCheck extends WCMUsePojo {
     }
     public Boolean getIsSupportPage() {
     	logger.info("templateName"+getResourcePage().getTemplate().getName());
-    	if(getResourcePage().getTemplate().getName().equals("support-central") || getResourcePage().getTemplate().getName().equals("support-search")){
+    	Page resourcePage = getResourcePage();
+    	if(resourcePage.getTemplate().getName().equals("support-central")
+                || resourcePage.getTemplate().getName().equals("support-search")
+                || resourcePage.getTemplate().getName().equals("bmc-support-template")){
     		return true;
     	}else{
     	return false;
