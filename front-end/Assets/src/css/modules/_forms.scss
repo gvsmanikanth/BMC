@@ -104,15 +104,20 @@ fieldset:not(#foo) {
 
 	//makes sure checkboxes don't get an extra bit padding, but radios groups do.
 	.cmp-options {
-		padding: 0;
+		padding-top: 0;
+    	padding-bottom: 0;
 		.form-group {
 			&.checkbox {
 				margin: 0;
 			}
 			&.radio {
-				padding-top: 0.5em;
-				padding-bottom: 0.5em;
+				padding-top: rem(9);
+				padding-bottom: rem(9);
 			}
+		}
+		.decorator-select {
+			margin-top: rem(9);
+			margin-bottom: rem(9);
 		}
 	}
 }
