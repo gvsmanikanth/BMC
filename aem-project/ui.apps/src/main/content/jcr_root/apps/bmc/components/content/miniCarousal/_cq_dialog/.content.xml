@@ -83,6 +83,15 @@
                                                     disabled="{Boolean}false"
                                                     fieldLabel="Enter the y Offset for the magnifier Icon."
                                                     name="./yOffset"/>
+                                                <thumbNailImagePath  
+ 87 +                                                    jcr:primaryType="nt:unstructured"  
+ 88 +                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"  
+ 89 +                                                    fieldDescription="thumbNail Image Path"  
+ 90 +                                                    fieldLabel="Provide a thumbnail image  to upload the figure asset Image."  
+ 91 +                                                    hidden="{Boolean}false"  
+ 92 +                                                    name="./thumbNailImagePath"  
+ 93 +                                                    rootPath="/content/dam/bmc"/> 
+
                                             </items>
                                         </column>
                                     </items>
