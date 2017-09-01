@@ -1907,7 +1907,7 @@ blockquote {
       padding: 0;
       max-width: none; } }
   .home .layout-full-bleed {
-    padding: 6.66667em 0 6.66667em; }
+    padding: 0; }
     .home .layout-full-bleed.layout-rotator-container {
       padding: 0; }
     .home .layout-full-bleed.feature-case-studies {
