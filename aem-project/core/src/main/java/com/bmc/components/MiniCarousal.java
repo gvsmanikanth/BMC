@@ -47,6 +47,8 @@ public class MiniCarousal extends WCMUsePojo {
 	 private ArrayList<Double> yOffsets = new ArrayList<Double>();
 	 
 	 private MiniCarousalItem dataItem;
+	 
+	 private int noOfItems = 1;
 	
 	@Override
 	public void activate() throws Exception {
@@ -55,7 +57,6 @@ public class MiniCarousal extends WCMUsePojo {
 		logger.info("Invoked the MiniCarousal class");
 		ResourceResolver resourceResolver = getResource().getResourceResolver();
 		Node currentNode = getResource().adaptTo(Node.class);		
-		int noOfItems = 1;
 		if(currentNode != null)
 		{						
 			if(currentNode.hasProperty("figurePath"))
@@ -72,12 +73,7 @@ public class MiniCarousal extends WCMUsePojo {
 									{
 										//Check  the MIME type of the resource is Image(png/jpg etc)
 										hrefClass.add("modal-image");
-										figurePaths.add(v.getString());
-										//Fetch the thumb nail Image path using AEM Asset API calls.
-										Resource resource = resourceResolver.getResource(v.getString());
-										Asset asset = resource.adaptTo(Asset.class); 
-										String thumbnailPath = asset.adaptTo(Node.class).getNode(JcrConstants.JCR_CONTENT + "/renditions/" + "cq5dam.thumbnail.319.319.png").getPath();
-										thumbnailPaths.add(thumbnailPath);
+										figurePaths.add(v.getString());								
 									} 	
 								 else if(isVideoFile(v.getString())) 
 									{
@@ -113,8 +109,7 @@ public class MiniCarousal extends WCMUsePojo {
 															        	Node videoData = contentNode.getNode("video-data");	
 															        	String videoNodePath = VIDEO_PAGES_ROOT +"?vID="+videoData.getProperty("vID").getString();
 															        	figurePaths.add(videoNodePath);
-															        	hrefClass.add("modal-youtube-video-player");
-															        	thumbnailPaths.add("no-thumbnail");
+															        	hrefClass.add("modal-youtube-video-player");															        
 											        		 		}
 											        		 		}
 											        		}
@@ -134,18 +129,12 @@ public class MiniCarousal extends WCMUsePojo {
 					if (isImageFile(property2.getValue().getString())) 
 					{						
 						hrefClass.add("modal-image");
-						figurePaths.add(property2.getValue().getString());					
-						//Fetch the thumb nail Image path using AEM Asset API calls.
-						Resource resource = resourceResolver.getResource(property2.getValue().getString());
-						Asset asset = resource.adaptTo(Asset.class); 
-						String thumbnailPath = asset.adaptTo(Node.class).getNode(JcrConstants.JCR_CONTENT + "/renditions/" + "cq5dam.thumbnail.319.319.png").getPath();						
-						thumbnailPaths.add(thumbnailPath);						
+						figurePaths.add(property2.getValue().getString());														
 					}
 					else if(isVideoFile(property2.getValue().getString()))
 					{
 						hrefClass.add("modal-youtube-video-player");
 						figurePaths.add(property2.getValue().getString());
-						thumbnailPaths.add("no-thumbnail");
 					}
 					else 
 					{						
@@ -175,8 +164,7 @@ public class MiniCarousal extends WCMUsePojo {
 													        	Node videoData = contentNode.getNode("video-data");	
 													        	String videoNodePath = VIDEO_PAGES_ROOT +"?vID="+videoData.getProperty("vID").getString();
 													        	figurePaths.add(videoNodePath);
-													        	hrefClass.add("modal-youtube-video-player");
-													        	thumbnailPaths.add("no-thumbnail");																
+													        	hrefClass.add("modal-youtube-video-player");											        																
 									        		 			}	
 									        		 		}
 									        		}
@@ -194,7 +182,7 @@ public class MiniCarousal extends WCMUsePojo {
 				{
 				hrefClass.add("modal-image");
 				figurePaths.add("");
-				thumbnailPaths.add("");}				
+				}				
 			}
 			if(currentNode.hasProperty("figureCaption"))
 			{				
@@ -314,11 +302,11 @@ public class MiniCarousal extends WCMUsePojo {
 			
 			if(currentNode.hasProperty("showMagnifierIcon"))
 			{
-				Property property3 = currentNode.getProperty("showMagnifierIcon");
+				Property property7 = currentNode.getProperty("showMagnifierIcon");
 				// This condition checks for properties whose type is String[](String array)
-				if(property3.isMultiple())
+				if(property7.isMultiple())
 				{
-				Value[] values = property3.getValues();								
+				Value[] values = property7.getValues();								
 					for (Value v : values) 
 						{	
 						if(v.getString().equals(null))
@@ -333,7 +321,7 @@ public class MiniCarousal extends WCMUsePojo {
 			}
 			else
 				{					
-					showMagnifierIcons.add(property3.getValue().getBoolean());
+					showMagnifierIcons.add(property7.getValue().getBoolean());
 				}
 			}
 			else
@@ -342,11 +330,52 @@ public class MiniCarousal extends WCMUsePojo {
 				{ showMagnifierIcons.add(false);}
 								
 			}
-			
+			if(currentNode.hasProperty("thumbNailImagePath"))
+			{						
+				Property property8 = currentNode.getProperty("thumbNailImagePath");
+				// This condition checks for properties whose type is String[](String array)
+				if(property8.isMultiple())
+				{
+					Value[] values = property8.getValues();				
+					for (Value v : values) 
+						{													
+							if(!v.getString().equals(null))
+							{
+							thumbnailPaths.add(v.getString());	
+							}
+							else
+							{
+								//Fetch the thumb nail Image path using AEM Asset API calls.
+								Resource resource = resourceResolver.getResource(v.getString());
+								Asset asset = resource.adaptTo(Asset.class); 
+								String thumbnailPath = asset.adaptTo(Node.class).getNode(JcrConstants.JCR_CONTENT + "/renditions/" + "cq5dam.thumbnail.319.319.png").getPath();						
+								thumbnailPaths.add(thumbnailPath);											
+							}							
+						}
+				}
+					else
+				{
+						if(property8.getValue().getString().equals(null))
+						{
+							//Fetch the thumb nail Image path using AEM Asset API calls.
+							Resource resource = resourceResolver.getResource(property8.getValue().getString());
+							Asset asset = resource.adaptTo(Asset.class); 
+							String thumbnailPath = asset.adaptTo(Node.class).getNode(JcrConstants.JCR_CONTENT + "/renditions/" + "cq5dam.thumbnail.319.319.png").getPath();						
+							thumbnailPaths.add(thumbnailPath);			
+						}
+						else
+						{
+							thumbnailPaths.add(property8.getValue().getString());
+						}
+				}
+			}
+			else
+			{
+				for(int i=0;i<noOfItems;i++)
+				{thumbnailPaths.add("");}
+			}
 				for(int i = 0; i<noOfItems ; i++)
-				{	
-					//Loggers to print the miniCrousal Items.
-					logger.info("INDEX"+i);
+				{						
 					dataItem= new MiniCarousalItem(figureCaptions.get(i),
 					figurePaths.get(i), thumbnailPaths.get(i) ,videoImagePaths.get(i),showMagnifierIcons.get(i),
 					hrefClass.get(i),xOffsets.get(i),yOffsets.get(i));						
@@ -363,6 +392,14 @@ public class MiniCarousal extends WCMUsePojo {
 	/*
 	 * Class to check if the MIME type is image
 	 */
+	
+	/*
+	 * Getter class for the list size.
+	 */
+	public int getNoOfItems() { 
+		         return this.noOfItems; 
+		     } 
+	
 	public static boolean isImageFile(String path) {
 	    String mimeType = URLConnection.guessContentTypeFromName(path);
 	    return mimeType != null && mimeType.startsWith("image");
