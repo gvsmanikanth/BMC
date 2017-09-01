@@ -1909,7 +1909,7 @@ blockquote {
       min-width: 0;
       width: 100%;
       margin: 0 auto;
-      max-width: 1440px;
+      /*max-width: 1440px;*/
       padding: 16px;
       padding: 0; } }
   .layout-full-bleed-small.layout-full-bleed-image {
@@ -2790,6 +2790,10 @@ ul.accordion {
 fieldset .cmp {
   padding: 0.5rem;
   line-height: 0.7; }
+
+.xf-web-container {
+  background-color: burlywood;
+}
 
 .append-around-low-resolution {
   display: block !important; }
