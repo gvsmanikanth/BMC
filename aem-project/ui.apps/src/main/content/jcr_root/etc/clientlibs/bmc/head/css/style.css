@@ -1835,9 +1835,65 @@ blockquote {
 .layout-rotator-container {
   overflow: hidden; }
 
+.layout-banner-container-slim {
+  background-image: url(product-bg2.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 246px;
+  margin: 0 auto; }
+  @media only screen and (min-width: 12.5em) {
+    .layout-banner-container-slim {
+      background-image: none;
+      height: 246px;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 30em) {
+    .layout-banner-container-slim {
+      background-image: none;
+      height: 246px;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 48em) {
+    .layout-banner-container-slim {
+      background-image: url(product-bg2.png);
+      background-position: top center;
+      background-repeat: no-repeat;
+      height: 246px;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 60em) {
+    .layout-banner-container-slim {
+      background-image: url(product-bg2.png);
+      background-position: top center;
+      background-repeat: no-repeat;
+      height: 246px;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 76.25em) {
+    .layout-banner-container-slim {
+      background-image: url(product-bg2.png);
+      background-position: top center;
+      background-repeat: no-repeat;
+      height: 246px;
+      margin: 0 auto; } }
+  .layout-product-finder + .layout-banner-container-slim {
+    padding-top: 0; }
+  .layout-banner-container-slim.layout-full-bleed-image {
+    background-size: cover;
+    color: #fff; }
+    .page-campaign-landing .layout-banner-container-slim.layout-full-bleed-image {
+      padding: 0em 0; }
+      @media only screen and (min-width: 60em) {
+        .page-campaign-landing .layout-banner-container-slim.layout-full-bleed-image .layout-inner-wrap {
+          position: relative; } }
+    .layout-banner-container-slim.layout-full-bleed-image h1, .layout-banner-container-slim.layout-full-bleed-image h2 {
+      color: #fff; }
+
+.maincontentcontainer > .layout-full-bleed > *:first-child {
+  padding-top: 0;
+  padding-bottom: 0; }
+  .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+    margin-top: 1.66667rem; }
+
 .layout-full-bleed {
   background-color: white;
-  padding: 1.66667em 0;
+  padding: 0;
   box-sizing: border-box; }
   @media only screen and (min-width: 48em) {
     .layout-full-bleed {
@@ -1848,7 +1904,7 @@ blockquote {
       margin: 0 auto;
       max-width: 100%;
       padding: 16px;
-      padding: 3.33333em 0;
+      padding: 0;
       max-width: none; } }
   .home .layout-full-bleed {
     padding: 6.66667em 0 6.66667em; }
@@ -1871,8 +1927,6 @@ blockquote {
           position: relative; } }
     .layout-full-bleed.layout-full-bleed-image h1, .layout-full-bleed.layout-full-bleed-image h2 {
       color: #fff; }
-  .maincontentcontainer > .layout-full-bleed {
-    padding: 0; }
 
 .layout-full-bleed-medium {
   background-color: #fff;
@@ -1909,7 +1963,7 @@ blockquote {
       min-width: 0;
       width: 100%;
       margin: 0 auto;
-      /*max-width: 1440px;*/
+      max-width: 1440px;
       padding: 16px;
       padding: 0; } }
   .layout-full-bleed-small.layout-full-bleed-image {
@@ -1974,7 +2028,7 @@ blockquote {
 
 .layout-full-bleed-slim {
   background-color: white;
-  padding: 0em 0 0 0; }
+  padding: 0 0 0 0; }
   @media only screen and (min-width: 12.5em) {
     .layout-full-bleed-slim {
       background-image: none;
@@ -2021,56 +2075,6 @@ blockquote {
         .page-campaign-landing .layout-full-bleed-slim.layout-full-bleed-image .layout-inner-wrap {
           position: relative; } }
     .layout-full-bleed-slim.layout-full-bleed-image h1, .layout-full-bleed-slim.layout-full-bleed-image h2 {
-      color: #fff; }
-
-.layout-banner-container-slim {
-  background-image: url(product-bg2.png);
-  background-position: top center;
-  background-repeat: no-repeat;
-  height: 246px;
-  margin: 0 auto; }
-  @media only screen and (min-width: 12.5em) {
-    .layout-banner-container-slim {
-      background-image: none;
-      height: 246px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 30em) {
-    .layout-banner-container-slim {
-      background-image: none;
-      height: 246px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 48em) {
-    .layout-banner-container-slim {
-      background-image: url(product-bg2.png);
-      background-position: top center;
-      background-repeat: no-repeat;
-      height: 246px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 60em) {
-    .layout-banner-container-slim {
-      background-image: url(product-bg2.png);
-      background-position: top center;
-      background-repeat: no-repeat;
-      height: 246px;
-      margin: 0 auto; } }
-  @media only screen and (min-width: 76.25em) {
-    .layout-banner-container-slim {
-      background-image: url(product-bg2.png);
-      background-position: top center;
-      background-repeat: no-repeat;
-      height: 246px;
-      margin: 0 auto; } }
-  .layout-product-finder + .layout-banner-container-slim {
-    padding-top: 0; }
-  .layout-banner-container-slim.layout-full-bleed-image {
-    background-size: cover;
-    color: #fff; }
-    .page-campaign-landing .layout-banner-container-slim.layout-full-bleed-image {
-      padding: 0em 0; }
-      @media only screen and (min-width: 60em) {
-        .page-campaign-landing .layout-banner-container-slim.layout-full-bleed-image .layout-inner-wrap {
-          position: relative; } }
-    .layout-banner-container-slim.layout-full-bleed-image h1, .layout-banner-container-slim.layout-full-bleed-image h2 {
       color: #fff; }
 
 .layout-full-bleed-nopadding {
@@ -2790,9 +2794,7 @@ ul.accordion {
 fieldset .cmp {
   padding: 0.5rem;
   line-height: 0.7; }
-.xf-web-container {
-  background-color: burlywood;
-}
+
 .append-around-low-resolution {
   display: block !important; }
   @media only screen and (min-width: 60em) {
