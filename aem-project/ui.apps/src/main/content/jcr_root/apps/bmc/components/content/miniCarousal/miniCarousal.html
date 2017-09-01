@@ -6,8 +6,8 @@
 				<ul class="carousel">              
 					<li data-sly-test="${itemList.index == 0}" data-slide="${itemList.index}" class="active">
                       <!-- Adding the conditions for the Image. -->
-						<figure data-sly-test="${item.hrefClass == 'modal-image'}">
-							<a href="${item.figurePath}" class="${item.hrefClass}"  rel="carouselGroup-395165871" title="${item.figureCaption}"> 
+						<figure data-sly-test="${item.hrefClass == 'modal-image'}">                       
+							<a href="${item.figurePath}" class="${item.hrefClass}"  title="${item.figureCaption}"> 
                                 <img src="${item.thumbNailPath}" width="" height="" border="0"/>
 								<div data-sly-test="${item.showMagnifierIcon}" class="carousel-icon icon-img"  data-percentage-right="${item.xOffset}" data-percentage-top="${item.yOffset}">
                                 </div>
@@ -18,7 +18,7 @@
 						<figure data-sly-test="${item.hrefClass == 'modal-youtube-video-player'}">
 							<a class="modal-youtube-video-player" rel="carouselGroup-399434211" href="${item.figurePath}" target="_self" title="">
                                 <img src="${item.videoImagePath}" alt="" title="" width="900" height="516" border="0"/>
-                                <div class="carousel-icon icon-vid" data-percentage-right="${item.xOffset}" data-percentage-top="${item.yOffset}"></div>
+                                <div data-sly-test="${item.showMagnifierIcon}" class="carousel-icon icon-vid" data-percentage-right="${item.xOffset}" data-percentage-top="${item.yOffset}"></div>
 							</a>
 							<figcaption>${item.figureCaption}</figcaption>
 						</figure>						
@@ -37,15 +37,16 @@
 						<figure data-sly-test="${item.hrefClass == 'modal-youtube-video-player'}">
                             <a class="modal-youtube-video-player"  href="${item.figurePath}" target="_self" title="">
                                 <img src="${item.videoImagePath}" alt="" title="" width="900" height="516" border="0"/>
-                                <div class="carousel-icon icon-vid" data-percentage-right="${item.xOffset}" data-percentage-top="${item.yOffset}"></div>
+                                <div data-sly-test="${item.showMagnifierIcon}" class="carousel-icon icon-vid" data-percentage-right="${item.xOffset}" data-percentage-top="${item.yOffset}"></div>
 							</a>
 							<figcaption>${item.figureCaption}</figcaption>
 						</figure>
 					</li>                
 			</ul>
             </sly>
-			 <sly data-sly-list.item="${model.list}">
-				<ul class="carousel-control">
+
+			 <sly data-sly-list.NoOfItems ="${model.noOfItems}" data-sly-list.item="${model.list}">             
+				<ul data-sly-test="${NoOfItems > 1}" class="carousel-control">
 					<li data-sly-test="${itemList.index == 0}">
 						<a href="#" data-slide="${itemList.index}" class="active">${itemList.index}+1</a>
                     </li>
