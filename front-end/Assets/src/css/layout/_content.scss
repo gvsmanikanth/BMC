@@ -933,251 +933,6 @@
 	overflow: hidden;
 }
 
-// The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed {
-	background-color: white;
-	padding: em(30) 0;
-  	box-sizing: border-box; //BMC-527 - TrueSight Header issue
-
-	@include media(breakpointMedium) {
-		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
-		padding: em(60) 0;
-		max-width: none;
-	}
-	.home & {
-		padding: em(120) 0 em(120);
-
-		&.layout-rotator-container {
-			padding: 0;
-		}
-
-		&.feature-case-studies {
-			padding: em(60) 0;
-
-			@include media(breakpointLarge) {
-				padding-bottom: 0;
-			}
-		}
-	}
-
-	.layout-product-finder + & {
-		padding-top: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: em(18) 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-
-	//AEM overload
-	.maincontentcontainer > & {
-		padding: 0;
-	}
-}
-
-
-// The layout-full-bleed-medium class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-medium {
-	background-color: #fff;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-		width: 100%;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
-// The layout-full-bleed-small class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-small {
-	background-color: #fff;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-// The layout-full-bleed-top class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-top {
-	background-color: white;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
-
-// The layout-full-bleed-transparent class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-transparent {
-	background-color: white;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row((nested: false, padding: 0 0, maxWidth: 100%));
-		//@include row();
-		padding: 0;
-		width: 100%;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-// The layout-full-bleed-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-slim {
-	background-color: white;
-	padding: em(0) 0 0 0;
-
-
-	@include media(breakpointTiny) {
-		background-image: none;
-		background-repeat:no-repeat;
-		background-color:#fff;
-		background-position:-3000px 0px;
-
-	}
-
-
-	@include media(breakpointSmall) {
-		background-image: none;
-		background-repeat:no-repeat;
-		background-color:#fff;
-		background-position:-3000px 0px;
-
-	}
-
-
-	@include media(breakpointMedium) {
-		// @include row(false, em(0) 0, 100%);
-		@include row();
-		padding: 0;
-		width: 100%;
-
-		background-color:#fd9b31;
-		background-image: none;
-		background-position:-3000px 0px;
-		background-repeat:no-repeat;
-	}
-
-	@include media(breakpointLarge) {
-		background-color:#fd9b31;
-		background-position:-3000px 0px;
-
-	}
-
-	@include media(breakpointExtraLarge) {
-		background-color:#fd9b31;
-		background-position:-3000px 0px;
-
-	}
-
-
-	.layout-product-finder + & {
-		padding-top: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: em(0) 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
 // The layout-banner-container-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
 .layout-banner-container-slim {
 	background-image: url(#{$imagesFolder}product-bg2.png);
@@ -1249,6 +1004,254 @@
 	}
 }
 
+//AEM overload
+.maincontentcontainer {
+	> .layout-full-bleed {
+		> *:first-child {
+			padding-top: 0;
+			padding-bottom: 0;
+			> *:not([class*="bg-"]){
+				margin-top: rem(30);
+			}			
+		}
+	}
+}
+
+
+// The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed {
+	background-color: white;
+	padding: 0;
+  	box-sizing: border-box; //BMC-527 - TrueSight Header issue
+
+	@include media(breakpointMedium) {
+		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
+		padding: 0;
+		max-width: none;
+	}
+	.home & {
+		padding: em(120) 0 em(120);
+
+		&.layout-rotator-container {
+			padding: 0;
+		}
+
+		&.feature-case-studies {
+			padding: em(60) 0;
+
+			@include media(breakpointLarge) {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.layout-product-finder + & {
+		padding-top: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: em(18) 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-medium class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-medium {
+	background-color: #fff;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+		width: 100%;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-small class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-small {
+	background-color: #fff;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-top class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-top {
+	background-color: white;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-transparent class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-transparent {
+	background-color: white;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row((nested: false, padding: 0 0, maxWidth: 100%));
+		//@include row();
+		padding: 0;
+		width: 100%;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-slim {
+	background-color: white;
+	padding: 0 0 0 0;
+
+
+	@include media(breakpointTiny) {
+		background-image: none;
+		background-repeat:no-repeat;
+		background-color:#fff;
+		background-position:-3000px 0px;
+
+	}
+
+
+	@include media(breakpointSmall) {
+		background-image: none;
+		background-repeat:no-repeat;
+		background-color:#fff;
+		background-position:-3000px 0px;
+
+	}
+
+
+	@include media(breakpointMedium) {
+		// @include row(false, em(0) 0, 100%);
+		@include row();
+		padding: 0;
+		width: 100%;
+
+		background-color:#fd9b31;
+		background-image: none;
+		background-position:-3000px 0px;
+		background-repeat:no-repeat;
+	}
+
+	@include media(breakpointLarge) {
+		background-color:#fd9b31;
+		background-position:-3000px 0px;
+
+	}
+
+	@include media(breakpointExtraLarge) {
+		background-color:#fd9b31;
+		background-position:-3000px 0px;
+
+	}
+
+
+	.layout-product-finder + & {
+		padding-top: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: em(0) 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
 
 // The layout-full-bleed-nopadding class is for main content areas where there is no need for top padding.
 .layout-full-bleed-nopadding {
@@ -1290,6 +1293,7 @@
 		h1, h2 { color: #fff; }
 	}
 }
+
 
 
 .page-campaign-landing {
