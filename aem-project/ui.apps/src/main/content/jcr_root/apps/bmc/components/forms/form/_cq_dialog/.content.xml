@@ -336,11 +336,17 @@
                                             wrapperClass="cmp-workflow-title"/>
                                     <activePURLRedirect
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                            fieldDescription="Active PURL Redirect"
-                                            fieldLabel="Active PURL Redirect"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="Active PURL Pattern is used if Active PURL Redirect is selected"
+                                            text="Active PURL Redirect"
                                             name="./activePURLRedirect"
+                                            value="{Boolean}true"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <activePURLRedirectTypeHint
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./activePURLRedirect@TypeHint"
+                                            value="Boolean"/>
                                     <activePURLPattern
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
