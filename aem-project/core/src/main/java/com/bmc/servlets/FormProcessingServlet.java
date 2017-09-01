@@ -36,6 +36,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
     public static final String PURL_PAGE_URL = "PURLPageUrl";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
+    public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
 
     private String serviceUrl = "";
     private int timeout = 5000;
@@ -116,7 +117,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             case "Parallel":
                 break;
             case "Email Only":
-                sendBasicEmail(formData, formProperties);
+                sendBasicEmail(formData, formProperties, formPage);
                 break;
         }
         if (purlPage != null) {
@@ -133,15 +134,34 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private void sendBasicEmail(Map<String, String> formData, Map formProperties) {
-        String templatePath = "/etc/notification/email/html/form-emailonly.txt";
+    private void sendBasicEmail(Map<String, String> formData, Map formProperties, Page formPage) {
+        String templatePath = "/etc/notification/email/html/form-emailonly.html";
         String[] recipients = { "bledford@connectivedx.com" };
-        formData.put("subject", "Basic Email Test");
-        //  Customize the sender email address - if required
-//        formData.put("senderEmailAddress","bledford@gmail.com");
-//        formData.put("From","bledford@gmail.com");
-//        formData.put("senderName","Bryan Ledford");
-        emailService.sendEmail(templatePath, formData, recipients);
+        Map<String, String> emailParams = new HashMap<>();
+        emailParams.put("subject", "Basic Email Test");
+        emailParams.put("fromAddress", FROM_ADDRESS);
+        StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
+        formData.forEach((k,v) -> body.append("<strong>" + k + "</strong>: " + v + "<br/>"));
+        body.append("<h2>Event Specific Information</h2>");
+        body.append("<p><strong>" + formPage.getTitle() + "</strong></p>");
+        body.append("<p>" + new SimpleDateFormat("EEE MMM d HH:mm:ss z YYYY").format(new Date()) + "</p>");
+        body.append("<h2>System Information</h2>");
+        body.append("<h3>Content</h3>");
+        body.append("<dl>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>Test content ID</dd>");
+        body.append("</dl>");
+        emailParams.put("body", body.toString());
+        emailService.sendEmail(templatePath, emailParams, recipients);
     }
 
     private void sendData(String data) {
