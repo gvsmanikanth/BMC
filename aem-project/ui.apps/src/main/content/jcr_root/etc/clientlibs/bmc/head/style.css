@@ -1909,7 +1909,7 @@ blockquote {
       min-width: 0;
       width: 100%;
       margin: 0 auto;
-      max-width: 1440px;
+      /*max-width: 1440px;*/
       padding: 16px;
       padding: 0; } }
   .layout-full-bleed-small.layout-full-bleed-image {
@@ -2790,6 +2790,10 @@ ul.accordion {
 fieldset .cmp {
   padding: 0.5rem;
   line-height: 0.7; }
+
+.xf-web-container {
+  background-color: burlywood;
+}
 
 .append-around-low-resolution {
   display: block !important; }
@@ -4600,12 +4604,16 @@ fieldset:not(#foo) .aem-GridColumn {
   padding-left: 0; }
 
 fieldset:not(#foo) .cmp-options {
-  padding: 0; }
+  padding-top: 0;
+  padding-bottom: 0; }
   fieldset:not(#foo) .cmp-options .form-group.checkbox {
     margin: 0; }
   fieldset:not(#foo) .cmp-options .form-group.radio {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em; }
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  fieldset:not(#foo) .cmp-options .decorator-select {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
 
 /*.oldie {
 	fieldset {
@@ -11068,7 +11076,7 @@ section.bmc-engage-header.layout-full-bleed {
     margin-top: 1.5em;
     padding-top: 1.5em; }
 
-.CTAButton .btn {
+.CTAbutton .btn {
   box-sizing: border-box;
   margin-bottom: 2em;
   width: 100%; }

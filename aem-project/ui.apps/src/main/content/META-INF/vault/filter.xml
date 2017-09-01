@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc"/>
+    <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
 
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
