@@ -40,6 +40,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private Session session;
 
+    private ResourceResolver resourceResolver;
+
     /**
      * Restricted form fields
      * These fields are part of the authored form data and may not be submitted as part of the form post.
@@ -93,6 +95,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
+        resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
         RequestParameterMap parameters = request.getRequestParameterMap();
         Map<String, String> formData = new HashMap<>();
@@ -107,7 +110,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         logger.trace("Encoded Form Data: " + data);
         sendData(data);
         if (purlPage != null) {
-            ResourceResolver resourceResolver = request.getResourceResolver();
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
             if (page != null) {
@@ -215,6 +217,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
+                PURL_PAGE_URL,
                 "productLine1",
                 "C_Lead_Offer_Most_Recent1",
                 "ex_assettype",
@@ -240,6 +243,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
+        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(PURL_PAGE_URL)));
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");

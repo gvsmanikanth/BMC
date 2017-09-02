@@ -1,0 +1,55 @@
+User-agent: *
+Disallow: /search
+Disallow: /webservices/search
+Disallow: /webservices
+Disallow: /web-services
+Disallow: /testing
+Disallow: /development
+Disallow: /podcasts
+Disallow: /florida
+Disallow: /2546ytglj5
+Disallow: /videos/ozpgibayvar
+Disallow: /info/webinars
+Disallow: /z-clickability-login 
+Disallow: /z-clickability_test
+Allow: /templates/Media_Video_Mobile* 
+Disallow: /templates
+Disallow: /pattern-library/*
+Disallow: /modules
+Disallow: /*action=doLogin$
+Disallow: /support/reg
+Disallow: /info/dwdjosmhbn.html
+Disallow: /var
+Disallow: /forms/secure/
+Disallow: /*_1$
+Disallow: /*_2$
+Disallow: /*_3$
+Disallow: /*_4$
+Disallow: /*_5$
+Disallow: /*_6$
+Disallow: /*_7$
+Disallow: /*_8$
+Disallow: /*_9$
+Sitemap: http://media.cms.bmc.com/documents/sitemap-www.bmc.com.xml
+Sitemap: https://secure.vidyard.com/sitemaps/sitemap-Q-Wq98M9QKQtiPThtlclFw.xml
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: Spiderbot
+Disallow: /
+
+User-agent: Spiderbot/Nutch-1.7
+Disallow: /
+
+User-agent: sukibot_heritrix
+Disallow: /
+
+User-agent: AhrefsBot 
+Crawl-Delay: 2
+
+User-agent: netEstate NE Crawler
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
