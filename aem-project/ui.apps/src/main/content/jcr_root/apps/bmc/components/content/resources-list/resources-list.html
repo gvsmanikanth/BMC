@@ -1,47 +1,47 @@
-<section class="resources" id="resources">
+<section class="resources" id="resources" data-sly-use.data="com.bmc.components.ResourcesList">
     <div class="layout-inner-wrap">
         <h2 class="resources-header">Resources</h2>
         <div class="three-up">
             <h2 class="icon-read">Read</h2>
-            <sly data-sly-test.ReadResources="${properties.readResources}" data-sly-list="${ReadResources}">
-                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
-                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
-                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath @ extension='html'}"  target="_self">
-                            ${child.resText @ context='html'} &nbsp;&#8250;
+            <sly data-sly-list.section="${data.readResources}">
+                <h5>${section.header}:</h5>
+                <ul data-sly-list.link="${section.links}">
+                    <li>
+                        <a class="${link.cssClass}" href="${link.href}" target="_self">
+                            ${link.text @ context='html'} &nbsp;&#8250;
                         </a>
-                    </ul>
-                </sly>
+                    </li>
+                </ul>
             </sly>
         </div>
         <div class="three-up">
             <h2 class="icon-watch">Experience</h2>
-            <sly data-sly-test.ExperienceResources="${properties.experienceResources}" data-sly-list="${ExperienceResources}">
-                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
-                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
-                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath @ extension='html'}"  target="_self">
-                            ${child.resText @ context='html'} &nbsp;&#8250;
+            <sly data-sly-list.section="${data.experienceResources}">
+                <h5>${section.header}:</h5>
+                <ul data-sly-list.link="${section.links}">
+                    <li>
+                        <a class="${link.cssClass}" href="${link.href}" target="_self">
+                            ${link.text @ context='html'} &nbsp;&#8250;
                         </a>
-                    </ul>
-                </sly>
+                    </li>
+                </ul>
             </sly>
         </div>
         <div class="three-up">
             <h2 class="icon-explore">Explore</h2>
-            <sly data-sly-test.ExploreResources="${properties.exploreResources}" data-sly-list="${ExploreResources}">
-                <sly data-sly-use.itemnode="${'logic.js' @ fieldValue=item}">
-                    <h5>${itemnode.listJson.resType != 'custom' ? itemnode.listJson.resType : itemnode.listJson.resCustomHeader}:</h5>
-                    <ul data-sly-repeat.child="${itemnode.listJson.resItems}">
-                        <a  href="${child.resPath @ extension='html'}"  target="_self">
-                            ${child.resText @ context='html'} &nbsp;&#8250;
+            <sly data-sly-list.section="${data.exploreResources}">
+                <h5>${section.header}:</h5>
+                <ul data-sly-list.link="${section.links}">
+                    <li>
+                        <a class="${link.cssClass}" href="${link.href}" target="_self">
+                            ${link.text @ context='html'} &nbsp;&#8250;
                         </a>
-                    </ul>
-                </sly>
+                    </li>
+                </ul>
             </sly>
         </div>
     </div>
-    <p data-sly-test="${properties.ctaText && properties.ctaPath}" class="text-center">
-        <a class="btn" href="${properties.ctaPath @ extension='html'}" target="_self">${properties.ctaText @ context='html'} &nbsp;›</a>
+    <p data-sly-test="${data.cta.text && data.cta.href}" class="text-center">
+        <a class="btn ${data.cta.cssClass}" href="${data.cta.href}" target="_self">${data.cta.text @ context='html'} &nbsp;›</a>
     </p>
 </section>

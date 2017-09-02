@@ -22,6 +22,15 @@
             <stage.cms.bmc.com
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/language-masters/en]">
+                <sitemap jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/etc/designs/bmc/static/sitemap-www.bmc.com.xml]"
+                          sling:match="sitemap.xml$"/>
+                <robots jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/robots.txt]"
+                        sling:match="robots.txt$"/>
+                <crossdomain jcr:primaryType="sling:Mapping"
+                             sling:internalRedirect="[/etc/designs/bmc/static/crossdomain.xml]"
+                             sling:match="crossdomain.xml$"/>
                 <redirect jcr:primaryType="sling:Mapping"
                           sling:internalRedirect="[/content/bmc/language-masters/en/$1,/$1]"
                           sling:match="(.+)$"/>
@@ -37,6 +46,15 @@
             <cms.bmc.com
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/language-masters/en]">
+                <sitemap jcr:primaryType="sling:Mapping"
+                         sling:internalRedirect="[/etc/designs/bmc/static/sitemap-www.bmc.com.xml]"
+                         sling:match="sitemap.xml$"/>
+                <robots jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/robots.txt]"
+                        sling:match="robots.txt$"/>
+                <crossdomain jcr:primaryType="sling:Mapping"
+                             sling:internalRedirect="[/etc/designs/bmc/static/crossdomain.xml]"
+                             sling:match="crossdomain.xml$"/>
                 <redirect jcr:primaryType="sling:Mapping"
                           sling:internalRedirect="[/content/bmc/language-masters/en/$1,/$1]"
                           sling:match="(.+)$"/>

@@ -4,5 +4,5 @@
     <jcr:content
         cq:template="/conf/bmc/settings/wcm/templates/bmc-redirect"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="foundation/components/redirect"/>
+        sling:resourceType="bmc/components/structure/redirect-page"/>
 </jcr:root>

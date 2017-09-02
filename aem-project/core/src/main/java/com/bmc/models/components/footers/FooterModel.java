@@ -1,5 +1,6 @@
 package com.bmc.models.components.footers;
 
+import com.bmc.util.ResourceHelper;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -10,17 +11,15 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.jcr.*;
-import java.util.ArrayList;
-import java.util.Iterator;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Model(adaptables={Resource.class, SlingHttpServletRequest.class})
 public class FooterModel {
     private static final Logger logger = LoggerFactory.getLogger(FooterModel.class);
-
-    @Inject
-    private Page resourcePage;
 
     @Inject
     private Resource resource;
@@ -46,36 +45,33 @@ public class FooterModel {
     @PostConstruct
     protected void init() {
         String footerPath = null;
-        String currentLangPath = currentPage.getAbsoluteParent(3).getPath().equals("/conf/bmc/settings/wcm")? "/content/bmc/language-masters/en" :currentPage.getAbsoluteParent(3).getPath();
-            try {
-                if(resource.getName().equals("standardfooter")) {
-                    footerPath = currentLangPath + STANDARD_FOOTER_SUBPATH;
-                } else if(resource.getName().equals("plainfooter")) {
-                    footerPath = currentLangPath + PLAIN_FOOTER_SUBPATH;
-                }
-                if(session.itemExists(footerPath)){
-                    footerNode = session.getNode(footerPath);
-                }
-            } catch (RepositoryException e) {
-                e.printStackTrace();
+
+        Page parent = currentPage.getAbsoluteParent(3);
+        String currentLangPath = (parent == null) ? null : parent.getPath();
+        if (currentLangPath == null || currentLangPath.equals("/conf/bmc/settings/wcm"))
+            currentLangPath = "/content/bmc/language-masters/en";
+
+        try {
+            if (resource.getName().equals("standardfooter")) {
+                footerPath = currentLangPath + STANDARD_FOOTER_SUBPATH;
+            } else if (resource.getName().equals("plainfooter")) {
+                footerPath = currentLangPath + PLAIN_FOOTER_SUBPATH;
             }
+            if (session.itemExists(footerPath)) {
+                footerNode = session.getNode(footerPath);
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Resource> getChildResources() {
         try {
-            List<Resource> childResources = new ArrayList<>();
-
             Resource nodeResource = resourceResolver.getResource(footerNode.getNode(nodeName).getPath());
-            Iterator<Resource> children = nodeResource.getChildren().iterator();
-
-            while(children.hasNext()){
-                childResources.add(children.next());
-            }
-
-            return childResources;
+            return ResourceHelper.streamChildren(nodeResource).collect(Collectors.toList());
         } catch (RepositoryException e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

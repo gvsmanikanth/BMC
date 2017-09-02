@@ -2,6 +2,7 @@ package com.bmc.models;
 
 import com.bmc.services.BMCMetaService;
 import com.day.cq.wcm.api.Page;
+import com.day.cq.wcm.api.Template;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -100,7 +101,7 @@ public class PageModel {
             e.printStackTrace();
         }
 
-        setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template").toString())));
+        setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
 
         BmcMeta bmcMeta = gatherAnalytics();
         gson = new GsonBuilder()
@@ -153,7 +154,10 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
 
-        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+        Template template = resourcePage.getTemplate();
+        String templatePath = (template != null) ? template.getPath() : "";
+        String templateName = (template != null) ? template.getName() : "";
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
@@ -162,7 +166,7 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
-        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
@@ -171,7 +175,7 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
-        if (resourcePage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
             try {
                 Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setFormMeta(bmcMeta, form);
@@ -181,9 +185,7 @@ public class PageModel {
             bmcMeta.getPage().setPurl("true");
         }
 
-        if (resourcePage.getTemplate().getName().equals("bmc-support-template")
-                || resourcePage.getTemplate().getName().equals("support-central")
-                || resourcePage.getTemplate().getName().equals("support-search")) {
+        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
