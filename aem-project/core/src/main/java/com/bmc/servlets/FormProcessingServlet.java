@@ -36,6 +36,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
 
     private String serviceUrl = "";
+    private String elqSiteID = "";
     private int timeout = 5000;
 
     private Session session;
@@ -89,6 +90,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Activate
     protected void activate(final Map<String, Object> config) {
         serviceUrl = PropertiesUtil.toString(config.get("serviceUrl"), null);
+        elqSiteID = PropertiesUtil.toString(config.get("elqSiteID"), "");
         timeout = PropertiesUtil.toInteger(config.get("timeout"), 5000);
     }
 
@@ -248,6 +250,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
+        properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
         return properties;
