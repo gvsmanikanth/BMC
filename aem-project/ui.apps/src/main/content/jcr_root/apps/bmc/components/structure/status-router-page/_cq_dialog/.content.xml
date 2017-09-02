@@ -30,12 +30,24 @@
                                                     cq:showOnCreate="{Boolean}true"
                                                     name="./available@TypeHint"
                                                     value="Boolean"/>
-                                            <url jcr:primaryType="nt:unstructured"
+                                            <urlProd jcr:primaryType="nt:unstructured"
                                                  sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                  cq:showOnCreate="{Boolean}true"
-                                                 fieldDescription="Enter the Destination URL for the service router"
-                                                 fieldLabel="Destination URL"
-                                                 name="./destination_url"/>
+                                                 fieldDescription="Enter the Production Destination URL for the service router"
+                                                 fieldLabel="Destination URL Production"
+                                                 name="./destination_url_prod"/>
+                                            <urlStage jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                 cq:showOnCreate="{Boolean}true"
+                                                 fieldDescription="Enter the Stage Destination URL for the service router"
+                                                 fieldLabel="Destination URL Stage"
+                                                 name="./destination_url_stage"/>
+                                            <urlDev jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                 cq:showOnCreate="{Boolean}true"
+                                                 fieldDescription="Enter the Dev Destination URL for the service router"
+                                                 fieldLabel="Destination URL Dev"
+                                                 name="./destination_url_dev"/>
                                         </items>
                                     </fieldset>
                                 </items>
