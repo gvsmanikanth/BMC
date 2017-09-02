@@ -11076,7 +11076,7 @@ section.bmc-engage-header.layout-full-bleed {
     margin-top: 1.5em;
     padding-top: 1.5em; }
 
-.CTAbutton .btn {
+.layout-secondary .CTAbutton .btn {
   box-sizing: border-box;
   margin-bottom: 2em;
   width: 100%; }
