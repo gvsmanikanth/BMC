@@ -139,7 +139,8 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
     private String getDestinationUrlField() {
        Set<String> runmodes = slingSettingsService.getRunModes();
        if(runmodes.contains("prod"))
-           return "destination_url_prod";
+           // use original destination url property for production
+           return "destination_url";
        if(runmodes.contains("stage"))
            return "destination_url_stage";
        return "destination_url_dev";
