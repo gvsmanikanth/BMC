@@ -415,14 +415,6 @@
                                             fieldLabel="BMC Email Notification Recipient"
                                             name="./recipient"
                                             wrapperClass="cmp-workflow-title"/>
-                                    <bypassOSB
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                            fieldDescription="Bypass WebMethods (dev only)"
-                                            text="Bypass WebMethods (dev only)"
-                                            name="./bypassOSB"
-                                            value="Yes"
-                                            wrapperClass="cmp-workflow-title"/>
                                     <sharedListId
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
