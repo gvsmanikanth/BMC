@@ -103,7 +103,7 @@
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                         fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                         name="./ctaPath"
-                                                        rootPath="/content/bmc"
+                                                        rootPath="/content"
                                                         fieldLabel="CTA Path or external URL"/>
                                                 <buttonColor
                                                         jcr:primaryType="nt:unstructured"
