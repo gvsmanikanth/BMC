@@ -101,7 +101,7 @@
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                                   fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                                                   required="{Boolean}true"
-                                                                                  rootPath="/content/bmc"
+                                                                                  rootPath="/content"
                                                                                   name="./resPath"
                                                                                   fieldLabel="Resource Path"
                                                                     />
@@ -209,7 +209,7 @@
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                                   fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                                                   required="{Boolean}true"
-                                                                                  rootPath="/content/bmc"
+                                                                                  rootPath="/content"
                                                                                   name="./resPath"
                                                                                   fieldLabel="Resource Path"
                                                                     />
@@ -313,7 +313,7 @@
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                                   fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                                                   required="{Boolean}true"
-                                                                                  rootPath="/content/bmc"
+                                                                                  rootPath="/content"
                                                                                   name="./resPath"
                                                                                   fieldLabel="Resource Path"
                                                                     />
@@ -350,7 +350,7 @@
                                      sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                      fieldLabel="CTA Path"
                                      fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                     rootPath="/content/bmc"
+                                     rootPath="/content"
                                      name="./ctaPath"
                             />
                         </items>
