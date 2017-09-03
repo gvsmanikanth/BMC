@@ -6,7 +6,7 @@
 
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
     <!--<filter root="/conf/bmc" mode="merge"/>-->
-    <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>
     <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you" mode="merge"/>-->
