@@ -3,6 +3,7 @@
 *.local.properties
 aem-project*/ui.apps/target
 aem-project*/core/target
+aem-project/ui.apps/src/main/content/jcr_root/apps/bmc/config.localdev/com.day.cq.mailer.DefaultMailService.xml
 front-end/*.php
 front-end/Assets/dist
 front-end/documentation

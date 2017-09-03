@@ -59,6 +59,7 @@ public class SelectOptionsDataSource implements DataSource {
 
         items = ResourceHelper.streamChildren(resource)
                 .map(this::resolveResourceData)
+                .filter(s -> !s.getValueMap().containsKey("disabled"))
                 .collect(Collectors.toList());
     }
 
@@ -80,6 +81,7 @@ public class SelectOptionsDataSource implements DataSource {
         items = ResourceProvider.from(resource)
                 .streamChildren(type.getResourcePath())
                 .map(this::resolveResourceData)
+                .filter(s -> !s.getValueMap().containsKey("disabled"))
                 .collect(Collectors.toList());
     }
 

@@ -39,12 +39,15 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
 
     private String serviceUrl = "";
+    private String elqSiteID = "";
     private int timeout = 5000;
 
     private Session session;
 
     @Reference
     private EmailService emailService;
+
+    private ResourceResolver resourceResolver;
 
     /**
      * Restricted form fields
@@ -93,12 +96,14 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Activate
     protected void activate(final Map<String, Object> config) {
         serviceUrl = PropertiesUtil.toString(config.get("serviceUrl"), null);
+        elqSiteID = PropertiesUtil.toString(config.get("elqSiteID"), "");
         timeout = PropertiesUtil.toInteger(config.get("timeout"), 5000);
     }
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
+        resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
         RequestParameterMap parameters = request.getRequestParameterMap();
         Map<String, String> formData = new HashMap<>();
@@ -121,7 +126,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 break;
         }
         if (purlPage != null) {
-            ResourceResolver resourceResolver = request.getResourceResolver();
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
             if (page != null) {
@@ -259,6 +263,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
+                PURL_PAGE_URL,
                 "productLine1",
                 "C_Lead_Offer_Most_Recent1",
                 "ex_assettype",
@@ -283,10 +288,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
+        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(PURL_PAGE_URL)));
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
+        properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
         return properties;
