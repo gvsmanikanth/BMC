@@ -35,7 +35,8 @@ import java.util.*;
 public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
-    public static final String PURL_PAGE_URL = "PURLPageUrl";
+    public static final String JCR_PURL_PAGE_URL = "PURLPageUrl";
+    public static final String PURL_PAGE_URL = "PurlPageURL";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
     public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
 
@@ -117,7 +118,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Node node = request.getResource().adaptTo(Node.class);
         String pagePath = request.getResource().getPath().substring(0,request.getResource().getPath().indexOf("/jcr:content"));
         Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
-        String purlPage = getFormProperty(node, PURL_PAGE_URL);
+        String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
         Map formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
@@ -348,7 +349,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "elqCampaignID",
                 "campaignid",
                 "C_Lead_Business_Unit1",
-                PURL_PAGE_URL,
+                JCR_PURL_PAGE_URL,
                 "productLine1",
                 "C_Lead_Offer_Most_Recent1",
                 "ex_assettype",
@@ -373,7 +374,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(PURL_PAGE_URL)));
+        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)));
+        properties.remove(JCR_PURL_PAGE_URL);
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
