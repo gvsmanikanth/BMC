@@ -4,6 +4,8 @@
           serviceUrl="http://localhost/admin/post.php"
           elqSiteID="1625229226"
           timeout="{Long}5000"
+          automationEmailEnabled="{Boolean}true"
+          automationEmailRecipients="[bledford@connectivedx.com]"
 />
         <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->
         <!--serviceUrl="http://localhost/admin/post.php"-->
