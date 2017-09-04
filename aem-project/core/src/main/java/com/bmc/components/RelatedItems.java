@@ -100,7 +100,8 @@ public class RelatedItems extends WCMUsePojo implements MultifieldDataProvider, 
         String text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
                 .orElse(pagePath);
         String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
-                .orElse(pagePath + ".html";
+                .orElse(pagePath + ".html");
+
 
         ValueMap map = page.getProperties();
         String description = map.containsKey("short_description") ? map.get("short_description", "") : page.getDescription();
