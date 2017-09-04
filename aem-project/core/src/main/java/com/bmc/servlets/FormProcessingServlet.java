@@ -1,8 +1,10 @@
 package com.bmc.servlets;
 
+import com.adobe.acs.commons.email.EmailService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -34,12 +36,16 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(FormProcessingServlet.class);
     public static final String PURL_PAGE_URL = "PURLPageUrl";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
+    public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
 
     private String serviceUrl = "";
     private String elqSiteID = "";
     private int timeout = 5000;
 
     private Session session;
+
+    @Reference
+    private EmailService emailService;
 
     private ResourceResolver resourceResolver;
 
@@ -110,7 +116,19 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Map formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
-        sendData(data);
+        String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
+        switch (formType) {
+            case "Lead Capture":
+                sendData(data);
+                break;
+            case "Parallel":
+                sendData(data);
+                sendParallelEmail(formData, formProperties, formPage, request);
+                break;
+            case "Email Only":
+                sendBasicEmail(formData, formProperties, formPage, request);
+                break;
+        }
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
@@ -122,6 +140,83 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
             response.sendRedirect(purlPage);
         }
+    }
+
+    private void sendBasicEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request) {
+        String templatePath = "/etc/notification/email/html/form-emailonly.html";
+        String recipient = getRecipient(formProperties);
+        if (recipient.isEmpty()) return;
+        String[] recipients = {recipient};
+        Map<String, String> emailParams = new HashMap<>();
+        setSubject(formProperties, emailParams);
+        emailParams.put("fromAddress", FROM_ADDRESS);
+        StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
+        String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
+        formData.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+        getCommonEmailBody(formProperties, formPage, request, body);
+        emailParams.put("body", body.toString());
+        emailService.sendEmail(templatePath, emailParams, recipients);
+    }
+
+    private void sendParallelEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request) {
+        String templatePath = "/etc/notification/email/html/form-emailonly.html";
+        String recipient = getRecipient(formProperties);
+        if (recipient.isEmpty()) return;
+        String[] recipients = {recipient};
+        Map<String, String> emailParams = new HashMap<>();
+        setSubject(formProperties, emailParams);
+        emailParams.put("fromAddress", FROM_ADDRESS);
+        StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
+        String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
+        formData.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+        formProperties.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+        getCommonEmailBody(formProperties, formPage, request, body);
+        emailParams.put("body", body.toString());
+        emailService.sendEmail(templatePath, emailParams, recipients);
+    }
+
+    private String getRecipient(Map formProperties) {
+        String recipient = "";
+        if (formProperties.containsKey("recipient")) {
+            recipient = (String) formProperties.get("recipient");
+        }
+        return recipient;
+    }
+
+    private void setSubject(Map formProperties, Map<String, String> emailParams) {
+        if (formProperties.containsKey("emailSubjectLine")) {
+            emailParams.put("subject", (String) formProperties.get("emailSubjectLine"));
+        } else {
+            emailParams.put("subject", "Form Data");
+        }
+    }
+
+    private void getCommonEmailBody(Map formProperties, Page formPage, SlingHttpServletRequest request, StringBuilder body) {
+        body.append("<h2>Event Specific Information</h2>");
+        body.append("<p><strong>").append(formPage.getTitle()).append("</strong></p>");
+        body.append("<p>").append(new SimpleDateFormat("EEE MMM d HH:mm:ss z YYYY").format(new Date())).append("</p>");
+        body.append("<h2>System Information</h2>");
+        body.append("<h3>Content</h3>");
+        body.append("<dl>");
+        body.append("<dt>Instantiated Content ID</dt><dd>").append(formPage.getProperties().get("jcr:baseVersion", "")).append("</dd>");
+        body.append("<dt>Content Title</dt><dd>").append(formPage.getTitle()).append("</dd>");
+        body.append("<dt>Content Type</dt><dd>").append(formPage.getTemplate().getName()).append("</dd>");
+        body.append("<dt>URL</dt><dd>").append(request.getRequestURL().toString()).append("</dd>");
+        if (formProperties.containsKey(PURL_PAGE_URL))
+            body.append("<dt>PURLPageUrl</dt><dd>").append(formProperties.get(PURL_PAGE_URL)).append("</dd>");
+        body.append("</dl>");
+        body.append("<h3>Client</h3>");
+        body.append("<dl>");
+        body.append("<dt>URL</dt><dd>").append(request.getRequestURL().toString()).append("</dd>");
+        body.append("<dt>Referrer</dt><dd>").append(request.getHeader("Referer")).append("</dd>");
+        body.append("<dt>Client IP</dt><dd>").append(request.getRemoteAddr()).append("</dd>");
+        body.append("<dt>Client Agent</dt><dd>").append(request.getHeader("User-Agent")).append("</dd>");
+        body.append("</dl>");
+        body.append("<h3>Template Stack</h3>");
+        body.append("<dl>");
+        body.append("<dt>Template</dt><dd>").append(formPage.getTemplate().getName()).append("</dd>");
+        body.append("<dt>Template Path</dt><dd>").append(formPage.getTemplate().getPath()).append("</dd>");
+        body.append("</dl>");
     }
 
     private void sendData(String data) {
@@ -229,12 +324,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "AWS_Trial",
                 "formname",
                 "formid",
+                "formType",
                 "leadDescription1",
                 "emailid",
                 "C_OptIn",
                 "C_Contact_Me1",
-                "isNonLeadGenForm",
-                "isParallelEmailForm",
                 "emailSubjectLine",
                 "recipient",
                 "bypassOSB"
