@@ -19,8 +19,11 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
+    <filter root="/etc/notification/email"/>
+
     <filter root="/etc/map.publish" mode="update"/>
 
+    <filter root="/content/bmc/auth"/>
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
 

@@ -15247,10 +15247,12 @@ body.support-central {
       @media only screen and (min-width: 76.25em) {
         .ebc section.ebc-map .map-bk {
           background-size: auto; } }
+      @media (max-width: 768px) {
+        .ebc section.ebc-map .map-bk {
+          background-image: none !important; } }
       @media only screen and (min-width: 48em) {
         .ebc section.ebc-map .map-bk {
-          background-size: 45% auto;
-          background-image: url("ebc-map.jpg"); } }
+          background-size: 45% auto; } }
       .ebc section.ebc-map .map-bk .map-highlight {
         display: block;
         margin-bottom: 20px;

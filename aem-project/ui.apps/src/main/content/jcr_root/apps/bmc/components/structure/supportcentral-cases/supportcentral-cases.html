@@ -1,3 +1,31 @@
+<sly data-sly-use.support="com.bmc.components.SupportCentral"></sly>
+<sly data-sly-test.loggedIn="${support.isLoggedIn}">
+    <section class="layout-full-bleed support-account-container">
+        <div class="account-details-wrapper">
+            <div class="layout-inner-wrap">
+                <ul class="action-details support-hide-while-loading list-piped">
+                    <li class="action-detail-group action-piped">
+                        <a class="action" href="#">Open Cases</a>
+                    </li>
+                    <li class="action-detail-group">
+                        <a class="action" href="/available/view-update-issues.html">Historical Cases</a>
+                    </li>
+                    <li class="action-detail-group">
+                        <div class="support-recent-issues-buttons">
+                            <a href="${support.newCaseUrl}" class="btn btn-small js-support-issues-new">Submit New Case</a>
+                            <a href="${support.allCasesUrl}" class="btn btn-secondary btn-small">View All Cases</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="js-account-details-loading">
+                    Loading...
+                </div>
+                <section class="support-section-container account-error js-account-error">
+                </section>
+            </div>
+        </div>
+    </section>
+</sly>
 <section class="support-section-container support-loading-issues layout-full-bleed js-loading-issues-container">
     <center>Loading Cases</center>
 </section>
