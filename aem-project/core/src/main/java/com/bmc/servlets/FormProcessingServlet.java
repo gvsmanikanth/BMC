@@ -20,7 +20,6 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.servlet.ServletException;
-import javax.xml.bind.Element;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
