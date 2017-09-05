@@ -164,7 +164,8 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
             return null;
 
         Node node = nodes.nextNode();
-        return resourceResolver.getResource(node.getIdentifier());
+        return resourceResolver.getResource(node.getPath());
+//        return resourceResolver.getResource(node.getIdentifier());
     }
     private void setDamAssetData(String assetPath) {
         List<Rendition> renditions = null;
