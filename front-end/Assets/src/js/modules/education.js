@@ -16,15 +16,15 @@
 			
 			var type = self.getName("type", item);
 			var typeClass = "course";
-			var iconURL = "http://media.cms.bmc.com/designimages/course.png";
+			var iconURL = bmcFilterConfig.courseIcon;
 			
 			if(type == "Learning Path"){
 				typeClass = "learningPath";
-				iconURL = "http://media.cms.bmc.com/designimages/learning_path.png";
+				iconURL = bmcFilterConfig.learningPathIcon;
 			}
 			else if (type == "Certification"){
 				typeClass = "certification";
-				iconURL = "http://media.cms.bmc.com/designimages/cert.png";	
+				iconURL = bmcFilterConfig.certificationIcon;
 			}	
 			
 			var itemHTML = '<div class="flex-item js-ehItem"><a style="height:100%" href="' + item.url + '"><div class=""><p class="course-type '+typeClass;
