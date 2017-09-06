@@ -141,10 +141,10 @@ var Accordion;
 
 	$(document).ready(function() {
 
-		$('.accordion').each(function(i, accordionContainer) {
+		$('ul.accordion').each(function(i, accordionContainer) {
 			new Accordion(accordionContainer);
 		});
 
 	});
 
-})(jQuery); 
+})(jQuery);
