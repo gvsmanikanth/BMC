@@ -54,10 +54,10 @@ public class KeyFeaturesModel {
                 }
             }
             if (ctaButtonSet.hasNodes()){
-                ctaButton = new HashMap<>();
                 ctaButtons = new ArrayList<>();
                 NodeIterator buttonSet = ctaButtonSet.getNodes();
                 while(buttonSet.hasNext()){
+                    ctaButton = new HashMap<>();
                     Node buttton = buttonSet.nextNode();
                     ctaButton.put("assetType",buttton.getProperty("assetType").getString());
                     ctaButton.put("buttonColor",buttton.getProperty("buttonColor").getString());
