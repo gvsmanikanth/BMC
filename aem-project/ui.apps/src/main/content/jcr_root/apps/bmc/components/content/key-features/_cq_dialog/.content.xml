@@ -124,13 +124,13 @@
                                     name="./aditionalResources"
                                     text="Explore Additional Resources"
                                     value="true"/>
-                            <showlineSeparator
+                            <!--<showlineSeparator
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                     fieldDescription="Show Line Separator"
                                     name="./showlineSeparator"
                                     text="Show Line Separator"
-                                    value="true"/>
+                                    value="true"/>-->
                             <backgroundColor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
