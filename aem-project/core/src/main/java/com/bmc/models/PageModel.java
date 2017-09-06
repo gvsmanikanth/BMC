@@ -172,6 +172,7 @@ public class PageModel {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
@@ -181,6 +182,7 @@ public class PageModel {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
@@ -207,6 +209,29 @@ public class PageModel {
         }
 
         return bmcMeta;
+    }
+
+    private void setPageMetaFromForm(BmcMeta bmcMeta, Node form) throws RepositoryException {
+        if (form != null) {
+            String productCategory = "";
+            String productCategoryNode = form.getProperty("product_interest").getString();
+            try {
+                productCategory = session.getNode("/content/bmc/resources/product-interests/"+productCategoryNode).getProperty("jcr:title").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+
+            String productLine = "";
+            String productLineNode = form.getProperty("productLine1").getString();
+            try {
+                productLine = session.getNode("/content/bmc/resources/product-lines/"+productLineNode).getProperty("text").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+            
+            bmcMeta.getPage().setProductCategories(productCategory);
+            bmcMeta.getPage().setProductLineCategories(productLine);
+        }
     }
 
     private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
