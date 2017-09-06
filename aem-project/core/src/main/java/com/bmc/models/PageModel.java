@@ -150,7 +150,6 @@ public class PageModel {
             bmcMeta.getPage().setPurl("true");
             resourcePage = resourcePage.getParent();
             contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
-            setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
             template = resourcePage.getTemplate();
             templatePath = (template != null) ? template.getPath() : "";
             templateName = (template != null) ? template.getName() : "";
