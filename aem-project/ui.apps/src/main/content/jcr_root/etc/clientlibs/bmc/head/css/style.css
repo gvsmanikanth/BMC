@@ -4603,6 +4603,13 @@ fieldset:not(#foo) .form-group.radio li {
 fieldset:not(#foo) .aem-GridColumn {
   padding-left: 0; }
 
+@media only screen and (min-width: 48em) {
+  fieldset:not(#foo) .aem-GridColumn--default--6 {
+    display: inline-block;
+    float: none !important;
+    vertical-align: top;
+    width: calc(50% - 3px); } }
+
 fieldset:not(#foo) .cmp-options {
   padding-top: 0;
   padding-bottom: 0; }

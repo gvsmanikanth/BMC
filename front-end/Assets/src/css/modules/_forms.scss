@@ -102,6 +102,17 @@ fieldset:not(#foo) {
 		padding-left: 0;
 	}
 
+	//removes floats from aem-grid on form columns 
+	//vertically aligns columns top to prevent stagger when float label is applied
+	.aem-GridColumn--default--6 {
+		@include media(breakpointMedium) {
+			display: inline-block;
+			float: none !important;
+			vertical-align: top;
+			width: calc(50% - 3px);
+		}
+	}
+
 	//makes sure checkboxes don't get an extra bit padding, but radios groups do.
 	.cmp-options {
 		padding-top: 0;
@@ -120,6 +131,8 @@ fieldset:not(#foo) {
 			margin-bottom: rem(9);
 		}
 	}
+
+
 }
 
 /*.oldie {
