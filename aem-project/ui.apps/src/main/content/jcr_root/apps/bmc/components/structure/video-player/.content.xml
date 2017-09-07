@@ -3,4 +3,4 @@
           jcr:description="Video Player"
           jcr:primaryType="cq:Component"
           jcr:title="Video Player"
-          sling:resourceSuperType="core/wcm/components/page/v1/page"/>
+          sling:resourceSuperType="bmc/components/structure/page"/>
