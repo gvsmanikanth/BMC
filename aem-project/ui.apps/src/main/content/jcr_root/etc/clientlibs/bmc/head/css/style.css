@@ -4613,11 +4613,13 @@ fieldset:not(#foo) .aem-GridColumn {
 fieldset:not(#foo) .cmp-options {
   padding-top: 0;
   padding-bottom: 0; }
-  fieldset:not(#foo) .cmp-options .form-group.checkbox {
-    margin: 0; }
-  fieldset:not(#foo) .cmp-options .form-group.radio {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem; }
+  fieldset:not(#foo) .cmp-options .form-group {
+    margin-bottom: 0; }
+    fieldset:not(#foo) .cmp-options .form-group > label {
+      font-weight: bold;
+      margin-top: 0.5rem; }
+    fieldset:not(#foo) .cmp-options .form-group.checkbox {
+      margin: 0; }
   fieldset:not(#foo) .cmp-options .decorator-select {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }

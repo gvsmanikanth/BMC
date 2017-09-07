@@ -19,7 +19,7 @@ fieldset:not(#foo) {
 			clear: none;
 			display: inline-block;
 			padding: 6px 5px 4px 27px;
-      width: 100%;
+      		width: 100%;
       
 			&:before {
 				@include icon();
@@ -118,12 +118,13 @@ fieldset:not(#foo) {
 		padding-top: 0;
     	padding-bottom: 0;
 		.form-group {
+			margin-bottom: 0;
+			> label {
+				font-weight: bold;
+				margin-top: rem(9);	
+			}
 			&.checkbox {
 				margin: 0;
-			}
-			&.radio {
-				padding-top: rem(9);
-				padding-bottom: rem(9);
 			}
 		}
 		.decorator-select {
@@ -131,8 +132,6 @@ fieldset:not(#foo) {
 			margin-bottom: rem(9);
 		}
 	}
-
-
 }
 
 /*.oldie {
