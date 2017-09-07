@@ -13,6 +13,7 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,6 +52,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     @Reference
     private EmailService emailService;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
 
     private ResourceResolver resourceResolver;
 
@@ -120,7 +124,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
         String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
-        Map formProperties = getFormProperties(node);
+        Map<String,String> formProperties = getFormProperties(node);
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
@@ -143,7 +147,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         } catch (Exception e) {
             logger.error("Error getting XML for form email automation.");
         }
-        sendAutomationEmail(xml, status);
+        sendAutomationEmail(xml, status, formData, formProperties);
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
@@ -157,15 +161,26 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private void sendAutomationEmail(String xml, int status) {
+    private void sendAutomationEmail(String xml, int status, Map<String,String> formData, Map<String,String> formProperties) {
         logger.info(xml);
         if (automationEmailEnabled) {
             Map<String, String> emailParams = new HashMap<>();
             String templatePath = "/etc/notification/email/text/plaintext.txt";
             emailParams.put("fromAddress", FROM_ADDRESS);
-            String subject = (status == 200 || status == 302)
-                    ? "Form Submission Success"
-                    : "Form Submission Failure";
+            String email = formData.getOrDefault("C_EmailAddress", "");
+            String formId = formProperties.getOrDefault("formid", "");
+            String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
+            Set<String> runmodes = slingSettingsService.getRunModes();
+            String environment = "Dev";
+            if (runmodes.contains("prod"))
+                environment = "Prod";
+            else if (runmodes.contains("stage"))
+                environment = "Stage";
+            String subject = String.format("V2 Marketing form %s %s for %s - %s",
+                    formId,
+                    statusName,
+                    email,
+                    environment);
             emailParams.put("subject", subject);
             emailParams.put("body", xml);
             emailService.sendEmail(templatePath, emailParams, automationEmailRecipients);
@@ -342,7 +357,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         return "";
     }
 
-    private Map getFormProperties(Node node) {
+    private Map<String,String> getFormProperties(Node node) {
         String[] formProperties = new String[]{
                 "product_interest",
                 "content_prefs",
