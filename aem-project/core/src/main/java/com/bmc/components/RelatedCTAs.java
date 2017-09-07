@@ -97,6 +97,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
                 .orElse(internalPagePath + ".html");
 
         ValueMap map = page.getProperties();
-        return new Item(text, href, page.getDescription(), map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+        String description = map.containsKey("short_description") ? map.get("short_description", "") : page.getDescription();
+        return new Item(text, href, description, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
     }
 }

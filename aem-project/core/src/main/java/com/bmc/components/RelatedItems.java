@@ -102,7 +102,10 @@ public class RelatedItems extends WCMUsePojo implements MultifieldDataProvider, 
         String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
                 .orElse(pagePath + ".html");
 
-        return new LinkItem(text, href, page.getDescription(), LinkType.InternalPath);
+
+        ValueMap map = page.getProperties();
+        String description = map.containsKey("short_description") ? map.get("short_description", "") : page.getDescription();
+        return new LinkItem(text, href, description, LinkType.InternalPath);
     }
     private LinkItem getInternalAssetLinkItem(String assetPath) {
         Asset asset = getAsset(assetPath);

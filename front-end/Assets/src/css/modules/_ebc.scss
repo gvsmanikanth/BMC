@@ -345,9 +345,12 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				}
 			}
 		}
-		&.ebc-map{
+		&.ebc-map{	
+			
 			.map-bk{
-				background-image: none;
+				
+				background-image: none ;
+				
 				background-position: 50%;
 				background-repeat: no-repeat;
 				background-size: 100% auto;
@@ -355,9 +358,15 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				@include media(breakpointExtraLarge) {
 					background-size: auto;
 				}
+				
+
+				@media(max-width:$tablet) {
+            			background-image: none !important;
+				}
+				
 				@include media(breakpointMedium) {
 					background-size: 45% auto;
-					background-image: url("#{$imagesFolder}ebc-map.jpg");
+					//background-image: url("#{$imagesFolder}ebc-map.jpg"); Removed Image reference 
 				}
 				.map-highlight{
 					display: block;

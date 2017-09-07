@@ -1,74 +1,133 @@
 <header class="support-header">
-
-    <div class="support-header-inner">
-
-        <div class="desktop-global-bar-container">
-            <div class="global-bar layout-inner-wrap">
-                <ul class="global-options">
-                    <li class="global-option">
-                        <a href="#">BMC Community</a>
-                    </li>
-                    <li class="global-option">
-                        <a href="#">BMC Docs</a>
-                    </li>
-                    <li class="global-option">
-                        <a href="http://www.bmc.com">BMC.com</a>
-                    </li>
-                    <li class="global-option navigation-search js-navigation-search">
-                        <form action="/search/" class="search-site">
-                            <div class="search-site-b" dir="ltr">
-                                <div class="search-focus">
-                                    <input maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" title="Search" type="text" value="" aria-label="Search Support" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false" placeholder="Search Support">
-                                </div>
-                                <button></button>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
+   <div class="support-header-inner">
+      <div class="desktop-global-bar-container">
+         <div class="global-bar layout-inner-wrap">
+            <ul class="global-options">
+               <li class="global-option"><a href="https://communities.bmc.com/welcome"  target="_self" >BMC Communities</a></li>
+               <li class="global-option"><a href="http://docs.bmc.com/"  target="_self" >BMC Docs</a></li>
+               <li class="global-option"><a href="/"  target="_self" >BMC.com</a></li>
+               <li class="global-option navigation-search js-navigation-search" >
+                  <div class="search-site search-site-b" id="supportSearchBox" dir="ltr">
+                     <div class="search-focus">
+                        <input class="CoveoQuerybox" title="Search" type="text" dir="ltr" placeholder="Search Support">
+                     </div>
+                     <button type="button" class="CoveoSearchButton"></button>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="logo-bar-container">
+         <div class="layout-inner-wrap">
+            <div class="mobile-logo-bar-wrapper">
+               <div class="mobile-logo-bar">
+                  <a href="/">
+                     <div class="support-header-logo"></div>
+                  </a>
+                  <h1 class="support-header-heading">
+                     <a href="/support/support-central.html" class="heading-text">Support Central</a>
+                  </h1>
+                  <div class="support-menu-toggle js-toggle-open-header"></div>
+               </div>
             </div>
-        </div>
-
-        <div class="logo-bar-container">
-            <div class="layout-inner-wrap">
-                <div class="mobile-logo-bar-wrapper">
-                    <div class="mobile-logo-bar">
-                        <a href="http://www.bmc.com"><div class="support-header-logo"></div></a>
-                        <!-- <div class="support-header-logo-heading-separator"></div> -->
-                        <h1 class="support-header-heading">
-                            <a href="http://www.bmc.com/support/support-central.html" class="heading-text">Support Central</a>
-                        </h1>
-                        <!-- <div class="support-header-logo-heading-separator"></div> -->
-                        <h1 data-sly-test="${subheading}" class="support-header-heading">
-                            <a href="https://docs.bmc.com/docs/dashboard.action" class="heading-text heading-emphasis">Documentation</a>
-                        </h1>
-                        <div class="support-menu-toggle js-toggle-open-header"></div>
-                    </div>
-                </div>
+         </div>
+      </div>
+      <div class="support-menu-container">
+         <div class="support-menu-wrapper layout-inner-wrap">
+            <ul class="support-menu">
+               <li class="menu-item js-show-sub-trigger">
+                  <a href="#" class="menu-anchor">
+                  My Support
+                  </a>
+                  <ul class="sub-menu">
+                     <li class="sub-menu-item"><a href="https://communities.bmc.com/docs/DOC-40484"  target="_blank" >New Customer Orientation</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/issue-defect-management.html"  target="_self" >Case and Defect Management</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/support-profile.html"  target="_self" >My Support Profile</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/support-licensing-passwords.html"  target="_self" >License and Passwords</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/bmc-annual-support-offerings.html"  target="_self" >All Support Offerings</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/support-maintenance-renewal.html"  target="_self" >Maintenance & Invoice Queries</a></li>
+                     <li class="sub-menu-item"><a href="/support/review-policies/bmc-customer-support-policies.html"  target="_self" >Customer Support Policies</a></li>
+                     <li class="sub-menu-item"><a href="/available/create-modify-pn-subscription-list.html"  target="_self" >Product Alerts (Proactive Notifications)</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item js-show-sub-trigger">
+                  <a href="#" class="menu-anchor">
+                  Downloads &amp; Products
+                  </a>
+                  <ul class="sub-menu">
+                     <li class="sub-menu-item"><a href="/available/epd.html"  target="_self" >Downloads</a></li>
+                     <li class="sub-menu-item"><a href="/available/supported-product-az-list.html"  target="_self" >Product Patches</a></li>
+                     <li class="sub-menu-item"><a href="https://docs.bmc.com/docs/productinfo"  target="_self" ><sup style="font-weight: 800; font-size: .7em; color: #fe5000 !important;">NEW</sup> Product Specific Information</a></li>
+                     <li class="sub-menu-item"><a href="/available/patch-download.html"  target="_self" >Remedy Heritage Patches</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/mainframe-maintenance.html"  target="_self" >Mainframe Maintenance</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/mainframe-installation.html"  target="_self" >Mainframe Installation</a></li>
+                     <li class="sub-menu-item"><a href="/available/product-defects.html"  target="_self" >Product Defects</a></li>
+                     <li class="sub-menu-item"><a href="/support/reg/esd-password.html"  target="_self" >FTP Sites</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item js-show-sub-trigger">
+                  <a href="#" class="menu-anchor">
+                  Resources
+                  </a>
+                  <ul class="sub-menu">
+                     <li class="sub-menu-item"><a href="https://communities.bmc.com/community/support/blog/2013/09/21/webinars-and-bmc-customer-support"  target="_blank" >Connect with Webinars</a></li>
+                     <li class="sub-menu-item"><a href="/available/search-kb.html"  target="_self" >Knowledge Base</a></li>
+                     <li class="sub-menu-item"><a href="https://docs.bmc.com/docs/dashboard.action"  target="_self" >Documentation</a></li>
+                     <li class="sub-menu-item"><a href="/available/supported-product-az-list.html"  target="_self" >Supported Products A-Z</a></li>
+                     <li class="sub-menu-item"><a href="/corporate/bmc-security.html"  target="_self" >Application Security</a></li>
+                     <li class="sub-menu-item"><a href="https://docs.bmc.com/docs/display/PRD/Home"  target="_blank" >Parameter Reference Database</a></li>
+                     <li class="sub-menu-item"><a href="/support/resources/support-licensing-passwords.html"  target="_self" >License and Passwords</a></li>
+                     <li class="sub-menu-item"><a href="/available/spac.html"  target="_self" >Product Compatibility (SPAC)</a></li>
+                     <li class="sub-menu-item"><a href="/available/withdrawn-product-list.html"  target="_self" >Withdrawn Product List</a></li>
+                     <li class="sub-menu-item"><a href="/support/mainframe-demonstrations/"  target="_blank" >Mainframe Quick Courses</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item js-show-sub-trigger">
+                  <a href="#" class="menu-anchor">
+                  Additional Support Centers
+                  </a>
+                  <ul class="sub-menu">
+                     <li class="sub-menu-item"><a href="https://support.numarasoftware.com/"  target="_blank" >Numara (Track-It!, Client Management, FootPrints)</a></li>
+                     <li class="sub-menu-item"><a href="http://i.onbmc.com"  target="_blank" >BMC OnDemand</a></li>
+                     <li class="sub-menu-item"><a href="https://www.bladelogic.com/supportRedirect.jsp"  target="_blank" >BladeLogic (licensing, forum) </a></li>
+                     <li class="sub-menu-item"><a href="/available/service-desk-express.html"  target="_self" >BMC Service Desk Express</a></li>
+                     <li class="sub-menu-item"><a href="https://help.truesight.bmc.com"  target="_blank" >TrueSight Pulse</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item js-show-sub-trigger">
+                  <a href="#" class="menu-anchor">
+                  Contact Support
+                  </a>
+                  <ul class="sub-menu">
+                     <li class="sub-menu-item"><a href="/contacts-locations/united-states.html"  target="_self" >United States</a></li>
+                     <li class="sub-menu-item"><a href="/contacts-locations/india.html"  target="_self" >India</a></li>
+                     <li class="sub-menu-item"><a href="/contacts-locations/united-kingdom.html"  target="_self" >United Kingdom</a></li>
+                     <li class="sub-menu-item"><a href="/contacts-locations/germany.html"  target="_self" >Germany</a></li>
+                     <li class="sub-menu-item"><a href="/contacts-locations/canada.html"  target="_self" >Canada (English)</a></li>
+                     <li class="sub-menu-item"><a href="/contacts-locations/support-contacts.html"  target="_self" >Other Country</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="mobile-global-bar-container">
+         <div class="layout-inner-wrap">
+            <div class="global-bar">
+               <ul class="global-options">
+                  <li class="global-option"><a href="https://communities.bmc.com/welcome"  target="_self" >BMC Communities</a></li>
+                  <li class="global-option"><a href="http://docs.bmc.com/"  target="_self" >BMC Docs</a></li>
+                  <li class="global-option"><a href="/"  target="_self" >BMC.com</a></li>
+                  <li class="global-option navigation-search js-navigation-search" >
+                     <div class="search-site-b" id="supportSearchBox" dir="ltr">
+                        <div class="search-focus">
+                           <input class="CoveoQuerybox" maxlength="2048" type="text" placeholder="Search Support">
+                        </div>
+                        <button type="button" class="CoveoSearchButton"></button>
+                     </div>
+                  </li>
+               </ul>
             </div>
-        </div>
-
-        <div class="support-menu-container">
-            <sly data-sly-include="menu.html"></sly>
-        </div>
-
-        <div class="mobile-global-bar-container">
-            <div class="layout-inner-wrap">
-                <div class="global-bar">
-                    <ul class="global-options">
-                        <li class="global-option">
-                            <a href="#">BMC Community</a>
-                        </li>
-                        <li class="global-option">
-                            <a href="#">BMC Docs</a>
-                        </li>
-                        <li class="global-option">
-                            <a href="http://www.bmc.com">BMC.com</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+         </div>
+      </div>
+   </div>
 </header>

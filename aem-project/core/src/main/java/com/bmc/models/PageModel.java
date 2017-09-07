@@ -101,6 +101,7 @@ public class PageModel {
             e.printStackTrace();
         }
 
+        // called here so that page long name can be set and can change if TY page is requested
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
 
         BmcMeta bmcMeta = gatherAnalytics();
@@ -134,16 +135,29 @@ public class PageModel {
 
     private BmcMeta gatherAnalytics() {
         BmcMeta bmcMeta = new BmcMeta();
-        bmcMeta.getPage().setContentId(getContentID());
-        bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
-        bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
-        bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         String pageTitle = resourcePage.getTitle();
         if (pageTitle.equals("404")) {
             bmcMeta.getPage().setErrorCode("page404");
         }
+
+        Template template = resourcePage.getTemplate();
+        String templatePath = (template != null) ? template.getPath() : "";
+        String templateName = (template != null) ? template.getName() : "";
+        // If Thank-you Page, pull info from parent form page
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+            bmcMeta.getPage().setPurl("true");
+            resourcePage = resourcePage.getParent();
+            contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
+            template = resourcePage.getTemplate();
+            templatePath = (template != null) ? template.getPath() : "";
+            templateName = (template != null) ? template.getName() : "";
+        }
+        bmcMeta.getPage().setContentId(getContentID());
+        bmcMeta.getPage().setContentType(getContentType());
+        bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         String[] products = resourcePage.getContentResource().getValueMap().get("product_interest", new String[] {});
         String[] productLines = resourcePage.getContentResource().getValueMap().get("product_line", new String[] {});
@@ -154,13 +168,11 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
 
-        Template template = resourcePage.getTemplate();
-        String templatePath = (template != null) ? template.getPath() : "";
-        String templateName = (template != null) ? template.getName() : "";
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
@@ -170,19 +182,11 @@ public class PageModel {
             bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-        }
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
-            try {
-                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
-                setFormMeta(bmcMeta, form);
-            } catch (RepositoryException e) {
-                e.printStackTrace();
-            }
-            bmcMeta.getPage().setPurl("true");
         }
 
         if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
@@ -205,6 +209,29 @@ public class PageModel {
         }
 
         return bmcMeta;
+    }
+
+    private void setPageMetaFromForm(BmcMeta bmcMeta, Node form) throws RepositoryException {
+        if (form != null) {
+            String productCategory = "";
+            String productCategoryNode = form.getProperty("product_interest").getString();
+            try {
+                productCategory = session.getNode("/content/bmc/resources/product-interests/"+productCategoryNode).getProperty("jcr:title").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+
+            String productLine = "";
+            String productLineNode = form.getProperty("productLine1").getString();
+            try {
+                productLine = session.getNode("/content/bmc/resources/product-lines/"+productLineNode).getProperty("text").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+            
+            bmcMeta.getPage().setProductCategories(productCategory);
+            bmcMeta.getPage().setProductLineCategories(productLine);
+        }
     }
 
     private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
