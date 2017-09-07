@@ -11,12 +11,12 @@
    </script>
    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.css @ categories='bmc.coveo'}" data-sly-unwrap />
-     <!--  ordered the files -->
-     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
-     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
-     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-custom.js"></script>
-     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
-     
+     <!--  ordered the files as it was showing jQuery error in publish mode -->
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
+  	  <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-custom.js"></script>
+       
 	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
 		<sly data-sly-test="${!loggedIn}">
         <script type="text/javascript">
