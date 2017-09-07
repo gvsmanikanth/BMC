@@ -31,6 +31,8 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
@@ -135,10 +137,10 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 break;
             case "Parallel":
                 status = sendData(data);
-                sendParallelEmail(formData, formProperties, formPage, request, status);
+                sendFormEmail(formData, formProperties, formPage, request);
                 break;
             case "Email Only":
-                sendBasicEmail(formData, formProperties, formPage, request);
+                sendFormEmail(formData, formProperties, formPage, request);
                 break;
         }
         String xml = "";
@@ -187,11 +189,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private void sendBasicEmail(Map<String, String> formData, Map<String, String> formProperties, Page formPage, SlingHttpServletRequest request) {
+    private void sendFormEmail(Map<String, String> formData, Map<String, String> formProperties, Page formPage, SlingHttpServletRequest request) {
         String templatePath = "/etc/notification/email/html/form-emailonly.html";
         String recipient = getRecipient(formProperties);
         if (recipient.isEmpty()) return;
-        String[] recipients = {recipient};
+        String[] recipients = recipient.split(",");
         Map<String, String> emailParams = new HashMap<>();
         setSubject(formProperties, emailParams);
         emailParams.put("fromAddress", FROM_ADDRESS);
@@ -205,11 +207,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         emailService.sendEmail(templatePath, emailParams, recipients);
     }
 
-    private void sendParallelEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request, int status) {
+    private void sendLoggingEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request, int status) {
         String templatePath = "/etc/notification/email/html/form-emailonly.html";
         String recipient = getRecipient(formProperties);
         if (recipient.isEmpty()) return;
-        String[] recipients = {recipient};
+        String[] recipients = recipient.split(",");
         Map<String, String> emailParams = new HashMap<>();
         setSubject(formProperties, emailParams);
         emailParams.put("fromAddress", FROM_ADDRESS);
