@@ -273,6 +273,10 @@ public class PageModel {
         //TODO: Build this string a better way. Maybe using Absolute Parent.
         StringBuilder formattedLongName = new StringBuilder();
         try {
+            // Set the bmcMeta longName to "" if this is a video player
+            if (getContentType().equals("video-page-section")) {
+                return "";
+            }
             formattedLongName.append(formatMetaLocale().toLowerCase());
             int depth = resourcePage.adaptTo(Node.class).getDepth();
             if (depth == 4) {
