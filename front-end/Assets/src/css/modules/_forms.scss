@@ -124,17 +124,15 @@ fieldset:not(#foo) {
 	//DXP-1112 - Added P tags style attribute to support text inside fieldset.
 	.cmp-text{
 		line-height: 1.45;
-		font-size: 14px;
-  		font-size: 0.77778rem;
+		@include font-size(14);
   		margin: 0 0 1.78571em 0; 
 		 
-	    @media only screen and (min-width: 48em) {
-			  font-size: 16px;
-			  font-size: 0.88889rem;
-			  margin: 0 0 1.5em 0; } 
-		@media only screen and (min-width: 60em) {
-			  font-size: 18px;
-			  font-size: 1rem;
+	    @include media(breakpointMedium) {
+			@include font-size(16);
+			  margin: 0 0 1.5em 0; 
+		} 
+		@include media(breakpointExtraLarge) {
+			 @include font-size(18);
 			  p.-oll {
 				width: 50em; 
 			  } 
