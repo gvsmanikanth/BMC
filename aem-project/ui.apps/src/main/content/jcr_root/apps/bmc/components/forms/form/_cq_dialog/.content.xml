@@ -376,31 +376,6 @@
                                                     value="Email Only"/>
                                         </items>
                                     </formType>
-                                    <!--<isLeadGenForm-->
-                                            <!--jcr:primaryType="nt:unstructured"-->
-                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/radio"-->
-                                            <!--fieldDescription="Select for lead gen forms (email address below is not used)"-->
-                                            <!--text="Lead Gen Form"-->
-                                            <!--selected="{Boolean}true"-->
-                                            <!--name="./formType"-->
-                                            <!--value="leadGen"-->
-                                            <!--wrapperClass="cmp-workflow-title"/>-->
-                                    <!--<isParallelEmailForm-->
-                                            <!--jcr:primaryType="nt:unstructured"-->
-                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/radio"-->
-                                            <!--fieldDescription="Select to capture as a lead gen form as well as email to the address below"-->
-                                            <!--text="Parallel Email Form"-->
-                                            <!--name="./formType"-->
-                                            <!--value="parallel"-->
-                                            <!--wrapperClass="cmp-workflow-title"/>-->
-                                    <!--<emailOnly-->
-                                            <!--jcr:primaryType="nt:unstructured"-->
-                                            <!--sling:resourceType="granite/ui/components/coral/foundation/form/radio"-->
-                                            <!--fieldDescription="Select this to have the form sent only to the email address below"-->
-                                            <!--text="Email Only Form"-->
-                                            <!--name="./formType"-->
-                                            <!--value="emailOnly"-->
-                                            <!--wrapperClass="cmp-workflow-title"/>-->
                                     <emailSubjectLine
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
