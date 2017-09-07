@@ -3,6 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
             cq:allowedTemplates="[/apps/bmc/templates/video-page.*]"
+            cq:template="/apps/bmc/templates/video-page-section"
             jcr:primaryType="cq:PageContent"
             jcr:title="Videos"
             sling:resourceType="bmc/components/structure/video-player"/>
