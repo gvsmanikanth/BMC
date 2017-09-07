@@ -4624,6 +4624,25 @@ fieldset:not(#foo) .cmp-options {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }
 
+fieldset:not(#foo) .cmp-text {
+  line-height: 1.45;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  margin: 0 0 1.78571em 0; }
+  @media only screen and (min-width: 48em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 16px;
+      font-size: 0.88889rem;
+      margin: 0 0 1.5em 0; } }
+  @media only screen and (min-width: 76.25em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 18px;
+      font-size: 1rem; }
+      fieldset:not(#foo) .cmp-text p.-oll {
+        width: 50em; } }
+  fieldset:not(#foo) .cmp-text :first-child {
+    margin-top: 0; }
+
 /*.oldie {
 	fieldset {
 		input[type='radio'],
@@ -8570,6 +8589,11 @@ html.no-flexbox .flex-demo:before {
 @media only screen and (min-width: 76.25em) {
   .four-up:nth-child(n+5) {
     margin-top: 2.5%; } }
+
+.layout-secondary .secondarycontentcontainer .related-items-secondary {
+  padding: 1.66667rem; }
+  .layout-secondary .secondarycontentcontainer .related-items-secondary + .related-items-secondary {
+    padding-top: 0; }
 
 .bmc-nav-loader-nav .search-site fieldset {
   margin: 0;
