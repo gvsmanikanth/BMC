@@ -310,7 +310,7 @@ public class PageModel {
             }catch (Exception t) {
                 logger.debug("no parent template", t);
             }
-            formattedLongName.append(":forms-start:" + resourcePage.getName()).toString();
+            formattedLongName.append(":form:" + resourcePage.getName()).toString();
         }catch (Exception e) {
             logger.error("Error setting contentId: {}", e.getMessage());
         }
@@ -319,7 +319,7 @@ public class PageModel {
 
     private String formatPageType(String path) {
         if (getContentType().equals("form-thank-you")) {
-            return "forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase();
+            return "forms-complete";
         }else if (path.equals("forms")) {
             return "forms-start";
         }else{
