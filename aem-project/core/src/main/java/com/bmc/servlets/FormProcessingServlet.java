@@ -31,8 +31,6 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
