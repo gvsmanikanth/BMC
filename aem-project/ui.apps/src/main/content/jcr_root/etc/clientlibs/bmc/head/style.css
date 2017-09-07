@@ -4603,6 +4603,13 @@ fieldset:not(#foo) .form-group.radio li {
 fieldset:not(#foo) .aem-GridColumn {
   padding-left: 0; }
 
+@media only screen and (min-width: 48em) {
+  fieldset:not(#foo) .aem-GridColumn--default--6 {
+    display: inline-block;
+    float: none !important;
+    vertical-align: top;
+    width: calc(50% - 3px); } }
+
 fieldset:not(#foo) .cmp-options {
   padding-top: 0;
   padding-bottom: 0; }
@@ -17999,6 +18006,25 @@ iframe[name='google_conversion_frame'] {
       left: 720px;
       top: 102px; } }
 
+.honeycomb .card-hex,
+.honeycomb .card-hex-shadow {
+  box-sizing: border-box;
+  position: relative;
+  text-align: center; }
+  .honeycomb .card-hex > div,
+  .honeycomb .card-hex-shadow > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2; }
+
 .honeycomb .card-hex {
   background-color: #fff;
   color: #414042;
@@ -18029,25 +18055,6 @@ iframe[name='google_conversion_frame'] {
       position: absolute;
       top: 5px;
       width: 102px; } }
-
-.honeycomb .card-hex,
-.honeycomb .card-hex-shadow {
-  box-sizing: border-box;
-  position: relative;
-  text-align: center; }
-  .honeycomb .card-hex > div,
-  .honeycomb .card-hex-shadow > div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2; }
 
 .honeycomb .card-hex:before,
 .honeycomb .card-hex-shadow:before,
@@ -18103,7 +18110,8 @@ iframe[name='google_conversion_frame'] {
   @media (max-width: 479px) {
     .honeycomb .content .card-hex {
       display: block;
-      margin-bottom: 1.5rem; }
+      margin-bottom: 1.5rem;
+      position: relative; }
     .honeycomb .content .card-image {
       margin-bottom: .5rem; } }
   @media (min-width: 480px) {
@@ -19321,8 +19329,7 @@ iframe[name='google_conversion_frame'] {
   z-index: -1; }
   .video-hero-header .hero-image:before {
     content: '';
-    display: block;
-    padding-top: 75%; }
+    display: block; }
     .video-hero-header .hero-image:before .vidbg-box {
       width: 650px;
       height: 338px; }
