@@ -10,14 +10,20 @@
 		    var supportCoveoAccessToken = '${model.supportCoveoAccessToken @ context="html"}';
    </script>
    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientLib.all @ categories='bmc.coveo'}" data-sly-unwrap />
+     data-sly-call="${clientLib.css @ categories='bmc.coveo'}" data-sly-unwrap />
+     <!--  ordered the files -->
+     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
+     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
+     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-custom.js"></script>
+     <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
+     
 	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
 		<sly data-sly-test="${!loggedIn}">
         <script type="text/javascript">
         jQuery( document ).ready(function( $ ) {
               $(function () {
     
-                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/content/bmc/support/support-search.html');
+                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/content/bmc/language-masters/en/support/support-search.html');
     
                  Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
                     var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
