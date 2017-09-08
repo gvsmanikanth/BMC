@@ -1,11 +1,9 @@
-package com.bmc.components;
-
-import com.adobe.cq.sightly.WCMUsePojo;
+package com.bmc.models.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlternateLinks extends WCMUsePojo {
+public class AlternateLinks {
     private Map<String, String> hrefLangMap = new HashMap<String, String>() {{
         put("x-default", "www.bmc.com");
         put("en-sa", "www.bmcsoftware.sa");
@@ -40,9 +38,6 @@ public class AlternateLinks extends WCMUsePojo {
         put("en-sg", "www.bmcsoftware.sg");
         put("zh-tw", "www.bmcsoftware.tw");
     }};
-
-    @Override
-    public void activate() throws Exception {}
 
     public Map<String, String> getHrefLangMap() {
         return hrefLangMap;

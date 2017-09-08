@@ -7,7 +7,7 @@
 <meta name="author" content="ConnectiveDX">
 <meta name="apple-mobile-web-app-title" content="BMC Software">
 
-<sly data-sly-use.alternateLinks="${'com.bmc.components.AlternateLinks'}">
+<sly data-sly-use.alternateLinks="${'com.bmc.models.AlternateLinks'}">
     <link rel="alternate" href="http://${alternateLinks.hrefLangMap[item]}${request.requestURI}" hreflang="${item}" data-sly-repeat="${alternateLinks.hrefLangMap.keySet.iterator}" />
 </sly>
 
