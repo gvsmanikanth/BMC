@@ -2,9 +2,7 @@ package com.bmc.services;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
-//import org.w3c.dom.Attr;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
