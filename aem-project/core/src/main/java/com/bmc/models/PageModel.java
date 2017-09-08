@@ -273,6 +273,10 @@ public class PageModel {
         //TODO: Build this string a better way. Maybe using Absolute Parent.
         StringBuilder formattedLongName = new StringBuilder();
         try {
+            // Set the bmcMeta longName to "" if this is a video player
+            if (getContentType().equals("video-page-section")) {
+                return "";
+            }
             formattedLongName.append(formatMetaLocale().toLowerCase());
             int depth = resourcePage.adaptTo(Node.class).getDepth();
             if (depth == 4) {
@@ -306,7 +310,7 @@ public class PageModel {
             }catch (Exception t) {
                 logger.debug("no parent template", t);
             }
-            formattedLongName.append(":forms-start:" + resourcePage.getName()).toString();
+            formattedLongName.append(":form:" + resourcePage.getName()).toString();
         }catch (Exception e) {
             logger.error("Error setting contentId: {}", e.getMessage());
         }
@@ -315,7 +319,7 @@ public class PageModel {
 
     private String formatPageType(String path) {
         if (getContentType().equals("form-thank-you")) {
-            return "forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase();
+            return "forms-complete";
         }else if (path.equals("forms")) {
             return "forms-start";
         }else{

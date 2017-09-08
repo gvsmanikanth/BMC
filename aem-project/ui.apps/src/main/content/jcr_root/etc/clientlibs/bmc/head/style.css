@@ -4603,17 +4603,45 @@ fieldset:not(#foo) .form-group.radio li {
 fieldset:not(#foo) .aem-GridColumn {
   padding-left: 0; }
 
+@media only screen and (min-width: 48em) {
+  fieldset:not(#foo) .aem-GridColumn--default--6 {
+    display: inline-block;
+    float: none !important;
+    vertical-align: top;
+    width: calc(50% - 3px); } }
+
 fieldset:not(#foo) .cmp-options {
   padding-top: 0;
   padding-bottom: 0; }
-  fieldset:not(#foo) .cmp-options .form-group.checkbox {
-    margin: 0; }
-  fieldset:not(#foo) .cmp-options .form-group.radio {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem; }
+  fieldset:not(#foo) .cmp-options .form-group {
+    margin-bottom: 0; }
+    fieldset:not(#foo) .cmp-options .form-group > label {
+      font-weight: bold;
+      margin-top: 0.5rem; }
+    fieldset:not(#foo) .cmp-options .form-group.checkbox {
+      margin: 0; }
   fieldset:not(#foo) .cmp-options .decorator-select {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }
+
+fieldset:not(#foo) .cmp-text {
+  line-height: 1.45;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  margin: 0 0 1.78571em 0; }
+  @media only screen and (min-width: 48em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 16px;
+      font-size: 0.88889rem;
+      margin: 0 0 1.5em 0; } }
+  @media only screen and (min-width: 76.25em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 18px;
+      font-size: 1rem; }
+      fieldset:not(#foo) .cmp-text p.-oll {
+        width: 50em; } }
+  fieldset:not(#foo) .cmp-text :first-child {
+    margin-top: 0; }
 
 /*.oldie {
 	fieldset {
@@ -8562,6 +8590,11 @@ html.no-flexbox .flex-demo:before {
   .four-up:nth-child(n+5) {
     margin-top: 2.5%; } }
 
+.layout-secondary .secondarycontentcontainer .related-items-secondary {
+  padding: 1.66667rem; }
+  .layout-secondary .secondarycontentcontainer .related-items-secondary + .related-items-secondary {
+    padding-top: 0; }
+
 .bmc-nav-loader-nav .search-site fieldset {
   margin: 0;
   padding: 0 0.92857em 0.92857em; }
@@ -10958,11 +10991,14 @@ section.bmc-engage-header.layout-full-bleed {
   .customer-story-case-banner .back-link a, .customer-story-case-banner .back-link a:hover {
     color: #fff;
     font-weight: bold; }
+  .customer-story-case-banner .points > div {
+    margin-top: 0.25em; }
+    .customer-story-case-banner .points > div:first-child {
+      margin-top: 0; }
   .customer-story-case-banner .point {
     background-color: rgba(0, 0, 0, 0.65);
     box-sizing: border-box;
     padding: 1em 2em;
-    margin-top: 0.25em;
     text-align: left;
     /*.oldie & {
 			background-color: #000;
@@ -10977,8 +11013,6 @@ section.bmc-engage-header.layout-full-bleed {
       .customer-story-case-banner .point {
         padding: 3em 1em;
         text-align: left; } }
-    .customer-story-case-banner .point:first-child {
-      margin-top: 0; }
   .customer-story-case-banner .icon, .customer-story-case-banner .copy {
     display: inline-block;
     text-align: center;

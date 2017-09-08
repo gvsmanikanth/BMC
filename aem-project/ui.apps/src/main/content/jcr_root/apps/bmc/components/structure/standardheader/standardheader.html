@@ -789,18 +789,7 @@
 			<li class="navigation-country"><a href="#"
 				class="select-country">Worldwide (English)</a></li>
 			<li class="navigation-search js-navigation-search">
-				<form action="/search/" class="search-site">
-					<div class="search-site-b" dir="ltr">
-						<div class="search-focus">
-							<input maxlength="2048" name="q" autocapitalize="off"
-								autocomplete="off" autocorrect="off" title="Search..."
-								type="text" value="" aria-label="Search" aria-haspopup="false"
-								role="combobox" aria-autocomplete="both" dir="ltr"
-								spellcheck="false" placeholder="Search...">
-						</div>
-						<button></button>
-					</div>
-				</form>
+					<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
 			</li>
 		</ul>
 	</div>
