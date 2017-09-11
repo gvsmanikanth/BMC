@@ -22,8 +22,7 @@
 .dividers {
 	.divider {
 		display: block;
-		margin-top: .75rem;
-		padding-bottom: .75rem;
+		margin: .75rem 0;
 	}
 	.layout-full-bleed > & {
 		padding: 0 1.25%; //% based for mobile
@@ -33,4 +32,3 @@
 		}
 	}	
 }
-
