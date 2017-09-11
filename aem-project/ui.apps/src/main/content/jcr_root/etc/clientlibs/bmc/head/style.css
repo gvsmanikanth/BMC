@@ -1919,7 +1919,8 @@ blockquote {
     padding-top: 0; }
   .layout-full-bleed.layout-full-bleed-image {
     background-size: cover;
-    color: #fff; }
+    color: #fff;
+    background-position: center center; }
     .page-campaign-landing .layout-full-bleed.layout-full-bleed-image {
       padding: 1em 0; }
       @media only screen and (min-width: 60em) {
@@ -3574,8 +3575,8 @@ span .chatbtn {
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
   display: block;
-  margin: 0;
-  padding: .65rem 0; }
+  margin-top: .75rem;
+  padding-bottom: .75rem; }
 
 .layout-full-bleed > .dividers {
   padding: 0 1.25%; }
