@@ -1,6 +1,7 @@
 package com.bmc.servlets;
 
 import com.adobe.acs.commons.email.EmailService;
+import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -40,6 +41,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String PURL_PAGE_URL = "PurlPageURL";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
     public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
+    public static final String TRIAL_DOWNLOAD = "Trial Download";
 
     private String serviceUrl = "";
     private String elqSiteID = "";
@@ -52,6 +54,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     @Reference
     private EmailService emailService;
+
+    @Reference
+    private ExportComplianceService exportComplianceService;
 
     @Reference
     private SlingSettingsService slingSettingsService;
@@ -114,6 +119,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
+        Boolean isValid = true;
+        String validationError = "";
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
         RequestParameterMap parameters = request.getRequestParameterMap();
@@ -125,6 +132,17 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
         Map<String,String> formProperties = getFormProperties(node);
+        if (formProperties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
+            Map<String, String> complianceResult = checkExportCompliance(formData);
+            String result = complianceResult.get("Result");
+            String errorMsg = complianceResult.get("ErrorMsg");
+            formData.put("MkDenial_Result", result);
+            formData.put("MkDenial_Reason", errorMsg);
+            if (!result.equals("Success")) {
+                isValid = false;
+                validationError = errorMsg;
+            }
+        }
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
@@ -151,14 +169,29 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
-            if (page != null) {
+            if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
                 String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
+            if (!isValid) {
+                String selector = (validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
+                purlPage = resourceResolver.map(purlPage) + selector + ".html";
+            }
             response.sendRedirect(purlPage);
         }
+    }
+
+    private Map<String, String> checkExportCompliance(Map<String, String> formData) {
+        Map<String,String> result = exportComplianceService.checkExportCompliance(
+                formData.getOrDefault("C_Country", ""),
+                formData.getOrDefault("C_Company", ""),
+                formData.getOrDefault("C_FirstName", ""),
+                formData.getOrDefault("C_LastName", ""),
+                formData.getOrDefault("C_EmailAddress", "")
+        );
+        return result;
     }
 
     private void sendAutomationEmail(String xml, int status, Map<String,String> formData, Map<String,String> formProperties) {

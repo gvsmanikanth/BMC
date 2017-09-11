@@ -90,11 +90,11 @@ public class SearchResultsModel {
                 values.add("docs");
             }
             else if(labelParam.equals("marketplace")){
-                values.add("productsSolutions");
+                values.add("marketplace");
             }
             else if(labelParam.equals("productsSolutions")){
                 fieldName = "category";
-                values.add("marketplace");
+                values.add("productsSolutions");
             }
             else if(labelParam.equals("services")){
                 fieldName = "category";
@@ -105,6 +105,7 @@ public class SearchResultsModel {
                 values.add("education");
             }
             else if(labelParam.equals("blogs")){
+                fieldName = "category";
                 values.add("blogs");
             } else {
                 values.addAll(Arrays.asList(pageLocale,"newsroom","docs","marketplace"));

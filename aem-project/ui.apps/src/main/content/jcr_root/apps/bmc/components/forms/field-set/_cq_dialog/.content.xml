@@ -25,6 +25,22 @@
                                 fieldLabel="Name"
                                 name="./fieldsetName"
                                 wrapperClass="cmp-workflow-title"/>
+                            <formId
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                required="{Boolean}true"
+                                fieldDescription="The formid for the form (for bmcMeta)."
+                                fieldLabel="formid"
+                                name="./formid"
+                                wrapperClass="cmp-workflow-title"/>
+                            <formName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                required="{Boolean}true"
+                                fieldDescription="The formname for the form (for bmcMeta)."
+                                fieldLabel="formname"
+                                name="./formname"
+                                wrapperClass="cmp-workflow-title"/>
                         </items>
                     </column>
                 </items>

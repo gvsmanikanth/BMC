@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          username="exportcompliancerestapi@bmc.com"
+          password='ec#rest$123AP0k81dgMpWVD79ytVpgPZOb'
+          authentication_url="https://login.salesforce.com/services/oauth2/token"
+          client_id="3MVG99OxTyEMCQ3gDfQdUJptdfEUrKlKBGyTFUMindr2LKCbvqzCY1OPQJtQ4QbDTKUiF39JxDC0ctSuYJsvL"
+          client_secret="2539112479640395260"
+          timeout="{Long}5000"
+          service_path="/services/apexrest/VerifyExportCompliance"
+/>
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"-->
+        <!--jcr:primaryType="sling:OsgiConfig"-->
+        <!--username="exportcompliancerestapi@bmc.com.sfaqa"-->
+        <!--password='ecrest12344kSytm9xb8mB8LcRrWqGlt35t'-->
+        <!--authentication_url="https://test.salesforce.com/services/oauth2/token"-->
+        <!--client_id="3MVG9M6Iz6p_Vt2wIwhNZvlGttpUJjVTTSiquJTIZrUkk0qmIsrH22_OaZ_pr6ieMH.UylYkb4safsESLldEb"-->
+        <!--client_secret="5372093210944523255"-->
+        <!--timeout="{Long}5000"-->
+        <!--service_path="/services/apexrest/VerifyExportCompliance"-->
+        <!--/>-->

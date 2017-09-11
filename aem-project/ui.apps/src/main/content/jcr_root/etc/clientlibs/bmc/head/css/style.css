@@ -1483,6 +1483,8 @@ blockquote {
       font-size: 0.77778rem; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary {
+      float: right;
+      /* DXP-1062 */
       width: 25%; } }
 
 .layout-secondary-slim-side {
@@ -1919,7 +1921,8 @@ blockquote {
     padding-top: 0; }
   .layout-full-bleed.layout-full-bleed-image {
     background-size: cover;
-    color: #fff; }
+    color: #fff;
+    background-position: center center; }
     .page-campaign-landing .layout-full-bleed.layout-full-bleed-image {
       padding: 1em 0; }
       @media only screen and (min-width: 60em) {
@@ -3574,8 +3577,7 @@ span .chatbtn {
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
   display: block;
-  margin: 0;
-  padding: .65rem 0; }
+  margin: .75rem 0; }
 
 .layout-full-bleed > .dividers {
   padding: 0 1.25%; }
@@ -4623,6 +4625,25 @@ fieldset:not(#foo) .cmp-options {
   fieldset:not(#foo) .cmp-options .decorator-select {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }
+
+fieldset:not(#foo) .cmp-text {
+  line-height: 1.45;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  margin: 0 0 1.78571em 0; }
+  @media only screen and (min-width: 48em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 16px;
+      font-size: 0.88889rem;
+      margin: 0 0 1.5em 0; } }
+  @media only screen and (min-width: 76.25em) {
+    fieldset:not(#foo) .cmp-text {
+      font-size: 18px;
+      font-size: 1rem; }
+      fieldset:not(#foo) .cmp-text p.-oll {
+        width: 50em; } }
+  fieldset:not(#foo) .cmp-text :first-child {
+    margin-top: 0; }
 
 /*.oldie {
 	fieldset {
@@ -8570,6 +8591,11 @@ html.no-flexbox .flex-demo:before {
 @media only screen and (min-width: 76.25em) {
   .four-up:nth-child(n+5) {
     margin-top: 2.5%; } }
+
+.layout-secondary .secondarycontentcontainer .related-items-secondary {
+  padding: 1.66667rem; }
+  .layout-secondary .secondarycontentcontainer .related-items-secondary + .related-items-secondary {
+    padding-top: 0; }
 
 .bmc-nav-loader-nav .search-site fieldset {
   margin: 0;

@@ -1,3 +1,12 @@
+<sly data-sly-use.validator="com.bmc.components.ThankYouValidator"
+     data-sly-test.isThankYouAndNotValid="${validator.isThankYouAndNotValid}">
+    <section class="layout-full-bleed">
+        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+            <p>${validator.errorMessage @context='html'}</p>
+        </div>
+    </section>
+</sly>
+<sly data-sly-test="${!isThankYouAndNotValid}">
 <section data-sly-test="${currentPage.properties.showBreadcrumbs}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='layout-inner-wrap', decorationTagName='span' }" class="navigation-breadcrumb layout-full-bleed"></section>
 <section data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
           data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
@@ -12,3 +21,4 @@
     <sly data-sly-test="${!isAllowedApplicable}"
          data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
 </section>
+</sly>

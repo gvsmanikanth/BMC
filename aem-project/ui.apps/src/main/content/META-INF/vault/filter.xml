@@ -11,6 +11,7 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width" mode="merge"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 
