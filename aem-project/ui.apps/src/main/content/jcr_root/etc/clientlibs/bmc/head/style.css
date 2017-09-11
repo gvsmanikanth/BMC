@@ -1483,6 +1483,8 @@ blockquote {
       font-size: 0.77778rem; } }
   @media only screen and (min-width: 48em) {
     .layout-secondary {
+      float: right;
+      /* DXP-1062 */
       width: 25%; } }
 
 .layout-secondary-slim-side {
