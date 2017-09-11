@@ -494,14 +494,35 @@ var Support = Support || {};
 				Support.Issues.loadViaUrl('/bin/supportcases');
 			}
 		},
+		
+		employeeCheck : function(){
+			
+			bmcMeta.user.email = "shailesh@bmc.com";
+			
+			if(typeof bmcMeta !== "undefined" && typeof bmcMeta.user !== "undefined" && typeof bmcMeta.user.email !== "undefined"){
+				
+				var pEmailID = bmcMeta.user.email;
+				
+				if(pEmailID.indexOf("@bmc.com") > -1)
+					{
+						var employeeAlertContent = '<section class="layout-full-bleed support-promo support-message-box"><p class="align-center"><strong>You are currently logged in with your BMC employee internal ID on the external www.bmc.com/support site.</strong><br>Please <a href="/available/sso-default-login.html">login</a> using an account that you have registered with an active Support ID if you would like to access BMC Customer Support applications i.e. Product Downloads, eFix, Case Management.</p></section>';
+						$( employeeAlertContent ).insertAfter( ".supportcentral-news" );
+					}
+			}
+		},
 
 		init: function() {
+			
 			// Prevent init if not logged in or not on landing page
 			if (!Support.Helpers.isAuthenticated() || !Support.Helpers.isOnSupportLandingPage()) {
 				return;
 			}
 			this.issueShowMore();
 			this.loadData();
+			
+			//DXP-1111 : Support Central - Employee Check
+			this.employeeCheck();
+			
 		}
 
 	};
