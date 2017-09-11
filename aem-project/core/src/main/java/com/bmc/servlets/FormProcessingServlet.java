@@ -131,7 +131,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
         String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
-        Map<String,String> formProperties = getFormProperties(node);
+        Map<String,String> formProperties = getFormProperties(node, formPage, request);
         if (formProperties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
             Map<String, String> complianceResult = checkExportCompliance(formData);
             String result = complianceResult.get("Result");
@@ -390,7 +390,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         return "";
     }
 
-    private Map<String,String> getFormProperties(Node node) {
+    private Map<String,String> getFormProperties(Node node, Page formPage, SlingHttpServletRequest request) {
         String[] formProperties = new String[]{
                 "product_interest",
                 "content_prefs",
@@ -422,8 +422,13 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)));
+
+
+        String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
+        String purlPageUrl = "http://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
+
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
