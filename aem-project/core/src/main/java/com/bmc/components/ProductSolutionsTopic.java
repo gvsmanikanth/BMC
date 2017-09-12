@@ -11,6 +11,7 @@ import com.bmc.util.StringHelper;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductSolutionsTopic extends WCMUsePojo implements MetadataInfoProvider_RequestCached, MultifieldDataProvider {
     private String title = "[ProductSolutionsTopic]";
@@ -40,7 +41,8 @@ public class ProductSolutionsTopic extends WCMUsePojo implements MetadataInfoPro
         ValueMap map = getProperties();
         href = StringHelper.resolveHref(map.get("exploreUrl", "")).orElse("#");
         productShotHref = StringHelper.resolveHref(map.get("productShot", "")).orElse("#");
-        featuredProducts = mapMultiFieldJsonObjects("featuredProducts",
-                (vm)->RelatedCTAs.getLinkItem(vm, getResourceProvider()));
+        featuredProducts = streamMultiFieldNodes("featuredProducts")
+                .map((resource)->RelatedCTAs.getLinkItem(resource.getValueMap(),getResourceProvider()))
+                .collect(Collectors.toList());
     }
 }
