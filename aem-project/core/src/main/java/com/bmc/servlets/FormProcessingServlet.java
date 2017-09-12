@@ -425,7 +425,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
 
         String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
-        String purlPageUrl = "http://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
         properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
 
