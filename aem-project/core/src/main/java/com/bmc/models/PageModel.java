@@ -169,7 +169,6 @@ public class PageModel {
         bmcMeta.getPage().setProductLineCategories(linesList);
 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
-            bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setPageMetaFromForm(bmcMeta, form);
@@ -179,7 +178,6 @@ public class PageModel {
             }
         }
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
-            bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
                 setPageMetaFromForm(bmcMeta, form);
@@ -189,7 +187,7 @@ public class PageModel {
             }
         }
 
-        if (templateName.equals("bmc-support-template") || templateName.equals("support-central")) {
+        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
@@ -286,8 +284,10 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
-            } else if (getContentType().equals("form-thank-you")) {
+            } else if (getContentType().contains("form-thank-you")) {
                     formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
+            } else if (getContentType().contains("form-")) {
+                    formattedLongName.append(":forms-start" + ":"+resourcePage.getName().toString());
             } else {
                 String[] pathArr = StringUtils.split(resourcePage.getPath(), "/");
                 pathArr = Arrays.copyOfRange(pathArr, 4, pathArr.length);
@@ -300,29 +300,12 @@ public class PageModel {
         return formattedLongName.toString().toLowerCase();
     }
 
-    private String formatLongNameFormStart() {
-        //TODO: Build this string a better way. Maybe using Absolute Parent.
-        StringBuilder formattedLongName = new StringBuilder();
-        try {
-            formattedLongName.append(formatMetaLocale().toLowerCase());
-            try{
-                formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
-            }catch (Exception t) {
-                logger.debug("no parent template", t);
-            }
-            formattedLongName.append(":form:" + resourcePage.getName()).toString();
-        }catch (Exception e) {
-            logger.error("Error setting contentId: {}", e.getMessage());
-        }
-        return formattedLongName.toString().toLowerCase();
-    }
-
     private String formatPageType(String path) {
-        if (getContentType().equals("form-thank-you")) {
+        if (getContentType().contains("form-thank-you")) {
             return "forms-complete";
-        }else if (path.equals("forms")) {
+        } else if (getContentType().contains("form")) {
             return "forms-start";
-        }else{
+        } else {
             return path.toLowerCase();
         }
     }
