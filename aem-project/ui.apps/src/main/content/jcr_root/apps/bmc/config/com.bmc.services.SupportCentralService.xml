@@ -7,4 +7,7 @@
           apiUser="clicKu5er"
           apiPass="c1icKU5Er"
           apiPath="/rest/BMC_SC/Contact/"
+	      searchPageUrl="https://bmcsites.force.com/casemgmt/sc_CoveoSearch"
+   	      supportCentralUrl="https://bmcsites.force.com/casemgmt"
+    	  supportCoveoAccessToken="bcc1686c-c3a0-4555-8a01-bef817f71daf"
 />

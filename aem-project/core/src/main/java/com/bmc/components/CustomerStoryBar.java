@@ -6,10 +6,16 @@ import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.services.CustomerStoryService;
 import com.bmc.util.StringHelper;
+import org.apache.sling.api.resource.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.List;
+import java.util.*;
 
 public class CustomerStoryBar extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached {
+
+    private static final Logger logger = LoggerFactory.getLogger(CustomerStoryBar.class);
+
     private CustomerStoryService storyService;
     private String title;
     private String linkText;
@@ -23,13 +29,25 @@ public class CustomerStoryBar extends WCMUsePojo implements MultifieldDataProvid
 
     @Override
     public void activate() throws Exception {
-        storyService = getSlingScriptHelper().getService(CustomerStoryService.class);
 
-        title = getProperties().get("title", "");
-        linkText = getProperties().get("linkText", "");
-        linkHref = StringHelper.resolveHref(getProperties().get("linkPath", "")).orElse("#");
+        try {
+            storyService = getSlingScriptHelper().getService(CustomerStoryService.class);
+            title = getProperties().get("title", "");
+            linkText = getProperties().get("linkText", "");
+            linkHref = StringHelper.resolveHref(getProperties().get("linkPath", "")).orElse("#");
 
-        stories = mapMultiFieldJsonObjects("stories",
-                map -> storyService.getStoryCard(map.get("pagePath", ""), this));
+            ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("stories").listIterator();
+            List<String> pagePathList = new ArrayList<>();
+            stories = new ArrayList<>();
+            while (pagePathsNodes.hasNext()) {
+                Resource childPage = pagePathsNodes.next();
+                pagePathList.add(childPage.getValueMap().get("pagePath").toString());
+                stories.add(storyService.getStoryCard(childPage.getValueMap().get("pagePath").toString(), this));
+            }
+        } catch (Exception e){
+            logger.error("Error Getting Customer Stories:", e.getMessage());
+        }
     }
+
 }
+

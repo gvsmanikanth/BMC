@@ -6,11 +6,18 @@ import com.bmc.models.metadata.MetadataInfo;
 import com.bmc.models.components.customerstory.CustomerStoryCard;
 import com.bmc.models.components.customerstory.FeaturedCustomerStoryCard;
 import com.bmc.services.CustomerStoryService;
+import org.apache.sling.api.resource.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class CustomerStoryList extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached
 {
+    private static final Logger logger = LoggerFactory.getLogger(CustomerStoryList.class);
+
     private CustomerStoryService storyService;
     private FeaturedCustomerStoryCard featuredStory;
     private List<CustomerStoryCard> stories;
@@ -22,14 +29,26 @@ public class CustomerStoryList extends WCMUsePojo implements MultifieldDataProvi
 
     @Override
     public void activate() throws Exception {
-        storyService = getSlingScriptHelper().getService(CustomerStoryService.class);
+        try {
+
+            storyService = getSlingScriptHelper().getService(CustomerStoryService.class);
 
         filters = storyService.getFilters(this);
         featuredStory = storyService.getFeaturedStoryCard(
                 getProperties().get("featuredStoryPath", ""),
                 getProperties().get("featuredStoryBgImgSrc", ""),
                 this);
-        stories = mapMultiFieldJsonObjects("stories",
-                map -> storyService.getStoryCard(map.get("pagePath", ""), this));
+
+        ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("stories").listIterator();
+        List<String> pagePathList = new ArrayList<>();
+        stories = new ArrayList<>();
+        while (pagePathsNodes.hasNext()) {
+            Resource childPage = pagePathsNodes.next();
+            pagePathList.add(childPage.getValueMap().get("pagePath").toString());
+            stories.add(storyService.getStoryCard(childPage.getValueMap().get("pagePath").toString(), this));
+        }
+        } catch (Exception e){
+            logger.error("Error Getting Customer Stories:", e.getMessage());
+        }
     }
 }
