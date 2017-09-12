@@ -187,7 +187,7 @@ public class PageModel {
             }
         }
 
-        if (templateName.equals("bmc-support-template") || templateName.equals("support-central")) {
+        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");

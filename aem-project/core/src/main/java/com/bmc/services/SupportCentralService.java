@@ -40,12 +40,24 @@ public class SupportCentralService {
         return apiPass;
     }
 
+    public String getSupportCentralUrl() {
+        return supportCentralUrl;
+    }
+    public String getSupportCoveoAccessToken() {
+        return supportCoveoAccessToken;
+    }
+    public String getSearchPageUrl() {
+        return searchPageUrl;
+    }
     private String newCaseUrl;
     private String allCasesUrl;
     private String apiBaseUrl;
     private String apiPath;
     private String apiUser;
     private String apiPass;
+    private String supportCentralUrl;
+    private String supportCoveoAccessToken;
+    private String searchPageUrl;
 
     public static final Map<String, String> FIELD_MAPPING;
     static {
@@ -66,6 +78,11 @@ public class SupportCentralService {
         apiPath = PropertiesUtil.toString(config.get("apiPath"), "");
         apiUser = PropertiesUtil.toString(config.get("apiUser"), "");
         apiPass = PropertiesUtil.toString(config.get("apiPass"), "");
+        /*Support central Coveo search variables*/
+        supportCentralUrl = PropertiesUtil.toString(config.get("supportCentralUrl"), "");
+        supportCoveoAccessToken = PropertiesUtil.toString(config.get("supportCoveoAccessToken"), "");
+        searchPageUrl = PropertiesUtil.toString(config.get("searchPageUrl"), "");
+        		
     }
 
 }
