@@ -13,6 +13,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
@@ -169,9 +170,13 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
+            ValueMap map = formPage.getProperties();
             if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
-                String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
+                if (!map.containsKey("contentId")) {
+                    map.put("contentId", map.get("jcr:baseVersion"));
+                }
+                String formGUID = (String) map.get("contentId");
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
