@@ -497,8 +497,6 @@ var Support = Support || {};
 		
 		employeeCheck : function(){
 			
-			bmcMeta.user.email = "shailesh@bmc.com";
-			
 			if(typeof bmcMeta !== "undefined" && typeof bmcMeta.user !== "undefined" && typeof bmcMeta.user.email !== "undefined"){
 				
 				var pEmailID = bmcMeta.user.email;

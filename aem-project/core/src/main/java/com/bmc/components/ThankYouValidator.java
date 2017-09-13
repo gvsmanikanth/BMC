@@ -52,7 +52,7 @@ public class ThankYouValidator extends WCMUsePojo {
     public void getTokenIsValid() {
         Page page = getCurrentPage();
         Page formPage = page.getParent();
-        String id = (String) formPage.getProperties().get("jcr:baseVersion");
+        String id = (String) formPage.getProperties().get("contentId");
         SlingHttpServletRequest request = getRequest();
         String[] selectors = request.getRequestPathInfo().getSelectors();
         List<String> list = Arrays.asList(selectors);
