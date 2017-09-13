@@ -1,9 +1,12 @@
-package com.bmc.models.utils;
+package com.bmc.components;
+
+import com.adobe.cq.sightly.WCMUsePojo;
+import org.apache.sling.api.SlingHttpServletRequest;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AlternateLinks {
+public class AlternateLinks  extends WCMUsePojo {
     private Map<String, String> hrefLangMap = new HashMap<String, String>() {{
         put("x-default", "www.bmc.com");
         put("en-sa", "www.bmcsoftware.sa");
@@ -39,7 +42,20 @@ public class AlternateLinks {
         put("zh-tw", "www.bmcsoftware.tw");
     }};
 
-    public Map<String, String> getHrefLangMap() {
-        return hrefLangMap;
+    private Map<String, String> alternateLinksMap = new HashMap<String, String>();
+
+    @Override
+    public void activate() throws Exception {
+        SlingHttpServletRequest req = getRequest();
+        String resourcePath = getResourceResolver().map(req.getRequestURI());
+
+        // Build map of alternate locale links.
+        for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
+            alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + resourcePath);
+        }
+    }
+
+    public Map<String, String> getAlternateLinksMap() {
+        return alternateLinksMap;
     }
 }
