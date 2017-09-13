@@ -173,10 +173,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             ValueMap map = formPage.getProperties();
             if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
-                if (!map.containsKey("contentId")) {
-                    map.put("contentId", map.get("jcr:baseVersion"));
-                }
-                String formGUID = (String) map.get("contentId");
+                String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
@@ -428,8 +425,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
 
+        ValueMap map = formPage.getProperties();
+        String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
-        String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
         String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
         properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
