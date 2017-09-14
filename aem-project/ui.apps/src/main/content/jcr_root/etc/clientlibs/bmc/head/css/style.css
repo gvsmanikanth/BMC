@@ -15804,7 +15804,7 @@ body.support-central {
   @media only screen and (min-width: 48em) {
     .testimonial {
       margin: 0 0 4em;
-      padding: 60px 40px; } }
+      padding: 60px; } }
   .testimonial.row {
     margin-top: 0; }
   .testimonial .layout-inner-wrap {
