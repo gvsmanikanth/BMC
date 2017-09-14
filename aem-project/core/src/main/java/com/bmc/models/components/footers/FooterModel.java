@@ -6,6 +6,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +34,10 @@ public class FooterModel {
     @Inject
     private Page currentPage;
 
+    private String copyRightText;
+
     @Inject
+    @Optional
     private String nodeName;
 
     private Node footerNode;
@@ -59,10 +63,17 @@ public class FooterModel {
             }
             if (session.itemExists(footerPath)) {
                 footerNode = session.getNode(footerPath);
+                if(footerNode.hasProperty("copyRightText")){
+                    copyRightText = footerNode.getProperty("copyRightText").getValue().getString();
+                }
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getCopyRightText() {
+        return copyRightText;
     }
 
     public List<Resource> getChildResources() {
@@ -70,7 +81,7 @@ public class FooterModel {
             Resource nodeResource = resourceResolver.getResource(footerNode.getNode(nodeName).getPath());
             return ResourceHelper.streamChildren(nodeResource).collect(Collectors.toList());
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("ERROR Loading Footer", e.getMessage());
             return null;
         }
     }
