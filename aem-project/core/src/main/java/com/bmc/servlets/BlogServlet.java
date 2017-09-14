@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(BlogServlet.class);
     private String base = "";
+    private String hostName = "";
 
     // Don't run forever no matter what configuration says
     private static final int MAX_RETRY_ATTEMPTS = 100;
@@ -53,6 +55,18 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) {
         servletResponse = response;
+
+        // Extract hostname base URL from request object.
+        try {
+            hostName = new URL(request.getScheme(),
+                    request.getServerName(),
+                    request.getServerPort(),
+                    request.getContextPath()).toString();
+        } catch (MalformedURLException e) {
+            // Fallback on prod BMC if URL error is encountered.
+            hostName = "http://www.bmc.com";
+        }
+
         LinkCheckerSettings.fromRequest(request).setIgnoreInternals(true);
         LinkCheckerSettings.fromRequest(request).setIgnoreExternals(true);
         String path = request.getParameter("path");
@@ -148,7 +162,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     }
 
     private String processLinks(String source) {
-        String replace = "http://www.bmc.com/blogs";
+        String replace = hostName + "/blogs";
         String exclude = base + "/wp-content";
         String token = "{EXCLUDE_PATH}";
         String processed = source.replace(exclude, token);

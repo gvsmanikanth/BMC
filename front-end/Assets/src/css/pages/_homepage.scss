@@ -414,6 +414,29 @@
     }
   }
 
+  .card-hex,
+  .card-hex-shadow {
+    @include box-sizing();
+    position: relative;
+    text-align: center;
+    > div {
+      display: -webkit-box;
+      display: -webkit-flex;
+      //display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+  }
+	
   .card-hex {
     background-color: #fff;
     color: color(ship-gray);
@@ -459,28 +482,7 @@
       
     }
   }
-  .card-hex,
-  .card-hex-shadow {
-    @include box-sizing();
-    position: relative;
-    text-align: center;
-    > div {
-      display: -webkit-box;
-      display: -webkit-flex;
-      //display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-  }
+ 
   .card-hex:before,
   .card-hex-shadow:before,
   .card-hex:after,
@@ -543,6 +545,7 @@
         .card-hex {
           display: block;
           margin-bottom: 1.5rem;
+		  position: relative;	
         }
         .card-image {
           margin-bottom: .5rem;

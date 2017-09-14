@@ -2,7 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
           serviceUrl="http://localhost/admin/post.php"
+          elqSiteID="1625229226"
           timeout="{Long}5000"
+          automationEmailEnabled="{Boolean}true"
+          automationEmailRecipients="[bledford@connectivedx.com]"
 />
         <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->
         <!--serviceUrl="http://localhost/admin/post.php"-->

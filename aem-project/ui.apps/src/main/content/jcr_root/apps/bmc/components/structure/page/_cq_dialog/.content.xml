@@ -44,10 +44,90 @@
                                             </showbreadcrumbs>
                                         </items>
                                     </title>
+                                    <moretitles jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    name="./jcr:description"
+                                                    fieldLabel="Description (Reusable)"
+                                                    renderReadOnly="{Boolean}true">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="jcr:description"/>
+                                            </description>
+                                            <short_description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    name="./short_description"
+                                                    fieldLabel="Short Description"
+                                                    fieldDescription="Used in Related CTAs"
+                                                    renderReadOnly="{Boolean}true">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="short_description"/>
+                                            </short_description>
+                                            <meta_description
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    name="./meta_description"
+                                                    fieldLabel="Meta Description"
+                                                    fieldDescription="Meta Description content is used when the page comes up in search engines."
+                                                    renderReadOnly="{Boolean}true">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="meta_description"/>
+                                            </meta_description>
+                                        </items>
+                                    </moretitles>
                                 </items>
                             </column>
                         </items>
                     </basic>
+                    <advanced jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section1
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Settings"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <redirect
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldLabel="Redirect"
+                                                    name="./redirectTarget"
+                                                    renderReadOnly="{Boolean}true"
+                                                    rootPath="/content/bmc">
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="redirectTarget"/>
+                                            </redirect>
+                                        </items>
+                                    </section1>
+                                    <errors
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Errors"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                             <errorpages
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Error pages for this content tree"
+                                                    fieldLabel="Error Pages"
+                                                    name="./errorPages"
+                                                    rootPath="/content/bmc"/>
+                                        </items>
+                                    </errors>
+                                </items>
+                            </column>
+                        </items>
+                    </advanced>
                     <metadata
                             jcr:primaryType="nt:unstructured"
                             cq:showOnCreate="false"
@@ -152,28 +232,6 @@
                             </column>
                         </items>
                     </CTAs>
-                    <advanced jcr:primaryType="nt:unstructured">
-                        <items jcr:primaryType="nt:unstructured">
-                            <column jcr:primaryType="nt:unstructured">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <errors
-                                            jcr:primaryType="nt:unstructured"
-                                            jcr:title="Errors"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <errorpages
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Error pages for this content tree"
-                                                    fieldLabel="Error Pages"
-                                                    name="./errorPages"
-                                                    rootPath="/content/bmc"/>
-                                        </items>
-                                    </errors>
-                                </items>
-                            </column>
-                        </items>
-                    </advanced>
                 </items>
             </tabs>
         </items>

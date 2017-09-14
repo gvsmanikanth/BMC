@@ -10,6 +10,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.engine.SlingRequestProcessor;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +31,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -50,6 +52,10 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
     @Reference
     private SlingRequestProcessor requestProcessor;
 
+    /** Service to get run mode for destination url*/
+    @Reference
+    private SlingSettingsService slingSettingsService;
+
     private Session session;
 
     @Override
@@ -68,6 +74,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                 Query query = queryManager.createQuery(sql, "JCR-SQL2");
                 QueryResult result = query.execute();
 
+                String destinationUrlField = getDestinationUrlField();
                 NodeIterator nodes = result.getNodes();
                 Node node = null;
                 Node parent = null;
@@ -94,10 +101,10 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                                 if (parent.hasNode(NT_CONTENT)) {
                                     Node parentContent = parent.getNode(NT_CONTENT);
                                     if (available
-                                            && content.hasProperty("destination_url")
+                                            && content.hasProperty(destinationUrlField)
                                             && parentContent.hasProperty("available")
                                             && parentContent.getProperty("available").getBoolean()) {
-                                        url = resolveDestinationUrl(content.getProperty("destination_url").getString(), request);
+                                        url = resolveDestinationUrl(content.getProperty(destinationUrlField).getString(), request);
                                         if (url != null) {
                                             response.sendRedirect(url);
                                             redirectSent = true;
@@ -127,6 +134,16 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
             if (session != null && session.isLive())
                 session.logout();
         }
+    }
+
+    private String getDestinationUrlField() {
+       Set<String> runmodes = slingSettingsService.getRunModes();
+       if(runmodes.contains("prod"))
+           // use original destination url property for production
+           return "destination_url";
+       if(runmodes.contains("stage"))
+           return "destination_url_stage";
+       return "destination_url_dev";
     }
 
     private String resolveDestinationUrl(String destinationUrl, SlingHttpServletRequest request) {

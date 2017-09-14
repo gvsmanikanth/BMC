@@ -22,13 +22,11 @@
             </sly>
         </div>
         <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
-            <ul class="points js-initial-customer-story-case-points-container">
-                <sly data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
-
-                <sly data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
-
-                <sly data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></sly>
-            </ul>
+            <div class="points js-initial-customer-story-case-points-container">
+                <div data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
+                <div data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
+                <div data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
+            </div>
         </div>
     </div>
 </section>

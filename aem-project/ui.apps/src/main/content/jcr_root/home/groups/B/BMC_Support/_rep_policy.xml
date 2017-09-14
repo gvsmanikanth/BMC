@@ -5,4 +5,8 @@
         jcr:primaryType="rep:GrantACE"
         rep:principalName="BMC_Support"
         rep:privileges="{Name}[jcr:read]"/>
+    <allow1
+            jcr:primaryType="rep:GrantACE"
+            rep:principalName="SSO_AEM_SuperUser"
+            rep:privileges="{Name}[jcr:read]"/>
 </jcr:root>

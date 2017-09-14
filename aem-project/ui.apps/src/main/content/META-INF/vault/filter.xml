@@ -6,11 +6,12 @@
 
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
     <!--<filter root="/conf/bmc" mode="merge"/>-->
-    <!--<filter root="/conf/bmc/settings/wcm/templates/adhoc-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
-    <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you"/>-->
-    <filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width"/>
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width" mode="merge"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 
@@ -19,8 +20,11 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
+    <filter root="/etc/notification/email"/>
+
     <filter root="/etc/map.publish" mode="update"/>
 
+    <filter root="/content/bmc/auth"/>
     <filter root="/content/bmc/videos" mode="update" />
     <filter root="/content/bmc" mode="merge" />
 
