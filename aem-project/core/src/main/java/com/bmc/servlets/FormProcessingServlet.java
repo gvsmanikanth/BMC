@@ -366,7 +366,10 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private String prepareFormData(Map<String, String> data, Map<String, String> properties) {
         List<String> pairs = new ArrayList<>();
-        properties.entrySet().stream().forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
+        String key = "elqCampaignID";
+        properties.entrySet().stream()
+                .filter(map -> !(map.getKey().equals(key) && data.containsKey(key)))
+                .forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
         data.entrySet().stream()
                 .filter(map -> isAllowedFieldName(map.getKey()))
                 .forEach(map -> pairs.add(encodeProperty(getEloquoaFieldName(map.getKey()), map.getValue())));
@@ -438,6 +441,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             properties.put("C_Contact_Me1", "No");
         if (!properties.get("C_OptIn").equals("Yes"))
             properties.put("C_OptIn", "No");
+        properties.put("CampaignID", properties.get("campaignid"));
+        properties.remove("campaignid");
         properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
