@@ -781,9 +781,15 @@
 			</li>
 		</ul>
 		<ul class="navigation-utility">
-			<li class="navigation-trials "><a
+			<sly data-sly-test.hasSecondaryCTA="${(pageProperties.secondaryCtaText && pageProperties.secondaryCtaHref)}"></sly>
+			<li class="navigation-trials ${(hasSecondaryCTA ? 'nav-li-override-hide' : '')}"><a
 				href="/it-solutions/free-product-trials.html" class="">Free
 					Trials</a></li>
+
+			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
+				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText}</a>
+			</li>
+
 			<li class="navigation-contact"><a href="#" class="contact-bmc">Contact
 					BMC</a></li>
 			<li class="navigation-country"><a href="#"

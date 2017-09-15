@@ -214,18 +214,13 @@
                                                         allowBulkEdit="{Boolean}true"
                                                         cq-msm-lockable="secondaryCtaText"/>
                                             </text>
-                                            <href
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    renderReadOnly="{Boolean}false"
-                                                    fieldDescription="Enter the URL here for the Secondary CTA to link to"
-                                                    fieldLabel="Secondary CTA URL"
-                                                    name="./secondaryCtaHref">
-                                                <granite:data
-                                                        jcr:primaryType="nt:unstructured"
-                                                        allowBulkEdit="{Boolean}true"
-                                                        cq-msm-lockable="secondaryCtaHref"/>
-                                            </href>
+                                            <linkPath jcr:primaryType="nt:unstructured"
+                                                      sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                      fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                      required="{Boolean}true"
+                                                      rootPath="/content/bmc"
+                                                      fieldLabel="Secondary CTA URL"
+                                                      name="./secondaryCtaHref" />
                                         </items>
                                     </secondary>
                                 </items>
