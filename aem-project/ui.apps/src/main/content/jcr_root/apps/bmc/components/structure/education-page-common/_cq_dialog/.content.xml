@@ -110,6 +110,20 @@
                                                     emptyText="1.00"
                                                     fieldLabel="Course Duration"
                                                     name="./course-duration"/>
+                                            <promoted-course
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    fieldDescription="Check if this course is promoted"
+                                                    name="./isPromotedCourse"
+                                                    text="Is this course promoted?"
+                                                    value="{Boolean}true"/>
+                                            <accreditation-available
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    fieldDescription="Check if accreditation is available for this course"
+                                                    name="./isAccreditationAvailable"
+                                                    text="Is accreditation available for this course?"
+                                                    value="{Boolean}true"/>
                                             <recommended-prerequisites jcr:primaryType="nt:unstructured"
                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                                                composite="{Boolean}true"
