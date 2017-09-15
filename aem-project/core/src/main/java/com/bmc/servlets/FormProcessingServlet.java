@@ -435,6 +435,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("elqCookieWrite", "0");
         if (!properties.get("C_Contact_Me1").equals("Yes"))
             properties.put("C_Contact_Me1", "No");
+        if (!properties.get("C_OptIn").equals("Yes"))
+            properties.put("C_OptIn", "No");
         properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
