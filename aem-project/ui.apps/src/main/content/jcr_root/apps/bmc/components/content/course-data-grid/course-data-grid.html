@@ -1,37 +1,42 @@
-<sly data-sly-test.authoringActive="${wcmmode.edit || wcmmode.design}"></sly>
-<div class="row">
-    <div class="two-up">
-        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-            <h3>${properties.goodForHeading}</h3>
+<sly data-sly-use.courseData="com.bmc.components.CourseDataGrid">
+    <div class="row">
+        <div class="two-up">
+            <div>
+                <h3>${properties.goodForHeading}</h3>
+            </div>
+            <div>
+                <p>${courseData.goodFor @ join=', '}</p>
+            </div>
         </div>
-        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-            <p>${pageProperties['education-specific-role']}</p>
-        </div>
-    </div>
-    <div class="two-up">
-        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-            <h3>${properties.prerequisitesHeading}</h3>
-        </div>
-        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-            <p></p>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="two-up">
-        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--4">
-            <h3>${properties.releaseHeading}</h3>
-        </div>
-        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--4">
-            <p>${pageProperties['education-products']}</p>
+        <div class="two-up">
+            <sly data-sly-test="${courseData.prerequisites}">
+                <div>
+                    <h3>${properties.prerequisitesHeading}</h3>
+                </div>
+                <div>
+                    <p data-sly-repeat.page="${courseData.prerequisites}">
+                        <a href="${page.path @ extension='html'}">${page.navigationTitle||page.pageTitle||page.title||page.name}</a>
+                    </p>
+                </div>
+            </sly>
         </div>
     </div>
-    <div class="two-up">
-        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--3">
-            <h3>${properties.courseDeliveryHeading}</h3>
+    <div class="row">
+        <div class="two-up">
+            <div>
+                <h3>${properties.releaseHeading}</h3>
+            </div>
+            <div>
+                <p>${courseData.majorRelease  @ join=', '} ${pageProperties['education-version-numbers']}</p>
+            </div>
         </div>
-        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--3">
-            <p></p>
+        <div class="two-up">
+            <div>
+                <h3>${properties.courseDeliveryHeading}</h3>
+            </div>
+            <div>
+                <p>${pageProperties['course-delivery']} | ${pageProperties['course-duration']} ${'hours' @ i18n }</p>
+            </div>
         </div>
     </div>
-</div>
+</sly>
