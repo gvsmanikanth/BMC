@@ -367,9 +367,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String prepareFormData(Map<String, String> data, Map<String, String> properties) {
         List<String> pairs = new ArrayList<>();
         String key = "elqCampaignID";
-        properties.entrySet().stream()
-                .filter(map -> !(map.getKey().equals(key) && data.containsKey(key)))
-                .forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
+        properties.entrySet().stream().forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
         data.entrySet().stream()
                 .filter(map -> isAllowedFieldName(map.getKey()))
                 .forEach(map -> pairs.add(encodeProperty(getEloquoaFieldName(map.getKey()), map.getValue())));
