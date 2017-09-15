@@ -424,7 +424,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-
+        properties.remove("LMA_license");
         ValueMap map = formPage.getProperties();
         String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
@@ -436,6 +436,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
+        if (!properties.get("C_Contact_Me1").equals("Yes"))
+            properties.put("C_Contact_Me1", "No");
+        if (!properties.get("C_OptIn").equals("Yes"))
+            properties.put("C_OptIn", "No");
+        properties.put("CampaignID", properties.get("campaignid"));
+        properties.remove("campaignid");
         properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
