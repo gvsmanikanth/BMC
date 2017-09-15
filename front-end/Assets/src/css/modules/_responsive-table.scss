@@ -1,8 +1,19 @@
 //Responsive Table
 //https://css-tricks.com/examples/ResponsiveTables/responsive.php
-.responsive-table, .non-responsive-table{
+.responsive-table{
  
-
+ img{
+   width:18px;
+   margin-right:.5em;
+ }
+ .text-align-left{
+   text-align:left;
+   padding-left: 1rem !important
+ }
+ 
+ .text-align-center{
+   text-align:center;
+ }
  
  .legend
  	{
@@ -48,12 +59,7 @@
     }
 
   td{
-  		
-	  font-size: 0.7rem;
-	  @include media(breakpointLarge) {
-		font-size: 1rem;
-	  }	
-		
+     //font-size: 1rem;
       border-left: 2px solid white;
       border-right: 2px solid white;
       background-color: transparent;
@@ -72,12 +78,10 @@
         font-size:.6rem;
       }
   }
- 
- &.responsive-table{
     
   @media only screen and (max-width: 640px),
   (min-device-width: 640px) and (max-device-width: 768px)  {
-	
+
   .legend{
     font-size: .7rem;
   }
@@ -109,11 +113,10 @@
       td:nth-child(1) {
       	display: flex;
 	    flex-direction: row-reverse;
-		//padding-left: 1.5em;
+		padding-left: 1.5em;
 			
 	    background: color(lightGrey); 
 	    text-align:left;
-	    padding-left: 20px;
       }
      
     }
@@ -125,13 +128,13 @@
 
     td {
     	
-     //padding:0 !important;
+     padding:0 !important;
      position: relative !important;
      text-align: left;
      display: flex;
      align-items: center;
      justify-content: flex-end;
-     padding: 10px 0;// !important;
+     padding: 10px 0 !important;
 		    	
       /* Behave  like a "row" */
       border: none;
@@ -141,7 +144,7 @@
       text-align:left;
       
       //WEB-1555 : Resolved issue with big titles on mobile devices
-      //padding-left: 90%;
+      padding-left: 90%;
       font-size: 0.7rem;
       
     }
@@ -168,45 +171,8 @@
     Label the data
     */
     td:before { content: attr(data-title); }
-    
-    
-    &.generic-table td div {
-		width: 50%;
-	}
-	&.generic-table .no-first-row-styling {
-		flex-direction: inherit !important;
-		padding-left: 0rem !important;
-	}
-  }
- 
- }
-
- img{
-   width:18px;
-   margin-right:.5em;
- }
- .text-align-left{
-   text-align:left;
-   padding-left: 1rem;// !important
- }
- 
- .text-align-center{
-   text-align:center;
- }
-  
- &.non-responsive-table{
-	  @media only screen and (max-width: 640px),
-	  (min-device-width: 640px) and (max-device-width: 768px)  {
-		td {
-		      font-size: 0.7rem;  
-		}
-		  
-		}
-	} 
+  } 
 }
-
-
-
 
 //Modified Table Properties
 .compititive-table{
@@ -216,7 +182,6 @@
 			border-bottom: 2px solid white;
 		}
 	
-		
 		.table-lagend{
 			font-weight: 700;
 			margin: 2.5em 0px;
@@ -344,7 +309,7 @@
               border-bottom: 1px solid #eee;
               border: none;
               position: relative;
-              padding-left: 10em; //!important;
+              padding-left: 10em !important;
               
               &:before {
                 /* Now like a table header */
@@ -382,4 +347,15 @@
           text-align: center;
         }
     }
+}
+
+@media only screen and (max-width: 640px) , ( max-device-width : 768px)
+	and (min-device-width: 640px) {
+	.generic-table td div {
+		width: 50%;
+	}
+	.generic-table .no-first-row-styling {
+		flex-direction: inherit !important;
+		padding-left: 0rem !important;
+	}
 }

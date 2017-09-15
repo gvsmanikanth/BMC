@@ -8,7 +8,7 @@ include 'php-inc/head.php';
 		<div class="p4 text-center">
 			<h2>Group - 1 : Education Table</h2>
 		</div>
-		<div class="responsive-table generic-table ">
+		<div class="responsive-table generic-table">
 			<div class="legend">
 				<div>
 					<img src="http://media.cms.bmc.com/designimages/recommended.png"><span>Recommended</span>
@@ -107,7 +107,7 @@ include 'php-inc/head.php';
 		<div class="p4 text-center">
 			<h2>Group - 1 : Agenda Table</h2>
 		</div>
-		<div class="generic-table non-responsive-table">
+		<div class="responsive-table generic-table">
 			<table>
 				<thead>
 					<tr>
@@ -344,15 +344,15 @@ include 'php-inc/head.php';
 							</tr>
 							<td class=" text-align-left">Performance & Availability Management</td>
 							<td data-title="BMC" class="conquest-table-cell-bmc"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
-							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/versus-triangle-30x30.png"></td>
+							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/conquest-yellow-triangle.png"></td>
 							</tr>
 							<td class=" text-align-left">Data Center Automation</td>
 							<td data-title="BMC" class="conquest-table-cell-bmc"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
-							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/versus-triangle-30x30.png"></td>
+							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/conquest-yellow-triangle.png"></td>
 							</tr>
 							<td class=" text-align-left">Enterprise App Store</td>
 							<td data-title="BMC" class="conquest-table-cell-bmc"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
-							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/versus-triangle-30x30.png"></td>
+							<td data-title="ServiceNow" class="conquest-table-cell-competitor"><img src="http://media.cms.bmc.com/images/conquest-yellow-triangle.png"></td>
 							</tr>
 							<td class=" text-align-left">Client Management</td>
 							<td data-title="BMC" class="conquest-table-cell-bmc"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
@@ -446,13 +446,13 @@ include 'php-inc/head.php';
 								<td class=" text-align-left">Single vendor also provides enterprise-class performance & availability</td>
 								<td data-title="BMC"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
 								<td data-title="HP"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
-								<td data-title="ServiceNow"><img src="http://media.cms.bmc.com/images/versus-triangle-30x30.png"></td>
+								<td data-title="ServiceNow"><img src="http://media.cms.bmc.com/images/conquest-yellow-triangle.png"></td>
 							</tr>
 							<tr>
 								<td class=" text-align-left">Single vendor also provides server automation</td>
 								<td data-title="BMC"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
 								<td data-title="HP"><img src="http://media.cms.bmc.com/images/versus-checkmark-30x30.png"></td>
-								<td data-title="ServiceNow"><img src="http://media.cms.bmc.com/images/versus-triangle-30x30.png"></td>
+								<td data-title="ServiceNow"><img src="http://media.cms.bmc.com/images/conquest-yellow-triangle.png"></td>
 							</tr>
 							<tr>
 								<td class=" text-align-left">Application mapping applies “Start Anywhere” approach</td>
