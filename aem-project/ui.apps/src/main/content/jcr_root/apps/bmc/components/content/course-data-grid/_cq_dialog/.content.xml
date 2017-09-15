@@ -17,31 +17,6 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <releaseHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                    fieldDescription="Enter the heading for the Major Release field"
-                                    fieldLabel="Release Heading"
-                                    name="./releaseHeading"/>
-                            <prerequisitesHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                    fieldDescription="Enter the heading for the Prerequisites field"
-                                    fieldLabel="Prerequisites Heading"
-                                    name="./prerequisitesHeading"/>
-                            <goodForHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                    fieldDescription="Enter the heading for the Good For field"
-                                    fieldLabel="Good For Heading"
-                                    name="./goodForHeading"/>
-                            <courseDeliveryHeading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                    fieldDescription="Enter the heading for the Course Delivery field"
-                                    fieldLabel="Course Delivery Heading"
-                                    name="./courseDeliveryHeading"/>
-
                         </items>
                     </column>
                 </items>
