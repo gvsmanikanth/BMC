@@ -1,0 +1,9 @@
+
+.related-items-secondary {
+	.layout-secondary .secondarycontentcontainer & {
+		padding: rem(30);
+		+ .related-items-secondary {
+			padding-top: 0;
+		}
+	}
+}

@@ -379,6 +379,7 @@
 	}
 
 	@include media(breakpointMedium) {
+    float: right; /* DXP-1062 */
 		width: columns(3);
 	}
 }
@@ -1053,6 +1054,7 @@
 	&.layout-full-bleed-image {
 		background-size: cover;
 		color: #fff;
+		background-position: center center; //DXP-1141
 
 		.page-campaign-landing & {
 			padding: em(18) 0;

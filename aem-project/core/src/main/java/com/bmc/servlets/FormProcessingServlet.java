@@ -1,6 +1,7 @@
 package com.bmc.servlets;
 
 import com.adobe.acs.commons.email.EmailService;
+import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -12,7 +13,9 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +42,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String PURL_PAGE_URL = "PurlPageURL";
     public static final String PURL_REDIRECT_PAGE = "PURLRedirectPage";
     public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
+    public static final String TRIAL_DOWNLOAD = "Trial Download";
 
     private String serviceUrl = "";
     private String elqSiteID = "";
@@ -51,6 +55,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     @Reference
     private EmailService emailService;
+
+    @Reference
+    private ExportComplianceService exportComplianceService;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
 
     private ResourceResolver resourceResolver;
 
@@ -110,6 +120,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
+        Boolean isValid = true;
+        String validationError = "";
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
         RequestParameterMap parameters = request.getRequestParameterMap();
@@ -120,7 +132,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
         String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
-        Map formProperties = getFormProperties(node);
+        Map<String,String> formProperties = getFormProperties(node, formPage, request);
+        if (formProperties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
+            Map<String, String> complianceResult = checkExportCompliance(formData);
+            String result = complianceResult.get("Result");
+            String errorMsg = complianceResult.get("ErrorMsg");
+            formData.put("MkDenial_Result", result);
+            formData.put("MkDenial_Reason", errorMsg);
+            if (!result.equals("Success")) {
+                isValid = false;
+                validationError = errorMsg;
+            }
+        }
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
@@ -131,10 +154,10 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 break;
             case "Parallel":
                 status = sendData(data);
-                sendParallelEmail(formData, formProperties, formPage, request, status);
+                sendFormEmail(formData, formProperties, formPage, request);
                 break;
             case "Email Only":
-                sendBasicEmail(formData, formProperties, formPage, request);
+                sendFormEmail(formData, formProperties, formPage, request);
                 break;
         }
         String xml = "";
@@ -143,40 +166,67 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         } catch (Exception e) {
             logger.error("Error getting XML for form email automation.");
         }
-        sendAutomationEmail(xml, status);
+        sendAutomationEmail(xml, status, formData, formProperties);
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
-            if (page != null) {
+            ValueMap map = formPage.getProperties();
+            if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
-                String formGUID = (String) formPage.getProperties().get("jcr:baseVersion");
+                String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
+            if (!isValid) {
+                String selector = (validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
+                purlPage = resourceResolver.map(purlPage) + selector + ".html";
+            }
             response.sendRedirect(purlPage);
         }
     }
 
-    private void sendAutomationEmail(String xml, int status) {
+    private Map<String, String> checkExportCompliance(Map<String, String> formData) {
+        Map<String,String> result = exportComplianceService.checkExportCompliance(
+                formData.getOrDefault("C_Country", ""),
+                formData.getOrDefault("C_Company", ""),
+                formData.getOrDefault("C_FirstName", ""),
+                formData.getOrDefault("C_LastName", ""),
+                formData.getOrDefault("C_EmailAddress", "")
+        );
+        return result;
+    }
+
+    private void sendAutomationEmail(String xml, int status, Map<String,String> formData, Map<String,String> formProperties) {
         logger.info(xml);
         if (automationEmailEnabled) {
             Map<String, String> emailParams = new HashMap<>();
             String templatePath = "/etc/notification/email/text/plaintext.txt";
             emailParams.put("fromAddress", FROM_ADDRESS);
-            String subject = (status == 200 || status == 302)
-                    ? "Form Submission Success"
-                    : "Form Submission Failure";
+            String email = formData.getOrDefault("C_EmailAddress", "");
+            String formId = formProperties.getOrDefault("formid", "");
+            String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
+            Set<String> runmodes = slingSettingsService.getRunModes();
+            String environment = "Dev";
+            if (runmodes.contains("prod"))
+                environment = "Prod";
+            else if (runmodes.contains("stage"))
+                environment = "Stage";
+            String subject = String.format("V2 Marketing form %s %s for %s - %s",
+                    formId,
+                    statusName,
+                    email,
+                    environment);
             emailParams.put("subject", subject);
             emailParams.put("body", xml);
             emailService.sendEmail(templatePath, emailParams, automationEmailRecipients);
         }
     }
 
-    private void sendBasicEmail(Map<String, String> formData, Map<String, String> formProperties, Page formPage, SlingHttpServletRequest request) {
+    private void sendFormEmail(Map<String, String> formData, Map<String, String> formProperties, Page formPage, SlingHttpServletRequest request) {
         String templatePath = "/etc/notification/email/html/form-emailonly.html";
         String recipient = getRecipient(formProperties);
         if (recipient.isEmpty()) return;
-        String[] recipients = {recipient};
+        String[] recipients = recipient.split(",");
         Map<String, String> emailParams = new HashMap<>();
         setSubject(formProperties, emailParams);
         emailParams.put("fromAddress", FROM_ADDRESS);
@@ -190,11 +240,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         emailService.sendEmail(templatePath, emailParams, recipients);
     }
 
-    private void sendParallelEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request, int status) {
+    private void sendLoggingEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request, int status) {
         String templatePath = "/etc/notification/email/html/form-emailonly.html";
         String recipient = getRecipient(formProperties);
         if (recipient.isEmpty()) return;
-        String[] recipients = {recipient};
+        String[] recipients = recipient.split(",");
         Map<String, String> emailParams = new HashMap<>();
         setSubject(formProperties, emailParams);
         emailParams.put("fromAddress", FROM_ADDRESS);
@@ -342,7 +392,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         return "";
     }
 
-    private Map getFormProperties(Node node) {
+    private Map<String,String> getFormProperties(Node node, Page formPage, SlingHttpServletRequest request) {
         String[] formProperties = new String[]{
                 "product_interest",
                 "content_prefs",
@@ -374,12 +424,24 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)));
+        properties.remove("LMA_license");
+        ValueMap map = formPage.getProperties();
+        String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+
+        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
+
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
+        if (!properties.get("C_Contact_Me1").equals("Yes"))
+            properties.put("C_Contact_Me1", "No");
+        if (!properties.get("C_OptIn").equals("Yes"))
+            properties.put("C_OptIn", "No");
+        properties.put("CampaignID", properties.get("campaignid"));
+        properties.remove("campaignid");
         properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);

@@ -153,7 +153,9 @@
                             com.bmc.components.utils,
                             com.bmc.models,
                             {local-packages},
-                            org.owasp.encoder
+                            org.owasp.encoder,
+                            org.json.simple,
+                            org.json.simple.parser
                         </Export-Package>
                         <Bundle-SymbolicName>com.bmc.DXP</Bundle-SymbolicName>
 

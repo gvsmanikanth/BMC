@@ -101,6 +101,7 @@ public class PageModel {
             e.printStackTrace();
         }
 
+        // called here so that page long name can be set and can change if TY page is requested
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
 
         BmcMeta bmcMeta = gatherAnalytics();
@@ -134,16 +135,29 @@ public class PageModel {
 
     private BmcMeta gatherAnalytics() {
         BmcMeta bmcMeta = new BmcMeta();
-        bmcMeta.getPage().setContentId(getContentID());
-        bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getPage().setLongName(formatLongName());
-        bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
-        bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         String pageTitle = resourcePage.getTitle();
         if (pageTitle.equals("404")) {
             bmcMeta.getPage().setErrorCode("page404");
         }
+
+        Template template = resourcePage.getTemplate();
+        String templatePath = (template != null) ? template.getPath() : "";
+        String templateName = (template != null) ? template.getName() : "";
+        // If Thank-you Page, pull info from parent form page
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+            bmcMeta.getPage().setPurl("true");
+            resourcePage = resourcePage.getParent();
+            contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
+            template = resourcePage.getTemplate();
+            templatePath = (template != null) ? template.getPath() : "";
+            templateName = (template != null) ? template.getName() : "";
+        }
+        bmcMeta.getPage().setContentId(getContentID());
+        bmcMeta.getPage().setContentType(getContentType());
+        bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
+        bmcMeta.getSite().setEnvironment(service.getEnvironment());
 
         String[] products = resourcePage.getContentResource().getValueMap().get("product_interest", new String[] {});
         String[] productLines = resourcePage.getContentResource().getValueMap().get("product_line", new String[] {});
@@ -154,38 +168,26 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
 
-        Template template = resourcePage.getTemplate();
-        String templatePath = (template != null) ? template.getPath() : "";
-        String templateName = (template != null) ? template.getName() : "";
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
-            bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
         }
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
-            bmcMeta.getPage().setLongName(formatLongNameFormStart());
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
+                setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-        }
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
-            try {
-                Node form = resourcePage.getParent().adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
-                setFormMeta(bmcMeta, form);
-            } catch (RepositoryException e) {
-                e.printStackTrace();
-            }
-            bmcMeta.getPage().setPurl("true");
         }
 
-        if (templateName.equals("bmc-support-template") || templateName.equals("support-central")) {
+        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
@@ -205,6 +207,29 @@ public class PageModel {
         }
 
         return bmcMeta;
+    }
+
+    private void setPageMetaFromForm(BmcMeta bmcMeta, Node form) throws RepositoryException {
+        if (form != null) {
+            String productCategory = "";
+            String productCategoryNode = form.getProperty("product_interest").getString();
+            try {
+                productCategory = session.getNode("/content/bmc/resources/product-interests/"+productCategoryNode).getProperty("jcr:title").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+
+            String productLine = "";
+            String productLineNode = form.getProperty("productLine1").getString();
+            try {
+                productLine = session.getNode("/content/bmc/resources/product-lines/"+productLineNode).getProperty("text").getString().toLowerCase();
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+            
+            bmcMeta.getPage().setProductCategories(productCategory);
+            bmcMeta.getPage().setProductLineCategories(productLine);
+        }
     }
 
     private void setFormMeta(BmcMeta bmcMeta, Node form) throws RepositoryException {
@@ -246,6 +271,10 @@ public class PageModel {
         //TODO: Build this string a better way. Maybe using Absolute Parent.
         StringBuilder formattedLongName = new StringBuilder();
         try {
+            // Set the bmcMeta longName to "" if this is a video player
+            if (getContentType().equals("video-page-section")) {
+                return "";
+            }
             formattedLongName.append(formatMetaLocale().toLowerCase());
             int depth = resourcePage.adaptTo(Node.class).getDepth();
             if (depth == 4) {
@@ -255,8 +284,10 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
-            } else if (getContentType().equals("form-thank-you")) {
+            } else if (getContentType().contains("form-thank-you")) {
                     formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
+            } else if (getContentType().contains("form-")) {
+                    formattedLongName.append(":forms-start" + ":"+resourcePage.getName().toString());
             } else {
                 String[] pathArr = StringUtils.split(resourcePage.getPath(), "/");
                 pathArr = Arrays.copyOfRange(pathArr, 4, pathArr.length);
@@ -269,29 +300,12 @@ public class PageModel {
         return formattedLongName.toString().toLowerCase();
     }
 
-    private String formatLongNameFormStart() {
-        //TODO: Build this string a better way. Maybe using Absolute Parent.
-        StringBuilder formattedLongName = new StringBuilder();
-        try {
-            formattedLongName.append(formatMetaLocale().toLowerCase());
-            try{
-                formattedLongName.append(":" + formatPageType(resourcePage.getParent().getName()));
-            }catch (Exception t) {
-                logger.debug("no parent template", t);
-            }
-            formattedLongName.append(":forms-start:" + resourcePage.getName()).toString();
-        }catch (Exception e) {
-            logger.error("Error setting contentId: {}", e.getMessage());
-        }
-        return formattedLongName.toString().toLowerCase();
-    }
-
     private String formatPageType(String path) {
-        if (getContentType().equals("form-thank-you")) {
-            return "forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase();
-        }else if (path.equals("forms")) {
+        if (getContentType().contains("form-thank-you")) {
+            return "forms-complete";
+        } else if (getContentType().contains("form")) {
             return "forms-start";
-        }else{
+        } else {
             return path.toLowerCase();
         }
     }

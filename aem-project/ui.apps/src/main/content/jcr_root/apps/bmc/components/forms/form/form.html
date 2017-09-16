@@ -3,7 +3,9 @@
 <form data-sly-use.container="com.adobe.cq.wcm.core.components.models.form.Container"
       data-sly-use.grid="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
       data-sly-use.params="com.bmc.components.utils.FormRequestParameterUtil"
-      id="${container.id}" name="${container.name}" method="POST" action="${resource.path}.post.html"
+      id="${properties.formType == 'Lead Capture' || properties.formType == 'Parallel' ? 'leadgen' : 'nonleadgen'}"
+      name="${properties.formType == 'Lead Capture' || properties.formType == 'Parallel' ? 'leadgen' : 'nonleadgen'}"
+      method="POST" action="${resource.path}.post.html"
       enctype="${container.enctype}"
       class="${grid.cssClass} customerform" data-leadgen="${properties.isNonLeadGenForm ? 'noleadgen' : 'leadgen' }">
     <input data-sly-repeat.param="${params.parameterMap}" name="${param}" value="${params.parameterMap[param]}" type="hidden" />
@@ -19,11 +21,11 @@
     <sly data-sly-resource="${'./form-btn' @ resourceType='bmc/components/forms/elements/button'}"/>
     <sly data-sly-resource="${'./form-terms' @ resourceType='bmc/components/content/text'}"/>
 
-	<input type="hidden" name="C_Lead_Rating_Override1" value="" />
-	<input type="hidden" name="Email_Source" value="" />
-	<input type="hidden" name="elqCustomerGUID" value="" />
-	<input type="hidden" name="C_Source_Name1" value="" />
-	<input type="hidden" name="adobe_unique_hit_id" value="" />
+	<input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value="" />
+	<input type="hidden" id="Email_Source" name="Email_Source" value="" />
+	<input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value="" />
+	<input type="hidden" id="C_Source_Name1" name="C_Source_Name1" value="" />
+	<input type="hidden" id="adobe_unique_hit_id" name="adobe_unique_hit_id" value="" />
 
     <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><input type="text" name="Surname" id="Surname"></span>
 
