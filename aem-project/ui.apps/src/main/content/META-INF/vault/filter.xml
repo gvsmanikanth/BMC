@@ -14,6 +14,7 @@
     <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 
@@ -21,6 +22,8 @@
         <include pattern="/etc/designs/bmc"/>
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
+
+    <filter root="/etc/languages"/>
 
     <filter root="/etc/notification/email"/>
 

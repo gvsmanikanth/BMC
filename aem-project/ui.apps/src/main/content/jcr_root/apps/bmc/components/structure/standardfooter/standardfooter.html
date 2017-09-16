@@ -4,6 +4,7 @@
 <sly data-sly-use.footerSupportSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSupport'}" />
 <sly data-sly-use.footerSocialSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSocial'}" />
 <sly data-sly-use.footerLegalSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerLegal'}" />
+<sly data-sly-use.footerCopyRight="com.bmc.models.components.footers.FooterModel"/>
 <sly data-sly-test="${model.isSupportPage}">
    <script type="text/javascript">
            	var supportcentralurl = '${model.searchPageUrl @ context="html"}';
@@ -105,7 +106,7 @@
             <ul data-sly-list.footerLegal="${footerLegalSet.ChildResources}" class="nav-footer-link-list">
                 <li><a href="${footerLegal.linkPath}" target="${footerLegal.targetType}" class="${footerLegal.linkText == 'Manage Cookies' ? 'icon-evidon' : ''}">${footerLegal.linkText @ context='html'}</a></li>
             </ul>
-            <sly data-sly-test="${properties.copyRightText}">${properties.copyRightText @context='html'}</sly>
+            <sly data-sly-test="${footerCopyRight.copyRightText}">${footerCopyRight.copyRightText @context='html'}</sly>
         </div>
     </div>
 </footer>

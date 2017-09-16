@@ -132,7 +132,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
         String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
         String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
-        Map<String,String> formProperties = getFormProperties(node);
+        Map<String,String> formProperties = getFormProperties(node, formPage, request);
         if (formProperties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
             Map<String, String> complianceResult = checkExportCompliance(formData);
             String result = complianceResult.get("Result");
@@ -173,10 +173,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             ValueMap map = formPage.getProperties();
             if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
-                if (!map.containsKey("contentId")) {
-                    map.put("contentId", map.get("jcr:baseVersion"));
-                }
-                String formGUID = (String) map.get("contentId");
+                String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
@@ -395,7 +392,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         return "";
     }
 
-    private Map<String,String> getFormProperties(Node node) {
+    private Map<String,String> getFormProperties(Node node, Page formPage, SlingHttpServletRequest request) {
         String[] formProperties = new String[]{
                 "product_interest",
                 "content_prefs",
@@ -427,12 +424,24 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
         properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
         properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-        properties.put(PURL_PAGE_URL, resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)));
+        properties.remove("LMA_license");
+        ValueMap map = formPage.getProperties();
+        String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+
+        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
+
         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
+        if (!properties.get("C_Contact_Me1").equals("Yes"))
+            properties.put("C_Contact_Me1", "No");
+        if (!properties.get("C_OptIn").equals("Yes"))
+            properties.put("C_OptIn", "No");
+        properties.put("CampaignID", properties.get("campaignid"));
+        properties.remove("campaignid");
         properties.put("elqSiteID", elqSiteID);
         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
         properties.put("form_submitdate", timeStamp);
