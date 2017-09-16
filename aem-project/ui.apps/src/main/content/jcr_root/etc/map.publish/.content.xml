@@ -26,6 +26,17 @@
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/ca/fr.html]"
                     sling:match="fr.bmcsoftware.ca/$"/>
+            <www.bmc.com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/us/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/us/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+            </www.bmc.com>
+            <www.bmc_com
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/us/en.html]"
+                    sling:match="www.bmc.com/$"/>
             <www.bmcsoftware.at
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/at/de]">
