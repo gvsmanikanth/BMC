@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 
-@SlingServlet(resourceTypes = "bmc/components/structure/supportcoveosearch", methods = {"GET"},extensions ={"html"})
+@SlingServlet(resourceTypes = "bmc/components/structure/supportcoveosearchredirect", methods = {"GET"},extensions ={"html"})
 public class SupportSearchRedirect extends SlingSafeMethodsServlet {
 
 	private static final long serialVersionUID = 8745666094530518808L;
