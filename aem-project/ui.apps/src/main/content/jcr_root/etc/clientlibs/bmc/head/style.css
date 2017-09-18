@@ -1439,6 +1439,15 @@ blockquote {
     @media only screen and (min-width: 48em) {
       .layout-secondary:first-child {
         padding-bottom: 0; } }
+  .layout-secondary > .aem-Grid > .aem-GridColumn {
+    border-top: 1px solid #cacaca;
+    margin-top: 2.22222em;
+    padding-top: 2.22222em; }
+    @media only screen and (min-width: 48em) {
+      .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+        border-top: none;
+        margin-top: 0 !important;
+        padding-top: 0; } }
   .page-product-landing .layout-secondary {
     margin-top: 3em;
     width: 100%; }
@@ -1456,12 +1465,6 @@ blockquote {
     padding: 1.55556em 0 0;
     border-left: none; }
   @media only screen and (min-width: 48em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.3em; } }
-  @media only screen and (min-width: 76.25em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.34em; } }
-  @media only screen and (min-width: 48em) {
     .layout-secondary h3 {
       color: #414042;
       font-size: 20px;
@@ -1477,6 +1480,8 @@ blockquote {
     .layout-secondary p, .layout-secondary ol, .layout-secondary ul, .layout-secondary dd {
       font-size: 16px;
       font-size: 0.88889rem; } }
+  .layout-secondary article {
+    padding: 0; }
   @media only screen and (min-width: 48em) {
     .layout-secondary .blog-recent .author {
       font-size: 14px;
@@ -1887,11 +1892,20 @@ blockquote {
     .layout-banner-container-slim.layout-full-bleed-image h1, .layout-banner-container-slim.layout-full-bleed-image h2 {
       color: #fff; }
 
-.maincontentcontainer > .layout-full-bleed > *:first-child {
-  padding-top: 0;
-  padding-bottom: 0; }
-  .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
-    margin-top: 1.66667rem; }
+.maincontentcontainer > .layout-full-bleed {
+  padding-bottom: 1.66667rem; }
+  @media only screen and (min-width: 60em) {
+    .maincontentcontainer > .layout-full-bleed {
+      padding-bottom: 3.33333rem; } }
+  .maincontentcontainer > .layout-full-bleed > *:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+      margin-top: 1.66667rem; }
+  .maincontentcontainer > .layout-full-bleed > *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0; }
 
 .layout-full-bleed {
   background-color: white;
@@ -10801,11 +10815,11 @@ section.bmc-engage-header.layout-full-bleed {
   .full-width-testimonial a {
     color: #fff; }
   .full-width-testimonial cite {
-    font-size: 1em;
+    font-size: 1em !important;
     font-style: normal; }
     @media only screen and (min-width: 48em) {
       .full-width-testimonial cite {
-        font-size: 1.22222em; } }
+        font-size: 1.22222em !important; } }
 
 .conquest-feature-message .brands {
   padding: 0;
