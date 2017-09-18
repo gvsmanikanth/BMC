@@ -181,11 +181,11 @@
 	}
 
 	cite {
-		font-size: em(18);
+		font-size: em(18) !important;
 		font-style: normal;
 
 		@include media(breakpointMedium) {
-			font-size: em(22);
+			font-size: em(22) !important;
 		}
 	}
 }
