@@ -1,10 +1,10 @@
 package com.bmc.services;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -115,17 +115,25 @@ public class LinkTransformerService implements TransformerFactory {
 
             }
 
-
             if (href != null) {
                 String path = "";
                 if (href.contains("/content/bmc")) {
                     if (href.matches("^https?://.+")) {
-                        try {
-                            URL url = new URL(href);
-                            path = resolver.map(url.getPath());
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
-                        }
+                        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+                        Matcher matcher = pattern.matcher(href);
+                        matcher.find();
+//                        String protocol = matcher.group(1);
+//                        String domain = matcher.group(2);
+//                        String port = matcher.group(3);
+                        String hrefUri = matcher.group(4);
+                        path = resolver.map(hrefUri);
+//                        try {
+//                            k
+//                            URL url = new URL(href);
+//                            path = resolver.map(url.getPath());
+//                        } catch (MalformedURLException e) {
+//                            e.printStackTrace();
+//                        }
                     } else {
                         path = resolver.map(href);
                     }
