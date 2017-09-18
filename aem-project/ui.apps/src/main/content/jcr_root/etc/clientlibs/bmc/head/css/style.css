@@ -1439,6 +1439,15 @@ blockquote {
     @media only screen and (min-width: 48em) {
       .layout-secondary:first-child {
         padding-bottom: 0; } }
+  .layout-secondary > .aem-Grid > .aem-GridColumn {
+    border-top: 1px solid #cacaca;
+    margin-top: 2.22222em;
+    padding-top: 2.22222em; }
+    @media only screen and (min-width: 48em) {
+      .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+        border-top: none;
+        margin-top: 0 !important;
+        padding-top: 0; } }
   .page-product-landing .layout-secondary {
     margin-top: 3em;
     width: 100%; }
@@ -1456,12 +1465,6 @@ blockquote {
     padding: 1.55556em 0 0;
     border-left: none; }
   @media only screen and (min-width: 48em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.3em; } }
-  @media only screen and (min-width: 76.25em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.34em; } }
-  @media only screen and (min-width: 48em) {
     .layout-secondary h3 {
       color: #414042;
       font-size: 20px;
@@ -1477,6 +1480,8 @@ blockquote {
     .layout-secondary p, .layout-secondary ol, .layout-secondary ul, .layout-secondary dd {
       font-size: 16px;
       font-size: 0.88889rem; } }
+  .layout-secondary article {
+    padding: 0; }
   @media only screen and (min-width: 48em) {
     .layout-secondary .blog-recent .author {
       font-size: 14px;
@@ -3584,6 +3589,9 @@ span .chatbtn {
   .layout-full-bleed > .dividers .divider, .layout-full-bleed > .dividers .product-landing .layout-secondary, .product-landing .layout-full-bleed > .dividers .layout-secondary, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side-grey, .layout-full-bleed > .dividers .product-landing .layout-secondary-cta-container, .product-landing .layout-full-bleed > .dividers .layout-secondary-cta-container, .layout-full-bleed > .dividers .product-landing .layout-secondary-shaded, .product-landing .layout-full-bleed > .dividers .layout-secondary-shaded {
     margin: 1.85rem 0 0;
     padding: 0 0 1.25rem; }
+
+.layout-secondary .dividers {
+  display: none; }
 
 /* jQuery Dropdown: A simple dropdown plugin
  *
@@ -15814,7 +15822,7 @@ body.support-central {
   position: relative; }
   @media only screen and (min-width: 48em) {
     .testimonial {
-      margin: 0 0 4em;
+      margin: 4em 0;
       padding: 60px; } }
   .testimonial.row {
     margin-top: 0; }
