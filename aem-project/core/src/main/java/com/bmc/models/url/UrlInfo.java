@@ -2,10 +2,11 @@ package com.bmc.models.url;
 
 import com.bmc.mixins.UrlResolver;
 import com.bmc.models.components.video.VideoInfo;
-import com.bmc.models.components.video.VideoType;
 import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang.StringUtils;
+import org.apache.sling.api.resource.ValueMap;
 
 /**
  * Represents information for a given url, as resolved by {@link UrlResolver#getUrlInfo}
@@ -28,10 +29,39 @@ public class UrlInfo {
 
         return UNDEFINED;
     }
+    public static UrlInfo from(String urlOrPath, String target) {
+        UrlInfo info = from(urlOrPath);
+        if (info == UNDEFINED) {
+            if (StringUtils.isBlank(target))
+                return info;
+            info = new UrlInfo(UrlType.Undefined, "");
+        }
+        info.target = target;
+        return info;
+    }
 
     public static UrlInfo from(Page page) {
         if (page == null)
             return UNDEFINED;
+
+        if (page.getContentResource().getResourceType().equals("bmc/components/structure/external-link-page")) {
+            ValueMap map = page.getProperties();
+            String externalURL = map.get("linkAbstractorExternalURL", "");
+            if (!externalURL.isEmpty()) {
+                String externalUrlTarget = map.get("linkAbstractorTarget", "");
+                switch (externalUrlTarget) {
+                    case "new":
+                        externalUrlTarget = "_blank";
+                        break;
+                    case "self":
+                        externalUrlTarget = "_self";
+                        break;
+                    default:
+                        break;
+                }
+                return UrlInfo.from(externalURL, map.get("linkAbstractorTarget", externalUrlTarget));
+            }
+        }
 
         return new UrlInfo(UrlType.Page,
                 StringHelper.coalesceString(page.getVanityUrl()).orElse(page.getPath() + ".html"));
@@ -57,4 +87,13 @@ public class UrlInfo {
     public UrlType getType() { return type; } private UrlType type;
     public String getHref() { return href; } private String href;
     public String getCssClass() { return cssClass; } private String cssClass;
+    public void setCssClass(String value) { cssClass = value; }
+    public String getTarget() {
+        if (!StringUtils.isBlank(target))
+            return target;
+        if (type == UrlType.External)
+            return "_blank";
+        return target;
+    }
+    private String target;
 }
