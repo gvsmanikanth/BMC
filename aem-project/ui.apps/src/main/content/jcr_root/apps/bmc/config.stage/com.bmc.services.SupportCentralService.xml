@@ -4,7 +4,7 @@
           newCaseUrl="https://sfaqa-bmcsites.cs91.force.com/casemgmt/apex/CreateNewCase"
           allCasesUrl="https://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CommunityHome"
           apiBaseUrl="https://ws-uat.bmc.com"
-          apiUser="clicKu5er"
+          apiUser="clicKu5eR"
           apiPass="c1icKU5Er"
           apiPath="/rest/BMC_SC/Contact/"
 	      searchPageUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CoveoSearch"
