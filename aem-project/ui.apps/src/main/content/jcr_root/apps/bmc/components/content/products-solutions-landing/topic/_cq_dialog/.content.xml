@@ -60,34 +60,16 @@
                                     required="{Boolean}true"/>
 
                             <featured-products jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                       composite="{Boolean}true"
-                                       fieldLabel="Featured Products">
+                                               sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                               fieldLabel="Featured Products">
                                 <field
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                        name="./featuredProducts">
-                                    <layout
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                            method="absolute"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <column
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container">
-                                            <items jcr:primaryType="nt:unstructured">
-                                                <product
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldDescription="Please select the product page"
-                                                        fieldLabel="Product"
-                                                        name="./internalPagePath"
-                                                        rootPath="/content/bmc"
-                                                        required="{Boolean}true"/>
-                                            </items>
-                                        </column>
-                                    </items>
-                                </field>
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Please select the product page"
+                                        fieldLabel="Product"
+                                        name="./internalPagePaths"
+                                        rootPath="/content/bmc"
+                                        required="{Boolean}true"/>
                             </featured-products>
                         </items>
                     </column>

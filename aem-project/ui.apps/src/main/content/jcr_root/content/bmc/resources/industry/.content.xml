@@ -16,7 +16,7 @@
             jcr:title="Finance"/>
     <utilities-oil-gas-and-energy
             jcr:primaryType="nt:unstructured"
-            jcr:title="Utilities- Oil- Gas and Energy"/>
+            jcr:title="Utilities, Oil, Gas and Energy"/>
     <retail
             jcr:primaryType="nt:unstructured"
             jcr:title="Retail"/>
