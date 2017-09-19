@@ -11201,7 +11201,13 @@ section.bmc-engage-header.layout-full-bleed {
           margin-left: 0; } }
 
 .customer-story-landing-logo-blocks {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  margin-bottom: -1.5rem;
+  padding: 1.66667em 0; }
+  @media only screen and (min-width: 48em) {
+    .customer-story-landing-logo-blocks {
+      margin-bottom: -4rem;
+      padding: 3.33333em 0; } }
   .customer-story-landing-logo-blocks .logo-blocks {
     margin: 0 -1%; }
     .customer-story-landing-logo-blocks .logo-blocks h5 {
