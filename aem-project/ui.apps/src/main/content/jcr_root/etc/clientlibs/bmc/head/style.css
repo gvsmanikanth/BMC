@@ -3599,6 +3599,9 @@ span .chatbtn {
     margin: 1.85rem 0 0;
     padding: 0 0 1.25rem; }
 
+.layout-secondary .dividers {
+  display: none; }
+
 /* jQuery Dropdown: A simple dropdown plugin
  *
  * Contribute: https://github.com/claviska/jquery-dropdown
