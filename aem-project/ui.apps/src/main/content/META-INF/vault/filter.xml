@@ -30,14 +30,15 @@
     <filter root="/etc/map.publish" mode="update"/>
 
     <filter root="/content/bmc/auth"/>
-    <filter root="/content/bmc/videos" mode="update" />
-    <filter root="/content/bmc" mode="merge" />
+
+    <!--<filter root="/content/bmc/videos" mode="update" />-->
+    <!--<filter root="/content/bmc" mode="merge" />-->
 
     <!--<filter root="/content/bmc/language-masters/en/footers" mode="merge" />-->
 
     <filter root="/content/experience-fragments/bmc" mode="merge" />
 
-    <filter root="/content/dam/bmc" mode="merge" />
+    <!--<filter root="/content/dam/bmc" mode="merge" />-->
 
     <filter root="/home/groups" mode="merge" />
 
