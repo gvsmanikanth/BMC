@@ -45,6 +45,7 @@ public class AlternateLinks  extends WCMUsePojo {
     }};
 
     private Map<String, String> alternateLinksMap = new HashMap<String, String>();
+    private String canonicalLink;
 
     @Override
     public void activate() throws Exception {
@@ -65,9 +66,15 @@ public class AlternateLinks  extends WCMUsePojo {
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
             alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + hrefUri);
         }
+
+        canonicalLink = req.getScheme() + "://" + req.getServerName() + hrefUri;
     }
 
     public Map<String, String> getAlternateLinksMap() {
         return alternateLinksMap;
+    }
+
+    public String getCanonicalLink() {
+        return canonicalLink;
     }
 }
