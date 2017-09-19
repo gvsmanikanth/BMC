@@ -7,6 +7,7 @@ import com.bmc.models.url.UrlType;
 import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
@@ -112,6 +113,52 @@ public interface UrlResolver {
 
         // presumed invalid
         return UrlInfo.UNDEFINED;
+    }
+
+    /**
+     * Resolves the given {@code pageOrAssetPath}, yielding an {@link LinkInfo} instance with the appropriate {@link UrlType}.
+     *
+     * If no {@link Page} or {@link Asset} exists at the given {@code pageOrAssetPath}, then {@link LinkInfo#UNDEFINED}
+     * is returned.
+     * @param pageOrAssetPath the path to the page or asset
+     * @return a {@link LinkInfo} instance
+     */
+    default LinkInfo getLinkInfo(String pageOrAssetPath) {
+        return getLinkInfo(pageOrAssetPath, true);
+    }
+
+    /**
+     * Resolves the given {@code pageOrAssetPath}, yielding an {@link LinkInfo} instance with the appropriate {@link UrlType}.
+     *
+     * If no {@link Page} or {@link Asset} exists at the given {@code pageOrAssetPath}, then {@link LinkInfo#UNDEFINED}
+     * @param pageOrAssetPath the path to the page or asset
+     * @param usePageShortDescription if true, the page's short_description field will be used for
+     * {@link LinkInfo#getDescription()} if present
+     */
+    default LinkInfo getLinkInfo(String pageOrAssetPath, boolean usePageShortDescription) {
+        if (StringUtils.isBlank(pageOrAssetPath))
+            return LinkInfo.UNDEFINED;
+
+        ResourceProvider resourceProvider = this::getResourceResolver;
+
+        // handle+verify dam paths
+        if (pageOrAssetPath.startsWith("/content/dam"))
+            return LinkInfo.from(resourceProvider.getAsset(pageOrAssetPath));
+
+        // append .html to /content/*  (if .html wasn't already present, as checked above)
+        if (pageOrAssetPath.startsWith("/content")) {
+            Page page = resourceProvider.getPage(pageOrAssetPath);
+            if (page != null) {
+                VideoInfoProvider videoInfoProvider = this::getResourceResolver;
+                VideoInfo video = videoInfoProvider.getVideoInfo(page);
+                if (video != null)
+                    return LinkInfo.from(video);
+
+                return LinkInfo.from(page, usePageShortDescription);
+            }
+        }
+
+        return LinkInfo.UNDEFINED;
     }
 
     /**
