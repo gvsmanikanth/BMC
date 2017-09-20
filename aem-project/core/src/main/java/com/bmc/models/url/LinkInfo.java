@@ -27,7 +27,9 @@ public class LinkInfo implements Comparable<LinkInfo>  {
         String description = (useShortDescription)
                 ? StringHelper.coalesceString(page.getProperties().get("short_description","")).orElse(page.getDescription())
                 : page.getDescription();
-        return from(text, description, UrlInfo.from(page));
+        if (description == null)
+            description = "";
+        return from(text.trim(), description.trim(), UrlInfo.from(page));
     }
     public static LinkInfo from(Asset asset) {
         if (asset == null)
@@ -35,7 +37,9 @@ public class LinkInfo implements Comparable<LinkInfo>  {
         String text = StringHelper.coalesceString(asset.getMetadataValue("dc:title"))
                 .orElse(asset.getName());
         String description = asset.getMetadataValue("dc:description");
-        return LinkInfo.from(text, description, UrlInfo.from(asset));
+        if (description == null)
+            description = "";
+        return LinkInfo.from(text.trim(), description.trim(), UrlInfo.from(asset));
     }
     public static LinkInfo from(VideoInfo video) {
         if (video == null)
