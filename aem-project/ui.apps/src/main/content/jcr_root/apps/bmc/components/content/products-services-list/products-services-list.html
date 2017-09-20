@@ -1,0 +1,77 @@
+<sly data-sly-use.linkData="com.bmc.components.OfferingLinks"></sly>
+<section class="layout-full-bleed product-section-wrapper">
+    <nav class="product-finder-nav layout-inner-wrap">
+        <sly data-sly-resource="${'finder-nav' @resourceType='/apps/bmc/components/content/htmlarea'}"></sly>
+    </nav>
+</section>
+<section class="layout-full-bleed product-finder-filters">
+    <div class="layout-inner-wrap">
+        <section class="layout-primary">
+            <article>
+                <fieldset name="filters">
+                    <ol>
+                        <li>
+                            <label for="search-product" class="accessibility">${'Enter product name' @ i18n}</label>
+                            <input type="text" class="search-product" name="search-product" id="search-product" placeholder="${'Enter product name' @ i18n}" />
+                        </li>
+                    </ol>
+
+                    <ul class="list-filter">
+                        <li class="list-filter-toggle">
+                            <ul class="result-type">
+                                <li class="show-all"><a href="#" class="result-item-filter" data-filter="all">${'All' @ i18n}</a></li>
+                                <li class="topics"><a href="#" class="result-item-filter" data-filter=".topic">${'Topics' @ i18n}</a></li>
+                                <li class="products"><a href="#" class="result-item-filter" data-filter=".product">${'Products' @ i18n}</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="list-filter-alpha" data-sly-list.filter="${linkData.productSections}">
+                                <li data-sly-test="${filter.links}">
+                                    <a class="alpha-section-filter" href="#${filter.cssClass}" data-filter=".${filter.cssClass}">${filter.name}</a>
+                                </li>
+                                <li data-sly-test="${!filter.links}">
+                                    <div>${filter.name}</div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </fieldset>
+            </article>
+        </section> <!--/ layout-primary -->
+    </div><!-- / layout-inner-wrap -->
+</section><!-- / layout-full-bleed -->
+<section class="layout-full-bleed product-links">
+    <div class="layout-inner-wrap">
+        <div class="alpha-sections">
+            <div class="result-items" data-sly-use.linkData="com.bmc.components.OfferingLinks">
+                <h2 class="topics-results-heading">
+                    <span class="category-section-topic"></span>${'Topics' @ i18n }
+                </h2>
+                <ul class="results topic-results">
+                    <li class="topics">
+                        <ul class="topic-sections" data-sly-list.topic="${linkData.topicLinks}">
+                            <li class="result-item alpha-section topic ${topic.cssClass}">
+                                <a href="${topic.href}">${topic.text @context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2 class="products-results-heading">
+                    <span class="category-section-products-services"></span>${'Products & Services' @ i18n }
+                </h2>
+                <ul class="results product-results" data-sly-list.productSection="${linkData.productSections}">
+                    <li data-sly-test="${productSection.links}" class="${productSection.cssClass} alpha-section">
+                        <h3>${productSection.name}</h3>
+                        <ul data-sly-list.product="${productSection.links}">
+                            <li class="result-item product ${product.cssClass}">
+                                <a href="${product.href}">${product.text @context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
