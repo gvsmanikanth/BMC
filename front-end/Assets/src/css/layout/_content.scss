@@ -308,19 +308,19 @@
 		}
 	}
 
-	//> section {
-	//	border-top: 1px solid color(mediumGrey);
-	//	margin-top: em(40);
-	//	padding-top: em(40);
+	> .aem-Grid > .aem-GridColumn { //legacy was "> section"
+		border-top: 1px solid color(mediumGrey);
+		margin-top: em(40);
+		padding-top: em(40);
 
-	//	&:first-child {
-	//		@include media(breakpointMedium) {
-	//			border-top: none ;
-	//			margin-top: 0 !important;
-	//			padding-top: 0 ;
-	//		}
-	//	}
-	//}
+		&:first-child {
+			@include media(breakpointMedium) {
+				border-top: none ;
+				margin-top: 0 !important;
+				padding-top: 0 ;
+			}
+		}
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -342,11 +342,11 @@
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
 	h2:first-of-type {
 		@include media(breakpointMedium) {
-			margin-top: em(12, (context: 40));//BMC-527 em(12 40);
+			//margin-top: em(12, (context: 40)); BMC-527 em(12 40);
 		}
 
 		@include media(breakpointExtraLarge) {
-			margin-top: em(17, (context: 50));//BMC-527 em(17 50);
+			//margin-top: em(17, (context: 50)); BMC-527 em(17 50);
 		}
 	}
 
@@ -370,6 +370,10 @@
 		@include media(breakpointMedium) {
 			@include font-size(16);
 		}
+	}
+
+	article {
+		padding: 0;
 	}
 
 	.blog-recent .author {
@@ -1008,12 +1012,22 @@
 //AEM overload
 .maincontentcontainer {
 	> .layout-full-bleed {
+		padding-bottom: rem(30);
+		@include media(breakpointLarge) {
+			padding-bottom: rem(60);
+		}
 		> *:first-child {
 			padding-top: 0;
 			padding-bottom: 0;
+			margin-bottom: 0;
 			> *:not([class*="bg-"]){
 				margin-top: rem(30);
 			}
+		}
+
+		> *:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
 		}
 	}
 }
