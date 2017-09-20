@@ -4,7 +4,7 @@ import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.mixins.UrlResolver;
 import com.bmc.models.url.LinkInfo;
-import com.bmc.util.ValueMapFactory;
+import com.bmc.models.url.UrlType;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.Arrays;
@@ -46,9 +46,13 @@ public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider,
         if (resItems == null)
             return new Item(header, Stream.empty());
 
-        return new Item(header, Arrays.stream(resItems).map(this::getResourceLinkInfo));
+        Stream<LinkInfo> links = Arrays.stream(resItems)
+                .map(this::getResourceLinkInfo)
+                .filter(l->l.getType() != UrlType.Undefined);
+
+        return new Item(header, links);
     }
     private LinkInfo getResourceLinkInfo(ValueMap map) {
-        return getLinkInfo(map, "resText", "resPath", true);
+        return getLinkInfo(map.get("resPath", ""));
     }
 }

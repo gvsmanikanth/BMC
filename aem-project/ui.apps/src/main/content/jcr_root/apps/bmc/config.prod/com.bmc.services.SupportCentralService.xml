@@ -4,7 +4,7 @@
           newCaseUrl="https://bmcsites.force.com/casemgmt/apex/CreateNewCase"
           allCasesUrl="https://bmcsites.force.com/casemgmt/sc_CommunityHome"
           apiBaseUrl="https://ws-prod.bmc.com"
-          apiUser="clicKu5er"
+          apiUser="clicKu5eR"
           apiPass="c1icKU5Er"
           apiPath="/rest/BMC_SC/Contact/"
 	      searchPageUrl="https://bmcsites.force.com/casemgmt/sc_CoveoSearch"

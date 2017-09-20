@@ -1439,6 +1439,15 @@ blockquote {
     @media only screen and (min-width: 48em) {
       .layout-secondary:first-child {
         padding-bottom: 0; } }
+  .layout-secondary > .aem-Grid > .aem-GridColumn {
+    border-top: 1px solid #cacaca;
+    margin-top: 2.22222em;
+    padding-top: 2.22222em; }
+    @media only screen and (min-width: 48em) {
+      .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+        border-top: none;
+        margin-top: 0 !important;
+        padding-top: 0; } }
   .page-product-landing .layout-secondary {
     margin-top: 3em;
     width: 100%; }
@@ -1456,12 +1465,6 @@ blockquote {
     padding: 1.55556em 0 0;
     border-left: none; }
   @media only screen and (min-width: 48em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.3em; } }
-  @media only screen and (min-width: 76.25em) {
-    .layout-secondary h2:first-of-type {
-      margin-top: 0.34em; } }
-  @media only screen and (min-width: 48em) {
     .layout-secondary h3 {
       color: #414042;
       font-size: 20px;
@@ -1477,6 +1480,8 @@ blockquote {
     .layout-secondary p, .layout-secondary ol, .layout-secondary ul, .layout-secondary dd {
       font-size: 16px;
       font-size: 0.88889rem; } }
+  .layout-secondary article {
+    padding: 0; }
   @media only screen and (min-width: 48em) {
     .layout-secondary .blog-recent .author {
       font-size: 14px;
@@ -1887,11 +1892,20 @@ blockquote {
     .layout-banner-container-slim.layout-full-bleed-image h1, .layout-banner-container-slim.layout-full-bleed-image h2 {
       color: #fff; }
 
-.maincontentcontainer > .layout-full-bleed > *:first-child {
-  padding-top: 0;
-  padding-bottom: 0; }
-  .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
-    margin-top: 1.66667rem; }
+.maincontentcontainer > .layout-full-bleed {
+  padding-bottom: 1.66667rem; }
+  @media only screen and (min-width: 60em) {
+    .maincontentcontainer > .layout-full-bleed {
+      padding-bottom: 3.33333rem; } }
+  .maincontentcontainer > .layout-full-bleed > *:first-child {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0; }
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+      margin-top: 1.66667rem; }
+  .maincontentcontainer > .layout-full-bleed > *:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0; }
 
 .layout-full-bleed {
   background-color: white;
@@ -3584,6 +3598,9 @@ span .chatbtn {
   .layout-full-bleed > .dividers .divider, .layout-full-bleed > .dividers .product-landing .layout-secondary, .product-landing .layout-full-bleed > .dividers .layout-secondary, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side, .layout-full-bleed > .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-full-bleed > .dividers .layout-secondary-slim-side-grey, .layout-full-bleed > .dividers .product-landing .layout-secondary-cta-container, .product-landing .layout-full-bleed > .dividers .layout-secondary-cta-container, .layout-full-bleed > .dividers .product-landing .layout-secondary-shaded, .product-landing .layout-full-bleed > .dividers .layout-secondary-shaded {
     margin: 1.85rem 0 0;
     padding: 0 0 1.25rem; }
+
+.layout-secondary .dividers {
+  display: none; }
 
 /* jQuery Dropdown: A simple dropdown plugin
  *
@@ -10801,11 +10818,11 @@ section.bmc-engage-header.layout-full-bleed {
   .full-width-testimonial a {
     color: #fff; }
   .full-width-testimonial cite {
-    font-size: 1em;
+    font-size: 1em !important;
     font-style: normal; }
     @media only screen and (min-width: 48em) {
       .full-width-testimonial cite {
-        font-size: 1.22222em; } }
+        font-size: 1.22222em !important; } }
 
 .conquest-feature-message .brands {
   padding: 0;
@@ -11184,7 +11201,13 @@ section.bmc-engage-header.layout-full-bleed {
           margin-left: 0; } }
 
 .customer-story-landing-logo-blocks {
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  margin-bottom: -1.5rem;
+  padding: 1.66667em 0; }
+  @media only screen and (min-width: 48em) {
+    .customer-story-landing-logo-blocks {
+      margin-bottom: -4rem;
+      padding: 3.33333em 0; } }
   .customer-story-landing-logo-blocks .logo-blocks {
     margin: 0 -1%; }
     .customer-story-landing-logo-blocks .logo-blocks h5 {

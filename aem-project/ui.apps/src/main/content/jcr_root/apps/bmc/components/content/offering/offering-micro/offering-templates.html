@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
-                    <a href="${[assetPicker,videoID] @join=''}" target="_self" class="${assetIconImage} ${videoID !='' ? 'modal-video-player' : ''}" >
+                    <a href="${videoID}" target="_self" class="${assetIconImage} ${videoID !='' ? 'modal-video-player' : ''}" >
                         ${assetPrefix}: ${assetLinkText @ context='html'}
                     </a>
                 </div>
