@@ -15,7 +15,6 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <template data-sly-template.head="${ @ page }" data-sly-use.headlibRenderer="headlibs.html"
           data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
-    <meta charset="UTF-8">
     <sly data-sly-test.isHomePage="${properties.homePage}">
         <title>${page.title}</title>
         <meta name="google-site-verification" content="7FGS9HcYo7XLesfesSP-tQAHPt4qy3Bw10JFU4tQI4w" />
@@ -55,9 +54,9 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://www.bmc.com/" />
         <meta property="og:image" content="http://www.bmc.com/content/dam/bmc/logos/bmc/brandBlock.jpg" />
-        <meta property="og:description" content="${description}" />
+        <meta property="og:description" content="${properties['jcr:description']}" />
     </sly>
-    <sly data-sly-test="!isHomePage">
+    <sly data-sly-test="${!isHomePage}">
         <title>${page.title} - ${'BMC Software' @ i18n}</title>
     </sly>    
     <meta data-sly-test.keywords="${page.keywords}" name="keywords" content="${keywords}"/>
