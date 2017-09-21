@@ -30,6 +30,35 @@
                     data-sly-resource="${resourcePath @ resourceType='/apps/bmc/components/content/products-solutions-landing/topic'}">
                 </li>
             </ul>
+
+            <div class="result-items" data-sly-use.linkData="com.bmc.components.OfferingLinks">
+                <h2 class="products-results-heading">
+                    <span class="category-section-products-services"></span>${'Products & Services' @ i18n}
+                </h2>
+                <ul class="results product-results" data-sly-list.productSection="${linkData.productSections}">
+                    <li class="${productSection.cssClass} alpha-section" data-sly-test="${productSection.links}">
+                        <h3>${productSection.name}</h3>
+                        <ul data-sly-list.product="${productSection.links}">
+                            <li class="result-item product ${product.cssClass}">
+                                <a href="${product.href}">${product.text @ context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2 class="topics-results-heading">
+                    <span class="category-section-topic"></span>${'Topics' @ i18n}
+                </h2>
+                <ul class="results topic-results">
+                    <li class="topics">
+                        <ul class="topic-sections" data-sly-list.topic="${linkData.topicLinks}">
+                            <li class="result-item alpha-section topic ${topic.cssClass}">
+                                <a href="${topic.href}">${topic.text @ context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </article>
 </section>
