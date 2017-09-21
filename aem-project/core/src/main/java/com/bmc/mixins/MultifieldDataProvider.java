@@ -4,6 +4,8 @@ import com.bmc.util.ValueMapFactory;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
@@ -16,6 +18,37 @@ import java.util.stream.StreamSupport;
  * via {@link #getResource()}) and {@link ValueMap} instances for fields which use acs-commons-nested="JSON_STORE"
  */
 public interface MultifieldDataProvider {
+
+    /**
+     * Returns items for the multifield field named {@code propertyName}, mapped from {@link String} values using the given
+     * {@code mapFunction}.<br>
+     * <br>
+     * This method is for use with simple multifield instances containing only a single simple child field,
+     * which gets persisted as a simple comma-delimited value array.<br>
+     * <br>
+     * This method is NOT appropriate for use with a acs-commons-nested (NODE_STORE, JSON_STORE), or composite
+     * (AEM 6.3 coral field, similar to NODE_STORE) multifield. For those cases, see the other methods in
+     * {@link MultifieldDataProvider}.
+     * @param propertyName the name of the multifield field
+     * @param mapFunction a Function which produces items from {@link String} values
+     * @param <T> the type of items returned by {@code mapFunction}
+     * @return the items mapped from the multifield values
+     */
+    default <T> List<T> mapMultiFieldValues(String propertyName, Function<String,T> mapFunction) {
+        Resource resource = getResource();
+        if (resource == null || propertyName == null)
+            return Collections.emptyList();
+
+        String[] values = resource.getValueMap().get(propertyName, String[].class);
+        if (values == null || values.length == 0)
+            return Collections.emptyList();
+
+        return Arrays.stream(values)
+                .map(mapFunction)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+    }
+
     /**
      * Returns the {@link Resource} nodes for the multifield NODE_STORE given by {@code nodeStoreName}<br><br>
      * For example, the corresponding {@code nodeStoreName} in this multifield definition is "itemdata":

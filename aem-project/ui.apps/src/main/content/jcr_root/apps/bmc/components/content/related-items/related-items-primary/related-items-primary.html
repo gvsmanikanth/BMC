@@ -4,8 +4,7 @@
 
     <sly data-sly-list.link="${data.links}">
         <h3>
-            <a href="${link.href}" target="_self" data-sly-test="${link.isInternal}">${link.text}</a>
-            <a href="${link.href}" target="_blank" data-sly-test="${link.isExternal}">${link.text}</a>
+            <a href="${link.href}" target="${link.target}">${link.text}</a>
         </h3>
         <p data-sly-test="${data.showLinkDescriptions && link.description}">${link.description}</p>
     </sly>

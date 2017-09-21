@@ -309,7 +309,7 @@
 	}
 
 	> .aem-Grid > .aem-GridColumn { //legacy was "> section"
-		border-top: 1px solid color(mediumGrey);
+		border-top: 1px solid color(greyMedium);
 		margin-top: em(40);
 		padding-top: em(40);
 
@@ -1012,12 +1012,22 @@
 //AEM overload
 .maincontentcontainer {
 	> .layout-full-bleed {
+		padding-bottom: rem(30);
+		@include media(breakpointLarge) {
+			padding-bottom: rem(60);
+		}
 		> *:first-child {
 			padding-top: 0;
 			padding-bottom: 0;
+			margin-bottom: 0;
 			> *:not([class*="bg-"]){
 				margin-top: rem(30);
 			}
+		}
+
+		> *:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
 		}
 	}
 }

@@ -1,6 +1,9 @@
 package com.bmc.models.components.offerings;
 
+import com.bmc.mixins.UrlResolver;
+import com.bmc.models.url.LinkInfo;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.slf4j.Logger;
@@ -22,6 +25,9 @@ public class OfferingMicro {
 
     @Inject
     private Session session;
+
+    @Inject
+    private Resource resource;
 
     @Inject @Named("resourcePath")
     @Optional
@@ -48,19 +54,25 @@ public class OfferingMicro {
 
             if(session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
                 mainNode = session.getNode(resourcePath + "/jcr:content/root/offer_item");
-                longDiscription = mainNode.getNode("productDiscription");
-                productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
-                productAvailabilityListNI = productAvailabilityListNode.getNodes();
 
-                productAvailabilityList = new ArrayList<>();
+                if(mainNode.hasNode("productDiscription"))
+                    longDiscription = mainNode.getNode("productDiscription");
 
-                while(productAvailabilityListNI.hasNext()) {
-                    HashMap<String,String> pNodeHash = new HashMap<>();
-                    Node pNode = productAvailabilityListNI.nextNode();
-                    Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString()+"/jcr:content/");
-                    pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
-                    pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
-                    productAvailabilityList.add(pNodeHash);
+
+                if(mainNode.hasNode("productAvailabilityList")) {
+                    productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
+                    productAvailabilityListNI = productAvailabilityListNode.getNodes();
+
+                    productAvailabilityList = new ArrayList<>();
+
+                    while (productAvailabilityListNI.hasNext()) {
+                        HashMap<String, String> pNodeHash = new HashMap<>();
+                        Node pNode = productAvailabilityListNI.nextNode();
+                        Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString() + "/jcr:content/");
+                        pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
+                        pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
+                        productAvailabilityList.add(pNodeHash);
+                    }
                 }
             }
 
@@ -83,36 +95,33 @@ public class OfferingMicro {
     }
 
     private void setResourceProps(Node mainNode, String key, String prop){
-            try {
-                if(key != null) {
-                    resourceProps.put(key, prop);
-                }else if(mainNode.hasProperty(prop)){
-                    resourceProps.put(prop, mainNode.getProperty(prop).getValue().getString());
-                }
-            } catch (RepositoryException e) {
-                e.printStackTrace();
+        try {
+            if(key != null) {
+                resourceProps.put(key, prop);
+            }else if(mainNode.hasProperty(prop)){
+                resourceProps.put(prop, mainNode.getProperty(prop).getValue().getString());
             }
+        } catch (RepositoryException e) {
+            logger.error("ERROR", e.getMessage());
+        }
     }
 
     private void setAssetTitleFromPicker(Node mainNode, String pickerName, String key){
         try {
             if (mainNode.hasProperty(pickerName)) {
-                Node assetNode;
-                String titlePropName = "jcr:title";
-                if (session.itemExists(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/metadata")) {
-                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/metadata");
-                } else if (session.itemExists(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/video-data")){
-                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content/video-data");
-                    videoID = "?vID="+assetNode.getProperty("vID").getValue().getString();
-                    titlePropName = "title";
-                    isModal = true;
-                } else {
-                    assetNode = session.getNode(mainNode.getProperty(pickerName).getValue().getString() + "/jcr:content");
-                }
-                resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : assetNode.getProperty(titlePropName).getValue().getString());
+
+                ResourceResolver resourceResolver = resource.getResourceResolver();
+                Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
+
+
+                UrlResolver itemInfo = UrlResolver.from(itemResource);
+                LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
+
+                videoID = linkInfo.getHref();
+                resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
             }
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("ERROR",e.getMessage());
         }
 
     }
@@ -130,7 +139,4 @@ public class OfferingMicro {
         return videoID;
     }
 
-    public Boolean getIsModal() {
-        return isModal;
-    }
 }

@@ -94,6 +94,8 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                         responseBody = scanner.useDelimiter("\\A").next();
                     }
                     logger.info(responseBody);
+                    response.setContentType("application/json");
+                    response.getWriter().append(responseBody);
                 } catch (Exception e1) {
                     logger.error(e1.getMessage());
                 }

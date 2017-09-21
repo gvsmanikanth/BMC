@@ -1,7 +1,6 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.MetadataInfoProvider;
 import com.bmc.mixins.MetadataInfoProvider_RequestCached;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.mixins.ResourceProvider;
@@ -11,9 +10,8 @@ import com.bmc.util.StringHelper;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class ProductSolutionsTopic extends WCMUsePojo implements MetadataInfoProvider_RequestCached, MultifieldDataProvider {
+public class ProductSolutionsTopic extends WCMUsePojo implements MetadataInfoProvider_RequestCached, MultifieldDataProvider, ResourceProvider {
     private String title = "[ProductSolutionsTopic]";
     private String cssClass;
     private String dataFilter;
@@ -41,8 +39,7 @@ public class ProductSolutionsTopic extends WCMUsePojo implements MetadataInfoPro
         ValueMap map = getProperties();
         href = StringHelper.resolveHref(map.get("exploreUrl", "")).orElse("#");
         productShotHref = StringHelper.resolveHref(map.get("productShot", "")).orElse("#");
-        featuredProducts = streamMultiFieldNodes("featuredProducts")
-                .map((resource)->RelatedCTAs.getLinkItem(resource.getValueMap(),getResourceProvider()))
-                .collect(Collectors.toList());
+        featuredProducts = mapMultiFieldValues("internalPagePaths",
+                path -> RelatedCTAs.getLinkItem(path, this));
     }
 }
