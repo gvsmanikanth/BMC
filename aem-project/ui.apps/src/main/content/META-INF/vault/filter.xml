@@ -15,6 +15,7 @@
     <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/templates/course-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>

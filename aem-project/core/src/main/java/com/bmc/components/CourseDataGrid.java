@@ -20,16 +20,19 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 		return prerequisites;
 	}
 
-	private List<String> goodFor;
-
-	public List<String> getGoodFor() {
-		return goodFor;
+	private List<String> roles;
+	public List<String> getEducationRoles() {
+		return roles;
 	}
 
-	private List<String> majorRelease;
+	private List<String> educationProducts;
+	public List<String> getEducationProducts() {
+		return educationProducts;
+	}
 
-	public List<String> getMajorRelease() {
-		return majorRelease;
+	private List<String> versionNumbers;
+	public List<String> getVersionNumbers() {
+		return versionNumbers;
 	}
 
 	@Override
@@ -37,11 +40,10 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 		try {
 
 			String[] goodForValues = getPageProperties().get("education-specific-role", new String[]{});
-			ResourceResolver resolver = getResourceResolver();
-			goodFor = Arrays.stream(goodForValues)
+			roles = Arrays.stream(goodForValues)
 					.map(s -> {
-						String path = "/content/bmc/resources/" + s;
-						Resource r = resolver.getResource(path);
+						String path = "/content/bmc/resources/education-specific-roles/" + s;
+						Resource r = getResourceResolver().getResource(path);
 						if(r != null)
 							return r.getValueMap().getOrDefault("jcr:title",s).toString();
 						return s;
@@ -49,15 +51,27 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 					.collect(Collectors.toList());
 
 			String[] majorReleaseValues = getPageProperties().get("education-products",new String[]{});
-			majorRelease = Arrays.stream(majorReleaseValues)
+			educationProducts = Arrays.stream(majorReleaseValues)
 					.map(s -> {
-						String path = "/content/bmc/resources/" + s;
-						Resource r = resolver.getResource(path);
+						String path = "/content/bmc/resources/education-products/" + s;
+						Resource r = getResourceResolver().getResource(path);
 						if(r != null)
 							return r.getValueMap().getOrDefault("jcr:title",s).toString();
 						return s;
 					})
 					.collect(Collectors.toList());
+
+			String[] versionNumberValues = getPageProperties().get("education-version-numbers",new String[]{});
+			versionNumbers = Arrays.stream(versionNumberValues)
+					.map(s -> {
+						String path = "/content/bmc/resources/education-version-numbers/" + s;
+						Resource r = getResourceResolver().getResource(path);
+						if(r != null)
+							return r.getValueMap().getOrDefault("jcr:title",s).toString();
+						return s;
+					})
+					.collect(Collectors.toList());
+
 
 			prerequisites = StreamSupport.stream(getCurrentPage().getContentResource().getChild("prerequisites").getChildren().spliterator(), false)
 					.map((resource -> resource.getValueMap().getOrDefault("internalPagePath", "").toString()))
