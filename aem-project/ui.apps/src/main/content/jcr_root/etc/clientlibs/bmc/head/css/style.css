@@ -11995,6 +11995,12 @@ section.bmc-engage-header.layout-full-bleed {
   padding: 0 !important;
   text-align: center; }
 
+.layout-full-bleed.product-finder-filters .layout-primary {
+  padding: 0; }
+
+.layout-full-bleed.product-links {
+  padding: 3.33333em 0; }
+
 .category-section-filter-wrapper {
   box-sizing: border-box;
   display: block;

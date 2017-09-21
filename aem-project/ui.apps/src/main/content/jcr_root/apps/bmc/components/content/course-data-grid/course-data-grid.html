@@ -5,7 +5,7 @@
                 <h3>${'Good for:' @ i8n}</h3>
             </div>
             <div>
-                <p>${courseData.goodFor @ join=', '}</p>
+                <p>${courseData.educationRoles @ join=', '}</p>
             </div>
         </div>
         <div class="two-up">
@@ -27,7 +27,7 @@
                 <h3>${'Major release:' @ i8n}</h3>
             </div>
             <div>
-                <p>${courseData.majorRelease  @ join=', '} ${pageProperties['education-version-numbers']}</p>
+                <p>${courseData.educationProducts @ join=', '} ${courseData.versionNumbers @ join=', '}</p>
             </div>
         </div>
         <div class="two-up">
