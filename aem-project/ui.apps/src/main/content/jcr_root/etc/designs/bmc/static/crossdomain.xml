@@ -1,12 +1,37 @@
 <?xml version="1.0"?>
 <!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
 <cross-domain-policy>
-<allow-access-from domain="*" />
-<allow-access-from domain="cms.clickability.com" />
-<allow-access-from domain="www.bmc.com" />
-<allow-access-from domain="media.cms.bmc.com" />
-<allow-access-from domain="*.bmc.com" />
-<allow-access-from domain="*.www.bmc.com" />
-<allow-access-from domain="dev.www.bmc.com" />
-<allow-access-from domain="stage.www.bmc.com" />
+<allow-access-from domain="bmc.com"/>
+<allow-access-from domain="*.bmc.com"/>
+<allow-access-from domain="www.bmc.com"/>
+<allow-access-from domain="fr.bmcsoftware.ca"/>
+<allow-access-from domain="www.bmcsoftware.at"/>
+<allow-access-from domain="www.bmcsoftware.ca"/>
+<allow-access-from domain="www.bmcsoftware.ch"/>
+<allow-access-from domain="www.bmcsoftware.cn"/>
+<allow-access-from domain="www.bmcsoftware.co.il"/>
+<allow-access-from domain="www.bmcsoftware.co.za"/>
+<allow-access-from domain="www.bmcsoftware.com.ar"/>
+<allow-access-from domain="www.bmcsoftware.com.au"/>
+<allow-access-from domain="www.bmcsoftware.com.br"/>
+<allow-access-from domain="www.bmcsoftware.com.tr"/>
+<allow-access-from domain="www.bmcsoftware.de"/>
+<allow-access-from domain="www.bmcsoftware.dk"/>
+<allow-access-from domain="www.bmcsoftware.es"/>
+<allow-access-from domain="www.bmcsoftware.fr"/>
+<allow-access-from domain="www.bmcsoftware.gr"/>
+<allow-access-from domain="www.bmcsoftware.hk"/>
+<allow-access-from domain="www.bmcsoftware.in"/>
+<allow-access-from domain="www.bmcsoftware.it"/>
+<allow-access-from domain="www.bmcsoftware.jp"/>
+<allow-access-from domain="www.bmcsoftware.kr"/>
+<allow-access-from domain="www.bmcsoftware.mx"/>
+<allow-access-from domain="www.bmcsoftware.nl"/>
+<allow-access-from domain="www.bmcsoftware.pl"/>
+<allow-access-from domain="www.bmcsoftware.pt"/>
+<allow-access-from domain="www.bmcsoftware.ru"/>
+<allow-access-from domain="www.bmcsoftware.sa"/>
+<allow-access-from domain="www.bmcsoftware.sg"/>
+<allow-access-from domain="www.bmcsoftware.tw"/>
+<allow-access-from domain="www.bmcsoftware.uk"/>
 </cross-domain-policy>

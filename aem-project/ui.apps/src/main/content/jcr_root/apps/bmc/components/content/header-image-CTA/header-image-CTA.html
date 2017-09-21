@@ -1,7 +1,7 @@
 <sly data-sly-use.data="com.bmc.components.HeaderImageCta"></sly>
 
 <!-- with introText -->
-<section data-sly-test="${properties.introText}" class="bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('${data.backgroundImageUrl @ context='uri'}');">
+<section data-sly-test="${properties.introText}" class="py3 bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('${data.backgroundImageUrl @ context='uri'}');">
     <div class="layout-inner-wrap">
         <h1>${properties.headerText  @ context = 'html'}</h1>
         <h2>${properties.subHeaderText @ context = 'html'}</h2>

@@ -1,4 +1,5 @@
 <sly data-sly-use.OfferingModel="com.bmc.models.components.offerings.OfferingMicro" data-sly-test="${OfferingModel}" data-sly-test.vID="${OfferingModel.VideoID}" data-sly-test.ResourceProps = "${OfferingModel.ResourceProps}" data-sly-test.ProductList = "${OfferingModel.ProductAvailabilityList}"/>
+
 <sly data-sly-use.OfferingTemplate="offering-templates.html">
     <sly data-sly-test = "${ResourceProps}">
         <sly data-sly-call="${OfferingTemplate.FullDiscription @

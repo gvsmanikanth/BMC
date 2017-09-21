@@ -4,10 +4,10 @@
           newCaseUrl="https://sfaqa-bmcsites.cs91.force.com/casemgmt/apex/CreateNewCase"
           allCasesUrl="https://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CommunityHome"
           apiBaseUrl="https://ws-uat.bmc.com"
-          apiUser="clicKu5er"
+          apiUser="clicKu5eR"
           apiPass="c1icKU5Er"
           apiPath="/rest/BMC_SC/Contact/"
-	      searchPageUrl="http://sfaqa-bmcsites.cs71.force.com/casemgmt/sc_CoveoSearch"
-   	      supportCentralUrl="http://sfaqa-bmcsites.cs71.force.com/casemgmt"
+	      searchPageUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CoveoSearch"
+   	      supportCentralUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt"
     	  supportCoveoAccessToken="3e2bedf9-5685-4cef-8b00-ee4e8704481c"
 />

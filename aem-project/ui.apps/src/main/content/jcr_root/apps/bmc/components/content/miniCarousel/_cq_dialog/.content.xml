@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[bmc.components.miniCarousel.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Image Items Dashboard"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pages
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/bmc/components/content/miniCarousel/touchui-limit-multifield"
+                                                class="full-width"
+                                                fieldDescription="Click '+' to add a new Image."
+                                                fieldLabel="Image Items"
+                                                fieldLimit="5">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    eaem-nested=""
+                                                    name="./iItems">
+                                                    <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <figureCaption
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    fieldDescription="Enter Image Caption."
+                                                                    fieldLabel="Figure Caption"
+                                                                    name="./figureCaption"
+                                                                    required="{Boolean}true"/>
+                                                                <figurePath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldDescription="Select Path"
+                                                                    fieldLabel="Image Path"
+                                                                    name="./figurePath"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content"/>
+                                                                <xOffset
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                    disabled="{Boolean}false"
+                                                                    fieldLabel="Enter the x Offset for the magnifier Icon."
+                                                                    name="./xOffset"/>
+                                                                <yOffset
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                    disabled="{Boolean}false"
+                                                                    fieldLabel="Enter the y Offset for the magnifier Icon."
+                                                                    name="./yOffset"/>
+                                                                <thumbNailImagePath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldDescription="thumbNail Image Path"
+                                                                    fieldLabel="Provide a thumbnail image  to upload the figure asset Image."
+                                                                    hidden="{Boolean}false"
+                                                                    name="./thumbNailImagePath"
+                                                                    rootPath="/content/dam"/>
+                                                                <showMagnifierIcon
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                                    checked="true"
+                                                                    name="./showMagnifierIcon"
+                                                                    text="Show the magnifier Icon?"
+                                                                    uncheckedValue="false"
+                                                                    value="{Boolean}true"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </pages>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </column>
+                </items>
+            </image>
+            <video
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Video"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Video Items Dashboard"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <pages
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="/apps/bmc/components/content/miniCarousel/touchui-limit-multifield"
+                                                class="full-width"
+                                                fieldDescription="Click '+' to add a new page"
+                                                fieldLabel="Video Data item"
+                                                fieldLimit="5">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    eaem-nested=""
+                                                    name="./uItems">
+                                                    <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        method="absolute"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <figureCaption
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    fieldDescription="Enter Video Caption."
+                                                                    fieldLabel="Video Caption"
+                                                                    name="./figureCaption"
+                                                                    required="{Boolean}true"/>
+                                                                <figurePath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldDescription="Select Path"
+                                                                    fieldLabel="Video data item Path"
+                                                                    name="./figurePath"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content"/>
+                                                                <xOffset
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                    disabled="{Boolean}false"
+                                                                    fieldLabel="Enter the x Offset for the magnifier Icon."
+                                                                    name="./xOffset"/>
+                                                                <yOffset
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                                    disabled="{Boolean}false"
+                                                                    fieldLabel="Enter the y Offset for the magnifier Icon."
+                                                                    name="./yOffset"/>
+                                                                <thumbNailImagePath
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                    fieldDescription="thumbNail Image Path"
+                                                                    fieldLabel="Provide a thumbnail image  to upload the figure asset Video."
+                                                                    hidden="{Boolean}false"
+                                                                    name="./thumbNailImagePath"
+                                                                    required="{Boolean}true"
+                                                                    rootPath="/content/dam"/>
+                                                                <showMagnifierIcon
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                                    checked="true"
+                                                                    name="./showMagnifierIcon"
+                                                                    text="Show the magnifier Icon?"
+                                                                    uncheckedValue="false"
+                                                                    value="{Boolean}true"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </pages>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </column>
+                </items>
+            </video>
+        </items>
+    </content>
+</jcr:root>

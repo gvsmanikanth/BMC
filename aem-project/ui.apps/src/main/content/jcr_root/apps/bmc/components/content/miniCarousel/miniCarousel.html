@@ -1,0 +1,68 @@
+<section class="carousel-aside">
+<div data-sly-use.mbeanObj="com.bmc.components.testmulti.core.models.MiniCarouselMultiComponent">
+<div class="two-up">
+<div data-sly-test="${!mbeanObj.mBean}">Add values in Dialog</div>
+<div class="carousel-wrap">
+    	<div data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}" class="layout-inner-wrap">
+    			<div data-sly-list.itemsList="${items.items}">
+                	<ul class="carousel"> 
+               			<li data-sly-test="${itemsList.assetIndex == 0}" data-slide="${itemsList.assetIndex}" class="active">
+                      <!-- Adding the conditions for the Image. -->
+						<figure data-sly-test="${itemsList.hrefClass == 'modal-image'}">                       
+							<a href="${itemsList.figurePath}" rel="carouselGroup-416145443" class="${itemsList.hrefClass}"  title="${itemsList.figureCaption}"> 
+                                <img src="${itemsList.thumbNailPath}" width="" height="" border="0"/>
+								<div data-sly-test="${itemsList.showMagnifierIcon}" class="carousel-icon icon-img"  data-percentage-right="${itemsList.xOffset}" data-percentage-top="${itemsList.yOffset}">
+                                </div>
+							</a>
+							<figcaption>${itemsList.figureCaption}</figcaption>
+						</figure>
+                        <!-- Adding the conditions for the video player. -->
+						<figure data-sly-test="${itemsList.hrefClass == 'modal-youtube-video-player'}">                       
+							<a class="modal-youtube-video-player" rel="carouselGroup-399434211" href="${itemsList.figurePath}" target="_self" title="">
+                                <img src="${itemsList.thumbNailPath}" alt="" title="" width="900" height="516" border="0"/>
+                                <div data-sly-test="${itemsList.showMagnifierIcon}" class="carousel-icon icon-vid" data-percentage-right="${itemsList.xOffset}" data-percentage-top="${itemsList.yOffset}"></div>
+							</a>
+							<figcaption>${itemsList.figureCaption}</figcaption>
+						</figure>						
+					</li>
+                    <li data-sly-test="${itemsList.assetIndex > 0}" data-slide="${itemsList.assetIndex}">
+						 <!-- Adding the conditions for the Image. -->
+						<figure data-sly-test="${itemsList.hrefClass == 'modal-image'}">
+							<a href="${itemsList.figurePath}" rel="carouselGroup-416145443" class="${itemsList.hrefClass}"  title="${itemsList.figureCaption}"> 
+                                <img src="${itemsList.thumbNailPath}" width="" height="" border="0"/>
+                          		<div data-sly-test="${itemsList.showMagnifierIcon}" class="carousel-icon icon-img" data-percentage-right="${itemsList.xOffset}" data-percentage-top="${itemsList.yOffset}">
+                                </div>
+							</a>
+							<figcaption>${itemsList.figureCaption}</figcaption>
+						</figure>
+                        <!-- Adding the conditions for the video player. -->
+						<figure data-sly-test="${itemsList.hrefClass == 'modal-youtube-video-player'}">
+                            <a class="modal-youtube-video-player"  href="${itemsList.figurePath}" target="_self" title="">
+                                <img src="${itemsList.thumbNailPath}" alt="" title="" width="900" height="516" border="0"/>
+                                <div data-sly-test="${itemsList.showMagnifierIcon}" class="carousel-icon icon-vid" data-percentage-right="${itemsList.xOffset}" data-percentage-top="${itemsList.yOffset}"></div>
+							</a>
+							<figcaption>${itemsList.figureCaption}</figcaption>
+						</figure>
+					</li>                
+                	</ul>
+            </div>
+      	</div>
+
+	</p>
+    <sly data-sly-test="${mbeanObj.mBean}" data-sly-list.items="${mbeanObj.mBean}">
+    <sly data-sly-list.itemsList="${items.items}" data-sly-list.NoOfItems ="${mbeanObj.noOfItems}">
+   				<ul data-sly-test="${NoOfItems > 1}" class="carousel-control">
+					<li data-sly-test="${itemsList.assetIndex == 0}">
+						<a href="#" data-slide="${itemsList.assetIndex}" class="active">${itemsList.assetIndex}+1</a>
+                    </li>
+					<li data-sly-test="${itemsList.assetIndex > 0}">
+                    	<a href="#" data-slide="${itemsList.assetIndex}">${itemsList.assetIndex}+1</a>
+                   </li>				
+			</ul></sly>
+    </sly>
+    </div>
+    </div>
+</div>
+</section>
+
+
