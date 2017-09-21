@@ -4,10 +4,11 @@
 <meta name="robots" content="index, follow">
 <meta name="description" content="${properties.meta_description || properties.jcr:description}">
 <meta name="keywords" content="">
-<meta name="author" content="ConnectiveDX">
+<meta name="author" content="">
 <meta name="apple-mobile-web-app-title" content="BMC Software">
 
 <sly data-sly-use.alternateLinks="${'com.bmc.components.AlternateLinks'}">
+    <link rel="canonical" href="${alternateLinks.canonicalLink}"/>
     <link rel="alternate" href="${alternateLinks.alternateLinksMap[item]}" hreflang="${item}" data-sly-repeat="${alternateLinks.alternateLinksMap.keySet.iterator}" />
 </sly>
 

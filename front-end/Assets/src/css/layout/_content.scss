@@ -308,19 +308,19 @@
 		}
 	}
 
-> .aem-Grid > .aem-GridColumn { //legacy was "> section"
-	border-top: 1px solid color(mediumGrey);
-	margin-top: em(40);
-	padding-top: em(40);
+	> .aem-Grid > .aem-GridColumn { //legacy was "> section"
+		border-top: 1px solid color(mediumGrey);
+		margin-top: em(40);
+		padding-top: em(40);
 
-	&:first-child {
-		@include media(breakpointMedium) {
-			border-top: none ;
-			margin-top: 0 !important;
-			padding-top: 0 ;
+		&:first-child {
+			@include media(breakpointMedium) {
+				border-top: none ;
+				margin-top: 0 !important;
+				padding-top: 0 ;
+			}
 		}
 	}
-}
 
 	.page-product-landing & {
 		margin-top: 3em;

@@ -124,6 +124,21 @@
                                                     rootPath="/content/bmc"/>
                                         </items>
                                     </errors>
+                                    <homepage
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Home Page"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                             <errorpages
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    fieldDescription="This page is a Home Page"
+                                                    text="Home Page"
+                                                    renderReadOnly="{Boolean}false"
+                                                    name="./homePage"
+                                                    value="{Boolean}true"/>
+                                        </items>
+                                    </homepage>
                                 </items>
                             </column>
                         </items>
