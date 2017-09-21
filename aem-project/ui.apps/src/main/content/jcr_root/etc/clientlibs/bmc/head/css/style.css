@@ -1440,7 +1440,7 @@ blockquote {
       .layout-secondary:first-child {
         padding-bottom: 0; } }
   .layout-secondary > .aem-Grid > .aem-GridColumn {
-    border-top: 1px solid #cacaca;
+    border-top: 1px solid #cccccc;
     margin-top: 2.22222em;
     padding-top: 2.22222em; }
     @media only screen and (min-width: 48em) {
@@ -3581,12 +3581,12 @@ span .chatbtn {
   padding-top: 32px; }
 
 .divider, .product-landing .layout-secondary, .product-landing .layout-secondary-slim-side, .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-secondary-cta-container, .product-landing .layout-secondary-shaded {
-  border-top: 1px solid #cccccc; }
+  border-top: 1px solid #cacaca; }
   .divider.row, .product-landing .row.layout-secondary, .product-landing .row.layout-secondary-slim-side, .product-landing .row.layout-secondary-slim-side-grey, .product-landing .row.layout-secondary-cta-container, .product-landing .row.layout-secondary-shaded {
     margin-top: 0; }
 
 .divider-secondary {
-  border-top: 1px dashed #cccccc; }
+  border-top: 1px dashed #cacaca; }
 
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
