@@ -10809,11 +10809,11 @@ section.bmc-engage-header.layout-full-bleed {
   .full-width-testimonial a {
     color: #fff; }
   .full-width-testimonial cite {
-    font-size: 1em;
+    font-size: 1em !important;
     font-style: normal; }
     @media only screen and (min-width: 48em) {
       .full-width-testimonial cite {
-        font-size: 1.22222em; } }
+        font-size: 1.22222em !important; } }
 
 .conquest-feature-message .brands {
   padding: 0;
