@@ -122,31 +122,41 @@ public class LinkTransformerService implements TransformerFactory {
                         Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
                         Matcher matcher = pattern.matcher(href);
                         matcher.find();
-//                        String protocol = matcher.group(1);
-//                        String domain = matcher.group(2);
-//                        String port = matcher.group(3);
                         String hrefUri = matcher.group(4);
                         path = resolver.map(hrefUri);
-//                        try {
-//                            k
-//                            URL url = new URL(href);
-//                            path = resolver.map(url.getPath());
-//                        } catch (MalformedURLException e) {
-//                            e.printStackTrace();
-//                        }
                     } else {
                         path = resolver.map(href);
                     }
-                    for (int i = 0; i < attributes.getLength(); i++) {
-                        if ("href".equalsIgnoreCase(attributes.getQName(i))) {
-                            attributes.setValue(i, path);
-                            break;
-                        }
-                    }
+                    setHref(attributes, path);
+                } else if (href.startsWith("https://author.cms.bmc.com")
+                        || href.startsWith("https://stage-author.cms.bmc.com")
+                        || href.startsWith("http://localhost:4502")) {
+                    // remove known author hostnames for special case in RTE of http://author/short/path and replace with relative link
+                    String hrefUri = getPath(href);
+                    path = resolver.map(hrefUri);
+                    setHref(attributes, path);
                 }
             }
 
             contentHandler.startElement(uri, localName, qName, attributes);
+        }
+
+        private void setHref(AttributesImpl attributes, String path) {
+            for (int i = 0; i < attributes.getLength(); i++) {
+                if ("href".equalsIgnoreCase(attributes.getQName(i))) {
+                    attributes.setValue(i, path);
+                    break;
+                }
+            }
+        }
+
+        private String getPath(String href) {
+            String path;
+            Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+            Matcher matcher = pattern.matcher(href);
+            matcher.find();
+            String uri = matcher.group(4);
+            return uri;
         }
 
         public void startPrefixMapping(String prefix, String uri) throws SAXException {
