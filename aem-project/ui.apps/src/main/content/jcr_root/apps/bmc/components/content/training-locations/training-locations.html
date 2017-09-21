@@ -1,0 +1,54 @@
+<form class="js-data-state-select js-deep-linked-select" data-sly-use.trainingLocations="com.bmc.components.TrainingLocations">
+    <fieldset>
+        <strong>${'Training centers in' @ i18n } &nbsp;</strong>
+        <div class="form-group two-up">
+            <select data-sly-list.country="${trainingLocations.countries}">
+                <option>
+                    ${country.name}
+                </option>
+            </select>
+        </div>
+    </fieldset>
+    <div class="accordion" style="margin-left: 2em" data-sly-list.country="${countries}">
+        <sly data-sly-repeat.center="${country.trainingCenters}">
+            <fieldset data-state="${country.name}">
+                <ul>
+                    <li class="accordion-item">
+                        <span class="jump-to defalut-open" data-state="${country.name}" id="location-382332871x"></span> <a class="accordion-item-anchor" href="#location-382332871x">${center.city}</a>
+                        <div class="accordion-item-content">
+                            <address>
+                                ${center.locationName}<br>
+                                ${center.address1}<br>
+                                <sly data-sly-test="${center.address2}">${center.address2}<br></sly>
+                                ${center.city} Vic ${center.zip}<br>
+                                ${country.name}<br>
+                                ${'Tel:' @ i18n } <a href="${center.phoneLink}">${center.phone}</a><br>
+                                ${'Fax:' @ i18n } <a href="tel:+613%209657%204422">+613 9657 4422 does not exist?</a><br>
+                                <p data-sly-test="${center.trainingHours}">
+                                    <strong>${'Training Hours:' @ i18n }</strong> ${center.trainingHours}
+                                </p>
+                                <p data-sly-test="${center.airport}"><strong>Airport:</strong> ${center.airport}</p>
+                                <sly data-sly-test="${center.hotels}">
+                                    <p class="m0"><b>${'Area Hotels:' @ i18n }</b></p>
+                                    <div class="cards-wrapper py1">
+                                        <div class="cards-3-col js-eh" data-sly-list.hotel="${center.hotels}">
+                                            <div class="flex-item card js-ehItem">
+                                                <div class="content p1">
+                                                    ${hotel.hotelName}
+                                                    <p>${hotel.address1}<br>
+                                                        ${hotel.city}, VIC, ${hotel.zip}<br>
+                                                        ${hotel.phone}<span>&nbsp;</span><span>&nbsp;</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                </sly>
+                            </address>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+        </sly>
+
+    </div>
+</form>
