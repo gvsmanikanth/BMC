@@ -1,7 +1,7 @@
 <sly data-sly-use.data="com.bmc.components.RelatedItems"></sly>
 <section data-sly-test="${!data.useHorizontalDisplay}">
     <article>
-        <h2 data-sly-test="${data.headingText}">${data.headingText}:</h2>
+        <h2>Related topics:</h2>
 
         <dl data-sly-list.link="${data.links}">
             <dt>
@@ -12,7 +12,7 @@
     </article>
 </section>
 <section data-sly-test="${data.useHorizontalDisplay}">
-    <p><sly data-sly-test="${data.headingText}">${data.headingText}:&nbsp;</sly>
+    <p>Related topics:&nbsp;
     <sly data-sly-list.link="${data.links}">
         <sly data-sly-test="${!linkList.last}"><a href="${link.href}" target="${link.target}">${link.text}</a>, </sly>
         <sly data-sly-test="${linkList.last}"><a href="${link.href}" target="${link.target}">${link.text}</a></sly>
