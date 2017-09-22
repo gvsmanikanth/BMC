@@ -51,7 +51,8 @@
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                     name="./browserTitle"
                                                     fieldLabel="Browser Title"
-                                                    renderReadOnly="{Boolean}true">
+                                                    renderReadOnly="{Boolean}true"
+                                                    sling:orderBefore="pagetitle">
                                                 <granite:data
                                                         jcr:primaryType="nt:unstructured"
                                                         allowBulkEdit="{Boolean}true"
