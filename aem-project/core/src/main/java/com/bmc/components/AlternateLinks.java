@@ -5,6 +5,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AlternateLinks  extends WCMUsePojo {
     private Map<String, String> hrefLangMap = new HashMap<String, String>() {{
@@ -43,19 +45,36 @@ public class AlternateLinks  extends WCMUsePojo {
     }};
 
     private Map<String, String> alternateLinksMap = new HashMap<String, String>();
+    private String canonicalLink;
 
     @Override
     public void activate() throws Exception {
         SlingHttpServletRequest req = getRequest();
         String resourcePath = getResourceResolver().map(req.getRequestURI());
 
+        // Strip off any leading hostname that comes from the resource mapping.
+        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+        Matcher matcher = pattern.matcher(resourcePath);
+        matcher.find();
+
+        String hrefUri = resourcePath;
+        if (matcher.matches()) {
+            hrefUri = matcher.group(4);
+        }
+
         // Build map of alternate locale links.
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-            alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + resourcePath);
+            alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + hrefUri);
         }
+
+        canonicalLink = req.getScheme() + "://" + req.getServerName() + hrefUri;
     }
 
     public Map<String, String> getAlternateLinksMap() {
         return alternateLinksMap;
+    }
+
+    public String getCanonicalLink() {
+        return canonicalLink;
     }
 }
