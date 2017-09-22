@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:allowedTemplates="[/apps/bmc/templates/training-location-page]"
+        jcr:primaryType="cq:PageContent"/>
+    <united-states/>
+    <singapore/>
+    <india/>
+</jcr:root>
