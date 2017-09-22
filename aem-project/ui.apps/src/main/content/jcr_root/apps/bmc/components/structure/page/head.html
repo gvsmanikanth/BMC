@@ -16,7 +16,7 @@
 <template data-sly-template.head="${ @ page }" data-sly-use.headlibRenderer="headlibs.html"
           data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
     <sly data-sly-test.isHomePage="${properties.homePage}">
-        <title>${currentPage.pageTitle || currentPage.title || resource.name}</title>
+        <title>${properties['browserTitle'] || currentPage.title || resource.name}</title>
         <meta name="google-site-verification" content="7FGS9HcYo7XLesfesSP-tQAHPt4qy3Bw10JFU4tQI4w" />
         <meta name="google-site-verification" content="jQXx7DAacxqfB54Mjy3Ffi9vRIbfv8H4PY_7nWjkQro" />
         <meta name="google-site-verification" content="wjD-d87xFd5hB_k8LogjW_iXFtDkznah7IHySJGTzJg" />
@@ -50,14 +50,14 @@
         <meta name="google-site-verification" content="-UxkuvOOQyNouyDAuMs7cu43wkHjggPBszp3Ge3Gv8E" />
         <meta name="robots" content="noodp">
         <meta name="msvalidate.01" content="64F916230E0A1758749DBFD7CBD4AB6A" />
-        <meta property="og:title" content="${page.title}" />
+        <meta property="og:title" content="${properties['browserTitle'] || currentPage.title || resource.name}" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://www.bmc.com/" />
         <meta property="og:image" content="http://www.bmc.com/content/dam/bmc/logos/bmc/brandBlock.jpg" />
         <meta property="og:description" content="${properties['jcr:description']}" />
     </sly>
     <sly data-sly-test="${!isHomePage}">
-        <title>${currentPage.pageTitle || currentPage.title || resource.name} - ${'BMC Software' @ i18n}</title>
+        <title>${properties['browserTitle'] || currentPage.title || resource.name} - ${'BMC Software' @ i18n}</title>
     </sly>    
     <meta data-sly-test.keywords="${page.keywords}" name="keywords" content="${keywords}"/>
     <meta data-sly-test.description="${properties['jcr:description']}" name="description" content="${description}"/>
