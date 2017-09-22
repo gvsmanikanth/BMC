@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
@@ -178,10 +179,12 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
         if (queryMap.size() == 0)
             return urlLeftPart;
 
+        final String UTF8 = "UTF-8";
         String resolvedQuery = queryMap.entrySet().stream()
                 .map(item-> {
                     try {
-                        return String.format("%s=%s", item.getKey(), URLEncoder.encode(item.getValue(), "UTF-8"));
+                        String value = URLEncoder.encode(URLDecoder.decode(item.getValue(), UTF8), UTF8);
+                        return String.format("%s=%s", item.getKey(), value);
                     } catch (UnsupportedEncodingException e) {
                         logger.error(e.getMessage());
                         return null;
