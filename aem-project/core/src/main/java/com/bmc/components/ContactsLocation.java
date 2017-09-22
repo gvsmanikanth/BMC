@@ -31,7 +31,7 @@ public class ContactsLocation extends WCMUsePojo {
     @Override
     public void activate() throws Exception {
         model = getResource().adaptTo(ContactsLocationModel.class);
-        parentModel = getCurrentPage().getParent().getContentResource("root/maincontentcontainer/responsivegrid/contacts_locations").adaptTo(ContactsLocationsModel.class);
+        parentModel = getCurrentPage().getParent().getContentResource("root/responsivegrid/maincontentcontainer/contacts_locations").adaptTo(ContactsLocationsModel.class);
     }
 
     // Resolvable Properties
