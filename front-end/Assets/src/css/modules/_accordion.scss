@@ -109,6 +109,14 @@ ul.accordion {
 	}
 }
 
+ul.accordion-training {
+    margin: 1em 0 0 0 !important;
+
+	.accordion-item {
+		border-top: 1px solid #cacaca;
+	}
+}
+
 .accordion--editing {
 	list-style: none;
 	margin:0;

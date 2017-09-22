@@ -20,6 +20,9 @@ public class AreaHotel {
 	@Inject @Named("hotelName") @Default(values="")
 	protected String hotelName;
 
+	@Inject @Named("hotelLink") @Default(values="")
+	protected String hotelLink;
+
 	@Inject @Named("address1") @Default(values="")
 	protected String address1;
 
@@ -38,10 +41,16 @@ public class AreaHotel {
 	@Inject @Named("phone") @Default(values="")
 	protected String phone;
 
+	@Inject @Named("fax") @Default(values="")
+	protected String fax;
 
-	public String getHotelName() {
-		return hotelName;
-	}
+	@Inject @Named("email") @Default(values="")
+	protected String email;
+
+
+	public String getHotelName() { return hotelName; }
+
+	public String getHotelLink() { return hotelLink; }
 
 	public String getAddress1() {
 		return address1;
@@ -65,5 +74,13 @@ public class AreaHotel {
 
 	public String getPhone() {
 		return phone;
+	}
+
+	public String getFax() {
+		return fax;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 }

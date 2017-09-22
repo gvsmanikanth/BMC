@@ -23,6 +23,12 @@
                                     emptyText="Location Name"
                                     fieldLabel="Location Name"
                                     name="./locationName"/>
+                            <center-name
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Center Name"
+                                    fieldLabel="Center Name"
+                                    name="./centerName"/>
                             <address
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -50,8 +56,8 @@
                             <state
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    emptyText="State"
-                                    fieldLabel="State"
+                                    emptyText="State/Province/Region"
+                                    fieldLabel="State/Province/Region"
                                     name="./state"/>
                             <zip
                                     jcr:primaryType="nt:unstructured"
@@ -71,12 +77,24 @@
                                     emptyText="Fax"
                                     fieldLabel="Fax"
                                     name="./fax"/>
+                            <website
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Website"
+                                    fieldLabel="Website"
+                                    name="./website"/>
                             <training-hours
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                     emptyText="Training Hours"
                                     fieldLabel="Training Hours"
                                     name="./trainingHours"/>
+                            <training-notes
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Training Notes"
+                                    fieldLabel="Training Notes"
+                                    name="./trainingNotes"/>
                             <airport
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -99,6 +117,12 @@
                                                 emptyText="Hotel Name"
                                                 fieldLabel="Hotel Name"
                                                 name="./hotelName"/>
+                                        <hotel-link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Hotel Link"
+                                                fieldLabel="Hotel Link"
+                                                name="./hotelLink"/>
                                         <address
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -126,8 +150,8 @@
                                         <state
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                emptyText="State"
-                                                fieldLabel="State"
+                                                emptyText="State/Province"
+                                                fieldLabel="State/Province/Region"
                                                 name="./state"/>
                                         <zip
                                                 jcr:primaryType="nt:unstructured"
@@ -141,6 +165,18 @@
                                                 emptyText="Phone"
                                                 fieldLabel="Phone"
                                                 name="./phone"/>
+                                        <fax
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Fax"
+                                                fieldLabel="Fax"
+                                                name="./fax"/>
+                                        <email
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Email"
+                                                fieldLabel="Email"
+                                                name="./email"/>
                                     </items>
                                 </field>
                             </hotels>
