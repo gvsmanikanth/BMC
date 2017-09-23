@@ -1,5 +1,6 @@
 package com.bmc.models.components.keyfeatures;
 
+import com.bmc.mixins.UrlResolver;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
@@ -59,7 +60,7 @@ public class KeyFeaturesModel {
                 while(buttonSet.hasNext()){
                     ctaButton = new HashMap<>();
                     Node buttton = buttonSet.nextNode();
-                    ctaButton.put("assetType",buttton.getProperty("assetType").getString());
+                    ctaButton.put("assetType",buttton.getProperty("assetType").getString().equals("custom") ? buttton.getProperty("atlButtonName").getString() : buttton.getProperty("assetType").getString());
                     ctaButton.put("buttonColor",buttton.getProperty("buttonColor").getString());
                     ctaButton.put("assetName",getButtonTitleByPath(buttton.getProperty("ctaPath").getString()));
                     ctaButton.put("ctaPath",buttton.getProperty("ctaPath").getString());
@@ -75,7 +76,8 @@ public class KeyFeaturesModel {
     private String getButtonTitleByPath(String path){
         try {
             if (session.itemExists(path)) {
-                return session.getNode(path).getNode("jcr:content").getProperty("jcr:title").getValue().getString();
+                UrlResolver urlResolver = UrlResolver.from(resource);
+                return urlResolver.getLinkInfo(path).getText();
             }
         }catch (Exception e){
             logger.error("ERROR:",e.getMessage());
