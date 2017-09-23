@@ -117,6 +117,6 @@ public class CustomerStoryService  {
         return metadataProvider.getMetadataInfo(MetadataType.INDUSTRY, MetadataType.TOPIC, MetadataType.COMPANY_SIZE)
                 .flatMap(info->info.getActiveOptions(pageMap))
                 .map(MetadataOption::getText)
-                .collect(Collectors.joining(","));
+                .collect(Collectors.joining(";"));
     }
 }

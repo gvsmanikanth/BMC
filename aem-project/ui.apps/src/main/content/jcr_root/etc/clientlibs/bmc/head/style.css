@@ -3581,12 +3581,12 @@ span .chatbtn {
   padding-top: 32px; }
 
 .divider, .product-landing .layout-secondary, .product-landing .layout-secondary-slim-side, .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-secondary-cta-container, .product-landing .layout-secondary-shaded {
-  border-top: 1px solid #cacaca; }
+  border-top: 1px solid #cccccc; }
   .divider.row, .product-landing .row.layout-secondary, .product-landing .row.layout-secondary-slim-side, .product-landing .row.layout-secondary-slim-side-grey, .product-landing .row.layout-secondary-cta-container, .product-landing .row.layout-secondary-shaded {
     margin-top: 0; }
 
 .divider-secondary {
-  border-top: 1px dashed #cacaca; }
+  border-top: 1px dashed #cccccc; }
 
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
@@ -15843,7 +15843,7 @@ body.support-central {
   position: relative; }
   @media only screen and (min-width: 48em) {
     .testimonial {
-      margin: 0 0 4em;
+      margin: 4em 0;
       padding: 60px; } }
   .testimonial.row {
     margin-top: 0; }
