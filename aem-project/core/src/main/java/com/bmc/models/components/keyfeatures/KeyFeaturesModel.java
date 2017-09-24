@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,17 +60,31 @@ public class KeyFeaturesModel {
                 NodeIterator buttonSet = ctaButtonSet.getNodes();
                 while(buttonSet.hasNext()){
                     ctaButton = new HashMap<>();
-                    Node buttton = buttonSet.nextNode();
-                    ctaButton.put("assetType",buttton.getProperty("assetType").getString().equals("custom") ? buttton.getProperty("atlButtonName").getString() : buttton.getProperty("assetType").getString());
-                    ctaButton.put("buttonColor",buttton.getProperty("buttonColor").getString());
-                    ctaButton.put("assetName",getButtonTitleByPath(buttton.getProperty("ctaPath").getString()));
-                    ctaButton.put("ctaPath",buttton.getProperty("ctaPath").getString());
+                    Node button = buttonSet.nextNode();
+                    ctaButton.put("assetType",getButtonAssetType(button,"assetType", "atlButtonName"));
+                    ctaButton.put("buttonColor",button.getProperty("buttonColor").getString());
+                    ctaButton.put("assetName",getButtonTitleByPath(button.getProperty("ctaPath").getString()));
+                    ctaButton.put("ctaPath",button.getProperty("ctaPath").getString());
                     ctaButtons.add(ctaButton);
                 }
-
             }
         } catch(Exception e) {
             logger.debug("ERROR:", e.getMessage());
+        }
+    }
+
+    private String getButtonAssetType(Node button, String assetType, String atlButtonName){
+        try {
+            if(button.hasProperty(assetType) && button.hasProperty(atlButtonName)) {
+                return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(atlButtonName).getString().trim().isEmpty() ? button.getProperty(atlButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
+            } else if(button.hasProperty(assetType) && !button.getProperty(assetType).getString().equals("custom")){
+                return button.getProperty(assetType).getString();
+            } else {
+                return null;
+            }
+        } catch (RepositoryException e) {
+            logger.error("ERROR:", e.getMessage());
+            return null;
         }
     }
 

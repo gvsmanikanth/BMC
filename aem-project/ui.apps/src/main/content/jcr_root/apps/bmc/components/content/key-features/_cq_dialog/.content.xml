@@ -99,7 +99,7 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                         fieldDescription="Alternative Button Text"
-                                                        fieldLabel="Custom button text"
+                                                        fieldLabel="Custom Asset Type"
                                                         wrapperClass="core-wcm-form-options-toggle-item"
                                                         name="./atlButtonName"/>
                                                 <ctaPath
