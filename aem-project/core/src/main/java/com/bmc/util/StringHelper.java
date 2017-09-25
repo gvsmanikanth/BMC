@@ -1,15 +1,15 @@
 package com.bmc.util;
 
 import com.bmc.mixins.UrlResolver;
+import com.day.util.NameValuePair;
 import com.google.common.base.Splitter;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public interface StringHelper {
@@ -153,20 +153,38 @@ public interface StringHelper {
             return Collections.emptyMap();
 
         int queryIndex = urlOrQueryString.indexOf("?");
-        if (queryIndex == -1) { // no '?'
-            if (!urlOrQueryString.contains("&") && !urlOrQueryString.contains("="))
-                return Collections.emptyMap();
-
-            return Splitter.on("&")
-                    .withKeyValueSeparator("=")
-                    .split(urlOrQueryString);
-        }
-
         if (queryIndex == urlOrQueryString.length() - 1)
             return Collections.emptyMap(); // '?' as last character
 
-        return Splitter.on("&")
-                .withKeyValueSeparator("=")
-                .split(urlOrQueryString.substring(queryIndex + 1));
+        String query = urlOrQueryString;
+        if (queryIndex == -1) { // no '?'
+            if (!urlOrQueryString.contains("&") && !urlOrQueryString.contains("="))
+                return Collections.emptyMap();
+        } else {
+            if (urlOrQueryString.startsWith("http") || urlOrQueryString.startsWith("/"))
+                query = urlOrQueryString.substring(queryIndex + 1);
+        }
+
+        try {
+            return Splitter.on("&")
+                    .withKeyValueSeparator("=")
+                    .split(query);
+        }
+        catch (IllegalArgumentException ex) {
+            // bad data, perhaps due to parameters which were incorrectly encoded by hand
+            // lets try a more forgiving manual parse
+            String[] args = query.split("&");
+            Stream<NameValuePair> pairs = Arrays.stream(args).map(arg -> {
+                if (StringUtils.isBlank(arg))
+                    return null;
+                String[] parts = arg.split("=", 2);
+                if (parts.length != 2)
+                    return null;
+                return new NameValuePair(parts[0], parts[1]);
+            });
+            return pairs
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toMap(NameValuePair::getName, NameValuePair::getValue));
+        }
     }
 }
