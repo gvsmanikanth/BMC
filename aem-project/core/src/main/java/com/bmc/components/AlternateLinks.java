@@ -73,8 +73,8 @@ public class AlternateLinks  extends WCMUsePojo {
         canonicalMatcher.find();
 
         String canonicalPath = resourcePath;
-        if (matcher.matches()) {
-            canonicalPath = matcher.group(4);
+        if (canonicalMatcher.matches()) {
+            canonicalPath = canonicalMatcher.group(4);
         }
         canonicalLink = req.getScheme() + "://" + req.getServerName() + canonicalPath;
     }
