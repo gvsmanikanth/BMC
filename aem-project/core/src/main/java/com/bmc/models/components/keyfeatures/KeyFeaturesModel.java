@@ -61,7 +61,7 @@ public class KeyFeaturesModel {
                 while(buttonSet.hasNext()){
                     ctaButton = new HashMap<>();
                     Node button = buttonSet.nextNode();
-                    ctaButton.put("assetType",getButtonAssetType(button,"assetType", "atlButtonName"));
+                    ctaButton.put("assetType",getButtonAssetType(button,"assetType", "altButtonName"));
                     ctaButton.put("buttonColor",button.getProperty("buttonColor").getString());
                     ctaButton.put("assetName",getButtonTitleByPath(button.getProperty("ctaPath").getString()));
                     ctaButton.put("ctaPath",button.getProperty("ctaPath").getString());
@@ -73,10 +73,10 @@ public class KeyFeaturesModel {
         }
     }
 
-    private String getButtonAssetType(Node button, String assetType, String atlButtonName){
+    private String getButtonAssetType(Node button, String assetType, String altButtonName){
         try {
-            if(button.hasProperty(assetType) && button.hasProperty(atlButtonName)) {
-                return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(atlButtonName).getString().trim().isEmpty() ? button.getProperty(atlButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
+            if(button.hasProperty(assetType) && button.hasProperty(altButtonName)) {
+                return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(altButtonName).getString().trim().isEmpty() ? button.getProperty(altButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
             } else if(button.hasProperty(assetType) && !button.getProperty(assetType).getString().equals("custom")){
                 return button.getProperty(assetType).getString();
             } else {

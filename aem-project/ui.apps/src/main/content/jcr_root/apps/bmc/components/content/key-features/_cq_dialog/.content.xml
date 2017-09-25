@@ -101,7 +101,7 @@
                                                         fieldDescription="Alternative Button Text"
                                                         fieldLabel="Custom Asset Type"
                                                         wrapperClass="core-wcm-form-options-toggle-item"
-                                                        name="./atlButtonName"/>
+                                                        name="./altButtonName"/>
                                                 <ctaPath
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
