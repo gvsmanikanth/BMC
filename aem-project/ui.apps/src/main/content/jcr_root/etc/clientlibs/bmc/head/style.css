@@ -1907,6 +1907,13 @@ blockquote {
     padding-bottom: 0;
     margin-bottom: 0; }
 
+.secondarycontentcontainer > .layout-full-bleed {
+  padding: 1.66667rem; }
+  .secondarycontentcontainer > .layout-full-bleed > .aem-GridColumn {
+    padding-top: 1.11111rem; }
+    .secondarycontentcontainer > .layout-full-bleed > .aem-GridColumn:first-child {
+      padding-top: 0; }
+
 .layout-full-bleed {
   background-color: white;
   padding: 0;
@@ -3581,12 +3588,12 @@ span .chatbtn {
   padding-top: 32px; }
 
 .divider, .product-landing .layout-secondary, .product-landing .layout-secondary-slim-side, .product-landing .layout-secondary-slim-side-grey, .product-landing .layout-secondary-cta-container, .product-landing .layout-secondary-shaded {
-  border-top: 1px solid #cacaca; }
+  border-top: 1px solid #cccccc; }
   .divider.row, .product-landing .row.layout-secondary, .product-landing .row.layout-secondary-slim-side, .product-landing .row.layout-secondary-slim-side-grey, .product-landing .row.layout-secondary-cta-container, .product-landing .row.layout-secondary-shaded {
     margin-top: 0; }
 
 .divider-secondary {
-  border-top: 1px dashed #cacaca; }
+  border-top: 1px dashed #cccccc; }
 
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
@@ -8608,11 +8615,6 @@ html.no-flexbox .flex-demo:before {
 @media only screen and (min-width: 76.25em) {
   .four-up:nth-child(n+5) {
     margin-top: 2.5%; } }
-
-.layout-secondary .secondarycontentcontainer .related-items-secondary {
-  padding: 1.66667rem; }
-  .layout-secondary .secondarycontentcontainer .related-items-secondary + .related-items-secondary {
-    padding-top: 0; }
 
 .bmc-nav-loader-nav .search-site fieldset {
   margin: 0;
@@ -15843,7 +15845,7 @@ body.support-central {
   position: relative; }
   @media only screen and (min-width: 48em) {
     .testimonial {
-      margin: 0 0 4em;
+      margin: 4em 0;
       padding: 60px; } }
   .testimonial.row {
     margin-top: 0; }
