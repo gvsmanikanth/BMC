@@ -145,8 +145,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                 if (object.has("CaseNumber"))
                     tmp.put("CaseNumber", Encode.forHtml(object.getString("CaseNumber")));
 
-                if (object.has("ProductName"))
-                    tmp.put("ProductName", Encode.forHtml(object.getString("ProductName")));
+                tmp.put("ProductName", (object.has("ProductName") ? Encode.forHtml(object.getString("ProductName")) : ""));
 
                 if (object.has("Subject"))
                     tmp.put("Subject", Encode.forHtml(object.getString("Subject")));
