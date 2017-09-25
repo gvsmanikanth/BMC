@@ -14,7 +14,7 @@
     <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>
     <filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>
     <filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>
 
