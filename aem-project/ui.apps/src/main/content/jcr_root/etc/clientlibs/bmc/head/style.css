@@ -11107,33 +11107,33 @@ section.bmc-engage-header.layout-full-bleed {
 
 .customer-story-case-content {
   padding-top: 3em; }
-  .customer-story-case-content .layout-secondary .customer-story-case-content {
+  .customer-story-case-content .maincontentcontainer .layout-secondary .customer-story-case-content {
     display: block;
     margin-top: 0 !important;
     margin-bottom: 0 !important; }
-  .customer-story-case-content .layout-secondary .btn.orange {
+  .customer-story-case-content .maincontentcontainer .layout-secondary .btn.orange {
     border-color: #fe5000;
     background-color: #fe5000; }
-    .customer-story-case-content .layout-secondary .btn.orange:hover {
+    .customer-story-case-content .maincontentcontainer .layout-secondary .btn.orange:hover {
       border-color: #cb4000;
       background-color: #cb4000; }
-  .customer-story-case-content .layout-secondary .resource {
+  .customer-story-case-content .maincontentcontainer .layout-secondary .resource {
     margin-bottom: 2.5em; }
-    .customer-story-case-content .layout-secondary .resource img {
+    .customer-story-case-content .maincontentcontainer .layout-secondary .resource img {
       display: block;
       margin: auto; }
-    .customer-story-case-content .layout-secondary .resource h3 {
+    .customer-story-case-content .maincontentcontainer .layout-secondary .resource h3 {
       margin-top: 1em; }
-  .customer-story-case-content .layout-secondary h1 a, .customer-story-case-content .layout-secondary h2 a, .customer-story-case-content .layout-secondary h3 a {
+  .customer-story-case-content .maincontentcontainer .layout-secondary h1 a, .customer-story-case-content .maincontentcontainer .layout-secondary h2 a, .customer-story-case-content .maincontentcontainer .layout-secondary h3 a {
     font-size: inherit;
     letter-spacing: 0; }
-  .customer-story-case-content .layout-secondary h2 {
+  .customer-story-case-content .maincontentcontainer .layout-secondary h2 {
     color: #414042;
     font-size: 1.3em;
     margin-bottom: 1.25em; }
-  .customer-story-case-content .layout-secondary p {
+  .customer-story-case-content .maincontentcontainer .layout-secondary p {
     margin-bottom: 1em; }
-  .customer-story-case-content .layout-secondary section {
+  .customer-story-case-content .maincontentcontainer .layout-secondary section {
     margin-top: 1.5em;
     padding-top: 1.5em; }
 
