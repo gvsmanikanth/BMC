@@ -68,7 +68,15 @@ public class AlternateLinks  extends WCMUsePojo {
         }
 
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
-        canonicalLink = req.getScheme() + "://" + req.getServerName() + getResourceResolver().map(resourcePath);
+        String mappedResourcePath = getResourceResolver().map(resourcePath);
+        Matcher canonicalMatcher = pattern.matcher(mappedResourcePath);
+        canonicalMatcher.find();
+
+        String canonicalPath = resourcePath;
+        if (matcher.matches()) {
+            canonicalPath = matcher.group(4);
+        }
+        canonicalLink = req.getScheme() + "://" + req.getServerName() + canonicalPath;
     }
 
     public Map<String, String> getAlternateLinksMap() {
