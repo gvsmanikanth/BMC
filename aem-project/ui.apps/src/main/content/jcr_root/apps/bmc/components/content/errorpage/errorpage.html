@@ -1,0 +1,52 @@
+<script type="text/javascript">
+$( document ).ready(function() 
+{
+var urlPath =  window.location.href;
+console.log("URL of the page!"+urlPath);
+if(urlPath.indexOf("/support/") > -1)
+	{
+		document.getElementById("supportError").style.display = "block"; 
+	}
+else
+	{
+		document.getElementById("normalError").style.display = "block";         
+	}
+
+
+});
+</script>
+<!--This normal 404 error page section -->
+<section id="normalError" style="display:none;">
+<!-- with introText -->
+<section data-sly-test="${properties.introText}" class="py3 bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('/etc/clientlibs/bmc/head/bg-feature-offerings.jpg');">
+    <div class="layout-inner-wrap">
+        <h1>${properties.headerText  @ context = 'html'}</h1>
+        <h2>${properties.subHeaderText @ context = 'html'}</h2>
+        <p class="hero-caption">${properties.introText @ context = 'html'}</p>
+        <a data-sly-test="${properties.ctatext}" class="btn learn-more" href="${properties.ctaurl}" title="${properties.ctatext}">${properties.ctatext}</a>       
+    </div><!-- / layout-inner-wrap -->
+</section>
+<!-- without introText -->
+<section data-sly-test="${!properties.introText}" class="wallpapered bar full-bleed-page-banner" style="background-image: url('/etc/clientlibs/bmc/head/bg-feature-offerings.jpg');">
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap">
+            <div class="offset-hero-medium banner -ribbon" style="background-image: url('http://media.cms.bmc.com/images/spacer.gif'); padding-top: 1em; padding-bottom: 1em; ">
+                <div class="offset-hero-medium-inner-wrap">
+                    <h1 class="white">${properties.headerText @ context = 'html'}</h1>
+                    <h2>${properties.subHeaderText @ context = 'html'}</h2>
+                    <a data-sly-test="${properties.ctatext}" class="btn learn-more" href="${properties.ctaurl}" title="${properties.ctatext}">${properties.ctatext}</a>                 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<!-- Section of UI layout for the Support 404 error page-->
+<section id="supportError" style="display:none;" class="py3 bg-white">
+				<div class="layout-inner-wrap">	
+
+							<h1 style="font-size: 3.0rem;" class="medium-orange">${properties.supportheaderText @ context = 'html'}</h1>
+							<p class="hero-caption">${properties.supportsubHeaderText @ context = 'html'}</p>
+							<a data-sly-test="${properties.supportctatext}" class="btn learn-more" href="${properties.supportctaurl}" title="${properties.supportctatext}">${properties.supportctatext}</a> 						
+				</div>
+</section>
