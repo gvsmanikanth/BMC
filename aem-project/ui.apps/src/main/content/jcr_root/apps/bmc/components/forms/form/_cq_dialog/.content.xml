@@ -294,16 +294,26 @@
                                             fieldDescription="Force 'Opt In'"
                                             text="Force 'Opt In'"
                                             name="./C_OptIn"
-                                            value="Yes"
+                                            value="{Boolean}true"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <C_OptInTypeHint
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./C_OptIn@TypeHint"
+                                            value="Boolean"/>
                                     <C_Contact_Me1
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                             fieldDescription="Force 'Contact Me'"
                                             text="Force 'Contact Me'"
-                                            value="Yes"
+                                            value="{Boolean}true"
                                             name="./C_Contact_Me1"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <C_Contact_Me1TypeHint
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./C_Contact_Me1@TypeHint"
+                                            value="Boolean"/>
 
 
                                     <!--//NON-SUBMITTING//-->
