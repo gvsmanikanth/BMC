@@ -3,6 +3,7 @@ package com.bmc.servlets;
 import com.adobe.acs.commons.email.EmailService;
 import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
+import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.felix.scr.annotations.Activate;
@@ -47,6 +48,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private static final String FN_CONTACT_ME = "C_Contact_Me1";
     private static final String FN_OPT_IN = "C_OptIn";
+    private static final String FN_ELQ_FORM_NAME = "elqFormName";
+    private static final String FN_FORM_NAME = "FormName";
     private static final String FV_YES = "Yes";
     private static final String FV_NO = "No";
 
@@ -394,6 +397,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                     }
                     pairs.put(key, value);
                 });
+
+        if (pairs.getOrDefault(FN_ELQ_FORM_NAME, "").trim().equals("")) {
+            pairs.put(FN_ELQ_FORM_NAME,
+                    StringHelper.coalesceString(pairs.get(FN_FORM_NAME), pairs.get(FN_FORM_NAME.toLowerCase()))
+                            .orElse(""));
+        }
 
         return pairs.entrySet().stream()
                 .map(entry->encodeProperty(entry.getKey(), entry.getValue()))
