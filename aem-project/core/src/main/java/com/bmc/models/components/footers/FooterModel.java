@@ -52,7 +52,7 @@ public class FooterModel {
 
         Page parent = currentPage.getAbsoluteParent(3);
         String currentLangPath = (parent == null) ? null : parent.getPath();
-        if (currentLangPath == null || currentLangPath.equals("/conf/bmc/settings/wcm"))
+        if (currentLangPath == null || currentLangPath.equals("/conf/bmc/settings/wcm") || currentPage.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/status-router-service"))
             currentLangPath = "/content/bmc/language-masters/en";
 
         try {
