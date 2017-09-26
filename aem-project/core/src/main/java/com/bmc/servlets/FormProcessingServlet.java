@@ -34,6 +34,8 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
@@ -467,7 +469,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         ValueMap map = formPage.getProperties();
         String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
-        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        // Strip off any leading hostname that comes from the resource mapping.
+        String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
+        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+        Matcher matcher = pattern.matcher(purlPath);
+        matcher.find();
+
+        String purlPage = purlPath;
+        if (matcher.matches()) {
+            purlPage = matcher.group(4);
+        }
+
+        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
         properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
 
