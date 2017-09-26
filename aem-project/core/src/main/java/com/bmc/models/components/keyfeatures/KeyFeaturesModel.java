@@ -61,10 +61,10 @@ public class KeyFeaturesModel {
                 while(buttonSet.hasNext()){
                     ctaButton = new HashMap<>();
                     Node button = buttonSet.nextNode();
-                    ctaButton.put("assetType",getButtonAssetType(button,"assetType", "altButtonName"));
-                    ctaButton.put("buttonColor",button.getProperty("buttonColor").getString());
-                    ctaButton.put("assetName",getButtonTitleByPath(button.getProperty("ctaPath").getString()));
-                    ctaButton.put("ctaPath",button.getProperty("ctaPath").getString());
+                    ctaButton.put("assetType", getButtonAssetType(button,"assetType", "altButtonName"));
+                    ctaButton.put("buttonColor", button.getProperty("buttonColor").getString());
+                    ctaButton.put("assetName", getButtonTitleByPath(button));
+                    ctaButton.put("ctaPath", button.getProperty("ctaPath").getString());
                     ctaButtons.add(ctaButton);
                 }
             }
@@ -88,14 +88,17 @@ public class KeyFeaturesModel {
         }
     }
 
-    private String getButtonTitleByPath(String path){
+    private String getButtonTitleByPath(Node button){
         try {
-            if (session.itemExists(path)) {
+            if(button.hasProperty("overrideButtonTitle")){
+                return button.getProperty("overrideButtonTitle").getString();
+            }
+            if (button.hasProperty("ctaPath") && session.itemExists(button.getProperty("ctaPath").getString())) {
                 UrlResolver urlResolver = UrlResolver.from(resource);
-                return urlResolver.getLinkInfo(path).getText();
+                return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
             }
         }catch (Exception e){
-            logger.error("ERROR:",e.getMessage());
+            logger.error("ERROR:", e.getMessage());
         }
         return null;
     }
