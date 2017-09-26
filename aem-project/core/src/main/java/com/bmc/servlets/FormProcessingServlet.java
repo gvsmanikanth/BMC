@@ -163,7 +163,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         Boolean honeyPotFailure = false;
         for (String honeyPotField : honeyPotFields) {
             if (!formData.getOrDefault(honeyPotField, "").isEmpty()) {
-                logger.info("HoneyPot rule violation. For will not be sent to Webmethods/Eloqua");
+                logger.info("HoneyPot rule violation. Form will not be sent to Webmethods/Eloqua");
                 honeyPotFailure = true;
             }
         }
