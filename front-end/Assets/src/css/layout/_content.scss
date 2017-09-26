@@ -1029,10 +1029,13 @@
 			}			
 		}
 
-		> .CTAbar:last-child,
-		> .htmlarea:last-child {
-			padding-bottom: 0;
-			margin-bottom: 0;
+		> .pullquote,
+		> .CTAbar,
+		> .htmlarea {
+			&:last-child {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
 		}
 	}
 }
