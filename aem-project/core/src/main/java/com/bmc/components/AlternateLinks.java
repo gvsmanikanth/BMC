@@ -50,14 +50,14 @@ public class AlternateLinks  extends WCMUsePojo {
     @Override
     public void activate() throws Exception {
         SlingHttpServletRequest req = getRequest();
-        String resourcePath = getResourceResolver().map(req.getRequestURI());
+        String requestPath = getResourceResolver().map(req.getRequestURI());
 
         // Strip off any leading hostname that comes from the resource mapping.
         Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
-        Matcher matcher = pattern.matcher(resourcePath);
+        Matcher matcher = pattern.matcher(requestPath);
         matcher.find();
 
-        String hrefUri = resourcePath;
+        String hrefUri = requestPath;
         if (matcher.matches()) {
             hrefUri = matcher.group(4);
         }
@@ -67,7 +67,16 @@ public class AlternateLinks  extends WCMUsePojo {
             alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + hrefUri);
         }
 
-        canonicalLink = req.getScheme() + "://" + req.getServerName() + hrefUri;
+        String resourcePath = getResource().getPath().replace("/jcr:content", "");
+        String mappedResourcePath = getResourceResolver().map(resourcePath);
+        Matcher canonicalMatcher = pattern.matcher(mappedResourcePath);
+        canonicalMatcher.find();
+
+        String canonicalPath = resourcePath;
+        if (canonicalMatcher.matches()) {
+            canonicalPath = canonicalMatcher.group(4);
+        }
+        canonicalLink = req.getScheme() + "://" + req.getServerName() + canonicalPath;
     }
 
     public Map<String, String> getAlternateLinksMap() {

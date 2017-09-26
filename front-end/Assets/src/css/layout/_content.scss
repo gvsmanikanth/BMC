@@ -665,6 +665,7 @@
 }
 
 
+
 // The layout-secondary-slim class is the column container for a page's secondary content within a slim banner.
 .layout-secondary-slim {
 	@extend %column-config;
@@ -1012,10 +1013,6 @@
 //AEM overload
 .maincontentcontainer {
 	> .layout-full-bleed {
-		padding-bottom: rem(30);
-		@include media(breakpointLarge) {
-			padding-bottom: rem(60);
-		}
 		> *:first-child {
 			padding-top: 0;
 			padding-bottom: 0;
@@ -1025,13 +1022,34 @@
 			}
 		}
 
-		> *:last-child {
+		> *:last-child:not(.CTAbar):not(.htmlarea) {
+			padding-bottom: rem(30);
+			@include media(breakpointLarge) {
+				padding-bottom: rem(60);
+			}			
+		}
+
+		> .CTAbar:last-child,
+		> .htmlarea:last-child {
 			padding-bottom: 0;
 			margin-bottom: 0;
 		}
 	}
 }
 
+.secondarycontentcontainer {
+	.layout-secondary & {
+		> .layout-full-bleed {
+			padding: rem(30);
+			> .aem-GridColumn {
+				padding-top: rem(20);
+				&:first-child {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
 
 // The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
 .layout-full-bleed {
@@ -1586,16 +1604,16 @@
 }
 
 // AEM responsive layout containers
-[class*="25-75"],
-[class*="33-66"],
-[class*="50-50"],
-[class*="66-33"],
-[class*="75-25"]:not(:first-child) {
+[class*="25-75contentcontainer"],
+[class*="33-66contentcontainer"],
+[class*="50-50contentcontainer"],
+[class*="66-33contentcontainer"],
+[class*="75-25contentcontainer"]:not(:first-child) {
 	padding-top: rem(36);
 	padding-bottom: rem(36);
 }
 
-[class*="50-50-layout"] {
+[class*="50-50contentcontainer"] {
 	.equal-column { //primary column is a substitue for layout-primary beings both columns are of equal size
 		@include media(breakpointMedium) {
 			width: columns(6);
