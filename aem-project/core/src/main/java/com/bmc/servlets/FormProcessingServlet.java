@@ -59,6 +59,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String elqSiteID = "";
     private int timeout = 5000;
 
+    private String[] honeyPotFields = {"Address3", "Surname"};
+
     private Boolean automationEmailEnabled = false;
     private String[] automationEmailRecipients;
 
@@ -158,13 +160,22 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
+        Boolean honeyPotFailure = false;
+        for (String honeyPotField : honeyPotFields) {
+            if (!formData.getOrDefault(honeyPotField, "").isEmpty()) {
+                logger.info("HoneyPot rule violation. For will not be sent to Webmethods/Eloqua");
+                honeyPotFailure = true;
+            }
+        }
         int status = 0;
         switch (formType) {
             case "Lead Capture":
-                status = sendData(data);
+                if (!honeyPotFailure)
+                    status = sendData(data);
                 break;
             case "Parallel":
-                status = sendData(data);
+                if (!honeyPotFailure)
+                    status = sendData(data);
                 sendFormEmail(formData, formProperties, formPage, request);
                 break;
             case "Email Only":
