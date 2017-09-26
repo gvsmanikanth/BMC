@@ -51,7 +51,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private static final String FN_CONTACT_ME = "C_Contact_Me1";
     private static final String FN_OPT_IN = "C_OptIn";
     private static final String FN_ELQ_FORM_NAME = "elqFormName";
-    private static final String FN_FORM_NAME = "FormName";
+    private static final String FN_FORM_NAME = "formname";
     private static final String FV_YES = "Yes";
     private static final String FV_NO = "No";
 
