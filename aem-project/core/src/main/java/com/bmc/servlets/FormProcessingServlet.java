@@ -167,28 +167,28 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 honeyPotFailure = true;
             }
         }
-        int status = 0;
-        switch (formType) {
-            case "Lead Capture":
-                if (!honeyPotFailure)
+        if (!honeyPotFailure) {
+            int status = 0;
+            switch (formType) {
+                case "Lead Capture":
                     status = sendData(data);
-                break;
-            case "Parallel":
-                if (!honeyPotFailure)
+                    break;
+                case "Parallel":
                     status = sendData(data);
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
-            case "Email Only":
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+                case "Email Only":
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+            }
+            String xml = "";
+            try {
+                xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
+            } catch (Exception e) {
+                logger.error("Error getting XML for form email automation.");
+            }
+            sendAutomationEmail(xml, status, formData, formProperties);
         }
-        String xml = "";
-        try {
-            xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
-        } catch (Exception e) {
-            logger.error("Error getting XML for form email automation.");
-        }
-        sendAutomationEmail(xml, status, formData, formProperties);
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
