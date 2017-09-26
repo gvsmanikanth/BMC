@@ -20,12 +20,16 @@
                             ${center.centerName}<br>
                             ${center.address1}<br>
                             <sly data-sly-test="${center.address2}">${center.address2}<br></sly>
-                            <sly data-sly-test="${center.city}">${center.city}</sly>
-                            <sly data-sly-test="${center.state}"> ${center.state}</sly>
-                            <sly data-sly-test="${center.zip}"> ${center.zip}</sly><br>
+                            <sly data-sly-test="${center.address3}">${center.address3}<br></sly>
+                            <sly data-sly-test="${center.city || center.state || center.zip}">
+                                <sly data-sly-test="${center.city}">${center.city}</sly>
+                                <sly data-sly-test="${center.state}"> ${center.state}</sly>
+                                <sly data-sly-test="${center.zip}"> ${center.zip}</sly>
+                                <br>
+                            </sly>
                             <sly data-sly-test="${center.website}"><a href="${center.website}" target="_blank">${ "Website" @ i18n }</a><br></sly>
                             ${'Tel:' @ i18n } <a href="${center.phoneLink}">${center.phone}</a><br>
-                            <sly data-sly-test="${center.faxLink}">${'Fax:' @ i18n } <a href="${center.faxLink}">+${center.fax}</a><br></sly>
+                            <sly data-sly-test="${center.faxLink}">${'Fax:' @ i18n } <a href="${center.faxLink}">${center.fax}</a><br></sly>
                             <p></p>
                             <p data-sly-test="${center.trainingHours}">
                                 <strong>${'Training Hours:' @ i18n }</strong> ${center.trainingHours}<br>
@@ -43,11 +47,14 @@
                                                 </a>
                                                 <p>
                                                     ${hotel.address1}<br>
-                                                    <sly data-sly-test="${hotel.address2}">${hotel.address2}, </sly>
-                                                    <sly data-sly-test="${hotel.address3}">${hotel.address3}, </sly>
-                                                    <sly data-sly-test="${hotel.city}">${hotel.city}, </sly>
-                                                    <sly data-sly-test="${hotel.state}">${hotel.state}, </sly>
-                                                    <sly data-sly-test="${hotel.city}">${hotel.zip}</sly><br>
+                                                    <sly data-sly-test="${hotel.address2}">${hotel.address2}<br></sly>
+                                                    <sly data-sly-test="${hotel.address3}">${hotel.address3}<br></sly>
+                                                    <sly data-sly-test="${hotel.city || hotel.state || hotel.zip}">
+                                                        <sly data-sly-test="${hotel.city}">${hotel.city} </sly>
+                                                        <sly data-sly-test="${hotel.state}">${hotel.state} </sly>
+                                                        <sly data-sly-test="${hotel.city}">${hotel.zip}</sly>
+                                                        <br>
+                                                    </sly>
                                                     <sly data-sly-test="${hotel.phone}">${'Tel:' @ i18n } ${hotel.phone}<br></sly>
                                                     <sly data-sly-test="${hotel.fax}">${'Fax:' @ i18n } ${hotel.fax}<br></sly>
                                                     <sly data-sly-test="${hotel.email}"><a href="mailto:${hotel.email}">${hotel.email}</a><br></sly>

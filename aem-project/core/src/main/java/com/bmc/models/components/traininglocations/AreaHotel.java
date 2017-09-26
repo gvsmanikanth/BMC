@@ -35,6 +35,9 @@ public class AreaHotel {
 	@Inject @Named("city") @Default(values="")
 	protected String city;
 
+	@Inject @Named("state") @Default(values="")
+	protected String state;
+
 	@Inject @Named("zip") @Default(values="")
 	protected String zip;
 
@@ -67,6 +70,8 @@ public class AreaHotel {
 	public String getCity() {
 		return city;
 	}
+
+	public String getState() { return state; }
 
 	public String getZip() {
 		return zip;

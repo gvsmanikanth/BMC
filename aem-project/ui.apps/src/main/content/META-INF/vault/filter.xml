@@ -32,7 +32,10 @@
     <filter root="/etc/map.publish" mode="update"/>
 
     <filter root="/content/bmc/auth"/>
-    <filter root="/content/bmc/resources/training-locations"/>
+    <filter root="/content/bmc/resources/training-locations">
+        <include pattern="/content/bmc/resources/training-locations"/>
+        <include pattern="/content/bmc/resources/training-locations/jcr:content"/>
+    </filter>
 
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
