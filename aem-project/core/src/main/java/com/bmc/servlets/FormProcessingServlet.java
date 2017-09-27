@@ -3,6 +3,7 @@ package com.bmc.servlets;
 import com.adobe.acs.commons.email.EmailService;
 import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
+import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.felix.scr.annotations.Activate;
@@ -33,6 +34,9 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @SlingServlet(resourceTypes = "bmc/components/forms/form", selectors = "post", methods = {"POST"})
 public class FormProcessingServlet extends SlingAllMethodsServlet {
@@ -44,9 +48,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String FROM_ADDRESS = "webapp-notification-noreply@bmc.com";
     public static final String TRIAL_DOWNLOAD = "Trial Download";
 
+    private static final String FN_CONTACT_ME = "C_Contact_Me1";
+    private static final String FN_OPT_IN = "C_OptIn";
+    private static final String FN_ELQ_FORM_NAME = "elqFormName";
+    private static final String FN_FORM_NAME = "FormName";
+    private static final String FV_YES = "Yes";
+    private static final String FV_NO = "No";
+
     private String serviceUrl = "";
     private String elqSiteID = "";
     private int timeout = 5000;
+
+    private String[] honeyPotFields = {"Address3", "Surname"};
 
     private Boolean automationEmailEnabled = false;
     private String[] automationEmailRecipients;
@@ -147,26 +160,35 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
-        int status = 0;
-        switch (formType) {
-            case "Lead Capture":
-                status = sendData(data);
-                break;
-            case "Parallel":
-                status = sendData(data);
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
-            case "Email Only":
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
+        Boolean honeyPotFailure = false;
+        for (String honeyPotField : honeyPotFields) {
+            if (!formData.getOrDefault(honeyPotField, "").isEmpty()) {
+                logger.info("HoneyPot rule violation. Form will not be sent to Webmethods/Eloqua");
+                honeyPotFailure = true;
+            }
         }
-        String xml = "";
-        try {
-            xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
-        } catch (Exception e) {
-            logger.error("Error getting XML for form email automation.");
+        if (!honeyPotFailure) {
+            int status = 0;
+            switch (formType) {
+                case "Lead Capture":
+                    status = sendData(data);
+                    break;
+                case "Parallel":
+                    status = sendData(data);
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+                case "Email Only":
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+            }
+            String xml = "";
+            try {
+                xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
+            } catch (Exception e) {
+                logger.error("Error getting XML for form email automation.");
+            }
+            sendAutomationEmail(xml, status, formData, formProperties);
         }
-        sendAutomationEmail(xml, status, formData, formProperties);
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
@@ -361,13 +383,43 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private String prepareFormData(Map<String, String> data, Map<String, String> properties) {
-        List<String> pairs = new ArrayList<>();
-        properties.entrySet().stream().forEach(map -> pairs.add(encodeProperty(map.getKey(), map.getValue())));
-        data.entrySet().stream()
-                .filter(map -> isAllowedFieldName(map.getKey()))
-                .forEach(map -> pairs.add(encodeProperty(getEloquoaFieldName(map.getKey()), map.getValue())));
-        return String.join("&", pairs);
+    private String prepareFormData(Map<String, String> requestData, Map<String, String> formNodeProperties) {
+        // initialize post pairs map with form node properties
+        Map<String,String> pairs = new HashMap<>();
+        pairs.putAll(formNodeProperties);
+
+        // add to or override pairs with request data (form post and querystring), with additional business logic
+        requestData.entrySet().stream()
+                .filter(entry -> isAllowedFieldName(entry.getKey()))
+                .forEach(entry -> {
+                    String key = getEloquoaFieldName(entry.getKey());
+                    String value = entry.getValue();
+                    switch (entry.getKey()) {
+                        case FN_CONTACT_ME:
+                            // FN_CONTACT_ME dialog field label = _Force_ Contact Me
+                            if (!value.equals(FV_YES) && pairs.get(FN_CONTACT_ME).equals(FV_YES))
+                                value = FV_YES;
+                            break;
+                        case FN_OPT_IN:
+                            // FN_OPT_IN dialog field label = _Force_ Opt In
+                            if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
+                                value = FV_YES;
+                            break;
+                        default:
+                            break;
+                    }
+                    pairs.put(key, value);
+                });
+
+        if (pairs.getOrDefault(FN_ELQ_FORM_NAME, "").trim().equals("")) {
+            pairs.put(FN_ELQ_FORM_NAME,
+                    StringHelper.coalesceString(pairs.get(FN_FORM_NAME), pairs.get(FN_FORM_NAME.toLowerCase()))
+                            .orElse(""));
+        }
+
+        return pairs.entrySet().stream()
+                .map(entry->encodeProperty(entry.getKey(), entry.getValue()))
+                .collect(Collectors.joining("&"));
     }
 
     private Boolean isAllowedFieldName(String fieldName) {
@@ -412,8 +464,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 "formType",
                 "leadDescription1",
                 "emailid",
-                "C_OptIn",
-                "C_Contact_Me1",
+                FN_OPT_IN,
+                FN_CONTACT_ME,
                 "emailSubjectLine",
                 "recipient",
                 "bypassOSB"
@@ -428,7 +480,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         ValueMap map = formPage.getProperties();
         String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
-        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + resourceResolver.map(properties.get(JCR_PURL_PAGE_URL)) + ".PURL" + formGUID + ".html";
+        // Strip off any leading hostname that comes from the resource mapping.
+        String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
+        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+        Matcher matcher = pattern.matcher(purlPath);
+        matcher.find();
+
+        String purlPage = purlPath;
+        if (matcher.matches()) {
+            purlPage = matcher.group(4);
+        }
+
+        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
         properties.put(PURL_PAGE_URL, purlPageUrl);
         properties.remove(JCR_PURL_PAGE_URL);
 
@@ -436,10 +499,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         // Yes, this is correct, property name Submit = "Action"
         properties.put("Submit", "Action");
         properties.put("elqCookieWrite", "0");
-        if (!properties.get("C_Contact_Me1").equals("Yes"))
-            properties.put("C_Contact_Me1", "No");
-        if (!properties.get("C_OptIn").equals("Yes"))
-            properties.put("C_OptIn", "No");
+        properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
+        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
         properties.put("CampaignID", properties.get("campaignid"));
         properties.remove("campaignid");
         properties.put("elqSiteID", elqSiteID);
