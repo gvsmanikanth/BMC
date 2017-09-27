@@ -1,5 +1,5 @@
 <script type="text/javascript">
-$( document ).ready(function() 
+$(document).ready(function() 
 {
 var urlPath =  window.location.href;
 console.log("URL of the page!"+urlPath);
@@ -42,11 +42,50 @@ else
 </section>
 </section>
 <!-- Section of UI layout for the Support 404 error page-->
-<section id="supportError" style="display:none;" class="py3 bg-white">
-				<div class="layout-inner-wrap">	
+<section id="supportError" style="display:none;">
+	<section class="py3 bg-white">
+				<div class="layout-inner-wrap" style="padding-left: 7.2%;">	
 
 							<h1 style="font-size: 3.0rem;" class="medium-orange">${properties.supportheaderText @ context = 'html'}</h1>
 							<p class="hero-caption">${properties.supportsubHeaderText @ context = 'html'}</p>
 							<a data-sly-test="${properties.supportctatext}" class="btn learn-more" href="${properties.supportctaurl}" title="${properties.supportctatext}">${properties.supportctatext}</a> 						
 				</div>
+	</section>
+    <section class="layout-inner-wrap">
+                <div class="clear"><br>See “Subscribe for Access to Secure Customer Support Site” link below.</div>
+			<h4>What would you like to do?</h4>
+			<p>&nbsp;</p>
+	<div class="wrapper-nested">
+		<div class="three-up">
+			<h2>Support Services</h2>
+			<ul>
+				<li><a href="/available/support-home.html">Go to Main Support Page</a></li>
+				<li><a href="/available/secure-support.html">Go to Secure Support Site</a></li>
+				<li><a href="/available/support-subscription.html">Subscribe for Access to Secure Customer Support Site (Contract ID Required)</a></li>
+			</ul>
+		</div>
+		<div class="three-up nth-child-np2">
+			<h2>Electronic Product Download (EPD)</h2>
+			<ul>
+				<li><a href="/available/epd.html">Download Product</a></li>
+				<li><a href="/available/support-subscription.html">Subscribe for Access to EPD (Contract ID Required)</a></li>
+			</ul>
+		</div>
+		<div class="three-up nth-child-np2 nth-child-3n">
+			<h2>Partner Services</h2>
+			<ul>
+				<li> <a href="/available/partner-subscription.html">Subscribe for Access to Partner SABA or Partner Siebel (Partner Code Required)</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="three-up nth-child-np2 nth-child-np4">
+		<h2>Profile Management</h2>
+		<ul>
+			<li><a href="/available/edit-profile.html">Edit Your Profile</a></li>
+			<li><a href="/available/change-password.html">Change Your Password</a></li>
+			<li><a href="/available/marketing-subscription.html">Manage My Subscriptions</a></li>
+			<li><a href="/available/ssologout.html">Log Out</a></li>
+		</ul>
+	</div>
+    </section>
 </section>
