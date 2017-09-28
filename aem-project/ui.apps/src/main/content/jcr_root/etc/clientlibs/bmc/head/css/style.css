@@ -1899,14 +1899,16 @@ blockquote {
   .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
     margin-top: 1.66667rem; }
 
-.maincontentcontainer > .layout-full-bleed > *:last-child:not(.CTAbar):not(.htmlarea) {
+.maincontentcontainer > .layout-full-bleed > *:last-child {
   padding-bottom: 1.66667rem; }
   @media only screen and (min-width: 60em) {
-    .maincontentcontainer > .layout-full-bleed > *:last-child:not(.CTAbar):not(.htmlarea) {
+    .maincontentcontainer > .layout-full-bleed > *:last-child {
       padding-bottom: 3.33333rem; } }
 
+.maincontentcontainer > .layout-full-bleed > .pullquote:last-child,
 .maincontentcontainer > .layout-full-bleed > .CTAbar:last-child,
-.maincontentcontainer > .layout-full-bleed > .htmlarea:last-child {
+.maincontentcontainer > .layout-full-bleed > .htmlarea:last-child,
+.maincontentcontainer > .layout-full-bleed > .aem-Grid-newComponent:last-child {
   padding-bottom: 0;
   margin-bottom: 0; }
 

@@ -59,6 +59,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String elqSiteID = "";
     private int timeout = 5000;
 
+    private String[] honeyPotFields = {"Address3", "Surname"};
+
     private Boolean automationEmailEnabled = false;
     private String[] automationEmailRecipients;
 
@@ -158,26 +160,35 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         String data = prepareFormData(formData, formProperties);
         logger.trace("Encoded Form Data: " + data);
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
-        int status = 0;
-        switch (formType) {
-            case "Lead Capture":
-                status = sendData(data);
-                break;
-            case "Parallel":
-                status = sendData(data);
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
-            case "Email Only":
-                sendFormEmail(formData, formProperties, formPage, request);
-                break;
+        Boolean honeyPotFailure = false;
+        for (String honeyPotField : honeyPotFields) {
+            if (!formData.getOrDefault(honeyPotField, "").isEmpty()) {
+                logger.info("HoneyPot rule violation. Form will not be sent to Webmethods/Eloqua");
+                honeyPotFailure = true;
+            }
         }
-        String xml = "";
-        try {
-            xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
-        } catch (Exception e) {
-            logger.error("Error getting XML for form email automation.");
+        if (!honeyPotFailure) {
+            int status = 0;
+            switch (formType) {
+                case "Lead Capture":
+                    status = sendData(data);
+                    break;
+                case "Parallel":
+                    status = sendData(data);
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+                case "Email Only":
+                    sendFormEmail(formData, formProperties, formPage, request);
+                    break;
+            }
+            String xml = "";
+            try {
+                xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
+            } catch (Exception e) {
+                logger.error("Error getting XML for form email automation.");
+            }
+            sendAutomationEmail(xml, status, formData, formProperties);
         }
-        sendAutomationEmail(xml, status, formData, formProperties);
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);

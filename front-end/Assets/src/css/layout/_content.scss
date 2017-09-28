@@ -1022,15 +1022,17 @@
 			}
 		}
 
-		> *:last-child:not(.CTAbar):not(.htmlarea) {
+		> *:last-child {
 			padding-bottom: rem(30);
 			@include media(breakpointLarge) {
 				padding-bottom: rem(60);
 			}			
 		}
 
+		> .pullquote:last-child,
 		> .CTAbar:last-child,
-		> .htmlarea:last-child {
+		> .htmlarea:last-child,
+		> .aem-Grid-newComponent:last-child {
 			padding-bottom: 0;
 			margin-bottom: 0;
 		}
