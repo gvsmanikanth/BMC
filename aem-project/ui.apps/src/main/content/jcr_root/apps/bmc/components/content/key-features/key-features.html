@@ -17,6 +17,9 @@
                     <sly data-sly-test="${!ctaButton.assetName && ctaButton.assetType}">
                         ${ctaButton.assetType}
                     </sly>
+                    <sly data-sly-test="${ctaButton.assetName && !ctaButton.assetType}">
+                        ${ctaButton.assetName}
+                    </sly>
                 </a>
             </sly>
             <a data-sly-test="${properties.aditionalResources}" href="#resources"

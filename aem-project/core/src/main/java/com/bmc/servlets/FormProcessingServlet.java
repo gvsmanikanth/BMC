@@ -93,6 +93,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         list.add("ex_assetname");
         list.add("LMA_license");
         list.add("AWS_Trial");
+        list.add("formid");
         list.add("formname");
         list.add(":cq_csrf_token");
         list.add("wcmmode");
@@ -445,67 +446,83 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     }
 
     private Map<String,String> getFormProperties(Node node, Page formPage, SlingHttpServletRequest request) {
-        String[] formProperties = new String[]{
-                "product_interest",
-                "content_prefs",
-                "elqCampaignID",
-                "campaignid",
-                "C_Lead_Business_Unit1",
-                JCR_PURL_PAGE_URL,
-                "productLine1",
-                "C_Lead_Offer_Most_Recent1",
-                "ex_assettype",
-                "ex_act",
-                "ex_assetname",
-                "LMA_license",
-                "AWS_Trial",
-                "formname",
-                "formid",
-                "formType",
-                "leadDescription1",
-                "emailid",
-                FN_OPT_IN,
-                FN_CONTACT_ME,
-                "emailSubjectLine",
-                "recipient",
-                "bypassOSB"
-        };
         Map<String, String> properties = new HashMap<>();
-        Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
-        properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
-        properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
-        properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
-        properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-        properties.remove("LMA_license");
-        ValueMap map = formPage.getProperties();
-        String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+        try {
+            String formid;
+            String formname;
+            Node xf = node.getNode("experiencefragment");
+            String path = xf.getProperty("fragmentPath").getString();
+            Node fieldset = resourceResolver.getResource(path + "/jcr:content/root/field_set").adaptTo(Node.class);
+            formid = fieldset.getProperty("formid").getString();
+            formname = fieldset.getProperty("formname").getString();
 
-        // Strip off any leading hostname that comes from the resource mapping.
-        String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
-        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
-        Matcher matcher = pattern.matcher(purlPath);
-        matcher.find();
+            String[] formProperties = new String[]{
+                    "product_interest",
+                    "content_prefs",
+                    "elqCampaignID",
+                    "campaignid",
+                    "C_Lead_Business_Unit1",
+                    JCR_PURL_PAGE_URL,
+                    "productLine1",
+                    "C_Lead_Offer_Most_Recent1",
+                    "ex_assettype",
+                    "ex_act",
+                    "ex_assetname",
+                    "LMA_license",
+                    "AWS_Trial",
+                    "formname",
+                    "formid",
+                    "formType",
+                    "leadDescription1",
+                    "emailid",
+                    FN_OPT_IN,
+                    FN_CONTACT_ME,
+                    "emailSubjectLine",
+                    "recipient",
+                    "bypassOSB"
+            };
+            Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
+            properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
+            properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
+            properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
+            properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
+            if (properties.getOrDefault("formid", "").isEmpty())
+                properties.put("formid", formid);
+            if (properties.getOrDefault("formname", "").isEmpty())
+                properties.put("formname", formname);
+            properties.remove("LMA_license");
+            ValueMap map = formPage.getProperties();
+            String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
-        String purlPage = purlPath;
-        if (matcher.matches()) {
-            purlPage = matcher.group(4);
+            // Strip off any leading hostname that comes from the resource mapping.
+            String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
+            Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+            Matcher matcher = pattern.matcher(purlPath);
+            matcher.find();
+
+            String purlPage = purlPath;
+            if (matcher.matches()) {
+                purlPage = matcher.group(4);
+            }
+
+            String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
+            properties.put(PURL_PAGE_URL, purlPageUrl);
+            properties.remove(JCR_PURL_PAGE_URL);
+
+            properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
+            // Yes, this is correct, property name Submit = "Action"
+            properties.put("Submit", "Action");
+            properties.put("elqCookieWrite", "0");
+            properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
+            properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
+            properties.put("CampaignID", properties.get("campaignid"));
+            properties.remove("campaignid");
+            properties.put("elqSiteID", elqSiteID);
+            String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
+            properties.put("form_submitdate", timeStamp);
+        } catch (RepositoryException e) {
+            logger.error("Form has no experience fragment.");
         }
-
-        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
-        properties.put(PURL_PAGE_URL, purlPageUrl);
-        properties.remove(JCR_PURL_PAGE_URL);
-
-        properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
-        // Yes, this is correct, property name Submit = "Action"
-        properties.put("Submit", "Action");
-        properties.put("elqCookieWrite", "0");
-        properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
-        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
-        properties.put("CampaignID", properties.get("campaignid"));
-        properties.remove("campaignid");
-        properties.put("elqSiteID", elqSiteID);
-        String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
-        properties.put("form_submitdate", timeStamp);
         return properties;
     }
 

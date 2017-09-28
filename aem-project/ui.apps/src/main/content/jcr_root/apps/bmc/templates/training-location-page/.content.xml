@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:description="Training Location Page Template"
+          jcr:primaryType="cq:Template"
+          jcr:title="Training Location Page"
+          ranking="{Long}100">
+    <jcr:content
+            cq:allowedTemplates="[none]"
+            jcr:primaryType="cq:PageContent"
+            sling:resourceType="/apps/bmc/components/structure/training-center-country">
+        <centers
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys"
+                components="[/apps/bmc/components/training-centers/training-location]"/>
+    </jcr:content>
+</jcr:root>

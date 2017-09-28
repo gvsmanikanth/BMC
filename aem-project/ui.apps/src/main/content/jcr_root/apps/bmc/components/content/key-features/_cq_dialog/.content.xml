@@ -3,7 +3,8 @@
           jcr:primaryType="nt:unstructured"
           jcr:title="Key Features Component"
           sling:resourceType="cq/gui/components/authoring/dialog"
-          extraClientlibs="[]">
+          extraClientlibs="[bmc.buttonAltName]"
+          dependencies="[granite.jquery,granite.utils]">
     <content
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -68,6 +69,7 @@
                                 <field
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                        wrapperClass="core-wcm-form-options-toggle-set"
                                         name="./ctaButtonSet">
                                     <layout
                                             jcr:primaryType="nt:unstructured"
@@ -83,22 +85,36 @@
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                         fieldLabel="Select Asset Type"
                                                         multiple="{Boolean}false"
+                                                        wrapperClass="core-wcm-form-options-toggle"
                                                         name="./assetType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
+                                                        <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="custom"/>
                                                         <dataSheet jcr:primaryType="nt:unstructured" text="Datasheet" value="Datasheet"/>
                                                         <whitePaper jcr:primaryType="nt:unstructured" text="White Paper" value="White Paper"/>
                                                         <solutionOverview jcr:primaryType="nt:unstructured" text="Solution Overview" value="Solution Overview"/>
                                                         <solutionBrief jcr:primaryType="nt:unstructured" text="Solution Brief" value="Solution Brief"/>
                                                     </items>
                                                 </assetType>
+                                                <altButtonName
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="Alternative Custom Asset Type"
+                                                        fieldLabel="Custom Asset Type (Optional)"
+                                                        wrapperClass="core-wcm-form-options-toggle-item"
+                                                        name="./altButtonName"/>
                                                 <ctaPath
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                         fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
                                                         name="./ctaPath"
-                                                        rootPath="/content"
+                                                        rootPath="/content/bmc"
                                                         fieldLabel="CTA Path or external URL"/>
+                                                <overideButtonTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldDescription="Override Button Title"
+                                                        fieldLabel="Title Override (Optional)"
+                                                        name="./overrideButtonTitle"/>
                                                 <buttonColor
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
