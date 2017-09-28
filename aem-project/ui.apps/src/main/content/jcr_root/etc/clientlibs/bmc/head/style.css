@@ -1442,11 +1442,12 @@ blockquote {
   border-top: 1px solid #cccccc;
   margin-top: 2.22222em;
   padding-top: 2.22222em; }
-  @media only screen and (min-width: 48em) {
-    .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
-      border-top: none;
-      margin-top: 0 !important;
-      padding-top: 0; } }
+  .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+    border-top: none; }
+    @media only screen and (min-width: 48em) {
+      .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+        margin-top: 0 !important;
+        padding-top: 0; } }
 
 .page-product-landing .layout-secondary {
   margin-top: 3em;
@@ -1922,8 +1923,10 @@ blockquote {
 .layout-secondary .secondarycontentcontainer > .layout-full-bleed {
   padding: 1.66667rem; }
   .layout-secondary .secondarycontentcontainer > .layout-full-bleed > .aem-GridColumn {
+    border-top: 1px solid #cccccc;
     padding-top: 1.11111rem; }
     .layout-secondary .secondarycontentcontainer > .layout-full-bleed > .aem-GridColumn:first-child {
+      border-top: none;
       padding-top: 0; }
 
 .layout-full-bleed {

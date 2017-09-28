@@ -314,8 +314,8 @@
 		padding-top: em(40);
 
 		&:first-child {
+			border-top: none ;
 			@include media(breakpointMedium) {
-				border-top: none ;
 				margin-top: 0 !important;
 				padding-top: 0 ;
 			}
@@ -1044,8 +1044,10 @@
 		> .layout-full-bleed {
 			padding: rem(30);
 			> .aem-GridColumn {
+				border-top: 1px solid color(greyMedium);
 				padding-top: rem(20);
 				&:first-child {
+					border-top: none;
 					padding-top: 0;
 				}
 			}
