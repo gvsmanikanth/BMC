@@ -12,10 +12,11 @@ public enum MetadataType {
     COMPANY_SIZE("companySize"),
     INDUSTRY,
     TOPIC,
-    EDUCATION_PRODUCTS("education-products"),
+    EDUCATION_SPECIFIC_TYPES("education-specific-types"),
     EDUCATION_BROAD_ROLES("education-broad-roles"),
     EDUCATION_SPECIFIC_ROLES("education-specific-roles"),
     EDUCATION_VERSION_NUMBERS("education-version-numbers"),
+    EDUCATION_PRODUCTS("education-products"),
     COURSE_DELIVERY("course-delivery");
 
     /**
