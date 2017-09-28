@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Training Locations"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Training Locations"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <name
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Location Name"
+                                    fieldLabel="Location Name"
+                                    name="./locationName"/>
+                            <center-name
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Center Name"
+                                    fieldLabel="Center Name"
+                                    name="./centerName"/>
+                            <address
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Address"
+                                    fieldLabel="Address 1"
+                                    name="./address1"/>
+                            <address2
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Address 2"
+                                    fieldLabel="Address 2"
+                                    name="./address2"/>
+                            <address3
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Address 3"
+                                    fieldLabel="Address 3"
+                                    name="./address3"/>
+                            <city
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="City"
+                                    fieldLabel="City"
+                                    name="./city"/>
+                            <state
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="State/Province/Region"
+                                    fieldLabel="State/Province/Region"
+                                    name="./state"/>
+                            <zip
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Zip"
+                                    fieldLabel="Zip"
+                                    name="./zip"/>
+                            <phone
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Phone"
+                                    fieldLabel="Phone"
+                                    name="./phone"/>
+                            <fax
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Fax"
+                                    fieldLabel="Fax"
+                                    name="./fax"/>
+                            <website
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Website"
+                                    fieldLabel="Website"
+                                    name="./website"/>
+                            <training-hours
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Training Hours"
+                                    fieldLabel="Training Hours"
+                                    name="./trainingHours"/>
+                            <training-notes
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Training Notes"
+                                    fieldLabel="Training Notes"
+                                    name="./trainingNotes"/>
+                            <airport
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    emptyText="Airport"
+                                    fieldLabel="Airport"
+                                    name="./airport"/>
+                            <hotels
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Hotels">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        name="./hotels">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Hotel Name"
+                                                fieldLabel="Hotel Name"
+                                                name="./hotelName"/>
+                                        <hotel-link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Hotel Link"
+                                                fieldLabel="Hotel Link"
+                                                name="./hotelLink"/>
+                                        <address
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Address"
+                                                fieldLabel="Address 1"
+                                                name="./address1"/>
+                                        <address2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Address 2"
+                                                fieldLabel="Address 2"
+                                                name="./address2"/>
+                                        <address3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Address 3"
+                                                fieldLabel="Address 3"
+                                                name="./address3"/>
+                                        <city
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="City"
+                                                fieldLabel="City"
+                                                name="./city"/>
+                                        <state
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="State/Province"
+                                                fieldLabel="State/Province/Region"
+                                                name="./state"/>
+                                        <zip
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Zip"
+                                                fieldLabel="Zip"
+                                                name="./zip"/>
+                                        <phone
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Phone"
+                                                fieldLabel="Phone"
+                                                name="./phone"/>
+                                        <fax
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Fax"
+                                                fieldLabel="Fax"
+                                                name="./fax"/>
+                                        <email
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                emptyText="Email"
+                                                fieldLabel="Email"
+                                                name="./email"/>
+                                    </items>
+                                </field>
+                            </hotels>
+
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>
