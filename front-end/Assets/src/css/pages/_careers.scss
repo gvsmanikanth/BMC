@@ -48,7 +48,7 @@
 		&:before {
 			content: '';
 			display: block;
-			padding-top: 75%;
+			//padding-top: 75%; // DXP-1181 - Removed extra padding.
 
 			.vidbg-box{
             width: 650px;
