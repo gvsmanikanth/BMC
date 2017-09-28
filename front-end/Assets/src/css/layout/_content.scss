@@ -1022,7 +1022,7 @@
 			}
 		}
 
-		> *:last-child {
+		> *:last-child:not(.cmp-breadcrumb) {
 			padding-bottom: rem(30);
 			@include media(breakpointLarge) {
 				padding-bottom: rem(60);
