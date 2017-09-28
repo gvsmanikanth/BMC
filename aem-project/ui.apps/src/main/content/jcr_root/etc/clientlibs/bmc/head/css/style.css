@@ -1727,10 +1727,7 @@ blockquote {
       top: 100px; } }
 
 .layout-secondary-shaded {
-  background-color: #f1f1f1;
-  padding: 1.66667em; }
-  .layout-secondary-shaded:first-child {
-    padding-bottom: 0; }
+  background-color: #f1f1f1; }
   .page-product-landing .layout-secondary-shaded {
     margin-top: 3em;
     width: 100%; }
