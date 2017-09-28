@@ -299,7 +299,7 @@
 // The layout-secondary class is the column container for a page's secondary content, which will usually be an aside with content tangential to that of layout-primary.
 .layout-secondary {
 	@extend %column-config;
-	padding-bottom: em(135);
+	//padding-bottom: em(135);
 
 	&:first-child {
 		padding-bottom: 2rem;
@@ -314,8 +314,8 @@
 		padding-top: em(40);
 
 		&:first-child {
+			border-top: none ;
 			@include media(breakpointMedium) {
-				border-top: none ;
 				margin-top: 0 !important;
 				padding-top: 0 ;
 			}
@@ -760,9 +760,9 @@
 	@extend %column-config;
 
 	background-color: #f1f1f1;
-	padding: em(30);
+	//padding: em(30);
 	&:first-child {
-		padding-bottom: 0;
+		//padding-bottom: 0;
 	}
 
 	.page-product-landing & {
@@ -1022,7 +1022,7 @@
 			}
 		}
 
-		> *:last-child {
+		> *:last-child:not(.cmp-breadcrumb) {
 			padding-bottom: rem(30);
 			@include media(breakpointLarge) {
 				padding-bottom: rem(60);
@@ -1044,8 +1044,10 @@
 		> .layout-full-bleed {
 			padding: rem(30);
 			> .aem-GridColumn {
+				border-top: 1px solid color(greyMedium);
 				padding-top: rem(20);
 				&:first-child {
+					border-top: none;
 					padding-top: 0;
 				}
 			}
