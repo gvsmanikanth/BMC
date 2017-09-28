@@ -299,7 +299,7 @@
 // The layout-secondary class is the column container for a page's secondary content, which will usually be an aside with content tangential to that of layout-primary.
 .layout-secondary {
 	@extend %column-config;
-	padding-bottom: em(135);
+	//padding-bottom: em(135);
 
 	&:first-child {
 		padding-bottom: 2rem;

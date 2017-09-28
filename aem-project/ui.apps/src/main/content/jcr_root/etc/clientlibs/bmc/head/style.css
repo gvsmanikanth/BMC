@@ -1432,65 +1432,72 @@ blockquote {
       margin-right: 0%;
       width: 67.7%; } }
 
-.layout-secondary {
-  padding-bottom: 7.5em; }
-  .layout-secondary:first-child {
-    padding-bottom: 2rem; }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary:first-child {
-        padding-bottom: 0; } }
-  .layout-secondary > .aem-Grid > .aem-GridColumn {
-    border-top: 1px solid #cccccc;
-    margin-top: 2.22222em;
-    padding-top: 2.22222em; }
-    @media only screen and (min-width: 48em) {
-      .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
-        border-top: none;
-        margin-top: 0 !important;
-        padding-top: 0; } }
-  .page-product-landing .layout-secondary {
-    margin-top: 3em;
-    width: 100%; }
-    .page-product-landing .layout-secondary > section {
-      border-top: 0;
-      padding-top: 0; }
-  .product-landing .layout-secondary {
-    margin-left: 0;
-    margin-right: 0;
-    min-width: 0;
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1440px;
-    padding: 16px;
-    padding: 1.55556em 0 0;
-    border-left: none; }
+.layout-secondary:first-child {
+  padding-bottom: 2rem; }
   @media only screen and (min-width: 48em) {
-    .layout-secondary h3 {
-      color: #414042;
-      font-size: 20px;
-      font-size: 1.11111rem; } }
+    .layout-secondary:first-child {
+      padding-bottom: 0; } }
+
+.layout-secondary > .aem-Grid > .aem-GridColumn {
+  border-top: 1px solid #cccccc;
+  margin-top: 2.22222em;
+  padding-top: 2.22222em; }
   @media only screen and (min-width: 48em) {
-    .layout-secondary h4 {
-      color: #414042;
-      font-size: 18px;
-      font-size: 1rem;
-      font-weight: 400;
-      padding-top:  0.66667em 0.88889em; } }
-  @media only screen and (min-width: 48em) {
-    .layout-secondary p, .layout-secondary ol, .layout-secondary ul, .layout-secondary dd {
-      font-size: 16px;
-      font-size: 0.88889rem; } }
-  .layout-secondary article {
-    padding: 0; }
-  @media only screen and (min-width: 48em) {
-    .layout-secondary .blog-recent .author {
-      font-size: 14px;
-      font-size: 0.77778rem; } }
-  @media only screen and (min-width: 48em) {
-    .layout-secondary {
-      float: right;
-      /* DXP-1062 */
-      width: 25%; } }
+    .layout-secondary > .aem-Grid > .aem-GridColumn:first-child {
+      border-top: none;
+      margin-top: 0 !important;
+      padding-top: 0; } }
+
+.page-product-landing .layout-secondary {
+  margin-top: 3em;
+  width: 100%; }
+  .page-product-landing .layout-secondary > section {
+    border-top: 0;
+    padding-top: 0; }
+
+.product-landing .layout-secondary {
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 16px;
+  padding: 1.55556em 0 0;
+  border-left: none; }
+
+@media only screen and (min-width: 48em) {
+  .layout-secondary h3 {
+    color: #414042;
+    font-size: 20px;
+    font-size: 1.11111rem; } }
+
+@media only screen and (min-width: 48em) {
+  .layout-secondary h4 {
+    color: #414042;
+    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 400;
+    padding-top:  0.66667em 0.88889em; } }
+
+@media only screen and (min-width: 48em) {
+  .layout-secondary p, .layout-secondary ol, .layout-secondary ul, .layout-secondary dd {
+    font-size: 16px;
+    font-size: 0.88889rem; } }
+
+.layout-secondary article {
+  padding: 0; }
+
+@media only screen and (min-width: 48em) {
+  .layout-secondary .blog-recent .author {
+    font-size: 14px;
+    font-size: 0.77778rem; } }
+
+@media only screen and (min-width: 48em) {
+  .layout-secondary {
+    float: right;
+    /* DXP-1062 */
+    width: 25%; } }
 
 .layout-secondary-slim-side {
   padding-bottom: 7.5em; }
