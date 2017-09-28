@@ -760,9 +760,9 @@
 	@extend %column-config;
 
 	background-color: #f1f1f1;
-	padding: em(30);
+	//padding: em(30);
 	&:first-child {
-		padding-bottom: 0;
+		//padding-bottom: 0;
 	}
 
 	.page-product-landing & {
