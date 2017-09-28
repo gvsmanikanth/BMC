@@ -501,7 +501,7 @@ var Support = Support || {};
 				
 				var pEmailID = bmcMeta.user.email;
 				
-				if(pEmailID.indexOf("@bmc.com") > -1)
+				if(pEmailID.indexOf("@bmc.com") > -1 && pEmailID.indexOf("_") == -1)
 					{
 						var employeeAlertContent = '<section class="layout-full-bleed support-promo support-message-box"><p class="align-center"><strong>You are currently logged in with your BMC employee internal ID on the external www.bmc.com/support site.</strong><br>Please <a href="/available/sso-default-login.html">login</a> using an account that you have registered with an active Support ID if you would like to access BMC Customer Support applications i.e. Product Downloads, eFix, Case Management.</p></section>';
 						$( employeeAlertContent ).insertAfter( ".supportcentral-news" );
