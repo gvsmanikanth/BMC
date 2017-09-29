@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          debug.email="{Boolean}true"
+          from.address="no-reply@bmc.com"
+          smtp.host="mx-us-phx-03.Bmc.com"
+          smtp.password=""
+          smtp.port="25"
+          smtp.ssl="{Boolean}false"
+          smtp.user=""/>
