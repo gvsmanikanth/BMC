@@ -14,7 +14,7 @@
     <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>
     <filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>
     <filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>
 
@@ -32,6 +32,10 @@
     <filter root="/etc/map.publish" mode="update"/>
 
     <filter root="/content/bmc/auth"/>
+    <filter root="/content/bmc/resources/training-locations">
+        <include pattern="/content/bmc/resources/training-locations"/>
+        <include pattern="/content/bmc/resources/training-locations/jcr:content"/>
+    </filter>
 
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->

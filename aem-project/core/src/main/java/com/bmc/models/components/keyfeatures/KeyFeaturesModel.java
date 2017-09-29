@@ -1,5 +1,6 @@
 package com.bmc.models.components.keyfeatures;
 
+import com.bmc.mixins.UrlResolver;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
@@ -12,6 +13,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,27 +60,45 @@ public class KeyFeaturesModel {
                 NodeIterator buttonSet = ctaButtonSet.getNodes();
                 while(buttonSet.hasNext()){
                     ctaButton = new HashMap<>();
-                    Node buttton = buttonSet.nextNode();
-                    ctaButton.put("assetType",buttton.getProperty("assetType").getString());
-                    ctaButton.put("buttonColor",buttton.getProperty("buttonColor").getString());
-                    ctaButton.put("assetName",getButtonTitleByPath(buttton.getProperty("ctaPath").getString()));
-                    ctaButton.put("ctaPath",buttton.getProperty("ctaPath").getString());
+                    Node button = buttonSet.nextNode();
+                    ctaButton.put("assetType", getButtonAssetType(button,"assetType", "altButtonName"));
+                    ctaButton.put("buttonColor", button.getProperty("buttonColor").getString());
+                    ctaButton.put("assetName", getButtonTitleByPath(button));
+                    ctaButton.put("ctaPath", button.getProperty("ctaPath").getString());
                     ctaButtons.add(ctaButton);
                 }
-
             }
         } catch(Exception e) {
             logger.debug("ERROR:", e.getMessage());
         }
     }
 
-    private String getButtonTitleByPath(String path){
+    private String getButtonAssetType(Node button, String assetType, String altButtonName){
         try {
-            if (session.itemExists(path)) {
-                return session.getNode(path).getNode("jcr:content").getProperty("jcr:title").getValue().getString();
+            if(button.hasProperty(assetType) && button.hasProperty(altButtonName)) {
+                return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(altButtonName).getString().trim().isEmpty() ? button.getProperty(altButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
+            } else if(button.hasProperty(assetType) && !button.getProperty(assetType).getString().equals("custom")){
+                return button.getProperty(assetType).getString();
+            } else {
+                return null;
+            }
+        } catch (RepositoryException e) {
+            logger.error("ERROR:", e.getMessage());
+            return null;
+        }
+    }
+
+    private String getButtonTitleByPath(Node button){
+        try {
+            if(button.hasProperty("overrideButtonTitle")){
+                return button.getProperty("overrideButtonTitle").getString();
+            }
+            if (button.hasProperty("ctaPath") && session.itemExists(button.getProperty("ctaPath").getString())) {
+                UrlResolver urlResolver = UrlResolver.from(resource);
+                return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
             }
         }catch (Exception e){
-            logger.error("ERROR:",e.getMessage());
+            logger.error("ERROR:", e.getMessage());
         }
         return null;
     }

@@ -177,7 +177,7 @@
 .customer-story-case-content {
 	padding-top: 3em;
 
-	.layout-secondary {
+	.maincontentcontainer .layout-secondary {
 
 		.customer-story-case-content {
 			display: block;
@@ -237,7 +237,7 @@
 
 	.btn {
 		box-sizing: border-box;
-		margin-bottom: 2em;
+		//margin-bottom: 2em; //DXP-1154 - Removed extra margin. 
 		width: 100%;
 	}
 }
