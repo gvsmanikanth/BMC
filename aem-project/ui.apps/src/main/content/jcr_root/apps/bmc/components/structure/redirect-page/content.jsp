@@ -38,7 +38,7 @@
         redirectPath = request.getContextPath() + location + ".html";
     }
 
-    String action = properties.get("redirectPermanent", false) ? "redirects" : "redirects permanently";
+    String action = properties.get("redirectPermanent", false) ? "redirects permanently" : "redirects";
 
 %><p align="center">
     <%= i18n.get("This page " + action + " to {0}", null, "<a href=\"" + xssAPI.getValidHref(redirectPath) + "\">" + xssAPI.filterHTML(title) + "</a>") %>

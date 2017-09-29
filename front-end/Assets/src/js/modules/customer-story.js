@@ -12,7 +12,7 @@
 						var values;
 						if (values = $(el).data('filter-values')) {
 							if (typeof values === 'string') {
-								$.each(values.split(','), function(i, value){
+								$.each(values.split(';'), function(i, value){
 									elementFilterValues.push($.trim(value));
 								});
 							}

@@ -243,7 +243,8 @@ public class PageModel {
             bmcMeta.getForm().setName(fieldset.getProperty("formname").getString());
             // Properties from form container
             bmcMeta.getForm().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
-            bmcMeta.getForm().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
+            // Removed per DXP-1277
+            // bmcMeta.getForm().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
         }
     }
 

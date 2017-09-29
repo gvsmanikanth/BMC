@@ -23,7 +23,7 @@
                                             jcr:primaryType="nt:unstructured"
                                             jcr:title="Metadata"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured" sling:hideChildren="[topics]">
                                             <education-product-name
                                                     jcr:primaryType="nt:unstructured"
                                                     fieldLabel="Education Products"

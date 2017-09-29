@@ -208,6 +208,22 @@
                                                         allowBulkEdit="{Boolean}true"
                                                         cq-msm-lockable="product_line"/>
                                             </productLine1>
+                                            <topics
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="Topics"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    emptyText="Select topic to add"
+                                                    multiple="true"
+                                                    metadataName="topic"
+                                                    name="./topics">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"
+                                                        cq-msm-lockable="topics"/>
+                                            </topics>
                                         </items>
                                     </metadata>
                                 </items>

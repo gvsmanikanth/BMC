@@ -11153,7 +11153,6 @@ section.bmc-engage-header.layout-full-bleed {
 
 .layout-secondary .CTAbutton .btn {
   box-sizing: border-box;
-  margin-bottom: 2em;
   width: 100%; }
 
 .customer-story-landing-banner {
@@ -18378,8 +18377,7 @@ iframe[name='google_conversion_frame'] {
   z-index: -1; }
   .page-careers .hero-image:before {
     content: '';
-    display: block;
-    padding-top: 75%; }
+    display: block; }
     .page-careers .hero-image:before .vidbg-box {
       width: 650px;
       height: 338px; }
