@@ -17,6 +17,16 @@
      section{
       margin-top:1.5em;
     }
+	  
+	// DXP-1321 - The bullet points in Course Modules are hollow, not solid black - Resolved
+	.accordion-item-content {
+		ul{
+			padding-left: 1em;
+			margin-top: 0;
+			margin-bottom: 0;
+			list-style-type: disc;  
+		}		
+	}
   }
   
   .layout-secondary{
