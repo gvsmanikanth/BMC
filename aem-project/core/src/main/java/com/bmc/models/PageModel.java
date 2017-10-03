@@ -1,19 +1,17 @@
 package com.bmc.models;
 
+import com.bmc.mixins.UserInfoProvider;
+import com.bmc.models.bmcmeta.BmcMeta;
 import com.bmc.services.BMCMetaService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.Template;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.bmc.models.bmcmeta.BmcMeta;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
-import org.apache.jackrabbit.api.security.user.Authorizable;
-import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
@@ -21,14 +19,13 @@ import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.Node;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.*;
+import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
@@ -65,17 +62,6 @@ public class PageModel {
 
     @Inject @Named("sling:resourceType") @Default(values="No resourceType")
     protected String resourceType;
-
-    public static final Map<String, String> FIELD_MAPPING;
-    static {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("email", "./profile/email");
-        map.put("first_name", "./profile/givenName");
-        map.put("last_name", "./profile/familyName");
-        map.put("phone", "./profile/phone");
-        map.put("company", "./profile/company");
-        FIELD_MAPPING = Collections.unmodifiableMap(map);
-    }
 
     protected String bmcMetaJson;
 
@@ -191,19 +177,13 @@ public class PageModel {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
-            Map<String, String> profile = getProfile(resource.getResourceResolver());
-            if (profile != null && profile.containsKey("email")) {
-                if (profile.containsKey("first_name"))
-                    bmcMeta.getUser().setFirstName(profile.get("first_name"));
-                if (profile.containsKey("last_name"))
-                    bmcMeta.getUser().setLastName(profile.get("last_name"));
-                if (profile.containsKey("email"))
-                    bmcMeta.getUser().setEmail(profile.get("email"));
+            UserInfo user = UserInfoProvider.from(resource).getCurrentUserInfo();
+            if (user != null && !user.isAnonymous() && user.hasEmail()) {
+                bmcMeta.getUser().updateFromUserInfo(user);
                 bmcMeta.getUser().setSupportAuthenticated(true);
                 bmcMeta.getSupport().setIssueEnvironment(service.getIssueEnvironment());
                 bmcMeta.getSupport().setIssuePath(service.getIssuePath());
             }
-
         }
 
         return bmcMeta;
@@ -246,26 +226,6 @@ public class PageModel {
             // Removed per DXP-1277
             // bmcMeta.getForm().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
         }
-    }
-
-    private Map<String, String> getProfile(ResourceResolver resolver) {
-        Session session = resolver.adaptTo(Session.class);
-        UserManager userManager = resolver.adaptTo(UserManager.class);
-        Authorizable auth = null;
-        HashMap<String, String> profileFields = new HashMap<>();
-        try {
-            if (userManager != null && session != null && session.getUserID() != "Anonymous") {
-                auth = userManager.getAuthorizable(session.getUserID());
-                for (Map.Entry<String, String> field : FIELD_MAPPING.entrySet()) {
-                    if (auth.hasProperty(field.getValue())) {
-                        profileFields.put(field.getKey(), auth.getProperty(field.getValue())[0].getString());
-                    }
-                }
-            }
-        } catch (RepositoryException e) {
-            logger.info(e.getMessage());
-        }
-        return profileFields;
     }
 
     private String formatLongName() {
