@@ -11,8 +11,9 @@ import com.google.gson.GsonBuilder;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.settings.SlingSettingsService;
@@ -21,7 +22,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
         label = "Page Model",
         description = "A helper for bmcMeta"
 )
-@Model(adaptables=Resource.class)
+@Model(adaptables=SlingHttpServletRequest.class)
 public class PageModel {
     private static final Logger logger = LoggerFactory.getLogger(PageModel.class);
 
@@ -46,6 +46,9 @@ public class PageModel {
     private BMCMetaService service;
 
     @Inject
+    private SlingHttpServletRequest request;
+
+    @Inject
     private Page resourcePage;
 
     @Inject
@@ -54,23 +57,17 @@ public class PageModel {
     @Inject
     private Session session;
 
-    @Inject @Named("contentId") @Default(values="")
-    protected String contentId;
-
-    @Inject @Named("contentType") @Default(values="")
-    protected String contentType;
-
-    @Inject @Named("sling:resourceType") @Default(values="No resourceType")
-    protected String resourceType;
-
-    protected String bmcMetaJson;
-
-    protected Gson gson;
-
-    private String environment;
+    private String contentId;
+    private String contentType;
+    private String bmcMetaJson;
+    private Gson gson;
 
     @PostConstruct
     protected void init() {
+        ValueMap map = resource.getValueMap();
+        contentId = map.get("contentId", "");
+        contentType = map.get("contentType",  "");
+
         try {
             Node node = resource.adaptTo(Node.class);
             if(getContentID().isEmpty() && resource.getValueMap().get("jcr:baseVersion") != null) {
@@ -177,7 +174,7 @@ public class PageModel {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
-            UserInfo user = UserInfoProvider.from(resource).getCurrentUserInfo();
+            UserInfo user = UserInfoProvider.withRequestCaching(request).getCurrentUserInfo();
             if (user != null && !user.isAnonymous() && user.hasEmail()) {
                 bmcMeta.getUser().updateFromUserInfo(user);
                 bmcMeta.getUser().setSupportAuthenticated(true);

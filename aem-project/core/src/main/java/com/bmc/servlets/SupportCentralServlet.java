@@ -37,7 +37,7 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
         InputStream stream;
         HttpURLConnection connection = null;
 
-        UserInfo user = UserInfoProvider.from(request.getResourceResolver()).getCurrentUserInfo();
+        UserInfo user = UserInfoProvider.withRequestCaching(request).getCurrentUserInfo();
         if (user != null && user.hasEmail()) {
             String baseUrl = service.getApiBaseUrl();
             String apiPath = service.getApiPath();

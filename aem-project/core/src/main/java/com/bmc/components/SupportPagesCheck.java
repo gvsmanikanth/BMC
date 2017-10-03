@@ -1,12 +1,13 @@
 package com.bmc.components;
 
 import com.bmc.mixins.UserInfoProvider;
+import com.bmc.mixins.UserInfoProvider_RequestCached;
 import com.day.cq.wcm.api.Page;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.services.SupportCentralService;
-public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider {
+public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_RequestCached {
 	private static final Logger logger = LoggerFactory.getLogger(SupportPagesCheck.class);
 	public String getSupportCentralUrl() {
         return supportCentralUrl;
