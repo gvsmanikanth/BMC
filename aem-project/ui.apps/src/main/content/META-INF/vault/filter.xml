@@ -11,12 +11,12 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width" mode="merge"/>-->
-    <filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>
-    <filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>
-    <filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>
+    <!--<filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
 
     <filter root="/etc/clientlibs/bmc"/>
 

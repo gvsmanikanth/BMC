@@ -2721,19 +2721,19 @@
                           sling:match="(.+)$"/>
                 <content_reverse
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/(.*).html]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/(.*).html]"
                         sling:match="$1.html"/>
                 <content_reverse_nohtml
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/(.*)]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/(.*)]"
                         sling:match="$1.html"/>
                 <root_reverse
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en(.html)?]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en(.html)?]"
                         sling:match="$"/>
                 <search
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/search.html]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/search.html]"
                         sling:match="search/"/>
                 <sitemap
                         jcr:primaryType="sling:Mapping"
@@ -3901,19 +3901,19 @@
                           sling:match="(.+)$"/>
                 <content_reverse
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/(.*).html]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/(.*).html]"
                         sling:match="$1.html"/>
                 <content_reverse_nohtml
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/(.*)]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/(.*)]"
                         sling:match="$1.html"/>
                 <root_reverse
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en(.html)?]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en(.html)?]"
                         sling:match="$"/>
                 <search
                         jcr:primaryType="sling:Mapping"
-                        sling:internalRedirect="[/content/bmc/language-master/en/search.html]"
+                        sling:internalRedirect="[/content/bmc/language-masters/en/search.html]"
                         sling:match="search/"/>
                 <sitemap
                         jcr:primaryType="sling:Mapping"
