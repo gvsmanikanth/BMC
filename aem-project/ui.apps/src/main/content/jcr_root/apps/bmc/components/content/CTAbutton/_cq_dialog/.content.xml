@@ -70,6 +70,12 @@
                                 fieldDescription="Select a page using the path tool, or enter an external HTTP link"
                                 fieldLabel="Button URL"
                                 name="./buttonURL"/>
+                            <buttonURLAppend
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="You may add your query string or append here."
+                                fieldLabel="Optional: Button URL Append"
+                                name="./buttonURLAppend"/>
                             <buttonColor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
