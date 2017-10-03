@@ -1,14 +1,13 @@
 package com.bmc.components;
-import java.util.HashMap;
-import javax.jcr.Session;
 
+import com.bmc.mixins.UserInfoProvider;
+import com.bmc.mixins.UserInfoProvider_RequestCached;
 import com.day.cq.wcm.api.Page;
-import org.apache.jackrabbit.api.security.user.UserManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.services.SupportCentralService;
-public class SupportPagesCheck extends WCMUsePojo {
+public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_RequestCached {
 	private static final Logger logger = LoggerFactory.getLogger(SupportPagesCheck.class);
 	public String getSupportCentralUrl() {
         return supportCentralUrl;
@@ -47,14 +46,5 @@ public class SupportPagesCheck extends WCMUsePojo {
     	return false;
     	}
     }
-    public Boolean getIsLoggedIn() {
-        Session session = getRequest().getResourceResolver().adaptTo(Session.class);
-        UserManager userManager = getRequest().getResourceResolver().adaptTo(UserManager.class);
-        HashMap<String, String> profileFields = new HashMap<>();
-        if (session.getUserID().equalsIgnoreCase("Anonymous")) {
-            return false;
-        }
-        return true;
-    }
-     
+    public Boolean getIsLoggedIn() { return !currentUserIsAnonymous(); }
 }
