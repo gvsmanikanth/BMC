@@ -197,12 +197,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
                 String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
-                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
+                purlPage = (vanityURL == null ? resourceResolver.map(purlPage).replace(".html", "") + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
             if (!isValid) {
                 String selector = (validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
-                purlPage = resourceResolver.map(purlPage) + selector + ".html";
+                purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
             response.sendRedirect(purlPage);
         }
