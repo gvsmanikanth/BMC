@@ -111,6 +111,10 @@ public interface UserInfoProvider {
             infoMap.put("lookupException", ex);
         }
 
+        // DXP-1111: use user id for email if userId looks like an email address (has an '@', simplistic logic proposed by Alan)
+        if (userId.contains("@"))
+            infoMap.put("email", userId);
+
         ModelFactory modelFactory = this::getResourceResolver;
         String resourceType = infoMap.get(JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY, "cq/security/components/profile");
         return modelFactory.getModel(infoMap, userProfilePath, resourceType, UserInfo.class);
