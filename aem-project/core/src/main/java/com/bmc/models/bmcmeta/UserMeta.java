@@ -66,12 +66,7 @@ public class UserMeta {
 
         updateStringValueIfNotBlank(user::getFirstName, this::setFirstName);
         updateStringValueIfNotBlank(user::getLastName, this::setLastName);
-
-        // DXP-1111: use user id for email if user is member of BMC_Support
-        String resolvedEmail = user.hasGroup("BMC_Support")
-                ? user.getUserId()
-                : user.getEmail();
-        updateStringValueIfNotBlank(()->resolvedEmail, this::setEmail);
+        updateStringValueIfNotBlank(user::getEmail, this::setEmail);
     }
     private static void updateStringValueIfNotBlank(Supplier<String> getValueFunc, Consumer<String> setValueFunc) {
         String value = getValueFunc.get();
