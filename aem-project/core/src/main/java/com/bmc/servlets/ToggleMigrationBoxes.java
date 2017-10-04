@@ -67,7 +67,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
                        // out("\tFound Node: "+ redBoxNode.getPath());
-                        if (!redBoxNode.getProperty("isRedMigrationBox").getString().equals("true")) {
+                        if (redBoxNode.getName().equals("OriginalPageLink") && !redBoxNode.getProperty("isRedMigrationBox").getString().equals("true")) {
                             redBoxNode.setProperty("isRedMigrationBox","true");
                             recordUpdateCounter++;
                             totalRecordsModified++;
@@ -95,7 +95,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
 
-                        if(redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
+                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
                             redBoxNode.setProperty("sling:resourceType","");
                             recordUpdateCounter++;
                             totalRecordsModified++;
@@ -121,7 +121,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     while (resourceIterator.hasNext()) {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
-                        if(redBoxNode.getProperty("sling:resourceType").getLength()==0){
+                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("sling:resourceType").getLength()==0){
                             redBoxNode.setProperty("sling:resourceType","bmc/components/content/text");
                             recordUpdateCounter++;
                             totalRecordsModified++;
