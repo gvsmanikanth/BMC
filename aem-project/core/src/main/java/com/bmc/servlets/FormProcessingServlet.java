@@ -494,6 +494,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             ValueMap map = formPage.getProperties();
             String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
 
+            // DXP-1344
+            if (!properties.getOrDefault("emailid", "").isEmpty()) {
+                properties.put("ty_emid", properties.getOrDefault("emailid", ""));
+                properties.remove("emailid");
+            }
+
             // Strip off any leading hostname that comes from the resource mapping.
             String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
             Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
