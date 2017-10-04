@@ -59,17 +59,6 @@ public class SupportCentralService {
     private String supportCoveoAccessToken;
     private String searchPageUrl;
 
-    public static final Map<String, String> FIELD_MAPPING;
-    static {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("email", "./profile/email");
-        map.put("first_name", "./profile/givenName");
-        map.put("last_name", "./profile/familyName");
-        map.put("phone", "./profile/phone");
-        map.put("company", "./profile/company");
-        FIELD_MAPPING = Collections.unmodifiableMap(map);
-    }
-
     @Activate
     public void activate(Map<String, String> config) {
         newCaseUrl = PropertiesUtil.toString(config.get("newCaseUrl"), "");
