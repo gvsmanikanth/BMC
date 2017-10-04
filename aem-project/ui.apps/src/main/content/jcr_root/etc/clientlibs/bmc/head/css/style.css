@@ -14588,6 +14588,12 @@ body.support-central {
 .education .layout-primary section {
   margin-top: 1.5em; }
 
+.education .layout-primary .accordion-item-content ul {
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: disc; }
+
 .education .layout-secondary section {
   border-top: transparent;
   margin-top: 1em;
