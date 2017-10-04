@@ -66,6 +66,9 @@
                                             required="{Boolean}true"
                                             wrapperClass="cmp-workflow-title">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <None_Selected jcr:primaryType="nt:unstructured"
+                                                           text="None Selected"
+                                                           value="None Selected"/>
                                             <ESO jcr:primaryType="nt:unstructured"
                                                  text="ESO"
                                                  value="ESO"/>
@@ -106,6 +109,9 @@
                                             name="./C_Lead_Offer_Most_Recent1"
                                             wrapperClass="cmp-workflow-title">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <None_Selected jcr:primaryType="nt:unstructured"
+                                                           text="None Selected"
+                                                           value="None Selected"/>
                                             <e4dkfjfi jcr:primaryType="nt:unstructured"
                                                 value="Analyst Report"
                                                 text="Analyst Report"/>
@@ -189,6 +195,9 @@
                                             name="./ex_assettype"
                                             wrapperClass="cmp-workflow-title">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <None_Selected jcr:primaryType="nt:unstructured"
+                                                           text="None Selected"
+                                                           value="None Selected"/>
                                             <aa jcr:primaryType="nt:unstructured"
                                                 value="Request"
                                                 text="Request"/>
@@ -209,6 +218,9 @@
                                             name="./ex_act"
                                             wrapperClass="cmp-workflow-title">
                                         <items jcr:primaryType="nt:unstructured">
+                                            <None_Selected jcr:primaryType="nt:unstructured"
+                                                           text="None Selected"
+                                                           value="None Selected"/>
                                             <jj jcr:primaryType="nt:unstructured"
                                                 value="Contact Me"
                                                 text="Contact Me"/>

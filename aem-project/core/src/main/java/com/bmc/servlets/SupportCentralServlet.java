@@ -1,10 +1,11 @@
 package com.bmc.servlets;
 
+import com.bmc.mixins.UserInfoProvider;
+import com.bmc.models.UserInfo;
 import com.bmc.services.SupportCentralService;
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
-import org.apache.jackrabbit.api.security.user.Authorizable;
-import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
@@ -15,14 +16,9 @@ import org.owasp.encoder.Encode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.*;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 @SlingServlet(paths = "/bin/supportcases", methods = {"GET"})
@@ -40,23 +36,14 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
         String responseBody = null;
         InputStream stream;
         HttpURLConnection connection = null;
-        Session session = request.getResourceResolver().adaptTo(Session.class);
-        UserManager userManager = request.getResourceResolver().adaptTo(UserManager.class);
-        HashMap<String, String> profileFields = new HashMap<>();
-        if (!session.getUserID().equalsIgnoreCase("Anonymous")) {
-            try {
-                Authorizable auth = userManager.getAuthorizable(session.getUserID());
-                profileFields = extractProfileDetails(auth);
-            } catch (Exception e) {
-                // Do nothing and just return the empty JSON object if an exception occurs.
-            }
-        }
-        if (profileFields.size() > 0 && profileFields.containsKey("email")) {
+
+        UserInfo user = UserInfoProvider.withRequestCaching(request).getCurrentUserInfo();
+        if (user != null && user.hasEmail()) {
             String baseUrl = service.getApiBaseUrl();
             String apiPath = service.getApiPath();
             String apiUser = service.getApiUser();
             String apiPass = service.getApiPass();
-            String apiUrl = baseUrl + apiPath + URLEncoder.encode(profileFields.get("email")) + "/OpenCases";
+            String apiUrl = baseUrl + apiPath + URLEncoder.encode(user.getEmail()) + "/OpenCases";
             Authenticator.setDefault (new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
@@ -101,16 +88,6 @@ public class SupportCentralServlet extends SlingSafeMethodsServlet {
                 }
             }
         }
-    }
-
-    private HashMap<String, String> extractProfileDetails(Authorizable userAcct) throws RepositoryException {
-        HashMap<String, String> profileFields = new HashMap<>();
-        for (Map.Entry<String, String> field : service.FIELD_MAPPING.entrySet()) {
-            if (userAcct.hasProperty(field.getValue())) {
-                profileFields.put(field.getKey(), userAcct.getProperty(field.getValue())[0].getString());
-            }
-        }
-        return profileFields;
     }
 
     private JSONObject parseJson(String json) {

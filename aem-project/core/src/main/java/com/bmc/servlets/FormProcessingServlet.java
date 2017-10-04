@@ -197,12 +197,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             if (page != null && isValid) {
                 String vanityURL = page.getVanityUrl();
                 String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
-                purlPage = (vanityURL == null ? resourceResolver.map(purlPage) + ".PURL" + formGUID + ".html" : vanityURL);
+                purlPage = (vanityURL == null ? resourceResolver.map(purlPage).replace(".html", "") + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
             if (!isValid) {
                 String selector = (validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
-                purlPage = resourceResolver.map(purlPage) + selector + ".html";
+                purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
             response.sendRedirect(purlPage);
         }
@@ -493,6 +493,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             properties.remove("LMA_license");
             ValueMap map = formPage.getProperties();
             String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+
+            // DXP-1344
+            if (!properties.getOrDefault("emailid", "").isEmpty()) {
+                properties.put("ty_emid", properties.getOrDefault("emailid", ""));
+                properties.remove("emailid");
+            }
 
             // Strip off any leading hostname that comes from the resource mapping.
             String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
