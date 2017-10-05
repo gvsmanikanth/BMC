@@ -63,6 +63,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
     private Boolean automationEmailEnabled = false;
     private String[] automationEmailRecipients;
+    private String[] automationEmailCCRecipients;
 
     private Session session;
 
@@ -129,6 +130,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         timeout = PropertiesUtil.toInteger(config.get("timeout"), 5000);
         automationEmailEnabled = PropertiesUtil.toBoolean(config.get("automationEmailEnabled"), false);
         automationEmailRecipients = PropertiesUtil.toStringArray(config.get("automationEmailRecipients"));
+        automationEmailCCRecipients = PropertiesUtil.toStringArray(config.get("automationEmailCCRecipients"));
     }
 
     @Override
@@ -228,6 +230,10 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             String email = formData.getOrDefault("C_EmailAddress", "");
             String formId = formProperties.getOrDefault("formid", "");
             String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
+            StringBuilder ccLines = new StringBuilder();
+            for (String cc : automationEmailCCRecipients) {
+                ccLines.append("CC: ").append(cc).append("\n");
+            }
             Set<String> runmodes = slingSettingsService.getRunModes();
             String environment = "Dev";
             if (runmodes.contains("prod"))
@@ -241,6 +247,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                     environment);
             emailParams.put("subject", subject);
             emailParams.put("body", xml);
+            emailParams.put("ccLines", ccLines.toString());
             emailService.sendEmail(templatePath, emailParams, automationEmailRecipients);
         }
     }

@@ -1,4 +1,5 @@
 From: ${fromAddress}
 Subject: ${subject}
+${ccLines}
 
 ${body}
