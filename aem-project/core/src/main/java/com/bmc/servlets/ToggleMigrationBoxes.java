@@ -49,7 +49,9 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
         int totalRecordsModified=0;
         RequestParameterMap parameters = request.getRequestParameterMap();
 
-        if(request.getRequestParameter("passphrase").toString().equals("SecurityThrough0bscuritySucks")) {
+        boolean verbose=true;
+
+        if(request.getRequestParameter("passphrase").toString().equals("^Nf6pj;A.,XDpZpM8]F;cKUd2.6U")) {
             try {
                 out("Starting to "+request.getRequestParameter("action").toString());
                 if (request.getRequestParameter("action").toString().equals("prime")) {
@@ -66,20 +68,26 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     while (resourceIterator.hasNext()) {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
+                        if(verbose)logger.info("(Prime) Examining "+redBoxNode.getPath());
                        // out("\tFound Node: "+ redBoxNode.getPath());
-                        if (redBoxNode.getName().equals("OriginalPageLink") && !redBoxNode.getProperty("isRedMigrationBox").getString().equals("true")) {
-                            redBoxNode.setProperty("isRedMigrationBox","true");
-                            recordUpdateCounter++;
-                            totalRecordsModified++;
-                            if (recordUpdateCounter>100) {
-                                session.save();
-                                recordUpdateCounter=0;
-                                out("saving session");
+                        if (redBoxNode.getName().equals("OriginalPageLink")) {
+                            if(!redBoxNode.hasProperty("isRedMigrationBox")){
+                                if(verbose) logger.info("(Prime) Adding isRedMigrationBox property");
+                                redBoxNode.setProperty("isRedMigrationBox","true");
+                                recordUpdateCounter++;
+                                totalRecordsModified++;
+                                if (recordUpdateCounter>100) {
+                                    session.save();
+                                    recordUpdateCounter=0;
+                                    out("saving session");
+                                }
                             }
                         }
                     }
                     session.save();
                     out("saving session");
+                    out("Total nodes examined: "+totalRecordCount);
+                    out("Total nodes "+request.getRequestParameter("action").toString()+"d: "+totalRecordsModified);
                 } else if (request.getRequestParameter("action").toString().equals("disable")) {
                     Session session = resolver.adaptTo(Session.class);
                     QueryManager queryManager = null;
@@ -94,9 +102,10 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     while (resourceIterator.hasNext()) {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
-
-                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
+                        if(verbose) logger.info("(Disable) Examining "+redBoxNode.getPath());
+                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("isRedMigrationBox").getString().equals("true") && redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
                             redBoxNode.setProperty("sling:resourceType","");
+                            if(verbose) logger.info("(Disable) Removed sling:resourceType");
                             recordUpdateCounter++;
                             totalRecordsModified++;
                             if (recordUpdateCounter>100) {
@@ -108,6 +117,8 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     }
                     session.save();
                     out("saving session");
+                    out("Total nodes examined: "+totalRecordCount);
+                    out("Total nodes "+request.getRequestParameter("action").toString()+"d: "+totalRecordsModified);
                 } else if (request.getRequestParameter("action").toString().equals("enable")) {
                     Session session = resolver.adaptTo(Session.class);
                     QueryManager queryManager = null;
@@ -121,8 +132,10 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     while (resourceIterator.hasNext()) {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
-                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("sling:resourceType").getLength()==0){
+                        if(verbose) logger.info("(Enable) Examining "+redBoxNode.getPath());
+                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("isRedMigrationBox").getString().equals("true") && !redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")){
                             redBoxNode.setProperty("sling:resourceType","bmc/components/content/text");
+                            if(verbose) logger.info("(Enable) Added sling:resourceType");
                             recordUpdateCounter++;
                             totalRecordsModified++;
                             if (recordUpdateCounter>100) {
@@ -134,11 +147,11 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     }
                     session.save();
                     out("saving session");
+                    out("Total nodes examined: "+totalRecordCount);
+                    out("Total nodes "+request.getRequestParameter("action").toString()+"d: "+totalRecordsModified);
                 } else {
                     out("Unrecognized Command");
                 }
-                out("Total nodes examined: "+totalRecordCount);
-                out("Total nodes modified: "+totalRecordsModified);
                 out("Finished");
             } catch (RepositoryException e) {
                 out("Repository Error: " + e.getMessage());
