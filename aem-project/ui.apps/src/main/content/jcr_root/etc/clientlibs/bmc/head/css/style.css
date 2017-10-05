@@ -7620,7 +7620,7 @@ fieldset label.inline {
 
 .navigation-breadcrumb {
   margin: 0;
-  padding: 1em 0px 0px !important; }
+  padding: 1px 0px 0px !important; }
   .navigation-breadcrumb ul {
     padding-left: 0px;
     margin-bottom: 0px; }

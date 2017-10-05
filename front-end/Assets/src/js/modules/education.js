@@ -340,8 +340,8 @@
 		// The render function will show the appropriate content of out page.
 		$(window).on('hashchange', function() {
 			if (isListPage()) {
-				filterListObject.updateFilterDropdownOnHashChange(decodeURI(window.location.hash));
-				filterListObject.render(decodeURI(window.location.hash));
+				filterListObject.updateFilterDropdownOnHashChange(decodeURIComponent(window.location.hash));
+				filterListObject.render(decodeURIComponent(window.location.hash));
 			};
 		});
 		

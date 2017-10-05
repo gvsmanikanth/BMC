@@ -583,7 +583,7 @@ window.FilterList;
 			// Here we check if filters isn't empty.
 			if (!$.isEmptyObject(filters)) {
 				// Stringify the object via JSON.stringify and write it after the '#filter' keyword.
-				window.location.hash = '#filter/' + encodeURI(JSON.stringify(filters));
+				window.location.hash = '#filter/' + encodeURIComponent(JSON.stringify(filters));
 			} else {
 				// If it's empty change the hash to '#' (the homepage).
 				window.location.hash = '#';

@@ -5,5 +5,5 @@
           elqSiteID="1625229226"
           timeout="{Long}5000"
           automationEmailEnabled="{Boolean}true"
-          automationEmailRecipients="[cmsdev@bmc.com]"
+          automationEmailRecipients="[businessautomation@bmc.com,cmsdev@bmc.com]"
 />
