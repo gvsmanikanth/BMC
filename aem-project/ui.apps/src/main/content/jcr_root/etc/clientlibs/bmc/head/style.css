@@ -2351,11 +2351,11 @@ blockquote {
 .layout-right {
   float: right; }
 
-[class*="25-75contentcontainer"],
-[class*="33-66contentcontainer"],
-[class*="50-50contentcontainer"],
-[class*="66-33contentcontainer"],
-[class*="75-25contentcontainer"]:not(:first-child) {
+[class*="25-75contentcontainer"] > *:first-child,
+[class*="33-66contentcontainer"] > *:first-child,
+[class*="50-50contentcontainer"] > *:first-child,
+[class*="66-33contentcontainer"] > *:first-child,
+[class*="75-25contentcontainer"]:not(:first-child) > *:first-child {
   padding-top: 2rem;
   padding-bottom: 2rem; }
 
