@@ -6507,7 +6507,7 @@ body {
 }
 
 .coveo-logo {
-    background-image: url(//media.cms.bmc.com/binary/bmc_logo_header.svg);
+    background-image: url(/etc/clientlibs/bmc/head/bmc_logo_header.svg);
     background-position: 0px;
     width: 115px;
     height: 55px;
