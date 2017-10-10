@@ -13908,6 +13908,14 @@ body.support-central {
         padding: 0 0px .5em 0;
         text-align: center; } }
 
+.key-features h2 {
+  color: #414042;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+  text-align: left;
+  line-height: 1.45em;
+  font-size: 1.66667rem; }
+
 .carousel-aside {
   padding-top: 4em;
   padding-bottom: 3em;
