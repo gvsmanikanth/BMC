@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/bmc"/>
+    <filter root="/apps/bmc">
+        <exclude pattern="/apps/bmc/i18n"/>
+    </filter>
     <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
 
