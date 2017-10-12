@@ -24,6 +24,9 @@ public class SearchResultsModel {
     @Inject
     private Page resourcePage;
 
+    @Inject
+    private Page currentPage;
+
     private String searchFilter;
     private String pageLocale;
 
@@ -43,9 +46,9 @@ public class SearchResultsModel {
     }
 
     private String formatMetaLocale(){
-        Page resolvedPage = resourcePage.getAbsoluteParent(1);
+        Page resolvedPage = currentPage.getAbsoluteParent(3);
         if (resolvedPage == null)
-            resolvedPage = resourcePage;
+            resolvedPage = currentPage;
 
         return resolvedPage.getLanguage().toString().replace("_","-");
     }
