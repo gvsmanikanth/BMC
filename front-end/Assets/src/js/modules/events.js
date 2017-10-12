@@ -13,8 +13,6 @@
 			
 			var type = self.getName("type", item);
 			
-			var iconURL = "http://media.cms.bmc.com/designimages/course.png";
-			
 			var itemHTML = ''
 			
 			if(item.isModal){

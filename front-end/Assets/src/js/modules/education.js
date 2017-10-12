@@ -40,7 +40,7 @@
 			
 			
 			if(item.blnFeatured)
-				itemHTML+='<img class="featuredIcon" src="http://media.cms.bmc.com/designimages/star-icon.png"></img>';
+				itemHTML+='<img class="featuredIcon" src="/etc/clientlibs/bmc/head/star-icon.png"></img>';
 			
 			itemHTML+='<img class="featuredIcon" src="'+iconURL+'"></img></span>';
 			
