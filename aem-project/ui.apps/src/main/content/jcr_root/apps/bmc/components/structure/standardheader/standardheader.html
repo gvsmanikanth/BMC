@@ -9,7 +9,32 @@
 </header>
 
 
-<sly data-sly-resource="${HeaderModel.BasePath @resourceType='bmc/components/content/htmlarea'}" data-sly-unwrap/>
+
+<nav class="layout-navigation">
+	<div class="layout-inner-wrap" style="position: relative;">
+        <sly data-sly-resource="${HeaderModel.BasePath @resourceType='bmc/components/content/htmlarea'}" data-sly-unwrap></sly>
+        <ul class="navigation-utility">
+			<sly data-sly-test.hasSecondaryCTA="${(pageProperties.secondaryCtaText && pageProperties.secondaryCtaHref)}"></sly>
+			<li class="navigation-trials ${(hasSecondaryCTA ? 'nav-li-override-hide' : '')}">
+                <a href="/it-solutions/free-product-trials.html" class="">${'Free Trials' @ i18n}</a>
+            </li>
+			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
+				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText @ i18n}</a>
+			</li>
+			<li class="navigation-contact">
+                <a href="#" class="contact-bmc">${'Contact BMC' @ i18n}</a>
+            </li>
+			<li class="navigation-country">
+                <a href="#" class="select-country">${'Worldwide (English)' @ i18n}</a>
+            </li>
+			<li class="navigation-search js-navigation-search">
+					<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
+			</li>
+		</ul>
+	</div>
+	<!-- / layout-inner-wrap -->
+</nav>
+<!-- / layout-nav -->
 
 <div id="lpButtonDiv2"></div>
 <div class="layout-modal-overlay"></div>
