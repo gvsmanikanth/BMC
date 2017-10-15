@@ -304,6 +304,7 @@ public class PageModel {
         if (resolvedPage == null)
             resolvedPage = resourcePage;
 
-        return resolvedPage.getLanguage().toString().replace("_","-");
+        String code = (String) resolvedPage.getProperties().getOrDefault("jcr:language", "");
+        return code.replace("_","-");
     }
 }
