@@ -7,7 +7,7 @@
 <sly data-sly-use.footerCopyRight="com.bmc.models.components.footers.FooterModel"/>
 <sly data-sly-test="${model.isSupportPage}">
    <script type="text/javascript">
-           	var supportcentralurl = '${model.searchPageUrl @ context="html"}';
+           	var supportcentralurl = '${model.supportCentralUrl @ context="html"}';
 		    var supportCoveoAccessToken = '${model.supportCoveoAccessToken @ context="html"}';
    </script>
    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
