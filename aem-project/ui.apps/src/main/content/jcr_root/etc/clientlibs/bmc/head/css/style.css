@@ -6635,7 +6635,7 @@ fieldset label.inline {
           color: #353537;
           font-weight: 500;
           margin-right: .5em;
-          padding: 0 1em 0 0; } }
+          padding: 0 .5em; } }
       @media only screen and (min-width: 76.25em) {
         .navigation-primary > li > a {
           font-size: 16px;
