@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class AlternateLinks  extends WCMUsePojo {
-    private Map<String, String> hrefLangMap = new HashMap<String, String>() {{
+    private static final Map<String, String> hrefLangMap = new HashMap<String, String>() {{
         put("x-default", "www.bmc.com");
         put("en-sa", "www.bmcsoftware.sa");
         put("de-at", "www.bmcsoftware.at");
@@ -63,8 +63,9 @@ public class AlternateLinks  extends WCMUsePojo {
         }
 
         // Build map of alternate locale links.
+        String canonicalScheme = "http";
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-            alternateLinksMap.put(entry.getKey(), req.getScheme() + "://" + entry.getValue() + hrefUri);
+            alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
         }
 
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
@@ -76,7 +77,7 @@ public class AlternateLinks  extends WCMUsePojo {
         if (canonicalMatcher.matches()) {
             canonicalPath = canonicalMatcher.group(4);
         }
-        canonicalLink = req.getScheme() + "://" + req.getServerName() + canonicalPath;
+        canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
     }
 
     public Map<String, String> getAlternateLinksMap() {
