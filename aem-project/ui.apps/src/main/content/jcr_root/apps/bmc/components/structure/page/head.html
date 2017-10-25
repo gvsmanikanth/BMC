@@ -60,7 +60,7 @@
         <title>${properties['browserTitle'] || currentPage.title || resource.name} - ${'BMC Software' @ i18n}</title>
     </sly>    
     <meta data-sly-test.keywords="${page.keywords}" name="keywords" content="${keywords}"/>
-    <meta data-sly-test.description="${properties['jcr:description']}" name="description" content="${description}"/>
+    <meta data-sly-test.description="${properties.meta_description}" name="description" content="${description}"/>
     <meta data-sly-test.templateName="${page.templateName}" name="template" content="${templateName}"/>
     <sly data-sly-include="head.socialmedia.html"></sly>
     <sly data-sly-include="customheaderlibs.html"></sly>
