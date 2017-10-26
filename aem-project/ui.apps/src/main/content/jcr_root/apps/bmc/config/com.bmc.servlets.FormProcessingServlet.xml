@@ -6,5 +6,5 @@
           timeout="{Long}5000"
           automationEmailEnabled="{Boolean}true"
           automationEmailRecipients="[businessautomation@bmc.com]"
-          automationEmailCCRecipients="[cmsdev@bmc.com]"
+          automationEmailCCRecipients="[cmsdev@bmc.com,webforms@bmc.com]"
 />
