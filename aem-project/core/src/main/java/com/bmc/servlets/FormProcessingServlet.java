@@ -119,6 +119,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         iMap.put("channel", "channel");
         iMap.put("CampaignID", "CampaignID");
         iMap.put("CampaignId", "CampaignID");
+        iMap.put("elqCampaignId", "elqCampaignID");
         iMap.put("emid", "ty_emid");
         overrideFormParameters = Collections.unmodifiableMap(iMap);
     }
@@ -416,7 +417,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         default:
                             break;
                     }
-                    pairs.put(key, value);
+                    if (!value.isEmpty() && !overrideFormParameters.containsKey(key))
+                        pairs.put(key, value);
                 });
 
         if (pairs.getOrDefault(FN_ELQ_FORM_NAME, "").trim().equals("")) {
