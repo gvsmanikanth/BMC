@@ -26,7 +26,7 @@ import java.util.Map;
 @Service(value=FormProcessingXMLService.class)
 public class FormProcessingXMLService {
 
-    public static String getFormXML(Map<String, String> formData, Map<String, String> formProperties, SlingHttpServletRequest request, String serviceUrl) throws Exception {
+    public static String getFormXML(Map<String, String> formData, SlingHttpServletRequest request, String serviceUrl) throws Exception {
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
@@ -35,7 +35,7 @@ public class FormProcessingXMLService {
         doc.appendChild(rootElement);
 
         Element formNumber = doc.createElement("form-number");
-        formNumber.appendChild(doc.createCDATASection(formProperties.getOrDefault("formid", "")));
+        formNumber.appendChild(doc.createCDATASection(formData.getOrDefault("formid", "")));
         rootElement.appendChild(formNumber);
 
         Element userEmail = doc.createElement("user-email");
@@ -66,7 +66,6 @@ public class FormProcessingXMLService {
         rootElement.appendChild(fields);
 
         formData.forEach((k,v) -> addField(fields, doc, k, v));
-        formProperties.forEach((k,v) -> addField(fields, doc, k, v));
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
