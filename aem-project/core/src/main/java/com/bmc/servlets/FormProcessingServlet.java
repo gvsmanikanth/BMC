@@ -1,6 +1,7 @@
 package com.bmc.servlets;
 
 import com.adobe.acs.commons.email.EmailService;
+import com.bmc.mixins.ResourceProvider;
 import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
 import com.bmc.util.StringHelper;
@@ -12,7 +13,6 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
@@ -136,459 +136,448 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         logger.trace("doPost called");
-        Boolean isValid = true;
-        String validationError = "";
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
-        RequestParameterMap parameters = request.getRequestParameterMap();
-        Map<String, String> formData = new HashMap<>();
-        parameters.forEach((k, v) -> formData.put(k, request.getParameter(k)));
-        Node node = request.getResource().adaptTo(Node.class);
-        String pagePath = request.getResource().getPath().substring(0,request.getResource().getPath().indexOf("/jcr:content"));
-        Page formPage = request.getResourceResolver().getResource(pagePath).adaptTo(Page.class);
-        String purlPage = getFormProperty(node, JCR_PURL_PAGE_URL);
-        String redirectPage = getFormProperty(node, PURL_REDIRECT_PAGE);
-        Map<String,String> formProperties = getFormProperties(node, formPage, request);
-        if (formProperties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
-            Map<String, String> complianceResult = checkExportCompliance(formData);
-            String result = complianceResult.get("Result");
-            String errorMsg = complianceResult.get("ErrorMsg");
-            formData.put("MkDenial_Result", result);
-            formData.put("MkDenial_Reason", errorMsg);
-            if (!result.equals("Success")) {
-                isValid = false;
-                validationError = errorMsg;
-            }
-        }
 
-        String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
+        FormData form = new FormData(request);
+
+        String purlPage = form.getNodeProperty(JCR_PURL_PAGE_URL);
+        String redirectPage = form.getNodeProperty(PURL_REDIRECT_PAGE);
+
         Boolean honeyPotFailure = false;
         for (String honeyPotField : honeyPotFields) {
-            if (!formData.getOrDefault(honeyPotField, "").isEmpty()) {
+            if (!form.data.getOrDefault(honeyPotField, "").isEmpty()) {
                 logger.info("HoneyPot rule violation. Form will not be sent to Webmethods/Eloqua");
                 honeyPotFailure = true;
             }
         }
         if (!honeyPotFailure) {
-            switch (formType) {
+            switch (form.type) {
                 case "Lead Capture":
-                    submitToEloqua(formData, formProperties, request);
+                    submitToEloqua(form);
                     break;
                 case "Parallel":
-                    submitToEloqua(formData, formProperties, request);
-                    sendFormEmail(formData, formProperties, formPage, request);
+                    submitToEloqua(form);
+                    sendFormEmail(form);
                     break;
                 case "Email Only":
-                    sendFormEmail(formData, formProperties, formPage, request);
+                    sendFormEmail(form);
                     break;
             }
         }
+
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
             Page page = pageManager.getPage(purlPage);
-            ValueMap map = formPage.getProperties();
-            if (page != null && isValid) {
+            ValueMap map = form.page.getProperties();
+            if (page != null && form.isValid) {
                 String vanityURL = page.getVanityUrl();
                 String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
                 purlPage = (vanityURL == null ? resourceResolver.map(purlPage).replace(".html", "") + ".PURL" + formGUID + ".html" : vanityURL);
             }
 
-            if (!isValid) {
-                String selector = (validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
+            if (!form.isValid) {
+                String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
                 purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
             response.sendRedirect(purlPage);
         }
     }
 
-    private Map<String, String> checkExportCompliance(Map<String, String> formData) {
-        Map<String,String> result = exportComplianceService.checkExportCompliance(
-                formData.getOrDefault("C_Country", ""),
-                formData.getOrDefault("C_Company", ""),
-                formData.getOrDefault("C_FirstName", ""),
-                formData.getOrDefault("C_LastName", ""),
-                formData.getOrDefault("C_EmailAddress", "")
-        );
-        return result;
-    }
+    private void submitToEloqua(FormData form) {
+        class Implementation {
+            private void submitForm(FormData form) {
+                Map<String, String> resolvedData = resolveFormData(form);
+                String data = resolvedData.entrySet().stream()
+                        .map(entry -> encodeProperty(entry.getKey(), entry.getValue()))
+                        .collect(Collectors.joining("&"));
 
-    private void submitToEloqua(Map<String, String> formData, Map<String, String> formProperties, SlingHttpServletRequest request) {
-        Map<String,String> eloquaFormData = resolveFormData(formData, formProperties);
-        String data = prepareFormData(eloquaFormData);
-        logger.trace("Encoded Form Data: " + data);
-        int status = sendData(data);
+                logger.trace("Encoded Form Data: " + data);
+                int postStatus = postData(data, serviceUrl);
 
-        String xml = "";
-        try {
-            xml = FormProcessingXMLService.getFormXML(eloquaFormData, request, serviceUrl);
-        } catch (Exception e) {
-            logger.error("Error getting XML for form email automation.");
-        }
-        sendAutomationEmail(xml, status, eloquaFormData);
-    }
-
-    private void sendAutomationEmail(String xml, int status, Map<String,String> eloquaFormData) {
-        logger.info(xml);
-        if (automationEmailEnabled) {
-            Map<String, String> emailParams = new HashMap<>();
-            String templatePath = "/etc/notification/email/text/plaintext.txt";
-            emailParams.put("fromAddress", FROM_ADDRESS);
-            String email = eloquaFormData.getOrDefault("C_EmailAddress", "");
-            String formId = eloquaFormData.getOrDefault("formid", "");
-            String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
-            StringBuilder ccLines = new StringBuilder();
-            for (String cc : automationEmailCCRecipients) {
-                ccLines.append("CC: ").append(cc).append("\n");
+                String xml = "";
+                try {
+                    xml = FormProcessingXMLService.getFormXML(resolvedData, form.request, serviceUrl);
+                } catch (Exception e) {
+                    logger.error("Error getting XML for form email automation.");
+                }
+                sendAutomationEmail(xml, postStatus, resolvedData);
             }
-            Set<String> runmodes = slingSettingsService.getRunModes();
-            String environment = "Dev";
-            if (runmodes.contains("prod"))
-                environment = "Prod";
-            else if (runmodes.contains("stage"))
-                environment = "Stage";
-            String subject = String.format("V2 Marketing form %s %s for %s - %s",
-                    formId,
-                    statusName,
-                    email,
-                    environment);
-            emailParams.put("subject", subject);
-            emailParams.put("body", xml);
-            emailParams.put("ccLines", ccLines.toString());
-            emailService.sendEmail(templatePath, emailParams, automationEmailRecipients);
+
+            private Map<String, String> resolveFormData(FormData form) {
+                // initialize post pairs map with form node properties
+                Map<String, String> pairs = new HashMap<>();
+                pairs.putAll(form.properties);
+
+                // add to or override pairs with request data (form post and querystring), with additional business logic
+                form.data.entrySet().stream()
+                        .filter(entry -> !restrictedFormParameters.contains(entry.getKey()))
+                        .forEach(entry -> {
+                            String key = resolveFieldName(entry.getKey());
+                            String value = entry.getValue();
+                            switch (entry.getKey()) {
+                                case FN_CONTACT_ME:
+                                    // FN_CONTACT_ME dialog field label = _Force_ Contact Me
+                                    if (!value.equals(FV_YES) && pairs.get(FN_CONTACT_ME).equals(FV_YES))
+                                        value = FV_YES;
+                                    break;
+                                case FN_OPT_IN:
+                                    // FN_OPT_IN dialog field label = _Force_ Opt In
+                                    if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
+                                        value = FV_YES;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            pairs.put(key, value);
+                        });
+
+                if (pairs.getOrDefault(FN_ELQ_FORM_NAME, "").trim().equals("")) {
+                    pairs.put(FN_ELQ_FORM_NAME,
+                            StringHelper.coalesceString(pairs.get(FN_FORM_NAME), pairs.get(FN_FORM_NAME.toLowerCase()))
+                                    .orElse(""));
+                }
+
+                return pairs;
+            }
+            private String resolveFieldName(String fieldName) {
+                if (overrideFormParameters.containsKey(fieldName)) return overrideFormParameters.get(fieldName);
+                return fieldName;
+            }
+            private String encodeProperty(String name, String value) {
+                String charset = StandardCharsets.UTF_8.name();
+                logger.trace(name + "=" + value);
+                try {
+                    return String.format("%s=%s",
+                            URLEncoder.encode(name, charset),
+                            URLEncoder.encode(value, charset));
+                } catch (UnsupportedEncodingException e) {
+                    logger.error(e.getMessage());
+                }
+                return "";
+            }
+
+            private int postData(String data, String serviceUrl) {
+                logger.trace("Sending Data: " + serviceUrl);
+                String charset = StandardCharsets.UTF_8.name();
+                HttpURLConnection connection = null;
+                int status = 0;
+                byte[] postData = data.getBytes(StandardCharsets.UTF_8);
+                try {
+                    URL url = new URL(serviceUrl);
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.setDoOutput(true);
+                    connection.setInstanceFollowRedirects(true);
+                    connection.setRequestMethod("POST");
+                    connection.setConnectTimeout(timeout);
+                    connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    connection.setRequestProperty("Accept-Charset", charset);
+                    connection.setRequestProperty("charset", charset);
+                    connection.setRequestProperty("Content-Length", Integer.toString(postData.length));
+                    connection.setUseCaches(false);
+                    try (OutputStream output = connection.getOutputStream()) {
+                        output.write(postData);
+                    }
+                    InputStream response = connection.getInputStream();
+                    String responseBody;
+                    try (Scanner scanner = new Scanner(response)) {
+                        responseBody = scanner.useDelimiter("\\A").next();
+                    }
+                    logger.trace("Response Body: " + responseBody);
+                    status = connection.getResponseCode();
+                    logger.trace("Response Status: " + status);
+
+                    if (status != 200 && status != 302) {
+                        // Log errors if not a successful response. 200 & 302 responses are considered success.
+                        logger.error("Form data failed to post to webmethods server. URL: " + serviceUrl + " Data: " + data);
+                    }
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                    try {
+                        status = connection.getResponseCode();
+                        logger.trace("Response Status: " + status);
+                        InputStream error = connection.getErrorStream();
+                        String responseBody;
+                        if (error != null) {
+                            try (Scanner scanner = new Scanner(error)) {
+                                responseBody = scanner.useDelimiter("\\A").next();
+                            }
+                            logger.info("Error Response: " + responseBody);
+                        }
+                    } catch (IOException e1) {
+                        logger.error(e1.getMessage());
+                    }
+                } finally {
+                    if (connection != null) {
+                        connection.disconnect();
+                    }
+                    return status;
+                }
+            }
+
+            private void sendAutomationEmail(String xml, int status, Map<String, String> resolvedEloquaData) {
+                logger.info(xml);
+                if (automationEmailEnabled) {
+                    Map<String, String> emailParams = new HashMap<>();
+                    String templatePath = "/etc/notification/email/text/plaintext.txt";
+                    emailParams.put("fromAddress", FROM_ADDRESS);
+                    String email = resolvedEloquaData.getOrDefault("C_EmailAddress", "");
+                    String formId = resolvedEloquaData.getOrDefault("formid", "");
+                    String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
+                    StringBuilder ccLines = new StringBuilder();
+                    for (String cc : automationEmailCCRecipients) {
+                        ccLines.append("CC: ").append(cc).append("\n");
+                    }
+                    Set<String> runmodes = slingSettingsService.getRunModes();
+                    String environment = "Dev";
+                    if (runmodes.contains("prod"))
+                        environment = "Prod";
+                    else if (runmodes.contains("stage"))
+                        environment = "Stage";
+                    String subject = String.format("V2 Marketing form %s %s for %s - %s",
+                            formId,
+                            statusName,
+                            email,
+                            environment);
+                    emailParams.put("subject", subject);
+                    emailParams.put("body", xml);
+                    emailParams.put("ccLines", ccLines.toString());
+                    emailService.sendEmail(templatePath, emailParams, automationEmailRecipients);
+                }
+            }
         }
+
+        new Implementation().submitForm(form);
     }
 
-    private void sendFormEmail(Map<String, String> formData, Map<String, String> formProperties, Page formPage, SlingHttpServletRequest request) {
+    private void sendFormEmail(FormData form) {
         String templatePath = "/etc/notification/email/html/form-emailonly.html";
-        String recipient = getRecipient(formProperties);
+        String recipient = form.properties.getOrDefault("recipient", "");
         if (recipient.isEmpty()) return;
         String[] recipients = recipient.split(",");
         Map<String, String> emailParams = new HashMap<>();
-        setSubject(formProperties, emailParams);
+        emailParams.put("subject", form.properties.getOrDefault("emailSubjectLine", "Form Data"));
         emailParams.put("fromAddress", FROM_ADDRESS);
         StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
         String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
-        formData.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+        form.data.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
         body.append("<h2>Event Specific Information</h2>");
-        body.append("<p><strong>").append(formPage.getTitle()).append("</strong></p>");
-        getCommonEmailBody(formProperties, formPage, request, body);
-        emailParams.put("body", body.toString());
-        emailService.sendEmail(templatePath, emailParams, recipients);
-    }
+        body.append("<p><strong>").append(form.page.getTitle()).append("</strong></p>");
 
-    private void sendLoggingEmail(Map<String, String> formData, Map formProperties, Page formPage, SlingHttpServletRequest request, int status) {
-        String templatePath = "/etc/notification/email/html/form-emailonly.html";
-        String recipient = getRecipient(formProperties);
-        if (recipient.isEmpty()) return;
-        String[] recipients = recipient.split(",");
-        Map<String, String> emailParams = new HashMap<>();
-        setSubject(formProperties, emailParams);
-        emailParams.put("fromAddress", FROM_ADDRESS);
-        StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
-        String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
-        formData.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
-        formProperties.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
-        body.append("<h2>Event Specific Information</h2>");
-        body.append("<p><strong>").append(formPage.getTitle()).append("</strong></p>");
-        body.append("<p>Webmethods Response Code: ").append(status).append("</p>");
-        body.append("<p>Service URL: ").append(serviceUrl).append("</p>");
-        getCommonEmailBody(formProperties, formPage, request, body);
-        emailParams.put("body", body.toString());
-        emailService.sendEmail(templatePath, emailParams, recipients);
-    }
-
-    private String getRecipient(Map formProperties) {
-        String recipient = "";
-        if (formProperties.containsKey("recipient")) {
-            recipient = (String) formProperties.get("recipient");
-        }
-        return recipient;
-    }
-
-    private void setSubject(Map formProperties, Map<String, String> emailParams) {
-        if (formProperties.containsKey("emailSubjectLine")) {
-            emailParams.put("subject", (String) formProperties.get("emailSubjectLine"));
-        } else {
-            emailParams.put("subject", "Form Data");
-        }
-    }
-
-    private void getCommonEmailBody(Map formProperties, Page formPage, SlingHttpServletRequest request, StringBuilder body) {
         body.append("<p>").append(new SimpleDateFormat("EEE MMM d HH:mm:ss z YYYY").format(new Date())).append("</p>");
         body.append("<h2>System Information</h2>");
         body.append("<h3>Content</h3>");
         body.append("<dl>");
-        body.append("<dt>Instantiated Content ID</dt><dd>").append(formPage.getProperties().get("jcr:baseVersion", "")).append("</dd>");
-        body.append("<dt>Content Title</dt><dd>").append(formPage.getTitle()).append("</dd>");
-        body.append("<dt>Content Type</dt><dd>").append(formPage.getTemplate().getName()).append("</dd>");
-        body.append("<dt>URL</dt><dd>").append(request.getRequestURL().toString()).append("</dd>");
-        if (formProperties.containsKey(PURL_PAGE_URL))
-            body.append("<dt>PURLPageUrl</dt><dd>").append(formProperties.get(PURL_PAGE_URL)).append("</dd>");
+        body.append("<dt>Instantiated Content ID</dt><dd>").append(form.page.getProperties().get("jcr:baseVersion", "")).append("</dd>");
+        body.append("<dt>Content Title</dt><dd>").append(form.page.getTitle()).append("</dd>");
+        body.append("<dt>Content Type</dt><dd>").append(form.page.getTemplate().getName()).append("</dd>");
+        body.append("<dt>URL</dt><dd>").append(form.request.getRequestURL().toString()).append("</dd>");
+        if (form.properties.containsKey(PURL_PAGE_URL))
+            body.append("<dt>PURLPageUrl</dt><dd>").append(form.properties.get(PURL_PAGE_URL)).append("</dd>");
         body.append("</dl>");
         body.append("<h3>Client</h3>");
         body.append("<dl>");
-        body.append("<dt>URL</dt><dd>").append(request.getRequestURL().toString()).append("</dd>");
-        body.append("<dt>Referrer</dt><dd>").append(request.getHeader("Referer")).append("</dd>");
-        body.append("<dt>Client IP</dt><dd>").append(request.getRemoteAddr()).append("</dd>");
-        body.append("<dt>Client Agent</dt><dd>").append(request.getHeader("User-Agent")).append("</dd>");
+        body.append("<dt>URL</dt><dd>").append(form.request.getRequestURL().toString()).append("</dd>");
+        body.append("<dt>Referrer</dt><dd>").append(form.request.getHeader("Referer")).append("</dd>");
+        body.append("<dt>Client IP</dt><dd>").append(form.request.getRemoteAddr()).append("</dd>");
+        body.append("<dt>Client Agent</dt><dd>").append(form.request.getHeader("User-Agent")).append("</dd>");
         body.append("</dl>");
         body.append("<h3>Template Stack</h3>");
         body.append("<dl>");
-        body.append("<dt>Template</dt><dd>").append(formPage.getTemplate().getName()).append("</dd>");
-        body.append("<dt>Template Path</dt><dd>").append(formPage.getTemplate().getPath()).append("</dd>");
+        body.append("<dt>Template</dt><dd>").append(form.page.getTemplate().getName()).append("</dd>");
+        body.append("<dt>Template Path</dt><dd>").append(form.page.getTemplate().getPath()).append("</dd>");
         body.append("</dl>");
+
+        emailParams.put("body", body.toString());
+        emailService.sendEmail(templatePath, emailParams, recipients);
     }
 
-    private int sendData(String data) {
-        logger.trace("Sending Data: " + serviceUrl);
-        String charset = StandardCharsets.UTF_8.name();
-        HttpURLConnection connection = null;
-        int status = 0;
-        byte[] postData = data.getBytes(StandardCharsets.UTF_8);
-        try {
-            URL url = new URL(serviceUrl);
-            connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true);
-            connection.setInstanceFollowRedirects(true);
-            connection.setRequestMethod("POST");
-            connection.setConnectTimeout(timeout);
-            connection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
-            connection.setRequestProperty( "Accept-Charset", charset);
-            connection.setRequestProperty( "charset", charset);
-            connection.setRequestProperty( "Content-Length", Integer.toString(postData.length));
-            connection.setUseCaches(false);
-            try (OutputStream output = connection.getOutputStream()) {
-                output.write(postData);
-            }
-            InputStream response = connection.getInputStream();
-            String responseBody;
-            try (Scanner scanner = new Scanner(response)) {
-                responseBody = scanner.useDelimiter("\\A").next();
-            }
-            logger.trace("Response Body: " + responseBody);
-            status = connection.getResponseCode();
-            logger.trace("Response Status: " + status);
+    private class FormData {
+        public final SlingHttpServletRequest request;
+        public final Page page;
+        public final String type;
+        public final Map<String,String> data;
+        public final Map<String,String> properties;
 
-            if (status != 200 && status != 302) {
-                // Log errors if not a successful response. 200 & 302 responses are considered success.
-                logger.error("Form data failed to post to webmethods server. URL: " + serviceUrl + " Data: " + data);
-            }
-        } catch (Exception e) {
-            logger.error(e.getMessage());
+        final Boolean isValid;
+        final String validationError;
+
+        String getNodeProperty(String property) {
+            String value = "";
             try {
-                status = connection.getResponseCode();
-                logger.trace("Response Status: " + status);
-                InputStream error = connection.getErrorStream();
-                String responseBody;
-                if (error != null) {
-                    try (Scanner scanner = new Scanner(error)) {
-                        responseBody = scanner.useDelimiter("\\A").next();
+                if (node.hasProperty(property))
+                    value = node.getProperty(property).getString();
+            } catch (RepositoryException e) {
+                logger.error(e.getMessage());
+            }
+            logger.trace(property + ": " + value);
+            return value;
+        }
+        private final Node node;
+
+        FormData(SlingHttpServletRequest request) {
+            class InitMethods {
+                private Map<String, String> getFormProperties() {
+                    Map<String, String> properties = new HashMap<>();
+                    try {
+                        String formid;
+                        String formname;
+                        Node xf = node.getNode("experiencefragment");
+                        String path = xf.getProperty("fragmentPath").getString();
+                        Node fieldset = resourceResolver.getResource(path + "/jcr:content/root/field_set").adaptTo(Node.class);
+                        formid = fieldset.getProperty("formid").getString();
+                        formname = fieldset.getProperty("formname").getString();
+
+                        String[] formProperties = new String[]{
+                                "product_interest",
+                                "content_prefs",
+                                "elqCampaignID",
+                                "campaignid",
+                                "C_Lead_Business_Unit1",
+                                JCR_PURL_PAGE_URL,
+                                "productLine1",
+                                "C_Lead_Offer_Most_Recent1",
+                                "ex_assettype",
+                                "ex_act",
+                                "ex_assetname",
+                                "LMA_license",
+                                "AWS_Trial",
+                                "formname",
+                                "formid",
+                                "formType",
+                                "leadDescription1",
+                                "emailid",
+                                FN_OPT_IN,
+                                FN_CONTACT_ME,
+                                "emailSubjectLine",
+                                "recipient",
+                                "bypassOSB"
+                        };
+                        Arrays.stream(formProperties).forEach(s -> properties.put(s, getNodeProperty(s)));
+                        properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
+                        properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
+                        properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
+                        properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
+                        if (properties.getOrDefault("formid", "").isEmpty())
+                            properties.put("formid", formid);
+                        if (properties.getOrDefault("formname", "").isEmpty())
+                            properties.put("formname", formname);
+                        properties.remove("LMA_license");
+                        ValueMap map = page.getProperties();
+                        String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+
+                        // DXP-1344
+                        if (!properties.getOrDefault("emailid", "").isEmpty()) {
+                            properties.put("ty_emid", properties.getOrDefault("emailid", ""));
+                            properties.remove("emailid");
+                        }
+
+                        // Strip off any leading hostname that comes from the resource mapping.
+                        String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
+                        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+                        Matcher matcher = pattern.matcher(purlPath);
+                        matcher.find();
+
+                        String purlPage = purlPath;
+                        if (matcher.matches()) {
+                            purlPage = matcher.group(4);
+                        }
+
+                        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
+                        properties.put(PURL_PAGE_URL, purlPageUrl);
+                        properties.remove(JCR_PURL_PAGE_URL);
+
+                        properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
+                        // Yes, this is correct, property name Submit = "Action"
+                        properties.put("Submit", "Action");
+                        properties.put("elqCookieWrite", "0");
+                        properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
+                        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
+                        properties.put("CampaignID", properties.get("campaignid"));
+                        properties.remove("campaignid");
+                        properties.put("elqSiteID", elqSiteID);
+                        String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
+                        properties.put("form_submitdate", timeStamp);
+                    } catch (RepositoryException e) {
+                        logger.error("Form has no experience fragment.");
                     }
-                    logger.info("Error Response: " + responseBody);
+                    return properties;
                 }
-            } catch (IOException e1) {
-                logger.error(e1.getMessage());
-            }
-        } finally {
-            if (connection != null) {
-                connection.disconnect();
-            }
-            return status;
-        }
-    }
 
-    private Map<String, String> resolveFormData(Map<String, String> formData, Map<String, String> formProperties) {
-        // initialize post pairs map with form node properties
-        Map<String, String> pairs = new HashMap<>();
-        pairs.putAll(formProperties);
-
-        // add to or override pairs with request data (form post and querystring), with additional business logic
-        formData.entrySet().stream()
-                .filter(entry -> isAllowedFieldName(entry.getKey()))
-                .forEach(entry -> {
-                    String key = getEloquoaFieldName(entry.getKey());
-                    String value = entry.getValue();
-                    switch (entry.getKey()) {
-                        case FN_CONTACT_ME:
-                            // FN_CONTACT_ME dialog field label = _Force_ Contact Me
-                            if (!value.equals(FV_YES) && pairs.get(FN_CONTACT_ME).equals(FV_YES))
-                                value = FV_YES;
-                            break;
-                        case FN_OPT_IN:
-                            // FN_OPT_IN dialog field label = _Force_ Opt In
-                            if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
-                                value = FV_YES;
-                            break;
-                        default:
-                            break;
+                private String getContentPreferenceFromNodeName(String nodeName) {
+                    String value = "";
+                    try {
+                        value = session.getNode("/content/bmc/resources/content-preferences/" + nodeName).getProperty("text").getString();
+                    } catch (RepositoryException e) {
+                        e.printStackTrace();
                     }
-                    pairs.put(key, value);
-                });
+                    return value;
+                }
 
-        if (pairs.getOrDefault(FN_ELQ_FORM_NAME, "").trim().equals("")) {
-            pairs.put(FN_ELQ_FORM_NAME,
-                    StringHelper.coalesceString(pairs.get(FN_FORM_NAME), pairs.get(FN_FORM_NAME.toLowerCase()))
-                            .orElse(""));
-        }
+                private String getProductLineFromNodeName(String nodeName) {
+                    String value = "";
+                    try {
+                        value = session.getNode("/content/bmc/resources/product-lines/" + nodeName).getProperty("text").getString();
+                    } catch (RepositoryException e) {
+                        e.printStackTrace();
+                    }
+                    return value;
+                }
 
-        return pairs;
-    }
+                private String getProductInterestFromNodeName(String nodeName) {
+                    String value = "";
+                    try {
+                        value = session.getNode("/content/bmc/resources/product-interests/" + nodeName).getProperty("jcr:title").getString();
+                    } catch (RepositoryException e) {
+                        e.printStackTrace();
+                    }
+                    return value;
+                }
 
-    private String prepareFormData(Map<String,String> eloquaFormData) {
-        return eloquaFormData.entrySet().stream()
-                .map(entry->encodeProperty(entry.getKey(), entry.getValue()))
-                .collect(Collectors.joining("&"));
-    }
+                private Map<String, String> checkExportCompliance() {
+                    Map<String, String> result = exportComplianceService.checkExportCompliance(
+                            data.getOrDefault("C_Country", ""),
+                            data.getOrDefault("C_Company", ""),
+                            data.getOrDefault("C_FirstName", ""),
+                            data.getOrDefault("C_LastName", ""),
+                            data.getOrDefault("C_EmailAddress", "")
+                    );
+                    return result;
+                }
+            }
+            InitMethods init = new InitMethods();
 
-    private Boolean isAllowedFieldName(String fieldName) {
-        return !restrictedFormParameters.contains(fieldName);
-    }
+            this.request = request;
 
-    private String getEloquoaFieldName(String fieldName) {
-        if (overrideFormParameters.containsKey(fieldName)) return overrideFormParameters.get(fieldName);
-        return fieldName;
-    }
+            node = request.getResource().adaptTo(Node.class);
 
-    private String encodeProperty(String name, String value) {
-        String charset = StandardCharsets.UTF_8.name();
-        logger.trace(name + "=" + value);
-        try {
-            return String.format("%s=%s",
-                    URLEncoder.encode(name, charset),
-                    URLEncoder.encode(value, charset));
-        } catch (UnsupportedEncodingException e) {
-            logger.error(e.getMessage());
-        }
-        return "";
-    }
+            String pagePath = request.getResource().getPath().substring(0,request.getResource().getPath().indexOf("/jcr:content"));
+            page = ResourceProvider.from(resourceResolver).getPage(pagePath);
 
-    private Map<String,String> getFormProperties(Node node, Page formPage, SlingHttpServletRequest request) {
-        Map<String, String> properties = new HashMap<>();
-        try {
-            String formid;
-            String formname;
-            Node xf = node.getNode("experiencefragment");
-            String path = xf.getProperty("fragmentPath").getString();
-            Node fieldset = resourceResolver.getResource(path + "/jcr:content/root/field_set").adaptTo(Node.class);
-            formid = fieldset.getProperty("formid").getString();
-            formname = fieldset.getProperty("formname").getString();
+            data = request.getRequestParameterMap().entrySet().stream()
+                    .collect(Collectors.toMap(Map.Entry::getKey, entry->request.getParameter(entry.getKey())));
 
-            String[] formProperties = new String[]{
-                    "product_interest",
-                    "content_prefs",
-                    "elqCampaignID",
-                    "campaignid",
-                    "C_Lead_Business_Unit1",
-                    JCR_PURL_PAGE_URL,
-                    "productLine1",
-                    "C_Lead_Offer_Most_Recent1",
-                    "ex_assettype",
-                    "ex_act",
-                    "ex_assetname",
-                    "LMA_license",
-                    "AWS_Trial",
-                    "formname",
-                    "formid",
-                    "formType",
-                    "leadDescription1",
-                    "emailid",
-                    FN_OPT_IN,
-                    FN_CONTACT_ME,
-                    "emailSubjectLine",
-                    "recipient",
-                    "bypassOSB"
-            };
-            Arrays.stream(formProperties).forEach(s -> properties.put(s, getFormProperty(node, s)));
-            properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
-            properties.put("content_prefs", getContentPreferenceFromNodeName(properties.get("content_prefs")));
-            properties.put("productLine1", getProductLineFromNodeName(properties.get("productLine1")));
-            properties.put("LMA_License", properties.get("LMA_license").equals("Yes") ? "True" : "False");
-            if (properties.getOrDefault("formid", "").isEmpty())
-                properties.put("formid", formid);
-            if (properties.getOrDefault("formname", "").isEmpty())
-                properties.put("formname", formname);
-            properties.remove("LMA_license");
-            ValueMap map = formPage.getProperties();
-            String formGUID = (String) (map.containsKey("contentId") ? map.get("contentId") : map.get("jcr:baseVersion"));
+            properties = init.getFormProperties();
 
-            // DXP-1344
-            if (!properties.getOrDefault("emailid", "").isEmpty()) {
-                properties.put("ty_emid", properties.getOrDefault("emailid", ""));
-                properties.remove("emailid");
+            type = properties.getOrDefault("formType", "Lead Capture");
+
+            // validate compliance
+            Boolean isValidResult = true;
+            String errorMsg = "";
+
+            if (properties.getOrDefault("C_Lead_Offer_Most_Recent1", "").equals(TRIAL_DOWNLOAD)) {
+                Map<String, String> complianceData = init.checkExportCompliance();
+                String result = complianceData.get("Result");
+                errorMsg = complianceData.get("ErrorMsg");
+                data.put("MkDenial_Result", result);
+                data.put("MkDenial_Reason", errorMsg);
+                if (!result.equals("Success"))
+                    isValidResult = false;
             }
 
-            // Strip off any leading hostname that comes from the resource mapping.
-            String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
-            Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
-            Matcher matcher = pattern.matcher(purlPath);
-            matcher.find();
-
-            String purlPage = purlPath;
-            if (matcher.matches()) {
-                purlPage = matcher.group(4);
-            }
-
-            String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
-            properties.put(PURL_PAGE_URL, purlPageUrl);
-            properties.remove(JCR_PURL_PAGE_URL);
-
-            properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
-            // Yes, this is correct, property name Submit = "Action"
-            properties.put("Submit", "Action");
-            properties.put("elqCookieWrite", "0");
-            properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
-            properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
-            properties.put("CampaignID", properties.get("campaignid"));
-            properties.remove("campaignid");
-            properties.put("elqSiteID", elqSiteID);
-            String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
-            properties.put("form_submitdate", timeStamp);
-        } catch (RepositoryException e) {
-            logger.error("Form has no experience fragment.");
+            isValid = isValidResult;
+            validationError = errorMsg;
         }
-        return properties;
-    }
 
-    private String getContentPreferenceFromNodeName(String nodeName) {
-        String value = "";
-        try {
-            value = session.getNode("/content/bmc/resources/content-preferences/"+nodeName).getProperty("text").getString();
-        } catch (RepositoryException e) {
-            e.printStackTrace();
-        }
-        return value;
     }
-
-    private String getProductLineFromNodeName(String nodeName) {
-        String value = "";
-        try {
-            value = session.getNode("/content/bmc/resources/product-lines/"+nodeName).getProperty("text").getString();
-        } catch (RepositoryException e) {
-            e.printStackTrace();
-        }
-        return value;
-    }
-
-    private String getProductInterestFromNodeName(String nodeName) {
-        String value = "";
-        try {
-            value = session.getNode("/content/bmc/resources/product-interests/"+nodeName).getProperty("jcr:title").getString();
-        } catch (RepositoryException e) {
-            e.printStackTrace();
-        }
-        return value;
-    }
-
-    private String getFormProperty(Node node, String property) {
-        String value = "";
-        try {
-            if (node.hasProperty(property))
-                value = node.getProperty(property).getString();
-        } catch (RepositoryException e) {
-            logger.error(e.getMessage());
-        }
-        logger.trace(property + ": " + value);
-        return value;
-    }
-
 }
