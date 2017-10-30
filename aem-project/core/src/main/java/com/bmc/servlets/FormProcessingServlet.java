@@ -160,8 +160,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 validationError = errorMsg;
             }
         }
-        String data = prepareFormData(formData, formProperties);
-        logger.trace("Encoded Form Data: " + data);
+
         String formType = (String) formProperties.getOrDefault("formType", "Lead Capture");
         Boolean honeyPotFailure = false;
         for (String honeyPotField : honeyPotFields) {
@@ -171,26 +170,18 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             }
         }
         if (!honeyPotFailure) {
-            int status = 0;
             switch (formType) {
                 case "Lead Capture":
-                    status = sendData(data);
+                    submitToEloqua(formData, formProperties, request);
                     break;
                 case "Parallel":
-                    status = sendData(data);
+                    submitToEloqua(formData, formProperties, request);
                     sendFormEmail(formData, formProperties, formPage, request);
                     break;
                 case "Email Only":
                     sendFormEmail(formData, formProperties, formPage, request);
                     break;
             }
-            String xml = "";
-            try {
-                xml = FormProcessingXMLService.getFormXML(formData, formProperties, request, serviceUrl);
-            } catch (Exception e) {
-                logger.error("Error getting XML for form email automation.");
-            }
-            sendAutomationEmail(xml, status, formData, formProperties);
         }
         if (purlPage != null) {
             PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
@@ -221,14 +212,29 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         return result;
     }
 
-    private void sendAutomationEmail(String xml, int status, Map<String,String> formData, Map<String,String> formProperties) {
+    private void submitToEloqua(Map<String, String> formData, Map<String, String> formProperties, SlingHttpServletRequest request) {
+        Map<String,String> eloquaFormData = resolveFormData(formData, formProperties);
+        String data = prepareFormData(eloquaFormData);
+        logger.trace("Encoded Form Data: " + data);
+        int status = sendData(data);
+
+        String xml = "";
+        try {
+            xml = FormProcessingXMLService.getFormXML(eloquaFormData, request, serviceUrl);
+        } catch (Exception e) {
+            logger.error("Error getting XML for form email automation.");
+        }
+        sendAutomationEmail(xml, status, eloquaFormData);
+    }
+
+    private void sendAutomationEmail(String xml, int status, Map<String,String> eloquaFormData) {
         logger.info(xml);
         if (automationEmailEnabled) {
             Map<String, String> emailParams = new HashMap<>();
             String templatePath = "/etc/notification/email/text/plaintext.txt";
             emailParams.put("fromAddress", FROM_ADDRESS);
-            String email = formData.getOrDefault("C_EmailAddress", "");
-            String formId = formProperties.getOrDefault("formid", "");
+            String email = eloquaFormData.getOrDefault("C_EmailAddress", "");
+            String formId = eloquaFormData.getOrDefault("formid", "");
             String statusName = (status == 200 || status == 302) ? "SUCCESS" : "FAILURE";
             StringBuilder ccLines = new StringBuilder();
             for (String cc : automationEmailCCRecipients) {
@@ -391,13 +397,13 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
     }
 
-    private String prepareFormData(Map<String, String> requestData, Map<String, String> formNodeProperties) {
+    private Map<String, String> resolveFormData(Map<String, String> formData, Map<String, String> formProperties) {
         // initialize post pairs map with form node properties
-        Map<String,String> pairs = new HashMap<>();
-        pairs.putAll(formNodeProperties);
+        Map<String, String> pairs = new HashMap<>();
+        pairs.putAll(formProperties);
 
         // add to or override pairs with request data (form post and querystring), with additional business logic
-        requestData.entrySet().stream()
+        formData.entrySet().stream()
                 .filter(entry -> isAllowedFieldName(entry.getKey()))
                 .forEach(entry -> {
                     String key = getEloquoaFieldName(entry.getKey());
@@ -425,7 +431,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                             .orElse(""));
         }
 
-        return pairs.entrySet().stream()
+        return pairs;
+    }
+
+    private String prepareFormData(Map<String,String> eloquaFormData) {
+        return eloquaFormData.entrySet().stream()
                 .map(entry->encodeProperty(entry.getKey(), entry.getValue()))
                 .collect(Collectors.joining("&"));
     }
