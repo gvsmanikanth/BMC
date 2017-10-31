@@ -230,7 +230,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 default:
                                     break;
                             }
-                            if (!value.isEmpty() && !overrideFormParameters.containsKey(key))
+                            if ((!value.isEmpty() && overrideFormParameters.containsKey(key))
+                                || !overrideFormParameters.containsKey(key))
                                 pairs.put(key, value);
                         });
 
