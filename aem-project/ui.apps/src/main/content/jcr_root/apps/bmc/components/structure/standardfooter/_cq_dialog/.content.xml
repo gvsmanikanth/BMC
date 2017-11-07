@@ -187,6 +187,10 @@
                                                         <LinkedIn jcr:primaryType="nt:unstructured"
                                                                   text="LinkedIn"
                                                                   value="social-linkedin" />
+                                                        <Weibo
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Weibo"
+                                                            value="social-weibo"  />      
                                                     </items>
                                                 </socialMediaType>
                                             </items>
