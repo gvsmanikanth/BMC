@@ -174,6 +174,10 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                         StringUtils.stripEnd(urlLeftPart, "/"),
                         StringUtils.stripStart(ddlPath, "/"));
             }
+            String fltk=queryMap.get("fltk_"); // hack to prevent fltk values containg a not-terribly-valid %2D not to forward as '+'
+            if (fltk != null) {
+                queryMap.put("fltk_",fltk.replace("+","%2B"));
+            }
         }
 
         if (queryMap.size() == 0)
