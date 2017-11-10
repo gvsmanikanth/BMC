@@ -16,6 +16,7 @@
 <template data-sly-template.head="${ @ page }" data-sly-use.headlibRenderer="headlibs.html"
           data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <sly data-sly-test.isHomePage="${properties.homePage}">
         <title>${properties['browserTitle'] || currentPage.title || resource.name}</title>
         <meta name="google-site-verification" content="7FGS9HcYo7XLesfesSP-tQAHPt4qy3Bw10JFU4tQI4w" />
