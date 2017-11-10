@@ -45,21 +45,18 @@ public class CustomerStoryService  {
         return ModelHelper.getModel(page, map, CustomerStoryCard.class);
     }
 
-    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath, String backgroundImageSrc, MetadataInfoProvider metadataProvider) {
+    public FeaturedCustomerStoryCard getFeaturedStoryCard(String pagePath,MetadataInfoProvider metadataProvider) {
         Page page = metadataProvider.getResourceProvider().getPage(pagePath);
         if (page == null)
             return null;
 
-        backgroundImageSrc = StringHelper.resolveHref(backgroundImageSrc).orElse(null);
-        if (backgroundImageSrc == null)
-            return null;
+       
 
         Map<String, Object> map = getCustomerStoryCardValueMap(page, metadataProvider);
         if (map == null)
             return null;
 
-        map.put("backgroundImageSrc", backgroundImageSrc);
-
+      
         return ModelHelper.getModel(page, map, FeaturedCustomerStoryCard.class);
     }
 
