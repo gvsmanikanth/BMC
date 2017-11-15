@@ -56,7 +56,10 @@
                 if (protocolIndex > -1 && (queryIndex == -1 || queryIndex > protocolIndex)) {
                     redirectPath = location;
                 } else {
-                    redirectPath = request.getContextPath() + location + ".html";
+                    // OLD WAY, NOT COMPATIBLE WITH BMC URL REWRITING/SHORTENING
+                    //redirectPath = request.getContextPath() + location + ".html";
+                    // DXP-849 UPDATE TO ENSURE REDIRECT PATHS ARE MAPPED PER URL SHORTENING SCHEME
+                    redirectPath = resourceResolver.map(location);
                 }
 
                 if (isWCMModeDisabledParameter) {
