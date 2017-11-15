@@ -21,11 +21,8 @@
 --%><%@ page import="org.apache.commons.lang3.ArrayUtils,
                      com.day.cq.wcm.api.WCMMode,
                      com.day.cq.wcm.foundation.ELEvaluator, com.day.cq.wcm.api.components.IncludeOptions" %>
-<%@ page import="org.slf4j.Logger" %>
-<%@ page import="org.slf4j.LoggerFactory" %>
 <%
 %><%@include file="/libs/foundation/global.jsp" %><%
-
 %><cq:include script="init.jsp"/><%
 
     // read the redirect target from the 'page properties'
