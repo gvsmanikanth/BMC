@@ -20,7 +20,10 @@
 
 --%><%@ page import="org.apache.commons.lang3.ArrayUtils,
                      com.day.cq.wcm.api.WCMMode,
-                     com.day.cq.wcm.foundation.ELEvaluator, com.day.cq.wcm.api.components.IncludeOptions" %><%
+                     com.day.cq.wcm.foundation.ELEvaluator, com.day.cq.wcm.api.components.IncludeOptions" %>
+<%@ page import="org.slf4j.Logger" %>
+<%@ page import="org.slf4j.LoggerFactory" %>
+<%
 %><%@include file="/libs/foundation/global.jsp" %><%
 
 %><cq:include script="init.jsp"/><%
@@ -56,7 +59,10 @@
                 if (protocolIndex > -1 && (queryIndex == -1 || queryIndex > protocolIndex)) {
                     redirectPath = location;
                 } else {
-                    redirectPath = request.getContextPath() + location + ".html";
+                    // OLD WAY, NOT COMPATIBLE WITH BMC URL REWRITING/SHORTENING
+                    //redirectPath = request.getContextPath() + location + ".html";
+                    // DXP-849 UPDATE TO ENSURE REDIRECT PATHS ARE MAPPED PER URL SHORTENING SCHEME
+                    redirectPath = resourceResolver.map(location);
                 }
 
                 if (isWCMModeDisabledParameter) {
