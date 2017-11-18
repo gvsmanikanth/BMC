@@ -3,7 +3,7 @@
 <sly data-sly-use.OfferingTemplate="offering-templates.html">
     <sly data-sly-test = "${ResourceProps}">
         <sly data-sly-call="${OfferingTemplate.FullDiscription @
-                            productDiscription=ResourceProps['longDiscription'],
+                            productDescription=ResourceProps['productDescription'],
                             productAvailability=ResourceProps['productAvailability'],
                             productAvailabilityList=ProductList,
                             productName=ResourceProps['productName'],

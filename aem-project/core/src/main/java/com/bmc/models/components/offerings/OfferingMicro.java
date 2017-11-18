@@ -1,5 +1,6 @@
 package com.bmc.models.components.offerings;
 
+import com.adobe.cq.wcm.core.components.models.Page;
 import com.bmc.mixins.UrlResolver;
 import com.bmc.models.url.LinkInfo;
 import org.apache.sling.api.resource.Resource;
@@ -34,6 +35,9 @@ public class OfferingMicro {
     private String resourcePath;
 
 
+
+    private String itemTitle;
+    private String itemDescription;
     private HashMap<String,String> resourceProps;
     private List<HashMap> productAvailabilityList;
     private Boolean isModal = false;
@@ -43,20 +47,22 @@ public class OfferingMicro {
     @PostConstruct
     protected void init() {
         try {
-            if(resourcePath == "" || resourcePath==null){
-                return;
-            }
 
             Node mainNode = null;
-            Node longDiscription = null;
+            Node productDescription = null;
             Node productAvailabilityListNode;
             NodeIterator productAvailabilityListNI;
 
-            if(session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
+            resourceProps = new HashMap<>();
+
+            setTitleAndDescription();
+
+            if((resourcePath != null || resourcePath!="") && session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
                 mainNode = session.getNode(resourcePath + "/jcr:content/root/offer_item");
 
-                if(mainNode.hasNode("productDiscription"))
-                    longDiscription = mainNode.getNode("productDiscription");
+                if(mainNode.hasNode("productDescription")) {
+                    productDescription = mainNode.getNode("productDescription");
+                }
 
 
                 if(mainNode.hasNode("productAvailabilityList")) {
@@ -76,21 +82,18 @@ public class OfferingMicro {
                 }
             }
 
-            resourceProps = new HashMap<>();
-
             if(mainNode != null) {
-
                 Node finalMainNode = mainNode;
                 PROP_LIST.forEach(s -> setResourceProps(finalMainNode,null, s));
 
                 setAssetTitleFromPicker(mainNode,"datasheetPicker","datasheetLink");
                 setAssetTitleFromPicker(mainNode,"assetPicker","assetLinkText");
 
-                if ((longDiscription != null) && longDiscription.hasProperty("text"))
-                    setResourceProps(longDiscription,"longDiscription", longDiscription.getProperty("text").getValue().getString());
+                if ((productDescription != null) && productDescription.hasProperty("text"))
+                    setResourceProps(productDescription,"productDescription", productDescription.getProperty("text").getValue().getString());
             }
         }catch (Exception e){
-            logger.error("ERROR: {}", e);
+            logger.error("ERROR: ", e.getMessage());
         }
     }
 
@@ -104,6 +107,18 @@ public class OfferingMicro {
         } catch (RepositoryException e) {
             logger.error("ERROR", e.getMessage());
         }
+    }
+
+    private void setTitleAndDescription(){
+        ResourceResolver resourceResolver = resource.getResourceResolver();
+        Resource itemResource = resourceResolver.getResource(resource.getPath().split("/jcr:content/")[0]);
+
+        UrlResolver itemInfo = UrlResolver.from(itemResource);
+        LinkInfo linkInfo = itemInfo.getLinkInfo(itemResource.getPath());
+        itemTitle = linkInfo.getText();
+        itemDescription = linkInfo.getDescription();
+        resourceProps.put("shortDescription", itemDescription);
+        resourceProps.put("linkText", itemTitle);
     }
 
     private void setAssetTitleFromPicker(Node mainNode, String pickerName, String key){
@@ -133,6 +148,14 @@ public class OfferingMicro {
 
     public HashMap<String, String> getResourceProps() {
         return resourceProps;
+    }
+
+    public String getItemTitle() {
+        return itemTitle;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
     }
 
     public String getVideoID() {
