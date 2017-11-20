@@ -47,39 +47,21 @@ public class OfferingMicro {
     @PostConstruct
     protected void init() {
         try {
-
             Node mainNode = null;
             Node productDescription = null;
-            Node productAvailabilityListNode;
-            NodeIterator productAvailabilityListNI;
 
             resourceProps = new HashMap<>();
-
             setTitleAndDescription();
 
-            if((resourcePath != null || resourcePath!="") && session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
+            if((resourcePath != null && resourcePath!="") && session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
                 mainNode = session.getNode(resourcePath + "/jcr:content/root/offer_item");
-
                 if(mainNode.hasNode("productDescription")) {
                     productDescription = mainNode.getNode("productDescription");
                 }
-
-
-                if(mainNode.hasNode("productAvailabilityList")) {
-                    productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
-                    productAvailabilityListNI = productAvailabilityListNode.getNodes();
-
-                    productAvailabilityList = new ArrayList<>();
-
-                    while (productAvailabilityListNI.hasNext()) {
-                        HashMap<String, String> pNodeHash = new HashMap<>();
-                        Node pNode = productAvailabilityListNI.nextNode();
-                        Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString() + "/jcr:content/");
-                        pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
-                        pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
-                        productAvailabilityList.add(pNodeHash);
-                    }
-                }
+                createProductAvailabilityList(mainNode);
+            } else if (resourcePath == null){
+                mainNode = session.getNode(resource.getPath());
+                createProductAvailabilityList(mainNode);
             }
 
             if(mainNode != null) {
@@ -93,6 +75,30 @@ public class OfferingMicro {
                     setResourceProps(productDescription,"productDescription", productDescription.getProperty("text").getValue().getString());
             }
         }catch (Exception e){
+            logger.error("ERROR: ", e.getMessage());
+        }
+    }
+
+    private void createProductAvailabilityList(Node mainNode){
+        Node productAvailabilityListNode;
+        NodeIterator productAvailabilityListNI;
+        try {
+            if(mainNode.hasNode("productAvailabilityList")) {
+                productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
+                productAvailabilityListNI = productAvailabilityListNode.getNodes();
+
+                productAvailabilityList = new ArrayList<>();
+
+                while (productAvailabilityListNI.hasNext()) {
+                    HashMap<String, String> pNodeHash = new HashMap<>();
+                    Node pNode = productAvailabilityListNI.nextNode();
+                    Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString() + "/jcr:content/");
+                    pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
+                    pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
+                    productAvailabilityList.add(pNodeHash);
+                }
+            }
+        } catch (RepositoryException e) {
             logger.error("ERROR: ", e.getMessage());
         }
     }
@@ -127,7 +133,6 @@ public class OfferingMicro {
 
                 ResourceResolver resourceResolver = resource.getResourceResolver();
                 Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
-
 
                 UrlResolver itemInfo = UrlResolver.from(itemResource);
                 LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());

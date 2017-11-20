@@ -8,7 +8,13 @@
                         <div data-sly-test="${item == 'shortDescription'}" id="${item}">${OfferingModel.ItemDescription}</div>
                         <div data-sly-test="${item == 'linkText'}" id="${item}">${OfferingModel.ItemTitle}</div>
                     </sly>
-                    <sly data-sly-test="${item != 'shortDescription' || item != 'linkText'}">
+                    <sly data-sly-test="${item == 'productAvailability'}">
+                        <div id="${item}">${properties[item]}</div>
+                        <div data-sly-test="${properties[item] != 'This product is available as a standalone offering'}" data-sly-list.product="${OfferingModel.ProductAvailabilityList}">
+                            <a href="${product.pUrl}.html" target="_self">${product.pTitle @ context='html'}</a><sly data-sly-test="${!productList.last}">, </sly>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${item != 'shortDescription' && item != 'linkText' && item != 'productAvailability'}">
                         <div id="${item}">${properties[item]}</div>
                     </sly>
                 </sly>
