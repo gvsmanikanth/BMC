@@ -1286,7 +1286,7 @@ a.white:focus,
     }
 }
 
-//WEB-568 - Added utitlity classes to to change text color and remove padding from elements.
+//WEB-568 - Added utitlity classes to change text color and remove padding from elements.
 
 .h2-variation-1 {
       color: color(ship-gray);
@@ -1295,6 +1295,13 @@ a.white:focus,
       @include font-size(36);
       font-weight: 500;
       line-height: 1.25;
+}
+
+//WEB-2323 - Added utility classes to change color and font width for h3 form thank-you page title.
+
+.h3-variation-1 {
+      font-weight: 300; 
+      color: #58595b;
 }
 
 .padding-bottom-0{
