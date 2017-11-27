@@ -11,6 +11,7 @@ require('./vendor/jquery.autocomplete.js');
 require('./vendor/jquery.cookie.js');
 require('./vendor/jquery.validate.js');
 require('./vendor/jquery.floatlabels.js');
+require('./vendor/jquery.externalLink.js');
 require('./modules/sifter.js');
 require('./modules/sift-generator.js');
 require('./vendor/jquery.fancybox.js');
