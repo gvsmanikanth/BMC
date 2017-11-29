@@ -139,9 +139,11 @@ public class OfferingMicro {
 
                 videoID = linkInfo.getHref();
                 resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
+            } else {
+                resourceProps.put(key, "");
             }
         } catch (RepositoryException e) {
-            logger.error("ERROR",e.getMessage());
+            logger.error("ERROR", e.getMessage());
         }
 
     }
