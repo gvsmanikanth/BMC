@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Career teams"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Career Locations."
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <careersTopTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the careersTopTitle"
+                                fieldLabel="careersTopTitle"
+                                name="./careersTopTitle"/>
+                            <careersTopCopy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the careers Top Copy."
+                                fieldLabel="careers Top copy"
+                                name="./careersTopCopy"/>
+                            <subheaderText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Sub Header Text"
+                                fieldLabel="Sub header Text"
+                                name="./subheaderText"/>
+                            <bmcLifeImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the subtitle"
+                                fieldLabel="Subtitle"
+                                name="./subtitle"/>
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+    <cq:editConfig/>
+</jcr:root>
