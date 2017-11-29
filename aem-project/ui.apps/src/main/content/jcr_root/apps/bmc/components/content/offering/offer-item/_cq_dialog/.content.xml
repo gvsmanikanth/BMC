@@ -245,7 +245,7 @@
                                         sling:resourceType="granite/ui/components/foundation/layouts/well" />
                                 <items jcr:primaryType="nt:unstructured">
                                     <primaryParentOfferingPage sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                               fieldDescription="picker to select the parent page this Offering Micro item should be displayed on"
+                                                               fieldDescription="Picker to select the parent page this Offering Micro item should be displayed on"
                                                                name="./primaryParentOfferingPage"
                                                                fieldLabel="Primary Parent Offering Page"
                                                                rootPath="/content"
@@ -253,7 +253,7 @@
                                     <anchorTagText fieldLabel="Anchor Tag Text"
                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                    name="./anchorTagText"
-                                                   fieldDescription="Hyphens between words and lower case letters were required in the field."
+                                                   fieldDescription="Lowercase letters &amp; Hyphens between words are required in the field."
                                                    jcr:primaryType="nt:unstructured" />
                                 </items>
                             </parentWell>
