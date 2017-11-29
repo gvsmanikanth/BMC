@@ -253,7 +253,7 @@
                                     <anchorTagText fieldLabel="Anchor Tag Text"
                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                    name="./anchorTagText"
-                                                   fieldDescription="Lowercase letters &amp; Hyphens between words are required in the field."
+                                                   fieldDescription="Use hyphens to separate words (no spaces)."
                                                    jcr:primaryType="nt:unstructured" />
                                 </items>
                             </parentWell>
