@@ -802,6 +802,11 @@ function addFilterToArrayProtoype() {
 		});
 	}
 	gotoOwlSlide("#owl-location");
+	
+
+//WEB-2197 - Link behavior of picked items - same, separate, or modal window
+$("a").externalLink({fileTypes:".doc,.pdf"});
+
 
 	//breaks fancybox popup
 	// to top right away

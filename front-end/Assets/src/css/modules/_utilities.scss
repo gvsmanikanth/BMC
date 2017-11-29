@@ -32,6 +32,7 @@
 .divider-secondary {
 	@extend %divider-config;
 	border-top: 1px dashed color(colorEmphasis);
+	padding:1px 0px;
 }
 
 .footnote {
