@@ -136,6 +136,18 @@
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/tr/en.html]"
                     sling:match="dev.bmcsoftware.com.tr/$"/>
+	    <dev.bmcsoftware.com.au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/au/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+            </dev.bmcsoftware.com.au>
+            <dev.bmcsoftware.com_au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en.html]"
+                    sling:match="dev.bmcsoftware.com.au/$"/>
+					
             <dev.bmcsoftware.de
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/de/de]">
@@ -1987,6 +1999,44 @@
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/tr/en.html]"
                     sling:match="staging.bmcsoftware.com.tr/$"/>
+	    <staging.bmcsoftware.com.au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/au/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+                <content_reverse
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/(.*).html]"
+                        sling:match="$1.html"/>
+                <content_reverse_nohtml
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/(.*)]"
+                        sling:match="$1.html"/>
+                <root_reverse
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en(.html)?]"
+                        sling:match="$"/>
+                <search
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/search.html]"
+                        sling:match="search/"/>
+                <sitemap
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/sitemap-www.bmc.com.xml]"
+                        sling:match="sitemap.xml$"/>
+                <robots jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/robots.txt]"
+                        sling:match="robots.txt$"/>
+                <crossdomain
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/crossdomain.xml]"
+                        sling:match="crossdomain.xml$"/>
+            </staging.bmcsoftware.com.au>
+            <staging.bmcsoftware.com_au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en.html]"
+                    sling:match="staging.bmcsoftware.com.au/$"/>
             <staging.bmcsoftware.de
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/de/de]">
@@ -3169,6 +3219,44 @@
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/tr/en.html]"
                     sling:match="www.bmcsoftware.com.tr/$"/>
+	    <www.bmcsoftware.com.au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en]">
+                <redirect jcr:primaryType="sling:Mapping"
+                          sling:internalRedirect="[/content/bmc/au/en/$1,/$1]"
+                          sling:match="(.+)$"/>
+                <content_reverse
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/(.*).html]"
+                        sling:match="$1.html"/>
+                <content_reverse_nohtml
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/(.*)]"
+                        sling:match="$1.html"/>
+                <root_reverse
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en(.html)?]"
+                        sling:match="$"/>
+                <search
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/content/bmc/au/en/search.html]"
+                        sling:match="search/"/>
+                <sitemap
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/sitemap-www.bmc.com.xml]"
+                        sling:match="sitemap.xml$"/>
+                <robots jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/robots.txt]"
+                        sling:match="robots.txt$"/>
+                <crossdomain
+                        jcr:primaryType="sling:Mapping"
+                        sling:internalRedirect="[/etc/designs/bmc/static/crossdomain.xml]"
+                        sling:match="crossdomain.xml$"/>
+            </www.bmcsoftware.com.au>
+            <www.bmcsoftware.com_au
+                    jcr:primaryType="sling:Mapping"
+                    sling:internalRedirect="[/content/bmc/au/en.html]"
+                    sling:match="www.bmcsoftware.com.au/$"/>
             <www.bmcsoftware.de
                     jcr:primaryType="sling:Mapping"
                     sling:internalRedirect="[/content/bmc/de/de]">
