@@ -133,7 +133,7 @@ public class OfferingLinkService {
      */
     private PageData getOfferingPageData(Page page, MetadataInfoProvider metadataProvider) {
         Template template = page.getTemplate();
-
+        String text = null;
         // resolve offering micro items
         String anchorText = "";
         if (template != null && template.getPath().equals(OFFERING_MICRO_ITEM)) {
@@ -145,14 +145,18 @@ public class OfferingLinkService {
                     page = parentPage;
                     template = page.getTemplate();
                     anchorText = map.get("anchorTagText", "");
+                    // get link text and url
+                    text = map.get("productName","");
                 }
             }
 
+        }else{
+            // get link text and url
+            text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
+                    .orElse(page.getName());
         }
 
-        // get link text and url
-        String text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
-                .orElse(page.getName());
+
         UrlInfo url = UrlInfo.from(page);
         if (!anchorText.isEmpty())
             url = UrlInfo.from(url.getHref() + "#" + anchorText);
