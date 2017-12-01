@@ -97,6 +97,9 @@ public class OfferingMicro {
                     pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
                     productAvailabilityList.add(pNodeHash);
                 }
+            } else {
+                productAvailabilityList = new ArrayList<>();
+                productAvailabilityList.add(new HashMap<String,String>());
             }
         } catch (RepositoryException e) {
             logger.error("ERROR: ", e.getMessage());
