@@ -2,7 +2,7 @@
     <ul class="accordion">
         <li class="accordion-item">
             <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
-            <a class="accordion-item-anchor" href="#${anchorTagText}">${productName}</a>
+            <a class="accordion-item-anchor" href="#${anchorTagText}">${productName @context='html'}</a>
             <div class="accordion-item-content">
                 <p data-sly-test="${productDescription}">${productDescription @context='html'}</p>
                 <p data-sly-test="${productAvailability}">${productAvailability}
