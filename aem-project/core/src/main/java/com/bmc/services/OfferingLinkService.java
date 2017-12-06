@@ -1,12 +1,10 @@
 package com.bmc.services;
 
-import com.bmc.components.testmulti.core.models.MiniCarouselMultiComponent;
 import com.bmc.mixins.MetadataInfoProvider;
 import com.bmc.mixins.ResourceProvider;
 import com.bmc.models.components.offerings.OfferingLinkData;
 import com.bmc.models.components.offerings.ProductLinkSection;
 import com.bmc.models.metadata.MetadataInfo;
-import com.bmc.models.metadata.MetadataOption;
 import com.bmc.models.metadata.MetadataType;
 import com.bmc.models.url.LinkInfo;
 import com.bmc.models.url.UrlInfo;
@@ -19,7 +17,6 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -128,7 +125,7 @@ public class OfferingLinkService {
         public List<LinkInfo> getLinks() { return links; }
 
         @Override
-        public int compareTo(com.bmc.models.components.offerings.ProductLinkSection offeringLinkSection) {
+        public int compareTo(ProductLinkSection offeringLinkSection) {
             return name.compareTo(offeringLinkSection.getName());
         }
     }

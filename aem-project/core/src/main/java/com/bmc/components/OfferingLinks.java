@@ -8,7 +8,7 @@ import com.bmc.models.components.offerings.ProductLinkSection;
 import com.bmc.models.url.LinkInfo;
 import com.bmc.services.OfferingLinkService;
 import com.google.gson.GsonBuilder;
-
+import com.day.cq.wcm.api.Page;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -27,7 +27,7 @@ public class OfferingLinks extends WCMUsePojo implements MetadataInfoProvider_Re
         if (offeringLinkService == null)
             return;
 
-        com.day.cq.wcm.api.Page languagePage = getCurrentPage().getAbsoluteParent(3);
+        Page languagePage = getCurrentPage().getAbsoluteParent(3);
         String language = (languagePage != null && languagePage.getPath().startsWith("/content/bmc/language-masters"))
                 ? languagePage.getName() : "en";
 
@@ -43,7 +43,7 @@ public class OfferingLinks extends WCMUsePojo implements MetadataInfoProvider_Re
     static class AutocompleteTerm {
         AutocompleteTerm(LinkInfo linkInfo) {
             value = linkInfo.getText();
-            data = linkInfo.getTarget();
+            data = linkInfo.getHref();
         }
         public final String value;
         public final String data;
