@@ -5,7 +5,6 @@ import com.bmc.mixins.ResourceProvider;
 import com.bmc.models.components.offerings.OfferingLinkData;
 import com.bmc.models.components.offerings.ProductLinkSection;
 import com.bmc.models.metadata.MetadataInfo;
-import com.bmc.models.metadata.MetadataOption;
 import com.bmc.models.metadata.MetadataType;
 import com.bmc.models.url.LinkInfo;
 import com.bmc.models.url.UrlInfo;
@@ -18,7 +17,8 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
-import org.apache.sling.api.resource.ValueMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
 import javax.jcr.query.qom.*;
@@ -31,10 +31,12 @@ import java.util.stream.Stream;
 @Component(label = "Offering Link Service", immediate = true)
 @Service(value=OfferingLinkService.class)
 public class OfferingLinkService {
+    private static final Logger logger = LoggerFactory.getLogger(OfferingLinkService.class);
+
     private static final String OFFERING_PAGE_COMMON = "bmc/components/structure/offering-page-common";
     private static final String OFFERING_MICRO_ITEM = "/conf/bmc/settings/wcm/templates/offering-micro-item";
     private final Cache<String, OfferingLinkData> dataCache = CacheBuilder.newBuilder()
-            .expireAfterWrite(15, TimeUnit.MINUTES)
+            .expireAfterWrite(1, TimeUnit.MINUTES)
             .build();
 
     public OfferingLinkData getOfferingLinkData(MetadataInfoProvider metadataProvider, String language) {
@@ -123,7 +125,7 @@ public class OfferingLinkService {
         public List<LinkInfo> getLinks() { return links; }
 
         @Override
-        public int compareTo(com.bmc.models.components.offerings.ProductLinkSection offeringLinkSection) {
+        public int compareTo(ProductLinkSection offeringLinkSection) {
             return name.compareTo(offeringLinkSection.getName());
         }
     }
@@ -133,26 +135,30 @@ public class OfferingLinkService {
      */
     private PageData getOfferingPageData(Page page, MetadataInfoProvider metadataProvider) {
         Template template = page.getTemplate();
-
+        String text = "";
         // resolve offering micro items
         String anchorText = "";
         if (template != null && template.getPath().equals(OFFERING_MICRO_ITEM)) {
-            ValueMap map = page.getProperties();
-            String parentOfferingPath = map.get("primaryParentOfferingPage", "");
-            if (!parentOfferingPath.isEmpty()) {
-                Page parentPage = metadataProvider.getResourceProvider().getPage(parentOfferingPath);
-                if (parentPage != null) {
-                    page = parentPage;
-                    template = page.getTemplate();
-                    anchorText = map.get("anchorTagText", "");
+            try {
+                Node offerItem = page.adaptTo(Node.class).getNode("jcr:content/root/offer_item");
+                String parentOfferingPath = offerItem.hasProperty("primaryParentOfferingPage")?offerItem.getProperty("primaryParentOfferingPage").getString():"";
+                if (!parentOfferingPath.isEmpty()) {
+                    Page parentPage = metadataProvider.getResourceProvider().getPage(parentOfferingPath);
+                    if (parentPage != null) {
+                        page = parentPage;
+                        template = page.getTemplate();
+                        anchorText = offerItem.hasProperty("anchorTagText") ? offerItem.getProperty("anchorTagText").getString():"";
+                        text = offerItem.hasProperty("productName") ? offerItem.getProperty("productName").getString():"";
+                    }
                 }
+            } catch (RepositoryException e) {
+                logger.error("ERROR:", e.getMessage());
             }
-
+        } else {
+            text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
+                    .orElse(page.getName());
         }
 
-        // get link text and url
-        String text = StringHelper.coalesceStringMember(page, Page::getNavigationTitle, Page::getPageTitle, Page::getTitle)
-                .orElse(page.getName());
         UrlInfo url = UrlInfo.from(page);
         if (!anchorText.isEmpty())
             url = UrlInfo.from(url.getHref() + "#" + anchorText);
@@ -230,7 +236,7 @@ public class OfferingLinkService {
 
             return result.stream();
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("ERROR", e.getMessage());
             return Stream.empty();
         }
     }

@@ -1,4 +1,7 @@
 <sly data-sly-use.linkData="com.bmc.components.OfferingLinks"></sly>
+<script type="text/javascript">
+    var autocompleteTerms = ${linkData.autocompleteTermsJson @ context='unsafe'};
+</script>
 <section class="layout-full-bleed product-section-wrapper">
     <nav class="product-finder-nav layout-inner-wrap">
         <sly data-sly-resource="${'finder-nav' @resourceType='/apps/bmc/components/content/htmlarea'}"></sly>
@@ -44,14 +47,15 @@
 <section class="layout-full-bleed product-links">
     <div class="layout-inner-wrap">
         <div class="alpha-sections">
-            <div class="result-items" data-sly-use.linkData="com.bmc.components.OfferingLinks">
+            <div class="result-items">
                 <h2 class="topics-results-heading">
                     <span class="category-section-topic"></span>${'Topics' @ i18n }
                 </h2>
                 <ul class="results topic-results">
                     <li class="topics">
                         <ul class="topic-sections" data-sly-list.topic="${linkData.topicLinks}">
-                            <li class="result-item alpha-section topic ${topic.cssClass}">
+                            <sly data-sly-use.filter="${'filter.js' @linkName=topic.text}"/>
+                            <li class="result-item ${filter.alphaClass} alpha-section topic ${topic.cssClass}">
                                 <a href="${topic.href}">${topic.text @context='html'}</a>
                             </li>
                         </ul>
