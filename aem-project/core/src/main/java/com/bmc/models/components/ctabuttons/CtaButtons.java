@@ -1,3 +1,4 @@
+
 package com.bmc.models.components.ctabuttons;
 
 import com.bmc.mixins.UrlResolver;
@@ -18,8 +19,12 @@ public class CtaButtons {
 
     @Inject
     private Resource resource;
-
+    
+    /*
+     * Adding the property Optional with default values for WEB-2533
+     */
     @Inject
+    @Optional @Named("buttonURL") @Default(values="#undefined")
     private String buttonURL;
 
     @Inject
