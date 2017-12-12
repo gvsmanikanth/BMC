@@ -36,8 +36,8 @@
             <!-- one or two buttons, no headers -->
             <sly data-sly-test="${!properties.primaryCTAheader && !properties.secondaryCTAheader}">
                 <div class="text-center">
-                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
-                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
+                    <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html', i18n}</a>
+                    <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html', i18n}</a>
                 </div>
             </sly>
 

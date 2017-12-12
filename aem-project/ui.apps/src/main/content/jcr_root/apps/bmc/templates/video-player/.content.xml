@@ -2,10 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:description="Video Player Template"
           jcr:primaryType="cq:Template"
-          jcr:title="Video Player”
+          jcr:title="Video Player"
           ranking="{Long}100">
     <jcr:content
             cq:allowedTemplates="[none]"
             jcr:primaryType="cq:PageContent"
-            sling:resourceType="bmc/components/structure/video-player”/>
+            sling:resourceType="bmc/components/structure/video-player"/>
 </jcr:root>

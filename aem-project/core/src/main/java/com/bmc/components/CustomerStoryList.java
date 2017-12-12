@@ -36,7 +36,7 @@ public class CustomerStoryList extends WCMUsePojo implements MultifieldDataProvi
         filters = storyService.getFilters(this);
         featuredStory = storyService.getFeaturedStoryCard(
                 getProperties().get("featuredStoryPath", ""),
-                getProperties().get("featuredStoryBgImgSrc", ""),
+               
                 this);
 
         ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("stories").listIterator();

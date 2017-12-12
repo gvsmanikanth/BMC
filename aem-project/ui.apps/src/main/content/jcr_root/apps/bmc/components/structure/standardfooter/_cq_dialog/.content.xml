@@ -166,6 +166,9 @@
                                                                  multiple="{Boolean}false"
                                                                  name="./soccMedsType">
                                                     <items jcr:primaryType="nt:unstructured">
+                                                        <None jcr:primaryType="nt:unstructured"
+                                                                     text="None"
+                                                                     value="" />
                                                         <Communities jcr:primaryType="nt:unstructured"
                                                                      text="Communities"
                                                                      value="social-communities" />
@@ -184,6 +187,10 @@
                                                         <LinkedIn jcr:primaryType="nt:unstructured"
                                                                   text="LinkedIn"
                                                                   value="social-linkedin" />
+                                                        <Weibo
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Weibo"
+                                                            value="social-weibo"  />      
                                                     </items>
                                                 </socialMediaType>
                                             </items>

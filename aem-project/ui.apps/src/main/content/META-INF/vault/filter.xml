@@ -49,4 +49,5 @@
     <!--<filter root="/home/users/system/bmc" mode="merge" />-->
 
     <filter root="/oak:index/textLucene" />
+    <filter root="/oak:index/vidLucene" />
 </workspaceFilter>

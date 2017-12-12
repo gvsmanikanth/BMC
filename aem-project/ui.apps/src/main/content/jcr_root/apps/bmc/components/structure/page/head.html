@@ -16,6 +16,7 @@
 <template data-sly-template.head="${ @ page }" data-sly-use.headlibRenderer="headlibs.html"
           data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <sly data-sly-test.isHomePage="${properties.homePage}">
         <title>${properties['browserTitle'] || currentPage.title || resource.name}</title>
         <meta name="google-site-verification" content="7FGS9HcYo7XLesfesSP-tQAHPt4qy3Bw10JFU4tQI4w" />
@@ -60,7 +61,7 @@
         <title>${properties['browserTitle'] || currentPage.title || resource.name} - ${'BMC Software' @ i18n}</title>
     </sly>    
     <meta data-sly-test.keywords="${page.keywords}" name="keywords" content="${keywords}"/>
-    <meta data-sly-test.description="${properties['jcr:description']}" name="description" content="${description}"/>
+    <meta data-sly-test.description="${properties.meta_description}" name="description" content="${description}"/>
     <meta data-sly-test.templateName="${page.templateName}" name="template" content="${templateName}"/>
     <sly data-sly-include="head.socialmedia.html"></sly>
     <sly data-sly-include="customheaderlibs.html"></sly>
