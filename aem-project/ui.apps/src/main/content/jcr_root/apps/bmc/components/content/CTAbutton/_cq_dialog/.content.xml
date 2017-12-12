@@ -27,7 +27,7 @@
                                     <none
                                         jcr:primaryType="nt:unstructured"
                                         text="--select--"
-                                        value=""/>
+                                        value="Specify Text"/>
                                     <sales
                                         jcr:primaryType="nt:unstructured"
                                         text="Contact Sales"
