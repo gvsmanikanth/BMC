@@ -113,11 +113,11 @@ public class BmcEduMeta {
 
                     Node pageJCRContent = session.getNode(page.getPath()+"/jcr:content");
 
-                    addMataFilters("education-products", products, pageJCRContent, session);
-                    addMataFilters("education-specific-types", types, pageJCRContent, session);
-                    addMataFilters("education-version-numbers", versions, pageJCRContent, session);
-                    addMataFilters("education-broad-roles", roles, pageJCRContent, session);
-                    addMataFilters("course-delivery", deliveryMethod, pageJCRContent, session);
+                    addMetaFilters("education-products", products, pageJCRContent, session);
+                    addMetaFilters("education-specific-types", types, pageJCRContent, session);
+                    addMetaFilters("education-version-numbers", versions, pageJCRContent, session);
+                    addMetaFilters("education-broad-roles", roles, pageJCRContent, session);
+                    addMetaFilters("course-delivery", deliveryMethod, pageJCRContent, session);
 
                     newItem.setSubHeader(pageProps.getOrDefault("subHeader","").toString());
                     newItem.setDuration(!pageProps.getOrDefault("course-duration","").toString().equals("") ? pageProps.getOrDefault("course-duration","").toString()+" Hours" : "");
@@ -140,7 +140,7 @@ public class BmcEduMeta {
         }
     }
 
-    private void addMataFilters(String resName, List attrHolder, Node pageNode, Session session){
+    private void addMetaFilters(String resName, List attrHolder, Node pageNode, Session session){
         try {
             if(pageNode.hasProperty(resName)) {
                 List<String> propVals = new ArrayList<>();
@@ -158,7 +158,7 @@ public class BmcEduMeta {
 
                 for(String v : propVals) {
                     try {
-                        v = v.replace(" ","_");
+                        v = v.replace(" ","_").replace("Instructor-Led","Instructor_Led");
                         String hashCode = session.getNode(RESOURCE_ROOT+resName+"/"+v).getProperty("filterID").getValue().getString();
                         attrHolder.add(v.equals("Any") ? "0" : hashCode);
                     } catch (RepositoryException e) {
@@ -167,7 +167,7 @@ public class BmcEduMeta {
                 }
             }
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("ERROR: addMetaFilters", e.getMessage());
         }
     }
 
