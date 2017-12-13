@@ -67,7 +67,7 @@
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                                     fieldDescription="Select Path"
-                                                                    fieldLabel="Image Path"
+                                                                    fieldLabel="Image Path *(required)"
                                                                     name="./figurePath"
                                                                     required="{Boolean}true"
                                                                     rootPath="/content"/>
@@ -94,11 +94,11 @@
                                                                 <showMagnifierIcon
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                                                    checked="true"
+                                                                    checked="{Boolean}true"
                                                                     name="./showMagnifierIcon"
-                                                                    text="Show the magnifier Icon?"
+                                                                    text="Show Magnifier Icon."
                                                                     uncheckedValue="false"
-                                                                    value="{Boolean}true"/>
+                                                                    value="true"/>
                                                             </items>
                                                         </column>
                                                     </items>
@@ -141,7 +141,7 @@
                                                 sling:resourceType="/apps/bmc/components/content/miniCarousel/touchui-limit-multifield"
                                                 class="full-width"
                                                 fieldDescription="Click '+' to add a new page"
-                                                fieldLabel="Video Data item"
+                                                fieldLabel="Video Item"
                                                 fieldLimit="5">
                                                 <field
                                                     jcr:primaryType="nt:unstructured"
@@ -188,7 +188,7 @@
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                                     fieldDescription="thumbNail Image Path"
-                                                                    fieldLabel="Provide a thumbnail image  to upload the figure asset Video."
+                                                                    fieldLabel="Provide a thumbnail image  to upload the figure asset Video.*(required)"
                                                                     hidden="{Boolean}false"
                                                                     name="./thumbNailImagePath"
                                                                     required="{Boolean}true"
@@ -196,11 +196,11 @@
                                                                 <showMagnifierIcon
                                                                     jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/form/checkbox"
-                                                                    checked="true"
+                                                                    checked="{Boolean}true"
                                                                     name="./showMagnifierIcon"
-                                                                    text="Show the magnifier Icon?"
+                                                                    text="Show Video Play Icon."
                                                                     uncheckedValue="false"
-                                                                    value="{Boolean}true"/>
+                                                                    value="true"/>
                                                             </items>
                                                         </column>
                                                     </items>

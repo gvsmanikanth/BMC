@@ -74,8 +74,7 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 			jObj = new JSONObject(value[i].getString());
 			iBean = new MiniCarouselItemsBean();
 			if(tab.equals("iItems"))
-			{
-					logger.info("Item is a Image");
+			{					
 					iBean.setFigureCaption(jObj.getString("figureCaption"));
 					iBean.setFigurePath(jObj.getString("figurePath"));
 					if(!jObj.getString("xOffset").equals(""))
@@ -106,12 +105,12 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 					{
 						iBean.setThumbNailPath(jObj.getString("thumbNailImagePath"));
 					}
-					if(!jObj.getString("showMagnifierIcon").equals(""))
-					{
+					if(!jObj.getString("showMagnifierIcon").equals(""))						
+					{						
 						iBean.setShowMagnifierIcon(jObj.getBoolean("showMagnifierIcon"));
 					}
 					else
-					{
+					{						
 						iBean.setShowMagnifierIcon(false);
 					}
 					iBean.setHrefClass("modal-image");
@@ -119,9 +118,7 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 			}
 
 			else if (tab.equals("uItems"))
-			{
-
-				logger.info("Item is a Video");
+			{				
 				iBean.setThumbNailPath(jObj.getString("thumbNailImagePath"));
 				iBean.setFigureCaption(jObj.getString("figureCaption"));
 				if(!jObj.getString("figurePath").equals(""))
@@ -130,12 +127,15 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 				 * Check if the resource is  bmc/components/structure/video-page
 				 * And append the values from the video-data
 				 */
+					
 				 String relativePath = FilenameUtils.removeExtension(jObj.getString("figurePath"));									
 				 Node videoDataNode = resourceResolver.getResource(relativePath).adaptTo(Node.class);								
 				 if(videoDataNode != null)
 				 {
+					 
 					  if (videoDataNode.hasNode(NT_CONTENT)) 
-					  {											  
+					  {				
+						  
 						  Node contentNode = videoDataNode.getNode(NT_CONTENT);											  
 						  for(PropertyIterator propeIterator = contentNode.getProperties() ; propeIterator.hasNext();)  
 						   {  
@@ -149,9 +149,10 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 						        		 		{	
 						        		 		if(contentNode.hasNode("video-data"))
 					        		 			{
-										        	Node videoData = contentNode.getNode("video-data");	
-										        	String videoNodePath = VIDEO_PAGES_ROOT +"?vID="+videoData.getProperty("vID").getString();
-										        	 iBean.setFigurePath(videoNodePath);										        															        
+						        		 			
+						        		 				Node videoData = contentNode.getNode("video-data");	
+						        		 				String videoNodePath = VIDEO_PAGES_ROOT +"?vID="+videoData.getProperty("vID").getString();
+						        		 				iBean.setFigurePath(videoNodePath);										        															        
 						        		 		}
 						        		 		}
 						        		}
@@ -185,10 +186,11 @@ public class MiniCarouselMultiComponent extends WCMUsePojo{
 				}					
 			
 				if(!jObj.getString("showMagnifierIcon").equals(""))
-				{
+				{					
 					iBean.setShowMagnifierIcon(jObj.getBoolean("showMagnifierIcon"));
 				}
 				else
+					
 				{
 					iBean.setShowMagnifierIcon(false);
 				}
