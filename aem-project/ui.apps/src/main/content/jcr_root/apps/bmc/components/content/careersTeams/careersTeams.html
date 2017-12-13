@@ -1,0 +1,108 @@
+ <div class="bg-white" data-sly-use.model="com.bmc.components.CareersTeam">
+	<section class="careers_teams section">
+	<div class="section-content text-center mb3">
+		<div class="h1 mb2">${properties.careersTopTitle}</div>
+		<div class="h4 p readability-large">${properties.careersTopCopy}</div>
+	</div>
+<div class="section-content mb2">
+<div class="flex-wrap mb2">
+ 	<sly data-sly-list="${model.list}">
+  	<div class="col-12 sm-col-6 lg-col-4 mb1 p1" >
+		<div class="card flex-col">
+
+			<div class="card-image">
+            <img src="${item.imgsrc}">
+            </div>
+				<div class="card-content">
+					<div class="h3">${item.title}</div>
+				<div class="h4">
+					<div data-sly-test="${item.number_of_jobs != '0'}"><a href="${item.openingURL}" title="${item.openingURL}">View ${item.number_of_jobs} openings</a> | 
+					<a href="#${item.teamId}" class="modal-inline">Learn More</a></div>
+                    	<div data-sly-test="${item.number_of_jobs == '0'}"><a href="${item.openingURL}" title="${item.openingURL}">View 1 openings</a> | 
+					<a href="#${item.teamId}" class="modal-inline">Learn More</a></div>
+
+				</div>
+
+
+			</div>
+		</div>
+          <!--Popup display info-->
+        <div id="${item.teamId}" style="display:none;">
+        				<section class="lg-flex section p3">
+        						<div class="flex-auto">
+        							<div class="section-content">
+                                    <h2 class="section-title -sm mb1">${item.title}</h2>
+        								${item.learnmore_link}
+									<div data-sly-test="${item.number_of_jobs != '0'}">
+										<a class="btn btn-primary-with-border" href="${item.openingURL}">
+                                        View ${item.number_of_jobs} openings &rsaquo;
+                                        </a>
+										</div>
+        							</div>
+        						</div>
+        					</section>
+    					</div>
+	</div>
+	</sly>
+</div>
+</div>
+</section>
+<section class="careers_life section">
+		<div class="white bg-shakespeare p4 pattern">
+			<div class="image-container">
+				<div class="ha mb2">${properties.careersBottomTitle}</div>
+				<div class="h4 p readability">${properties.careersBottomCopy @ context='html'}</div>
+			</div>
+		</div>	
+		<div class="masonry">
+			<div class="section-content-full">
+				<div class="lg-flex flex-wrap mortar-bottom">
+					<div class="col-12 lg-col-6 ">
+						<div class="flex-col primary">
+							<div class="mortar-flex"></div>
+							<div class="brick ratio_4-3 col-12" style="background-image:url('/content/dam/bmc/corporate/Life_715x532_1.jpg');background-size:cover">
+							</div>
+							<div class="mortar-flex"></div>
+							<div class="md-flex flex-wrap">
+								<div class="brick ratio_4-3 col-12 md-col-6 ">
+									<div class="innerWrap brickLeft">
+										<div class="inner" style="background-image:url('/content/dam/bmc/corporate/Life_353x267_3.jpg');"></div>
+									</div>
+								</div>
+								<div class="brick ratio_4-3 col-12 md-col-6">
+									<div class="innerWrap brickRight">
+										<div class="inner" style="background-image:url('/content/dam/bmc/corporate/Life_353x267_2.jpg');"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 lg-col-6 gap-bottom">
+						<div class="flex-col secondary">
+							<div class="mortar-flex"></div>
+							<div class="md-flex flex-wrap">
+								<div class="brick ratio_4-3 col-12 md-col-6">
+									<div class="innerWrap brickLeft">
+										<div class="inner" style="background-image:url('/content/dam/bmc/corporate/Life_353x267_4.jpg');"></div>
+									</div>
+								</div>
+								<div class="brick ratio_4-3 col-12 md-col-6">
+									<div class="innerWrap brickRight">
+										<div class="inner" style="background-image:url('/content/dam/bmc/corporate/Life_353x267_5.jpg');"></div>
+									</div>
+								</div>
+							</div>
+							<div class="mortar-flex"></div>
+							<div class="brick ratio_4-3 col-12" style="background-image:url('/content/dam/bmc/corporate/Life_715x532_6.jpg');background-size:cover">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		</section>
+
+</div>

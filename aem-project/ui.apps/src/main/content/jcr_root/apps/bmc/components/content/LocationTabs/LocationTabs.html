@@ -1,0 +1,14 @@
+<sly data-sly-test.currentPath="${currentPage.getPath}"/>
+<div id ="page-content" class="">
+ <div  data-sly-use.modal="${'com.bmc.components.LocationsTabs' @ pathName = currentPath}" class="careers-nav">
+		<ul class="section-content flex">
+			<sly data-sly-list="${modal.list}">
+
+			<li class="${item.cssName}">
+				<a href="${item.path}">${item.page}</a>						
+			</li>
+
+            </sly>
+    	</ul>
+	</div>
+ </div>

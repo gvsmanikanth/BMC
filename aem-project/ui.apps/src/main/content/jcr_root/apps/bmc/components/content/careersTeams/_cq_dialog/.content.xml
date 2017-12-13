@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Career teams"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Career Teams"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <careersTopTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the Careers top title"
+                                fieldLabel="Careers Top title"
+                                name="./careersTopTitle"/>
+                            <careersTopCopy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the careers Top Copy"
+                                fieldLabel="careersTopCopy"
+                                name="./careersTopCopy"/>
+                            <careersBottomTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the careers bottom text."
+                                fieldLabel="Careers team Bottom title text."
+                                name="./careersBottomTitle"/>
+                            <careersBottomCopy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the careers Bottom Copy text"
+                                fieldLabel="careersBottomCopy"
+                                name="./careersBottomCopy"/>
+                            <ProductDevelopmentDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Product Development"
+                                fieldLabel="product Development description for popup"
+                                name="./ProductDevelopmentDesc"/>
+                            <SalesDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Sales Team"
+                                fieldLabel="Sales Team description for popup"
+                                name="./SalesDesc"/>
+                            <ITDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for IT Team"
+                                fieldLabel="IT Team description for popup"
+                                name="./ITDesc"/>
+                            <LegalDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Legal Team"
+                                fieldLabel="Legal Team description for popup"
+                                name="./LegalDesc"/>
+                            <MarketingDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Marketing Team"
+                                fieldLabel="Marketing Team description for popup"
+                                name="./MarketingDesc"/>
+                            <ProfessionalServicesDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Professional Service Team"
+                                fieldLabel="Professional Service Team description for popup"
+                                name="./ProfessionalServicesDesc"/>
+                            <Facilities_x0026_OperationsDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Facilities and Operations Team"
+                                fieldLabel="Facilties and Opeations Team description for popup"
+                                name="./Facilities&amp;OperationsDesc"/>
+                            <Finance_x0026_AccountingDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for Finance and Accounting Team"
+                                fieldLabel="Finance and Accounting Team description for popup"
+                                name="./Finance&amp;AccountingDesc"/>
+                            <PeopleDesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the Pop up description for People Team"
+                                fieldLabel="People Team description for popup"
+                                name="./PeopleDesc"/>
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>
