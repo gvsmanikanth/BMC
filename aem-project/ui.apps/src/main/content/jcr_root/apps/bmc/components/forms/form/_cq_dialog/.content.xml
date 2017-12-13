@@ -169,6 +169,9 @@
                                             <zz jcr:primaryType="nt:unstructured"
                                                 value="White Paper"
                                                 text="White Paper"/>
+											 <eBook jcr:primaryType="nt:unstructured"
+                                                value="eBook"
+                                                text="eBook"/>
                                         </items>                                        
                                     </C_Lead_Offer_Most_Recent1>
                                     <content-prefs
