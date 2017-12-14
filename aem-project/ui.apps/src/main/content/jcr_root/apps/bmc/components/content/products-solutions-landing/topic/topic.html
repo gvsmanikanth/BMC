@@ -16,15 +16,17 @@
                     <sly data-sly-list.product="${topic.featuredProducts}">
                         <li class="featured-product">
                             <h4><a href="${product.href}">${product.text}</a></h4>
-                            <div class="product-detail" data-sly-test="${product.description}">
-                                ${product.description}
-                            </div>
-                            <div class="actions">
-                                <a href="${product.href}">${"Learn More" @ i18n}</a>
-                                <sly data-sly-test="${product.hasSecondaryCta}">
-                                    <span> | </span>
-                                    <a href="${product.secondaryCtaHref}">${product.secondaryCtaText}</a>
-                                </sly>
+                            <div class="product-detail">
+                                <div class="description" data-sly-test="${product.description}">
+                                    ${product.description}
+                                </div>
+                                <div class="actions">
+                                    <a href="${product.href}">${"Learn More" @ i18n}</a>
+                                    <sly data-sly-test="${product.hasSecondaryCta}">
+                                        <span> | </span>
+                                        <a href="${product.secondaryCtaHref}">${product.secondaryCtaText}</a>
+                                    </sly>
+                                </div>
                             </div>
                         </li>
                     </sly>
