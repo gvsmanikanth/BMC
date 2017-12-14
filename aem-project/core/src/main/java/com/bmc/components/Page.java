@@ -51,7 +51,11 @@ public class Page extends WCMUsePojo {
                         return;
                     }
                 } else {
-                    redirectPath = request.getResourceResolver().map(request, location) + ".html";
+                    if (location.contains(".html")) {
+                        redirectPath = request.getResourceResolver().map(request, location);
+                    } else {
+                        redirectPath = request.getResourceResolver().map(request, location) + ".html";
+                    }
                 }
 
                 response.sendRedirect(redirectPath);
