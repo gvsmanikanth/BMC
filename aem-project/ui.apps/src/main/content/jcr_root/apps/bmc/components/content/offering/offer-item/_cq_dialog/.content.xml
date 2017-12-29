@@ -6,7 +6,7 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Offer Micro Item"
+          jcr:title="Offering Micro Item"
           sling:resourceType="cq/gui/components/authoring/dialog"
           extraClientlibs="[]">
     <content jcr:primaryType="nt:unstructured"
@@ -148,7 +148,7 @@
                                                      rootPath="/content"
                                                      jcr:primaryType="nt:unstructured" />
                                     <datasheetLink sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                   fieldDescription="Only enter text in this field if the Link Text from the item-browser item in the field above will not be acceptable for some reason"
+                                                   fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
                                                    fieldLabel="Datasheet Link (Optional)"
                                                    name="./datasheetLink"
                                                    jcr:primaryType="nt:unstructured" />
@@ -220,7 +220,7 @@
                                                  jcr:primaryType="nt:unstructured" />
                                     <assetLinkText jcr:primaryType="nt:unstructured"
                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                   fieldDescription="Only enter text in this field if the Link Text from the item-browser item in the field above will not be acceptable for some reason"
+                                                   fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
                                                    fieldLabel="Asset Link Text (Optional)"
                                                    name="./assetLinkText" />
                                 </items>
