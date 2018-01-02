@@ -1,23 +1,25 @@
 <sly data-sly-use.OfferingModel="com.bmc.models.components.offerings.OfferingMicro" data-sly-test="${OfferingModel}">
     <div style="background-color:#FFFFFF;padding:20px;">
         <sly data-sly-test="${wcmmode.edit}">
-            <sly data-sly-test.List="${['productName','productAvailability','datasheetIconImage','datasheetPicker','datasheetLink','assetIconImage','assetPrefix','assetLinkText','primaryParentOfferingPage','anchorTagText','linkText','anchorTagText','shortDescription']}"></sly>
+            <sly data-sly-test.List="${['productName','productAvailability','datasheetIconImage','datasheetPicker','datasheetLink','assetIconImage','assetPrefix', 'assetPicker', 'assetLinkText','primaryParentOfferingPage','linkText','anchorTagText','shortDescription']}"></sly>
             <sly data-sly-list="${List}">
+                <sly data-sly-test="${properties[item]}">
                 <strong>${item}:</strong>
                     <sly data-sly-test="${item == 'shortDescription' || item == 'linkText'}">
-                        <div data-sly-test="${item == 'shortDescription'}" id="${item}">${OfferingModel.ItemDescription}</div>
-                        <div data-sly-test="${item == 'linkText'}" id="${item}">${OfferingModel.ItemTitle}</div>
+                        <div data-sly-test="${item == 'shortDescription' && OfferingModel.ItemDescription}" id="${[item, 'shortDescription'] @join='_'}">${OfferingModel.ItemDescription}</div>
+                        <div data-sly-test="${item == 'linkText' && OfferingModel.ItemTitle}" id="${[item, 'linkText'] @join='_'}">${OfferingModel.ItemTitle}</div>
                     </sly>
                     <sly data-sly-test="${item == 'productAvailability'}">
-                        <div id="${item}">${properties[item]}</div>
+                        <div id="${[item, 'productAvailability'] @join='_'}">${properties[item]}</div>
                         <div data-sly-test="${properties[item] != 'This product is available as a standalone offering'}" data-sly-list.product="${OfferingModel.ProductAvailabilityList}">
                             <a href="${product.pUrl}.html" target="_self">${product.pTitle @ context='html'}</a><sly data-sly-test="${!productList.last}">, </sly>
                         </div>
                     </sly>
                     <sly data-sly-test="${item != 'shortDescription' && item != 'linkText' && item != 'productAvailability'}">
-                        <div id="${item}">${properties[item]}</div>
+                        <div id="${['prop',item] @join='_'}">${properties[item]}</div>
                     </sly>
                 </sly>
+            </sly>
             <strong>Product Description:</strong>
             <sly data-sly-resource="${'productDescription' @resourceType='bmc/components/content/wysiwyg'}"/>
         </sly>

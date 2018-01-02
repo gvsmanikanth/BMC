@@ -133,17 +133,18 @@ public class OfferingMicro {
     private void setAssetTitleFromPicker(Node mainNode, String pickerName, String key){
         try {
             if (mainNode.hasProperty(pickerName)) {
-
-                ResourceResolver resourceResolver = resource.getResourceResolver();
-                Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
-
-                UrlResolver itemInfo = UrlResolver.from(itemResource);
-                LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
-
-                videoID = linkInfo.getHref();
-                resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
-            } else {
-                resourceProps.put(key, "");
+                if(!mainNode.getProperty(pickerName).getValue().getString().startsWith("http")){
+                    ResourceResolver resourceResolver = resource.getResourceResolver();
+                    Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
+                    if(itemResource != null) {
+                        UrlResolver itemInfo = UrlResolver.from(itemResource);
+                        LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
+                        videoID = linkInfo.getHref();
+                        resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
+                    }
+                } else {
+                    resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : mainNode.getProperty(pickerName).getValue().getString());
+                }
             }
         } catch (RepositoryException e) {
             logger.error("ERROR", e.getMessage());

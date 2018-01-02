@@ -1,7 +1,7 @@
 <sly data-sly-use.OfferingModel="com.bmc.models.components.offerings.OfferingMicro" data-sly-test="${OfferingModel}" data-sly-test.ResourceProps = "${OfferingModel.ResourceProps}"/>
 
 <sly data-sly-use.OfferingTemplate="offering-templates.html">
-    <sly data-sly-test = "${ResourceProps}">
+    <sly data-sly-test="${properties.resourcePath && ResourceProps}">
         <sly data-sly-call="${OfferingTemplate.FullDiscription @
                             productDescription=ResourceProps['productDescription'],
                             productAvailability=ResourceProps['productAvailability'],
@@ -22,7 +22,7 @@
                             shortDescription=ResourceProps['shortDescription']}"
              data-sly-unwrap/>
     </sly>
-    <sly data-sly-test="${!ResourceProps}">
+    <sly data-sly-test="${!properties.resourcePath}">
         <sly data-sly-call="${OfferingTemplate.Empty @
                             productName= 'Please Add OfferMicro',
                             anchorTagText='empty'}"
