@@ -225,7 +225,6 @@ public class OfferingLinkService {
 
         String language = "en";
         String rootPath = "/content/bmc/language-masters/" + (StringUtils.isBlank(language) ? "en" : language);
-//        Constraint hasRootPath = qf.descendantNode(selectorName, rootPath);
         Constraint hasPath1 = qf.descendantNode(selectorName, basePath + "/it-solutions");
         Constraint hasPath2 = qf.or(hasPath1, qf.descendantNode(selectorName, basePath + "/it-services"));
         Constraint hasValidPath = qf.or(hasPath2, qf.descendantNode(selectorName, basePath + "/offering-micros"));
