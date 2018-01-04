@@ -27,11 +27,7 @@ public class OfferingLinks extends WCMUsePojo implements MetadataInfoProvider_Re
         if (offeringLinkService == null)
             return;
 
-        Page languagePage = getCurrentPage().getAbsoluteParent(3);
-        String language = (languagePage != null && languagePage.getPath().startsWith("/content/bmc/language-masters"))
-                ? languagePage.getName() : "en";
-
-        linkData = offeringLinkService.getOfferingLinkData(this, language);
+        linkData = offeringLinkService.getOfferingLinkData(this);
 
         List<AutocompleteTerm> terms = Stream.concat(linkData.getTopics().stream(),
                 linkData.getProductSections().stream().flatMap(s -> s.getLinks().stream()))

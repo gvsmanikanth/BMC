@@ -1,5 +1,6 @@
 package com.bmc.services;
 
+import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.MetadataInfoProvider;
 import com.bmc.mixins.ResourceProvider;
 import com.bmc.models.components.offerings.OfferingLinkData;
@@ -39,9 +40,20 @@ public class OfferingLinkService {
             .expireAfterWrite(1, TimeUnit.MINUTES)
             .build();
 
-    public OfferingLinkData getOfferingLinkData(MetadataInfoProvider metadataProvider, String language) {
+    public OfferingLinkData getOfferingLinkData(MetadataInfoProvider metadataProvider) {
+        String currentPage;
+        String basePath = "";
         try {
-            return dataCache.get(language, () -> buildOfferingLinkData(metadataProvider, language));
+            WCMUsePojo pojo = (WCMUsePojo) metadataProvider;
+            currentPage = pojo.getCurrentPage().getPath();
+            basePath = StringUtils.join(Arrays.copyOfRange(currentPage.split("/"), 0, 5), "/");
+        } catch (Exception e) {
+            // This method is called from OfferingLinks, so metadataProvider should be able to be cast as a WCMUsePojo
+            logger.error("Error casting metadataProvider as WCMUsePojo. This could impact ability to determine patch for products/services list.");
+        }
+        final String key = basePath;
+        try {
+            return dataCache.get(key, () -> buildOfferingLinkData(metadataProvider, key));
         } catch (ExecutionException ex) {
             return OfferingLinkDataImpl.EMPTY;
         }
@@ -50,10 +62,10 @@ public class OfferingLinkService {
     /**
      * Builds a new {@link OfferingLinkData} instance representing all offering links for the given {@code language}.
      */
-    private OfferingLinkData buildOfferingLinkData(MetadataInfoProvider metadataProvider, String language) {
+    private OfferingLinkData buildOfferingLinkData(MetadataInfoProvider metadataProvider, String basePath) {
         List<Page> pages;
         try {
-            pages = findOfferingPages(metadataProvider.getResourceProvider(), language);
+            pages = findOfferingPages(metadataProvider.getResourceProvider(), basePath);
         } catch (RepositoryException ex) {
             pages = new ArrayList<>();
         }
@@ -73,6 +85,7 @@ public class OfferingLinkService {
         // map of product links, grouped by first letter of link text
         Map<Character, List<LinkInfo>> alphaProducts = pageData.stream()
                 .filter(d -> !d.isTopic)
+                .filter(d -> !d.linkInfo.getText().isEmpty())
                 .map(d -> d.linkInfo)
                 .collect(Collectors.groupingBy(link -> {
                     Character c = link.getText().substring(0, 1).toUpperCase().charAt(0);
@@ -109,6 +122,13 @@ public class OfferingLinkService {
 
         public List<LinkInfo> getTopics() { return topics; }
         public List<ProductLinkSection> getProductSections() { return productSections; }
+    }
+    private class SortInsensitive implements Comparator<LinkInfo>
+    {
+        public int compare(LinkInfo a, LinkInfo b)
+        {
+            return a.getText().toLowerCase().compareTo(b.getText().toLowerCase());
+        }
     }
     private static class ProductLinkSectionImpl implements ProductLinkSection {
         ProductLinkSectionImpl(String name, String cssClass, Stream<LinkInfo> links) {
@@ -183,9 +203,15 @@ public class OfferingLinkService {
     }
 
     /**
-     * Find all offering pages within /content/bmc/language-masters/[{@code language}].
+     * Update: DXP-587, 2018-01-03
+     * Find offering pages under the following paths:
+     * /content/bmc/language-masters/$lang/it-solutions/, /content/bmc/language-masters/$lang/it-services/, and /content/bmc/language-masters/$lang/offering-micros/ in the case of language-masters
+     * /content/bmc/$country/$lang/it-solutions/, /content/bmc/$country/$lang/it-services/, and /content/bmc/$country/$lang/offering-micros/ in the case of live copies
+     * or simply ../it-solutions/, ../it-services/, and ../offering-micros/
+     *
+     * @param basePath  will now indicate /content/bmc/$country/$lang instead of just passing the language in
      */
-    private List<Page> findOfferingPages(ResourceProvider resourceProvider, String language) throws RepositoryException {
+    private List<Page> findOfferingPages(ResourceProvider resourceProvider, String basePath) throws RepositoryException {
         // http://adobeaemclub.com/jcr-java-query-object-model-jqom-adobe-aem-query/
         Session session = resourceProvider.getResourceResolver().adaptTo(Session.class);
         if (session == null)
@@ -197,15 +223,19 @@ public class OfferingLinkService {
         String selectorName = "s";
         Selector selector = qf.selector("nt:unstructured", selectorName);
 
+        String language = "en";
         String rootPath = "/content/bmc/language-masters/" + (StringUtils.isBlank(language) ? "en" : language);
-        Constraint hasRootPath = qf.descendantNode(selectorName, rootPath);
+        Constraint hasPath1 = qf.descendantNode(selectorName, basePath + "/it-solutions");
+        Constraint hasPath2 = qf.or(hasPath1, qf.descendantNode(selectorName, basePath + "/it-services"));
+        Constraint hasValidPath = qf.or(hasPath2, qf.descendantNode(selectorName, basePath + "/offering-micros"));
 
-        Constraint isOfferingPageCommon = qf.and(hasRootPath, qf.comparison(
+
+        Constraint isOfferingPageCommon = qf.and(hasValidPath, qf.comparison(
                 qf.propertyValue(selectorName, "sling:resourceType"),
                 QueryObjectModelConstants.JCR_OPERATOR_EQUAL_TO,
                 qf.literal(vf.createValue(OFFERING_PAGE_COMMON))));
 
-        Constraint isOfferingMicroItem = qf.and(hasRootPath, qf.comparison(
+        Constraint isOfferingMicroItem = qf.and(hasValidPath, qf.comparison(
                 qf.propertyValue(selectorName, NameConstants.NN_TEMPLATE),
                 QueryObjectModelConstants.JCR_OPERATOR_EQUAL_TO,
                 qf.literal(vf.createValue(OFFERING_MICRO_ITEM))));
