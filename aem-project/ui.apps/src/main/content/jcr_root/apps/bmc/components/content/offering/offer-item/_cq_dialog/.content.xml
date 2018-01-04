@@ -24,10 +24,11 @@
                     <column jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <productName sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            <productName sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                          fieldDescription="Enter the product name"
                                          fieldLabel="Product Name"
                                          name="./productName"
+                                         required="{Boolean}true"
                                          jcr:primaryType="nt:unstructured" />
                             <productWell jcr:primaryType="nt:unstructured"
                                          fieldLabel="Product Availability"
@@ -245,9 +246,10 @@
                                         sling:resourceType="granite/ui/components/foundation/layouts/well" />
                                 <items jcr:primaryType="nt:unstructured">
                                     <primaryParentOfferingPage sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                               fieldDescription="Picker to select the parent page this Offering Micro item should be displayed on"
+                                                               fieldDescription="Select the page on which this Offering Micro should be displayed"
                                                                name="./primaryParentOfferingPage"
                                                                fieldLabel="Primary Parent Offering Page"
+                                                               required="{Boolean}true"
                                                                rootPath="/content"
                                                                jcr:primaryType="nt:unstructured" />
                                     <anchorTagText fieldLabel="Anchor Tag Text"
