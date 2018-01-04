@@ -306,9 +306,11 @@
                                     <C_OptIn
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+											checked="{Boolean}true"
                                             fieldDescription="Force 'Opt In'"
                                             text="Force 'Opt In'"
                                             name="./C_OptIn"
+											uncheckedValue="{Boolean}false"
                                             value="{Boolean}true"
                                             wrapperClass="cmp-workflow-title"/>
                                     <C_OptInTypeHint
