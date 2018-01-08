@@ -121,6 +121,9 @@
                                             <nns8uiuiu jcr:primaryType="nt:unstructured"
                                                 value="Demo"
                                                 text="Demo"/>
+											<eBook jcr:primaryType="nt:unstructured"
+                                                value="eBook"
+                                                text="eBook"/>
                                             <mm02394578 jcr:primaryType="nt:unstructured"
                                                 value="Eval Request"
                                                 text="Eval Request"/>
@@ -169,9 +172,7 @@
                                             <zz jcr:primaryType="nt:unstructured"
                                                 value="White Paper"
                                                 text="White Paper"/>
-											 <eBook jcr:primaryType="nt:unstructured"
-                                                value="eBook"
-                                                text="eBook"/>
+											 
                                         </items>                                        
                                     </C_Lead_Offer_Most_Recent1>
                                     <content-prefs
