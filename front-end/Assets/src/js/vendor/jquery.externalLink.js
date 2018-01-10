@@ -17,11 +17,14 @@
 	    var opts = $.extend(defaults,options);
 	    var typesArray = opts.fileTypes.split(',');
 	    var extValid = new RegExp('/'+window.location.host+'/');
+	    var jsValid = new RegExp('javascript');
 	        
 	    return this.each(function(){
 
 	    	if(!extValid.test(this.href)) {
-	    		this.target="_blank";
+	    		if(!jsValid.test(this.href)){
+	    			this.target="_blank";
+	    		}
 	    	}
 	    	else {
 		    	if(typesArray[0]!=="") {
