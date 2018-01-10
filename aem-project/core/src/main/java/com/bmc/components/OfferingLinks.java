@@ -2,13 +2,12 @@ package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.MetadataInfoProvider_RequestCached;
-import com.bmc.mixins.ResourceProvider;
 import com.bmc.models.components.offerings.OfferingLinkData;
 import com.bmc.models.components.offerings.ProductLinkSection;
 import com.bmc.models.url.LinkInfo;
 import com.bmc.services.OfferingLinkService;
 import com.google.gson.GsonBuilder;
-import com.day.cq.wcm.api.Page;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
