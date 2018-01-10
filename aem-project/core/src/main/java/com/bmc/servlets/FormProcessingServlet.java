@@ -7,6 +7,7 @@ import com.bmc.services.FormProcessingXMLService;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.pactsafe.api.activity.Activity;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -139,6 +140,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         logger.trace("doPost called");
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
+
+
+        Activity site = new Activity("ACCESS_KEY");
 
         FormData form = new FormData(request);
 
