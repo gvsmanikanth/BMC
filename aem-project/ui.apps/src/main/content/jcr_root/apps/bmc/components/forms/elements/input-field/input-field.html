@@ -1,3 +1,4 @@
+<!-- /*Adding changes for WEB-2633 START*/ -->
 <sly data-sly-use.text="com.adobe.cq.wcm.core.components.models.form.Text">
         <label for="${text.id}" class="${text.placeholder? 'accessibility' : ''}">${text.title}</label>
         <textarea data-sly-test.useTextarea="${text.type == 'textarea'}"
@@ -5,8 +6,8 @@
                   placeholder="${text.placeholder? text.title : ''}"
                   name="${text.name}"
                   readonly="${text.readOnly}"
-                  required="${text.required}"
-                  data-cmp-required="${text.requiredMessage}"
+                  required="${text.required}"                
+                  data-error-hint="${text.requiredMessage}"
                   rows="${text.rows}"
                   required="${properties.required ? 'true' : 'false'}" >${text.value}</textarea>
         <input data-sly-test="${!useTextarea}"
@@ -15,8 +16,8 @@
                placeholder="${text.placeholder? text.title : ''}"
                name="${text.name}"
                value="${text.value}"
-               readonly="${text.readOnly}"
-               data-cmp-required="${text.requiredMessage}"
+               readonly="${text.readOnly}"             
+               data-error-hint="${text.requiredMessage}"
                data-cmp-constraint="${text.constraintMessage}"
                data-validation-type="${properties.validationType ? properties.validationType : ''}"
                required="${properties.required ? 'true' : 'false'}" />
