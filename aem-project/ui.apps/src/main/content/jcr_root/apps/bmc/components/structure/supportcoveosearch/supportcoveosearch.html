@@ -77,20 +77,20 @@
         </div>
         <div class="CoveoResultsFiltersPreferences">
         </div>
-      </div>-->
-      <div class="coveo-tab-section">
-      <a class="CoveoTab" data-id="All" data-caption="All" data-expression="(NOT @syssource=documents OR @uri=/Products OR @uri=/952) NOT(@objecttype=KBAttachment) NOT @sysfiletype=YouTubePlaylistItem NOT @sysfiletype=YouTubePlaylist"></a>
+        <!--/* WEB-2592 Changes added START */-->
+           <div class="coveo-tab-section">
+      			<a class="CoveoTab" data-id="All" data-caption="All" data-expression="((NOT @syssource=documents OR @uri=/Products OR @uri=/952) NOT(@objecttype=KBAttachment) NOT @sysfiletype=YouTubePlaylistItem NOT @sysfiletype=YouTubePlaylist) NOT((@sfscfaqproceduralisvisibleinpkb==false AND @sfscfaqproceduralBMCPartnerUserC==true) OR (@sfscproductservicedescriptionisvisibleinpkb==false AND @sfscproductservicedescriptionBMCPartnerUserC==true) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==false AND @sfscsolutionstoaproductproblemBMCPartnerUserC==true))"></a>
       
-      <a class="CoveoTab" data-id="KB" data-caption="Knowledge Base" data-icon="bmc-knowledge" data-expression="@sfkbid (NOT @syssource=SFADEV2) NOT(@objecttype=KBAttachment)"></a>
-	  <a class="CoveoTab" data-id="Confluence" data-caption="Documentation" data-icon="bmc-documentation" data-expression="(NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)(@syssource=confluence OR (@syssource=documents AND (@uri=/Products OR @uri=/952 OR @uri=/ctrlm8/ OR @uri=/ctrlm9/) NOT @sysisemptydocument))"></a>
-      <a class="CoveoTab" data-id="Communities" data-caption="Communities" data-icon="bmc-community" data-expression="@syssource=communities">
-      </a>
-      <a class="CoveoTab" data-id="bmccom" data-icon="bmc-mainlogo" data-caption="Support Central" data-expression="@syssource=support @syssource=web">
-      </a>  
-	  <a class="CoveoTab" data-id="bmc-yt-video" data-icon="bmc-yt-video"  data-caption="Video" data-expression="@syssource=Video-bmc-docs @sysfiletype=YouTubeVideo">
-      </a>
-      
-    </div>
+      			<a class="CoveoTab" data-id="KB" data-caption="Knowledge Base" data-icon="bmc-knowledge" data-expression="@sfkbid (NOT @syssource=SFADEV2) NOT(@objecttype=KBAttachment) ((@sfscfaqproceduralisvisibleinpkb==true AND @sfscfaqproceduralBMCPartnerUserC==false) OR (@sfscproductservicedescriptionisvisibleinpkb==true AND @sfscproductservicedescriptionBMCPartnerUserC==false) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==true AND @sfscsolutionstoaproductproblemBMCPartnerUserC==false))"></a>
+	  			<a class="CoveoTab" data-id="Confluence" data-caption="Documentation" data-icon="bmc-documentation" data-expression="(NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)(@syssource=confluence OR (@syssource=documents AND (@uri=/Products OR @uri=/952 OR @uri=/ctrlm8/ OR @uri=/ctrlm9/) NOT @sysisemptydocument)) "></a>
+      			<a class="CoveoTab" data-id="Communities" data-caption="Communities" data-icon="bmc-community" data-expression="@syssource=communities">
+      			</a>
+      			<a class="CoveoTab" data-id="bmccom" data-icon="bmc-mainlogo" data-caption="Support Central" data-expression="@syssource=support @syssource=web">
+      			</a>  
+	  			<a class="CoveoTab" data-id="bmc-yt-video" data-icon="bmc-yt-video" data-caption="Video" data-expression="@syssource=Video-bmc-docs @sysfiletype=YouTubeVideo">
+      			</a>    
+   		 </div>
+    <!--/* WEB-2592 Changes added END */-->
       <div class="coveo-results-header">
          <div class="CoveoBreadcrumb">
         </div>

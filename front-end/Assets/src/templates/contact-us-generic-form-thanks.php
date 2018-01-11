@@ -23,10 +23,8 @@ include_once 'php-inc/head-plain.php';
 		<div class="layout-inner-wrap">
 			<article class="layout-primary">
 				<section>
-					<h2>
-						<h3 style="font-weight: 300; color: #58595b;">Thank you for your
+						<h3 class="h3-variation-1 mt1">Thank you for your
 							interest in BMC</h3>
-					</h2>
 					<figure>
 					</figure>
 					<p>We look forward to helping you find the right solutions to
@@ -36,7 +34,7 @@ include_once 'php-inc/head-plain.php';
 						gain a competitive advantage.</p>
 				</section>
 				<div class="divider-large" style="margin-top: 0px; padding-top: 0;"></div>
-				<h3 style="font-weight: 300; color: #58595b; padding-bottom: 20px;">You
+				<h3 class="h3-variation-1">You
 					may also be interested in...</h3>
 				<div class="wrapper-nested">
 					<div class="three-up nth-child-3np1">

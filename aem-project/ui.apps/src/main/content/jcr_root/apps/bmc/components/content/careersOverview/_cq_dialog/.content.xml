@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Career teams"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Career Teams"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <titleOverview
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the title Overview"
+                                fieldLabel="title Overview"
+                                name="./titleOverview"/>
+                            <subtitleOverview
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the subtitle Overview"
+                                fieldLabel="subtitle Overview"
+                                name="./subtitleOverview"/>
+                            <imageTextOverview
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text below the image."
+                                fieldLabel="image Text Overview"
+                                name="./imageTextOverview"/>
+                            <titleWorkForBMC
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the title for the Work for BMC section."
+                                fieldLabel="title Work For BMC Section"
+                                name="./titleWorkForBMC"/>
+                            <subtitleWorkForBMC
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the subtitle for Work for BMC section."
+                                fieldLabel="subtitle WorkForBMC"
+                                name="./subtitleWorkForBMC"/>
+                            <subtitle2WorkForBMC
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the second subtitle for work for BMC."
+                                fieldLabel="subtitle 2 Work For BMC"
+                                name="./subtitle2WorkForBMC"/>
+                            <videoText1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text for the video 1."
+                                fieldLabel="video Text 1"
+                                name="./videoText1"/>
+                            <videoText2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text for the video 2."
+                                fieldLabel="video Text 2"
+                                name="./videoText2"/>
+                            <video1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Please Select a Video"
+                                fieldLabel="Video Path 1"
+                                name="./videoPath1"
+                                rootPath="/content/bmc/videos"/>
+                            <video2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Please Select a Video"
+                                fieldLabel="Video Path 2"
+                                name="./videoPath2"
+                                rootPath="/content/bmc/videos"/>
+                            <image jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <decorative
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <alt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <linkURL
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <caption
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                            <displayCaptionPopup
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </image>
+                            <titleJoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the title Join Leader."
+                                fieldLabel="title Join Leader"
+                                name="./titleJoinLeader"/>
+                            <subtitleJoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the subtitle Join Leader."
+                                fieldLabel="Subtitle Join Leader"
+                                name="./subtitleJoinLeader"/>
+                            <text1JoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text 1 for Join leader."
+                                fieldLabel="text1JoinLeader"
+                                name="./text1JoinLeader"/>
+                            <text2JoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text 2 join leader."
+                                fieldLabel="text2 Join Leader"
+                                name="./text2JoinLeader"/>
+                            <text3JoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text 3 Join Leader."
+                                fieldLabel="text3 Join Leader"
+                                name="./text3JoinLeader"/>
+                            <tex4JoinLeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the text 4 for join leader."
+                                fieldLabel="text 4 Join Leader"
+                                name="./text4JoinLeader"/>
+                            <title2Overview
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the title 2 Overview"
+                                fieldLabel="title  2 Overview"
+                                name="./title2Overview"/>
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>

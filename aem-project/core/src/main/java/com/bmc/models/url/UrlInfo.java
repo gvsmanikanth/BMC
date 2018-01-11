@@ -6,6 +6,7 @@ import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.StringUtils;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 
 /**
@@ -63,8 +64,10 @@ public class UrlInfo {
             }
         }
 
+        ResourceResolver resolver = page.getContentResource().getResourceResolver();
+
         return new UrlInfo(UrlType.Page,
-                StringHelper.coalesceString(page.getVanityUrl()).orElse(page.getPath() + ".html"));
+                StringHelper.coalesceString(page.getVanityUrl()).orElse(resolver.map(page.getPath())));
     }
     public static UrlInfo from(Asset asset) {
         return (asset == null) ? UNDEFINED : new UrlInfo(UrlType.Asset, asset.getPath());

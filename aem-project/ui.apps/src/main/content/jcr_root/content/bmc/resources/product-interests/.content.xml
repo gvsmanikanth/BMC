@@ -174,7 +174,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Discovery"
         dropDownDisplay="Yes"
-        text="BMC Atrium"
+        text="BMC Discovery"
         value="Discovery"/>
     <_x0034_99515849
         jcr:primaryType="nt:unstructured"
@@ -315,9 +315,8 @@
     <_x0035_46422315
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS AppZone"
-        dropDownDisplay="Yes"
-        text="BMC AppZone"
-        value="SaaS AppZone"/>
+        dropDownDisplay="No"
+        />
     <_x0038_64438642
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS BCM"
@@ -329,9 +328,8 @@
     <_x0037_85764064
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Marketplace"
-        dropDownDisplay="Yes"
-        text="BMC Marketplace"
-        value="SaaS Marketplace"/>
+        dropDownDisplay="No"
+        />
     <_x0038_61753444
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS MyIT"

@@ -3610,7 +3610,8 @@ span .chatbtn {
     margin-top: 0; }
 
 .divider-secondary {
-  border-top: 1px dashed #cccccc; }
+  border-top: 1px dashed #cccccc;
+  padding: 1px 0px; }
 
 /* Component Divider (not used as a styler, but instead for block component element) */
 .dividers .divider, .dividers .product-landing .layout-secondary, .product-landing .dividers .layout-secondary, .dividers .product-landing .layout-secondary-slim-side, .product-landing .dividers .layout-secondary-slim-side, .dividers .product-landing .layout-secondary-slim-side-grey, .product-landing .dividers .layout-secondary-slim-side-grey, .dividers .product-landing .layout-secondary-cta-container, .product-landing .dividers .layout-secondary-cta-container, .dividers .product-landing .layout-secondary-shaded, .product-landing .dividers .layout-secondary-shaded {
@@ -15654,7 +15655,8 @@ body.support-central {
       padding-top: 3.77778em; } }
 
 .divider-secondary {
-  border-top: 1px dashed #2a2a2a; }
+  border-top: 1px dashed #2a2a2a;
+  padding: 1px 0px; }
 
 .footnote {
   font-size: 12px;
@@ -17288,6 +17290,10 @@ a.white:focus,
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.25; }
+
+.h3-variation-1 {
+  font-weight: 300;
+  color: #58595b; }
 
 .padding-bottom-0 {
   padding-bottom: 0em !important; }

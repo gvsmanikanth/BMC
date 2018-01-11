@@ -1,8 +1,4 @@
-<!-- Changes added for DXP-1467 by samiksha.s.anvekar START -->
-<sly data-sly-test="${properties.buttonURL && properties.buttonText != 'Specify text'}">
-	<sly data-sly-use.CtaModel="com.bmc.models.components.ctabuttons.CtaButtons"/>
-</sly>
-<!-- END -->
+<sly data-sly-use.CtaModel="com.bmc.models.components.ctabuttons.CtaButtons"/>
 <sly data-sly-test.buttonURL="${CtaModel.ResolvedLink}"/>
 <a class="aem--inline-block aem--no-grid ${properties.buttonColor} ${properties.learnMore ? 'learn-more' : ''}" href="${buttonURL}">
     <sly data-sly-test="${!properties.customButtonText}">${properties.buttonText}</sly>

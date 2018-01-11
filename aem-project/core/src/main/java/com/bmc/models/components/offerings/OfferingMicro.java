@@ -1,5 +1,6 @@
 package com.bmc.models.components.offerings;
 
+import com.adobe.cq.wcm.core.components.models.Page;
 import com.bmc.mixins.UrlResolver;
 import com.bmc.models.url.LinkInfo;
 import org.apache.sling.api.resource.Resource;
@@ -34,6 +35,9 @@ public class OfferingMicro {
     private String resourcePath;
 
 
+
+    private String itemTitle;
+    private String itemDescription;
     private HashMap<String,String> resourceProps;
     private List<HashMap> productAvailabilityList;
     private Boolean isModal = false;
@@ -43,54 +47,62 @@ public class OfferingMicro {
     @PostConstruct
     protected void init() {
         try {
-            if(resourcePath == "" || resourcePath==null){
-                return;
-            }
-
             Node mainNode = null;
-            Node longDiscription = null;
-            Node productAvailabilityListNode;
-            NodeIterator productAvailabilityListNI;
-
-            if(session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
-                mainNode = session.getNode(resourcePath + "/jcr:content/root/offer_item");
-
-                if(mainNode.hasNode("productDiscription"))
-                    longDiscription = mainNode.getNode("productDiscription");
-
-
-                if(mainNode.hasNode("productAvailabilityList")) {
-                    productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
-                    productAvailabilityListNI = productAvailabilityListNode.getNodes();
-
-                    productAvailabilityList = new ArrayList<>();
-
-                    while (productAvailabilityListNI.hasNext()) {
-                        HashMap<String, String> pNodeHash = new HashMap<>();
-                        Node pNode = productAvailabilityListNI.nextNode();
-                        Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString() + "/jcr:content/");
-                        pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
-                        pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
-                        productAvailabilityList.add(pNodeHash);
-                    }
-                }
-            }
+            Node productDescription = null;
 
             resourceProps = new HashMap<>();
+            setTitleAndDescription();
+
+            if((resourcePath != null && resourcePath!="") && session.itemExists(resourcePath+"/jcr:content/root/offer_item")) {
+                mainNode = session.getNode(resourcePath + "/jcr:content/root/offer_item");
+                if(mainNode.hasNode("productDescription")) {
+                    productDescription = mainNode.getNode("productDescription");
+                }
+                createProductAvailabilityList(mainNode);
+            } else if (resourcePath == null){
+                mainNode = session.getNode(resource.getPath());
+                createProductAvailabilityList(mainNode);
+            }
 
             if(mainNode != null) {
-
                 Node finalMainNode = mainNode;
                 PROP_LIST.forEach(s -> setResourceProps(finalMainNode,null, s));
 
                 setAssetTitleFromPicker(mainNode,"datasheetPicker","datasheetLink");
                 setAssetTitleFromPicker(mainNode,"assetPicker","assetLinkText");
 
-                if ((longDiscription != null) && longDiscription.hasProperty("text"))
-                    setResourceProps(longDiscription,"longDiscription", longDiscription.getProperty("text").getValue().getString());
+                if ((productDescription != null) && productDescription.hasProperty("text"))
+                    setResourceProps(productDescription,"productDescription", productDescription.getProperty("text").getValue().getString());
             }
         }catch (Exception e){
-            logger.error("ERROR: {}", e);
+            logger.error("ERROR: ", e.getMessage());
+        }
+    }
+
+    private void createProductAvailabilityList(Node mainNode){
+        Node productAvailabilityListNode;
+        NodeIterator productAvailabilityListNI;
+        try {
+            if(mainNode.hasNode("productAvailabilityList")) {
+                productAvailabilityListNode = mainNode.getNode("productAvailabilityList");
+                productAvailabilityListNI = productAvailabilityListNode.getNodes();
+
+                productAvailabilityList = new ArrayList<>();
+
+                while (productAvailabilityListNI.hasNext()) {
+                    HashMap<String, String> pNodeHash = new HashMap<>();
+                    Node pNode = productAvailabilityListNI.nextNode();
+                    Node pPage = session.getNode(pNode.getProperty("productAvailabilityListPicker").getValue().getString() + "/jcr:content/");
+                    pNodeHash.put("pUrl", pNode.getProperty("productAvailabilityListPicker").getValue().getString());
+                    pNodeHash.put("pTitle", pPage.getProperty("jcr:title").getValue().getString());
+                    productAvailabilityList.add(pNodeHash);
+                }
+            } else {
+                productAvailabilityList = new ArrayList<>();
+                productAvailabilityList.add(new HashMap<String,String>());
+            }
+        } catch (RepositoryException e) {
+            logger.error("ERROR: ", e.getMessage());
         }
     }
 
@@ -106,22 +118,36 @@ public class OfferingMicro {
         }
     }
 
+    private void setTitleAndDescription(){
+        ResourceResolver resourceResolver = resource.getResourceResolver();
+        Resource itemResource = resourceResolver.getResource(resource.getPath().split("/jcr:content/")[0]);
+
+        UrlResolver itemInfo = UrlResolver.from(itemResource);
+        LinkInfo linkInfo = itemInfo.getLinkInfo(itemResource.getPath());
+        itemTitle = linkInfo.getText();
+        itemDescription = linkInfo.getDescription();
+        resourceProps.put("shortDescription", itemDescription);
+        resourceProps.put("linkText", itemTitle);
+    }
+
     private void setAssetTitleFromPicker(Node mainNode, String pickerName, String key){
         try {
             if (mainNode.hasProperty(pickerName)) {
-
-                ResourceResolver resourceResolver = resource.getResourceResolver();
-                Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
-
-
-                UrlResolver itemInfo = UrlResolver.from(itemResource);
-                LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
-
-                videoID = linkInfo.getHref();
-                resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
+                if(!mainNode.getProperty(pickerName).getValue().getString().startsWith("http")){
+                    ResourceResolver resourceResolver = resource.getResourceResolver();
+                    Resource itemResource = resourceResolver.getResource(mainNode.getProperty(pickerName).getValue().getString());
+                    if(itemResource != null) {
+                        UrlResolver itemInfo = UrlResolver.from(itemResource);
+                        LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
+                        videoID = linkInfo.getHref();
+                        resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
+                    }
+                } else {
+                    resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : mainNode.getProperty(pickerName).getValue().getString());
+                }
             }
         } catch (RepositoryException e) {
-            logger.error("ERROR",e.getMessage());
+            logger.error("ERROR", e.getMessage());
         }
 
     }
@@ -133,6 +159,14 @@ public class OfferingMicro {
 
     public HashMap<String, String> getResourceProps() {
         return resourceProps;
+    }
+
+    public String getItemTitle() {
+        return itemTitle;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
     }
 
     public String getVideoID() {

@@ -78,6 +78,6 @@ public class LinkInfo implements Comparable<LinkInfo>  {
 
     @Override
     public int compareTo(LinkInfo linkInfo) {
-        return text.compareTo(linkInfo.text);
+        return text.toLowerCase().compareTo(linkInfo.text.toLowerCase());
     }
 }

@@ -1,5 +1,7 @@
 <section class="${properties.bgcolor}">
     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-        <sly data-sly-resource="${'center' @ resourceType='wcm/foundation/components/responsivegrid', cssClassName='aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--12'}" />
-    </div>
+    <!--/* Added as a part of WEB-2474 Start */--> 
+        <sly data-sly-resource="${'center' @ resourceType='wcm/foundation/components/responsivegrid', cssClassName='aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--12',decorationTagName='div'}" />
+   <!--/* WEB-2474 End */--> 
+   	</div>
 </section>
