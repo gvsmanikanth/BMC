@@ -5,17 +5,17 @@
 
         <dl data-sly-list.link="${data.links}">
             <dt>
-                <a href="${link.href}" target="${link.target}">${link.text}</a>
+                <a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>
             </dt>
-            <dd><sly data-sly-test="${data.showLinkDescriptions}">${link.description}</sly></dd>
+            <dd><sly data-sly-test="${data.showLinkDescriptions}">${link.description @ context='html'}</sly></dd>
         </dl>
     </article>
 </section>
 <section data-sly-test="${data.useHorizontalDisplay}">
     <p>Related topics:&nbsp;
     <sly data-sly-list.link="${data.links}">
-        <sly data-sly-test="${!linkList.last}"><a href="${link.href}" target="${link.target}">${link.text}</a>, </sly>
-        <sly data-sly-test="${linkList.last}"><a href="${link.href}" target="${link.target}">${link.text}</a></sly>
+        <sly data-sly-test="${!linkList.last}"><a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>, </sly>
+        <sly data-sly-test="${linkList.last}"><a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a></sly>
     </sly>
     </p>
 </section>

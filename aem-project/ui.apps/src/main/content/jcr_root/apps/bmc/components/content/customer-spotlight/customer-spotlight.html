@@ -3,12 +3,12 @@
     <div class="layout-inner-wrap">
         <div class="layout-primary">
             <div class="back-link bold" data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}">
-                    ${'Customer Spotlight' @ i18n}: ${customerSpotlight.ExpTitle}
+                    ${'Customer Spotlight' @ context='html', i18n}: ${customerSpotlight.ExpTitle @ context='html'}
             </div>
             <div class="back-link" data-sly-test.template="${customerSpotlight.template == '/conf/bmc/settings/wcm/templates/customerstory'}">
                 <a href="/customers/success-stories.html">
-                    ${'Customer Stories' @ i18n}
-                </a>/ ${currentPage.title}
+                    ${'Customer Stories' @ context='html',i18n}
+                </a>/ ${currentPage.title @ context='html'}
             </div>
             <div class="header-logo" style="width:350px;">
 
@@ -17,8 +17,8 @@
             <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title'}" data-sly-unwrap></sly>
             <sly data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}"
                  data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='cta_link', urlOrPath='cta_url'}">
-                <a data-sly-test="${cta.isVideo}" class="btn video-play ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text}</a>
-                <a data-sly-test="${!cta.isVideo}" class="btn ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text}</a>
+                <a data-sly-test="${cta.isVideo}" class="btn video-play ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text @ context='html'}</a>
+                <a data-sly-test="${!cta.isVideo}" class="btn ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text @ context='html'}</a>
             </sly>
         </div>
         <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
