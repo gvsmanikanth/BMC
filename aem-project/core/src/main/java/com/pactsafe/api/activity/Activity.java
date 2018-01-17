@@ -123,9 +123,10 @@ public class Activity {
         if (StringUtils.isBlank(action.getSignerId())) {
             throw new IllegalArgumentException("You must set a signerId on the action.");
         }
-        if (StringUtils.isBlank(action.getRenderId())) {
-            throw new IllegalArgumentException("You must set a renderId for this action.");
-        }
+        // We aren't rendering using the JS SDK so we just need to send contract version.
+//        if (StringUtils.isBlank(action.getRenderId())) {
+//            throw new IllegalArgumentException("You must set a renderId for this action.");
+//        }
 
         ParameterStore toSend = new ParameterStore(parameters, action);
         toSend.setEventType(eventType);
