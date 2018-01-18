@@ -6,7 +6,7 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="layout-inner-wrap">
+		<div class="">
 			<div class="bannerContent flex-center">
 				<div>
 					<h1 class="white">Control-M</h1>
@@ -22,10 +22,10 @@
 				</div>
 			</div>
 			<div class="assetStrip">
-				<div class="inner px1">
+				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-4 mx2 shadow-top assetStripItem">
+							class="flex-item sm-col-4 shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
@@ -39,7 +39,7 @@
 								</div>
 							</div>
 						</a> <a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-4 mx2 shadow-top assetStripItem">
+							class="flex-item sm-col-4 shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center ">
 
@@ -55,7 +55,7 @@
 								</div>
 							</div>
 						</a> <a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-4 mx2 no-border shadow-top assetStripItem">
+							class="flex-item sm-col-4 no-border shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
 
@@ -95,7 +95,7 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="layout-inner-wrap">
+		<div class="">
 			<div class="bannerContent flex-center">
 				<div>
 					<h1 class="white">Control-M</h1>
@@ -111,10 +111,10 @@
 				</div>
 			</div>
 			<div class="assetStrip">
-				<div class="inner px1">
+				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-5 mx2 shadow-top assetStripItem">
+							class="flex-item sm-col-5  shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
@@ -128,7 +128,7 @@
 								</div>
 							</div>
 						</a> <a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-5 mx2 shadow-top assetStripItem">
+							class="flex-item sm-col-5  shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center ">
 
@@ -166,7 +166,7 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="layout-inner-wrap">
+		<div class="">
 			<div class="bannerContent flex-center">
 				<div>
 					<h1 class="white">Control-M</h1>
@@ -182,10 +182,10 @@
 				</div>
 			</div>
 			<div class="assetStrip">
-				<div class="inner px1">
+				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html"
-							class="flex-item sm-col-6 mx2 shadow-top assetStripItem">
+							class="flex-item sm-col-6  shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
@@ -223,7 +223,7 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="layout-inner-wrap">
+		<div class="">
 			<div class="bannerContent flex-center">
 				<div>
 					<h1 class="white">Control-M</h1>
