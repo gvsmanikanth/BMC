@@ -22,7 +22,8 @@ include 'php-inc/head.php';
 										<option>Product 3</option>
 									</select>
 								</div>
-								<a href="#" class="ml2 btn-primary-with-border">Find courses</a>
+<!-- 								<a href="#" class="ml2 btn-primary-with-border">Find courses</a> -->
+<a href="javascript:void(0)" onclick="location.href=document.getElementById('products').options[document.getElementById('products').selectedIndex].value;" class="ml2 btn-primary-with-border" >Find courses</a>
 							</div>
 						</li>
 

@@ -389,7 +389,26 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         emailParams.put("fromAddress", FROM_ADDRESS);
         StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
         String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
-        form.data.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+        /* WEB-2675: Sort fields in Form Emails */ 
+        String[] sortFieldsBy = {"C_Title","C_BusPhone","C_EmailAddress","C_Company","C_LastName","C_FirstName"}; // Sort the response based on the given order
+        String[] sensitiveFields = {"_charset_","elqFormName","formname","formid","adobe_unique_hit_id"}; 
+        Map<String, String> emailEntryHashmap = new HashMap<>();
+        emailEntryHashmap.putAll(form.data);
+        
+     // Do not send sensitive data to notification recipient
+        for(String sensitiveField:sensitiveFields){
+        emailEntryHashmap.remove(sensitiveField);
+        }
+       for(String sortedField:sortFieldsBy){
+    	   if (!emailEntryHashmap.getOrDefault(sortedField, "").isEmpty()) {
+    		  body.append("<strong>" + sortedField + "</strong>: " + emailEntryHashmap.get(sortedField) + "<br/>");
+    		  emailEntryHashmap.remove(sortedField);
+    	   }
+       }
+       //Display other fields other than the sorted fields
+       emailEntryHashmap.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+       //form.data.forEach((k,v) -> body.append((!Arrays.asList(honeypotFields).contains(k)) ? "<strong>" + k + "</strong>: " + v + "<br/>" : ""));
+      
         body.append("<h2>Event Specific Information</h2>");
         body.append("<p><strong>").append(form.page.getTitle()).append("</strong></p>");
 
