@@ -6,7 +6,22 @@
                 <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
                     <sly data-sly-use.info="${'com.bmc.components.utils.LinkGenerator' @ urlPath=card.secondaryHref}">
 					</sly>
-                    <a href="${info.href}" target="_self" class="m1 card tundora bg-white js-ehItem ${info.cssClass}">
+                    <sly data-sly-test="${info.href}">
+                        <sly data-sly-test.resolvedLink="${info.href}"></sly>
+                    </sly>
+                    
+                    <sly data-sly-test="${!info.href}">
+                        <sly data-sly-test.resolvedLink="${card.secondaryHref}"></sly>
+                    </sly>
+                    
+                    <sly data-sly-test="${info.cssClass}">
+                        <sly data-sly-test.cssClass="${info.cssClass}"></sly>
+                    </sly>
+                    
+                    <sly data-sly-test="${!info.cssClass}">
+                        <sly data-sly-test.cssClass=" "></sly>
+                    </sly>
+                    <a href="${resolvedLink}" target="_self" class="m1 card tundora bg-white js-ehItem ${cssClass}">
                         <div class="p1 card-image text-center logo-max-height">
                             <img src="${card.logoSrc}" alt="${card.title}" title="${card.title}"></img>
                         </div>
@@ -25,3 +40,4 @@
         </div>
     </div>
 </section>
+

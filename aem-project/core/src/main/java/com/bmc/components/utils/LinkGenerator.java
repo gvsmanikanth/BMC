@@ -44,6 +44,6 @@ public class LinkGenerator extends WCMUsePojo implements UrlResolver {
 	@Override
 	public void activate() throws Exception {
 		link = getLinkInfo(get("urlPath", String.class), true); 
-		logger.info("resolvedLink"+ link);
+		logger.info("resolvedLink"+ link.getHref());
 	}
 }
