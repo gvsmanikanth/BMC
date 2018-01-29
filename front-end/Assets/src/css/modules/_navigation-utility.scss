@@ -87,13 +87,17 @@ $mobileUtilityNavHeight: 49px;
 	.navigation-utility .navigation-country a {
     padding-left: 26px;
   }
+  
+  .navigation-utility .navigation-search-icon  a {
+    padding-left: 26px;
+  }
 }
 
 // Icons
 // -------------------------------------------------------------- //
 .navigation-country a:after,
 .navigation-contact a:after,
-.navigation-support a:after {
+.navigation-support a:after{
 	@include icon();
 	@include font-size(16);
 	margin-left: 12px;

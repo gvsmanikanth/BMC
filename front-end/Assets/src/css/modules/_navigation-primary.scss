@@ -45,14 +45,14 @@
 			outline: none;
 			padding: .5em 1em;
 			@include media(breakpointLarge) {
-				@include font-size(14);
+				@include font-size(18);
 				color: #353537;
 				font-weight: 500;
 				margin-right: .5em;
 				padding: 0 .5em; //DXP-1416
 			}
 			@include media(breakpointExtraLarge) {
-				@include font-size(16);
+				@include font-size(18);
 			}
 		}
 		&:hover,

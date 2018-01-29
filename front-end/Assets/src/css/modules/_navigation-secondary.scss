@@ -80,7 +80,7 @@
 	&.navigation-four-col,
 	&.navigation-tabbed-menu {
 		width: columns(12);
-
+		max-width:1440px;
 		&.navigation-active {
 
 			@include media(breakpointLarge) {
@@ -115,13 +115,20 @@
 
 	&.layout-inner-wrap {
 		@include media(breakpointLarge) {
-			padding: 0!important;
+			padding: 0px !important;
+			
+			padding-top:18px !important;
+			padding-bottom:18px !important;
 		}
 	}
 
 	> ul {
 		list-style: none;
 		margin: 0;
+		padding-left : 0px;
+		@include media(breakpointLarge) {
+			padding-left : 1.5rem;
+		}
 	}
 
 	li {
@@ -134,16 +141,23 @@
 		color: color(colorCorporateAction);
 		display: block;
 		font-weight: normal;
-		padding: em(6) 0;
+		padding: em(6) em(0);
+		transition: all .25s ease-out;
 		@include media(breakpointLarge) {
 			@include font-size(15);
 			color: #414042;
-			padding: em(6) 0;
+			padding: em(6) em(0);
+			
 		}
 
 		&:hover,
 		&:active {
 			color: color(colorCorporateAction);
+		    //background-color: #ebebeb;
+		   	//font-weight: bold;
+		    //padding-left:7;
+		    //text-shadow: white 1px 1px;
+		    //transition: all .25s ease-in;
 		}
 
 		&.link-view-all {
@@ -156,6 +170,13 @@
 				color: darken(color(colorCorporateAction), 10);
 			}
 		}
+		
+		&.boldlink{
+			font-size: 0.88889rem;
+			font-weight: inherit;
+		}
+		
+		
 	}
 
 	.btn {
@@ -200,10 +221,16 @@
 		@include font-size(16);
 		font-weight: 700;
 		line-height: 20px;
-		padding: em(8) 0 em(20);
+		padding: em(8) 0 em(6);
 
 		@include media(breakpointLarge) {
-			padding: em(18) 0 em(20);
+			padding: em(20) 0 em(6);
+		}
+		
+		.subtitle{
+			font-size: .7rem; 
+			font-style: italic; 
+			font-weight: normal;
 		}
 
 	}
@@ -258,6 +285,19 @@
 			}
 		}
 	}
+	
+	.featured-product-title{
+		font-size: 1.2rem;
+		margin-left: 16px;
+	}
+	
+	.nav-floating-promo{
+		float: left;
+		position: absolute;
+		bottom: 0px; 
+		padding:1rem; 
+		width: 60%;
+	}
 
 	a.tab-control {
 		background-image: url('#{$imagesFolder}sprite-icon-product-types.png');
@@ -303,9 +343,14 @@
 
 	}
 	// sprite-icon-product-types
+	
+	
+	.nav-mobile-back-outside-link{
+		margin: 0px;
+		padding-left: 16px;
+	}
 
 }
-
 
 .navigation-column {
 	@include box-sizing();
@@ -320,12 +365,16 @@
 	& + .navigation-column {
 		padding-top: 0;
 	}
+	
+	
 
 	&.navigation-column-emphasis {
 		background-color: #fcfcfc;
 		padding: em(24);
 		@include media(breakpointLarge) {
-			padding-top: 0;
+			padding-bottom: 0px;
+			padding-top: 1rem; 
+			text-align: center;
 		}
 		
 		//DXP-149 - Added new class to remove inline css
@@ -349,6 +398,10 @@
 		margin: 0;
 		padding: 0;
 	}
+	
+	ul:not(:last-child){
+		padding-bottom:1rem;
+	}
 
 	.navigation-one-col & {
 		@include media(breakpointLarge) {
@@ -371,6 +424,7 @@
 		@include media(breakpointLarge) {
 			width: columns(3);
 		}
+		
 	}
 
 	.navigation-tabbed-menu & {
@@ -378,5 +432,6 @@
 			width: columns(4);
 		}
 	}
-
 }
+
+	
