@@ -5,7 +5,7 @@
             <a class="accordion-item-anchor" href="#${anchorTagText}">${productName @context='html'}</a>
             <div class="accordion-item-content">
                 <p data-sly-test="${productDescription}">${productDescription @context='html'}</p>
-                <p data-sly-test="${productAvailability}">${productAvailability}
+                <p data-sly-test="${productAvailability}">${productAvailability @context='html'}
                     <sly data-sly-test="${productAvailability != 'This product is available as a standalone offering'}" data-sly-list="${productAvailabilityList}">
                         <a href="${item.pUrl}.html" target="_self">${item.pTitle @ context='html'}</a><sly data-sly-test="${!itemList.last}">, </sly>
                     </sly>

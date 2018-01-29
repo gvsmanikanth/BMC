@@ -4,7 +4,7 @@
         <div class="three-up">
             <h2 class="icon-read">Read</h2>
             <sly data-sly-list.section="${data.readResources}">
-                <h5>${section.header}:</h5>
+                <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
                     <li>
                         <a class="${link.cssClass}" href="${link.href}" target="_self">
@@ -17,7 +17,7 @@
         <div class="three-up">
             <h2 class="icon-watch">Experience</h2>
             <sly data-sly-list.section="${data.experienceResources}">
-                <h5>${section.header}:</h5>
+                <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
                     <li>
                         <a class="${link.cssClass}" href="${link.href}" target="_self">
@@ -30,7 +30,7 @@
         <div class="three-up">
             <h2 class="icon-explore">Explore</h2>
             <sly data-sly-list.section="${data.exploreResources}">
-                <h5>${section.header}:</h5>
+                <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
                     <li>
                         <a class="${link.cssClass}" href="${link.href}" target="_self">

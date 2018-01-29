@@ -3,7 +3,7 @@
         <img src="${image.src}" width="65" height="54" alt="" title="" border="0" />
     </div>
     <div class="copy">
-        <h2>${properties.heading}</h2>
-        <p>${properties.text}</p>
+        <h2>${properties.heading @ context='html'}</h2>
+        <p>${properties.text @ context='html'}</p>
     </div>
 </div>

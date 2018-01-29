@@ -21,13 +21,13 @@
         <div class="layout-inner-wrap">
             <div class="report ${imageLocation}">
                 <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
-                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt}" title="" width="320"  height="170" border="0"></img>
+                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt @ context='html'}" title="" width="320"  height="170" border="0"></img>
                 </a>
                 <div class="report-text">
-                    <h5> ${properties.heading}</h5>
-                    <p>${properties.subheading}</p>
+                    <h5> ${properties.heading @ context='html'}</h5>
+                    <p>${properties.subheading @ context='html'}</p>
                     <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
-                        ${cta.text}
+                        ${cta.text @ context='html'}
                         <sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly>
                     </a>
                 </div>
@@ -40,15 +40,15 @@
         <div class="layout-inner-wrap">
             <div class="report img-top-bottom">
                 <div class="report-text">
-                    <h5> ${properties.heading}</h5>
-                    <p>${properties.subheading}</p>
+                    <h5> ${properties.heading @ context='html'}</h5>
+                    <p>${properties.subheading @ context='html'}</p>
                     <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
-                        ${cta.text}
+                        ${cta.text @ context='html'}
                         <sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly>
                     </a>
                 </div>
                 <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
-                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt}" title="" width="320"  height="170" border="0"></img>
+                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt @ context='html'}" title="" width="320"  height="170" border="0"></img>
                 </a>
             </div>
         </div>
