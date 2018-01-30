@@ -46,7 +46,7 @@
         validateFromURLParam();
     }
     function validateFromURLParam() {
-    var label = $('#searchLabel').val();
+    var label =  document.getElementById("searchLabel").value;
     var queryParam = window.location.pathname+"?label="+label+"#stq=" + stq;
     window.location.href =queryParam;
     }
