@@ -23,7 +23,7 @@
 		margin-right: auto;
 	}
 	
-	h1, h2, h5, p{
+	h1, h2, h5{
 		font-weight: lighter !important;
 		width: 100%;
 	}
@@ -47,7 +47,7 @@
 	}
 	
 	h1{
-		font-size: 2rem;
+		font-size: 2.5rem;
 		@media screen and (min-width: 640px) {
 			font-size: 3rem;
 		}
@@ -162,7 +162,8 @@
 		
 		h5 {
 			color: #Fe5000;
-			font-size: 1rem;
+			font-size: 16px;
+			margin-bottom: 0;
 		}
 		
 		p {
@@ -188,8 +189,12 @@
 				//min-width: 75px;
 				width: 15%;
 				margin: auto;
-				vertical-align: middle;
+				vertical-align: top;
 				display: none;
+				margin-top: 1.2rem;
+				@include media(breakpointLarge) {
+					margin-top: .5rem;
+				}
 			}
 			
 			.assetTxt .inner {
@@ -200,10 +205,10 @@
 			}
 			
 			p{
-				font-size: 20px;
+				font-size: 16px;
 			}
 			.link{
-				font-size: 18px;
+				font-size: 14px;
 			}
 		}
 		
@@ -220,18 +225,20 @@
 		}
 		
 		.contentContainer > .flex-item > .inner {
-			padding: 1rem 1.3rem;		
+			padding: .8rem 1.3rem;		
 			@media screen and (max-width: 640px) {
 				padding-right: 0px;
 				padding-left: 0px;
 			}
 		}
 		
-		//.contentContainer{
-			//	>.sm-col-4{
-			//		margin-bottom: 0rem;
-			//	}
-		//}
+		.contentContainer{
+				>.sm-col-4{
+					img{
+						margin-top: 1rem;
+					}
+				}
+		}
 			
 		@include media(breakpointSmall) {
 				
@@ -288,6 +295,9 @@
 					}
 					.link{
 						font-size: 18px;
+					}
+					h5 {
+						font-size: 1rem;
 					}
 				}
 			}
