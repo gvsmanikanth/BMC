@@ -3,7 +3,7 @@
 
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
-	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/education/Education_Banner_1900x700_opt_2-2-v2.jpg?ab=2&quot;}">
+	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
 		<div class="">
@@ -29,7 +29,7 @@
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/Video_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Demo:</h5>
@@ -44,7 +44,7 @@
 								<div class="flex-center ">
 
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Datasheet:</h5>
@@ -60,7 +60,7 @@
 								<div class="flex-center">
 
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/AnalystReport_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Analyst report:</h5>
@@ -92,7 +92,7 @@
 
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
-	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/education/Education_Banner_1900x700_opt_2-2-v2.jpg?ab=2&quot;}">
+	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
 		<div class="">
@@ -118,7 +118,7 @@
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/Video_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Demo:</h5>
@@ -133,7 +133,7 @@
 								<div class="flex-center ">
 
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Datasheet:</h5>
@@ -163,7 +163,7 @@
 
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
-	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/education/Education_Banner_1900x700_opt_2-2-v2.jpg?ab=2&quot;}">
+	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
 		<div class="">
@@ -189,7 +189,7 @@
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img
-										src="//www.bmc.com/content/dam/bmc/images/assetStrip_document-icon.png"
+										src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png"
 										alt="">
 									<div class="inner">
 										<h5>Demo:</h5>
@@ -220,7 +220,7 @@
 
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
-	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/education/Education_Banner_1900x700_opt_2-2-v2.jpg?ab=2&quot;}">
+	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
 		<div class="">

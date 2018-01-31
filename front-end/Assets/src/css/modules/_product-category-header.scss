@@ -40,7 +40,8 @@
 	
 	h2{
 		font-size: 1.1rem;
-		line-height: 1.4em;
+		line-height: 1.2em;
+		max-width:80%;
 		@media screen and (min-width: 640px) {
 			font-size: 1.77778rem;
 		}
@@ -162,7 +163,7 @@
 		
 		h5 {
 			color: #Fe5000;
-			font-size: 16px;
+			font-size: 14px;
 			margin-bottom: 0;
 		}
 		
@@ -182,33 +183,30 @@
 			
 			.link{
 				color: #3cb6ce;
+				margin-top: .25rem;
+				font-size: 14px;
+				
+				@media screen and (min-width: 640px) {
+						margin-top: .6rem;
+				}
 			}
 			
 			img{
-				max-width: 75px;
+				max-width: 72px;
 				//min-width: 75px;
-				width: 15%;
+				width: auto;
 				margin: auto;
 				vertical-align: top;
 				display: none;
 				margin-top: 1.2rem;
 				@include media(breakpointLarge) {
-					margin-top: .5rem;
+					margin-top: .2rem;
 				}
-			}
-			
-			.assetTxt .inner {
-				margin-left: 0px;
-				width: 100%;
-				max-width: 100%;
-				
 			}
 			
 			p{
 				font-size: 16px;
-			}
-			.link{
-				font-size: 14px;
+				margin-top:.25rem;
 			}
 		}
 		
@@ -235,7 +233,7 @@
 		.contentContainer{
 				>.sm-col-4{
 					img{
-						margin-top: 1rem;
+						margin-top: .2rem;
 					}
 				}
 		}
@@ -275,6 +273,10 @@
 				}
 			}
 			
+			.link{
+				margin-top:.6rem;
+			}
+			
 		}
 		
 		
@@ -288,16 +290,18 @@
 				
 				.inner {
 					margin-left: 16px;
-					max-width: 75%;
+					max-width: 60%;
 					width: auto;
 					p{
-						font-size: 20px;
+						font-size: 18px;
+						margin-top:.25rem;
 					}
 					.link{
 						font-size: 18px;
+						margin-top:.6rem;
 					}
 					h5 {
-						font-size: 1rem;
+						font-size: 14px;
 					}
 				}
 			}
