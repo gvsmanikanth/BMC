@@ -66,8 +66,10 @@ public class UrlInfo {
 
         ResourceResolver resolver = page.getContentResource().getResourceResolver();
 
+        // WEB-2866 reverted to page.getPath() + .html, which is transformed properly by the link transformer on
+        // publish instances, but also works on author instances in preview mode. 
         return new UrlInfo(UrlType.Page,
-                StringHelper.coalesceString(page.getVanityUrl()).orElse(resolver.map(page.getPath())));
+                StringHelper.coalesceString(page.getVanityUrl()).orElse(page.getPath() + ".html"));
     }
     public static UrlInfo from(Asset asset) {
         return (asset == null) ? UNDEFINED : new UrlInfo(UrlType.Asset, asset.getPath());

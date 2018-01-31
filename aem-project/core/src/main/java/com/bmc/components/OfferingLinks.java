@@ -7,6 +7,7 @@ import com.bmc.models.components.offerings.ProductLinkSection;
 import com.bmc.models.url.LinkInfo;
 import com.bmc.services.OfferingLinkService;
 import com.google.gson.GsonBuilder;
+import org.apache.sling.api.resource.ResourceResolver;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,12 +28,26 @@ public class OfferingLinks extends WCMUsePojo implements MetadataInfoProvider_Re
             return;
 
         linkData = offeringLinkService.getOfferingLinkData(this);
+        ResourceResolver resolver = getResourceResolver();
 
         List<AutocompleteTerm> terms = Stream.concat(linkData.getTopics().stream(),
                 linkData.getProductSections().stream().flatMap(s -> s.getLinks().stream()))
                 .map(AutocompleteTerm::new)
+                .map(s -> resolverMapUrl(s, resolver))
                 .collect(Collectors.toList());
         autocompleteTermsJson = new GsonBuilder().setPrettyPrinting().create().toJson(terms);
+    }
+
+    /**
+     * WEB-2866 - called from the lambda above,
+     * maps URLs rendered in a JavaScript block via ResourceResolver::map for shortening
+     * @param term
+     * @param resolver
+     * @return
+     */
+    private AutocompleteTerm resolverMapUrl(AutocompleteTerm term, ResourceResolver resolver) {
+        term.data = resolver.map(term.data);
+        return term;
     }
 
     static class AutocompleteTerm {
@@ -41,6 +56,14 @@ public class OfferingLinks extends WCMUsePojo implements MetadataInfoProvider_Re
             data = linkInfo.getHref();
         }
         public final String value;
-        public final String data;
+        private String data;
+
+        public String getData() {
+            return data;
+        }
+
+        public void setData(String data) {
+            this.data = data;
+        }
     }
 }
