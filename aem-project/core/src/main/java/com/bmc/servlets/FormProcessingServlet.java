@@ -13,6 +13,8 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.NonExistingResource;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
@@ -494,18 +496,25 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                             properties.remove("emailid");
                         }
 
-                        // Strip off any leading hostname that comes from the resource mapping.
-                        String purlPath = resourceResolver.map(properties.get(JCR_PURL_PAGE_URL));
-                        Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
-                        Matcher matcher = pattern.matcher(purlPath);
-                        matcher.find();
 
-                        String purlPage = purlPath;
-                        if (matcher.matches()) {
-                            purlPage = matcher.group(4);
+                        String purlPath = properties.get(JCR_PURL_PAGE_URL);
+                        Resource purlResource = resourceResolver.resolve(purlPath);
+                        String purlPageUrl;
+                        if (purlResource instanceof NonExistingResource) {
+                            purlPageUrl = purlPath;
+                        } else {
+                            purlPageUrl = resourceResolver.map(purlPath);
+                            Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
+                            Matcher matcher = pattern.matcher(purlPageUrl);
+                            matcher.find();
+
+                            String purlPage = purlPageUrl;
+                            if (matcher.matches()) {
+                                purlPage = matcher.group(4);
+                            }
+
+                            purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage.replace(".html", "") + ".PURL" + formGUID + ".html";
                         }
-
-                        String purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage + ".PURL" + formGUID + ".html";
                         properties.put(PURL_PAGE_URL, purlPageUrl);
                         properties.remove(JCR_PURL_PAGE_URL);
 
