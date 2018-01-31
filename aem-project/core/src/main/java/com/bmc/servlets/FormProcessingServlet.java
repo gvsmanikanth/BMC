@@ -500,6 +500,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         String purlPath = properties.get(JCR_PURL_PAGE_URL);
                         Resource purlResource = resourceResolver.resolve(purlPath);
                         String purlPageUrl;
+                        // WEB-2783 update for non-AEM/external PURL page URLs. If it's not a valid resource, keep the URL as entered. 
                         if (purlResource instanceof NonExistingResource) {
                             purlPageUrl = purlPath;
                         } else {
