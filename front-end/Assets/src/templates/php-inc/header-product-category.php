@@ -79,7 +79,7 @@
 
 <section
 	class="layout-full-bleed support-promo bg-mediumOrange product-category-promo">
-	<p class="align-center white promp-content">
+	<p class="align-center white promo-content">
 		Looking for OnDemand Services Support? <a class="learn-more white"
 			href="http://i.onbmc.com"><span>OnDemand Services Support</span></a>
 	</p>
@@ -152,12 +152,11 @@
 
 <section
 	class="layout-full-bleed support-promo bg-mediumOrange product-category-promo">
-	<p class="align-center white promp-content">
+	<p class="align-center white promo-content">
 		Looking for OnDemand Services Support? <a class="learn-more white"
 			href="http://i.onbmc.com"><span>OnDemand Services Support</span></a>
 	</p>
 </section>
-
 
 <!-- Third -->
 
@@ -207,7 +206,7 @@
 
 <section
 	class="layout-full-bleed support-promo bg-mediumOrange product-category-promo">
-	<p class="align-center white promp-content">
+	<p class="align-center white promo-content">
 		Looking for OnDemand Services Support? <a class="learn-more white"
 			href="http://i.onbmc.com"><span>OnDemand Services Support</span></a>
 	</p>
@@ -243,7 +242,7 @@
 
 <section
 	class="layout-full-bleed support-promo bg-mediumOrange product-category-promo">
-	<p class="align-center white promp-content">
+	<p class="align-center white promo-content">
 		Looking for OnDemand Services Support? <a class="learn-more white"
 			href="http://i.onbmc.com"><span>OnDemand Services Support</span></a>
 	</p>

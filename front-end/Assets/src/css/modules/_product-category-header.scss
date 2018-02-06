@@ -163,7 +163,7 @@
 		
 		h5 {
 			color: #Fe5000;
-			font-size: 14px;
+			font-size: 16px;
 			margin-bottom: 0;
 		}
 		
@@ -301,7 +301,7 @@
 						margin-top:.6rem;
 					}
 					h5 {
-						font-size: 14px;
+						font-size: 16px;
 					}
 				}
 			}
@@ -330,7 +330,6 @@
 			
 			@media screen and (min-width: 640px) {
 				border-top: 2px solid  #3cb6ce;
-				//padding-bottom: 5px;
 				background-color: rgba(0, 0, 0, 1);
 				transition: .5s ease;
 			}
@@ -343,7 +342,7 @@
 
 .product-category-promo{
 	margin-top: 0em;
-	.promp-content{
+	.promo-content{
 		padding: .7rem !important; 
 		margin-bottom: 0px !important;  
 		margin-top: 0rem !important; 
@@ -354,7 +353,7 @@
 			font-weight: normal;
 		}
 	}
-	.promp-content>a:hover{
+	.promo-content>a:hover{
 		text-decoration: underline;
 	}
 }
