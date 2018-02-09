@@ -37,6 +37,8 @@ public class LinkTransformerService implements TransformerFactory {
     @Reference
     private SlingRepository repository;
 
+    private ResourceResolver resolver = null;
+
     public Transformer createTransformer() {
         logger.info("createTransformer");
         return new LinkRewriterTransformer();
@@ -45,6 +47,14 @@ public class LinkTransformerService implements TransformerFactory {
     @Activate
     protected void activate(Map<String, Object> properties) {
         logger.info("activate");
+        // WEB-2924 - Performance Optimization
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put(ResourceResolverFactory.SUBSERVICE, "linktransformer");
+        try {
+            resolver = resolverFactory.getServiceResourceResolver(param);
+        } catch (Exception e) {
+
+        }
     }
 
     @Deactivate
@@ -106,14 +116,6 @@ public class LinkTransformerService implements TransformerFactory {
             final AttributesImpl attributes = new AttributesImpl(atts);
 
             final String href = attributes.getValue("href");
-            Map<String, Object> param = new HashMap<String, Object>();
-            param.put(ResourceResolverFactory.SUBSERVICE, "linktransformer");
-            ResourceResolver resolver = null;
-            try {
-                resolver = resolverFactory.getServiceResourceResolver(param);
-            } catch (Exception e) {
-
-            }
 
             if (href != null) {
                 String path = "";
