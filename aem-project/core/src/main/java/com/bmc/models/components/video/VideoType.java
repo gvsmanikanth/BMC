@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public enum VideoType {
     YouTube(1),
-    Twistage(2),
+   // Twistage(2),
     Dam(3);
 
     public static VideoType valueOf(int typeId) { return typeMap.get(typeId); }
