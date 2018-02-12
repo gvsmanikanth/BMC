@@ -40,7 +40,7 @@
 	    	
 	    	//WEB-2626 - Product Intrest
 	    	if (typeof bmcMeta !== 'undefined' && typeof bmcMeta.page !== 'undefined'  && typeof bmcMeta.page.productCategories !== 'undefined') {
-		    	if(isForm.test(this.href))
+		    	if(isForm.test(this.href)){
 	    			var prodIntrest  = bmcMeta.page.productCategories;
 	    			$(this).attr("href", this.href+"?"+prodIntrest);
 	    			console.log(this.href);
