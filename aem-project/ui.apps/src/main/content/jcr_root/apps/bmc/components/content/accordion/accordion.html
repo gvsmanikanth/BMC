@@ -1,28 +1,28 @@
 <sly data-sly-use.AccordionModel="com.bmc.models.components.accordion.AccordionModel"/>
-    <ul class="${wcmmode.edit ? 'accordion--editing' : 'accordion'} ">
-        <li class="accordion-item layout-inner-wrap">
-            <span id="accordion-${AccordionModel.AccordionID}" class="jump-to" name="accordion-${AccordionModel.AccordionID}"></span>
-            <a class="accordion-item-anchor" href="#accordion-${AccordionModel.AccordionID}">
-                ${properties.title @ context = 'html'}
-            </a>
-            <div class="accordion-item-content">
-                <section>
+<ul class="${wcmmode.edit ? 'accordion--editing' : 'accordion'} ">
+    <li class="accordion-item layout-inner-wrap">
+        <span id="accordion-${AccordionModel.AccordionID}" class="jump-to" name="accordion-${AccordionModel.AccordionID}"></span>
+        <a class="accordion-item-anchor" href="#accordion-${AccordionModel.AccordionID}">
+            ${properties.title @ context = 'html'}
+        </a>
+        <div class="accordion-item-content">
+            <section>
 
-                    <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
-                         data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
-                         class="${api.cssClass} ${allowed.cssClass}">
-                        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
-                             data-sly-test="${isAllowedApplicable}"
-                             data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
-                             data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
-                        <sly data-sly-test="${!isAllowedApplicable}"
-                             data-sly-repeat.child="${api.paragraphs}"
-                             data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
-                        <sly data-sly-test="${!isAllowedApplicable}"
-                             data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
-                    </div>
+                <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+                     data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
+                     class="${api.cssClass} ${allowed.cssClass}">
+                    <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+                         data-sly-test="${isAllowedApplicable}"
+                         data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+                         data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+                    <sly data-sly-test="${!isAllowedApplicable}"
+                         data-sly-repeat.child="${api.paragraphs}"
+                         data-sly-resource="${child.path @ resourceType=child.resourceType, decoration='true', cssClassName=child.cssClass}"></sly>
+                    <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
+                         data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', decorationTagName='div', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+                </div>
 
-                </section>
-            </div>
-        </li>
-    </ul>
+            </section>
+        </div>
+    </li>
+</ul>

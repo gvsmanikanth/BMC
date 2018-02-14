@@ -12,9 +12,9 @@
             </div>
             <div class="header-logo" style="width:350px;">
 
-                <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image'}" data-sly-unwrap></sly>
+                <sly data-sly-resource.headerlogo="${'logo' @resourceType='bmc/components/content/image',decorationTagName='img'}" data-sly-unwrap></sly>
             </div>
-            <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title'}" data-sly-unwrap></sly>
+            <sly data-sly-resource.heading="${'heading' @resourceType='bmc/components/content/title',decorationTagName='div'}" data-sly-unwrap></sly>
             <sly data-sly-test.template="${customerSpotlight.template != '/conf/bmc/settings/wcm/templates/customerstory'}"
                  data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='cta_link', urlOrPath='cta_url'}">
                 <a data-sly-test="${cta.isVideo}" class="btn video-play ${cta.cssClass}" href="${cta.href}" target="_self">${cta.text @ context='html'}</a>
@@ -23,9 +23,9 @@
         </div>
         <div class="layout-secondary non-mobile customer-story-case-points" data-set="customer-story-case-points">
             <div class="points js-initial-customer-story-case-points-container">
-                <div data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
-                <div data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
-                <div data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem'}" data-sly-unwrap></div>
+                <div data-sly-resource="${'point1' @resourceType='bmc/components/content/customer-spotlight-listitem',decorationTagName='div'}" data-sly-unwrap></div>
+                <div data-sly-resource="${'point2' @resourceType='bmc/components/content/customer-spotlight-listitem',decorationTagName='div'}" data-sly-unwrap></div>
+                <div data-sly-resource="${'point3' @resourceType='bmc/components/content/customer-spotlight-listitem',decorationTagName='div'}" data-sly-unwrap></div>
             </div>
         </div>
     </div>

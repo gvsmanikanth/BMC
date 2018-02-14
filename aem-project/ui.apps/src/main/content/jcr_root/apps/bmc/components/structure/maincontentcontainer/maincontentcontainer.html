@@ -7,20 +7,20 @@
     </section>
 </sly>
 <sly data-sly-test="${!isThankYouAndNotValid}">
-<section data-sly-test="${currentPage.properties.showBreadcrumbs}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='layout-inner-wrap', decorationTagName='span' }" class="navigation-breadcrumb layout-full-bleed"></section>
-<section data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
-          data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
-          class="${api.cssClass} ${allowed.cssClass} layout-full-bleed">
-    <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
-         data-sly-test="${isAllowedApplicable}"
-         data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
-         data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
-    <sly data-sly-list.child="${api.paragraphs}">
-        <sly data-sly-test="${!isAllowedApplicable && (child.resourceType != 'bmc/components/content/navigation/breadcrumbs')}"
-             data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
-    </sly>
+    <section data-sly-test="${currentPage.properties.showBreadcrumbs}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='layout-inner-wrap', decorationTagName='span' }" class="navigation-breadcrumb layout-full-bleed"></section>
+    <section data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
+             data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
+             class="${api.cssClass} ${allowed.cssClass} layout-full-bleed">
+        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+             data-sly-test="${isAllowedApplicable}"
+             data-sly-use.allowedTemplate="/libs/wcm/foundation/components/parsys/allowedcomponents/allowedcomponents-tpl.html"
+             data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+        <sly data-sly-list.child="${api.paragraphs}">
+            <sly data-sly-test="${!isAllowedApplicable && (child.resourceType != 'bmc/components/content/navigation/breadcrumbs')}"
+                 data-sly-resource="${child.path @ resourceType=child.resourceType, decoration='true', cssClassName=child.cssClass}"></sly>
+        </sly>
 
-    <sly data-sly-test="${!isAllowedApplicable}"
-         data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
-</section>
+        <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
+             data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', decorationTagName='div', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+    </section>
 </sly>
