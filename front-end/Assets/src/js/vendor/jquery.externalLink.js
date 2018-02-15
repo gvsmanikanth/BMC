@@ -18,8 +18,8 @@
 	    var typesArray = opts.fileTypes.split(',');
 	    var extValid = new RegExp('/'+window.location.host+'/');
 	    var jsValid = new RegExp('javascript');
-	    var isForm = new RegExp('\/forms\/');
-	    
+		var isForm = new RegExp('\/forms\/');
+	   	    
 	    return this.each(function(){
 
 	    	if(!extValid.test(this.href)) {
@@ -36,16 +36,8 @@
 		    		}
 		    	}
 	    	}
-	    	
-	    	
-	    	//WEB-2626 - Product Intrest
-	    	if (typeof bmcMeta !== 'undefined' && typeof bmcMeta.page !== 'undefined'  && typeof bmcMeta.page.productCategories !== 'undefined') {
-		    	if(isForm.test(this.href)){
-	    			var prodIntrest  = bmcMeta.page.productCategories;
-	    			$(this).attr("href", this.href+"?"+prodIntrest);
-	    			console.log(this.href);
-	    		}
-	    	}
+			
+
 	    		
 	    });
 	};
