@@ -37,14 +37,6 @@
                                         renderReadOnly="{Boolean}true"
                                         text="YouTube"
                                         value="1"/>
-                                    <twistage
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/radio"
-                                        cq-msm-lockable="typeId"
-                                        name="./typeId"
-                                        renderReadOnly="{Boolean}true"
-                                        text="Twistage"
-                                        value="2"/>
                                     <dam
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/form/radio"
