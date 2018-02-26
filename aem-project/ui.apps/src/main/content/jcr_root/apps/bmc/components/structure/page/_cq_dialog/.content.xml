@@ -160,7 +160,7 @@
                             cq:showOnCreate="false"
                             jcr:title="Metadata"
                             sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                            sling:orderBefore="advanced">
+                            sling:orderBefore="resources">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                     jcr:primaryType="nt:unstructured"
@@ -230,6 +230,208 @@
                             </column>
                         </items>
                     </metadata>
+                    <resources
+                            jcr:primaryType="nt:unstructured"
+                            cq:showOnCreate="false"
+                            jcr:title="Resources"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                            sling:orderBefore="advanced">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <resources
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Resource Hub"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hub-inclusion
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Include in Resource Hub?"
+                                                    fieldLabel="Resource Hub Inclusion"
+                                                    name="./hub-inclusion">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="No (not for hub)"
+                                                            value="no"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Yes (not gated)"
+                                                            value="yes"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Gated (map from form)"
+                                                            value="gated"/>
+                                                    <item4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Gate (map to asset)"
+                                                            value="gate"/>
+                                                </items>
+                                            </hub-inclusion>
+                                            <hub-weighting
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose a weighting for this content"
+                                                    fieldLabel="Content Weighting"
+                                                    name="./hub-weighting">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="5"
+                                                            value="5"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="4"
+                                                            value="4"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="3"
+                                                            value="3"/>
+                                                    <item4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="2"
+                                                            value="2"/>
+                                                    <item5
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1"
+                                                            value="1"/>
+                                                </items>
+                                            </hub-weighting>
+                                            <hub-topics
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose one or more Resource Hub topics for this content"
+                                                    fieldLabel="Resource Hub Topic(s)"
+                                                    multiple="{Boolean}true"
+                                                    name="./hub-topics">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="AI and Machine Learning"
+                                                            value="AIMachineLearning"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Big Data"
+                                                            value="BigData"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Business and IT Automation"
+                                                            value="BusinessITAutomation"/>
+                                                    <item4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Cost Reduction and IT Optimization"
+                                                            value="CostReductionITOptimization"/>
+                                                    <item5
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="DevOps"
+                                                            value="DevOps"/>
+                                                    <item6
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Digital Workplace"
+                                                            value="DigitalWorkplace"/>
+                                                    <item7
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="IT Operations Management"
+                                                            value="ITOperationsManagement"/>
+                                                    <item8
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Mainframe"
+                                                            value="Mainframe"/>
+                                                    <item9
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Multi-Cloud"
+                                                            value="Multi-Cloud"/>
+                                                    <item10
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Security and Compliance"
+                                                            value="SecurityCompliance"/>
+                                                    <item11
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Service Management"
+                                                            value="ServiceManagement"/>
+                                                </items>
+                                            </hub-topics>
+                                            <hub-buyer-stage
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose a Buyer Stage for this content"
+                                                    fieldLabel="Buyer Stage"
+                                                    multiple="{Boolean}true"
+                                                    name="./hub-buyer-stage">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Discover"
+                                                            value="discover"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Explore"
+                                                            value="explore"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Engage"
+                                                            value="engage"/>
+                                                    <item4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Buy"
+                                                            value="buy"/>
+                                                </items>
+                                            </hub-buyer-stage>
+                                            <hub-industry
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose zero or more industries for this content"
+                                                    fieldLabel="Target Industry"
+                                                    multiple="{Boolean}true"
+                                                    name="./hub-industry">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Telecommunications and Media"
+                                                            value="Telecommunications and Media"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="etc..."
+                                                            value="etc"/>
+                                                </items>
+                                            </hub-industry>
+                                            <hub-company-size
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose a target company size for this content"
+                                                    fieldLabel="Company Size"
+                                                    name="./hub-company-size">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="5000+"
+                                                            value="5000"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1000-4999"
+                                                            value="1000-4999"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="1-999"
+                                                            value="1-999"/>
+                                                </items>
+                                            </hub-company-size>
+                                        </items>
+                                    </resources>
+                                </items>
+                            </column>
+                        </items>
+                    </resources>
+
                     <CTAs
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Related CTAs"
