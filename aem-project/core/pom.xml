@@ -122,6 +122,10 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -162,7 +166,6 @@
                         <Sling-Model-Packages>
                           com.bmc.models
                         </Sling-Model-Packages>
-
                     </instructions>
                 </configuration>
             </plugin>

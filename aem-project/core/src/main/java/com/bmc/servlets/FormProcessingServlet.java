@@ -7,6 +7,12 @@ import com.bmc.services.FormProcessingXMLService;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.google.common.collect.Lists;
+import com.pactsafe.api.activity.Activity;
+import com.pactsafe.api.activity.Group;
+import com.pactsafe.api.activity.components.PactSafeActivityException;
+import com.pactsafe.api.activity.domain.EventType;
+import com.pactsafe.api.activity.domain.ParameterStore;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -141,6 +147,26 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         logger.trace("doPost called");
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
+
+        // Uses Access ID from account settings (https://app.pactsafe.com/settings/account)
+        // Make sure correct site is selected
+        Activity site = new Activity("eebbf489-fb84-4a0c-b624-51f2ead3104b");
+
+        ParameterStore action = new ParameterStore();
+        action.setSignerId("bledford@connectivedx.com");
+        action.setVersions(Arrays.asList("5a58f7341762512e24268a5f"));
+        try {
+//            site.send(EventType.AGREED, action);
+            site.agreed(action);
+        } catch (Exception e) {
+            logger.error("PactSafe error: " + e.getMessage(), e);
+        }
+
+        try {
+            Group group = site.load("15660");
+        } catch (PactSafeActivityException e) {
+            logger.error("PactSafe error: " + e.getMessage(), e);
+        }
 
         FormData form = new FormData(request);
 
