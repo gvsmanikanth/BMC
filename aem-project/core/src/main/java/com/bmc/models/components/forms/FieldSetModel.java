@@ -7,10 +7,13 @@ import java.util.Properties;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.models.components.forms.FormModel;
+import com.bmc.services.PactSafeService;
+import com.bmc.services.SupportCentralService;
 import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap;
 import com.day.cq.commons.inherit.InheritanceValueMap;
 import com.day.cq.wcm.api.Page;
 
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
@@ -26,12 +29,17 @@ import javax.jcr.Value;
 
 public class FieldSetModel extends WCMUsePojo{
 
+  //  @Reference  //<-- NOT THE CORRECT PLACE TO USE AN @Reference
+    private PactSafeService service;
+
     private static final Logger log = LoggerFactory.getLogger(FieldSetModel.class);
     String paramName;
 
     Map <String,Value> formContainerData = new HashMap<String,Value>();
     @Override
     public void activate() throws Exception {
+
+        service = getSlingScriptHelper().getService( PactSafeService.class );
 
         // Fetch the formRequestPropertyObject
         //log.info(getRequest().getAttribute("formContainerProperties").toString());
@@ -41,11 +49,16 @@ public class FieldSetModel extends WCMUsePojo{
         //log.info("Lead capture :"+formContainerData.get("C_Lead_Offer_Most_Recent1").toString());
     }
 
-
-    public String getValue() {
+    public String getLeadOfferMostRecent() {
         //Getter class to pass Lead Capture value to sightly htl.
         String LeadCapture = formContainerData.get("C_Lead_Offer_Most_Recent1").toString();
-        return (String) (LeadCapture != null ? LeadCapture : "");
+        return (String) LeadCapture != null ? LeadCapture : "";
     }
-}
 
+    public String getPactSafeAgreementCopy() {
+        String pactSafeAgreementCopy = service.getPactSafeAgreementCopy();
+        return pactSafeAgreementCopy != null ? pactSafeAgreementCopy : "";
+  //      return "This is some hard coded copy";
+    }
+
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="sling:OsgiConfig"
+          pactSafeContractGroupID="123"
+		  pactSafeAgreementLink="http://www.google.com"
+		  pactSafeAgreementCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+		  pactSafeAPIURL=""
+		  pactSafeToken=""
+/>

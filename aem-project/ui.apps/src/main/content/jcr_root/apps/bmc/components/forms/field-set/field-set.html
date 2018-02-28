@@ -11,8 +11,8 @@
         <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
              data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', decorationTagName='div', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
         <!--/* WEB_2690 PactSafe Agreement fields addition --START */-->
-        <sly data-sly-use.leadCapture="com.bmc.models.components.forms.FieldSetModel" />
-        <sly data-sly-test="${leadCapture.value =='Trial Download' || leadCapture.value =='Demos'|| leadCapture.value == 'Eval Request'}">
+        <sly data-sly-use.fieldSetModel="com.bmc.models.components.forms.FieldSetModel" />
+        <sly data-sly-test="${fieldSetModel.leadOfferMostRecent =='Trial Download' || fieldSetModel.leadOfferMostRecent =='Demo'|| fieldSetModel.leadOfferMostRecent == 'Eval Request'}">
                 <div class="cmp cmp-options">
                         <div class="form-group checkbox">
                                 <label for="licenseAgreement1"></label>
@@ -20,7 +20,8 @@
                                         <li>
                                                 <input name="licenseAgreement1" id="licenseAgreement1" value="on" required="true" type="checkbox">
                                                 <label for="licenseAgreement1">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <a href="https://www.google.com/" target="_blank">Trial Agreement</a>
+                                                         ${fieldSetModel.pactSafeAgreementCopy @ i18n} <a href="https://www.google.com/" target="_blank">Trial Agreement</a>.
+                                                        <!--/* ${class.myVar @ i18n} */-->
                                                 </label>
                                         </li>
 
