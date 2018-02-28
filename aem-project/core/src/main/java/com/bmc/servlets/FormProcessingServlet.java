@@ -146,9 +146,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
 
-
+        // Uses Access ID from account settings (https://app.pactsafe.com/settings/account)
+        // Make sure correct site is selected
         Activity site = new Activity("eebbf489-fb84-4a0c-b624-51f2ead3104b");
-
 
         ParameterStore action = new ParameterStore();
         action.setSignerId("bledford@connectivedx.com");
