@@ -13,6 +13,8 @@ $(document).ready(function() {
 	        comptypecol:data.hits[index].comptypecol,
 	 		display:this.display,
 			path:this.path+'.html',
+            authorcol:data.hits[index].authorcol,
+            lastmodcol:data.hits[index].lastmodcol,
 	    };
 		});
 	    });
@@ -27,7 +29,7 @@ $(document).ready(function() {
         if (ShowLabel) {
         var row = "";
         //Now convert each value to string and comma-seprated
-         row ="comptypecol,display,path";
+         row ="Component Type,Title,Path,Author,Last Modified";
         //row = row.slice(0, -1);
         //append Label row with line break
         CSV += row + '\r\n';
@@ -45,7 +47,7 @@ $(document).ready(function() {
 	            CSV += row + '\r\n';
 	            }
 	            CSV=CSV.replace(/<\/?[^>]+>/gi, '');
-	            //alert(CSV);
+	          //  alert(CSV);
                 CSV = CSV.replace(/\*?[*]/gi,"");
                 if (CSV == '') {        
                 alert("Invalid data");
