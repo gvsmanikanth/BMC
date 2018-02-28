@@ -60,13 +60,14 @@
 	    var isForm = new RegExp('\/forms\/');
 		if (typeof bmcMeta !== 'undefined' && typeof bmcMeta.page !== 'undefined'  && typeof bmcMeta.page.productCategories !== 'undefined') {
 		var prodIntrest  = bmcMeta.page.productCategories;
-		 return this.each(function(){
-		    	if(isForm.test(this.href)){
-	    			var prodIntrest  = bmcMeta.page.productCategories;
-					$(this).attr("href", UpdateQueryString("productInterest" , prodIntrest,this.href));
-	    		} 
-		});
-
+		if(prodIntrest != ""){
+			 return this.each(function(){
+			    	if(isForm.test(this.href)){
+		    			var prodIntrest  = bmcMeta.page.productCategories;
+						$(this).attr("href", UpdateQueryString("productInterest" , prodIntrest,this.href));
+		    		} 
+			});
+		}
 	    }
 	};
 	
