@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Header Topic"
+    jcr:title="Header - Solutions"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="[]">
     <content
@@ -110,6 +110,13 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
+											    <iconImagePath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Select Path"
+                                                    fieldLabel="Icon Image Path "
+                                                    name="./iconImagePath"
+                                                    rootPath="/content/dam"/>
                                                 <assetType
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/select"
@@ -183,17 +190,11 @@
                                                 <customAssetType
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Alternative Custom Asset Type"
-                                                    fieldLabel="Custom Asset Type (Optional)"
+                                                    fieldDescription="If 'none selected' above, then enter custom text. Use sentence case."
+                                                    fieldLabel="Custom Asset Type (optional)"
                                                     name="./customAssetType"
                                                     wrapperClass="core-wcm-form-options-toggle-item"/>
-                                                <iconImagePath
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Select Path"
-                                                    fieldLabel="Icon Image Path "
-                                                    name="./iconImagePath"
-                                                    rootPath="/content/dam"/>
+                                               
                                                 <assetTitle
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -203,7 +204,7 @@
                                                 <callToActionText
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                    fieldDescription="Use sentence case."
+                                                    fieldDescription="Select a call to action."
                                                     fieldLabel="Call to Action Text"
                                                     multiple="{Boolean}false"
                                                     name="./ctaText"
@@ -246,8 +247,8 @@
                                                 <customCtaText
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Use sentence case."
-                                                    fieldLabel="Optional: custom cta text"
+                                                    fieldDescription="If 'none selected' above, then enter custom text. Use sentence case."
+                                                    fieldLabel="Custom CTA Text (optional)"
                                                     name="./customCtaText"/>
                                                 <ctaURL
                                                     jcr:primaryType="nt:unstructured"
