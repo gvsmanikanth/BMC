@@ -20,22 +20,22 @@
 				</div>
 			</div>
 			
-			<sly data-sly-use.HeaderTopic="com.bmc.components.HeaderTopic" />
+			<sly data-sly-use.HeaderSolutions="com.bmc.components.HeaderSolutions" />
 			<!--/* AssetBar classes based on number of assets */-->
-			<sly data-sly-test="${HeaderTopic.assetBars.size == 1}">
+			<sly data-sly-test="${HeaderSolutions.assetBars.size == 1}">
 			    <sly data-sly-test.assetClass="sm-col-6"></sly>
 			</sly>
-			<sly data-sly-test="${HeaderTopic.assetBars.size == 2}">
+			<sly data-sly-test="${HeaderSolutions.assetBars.size == 2}">
 			    <sly data-sly-test.assetClass="sm-col-5"></sly>
 			</sly>
-			<sly data-sly-test="${HeaderTopic.assetBars.size == 3}">
+			<sly data-sly-test="${HeaderSolutions.assetBars.size == 3}">
 			    <sly data-sly-test.assetClass="sm-col-4"></sly>
 			</sly>
 
-			<div class="assetStrip" data-sly-test="${HeaderTopic.assetBars}">
+			<div class="assetStrip" data-sly-test="${HeaderSolutions.assetBars}">
 				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
-						<sly data-sly-list.assetBar="${HeaderTopic.assetBars}"> 
+						<sly data-sly-list.assetBar="${HeaderSolutions.assetBars}"> 
                         <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath= assetBar.ctaPath}"></sly>
 						<a
 							href="${assetLink.href}"
