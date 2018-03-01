@@ -54,6 +54,7 @@ require("./modules/carouselautoplay.js");
 require("./modules/simpletabs.js");
 require("./modules/filterList.js");
 require("./modules/education.js");
+require("./modules/resourceHubTrials.js");
 require("./modules/modalVideo.js");
 require("./modules/partners.js");
 require("./vendor/vidbg.js");

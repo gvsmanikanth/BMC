@@ -1,0 +1,148 @@
+.product-category-header { 
+	min-height: 395px;
+	@media screen and (min-width: 640px) {
+		min-height: 435px;
+	}
+	h1{
+	    margin-top: 0;
+	}
+}
+
+.resource-hub-trials-cards {
+	.flex-item {
+		position: relative;
+			.resource-type.resource {
+				background-color: #1CA4D8;
+				color: white;
+			}
+	}
+	.cards-4-col {
+		.flex-item {
+			background: #fff;
+				&:hover {
+				&:not(.noHover) {
+					transform: scale(1.01);
+				}
+			}
+		}
+	}
+	.filters {
+		background-color: transparent;
+		li {
+			width: 28%;
+			margin-left: 20%;
+			select {
+				font-size: 1rem;
+			}
+		}
+		li.tooltipField {
+			margin-left: 2%;
+		}
+	}
+	.decorator-select {
+		select {
+			>option {
+			    background: #cccccc2e;
+			   }
+		}
+		background: #fff;
+		border: 2px solid #cacaca;
+		border-radius: 5px;
+		box-sizing: border-box;
+		display: inline-block;
+		height: 48px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+	}
+	fieldset {
+		&:not(#foo) {
+			.decorator-select {
+				&:after {
+					content: '\f078';
+					font: normal normal normal 17px/1 FontAwesome;
+					color: #fe7e42;
+					top: 3px;
+					width: 26px;
+					z-index: 11;
+					right: 10px;
+					height: 24px;
+					padding: 15px 0px 0px 8px;
+					border-left: 1px solid #fe7e42;
+					position: absolute;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+	.resource-container {
+		.resource-audience {
+			background: #cccccc2e;
+			position: absolute;
+    		bottom: 0;
+		    height: 50px;
+				span{
+					float:right;
+					color: #fe7e42;
+				    position: relative;
+    				top: 12px;
+				}
+		}
+		.resource-details {
+		    margin-bottom: 2.5em; 
+		    margin-top: auto;
+		    font-size: 0.847em;
+		    color: #555557;
+		    line-height: 1.6em;
+		}
+		ul.list-group {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+				li.title{
+				    color: #fe7e42;
+    				line-height: 1.3em;
+				}
+		}
+	}
+}
+
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+	.resource-hub-trials-cards {
+		.filters {
+			li {
+				width: 100%;
+				margin-left: 4%;
+			}
+			li.tooltipField {
+				>div {
+					&:first-child {
+						width: 90%;
+					}
+				}
+				margin-left: 0%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:0) and (max-width: 767px) {
+	.resource-hub-trials-cards {
+		.filters {
+			li {
+				width: 90%;
+				margin-left: 0%;
+			}
+			li.tooltipField {
+				>div {
+					&:first-child {
+						width: 100%;
+					}
+				}
+				margin-left: 0%;
+			}
+		}
+	}
+}
+
+
