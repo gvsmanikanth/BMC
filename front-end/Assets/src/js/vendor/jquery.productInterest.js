@@ -76,9 +76,10 @@
 	if(window.location.href.indexOf("form") > -1) {
 		var selectedText = getUrlVars()["productInterest"];
 		if(selectedText){
+			selectedText = selectedText.toLowerCase().replace(/%20|_/g,' ');
 			$( document ).ready(function() {
 				$('[name="C_Product_Interest1"]').find("option").each(function(){
-					if($(this).val() == selectedText){
+					if(this.value.toLowerCase() == selectedText){
 						$(this).attr("selected","selected");    
 					}
 				});
