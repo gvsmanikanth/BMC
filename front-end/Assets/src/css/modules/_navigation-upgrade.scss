@@ -1,0 +1,103 @@
+// @category modules
+// @function navigation
+// Styles related to the site's navigation upgrade.
+
+.navigation-upgrade {
+	
+	.navigation-secondary {
+		&.navigation-four-col,
+		&.navigation-tabbed-menu {
+			max-width:1440px;
+		}
+		
+		&.layout-inner-wrap {
+			@include media(breakpointLarge) {
+				padding: 0px !important;
+				padding-top:18px !important;
+				padding-bottom:18px !important;
+			}
+		}
+		
+		> ul {
+			padding-left : 0px;
+			@include media(breakpointLarge) {
+				padding-left : 1.5rem;
+			}
+		}
+		
+		
+		a {
+			padding: em(6) em(0);
+			transition: all .25s ease-out;
+			@include media(breakpointLarge) {
+				padding: em(6) em(0);
+			}
+		
+			&.boldlink{
+				font-size: 0.88889rem;
+				font-weight: inherit;
+				padding-top:0px;
+			}
+		}
+		
+		.navigation-section-header {
+			padding: em(8) 0 em(6);
+			@include media(breakpointLarge) {
+				padding: em(20) 0 em(6);
+			}
+			.subtitle{
+				font-size: .7rem; 
+				font-style: italic; 
+				font-weight: normal;
+			}
+		}
+		
+		.featured-product-title{
+			font-size: 1.2rem;
+			margin-left: 16px;
+		}
+	
+		.nav-floating-promo{
+			float: left;
+			position: absolute;
+			bottom: 0px; 
+			padding:1rem; 
+			width: 60%;
+		}
+		
+		.nav-mobile-back-outside-link{
+			margin: 0px;
+			padding-left: 16px;
+		}
+	
+	}
+	
+	.navigation-column {
+		&.navigation-column-emphasis {
+			@include media(breakpointLarge) {
+				padding-bottom: 0px;
+				padding-top: 1rem; 
+				text-align: center;
+			}
+		}
+		
+		ul:not(:last-child){
+			padding-bottom:1rem;
+		}
+	}
+	
+	
+	.navigation-primary {
+		> li {
+			> a {
+				@include media(breakpointLarge) {
+					@include font-size(18);
+				}
+				@include media(breakpointExtraLarge) {
+					@include font-size(18);
+				}
+			}
+		}
+	}
+	
+}

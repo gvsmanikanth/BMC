@@ -1,4 +1,4 @@
-<nav class="layout-navigation">
+<nav class="layout-navigation navigation-upgrade">
 	<div class="layout-inner-wrap" style="position: relative;">
 		<ul class="navigation-primary">
 			<li class="navigation-menu"><a href="#" class="navigation-menu-link"></a>
@@ -8,31 +8,28 @@
 
 			<li class="navigation-products navigation-secondary-toggle"><a
 				href="#">Solutions</a>
-				<?php
-				
-include ('navigation-secondary-solutions-new.php')?>
+				<?php include ('navigation-secondary-solutions-new.php')?>
 			</li>
 			<li class="navigation-industries navigation-secondary-toggle"><a
 				href="#">Products</a>
-				<?php
-				
-include ('navigation-secondary-products-new.php')?>
+				<?php include ('navigation-secondary-products-new.php')?>
 			</li>
 
 			<li class="navigation-partners navigation-secondary-toggle"><a
 				href="#">Partners</a>
-				<?php
-				
-include ('navigation-secondary-patners-new.php')?>
+				<?php include ('navigation-secondary-patners-new.php')?>
 			</li>
 			<li class="navigation-partners navigation-secondary-toggle"><a
 				href="#">Support & Services</a>
-				<?php
-				
-include ('navigation-secondary-support-services-new.php')?>
+				<?php include ('navigation-secondary-support-services-new.php')?>
+			</li>
+			
+			<li class="navigation-about navigation-secondary-toggle"><a href="#">About
+					BMC</a>
+				<?php include ('navigation-secondary-about-new.php')?>
 			</li>
 
-			<!-- 			
+<!-- 			
 			<li class="navigation-products navigation-secondary-toggle">
 				<a href="#">Solutions</a>
 				< ?php include('navigation-secondary-products.php')
@@ -66,12 +63,7 @@ include ('navigation-secondary-support-services-new.php')?>
 			
  -->
 
-			<li class="navigation-about navigation-secondary-toggle"><a href="#">About
-					BMC</a>
-				<?php
-				
-include ('navigation-secondary-about-new.php')?>
-			</li>
+			
 		</ul>
 		<ul class="navigation-utility">
 			<li class="navigation-trials "><a
