@@ -15649,10 +15649,13 @@ body.support-central {
     display: -ms-flexbox;
     display: flex;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    width: 100%; }
     @media screen and (min-width: 640px) {
       .product-category-header .offset-wrapper {
         min-height: 300px; } }
+  .product-category-header .inner {
+    width: 100%; }
   .product-category-header h1, .product-category-header h2, .product-category-header h5 {
     font-weight: lighter !important;
     width: 100%; }
