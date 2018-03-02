@@ -37,9 +37,29 @@
 					<div class="sm-flex flex-justify-center contentContainer">
 						<sly data-sly-list.assetBar="${HeaderSolutions.assetBars}"> 
                         <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath= assetBar.ctaPath}"></sly>
-						<a
-							href="${assetLink.href}"
-                            class="flex-item ${assetClass} ${assetLink.cssClass} shadow-top assetStripItem">
+
+                        <sly data-sly-test="${assetLink.href}">
+
+                            <sly data-sly-test.assetResolvedLink="${assetLink.href}"></sly>
+                        </sly>
+                        
+                        <sly data-sly-test="${!assetLink.href}">
+
+                            <sly data-sly-test.assetResolvedLink="${assetBar.ctaPath}"></sly>
+                        </sly>
+                        
+                        <sly data-sly-test="${assetLink.cssClass}">
+                            <sly data-sly-test.assetCssClass="${assetLink.cssClass}"></sly>
+                        </sly>
+                        
+                        <sly data-sly-test="${!assetLink.cssClass}">
+                            <sly data-sly-test.assetCssClass=" "></sly>
+                        </sly>
+
+
+                        <a
+							href="${assetResolvedLink}"
+                            class="flex-item ${assetClass} ${assetCssClass} shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
 									<img src="${assetBar.iconImagePath}" alt="">
