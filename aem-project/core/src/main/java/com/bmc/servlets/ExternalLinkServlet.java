@@ -78,8 +78,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				   }
 			                PrintWriter out = response.getWriter();
 			                out.println("<html><head>");
-			                out.println("<meta http-equiv='refresh' content='0;URL='"+linkAbstractorExternalURL+"'>");
-			                out.println("</meta>");
+			                out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");
 			                out.println("</head>");
 			                out.println("<body>");
 			                out.println("<h1>External Link</h1>");
