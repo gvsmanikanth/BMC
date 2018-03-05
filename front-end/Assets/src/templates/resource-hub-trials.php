@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'BMC Home';
-$bodyClass = 'company page-about-us';
+$bodyClass = 'company page-about-us resource-hub';
 include 'php-inc/head.php';
 ?>
 <link rel="stylesheet"
@@ -400,10 +400,8 @@ var bmcResourceHubData = {
 
 </script>
 
-<section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+<section class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
-
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
@@ -416,7 +414,7 @@ var bmcResourceHubData = {
 								<fieldset>
 									<ol>
 										<li><select id="products"></select></li>
-										<li class="tooltipField"><select id="topics"></select></li>
+										<li><select id="topics"></select></li>
 									</ol>
 								</fieldset>
 							</form>
@@ -430,13 +428,13 @@ var bmcResourceHubData = {
 
 
 <section class="bg-white listCompLoader">
-	<div class="layout-inner-wrap py text-center">
+	<div class="layout-inner-wrap py text-center m2">
 		<img src="http://media.cms.bmc.com/designimages/loading-indicator.gif" />
 		<p>Loading...</p>
 	</div>
 </section>
 <section class="bg-white filterListContainer" style="display: none;">
-	<div class="layout-inner-wrap">
+	<div class="layout-inner-wrap py2">
 		<div class="cards-wrapper resource-hub-trials-cards"></div>
 
 	</div>
