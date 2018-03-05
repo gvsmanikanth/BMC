@@ -28,6 +28,12 @@
 	}
 	.filters {
 		background-color: transparent;
+		select#products,
+			select#topics {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
 		li {
 			width: 28%;
 			margin-left: 20%;
@@ -37,6 +43,11 @@
 		}
 		li.tooltipField {
 			margin-left: 2%;
+			>div {
+				&:first-child {
+					width: 100%;
+				}
+			}
 		}
 	}
 	.decorator-select {
@@ -144,5 +155,8 @@
 		}
 	}
 }
+
+
+
 
 
