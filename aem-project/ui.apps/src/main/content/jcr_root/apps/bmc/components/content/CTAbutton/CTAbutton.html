@@ -1,4 +1,6 @@
-<a class="${properties.buttonColor} ${properties.learnMore ? 'learn-more' : ''}" href="${properties.buttonURL}">
-    <sly data-sly-test="${!properties.customButtonText}">${properties.buttonText}</sly>
-    <sly data-sly-test="${properties.customButtonText}">${properties.customButtonText}</sly>
+<sly data-sly-use.CtaModel="com.bmc.models.components.ctabuttons.CtaButtons"/>
+<sly data-sly-test.buttonURL="${CtaModel.ResolvedLink}"/>
+<a class="aem--inline-block aem--no-grid ${properties.buttonColor} ${properties.learnMore ? 'learn-more' : ''}" href="${buttonURL}">
+    <sly data-sly-test="${!properties.customButtonText}">${properties.buttonText @ context='html'}</sly>
+    <sly data-sly-test="${properties.customButtonText}">${properties.customButtonText @ context='html'}</sly>
 </a>

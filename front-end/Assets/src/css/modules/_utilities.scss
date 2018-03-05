@@ -32,6 +32,7 @@
 .divider-secondary {
 	@extend %divider-config;
 	border-top: 1px dashed color(colorEmphasis);
+	padding:1px 0px;
 }
 
 .footnote {
@@ -95,11 +96,14 @@
 .two-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.4);
+		.cq-Editable-dom & {
+			margin-right: columns(0.3);
+		}		
 		width: columns(5.8);
 
 		.page-campaign-landing & {
 			//margin: em(12 18) columns(0.4) em(12 18) -0.25em !important; // use of important keeps this simple; always use these margins when on a campaign landing page
-      margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
+     		margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
 			width: columns(5.6); //Changed 5.6 to 5.7
 		}
 
@@ -127,6 +131,9 @@
 .three-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.3);
+		.cq-Editable-dom & {
+			margin-right: columns(0.2);
+		}
 		width: columns(3.8);
 
 		// last of each row
@@ -139,11 +146,15 @@
 			margin-top: columns(0.3);
 		}
 	}
+
 }
 
 .four-up {
 	@include media(breakpointLarge) {
 		margin-right: columns(0.4);
+		.cq-Editable-dom & {
+			margin-right: columns(0.3);
+		}		
 		width: columns(5.8);
 
 		// last of each row
@@ -301,14 +312,21 @@
 .testimonial {
 	@extend %divider-config;
 	background-color: #00a79d;
-	margin: 4em 0;
+	margin: 0 0 2em;
 	padding: 40px;
 	position: relative;
+
+	@include media(breakpointMedium) {
+		margin: 4em 0;
+		padding: 60px;
+	}
 
 	&.row {
 		margin-top: 0;
 	}
-
+	.layout-inner-wrap {
+		padding: 0;
+	}
 	p {
 		color:#cfe5e4;
 		@include font-size(36);
@@ -359,10 +377,6 @@
 		@include font-size(16);
 		//margin-top: em(24 16);
 		margin-top: em(24); //BMC-527 Removed 16 from definition
-	}
-
-	@include media(breakpointMedium) {
-		padding: 60px;
 	}
 
 	// specific changes for testimonials contained within .page-campaign-landing

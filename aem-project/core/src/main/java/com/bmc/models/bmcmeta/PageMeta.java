@@ -44,7 +44,6 @@ public class PageMeta {
         this.longName = longName;
     }
 
-
     public String getProductCategories() {
         return productCategories;
     }

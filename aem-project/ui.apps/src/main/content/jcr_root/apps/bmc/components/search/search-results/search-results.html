@@ -1,0 +1,66 @@
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
+<sly data-sly-list="${SearchResultsModel.QueryMap}">
+    <sly data-sly-test.qFieldName="${SearchResultsModel.QueryMap[0]['fieldName']}"/>
+    <sly data-sly-test.qPage="${SearchResultsModel.QueryMap[0]['page']}"/>
+    <sly data-sly-list.vMapItem="${SearchResultsModel.QueryMap[0]['valueMap']}">
+        <sly data-sly-test="${vMapItem == 'values'}" data-sly-test.qValues="${SearchResultsModel.QueryMap[0]['valueMap']['values']}"/>
+        <sly data-sly-test="${vMapItem == 'type'}" data-sly-test.qType="${SearchResultsModel.QueryMap[0]['valueMap']['type']}"/>
+    </sly>
+</sly>
+
+<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}"/>
+<sly data-sly-test.SearchFilter="${SearchResultsModel.SearchFilter}"/>
+
+<header class="search-results-header">
+    <form id="submitForm" name="submitForm" method="get" onsubmit="return validateForm();">
+        <fieldset>
+            <div class="search-input-m-glass">
+                <input type="text" id="q" class="st-default-search-input" value="">
+            </div>
+            <select id="searchLabel" name="label" title="Search in" onchange="return validateForm();">
+                <option value="all" selected="${SearchFilter == 'all'}">All Results</option>
+                <option value="corporate" selected="${SearchFilter == 'corporate'}">Corporate</option>
+                <option value="documentation" selected="${SearchFilter == 'documentation'}">Documentation</option>
+                <option value="marketplace" selected="${SearchFilter == 'marketplace'}">Marketplace</option>
+                <option value="productsSolutions" selected="${SearchFilter == 'productsSolutions'}">Products/Solutions</option>
+                <option value="services" selected="${SearchFilter == 'services'}">Services</option>
+                <option value="education" selected="${SearchFilter == 'education'}">Education</option>
+                <option value="blogs" selected="${SearchFilter == 'blogs'}">Blogs</option>
+                <option value="news" selected="${SearchFilter == 'news'}">News</option>
+                 <option value="exchange" selected="${SearchFilter == 'exchange'}">Exchange</option>
+            </select>
+        </fieldset>
+    </form>
+</header>
+<script>
+    var stq = null;
+    if (getUrlParameter("q")) {
+        stq = getUrlParameter("q");
+        validateFromURLParam();
+    } else if(getUrlParameter("keywords")){
+        stq = getUrlParameter("keywords");
+        validateFromURLParam();
+    }
+    function validateForm() {
+        stq = encodeURIComponent($('#q').val());
+        validateFromURLParam();
+    }
+    function validateFromURLParam() {
+    var label =  document.getElementById("searchLabel").value;
+    var queryParam = window.location.pathname+"?label="+label+"#stq=" + stq;
+    window.location.href =queryParam;
+    }
+    function getUrlParameter(name) {
+	name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+	var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+	var results = regex.exec(location.search);
+	return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+</script>
+<div class="st-search-container">
+</div>
+
+<sly data-sly-use.ScriptTemplates="search-script-templates.html"/>
+
+<sly data-sly-test="${qFieldName == 'category'}" data-sly-call="${ScriptTemplates.DoubleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
+<sly data-sly-test="${qFieldName != 'category'}" data-sly-call="${ScriptTemplates.SingleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>

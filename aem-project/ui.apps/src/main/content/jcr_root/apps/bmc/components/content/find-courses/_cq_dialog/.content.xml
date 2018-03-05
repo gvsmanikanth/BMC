@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Find Courses"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Find Courses"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <pageType sling:resourceType="granite/ui/components/foundation/form/select"
+                                                 fieldLabel="Page Type"
+                                                 multiple="{Boolean}false"
+                                                 name="./pageType"
+                                                 jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <list jcr:primaryType="nt:unstructured"
+                                          text="List"
+                                          value="list" />
+                                </items>
+                            </pageType>
+                            <pageSize sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                      min="{Double}-1"
+                                      step="{Double}1"
+                                      defaultValue="1"
+                                      name="./pageSize"
+                                      fieldLabel="Page Size"
+                                      jcr:primaryType="nt:unstructured"/>
+                            <maxPagesToDisplay sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                      min="{Double}1"
+                                      step="{Double}1"
+                                      defaultValue="1"
+                                      fieldLabel="Max pages to display"
+                                      name="./maxPagesToDisplay"
+                                               jcr:primaryType="nt:unstructured"/>
+                            <paginationType sling:resourceType="granite/ui/components/foundation/form/select"
+                                      fieldLabel="Pagination Type"
+                                      multiple="{Boolean}false"
+                                      name="./paginationType"
+                                      jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <onPagination jcr:primaryType="nt:unstructured"
+                                          text="On Pagination"
+                                          value="onPagination" />
+                                    <onScroll jcr:primaryType="nt:unstructured"
+                                                  text="On Scroll"
+                                                  value="onScroll" />
+
+                                </items>
+                            </paginationType>
+                            <showMatchCountInDropdown sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                          value="true"
+                                          uncheckedValue="false"
+                                          name="./showMatchCountInDropdown"
+                                          text="Show match count in dropdown"
+                                          jcr:primaryType="nt:unstructured" />
+                            <noResultFoundMessage sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                         fieldDescription="Enter the message to display when no results are found"
+                                         fieldLabel="No Result Found Message"
+                                         name="./noResultFoundMessage"
+                                         rows="5"
+                                         required="{Boolean}true"
+                                         value="Sorry, no courses could be found with your search criteria. Please adjust your selection and try again."
+                                         jcr:primaryType="nt:unstructured" />
+                            <courseIcon jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                       fieldDescription="Please choose "
+                                       required="{Boolean}true"
+                                       rootPath="/content/dam/bmc"
+                                       name="./courseIcon"
+                                       fieldLabel="Course Icon" />
+                            <learningPathIcon jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription=""
+                                        required="{Boolean}true"
+                                        rootPath="/content/dam/bmc"
+                                        name="./learningPathIcon"
+                                        fieldLabel="Learning Path Icon" />
+                            <certificationIcon jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription=""
+                                        required="{Boolean}true"
+                                        rootPath="/content/dam/bmc"
+                                        name="./certificationIcon"
+                                        fieldLabel="Certification Icon" />
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>

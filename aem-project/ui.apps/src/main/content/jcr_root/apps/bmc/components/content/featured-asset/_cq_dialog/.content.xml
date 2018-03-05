@@ -84,20 +84,6 @@
                                         value="below"/>
                                 </items>
                             </image_x0020_Location>
-                            <isYoutubeVideo
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                fieldDescription="When checked the video displays in modal"
-                                name="./isYoutubeVideo"
-                                text="Is Youtube video"
-                                value="{Boolean}true"/>
-                            <isTwistageVideo
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                fieldDescription="When checked the video displays in modal"
-                                name="./isTwistageVideo"
-                                text="Is Twistage video"
-                                value="{Boolean}true"/>
                         </items>
                     </column>
                 </items>

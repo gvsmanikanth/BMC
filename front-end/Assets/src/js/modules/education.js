@@ -16,15 +16,15 @@
 			
 			var type = self.getName("type", item);
 			var typeClass = "course";
-			var iconURL = "http://media.cms.bmc.com/designimages/course.png";
+			var iconURL = bmcFilterConfig.courseIcon;
 			
 			if(type == "Learning Path"){
 				typeClass = "learningPath";
-				iconURL = "http://media.cms.bmc.com/designimages/learning_path.png";
+				iconURL = bmcFilterConfig.learningPathIcon;
 			}
 			else if (type == "Certification"){
 				typeClass = "certification";
-				iconURL = "http://media.cms.bmc.com/designimages/cert.png";	
+				iconURL = bmcFilterConfig.certificationIcon;
 			}	
 			
 			var itemHTML = '<div class="flex-item js-ehItem"><a style="height:100%" href="' + item.url + '"><div class=""><p class="course-type '+typeClass;
@@ -40,7 +40,7 @@
 			
 			
 			if(item.blnFeatured)
-				itemHTML+='<img class="featuredIcon" src="http://media.cms.bmc.com/designimages/star-icon.png"></img>';
+				itemHTML+='<img class="featuredIcon" src="/etc/clientlibs/bmc/head/star-icon.png"></img>';
 			
 			itemHTML+='<img class="featuredIcon" src="'+iconURL+'"></img></span>';
 			
@@ -340,8 +340,8 @@
 		// The render function will show the appropriate content of out page.
 		$(window).on('hashchange', function() {
 			if (isListPage()) {
-				filterListObject.updateFilterDropdownOnHashChange(decodeURI(window.location.hash));
-				filterListObject.render(decodeURI(window.location.hash));
+				filterListObject.updateFilterDropdownOnHashChange(decodeURIComponent(window.location.hash));
+				filterListObject.render(decodeURIComponent(window.location.hash));
 			};
 		});
 		

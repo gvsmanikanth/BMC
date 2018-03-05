@@ -4,84 +4,21 @@ data-sly-use.support="com.bmc.components.SupportCentral">
         <div class="layout-inner-wrap">
             <sly data-sly-test.loggedIn="${support.isLoggedIn}">
             <ul class="account-user">
-                <li class="welcome"><span>Welcome ${support.userInfo.first_name} ${support.userInfo.last_name}</span></li>
+                <li class="welcome"><span>Welcome ${support.userInfo.firstName} ${support.userInfo.lastName}</span></li>
             </ul>
             </sly>
             <ul class="account-actions">
                 <sly data-sly-test="${loggedIn}">
-                <li class="action"><a href="https://bmcsites.force.com/casemgmt/apex/sc_managesupportIds">Manage Support ID's</a></li>
+                <li class="action"><a href="/available/manage-support-ids.html">Manage Support ID's</a></li>
                 <li class="action"><a href="/available/edit-profile.html?c=n">Edit Profile</a></li>
                 <li class="action"><a href="/available/ssologout.html">Logout</a></li>
                 </sly>
                 <sly data-sly-test="${!loggedIn}">
-                <li class="action"><a href="https://webapps.bmc.com/Shibboleth.sso/Login?target=https%3A%2F%2Fwww.bmc.com%2Fs%3Faction%3DdoLogin%26rurl%3Dhttps%3A%2F%2Fwww.bmc.com%2Fsupport%2Fsupport-central.html">Login</a></li>
+                <li class="action"><a href="/available/support-login.html">Login</a></li>
                 <li class="action"><a href="/available/register-now.html?c=n">Register</a></li>
                 </sly>
                 <li class="action"><a class="alerts icon-caution js-fancyDialog" href="#">Alerts</a></li>
             </ul>
         </div>
     </div>
-    <sly data-sly-resource="${'news' @ resourceType='bmc/components/structure/supportcentral-news'}"></sly>
-    <sly data-sly-test="${loggedIn}">
-    <div class="account-details-wrapper">
-        <div class="layout-inner-wrap">
-            <ul class="action-details support-hide-while-loading list-piped">
-                <li class="action-detail-group action-piped">
-                    <a class="action" href="#">Open Cases</a>
-                </li>
-                <li class="action-detail-group">
-                    <a class="action" href="/available/view-update-issues.html">Historic Cases</a>
-                </li>
-                <li class="action-detail-group">
-                    <div class="support-recent-issues-buttons">
-                        <a href="/available/submit-new-issue.html" class="btn btn-small js-support-issues-new">Submit New Issue</a>
-                        <a href="#" class="btn btn-secondary btn-small">View All Issues</a>
-                    </div>
-                </li>
-            </ul>
-            <div class="js-account-details-loading">
-                Loading...
-            </div>
-            <section class="support-section-container account-error js-account-error">
-            </section>
-        </div>
-    </div>
-    </sly>
 </section>
-
-<section class="support-section-container support-loading-issues layout-full-bleed js-loading-issues-container">
-    <center>Loading Cases</center>
-</section>
-<section class="support-section-container layout-full-bleed support-recent-issues support-hide-while-loading js-issues-container">
-    <div class="layout-inner-wrap">
-        <div class="table-wrapper js-issue-table-wrapper">
-            <table>
-                <thead>
-                <tr>
-                    <th>Case Number</th>
-                    <th>Subject</th>
-                    <th>Product</th>
-                    <th>Created</th>
-                    <th>Modified</th>
-                    <th>Status</th>
-                    <th>Submitter</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-<section class="support-section-container layout-full-bleed support-no-issues support-hide-while-loading js-no-issues-container">
-    <div class="layout-inner-wrap">
-        <p>You don't have any open Cases.</p>
-        <div>
-            <a href="${support.newCaseUrl}" class="btn js-support-issues-new">Submit New Case</a>
-            <a href="${support.allCasesUrl}" class="btn btn-secondary">View All Cases</a>
-        </div>
-    </div>
-</section>
-<div class="layout-full-bleed support-section-divider above-support-section-container">
-    <div class="layout-inner-wrap"></div>
-</div>

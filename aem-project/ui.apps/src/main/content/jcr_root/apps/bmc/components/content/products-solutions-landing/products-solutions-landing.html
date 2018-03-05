@@ -1,0 +1,64 @@
+<section class="layout-full-bleed product-section-wrapper" data-sly-use.data="com.bmc.components.ProductSolutionsLanding">
+    <article>
+        <nav class="product-finder-nav layout-inner-wrap">
+            <sly data-sly-resource="${'finder-nav' @resourceType='/apps/bmc/components/content/htmlarea'}"></sly>
+        </nav>
+
+        <div class="product-finder-filters">
+            <div class="category-section-filters">
+                <div class="layout-inner-wrap">
+                    <ul data-sly-list.topic="${data.topics}">
+                        <li class="category-section-filter-wrapper">
+                            <a href="#" class="category-section-filter result-item-filter" data-filter="${topic.dataFilter}">
+                                <div class="icon">
+                                    <img src="${topic.iconHref}" alt="${topic.title}"/>
+                                    ${topic.title}
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-inner-wrap">
+            <div class="category-sections" data-sly-test.isEdit="${wcmmode.edit || wcmmode.design}"
+                 data-sly-resource="${'topics' @ resourceType='wcm/foundation/components/responsivegrid'}">
+            </div>
+            <ul class="category-sections" data-sly-test="${!isEdit}" data-sly-list.topic="${data.topics}">
+                <li class="category-section ${topic.categoryClass} accordion" data-sly-test.resourcePath="${'topics/{0}' @ format=[topic.dataResourceName]}"
+                    data-sly-resource="${resourcePath @ resourceType='/apps/bmc/components/content/products-solutions-landing/topic'}">
+                </li>
+            </ul>
+
+            <div class="result-items" data-sly-use.linkData="com.bmc.components.OfferingLinks">
+                <h2 class="products-results-heading">
+                    <span class="category-section-products-services"></span>${'Products & Services' @ i18n}
+                </h2>
+                <ul class="results product-results" data-sly-list.productSection="${linkData.productSections}">
+                    <li class="${productSection.cssClass} alpha-section" data-sly-test="${productSection.links}">
+                        <h3>${productSection.name}</h3>
+                        <ul data-sly-list.product="${productSection.links}">
+                            <li class="result-item product ${product.cssClass}">
+                                <a href="${product.href}">${product.text @ context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2 class="topics-results-heading">
+                    <span class="category-section-topic"></span>${'Topics' @ i18n}
+                </h2>
+                <ul class="results topic-results">
+                    <li class="topics">
+                        <ul class="topic-sections" data-sly-list.topic="${linkData.topicLinks}">
+                            <li class="result-item alpha-section topic ${topic.cssClass}">
+                                <a href="${topic.href}">${topic.text @ context='html'}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</section>

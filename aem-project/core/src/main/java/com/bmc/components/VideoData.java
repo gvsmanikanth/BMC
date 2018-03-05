@@ -2,6 +2,9 @@ package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.ResourceProvider;
+import com.bmc.mixins.VideoInfoProvider;
+import com.bmc.models.components.video.VideoInfo;
+import com.bmc.models.components.video.VideoType;
 import com.bmc.util.StringHelper;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.Rendition;
@@ -21,7 +24,7 @@ import java.util.stream.Stream;
 /**
  * Provides Video Data Component properties (components/content/video-data) for Use
  */
-public class VideoData extends WCMUsePojo implements ResourceProvider {
+public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfoProvider {
     private static final String COMPONENT_RESOURCE = "bmc/components/content/video-data";
     private static final String VIDEO_PAGES_ROOT = "/content/bmc/videos";
     private static final String DATA_ITEM = "video-data";
@@ -29,24 +32,11 @@ public class VideoData extends WCMUsePojo implements ResourceProvider {
     private static final String PATH_PROPERTY= "videoPath";
     private static final String VID_PROPERTY= "vID";
     private static final String DAM_PATH_PROPERTY= "damVideoPath";
-    enum VideoType {
-        YouTube(1),
-        Twistage(2),
-        Dam(3);
-
-        // ↓ yes, this is a bit silly ↓ -- C# guy here experimenting (and saving a switch statement in activate())
-        public static VideoType valueOf(int typeId) { return typeMap.get(typeId); }
-        VideoType(int typeId) { this.typeId = typeId; }
-        private int typeId;
-        static { typeMap = Stream.of(VideoType.values()).collect(Collectors.toMap(t->t.typeId, t->t)); }
-        private static Map<Integer,VideoType> typeMap;
-    }
 
     public boolean getIsValid() { return isValid; }
     public String getVideoPath() { return videoPath; }
     public boolean getUseModal() { return useModal; }
     public boolean getIsYouTube() { return (type == VideoType.YouTube); }
-    public boolean getIsTwistage() { return (type == VideoType.Twistage); }
     public boolean getIsDam() { return (type == VideoType.Dam); }
     public String getTypeName() { return type.toString(); }
     public String getVideoId() { return videoId; }
@@ -74,29 +64,25 @@ public class VideoData extends WCMUsePojo implements ResourceProvider {
         if (resource == null)
             return;
 
-        videoPath = resource.getParent().getParent().getPath();
-        ValueMap map = resource.getValueMap();
+        VideoInfo info = getVideoInfo(resource);
+        if (info == null)
+            return;
 
-        type = VideoType.valueOf(map.get("typeId", 0));
-        title = map.get("title", "");
-        description = map.get("description", "");
-
+        videoPath = info.getVideoPath();
+        type = info.getType();
+        title = info.getTitle();
+        description = info.getDescription();
+        videoId = info.getVideoId();
         isValid = false;
 
         switch (type) {
             case YouTube:
+                ValueMap map = resource.getValueMap();
                 overlayText = map.get("overlayText", "");
-
                 overlayUrl = StringHelper.resolveHref(map.get("overlayUrl", "")).orElse("");
-                videoId = map.get(VID_PROPERTY, "");
-                isValid = !videoId.isEmpty();
-                break;
-            case Twistage:
-                videoId = map.get(VID_PROPERTY, "");
                 isValid = !videoId.isEmpty();
                 break;
             case Dam:
-                videoId = map.get(DAM_PATH_PROPERTY, "");
                 setDamAssetData(videoId);
                 isValid = (damRenditions != null);
                 break;
@@ -174,7 +160,7 @@ public class VideoData extends WCMUsePojo implements ResourceProvider {
             return null;
 
         Node node = nodes.nextNode();
-        return resourceResolver.getResource(node.getIdentifier());
+        return resourceResolver.getResource(node.getPath());
     }
     private void setDamAssetData(String assetPath) {
         List<Rendition> renditions = null;

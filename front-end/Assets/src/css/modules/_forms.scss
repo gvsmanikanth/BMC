@@ -19,7 +19,7 @@ fieldset:not(#foo) {
 			clear: none;
 			display: inline-block;
 			padding: 6px 5px 4px 27px;
-      width: 100%;
+      		width: 100%;
       
 			&:before {
 				@include icon();
@@ -82,6 +82,75 @@ fieldset:not(#foo) {
 
 		select {
 			outline: none;
+		}
+	}
+
+	//input groups
+	.form-group.checkbox,
+	.form-group.radio {
+		li {
+			margin: 0;
+			input[type="radio"] + label,
+			input[type="checkbox"] + label {
+				padding-left: 22px;
+			}			
+		}
+	}
+
+	//AEM overloads
+	.aem-GridColumn {
+		padding-left: 0;
+	}
+
+	//removes floats from aem-grid on form columns 
+	//vertically aligns columns top to prevent stagger when float label is applied
+	.aem-GridColumn--default--6 {
+		@include media(breakpointMedium) {
+			display: inline-block;
+			float: none !important;
+			vertical-align: top;
+			width: calc(50% - 3px);
+		}
+	}
+
+	//makes sure checkboxes don't get an extra bit padding, but radios groups do.
+	.cmp-options {
+		padding-top: 0;
+    	padding-bottom: 0;
+		.form-group {
+			margin-bottom: 0;
+			> label {
+				font-weight: bold;
+				margin-top: rem(9);	
+			}
+			&.checkbox {
+				margin: 0;
+			}
+		}
+		.decorator-select {
+			margin-top: rem(9);
+			margin-bottom: rem(9);
+		}
+	}
+	
+	//DXP-1112 - Added P tags style attribute to support text inside fieldset.
+	.cmp-text{
+		line-height: 1.45;
+		@include font-size(14);
+  		margin: 0 0 1.78571em 0; 
+		 
+	    @include media(breakpointMedium) {
+			@include font-size(16);
+			  margin: 0 0 1.5em 0; 
+		} 
+		@include media(breakpointExtraLarge) {
+			 @include font-size(18);
+			  p.-oll {
+				width: 50em; 
+			  } 
+			}
+		:first-child {
+			margin-top: 0; 
 		}
 	}
 }
@@ -179,4 +248,8 @@ input[type="file"] {
   }
 }
 
+//aem overload editing experince
+.cq-Editable-dom.cmp-form-field label {
+    color: #fff;
+}
 

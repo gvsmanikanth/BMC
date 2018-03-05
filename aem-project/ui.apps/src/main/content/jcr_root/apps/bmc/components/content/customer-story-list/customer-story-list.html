@@ -1,3 +1,6 @@
+<sly data-sly-use.FeaturedStoryBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='fb'}"/>
+<sly data-sly-test.fbImg="${FeaturedStoryBgImgChildProps.ChildProperties['fileReference']}"/>
+
 <section class="layout-full-bleed customer-story-landing-logo-blocks" data-sly-use.data="com.bmc.components.CustomerStoryList">
     <div class="layout-inner-wrap">
         <div class="customer-story-landing-heading">
@@ -16,7 +19,8 @@
         <div class="logo-blocks">
             <a data-sly-test="${data.featuredStory}" href="${data.featuredStory.href}">
                 <div data-filter-values="${data.featuredStory.filterValues}" class="logo-block-featured js-customer-story-filter-element">
-                    <img src="${data.featuredStory.backgroundImageSrc}" alt="${data.featuredStory.backgroundImageAlt}" class="background-image">
+						<img src="${fbImg @ context='uri'}"  alt=" " class="background-image" />
+				   <!-- <img src="${data.featuredStory.backgroundImageSrc}" alt="${data.featuredStory.backgroundImageAlt}" class="background-image"> -->
                     <div class="hover-area"></div>
                     <div class="logo-inner-container">
                         <div class="logo-heading">

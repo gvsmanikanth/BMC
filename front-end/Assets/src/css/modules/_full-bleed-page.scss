@@ -228,6 +228,18 @@
 
 ///
 
+//DXP-1350 - KeyFeature - Heading font is large
+.key-features {
+  h2{
+    color: #414042; 
+    font-weight: normal; 
+    margin: 0 0 1em 0; 
+    text-align: left; 
+    line-height: 1.45em; 
+    font-size: 1.66667rem;
+  }  
+}
+
 .carousel-aside {
   padding-top: 4em; 
   padding-bottom: 3em; 
@@ -591,7 +603,6 @@
 //Additional styles for responsive tabs with image-bottom
 
 .tab-wrapper{
-  
   .flex-tab{
     padding-bottom: 0px !important;
     
@@ -687,11 +698,12 @@
   
   .tabs-nav {
       max-width:1440px;
-      padding: 0 1em 0 1em;
-      
+      padding: 0 1em;
       margin-bottom: 0;
       text-align: center;
-      
+      @include media(breakpointExtraExtraLarge) { 
+        padding: 0;
+      }
            
       li {
       

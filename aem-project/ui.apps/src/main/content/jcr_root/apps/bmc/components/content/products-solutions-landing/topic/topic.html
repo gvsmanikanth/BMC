@@ -1,0 +1,41 @@
+
+    <div class="accordion-item" data-sly-use.topic="com.bmc.components.ProductSolutionsTopic">
+        <div class="accordion-item-anchor">
+            <h2>${topic.title}</h2>
+        </div>
+        <div class="accordion-item-content">
+            <div class="category-section-left-column">
+                <div class="product-shot">
+                    <img src="${topic.productShotHref}" alt="${topic.title}" />
+                </div>
+
+                <a href="${topic.href}" class="btn">Explore ${topic.title}&nbsp;&#8250;</a>
+            </div>
+            <div class="category-section-right-column">
+                <ul class="featured-products">
+                    <sly data-sly-list.product="${topic.featuredProducts}">
+                        <li class="featured-product">
+                            <h4><a href="${product.href}">${product.text}</a></h4>
+                            <div class="product-detail">
+                                <div class="description" data-sly-test="${product.description}">
+                                    ${product.description}
+                                </div>
+                                <div class="actions">
+                                    <a href="${product.href}">${"Learn More" @ i18n}</a>
+                                    <sly data-sly-test="${product.hasSecondaryCta}">
+                                        <span> | </span>
+                                        <a href="${product.secondaryCtaHref}">${product.secondaryCtaText}</a>
+                                    </sly>
+                                </div>
+                            </div>
+                        </li>
+                    </sly>
+                    <li class="featured-product view-all">
+                        <h4>
+                            <a href="#" class="category-section-filter result-item-filter" data-filter="${topic.dataFilter}">View All&nbsp;&#8250;</a>
+                        </h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

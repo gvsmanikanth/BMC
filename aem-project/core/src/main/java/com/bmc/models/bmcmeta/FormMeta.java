@@ -10,7 +10,8 @@ public class FormMeta {
 //    private String type = ""; //[], *legacy
     private String leadOffer = ""; //[landing page's Lead Offer]",
 //    private String disableDemandbase = ""; //[], *legacy
-    private String contactMe = ""; //['on' if contact me checkbox is present on form, else 'off']
+// Removed below for DXP-1277
+//    private String contactMe = ""; //['on' if contact me checkbox is present on form, else 'off']
 
     public String getId() {
         return id;
@@ -52,12 +53,14 @@ public class FormMeta {
 //        this.disableDemandbase = disableDemandbase;
 //    }
 
-    public String getContactMe() {
-        return contactMe;
-    }
+// Removed below for DXP-1277
+//    public String getContactMe() {
+//        return contactMe;
+//    }
 
-    public void setContactMe(String contactMe) {
-        this.contactMe = contactMe;
-    }
+// Removed below for DXP-1277
+//    public void setContactMe(String contactMe) {
+//        this.contactMe = contactMe;
+//    }
 
 }

@@ -113,7 +113,7 @@ function addFilterToArrayProtoype() {
 	addNthChildClasses();  //BMC-527 - Uncommented code.
 
 	// turn off browser default validation so we can perform our own
-	$('form#leadgen, form#nonleadgen')
+	$('[data-leadgen="noleadgen"], [data-leadgen="leadgen"]')
 		.attr('novalidate', 'novalidate')
 		.on('submit', function(e) {
 			var $form = $(this),
@@ -303,7 +303,9 @@ function addFilterToArrayProtoype() {
 			setEqHeight(element2); // WEB-451 cleanup
 		});
 	}
-	$(window).load(eqHeight());
+	//$(window).load(eqHeight());
+	
+	window.onload = eqHeight;
 
 	$(window).resize(function() {
 		setTimeout(eqHeight(), 2000);
@@ -390,7 +392,7 @@ function addFilterToArrayProtoype() {
 
 	// only use floatlabels when the browser supports transitions and placeholders
 	if (Modernizr.csstransitions && Modernizr.input.placeholder) {
-		$('label + input:not(.search-product)').floatlabel({
+		$('label.accessibility + input:not(.search-product)').floatlabel({
 			labelEndTop: '15px',
 			typeMatches: /text|password|email|number|search|url|tel/
 		});
@@ -801,7 +803,13 @@ function addFilterToArrayProtoype() {
 			$(el).trigger('to.owl.carousel', targetSlide);
 		});
 	}
-	gotoOwlSlide("#owl-location");
+	gotoOwlSlide("#owl-location"); 
+	
+
+//WEB-2197 - Link behavior of picked items - same, separate, or modal window
+$("a").externalLink({fileTypes:".doc,.pdf"});
+$("a").productInterest();//WEB-2626
+
 
 	//breaks fancybox popup
 	// to top right away

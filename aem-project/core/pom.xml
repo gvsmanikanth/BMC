@@ -43,6 +43,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -148,7 +153,9 @@
                             com.bmc.components.utils,
                             com.bmc.models,
                             {local-packages},
-                            org.owasp.encoder
+                            org.owasp.encoder,
+                            org.json.simple,
+                            org.json.simple.parser
                         </Export-Package>
                         <Bundle-SymbolicName>com.bmc.DXP</Bundle-SymbolicName>
 

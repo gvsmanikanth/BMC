@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/bmc"/>
+    <filter root="/apps/bmc">
+        <exclude pattern="/apps/bmc/i18n"/>
+    </filter>
+    <filter root="/apps/sling/servlet"/>
+    <filter root="/apps/wcm/core/content/sites"/>
 
-    <filter root="/conf/bmc" mode="merge"/>
+    <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
+    <!--<filter root="/conf/bmc" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/standard-footer-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/plain-footer-template" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-thank-you" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-full-width" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/regional-office-data" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/external-link" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/template-types/external-link-page" mode="merge"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
+    <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
 
     <filter root="/etc/clientlibs/bmc"/>
 
@@ -11,13 +27,27 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
-    <filter root="/content/bmc/videos" mode="update" />
-    <filter root="/content/bmc" mode="merge" />
-    <filter root="/content/experience-fragments/bmc" mode="merge" />
+    <filter root="/etc/languages"/>
 
-    <filter root="/content/dam/bmc" mode="merge" />
+    <filter root="/etc/notification/email"/>
+
+    <filter root="/etc/map.publish" mode="update"/>
+
+    <filter root="/content/bmc/auth"/>
+    <filter root="/content/bmc/resources/training-locations">
+        <include pattern="/content/bmc/resources/training-locations"/>
+        <include pattern="/content/bmc/resources/training-locations/jcr:content"/>
+    </filter>
+
+    <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
+    <!--<filter root="/content/bmc/videos" mode="update" />-->
+    <!--<filter root="/content/bmc" mode="merge" />-->
+    <!--<filter root="/content/dam/bmc" mode="merge" />-->
+    <!--<filter root="/content/bmc/language-masters/en/footers" mode="merge" />-->
 
     <filter root="/home/groups" mode="merge" />
+    <!--<filter root="/home/users/system/bmc" mode="merge" />-->
 
     <filter root="/oak:index/textLucene" />
+    <filter root="/oak:index/vidLucene" />
 </workspaceFilter>

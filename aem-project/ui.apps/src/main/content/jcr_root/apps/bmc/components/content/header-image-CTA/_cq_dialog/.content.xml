@@ -78,18 +78,6 @@
                                     fieldDescription="Optional: Select the asset this button links to"
                                     fieldLabel="Optional: Select the asset the 1st button links to"
                                     name="./cta1url"/>
-                            <cta1isVideo
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Check this if the link for CTA 1 is a video"
-                                    name="./cta1isVideo"
-                                    text="Is this a video?"
-                                    value="true"/>
-                            <cta1isVideoType
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                    name="./cta1isVideo@TypeHint"
-                                    value="Boolean"/>
 
                             <cta2text
                                     jcr:primaryType="nt:unstructured"
@@ -97,25 +85,12 @@
                                     fieldDescription="Optional: Enter the 2nd button text"
                                     fieldLabel="Optional: Enter the 2nd button text (if blank, no button rendered)"
                                     name="./cta2text"/>
-
                             <cta2path
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Optional: Select the asset this button links to"
                                     fieldLabel="Optional: Select the asset the 2nd button links to"
                                     name="./cta2url"/>
-                            <cta2isVideo
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Check this if the link for CTA 2 is a video"
-                                    name="./cta2isVideo"
-                                    text="Is this a video?"
-                                    value="true"/>
-                            <cta2isVideoType
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                    name="./cta2isVideo@TypeHint"
-                                    value="Boolean"/>
 
                             <cta3text
                                     jcr:primaryType="nt:unstructured"
@@ -123,26 +98,12 @@
                                     fieldDescription="Optional: Enter the 3rd button text"
                                     fieldLabel="Optional: Enter the 3rd button text (if blank, no button rendered)"
                                     name="./cta3text"/>
-
                             <cta3path
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Optional: Select the asset this button links to"
                                     fieldLabel="Optional: Select the asset 3rd button links to"
                                     name="./cta3url"/>
-
-                            <cta3isVideo
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Check this if the link for CTA 3 is a video"
-                                    name="./cta3isVideo"
-                                    text="Is this a video?"
-                                    value="true"/>
-                            <cta3isVideoType
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                    name="./cta3isVideo@TypeHint"
-                                    value="Boolean"/>
                         </items>
                     </column>
                 </items>

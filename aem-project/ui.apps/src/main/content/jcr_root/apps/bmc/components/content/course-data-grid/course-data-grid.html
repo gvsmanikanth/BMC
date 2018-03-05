@@ -1,0 +1,48 @@
+<sly data-sly-use.courseData="com.bmc.components.CourseDataGrid">
+    <div class="row">
+	 	 <sly data-sly-test="${courseData.educationProducts}">
+	 	 <div class="two-up">
+	            <div>
+	                <h3>${'Major release:' @ i8n}</h3>
+	            </div>
+	            <div>
+	                <p>${courseData.educationProducts @ join=', '} ${courseData.versionNumbers @ join=', '}</p>
+	            </div>
+	       </div>
+		</sly>
+        <sly data-sly-test="${courseData.prerequisites}">
+              <div class="two-up">
+                <div>
+                    <h3>${'Recommended Prerequisites:' @ i8n}</h3>
+                </div>
+                <div>
+                    <p data-sly-repeat.page="${courseData.prerequisites}">
+                        <a href="${page.path @ extension='html'}">${page.navigationTitle||page.pageTitle||page.title||page.name}</a>
+                    </p>
+                </div>
+                </div>
+            </sly>
+    </div>
+    <div class="row">
+         <sly data-sly-test="${courseData.educationRoles}">
+         <div class="two-up">
+            <div>
+                <h3>${'Good for:' @ i8n}</h3>
+            </div>
+            <div>
+                <p>${courseData.educationRoles @ join=', '}</p>
+            </div>
+          </div>
+         </sly>
+           <sly data-sly-test="${pageProperties['course-delivery']}">
+           <div class="two-up">
+            <div>
+                <h3>${'Course Delivery:' @ i8n}</h3>
+            </div>
+            <div>
+                <p>${pageProperties['course-delivery']} | ${pageProperties['course-duration']} ${'hours' @ i18n }</p>
+            </div>
+            </div>
+            </sly>
+    </div>
+</sly>

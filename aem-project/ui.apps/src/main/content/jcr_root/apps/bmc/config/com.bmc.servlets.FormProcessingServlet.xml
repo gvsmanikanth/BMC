@@ -2,5 +2,9 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
           serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"
+          elqSiteID="1625229226"
           timeout="{Long}5000"
+          automationEmailEnabled="{Boolean}true"
+          automationEmailRecipients="[businessautomation@bmc.com]"
+          automationEmailCCRecipients="[cmsdev@bmc.com,webforms@bmc.com]"
 />

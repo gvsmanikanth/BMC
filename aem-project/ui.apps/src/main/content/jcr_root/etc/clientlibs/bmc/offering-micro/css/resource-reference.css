@@ -1,0 +1,11 @@
+
+.offering-micro-edit-link{
+    float:right;
+}
+.offering-micro-edit-link a{
+	color:#72b8f9;
+    font-weight:bold;
+}
+.cq-dialog-fullscreen .offering-micro-edit-link{
+    margin-right: 0px;
+}

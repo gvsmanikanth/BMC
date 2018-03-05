@@ -1,0 +1,295 @@
+<sly data-sly-test.supportSearchHelp="/support/support-guide-advanced-product-info.html#Search-the-Knowledge-Base"/>
+<section class="support-section-container layout-full-bleed support-search">
+	<div class="layout-inner-wrap">
+          <div class="support-search-top">
+          <h2 class="support-search-header">Search BMC Support</h2>
+          <input type="hidden" value="answers" name="page" />
+          <input type="hidden" value="y" name="startover" />
+              <fieldset>
+                  <label for="supprt-search-input" class="accessibility">Search BMC Support</label>
+                   <div id="supprt-search-input">
+                    <span class="CoveoAnalytics" data-search-hub="PortalSearch"></span>
+                    <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-partial-match="true" data-partial-match-keywords="4" data-partial-match-threshold="50%" id="searchbox" placeholder="Search BMC Support"></div>
+                    <div class="CoveoAnalyticsSuggestions"></div>
+                    <div class="CoveoFacet" data-field="@bmcproductname" data-include-in-omnibox="true" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-title="Product Name"></div>
+                  </div>
+              </fieldset>
+                      <a target="_blank" class="contextual-tooltip" title="Help" href="${supportSearchHelp}">?</a>
+        </div>
+  </div>
+</section>
+<section class="support-section-container layout-full-bleed">
+
+<div class="layout-inner-wrap">
+		<div id="search" class="CoveoSearchInterface" data-enable-history="true">
+  <span class="CoveoAnalytics" data-search-hub="PublicSearch" data-anonymous="true">
+  </span>
+  <span class="CoveoAnalyticsSuggestions">
+  </span>
+  
+  <div class="CoveoFolding"
+         data-field="@systopparent"
+         data-tab="All,Confluence"
+         data-parent-field="@syscontainsattachment"
+         data-child-field="@sysisattachment"
+         data-expand-expression="@sysisattachment (NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)"
+         data-rearrange="date descending">
+  </div>
+
+  <div class="CoveoFoldingForThread"
+         data-field="@jivefoldingid"
+         data-tab="Communities"
+         data-parent-field="@jivefoldingid"
+         data-child-field="@jiveisattachment"
+         data-range="0"
+         data-rearrange="date descending">
+  </div>
+
+  <div class="coveo-main-section">
+
+    <!--<h2 class="support-search-header">Search BMC Support</h2>-->
+   
+    <div class="coveo-facet-column">
+      <div class="CoveoFacet" data-title="YouTube Channel" data-field="@sysauthor" data-tab="bmc-yt-video">
+      </div>    
+      <div class="CoveoFacet" data-title="Product Name" data-field="@bmcproductname" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-include-in-omnibox="true">
+      </div>
+      <div class="CoveoFacet" data-title="FileType" data-field="@sysfiletype" data-tab="All,Confluence,documents,bmc-yt-video">
+      </div>
+      <div class="CoveoFacet" data-title="Type" data-field="@syscsitemtype" data-tab="Communities">
+      </div>
+      <div class="CoveoFacet" data-title="Type" data-field="@objecttypename" data-allow-toggling-operator="true" data-tab="documents,One3,KB">
+      </div>
+      <div class="CoveoFacet" data-title="Year" data-field="@sysyear" data-sort-criteria="AlphaDescending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS,bmc-yt-video">
+      </div>
+      <div class="CoveoFacet" data-title="Month" data-field="@sysmonth" data-depends-on='@sysyear' data-sort-criteria="AlphaAscending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS">
+      </div>
+      <div class="CoveoHierarchicalFacet" data-title="Case Category" data-level-start="1" data-tab="KB" data-field="@sfkbdccasecategorydelexpanded">
+      </div>
+
+    </div>
+    <div class="coveo-results-column">
+      <!--div class="CoveoSearchbox" data-activate-omnibox="true"></div>
+      <div class="CoveoShareQuery">
+      </div>
+      <div class="CoveoPreferencesPanel">
+        <div class="CoveoResultsPreferences">
+        </div>
+        <div class="CoveoResultsFiltersPreferences">
+        </div>
+        <!--/* WEB-2592 Changes added START */-->
+           <div class="coveo-tab-section">
+      			<a class="CoveoTab" data-id="All" data-caption="All" data-expression="((NOT @syssource=documents OR @uri=/Products OR @uri=/952) NOT(@objecttype=KBAttachment) NOT @sysfiletype=YouTubePlaylistItem NOT @sysfiletype=YouTubePlaylist) NOT((@sfscfaqproceduralisvisibleinpkb==false AND @sfscfaqproceduralBMCPartnerUserC==true) OR (@sfscproductservicedescriptionisvisibleinpkb==false AND @sfscproductservicedescriptionBMCPartnerUserC==true) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==false AND @sfscsolutionstoaproductproblemBMCPartnerUserC==true))"></a>
+      
+      			<a class="CoveoTab" data-id="KB" data-caption="Knowledge Base" data-icon="bmc-knowledge" data-expression="@sfkbid (NOT @syssource=SFADEV2) NOT(@objecttype=KBAttachment) ((@sfscfaqproceduralisvisibleinpkb==true AND @sfscfaqproceduralBMCPartnerUserC==false) OR (@sfscproductservicedescriptionisvisibleinpkb==true AND @sfscproductservicedescriptionBMCPartnerUserC==false) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==true AND @sfscsolutionstoaproductproblemBMCPartnerUserC==false))"></a>
+	  			<a class="CoveoTab" data-id="Confluence" data-caption="Documentation" data-icon="bmc-documentation" data-expression="(NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)(@syssource=confluence OR (@syssource=documents AND (@uri=/Products OR @uri=/952 OR @uri=/ctrlm8/ OR @uri=/ctrlm9/) NOT @sysisemptydocument)) "></a>
+      			<a class="CoveoTab" data-id="Communities" data-caption="Communities" data-icon="bmc-community" data-expression="@syssource=communities">
+      			</a>
+      			<a class="CoveoTab" data-id="bmccom" data-icon="bmc-mainlogo" data-caption="Support Central" data-expression="@syssource=support @syssource=web">
+      			</a>  
+	  			<a class="CoveoTab" data-id="bmc-yt-video" data-icon="bmc-yt-video" data-caption="Video" data-expression="@syssource=Video-bmc-docs @sysfiletype=YouTubeVideo">
+      			</a>    
+   		 </div>
+    <!--/* WEB-2592 Changes added END */-->
+      <div class="coveo-results-header">
+         <div class="CoveoBreadcrumb">
+        </div>
+        <div class="coveo-summary-section">
+          <span class="CoveoQuerySummary">
+          </span>
+          <span class="CoveoQueryDuration">
+          </span>
+        </div>
+        <div class="coveo-sort-section">
+          <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance">
+          </span>
+          <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date">
+          </span>
+        </div>
+        <div class="coveo-clear">
+        </div>
+      </div>
+      <div class="CoveoHiddenQuery">
+      </div>
+      <div class="CoveoDidYouMean">
+      </div>
+      <div class="CoveoErrorReport" data-pop-up="false">
+      </div>
+      <div class="CoveoResultList" data-wait-animation="fade">
+      
+<script id="Knowledge" class="result-template" type="text/html" data-condition="raw.sfkbid != null">
+<div class="coveo-result-frame">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      <span class="coveo-icon bmc-knowledge"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank"></a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      
+    </div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+    </div>
+  </div>
+</div>
+</script>
+
+<script id="Jive" class="result-template" type="text/html" data-condition="raw.sysconnectortype==&apos;JiveCrawler&apos;">
+<div class="coveo-result-frame coveo-email-result">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px">
+        <span class="coveo-icon bmc-community"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank">
+          </a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px"></div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+      <div class="CoveoPrintableUri"></div>
+      <div class="CoveoResultFolding" data-result-template-id="ChildResultConfluence" data-more-caption="Show More Comments & Files" data-less-caption="Hide Comments & Files"></div>
+          </div>
+          </div>
+          
+</script>
+
+<script id="Confluence" class="result-template" type="text/html" data-condition="raw.syscfspacename != null">
+<div class="coveo-result-frame coveo-email-result">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px">
+        <span class="coveo-icon bmc-documentation"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank">
+          </a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px"></div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+      <div class="CoveoPrintableUri"></div>
+      <span class="CoveoResultFolding" data-result-template-id="ChildResultConfluence" data-more-caption="Show Comments & Files" data-less-caption="Hide Comments & Files"></span>
+          </div>
+          </div>
+</script>
+
+<script id="Documents" class="result-template" type="text/html" data-condition="raw.syssource.indexOf('documents.bmc.com') > -1">
+<div class="coveo-result-frame">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      <span class="coveo-icon bmc-documentation"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank"></a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+    </div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+    </div>
+  </div>
+</div>
+</script>
+<script id="Video" class="result-template" type="text/html" data-condition="raw.syssource.indexOf('YouTube - Video-bmc-docs') > -1">
+<div class="coveo-result-frame">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      <span class="coveo-icon bmc-yt-video"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank"></a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      
+    </div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+    </div>
+  </div>
+</div>
+</script>
+
+
+<script id="Default" class="result-template" type="text/html"  >
+<div class="coveo-result-frame">
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+      <span class="coveo-icon bmc-mainlogo"></span>
+    </div>
+    <div class="coveo-result-cell" style="font-size:14px">
+      <a class="CoveoResultLink" target="_blank"></a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+    </div>
+    <div class="coveo-result-cell" style="width:120px; text-align:right; font-size:14px">
+      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+    </div>
+  </div>
+  <div class="coveo-result-row">
+    <div class="coveo-result-cell" style="width:25px; font-size:14px">
+    </div>
+    <div class="coveo-result-cell" style="text-align:justify">
+      <span class="CoveoExcerpt"></span>
+    </div>
+  </div>
+</div>
+</script>
+
+<script id="ChildResultConfluence" type="text/x-underscore-template">
+  <% if (raw.sysfiletype == "CFComment" || raw.sysfiletype == "csmessage" )  { %>
+      <a class="coveo-author" target="_blank" href="<%=clickUri%>">From: <%=raw.sysauthor%></a>
+      <span class="CoveoQuickview"><div class='coveo-icon-for-quickview'>Quickview</div></span>
+      <div class="coveo-date"><%-dateTime(raw.sysdate)%></div>
+      <div class="coveo-excerpt">
+         <%= Coveo.highlightStreamHTML(firstSentences, firstSentencesHighlights)%>
+      </div>
+   <% } else { %>
+      <div class="coveo-date"><%-dateTime(raw.sysdate)%></div>
+      <div class="coveo-title">
+        <%= fromFileTypeToIcon(obj) %>
+        <a class="CoveoResultLink" styletarget="_blank"><%=title?highlight(title, titleHighlights):clickUri%></a>
+        <div class="coveo-excerpt">
+          <%= Coveo.highlightStreamHTML(firstSentences, firstSentencesHighlights)%>
+      </div>
+   <% } %>    
+</script>
+
+        </div>
+        <div class="CoveoPager"></div>
+    </div>
+  </div>
+</div>
+</div>
+	
+</section>

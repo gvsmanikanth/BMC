@@ -14,7 +14,9 @@ import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.bmc.services.ExternalLinkRewriterService;
+
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
  
 /*
@@ -42,9 +44,10 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 
      private Session session;
      
-     @Reference
+@Reference
      private ExternalLinkRewriterService dataService;
      
+
      private String linkAbstractorExternalURL = null;
      
      private String linkAbstractorTarget = null;

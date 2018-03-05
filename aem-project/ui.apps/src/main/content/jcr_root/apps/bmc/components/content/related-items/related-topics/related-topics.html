@@ -1,24 +1,21 @@
 <sly data-sly-use.data="com.bmc.components.RelatedItems"></sly>
 <section data-sly-test="${!data.useHorizontalDisplay}">
     <article>
-        <h2 data-sly-test="${data.headingText}">${data.headingText}:</h2>
+        <h2>Related topics:</h2>
 
         <dl data-sly-list.link="${data.links}">
             <dt>
-                <a href="${link.href}" target="_self" data-sly-test="${link.isInternal}">${link.text}</a>
-                <a href="${link.href}" target="_blank" data-sly-test="${link.isExternal}">${link.text}</a>
+                <a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>
             </dt>
-            <dd><sly data-sly-test="${data.showLinkDescriptions}">${link.description}</sly></dd>
+            <dd><sly data-sly-test="${data.showLinkDescriptions}">${link.description @ context='html'}</sly></dd>
         </dl>
     </article>
 </section>
 <section data-sly-test="${data.useHorizontalDisplay}">
-    <p><sly data-sly-test="${data.headingText}">${data.headingText}:&nbsp;</sly>
+    <p>Related topics:&nbsp;
     <sly data-sly-list.link="${data.links}">
-        <sly data-sly-test="${linkList.last && link.isInternal}"><a href="${link.href}" target="_self">${link.text}</a></sly>
-        <sly data-sly-test="${linkList.last && link.isExternal}"><a href="${link.href}" target="_blank">${link.text}</a></sly>
-        <sly data-sly-test="${!linkList.last && link.isInternal}"><a href="${link.href}" target="_self">${link.text}</a>, </sly>
-        <sly data-sly-test="${!linkList.last && link.isExternal}"><a href="${link.href}" target="_blank">${link.text}</a>, </sly>
+        <sly data-sly-test="${!linkList.last}"><a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>, </sly>
+        <sly data-sly-test="${linkList.last}"><a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a></sly>
     </sly>
     </p>
 </section>

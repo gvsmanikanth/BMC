@@ -1,0 +1,166 @@
+<sly data-sly-use.location="${'com.bmc.components.ContactsLocation' @ titleType='h3' }"></sly>
+<sly data-sly-test.isEditing="${wcmmode.edit || wcmmode.design}"></sly>
+
+<div class="contact full-width">
+    <div class="layout-inner-wrap -bb -mb -pb">
+        <div class="three-up">
+            <h3>${location.heading}</h3>
+        </div>
+        <div class="three-up"> </div>
+        <div class="three-up">
+            <fieldset>
+                <div class="form-group">
+                    <select name="addressCountry" onchange="location = this.options[this.selectedIndex].value;">
+                        <option value="">Select Another Country</option>${}
+                        <option data-sly-repeat.page="${currentPage.parent.listChildren}" value="${page.path @ extension='html'}" selected="${page.path == currentPage.path ? 'selected' : ''}">${page.navigationTitle||page.pageTitle||page.title||page.name}</option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="layout-inner-wrap">
+        <section class="layout-primary">
+            <div class="three-up">
+                <h3>${'Sales' @ i18n}</h3>
+                <address>
+                    <a data-sly-test.url="${location.salesPhoneURL}" href="tel:${url}">${location.salesPhoneText @ context='html'}</a>
+                    <em data-sly-test="${!location.salesPhoneURL && isEditing}">enter phone number</em>
+                    <br>
+                    <a data-sly-test.url="${location.salesContactURL}" href="tel:${url}">${location.salesContactText @ context='html'}</a>
+                    <em data-sly-test="${!location.salesContactURL && isEditing}">enter URL</em>
+                </address>
+                <br>
+
+                <h3>${'General Comments and Feedback' @ i18n}</h3>
+                <address>
+                    <a data-sly-test.phone="${location.feedbackPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                    <em data-sly-test="${!location.feedbackPhone && isEditing}">enter phone number</em>
+                </address>
+                <br>
+
+                <h3>${'Corporate Headquarters' @ i18n}</h3>
+                <address>
+                    <!--/* Street 1 */-->
+                    <sly data-sly-test.street1="${location.corporateHeadquartersStreet1}">${street1}<br></sly>
+                    <!--/* Street 2 */-->
+                    <sly data-sly-test.street2="${location.corporateHeadquartersStreet2}">${street2}<br></sly>
+                    <!--/* City */-->
+                    <sly data-sly-test.city="${location.corporateHeadquartersCity}">${city}</sly>
+                    <!--/* State */-->
+                    <sly data-sly-test.state="${location.corporateHeadquartersState}"><sly data-sly-test="${city}">, </sly>${state}</sly>
+                    <!--/* Zip */-->
+                    <sly data-sly-test.zip="${location.corporateHeadquartersZip}"><sly data-sly-test="${city || state}"> </sly>${zip}</sly>
+                    <!--/* Add line break after city/state/zip if necessary */-->
+                    <sly data-sly-test="${city || state || zip}"><br></sly>
+                    <!--/* Prompt if no address info */-->
+                    <sly data-sly-test="${!street1 && !street2 && !city && !state && !zip && isEditing}"><em>enter address</em><br></sly>
+                    <!--/* Phone */-->
+                    <a data-sly-test.phone="${location.corporateHeadquartersPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                    <em data-sly-test="${!location.corporateHeadquartersPhone && isEditing}">enter phone number</em>
+                    <br>
+                </address>
+
+                <strong>${'Executive Briefing Center' @ i18n}</strong>
+                <p>
+                    <!--/* Phone */-->
+                    <a data-sly-test.phone="${location.ebcPhone}" href="tel:${phone}">${phone @ context='html'}</a>
+                    <em data-sly-test="${!location.ebcPhone && isEditing}">enter phone number</em>
+                    <br>
+                    <!--/* Information */-->
+                    <a data-sly-test.url="${location.ebcInformationURL}" href="${url}">Information</a>
+                    <em data-sly-test="${!location.ebcInformationURL && isEditing}">enter URL</em>
+                </p>
+            </div>
+
+            <div class="three-up">
+                <h3>${'Customer Support' @ i18n}</h3>
+                <address>
+                    <sly data-sly-test.info="${location.supportInformation}">${info @ context = 'html'}</sly>
+                    <sly data-sly-test="${location.supportInformation && (location.supportEmail || location.supportPhones.size > 0)}"><br></sly>
+                    <sly data-sly-repeat.phone="${location.supportPhones}">
+                        <!--/* Label (if present) */-->
+                        <sly data-sly-test.label="${phone.label}">${label}: </sly>
+                        <!--/* Link */-->
+                        <a href="tel:${phone.phone}">${phone.text}</a>
+                        <!--/* Line break (except for last item) */-->
+                        <br data-sly-test="${!phoneList.last}">
+                    </sly>
+                    <sly data-sly-test.email="${location.supportEmail}"><a href="mailto:${email}">${email}</a><br></sly>
+                </address>
+                <strong>${'Product Documentation' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.url="${location.productDocumentationContactURL}" href="tel:${url}">${location.productDocumentationContactText @ context='html'}</a>
+                    <em data-sly-test="${!location.productDocumentationContactURL && isEditing}">enter URL</em>
+                </p>
+
+                <strong>${'Communities' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.url="${location.communitiesURL}" href="tel:${url}">${location.communitiesText @ context='html'}</a>
+                    <em data-sly-test="${!location.communitiesURL && isEditing}">enter URL</em>
+                </p>
+
+                <sly data-sly-test="${location.accountsPayable || location.accountsReceivable}">
+                    <strong>${'For Accounting Inquiries' @ i18n}</strong>
+                    <p data-sly-test.email="${location.accountsPayable}">
+                        ${'Accounts Payable' @ i18n}<br>
+                        <a href="mailto:${email}">${email}</a><br>
+                    </p>
+                    <p data-sly-test.email="${location.accountsReceivable}">
+                        ${'Accounts Receivable' @ i18n}<br>
+                        <a href="mailto:${email}">${email}</a><br>
+                    </p>
+                </sly>
+                <br>
+
+                <h3>${'Education Customer Service' @ i18n}</h3>
+                <address>
+
+                    <!--/* Phone Numbers */-->
+                    <sly data-sly-repeat.phone="${location.educationCustomerServicePhones}">
+                        <!--/* Label (if present) */-->
+                        <sly data-sly-test.label="${phone.label}">${label}: </sly>
+                        <!--/* Link */-->
+                        <a href="tel:${phone.phone}">${phone.text}</a>
+                        <!--/* Line break (except for last item) */-->
+                        <br data-sly-test="${!phoneList.last}">
+                    </sly>
+
+                    <!--/* Email */-->
+                    <a data-sly-test.email="${location.educationCustomerServiceEmail}" href="mailto:${email}">${email}</a>
+                    <em data-sly-test="${!location.educationCustomerServiceEmail && isEditing}">enter email</em>
+                </address>
+                <br>
+
+                <h3>${'Other Contacts' @ i18n}</h3>
+                <strong>${'Investors' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.email="${location.investorsEmail}" href="mailto:${email}">${email}</a>
+                    <em data-sly-test="${!location.investorsEmail && isEditing}">enter email</em>
+                </p>
+                <strong>${'Corporate Communications' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.url="${location.corporateCommunicationsURL}" href="tel:${url}">${location.corporateCommunicationsText @ context='html'}</a>
+                    <em data-sly-test="${!location.corporateCommunicationsURL && isEditing}">enter URL</em>
+                </p>
+                <strong>${'Global Security Support' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.email="${location.securityEmail}" href="mailto:${email}">${email}</a>
+                    <em data-sly-test="${!location.securityEmail && isEditing}">enter email</em>
+                </p>
+                <strong>${'Analyst Relations' @ i18n}</strong>
+                <p>
+                    <a data-sly-test.url="${location.analystRelationsURL}" href="tel:${url}">${location.analystRelationsText @ context='html'}</a>
+                    <em data-sly-test="${!location.analystRelationsURL && isEditing}">enter URL</em>
+                </p>
+            </div>
+            <div class="three-up -shaded">
+                <h3>${'Country Websites' @ i18n}</h3>
+                <sly data-sly-repeat.page="${currentPage.parent.listChildren}">
+                    <sly data-sly-test="${page.path != currentPage.path}">
+                        <a href="${page.path @ extension='html'}">${page.navigationTitle||page.pageTitle||page.title||page.name}</a><br>
+                    </sly>
+                </sly>
+            </div>
+        </section>
+    </div>
+</div>

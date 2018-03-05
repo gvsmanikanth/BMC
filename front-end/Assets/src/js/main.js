@@ -11,9 +11,11 @@ require('./vendor/jquery.autocomplete.js');
 require('./vendor/jquery.cookie.js');
 require('./vendor/jquery.validate.js');
 require('./vendor/jquery.floatlabels.js');
+require('./vendor/jquery.externalLink.js');
+require('./vendor/jquery.productInterest.js');//WEB-2626
 require('./modules/sifter.js');
-require('./modules/sift-generator.js');
-require('./vendor/jquery.fancybox.js');
+require('./modules/sift-generator.js'); 
+require('./vendor/jquery.fancybox.js'); 
 require('./vendor/jquery.scrollspy.js');
 require('./modules/utilities.js');
 //Removed GeoIP implementation. DXP-291
@@ -53,6 +55,7 @@ require("./modules/carouselautoplay.js");
 require("./modules/simpletabs.js");
 require("./modules/filterList.js");
 require("./modules/education.js");
+require("./modules/resourceHubTrials.js");
 require("./modules/modalVideo.js");
 require("./modules/partners.js");
 require("./vendor/vidbg.js");

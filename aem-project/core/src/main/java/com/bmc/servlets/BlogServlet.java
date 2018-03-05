@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(BlogServlet.class);
     private String base = "";
+    private String hostName = "";
 
     // Don't run forever no matter what configuration says
     private static final int MAX_RETRY_ATTEMPTS = 100;
@@ -39,8 +41,6 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     private int timeout = 30000;
 
-    private SlingHttpServletResponse servletResponse = null;
-
     @Activate
     protected void activate(final Map<String, Object> config) {
         base = PropertiesUtil.toString(config.get("proxyUrl"), null);
@@ -52,7 +52,17 @@ public class BlogServlet extends SlingSafeMethodsServlet {
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) {
-        servletResponse = response;
+        // Extract hostname base URL from request object.
+        try {
+            hostName = new URL(request.getScheme(),
+                    request.getServerName(),
+                    request.getServerPort(),
+                    request.getContextPath()).toString();
+        } catch (MalformedURLException e) {
+            // Fallback on prod BMC if URL error is encountered.
+            hostName = "http://www.bmc.com";
+        }
+
         LinkCheckerSettings.fromRequest(request).setIgnoreInternals(true);
         LinkCheckerSettings.fromRequest(request).setIgnoreExternals(true);
         String path = request.getParameter("path");
@@ -64,25 +74,25 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
-        getBlogContent(src);
+        getBlogContent(src, response);
     }
 
-    private void getBlogContent(String src) {
-        String source = loadUrl(src);
+    private void getBlogContent(String src, SlingHttpServletResponse response) {
+        String source = loadUrl(src, response);
         String processed = processSource(source);
         if (status == 200 || status == 404) {
-            servletResponse.setStatus(status);
+            response.setStatus(status);
         }
         try {
-            servletResponse.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            servletResponse.setContentType("text/html");
-            servletResponse.getWriter().append(processed);
+            response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+            response.setContentType("text/html");
+            response.getWriter().append(processed);
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private String loadUrl(String src) {
+    private String loadUrl(String src, SlingHttpServletResponse response) {
         String html = "";
         String responseBody;
         HttpURLConnection connection = null;
@@ -90,9 +100,9 @@ public class BlogServlet extends SlingSafeMethodsServlet {
             connection = (HttpURLConnection) new URL(src).openConnection();
             connection.setConnectTimeout(timeout);
             connection.setRequestProperty("Accept-Charset", StandardCharsets.UTF_8.name());
-            InputStream response = connection.getInputStream();
+            InputStream result = connection.getInputStream();
             status = connection.getResponseCode();
-            try (Scanner scanner = new Scanner(response)) {
+            try (Scanner scanner = new Scanner(result)) {
                 responseBody = scanner.useDelimiter("\\A").next();
             }
             return responseBody;
@@ -102,7 +112,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                 status = connection.getResponseCode();
             } catch (IOException e1) {
                 // in this case there is no response code to get. server is unresponsive.
-                handleUnresponsiveRequest(src);
+                handleUnresponsiveRequest(src, response);
             }
             URL url = connection.getURL();
             logger.error(e.toString() + " " + e.getMessage());
@@ -110,7 +120,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         return html;
     }
 
-    private void handleUnresponsiveRequest(String src) {
+    private void handleUnresponsiveRequest(String src, SlingHttpServletResponse response) {
         if (attempts < maxRetryAttempts) {
             if (retryDelay > 0) {
                 try {
@@ -121,7 +131,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
             }
             attempts++;
             logger.debug("Retrying URL: " + src);
-            getBlogContent(src);
+            getBlogContent(src, response);
         } else {
             logger.error("Failed to load " + src);
         }
@@ -148,7 +158,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     }
 
     private String processLinks(String source) {
-        String replace = "http://www.bmc.com/blogs";
+        String replace = hostName + "/blogs";
         String exclude = base + "/wp-content";
         String token = "{EXCLUDE_PATH}";
         String processed = source.replace(exclude, token);

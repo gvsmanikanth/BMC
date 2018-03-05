@@ -5,12 +5,12 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:lastModified="{Date}2017-07-12T11:22:25.001-07:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-07-12T11:39:54.041-07:00"
-        cq:lastReplicatedBy="admin"
+        cq:lastReplicated="{Date}2017-08-10T14:05:46.715-04:00"
+        cq:lastReplicatedBy="dtayeh"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/certification-template"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/page">
+        sling:resourceType="bmc/components/structure/education-page-common">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">

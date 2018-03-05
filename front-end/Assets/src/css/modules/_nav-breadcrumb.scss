@@ -2,7 +2,7 @@
 
  .navigation-breadcrumb {
     margin: 0;
-    padding: 1em 0px 0px !important;
+    padding: 1px 0px 0px !important;
   
     @include media(breakpointLarge) {
      // margin-bottom: em(-64);
@@ -45,5 +45,11 @@
       a{
         color:white;
       }
+    }
+    + .layout-full-bleed {
+      padding-top: 0;
+    }
+    .cmp-breadcrumb {
+      display: block;
     }
   }

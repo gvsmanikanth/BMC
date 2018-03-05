@@ -1,0 +1,20 @@
+<div data-sly-use.center="com.bmc.models.components.traininglocations.TrainingCenter" style="background:white;">
+    <p>Location Name: ${center.locationName}</p>
+    <p>Center Name: ${center.centerName}</p>
+    <p>Address: ${center.address1}</p>
+    <p>Address: ${center.address2}</p>
+    <p>Address: ${center.address3}</p>
+    <p>City: ${center.city}</p>
+    <p>State: ${center.state}</p>
+    <p>Zip: ${center.zip}</p>
+    <p>Phone: ${center.phone}</p>
+    <p>Fax: ${center.fax}</p>
+    <p>Website: ${center.website}</p>
+    <p>Airport: ${center.airport}</p>
+    <p>Training Hours: ${center.trainingHours}</p>
+    <ul data-sly-list.hotel="${center.hotels}">
+        <li>
+            Hotel: ${hotel.hotelName}
+        </li>
+    </ul>
+</div>

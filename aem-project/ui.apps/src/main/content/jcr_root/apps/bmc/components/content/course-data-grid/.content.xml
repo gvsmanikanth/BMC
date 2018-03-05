@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:description="Grid of data points on the course template pages."
+          jcr:primaryType="cq:Component"
+          jcr:title="Course Data Grid"
+          componentGroup="BMC.content"
+/>

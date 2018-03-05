@@ -1,33 +1,31 @@
-<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='bg'}"/>
-<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
-
+<sly data-sly-use.data="com.bmc.components.HeaderImageCta"></sly>
 
 <!-- with introText -->
-<section data-sly-test="${properties.introText}" class="bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}');">
+<section data-sly-test="${properties.introText}" class="py3 bg-black layout-full-bleed layout-full-bleed-image" style="background-image: url('${data.backgroundImageUrl @ context='uri'}');">
     <div class="layout-inner-wrap">
         <h1>${properties.headerText  @ context = 'html'}</h1>
         <h2>${properties.subHeaderText @ context = 'html'}</h2>
         <p class="hero-caption">${properties.introText @ context = 'html'}</p>
 
-        <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn learn-more'}" href="${properties.cta1url}">${properties.cta1text}</a>
-        <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta2url}">${properties.cta2text}</a>
-        <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta3url}">${properties.cta3text}</a>
+        <a data-sly-test="${data.cta1.text}" class="btn learn-more ${data.cta1.cssClass}" href="${data.cta1.href}" title="${data.cta1.text}">${data.cta1.text}</a>
+        <a data-sly-test="${data.cta2.text}" class="btn-secondary learn-more ${data.cta2.cssClass}" href="${data.cta2.href}" title="${data.cta2.text}">${data.cta2.text}</a>
+        <a data-sly-test="${data.cta3.text}" class="btn-secondary learn-more ${data.cta3.cssClass}" href="${data.cta3.href}" title="${data.cta3.text}">${data.cta3.text}</a>
 
     </div><!-- / layout-inner-wrap -->
 </section>
 
 <!-- without introText -->
-<section data-sly-test="${!properties.introText}" class="wallpapered bar full-bleed-page-banner" style="background-image: url('${bgImg @ context='uri'}')">
+<section data-sly-test="${!properties.introText}" class="wallpapered bar full-bleed-page-banner" style="background-image: url('${data.backgroundImageUrl @ context='uri'}');">
     <div class="offset-wrapper">
         <div class="layout-inner-wrap">
-            <div class="offset-hero-medium banner -ribbon" style="background-image: url('http://media.cms.bmc.com/images/spacer.gif'); padding-top: 1em; padding-bottom: 1em; ">
+            <div class="offset-hero-medium banner -ribbon" style="background-image: url('/etc/clientlibs/bmc/head/spacer.gif'); padding-top: 1em; padding-bottom: 1em; ">
                 <div class="offset-hero-medium-inner-wrap">
                     <h1 class="white">${properties.headerText @ context = 'html'}</h1>
                     <h2>${properties.subHeaderText @ context = 'html'}</h2>
 
-                    <a data-sly-test="${properties.cta1text}" class="${properties.cta1isVideo ? 'btn video-play modal-video-player' : 'btn learn-more'}" href="${properties.cta1url}">${properties.cta1text}</a>
-                    <a data-sly-test="${properties.cta2text}" class="${properties.cta2isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta2url}">${properties.cta2text}</a>
-                    <a data-sly-test="${properties.cta3text}" class="${properties.cta3isVideo ? 'btn-secondary video-play modal-video-player' : 'btn-secondary learn-more'}" href="${properties.cta3url}">${properties.cta3text}</a>
+                    <a data-sly-test="${data.cta1.text}" class="btn learn-more ${data.cta1.cssClass}" href="${data.cta1.href}" title="${data.cta1.text}">${data.cta1.text}</a>
+                    <a data-sly-test="${data.cta2.text}" class="btn-secondary learn-more ${data.cta2.cssClass}" href="${data.cta2.href}" title="${data.cta2.text}">${data.cta2.text}</a>
+                    <a data-sly-test="${data.cta3.text}" class="btn-secondary learn-more ${data.cta3.cssClass}" href="${data.cta3.href}" title="${data.cta3.text}">${data.cta3.text}</a>
 
                 </div>
             </div>

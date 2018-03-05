@@ -20,5 +20,16 @@
                     jcr:primaryType="nt:unstructured"
                     js="bmc.main"/>
         </clientlibs>
+        <training-center-country jcr:primaryType="nt:unstructured">
+            <centers
+                    jcr:lastModified="{Date}2017-09-21T17:07:35.816-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys"
+                    components="/apps/bmc/components/training-centers/training-location">
+                <section jcr:primaryType="nt:unstructured"/>
+            </centers>
+        </training-center-country>
+
     </jcr:content>
 </jcr:root>

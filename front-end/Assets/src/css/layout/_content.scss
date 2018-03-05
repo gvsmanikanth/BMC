@@ -9,7 +9,6 @@
   @include row((nested: false, padding: 0 0, maxWidth: 100%));
 	overflow: hidden;
 }
-
 .bmc-nav-loader-navigation .layout-header {
 
 	.layout-inner-wrap {
@@ -38,7 +37,12 @@
 	@extend %clearfix;
 	margin: 0 auto;
 	max-width: $rowMaxWidth;
-	padding: 0 em(28);
+	padding: 0 rem(28);
+	width: auto; //overloads aem grid's weird use of both display block / width 100%.
+
+	.layout-inner-wrap {
+		padding: 0;
+	}
 
 	&.-bb {
 		border-bottom: 1px solid color(seashell);
@@ -193,6 +197,24 @@
 	@extend %column-config;
 	padding-top: 0;
 
+	&:first-child {
+		padding-bottom: 2rem;
+		@include media(breakpointMedium) {
+			padding-bottom: 0;
+		}
+	}
+
+	@include media(breakpointMedium) {
+		//margin-right: columns(0.8666);
+		width: columns(8.1333);
+		&:first-child 	{ padding-right: 7.2%;	}
+		&:last-child 	{ padding-left: 7.2%;	}
+	}
+
+	&.aem-GridColumn {
+		margin-right: 0 !important;
+	}
+
 	.full-width & {
 		width: columns(12);
 	}
@@ -201,19 +223,13 @@
 		padding-top: em(28);
 	}
 
-	> section {
-		margin-top: em(50);
+	//> section {
+	//	margin-top: em(50);
 
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
-	@include media(breakpointMedium) {
-		margin-right: columns(0.8666);
-		width: columns(8.1333);
-	}
-
+	//	&:first-child {
+	//		margin-top: 0;
+	//	}
+	//}
 	.-shaded {
 		background-color: #f1f1f1;
 		padding: em(30);
@@ -225,6 +241,18 @@
 	@extend %column-config;
 	padding: 2em 0 0 0;
 
+	@include media(breakpointMedium) {
+		width: 65%;
+		&:first-child 	{ padding-right: 10%;	}
+		&:last-child 	{ padding-left: 10%;	}
+	}
+
+	@include media(breakpointLarge) {
+		width: 66%;
+		&:first-child 	{ padding-right: 2%;	}
+		&:last-child 	{ padding-left: 2%;		}
+	}
+
 	.full-width & {
 		width: 100%;
 	}
@@ -233,28 +261,12 @@
 		padding-top: em(28);
 	}
 
-	> section {
-		margin-top: em(50);
-
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
-	@include media(breakpointMedium) {
-		margin-right: 10%;
-		width: 65%;
-	}
-
-	@include media(breakpointLarge) {
-		margin-right: 2%;
-		width: 66%;
-	}
-
-	@include media(breakpointExtraLarge) {
-		margin-right: 2%;
-		width: 66%;
-	}
+	//> section {
+	//	margin-top: em(50);
+	//	&:first-child {
+	//		margin-top: 0;
+	//	}
+	//}
 }
 
 // The layout-product-feature-banner class is the column container for a page's primary content.  It can be customized for specific templates using contexts such as .page-product-landing &.
@@ -287,8 +299,28 @@
 // The layout-secondary class is the column container for a page's secondary content, which will usually be an aside with content tangential to that of layout-primary.
 .layout-secondary {
 	@extend %column-config;
+	//padding-bottom: em(135);
 
-	padding-bottom: em(135);
+	&:first-child {
+		padding-bottom: 2rem;
+		@include media(breakpointMedium) {
+			padding-bottom: 0;
+		}
+	}
+
+	> .aem-Grid > .aem-GridColumn { //legacy was "> section"
+		border-top: 1px solid color(greyMedium);
+		margin-top: em(40);
+		padding-top: em(40);
+
+		&:first-child {
+			border-top: none ;
+			@include media(breakpointMedium) {
+				margin-top: 0 !important;
+				padding-top: 0 ;
+			}
+		}
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -307,28 +339,14 @@
 		border-left: none;
 	}
 
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
-
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none ;
-				margin-top: 0 !important;
-				padding-top: 0 ;
-			}
-		}
-	}
-
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
 	h2:first-of-type {
 		@include media(breakpointMedium) {
-			margin-top: em(12, (context: 40));//BMC-527 em(12 40);
+			//margin-top: em(12, (context: 40)); BMC-527 em(12 40);
 		}
 
 		@include media(breakpointExtraLarge) {
-			margin-top: em(17, (context: 50));//BMC-527 em(17 50);
+			//margin-top: em(17, (context: 50)); BMC-527 em(17 50);
 		}
 	}
 
@@ -354,6 +372,10 @@
 		}
 	}
 
+	article {
+		padding: 0;
+	}
+
 	.blog-recent .author {
 		@include media(breakpointMedium) {
 			@include font-size(14);
@@ -361,6 +383,7 @@
 	}
 
 	@include media(breakpointMedium) {
+    float: right; /* DXP-1062 */
 		width: columns(3);
 	}
 }
@@ -368,8 +391,31 @@
 // The layout-secondary-slim-side class is the column container for a page's secondary content that needs extra top padding if an image in a slim banner is used.
 .layout-secondary-slim-side {
 	@extend %column-config;
-
 	padding-bottom: em(135);
+
+	&:first-child {
+		padding-bottom: 0;
+	}
+
+	@include media(breakpointMedium) {
+		width: columns(3);
+	}
+
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
+	//	&:first-child {
+	//		@include media(breakpointSmall) {
+	//			border-top: none;
+	//			margin-top: 2em;
+	//			padding-top: 0;
+	//		}
+	//		@include media(breakpointLarge) {
+	//			margin-top: 4em;
+	//		}
+	//	}
+	//}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -386,46 +432,6 @@
 		padding: em(28) 0 0;
 		@extend .divider;
 		border-left: none;
-	}
-
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
-
-
-		&:first-child {
-			@include media(breakpointSmall) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-
-
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-
-		&:first-child {
-			@include media(breakpointLarge) {
-				border-top: none;
-				margin-top: 4em;
-				padding-top: 0;
-			}
-		}
-
-		&:first-child {
-			@include media(breakpointExtraLarge) {
-				border-top: none;
-				margin-top: 4em;
-				padding-top: 0;
-			}
-		}
 	}
 
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
@@ -466,10 +472,6 @@
 			@include font-size(14);
 		}
 	}
-
-	@include media(breakpointMedium) {
-		width: columns(3);
-	}
 }
 
 
@@ -482,6 +484,10 @@
 	padding-right: em(20);
 	position:relative;
 	z-index:1;
+
+	&:first-child {
+		padding-bottom: 0;
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -500,19 +506,19 @@
 		border-left: none;
 	}
 
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
 
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 2em;
-				padding-top: 0;
-			}
-		}
-	}
+	//	&:first-child {
+	//		@include media(breakpointMedium) {
+	//			border-top: none;
+	//			margin-top: 2em;
+	//			padding-top: 0;
+	//		}
+	//	}
+	//}
 
 	// this will be the top headline in the right rail; this top margin aligns its baseline with the top h1 in layout-primary
 	h2:first-of-type {
@@ -659,6 +665,7 @@
 }
 
 
+
 // The layout-secondary-slim class is the column container for a page's secondary content within a slim banner.
 .layout-secondary-slim {
 	@extend %column-config;
@@ -679,19 +686,19 @@
 		margin-bottom:0 !important;
 	}
 
-	> section {
-		border-top: 1px solid color(mediumGrey);
-		margin-top: em(40);
-		padding-top: em(40);
+	//> section {
+	//	border-top: 1px solid color(mediumGrey);
+	//	margin-top: em(40);
+	//	padding-top: em(40);
 
-		&:first-child {
-			@include media(breakpointMedium) {
-				border-top: none;
-				margin-top: 0;
-				padding-top: 0;
-			}
-		}
-	}
+	//	&:first-child {
+	//		@include media(breakpointMedium) {
+	//			border-top: none;
+	//			margin-top: 0;
+	//			padding-top: 0;
+	//		}
+	//	}
+	//}
 
 	@include media(breakpointMedium) {
 		left:0em;
@@ -703,33 +710,18 @@
 	}
 
 	@include media(breakpointLarge) {
-		left:0em;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:6.5em;
-		z-index:2;
 	}
 
 	@include media(breakpointExtraLarge) {
 		left:20px;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:4em;
-		z-index:2;
 	}
 
 	@include media(breakpointHuge) {
 		left:0em;
-		width:25%;
-		padding-top: em(0);
-		position:relative;
 		top:60px;
-		z-index:2;
 	}
-
-
 }
 
 
@@ -741,7 +733,6 @@
 	width: 27%;
 	z-index: 2;
 
-
 	@include media(breakpointTiny) {
 		float: left;
 		left: 0px;
@@ -751,54 +742,16 @@
 		z-index: 2;
 	}
 
-
-	@include media(breakpointSmall) {
-		float: left;
-		left: 0px;
-		position: relative;
-		top: 0px;
-		width: 100%;
-		z-index: 2;
-	}
-
-
-	@include media(breakpointMedium) {
-		float: left;
-		left: 0px;
-		position: relative;
-		top: 0px;
-		width: 100%;
-		z-index: 2;
-	}
-
 	@include media(breakpointLarge) {
-		float: left;
 		left: 63px;
-		position: relative;
 		top: 130px;
 		width: 27%;
-		z-index: 2;
 	}
 
 	@include media(breakpointExtraLarge) {
-		float: left;
 		left: 85px;
-		position: relative;
 		top: 100px;
-		width: 27%;
-		z-index: 2;
 	}
-
-	@include media(breakpointHuge) {
-		float: left;
-		left: 85px;
-		position: relative;
-		top: 100px;
-		width: 27%;
-		z-index: 2;
-	}
-
-
 }
 
 
@@ -807,7 +760,10 @@
 	@extend %column-config;
 
 	background-color: #f1f1f1;
-	padding: em(30);
+	//padding: em(30);
+	&:first-child {
+		//padding-bottom: 0;
+	}
 
 	.page-product-landing & {
 		margin-top: 3em;
@@ -979,251 +935,9 @@
 	}
 }
 
-// The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed {
-	background-color: white;
-	padding: em(30) 0;
-  box-sizing: border-box; //BMC-527 - TrueSight Header issue
-
-	@include media(breakpointMedium) {
-		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
-		padding: em(60) 0;
-		max-width: none;
-	}
-
-	.home & {
-		padding: em(120) 0 em(120);
-
-		&.layout-rotator-container {
-			padding: 0;
-		}
-
-		&.feature-case-studies {
-			padding: em(60) 0;
-
-			@include media(breakpointLarge) {
-				padding-bottom: 0;
-			}
-		}
-	}
-
-	.layout-product-finder + & {
-		padding-top: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: em(18) 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
 .layout-rotator-container {
 	overflow: hidden;
 }
-
-
-// The layout-full-bleed-medium class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-medium {
-	background-color: #fff;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-		width: 100%;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
-// The layout-full-bleed-small class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-small {
-	background-color: #fff;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-// The layout-full-bleed-top class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-top {
-	background-color: white;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row();
-		padding: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
-
-// The layout-full-bleed-transparent class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-transparent {
-	background-color: white;
-	padding: 0;
-
-	@include media(breakpointMedium) {
-		@include row((nested: false, padding: 0 0, maxWidth: 100%));
-		//@include row();
-		padding: 0;
-		width: 100%;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-// The layout-full-bleed-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
-.layout-full-bleed-slim {
-	background-color: white;
-	padding: em(0) 0 0 0;
-
-
-	@include media(breakpointTiny) {
-		background-image: none;
-		background-repeat:no-repeat;
-		background-color:#fff;
-		background-position:-3000px 0px;
-
-	}
-
-
-	@include media(breakpointSmall) {
-		background-image: none;
-		background-repeat:no-repeat;
-		background-color:#fff;
-		background-position:-3000px 0px;
-
-	}
-
-
-	@include media(breakpointMedium) {
-		// @include row(false, em(0) 0, 100%);
-		@include row();
-		padding: 0;
-		width: 100%;
-
-		background-color:#fd9b31;
-		background-image: none;
-		background-position:-3000px 0px;
-		background-repeat:no-repeat;
-	}
-
-	@include media(breakpointLarge) {
-		background-color:#fd9b31;
-		background-position:-3000px 0px;
-
-	}
-
-	@include media(breakpointExtraLarge) {
-		background-color:#fd9b31;
-		background-position:-3000px 0px;
-
-	}
-
-
-	.layout-product-finder + & {
-		padding-top: 0;
-	}
-
-	&.layout-full-bleed-image {
-		background-size: cover;
-		color: #fff;
-
-		.page-campaign-landing & {
-			padding: em(0) 0;
-
-			.layout-inner-wrap {
-				@include media(breakpointLarge) {
-					position: relative;		// positioning for .layout-campaign-screenshot
-				}
-			}
-		}
-
-		h1, h2 { color: #fff; }
-	}
-}
-
-
 
 // The layout-banner-container-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
 .layout-banner-container-slim {
@@ -1296,10 +1010,287 @@
 	}
 }
 
+//AEM overload
+.maincontentcontainer {
+	> .layout-full-bleed {
+		> *:first-child {
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-bottom: 0;
+			> *:not([class*="bg-"]){
+				margin-top: rem(30);
+			}
+		}
+
+		> *:last-child:not(.cmp-breadcrumb) {
+			padding-bottom: rem(30);
+			@include media(breakpointLarge) {
+				padding-bottom: rem(60);
+			}			
+		}
+
+		> .pullquote:last-child,
+		> .CTAbar:last-child,
+		> .htmlarea:last-child,
+		> .aem-Grid-newComponent:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.secondarycontentcontainer {
+	.layout-secondary & {
+		> .layout-full-bleed {
+			padding: rem(30);
+			> .aem-GridColumn {
+				border-top: 1px solid color(greyMedium);
+				padding-top: rem(20);
+				&:first-child {
+					border-top: none;
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+// The layout-full-bleed class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed {
+	background-color: white;
+	padding: 0;
+  	box-sizing: border-box; //BMC-527 - TrueSight Header issue
+
+	@include media(breakpointMedium) {
+		@include row((maxWidth: 100%)); //BMC-527 - maxWidth: $rowMaxWidth
+		padding: 0;
+		max-width: none;
+	}
+	.home & {
+		// padding: em(120) 0 em(120);
+    padding: 0;
+
+		&.layout-rotator-container {
+			padding: 0;
+		}
+
+		&.feature-case-studies {
+			padding: em(60) 0;
+
+			@include media(breakpointLarge) {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.layout-product-finder + & {
+		padding-top: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+		background-position: center center; //DXP-1141
+
+		.page-campaign-landing & {
+			padding: em(18) 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-medium class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-medium {
+	background-color: #fff;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+		width: 100%;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-small class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-small {
+	background-color: #fff;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-top class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-top {
+	background-color: white;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row();
+		padding: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-transparent class is an alternate class for main content areas where the body's background color of corporate grey (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-transparent {
+	background-color: white;
+	padding: 0;
+
+	@include media(breakpointMedium) {
+		@include row((nested: false, padding: 0 0, maxWidth: 100%));
+		//@include row();
+		padding: 0;
+		width: 100%;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
+
+// The layout-full-bleed-slim class is for main content areas where the body's background color of corporate blue (matching that of the footer) needs to be overridden.  Generally the direct descendant of this class will be an element with class layout-inner-wrap to keep its contents within the design area.
+.layout-full-bleed-slim {
+	background-color: white;
+	padding: 0 0 0 0;
 
 
+	@include media(breakpointTiny) {
+		background-image: none;
+		background-repeat:no-repeat;
+		background-color:#fff;
+		background-position:-3000px 0px;
+
+	}
 
 
+	@include media(breakpointSmall) {
+		background-image: none;
+		background-repeat:no-repeat;
+		background-color:#fff;
+		background-position:-3000px 0px;
+
+	}
+
+
+	@include media(breakpointMedium) {
+		// @include row(false, em(0) 0, 100%);
+		@include row();
+		padding: 0;
+		width: 100%;
+
+		background-color:#fd9b31;
+		background-image: none;
+		background-position:-3000px 0px;
+		background-repeat:no-repeat;
+	}
+
+	@include media(breakpointLarge) {
+		background-color:#fd9b31;
+		background-position:-3000px 0px;
+
+	}
+
+	@include media(breakpointExtraLarge) {
+		background-color:#fd9b31;
+		background-position:-3000px 0px;
+
+	}
+
+
+	.layout-product-finder + & {
+		padding-top: 0;
+	}
+
+	&.layout-full-bleed-image {
+		background-size: cover;
+		color: #fff;
+
+		.page-campaign-landing & {
+			padding: em(0) 0;
+
+			.layout-inner-wrap {
+				@include media(breakpointLarge) {
+					position: relative;		// positioning for .layout-campaign-screenshot
+				}
+			}
+		}
+
+		h1, h2 { color: #fff; }
+	}
+}
 
 // The layout-full-bleed-nopadding class is for main content areas where there is no need for top padding.
 .layout-full-bleed-nopadding {
@@ -1317,7 +1308,7 @@
 		&:first-child {
 			margin-top: 1.5em;
 		}
-}
+	}
 
 
 	.layout-product-finder + & {
@@ -1341,6 +1332,7 @@
 		h1, h2 { color: #fff; }
 	}
 }
+
 
 
 .page-campaign-landing {
@@ -1615,25 +1607,24 @@
 	float: right;
 }
 
-// better AEM authoring experience
-.header-form-basic {
-  	background-color: color(mediumOrange);
-	padding: 2em 0;
+// AEM responsive layout containers
+[class*="25-75contentcontainer"]>*:first-child,
+[class*="33-66contentcontainer"]>*:first-child,
+[class*="50-50contentcontainer"]>*:first-child,
+[class*="66-33contentcontainer"]>*:first-child,
+[class*="75-25contentcontainer"]:not(:first-child)>*:first-child {
+	padding-top: rem(36);
+	padding-bottom: rem(36);
+}
 
-	h1 {
-		color: #fff;
-
-		@include media(breakpointLarge) {
-			@include font-size(32);
-		}
-	}
-
-	&.header-emphasis {
-
-		h1 {
-			@include media(breakpointLarge) {
-				@include font-size(60);
-			}
+[class*="50-50contentcontainer"] {
+	.equal-column { //primary column is a substitue for layout-primary beings both columns are of equal size
+		@include media(breakpointMedium) {
+			width: columns(6);
+			&:first-child 	{ padding-right: 1.25%;	}
+			&:last-child 	{ padding-left: 1.25%;	}
 		}
 	}
 }
+
+// better AEM authoring experience

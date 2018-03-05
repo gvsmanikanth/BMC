@@ -1,0 +1,37 @@
+<sly data-sly-template.FullDiscription="${@ productDescription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, videoID, linkText, anchorTagText, shortDescription}">
+    <ul class="accordion">
+        <li class="accordion-item">
+            <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
+            <a class="accordion-item-anchor" href="#${anchorTagText}">${productName @context='html'}</a>
+            <div class="accordion-item-content">
+                <p data-sly-test="${productDescription}">${productDescription @context='html'}</p>
+                <p data-sly-test="${productAvailability}">${productAvailability @context='html'}
+                    <sly data-sly-test="${productAvailability != 'This product is available as a standalone offering'}" data-sly-list="${productAvailabilityList}">
+                        <a href="${item.pUrl}.html" target="_self">${item.pTitle @ context='html'}</a><sly data-sly-test="${!itemList.last}">, </sly>
+                    </sly>
+                </p>
+                <div data-sly-test="${datasheetPicker && (datasheetPicker != '')}" class="icon-container">
+                    <a href="${datasheetPicker}" target="_blank" class="${datasheetIconImage}">
+                        ${datasheetPrefix}: ${datasheetLink @ context='html'}
+                    </a>
+                </div>
+                <div data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
+                    <a href="${videoID}" target="_self" class="${assetIconImage} ${videoID !='' ? 'modal-video-player' : ''}" >
+                        ${assetPrefix}: ${assetLinkText @ context='html'}
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</sly>
+<sly data-sly-template.Empty="${@ productName, anchorTagText}">
+    <ul class="accordion">
+        <li class="accordion-item">
+            <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
+            <a class="accordion-item-anchor" href="#${anchorTagText}">${productName}</a>
+            <div class="accordion-item-content">
+
+            </div>
+        </li>
+    </ul>
+</sly>

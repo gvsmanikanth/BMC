@@ -1,12 +1,11 @@
 <section class="mt3 py1" data-sly-use.data="com.bmc.components.RelatedItems">
-    <h2 data-sly-test="${data.headingText}">${data.headingText}</h2>
+    <h2 data-sly-test="${data.headingText}">${data.headingText @ context='html'}</h2>
     <p data-sly-test="${data.descriptionHtml}">${data.descriptionHtml @ context='html'}</p>
 
     <sly data-sly-list.link="${data.links}">
         <h3>
-            <a href="${link.href}" target="_self" data-sly-test="${link.isInternal}">${link.text}</a>
-            <a href="${link.href}" target="_blank" data-sly-test="${link.isExternal}">${link.text}</a>
+            <a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>
         </h3>
-        <p data-sly-test="${data.showLinkDescriptions && link.description}">${link.description}</p>
+        <p data-sly-test="${data.showLinkDescriptions && link.description}">${link.description @ context='html'}</p>
     </sly>
 </section>

@@ -1,0 +1,119 @@
+<div class="page-careers careers_locations bg-white" data-sly-use.model="com.bmc.components.CareersLocation">
+<section id="careers_locations_map" class="section text-center">
+	<div class=" bg-white section-content">
+		<div class="ha mb2">${properties.careersTopTitle}</div>
+		<div class="h3 p readability-large mb3">${properties.careersTopCopy}</div>
+		<img src="/etc/clientlibs/bmc/head/2016/careers/careers-map.png" class="block-center xs-max-hide"/>
+	</div>
+</section>
+<section id="careers_locations_list" class="section pattern">
+	<div class="ha mb2 text-center">${properties.subheaderText}</div>
+    <div class="section-content sm-flex">
+	<div class="col-12 sm-col-6">
+		<div class="flex-wrap">
+
+
+					<div class="col-12 sm-col-6 p1">
+						<div class="bold mb1">North America</div>
+
+								 <div class="mb3">
+                                   <sly data-sly-list="${model.list}" data-sly-unwrap>
+										<sly data-sly-test="${item.continent == 'North America'}">
+											<a href="${item.countryURL}" data-sly-test="${item.number_of_jobs != '0'}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a>
+											<a href="${item.countryURL}" data-sly-test="${item.number_of_jobs == '0'}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+										</sly>
+                        		</sly>	
+                          </div>
+
+                        <div class="bold mb1">South America</div>
+
+							<div class="mb2"  data-sly-unwrap>
+                                <sly data-sly-list="${model.list}" data-sly-unwrap>
+									<sly data-sly-test="${item.continent == 'South America'}">
+										<a data-sly-test="${item.number_of_jobs != '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a> 
+										<a data-sly-test="${item.number_of_jobs == '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+									</sly>
+						  		</sly>	
+							</div>
+						</div>
+					
+					
+                    <div class="col-12 sm-col-6 p1">
+						<div class="bold mb1">Europe</div>
+                         <sly data-sly-list="${model.list}">
+							<div data-sly-test="${item.continent == 'Europe'}">
+							
+								<div class="mb3" data-sly-test="${item.number_of_jobs != '0'}" data-sly-unwrap>
+									<a href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a> 
+								</div>
+                                <div class="mb3" data-sly-test="${item.number_of_jobs == '0'}" data-sly-unwrap>
+									<a href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+								</div>
+							</div>
+						</sly>
+                    </div>
+		</div>
+	</div>
+		
+	<div class="col-12 sm-col-6">
+	
+	
+		<div class="flex-wrap">
+					<div class="col-12 sm-col-6 p1">
+					
+						<div class="bold mb1">Africa</div>									
+								<div class="mb3">
+                                    <sly data-sly-list="${model.list}" data-sly-unwrap>
+										<sly data-sly-test="${item.continent == 'Africa'}">	
+											<a data-sly-test="${item.number_of_jobs != '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a> 
+											<a data-sly-test="${item.number_of_jobs == '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+									   	</sly>
+									</sly>
+                            	</div>
+
+
+						<div class="bold mb1">Middle East</div>
+							<div class="mb2">
+                                <sly data-sly-list="${model.list}" data-sly-unwrap>
+									<sly data-sly-test="${item.continent == 'Middle East'}">
+										<a data-sly-test="${item.number_of_jobs != '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a> 
+										<a data-sly-test="${item.number_of_jobs == '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+									</sly>
+						  		</sly>	
+							</div>
+						
+
+						<div class="bold mb1">Oceania</div>
+							<div class="mb2">
+                                <sly data-sly-list="${model.list}" data-sly-unwrap>
+									<sly data-sly-test="${item.continent == 'Oceania'}">
+										<a data-sly-test="${item.number_of_jobs != '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a> 
+										<a data-sly-test="${item.number_of_jobs == '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a> 
+									</sly>
+						  		</sly>	
+							</div>
+						</div>
+					
+
+				<div class="col-12 sm-col-6 p1">
+				
+						<div class="bold mb1">Asia Pacific</div>
+							
+								<div class="mb3">
+									<sly data-sly-list="${model.list}" data-sly-unwrap>
+										<sly data-sly-test="${item.continent == 'Asia Pacific'}">
+											<a data-sly-test="${item.number_of_jobs != '0'}" href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;(${item.number_of_jobs})</a>
+											<a data-sly-test="${item.number_of_jobs == '0'}"  href="${item.countryURL}" title="${item.countryURL}">${item.countryName}&nbsp;</a>
+										</sly>
+									</sly> 
+								</div>
+								
+				</div>
+		</div>
+	</div>	
+</section>
+</div>
+
+
+
+

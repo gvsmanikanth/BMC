@@ -1,22 +1,22 @@
-<section data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" class="wallpapered bar" data-wallpaper-options='{"source":"${image.src}"}'>
+<section data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+         data-sly-use.cta="com.bmc.components.HeaderBrand"
+         class="wallpapered bar header-brand" data-wallpaper-options='{"source":"${image.src}"}'>
     <div class="offset-wrapper">
         <div class="layout-inner-wrap">
             <div class="offset-hero-medium banner -ribbon">
                 <div class="offset-hero-medium-inner-wrap">
                     <sly data-sly-test="${properties.show_breadcrumb}" data-sly-resource.Breadcrumb="${'breadcrumbs' @resourceType='bmc/components/content/navigation/breadcrumbs', cssClassName='navigation-breadcrumb white-links', decorationTagName='ul' }" class="navigation-breadcrumb layout-full-bleed" data-sly-unwrap></sly>
-                    <h1 data-sly-test="${properties.heading}">${properties.heading}</h1>
-                    <p data-sly-test="${properties.subheading}">${properties.subheading}</p>
-                    <a data-sly-test="${properties.cta_link}" class="${properties.cta_mode == 'button' && properties.cta_is_video
-                        ? 'btn-white yellow-orange-hover modal-youtube-video-player'
-                        : (properties.cta_mode == 'button'
-                            ? 'btn-white learn-more'
-                            : (properties.cta_is_video
-                                ? 'lead -sm bold white yellow-orange-hover inline-block modal-youtube-video-player'
-                                : 'lead -sm bold white yellow-orange-hover inline-block'))}" href="${properties.cta_url}" data-form="xxx" data-location="Page-Body" target="_self">
-                                ${properties.cta_link} 
-                                <sly data-sly-test='${properties.cta_is_video}'><svg class="align-middle fill-white" width="1.2em" height="1.2em" viewBox="0 0 100 100"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg></sly>
-</a>
+                    <h1 data-sly-test="${properties.heading}">${properties.heading @ context='html'}</h1>
+                    <p data-sly-test="${properties.subheading}">${properties.subheading @ context='html'}</p>
 
+                    <sly data-sly-test="${cta.text}" data-sly-test.cssClass="${cta.isButton && cta.isVideo
+                        ? 'btn-white yellow-orange-hover'
+                        : (cta.isButton ? 'btn-white learn-more' : 'lead -sm bold white yellow-orange-hover inline-block')}">
+                        <a class="${cssClass} ${cta.cssClass}" href="${cta.href}" data-form="xxx" data-location="Page-Body" target="_self">
+                            ${cta.text}
+                            <svg data-sly-test="${cta.isVideo}" class="align-middle fill-white" width="1.2em" height="1.2em" viewBox="0 0 100 100"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+                        </a>
+                    </sly>
                 </div>
             </div>
         </div>

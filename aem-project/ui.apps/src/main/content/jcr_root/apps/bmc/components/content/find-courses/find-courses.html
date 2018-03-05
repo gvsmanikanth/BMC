@@ -1,0 +1,78 @@
+<div data-sly-test="${wcmmode.edit}">Find Courses Display</div>
+
+<section class="bg-white filterListContainer" style="display:none;">
+    <div class="layout-inner-wrap">
+        <div class="filters">
+            <h2>Filter results by:</h2>
+            <form action="#">
+                <fieldset>
+                    <ol>
+                        <li>
+                            <div style="width:100%">
+                                <select id="products"></select>
+                                <div id="versionContainer" style="display: none;">
+                                    <select id="versions"></select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tooltipField">
+                            <select id="roles"></select>
+                            <div class="tooltip-wrapper">
+                                i
+                                <div class="tooltip">
+                                    <h5>Roles Definitions</h5>
+                                    <p>These broad roles represent primary target audiences. More specific job roles are included in course descriptions and abstracts.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tooltipField">
+                            <select id="type"></select>
+                            <div class="tooltip-wrapper">
+                                i
+                                <div class="tooltip">
+                                    <h5>Offering Types</h5>
+                                    <p>To see a course list or browse certification exams, select that type in the drop-down. To see all courses and certifications associated with a particular product, select Learning Paths.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tooltipField">
+                            <select id="learningFormats"></select>
+                            <div class="tooltip-wrapper">
+                                i
+                                <div class="tooltip">
+                                    <h5>Course Delivery</h5>
+                                    <p>Courses are offered as 1) self-paced training such as web-based, self-study kits, and e-books; 2) assisted self-paced combining on-demand convenience with instructor access; or 3) instructor-led training that may be conducted face-to-face or online.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="resetBtnContainer">
+                            <a class="resetBtn btn">Reset</a>
+                        </li>
+                    </ol>
+                </fieldset>
+            </form>
+        </div>
+        <div class="lg-flex">
+            <div class="flex-item lg-col-8 instructions">
+            </div>
+            <div class="flex-item lg-col-4">
+                <div class="pagination">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="cards-wrapper education-cards" style="opacity: 1;">
+        </div>
+        <div class="pagination">
+            <ul></ul>
+        </div>
+    </div>
+</section>
+<sly data-sly-test="${wcmmode.disabled}">
+    <sly data-sly-use.EducationPageModel="com.bmc.models.components.education.EducationPageModel"/>
+    <script data-sly-test.EduMeta="${EducationPageModel.bmcEduMetaJson}" data-sly-test.EduFilter="${EducationPageModel.bmcFilterConfigJson}">
+        var bmcFilterConfig = ${EduFilter @ context='unsafe'}
+        var bmcEduData = ${EduMeta @ context='unsafe'};
+    </script>
+</sly>

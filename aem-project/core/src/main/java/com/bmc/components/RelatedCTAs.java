@@ -1,12 +1,12 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.mixins.ResourceProvider;
 import com.bmc.mixins.MultifieldDataProvider;
-import com.bmc.util.StringHelper;
+import com.bmc.mixins.ResourceProvider;
+import com.bmc.mixins.UrlResolver;
+import com.bmc.models.url.LinkInfo;
 import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
-public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider {
+public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider, UrlResolver {
     enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
@@ -29,16 +29,16 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
         private static Map<Integer,HeadingType> typeMap;
     }
     public static class Item {
-        Item(String text, String href, String description, String secondaryCtaText, String secondaryCtaHref) {
-            this.text = text;
-            this.href = href;
-            this.description = description;
+        Item(LinkInfo link, String secondaryCtaText, String secondaryCtaHref) {
+            this.link = link;
             this.ctaText = secondaryCtaText;
             this.ctaHref = secondaryCtaHref;
         }
-        public String getText() { return text; } private String text;
-        public String getHref() { return href; } private String href;
-        public String getDescription() { return description; } private String description;
+        private LinkInfo link;
+        public String getText() { return link.getText(); }
+        public String getHref() { return link.getHref(); }
+        public String getTarget() { return link.getTarget(); }
+        public String getDescription() { return link.getDescription(); }
 
         public boolean getHasSecondaryCta() { return !(ctaText == null || ctaText.isEmpty() || ctaHref == null || ctaHref.isEmpty()); }
         public String getSecondaryCtaText() { return ctaText; } private String ctaText;
@@ -52,7 +52,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
 
     @Override
     public void activate() throws Exception {
-        items = mapMultiFieldNodes("itemdata", this::getLinkItem);
+        items = mapMultiFieldValues("internalPagePaths", path -> getLinkItem(path, this));
         headingText = resolveHeadingText();
     }
 
@@ -75,25 +75,13 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
         }
     }
 
-    private Item getLinkItem(Resource linkResource) {
-        if (linkResource == null)
-            return null;
-
-        String internalPagePath = linkResource.getValueMap().get("internalPagePath", "");
-
-        Page page = getPage(internalPagePath);
+    static Item getLinkItem(String pageOrAssetPath, ResourceProvider resourceProvider) {
+        Page page = resourceProvider.getPage(pageOrAssetPath);
         if (page == null)
             return null;
 
-        String text = StringHelper.coalesceStringMember(page,
-                Page::getNavigationTitle, Page::getPageTitle,
-                Page::getTitle, Page::getPath)
-                .orElse(internalPagePath);
-
-        String href = StringHelper.coalesceStringMember(page, Page::getVanityUrl)
-                .orElse(internalPagePath + ".html");
-
+        LinkInfo link = LinkInfo.from(page);
         ValueMap map = page.getProperties();
-        return new Item(text, href, page.getDescription(), map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+        return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
     }
 }

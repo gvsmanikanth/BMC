@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <Administrators
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Administrators"/>
+    <Application_Administrators
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Application Administrators"/>
+    <Application_Owners
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Application Owners"/>
+    <Architects
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Architects"/>
+    <Automation_Leads
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Automation Leads"/>
+    <Business_Analysts
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Business Analysts"/>
+    <Capacity_Planners
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Capacity Planners"/>
+    <Change_Agents
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Change Agents"/>
+    <Change_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Change Managers"/>
+    <Client_Users
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Client Users"/>
+    <Configuration_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Configuration Managers"/>
+    <Data_Center_Leads
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Data Center Leads"/>
+    <DevOps_Practitioners
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DevOps Practitioners"/>
+    <Developers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Developers"/>
+    <Employees_and_Partners_Only
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Employees and Partners Only"/>
+    <IT_Executives
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Executives"/>
+    <IT_Implementers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Implementers"/>
+    <IT_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Managers"/>
+    <IT_Operations_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Operations Managers"/>
+    <Mainframe_Operators
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe Operators"/>
+    <Operators
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Operators"/>
+    <Performance_Analysts
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Performance Analysts"/>
+    <Process_Designers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Process Designers"/>
+    <Process_Owners
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Process Owners"/>
+    <Project_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Project Managers"/>
+    <Schedulers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Schedulers"/>
+    <Security_Personnel
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Security Personnel"/>
+    <Service_Delivery_Professionals
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Service Delivery Professionals"/>
+    <Staff_Users
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Staff Users"/>
+    <Stakeholders
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Stakeholders"/>
+    <Storage_Managers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Storage Managers"/>
+    <System_Programmers
+            jcr:primaryType="nt:unstructured"
+            jcr:title="System Programmers"/>
+    <Users
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Users"/>
+</jcr:root>

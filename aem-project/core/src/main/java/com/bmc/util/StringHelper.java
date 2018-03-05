@@ -1,25 +1,67 @@
 package com.bmc.util;
 
 import com.bmc.mixins.UrlResolver;
+import com.day.util.NameValuePair;
+import com.google.common.base.Splitter;
+import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.resource.ValueMap;
 
-import java.util.Arrays;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public interface StringHelper {
     /**
      * Returns the first string from {@code items} which is not null or empty
      */
-    static Optional<String> coalesceString(String ...items) {
-        for (String item : items) {
-            if (item == null || item.isEmpty())
-                continue;
-            return Optional.of(item);
-        }
+    static Optional<String> coalesceString(String...items) {
+        return coalesceString(Arrays.stream(items));
+    }
+    /**
+     * Returns the first string from {@code items} which is not null or empty
+     */
+    static Optional<String> coalesceString(Stream<String> items) {
+        return items.filter(str->str != null && !str.isEmpty()).findFirst();
+    }
 
-        return Optional.empty();
+    /**
+     * Returns the first result from {@code getItems} which is not null or empty.<br><br>
+     *
+     * Useful to avoid multiple String lookups when unnecessary and expensive:
+     * <pre>
+     * {@code
+     *
+     * String expensiveLookup = coalesceStringLazy(() -> getCheap(), () -> getExpensive(), () -> getReallyExpensive())
+     *      .orElseThrow(someException);
+     * }
+     * </pre>
+     * @param getItems the {@link Supplier} function(s) generating string values
+     * @return the first result from {@code getItems} which is not null or empty
+     */
+    static Optional<String> coalesceStringLazy(Supplier<String>...getItems) {
+        return coalesceStringLazy(Arrays.stream(getItems));
+    }
+
+    /**
+     * Returns the first result from {@code getItems} which is not null or empty.<br><br>
+     *
+     * Useful to avoid multiple String lookups when unnecessary and expensive:
+     * <pre>
+     * {@code
+     *
+     * String expensiveLookup = coalesceStringLazy(() -> getCheap(), () -> getExpensive(), () -> getReallyExpensive())
+     *      .orElseThrow(someException);
+     * }
+     * </pre>
+     * @param getItems the {@link Supplier} function(s) generating string values
+     * @return the first result from {@code getItems} which is not null or empty
+     */
+    static Optional<String> coalesceStringLazy(Stream<Supplier<String>> getItems) {
+        return getItems.map(Supplier::get)
+                .filter(str->str != null && !str.isEmpty())
+                .findFirst();
     }
 
     /**
@@ -101,5 +143,48 @@ public interface StringHelper {
     static Optional<String> resolveHref(String urlOrPath) {
         UrlResolver resolver = () -> null;
         return resolver.resolveHref(urlOrPath, false);
+    }
+
+    /**
+     * Extracts a {@link Map} of query string parameters from the given string.
+     */
+    static Map<String, String> extractParameterMap(String urlOrQueryString) {
+        if (urlOrQueryString == null || urlOrQueryString.isEmpty())
+            return Collections.emptyMap();
+
+        int queryIndex = urlOrQueryString.indexOf("?");
+        if (queryIndex == urlOrQueryString.length() - 1)
+            return Collections.emptyMap(); // '?' as last character
+
+        String query = urlOrQueryString;
+        if (queryIndex == -1) { // no '?'
+            if (!urlOrQueryString.contains("&") && !urlOrQueryString.contains("="))
+                return Collections.emptyMap();
+        } else {
+            if (urlOrQueryString.startsWith("http") || urlOrQueryString.startsWith("/"))
+                query = urlOrQueryString.substring(queryIndex + 1);
+        }
+
+        try {
+            return Splitter.on("&")
+                    .withKeyValueSeparator("=")
+                    .split(query);
+        }
+        catch (IllegalArgumentException ex) {
+            // bad data, perhaps due to parameters which were incorrectly encoded by hand
+            // lets try a more forgiving manual parse
+            String[] args = query.split("&");
+            Stream<NameValuePair> pairs = Arrays.stream(args).map(arg -> {
+                if (StringUtils.isBlank(arg))
+                    return null;
+                String[] parts = arg.split("=", 2);
+                if (parts.length != 2)
+                    return null;
+                return new NameValuePair(parts[0], parts[1]);
+            });
+            return pairs
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toMap(NameValuePair::getName, NameValuePair::getValue));
+        }
     }
 }

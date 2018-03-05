@@ -1,4 +1,4 @@
-<section class="layout-full-bleed">
+s<section class="layout-full-bleed">
     <div data-sly-use.api="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
          data-sly-use.allowed="com.day.cq.wcm.foundation.AllowedComponentList"
          class="${api.cssClass} ${allowed.cssClass}">
@@ -8,8 +8,8 @@
              data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
         <sly data-sly-test="${!isAllowedApplicable}"
              data-sly-repeat.child="${api.paragraphs}"
-             data-sly-resource="${child.path @ resourceType=child.resourceType, decorationTagName='div', cssClassName=child.cssClass}"></sly>
-        <sly data-sly-test="${!isAllowedApplicable}"
-             data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
+             data-sly-resource="${child.path @ resourceType=child.resourceType, decoration='true', cssClassName=child.cssClass}"></sly>
+        <sly data-sly-test="${!isAllowedApplicable && wcmmode.edit}"
+             data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', decorationTagName='div', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
     </div>
 </section>

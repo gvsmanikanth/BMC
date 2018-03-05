@@ -1,13 +1,16 @@
 package com.bmc.servlets;
 
+import com.bmc.util.StringHelper;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
 import com.day.cq.wcm.api.WCMMode;
+import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.engine.SlingRequestProcessor;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,9 +27,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @SlingServlet(resourceTypes = "bmc/components/structure/status-router-page", selectors = "service", methods = {"GET"})
@@ -36,6 +43,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
 
     private static final String BASE = "/content/bmc/status-router";
     private static final String NT_CONTENT = "jcr:content";
+    private static final String SERVICE_PARAM = "svc";
 
     /** Service to create HTTP Servlet requests and responses */
     @Reference
@@ -45,6 +53,10 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
     @Reference
     private SlingRequestProcessor requestProcessor;
 
+    /** Service to get run mode for destination url*/
+    @Reference
+    private SlingSettingsService slingSettingsService;
+
     private Session session;
 
     @Override
@@ -53,7 +65,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
             Node currentNode = request.getResource().adaptTo(Node.class);
             session = currentNode.getSession();
 
-            String service = request.getParameter("svc");
+            String service = request.getParameter(SERVICE_PARAM);
             logger.info("Service: " + service);
 
             if (session != null) {
@@ -63,6 +75,7 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                 Query query = queryManager.createQuery(sql, "JCR-SQL2");
                 QueryResult result = query.execute();
 
+                String destinationUrlField = getDestinationUrlField();
                 NodeIterator nodes = result.getNodes();
                 Node node = null;
                 Node parent = null;
@@ -89,13 +102,14 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
                                 if (parent.hasNode(NT_CONTENT)) {
                                     Node parentContent = parent.getNode(NT_CONTENT);
                                     if (available
-                                            && content.hasProperty("destination_url")
+                                            && content.hasProperty(destinationUrlField)
                                             && parentContent.hasProperty("available")
                                             && parentContent.getProperty("available").getBoolean()) {
-                                        String qs = getQueryString(request);
-                                        url = content.getProperty("destination_url").getString() + qs;
-                                        response.sendRedirect(url);
-                                        redirectSent = true;
+                                        url = resolveDestinationUrl(content.getProperty(destinationUrlField).getString(), request);
+                                        if (url != null) {
+                                            response.sendRedirect(url);
+                                            redirectSent = true;
+                                        }
                                     }
                                 }
                             }
@@ -123,18 +137,64 @@ public class StatusRouterServlet extends SlingSafeMethodsServlet {
         }
     }
 
-    private String getQueryString(SlingHttpServletRequest request) {
-        Set<String> keySet = request.getRequestParameterMap().keySet();
-        List<String> keys = keySet.stream().filter(s -> !s.equals("svc")).collect(Collectors.toList());
-        StringBuilder stringBuilder = new StringBuilder("?");
-        keys.forEach(s -> {
-            try {
-                stringBuilder.append(String.format("%s=%s", s, URLEncoder.encode(request.getParameter(s), "UTF-8")));
-            } catch (UnsupportedEncodingException e) {
-                logger.error(e.getMessage());
-            }
-        });
-        return stringBuilder.toString();
+    private String getDestinationUrlField() {
+       Set<String> runmodes = slingSettingsService.getRunModes();
+       if(runmodes.contains("prod"))
+           // use original destination url property for production
+           return "destination_url";
+       if(runmodes.contains("stage"))
+           return "destination_url_stage";
+       return "destination_url_dev";
     }
 
+    private String resolveDestinationUrl(String destinationUrl, SlingHttpServletRequest request) {
+        if (destinationUrl == null)
+            return null;
+
+        String[] urlParts = destinationUrl.split("\\?", 2);
+        String urlLeftPart = urlParts[0];
+        String query = (urlParts.length > 1) ? urlParts[1] : null;
+
+        //
+        // merge query strings from destinationUrl and request
+        Map<String, String> queryMap = new HashMap<>();
+        queryMap.putAll(StringHelper.extractParameterMap(query));
+
+        Map<String, String> requestMap = request.getRequestParameterMap().keySet().stream()
+                .filter(s -> !s.equals(SERVICE_PARAM))
+                .collect(Collectors.toMap(Function.identity(), request::getParameter));
+        queryMap.putAll(requestMap);
+
+        // handle "ddl case"
+        if (request.getParameter(SERVICE_PARAM).equals("ddl")) {
+            String ddlPath = queryMap.get("path");
+            if (ddlPath != null) {
+                queryMap.remove("path");
+                urlLeftPart = String.format("%s/%s",
+                        StringUtils.stripEnd(urlLeftPart, "/"),
+                        StringUtils.stripStart(ddlPath, "/"));
+            }
+            String fltk=queryMap.get("fltk_"); // hack to prevent fltk values containg a not-terribly-valid %2D not to forward as '+'
+            if (fltk != null) {
+                queryMap.put("fltk_",fltk.replace("+","%2B"));
+            }
+        }
+
+        if (queryMap.size() == 0)
+            return urlLeftPart;
+
+        final String UTF8 = "UTF-8";
+        String resolvedQuery = queryMap.entrySet().stream()
+                .map(item-> {
+                    try {
+                        String value = URLEncoder.encode(URLDecoder.decode(item.getValue(), UTF8), UTF8);
+                        return String.format("%s=%s", item.getKey(), value);
+                    } catch (UnsupportedEncodingException e) {
+                        logger.error(e.getMessage());
+                        return null;
+                    }
+                }).filter(Objects::nonNull).collect(Collectors.joining("&"));
+
+        return urlLeftPart + "?" + resolvedQuery;
+    }
 }

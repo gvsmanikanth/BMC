@@ -1,56 +1,112 @@
+<!-- Added coveo search js and css only for support pages -->
+<sly data-sly-use.model="com.bmc.components.SupportPagesCheck"/>
+<sly data-sly-use.footerCompanySet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerCompany'}" />
+<sly data-sly-use.footerSupportSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSupport'}" />
+<sly data-sly-use.footerSocialSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerSocial'}" />
+<sly data-sly-use.footerLegalSet="${'com.bmc.models.components.footers.FooterModel' @ nodeName='footerLegal'}" />
+<sly data-sly-use.footerCopyRight="com.bmc.models.components.footers.FooterModel"/>
+<sly data-sly-test="${model.isSupportPage}">
+   <script type="text/javascript">
+           	var supportcentralurl = '${model.supportCentralUrl @ context="html"}';
+		    var supportCoveoAccessToken = '${model.supportCoveoAccessToken @ context="html"}';
+   </script>
+   <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='bmc.coveo'}" data-sly-unwrap />
+     <!--  ordered the files as it was showing jQuery error in publish mode -->
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
+  	  <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-custom.js"></script>
+       
+	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
+		<sly data-sly-test="${!loggedIn}">
+        <script type="text/javascript">
+        jQuery( document ).ready(function( $ ) {
+              $(function () {
+    
+                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/support/resources/support-search.html');
+    
+                 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+                 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+                  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+             });     
+            });  
+        </script>
+      </sly>
+  <sly data-sly-test="${loggedIn}">
+    <script type="text/javascript">
+	jQuery( document ).ready(function( $ ) {
+	      $(function () {
+	     	 $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '${model.searchPageUrl @ context="html"}');
 
-<sly data-sly-use.footerCompanySet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='footerCompany'}"/>
-<sly data-sly-use.footerSupportSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='footerSupport'}"/>
-<sly data-sly-use.footerSocialSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='footerSocial'}"/>
-<sly data-sly-use.footerLegalSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='footerLegal'}"/>
+	     	 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	     	 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+			  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	   	 });     
+	    });  
+	</script>
+  </sly>
+</sly>
 <footer class="layout-footer">
-        <!-- TODO: componentize this navigation to allow authoring -->
-        <nav class="layout-inner-wrap">
-            <ul class="nav-tertiary">
-                <li class="nav-tertiary-col">
-                    <h4>Company</h4>
-                    <ul data-sly-test="${footerCompanySet}" data-sly-list.footerCompany="${footerCompanySet.ChildResources}"  class="meta">
-                        <li><a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${footerCompany.linkText == 'Select Region' ? 'icon-global' : ''}">${footerCompany.linkText @ context='html'}</a></li>
-                    </ul>
-                </li>
-                <li class="nav-tertiary-col">
-                    <h4>Support</h4>
-                    <ul data-sly-test="${footerSupportSet}" data-sly-list.footerSupport="${footerSupportSet.ChildResources}"  class="meta">
-                        <li><a href="${footerSupport.linkPath}" target="${footerSupport.targetType}" class="${footerSupport.linkText == 'Select Region' ? 'icon-global' : ''}">${footerSupport.linkText @ context='html'}</a></li>
-                    </ul>
-                </li>
-                <li class="nav-tertiary-col">
-                    <h4>Social</h4>
-                        <ul data-sly-test="${footerSocialSet}" data-sly-list.footerSocial="${footerSocialSet.ChildResources}"  class="nav-social meta">
-                            <li><a href="${footerSocial.linkPath}" target="${footerSocial.targetType}" class="${footerSocial.soccMedsType}">${footerSocial.linkText @ context='html'}</a></li>
-                        </ul>
-                </li>
-                <li class="nav-tertiary-col">
-                    <h4>Search BMC</h4>
-                    <ul class="nav-supplemental meta">
-                        <li>
-                            <fieldset>
-                                <div class="search-input-m-glass">
-                                    <input type="text" class="search-input-m-glass" placeholder="Search">
-                                    <button></button>
-                                </div>
-                            </fieldset>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
-        </nav>
-
-        <div class="layout-inner-wrap">
-            <div class="footer-logo">
-                <a href="/">BMC</a>
-            </div>
-            <div data-sly-test="${footerLegalSet}" class="legal-copyright">
-                   <ul data-sly-list.footerLegal="${footerLegalSet.ChildResources}"  class="nav-footer-link-list">
-                        <li><a href="${footerLegal.linkPath}" target="${footerLegal.targetType}" class="${footerLegal.linkText == 'Manage Cookies' ? 'icon-evidon' : ''}">${footerLegal.linkText @ context='html'}</a></li>
-                    </ul>
-                <sly data-sly-test="${properties.copyRightText}">${properties.copyRightText @context='html'}</sly>
-            </div>
+    <nav class="layout-inner-wrap">
+        <ul class="nav-tertiary">
+            <li class="nav-tertiary-col">
+                <h4>Company</h4>
+                <ul data-sly-test="${footerCompanySet}" data-sly-list.footerCompany="${footerCompanySet.ChildResources}" class="meta">
+                    <li><a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${footerCompany.linkText == 'Select Region' ? 'icon-global' : ''}">${footerCompany.linkText @ context='html'}</a></li>
+                </ul>
+            </li>
+            <li class="nav-tertiary-col">
+                <h4>Support</h4>
+                <ul data-sly-test="${footerSupportSet}" data-sly-list.footerSupport="${footerSupportSet.ChildResources}" class="meta">
+                    <li><a href="${footerSupport.linkPath}" target="${footerSupport.targetType}" class="${footerSupport.linkText == 'Select Region' ? 'icon-global' : ''}">${footerSupport.linkText @ context='html'}</a></li>
+                </ul>
+            </li>
+            <li class="nav-tertiary-col">
+                <h4>Social</h4>
+                <ul data-sly-test="${footerSocialSet}" data-sly-list.footerSocial="${footerSocialSet.ChildResources}" class="nav-social meta">
+                    <li><a href="${footerSocial.linkPath}" target="${footerSocial.targetType}" class="${footerSocial.soccMedsType}">${footerSocial.linkText @ context='html'}</a></li>
+                </ul>
+            </li>
+            <li class="nav-tertiary-col">
+                <h4>Search BMC</h4>
+                <ul class="nav-supplemental meta">
+                    <li>
+                        <sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="layout-inner-wrap">
+        <div class="footer-logo">
+            <a href="/">BMC</a>
         </div>
-    </footer>
+        <div data-sly-test="${footerLegalSet}" class="legal-copyright">
+            <ul data-sly-list.footerLegal="${footerLegalSet.ChildResources}" class="nav-footer-link-list">
+                <li><a href="${footerLegal.linkPath}" target="${footerLegal.targetType}" class="${footerLegal.linkText == 'Manage Cookies' ? 'icon-evidon' : ''}">${footerLegal.linkText @ context='html'}</a></li>
+            </ul>
+            <sly data-sly-test="${footerCopyRight.copyRightText}">${footerCopyRight.copyRightText @context='html'}</sly>
+        </div>
+    </div>
+</footer>

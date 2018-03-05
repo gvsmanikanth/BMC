@@ -1,11 +1,11 @@
-<sly data-sly-use.footerLegalSet="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='footerLegal'}"/>
- <footer class="layout-footer">
+<sly data-sly-use.footerCopyRight="com.bmc.models.components.footers.FooterModel"/>
+<footer class="layout-footer">
         <div class="layout-inner-wrap">
             <div class="footer-logo">
                 <a href="/">BMC</a>
             </div>
             <p class="legal-copyright">
-                <sly data-sly-test="${properties.copyRightText}">${properties.copyRightText @context='html'}</sly>
+                <sly data-sly-test="${footerCopyRight.copyRightText}">${footerCopyRight.copyRightText @context='html'}</sly>
             </p>
         </div>
     </footer>
