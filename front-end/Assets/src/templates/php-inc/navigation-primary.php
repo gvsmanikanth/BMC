@@ -1,6 +1,6 @@
-<nav class="layout-navigation navigation-upgrade">
+<nav class="layout-navigation">
 	<div class="layout-inner-wrap" style="position: relative;">
-		<ul class="navigation-primary">
+		<ul class="navigation-primary navigation-upgrade">
 			<li class="navigation-menu">
 				<a href="#" class="navigation-menu-link"></a>
 			</li>
