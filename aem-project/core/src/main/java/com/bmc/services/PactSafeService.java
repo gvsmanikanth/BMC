@@ -20,6 +20,12 @@ package com.bmc.services;
         import javax.jcr.RepositoryException;
         import javax.jcr.Session;
         import javax.jcr.Value;
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.OutputStream;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import java.nio.charset.StandardCharsets;
         import java.util.*;
 
 
@@ -127,4 +133,109 @@ public class PactSafeService {
 
         return pactSafeResponse;
     }
+
+    public String updatePactSafeGroup(){
+
+        Map<String, Object> param = new HashMap<String, Object>();
+        param.put(ResourceResolverFactory.SUBSERVICE, "pactsafe");
+        ResourceResolver resolver = null;
+        try {
+            resolver = resolverFactory.getServiceResourceResolver(param);
+        } catch (Exception e) {
+
+        }
+
+        Session session=resolver.adaptTo(Session.class);
+
+        String serviceUrl="https://api.pactsafe.com/v1.1/groups/724?expand=contracts";
+        int timeout = 5000;
+        String encodedString="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_";
+        String charset = StandardCharsets.UTF_8.name();
+
+        int status=0;
+
+        HttpURLConnection connection = null;
+
+        try {
+            URL url = new URL(serviceUrl);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setDoOutput(true);
+            connection.setInstanceFollowRedirects(true);
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(timeout);
+            connection.setRequestProperty("charset", charset);
+            connection.setRequestProperty ("Authorization", "Bearer " + encodedString);
+
+            connection.setUseCaches(false);
+
+            //this next line makes it chooch, we think
+            InputStream response = connection.getInputStream();
+            String responseBody;
+            try (Scanner scanner = new Scanner(response)) {
+                responseBody = scanner.useDelimiter("\\A").next();
+            }
+            logger.trace("Response Body: " + responseBody);
+            status = connection.getResponseCode();
+            logger.trace("Response Status: " + status);
+
+            if (status != 200 && status != 302) {
+                // Log errors if not a successful response. 200 & 302 responses are considered success.
+                logger.error("group data failed to read from pactsafe server. URL: " + serviceUrl);
+            }
+        }catch(Exception e){
+            logger.error("updatePactSafeGroup Error: "+e.getMessage());
+            try {
+                status = connection.getResponseCode();
+                logger.trace("Response Status: " + status);
+                InputStream error = connection.getErrorStream();
+                String responseBody;
+                if (error != null) {
+                    try (Scanner scanner = new Scanner(error)) {
+                        responseBody = scanner.useDelimiter("\\A").next();
+                    }
+                    logger.info("Error Response: " + responseBody);
+                }
+            } catch (IOException e1) {
+                logger.error(e1.getMessage());
+            }finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
+        }
+
+        Property contractIDsProperty=null;
+        Property contractVersionsProperty=null;
+        Value[] contractIDValues=null;
+        Value[] contractVersions=null;
+        Map<String, String> contractsMap=new HashMap<>();
+        List<String> versions=new ArrayList<>();
+
+
+        try {
+            contractIDsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractIDs");
+            contractVersionsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractVersions");
+            if(contractIDsProperty.isMultiple()) {
+                contractIDValues = contractIDsProperty.getValues();
+                contractVersions = contractVersionsProperty.getValues();
+            } else {
+                contractIDValues = new Value[1];
+                contractVersions = new Value[1];
+                contractIDValues[0] = contractIDsProperty.getValue();
+                contractVersions[0] = contractVersionsProperty.getValue();
+            }
+            for(int n=0;n<contractIDValues.length;n++) {
+                contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
+                versions.add(contractVersions[n].getString());
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+
+
+        return "Success? Dunno";
+    }
+
+
+
 }

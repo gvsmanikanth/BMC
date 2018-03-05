@@ -35,7 +35,7 @@ public class FieldSetModel extends WCMUsePojo{
     private static final Logger log = LoggerFactory.getLogger(FieldSetModel.class);
     String paramName;
 
-    Map <String,Value> formContainerData = new HashMap<String,Value>();
+    Map <String,Object> formContainerData = new HashMap<>();
     @Override
     public void activate() throws Exception {
 
@@ -45,7 +45,7 @@ public class FieldSetModel extends WCMUsePojo{
         //log.info(getRequest().getAttribute("formContainerProperties").toString());
         Object object = getRequest().getAttribute("formContainerProperties");
         //Type Cast the object to HashMap holding the formConatiner data.
-        formContainerData =(Map<String, Value>) object;
+        formContainerData =(Map<String, Object>) object;
         //log.info("Lead capture :"+formContainerData.get("C_Lead_Offer_Most_Recent1").toString());
     }
 
