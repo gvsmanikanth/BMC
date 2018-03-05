@@ -4,6 +4,17 @@
 
 .navigation-upgrade {
 	
+	> li {
+			> a {
+				@include media(breakpointLarge) {
+					@include font-size(18);
+				}
+				@include media(breakpointExtraLarge) {
+					@include font-size(18);
+				}
+		}
+	}
+	
 	.navigation-secondary {
 		&.navigation-four-col,
 		&.navigation-tabbed-menu {
@@ -85,19 +96,4 @@
 			padding-bottom:1rem;
 		}
 	}
-	
-	
-	.navigation-primary {
-		> li {
-			> a {
-				@include media(breakpointLarge) {
-					@include font-size(18);
-				}
-				@include media(breakpointExtraLarge) {
-					@include font-size(18);
-				}
-			}
-		}
-	}
-	
 }
