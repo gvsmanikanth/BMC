@@ -12,7 +12,7 @@
              data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid/new', decorationTagName='div', appendPath='/*', cssClassName='new section aem-Grid-newComponent'}" />
         <!--/* WEB_2690 PactSafe Agreement fields addition --START */-->
         <sly data-sly-use.fieldSetModel="com.bmc.models.components.forms.FieldSetModel" />
-        <sly data-sly-test="${fieldSetModel.leadOfferMostRecent =='Trial Download' || fieldSetModel.leadOfferMostRecent =='Demo'|| fieldSetModel.leadOfferMostRecent == 'Eval Request'}">
+        <sly data-sly-test="${fieldSetModel.isTrialForm}">
                 <div class="cmp cmp-options">
                         <div class="form-group checkbox">
                                 <label for="licenseAgreement1"></label>

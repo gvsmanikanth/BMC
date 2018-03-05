@@ -49,16 +49,24 @@ public class FieldSetModel extends WCMUsePojo{
         //log.info("Lead capture :"+formContainerData.get("C_Lead_Offer_Most_Recent1").toString());
     }
 
-    public String getLeadOfferMostRecent() {
+    public Boolean getIsTrialForm() {
         //Getter class to pass Lead Capture value to sightly htl.
         String LeadCapture = formContainerData.get("C_Lead_Offer_Most_Recent1").toString();
-        return (String) LeadCapture != null ? LeadCapture : "";
+        Boolean isTrialForm=false;
+        if(LeadCapture != null){
+            if(LeadCapture.equalsIgnoreCase("Trial Download") ||
+                    LeadCapture.equalsIgnoreCase("Demo") ||
+                    LeadCapture.equalsIgnoreCase("Eval Request")){
+                isTrialForm=true;
+            }
+        }
+        return isTrialForm;
     }
+
 
     public String getPactSafeAgreementCopy() {
         String pactSafeAgreementCopy = service.getPactSafeAgreementCopy();
         return pactSafeAgreementCopy != null ? pactSafeAgreementCopy : "";
-  //      return "This is some hard coded copy";
     }
 
 }

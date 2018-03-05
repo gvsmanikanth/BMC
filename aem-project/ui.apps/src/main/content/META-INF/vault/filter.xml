@@ -27,6 +27,8 @@
         <include pattern="/etc/designs/bmc/jcr:content"/>
     </filter>
 
+    <filter root="/etc/bmc"/>
+
     <filter root="/etc/languages"/>
 
     <filter root="/etc/notification/email"/>

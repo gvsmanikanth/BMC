@@ -4,6 +4,7 @@ import com.adobe.acs.commons.email.EmailService;
 import com.bmc.mixins.ResourceProvider;
 import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
+import com.bmc.services.PactSafeService;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -73,10 +74,15 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String[] automationEmailRecipients;
     private String[] automationEmailCCRecipients;
 
+    private String pactSafeResponse="";
+
     private Session session;
 
     @Reference
     private EmailService emailService;
+
+    @Reference
+    private PactSafeService pactSafeService;
 
     @Reference
     private ExportComplianceService exportComplianceService;
@@ -148,26 +154,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         resourceResolver = request.getResourceResolver();
         session = request.getResourceResolver().adaptTo(Session.class);
 
-        // Uses Access ID from account settings (https://app.pactsafe.com/settings/account)
-        // Make sure correct site is selected
-        Activity site = new Activity("eebbf489-fb84-4a0c-b624-51f2ead3104b");
-
-        ParameterStore action = new ParameterStore();
-        action.setSignerId("bledford@connectivedx.com");
-        action.setVersions(Arrays.asList("5a58f7341762512e24268a5f"));
-        try {
-//            site.send(EventType.AGREED, action);
-            site.agreed(action);
-        } catch (Exception e) {
-            logger.error("PactSafe error: " + e.getMessage(), e);
-        }
-
-        try {
-            Group group = site.load("15660");
-        } catch (PactSafeActivityException e) {
-            logger.error("PactSafe error: " + e.getMessage(), e);
-        }
-
         FormData form = new FormData(request);
 
         String purlPage = form.getNodeProperty(JCR_PURL_PAGE_URL);
@@ -181,6 +167,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             }
         }
         if (!honeyPotFailure) {
+            // TODO Wrap this is something that makes sure the field is actually checked. Also work out what happens if it's not actually checked.
+            String[] formTypes = {"Trial Download", "Demo", "Eval Request"};
+            if(Arrays.asList(formTypes).contains(form.properties.getOrDefault("C_Lead_Offer_Most_Recent1",""))) {
+                pactSafeResponse = pactSafeService.submitAgreement(form.data.getOrDefault("C_EmailAddress", ""));
+                form.data.put("pactSafeResponse", pactSafeResponse);
+            }
             switch (form.type) {
                 case "Lead Capture":
                     submitToEloqua(form);

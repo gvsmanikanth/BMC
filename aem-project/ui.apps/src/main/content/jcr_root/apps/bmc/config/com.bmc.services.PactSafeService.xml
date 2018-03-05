@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
-          pactSafeContractGroupID="123"
+
 		  pactSafeAgreementLink="http://www.google.com"
 		  pactSafeAgreementCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
-		  pactSafeAPIURL=""
-		  pactSafeToken=""
+
+		  pactSafeContractsAPIURL="https://api.pactsafe.com/v1.1/groups/"
+		  pactSafeContractsAPIURLParams="?expand=contracts"
+
+		  pactSafeContractGroupID="724"
+
+		  pactSafeSiteID="1365"
+		  pactSafeSiteAccessId="eebbf489-fb84-4a0c-b624-51f2ead3104b"
+
+		  pactSafeAPIBearerToken="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_"
 />
