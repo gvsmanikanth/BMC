@@ -80,7 +80,7 @@
 	&.navigation-four-col,
 	&.navigation-tabbed-menu {
 		width: columns(12);
-
+		
 		&.navigation-active {
 
 			@include media(breakpointLarge) {
@@ -115,7 +115,7 @@
 
 	&.layout-inner-wrap {
 		@include media(breakpointLarge) {
-			padding: 0!important;
+			padding: 0px !important;
 		}
 	}
 
@@ -139,6 +139,7 @@
 			@include font-size(15);
 			color: #414042;
 			padding: em(6) 0;
+			
 		}
 
 		&:hover,
@@ -204,8 +205,7 @@
 
 		@include media(breakpointLarge) {
 			padding: em(18) 0 em(20);
-		}
-
+		}	
 	}
 
 	.navigation-tab-controls {
@@ -306,7 +306,6 @@
 
 }
 
-
 .navigation-column {
 	@include box-sizing();
 	padding: em(24);
@@ -320,12 +319,12 @@
 	& + .navigation-column {
 		padding-top: 0;
 	}
-
+	
 	&.navigation-column-emphasis {
 		background-color: #fcfcfc;
 		padding: em(24);
 		@include media(breakpointLarge) {
-			padding-top: 0;
+			padding-top: 0; 
 		}
 		
 		//DXP-149 - Added new class to remove inline css
@@ -340,8 +339,6 @@
 		    }
 		  }
 		}
-		
-		
 	}
 
 	ul {
@@ -349,6 +346,7 @@
 		margin: 0;
 		padding: 0;
 	}
+	
 
 	.navigation-one-col & {
 		@include media(breakpointLarge) {
@@ -371,6 +369,7 @@
 		@include media(breakpointLarge) {
 			width: columns(3);
 		}
+		
 	}
 
 	.navigation-tabbed-menu & {
@@ -378,5 +377,6 @@
 			width: columns(4);
 		}
 	}
-
 }
+
+	
