@@ -1,7 +1,7 @@
 <?php
-	$pageTitle = 'Customer Story';
-	$bodyClass = '';
-	include 'php-inc/head.php';
+$pageTitle = 'Customer Story';
+$bodyClass = '';
+include 'php-inc/head.php';
 ?>
 
 	<section class="fourtune-500-full-width-banner">
@@ -21,25 +21,25 @@
 		'company' => 'Starbucks',
 		'logo' => 'http://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png',
 		'copy' => 'Lorem ipsum dolor 80% aconctetur adipis eiusmod tempor',
-		'filterValues' => 'group-b'
+		'filterValues' => 'group-c'
 	));
 	array_push($logoBlocks, (object) array(
 		'company' => 'Vodafone',
 		'logo' => "http://vector.me/files/images/4/6/46603/vodafone.png",
 		'copy' => 'Lorem ipsum dolor 80% aconctetur adipis eiusmod tempor',
-		'filterValues' => 'group-a,group-c,triangle'
+		'filterValues' => 'num-1'
 	));
 	array_push($logoBlocks, (object) array(
 		'company' => 'Adobe',
 		'logo' => "http://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/2000px-Adobe_Systems_logo_and_wordmark.svg.png",
 		'copy' => 'Lorem ipsum dolor 80% aconctetur adipis eiusmod tempor',
-		'filterValues' => 'group-c,num-2,square'
+		'filterValues' => 'num-2'
 	));
 	array_push($logoBlocks, (object) array(
 		'company' => 'Standard Chartered',
 		'logo' => "https://s3.amazonaws.com/piktochartv2-dev/v2/uploads/9fa39fd9-3aa1-46b7-8975-e629a1269e62/03814c91cea27351f620d3ebcec6d12cb0533553_original.png",
 		'copy' => 'Lorem ipsum dolor 80% aconctetur adipis eiusmod tempor',
-		'filterValues' => 'group-a,num-1,triangle'
+		'filterValues' => 'circle'
 	));
 
 	// duplicate the entries
@@ -60,15 +60,39 @@
 
 		<div class="customer-story-landing-heading">
 			<h2>Case Study/Success Stories</h2>
-			<fieldset>
-				<?php foreach($filters as $filter): ?>
-					<select class="js-customer-story-filter-select <?php echo $filterKey ?>">
-						<?php foreach($filter as $filterKey => $option): ?>
-							<option value="<?php echo $option ?>"><?php echo (!$option) ? '-- Header --' : $option ?></option>
-						<?php endforeach ?>
+			<!-- fieldset>
+				< ?php foreach($filters as $filter): ?>
+					<select id ="company_size" class="js-customer-story-filter-select < ?php echo $filterKey ?>">
+						< ?php foreach($filter as $filterKey => $option): ?>
+							<option value="< ?php echo $option ?>">< ?php echo (!$option) ? '-- Header --' : $option ?></option>
+						< ?php endforeach ?>
 					</select>
-				<?php endforeach ?>
+				< ?php endforeach ?> 
+			</fieldset> -->
+			
+			<fieldset>
+    			<select id ="company_size" class="js-customer-story-filter-select <br />
+    				<b>Notice</b>:  Undefined variable: filterKey in <b>C:\MyData\Projects\bmc\front-end\customer-story-landing.php</b> on line <b>65</b><br />
+    ">
+    				<option value="">-- Header --</option>
+    				<option value="group-a">group-a</option>
+    				<option value="group-b">group-b</option>
+    				<option value="group-c">group-c</option>
+    			</select>
+    			<select id ="industry" class="js-customer-story-filter-select 3">
+    				<option value="">-- Header --</option>
+    				<option value="num-1">num-1</option>
+    				<option value="num-2">num-2</option>
+    				<option value="num-3">num-3</option>
+    			</select>
+    			<select id ="topic" class="js-customer-story-filter-select 3">
+    				<option value="">-- Header --</option>
+    				<option value="square">square</option>
+    				<option value="circle">circle</option>
+    				<option value="triangle">triangle</option>
+    			</select>	
 			</fieldset>
+			
 		</div>
 
 		<div class="logo-blocks">
@@ -126,7 +150,7 @@
 
 		<blockquote class="testimonial">
 			<p>
-				“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aoquat. Duis aute irure dolor reprehenderit.”
+				â€œLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aoquat. Duis aute irure dolor reprehenderit.â€�
 			</p>
 			<p class="small">
 				<strong>First Lastname</strong>, Job Title Goes Here</br/>
