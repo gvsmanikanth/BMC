@@ -11,6 +11,7 @@ import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.Value;
 
+import com.bmc.services.PactSafeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,7 @@ public class FormExposeProperties extends WCMUsePojo{
 
 
     private static Map<String,Object> formContainerProperties=new HashMap<>();
-
+    private PactSafeService pactSafeService;
 
     private static final Logger log = LoggerFactory.getLogger(FormExposeProperties.class);
     @Override
@@ -42,16 +43,16 @@ public class FormExposeProperties extends WCMUsePojo{
                     formContainerProperties.put(propertyName, propertyValue);
                 }
                 // this will output the value in string format
-
-
-
-
             }
         } catch(Exception e) {
             log.error("FormExposeProperties iterator error: "+e.getMessage());
         }
+
         //Set the property object in request scope object
         getRequest().setAttribute("formContainerProperties", formContainerProperties);
-    }
 
+        pactSafeService = getSlingScriptHelper().getService(PactSafeService.class);
+
+        log.info("updatePactSafeGroup response: "+pactSafeService.updatePactSafeGroup());
+    }
 }

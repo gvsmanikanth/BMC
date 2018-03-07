@@ -28,6 +28,11 @@ package com.bmc.services;
         import java.nio.charset.StandardCharsets;
         import java.util.*;
 
+        import org.json.simple.JSONArray;
+        import org.json.simple.JSONObject;
+        import org.json.simple.parser.JSONParser;
+        import org.json.simple.parser.ParseException;
+
 
 @Component(
         label = "PactSafe Service",
@@ -153,8 +158,9 @@ public class PactSafeService {
         String charset = StandardCharsets.UTF_8.name();
 
         int status=0;
-
+        String responseBody="";
         HttpURLConnection connection = null;
+
 
         try {
             URL url = new URL(serviceUrl);
@@ -170,7 +176,7 @@ public class PactSafeService {
 
             //this next line makes it chooch, we think
             InputStream response = connection.getInputStream();
-            String responseBody;
+
             try (Scanner scanner = new Scanner(response)) {
                 responseBody = scanner.useDelimiter("\\A").next();
             }
@@ -188,7 +194,6 @@ public class PactSafeService {
                 status = connection.getResponseCode();
                 logger.trace("Response Status: " + status);
                 InputStream error = connection.getErrorStream();
-                String responseBody;
                 if (error != null) {
                     try (Scanner scanner = new Scanner(error)) {
                         responseBody = scanner.useDelimiter("\\A").next();
@@ -208,9 +213,23 @@ public class PactSafeService {
         Property contractVersionsProperty=null;
         Value[] contractIDValues=null;
         Value[] contractVersions=null;
-        Map<String, String> contractsMap=new HashMap<>();
+        Map<String, String>contractsMap=new HashMap<>();
+        Map<String, String>newContractsMap=new HashMap<>();
         List<String> versions=new ArrayList<>();
 
+        JSONParser parser = new JSONParser();
+        try {
+            Object obj = parser.parse(responseBody);
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONObject dataObject= (JSONObject) jsonObject.get("data");
+            JSONArray contractsArray=(JSONArray) dataObject.get("contracts");
+            for(Object contractObject:contractsArray){
+                JSONObject contract=(JSONObject) contractObject;
+                newContractsMap.put(contract.get("id").toString(),contract.get("latest_version").toString());
+            }
+        }catch(Exception e){
+            logger.error("updatePactSafeGroup JSONParser error: "+e.getMessage());
+        }
 
         try {
             contractIDsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractIDs");
@@ -226,16 +245,23 @@ public class PactSafeService {
             }
             for(int n=0;n<contractIDValues.length;n++) {
                 contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
-                versions.add(contractVersions[n].getString());
             }
+
+            if(!newContractsMap.equals(contractsMap)){
+                String[] newContractIDValues=null;
+                String[] newContractVersions=null;
+                // The contract values have in some way changed; replace JCR content with newContractsMap value
+                for(Map.Entry<String, String> contractEntry: newContractsMap.entrySet()){
+                    newContractIDValues[]
+                }
+            }
+
+
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("updatePactSafeGroup JCR Error: "+e.getMessage());e.printStackTrace();
         }
 
-
-        return "Success? Dunno";
+        return responseBody;
     }
-
-
 
 }
