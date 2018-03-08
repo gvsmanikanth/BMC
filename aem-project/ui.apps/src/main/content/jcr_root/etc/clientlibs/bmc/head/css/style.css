@@ -15708,9 +15708,7 @@ body.support-central {
 .product-category-header {
   min-height: 395px;
   padding: 0px !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
+  --display: flex; }
   @media screen and (min-width: 640px) {
     .product-category-header {
       min-height: 545px; } }
