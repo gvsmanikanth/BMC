@@ -81,7 +81,7 @@ var bmcResourceHubData = {
 				},
 				{
 					"id" : 14,
-					"name" : "BMC ITILÂ®"
+					"name" : "BMC Service"
 				},
 				{
 					"id" : 15,
