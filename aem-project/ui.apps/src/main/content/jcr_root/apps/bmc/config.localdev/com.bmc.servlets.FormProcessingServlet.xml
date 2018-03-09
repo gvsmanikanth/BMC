@@ -5,8 +5,8 @@
           elqSiteID="1625229226"
           timeout="{Long}5000"
           automationEmailEnabled="{Boolean}true"
-          automationEmailRecipients="[bledford@connectivedx.com]"
-          automationEmailCCRecipients="[bmc@bryanledford.com,bledford@gmail.com]"
+          automationEmailRecipients="[cmsdev@bmc.com]"
+          automationEmailCCRecipients="[]"
 />
         <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->
         <!--serviceUrl="http://localhost/admin/post.php"-->

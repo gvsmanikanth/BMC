@@ -51,8 +51,9 @@ public class FormExposeProperties extends WCMUsePojo{
         //Set the property object in request scope object
         getRequest().setAttribute("formContainerProperties", formContainerProperties);
 
-        pactSafeService = getSlingScriptHelper().getService(PactSafeService.class);
-
-        log.info("updatePactSafeGroup response: "+pactSafeService.updatePactSafeGroup());
+        //test to trigger updatePactSafeGroup()
+//        pactSafeService = getSlingScriptHelper().getService(PactSafeService.class);
+//
+//        log.info("updatePactSafeGroup response: "+pactSafeService.updatePactSafeGroup());
     }
 }

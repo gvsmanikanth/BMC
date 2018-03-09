@@ -1,10 +1,8 @@
 
 package com.bmc.services;
 
-        import com.bmc.servlets.FormProcessingServlet;
+        import com.adobe.acs.commons.email.EmailService;
         import com.pactsafe.api.activity.Activity;
-        import com.pactsafe.api.activity.Group;
-        import com.pactsafe.api.activity.components.PactSafeActivityException;
         import com.pactsafe.api.activity.domain.ParameterStore;
         import org.apache.felix.scr.annotations.Activate;
         import org.apache.felix.scr.annotations.Component;
@@ -16,13 +14,9 @@ package com.bmc.services;
         import org.slf4j.Logger;
         import org.slf4j.LoggerFactory;
 
-        import javax.jcr.Property;
-        import javax.jcr.RepositoryException;
-        import javax.jcr.Session;
-        import javax.jcr.Value;
+        import javax.jcr.*;
         import java.io.IOException;
         import java.io.InputStream;
-        import java.io.OutputStream;
         import java.net.HttpURLConnection;
         import java.net.URL;
         import java.nio.charset.StandardCharsets;
@@ -38,11 +32,16 @@ package com.bmc.services;
         label = "PactSafe Service",
         description = "Helper Service for PactSafe",
         immediate = true)
+
 @Service(value=PactSafeService.class)
+
 public class PactSafeService {
 
     @Reference
     private ResourceResolverFactory resolverFactory;
+
+    @Reference
+    private EmailService emailService;
 
     private static final Logger logger = LoggerFactory.getLogger(PactSafeService.class);
 
@@ -116,25 +115,26 @@ public class PactSafeService {
             e.printStackTrace();
         }
 
+        if(contractsMap.isEmpty()){
+            // stored contractsMap is empty, better call updatePactSafeGroup()
+            updatePactSafeGroup();
+            // and send alert email that it was empty
+            logger.error("submitAgreement data error: Empty contractsMap. Repopulating.");
+            StringBuilder bodyCopy=new StringBuilder("");
+            bodyCopy.append("Contract IDs and Versions missing from JCR. Attempting repopulation<br/><br/>");
+            sendEmail("dconner@bmc.com", "Contract Group Data Missing from JCR", bodyCopy.toString());
+        }
+
         ParameterStore action = new ParameterStore();
         action.setSignerId(emailAddress);
         action.setVersions(versions);
         String pactSafeResponse="Success";
         try {
-//            site.send(EventType.AGREED, action);
             site.agreed(action);
         } catch (Exception e) {
             logger.error("PactSafe error: " + e.getMessage(), e);
             pactSafeResponse=e.getMessage().toString();
         }
-/*
-
-        try {
-            Group group = site.load("15660");
-        } catch (PactSafeActivityException e) {
-            logger.error("PactSafe error: " + e.getMessage(), e);
-        }
-*/
 
         return pactSafeResponse;
     }
@@ -243,16 +243,50 @@ public class PactSafeService {
                 contractIDValues[0] = contractIDsProperty.getValue();
                 contractVersions[0] = contractVersionsProperty.getValue();
             }
+
+            String emailValues="";
+            String emailVersions="";
+            String emailNewValues="";
+            String emailNewVersions="";
+
             for(int n=0;n<contractIDValues.length;n++) {
                 contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
+                emailValues=contractIDValues[n].getString()+", "+emailValues;
+                emailVersions=contractVersions[n].getString()+", "+emailVersions;
             }
 
-            if(!newContractsMap.equals(contractsMap)){
-                String[] newContractIDValues=null;
-                String[] newContractVersions=null;
-                // The contract values have in some way changed; replace JCR content with newContractsMap value
-                for(Map.Entry<String, String> contractEntry: newContractsMap.entrySet()){
-                    newContractIDValues[]
+            if(newContractsMap.isEmpty()){
+                logger.error("updatePactSafeGroup API Error: Empty newContractsMap");
+                StringBuilder bodyCopy=new StringBuilder("");
+                bodyCopy.append("updatePactSafeGroup API Error: Empty newContractsMap;<br/><br/>");
+                bodyCopy.append("Response Status: "+status+"<br/><br/>");
+                bodyCopy.append(responseBody);
+                sendEmail("dconner@bmc.com", "Contract Group Data Error", bodyCopy.toString());
+            } else {
+                // check see if any of the contracts in the group have changed.
+                if (!newContractsMap.equals(contractsMap)) {
+                    List<String> newContractIDValues = new ArrayList<>();
+                    List<String> newContractVersions = new ArrayList<>();
+                    // The contract values have in some way changed; replace JCR content with newContractsMap value
+                    for (Map.Entry<String, String> contractEntry : newContractsMap.entrySet()) {
+                        newContractIDValues.add(contractEntry.getKey());
+                        emailNewValues = contractEntry.getKey();
+                        newContractVersions.add(contractEntry.getValue());
+                        emailNewVersions = contractEntry.getValue();
+                    }
+
+                    String[] newContractIDValuesStringArray = newContractIDValues.toArray(new String[newContractIDValues.size()]);
+                    String[] newContractVersionsStringArray = newContractVersions.toArray(new String[newContractVersions.size()]);
+
+                    session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").setProperty("contractIDs", newContractIDValuesStringArray);
+                    session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").setProperty("contractVersions", newContractVersionsStringArray);
+                    session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").setProperty("lastUpdated", new Date().toString());
+                    session.save();
+
+                    StringBuilder bodyCopy = new StringBuilder("");
+                    bodyCopy.append("Old Contract IDs: " + emailValues + "<br/>Old Contract Versions: " + emailVersions + "<br/><br/>");
+                    bodyCopy.append("New Contract IDs: " + emailNewValues + "<br/>New Contact Versions: " + emailNewVersions);
+                    sendEmail("dconner@bmc.com", "Contract Group Data Change", bodyCopy.toString());
                 }
             }
 
@@ -263,5 +297,17 @@ public class PactSafeService {
 
         return responseBody;
     }
+
+    private void sendEmail(String emailAddresses,String subject, String body) {
+        String templatePath = "/etc/notification/email/html/form-emailonly.html";
+        if (emailAddresses.isEmpty()) return;
+        String[] recipients = emailAddresses.split(",");
+        Map<String, String> emailParams = new HashMap<>();
+        emailParams.put("subject", subject);
+        emailParams.put("fromAddress", "PactSafeServiceNoReply@bmc.com");
+        emailParams.put("body", body);
+        emailService.sendEmail(templatePath, emailParams, recipients);
+    }
+
 
 }
