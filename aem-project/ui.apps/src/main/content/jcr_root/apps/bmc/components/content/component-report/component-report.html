@@ -78,13 +78,9 @@ $(document).ready(function() {
 		});
 </script>
         <div>
-        	<h1> Component Report </h1>
-            <p class="greeting-id">The component report delivers information about how our website uses the components. </p>
-            <p> Please check the report <a target="_blank" href="/etc/reports/compreport.html">here</a> before downloading the csv.</p>
-            <p class="greeting-content">Using the Edit dialog the user can also set a Root path that defines the startpoint of the report - all components under that root are considered for the report.
-			</p>
-			<p> <b>For example</b>: If we want to find the list of pages which has htmlarea component, then add the path in <b>Component Type</b> -> Filter settings as "bmc/components/content/htmlarea" ->Apply.
-        </div>
+        	<h1> ${properties.headerText} </h1>
+            ${properties.text @context='html'}
+         </div>
 		  <div class='mydiv'>    
 		   
 		    <button class='gen_btn'>Download Csv</button>
