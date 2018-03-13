@@ -81,10 +81,12 @@
 @import "partners";
 @import "events";
 @import "product-category-header";
-
-// Moved Utilities classes at bottom.
+ 
+// Moved Utilities classes at bottom. 
 @import "utilities";
 @import "utility";
 @import "utility-responsive";
+
+@import "homepage-aos"; 
 
 //@import "oldie";
