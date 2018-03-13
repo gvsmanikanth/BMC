@@ -7,7 +7,7 @@
 	}
 	
 	padding: 0px !important;
-	display: flex;
+	--display: flex;
 	
 	.offset-wrapper{
 		
@@ -76,9 +76,13 @@
 		padding-top:1rem;
 		min-height: 400px;
 		display: flex;
-		
 		@media screen and (min-width: 640px) {
 			min-height: 400px;
+		}
+		.inner{
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				margin-top: 3rem;
+			}
 		}
 	}
 		
@@ -362,3 +366,5 @@
 		text-decoration: underline;
 	}
 }
+
+
