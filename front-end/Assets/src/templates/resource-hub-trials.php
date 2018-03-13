@@ -428,7 +428,7 @@ var bmcResourceHubData = {
 
 
 <section class="bg-white listCompLoader">
-	<div class="layout-inner-wrap py text-center m2">
+	<div class="layout-inner-wrap py text-center">
 		<img src="http://media.cms.bmc.com/designimages/loading-indicator.gif" />
 		<p>Loading...</p>
 	</div>
