@@ -1,82 +1,99 @@
-<?xml version="1.0"
-        encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-          xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured"
-          jcr:title="Offering Micro Item"
-          sling:resourceType="cq/gui/components/authoring/dialog"
-          extraClientlibs="[]">
-    <content jcr:primaryType="nt:unstructured"
-             sling:resourceType="granite/ui/components/coral/foundation/container">
-        <layout jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                type="nav"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Offering Micro Item"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <assetsTab jcr:primaryType="nt:unstructured"
-                       jcr:title="Assets"
-                       sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
+            <assetsTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Assets"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <productName sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                         fieldDescription="Enter the product name"
-                                         fieldLabel="Product Name"
-                                         name="./productName"
-                                         required="{Boolean}true"
-                                         jcr:primaryType="nt:unstructured" />
-                            <productWell jcr:primaryType="nt:unstructured"
-                                         fieldLabel="Product Availability"
-                                         sling:resourceType="granite/ui/components/foundation/container">
-                                <layout jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                            <productName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the product name"
+                                fieldLabel="Product Name"
+                                name="./productName"
+                                required="{Boolean}true"/>
+                            <productWell
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                fieldLabel="Product Availability">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
                                 <items jcr:primaryType="nt:unstructured">
-                                    <productAvailability sling:resourceType="granite/ui/components/foundation/form/select"
-                                                         fieldLabel="Product Availability"
-                                                         multiple="{Boolean}false"
-                                                         name="./productAvailability"
-                                                         jcr:primaryType="nt:unstructured">
+                                    <productAvailability
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Product Availability"
+                                        multiple="{Boolean}false"
+                                        name="./productAvailability">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <none jcr:primaryType="nt:unstructured"
-                                                  text="none selected"
-                                                  value="" />
-                                            <stand jcr:primaryType="nt:unstructured"
-                                                   text="This product is available as a standalone offering."
-                                                   value="This product is available as a standalone offering" />
-                                            <offering jcr:primaryType="nt:unstructured"
-                                                      text="This product is available as a part of the following offerings:"
-                                                      value="This product is available as a part of the following offerings:" />
-                                            <both jcr:primaryType="nt:unstructured"
-                                                  text="This product is available either as a standalone or as part of the following offering:"
-                                                  value="This product is available either as a standalone or as part of the following offering:" />
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <stand
+                                                jcr:primaryType="nt:unstructured"
+                                                text="This product is available as a standalone offering."
+                                                value="This product is available as a standalone offering"/>
+                                            <offerings
+                                                jcr:primaryType="nt:unstructured"
+                                                text="This product is available as a part of the following offerings:"
+                                                value="This product is available as a part of the following offerings:"/>
+                                            <both
+                                                jcr:primaryType="nt:unstructured"
+                                                text="This product is available either as a standalone or as part of the following offering:"
+                                                value="This product is available either as a standalone or as part of the following offering:"/>
+                                            <offering
+                                                jcr:primaryType="nt:unstructured"
+                                                text="This product is available as a part of the following offering."
+                                                value="This product is available as a part of the following offering."/>
                                         </items>
                                     </productAvailability>
-                                    <productAvailabilityList jcr:primaryType="nt:unstructured"
-                                                             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                                             fieldLabel="Available Products"
-                                                                composite="{Boolean}true">
-                                        <field jcr:primaryType="nt:unstructured"
-                                               sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                               name="./productAvailabilityList">
-                                            <layout jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                                    method="absolute" />
+                                    <productAvailabilityList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Available Products">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            name="./productAvailabilityList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
                                             <items jcr:primaryType="nt:unstructured">
-                                                <column jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <productAvailabilityListPicker jcr:primaryType="nt:unstructured"
-                                                                                       sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                                                       fieldDescription=""
-                                                                                       required="{Boolean}true"
-                                                                                       rootPath="/content"
-                                                                                       name="./productAvailabilityListPicker"
-                                                                                       fieldLabel="Product Availability List" />
+                                                        <productAvailabilityListPicker
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription=""
+                                                            fieldLabel="Product Availability List"
+                                                            name="./productAvailabilityListPicker"
+                                                            required="{Boolean}true"
+                                                            rootPath="/content"/>
                                                     </items>
                                                 </column>
                                             </items>
@@ -84,179 +101,222 @@
                                     </productAvailabilityList>
                                 </items>
                             </productWell>
-                            <dataSheetWell jcr:primaryType="nt:unstructured"
-                                           fieldLabel="Product Availability"
-                                           sling:resourceType="granite/ui/components/foundation/container">
-                                <layout jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                            <dataSheetWell
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                fieldLabel="Product Availability">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
                                 <items jcr:primaryType="nt:unstructured">
-                                    <datasheetIconImage sling:resourceType="granite/ui/components/foundation/form/select"
-                                                        fieldLabel="Select Asset Type"
-                                                        multiple="{Boolean}false"
-                                                        name="./datasheetIconImage"
-                                                        jcr:primaryType="nt:unstructured">
+                                    <datasheetIconImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Select Asset Type"
+                                        multiple="{Boolean}false"
+                                        name="./datasheetIconImage">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <none jcr:primaryType="nt:unstructured"
-                                                  text="none selected"
-                                                  value="" />
-                                            <paperIcon jcr:primaryType="nt:unstructured"
-                                                       text="Paper Icon"
-                                                       value="link-icon-resource-document" />
-                                            <playIcon jcr:primaryType="nt:unstructured"
-                                                      text="Play Icon"
-                                                      value="link-icon-video" />
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <paperIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Paper Icon"
+                                                value="link-icon-resource-document"/>
+                                            <playIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Play Icon"
+                                                value="link-icon-video"/>
                                         </items>
                                     </datasheetIconImage>
-                                    <datasheetPrefix sling:resourceType="granite/ui/components/foundation/form/select"
-                                                     fieldLabel="Asset Prefix"
-                                                     multiple="{Boolean}false"
-                                                     name="./datasheetPrefix"
-                                                     jcr:primaryType="nt:unstructured">
+                                    <datasheetPrefix
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Asset Prefix"
+                                        multiple="{Boolean}false"
+                                        name="./datasheetPrefix">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <none jcr:primaryType="nt:unstructured"
-                                                  text="none selected"
-                                                  value="" />
-                                            <datasheet jcr:primaryType="nt:unstructured"
-                                                       text="Datasheet"
-                                                       value="Datasheet" />
-                                            <whitePaper jcr:primaryType="nt:unstructured"
-                                                        text="White paper"
-                                                        value="White paper" />
-                                            <solutionOverview jcr:primaryType="nt:unstructured"
-                                                              text="Solution Overview"
-                                                              value="Solution overview" />
-                                            <solutionBrief jcr:primaryType="nt:unstructured"
-                                                           text="Solution brief"
-                                                           value="Solution brief" />
-                                            <analystResearch jcr:primaryType="nt:unstructured"
-                                                             text="Analyst research"
-                                                             value="Analyst research" />
-                                            <caseStudy jcr:primaryType="nt:unstructured"
-                                                       text="Case study"
-                                                       value="Case study" />
-                                            <video jcr:primaryType="nt:unstructured"
-                                                   text="Video"
-                                                   value="Video" />
-                                            <demo jcr:primaryType="nt:unstructured"
-                                                  text="Demo"
-                                                  value="Demo" />
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="Datasheet"/>
+                                            <whitePaper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                            <solutionOverview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution Overview"
+                                                value="Solution overview"/>
+                                            <solutionBrief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                            <analystResearch
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                            <caseStudy
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                            <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                            <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
                                         </items>
                                     </datasheetPrefix>
-                                    <datasheetPicker sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                     fieldDescription="Datasheet Picker"
-                                                     name="./datasheetPicker"
-                                                     fieldLabel="Datasheet Picker"
-                                                     rootPath="/content"
-                                                     jcr:primaryType="nt:unstructured" />
-                                    <datasheetLink sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                   fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
-                                                   fieldLabel="Datasheet Link (Optional)"
-                                                   name="./datasheetLink"
-                                                   jcr:primaryType="nt:unstructured" />
+                                    <datasheetPicker
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Datasheet Picker"
+                                        fieldLabel="Datasheet Picker"
+                                        name="./datasheetPicker"
+                                        rootPath="/content"/>
+                                    <datasheetLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
+                                        fieldLabel="Datasheet Link (Optional)"
+                                        name="./datasheetLink"/>
                                 </items>
                             </dataSheetWell>
-                            <assetWell jcr:primaryType="nt:unstructured"
-                                       fieldLabel="Product Availability"
-                                       sling:resourceType="granite/ui/components/foundation/container">
-                                <layout jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                            <assetWell
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                fieldLabel="Product Availability">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
                                 <items jcr:primaryType="nt:unstructured">
-                                    <assetIconImage sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldLabel="Select Asset Type"
-                                                    multiple="{Boolean}false"
-                                                    name="./assetIconImage"
-                                                    jcr:primaryType="nt:unstructured">
+                                    <assetIconImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Select Asset Type"
+                                        multiple="{Boolean}false"
+                                        name="./assetIconImage">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <none jcr:primaryType="nt:unstructured"
-                                                  text="none selected"
-                                                  value="" />
-                                            <paperIcon jcr:primaryType="nt:unstructured"
-                                                       text="Paper Icon"
-                                                       value="link-icon-resource-document" />
-                                            <playIcon jcr:primaryType="nt:unstructured"
-                                                      text="Play Icon"
-                                                      value="link-icon-video" />
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <paperIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Paper Icon"
+                                                value="link-icon-resource-document"/>
+                                            <playIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Play Icon"
+                                                value="link-icon-video"/>
                                         </items>
                                     </assetIconImage>
-                                    <assetPrefix sling:resourceType="granite/ui/components/foundation/form/select"
-                                                 fieldLabel="Asset Prefix"
-                                                 multiple="{Boolean}false"
-                                                 name="./assetPrefix"
-                                                 jcr:primaryType="nt:unstructured">
+                                    <assetPrefix
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Asset Prefix"
+                                        multiple="{Boolean}false"
+                                        name="./assetPrefix">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <none jcr:primaryType="nt:unstructured"
-                                                  text="none selected"
-                                                  value="" />
-                                            <datasheet jcr:primaryType="nt:unstructured"
-                                                       text="Datasheet"
-                                                       value="Datasheet" />
-                                            <whitePaper jcr:primaryType="nt:unstructured"
-                                                        text="White paper"
-                                                        value="White paper" />
-                                            <solutionOverview jcr:primaryType="nt:unstructured"
-                                                              text="Solution Overview"
-                                                              value="Solution overview" />
-                                            <solutionBrief jcr:primaryType="nt:unstructured"
-                                                           text="Solution brief"
-                                                           value="Solution brief" />
-                                            <analystResearch jcr:primaryType="nt:unstructured"
-                                                             text="Analyst research"
-                                                             value="Analyst research" />
-                                            <caseStudy jcr:primaryType="nt:unstructured"
-                                                       text="Case study"
-                                                       value="Case study" />
-                                            <video jcr:primaryType="nt:unstructured"
-                                                   text="Video"
-                                                   value="Video" />
-                                            <demo jcr:primaryType="nt:unstructured"
-                                                  text="Demo"
-                                                  value="Demo" />
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="Datasheet"/>
+                                            <whitePaper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                            <solutionOverview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution Overview"
+                                                value="Solution overview"/>
+                                            <solutionBrief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                            <analystResearch
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                            <caseStudy
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                            <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                            <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
                                         </items>
                                     </assetPrefix>
-                                    <assetPicker sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                 fieldDescription="Asset Picker"
-                                                 name="./assetPicker"
-                                                 rootPath="/content"
-                                                 fieldLabel="Asset Picker"
-                                                 jcr:primaryType="nt:unstructured" />
-                                    <assetLinkText jcr:primaryType="nt:unstructured"
-                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                   fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
-                                                   fieldLabel="Asset Link Text (Optional)"
-                                                   name="./assetLinkText" />
+                                    <assetPicker
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Asset Picker"
+                                        fieldLabel="Asset Picker"
+                                        name="./assetPicker"
+                                        rootPath="/content"/>
+                                    <assetLinkText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Only enter text in this field if the Link Text from the item above will not be acceptable for some reason"
+                                        fieldLabel="Asset Link Text (Optional)"
+                                        name="./assetLinkText"/>
                                 </items>
                             </assetWell>
                         </items>
                     </column>
                 </items>
             </assetsTab>
-            <primaryParentTab jcr:primaryType="nt:unstructured"
-                              jcr:title="Primary Parent"
-                              sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns" />
+            <primaryParentTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Primary Parent"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <parentWell jcr:primaryType="nt:unstructured"
-                                        fieldLabel="Primary Parent"
-                                        sling:resourceType="granite/ui/components/foundation/container">
-                                <layout jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/well" />
+                            <parentWell
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                fieldLabel="Primary Parent">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/well"/>
                                 <items jcr:primaryType="nt:unstructured">
-                                    <primaryParentOfferingPage sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                               fieldDescription="Select the page on which this Offering Micro should be displayed"
-                                                               name="./primaryParentOfferingPage"
-                                                               fieldLabel="Primary Parent Offering Page"
-                                                               required="{Boolean}true"
-                                                               rootPath="/content"
-                                                               jcr:primaryType="nt:unstructured" />
-                                    <anchorTagText fieldLabel="Anchor Tag Text"
-                                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                   name="./anchorTagText"
-                                                   fieldDescription="Use hyphens to separate words (no spaces)."
-                                                   jcr:primaryType="nt:unstructured" />
+                                    <primaryParentOfferingPage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                        fieldDescription="Select the page on which this Offering Micro should be displayed"
+                                        fieldLabel="Primary Parent Offering Page"
+                                        name="./primaryParentOfferingPage"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                    <anchorTagText
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use hyphens to separate words (no spaces)."
+                                        fieldLabel="Anchor Tag Text"
+                                        name="./anchorTagText"/>
                                 </items>
                             </parentWell>
                         </items>
