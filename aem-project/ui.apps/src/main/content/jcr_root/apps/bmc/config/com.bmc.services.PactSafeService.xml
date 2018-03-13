@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          jcr:primaryType="sling:OsgiConfig"
+		  jcr:primaryType="sling:OsgiConfig"
 
 		  pactSafeAgreementLink="http://www.google.com"
 		  pactSafeAgreementCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
@@ -14,4 +14,9 @@
 		  pactSafeSiteAccessId="eebbf489-fb84-4a0c-b624-51f2ead3104b"
 
 		  pactSafeAPIBearerToken="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_"
+
+		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com"
+		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com"
+
 />
+

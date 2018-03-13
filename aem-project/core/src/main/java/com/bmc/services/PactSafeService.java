@@ -1,31 +1,30 @@
 
 package com.bmc.services;
 
-        import com.adobe.acs.commons.email.EmailService;
-        import com.pactsafe.api.activity.Activity;
-        import com.pactsafe.api.activity.domain.ParameterStore;
-        import org.apache.felix.scr.annotations.Activate;
-        import org.apache.felix.scr.annotations.Component;
-        import org.apache.felix.scr.annotations.Reference;
-        import org.apache.felix.scr.annotations.Service;
-        import org.apache.sling.api.resource.ResourceResolver;
-        import org.apache.sling.api.resource.ResourceResolverFactory;
-        import org.apache.sling.commons.osgi.PropertiesUtil;
-        import org.slf4j.Logger;
-        import org.slf4j.LoggerFactory;
+import com.adobe.acs.commons.email.EmailService;
+import com.pactsafe.api.activity.Activity;
+import com.pactsafe.api.activity.domain.ParameterStore;
+import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.commons.osgi.PropertiesUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-        import javax.jcr.*;
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.net.HttpURLConnection;
-        import java.net.URL;
-        import java.nio.charset.StandardCharsets;
-        import java.util.*;
+import javax.jcr.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 
-        import org.json.simple.JSONArray;
-        import org.json.simple.JSONObject;
-        import org.json.simple.parser.JSONParser;
-        import org.json.simple.parser.ParseException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 
 @Component(
@@ -47,36 +46,42 @@ public class PactSafeService {
 
 
     public String getPactSafeAgreementCopy() {
-        return newPactSafeAgreementCopy;
+        logger.trace("Returned pactSafeAgreementCopy: "+pactSafeAgreementCopy);
+        return pactSafeAgreementCopy;
     }
 
-    private String newPactSafeAgreementLink;
-    private String newPactSafeAgreementCopy;
-    private String newPactSafeContractsAPIURL;
-    private String newPactSafeContractsAPIURLParams;
-    private String newPactSafeContractGroupID;
-    private String newPactSafeSiteID;
-    private String newPactSafeSiteAccessId;
-    private String newPactSafeAPIBearerToken;
+    private String pactSafeAgreementLink;
+    private String pactSafeAgreementCopy;
+    private String pactSafeContractsAPIURL;
+    private String pactSafeContractsAPIURLParams;
+    private String pactSafeContractGroupID;
+    private String pactSafeSiteID;
+    private String pactSafeSiteAccessId;
+    private String pactSafeAPIBearerToken;
+    private String pactSafeServiceUnavailableEmailGroups;
+    private String pactSafeContractVersionUpdateEmailGroups;
 
 
     @Activate
     public void activate(Map<String, String> config) {
-        newPactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
-        newPactSafeAgreementLink = PropertiesUtil.toString(config.get("pactSafeAgreementLink"), "");
-        newPactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
-        newPactSafeContractsAPIURL = PropertiesUtil.toString(config.get("pactSafeContractsAPIURL"), "");
-        newPactSafeContractsAPIURLParams = PropertiesUtil.toString(config.get("pactSafeContractsAPIURLParams"), "");
-        newPactSafeContractGroupID = PropertiesUtil.toString(config.get("pactSafeContractGroupID"), "");
-        newPactSafeSiteID = PropertiesUtil.toString(config.get("pactSafeSiteID"), "");
-        newPactSafeSiteAccessId = PropertiesUtil.toString(config.get("pactSafeSiteAccessId"), "");
-        newPactSafeAPIBearerToken = PropertiesUtil.toString(config.get("pactSafeAPIBearerToken"), "");
+        pactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
+        pactSafeAgreementLink = PropertiesUtil.toString(config.get("pactSafeAgreementLink"), "");
+        pactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
+        pactSafeContractsAPIURL = PropertiesUtil.toString(config.get("pactSafeContractsAPIURL"), "");
+        pactSafeContractsAPIURLParams = PropertiesUtil.toString(config.get("pactSafeContractsAPIURLParams"), "");
+        pactSafeContractGroupID = PropertiesUtil.toString(config.get("pactSafeContractGroupID"), "");
+        pactSafeSiteID = PropertiesUtil.toString(config.get("pactSafeSiteID"), "");
+        pactSafeSiteAccessId = PropertiesUtil.toString(config.get("pactSafeSiteAccessId"), "");
+        pactSafeAPIBearerToken = PropertiesUtil.toString(config.get("pactSafeAPIBearerToken"), "");
+        pactSafeServiceUnavailableEmailGroups = PropertiesUtil.toString(config.get("pactSafeServiceUnavailableEmailGroups"), "");
+        pactSafeContractVersionUpdateEmailGroups = PropertiesUtil.toString(config.get("pactSafeContractVersionUpdateEmailGroups"), "");
+
     }
 
     public String submitAgreement(String emailAddress){
         // Uses Access ID from account settings (https://app.pactsafe.com/settings/account)
         // Make sure correct site is selected
-        Activity site = new Activity(newPactSafeSiteAccessId);
+        Activity site = new Activity(pactSafeSiteAccessId);
 
         Map<String, Object> param = new HashMap<String, Object>();
         param.put(ResourceResolverFactory.SUBSERVICE, "pactsafe");
@@ -84,7 +89,7 @@ public class PactSafeService {
         try {
             resolver = resolverFactory.getServiceResourceResolver(param);
         } catch (Exception e) {
-
+            logger.error("PactSafe submitAgreement ResourceResolverFactory Error: " + e.getMessage());
         }
 
         Session session=resolver.adaptTo(Session.class);
@@ -112,7 +117,7 @@ public class PactSafeService {
                 versions.add(contractVersions[n].getString());
             }
         } catch (RepositoryException e) {
-            e.printStackTrace();
+            logger.error("PactSafe submitAgreement Repository Exception Error: " + e.getMessage());
         }
 
         if(contractsMap.isEmpty()){
@@ -122,7 +127,7 @@ public class PactSafeService {
             logger.error("submitAgreement data error: Empty contractsMap. Repopulating.");
             StringBuilder bodyCopy=new StringBuilder("");
             bodyCopy.append("Contract IDs and Versions missing from JCR. Attempting repopulation<br/><br/>");
-            sendEmail("dconner@bmc.com", "Contract Group Data Missing from JCR", bodyCopy.toString());
+            sendEmail(pactSafeContractVersionUpdateEmailGroups, "Contract Group Data Missing from JCR", bodyCopy.toString());
         }
 
         ParameterStore action = new ParameterStore();
@@ -147,14 +152,14 @@ public class PactSafeService {
         try {
             resolver = resolverFactory.getServiceResourceResolver(param);
         } catch (Exception e) {
-
+            logger.error("PactSafe updatePactSafeGroup ResourceResolverFactory Error: " + e.getMessage());
         }
 
         Session session=resolver.adaptTo(Session.class);
 
-        String serviceUrl="https://api.pactsafe.com/v1.1/groups/724?expand=contracts";
+        String serviceUrl=pactSafeContractsAPIURL+pactSafeContractGroupID+pactSafeContractsAPIURLParams;
         int timeout = 5000;
-        String encodedString="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_";
+        String encodedString=pactSafeAPIBearerToken;
         String charset = StandardCharsets.UTF_8.name();
 
         int status=0;
@@ -180,9 +185,9 @@ public class PactSafeService {
             try (Scanner scanner = new Scanner(response)) {
                 responseBody = scanner.useDelimiter("\\A").next();
             }
-            logger.trace("Response Body: " + responseBody);
+            //logger.trace("Response Body: " + responseBody);
             status = connection.getResponseCode();
-            logger.trace("Response Status: " + status);
+            logger.info("Response Status: " + status);
 
             if (status != 200 && status != 302) {
                 // Log errors if not a successful response. 200 & 302 responses are considered success.
@@ -201,7 +206,7 @@ public class PactSafeService {
                     logger.info("Error Response: " + responseBody);
                 }
             } catch (IOException e1) {
-                logger.error(e1.getMessage());
+                logger.error("updatePactSafeGroup IO Exception getting HTTP response code: "+e1.getMessage());
             }finally {
                 if (connection != null) {
                     connection.disconnect();
@@ -261,7 +266,7 @@ public class PactSafeService {
                 bodyCopy.append("updatePactSafeGroup API Error: Empty newContractsMap;<br/><br/>");
                 bodyCopy.append("Response Status: "+status+"<br/><br/>");
                 bodyCopy.append(responseBody);
-                sendEmail("dconner@bmc.com", "Contract Group Data Error", bodyCopy.toString());
+                sendEmail(pactSafeContractVersionUpdateEmailGroups, "Contract Group Data Error", bodyCopy.toString());
             } else {
                 // check see if any of the contracts in the group have changed.
                 if (!newContractsMap.equals(contractsMap)) {
@@ -286,7 +291,8 @@ public class PactSafeService {
                     StringBuilder bodyCopy = new StringBuilder("");
                     bodyCopy.append("Old Contract IDs: " + emailValues + "<br/>Old Contract Versions: " + emailVersions + "<br/><br/>");
                     bodyCopy.append("New Contract IDs: " + emailNewValues + "<br/>New Contact Versions: " + emailNewVersions);
-                    sendEmail("dconner@bmc.com", "Contract Group Data Change", bodyCopy.toString());
+                    sendEmail(pactSafeContractVersionUpdateEmailGroups, "Contract Group Data Change", bodyCopy.toString());
+
                 }
             }
 
@@ -307,6 +313,7 @@ public class PactSafeService {
         emailParams.put("fromAddress", "PactSafeServiceNoReply@bmc.com");
         emailParams.put("body", body);
         emailService.sendEmail(templatePath, emailParams, recipients);
+        logger.info("Email Sent to: "+emailAddresses+" - Subject: "+subject+" - Body: "+body);
     }
 
 

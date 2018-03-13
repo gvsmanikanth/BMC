@@ -13,14 +13,14 @@
         <!--/* WEB_2690 PactSafe Agreement fields addition --START */-->
         <sly data-sly-use.fieldSetModel="com.bmc.models.components.forms.FieldSetModel" />
         <sly data-sly-test="${fieldSetModel.isTrialForm}">
-                <div class="cmp cmp-options">
+                <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                         <div class="form-group checkbox">
                                 <label for="licenseAgreement1"></label>
                                 <ol id="licenseAgreement1_group">
                                         <li>
                                                 <input name="licenseAgreement1" id="licenseAgreement1" value="on" required="true" type="checkbox">
                                                 <label for="licenseAgreement1">
-                                                         ${fieldSetModel.pactSafeAgreementCopy @ i18n} <a href="https://www.google.com/" target="_blank">Trial Agreement</a>.
+                                                        ${fieldSetModel.pactSafeAgreementCopy @ i18n} <a href="https://www.google.com/" target="_blank">Trial Agreement</a>.
                                                         <!--/* ${class.myVar @ i18n} */-->
                                                 </label>
                                         </li>
