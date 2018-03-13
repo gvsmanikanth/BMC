@@ -95,6 +95,30 @@ $bodyClass = 'home homepage-e';
 include 'php-inc/svg.php';
 ?>
 
+<style>
+
+.embed-container {
+    position: relative;
+    padding-bottom: 100%; /* use 56.25% for 16/9 ratio */
+    overflow: hidden;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.embed-container #animation_container{
+	margin:auto;
+}
+
+</style>
+
  
 <div class="section-wrap" id="section0" >
 		<video id="myVideo" loop muted controls="false" data-autoplay>
@@ -113,8 +137,11 @@ include 'php-inc/svg.php';
                <p data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Eliminate the chasm between your on-premises data center and a cloud-based infrastructure. BMC helps companies bridge the gap to enable more innovation, agility, scalability, and cost savings. Our solutions provide answers about what to migrate, which clouds to use, how to manage cloud spend, how to ensure security, and how to optimize each step of your journey.</p>
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" >
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
+               <figure>
+				<object id="EdgeID1" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/multi_cloud_animation_3/Assets/multi_cloud_animation_3.html">
+				</object>
+                </figure>
             </div>
          </div>
       </div>
@@ -122,8 +149,11 @@ include 'php-inc/svg.php';
    <section class=" section-wrap" style="background-color: rgba(241, 241, 241, 0.52);">
       <div class="section-content py4" style="max-width: 1440px;">
          <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center">
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-right">
+               <figure>
+				<object id="EdgeID2" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/migration_animation_3/Assets/migration_animation_3.html">
+				</object>
+                </figure>
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 " style="padding-left:8rem;">
                <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Migration</h2>
@@ -166,18 +196,20 @@ include 'php-inc/svg.php';
                </ul>
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud visibility &gt;</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" >
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
+               <img src="edgeAnim/img/Visibility.png" alt="Mobile phone and app infographic">
             </div>
+           
          </div>
       </div>
    </section>
    <section class=" section-wrap" style="background-color: rgba(241, 241, 241, 0.52);">
       <div class="section-content py4" style="max-width: 1440px;">
          <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center">
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+               <img src="edgeAnim/img/cost.png" alt="Mobile phone and app infographic">
             </div>
+             
             <div class="flex-item col col-12 md-col-6 pxr1 " style="padding-left:8rem;">
                <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Cost</h2>
                <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
@@ -216,8 +248,11 @@ include 'php-inc/svg.php';
                </ul>
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn about cloud performance monitoring &gt;</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" >
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+           <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
+               <figure>
+				<object id="EdgeID3" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/cloud_guage_animation_2/Assets/cloud_guage_animation_4.html">
+				</object>
+                </figure>
             </div>
          </div>
       </div>
@@ -225,8 +260,8 @@ include 'php-inc/svg.php';
    <section class=" section-wrap" style="background-color: rgba(241, 241, 241, 0.52);">
       <div class="section-content py4" style="max-width: 1440px;">
          <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center">
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+               <img src="edgeAnim/img/automation.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 " style="padding-left:8rem;" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                <h2  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Automation</h2>
@@ -247,7 +282,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap" style="background-color: rgba(247, 247, 246, 0.52);" data-aos-anchor-placement="center-bottom">
+   <section class="section-wrap" style="background-color: rgba(247, 247, 246, 0.52);" data-aos-anchor-placement="center-bottom">
       <div class="section-content py4" style="max-width: 1440px;">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -266,9 +301,13 @@ include 'php-inc/svg.php';
                </ul>
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud security &gt;</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center">
-               <img src="http://localhost/bmc-dxp/front-end/Assets/dist/industry/Medical__industrypage_tab1-2x.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
+               <figure>
+				<object id="EdgeID4" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/Security_device_animation_2/Assets/Security_device_animation_1.html">
+				</object>
+                </figure>
             </div>
+           
          </div>
       </div>
    </section>

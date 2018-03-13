@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget xmlns="http://openajax.org/metadata" spec="1.0" name="multi_cloud_animation_3" version="1">
+
+<description type="text/html"><![CDATA[Widget Exported from Flash Professional]]></description>
+
+<category name="Flash Animation"/>
+<remarks>Compatible with: InDesign CC, Dreamweaver CC, Muse</remarks>
+<icon src="PosterImg_979.png" width="460" height="430"/>
+<require type="other" src="multi_cloud_animation_3.html"/>
+<require type="javascript" src="multi_cloud_animation_3.js"/>
+<require type="image" src="images/migration_animation_3_atlas_.png"/>
+<require type="image" src="images/Security_device_animation_1_atlas_.png"/>
+<require type="other" src="images/_notes/dwsync.xml"/>
+<require type="folder" src="images"/>
+<require type="folder" src="images/_notes"/>
+<content></content>
+
+<properties name="Properties">
+<property name="default-width" defaultValue="460" hidden="true"/>
+<property name="default-height" defaultValue="430" hidden="true"/>
+<property name="resizable" defaultValue="true" hidden="true"/>
+<property name="centering" defaultValue="" hidden="true"/>
+<property name="scaling" defaultValue="both" hidden="true"/>
+<property name="html-page" defaultValue="multi_cloud_animation_3.html" hidden="true"/>
+<property name="target-platform" defaultValue="htmlcanvas" hidden="true"/>
+<property name="created-in" defaultValue="Adobe Animate CC" hidden="true"/>
+</properties>
+
+</widget>
