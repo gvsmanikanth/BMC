@@ -3,7 +3,14 @@ $pageTitle = 'BMC Home';
 $bodyClass = 'home page-home';
 include 'php-inc/head.php';
 ?>
-
+<script>
+	var bmcMeta = {
+		"page": {
+			"productCategories": "Remedy",
+		},
+	};
+</script>
+	
 <!-- begin top content -->
 <!--
 <section class="topcontent no-top-padding" > : Add no-top-padding class to remove top padding.

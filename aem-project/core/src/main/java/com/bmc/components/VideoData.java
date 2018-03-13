@@ -37,7 +37,6 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     public String getVideoPath() { return videoPath; }
     public boolean getUseModal() { return useModal; }
     public boolean getIsYouTube() { return (type == VideoType.YouTube); }
-    public boolean getIsTwistage() { return (type == VideoType.Twistage); }
     public boolean getIsDam() { return (type == VideoType.Dam); }
     public String getTypeName() { return type.toString(); }
     public String getVideoId() { return videoId; }
@@ -81,9 +80,6 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
                 ValueMap map = resource.getValueMap();
                 overlayText = map.get("overlayText", "");
                 overlayUrl = StringHelper.resolveHref(map.get("overlayUrl", "")).orElse("");
-                isValid = !videoId.isEmpty();
-                break;
-            case Twistage:
                 isValid = !videoId.isEmpty();
                 break;
             case Dam:
