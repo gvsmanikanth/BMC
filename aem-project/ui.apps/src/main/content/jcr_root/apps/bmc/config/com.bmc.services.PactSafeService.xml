@@ -3,7 +3,8 @@
 		  jcr:primaryType="sling:OsgiConfig"
 
 		  pactSafeAgreementLink="http://www.google.com"
-		  pactSafeAgreementCopy="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+		  pactSafeAgreementLinkText="Online Trial Agreement"
+		  pactSafeAgreementCopy="By checking this box, I agree to be bound by the terms of [[link]]."
 
 		  pactSafeContractsAPIURL="https://api.pactsafe.com/v1.1/groups/"
 		  pactSafeContractsAPIURLParams="?expand=contracts"
@@ -15,8 +16,10 @@
 
 		  pactSafeAPIBearerToken="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_"
 
-		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com"
-		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com"
+		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
+		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
+
+		  pactSafeFailureTest="submit"
 
 />
 

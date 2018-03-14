@@ -21,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -46,11 +47,15 @@ public class PactSafeService {
 
 
     public String getPactSafeAgreementCopy() {
-        logger.trace("Returned pactSafeAgreementCopy: "+pactSafeAgreementCopy);
-        return pactSafeAgreementCopy;
+        String finalCopy="";
+        String agreementLink="<a href=\""+pactSafeAgreementLink+"\" target=\"_blank\">"+pactSafeAgreementLinkText+"</a>";
+        finalCopy=pactSafeAgreementCopy.replace("[[link]]",agreementLink);
+        logger.trace("Returned pactSafeAgreementCopy: "+finalCopy);
+        return finalCopy;
     }
 
     private String pactSafeAgreementLink;
+    private String pactSafeAgreementLinkText;
     private String pactSafeAgreementCopy;
     private String pactSafeContractsAPIURL;
     private String pactSafeContractsAPIURLParams;
@@ -66,6 +71,7 @@ public class PactSafeService {
     public void activate(Map<String, String> config) {
         pactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
         pactSafeAgreementLink = PropertiesUtil.toString(config.get("pactSafeAgreementLink"), "");
+        pactSafeAgreementLinkText = PropertiesUtil.toString(config.get("pactSafeAgreementLinkText"), "");
         pactSafeAgreementCopy = PropertiesUtil.toString(config.get("pactSafeAgreementCopy"), "");
         pactSafeContractsAPIURL = PropertiesUtil.toString(config.get("pactSafeContractsAPIURL"), "");
         pactSafeContractsAPIURLParams = PropertiesUtil.toString(config.get("pactSafeContractsAPIURLParams"), "");
@@ -94,41 +100,65 @@ public class PactSafeService {
 
         Session session=resolver.adaptTo(Session.class);
 
-        Property contractIDsProperty=null;
-        Property contractVersionsProperty=null;
-        Value[] contractIDValues=null;
-        Value[] contractVersions=null;
-        Map<String, String> contractsMap=new HashMap<>();
-        List<String> versions=new ArrayList<>();
-        try {
-            contractIDsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractIDs");
-            contractVersionsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractVersions");
-            if(contractIDsProperty.isMultiple()) {
-                contractIDValues = contractIDsProperty.getValues();
-                contractVersions = contractVersionsProperty.getValues();
-            } else {
-                contractIDValues = new Value[1];
-                contractVersions = new Value[1];
-                contractIDValues[0] = contractIDsProperty.getValue();
-                contractVersions[0] = contractVersionsProperty.getValue();
+//        Property contractIDsProperty=null;
+//        Property contractVersionsProperty=null;
+//        Value[] contractIDValues=null;
+//        Value[] contractVersions=null;
+//        Map<String, String> contractsMap=new HashMap<>();
+//        List<String> versions=new ArrayList<>();
+//        try {
+//            contractIDsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractIDs");
+//            contractVersionsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractVersions");
+//            if(contractIDsProperty.isMultiple()) {
+//                contractIDValues = contractIDsProperty.getValues();
+//                contractVersions = contractVersionsProperty.getValues();
+//            } else {
+//                contractIDValues = new Value[1];
+//                contractVersions = new Value[1];
+//                contractIDValues[0] = contractIDsProperty.getValue();
+//                contractVersions[0] = contractVersionsProperty.getValue();
+//            }
+//            for(int n=0;n<contractIDValues.length;n++) {
+//                contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
+//                versions.add(contractVersions[n].getString());
+//            }
+//        } catch (RepositoryException e) {
+//            logger.error("PactSafe submitAgreement Repository Exception Error: " + e.getMessage());
+//        }
+
+
+        // try to load the contracts map from the JCR
+        Map<String, String> contractsMap=readContractsMap(session);
+
+        // check to see if the contracts map is empty, or whether any of the fields in it are empty strings
+        Boolean validContractsMap=true;
+        if(contractsMap.isEmpty()) {
+            validContractsMap = false;
+        }else{
+            for (Map.Entry<String, String> entry : contractsMap.entrySet()) {
+                if (entry.getKey().trim().isEmpty() || entry.getValue().trim().isEmpty()) {
+                    validContractsMap = false;
+                }
             }
-            for(int n=0;n<contractIDValues.length;n++) {
-                contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
-                versions.add(contractVersions[n].getString());
-            }
-        } catch (RepositoryException e) {
-            logger.error("PactSafe submitAgreement Repository Exception Error: " + e.getMessage());
         }
 
-        if(contractsMap.isEmpty()){
-            // stored contractsMap is empty, better call updatePactSafeGroup()
+
+        if(!validContractsMap){
+            // stored contractsMap is empty or otherwise invalid, so call updatePactSafeGroup() and try to populate
             updatePactSafeGroup();
             // and send alert email that it was empty
             logger.error("submitAgreement data error: Empty contractsMap. Repopulating.");
             StringBuilder bodyCopy=new StringBuilder("");
             bodyCopy.append("Contract IDs and Versions missing from JCR. Attempting repopulation<br/><br/>");
             sendEmail(pactSafeContractVersionUpdateEmailGroups, "Contract Group Data Missing from JCR", bodyCopy.toString());
+            contractsMap=readContractsMap(session);
         }
+
+        List<String> versions=new ArrayList<>();
+        for (Map.Entry<String, String> entry : contractsMap.entrySet()) {
+            versions.add(entry.getValue().toString());
+        }
+
 
         ParameterStore action = new ParameterStore();
         action.setSignerId(emailAddress);
@@ -137,10 +167,32 @@ public class PactSafeService {
         try {
             site.agreed(action);
         } catch (Exception e) {
-            logger.error("PactSafe error: " + e.getMessage(), e);
-            pactSafeResponse=e.getMessage().toString();
+            logger.error("PactSafe submitAgreement Error: " + e.getMessage());
+            pactSafeResponse="PactSafe submitAgreement Error: "+e.getMessage().toString();
+        }
+        if(!pactSafeResponse.equalsIgnoreCase("Success")){
+            // first try at the service failed. Try once more.
+            try {
+                TimeUnit.MILLISECONDS.sleep(1000);
+            } catch (InterruptedException e) {
+                logger.error("PactSafe submit retry delay error: "+ e.getMessage());
+            }
+            try {
+                site.agreed(action);
+            } catch (Exception e) {
+                logger.error("PactSafe submitAgreement Error (Second attempt): " + e.getMessage());
+                pactSafeResponse="PactSafe submitAgreement Error (Second attempt): "+e.getMessage().toString();
+            }
         }
 
+        if (!pactSafeResponse.equalsIgnoreCase("Success")){
+            StringBuilder bodyCopy = new StringBuilder("");
+            bodyCopy.append("<h2>PactSafe Trial Agreement Submission Failure</h2><hr/>The following failure occurred on "+new Date().toString()+" while attempting to submit a Trial Agreement on bahalf of "+emailAddress+" for versions "+versions.toString()+";<br/>");
+            bodyCopy.append("<strong>"+pactSafeResponse+"</strong>");
+            sendEmail(pactSafeServiceUnavailableEmailGroups, "PactSafe Agreement Submission Error", bodyCopy.toString());
+        } else {
+            logger.info("Successful Submit on behalf of "+emailAddress+" at "+new Date().toString());
+        }
         return pactSafeResponse;
     }
 
@@ -187,17 +239,17 @@ public class PactSafeService {
             }
             //logger.trace("Response Body: " + responseBody);
             status = connection.getResponseCode();
-            logger.info("Response Status: " + status);
+            logger.trace("updatePactSafeGroup API Response Status: " + status);
 
             if (status != 200 && status != 302) {
                 // Log errors if not a successful response. 200 & 302 responses are considered success.
-                logger.error("group data failed to read from pactsafe server. URL: " + serviceUrl);
+                logger.error("PactSafe group data request failed with a "+status+" response from URL: " + serviceUrl);
             }
         }catch(Exception e){
             logger.error("updatePactSafeGroup Error: "+e.getMessage());
             try {
                 status = connection.getResponseCode();
-                logger.trace("Response Status: " + status);
+                logger.trace("updatePactSafeGroup API Response Status (2nd attempt): " + status);
                 InputStream error = connection.getErrorStream();
                 if (error != null) {
                     try (Scanner scanner = new Scanner(error)) {
@@ -292,15 +344,11 @@ public class PactSafeService {
                     bodyCopy.append("Old Contract IDs: " + emailValues + "<br/>Old Contract Versions: " + emailVersions + "<br/><br/>");
                     bodyCopy.append("New Contract IDs: " + emailNewValues + "<br/>New Contact Versions: " + emailNewVersions);
                     sendEmail(pactSafeContractVersionUpdateEmailGroups, "Contract Group Data Change", bodyCopy.toString());
-
                 }
             }
-
-
         } catch (RepositoryException e) {
             logger.error("updatePactSafeGroup JCR Error: "+e.getMessage());e.printStackTrace();
         }
-
         return responseBody;
     }
 
@@ -316,5 +364,31 @@ public class PactSafeService {
         logger.info("Email Sent to: "+emailAddresses+" - Subject: "+subject+" - Body: "+body);
     }
 
+    private Map<String, String> readContractsMap(Session session){
+        Property contractIDsProperty=null;
+        Property contractVersionsProperty=null;
+        Value[] contractIDValues=null;
+        Value[] contractVersions=null;
+        Map<String, String> contractsMap=new HashMap<>();
+        try {
+            contractIDsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractIDs");
+            contractVersionsProperty = session.getNode("/etc/bmc/persistent-data-store/pactsafe/contracts").getProperty("contractVersions");
+            if(contractIDsProperty.isMultiple()) {
+                contractIDValues = contractIDsProperty.getValues();
+                contractVersions = contractVersionsProperty.getValues();
+            } else {
+                contractIDValues = new Value[1];
+                contractVersions = new Value[1];
+                contractIDValues[0] = contractIDsProperty.getValue();
+                contractVersions[0] = contractVersionsProperty.getValue();
+            }
+            for(int n=0;n<contractIDValues.length;n++) {
+                contractsMap.put(contractIDValues[n].getString(), contractVersions[n].getString());
+            }
+        } catch (RepositoryException e) {
+            logger.error("PactSafe submitAgreement Repository Exception Error: " + e.getMessage());
+        }
+        return(contractsMap);
 
+    }
 }

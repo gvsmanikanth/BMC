@@ -20,16 +20,14 @@
                                         <li>
                                                 <input name="licenseAgreement1" id="licenseAgreement1" value="on" required="true" type="checkbox">
                                                 <label for="licenseAgreement1">
-                                                        ${fieldSetModel.pactSafeAgreementCopy @ i18n} <a href="https://www.google.com/" target="_blank">Trial Agreement</a>.
+                                                        <!--/* ${fieldSetModel.pactSafeAgreementCopy @ i18n} */-->
+                                                        ${fieldSetModel.pactSafeAgreementCopy @context='unsafe'}
                                                         <!--/* ${class.myVar @ i18n} */-->
                                                 </label>
                                         </li>
-
                                 </ol>
                         </div>
                 </div>
-
         </sly>
-
         <!--/* WEB_2690 PactSafe Agreement fields addition --END */-->
 </fieldset>

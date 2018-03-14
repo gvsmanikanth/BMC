@@ -23,44 +23,42 @@ import java.util.Map;
 
 @Property(
         label = "Cron expression defining when this Scheduled Service will run",
-        description = "[every 5 minutes = 10 * * * * ?], [12:01am daily = 0 1 0 ? * *]",
+        description = "[every 5 minutes = 10 * * * * ?], [12:01am daily = 0 1 0 ? * *] (scheduler.expression)",
         name = "scheduler.expression",
-        value = "5 * * * * ?"
-
+        value = "0 0 * * * ?"
 )
-       
+
 @Service
 public class PactSafeScheduledService implements Runnable {
 
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
- 
+
     private final Logger log = LoggerFactory.getLogger(PactSafeScheduledService.class);
-    
+
     @Reference
     private PactSafeService pactSafeService;
-    
+
     @Override
     public void run() {
-       try {
+        try {
             log.info("Started PactSafeScheduledService");
             pactSafeService.updatePactSafeGroup();
-            
+
         } catch (Exception e) {
-        	log.error("PactSafeScheduledService Error: "+e.getMessage());
+            log.error("PactSafeScheduledService Error: "+e.getMessage());
         } finally {
-        	log.info("Completed PactSafeScheduledService");
+            log.info("Completed PactSafeScheduledService");
         }
     }
- 
+
     @Activate
     protected void activate(final ComponentContext componentContext) throws Exception {
         final Map<String, String> properties = (Map<String, String>) componentContext.getProperties();
-        
     }
- 
+
     @Deactivate
     protected void deactivate(ComponentContext ctx) {
- 
+
     }
 }
