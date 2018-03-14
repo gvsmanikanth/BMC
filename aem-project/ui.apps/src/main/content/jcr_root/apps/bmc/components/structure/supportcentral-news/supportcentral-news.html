@@ -2,7 +2,7 @@
 <section data-sly-use.modal="com.bmc.models.components.supportcentral.SupportNewsModel" class="layout-full-bleed">
 	<div class="layout-inner-wrap">
 		<div class="ticker js-ticker">
-			<strong>${properties.headerText}</strong>
+			<strong>${modal.headerText}</strong>
 			<ul class="js-frame">
             <sly data-sly-list="${modal.list}">            
       			<li class="js-item">
@@ -10,7 +10,7 @@
                 </li>
             </sly>
 			</ul>
-			<strong><a href="${properties.communitiesLink}" target="_blank" >View All News ›</a></strong>
+			<strong><a href="${modal.communitiesLink}" target="_blank" >View All News ›</a></strong>
 		</div>
 	</div>
 </section>
