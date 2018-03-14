@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.jcr.Node;
 import javax.jcr.Session;
+import org.apache.sling.models.annotations.Default;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
@@ -36,7 +37,15 @@ public class SupportNewsModel {
 	    @Inject @Named("supportnewsdata")
 	    @Optional
 	    private List<Resource> supportNews;
-
+	    
+	    @Inject 
+	    @Optional @Named("headerText")@Default(values="BMC Support News")
+	    private String headerText;
+	    
+	    @Inject 
+	    @Optional @Named("communitiesLink")@Default(values="https://communities.bmc.com/community/support/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bblogpost%5D&amp;sortKey=contentstatus%5Bpublished%5D~creationDateDesc&amp;sortOrder=0")
+	    private String communitiesLink;
+	    
 	    private ArrayList<SupportNewsTickerItem> supportNewsTickerItemList = new ArrayList<SupportNewsTickerItem>();
 	    
 	    
@@ -77,4 +86,21 @@ public class SupportNewsModel {
 	    	        return supportNewsTickerItemList;
 	    }
 
+	    /*
+	     * Method which returns the value of Header text to the sightly UI.
+	     * 	     
+	     */
+	    public String getHeaderText()
+	    {
+	    	return headerText;
+	    }
+	    
+	    /*
+	     * Method which returns the value of Communities link to the sightly UI.
+	     * 	     
+	     */
+	    public String getCommunitiesLink()
+	    {
+	    	return communitiesLink;
+	    }
 }
