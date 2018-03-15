@@ -1,96 +1,8 @@
-
 <?php
 $pageTitle = 'BMC Home';
-$bodyClass = 'home homepage-e';
+$bodyClass = 'home page-homepage page-homepage-c';
+include 'php-inc/head.php';
 ?>
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-	<title><?php echo $pageTitle; ?></title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="robots" content="index, follow">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Connective DX">
-	<meta name="apple-mobile-web-app-title" content="BMC Software">
-
-	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<link rel="stylesheet" href="http://localhost/bmc-dxp/front-end/aos.css" />
-	<script src="Assets/dist/head.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
-
-	<link rel="stylesheet" media="all" href="Assets/dist/style.css">
-
-	<!-- For everything else -->
-	<link rel="shortcut icon" href="Assets/dist/favicon.png">
-	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="Assets/dist/touch-icon.png">
-	<?php
-	if (isset($enableDTM) && $enableDTM == true) {
-		?>
-		<!--dtm library-->
-		<script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
-		<!--sample bmc meta from view-source:http://dev.www.bmc.com/it-solutions/cmsdev_offering.html-->
-		<script>
-			var bmcMeta= {
-				"page":
-					{
-						"contentId":"303554591",
-						"contentType":"Offering",
-						"longName":"en-us:it-solutions:cmsdev_offering",
-						"cultureCode":"",
-						"productCategories":"",
-						"productLineCategories":"",
-						"errorCode":"",
-						"isPurl":"false",
-						"modalOpen":
-							{
-								"evidon": false,
-								"contact": false,
-								"content": false,
-								"supportAlerts": false,
-								"salesChat": false,
-								"qualtrics": false
-							},
-							"GeoIP":
-									{
-										"GeoIPRedirectExcluded": true,
-										"GeoIPLanguageCode": "en-US"
-									},
-					},
-					"site":
-					{
-						"cultureCode":"en-us",
-						"environment":"dev."
-					},
-					"user":
-					{
-						"sVi":""
-					}
-			}
-		</script>
-		<?php
-   	}
-   	?>
-
-</head>
-
-<body class="<?php echo $bodyClass; ?>">
-<div class="main-content" >  
-	<section class="layout-wrapper" id="fullpage">
-<?php
-	include_once 'engage-prompt.php';
-	// include_once 'alert-country-prompt.php';
-	include_once 'php-inc/header.php';?>
-	<div class="section-wrap fp-auto-height">
-		<?php
-		include_once 'php-inc/navigation-primary.php';
-		?>
-	</div>
 <?php
 include 'php-inc/svg.php';
 ?>
@@ -98,37 +10,52 @@ include 'php-inc/svg.php';
 <style>
 
 .embed-container {
-    position: relative;
-    padding-bottom: 100%; /* use 56.25% for 16/9 ratio */
-    overflow: hidden;
-}
+    position: relative; 
+    padding-bottom: 100%; /* use 56.25% for 16/9 ratio */ */
+    overflow: hidden; 
+ } 
 
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+ .embed-container iframe, 
+ .embed-container object, 
+ .embed-container embed { 
+     position: absolute; 
+     top: 0;
+     left: 0; 
+     width: 100%; 
+     height: 100%; 
+} 
 
-.embed-container #animation_container{
-	margin:auto;
-}
+ .embed-container #animation_container{ 
+ 	margin:auto; 
+ } 
 
 </style>
-
  
-<div class="section-wrap" id="section0" >
-		<video id="myVideo" loop muted controls="false" data-autoplay>
-			<source src="http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4," type="video/mp4">
-			<source src="http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm" type="video/webm">
-		</video>
-		<div class="layer">
-			<h1>fullPage.js fullscreen videos</h1>
-		</div>
+<section class="section-wrap-header" style="position:relative;">
+	<div class="section video-hero-header" style="max-height:80%; height:80%; position:absolute;width:100%;" >
+	   <div class="layout-inner-wrap flex-col" >
+	      <div class="hero-image xs-only"></div>
+	      <div class="hero-image video xs-max-hide">
+	         <div class="vidbg-box" style="width: 100%; height: 100%" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+	      </div>
+	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right" style="display:absolute" >
+	         <strong class="ha mb2" style="width:40%;font-size: 66px; line-height: 81px;font-weight: 300;">All Your Clouds Now <span style="color:#3cb6ce" >Simplified</span></strong>
+	         <div class="h3" style="width:30%;font-size: 24px; line-height: 41px;font-weight: 400;color: #fff;font-style: italic; padding-bottom:2rem">BMC multi-cloud management solution make all clouds better.</div>
+	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" style="border-radius: 0;" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
+	         Watch the video >
+	         </a>
+	      </div>
+	   </div>
+	   
 	</div>
+	<div class="py2" style="position: absolute; bottom:0px; width:100%; max-height:20%; height:20%;">
+		<div class=" flex-col" style="padding: 4% 10%;">
+      	<div class="section-content text-center">
+         	<h2 style="color:black">BMC is a global leader in multi-cloud software solutions</h2>
+      	</div>
+      	</div>
+   </div>
+</section>    
    <section class="section-wrap" style="background-color: rgba(247, 247, 246, 0.52);">
       <div class="section-content py4" style="max-width: 1440px;">
          <div class="md-flex full-bleed-two-column">
@@ -313,23 +240,7 @@ include 'php-inc/svg.php';
    </section>
 
 
-
-		<div class="section-wrap layout-footer fp-auto-height">
-		<?php include_once 'php-inc/footer.php'; ?>
-		</div>
-		<?php include 'php-inc/modal-contact.php'; ?>
-		<?php // include 'modal-country.php'; ?>
-	</section><!-- / layout-wrapper -->
-
-	<script src="Assets/dist/main.js"></script>
-
 <?php
-	if (isset($enableDTM) && $enableDTM == true) {
-   		//end dtm script
-		echo '<script type="text/javascript">_satellite.pageBottom();</script>';
-		}
+include 'php-inc/foot.php';
 ?>
-
-</body>
-</html>
 
