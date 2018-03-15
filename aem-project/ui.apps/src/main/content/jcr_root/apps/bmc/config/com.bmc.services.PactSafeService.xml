@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
 		  jcr:primaryType="sling:OsgiConfig"
 
-		  pactSafeAgreementLink="http://www.google.com"
+		  pactSafeAgreementLink="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590"
 		  pactSafeAgreementLinkText="Online Trial Agreement"
 		  pactSafeAgreementCopy="By checking this box, I agree to be bound by the terms of [[link]]."
 
@@ -18,8 +18,6 @@
 
 		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
 		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
-
-		  pactSafeFailureTest="submit"
 
 />
 

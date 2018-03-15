@@ -358,7 +358,7 @@ public class PactSafeService {
         String[] recipients = emailAddresses.split(",");
         Map<String, String> emailParams = new HashMap<>();
         emailParams.put("subject", subject);
-        emailParams.put("fromAddress", "PactSafeServiceNoReply@bmc.com");
+        emailParams.put("fromAddress", "webapp-notification-noreply@bmc.com");
         emailParams.put("body", body);
         emailService.sendEmail(templatePath, emailParams, recipients);
         logger.info("Email Sent to: "+emailAddresses+" - Subject: "+subject+" - Body: "+body);
