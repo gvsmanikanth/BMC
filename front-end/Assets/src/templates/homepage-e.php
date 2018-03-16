@@ -68,7 +68,7 @@ include 'php-inc/svg.php';
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
                <figure>
-				<object id="EdgeID1" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/multi_cloud_animation_3/Assets/multi_cloud_animation_3.html">
+				<object id="EdgeID1" type="text/html" width="480" height="450" data-dw-widget="Edge" data="edgeAnim/multi_cloud_animation_3/Assets/multi_cloud_animation_3.html">
 				</object>
                 </figure>
             </div>
@@ -80,7 +80,7 @@ include 'php-inc/svg.php';
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-right">
                <figure>
-				<object id="EdgeID2" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/migration_animation_3/Assets/migration_animation_3.html">
+				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/migration_animation_3/Assets/migration_animation_3.html">
 				</object>
                 </figure>
             </div>
@@ -179,7 +179,7 @@ include 'php-inc/svg.php';
             </div>
            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
                <figure>
-				<object id="EdgeID3" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/cloud_guage_animation_2/Assets/cloud_guage_animation_4.html">
+				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/cloud_guage_animation_2/Assets/cloud_guage_animation_4.html">
 				</object>
                 </figure>
             </div>
@@ -235,7 +235,7 @@ include 'php-inc/svg.php';
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
                <figure>
-				<object id="EdgeID4" type="text/html" width="100%" height="auto" data-dw-widget="Edge" data="edgeAnim/Security_device_animation_2/Assets/Security_device_animation_1.html">
+				<object id="EdgeID4" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/Security_device_animation_2/Assets/Security_device_animation_1.html">
 				</object>
                 </figure>
             </div>
@@ -248,13 +248,13 @@ include 'php-inc/svg.php';
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg2.png" alt="logo"></a></li>
-                    <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg1.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="edgeAnim/img/logoimg2.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="edgeAnim/img/logoimg1.png" alt="logo"></a></li>
                 </ul>
             </div>
         </div>
     </div>
-	<div class="Customer">
+	<div class="Customer" style="background: url(edgeAnim/img/bagroundimg2.jpg)no-repeat center center;">
         <div class="container">
             <div class="customer_sec">
                 <div class="customer_lt">
@@ -269,25 +269,23 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/img_02.png" alt="img"></span></li>
+                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
-                
                 <div class="clear"></div>
-               
             </div>
         </div>
         <div class="logos_sec">
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li  class="logo_active"><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg3.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg4.png" alt="logo"></a></li>
-                         <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg7.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg5.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="http://virsitil.com/bmcsoftware/bmc-animation/images/logoimg6.png" alt="logo"></a></li>
+                        <li  class="logo_active"><a href="#"><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
+                        <li><a href="#"><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
+                         <li><a href="#"><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
+                        <li><a href="#"><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
+                        <li><a href="#"><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
                     </ul>
                 </div>
             </div>
@@ -305,7 +303,8 @@ include 'php-inc/svg.php';
             </div>
         </div>
     </div>
-
+	
+	 
 
 <?php
 include 'php-inc/foot.php';
