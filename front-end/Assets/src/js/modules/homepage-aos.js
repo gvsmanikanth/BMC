@@ -35,7 +35,7 @@ $(document).ready(function () {
 	
     function defer(method) {
 	    if (window.jQuery) {
-	        method();
+	        //method();
 	    } else {
 	        setTimeout(function() { defer(method) }, 50);
 	    }
