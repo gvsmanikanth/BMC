@@ -6,6 +6,10 @@
 .page-homepage-e {
 	body{ background-color: white;
 }
+.section-content{
+    margin-left: 70px;
+    margin-right: 70px;
+}
 .aos-all {
 	width: 1000px;
 	max-width: 98%;
@@ -204,10 +208,6 @@ img {
 .section-wrap.section1 {
 	h2 {
 		padding: 0 0 50px;
-		width: 80%;
-	}
-	p {
-		width: 87.8%;
 	}
 }
 .section-wrap.section2 {
@@ -223,18 +223,7 @@ ol {
 ul {
 	list-style: none;
 }
-.logos_blk {
-	ul {
-		li {
-			display: inline-block;
-			vertical-align: middle;
-			min-height: 225px;
-			padding: 54px 90px;
-			margin: 0 14px;
-			position: relative;
-		}
-	}
-}
+
 .stories {
 	.stories_blk {
 		text-align: center;

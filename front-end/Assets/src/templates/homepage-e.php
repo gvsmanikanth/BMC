@@ -256,9 +256,89 @@ include 'php-inc/svg.php';
     </div>
 	<div class="Customer" style="background: url(edgeAnim/img/bagroundimg2.jpg)no-repeat center center;">
         <div class="container">
-            <div class="customer_sec">
+            <div class="customer_sec fade">
                 <div class="customer_lt">
                  <h2>Industry Related Customer Success Story here. Slider auto-plays or on click.</h2>
+                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
+                    <div class="icon">
+                        <ul>
+                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customer_rgt">
+                    <ul>
+                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                      
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div> 
+			<div class="customer_sec fade"> <!--2-->
+                <div class="customer_lt">
+                 <h2>AAA</h2>
+                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
+                    <div class="icon">
+                        <ul>
+                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customer_rgt">
+                    <ul>
+                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                      
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div> 
+			<div class="customer_sec fade"> <!--3-->
+                <div class="customer_lt">
+                 <h2>BBB</h2>
+                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
+                    <div class="icon">
+                        <ul>
+                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customer_rgt">
+                    <ul>
+                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                      
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>		
+			<div class="customer_sec fade"> <!--4-->
+                <div class="customer_lt">
+                 <h2>CCC</h2>
+                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
+                    <div class="icon">
+                        <ul>
+                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="customer_rgt">
+                    <ul>
+                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                      
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+			<div class="customer_sec fade"> <!--5-->
+                <div class="customer_lt">
+                 <h2>DDD</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
                         <ul>
@@ -281,11 +361,11 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li  class="logo_active"><a href="#"><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
-                         <li><a href="#"><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
-                        <li><a href="#"><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
+                        <li class="imgDesp active" onclick="currentSlide(1)"><a><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
+                        <li class="imgDesp" onclick="currentSlide(2)"><a><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
+                        <li class="imgDesp" onclick="currentSlide(3)"><a><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp" onclick="currentSlide(4)"><a><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
+                        <li class="imgDesp" onclick="currentSlide(5)"><a><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
                     </ul>
                 </div>
             </div>
@@ -303,7 +383,35 @@ include 'php-inc/svg.php';
             </div>
         </div>
     </div>
-	
+
+<script>
+var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("customer_sec");
+	  var dots = document.getElementsByClassName("imgDesp");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	}
+	</script>
 	 
 
 <?php
