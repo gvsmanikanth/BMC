@@ -3,8 +3,6 @@ $pageTitle = 'BMC Home';
 $bodyClass = 'company page-about-us resource-hub';
 include 'php-inc/head.php';
 ?>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <script>
  //bmcFilterConfig --> Defines filter page configuration (This object is Static)
 var bmcFilterConfig = {

@@ -86,8 +86,8 @@
 		&:not(#foo) {
 			.decorator-select {
 				&:after {
-					content: '\f078';
-					font: normal normal normal 17px/1 FontAwesome;
+					@include icon();
+					content: '\e601';
 					color: #fe7e42;
 					top: 3px;
 					width: 26px;
