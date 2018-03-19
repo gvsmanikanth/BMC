@@ -35,8 +35,8 @@
 
                             <bullets jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-									fieldDescription="Enter one statement per bullet."
                                     composite="{Boolean}true"
+									fieldDescription="Enter one statement per bullet."
                                     fieldLabel="Description Bullets">
                                 <field
                                         jcr:primaryType="nt:unstructured"
