@@ -135,11 +135,12 @@
 					vertical-align: middle;
 					--min-height: 225px;
 					padding: 54px 90px;
-					margin: 0 14px;
+					--margin: 0 14px;
+				    margin-bottom: 0em;
 					position: relative;
 					cursor:pointer;
 					&:hover {
-						background: #fe5000;
+						background: #fe5000a3;
 					}
 					a {
 						display: inline-block;
