@@ -107,7 +107,7 @@ include 'php-inc/svg.php';
       </div>
    </section>
    <section class=" section-wrap section3">
-      <div class="section-content py4"
+      <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Cost</h2>
@@ -254,7 +254,7 @@ include 'php-inc/svg.php';
             </div>
         </div>
     </div>
-	<div class="Customer" style="background: url(edgeAnim/img/bagroundimg2.jpg)no-repeat center center;">
+	<div class="Customer" style="background: url(edgeAnim/img/bagroundimg2.jpg)no-repeat center center;background-size: cover;">
         <div class="container">
             <div class="customer_sec fade">
                 <div class="customer_lt">

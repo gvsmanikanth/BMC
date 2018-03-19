@@ -4,11 +4,20 @@
 /**********************************Customers*************************************/
 /**********************************************Stories***********************************************************************/
 .page-homepage-e {
-	body{ background-color: white;
+	body{ background-color: white; 
 }
 .section-content{
-    margin-left: 70px;
-    margin-right: 70px;
+	@include media(breakpointMedium){
+		margin-left: 70px;
+		margin-right: 70px;
+	}
+	@include media(breakpointLarge){
+		margin-left: 70px;
+		margin-right: 70px;
+	}
+	margin-left: 25px;
+	margin-right: 25px;
+    
 }
 .aos-all {
 	width: 1000px;
@@ -42,7 +51,13 @@
 		letter-spacing: 0.5px;
 	}
 	.partners_sec {
-		padding: 40px 0 88px 61px;
+		@include media(breakpointMedium){
+			padding:0;
+		}
+		@include media(breakpointLarge){
+			padding: 40px 0 88px 61px;
+		}
+		padding: 0;
 		text-align: center;
 		h2 {
 			padding: 61px 0 64px 0;
@@ -82,22 +97,40 @@ img {
 		width: 100%;
 		.layout-inner-wrap {
 			.ha.mb2 {
-				width: 35%;
-				font-size: 55px;
-				line-height: 65px;
-				font-weight: 300;
+				@include media(breakpointMedium){
+					width: 70%; 
+					font-size: 55px;
+					line-height: 65px;
+					font-weight: 300;
+				}
+				@include media(breakpointLarge){
+					width: 35%; 
+					font-size: 55px;
+					line-height: 65px;
+					font-weight: 300;
+				}
+				width: 100%; 
+				font-size: 34px;
+				line-height: 38px;
 			}
 			span {
 				color: #3cb6ce;
 			}
 			.h3 {
-				width: 30%;
+				width: 100%;
 				font-size: 24px;
 				line-height: 41px;
 				font-weight: 400;
 				color: #fff;
 				font-style: italic;
 				padding-bottom: 2rem;
+				@include media(breakpointMedium){
+					width: 60%; 
+				}
+				@include media(breakpointLarge){
+					width: 30%;
+				}
+				
 			}
 			a {
 				border-radius: 0;
@@ -105,7 +138,13 @@ img {
 			display: absolute;
 		}
 		.hero-content {
-			padding: 2rem 0;
+			@include media(breakpointMedium){
+				padding: 12rem 0;
+			}
+			@include media(breakpointLarge){
+				padding: 2rem 0;
+			}
+			padding: 4rem 0;
 		}
 	}
 	.vidbg-box {
@@ -123,12 +162,18 @@ img {
 		}
 	}
 	h2.heading {
-		font-size: 40px;
+		font-size: 18px;
 		font-weight: 300;
 		letter-spacing: 0.5px;
 		--padding: 0px 0 20px 0;
 		color: #000000;
 		text-align: center;
+		@include media(breakpointMedium){
+			font-size: 40px;
+		}
+		@include media(breakpointLarge){
+			font-size: 40px;
+		}
 	}
 }
 .section-wrap {
@@ -196,9 +241,15 @@ img {
 		font-family: 'Open Sans', sans-serif;
 	}
 	a {
+		@include media(breakpointMedium){
+			font-size: 24px;
+		}
+		@include media(breakpointLarge){
+			font-size: 24px;
+		}
 		display: inline-block;
 		color: #3cb6ce;
-		font-size: 24px;
+		font-size: 20px;
 		line-height: 26px;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
@@ -279,10 +330,39 @@ ul {
 	}
 }
 object{
-    height: 450px;
+	@include media(breakpointMedium){
+		height: 450px;
+	}
+	@include media(breakpointLarge){
+		height: 450px;
+	}
+    height: 200px;
     max-width: 100%;
 }
+
+@media screen and (max-width: 1023px) {
+	.full-bleed-two-column,
+	.section-content {
+	    display: flex;
+		flex-direction: column;
+			.flex-item.aos-init{
+				order:1; 
+			}
+			.flex-item{
+				order:2;
+			}
+	}
+}
+	
+
+
+
 } 
+
+
+
+
+
 
 
 
@@ -323,4 +403,3 @@ body{
 	#section0{
 		overflow: hidden;
 	}
-
