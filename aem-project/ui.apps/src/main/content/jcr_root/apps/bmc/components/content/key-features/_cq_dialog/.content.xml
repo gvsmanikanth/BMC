@@ -25,6 +25,7 @@
                                     fieldLabel="Heading"
                                     fieldDescription="Use sentence case."
                                     name="./headerTitle"/>
+									
                             <headerSubTitle
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
