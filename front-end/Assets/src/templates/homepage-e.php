@@ -36,7 +36,8 @@ include 'php-inc/svg.php';
 	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
-	         <div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
+			 <div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
 	         <strong class="ha mb2">All Your Clouds Now 
@@ -61,7 +62,7 @@ include 'php-inc/svg.php';
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
-               <h2 data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>BMC is a global leader in multi-cloud software solutions</h2>
+               <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>BMC is a global leader in multi-cloud software solutions</h2>
                 <p data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>BMC helps you eliminate the chasm between your on-premises data center and a cloud-based infrastructure. Our solutions provide answers to your questions about <a href="#migration">what to migrate</a>, <a href="#">which clouds to use</a>, how to <a href="#cost">manage cloud spend</a>, how to <a href="#security"> ensure security</a>, and how to <a href="#performance">optimize</a> each step of your journey.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
@@ -271,8 +272,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -292,8 +293,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -313,8 +314,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -334,8 +335,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -355,8 +356,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
