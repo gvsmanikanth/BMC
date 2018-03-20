@@ -258,6 +258,8 @@ include 'php-inc/svg.php';
         <div class="container">
             <div class="customer_sec fade">
                 <div class="customer_lt">
+				<!--<img src="edgeAnim/img/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
+				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg_3.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>Industry Related Customer Success Story here. Slider auto-plays or on click.</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -267,7 +269,7 @@ include 'php-inc/svg.php';
                         </ul>
                     </div>
                 </div>
-                <div class="customer_rgt">
+                <div class="customer_rgt xs-max-hide">
                     <ul>
                         <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
                         <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
@@ -278,6 +280,7 @@ include 'php-inc/svg.php';
             </div> 
 			<div class="customer_sec fade"> <!--2-->
                 <div class="customer_lt">
+				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg4.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>AAA</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -287,7 +290,7 @@ include 'php-inc/svg.php';
                         </ul>
                     </div>
                 </div>
-                <div class="customer_rgt">
+                <div class="customer_rgt xs-max-hide">
                     <ul>
                         <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
                         <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
@@ -298,6 +301,7 @@ include 'php-inc/svg.php';
             </div> 
 			<div class="customer_sec fade"> <!--3-->
                 <div class="customer_lt">
+				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg7.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>BBB</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -307,7 +311,7 @@ include 'php-inc/svg.php';
                         </ul>
                     </div>
                 </div>
-                <div class="customer_rgt">
+                <div class="customer_rgt xs-max-hide">
                     <ul>
                         <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
                         <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
@@ -318,6 +322,7 @@ include 'php-inc/svg.php';
             </div>		
 			<div class="customer_sec fade"> <!--4-->
                 <div class="customer_lt">
+				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg5.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>CCC</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -327,7 +332,7 @@ include 'php-inc/svg.php';
                         </ul>
                     </div>
                 </div>
-                <div class="customer_rgt">
+                <div class="customer_rgt xs-max-hide">
                     <ul>
                         <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
                         <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
@@ -338,6 +343,7 @@ include 'php-inc/svg.php';
             </div>
 			<div class="customer_sec fade"> <!--5-->
                 <div class="customer_lt">
+				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg6.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>DDD</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -347,7 +353,7 @@ include 'php-inc/svg.php';
                         </ul>
                     </div>
                 </div>
-                <div class="customer_rgt">
+                <div class="customer_rgt xs-max-hide">
                     <ul>
                         <li class="block1" data-aos="zoom-in"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
                         <li class="block2" data-aos="zoom-in"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
@@ -357,7 +363,7 @@ include 'php-inc/svg.php';
                 <div class="clear"></div>
             </div>
         </div>
-        <div class="logos_sec">
+        <div class="logos_sec xs-max-hide">
             <div class="container">
                 <div class="logos_blk">
                     <ul>
