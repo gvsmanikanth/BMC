@@ -106,7 +106,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section3">
+   <section class=" section-wrap section1">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -132,7 +132,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section4">
+   <section class="section-wrap section2">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
@@ -158,7 +158,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section5">
+   <section class=" section-wrap section1">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -186,7 +186,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section6">
+   <section class="section-wrap section2">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
@@ -211,7 +211,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section7" data-aos-anchor-placement="center-bottom">
+   <section class="section-wrap section1" data-aos-anchor-placement="center-bottom">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -224,7 +224,7 @@ include 'php-inc/svg.php';
 				  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
                      <p>Know if vulnerable assets impact critical business functions</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'> 
                      <p>Automate remediation</p>
                   </li>
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='600'>

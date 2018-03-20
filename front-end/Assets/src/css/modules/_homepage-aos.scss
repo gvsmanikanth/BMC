@@ -153,10 +153,8 @@ img {
 	}
 	.py2 {
 		position: absolute;
-		bottom: 0px;
-		width: 100%;
-		max-height: 20%;
-		height: 20%;
+	    bottom: 10px;
+	    width: 100%;
 		.flex-col {
 			--padding: 4% 10%;
 		}
@@ -168,6 +166,7 @@ img {
 		--padding: 0px 0 20px 0;
 		color: #000000;
 		text-align: center;
+		margin-bottom:0;
 		@include media(breakpointMedium){
 			font-size: 40px;
 		}
@@ -176,8 +175,14 @@ img {
 		}
 	}
 }
-.section-wrap {
+.section-wrap.section1 {
 	background-color: rgba(247, 247, 246, 0.52);
+}
+.section-wrap.section2 {
+	background-color: rgba(241, 241, 241, 0.58);
+}
+.section-wrap {
+	--background-color: rgba(247, 247, 246, 0.52);
 	.section-content.py4 {
 		max-width: 1440px;
 	}
@@ -368,7 +373,7 @@ object{
 
 body{
 	//padding: 0 0 33px;
-    background: url("/bmc-dxp/front-end/Assets/dist/mainbannerimg.png") no-repeat;
+    background: url("/bmc/front-end/Assets/dist/mainbannerimg.png") no-repeat;
     //width: 100%;
     background-size: cover;
 }
