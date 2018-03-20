@@ -106,12 +106,14 @@
 						}
 						.fa.fa-angle-right {
 							&:before {
-								content: "\f105";
+								@include icon();
+								content: "\e61b";
 							}
 						}
 						.fa.fa-play-circle {
 							&:before {
-								content: "\f144";
+								@include icon();
+								content: "\ea15";
 							}
 						}
 						.fa {
