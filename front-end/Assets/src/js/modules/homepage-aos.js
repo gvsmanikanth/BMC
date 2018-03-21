@@ -34,6 +34,7 @@ $(document).ready(function () {
 
 	function autoScrollSection() {
 		    $('.section-wrap').each(function() {
+				
 				var position = $(this).position(),
 					// 170 is an arbitrary number found by trial and error
 					offset = $(this).height()/2;
@@ -43,15 +44,29 @@ $(document).ready(function () {
 					onEnter: function(element, position) {
 						//alert($(element).offset().top - $('.layout-header').height());
 						//$(element).css('visibility', 'visible');
+						var rep = $(element).attr('id');
+						var index = rep.match(/\d+/);
+						$(window).scroll(function (event) {
+							var scroll = $(window).scrollTop();
+							if(scroll >= 560 && scroll <= 4788){
+								$('#fp-nav').css("display","block"); 
+							}else{
+								$('#fp-nav').css("display","none");
+							}
+						}); 
+						$('#fp-nav ul li.click a').removeClass("active");
+						$('#fp-nav ul li#click'+index+' a').addClass("active");
 						$('html,body').clearQueue();
 						$('html,body').stop();
 						$('html,body').animate({
 							scrollTop: $(element).offset().top -  50
 						},0,"swing");
 					},
+					
 					onLeave: function(element, position) {
 					//alert($(element).offset().top - $('.layout-header').height());
 						//$(element).css('visibility', 'hidden');
+						
 					}
 				});
 		    });

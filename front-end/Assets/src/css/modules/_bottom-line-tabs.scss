@@ -101,21 +101,7 @@
 						line-height: 26px;
 						font-weight: 400;
 						font-family: 'Open Sans', sans-serif;
-						i {
-							padding: 0 15px;
-						}
-						.fa.fa-angle-right {
-							&:before {
-								@include icon();
-								content: "\e61b";
-							}
-						}
-						.fa.fa-play-circle {
-							&:before {
-								@include icon();
-								content: "\ea15";
-							}
-						}
+						
 						.fa {
 							display: inline-block;
 							font: normal normal normal 14px/1 FontAwesome;
@@ -125,6 +111,23 @@
 							-moz-osx-font-smoothing: grayscale;
 						}
 					}
+						a.icoLearn {
+							&:after {
+								@include icon(); 
+								content: "\e61b";
+								position: absolute;
+								margin-top: 3px;
+							}
+						}
+						a.icoPlay{
+							&:after {
+								@include icon();
+								content: "\ea15";
+								position: absolute;
+								margin-top: 3px;
+								padding-left: 10px;
+							}
+						}
 				}
 			}
 		}

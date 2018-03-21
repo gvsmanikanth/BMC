@@ -57,8 +57,43 @@ include 'php-inc/svg.php';
       	</div>
       	</div>
    </div>
-</section>    
-   <section class="section-wrap section1">
+</section>   
+
+<div id="fp-nav" class="right" style="margin-top: -33.5px;">
+   <ul>
+      <li id="click1" class="click">
+         <a class="active"><span></span></a>
+         <div class="fp-tooltip right">First page</div>
+      </li>
+      <li id="click2" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Second page</div>
+      </li>
+      <li id="click3" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Third page</div>
+      </li>   
+	  <li id="click4" class="click">
+         <a href="#3rdPage" class=""><span></span></a>
+         <div class="fp-tooltip right">Fourth page</div>
+      </li> 
+	  <li id="click5" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Fifth page</div>
+      </li> 
+	  <li id="click6" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Sixth page</div>
+      </li> 
+	  <li id="click7" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Seventh page</div>
+      </li>
+   </ul>
+</div>
+
+
+   <section class="section-wrap section1" id="section1">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
@@ -76,7 +111,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2">
+   <section class="section-wrap section2" id="section2">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-right">
@@ -107,7 +142,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1">
+   <section class=" section-wrap section1" id="section3">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -133,7 +168,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2">
+   <section class="section-wrap section2" id="section4">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
@@ -159,7 +194,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1">
+   <section class=" section-wrap section1" id="section5">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -187,7 +222,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2">
+   <section class="section-wrap section2" id="section6">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
@@ -212,7 +247,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section1" data-aos-anchor-placement="center-bottom">
+   <section class="section-wrap section1" id="section7" data-aos-anchor-placement="center-bottom">
       <div class="section-content py4">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
@@ -265,8 +300,8 @@ include 'php-inc/svg.php';
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
                         <ul>
-                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                            <li><a class="icoLearn" href="#">learn</a></li>
+                            <li><a class="icoPlay" href="#">play</a></li>
                         </ul>
                     </div>
                 </div>

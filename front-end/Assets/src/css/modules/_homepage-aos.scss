@@ -6,6 +6,9 @@
 .page-homepage-e {
 	body{ background-color: white; 
 }
+#fp-nav{
+	display:none;
+}
 .section-content{
 	@include media(breakpointMedium){
 		margin-left: 70px;
