@@ -38,6 +38,7 @@
         <include pattern="/content/bmc/resources/training-locations"/>
         <include pattern="/content/bmc/resources/training-locations/jcr:content"/>
     </filter>
+    <filter root="/content/bmc/resources/hub-topics"/>
 
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <_x0031_35765208
+            jcr:primaryType="nt:unstructured"
+            text="AI &amp; Machine Learning"/>
+    <_x0035_01764469
+            jcr:primaryType="nt:unstructured"
+            text="Big Data"/>
+    <_x0032_59403760
+            jcr:primaryType="nt:unstructured"
+            text="Business &amp; IT Automation"/>
+    <_x0038_54236502
+            jcr:primaryType="nt:unstructured"
+            text="Cost Reduction &amp; IT Optimization"/>
+    <_x0035_63626456
+            jcr:primaryType="nt:unstructured"
+            text="DevOps"/>
+    <_x0033_56510492
+            jcr:primaryType="nt:unstructured"
+            text="Digital Workplace"/>
+    <_x0037_31979597
+            jcr:primaryType="nt:unstructured"
+            text="IT Operations Management"/>
+    <_x0031_34378251
+            jcr:primaryType="nt:unstructured"
+            text="Mainframe"/>
+    <_x0035_09328107
+            jcr:primaryType="nt:unstructured"
+            text="Multi-Cloud"/>
+    <_x0031_53989625
+            jcr:primaryType="nt:unstructured"
+            text="Security &amp; Compliance"/>
+    <_x0030_77379163
+            jcr:primaryType="nt:unstructured"
+            text="Service Management"/>
+</jcr:root>
