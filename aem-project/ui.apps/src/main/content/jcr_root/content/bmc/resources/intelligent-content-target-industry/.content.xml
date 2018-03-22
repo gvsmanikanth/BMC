@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <ic-target-industry-272486674
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Telecommunications and Media"/>
+    <ic-target-industry-570919010
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Information Technology"/>
+    <ic-target-industry-721663505
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Military and Defense"/>
+    <ic-target-industry-625681078
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Finance"/>
+    <ic-target-industry-261207621
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Utilities-Oil-Gas-Energy"/>
+    <ic-target-industry-196019804
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Retail"/>
+    <ic-target-industry-433708333
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Education"/>
+    <ic-target-industry-925448053
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Government"/>
+    <ic-target-industry-179787576
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Healthcare"/>
+    <ic-target-industry-877663585
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Transportation"/>
+    <ic-target-industry-287157904
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Insurance"/>
+    <ic-target-industry-479651924
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Manufacturing"/>
+</jcr:root>
