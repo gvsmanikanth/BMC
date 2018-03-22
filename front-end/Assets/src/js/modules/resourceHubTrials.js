@@ -59,12 +59,12 @@
 				if(pFilter[0].id == "products"){ 
 				$('#topics').val(0);
 				self.updateFilters("topics",0);
-				scroll();
+				//scroll();
 			}
 			else if (pFilter[0].id == "topics"){ 
 				$('#products').val(0);
 				self.updateFilters("products",0);
-				scroll();
+				//scroll();
 			}
 			
 			self.onFilterSelect_org(pFilter);
@@ -93,7 +93,13 @@
 		
 		
 		ResourceHubList.prototype.updateFilterDropdownOnHashChange = function(url) {
-
+			if(url == '#' || url === ''){
+				var url = window.location.href;
+				url = url.replace("#","")
+					if (history.pushState) {
+						window.history.pushState({path:url},'',url);
+					}
+			}
 			var self = this;
 			
 			// Get the keyword from the url.
@@ -106,6 +112,8 @@
 					// Grab the string after the '#filter/' keyword. Call the filtering function.
 					url = url.split('#filter/')[1].trim();
 					tempFilters = JSON.parse(url);
+					
+					
 				}
 			};
 

@@ -3,8 +3,6 @@ $pageTitle = 'BMC Home';
 $bodyClass = 'company page-about-us resource-hub';
 include 'php-inc/head.php';
 ?>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <script>
  //bmcFilterConfig --> Defines filter page configuration (This object is Static)
 var bmcFilterConfig = {
@@ -81,7 +79,7 @@ var bmcResourceHubData = {
 				},
 				{
 					"id" : 14,
-					"name" : "BMC ITILÂ®"
+					"name" : "BMC Service"
 				},
 				{
 					"id" : 15,
@@ -428,7 +426,7 @@ var bmcResourceHubData = {
 
 
 <section class="bg-white listCompLoader">
-	<div class="layout-inner-wrap py text-center m2">
+	<div class="layout-inner-wrap py text-center">
 		<img src="http://media.cms.bmc.com/designimages/loading-indicator.gif" />
 		<p>Loading...</p>
 	</div>
