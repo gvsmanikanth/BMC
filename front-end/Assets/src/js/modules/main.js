@@ -303,7 +303,9 @@ function addFilterToArrayProtoype() {
 			setEqHeight(element2); // WEB-451 cleanup
 		});
 	}
-	$(window).load(eqHeight());
+	//$(window).load(eqHeight());
+	
+	window.onload = eqHeight;
 
 	$(window).resize(function() {
 		setTimeout(eqHeight(), 2000);
@@ -801,11 +803,12 @@ function addFilterToArrayProtoype() {
 			$(el).trigger('to.owl.carousel', targetSlide);
 		});
 	}
-	gotoOwlSlide("#owl-location");
+	gotoOwlSlide("#owl-location"); 
 	
 
 //WEB-2197 - Link behavior of picked items - same, separate, or modal window
 $("a").externalLink({fileTypes:".doc,.pdf"});
+$("a").productInterest();//WEB-2626
 
 
 	//breaks fancybox popup
