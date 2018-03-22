@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <ic-type-196363946
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Analyst Research"/>
+    <ic-type-353700740
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Articles/Blogs"/>
+    <ic-type-790775692
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Competitive Comparisons"/>
+    <ic-type-621970361
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Customer Stories"/>
+    <ic-type-146731505
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Datasheets"/>
+    <ic-type-464000615
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Demos"/>
+    <ic-type-165669365
+            jcr:primaryType="nt:unstructured"
+            jcr:title="E-books"/>
+    <ic-type-828555634
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Events"/>
+    <ic-type-343858909
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Infographics"/>
+    <ic-type-654968417
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Interactive Tools"/>
+    <ic-type-920200003
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Trials"/>
+    <ic-type-185980791
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Videos"/>
+    <ic-type-291550317
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Webinars"/>
+    <ic-type-546577064
+            jcr:primaryType="nt:unstructured"
+            jcr:title="White Papers"/>
+</jcr:root>

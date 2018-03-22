@@ -127,7 +127,7 @@
                                             jcr:title="Errors"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                             <errorpages
+                                            <errorpages
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                     fieldDescription="Error pages for this content tree"
@@ -141,7 +141,7 @@
                                             jcr:title="Home Page"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                             <errorpages
+                                            <errorpages
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                     fieldDescription="This page is a Home Page"
@@ -160,7 +160,7 @@
                             cq:showOnCreate="false"
                             jcr:title="Metadata"
                             sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                            sling:orderBefore="resources">
+                            sling:orderBefore="advanced">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                     jcr:primaryType="nt:unstructured"
@@ -224,39 +224,17 @@
                                                         allowBulkEdit="{Boolean}true"
                                                         cq-msm-lockable="topics"/>
                                             </topics>
-                                        </items>
-                                    </metadata>
-                                </items>
-                            </column>
-                        </items>
-                    </metadata>
-                    <resources
-                            jcr:primaryType="nt:unstructured"
-                            cq:showOnCreate="false"
-                            jcr:title="Resources"
-                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                            sling:orderBefore="advanced">
-                        <items jcr:primaryType="nt:unstructured">
-                            <column
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/container">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <resources
-                                            jcr:primaryType="nt:unstructured"
-                                            jcr:title="Resource Hub"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <hub-inclusion
+                                            <ic-app-inclusion
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Include in Resource Hub?"
-                                                    fieldLabel="Resource Hub Inclusion"
-                                                    name="./hub-inclusion">
+                                                    fieldLabel="IC App Inclusion"
+                                                    emptyText="Intelligent Content App Inclusion"
+                                                    name="./ic-app-inclusion">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <item1
                                                             jcr:primaryType="nt:unstructured"
-                                                            text="No (not for hub)"
+                                                            text="No"
                                                             value="no"/>
                                                     <item2
                                                             jcr:primaryType="nt:unstructured"
@@ -264,21 +242,37 @@
                                                             value="yes"/>
                                                     <item3
                                                             jcr:primaryType="nt:unstructured"
-                                                            text="Gated (map from form)"
-                                                            value="gated"/>
+                                                            text="Gate"
+                                                            value="gate"/>
                                                     <item4
                                                             jcr:primaryType="nt:unstructured"
-                                                            text="Gate (map to asset)"
-                                                            value="gate"/>
+                                                            text="Gated"
+                                                            value="gated"/>
                                                 </items>
-                                            </hub-inclusion>
-                                            <hub-weighting
+                                            </ic-app-inclusion>
+                                            <ic-content-type
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="IC Type"
+                                                    emptyText="Intelligent Content Type"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    multiple="{Boolean}true"
+                                                    name="./ic-content-type"
+                                                    dataPath="/content/bmc/resources/intelligent-content-types">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-content-type>
+                                            <ic-weighting
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     fieldDescription="Choose a weighting for this content"
-                                                    fieldLabel="Content Weighting"
-                                                    name="./hub-weighting">
+                                                    fieldLabel="IC Weighting"
+                                                    name="./ic-weighting">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <item1
                                                             jcr:primaryType="nt:unstructured"
@@ -301,137 +295,105 @@
                                                             text="1"
                                                             value="1"/>
                                                 </items>
-                                            </hub-weighting>
-                                            <hub-topics
+                                            </ic-weighting>
+                                            <ic-topics
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
+                                                    fieldLabel="IC Topic"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose one or more Resource Hub topics for this content"
-                                                    fieldLabel="Resource Hub Topic(s)"
+                                                    emptyText="Intelligent Content Topic"
                                                     multiple="{Boolean}true"
-                                                    name="./hub-topics">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="AI and Machine Learning"
-                                                            value="AIMachineLearning"/>
-                                                    <item2
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Big Data"
-                                                            value="BigData"/>
-                                                    <item3
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Business and IT Automation"
-                                                            value="BusinessITAutomation"/>
-                                                    <item4
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Cost Reduction and IT Optimization"
-                                                            value="CostReductionITOptimization"/>
-                                                    <item5
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="DevOps"
-                                                            value="DevOps"/>
-                                                    <item6
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Digital Workplace"
-                                                            value="DigitalWorkplace"/>
-                                                    <item7
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="IT Operations Management"
-                                                            value="ITOperationsManagement"/>
-                                                    <item8
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Mainframe"
-                                                            value="Mainframe"/>
-                                                    <item9
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Multi-Cloud"
-                                                            value="Multi-Cloud"/>
-                                                    <item10
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Security and Compliance"
-                                                            value="SecurityCompliance"/>
-                                                    <item11
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Service Management"
-                                                            value="ServiceManagement"/>
-                                                </items>
-                                            </hub-topics>
-                                            <hub-buyer-stage
+                                                    name="./ic-topics"
+                                                    dataPath="/content/bmc/resources/intelligent-content-topics">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-topics>
+                                            <ic-buyer-stage
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     fieldDescription="Choose a Buyer Stage for this content"
                                                     fieldLabel="Buyer Stage"
+                                                    emptyText="Buyer Stage"
                                                     multiple="{Boolean}true"
-                                                    name="./hub-buyer-stage">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Discover"
-                                                            value="discover"/>
-                                                    <item2
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Explore"
-                                                            value="explore"/>
-                                                    <item3
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Engage"
-                                                            value="engage"/>
-                                                    <item4
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Buy"
-                                                            value="buy"/>
-                                                </items>
-                                            </hub-buyer-stage>
-                                            <hub-industry
+                                                    name="./ic-buyer-stage"
+                                                    dataPath="/content/bmc/resources/intelligent-content-buyer-stage">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-buyer-stage>
+                                            <ic-target-persona
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose zero or more industries for this content"
-                                                    fieldLabel="Target Industry"
+                                                    fieldDescription="Choose a Target Persona for this content"
+                                                    fieldLabel="Target Persona"
+                                                    emptyText="Target Persona"
                                                     multiple="{Boolean}true"
-                                                    name="./hub-industry">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="Telecommunications and Media"
-                                                            value="Telecommunications and Media"/>
-                                                    <item2
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="etc..."
-                                                            value="etc"/>
-                                                </items>
-                                            </hub-industry>
-                                            <hub-company-size
+                                                    name="./ic-target-persona"
+                                                    dataPath="/content/bmc/resources/intelligent-content-target-persona">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-target-persona>
+                                            <ic-source-publish-date
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                    displayedFormat="MM-YYYY"
+                                                    fieldLabel="Source Publish Date (MM-YYYY)"
+                                                    name="./ic-source-publish-date"
+                                                    type="datetime"
+                                                    typeHint="Source Publish Date (MM-YYYY)"/>
+                                            <ic-target-industry
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldDescription="Choose target industry for this content"
+                                                    fieldLabel="Target Industry"
+                                                    emptyText="Target Industry"
+                                                    multiple="{Boolean}true"
+                                                    name="./ic-target-industry"
+                                                    dataPath="/content/bmc/resources/intelligent-content-target-industry">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-target-industry>
+                                            <ic-company-size
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     fieldDescription="Choose a target company size for this content"
                                                     fieldLabel="Company Size"
-                                                    name="./hub-company-size">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="5000+"
-                                                            value="5000"/>
-                                                    <item2
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="1000-4999"
-                                                            value="1000-4999"/>
-                                                    <item3
-                                                            jcr:primaryType="nt:unstructured"
-                                                            text="1-999"
-                                                            value="1-999"/>
-                                                </items>
-                                            </hub-company-size>
+                                                    emptyText="Company Size"
+                                                    multiple="{Boolean}true"
+                                                    name="./ic-company-size"
+                                                    dataPath="/content/bmc/resources/intelligent-content-company-size">
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        allowBulkEdit="{Boolean}true"/>
+                                            </ic-company-size>
                                         </items>
-                                    </resources>
+                                    </metadata>
                                 </items>
                             </column>
                         </items>
-                    </resources>
-
+                    </metadata>
                     <CTAs
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Related CTAs"
