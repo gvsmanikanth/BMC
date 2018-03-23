@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
-          serviceUrl="https://ws-prod.bmc.com/web/postForm.jsp"
-          elqSiteID="1251203807"
+          serviceUrl="https://ws-uat.bmc.com/rest/BMC_CIM_WebForms_Src"
+          elqSiteID="1696"
           timeout="{Long}5000"
           automationEmailEnabled="{Boolean}true"
           automationEmailRecipients="[businessautomation@bmc.com]"
