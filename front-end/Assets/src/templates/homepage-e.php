@@ -31,7 +31,7 @@ include 'php-inc/svg.php';
 
 </style>
  
-<section class="section-wrap-header">
+<section class="section-wrap-header sectionCommon" id="section0">
 	<div class="section video-hero-header">
 	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
@@ -50,13 +50,13 @@ include 'php-inc/svg.php';
 	   </div>
 	   
 	</div>
-	<div class="py2">
+	<!--<div class="py2">
 		<div class=" flex-col">
       	<div class="section-content text-center">
          	<h2 class="heading">BMC multi-cloud management solutions.</h2>
       	</div>
       	</div>
-   </div>
+   </div>-->
 </section>   
 
 <div id="fp-nav" class="right" style="margin-top: -33.5px;">
@@ -74,7 +74,7 @@ include 'php-inc/svg.php';
          <div class="fp-tooltip right">Third page</div>
       </li>   
 	  <li id="click4" class="click">
-         <a href="#3rdPage" class=""><span></span></a>
+         <a class=""><span></span></a>
          <div class="fp-tooltip right">Fourth page</div>
       </li> 
 	  <li id="click5" class="click">
@@ -93,8 +93,9 @@ include 'php-inc/svg.php';
 </div>
 
 
-   <section class="section-wrap section1" id="section1">
-      <div class="section-content py4">
+
+   <section class="section-wrap section1 sectionCommon" id="section1">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
                <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>BMC is a global leader in multi-cloud software solutions</h2>
@@ -111,8 +112,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2" id="section2">
-      <div class="section-content py4">
+   <section class="section-wrap section2 sectionCommon" id="section2">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-right">
                <figure>
@@ -142,8 +143,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1" id="section3">
-      <div class="section-content py4">
+   <section class=" section-wrap section1 sectionCommon" id="section3">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Cost</h2>
@@ -168,8 +169,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2" id="section4">
-      <div class="section-content py4">
+   <section class="section-wrap section2 sectionCommon" id="section4">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/cost.png" alt="Mobile phone and app infographic">
@@ -194,8 +195,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1" id="section5">
-      <div class="section-content py4">
+   <section class=" section-wrap section1 sectionCommon" id="section5">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Performance</h2>
@@ -222,8 +223,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2" id="section6">
-      <div class="section-content py4">
+   <section class="section-wrap section2 sectionCommon" id="section6">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/automation.png" alt="Mobile phone and app infographic">
@@ -247,8 +248,8 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section1" id="section7" data-aos-anchor-placement="center-bottom">
-      <div class="section-content py4">
+   <section class="section-wrap section1 sectionCommon" id="section7" data-aos-anchor-placement="center-bottom">
+      <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Security</h2>
@@ -279,7 +280,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-    <div class="partners">
+    <div class="partners sectionCommon" id="section8">
         <div class="container" data-aos="zoom-in">
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
@@ -319,10 +320,10 @@ include 'php-inc/svg.php';
 				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg4.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>AAA</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
+                     <div class="icon">
                         <ul>
-                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                            <li><a class="icoLearn" href="#">learn</a></li>
+                            <li><a class="icoPlay" href="#">play</a></li>
                         </ul>
                     </div>
                 </div>
@@ -340,10 +341,10 @@ include 'php-inc/svg.php';
 				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg7.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>BBB</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
+                     <div class="icon">
                         <ul>
-                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                            <li><a class="icoLearn" href="#">learn</a></li>
+                            <li><a class="icoPlay" href="#">play</a></li>
                         </ul>
                     </div>
                 </div>
@@ -361,10 +362,10 @@ include 'php-inc/svg.php';
 				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg5.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>CCC</h2>
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
+                     <div class="icon">
                         <ul>
-                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                            <li><a class="icoLearn" href="#">learn</a></li>
+                            <li><a class="icoPlay" href="#">play</a></li>
                         </ul>
                     </div>
                 </div>
@@ -384,8 +385,8 @@ include 'php-inc/svg.php';
                     <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
                         <ul>
-                            <li><a href="#">learn <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                            <li><a href="#">play<i class="fa fa-play-circle" aria-hidden="true"></i></a></li>
+                            <li><a class="icoLearn" href="#">learn</a></li>
+                            <li><a class="icoPlay" href="#">play</a></li>
                         </ul>
                     </div>
                 </div>
