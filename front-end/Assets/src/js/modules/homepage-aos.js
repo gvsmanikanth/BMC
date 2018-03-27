@@ -31,7 +31,14 @@ $(document).ready(function () {
 		  setHeight();
 	});
 	
-
+	$(".page-homepage-e #fp-nav .click").click(function(){
+		var rep = $(this).attr('id');
+		var index = rep.match(/\d+/);
+		$('html,body').animate({
+			scrollTop: $("#section"+index).offset().top -  50
+		},0,"swing");
+	});
+	
 	function autoScrollSection() {
 		    $('.section-wrap').each(function() {
 				
