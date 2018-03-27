@@ -172,6 +172,15 @@ jQuery(function($){
 				.find('.navigation-supplementary')
 				.addClass('navigation-active'); // doesn't trigger css transition animation :(
 		});
+		
+		// Search form animation WEB-2853
+		$('.navigation-search.js-navigation-search').click(function(e) {
+			$('#hf-search-container').addClass('opened');
+		});
+		
+		$('#hf-search-right-wedge').click(function(e) {
+			$('#hf-search-container').removeClass('opened');
+		});
 
 		// navigation-supplementary close requires a quasi rebind since it is dynamically generated
 		$('.navigation-tab-content').on('click', '.navigation-close-supplementary', function() {

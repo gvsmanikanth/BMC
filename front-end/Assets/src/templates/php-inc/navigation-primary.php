@@ -49,9 +49,9 @@
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc">Contact BMC</a>
 			</li>
-			<li class="navigation-country">
+			<!-- <li class="navigation-country">
 				<a href="#" class="select-country">Worldwide (English)</a>
-			</li>
+			</li> 
 			<li class="navigation-search js-navigation-search">
 				<form action="/search/" class="search-site">
 					<div class="search-site-b" dir="ltr">
@@ -61,10 +61,23 @@
 						<button></button>
 					</div>
 				</form>
-			</li>
+			</li>-->
+			<li class="navigation-search js-navigation-search"></li>
+			
 		</ul>
 		<!-- end chat now -->
 	</div><!-- / layout-inner-wrap -->
+	<div id="hf-search-container" tabindex="-1" class="">
+	   <div id="hf-search-box">
+		  <div class="hf-centered-content">
+			 <form id="hf-search-form" action="/search/" class="js-search-form"> 
+				<input autofocus maxlength="2048" id="hf-search-text" type="text" tabindex="10" class="js-search-text" placeholder="Search BMC.com" name="q" dir="ltr" autocomplete="off" spellcheck="false" style="outline: none;"> 
+				 <span id="hf-search"></span> 
+			 </form>
+			 <span id="hf-search-right-wedge">Close</span> 
+		  </div>
+	   </div>
+	</div>
 </nav><!-- / layout-nav -->
 
 <!-- chat now -->
