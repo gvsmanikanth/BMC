@@ -36,10 +36,10 @@
 		</ul>
 	</li>
 	
-	<div class="desktop-only nav-floating-promo">
+	<!--<div class="desktop-only nav-floating-promo">
 		<a href="#">
 			<img alt="BMC Marketplace" src="http://placehold.it/670x150" style="width: 100%;"> 
 		</a>
-	</div>
+	</div>-->
 	
 </ul>
