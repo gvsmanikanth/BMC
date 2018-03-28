@@ -40,9 +40,8 @@ include 'php-inc/svg.php';
 			 <div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
-	         <strong class="ha mb2">All Your Clouds Now 
-			 <span>Simplified</span></strong>
-	         <div class="h3">BMC multi-cloud management solution make all clouds better.</div>
+	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>
+	         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
 	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
 	         Watch the video >
 	         </a>
@@ -98,9 +97,9 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
-               <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>BMC is a global leader in multi-cloud software solutions</h2>
-                <p data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>BMC helps you eliminate the chasm between your on-premises data center and a cloud-based infrastructure. Our solutions provide answers to your questions about <a href="#migration">what to migrate</a>, <a href="#">which clouds to use</a>, how to <a href="#cost">manage cloud spend</a>, how to <a href="#security"> ensure security</a>, and how to <a href="#performance">optimize</a> each step of your journey.</p>
-               <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
+               <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>Businesses today can’t hit the reset button every time the market changes.</h2>
+                <p data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>They have to be ready to react while still ensuring continuity in service. They have to keep customers engaged while designing the new products and experiences they demand. BMC Multi-Cloud Management solutions help optimize your current IT systems while ensuring a secure, cost-effective transition to the cloud.</p>
+               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>
 			  
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">

@@ -8,6 +8,9 @@
 }
 #fp-nav{
 	display:none;
+	li .fp-tooltip{
+		color:#333;
+	}
 }
 .section-content{
 	@include media(breakpointMedium){
@@ -107,7 +110,7 @@ img {
 					font-weight: 300;
 				}
 				@include media(breakpointLarge){
-					width: 35%; 
+					width: 40%; 
 					font-size: 55px;
 					line-height: 65px;
 					font-weight: 300;
@@ -131,7 +134,7 @@ img {
 					width: 60%; 
 				}
 				@include media(breakpointLarge){
-					width: 30%;
+					width: 45%;
 				}
 				
 			}
