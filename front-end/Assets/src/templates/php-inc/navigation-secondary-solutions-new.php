@@ -15,22 +15,22 @@
 					href="//www.bmc.com/it-solutions/truesight-multi-cloud-operations.html"
 					target="_self">Manage Performance in the Cloud</a></li>
 				<li><a
-					href="//www.bmc.com/it-solutions/multi-cloud-management.html#multi-cloud-automation"
+					href="//www.bmc.com/it-solutions/control-m.html"
 					target="_self">Automate Across Clouds</a></li>
 				<li><a href="//www.bmc.com/it-solutions/secops-policy-service.html"
 					target="_self">Improve Cloud Security</a></li>
 				<li><a href="//www.bmc.com/it-solutions/multi-cloud-migration.html"
 					target="_self">Migrate to Cloud</a></li>
-				<li><a href="//www.bmc.com/it-solutions/multi-cloud-migration.html"
-					target="_self">Mange Services Across Clouds</a></li>
+				<li><a href="//www.bmc.com/it-solutions/multi-cloud-service-management.html"
+					target="_self">Manage Services Across Clouds</a></li>
 			</ul>
 			<ul>
 				<li class="navigation-section-header">Automation & DevOps</li>
 				<li><a href="//www.bmc.com/it-solutions/control-m.html"
 					target="_self">Automate Workloads</a></li>
-				<li><a href="//www.bmc.com/it-solutions/atrium-orchestrator.html"
+				<li><a href="//www.bmc.com/it-solutions/control-m-managed-file-transfer.html"
 					target="_self">Automate File Transfer</a></li>
-				<li><a href="//www.bmc.com/it-solutions/data-center-automation.html"
+				<li><a href="//www.bmc.com/it-solutions/devops.html"
 					target="_self">Automate Application Deployment</a></li>
 				<li><a href="//www.bmc.com/it-solutions/data-center-automation.html"
 					target="_self">Automate Your Data Center</a></li>
@@ -61,7 +61,7 @@
 					href="//www.bmc.com/it-solutions/application-performance-management.html"
 					target="_self">Improve Application Performance</a></li>
 				<li><a
-					href="//www.bmc.com/it-solutions/application-performance-management.html"
+					href="//www.bmc.com/it-solutions/mlc-software-management.html"
 					target="_self">Optimize Your Mainframe Costs</a></li> 
 			</ul>
 
@@ -74,7 +74,7 @@
 					target="_self">Explore Cognitive Service Management</a></li>
 				<li><a href="//www.bmc.com/it-solutions/aiops.html" target="_self">Apply
 						Artificial Intelligence to IT (AIOps)</a></li>
-						<li><a href="//www.bmc.com/it-solutions/aiops.html" target="_self">Accelerate Big Data Insights</a></li>
+						<li><a href="//www.bmc.com/it-solutions/big-data.html" target="_self">Accelerate Big Data Insights</a></li>
 			</ul>
 			<ul>
 				<li class="navigation-section-header">Service Management Excellence</li>

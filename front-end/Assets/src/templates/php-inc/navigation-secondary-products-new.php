@@ -12,7 +12,7 @@
 	<li class="navigation-column">
 		<ul>
 			<li class="navigation-section-header"><a class="boldlink"
-				href="https://www.bmc.com/it-solutions/it-automation.html">Operations ›</a></li>
+				href="https://www.bmc.com/it-solutions/it-operations-management.html">Operations ›</a></li>
 			<li><a href="https://www.bmc.com/it-solutions/truesight.html">TrueSight</a></li>
 			<li><a
 				href="http://www.bmc.com/it-solutions/secops-response-service.html">SecOps Response Service</a></li>
@@ -44,7 +44,7 @@
 			<li><a
 				href="https://www.bmc.com/it-solutions/digital-workplace.html">Digital Workplace (MyIT)</a></li>
 			<li><a
-				href="https://www.bmc.com/it-solutions/capacity-optimization.html">Business Workflows</a></li>
+				href="https://www.bmc.com/it-solutions/business-workflows.html">Business Workflows</a></li>
 			<li><a
 				href="https://www.bmc.com/it-solutions/innovation-suite.html">Innovation Suite</a></li>
 			<li><a
@@ -61,8 +61,8 @@
 			<li><a
 				href="https://www.bmc.com/it-solutions/mlc-software-management.html">Mainframe
 					MLC Cost Management</a></li>
-			<li><a href="https://www.bmc.com/it-solutions/mainview-java.html">MainView
-					for Java<sup>®</sup> Environments</a></li>
+			<!--<li><a href="https://www.bmc.com/it-solutions/mainview-java.html">MainView
+					for Java<sup>®</sup> Environments</a></li>-->
 			<li><a
 				href="https://www.bmc.com/it-solutions/database-management-db2-zos.html">Data
 					Management for DB2<sup>®</sup> on z/OS<sup>®</sup></a></li>
