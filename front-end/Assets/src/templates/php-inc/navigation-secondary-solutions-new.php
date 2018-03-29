@@ -13,25 +13,21 @@
 					target="_self">Gain Asset Visibility</a></li>
 				<li><a
 					href="//www.bmc.com/it-solutions/truesight-multi-cloud-operations.html"
-					target="_self">Manage Performance in the Cloud</a></li>
+					target="_self">Manage Cloud Performance</a></li>
 				<li><a
 					href="//www.bmc.com/it-solutions/multi-cloud-management.html#multi-cloud-automation"
-					target="_self">Automate Across Clouds</a></li>
+					target="_self">Automate Your Clouds</a></li>
 				<li><a href="//www.bmc.com/it-solutions/secops-policy-service.html"
 					target="_self">Improve Cloud Security</a></li>
 				<li><a href="//www.bmc.com/it-solutions/multi-cloud-migration.html"
-					target="_self">Migrate to Cloud</a></li>
-				<li><a href="//www.bmc.com/it-solutions/multi-cloud-migration.html"
-					target="_self">Mange Services Across Clouds</a></li>
+					target="_self">Migrate to Multi-Cloud</a></li>
 			</ul>
 			<ul>
-				<li class="navigation-section-header">Automation & DevOps</li>
+				<li class="navigation-section-header">Automation</li>
 				<li><a href="//www.bmc.com/it-solutions/control-m.html"
 					target="_self">Automate Workloads</a></li>
 				<li><a href="//www.bmc.com/it-solutions/atrium-orchestrator.html"
-					target="_self">Automate File Transfer</a></li>
-				<li><a href="//www.bmc.com/it-solutions/data-center-automation.html"
-					target="_self">Automate Application Deployment</a></li>
+					target="_self">Automate IT Processes</a></li>
 				<li><a href="//www.bmc.com/it-solutions/data-center-automation.html"
 					target="_self">Automate Your Data Center</a></li>
 			</ul>
@@ -41,28 +37,26 @@
 				<li class="navigation-section-header">Security & Compliance</li>
 				<li><a
 					href="//www.bmc.com/it-solutions/secops-security-operations.html"
-					target="_self">Build a SecOps Strategy</a></li>
+					target="_self">Bridge the SecOps Gap</a></li>
 				<li><a href="//www.bmc.com/it-solutions/gdpr-compliance.html"
 					target="_self">Ensure GDPR Compliance</a></li>
 				<li><a
 					href="//www.bmc.com/it-solutions/secops-response-service.html"
-					target="_self">Remediate Vulnerabilities</a></li>
+					target="_self">Improve Threat Remediation</a></li>
 				<li><a href="//www.bmc.com/it-solutions/secops-policy-service.html"
 					target="_self">Manage Policies & Compliance</a></li>
 
 			</ul>
 			<ul>
-				<li class="navigation-section-header">IT Optimization</li>
+				<li class="navigation-section-header">Cost Reduction & IT
+					Optimization</li>
 				<li><a href="//www.bmc.com/it-solutions/it-optimization.html"
 					target="_self">Optimize Your IT Infrastructure</a></li>
 				<li><a href="//www.bmc.com/it-solutions/cloud-cost-control.html"
 					target="_self">Optimize Your Cloud Spend</a></li>
 				<li><a
 					href="//www.bmc.com/it-solutions/application-performance-management.html"
-					target="_self">Improve Application Performance</a></li>
-				<li><a
-					href="//www.bmc.com/it-solutions/application-performance-management.html"
-					target="_self">Optimize Your Mainframe Costs</a></li> 
+					target="_self">Manage Application Performance</a></li>
 			</ul>
 
 		</li>
@@ -74,17 +68,24 @@
 					target="_self">Explore Cognitive Service Management</a></li>
 				<li><a href="//www.bmc.com/it-solutions/aiops.html" target="_self">Apply
 						Artificial Intelligence to IT (AIOps)</a></li>
-						<li><a href="//www.bmc.com/it-solutions/aiops.html" target="_self">Accelerate Big Data Insights</a></li>
 			</ul>
 			<ul>
 				<li class="navigation-section-header">Service Management Excellence</li>
 				<li><a href="//www.bmc.com/it-solutions/it-service-management.html"
-					target="_self">Transform Your Service Experience</a></li>
+					target="_self">Enhance IT Service Management</a></li>
 				<li><a href="//www.bmc.com/it-solutions/endpoint-management.html"
-					target="_self">See All Your IT Assets</a></li>
+					target="_self">Deploy Endpoint Management</a></li>
 				<li><a
 					href="//www.bmc.com/it-solutions/building-digital-workplace.html"
-					target="_self">Enable a Digital Workplace</a></li> 
+					target="_self">Develop a Digital Workplace Strategy</a></li>
+			</ul>
+			<ul>
+				<li class="navigation-section-header">Mainframe Management</li>
+				<li><a
+					href="//www.bmc.com/it-solutions/mainframe-cost-optimization.html"
+					target="_self">Optimize Your Mainframe Costs</a></li>
+				<li><a href="//www.bmc.com/info/mainframe-gdpr.html" target="_self">Prepare
+						for Mainframe GDPR Compliance</a></li>
 			</ul>
 		</li>
 
