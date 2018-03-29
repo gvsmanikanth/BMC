@@ -162,7 +162,7 @@ include 'php-inc/svg.php';
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn about multi-cloud cost control &gt;</a>
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="edgeAnim/img/Visibility.png" alt="Mobile phone and app infographic">
+               <img src="edgeAnim/img/Visibility1.png" alt="Mobile phone and app infographic">
             </div>
            
          </div>
@@ -172,7 +172,7 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="edgeAnim/img/cost.png" alt="Mobile phone and app infographic">
+               <img src="edgeAnim/img/cost1.png" alt="Mobile phone and app infographic">
             </div>
              
             <div class="flex-item col col-12 md-col-6 pxr1 " >
@@ -226,7 +226,7 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="edgeAnim/img/automation.png" alt="Mobile phone and app infographic">
+               <img src="edgeAnim/img/automation1.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 "  data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                <h2  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Automation</h2>
@@ -286,6 +286,7 @@ include 'php-inc/svg.php';
                 <ul>
                     <li><a href="#"><img src="edgeAnim/img/logoimg2.png" alt="logo"></a></li>
                     <li><a href="#"><img src="edgeAnim/img/logoimg1.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="edgeAnim/img/logoimg3.png" alt="logo"></a></li>
                 </ul>
             </div>
         </div>
