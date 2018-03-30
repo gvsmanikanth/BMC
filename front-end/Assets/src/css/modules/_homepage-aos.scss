@@ -76,10 +76,10 @@
 			padding: 0;
 			li {
 				display: inline-block;
-				padding: 0 50px 0 0;
+				padding: 0 100px 0 0;
 				vertical-align: middle;
 				img{
-					width: 332px;
+					width: 230px;
 				}
 			}
 		}
@@ -144,6 +144,11 @@ img {
 			a {
 				border-radius: 0;
 			}
+			a.modal-youtube-video-player:after{
+				content: "\ea15";
+				font-family: "icomoon";    
+				padding-left: 5px;
+			}
 			display: absolute;
 		}
 		.hero-content {
@@ -154,6 +159,15 @@ img {
 				padding: 5rem 0;
 			}
 			padding: 4rem 0;
+				.scrollDown{
+					margin-top: 50px;
+					text-align: center;
+				}
+				.scrollDown:before{
+					content: "\e60e";
+					font-family: "icomoon";
+					cursor:pointer;
+				}
 		}
 	}
 	.vidbg-box {
@@ -190,6 +204,9 @@ img {
 .section-wrap.section2 {
 	background-color: rgba(241, 241, 241, 0.58);
 }
+.section-wrap#section9 {
+	min-height: auto !important;
+}
 .section-wrap {
 	--background-color: rgba(247, 247, 246, 0.52);
 	.section-content.py4 {
@@ -199,14 +216,21 @@ img {
 		font-size: 40px;
 		line-height: 48px;
 		color: #fe5000;
-		font-weight: 300;
+		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
 		margin-bottom: 0;
+		span.smallHeading{
+			display: block;
+			font-size: 20px;
+			margin-bottom: -20px;
+			padding-left: 2px;
+		}
 	}
 	h4 {
-		font-size: 30px;
-		line-height: 42px;
+		font-size: 25px;
+		line-height: 28px;
+		margin-top: 5px;
 		padding: 0 0 30px;
 		color: #414042;
 		font-weight: 600;
@@ -256,32 +280,36 @@ img {
 	}
 	a {
 		@include media(breakpointMedium){
-			font-size: 24px;
+			font-size: 20px;
 		}
 		@include media(breakpointLarge){
-			font-size: 24px;
+			font-size: 20px;
 		}
 		display: inline-block;
 		color: #3cb6ce;
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 26px;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
 	}
 }
-.section-wrap.section1 {
+.section-wrap#section1 {
 	h2.firstHeading {
-		padding: 0 0 50px;
+		padding: 70px 0 30px;
+		color: #fff;
 	}
-}
-.section-wrap.section2 {
-	h4 {
-		font-size: 25px;
-		line-height: 28px;
-		margin-top: 0;
+	p{
+		color: #fff;
+	}	
+	p.firstPara{
+		font-size: 16px;
+		line-height: 24px;
 	}
+
+
 }
+
 ol {
 	list-style: none;
 }
@@ -305,6 +333,11 @@ ul {
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
 			margin: 0 0 92px 17px;
+		}
+		button.btn-lg{
+			width: 70%;
+			background: #13cdfe;
+			color: #fff;
 		}
 		h2 {
 			padding: 0 0 40px 18px;

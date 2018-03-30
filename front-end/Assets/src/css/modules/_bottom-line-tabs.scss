@@ -38,6 +38,7 @@
 			@include media(breakpointMedium){
 				padding: 0px 0 0 25px;
 				width: 50%;
+				height: 266px;
 			}
 			@include media(breakpointLarge){
 				padding: 0px 0 0 25px;
@@ -192,7 +193,7 @@
 					display: inline-block;
 					vertical-align: middle;
 					--min-height: 225px;
-					padding: 54px 90px;
+					padding: 54px 116px;
 					--margin: 0 14px;
 				    margin-bottom: 0em;
 					position: relative;
