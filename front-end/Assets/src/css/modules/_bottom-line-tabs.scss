@@ -161,8 +161,17 @@
 						left : 38%;
 					}
 					@include media(breakpointLarge){
-						bottom: -68%;
+						bottom: -85%;
 						left : 38%;
+					}
+				}
+				li.block1 {
+					margin-top: -5%;
+					@include media(breakpointMedium){
+						
+					}
+					@include media(breakpointLarge){
+						margin-top: -5%;
 					}
 				}
 			}

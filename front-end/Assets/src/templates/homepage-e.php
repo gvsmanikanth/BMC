@@ -70,11 +70,11 @@ include 'php-inc/svg.php';
    <section class="section-wrap section2 sectionCommon" id="section2">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="edgeAnim/img/migration.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+               <img src="edgeAnim/img/migration.png" alt="Mobile phone and app infographic"> 
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Migration</h2>
+               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
                <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
                   <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
@@ -99,7 +99,7 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Cost</h2>
+               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
                <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
                <ul>
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -129,7 +129,7 @@ include 'php-inc/svg.php';
             </div>
              
             <div class="flex-item col col-12 md-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Service Management</h2>
+               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Service Management</h2>
                <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
                <ul>
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -152,7 +152,7 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Visibility</h2>
+               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Visibility</h2>
                <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
                <ul>
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -167,7 +167,7 @@ include 'php-inc/svg.php';
                </ul>
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi cloud visibility &gt;</a>
             </div>
-			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
                <img src="edgeAnim/img/Visibility.png" alt="Mobile phone and app infographic">
             </div>
          </div>
@@ -175,14 +175,14 @@ include 'php-inc/svg.php';
    </section>  
 
    
-   <section class=" section-wrap section1 sectionCommon" id="section6">
+   <section class=" section-wrap section2 sectionCommon" id="section6">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
-			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
+			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/performance.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Performance</h2>
+               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
                <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated cloud/data center performance</h4>
                <ul>
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -201,11 +201,11 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section7">
+   <section class="section-wrap section1 sectionCommon" id="section7">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 "  data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-               <h2  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Automation</h2>
+               <h2  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
                <h4  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
                <ul>
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -220,20 +220,20 @@ include 'php-inc/svg.php';
                </ul>
                <a href="#"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud automation &gt;</a>
             </div>
-			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
                <img src="edgeAnim/img/automation1.png" alt="Mobile phone and app infographic">
             </div>
          </div>
       </div>
    </section>
-   <section class="section-wrap section1 sectionCommon" id="section8" data-aos-anchor-placement="center-bottom">
+   <section class="section-wrap section2 sectionCommon" id="section8" data-aos-anchor-placement="center-bottom">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
-			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
+			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/security.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-cloud</span>Security</h2>
+               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
                <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Achieve security and compliance<br> across clouds</h4>
                <ul>
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
@@ -269,35 +269,35 @@ include 'php-inc/svg.php';
    <ul>
       <li id="click1" class="click">
          <a class="active"><span></span></a>
-         <div class="fp-tooltip right">First page</div>
+         <div class="fp-tooltip right">Cloud Management</div>
       </li>
       <li id="click2" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Second page</div>
+         <div class="fp-tooltip right">Migration</div>
       </li>
       <li id="click3" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Third page</div>
+         <div class="fp-tooltip right">Cost</div>
       </li>   
 	  <li id="click4" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Fourth page</div>
+         <div class="fp-tooltip right">Service Management</div>
       </li> 
 	  <li id="click5" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Fifth page</div>
+         <div class="fp-tooltip right">Visibility</div>
       </li> 
 	  <li id="click6" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Sixth page</div>
+         <div class="fp-tooltip right">Performance</div>
       </li> 
 	  <li id="click7" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Seventh page</div>
+         <div class="fp-tooltip right">Automation</div>
       </li>	 
 	  <li id="click8" class="click">
          <a class=""><span></span></a>
-         <div class="fp-tooltip right">Eight page</div>
+         <div class="fp-tooltip right">Security</div>
       </li>
    </ul>
 </div>
@@ -325,100 +325,16 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="clear"></div>
             </div> 
-			<div class="customer_sec fade"> <!--2-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg4.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>AAA</h2>
-				   <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-					<div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div> 
-			<div class="customer_sec fade"> <!--3-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg7.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>BBB</h2>
-                   <!-- <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                     <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>		
-			<div class="customer_sec fade"> <!--4-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg5.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>CCC</h2>
-                    <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                     <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
-			<div class="customer_sec fade"> <!--5-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg6.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>DDD</h2>
-                    <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
         </div>
         <div class="logos_sec xs-max-hide">
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp active" onclick="currentSlide(1)"><a><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(2)"><a><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(3)"><a><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(4)"><a><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(5)"><a><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
                     </ul>
                 </div>
             </div>
@@ -437,36 +353,6 @@ include 'php-inc/svg.php';
             </div>
         </div>
     </div>
-
-<script>
-var slideIndex = 1;
-	showSlides(slideIndex);
-
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("customer_sec");
-	  var dots = document.getElementsByClassName("imgDesp");
-	  if (n > slides.length) {slideIndex = 1}    
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-		  slides[i].style.display = "none";  
-	  }
-	  for (i = 0; i < dots.length; i++) {
-		  dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";  
-	  dots[slideIndex-1].className += " active";
-	}
-	</script>
-	 
 
 <?php
 include 'php-inc/foot.php';
