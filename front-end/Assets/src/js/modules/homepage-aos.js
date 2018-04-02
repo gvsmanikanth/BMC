@@ -57,14 +57,6 @@ $(document).ready(function () {
 					onEnter: function(element, position) {
 						var rep = $(element).attr('id');
 						var index = rep.match(/\d+/);
-						/*$(window).scroll(function (event) {
-							var scroll = $(window).scrollTop();
-							if(scroll >= 560 && scroll <= 4788){
-								$('#fp-nav').css("display","block"); 
-							}else{
-								$('#fp-nav').css("display","none");
-							}
-						});*/
 						if(index > 0 && index <= 8){
 								$('#fp-nav').css("display","block"); 
 								console.log("if - "+index); 
@@ -76,9 +68,9 @@ $(document).ready(function () {
 						$('#fp-nav ul li#click'+index+' a').addClass("active");
 						$('html,body').clearQueue();
 						$('html,body').stop();
-						$('html,body').animate({
+						/*$('html,body').animate({
 							scrollTop: $(element).offset().top -  50
-						},0,"swing");
+						},0,"swing");*/
 					},
 					
 					onLeave: function(element, position) {

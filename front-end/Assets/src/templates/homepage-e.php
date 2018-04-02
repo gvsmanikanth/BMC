@@ -204,7 +204,7 @@ include 'php-inc/svg.php';
    <section class="section-wrap section1 sectionCommon" id="section7">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 "  data-aos="fade-right" data-aos-anchor-placement="center-bottom">
+            <div class="flex-item col col-12 md-col-6 pxr1 ">
                <h2  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
                <h4  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
                <ul>
