@@ -32,8 +32,8 @@ include 'php-inc/svg.php';
 </style>
  
 <section class="section-wrap-header sectionCommon" id="section0">
-	<div class="section video-hero-header">
-	   <div class="layout-inner-wrap flex-col" >
+	<div class="flex flex-center section video-hero-header">
+	   <div class="flex-item  layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
 	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
@@ -54,9 +54,9 @@ include 'php-inc/svg.php';
 </section>   
 
 
-   <section class="section-wrap section1 sectionCommon" id="section1" style="background: url(edgeAnim/img/section1_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(edgeAnim/img/section1_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
+      <div class=" flex-item  section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
                <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
                 <p class="firstPara" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
@@ -70,10 +70,10 @@ include 'php-inc/svg.php';
       </div>
    </section> 
 
-   <section class="section-wrap section2 sectionCommon" id="section2">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section2">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-center flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/migration.png" alt="Mobile phone and app infographic"> 
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 " >
@@ -98,9 +98,9 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1 sectionCommon" id="section3">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section3">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
                <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
@@ -124,9 +124,9 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section4">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section4">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/service-man.png" alt="Mobile phone and app infographic">
             </div>
@@ -151,9 +151,9 @@ include 'php-inc/svg.php';
       </div>
    </section>
    
-   <section class=" section-wrap section1 sectionCommon" id="section5">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section5">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Visibility</h2>
                <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
@@ -178,9 +178,9 @@ include 'php-inc/svg.php';
    </section>  
 
    
-   <section class=" section-wrap section2 sectionCommon" id="section6">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section6">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/performance.png" alt="Mobile phone and app infographic">
             </div>
@@ -204,9 +204,9 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section1 sectionCommon" id="section7">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section7">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1 ">
                <h2  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
                <h4  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
@@ -229,9 +229,9 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section8">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section8">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
                <img src="edgeAnim/img/security.png" alt="Mobile phone and app infographic">
             </div>

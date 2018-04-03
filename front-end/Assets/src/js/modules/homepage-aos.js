@@ -73,11 +73,14 @@ $(document).ready(function () {
 						},0,"swing");*/
 					},
 					
-					//onLeave: function(element, position) {
-					//alert($(element).offset().top - $('.layout-header').height());
-						//$(element).css('visibility', 'hidden');
-						
-					//}
+					onLeave: function(element, position) {
+						//alert($(element).offset().top - $('.layout-header').height());
+							var rep = $(element).attr('id');
+							var index = rep.match(/\d+/);
+							if(index == 1){
+								$('#fp-nav').css("display","none");
+						}
+					}
 				});
 		    });
 	};
