@@ -229,7 +229,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section8" >
+   <section class="section-wrap section2 sectionCommon" id="section8">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">

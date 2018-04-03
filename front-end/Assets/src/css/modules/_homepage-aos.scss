@@ -13,16 +13,25 @@
 	}
 }
 .section-content{
-	@include media(breakpointMedium){
-		margin-left: 70px;
-		margin-right: 70px;
+	.full-bleed-two-column img{
+		@include media(breakpointMedium){
+			margin-top : 0px;
+		}
+		@include media(breakpointLarge){
+			margin-top :-60px;
+		}
+		margin-top : 0px;
 	}
-	@include media(breakpointLarge){
-		margin-left: 70px;
-		margin-right: 70px;
-	}
-	margin-left: 25px;
-	margin-right: 25px;
+		@include media(breakpointMedium){
+			margin-left: 70px;
+			margin-right: 70px;
+		}
+		@include media(breakpointLarge){
+			margin-left: 70px;
+			margin-right: 70px;
+		}
+		margin-left: 25px;
+		margin-right: 25px;
     
 }
 .aos-all {
@@ -49,7 +58,6 @@
 }
 
 .partners {
-	background-color:white;
 	h2 {
 		font-size: 40px;
 		line-height: 48px;
@@ -169,11 +177,9 @@ img {
 				padding: 8rem 0;
 			}
 			padding: 4rem 0;
-				
 		}
-		
 		.scrollDown{
-					position: absolute;
+						position: absolute;
     				bottom: 0px;
     				width: 100%;
     				padding-bottom: 1rem;
@@ -185,7 +191,6 @@ img {
 					font-family: "icomoon";
 					cursor:pointer;
 				}
-				
 	}
 	.vidbg-box {
 		width: 100%;
@@ -215,17 +220,23 @@ img {
 		}
 	}
 }
+.section-wrap#section1,
+.section-wrap#section4{
+	.full-bleed-two-column img{
+		margin-top : 0px;
+	}
+}
 .section-wrap.section1 {
-	background-color: rgba(247, 247, 246, 0.4);
+	background-color: rgba(247, 247, 246, 0.8);
 }
 .section-wrap.section2 {
-	background-color: rgba(241, 241, 241, 0.4);
+	background-color: rgba(241, 241, 241, 0.8);
 }
 .section-wrap#section9 {
 	min-height: auto !important;
 }
 .section-wrap {
-	--background-color: rgba(247, 247, 246, 0.4);
+	--background-color: rgba(247, 247, 246, 0.52);
 	.section-content.py4 {
 		max-width: 1440px;
 	}
@@ -263,7 +274,7 @@ img {
 				position: relative;
 				padding: 0;
 				display: inline-block;
-				padding: 0 0 21px 21px;
+				padding: 0 0 0px 21px;
 				line-height: 38px;
 				vertical-align: middle;
 				margin-bottom: 0;
@@ -310,10 +321,17 @@ img {
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
 	}
+	
 }
 .section-wrap#section1 {
 	h2.firstHeading {
-		padding: 15% 0 30px;
+		@include media(breakpointMedium){
+			padding: 0% 0 30px;
+		}
+		@include media(breakpointLarge){
+			padding: 15% 0 30px;
+		}
+		padding: 0% 0 30px;
 		color: #fff;
 	}
 	p{
