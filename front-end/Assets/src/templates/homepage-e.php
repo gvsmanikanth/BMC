@@ -32,8 +32,8 @@ include 'php-inc/svg.php';
 </style>
  
 <section class="section-wrap-header sectionCommon" id="section0">
-	<div class="flex flex-center section video-hero-header">
-	   <div class="flex-item  layout-inner-wrap flex-col" >
+	<div class="section video-hero-header">
+	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
 	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
