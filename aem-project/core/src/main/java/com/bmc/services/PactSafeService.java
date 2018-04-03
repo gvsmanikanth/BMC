@@ -84,7 +84,7 @@ public class PactSafeService {
 
     }
 
-    public String submitAgreement(String emailAddress){
+    public String submitAgreement(String emailAddress, String uniqueFormSubmissionID){
         // Uses Access ID from account settings (https://app.pactsafe.com/settings/account)
         // Make sure correct site is selected
         Activity site = new Activity(pactSafeSiteAccessId);
@@ -95,7 +95,7 @@ public class PactSafeService {
         try {
             resolver = resolverFactory.getServiceResourceResolver(param);
         } catch (Exception e) {
-            logger.error("PactSafe submitAgreement ResourceResolverFactory Error: " + e.getMessage());
+            logger.error("PactSafe submitAgreement ResourceResolverFactory Error: " + e.getMessage()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID);
         }
 
         Session session=resolver.adaptTo(Session.class);
@@ -167,31 +167,32 @@ public class PactSafeService {
         try {
             site.agreed(action);
         } catch (Exception e) {
-            logger.error("PactSafe submitAgreement Error: " + e.getMessage());
-            pactSafeResponse="PactSafe submitAgreement Error: "+e.getMessage().toString();
+            logger.error("PactSafe submitAgreement Error: " + e.getMessage()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID);
+            pactSafeResponse="PactSafe submitAgreement Error: "+e.getMessage().toString()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID;
         }
         if(!pactSafeResponse.equalsIgnoreCase("Success")){
             // first try at the service failed. Try once more.
             try {
                 TimeUnit.MILLISECONDS.sleep(1000);
             } catch (InterruptedException e) {
-                logger.error("PactSafe submit retry delay error: "+ e.getMessage());
+                logger.error("PactSafe submit retry delay error: "+ e.getMessage()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID);
             }
             try {
                 site.agreed(action);
             } catch (Exception e) {
-                logger.error("PactSafe submitAgreement Error (Second attempt): " + e.getMessage());
-                pactSafeResponse="PactSafe submitAgreement Error (Second attempt): "+e.getMessage().toString();
+                logger.error("PactSafe submitAgreement Error (Second attempt): " + e.getMessage()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID);
+                pactSafeResponse="PactSafe submitAgreement Error (Second attempt): "+e.getMessage().toString()+" | uniqueFormSubmissionID: "+uniqueFormSubmissionID;
             }
         }
 
         if (!pactSafeResponse.equalsIgnoreCase("Success")){
             StringBuilder bodyCopy = new StringBuilder("");
             bodyCopy.append("<h2>PactSafe Trial Agreement Submission Failure</h2><hr/>The following failure occurred on "+new Date().toString()+" while attempting to submit a Trial Agreement on bahalf of "+emailAddress+" for versions "+versions.toString()+";<br/>");
-            bodyCopy.append("<strong>"+pactSafeResponse+"</strong>");
+            bodyCopy.append("<strong>"+pactSafeResponse+"</strong><br/>");
+            bodyCopy.append("Unique Form Submission ID: "+uniqueFormSubmissionID+"");
             sendEmail(pactSafeServiceUnavailableEmailGroups, "PactSafe Agreement Submission Error", bodyCopy.toString());
         } else {
-            logger.info("Successful Submit on behalf of "+emailAddress+" at "+new Date().toString());
+            logger.info("Successful Submit on behalf of "+emailAddress+" at "+new Date().toString()+" with uniqueFormSubmissionID: "+uniqueFormSubmissionID);
         }
         return pactSafeResponse;
     }

@@ -168,12 +168,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         }
         if (!honeyPotFailure) {
             // Dermot's pet form submission UUID
-            form.data.put("formSubmissionUUID", UUID.randomUUID().toString());
+            form.data.put("uniqueFormSubmissionID", UUID.randomUUID().toString());
 
             // TODO Wrap this is something that makes sure the field is actually checked. Also work out what happens if it's not actually checked.
             String[] formTypes = {"Trial Download", "Demo", "Eval Request"};
             if(Arrays.asList(formTypes).contains(form.properties.getOrDefault("C_Lead_Offer_Most_Recent1",""))) {
-                pactSafeResponse = pactSafeService.submitAgreement(form.data.getOrDefault("C_EmailAddress", ""));
+                pactSafeResponse = pactSafeService.submitAgreement(form.data.getOrDefault("C_EmailAddress", ""),form.data.getOrDefault("uniqueFormSubmissionID","UniqueIDNotFound"));
                 form.data.put("pactSafeResponse", pactSafeResponse);
             }
             switch (form.type) {
