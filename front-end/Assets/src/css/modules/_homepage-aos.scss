@@ -49,6 +49,7 @@
 }
 
 .partners {
+	background-color:white;
 	h2 {
 		font-size: 40px;
 		line-height: 48px;
@@ -168,8 +169,15 @@ img {
 				padding: 8rem 0;
 			}
 			padding: 4rem 0;
-				.scrollDown{
-					margin-top: 50px;
+				
+		}
+		
+		.scrollDown{
+					position: absolute;
+    				bottom: 0px;
+    				width: 100%;
+    				padding-bottom: 1rem;
+    				color: white;
 					text-align: center;
 				}
 				.scrollDown:before{
@@ -177,7 +185,7 @@ img {
 					font-family: "icomoon";
 					cursor:pointer;
 				}
-		}
+				
 	}
 	.vidbg-box {
 		width: 100%;
@@ -208,16 +216,16 @@ img {
 	}
 }
 .section-wrap.section1 {
-	background-color: rgba(247, 247, 246, 0.8);
+	background-color: rgba(247, 247, 246, 0.4);
 }
 .section-wrap.section2 {
-	background-color: rgba(241, 241, 241, 0.8);
+	background-color: rgba(241, 241, 241, 0.4);
 }
 .section-wrap#section9 {
 	min-height: auto !important;
 }
 .section-wrap {
-	--background-color: rgba(247, 247, 246, 0.52);
+	--background-color: rgba(247, 247, 246, 0.4);
 	.section-content.py4 {
 		max-width: 1440px;
 	}
@@ -323,7 +331,9 @@ ul {
 .stories {
 	.stories_blk {
 		text-align: center;
-		padding: 38px 0 109px;
+		//padding: 38px 0 109px;
+		padding: 3rem 0;
+		background-color: rgba(241, 241, 241, 0.4);
 		button {
 			width: 263px;
 			background: #fff;
@@ -335,7 +345,29 @@ ul {
 			line-height: 22px;
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
-			margin: 0 0 92px 17px;
+			//margin: 0 0 92px 17px;
+		}
+	}
+}
+
+.contact-us-large {
+	.contact-us_blk {
+		text-align: center;
+		//padding: 38px 0 109px;
+		padding: 3rem 0;
+		background-color: rgba(247, 247, 247, 0.4);
+		button {
+			width: 263px;
+			background: #fff;
+			border: 1px solid #88c1dd;
+			text-align: center;
+			height: 73px;
+			color: #3cb6ce;
+			font-size: 20px;
+			line-height: 22px;
+			font-weight: 600;
+			font-family: 'Open Sans', sans-serif;
+			//margin: 0 0 92px 17px;
 		}
 		button.btn-lg{
 			width: 70%;
@@ -411,7 +443,7 @@ object{
 
 body{
 	//padding: 0 0 33px;
-    background: url("mainbannerimg.png") no-repeat;
+    background: url("mainbannerimg.png") repeat-y;
     //width: 100%;
     background-size: cover;
 }

@@ -44,8 +44,11 @@ include 'php-inc/svg.php';
 	         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
 	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
 	         Watch the video</a>
-			 <p class="scrollDown" id="scrollDown"></p>
+			 
 	      </div>
+	      
+	      <div class="scrollDown" id="scrollDown"></div>
+	      
 	   </div>
 	</div>
 </section>   
@@ -226,7 +229,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section8" data-aos-anchor-placement="center-bottom">
+   <section class="section-wrap section2 sectionCommon" id="section8" >
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
@@ -344,13 +347,14 @@ include 'php-inc/svg.php';
         <div class="container">
             <div class="stories_blk">
                 <button>All Success Stories ></button>
-                <h2 data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
-              <!--<p><span>
-                <input type="text" placeholder="I’m looking for solutions to help me...">
-                  </span>
-              </p>-->
-			  <button type="button" class="btn-lg">Connect with BMC</button>
             </div>
+        </div>
+    </div>
+    
+    <div class="contact-us-large ">
+		<div class="contact-us_blk">
+             <h2 data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
+			 <button data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
         </div>
     </div>
 
