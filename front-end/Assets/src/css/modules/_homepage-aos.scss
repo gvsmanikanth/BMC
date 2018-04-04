@@ -21,21 +21,21 @@
 			//margin-top :-60px;
 		}
 		margin-top : 0px;
+		
 	}
 	
 	.full-bleed-two-column{
 		@include media(breakpointMedium){
-			margin-left: 70px;
-			margin-right: 70px;
+			margin: 0 20px;
 		}
 		@include media(breakpointLarge){
 			margin-left: 70px;
 			margin-right: 70px;
 			//margin:auto;
 		}
-		margin-left: 25px;
-		margin-right: 25px;
+		margin: 0;
     }
+	margin: 0;
 }
 .aos-all {
 	width: 1000px;
@@ -166,36 +166,75 @@ img {
 			a {
 				border-radius: 0;
 			}
-			a.modal-youtube-video-player:after{
+			/*a.modal-youtube-video-player:after{
 				content: "\ea15";
 				font-family: "icomoon";    
 				padding-left: 5px;
-			}
+			}*/
 			display: absolute;
 		}
 		.hero-content {
 			@include media(breakpointMedium){
-				padding: 12rem 0;
+				padding: 17rem 0;
 			}
 			@include media(breakpointLarge){
 				padding: 8rem 0;
 			}
-			padding: 4rem 0;
+			padding: 6rem 0;
 		}
-		.scrollDown{
-					position: absolute;
-    				bottom: 0px;
-    				width: 100%;
-    				padding-bottom: 1rem;
-    				color: white;
-					text-align: center;
-					max-width: 1440px;
+		/*.scrollDown{
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			padding-bottom: 1rem;
+			color: white;
+			text-align: center;
+			max-width: 1440px;
+		}
+		.scrollDown:before{
+			content: "\e60e";
+			font-family: "icomoon";
+			cursor:pointer;
+		}*/
+		
+		.scroll-downs {
+			.mousey {
+			  width: 3px;
+			  padding: 10px 15px;
+			  height: 35px;
+			  border: 2px solid #fff;
+			  border-radius: 25px;
+			  opacity: 0.75;
+			  box-sizing: content-box;
+			  cursor:pointer;
+				.scroller {
+				  width: 3px;
+				  height: 10px;
+				  border-radius: 25%;
+				  background-color: #fff;
+				  animation-name: scroll;
+				  animation-duration: 2.2s;
+				  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+				  animation-iteration-count: infinite;
 				}
-				.scrollDown:before{
-					content: "\e60e";
-					font-family: "icomoon";
-					cursor:pointer;
+				@keyframes scroll {
+				  0% { opacity: 0; }
+				  10% { transform: translateY(0); opacity: 1; }
+				  100% { transform: translateY(15px); opacity: 0;}
 				}
+			}
+			position: absolute;
+			bottom: 1rem;
+			right: 0;
+			left: 0;
+			margin: auto;
+			width :34px;
+			height: 55px;
+		}
+		
+		
+		
+		
 	}
 	.vidbg-box {
 		width: 100%;
@@ -246,18 +285,36 @@ img {
 		max-width: 1440px;
 	}
 	h2 {
-		font-size: 40px;
-		line-height: 48px;
+		
+		@include media(breakpointLarge){
+			font-size: 40px;
+			line-height: 48px;
+		}@include media(breakpointMedium){
+			font-size: 40px;
+			line-height: 48px;
+		}
+		font-size: 24px;
+		line-height: 32px;
 		color: #fe5000;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
 		margin-bottom: 0;
 		span.smallHeading{
+			@include media(breakpointLarge){
+				font-size: 1.1rem;
+				margin-bottom: -1rem;
+				padding-left: 0.1rem;
+			}@include media(breakpointMedium){
+				font-size: 1.1rem;
+				margin-bottom: -1rem;
+				padding-left: 0.1rem;
+			}
 			display: block;
-			font-size: 20px;
-			margin-bottom: -20px;
-			padding-left: 2px;
+			--font-size: 20px;
+			font-size: 0.7rem;
+			margin-bottom: -0.7rem;
+			padding-left: 0.05rem;
 		}
 	}
 	h4 {
@@ -280,13 +337,13 @@ img {
 				padding: 0;
 				display: inline-block;
 				padding: 0 0 0px 21px;
-				line-height: 38px;
+				line-height: 26px;
 				vertical-align: middle;
 				margin-bottom: 0;
 				&:after {
 					content: '+';
 					position: absolute;
-					top: 9px;
+					top: 0px;
 					left: 0;
 					vertical-align: middle;
 					font-size: 24px;
@@ -302,7 +359,7 @@ img {
 	}
 	li {
 		display: block;
-		margin-bottom: 0;
+		margin-bottom: 10px;
 	}
 	p {
 		font-size: 18px;
@@ -398,7 +455,13 @@ ul {
 			color: #fff;
 		}
 		h2 {
-			padding: 0 0 40px 18px;
+			@include media(breakpointMedium){
+				padding: 0 0 40px 18px;
+			}
+			@include media(breakpointLarge){
+				padding: 0 0 40px 18px;
+			}
+			padding: 0 18px 40px 18px;
 			color: #000000;
 			font-family: 'Open Sans', sans-serif;
 			font-size: 40px;

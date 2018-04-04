@@ -43,11 +43,18 @@ include 'php-inc/svg.php';
 	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>
 	         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
 	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
-	         Watch the video</a>
+	         Watch the video	<svg class="svg-inline"> 
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
+           </svg></a>
 			 
 	      </div>
 	      
-	      <div class="scrollDown" id="scrollDown"></div>
+	      <!--<div class="scrollDown" id="scrollDown"></div>-->
+			<div class="scroll-downs">
+				<div class="mousey" id="scrollDown">
+					<div class="scroller"></div>
+				</div>
+			</div>
 	      
 	   </div>
 	</div>
