@@ -37,7 +37,10 @@ include 'php-inc/svg.php';
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
 	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
-			 <div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+			 
+			 <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
+			 
+			 <div class="vidbg-box" data-vidbg-bg="mp4:edgeAnim/img/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
 	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>

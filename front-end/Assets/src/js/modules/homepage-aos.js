@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
-		$(".section-wrap#section1 .full-bleed-two-column").removeClass("md-flex");
+		$(".section-wrap#section1 .full-bleed-two-column").removeClass("md-flex"); 
 	}
 	var AOS =  window.AOS;
 		AOS.init({
