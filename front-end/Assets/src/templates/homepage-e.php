@@ -31,7 +31,7 @@ include 'php-inc/svg.php';
 
 </style>
  
-<section class="section-wrap-header sectionCommon" id="section0">
+<section class="section-wrap-header sectionCommon" id="section0" style="background: url(edgeAnim/img/end.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header">
 	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
@@ -40,7 +40,7 @@ include 'php-inc/svg.php';
 			 
 			 <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
 			 
-			 <div class="vidbg-box" data-vidbg-bg="mp4:edgeAnim/img/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+			 <div class="vidbg-box" data-vidbg-bg="mp4:edgeAnim/img/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
 	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>
@@ -93,17 +93,17 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Assess your unique needs</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Build the right plan</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Establish a governance model</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='600'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Measure progress </p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='800'>Learn more about multi-cloud migration &gt;</a>
+               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration &gt;</a>
             </div>
          </div>
       </div>
@@ -118,14 +118,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Simulate migrations to see which cloud services fit best</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Track and compare on-premises and public cloud usage</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Forecast annual multi-cloud costs</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud cost &gt;</a>
+               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud cost &gt;</a>
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
                <img src="edgeAnim/img/cost.png" alt="Mobile phone and app infographic">
@@ -148,14 +148,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Collaborate effectively with service vendors to troubleshoot/resolve issues</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Tightly integrate incident and change management with leading agile development solutions</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Audit service performance capabilities to measure service integrity</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud service management &gt;</a>
+               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud service management &gt;</a>
             </div>
          </div>
       </div>
@@ -171,14 +171,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Inventory all your IT assets</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Map relationship across cloud platforms</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Know which assets impact critical business functions</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi cloud visibility &gt;</a>
+               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi cloud visibility &gt;</a>
             </div>
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
                <img src="edgeAnim/img/Visibility.png" alt="Mobile phone and app infographic">
@@ -201,14 +201,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Monitor performance across all your clouds in real time</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Get rapid root cause analysis</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Ensure optimal user experiences</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn about cloud performance monitoring &gt;</a>
+               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn about cloud performance monitoring &gt;</a>
             </div>
 
          </div>
@@ -224,14 +224,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Orchestrate data, applications, and infrastructure</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Centrally manage diverse workloads</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Automatically provision cloud servers and services</p>
                   </li>
                </ul>
-               <a href="#"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud automation &gt;</a>
+               <a href="#"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud automation &gt;</a>
             </div>
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
                <img src="edgeAnim/img/automation1.png" alt="Mobile phone and app infographic">
@@ -252,14 +252,14 @@ include 'php-inc/svg.php';
                   <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Find and fix security and compliance gaps</p>
                   </li> 
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'> 
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'> 
                      <p>Automate remediation</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Be audit ready all the time</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud security &gt;</a>
+               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud security &gt;</a>
             </div>
          </div>
       </div>

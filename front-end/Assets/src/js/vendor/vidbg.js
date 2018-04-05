@@ -283,9 +283,9 @@
         sources += '<source src="' + path.webm + '" type="video/webm">';
       }
 
-      $video = vidbg.$video = $('<video>' + sources + '</video>');
+      $video = vidbg.$video = $('<video id="video_id">' + sources + '</video>');
     } else {
-      $video = vidbg.$video = $('<video>' +
+      $video = vidbg.$video = $('<video id="video_id">' +
         '<source src="' + path + '" type="video/mp4">' +
         '<source src="' + path + '" type="video/webm">' +
         '</video>');
@@ -414,6 +414,7 @@
     }
   };
 
+	
   /**
    * Destroy a video background
    * @public
@@ -487,7 +488,16 @@
 
       $element[PLUGIN_NAME](path, options);
     });
-
+	
+	
+	/*
+	* End Video
+	*/
+	var video = $('#video_id');
+	video.on('ended', function() {
+		$(this).hide();
+	});
+	
   });
 
 });
