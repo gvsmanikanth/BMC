@@ -177,18 +177,16 @@ img {
 		.layout-inner-wrap.flex-col{
 			background-color: rgba(0, 0, 0, 0.5);
 			top: 0;
-			display: flex;
 			align-items: center;
+			display: table;
+			position: absolute;
 			height: 100%;
+			width: 100%;
 		}
 		.hero-content {
-			@include media(breakpointMedium){
-				padding: 17rem 0;
-			}
-			@include media(breakpointLarge){
-				padding: 8rem 0;
-			}
-			padding: 6rem 0;
+			padding: 0;
+			display: table-cell;
+			vertical-align: middle;
 		}
 		/*.scrollDown{
 			position: absolute;
