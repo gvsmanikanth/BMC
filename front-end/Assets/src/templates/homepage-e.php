@@ -6,40 +6,12 @@ include 'php-inc/head.php';
 <?php
 include 'php-inc/svg.php';
 ?>
-
-<style>
-
-/* .embed-container { */
-/*     position: relative;  */
-/*     padding-bottom: 100%; /* use 56.25% for 16/9 ratio */ */ */
-/*     overflow: hidden;  */
-/*  }  */
-
-/*  .embed-container iframe,  */
-/*  .embed-container object,  */
-/*  .embed-container embed {  */
-/*      position: absolute;  */
-/*      top: 0; */
-/*      left: 0;  */
-/*      width: 100%;  */
-/*      height: 100%;  */
-/* }  */
-
-/*  .embed-container #animation_container{  */
-/*  	margin:auto;  */
-/*  }  */
-
-</style>
  
 <section class="section-wrap-header sectionCommon" id="section0" style="background: url(edgeAnim/img/end.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header">
 	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
-	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
-			 
-			 <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
-			 
 			 <div class="vidbg-box" data-vidbg-bg="mp4:edgeAnim/img/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
@@ -49,15 +21,13 @@ include 'php-inc/svg.php';
 	         Watch the video	<svg class="svg-inline"> 
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
            </svg></a>
-			 
 	      </div>
 	      
-	      <!--<div class="scrollDown" id="scrollDown"></div>-->
-			<div class="scroll-downs">
-				<div class="mousey" id="scrollDown">
-					<div class="scroller"></div>
-				</div>
+		<div class="scroll-downs">
+			<div class="mousey" id="scrollDown">
+				<div class="scroller"></div>
 			</div>
+		</div>
 	      
 	   </div>
 	</div>
