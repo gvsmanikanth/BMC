@@ -7,12 +7,12 @@ include 'php-inc/head.php';
 include 'php-inc/svg.php';
 ?>
  
-<section class="section-wrap-header sectionCommon" id="section0" style="background: url(https://author.cms.bmc.com/content/dam/bmc/home/end.jpg)no-repeat center center;background-size: cover;">
+<section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/end.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header">
 	   <div class="layout-inner-wrap flex-col" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
-			 <div class="vidbg-box" data-vidbg-bg="mp4:https://author.cms.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
 	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>
@@ -32,9 +32,9 @@ include 'php-inc/svg.php';
 	   </div>
 	</div>
 </section>   
+ 
 
-
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(https://author.cms.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 md-col-6 pxr1" >
@@ -44,7 +44,7 @@ include 'php-inc/svg.php';
 			  
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic">
             </div>
          </div>
       </div>
@@ -54,7 +54,7 @@ include 'php-inc/svg.php';
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-center flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic"> 
+               <img src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic"> 
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 " >
                <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
@@ -98,7 +98,7 @@ include 'php-inc/svg.php';
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud cost &gt;</a>
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">
             </div>
            
          </div>
@@ -108,7 +108,7 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
              <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/service-man.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/service-man.png" alt="Mobile phone and app infographic">
             </div>
              
             <div class="flex-item col col-12 md-col-6 pxr1 " >
@@ -151,7 +151,7 @@ include 'php-inc/svg.php';
                <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi cloud visibility &gt;</a>
             </div>
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">
             </div>
          </div>
       </div>
@@ -162,7 +162,7 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
@@ -204,7 +204,7 @@ include 'php-inc/svg.php';
                <a href="#"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud automation &gt;</a>
             </div>
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">
             </div>
          </div>
       </div>
@@ -213,7 +213,7 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="https://author.cms.bmc.com/content/dam/bmc/home/security.png" alt="Mobile phone and app infographic">
+               <img src="//www.bmc.com/content/dam/bmc/home/security.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 md-col-6 pxr1">
                <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
@@ -240,9 +240,9 @@ include 'php-inc/svg.php';
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></a></li>
-                    <li><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></a></li>
-                    <li><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg3.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></a></li>
+                    <li><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg3.png" alt="logo"></a></li>
                 </ul>
             </div>
         </div>
@@ -284,12 +284,12 @@ include 'php-inc/svg.php';
       </li>
    </ul>
 </div>
-	<div class="Customer" style="background: url(https://author.cms.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
+	<div class="Customer" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
         <div class="container">
             <div class="customer_sec fade">
                 <div class="customer_lt">
-				<!--<img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
-				<div class="img-responsive visible-xs" style="background: url(https://author.cms.bmc.com/content/dam/bmc/home/logoimg_3.png)no-repeat center center;background-color: #fe5000;"></div>
+				<!--<img src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
+				<div class="img-responsive visible-xs" style="background: url(//www.bmc.com/content/dam/bmc/home/logoimg_3.png)no-repeat center center;background-color: #fe5000;"></div>
                  <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
                     <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -301,8 +301,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt xs-max-hide">
                     <ul>
-                        <li class="block1"><span><img src="https://author.cms.bmc.com/content/dam/bmc/home/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="https://author.cms.bmc.com/content/dam/bmc/home/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img src="//www.bmc.com/content/dam/bmc/home/img-01.png" alt="img"></span></li>
+                        <li class="block2"><span><img src="//www.bmc.com/content/dam/bmc/home/img_02.png" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -313,11 +313,11 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp"><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg_3.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg4.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg5.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img src="https://author.cms.bmc.com/content/dam/bmc/home/logoimg6.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg4.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg5.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="#"><img src="//www.bmc.com/content/dam/bmc/home/logoimg6.png" alt="logo"></a></li>
                     </ul>
                 </div>
             </div>
