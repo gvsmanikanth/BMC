@@ -11,6 +11,7 @@
 
 #fp-nav {
 	position: fixed;
+	display:none;
 	z-index: 100;
 	margin-top: -32px;
 	top: 50%;
@@ -83,7 +84,7 @@
 			}
 			.fp-tooltip {
 				position: absolute;
-				top: -2px;
+				top: -4px;
 				color:#A9A9A9;
 				font-size: 14px;
 				font-family: arial, helvetica, sans-serif;
@@ -405,9 +406,14 @@ img {
 	--background-color: rgba(247, 247, 246, 0.4);
 	.section-content.py4 {
 		max-width: 1440px;
+		padding: 2rem 1.55556rem;
+		@include media(breakpointLarge){
+			padding:0;
+		}@include media(breakpointMedium){
+			padding: 2rem 1.55556rem;
+		}
 	}
 	h2 {
-		
 		@include media(breakpointLarge){
 			font-size: 40px;
 			line-height: 48px;
