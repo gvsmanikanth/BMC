@@ -289,7 +289,7 @@ include 'php-inc/svg.php';
             <div class="customer_sec fade">
                 <div class="customer_lt">
 				<!--<img src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
-				<div class="img-responsive visible-xs" style="background: url(//www.bmc.com/content/dam/bmc/home/logoimg_3.png)no-repeat center center;background-color: #fe5000;"></div>
+				<div class="img-responsive"></div>
                  <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
                     <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
                     <div class="icon">
@@ -309,7 +309,7 @@ include 'php-inc/svg.php';
                 <div class="clear"></div>
             </div> 
         </div>
-        <div class="logos_sec xs-max-hide">
+        <div class="logos_sec">
             <div class="container">
                 <div class="logos_blk">
                     <ul>
