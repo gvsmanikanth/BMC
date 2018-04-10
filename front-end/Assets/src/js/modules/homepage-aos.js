@@ -86,7 +86,7 @@ $(document).ready(function () {
 		$(".page-homepage-e img").each(function(index) {
 		   var this_image = this;
 		   var src = $(this_image).attr('src') || '' ;
-		   if(!src.length > 0){
+		   if(!src.length > 0){ 
 			   var lsrc = $(this_image).attr('data-src') || '' ;
 			   if(lsrc.length > 0){
 				   var img = new Image();

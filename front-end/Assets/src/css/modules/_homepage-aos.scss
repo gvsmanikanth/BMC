@@ -238,13 +238,24 @@ img {
 }
 .section-wrap-header {
 	position: relative;
+	
+	.cover-bg{
+		width: 100% ; 
+		height:100%; 
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute; 
+		top: 0px; 
+		bottom: 0px;
+	}
 	.video-hero-header {
 		max-height: 100%;
 		height: 100%;
 		position: absolute;
 		width: 100%;
-		.layout-inner-wrap {
-			.ha.mb2 {
+		.video-content {
+			display: contents;
+			.page-header {
+				color:white;
 				@include media(breakpointMedium){
 					width: 70%; 
 					font-size: 55px;
@@ -283,41 +294,9 @@ img {
 			a {
 				border-radius: 0;
 			}
-			/*a.modal-youtube-video-player:after{
-				content: "\ea15";
-				font-family: "icomoon";    
-				padding-left: 5px;
-			}*/
+			
 			display: absolute;
 		}
-		.layout-inner-wrap.flex-col{
-			background-color: rgba(0, 0, 0, 0.5);
-			top: 0;
-			align-items: center;
-			display: table;
-			position: absolute;
-			height: 100%;
-			width: 100%;
-		}
-		.hero-content {
-			padding: 0;
-			display: table-cell;
-			vertical-align: middle;
-		}
-		/*.scrollDown{
-			position: absolute;
-			bottom: 0px;
-			width: 100%;
-			padding-bottom: 1rem;
-			color: white;
-			text-align: center;
-			max-width: 1440px;
-		}
-		.scrollDown:before{
-			content: "\e60e";
-			font-family: "icomoon";
-			cursor:pointer;
-		}*/
 		
 		.scroll-downs {
 			.mousey {
@@ -361,15 +340,15 @@ img {
 	.vidbg-box {
 		width: 100%;
 		height: 100%;
-		--background-color: rgba(0, 0, 0, 0.65);
+		//background-color: rgba(0, 0, 0, 0.65);
 	}
 	.py2 {
-		position: absolute;
-	    bottom: 10px;
-	    width: 100%;
-		.flex-col {
-			--padding: 4% 10%;
-		}
+		//position: absolute;
+	   // bottom: 10px;
+	   // width: 100%;
+		//.flex-col {
+		//	--padding: 4% 10%;
+		//}
 	}
 	h2.heading {
 		font-size: 18px;
@@ -403,10 +382,10 @@ img {
 	min-height: auto !important;
 }
 .section-wrap {
-	--background-color: rgba(247, 247, 246, 0.4);
 	.section-content.py4 {
 		max-width: 1440px;
 		padding: 2rem 1.55556rem;
+		margin:auto;
 		@include media(breakpointLarge){
 			padding:0;
 		}@include media(breakpointMedium){
@@ -636,7 +615,8 @@ object{
     max-width: 100%;
 }
 
-@media screen and (max-width: 1023px) {
+
+@media screen and (max-width: 640px) {
 	.full-bleed-two-column,
 	.section-content {
 	    display: flex;
@@ -649,7 +629,7 @@ object{
 			}
 	}
 }
-	
+
 
 
 
