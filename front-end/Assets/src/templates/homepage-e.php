@@ -356,7 +356,7 @@ include 'php-inc/svg.php';
     </div>
     
     <div class="contact-us-large ">
-		<div class="contact-us_blk">
+		<div class="contact-us_blk layout-inner-wrap">
              <h2 data-aos-once="true" data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
 			 <button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
         </div>
