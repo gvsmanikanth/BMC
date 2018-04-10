@@ -7,6 +7,7 @@ include 'php-inc/head.php';
 include 'php-inc/svg.php';
 ?>
  
+<!-- 
 <section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/end.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header flex flex-center">
 	   <div class="layout-inner-wrap video-content" >
@@ -35,7 +36,34 @@ include 'php-inc/svg.php';
 	   </div>
 	</div>
 </section>  
- 
+--> 
+
+  <section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/end.jpg)no-repeat center center;background-size: cover;">
+	<div class="section video-hero-header">
+   <div class="video-content" >
+	      <div class="hero-image xs-only"></div>
+	      <div class="hero-image video xs-max-hide">
+			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+	      </div>
+	      <div class="cover-bg"></div>
+	      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" data-aos="fade-right" data-aos-once="true">
+	      	<div class="flex-item m2">
+		         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
+		         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
+		         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
+		         Watch the video	<svg class="svg-inline"> 
+	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
+          	 </svg></a>
+           </div>
+	      </div>
+	      	      
+		<div class="scroll-downs">
+			<div class="mousey" id="scrollDown">
+				<div class="scroller"></div>
+			</div>
+		</div>
+ </div>
+</section>  
 
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
       <div class="flex-item section-content py4 layout-inner-wrap">

@@ -253,7 +253,7 @@ img {
 		position: absolute;
 		width: 100%;
 		.video-content {
-			display: contents;
+			//display: contents;
 			.page-header {
 				color:white;
 				@include media(breakpointMedium){
@@ -263,7 +263,7 @@ img {
 					font-weight: 300;
 				}
 				@include media(breakpointLarge){
-					width: 40%; 
+					width: 58%; 
 					font-size: 55px;
 					line-height: 65px;
 					font-weight: 300;
