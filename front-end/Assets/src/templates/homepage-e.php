@@ -14,7 +14,7 @@ include 'php-inc/svg.php';
 	      <div class="hero-image video xs-max-hide">
 			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
-	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
+	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right" data-aos-once="true">
 	         <strong class="ha mb2">Run Your Business as You Reinvent It</strong>
 	         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
 	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
@@ -38,12 +38,12 @@ include 'php-inc/svg.php';
       <div class="section-content py4 layout-inner-wrap">
          <div class="md-flex full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1" >
-               <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
-                <p class="firstPara" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
+               <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
+                <p class="firstPara" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
                <img src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic">
             </div>
          </div>
@@ -53,27 +53,27 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section2 sectionCommon" id="section2">
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-right">
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true"  data-aos="fade-right">
                <img src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic"> 
             </div>
             <div class="flex-item col col-12 xs-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
+               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
+               <h4 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Assess your unique needs</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Build the right plan</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Establish a governance model</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Measure progress </p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration &gt;</a>
             </div>
          </div>
       </div>
@@ -82,22 +82,22 @@ include 'php-inc/svg.php';
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
-               <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Simulate migrations to see which cloud services fit best</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Track and compare on-premises and public cloud usage</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Forecast annual multi-cloud costs</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud cost &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud cost &gt;</a>
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
                <img src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">
             </div>
            
@@ -107,25 +107,25 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section2 sectionCommon" id="section4">
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-             <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-right">
+             <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
                <img src="//www.bmc.com/content/dam/bmc/home/service-man.png" alt="Mobile phone and app infographic">
             </div>
              
             <div class="flex-item col col-12 xs-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Service Management</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Service Management</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Collaborate effectively with service vendors to troubleshoot/resolve issues</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Tightly integrate incident and change management with leading agile development solutions</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Audit service performance capabilities to measure service integrity</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud service management &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud service management &gt;</a>
             </div>
          </div>
       </div>
@@ -135,22 +135,22 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Visibility</h2>
-               <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Visibility</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Inventory all your IT assets</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Map relationship across cloud platforms</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Know which assets impact critical business functions</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi cloud visibility &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi cloud visibility &gt;</a>
             </div>
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-left">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
                <img src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">
             </div>
          </div>
@@ -161,24 +161,24 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section2 sectionCommon" id="section6">
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-right">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
                <img src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated cloud/data center performance</h4>
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated cloud/data center performance</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Monitor performance across all your clouds in real time</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Get rapid root cause analysis</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Ensure optimal user experiences</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn about cloud performance monitoring &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn about cloud performance monitoring &gt;</a>
             </div>
 
          </div>
@@ -188,22 +188,22 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1 ">
-               <h2  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
-               <h4  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
+               <h2  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
+               <h4  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Orchestrate data, applications, and infrastructure</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Centrally manage diverse workloads</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Automatically provision cloud servers and services</p>
                   </li>
                </ul>
-               <a href="#"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud automation &gt;</a>
+               <a href="#"  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud automation &gt;</a>
             </div>
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-left">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
                <img src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">
             </div>
          </div>
@@ -212,31 +212,31 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section2 sectionCommon" id="section8">
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos="fade-right">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
                <img src="//www.bmc.com/content/dam/bmc/home/security.png" alt="Mobile phone and app infographic">
             </div>
             <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Achieve security and compliance<br> across clouds</h4>
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Achieve security and compliance<br> across clouds</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Find and fix security and compliance gaps</p>
                   </li> 
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'> 
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'> 
                      <p>Automate remediation</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Be audit ready all the time</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud security &gt;</a>
+               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud security &gt;</a>
             </div>
          </div>
       </div>
    </section>
 
     <div class="partners sectionCommon section-wrap" id="section9"> 
-        <div class="container" data-aos="zoom-in">
+        <div class="container" data-aos-once="true" data-aos="zoom-in">
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
@@ -333,8 +333,8 @@ include 'php-inc/svg.php';
     
     <div class="contact-us-large ">
 		<div class="contact-us_blk">
-             <h2 data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
-			 <button data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
+             <h2 data-aos-once="true" data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
+			 <button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
         </div>
     </div>
 
