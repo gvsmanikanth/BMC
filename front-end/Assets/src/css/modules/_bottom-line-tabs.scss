@@ -26,7 +26,7 @@
 		width: 100%;
 		background-size: cover;
 		.customer_sec {
-			padding: 44px 0 67px;
+			padding: 50px 0;
 			@media screen and (max-width: 767px) {
 				display:block !important;
 			}
@@ -46,6 +46,7 @@
 			@include media(breakpointLarge){
 				padding: 0px 0 0 25px;
 				width: 50%;
+				display: grid;
 			}
 			padding: 0;
 			width: 100%;
@@ -71,11 +72,15 @@
 					min-height: 260px;
 					font-size: 36px;
 					line-height: 44px;
+					margin: 0;
+					padding: 0;
 				}
 				@include media(breakpointLarge){
 					min-height: 164px;
 					font-size: 40px;
 					line-height: 48px;
+					margin: 0;
+					padding: 0;
 				}
 			}
 			p {
