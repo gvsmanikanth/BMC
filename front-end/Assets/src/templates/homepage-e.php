@@ -315,22 +315,15 @@ include 'php-inc/svg.php';
       </li>
    </ul>
 </div>
-	<div class="Customer" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
-        <div class="container">
-            <div class="customer_sec fade">
+	<div class="Customer" >
+        <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
+            <div class="customer_sec fade layout-inner-wrap">
                 <div class="customer_lt">
 				<!--<img data-src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
 				<div class="img-responsive"></div>
                  <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
-                    <!--<p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>-->
                 </div>
-                <div class="customer_rgt xs-max-hide">
+                <div class="customer_rgt desktop-only">
                     <ul>
                         <li class="block1"><span><img data-src="//www.bmc.com/content/dam/bmc/home/img-01.png" alt="img"></span></li>
                         <li class="block2"><span><img data-src="//www.bmc.com/content/dam/bmc/home/img_02.png" alt="img"></span></li>
