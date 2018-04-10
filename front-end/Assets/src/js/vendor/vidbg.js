@@ -495,7 +495,7 @@
 	/*
 	* End Video
 	*/
-	var video = $('#video_id');
+	var video = $('.page-homepage-e #video_id');
 	video.on('ended', function() {
 		$(this).hide();
 	});
