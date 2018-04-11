@@ -42,7 +42,8 @@
 					height: 4px;
 					width: 4px;
 					border: 0;
-					background: #ccc;
+					--background: #ccc;
+					background-color: rgba(0, 0, 0, 0.5);
 					left: 50%;
 					top: 50%;
 					margin: -2px 0 0 -2px;
