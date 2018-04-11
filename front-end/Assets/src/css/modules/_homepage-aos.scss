@@ -5,7 +5,7 @@
 /**********************************************Stories***********************************************************************/
 .page-homepage-e {
 	body{ 
-		background-color: white !important; 
+		background-color: white; 
 		}
 
 /*Right Side Scroll Navigation*/
@@ -405,10 +405,10 @@ img {
 	}
 	h2 {
 		@include media(breakpointLarge){
-			font-size: 40px;
+			font-size: 3rem;
 			line-height: 48px;
 		}@include media(breakpointMedium){
-			font-size: 40px;
+			font-size: 3rem;
 			line-height: 48px;
 		}
 		font-size: 24px;
@@ -420,12 +420,12 @@ img {
 		margin-bottom: 0;
 		span.smallHeading{
 			@include media(breakpointLarge){
-				font-size: 1.1rem;
-				margin-bottom: -1rem;
+				font-size: 1.5rem;
+				margin-bottom: -0.5rem;
 				padding-left: 0.1rem;
 			}@include media(breakpointMedium){
-				font-size: 1.1rem;
-				margin-bottom: -1rem;
+				font-size: 1.5rem;
+				margin-bottom: -0.5rem;
 				padding-left: 0.1rem;
 			}
 			display: block;
@@ -436,9 +436,9 @@ img {
 		}
 	}
 	h4 {
-		font-size: 25px;
-		line-height: 28px;
-		margin-top: 5px;
+		font-size: 1.72rem;
+		line-height: 1.72rem;
+		margin-top: 1rem;
 		padding: 0 0 30px;
 		color: #414042;
 		font-weight: 600;
@@ -528,11 +528,11 @@ ul {
 }
 
 .stories {
+	background-color:#fff;
 	.stories_blk {
 		text-align: center;
 		//padding: 38px 0 109px;
 		padding: 3rem 0;
-		background-color: rgba(241, 241, 241, 0.4);
 		button {
 			width: 263px;
 			background: #fff;
@@ -550,11 +550,12 @@ ul {
 }
 
 .contact-us-large {
+	background-color:#fff;
 	.contact-us_blk {
 		text-align: center;
 		//padding: 38px 0 109px;
 		padding: 0 0 3rem 0;
-		background-color: rgba(247, 247, 247, 0.4);
+		--background-color: rgba(247, 247, 247, 0.4);
 		button {
 			width: 263px;
 			background: #fff;
