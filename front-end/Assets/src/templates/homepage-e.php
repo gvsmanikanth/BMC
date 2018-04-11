@@ -378,9 +378,9 @@ include 'php-inc/svg.php';
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></a></li>
-                    <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></a></li>
-                    <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="logo"></a></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="logo"></li>
                 </ul>
             </div>
         </div>
