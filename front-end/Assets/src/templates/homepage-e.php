@@ -46,7 +46,7 @@ include 'php-inc/svg.php';
 			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL.mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="cover-bg"></div>
-	      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" data-aos="fade-right" data-aos-once="true">
+	      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
 	      	<div class="flex-item m2 header-content-box">
 		         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
 		         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
