@@ -37,7 +37,7 @@ include 'php-inc/svg.php';
 	</div>
 </section>  
 --> 
-
+<div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;">
   <section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header">
    <div class="video-content" >
@@ -62,6 +62,7 @@ include 'php-inc/svg.php';
 				<div class="scroller"></div>
 			</div>
 		</div>
+ </div>
  </div>
 </section>  
 
@@ -273,13 +274,13 @@ include 'php-inc/svg.php';
                 <ul>
                     <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></a></li>
                     <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></a></li>
-                    <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.png" alt="logo"></a></li>
+                    <li><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="logo"></a></li>
                 </ul>
             </div>
         </div>
     </div>
 	
-	   <div id="fp-nav" class="right" style="margin-top: -33.5px;">
+   <div id="fp-nav" class="right" style="margin-top: -33.5px;">
    <ul>
       <li id="click1" class="click">
          <a class="active"><span></span></a>
@@ -325,8 +326,8 @@ include 'php-inc/svg.php';
                 </div>
                 <div class="customer_rgt desktop-only">
                     <ul>
-                        <li class="block1"><span><img data-src="//www.bmc.com/content/dam/bmc/home/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img data-src="//www.bmc.com/content/dam/bmc/home/img_02.png" alt="img"></span></li>
+                        <li class="block1"><span><img data-src="//www.bmc.com/content/dam/bmc/home/customer_section_Benefit1.jpg" alt="img"></span></li>
+                        <li class="block2"><span><img data-src="//www.bmc.com/content/dam/bmc/home/customer_section_Benefit2.jpg" alt="img"></span></li>
                       
                     </ul>
                 </div>
@@ -339,7 +340,7 @@ include 'php-inc/svg.php';
                     <ul>
                         <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" alt="logo"></a></li>
                         <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg4.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp small"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
                         <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg5.png" alt="logo"></a></li>
                         <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg6.png" alt="logo"></a></li>
                     </ul>
@@ -361,6 +362,7 @@ include 'php-inc/svg.php';
 			 <button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
         </div>
     </div>
+</div>
 
 <?php
 include 'php-inc/foot.php';
