@@ -62,7 +62,7 @@ $(document).ready(function () {
 						var index = rep.match(/\d+/);
 						if(index > 0 && index <= 8){
 								$('#fp-nav').css("display","block"); 
-								console.log("if - "+index); 
+								//console.log("if - "+index); 
 						}else{
 							index = 0;
 							$('#fp-nav').css("display","none");
