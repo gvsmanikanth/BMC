@@ -38,12 +38,12 @@ include 'php-inc/svg.php';
 </section>  
 --> 
 
-  <section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/end.jpg)no-repeat center center;background-size: cover;">
+  <section class="section-wrap-header sectionCommon" id="section0" style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header">
    <div class="video-content" >
 	      <div class="hero-image xs-only"></div>
 	      <div class="hero-image video xs-max-hide">
-			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee (for approval).mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+			 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL.mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 	      </div>
 	      <div class="cover-bg"></div>
 	      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" data-aos="fade-right" data-aos-once="true">
