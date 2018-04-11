@@ -5,7 +5,7 @@
 /**********************************************Stories***********************************************************************/
 .page-homepage-e {
 	body{ 
-		background-color: white; 
+		background-color: white !important; 
 		}
 
 /*Right Side Scroll Navigation*/
@@ -194,7 +194,7 @@
 			padding:0;
 		}
 		@include media(breakpointLarge){
-			padding: 40px 0 88px 5px;
+			padding: 40px 0 88px 0px;
 		}
 		padding: 0;
 		text-align: center;
@@ -538,7 +538,7 @@ ul {
 			line-height: 22px;
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
-			//margin: 0 0 92px 17px;
+			border-radius: 0px; 
 		}
 	}
 }
@@ -560,7 +560,7 @@ ul {
 			line-height: 22px;
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
-			//margin: 0 0 92px 17px;
+			border-radius: 0px;
 		}
 		button.btn-lg{
 			width: 70%;
@@ -643,7 +643,7 @@ object{
 
 body{
 	//padding: 0 0 33px;
-    background: url("mainbannerimg.jpeg") repeat-y;
+    //background: url("mainbannerimg.jpeg") repeat-y;
     //width: 100%;
     background-size: cover;
 }

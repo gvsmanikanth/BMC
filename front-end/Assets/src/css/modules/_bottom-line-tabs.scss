@@ -26,7 +26,7 @@
 		width: 100%;
 		background-size: cover;
 		.customer_sec {
-			padding: 50px 0;
+			padding: 5rem 0;
 			@media screen and (max-width: 767px) {
 				display:block !important;
 			}
@@ -39,12 +39,12 @@
 		}
 		.customer_lt {
 			@include media(breakpointMedium){
-				padding: 0px 0 0 25px;
+				padding: 0px 0 0 4rem;
 				width: 50%;
 				height: 266px;
 			}
 			@include media(breakpointLarge){
-				padding: 0px 0 0 25px;
+				padding: 0px 0 0 4rem;
 				width: 50%;
 				display: grid;
 			}
@@ -170,7 +170,7 @@
 					}
 					@include media(breakpointLarge){
 						bottom: -85%;
-						left : 38%;
+						left: 50%;
 					}
 				}
 				li.block1 {
@@ -240,6 +240,9 @@
 							right: 0;
 						}
 					}
+				}
+				li.small img{
+					width:80px;
 				}
 				li.active {
 					background: #fe5000;
