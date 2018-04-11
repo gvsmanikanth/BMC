@@ -130,7 +130,26 @@ include 'php-inc/svg.php';
                <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud cost &gt;</a>
             </div>
             <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
-               <img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">
+               <!--<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">-->
+			   <div class="carousel-wrap">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Cost1.png" alt="" title="" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						<li data-slide="1">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Cost2.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+						<li data-slide="2">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Cost3.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+					</ul>
+				</div>
             </div>
            
          </div>
@@ -140,7 +159,26 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
              <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
-               <img data-src="//www.bmc.com/content/dam/bmc/home/service-man.png" alt="Mobile phone and app infographic">
+               <!--<img data-src="//www.bmc.com/content/dam/bmc/home/service-man.png" alt="Mobile phone and app infographic">-->
+			    <div class="carousel-wrap">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-service-man1.png" alt="" title="" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						<li data-slide="1">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-service-man2.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+						<li data-slide="2">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-service-man3.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+					</ul>
+				</div>
             </div>
              
             <div class="flex-item col col-12 xs-col-6 pxr1 " >
@@ -183,7 +221,26 @@ include 'php-inc/svg.php';
                <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi cloud visibility &gt;</a>
             </div>
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
-               <img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">
+               <!--<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">-->
+			    <div class="carousel-wrap">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Visibility1.png" alt="" title="" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						<li data-slide="1">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Visibility2.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+						<li data-slide="2">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Visibility3.png" alt="" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+					</ul>
+				</div>
             </div>
          </div>
       </div>
@@ -236,7 +293,31 @@ include 'php-inc/svg.php';
                <a href="#"  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud automation &gt;</a>
             </div>
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
-               <img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">
+               <!--<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">-->
+			<div class="carousel-wrap">
+				<ul class="carousel">
+					<li data-slide="0" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-automation1.png" alt="" title="" width="900" border="0" height="516">		
+						</figure>
+					</li>
+					<li data-slide="1">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-automation2.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+					<li data-slide="2">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-automation3.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+					<li data-slide="3">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-automation4.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+				</ul>
+			</div>
             </div>
          </div>
       </div>
@@ -245,7 +326,32 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
-               <img data-src="//www.bmc.com/content/dam/bmc/home/security.png" alt="Mobile phone and app infographic">
+               <!--<img data-src="//www.bmc.com/content/dam/bmc/home/security.png" alt="Mobile phone and app infographic">-->
+			<div class="carousel-wrap">
+				<ul class="carousel">
+					<li data-slide="0" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security1.png" alt="" title="" width="900" border="0" height="516">		
+						</figure>
+					</li>
+					<li data-slide="1">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security2.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+					<li data-slide="2">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security3.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+					<li data-slide="3">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security4.png" alt="" title="" width="900" border="0" height="516">
+						</figure>
+					</li>
+				</ul>
+			</div>
+
             </div>
             <div class="flex-item col col-12 xs-col-6 pxr1">
                <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
