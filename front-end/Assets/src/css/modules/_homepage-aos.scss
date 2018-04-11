@@ -151,9 +151,11 @@
 		}
 		margin: 0;
 		align-items: center;
-		a{
-			font-size: 18px;
-		}
+		//a{
+			//@include media(breakpointMedium){
+				//font-size: 18px;
+			//}
+		//}
     }
 	margin: 0;
 }
@@ -190,13 +192,13 @@
 		letter-spacing: 0.5px;
 	}
 	.partners_sec {
-		@include media(breakpointMedium){
-			padding:0;
-		}
-		@include media(breakpointLarge){
-			padding: 40px 0 88px 0px;
-		}
-		padding: 0;
+		//@include media(breakpointMedium){
+			//padding:0;
+		//}
+		//@include media(breakpointLarge){
+			//padding: 40px 0 88px 0px;
+		//}
+		//padding: 0;
 		text-align: center;
 		h2 {
 			padding: 61px 0 64px 0;
@@ -209,19 +211,32 @@
 			padding: 0;
 			li {
 				display: inline-block;
-				padding: 0 0 20px 0;
+				//padding: 0 0 20px 0;
 				vertical-align: middle;
-				@include media(breakpointMedium){
-					padding: 0 20px 20px 0;
-				}
-				@include media(breakpointLarge){
-					padding: 0 100px 0 0;
-				}
+				//@include media(breakpointMedium){
+				//	padding: 0 20px 20px 0;
+				//}
+				//@include media(breakpointLarge){
+				//	padding: 0 100px 0 0;
+				//}
+				
+				
+				
 				img{
 					width: 230px;
 					@include media(breakpointMedium){
 						width: 200px;
 					}
+				}
+			}
+			
+			li:not(:last-child){
+				display: block;
+				padding-bottom:1rem;
+				padding-top:1rem;
+				@include media(breakpointMedium){
+					padding-right : 5rem;
+					display: inline-block;
 				}
 			}
 		}
@@ -408,8 +423,8 @@ img {
 			font-size: 3rem;
 			line-height: 48px;
 		}@include media(breakpointMedium){
-			font-size: 3rem;
-			line-height: 48px;
+			font-size: 2.5rem;
+			line-height:  2.5rem;
 		}
 		font-size: 24px;
 		line-height: 32px;
@@ -436,13 +451,15 @@ img {
 		}
 	}
 	h4 {
+	@include media(breakpointLarge){
 		font-size: 1.72rem;
 		line-height: 1.72rem;
+	}
 		margin-top: 1rem;
 		padding: 0 0 30px;
 		color: #414042;
-		font-weight: 600;
-		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		//font-family: 'Open Sans', sans-serif;
 	}
 	ul {
 		display: block;
@@ -455,7 +472,7 @@ img {
 				padding: 0;
 				display: inline-block;
 				padding: 0 0 0px 21px;
-				line-height: 26px;
+				line-height: 36px;
 				vertical-align: middle;
 				margin-bottom: 0;
 				&:after {
@@ -465,7 +482,7 @@ img {
 					left: 0;
 					vertical-align: middle;
 					font-size: 24px;
-					line-height: 26px;
+					line-height: 36px;
 					font-weight: 400;
 					font-family: 'Open Sans', sans-serif;
 					padding: 0;
@@ -480,11 +497,18 @@ img {
 		margin-bottom: 10px;
 	}
 	p {
-		font-size: 18px;
-		line-height: 30px;
+	
+		@include media(breakpointMedium){
+			font-size: 22px;
+			line-height: 36px;
+		}
+		
 		color: #414042;
-		font-weight: 400;
+		font-weight: 300;
 		font-family: 'Open Sans', sans-serif;
+		b{
+			font-weight: normal;
+		}
 	}
 	a {
 		@include media(breakpointMedium){
@@ -495,8 +519,8 @@ img {
 		}
 		display: inline-block;
 		color: #3cb6ce;
-		font-size: 18px;
-		line-height: 26px;
+		//font-size: 18px;
+		//line-height: 26px;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
