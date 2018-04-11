@@ -47,9 +47,9 @@ include 'php-inc/svg.php';
 	      </div>
 	      <div class="cover-bg"></div>
 	      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" data-aos="fade-right" data-aos-once="true">
-	      	<div class="flex-item m2">
+	      	<div class="flex-item m2 header-content-box">
 		         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
-		         <div class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</div>
+		         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
 		         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
 		         Watch the video	<svg class="svg-inline"> 
 	            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
