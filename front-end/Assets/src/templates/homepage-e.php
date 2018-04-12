@@ -302,21 +302,6 @@ include 'php-inc/svg.php';
 							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security1.png" alt="" title="" width="900" border="0" height="516">		
 						</figure>
 					</li>
-					<li data-slide="1">
-						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security2.png" alt="" title="" width="900" border="0" height="516">
-						</figure>
-					</li>
-					<li data-slide="2">
-						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security3.png" alt="" title="" width="900" border="0" height="516">
-						</figure>
-					</li>
-					<li data-slide="3">
-						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security4.png" alt="" title="" width="900" border="0" height="516">
-						</figure>
-					</li>
 				</ul>
 			</div>
 
