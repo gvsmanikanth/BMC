@@ -206,6 +206,7 @@
 			margin: 0;
 		}
 		ul {
+			width:100%;
 			display: block;
 			margin: 0;
 			padding: 0;
@@ -236,6 +237,10 @@
 				padding-top:1rem;
 				@include media(breakpointMedium){
 					padding-right : 5rem;
+					display: inline-block;
+				}
+				@include media(breakpointSmall){
+					padding-right : 2rem;
 					display: inline-block;
 				}
 			}
@@ -281,7 +286,7 @@ img {
 			.page-header {
 				color:white;
 				width: 100%; 
-				font-size: 2.5rem;
+				font-size: 1.9rem;
 				line-height: 2.5rem;
 				font-weight: 400;
 				
@@ -302,17 +307,19 @@ img {
 			}
 			.h3 {
 				width: 100%;
-				font-size: 24px;
+				font-size: 1.25rem;
 				line-height: 41px;
 				font-weight: 400;
 				color: #fff;
 				//font-style: italic;
-				padding-bottom: 2rem;
+				padding-bottom: 1rem;
 				@include media(breakpointMedium){
 					width: 60%; 
+					padding-bottom: 2rem;
 				}
 				@include media(breakpointLarge){
 					width: 100%;
+					padding-bottom: 2rem;
 				}
 				
 			}
@@ -466,6 +473,13 @@ img {
 		padding-bottom: 25px;
 		padding-left: 0;
 		margin: 0;
+		width: 100%;
+		@include media(breakpointLarge){
+			width: 90%;
+		}
+		@include media(breakpointMedium){
+			width: 90%;
+		}
 		li {
 			p {
 				position: relative;
@@ -674,6 +688,7 @@ object{
 			}
 	}
 }
+
 
 
 

@@ -222,7 +222,8 @@
 					position: relative;
 					cursor:pointer;
 					&:hover {
-						background: #fe5000a3;
+						background: #fe5000;
+						overflow:visible;
 					}
 					a {
 						display: inline-block;
@@ -244,7 +245,7 @@
 				li.small img{
 					width:80px;
 				}
-				li.active {
+				.hover {
 					background: #fe5000;
 				}
 			}

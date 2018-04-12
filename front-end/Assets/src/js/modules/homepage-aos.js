@@ -1,6 +1,16 @@
 $(document).ready(function () {
 	if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
-		$(".section-wrap#section1 .full-bleed-two-column").removeClass("md-flex"); 
+		$(".page-homepage-e .section-wrap").removeClass("flex flex-centerx"); 
+		$(".page-homepage-e .section-wrap .full-bleed-two-column").removeClass("md-flex"); 
+		
+		/*Hover Effect*/
+		$(".imgDesp").mouseover(function() {
+			$(this).addClass("hover");
+			$(this).css("background","fe5000a3");
+		}).mouseout(function() {
+			$(this).removeClass("hover");
+		});
+		
 	}
 	var AOS =  window.AOS;
 		AOS.init({
