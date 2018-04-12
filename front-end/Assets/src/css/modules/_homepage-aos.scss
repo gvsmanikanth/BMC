@@ -262,10 +262,14 @@ img {
 .section-wrap-header {
 	position: relative;
 	
+	
 	.header-content-box{
 	  @include media(breakpointLarge){
 		 padding-left: 5rem;
 	  }
+	  vertical-align: middle;
+	  align-items: center;
+	  display: table-cell; 
 	}
 	
 	.cover-bg{
@@ -330,7 +334,9 @@ img {
 			
 			display: absolute;
 		}
-		
+		.hero-content{
+			display:table;
+		}
 		.scroll-downs {
 			.mousey {
 			  width: 3px;
@@ -366,23 +372,13 @@ img {
 			height: 55px;
 		}
 		
-		
-		
-		
 	}
 	.vidbg-box {
 		width: 100%;
 		height: 100%;
 		//background-color: rgba(0, 0, 0, 0.65);
 	}
-	.py2 {
-		//position: absolute;
-	   // bottom: 10px;
-	   // width: 100%;
-		//.flex-col {
-		//	--padding: 4% 10%;
-		//}
-	}
+	
 	h2.heading {
 		font-size: 18px;
 		font-weight: 300;
@@ -399,6 +395,7 @@ img {
 		}
 	}
 }
+
 .section-wrap#section1,
 .section-wrap#section4{
 	.full-bleed-two-column img{
