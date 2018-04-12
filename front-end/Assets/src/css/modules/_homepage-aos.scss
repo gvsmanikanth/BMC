@@ -247,9 +247,9 @@
 		}
 	}
 }
-* {
+/** {
 	box-sizing: border-box;
-}
+}*/
 fieldset {
 	border: 0;
 }
@@ -528,15 +528,15 @@ img {
 		}
 	}
 	a {
-		//@include media(breakpointMedium){
-			//font-size: 20px;
-		//}
+		@include media(breakpointMedium){
+			font-size: 18px;
+		}
 		@include media(breakpointLarge){
 			font-size: 20px;
 		}
 		display: inline-block;
 		color: #3cb6ce;
-		//font-size: 18px;
+		font-size: 17px;
 		//line-height: 26px;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;

@@ -38,7 +38,8 @@ include 'php-inc/svg.php';
 </section> 
  --> 
 <div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;" >
-  <section class="section-wrap-header  sectionCommon" id="section0"  style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
+  <section class="section-wrap-header sectionCommon" id="section0"  style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
+  
 	<div class="section video-hero-header" >
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
@@ -78,7 +79,7 @@ include 'php-inc/svg.php';
             <div class="flex-item col col-6 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
 <!--                  <img data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic"> -->
                <figure>
-				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/Multi-cloud animation_4/multi_cloud_animation_4.html">
+				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
 				</object>
                 </figure>
 
@@ -93,7 +94,7 @@ include 'php-inc/svg.php';
             <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true"  data-aos="fade-right">
 <!--                <img data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic">  -->
 				<figure>
-				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/migration_animation_4/migration_animation_4.html">
+				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
 				</object>
                 </figure>
             </div>
@@ -232,7 +233,7 @@ include 'php-inc/svg.php';
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
 <!--                <img data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic"> -->
 				<figure>
-				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/cloud_guage_animation_2/cloud_guage_animation_4.html">
+				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
 				</object>
                 </figure>
             </div>
