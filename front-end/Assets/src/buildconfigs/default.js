@@ -40,6 +40,13 @@ var configuration = {
 			output: './../..',
 			autoClean: true,
 			autoCleanPaths: ['*.{php,html}', 'inc']
+		},
+		{
+			paths: ['./edgeAnim/**/*.*'],
+			base: './dist/edgeAnim',
+			watchPaths: ['edgeAnim/**'],
+			//output: './../..'
+			//autoClean: false,
 		}
 		/*
 			Tasks are a unit of work. At their simplest tasks act as a simple file copy from [paths] to [output] (maintaining relative paths).

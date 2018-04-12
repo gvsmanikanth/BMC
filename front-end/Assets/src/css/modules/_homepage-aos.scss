@@ -472,7 +472,9 @@ img {
 				padding: 0;
 				display: inline-block;
 				padding: 0 0 0px 21px;
-				line-height: 36px;
+				@include media(breakpointLarge){
+					line-height: 32px;
+				}
 				vertical-align: middle;
 				margin-bottom: 0;
 				&:after {
@@ -482,7 +484,11 @@ img {
 					left: 0;
 					vertical-align: middle;
 					font-size: 24px;
-					line-height: 36px;
+					line-height: 18px;
+					@include media(breakpointLarge){
+						line-height: 32px;
+					}
+					//line-height: 32px;
 					font-weight: 400;
 					font-family: 'Open Sans', sans-serif;
 					padding: 0;
@@ -498,7 +504,7 @@ img {
 	}
 	p {
 	
-		@include media(breakpointMedium){
+		@include media(breakpointLarge){
 			font-size: 22px;
 			line-height: 36px;
 		}
@@ -511,9 +517,9 @@ img {
 		}
 	}
 	a {
-		@include media(breakpointMedium){
-			font-size: 20px;
-		}
+		//@include media(breakpointMedium){
+			//font-size: 20px;
+		//}
 		@include media(breakpointLarge){
 			font-size: 20px;
 		}
@@ -601,14 +607,16 @@ ul {
 		h2 {
 			@include media(breakpointMedium){
 				padding: 0 0 40px 18px;
+				font-size: 36px;
 			}
 			@include media(breakpointLarge){
 				padding: 0 0 10px 0px;
+				font-size: 40px;
 			}
 			padding: 0 18px 40px 18px;
 			color: #000000;
 			font-family: 'Open Sans', sans-serif;
-			font-size: 40px;
+			//font-size: 40px;
 			font-weight: 300;
 			line-height: 48px;
 			letter-spacing: 0.5px;
