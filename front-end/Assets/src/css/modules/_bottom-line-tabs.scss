@@ -1,193 +1,50 @@
 .page-homepage-e {
 	.Customer {
-		@include media(breakpointMedium){
-			background-position: inherit;
-		}
-		h2 {
-			font-size: 40px;
-			line-height: 48px;
-			font-weight: 300;
-			font-family: 'Open Sans', sans-serif; 
-			letter-spacing: 0.5px;
-		}
-		a {
-			display: inline-block;
-			color: #3cb6ce;
-			font-size: 24px;
-			line-height: 26px;
-			font-weight: 400;
-			font-family: 'Open Sans', sans-serif;
-		}
-		p {
-			font-size: 18px;
-			line-height: 30px;
-		}
-		--background: url(bagroundimg2.jpg)no-repeat center center;
-		width: 100%;
-		background-size: cover;
-		.customer_sec {
-			padding: 5rem 0;
-			@media screen and (max-width: 767px) {
-				display:block !important;
+		.carousel-wrap{
+			    
+				/*img {
+					width: 150px;
+					@include media(breakpointMedium){
+						width: 200px;
+					}
+					@include media(breakpointLarge){
+						width: 200px;
+					}
+				}*/
 			}
-		}
-		.customer_sec.fade {
-			-webkit-animation-name: fade;
-			-webkit-animation-duration: 1.5s;
-			animation-name: fade;
-			animation-duration: 1.5s;
-		}
-		.customer_lt {
+		h2 {
+			font-size: 24px;
+			line-height: 34px;
+			color: #fff;
+			padding: 0 0 20px;
+			min-height: auto;
 			@include media(breakpointMedium){
-				padding: 0px 0 0 4rem;
-				width: 50%;
-				height: 266px;
+				min-height: 260px;
+				font-size: 36px;
+				line-height: 44px;
+				margin: 0;
+				padding: 0;
 			}
 			@include media(breakpointLarge){
-				padding: 0px 0 0 4rem;
-				width: 50%;
-				display: grid;
-			}
-			padding: 0;
-			width: 100%;
-			float: left;
-			--padding: 80px 0 0 83px;
-			.visible-xs{
-				@include media(breakpointMedium){
-					display:none;
-				}
-				@include media(breakpointLarge){
-					display:none;
-				}
-			    height: 135px;
-			    display:block;
-			}
-			h2 {
-			    font-size: 24px;
-				line-height: 34px;
-				color: #fff;
-				padding: 0 0 20px;
-				min-height: auto;
-				@include media(breakpointMedium){
-					min-height: 260px;
-					font-size: 36px;
-					line-height: 44px;
-					margin: 0;
-					padding: 0;
-				}
-				@include media(breakpointLarge){
-					min-height: 164px;
-					font-size: 40px;
-					line-height: 48px;
-					margin: 0;
-					padding: 0;
-				}
-			}
-			p {
-				padding: 0 0 30px;
-				color: #fff;
-				margin: 0;
-			}
-		}
-		.icon {
-			ul {
-				display: block;
+				min-height: 164px;
+				font-size: 40px;
+				line-height: 48px;
 				margin: 0;
 				padding: 0;
-				li {
-					@include media(breakpointMedium){
-						padding: 0 83px 0 0;
-					}
-					@include media(breakpointLarge){
-						padding: 0 83px 0 0;
-					}
-					display: inline-block;
-					padding: 0;
-					margin-bottom: 0;
-					a {
-						color: #29a5d6;
-						font-size: 24px;
-						line-height: 26px;
-						font-weight: 400;
-						font-family: 'Open Sans', sans-serif;
-						
-						.fa {
-							display: inline-block;
-							font: normal normal normal 14px/1 FontAwesome;
-							font-size: inherit;
-							text-rendering: auto;
-							-webkit-font-smoothing: antialiased;
-							-moz-osx-font-smoothing: grayscale;
-						}
-					}
-						a.icoLearn {
-							&:after {
-								@include icon(); 
-								content: "\e61b";
-								position: absolute;
-								margin-top: 3px;
-							}
-						}
-						a.icoPlay{
-							&:after {
-								@include icon();
-								content: "\ea15";
-								position: absolute;
-								margin-top: 3px;
-								padding-left: 10px;
-							}
-						}
-				}
+				font-weight: 300;
 			}
-		}
-		.customer_rgt {
-			ul {
-				display: block;
-				margin: 0;
-				padding: 0;
-				li {
-					display: block;
-					margin-bottom: 0em;
-					span {
-						img {
-							width: 150px;
-							@include media(breakpointMedium){
-								width: 200px;
-							}
-							@include media(breakpointLarge){
-								width: 200px;
-							}
-						}
-					}
-				}
-				li.block2 {
-					position: absolute;
-					bottom: -75%;
-					left: 9%;
-					@include media(breakpointMedium){
-						bottom: -68%;
-						left : 38%;
-					}
-					@include media(breakpointLarge){
-						bottom: -85%;
-						left: 50%;
-					}
-				}
-				li.block1 {
-					margin-top: -5%;
-					@include media(breakpointMedium){
-						
-					}
-					@include media(breakpointLarge){
-						margin-top: -5%;
-					}
-				}
-			}
-			float: right;
-			width: 50%;
-			text-align: center;
-			position: relative;
-		}
+		}				
+			
+		/*.block2{
+			position: absolute;
+			right: -35%;
+			top: 65%;
+		}*/
+		
+		
+
+
+
 		.clear {
 			clear: both;
 			font-size: 1px;

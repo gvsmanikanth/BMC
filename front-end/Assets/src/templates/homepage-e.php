@@ -378,20 +378,20 @@ include 'php-inc/svg.php';
 </div>
 	<div class="Customer" >
         <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
-            <div class="customer_sec fade layout-inner-wrap">
-                <div class="customer_lt">
-				<!--<img data-src="//www.bmc.com/content/dam/bmc/home/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
-				<div class="img-responsive"></div>
-                 <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
-                </div>
-                <div class="customer_rgt desktop-only">
-                    <ul>
-                        <li class="block1"><span><img data-src="//www.bmc.com/content/dam/bmc/home/customer_section_Benefit1.jpg" alt="img"></span></li>
-                        <li class="block2"><span><img data-src="//www.bmc.com/content/dam/bmc/home/customer_section_Benefit2.jpg" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
+            <div class="layout-inner-wrap py4">
+               <div class="md-flex flex flex-center full-bleed-two-column">
+					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt">
+					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
+					</div>
+			
+					<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
+						<div class="carousel-wrap">
+							<figure>
+								<img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="" >
+							</figure>
+						</div>
+					</div>
+				</div>
             </div> 
         </div>
         <div class="logos_sec">
