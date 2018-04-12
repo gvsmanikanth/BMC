@@ -36,7 +36,8 @@ $(document).ready(function () {
 	//Set the height for all sections wraps equal.
 	function setHeight() {
 		 windowHeight = $(window).innerHeight();
-		 $('.section-wrap-header').css('min-height', windowHeight-120);
+		 $('.section-wrap-header').css('height', windowHeight-120);
+		 $('.section-wrap-header').css('min-height', 500);
 		 $('.section-wrap').css('min-height', windowHeight-50);
 	};
 	

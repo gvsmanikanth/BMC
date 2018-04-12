@@ -70,13 +70,13 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-center flex-item col col-6 xs-col-6 pxr1" >
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1" >
                <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
                 <p class="firstPara" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
             </div>
-            <div class="flex-item col col-6 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
 <!--                  <img data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic"> -->
                <figure>
 				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
@@ -378,7 +378,7 @@ include 'php-inc/svg.php';
 </div>
 	<div class="Customer" >
         <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
-            <div class="layout-inner-wrap py4">
+            <div class="layout-inner-wrap py2">
                <div class="md-flex flex flex-center full-bleed-two-column">
 					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt">
 					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
