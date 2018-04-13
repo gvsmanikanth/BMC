@@ -44,7 +44,7 @@ include 'php-inc/svg.php';
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
 		      <div class="hero-image video xs-max-hide">
-				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL.mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218.mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 		      </div>
 		      <div class="cover-bg"></div>
 		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
@@ -70,13 +70,13 @@ include 'php-inc/svg.php';
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;background-size: cover;">
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-center flex-item col col-6 xs-col-6 pxr1" >
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1" >
                <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
                 <p class="firstPara" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
             </div>
-            <div class="flex-item col col-6 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
 <!--                  <img data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic"> -->
                <figure>
 				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
@@ -125,16 +125,16 @@ include 'php-inc/svg.php';
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">
                <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
-               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Optimize cloud resource usage and cost</h4>
                <ul>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Simulate migrations to see which cloud services fit best</p>
+                     <p>Simulate migrations selecting cloud resources and comparing costs</p>
                   </li>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Track and compare on-premises and public cloud usage</p>
+                     <p>Predict and manage cloud budget and spend</p>
                   </li>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Forecast annual multi-cloud costs</p>
+                     <p>Gain visibility into current and forecasted spend</p>
                   </li>
                </ul>
                <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud cost</a>
@@ -145,7 +145,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Cost1.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -164,7 +164,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-service-man1.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Service Managment.png" alt="" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -216,7 +216,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-Visibility1.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -282,7 +282,7 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-automation1.png" alt="" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="" title="" width="900" border="0" height="516">		
 						</figure>
 					</li>
 				</ul>
@@ -300,7 +300,7 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/600x600-security1.png" alt="" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/Security.png" alt="" title="" width="900" border="0" height="516">		
 						</figure>
 					</li>
 				</ul>
@@ -333,7 +333,7 @@ include 'php-inc/svg.php';
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
                     <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></li>
-                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg1.png" alt="logo"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg" alt="logo"></li>
                     <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="logo"></li>
                 </ul>
             </div>
@@ -341,7 +341,7 @@ include 'php-inc/svg.php';
     </div>
 	
    <div id="fp-nav" class="right" style="margin-top: -33.5px;">
-   <ul>
+   <ul class="xs-max-hide">
       <li id="click1" class="click">
          <a class="active"><span></span></a>
          <div class="fp-tooltip right">Cloud Management</div>
@@ -380,11 +380,11 @@ include 'php-inc/svg.php';
         <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
             <div class="layout-inner-wrap py4">
                <div class="md-flex flex flex-center full-bleed-two-column">
-					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt">
+					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt" data-aos-once="true" data-aos="fade-right">
 					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
 					</div>
 			
-					<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
+					<div class="flex-item col col-12 xs-col-6 pxr1 text-center" >
 						<div class="carousel-wrap">
 							<figure>
 								<img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="" >
@@ -398,11 +398,11 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="logo"></a></li>
-                        <li class="imgDesp small"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="#"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="https://youtu.be/MCeJtBl2dQ4" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="https://youtu.be/yq9g0S50w58" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="logo"></a></li>
+                        <li class="imgDesp small"><a href="https://youtu.be/-THadSaX-ro" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="https://youtu.be/MBpzcyqsw-Y" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a href="https://www.youtube.com/watch?v=tJWqF2equog" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="logo"></a></li> 
                     </ul>
                 </div>
             </div>
