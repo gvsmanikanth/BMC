@@ -9,6 +9,7 @@ include 'php-inc/svg.php';
 ?>
 
 <div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;" >
+<div style="min-height:600px">
   <section class="section-wrap-header sectionCommon" id="section0"  style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
   
 	<div class="section video-hero-header" >
@@ -22,7 +23,7 @@ include 'php-inc/svg.php';
 		      	<div class="flex-item m2 header-content-box">
 			         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
 			         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
-			         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
+			         <a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
 			         Watch the video <svg class="svg-inline"> 
 		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
 	          	 </svg></a>
@@ -37,6 +38,7 @@ include 'php-inc/svg.php';
 	 	</div>
 	 </div>
 </section>  
+</div>
 
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
       <div class="flex-item section-content py4 layout-inner-wrap"> 
@@ -48,7 +50,7 @@ include 'php-inc/svg.php';
 			  
             </div>
             <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
-				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation">
                <figure class="desktop-only">
 				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
 				</object>
@@ -63,7 +65,7 @@ include 'php-inc/svg.php';
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true"  data-aos="fade-right">
-				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Migration Animation">
 				<figure class="desktop-only">
 				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
 				</object>
@@ -116,7 +118,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -135,7 +137,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Service Managment.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Service Managment.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -170,13 +172,13 @@ include 'php-inc/svg.php';
                <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
                <ul>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Inventory all your IT assets</p>
+                     <p>Get fast, accurate, and secure asset discovery</p>
                   </li>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Map relationship across cloud platforms</p>
+                     <p>Map dependencies across assets and services in a single view</p>
                   </li>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Know which assets impact critical business functions</p>
+                     <p>Perform essential prevention and detection tasks</p>
                   </li>
                </ul>
                <a href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi cloud visibility</a>
@@ -187,7 +189,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -202,7 +204,7 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
-				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Multi Cloud Performance">
 				<figure class="desktop-only">
 				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
 				</object>
@@ -253,7 +255,7 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">		
 						</figure>
 					</li>
 				</ul>
@@ -271,7 +273,7 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/Security.png" alt="" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/Security.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">		
 						</figure>
 					</li>
 				</ul>
@@ -303,9 +305,9 @@ include 'php-inc/svg.php';
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="logo"></li>
-                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg" alt="logo"></li>
-                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="logo"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Neetwork"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg" alt="Azure"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="Google Cloud Platform"></li>
                 </ul>
             </div>
         </div>
@@ -358,7 +360,7 @@ include 'php-inc/svg.php';
 					<div class="flex-item col col-12 xs-col-6 pxr1 text-center" >
 						<div class="carousel-wrap">
 							<figure>
-								<img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="" >
+								<img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="Benefits" >
 							</figure>
 						</div>
 					</div>
@@ -369,11 +371,11 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="https://www.bmc.com/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="logo"></a></li>
-                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="logo"></a></li> 
+                        <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP"></a></li>
+                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA"></a></li> 
                     </ul>
                 </div>
             </div>
