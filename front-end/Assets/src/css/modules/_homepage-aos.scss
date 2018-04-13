@@ -130,17 +130,21 @@
 /********************************************************Right Side Scroll Navigation***************************************************/
 
 .section-content{
-	.full-bleed-two-column img{
-		@include media(breakpointMedium){
+	.full-bleed-two-column{
+		img{
+			@include media(breakpointMedium){
+				margin-top : 0px;
+			}
+			@include media(breakpointLarge){
+				//margin-top :-60px;
+			}
 			margin-top : 0px;
 		}
-		@include media(breakpointLarge){
-			//margin-top :-60px;
+		.pxr1 {
+			@include media(breakpointLarge){
+				padding-right: 3rem;
+			}
 		}
-		margin-top : 0px;
-	}
-	
-	.full-bleed-two-column{
 		@include media(breakpointMedium){
 			margin: 0 20px;
 		}
@@ -151,11 +155,7 @@
 		}
 		margin: 0;
 		align-items: center;
-		//a{
-			//@include media(breakpointMedium){
-				//font-size: 18px;
-			//}
-		//}
+		
     }
 	margin: 0;
 }
@@ -265,6 +265,9 @@ img {
 	
 	.header-content-box{
 	  @include media(breakpointLarge){
+		 padding-left: 5rem;
+	  }
+	  @include media(breakpointMedium){
 		 padding-left: 5rem;
 	  }
 	  vertical-align: middle;
@@ -576,7 +579,7 @@ ul {
 		text-align: center;
 		//padding: 38px 0 109px;
 		padding: 3rem 0;
-		button {
+		.learn-more {
 			width: 263px;
 			background: #fff;
 			border: 1px solid #88c1dd;
@@ -588,6 +591,7 @@ ul {
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
 			border-radius: 0px; 
+			padding:1rem 2rem;
 		}
 	}
 }
@@ -599,7 +603,7 @@ ul {
 		//padding: 38px 0 109px;
 		padding: 0 0 3rem 0;
 		--background-color: rgba(247, 247, 247, 0.4);
-		button {
+		.learn-more {
 			width: 263px;
 			background: #fff;
 			border: 1px solid #88c1dd;
@@ -611,8 +615,19 @@ ul {
 			font-weight: 600;
 			font-family: 'Open Sans', sans-serif;
 			border-radius: 0px;
+			padding:1rem 3rem;
+			@include media(breakpointMedium){
+				padding:1rem 12rem;
+			}
+			@include media(breakpointLarge){
+				padding:1rem 19rem;
+			}
+			a{
+				color:#fff;
+				text-decoration: none;
+			}
 		}
-		button.btn-lg{
+		.learn-more.btn-lg{
 			width: 70%;
 			background: #13cdfe;
 			color: #fff;
@@ -623,7 +638,7 @@ ul {
 				font-size: 36px;
 			}
 			@include media(breakpointLarge){
-				padding: 0 0 10px 0px;
+				padding: 0 0 2rem 0px;
 				font-size: 40px;
 			}
 			padding: 0 18px 40px 18px;

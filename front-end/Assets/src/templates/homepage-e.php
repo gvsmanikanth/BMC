@@ -76,12 +76,12 @@ include 'php-inc/svg.php';
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
-<!--                  <img data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic"> -->
-               <figure>
+            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Mobile phone and app infographic">
+               <figure class="desktop-only">
 				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
 				</object>
-                </figure>
+                </figure> 
 
             </div>
          </div>
@@ -92,13 +92,13 @@ include 'php-inc/svg.php';
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true"  data-aos="fade-right">
-<!--                <img data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic">  -->
-				<figure>
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Mobile phone and app infographic">
+				<figure class="desktop-only">
 				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
 				</object>
                 </figure>
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1 " >
+            <div class="flex-item col col-12 xs-col-6" >
                <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
                <h4 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
@@ -115,7 +115,7 @@ include 'php-inc/svg.php';
                      <p>Measure progress </p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud migration</a>
+               <a href="https://www.bmc.com/it-solutions/multi-cloud-migration.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud migration</a>
             </div>
          </div>
       </div>
@@ -137,9 +137,9 @@ include 'php-inc/svg.php';
                      <p>Gain visibility into current and forecasted spend</p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud cost</a>
+               <a href="https://www.bmc.com/it-solutions/cloud-cost-control.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud cost</a>
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
                <!--<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">-->
 			   <div class="carousel-wrap">
 					<ul class="carousel">
@@ -171,7 +171,7 @@ include 'php-inc/svg.php';
 				</div>
             </div>
              
-            <div class="flex-item col col-12 xs-col-6 pxr1 " >
+            <div class="flex-item col col-12 xs-col-6" >
                <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Service Management</h2>
                <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
                <ul>
@@ -185,7 +185,7 @@ include 'php-inc/svg.php';
                      <p>Audit service performance capabilities to measure service integrity</p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud service management</a>
+               <a href="https://www.bmc.com/it-solutions/multi-cloud-service-management.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud service management</a>
             </div>
          </div>
       </div>
@@ -208,9 +208,9 @@ include 'php-inc/svg.php';
                      <p>Know which assets impact critical business functions</p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi cloud visibility</a>
+               <a href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi cloud visibility</a>
             </div>
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
+			<div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
                <!--<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">-->
 			    <div class="carousel-wrap">
 					<ul class="carousel">
@@ -231,13 +231,13 @@ include 'php-inc/svg.php';
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
 			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
-<!--                <img data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic"> -->
-				<figure>
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Mobile phone and app infographic">
+				<figure class="desktop-only">
 				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
 				</object>
                 </figure>
             </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1">
+            <div class="flex-item col col-12 xs-col-6">
                <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
                <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated cloud/data center performance</h4>
                <ul>
@@ -251,7 +251,7 @@ include 'php-inc/svg.php';
                      <p>Ensure optimal user experiences</p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn about cloud performance monitoring</a>
+               <a href="https://www.bmc.com/it-solutions/truesight-multi-cloud-operations.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn about cloud performance monitoring</a>
             </div>
 
          </div>
@@ -274,9 +274,9 @@ include 'php-inc/svg.php';
                      <p>Automatically provision cloud servers and services</p>
                   </li>
                </ul>
-               <a href="#"  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud automation</a>
+               <a href="https://www.bmc.com/it-solutions/control-m.html"  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud automation</a>
             </div>
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-left">
+			<div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
                <!--<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Mobile phone and app infographic">-->
 			<div class="carousel-wrap">
 				<ul class="carousel">
@@ -321,7 +321,7 @@ include 'php-inc/svg.php';
                      <p>Be audit ready all the time</p>
                   </li>
                </ul>
-               <a href="#" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'  class="learn-more">Learn more about multi-cloud security</a>
+               <a href="https://www.bmc.com/it-solutions/secops-policy-service.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'  class="learn-more">Learn more about multi-cloud security</a>
             </div>
          </div>
       </div>
@@ -411,7 +411,9 @@ include 'php-inc/svg.php';
 	<div class="stories">
         <div class="container">
             <div class="stories_blk">
-                <button class="learn-more">All Success Stories</button>
+                <!--<button class="learn-more"><a href="https://www.bmc.com/customers/success-stories.html">All Success Stories</button>-->
+				
+				<a class="learn-more" href="https://www.bmc.com/customers/success-stories.html">All Success Stories</a>
             </div>
         </div>
     </div>
@@ -419,7 +421,8 @@ include 'php-inc/svg.php';
     <div class="contact-us-large ">
 		<div class="contact-us_blk layout-inner-wrap">
              <h2 data-aos-once="true" data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
-			 <button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg">Connect with BMC</button>
+			 <!--<button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg"><a href="https://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html">Connect with BMC</a></button>-->
+			 <a data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg learn-more" href="https://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html">Connect with BMC</a>
         </div>
     </div>
 </div>
