@@ -398,11 +398,11 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp"><a href="https://youtu.be/MCeJtBl2dQ4" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="https://youtu.be/yq9g0S50w58" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="logo"></a></li>
-                        <li class="imgDesp small"><a href="https://youtu.be/-THadSaX-ro" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="https://youtu.be/MBpzcyqsw-Y" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="logo"></a></li>
-                        <li class="imgDesp"><a href="https://www.youtube.com/watch?v=tJWqF2equog" target="_blank"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="logo"></a></li> 
+                        <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="https://www.bmc.com/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="logo"></a></li>
+                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="logo"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=SF4572r-63c" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="logo"></a></li> 
                     </ul>
                 </div>
             </div>
