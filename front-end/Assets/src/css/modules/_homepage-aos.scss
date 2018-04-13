@@ -407,11 +407,16 @@ img {
 		margin-top : 0px;
 	}
 }
+.section-wrap#section1 {
+	background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;
+	background-size: cover; 
+	transition-delay: 2s;
+}
 .section-wrap.section1 {
 	background-color: rgba(247, 247, 246, 0.4);
 }
 .section-wrap.section2 {
-	background-color: rgba(241, 241, 241, 0.4);
+	background-color: rgba(241, 241, 241, 0.4); 
 }
 .section-wrap#section9 {
 	min-height: auto !important;
