@@ -9,7 +9,7 @@ include 'php-inc/svg.php';
 ?>
 
 <div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;" >
-<div style="min-height:600px">
+<div style="min-height:500px;background-color:#414042;">
   <section class="section-wrap-header sectionCommon" id="section0"  style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
   
 	<div class="section video-hero-header" >
