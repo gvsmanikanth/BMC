@@ -18,15 +18,16 @@
 			color: #fff;
 			padding: 0 0 20px;
 			min-height: auto;
+			font-weight: 300;
 			@include media(breakpointMedium){
-				min-height: 260px;
-				font-size: 24px;
-				line-height: 30px;
+				//min-height: 260px;
+				font-size: 32px;
+				line-height: 36px;
 				margin: 0; 
 				padding: 0;
 			}
 			@include media(breakpointLarge){
-				min-height: 164px;
+				//min-height: 164px;
 				font-size: 40px;
 				line-height: 48px;
 				margin: 0;
@@ -96,6 +97,7 @@
 							margin: 0 auto;
 							text-align: center;
 							right: 0;
+							max-height: 140px;
 						}
 					}
 				}

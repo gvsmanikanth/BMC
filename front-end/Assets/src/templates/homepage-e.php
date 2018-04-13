@@ -378,7 +378,7 @@ include 'php-inc/svg.php';
 </div>
 	<div class="Customer" >
         <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
-            <div class="layout-inner-wrap py4">
+            <div class="layout-inner-wrap py2">
                <div class="md-flex flex flex-center full-bleed-two-column">
 					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt" data-aos-once="true" data-aos="fade-right">
 					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
