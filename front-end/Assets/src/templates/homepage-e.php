@@ -8,9 +8,9 @@ include 'php-inc/head.php';
 include 'php-inc/svg.php';
 ?>
 
-<div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;" >
+<div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
 
-  <section class="section-wrap-header sectionCommon" id="section0"  style="min-height:860px;background-color:#414042; background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
+  <section class="section-wrap-header sectionCommon" id="section0"  style="min-height:860px;background-color:#414042; background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg) no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header" >
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
@@ -37,28 +37,6 @@ include 'php-inc/svg.php';
 	 	</div>
 	 </div>
 </section>  
-
-<script type="text/javascript">
-var preloadImage = new Image();
-
-// we will call this function when the image has finished loading
-function notify_complete()
-{
-	document.getElementById("section0").height = document.documentElement.clientHeight;
-    document.getElementById("header-content-box-id").style.visibility = "visible";
-}
-
-function load_image()
-{
-    // call the notify_complete function when the image has loaded
-    preloadImage.onload = notify_complete;
-    // load the image
-    preloadImage.src = '//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo_1.jpg';
-    document.getElementById("section0").height = document.documentElement.clientHeight;
-}
-
-load_image();
-</script>
 
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
       <div class="flex-item section-content py4 layout-inner-wrap"> 
@@ -370,7 +348,7 @@ load_image();
    </ul>
 </div>
 	<div class="Customer" >
-        <div class="container" style="background: url(//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg)no-repeat center center;background-size: cover;">
+        <div class="container" id="customerBanner" style="background-size: cover;background-repeat:no-repeat;background-position:center center;">
             <div class="layout-inner-wrap py2">
                <div class="md-flex flex flex-center full-bleed-two-column">
 					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt" data-aos-once="true" data-aos="fade-right">
@@ -419,6 +397,59 @@ load_image();
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+var preloadImage = new Image();
+var backgroundImage = new Image();
+
+// we will call this function when the image has finished loading
+function notify_complete()
+{
+	document.getElementById("section0").height = document.documentElement.clientHeight;
+    document.getElementById("header-content-box-id").style.visibility = "visible";
+}
+
+function load_image()
+{
+    // call the notify_complete function when the image has loaded
+    preloadImage.onload = notify_complete;
+    // load the image
+    preloadImage.src = '//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo_1.jpg';
+    document.getElementById("section0").height = document.documentElement.clientHeight;
+}
+
+load_image();
+
+</script>
+
+<script>
+function load_backgrundImage() {
+   	var backgroundImage = new Image();
+    backgroundImage.onload = backgroundImageLoaded;
+    backgroundImage.src = '//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg';
+
+
+	var bottomBannerImg = new Image();
+	bottomBannerImg.onload = bottomBannerImgLoaded;
+	bottomBannerImg.src = '//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg';
+
+  
+}
+
+function backgroundImageLoaded(event)
+{
+	document.getElementById("backgroundImage").style.backgroundImage = "url('"+this.src+"')";
+}
+
+function bottomBannerImgLoaded(event)
+{
+    document.getElementById("customerBanner").style.backgroundImage = "url('"+this.src+"')";
+}
+
+load_backgrundImage();
+
+
+</script>
 
 <?php
 include 'php-inc/foot.php';
