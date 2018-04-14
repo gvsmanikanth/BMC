@@ -9,9 +9,8 @@ include 'php-inc/svg.php';
 ?>
 
 <div style="background: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg)no-repeat center center;background-size: cover;" >
-<div style="min-height:500px;background-color:#414042;">
-  <section class="section-wrap-header sectionCommon" id="section0"  style="background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
-  
+
+  <section class="section-wrap-header sectionCommon" id="section0"  style="min-height:860px;background-color:#414042; background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;background-size: cover;">
 	<div class="section video-hero-header" >
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
@@ -20,7 +19,7 @@ include 'php-inc/svg.php';
 		      </div>
 		      <div class="cover-bg"></div>
 		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
-		      	<div class="flex-item m2 header-content-box">
+		      	<div class="flex-item m2 header-content-box" id="header-content-box-id" style="visibility: hidden">
 			         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
 			         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
 			         <a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
@@ -38,7 +37,28 @@ include 'php-inc/svg.php';
 	 	</div>
 	 </div>
 </section>  
-</div>
+
+<script type="text/javascript">
+var preloadImage = new Image();
+
+// we will call this function when the image has finished loading
+function notify_complete()
+{
+	document.getElementById("section0").height = document.documentElement.clientHeight;
+    document.getElementById("header-content-box-id").style.visibility = "visible";
+}
+
+function load_image()
+{
+    // call the notify_complete function when the image has loaded
+    preloadImage.onload = notify_complete;
+    // load the image
+    preloadImage.src = '//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo_1.jpg';
+    document.getElementById("section0").height = document.documentElement.clientHeight;
+}
+
+load_image();
+</script>
 
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
       <div class="flex-item section-content py4 layout-inner-wrap"> 
@@ -371,10 +391,10 @@ include 'php-inc/svg.php';
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry"></a></li>
+                       <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry"></a></li>
                         <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP"></a></li>
-                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau"></a></li>
+                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau"></a></li>
                         <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA"></a></li> 
                     </ul>
                 </div>
