@@ -14,7 +14,6 @@
 	<!-- icon and tile color in hex # for Windows phones -->
 	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
-
 	<script src="Assets/dist/head.js"></script>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
 
