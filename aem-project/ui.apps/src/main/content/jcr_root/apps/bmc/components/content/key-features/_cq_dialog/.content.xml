@@ -22,21 +22,22 @@
                             <headerTitle
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldLabel="Heading"
-                                    required="{Boolean}true"
-                                    fieldDescription="Title"
+                                    fieldDescription="Use sentence case."
+									fieldLabel="Heading"
                                     name="./headerTitle"/>
+									
                             <headerSubTitle
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldLabel="Sub Heading"
-                                    fieldDescription="Sub Title"
+                                    fieldDescription="Enter an introductory sentence for the bullets."
+									fieldLabel="Description Paragraph"
                                     name="./headerSubTitle"/>
 
                             <bullets jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                     composite="{Boolean}true"
-                                     fieldLabel="Description">
+                                    composite="{Boolean}true"
+									fieldDescription="Enter one statement per bullet."
+                                    fieldLabel="Description Bullets">
                                 <field
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"

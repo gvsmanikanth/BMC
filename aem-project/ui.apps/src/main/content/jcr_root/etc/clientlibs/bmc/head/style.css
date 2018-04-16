@@ -15766,6 +15766,9 @@ body.support-central {
     @media screen and (min-width: 640px) {
       .product-category-header .bannerContent {
         min-height: 400px; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .product-category-header .bannerContent .inner {
+        margin-top: 3rem; } }
   .product-category-header .btn-secondary {
     border-radius: 0px; }
   .product-category-header .assetStrip {
@@ -15983,8 +15986,16 @@ body.support-central {
     background: #cccccc2e; }
 
 .resource-hub .resource-hub-trials-cards fieldset:not(#foo) .decorator-select:after {
-  content: '\f078';
-  font: normal normal normal 17px/1 FontAwesome;
+  font-family: "icomoon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  content: '\e601';
   color: #fe7e42;
   top: 3px;
   width: 26px;
