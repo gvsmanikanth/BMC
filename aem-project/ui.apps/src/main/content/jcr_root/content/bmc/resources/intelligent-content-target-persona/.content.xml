@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <ic-target-persona-342881461
+            jcr:primaryType="nt:unstructured"
+            jcr:title="C-Level"/>
+    <ic-target-persona-697044938
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Vice President"/>
+    <ic-target-persona-891997718
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Director"/>
+    <ic-target-persona-184295142
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Manager"/>
+    <ic-target-persona-587583944
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Professional"/>
+    <ic-target-persona-481630045
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Business Professional (non-IT)"/>
+</jcr:root>

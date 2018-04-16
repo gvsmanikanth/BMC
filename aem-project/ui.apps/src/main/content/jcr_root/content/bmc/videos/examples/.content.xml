@@ -28,20 +28,4 @@
                     overlayUrl="https://www.youtube.com/watch?v=MFg6Y7zbRg4"/>
         </jcr:content>
     </youtube>
-    <twistage jcr:primaryType="cq:Page">
-        <jcr:content
-                cq:allowedTemplates="[none]"
-                cq:template="/apps/bmc/templates/video-page"
-                jcr:primaryType="cq:PageContent"
-                jcr:title="Twistage"
-                sling:resourceType="bmc/components/structure/video-page">
-            <video-data
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/content/video-data"
-                    typeId="2"
-                    vID="7b20ebcb8fd61"
-                    title="Easily manage all your endpoints"
-                    description="See how BMC Client Management can quickly and easily solve your endpoint management challenges from provisioning to patching and deployment. (1:44)"/>
-        </jcr:content>
-    </twistage>
 </jcr:root>
