@@ -28,6 +28,16 @@
 		}
 	}
 	.hero_cta {
+		form.searchForm{
+			.searchDiv{
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 1rem;
+			}
+			width: 100%;
+			text-align: center;	
+			margin: auto;
+		}
 		background-color: rgba(#fe5000, .9);
 		padding: 1.5rem;
 		@media (min-width: $break-sm) {
