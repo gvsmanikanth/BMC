@@ -5,7 +5,7 @@ include 'php-inc/head.php';
 
 ?>
 <?php
-include 'php-inc/svg.php';
+include 'php-inc/svg.php'; 
 ?>
 
 <div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
@@ -42,7 +42,7 @@ include 'php-inc/svg.php';
       <div class="flex-item section-content py4 layout-inner-wrap"> 
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-center flex-item col col-12 xs-col-6 pxr1" >
-               <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You canâ€™t hit the reset button every time the market changes.</h2>
+               <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can’t hit the reset button every time the market changes.</h2>
                 <p class="firstPara" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
@@ -99,7 +99,7 @@ include 'php-inc/svg.php';
                <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Optimize cloud resource usage and cost</h4>
                <ul>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Simulate migrations selecting cloud resources and comparing costs</p>
+                     <p>Simulate migrations by selecting cloud resources and comparing costs</p>
                   </li>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Predict and manage cloud budget and spend</p>
@@ -179,7 +179,7 @@ include 'php-inc/svg.php';
                      <p>Perform essential prevention and detection tasks</p>
                   </li>
                </ul>
-               <a href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi cloud visibility</a>
+               <a href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud visibility</a>
             </div>
 			<div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
                <!--<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Mobile phone and app infographic">-->
@@ -222,7 +222,7 @@ include 'php-inc/svg.php';
                      <p>Ensure optimal user experiences</p>
                   </li>
                </ul>
-               <a href="https://www.bmc.com/it-solutions/truesight-multi-cloud-operations.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn about cloud performance monitoring</a>
+               <a href="https://www.bmc.com/it-solutions/truesight-multi-cloud-operations.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud performance monitoring</a>
             </div>
 
          </div>
@@ -233,7 +233,7 @@ include 'php-inc/svg.php';
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1 ">
                <h2  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
-               <h4  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
+               <h4  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Coordinate and manage workflows with automation</h4>
                <ul>
                   <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Orchestrate data, applications, and infrastructure</p>
