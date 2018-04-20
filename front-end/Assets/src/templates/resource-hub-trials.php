@@ -199,7 +199,7 @@ var bmcResourceHubData = {
 				},
 				{
 	        		"id" : 4,
-	        		"name" : "Network 9.0 : For Configuration Managers", 
+	        		"name" : "Network 9.0 : For Configuration Managers Network 9.0 : For Configuration Managers", 
 	        		"products" : [1,4],
 					"topics" : [4],
 	        		"url" : "/forms/remedy-itsm-trial.html",
@@ -416,7 +416,7 @@ var bmcResourceHubData = {
 									</ol>
 								</fieldset>
 							</form>
-						</div>
+						</div> 
 					</div>
 				</div>
 			</div>

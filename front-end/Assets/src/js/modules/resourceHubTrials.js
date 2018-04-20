@@ -29,7 +29,7 @@
 			
 			
 			//' + self.isPre_requisite(item) + item.name + ' //Removed Prerequiste indicator as well
-			itemHTML += '<ul class="list-group"><li class="title row"><div>'+ item.name +'</div></li><li class="resource-details row js-ehItem">'+ item.description+''; 
+			itemHTML += '<ul class="list-group"><li class="title row"><div class="heading">'+ item.name +'</div></li><li class="resource-details row js-ehItem">'+ item.description+''; 
 			itemHTML += '</li>';
 			
 			itemHTML += '<li class="resource-audience row"><span>' + item.ctaLabel + '</span></li></div> </a></div>';
@@ -158,7 +158,7 @@
 				var filterList = null,
 				    list = null;
 
-				if ( typeof (bmcResourceHubData) !== "undefined") {
+				if ( typeof (bmcResourceHubData) !== "undefined") { 
 					
 					if(bmcResourceHubData.filterCriteria){
 						filterList = bmcResourceHubData.filterCriteria;
