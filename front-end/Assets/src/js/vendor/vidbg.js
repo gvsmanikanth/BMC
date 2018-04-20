@@ -34,7 +34,7 @@
     playbackRate: 1,
     muted: true,
     loop: true,
-    autoplay: true,
+    //autoplay: true,
     position: '50% 50%',
     overlay: false,
     overlayColor: '#000',
