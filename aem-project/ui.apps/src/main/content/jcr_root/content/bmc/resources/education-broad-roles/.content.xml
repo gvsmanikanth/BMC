@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
-    <Administrators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Administrators"/>
-    <Developers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Developers"/>
-    <Operators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Operators"/>
-    <Users
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Users"/>
+    jcr:primaryType="cq:Page">
+    <Any
+        jcr:primaryType="nt:unstructured"
+        jcr:title="All Roles"
+        text="All Roles"
+        value="All Roles"/>
+    <edu-broad-roles-128744427
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Administrators"
+        text="Administrators"
+        value="Administrators"/>
+    <edu-broad-roles-124114936
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Developers"
+        text="Developers"
+        value="Developers"/>
+    <edu-broad-roles-173472440
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Operators"
+        text="Operators"
+        value="Operators"/>
+    <edu-broad-roles-193340018
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Users"
+        text="Users"
+        value="Users"/>
 </jcr:root>

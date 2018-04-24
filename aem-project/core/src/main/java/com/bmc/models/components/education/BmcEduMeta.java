@@ -77,7 +77,7 @@ public class BmcEduMeta {
                 Node verNode;
                 if(!ver.getString().equals("Any")) {
                     verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/x" + ver.getString());
-                    newVer.setName(verNode.getProperty("jcr:title").getValue().toString());
+                    newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
                     newVer.setId(getEdFilterID(verNode,session));
                 }
                 productValues.setVersions(newVer);
@@ -157,13 +157,8 @@ public class BmcEduMeta {
                 }
 
                 for(String v : propVals) {
-                    try {
-                        v = v.replace(" ","_").replace("Instructor-Led","Instructor_Led");
-                        String hashCode = session.getNode(RESOURCE_ROOT+resName+"/"+v).getProperty("filterID").getValue().getString();
-                        attrHolder.add(v.equals("Any") ? "0" : hashCode);
-                    } catch (RepositoryException e) {
-                        logger.error("ERROR", e.getMessage());
-                    }
+                	String hashCode = v.replace(" ", "_").toLowerCase(); // Hashcode for filtering 
+                    attrHolder.add(v.equals("Any") ? "0" : hashCode);
                 }
             }
         } catch (RepositoryException e) {
@@ -269,7 +264,9 @@ public class BmcEduMeta {
                 filterNode.setProperty("filterID",filterID);
                 session.save();
             }else{
-                filterID = filterNode.getProperty("filterID").getValue().getString();
+                //filterID = filterNode.getProperty("filterID").getValue().getString();
+            	/* Replaced filterID logic with jcr:title for more readability */
+            	filterID = filterNode.getProperty("jcr:title").getValue().getString().replace(" ", "_").toLowerCase();
             }
         } catch (RepositoryException e) {
             e.printStackTrace();

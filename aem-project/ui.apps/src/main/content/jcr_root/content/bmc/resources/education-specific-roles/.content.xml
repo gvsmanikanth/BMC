@@ -1,103 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
-    <Administrators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Administrators"/>
-    <Application_Administrators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Application Administrators"/>
-    <Application_Owners
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Application Owners"/>
-    <Architects
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Architects"/>
-    <Automation_Leads
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Automation Leads"/>
-    <Business_Analysts
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Business Analysts"/>
-    <Capacity_Planners
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Capacity Planners"/>
-    <Change_Agents
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Change Agents"/>
-    <Change_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Change Managers"/>
-    <Client_Users
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Client Users"/>
-    <Configuration_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Configuration Managers"/>
-    <Data_Center_Leads
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Data Center Leads"/>
-    <DevOps_Practitioners
-            jcr:primaryType="nt:unstructured"
-            jcr:title="DevOps Practitioners"/>
-    <Developers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Developers"/>
-    <Employees_and_Partners_Only
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Employees and Partners Only"/>
-    <IT_Executives
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Executives"/>
-    <IT_Implementers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Implementers"/>
-    <IT_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Managers"/>
-    <IT_Operations_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Operations Managers"/>
-    <Mainframe_Operators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe Operators"/>
-    <Operators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Operators"/>
-    <Performance_Analysts
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Performance Analysts"/>
-    <Process_Designers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Process Designers"/>
-    <Process_Owners
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Process Owners"/>
-    <Project_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Project Managers"/>
-    <Schedulers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Schedulers"/>
-    <Security_Personnel
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Security Personnel"/>
-    <Service_Delivery_Professionals
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Service Delivery Professionals"/>
-    <Staff_Users
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Staff Users"/>
-    <Stakeholders
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Stakeholders"/>
-    <Storage_Managers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Storage Managers"/>
-    <System_Programmers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="System Programmers"/>
-    <Users
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Users"/>
+    jcr:primaryType="cq:Page">
+    <edu-specific-roles-202904730
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Administrators"
+        text="Administrators"
+        value="Administrators"/>
+    <edu-specific-roles-171671476
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Application Administrators"
+        text="Application Administrators"
+        value="Application_Administrators"/>
+    <edu-specific-roles-193286937
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Application Owners"
+        text="Application Owners"
+        value="Application_Owners"/>
+    <edu-specific-roles-221268940
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Architects"
+        text="Architects"
+        value="Architects"/>
+    <edu-specific-roles-135510914
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Automation Leads"
+        text="Automation Leads"
+        value="Automation_Leads"/>
+    <edu-specific-roles-191040302
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Business Analysts"
+        text="Business Analysts"
+        value="Business_Analysts"/>
+    <edu-specific-roles-190858992
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Capacity Planners"
+        text="Capacity Planners"
+        value="Capacity_Planners"/>
+    <edu-specific-roles-178691158
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Change Agents"
+        text="Change Agents"
+        value="Change_Agents"/>
+    <edu-specific-roles-137400439
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Change Managers"
+        text="Change Managers"
+        value="Change_Managers"/>
+    <edu-specific-roles-128971683
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Client Users"
+        text="Client Users"
+        value="Client_Users"/>
+    <edu-specific-roles-217407208
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Configuration Managers"
+        text="Configuration Managers"
+        value="Configuration_Managers"/>
+    <edu-specific-roles-163470675
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Data Center Leads"
+        text="Data Center Leads"
+        value="Data_Center_Leads"/>
+    <edu-specific-roles-196277565
+        jcr:primaryType="nt:unstructured"
+        jcr:title="DevOps Practitioners"
+        text="DevOps Practitioners"
+        value="DevOps_Practitioners"/>
+    <edu-specific-roles-168406109
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Developers"
+        text="Developers"
+        value="Developers"/>
+    <edu-specific-roles-188895775
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Employees and Partners Only"
+        text="Employees and Partners Only"
+        value="Employees_and_Partners_Only"/>
+    <edu-specific-roles-219656796
+        jcr:primaryType="nt:unstructured"
+        jcr:title="IT Executives"
+        text="IT Executives"
+        value="IT_Executives"/>
+    <edu-specific-roles-206503053
+        jcr:primaryType="nt:unstructured"
+        jcr:title="IT Implementers"
+        text="IT Implementers"
+        value="IT_Implementers"/>
+    <edu-specific-roles-169265857
+        jcr:primaryType="nt:unstructured"
+        jcr:title="IT Managers"
+        text="IT Managers"
+        value="IT_Managers"/>
+    <edu-specific-roles-136770435
+        jcr:primaryType="nt:unstructured"
+        jcr:title="IT Operations Managers"
+        text="IT Operations Managers"
+        value="IT_Operations_Managers"/>
+    <edu-specific-roles-168279692
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Mainframe Operators"
+        text="Mainframe Operators"
+        value="Mainframe_Operators"/>
+    <edu-specific-roles-165908436
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Operators"
+        text="Operators"
+        value="Operators"/>
+    <edu-specific-roles-222481216
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Performance Analysts"
+        text="Performance Analysts"
+        value="Performance_Analysts"/>
+    <edu-specific-roles-124325248
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Process Designers"
+        text="Process Designers"
+        value="Process_Designers"/>
+    <edu-specific-roles-141075308
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Process Owners"
+        text="Process Owners"
+        value="Process_Owners"/>
+    <edu-specific-roles-131724789
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Project Managers"
+        text="Project Managers"
+        value="Project_Managers"/>
+    <edu-specific-roles-196385337
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Schedulers"
+        text="Schedulers"
+        value="Schedulers"/>
+    <edu-specific-roles-136582078
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Security Personnel"
+        text="Security Personnel"
+        value="Security_Personnel"/>
+    <edu-specific-roles-128480810
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Service Delivery Professionals"
+        text="Service Delivery Professionals"
+        value="Service_Delivery_Professionals"/>
+    <edu-specific-roles-191047726
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Staff Users"
+        text="Staff Users"
+        value="Staff_Users"/>
+    <edu-specific-roles-156905186
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Stakeholders"
+        text="Stakeholders"
+        value="Stakeholders"/>
+    <edu-specific-roles-198378766
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Storage Managers"
+        text="Storage Managers"
+        value="Storage_Managers"/>
+    <edu-specific-roles-217272105
+        jcr:primaryType="nt:unstructured"
+        jcr:title="System Programmers"
+        text="System Programmers"
+        value="System_Programmers"/>
+    <edu-specific-roles-132076472
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Users"
+        text="Users"
+        value="Users"/>
+    <jcr:content jcr:primaryType="cq:PageContent"/>
 </jcr:root>

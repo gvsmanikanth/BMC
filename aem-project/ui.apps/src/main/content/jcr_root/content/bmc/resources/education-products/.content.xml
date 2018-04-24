@@ -1,94 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
-    <BMC_Atrium_CMDB
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BMC Atrium CMDB"/>
-    <BMC_Atrium_Orchestrator
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BMC Atrium Orchestrator"/>
-    <BladeLogic_Database_Automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BladeLogic Database Automation"/>
-    <BladeLogic_Network_Automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BladeLogic Network Automation"/>
-    <BladeLogic_Server_Automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BladeLogic Server Automation"/>
-    <BladeLogic_Threat_Director
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BladeLogic Threat Director"/>
-    <Client_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Client Management"/>
-    <Cloud_Lifecycle_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Cloud Lifecycle Management"/>
-    <Control-M
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M"/>
-    <Dashboards_and_Analytics
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Dashboards and Analytics"/>
-    <DevOps
-            jcr:primaryType="nt:unstructured"
-            jcr:title="DevOps"/>
-    <Discovery_ADDM
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Discovery (ADDM)"/>
-    <FootPrints_service_desk
-            jcr:primaryType="nt:unstructured"
-            jcr:title="FootPrints service desk"/>
-    <HR_Case_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="HR Case Management"/>
-    <ITIL
-            jcr:primaryType="nt:unstructured"
-            jcr:title="ITIL®"/>
-    <Innovation_Suite
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Innovation Suite"/>
-    <MyIT
-            jcr:primaryType="nt:unstructured"
-            jcr:title="MyIT"/>
-    <ProactiveNet
-            jcr:primaryType="nt:unstructured"
-            jcr:title="ProactiveNet"/>
-    <Remedy_AR_System
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Remedy AR System"/>
-    <Remedy_ITSM
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Remedy ITSM"/>
-    <Remedyforce
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Remedyforce"/>
-    <Service_Level_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Service Level Management"/>
-    <Smart_IT
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Smart IT"/>
-    <Track-It
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Track-It!"/>
-    <TrueSight_App_Visibility_Manager
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight App Visibility Manager"/>
-    <TrueSight_Capacity_Optimization
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Capacity Optimization"/>
-    <TrueSight_IT_Data_Analytics
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight IT Data Analytics"/>
-    <TrueSight_Infrastructure_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Infrastructure Management"/>
-    <TrueSight_Middleware_Monitoring
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Middleware Monitoring"/>
-    <TrueSight_Operations_Management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Operations Management"/>
+    jcr:primaryType="cq:Page">
+    <education-products-149933511
+        jcr:primaryType="nt:unstructured"
+        jcr:title="All Products"
+        text="All Products"
+        value="Any"
+        versions="[]"/>
+    <education-products-142854695
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Atrium CMDB"
+        text="BMC Atrium CMDB"
+        value="BMC_Atrium_CMDB"
+        versions="[8.x,9.x]"/>
+    <education-products-189140656
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Atrium Orchestrator"
+        text="BMC Atrium Orchestrator"
+        value="BMC_Atrium_Orchestrator"
+        versions="[7.x]"/>
+    <education-products-187351378
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BladeLogic Database Automation"
+        text="BladeLogic Database Automation"
+        value="BladeLogic_Database_Automation"
+        versions="[8.x]"/>
+    <education-products-117007007
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BladeLogic Network Automation"
+        text="BladeLogic Network Automation"
+        value="BladeLogic_Network_Automation"
+        versions="[8.x]"/>
+    <education-products-180838924
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BladeLogic Server Automation"
+        text="BladeLogic Server Automation"
+        value="BladeLogic_Server_Automation"
+        versions="[8.x]"/>
+    <education-products-175290979
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BladeLogic Threat Director"
+        text="BladeLogic Threat Director"
+        value="BladeLogic_Threat_Director"
+        versions="[1.x,2.x]"/>
+    <education-products-176265233
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Client Management"
+        text="Client Management"
+        value="Client_Management"
+        versions="[12.x]"/>
+    <education-products-175672617
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Cloud Lifecycle Management"
+        text="Cloud Lifecycle Management"
+        value="Cloud_Lifecycle_Management"
+        versions="[4.x]"/>
+    <education-products-126375736
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Control-M"
+        text="Control-M"
+        value="Control-M"
+        versions="[6.x,7.x,8.x,9.x]"/>
+    <education-products-188549682
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Dashboards and Analytics"
+        text="Dashboards and Analytics"
+        value="Dashboards_and_Analytics"
+        versions="[7.x,8.x]"/>
+    <education-products-155430638
+        jcr:primaryType="nt:unstructured"
+        jcr:title="DevOps"
+        text="DevOps"
+        value="DevOps"
+        versions="[4.x]"/>
+    <education-products-177937656
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Discovery (ADDM)"
+        text="Discovery (ADDM)"
+        value="Discovery_ADDM"
+        versions="[10.x,11.x]"/>
+    <education-products-176432861
+        jcr:primaryType="nt:unstructured"
+        jcr:title="FootPrints service desk"
+        text="FootPrints service desk"
+        value="FootPrints_service_desk"
+        versions="[12.x]"/>
+    <education-products-107968425
+        jcr:primaryType="nt:unstructured"
+        jcr:title="HR Case Management"
+        text="HR Case Management"
+        value="HR_Case_Management"
+        versions="[4.x]"/>
+    <education-products-189020579
+        jcr:primaryType="nt:unstructured"
+        jcr:title="ITIL®"
+        text="ITIL®"
+        value="ITIL"
+        versions="[3.x]"/>
+    <education-products-112512823
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Innovation Suite"
+        text="Innovation Suite"
+        value="Innovation_Suite"
+        versions="[]"/>
+    <education-products-143958364
+        jcr:primaryType="nt:unstructured"
+        jcr:title="MyIT"
+        text="MyIT"
+        value="MyIT"
+        versions="[1.x,2.x,3.x]"/>
+    <education-products-186068586
+        jcr:primaryType="nt:unstructured"
+        jcr:title="ProactiveNet"
+        text="ProactiveNet"
+        value="ProactiveNet"
+        versions="[9.x]"/>
+    <education-products-195011486
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Remedy AR System"
+        text="Remedy AR System"
+        value="Remedy_AR_System"
+        versions="[8.x,9.x]"/>
+    <education-products-183047196
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Remedy ITSM"
+        text="Remedy ITSM"
+        value="Remedy_ITSM"
+        versions="[1.x,3.x,8.x,9.x]"/>
+    <education-products-161725919
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Remedyforce"
+        text="Remedyforce"
+        value="Remedyforce"
+        versions="[2014,2015]"/>
+    <education-products-115258401
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Service Level Management"
+        text="Service Level Management"
+        value="Service_Level_Management"
+        versions="[8.x]"/>
+    <education-products-124016733
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Smart IT"
+        text="Smart IT"
+        value="Smart_IT"
+        versions="[1.x,3.x]"/>
+    <education-products-138131082
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Track-It!"
+        text="Track-It!"
+        value="Track-It"
+        versions="[11.x]"/>
+    <education-products-130779424
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight App Visibility Manager"
+        text="TrueSight App Visibility Manager"
+        value="TrueSight_App_Visibility_Manager"
+        versions="[2.x,10.x]"/>
+    <education-products-122416938
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Capacity Optimization"
+        text="TrueSight Capacity Optimization"
+        value="TrueSight_Capacity_Optimization"
+        versions="[10.x,11.x]"/>
+    <education-products-120151154
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight IT Data Analytics"
+        text="TrueSight IT Data Analytics"
+        value="TrueSight_IT_Data_Analytics"
+        versions="[1.x,2.x]"/>
+    <education-products-118396779
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Infrastructure Management"
+        text="TrueSight Infrastructure Management"
+        value="TrueSight_Infrastructure_Management"
+        versions="[10.x]"/>
+    <education-products-171789609
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Middleware Monitoring"
+        text="TrueSight Middleware Monitoring"
+        value="TrueSight_Middleware_Monitoring"
+        versions="[7.x]"/>
+    <education-products-123342760
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Operations Management"
+        text="TrueSight Operations Management"
+        value="TrueSight_Operations_Management"
+        versions="[10.x,11.x]"/>
 </jcr:root>

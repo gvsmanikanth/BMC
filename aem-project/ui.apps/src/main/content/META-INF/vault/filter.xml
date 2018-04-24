@@ -45,7 +45,15 @@
     <filter root="/content/bmc/resources/intelligent-content-target-persona"/>
     <filter root="/content/bmc/resources/intelligent-content-target-industry"/>
     <filter root="/content/bmc/resources/intelligent-content-company-size"/>
-
+	
+	<filter root="/content/bmc/resources/education-broad-roles"/>
+	<filter root="/content/bmc/resources/education-products"/>
+	<filter root="/content/bmc/resources/education-specific-roles"/>
+	<filter root="/content/bmc/resources/education-specific-types"/>
+    <filter root="/content/bmc/resources/education-version-numbers"/>
+   
+    
+    
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
     <!--<filter root="/content/bmc" mode="merge" />-->
