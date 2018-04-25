@@ -76,6 +76,7 @@ public class BmcEduMeta {
                 Versions newVer = new Versions();
                 Node verNode;
                 if(!ver.getString().equals("Any")) {
+                	// WEB-3214:changes - commented the logic of version numbers dependant on node name
                     /*verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/x" + ver.getString());
                     newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
                     newVer.setId(getEdFilterID(verNode,session));*/
@@ -257,8 +258,13 @@ public class BmcEduMeta {
 
     private String getEdFilterID(Node filterNode, Session session){
         String filterID = null;
-        
+      //WEB-3214:Replaced filterID logic with jcr:title for more readability 
         try {
+            filterID = filterNode.getProperty("jcr:title").getValue().getString().replace(" ", "_").toLowerCase();
+         } catch (RepositoryException e) {
+            e.printStackTrace();
+        }
+       /* try {
             if(!filterNode.hasProperty("jcr:mixinTypes")){
                 filterNode.addMixin("mix:referenceable");
             }
@@ -268,12 +274,12 @@ public class BmcEduMeta {
                 session.save();
             }else{
                 //filterID = filterNode.getProperty("filterID").getValue().getString();
-            	/* Replaced filterID logic with jcr:title for more readability */
+            	 Replaced filterID logic with jcr:title for more readability 
             	filterID = filterNode.getProperty("jcr:title").getValue().getString().replace(" ", "_").toLowerCase();
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
-        }
+        }*/
         return filterID;
     }
 

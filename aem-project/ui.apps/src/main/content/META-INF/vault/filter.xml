@@ -52,7 +52,7 @@
 	<filter root="/content/bmc/resources/education-specific-roles" mode="replace"/>
 	<filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
     <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
-   
+    <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
     
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
