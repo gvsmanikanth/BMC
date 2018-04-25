@@ -76,16 +76,18 @@ public class BmcEduMeta {
                 Versions newVer = new Versions();
                 Node verNode;
                 if(!ver.getString().equals("Any")) {
-                    verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/x" + ver.getString());
+                    /*verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/x" + ver.getString());
                     newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
-                    newVer.setId(getEdFilterID(verNode,session));
+                    newVer.setId(getEdFilterID(verNode,session));*/
+                	newVer.setName(ver.getString());
+                    newVer.setId(ver.getString());
                 }
                 productValues.setVersions(newVer);
 
             }
             return productValues;
         } catch (RepositoryException e) {
-            logger.error("ERROR processing Education node", e.getMessage());
+            logger.error("ERROR processing Education node", e);
             return null;
         }
     }
@@ -241,7 +243,7 @@ public class BmcEduMeta {
             while (tNodes.hasNext()) {
                 Node node = (Node) tNodes.next();
                 Versions verVal = new Versions();
-                verVal.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
+                verVal.setId(node.getName().equals("Any") ? "0" : node.getProperty("jcr:title").getValue().toString());
                 verVal.setName(node.getProperty("jcr:title").getValue().toString());
                 versValues.add(verVal);
             }
@@ -255,6 +257,7 @@ public class BmcEduMeta {
 
     private String getEdFilterID(Node filterNode, Session session){
         String filterID = null;
+        
         try {
             if(!filterNode.hasProperty("jcr:mixinTypes")){
                 filterNode.addMixin("mix:referenceable");

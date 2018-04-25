@@ -1,142 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="cq:Page">
+    <!--  text and value is added to populate the already populated data -->
+    <!-- Did not replace "Any" node as there is some logic present in BmcEduMeta.java -->
     <Any
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="Any"
         text="Any"
         value="Any"/>
     <edu-version-numbers-186635808
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="1.x"
         text="1.x"
         value="x1.x"/>
     <edu-version-numbers-184339789
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2.x"
         text="2.x"
         value="x2.x"/>
     <edu-version-numbers-191609406
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="3.x"
         text="3.x"
         value="x3.x"/>
     <edu-version-numbers-198246805
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="4.x"
         text="4.x"
         value="x4.x"/>
     <edu-version-numbers-196099662
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="5.x"
         text="5.x"
         value="x5.x"/>
     <edu-version-numbers-179890152
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="6.x"
         text="6.x"
         value="x6.x"/>
     <edu-version-numbers-217471601
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="7.x"
         text="7.x"
         value="x7.x"/>
     <edu-version-numbers-151683129
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="8.x"
         text="8.x"
         value="x8.x"/>
     <edu-version-numbers-218759021
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="9.x"
         text="9.x"
         value="x9.x"/>
     <edu-version-numbers-135026253
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="10.x"
         text="10.x"
         value="x10.x"/>
     <edu-version-numbers-201437068
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="11.x"
         text="11.x"
         value="x11.x"/>
     <edu-version-numbers-141329026
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="12.x"
         text="12.x"
         value="x12.x"/>
     <edu-version-numbers-197619941
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="13.x"
         text="13.x"
         value="x13.x"/>
     <edu-version-numbers-218606236
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="14.x"
         text="14.x"
         value="x14.x"/>
     <edu-version-numbers-200967387
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="15.x"
         text="15.x"
         value="x15.x"/>
     <edu-version-numbers-156203152
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="16.x"
         text="16.x"
         value="x16.x"/>
     <edu-version-numbers-166381638
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="17.x"
         text="17.x"
         value="x17.x"/>
     <edu-version-numbers-187632261
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="18.x"
         text="18.x"
         value="x18.x"/>
     <edu-version-numbers-204646652
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="19.x"
         text="19.x"
         value="x19.x"/>
     <edu-version-numbers-199791643
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="20.x"
         text="20.x"
         value="x20.x"/>
     <edu-version-numbers-149651734
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2014"
         text="20.x"
         value="x20.x"/>
     <edu-version-numbers-217461623
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2015"
         text="2015"
         value="x2015"/>
     <edu-version-numbers-124641331
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2016"
         text="2016"
         value="x2016"/>
     <edu-version-numbers-127046001
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2017"
         text="2017"
         value="x2017"/>
     <edu-version-numbers-126100366
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2018"
         text="2018"
         value="x2018"/>
     <edu-version-numbers-161707190
+    jcr:mixinTypes="[mix:referenceable]"
         jcr:primaryType="nt:unstructured"
         jcr:title="2019"
         text="2019"
         value="x2019"/>
     <edu-version-numbers-198345494
+    jcr:mixinTypes="[mix:referenceable]" 
         jcr:primaryType="nt:unstructured"
         jcr:title="2020"
         text="2020"
