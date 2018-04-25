@@ -214,6 +214,7 @@
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Select topic to add"
                                                     multiple="true"
+                                                    fieldDescription="Used for filtering All Products landing"
                                                     metadataName="topic"
                                                     name="./topics">
                                                 <datasource
@@ -270,13 +271,13 @@
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose a weighting for this content"
+                                                    fieldDescription="Used to position content in intelligent content results list. 1 is most important. 5 is least important."
                                                     fieldLabel="IC Weighting"
                                                     name="./ic-weighting">
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <item1
                                                             jcr:primaryType="nt:unstructured"
-                                                            text="5"
+                                                            text="5 (least important)"
                                                             value="5"/>
                                                     <item2
                                                             jcr:primaryType="nt:unstructured"
@@ -292,7 +293,7 @@
                                                             value="2"/>
                                                     <item5
                                                             jcr:primaryType="nt:unstructured"
-                                                            text="1"
+                                                            text="1 (most important)"
                                                             value="1"/>
                                                 </items>
                                             </ic-weighting>
@@ -302,6 +303,7 @@
                                                     fieldLabel="IC Topic"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
                                                     emptyText="Intelligent Content Topic"
+                                                    fieldDescription="Used for filtering intelligent content"
                                                     multiple="{Boolean}true"
                                                     name="./ic-topics"
                                                     dataPath="/content/bmc/resources/intelligent-content-topics">
@@ -316,9 +318,8 @@
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose a Buyer Stage for this content"
-                                                    fieldLabel="Buyer Stage"
-                                                    emptyText="Buyer Stage"
+                                                    fieldLabel="IC Buyer Stage"
+                                                    emptyText="Intelligent Content Buyer Stage"
                                                     multiple="{Boolean}true"
                                                     name="./ic-buyer-stage"
                                                     dataPath="/content/bmc/resources/intelligent-content-buyer-stage">
@@ -333,9 +334,8 @@
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose a Target Persona for this content"
-                                                    fieldLabel="Target Persona"
-                                                    emptyText="Target Persona"
+                                                    fieldLabel="IC Target Persona"
+                                                    emptyText="Intelligent Content Target Persona"
                                                     multiple="{Boolean}true"
                                                     name="./ic-target-persona"
                                                     dataPath="/content/bmc/resources/intelligent-content-target-persona">
@@ -350,17 +350,17 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
                                                     displayedFormat="MM-YYYY"
-                                                    fieldLabel="Source Publish Date (MM-YYYY)"
+                                                    fieldLabel="IC Source Publish Date (MM-YYYY)"
                                                     name="./ic-source-publish-date"
                                                     type="datetime"
-                                                    typeHint="Source Publish Date (MM-YYYY)"/>
+                                                    fieldDescription="Used to specify when the content was created, not when it was published in AEM"
+                                                    typeHint="IC Source Publish Date (MM-YYYY)"/>
                                             <ic-target-industry
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose target industry for this content"
-                                                    fieldLabel="Target Industry"
-                                                    emptyText="Target Industry"
+                                                    fieldLabel="IC Target Industry"
+                                                    emptyText="Intelligent Content Target Industry"
                                                     multiple="{Boolean}true"
                                                     name="./ic-target-industry"
                                                     dataPath="/content/bmc/resources/intelligent-content-target-industry">
@@ -375,9 +375,8 @@
                                                     cq:showOnCreate="{Boolean}true"
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/select"
-                                                    fieldDescription="Choose a target company size for this content"
-                                                    fieldLabel="Company Size"
-                                                    emptyText="Company Size"
+                                                    fieldLabel="IC Company Size"
+                                                    emptyText="Intelligent Content Company Size"
                                                     multiple="{Boolean}true"
                                                     name="./ic-company-size"
                                                     dataPath="/content/bmc/resources/intelligent-content-company-size">
