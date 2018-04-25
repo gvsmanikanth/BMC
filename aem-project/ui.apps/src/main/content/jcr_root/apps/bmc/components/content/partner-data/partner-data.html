@@ -19,7 +19,9 @@
     <dd data-sly-test="${!companyExternalURL}"><em>Not set</em></dd>
 
     <dt>Short Description</dt>
-    <dd data-sly-test.shortDescription="${properties.shortDescription}">${shortDescription}</dd>
+    <!--/* WEB-3179 Partner data component error START */-->
+    <dd data-sly-test.shortDescription="${properties.shortDescription}">${shortDescription @ context = 'html'}</dd>
+    <!--/* WEB-3179 Partner data component error END */-->
     <dd data-sly-test="${!shortDescription}"><em>Not set</em></dd>
 
     <dt>Long Description</dt>
