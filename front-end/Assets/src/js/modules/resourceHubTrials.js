@@ -153,7 +153,7 @@
 		});
 		
 		$(window).on('load', function() {
-			
+			$(".filters").addClass("pageLoad");
 			$('.filterListContainer').each(function(i, filterContainer) {
 				var filterList = null,
 				    list = null;

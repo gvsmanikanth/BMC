@@ -38,10 +38,10 @@
 		
 		
 		a {
-			padding: em(6) em(0);
+			//padding: em(6) em(0);
 			transition: all .25s ease-out;
 			@include media(breakpointLarge) {
-				padding: em(6) em(0);
+				//padding: em(6) em(0);
 			}
 		
 			&.boldlink{
