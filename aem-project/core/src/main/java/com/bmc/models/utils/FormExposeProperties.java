@@ -11,6 +11,7 @@ import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.Value;
 
+import com.bmc.services.PactSafeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +21,8 @@ import com.bmc.models.components.forms.FieldSetModel;
 public class FormExposeProperties extends WCMUsePojo{
 
 
-    private static Map<String,Value> formContainerProperties=new HashMap<String,Value>();
-
+    private static Map<String,Object> formContainerProperties=new HashMap<>();
+    private PactSafeService pactSafeService;
 
     private static final Logger log = LoggerFactory.getLogger(FormExposeProperties.class);
     @Override
@@ -29,22 +30,30 @@ public class FormExposeProperties extends WCMUsePojo{
         // TODO Auto-generated method stub
         Node node = getResource().adaptTo(Node.class);
         //Iterate the current node properties and populate it in a HashMap as key,values.
-        for(PropertyIterator propeIterator = node.getProperties() ; propeIterator.hasNext();)
-        {
-            Property prop= propeIterator.nextProperty();
+        try {
+            for (PropertyIterator propeIterator = node.getProperties(); propeIterator.hasNext(); ) {
+                Property prop = propeIterator.nextProperty();
 
-            String propertyName = prop.getName();
-            Value propertyValue = prop.getValue();
-
-            // this will output the value in string format
-
-            formContainerProperties.put(propertyName, propertyValue);
-
-
+                String propertyName = prop.getName();
+                if(prop.isMultiple()){
+                    Value[] propertyValue = prop.getValues();
+                    formContainerProperties.put(propertyName, propertyValue);
+                }else {
+                    Value propertyValue = prop.getValue();
+                    formContainerProperties.put(propertyName, propertyValue);
+                }
+                // this will output the value in string format
+            }
+        } catch(Exception e) {
+            log.error("FormExposeProperties iterator error: "+e.getMessage());
         }
 
         //Set the property object in request scope object
         getRequest().setAttribute("formContainerProperties", formContainerProperties);
-    }
 
+        //test to trigger updatePactSafeGroup()
+//        pactSafeService = getSlingScriptHelper().getService(PactSafeService.class);
+//
+//        log.info("updatePactSafeGroup response: "+pactSafeService.updatePactSafeGroup());
+    }
 }

@@ -26,6 +26,8 @@
         <properties.basedir>${basedir}/properties</properties.basedir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <pactsafe.client.version>1.0.1</pactsafe.client.version>
+        <pactsafe.client.library>pactsafe-java-sdk</pactsafe.client.library>
     </properties>
 
     <dependencyManagement>
@@ -204,6 +206,13 @@
                 <groupId>com.googlecode.json-simple</groupId>
                 <artifactId>json-simple</artifactId>
                 <version>1.1.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.6.3</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

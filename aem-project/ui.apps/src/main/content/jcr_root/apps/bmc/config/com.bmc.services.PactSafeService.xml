@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+		  jcr:primaryType="sling:OsgiConfig"
+
+		  pactSafeAgreementLink="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590"
+		  pactSafeAgreementLinkText="Online Trial Agreement"
+		  pactSafeAgreementCopy="By checking this box, I agree to be bound by the terms of [[link]]."
+
+		  pactSafeContractsAPIURL="https://api.pactsafe.com/v1.1/groups/"
+		  pactSafeContractsAPIURLParams="?expand=contracts"
+
+		  pactSafeContractGroupID="724"
+
+		  pactSafeSiteID="1365"
+		  pactSafeSiteAccessId="eebbf489-fb84-4a0c-b624-51f2ead3104b"
+
+		  pactSafeAPIBearerToken="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_"
+
+		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com,DigitalContractingHelp@bmc.com,cmsdev@dermot.org"
+		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com,DigitalContractingHelp@bmc.com,cmsdev@dermot.org"
+
+/>
+

@@ -11,8 +11,8 @@
     <!--/* WEB_2690 PactSafe Agreement fields addition--START */-->
     <sly data-sly-use="com.bmc.models.utils.FormExposeProperties" />
     <!--/* WEB_2690 PactSafe Agreement fields addition --END */-->
-    <input type="hidden" name="_charset_" value="UTF-8"/> 
-    <input data-sly-repeat.param="${params.parameterMap}" name="${param}" value="${params.parameterMap[param]}" type="hidden" />
+    <input type="hidden" name="_charset_" value="UTF-8"/>
+    <!--/*<input data-sly-repeat.param="${params.parameterMap}" name="${param}" value="${params.parameterMap[param]}" type="hidden" />*/-->
     <!--/* This is the honeypot field. Do not remvoe. */-->
     <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
     <sly data-sly-repeat.paragraph="${grid.paragraphs}">
