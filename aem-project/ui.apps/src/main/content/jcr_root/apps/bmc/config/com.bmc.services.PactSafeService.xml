@@ -16,8 +16,8 @@
 
 		  pactSafeAPIBearerToken="wxR6rnZLhDRWQwdw~TzwwFNyMkLcHujvgC4BkV84-1w_"
 
-		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
-		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com,cmsdev@dermot.org"
+		  pactSafeServiceUnavailableEmailGroups="cmsdev@bmc.com,DigitalContractingHelp@bmc.com,cmsdev@dermot.org"
+		  pactSafeContractVersionUpdateEmailGroups="cmsdev@bmc.com,DigitalContractingHelp@bmc.com,cmsdev@dermot.org"
 
 />
 
