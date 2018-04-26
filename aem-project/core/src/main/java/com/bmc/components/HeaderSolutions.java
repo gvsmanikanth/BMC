@@ -29,12 +29,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.*;
 /**
- * HeaderTopic class is a class backing the HeaderTopic component.
+ * HeaderSolutions class is a class backing the HeaderSolutions component.
  * this class resolves it to the correct model(multifield property)
  */
-public class HeaderTopic extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached {
+public class HeaderSolutions extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached {
 
-    private static final Logger logger = LoggerFactory.getLogger(HeaderTopic.class);
+    private static final Logger logger = LoggerFactory.getLogger(HeaderSolutions.class);
 
     protected HashMap<String,String> assetBar;
 

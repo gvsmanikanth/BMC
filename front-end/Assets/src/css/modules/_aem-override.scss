@@ -20,4 +20,14 @@ fieldset {
 	    padding: 0.5rem;
 	    line-height: 0.7;
 	}
+	
+	//WEB-3091
+	div.cmp-text{
+		margin-bottom: 0 !important;
+    	padding-bottom: 0;
+    	p{
+		    margin-bottom: 0;
+    	}
+	}
+	
 }

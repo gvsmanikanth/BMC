@@ -13,6 +13,8 @@ $(document).ready(function() {
 	        comptypecol:data.hits[index].comptypecol,
 	 		display:this.display,
 			path:this.path+'.html',
+            authorcol:data.hits[index].authorcol,
+            lastmodcol:data.hits[index].lastmodcol,
 	    };
 		});
 	    });
@@ -20,14 +22,14 @@ $(document).ready(function() {
         JSONToCSVConvertor(jsondata, "Report", true);
         });
         function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
-        //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
+        //If JSONData is not an object then JSON.parse will parse the JSON string in an Object  
         var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
         var CSV = '';    
         //This condition will generate the Label/Header
         if (ShowLabel) {
         var row = "";
         //Now convert each value to string and comma-seprated
-         row ="comptypecol,display,path";
+         row ="Component Type,Title,Path,Author,Last Modified";
         //row = row.slice(0, -1);
         //append Label row with line break
         CSV += row + '\r\n';
@@ -45,7 +47,7 @@ $(document).ready(function() {
 	            CSV += row + '\r\n';
 	            }
 	            CSV=CSV.replace(/<\/?[^>]+>/gi, '');
-	            //alert(CSV);
+	          //  alert(CSV);
                 CSV = CSV.replace(/\*?[*]/gi,"");
                 if (CSV == '') {        
                 alert("Invalid data");
@@ -76,13 +78,9 @@ $(document).ready(function() {
 		});
 </script>
         <div>
-        	<h1> Component Report </h1>
-            <p class="greeting-id">The component report delivers information about how our website uses the components. </p>
-            <p> Please check the report <a target="_blank" href="/etc/reports/compreport.html">here</a> before downloading the csv.</p>
-            <p class="greeting-content">Using the Edit dialog the user can also set a Root path that defines the startpoint of the report - all components under that root are considered for the report.
-			</p>
-			<p> <b>For example</b>: If we want to find the list of pages which has htmlarea component, then add the path in <b>Component Type</b> -> Filter settings as "bmc/components/content/htmlarea" ->Apply.
-        </div>
+        	<h1> ${properties.headerText} </h1>
+            ${properties.text @context='html'}
+         </div>
 		  <div class='mydiv'>    
 		   
 		    <button class='gen_btn'>Download Csv</button>

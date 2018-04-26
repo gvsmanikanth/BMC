@@ -386,9 +386,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         emailParams.put("fromAddress", FROM_ADDRESS);
         StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
         String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
-        /* WEB-2675: Sort fields in Form Emails */ 
-        String[] sortFieldsBy = {"C_Title","C_BusPhone","C_EmailAddress","C_Company","C_LastName","C_FirstName"}; // Sort the response based on the given order
-        String[] sensitiveFields = {"_charset_","elqFormName","formname","formid","adobe_unique_hit_id"}; 
+        /* WEB-2981: Sort fields in Form Emails */ 
+        String[] sortFieldsBy = {"C_Title","C_EmailAddress","C_FirstName","C_LastName","C_Company","C_Address1","C_Address2","C_Address3","C_City","C_State_Prov","C_Zip_Postal","C_Country","C_Direct_Phone1","C_MobilePhone","C_BusPhone"}; // Sort the response based on the given order
+        String[] sensitiveFields = {"_charset_","elqFormName","formname","formid","adobe_unique_hit_id","C_Lead_Rating_Override1","Email_Source","elqCustomerGUID","C_Source_Name1"}; 
         Map<String, String> emailEntryHashmap = new HashMap<>();
         emailEntryHashmap.putAll(form.data);
         

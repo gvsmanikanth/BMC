@@ -6,9 +6,9 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="">
+		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div>
+				<div class="inner">
 					<h1 class="white">Control-M</h1>
 					<h2>Power digital business automation: Go beyond traditional
 						workload automation</h2>
@@ -95,9 +95,9 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="">
+		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div>
+				<div class="inner">
 					<h1 class="white">Control-M</h1>
 					<h2>Power digital business automation: Go beyond traditional
 						workload automation</h2>
@@ -165,9 +165,9 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="">
+		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div>
+				<div class="inner">
 					<h1 class="white">Control-M</h1>
 					<h2>Power digital business automation: Go beyond traditional
 						workload automation</h2>
@@ -222,9 +222,9 @@
 	data-wallpaper-options="{&quot;source&quot;:&quot;//www.bmc.com/content/dam/bmc/images/TopBanners_TEST_BG_IMG_1900x700.jpg?ab=2&quot;}">
 
 	<div class="offset-wrapper flex-center">
-		<div class="">
+		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div>
+				<div class="inner">
 					<h1 class="white">Control-M</h1>
 					<h2>Power digital business automation: Go beyond traditional workload automation.</h2>
 					<div class="text-center">

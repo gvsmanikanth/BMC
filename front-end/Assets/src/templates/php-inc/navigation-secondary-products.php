@@ -287,7 +287,7 @@
 							<a href="http://www.bmc.com/it-solutions/control-m-resources.html" target="_self">Control-M Resources</a>
 						</li>
 						<section>
-							<a class="btn" href="http://www.bmc.com/it-solutions/job-scheduling-workload-automation.html  target="_self">Explore Workload Automation&nbsp;&#8250;</a>
+							<a class="btn" href="http://www.bmc.com/it-solutions/job-scheduling-workload-automation.html"  target="_self">Explore Workload Automation&nbsp;&#8250;</a>
 							</section>
 							</ul>
 							</li>

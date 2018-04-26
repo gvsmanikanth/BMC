@@ -1,46 +1,66 @@
 <nav class="layout-navigation">
 	<div class="layout-inner-wrap" style="position: relative;">
-		<ul class="navigation-primary">
+		<ul class="navigation-primary navigation-upgrade">
 			<li class="navigation-menu">
 				<a href="#" class="navigation-menu-link"></a>
 			</li>
 			<li class="navigation-home">
 				<a href="#" class="navigation-home-link"></a>
 			</li>
-			<li class="navigation-products navigation-secondary-toggle">
-				<a href="#">Solutions</a>
-				<?php include('navigation-secondary-products.php')
-				?>
+			<li class="navigation-products navigation-secondary-toggle"><a
+				href="#">Solutions</a>
+				<?php include ('navigation-secondary-solutions-new.php')?>
 			</li>
-			<li class="navigation-industries navigation-secondary-toggle">
-				<a href="#">Industries &amp; Roles</a>
-				<?php include('navigation-secondary-industry.php')
-				?>
+			<li class="navigation-industries navigation-secondary-toggle"><a
+				href="#">Products</a>
+				<?php include ('navigation-secondary-products-new.php')?>
 			</li>
-			<li class="navigation-services navigation-secondary-toggle">
-				<a href="#">Training &amp; Services</a>
-				<?php include('navigation-secondary-services.php')
-				?>
+			<li class="navigation-partners navigation-secondary-toggle"><a
+				href="#">Partners</a>
+				<?php include ('navigation-secondary-patners-new.php')?>
 			</li>
-			<li class="navigation-education navigation-secondary-toggle">
-				<a href="#">Partners &amp; Developers</a>
-				<?php include('navigation-secondary-education.php')
-				?>
+			<li class="navigation-partners navigation-secondary-toggle"><a
+				href="#">Support & Services</a>
+				<?php include ('navigation-secondary-support-services-new.php')?>
 			</li>
-			<li class="navigation-partners navigation-secondary-toggle">
-				<a href="#">Communities</a>
-				<?php include('navigation-secondary-patners.php')
-				?>
+			<li class="navigation-about navigation-secondary-toggle"><a href="#">About
+					BMC</a>
+				<?php include ('navigation-secondary-about-new.php')?>
 			</li>
-			<li class="navigation-community navigation-secondary-toggle">
-				<a href="#">Support</a>
-				<?php include('navigation-secondary-communities.php')
-				?>
-			<li class="navigation-about navigation-secondary-toggle">
-				<a href="#">About BMC</a>
-				<?php include('navigation-secondary-about.php')
-				?>
-			</li>
+<!-- 			<li class="navigation-products navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Solutions</a> -->
+<!-- 				< ?php include('navigation-secondary-products.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
+<!-- 			<li class="navigation-industries navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Industries &amp; Roles</a> -->
+<!-- 				< ?php include('navigation-secondary-industry.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
+<!-- 			<li class="navigation-services navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Training &amp; Services</a> -->
+<!-- 				< ?php include('navigation-secondary-services.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
+<!-- 			<li class="navigation-education navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Partners &amp; Developers</a> -->
+<!-- 				< ?php include('navigation-secondary-education.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
+<!-- 			<li class="navigation-partners navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Communities</a> -->
+<!-- 				< ?php include('navigation-secondary-patners.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
+<!-- 			<li class="navigation-community navigation-secondary-toggle"> -->
+<!-- 				<a href="#">Support</a> -->
+<!-- 				< ?php include('navigation-secondary-communities.php') -->
+<!-- 				?> -->
+<!-- 			<li class="navigation-about navigation-secondary-toggle"> -->
+<!-- 				<a href="#">About BMC</a> -->
+<!-- 				< ?php include('navigation-secondary-about.php') -->
+<!-- 				?> -->
+<!-- 			</li> -->
 		</ul>
 		<ul class="navigation-utility">
 			<li class="navigation-trials ">
