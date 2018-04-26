@@ -44,16 +44,16 @@
 		}
 		
 		ol{
-			display:inline;
+			display:table;
+			margin:0 auto;
 		}
 		li {
 			width: 90%;
-			
 			@include media(breakpointLarge) {
-				width: 30%;
-				margin: 1rem 1rem;
+				width: 45%;
+				padding: 0 2rem;
+				display: table-cell;
 			}
-			
 			select {
 				font-size: 1rem;
 			}
@@ -85,6 +85,12 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		@include media(breakpointMedium){
+			width: 100%;
+		}
+		@include media(breakpointLarge){
+			--width: 55%;
+		}
 	}
 	fieldset {
 		&:not(#foo) {
@@ -121,7 +127,7 @@
 				}
 		}
 		.resource-details {
-		    margin-bottom: 2.5em; 
+		    margin-bottom: 2.5em;  
 		    margin-top: auto;
 		    font-size: 0.847em;
 		    color: #555557;
@@ -133,7 +139,7 @@
 			list-style: none;
 				li.title{
 				    color: #fe7e42;
-    				line-height: 1.3em;
+    				line-height: 1.3em; 
 				}
 		}
 	}

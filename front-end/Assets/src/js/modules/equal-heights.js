@@ -32,12 +32,32 @@
 			if(maxHeight !=0)
 				$(ehItem).height(maxHeight);
 		});
+	};	
+	
+	var setHeadingHeight = function(eh) {
+		$(eh).each(function(i) {
+			var headingItem = $(this).find('.title .heading'),
+				maxHeadingHeight = 0;
+			$(headingItem).css('height', 'auto');	
+			
+			$(headingItem).each( function() {
+				var ehInstance = $(this),
+					itemHeight = $(ehInstance).outerHeight();
+				if ( itemHeight > maxHeadingHeight ) {
+					maxHeadingHeight = itemHeight;
+				}
+			});
+			if(maxHeadingHeight !=0)
+				$(headingItem).height(maxHeadingHeight);
+		});
 	};
 
 	setHeights('.js-eh');
+	setHeadingHeight('.js-eh');
 	
-	window.onResizeSetHeight = function(){
+	window.onResizeSetHeight = function(){ 
 		setHeights('.js-eh');
+		setHeadingHeight('.js-eh');
 	}; 
 	
 	var supportsOrientationChange = "onorientationchange" in window,
