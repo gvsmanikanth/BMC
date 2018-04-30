@@ -110,13 +110,26 @@ include 'php-inc/svg.php';
                </ul>
                <a href="https://www.bmc.com/it-solutions/cloud-cost-control.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud cost</a>
             </div>
-            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
+            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left" data-aos-anchor="#section3">
                <!--<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Mobile phone and app infographic">-->
 			   <div class="carousel-wrap">
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/cost.png" alt="Cost" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost1.png" alt="Cost" title="" width="900" border="0" height="516">		
+							</figure>
+						 <div class="circle" data-percentage-right="3" data-percentage-top="56">
+							<span>Optimize and reduce multi-cloud costs.</span>
+						</div>
+						</li>
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Cost2.png" alt="Cost" title="" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						<li data-slide="2" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Cost3.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -135,8 +148,29 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Service Managment.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
 							</figure>
+							 <div class="circle" data-percentage-right="8" data-percentage-top="45">
+								<span>Ensure optimal end-user experiences</span>
+							</div>
+						</li>
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man2-device.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
+							</figure>
+							<div class="circle" data-percentage-right="8" data-percentage-top="45">
+								<span>Brokers incidents and associations for collaborative management</span>
+							</div>
+						</li>
+						<li data-slide="2" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man3-device.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
+							</figure>
+							<div class="circle" data-percentage-right="8" data-percentage-top="45">
+								<span>Integrates service desks to collaboratively resolve and mitigate issues</span>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -187,7 +221,20 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility1.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+							</figure>
+							 <div class="circle" data-percentage-right="2" data-percentage-top="15">
+								<span>Fast accurate,and secure visibility.</span>
+							</div>
+						</li>						
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility2.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+							</figure>
+						</li>						
+						<li data-slide="2" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -253,8 +300,38 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
 						</figure>
+						<div class="circle" data-percentage-right="3" data-percentage-top="4">
+							<span>Automate & Orchestrate applications</span>
+						</div>
+					</li>
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+						</figure>
+						<div class="circle" data-percentage-right="55" data-percentage-top="26">
+							<span>Anywhere anytime access</span>
+						</div>
+					</li>
+					<li data-slide="2" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+						</figure>
+						<div class="circle" data-percentage-right="67" data-percentage-top="13">
+							<span>Manage your file transfers</span>
+						</div>
+					</li>
+					<li data-slide="3" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation4.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">							
+						</figure>
+						<div class="circle" data-percentage-right="68" data-percentage-top="21">
+							<span>Extend visibility to business users</span>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -271,8 +348,38 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/Security.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">		
 						</figure>
+						<div class="circle" data-percentage-right="0" data-percentage-top="11">
+							<span>Multi-cloud Security Dashboard - Find and fix </span>
+						</div>
+					</li>
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+						<div class="circle" data-percentage-right="68" data-percentage-top="44">
+							<span>Copy for the callout Here 03 Lines Max</span>
+						</div>
+					</li>
+					<li data-slide="2" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+						<div class="circle" data-percentage-right="2" data-percentage-top="30">
+							<span>Understand the risk</span>
+						</div>
+					</li>
+					<li data-slide="3" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security4.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+						<div class="circle" data-percentage-right="0" data-percentage-top="11">
+							<span>Point, click and fix </span>
+						</div>
 					</li>
 				</ul>
 			</div>

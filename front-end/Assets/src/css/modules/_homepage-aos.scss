@@ -139,6 +139,10 @@
 			}
 			margin-top : 0px;
 		}
+		img.screenImage{
+			position: absolute;
+			top: 0%;
+		}
 		.pxr1 {
 			@include media(breakpointLarge){
 				padding-right: 3rem;
@@ -521,6 +525,39 @@ img {
 	li {
 		display: block;
 		margin-bottom: 10px;
+		.circle{
+			position: absolute;
+			background: #fd5507;
+			border-radius: 50%;
+			color: white;
+			height: 4.5rem;
+			width: 4.5rem;
+			display: table;
+			@include media(breakpointMedium){
+				height: 4rem;
+				width: 4rem;
+			}
+			@include media(breakpointLarge){
+				height: 7rem;
+				width: 7rem;
+			}
+			span {
+				vertical-align: middle;
+				display: table-cell;
+				font-size: 0.4rem;
+				color: #fff;
+				padding: 0 1rem;
+				@include media(breakpointMedium){
+					font-size: 0.4rem;
+					padding: 0 0.9rem;
+				}
+				@include media(breakpointLarge){
+					font-size: 0.7rem;
+				}
+				
+				
+			}
+		}
 	}
 	p {
 	
