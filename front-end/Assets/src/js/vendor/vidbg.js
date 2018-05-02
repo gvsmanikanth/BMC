@@ -276,18 +276,18 @@
 
     if (typeof path === 'object') {
       if (path.mp4) {
-        sources += '<source src="' + path.mp4 + '" type="video/mp4">';
+        sources += '<source data-src="' + path.mp4 + '" type="video/mp4">';
       }
 
       if (path.webm) {
-        sources += '<source src="' + path.webm + '" type="video/webm">';
+        sources += '<source data-src="' + path.webm + '" type="video/webm">';
       }
 
-      $video = vidbg.$video = $('<video>' + sources + '</video>');
+      $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' + sources + '</video>');
     } else {
-      $video = vidbg.$video = $('<video>' +
-        '<source src="' + path + '" type="video/mp4">' +
-        '<source src="' + path + '" type="video/webm">' +
+      $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' +
+        '<source data-src="' + path + '" type="video/mp4">' +
+        '<source data-src="' + path + '" type="video/webm">' +
         '</video>');
     }
 
@@ -367,6 +367,8 @@
     }
   };
 
+
+  
   /**
    * Get a video element
    * @public
@@ -414,6 +416,7 @@
     }
   };
 
+	
   /**
    * Destroy a video background
    * @public
@@ -487,7 +490,32 @@
 
       $element[PLUGIN_NAME](path, options);
     });
-
+	
+	
+	/*
+	* End Video
+	*/
+	var video = $('.page-homepage-e #video_id');
+	video.on('ended', function() {
+		$(this).hide();
+	});
+	
   });
+  
+/*Load video in Desktop View Only*/
+	$(function() {
+    var bgv = $('#video_id');
+    if (bgv.is(':visible')) {
+      $('source', bgv).each(
+        function() {
+          var el = $(this);
+          el.attr('src', el.data('src'));
+        }
+      );
+
+      bgv[0].load();
+    }
+  });
+/*Load video in Desktop View Only*/
 
 });

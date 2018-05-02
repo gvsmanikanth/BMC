@@ -93,7 +93,7 @@ $mobileUtilityNavHeight: 49px;
 // -------------------------------------------------------------- //
 .navigation-country a:after,
 .navigation-contact a:after,
-.navigation-support a:after {
+.navigation-support a:after{
 	@include icon();
 	@include font-size(16);
 	margin-left: 12px;

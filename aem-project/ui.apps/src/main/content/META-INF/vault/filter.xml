@@ -41,6 +41,13 @@
         <include pattern="/content/bmc/resources/training-locations/jcr:content"/>
     </filter>
 
+    <filter root="/content/bmc/resources/intelligent-content-topics"/>
+    <filter root="/content/bmc/resources/intelligent-content-types"/>
+    <filter root="/content/bmc/resources/intelligent-content-buyer-stage"/>
+    <filter root="/content/bmc/resources/intelligent-content-target-persona"/>
+    <filter root="/content/bmc/resources/intelligent-content-target-industry"/>
+    <filter root="/content/bmc/resources/intelligent-content-company-size"/>
+
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
     <!--<filter root="/content/bmc" mode="merge" />-->
