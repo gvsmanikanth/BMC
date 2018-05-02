@@ -2837,7 +2837,7 @@ fieldset .cmp {
   line-height: 0.7; }
 
 fieldset div.cmp-text {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   padding-bottom: 0; }
   fieldset div.cmp-text p {
     margin-bottom: 0; }
@@ -15966,13 +15966,15 @@ body.support-central {
     -moz-appearance: none;
     appearance: none; }
   .resource-hub .resource-hub-trials-cards .filters ol {
-    display: inline; }
+    display: table;
+    margin: 0 auto; }
   .resource-hub .resource-hub-trials-cards .filters li {
     width: 90%; }
     @media only screen and (min-width: 60em) {
       .resource-hub .resource-hub-trials-cards .filters li {
-        width: 30%;
-        margin: 1rem 1rem; } }
+        width: 45%;
+        padding: 0 2rem;
+        display: table-cell; } }
     .resource-hub .resource-hub-trials-cards .filters li select {
       font-size: 1rem; }
   .resource-hub .resource-hub-trials-cards .filters li.tooltipField {
@@ -15995,6 +15997,12 @@ body.support-central {
   width: 100%; }
   .resource-hub .resource-hub-trials-cards .decorator-select select > option {
     background: #cccccc2e; }
+  @media only screen and (min-width: 48em) {
+    .resource-hub .resource-hub-trials-cards .decorator-select {
+      width: 100%; } }
+  @media only screen and (min-width: 60em) {
+    .resource-hub .resource-hub-trials-cards .decorator-select {
+      --width: 55%; } }
 
 .resource-hub .resource-hub-trials-cards fieldset:not(#foo) .decorator-select:after {
   font-family: "icomoon";
