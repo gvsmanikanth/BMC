@@ -5,21 +5,17 @@
     <Any
             jcr:primaryType="nt:unstructured"
             jcr:title="All Delivery Method"
-            text="All Delivery Method"
-            value="All Delivery Method"/>
+            />
      <course-delivery-133337271
         jcr:primaryType="nt:unstructured"
         jcr:title="Self Paced"
-        text="Self Paced"
-        value="Self_Paced"/>
+       />
      <course-delivery-126292444
         jcr:primaryType="nt:unstructured"
         jcr:title="Instructor Led"
-        text="Instructor Led"
-        value="Instructor_Led"/>
+      />
      <course-delivery-126590603
         jcr:primaryType="nt:unstructured"
         jcr:title="Assisted Self-Paced"
-        text="Assisted Self-Paced"
-        value="Assisted_Self-Paced"/>
+        />
 </jcr:root>
