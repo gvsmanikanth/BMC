@@ -532,10 +532,11 @@ img {
 			color: white;
 			height: 4.5rem;
 			width: 4.5rem;
-			display: table;
+			display: none;
 			@include media(breakpointMedium){
 				height: 4rem;
 				width: 4rem;
+				display: table;
 			}
 			@include media(breakpointLarge){
 				height: 7rem;
@@ -554,8 +555,33 @@ img {
 				@include media(breakpointLarge){
 					font-size: 0.7rem;
 				}
-				
-				
+			}
+		}
+		.bubbleDiv{
+			position: absolute;
+			background-color: #fe5000;
+			height: auto;
+			width: 100%;
+			bottom: -1rem;
+			padding: 0 0 0.2rem;
+			border-radius: 1rem;
+			&:after {
+				z-index: -1;
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				margin-left: -10px;
+				content:'';
+				width: 0;
+				height: 0;
+				border-bottom: solid 10px #fe5000;
+				border-left: solid 10px transparent;
+				border-right: solid 10px transparent;
+			}
+			.bubbleText{
+				font-size: 18px;
+				line-height: 26px;
+				color: #fff;
 			}
 		}
 	}

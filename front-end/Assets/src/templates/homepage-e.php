@@ -116,23 +116,27 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/cost1.png" alt="Cost" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost_1.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						 <div class="circle" data-percentage-right="3" data-percentage-top="56">
 							<span>Optimize and reduce multi-cloud costs.</span>
 						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Optimize and reduce multi-cloud costs.</span>
+						</div>
 						</li>
 						<li data-slide="1" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Cost2.png" alt="Cost" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost_2.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 						<li data-slide="2" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Cost3.png" alt="Cost" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/cost_3.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
+					
 				</div>
             </div>
            
@@ -153,23 +157,32 @@ include 'php-inc/svg.php';
 							 <div class="circle" data-percentage-right="8" data-percentage-top="45">
 								<span>Ensure optimal end-user experiences</span>
 							</div>
+							<div class="bubbleDiv xs-only">
+								<span class="bubbleText">Ensure optimal end-user experiences</span>
+							</div>
 						</li>
 						<li data-slide="1" class="active">
 							<figure>
 								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man2-device.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man2.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
 							</figure>
 							<div class="circle" data-percentage-right="8" data-percentage-top="45">
 								<span>Brokers incidents and associations for collaborative management</span>
+							</div>
+							<div class="bubbleDiv xs-only">
+								<span class="bubbleText">Brokers incidents and associations for collaborative management</span>
 							</div>
 						</li>
 						<li data-slide="2" class="active">
 							<figure>
 								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man3-device.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man3.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
 							</figure>
 							<div class="circle" data-percentage-right="8" data-percentage-top="45">
 								<span>Integrates service desks to collaboratively resolve and mitigate issues</span>
+							</div>
+							<div class="bubbleDiv xs-only">
+								<span class="bubbleText">Integrates service desks to collaboratively resolve and mitigate issues</span>
 							</div>
 						</li>
 					</ul>
@@ -221,20 +234,23 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility1.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_1.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 							 <div class="circle" data-percentage-right="2" data-percentage-top="15">
 								<span>Fast accurate,and secure visibility.</span>
 							</div>
+							<div class="bubbleDiv xs-only">
+								<span class="bubbleText">Fast accurate,and secure visibility.</span>
+							</div>
 						</li>						
 						<li data-slide="1" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility2.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_2.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>						
 						<li data-slide="2" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/Visibility3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
 					</ul>
@@ -305,6 +321,9 @@ include 'php-inc/svg.php';
 						<div class="circle" data-percentage-right="3" data-percentage-top="4">
 							<span>Automate & Orchestrate applications</span>
 						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Automate & Orchestrate applications</span>
+						</div>
 					</li>
 					<li data-slide="1" class="active">
 						<figure>
@@ -313,6 +332,9 @@ include 'php-inc/svg.php';
 						</figure>
 						<div class="circle" data-percentage-right="55" data-percentage-top="26">
 							<span>Anywhere anytime access</span>
+						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Anywhere anytime access</span>
 						</div>
 					</li>
 					<li data-slide="2" class="active">
@@ -323,6 +345,9 @@ include 'php-inc/svg.php';
 						<div class="circle" data-percentage-right="67" data-percentage-top="13">
 							<span>Manage your file transfers</span>
 						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Manage your file transfers</span>
+						</div>
 					</li>
 					<li data-slide="3" class="active">
 						<figure>
@@ -331,6 +356,9 @@ include 'php-inc/svg.php';
 						</figure>
 						<div class="circle" data-percentage-right="68" data-percentage-top="21">
 							<span>Extend visibility to business users</span>
+						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Extend visibility to business users</span>
 						</div>
 					</li>
 				</ul>
@@ -348,37 +376,49 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">		
 						</figure>
 						<div class="circle" data-percentage-right="0" data-percentage-top="11">
-							<span>Multi-cloud Security Dashboard - Find and fix </span>
+							<span>Multi-cloud Security Dashboard - Find and fix</span>
+						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Multi-cloud Security Dashboard - Find and fix</span>
 						</div>
 					</li>
 					<li data-slide="1" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 						<div class="circle" data-percentage-right="68" data-percentage-top="44">
 							<span>Copy for the callout Here 03 Lines Max</span>
 						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Copy for the callout Here 03 Lines Max</span>
+						</div>
 					</li>
 					<li data-slide="2" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 						<div class="circle" data-percentage-right="2" data-percentage-top="30">
 							<span>Understand the risk</span>
 						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Understand the risk</span>
+						</div>
 					</li>
 					<li data-slide="3" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/security4.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_1.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/security_4.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 						<div class="circle" data-percentage-right="0" data-percentage-top="11">
-							<span>Point, click and fix </span>
+							<span>Point, click and fix</span>
+						</div>
+						<div class="bubbleDiv xs-only">
+							<span class="bubbleText">Point, click and fix</span>
 						</div>
 					</li>
 				</ul>
