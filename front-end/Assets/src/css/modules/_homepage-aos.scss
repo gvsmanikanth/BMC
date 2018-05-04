@@ -273,6 +273,9 @@ img {
 	  @include media(breakpointMedium){
 		 padding-left: 5rem;
 	  }
+	  @media only screen and (min-width:641px) and (max-width: 767px) {
+		padding:0 2rem;
+	  }
 	  vertical-align: middle;
 	  align-items: center;
 	  display: table-cell; 
@@ -775,13 +778,7 @@ object{
 	
 }
 
-@media only screen and (min-width:641px) and (max-width: 767px) {
-	.section-wrap-header{
-		.header-content-box{
-			padding:0 2rem;
-		}
-	}
-}
+
 
 
 

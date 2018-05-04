@@ -23,16 +23,6 @@ $(document).ready(function () {
       startEvent: 'load',
   });	
 		
-	/*$('#fullpage').fullpage({
-		//anchors: ['firstPage', 'secondPage', '3rdPage','4thPage','5thPage','6thPage','7thPage','8thPage','9thPage'],
-		navigation: true,
-		navigationPosition: 'right',
-		navigationTooltips: ['First', 'Second', 'Third','4','5','6','7','8','9'],
-		scrollBar: true,
-		css3: true
-	});*/
-	
-	
 	//Set the height for all sections wraps equal.
 	function setHeight() {
 		 windowHeight = $(window).innerHeight();
@@ -112,7 +102,7 @@ $(document).ready(function () {
 	$(window).load(function() {
 		$(".page-homepage-e img").each(function(index) {
 		   var this_image = this;
-		   var src = $(this_image).attr('src') || '' ;
+		   var src = $(this_image).attr('src') || '';
 		   if(!src.length > 0){ 
 			   var lsrc = $(this_image).attr('data-src') || '' ;
 			   if(lsrc.length > 0){
