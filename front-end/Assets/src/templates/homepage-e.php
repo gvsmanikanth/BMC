@@ -129,7 +129,7 @@ include 'php-inc/svg.php';
 								<img data-src="//www.bmc.com/content/dam/bmc/home/cost_3.png" alt="Cost" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
-						 <div class="circle" data-percentage-right="7" data-percentage-top="47">
+						 <div class="circle" data-percentage-right="7"  data-aos-once="true" data-percentage-top="47" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 							<span>Optimize and reduce multi-cloud costs.</span>
 						</div>
 					</ul>
@@ -164,7 +164,7 @@ include 'php-inc/svg.php';
 								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man3.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
-						 <div class="circle" data-percentage-right="75" data-percentage-top="15">
+						 <div class="circle" data-percentage-right="75" data-percentage-top="15"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 							<span>Ensure optimal end-user experiences</span>
 						</div>
 					</ul>
@@ -229,7 +229,7 @@ include 'php-inc/svg.php';
 								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>
-						<div class="circle" data-percentage-right="5" data-percentage-top="45">
+						<div class="circle" data-percentage-right="5" data-percentage-top="45"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 							<span>Fast accurate,and secure visibility.</span>
 						</div>
 					</ul>
@@ -317,7 +317,7 @@ include 'php-inc/svg.php';
 							<img data-src="//www.bmc.com/content/dam/bmc/home/automation4.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">							
 						</figure>
 					</li>
-					<div class="circle" data-percentage-right="3" data-percentage-top="4">
+					<div class="circle" data-percentage-right="3" data-percentage-top="4"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 						<span>Automate & Orchestrate applications</span>
 					</div>
 				</ul>
@@ -357,7 +357,7 @@ include 'php-inc/svg.php';
 							<img data-src="//www.bmc.com/content/dam/bmc/home/security_4.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 					</li>
-					<div class="circle" data-percentage-right="0" data-percentage-top="11">
+					<div class="circle" data-percentage-right="0" data-percentage-top="11" data-aos="zoom-in"  data-aos-once="true"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 						<span>Multi-cloud Security Dashboard - Find and fix</span>
 					</div>
 				</ul>
