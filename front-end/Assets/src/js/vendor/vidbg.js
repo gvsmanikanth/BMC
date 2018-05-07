@@ -284,6 +284,13 @@
       }
 
       $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' + sources + '</video>');
+	  if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){  
+		  setTimeout(function(){
+				$($video).get(0).play()
+			}, 5000);
+	  }else{
+		  $($video).get(0).play();
+	  }
     } else {
       $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' +
         '<source data-src="' + path + '" type="video/mp4">' +
