@@ -19,7 +19,10 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
-
+    <!-- WEB-2437 Added for Report generation START -->
+	<filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/template-types/reporting-page" mode="merge"/>
+    <!-- WEB-2437 Added for Report generation END -->
     <filter root="/etc/clientlibs/bmc"/>
 
     <filter root="/etc/designs/bmc">
