@@ -75,7 +75,7 @@ include 'php-inc/head.php';
     				<b>Notice</b>:  Undefined variable: filterKey in <b>C:\MyData\Projects\bmc\front-end\customer-story-landing.php</b> on line <b>65</b><br />
     ">
     				<option value="">-- Header --</option>
-    				<option value="group-a">group-a</option>
+    				<option value="group-a">Group-a</option>
     				<option value="group-b">group-b</option>
     				<option value="group-c">group-c</option>
     			</select>
@@ -84,11 +84,13 @@ include 'php-inc/head.php';
     				<option value="num-1">num-1</option>
     				<option value="num-2">num-2</option>
     				<option value="num-3">num-3</option>
+    				<option value="Cloud Management">Cloud Management</option>
+    				<option value="Utilities, Oil, Gas and Energy">Utilities, Oil, Gas and Energy</option>
     			</select>
     			<select id ="topic" class="js-customer-story-filter-select 3">
     				<option value="">-- Header --</option>
     				<option value="square">square</option>
-    				<option value="circle">circle</option>
+    				<option value="Circle">circle</option>
     				<option value="triangle">triangle</option>
     			</select>	
 			</fieldset>

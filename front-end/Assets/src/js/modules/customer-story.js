@@ -102,7 +102,7 @@
 			if(selectedField && selectedValue){
 				$(document).ready(function() {
 					$("#"+selectedField).find("option").each(function(){
-						if(this.value.toLowerCase() == selectedValue){
+						if(this.value.toLowerCase() == decodeURIComponent(selectedValue.toLowerCase())){
 							$(this).attr("selected","selected"); 
 							$('#'+selectedField).trigger('change');
 						}
