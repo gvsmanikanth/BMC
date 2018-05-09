@@ -50,7 +50,7 @@ include 'php-inc/svg.php';
             <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
 				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation">
                <figure class="desktop-only">
-				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim/multi_cloud_animation_4.html">
+				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim-1/multi_cloud_animation_4.html">
 				</object>
                 </figure> 
 
@@ -152,18 +152,6 @@ include 'php-inc/svg.php';
 								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
 							</figure>
 						</li>
-						<li data-slide="1" class="active">
-							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man2.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
-							</figure>
-						</li>
-						<li data-slide="2" class="active">
-							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
-								<img data-src="//www.bmc.com/content/dam/bmc/home/service-man3.png" alt="Multi Cloud Service Management" class="screenImage" title="" width="900" border="0" height="516">		
-							</figure>
-						</li>
 						 <div class="circle" data-percentage-right="75" data-percentage-top="15"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
 							<span>Ensure optimal end-user experiences</span>
 						</div>
@@ -216,7 +204,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_1.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>						
 						<li data-slide="1" class="active">
@@ -224,13 +212,8 @@ include 'php-inc/svg.php';
 								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_2.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
 							</figure>
 						</li>						
-						<li data-slide="2" class="active">
-							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/visibility_3.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
-							</figure>
-						</li>
 						<div class="circle" data-percentage-right="5" data-percentage-top="45"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-							<span>Fast accurate,and secure visibility.</span>
+							<span>Fast,accurate and secure visibility.</span>
 						</div>
 					</ul>
 				</div>
@@ -295,26 +278,21 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 						
 					</li>
 					<li data-slide="1" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation__screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 					</li>
 					<li data-slide="2" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
-						</figure>
-					</li>
-					<li data-slide="3" class="active">
-						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">
-							<img data-src="//www.bmc.com/content/dam/bmc/home/automation4.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">							
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 					</li>
 					<div class="circle" data-percentage-right="3" data-percentage-top="4"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
