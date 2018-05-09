@@ -130,7 +130,7 @@ include 'php-inc/svg.php';
 							</figure>
 						</li>
 						 <div class="circle" data-percentage-right="7"  data-aos-once="true" data-percentage-top="47" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-							<span>Optimize and reduce multi-cloud costs.</span>
+							<span>Manage cloud expenses to reduce costs</span>
 						</div>
 					</ul>
 					
@@ -213,7 +213,7 @@ include 'php-inc/svg.php';
 							</figure>
 						</li>						
 						<div class="circle" data-percentage-right="5" data-percentage-top="45"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-							<span>Fast,accurate and secure visibility.</span>
+							<span>Map assets quickly and accurately</span>
 						</div>
 					</ul>
 				</div>
@@ -296,7 +296,7 @@ include 'php-inc/svg.php';
 						</figure>
 					</li>
 					<div class="circle" data-percentage-right="3" data-percentage-top="4"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-						<span>Automate & Orchestrate applications</span>
+						<span>Automate and orchestrate applications</span>
 					</div>
 				</ul>
 			</div>
@@ -336,7 +336,7 @@ include 'php-inc/svg.php';
 						</figure>
 					</li>
 					<div class="circle" data-percentage-right="0" data-percentage-top="11" data-aos="zoom-in"  data-aos-once="true"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-						<span>Multi-cloud Security Dashboard - Find and fix</span>
+						<span>Find and fix vulnerabilities</span>
 					</div>
 				</ul>
 			</div>
@@ -367,7 +367,7 @@ include 'php-inc/svg.php';
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Neetwork"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Network"></li>
                     <li><img data-src="//www.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg" alt="Azure"></li>
                     <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="Google Cloud Platform"></li>
                 </ul>
