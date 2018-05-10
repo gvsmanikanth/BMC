@@ -29,10 +29,8 @@ include 'php-inc/svg.php';
 	           </div>
 		      </div>
 		      	      
-			<div class="scroll-downs">
-				<div class="mousey" id="scrollDown">
-					<div class="scroller"></div>
-				</div>
+			<div class="arrow bounce"> 
+				<i class="down" aria-hidden="true"></i>
 			</div>
 	 	</div>
 	 </div>
