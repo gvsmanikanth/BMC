@@ -29,7 +29,7 @@ include 'php-inc/svg.php';
 	           </div>
 		      </div>
 		      	      
-			<div class="arrow bounce"> 
+			<div class="arrow bounce" id="scrollDown"> 
 				<i class="down" aria-hidden="true"></i>
 			</div>
 	 	</div>
