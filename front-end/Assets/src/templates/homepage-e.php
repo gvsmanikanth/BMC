@@ -5,17 +5,17 @@ include 'php-inc/head.php';
 
 ?>
 <?php
-include 'php-inc/svg.php';
+include 'php-inc/svg.php'; 
 ?>
 
 <div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
 
-  <section class="section-wrap-header sectionCommon" id="section0"  style="min-height:860px;background-color:#414042; background: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg) no-repeat center center;background-size: cover;">
+  <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0"  style="min-height:860px;background-color:#414042;background-size: cover;background : url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;"> 
 	<div class="section video-hero-header" >
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
 		      <div class="hero-image video xs-max-hide">
-				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218.mp4" data-vidbg-options="loop: false, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218_1.mp4, poster://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg" data-vidbg-options="loop: false,autoplay: true,muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 		      </div>
 		      <div class="cover-bg"></div>
 		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
@@ -114,20 +114,20 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost__screen_1.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">									
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_1.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">									
 							</figure>
 						</li>
 						<li data-slide="1" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost__screen_2.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
 							</figure>
 						</li>
 						<li data-slide="2" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/cost_screen_3.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
 							</figure>
 						</li>
 						 <div class="circle" data-percentage-right="0" data-percentage-top="52" data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
@@ -150,7 +150,7 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/service_management.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/service_management.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
 							</figure>
 						</li>
 						 <div class="circle" data-percentage-right="70" data-percentage-top="15"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
@@ -205,14 +205,14 @@ include 'php-inc/svg.php';
 					<ul class="carousel">
 						<li data-slide="0" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/visibility_screen_1.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">	
 							</figure>
 						</li>						
 						<li data-slide="1" class="active">
 							<figure>
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">	
-								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/visibility__screen_2.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">								
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">								
 							</figure>
 						</li>		
 						<div class="circle" data-percentage-right="0" data-percentage-top="0"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
@@ -281,21 +281,21 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 						
 					</li>
 					<li data-slide="1" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 					</li>
 					<li data-slide="2" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
 						</figure>
 					</li>
 					<div class="circle" data-percentage-right="3" data-percentage-top="4"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
@@ -316,21 +316,21 @@ include 'php-inc/svg.php';
 				<ul class="carousel">
 					<li data-slide="0" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_screen_1.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_1.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">	
 						</figure>
 						
 					</li>
 					<li data-slide="1" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_screen_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 					</li>
 					<li data-slide="2" class="active">
 						<figure>
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/security_screen_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
 						</figure>
 					</li>
 
@@ -489,12 +489,12 @@ load_image();
 function load_backgrundImage() {
    	var backgroundImage = new Image();
     backgroundImage.onload = backgroundImageLoaded;
-    backgroundImage.src = '//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/mainbannerimg.jpg';
+    backgroundImage.src = '//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg';
 
 
 	var bottomBannerImg = new Image();
 	bottomBannerImg.onload = bottomBannerImgLoaded;
-	bottomBannerImg.src = '//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2_optimized/bagroundimg.jpg';
+	bottomBannerImg.src = '//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg';
 
   
 }
@@ -517,21 +517,14 @@ load_backgrundImage();
 <?php
 include 'php-inc/foot.php';
 ?>
-<script>  
-    $(document).ready(function(){
-        document.getElementById('video_id').removeAttribute('autoplay');
-		if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
-			document.getElementById('video_id').setAttribute('autoplay');
-		}
-     });
-</script>
 
-<script>
+<script>  
+
+
+function safari(){
     $(window).load(function(){
         var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         var vid = document.getElementById('video_id');
-        //console.log(vid.duration);
-        document.getElementById('video_id').play();
         
         if (is_safari){
             setTimeout(function(){
@@ -539,5 +532,15 @@ include 'php-inc/foot.php';
                 $(".vidbg-box").remove();
             }, 12000);
         }
-    });
+    }); 
+}
+
+function defer(method) {
+   if (window.jQuery)
+       method();
+   else
+       setTimeout(function() { defer(method) }, 50);
+}
+ defer(safari);
+
 </script>
