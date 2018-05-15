@@ -10,11 +10,11 @@ include 'php-inc/svg.php';
 
 <div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
 
-  <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0"  style="min-height:860px;background-color:#414042;background-size: cover;background : url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;"> 
+  <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0"  style="min-height:860px;background-color:#414042;background-size: cover;background-image : url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;"> 
 	<div class="section video-hero-header" >
 	   <div class="video-content" >
 		      <div class="hero-image xs-only"></div>
-		      <div class="hero-image video xs-max-hide">
+		      <div class="hero-image video">
 				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218_1.mp4, poster://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg" data-vidbg-options="loop: false,autoplay: true,muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
 		      </div>
 		      <div class="cover-bg"></div>
@@ -528,8 +528,10 @@ function safari(){
         
         if (is_safari){
             setTimeout(function(){
-                vid.pause();
-                $(".vidbg-box").remove();
+                if(vid){
+                	vid.pause();
+                }
+                    //$(".vidbg-box").remove();
             }, 12000);
         }
     }); 
