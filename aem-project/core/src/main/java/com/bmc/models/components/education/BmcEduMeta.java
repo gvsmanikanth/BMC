@@ -121,7 +121,7 @@ public class BmcEduMeta {
                     addMetaFilters("education-specific-role", specificRoles, pageJCRContent, session);
 
                     
-                    newItem.setSubHeader(pageProps.getOrDefault("subHeader","").toString());
+                    newItem.setSubHeader(pageProps.getOrDefault("isAccreditationAvailable","").toString());
                     newItem.setDuration(!pageProps.getOrDefault("course-duration","").toString().equals("") ? pageProps.getOrDefault("course-duration","").toString()+" Hours" : "");
                     newItem.setBlnFeatured(Boolean.parseBoolean(pageProps.getOrDefault("blnFeatured",false ).toString()));
                     newItem.setBlnPrerequisite(Boolean.parseBoolean(pageProps.getOrDefault("blnPrerequisite", false).toString()));
@@ -130,7 +130,7 @@ public class BmcEduMeta {
                     newItem.setType(types);
                     newItem.setVersions(versions);
                     newItem.setProducts(products);
-                    newItem.setName(page.getTitle());
+                    newItem.setName(page.getPageTitle());
                     newItem.setUrl(urlResolver.getLinkInfo(page.getPath()).getHref());
                     setListItems(newItem);
                     itemIndex++;
