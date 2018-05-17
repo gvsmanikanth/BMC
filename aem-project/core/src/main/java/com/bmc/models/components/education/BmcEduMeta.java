@@ -21,7 +21,6 @@ public class BmcEduMeta {
 
     private transient String RESOURCE_ROOT = "/content/bmc/resources/";
 
-
     public BmcEduMeta(Session session, Resource resource, Page page) {
         filterCriteria = new ArrayList<>();
 
