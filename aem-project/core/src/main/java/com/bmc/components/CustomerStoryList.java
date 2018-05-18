@@ -26,14 +26,15 @@ public class CustomerStoryList extends WCMUsePojo implements MultifieldDataProvi
     public List<MetadataInfo> getFilters() { return filters; }
     public FeaturedCustomerStoryCard getFeaturedStory() { return featuredStory; }
     public List<CustomerStoryCard> getStories() { return stories; }
-
+    private String customFilterType;
     @Override
     public void activate() throws Exception {
         try {
-
+        	
             storyService = getSlingScriptHelper().getService(CustomerStoryService.class);
 
         filters = storyService.getFilters(this);
+        customFilterType = get("text", String.class);
         featuredStory = storyService.getFeaturedStoryCard(
                 getProperties().get("featuredStoryPath", ""),
                
@@ -50,5 +51,9 @@ public class CustomerStoryList extends WCMUsePojo implements MultifieldDataProvi
         } catch (Exception e){
             logger.error("Error Getting Customer Stories:", e.getMessage());
         }
+    }
+   
+    public String getCustomFilterType() { 
+    	return customFilterType.toLowerCase().replace(" ","-");
     }
 }
