@@ -67,17 +67,35 @@
 		</ul>
 		<!-- end chat now -->
 	</div><!-- / layout-inner-wrap -->
-	<div id="hf-search-container" tabindex="-1" class="">
-	   <div id="hf-search-box">
-		  <div class="hf-centered-content">
-			 <form id="hf-search-form" action="/search/" class="js-search-form"> 
-				<input autofocus maxlength="2048" id="hf-search-text" type="text" tabindex="10" class="js-search-text" placeholder="Search BMC.com" name="q" dir="ltr" autocomplete="off" spellcheck="false" style="outline: none;"> 
-				 <span id="hf-search"></span> 
-			 </form>
-			 <span id="hf-search-right-wedge">Close</span> 
-		  </div>
-	   </div>
+	<!-- Search Overlay -->
+	<div id="bodyOverlay" title="Click anywhere to close overlay."></div>
+	<div class="search-overlay off">
+        <div class="rows_flex">
+			<div id="search_header" class="columns">
+			   <div class="component_search">
+				  <div class="search-panel">
+					 <div class="search_click">Search</div>
+					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">
+						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="off" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Type Here to Search">   
+					 </form>
+					 <div class="drop_overlay"></div>
+				  </div>
+				  <div class="overlay_keywords">
+					 <div class="heading">Take Me Directly To:</div>
+					 <div class="keywords" data-nr-items="6">
+						<span><a href="">About BMC</a></span>
+						<span><a href="" target="_blank">On-demand Webinars</a></span>
+						<span><a href="">Global Contacts</a></span>
+						<span><a href="">Support Central</a></span>
+						<span><a href="">Knowledge Base</a></span>
+						<span><a href="">News</a></span>
+					 </div>
+				  </div>
+			   </div>
+			</div>
+		</div>
 	</div>
+	<!--/ Search Overlay -->
 </nav><!-- / layout-nav -->
 
 <!-- chat now -->

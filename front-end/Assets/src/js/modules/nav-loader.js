@@ -174,13 +174,29 @@ jQuery(function($){
 		});
 		
 		// Search form animation WEB-2853
-		$('.navigation-search.js-navigation-search').click(function(e) {
-			$('#hf-search-container').addClass('opened');
+		$(document).click(function() {
+			$('.search-overlay').removeClass('on');
+			$('body').removeClass('no-scroll');
+			$('#bodyOverlay').removeClass('backgroundColor');
 		});
 		
-		$('#hf-search-right-wedge').click(function(e) {
-			$('#hf-search-container').removeClass('opened');
+		//$('.navigation-search.js-navigation-search').click(function(e) {
+		$(document).on("click",".navigation-search.js-navigation-search",function(e) {
+			e.stopPropagation();
+			$('.search-overlay').addClass('on');
+			$('body').addClass('no-scroll');
+			$('#bodyOverlay').addClass('backgroundColor');
+			if($('body').hasClass("scrolled-down") || $('body').hasClass("scrolled-up")){
+				$(".search-overlay").addClass("topHeader");
+			}else{
+				$(".search-overlay").removeClass("topHeader");
+			}
 		});
+		
+		$('.search-overlay').click(function(e) {
+			e.stopPropagation();
+		});
+		// Search form animation WEB-2853
 
 		// navigation-supplementary close requires a quasi rebind since it is dynamically generated
 		$('.navigation-tab-content').on('click', '.navigation-close-supplementary', function() {

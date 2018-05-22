@@ -1,3 +1,6 @@
+body.no-scroll{
+	overflow: hidden;
+}
 // @category modules
 
 // @function navigation
@@ -291,91 +294,6 @@ $mobileUtilityNavHeight: 49px;
 	}
 }
 
-#hf-search-container {
-	position: absolute;
-	--background: #f83200;
-	overflow: hidden;
-	top: -75px;
-	height: 75px;
-	left: 0;
-	right: 0;
-	z-index: 1002;
-	visibility: hidden;
-	-webkit-appearance: none;
-    outline: none;
-	transition: visibility 0s linear .4s;
-	#hf-search-box {
-		display: flex;
-		width: 100%;
-		height: 75px;
-		background: #FFF;
-		border: 1px solid #DBDBDB;
-		transform: translate3d(100%,0,0);
-		transition: transform .3s .1s ease-in-out;
-		.hf-centered-content {
-			position: relative;
-			display: flex;
-			flex: 0 0 auto;
-			width: 100%;
-			max-width: 1530px;
-			margin: 0 auto;
-			padding: 0 64px;
-			.hf-search-right-wedge{
-				flex: 0 0 auto;
-				z-index: 0;
-				padding: 0 0 0 65px;
-				font-family: "Metric Regular",Arial,sans-serif;
-			}
-			#hf-search-form {
-				flex: 1 1 auto;
-				align-self: stretch;
-				border-right: solid #c6c9ca 1px;
-				#hf-search-text {
-					width: 100%;
-					height: 73px;
-					border: none;
-					outline: 0;
-					-webkit-appearance: none;
-					line-height: 1.5em;
-					padding: 20px 90px 20px 0;
-					color: #707070;
-					font-size: 24px;
-					font-family: 'Metric Light';
-				}
-				#hf-search:before{
-					position: relative;
-					margin-top: -48px;
-					float: right;
-					font-family: "icomoon";
-					content: "";
-					color: #999;
-					padding: 0 10px;
-				}
-			}
-			#hf-search-right-wedge {
-				flex: 0 0 auto;
-				padding: 25px 0 0 65px;
-				color: #999;
-				cursor: pointer;
-				&:before {
-					font-family: "icomoon";
-					content: "\e600";
-					padding: 0 10px;
-					
-				}
-			}
-
-		}
-	}
-}
-#hf-search-container.opened {
-	visibility: visible;
-	transition: visibility 0s linear 0s;
-	--border: 1px solid #ccc;
-	#hf-search-box {
-		transform: translate3d(0,0,0);
-	}
-}
 
 // Scrolled effects
 // ------------------------------------------------------------------ //

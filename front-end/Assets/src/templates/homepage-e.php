@@ -2,413 +2,441 @@
 $pageTitle = 'BMC Home';
 $bodyClass = 'home page-homepage page-homepage-e';
 include 'php-inc/head.php';
+
 ?>
 <?php
-include 'php-inc/svg.php';
+include 'php-inc/svg.php'; 
 ?>
 
-<style>
+<div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
 
-/* .embed-container { */
-/*     position: relative;  */
-/*     padding-bottom: 100%; /* use 56.25% for 16/9 ratio */ */ */
-/*     overflow: hidden;  */
-/*  }  */
+  <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0"  style="min-height:860px;background-color:#414042;background-size: cover;background-image : url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;"> 
+	<div class="section video-hero-header" >
+	   <div class="video-content" >
+		      <div class="hero-image xs-only"></div>
+		      <div class="hero-image video">
+				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218_1.mp4, poster://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg" data-vidbg-options="loop: false,autoplay: true,muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
+		      </div>
+		      <div class="cover-bg"></div>
+		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
+		      	<div class="flex-item m2 header-content-box" id="header-content-box-id" style="visibility: hidden">
+			         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
+			         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
+			         <a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
+			         Watch the video <svg class="svg-inline"> 
+		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
+	          	 </svg></a>
+	           </div>
+		      </div>
+		      	      
+			<div class="arrow bounce" id="scrollDown"> 
+				<i class="down" aria-hidden="true"></i>
+			</div>
+	 	</div>
+	 </div>
+</section>  
 
-/*  .embed-container iframe,  */
-/*  .embed-container object,  */
-/*  .embed-container embed {  */
-/*      position: absolute;  */
-/*      top: 0; */
-/*      left: 0;  */
-/*      width: 100%;  */
-/*      height: 100%;  */
-/* }  */
-
-/*  .embed-container #animation_container{  */
-/*  	margin:auto;  */
-/*  }  */
-
-</style>
- 
-<section class="section-wrap-header sectionCommon" id="section0">
-	<div class="section video-hero-header">
-	   <div class="layout-inner-wrap flex-col" >
-	      <div class="hero-image xs-only"></div>
-	      <div class="hero-image video xs-max-hide">
-	         <!--<div class="vidbg-box" data-vidbg-bg="mp4:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm:http://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://service.twistage.com/images/i80f46b2f2e4a.jpg" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>-->
-			 <div class="vidbg-box" data-vidbg-bg="mp4:http://virsitil.com/bmcsoftware/bmc-animation/video/Preview6.mp4" data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
-	      </div>
-	      <div class="layout-inner-wrap hero-content transparent-bg white text-left" data-aos="fade-right">
-	         <strong class="ha mb2">All Your Clouds Now 
-			 <span>Simplified</span></strong>
-	         <div class="h3">BMC multi-cloud management solution make all clouds better.</div>
-	         <a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4QtzW0S0PQ0" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
-	         Watch the video >
-	         </a>
-	      </div>
-	   </div>
-	   
-	</div>
-	<!--<div class="py2">
-		<div class=" flex-col">
-      	<div class="section-content text-center">
-         	<h2 class="heading">BMC multi-cloud management solutions.</h2>
-      	</div>
-      	</div>
-   </div>-->
-</section>   
-
-<div id="fp-nav" class="right" style="margin-top: -33.5px;">
-   <ul>
-      <li id="click1" class="click">
-         <a class="active"><span></span></a>
-         <div class="fp-tooltip right">First page</div>
-      </li>
-      <li id="click2" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Second page</div>
-      </li>
-      <li id="click3" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Third page</div>
-      </li>   
-	  <li id="click4" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Fourth page</div>
-      </li> 
-	  <li id="click5" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Fifth page</div>
-      </li> 
-	  <li id="click6" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Sixth page</div>
-      </li> 
-	  <li id="click7" class="click">
-         <a class=""><span></span></a>
-         <div class="fp-tooltip right">Seventh page</div>
-      </li>
-   </ul>
-</div>
-
-
-
-   <section class="section-wrap section1 sectionCommon" id="section1">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1" >
-               <h2 class="firstHeading" data-aos="fade-right" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>BMC is a global leader in multi-cloud software solutions</h2>
-                <p data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>BMC helps you eliminate the chasm between your on-premises data center and a cloud-based infrastructure. Our solutions provide answers to your questions about <a href="#migration">what to migrate</a>, <a href="#">which clouds to use</a>, how to <a href="#cost">manage cloud spend</a>, how to <a href="#security"> ensure security</a>, and how to <a href="#performance">optimize</a> each step of your journey.</p>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
+      <div class="flex-item section-content py4 layout-inner-wrap"> 
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1" >
+               <h2 class="firstHeading" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay='100'>You can't hit the reset button every time the market changes.</h2>
+                <p class="firstPara" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>You have to be ready to react while still ensuring continuity in service. You have to keep <b>customers engaged</b> while designing the new products and experiences they demand. <b>BMC Multi-Cloud Management solutions</b> help optimize your current IT systems while ensuring a secure, cost-effective transition to the clouds of your choice.</p>
                <!--<a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>Learn more about multi-cloud migration&gt;</a>-->
 			  
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
-               <figure>
-				<object id="EdgeID1" type="text/html" width="480" height="450" data-dw-widget="Edge" data="edgeAnim/multi_cloud_animation_3/Assets/multi_cloud_animation_3.html">
+            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation">
+               <figure class="desktop-only">
+				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim-1/multi_cloud_animation_4.html">
 				</object>
-                </figure>
+                </figure> 
+
             </div>
          </div>
       </div>
-   </section>
-   <section class="section-wrap section2 sectionCommon" id="section2">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-right">
-               <figure>
-				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/migration_animation_3/Assets/migration_animation_3.html">
+   </section> 
+	
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section2">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true"  data-aos="fade-right">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/migration.png" alt="Migration Animation">
+				<figure class="desktop-only">
+				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
 				</object>
                 </figure>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Migration</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
+            <div class="flex-item col col-12 xs-col-6" >
+               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
+               <h4 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
-                     <p>Inventory all your IT assets and relationships </p>
+                  <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                     <p>Assess your unique needs</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='400'>
+                  <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Build the right plan</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='500'>
-                     <p>Establish a governance model </p>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
+                     <p>Establish a governance model</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='600'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
                      <p>Measure progress </p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='800'>Learn more about multi-cloud migration &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/multi-cloud-migration.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud migration</a>
             </div>
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1 sectionCommon" id="section3">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Cost</h2>
-               <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Right-size your cloud services to reduce cost</h4>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section3">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Cost</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Optimize cloud resource usage and cost</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Simulate migrations to see which cloud services fit best</p>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Simulate migrations by selecting cloud resources and comparing costs</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
-                     <p>Track and compare on-premises and public cloud costs</p>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Predict and manage cloud budget and spend</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
-                     <p>Forecast annual multi-cloud costs</p>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Gain visibility into current and forecasted spend</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn about multi-cloud cost control &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/cloud-cost-control.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud cost</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-left">
-               <img src="edgeAnim/img/Visibility.png" alt="Mobile phone and app infographic">
+            <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left" data-aos-anchor="#section3">
+               <img data-src="//www.bmc.com/content/dam/bmc/home/cost_1.png" alt="Cost" class="xs-only">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_1.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">									
+							</figure>
+						</li>
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						<li data-slide="2" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516">		
+							</figure>
+						</li>
+						 <div class="circle" data-percentage-right="0" data-percentage-top="52" data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+							<span>Manage cloud expenses to reduce costs</span>
+						</div>
+					</ul>
+					
+				</div>
             </div>
            
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section4">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-             <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="edgeAnim/img/cost.png" alt="Mobile phone and app infographic">
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section4">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+             <div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
+               <img data-src="//www.bmc.com/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" class="xs-only">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/service_management.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516">
+							</figure>
+						</li>
+						 <div class="circle" data-percentage-right="70" data-percentage-top="15"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+							<span>Ensure optimal end-user experiences</span>
+						</div>
+					</ul>
+				</div>
             </div>
              
-            <div class="flex-item col col-12 md-col-6 pxr1 " >
-               <h2 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Service Management</h2>
-               <h4 data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
+            <div class="flex-item col col-12 xs-col-6" >
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Service Management</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Deliver a seamless service experience across multi-cloud environments</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Discover and provide visibility across assets and services</p>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Collaborate effectively with service vendors to troubleshoot/resolve issues</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
-                     <p>Service and manage across multiple cloud providers for IT and lines of business</p>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Tightly integrate incident and change management with leading agile development solutions</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
-                     <p>Deliver an omnichannel experience through a single-pane of glass </p>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Audit service performance capabilities to measure service integrity</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud service management &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/multi-cloud-service-management.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud service management</a>
             </div>
          </div>
       </div>
    </section>
-   <section class=" section-wrap section1 sectionCommon" id="section5">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Performance</h2>
-               <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated<br>cloud/data center performance</h4>
+   
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section5">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Visibility</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Keep track of cloud assets</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
-                     <p>Monitor multi-cloud performance in real time</p>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Get fast, accurate, and secure asset discovery</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Map dependencies across assets and services in a single view</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Perform essential prevention and detection tasks</p>
+                  </li>
+               </ul>
+               <a href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud visibility</a>
+            </div>
+			<div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
+              <img data-src="//www.bmc.com/content/dam/bmc/home/visibility_1.png" alt="Multi Cloud Visibility" class="xs-only">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">		
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">	
+							</figure>
+						</li>						
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516">	
+								<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516">								
+							</figure>
+						</li>		
+						<div class="circle" data-percentage-right="0" data-percentage-top="0"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+							<span>Map assets quickly and accurately</span>
+						</div>
+					</ul>
+				</div>
+            </div>
+         </div>
+      </div>
+   </section>  
+
+   <!--Mahesh (no use of py4 class)-->
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section6">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
+				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/performance.png" alt="Multi Cloud Performance">
+				<figure class="desktop-only">
+				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
+				</object>
+                </figure>
+            </div>
+            <div class="flex-item col col-12 xs-col-6">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Performance</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Monitor and manage integrated cloud/data center performance</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                     <p>Monitor performance across all your clouds in real time</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Get rapid root cause analysis</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Ensure optimal user experiences</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn about cloud performance monitoring &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/truesight-multi-cloud-operations.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud performance monitoring</a>
             </div>
-           <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
-               <figure>
-				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/cloud_guage_animation_2/Assets/cloud_guage_animation_4.html">
-				</object>
-                </figure>
-            </div>
+
          </div>
       </div>
    </section>
-   <section class="section-wrap section2 sectionCommon" id="section6">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center" data-aos="fade-right">
-               <img src="edgeAnim/img/automation.png" alt="Mobile phone and app infographic">
-            </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 "  data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-               <h2  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Automation</h2>
-               <h4  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Apply automation to optimize workflows</h4>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section7">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1 ">
+               <h2  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Automation</h2>
+               <h4  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Coordinate and manage workflows with automation</h4>
                <ul>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Orchestrate data, applications, and infrastructure</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Centrally manage diverse workloads</p>
                   </li>
-                  <li data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='500'>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Automatically provision cloud servers and services</p>
                   </li>
                </ul>
-               <a href="#"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud automation &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/control-m.html"  data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400' class="learn-more">Learn more about multi-cloud automation</a>
+            </div>
+			<div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
+               <img data-src="//www.bmc.com/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" class="xs-only">
+			   <div class="carousel-wrap xs-max-hide">
+				<ul class="carousel">
+					<li data-slide="0" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+						</figure>
+						
+					</li>
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+						</figure>
+					</li>
+					<li data-slide="2" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516">
+						</figure>
+					</li>
+					<div class="circle" data-percentage-right="3" data-percentage-top="4"  data-aos-once="true" data-aos="zoom-in"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+						<span>Automate and orchestrate applications</span>
+					</div>
+				</ul>
+			</div>
             </div>
          </div>
       </div>
    </section>
-   <section class="section-wrap section1 sectionCommon" id="section7" data-aos-anchor-placement="center-bottom">
-      <div class="section-content py4 layout-inner-wrap">
-         <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-6 pxr1">
-               <h2 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Security</h2>
-               <h4 data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Achieve security and compliance<br> across clouds</h4>
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section8">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center" data-aos-once="true" data-aos="fade-right">
+               <img data-src="//www.bmc.com/content/dam/bmc/home/security_1.png" alt="Multi Cloud Security" class="xs-only">
+			   <div class="carousel-wrap xs-max-hide">
+				<ul class="carousel">
+					<li data-slide="0" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_1.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">	
+						</figure>
+						
+					</li>
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+					</li>
+					<li data-slide="2" class="active">
+						<figure>
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="//www.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_screen_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+					</li>
+
+					<div class="circle" data-percentage-right="0" data-percentage-top="11" data-aos="zoom-in"  data-aos-once="true"  data-aos-delay='400' data-aos-easing="ease-out-cubic" data-aos-duration="1000">
+						<span>Find and fix vulnerabilities</span>
+					</div>
+				</ul>
+			</div>
+
+            </div>
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Security</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Achieve security and compliance<br> across clouds</h4>
                <ul>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Find and fix security and compliance gaps</p>
                   </li> 
-				  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='400'>
-                     <p>Know if vulnerable assets impact critical business functions</p>
-                  </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='500'> 
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'> 
                      <p>Automate remediation</p>
                   </li>
-                  <li data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='600'>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='300'>
                      <p>Be audit ready all the time</p>
                   </li>
                </ul>
-               <a href="#" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay='700'>Learn more about multi-cloud security &gt;</a>
+               <a href="https://www.bmc.com/it-solutions/secops-policy-service.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='400'  class="learn-more">Learn more about multi-cloud security</a>
             </div>
-            <div class="flex-item col col-12 md-col-6 pxr1 text-center embed-container" data-aos="fade-left">
-               <figure>
-				<object id="EdgeID4" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="edgeAnim/Security_device_animation_2/Assets/Security_device_animation_1.html">
-				</object>
-                </figure>
-            </div>
-           
          </div>
       </div>
    </section>
-    <div class="partners sectionCommon" id="section8">
-        <div class="container" data-aos="zoom-in">
+
+    <div class="partners sectionCommon section-wrap" id="section9"> 
+        <div class="container" data-aos-once="true" data-aos="zoom-in">
             <div class="partners_sec">
                 <h2>Strategic Cloud Partners</h2>
                 <ul>
-                    <li><a href="#"><img src="edgeAnim/img/logoimg2.png" alt="logo"></a></li>
-                    <li><a href="#"><img src="edgeAnim/img/logoimg1.png" alt="logo"></a></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Network"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg" alt="Azure"></li>
+                    <li><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg3.svg" alt="Google Cloud Platform"></li>
                 </ul>
             </div>
         </div>
     </div>
-	<div class="Customer" style="background: url(edgeAnim/img/bagroundimg2.jpg)no-repeat center center;background-size: cover;">
-        <div class="container">
-            <div class="customer_sec fade">
-                <div class="customer_lt">
-				<!--<img src="edgeAnim/img/logoimg_3.png" class="img-responsive mobile-only" alt="Customer"/>-->
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg_3.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>Industry Related Customer Success Story here. Slider auto-plays or on click.</h2>
-                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
+	
+   <div id="fp-nav" class="right" style="margin-top: -33.5px;">
+   <ul class="xs-max-hide">
+      <li id="click1" class="click">
+         <a class="active"><span></span></a>
+         <div class="fp-tooltip right">Cloud Management</div>
+      </li>
+      <li id="click2" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Migration</div>
+      </li>
+      <li id="click3" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Cost</div>
+      </li>   
+	  <li id="click4" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Service Management</div>
+      </li> 
+	  <li id="click5" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Visibility</div>
+      </li> 
+	  <li id="click6" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Performance</div>
+      </li> 
+	  <li id="click7" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Automation</div>
+      </li>	 
+	  <li id="click8" class="click">
+         <a class=""><span></span></a>
+         <div class="fp-tooltip right">Security</div>
+      </li>
+   </ul>
+</div>
+	<div class="Customer" >
+        <div class="container" id="customerBanner" style="background-size: cover;background-repeat:no-repeat;background-position:center center;">
+            <div class="layout-inner-wrap py2">
+               <div class="md-flex flex flex-center full-bleed-two-column">
+					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt" data-aos-once="true" data-aos="fade-right">
+					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
+					</div>
+			
+					<div class="flex-item col col-12 xs-col-6 pxr1 text-center" >
+						<div class="carousel-wrap">
+							<figure>
+								<img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="Benefits" >
+							</figure>
+						</div>
+					</div>
+				</div>
             </div> 
-			<div class="customer_sec fade"> <!--2-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg4.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>AAA</h2>
-                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                     <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div> 
-			<div class="customer_sec fade"> <!--3-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg7.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>BBB</h2>
-                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                     <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>		
-			<div class="customer_sec fade"> <!--4-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg5.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>CCC</h2>
-                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                     <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
-			<div class="customer_sec fade"> <!--5-->
-                <div class="customer_lt">
-				<div class="img-responsive visible-xs" style="background: url(edgeAnim/img/logoimg6.png)no-repeat center center;background-color: #fe5000;"></div>
-                 <h2>DDD</h2>
-                    <p>This should pause for a set time 15-30 seconds. Per story and also allow for user to click on navigation bar to advance to next. Story list TBD. </p>
-                    <div class="icon">
-                        <ul>
-                            <li><a class="icoLearn" href="#">learn</a></li>
-                            <li><a class="icoPlay" href="#">play</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="customer_rgt xs-max-hide">
-                    <ul>
-                        <li class="block1"><span><img src="edgeAnim/img/img-01.png" alt="img"></span></li>
-                        <li class="block2"><span><img src="edgeAnim/img/img_02.png" alt="img"></span></li>
-                      
-                    </ul>
-                </div>
-                <div class="clear"></div>
-            </div>
         </div>
-        <div class="logos_sec xs-max-hide">
+        <div class="logos_sec">
             <div class="container">
                 <div class="logos_blk">
                     <ul>
-                        <li class="imgDesp active" onclick="currentSlide(1)"><a><img src="edgeAnim/img/logoimg_3.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(2)"><a><img src="edgeAnim/img/logoimg4.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(3)"><a><img src="edgeAnim/img/logoimg7.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(4)"><a><img src="edgeAnim/img/logoimg5.png" alt="logo"></a></li>
-                        <li class="imgDesp" onclick="currentSlide(5)"><a><img src="edgeAnim/img/logoimg6.png" alt="logo"></a></li>
+                       <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP"></a></li>
+                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA"></a></li> 
                     </ul>
                 </div>
             </div>
@@ -417,47 +445,104 @@ include 'php-inc/svg.php';
 	<div class="stories">
         <div class="container">
             <div class="stories_blk">
-                <button>All Success Stories ></button>
-                <h2 data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
-              <p><span>
-                <input type="text" placeholder="I’m looking for solutions to help me...">
-                  </span>
-              </p>
+                <!--<button class="learn-more"><a href="https://www.bmc.com/customers/success-stories.html">All Success Stories</button>-->
+				
+				<a class="learn-more" href="https://www.bmc.com/customers/success-stories.html">All Success Stories</a>
             </div>
         </div>
     </div>
+    
+    <div class="contact-us-large ">
+		<div class="contact-us_blk layout-inner-wrap">
+             <h2 data-aos-once="true" data-aos="zoom-out">How can BMC help you be <em>first</em> in your industry?</h2>
+			 <!--<button data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg"><a href="https://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html">Connect with BMC</a></button>-->
+			 <a data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg learn-more" href="https://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html">Connect with BMC</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var preloadImage = new Image();
+var backgroundImage = new Image();
+
+// we will call this function when the image has finished loading
+function notify_complete()
+{
+	document.getElementById("section0").height = document.documentElement.clientHeight;
+    document.getElementById("header-content-box-id").style.visibility = "visible";
+}
+
+function load_image()
+{
+    // call the notify_complete function when the image has loaded
+    preloadImage.onload = notify_complete;
+    // load the image
+    preloadImage.src = '//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo_1.jpg';
+    document.getElementById("section0").height = document.documentElement.clientHeight;
+}
+
+load_image();
+
+</script>
 
 <script>
-var slideIndex = 1;
-	showSlides(slideIndex);
+function load_backgrundImage() {
+   	var backgroundImage = new Image();
+    backgroundImage.onload = backgroundImageLoaded;
+    backgroundImage.src = '//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg';
 
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
 
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
+	var bottomBannerImg = new Image();
+	bottomBannerImg.onload = bottomBannerImgLoaded;
+	bottomBannerImg.src = '//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg';
 
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("customer_sec");
-	  var dots = document.getElementsByClassName("imgDesp");
-	  if (n > slides.length) {slideIndex = 1}    
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-		  slides[i].style.display = "none";  
-	  }
-	  for (i = 0; i < dots.length; i++) {
-		  dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";  
-	  dots[slideIndex-1].className += " active";
-	}
-	</script>
-	 
+  
+}
+
+function backgroundImageLoaded(event)
+{
+	document.getElementById("backgroundImage").style.backgroundImage = "url('"+this.src+"')";
+}
+
+function bottomBannerImgLoaded(event)
+{
+    document.getElementById("customerBanner").style.backgroundImage = "url('"+this.src+"')";
+}
+
+load_backgrundImage();
+</script>
+
+
 
 <?php
 include 'php-inc/foot.php';
 ?>
 
+<script>  
+
+
+function safari(){
+    $(window).load(function(){
+        var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var vid = document.getElementById('video_id');
+        
+        if (is_safari){
+            setTimeout(function(){
+                if(vid){
+                	vid.pause();
+                }
+                    //$(".vidbg-box").remove();
+            }, 12000);
+        }
+    }); 
+}
+
+function defer(method) {
+   if (window.jQuery)
+       method();
+   else
+       setTimeout(function() { defer(method) }, 50);
+}
+ defer(safari);
+
+</script>
