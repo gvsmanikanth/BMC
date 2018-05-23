@@ -23,9 +23,11 @@
 .social-communities:before {
 	content: $iconPartners;
 }
-
 .social-weibo:before {
 	content: $iconWeibo;
+}
+.social-wechat:before {
+	content: $iconWechat;
 }
 
 .nav-social,

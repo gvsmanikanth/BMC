@@ -276,18 +276,25 @@
 
     if (typeof path === 'object') {
       if (path.mp4) {
-        sources += '<source data-src="' + path.mp4 + '" type="video/mp4">';
+        sources += '<source src="' + path.mp4 + '" type="video/mp4">';
       }
 
       if (path.webm) {
-        sources += '<source data-src="' + path.webm + '" type="video/webm">';
+        sources += '<source src="' + path.webm + '" type="video/webm">';
       }
 
-      $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' + sources + '</video>');
+      $video = vidbg.$video = $('<video id="video_id" class="visible">' + sources + '</video>');
+	  //if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){  
+		  //setTimeout(function(){
+				//$($video).get(0).play()
+			//}, 5000);
+	  //}else{
+	  //	  $($video).get(0).play();
+	  //}
     } else {
-      $video = vidbg.$video = $('<video id="video_id" class="visible xs-max-hide">' +
-        '<source data-src="' + path + '" type="video/mp4">' +
-        '<source data-src="' + path + '" type="video/webm">' +
+      $video = vidbg.$video = $('<video id="video_id" class="visible">' +
+        '<source src="' + path + '" type="video/mp4">' +
+        '<source src="' + path + '" type="video/webm">' +
         '</video>');
     }
 
@@ -349,7 +356,12 @@
     });
 
     // Append a video
-    $wrapper.append($video);
+	/*Load video in Desktop View Only*/
+	var desktopBreakpoint =  768;
+	if($(window).width() >= desktopBreakpoint){ 
+		$wrapper.append($video);
+		 $($video).get(0).play();
+	}
 
 
     $overlay = vidbg.$overlay = $('<div class="vidbg-overlay">').css({
@@ -497,13 +509,13 @@
 	*/
 	var video = $('.page-homepage-e #video_id');
 	video.on('ended', function() {
-		$(this).hide();
+		//$(this).hide();
 	});
 	
   });
   
 /*Load video in Desktop View Only*/
-	$(function() {
+	/*$(function() {
     var bgv = $('#video_id');
     if (bgv.is(':visible')) {
       $('source', bgv).each(
@@ -515,7 +527,8 @@
 
       bgv[0].load();
     }
-  });
+  });*/
+
 /*Load video in Desktop View Only*/
 
 });

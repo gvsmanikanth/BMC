@@ -139,6 +139,10 @@
 			}
 			margin-top : 0px;
 		}
+		img.screenImage{
+			position: absolute;
+			top: 0%;
+		}
 		.pxr1 {
 			@include media(breakpointLarge){
 				padding-right: 3rem;
@@ -269,6 +273,9 @@ img {
 	  @include media(breakpointMedium){
 		 padding-left: 5rem;
 	  }
+	  @media only screen and (min-width:641px) and (max-width: 767px) {
+		padding:0 2rem;
+	  }
 	  vertical-align: middle;
 	  align-items: center;
 	  display: table-cell; 
@@ -341,41 +348,79 @@ img {
 		.hero-content{
 			display:table;
 		}
-		.scroll-downs {
-			.mousey {
-			  width: 3px;
-			  padding: 10px 15px;
-			  height: 35px;
-			  border: 2px solid #fff;
-			  border-radius: 25px;
-			  opacity: 0.75;
-			  box-sizing: content-box;
-			  cursor:pointer;
-				.scroller {
-				  width: 3px;
-				  height: 10px;
-				  border-radius: 25%;
-				  background-color: #fff;
-				  animation-name: scroll;
-				  animation-duration: 2.2s;
-				  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-				  animation-iteration-count: infinite;
-				}
-				@keyframes scroll {
-				  0% { opacity: 0; }
-				  10% { transform: translateY(0); opacity: 1; }
-				  100% { transform: translateY(15px); opacity: 0;}
-				}
+		/*Bounce Scroll ICON*/
+		.arrow {
+		  position: absolute;
+		  bottom: 1rem;
+		  left: 50%;
+		  margin-left: -20px;
+		  width: 40px;
+		  height: 60px;
+		  cursor:pointer;
+			i.down{
+				display: block;
+				color: #fff;
+				font-style: normal;
 			}
-			position: absolute;
-			bottom: 1rem;
-			right: 0;
-			left: 0;
-			margin: auto;
-			width :34px;
-			height: 55px;
+			.down:before {
+				content: $iconArrowDown;
+				font-family: "icomoon";
+				font-size:3rem;
+			}
 		}
-		
+		.bounce {
+		  -moz-animation: bounce 2s infinite;
+		  -webkit-animation: bounce 2s infinite;
+		  animation: bounce 2s infinite;
+		}
+		@-moz-keyframes bounce {
+		  0%, 20%, 50%, 80%, 100% {
+			-moz-transform: translateY(0);
+			transform: translateY(0);
+		  }
+		  40% {
+			-moz-transform: translateY(-30px);
+			transform: translateY(-30px);
+		  }
+		  60% {
+			-moz-transform: translateY(-15px);
+			transform: translateY(-15px);
+		  }
+		}
+		@-webkit-keyframes bounce {
+		  0%, 20%, 50%, 80%, 100% {
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+		  }
+		  40% {
+			-webkit-transform: translateY(-30px);
+			transform: translateY(-30px);
+		  }
+		  60% {
+			-webkit-transform: translateY(-15px);
+			transform: translateY(-15px);
+		  }
+		}
+		@keyframes bounce {
+		  0%, 20%, 50%, 80%, 100% {
+			-moz-transform: translateY(0);
+			-ms-transform: translateY(0);
+			-webkit-transform: translateY(0);
+			transform: translateY(0);
+		  }
+		  40% {
+			-moz-transform: translateY(-30px);
+			-ms-transform: translateY(-30px);
+			-webkit-transform: translateY(-30px);
+			transform: translateY(-30px);
+		  }
+		  60% {
+			-moz-transform: translateY(-15px);
+			-ms-transform: translateY(-15px);
+			-webkit-transform: translateY(-15px);
+			transform: translateY(-15px);
+		  }
+		}
 	}
 	.vidbg-box {
 		width: 100%;
@@ -521,7 +566,67 @@ img {
 	li {
 		display: block;
 		margin-bottom: 10px;
+		
+		/*.bubbleDiv{
+			position: absolute;
+			background-color: #fe5000;
+			height: auto;
+			width: 100%;
+			bottom: -1rem;
+			padding: 0 0 0.2rem;
+			border-radius: 1rem;
+			&:after {
+				z-index: -1;
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				margin-left: -10px;
+				content:'';
+				width: 0;
+				height: 0;
+				border-bottom: solid 10px #fe5000;
+				border-left: solid 10px transparent;
+				border-right: solid 10px transparent;
+			}
+			.bubbleText{
+				font-size: 18px;
+				line-height: 26px;
+				color: #fff;
+			}
+		}*/
 	}
+	.circle{
+			position: absolute;
+			background: #fd5507;
+			border-radius: 50%;
+			color: white;
+			height: 4.5rem;
+			width: 4.5rem;
+			display: none;
+			@include media(breakpointMedium){
+				height: 4rem;
+				width: 4rem;
+				display: table;
+			}
+			@include media(breakpointLarge){
+				height: 7rem;
+				width: 7rem;
+			}
+			span {
+				vertical-align: middle;
+				display: table-cell;
+				font-size: 0.4rem;
+				color: #fff;
+				padding: 0 1rem;
+				@include media(breakpointMedium){
+					font-size: 0.4rem;
+					padding: 0 0.9rem;
+				}
+				@include media(breakpointLarge){
+					font-size: 0.7rem;
+				}
+			}
+		}
 	p {
 	
 		@include media(breakpointLarge){
@@ -708,7 +813,10 @@ object{
 				padding-right: 0rem;	
 			}
 	}
+	
 }
+
+
 
 
 

@@ -85,7 +85,7 @@
             <li class="nav-tertiary-col">
                 <h4>Social</h4>
                 <ul data-sly-test="${footerSocialSet}" data-sly-list.footerSocial="${footerSocialSet.ChildResources}" class="nav-social meta">
-                    <li><a href="${footerSocial.linkPath}" target="${footerSocial.targetType}" class="${footerSocial.soccMedsType}">${footerSocial.linkText @ context='html'}</a></li>
+                    <li><a href="${footerSocial.linkPath}" target="${footerSocial.targetType}" class="${footerSocial.soccMedsType} ${footerSocial.customCssClass}">${footerSocial.linkText @ context='html'}</a></li>
                 </ul>
             </li>
             <li class="nav-tertiary-col">

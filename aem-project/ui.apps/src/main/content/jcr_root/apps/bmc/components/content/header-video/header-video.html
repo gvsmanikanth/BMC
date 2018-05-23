@@ -1,27 +1,24 @@
-<div class="page-careers">
+<!--/* WEB-2758 HeaderVideo - Bg video picker field missing START */-->
+<sly data-sly-use.data="com.bmc.components.VideoHeader"></sly>
+<div class="video-hero-header">
     <section class="hero flex-col">
-        <div class="hero-image xs-only"></div>
-
+        <div class="hero-image xs-only"></div>		
         <div class="hero-image video xs-max-hide">
             <div class="vidbg-box"
-                 data-vidbg-bg="mp4://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized/file.mp4,webm://service.twistage.com/videos/de1ac177ef090/formats/360p-BitRateOptimized-Webm/file.webm,poster: //service.twistage.com/images/i80f46b2f2e4a.jpg"
-                 data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0.3"
-                 style="z-index: 1;">
-                <div class="vidbg-container" style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; background-image: none;">
-                    <video autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: none; visibility: visible; opacity: 1; width: 1314px; height: auto;">
-                    </video>
-                </div>
+                 data-vidbg-bg="mp4:${properties.bgvideolink1},webm:${properties.bgvideolink2},poster:${data.backgroundImageUrl}"
+                 data-vidbg-options="loop: true, muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"
+                 style="width: 100%; height: 100%;">
+
             </div>
         </div>
-
-        <div class="hero-content">
+        <div class="hero-content transparent-bg white"">
             <strong class="ha mb2">${properties.headerText @ context='html'}</strong>
             <div class="h3">${properties.subHeaderText @ context='html'}</div>
             <div class="p2 bolder">${properties.introtext @ context='html'}</div>
-
-            <a href="${properties.videolink}" class="modal-youtube-video-player">
-                <img class="videoIcon" src="/etc/clientlibs/head/icon-slide-video.png">
+            <a href="/content/bmc/videos.html?vID=${data.videoPath}" class="modal-youtube-video-player" title="${properties.subHeaderText}">
+                <img class="videoIcon" src="/content/dam/bmc/info/icon-slide-video.png">
             </a>
         </div>
     </section>
 </div>
+<!--/* WEB-2758 HeaderVideo - Bg video picker field missing END */-->
