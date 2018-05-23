@@ -67,7 +67,10 @@
 		</ul>
 		<!-- end chat now -->
 	</div><!-- / layout-inner-wrap -->
-	<!-- Search Overlay -->
+	
+
+
+<!-- Search Overlay -->
 	<div id="bodyOverlay" title="Click anywhere to close overlay."></div>
 	<div class="search-overlay off">
         <div class="rows_flex">
@@ -76,7 +79,7 @@
 				  <div class="search-panel">
 					 <div class="search_click">Search</div>
 					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">
-						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="off" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Type Here to Search">   
+						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="off" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Type Here to Search">   
 					 </form>
 					 <div class="drop_overlay"></div>
 				  </div>
@@ -96,8 +99,7 @@
 		</div>
 	</div>
 	<!--/ Search Overlay -->
-</nav><!-- / layout-nav -->
-
+</nav><!-- / layout-nav -->	
 <!-- chat now -->
 <!-- 		<div class="fixed-tab-chat-now"> -->
 <!-- 			<a href="#" class="chat-now-link" id="fixed-tab-chat-now">Chat Now</a> -->

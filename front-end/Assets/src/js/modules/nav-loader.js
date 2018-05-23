@@ -1,5 +1,9 @@
 jQuery(function($){
-
+	UA = (window.navigator.userAgent||window.navigator.vendor||window.opera),
+	isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(UA);
+	if(isMobile){
+		$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation");
+	}
 	// two navigation functions have been setup based on the namespacing of
 	// 'nav' vs 'navigation'.
 	//
@@ -178,6 +182,7 @@ jQuery(function($){
 			$('.search-overlay').removeClass('on');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
+			$(".search-overlay #search_input").val("");
 		});
 		
 		//$('.navigation-search.js-navigation-search').click(function(e) {
@@ -186,6 +191,7 @@ jQuery(function($){
 			$('.search-overlay').addClass('on');
 			$('body').addClass('no-scroll');
 			$('#bodyOverlay').addClass('backgroundColor');
+			$(".search-overlay #search_input").focus();
 			if($('body').hasClass("scrolled-down") || $('body').hasClass("scrolled-up")){
 				$(".search-overlay").addClass("topHeader");
 			}else{

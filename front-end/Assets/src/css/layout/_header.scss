@@ -49,6 +49,12 @@ body.bmc-nav-loader-navigation .layout-header {
 			display: none;
 		}
 	}
+	.headerSearch {
+		float: right;
+		padding: 0.8rem 2rem;
+		font-size: 24px;
+		list-style-type: none;
+	}
 }
 
 body.bmc-nav-loader-navigation.scrolled-down .layout-header,
