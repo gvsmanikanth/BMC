@@ -1,8 +1,8 @@
 jQuery(function($){
-	UA = (window.navigator.userAgent||window.navigator.vendor||window.opera),
-	isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(UA);
-	if(isMobile){
-		$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation");
+	/*var UA = (window.navigator.userAgent||window.navigator.vendor||window.opera);
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(UA);*/
+	if (window.matchMedia('(max-width: 767px)').matches) {
+		$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
 	}
 	// two navigation functions have been setup based on the namespacing of
 	// 'nav' vs 'navigation'.
