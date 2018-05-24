@@ -61,12 +61,14 @@ module.exports = function(configuration) {
 			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/head/css'));
 
 		// css images
-		gulp.src('./../dist/**/*')
+		//gulp.src('./../dist/**/*') // WEB-2331 : commented, becasue no need to update individual source code js/css files to AEM)
+		//Promoting only image files.
+		gulp.src('./../dist/**/*.{jpg,png,gif,ico,svg}')
 			.pipe(gulp.dest('./../../../aem-project/ui.apps/src/main/content/jcr_root/etc/clientlibs/bmc/head'));
 
 	});
 	
-	gulp.task('aem-minification', ['default'], function() {
+	gulp.task('aem-minification', loader.getBuildDependencies(), function() {
 		// copies files from FED build location to a corresponding location for vlt to bundle and deploy to aem
 		// main client lib
 		
