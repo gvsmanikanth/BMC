@@ -362,6 +362,15 @@
                                             fieldLabel="PURL Page URL"
                                             name="./PURLPageUrl"
                                             wrapperClass="cmp-workflow-title"/>
+                                    <dynamicPURLUrl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            fieldDescription="If selected appends query params such as firstName,lastName,companyName and email to the PURLPageUrl"
+                                            text="Dynamic PURL Url"
+                                            name="./dynamicPURLUrl"
+                                            value="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title"/>
+                                            
                                     <activePURLRedirect
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
