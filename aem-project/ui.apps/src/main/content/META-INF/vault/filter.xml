@@ -5,7 +5,7 @@
     </filter>
     <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
-
+    <filter root="/apps/wcm/core/resources"/>
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
     <!--<filter root="/conf/bmc" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
