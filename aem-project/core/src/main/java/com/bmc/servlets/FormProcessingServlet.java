@@ -204,11 +204,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
                 purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
-            logger.info("purlPage"+purlPage);
-            logger.info("PURL_PAGE_URL"+form.properties.get(PURL_PAGE_URL)+form.properties.get("dynamicPURLUrl"));
-            //response.sendRedirect("http://clm-aus-018868.bmc.com/trial/digitalworkplace?firstName=supraja+seshadri+J%C3%BCrgen&lastName=J%C3%BCrgen&companyName=J%C3%BCrgen&email=test-new%40aem-test.com");
+            logger.info("PURL_PAGE_URL"+form.properties.get(PURL_PAGE_URL)+" "+"dynamicPURLUrl"form.properties.get("dynamicPURLUrl"));
             if(form.properties.get("dynamicPURLUrl").equals("true")){
-            	response.sendRedirect(PURL_PAGE_URL);
+            	response.sendRedirect(form.properties.get(PURL_PAGE_URL));
             }else{
             	response.sendRedirect(purlPage);
             }
@@ -546,7 +544,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
                             purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage.replace(".html", "") + ".PURL" + formGUID + ".html";
                         }
-                        logger.info("dynamicPURLUrl"+properties.get("dynamicPURLUrl"));
                         //WEB-2734: PURL/Thank You Page Handling - Edge Cases (dynamic PURL URL)
                         if(properties.get("dynamicPURLUrl").equals("true")){
                         	try{
@@ -554,7 +551,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         			     "&lastName="+ URLEncoder.encode(request.getParameter("C_LastName"), "UTF-8")+
                         			     "&companyName="+ URLEncoder.encode(request.getParameter("C_Company"), "UTF-8")+
                         			     "&email="+ URLEncoder.encode(request.getParameter("C_EmailAddress"), "UTF-8");
-                        	logger.info("in active purl redirect check"+purlPageUrl);
                         	}catch(Exception e){
                         		logger.error("Encoding error.");
                         	}
