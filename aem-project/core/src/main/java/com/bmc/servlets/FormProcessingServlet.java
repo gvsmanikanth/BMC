@@ -210,7 +210,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             }else{
             	response.sendRedirect(purlPage);
             }
-            response.sendRedirect(purlPage);
+           // response.sendRedirect(purlPage);
         }
     }
 
