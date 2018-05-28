@@ -204,7 +204,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
                 purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
-            logger.info("PURL_PAGE_URL"+form.properties.get(PURL_PAGE_URL)+" "+"dynamicPURLUrl"form.properties.get("dynamicPURLUrl"));
+            logger.info("PURL_PAGE_URL"+form.properties.get(PURL_PAGE_URL)+" "+"dynamicPURLUrl"+form.properties.get("dynamicPURLUrl"));
             if(form.properties.get("dynamicPURLUrl").equals("true")){
             	response.sendRedirect(form.properties.get(PURL_PAGE_URL));
             }else{
