@@ -63,7 +63,8 @@ public class BmcEduMeta {
             urlResolver.getLinkInfo(node.getPath()).getText();
 
             productValues.setName(node.getProperty("jcr:title").getValue().getString());
-            productValues.setId(getEdFilterID(node,session));
+            productValues.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
+            //productValues.setId(getEdFilterID(node,session));
 
             Value[] versions = node.getProperty("versions").getValues();
             Versions allVers = new Versions();
