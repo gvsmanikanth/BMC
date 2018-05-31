@@ -98,14 +98,14 @@
 				&:after {
 					@include icon();
 					content: '\e601';
-					color: #fe7e42;
+					color: #fe5000;
 					top: 3px;
 					width: 26px;
 					z-index: 11;
 					right: 10px;
 					height: 24px;
 					padding: 15px 0px 0px 8px;
-					border-left: 1px solid #fe7e42;
+					border-left: 1px solid #fe5000;
 					position: absolute;
 					pointer-events: none;
 					background-color: white;
@@ -121,7 +121,7 @@
 		    height: 50px;
 				span{
 					float:right;
-					color: #fe7e42;
+					color: #fe5000;
 				    position: relative;
     				top: 12px;
 				}
@@ -138,8 +138,8 @@
 			margin: 0;
 			list-style: none;
 				li.title{
-				    color: #fe7e42;
-    				line-height: 1.3em; 
+				    color: #fe5000;
+    				line-height: 1.3em;
 				}
 		}
 	}
