@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="cq:Page">
-    <Administrators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Administrators"/>
-    <Developers
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Developers"/>
-    <Operators
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Operators"/>
-    <Users
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Users"/>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[cq:ReplicationStatus]"
+    jcr:primaryType="cq:Page">
+    <!--  text and value is added to populate the already populated data -->
+    <Any
+        jcr:primaryType="nt:unstructured"
+        jcr:title="All Roles"
+       />
+    <edu-broad-roles-128744427
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Administrators"
+       />
+    <edu-broad-roles-124114936
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Developers"
+        />
+    <edu-broad-roles-173472440
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Operators"
+       />
+    <edu-broad-roles-193340018
+ 		jcr:primaryType="nt:unstructured"
+        jcr:title="Users"
+        />
 </jcr:root>
