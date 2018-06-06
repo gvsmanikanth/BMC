@@ -3,14 +3,7 @@ $pageTitle = 'Contact Us Forms';
 $bodyClass = 'page-campaign-landing bmc-nav-loader-nav';
 include_once 'php-inc/head-plain.php';
 ?>
-<style>
-.onCountrySelect{
-	display:none;
-}
-.onCountrySelect.visible{
-	display:block;
-}
-</style>
+
 
 <section class="layout-wrapper">
 	<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('http://media.cms.bmc.com/images/Generic_form_banner.png'); background-position: center center;">
@@ -89,15 +82,15 @@ include_once 'php-inc/head-plain.php';
 											<option value="AR">Argentina</option>
 											<option value="AM">Armenia</option>
 											<option value="AW">Aruba</option>
-											<option value="AU" data-id="gdpr">Australia</option>
-											<option value="AT" data-id="gdpr">Austria</option>
+											<option value="AU" data-gdpr="true">Australia</option>
+											<option value="AT" data-gdpr="true">Austria</option>
 											<option value="AZ">Azerbaijan</option>
 											<option value="BS">Bahamas</option>
 											<option value="BH">Bahrain</option>
 											<option value="BD">Bangladesh</option>
 											<option value="BB">Barbados</option>
 											<option value="BY">Belarus</option>
-											<option value="BE" data-id="gdpr">Belgium</option>
+											<option value="BE" data-gdpr="true">Belgium</option>
 											<option value="BZ">Belize</option>
 											<option value="BJ">Benin</option>
 											<option value="BM">Bermuda</option>
@@ -107,22 +100,22 @@ include_once 'php-inc/head-plain.php';
 											<option value="BA">Bosnia and Herzegovina</option>
 											<option value="BW">Botswana</option>
 											<option value="BV">Bouvet Island</option>
-											<option value="BR" data-id="gdpr">Brazil</option>
+											<option value="BR" data-gdpr="true">Brazil</option>
 											<option value="IO">British Indian Ocean Territory</option>
 											<option value="VG">British Virgin Islands</option>
 											<option value="BN">Brunei</option>
-											<option value="BG" data-id="gdpr">Bulgaria</option>
+											<option value="BG" data-gdpr="true">Bulgaria</option>
 											<option value="BF">Burkina Faso</option>
 											<option value="BI">Burundi</option>
 											<option value="KH">Cambodia</option>
 											<option value="CM">Cameroon</option>
-											<option value="CA" data-id="gdpr">Canada</option>
+											<option value="CA" data-gdpr="true">Canada</option>
 											<option value="CV">Cape Verde</option>
 											<option value="KY">Cayman Islands</option>
 											<option value="CF">Central African Republic</option>
 											<option value="TD">Chad</option>
 											<option value="CL">Chile</option>
-											<option value="CN" data-id="gdpr">China</option>
+											<option value="CN" data-gdpr="true">China</option>
 											<option value="CX">Christmas Island</option>
 											<option value="CC">Cocos Islands</option>
 											<option value="CO">Colombia</option>
@@ -130,13 +123,13 @@ include_once 'php-inc/head-plain.php';
 											<option value="CG">Congo</option>
 											<option value="CK">Cook Islands</option>
 											<option value="CR">Costa Rica</option>
-											<option value="HR" data-id="gdpr">Croatia</option>
+											<option value="HR" data-gdpr="true">Croatia</option>
 											<option value="CU">Cuba</option>
 											<option value="CW">Curaçao</option>
-											<option value="CY" data-id="gdpr">Cyprus</option>
-											<option value="CZ" data-id="gdpr">Czech Republic</option>
+											<option value="CY" data-gdpr="true">Cyprus</option>
+											<option value="CZ" data-gdpr="true">Czech Republic</option>
 											<option value="CI">Côte d&#39;Ivoire</option>
-											<option value="DK" data-id="gdpr">Denmark</option>
+											<option value="DK" data-gdpr="true">Denmark</option>
 											<option value="DJ">Djibouti</option>
 											<option value="DM">Dominica</option>
 											<option value="DO">Dominican Republic</option>
@@ -145,23 +138,23 @@ include_once 'php-inc/head-plain.php';
 											<option value="SV">El Salvador</option>
 											<option value="GQ">Equatorial Guinea</option>
 											<option value="ER">Eritrea</option>
-											<option value="EE" data-id="gdpr">Estonia</option>
+											<option value="EE" data-gdpr="true">Estonia</option>
 											<option value="ET">Ethiopia</option>
 											<option value="FK">Falkland Islands</option>
 											<option value="FO">Faroe Islands</option>
 											<option value="FJ">Fiji</option>
-											<option value="FI" data-id="gdpr">Finland</option>
-											<option value="FR" data-id="gdpr">France</option>
+											<option value="FI" data-gdpr="true">Finland</option>
+											<option value="FR" data-gdpr="true">France</option>
 											<option value="GF">French Guiana</option>
 											<option value="PF">French Polynesia</option>
 											<option value="TF">French Southern Territories</option>
 											<option value="GA">Gabon</option>
 											<option value="GM">Gambia</option>
 											<option value="GE">Georgia</option>
-											<option value="DE" data-id="gdpr">Germany</option>
+											<option value="DE" data-gdpr="true">Germany</option>
 											<option value="GH">Ghana</option>
 											<option value="GI">Gibraltar</option>
-											<option value="GR" data-id="gdpr">Greece</option>
+											<option value="GR" data-gdpr="true">Greece</option>
 											<option value="GL">Greenland</option>
 											<option value="GD">Grenada</option>
 											<option value="GP">Guadeloupe</option>
@@ -174,19 +167,19 @@ include_once 'php-inc/head-plain.php';
 											<option value="HT">Haiti</option>
 											<option value="HM">Heard Island And McDonald Islands</option>
 											<option value="HN">Honduras</option>
-											<option value="HK" data-id="gdpr">Hong Kong</option>
-											<option value="HU" data-id="gdpr">Hungary</option>
+											<option value="HK" data-gdpr="true">Hong Kong</option>
+											<option value="HU" data-gdpr="true">Hungary</option>
 											<option value="IS">Iceland</option>
-											<option value="IN" data-id="gdpr">India</option>
+											<option value="IN" data-gdpr="true">India</option>
 											<option value="ID">Indonesia</option>
 											<option value="IR">Iran</option>
 											<option value="IQ">Iraq</option>
-											<option value="IE" data-id="gdpr">Ireland</option>
+											<option value="IE" data-gdpr="true">Ireland</option>
 											<option value="IM">Isle Of Man</option>
-											<option value="IL" data-id="gdpr">Israel</option>
-											<option value="IT" data-id="gdpr">Italy</option>
+											<option value="IL" data-gdpr="true">Israel</option>
+											<option value="IT" data-gdpr="true">Italy</option>
 											<option value="JM">Jamaica</option>
-											<option value="JP" data-id="gdpr">Japan</option>
+											<option value="JP" data-gdpr="true">Japan</option>
 											<option value="JE">Jersey</option>
 											<option value="JO">Jordan</option>
 											<option value="KZ">Kazakhstan</option>
@@ -195,14 +188,14 @@ include_once 'php-inc/head-plain.php';
 											<option value="KW">Kuwait</option>
 											<option value="KG">Kyrgyzstan</option>
 											<option value="LA">Laos</option>
-											<option value="LV" data-id="gdpr">Latvia</option>
+											<option value="LV" data-gdpr="true">Latvia</option>
 											<option value="LB">Lebanon</option>
 											<option value="LS">Lesotho</option>
 											<option value="LR">Liberia</option>
 											<option value="LY">Libya</option>
 											<option value="LI">Liechtenstein</option>
-											<option value="LT" data-id="gdpr">Lithuania</option>
-											<option value="LU" data-id="gdpr">Luxembourg</option>
+											<option value="LT" data-gdpr="true">Lithuania</option>
+											<option value="LU" data-gdpr="true">Luxembourg</option>
 											<option value="MO">Macao</option>
 											<option value="MK">Macedonia</option>
 											<option value="MG">Madagascar</option>
@@ -210,13 +203,13 @@ include_once 'php-inc/head-plain.php';
 											<option value="MY">Malaysia</option>
 											<option value="MV">Maldives</option>
 											<option value="ML">Mali</option>
-											<option value="MT" data-id="gdpr">Malta</option>
+											<option value="MT" data-gdpr="true">Malta</option>
 											<option value="MH">Marshall Islands</option>
 											<option value="MQ">Martinique</option>
 											<option value="MR">Mauritania</option>
 											<option value="MU">Mauritius</option>
 											<option value="YT">Mayotte</option>
-											<option value="MX" data-id="gdpr">Mexico</option>
+											<option value="MX" data-gdpr="true">Mexico</option>
 											<option value="FM">Micronesia</option>
 											<option value="MD">Moldova</option>
 											<option value="MC">Monaco</option>
@@ -229,7 +222,7 @@ include_once 'php-inc/head-plain.php';
 											<option value="NA">Namibia</option>
 											<option value="NR">Nauru</option>
 											<option value="NP">Nepal</option>
-											<option value="NL" data-id="gdpr">Netherlands</option>
+											<option value="NL" data-gdpr="true">Netherlands</option>
 											<option value="AN">Netherlands Antilles</option>
 											<option value="NC">New Caledonia</option>
 											<option value="NZ">New Zealand</option>
@@ -251,8 +244,8 @@ include_once 'php-inc/head-plain.php';
 											<option value="PE">Peru</option>
 											<option value="PH">Philippines</option>
 											<option value="PN">Pitcairn</option>
-											<option value="PL" data-id="gdpr">Poland</option>
-											<option value="PT" data-id="gdpr">Portugal</option>
+											<option value="PL" data-gdpr="true">Poland</option>
+											<option value="PT" data-gdpr="true">Portugal</option>
 											<option value="PR">Puerto Rico</option>
 											<option value="QA">Qatar</option>
 											<option value="RE">Reunion</option>
@@ -274,26 +267,26 @@ include_once 'php-inc/head-plain.php';
 											<option value="RS">Serbia</option>
 											<option value="SC">Seychelles</option>
 											<option value="SL">Sierra Leone</option>
-											<option value="SG" data-id="gdpr">Singapore</option>
+											<option value="SG" data-gdpr="true">Singapore</option>
 											<option value="SX">Sint Maarten (Dutch part)</option>
-											<option value="SK" data-id="gdpr">Slovakia</option>
-											<option value="SI" data-id="gdpr">Slovenia</option>
+											<option value="SK" data-gdpr="true">Slovakia</option>
+											<option value="SI" data-gdpr="true">Slovenia</option>
 											<option value="SB">Solomon Islands</option>
 											<option value="SO">Somalia</option>
-											<option value="ZA" data-id="gdpr">South Africa</option>
+											<option value="ZA" data-gdpr="true">South Africa</option>
 											<option value="GS">South Georgia And The South Sandwich Islands</option>
 											<option value="KR">South Korea</option>
 											<option value="SS">South Sudan</option>
-											<option value="ES" data-id="gdpr">Spain</option>
+											<option value="ES" data-gdpr="true">Spain</option>
 											<option value="LK">Sri Lanka</option>
 											<option value="SD">Sudan</option>
 											<option value="SR">Suriname</option>
 											<option value="SJ">Svalbard And Jan Mayen</option>
 											<option value="SZ">Swaziland</option>
-											<option value="SE" data-id="gdpr">Sweden</option>
-											<option value="CH" data-id="gdpr">Switzerland</option>
+											<option value="SE" data-gdpr="true">Sweden</option>
+											<option value="CH" data-gdpr="true">Switzerland</option>
 											<option value="SY">Syria</option>
-											<option value="TW" data-id="gdpr">Taiwan</option>
+											<option value="TW" data-gdpr="true">Taiwan</option>
 											<option value="TJ">Tajikistan</option>
 											<option value="TZ">Tanzania</option>
 											<option value="TH">Thailand</option>
@@ -304,7 +297,7 @@ include_once 'php-inc/head-plain.php';
 											<option value="TO">Tonga</option>
 											<option value="TT">Trinidad and Tobago</option>
 											<option value="TN">Tunisia</option>
-											<option value="TR" data-id="gdpr">Turkey</option>
+											<option value="TR" data-gdpr="true">Turkey</option>
 											<option value="TM">Turkmenistan</option>
 											<option value="TC">Turks And Caicos Islands</option>
 											<option value="TV">Tuvalu</option>
@@ -312,7 +305,7 @@ include_once 'php-inc/head-plain.php';
 											<option value="UG">Uganda</option>
 											<option value="UA">Ukraine</option>
 											<option value="AE">United Arab Emirates</option>
-											<option value="GB" data-id="gdpr">United Kingdom</option>
+											<option value="GB" data-gdpr="true">United Kingdom</option>
 											<option value="US">United States</option>
 											<option value="UM">United States Minor Outlying Islands</option>
 											<option value="UY">Uruguay</option>
@@ -332,7 +325,7 @@ include_once 'php-inc/head-plain.php';
 									<div class="cmp cmp-options aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
 										<select name="C_Job_Level1" id="form-options-1563715082" class="form-control countrySelector">
 											<option selected disabled>Country</option>
-											<option value="AF" data-id="gdpr">Afghanistan</option>
+											<option value="AF" data-gdpr="true">Afghanistan</option>
 											<option value="AL">Albania</option>
 											<option value="DZ">Algeria</option>
 											<option value="AS">American Samoa</option>
@@ -648,7 +641,7 @@ include_once 'php-inc/head-plain.php';
 										<div class="form-group checkbox">
 											<ol id="C_Checkbox">
 												<li><input type="checkbox" name="C_Checkbox" id="C_Checkbox" value="yes" checked /> <label for="C_Checkbox"> This is the radio Button Title </label></li>
-												<li class="onCountrySelect"><input type="checkbox" name="C_Checkbox" id="C_Checkbox" value="yes" /> <label for="C_Checkbox"> I would like to receieve marketing communications regarding BMC products,services and events. I can unsubscribe at a later time. </label></li>
+												<li id="C_OptIn_group"><input type="checkbox" name="C_Checkbox" id="C_Checkbox" value="yes" /> <label for="C_Checkbox"> I would like to receieve marketing communications regarding BMC products,services and events. I can unsubscribe at a later time. </label></li>
 											</ol>
 										</div>
 									</div>
@@ -695,17 +688,5 @@ include_once 'php-inc/head-plain.php';
 <?php
 include_once 'php-inc/foot-plain.php';
 ?>
-<script>
-$("select[name^='C_Country']").on('change', function() {
-	//var status = $('option:selected', this).attr('data-id');
-	var status = $('option:selected', this).data("id"); 
-	if(status == "gdpr"){
-		$(".onCountrySelect").addClass("visible");
-	}else{
-		$(".onCountrySelect").removeClass("visible");
-	}
-});
 
-
-</script>
 </section>

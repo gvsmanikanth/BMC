@@ -125,6 +125,17 @@ function addFilterToArrayProtoype() {
 				$form.validate();
 			}
 		});
+		
+	$("#C_OptIn_group").hide();
+	$("select[name^='C_Country']").on('change', function() { 
+		//var status = $('option:selected', this).attr('data-id');
+		var status = $('option:selected', this).data("gdpr"); 
+		if(status == true){
+			$("#C_OptIn_group").show();
+		}else{
+			$("#C_OptIn_group").hide();
+		}
+	});
 
 	var getVideoHeightWidth = function(){
 
