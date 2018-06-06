@@ -73,7 +73,7 @@ public class FieldSetModel extends WCMUsePojo{
             }
         }
         return displayOptIn;
-    }
+    } 
 
 //    public Boolean getForceOptIn() {
 //        //Getter class to pass SuppressOptIn value to sitely htl.
