@@ -78,7 +78,7 @@
 				  <div class="search-panel">
 					 <div class="search_click btn-white">Search</div>
 					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">
-						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="off" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Type Here to Search">   
+						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="off" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">   
 					 </form>
 					 <div class="drop_overlay"></div>
 				  </div>
