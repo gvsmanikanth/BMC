@@ -25,7 +25,7 @@
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
         <select name="${options.name}" id="${options.id}" class="form-control" data-sly-list.optionItem="${options.items}"
                 data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}" data-validation-type="${properties.validationType}" required="${properties.required ? 'true' : 'false'}">
-			<sly data-sly-use.gdprCountry="${'com.bmc.models.components.forms.FieldSetModel' @ text= optionItem.value}"></sly>
+			<sly data-sly-use.gdprCountry="${'com.bmc.models.components.forms.FieldSetModel' @ text= optionItem.text}"></sly>
 			<option value="${optionItem.value}" data-gdpr="${gdprCountry.isGdpr?'true':''}" selected="${optionItem.selected}" disabled="${optionItem.disabled}">${optionItem.text}</option>
 		</select>
     </sly>
