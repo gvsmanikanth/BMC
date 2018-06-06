@@ -458,6 +458,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             logger.trace(property + ": " + value);
             return value;
         }
+
         private final Node node;
 
         FormData(SlingHttpServletRequest request) {
@@ -493,6 +494,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "leadDescription1",
                                 "emailid",
                                 FN_OPT_IN,
+                                "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
                                 "recipient",
