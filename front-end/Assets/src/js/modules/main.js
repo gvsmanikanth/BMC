@@ -125,17 +125,35 @@ function addFilterToArrayProtoype() {
 				$form.validate();
 			}
 		});
-		
-	$("#C_OptIn_group").hide();
-	$("select[name^='C_Country']").on('change', function() { 
-		//var status = $('option:selected', this).attr('data-id');
-		var status = $('option:selected', this).data("gdpr"); 
-		if(status == true){
-			$("#C_OptIn_group").show();
-		}else{
+
+//WEB-3374 - GDPR	
+	
+	if(typeof bmcMeta !== 'undefined' && bmcMeta.hasOwnProperty("form"))	{
+		//When OptIn is 'true' the form should not display the Opt In field for non-GDPR countries (and the checkbox should be checked)
+		//When switching from a GDPR country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
+		if(bmcMeta.form.optIn == 'true'){
 			$("#C_OptIn_group").hide();
+			$("select[name^='C_Country']").on('change', function() { 
+				//var status = $('option:selected', this).attr('data-id');
+				var status = $('option:selected', this).data("gdpr"); 
+				if(status == true){
+					$("#C_OptIn_group").show();
+					$("#C_OptIn").attr("checked",false);
+				}else{
+					$("#C_OptIn_group").hide();
+					$("#C_OptIn").attr("checked",true);
+				}
+			});
+			
 		}
-	});
+		else{
+		//when OptIn is 'false', I don't believe the front end needs to do anything to the field, just let it be visible and let the user choose according to preference.
+			$("#C_OptIn_group").show();
+			$("#C_OptIn").attr("checked",false);
+		}
+	}		
+			
+	
 
 	var getVideoHeightWidth = function(){
 
