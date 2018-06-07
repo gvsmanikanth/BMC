@@ -58,7 +58,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String TRIAL_DOWNLOAD = "Trial Download";
 
     private static final String FN_CONTACT_ME = "C_Contact_Me1";
-    private static final String FN_OPT_IN = "C_OptIn";
+    //private static final String FN_OPT_IN = "C_OptIn";
     private static final String FN_ELQ_FORM_NAME = "elqFormName";
     private static final String FN_FORM_NAME = "FormName";
     private static final String FV_YES = "Yes";
@@ -495,7 +495,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "formType",
                                 "leadDescription1",
                                 "emailid",
-                                FN_OPT_IN,
                                 "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
@@ -549,7 +548,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         properties.put("Submit", "Action");
                         properties.put("elqCookieWrite", "0");
                         properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
-                        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
+                        // properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
                         properties.put("CampaignID", properties.get("campaignid"));
                         properties.remove("campaignid");
                         properties.put("elqSiteID", elqSiteID);
