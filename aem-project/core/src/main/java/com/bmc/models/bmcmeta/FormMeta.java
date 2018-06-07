@@ -9,6 +9,7 @@ public class FormMeta {
     private String name = ""; //[corresponding Eloqua form name]", *5
 //    private String type = ""; //[], *legacy
     private String leadOffer = ""; //[landing page's Lead Offer]",
+    private String optIn = "";
 //    private String disableDemandbase = ""; //[], *legacy
 // Removed below for DXP-1277
 //    private String contactMe = ""; //['on' if contact me checkbox is present on form, else 'off']
@@ -45,6 +46,13 @@ public class FormMeta {
         this.leadOffer = leadOffer;
     }
 
+    public String getOptIn() {
+        return optIn;
+    }
+
+    public void setOptIn(String optIn) {
+        this.optIn = optIn;
+    }
 //    public String getDisableDemandbase() {
 //        return disableDemandbase;
 //    }
