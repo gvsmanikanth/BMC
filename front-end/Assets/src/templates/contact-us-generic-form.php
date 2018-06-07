@@ -8,7 +8,7 @@ var bmcMeta = {
 		  "form": {
 		    "id": "22",
 		    "name": "FormTemplate1",
-		    "optIn": "true"
+		    "optIn": "false"
 		  }
 }
 </script>

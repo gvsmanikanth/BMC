@@ -138,8 +138,10 @@ function addFilterToArrayProtoype() {
 				//var status = $('option:selected', this).attr('data-id');
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
 				if(status == true){
-					$("#C_OptIn_group").show();
-					$("#C_OptIn").attr("checked",false);
+					if($("#C_OptIn_group").css('display') == "none"){
+						$("#C_OptIn_group").show();
+						$("#C_OptIn").attr("checked",false);
+					}
 				}else{
 					$("#C_OptIn_group").hide();
 					$("#C_OptIn").attr("checked",true);
@@ -553,13 +555,15 @@ function addFilterToArrayProtoype() {
 
 		});	//EO Fail
 
-		//Email marketting opt-in logic
-		$('#C_OptIn').prop("checked", false);	//reset on every change
-
-		if($(this).val().toLowerCase() != "usa")
-			$('#C_OptIn').parent().show();
-		else
-			$('#C_OptIn').parent().hide();
+// WEB-3374 - Remove 560 to 566.		
+		
+//		//Email marketting opt-in logic
+//		$('#C_OptIn').prop("checked", false);	//reset on every change
+//
+//		if($(this).val().toLowerCase() != "usa")
+//			$('#C_OptIn').parent().show();
+//		else
+//			$('#C_OptIn').parent().hide();
 
 		//Third party consent opt-in logic
 		$('#C_Third_Party_Consent1').val('');	//reset on every change
