@@ -8,7 +8,7 @@ var bmcMeta = {
 		  "form": {
 		    "id": "22",
 		    "name": "FormTemplate1",
-		    "optIn": "false"
+		    "optIn": "true"
 		  }
 }
 </script>
@@ -394,8 +394,7 @@ var bmcMeta = {
 									<div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
 										<div class="form-group checkbox">
 											<ol id="C_Checkbox">
-												<li><input type="checkbox" name="C_Checkbox" id="C_Checkbox" value="yes" checked /> <label for="C_Checkbox"> This is the radio Button Title </label></li>
-												<li id="C_OptIn_group"><input type="checkbox" name="C_OptIn_Name" id="C_OptIn" value="yes" /> <label for="C_Checkbox"> I would like to receieve marketing communications regarding BMC products,services and events. I can unsubscribe at a later time. </label></li>
+												<li id="C_OptIn_group"><input type="checkbox" name="C_OptIn" id="C_OptIn" value="Yes" /> <label for="C_OptIn"> I would like to receieve marketing communications regarding BMC products,services and events. I can unsubscribe at a later time. </label></li>
 											</ol>
 										</div>
 									</div>

@@ -141,16 +141,19 @@ function addFilterToArrayProtoype() {
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
 						$("#C_OptIn").attr("checked",false);
+						$("#C_OptIn").attr("type","checkbox");
+						$("#C_OptIn").attr("value","No");
 					}
 				}else{
 					$("#C_OptIn_group").hide();
 					$("#C_OptIn").attr("checked",true);
+					$("#C_OptIn").attr("type","hidden");
+					$("#C_OptIn").attr("value","Yes");
 				}
 			}
 			
 			//Check on page load.
 			checkSelection();
-			
 			
 			$("select[name^='C_Country']").on('change', function() { 
 				checkSelection();
@@ -158,10 +161,19 @@ function addFilterToArrayProtoype() {
 			
 		}
 		else{
-		//when OptIn is 'false', I don't believe the front end needs to do anything to the field, just let it be visible and let the user choose according to preference.
+			//when OptIn is 'false', I don't believe the front end needs to do anything to the field, just let it be visible and let the user choose according to preference.
 			$("#C_OptIn_group").show();
 			$("#C_OptIn").attr("checked",false);
 		}
+		
+		$("#C_OptIn").on('change',function(){
+			if($(this).is(':checked')){
+				$("#C_OptIn").attr("value","Yes");
+			}
+			else{
+				$("#C_OptIn").attr("value","No");
+			}
+		})
 	}	
 	
 	//Condition check on page load
