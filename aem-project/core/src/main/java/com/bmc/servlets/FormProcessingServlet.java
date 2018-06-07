@@ -245,11 +245,13 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                     if (!value.equals(FV_YES) && pairs.get(FN_CONTACT_ME).equals(FV_YES))
                                         value = FV_YES;
                                     break;
-                                case FN_OPT_IN:
-                                    // FN_OPT_IN dialog field label = _Force_ Opt In
-                                    if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
-                                        value = FV_YES;
-                                    break;
+                                    //Commenting out the bit that forces C_OptIn to True for WEB-3374 GDPR
+                                //as the force opt in functionality is moving to the front end. 
+//                                case FN_OPT_IN:
+//                                    // FN_OPT_IN dialog field label = _Force_ Opt In
+//                                    if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
+//                                        value = FV_YES;
+//                                    break;
                                 default:
                                     break;
                             }
