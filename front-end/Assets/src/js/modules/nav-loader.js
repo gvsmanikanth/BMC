@@ -1,9 +1,12 @@
 jQuery(function($){
 	/*var UA = (window.navigator.userAgent||window.navigator.vendor||window.opera);
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(UA);*/
-	if (window.matchMedia('(max-width: 767px)').matches) {
-		$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
+	function isMobile(){
+		if (window.matchMedia('(max-width: 767px)').matches) {
+			$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
+		}
 	}
+	isMobile();
 	// two navigation functions have been setup based on the namespacing of
 	// 'nav' vs 'navigation'.
 	//
@@ -123,6 +126,7 @@ jQuery(function($){
 				}
 				equalHeightNavColumns(minNavHeight);
 			}, 250);
+			isMobile();
 		});
 
 		// exposes the primary nav items when in a scrolled-down or scrolled-up state
