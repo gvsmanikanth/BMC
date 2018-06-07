@@ -67,7 +67,7 @@ public class FieldSetModel extends WCMUsePojo{
 
     public Boolean getIsGdpr()  {
     	 Boolean isGdpr=false;
-    	 String gdprCountryList[] ={"Australia","Austria","Belgium","Brazil","Bulgaria","Canada","China","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hong Kong","Hungary","India","Ireland","Israel","Italy","Japan","Korea","Latvia","Lithuania","Luxembourg","Malta","Mexico","Netherlands","Poland","Portugal","Romania","Singapore","Slovakia","Slovenia","South Africa","Spain","Sweden","Switzerland","Taiwan","Turkey","United Kingdom"};
+    	 String gdprCountryList[] ={"Australia","Austria","Belgium","Brazil","Bulgaria","Canada","China","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hong Kong","Hungary","India","Ireland","Israel","Italy","Japan","Korea, Republic of","Latvia","Lithuania","Luxembourg","Malta","Mexico","Netherlands","Poland","Portugal","Romania","Singapore","Slovakia","Slovenia","South Africa","Spain","Sweden","Switzerland","Taiwan","Turkey","United Kingdom"};
     	 String text = get("text", String.class);		 
     		 for(String gdprCountry:gdprCountryList){
     			 if(text.equals(gdprCountry)){
