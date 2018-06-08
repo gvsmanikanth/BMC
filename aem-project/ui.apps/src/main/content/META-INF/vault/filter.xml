@@ -2,10 +2,10 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc">
         <exclude pattern="/apps/bmc/i18n"/>
-    </filter>
+    </filter>  
     <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
-
+    <filter root="/apps/wcm/core/resources"/>
     <!--EXCLUDING TEMPLATES FROM BUILD WHILE DEV IS HAPPENING IN STAGE -BL -->
     <!--<filter root="/conf/bmc" mode="merge"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
@@ -47,7 +47,15 @@
     <filter root="/content/bmc/resources/intelligent-content-target-persona"/>
     <filter root="/content/bmc/resources/intelligent-content-target-industry"/>
     <filter root="/content/bmc/resources/intelligent-content-company-size"/>
-
+	
+	<filter root="/content/bmc/resources/education-products" mode="replace"/> 
+	<filter root="/content/bmc/resources/education-broad-roles" mode="replace"/>
+	<filter root="/content/bmc/resources/education-specific-roles" mode="replace"/>
+	<filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
+    <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
+    <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
+    
+    
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
     <!--<filter root="/content/bmc" mode="merge" />-->

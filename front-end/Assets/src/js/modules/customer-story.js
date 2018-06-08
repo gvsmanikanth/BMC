@@ -67,19 +67,20 @@
 					$('.js-customer-story-filter-select').change(function(e) {
 						activeSelectValue = $(this).attr("id");
 						activeSelect = $(this);
-						activeSelectOption = $(this).children(":selected").val();
+						activeSelectOption = $('#'+activeSelectValue+ ' option[selected="selected"]').val();
+						var selectedOption = activeSelectOption;
+						
+						if (history.pushState) {
+						  var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?filter='+activeSelectValue+'&value='+activeSelect.val();
+						  window.history.pushState({path:newurl},'',newurl);
+						}
+						
 						handler(e);
 					});
 					
 				},
 				filterValueDataSetup: function(filterDataArray) {
-					if (activeSelect && activeSelectValue) {
-						var selectedText = activeSelectValue;
-						var selectedOption = activeSelectOption;
-						if (history.pushState) {
-						  var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?Filter='+selectedText+'&Value='+selectedOption;
-						  window.history.pushState({path:newurl},'',newurl);
-						}
+					if (activeSelect) {
 						filterDataArray.push($(activeSelect).val()); 
 						$('.js-customer-story-filter-select').not(activeSelect).each(function( i, toDisable ){
 							$(toDisable).prop('selectedIndex', 0); 
@@ -97,18 +98,18 @@
 	//Check the parameter from the URL and match the Option value.
 	$(window).load(function() {
 		if(window.location.search) {
-			var selectedField = getUrlVars()["Filter"];
-			var selectedValue = getUrlVars()["Value"];
+			var selectedField = getUrlVars()["filter"];
+			var selectedValue = getUrlVars()["value"];
 			if(selectedField && selectedValue){
-				$(document).ready(function() {
+				//$(document).ready(function() {
 					$("#"+selectedField).find("option").each(function(){
 						if(this.value.toLowerCase() == decodeURIComponent(selectedValue.toLowerCase())){
-							$(this).attr("selected","selected"); 
+							$(this).prop('selected', true)
 							$('#'+selectedField).trigger('change');
 						}
 					});
 						
-				});
+				//});
 			}
 		} 
 	});
