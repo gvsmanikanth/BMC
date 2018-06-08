@@ -50,7 +50,7 @@ public class FieldSetModel extends WCMUsePojo{
     }
 
     public Boolean getIsTrialForm() {
-        //Getter class to pass Lead Capture value to sightly htl.
+        //Getter class to pass Lead Capture value to sitely htl.
         String LeadCapture = formContainerData.get("C_Lead_Offer_Most_Recent1").toString();
         Boolean isTrialForm=false;
         if(LeadCapture != null){
@@ -63,6 +63,29 @@ public class FieldSetModel extends WCMUsePojo{
         return isTrialForm;
     }
 
+    public Boolean getDisplayOptIn() {
+        //Getter class to pass SuppressOptIn value to sitely htl.
+        String suppressOptIn = formContainerData.getOrDefault("SuppressOptIn","false").toString();
+        Boolean displayOptIn=true;
+        if(suppressOptIn != null){
+            if(suppressOptIn.equalsIgnoreCase("true")){
+                displayOptIn=false;
+            }
+        }
+        return displayOptIn;
+    } 
+
+//    public Boolean getForceOptIn() {
+//        //Getter class to pass SuppressOptIn value to sitely htl.
+//        String c_OptIn = formContainerData.getOrDefault("C_OptIn","false").toString();
+//        Boolean forceOptIn=true;
+//        if(c_OptIn != null){
+//            if(c_OptIn.equalsIgnoreCase("true")){
+//                forceOptIn=false;
+//            }
+//        }
+//        return forceOptIn;
+//    }
 
     public String getPactSafeAgreementCopy() {
         String pactSafeAgreementCopy = service.getPactSafeAgreementCopy();

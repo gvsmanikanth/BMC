@@ -308,8 +308,8 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
 											checked="{Boolean}true"
-                                            fieldDescription="Force 'Opt In'"
-                                            text="Force 'Opt In'"
+                                            fieldDescription="Force 'Opt In' for Allowable Countries"
+                                            text="Force 'Opt In' for Allowable Countries"
                                             name="./C_OptIn"
 											uncheckedValue="{Boolean}false"
                                             value="{Boolean}true"
@@ -318,6 +318,21 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/foundation/form/hidden"
                                             name="./C_OptIn@TypeHint"
+                                            value="Boolean"/>
+                                    <SuppressOptIn
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            checked="{Boolean}false"
+                                            fieldDescription="Suppress 'Opt In' (for unsubscribe form etc.)"
+                                            text="Suppress 'Opt In' (for unsubscribe form etc.)"
+                                            name="./SuppressOptIn"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true"
+                                            wrapperClass="cmp-workflow-title"/>
+                                    <SuppressOptInTypeHint
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                            name="./SuppressOptIn@TypeHint"
                                             value="Boolean"/>
                                     <C_Contact_Me1
                                             jcr:primaryType="nt:unstructured"
