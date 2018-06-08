@@ -126,6 +126,61 @@ function addFilterToArrayProtoype() {
 			}
 		});
 
+//WEB-3374 - GDPR	
+	
+	if(typeof bmcMeta !== 'undefined' && bmcMeta.hasOwnProperty("form"))	{
+		//When OptIn is 'true' the form should not display the Opt In field for non-GDPR countries (and the checkbox should be checked)
+		//When switching from a GDPR country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
+		if(bmcMeta.form.optIn == 'true'){
+			$("#C_OptIn_group").hide();
+			
+			var checkSelection = function(){
+				//var status = $('option:selected', this).attr('data-id');
+				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
+				if(status == true){
+					if($("#C_OptIn_group").css('display') == "none"){
+						$("#C_OptIn_group").show();
+						$("#C_OptIn").attr("checked",false);
+						$("#C_OptIn").attr("type","checkbox");
+						$("#C_OptIn").attr("value","No");
+					}
+				}else{
+					$("#C_OptIn_group").hide();
+					$("#C_OptIn").attr("checked",true);
+					$("#C_OptIn").attr("type","hidden");
+					$("#C_OptIn").attr("value","Yes");
+				}
+			}
+			
+			//Check on page load.
+			checkSelection();
+			
+			$("select[name^='C_Country']").on('change', function() { 
+				checkSelection();
+			});
+			
+		}
+		else{
+			//when OptIn is 'false', I don't believe the front end needs to do anything to the field, just let it be visible and let the user choose according to preference.
+			$("#C_OptIn_group").show();
+			$("#C_OptIn").attr("checked",false);
+		}
+		
+		$("#C_OptIn").on('change',function(){
+			if($(this).is(':checked')){
+				$("#C_OptIn").attr("value","Yes");
+			}
+			else{
+				$("#C_OptIn").attr("value","No");
+			}
+		})
+	}	
+	
+	//Condition check on page load
+	
+			
+	
+
 	var getVideoHeightWidth = function(){
 
 		var objReturn = new Object();
@@ -512,13 +567,15 @@ function addFilterToArrayProtoype() {
 
 		});	//EO Fail
 
-		//Email marketting opt-in logic
-		$('#C_OptIn').prop("checked", false);	//reset on every change
-
-		if($(this).val().toLowerCase() != "usa")
-			$('#C_OptIn').parent().show();
-		else
-			$('#C_OptIn').parent().hide();
+// WEB-3374 - Remove 560 to 566.		
+		
+//		//Email marketting opt-in logic
+//		$('#C_OptIn').prop("checked", false);	//reset on every change
+//
+//		if($(this).val().toLowerCase() != "usa")
+//			$('#C_OptIn').parent().show();
+//		else
+//			$('#C_OptIn').parent().hide();
 
 		//Third party consent opt-in logic
 		$('#C_Third_Party_Consent1').val('');	//reset on every change
