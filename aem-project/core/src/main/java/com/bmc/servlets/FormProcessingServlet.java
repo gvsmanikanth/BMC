@@ -58,7 +58,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     public static final String TRIAL_DOWNLOAD = "Trial Download";
 
     private static final String FN_CONTACT_ME = "C_Contact_Me1";
-    //private static final String FN_OPT_IN = "C_OptIn";
+    private static final String FN_OPT_IN = "C_OptIn";
     private static final String FN_ELQ_FORM_NAME = "elqFormName";
     private static final String FN_FORM_NAME = "FormName";
     private static final String FV_YES = "Yes";
@@ -245,13 +245,11 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                     if (!value.equals(FV_YES) && pairs.get(FN_CONTACT_ME).equals(FV_YES))
                                         value = FV_YES;
                                     break;
-                                    //Commenting out the bit that forces C_OptIn to True for WEB-3374 GDPR
-                                //as the force opt in functionality is moving to the front end. 
-//                                case FN_OPT_IN:
-//                                    // FN_OPT_IN dialog field label = _Force_ Opt In
-//                                    if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
-//                                        value = FV_YES;
-//                                    break;
+                                case FN_OPT_IN:
+                                    // FN_OPT_IN dialog field label = _Force_ Opt In
+                                    if (!value.equals(FV_YES) && pairs.get(FN_OPT_IN).equals(FV_YES))
+                                        value = FV_YES;
+                                    break;
                                 default:
                                     break;
                             }
@@ -495,6 +493,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "formType",
                                 "leadDescription1",
                                 "emailid",
+                                FN_OPT_IN,
                                 "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
@@ -548,6 +547,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         properties.put("Submit", "Action");
                         properties.put("elqCookieWrite", "0");
                         properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
+                        // Removing the Force Opt In value from the initial defaults (WEB-3374 GDPR) as we rely on the front end for this now.
                         // properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
                         properties.put("CampaignID", properties.get("campaignid"));
                         properties.remove("campaignid");
