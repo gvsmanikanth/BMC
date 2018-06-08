@@ -493,7 +493,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "formType",
                                 "leadDescription1",
                                 "emailid",
-                                FN_OPT_IN,
+                                // no longer adding this to the array since GDPR changes
+                                // DFN_OPT_IN,
                                 "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
