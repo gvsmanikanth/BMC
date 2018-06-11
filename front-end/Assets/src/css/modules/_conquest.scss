@@ -235,10 +235,7 @@
 		@include media(breakpointMedium) {
 			font-weight: normal;
 		}
-		/*
-		.ie8 &, .ie9 & {
-			font-weight: normal !important;
-		}*/
+		
 	}
 
 	.conquest-table-cell-bmc {
@@ -273,19 +270,12 @@
 				display: none;
 			}
 
-			/*.ie8 & {
-				content: '';
-			}*/
 		}
 
 		img {
 			vertical-align: middle;
 			width: 25px;
 
-			/*.ie8 & {
-				height: 12px;
-				width: auto;
-			}*/
 		}
 
 		@include media(breakpointMedium) {
@@ -295,10 +285,6 @@
 			img {
 				width: auto;
 
-				/*.ie8 & {
-					height: 35px;
-					width: auto;
-				}*/
 			}
 		}
 	}
@@ -380,10 +366,6 @@
 	thead {
 		display: none; // hide table by default
 
-		/*.ie8 & {
-			display: block;
-			td { vertical-align: middle; }
-		}*/
 
 		@include media(breakpointMedium) {
 			display: table-header-group !important;

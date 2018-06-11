@@ -1,16 +1,9 @@
 .education{
  //Layout 
-  &.layout-full-bleed{
-    //padding: 0px;
-      //@include media(breakpointLarge) {
-        padding: 0;
-      //}
-  }
   
   .layout-primary{
      @include media(breakpointMedium) {
         padding-right: 3%;
-       // border-right: 1px solid color(aluminium);
         margin-right: 3%;
      }
      
@@ -30,11 +23,6 @@
   }
   
   .layout-secondary{
-    @include media(breakpointLarge) {
-   //   border-left: 1px solid color(aluminium);
-      //padding-left: 3%;
-    }
-    
     section{
      border-top: transparent;
      margin-top: 1em;
@@ -80,8 +68,6 @@
   // Course Overview
   .overview { 
     .flex-grid{
-    //  border: 1px solid red;
-    //padding: $gutterInPx;
     >div{
       margin-bottom:1.5em;
       &:last-child{
@@ -91,7 +77,6 @@
       .flex-item {
         box-sizing: border-box;
         margin-right: em(6 , (context: 8));
-        //margin-bottom: 2em;
         
         img, object, embed {
           width:100%;
@@ -106,7 +91,6 @@
          }
          
          @include media(breakpointMedium) {
-         //float:right;
          text-align:right;
          }
       }
@@ -120,7 +104,6 @@
       
     }
     .flex-grid{
-    //padding: $gutterInPx;
       .flex-item {
         box-sizing: border-box;
         margin-right: em(6 , (context: 8));
@@ -147,12 +130,10 @@
 .education-cards
 {
   @extend %cards-wrap;
- // padding-top: 1em;
   
   .flex-item{
     
     a{
-       //width:100%;
        display:block;
        word-wrap: break-word;
     } 
@@ -192,7 +173,6 @@
       }
     
     div{
-      //width:100%;
       height:100%;
       display: flex;
       flex-direction: column;
@@ -226,20 +206,15 @@
 }
 
 .filter-text{
-// .filter-search {
    position: relative;
    padding-bottom: 4em;
-  // @include media(breakpointLarge) {
-    // width: 200px;
-  // }
+
   .search-site {
      position: absolute;
      right: 0;
      top: 20px;
      width: 100%;
-    // @include media(breakpointLarge) {
-      // top: 0;
-    // }
+
   }
   .search-site-b {
     @include box-sizing();
@@ -256,14 +231,10 @@
       display: block;
       font-size: 21px;
       pointer-events: none;
-      //position: absolute;
       right: 8px;
       top: 6px;
       z-index: -1;
       float:right;
-      /*.ie8 & {
-        display: none;
-      }*/
     }
   
   .search-focus {
@@ -290,9 +261,6 @@
       @include transition();
     }
 
-    /*.ie8 & {
-      margin-top: 4px;
-    }*/
   }
   button {
     background-color: transparent;
@@ -310,22 +278,7 @@
       background-color: rgba(0,0,0,.08);
       border-left: 1px solid rgba(0,0,0,.1);
     }
-	/*
-    .ie8 & {
-      &:after {
-        @include icon();
-        color: color(darkGrey);
-        content: $iconSearch;
-        display: block;
-        font-size: 21px;
-        pointer-events: none;
-        position: absolute;
-        right: 8px;
-        top: 3px;
-        z-index: -1;
-      }
-    }
-   */
+
   }
 }
 }
@@ -363,7 +316,6 @@
              }
           }
           a{
-            //float: left;
              @include media(breakpointSmall) {
                 margin-top:1.1rem;
                 float:none;

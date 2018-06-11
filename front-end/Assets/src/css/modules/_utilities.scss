@@ -102,7 +102,6 @@
 		width: columns(5.8);
 
 		.page-campaign-landing & {
-			//margin: em(12 18) columns(0.4) em(12 18) -0.25em !important; // use of important keeps this simple; always use these margins when on a campaign landing page
      		margin: em(12) columns(0.4) em(12) -0.25em !important;	// use of important keeps this simple; always use these margins when on a campaign landing page
 			width: columns(5.6); //Changed 5.6 to 5.7
 		}
@@ -205,7 +204,6 @@
 }
 
 .home .learn-more {
-		//font-weight: 800; //WEB-607
 }
 
 .brand {
@@ -230,22 +228,11 @@
 	margin: em(10) 0 0 em(16);
 	width: 108px;
 
-	/*.ie8 & {
-		margin-top: em(5);
-		margin-left: em(15);
-		height: 50px;
-		min-width: 125px;
-	}*/
-
 	@include media(breakpointLarge) {
 		height: 45px;
 		margin: 1.1em 0 0;
 		width: 135px;
 
-		/*.ie8 & {
-			margin-top: em(18);
-			margin-left: -1 * em(12);
-		}*/
 	}
 }
 
@@ -253,11 +240,6 @@
 	height: 40px;
 	margin: em(16 , (context: 18)) 0 0; //BMC-527 em(16 18)
 	width: 120px;
-
-	/*.ie8 & {
-		height: 50px;
-		min-width: 140px;
-	}*/
 
 	@include media(breakpointLarge) {
 		height: 50px;
@@ -270,10 +252,8 @@
 	dt {
 		@include media(breakpointMedium) {
 			float: left;
-			//margin: 0 em(24 16) em(16 16) 0;
-			//min-width: em(110 16);
 			margin: 0 em(24) em(16) 0; //BMC - 527
-      min-width: em(110); //BMC -527
+			min-width: em(110); //BMC -527
 			width: columns(2);
 		}
 	}
@@ -359,7 +339,6 @@
 		color: #ffffff;
 		@include font-size(16);
 		text-decoration: none;
-		//font-weight: 800; //WEB-550
 
 		&:hover, &:active {
 			color: #00655E;
@@ -367,7 +346,6 @@
 
 		&.learn-more {
 			@include font-size(16);
-			//font-weight: 800; //WEB-607
 		}
 	}
 
@@ -375,7 +353,6 @@
 		color: #cfe5e4;
 		display: block;
 		@include font-size(16);
-		//margin-top: em(24 16);
 		margin-top: em(24); //BMC-527 Removed 16 from definition
 	}
 
@@ -578,7 +555,6 @@
     padding-right: 10px;
     position: relative;
     top: 10px;
-    //background-image: url("#{$imagesFolder}icon-slide-video.png");
     background-image: url("#{$imagesFolder}icon-slide-glass.png");
   }
 }

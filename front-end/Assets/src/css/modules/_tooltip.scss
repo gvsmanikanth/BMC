@@ -2,7 +2,6 @@
   background: color(curious-blue);
   color: #fff;
   cursor: help;
-  //font-size: 20px;
   padding: 2px;
   position: relative;
   text-align: center;
@@ -69,7 +68,6 @@
   height: 20px;
   left: 0;
   position: absolute;
-  //width: 100%;
   
   -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
      -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
@@ -91,9 +89,7 @@
   @include media(breakpointMedium) {
     left: 205px;
   }
- // margin-left: -13px;
   position: absolute;
- // width: 0;
 }
   
 .tooltip-wrapper:hover .tooltip,

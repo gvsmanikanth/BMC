@@ -20,16 +20,6 @@ $breakpoints: (
 	breakpointExtraExtraLarge:1500px
 );
 // 	breakpointDocumentWidth: $breakpointDocumentWidth,
-/*
-	breakpointTiny: 200px,
-	breakpointExtraSmall: 320px,
-	breakpointSmall: 480px,
-	breakpointMedium: 768px,
-	breakpointLarge: 960px,
-	breakpointExtraLarge: 1220px,
-	breakpointHuge: 1920px,
-	breakpointExtraHuge: 2156px
-*/
 // porting legacy variables for inline @media calls
 
 $documentWidth: $rowMaxWidth;

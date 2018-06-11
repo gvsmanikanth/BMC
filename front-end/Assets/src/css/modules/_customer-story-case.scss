@@ -60,10 +60,6 @@
 		padding: 1em 2em;
 		text-align: left;
 
-		/*.oldie & {
-			background-color: #000;
-		}*/
-
 		@include media(breakpointMedium) {
 			padding: 1.5em 1em;
 		}
@@ -237,7 +233,6 @@
 
 	.btn {
 		box-sizing: border-box;
-		//margin-bottom: 2em; //DXP-1154 - Removed extra margin. 
 		width: 100%;
 	}
 }
