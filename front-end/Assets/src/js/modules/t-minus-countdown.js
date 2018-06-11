@@ -87,7 +87,6 @@
       type : "post",
       dataType : "json",
       success: $.proxy(function( data ) {
-        //console.log(data['now']);
         nowTime = new Date(data['now']);
         diffSecs = Math.floor((targetTime.valueOf()-nowTime.valueOf())/1000);
         $(this).doCountDown($(this).attr('id'), diffSecs, 500);
@@ -174,7 +173,6 @@
           } , 1000);
       }
     }
-    //cb = $.data($this[0], 'callback')
     else if ($.data($this[0], 'callback')){
       if($.data($this[0], 'hangtime')){
         //phone's ringing dude.

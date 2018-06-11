@@ -109,7 +109,6 @@ function addFilterToArrayProtoype() {
 	// wrap selects in a decorator
 	$('select').wrap('<div class="decorator-select"></div>');
 
-	// addNthChildClasses();
 	addNthChildClasses();  //BMC-527 - Uncommented code.
 
 	// turn off browser default validation so we can perform our own
@@ -133,7 +132,6 @@ function addFilterToArrayProtoype() {
 		objReturn.width = $(window).width();
 		if(objReturn.width > 960)
 			objReturn.width = 960;
-		//objReturn.width = objReturn.width * .8;
 		objReturn.height = objReturn.width * 6 / 9;
 
 		return objReturn;
@@ -241,7 +239,6 @@ function addFilterToArrayProtoype() {
 		}
 
 		arrVideos.each(function(){
-			//resizePlayer(this);
 			var player = this;
 			if(player.type && player.type.indexOf("flash")>-1) {
 					var controlAreaHeight = 10;
@@ -303,7 +300,6 @@ function addFilterToArrayProtoype() {
 			setEqHeight(element2); // WEB-451 cleanup
 		});
 	}
-	//$(window).load(eqHeight());
 	
 	window.onload = eqHeight;
 
@@ -342,34 +338,6 @@ function addFilterToArrayProtoype() {
 		});
 	}
 
-	// // Countdown Timer
-	// try {
-		// if ($('.js-countdown').length) {
-			// var fullDate = new Date(),
-				// twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1),
-				// currentDate = twoDigitMonth + "/" + fullDate.getDate() + "/" + fullDate.getFullYear() + " " + fullDate.getHours() + ":" + fullDate.getMinutes() + ":" + fullDate.getSeconds();
-			// $('.js-countdown').countDown({
-				// targetDate: {
-					// 'day': 	05,
-					// 'month': 09,
-					// 'year': 2016,
-					// 'hour': 23,
-					// 'min': 	59,
-					// 'sec': 	59,
-					// 'localtime': currentDate
-				// },
-				// style: 'cloud-city',
-				// launchtarget: 'countdown',
-				// omitWeeks: 'true',
-				// id: '8139',
-				// event_id: ''
-			// });
-//
-			// $(".engage-prompt .banner").show(500);
-		// }
-	// } catch (e) {
-		// //console.log(e);
-	// }
 
 	// SVG Fallback
 	var u = document.getElementsByTagName("use");
@@ -447,23 +415,7 @@ function addFilterToArrayProtoype() {
 
 	//Get JSON data to build Country select options
 	//Going to hardcode countries in the CMS - Delete this later
-	/*
-	$.getJSON("/includes/countries.json", function(data) {
-		var newoptions = "";
-		if(data.length > 0)
-		{
-			newoptions = '';
-			for(var i=0; i<data.length; i++) {
-				newoptions += "<option value=\"" + data[i].v + "\">" + data[i].t + "</option>";
-				}
-		}
-		//Load Country select box
-		if(newoptions != '')
-		{
-			$("#C_Country").children().remove().end().append(newoptions);
-		}
-	});		//EO JSON request
-	*/
+
 
 	//Any change in selection affects State dropdown (and email marketting opt-in)
 	$('#C_Country').change(function(event) {
@@ -559,7 +511,6 @@ function addFilterToArrayProtoype() {
 	var value1 = "";
 	var name1 = "";
 
-	//strURL = strURL.toLowerCase();
 	arrayOfQSpairs = strURL.split("&");
 
 	var iT = 0;
@@ -574,120 +525,12 @@ function addFilterToArrayProtoype() {
 				try {
 					var value1 = arrayOfQSvalues[iZ + 1];
 					_Email_Source = value1;
-					//_EmailSource = value1;
-					//$("#Email_Source").val(_Email_Source);
 				}
 				catch(err) {
 					PostError(err, "", "failed in main.js 1st");
 				}
 			}
 
-			/*	Keeping the logic in case we need it in the future
-			if (name1 == "elq") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					//document.getElementById(key).value = _elq_guid;
-					if (_Prepop_From_QueryString == true) {
-						_Prepop_From_QueryString = true;
-					}
-					else {
-						_Prepop_From_QueryString = false;
-					}
-					_elq_guid = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 2nd");
-				}
-			}
-			else {
-				if (_Prepop_From_Cookie == true) {
-					_Prepop_From_Cookie = true;
-					_Prepop_From_QueryString = false;
-				}
-				else {
-					_Prepop_From_Cookie = false;
-					_Prepop_From_QueryString = false;
-				}
-			}
-
-			if (name1 == "progressiveprofiling") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					_ProgressiveProfiling = value1.toString().bool();
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 3rd");
-				}
-			}
-
-			if (name1 == "formscenerio") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					_FormScenerio = value1;
-				}
-				catch(err) {
-				}
-			}
-
-			if (name1 == "langid") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					_LangID = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 4th");
-				}
-			}
-
-			if (name1 == "debug") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					_DebugMode = value1.toString().bool();
-					//console.debug("x: " + _DebugMode);
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 5th");
-				}
-			}
-
-			if (name1 == "vid") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					_vid = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 6th");
-				}
-			}
-
-			if (name1 == "cmp") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					bmc_sem_settings.cmp = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 'cmp'");
-				}
-			}
-			if (name1 == "cid") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					bmc_sem_settings.cid = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 'cid'");
-				}
-			}
-			if (name1 == "tid") {
-				try {
-					var value1 = arrayOfQSvalues[iZ + 1];
-					bmc_sem_settings.tid = value1;
-				}
-				catch(err) {
-					PostError(err, "", "bmc_custom1.js; function getQueryStringParamValue(); 'tid'");
-				}
-			}
-			*/
 		}
 	}
 
@@ -815,33 +658,6 @@ $("a").productInterest();//WEB-2626
 	// to top right away
 	//if ( window.location.hash ) scroll(0,0);
 	// void some browsers issue
-	/*setTimeout( function() { scroll(0,0); }, 1);
 
-	$(function() {
-
-			// your current click function
-			$('a[href*="#"]:not([href="#"])').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-					var target = $(this.hash);
-					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-					if (target.length) {
-						$('html, body').animate({
-							scrollTop: target.offset().top
-						}, 1000);
-						return false;
-					}
-				}
-			});
-
-			// *only* if we have anchor on the url
-			if(window.location.hash) {
-
-					// smooth scroll to the anchor id
-					$('html, body').animate({
-							scrollTop: $(window.location.hash).offset().top + 'px'
-					}, 1000, 'swing');
-			}
-
-	});*/
 
 });// document ready

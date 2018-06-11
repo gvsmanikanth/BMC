@@ -50,13 +50,7 @@ $(document).ready(function () {
 			scrollTop: $("#section1").offset().top -  50
 		},500,"linear");
 	});
-	
-	/*$(".page-homepage-e .carousel-wrap .carousel").each(function(){
-		$(this).find("li").each(function(){
-			var bubbleElem = $(this).find('.circle');
-			bubbleElem.css({'right':(bubbleElem.attr('data-percentage-right'))+'%','top':(bubbleElem.attr('data-percentage-top'))+'%'});
-		});
-	});*/
+
 	
 	$(".page-homepage-e .carousel-wrap .carousel").each(function(){
 		var bubbleElem = $(this).find('.circle');

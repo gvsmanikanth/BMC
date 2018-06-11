@@ -58,7 +58,6 @@
 			return isLearningPath;
 		};
 		
-		//console.log(filterListItemsBaseedOnCriteria(arr, { age: 21, color: 'blue' }));
 		EventsList.prototype.filterListItemsBaseedOnCriteria = function(arr, criteria) {
 			  return arr.filter(function(obj) {
 			    return Object.keys(criteria).every(function(c) {
@@ -77,7 +76,6 @@
 				
 				
 				//Get all featured items
-				//var arrFeaturedItems = self.list.filter(self.filterItemsBasedOnMonth);
 				
 				var months = self.filterListItemsBaseedOnCriteria(self.filteringOptions,{name:"month"});
 				if(months && months.length > 0)
@@ -145,7 +143,6 @@
 		// The render function will show the appropriate content of out page.
 		$(window).on('hashchange', function() {
 			if (isListPage()) {
-				//filterListObject.updateFilterDropdownOnHashChange(decodeURI(window.location.hash));
 				filterListObject.render(decodeURIComponent(window.location.hash));
 			};
 		});

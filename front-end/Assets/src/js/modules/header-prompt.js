@@ -65,12 +65,9 @@ jQuery(function($) {
 				setHeaderPromptCookie();
 			}
 			
-			// if ($('.header-prompt-static').length){
-				// initializeCountdownTimer();
-			// }
 
 		} catch (e) {
-			//console.log(e);
+			
 		}
 	};
 	

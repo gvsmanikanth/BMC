@@ -59,12 +59,10 @@
 				if(pFilter[0].id == "products"){ 
 				$('#topics').val(0);
 				self.updateFilters("topics",0);
-				//scroll();
 			}
 			else if (pFilter[0].id == "topics"){ 
 				$('#products').val(0);
 				self.updateFilters("products",0);
-				//scroll();
 			}
 			
 			self.onFilterSelect_org(pFilter);
