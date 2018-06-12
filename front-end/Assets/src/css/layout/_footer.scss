@@ -24,7 +24,8 @@
 }
 
 .footer-logo {
-	background-image:url('logo_footer_msg.png');
+	@include svg-image(logo_footer_msg); 
+	--background-image:url('logo_footer_msg.png');
 	background-position: left 14px;
 	background-repeat: no-repeat;
 	background-size: 195px 50px;
