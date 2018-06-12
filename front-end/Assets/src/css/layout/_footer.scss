@@ -28,14 +28,14 @@
 	--background-image:url('logo_footer_msg.png');
 	background-position: left 14px;
 	background-repeat: no-repeat;
-	background-size: 195px 50px;
+	background-size: 200px 50px;
 	height: 75px;
 	margin-bottom: em(16);
 
-	> a {
-		display: block;
+	> a { 
+		display: block; 
 		height: 100%;
-		width: 135px;
+		--width: 135px;
 		text-indent: -9999em;
 	}
 
