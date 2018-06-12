@@ -463,6 +463,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             logger.trace(property + ": " + value);
             return value;
         }
+
         private final Node node;
 
         FormData(SlingHttpServletRequest request) {
@@ -497,7 +498,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "formType",
                                 "leadDescription1",
                                 "emailid",
-                                FN_OPT_IN,
+                                // no longer adding this to the array since GDPR changes
+                                // DFN_OPT_IN,
+                                "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
                                 "recipient",
@@ -577,7 +580,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         properties.put("Submit", "Action");
                         properties.put("elqCookieWrite", "0");
                         properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
-                        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
+                        // Removing the Force Opt In value from the initial defaults (WEB-3374 GDPR) as we rely on the front end for this now.
+                        // properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
                         properties.put("CampaignID", properties.get("campaignid"));
                         properties.remove("campaignid");
                         properties.put("elqSiteID", elqSiteID);

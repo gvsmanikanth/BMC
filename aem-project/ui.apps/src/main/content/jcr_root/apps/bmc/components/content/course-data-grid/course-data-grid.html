@@ -34,13 +34,14 @@
             </div>
           </div>
          </sly>
-           <sly data-sly-test="${pageProperties['course-delivery']}">
+           <sly data-sly-test="${courseData.courseDelivery}">
+          
            <div class="two-up">
             <div>
                 <h3>${'Course Delivery:' @ i8n}</h3>
             </div>
             <div>
-                <p>${pageProperties['course-delivery']} | ${pageProperties['course-duration']} ${'hours' @ i18n }</p>
+                <p>${courseData.courseDelivery} | ${pageProperties['course-duration']} ${'hours' @ i18n }</p>
             </div>
             </div>
             </sly>
