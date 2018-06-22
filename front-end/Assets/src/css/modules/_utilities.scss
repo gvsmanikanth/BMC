@@ -296,7 +296,8 @@
 		min-height: 1px;
 		width: 100%; //BMC-527 Added default width 100%;
 		padding: 1.5*$gutterInPx $gutterInPx;
-		width: columns(10);
+		width: columns(8);
+		
 	}
 }
 
