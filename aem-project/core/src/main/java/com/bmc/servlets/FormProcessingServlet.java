@@ -204,7 +204,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
                 purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
-            response.sendRedirect(purlPage);
+            if(form.properties.get("activePURLRedirect").equals("true")){
+            	response.sendRedirect(form.properties.get(PURL_PAGE_URL));
+            }else{
+            	response.sendRedirect(purlPage);
+            }
+           // response.sendRedirect(purlPage);
         }
     }
 
@@ -499,7 +504,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
                                 "recipient",
-                                "bypassOSB"
+                                "bypassOSB",
+                                "activePURLRedirect",
+                                "activePURLPattern"
                         };
                         Arrays.stream(formProperties).forEach(s -> properties.put(s, getNodeProperty(s)));
                         properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
@@ -540,6 +547,31 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
                             purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage.replace(".html", "") + ".PURL" + formGUID + ".html";
                         }
+                        //WEB-2734: PURL/Thank You Page Handling - Edge Cases (Active PURL pattern)
+                        if(properties.get("activePURLRedirect").equals("true")){
+                        	Pattern p = Pattern.compile("(?<=\\$\\{)(.*?)(?=\\})"); // regular expression to find the string of pattern "${xxx}" Ex: ?first_name=${C_FirstName}&last_name=${C_LastName}
+                        	Matcher m = p.matcher(properties.get("activePURLPattern"));
+                        	StringBuffer activePURLPattern = new StringBuffer();
+                        	// Replace the matched pattern with the request.getParameter of matched pattern 
+                        	while(m.find()){
+                        		try{
+	                        			for (int i = 1; i <= m.groupCount(); i++) {
+	                        				// m.group(i) is C_FirstName and C_LastName in this Ex: ?first_name=${C_FirstName}&last_name=${C_LastName}
+	                        			    if(request.getParameter(m.group(i))!=null ){
+	                        				   m.appendReplacement(activePURLPattern, URLEncoder.encode(request.getParameter(m.group(i)),"UTF-8"));
+	                        				   }else{
+	                        					m.appendReplacement(activePURLPattern,"");
+	                        				   }
+	                        			}
+                        			}catch(Exception e){
+                        				logger.error(e.getMessage());
+                        			}
+                        	}
+                        	logger.info("request parameter value of activePURLPattern"+activePURLPattern.toString().replaceAll("[${}]*", ""));
+                        	purlPageUrl = purlPageUrl +activePURLPattern.toString().replaceAll("[${}]*", "");
+                        }
+                        
+                        
                         properties.put(PURL_PAGE_URL, purlPageUrl);
                         properties.remove(JCR_PURL_PAGE_URL);
 
