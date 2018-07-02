@@ -41,7 +41,8 @@ public class OfferingMicro {
     private HashMap<String,String> resourceProps;
     private List<HashMap> productAvailabilityList;
     private Boolean isModal = false;
-    private String videoID = "";
+    private String linkURL = "";
+    private String linkType="";
     private List<String> PROP_LIST = new ArrayList<>(Arrays.asList("datasheetIconImage","datasheetPicker","datasheetPrefix","assetIconImage","assetPrefix","assetPicker","primaryParentOfferingPage","productAvailability","productAvailabilityListPicker","productName","linkText","shortDescription","anchorTagText"));
 
     @PostConstruct
@@ -139,7 +140,8 @@ public class OfferingMicro {
                     if(itemResource != null) {
                         UrlResolver itemInfo = UrlResolver.from(itemResource);
                         LinkInfo linkInfo = itemInfo.getLinkInfo(mainNode.getProperty(pickerName).getValue().getString());
-                        videoID = linkInfo.getHref();
+                        linkURL = linkInfo.getHref();
+                        linkType=linkInfo.getType().toString();
                         resourceProps.put(key, (mainNode.hasProperty(key) && (mainNode.getProperty(key).getValue().getString() != "")) ? mainNode.getProperty(key).getValue().getString() : linkInfo.getText());
                     }
                 } else {
@@ -147,7 +149,7 @@ public class OfferingMicro {
                 }
             }
         } catch (RepositoryException e) {
-            logger.error("ERROR", e.getMessage());
+            logger.error("Offering Micro ERROR", e.getMessage());
         }
 
     }
@@ -169,8 +171,13 @@ public class OfferingMicro {
         return itemDescription;
     }
 
-    public String getVideoID() {
-        return videoID;
+    public String getLinkURL() {
+        return linkURL;
     }
+    public String getLinkType()
+    {
+    	return linkType;
+    }
+   
 
 }
