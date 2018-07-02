@@ -45,6 +45,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Configuration Managers"
         />
+    <edu-specific-roles-217407209
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Consultant"
+        />
     <edu-specific-roles-163470675
         jcr:primaryType="nt:unstructured"
         jcr:title="Data Center Leads"
@@ -113,6 +117,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Service Delivery Professionals"
        />
+    <edu-specific-roles-217407119
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Support Engineers"
+        />  
     <edu-specific-roles-191047726
         jcr:primaryType="nt:unstructured"
         jcr:title="Staff Users"
