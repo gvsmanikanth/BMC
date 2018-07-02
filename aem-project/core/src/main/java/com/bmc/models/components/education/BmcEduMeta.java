@@ -131,7 +131,7 @@ public class BmcEduMeta {
                     newItem.setVersions(versions);
                     newItem.setProducts(products);
                     newItem.setName(page.getPageTitle());
-                    newItem.setUrl(urlResolver.getLinkInfo(page.getPath()).getHref());
+                    newItem.setUrl(urlResolver.getLinkInfo(page.getPath()).getHref().replace(page.getAbsoluteParent(3).getPath(),""));
                     setListItems(newItem);
                     itemIndex++;
                 }
