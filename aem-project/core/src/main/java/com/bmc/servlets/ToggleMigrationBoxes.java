@@ -54,6 +54,8 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
         if(request.getRequestParameter("passphrase").toString().equals("^Nf6pj;A.,XDpZpM8]F;cKUd2.6U")) {
             try {
                 out("Starting to "+request.getRequestParameter("action").toString());
+                String path = request.getRequestParameter("path").toString();
+                
                 if (request.getRequestParameter("action").toString().equals("prime")) {
                     Session session = resolver.adaptTo(Session.class);
                     QueryManager queryManager = null;
@@ -93,7 +95,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     QueryManager queryManager = null;
                     queryManager = session.getWorkspace().getQueryManager();
                     Query resourceQuery = queryManager.createQuery("SELECT * FROM [nt:unstructured] AS s " +
-                                    "WHERE ISDESCENDANTNODE(s,'/content/bmc') " +
+                                    "WHERE ISDESCENDANTNODE(s,'"+ path +"')" +
                                     "AND NAME() = 'OriginalPageLink' AND s.[isRedMigrationBox]='true'",
                             Query.JCR_SQL2);
                     QueryResult resourceResult = resourceQuery.execute();
@@ -104,8 +106,9 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                         Node redBoxNode = resourceIterator.nextNode();
                         if(verbose) logger.info("(Disable) Examining "+redBoxNode.getPath());
                         if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("isRedMigrationBox").getString().equals("true") && redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
-                            redBoxNode.setProperty("sling:resourceType","");
-                            if(verbose) logger.info("(Disable) Removed sling:resourceType");
+                            //redBoxNode.setProperty("sling:resourceType","");
+                        	redBoxNode.remove();
+                            if(verbose) logger.info("(Disable) Removed redBoxNode.getName() node");
                             recordUpdateCounter++;
                             totalRecordsModified++;
                             if (recordUpdateCounter>100) {
@@ -124,7 +127,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                     QueryManager queryManager = null;
                     queryManager = session.getWorkspace().getQueryManager();
                     Query resourceQuery = queryManager.createQuery("SELECT * FROM [nt:unstructured] AS s " +
-                                    "WHERE ISDESCENDANTNODE(s,'/content/bmc') " +
+                                    "WHERE ISDESCENDANTNODE(s,'"+ path +"')" +
                                     "AND NAME() = 'OriginalPageLink' AND s.[isRedMigrationBox]='true'",
                             Query.JCR_SQL2);
                     QueryResult resourceResult = resourceQuery.execute();
