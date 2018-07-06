@@ -4,7 +4,16 @@
 <sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
 
 <div class="page-campaign-landing">
-
+    <sly data-sly-test="${properties.isEventForm}">
+	  <section class="layout-full-bleed layout-full-bleed-image">
+	         <div class="layout-inner-wrap py2">
+	            <h1>
+	                <span class="at-element-marker"><span class="black">${properties.headerText @ context='html'}</span></span>
+	            </h1>
+	        </div>
+	    </section>
+	</sly>
+    <sly data-sly-test="${!properties.isEventForm}">
     <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('${bgImg @ context='uri'}');">
         <!-- has foreground image -->
         <div data-sly-test="${fgImg}" class="layout-inner-wrap">
@@ -36,5 +45,5 @@
             </h1>
         </div>
     </section>
-
+    </sly>
 </div>

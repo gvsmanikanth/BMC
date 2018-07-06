@@ -19,6 +19,7 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
+    <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>
 

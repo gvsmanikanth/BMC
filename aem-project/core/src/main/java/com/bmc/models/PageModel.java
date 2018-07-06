@@ -151,7 +151,7 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
 
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setPageMetaFromForm(bmcMeta, form);

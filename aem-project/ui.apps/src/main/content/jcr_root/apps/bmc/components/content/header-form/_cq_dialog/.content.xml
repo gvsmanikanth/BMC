@@ -99,6 +99,13 @@
                                     </column>
                                 </items>
                             </image>
+							<isEventForm
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Form header with out banner image"
+                                name="./isEventForm"
+                                text="Is Event Form"
+                                value="true"/>
                         </items>
                     </column>
                 </items>

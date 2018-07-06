@@ -1,8 +1,9 @@
 <sly data-sly-use.footerCopyRight="com.bmc.models.components.footers.FooterModel"/>
 <footer class="layout-footer">
-        <div class="layout-inner-wrap">
+        <div class="layout-inner-wrap at-element-marker">
             <div class="footer-logo">
-                <a href="/">BMC</a>
+               <sly data-sly-test="${footerCopyRight.footerLogoText}">${footerCopyRight.footerLogoText @context='html'}</sly>
+			   <a href="/">BMC</a>
             </div>
             <p class="legal-copyright">
                 <sly data-sly-test="${footerCopyRight.copyRightText}">${footerCopyRight.copyRightText @context='html'}</sly>

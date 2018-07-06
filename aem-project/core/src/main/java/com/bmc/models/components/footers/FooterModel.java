@@ -36,6 +36,9 @@ public class FooterModel {
 
     private String copyRightText;
 
+    private String footerLogoText;
+    
+   
     @Inject
     @Optional
     private String nodeName;
@@ -66,6 +69,10 @@ public class FooterModel {
                 if(footerNode.hasProperty("copyRightText")){
                     copyRightText = footerNode.getProperty("copyRightText").getValue().getString();
                 }
+                
+                if(footerNode.hasProperty("footerLogoText") && currentPage.getTemplate().getName().equals("form-event-page-template")){
+                	footerLogoText = footerNode.getProperty("footerLogoText").getValue().getString();
+                }
             }
         } catch (RepositoryException e) {
             e.printStackTrace();
@@ -75,7 +82,10 @@ public class FooterModel {
     public String getCopyRightText() {
         return copyRightText;
     }
-
+    public String getFooterLogoText() {
+        return footerLogoText;
+    }
+  
     public List<Resource> getChildResources() {
         try {
             Resource nodeResource = resourceResolver.getResource(footerNode.getNode(nodeName).getPath());

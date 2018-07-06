@@ -9,6 +9,13 @@
                     <column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
                             <copyright jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/foundation/form/textarea" acs-commons-nested="NODE_STORE" fieldLabel="Copyright Text" name="./copyRightText" />
+                            <footerLogoText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                acs-commons-nested="NODE_STORE"
+                                fieldDescription=""
+                                fieldLabel="Footer Logo Text"
+                                name="./footerLogoText"/>
                         </items>
                     </column>
                 </items>
