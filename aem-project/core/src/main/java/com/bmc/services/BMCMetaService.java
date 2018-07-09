@@ -37,6 +37,7 @@ public class BMCMetaService {
         environment = PropertiesUtil.toString(config.get("environment"), "");
         issueEnvironment = PropertiesUtil.toString(config.get("issueEnvironment"), "");
         issuePath = PropertiesUtil.toString(config.get("issuePath"), "");
+        draftIssuePath = PropertiesUtil.toString(config.get("draftIssuePath"), "");
     }
 
 }
