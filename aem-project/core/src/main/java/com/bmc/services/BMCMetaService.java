@@ -29,8 +29,12 @@ public class BMCMetaService {
     public String getIssuePath() {
         return issuePath;
     }
+    public String getDraftIssuePath() {
+        return draftIssuePath;
+    }
 
     private String issuePath;
+    private String draftIssuePath;
 
     @Activate
     public void activate(Map<String, String> config) {
