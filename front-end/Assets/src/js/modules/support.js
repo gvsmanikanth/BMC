@@ -7,6 +7,7 @@ var Support = Support || {};
 
 	var supportEnv,
 		supportPath,
+		draftSupportPath,
 		alertMessages,
 		issuesContainer = $('.js-issues-container'),
 		contractSelector = $('.js-contracts-select'),
@@ -382,9 +383,13 @@ var Support = Support || {};
 
 							supportEnv = (typeof bmcMeta.support.issueEnvironment !== 'undefined') ? bmcMeta.support.issueEnvironment : "";
 							supportPath = (typeof bmcMeta.support.issuePath !== 'undefined') ? bmcMeta.support.issuePath : "";
+							draftSupportPath = (typeof bmcMeta.support.draftIssuePath !== 'undefined') ? bmcMeta.support.draftIssuePath : "";
 						}
-
-						cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, supportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						if(issue.status == "Draft"){
+							cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, draftSupportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						}else{
+							cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, supportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						}	
 					} else {
 						cells.push('<td>' + issueOutput[key] + '</td>');
 					}
