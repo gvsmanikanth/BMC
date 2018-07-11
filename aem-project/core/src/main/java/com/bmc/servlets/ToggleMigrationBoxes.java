@@ -105,7 +105,7 @@ public class ToggleMigrationBoxes extends SlingSafeMethodsServlet {
                         totalRecordCount++;
                         Node redBoxNode = resourceIterator.nextNode();
                         if(verbose) logger.info("(Disable) Examining "+redBoxNode.getPath());
-                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("isRedMigrationBox").getString().equals("true") && redBoxNode.getProperty("sling:resourceType").getString().equals("bmc/components/content/text")) {
+                        if(redBoxNode.getName().equals("OriginalPageLink") && redBoxNode.getProperty("isRedMigrationBox").getString().equals("true")) {
                             //redBoxNode.setProperty("sling:resourceType","");
                         	redBoxNode.remove();
                             if(verbose) logger.info("(Disable) Removed redBoxNode.getName() node");
