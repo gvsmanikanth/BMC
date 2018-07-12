@@ -1,10 +1,14 @@
 package com.bmc.services;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -28,11 +32,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bmc.components.reports.VideoReportDataItem;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.AssetManager;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
+import com.google.gson.Gson;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -63,6 +70,8 @@ public class VideoReportCSVGenService {
 	
 	private static final String BASE = "/content/bmc/videos";
 	
+	private String DAM_LOCATION = "/content/dam/bmc/reports/";
+	
     private static  ArrayList<VideoReportDataItem> list = new ArrayList<VideoReportDataItem>();
        	
     private String[] TableNames = {"Page Path","Name","Modified Date","Modified By",
@@ -76,7 +85,7 @@ public class VideoReportCSVGenService {
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport(Boolean report, String fileName) {
+	    public Workbook generateDataReport( Boolean report,String fileName) {
 	    	logger.info("Inside the class generateDataReport--- START");
 	    	
 	    	try
@@ -106,7 +115,13 @@ public class VideoReportCSVGenService {
   		return this.TableNames;
   	}
 
-
+  	/*
+     * getJCRData()
+     * Returns a Arraylist of VideoReportDataItem object
+     * This method fetches the data from the JCR using Query BUilder API 
+     * IT takes the Root folder path as the only argument- Type-String
+     * 
+     */
 	public ArrayList<VideoReportDataItem> getJCRData() {
 			try 
 			{ 			
@@ -279,7 +294,12 @@ public class VideoReportCSVGenService {
 	
 	 
   
-	 	
+	/*
+     * write()
+     * Writes the data into the Excel file.
+     * 
+     * 
+     */		
 	 public Workbook write() throws IOException 
 	 {
 		 logger.info("Generating the Report");
@@ -324,43 +344,6 @@ public class VideoReportCSVGenService {
 			 return workbook;    
 	 }
 	 
-	 public String getOutputList(String reportLocation)
-	 	{
-		 	String forLoop1 = null;
-		 	String mainTable = null;
-		    String tableHeader = "<table style='font-size: 12px;border: 2px solid #000; font-family: Times New Roman, Times, serif;'>"+"<thead>"+"<tr style='border: 1px solid #CCC;'>";
-		    for(int i=0;i<TableNames.length;i++)
-		    {
-		     forLoop1 = forLoop1 + "<th style='background-color: #748A8B; color: #FFF;font-weight: bold;'>" +TableNames[i].toString()+ "</th>";
-			}
-			tableHeader = tableHeader + forLoop1 +"</tr>"+"</thead>"+"<tbody>";
-		    
-		    for(int i=0;i<list.size();i++)
-		    {
-		    	VideoReportDataItem dataItem = new VideoReportDataItem();
-		    	dataItem = list.get(i);	
-		    	mainTable = mainTable +""
-		    			+ "<tr style='border: 1px solid #000;'>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getPage_Path()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getPage_Title()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getModified_Date()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getModified_By()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getPublished_Date()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getPublished_By()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getTemplateType()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getvID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getTitle_of_the_Video()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getDescription()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getOverlayURL()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getOverlayText()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getNavTitle()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+dataItem.getLastReplicationAction()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"
-		    	+"</tr>";
-		    }		    			  		    			    
-		    String outputString = tableHeader+ mainTable +"</tbody>"+"</table>";
-		    logger.info("FINALOUTPUT " +outputString);
-		    return outputString;
-	 	}
 	 
 	 /*
 	  * This method generates a custom Predicate based on user input.
@@ -389,4 +372,122 @@ public class VideoReportCSVGenService {
 	     // can be done in map or with Query methods
 	    
 	 }
+	 /*
+	  * createJSON()
+	  * This method generates a JSON from the list of FormREportDataItem. 
+	  */
+	 public String createJSON()
+	 {
+		 Gson gson = new Gson();
+		 String json = gson.toJson(list);
+		 if(!json.equals(null))
+		 {
+			 return json;
+		 }else
+		 {
+			 return null;
+		 }
+	 }
+	 
+	 /*
+	  * writeExceltoDAM()
+	  * This method writes the excel workbook into the DAM at a specified/predefined location. 
+	  * The workbook is passed into a ByteArrayOutputStream to be converted to a byte Array.
+	  * AssetManager API is used to carry the DAM save.
+	  */
+	 public String writeExceltoDAM(Workbook workbook,String reportName)throws IOException{
+			logger.info("Saving the file in the DAM");
+			//Invoke the adaptTo method to create a Session 
+			Map<String, Object> param = new HashMap<String, Object>();
+			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+			ResourceResolver resourceResolver = null;
+			try {
+					resourceResolver = resolverFactory.getServiceResourceResolver(param);				
+				} 
+			catch (Exception e) {
+					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+					}
+				String filename = getFileName(reportName)+".xls";			    
+			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
+			  
+			    try {
+			        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+			        workbook.write(bos);
+			        byte[] barray = bos.toByteArray();
+			        InputStream is = new ByteArrayInputStream(barray);
+			        String newFile = DAM_LOCATION + filename;
+				    Asset excelAsset = manager.createAsset(newFile, is, "application/vnd.ms-excel", true);	
+				    if(excelAsset != null) {
+				    	
+				        return newFile;
+				    } else {
+				        return null;
+				    } 
+			    } catch (IOException e) {
+			        e.printStackTrace();
+			    }
+				return DAM_LOCATION+filename;
+
+		   	   
+	 	}
+	 
+	 /*
+	  * writeJSONtoDAM()
+	  * This method writes the JSON file into the DAM at a specified/predefined location. 
+	  * The workbook is passed into a InputStream to be converted to a character sequence of bytes.
+	  * AssetManager API is used to carry the DAM save.
+	  * 
+	  */
+	 public String writeJSONtoDAM(String reportName) throws IOException
+	 	{
+		 logger.info("Saving the file in the DAM");
+			//Invoke the adaptTo method to create a Session 
+			Map<String, Object> param = new HashMap<String, Object>();
+			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+			ResourceResolver resourceResolver = null;
+			try {
+					resourceResolver = resolverFactory.getServiceResourceResolver(param);				
+				} 
+			catch (Exception e) {
+					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+					}
+			String filename = getFileName(reportName)+".json";			 			 
+			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
+			   InputStream isStream = 
+					   new ByteArrayInputStream(createJSON().getBytes());
+
+			    Asset excelAsset = manager.createAsset(DAM_LOCATION + filename, isStream, "application/json", true);
+		
+	 	    if(excelAsset != null)
+	 	    {
+	 	    	return DAM_LOCATION+filename;
+	 	    }
+	 	    else
+	 	    {
+	 		return null;
+	 	    } 
+	 	}
+		
+	
+
+	public String getFileName(String reportName)
+		{
+		 
+			return reportName+"_" +getCurrentDate();
+		}
+	
+	/*
+	 * getCurrentDate()
+	 * The current Date and Time is returned.
+	 * SimpleDateFormat is used.
+	 * 
+	 */
+	 public String getCurrentDate()
+		 {
+			 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+			 Date today = Calendar.getInstance().getTime();  
+			 String date = dateFormat.format(today).replace("/", "_");
+			 date = date.replace(":", "_");
+			return  date.replace(" ", "_"); //2016/11/16 12:08:43
+		 }
 }

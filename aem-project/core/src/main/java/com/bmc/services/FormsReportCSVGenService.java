@@ -1,22 +1,28 @@
 package com.bmc.services;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-
+import java.beans.Encoder;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.Session;
-import javax.jcr.Value;
-
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -26,27 +32,23 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.bmc.components.Page;
 import com.bmc.components.reports.FormsReportDataItem;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
-
-
-
-
-
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.AssetManager;
 import com.day.cq.search.Query;
 //QUeryBuilder APIs
 import com.day.cq.search.QueryBuilder; 
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.search.result.Hit; 
+import com.google.gson.Gson;
 
 @Component(
         label = " CSV Generator Service for Form Data",
@@ -67,6 +69,8 @@ public class FormsReportCSVGenService {
 	@Reference
     private QueryBuilder builder;
 	
+	private String DAM_LOCATION = "/content/dam/bmc/reports/";
+	
    
     private static  ArrayList<FormsReportDataItem> list = new ArrayList<FormsReportDataItem>();
        
@@ -76,13 +80,15 @@ public class FormsReportCSVGenService {
 			"Product Line", "Lead Offer", "Product Interest","External Activity Type", "External Activity", "External Asset Name", "Is Updated","Created Date","forceOptIn"};	
 	
 	 /*
-	    * Retrieves forms data from the JCR at /content/bmc/language-masters/en/forms
+	  	* generateReport()
+	    * Retrieves forms data from the JCR at path specified by fileLocation parameter.
 	    * The filter argument specifies one of the following values:
-	    *    
-	    *
-	    * The report argument specifies whether to generate a custom report based on the Result Set
+	    * The fileLocation specifies the root path  
+	    * The report argument specifies whether to generate a custom report based on the Result Set.
+	    * Returns a Workbook item.
+	    * 
 	    */
-	    public Workbook generateFormDataReport(Boolean report, String fileName,String fileLocation) {
+	    public Workbook generateReport(Boolean report, String fileName,String fileLocation) {
 	    	logger.info("Inside the class generateFormDataReport--- START");
 	    	
 	    	try
@@ -106,13 +112,27 @@ public class FormsReportCSVGenService {
 	       return workbook;
 	   }
 	
-
+	    /*
+		    * Returns a list of the TableName
+		    * The filter argument specifies one of the following values:
+		    *    
+		    *
+		 
+		    
   	public String[] getTableNames()
   	{
   		return this.TableNames;
   	}
+*/
 
-
+	    /*
+	     * getJCRFormsData()
+	     * Returns a Arraylist of FOrmReportDataItem object
+	     * This method fetches the data from the JCR using Query BUilder API 
+	     * IT takes the Root folder path as the only argument- Type-String
+	     * 
+	     */
+	
 	public ArrayList<FormsReportDataItem> getJCRFormsData(String fileLocation) {			
 				logger.info("getJCRDATA ");	 
 			try 
@@ -146,7 +166,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String emailID  = prop.getValue().getString();
-										        		logger.info("email ID : "+emailID);			
+										        		//logger.info("email ID : "+emailID);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setEmail_ID(emailID);
 										        	}
@@ -154,7 +174,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String jcrCreated  = prop.getValue().getString();
-										        		logger.info("jcr Created : "+jcrCreated);			
+										        		//logger.info("jcr Created : "+jcrCreated);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setCreated_Date(jcrCreated);
 										        	}
@@ -170,7 +190,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String elqCampaignID  = prop.getValue().getString();
-										        		logger.info("elqoqua CampaignID : "+elqCampaignID);			
+										        		//logger.info("elqoqua CampaignID : "+elqCampaignID);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setEloqua_Campaign_ID(elqCampaignID);
 										        	}
@@ -178,7 +198,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String formid  = prop.getValue().getString();
-										        		logger.info("Elq form id : "+formid);			
+										        		//logger.info("Elq form id : "+formid);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setEloqua_Form_ID(formid);
 										        	}
@@ -186,7 +206,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String formLayout  = prop.getValue().getString();
-										        		logger.info("formLayout : "+formLayout);			
+										        		//logger.info("formLayout : "+formLayout);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_FieldSet(formLayout);
 										        	}
@@ -194,7 +214,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String migration_content_id  = prop.getValue().getString();
-										        		logger.info("migration_content_id : "+migration_content_id);			
+										        		//logger.info("migration_content_id : "+migration_content_id);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_FieldSet_ID(migration_content_id);
 										        	}
@@ -202,7 +222,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String ex_assettype  = prop.getValue().getString();
-										        		logger.info("ex_assettype : "+ex_assettype);			
+										        		//logger.info("ex_assettype : "+ex_assettype);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setExternal_Activity_Type(ex_assettype);
 										        	}
@@ -210,7 +230,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String ex_act  = prop.getValue().getString();
-										        		logger.info("ex_act : "+ex_act);			
+										        		//logger.info("ex_act : "+ex_act);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setExternal_Activity(ex_act);
 										        	}
@@ -218,7 +238,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String ex_assetname  = prop.getValue().getString();
-										        		logger.info("ex_assetname : "+ex_assetname);			
+										        		//logger.info("ex_assetname : "+ex_assetname);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setExternal_Asset_Name(ex_assetname);
 										        	}
@@ -226,7 +246,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String C_OptIn  = prop.getValue().getString();
-										        		logger.info("C_OptIn : "+C_OptIn);			
+										        		//logger.info("C_OptIn : "+C_OptIn);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForceOptIn(C_OptIn);
 										        	}
@@ -234,7 +254,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String content_prefs  = prop.getValue().getString();
-										        		logger.info("content_prefs : "+content_prefs);			
+										        		//logger.info("content_prefs : "+content_prefs);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_Content_Preferences(content_prefs);
 										        	}
@@ -242,7 +262,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String LastReplicationAction  = prop.getValue().getString();
-										        		logger.info("Last Replication Action BY User: "+LastReplicationAction);			
+										        		//logger.info("Last Replication Action BY User: "+LastReplicationAction);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_Publish_Status(LastReplicationAction);
 										        	}
@@ -250,7 +270,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String migration_content_id1  = prop.getValue().getString();
-										        		logger.info("formLayout : "+migration_content_id1);			
+										        		//logger.info("formLayout : "+migration_content_id1);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_Parent_ID(migration_content_id1);
 										        	}
@@ -258,7 +278,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String migration_content_url  = prop.getValue().getString();
-										        		logger.info("migration_content_url : "+migration_content_url);			
+										        		//logger.info("migration_content_url : "+migration_content_url);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_PURL(migration_content_url);
 										        	}
@@ -266,7 +286,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String title  = prop.getValue().getString();
-										        		logger.info("title : "+title);			
+										        		//logger.info("title : "+title);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_title(title);
 										        	}
@@ -274,7 +294,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String migration_raw_url  = prop.getValue().getString();
-										        		logger.info("Migration Raw URL : "+migration_raw_url);			
+										        		//logger.info("Migration Raw URL : "+migration_raw_url);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setForm_URL(migration_raw_url);
 										        	}
@@ -282,7 +302,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String product_interest  = prop.getValue().getString();
-										        		logger.info("product interest : "+product_interest);			
+										        		//logger.info("product interest : "+product_interest);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setProduct_Interest(product_interest);
 										        	}
@@ -290,7 +310,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String product_line  = prop.getValue().getString();
-										        		logger.info("product Line : "+product_line);			
+										        		//logger.info("product Line : "+product_line);			
 														//Adding the property to the POJO object
 										        	   formDataitem.setProduct_Line(product_line);
 										        	}
@@ -298,7 +318,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String formTemplate  = prop.getValue().getString();
-										        		logger.info("form Template: "+formTemplate);			
+										        		//logger.info("form Template: "+formTemplate);			
 														//Adding the property to the POJO object
 										        		formDataitem.setEloqua_Form_Name(formTemplate);
 										        	}
@@ -306,7 +326,7 @@ public class FormsReportCSVGenService {
 										        	{
 										        		
 										        		String C_Lead_Offer_Most_Recent1  = prop.getValue().getString();
-										        		logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
+										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
 														//Adding the property to the POJO object
 										        		formDataitem.setC_Lead_Offer_Most_Recent1(C_Lead_Offer_Most_Recent1);
 										        	}
@@ -328,7 +348,13 @@ public class FormsReportCSVGenService {
 	
 	 
   
-	 	
+
+    /*
+     * write()
+     * Writes the data into the Excel file.
+     * 
+     * 
+     */	
 	 public Workbook write() throws IOException 
 	 {
 		 logger.info("Generating the Report");
@@ -371,7 +397,7 @@ public class FormsReportCSVGenService {
 			 return workbook;    
 	 }
 	 
-	 public String getOutputList(String reportLocation)
+	 /*public String getOutputList(String reportLocation)
 	 	{
 		 	String forLoop1 = null;
 		 	String mainTable = null;
@@ -396,12 +422,16 @@ public class FormsReportCSVGenService {
 		    	dataItem.getForceOptIn()+"</td>"+"</tr>";
 		    }		    			  		    			    
 		    String outputString = tableHeader+ mainTable +"</tbody>"+"</table>";
-		    logger.info("FINALOUTPUT " +outputString);
+		    //logger.info("FINALOUTPUT " +outputString);
 		    return outputString;
-	 	}
+	 	}*/
 	 
 	 /*
+	  * createQuery()
 	  * This method generates a custom Predicate based on user input.
+	  * Arguments includes RootPath as a string
+	  * FultextSearchTerm - predicates for future.
+	  * 
 	  */
 	 public Map<String,String> createQuery(String fulltextSearchTerm1, String fulltextSearchTerm2,String fileLocation)
 	 {
@@ -423,4 +453,124 @@ public class FormsReportCSVGenService {
 	     // can be done in map or with Query methods
 	    
 	 }
+	 
+	 /*
+	  * createJSON()
+	  * This method generates a JSON from the list of FormREportDataItem. 
+	  */
+	 public String createJSON()
+	 {
+		 Gson gson = new Gson();
+		 String json = gson.toJson(list);
+		 if(!json.equals(null))
+		 {
+			 return json;
+		 }else
+		 {
+			 return null;
+		 }
+	 }
+	 
+	 /*
+	  * writeExceltoDAM()
+	  * This method writes the excel workbook into the DAM at a specified/predefined location. 
+	  * The workbook is passed into a ByteArrayOutputStream to be converted to a byte Array.
+	  * AssetManager API is used to carry the DAM save.
+	  */
+	 public String writeExceltoDAM(Workbook workbook,String reportName)throws IOException{
+			logger.info("Saving the file in the DAM");
+			//Invoke the adaptTo method to create a Session 
+			Map<String, Object> param = new HashMap<String, Object>();
+			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+			ResourceResolver resourceResolver = null;
+			try {
+					resourceResolver = resolverFactory.getServiceResourceResolver(param);				
+				} 
+			catch (Exception e) {
+					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+					}
+				String filename = getFileName(reportName)+".xls";			    
+			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
+			  
+			    try {
+			        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+			        workbook.write(bos);
+			        byte[] barray = bos.toByteArray();
+			        InputStream is = new ByteArrayInputStream(barray);
+			        String newFile = DAM_LOCATION + filename;
+				    Asset excelAsset = manager.createAsset(newFile, is, "application/vnd.ms-excel", true);	
+				    if(excelAsset != null) {
+				    	
+				        return newFile;
+				    } else {
+				        return null;
+				    } 
+			    } catch (IOException e) {
+			        e.printStackTrace();
+			    }
+				return DAM_LOCATION+filename;
+
+		   	   
+	 	}
+	 
+	 /*
+	  * writeJSONtoDAM()
+	  * This method writes the JSON file into the DAM at a specified/predefined location. 
+	  * The workbook is passed into a InputStream to be converted to a character sequence of bytes.
+	  * AssetManager API is used to carry the DAM save.
+	  * 
+	  */
+	 public String writeJSONtoDAM(String reportName) throws IOException
+	 	{
+		 logger.info("Saving the file in the DAM");
+			//Invoke the adaptTo method to create a Session 
+			Map<String, Object> param = new HashMap<String, Object>();
+			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+			ResourceResolver resourceResolver = null;
+			try {
+					resourceResolver = resolverFactory.getServiceResourceResolver(param);				
+				} 
+			catch (Exception e) {
+					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+					}
+			String filename = getFileName(reportName)+".json";			 			 
+			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
+			   InputStream isStream = 
+					   new ByteArrayInputStream(createJSON().getBytes());
+
+			    Asset excelAsset = manager.createAsset(DAM_LOCATION + filename, isStream, "application/json", true);
+		
+	 	    if(excelAsset != null)
+	 	    {
+	 	    	return DAM_LOCATION+filename;
+	 	    }
+	 	    else
+	 	    {
+	 		return null;
+	 	    } 
+	 	}
+		
+	
+
+	public String getFileName(String reportName)
+		{
+		 
+			return reportName+"_" +getCurrentDate();
+		}
+	
+	/*
+	 * getCurrentDate()
+	 * The current Date and Time is returned.
+	 * SimpleDateFormat is used.
+	 * 
+	 */
+	 public String getCurrentDate()
+		 {
+			 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+			 Date today = Calendar.getInstance().getTime();  
+			 String date = dateFormat.format(today).replace("/", "_");
+			 date = date.replace(":", "_");
+			return  date.replace(" ", "_"); //2016/11/16 12:08:43
+		 }
+		 
 }

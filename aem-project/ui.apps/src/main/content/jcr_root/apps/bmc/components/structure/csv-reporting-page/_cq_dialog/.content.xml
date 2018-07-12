@@ -64,20 +64,6 @@
                                                 fieldDescription="Enter the reportFileName."
                                                 fieldLabel="report File Name"
                                                 name="./reportFileName"/>
-                                            <searchParameter1
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                fieldDescription="Enter the Search Predicate."
-                                                fieldLabel="Search Predicate"
-                                                name="./searchPredicate1"/>
-                                            <searchParameter2
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                fieldDescription="Enter the Search Predicate."
-                                                fieldLabel="Search Predicate"
-                                                name="./searchPredicate2"/>
                                             <reportFileLocation
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
