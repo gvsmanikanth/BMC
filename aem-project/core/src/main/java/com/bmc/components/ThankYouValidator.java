@@ -20,7 +20,7 @@ public class ThankYouValidator extends WCMUsePojo {
     public Boolean getIsThankYouAndNotValid() {
         Page page = getCurrentPage();
         String templateName = page.getTemplate().getName();
-        if (templateName.equals("form-thank-you")) {
+        if (templateName.equals("form-thank-you") || templateName.equals("form-event-thank-you")) {
             SlingHttpServletRequest request = getRequest();
             String[] selectors = request.getRequestPathInfo().getSelectors();
             List<String> list = Arrays.asList(selectors);
