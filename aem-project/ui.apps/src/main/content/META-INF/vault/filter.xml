@@ -20,7 +20,8 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
     <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
-
+    <filter root="/conf/bmc/settings/wcm/templates/form-event-thank-you" mode="merge"/>
+    
     <filter root="/etc/clientlibs/bmc"/>
 
     <filter root="/etc/designs/bmc">

@@ -36,7 +36,7 @@ public class FooterModel {
 
     private String copyRightText;
 
-    private String footerLogoText;
+    private String eventFooterLogoText;
     
    
     @Inject
@@ -70,8 +70,8 @@ public class FooterModel {
                     copyRightText = footerNode.getProperty("copyRightText").getValue().getString();
                 }
                 
-                if(footerNode.hasProperty("footerLogoText") && currentPage.getTemplate().getName().equals("form-event-page-template")){
-                	footerLogoText = footerNode.getProperty("footerLogoText").getValue().getString();
+                if(footerNode.hasProperty("eventFooterLogoText") && (currentPage.getTemplate().getName().equals("form-event-page-template") || && currentPage.getTemplate().getName().equals("form-event-thank-you"))){
+                	eventFooterLogoText = footerNode.getProperty("eventFooterLogoText").getValue().getString();
                 }
             }
         } catch (RepositoryException e) {
@@ -82,8 +82,8 @@ public class FooterModel {
     public String getCopyRightText() {
         return copyRightText;
     }
-    public String getFooterLogoText() {
-        return footerLogoText;
+    public String getEventFooterLogoText() {
+        return eventFooterLogoText;
     }
   
     public List<Resource> getChildResources() {
