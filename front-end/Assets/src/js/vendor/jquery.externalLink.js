@@ -22,10 +22,10 @@
 	    return this.each(function(){
 	    	if(!extValid.test(this.href)) {
 	    		if(!jsValid.test(this.href)){
-					if(this.href.indexOf("mailto")){
-						this.target="_blank";
-					}else{
+					if(!this.href.indexOf("mailto")){
 						this.target="";
+					}else{
+						this.target="_blank";
 					}
 	    		}
 	    	}
