@@ -98,9 +98,11 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            if (button.hasProperty("ctaPath") && session.itemExists(button.getProperty("ctaPath").getString())) {
+            if (button.hasProperty("ctaPath")) {
                 UrlResolver urlResolver = UrlResolver.from(resource);
                 return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
+            }else{
+            	return null;
             }
         }catch (Exception e){
             logger.error("ERROR:", e.getMessage());
