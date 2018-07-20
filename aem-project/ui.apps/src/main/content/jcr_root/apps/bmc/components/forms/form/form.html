@@ -1,12 +1,8 @@
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-use.settings="com.bmc.models.FormSettingsModel"
      data-sly-call="${clientLib.all @ categories = ['bmc.forms']}"></sly>
-<sly data-sly-test.trialForm="${properties.C_Lead_Offer_Most_Recent1 == 'Trial Download'}"></sly>
-<sly data-sly-test.formDisabled="${trialForm && settings.trialFormsDisabled}">${settings.trialFormsDisabledContent @context='html'}</sly>
 <form data-sly-use.container="com.adobe.cq.wcm.core.components.models.form.Container"
       data-sly-use.grid="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
       data-sly-use.params="com.bmc.components.utils.FormRequestParameterUtil"
-      data-sly-test="${!formDisabled}"
       id="${properties.formType == 'Lead Capture' || properties.formType == 'Parallel' ? 'leadgen' : 'nonleadgen'}"
       name="${properties.formType == 'Lead Capture' || properties.formType == 'Parallel' ? 'leadgen' : 'nonleadgen'}"
       method="POST" action="${resource.path}.post.html"

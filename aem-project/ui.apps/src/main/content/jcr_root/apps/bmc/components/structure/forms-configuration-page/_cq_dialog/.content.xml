@@ -46,12 +46,14 @@
                                                     name="./trialFormsDisabled@TypeHint"
                                                     cq:showOnCreate="true"
                                                     value="Boolean"/>
-                                            <trial-form-disabled-content jcr:primaryType="nt:unstructured"
-                                                      sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                      fieldDescription="Enter the HTML block to display in place of trial forms."
-                                                      fieldLabel="Disabled form HTML block"
-                                                      cq:showOnCreate="true"
-                                                      name="./trialFormsDisabledContent" />
+                                             <redirectDestURL
+			                                    jcr:primaryType="nt:unstructured"
+			                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+			                                    fieldDescription="Trial Forms Redirect Destination URL"
+			                                    fieldLabel="Trial Forms Redirect Destination URL"
+			                                    name="./redirectDestURL"
+			                                    rootPath="/content/bmc"
+			                                    />     
                                         </items>
                                     </settings>
                                 </items>
