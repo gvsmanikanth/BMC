@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="ExternalLinkDocument"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.image.v1.editor]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <config
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="External Document"
+                                        sling:orderBefore="title"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <listFrom
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Document Link Type:"
+                                                name="./documentType">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-listfrom-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <children
+                                                        granite:hide="${cqDesign.disableChildren}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="External Document link"
+                                                        value="children"/>
+                                                    <search
+                                                        granite:hide="${cqDesign.disableSearch}"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="DAM Asset Link"
+                                                        value="search"/>
+                                                </items>
+                                            </listFrom>
+                                            <setSearch
+                                                granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="search"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Document DAM Asset Picker."/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <queryContentPath
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                fieldDescription="Please pick the DAM link to the document asset."
+                                                                fieldLabel="Document Asset."
+                                                                name="./linkAbstractorDAMAsset"
+                                                                rootPath="/content/dam/bmc"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </setSearch>
+                                            <setChildren
+                                                granite:class="hide list-option-listfrom-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="children"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="External Document URL:"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <parentPage
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                fieldDescription="Enter the external document link."
+                                                                fieldLabel="Document link."
+                                                                name="./linkAbstractorExternalAsset"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </setChildren>
+                                            <linkAbstractor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                defaultValue="external-document"
+                                                name="./linkAbstractor"
+                                                value="external-document"/>
+                                            <linkAbstractorTarget
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldDescription="Enter the Document target."
+                                                fieldLabel="Document Target"
+                                                name="./linkAbstractorTarget">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Load in a new window (_blank)"
+                                                        value="new"/>
+                                                    <item3
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Load in the same window (_self)"
+                                                        value="self"/>
+                                                </items>
+                                            </linkAbstractorTarget>
+                                        </items>
+                                    </config>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                    <advanced jcr:primaryType="nt:unstructured"/>
+                    <thumbnail jcr:primaryType="nt:unstructured"/>
+                    <socialmedia
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
+                    <cloudservices jcr:primaryType="nt:unstructured"/>
+                    <personalization
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
+                    <permissions jcr:primaryType="nt:unstructured"/>
+                    <blueprint jcr:primaryType="nt:unstructured"/>
+                    <livecopy jcr:primaryType="nt:unstructured"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

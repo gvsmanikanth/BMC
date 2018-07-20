@@ -33,12 +33,14 @@ public class CtaButtons {
 
     private String resolvedLink;
 
+    private String linkType="";
 
     @PostConstruct
     protected void init() {
         if(!buttonURL.isEmpty() && (buttonURL.startsWith("/content/") && (!buttonURL.endsWith(".pdf") && !buttonURL.endsWith(".html")))) {
             UrlResolver urlResolver = UrlResolver.from(resource);
             resolvedLink = urlResolver.getLinkInfo(buttonURL).getHref();
+            linkType=urlResolver.getLinkInfo(buttonURL).getType().toString();
         } else{
             resolvedLink = buttonURL;
         }
@@ -49,5 +51,9 @@ public class CtaButtons {
 
     public String getResolvedLink() {
         return resolvedLink;
+    }
+    public String getLinkType()
+    {
+    	return linkType;
     }
 }
