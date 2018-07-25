@@ -71,8 +71,6 @@ public class ExperienceFgmtReportCSVGenService {
     private QueryBuilder builder;
 	
 	
-	private static final String REFERENCES_BASE ="/content/bmc/language-masters/en";
-	
 	private String DAM_LOCATION = "/content/dam/bmc/reports/";
 
 	
@@ -80,7 +78,8 @@ public class ExperienceFgmtReportCSVGenService {
        
 
 	
-    private String[] TableNames = {"Experience Fragment name","Exp Fragment URL","Last Replicated Date","Last Replicated By","Last modified date","Last Modified By","Reference URL's"};
+    private String[] TableNames = {"Exp Fragment URL","Last Replicated Date","Last Replicated By",
+    		"Last modified date","Last Modified By","Reference URL's"};
 	
 	
 	 /*
@@ -90,7 +89,7 @@ public class ExperienceFgmtReportCSVGenService {
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport(Boolean report, String fileName,String folder) {
+	    public Workbook generateDataReport(boolean report, String fileName,String folder) {
 	    	logger.info("Inside the class generateDataReport--- START");
 	    	
 	    	try
@@ -98,7 +97,7 @@ public class ExperienceFgmtReportCSVGenService {
 	    		//Fetch the data from forms 
 	    			 list  = getJCRData(folder);
 	             //If user selected a custom report -- generate the report and store it in the JCR
-	             if (report == true)
+	             if (report)
 	              {
 	            	 logger.info("If REport is true");
 	                  String damFileName = fileName +".xls" ;
@@ -143,11 +142,9 @@ public class ExperienceFgmtReportCSVGenService {
 								if(resource != null)
 									    {
 							    		
-							        	Map<String,String> map = createQuery(folder, null, null);
-							        	 Query query = builder.createQuery(PredicateGroup.create(map), session);
-			                							             
-							             SearchResult result = query.getResult();
-							             Long totalHits = result.getTotalMatches();
+							        	Map<String,String> map = createQuery(folder);
+							        	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
+							             SearchResult result = query.getResult();							            
 							            		 for (Hit hit : result.getHits()) {
 							            	ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 		Node reportDataNode = hit.getResource().adaptTo(Node.class);
@@ -190,25 +187,9 @@ public class ExperienceFgmtReportCSVGenService {
 																//Adding the property to the POJO object
 												        		reportDataItem.setLastModifiedDate(LastModifiedDate);
 												        	}
-															else if(prop.getName().equalsIgnoreCase("jcr:title"))
-												        	{
-												        		//Pass to fetch the reference types.																
-												        		String name  = prop.getValue().getString();
-												        		ArrayList<String> references = new ArrayList<String>();
-												       		 Map<String,String> map2 = createQueryReferences(name);
-												           	 Query query2 = builder.createQuery(PredicateGroup.create(map2),session);		       						             
-												                SearchResult resultSet = query.getResult();
-												                Long total = result.getTotalMatches();
-												               		 for (Hit hitt : result.getHits()) {
-												               			Node ReferenceDataNode = hitt.getResource().adaptTo(Node.class);
-												               			references.add(ReferenceDataNode.getPath());
-												               		 }
-												       		
-												        		logger.info("overlay URL : "+name);			
-																//Adding the property to the POJO object
-												        		reportDataItem.setExp_Fragment_Name(name);
-												        		reportDataItem.setReferencePaths(references);
-												        	}															
+															
+															
+												        															
 											         }						    	                  
 											   }
 							            	 list.add(reportDataItem);
@@ -246,8 +227,8 @@ public class ExperienceFgmtReportCSVGenService {
 			{
 				logger.info("Data Item:"+i);
 				Integer count = i; 
-				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_Name(), list.get(i).getExp_Fragment_URL(),list.get(i).getLastReplicatedDate(),list.get(i).getLastReplicatedBy(),
-					list.get(i).getLastModifiedDate(),list.get(i).getLastModifiedBy(),list.get(i).getReference_URL()});
+				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getLastReplicatedDate(),list.get(i).getLastReplicatedBy(),
+					list.get(i).getLastModifiedDate(),list.get(i).getLastModifiedBy(),list.get(i).getReference_URL(),list.get(i).getReferencePaths()});
 			logger.info("Added the data item "+count+" to the report");
 			}
 			 logger.info("Creating the EXCEL sheet");
@@ -275,20 +256,22 @@ public class ExperienceFgmtReportCSVGenService {
 	 /*
 	  * This method generates a custom Predicate based on user input.
 	  */
-	 public Map<String,String> createQuery(String folderSelection, String fulltextSearchTerm1, String fulltextSearchTerm2)
+	 public Map<String,String> createQuery(String folderSelection)
 	 {
 		 // create query description as hash map (simplest way, same as form post)
 	     Map<String, String> map = new HashMap<String, String>();	    
 	     // create query description as hash map (simplest way, same as form post)	                  
 	     map.put("path", folderSelection);
-	     map.put("cq:template", "/libs/cq/experience-fragments/components/experiencefragment/template");
+	     map.put("type", "cq:PageContent");
 	     map.put("property.hits", "full");
-	     map.put("property.depth", "5");
+	     map.put("property.depth", "0");
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
 	     map.put("p.offset", "0");
 	     map.put("p.limit", "2000");
-	     map.put("group.1_fulltext", fulltextSearchTerm1);
-	     map.put("group.2_fulltext", fulltextSearchTerm2);
+	   //Adding Predicate to exclude thank-you pages
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/libs/cq/experience-fragments/components/experiencefragment/template"); 
 	     return map;
 	     // can be done in map or with Query methods
 	    
@@ -297,24 +280,35 @@ public class ExperienceFgmtReportCSVGenService {
 	 /*
 	  * This method generates a custom Predicate based on user input.
 	  */
-	 public Map<String,String> createQueryReferences(String title)
+	 public Map<String,String> createQueryReferences(String path)
 	 {
 		 // create query description as hash map (simplest way, same as form post)
 	     Map<String, String> map = new HashMap<String, String>();	    
 	     // create query description as hash map (simplest way, same as form post)	                  
-	     map.put("path", REFERENCES_BASE);
-	     map.put("type", "cq:Page");
+	     map.put("path", "/content/bmc");
+	     map.put("type", "cq:PageContent");
+	     map.put("contains", path);
 	     map.put("property.hits", "full");
-	     map.put("property.depth", "5");
+	     map.put("property.depth", "0");
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
-	     map.put("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
-	     map.put("property.operation", "or");
-	     map.put("cq:template", "/conf/bmc/settings/wcm/templates/form-landing-page-full-width");
-	     map.put("property.operation", "or");
-	     map.put("cq:template", "/conf/bmc/settings/wcm/templates/form-thank-you");
 	     map.put("p.offset", "0");
-	     map.put("p.limit", "30");
-	     
+	     map.put("p.limit", "2000");
+	     //Adding Predicate to exclude thank-you pages
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
+	     //Adding Predicate to exclude thank-you pages
+	     map.put("property.operation", "or");
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-landing-page-full-width");
+	     map.put("property.operation", "or");
+	     //Adding Predicate to exclude thank-you pages
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-thank-you");
+	     map.put("p.offset", "0");
+	     map.put("p.limit", "300");	     
 	     return map;
 	     // can be done in map or with Query methods
 	    

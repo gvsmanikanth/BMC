@@ -88,7 +88,7 @@ public class FormsReportCSVGenService {
 	    * Returns a Workbook item.
 	    * 
 	    */
-	    public Workbook generateReport(Boolean report, String fileName,String fileLocation) {
+	    public Workbook generateReport(boolean report, String fileName,String fileLocation) {
 	    	logger.info("Inside the class generateFormDataReport--- START");
 	    	
 	    	try
@@ -96,7 +96,7 @@ public class FormsReportCSVGenService {
 	    		//Fetch the data from forms 
 	    			 list  = getJCRFormsData(fileLocation);
 	             //If user selected a custom report -- generate the report and store it in the JCR
-	             if (report == true)
+	             if (report)
 	              {
 	            	 logger.info("If REport is true");
 	                  String damFileName = fileName +".xls" ;

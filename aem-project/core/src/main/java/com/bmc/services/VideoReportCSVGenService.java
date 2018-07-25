@@ -85,7 +85,7 @@ public class VideoReportCSVGenService {
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport( Boolean report,String fileName) {
+	    public Workbook generateDataReport( boolean b,String fileName) {
 	    	logger.info("Inside the class generateDataReport--- START");
 	    	
 	    	try
@@ -93,7 +93,7 @@ public class VideoReportCSVGenService {
 	    		//Fetch the data from forms 
 	    			 list  = getJCRData();
 	             //If user selected a custom report -- generate the report and store it in the JCR
-	             if (report == true)
+	             if (b)
 	              {
 	            	 logger.info("If REport is true");
 	                  String damFileName = fileName +".xls" ;

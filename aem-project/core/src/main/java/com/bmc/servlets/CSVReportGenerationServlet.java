@@ -36,6 +36,7 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.bmc.services.CategoriesReportCSVGenService;
 import com.bmc.services.ExperienceFgmtReportCSVGenService;
 import com.bmc.services.FormsReportCSVGenService;
@@ -97,6 +98,8 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	    @Reference
 	    private CategoriesReportCSVGenService categoriesService;
 	    
+	    
+	    
 	     @Activate
 	     protected void activate(final Map<String, Object> config) {	    	 
 	     }
@@ -126,42 +129,42 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	                case "experienceFragment":
 	                	//Generate the report for forms 	                		
                 		logger.info("Forms Data Report Generation"); 
-                		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);
-                		//finalOutput = formsReportCSVGenService.getOutputList(fileName);
-                		//  writes the workbook and creates a JSON, XML and XSL versions	                		
+                		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
                 		logger.info("Forms Data Report Generation"); 
-                		workBook = videoService.generateDataReport(true,fileName);
-                		//finalOutput = formsReportCSVGenService.getOutputList(fileName);
-                		//  writes the workbook and creates a JSON, XML and XSL versions	                		
+                		workBook = videoService.generateDataReport(true,fileName);               			                		
             	        jsonDAMPath = videoService.writeJSONtoDAM(fileName);
             	        excelDAMPath = videoService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "it-solutions":
 	                	//Generate the report for forms 	                		
                 		logger.info("Forms Data Report Generation"); 
-                		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
-                		//finalOutput = formsReportCSVGenService.getOutputList(fileName);
-                		//  writes the workbook and creates a JSON, XML and XSL versions	                		
-            	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName);
+                		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);	                		
+            	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "sticky-headers":
-	                	
+	                	//Generate the report for forms 	                		
+                		logger.info("Forms Data Report Generation"); 
+                		workBook = categoriesService.generateStickyHeaderDataReport(true, fileName,reportLocation);	                		
+            	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
+            	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
-	                case "it-services":
-	                	
+	                
+	                case "education-courses":
+	                	//Generate the report for forms 	                		
+                		logger.info("Education Data Report Generation"); 
+                		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
+                		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
+            	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "generic":
-	                	
-	                	break;
-	                case "education-courses":
-	                	
-	                	break;
+	                	//Generate the report for forms 	                		
+                		
 	                default:
 	                    break;
 	    			}            		
