@@ -39,10 +39,14 @@ $mobileUtilityNavHeight: 49px;
 			@include media(breakpointLarge) {
 				@include font-size(13);
 				font-weight: 700;
-				padding: 0 1em;
+				padding: 0 0em;
 			}
 			@include media(breakpointExtraLarge) {
 				@include font-size(14);
+			}
+			> .verticalBar {
+				color : #cacaca;
+				padding-left: 1em;
 			}
 		}
 	}
@@ -314,6 +318,12 @@ $scrolledUtilityNavHeight: 49px;
 			height: $scrolledUtilityNavHeight;
 			line-height: $mobileUtilityNavHeight;
 		}
+		> a {
+			padding: 0 1em;
+			.verticalBar{
+				display:none;
+			}
+		}
 	}
 	.navigation-search {
 		@include media(breakpointLarge) {
@@ -395,7 +405,7 @@ $scrolledUtilityNavHeight: 49px;
       padding-left: 40px;
     }
 		.navigation-utility .navigation-contact a {
-			padding-left: 68px;
+			padding-left: 50px;
 		}
 		.navigation-utility .navigation-support,
 		.navigation-utility .navigation-country {

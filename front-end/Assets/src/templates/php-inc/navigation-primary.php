@@ -44,10 +44,10 @@
 		</ul>
 		<ul class="navigation-utility">
 			<li class="navigation-trials ">
-				<a href="http://www.bmc.com/it-solutions/free-product-trials.html"  class="">Free Trials</a>
+				<a href="http://www.bmc.com/it-solutions/free-product-trials.html"  class="">Free Trials<span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
-				<a href="#" class="contact-bmc">Contact BMC</a>
+				<a href="#" class="contact-bmc"><span class="verticalBar">|</span></a>
 			</li>
 			<!-- <li class="navigation-country">
 				<a href="#" class="select-country">Worldwide (English)</a>
