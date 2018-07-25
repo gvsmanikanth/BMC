@@ -121,7 +121,8 @@ $mobileUtilityNavHeight: 49px;
 .navigation-country a:after,
 .navigation-contact a:after,
 .navigation-support a:after {
-	color: #999;
+	color: #353537;
+	font-size: 1.1rem;
 } 
 
 .navigation-country a:after{
@@ -262,7 +263,8 @@ $mobileUtilityNavHeight: 49px;
 	&:after {
 			font-family: "icomoon";
 			content: "";
-			color: #999;
+			color: #353537;
+			font-size: 1.2rem; 
 			cursor:pointer;
 		}
 }
