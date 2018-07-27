@@ -1,16 +1,7 @@
 .page-homepage-e {
 	.Customer {
 		.carousel-wrap{
-			    
-				/*img {
-					width: 150px;
-					@include media(breakpointMedium){
-						width: 200px;
-					}
-					@include media(breakpointLarge){
-						width: 200px;
-					}
-				}*/
+
 			}
 		h2 {
 			font-size: 24px;
@@ -20,14 +11,12 @@
 			min-height: auto;
 			font-weight: 300;
 			@include media(breakpointMedium){
-				//min-height: 260px;
 				font-size: 32px;
 				line-height: 36px;
 				margin: 0; 
 				padding: 0;
 			}
 			@include media(breakpointLarge){
-				//min-height: 164px;
 				font-size: 40px;
 				line-height: 48px;
 				margin: 0;
@@ -35,12 +24,7 @@
 				font-weight: 300;
 			}
 		}				
-			
-		/*.block2{
-			position: absolute;
-			right: -35%;
-			top: 65%;
-		}*/
+		
 		
 		.block1{
 			width:80%;

@@ -1948,19 +1948,16 @@ if (!document.createElement('canvas').getContext) {
         var attrs = el.attributes;
         if (attrs.width && attrs.width.specified) {
           // TODO: use runtimeStyle and coordsize
-          // el.getContext().setWidth_(attrs.width.nodeValue);
           el.style.width = attrs.width.nodeValue + 'px';
         } else {
           el.width = el.clientWidth;
         }
         if (attrs.height && attrs.height.specified) {
           // TODO: use runtimeStyle and coordsize
-          // el.getContext().setHeight_(attrs.height.nodeValue);
           el.style.height = attrs.height.nodeValue + 'px';
         } else {
           el.height = el.clientHeight;
         }
-        //el.getContext().setCoordsize_()
       }
       return el;
     }

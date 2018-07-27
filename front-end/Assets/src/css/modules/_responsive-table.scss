@@ -1,12 +1,7 @@
 //Responsive Table
 //https://css-tricks.com/examples/ResponsiveTables/responsive.php
 .responsive-table, .non-responsive-table{
- 
-
- 
- .legend
- 	{
- 		
+ .legend{
  	font-size: 0.8rem;
 	margin-top: 1em;
 	padding-bottom: 1em;
@@ -57,7 +52,6 @@
       border-left: 2px solid white;
       border-right: 2px solid white;
       background-color: transparent;
-      //text-align:left;
       
       &.td-format-opt-1{
         color:color(mediumOrange);
@@ -109,8 +103,6 @@
       td:nth-child(1) {
       	display: flex;
 	    flex-direction: row-reverse;
-		//padding-left: 1.5em;
-			
 	    background: color(lightGrey); 
 	    text-align:left;
 	    padding-left: 20px;
@@ -124,8 +116,6 @@
      
 
     td {
-    	
-     //padding:0 !important;
      position: relative !important;
      text-align: left;
      display: flex;
@@ -137,11 +127,8 @@
       border: none;
       border-bottom: 1px solid #eee;
       position: relative;
-      //padding-left: 50%;
       text-align:left;
-      
       //WEB-1555 : Resolved issue with big titles on mobile devices
-      //padding-left: 90%;
       font-size: 0.7rem;
       
     }
@@ -159,7 +146,6 @@
       left: 1.5em;
       width: 45%;
       padding-right: 20px;
-      //white-space: nowrap;
       font-weight:800;
       color:color(abbey);
     }
@@ -265,19 +251,12 @@
   
           width: 100%;
           border-collapse: collapse;
-          /*
-          tr:nth-of-type(odd) {
-            background: #eee;
-            }
-           */
            
           thead {
              tr {   
               text-align: center; 
               padding-left: 60px; 
               background-color: #018ec4;
-              
-	          
               
               td{
               	color: rgb(255, 255, 255); 
@@ -305,7 +284,6 @@
            }
           
           td, th {
-            //padding: 6px;
             border: 1px solid #ccc;
           }
           
@@ -338,8 +316,6 @@
             
            
             td {
-              /* Behave  like a "row" */
-             
               
               border-bottom: 1px solid #eee;
               border: none;

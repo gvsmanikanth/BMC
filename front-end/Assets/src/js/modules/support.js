@@ -271,20 +271,6 @@ var Support = Support || {};
 			var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 			
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
-			/*
-			var formattedLastUpdated = pad(rawLastUpdated.getMonth() + 1) // getMonth() returns a 0-11 range
-										+ "/"
-										+ pad(rawLastUpdated.getDate())
-										+ "/"
-										+ rawLastUpdated.getFullYear();
-
-			var formattedCreated = pad(rawCreated.getMonth() + 1) // getMonth() returns a 0-11 range
-										+ "/"
-										+ pad(rawCreated.getDate())
-										+ "/"
-										+ rawCreated.getFullYear();
-			*/
-			
 			
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
 			var formattedLastUpdated = pad(rawLastUpdated.getDate())
@@ -997,8 +983,6 @@ var Support = Support || {};
 
 		calcBaseHeight: function() {
 			// if the height should be determined dynamically
-			// this.baseHeight = $('.logo-bar-container').height();
-
 			this.baseHeight = 90;
 		},
 

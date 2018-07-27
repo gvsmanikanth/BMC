@@ -578,7 +578,6 @@
 		padding: em(44) em(24) em(24) 0;*/
 		margin: em(0) em(-28); //BMC-527 Replaced em(-60) with em(0)
 		padding: em(60) em(28);
-		/*width: 167%;*/
 
 	}
 
@@ -988,9 +987,6 @@
 				width: 0;
 			}
 
-			/*.ie7 &, .ie8 & {
-				min-height: 125px;
-			}*/
 
 			&.active {
 				background-color: #fff;
