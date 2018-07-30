@@ -75,6 +75,7 @@
         <div class="rows_flex">
 			<div id="search_header" class="columns">
 			   <div class="component_search">
+					<a class="component_search_close" id="component_search_close"></a>
 				  <div class="search-panel">
 					 <div class="search_click btn-white">Search</div>
 					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">

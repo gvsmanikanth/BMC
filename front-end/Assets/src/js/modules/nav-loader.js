@@ -1,6 +1,6 @@
 jQuery(function($){
 	function getMobile(){
-		if (window.matchMedia('(max-width: 767px)').matches) {
+		if (window.matchMedia('(max-width: 767px)').matches || window.matchMedia('(max-width: 1023px)').matches) {
 			$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
 		}
 	}
@@ -187,6 +187,13 @@ jQuery(function($){
 			$(".search-overlay #search_input").val("");
 		});
 		
+		$(".component_search_close").click(function(){
+			$('.search-overlay').removeClass('on');
+			$('body').removeClass('no-scroll');
+			$('#bodyOverlay').removeClass('backgroundColor');
+			$(".search-overlay #search_input").val("");
+		});
+	
 		//$('.navigation-search.js-navigation-search').click(function(e) {
 		$(document).on("click",".navigation-search.js-navigation-search",function(e) {
 			e.stopPropagation();

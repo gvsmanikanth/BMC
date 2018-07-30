@@ -22,7 +22,7 @@ body.no-scroll{
 }
 .search-overlay{
 	overflow-x: hidden !important;
-	width: 50%;
+	width: 100%;
     min-width: 320px;
     min-height: calc(100vh - 80px);
     padding-bottom: 5rem;
@@ -35,9 +35,11 @@ body.no-scroll{
     background-color: #ffffff;
 	@include media(breakpointMedium){
 		top: 0rem;
+		width: 50%;
 	}
 	@include media(breakpointLarge){
 		top: -4rem;
+		width: 50%;
 	}
 	.rows_flex{
 		width: 100%;
@@ -62,11 +64,23 @@ body.no-scroll{
 			flex: 1;
 			flex-direction: row;
 			.component_search{
+				.component_search_close{
+					position: absolute;
+					padding: 0.4rem;
+					right: 0;
+					&:after {
+						font-family: "icomoon";
+						content: $iconCloseX;
+						color: #fff;
+						font-size: 1.2rem; 
+						cursor:pointer;
+					}
+				}
 				.search-panel {
 					background: #fe5000;
 					text-align: left;
 					color: #fff;
-					padding: 0 0 0 10%;
+					padding: 3% 0 0 5%;
 					top: 0;
 					.search_click {
 						font-size: 0.7rem;
@@ -77,16 +91,16 @@ body.no-scroll{
 						position: absolute;
 						z-index: 21;
 						right: 1rem;
-						top: 1.8rem;
+						top: 2.5rem;
 						@include media(breakpointMedium){
 							right: 2rem;
 							font-size: 0.7rem;
-							top: 2rem;
+							top: 2.5rem;
 						}
 						@include media(breakpointLarge){
 							right: 3rem;
 							font-size: 0.8rem;
-							top: 1.8rem;
+							top: 2.5rem;
 						}
 						&:hover {
 							color: #333;
@@ -193,7 +207,7 @@ body.no-scroll{
 	@include media(breakpointMedium){
 		top: 0rem;
 	}
-	@include media(breakpointLarge){
+	@include media(breakpointLarge){ 
 		top: 0rem;
 	}
 }
