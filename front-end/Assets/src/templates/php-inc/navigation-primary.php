@@ -71,15 +71,16 @@
 
 <!-- Search Overlay -->
 	<div id="bodyOverlay" title="Click anywhere to close overlay."></div>
-	<div class="search-overlay off">
+	<div class="search-overlay off"> 
         <div class="rows_flex">
 			<div id="search_header" class="columns">
 			   <div class="component_search">
 					<a class="component_search_close" id="component_search_close"></a>
 				  <div class="search-panel">
-					 <div class="search_click btn-white">Search</div>
 					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">
-						<input class="search_input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">   
+						<input class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  
+						<!--<div class="search_click btn-white">Search</div>-->
+						<button type="submit" class="btn btn-default search_click btn-white">Search</button>						
 					 </form>
 					 <div class="drop_overlay"></div>
 				  </div>
