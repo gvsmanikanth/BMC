@@ -2,7 +2,6 @@
  * Wallpaper v3.1.18 - 2014-06-16
  * A jQuery plugin for smooth-scaling image and video backgrounds. Part of the Formstone Library.
  * http://formstone.it/wallpaper/
- *
  * Copyright 2014 Ben Plum; MIT Licensed
  */
 .wallpaper {
@@ -68,7 +67,7 @@
 		width: 100%;
 	}
 	.wallpaper-embed.ready iframe {
-		/* pointer-events: none; - safari doesn't like this :/ */
+		
 	}
 
 	.wallpaper-media.native {
@@ -93,7 +92,6 @@
 }
 
 .wallpapered {
-	// background: #eee;
 	margin: 0;
 	padding-top: 0%;
 	width: 100%;

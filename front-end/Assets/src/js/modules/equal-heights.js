@@ -12,9 +12,6 @@
 	$( window ).on( 'resize', matchHeights );
 
 	var s = document.body || document.documentElement, s = s.style;
-	//if( s.webkitFlexWrap == '' || s.msFlexWrap == '' || s.flexWrap == '' ) return true;
-	// $('html').removeClass('flexbox').addClass('no-flexbox');
-	// $('html').removeClass('svg inlinesvg svgclippaths').addClass('no-svg');
 
 	var setHeights = function(eh) {
 		$(eh).each(function(i) {
@@ -65,8 +62,6 @@
 	window.addEventListener(orientationEvent, function() {
 					onResizeSetHeight();
     }, false);
-	
-	//$( window ).load(onResizeSetHeight());
 	
 	$(document).ready(function() {
 		setTimeout(onResizeSetHeight(), 2000);

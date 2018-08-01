@@ -42,7 +42,6 @@ var Accordion;
 				self.toggleOpen($(anchor).parents(self.itemSelector));
 				window.onResizeSetHeight();
 				//Added to adjust height of card components on accordion open.
-				//window.location.hash = this.href;
 				var hashValue = this.href.split("#");
 				if (hashValue[1])
 					window.location.hash = hashValue[1];
@@ -98,8 +97,6 @@ var Accordion;
 		}
 
 		// open new item
-		//self.openItem(item);
-
 
 		return self;
 
@@ -130,11 +127,6 @@ var Accordion;
 		$(item).find('.accordion-item-content').finish().slideUp("normal", function() {
 			self.openItem(self.itemToOpen);
 		});
-
-		// $('html, body').finish();
-		// $('html, body').animate({
-			// scrollTop : $(item).find('.accordion-item-content').offset().top - 200
-		// }, 0);
 
 		return this;
 	};

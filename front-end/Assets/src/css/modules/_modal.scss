@@ -74,10 +74,6 @@
 			width: columns(4);
 		}
 
-		/*.oldie & {
-			top: 20%;
-			left: columns(4);
-		}*/
 
 	}
 
@@ -186,14 +182,9 @@
             transform: translate(-50%, -50%);
 
     @include media(breakpointLarge) {
-      // max-height: none;
       width: 90%; //columns(4);
     }
 
-    /*.oldie & {
-      top: 20%;
-      left: columns(4);
-    }*/
 
   }
 

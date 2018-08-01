@@ -45,14 +45,12 @@
 			itemHTML+='<img class="featuredIcon" src="'+iconURL+'"></img></span>';
 			
 			
-			//' + self.isPre_requisite(item) + item.name + ' //Removed Prerequiste indicator as well
 			itemHTML+= '</p><h5 class="title">'+ item.name +'</h5><p class="course-details">';
 			
 			if(type == "Learning Path" ||type == "Certification"){
 				var deliveryMethod = self.getName("learningFormats", item);
 				
 				if (item["learningFormats"][0] == 0){
-				//if(deliveryMethod == "All Delivery Methods" || deliveryMethod == "Any Delivery Method" ){
 					itemHTML += "";
 				}
 				else {
@@ -180,10 +178,6 @@
 		
 		EduCourseList.prototype.onFilterSelect = function(pFilter) {
 			var self = this;
-			//self.onFilterSelect(pFilter);
-			
-			
-			
 			if(pFilter[0].id == "products")
 			{
 				var specValue = pFilter.val();
@@ -209,16 +203,10 @@
 			
 			self.onFilterSelect_org(pFilter);
 			
-			// if(pFilter[0].id == "products")
-			// {
-				// self.updateFilterCount();
-			// }
-			
 		};
 		
 		EduCourseList.prototype.popuplateVersionsDropdown = function(specValue) {
 			var self = this;
-			//alert("specValue - " + specValue);
 			var products = this.filteringOptions[0].values;
 			
 			var selectedProduct = null;
@@ -373,27 +361,7 @@
 				$(window).trigger('hashchange');
 				
 				
-				/*
-				function scrollTimeOut(){
-					clearTimeout(timeoutId);
-					filterListObject.updateFiltersOnScroll();
-				}
-				
-				Removed this implementation due to performance issue.
-				var timeoutId = null;
-				if(filterListObject.paginationType == "onScroll"){
-					$(window).scroll(function() {
-						
-						if(timeoutId)
-							clearTimeout(timeoutId);
-							
-						var footerHeight = $(".layout-footer").height();
-					    if($(window).scrollTop() >= $(document).height() -footerHeight- $(window).height()) {				    	
-							timeoutId = setTimeout(scrollTimeOut,200);
-						}
-					});
-				}*/
-				//$("#versions").parent().hide()
+	
 			});
 		});
 		}

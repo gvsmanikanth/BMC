@@ -57,19 +57,6 @@ div.videos {
 	}
 }
 .video-container-wrapper {
-	// //background-color: color(colorCorporate); //BMC-527 - Commented to resolve video title error.
-//   
-  // //display:inline-block; //BMC-527 - Commented to resolve video alignment issue.
-  // margin: 2em 0; //BMC-527 - Commented to resolve video alignment issue.
-  // width: 100%;
-  // //padding:0 0 20px 0; //BMC-527 - Commnented to avoid unnecessary bottom padding for videoes.
- // // padding:0 0 0 0;
-// 
-	// @include media(breakpointMedium) {
-		// margin: 3em columns(1.5); //BMC-527 Commented to resolve video padding issue
-		// width: columns(9);
-	// }
-  
   width:100%;
   background-color: color(colorCorporate);
   display:inline-block;

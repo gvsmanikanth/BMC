@@ -18,7 +18,13 @@
         </sly>
 
         <section data-sly-test="${properties.ctatext}">
-            <a class="btn-white learn-more ${Cta.isVideo ? 'modal-video-player' : ''}" href="${cta.href}">${properties.ctatext}</a>
+             <sly data-sly-test="${cta.href}">
+                    <sly data-sly-test.ctaResolvedLink="${cta.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!cta.href}">
+                 <sly data-sly-test.ctaResolvedLink="${properties.ctaurl}"></sly>
+             </sly>
+            <a class="btn-white learn-more ${cta.isVideo ? 'modal-video-player' : ''}" href="${ctaResolvedLink}">${properties.ctatext}</a>
         </section>
     </div>
 </blockquote>
