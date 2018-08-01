@@ -7,8 +7,7 @@
 	.search-site {
 		fieldset {
 			margin: 0;
-			//padding: 0 em(13 14) em(13 14);
-      padding: 0 em(13 , (context: 14)) em(13 , (context: 14)); //BMC-527
+			padding: 0 em(13 , (context: 14)) em(13 , (context: 14)); //BMC-527
 			li {
 				margin: 0;
 			}
@@ -213,7 +212,6 @@
 	.st-ui-type-detail{  
 		color: color(colorNavigationBar);
 		font-size: 1rem;
-		//max-height:none !important;
 		.st-ui-type-detail-bold {
 			color: color(colorNavigationBar);
 			font-size: 1rem;
@@ -226,10 +224,6 @@
 	  overflow: hidden;
 	  max-height: 5.4em !important;
 	  line-height: 1.8em;
-
-	
-	  
-
 	}
 
 	.st-ui-result{

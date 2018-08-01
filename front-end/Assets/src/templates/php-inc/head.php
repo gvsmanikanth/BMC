@@ -14,9 +14,8 @@
 	<!-- icon and tile color in hex # for Windows phones -->
 	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<link rel="stylesheet" href="http://localhost/bmc-dxp/front-end/aos.css" />
 	<script src="Assets/dist/head.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
+	<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css"> -->
 
 	<link rel="stylesheet" media="all" href="Assets/dist/style.css">
 
@@ -25,7 +24,7 @@
 	<!-- Serve one icon for all Apple devices -->
 	<link rel="apple-touch-icon-precomposed" href="Assets/dist/touch-icon.png">
 	<?php
-	if (isset($enableDTM) && $enableDTM == true) {
+	if (isset($enableDTM) && $enableDTM == true) { 
 		?>
 		<!--dtm library-->
 		<script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
@@ -71,6 +70,7 @@
 		<?php
    	}
    	?>
+
 
 </head>
 

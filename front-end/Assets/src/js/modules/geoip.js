@@ -86,7 +86,6 @@ jQuery(function ($) {
     		var cookie = $.cookie("p_Country");
 	    	if(cookie){
 	    		if(GeoIPLanguageCode == cookie){
-	    			//console.log("Do Nothing --> cookie matched with GeoIPLanguageCode--> " + cookie);
 	    			onNoShowGeoIPAlert();
 	    		}
 	    		else{
@@ -98,7 +97,6 @@ jQuery(function ($) {
 		    }
 		  }
 		  else {
-		  	//console.log("URL matched with exclussion parameters - do not check for redirection");
 		  	onNoShowGeoIPAlert();
 		  }
     }
@@ -173,13 +171,12 @@ jQuery(function ($) {
 				success: success,
 				jsonpCallback:"jsonpResponse",
 				error:function(jqXHR, textStatus, errorThrown){
-		            //console.log(errorThrown);
 		            onNoShowGeoIPAlert();
 		        }
 				});
 		}
 		catch(err){
-			//console.log( "Country redirect call failed" );
+			
 		}
     }
     
@@ -242,14 +239,11 @@ jQuery(function ($) {
 				});
 		}
 		catch(err){
-			//console.log( "Country redirect call failed" );
+			
 		}
     }
     
     function showCountryRedirectPrompt(){
-    	//console.log("call AJAX request");
-	    		//data: "req_url="+window.location.href,
-		        	//console.log(objWMARedirect);
 					var strMessage = '<div class="layout-inner-wrap">' +
 										'<div class="alert">'+
 								        '<a class="alert-region-close" href=""></a>'+
@@ -263,7 +257,6 @@ jQuery(function ($) {
 								        '</a></p></div></div>';	
 					
 					$(".layout-rediect-alert ").append(strMessage);
-					//$('body').addClass('country-redirect-prompt-modal-active');
 					$(".layout-rediect-alert ").show(500);
 					
 					$("#a_redirectMe").click(function(e){
@@ -275,8 +268,7 @@ jQuery(function ($) {
 							setCookiesOnDotCom(persistCookie,objWMARedirect.suggestedLangCode,true);
 						}
 						else{
-							//$.cookie('p_Country', objWMARedirect.suggestedLangCode);
-							//window.location = objWMARedirect.suggestedCountryDomain;
+							
 							setCookiesOnDotCom(sessionCookie,objWMARedirect.suggestedLangCode,true);
 						}
 					});
@@ -289,7 +281,6 @@ jQuery(function ($) {
 						}
 						else
 						{
-							//$.cookie('p_Country', objWMARedirect.currentLangCode);
 							setCookiesOnDotCom(sessionCookie,objWMARedirect.currentLangCode,false);
 						}
 						hideCountryRedirectPrompt();
@@ -297,7 +288,6 @@ jQuery(function ($) {
 					
 				    $(".alert-region-close").click(function(e){
 				    	e.preventDefault();
-				    	//$.cookie('p_Country', objWMARedirect.currentLangCode);
 				    	setCookiesOnDotCom(sessionCookie,objWMARedirect.currentLangCode,false);
 				    	hideCountryRedirectPrompt();
 					});
@@ -310,16 +300,6 @@ jQuery(function ($) {
 
     $(document).ready(function() {
 	   //Added boolean check to enable GeoIP redirection logic. set cookie - runRedirectRoutine = true;
-       	 	
-       	/*var checkforRedirectRoutine = $.cookie("testGeoIP");
-		if(checkforRedirectRoutine)
-		{
-			if(checkforRedirectRoutine.toString() == "true"){
-				checkRedirection();
-				$(".navigation-country").show();
-			}
-		}*/
-		
 		checkRedirection();
 	});
 	///
@@ -338,7 +318,6 @@ jQuery(function ($) {
 		}
 		else
 		{
-			//$.cookie('p_Country', value);
 			hideCountryRedirectPrompt();
 			setCookiesOnDotCom(sessionCookie,value,true);
 		}
@@ -349,7 +328,6 @@ jQuery(function ($) {
 	// Country Website Link list
 		$('.international-link').click(function(e) {
 			e.preventDefault();
-			//var value = e.currentTarget.dataset.langid;
 			var value = $(this).data("langid"); 
 			setCookiesOnDotCom(sessionCookie,value,null);
 		});

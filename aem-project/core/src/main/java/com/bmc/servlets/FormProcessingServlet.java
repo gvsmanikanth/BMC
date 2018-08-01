@@ -4,9 +4,16 @@ import com.adobe.acs.commons.email.EmailService;
 import com.bmc.mixins.ResourceProvider;
 import com.bmc.services.ExportComplianceService;
 import com.bmc.services.FormProcessingXMLService;
+import com.bmc.services.PactSafeService;
 import com.bmc.util.StringHelper;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.google.common.collect.Lists;
+import com.pactsafe.api.activity.Activity;
+import com.pactsafe.api.activity.Group;
+import com.pactsafe.api.activity.components.PactSafeActivityException;
+import com.pactsafe.api.activity.domain.EventType;
+import com.pactsafe.api.activity.domain.ParameterStore;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -67,10 +74,15 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String[] automationEmailRecipients;
     private String[] automationEmailCCRecipients;
 
+    private String pactSafeResponse="";
+
     private Session session;
 
     @Reference
     private EmailService emailService;
+
+    @Reference
+    private PactSafeService pactSafeService;
 
     @Reference
     private ExportComplianceService exportComplianceService;
@@ -155,6 +167,15 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             }
         }
         if (!honeyPotFailure) {
+            // Dermot's pet form submission UUID
+            form.data.put("uniqueFormSubmissionID", UUID.randomUUID().toString());
+
+            // TODO Wrap this is something that makes sure the field is actually checked. Also work out what happens if it's not actually checked.
+            String[] formTypes = {"Trial Download", "Demo", "Eval Request"};
+            if(Arrays.asList(formTypes).contains(form.properties.getOrDefault("C_Lead_Offer_Most_Recent1",""))) {
+                pactSafeResponse = pactSafeService.submitAgreement(form.data.getOrDefault("C_EmailAddress", ""),form.data.getOrDefault("uniqueFormSubmissionID","UniqueIDNotFound"));
+                form.data.put("pactSafeResponse", pactSafeResponse);
+            }
             switch (form.type) {
                 case "Lead Capture":
                     submitToEloqua(form);
@@ -183,7 +204,12 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
                 purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
-            response.sendRedirect(purlPage);
+            if(form.properties.get("activePURLRedirect").equals("true")){
+            	response.sendRedirect(form.properties.get(PURL_PAGE_URL));
+            }else{
+            	response.sendRedirect(purlPage);
+            }
+           // response.sendRedirect(purlPage);
         }
     }
 
@@ -365,9 +391,9 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         emailParams.put("fromAddress", FROM_ADDRESS);
         StringBuilder body = new StringBuilder("<h2>Form Data</h2><br/>");
         String[] honeypotFields = {"Address3", ":cq_csrf_token", "Surname", "wcmmode"};
-        /* WEB-2675: Sort fields in Form Emails */ 
-        String[] sortFieldsBy = {"C_Title","C_BusPhone","C_EmailAddress","C_Company","C_LastName","C_FirstName"}; // Sort the response based on the given order
-        String[] sensitiveFields = {"_charset_","elqFormName","formname","formid","adobe_unique_hit_id"}; 
+        /* WEB-2981: Sort fields in Form Emails */ 
+        String[] sortFieldsBy = {"C_Title","C_EmailAddress","C_FirstName","C_LastName","C_Company","C_Address1","C_Address2","C_Address3","C_City","C_State_Prov","C_Zip_Postal","C_Country","C_Direct_Phone1","C_MobilePhone","C_BusPhone"}; // Sort the response based on the given order
+        String[] sensitiveFields = {"_charset_","elqFormName","formname","formid","adobe_unique_hit_id","C_Lead_Rating_Override1","Email_Source","elqCustomerGUID","C_Source_Name1"}; 
         Map<String, String> emailEntryHashmap = new HashMap<>();
         emailEntryHashmap.putAll(form.data);
         
@@ -437,6 +463,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
             logger.trace(property + ": " + value);
             return value;
         }
+
         private final Node node;
 
         FormData(SlingHttpServletRequest request) {
@@ -471,11 +498,15 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 "formType",
                                 "leadDescription1",
                                 "emailid",
-                                FN_OPT_IN,
+                                // no longer adding this to the array since GDPR changes
+                                // DFN_OPT_IN,
+                                "SuppressOptIn",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
                                 "recipient",
-                                "bypassOSB"
+                                "bypassOSB",
+                                "activePURLRedirect",
+                                "activePURLPattern"
                         };
                         Arrays.stream(formProperties).forEach(s -> properties.put(s, getNodeProperty(s)));
                         properties.put("C_Product_Interest1", getProductInterestFromNodeName(properties.get("product_interest")));
@@ -516,6 +547,31 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
                             purlPageUrl = request.getScheme() + "://" + request.getServerName() + purlPage.replace(".html", "") + ".PURL" + formGUID + ".html";
                         }
+                        //WEB-2734: PURL/Thank You Page Handling - Edge Cases (Active PURL pattern)
+                        if(properties.get("activePURLRedirect").equals("true")){
+                        	Pattern p = Pattern.compile("(?<=\\$\\{)(.*?)(?=\\})"); // regular expression to find the string of pattern "${xxx}" Ex: ?first_name=${C_FirstName}&last_name=${C_LastName}
+                        	Matcher m = p.matcher(properties.get("activePURLPattern"));
+                        	StringBuffer activePURLPattern = new StringBuffer();
+                        	// Replace the matched pattern with the request.getParameter of matched pattern 
+                        	while(m.find()){
+                        		try{
+	                        			for (int i = 1; i <= m.groupCount(); i++) {
+	                        				// m.group(i) is C_FirstName and C_LastName in this Ex: ?first_name=${C_FirstName}&last_name=${C_LastName}
+	                        			    if(request.getParameter(m.group(i))!=null ){
+	                        				   m.appendReplacement(activePURLPattern, URLEncoder.encode(request.getParameter(m.group(i)),"UTF-8"));
+	                        				   }else{
+	                        					m.appendReplacement(activePURLPattern,"");
+	                        				   }
+	                        			}
+                        			}catch(Exception e){
+                        				logger.error(e.getMessage());
+                        			}
+                        	}
+                        	logger.info("request parameter value of activePURLPattern"+activePURLPattern.toString().replaceAll("[${}]*", ""));
+                        	purlPageUrl = purlPageUrl +activePURLPattern.toString().replaceAll("[${}]*", "");
+                        }
+                        
+                        
                         properties.put(PURL_PAGE_URL, purlPageUrl);
                         properties.remove(JCR_PURL_PAGE_URL);
 
@@ -524,7 +580,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         properties.put("Submit", "Action");
                         properties.put("elqCookieWrite", "0");
                         properties.put(FN_CONTACT_ME, properties.get(FN_CONTACT_ME).equals("true") ? FV_YES : FV_NO);
-                        properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
+                        // Removing the Force Opt In value from the initial defaults (WEB-3374 GDPR) as we rely on the front end for this now.
+                        // properties.put(FN_OPT_IN, properties.get(FN_OPT_IN).equals("true") ? FV_YES : FV_NO);
                         properties.put("CampaignID", properties.get("campaignid"));
                         properties.remove("campaignid");
                         properties.put("elqSiteID", elqSiteID);

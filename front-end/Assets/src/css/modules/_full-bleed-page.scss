@@ -9,8 +9,8 @@
 	padding: 2*$gutterInPx 0 !important;
 	text-align: center;
 	max-height: 1200px;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 	background-color: #000;
 	
 	@include media(breakpointLarge) {
@@ -197,7 +197,6 @@
        padding-top:1em;
        
        >a{
-         // width:100%;
           display: block;
           position: relative;
           @include media(breakpointMedium) {
@@ -372,7 +371,6 @@
     display: inline-block;
     font-weight: bold;
     height: 34px;
-   // padding-left: 40px;
 
     &.icon-document {
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
@@ -509,7 +507,6 @@
     @include media(breakpointLarge) {
       border-right: 1px solid color(corduroy);
       padding-left: 0;
-      //text-align: left;
   }
 
     & + .two-up {
@@ -626,10 +623,7 @@
   
   .flex-item{
      &.layout-secondary, &.layout-secondary-flex-item{ 
-      //width:100%; //WEB-1095: Commented due to Issue inside tab for secondary layout
-      @media (min-width: $break-md) {
-          //width:25%;
-      }
+     
     
       img{ 
         max-width:320px;
@@ -645,7 +639,6 @@
     padding:0;
     
     &.fixed-width-flex-item{
-     //padding-bottom:0px;
      position:relative;
         width:370px;
         min-width:370px;
@@ -1170,9 +1163,9 @@
 .full-bleed-two-column{
     table-layout: fixed;
   .layout-secondary , .layout-secondary-flex-item{
-    //width:100%;
+    
     @media (min-width: $break-md) {
-       // width:25%;
+       
     }
     figure{
       text-align:center;

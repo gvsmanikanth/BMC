@@ -57,7 +57,7 @@ $(document).ready(function () {
 			bubbleElem.css({'right':(bubbleElem.attr('data-percentage-right'))+'%','top':(bubbleElem.attr('data-percentage-top'))+'%'});
 		});
 	});*/
-	
+
 	$(".page-homepage-e .carousel-wrap .carousel").each(function(){
 		var bubbleElem = $(this).find('.circle');
 		bubbleElem.css({'right':(bubbleElem.attr('data-percentage-right'))+'%','top':(bubbleElem.attr('data-percentage-top'))+'%'});

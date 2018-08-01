@@ -47,6 +47,8 @@ public class KeyFeaturesModel {
     @PostConstruct
     protected void init() {
         try {
+        	/* WEB-2359:Null check to fix the issue of Button not displaying on the front end if the Bullet has not been added/populated */
+        	if (null != keyFeatureSet) { 
             if(keyFeatureSet.hasNodes()){
                 bulletList = new ArrayList<>();
                NodeIterator bulletIT = keyFeatureSet.getNodes();
@@ -55,6 +57,8 @@ public class KeyFeaturesModel {
                     bulletList.add(bullet.getProperty("featureBullet").getString());
                 }
             }
+        	}
+        	if (null != ctaButtonSet) {
             if (ctaButtonSet.hasNodes()){
                 ctaButtons = new ArrayList<>();
                 NodeIterator buttonSet = ctaButtonSet.getNodes();
@@ -68,6 +72,7 @@ public class KeyFeaturesModel {
                     ctaButtons.add(ctaButton);
                 }
             }
+        	}
         } catch(Exception e) {
             logger.debug("ERROR:", e.getMessage());
         }
@@ -93,9 +98,11 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            if (button.hasProperty("ctaPath") && session.itemExists(button.getProperty("ctaPath").getString())) {
+            if (button.hasProperty("ctaPath")) {
                 UrlResolver urlResolver = UrlResolver.from(resource);
                 return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
+            }else{
+            	return null;
             }
         }catch (Exception e){
             logger.error("ERROR:", e.getMessage());

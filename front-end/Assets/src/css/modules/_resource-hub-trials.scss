@@ -1,0 +1,155 @@
+.resource-hub{
+
+.product-category-header { 
+	min-height: 395px;
+	@media screen and (min-width: 640px) {
+		min-height: 435px;
+	}
+	h1{
+	  	margin-top: 0;
+	}
+}
+
+.listCompLoader{
+	padding-top: 2rem;
+}
+
+
+.resource-hub-trials-cards {
+	.flex-item {
+		position: relative;
+			.resource-type.resource {
+				background-color: #1CA4D8;
+				color: white;
+			}
+	}
+	.cards-4-col {
+		.flex-item {
+			background: #fff;
+				&:hover {
+				&:not(.noHover) {
+					transform: scale(1.01);
+				}
+			}
+		}
+	}
+	.filters {
+		background-color: transparent;
+		display:none;
+		select#products,
+			select#topics {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+		
+		ol{
+			display:table;
+			margin:0 auto;
+		}
+		li {
+			width: 90%;
+			@include media(breakpointLarge) {
+				width: 45%;
+				padding: 0 2rem;
+				display: table-cell;
+			}
+			select {
+				font-size: 1rem;
+			}
+		}
+		li.tooltipField {
+			margin-left: 2%;
+			>div {
+				&:first-child {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.filters.pageLoad {
+		display:block;
+	}
+	.decorator-select {
+		select {
+			>option {
+			    background: #cccccc2e;
+			   }
+		}
+		background: #fff;
+		border: 2px solid #cacaca;
+		border-radius: 5px;
+		box-sizing: border-box;
+		display: inline-block;
+		height: 48px;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		@include media(breakpointMedium){
+			width: 100%;
+		}
+		@include media(breakpointLarge){
+			--width: 55%;
+		}
+	}
+	fieldset {
+		&:not(#foo) {
+			.decorator-select {
+				&:after {
+					@include icon();
+					content: '\e601';
+					color: #fe5000;
+					top: 3px;
+					width: 26px;
+					z-index: 11;
+					right: 10px;
+					height: 24px;
+					padding: 15px 0px 0px 8px;
+					border-left: 1px solid #fe5000;
+					position: absolute;
+					pointer-events: none;
+					background-color: white;
+				}
+			}
+		}
+	}
+	.resource-container {
+		.resource-audience {
+			background: #cccccc2e;
+			position: absolute;
+    		bottom: 0;
+		    height: 50px;
+				span{
+					float:right;
+					color: #fe5000;
+				    position: relative;
+    				top: 12px;
+				}
+		}
+		.resource-details {
+		    margin-bottom: 2.5em;  
+		    margin-top: auto;
+		    font-size: 0.847em;
+		    color: #555557;
+		    line-height: 1.6em;
+		}
+		ul.list-group {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+				li.title{
+				    color: #fe5000;
+    				line-height: 1.3em;
+				}
+		}
+	}
+}
+
+}
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@
 	}
 	
 	padding: 0px !important;
-	display: flex;
+	--display: flex;
 	
 	.offset-wrapper{
 		
@@ -21,6 +21,11 @@
 		display: flex;
 		margin-left: auto;
 		margin-right: auto;
+		width:100%;
+	}
+	
+	.inner{
+		width:100%;
 	}
 	
 	h1, h2, h5{
@@ -71,9 +76,13 @@
 		padding-top:1rem;
 		min-height: 400px;
 		display: flex;
-		
 		@media screen and (min-width: 640px) {
 			min-height: 400px;
+		}
+		.inner{
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				margin-top: 3rem;
+			}
 		}
 	}
 		
@@ -85,21 +94,12 @@
 	.assetStrip {
 		display: block;
 		position: relative;
-		//bottom: 0px;
 		z-index: 9;
 		width: 100%;
-		//padding: 0 100%;
-		//margin-top: 1.55556rem;
-		//margin-left: -100%;
-		
-		//padding-left: 0rem;
-		//padding-right: 0rem;
 		padding-bottom: 1rem;
 		
 		@media screen and (min-width: 640px) {
 					padding-bottom: 0px;
-					//padding-left: 1rem;
-					//padding-right: 1rem;
 		}
 		
 		text-align: left;
@@ -148,9 +148,7 @@
 		}
 		
 		.contentContainer > .flex-item.no-border  > .inner{
-			//padding-bottom: 0;
-			//width: 100%;
-			//display: flex;
+			
 		}
 		
 		.dummyClickable{
@@ -177,7 +175,6 @@
 		}
 		
 		.assetTxt{
-			//padding-bottom: 1rem;
 			color: white;
 			width: 100%;
 			
@@ -193,7 +190,6 @@
 			
 			img{
 				max-width: 72px;
-				//min-width: 75px;
 				width: auto;
 				margin: auto;
 				vertical-align: top;
@@ -268,7 +264,6 @@
 					margin-left: 0;
 					display: inline-block;
 					text-align:left;
-					//max-width: 75%;
 					vertical-align: middle;
 				}
 			}
@@ -319,7 +314,6 @@
 			
 				@media screen and (min-width: 640px) {
 					border-top: 2px solid  #fe5000;
-					//padding-bottom: 0px;
 					transition: .5s ease;
 					
 				}
@@ -357,3 +351,5 @@
 		text-decoration: underline;
 	}
 }
+
+

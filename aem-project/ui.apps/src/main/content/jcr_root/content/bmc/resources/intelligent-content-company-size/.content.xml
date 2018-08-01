@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <ic-company-size-392967821
+            jcr:primaryType="nt:unstructured"
+            jcr:title="5000+"/>
+    <ic-company-size-445893740
+            jcr:primaryType="nt:unstructured"
+            jcr:title="1000-4999"/>
+    <ic-company-size-464811181
+            jcr:primaryType="nt:unstructured"
+            jcr:title="1-999"/>
+</jcr:root>

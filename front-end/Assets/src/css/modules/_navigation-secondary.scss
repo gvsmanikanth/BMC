@@ -18,9 +18,6 @@
 	width: 100%;
 	z-index: 5;
 
-	/*.ie8 & {
-		display: none;
-	}*/
 
 	@include media(breakpointLarge) {
 		border-top: solid 1px #ebebeb;
@@ -37,10 +34,6 @@
 		transition: max-height .25s ease;
 		width: auto;
 
-		/*.ie8 & {
-			height: 0px;
-			border: 0px;
-		}*/
 	}
 
 	&:before {
@@ -80,7 +73,7 @@
 	&.navigation-four-col,
 	&.navigation-tabbed-menu {
 		width: columns(12);
-
+		
 		&.navigation-active {
 
 			@include media(breakpointLarge) {
@@ -89,9 +82,6 @@
 		}
 	}
 
-	&.navigation-tabbed-menu {
-	// 	background: #000;
-	}
 
 	&.navigation-active {
 		right: 0;
@@ -106,16 +96,13 @@
 			right: em(12);
 			top: 100%;
 
-			/*.ie8 & {
-				display: block;
-			}*/
 		}
 	}
 
 
 	&.layout-inner-wrap {
 		@include media(breakpointLarge) {
-			padding: 0!important;
+			padding: 0px !important;
 		}
 	}
 
@@ -139,6 +126,7 @@
 			@include font-size(15);
 			color: #414042;
 			padding: em(6) 0;
+			
 		}
 
 		&:hover,
@@ -204,8 +192,7 @@
 
 		@include media(breakpointLarge) {
 			padding: em(18) 0 em(20);
-		}
-
+		}	
 	}
 
 	.navigation-tab-controls {
@@ -248,15 +235,6 @@
 			}
 		}
 
-
-		a {
-
-			&:hover {
-				@include media(breakpointLarge) {
-				//	color: #fff;
-				}
-			}
-		}
 	}
 
 	a.tab-control {
@@ -296,7 +274,6 @@
 
 		&.active-tab {
 			background-color: color(colorNavigationEmphasis);
-			// color: #fff;
 			cursor: default;
 			font-weight: bold;
 		}
@@ -305,7 +282,6 @@
 	// sprite-icon-product-types
 
 }
-
 
 .navigation-column {
 	@include box-sizing();
@@ -320,12 +296,12 @@
 	& + .navigation-column {
 		padding-top: 0;
 	}
-
+	
 	&.navigation-column-emphasis {
 		background-color: #fcfcfc;
 		padding: em(24);
 		@include media(breakpointLarge) {
-			padding-top: 0;
+			padding-top: 0; 
 		}
 		
 		//DXP-149 - Added new class to remove inline css
@@ -340,8 +316,6 @@
 		    }
 		  }
 		}
-		
-		
 	}
 
 	ul {
@@ -349,6 +323,7 @@
 		margin: 0;
 		padding: 0;
 	}
+	
 
 	.navigation-one-col & {
 		@include media(breakpointLarge) {
@@ -371,6 +346,7 @@
 		@include media(breakpointLarge) {
 			width: columns(3);
 		}
+		
 	}
 
 	.navigation-tabbed-menu & {
@@ -378,5 +354,6 @@
 			width: columns(4);
 		}
 	}
-
 }
+
+	

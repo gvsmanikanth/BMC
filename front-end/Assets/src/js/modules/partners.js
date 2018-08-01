@@ -5,7 +5,6 @@
 			var self = this;
 
 			FilterList.call(this, filterContainer, filterList, list);
-			//self.sortListBassedOnFeaturedItems();
 		}
 
 
@@ -13,7 +12,7 @@
 
 		StrategicPartnerList.prototype.getListItemHTML = function(item) {
 			var self = this; 
-			//var itemHTML = '<div class="flex-item imageCaptionCard"><a href="#'+item.id+'" class="modal-inline"><figure><img src="'+item.logo_url+'"><figcaption><h4>'+item.name+'</h4><p class="">'+item.short_desc+'</p></figcaption></figure></a></div>';
+			
 			var itemHTML = '<a href="#'+item.id+'" class="modal-inline"><div class="logo-block js-ehItem"><div class="logo-inner-container"><div class="logo-heading"><p>'+item.name+'</p></div><div class="logo-area"><img src="'+item.logo_url+'"></div><div class="copy p2"><p>'+item.short_desc+'</p></div></div></div></a>';	
 			
 			itemHTML += '<section class="section bg-white parnter-modal-details" id="'+item.id+'"><div class="section-content  p3"><div class="md-flex full-bleed-two-column"><div class="flex-item md-col-3 modal-logo-section">';
@@ -60,7 +59,6 @@
 			// The render function will show the appropriate content of out page.
 			$(window).on('hashchange', function() {
 				if (isListPage()) {
-					//filterListObject.updateFilterDropdownOnHashChange(decodeURI(window.location.hash));
 					filterListObject.render(decodeURIComponent(window.location.hash));
 				};
 			});

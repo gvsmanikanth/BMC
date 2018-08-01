@@ -7,10 +7,11 @@
             <h2>Case Studies/Success Stories</h2>
 
             <fieldset data-sly-list.filter="${data.filters}">
-                <select class="js-customer-story-filter-select 3">
+               <sly data-sly-use.filterType="${'com.bmc.components.CustomerStoryList' @ text = filter.name}"></sly>
+               <select id="${filterType.customFilterType}" class="js-customer-story-filter-select 3">
                     <option value="">By ${filter.name}</option>
                     <sly data-sly-list.option="${filter.options}">
-                        <option>${option.text}</option>
+                        <option value="${option.text}">${option.text}</option>
                     </sly>
                 </select>
             </fieldset>

@@ -30,7 +30,6 @@
 	a {
 		color: #fff;
 		@include font-size(18);
-		//padding: em(12 18) em(12 18) em(14 18);
 		padding: em(12 , (context: 18)) em(12 , (context: 18)) em(14 , (context: 18)); //BMC-527
 		text-decoration: none;
 		@include transition((property: background));
@@ -68,9 +67,6 @@
 		}
 	}
 
-	/*.ie8 & {
-		margin: 0;
-	}*/
 
 	@include media(breakpointLarge) {
 		&::after {
@@ -248,7 +244,6 @@
 
 	@include media(breakpointLarge) {
 		border-bottom: 1px solid #a7a9ac;
-		//padding: em(8 12) em(8 12);
 		padding: em(8 , (context: 12)) em(8 , (context: 12)); //BMC-527
 		margin-bottom: 0.5em !important;	// #FED - specificity battle?
 	}
@@ -282,7 +277,6 @@
 	@include media(breakpointLarge) {
 		border-bottom: 1px solid #a7a9ac;
 		&, &:first-child { margin-top: 0; }
-		//padding: em(16 12) em(8 12);
 		padding: em(16 , (context: 12)) em(8 , (context: 12)); //BMC-527
 	}
 
@@ -307,8 +301,6 @@
 		border-bottom: 2px solid color(colorFooterLight);
 		color: color(colorFooterLight);
 		font-weight: 800;
-		//margin: em(20 20) 0 em(30 20);
-		//padding-bottom: em(10 18);
 		margin: em(18 0 27); //BMC-527  corrected the em definition - error resolved.
 		padding-bottom: em(10);
 

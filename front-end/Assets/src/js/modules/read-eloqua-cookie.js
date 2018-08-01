@@ -14,7 +14,7 @@ $(document).ready(function () {
 						document.forms.leadgen.elements.elqCustomerGUID.value = GetElqCustomerGUID();
 					} catch (exception) {
 						if (typeof console !== 'undefined' && typeof console.log !== 'undefined') {
-							// console.log(exception); -- we do not allow console.log in production code
+							// -- we do not allow console.log in production code
 						}
 					}
 					return;
@@ -33,5 +33,3 @@ $(document).ready(function () {
 	
 	readEloquaCookie();
 });	// document ready
-
-//exports.readEloquaCookie = readEloquaCookie;

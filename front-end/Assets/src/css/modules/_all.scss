@@ -15,7 +15,6 @@
 @import "fancybox";
 @import "feature";
 @import "forms";
-@import "icons";
 @import "icon-point-list";
 @import "lists";
 @import "logo-block";
@@ -29,6 +28,7 @@
 @import "navigation-tertiary";
 @import "navigation-utility";
 @import "search_overlay";
+@import "navigation-upgrade";
 @import "nav-breadcrumb";
 @import "nav-pagination";
 @import "opentip";
@@ -82,13 +82,12 @@
 @import "partners";
 @import "events";
 @import "product-category-header";
- 
-// Moved Utilities classes at bottom. 
+@import "resource-hub-trials"; 
+
+// Moved Utilities classes at bottom.
 @import "utilities";
 @import "utility";
 @import "utility-responsive";
 
 @import "homepage-aos"; 
 @import "bottom-line-tabs";
-
-//@import "oldie";

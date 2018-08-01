@@ -2,8 +2,6 @@
 	"use strict";
 	
 	var dataContainer = $('.js-ticker'),
-		//dataUrl = '//communities.bmc.com/community/support/blog/feeds/posts',
-		//dataUrl = '/templates/ProxyJiveFeed?path=/community/support/blog/feeds/posts',
 		dataFrame,
 		dataItem,
 		dataCurrent,
@@ -20,37 +18,16 @@
 			dataFrame = dataContainer.find('.js-frame');
 			//Check if running local - if yes load local XML.
  			if(typeof bmcMeta !== 'undefined' && typeof bmcMeta.cdxLocal !== 'undefined' && bmcMeta.cdxLocal) {
- 			       //dataUrl = "./test/posts.xml";
+ 			       
  			}
-			//this.parseData(dataUrl);
+			
  			this.parseData(); //Removed parameter
 			this.events();
 		},
 
 		parseData: function(dataUrl) {
 			var dataTicker = this;
-//			$.ajax({
-//				type: 'GET',
-//				url: dataUrl,
-//				dataType: 'xml'
-//			})
-//			.done(function (xml) {
-//				$(xml).find('item').each(function (i) {
-//					if(i < 3) {
-//						var title = $(this).find('title').text(),
-//							linkUrl = $(this).find('link').text(),
-//							link = '<li class="js-item"><a href="'+linkUrl+'" target="_blank">'+title+'</a></li>';
-//						$(dataFrame).append(link);
-//						i++
-//					} else {
-//						return false;
-//					}
-//				});
 				dataTicker.addHandlers();
-//			})
-//			.fail(function() {
-//				// console.log( "RSS newsfeed failed to load. URL not found." );
-//			});
 		},
 
 		addHandlers: function() {
@@ -76,7 +53,7 @@
 					
 					});
 				} else {
-					// stop = 'true', pause the ticker
+					
 				}
 			}, config.interval);
 		},

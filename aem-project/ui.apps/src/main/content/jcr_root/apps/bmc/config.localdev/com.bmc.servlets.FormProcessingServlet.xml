@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
-          serviceUrl="http://localhost/admin/post.php"
+          serviceUrl="https://ws-uat.bmc.com/rest/BMC_CIM_WebForms_Src"
           elqSiteID="1625229226"
           timeout="{Long}5000"
           automationEmailEnabled="{Boolean}true"
-          automationEmailRecipients="[bledford@connectivedx.com]"
-          automationEmailCCRecipients="[bmc@bryanledford.com,bledford@gmail.com]"
+          automationEmailRecipients="[cmsdev@bmc.com]"
+          automationEmailCCRecipients="[]"
 />
         <!--serviceUrl="https://ws-uat.bmc.com/web/postForm.jsp"-->
         <!--serviceUrl="http://localhost/admin/post.php"-->

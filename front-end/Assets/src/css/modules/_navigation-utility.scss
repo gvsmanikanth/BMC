@@ -50,10 +50,7 @@ $mobileUtilityNavHeight: 49px;
 			}
 		}
 	}
-//ul, li {  //Commented BMC-527 to add margin and padding.
-  // margin: 0;
-  // padding: 0;
-//}
+
 	a {
 		color: color(colorCorporateAction);
 		&:hover {
@@ -100,7 +97,7 @@ $mobileUtilityNavHeight: 49px;
 // -------------------------------------------------------------- //
 .navigation-country a:after,
 .navigation-contact a:after,
-.navigation-support a:after {
+.navigation-support a:after{
 	@include icon();
 	@include font-size(16);
 	margin-left: 12px;
@@ -194,9 +191,6 @@ $mobileUtilityNavHeight: 49px;
 			top: 6px;
 			z-index: -1;
 
-			/*.ie8 & {
-				display: none;
-			}*/
 		}
 	}
 	.search-focus {
@@ -223,9 +217,7 @@ $mobileUtilityNavHeight: 49px;
 			@include transition();
 		}
 
-		/*.ie8 & {
-			margin-top: 4px;
-		}*/
+		
 	}
 	button {
 		background-color: transparent;
@@ -244,21 +236,6 @@ $mobileUtilityNavHeight: 49px;
 			border-left: 1px solid rgba(0,0,0,.1);
 		}
 
-		/*.ie8 & {
-			&:after {
-				@include icon();
-				color: color(darkGrey);
-				content: $iconSearch;
-				display: block;
-				font-size: 21px;
-				pointer-events: none;
-				position: absolute;
-				right: 8px;
-				top: 3px;
-				z-index: -1;
-			}
-		}
-		*/
 	}
 	&:after {
 			font-family: "icomoon";
@@ -354,9 +331,6 @@ $scrolledUtilityNavHeight: 49px;
 					right: 13px;
 					top: 13px;
 
-					/*.ie8 & {
-						top: 15px;
-					}*/
 				}
 			}
 			[type="text"] {
@@ -364,22 +338,10 @@ $scrolledUtilityNavHeight: 49px;
 				padding-left: 50px;
 				top: 0;
 
-				/*.ie8 & {
-					margin-top: -12px;
-					height: $scrolledUtilityNavHeight;
-					margin-left: -15px;
-				}*/
-
-
 				&:focus {
 					cursor: auto;
 					padding-left: 0;
 
-					/*.ie8 & {
-						margin-left: auto;
-						margin-top: 4px;
-						height: auto;
-					}*/
 				}
 			}
 			button {
@@ -389,9 +351,6 @@ $scrolledUtilityNavHeight: 49px;
 				top: 0;
 				width: $scrolledUtilityNavHeight;
 
-				/*.ie8 &:after {
-					display: none;
-				}*/
 			}
 		}
 	}

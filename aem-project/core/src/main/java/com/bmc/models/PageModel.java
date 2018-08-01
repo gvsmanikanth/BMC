@@ -129,7 +129,7 @@ public class PageModel {
         String templatePath = (template != null) ? template.getPath() : "";
         String templateName = (template != null) ? template.getName() : "";
         // If Thank-you Page, pull info from parent form page
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-thank-you")) {
             bmcMeta.getPage().setPurl("true");
             resourcePage = resourcePage.getParent();
             contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
@@ -151,7 +151,7 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
 
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setPageMetaFromForm(bmcMeta, form);
@@ -220,6 +220,7 @@ public class PageModel {
             bmcMeta.getForm().setName(fieldset.getProperty("formname").getString());
             // Properties from form container
             bmcMeta.getForm().setLeadOffer(form.getProperty("C_Lead_Offer_Most_Recent1").getString());
+            bmcMeta.getForm().setOptIn(form.getProperty("C_OptIn").getString());
             // Removed per DXP-1277
             // bmcMeta.getForm().setContactMe(form.getProperty("C_Contact_Me1").getBoolean() ? "on" : "off");
         }
@@ -242,7 +243,7 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
-            } else if (getContentType().contains("form-thank-you")) {
+            } else if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you")) {
                     formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
             } else if (getContentType().contains("form-")) {
                     formattedLongName.append(":forms-start" + ":"+resourcePage.getName().toString());
@@ -259,7 +260,7 @@ public class PageModel {
     }
 
     private String formatPageType(String path) {
-        if (getContentType().contains("form-thank-you")) {
+        if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you")) {
             return "forms-complete";
         } else if (getContentType().contains("form")) {
             return "forms-start";

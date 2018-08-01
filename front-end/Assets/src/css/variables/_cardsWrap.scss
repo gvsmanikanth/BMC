@@ -3,7 +3,6 @@
 %cards-wrap {
   @extend .flex-wrap;
   justify-content: space-between;
-  //padding-bottom: 4em;
 
   h1 {
     color: color(colorHeadings);
@@ -23,9 +22,6 @@
   }
 
   .flex-item {
-    // border-left: .5em solid transparent;
-    // border-right: .5em solid transparent;
-    // @include box-sizing();
     display: flex;
     margin: .5em 0;
     width: 100%;

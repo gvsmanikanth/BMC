@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
+    <ic-topics-357652083
+            jcr:primaryType="nt:unstructured"
+            jcr:title="AI &amp; Machine Learning"/>
+    <ic-topics-017644695
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Big Data"/>
+    <ic-topics-594037608
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Business &amp; IT Automation"/>
+    <ic-topics-542365023
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Cost Reduction &amp; IT Optimization"/>
+    <ic-topics-636264560
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DevOps"/>
+    <ic-topics-565104921
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Digital Workplace"/>
+    <ic-topics-319795973
+            jcr:primaryType="nt:unstructured"
+            jcr:title="IT Operations Management"/>
+    <ic-topics-343782513
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe"/>
+    <ic-topics-093281075
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Multi-Cloud"/>
+    <ic-topics-539896252
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Security &amp; Compliance"/>
+    <ic-topics-773791639
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Service Management"/>
+</jcr:root>

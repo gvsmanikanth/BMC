@@ -18,7 +18,8 @@
 	    var typesArray = opts.fileTypes.split(',');
 	    var extValid = new RegExp('/'+window.location.host+'/');
 	    var jsValid = new RegExp('javascript');
-	        
+		var isForm = new RegExp('\/forms\/');
+	   	    
 	    return this.each(function(){
 
 	    	if(!extValid.test(this.href)) {
@@ -35,6 +36,8 @@
 		    		}
 		    	}
 	    	}
+			
+
 	    		
 	    });
 	};

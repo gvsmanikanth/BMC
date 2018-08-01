@@ -1,12 +1,7 @@
 .filters {
-  //@extend .layout-inner-wrap;
-  
-  //position: fixed;
-  //top: 10em;
   background-color: white;
   margin: 0;
   padding: 0;
- // display:none;
   
   @include media(breakpointMedium){
       top: 0;
@@ -22,7 +17,7 @@
 
   h2 {
     @include media(breakpointLarge) {
-      //margin-top: 2em;
+      
     }
   }
 
@@ -94,14 +89,11 @@
   }
 
   .fixed-filter-link {
-   //background: red url(#{$imagesFolder}button-fixed-chat-now.png) no-repeat;
     background-color:red;
     border-radius: 5px;
     @include font-size(15);
     color: #fff .5;
     height: 45px;
-   //opacity: .50;
-    //outline: 0;
     position: fixed;
     right: 1em;
     top:5em;

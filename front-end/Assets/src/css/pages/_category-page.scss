@@ -147,34 +147,6 @@
 		display: none !important;
 	}
 
-	/*
-	.entry-title img {
-		margin-top: 0px;
-		margin-left: 1em;
-		
-		@media ( max-width : 1200px) {
-			display: none;
-		}
-	}
-	
-	
-	.two-up.nth-child-np2.bloghide {
-		width: 50%;
-		margin-bottom: 3em;
-		font-weight: 400;
-		font-size: .93em;
-		vertical-align: top;
-		padding-top: 0em;
-		margin-top: 0em;
-		
-		@media ( max-width : 1200px) {
-			width: 100%;
-			margin-bottom: 0em;
-			font-weight: 400
-		}
-	}
-	
-	*/
 	
 	.inline-menu-box{
 		text-align: left; 
@@ -200,51 +172,6 @@
 			
 	}
 
-	/*
-	.service-design{
-		img{
-			float: right; 
-			width: 400px; 
-			padding-left: 1em;
-		}
-	}
-	
-	
-	.accordion-content{
-		
-		 .img-fl-right-wd{
-			  float: right; 
-		      width: 400px; 
-		      padding-left: 1em;
-		  }
-
-
-		.wrapper-nested{
-			margin-top: 2em; 
-			margin-bottom: 2em;
-			.accordion{
-				.accordion-item{
-					padding-left: 1em; 
-					background-color: #f1f1f1;
-					
-					.accordion-item-content{
-						display: none;
-						
-						.wrapper-nested{
-							background-color: #f1f1f1;
-						}
-					
-						.two-up{
-							margin-top: .5em; 
-							padding-right: 1em;
-						}
-					}
-				}
-			}
-			
-		}
-		
-	}*/
 
 	.no-top-border-margin-padding{
 		border-top: medium none; 
@@ -252,105 +179,6 @@
 		padding-top: 0px;
 	}
 
-
-	/*	
-	.entry-title {
-		  img {
-	          margin-top: 0px;
-	          margin-left: 1em;
-	          
-	          @media (max-width: 1200px) {
-	          	 display: none;
-	          }
-	       }
-    }
-    
-	.two-up.nth-child-np2.bloghide {
-          width: 50%;
-          margin-bottom: 3em;
-          font-weight: 400;
-          font-size: .93em;
-          vertical-align: top;
-          padding-top: 0em;
-          margin-top: 0em;
-          
-           @media (max-width: 1200px) {
-           	width: 100%;
-            margin-bottom: 0em;
-            font-weight: 400;
-           }
-    }
-        
-    .brd-cornflower-wd-500px{
-        width:500px; border: 1px solid #cacaca;
-    }
-      
-    .pl1em {
-        padding-left: 1em;
-    }
-    
-    .hideElm {
-          	 display: none;	
-        }
-      
-	.ml3em-imp{
-       	margin-left:3em !important;
-      	}
-      
-	.mb15px{
-       	margin-bottom: 15px;
- 		}
-      
-      .mb-pt-3em{
-        margin-bottom:0.3em;
-    	}
-
- 	.mt-pt-2-imp {
-        	margin-top:0.2em !important;
-        }
-	
-	.col-6-imp{
-        width:50% !important;
-      }
-      .pl-30px{
-        padding-left:30px;
-      }
-      
-      .mt-pt-66em-imp{
-        margin-top: 0.66rem !important;
-      }
-      
-      .col-60-per{
-        width:60%;
-      }
-      
-      .ml3-imp{
-        margin-left: 2rem !important;
-      }
-
-	
-    .videoWrapper {
-          position: relative;
-          padding-bottom: 56.25%; 
-          padding-top: 25px;
-          height: 0;
-          
-          iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            
-            &.brd-wd-max-wd {
-              border:1px solid #CCC; 
-              border-width:1px; 
-              margin-bottom:5px; 
-              max-width: 100%;
-			}
-     	}
-    }
-   */
 	.txt-underline {
       	text-decoration: underline;
 	}

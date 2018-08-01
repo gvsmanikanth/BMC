@@ -1,3 +1,4 @@
+<sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.ctaurl}"></sly>
 <blockquote class="${properties.fullBleedCenterText ? 'fullbleed-blockquote' : 'testimonial divider'}">
     <div class="layout-inner-wrap">
 
@@ -17,7 +18,13 @@
         </sly>
 
         <section data-sly-test="${properties.ctatext}">
-            <a class="btn-white learn-more" href="${properties.ctaurl}">${properties.ctatext}</a>
+             <sly data-sly-test="${cta.href}">
+                    <sly data-sly-test.ctaResolvedLink="${cta.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!cta.href}">
+                 <sly data-sly-test.ctaResolvedLink="${properties.ctaurl}"></sly>
+             </sly>
+            <a class="btn-white learn-more ${cta.isVideo ? 'modal-video-player' : ''}" href="${ctaResolvedLink}">${properties.ctatext}</a>
         </section>
     </div>
 </blockquote>
