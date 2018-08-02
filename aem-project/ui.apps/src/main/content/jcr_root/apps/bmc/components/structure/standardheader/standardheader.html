@@ -22,17 +22,44 @@
 				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText @ context='html',i18n}</a>
 			</li>
 			<li class="navigation-contact">
-                <a href="#" class="contact-bmc">${'Contact BMC' @ i18n}</a>
-            </li>
-			<li class="navigation-country">
-                <a href="#" class="select-country">${'Worldwide (English)' @ i18n}</a>
+                <a href="#" class="contact-bmc"><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search">
-					<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
 			</li>
 		</ul>
 	</div>
 	<!-- / layout-inner-wrap -->
+	<!-- Search Overlay -->
+	 <div id="bodyOverlay" title="Click anywhere to close overlay."></div>
+	<div class="search-overlay off"> 
+        <div class="rows_flex">
+			<div id="search_header" class="columns">
+			   <div class="component_search">
+					<a class="component_search_close" id="component_search_close"></a>
+				  <div class="search-panel">
+					 <form  id="search_form" method="get" action="/search/" >
+						<input class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  
+						<!--<div class="search_click btn-white">Search</div>-->
+						<button type="submit" class="btn btn-default search_click btn-white">Search</button>						
+					 </form>
+					 <div class="drop_overlay"></div>
+				  </div>
+				  <div class="overlay_keywords">
+					 <div class="heading">Popular Destinations</div>
+					 <div class="keywords" data-nr-items="6">
+						<span><a href="/corporate/about-bmc-software.html">About BMC</a></span>
+						<span><a href="" target="_blank">On-demand Webinars</a></span>
+						<span><a href="">Global Contacts</a></span>
+						<span><a href="">Support Central</a></span>
+						<span><a href="">Knowledge Base</a></span>
+						<span><a href="">News</a></span>
+					 </div>
+				  </div>
+			   </div>
+			</div>
+		</div>
+	</div>
+	<!--/ Search Overlay -->
 </nav>
 <!-- / layout-nav -->
 
@@ -62,7 +89,7 @@
 <div class="layout-country-modal">
    <div class="country-modal-inner-wrap">
       <div class="country-modal-header">							
-         <span class="modal-title">${'Select Country/Region' @ i18n}</span>
+         <span class="modal-title">${'Select Country' @ i18n}</span>
          <a href="#" class="country-modal-close"></a>
       </div>
       <section class="layout-full-bleed-nopadding">
@@ -110,13 +137,13 @@
                   <h3>Asia Pacific</h3>
                   <ul>
                      <li data-langid="en-AU"><a href='http://www.bmcsoftware.com.au'><img class ="flag flag-au"></img>Australia (English)</a></li>
-                     <li data-langid="zh-CN"><a href='http://www.bmcsoftware.cn'><img class ="flag flag-cn"></img>Mainland China (简体中文)</a></li>
-                     <li data-langid="en-HK"><a href='http://www.bmcsoftware.hk'><img class ="flag flag-hk"></img>Hong Kong of China (English)</a></li>
+                     <li data-langid="zh-CN"><a href='http://www.bmcsoftware.cn'><img class ="flag flag-cn"></img>China (中国)</a></li>
+                     <li data-langid="en-HK"><a href='http://www.bmcsoftware.hk'><img class ="flag flag-hk"></img>Hong Kong (English)</a></li>
                      <li data-langid="en-IN"><a href='http://www.bmcsoftware.in'><img class ="flag flag-in"></img>India (English)</a></li>
                      <li data-langid="ja-JP"><a href='http://www.bmcsoftware.jp'><img class ="flag flag-jp"></img>Japan (日本語)</a></li>
                      <li data-langid="ko-KR"><a href='http://www.bmcsoftware.kr'><img class ="flag flag-kr"></img>Republic of Korea (English)</a></li>
                      <li data-langid="en-SG"><a href='http://www.bmcsoftware.sg'><img class ="flag flag-sg"></img>Singapore (English)</a></li>
-                     <li data-langid="zh-TW"><a href='http://www.bmcsoftware.tw'><img class ="flag flag-tw"></img>Taiwan of China (繁体中文)</a></li>
+                     <li data-langid="zh-TW"><a href='http://www.bmcsoftware.tw'><img class ="flag flag-tw"></img>Taiwan (English)</a></li>
                   </ul>
                </li>
             </ul>
