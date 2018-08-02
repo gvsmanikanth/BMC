@@ -1,4 +1,4 @@
-<sly data-sly-test="${wcmmode.edit || wcmmode.preview}" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+<sly data-sly-test="${wcmmode.edit || wcmmode.preview || wcmmode.disabled}" data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.all @ categories = ['bmc.forms']}"></sly>
 <form data-sly-use.container="com.adobe.cq.wcm.core.components.models.form.Container"
       data-sly-use.grid="com.day.cq.wcm.foundation.model.responsivegrid.ResponsiveGrid"
