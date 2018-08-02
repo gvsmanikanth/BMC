@@ -22,17 +22,44 @@
 				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText @ context='html',i18n}</a>
 			</li>
 			<li class="navigation-contact">
-                <a href="#" class="contact-bmc">${'Contact BMC' @ i18n}</a>
-            </li>
-			<li class="navigation-country">
-                <a href="#" class="select-country">${'Worldwide (English)' @ i18n}</a>
+                <a href="#" class="contact-bmc"><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search">
-					<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
 			</li>
 		</ul>
 	</div>
 	<!-- / layout-inner-wrap -->
+		<!-- Search Overlay -->
+	 <div id="bodyOverlay" title="Click anywhere to close overlay."></div>
+	<div class="search-overlay off"> 
+        <div class="rows_flex">
+			<div id="search_header" class="columns">
+			   <div class="component_search">
+					<a class="component_search_close" id="component_search_close"></a>
+				  <div class="search-panel">
+					 <form  id="search_form" method="get" action="/search/" >
+						<input class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  
+						<!--<div class="search_click btn-white">Search</div>-->
+						<button type="submit" class="btn btn-default search_click btn-white">Search</button>						
+					 </form>
+					 <div class="drop_overlay"></div>
+				  </div>
+				  <div class="overlay_keywords">
+					 <div class="heading">Popular Destinations</div>
+					 <div class="keywords" data-nr-items="6">
+						<span><a href="/corporate/about-bmc-software.html">About BMC</a></span>
+						<span><a href="" target="_blank">On-demand Webinars</a></span>
+						<span><a href="">Global Contacts</a></span>
+						<span><a href="">Support Central</a></span>
+						<span><a href="">Knowledge Base</a></span>
+						<span><a href="">News</a></span>
+					 </div>
+				  </div>
+			   </div>
+			</div>
+		</div>
+	</div>
+	<!--/ Search Overlay -->
 </nav>
 <!-- / layout-nav -->
 
