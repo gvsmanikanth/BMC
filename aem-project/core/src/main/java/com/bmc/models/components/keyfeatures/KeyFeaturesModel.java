@@ -68,7 +68,7 @@ public class KeyFeaturesModel {
                     ctaButton.put("assetType", getButtonAssetType(button,"assetType", "altButtonName"));
                     ctaButton.put("buttonColor", button.getProperty("buttonColor").getString());
                     ctaButton.put("assetName", getButtonTitleByPath(button));
-                    //WEB-3681 Key Features.
+                    //WEB-3681 Key Features -Picker Functionality
                     ctaButton.put("ctaPath", getCtaPathHref(button));
                     ctaButtons.add(ctaButton);
                 }
@@ -99,7 +99,7 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            //WEB-3681 Key Features
+            //WEB-3681 Key Features -Picker Functionality
             if (button.hasProperty("ctaPath")) {
             	String path = button.getProperty("ctaPath").getString();           	 
                 return  path.substring(path.lastIndexOf("/")+1);
@@ -120,7 +120,7 @@ public class KeyFeaturesModel {
         return ctaButtons;
     }
     
-    //WEB-3681 Key Features
+    //WEB-3681 Key Features -Picker Functionality
     private String getCtaPathHref(Node button)
     {
  	   try {
