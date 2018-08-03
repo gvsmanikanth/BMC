@@ -5,7 +5,7 @@ jQuery(function ($) {
 	//Hide Javasctipt disabled message if enabled
 	$("#noscriptbox").hide();
 	$("form").show();
-
+	$(".st-default-autocomplete").insertBefore("#search_header .overlay_keywords");
 
 	function EventDebouncer(type, context) {
 		var timer = null;
