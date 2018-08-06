@@ -1,4 +1,5 @@
 <sly data-sly-template.DoubleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+
     <script type="text/javascript">
         (function(w, d, t, u, n, s, e) {
             w['SwiftypeObject'] = n;
@@ -29,12 +30,13 @@
                     }
                 }
             }
-        });
+ });
+
     </script>
 </sly>
 
 <sly data-sly-template.SingleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
-    <script type="text/javascript">
+	<script type="text/javascript">
         (function(w, d, t, u, n, s, e) {
             w['SwiftypeObject'] = n;
             w[n] = w[n] || function() {
@@ -61,5 +63,53 @@
                 }
             }
         });
-    </script>
+
+</script>
 </sly>
+<sly data-sly-template.autocompleteQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+  $(function() {
+          var customResultRenderFunction = function(ctx, data) {
+            var withSections = [],
+              noSections = [];
+
+            $.each(data, function(docType, results) {
+              $.each(results, function(idx, result) {
+                if (result.sections && result.sections.length > 15) {
+                  withSections.push(result);
+                } else {
+                  noSections.push(result);
+                }
+              });
+            });
+
+            var withSectionsList = $('<ul class="with_sections"></ul>'),
+              noSectionsList = $('<ul class="no_sections"></ul>');
+
+            $.each(withSections, function(idx, item) {
+              ctx.registerResult($('<li class="result"><p>' + item['title'] + '</p></li>').appendTo(withSectionsList), item);
+            });
+            $.each(noSections, function(idx, item) {
+              ctx.registerResult($('<li class="result"><p>' + item['title'] + '</p></li>').appendTo(noSectionsList), item);
+            });
+            if (withSections.length > 0) {
+              withSectionsList.appendTo(ctx.list);
+            }
+            if (noSections.length > 0) {
+              noSectionsList.appendTo(ctx.list);
+            }
+          };
+            $('#st-search-input').swiftype({ 
+			engineKey: 'jo6eDbCYeVxBqtSpSeiH',
+		    resultRenderFunction: customResultRenderFunction,
+		    resultLimit: 5,
+            suggestionListType: 'div',
+            resultListSelector: '.result',
+            filters: {'page': {'source':'${PageLocale @context="unsafe"}'}}
+			});
+ });
+</script>
+</sly>
+

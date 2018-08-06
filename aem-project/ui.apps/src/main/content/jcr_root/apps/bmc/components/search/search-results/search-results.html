@@ -1,3 +1,6 @@
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
+<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}"/>
+<sly data-sly-test.SearchFilter="${SearchResultsModel.SearchFilter}"/>
 <header class="search-results-header">
     <form id="submitForm" name="submitForm" method="get" onsubmit="return validateForm();">
         <fieldset>

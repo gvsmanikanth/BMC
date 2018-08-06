@@ -21,28 +21,7 @@
 <sly data-sly-test="${qFieldName == 'category'}" data-sly-call="${ScriptTemplates.DoubleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
 <sly data-sly-test="${qFieldName != 'category'}" data-sly-call="${ScriptTemplates.SingleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
 
-<style>
-	.st-default-autocomplete{
-		left: 50% !important;
-		width: 50% !important;
-		height: 500px;
-		overflow-y: scroll;
-	}
-	/*.st-default-autocomplete{
-		left: 0% !important;
-		width: 100% !important;
-	}*/
-    .st-default-search-input{
-    	height: auto !important;
-    }
-    .st-query-present{
-		margin-top: 2rem !important;
-		width: auto !important;
-		border: none !important;
-		box-shadow: none !important;
-		border-radius: 0 !important;
-    }
-	.st-ui-result.__swiftype_result{
-		padding: 1rem 2rem !important;
-	}
-</style>
+<sly  data-sly-call="${ScriptTemplates.autocompleteQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/> 
+
+
+
