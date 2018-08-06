@@ -22,7 +22,7 @@
 	    return this.each(function(){
 	    	if(!extValid.test(this.href)) {
 	    		if(!jsValid.test(this.href)){
-					if(!this.href.indexOf("mailto")){
+					if(!this.href.indexOf("mailto") || !this.href.indexOf("/documents/")){
 						this.target="";
 					}else{
 						this.target="_blank";
