@@ -20,8 +20,8 @@
 
                 <div data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
                     <a href="${linkURL}" target="_self" class="${assetIconImage} ${linkType =='VideoModal' ? 'modal-video-player' : ''}" >
-                        <sly data-sly-test="${datasheetPrefix}"> ${assetPrefix}: ${assetLinkText @ context='html'}</sly>
-                        <sly data-sly-test="${!datasheetPrefix}">${assetLinkText @ context='html'}</sly>
+                        <sly data-sly-test="${assetPrefix}"> ${assetPrefix}: ${assetLinkText @ context='html'}</sly>
+                        <sly data-sly-test="${!assetPrefix}">${assetLinkText @ context='html'}</sly>
                     </a>
                 </div>
             </div>
