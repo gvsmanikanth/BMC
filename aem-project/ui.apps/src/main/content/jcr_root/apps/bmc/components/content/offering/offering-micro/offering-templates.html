@@ -1,7 +1,7 @@
 <sly data-sly-template.FullDiscription="${@ productDescription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, linkURL, linkType, linkText, anchorTagText, shortDescription}">
     <ul class="accordion">
         <li class="accordion-item">
-        <!--/* WEB-3062 Datasheet link is displaying the colon as prefix in Offering Micro */-->
+        <!--/* WEB-3062 Datasheet link is displaying the colon as prefix in Offering Micro START */-->
             <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
             <a class="accordion-item-anchor" href="#${anchorTagText}">${productName @context='html'}</a>
             <div class="accordion-item-content">
@@ -24,6 +24,7 @@
                         <sly data-sly-test="${!assetPrefix}">${assetLinkText @ context='html'}</sly>
                     </a>
                 </div>
+                <!--/* WEB-3062 Datasheet link is displaying the colon as prefix in Offering Micro END */-->
             </div>
         </li>
     </ul>
