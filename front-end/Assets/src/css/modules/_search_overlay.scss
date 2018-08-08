@@ -189,7 +189,6 @@ body.no-scroll{
 								font-size: 1rem;
 								line-height: 1.7;
 								&:link {
-									color: #293e40;
 									text-decoration: none;
 								}
 							}
@@ -209,9 +208,9 @@ body.no-scroll{
 		top: 0rem;
 	}
 }
-.off{
+.search-overlay.off {
 	display: none;
 }
-.on{
+.search-overlay.on {
 	display: block;
 }

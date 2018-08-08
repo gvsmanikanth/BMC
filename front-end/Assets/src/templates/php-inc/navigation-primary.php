@@ -69,19 +69,7 @@
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="verticalBar">|</span></a>
 			</li>
-			<!-- <li class="navigation-country">
-				<a href="#" class="select-country">Worldwide (English)</a>
-			</li> 
-			<li class="navigation-search js-navigation-search">
-				<form action="/search/" class="search-site">
-					<div class="search-site-b" dir="ltr">
-						<div class="search-focus">
-							<input maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" title="Search..." type="text" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false" placeholder="Search...">
-						</div>
-						<button></button>
-					</div>
-				</form>
-			</li>-->
+
 			<li class="navigation-search js-navigation-search"></li>
 			
 		</ul>
@@ -107,12 +95,16 @@
 				  <div class="overlay_keywords">
 					 <div class="heading">Popular Destinations</div>
 					 <div class="keywords" data-nr-items="6">
-						<span><a href="">About BMC</a></span>
-						<span><a href="" target="_blank">On-demand Webinars</a></span>
-						<span><a href="">Global Contacts</a></span>
-						<span><a href="">Support Central</a></span>
-						<span><a href="">Knowledge Base</a></span>
-						<span><a href="">News</a></span>
+						<span><a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy Product Page</a></span>
+						<span><a href="https://docs.bmc.com/docs/productsupport/remedy-it-service-management-suite" target="_blank">Remedy Support</a></span>
+						<span><a href="https://www.bmc.com/it-solutions/control-m.html">Control-M Product Page</a></span>
+						<span><a href="https://docs.bmc.com/docs/productsupport/control-m-enterprise-manager">Control-M Support</a></span>
+						<span><a href="https://www.bmc.com/it-solutions/helix.html">Helix Product Page</a></span>
+						<span><a href="https://www.footprintsservicedesk.com/">FootPrints Product Page</a></span>
+						<span><a href="https://www.trackit.com/">Track-It! Product Page</a></span>
+						<span><a href="https://www.bmc.com/it-solutions/brands/patrol-proactivenet.html">Patrol, BPPM, & ProactiveNet</a></span>
+						<span><a href="https://www.bmc.com/guides/itil-introduction.html">ITIL Guide</a></span>
+						<span><a href="https://www.bmc.com/careers/careers.html">Careers</a></span>
 					 </div>
 				  </div>
 			   </div>
