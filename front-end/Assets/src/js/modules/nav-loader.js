@@ -181,7 +181,6 @@ jQuery(function($){
 		
 		// Search form animation WEB-2853
 		$(document).click(function() {
-			$("#st-search-input").val('');
 			$('.search-overlay').removeClass('on');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
@@ -189,7 +188,6 @@ jQuery(function($){
 		});
 		
 		$(".component_search_close").click(function(){
-			$("#st-search-input").val('');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
 			$(".search-overlay #search_input").val("");
@@ -202,6 +200,7 @@ jQuery(function($){
 		//$('.navigation-search.js-navigation-search').click(function(e) {
 		$(document).on("click",".navigation-search.js-navigation-search",function(e) {
 			e.stopPropagation();
+			$("#st-search-input").val('');
 			$('.search-overlay').addClass('on');
 			$('body').addClass('no-scroll');
 			$('#bodyOverlay').addClass('backgroundColor');
