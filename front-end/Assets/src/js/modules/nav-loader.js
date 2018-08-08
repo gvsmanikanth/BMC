@@ -181,6 +181,7 @@ jQuery(function($){
 		
 		// Search form animation WEB-2853
 		$(document).click(function() {
+			$("#st-search-input").val('');
 			$('.search-overlay').removeClass('on');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
@@ -188,6 +189,7 @@ jQuery(function($){
 		});
 		
 		$(".component_search_close").click(function(){
+			$("#st-search-input").val('');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
 			$(".search-overlay #search_input").val("");
