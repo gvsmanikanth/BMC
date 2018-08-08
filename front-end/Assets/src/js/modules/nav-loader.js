@@ -188,10 +188,13 @@ jQuery(function($){
 		});
 		
 		$(".component_search_close").click(function(){
-			$('.search-overlay').removeClass('on');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
 			$(".search-overlay #search_input").val("");
+			$(".search-overlay").animate({right: (-1)*$(".search-overlay").width()}, function(){
+				$('.search-overlay').removeClass('on');
+				}
+			);
 		});
 	
 		//$('.navigation-search.js-navigation-search').click(function(e) {
@@ -201,6 +204,8 @@ jQuery(function($){
 			$('body').addClass('no-scroll');
 			$('#bodyOverlay').addClass('backgroundColor');
 			$(".search-overlay #search_input").focus();
+			$(".search-overlay").css({"right": (-1)*$(".search-overlay").width()});
+			$(".search-overlay").animate({right: '0px'});
 			if($('body').hasClass("scrolled-down") || $('body').hasClass("scrolled-up")){
 				$(".search-overlay").addClass("topHeader");
 			}else{
