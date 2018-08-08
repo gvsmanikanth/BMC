@@ -67,14 +67,79 @@
 </script>
 </sly>
 <sly data-sly-template.autocompleteQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+	<style>
+    	.autocomplete{
+        	display: block !important;
+			width: 90% !important;
+			left: 1.5rem !important;
+			top: 7rem !important;
+			height: auto;
+        }
+		.with_sections,
+		.no_sections{
+			--padding: 1rem 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			display: -ms-flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-flow: row wrap;
+			flex-flow: row wrap;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+        }
+		.no_sections{
+			padding-bottom:1rem;
+		}
+		span.result{
+			padding: .2rem 1rem;
+			margin: 0.6rem;
+			background: #fff;
+			border: #ccc solid 1px;
+			cursor: pointer;
+		}
+		.result a{
+			font-size: 0.9rem;
+			line-height: 1.7;
+			text-decoration: none;
+		}
+		#viewAll{
+			cursor:pointer;
+		}
+		.viewResults{
+			display:none;
+		}
+	</style>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <script>
   $(function() {
+		string();
           var customResultRenderFunction = function(ctx, data) {
+		  
+		  $("input#st-search-input").keyup(function(){
+				if($(this).val().length > 1){
+					$(".overlay_keywords").hide();
+					//$(".viewResults").show();
+					setTimeout(function() { 
+							$('#viewResults').fadeOut(); 
+					 }, 2000);  
+				}else{
+					$(".overlay_keywords").show();
+					$(".viewResults").hide();
+				}
+			});
+		  if($("#st-search-input").val().length > 1){
+				$(".overlay_keywords").hide();
+		  }
+		  //console.log(data);
             var withSections = [],
               noSections = [];
-
             $.each(data, function(docType, results) {
               $.each(results, function(idx, result) {
                 if (result.sections && result.sections.length > 15) {
@@ -84,15 +149,16 @@
                 }
               });
             });
-
-            var withSectionsList = $('<ul class="with_sections"></ul>'),
-              noSectionsList = $('<ul class="no_sections"></ul>');
+			
+            var withSectionsList = $('<div class="with_sections"></div>'),
+              noSectionsList = $('<div class="no_sections"></div>');
 
             $.each(withSections, function(idx, item) {
-              ctx.registerResult($('<li class="result"><p>' + item['title'] + '</p></li>').appendTo(withSectionsList), item);
+			//console.log("idx -> "+idx+" , item -> "+JSON.stringify(item.title));
+              ctx.registerResult($('<span class="result">'+ '<a href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a></span>').appendTo(withSectionsList), item);
             });
             $.each(noSections, function(idx, item) {
-              ctx.registerResult($('<li class="result"><p>' + item['title'] + '</p></li>').appendTo(noSectionsList), item);
+              ctx.registerResult($('<span class="result">'+ '<a href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a></span>').appendTo(noSectionsList), item);
             });
             if (withSections.length > 0) {
               withSectionsList.appendTo(ctx.list);
@@ -100,16 +166,44 @@
             if (noSections.length > 0) {
               noSectionsList.appendTo(ctx.list);
             }
-          };
+			$(".viewResults").show().insertAfter(".search-wrap");
+		};
             $('#st-search-input').swiftype({ 
-			engineKey: 'jo6eDbCYeVxBqtSpSeiH',
-		    resultRenderFunction: customResultRenderFunction,
-		    resultLimit: 5,
-            suggestionListType: 'div',
-            resultListSelector: '.result',
-            filters: {'page': {'source':'${PageLocale @context="unsafe"}'}}
+                engineKey: 'jo6eDbCYeVxBqtSpSeiH',
+                resultRenderFunction: customResultRenderFunction,
+                resultLimit: 10,
+				suggestionListType: 'div class="search-wrap"',
+                resultListSelector: '.result',
+                filters: {'page': {'source':'${PageLocale @context="unsafe"}',"category":"!blogs"}}
 			});
+			
+			function string(){
+				var value = localStorage.getItem("searchText");
+				  if (value != null){
+					if (history.pushState) {
+						var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?label=all#stq='+value;
+						window.history.pushState({path:newurl},'',newurl);
+					}
+					localStorage.removeItem("searchText");
+				  }
+			}
  });
+
+$(window).load(function() {
+  $(".autocomplete").insertBefore(".overlay_keywords");
+  
+});
+
+$(".search_click").click(function(){
+	var searchText = $("#st-search-input").val();
+	localStorage.setItem("searchText", searchText);
+});
+
+$("#viewAll").click(function(){
+	var searchText = $("#st-search-input").val();
+	localStorage.setItem("searchText", searchText);
+});
+
 </script>
 </sly>
 
