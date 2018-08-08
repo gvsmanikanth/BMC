@@ -4,6 +4,9 @@ jQuery(function($){
 			$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
 		}
 	}
+	
+	
+			
 	getMobile();
 	// two navigation functions have been setup based on the namespacing of
 	// 'nav' vs 'navigation'.
@@ -110,8 +113,17 @@ jQuery(function($){
 			// correctly set position for secondary nav
 			setSecondaryNavPosition( $this );
 		});
+		
+		//Remove Navigation Text on Scroll
+		$(window).scroll(function() {
+		  if($('body').hasClass("scrolled-down") || $('body').hasClass("scrolled-up")){
+				$(".navigation-utility .scrollTextHide").hide();
+			}else{
+				$(".navigation-utility .scrollTextHide").show();
+			}
+		});
 
-		$( window ).on( 'resize', function(e) {
+		$(window).on( 'resize', function(e) {
 			clearTimeout(resizeTimer);
 			// https://css-tricks.com/snippets/jquery/done-resizing-event/
 			resizeTimer = setTimeout(function() {

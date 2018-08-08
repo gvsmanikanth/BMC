@@ -67,10 +67,12 @@
 				<a href="http://www.bmc.com/it-solutions/free-product-trials.html"  class="">Free Trials<span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
-				<a href="#" class="contact-bmc"><span class="verticalBar">|</span></a>
+				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
 			</li>
 
-			<li class="navigation-search js-navigation-search"></li>
+			<li class="navigation-search js-navigation-search">
+				<a href="#" class=""><span class="scrollTextHide">Search</span></a>
+			</li>
 			
 		</ul>
 		<!-- end chat now -->
