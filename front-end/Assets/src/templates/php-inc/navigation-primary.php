@@ -69,7 +69,9 @@
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
 			</li>
-
+			<li class="navigation-country">
+                <a href="#" class="select-country"><span class="scrollTextHide">Worldwide (English)</span><span class="verticalBar">|</span></a>
+            </li>
 			<li class="navigation-search js-navigation-search">
 				<a href="#" class=""><span class="scrollTextHide">Search</span></a>
 			</li>
