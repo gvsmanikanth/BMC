@@ -47,19 +47,8 @@
 					 <div class="drop_overlay"></div>
 				  </div>
 				  <p class="viewResults"><a id="viewAll" href="/search/" id="viewAll">View all results</a></p>
-				  <div class="overlay_keywords">
-					 <div class="heading">Popular Destinations</div>
-					 <div class="keywords" data-nr-items="6">
-						<span><a href="/corporate/about-bmc-software.html">About BMC</a></span>
-						<span><a href="" target="_blank">On-demand Webinars</a></span>
-						<span><a href="">Global Contacts</a></span>
-						<span><a href="">Support Central</a></span>
-						<span><a href="">Knowledge Base</a></span>
-						<span><a href="">News</a></span>
-					 </div>
-				  </div>
-				  
-			   </div>
+				  <sly data-sly-resource="${HeaderModel.SearchTermsPath @resourceType='bmc/components/content/htmlarea'}" data-sly-unwrap></sly>
+				</div>
 			</div>
 		</div>
 	</div>
