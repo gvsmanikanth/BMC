@@ -95,16 +95,16 @@
 				  <div class="overlay_keywords">
 					 <div class="heading">Popular Destinations</div>
 					 <div class="keywords" data-nr-items="6">
-						<span><a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy Product Page</a></span>
-						<span><a href="https://docs.bmc.com/docs/productsupport/remedy-it-service-management-suite" target="_blank">Remedy Support</a></span>
-						<span><a href="https://www.bmc.com/it-solutions/control-m.html">Control-M Product Page</a></span>
-						<span><a href="https://docs.bmc.com/docs/productsupport/control-m-enterprise-manager">Control-M Support</a></span>
-						<span><a href="https://www.bmc.com/it-solutions/helix.html">Helix Product Page</a></span>
-						<span><a href="https://www.footprintsservicedesk.com/">FootPrints Product Page</a></span>
-						<span><a href="https://www.trackit.com/">Track-It! Product Page</a></span>
-						<span><a href="https://www.bmc.com/it-solutions/brands/patrol-proactivenet.html">Patrol, BPPM, & ProactiveNet</a></span>
-						<span><a href="https://www.bmc.com/guides/itil-introduction.html">ITIL Guide</a></span>
-						<span><a href="https://www.bmc.com/careers/careers.html">Careers</a></span>
+						<a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy Product Page</a>
+						<a href="https://docs.bmc.com/docs/productsupport/remedy-it-service-management-suite" target="_blank">Remedy Support</a>
+						<a href="https://www.bmc.com/it-solutions/control-m.html">Control-M Product Page</a>
+						<a href="https://docs.bmc.com/docs/productsupport/control-m-enterprise-manager">Control-M Support</a>
+						<a href="https://www.bmc.com/it-solutions/helix.html">Helix Product Page</a>
+						<a href="https://www.footprintsservicedesk.com/">FootPrints Product Page</a>
+						<a href="https://www.trackit.com/">Track-It! Product Page</a>
+						<a href="https://www.bmc.com/it-solutions/brands/patrol-proactivenet.html">Patrol, BPPM, & ProactiveNet</a>
+						<a href="https://www.bmc.com/guides/itil-introduction.html">ITIL Guide</a>
+						<a href="https://www.bmc.com/careers/careers.html">Careers</a>
 					 </div>
 				  </div>
 			   </div>

@@ -177,22 +177,19 @@ body.no-scroll{
 						justify-content: flex-start;
 						align-items: center;
 						max-width: 85%;
-						span {
-							padding: 0.2rem 1rem;
-							margin: .6rem 1.2rem .6rem 0;
-							background: #fff;
-							font-size: 1rem;
-							--border-radius: 100px;
-							border: #ccc solid 1px;
-							cursor: pointer;
 							a {
 								font-size: 1rem;
 								line-height: 1.7;
+								padding: 0.2rem 1rem;
+								margin: .6rem 1.2rem .6rem 0;
+								background: #fff;
+								font-size: 1rem;
+								border: #ccc solid 1px;
+								cursor: pointer;
 								&:link {
 									text-decoration: none;
 								}
 							}
-						}
 					}
 				}
 			}
