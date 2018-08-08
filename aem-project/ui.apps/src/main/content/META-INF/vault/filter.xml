@@ -61,6 +61,7 @@
     <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
     <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
     
+    <filter root="/content/bmc/resources/topic" mode="replace"/>
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
