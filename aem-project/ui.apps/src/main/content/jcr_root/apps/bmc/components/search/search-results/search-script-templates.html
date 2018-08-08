@@ -35,6 +35,7 @@
     </script>
 </sly>
 
+
 <sly data-sly-template.SingleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
 	<script type="text/javascript">
         (function(w, d, t, u, n, s, e) {
@@ -115,10 +116,16 @@
 			display:none;
 		}
 	</style>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
 <script>
-  $(function() {
+function defer(method) {
+	if (window.jQuery)
+		method();
+	else
+		setTimeout(function() { defer(method) }, 500);
+}
+
+function autoCompleteSearchTopNav(){
+	$(function() {
 		string();
           var customResultRenderFunction = function(ctx, data) {
 		  
@@ -203,7 +210,8 @@ $("#viewAll").click(function(){
 	var searchText = $("#st-search-input").val();
 	localStorage.setItem("searchText", searchText);
 });
-
+}
+defer(autoCompleteSearchTopNav)
 </script>
 </sly>
 
