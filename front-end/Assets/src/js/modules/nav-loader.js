@@ -200,13 +200,15 @@ jQuery(function($){
 		});
 		
 		$(".component_search_close").click(function(){
-			$('body').removeClass('no-scroll');
-			$('#bodyOverlay').removeClass('backgroundColor');
-			$(".search-overlay #search_input").val("");
-			$(".search-overlay").animate({right: (-1)*$(".search-overlay").width()}, function(){
+			$(".search-overlay").animate({right:(-1)*$(".search-overlay").width()}, function(){
 				$('.search-overlay').removeClass('on');
+				$('body').removeClass('no-scroll');
+				$('#bodyOverlay').removeClass('backgroundColor');
+				$(".search-overlay #search_input").val("");
+				$(".search-overlay").css("right","0px");
 				}
 			);
+			
 		});
 	
 		//$('.navigation-search.js-navigation-search').click(function(e) {
