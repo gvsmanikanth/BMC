@@ -60,7 +60,9 @@
 	<filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
     <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
     <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
-    
+    <!-- WEB-3688 Support Central Navigation Data feed update START -->
+	 <filter root="/content/dam/bmc/support-central/ServiceHeaderSupportJSON.json" mode="merge" />
+	 <!-- WEB-3688 Support Central Navigation Data feed update END -->
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
