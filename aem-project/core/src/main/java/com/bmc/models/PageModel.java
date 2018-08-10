@@ -180,6 +180,7 @@ public class PageModel {
                 bmcMeta.getUser().setSupportAuthenticated(true);
                 bmcMeta.getSupport().setIssueEnvironment(service.getIssueEnvironment());
                 bmcMeta.getSupport().setIssuePath(service.getIssuePath());
+                bmcMeta.getSupport().setDraftIssuePath(service.getDraftIssuePath());
             }
         }
 
