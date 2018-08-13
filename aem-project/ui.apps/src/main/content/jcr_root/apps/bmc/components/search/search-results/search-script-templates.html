@@ -97,53 +97,59 @@
 		.no_sections{
 			padding-bottom:1rem;
 		}
-		span.result{
+		
+		a.result {
+			font-size: 0.9rem;
+			line-height: 1.7;
+			text-decoration: none;
 			padding: .2rem 1rem;
 			margin: 0.6rem;
 			background: #fff;
 			border: #ccc solid 1px;
 			cursor: pointer;
 		}
-		.result a{
-			font-size: 0.9rem;
-			line-height: 1.7;
-			text-decoration: none;
-		}
 		#viewAll{
 			cursor:pointer;
 		}
 		.viewResults{
 			display:none;
+			margin: 0.6rem;
+		}
+		.resultHeading{
+			display:none;
+			color: #293e40;
+			font-size: 1.2rem;
+			text-align: left;
+			padding: .5rem;
+			margin: 1.2rem 0 0 0;
 		}
 	</style>
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+
+ 
+
 <script>
 function defer(method) {
-	if (window.jQuery)
-		method();
-	else
-		setTimeout(function() { defer(method) }, 500);
+	   if (window.jQuery)
+	       method();
+	   else
+	       setTimeout(function() { defer(method) }, 500);
 }
 
 function autoCompleteSearchTopNav(){
 	$(function() {
-		string();
+		queryString();
           var customResultRenderFunction = function(ctx, data) {
-		  
 		  $("input#st-search-input").keyup(function(){
-				if($(this).val().length > 1){
+				if($(this).val().length > 2 ){
 					$(".overlay_keywords").hide();
 					//$(".viewResults").show();
-					setTimeout(function() { 
-							$('#viewResults').fadeOut(); 
-					 }, 2000);  
 				}else{
-					$(".overlay_keywords").show();
-					$(".viewResults").hide();
+						$(".overlay_keywords").show();
+						$(".viewResults,.resultHeading").hide();
 				}
 			});
-		  if($("#st-search-input").val().length > 1){
-				$(".overlay_keywords").hide();
-		  }
+		  
 		  //console.log(data);
             var withSections = [],
               noSections = [];
@@ -159,19 +165,19 @@ function autoCompleteSearchTopNav(){
 			
             var withSectionsList = $('<div class="with_sections"></div>'),
               noSectionsList = $('<div class="no_sections"></div>');
-
+			$(".resultHeading").show().insertBefore(".search-wrap");
             $.each(withSections, function(idx, item) {
 			//console.log("idx -> "+idx+" , item -> "+JSON.stringify(item.title));
-              ctx.registerResult($('<span class="result">'+ '<a href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a></span>').appendTo(withSectionsList), item);
+			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
             });
             $.each(noSections, function(idx, item) {
-              ctx.registerResult($('<span class="result">'+ '<a href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a></span>').appendTo(noSectionsList), item);
+			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
             });
             if (withSections.length > 0) {
               withSectionsList.appendTo(ctx.list);
             }
             if (noSections.length > 0) {
-              noSectionsList.appendTo(ctx.list);
+              withSectionsList.appendTo(ctx.list);
             }
 			$(".viewResults").show().insertAfter(".search-wrap");
 		};
@@ -181,10 +187,10 @@ function autoCompleteSearchTopNav(){
                 resultLimit: 10,
 				suggestionListType: 'div class="search-wrap"',
                 resultListSelector: '.result',
-                filters: {'page': {'source':'${PageLocale @context="unsafe"}',"category":"!blogs"}}
+                filters: {'page': {'source':'${PageLocale @context="unsafe"}'}}
 			});
 			
-			function string(){
+			function queryString(){
 				var value = localStorage.getItem("searchText");
 				  if (value != null){
 					if (history.pushState) {
