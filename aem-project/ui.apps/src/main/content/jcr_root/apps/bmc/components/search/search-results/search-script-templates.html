@@ -130,10 +130,10 @@
 
 <script>
 function defer(method) {
-	   if (window.jQuery)
-	       method();
-	   else
-	       setTimeout(function() { defer(method) }, 500);
+	if (window.jQuery)
+		method();
+	else
+		setTimeout(function() { defer(method) }, 500);
 }
 
 function autoCompleteSearchTopNav(){
