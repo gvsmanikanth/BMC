@@ -114,7 +114,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
                 response.setContentType("text/html");
                 //response.getWriter().append("404");
-                String path = "/content/bmc/404.html";
+                String path = "/content/bmc/blogs-404.html";
                 HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
                 WCMMode.DISABLED.toRequest(req);
 
