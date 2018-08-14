@@ -176,7 +176,6 @@ body.no-scroll{
 						flex-flow: row wrap;
 						justify-content: flex-start;
 						align-items: center;
-						max-width: 85%;
 							a {
 								font-size: 1rem;
 								line-height: 1.7;
@@ -186,6 +185,7 @@ body.no-scroll{
 								font-size: 0.85rem;
 								border: #ccc solid 1px;
 								cursor: pointer;
+								text-align:left;
 								&:link {
 									text-decoration: none;
 								}
