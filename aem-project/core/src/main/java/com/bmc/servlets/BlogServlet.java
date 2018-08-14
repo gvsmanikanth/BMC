@@ -20,6 +20,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+import java.net.URLEncoder;
+import java.io.UnsupportedEncodingException;
+
 
 @SlingServlet(paths = "/bin/blogs", methods = {"GET"})
 public class BlogServlet extends SlingSafeMethodsServlet {
@@ -67,6 +70,10 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         LinkCheckerSettings.fromRequest(request).setIgnoreExternals(true);
         String path = request.getParameter("path");
         String src = base + path;
+        // WEB-3745: Blog Search
+        if(request.getParameter("s") != null && request.getParameter("s") != ""){
+        	src = base + path + "?s="+URLEncoder.encode(request.getParameter("s"));
+        }
         String source = "";
         logger.info("Loading URL: " + src);
         try {
