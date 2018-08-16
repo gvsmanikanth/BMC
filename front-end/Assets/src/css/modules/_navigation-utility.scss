@@ -49,6 +49,9 @@ $mobileUtilityNavHeight: 49px;
 				padding-left: 1em;
 			}
 		}
+		a.navigation_search_link{
+			cursor:pointer;
+		}
 	}
 
 	a {
@@ -314,6 +317,7 @@ $scrolledUtilityNavHeight: 49px;
 		}
 	}
 	.navigation-search {
+		
 		@include media(breakpointLarge) {
 			border-right: solid 1px color(mediumGrey);
 			width: 50px;
@@ -362,9 +366,7 @@ $scrolledUtilityNavHeight: 49px;
 
 			}
 		}
-		.navigation_search_link{
-			cursor:pointer;
-		}
+		
 	}
 	@include media(breakpointLarge) {
 		.navigation-utility {
