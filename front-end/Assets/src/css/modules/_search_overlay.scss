@@ -111,7 +111,7 @@ body.no-scroll{
 						padding-left: 0;
 						line-height: 5.7rem;
 						input {
-							width: 80%;
+							width: 300px;
 							margin: 0 auto;
 							border: none;
 							background: transparent;
@@ -157,7 +157,7 @@ body.no-scroll{
 					}
 				}
 				.overlay_keywords {
-					background: transparent;
+					background: transparent !important;
 					height: auto;
 					text-align: center;
 					color: inherit;
@@ -190,6 +190,79 @@ body.no-scroll{
 									text-decoration: none;
 								}
 							}
+					}
+				}
+				.autocomplete{
+					--display: block !important;
+					width: 90% !important;
+					overflow-x: hidden;
+					background: #fff;
+					position: absolute;
+					left: 1.5rem !important;
+					top: 7.5rem !important;
+					z-index: 999;
+					margin-bottom: 0;
+					display: none;
+					height:75%;
+					.with_sections{
+						--padding: 1rem 0;
+						display: -webkit-box;
+						display: -ms-flexbox;
+						display: flex;
+						display: -ms-flex;
+						-webkit-box-orient: horizontal;
+						-webkit-box-direction: normal;
+						-ms-flex-flow: row wrap;
+						flex-flow: row wrap;
+						-webkit-box-pack: start;
+						-ms-flex-pack: start;
+						justify-content: flex-start;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						a.result {
+							font-size: 0.85rem;
+							line-height: 1.7;
+							text-decoration: none;
+							padding: .2rem 1rem;
+							margin: 0.3rem 0.8rem 0.3rem 0;
+							background: #fff;
+							border: #ccc solid 1px;
+							cursor: pointer;
+						}
+					}
+					.no_sections{
+						--padding: 1rem 0;
+						display: -webkit-box;
+						display: -ms-flexbox;
+						display: flex;
+						display: -ms-flex;
+						-webkit-box-orient: horizontal;
+						-webkit-box-direction: normal;
+						-ms-flex-flow: row wrap;
+						flex-flow: row wrap;
+						-webkit-box-pack: start;
+						-ms-flex-pack: start;
+						justify-content: flex-start;
+						-webkit-box-align: center;
+						-ms-flex-align: center;
+						align-items: center;
+						padding-bottom:1rem;
+					}
+					.resultHeading{
+						display:none;
+						color: #293e40;
+						font-size: 1.2rem;
+						text-align: left;
+						padding: .5rem;
+						margin: 1.2rem 0 0 0;
+					}
+					.viewResults{
+						display:none;
+						margin: 0.6rem;
+						#viewAll{
+							cursor:pointer;
+						}
 					}
 				}
 			}

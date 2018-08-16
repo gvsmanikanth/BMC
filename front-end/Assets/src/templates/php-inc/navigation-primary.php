@@ -73,7 +73,7 @@
                 <a href="#" class="select-country"><span class="scrollTextHide">Worldwide (English)</span></a>
             </li>
 			<li class="navigation-search js-navigation-search">
-				<a href="#" class=""><span class="scrollTextHide">Search</span></a>
+				<a class="navigation_search_link"><span class="scrollTextHide">Search</span></a>
 			</li>
 			
 		</ul>

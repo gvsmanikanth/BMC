@@ -362,6 +362,9 @@ $scrolledUtilityNavHeight: 49px;
 
 			}
 		}
+		.navigation_search_link{
+			cursor:pointer;
+		}
 	}
 	@include media(breakpointLarge) {
 		.navigation-utility {
