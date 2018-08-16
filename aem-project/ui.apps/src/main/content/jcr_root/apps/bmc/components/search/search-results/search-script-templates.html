@@ -131,7 +131,7 @@ function autoCompleteSearchTopNav(){
                 resultLimit: 10,
 				suggestionListType: 'div class="search-wrap"',
                 resultListSelector: '.result',
-                filters: {'page': {'source':'${PageLocale @context="unsafe"}'}}
+                filters: {'page': {'source':'${PageLocale @context="unsafe"}',"category":"!blogs"}}
 			});
 			
 			function queryString(){
