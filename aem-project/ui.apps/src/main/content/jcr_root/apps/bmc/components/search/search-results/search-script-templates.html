@@ -68,65 +68,6 @@
 </script>
 </sly>
 <sly data-sly-template.autocompleteQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
-	<style>
-    	.autocomplete{
-        	display: block !important;
-			width: 90% !important;
-			left: 1.5rem !important;
-			top: 7rem !important;
-			height: auto;
-        }
-		.with_sections,
-		.no_sections{
-			--padding: 1rem 0;
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			display: -ms-flex;
-			-webkit-box-orient: horizontal;
-			-webkit-box-direction: normal;
-			-ms-flex-flow: row wrap;
-			flex-flow: row wrap;
-			-webkit-box-pack: start;
-			-ms-flex-pack: start;
-			justify-content: flex-start;
-			-webkit-box-align: center;
-			-ms-flex-align: center;
-			align-items: center;
-        }
-		.no_sections{
-			padding-bottom:1rem;
-		}
-		
-		a.result {
-			font-size: 0.9rem;
-			line-height: 1.7;
-			text-decoration: none;
-			padding: .2rem 1rem;
-			margin: 0.6rem;
-			background: #fff;
-			border: #ccc solid 1px;
-			cursor: pointer;
-		}
-		#viewAll{
-			cursor:pointer;
-		}
-		.viewResults{
-			display:none;
-			margin: 0.6rem;
-		}
-		.resultHeading{
-			display:none;
-			color: #293e40;
-			font-size: 1.2rem;
-			text-align: left;
-			padding: .5rem;
-			margin: 1.2rem 0 0 0;
-		}
-	</style>
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
-
- 
 
 <script>
 function defer(method) {
@@ -141,13 +82,13 @@ function autoCompleteSearchTopNav(){
 		queryString();
           var customResultRenderFunction = function(ctx, data) {
 		  $("input#st-search-input").keyup(function(){
-				if($(this).val().length > 2 ){
-					$(".overlay_keywords").hide();
-					//$(".viewResults").show();
+				/*if($(this).val().length < 3 ){
+					$(".overlay_keywords").show();
+					$(".autocomplete").hide();
 				}else{
-						$(".overlay_keywords").show();
-						$(".viewResults,.resultHeading").hide();
-				}
+					$(".overlay_keywords").hide();
+					$(".autocomplete").show();
+				}*/
 			});
 		  
 		  //console.log(data);
@@ -166,6 +107,8 @@ function autoCompleteSearchTopNav(){
             var withSectionsList = $('<div class="with_sections"></div>'),
               noSectionsList = $('<div class="no_sections"></div>');
 			$(".resultHeading").show().insertBefore(".search-wrap");
+			
+			
             $.each(withSections, function(idx, item) {
 			//console.log("idx -> "+idx+" , item -> "+JSON.stringify(item.title));
 			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
@@ -179,6 +122,7 @@ function autoCompleteSearchTopNav(){
             if (noSections.length > 0) {
               withSectionsList.appendTo(ctx.list);
             }
+			
 			$(".viewResults").show().insertAfter(".search-wrap");
 		};
             $('#st-search-input').swiftype({ 
@@ -202,9 +146,10 @@ function autoCompleteSearchTopNav(){
 			}
  });
 
+
 $(window).load(function() {
-  $(".autocomplete").insertBefore(".overlay_keywords");
-  
+  $(".autocomplete").insertAfter(".overlay_keywords");
+  $(".navigation-search a").removeAttr("target");
 });
 
 $(".search_click").click(function(){
