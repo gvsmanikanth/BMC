@@ -249,20 +249,21 @@ body.no-scroll{
 						align-items: center;
 						padding-bottom:1rem;
 					}
-					.resultHeading{
-						display:none;
-						color: #293e40;
-						font-size: 1.2rem;
-						text-align: left;
-						padding: .5rem;
-						margin: 1.2rem 0 0 0;
-					}
-					.viewResults{
-						display:none;
-						margin: 0.6rem;
-						#viewAll{
-							cursor:pointer;
-						}
+					
+				}
+				.resultHeading{
+					display:none;
+					color: #293e40;
+					font-size: 1.2rem;
+					text-align: left;
+					padding: .5rem;
+					margin: 1.2rem 0 0 0;
+				}
+				.viewResults{
+					display:none;
+					margin: 0.6rem;
+					#viewAll{
+						cursor:pointer;
 					}
 				}
 			}
