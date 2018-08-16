@@ -99,10 +99,9 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            //WEB-3681 Key Features -Picker Functionality
             if (button.hasProperty("ctaPath")) {
-            	String path = button.getProperty("ctaPath").getString();           	 
-                return  path.substring(path.lastIndexOf("/")+1);
+            	 UrlResolver urlResolver = UrlResolver.from(resource);
+                 return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
             }else{
             	return null;
             }
