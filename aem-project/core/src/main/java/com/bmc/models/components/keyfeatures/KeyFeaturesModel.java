@@ -2,6 +2,8 @@ package com.bmc.models.components.keyfeatures;
 
 
 import com.bmc.models.url.UrlInfo;
+import com.bmc.mixins.UrlResolver;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
