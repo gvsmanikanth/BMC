@@ -361,6 +361,19 @@ function addFilterToArrayProtoype() {
 	$(window).resize(function() {
 		setTimeout(eqHeight(), 2000);
 	});
+	
+	//Search Overlay Landscape
+	window.onresize = function (event) {
+	  applyOrientation();
+	}
+
+	function applyOrientation() {
+	  if (window.innerWidth >= 960 || window.innerWidth <= 1024) {
+		$(".search-overlay").css("top","0rem");
+	  } else {
+		//$(".search-overlay").css("top","0rem");
+	  }
+	}
 
 	// Sticky nav on scroll
 	if ($('.scroll-container').length) {
