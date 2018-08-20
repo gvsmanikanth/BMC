@@ -115,6 +115,14 @@ public class PageModel {
             return "";
         }
     }
+    
+    private String getIC_buyer_stage_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-buyer-stage/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
 
     private BmcMeta gatherAnalytics() {
         BmcMeta bmcMeta = new BmcMeta();
@@ -147,9 +155,16 @@ public class PageModel {
 
         String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining("|"));
         String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining("|"));
-
+        
+        String[] ic_buyer_stage = resourcePage.getContentResource().getValueMap().get("ic-buyer-stage", new String[] {});
+        String ic_buyer_stage_list = Arrays.stream(ic_buyer_stage).map(s -> getIC_buyer_stage_Value(s)).collect(Collectors.joining("|"));
+        
+        
+        
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
+        
+        bmcMeta.getPage().getIc().setIc_buyer_stage(ic_buyer_stage_list);
 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {

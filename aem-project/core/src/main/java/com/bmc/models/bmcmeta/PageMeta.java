@@ -14,10 +14,12 @@ public class PageMeta {
     private String isPurl = "false";
     private ModelOpenMeta modalOpen;
     private GeoIPMeta GeoIP;
+    private ICMeta ic;
 
     public PageMeta() {
         this.modalOpen = new ModelOpenMeta();
         this.GeoIP = new GeoIPMeta(false, "");
+        this.ic = new ICMeta();
     }
 
     public String getContentId() {
@@ -90,5 +92,13 @@ public class PageMeta {
 
     public void setGeoIP(GeoIPMeta geoIP) {
         GeoIP = geoIP;
+    }
+    
+    public ICMeta getIc() {
+        return ic;
+    }
+
+    public void setIc(ICMeta IC) {
+        ic = IC;
     }
 }
