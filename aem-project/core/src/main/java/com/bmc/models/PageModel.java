@@ -27,6 +27,9 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 /**
  * Created by elambert on 5/26/17.
@@ -123,7 +126,48 @@ public class PageModel {
             return "";
         }
     }
+    
+   
+    
+    private String getIC_content_type_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-types/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_topics_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-topics/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
 
+    private String getIC_target_persona_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-target-persona/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_target_industry_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-target-industry/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_company_size_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-company-size/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
     private BmcMeta gatherAnalytics() {
         BmcMeta bmcMeta = new BmcMeta();
         bmcMeta.getPage().setLongName(formatLongName());
@@ -156,15 +200,48 @@ public class PageModel {
         String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining("|"));
         String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining("|"));
         
+        
+        String ic_app_inclusion = resourcePage.getContentResource().getValueMap().get("ic-app-inclusion").toString();
+        //String ic_app_inclusion_list = Arrays.stream(ic_app_inclusion).map(s -> getIC_app_inclusion_Value(s)).collect(Collectors.joining("|"));
+        
+        String[] ic_content_type = resourcePage.getContentResource().getValueMap().get("ic-content-type", new String[] {});
+        String ic_content_type_list = Arrays.stream(ic_content_type).map(s -> getIC_content_type_Value(s)).collect(Collectors.joining("|"));
+      
+        String ic_weighting = resourcePage.getContentResource().getValueMap().get("ic-weighting").toString();
+        
+        
+        String[] ic_topics = resourcePage.getContentResource().getValueMap().get("ic-topics", new String[] {});
+        String ic_topics_list = Arrays.stream(ic_topics).map(s -> getIC_topics_Value(s)).collect(Collectors.joining("|"));
+        
         String[] ic_buyer_stage = resourcePage.getContentResource().getValueMap().get("ic-buyer-stage", new String[] {});
         String ic_buyer_stage_list = Arrays.stream(ic_buyer_stage).map(s -> getIC_buyer_stage_Value(s)).collect(Collectors.joining("|"));
         
+        String[] ic_target_persona = resourcePage.getContentResource().getValueMap().get("ic-target-persona", new String[] {});
+        String ic_target_persona_list = Arrays.stream(ic_target_persona).map(s -> getIC_target_persona_Value(s)).collect(Collectors.joining("|"));
         
+        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
+        String ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
+         
+        String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
+        String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
         
+        String[] ic_company_size = resourcePage.getContentResource().getValueMap().get("ic-company-size", new String[] {});
+        String ic_company_size_list = Arrays.stream(ic_company_size).map(s -> getIC_company_size_Value(s)).collect(Collectors.joining("|"));
+       
+       
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
         
+        
+        bmcMeta.getPage().getIc().setIc_app_inclusion(ic_app_inclusion);
+        bmcMeta.getPage().getIc().setIc_content_type(ic_content_type_list);
+        bmcMeta.getPage().getIc().setIc_weighting(ic_weighting);
+        bmcMeta.getPage().getIc().setIc_topics(ic_topics_list);
         bmcMeta.getPage().getIc().setIc_buyer_stage(ic_buyer_stage_list);
+        bmcMeta.getPage().getIc().setIc_target_persona(ic_target_persona_list);
+        bmcMeta.getPage().getIc().setIc_source_publish_date(ic_source_publish_date);
+        bmcMeta.getPage().getIc().setIc_target_industry(ic_target_industry_list);
+        bmcMeta.getPage().getIc().setIc_company_size(ic_company_size_list);
 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {
