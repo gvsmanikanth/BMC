@@ -24,17 +24,25 @@ $(document).ready(function () {
   });	
 		
 	//Set the height for all sections wraps equal.
+	var windowHeight = $(window).innerHeight();
 	function setHeight() {
-		 windowHeight = $(window).innerHeight();
+		if($(".ub-emb-bar-frame").length == 1){
+		 $('.section-wrap-header').css('height', windowHeight-200);
+		}else{
 		 $('.section-wrap-header').css('height', windowHeight-120);
-		 $('.section-wrap-header').css('min-height', 500);
-		 $('.section-wrap').css('min-height', windowHeight-50);
+		}
+		$('.section-wrap-header').css('min-height', 500);
+		$('.section-wrap').css('min-height', windowHeight-50);
 	};
 	
 	setHeight();
 		  
 	$(window).resize(function() {
 		  setHeight();
+	});
+	
+	$(".ub-emb-close").click(function(){
+		$('.section-wrap-header').css('height', windowHeight-120);
 	});
 	
 	$(".page-homepage-e #fp-nav .click").click(function(){
