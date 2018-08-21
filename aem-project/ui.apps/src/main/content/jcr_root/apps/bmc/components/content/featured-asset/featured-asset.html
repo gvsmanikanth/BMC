@@ -20,13 +20,13 @@
     <section class="topcontent ${bgClass}">
         <div class="layout-inner-wrap">
             <div class="report ${imageLocation}">
-                <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
+                <a href="${cta.href}" class="${cta.cssClass}">
                     <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt @ context='html'}" title="" width="320"  height="170" border="0"></img>
                 </a>
                 <div class="report-text">
                     <h5> ${properties.heading @ context='html'}</h5>
                     <p>${properties.subheading @ context='html'}</p>
-                    <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
+                    <a href="${cta.href}"  class="${cta.cssClass}">
                         ${cta.text @ context='html'}
                         <sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly>
                     </a>
@@ -42,12 +42,12 @@
                 <div class="report-text">
                     <h5> ${properties.heading @ context='html'}</h5>
                     <p>${properties.subheading @ context='html'}</p>
-                    <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
+                    <a href="${cta.href}"  class="${cta.cssClass}">
                         ${cta.text @ context='html'}
                         <sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly>
                     </a>
                 </div>
-                <a href="${cta.href}" target="${cta.isVideo ? '_self' : '_blank'}" class="${cta.cssClass}">
+                <a href="${cta.href}" class="${cta.cssClass}">
                     <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt @ context='html'}" title="" width="320"  height="170" border="0"></img>
                 </a>
             </div>

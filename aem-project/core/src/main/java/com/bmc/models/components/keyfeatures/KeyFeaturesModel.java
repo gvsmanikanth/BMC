@@ -1,7 +1,7 @@
 package com.bmc.models.components.keyfeatures;
 
-import com.bmc.mixins.UrlResolver;
-import org.apache.sling.api.SlingHttpServletRequest;
+
+import com.bmc.models.url.UrlInfo;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
@@ -68,7 +68,8 @@ public class KeyFeaturesModel {
                     ctaButton.put("assetType", getButtonAssetType(button,"assetType", "altButtonName"));
                     ctaButton.put("buttonColor", button.getProperty("buttonColor").getString());
                     ctaButton.put("assetName", getButtonTitleByPath(button));
-                    ctaButton.put("ctaPath", button.getProperty("ctaPath").getString());
+                    //WEB-3681 Key Features -Picker Functionality
+                    ctaButton.put("ctaPath", getCtaPathHref(button));
                     ctaButtons.add(ctaButton);
                 }
             }
@@ -98,9 +99,10 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
+            //WEB-3681 Key Features -Picker Functionality
             if (button.hasProperty("ctaPath")) {
-                UrlResolver urlResolver = UrlResolver.from(resource);
-                return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
+            	String path = button.getProperty("ctaPath").getString();           	 
+                return  path.substring(path.lastIndexOf("/")+1);
             }else{
             	return null;
             }
@@ -116,5 +118,23 @@ public class KeyFeaturesModel {
 
     public List<HashMap> getCtaButtons() {
         return ctaButtons;
+    }
+    
+    //WEB-3681 Key Features -Picker Functionality
+    private String getCtaPathHref(Node button)
+    {
+ 	   try {
+ 		   if (button.hasProperty("ctaPath")) {			   
+ 			   UrlInfo urlInfo = UrlInfo.from(button.getProperty("ctaPath").getString()); 
+ 			   return urlInfo.getHref();		   
+ 		   }
+ 		   else
+ 		   {
+ 			   return null;
+ 		   }
+ 	   }catch (Exception e){
+            logger.error("ERROR:", e.getMessage());
+ 	   }
+ 	return null;
     }
 }

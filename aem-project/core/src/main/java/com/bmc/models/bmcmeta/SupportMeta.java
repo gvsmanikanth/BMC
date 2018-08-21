@@ -11,6 +11,8 @@ public class SupportMeta {
     //if user is authenticated
     private String issueEnvironment = null; //[lookup static string based on CMS environment]
     private String issuePath = null; //[lookup static string based on CMS environment]
+    private String draftIssuePath = null; //[lookup static string based on CMS environment]
+    
     //end if user is authenticated
     private CaseErrorMessagesMeta caseErrorMessages;
 
@@ -56,6 +58,17 @@ public class SupportMeta {
 
     public String getIssuePath() {
         return issuePath;
+    }
+    
+  
+    
+    
+    public String getDraftIssuePath() {
+        return draftIssuePath;
+    }
+
+    public void setDraftIssuePath(String draftIssuePath) {
+        this.draftIssuePath = draftIssuePath;
     }
 
 }
