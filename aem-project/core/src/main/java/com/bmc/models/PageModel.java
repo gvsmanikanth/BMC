@@ -231,7 +231,6 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
         
-        
         bmcMeta.getPage().getIc().setIc_app_inclusion(ic_app_inclusion);
         bmcMeta.getPage().getIc().setIc_content_type(ic_content_type_list);
         bmcMeta.getPage().getIc().setIc_weighting(ic_weighting);
