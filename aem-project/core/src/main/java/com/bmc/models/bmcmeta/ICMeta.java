@@ -18,9 +18,7 @@ public class ICMeta {
 	private String ic_target_industry="";
 	private String ic_company_size="";
 	
-		
-	    
-	    
+   
 	    public String getIc_app_inclusion() {
 	        return ic_app_inclusion;
 	    }
