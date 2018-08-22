@@ -100,7 +100,7 @@ body.no-scroll{
 						@include media(breakpointLarge){
 							right: 3rem;
 							font-size: 0.8rem;
-							top: 2.5rem;
+							top: 1.5rem;
 						}
 						&:hover {
 							color: #333;
@@ -193,7 +193,6 @@ body.no-scroll{
 					}
 				}
 				.autocomplete{
-					display: block !important;
 					width: 90% !important;
 					overflow-x: hidden;
 					background: #fff;
@@ -250,6 +249,9 @@ body.no-scroll{
 						padding-bottom:1rem;
 					}
 					
+				}
+				.autocomplete.autocompleteData{
+					display:block !important;
 				}
 				.resultHeading{
 					display:none;

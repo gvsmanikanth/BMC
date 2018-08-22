@@ -215,6 +215,9 @@ jQuery(function($){
 		$(document).on("click",".navigation-search.js-navigation-search",function(e) {
 			e.stopPropagation();
 			$("#st-search-input").val('');
+			$(".autocomplete .with_sections").remove();
+			$(".resultHeading,.viewResults").hide();
+			$(".autocomplete").removeClass("autocompleteData");
 			$('.search-overlay').addClass('on');
 			$('body').addClass('no-scroll');
 			$('#bodyOverlay').addClass('backgroundColor');

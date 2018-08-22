@@ -5,7 +5,7 @@ jQuery(function ($) {
 	//Hide Javasctipt disabled message if enabled
 	$("#noscriptbox").hide();
 	$("form").show();
-
+	searchAutocompleteData();
 
 	function EventDebouncer(type, context) {
 		var timer = null;
@@ -373,6 +373,16 @@ function addFilterToArrayProtoype() {
 	  } else {
 		//$(".search-overlay").css("top","0rem");
 	  }
+	}
+	
+	function searchAutocompleteData(){
+		$("input#st-search-input").keyup(function(){
+			if($(this).val().length >= 3 ){
+				$(".autocomplete").addClass("autocompleteData");
+			}else{
+				$(".autocomplete").removeClass("autocompleteData");
+			}
+		});
 	}
 
 	// Sticky nav on scroll
