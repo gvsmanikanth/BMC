@@ -199,15 +199,13 @@ public class PageModel {
 
         String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining("|"));
         String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining("|"));
-        
-        
-        String ic_app_inclusion = resourcePage.getContentResource().getValueMap().get("ic-app-inclusion").toString();
+        String ic_app_inclusion = resourcePage.getProperties().getOrDefault("ic-app-inclusion","").toString();
         //String ic_app_inclusion_list = Arrays.stream(ic_app_inclusion).map(s -> getIC_app_inclusion_Value(s)).collect(Collectors.joining("|"));
         
         String[] ic_content_type = resourcePage.getContentResource().getValueMap().get("ic-content-type", new String[] {});
         String ic_content_type_list = Arrays.stream(ic_content_type).map(s -> getIC_content_type_Value(s)).collect(Collectors.joining("|"));
       
-        String ic_weighting = resourcePage.getContentResource().getValueMap().get("ic-weighting").toString();
+        String ic_weighting = resourcePage.getProperties().getOrDefault("ic-weighting","").toString();
         
         
         String[] ic_topics = resourcePage.getContentResource().getValueMap().get("ic-topics", new String[] {});
@@ -218,10 +216,11 @@ public class PageModel {
         
         String[] ic_target_persona = resourcePage.getContentResource().getValueMap().get("ic-target-persona", new String[] {});
         String ic_target_persona_list = Arrays.stream(ic_target_persona).map(s -> getIC_target_persona_Value(s)).collect(Collectors.joining("|"));
-        
+        String ic_source_publish_date ="";
+        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
         Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
-        String ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
-         
+        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
+        }
         String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
         String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
         
