@@ -15,6 +15,7 @@ public class PageMeta {
     private ModelOpenMeta modalOpen;
     private GeoIPMeta GeoIP;
     private ICMeta ic;
+    
 
     public PageMeta() {
         this.modalOpen = new ModelOpenMeta();
