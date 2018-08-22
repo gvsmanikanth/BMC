@@ -368,7 +368,7 @@ function addFilterToArrayProtoype() {
 	}
 
 	function applyOrientation() {
-	  if (window.innerWidth >= 960 || window.innerWidth <= 1024) {
+	  if (window.innerWidth >= 960 && window.innerWidth <= 1024) {
 		$(".search-overlay").css("top","0rem");
 	  } else {
 		//$(".search-overlay").css("top","0rem");
