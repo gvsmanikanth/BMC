@@ -377,7 +377,7 @@ function addFilterToArrayProtoype() {
 	
 	function searchAutocompleteData(){
 		$("input#st-search-input").keyup(function(){
-			if($(this).val().length >= 3 ){
+			if($(this).val().length >= 3 && $(".with_sections").length >= 1){ 
 				$(".autocomplete").addClass("autocompleteData");
 			}else{
 				$(".autocomplete").removeClass("autocompleteData");
