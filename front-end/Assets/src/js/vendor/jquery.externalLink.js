@@ -37,9 +37,7 @@
 		    			}
 		    		}
 		    	}
-				if(this.href.indexOf("/documents/") > -1){
-					this.target="_blank";
-				}
+				
 	    	}
 			
 
