@@ -231,15 +231,15 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
         
-        bmcMeta.getPage().getIc().setIc_app_inclusion(ic_app_inclusion);
-        bmcMeta.getPage().getIc().setIc_content_type(ic_content_type_list);
-        bmcMeta.getPage().getIc().setIc_weighting(ic_weighting);
-        bmcMeta.getPage().getIc().setIc_topics(ic_topics_list);
-        bmcMeta.getPage().getIc().setIc_buyer_stage(ic_buyer_stage_list);
-        bmcMeta.getPage().getIc().setIc_target_persona(ic_target_persona_list);
-        bmcMeta.getPage().getIc().setIc_source_publish_date(ic_source_publish_date);
-        bmcMeta.getPage().getIc().setIc_target_industry(ic_target_industry_list);
-        bmcMeta.getPage().getIc().setIc_company_size(ic_company_size_list);
+        bmcMeta.getPage().getIc().setApp_inclusion(ic_app_inclusion);
+        bmcMeta.getPage().getIc().setContent_type(ic_content_type_list);
+        bmcMeta.getPage().getIc().setWeighting(ic_weighting);
+        bmcMeta.getPage().getIc().setTopics(ic_topics_list);
+        bmcMeta.getPage().getIc().setBuyer_stage(ic_buyer_stage_list);
+        bmcMeta.getPage().getIc().setTarget_persona(ic_target_persona_list);
+        bmcMeta.getPage().getIc().setSource_publish_date(ic_source_publish_date);
+        bmcMeta.getPage().getIc().setTarget_industry(ic_target_industry_list);
+        bmcMeta.getPage().getIc().setCompany_size(ic_company_size_list);
 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {
