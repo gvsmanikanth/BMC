@@ -2,6 +2,8 @@ package com.bmc.models.components.keyfeatures;
 
 
 import com.bmc.models.url.UrlInfo;
+import com.bmc.mixins.UrlResolver;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
@@ -99,10 +101,9 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            //WEB-3681 Key Features -Picker Functionality
             if (button.hasProperty("ctaPath")) {
-            	String path = button.getProperty("ctaPath").getString();           	 
-                return  path.substring(path.lastIndexOf("/")+1);
+            	 UrlResolver urlResolver = UrlResolver.from(resource);
+                 return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
             }else{
             	return null;
             }
