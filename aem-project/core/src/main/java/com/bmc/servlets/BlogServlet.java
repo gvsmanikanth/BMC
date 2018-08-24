@@ -34,7 +34,6 @@ import org.apache.felix.scr.annotations.Reference;
 
 import javax.servlet.ServletException;
 
-
 @SlingServlet(paths = "/bin/blogs", methods = {"GET"})
 public class BlogServlet extends SlingSafeMethodsServlet {
 
