@@ -23,6 +23,16 @@ import java.util.regex.Pattern;
 import java.net.URLEncoder;
 import java.io.UnsupportedEncodingException;
 
+import java.io.ByteArrayOutputStream;
+import com.day.cq.contentsync.handler.util.RequestResponseFactory;
+import com.day.cq.wcm.api.WCMMode;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.sling.engine.SlingRequestProcessor;
+import org.apache.sling.settings.SlingSettingsService;
+import org.apache.felix.scr.annotations.Reference;
+
+import javax.servlet.ServletException;
 
 @SlingServlet(paths = "/bin/blogs", methods = {"GET"})
 public class BlogServlet extends SlingSafeMethodsServlet {
@@ -43,6 +53,13 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private int status = -1;
 
     private int timeout = 30000;
+    
+    @Reference
+    private RequestResponseFactory requestResponseFactory;
+
+    /** Service to process requests through Sling */
+    @Reference
+    private SlingRequestProcessor requestProcessor;
 
     @Activate
     protected void activate(final Map<String, Object> config) {
@@ -81,25 +98,46 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         } catch (Exception e) {
             logger.error(e.getMessage());
         }
-        getBlogContent(src, response);
+        getBlogContent(src, response, request);
     }
 
-    private void getBlogContent(String src, SlingHttpServletResponse response) {
-        String source = loadUrl(src, response);
+    private void getBlogContent(String src, SlingHttpServletResponse response,SlingHttpServletRequest request) {
+        String source = loadUrl(src, response,request);
         String processed = processSource(source);
         if (status == 200 || status == 404) {
             response.setStatus(status);
         }
         try {
+        	if(status == 404){
+        		try{
+        		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                response.setContentType("text/html");
+                //response.getWriter().append("404");
+                String path = "/content/bmc/404.html";
+                HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
+                WCMMode.DISABLED.toRequest(req);
+
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                HttpServletResponse resp = requestResponseFactory.createResponse(out);
+
+                requestProcessor.processRequest(req, resp, request.getResourceResolver());
+                String html = out.toString();
+                response.getWriter().append(html);
+        		} catch (IOException|ServletException ex) {
+                    logger.error(ex.getMessage());
+                }
+        	}else{
+        	
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
             response.setContentType("text/html");
             response.getWriter().append(processed);
+        	}
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private String loadUrl(String src, SlingHttpServletResponse response) {
+    private String loadUrl(String src, SlingHttpServletResponse response,SlingHttpServletRequest request) {
         String html = "";
         String responseBody;
         HttpURLConnection connection = null;
@@ -119,7 +157,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                 status = connection.getResponseCode();
             } catch (IOException e1) {
                 // in this case there is no response code to get. server is unresponsive.
-                handleUnresponsiveRequest(src, response);
+                handleUnresponsiveRequest(src, response,request);
             }
             URL url = connection.getURL();
             logger.error(e.toString() + " " + e.getMessage());
@@ -127,7 +165,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         return html;
     }
 
-    private void handleUnresponsiveRequest(String src, SlingHttpServletResponse response) {
+    private void handleUnresponsiveRequest(String src, SlingHttpServletResponse response,SlingHttpServletRequest request) {
         if (attempts < maxRetryAttempts) {
             if (retryDelay > 0) {
                 try {
@@ -138,7 +176,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
             }
             attempts++;
             logger.debug("Retrying URL: " + src);
-            getBlogContent(src, response);
+            getBlogContent(src, response , request);
         } else {
             logger.error("Failed to load " + src);
         }

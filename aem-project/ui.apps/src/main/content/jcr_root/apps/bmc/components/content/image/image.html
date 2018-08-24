@@ -3,9 +3,10 @@
      data-sly-test="${image.src}"
      data-sly-unwrap="${wcmmode.disabled}"
      class="cq-dd-image">
+    <sly data-sly-test="${properties.linkURL}" data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.linkURL}"></sly>
     <a data-sly-unwrap="${!image.link}"
-       class="cmp-image--link"
-       href="${image.link}"
+       class="cmp-image--link ${cta.isVideo ? 'modal-youtube-video-player' : ''}"
+       href="${cta.href}"
        data-title="${image.title || image.alt}" data-asset="${image.fileReference}">
             <img src="${image.src}"
                  alt="${image.alt || (image.displayPopupTitle && image.title) || true}"

@@ -4,4 +4,5 @@
           environment="stage."
           issueEnvironment="http://sfaqa-bmcsites.cs94.force.com/casemgmt"
           issuePath="/SC_CaseDetailPage?CaseId="
+          draftIssuePath="/SC_EditDraftCasePage?CaseId="
 />

@@ -1,133 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured"
-          jcr:title="Key Features Component"
-          sling:resourceType="cq/gui/components/authoring/dialog"
-          extraClientlibs="[bmc.buttonAltName]"
-          dependencies="[granite.jquery,granite.utils]">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Key Features Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    dependencies="[granite.jquery,granite.utils]"
+    extraClientlibs="[bmc.buttonAltName]">
     <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/container">
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <KeyFeatures
-                    jcr:primaryType="nt:unstructured"
-                    jcr:title="Key Features"
-                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Key Features"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                 <items jcr:primaryType="nt:unstructured">
                     <column
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-
                             <headerTitle
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="Use sentence case."
-									fieldLabel="Heading"
-                                    name="./headerTitle"/>
-									
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Use sentence case."
+                                fieldLabel="Heading"
+                                name="./headerTitle"/>
                             <headerSubTitle
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="Enter an introductory sentence for the bullets."
-									fieldLabel="Description Paragraph"
-                                    name="./headerSubTitle"/>
-
-                            <bullets jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                    composite="{Boolean}true"
-									fieldDescription="Enter one statement per bullet."
-                                    fieldLabel="Description Bullets">
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter an introductory sentence for the bullets."
+                                fieldLabel="Description Paragraph"
+                                name="./headerSubTitle"/>
+                            <bullets
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldDescription="Enter one statement per bullet."
+                                fieldLabel="Description Bullets">
                                 <field
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                        name="./keyFeatureSet">
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./keyFeatureSet">
                                     <layout
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                            method="absolute"/>
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
                                                 <bullet
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                        fieldLabel="Bullet"
-                                                        required="{Boolean}true"
-                                                        name="./featureBullet"/>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="Bullet"
+                                                    name="./featureBullet"
+                                                    required="{Boolean}true"/>
                                             </items>
                                         </column>
                                     </items>
                                 </field>
                             </bullets>
-
-                            <buttons jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                     composite="{Boolean}true"
-                                     fieldLabel="Buttons">
+                            <buttons
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Buttons">
                                 <field
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                        wrapperClass="core-wcm-form-options-toggle-set"
-                                        name="./ctaButtonSet">
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./ctaButtonSet"
+                                    wrapperClass="core-wcm-form-options-toggle-set">
                                     <layout
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                            method="absolute"/>
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
                                                 <assetType
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                        fieldLabel="Select Asset Type"
-                                                        multiple="{Boolean}false"
-                                                        wrapperClass="core-wcm-form-options-toggle"
-                                                        name="./assetType">
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Select Asset Type"
+                                                    multiple="{Boolean}false"
+                                                    name="./assetType"
+                                                    wrapperClass="core-wcm-form-options-toggle">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="custom"/>
-                                                        <dataSheet jcr:primaryType="nt:unstructured" text="Datasheet" value="Datasheet"/>
-                                                        <whitePaper jcr:primaryType="nt:unstructured" text="White Paper" value="White Paper"/>
-                                                        <solutionOverview jcr:primaryType="nt:unstructured" text="Solution Overview" value="Solution Overview"/>
-                                                        <solutionBrief jcr:primaryType="nt:unstructured" text="Solution Brief" value="Solution Brief"/>
+                                                        <noneselected
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="none selected"
+                                                            value="custom"/>
+                                                        <dataSheet
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Datasheet"
+                                                            value="Datasheet"/>
+                                                        <whitePaper
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="White Paper"
+                                                            value="White Paper"/>
+                                                        <solutionOverview
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Solution Overview"
+                                                            value="Solution Overview"/>
+                                                        <solutionBrief
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Solution Brief"
+                                                            value="Solution Brief"/>
                                                     </items>
                                                 </assetType>
                                                 <altButtonName
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                        fieldDescription="Alternative Custom Asset Type"
-                                                        fieldLabel="Custom Asset Type (Optional)"
-                                                        wrapperClass="core-wcm-form-options-toggle-item"
-                                                        name="./altButtonName"/>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Alternative Custom Asset Type"
+                                                    fieldLabel="Custom Asset Type (Optional)"
+                                                    name="./altButtonName"
+                                                    wrapperClass="core-wcm-form-options-toggle-item"/>
                                                 <ctaPath
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                        fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                        name="./ctaPath"
-                                                        rootPath="/content/bmc"
-                                                        fieldLabel="CTA Path or external URL"/>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                    fieldLabel="CTA Path or external URL"
+                                                    name="./ctaPath"
+                                                    rootPath="/content"/>
                                                 <overideButtonTitle
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                        fieldDescription="Override Button Title"
-                                                        fieldLabel="Title Override (Optional)"
-                                                        name="./overrideButtonTitle"/>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Override Button Title"
+                                                    fieldLabel="Title Override (Optional)"
+                                                    name="./overrideButtonTitle"/>
                                                 <buttonColor
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                        fieldLabel="Select Background color"
-                                                        multiple="{Boolean}false"
-                                                        name="./buttonColor">
-                                                        <items jcr:primaryType="nt:unstructured">
-                                                            <blue jcr:primaryType="nt:unstructured" text="Blue (primary)" value="btn"/>
-                                                            <green jcr:primaryType="nt:unstructured" text="Green (secondary)" value="btn btn-secondary"/>
-                                                            <orange jcr:primaryType="nt:unstructured" text="Orange (corporate)" value="btn btn-corporate"/>
-                                                            <white jcr:primaryType="nt:unstructured" text="White" value="btn btn-blue"/>
-                                                        </items>
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Select Background color"
+                                                    multiple="{Boolean}false"
+                                                    name="./buttonColor">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <blue
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Blue (primary)"
+                                                            value="btn"/>
+                                                        <green
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Green (secondary)"
+                                                            value="btn btn-secondary"/>
+                                                        <orange
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Orange (corporate)"
+                                                            value="btn btn-corporate"/>
+                                                        <white
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="White"
+                                                            value="btn btn-blue"/>
+                                                    </items>
                                                 </buttonColor>
                                             </items>
                                         </column>
@@ -135,33 +160,33 @@
                                 </field>
                             </buttons>
                             <additionalResources
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Adds 'Explore Additional Resources' link to the Key Features"
-                                    name="./aditionalResources"
-                                    text="Explore Additional Resources"
-                                    value="true"/>
-                            <!--<showlineSeparator
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                    fieldDescription="Show Line Separator"
-                                    name="./showlineSeparator"
-                                    text="Show Line Separator"
-                                    value="true"/>-->
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Adds 'Explore Additional Resources' link to the Key Features"
+                                name="./aditionalResources"
+                                text="Explore Additional Resources"
+                                value="true"/>
                             <backgroundColor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                 fieldLabel="Select Background color"
                                 multiple="{Boolean}false"
                                 name="./backgroundColor">
-
                                 <items jcr:primaryType="nt:unstructured">
-                                    <noneselected jcr:primaryType="nt:unstructured" text="none selected" value="" />
-                                    <green jcr:primaryType="nt:unstructured" text="White (default color)" value="btn btn-secondary"/>
-                                    <orange jcr:primaryType="nt:unstructured" text="Grey" value="btn btn-corporate"/>
+                                    <noneselected
+                                        jcr:primaryType="nt:unstructured"
+                                        text="none selected"
+                                        value=""/>
+                                    <green
+                                        jcr:primaryType="nt:unstructured"
+                                        text="White (default color)"
+                                        value="btn btn-secondary"/>
+                                    <orange
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Grey"
+                                        value="btn btn-corporate"/>
                                 </items>
                             </backgroundColor>
-
                         </items>
                     </column>
                 </items>
