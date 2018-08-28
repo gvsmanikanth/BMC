@@ -240,7 +240,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
                 // add to or override pairs with request data (form post and querystring), with additional business logic
                 form.data.entrySet().stream()
-                        .filter(entry -> !restrictedFormParameters.contains(entry.getKey()))
+                        .filter(entry --> !restrictedFormParameters.contains(entry.getKey()))
                         .forEach(entry -> {
                             String key = resolveFieldName(entry.getKey());
                             String value = entry.getValue();
@@ -501,6 +501,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                                 // no longer adding this to the array since GDPR changes
                                 // DFN_OPT_IN,
                                 "SuppressOptIn",
+                                //WEB-3634
+                                "GDPR_Eligible",
                                 FN_CONTACT_ME,
                                 "emailSubjectLine",
                                 "recipient",
@@ -574,7 +576,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         
                         properties.put(PURL_PAGE_URL, purlPageUrl);
                         properties.remove(JCR_PURL_PAGE_URL);
-
+                        //WEB-3634
+                        properties.put("GDPR_Eligible", properties.get("GDPR_Eligible").equalsIgnoreCase("Yes") ? "Yes" : "No");
                         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
                         // Yes, this is correct, property name Submit = "Action"
                         properties.put("Submit", "Action");
