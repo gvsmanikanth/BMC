@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="Topic">>
-    <service-management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Service Management"
-            extraCategoryClass="IT-Service-Management"/>
-    <cloud-management
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Cloud Management"/>
-    <it-operations
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Operations"/>
-    <mainframe
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe"/>
-    <workload-automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Workload Automation"/>
-    <it-automation
-            jcr:primaryType="nt:unstructured"
-            jcr:title="IT Automation"/>
+          jcr:title="Topic">
+    <topic-186635808
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Service Management"
+        extraCategoryClass="IT-Service-Management"
+        />
+      <topic-186635828
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Operations"
+        />
+      <topic-186635838
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Mainframe"
+        />
+       <topic-186635848
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Automation"
+        />
 </jcr:root>
