@@ -1,4 +1,6 @@
 <sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.ctaurl}"></sly>
+<sly data-sly-use.sourcelink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.sourcelinkeurl}"></sly>
+
 <blockquote class="${properties.fullBleedCenterText ? 'fullbleed-blockquote' : 'testimonial divider'}">
     <div class="layout-inner-wrap">
 
@@ -14,8 +16,14 @@
         </cite>
 
         <sly data-sly-test="${properties.sourcelinktext}">
-            <h5><a href="${properties.sourcelinkeurl}" data-sly-unwrap="${!properties.sourcelinkeurl}">${properties.sourcelinktext @ context='html'}</a></h5>
-        </sly>
+         <sly data-sly-test="${sourcelink.href}">
+                    <sly data-sly-test.sourceResolvedLink="${sourcelink.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!sourcelink.href}">
+                 <sly data-sly-test.sourceResolvedLink="${properties.sourcelinkeurl}"></sly>
+             </sly>
+            <h5><a class="${sourcelink.isVideo ? 'modal-youtube-video-player' : ''}" href="${sourceResolvedLink}">${properties.sourcelinktext @ context='html'}</a></h5>
+       </sly>
 
         <section data-sly-test="${properties.ctatext}">
              <sly data-sly-test="${cta.href}">
