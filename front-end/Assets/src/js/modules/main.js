@@ -5,13 +5,13 @@ jQuery(function ($) {
 	//Hide Javasctipt disabled message if enabled
 	$("#noscriptbox").hide();
 	$("form").show();
-	$("input#st-search-input").keyup(function(){
+	/*$("input#st-search-input").keyup(function(){
 		if($(this).val().length >= 3 && $(".with_sections").length >= 1){ 
 			$(".autocomplete").addClass("autocompleteData");
 		}else{
 			$(".autocomplete").removeClass("autocompleteData");
 		}
-	});
+	});*/
 
 	function EventDebouncer(type, context) {
 		var timer = null;

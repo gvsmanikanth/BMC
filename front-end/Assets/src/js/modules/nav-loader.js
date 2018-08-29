@@ -217,7 +217,7 @@ jQuery(function($){
 			$("#st-search-input").val('');
 			$(".autocomplete .with_sections").remove();
 			$(".resultHeading,.viewResults").hide();
-			$(".autocomplete").removeClass("autocompleteData");
+			//$(".autocomplete").removeClass("autocompleteData");
 			$('.search-overlay').addClass('on');
 			$('body').addClass('no-scroll');
 			$('#bodyOverlay').addClass('backgroundColor');
