@@ -5,34 +5,46 @@ import java.util.HashMap;
 /**
  * Created by ssupraja on 8/20/18.
  */
+
+/** AEM Variable Mapping to Adobe Analytics mapping
+ * appInclusion -> Resource inclusion Criteria
+ * contentType -> Resource Type
+ * weighting ->content weighting
+ * contentMarketTopics ->content market topic
+ * buyerStage -> Target Buyer stage
+ * targetPersona -> Target Persona
+ * sourcePublishDate
+ * targetIndustry -> Target industry
+ * companySize -> Target company size
+ */
 public class ICMeta {
 
 	
-	private String app_inclusion="";
-	private String content_type="";
+	private String appInclusion="";
+	private String contentType="";
 	private String weighting="";
-	private String topics="";
-	private String buyer_stage="";
-	private String target_persona="";
-	private String source_publish_date="";
-	private String target_industry="";
-	private String company_size="";
+	private String contentMarketTopics="";
+	private String buyerStage="";
+	private String targetPersona="";
+	private String sourcePublishDate="";
+	private String targetIndustry="";
+	private String companySize="";
 	
    
-	    public String getApp_inclusion() {
-	        return app_inclusion;
+	    public String getAppInclusion() {
+	        return appInclusion;
 	    }
 
-	    public void setApp_inclusion(String app_inclusion) {
-	    	this.app_inclusion = app_inclusion;
+	    public void setAppInclusion(String appInclusion) {
+	    	this.appInclusion = appInclusion;
 	    }
 	    
-	    public String getContent_type() {
-	        return content_type;
+	    public String getContentType() {
+	        return contentType;
 	    }
 
-	    public void setContent_type(String content_type) {
-	    	this.content_type = content_type;
+	    public void setContentType(String contentType) {
+	    	this.contentType = contentType;
 	    }
 	    
 	    
@@ -44,52 +56,52 @@ public class ICMeta {
 	    	this.weighting = weighting;
 	    }
 	    
-	    public String getTopics() {
-	        return topics;
+	    public String getContentMarketTopics() {
+	        return contentMarketTopics;
 	    }
 
-	    public void setTopics(String topics) {
-	    	this.topics = topics;
+	    public void setContentMarketTopics(String contentMarketTopics) {
+	    	this.contentMarketTopics = contentMarketTopics;
 	    }
 	    
 	    
-	    public String getBuyer_stage() {
-	        return buyer_stage;
+	    public String getBuyerStage() {
+	        return buyerStage;
 	    }
 
-	    public void setBuyer_stage(String buyer_stage) {
-	    	this.buyer_stage = buyer_stage;
+	    public void setBuyerStage(String buyerStage) {
+	    	this.buyerStage = buyerStage;
 	    }
-	    public String getTarget_persona() {
-	        return target_persona;
+	    public String getTargetPersona() {
+	        return targetPersona;
 	    }
 
-	    public void setTarget_persona(String target_persona) {
-	    	this.target_persona = target_persona;
+	    public void setTargetPersona(String targetPersona) {
+	    	this.targetPersona = targetPersona;
 	    }
 	    
-	    public String getSource_publish_date() {
-	        return source_publish_date;
+	    public String getSourcePublishDate() {
+	        return sourcePublishDate;
 	    }
 
-	    public void setSource_publish_date(String source_publish_date) {
-	    	this.source_publish_date = source_publish_date;
+	    public void setSourcePublishDate(String sourcePublishDate) {
+	    	this.sourcePublishDate = sourcePublishDate;
 	    }
 	    
-	    public String getTarget_industry() {
-	        return target_industry;
+	    public String getTargetIndustry() {
+	        return targetIndustry;
 	    }
 
-	    public void setTarget_industry(String target_industry) {
-	    	this.target_industry = target_industry;
+	    public void setTargetIndustry(String targetIndustry) {
+	    	this.targetIndustry = targetIndustry;
 	    }
     
-	    public String getCompany_size() {
-	        return company_size;
+	    public String getCompanySize() {
+	        return companySize;
 	    }
 
-	    public void setCompany_size(String company_size) {
-	    	this.company_size = company_size;
+	    public void setCompanySize(String companySize) {
+	    	this.companySize = companySize;
 	    }
 	    public ICMeta(){
 	    	

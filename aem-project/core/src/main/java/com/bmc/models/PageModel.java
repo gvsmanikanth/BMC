@@ -119,6 +119,14 @@ public class PageModel {
         }
     }
     
+    private String getTopicsValue(String nodeName) { // Adobe variable mapping is Content core topic
+        try {
+            return session.getNode("/content/bmc/resources/topic/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
     private String getIC_buyer_stage_Value(String nodeName) {
         try {
             return session.getNode("/content/bmc/resources/intelligent-content-buyer-stage/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
@@ -126,8 +134,6 @@ public class PageModel {
             return "";
         }
     }
-    
-   
     
     private String getIC_content_type_Value(String nodeName) {
         try {
@@ -199,6 +205,10 @@ public class PageModel {
 
         String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining("|"));
         String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining("|"));
+        
+        String[] topics = resourcePage.getContentResource().getValueMap().get("topics", new String[] {});
+        String topicsList = Arrays.stream(topics).map(s -> getTopicsValue(s)).collect(Collectors.joining("|"));
+      
         String ic_app_inclusion = resourcePage.getProperties().getOrDefault("ic-app-inclusion","").toString();
         //String ic_app_inclusion_list = Arrays.stream(ic_app_inclusion).map(s -> getIC_app_inclusion_Value(s)).collect(Collectors.joining("|"));
         
@@ -230,16 +240,17 @@ public class PageModel {
        
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
+        bmcMeta.getPage().setTopicsCategories(topicsList);
         
-        bmcMeta.getPage().getIc().setApp_inclusion(ic_app_inclusion);
-        bmcMeta.getPage().getIc().setContent_type(ic_content_type_list);
+        bmcMeta.getPage().getIc().setAppInclusion(ic_app_inclusion);
+        bmcMeta.getPage().getIc().setContentType(ic_content_type_list);
         bmcMeta.getPage().getIc().setWeighting(ic_weighting);
-        bmcMeta.getPage().getIc().setTopics(ic_topics_list);
-        bmcMeta.getPage().getIc().setBuyer_stage(ic_buyer_stage_list);
-        bmcMeta.getPage().getIc().setTarget_persona(ic_target_persona_list);
-        bmcMeta.getPage().getIc().setSource_publish_date(ic_source_publish_date);
-        bmcMeta.getPage().getIc().setTarget_industry(ic_target_industry_list);
-        bmcMeta.getPage().getIc().setCompany_size(ic_company_size_list);
+        bmcMeta.getPage().getIc().setContentMarketTopics(ic_topics_list);
+        bmcMeta.getPage().getIc().setBuyerStage(ic_buyer_stage_list);
+        bmcMeta.getPage().getIc().setTargetPersona(ic_target_persona_list);
+        bmcMeta.getPage().getIc().setSourcePublishDate(ic_source_publish_date);
+        bmcMeta.getPage().getIc().setTargetIndustry(ic_target_industry_list);
+        bmcMeta.getPage().getIc().setCompanySize(ic_company_size_list);
 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {

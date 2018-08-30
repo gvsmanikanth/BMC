@@ -10,6 +10,7 @@ public class PageMeta {
     private String longName = "";
     private String productCategories = "";
     private String productLineCategories = "";
+    private String topicsCategories = "";
     private String errorCode = "";
     private String isPurl = "false";
     private ModelOpenMeta modalOpen;
@@ -61,6 +62,14 @@ public class PageMeta {
 
     public void setProductLineCategories(String productLineCategories) {
         this.productLineCategories = productLineCategories;
+    }
+    
+    public String getTopicsCategories() {
+        return topicsCategories;
+    }
+
+    public void setTopicsCategories(String topicsCategories) {
+        this.topicsCategories = topicsCategories;
     }
 
     public String getErrorCode() {
