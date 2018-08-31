@@ -375,13 +375,12 @@ img {
 		}
 		/*Bounce Scroll ICON*/
 		.arrow {
-		  position: absolute;
+		  --position: absolute;
 		  //bottom: 1rem;
 		  bottom: auto;
-		  left: 50%;
-		  margin-left: -20px;
-		  width: 40px;
+		  --width: 40px;
 		  height: 60px;
+		  margin:0 auto;
 		  cursor:pointer;
 			i.down{
 				display: block;
@@ -392,6 +391,12 @@ img {
 				content: $iconArrowDown;
 				font-family: "icomoon";
 				font-size:3rem;
+				@include media(breakpointMedium){
+					font-size:4rem;
+				}
+				@include media(breakpointLarge){
+					font-size:5rem;
+				}
 			}
 		}
 		.bounce {
