@@ -13,7 +13,7 @@ include 'php-inc/svg.php';
 <div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(&quot;https://www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg&quot;);">
 <section class="bar full-bleed-page-banner product-category-header padding-bottom-0 section-wrap-header" style="background-image: url(https://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg); background-position: center; background-size: cover;">
 
-	<div class="flex-center ">
+	<div class="flex-center video-hero-header">
 		<div class="inner ">
 			<div class=" flex-center section-wrap-header middle">
 				<div class="inner">
@@ -26,7 +26,7 @@ include 'php-inc/svg.php';
 								 </svg>
 						</a>
 					</div>
-					<div class="arrow bounce" id="scrollDown"> 
+					<div class="bounce bigger" id="scrollDown"> 
 						<i class="down" aria-hidden="true"></i>
 					</div>
 				</div>
