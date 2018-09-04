@@ -65,17 +65,6 @@ public class FieldSetModel extends WCMUsePojo{
         return isTrialForm;
     }
 
-    public Boolean getIsGdpr()  {
-    	 Boolean isGdpr=false;
-    	 String gdprCountryList[] ={"Australia","Austria","Belgium","Brazil","Bulgaria","Canada","China","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hong Kong","Hungary","India","Ireland","Israel","Italy","Japan","Korea, Republic of","Latvia","Lithuania","Luxembourg","Malta","Mexico","Netherlands","Netherlands Antilles","Poland","Portugal","Romania","Singapore","Slovak Republic","Slovenia","South Africa","Spain","Sweden","Switzerland","Taiwan","Turkey","United Kingdom"};
-    	 String text = get("text", String.class);		 
-    		 for(String gdprCountry:gdprCountryList){
-    			 if(text.equals(gdprCountry)){
-    				 isGdpr=true;
-    			 }
-    		 }
-    	 return isGdpr;
-    }
 
     public Boolean getDisplayOptIn() {
         //Getter class to pass SuppressOptIn value to sitely htl.
@@ -88,8 +77,32 @@ public class FieldSetModel extends WCMUsePojo{
         }
         return displayOptIn;
     } 
-  
-    
+
+//    public Boolean getForceOptIn() {
+//        //Getter class to pass SuppressOptIn value to sitely htl.
+//        String c_OptIn = formContainerData.getOrDefault("C_OptIn","false").toString();
+//        Boolean forceOptIn=true;
+//        if(c_OptIn != null){
+//            if(c_OptIn.equalsIgnoreCase("true")){
+//                forceOptIn=false;
+//            }
+//        }
+//        return forceOptIn;
+//    }
+
+    public Boolean getIsGdpr()  {
+    	 Boolean isGdpr=false;
+    	 String gdprCountryList[] ={"Australia","Austria","Belgium","Brazil","Bulgaria","Canada","China","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hong Kong","Hungary","India","Ireland","Israel","Italy","Japan","Korea, Republic of","Latvia","Lithuania","Luxembourg","Malta","Mexico","Netherlands","Netherlands Antilles","Poland","Portugal","Romania","Singapore","Slovak Republic","Slovenia","South Africa","Spain","Sweden","Switzerland","Taiwan","Turkey","United Kingdom"};
+    	 String text = get("text", String.class);		 
+    		 for(String gdprCountry:gdprCountryList){
+    			 if(text.equals(gdprCountry)){
+    				 isGdpr=true;
+    			 }
+    		 }
+    	 return isGdpr;
+    }
+
+
     public String getPactSafeAgreementCopy() {
         String pactSafeAgreementCopy = service.getPactSafeAgreementCopy();
         return pactSafeAgreementCopy != null ? pactSafeAgreementCopy : "";
