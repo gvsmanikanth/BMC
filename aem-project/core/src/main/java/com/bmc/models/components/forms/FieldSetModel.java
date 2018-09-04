@@ -88,20 +88,7 @@ public class FieldSetModel extends WCMUsePojo{
         }
         return displayOptIn;
     } 
-
-    
-    //WEB-3634
-    
-    public Boolean getDisplayGDPREligible() {
-        //Getter class to pass SuppressOptIn value to sitely htl.
-        String C_OptIn = formContainerData.get("C_OptIn").toString();
-        Boolean displayGDPREligible=false;
-        if(C_OptIn != null){
-        	
-                displayGDPREligible=true;          
-        }
-        return displayGDPREligible;
-    } 
+  
     
     public String getPactSafeAgreementCopy() {
         String pactSafeAgreementCopy = service.getPactSafeAgreementCopy();
