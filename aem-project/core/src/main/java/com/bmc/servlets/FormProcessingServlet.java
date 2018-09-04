@@ -573,7 +573,8 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         
                         
                         properties.put(PURL_PAGE_URL, purlPageUrl);
-                        properties.remove(JCR_PURL_PAGE_URL);                       
+                        properties.remove(JCR_PURL_PAGE_URL);
+
                         properties.put("AWS_Trial", properties.get("AWS_Trial").equals("Yes") ? "True" : "False");
                         // Yes, this is correct, property name Submit = "Action"
                         properties.put("Submit", "Action");
