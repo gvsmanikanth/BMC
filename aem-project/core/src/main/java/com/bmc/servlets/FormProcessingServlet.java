@@ -240,7 +240,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
                 // add to or override pairs with request data (form post and querystring), with additional business logic
                 form.data.entrySet().stream()
-                        .filter(entry --> !restrictedFormParameters.contains(entry.getKey()))
+                        .filter(entry -> !restrictedFormParameters.contains(entry.getKey()))
                         .forEach(entry -> {
                             String key = resolveFieldName(entry.getKey());
                             String value = entry.getValue();
