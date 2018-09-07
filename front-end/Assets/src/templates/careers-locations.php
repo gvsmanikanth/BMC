@@ -134,6 +134,13 @@ include 'php-inc/head.php';
 				</div>
 			</div>
 		</div>
+		<form method="get" onsubmit="return validateForm();" class="searchForm">
+			<fieldset>
+				<div class="pxsm-flex max-wd-770px searchDiv">
+				<input name="query" title="Search" value="" id="query" placeholder="Search job by keyword" class="st-default-search-input max-wd-770px" type="text">
+				</div>
+			</fieldset>
+			</form>
 	</div>
 </section>
 

@@ -6,6 +6,8 @@ import com.bmc.mixins.MultifieldDataProvider;
 import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_RequestCached, MultifieldDataProvider {
-
+	 private static final Logger logger = LoggerFactory.getLogger(CourseDataGrid.class);
 	private List<Page> prerequisites;
 	public List<Page> getPrerequisites() {
 		return prerequisites;
@@ -34,7 +36,10 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 	public List<String> getVersionNumbers() {
 		return versionNumbers;
 	}
-
+	private List<String> courseDelivery;
+	public List<String> getCourseDelivery() {
+		return courseDelivery;
+	}
 	@Override
 	public void activate() throws Exception {
 		try {
@@ -72,7 +77,17 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 					})
 					.collect(Collectors.toList());
 
-
+			String[] courseDeliveryValues = getPageProperties().get("course-delivery",new String[]{});
+			courseDelivery = Arrays.stream(courseDeliveryValues)
+					.map(s -> {
+						String path = "/content/bmc/resources/course-delivery/" + s;
+						Resource r = getResourceResolver().getResource(path);
+						if(r != null)
+							return r.getValueMap().getOrDefault("jcr:title",s).toString();
+						return s;
+					})
+					.collect(Collectors.toList());
+			
 			prerequisites = StreamSupport.stream(getCurrentPage().getContentResource().getChild("prerequisites").getChildren().spliterator(), false)
 					.map((resource -> resource.getValueMap().getOrDefault("internalPagePath", "").toString()))
 					.map(s -> getPageManager().getPage(s))

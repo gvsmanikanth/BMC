@@ -10,14 +10,18 @@ public class PageMeta {
     private String longName = "";
     private String productCategories = "";
     private String productLineCategories = "";
+    private String topicsCategories = "";
     private String errorCode = "";
     private String isPurl = "false";
     private ModelOpenMeta modalOpen;
     private GeoIPMeta GeoIP;
+    private ICMeta ic;
+    
 
     public PageMeta() {
         this.modalOpen = new ModelOpenMeta();
         this.GeoIP = new GeoIPMeta(false, "");
+        this.ic = new ICMeta();
     }
 
     public String getContentId() {
@@ -59,6 +63,14 @@ public class PageMeta {
     public void setProductLineCategories(String productLineCategories) {
         this.productLineCategories = productLineCategories;
     }
+    
+    public String getTopicsCategories() {
+        return topicsCategories;
+    }
+
+    public void setTopicsCategories(String topicsCategories) {
+        this.topicsCategories = topicsCategories;
+    }
 
     public String getErrorCode() {
         return errorCode;
@@ -90,5 +102,14 @@ public class PageMeta {
 
     public void setGeoIP(GeoIPMeta geoIP) {
         GeoIP = geoIP;
+    }
+    
+    
+    public ICMeta getIc() {
+        return ic;
+    }
+
+    public void setIc(ICMeta IC) {
+        ic = IC;
     }
 }

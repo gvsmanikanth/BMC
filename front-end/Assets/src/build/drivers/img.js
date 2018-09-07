@@ -7,8 +7,9 @@ var GulpFilter = require('gulp-filter'),
 
 var imageDriver = {
 	build: function(pipeline, debug) {
-		if(debug) return pipeline; // in debug we do no image processing
-
+		//if(debug) return pipeline; // in debug we do no image processing
+		return pipeline; // WEB-2331 - Do not process images on each and every production build.
+		
 		var imageFilter = new GulpFilter(['**/*.jpg', '**/*.png', '**/*.gif', '**/*.svg']);
 
 		return pipeline

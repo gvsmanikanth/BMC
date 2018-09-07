@@ -1,6 +1,7 @@
-<sly data-sly-template.FullDiscription="${@ productDescription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, videoID, linkText, anchorTagText, shortDescription}">
+<sly data-sly-template.FullDiscription="${@ productDescription, productAvailability, productAvailabilityList, productName, primaryParentOfferingPage, datasheetPicker, datasheetLink, datasheetPrefix, datasheetIconImage, assetPicker, assetLinkText, assetPrefix, assetIconImage, linkURL, linkType, linkText, anchorTagText, shortDescription}">
     <ul class="accordion">
         <li class="accordion-item">
+        <!--/* WEB-3062 Datasheet link is displaying the colon as prefix in Offering Micro START */-->
             <span class="jump-to" id="${anchorTagText}" name="${anchorTagText}"></span>
             <a class="accordion-item-anchor" href="#${anchorTagText}">${productName @context='html'}</a>
             <div class="accordion-item-content">
@@ -12,14 +13,18 @@
                 </p>
                 <div data-sly-test="${datasheetPicker && (datasheetPicker != '')}" class="icon-container">
                     <a href="${datasheetPicker}" target="_blank" class="${datasheetIconImage}">
-                        ${datasheetPrefix}: ${datasheetLink @ context='html'}
+                        <sly data-sly-test="${datasheetPrefix}">${datasheetPrefix}: ${datasheetLink @ context='html'} </sly>
+                        <sly data-sly-test="${!datasheetPrefix}"> ${datasheetLink @ context='html'}</sly>
                     </a>
                 </div>
+
                 <div data-sly-test="${assetPicker && (assetPicker != '')}" class="icon-container">
-                    <a href="${videoID}" target="_self" class="${assetIconImage} ${videoID !='' ? 'modal-video-player' : ''}" >
-                        ${assetPrefix}: ${assetLinkText @ context='html'}
+                    <a href="${linkURL}" target="_self" class="${assetIconImage} ${linkType =='VideoModal' ? 'modal-video-player' : ''}" >
+                        <sly data-sly-test="${assetPrefix}"> ${assetPrefix}: ${assetLinkText @ context='html'}</sly>
+                        <sly data-sly-test="${!assetPrefix}">${assetLinkText @ context='html'}</sly>
                     </a>
                 </div>
+                <!--/* WEB-3062 Datasheet link is displaying the colon as prefix in Offering Micro END */-->
             </div>
         </li>
     </ul>

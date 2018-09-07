@@ -83,7 +83,7 @@ body.support-central {
   // only show Chat Now in Large Breakpoint mode.
   //Start
     
-   // display: none;
+   
    bottom:10px;
    border-radius:50%;
     @include media(breakpointLarge) {
@@ -336,9 +336,7 @@ body.support-central {
 				margin-right: 1.5em;
 			}
 
-			/*.oldie & {
-				margin-right: -0.5em !important;
-			}*/
+			
 		}
 	}
 
@@ -702,11 +700,6 @@ body.support-central {
 	.table-wrapper {
 		max-height: 16em;
 		overflow: scroll;
-
-		/*.ie8 & {
-			max-height: none;
-			overflow: visible;
-		}*/
 	}
 
 	.support-recent-issues-actions {

@@ -93,6 +93,44 @@
                                                         allowBulkEdit="{Boolean}true"
                                                         cq-msm-lockable="meta_description"/>
                                             </meta_description>
+                                            <translation_status
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Translation Status"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                emptyText="Translation Status"
+                                                fieldLabel="Translation Status"
+                                                fieldDescription="Used to identify the translation status of a page(reports purpose only)."
+                                                name="./translation-status">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <Any
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Choose Translation status"
+                                                        text="Choose Translation status"
+                                                        value="Choose Translation status"/>
+                                                    <item1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Translated"
+                                                        value="Translated"/>
+                                                    <item2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Not translated"
+                                                        value="Not translated"/>
+                                                </items>
+                                            </translation_status>
+                                            <translation_notes
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="navigationTitle"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Translation notes"
+                                                fieldDescription="Translation notes(reports purpose only)"
+                                               	name="./translationNotes"
+                                                renderReadOnly="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="translation_notes"/>
+                                            </translation_notes>
                                         </items>
                                     </moretitles>
                                 </items>

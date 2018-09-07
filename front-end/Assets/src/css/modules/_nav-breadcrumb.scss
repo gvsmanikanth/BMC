@@ -4,9 +4,6 @@
     margin: 0;
     padding: 1px 0px 0px !important;
   
-    @include media(breakpointLarge) {
-     // margin-bottom: em(-64);
-    }
     
     ul{
       padding-left:0px;

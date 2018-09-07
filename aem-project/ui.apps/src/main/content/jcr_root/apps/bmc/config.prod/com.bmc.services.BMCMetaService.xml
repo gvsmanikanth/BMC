@@ -4,4 +4,5 @@
           environment=""
           issueEnvironment="https://bmcsites.force.com/casemgmt"
           issuePath="/SC_CaseDetailPage?CaseId="
+          draftIssuePath="/SC_EditDraftCasePage?CaseId="
 />

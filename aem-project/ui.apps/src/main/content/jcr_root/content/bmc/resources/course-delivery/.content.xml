@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Company Size">
+    <Any
+            jcr:primaryType="nt:unstructured"
+            jcr:title="All Delivery Method"
+            />
+     <course-delivery-133337271
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Self Paced"
+       />
+     <course-delivery-126292444
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Instructor Led"
+      />
+     <course-delivery-126590603
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Assisted Self-Paced"
+        />
+</jcr:root>

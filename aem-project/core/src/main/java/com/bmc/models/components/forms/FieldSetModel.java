@@ -27,6 +27,9 @@ import javax.inject.Named;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
+//import javax.jcr.*;
+//import java.util.*;
+
 public class FieldSetModel extends WCMUsePojo{
 
   //  @Reference  //<-- NOT THE CORRECT PLACE TO USE AN @Reference
@@ -34,11 +37,10 @@ public class FieldSetModel extends WCMUsePojo{
 
     private static final Logger log = LoggerFactory.getLogger(FieldSetModel.class);
     String paramName;
-
+  
     Map <String,Object> formContainerData = new HashMap<>();
     @Override
     public void activate() throws Exception {
-
         service = getSlingScriptHelper().getService( PactSafeService.class );
 
         // Fetch the formRequestPropertyObject
@@ -50,7 +52,7 @@ public class FieldSetModel extends WCMUsePojo{
     }
 
     public Boolean getIsTrialForm() {
-        //Getter class to pass Lead Capture value to sightly htl.
+        //Getter class to pass Lead Capture value to sitely htl.
         String LeadCapture = formContainerData.get("C_Lead_Offer_Most_Recent1").toString();
         Boolean isTrialForm=false;
         if(LeadCapture != null){
@@ -61,6 +63,43 @@ public class FieldSetModel extends WCMUsePojo{
             }
         }
         return isTrialForm;
+    }
+
+
+    public Boolean getDisplayOptIn() {
+        //Getter class to pass SuppressOptIn value to sitely htl.
+        String suppressOptIn = formContainerData.getOrDefault("SuppressOptIn","false").toString();
+        Boolean displayOptIn=true;
+        if(suppressOptIn != null){
+            if(suppressOptIn.equalsIgnoreCase("true")){
+                displayOptIn=false;
+            }
+        }
+        return displayOptIn;
+    } 
+
+//    public Boolean getForceOptIn() {
+//        //Getter class to pass SuppressOptIn value to sitely htl.
+//        String c_OptIn = formContainerData.getOrDefault("C_OptIn","false").toString();
+//        Boolean forceOptIn=true;
+//        if(c_OptIn != null){
+//            if(c_OptIn.equalsIgnoreCase("true")){
+//                forceOptIn=false;
+//            }
+//        }
+//        return forceOptIn;
+//    }
+
+    public Boolean getIsGdpr()  {
+    	 Boolean isGdpr=false;
+    	 String gdprCountryList[] ={"Australia","Austria","Belgium","Brazil","Bulgaria","Canada","China","Croatia","Cyprus","Czech Republic","Denmark","Estonia","Finland","France","Germany","Greece","Hong Kong","Hungary","India","Ireland","Israel","Italy","Japan","Korea, Republic of","Latvia","Lithuania","Luxembourg","Malta","Mexico","Netherlands","Netherlands Antilles","Poland","Portugal","Romania","Singapore","Slovak Republic","Slovenia","South Africa","Spain","Sweden","Switzerland","Taiwan","Turkey","United Kingdom"};
+    	 String text = get("text", String.class);		 
+    		 for(String gdprCountry:gdprCountryList){
+    			 if(text.equals(gdprCountry)){
+    				 isGdpr=true;
+    			 }
+    		 }
+    	 return isGdpr;
     }
 
 

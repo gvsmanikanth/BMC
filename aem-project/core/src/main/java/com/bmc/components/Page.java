@@ -10,7 +10,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 
+
+
+import org.apache.sling.api.resource.Resource;
 /**
  * Created by pheide on 9/7/17.
  *
@@ -23,13 +28,38 @@ public class Page extends WCMUsePojo {
     private SlingHttpServletResponse response;
     private SightlyWCMMode wcmMode;
     private com.day.cq.wcm.api.Page currentPage;
+    private javax.jcr.Node trialForm;
+   
+    
 
+    
+  
     @Override
     public void activate() throws Exception {
         properties = getProperties();
         response = getResponse();
         wcmMode = getWcmMode();
         currentPage = getCurrentPage();
+        // WEB-2744: Forms - Redirect Trials Forms Functionality
+        	  try {
+        		  Resource resource = getResourceResolver().getResource("/content/bmc/configuration/form-settings/jcr:content");
+        		  if(resource != null) {
+	        		  Node nodeFormSettings = resource.adaptTo(Node.class);
+	        	      // logger.info("Hurray"+nodeFormSettings.getProperty("trialFormsDisabled").getValue().toString());
+	        		   if(nodeFormSettings.getProperty("trialFormsDisabled").getValue().getBoolean()){
+	        	         if(currentPage.getTemplate().getName().equals("form-landing-page-template")){
+	        	        	 trialForm= currentPage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
+	 	        		  }else if(currentPage.getTemplate().getName().equals("form-landing-page-full-width")){
+	 	        			 trialForm = currentPage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
+	 	        	      } 
+		         		  if(trialForm.getProperty("C_Lead_Offer_Most_Recent1").getString().equals("Trial Download")){
+		                   response.sendRedirect(nodeFormSettings.getProperty("redirectDestURL").getValue().toString());
+		                   }
+	        		  }
+        		  }
+        	  } catch (RepositoryException e) {
+                  e.printStackTrace();
+              }
     }
 
     public void redirect() throws IOException {

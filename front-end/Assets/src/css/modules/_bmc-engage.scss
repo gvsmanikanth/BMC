@@ -31,9 +31,6 @@ $engageTeal: #30b19c;
 			vertical-align: middle;
 			width: auto;
 
-			/*.ie8 & {
-				padding-left: 0;
-			}*/
 		}
 
 		.icon-list-round {
@@ -41,9 +38,6 @@ $engageTeal: #30b19c;
 			background-position: middle;
 			vertical-align: middle;
 
-			/*.ie8 & {
-				display: none;
-			}*/
 
 			&:before {
 				background-size: 50px 50px;
@@ -179,9 +173,6 @@ section.bmc-engage-header.layout-full-bleed {
 		}
 	}
 
-	.intro-text {
-		// display: inline-block;
-	}
 
 	.bmc-video-container {
 
@@ -209,18 +200,6 @@ section.bmc-engage-header.layout-full-bleed {
 .bmc-engage-expect {
 
 	background-color: #f6f6f6;
-
-	/*
-	.ie8 & {
-
-		.featured-images {
-			display: none;
-		}
-
-		.schedule-list {
-			margin-left: 0;
-		}
-	}*/
 
 	.icon-list-round:before {
 		background-image: url('#{$imagesFolder}icon-engage-expect.png');

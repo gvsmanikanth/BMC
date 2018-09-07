@@ -190,9 +190,18 @@
                                                         <Weibo
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Weibo"
-                                                            value="social-weibo"  />      
+                                                            value="social-weibo"  /> 
+														<Wechat
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Wechat"
+                                                            value="social-wechat"/>
                                                     </items>
                                                 </socialMediaType>
+												<customCssClass
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Custom CSS Class"
+                                                    name="./customCssClass"/>
                                             </items>
                                         </column>
                                     </items>

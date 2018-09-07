@@ -7,6 +7,7 @@ var Support = Support || {};
 
 	var supportEnv,
 		supportPath,
+		draftSupportPath,
 		alertMessages,
 		issuesContainer = $('.js-issues-container'),
 		contractSelector = $('.js-contracts-select'),
@@ -271,20 +272,6 @@ var Support = Support || {};
 			var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 			
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
-			/*
-			var formattedLastUpdated = pad(rawLastUpdated.getMonth() + 1) // getMonth() returns a 0-11 range
-										+ "/"
-										+ pad(rawLastUpdated.getDate())
-										+ "/"
-										+ rawLastUpdated.getFullYear();
-
-			var formattedCreated = pad(rawCreated.getMonth() + 1) // getMonth() returns a 0-11 range
-										+ "/"
-										+ pad(rawCreated.getDate())
-										+ "/"
-										+ rawCreated.getFullYear();
-			*/
-			
 			
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
 			var formattedLastUpdated = pad(rawLastUpdated.getDate())
@@ -382,9 +369,13 @@ var Support = Support || {};
 
 							supportEnv = (typeof bmcMeta.support.issueEnvironment !== 'undefined') ? bmcMeta.support.issueEnvironment : "";
 							supportPath = (typeof bmcMeta.support.issuePath !== 'undefined') ? bmcMeta.support.issuePath : "";
+							draftSupportPath = (typeof bmcMeta.support.draftIssuePath !== 'undefined') ? bmcMeta.support.draftIssuePath : "";
 						}
-
-						cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, supportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						if(issue.status == "Draft"){
+							cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, draftSupportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						}else{
+							cells.push('<td><a href="' + Support.Issues.buildSupportIssueUrl(supportEnv, supportPath, issue.id) + '">' + issueOutput[key] + '</a></td>');
+						}	
 					} else {
 						cells.push('<td>' + issueOutput[key] + '</td>');
 					}
@@ -997,8 +988,6 @@ var Support = Support || {};
 
 		calcBaseHeight: function() {
 			// if the height should be determined dynamically
-			// this.baseHeight = $('.logo-bar-container').height();
-
 			this.baseHeight = 90;
 		},
 

@@ -283,7 +283,7 @@ public class PactSafeService {
             JSONArray contractsArray=(JSONArray) dataObject.get("contracts");
             for(Object contractObject:contractsArray){
                 JSONObject contract=(JSONObject) contractObject;
-                newContractsMap.put(contract.get("id").toString(),contract.get("latest_version").toString());
+                newContractsMap.put(contract.get("id").toString(),contract.get("published_version").toString());
             }
         }catch(Exception e){
             logger.error("updatePactSafeGroup JSONParser error: "+e.getMessage());
