@@ -126,6 +126,20 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+        <!-- WEB- 2437 Added Dependency for APache Poi workbook/report generation START -->
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+    	<dependency>
+        	<groupId>org.apache.poi</groupId>
+        	<artifactId>poi</artifactId>
+        	<version>3.16</version>
+    	</dependency>
+    	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    	<dependency>
+        	<groupId>org.apache.poi</groupId>
+        	<artifactId>poi-ooxml</artifactId>
+        	<version>3.16</version>
+    	</dependency>
+		<!-- WEB- 2437 Added Dependency for APache Poi workbook/report generation END -->
     </dependencies>
 
     <!-- ====================================================================== -->
