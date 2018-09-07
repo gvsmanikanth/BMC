@@ -721,7 +721,8 @@ $('.assetStripItem').click(function(e) {
 	var href = $(this).attr("href");
 	if($(".tab-wrapper").length >= 1){
 		$(".r-tabs-nav .r-tabs-tab").each(function(){
-			if($(this).hasClass("r-tabs-state-active")){
+			//if($(this).hasClass("r-tabs-state-active")){
+			if($(this).find("a").attr("href") === href){
 				$('html,body').animate({
 					scrollTop: $($(this)).closest(".r-tabs").offset().top
 				}, 'slow');
