@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2017-05-24T18:02:44.097-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/bmc/settings/wcm/templates/reporting-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="bmc/components/structure/csv-reporting-page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2017-05-24T17:57:30.998-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-05-24T17:57:51.636-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <header_basic
+                    jcr:created="{Date}2017-05-24T18:02:02.568-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-05-24T18:02:18.524-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/header-basic"
+                    headerText="External Link is set."/>
+                <section
+                    jcr:created="{Date}2017-05-24T18:02:05.704-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-05-24T18:02:05.704-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/section">
+                    <text
+                        jcr:created="{Date}2017-05-24T18:02:23.472-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-05-24T18:02:44.095-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/text"
+                        text="&lt;p>This service is temporarily unavailable. Please try again later.&amp;nbsp;&lt;/p>&#xa;"
+                        textIsRich="true"/>
+                </section>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>

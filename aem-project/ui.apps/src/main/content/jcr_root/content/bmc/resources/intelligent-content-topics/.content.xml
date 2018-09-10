@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="cq:Page">
+    <ic-topics-357652163
+            jcr:primaryType="nt:unstructured"
+            jcr:title="All"/>
     <ic-topics-357652083
             jcr:primaryType="nt:unstructured"
             jcr:title="AI &amp; Machine Learning"/>
@@ -34,4 +37,7 @@
     <ic-topics-773791639
             jcr:primaryType="nt:unstructured"
             jcr:title="Service Management"/>
+     <ic-topics-773792749
+            jcr:primaryType="nt:unstructured"
+            jcr:title="UnCategorized"/>
 </jcr:root>

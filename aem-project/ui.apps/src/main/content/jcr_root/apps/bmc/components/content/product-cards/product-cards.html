@@ -1,0 +1,49 @@
+<section class="wallpapered bg-white wallpaper product-cards" data-sly-use.productSet="com.bmc.components.ProductCards"> 
+ 	<div class="section" id="products"> 
+  		<div class="section-content py3"> 
+  			 <h2 class="h2-variation-1 text-center center-block">
+   				 ${properties.title @ context='html'}
+   			 <br/>
+			 <span style="font-size: 1rem;"> ${properties.subTitle @ context='html'} </span>
+ 			 </h2>
+   			 <div class="flex-wrap flex-justify-center mb2 js-eh"> 
+				<sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
+				<sly data-sly-test="${properties.numberOfCards == '3'}">
+			    	<sly data-sly-test.assetClass="sm-col sm-col-12 md-col-4"></sly>
+				</sly>
+				<sly data-sly-test="${properties.numberOfCards == '4'}">
+				    <sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
+				</sly>
+				<!--/*Iterate through the cards  */--> 
+    			<sly data-sly-list.card="${productSet.productCards}">
+					<div class="flex flex-item ${assetClass}">
+	     				<div class="card-wrap m2"> 
+	        				 	<sly data-sly-use.productLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=card.pagePath}"></sly>
+			                    <sly data-sly-test="${productLink.href}">
+			                        <sly data-sly-test.resolvedLink="${productLink.href}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${!productLink.href}">
+			                        <sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${productLink.cssClass}">
+			                        <sly data-sly-test.cssClass="${productLink.cssClass}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${!productLink.cssClass}">
+			                        <sly data-sly-test.cssClass=" "></sly>
+			                    </sly>
+								<a href="${resolvedLink}" target="_self" class="p2 card tundora purchasing-col js-ehItem ${cssClass}">
+								    <div class="card-content"> 
+								        <h3>${card.title  @ context='html'}</h3> 
+								        <p>${card.description  @ context='html'} </p> 
+								        <p class="text-center mb0"> <span class="btn text-center">${'Learn More' @ i18n} &nbsp;&#8250;</span> </p> 
+							       	</div> 
+	       						</a> 
+	     			    </div> 
+	                </div> 
+   				</sly>
+  			</div>
+ 	</div>
+</section>
+
+
+

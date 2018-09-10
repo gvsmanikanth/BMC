@@ -417,6 +417,9 @@ var bmcMeta = {
 									<div class="visible aem-GridColumn aem-GridColumn--default--12">
 										<input type="hidden" name="formid" value="38" />
 									</div>
+									<div class="visible aem-GridColumn aem-GridColumn--default--12">
+										<input type="hidden" id="GDPR_Eligible" name="GDPR_Eligible" value="No" />
+									</div>
 									<div class="new newpar section aem-Grid-newComponent"></div>
 								</fieldset>
 							</div>

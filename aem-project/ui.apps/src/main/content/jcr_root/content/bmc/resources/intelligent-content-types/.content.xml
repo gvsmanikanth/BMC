@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="cq:Page">
+    <ic-type-196378596
+            jcr:primaryType="nt:unstructured"
+            jcr:title="All"/>
     <ic-type-196363946
             jcr:primaryType="nt:unstructured"
             jcr:title="Analyst Research"/>
@@ -43,4 +46,7 @@
     <ic-type-546577064
             jcr:primaryType="nt:unstructured"
             jcr:title="White Papers"/>
+    <ic-type-188743546
+            jcr:primaryType="nt:unstructured"
+            jcr:title="UnCategorized"/>
 </jcr:root>
