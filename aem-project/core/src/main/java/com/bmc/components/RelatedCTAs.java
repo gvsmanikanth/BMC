@@ -52,7 +52,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
 
     @Override
     public void activate() throws Exception {
-        items = mapMultiFieldValues("internalPagePaths", path -> getLinkItem(path, this));
+        items = mapMultiFieldValues("internalPagePaths", path -> getLinkPath(path,getLinkInfo(path, false), this));
         headingText = resolveHeadingText();
     }
 
@@ -74,7 +74,16 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
                 throw new NotImplementedException();
         }
     }
+    static Item getLinkPath(String pageOrAssetPath,LinkInfo link, ResourceProvider resourceProvider) {
+        Page page = resourceProvider.getPage(pageOrAssetPath);
+        if (page == null)
+            return null;
 
+      
+        ValueMap map = page.getProperties();
+        return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+    }
+    
     static Item getLinkItem(String pageOrAssetPath, ResourceProvider resourceProvider) {
         Page page = resourceProvider.getPage(pageOrAssetPath);
         if (page == null)
