@@ -38,6 +38,10 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
         public String getText() { return link.getText(); }
         public String getHref() { return link.getHref(); }
         public String getTarget() { return link.getTarget(); }
+        public String getCssClass() {
+    		return link.getCssClass();
+    	}
+       
         public String getDescription() { return link.getDescription(); }
 
         public boolean getHasSecondaryCta() { return !(ctaText == null || ctaText.isEmpty() || ctaHref == null || ctaHref.isEmpty()); }

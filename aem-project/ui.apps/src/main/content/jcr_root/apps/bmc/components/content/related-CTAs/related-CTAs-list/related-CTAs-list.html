@@ -4,7 +4,7 @@
     <sly data-sly-list.item="${data.items}">
         <h3><a href="${item.href}" target="${item.target}">${item.text @ context='html'}</a></h3>
         <p data-sly-test="${item.description}">${item.description @ context='html'}</p>
-        <a href="${item.href}">${"Learn More" @ context = 'html', i18n}</a>
+        <a href="${item.href}" class="${item.cssClass}">${"Learn More" @ context = 'html', i18n}</a>
         <sly data-sly-test="${item.hasSecondaryCta}">
             <span> | </span>
             <a href="${item.secondaryCtaHref}">${item.secondaryCtaText @ context='html'}</a>
