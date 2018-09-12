@@ -24,7 +24,7 @@ import javax.jcr.*;
 import java.util.*;
 
 
-@SlingServlet(paths = "/bin/formterms-data-refactor", methods = {"GET"})
+@SlingServlet(paths = "/bin/formtermsDataRefactor", methods = {"GET"})
 public class FormTermsDataRefactor extends SlingSafeMethodsServlet {
 
     private static final Logger logger = LoggerFactory.getLogger(FormTermsDataRefactor.class);
@@ -46,12 +46,12 @@ public class FormTermsDataRefactor extends SlingSafeMethodsServlet {
 
         boolean verbose=true;
 
-        if(request.getRequestParameter("passphrase").toString().equals("^Nf6pj;A.,XDpZpM8]F;cKUd2.6U")) {
+        if(request.getRequestParameter("passphrase").toString().equals("^Nf6pj;AXDpZpM8]F;cKUd2.6U")) {
             try {
-                out("Starting to "+request.getRequestParameter("action").toString());
+                out("STARTING TO "+request.getRequestParameter("action").toString());
                 String path = request.getRequestParameter("path").toString();
                 
-               if (request.getRequestParameter("action").toString().equals("enable")) {
+               if (request.getRequestParameter("action").toString().equals("save")) {
                     Session session = resolver.adaptTo(Session.class);
                     QueryManager queryManager = null;
                     queryManager = session.getWorkspace().getQueryManager();
@@ -69,7 +69,7 @@ public class FormTermsDataRefactor extends SlingSafeMethodsServlet {
                         	 List<String> propVals = new ArrayList<>();
                              List<String> updatedPropVals = new ArrayList<>();
                         	Property metaProp = pageNode.getProperty("text");
-                        	
+                        	 out(" List item no : "+totalRecordCount+"- path :" +pageNode.getPath());
                             if(metaProp.isMultiple()){
                                 Value[] metaValues = metaProp.getValues();
                                 for(Value v : metaValues) {
@@ -80,18 +80,20 @@ public class FormTermsDataRefactor extends SlingSafeMethodsServlet {
                             }
 
                             for(String v : propVals) {
+                            	out("Property value of : "+v.toString()+System.lineSeparator());
                             	String v_replace = v.replace("*", " ");
-                                v=v.replace(v,v_replace);
-                            
+                                v=v.replace(v,v_replace);                                
 	                            if(metaProp.isMultiple()){
 	                      		  updatedPropVals.add(v);
-	                            }else{
+	                            }else{	                          
 	      	                    pageNode.setProperty("text",v);
+	      	                  
 	      	                     session.save();
 	                            }
                             }
                             if(metaProp.isMultiple()){
                           	 pageNode.setProperty("text",updatedPropVals.toArray(new String[updatedPropVals.size()]));
+                          	out("PROPERTY UPDATED : "+updatedPropVals.toArray(new String[updatedPropVals.size()]));
                           	  session.save();
                             }
                         	
@@ -110,7 +112,51 @@ public class FormTermsDataRefactor extends SlingSafeMethodsServlet {
                     out("saving session");
                     out("Total nodes examined: "+totalRecordCount);
                     out("Total nodes "+request.getRequestParameter("action").toString()+"d: "+totalRecordsModified);
-                } else {
+                }
+                if (request.getRequestParameter("action").toString().equals("list")) {
+                   Session session = resolver.adaptTo(Session.class);
+                   QueryManager queryManager = null;
+                   queryManager = session.getWorkspace().getQueryManager();
+                   Query resourceQuery = queryManager.createQuery("SELECT * FROM [nt:base] AS s " +
+                                   "WHERE ISDESCENDANTNODE('"+ path +"') and CONTAINS(s.*, 'form-terms')",
+                           Query.JCR_SQL2);
+                   QueryResult resourceResult = resourceQuery.execute();
+                   NodeIterator resourceIterator = resourceResult.getNodes();
+                   while (resourceIterator.hasNext()) {
+                       totalRecordCount++;
+                       Node pageNode = resourceIterator.nextNode();                        
+                       if(verbose) logger.info("(Enable) Examining "+pageNode.getPath());
+                       if(pageNode.hasProperty("text")){                       	
+                       	 List<String> propVals = new ArrayList<>();
+                       	 out(" List item no : "+totalRecordCount+"-path :" +pageNode.getPath());
+                       	 out("Property : "+pageNode.getProperty("text"));
+                       	Property metaProp = pageNode.getProperty("text");                       	
+                           if(metaProp.isMultiple()){
+                               Value[] metaValues = metaProp.getValues();
+                           if(verbose) logger.info("(Listed)  Form terms value in FOrms");
+                           if(metaProp.isMultiple()){
+                               Value[] metaValues2 = metaProp.getValues();
+                               for(Value v : metaValues2) {
+                            	   out("Property"+v.getString());
+                                   propVals.add(v.getString());
+                               }
+                           }else{
+                        	   out("Property"+metaProp.getString());
+                               propVals.add(metaProp.getString());
+                           }
+                           recordUpdateCounter++;
+                           totalRecordsModified++;
+                           if (recordUpdateCounter>100) {                              
+                               recordUpdateCounter=0;
+                           }
+                       }
+                   }
+                   }
+                   session.save();
+                   out("Total nodes examined: "+totalRecordCount);
+                }
+               
+               else {
                     out("Unrecognized Command");
                 }
                 out("Finished");
