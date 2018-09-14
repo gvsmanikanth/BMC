@@ -1,0 +1,25 @@
+<sly data-sly-use.assetTypeList="com.bmc.components.AssetTypeList"/> 
+<sly data-sly-test = "${properties.assetsSubheadColor == 'Orange'}">
+<sly data-sly-test.assetsWrapper="h4 medium-orange"/>
+</sly>
+<sly data-sly-test.assetClass1 = "${assetTypeList.assetClass1}"/>
+<div class="${assetsWrapper} ${assetClass1}">
+
+<div data-sly-test="${properties.iconLink1 != 'resource-video'}" class="${properties.iconLink1}"></div>
+
+<strong>${properties.assetsSubheadingPrefix1}: ${properties.assetsSubheading1} </strong>
+ <ul class="plain">
+<sly data-sly-list.asset="${assetTypeList.assetLinkSet1}">
+  <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
+   <sly data-sly-test="${assetLink.href}">
+			                        <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${!assetLink.href}">
+			                        <sly data-sly-test.resolvedLink="${asset.pagePath}"></sly>
+			                    </sly>
+
+      <li> <a href="${resolvedLink}">${asset.title} &nbsp;&#8250; </a> </li>
+
+</sly>
+   </ul>
+</div>
