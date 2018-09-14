@@ -8,24 +8,17 @@ include 'php-inc/head.php';
 include 'php-inc/svg.php'; 
 ?>
 
-<div id="backgroundImage" style="background-size: cover;background-repeat:repeat-y;background-position:center center;">
-
-  <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0"  style="min-height:860px;background-color:#414042;background-size: cover;background-image : url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg)no-repeat center center;"> 
-	<div class="section video-hero-header" >
-	   <div class="video-content" >
+<div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg);">
+<section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0" style="background-color: rgb(65, 64, 66);background-size: cover;"> 
+	<div class="section video-hero-header" style="background-image: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg); background-position: center; background-size: cover;">
+	   <div class="video-content">
 		      <div class="hero-image xs-only"></div>
-		      <div class="hero-image video">
-				 <div class="vidbg-box" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/home/BMC_Looped_Marquee_FINAL_041218_1.mp4, poster://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg" data-vidbg-options="loop: false,autoplay: true,muted: true, overlay: false, overlayColor: #000, overlayAlpha: 0"></div>
-		      </div>
 		      <div class="cover-bg"></div>
-		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" >
-		      	<div class="flex-item m2 header-content-box" id="header-content-box-id" style="visibility: hidden">
+		      <div class="section-wrap-header flex flex-center layout-inner-wrap hero-content white text-left transparent-bg py4" style="height: 176px; min-height: 500px;">
+		      	<div class="flex-item m2 header-content-box" id="header-content-box-id" style="visibility: visible;">
 			         <h1 class="page-header ha mb2">Run Your Business as You Reinvent It</h1>
-			         <h2 class="h3">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
-			         <a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
-			         Watch the video <svg class="svg-inline"> 
-		            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
-	          	 </svg></a>
+			         <h2 class="h3">Optimize core IT and enable innovation,<br> from mainframe to multi-cloud and beyond</h2>
+			         <a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="modal-youtube-video-player btn btn-corporate at-element-marker" title="Transforming the Digital Enterprise">Watch the video <span style="color: white;font-size: .7rem;">(0:30)</span> <svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg></a>
 	           </div>
 		      </div>
 		      	      
@@ -34,7 +27,7 @@ include 'php-inc/svg.php';
 			</div>
 	 	</div>
 	 </div>
-</section>  
+</section> 
 
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
       <div class="flex-item section-content py4 layout-inner-wrap"> 

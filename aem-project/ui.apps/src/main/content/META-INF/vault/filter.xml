@@ -20,10 +20,15 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
 
+    <!-- WEB-2437 Added for Report generation START -->
+	  <filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
+    <filter root="/conf/bmc/settings/wcm/template-types/reporting-page" mode="merge"/>
+    <!-- WEB-2437 Added for Report generation END -->
+
     <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/form-event-thank-you" mode="merge"/>
 
-	<filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
+	  <filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
 
     <filter root="/etc/clientlibs/bmc"/>
@@ -60,7 +65,12 @@
 	<filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
     <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
     <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
-    
+    <filter root="/content/bmc/resources/topic" mode="replace"/>
+
+    <!-- WEB-3688 Support Central Navigation Data feed update START -->
+	 <filter root="/content/dam/bmc/support-central/ServiceHeaderSupportJSON.json" mode="merge" />
+	 <!-- WEB-3688 Support Central Navigation Data feed update END -->
+
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->

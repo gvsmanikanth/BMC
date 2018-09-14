@@ -92,6 +92,10 @@ public class SearchResultsModel {
                 fieldName = "category";
                 values.add("productsSolutions");
             }
+            else if(labelParam.equals("forms")){
+                fieldName = "category";
+                values.add("forms");
+            }
             else if(labelParam.equals("services")){
                 fieldName = "category";
                 values.add("services");

@@ -47,7 +47,7 @@
                                     name="./sourcelinktext"/>
                             <sourcelinkeurl
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldDescription="Enter the URL for the source link, beginning with http or https"
                                     fieldLabel="(Optional) Source Link"
                                     name="./sourcelinkeurl"/>
