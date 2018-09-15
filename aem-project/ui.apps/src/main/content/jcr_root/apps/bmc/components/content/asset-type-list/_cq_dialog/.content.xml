@@ -7,125 +7,343 @@
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <assetTypeList
+            <tabs
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Asset Type and List"
-                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
-                    <column
+                    <assetLinks1Set
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        jcr:title="Asset Links 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
-                            <iconLink1
+                            <column
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                fieldLabel="Select asset 1 icon"
-                                multiple="{Boolean}false"
-                                name="./iconLink1">
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <noneselected
+                                    <general
                                         jcr:primaryType="nt:unstructured"
-                                        text="none selected"
-                                        value=""/>
-                                    <icon-document
+                                        jcr:title="General"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <assetsSubheadColor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Select Subheading color .. use case industry-healthcare.html"
+                                                multiple="{Boolean}false"
+                                                name="./assetsSubheadColor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <noneselected
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="none selected"
+                                                        value=""/>
+                                                    <orange
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Orange"
+                                                        value="Orange"/>
+                                                </items>
+                                            </assetsSubheadColor>
+                                        </items>
+                                    </general>
+                                    <iconLink1
                                         jcr:primaryType="nt:unstructured"
-                                        text="Document icon"
-                                        value="icon-document"/>
-                                    <icon-documents
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 1 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink1">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink1>
+                                    <assetsSubheadingPrefix1
                                         jcr:primaryType="nt:unstructured"
-                                        text="Documents icon"
-                                        value="icon-documents"/>
-                                    <resource-video
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 1 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix1">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="datasheets"/>
+                                        </items>
+                                    </assetsSubheadingPrefix1>
+                                    <assetsSubheading1
                                         jcr:primaryType="nt:unstructured"
-                                        text="Video icon"
-                                        value="resource-video"/>
-                                </items>
-                            </iconLink1>
-                            <assetsSubheadColor
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                fieldLabel="Select Subheading color .. use case industry-healthcare.html"
-                                multiple="{Boolean}false"
-                                name="./assetsSubheadColor">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <noneselected
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 1"
+                                        name="./assetsSubheading1"/>
+                                    <assetLinks1
                                         jcr:primaryType="nt:unstructured"
-                                        text="none selected"
-                                        value=""/>
-                                    <orange
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Orange"
-                                        value="Orange"/>
-                                </items>
-                            </assetsSubheadColor>
-                            <assetsSubheadingPrefix1
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                fieldLabel="Select asset 1 sub heading prefix. (:) will be appended automatically"
-                                multiple="{Boolean}false"
-                                name="./assetsSubheadingPrefix1">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <noneselected
-                                        jcr:primaryType="nt:unstructured"
-                                        text="none selected"
-                                        value=""/>
-                                    <datasheet
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Datasheet"
-                                        value="datasheet"/>
-                                    <datasheets
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Datasheets"
-                                        value="datasheets"/>
-                                </items>
-                            </assetsSubheadingPrefix1>
-                            <assetSubheading1
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Use sentence case."
-                                fieldLabel="Asset Sub Heading 1"
-                                name="./assetSubheading1"/>
-                            <assetLinks1
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                composite="{Boolean}true"
-                                fieldLabel="Asset Links 1">
-                                <field
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                    name="./assetLinks1"
-                                    wrapperClass="core-wcm-form-options-toggle-set">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <column
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 1">
+                                        <field
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks1"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
                                             <items jcr:primaryType="nt:unstructured">
-                                                <overideTitle
+                                                <column
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Override Title"
-                                                    fieldLabel="Title Override (Optional)"
-                                                    name="./overrideTitle"/>
-                                                <pagePath
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                    fieldLabel="Page Path or external URL"
-                                                    name="./pagePath"
-                                                    rootPath="/content/bmc"/>
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
                                             </items>
-                                        </column>
-                                    </items>
-                                </field>
-                            </assetLinks1>
+                                        </field>
+                                    </assetLinks1>
+                                </items>
+                            </column>
                         </items>
-                    </column>
+                    </assetLinks1Set>
+                    <assetLinks2Set
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset Links 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <iconLink2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 2 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink2">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink2>
+                                    <assetsSubheadingPrefix2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 2 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix2">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="datasheets"/>
+                                        </items>
+                                    </assetsSubheadingPrefix2>
+                                    <assetsSubheading2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 2"
+                                        name="./assetsSubheading2"/>
+                                    <assetLinks2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 2">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks2"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </assetLinks2>
+                                </items>
+                            </column>
+                        </items>
+                    </assetLinks2Set>
+                    <assetLinks3Set
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset Links 3"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <iconLink3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 3 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink3">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink3>
+                                    <assetsSubheadingPrefix3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 3 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix3">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="datasheets"/>
+                                        </items>
+                                    </assetsSubheadingPrefix3>
+                                    <assetSubheading3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 3"
+                                        name="./assetsSubheading3"/>
+                                    <assetLinks3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 3">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks3"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </assetLinks3>
+                                </items>
+                            </column>
+                        </items>
+                    </assetLinks3Set>
                 </items>
-            </assetTypeList>
+            </tabs>
         </items>
     </content>
 </jcr:root>
