@@ -84,11 +84,103 @@
                                             <datasheet
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheet"
-                                                value="datasheet"/>
+                                                value="Datasheet"/>
                                             <datasheets
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
-                                                value="datasheets"/>
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
                                         </items>
                                     </assetsSubheadingPrefix1>
                                     <assetsSubheading1
@@ -183,14 +275,106 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="none selected"
                                                 value=""/>
-                                            <datasheet
+                                             <datasheet
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheet"
-                                                value="datasheet"/>
+                                                value="Datasheet"/>
                                             <datasheets
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
-                                                value="datasheets"/>
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
                                         </items>
                                     </assetsSubheadingPrefix2>
                                     <assetsSubheading2
@@ -288,11 +472,103 @@
                                             <datasheet
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheet"
-                                                value="datasheet"/>
+                                                value="Datasheet"/>
                                             <datasheets
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
-                                                value="datasheets"/>
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
                                         </items>
                                     </assetsSubheadingPrefix3>
                                     <assetSubheading3
