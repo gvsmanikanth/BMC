@@ -14,7 +14,7 @@ import org.apache.sling.api.resource.ValueMap;
 import com.bmc.mixins.MetadataInfoProvider;
 import com.day.cq.wcm.api.Page;
 import javax.jcr.Node;
-//import com.bmc.components.LinkGenerator;
+
 /**
  * AssetTypeList class is a class backing the Asset Type and List component.
  * this class resolves it to the correct model(multifield property)
@@ -44,30 +44,27 @@ public class AssetTypeList extends WCMUsePojo implements MultifieldDataProvider,
     	 try {
     		 Node currentNode = getResource().adaptTo(Node.class);
     		 if(currentNode.hasProperty("iconLink1")){
-    		 if(currentNode.getProperty("iconLink1").getString().equals("resource-video")){
-    			 assetClass1 = "resource-video";
-    		 }else{
-    			 assetClass1 = "resource-download";
-    		 }
-    		 
+	    		 if(currentNode.getProperty("iconLink1").getString().equals("resource-video")){
+	    			 assetClass1 = "resource-video";
+	    		 }else{
+	    			 assetClass1 = "resource-download";
+	    		 }
     		 }
     		 
     		 if(currentNode.hasProperty("iconLink2")){
-        		 if(currentNode.getProperty("iconLink2").getString().equals("resource-video")){
-        			 assetClass2 = "resource-video";
-        		 }else{
-        			 assetClass2 = "resource-download";
-        		 }
-        		 
+	        		 if(currentNode.getProperty("iconLink2").getString().equals("resource-video")){
+	        			 assetClass2 = "resource-video";
+	        		 }else{
+	        			 assetClass2 = "resource-download";
+	        		 }
         		 }
     		 
     		 if(currentNode.hasProperty("iconLink3")){
-        		 if(currentNode.getProperty("iconLink3").getString().equals("resource-video")){
-        			 assetClass3 = "resource-video";
-        		 }else{
-        			 assetClass3 = "resource-download";
-        		 }
-        		 
+	        		 if(currentNode.getProperty("iconLink3").getString().equals("resource-video")){
+	        			 assetClass3 = "resource-video";
+	        		 }else{
+	        			 assetClass3 = "resource-download";
+	        		 }
         		 }
     		
     		 
@@ -80,18 +77,8 @@ public class AssetTypeList extends WCMUsePojo implements MultifieldDataProvider,
                  assetLink1.put("pagePath", childPage.getValueMap().get("pagePath").toString());
                  Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
                  assetLink1.put("title",getTitle(page,childPage));
-                		 
-                		 
-                /* if (page != null){
-                 	ValueMap pageMap = page.getProperties();
-                 	 assetLink1.put("title", pageMap.getOrDefault("navTitle","").toString());
-                 }
-                 // override title
-                 if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
-                	 assetLink1.put("title", childPage.getValueMap().get("overrideTitle").toString());
-             		}*/
-                  assetLinkSet1.add(assetLink1);
-                 logger.info("assetlink1"+assetLinkSet1);
+                 assetLinkSet1.add(assetLink1);
+                 //logger.info("assetlink1"+assetLinkSet1);
              }
              
           // iterate through the multifield card and fetch its page properties
@@ -104,20 +91,6 @@ public class AssetTypeList extends WCMUsePojo implements MultifieldDataProvider,
                  Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
                  assetLink2.put("title",getTitle(page,childPage));
                  assetLinkSet2.add(assetLink2);
-                /* Resource childPage2 = pagePathsNodes2.next();
-                 assetLink2 = new HashMap<>();
-                 assetLink2.put("pagePath", childPage2.getValueMap().get("pagePath2").toString());
-                 Page page2 = this.getResourceProvider().getPage(childPage2.getValueMap().get("pagePath2").toString());
-                  if (page2 != null){
-                 	ValueMap pageMap = page2.getProperties();
-                 	 assetLink2.put("title", pageMap.getOrDefault("navTitle","").toString());
-                 }
-                 // override title
-                 if(childPage2.getValueMap().get("overrideTitle") != null && !childPage2.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
-                	 assetLink2.put("title", childPage2.getValueMap().get("overrideTitle").toString());
-             		}
-                 logger.info("assetlink2"+assetLinkSet2);
-                 assetLinkSet2.add(assetLink2);*/
              }
              
              // iterate through the multifield card and fetch its page properties
@@ -129,15 +102,6 @@ public class AssetTypeList extends WCMUsePojo implements MultifieldDataProvider,
                  assetLink3.put("pagePath", childPage.getValueMap().get("pagePath").toString());
                  Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
                  assetLink3.put("title",getTitle(page,childPage));
-                 
-               /*  if (page != null){
-                 	ValueMap pageMap = page.getProperties();
-                 	 assetLink3.put("title", pageMap.getOrDefault("navTitle","").toString());
-                 }
-                 // override title
-                 if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
-                	 assetLink1.put("title", childPage.getValueMap().get("overrideTitle").toString());
-             		}*/
                  assetLinkSet3.add(assetLink3);
              }
            
@@ -181,8 +145,5 @@ public class AssetTypeList extends WCMUsePojo implements MultifieldDataProvider,
     public String getAssetClass3() {
         return assetClass3;
     }
-   
-   
-    
 }
 
