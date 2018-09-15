@@ -7,7 +7,14 @@
         <a href="${item.href}">${"Learn More" @ context = 'html', i18n}</a>
         <sly data-sly-test="${item.hasSecondaryCta}">
             <span> | </span>
-            <a href="${item.secondaryCtaHref}">${item.secondaryCtaText @ context='html'}</a>
+            <sly data-sly-use.secondaryCta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=item.secondaryCtaHref}"></sly>
+			<sly data-sly-test="${secondaryCta.href}">
+                    <sly data-sly-test.secondaryCtaHref="${secondaryCta.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!secondaryCta.href}">
+                 <sly data-sly-test.secondaryCtaHref="${item.secondaryCtaHref}"></sly>
+             </sly>
+            <a href="${secondaryCtaHref}" class="${secondaryCta.cssClass}">${item.secondaryCtaText @ context='html'}</a>
         </sly>
     </sly>
 </section>
