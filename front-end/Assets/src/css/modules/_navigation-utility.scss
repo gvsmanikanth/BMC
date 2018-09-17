@@ -173,7 +173,7 @@ $mobileUtilityNavHeight: 49px;
 .navigation-search {
 	position: relative;
 	@include media(breakpointLarge) {
-		width: 200px;
+		--width: 200px;
 	}
 	.search-site {
 		position: absolute;
@@ -259,7 +259,8 @@ $mobileUtilityNavHeight: 49px;
 		}
 }
 .navigation-search.searchIcon{
-	width:0px;
+	--width:0px;
+	margin-left: 1rem;
 }
 .scrolled-up .navigation-utility > li.navigation-search:after{
 	padding-left: 14px;
@@ -326,7 +327,7 @@ $scrolledUtilityNavHeight: 49px;
 			width: 50px;
 
 			&.on {
-				width: 200px;
+				--width: 200px;
 				.search-site-b {
 					padding-left: 10px;
 					padding-right: 40px;

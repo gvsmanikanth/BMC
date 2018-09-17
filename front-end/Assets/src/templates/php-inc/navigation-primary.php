@@ -70,10 +70,10 @@
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span></a>
 			</li>
 			<li class="navigation-country">
-                <a href="#" class="select-country"><span class="scrollTextHide">Worldwide (English)</span></a>
+                <a href="#" class="select-country"><span class="scrollTextHide"></span></a>
             </li>
 			<li class="navigation-search js-navigation-search searchIcon">
-				<a class="navigation_search_link"><span class="scrollTextHide">Search</span></a>
+				<a class="navigation_search_link"><span class="scrollTextHide"></span></a>
 			</li>
 			
 		</ul>
