@@ -28,6 +28,8 @@
                 </div>
         </sly>
         <sly data-sly-use.fieldSetModel="com.bmc.models.components.forms.FieldSetModel" />
+        <!--/* WEB-3634 Added a GDPR_Eligible fieldset for all GDPR enabled countries */-->
+        <input type="hidden" id="GDPR_Eligible" name="GDPR_Eligible" value="No" />
         <sly data-sly-test="${fieldSetModel.displayOptIn}">
                 <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                         <div class="form-group checkbox">

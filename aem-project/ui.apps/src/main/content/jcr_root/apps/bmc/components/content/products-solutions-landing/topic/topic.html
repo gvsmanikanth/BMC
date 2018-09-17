@@ -15,7 +15,7 @@
                 <ul class="featured-products">
                     <sly data-sly-list.product="${topic.featuredProducts}">
                         <li class="featured-product">
-                            <h4><a href="${product.href}">${product.text}</a></h4>
+                            <h4><a href="${product.href}">${product.text @ context = 'html'}</a></h4>
                             <div class="product-detail">
                                 <div class="description" data-sly-test="${product.description}">
                                     ${product.description}
@@ -24,7 +24,7 @@
                                     <a href="${product.href}">${"Learn More" @ i18n}</a>
                                     <sly data-sly-test="${product.hasSecondaryCta}">
                                         <span> | </span>
-                                        <a href="${product.secondaryCtaHref}">${product.secondaryCtaText}</a>
+                                        <a href="${product.secondaryCtaHref}">${"Start a free trial" @ i18n}</a>
                                     </sly>
                                 </div>
                             </div>

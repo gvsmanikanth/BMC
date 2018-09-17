@@ -46,6 +46,7 @@ $mobileUtilityNavHeight: 49px;
 
 	a {
 		color: color(colorCorporateAction);
+		text-shadow: none;
 		&:hover {
 			color: darken(color(colorCorporateAction), 10);
 		}

@@ -129,7 +129,7 @@ function addFilterToArrayProtoype() {
 	
 	if(typeof bmcMeta !== 'undefined' && bmcMeta.hasOwnProperty("form"))	{
 		//When OptIn is 'true' the form should not display the Opt In field for non-GDPR countries (and the checkbox should be checked)
-		//When switching from a GDPR country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
+		//When switching from a  country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
 		if(bmcMeta.form.optIn == 'true'){
 			$("#C_OptIn_group").hide();
 			
@@ -142,12 +142,16 @@ function addFilterToArrayProtoype() {
 						$("#C_OptIn").attr("checked",false);
 						$("#C_OptIn").attr("type","checkbox");
 						$("#C_OptIn").attr("value","No");
+						
+						$("#GDPR_Eligible").attr("value","Yes");
 					}
 				}else{
 					$("#C_OptIn_group").hide();
 					$("#C_OptIn").attr("checked",true);
 					$("#C_OptIn").attr("type","hidden");
 					$("#C_OptIn").attr("value","Yes");
+					
+					$("#GDPR_Eligible").attr("value","No");
 				}
 			}
 			
@@ -163,6 +167,8 @@ function addFilterToArrayProtoype() {
 			//when OptIn is 'false', I don't believe the front end needs to do anything to the field, just let it be visible and let the user choose according to preference.
 			$("#C_OptIn_group").show();
 			$("#C_OptIn").attr("checked",false);
+			
+			$("#GDPR_Eligible").attr("value","No");
 		}
 		
 		$("#C_OptIn").on('change',function(){
