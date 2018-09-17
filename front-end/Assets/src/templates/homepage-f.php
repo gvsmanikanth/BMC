@@ -11,7 +11,7 @@ include 'php-inc/svg.php';
 
 </style>
 <div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(&quot;https://www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg&quot;);">
-<section class="bar full-bleed-page-banner product-category-header padding-bottom-0 section-wrap-header" style="background-image: url(https://www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg); background-position: center; background-size: cover;">
+<section class="bar full-bleed-page-banner product-category-header padding-bottom-0 section-wrap-header" style="background-image: url(https://www.bmc.com/content/dam/bmc/home/homepage_headerimage_09142018_1280x640.jpg); background-position: center; background-size: cover;">
 
 	<div class="flex-center video-hero-header">
 		<div class="inner ">
