@@ -60,7 +60,7 @@ $(document).ready(function () {
 		},500,"linear");
 	});
 	
-	$(".page-homepage-e #scrollDown").click(function(){
+	$(".page-homepage-e .scrollDown").click(function(){
 		$('html,body').animate({
 			scrollTop: $("#section1").offset().top -  50
 		},500,"linear");

@@ -20,13 +20,11 @@ include 'php-inc/svg.php';
 					<h1 class="page-header">Run Your Business as You Reinvent It</h1>
 					<h2 class="h3 subHeading">Optimize core IT <b>and</b> innovate in multi-cloud</h2>
 					<div class="text-center">
-						<a href="//www.bmc.com/content/bmc/videos.html?vID=z_pA5yH8YwA" class="btn-secondary modal-youtube-video-player btn btn-corporate" title="Transforming the Digital Enterprise"> 
-			         Watch the video <svg class="svg-inline"> 
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use> 
-								 </svg>
+						<a class="btn-secondary btn btn-corporate scrollDown" title="Transforming the Digital Enterprise"> 
+			         Find out how ›
 						</a>
 					</div>
-					<div class="bounce bigger" id="scrollDown"> 
+					<div class="bounce bigger scrollDown"> 
 						<i class="down" aria-hidden="true"></i>
 					</div>
 				</div>
