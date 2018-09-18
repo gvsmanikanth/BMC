@@ -79,6 +79,7 @@ public class KeyFeaturesModel {
                     //WEB-3681 Key Features -Picker Functionality
                     ctaButton.put("ctaPath", getCtaPathHref(button));
                     ctaButtons.add(ctaButton);
+                    ctaButton.put("cssClass", getCssClass(button));
                 }
             }
         	}
@@ -87,7 +88,9 @@ public class KeyFeaturesModel {
         }
     }
 
-    private String getButtonAssetType(Node button, String assetType, String altButtonName){
+   
+
+	private String getButtonAssetType(Node button, String assetType, String altButtonName){
         try {
             if(button.hasProperty(assetType) && button.hasProperty(altButtonName)) {
                 return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(altButtonName).getString().trim().isEmpty() ? button.getProperty(altButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
@@ -146,4 +149,26 @@ public class KeyFeaturesModel {
  	   }
  	return null;
     }
+   /*
+    * Added a new class to return the cssClass for the Asset Type.
+    * WEB-3899 
+    */
+    private String getCssClass(Node button) {
+    	try {
+  		   //WEB-3899 Video not working in Modal COmponent.
+  		  if (button.hasProperty("ctaPath")) {			   
+  			 UrlResolver urlResolver = UrlResolver.from(resource);
+  			 UrlInfo urlInfo = urlResolver.getUrlInfo(button.getProperty("ctaPath").getString(), true);
+  			 return urlInfo.getCssClass();		   
+ 		   }
+  		 else 
+  		   {
+  			   return null;
+  		   }
+  	   }catch (Exception e){
+             logger.error("ERROR:", e.getMessage());
+  	   }
+  	return null;
+     }
+	
 }
