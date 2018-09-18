@@ -148,7 +148,7 @@
                                         text="Orange (corporate)"
                                         value="btn btn-corporate"/>
                                 </items>
-                            </ctaButtonColor>
+                            </ctaButtonColor2>
                             <ctaButtonText2
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
