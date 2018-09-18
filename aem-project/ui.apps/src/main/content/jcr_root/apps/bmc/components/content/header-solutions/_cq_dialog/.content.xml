@@ -127,6 +127,40 @@
                                 fieldDescription="Select a page using the path tool, or enter an external HTTP link"
                                 fieldLabel="CTA Button URL (optional)"
                                 name="./ctaButtonURL"/>
+                            <ctaButtonColor2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Green = Trial; Blue = Video"
+                                fieldLabel="CTA Button Color 2 (optional)"
+                                multiple="{Boolean}false"
+                                name="./ctaButtonColor2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <blue
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Blue (primary)"
+                                        value="btn"/>
+                                    <green
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Green (secondary)"
+                                        value="btn btn-secondary"/>
+                                    <orange
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Orange (corporate)"
+                                        value="btn btn-corporate"/>
+                                </items>
+                            </ctaButtonColor>
+                            <ctaButtonText2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Use sentence case."
+                                fieldLabel="CTA Button Text 2(optional)"
+                                name="./ctaButtonText2"/>
+                            <ctaButtonURL2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Select a page using the path tool, or enter an external HTTP link"
+                                fieldLabel="CTA Button URL 2(optional)"
+                                name="./ctaButtonURL2"/>
                             <assetBar
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
