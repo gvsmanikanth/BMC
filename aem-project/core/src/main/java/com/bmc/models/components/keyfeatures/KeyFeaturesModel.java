@@ -1,10 +1,15 @@
 package com.bmc.models.components.keyfeatures;
 
 
+import com.bmc.models.components.video.VideoInfo;
 import com.bmc.models.url.UrlInfo;
 import com.bmc.mixins.UrlResolver;
+import com.bmc.mixins.VideoInfoProvider;
+import com.day.cq.wcm.api.Page;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.slf4j.Logger;
@@ -17,6 +22,7 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -125,11 +131,13 @@ public class KeyFeaturesModel {
     private String getCtaPathHref(Node button)
     {
  	   try {
- 		   if (button.hasProperty("ctaPath")) {			   
- 			   UrlInfo urlInfo = UrlInfo.from(button.getProperty("ctaPath").getString()); 
- 			   return urlInfo.getHref();		   
- 		   }
- 		   else
+ 		   //WEB-3899 Video not working in Modal COmponent.
+ 		  if (button.hasProperty("ctaPath")) {			   
+ 			 UrlResolver urlResolver = UrlResolver.from(resource);
+ 			 UrlInfo urlInfo = urlResolver.getUrlInfo(button.getProperty("ctaPath").getString(), true);
+ 			 return urlInfo.getHref();		   
+		   }
+ 		 else 
  		   {
  			   return null;
  		   }
