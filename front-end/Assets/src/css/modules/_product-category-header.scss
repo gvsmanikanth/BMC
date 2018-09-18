@@ -70,6 +70,9 @@
 			margin-bottom: 24px;
 		}
 	}
+	.mr1 {
+		margin-right: .5rem;
+	}
 
 	.bannerContent{
 		padding-bottom: 1rem;
@@ -78,6 +81,12 @@
 		display: flex;
 		@media screen and (min-width: 640px) {
 			min-height: 400px;
+		}
+		.layout-inner-wrap{
+			text-align:center;
+			@include media(breakpointLarge) {
+				text-align:left;
+			}
 		}
 		.inner{
 			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
