@@ -2,21 +2,21 @@
 <!-- First -->
 
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>
 
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-8">
-					<h1 class="white">Lorum Ipsum</h1>
+					<div class="flex-item col col-12 sm-col-7">
+					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
 					<div>
 						<a class="btn-secondary mr1"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 1 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 2 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 					</div>
 					</div>
 				</div>
@@ -88,21 +88,21 @@
 <!-- Second -->
 
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header  product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>
 
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-8">
-					<h1 class="white">Lorum Ipsum</h1>
+					<div class="flex-item col col-12 sm-col-7">
+					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
 					<div>
 						<a class="btn-secondary mr1"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 1 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 2 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 					</div>
 					</div>
 				</div>
@@ -158,21 +158,21 @@
 <!-- Third -->
 
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header  product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>
 
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-8">
-					<h1 class="white">Lorum Ipsum</h1>
+					<div class="flex-item col col-12 sm-col-7">
+					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
 					<div>
 						<a class="btn-secondary mr1"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 1 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 2 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 					</div>
 					</div>
 				</div>
@@ -212,21 +212,21 @@
 <!-- Third -->
 
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header  product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>
 
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-8">
-					<h1 class="white">Lorum Ipsum</h1>
+					<div class="flex-item col col-12 sm-col-7">
+					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
 					<div>
 						<a class="btn-secondary mr1"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 1 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
-							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">Button 2 &nbsp;&#8250; </a>
+							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 					</div>
 					</div>
 				</div>

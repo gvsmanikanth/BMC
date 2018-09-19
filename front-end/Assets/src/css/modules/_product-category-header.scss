@@ -37,6 +37,7 @@
 		display: inline-block;
 		margin-top:18px;
 		margin-bottom: 18px;
+		
 		@media screen and (min-width: 640px) {
 			margin-top:24px;
 			margin-bottom: 24px;
@@ -344,10 +345,30 @@
 	}
 
 	//WEB-3935
-	.product-category-header2 {
+	&.product-category-header2 {
+		h1 {
+			font-weight: 400 !important;
+			@media screen and (min-width: 640px){
+				margin-top: 132px;
+			}
+		}
 		h2 {
 			max-width: 100%;
 		}
+		
+		@media screen and (min-width: 640px){
+			.btn-secondary {
+				margin-top:66px;
+				margin-bottom:42px;
+			}
+		}
+		
+		@media only screen and (min-width: 60em) {
+			.wallpaper-media {
+				background-size: cover!important;
+			}
+		}
+		
 	}
 }
 
