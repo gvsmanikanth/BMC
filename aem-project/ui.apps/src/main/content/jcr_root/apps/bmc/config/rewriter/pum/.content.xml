@@ -10,5 +10,5 @@
     transformerTypes="[pum]">
     <generator-htmlparser
         jcr:primaryType="nt:unstructured"
-        includeTags="[A,/A,IMG,AREA,FORM,BASE,LINK,SCRIPT,BODY,/BODY]"/>
+        includeTags="[A]"/>
 </jcr:root>
