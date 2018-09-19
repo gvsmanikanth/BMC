@@ -23,6 +23,45 @@ public class EducationReportDataItem {
 	private String eduction_specific_roles;
 	private String ic_app_inclusion;
 	private String ic_weighting;
+	private String course_Delivery;
+	private String jcr_path;
+	
+	
+	
+	public String getJcr_path() {
+		return jcr_path;
+	}
+	public void setJcr_path(String jcr_path) {
+		this.jcr_path = jcr_path;
+	}
+	public String getPage_Name() {
+		return page_Name;
+	}
+	public void setPage_Name(String page_Name) {
+		this.page_Name = page_Name;
+	}
+	private String page_Name;
+	
+	public String getCourse_Delivery() {
+		return course_Delivery;
+	}
+	public void setCourse_Delivery(String course_Delivery) {
+		this.course_Delivery = course_Delivery;
+	}
+	public String getCourse_Type() {
+		return course_Type;
+	}
+	public void setCourse_Type(String course_Type) {
+		this.course_Type = course_Type;
+	}
+	public String getCourse_Duration() {
+		return course_Duration;
+	}
+	public void setCourse_Duration(String course_Duration) {
+		this.course_Duration = course_Duration;
+	}
+	private String course_Type;
+	private String course_Duration;
 	
 	
 	
