@@ -2,7 +2,7 @@
 <sly data-sly-test.bgImg="${BgImgChildProps.ChildProperties['fileReference']}" />
 <sly data-sly-test.fgImg="${bgImg @ context='uri'}" />
 
-<!-- /* If redesign -- */-->
+<!-- /* If redesign */-->
 <sly data-sly-use.MbgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='mbg'}" />
 <sly data-sly-test.mbgImg="${MbgImgChildProps.ChildProperties['fileReference']}" />
 <sly data-sly-test.mfgImg="${mbgImg @ context='uri'}" />
@@ -10,16 +10,16 @@
 
 <sly data-sly-test="${properties.isNewDesign}">
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "${mfgImg}","(min-width: 640px)": "${fgImg}"}}'>
  	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div class="layout-inner-wrap text-left">
-					<div class="flex-item col col-12 sm-col-8">
+				<div class="layout-inner-wrap">
+					<div class="flex-item col col-12 md-col-6 sm-col-8">
        						<h1 class="white">${properties.title @ context='html', i18n}</h1>
                             <h2 data-sly-test="${properties.subTitle}">${properties.subTitle @ context='html', i18n}</h2>
-                            <div data-sly-test="${properties.ctaButtonText || properties.ctaButtonText2}">
+                            <div class="button-wrapper" data-sly-test="${properties.ctaButtonText || properties.ctaButtonText2}">
                                 <a
                                     data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText', urlOrPath='ctaButtonURL'}"
                                     data-sly-test="${cta.text}"
@@ -37,7 +37,7 @@
 
 </sly>
 
-<!-- /* If not redesign -- */-->
+<!-- /* If not redesign */-->
 <sly data-sly-test="${!properties.isNewDesign}">
         <section
             class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
