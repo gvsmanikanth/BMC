@@ -23,13 +23,23 @@
                                 <a
                                     data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText', urlOrPath='ctaButtonURL'}"
                                     data-sly-test="${cta.text}"
-                                    class="${cta.cssClass} ${properties.ctaButtonColor} ${cta.isVideo ? 'video-play' : 'learn-more'} mr1"
-                                    href="${cta.href}" data-location="Top-CTA-Button-Area">${cta.text @ context='html', i18n}</a>
-                                 <a
+                                    class="${cta.cssClass} ${properties.ctaButtonColor} ${cta.isVideo ? '' : 'learn-more'} mr1"
+                                    href="${cta.href}" data-location="Top-CTA-Button-Area">
+                                    ${cta.text @ context='html', i18n}
+                                    <sly data-sly-test="${cta.isVideo}">
+										<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+									</sly>
+								</a>
+                                <a
                                     data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText2', urlOrPath='ctaButtonURL2'}"
                                     data-sly-test="${cta.text}"
-                                    class="${cta.cssClass} ${properties.ctaButtonColor2} ${cta.isVideo ? 'video-play' : 'learn-more'}"
-                                    href="${cta.href}" data-location="Top-CTA-Button-Area">${cta.text @ context='html', i18n}</a>   
+                                    class="${cta.cssClass} ${properties.ctaButtonColor2} ${cta.isVideo ? '' : 'learn-more'}"
+                                    href="${cta.href}" data-location="Top-CTA-Button-Area">
+                                    ${cta.text @ context='html', i18n}
+                                	<sly data-sly-test="${cta.isVideo}">
+										<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+									</sly>
+                                </a>   
                             </div>
 					</div>
 				</div>
