@@ -9,10 +9,10 @@
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-7">
+					<div class="flex-item col col-12 sm-col-6">
 					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
-					<div>
+					<div class="button-wrapper">
 						<a class="btn-secondary mr1"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
@@ -95,10 +95,10 @@
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-7">
+					<div class="flex-item col col-12 sm-col-6">
 					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
-					<div>
+					<div class="button-wrapper">
 						<a class="btn-secondary mr1"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
@@ -165,10 +165,10 @@
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-7">
+					<div class="flex-item col col-12 sm-col-6">
 					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
-					<div>
+					<div class="button-wrapper">
 						<a class="btn-secondary mr1"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
@@ -219,10 +219,10 @@
 		<div class="inner">
 			<div class="bannerContent flex-center">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 sm-col-7">
+					<div class="flex-item col col-12 sm-col-6">
 					<h1 class="white">Lorum ipsum dolor sit amet</h1>
 					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam felis sapien, ornare condimentum purus sodales, porttitor iaculis leo.</h2>
-					<div>
+					<div class="button-wrapper">
 						<a class="btn-secondary mr1"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example &nbsp;&#8250; </a>
 						<a class="btn-secondary"
