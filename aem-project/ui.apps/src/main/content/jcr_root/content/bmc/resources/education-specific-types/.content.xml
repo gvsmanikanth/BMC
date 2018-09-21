@@ -18,4 +18,12 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Certification"
         />
+    <edu-specific-types-288161552
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Skills Assessments"
+        />
+    <edu-specific-types-188151987
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Subscriptions"
+        />
 </jcr:root>
