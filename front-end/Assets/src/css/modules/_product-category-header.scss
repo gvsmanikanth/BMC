@@ -347,7 +347,10 @@
 	//WEB-3935
 	&.product-category-header2 {
 		.bannerContent{
-			padding-top:10px;
+			padding-top:0px;
+			@include media(breakpointSmall) {
+				padding-top:10px;
+			}
 			min-height:420px;
 			.layout-inner-wrap{
 				.flex-item{
@@ -366,10 +369,10 @@
 		           
 		           		font-family: Open Sans;
 						font-weight: normal !important;
-						letter-spacing: -2.3px;
+						--letter-spacing: -2.3px;
 						font-size: 38px;
-						margin-bottom:0px;
-						margin-top:0px;
+						margin-bottom:17px;
+						margin-top:65px;
 						@include media(breakpointSmall) {
 							margin-top: 55px;
 							//margin-bottom: 11px;
@@ -379,13 +382,13 @@
 					}
 				   
 				   h2 {
-						font-family: Open Sans;
+						font-family: Open Sans Regular;
 						font-weight: normal !important;
 						letter-spacing: 0.2px;
-						line-height:2rem;
+						line-height: 28px;
 						max-width: 100%;
 						font-size: 23px;
-						margin-bottom:8px; 
+						margin-bottom:5px; 
 						@include media(breakpointSmall) {
 							font-size: 25px;
 							margin-bottom:35px; 
