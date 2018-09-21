@@ -17,6 +17,22 @@ public class CategoriesReportDataItem {
 	private String Status;
 	private String Meta_Description;
 	private String Short_Description;
+	private String ic_app_inclusion;
+	private String jcr_path;
+	
+	public String getIc_app_inclusion() {
+		return ic_app_inclusion;
+	}
+	public void setIc_app_inclusion(String ic_app_inclusion) {
+		this.ic_app_inclusion = ic_app_inclusion;
+	}
+	public String getIc_weighting() {
+		return ic_weighting;
+	}
+	public void setIc_weighting(String ic_weighting) {
+		this.ic_weighting = ic_weighting;
+	}
+	private String ic_weighting;
 	
 	public String getCreation_Date() {
 		return Creation_Date;
@@ -102,6 +118,12 @@ public class CategoriesReportDataItem {
 	}
 	public void setShort_Description(String short_Description) {
 		Short_Description = short_Description;
+	}
+	public String getJcr_path() {
+		return jcr_path;
+	}
+	public void setJcr_path(String jcr_path) {
+		this.jcr_path = jcr_path;
 	}
 	
 	
