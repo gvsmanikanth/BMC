@@ -359,16 +359,19 @@
 							margin-left: 45px;
 						}
 						@include media(breakpointExtraLarge) {
-							margin-left: 95px;
+							margin-left: 70px;
 						}
 				
 		           h1 {
-						font-weight: 400 !important;
+		           
+		           		font-family: Open Sans;
+						font-weight: normal !important;
+						letter-spacing: -2.3px;
 						font-size: 38px;
 						margin-bottom:0px;
 						margin-top:0px;
-						@include media(breakpointMedium) {
-							margin-top: 35px;
+						@include media(breakpointSmall) {
+							margin-top: 55px;
 							//margin-bottom: 11px;
 							font-size: 50px;
 							margin-bottom:2px;
@@ -376,11 +379,14 @@
 					}
 				   
 				   h2 {
-					font-weight: 400 !important;
+						font-family: Open Sans;
+						font-weight: normal !important;
+						letter-spacing: 0.2px;
+						line-height:2rem;
 						max-width: 100%;
 						font-size: 23px;
 						margin-bottom:8px; 
-						@include media(breakpointMedium) {
+						@include media(breakpointSmall) {
 							font-size: 25px;
 							margin-bottom:35px; 
 						}
@@ -394,7 +400,7 @@
    						border: none;
    						margin-right: 0px;
    						 @include media(breakpointSmall) {
-   						 	margin-right: 15px;
+   						 	margin-right: 25px;
    						 }
 					}
 		
