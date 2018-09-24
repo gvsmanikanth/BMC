@@ -350,8 +350,9 @@
 			padding-top:0px;
 			@include media(breakpointSmall) {
 				padding-top:10px;
+				min-height:420px;
 			}
-			min-height:420px;
+			
 			.layout-inner-wrap{
 				.flex-item{
 				
@@ -362,36 +363,45 @@
 							margin-left: 45px;
 						}
 						@include media(breakpointExtraLarge) {
-							margin-left: 70px;
+							margin-left: 65px;
 						}
 				
 		           h1 {
 		           
 		           		font-family: Open Sans;
 						font-weight: normal !important;
-						--letter-spacing: -2.3px;
+						letter-spacing: -2.3px;
 						font-size: 38px;
-						margin-bottom:17px;
-						margin-top:65px;
+						margin-bottom:0;
+						margin-top:40px;
+						margin-right:10px;
+						margin-left:10px;
+						width:auto;
 						@include media(breakpointSmall) {
-							margin-top: 55px;
+							margin-bottom:17px;
+							margin-top: 52px;
 							//margin-bottom: 11px;
 							font-size: 50px;
 							margin-bottom:2px;
+							margin-right:0px;
+							margin-left:0px;
 						}
 					}
 				   
 				   h2 {
-						font-family: Open Sans Regular;
+						font-family: Open Sans;
 						font-weight: normal !important;
 						letter-spacing: 0.2px;
-						line-height: 28px;
+						line-height: 1.7rem;
 						max-width: 100%;
 						font-size: 23px;
-						margin-bottom:5px; 
+						margin-bottom:5px;
+						margin-top:12px;
 						@include media(breakpointSmall) {
+							line-height: 2rem;
 							font-size: 25px;
 							margin-bottom:35px; 
+							margin-top:18px
 						}
 					}
 					
