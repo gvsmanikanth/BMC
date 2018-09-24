@@ -59,6 +59,10 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Generic Report"
                                                         value="generic"/>
+                                                    <item9
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Customers Report"
+                                                        value="customers"/>
                                                 </items>
                                             </reportType>
                                             <reportFileName

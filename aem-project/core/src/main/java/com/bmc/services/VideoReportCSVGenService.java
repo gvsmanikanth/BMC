@@ -75,8 +75,8 @@ public class VideoReportCSVGenService {
     private static  ArrayList<VideoReportDataItem> list = new ArrayList<VideoReportDataItem>();
        	
     private String[] TableNames = {"Page Path","Name","Modified Date","Modified By",
-    		"Published Date","Published By","Template","vID","Title of the Video","Description of the video",
-    		"Overlay URL","Overlay Text","Navigation title","Last Replication Action"};	
+    		"Published By","vID","Title of the Video","Description of the video",
+    		"Overlay URL","Overlay Text","Navigation title","Ic app inclusion","Ic_weighting"};	
 	
 	 /*
 	    * Retrieves forms data from the JCR at /content/bmc/videos
@@ -202,6 +202,22 @@ public class VideoReportCSVGenService {
 																//Adding the property to the POJO object
 												        		reportDataItem.setOverlayText(overlayText);
 												        	}
+															 //Added IC Properties Metadata
+															else if(prop.getName().equalsIgnoreCase("ic-app-inclusion"))
+												        	{
+												        		
+												        		String IC_app_Inclusion  = prop.getValue().getString();
+												        		logger.info("IC App Inclusion : "+IC_app_Inclusion);			
+																//Adding the property to the POJO object
+												        		reportDataItem.setIc_app_inclusion(IC_app_Inclusion);
+												        	}
+															else if(prop.getName().equalsIgnoreCase("ic-weighting"))
+												        	{
+												        		
+												        		String icWeighting  = prop.getValue().getString();
+												        		logger.info("IC Weighting : "+icWeighting);																			
+												        		reportDataItem.setIc_weighting(icWeighting);
+												        	}
 															
 											         }
 											   }
@@ -210,71 +226,49 @@ public class VideoReportCSVGenService {
 										        Property prop= propeIterator.nextProperty();  
 										         if(!prop.getDefinition().isMultiple()){
 										        	 if(prop.getName().equalsIgnoreCase("jcr:lastModifiedBy"))
-										        	{
-										        		
-										        		String LastModifiedBy  = prop.getValue().getString();
-										        		logger.info("LastModifiedBy : "+LastModifiedBy);			
+										        	{										        		
+										        		String LastModifiedBy  = prop.getValue().getString();										        					
 														//Adding the property to the POJO object
 										        		reportDataItem.setModified_By(LastModifiedBy);
-										        	}
-										        	
-										        	
+										        	}										        										        	
 										        	else if(prop.getName().equalsIgnoreCase("jcr:lastModified"))
-										        	{
-										        		
-										        		String LastModified  = prop.getValue().getString();
-										        		logger.info("jcr:lastModified : "+LastModified);			
+										        	{										        		
+										        		String LastModified  = prop.getValue().getString();										        				
 														//Adding the property to the POJO object
 										        	   reportDataItem.setModified_Date(LastModified);
-										        	}
-										        	
+										        	}										        	
 										        	else if(prop.getName().equalsIgnoreCase("cq:lastReplicatedBy"))
-										        	{
-										        		
-										        		String LastReplicatedBy  = prop.getValue().getString();
-										        		logger.info("cq:lastReplicatedBy : "+LastReplicatedBy);			
+										        	{										        		
+										        		String LastReplicatedBy  = prop.getValue().getString();										        			
 														//Adding the property to the POJO object
 										        	   reportDataItem.setPublished_By(LastReplicatedBy);
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("pageTitle"))
-										        	{
-										        		
-										        		String pageTitle  = prop.getValue().getString();
-										        		logger.info("pageTitle : "+pageTitle);			
+										        	{										        		
+										        		String pageTitle  = prop.getValue().getString();										        			
 														//Adding the property to the POJO object
 										        	   reportDataItem.setPage_Title(pageTitle);
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("navTitle"))
-										        	{
-										        		
-										        		String navTitle  = prop.getValue().getString();
-										        		logger.info("navTitle : "+navTitle);			
+										        	{										        		
+										        		String navTitle  = prop.getValue().getString();										        				
 														//Adding the property to the POJO object
 										        	   reportDataItem.setNavTitle(navTitle);
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase(" cq:lastReplicationAction"))
-										        	{
-										        		
-										        		String LastReplicationAction  = prop.getValue().getString();
-										        		logger.info("Last Replication Action : "+LastReplicationAction);			
-														//Adding the property to the POJO object
+										        	{										        		
+										        		String LastReplicationAction  = prop.getValue().getString();										        	
 										        	   reportDataItem.setLastReplicationAction(LastReplicationAction);
 										        	}
 										        					        	
 										        	else if(prop.getName().equalsIgnoreCase("cq:lastReplicated"))
-										        	{
-										        		
-										        		String LastReplicated  = prop.getValue().getString();
-										        		logger.info("Last Replicated : "+LastReplicated);			
-														//Adding the property to the POJO object
+										        	{										        		
+										        		String LastReplicated  = prop.getValue().getString();										        	
 										        	   reportDataItem.setModified_Date(LastReplicated);
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("cq:template"))
-										        	{
-										        		
-										        		String template  = prop.getValue().getString();
-										        		logger.info("Template : "+template);			
-														//Adding the property to the POJO object
+										        	{										        		
+										        		String template  = prop.getValue().getString();										        		
 										        	   reportDataItem.setTemplateType(template);
 										        	}
 										        	
@@ -307,20 +301,19 @@ public class VideoReportCSVGenService {
 			XSSFWorkbook workbook = new XSSFWorkbook(); 
 			
 			//Create a blank sheet
-			XSSFSheet sheet = workbook.createSheet("ReportingData");
+			XSSFSheet sheet = workbook.createSheet("Video Data Report");
 			 
 			//This data needs to be written (Object[])
 			Map<String, Object[]> data = new TreeMap<String, Object[]>();
 			data.put("1", TableNames);					
 			for(int i=2;i<list.size();i++)
-			{
-				logger.info("Data Item:"+i);
+			{				
 				Integer count = i; 
 				
 			data.put(count.toString(), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getModified_Date(),list.get(i).getModified_By(),
-					list.get(i).getPublished_Date(),list.get(i).getPublished_By(),list.get(i).getTemplateType(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
+					list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
 					list.get(i).getDescription(),list.get(i).getOverlayURL(),list.get(i).getOverlayText(),
-					list.get(i).getNavTitle(),list.get(i).getLastReplicationAction()});
+					list.get(i).getNavTitle(),list.get(i).getIc_weighting(),list.get(i).getIc_app_inclusion()});
 			logger.info("Added the data item "+count+" to the report");
 			}
 			 logger.info("Creating the EXCEL sheet");
