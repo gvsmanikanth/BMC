@@ -242,7 +242,7 @@ include 'php-inc/head.php';
 				<p class="text-center">Big data relies heavily on interaction with the rest of the IT ecosystem. A unified approach to automating real-time and batch processes across multiple platforms ensures consistent service levels.</p>
 			</div>
 			<div class="flex-wrap flex-justify-center mb2 js-eh">
-				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-4">
+				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
 					<div class="card-wrap m2">
 						<a href="/it-solutions/control-m.html" class="p2 card tundora purchasing-col js-ehItem" style="">
 							<div class="card-content">
@@ -255,7 +255,7 @@ include 'php-inc/head.php';
 						</a>
 					</div>
 				</div>
-				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-4">
+				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
 					<div class="card-wrap m2">
 						<a href="/it-solutions/control-m-hadoop.html" class="p2 card tundora purchasing-col js-ehItem">
 							<div class="card-content">
@@ -268,7 +268,7 @@ include 'php-inc/head.php';
 						</a>
 					</div>
 				</div>
-				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-4">
+				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
 					<div class="card-wrap m2">
 						<a href="/it-solutions/control-m-devops.html" class="p2 card tundora purchasing-col js-ehItem">
 							<div class="card-content">
@@ -281,6 +281,20 @@ include 'php-inc/head.php';
 						</a>
 					</div>
 				</div>
+				<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
+					<div class="card-wrap m2">
+						<a href="/it-solutions/control-m-devops.html" class="p2 card tundora purchasing-col js-ehItem">
+							<div class="card-content">
+								<h3>Control-M Automation API (DevOps)</h3>
+								<p>Build workflows into development processes with Control-M</p>
+								<p class="text-center mb0">
+									<span class="btn text-center">Learn More&nbsp;›</span>
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

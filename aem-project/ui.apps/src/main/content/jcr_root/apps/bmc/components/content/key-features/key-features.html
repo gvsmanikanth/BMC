@@ -10,7 +10,9 @@
    <ul data-sly-test="${KeyFeaturesModel.ctaButtons||properties.aditionalResources}" class="button-set">
         <li>
             <sly data-sly-list.ctaButton="${KeyFeaturesModel.ctaButtons}">
-                <a class="${ctaButton.buttonColor}" href="${ctaButton.ctaPath}">
+				<!--/* WEB-3899 Video not working in modal - KeyFeatures Component START */-->
+                <a class="${ctaButton.buttonColor} ${ctaButton.cssClass}" href="${ctaButton.ctaPath}">
+                <!--/* WEB-3899 Video not working in modal - KeyFeatures Component END */-->
                     <sly data-sly-test="${ctaButton.assetName && ctaButton.assetType}">
                         ${ctaButton.assetType @ i18n}: ${ctaButton.assetName}
                     </sly>

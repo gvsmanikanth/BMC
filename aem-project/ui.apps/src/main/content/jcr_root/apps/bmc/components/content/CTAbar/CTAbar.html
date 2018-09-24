@@ -19,16 +19,34 @@
                 </div>
             </div>
 
+           <!--/* WEB-3835: Resolving picker url issue - video links and links without .html  */-->
+			<sly data-sly-use.primaryCTA="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.primaryCTAURL}"></sly>
+			 <sly data-sly-test="${primaryCTA.href}">
+			   <sly data-sly-test.primaryCtaResolvedLink="${primaryCTA.href}"></sly>
+			 </sly>  
+			 <sly data-sly-test="${!primaryCTA.href}">
+			    <sly data-sly-test.primaryCtaResolvedLink="${properties.primaryCTAURL}"></sly>
+			 </sly>
+			
+			<sly data-sly-use.secondaryCTA="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.secondaryCTAURL}"></sly>
+			 <sly data-sly-test="${secondaryCTA.href}">
+			   <sly data-sly-test.secondaryCtaResolvedLink="${secondaryCTA.href}"></sly>
+			 </sly>  
+			 <sly data-sly-test="${!secondaryCTA.href}">
+			    <sly data-sly-test.secondaryCtaResolvedLink="${properties.secondaryCTAURL}"></sly>
+			 </sly>
+			
+
             <!-- two buttons, one or more with headers -->
             <sly data-sly-test="${properties.primaryCTAheader || properties.secondaryCTAheader}">
                 <div class="ctabar__buttonwrap">
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.primaryCTAtext}">
                         <p data-sly-test="${properties.primaryCTAheader}" class="ctabar__ctaheader">${properties.primaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more" href="${properties.primaryCTAURL}">${properties.primaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.primaryCTAtext}" class="btn-secondary learn-more ${primaryCTA.isVideo ? 'modal-youtube-video-player' : ''}" href="${primaryCtaResolvedLink}">${properties.primaryCTAtext @ context = 'html'}</a>
                     </div>
                     <div class="flex-item ctabar__buttonwrap-item" data-sly-test="${properties.secondaryCTAtext}">
                         <p data-sly-test="${properties.secondaryCTAheader}" class="ctabar__ctaheader">${properties.secondaryCTAheader @ context = 'html'}</p>
-                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more" href="${properties.secondaryCTAURL}">${properties.secondaryCTAtext @ context = 'html'}</a>
+                        <a data-sly-test="${properties.secondaryCTAtext}" class="btn learn-more ${secondaryCTA.isVideo ? 'modal-youtube-video-player' : ''}" href="${secondaryCtaResolvedLink}">${properties.secondaryCTAtext @ context = 'html'}</a>
                     </div>
                 </div>
             </sly>
@@ -44,3 +62,4 @@
         </div>
     </div>
 </section>
+
