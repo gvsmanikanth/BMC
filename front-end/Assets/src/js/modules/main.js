@@ -717,18 +717,22 @@ $("a").productInterest();//WEB-2626
 	// void some browsers issue
 
 //WEB-3881 Header Strip Jump click event
-$('.assetStripItem').click(function(e) {
-	var href = $(this).attr("href");
-	if($(".tab-wrapper").length >= 1){
+$('a').click(function(e) {
+	e.preventDefault();
+	var href = $(this).attr("href"); 
+    if(href.indexOf("jumpTo_") > -1){
+		var newHref = "#"+ href.replace("jumpTo_",'');
+		window.location.hash = newHref;
+		if($(".tab-wrapper").length >= 1){
 		$(".r-tabs-nav .r-tabs-tab").each(function(){
-			//if($(this).hasClass("r-tabs-state-active")){
-			if($(this).find("a").attr("href") === href){
-				$('html,body').animate({
-					scrollTop: $($(this)).closest(".r-tabs").offset().top
-				}, 'slow');
+			if($(this).find("a").attr("href") === newHref){
+				$('html, body').animate({
+				  scrollTop: $(".tab-wrapper").offset().top
+				}, 1000)
 			}
 			
 		})
+	}
 	}
 });
 
