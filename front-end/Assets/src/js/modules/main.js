@@ -718,9 +718,9 @@ $("a").productInterest();//WEB-2626
 
 //WEB-3881 Header Strip Jump click event
 $('a').click(function(e) {
-	e.preventDefault();
 	var href = $(this).attr("href"); 
-    if(href.indexOf("jumpTo_") > -1){
+    if(href.indexOf("jumpTo_") > -1){ 
+		e.preventDefault();
 		var newHref = "#"+ href.replace("jumpTo_",'');
 		window.location.hash = newHref;
 		if($(".tab-wrapper").length >= 1){
