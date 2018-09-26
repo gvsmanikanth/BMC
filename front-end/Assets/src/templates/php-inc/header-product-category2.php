@@ -1,6 +1,9 @@
-
 <!-- First -->
-
+<style>
+.btn_secondary_new{
+	padding-right: 2.37778em !important;
+}
+</style>
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>
@@ -15,7 +18,7 @@
 					<div class="button-wrapper">
 						<a class="btn-secondary learn-more mr1"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example</a>
-						<a class="btn-secondary learn-more "
+						<a class="btn-secondary btn_secondary_new btn video-play modal-youtube-video-player"
 							href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example</a>
 <!-- 							 ❭  -->
 					</div>
