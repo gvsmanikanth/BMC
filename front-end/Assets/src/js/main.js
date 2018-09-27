@@ -22,6 +22,7 @@ require('./modules/utilities.js');
 //require('./modules/geoip.js'); //added js file for GeoIP.
 require('./modules/header-prompt.js'); //added js file for GeoIP.
 require('./modules/menu.js');
+require('./modules/jquery.backDetect.js');
 require('./modules/opentip.js');
 require('./modules/menu-adapter.js');
 require('./modules/menu-adapter-manager.js');

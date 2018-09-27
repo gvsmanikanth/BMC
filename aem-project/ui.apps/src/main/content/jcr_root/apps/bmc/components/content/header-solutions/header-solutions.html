@@ -1,25 +1,75 @@
 <sly data-sly-use.BgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='bg'}" />
 <sly data-sly-test.bgImg="${BgImgChildProps.ChildProperties['fileReference']}" />
 <sly data-sly-test.fgImg="${bgImg @ context='uri'}" />
+
+<!-- /* If redesign */-->
+<sly data-sly-use.MbgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='mbg'}" />
+<sly data-sly-test.mbgImg="${MbgImgChildProps.ChildProperties['fileReference']}" />
+<sly data-sly-test.mfgImg="${mbgImg @ context='uri'}" />
+
+
+<sly data-sly-test="${properties.isNewDesign}">
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
-	data-wallpaper-options='{"source":"${fgImg}"}'>
-	<div class="offset-wrapper flex-center">
+	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
+	data-wallpaper-options='{"source":{"fallback": "${mfgImg}","(min-width: 640px)": "${fgImg}"}}'>
+ 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent flex-center">
-				<div class="inner">
-					<h1 class="white">${properties.title @ context='html', i18n}</h1>
-					<h2 data-sly-test="${properties.subTitle}">${properties.subTitle @ context='html', i18n}</h2>
-					<div class="text-center" data-sly-test="${properties.ctaButtonText}">
-						<a
-							data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText', urlOrPath='ctaButtonURL'}"
-							data-sly-test="${cta.text}"
-							class="${cta.cssClass} ${properties.ctaButtonColor} ${cta.isVideo ? 'video-play' : 'learn-more'}"
-							href="${cta.href}" data-location="Top-CTA-Button-Area">${cta.text @ context='html', i18n}</a>
+				<div class="layout-inner-wrap">
+					<div class="flex-item col col-12 md-col-6 sm-col-8">
+       						<h1 class="white">${properties.title @ context='html', i18n}</h1>
+                            <h2 data-sly-test="${properties.subTitle}">${properties.subTitle @ context='html', i18n}</h2>
+                            <div class="button-wrapper" data-sly-test="${properties.ctaButtonText || properties.ctaButtonText2}">
+                                <a
+                                    data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText', urlOrPath='ctaButtonURL'}"
+                                    data-sly-test="${cta.text}"
+                                    class="${cta.cssClass} ${properties.ctaButtonColor} ${cta.isVideo ? '' : 'learn-more'} mr1"
+                                    href="${cta.href}" data-location="Top-CTA-Button-Area">
+                                    ${cta.text @ context='html', i18n}
+                                    <sly data-sly-test="${cta.isVideo}">
+										<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+									</sly>
+								</a>
+                                <a
+                                    data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText2', urlOrPath='ctaButtonURL2'}"
+                                    data-sly-test="${cta.text}"
+                                    class="${cta.cssClass} ${properties.ctaButtonColor2} ${cta.isVideo ? '' : 'learn-more'}"
+                                    href="${cta.href}" data-location="Top-CTA-Button-Area">
+                                    ${cta.text @ context='html', i18n}
+                                	<sly data-sly-test="${cta.isVideo}">
+										<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+									</sly>
+                                </a>   
+                            </div>
 					</div>
 				</div>
-			</div>
-			
+             </div>
+
+</sly>
+
+<!-- /* If not redesign */-->
+<sly data-sly-test="${!properties.isNewDesign}">
+        <section
+            class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0"
+            data-wallpaper-options='{"source":"${fgImg}"}'>
+            <div class="offset-wrapper flex-center">
+                <div class="inner">
+                    <div class="bannerContent flex-center">
+                        <div class="inner">
+                            <h1 class="white">${properties.title @ context='html', i18n}</h1>
+                            <h2 data-sly-test="${properties.subTitle}">${properties.subTitle @ context='html', i18n}</h2>
+                            <div class="text-center" data-sly-test="${properties.ctaButtonText}">
+                                <a
+                                    data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text='ctaButtonText', urlOrPath='ctaButtonURL'}"
+                                    data-sly-test="${cta.text}"
+                                    class="${cta.cssClass} ${properties.ctaButtonColor} ${cta.isVideo ? 'video-play' : 'learn-more'}"
+                                    href="${cta.href}" data-location="Top-CTA-Button-Area">${cta.text @ context='html', i18n}</a>
+                            </div>
+                        </div>
+                    </div>
+</sly>	
+
+<!--/* Asset bars and Orange bar common for both the designs */ -->
 			<sly data-sly-use.HeaderSolutions="com.bmc.components.HeaderSolutions" />
 			<!--/* AssetBar classes based on number of assets */-->
 			<sly data-sly-test="${HeaderSolutions.assetBars.size == 1}">

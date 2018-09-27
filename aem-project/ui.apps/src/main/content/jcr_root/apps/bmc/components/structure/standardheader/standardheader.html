@@ -19,7 +19,15 @@
                 <a href="/it-solutions/free-product-trials.html" class=""><span class="">${'Free Trials' @ i18n}</span><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
-				<a href="${pageProperties.secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
+
+				 <sly data-sly-use.secondaryCta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=pageProperties.secondaryCtaHref}"></sly>
+			   	 <sly data-sly-test="${secondaryCta.href}">
+                    <sly data-sly-test.secondaryCtaHref="${secondaryCta.href}"></sly>
+             	 </sly>  
+	             <sly data-sly-test="${!secondaryCta.href}">
+	                 <sly data-sly-test.secondaryCtaHref="${pageProperties.secondaryCtaHref}"></sly>
+	             </sly>
+				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>

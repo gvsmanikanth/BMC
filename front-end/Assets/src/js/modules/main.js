@@ -2,6 +2,20 @@
 var autocompleteTerms = window.autocompleteTerms || [];
 
 jQuery(function ($) {
+	backDetect();
+	
+	function backDetect(){
+		var value = sessionStorage.getItem("key");
+		if(value == "back"){
+			var uri = window.location.toString(); 
+			//if (uri.indexOf("#") > 0) {
+			if(uri.indexOf("vID") || uri.indexOf("#") > 0) { 
+				var clean_uri = uri.substring(0, uri.indexOf("#"));
+				window.history.replaceState({}, document.title, clean_uri);
+			} 
+		}
+	}
+	sessionStorage.removeItem("key");
 	//Hide Javasctipt disabled message if enabled
 	$("#noscriptbox").hide();
 	$("form").show();
@@ -743,4 +757,9 @@ $("a").productInterest();//WEB-2626
 	// void some browsers issue
 
 
+$(window).load(function(){
+  $('body').backDetect(function(){
+	sessionStorage.setItem("key", "back");
+  });
+});
 });// document ready

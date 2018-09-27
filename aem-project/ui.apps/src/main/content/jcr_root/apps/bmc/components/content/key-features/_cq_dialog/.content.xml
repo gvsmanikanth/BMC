@@ -154,6 +154,10 @@
                                                             value="btn btn-blue"/>
                                                     </items>
                                                 </buttonColor>
+                                                <cssClass
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                    name="./cssClass"/>
                                             </items>
                                         </column>
                                     </items>
