@@ -16,19 +16,19 @@
         <ul class="navigation-utility">
 			<sly data-sly-test.hasSecondaryCTA="${(pageProperties.secondaryCtaText && pageProperties.secondaryCtaHref)}"></sly>
 			<li class="navigation-trials ${(hasSecondaryCTA ? 'nav-li-override-hide' : '')}">
-                <a href="/it-solutions/free-product-trials.html" class="">${'Free Trials' @ i18n}<!--<span class="verticalBar">|</span>--></a>
+                <a href="/it-solutions/free-product-trials.html" class=""><span class="">${'Free Trials' @ i18n}</span><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
-				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText @ context='html',i18n}</a>
+				<a href="${pageProperties.secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
-				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span></a>
+				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
             <li class="navigation-country">
-                <a href="#" class="select-country"></a>
+                <a href="#" class="select-country"><span class="verticalBar">|</span></a>
             </li>
-			<li class="navigation-search js-navigation-search">
-				<a href="#" class=""><span class="scrollTextHide">${'Search' @ i18n}</span></a>
+			<li class="navigation-search js-navigation-search searchIcon">
+				<a href="#" class=""></a>
 			</li>
 		</ul>
 	</div>
