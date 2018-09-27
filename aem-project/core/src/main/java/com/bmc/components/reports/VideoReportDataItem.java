@@ -107,7 +107,23 @@ public class VideoReportDataItem {
 	private String navTitle;
 	private String LastReplicationAction;
 	private String templateType;
-	private String overlayURL;
+	private String overlayURL;	
+	private String ic_app_inclusion;
+	public String getIc_app_inclusion() {
+		return ic_app_inclusion;
+	}
+	public void setIc_app_inclusion(String ic_app_inclusion) {
+		this.ic_app_inclusion = ic_app_inclusion;
+	}
+	public String getIc_weighting() {
+		return ic_weighting;
+	}
+	public void setIc_weighting(String ic_weighting) {
+		this.ic_weighting = ic_weighting;
+	}
+	private String ic_weighting;
+	
+	
 	public String getOverlayURL() {
 		return overlayURL;
 	}

@@ -12,6 +12,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 
+
+import com.day.cq.wcm.api.Template;
+import javax.jcr.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
 /**
@@ -151,10 +157,44 @@ public interface UrlResolver {
             if (page != null) {
                 VideoInfoProvider videoInfoProvider = this::getResourceResolver;
                 VideoInfo video = videoInfoProvider.getVideoInfo(page);
-                if (video != null)
-                    return LinkInfo.from(video);
+                
+                    Template template = page.getTemplate();
+                    String text = "";
+                    // resolve offering micro items
+                    String anchorText = "";
+                    boolean isOfferingMicro = false;
+                    if (template != null && template.getPath().equals("/conf/bmc/settings/wcm/templates/offering-micro-item")) {
+                    	 isOfferingMicro = true;
+                    	try {
+                            Node offerItem = page.adaptTo(Node.class).getNode("jcr:content/root/offer_item");
+                            String parentOfferingPath = offerItem.hasProperty("primaryParentOfferingPage")?offerItem.getProperty("primaryParentOfferingPage").getString():"";
+                            if (!parentOfferingPath.isEmpty()) {
+                                Page parentPage = resourceProvider.getPage(parentOfferingPath);
+                                if (parentPage != null) {
+                                    //page = parentPage;
+                                    template = parentPage.getTemplate();
+                                    anchorText = offerItem.hasProperty("anchorTagText") ? offerItem.getProperty("anchorTagText").getString():"";
+                                    text = offerItem.hasProperty("productName") ? offerItem.getProperty("productName").getString():"";
+                                    UrlInfo offeringMicroURL = UrlInfo.from(parentPage);
+                                    if (!anchorText.isEmpty()){
+                                    	offeringMicroURL = UrlInfo.from(offeringMicroURL.getHref() + "#" + anchorText);
+                                    }
+                                    return LinkInfo.from(text.trim(), offeringMicroURL);
+                                }
+                             
+                            }
+                        } catch (RepositoryException e) {
+                        }
+                    }
 
+                   
+                  
+                
+                if (video != null){
+                    return LinkInfo.from(video);
+                }else if(!isOfferingMicro){
                 return LinkInfo.from(page, usePageShortDescription);
+                }
             }
         }
 

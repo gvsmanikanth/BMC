@@ -1141,6 +1141,12 @@
 	 	margin-left: auto;
 	 	margin-right: auto;
 	 }
+	 
+	.flex-wrap{
+		.flex{
+			display:inline;
+		}
+	}
 	.card-wrap{
 		.purchasing-col{
 			padding-bottom: 0 !important;
@@ -1165,6 +1171,7 @@
 				width: 100%;
 			}
 		}
+		
 	}
 }
 

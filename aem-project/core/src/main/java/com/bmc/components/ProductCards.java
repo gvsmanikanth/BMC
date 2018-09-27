@@ -43,12 +43,19 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 	 productCard.put("title", pageMap.getOrDefault("navTitle","").toString());
                 	 productCard.put("description", pageMap.getOrDefault("short_description","").toString());
                 }
-               productCards.add(productCard);
+               // override title and description
+               if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
+            	   productCard.put("title", childPage.getValueMap().get("overrideTitle").toString());
+           		}
+               if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
+            	   productCard.put("description", childPage.getValueMap().get("overrideDescription").toString());
+           		}
+                productCards.add(productCard);
             }
             
           
         } catch (Exception e){
-            logger.error("Error Getting Customer Stories:", e.getMessage());
+            logger.error("Error Getting Product cards:", e);
         }
        
     }
