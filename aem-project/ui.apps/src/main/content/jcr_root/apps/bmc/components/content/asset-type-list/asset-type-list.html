@@ -10,7 +10,7 @@
 <!-- /* Assets Links 1 */ -->
 <div class="${assetsWrapper} ${assetClass1}">
 	<div data-sly-test="${properties.iconLink1 != 'resource-video'}" class="${properties.iconLink1}"></div>
-      <strong>${properties.assetsSubheadingPrefix1} <sly data-sly-test="${properties.assetsSubheadingPrefix1}">:</sly> ${properties.assetsSubheading1} </strong>
+      <strong>${properties.assetsSubheadingPrefix1}<sly data-sly-test="${properties.assetsSubheadingPrefix1}">:</sly> ${properties.assetsSubheading1} </strong>
 		 <ul class="plain">
 			<sly data-sly-list.asset="${assetTypeList.assetLinkSet1}">
 			  <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
@@ -27,7 +27,7 @@
 <!-- /* Assets Links 2 */ -->
 <div class="${assetsWrapper} ${assetClass2}">
 	<div data-sly-test="${properties.iconLink2 != 'resource-video'}" class="${properties.iconLink2}"></div>
-    <strong>${properties.assetsSubheadingPrefix2} <sly data-sly-test="${properties.assetsSubheadingPrefix2}">: </sly>${properties.assetsSubheading2} </strong>
+    <strong>${properties.assetsSubheadingPrefix2}<sly data-sly-test="${properties.assetsSubheadingPrefix2}">: </sly>${properties.assetsSubheading2} </strong>
  	<ul class="plain">
 		<sly data-sly-list.asset="${assetTypeList.assetLinkSet2}">
   			<sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
