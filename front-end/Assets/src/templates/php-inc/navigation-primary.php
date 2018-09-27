@@ -64,16 +64,16 @@
 		</ul>
 		<ul class="navigation-utility">
 			<li class="navigation-trials ">
-				<a href="http://www.bmc.com/it-solutions/free-product-trials.html"  class="">Free Trials<!--<span class="verticalBar">|</span>--></a>
+				<a href="http://www.bmc.com/it-solutions/free-product-trials.html" class=""><span class="">Free Trials</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
-				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span></a>
+				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-country">
-                <a href="#" class="select-country"><span class="scrollTextHide"></span></a>
+                <a href="#" class="select-country"><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search searchIcon">
-				<a class="navigation_search_link"><span class="scrollTextHide"></span></a>
+				<a class="navigation_search_link"></a>
 			</li>
 			
 		</ul>

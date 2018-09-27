@@ -45,7 +45,7 @@ $mobileUtilityNavHeight: 49px;
 				@include font-size(14);
 			}
 			> .verticalBar {
-				color : #cacaca;
+				color : #ededed;
 				padding-left: 1em;
 			}
 		}
@@ -93,7 +93,7 @@ $mobileUtilityNavHeight: 49px;
 		padding-left: 26px;
 	}
 	.navigation-utility .navigation-country a {
-		padding-left: 26px;
+		padding-left: 20px;
 	}
 	.navigation-utility .navigation-search a {
 		padding-left: 26px;
@@ -260,7 +260,7 @@ $mobileUtilityNavHeight: 49px;
 }
 .navigation-search.searchIcon{
 	--width:0px;
-	margin-left: 1rem;
+	margin-left: 0.7rem;
 }
 .scrolled-up .navigation-utility > li.navigation-search:after{
 	padding-left: 14px;
