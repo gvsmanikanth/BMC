@@ -19,8 +19,7 @@
                 <a href="/it-solutions/free-product-trials.html" class=""><span class="">${'Free Trials' @ i18n}</span><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
-
-				 <sly data-sly-use.secondaryCta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=pageProperties.secondaryCtaHref}"></sly>
+				<sly data-sly-use.secondaryCta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=pageProperties.secondaryCtaHref}"></sly>
 			   	 <sly data-sly-test="${secondaryCta.href}">
                     <sly data-sly-test.secondaryCtaHref="${secondaryCta.href}"></sly>
              	 </sly>  
