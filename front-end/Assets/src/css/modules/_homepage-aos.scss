@@ -303,14 +303,14 @@ img {
 				.subHeading{
 					margin-top: 0;
 					font-size: 0.8rem;
-					margin-bottom: 35px;
+					margin-bottom: 50px;
 					@include media(breakpointMedium){
 						font-size: 1.3rem;
-						margin-bottom: 35px;
+						margin-bottom: 50px;
 					}
 					@include media(breakpointLarge){
 						font-size: 24px;
-						margin-bottom: 35px;
+						margin-bottom: 50px;
 						font-weight:400;
 					}
 				}
