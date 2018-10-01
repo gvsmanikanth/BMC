@@ -420,7 +420,15 @@
 						
 				}
 			}
+			
 		}
+		.wallpaper-container{
+				.wallpaper-media.native{
+					top: 0px !important;
+					background-position: center top !important;
+					background-size: cover !important;
+				}
+			}
 		
 	}
 }
