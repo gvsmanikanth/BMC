@@ -73,7 +73,7 @@
                 <a href="#" class="select-country"><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search searchIcon">
-				<span class="navigation_search_link"></span>
+				<!--<span class="navigation_search_link"></span>-->
 			</li>
 			
 		</ul>

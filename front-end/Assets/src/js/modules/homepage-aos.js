@@ -78,6 +78,28 @@ $(document).ready(function () {
 		bubbleElem.css({'right':(bubbleElem.attr('data-percentage-right'))+'%','top':(bubbleElem.attr('data-percentage-top'))+'%'});
 	});
 	
+	// Search form animation WEB-2853
+		$(document).click(function() {
+			$('.search-overlay').removeClass('on');
+			$('body').removeClass('no-scroll');
+			$('#bodyOverlay').removeClass('backgroundColor');
+			$(".search-overlay #search_input").val("");
+			$('#fp-nav').css("display","block"); 
+		});
+		
+		$(".component_search_close").click(function(){
+			$(".search-overlay").animate({right:(-1)*$(".search-overlay").width()}, function(){
+				$('.search-overlay').removeClass('on');
+				$('body').removeClass('no-scroll');
+				$('#bodyOverlay').removeClass('backgroundColor');
+				$(".search-overlay #search_input").val("");
+				$(".search-overlay").css("right","0px");
+				$('#fp-nav').css("display","block"); 
+				}
+			);
+			
+		});
+	
 	function autoScrollSection() {
 		    $('.section-wrap').each(function() {
 				

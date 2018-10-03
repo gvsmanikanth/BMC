@@ -95,8 +95,8 @@ $mobileUtilityNavHeight: 49px;
 	.navigation-utility .navigation-country a {
 		padding-left: 20px;
 	}
-	.navigation-utility .navigation-search span {
-		padding-left: 26px;
+	.navigation-utility .navigation-search{
+		--padding-left: 26px;
 		cursor:pointer;
 	}
 }
@@ -106,7 +106,6 @@ $mobileUtilityNavHeight: 49px;
 .navigation-country a:after,
 .navigation-contact a:after,
 .navigation-search a:after,
-.navigation-search span:after,
 .navigation-support a:after{
 	@include icon();
 	@include font-size(16);
@@ -128,21 +127,16 @@ $mobileUtilityNavHeight: 49px;
 .navigation-country a:after,
 .navigation-contact a:after,
 .navigation-support a:after,
-.navigation-search span:after,
 .navigation-search a:after {
 	color: #999;
 	font-size: 1.1rem;
-} 
-
+}
 .navigation-country a:after{
   content: $iconGlobe; //
 }
 
 .navigation-contact a:after {
 	content: "\e60f  \e610"; // variables break spacing requirements here
-}
-.navigation-search span:after {
-	content: "";
 }
 
 .navigation-support a:after {
@@ -254,10 +248,9 @@ $mobileUtilityNavHeight: 49px;
 	}
 	&:after {
 			font-family: "icomoon";
-			--content: "";
-			color: #353537;
-			font-size: 1.2rem; 
-			cursor:pointer;
+			content: "";
+			color: #999;
+			font-size: 1.1rem; 
 		}
 }
 .scrolled-down .navigation-search.searchIcon,
@@ -397,8 +390,7 @@ $scrolledUtilityNavHeight: 49px;
 		.navigation-country a:after,
 		.navigation-contact a:after,
 		.navigation-support a:after,
-		.navigation-search a:after,
-		.navigation-search span:after {
+		.navigation-search a:after {
 			left: 12px;
 			top: 16px;
 		}

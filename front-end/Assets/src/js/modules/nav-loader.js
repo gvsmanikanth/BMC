@@ -191,25 +191,7 @@ jQuery(function($){
 				.addClass('navigation-active'); // doesn't trigger css transition animation :(
 		});
 		
-		// Search form animation WEB-2853
-		$(document).click(function() {
-			$('.search-overlay').removeClass('on');
-			$('body').removeClass('no-scroll');
-			$('#bodyOverlay').removeClass('backgroundColor');
-			$(".search-overlay #search_input").val("");
-		});
 		
-		$(".component_search_close").click(function(){
-			$(".search-overlay").animate({right:(-1)*$(".search-overlay").width()}, function(){
-				$('.search-overlay').removeClass('on');
-				$('body').removeClass('no-scroll');
-				$('#bodyOverlay').removeClass('backgroundColor');
-				$(".search-overlay #search_input").val("");
-				$(".search-overlay").css("right","0px");
-				}
-			);
-			
-		});
 	
 		//$('.navigation-search.js-navigation-search').click(function(e) {
 		$(document).on("click",".navigation-search.js-navigation-search",function(e) {
@@ -220,6 +202,7 @@ jQuery(function($){
 			//$(".autocomplete").removeClass("autocompleteData");
 			$('.search-overlay').addClass('on');
 			$('body').addClass('no-scroll');
+			$('#fp-nav').css("display","none");
 			$('#bodyOverlay').addClass('backgroundColor');
 			$(".search-overlay #search_input").focus();
 			$(".search-overlay").css({"right": (-1)*$(".search-overlay").width()});
