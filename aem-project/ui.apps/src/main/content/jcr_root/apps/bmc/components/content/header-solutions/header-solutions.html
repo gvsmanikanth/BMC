@@ -9,9 +9,15 @@
 
 
 <sly data-sly-test="${properties.isNewDesign}">
+	<sly data-sly-test="${properties.headerBackground}">
+	   <sly data-sly-test.headerBackground="${properties.headerBackground}"></sly>
+	</sly>
+	<sly data-sly-test="${!properties.headerBackground}">
+	  <sly data-sly-test.headerBackground="#000000"></sly>
+	</sly>
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
-	data-wallpaper-options='{"source":{"fallback": "${mfgImg}","(min-width: 640px)": "${fgImg}"}}'>
+	data-wallpaper-options='{"source":{"fallback": "${mfgImg}","(min-width: 640px)": "${fgImg}"}}' style="background-color:${properties.headerBackground @ context='html'};">
  	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent">
