@@ -73,7 +73,7 @@
                 <a href="#" class="select-country"><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search searchIcon">
-				<a class="navigation_search_link"></a>
+				<span class="navigation_search_link"></span>
 			</li>
 			
 		</ul>
@@ -87,7 +87,7 @@
         <div class="rows_flex">
 			<div id="search_header" class="columns">
 			   <div class="component_search">
-					<a class="component_search_close" id="component_search_close"></a>
+					<span class="component_search_close" id="component_search_close"></span>
 				  <div class="search-panel">
 					 <form accept-charset="utf-8" id="search_form" onsubmit="return false" data-keywords="/etc/tags/keywords" data-json="/bin/servicenow/searchservlet.keywords.json">
 						<input class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  

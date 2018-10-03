@@ -39,7 +39,7 @@ $mobileUtilityNavHeight: 49px;
 			@include media(breakpointLarge) {
 				@include font-size(13);
 				font-weight: 700;
-				padding: 0 0em;
+				padding: 0 1em;
 			}
 			@include media(breakpointExtraLarge) {
 				@include font-size(14);
@@ -95,8 +95,9 @@ $mobileUtilityNavHeight: 49px;
 	.navigation-utility .navigation-country a {
 		padding-left: 20px;
 	}
-	.navigation-utility .navigation-search a {
+	.navigation-utility .navigation-search span {
 		padding-left: 26px;
+		cursor:pointer;
 	}
 }
 
@@ -105,6 +106,7 @@ $mobileUtilityNavHeight: 49px;
 .navigation-country a:after,
 .navigation-contact a:after,
 .navigation-search a:after,
+.navigation-search span:after,
 .navigation-support a:after{
 	@include icon();
 	@include font-size(16);
@@ -126,6 +128,7 @@ $mobileUtilityNavHeight: 49px;
 .navigation-country a:after,
 .navigation-contact a:after,
 .navigation-support a:after,
+.navigation-search span:after,
 .navigation-search a:after {
 	color: #999;
 	font-size: 1.1rem;
@@ -138,8 +141,7 @@ $mobileUtilityNavHeight: 49px;
 .navigation-contact a:after {
 	content: "\e60f  \e610"; // variables break spacing requirements here
 }
-.navigation-search a:after {
-	--content: "\e60f"; 
+.navigation-search span:after {
 	content: "";
 }
 
@@ -258,9 +260,9 @@ $mobileUtilityNavHeight: 49px;
 			cursor:pointer;
 		}
 }
-.navigation-search.searchIcon{
-	--width:0px;
-	margin-left: 0.7rem;
+.scrolled-down .navigation-search.searchIcon,
+.scrolled-up .navigation-search.searchIcon{
+	margin-left: 1rem;
 }
 .scrolled-up .navigation-utility > li.navigation-search:after{
 	padding-left: 14px;
@@ -395,7 +397,8 @@ $scrolledUtilityNavHeight: 49px;
 		.navigation-country a:after,
 		.navigation-contact a:after,
 		.navigation-support a:after,
-		.navigation-search a:after {
+		.navigation-search a:after,
+		.navigation-search span:after {
 			left: 12px;
 			top: 16px;
 		}
