@@ -23,6 +23,7 @@ import org.apache.sling.commons.scheduler.Scheduler;
 
 import com.bmc.components.OnGigDataItem;
 import com.bmc.services.OnGigDataService;
+import com.bmc.services.OnGigDataServiceImpl;
 
  
 @Component(
@@ -52,39 +53,30 @@ public class onGigDataScheduler implements Runnable {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     
     @Reference
-    private OnGigDataService dataService;
+    private OnGigDataServiceImpl dataService;
         
     ArrayList<OnGigDataItem> dataListItem;
-        
-	private String baseURL;
-	
-	 @Activate
-	    protected void activate(final ComponentContext componentContext) throws Exception {
-	        final Map<String, String> properties = (Map<String, String>) componentContext.getProperties();			
-	    }
-	 
 	 
     @Override
     public void run() {
        try
        {
             log.info("Started the Scheduler for the onGigData");
-          //Fetch the data from the server
-            dataListItem =	dataService.getdataConnection(null);
-            //Add the data to the repository
-            	dataService.injestonGigData(dataListItem);
-            
+            //Fetch the data from the server
+            dataListItem =	dataService.getdataConnection();                  
         } catch(Exception e)
-        {
+        	{
         	log.info("Error: onGigDataScheduler "+e.getMessage());
-        }
-        	finally {
-        
-        	log.info("Finally");
+        	}
+        	finally {       
+        		log.info("Completed onGigDataScheduler");
         }
     }
  
-   
+	 @Activate
+	    protected void activate(final ComponentContext componentContext) throws Exception {
+	       			
+	    }
  
     @Deactivate
     protected void deactivate(ComponentContext ctx) {

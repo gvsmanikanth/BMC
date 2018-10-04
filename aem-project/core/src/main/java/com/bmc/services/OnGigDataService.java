@@ -22,7 +22,7 @@ public interface OnGigDataService {
 	
 	public ArrayList<OnGigDataItem> getDatafromAPICall(String responseBody);
 	
-	public ArrayList<OnGigDataItem> getdataConnection (String url);
+	public ArrayList<OnGigDataItem> getdataConnection ();
 	
 	public CareersTeamItem getCareersTeamData (String title);
 

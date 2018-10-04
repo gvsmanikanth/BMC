@@ -51,7 +51,7 @@ import com.bmc.components.OnGigDataItem;
         immediate = true)
 
 @Service(value=OnGigDataServiceImpl.class)
-public class OnGigDataServiceImpl implements OnGigDataService {
+public class OnGigDataServiceImpl {
 
 	/** Default log. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -83,7 +83,8 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	@Activate
     public void activate(Map<String, String> config) {
 		 baseURL = PropertiesUtil.toString(config.get("onGigdataAPIURL"), "");		
-		 baseURL = baseURL + PropertiesUtil.toString(config.get("onGigdataAPIURLParams"), "");			
+		 baseURL = baseURL + PropertiesUtil.toString(config.get("onGigdataAPIURLParams"), "");	
+		 logger.info("Base URL "+baseURL);
     }
 
 	 	/*
@@ -115,8 +116,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	public int injestonGigData(ArrayList<OnGigDataItem> data) {
 			
 		logger.info("Method injestonGigData(ArrayList<OnGigDataItem> data) of OnGigDataServiceImpl");	
-		 Map<String, Object> authInfo = new HashMap<String, Object>();
-		 authInfo.put(ResourceResolverFactory.SUBSERVICE, "bmcdataservice");	
+
 		    
 		try { 		              
 		    //Invoke the adaptTo method to create a Session 
@@ -373,13 +373,14 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * Data Connection call to onGig API
 	 * @see com.bmc.services.OnGigDataService#getdataConnection(java.lang.String)
 	 */
-	public ArrayList<OnGigDataItem> getdataConnection(String urlName) {
+	public ArrayList<OnGigDataItem> getdataConnection() {
 		
 		// Implement custom handling of GET requests 
 
 				HttpsURLConnection connection = null;
 				try {
-						URL url = new URL(baseURL);
+					logger.info("Response");
+						URL url = new URL(baseURL);						
 					    connection = (HttpsURLConnection) url.openConnection();
 					    connection.setDoOutput(true);
 					    connection.setInstanceFollowRedirects(true);
@@ -388,8 +389,8 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 					    connection.setUseCaches(false);			    
 					    InputStream response = connection.getInputStream();				  
 					    scanner = new Scanner(response);
-				        responseBody = scanner.useDelimiter("\\A").next();						    
-				        list =   getDatafromAPICall(responseBody);				        
+				        responseBody = scanner.useDelimiter("\\A").next();				      
+				       getDatafromAPICall(responseBody);				        
 					   int successtokenId =  injestonGigData(list);
 					   int successTokenId2 = injestonGigData(list2);
 					   int successTokenId3 = injestonGigData(list3);
