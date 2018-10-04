@@ -83,8 +83,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	@Activate
     public void activate(Map<String, String> config) {
 		 baseURL = PropertiesUtil.toString(config.get("onGigdataAPIURL"), "");		
-			baseURL = baseURL + PropertiesUtil.toString(config.get("onGigdataAPIURLParams"), "");	
-			logger.info("BASE URL scheduler"+baseURL);
+		 baseURL = baseURL + PropertiesUtil.toString(config.get("onGigdataAPIURLParams"), "");			
     }
 
 	 	/*
@@ -380,19 +379,17 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 
 				HttpsURLConnection connection = null;
 				try {
-					URL url = new URL("https://talent.ongig.com/api/v1/groups/pages/20?gid=20&group=bmc&Content-Type=application/x-www-form-urlencoded");
-				    connection = (HttpsURLConnection) url.openConnection();
-				    connection.setDoOutput(true);
-				    connection.setInstanceFollowRedirects(true);
-				    connection.setRequestMethod("GET");
-				    connection.setConnectTimeout(200000);
-				    connection.setUseCaches(false);			    
-				    InputStream response = connection.getInputStream();				  
-				    scanner = new Scanner(response);
-				    logger.info("4");
+						URL url = new URL(baseURL);
+					    connection = (HttpsURLConnection) url.openConnection();
+					    connection.setDoOutput(true);
+					    connection.setInstanceFollowRedirects(true);
+					    connection.setRequestMethod("GET");
+					    connection.setConnectTimeout(20000);
+					    connection.setUseCaches(false);			    
+					    InputStream response = connection.getInputStream();				  
+					    scanner = new Scanner(response);
 				        responseBody = scanner.useDelimiter("\\A").next();						    
-				        list =   getDatafromAPICall(responseBody);
-				        logger.info("list2");
+				        list =   getDatafromAPICall(responseBody);				        
 					   int successtokenId =  injestonGigData(list);
 					   int successTokenId2 = injestonGigData(list2);
 					   int successTokenId3 = injestonGigData(list3);
