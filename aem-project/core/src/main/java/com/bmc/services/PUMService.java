@@ -2,8 +2,7 @@ package com.bmc.services;
 
 import com.bmc.models.metadata.impl.PumMetadata;
 import org.apache.sling.api.SlingHttpServletRequest;
-
-import java.net.URI;
+import org.xml.sax.helpers.AttributesImpl;
 
 /**
  * Configuration for the Post-Render URL Manipulator (PUM) framework
@@ -11,12 +10,14 @@ import java.net.URI;
 public interface PUMService {
 
     /**
-     * TODO
-     *
+     * TODO: Documentation
      * @param request
-     * @param linkUri
+     * @param linkUrl
      * @return
      */
-    public PumMetadata getPumMetadata(SlingHttpServletRequest request, URI linkUri);
+    public PumMetadata getPumMetadata(SlingHttpServletRequest request, String linkUrl);
+
+
+    public void executePumPluginChain(PumMetadata pumMetadata, AttributesImpl achorAttributes);
 
 }

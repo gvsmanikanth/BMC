@@ -1,32 +1,38 @@
 package com.bmc.services;
 
 import com.bmc.models.metadata.impl.PumMetadata;
+import com.bmc.rewriter.plugins.PUMPlugin;
 import com.day.cq.commons.jcr.JcrConstants;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Property;
-import org.apache.felix.scr.annotations.Service;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.helpers.AttributesImpl;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- * TODO
+ * TODO: Documentation
  */
 @Component(label = "PUM Configuration", metatype = true,
         description = "Configuration for the Post-Render URL Manipulator (PUM) framework")
 @Service(value=PUMService.class)
+@Reference(name = "plugins", policy = ReferencePolicy.DYNAMIC, cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE,
+        referenceInterface = PUMPlugin.class)
 public class PUMServiceImpl implements PUMService {
 
     private static final Logger log = LoggerFactory.getLogger(PUMServiceImpl.class);
 
     private ResourceResolver resourceResolver;
+
+    private List<PUMPlugin> plugins = new ArrayList<>();
 
     @Property(description = "Mapping of domains to JCR content paths",
             value = { "fr.bmcsoftware.ca, /content/bmc/ca/fr", "www.bmc.com, /content/bmc/us/en",
@@ -53,10 +59,29 @@ public class PUMServiceImpl implements PUMService {
         this.domainMapping = toMap((String[]) props.get(DOMAIN_MAPPING));
     }
 
+    protected void bindPlugins(PUMPlugin plugin, final Map<String, Object> properties) {
+        plugins.add (plugin);
+    }
+
+    protected void unbindPlugins(PUMPlugin plugin, final Map<String,Object> properties) {
+        plugins.remove(plugin);
+    }
+
     @Override
-    public PumMetadata getPumMetadata(SlingHttpServletRequest request, URI linkUri) {
-        if (linkUri == null || !domainMapping.containsKey(linkUri.getHost())) {
-            log.info("Link URI invalid or not on whitelist. Returning null");
+    public PumMetadata getPumMetadata(SlingHttpServletRequest request, String linkUrl) {
+        if (StringUtils.isEmpty(linkUrl)) {
+            log.debug("Link URI invalid. Returning null");
+            return null;
+        }
+
+        // Turn relative into absolute URI
+        URI linkUri = URI.create(linkUrl);
+        if (StringUtils.isEmpty(linkUri.getHost())) {
+            linkUri = URI.create(getBaseUrl(request) + linkUrl);
+        }
+
+        if (!domainMapping.containsKey(linkUri.getHost())) {
+            log.debug("Host {} not on whitelist. Returning null", linkUri.getHost());
             return null;
         }
 
@@ -65,13 +90,21 @@ public class PUMServiceImpl implements PUMService {
         Resource content = resourceResolver.resolve(contentPath);
 
         if (content == null) {
-            log.info("No content found at {}. Returning null", contentPath);
+            log.debug("No content found at {}. Returning null", contentPath);
             return null;
         }
 
         PumMetadata pumMetadata = content.adaptTo(PumMetadata.class);
 
         return pumMetadata;
+    }
+
+    @Override
+    public void executePumPluginChain(PumMetadata pumMetadata, AttributesImpl anchorAttributes) {
+        for (PUMPlugin plugin : plugins) {
+            log.debug("Executing PUM plugin {}", plugin.getClass());
+            plugin.execute(pumMetadata, anchorAttributes);
+        }
     }
 
     private Map toMap(String[] sArray) {
@@ -83,6 +116,16 @@ public class PUMServiceImpl implements PUMService {
             }
         }
         return result;
+    }
+
+    private String getBaseUrl(SlingHttpServletRequest request) {
+        if (request == null) {
+            return "";
+        }
+
+        String requestUrl = request.getRequestURL().toString();
+        String requestPathInfo = request.getPathInfo();
+        return requestUrl.substring(0, requestUrl.length() - requestPathInfo.length()) + "/";
     }
 
 }

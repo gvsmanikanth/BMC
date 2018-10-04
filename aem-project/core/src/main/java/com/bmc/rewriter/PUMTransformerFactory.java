@@ -17,7 +17,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
 import java.io.IOException;
-import java.net.URI;
 import java.util.Calendar;
 import java.util.Map;
 
@@ -41,12 +40,10 @@ public class PUMTransformerFactory implements TransformerFactory {
     @Activate
     protected void activate(Map<String, Object> properties) {
         log.info("Initializing PUMTransformerFactory");
-        // TODO: Initialize cache
     }
 
     @Override
     public Transformer createTransformer() {
-        // TODO: Pass cache to transformer instance
         return new PUMTransformer();
     }
 
@@ -80,16 +77,13 @@ public class PUMTransformerFactory implements TransformerFactory {
 
             // Only process if anchor with valid href attribute
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
-
-                URI linkUri = URI.create(href);
-                // Turn relative into absolute URI
-                // TODO: Move this into PumService
-                if (StringUtils.isEmpty(linkUri.getHost())) {
-                    linkUri = URI.create(getBaseUrl() + href);
+                // Read PUM metadata from JCR
+                PumMetadata pumMetadata = pumService.getPumMetadata(request, href);
+                if (pumMetadata != null) {
+                    // Execute PUM plugin chain
+                    pumService.executePumPluginChain(pumMetadata, attributes);
+                    numLinks++;
                 }
-
-                PumMetadata pumMetadata = pumService.getPumMetadata(request, linkUri);
-                log.info("{}", pumMetadata);
             }
 
             this.getContentHandler().startElement(namespaceURI, localName, qName, attributes);
@@ -98,18 +92,8 @@ public class PUMTransformerFactory implements TransformerFactory {
         @Override
         public void endDocument() throws SAXException {
             long millisEnd = Calendar.getInstance().getTimeInMillis();
-            log.info("Finished injection of metadata into {} links in {} milliseconds", numLinks, millisEnd - this.millisStart);
+            log.info("Finished processing of {} links in {} milliseconds", numLinks, millisEnd - this.millisStart);
             this.getContentHandler().endDocument();
-        }
-
-        private String getBaseUrl() {
-            if (request == null) {
-                return "";
-            }
-
-            String requestUrl = request.getRequestURL().toString();
-            String requestPathInfo = request.getPathInfo();
-            return requestUrl.substring(0, requestUrl.length() - requestPathInfo.length()) + "/";
         }
 
     }
