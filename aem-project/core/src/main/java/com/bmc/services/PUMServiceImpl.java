@@ -8,6 +8,7 @@ import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.helpers.AttributesImpl;
@@ -74,26 +75,41 @@ public class PUMServiceImpl implements PUMService {
             return null;
         }
 
-        // Turn relative into absolute URI
-        URI linkUri = URI.create(linkUrl);
-        if (StringUtils.isEmpty(linkUri.getHost())) {
-            linkUri = URI.create(getBaseUrl(request) + linkUrl);
-        }
-
-        if (!domainMapping.containsKey(linkUri.getHost())) {
-            log.debug("Host {} not on whitelist. Returning null", linkUri.getHost());
-            return null;
-        }
-
         ResourceResolver resourceResolver = request.getResourceResolver();
-        String contentPath = domainMapping.get(linkUri.getHost()) + linkUri.getPath() + "/" + JcrConstants.JCR_CONTENT;
-        Resource content = resourceResolver.resolve(contentPath);
+        String resourcePath;
 
-        if (content == null) {
-            log.debug("No content found at {}. Returning null", contentPath);
+        if (linkUrl.startsWith("/content")) {
+            // Handle fully qualified relative links. E.g. /content/bmc/language-masters/en/external-links/https-www-googlecom.html
+            resourcePath = linkUrl;
+        } else {
+            // Handle other links. E.g. /external-links/https-www-googlecom.html or https://www.bmc.com/external-links/https-www-googlecom.html
+            URI linkUri = URI.create(linkUrl);
+            if (StringUtils.isEmpty(linkUri.getHost())) {
+                linkUri = URI.create(getBaseUrl(request) + linkUrl);
+            }
+
+            if (!domainMapping.containsKey(linkUri.getHost())) {
+                log.debug("Host {} not on whitelist. Returning null", linkUri.getHost());
+                return null;
+            }
+
+            resourcePath = domainMapping.get(linkUri.getHost()) + linkUri.getPath();
+        }
+
+        // Make sure resource exists
+        Resource resource = resourceResolver.resolve(resourcePath);
+        if (ResourceUtil.isNonExistingResource(resource)) {
+            log.debug("No resource found at {}. Returning null", resourcePath);
             return null;
         }
 
+        Resource content = resource.getChild(JcrConstants.JCR_CONTENT);
+        if (ResourceUtil.isNonExistingResource(content)) {
+            log.debug("No content found at {}. Returning null", resourcePath + "/" + JcrConstants.JCR_CONTENT);
+            return null;
+        }
+
+        // Create metadata POJO
         PumMetadata pumMetadata = content.adaptTo(PumMetadata.class);
 
         return pumMetadata;
