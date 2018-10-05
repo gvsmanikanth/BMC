@@ -1,7 +1,6 @@
 package com.bmc.rewriter.plugins;
 
 import com.bmc.models.metadata.impl.PumMetadata;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.slf4j.Logger;
@@ -22,15 +21,15 @@ public class MetadataInjector implements PUMPlugin {
         log.debug("Start PUM metadata injection");
 
         // TODO: Refactor PumMetadata to support name/value pairs
-        if (StringUtils.isNotEmpty(pumMetadata.getIcAppInclusion())) {
-            addAttribute(anchorAttributes, "data-ic-app-inclusion", pumMetadata.getIcAppInclusion());
-        }
+        addOrUpdateAttribute(anchorAttributes, "data-ic-app-inclusion", pumMetadata.getIcAppInclusion());
+        addOrUpdateAttribute(anchorAttributes, "ic-buyer-stage", pumMetadata.getIcBuyerStage());
+        addOrUpdateAttribute(anchorAttributes, "ic-company-size", pumMetadata.getIcCompanySize());
+        addOrUpdateAttribute(anchorAttributes, "ic-content-type", pumMetadata.getIcContentType());
+        addOrUpdateAttribute(anchorAttributes, "ic-target-industry", pumMetadata.getIcTargetIndustry());
+        addOrUpdateAttribute(anchorAttributes, "ic-target-persona", pumMetadata.getIcTargetPersona());
+        addOrUpdateAttribute(anchorAttributes, "ic-weighting", pumMetadata.getIcWeighting());
 
         log.debug("End PUM metadata injection");
-    }
-
-    private void addAttribute(AttributesImpl anchorAttributes, String name, String value) {
-        anchorAttributes.addAttribute(null, name, name, null, value);
     }
 
 }
