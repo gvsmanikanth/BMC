@@ -18,6 +18,11 @@ public interface PUMService {
     public PumMetadata getPumMetadata(SlingHttpServletRequest request, String linkUrl);
 
 
+    /**
+     * TODO: Documentation
+     * @param pumMetadata
+     * @param achorAttributes
+     */
     public void executePumPluginChain(PumMetadata pumMetadata, AttributesImpl achorAttributes);
 
 }

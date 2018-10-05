@@ -61,7 +61,7 @@ public class PUMServiceImpl implements PUMService {
     }
 
     protected void bindPlugins(PUMPlugin plugin, final Map<String, Object> properties) {
-        plugins.add (plugin);
+        plugins.add(plugin);
     }
 
     protected void unbindPlugins(PUMPlugin plugin, final Map<String,Object> properties) {
@@ -109,10 +109,8 @@ public class PUMServiceImpl implements PUMService {
             return null;
         }
 
-        // Create metadata POJO
-        PumMetadata pumMetadata = content.adaptTo(PumMetadata.class);
-
-        return pumMetadata;
+        // Return metadata POJO
+        return content.adaptTo(PumMetadata.class);
     }
 
     @Override

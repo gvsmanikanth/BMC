@@ -79,7 +79,9 @@ public class PUMTransformerFactory implements TransformerFactory {
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
                 PumMetadata pumMetadata = pumService.getPumMetadata(request, href);
-                if (pumMetadata != null) {
+                if (pumMetadata == null) {
+                    log.debug("No PUM metadata found for {}. Leaving link untouched", href);
+                } else {
                     // Execute PUM plugin chain
                     pumService.executePumPluginChain(pumMetadata, attributes);
                     numLinks++;

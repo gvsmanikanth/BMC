@@ -22,12 +22,12 @@ public class MetadataInjector implements PUMPlugin {
 
         // TODO: Refactor PumMetadata to support name/value pairs
         addOrUpdateAttribute(anchorAttributes, "data-ic-app-inclusion", pumMetadata.getIcAppInclusion());
-        addOrUpdateAttribute(anchorAttributes, "ic-buyer-stage", pumMetadata.getIcBuyerStage());
-        addOrUpdateAttribute(anchorAttributes, "ic-company-size", pumMetadata.getIcCompanySize());
-        addOrUpdateAttribute(anchorAttributes, "ic-content-type", pumMetadata.getIcContentType());
-        addOrUpdateAttribute(anchorAttributes, "ic-target-industry", pumMetadata.getIcTargetIndustry());
-        addOrUpdateAttribute(anchorAttributes, "ic-target-persona", pumMetadata.getIcTargetPersona());
-        addOrUpdateAttribute(anchorAttributes, "ic-weighting", pumMetadata.getIcWeighting());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-buyer-stage", pumMetadata.getIcBuyerStage());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-company-size", pumMetadata.getIcCompanySize());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-content-type", pumMetadata.getIcContentType());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-target-industry", pumMetadata.getIcTargetIndustry());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-target-persona", pumMetadata.getIcTargetPersona());
+        addOrUpdateAttribute(anchorAttributes, "data-ic-weighting", pumMetadata.getIcWeighting());
 
         log.debug("End PUM metadata injection");
     }
