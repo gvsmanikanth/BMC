@@ -736,6 +736,25 @@ $("a").productInterest();//WEB-2626
 	//if ( window.location.hash ) scroll(0,0);
 	// void some browsers issue
 
+//WEB-3881 Header Strip Jump click event
+$('a').click(function(e) {
+	var href = $(this).attr("href"); 
+    if(href.indexOf("jumpTo_") > -1){ 
+		e.preventDefault();
+		var newHref = "#"+ href.replace("jumpTo_",'');
+		window.location.hash = newHref;
+		if($(".tab-wrapper").length >= 1){
+		$(".r-tabs-nav .r-tabs-tab").each(function(){
+			if($(this).find("a").attr("href") === newHref){
+				$('html, body').animate({
+				  scrollTop: $(".tab-wrapper").offset().top
+				}, 1000)
+			}
+			
+		})
+	}
+	}
+});
 
 $(window).load(function(){
   $('body').backDetect(function(){
