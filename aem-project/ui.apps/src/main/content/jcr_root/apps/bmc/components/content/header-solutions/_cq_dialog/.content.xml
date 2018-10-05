@@ -93,6 +93,48 @@
                                     </column>
                                 </items>
                             </mobileHeaderImage>
+                            <headerBackground
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Default background color: #000000"
+                                fieldLabel="Header Background (optional)"
+                                multiple="{Boolean}false"
+                                name="./headerBackground">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <black
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Black"
+                                        value="#000000"/>
+                                    <blue
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Blue"
+                                        value="#126CC3"/>
+                                    <green
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Green"
+                                        value="#4C9B00"/>
+                                    <grey
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Grey"
+                                        value="#5F6165"/>
+                                    <lightOrange
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Light Orange"
+                                        value="#FC7A00"/>
+                                    <midBlue
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MidBlue"
+                                        value="#0091DD"/>
+                                    <midGreen
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MidGreen"
+                                        value="#93B400"/>
+                                    <teal
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Teal"
+                                        value="#009A8E"/>
+                                </items>
+                            </headerBackground>
                             <ctaButtonColor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
