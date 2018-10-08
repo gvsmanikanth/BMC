@@ -348,7 +348,16 @@
 	&.product-category-header2 {
 		//display:flex;
 		//-ms-flex-direction:column;
+		
+		h5{
+			font-family: Open Sans;
+			font-weight: normal;
+		}
+					
 		.bannerContent{
+		
+			display:inline-table;
+			
 			padding-top:0px;
 			@include media(breakpointSmall) {
 				padding-top:10px;
@@ -356,6 +365,10 @@
 			}
 			
 			.layout-inner-wrap{
+				height:100%;
+				vertical-align:middle;
+				display:table-cell;
+			
 				.flex-item{
 					
 					&.add-top-bottom-margin-82px{
@@ -440,6 +453,7 @@
 							margin-top:18px
 						}
 					}
+					
 					
 				   .btn-secondary {
 						padding-right: 35px;
