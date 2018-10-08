@@ -24,14 +24,14 @@ include 'php-inc/svg.php';
 			         Find out how ›
 						</a>
 					</div>
-					<div class="bounce bigger scrollDown"> 
+					<!--<div class="bounce bigger scrollDown"> 
 						<i class="down" aria-hidden="true"></i>
-					</div>
+					</div>-->
 				</div>
 				
 			</div>
 			
-			<div class="assetStrip assetStripBottom">
+			<!--<div class="assetStrip assetStripBottom">
 				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 shadow-top assetStripItem">
@@ -74,7 +74,7 @@ include 'php-inc/svg.php';
 						</a>
 					</div>
 				</div>
-			</div>
+			</div>-->
 
 </div></div></section>
  

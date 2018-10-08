@@ -8,11 +8,14 @@ jQuery(function ($) {
 		var value = sessionStorage.getItem("key");
 		if(value == "back"){
 			var uri = window.location.toString(); 
-			//if (uri.indexOf("#") > 0) {
-			if(uri.indexOf("vID") || uri.indexOf("#") > 0) { 
-				var clean_uri = uri.substring(0, uri.indexOf("#"));
-				window.history.replaceState({}, document.title, clean_uri);
-			} 
+			if (uri.indexOf("#filter") > 0) {
+				
+			}else{
+				if(uri.indexOf("vID") || uri.indexOf("#") > 0) { 
+					var clean_uri = uri.substring(0, uri.indexOf("#"));
+					window.history.replaceState({}, document.title, clean_uri);
+				} 
+			}
 		}
 	}
 	sessionStorage.removeItem("key");
@@ -736,6 +739,25 @@ $("a").productInterest();//WEB-2626
 	//if ( window.location.hash ) scroll(0,0);
 	// void some browsers issue
 
+//WEB-3881 Header Strip Jump click event
+$('a').click(function(e) {
+	var href = $(this).attr("href"); 
+    if(href && href.indexOf("jumpTo_") > -1){ 
+		e.preventDefault();
+		var newHref = "#"+ href.replace("jumpTo_",'');
+		window.location.hash = newHref;
+		if($(".tab-wrapper").length >= 1){
+		$(".r-tabs-nav .r-tabs-tab").each(function(){
+			if($(this).find("a").attr("href") === newHref){
+				$('html, body').animate({
+				  scrollTop: $(".tab-wrapper").offset().top
+				}, 1000)
+			}
+			
+		})
+	}
+	}
+});
 
 $(window).load(function(){
   $('body').backDetect(function(){
