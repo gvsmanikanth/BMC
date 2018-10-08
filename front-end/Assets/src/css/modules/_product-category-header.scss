@@ -347,6 +347,7 @@
 	//WEB-3935
 	&.product-category-header2 {
 		display:flex;
+		-ms-flex-direction:column;
 		.bannerContent{
 			padding-top:0px;
 			@include media(breakpointSmall) {
@@ -421,6 +422,11 @@
 				}
 			}
 			
+		}
+		.bannerContent.flex-center{
+			h1.white{
+				margin-top: 20px;
+			}
 		}
 		.wallpaper-container{
 				.wallpaper-media.native{
