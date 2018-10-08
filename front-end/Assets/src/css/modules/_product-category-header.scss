@@ -357,7 +357,17 @@
 			
 			.layout-inner-wrap{
 				.flex-item{
-					&.add-top-bottom-margin{
+					
+					&.add-top-bottom-margin-82px{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 34px;
+							margin-bottom:34px;
+						}
+					}
+					
+					&.add-top-bottom-margin-110px{
 						margin-top:40px;
 						margin-bottom:40px;
 						@include media(breakpointSmall) {
@@ -365,8 +375,21 @@
 							margin-bottom:52px;
 						}
 					}
+					
+					&.add-top-bottom-margin-140px{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 82px;
+							margin-bottom:82px;
+						}
+					}
+					
+					
+					
 					&.no-top-bottom-margin{
 						margin-top:0px;
+						margin-bottom:0px;
 					}
 					
 					@include media(breakpointMedium) {
