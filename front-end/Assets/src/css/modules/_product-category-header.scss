@@ -346,8 +346,8 @@
 
 	//WEB-3935
 	&.product-category-header2 {
-		display:flex;
-		-ms-flex-direction:column;
+		//display:flex;
+		//-ms-flex-direction:column;
 		.bannerContent{
 			padding-top:0px;
 			@include media(breakpointSmall) {
@@ -357,6 +357,18 @@
 			
 			.layout-inner-wrap{
 				.flex-item{
+					&.add-top-bottom-margin{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 52px;
+							margin-bottom:52px;
+						}
+					}
+					&.no-top-bottom-margin{
+						margin-top:0px;
+					}
+					
 					@include media(breakpointMedium) {
 							margin-left: 25px;
 						}
@@ -374,13 +386,13 @@
 						letter-spacing: -2.3px;
 						font-size: 38px;
 						margin-bottom:0;
-						margin-top:40px;
+						margin-top:0px;
 						margin-right:10px;
 						margin-left:10px;
 						width:auto;
 						@include media(breakpointSmall) {
 							margin-bottom:17px;
-							margin-top: 52px;
+							//margin-top: 52px;
 							//margin-bottom: 11px;
 							font-size: 50px;
 							margin-bottom:2px;
@@ -413,6 +425,7 @@
     					padding-bottom: 12px;
    						border: none;
    						margin-right: 0px;
+   						margin-bottom: 0px;
    						 @include media(breakpointSmall) {
    						 	margin-right: 25px;
    						 }
@@ -423,18 +436,21 @@
 			}
 			
 		}
-		.bannerContent.flex-center{
-			h1.white{
-				margin-top: 20px;
-			}
-		}
+	}
+	
+	&.banner-image-from-top {
 		.wallpaper-container{
 				.wallpaper-media.native{
 					top: 0px !important;
 					background-position: center top !important;
 				}
-			}
-		
+		}
+	}
+	
+	.outer-banner-content{
+		display:flex;
+		position:absolute;
+		height:100%;
 	}
 }
 
