@@ -346,6 +346,7 @@
 
 	//WEB-3935
 	&.product-category-header2 {
+		display:flex;
 		.bannerContent{
 			padding-top:0px;
 			@include media(breakpointSmall) {
@@ -355,7 +356,6 @@
 			
 			.layout-inner-wrap{
 				.flex-item{
-				
 					@include media(breakpointMedium) {
 							margin-left: 25px;
 						}
