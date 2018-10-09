@@ -15,14 +15,25 @@
 	<sly data-sly-test="${!properties.headerBackground}">
 	  <sly data-sly-test.headerBackground="#000000"></sly>
 	</sly>
+	
+	<sly data-sly-use.HeaderSolutions="com.bmc.components.HeaderSolutions" />
+    <sly data-sly-test.sectionAssetClass=""></sly>
+    <sly data-sly-test.offsetAssetClass=""></sly>
+    <sly data-sly-test.bannerAssetClass=""></sly>
+
+	<sly data-sly-test="${HeaderSolutions.assetBars.size == 0}">
+		<sly data-sly-test.sectionAssetClass="js-content-center"></sly>
+    	<sly data-sly-test.offsetAssetClass="js-content-center-item"></sly>
+     	<sly data-sly-test.bannerAssetClass="flex-center"></sly>
+	</sly>
 <section
-	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0"
+	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 ${properties.backgroundImagePosition} ${sectionAssetClass} padding-bottom-0"
 	data-wallpaper-options='{"source":{"fallback": "${mfgImg}","(min-width: 640px)": "${fgImg}"}}' style="background-color:${properties.headerBackground @ context='html'};">
- 	<div class="offset-wrapper flex-center">
+ 	<div class="offset-wrapper flex-center ${offsetAssetClass}">
 		<div class="inner">
-			<div class="bannerContent">
+			<div class="bannerContent ${bannerAssetClass}">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 md-col-6 sm-col-8">
+					<div class="flex-item col col-12 md-col-6 sm-col-8 ${properties.contentAlignment}">
        						<h1 class="white">${properties.title @ context='html', i18n}</h1>
                             <h2 data-sly-test="${properties.subTitle}">${properties.subTitle @ context='html', i18n}</h2>
                             <div class="button-wrapper" data-sly-test="${properties.ctaButtonText || properties.ctaButtonText2}">
