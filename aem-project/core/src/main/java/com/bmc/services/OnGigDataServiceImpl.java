@@ -400,7 +400,7 @@ public class OnGigDataServiceImpl {
 					    }
 					    else
 					    {
-					    	logger.info("there was an error");
+					    	logger.info("The data was updated in the JCR");
 					    }
 				}catch (MalformedURLException e) {
 						        // TODO Auto-generated catch block
