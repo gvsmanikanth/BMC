@@ -166,6 +166,12 @@ $mobileUtilityNavHeight: 49px;
 // Search
 // -------------------------------------------------------------- //
 
+.global-option.navigation-search{
+	width: 200px;
+	&:after {
+		content: "";
+	}
+}
 .navigation-search {
 	position: relative;
 	@include media(breakpointLarge) {
