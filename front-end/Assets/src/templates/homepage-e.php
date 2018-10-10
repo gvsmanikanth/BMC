@@ -7,12 +7,28 @@ include 'php-inc/head.php';
 <?php
 include 'php-inc/svg.php'; 
 ?>
-
+<style>
+@media only screen and (min-width:0) and (max-width: 767px) {
+	#section0{
+		background-image: url(//www.bmc.com/content/dam/bmc/header-mobile-images/Blue-700x700px.png);
+	}
+}
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+	#section0{
+		background-image: url(//www.bmc.com/content/dam/bmc/solutions/banners/hp-tb-run-your-business.jpg);
+	}
+}
+@media only screen and (min-width: 1024px) {
+	#section0{
+		background-image: url(//www.bmc.com/content/dam/bmc/solutions/banners/hp-tb-run-your-business.jpg);
+	}
+}
+</style>
 <div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg);">
 
 <section  id="section0" 
 	class="js-content-center section-wrap-header sectionCommon wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 banner-image-from-top" 
-	style="background-image: url(//www.bmc.com/content/dam/bmc/solutions/banners/hp-tb-run-your-business.jpg); background-position: center; background-size: cover;">
+	style="background-position: center; background-size: cover;">
 	<div class="offset-wrapper flex-center js-content-center-item">
 		<div class="inner">
 			<div class="bannerContent flex-center">
