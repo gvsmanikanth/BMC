@@ -1,6 +1,5 @@
 ;( function( $, window, document, undefined ) {
 	'use strict';
-
 	var centerAlignContent = function() {
 		
 		if($(".js-content-center") && $(".js-content-center-item")){

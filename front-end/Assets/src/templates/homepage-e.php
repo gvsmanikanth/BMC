@@ -9,8 +9,29 @@ include 'php-inc/svg.php';
 ?>
 
 <div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(//www.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg);">
+
+<section  id="section0" 
+	class="js-content-center section-wrap-header sectionCommon wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 banner-image-from-top" 
+	style="background-image: url(//www.bmc.com/content/dam/bmc/solutions/banners/hp-tb-run-your-business.jpg); background-position: center; background-size: cover;">
+	<div class="offset-wrapper flex-center js-content-center-item">
+		<div class="inner">
+			<div class="bannerContent flex-center">
+				<div class="layout-inner-wrap">
+					<div class="flex-item col col-12 md-col-6 sm-col-8">
+						<h1 class="white">Run Your Business as You Reinvent It</h1>
+						<h2>Optimize core IT and enable innovation,<br> from mainframe to multi-cloud and beyond</h2>
+						<div class="button-wrapper">
+							<a class="btn-secondary btn scrollDown learn-more mr1">Find out how</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+</section>
+<!-- 
 <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0" style="background-color: rgb(65, 64, 66);background-size: cover;"> 
-	<div class="section video-hero-header" style="background-image: url(//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo.jpg); background-position: center; background-size: cover;">
+	<div class="section video-hero-header" style="background-image: url(//www.bmc.com/content/dam/bmc/solutions/banners/hp-tb-run-your-business.jpg); background-position: center; background-size: cover;">
 	   <div class="video-content">
 		      <div class="hero-image xs-only"></div>
 		      <div class="cover-bg"></div>
@@ -28,7 +49,7 @@ include 'php-inc/svg.php';
 	 	</div>
 	 </div>
 </section> 
-
+ -->
    <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="">
       <div class="flex-item section-content py4 layout-inner-wrap"> 
          <div class="md-flex flex flex-center full-bleed-two-column">
@@ -454,29 +475,6 @@ include 'php-inc/svg.php';
     </div>
 </div>
 
-<script type="text/javascript">
-var preloadImage = new Image();
-var backgroundImage = new Image();
-
-// we will call this function when the image has finished loading
-function notify_complete()
-{
-	document.getElementById("section0").height = document.documentElement.clientHeight;
-    document.getElementById("header-content-box-id").style.visibility = "visible";
-}
-
-function load_image()
-{
-    // call the notify_complete function when the image has loaded
-    preloadImage.onload = notify_complete;
-    // load the image
-    preloadImage.src = '//www.bmc.com/content/dam/bmc/home/End_Frame_HORIZONTAL_FLIP_retouch_logo_1.jpg';
-    document.getElementById("section0").height = document.documentElement.clientHeight;
-}
-
-load_image();
-
-</script>
 
 <script>
 function load_backgrundImage() {
