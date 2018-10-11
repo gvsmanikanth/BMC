@@ -122,7 +122,7 @@ section.bmc-engage-header.layout-full-bleed {
 	}
 
 	h1 {
-
+		font-weight: 400;
 		@include media(breakpointExtraLarge) {
 			font-size: em(85);
 		}
