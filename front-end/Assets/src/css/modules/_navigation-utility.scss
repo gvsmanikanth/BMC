@@ -109,7 +109,8 @@ $mobileUtilityNavHeight: 49px;
 	margin-left: 12px;
 	position: relative;
 	top: 3px;
-
+	padding: 10px;
+	cursor:pointer;
 	@include media(breakpointLarge) {
 		left: 0;
 		margin: 0;
@@ -171,6 +172,8 @@ $mobileUtilityNavHeight: 49px;
 }
 .navigation-search {
 	position: relative;
+	cursor:pointer;
+	
 	@include media(breakpointLarge) {
 		--width: 200px;
 	}
