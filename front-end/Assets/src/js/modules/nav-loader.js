@@ -1,7 +1,9 @@
 jQuery(function($){
-	function getMobile(){
+	
+	//Search Mobile view Initialize
+	function setMobileViewForSearch(){
 		if (window.matchMedia('(max-width: 767px)').matches || window.matchMedia('(max-width: 1023px)').matches) {
-			$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
+			//$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
 			$(".navigation-utility .scrollTextHide").show();
 			if(!$('header.layout-header .layout-inner-wrap a').hasClass("headerSearch")){
 				$('header.layout-header .layout-inner-wrap').append("<a class='navigation-search js-navigation-search headerSearch mobile-only'></a>"); 
@@ -11,7 +13,8 @@ jQuery(function($){
 		}
 	}
 			
-	getMobile();
+	setMobileViewForSearch();
+	
 	// two navigation functions have been setup based on the namespacing of
 	// 'nav' vs 'navigation'.
 	//
@@ -140,7 +143,7 @@ jQuery(function($){
 				}
 				equalHeightNavColumns(minNavHeight);
 			}, 250);
-			getMobile(); 
+			setMobileViewForSearch(); 
 		});
 
 		// exposes the primary nav items when in a scrolled-down or scrolled-up state
