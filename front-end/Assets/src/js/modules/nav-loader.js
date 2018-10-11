@@ -2,10 +2,9 @@ jQuery(function($){
 	function getMobile(){
 		if (window.matchMedia('(max-width: 767px)').matches || window.matchMedia('(max-width: 1023px)').matches) {
 			$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
+			$('header.layout-header .layout-inner-wrap').append("<a class='navigation-search js-navigation-search headerSearch mobile-only'></a>"); 
 		}
 	}
-	
-	
 			
 	getMobile();
 	// two navigation functions have been setup based on the namespacing of
