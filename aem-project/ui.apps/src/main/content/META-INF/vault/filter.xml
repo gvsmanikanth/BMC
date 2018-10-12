@@ -32,7 +32,7 @@
     <filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
 
 
-	<filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="merge"/>
+	<filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
    
     <filter root="/etc/clientlibs/bmc"/>
 
