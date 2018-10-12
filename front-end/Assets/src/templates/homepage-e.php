@@ -41,7 +41,7 @@ include 'php-inc/svg.php';
             <div class="flex-item col col-12 xs-col-6 text-center" data-aos-once="true" data-aos="fade-left">
 				<img class="mobile-only" data-src="//www.bmc.com/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation">
                <figure class="desktop-only">
-				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim-1/multi_cloud_animation_4.html">
+				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="//www.bmc.com/content/dam/bmc/edgeanim/multi-cloud-anim-11/Run_and_Reinvent_FINAL.html">
 				</object>
                 </figure> 
 

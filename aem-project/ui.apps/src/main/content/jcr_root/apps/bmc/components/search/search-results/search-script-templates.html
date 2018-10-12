@@ -1,4 +1,5 @@
 <sly data-sly-template.DoubleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+
     <script type="text/javascript">
         (function(w, d, t, u, n, s, e) {
             w['SwiftypeObject'] = n;
@@ -29,12 +30,14 @@
                     }
                 }
             }
-        });
+ });
+
     </script>
 </sly>
 
+
 <sly data-sly-template.SingleQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
-    <script type="text/javascript">
+	<script type="text/javascript">
         (function(w, d, t, u, n, s, e) {
             w['SwiftypeObject'] = n;
             w[n] = w[n] || function() {
@@ -61,5 +64,105 @@
                 }
             }
         });
-    </script>
+
+</script>
 </sly>
+<sly data-sly-template.autocompleteQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
+
+<script>
+function defer(method) {
+	if (window.jQuery)
+		method();
+	else
+		setTimeout(function() { defer(method) }, 500);
+}
+
+function autoCompleteSearchTopNav(){
+	$(function() {
+		queryString();
+          var customResultRenderFunction = function(ctx, data) {
+		  $("input#st-search-input").keyup(function(){
+				/*if($(this).val().length < 3 ){
+					$(".overlay_keywords").show();
+					$(".autocomplete").hide();
+				}else{
+					$(".overlay_keywords").hide();
+					$(".autocomplete").show();
+				}*/
+			});
+		  
+		  //console.log(data);
+            var withSections = [],
+              noSections = [];
+            $.each(data, function(docType, results) {
+              $.each(results, function(idx, result) {
+                if (result.sections && result.sections.length > 15) {
+                  withSections.push(result);
+                } else {
+                  noSections.push(result);
+                }
+              });
+            });
+			
+            var withSectionsList = $('<div class="with_sections"></div>'),
+              noSectionsList = $('<div class="no_sections"></div>');
+			$(".resultHeading").show().insertBefore(".search-wrap");
+			
+			
+            $.each(withSections, function(idx, item) {
+			//console.log("idx -> "+idx+" , item -> "+JSON.stringify(item.title));
+			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
+            });
+            $.each(noSections, function(idx, item) {
+			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
+            });
+            if (withSections.length > 0) {
+              withSectionsList.appendTo(ctx.list);
+            }
+            if (noSections.length > 0) {
+              withSectionsList.appendTo(ctx.list);
+            }
+			
+			$(".viewResults").show().insertAfter(".search-wrap");
+		};
+            $('#st-search-input').swiftype({ 
+                engineKey: 'jo6eDbCYeVxBqtSpSeiH',
+                resultRenderFunction: customResultRenderFunction,
+                resultLimit: 10,
+				suggestionListType: 'div class="search-wrap"',
+                resultListSelector: '.result',
+                filters: {'page': {'source':'${PageLocale @context="unsafe"}',"category":"!blogs"}}
+			});
+			
+			function queryString(){
+				var value = localStorage.getItem("searchText");
+				  if (value != null){
+					if (history.pushState) {
+						var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?label=all#stq='+value;
+						window.history.pushState({path:newurl},'',newurl);
+					}
+					localStorage.removeItem("searchText");
+				  }
+			}
+ });
+
+
+$(window).load(function() {
+  $(".autocomplete").insertAfter(".overlay_keywords");
+  $(".navigation-search a").removeAttr("target");
+});
+
+$(".search_click").click(function(){
+	var searchText = $("#st-search-input").val();
+	localStorage.setItem("searchText", searchText);
+});
+
+$("#viewAll").click(function(){
+	var searchText = $("#st-search-input").val();
+	localStorage.setItem("searchText", searchText);
+});
+}
+defer(autoCompleteSearchTopNav)
+</script>
+</sly>
+
