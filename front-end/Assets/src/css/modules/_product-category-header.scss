@@ -346,8 +346,17 @@
 
 	//WEB-3935
 	&.product-category-header2 {
+		//display:flex;
+		//-ms-flex-direction:column;
+		
+		h5{
+			font-family: Open Sans;
+			font-weight: normal;
+		}
+					
 		.bannerContent{
 			padding-top:0px;
+			min-height: 200px;
 			@include media(breakpointSmall) {
 				padding-top:10px;
 				min-height:420px;
@@ -355,7 +364,41 @@
 			
 			.layout-inner-wrap{
 				.flex-item{
-				
+					
+					&.add-top-bottom-margin-82px{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 34px;
+							margin-bottom:34px;
+						}
+					}
+					
+					&.add-top-bottom-margin-110px{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 52px;
+							margin-bottom:52px;
+						}
+					}
+					
+					&.add-top-bottom-margin-140px{
+						margin-top:40px;
+						margin-bottom:40px;
+						@include media(breakpointSmall) {
+							margin-top: 82px;
+							margin-bottom:82px;
+						}
+					}
+					
+					
+					
+					&.no-top-bottom-margin{
+						margin-top:0px;
+						margin-bottom:0px;
+					}
+					
 					@include media(breakpointMedium) {
 							margin-left: 25px;
 						}
@@ -373,13 +416,13 @@
 						letter-spacing: -2.3px;
 						font-size: 38px;
 						margin-bottom:0;
-						margin-top:40px;
+						margin-top:0px;
 						margin-right:10px;
 						margin-left:10px;
 						width:auto;
 						@include media(breakpointSmall) {
 							margin-bottom:17px;
-							margin-top: 52px;
+							//margin-top: 52px;
 							//margin-bottom: 11px;
 							font-size: 50px;
 							margin-bottom:2px;
@@ -405,6 +448,7 @@
 						}
 					}
 					
+					
 				   .btn-secondary {
 						padding-right: 35px;
 						padding-left: 35px;
@@ -412,6 +456,7 @@
     					padding-bottom: 12px;
    						border: none;
    						margin-right: 0px;
+   						margin-bottom: 0px;
    						 @include media(breakpointSmall) {
    						 	margin-right: 25px;
    						 }
@@ -422,13 +467,21 @@
 			}
 			
 		}
+	}
+	
+	&.banner-image-from-top {
 		.wallpaper-container{
 				.wallpaper-media.native{
 					top: 0px !important;
 					background-position: center top !important;
 				}
-			}
-		
+		}
+	}
+	
+	.outer-banner-content{
+		display:flex;
+		position:absolute;
+		height:100%;
 	}
 }
 
