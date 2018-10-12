@@ -25,6 +25,7 @@ public class EducationReportDataItem {
 	private String ic_weighting;
 	private String course_Delivery;
 	private String jcr_path;
+	private String pageURL;
 	
 	
 	
@@ -198,6 +199,13 @@ public class EducationReportDataItem {
 	}
 	public void setEducation_broad_roles(String education_broad_roles) {
 		this.education_broad_roles = education_broad_roles;
+	}
+
+	public String getPageURL() {
+		return pageURL;
+	}
+	public void setPageURL(String pageURL) {
+		this.pageURL = pageURL;
 	}
 	
 	

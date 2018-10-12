@@ -84,10 +84,10 @@ public class CategoriesReportCSVGenService {
     
     private static ArrayList<CustomersReportDataItem> list4 = new ArrayList<CustomersReportDataItem>();
        	
-    private String[] TableNames = {"CMS Title","JCR Path","Content Type","Page URL","Topics","Geographic Area","Language","Product","Product Line","Page Type","Industry","Status",
+    private String[] TableNames = {"CMS Title","JCR Path","Content Type","Page URL","Topics","Geographic Area","Language","Product","Product Interesy","Product Line","Page Type","Industry","Status",
     		"Short Description","Meta Description","Ic app inclusion","Ic_weighting","Creation Date"};
 	
-    private String[] TableNames2 = {"Page Name","URL Resource Name"," CMS Page Title","Product","Product Interest","Product Line","Education broad role","Education broad roles","Education Products","Education specific types","Eduction specific roles","Education version numbers","Language","URL Resource Name","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
+    private String[] TableNames2 = {"Page Name","Page URL","URL Resource Name"," CMS Page Title","Product","Product Interest","Product Line","Education broad role","Education broad roles","Education Products","Education specific types","Eduction specific roles","Education version numbers","Language","URL Resource Name","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
     		,"Course Duration"};
     
     private String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText"};
@@ -133,6 +133,7 @@ public class CategoriesReportCSVGenService {
 	    		//Fetch the data from forms 
 	    		 if(reportPath.contains("it-solutions"))
 	    		 {
+	    			 logger.info("Inside IT_Solutions");
 	    			 list  = getJCRData(reportPath);
 			    		//If user selected a custom report -- generate the report and store it in the JCR
 			             if (report)
@@ -140,6 +141,7 @@ public class CategoriesReportCSVGenService {
 			                  String damFileName = fileName +".xls" ;
 			                  workbook = write();	                 	                  
 			              }	
+			             list.clear();
 	    		 }
 	    		 else if(reportPath.contains("education"))
 	    		 {
@@ -151,7 +153,8 @@ public class CategoriesReportCSVGenService {
 			                      //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = write2(); 	
 			                  
-			              }	 	            
+			              }
+			             list2.clear();
 	    		 }else if(reportPath.contains("/customers"))
 	    		 {
 	    			 list4 = getCustomersData(reportPath);
@@ -162,21 +165,10 @@ public class CategoriesReportCSVGenService {
 			                      //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = writeCustomerData(); 	
 			                  
-			              }	 	            
+			              }	
+			             list4.clear();
 	    		 }
-	    		 
-	    		 else
-	    			 
-	    		 {
-	    			 list3 = getStickyHeader(reportPath);
-	    			 //If user selected a custom report -- generate the report and store it in the JCR
-		             if (report)
-		              {
-		                  String damFileName = fileName +".xls" ;
-		                  //WriteExcel formsReport = new WriteExcel(); 
-		                  workbook = write3(); 			                  
-		              }	 
-	    		 }
+	    		 	    		
 	    	}	       
 	   catch(Exception e)
 	       {
@@ -185,8 +177,7 @@ public class CategoriesReportCSVGenService {
 	       return workbook;
 	   }
 	
-	 
-	
+		
 		/*
 		    * Retrieves forms data from the JCR at /content/bmc/language-masters/en/it-solutions
 		    * The filter argument specifies one of the following values:
@@ -208,7 +199,7 @@ public class CategoriesReportCSVGenService {
 			                  //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = write3(); 			                  
 			              }	 
-		    		 
+		    		 list3.clear();
 		    	}	       
 		   catch(Exception e)
 		       {
@@ -291,6 +282,8 @@ public class CategoriesReportCSVGenService {
 						            		 for (Hit hit : result.getHits()) {
 						            	EducationReportDataItem reportDataitem = new EducationReportDataItem();  
 						            	 Node formDataNode = hit.getResource().adaptTo(Node.class);	
+						            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
+						            	 reportDataitem.setPageURL(PagePath);
 									   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 									   {  
 									        Property prop= propeIterator.nextProperty();  
@@ -619,6 +612,7 @@ public class CategoriesReportCSVGenService {
 							            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
 							            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
 							            	 reportDataitem.setJcr_path(PagePath); 
+							            	 reportDataitem.setPage_URL("www.bmc.com"+PagePath);
 										   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 										   {  
 										        Property prop= propeIterator.nextProperty();  
@@ -714,6 +708,13 @@ public class CategoriesReportCSVGenService {
 														//Adding the property to the POJO object
 										        	   reportDataitem.setIc_weighting(ic_weighting);
 										        	}
+										        	else if(prop.getName().equalsIgnoreCase("product_interest"))
+										        	{										        		
+										        		String product_interest  = prop.getValue().getString();			
+														//Adding the property to the POJO object
+										        	   reportDataitem.setProduct_interest(product_interest);
+										        	}
+										        	
 										        	
 						                }						                 
 						                 }
@@ -744,20 +745,22 @@ public class CategoriesReportCSVGenService {
 			for(int i=2;i<list.size();i++)
 			{
 				
+				
 				Integer count = i; 
 				{
-			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),  list.get(i).getContent_Type(),list.get(i).getPage_URL(),list.get(i).getTopics(),
-									list.get(i).getGeographic_Area(),list.get(i).getLanguage(),list.get(i).getProduct(),list.get(i).getProduct_Line()
+			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL(),list.get(i).getTopics(),
+									list.get(i).getGeographic_Area(),list.get(i).getLanguage(),list.get(i).getProduct(),list.get(i).getProduct_interest(),list.get(i).getProduct_Line()
 									,list.get(i).getPage_Type(),list.get(i).getIndustry(),list.get(i).getStatus(),list.get(i).getShort_Description(),list.get(i).getMeta_Description()
 									,list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
 			logger.info("Added the data item "+count+" to the report");
+			}
 			}
 			logger.info("Creating the EXCEL sheet");
 			//Blank workbook
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
 				
 				//Create a blank sheet
-				XSSFSheet sheet = workbook.createSheet("IT Solutions Report");
+				XSSFSheet sheet = workbook.createSheet("IT_Solutions_Report");
 				 
 				//Iterate over data and write to sheet
 				Set<String> keyset = data.keySet();
@@ -777,7 +780,7 @@ public class CategoriesReportCSVGenService {
 				    }
 				}
 				
-			}
+			
 			return workbook;	 
 	 }
 	 
@@ -803,7 +806,7 @@ public class CategoriesReportCSVGenService {
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
 				
 				//Create a blank sheet
-				XSSFSheet sheet = workbook.createSheet("Education Data Report");
+				XSSFSheet sheet = workbook.createSheet("Education_Data_Report");
 				 
 				//Iterate over data and write to sheet
 				Set<String> keyset = data.keySet();
@@ -844,7 +847,7 @@ public class CategoriesReportCSVGenService {
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
 				
 				//Create a blank sheet
-				XSSFSheet sheet = workbook.createSheet("Sticky Header Report");
+				XSSFSheet sheet = workbook.createSheet("Sticky_Header_Report");
 				 
 				//Iterate over data and write to sheet
 				Set<String> keyset = data.keySet();
