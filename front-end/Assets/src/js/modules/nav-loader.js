@@ -43,7 +43,7 @@ jQuery(function($){
 
 			$('.layout-navigation').toggleClass('navigation-active');
 			$('body').toggleClass('navigation-open');
-
+			$('body').toggleClass('no-scroll');
 			$('.navigation-secondary.navigation-active').removeClass('navigation-active');
 			$('.navigation-supplementary.navigation-active').removeClass('navigation-active');
 			$('.tab-control.active').removeClass('active');
@@ -75,6 +75,7 @@ jQuery(function($){
 
 			$('.layout-navigation').toggleClass('navigation-active');
 			$('body').toggleClass('navigation-open');
+			$('body').toggleClass('no-scroll');
 		});
 
 		// toggleClass active on primary navigation links
