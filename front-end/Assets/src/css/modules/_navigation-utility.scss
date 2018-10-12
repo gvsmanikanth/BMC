@@ -49,7 +49,6 @@ $mobileUtilityNavHeight: 49px;
 				padding-left: 1em;
 				display:none;
 				@include media(breakpointMedium) {
-				@include font-size(13);
 					display:inline;
 				}
 			}
