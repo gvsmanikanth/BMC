@@ -47,6 +47,11 @@ $mobileUtilityNavHeight: 49px;
 			> .verticalBar {
 				color : #ededed;
 				padding-left: 1em;
+				display:none;
+				@include media(breakpointMedium) {
+				@include font-size(13);
+					display:inline;
+				}
 			}
 		}
 		a.navigation_search_link{
