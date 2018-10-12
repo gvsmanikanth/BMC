@@ -40,6 +40,7 @@ require('./modules/nav-loader.js');
 require('./modules/customer-story.js');
 require('./modules/state-select.js');
 require('./modules/equal-heights.js');
+require('./modules/center-align-content.js');
 require('./modules/main.js');
 require('./vendor/jquery.smooth-scroll.js');
 require('./vendor/jquery.swiftype.autocomplete.js');
