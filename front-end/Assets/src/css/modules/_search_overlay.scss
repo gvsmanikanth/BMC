@@ -167,6 +167,11 @@ body.no-scroll{
 						text-align: left;
 					}
 					div.keywords {
+						
+						margin-bottom:2rem;
+						@include media(breakpointLarge){
+							margin-bottom:0;
+						}
 						padding: 1rem 0;
 						display: flex;
 						display: -webkit-flex;
