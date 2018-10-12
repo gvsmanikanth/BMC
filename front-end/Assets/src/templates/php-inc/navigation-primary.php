@@ -70,7 +70,7 @@
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-country">
-                <a href="#" class="select-country"><span class="sm-hide lg-hide">Worldwide (English)</span><span class="verticalBar">|</span></a>
+                <a href="#" class="select-country"><span class="hideInDesktop md-hide  lg-hide">Worldwide (English)</span><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-search js-navigation-search searchIcon desktop-only">
 				<!--<span class="navigation_search_link"></span>-->
@@ -99,15 +99,15 @@
 				  <div class="overlay_keywords">
 					 <div class="heading">Popular Destinations</div>
 					 <div class="keywords" data-nr-items="6">
-						<a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy Product Page</a>
-						<a href="https://docs.bmc.com/docs/productsupport/remedy-it-service-management-suite" target="_blank">Remedy Support</a>
-						<a href="https://www.bmc.com/it-solutions/control-m.html">Control-M Product Page</a>
-						<a href="https://docs.bmc.com/docs/productsupport/control-m-enterprise-manager">Control-M Support</a>
-						<a href="https://www.bmc.com/it-solutions/helix.html">Helix Product Page</a>
-						<a href="https://www.footprintsservicedesk.com/">FootPrints Product Page</a>
-						<a href="https://www.trackit.com/">Track-It! Product Page</a>
-						<a href="https://www.bmc.com/it-solutions/brands/patrol-proactivenet.html">Patrol, BPPM, & ProactiveNet</a>
-						<a href="https://www.bmc.com/guides/itil-introduction.html">ITIL Guide</a>
+						<a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy 9 - IT Service Management Suite</a>
+						<a href="https://docs.bmc.com/docs/productsupport/remedy-it-service-management-suite">Support for Remedy IT Service Management Suite</a>
+						<a href="https://www.bmc.com/it-solutions/control-m.html">Control-M Workload Automation</a>
+						<a href="https://docs.bmc.com/docs/productsupport/control-m-enterprise-manager">Support for Control-M/Enterprise Manager</a>
+						<a href="https://www.bmc.com/it-solutions/helix.html">BMC Helix</a>
+						<a href="https://www.footprintsservicedesk.com/">FootPrints Service Desk</a>
+						<a href="https://www.trackit.com/">Track-It! IT Help Desk Software</a>
+						<a href="https://www.bmc.com/it-solutions/brands/patrol-proactivenet.html">PATROL and ProactiveNet Performance Management (BPPM)</a>
+						<a href="https://www.bmc.com/guides/itil-introduction.html">ITIL: The Beginner's Guide to Processes & Best Practices</a>
 						<a href="https://www.bmc.com/careers/careers.html">Careers</a>
 					 </div>
 				  </div>
