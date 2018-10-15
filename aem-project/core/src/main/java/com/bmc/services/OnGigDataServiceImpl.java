@@ -51,7 +51,7 @@ import com.bmc.components.OnGigDataItem;
         immediate = true)
 
 @Service(value=OnGigDataServiceImpl.class)
-public class OnGigDataServiceImpl {
+public class OnGigDataServiceImpl implements OnGigDataService {
 
 	/** Default log. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());

@@ -21,18 +21,20 @@ public class CareersLocation extends WCMUsePojo{
     
     public static final ArrayList<String[]> orderList = new ArrayList<String[]>();
   
+    private OnGigDataService service;
     
 	@Override
 	public void activate() throws Exception {
 		// TODO Auto-generated method stub
 		
 		list = new ArrayList<CareersLocationItem>();
-		 
+		service = getSlingScriptHelper().getService(OnGigDataService.class); 
+		
     	for(int i=1;i<CareersPageConstants.NORTH_AMERICA.length; i++)
     	{
     		String title = CareersPageConstants.NORTH_AMERICA[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"North America");
     			
     			String continentName = CareersPageConstants.NORTH_AMERICA[0];
@@ -46,7 +48,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.SOUTH_AMERICA[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"South America");
     			
     			String continentName = CareersPageConstants.SOUTH_AMERICA[0];
@@ -60,7 +62,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.EUROPE[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"Europe");
     			
     			String continentName = CareersPageConstants.EUROPE[0];
@@ -74,7 +76,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.AFRICA[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"Africa");
     			
     			String continentName = CareersPageConstants.AFRICA[0];
@@ -88,7 +90,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.MIDDLE_EAST[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"Middle East");
     			
     			String continentName = CareersPageConstants.MIDDLE_EAST[0];
@@ -102,7 +104,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.OCEANIA[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		 
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"Oceania");
     			
     			String continentName = CareersPageConstants.OCEANIA[0];
@@ -116,7 +118,7 @@ public class CareersLocation extends WCMUsePojo{
     	{
     		String title = CareersPageConstants.ASIA_PACIFIC[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		 
     			CareersLocationItem sampleDataItem = service.getCareersLocationData(title,"Asia Pacific");
     			
     			String continentName = CareersPageConstants.ASIA_PACIFIC[0];

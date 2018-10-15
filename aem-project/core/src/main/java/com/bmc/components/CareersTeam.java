@@ -9,6 +9,7 @@ import javax.jcr.PropertyIterator;
 import com.bmc.components.CareersTeamItem;
 import com.bmc.components.utils.CareersPageConstants;
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.schedulers.onGigDataScheduler;
 import com.bmc.services.OnGigDataService;
 
 import org.apache.felix.scr.annotations.Reference;
@@ -25,6 +26,9 @@ public class CareersTeam extends WCMUsePojo {
     private ArrayList<CareersTeamItem> list = new ArrayList<CareersTeamItem>();
 
     private String popupValue = null;
+    
+    private OnGigDataService service;
+    
     @Override
     public void activate() throws Exception {
         // TODO: Replace with query to get real list of products
@@ -35,7 +39,7 @@ public class CareersTeam extends WCMUsePojo {
     	{
     		String title = CareersPageConstants.listofTeams[i];
     		
-    		 OnGigDataService service = getSlingScriptHelper().getService(OnGigDataService.class);
+    		 service = getSlingScriptHelper().getService(OnGigDataService.class);
     			CareersTeamItem sampleDataItem = service.getCareersTeamData(title);
     			
     			String imgSrc = CareersPageConstants.teamImagePathList[i];

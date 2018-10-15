@@ -39,7 +39,7 @@ import com.bmc.services.OnGigDataServiceImpl;
                 label = "Cron expression defining when this Scheduled Service will run",
                 description = "[every 10 minutes = 10 * * * * ?], [12:01am daily = 0 1 0 ? * *]",
                 name = "scheduler.expression",
-                value = "0 */5 * ? * *"
+                value = "0 0 0 1/1 * ? *"
                
         )
        
