@@ -1,6 +1,5 @@
-package com.bmc.services;
+package com.bmc.pum;
 
-import com.bmc.models.metadata.impl.PumMetadata;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.xml.sax.helpers.AttributesImpl;
 
@@ -15,14 +14,14 @@ public interface PUMService {
      * @param linkUrl
      * @return
      */
-    public PumMetadata getPumMetadata(SlingHttpServletRequest request, String linkUrl);
+    public PUMData getPumData(SlingHttpServletRequest request, String linkUrl);
 
 
     /**
      * TODO: Documentation
-     * @param pumMetadata
+     * @param data
      * @param achorAttributes
      */
-    public void executePumPluginChain(PumMetadata pumMetadata, AttributesImpl achorAttributes);
+    public void executePumPluginChain(PUMData data, AttributesImpl achorAttributes);
 
 }

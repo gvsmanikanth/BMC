@@ -1,7 +1,7 @@
-package com.bmc.services;
+package com.bmc.pum;
 
-import com.bmc.models.metadata.impl.PumMetadata;
-import com.bmc.rewriter.plugins.PUMPlugin;
+import com.bmc.pum.plugins.PUMModel;
+import com.bmc.pum.plugins.PUMPlugin;
 import com.day.cq.commons.jcr.JcrConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.*;
@@ -22,8 +22,8 @@ import java.util.Map;
 /**
  * TODO: Documentation
  */
-@Component(label = "PUM Configuration", metatype = true,
-        description = "Configuration for the Post-Render URL Manipulator (PUM) framework")
+@Component(label = "PUM Service", metatype = true,
+        description = "Post-Render URL Manipulation (PUM) service")
 @Service(value=PUMService.class)
 @Reference(name = "plugins", policy = ReferencePolicy.DYNAMIC, cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE,
         referenceInterface = PUMPlugin.class)
@@ -69,7 +69,7 @@ public class PUMServiceImpl implements PUMService {
     }
 
     @Override
-    public PumMetadata getPumMetadata(SlingHttpServletRequest request, String linkUrl) {
+    public PUMData getPumData(SlingHttpServletRequest request, String linkUrl) {
         if (StringUtils.isEmpty(linkUrl)) {
             log.debug("Link URI invalid. Returning null");
             return null;
@@ -109,15 +109,24 @@ public class PUMServiceImpl implements PUMService {
             return null;
         }
 
-        // Return metadata POJO
-        return content.adaptTo(PumMetadata.class);
+        // Invoke plugin's adapters to populate data object
+        PUMData data = new PUMData();
+        for (PUMPlugin plugin : plugins) {
+            PUMModel pluginModel = plugin.createModel(content);
+            if (pluginModel != null) {
+                data.put(plugin.getClass().getName(), pluginModel);
+            }
+        }
+
+        return data;
     }
 
     @Override
-    public void executePumPluginChain(PumMetadata pumMetadata, AttributesImpl anchorAttributes) {
+    public void executePumPluginChain(PUMData data, AttributesImpl anchorAttributes) {
         for (PUMPlugin plugin : plugins) {
-            log.debug("Executing PUM plugin {}", plugin.getClass());
-            plugin.execute(pumMetadata, anchorAttributes);
+            log.debug("Executing PUM plugin {}", plugin.getClass().getName());
+            PUMModel model = data.get(plugin.getClass().getName());
+            plugin.execute(model, anchorAttributes);
         }
     }
 

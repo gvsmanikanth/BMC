@@ -1,20 +1,27 @@
-package com.bmc.rewriter.plugins;
+package com.bmc.pum.plugins;
 
-import com.bmc.models.metadata.impl.PumMetadata;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.resource.Resource;
 import org.xml.sax.helpers.AttributesImpl;
 
 /**
  * TODO: Documentation
  */
-public interface PUMPlugin {
+public interface PUMPlugin<T extends PUMModel> {
+
+    /**
+     *
+     * @param resource
+     * @return
+     */
+    PUMModel createModel(Resource resource);
 
     /**
      * TODO: Documentation
-     * @param pumMetadata
+     * @param data
      * @param anchorAttributes
      */
-    void execute(PumMetadata pumMetadata, AttributesImpl anchorAttributes);
+    void execute(T data, AttributesImpl anchorAttributes);
 
     /**
      *

@@ -1,8 +1,6 @@
-package com.bmc.rewriter;
+package com.bmc.pum;
 
 import com.adobe.acs.commons.rewriter.AbstractTransformer;
-import com.bmc.models.metadata.impl.PumMetadata;
-import com.bmc.services.PUMService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -22,7 +20,7 @@ import java.util.Map;
 
 /**
  * Factory that instantiates instances of {@link PUMTransformer} for the Post-Render URL Manipulator (PUM) framework.
- * Registration can be verified at ${BASE_URL}/system/console/status-slingrewriter
+ * Registration can be verified via ${BASE_URL}/system/console/status-slingrewriter
  */
 @Component(immediate = true)
 @Service(value = TransformerFactory.class)
@@ -48,7 +46,7 @@ public class PUMTransformerFactory implements TransformerFactory {
     }
 
     /**
-     * Transformer that injects metadata into external links
+     * Transformer that invokes chain PUM plugins
      */
     public class PUMTransformer extends AbstractTransformer {
 
@@ -75,15 +73,15 @@ public class PUMTransformerFactory implements TransformerFactory {
             AttributesImpl attributes = new AttributesImpl(nextAttributes);
             String href = nextAttributes.getValue("", "href");
 
-            // Only process if anchor with valid href attribute
+            // Only process if elemet is anchor with valid href attribute
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
-                PumMetadata pumMetadata = pumService.getPumMetadata(request, href);
-                if (pumMetadata == null) {
+                PUMData data = pumService.getPumData(request, href);
+                if (data == null) {
                     log.debug("No PUM metadata found for {}. Leaving link untouched", href);
                 } else {
                     // Execute PUM plugin chain
-                    pumService.executePumPluginChain(pumMetadata, attributes);
+                    pumService.executePumPluginChain(data, attributes);
                     numLinks++;
                 }
             }
