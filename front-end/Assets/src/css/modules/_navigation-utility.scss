@@ -406,11 +406,12 @@ $scrolledUtilityNavHeight: 49px;
 		  margin-left:0px;
 		}
 		
-		.nav-li-override-hide{
+	.nav-li-override-hide{
       display: none;
     }
     .nav-li-override{
       display: block;
+      background-color: color(mediumOrange);
     }
     
     .nav-li-override a{
