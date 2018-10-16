@@ -1,12 +1,13 @@
 package com.bmc.pum;
 
+import com.bmc.services.ConfigurableService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.xml.sax.helpers.AttributesImpl;
 
 /**
  * Configuration for the Post-Render URL Manipulator (PUM) framework
  */
-public interface PUMService {
+public interface PUMService extends ConfigurableService {
 
     /**
      * TODO: Documentation

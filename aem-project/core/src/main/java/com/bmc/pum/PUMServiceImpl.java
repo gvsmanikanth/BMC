@@ -15,7 +15,6 @@ import org.xml.sax.helpers.AttributesImpl;
 
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -128,17 +127,6 @@ public class PUMServiceImpl implements PUMService {
             PUMModel model = data.get(plugin.getClass().getName());
             plugin.execute(model, anchorAttributes);
         }
-    }
-
-    private Map toMap(String[] sArray) {
-        Map result = new HashMap();
-        if (sArray != null) {
-            for (String line : sArray) {
-                String[] tokens = line.split(",");
-                result.put(tokens[0].trim(), tokens[1].trim());
-            }
-        }
-        return result;
     }
 
     private String getBaseUrl(SlingHttpServletRequest request) {
