@@ -11,6 +11,7 @@ import org.apache.sling.api.resource.ResourceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Session;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,25 +52,16 @@ public class ResourceServiceImpl implements ConfigurableService {
      * TODO: Documentation
      * @param propertyName
      * @param propertyValue
+     * @param resolver
      * @return
      */
-    public String getTitle(String propertyName, String propertyValue) {
+    public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
         if (!propertyMapping.containsKey(propertyName)) {
             log.debug("No mapping exists for property name {}", propertyName);
             return propertyValue;
         }
         if (StringUtils.isEmpty(propertyValue)) {
             log.debug("No mapping exists for property value {}", propertyValue);
-            return propertyValue;
-        }
-
-        Map<String, Object> param = new HashMap<String, Object>();
-        param.put(ResourceResolverFactory.SUBSERVICE, SERVICE_ACCOUNT_IDENTIFIER);
-        ResourceResolver resolver = null;
-        try {
-            resolver = resolverFactory.getServiceResourceResolver(param);
-        } catch (Exception e) {
-            log.error("Unable to obtain resource resolver for service account {}", SERVICE_ACCOUNT_IDENTIFIER, e);
             return propertyValue;
         }
 

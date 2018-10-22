@@ -19,7 +19,7 @@ public class MetadataInjectorAdapter implements PUMAdapter {
     private static final Logger log = LoggerFactory.getLogger(MetadataInjectorAdapter.class);
 
     @Reference
-    ResourceServiceImpl resourcesService;
+    ResourceServiceImpl resourceService;
 
     @Property(name="adapters")
     public static final String[] ADAPTER_CLASSES = {
@@ -68,7 +68,7 @@ public class MetadataInjectorAdapter implements PUMAdapter {
             // Read plain property value
             String propertyValue = resource.getValueMap().get(propertyName, String.class);
             // Translate plain value into human readable value
-            propertyValue = resourcesService.getTitle(propertyName, propertyValue);
+            propertyValue = resourceService.getTitle(propertyName, propertyValue, resource.getResourceResolver());
             model.put(metadataInjectorMapping.get(propertyName), propertyValue);
         }
 
