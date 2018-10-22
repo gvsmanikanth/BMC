@@ -1,6 +1,7 @@
 package com.bmc.pum;
 
 import com.bmc.pum.plugins.PUMModel;
+import com.bmc.pum.plugins.PUMParameters;
 import com.bmc.pum.plugins.PUMPlugin;
 import com.day.cq.commons.jcr.JcrConstants;
 import org.apache.commons.lang3.StringUtils;
@@ -13,9 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * TODO: Documentation
@@ -31,7 +31,7 @@ public class PUMServiceImpl implements PUMService {
 
     private ResourceResolver resourceResolver;
 
-    private List<PUMPlugin> plugins = new ArrayList<>();
+    private TreeMap<String, PUMPlugin> plugins = new TreeMap<>();
 
     @Property(description = "Mapping of domains to JCR content paths",
             value = { "fr.bmcsoftware.ca, /content/bmc/ca/fr", "www.bmc.com, /content/bmc/us/en",
@@ -59,11 +59,20 @@ public class PUMServiceImpl implements PUMService {
     }
 
     protected void bindPlugins(PUMPlugin plugin, final Map<String, Object> properties) {
-        plugins.add(plugin);
+        plugins.put(getPluginPriority(plugin) + plugin.getClass().getName(), plugin);
     }
 
     protected void unbindPlugins(PUMPlugin plugin, final Map<String,Object> properties) {
-        plugins.remove(plugin);
+        plugins.remove(getPluginPriority(plugin) + plugin.getClass().getName());
+    }
+
+    private long getPluginPriority(PUMPlugin plugin) {
+        long priority = 0L;
+        if (plugin.getClass().isAnnotationPresent(PUMParameters.class)) {
+            PUMParameters pumParameters = plugin.getClass().getAnnotation(PUMParameters.class);
+            priority = pumParameters.priority();
+        }
+        return priority;
     }
 
     @Override
@@ -109,7 +118,7 @@ public class PUMServiceImpl implements PUMService {
 
         // Invoke plugin's adapters to populate data object
         PUMInput input = new PUMInput();
-        for (PUMPlugin plugin : plugins) {
+        for (PUMPlugin plugin : plugins.values()) {
             PUMModel pluginModel = plugin.createModel(content);
             if (pluginModel != null) {
                 input.put(plugin.getClass().getName(), pluginModel);
@@ -121,10 +130,9 @@ public class PUMServiceImpl implements PUMService {
 
     @Override
     public void executePumPluginChain(PUMInput input, PUMOutput output) {
-        for (PUMPlugin plugin : plugins) {
+        for (PUMPlugin plugin : plugins.values()) {
             log.debug("Executing PUM plugin {}", plugin.getClass().getName());
-            PUMModel model = input.get(plugin.getClass().getName());
-            plugin.execute(model, output);
+            plugin.execute(input, output);
         }
     }
 

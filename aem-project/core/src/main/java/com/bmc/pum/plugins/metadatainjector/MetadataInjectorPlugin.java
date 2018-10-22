@@ -1,7 +1,8 @@
 package com.bmc.pum.plugins.metadatainjector;
 
+import com.bmc.pum.PUMInput;
 import com.bmc.pum.PUMOutput;
-import com.bmc.pum.plugins.PUMModel;
+import com.bmc.pum.plugins.PUMParameters;
 import com.bmc.pum.plugins.PUMPlugin;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
@@ -14,18 +15,21 @@ import org.slf4j.LoggerFactory;
  */
 @Component(label = "PUM Metadata Injector Plugin")
 @Service(value=PUMPlugin.class)
+@PUMParameters(priority = 100)
 public class MetadataInjectorPlugin implements PUMPlugin<MetadataInjectorModel> {
 
     private static final Logger log = LoggerFactory.getLogger(MetadataInjectorPlugin.class);
 
     @Override
-    public PUMModel createModel(Resource resource) {
+    public MetadataInjectorModel createModel(Resource resource) {
         return resource.adaptTo(MetadataInjectorModel.class);
     }
 
     @Override
-    public void execute(MetadataInjectorModel model, PUMOutput output) {
+    public void execute(PUMInput input, PUMOutput output) {
         log.debug("Start PUM metadata injection");
+
+        MetadataInjectorModel model = getModel(input);
 
         if (model != null) {
             for (String key : model.keySet()) {

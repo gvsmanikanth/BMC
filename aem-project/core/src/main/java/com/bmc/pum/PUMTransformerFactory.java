@@ -85,7 +85,7 @@ public class PUMTransformerFactory implements TransformerFactory {
                 }
             }
 
-            this.getContentHandler().startElement(namespaceURI, localName, qName, attributes);
+            this.getContentHandler().startElement(namespaceURI, localName, qName, output.getLinkAttributes());
         }
 
         @Override

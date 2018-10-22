@@ -1,5 +1,6 @@
 package com.bmc.pum.plugins;
 
+import com.bmc.pum.PUMInput;
 import com.bmc.pum.PUMOutput;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -15,14 +16,18 @@ public interface PUMPlugin<T extends PUMModel> {
      * @param resource
      * @return
      */
-    PUMModel createModel(Resource resource);
+    T createModel(Resource resource);
+
+    default T getModel (PUMInput input) {
+        return (T)input.get(this.getClass().getName());
+    }
 
     /**
      * TODO: Documentation
-     * @param data
+     * @param input
      * @param output
      */
-    void execute(T data, PUMOutput output);
+    void execute(PUMInput input, PUMOutput output);
 
     /**
      *
