@@ -29,8 +29,6 @@ public class PUMServiceImpl implements PUMService {
 
     private static final Logger log = LoggerFactory.getLogger(PUMServiceImpl.class);
 
-    private ResourceResolver resourceResolver;
-
     private TreeMap<String, PUMPlugin> plugins = new TreeMap<>();
 
     @Property(description = "Mapping of domains to JCR content paths",
@@ -82,14 +80,64 @@ public class PUMServiceImpl implements PUMService {
             return null;
         }
 
+        String resourcePath = getPumInputResourcePath(request, linkUrl);
         ResourceResolver resourceResolver = request.getResourceResolver();
+        PUMInput input = new PUMInput();
+
+        if (StringUtils.isNotEmpty(resourcePath)) {
+            // Make sure resource exists
+            Resource resource = resourceResolver.resolve(resourcePath);
+            if (ResourceUtil.isNonExistingResource(resource)) {
+                log.debug("No resource found at {}. Returning null", resourcePath);
+                return null;
+            }
+
+            Resource content = resource.getChild(JcrConstants.JCR_CONTENT);
+            if (ResourceUtil.isNonExistingResource(content)) {
+                log.debug("No content found at {}. Returning null", resourcePath + "/" + JcrConstants.JCR_CONTENT);
+                return null;
+            }
+
+            // Invoke plugin's adapters to populate data object
+            for (PUMPlugin plugin : plugins.values()) {
+                PUMModel pluginModel = plugin.createModel(content);
+                if (pluginModel != null) {
+                    input.put(plugin.getClass().getName(), pluginModel);
+                }
+            }
+        }
+
+        return input;
+    }
+
+    @Override
+    public void executePumPluginChain(PUMInput input, PUMOutput output) {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Executing PUM plugin {}", plugin.getClass().getName());
+            plugin.execute(input, output);
+        }
+    }
+
+    private String getPumInputResourcePath(SlingHttpServletRequest request, String linkUrl) {
         String resourcePath;
 
         if (linkUrl.startsWith("/content")) {
             // Handle fully qualified relative links. E.g. /content/bmc/language-masters/en/external-links/https-www-googlecom.html
             resourcePath = linkUrl;
+        } else if (linkUrl.startsWith("/")) {
+            // Handle unqualified relative links. E.g. /external-links/https-www-googlecom.html
+            resourcePath = request.getPathInfo();
+            int resourceBasePathIndex = StringUtils.ordinalIndexOf(request.getPathInfo(), "/", 5);
+            if (resourceBasePathIndex < 0) {
+                log.debug("No resource found at {}. Returning null", resourcePath);
+                return null;
+            }
+            resourcePath = resourcePath.substring(0, resourceBasePathIndex) + "/" + linkUrl;
+        } else if (linkUrl.startsWith("#")) {
+            // Handle hash tag links
+            resourcePath = request.getPathInfo();
         } else {
-            // Handle other links. E.g. /external-links/https-www-googlecom.html or https://www.bmc.com/external-links/https-www-googlecom.html
+            // Handle other links. E.g. https://www.bmc.com/external-links/https-www-googlecom.html
             URI linkUri = URI.create(linkUrl);
             if (StringUtils.isEmpty(linkUri.getHost())) {
                 linkUri = URI.create(getBaseUrl(request) + linkUrl);
@@ -103,37 +151,7 @@ public class PUMServiceImpl implements PUMService {
             resourcePath = domainMapping.get(linkUri.getHost()) + linkUri.getPath();
         }
 
-        // Make sure resource exists
-        Resource resource = resourceResolver.resolve(resourcePath);
-        if (ResourceUtil.isNonExistingResource(resource)) {
-            log.debug("No resource found at {}. Returning null", resourcePath);
-            return null;
-        }
-
-        Resource content = resource.getChild(JcrConstants.JCR_CONTENT);
-        if (ResourceUtil.isNonExistingResource(content)) {
-            log.debug("No content found at {}. Returning null", resourcePath + "/" + JcrConstants.JCR_CONTENT);
-            return null;
-        }
-
-        // Invoke plugin's adapters to populate data object
-        PUMInput input = new PUMInput();
-        for (PUMPlugin plugin : plugins.values()) {
-            PUMModel pluginModel = plugin.createModel(content);
-            if (pluginModel != null) {
-                input.put(plugin.getClass().getName(), pluginModel);
-            }
-        }
-
-        return input;
-    }
-
-    @Override
-    public void executePumPluginChain(PUMInput input, PUMOutput output) {
-        for (PUMPlugin plugin : plugins.values()) {
-            log.debug("Executing PUM plugin {}", plugin.getClass().getName());
-            plugin.execute(input, output);
-        }
+        return resourcePath;
     }
 
     private String getBaseUrl(SlingHttpServletRequest request) {

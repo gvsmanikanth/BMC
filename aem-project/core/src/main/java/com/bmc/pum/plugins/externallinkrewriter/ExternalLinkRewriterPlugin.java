@@ -2,8 +2,8 @@ package com.bmc.pum.plugins.externallinkrewriter;
 
 import com.bmc.pum.PUMInput;
 import com.bmc.pum.PUMOutput;
-import com.bmc.pum.plugins.PUMPlugin;
 import com.bmc.pum.plugins.PUMParameters;
+import com.bmc.pum.plugins.PUMPlugin;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
