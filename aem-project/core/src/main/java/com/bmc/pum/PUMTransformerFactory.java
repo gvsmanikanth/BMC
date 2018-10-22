@@ -52,7 +52,8 @@ public class PUMTransformerFactory implements TransformerFactory {
         private SlingHttpServletRequest request;
 
         private long millisStart;
-        private int numLinks;
+        private int numLinksTotal;
+        private int numLinksProcessed;
 
         @Override
         public void init(ProcessingContext context, ProcessingComponentConfiguration config) throws IOException {
@@ -71,8 +72,9 @@ public class PUMTransformerFactory implements TransformerFactory {
         public void startElement(String namespaceURI, String localName, String qName, Attributes nextAttributes) throws SAXException {
             PUMOutput output = new PUMOutput(nextAttributes);
             String href = nextAttributes.getValue("", "href");
+            numLinksTotal++;
 
-            // Only process if elemet is anchor with valid href attribute
+            // Only process if element is anchor with valid href attribute
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
                 PUMInput input = pumService.getPumInput(request, href);
@@ -81,7 +83,7 @@ public class PUMTransformerFactory implements TransformerFactory {
                 } else {
                     // Execute PUM plugin chain
                     pumService.executePumPluginChain(input, output);
-                    numLinks++;
+                    numLinksProcessed++;
                 }
             }
 
@@ -91,7 +93,7 @@ public class PUMTransformerFactory implements TransformerFactory {
         @Override
         public void endDocument() throws SAXException {
             long millisEnd = Calendar.getInstance().getTimeInMillis();
-            log.info("Finished processing of {} links in {} milliseconds", numLinks, millisEnd - this.millisStart);
+            log.info("Finished processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
             this.getContentHandler().endDocument();
         }
 
