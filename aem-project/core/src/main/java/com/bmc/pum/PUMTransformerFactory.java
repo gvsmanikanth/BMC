@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.AttributesImpl;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -70,18 +69,18 @@ public class PUMTransformerFactory implements TransformerFactory {
 
         @Override
         public void startElement(String namespaceURI, String localName, String qName, Attributes nextAttributes) throws SAXException {
-            AttributesImpl attributes = new AttributesImpl(nextAttributes);
+            PUMOutput output = new PUMOutput(nextAttributes);
             String href = nextAttributes.getValue("", "href");
 
             // Only process if elemet is anchor with valid href attribute
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
-                PUMData data = pumService.getPumData(request, href);
-                if (data == null) {
-                    log.debug("No PUM metadata found for {}. Leaving link untouched", href);
+                PUMInput input = pumService.getPumInput(request, href);
+                if (input == null) {
+                    log.debug("No PUM input data found for {}. Leaving link untouched", href);
                 } else {
                     // Execute PUM plugin chain
-                    pumService.executePumPluginChain(data, attributes);
+                    pumService.executePumPluginChain(input, output);
                     numLinks++;
                 }
             }

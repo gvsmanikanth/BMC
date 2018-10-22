@@ -1,5 +1,6 @@
 package com.bmc.pum.plugins;
 
+import com.bmc.pum.PUMOutput;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.xml.sax.helpers.AttributesImpl;
@@ -19,9 +20,9 @@ public interface PUMPlugin<T extends PUMModel> {
     /**
      * TODO: Documentation
      * @param data
-     * @param anchorAttributes
+     * @param output
      */
-    void execute(T data, AttributesImpl anchorAttributes);
+    void execute(T data, PUMOutput output);
 
     /**
      *

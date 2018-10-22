@@ -11,7 +11,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.helpers.AttributesImpl;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -68,7 +67,7 @@ public class PUMServiceImpl implements PUMService {
     }
 
     @Override
-    public PUMData getPumData(SlingHttpServletRequest request, String linkUrl) {
+    public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl) {
         if (StringUtils.isEmpty(linkUrl)) {
             log.debug("Link URI invalid. Returning null");
             return null;
@@ -109,23 +108,23 @@ public class PUMServiceImpl implements PUMService {
         }
 
         // Invoke plugin's adapters to populate data object
-        PUMData data = new PUMData();
+        PUMInput input = new PUMInput();
         for (PUMPlugin plugin : plugins) {
             PUMModel pluginModel = plugin.createModel(content);
             if (pluginModel != null) {
-                data.put(plugin.getClass().getName(), pluginModel);
+                input.put(plugin.getClass().getName(), pluginModel);
             }
         }
 
-        return data;
+        return input;
     }
 
     @Override
-    public void executePumPluginChain(PUMData data, AttributesImpl anchorAttributes) {
+    public void executePumPluginChain(PUMInput input, PUMOutput output) {
         for (PUMPlugin plugin : plugins) {
             log.debug("Executing PUM plugin {}", plugin.getClass().getName());
-            PUMModel model = data.get(plugin.getClass().getName());
-            plugin.execute(model, anchorAttributes);
+            PUMModel model = input.get(plugin.getClass().getName());
+            plugin.execute(model, output);
         }
     }
 

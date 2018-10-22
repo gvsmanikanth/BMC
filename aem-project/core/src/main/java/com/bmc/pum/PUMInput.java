@@ -7,5 +7,5 @@ import java.util.HashMap;
 /**
  * TODO
  */
-public class PUMData extends HashMap <String, PUMModel> {
+public class PUMInput extends HashMap <String, PUMModel> {
 }
