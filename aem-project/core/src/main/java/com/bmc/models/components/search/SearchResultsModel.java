@@ -72,10 +72,9 @@ public class SearchResultsModel {
     public void getFilters(){
 
         String labelParam = null;
-        if(!getParameterMap().isEmpty())
+        if(getParameterMap().get("label") != null){
             labelParam = StringUtils.join((String[]) getParameterMap().get("label"));
         searchFilter = labelParam;
-
         String page = "page";
         String fieldName = "source";
         String type = "or";
@@ -119,11 +118,21 @@ public class SearchResultsModel {
             valueMap.put("values", values);
             valueMap.put("type", type);
             setQueryParams(page, fieldName, valueMap);
+        }else{
+            HashMap<String, Object> valueMap = new HashMap<>();
+            List<String> values = new ArrayList<>();
+        	String page = "page";
+            String fieldName = "source";
+            String type = "or";
+            values.addAll(Arrays.asList(pageLocale,"newsroom","exchange"));
+            valueMap.put("values", values);
+            valueMap.put("type", type);
+            setQueryParams(page, fieldName, valueMap);
+        }
     }
 
     private void setQueryParams(String page, String fieldName, HashMap valueMap){
         HashMap<String, Object> queryHashMapItem = new HashMap<>();
-
         queryHashMapItem.put("page",page);
         queryHashMapItem.put("fieldName",fieldName);
         queryHashMapItem.put("valueMap",valueMap);

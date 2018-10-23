@@ -43,6 +43,7 @@ require('./modules/equal-heights.js');
 require('./modules/center-align-content.js');
 require('./modules/main.js');
 require('./vendor/jquery.smooth-scroll.js');
+require('./vendor/jquery.swiftype.autocomplete.js');
 require('./modules/demandbase-formconfig.js');
 require('./vendor/jquery.fs.wallpaper.js');
 require('./modules/accordion.js');

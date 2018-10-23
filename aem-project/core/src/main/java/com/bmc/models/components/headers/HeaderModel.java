@@ -27,14 +27,17 @@ public class HeaderModel {
     private final String STANDARD_HEADER_SUBPATH = "/static-headers/standard-header/jcr:content/root/htmlarea";
     private final String PLAIN_HEADER_SUBPATH = "/static-headers/plain-header/jcr:content/root/htmlarea";
     private final String BACKUP_PATH = "/content/bmc/language-masters/en/static-headers/standard-header/jcr:content/root/htmlarea";
-
+    private final String SEARCH_STATIC_TERMS_BACKUP_PATH="/content/bmc/language-masters/en/static-headers/header-search-static-terms/jcr:content/root/htmlarea";
+    private final String SEARCH_STATIC_TERMS_SUBPATH = "/static-headers/header-search-static-terms/jcr:content/root/htmlarea";
 
     private String basePath;
+    private String searchTermsPath;
     private Resource pageRes;
 
     @PostConstruct
     protected void init() {
         basePath = BACKUP_PATH;
+        searchTermsPath =SEARCH_STATIC_TERMS_BACKUP_PATH;
         try {
             if (resource.getName().equals("standardheader")) {
                 if (session.itemExists(currentPage.getAbsoluteParent(3).getPath().concat(STANDARD_HEADER_SUBPATH))) {
@@ -45,6 +48,13 @@ public class HeaderModel {
                     basePath = currentPage.getAbsoluteParent(3).getPath().concat(PLAIN_HEADER_SUBPATH);
                 }
             }
+            if(resource.getName().equals("header-search-static-terms")){
+            	if (session.itemExists(currentPage.getAbsoluteParent(3).getPath().concat(SEARCH_STATIC_TERMS_SUBPATH))) {
+            		searchTermsPath = currentPage.getAbsoluteParent(3).getPath().concat(SEARCH_STATIC_TERMS_SUBPATH);
+                }
+            }
+            
+            
         } catch (Exception e){
             logger.error("ERROR:", e.getMessage());
         }
@@ -53,6 +63,10 @@ public class HeaderModel {
 
     public String getBasePath() {
         return basePath;
+    }
+    
+    public String getSearchTermsPath() {
+        return searchTermsPath;
     }
 
 }

@@ -31,6 +31,9 @@
 	  <filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
 
+
+	<filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
+   
     <filter root="/etc/clientlibs/bmc"/>
 
     <filter root="/etc/designs/bmc">

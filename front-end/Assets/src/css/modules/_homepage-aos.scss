@@ -130,7 +130,9 @@
 	}
 }
 
+
 /*************************************************Right Side Scroll Navigation*****************************************/
+
 
 .section-content{
 	.full-bleed-two-column{
@@ -211,7 +213,6 @@
 			li {
 				display: inline-block;
 				vertical-align: middle;
-				
 				img{
 					width: 230px;
 					@include media(breakpointMedium){
@@ -478,6 +479,7 @@ img {
 	.vidbg-box {
 		width: 100%;
 		height: 100%;
+		//background-color: rgba(0, 0, 0, 0.65);
 	}
 	
 	h2.heading {
@@ -615,7 +617,6 @@ img {
 	li {
 		display: block;
 		margin-bottom: 10px;
-
 	}
 	.circle{
 			position: absolute;
@@ -835,5 +836,3 @@ object{
 	
 }
 } 
-
-	
