@@ -13,15 +13,25 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.util.HashMap;
+
+
 public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider, UrlResolver {
-    public static class Item {
-        public Item(String header, Stream<LinkInfo> links) {
+	private static final Logger logger = LoggerFactory.getLogger(ResourcesList.class);
+	public static class Item {
+        public Item(String header, Stream<String> links) {
             this.header = header;
             this.links = (links == null) ? Collections.emptyList() : links.collect(Collectors.toList());
+            
         }
         public String getHeader() { return header; } private String header;
-        public List<LinkInfo> getLinks() { return links; } private List<LinkInfo> links;
+        public List<String> getLinks() { return links; } private List<String> links;
     }
+	
+	
 
     public List<Item> getReadResources() { return readResources; } private List<Item> readResources;
     public List<Item> getExperienceResources() { return experienceResources; } private List<Item> experienceResources;
@@ -46,13 +56,23 @@ public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider,
         if (resItems == null)
             return new Item(header, Stream.empty());
 
-        Stream<LinkInfo> links = Arrays.stream(resItems)
+       /* Stream<LinkInfo> links = Arrays.stream(resItems)
                 .map(this::getResourceLinkInfo)
-                .filter(l->l.getType() != UrlType.Undefined);
-
+                .filter(l->l.getType() != UrlType.Undefined);*/
+        
+        Stream<String> links = Arrays.stream(resItems)
+                .map(this::getResourceLinkInfo);
         return new Item(header, links);
     }
-    private LinkInfo getResourceLinkInfo(ValueMap map) {
-        return getLinkInfo(map.get("resPath", ""));
+    
+    
+   
+    
+    private String getResourceLinkInfo(ValueMap map) {
+       // return getLinkInfo(map.get("resPath", ""));
+    	
+    		return map.get("resPath").toString();
+    	
+    	
     }
 }
