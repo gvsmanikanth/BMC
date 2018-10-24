@@ -131,8 +131,7 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	    			//Switch case to navigate through various reporting solutions.
 	    			switch (reportType) {
 	                case "form":
-	                		//Generate the report for forms 	                		
-	                		logger.info("Forms Data Report Generation"); 
+	                		//Generate the report for forms 	                		 
 	                		workBook = formsService.generateReport(true, fileName,reportLocation);
 	                		//finalOutput = formsReportCSVGenService.getOutputList(fileName);
 	                		//  writes the workbook and creates a JSON, XML and XSL versions	                		
@@ -141,43 +140,37 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	                		break;
 	                case "experienceFragment":
 	                	//Generate the report for forms 	                		
-                		logger.info("Forms Data Report Generation"); 
                 		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
-                		logger.info("Forms Data Report Generation"); 
                 		workBook = videoService.generateDataReport(true,fileName);               			                		
             	        jsonDAMPath = videoService.writeJSONtoDAM(fileName);
             	        excelDAMPath = videoService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "it-solutions":
 	                	//Generate the report for forms 	                		
-                		logger.info("Forms Data Report Generation"); 
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "sticky-headers":
-	                	//Generate the report for forms 	                		
-                		logger.info("Forms Data Report Generation"); 
+	                	//Generate the report for forms 	                		               		 
                 		workBook = categoriesService.generateStickyHeaderDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                
 	                case "education-courses":
-	                	//Generate the report for forms 	                		
-                		logger.info("Education Data Report Generation"); 
+	                	//Generate the report for forms 	                		               	
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
 	                	break;
 	                case "customers":
 	                	//Generate the report for forms 	                		
-                		logger.info("Customers Data Report Generation"); 
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
