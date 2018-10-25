@@ -140,6 +140,7 @@ public class CategoriesReportCSVGenService {
 			                  String damFileName = fileName +".xls" ;
 			                  workbook = write();	                 	                  
 			              }	
+			             list.clear();
 	    		 }
 	    		 else if(reportPath.contains("education"))
 	    		 {
@@ -149,9 +150,9 @@ public class CategoriesReportCSVGenService {
 			              {
 			                  String damFileName = fileName +".xls" ;
 			                      //WriteExcel formsReport = new WriteExcel(); 
-			                  workbook = write2(); 	
-			                  
-			              }	 	            
+			                  workbook = write2(); 				                  
+			              }	 
+			             list2.clear();
 	    		 }else if(reportPath.contains("/customers"))
 	    		 {
 	    			 list4 = getCustomersData(reportPath);
@@ -160,9 +161,9 @@ public class CategoriesReportCSVGenService {
 			              {
 			                  String damFileName = fileName +".xls" ;
 			                      //WriteExcel formsReport = new WriteExcel(); 
-			                  workbook = writeCustomerData(); 	
-			                  
-			              }	 	            
+			                  workbook = writeCustomerData(); 				                  
+			              }
+			             list4.clear();
 	    		 }	    		
 	    	}	       
 	   catch(Exception e)
@@ -195,7 +196,7 @@ public class CategoriesReportCSVGenService {
 			                  //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = write3(); 			                  
 			              }	 
-		    		 
+		    		 list3.clear();
 		    	}	       
 		   catch(Exception e)
 		       {
