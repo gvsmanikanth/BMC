@@ -84,7 +84,7 @@ public class CategoriesReportCSVGenService {
     
     private static ArrayList<CustomersReportDataItem> list4 = new ArrayList<CustomersReportDataItem>();
        	
-    private String[] TableNames = {"CMS Title","JCR Path","Content Type","Page URL","Topics","Geographic Area","Language","Product","Product Line","Product Interest","Page Type","Industry","Status",
+    private String[] TableNames = {"CMS Title","URL Resource Name","JCR Path","Content Type","Page URL","Topics","Geographic Area","Language","Product","Product Line","Product Interest","Page Type","Industry","Status",
     		"Short Description","Meta Description","Ic app inclusion","Ic_weighting","Creation Date"};
 	
     private String[] TableNames2 = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product","Product Interest","Product Line","Education broad roles","Education Products","Education specific types","Eduction specific roles","Education version numbers","Language","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
@@ -92,7 +92,7 @@ public class CategoriesReportCSVGenService {
     
     private String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText"};
 
-    private String[] CustomersList = {"ID","Creation_Date","Page_URL","CMS_Title","Industry","Topics","Company_size"
+    private String[] CustomersList = {"ID","Creation_Date","Page_URL","URL Resource Name","CMS_Title","Industry","Topics","Company_size"
     			,"Brand","language","Product","Product_line",
     			"URL_Resource_Name","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
     			"IC App Inclusion","IC Weighting"};
@@ -279,7 +279,11 @@ public class CategoriesReportCSVGenService {
 						            	EducationReportDataItem reportDataitem = new EducationReportDataItem();  
 						            	 Node formDataNode = hit.getResource().adaptTo(Node.class);	
 						            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-						            	 reportDataitem.setJcr_path(PagePath);		
+						            	 reportDataitem.setJcr_path(PagePath);
+						            	 if(!PagePath.equals(null))
+						            	 {
+						            	 reportDataitem.setURLResourceName(PagePath.substring(PagePath.lastIndexOf('/') + 1));
+						            	 }
 									   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 									   {  
 									        Property prop= propeIterator.nextProperty();  
@@ -364,12 +368,7 @@ public class CategoriesReportCSVGenService {
 													//Adding the property to the POJO object
 									        	   reportDataitem.setLanguage(Language);
 									        	}
-									        	else if(prop.getName().equalsIgnoreCase("navTitle"))
-									        	{									        		
-									        		String navTitle  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setURLResourceName(navTitle);
-									        	}									        	
+									        									        	
 									        	else if(prop.getName().equalsIgnoreCase("ic-app-inclusion"))
 									        	{									        		
 									        		String ic_app_inclusion  = prop.getValue().getString();			
@@ -406,13 +405,7 @@ public class CategoriesReportCSVGenService {
 													//Adding the property to the POJO object
 									        	   reportDataitem.setPage_Name(pageTitle);
 									        	}
-									        	else if(prop.getName().equalsIgnoreCase("navTitle"))
-									        	{
-									        		
-									        		String navTitle  = prop.getValue().getString();					        					
-													//Adding the property to the POJO object
-									        	   reportDataitem.setURLResourceName(navTitle);
-									        	}
+									        	
 									        	
 									        	reportDataitem.setEN_root("EducationCourseDetails"); 	
 					                }						                 
@@ -451,7 +444,11 @@ public class CategoriesReportCSVGenService {
 						            	CustomersReportDataItem reportDataitem = new CustomersReportDataItem(); 						            	
 						            	 Node formDataNode = hit.getResource().adaptTo(Node.class);	
 						            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-						            	 reportDataitem.setPage_URL(PagePath);						            	 						            		
+						            	 reportDataitem.setPage_URL(PagePath);
+						            	 if(!PagePath.equals(null))
+						            	 {
+						            	 reportDataitem.setURL_Resource_Name(PagePath.substring(PagePath.lastIndexOf('/') + 1));
+						            	 }
 									   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 									   {  
 									        Property prop= propeIterator.nextProperty();  
@@ -506,12 +503,7 @@ public class CategoriesReportCSVGenService {
 													//Adding the property to the POJO object
 									        	   reportDataitem.setIndustry(industry);
 									        	}
-									        	else if(prop.getName().equalsIgnoreCase("pageTitle"))
-									        	{									        		
-									        		String pageTitle  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setURL_Resource_Name(pageTitle);
-									        	}
+									        	
 									        	else if(prop.getName().equalsIgnoreCase("topics"))
 									        	{									        		
 									        		String topics  = prop.getValue().getString();			
@@ -607,7 +599,11 @@ public class CategoriesReportCSVGenService {
 							            	CategoriesReportDataItem reportDataitem = new CategoriesReportDataItem();  
 							            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
 							            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-							            	 reportDataitem.setJcr_path(PagePath); 
+							            	 reportDataitem.setJcr_path(PagePath);					            	 
+							            	 if(!PagePath.equals(null))
+							            	 {
+							            	 reportDataitem.setUrl_resource_name(PagePath.substring(PagePath.lastIndexOf('/') + 1));
+							            	 }
 										   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 										   {  
 										        Property prop= propeIterator.nextProperty();  
@@ -741,7 +737,7 @@ public class CategoriesReportCSVGenService {
 				
 				Integer count = i; 
 				
-			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL(),list.get(i).getTopics(),
+			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getUrl_resource_name(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL(),list.get(i).getTopics(),
 									list.get(i).getGeographic_Area(),list.get(i).getLanguage(),list.get(i).getProduct(),list.get(i).getProduct_Line(),
 									list.get(i).getProduct_interest(),list.get(i).getPage_Type(),list.get(i).getIndustry(),list.get(i).getStatus(),list.get(i).getShort_Description(),list.get(i).getMeta_Description()
 									,list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
@@ -862,7 +858,7 @@ public class CategoriesReportCSVGenService {
 	
 		private Workbook writeCustomerData() {
 			// TODO Auto-generated method stub
-	  		logger.info("Generating the Sticky Header Report");
+	  		logger.info("Generating the Customer Report");
 			
 			//This data needs to be written (Object[])
 			Map<String, Object[]> data = new TreeMap<String, Object[]>();
@@ -871,7 +867,7 @@ public class CategoriesReportCSVGenService {
 			{				
 				Integer count = i; 				
 			data.put(count.toString(), new Object[] {list4.get(i).getID() ,list4.get(i).getCreation_Date(),
-				list4.get(i).getPage_URL(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),list4.get(i).getCompany_size(),list4.get(i).getBrand()
+				list4.get(i).getPage_URL(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),list4.get(i).getCompany_size(),list4.get(i).getBrand()
 				,list4.get(i).getLanguage(),list4.get(i).getProduct(),list4.get(i).getProduct_line(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCardDescription(),
 				list4.get(i).getCardLogoSrc(),list4.get(i).getCardSecondaryLinkText(),list4.get(i).getCardSecondaryLinkUrl(),
 				list4.get(i).getIc_app_inclusion(),list4.get(i).getIc_weighting()});

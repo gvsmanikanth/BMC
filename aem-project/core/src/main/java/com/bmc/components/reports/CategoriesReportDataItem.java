@@ -20,7 +20,7 @@ public class CategoriesReportDataItem {
 	private String ic_app_inclusion;
 	private String jcr_path;
 	private String product_interest;
-	
+	private String url_resource_name;
 	public String getIc_app_inclusion() {
 		return ic_app_inclusion;
 	}
@@ -132,6 +132,12 @@ public class CategoriesReportDataItem {
 	}
 	public void setProduct_interest(String product_interest) {
 		this.product_interest = product_interest;
+	}
+	public String getUrl_resource_name() {
+		return url_resource_name;
+	}
+	public void setUrl_resource_name(String url_resource_name) {
+		this.url_resource_name = url_resource_name;
 	}
 	
 	
