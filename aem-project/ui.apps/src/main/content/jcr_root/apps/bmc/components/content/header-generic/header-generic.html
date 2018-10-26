@@ -7,10 +7,23 @@
 
     <p>
         <a data-sly-test="${data.link1.text}" class="link-icon-product-resources mo-product-resources ${data.link1.cssClass}" href="${data.link1.href}" title="${data.link1.text}">${data.link1.text}</a>
-    </p>
+    </p> 
 
-    <a data-sly-test="${data.cta1.text}" class="btn learn-more ${data.cta1.cssClass}" href="${data.cta1.href}" title="${data.cta1.text}">${data.cta1.text}</a>
-    <a data-sly-test="${data.cta2.text}" class="btn-secondary learn-more ${data.cta2.cssClass}" href="${data.cta2.href}" title="${data.cta2.text}">${data.cta2.text}</a>
-    <a data-sly-test="${data.cta3.text}" class="btn-secondary learn-more ${data.cta3.cssClass}" href="${data.cta3.href}" title="${data.cta3.text}">${data.cta3.text}</a>
-
+    <a data-sly-test="${data.cta1.text}" class="btn ${data.cta1IsVideo ? '' : 'learn-more'} ${data.cta1.cssClass}" href="${data.cta1.href}" title="${data.cta1.text}">${data.cta1.text}
+		<sly data-sly-test="${data.cta1IsVideo}">
+			<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+		</sly>
+	</a>
+    <a data-sly-test="${data.cta2.text}" class="btn-secondary ${data.cta2IsVideo ? '' : 'learn-more'} ${data.cta2.cssClass}" href="${data.cta2.href}" title="${data.cta2.text}">${data.cta2.text}
+		<sly data-sly-test="${data.cta2IsVideo}">
+			<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+		</sly>
+    </a>
+    <a data-sly-test="${data.cta3.text}" class="btn-secondary ${data.cta3IsVideo ? '' : 'learn-more'} ${data.cta3.cssClass}" href="${data.cta3.href}" title="${data.cta3.text}">${data.cta3.text}
+		<sly data-sly-test="${data.cta3IsVideo}">
+			<svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+		</sly>
+    </a>
 </div>
+
+
