@@ -8,6 +8,7 @@
 <section class="layout-full-bleed py1 sitemap">
 	<div class="layout-inner-wrap">
 		<h1 class="h1">BMC Site Map</h2>
+		<p><b>Last Updated:</b> MM/DD/YYYY</p>
 			<h3 class="h2">Products:</h3>
 			<div>
 			<h4 class="h4">DSM (Digital Service Managemnet)</h4><hr/>
