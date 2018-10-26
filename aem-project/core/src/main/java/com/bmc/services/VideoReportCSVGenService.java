@@ -155,9 +155,7 @@ public class VideoReportCSVGenService {
 															 if(prop.getName().equalsIgnoreCase("vID"))
 												        	{
 												        		
-												        		String vID  = prop.getValue().getString();
-												        		logger.info("v ID : "+vID);			
-																//Adding the property to the POJO object
+																 String vID  = prop.getValue().getString();
 												        	   reportDataItem.setvID(vID);
 												        	}
 															
@@ -165,8 +163,6 @@ public class VideoReportCSVGenService {
 												        	{
 												        		
 												        		String title  = prop.getValue().getString();
-												        		logger.info("title : "+title);			
-																//Adding the property to the POJO object
 												        	   reportDataItem.setTitle_of_the_Video(title);
 												        	}
 															
@@ -174,51 +170,45 @@ public class VideoReportCSVGenService {
 												        	{
 												        		
 												        		String typeId  = prop.getValue().getString();
-												        		logger.info("typeId: "+typeId);			
-																//Adding the property to the POJO object
 												        	   reportDataItem.setTypeId(typeId);
 												        	}
 															else if(prop.getName().equalsIgnoreCase("jcr:lastModifiedBy"))
 												        	{
 												        		
 												        		String LastModifiedBy  = prop.getValue().getString();
-												        		logger.info("LastModifiedBy : "+LastModifiedBy);			
-																//Adding the property to the POJO object
 												        		reportDataItem.setModified_By(LastModifiedBy);
 												        	}
 															else if(prop.getName().equalsIgnoreCase("overlayURL"))
 												        	{
 												        		
 												        		String overlayURL  = prop.getValue().getString();
-												        		logger.info("overlay URL : "+overlayURL);			
-																//Adding the property to the POJO object
 												        		reportDataItem.setOverlayURL(overlayURL);
 												        	}
 															else if(prop.getName().equalsIgnoreCase("overlayText"))
 												        	{
 												        		
-												        		String overlayText  = prop.getValue().getString();
-												        		logger.info("overlay Text : "+overlayText);			
-																//Adding the property to the POJO object
+												        		String overlayText  = prop.getValue().getString();					        		
 												        		reportDataItem.setOverlayText(overlayText);
 												        	}
 															 //Added IC Properties Metadata
 															else if(prop.getName().equalsIgnoreCase("ic-app-inclusion"))
 												        	{
 												        		
-												        		String IC_app_Inclusion  = prop.getValue().getString();
-												        		logger.info("IC App Inclusion : "+IC_app_Inclusion);			
-																//Adding the property to the POJO object
+												        		String IC_app_Inclusion  = prop.getValue().getString();							
 												        		reportDataItem.setIc_app_inclusion(IC_app_Inclusion);
 												        	}
 															else if(prop.getName().equalsIgnoreCase("ic-weighting"))
 												        	{
 												        		
-												        		String icWeighting  = prop.getValue().getString();
-												        		logger.info("IC Weighting : "+icWeighting);																			
+												        		String icWeighting  = prop.getValue().getString();					        																		
 												        		reportDataItem.setIc_weighting(icWeighting);
 												        	}
-															
+															else if(prop.getName().equalsIgnoreCase("description"))
+												        	{
+												        		
+												        		String description  = prop.getValue().getString();											        																			
+												        		reportDataItem.setDescription(description);
+												        	}
 											         }
 											   }
 										   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
@@ -351,7 +341,7 @@ public class VideoReportCSVGenService {
 	     map.put("property.and", "true");
 	     map.put("type","nt:unstructured");
 	     map.put("property.hits", "full");
-	     map.put("property.depth", "0");
+	     map.put("property.depth", "2");
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
 	     map.put("p.offset", "0");
 	     map.put("p.limit", "2000");
@@ -359,6 +349,10 @@ public class VideoReportCSVGenService {
 	     map.put("property", "cq:template"); //the property to check for
 	     map.put("property.operation", "equals"); // or unequals or like etc..
 	     map.put("property.value", "/apps/bmc/templates/video-page");
+	     map.put("property.operation", "and");
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or unequals or like etc..
+	     map.put("property.value", "bmc/components/structure/video-page");
 	     map.put("group.1_fulltext", fulltextSearchTerm1);
 	     map.put("group.2_fulltext", fulltextSearchTerm2);
 	     return map;

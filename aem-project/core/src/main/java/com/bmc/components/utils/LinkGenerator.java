@@ -34,7 +34,11 @@ public class LinkGenerator extends WCMUsePojo implements UrlResolver {
 	}
 
 	public String getCssClass() {
-		return link.getCssClass();
+		if(link.getType() == UrlType.VideoModal){
+	    	return "modal-youtube-video-player"; 
+	    	}else{
+	    		return link.getCssClass();
+	    }
 	}
 
 	public String getText() {

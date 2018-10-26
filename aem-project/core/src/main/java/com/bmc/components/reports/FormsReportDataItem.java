@@ -5,6 +5,9 @@ public class FormsReportDataItem {
 
 	private String form_Parent_ID;
 	
+	private String pageURL;
+	
+	
 	public String getForm_Parent_ID() {
 		return form_Parent_ID;
 	}
@@ -203,6 +206,14 @@ public class FormsReportDataItem {
 
 	public void setC_Lead_Offer_Most_Recent1(String c_Lead_Offer_Most_Recent1) {
 		C_Lead_Offer_Most_Recent1 = c_Lead_Offer_Most_Recent1;
+	}
+
+	public String getPageURL() {
+		return pageURL;
+	}
+
+	public void setPageURL(String pageURL) {
+		this.pageURL = pageURL;
 	}
 
 	private String form_title;

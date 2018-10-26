@@ -7,6 +7,7 @@ public class EducationReportDataItem {
 	private String item_ID;
 	private String URLResourceName;
 	private String Language;
+	private String Product	;
 	private String Product_Interest	;
 	private String Product_Line;
 	private String CMS_Title;
@@ -198,6 +199,12 @@ public class EducationReportDataItem {
 	}
 	public void setEducation_broad_roles(String education_broad_roles) {
 		this.education_broad_roles = education_broad_roles;
+	}
+	public String getProduct() {
+		return Product;
+	}
+	public void setProduct(String product) {
+		Product = product;
 	}
 	
 	
