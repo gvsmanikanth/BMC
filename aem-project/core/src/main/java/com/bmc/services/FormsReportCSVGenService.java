@@ -18,11 +18,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.beans.Encoder;
+
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.Session;
+
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -32,7 +34,9 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.bmc.components.reports.FormsReportDataItem;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -40,6 +44,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
+
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.AssetManager;
 import com.day.cq.search.Query;
@@ -75,7 +80,7 @@ public class FormsReportCSVGenService {
     private static  ArrayList<FormsReportDataItem> list = new ArrayList<FormsReportDataItem>();
        
 	
-    private String[] TableNames = {"C_Lead_Offer_Most_Recent1","Form-2 Parent ID", "Title", "Form-2 Publish Status","Node Name", "FieldSet", "FieldSet ID","Email ID", "Form URL", 
+    private String[] TableNames = {"Page URL","C_Lead_Offer_Most_Recent1","Form-2 Parent ID", "Title", "Form-2 Publish Status","Node Name", "FieldSet", "FieldSet ID","Email ID", "Form URL", 
 			"Form PURL","Content Preferences", "Eloqua Form Name", "Eloqua Form ID","Eloqua Campaign ID", "Campaign ID (SFDC Campaign ID)", "Business Unit",
 			"Product Line", "Lead Offer", "Product Interest","External Activity Type", "External Activity", "External Asset Name", "Is Updated","Created Date","forceOptIn"};	
 	
@@ -156,7 +161,8 @@ public class FormsReportCSVGenService {
 							            		 for (Hit hit : result.getHits()) {
 							            	FormsReportDataItem formDataitem = new FormsReportDataItem();  
 							            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
-									        	
+							            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
+							            	 formDataitem.setPageURL(PagePath); 
 										   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
 										   {  
 										        Property prop= propeIterator.nextProperty();  
@@ -330,7 +336,22 @@ public class FormsReportCSVGenService {
 														//Adding the property to the POJO object
 										        		formDataitem.setC_Lead_Offer_Most_Recent1(C_Lead_Offer_Most_Recent1);
 										        	}
-										        	formDataitem.setForm_Node_Name("en");
+										        	else if(prop.getName().equalsIgnoreCase("campaignid"))
+										        	{
+										        		
+										        		String campaignid  = prop.getValue().getString();
+										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
+														//Adding the property to the POJO object
+										        		formDataitem.setSFDC_Campaign_ID(campaignid);
+										        	}
+										        	else if(prop.getName().equalsIgnoreCase("C_Lead_Offer_Most_Recent1"))
+										        	{
+										        		
+										        		String C_Lead_Offer_Most_Recent1  = prop.getValue().getString();
+										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
+														//Adding the property to the POJO object
+										        		formDataitem.setC_Lead_Offer_Most_Recent1(C_Lead_Offer_Most_Recent1);
+										        	}
 										        	
 													}
 						                }
@@ -371,7 +392,7 @@ public class FormsReportCSVGenService {
 			{
 				logger.info("Data Item:"+i);
 				Integer count = i; 
-			data.put(count.toString(), new Object[] {list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getForm_Parent_ID(), list.get(i).getForm_title(), list.get(i).getForm_Publish_Status(),list.get(i).getForm_Node_Name(),list.get(i).getForm_FieldSet(),list.get(i).getForm_FieldSet_ID(),list.get(i).getEmail_ID(),list.get(i).getForm_URL(),
+			data.put(count.toString(), new Object[] {list.get(i).getPageURL(),list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getForm_Parent_ID(), list.get(i).getForm_title(), list.get(i).getForm_Publish_Status(),list.get(i).getForm_Node_Name(),list.get(i).getForm_FieldSet(),list.get(i).getForm_FieldSet_ID(),list.get(i).getEmail_ID(),list.get(i).getForm_URL(),
 					list.get(i).getForm_PURL(),list.get(i).getForm_Content_Preferences(),list.get(i).getEloqua_Form_Name(),list.get(i).getEloqua_Form_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getSFDC_Campaign_ID(),list.get(i).getBusiness_Unit(),
 					list.get(i).getProduct_Line(),list.get(i).getProduct_Interest(),list.get(i).getExternal_Activity_Type(),list.get(i).getExternal_Activity(),list.get(i).getExternal_Asset_Name(),list.get(i).getIs_Updated(),list.get(i).getCreated_Date(),list.get(i).getForceOptIn()});
 			logger.info("Added the data item "+count+" to the report");

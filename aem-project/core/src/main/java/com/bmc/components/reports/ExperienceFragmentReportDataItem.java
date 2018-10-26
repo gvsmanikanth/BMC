@@ -23,6 +23,67 @@ public class ExperienceFragmentReportDataItem {
 	
 	private String LastReplicatedBy;
 	
+	private String migration_content_id;
+	
+	public String getMigration_content_id() {
+		return migration_content_id;
+	}
+
+	public void setMigration_content_id(String migration_content_id) {
+		this.migration_content_id = migration_content_id;
+	}
+
+	public String getMigration_content_name() {
+		return migration_content_name;
+	}
+
+	public void setMigration_content_name(String migration_content_name) {
+		this.migration_content_name = migration_content_name;
+	}
+
+	public String getMigration_content_type() {
+		return migration_content_type;
+	}
+
+	public void setMigration_content_type(String migration_content_type) {
+		this.migration_content_type = migration_content_type;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getFormname() {
+		return formname;
+	}
+
+	public void setFormname(String formname) {
+		this.formname = formname;
+	}
+
+	public String getFormid() {
+		return formid;
+	}
+
+	public void setFormid(String formid) {
+		this.formid = formid;
+	}
+
+	private String migration_content_name;
+	
+	private String migration_content_type;
+	
+	private String title;
+	
+	private String formname;
+	
+	private String formid;
+	
+	
 	public String getExp_Fragment_Name() {
 		return Exp_Fragment_Name;
 	}

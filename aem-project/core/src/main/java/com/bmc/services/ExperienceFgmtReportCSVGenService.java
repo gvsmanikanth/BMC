@@ -78,8 +78,8 @@ public class ExperienceFgmtReportCSVGenService {
        
 
 	
-    private String[] TableNames = {"Exp Fragment URL","Last Replicated Date","Last Replicated By",
-    		"Last modified date","Last Modified By","Reference URL's"};
+    private String[] TableNames = {"Exp Fragment URL","Last Modified By","migration_content_id","migration_content_name","migration_content_type"
+    		,"title","formname","formid"};
 	
 	
 	 /*
@@ -146,46 +146,56 @@ public class ExperienceFgmtReportCSVGenService {
 							        	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
 							             SearchResult result = query.getResult();							            
 							            		 for (Hit hit : result.getHits()) {
-							            	ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
+							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 		Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 		reportDataItem.setExp_Fragment_URL(reportDataNode.getPath());
+							            	 		reportDataItem.setExp_Fragment_URL(reportDataNode.getPath());          	 								            	 			            
 							            	 for(PropertyIterator propeIterator1 = reportDataNode.getProperties() ; propeIterator1.hasNext();)  
 											   {  
 											        Property prop= propeIterator1.nextProperty();  
 											         if(!prop.getDefinition().isMultiple()){
-															 if(prop.getName().equalsIgnoreCase("cq:lastReplicatedBy"))
+															 if(prop.getName().equalsIgnoreCase("title"))
 												        	{
 												        		
-												        		String 	LastReplicatedBy  = prop.getValue().getString();
-												        		logger.info("Last Replicated By : "+LastReplicatedBy);			
-																//Adding the property to the POJO object
-												        	   reportDataItem.setLastReplicatedBy(LastReplicatedBy);
+												        		String 	title  = prop.getValue().getString();					        		
+												        	   reportDataItem.setTitle(title);
 												        	}
 															
-															else if(prop.getName().equalsIgnoreCase("cq:lastModifiedBy"))
+															else if(prop.getName().equalsIgnoreCase("author"))
 												        	{
 												        		
-												        		String LastModifiedBy  = prop.getValue().getString();
-												        		logger.info("LastModifiedBy : "+LastModifiedBy);			
-																//Adding the property to the POJO object
+												        		String LastModifiedBy  = prop.getValue().getString();					        	
 												        	   reportDataItem.setLastModifiedBy(LastModifiedBy);
 												        	}
 															
-															else if(prop.getName().equalsIgnoreCase("cq:lastReplicated"))
+															else if(prop.getName().equalsIgnoreCase("formid"))
 												        	{
 												        		
-												        		String lastReplicatedDate  = prop.getValue().getString();
-												        		logger.info("Last Replicated Date: "+lastReplicatedDate);			
-																//Adding the property to the POJO object
-												        	   reportDataItem.setLastReplicatedDate(lastReplicatedDate);
+												        		String formid  = prop.getValue().getString();					        	
+												        	   reportDataItem.setFormid(formid);
 												        	}
-															else if(prop.getName().equalsIgnoreCase("cq:lastModified"))
+															else if(prop.getName().equalsIgnoreCase("formname"))
 												        	{
 												        		
-												        		String LastModifiedDate  = prop.getValue().getString();
-												        		logger.info("Last Modified Date : "+LastModifiedDate);			
-																//Adding the property to the POJO object
-												        		reportDataItem.setLastModifiedDate(LastModifiedDate);
+												        		String formname  = prop.getValue().getString();					        	
+												        	   reportDataItem.setFormname(formname);
+												        	}
+															else if(prop.getName().equalsIgnoreCase("migration_content_id"))
+												        	{
+												        		
+												        		String migration_content_id  = prop.getValue().getString();
+												        		reportDataItem.setMigration_content_id(migration_content_id);
+												        	}
+															else if(prop.getName().equalsIgnoreCase("migration_content_name"))
+												        	{
+												        		
+												        		String migration_content_name  = prop.getValue().getString();
+												        		reportDataItem.setMigration_content_name(migration_content_name);
+												        	}
+															else if(prop.getName().equalsIgnoreCase("migration_content_type"))
+												        	{
+												        		
+												        		String migration_content_type  = prop.getValue().getString();
+												        		reportDataItem.setMigration_content_type(migration_content_type);
 												        	}
 															
 															
@@ -225,11 +235,10 @@ public class ExperienceFgmtReportCSVGenService {
 			data.put("1", TableNames);					
 			for(int i=2;i<list.size();i++)
 			{
-				logger.info("Data Item:"+i);
 				Integer count = i; 
-				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getLastReplicatedDate(),list.get(i).getLastReplicatedBy(),
-					list.get(i).getLastModifiedDate(),list.get(i).getLastModifiedBy(),list.get(i).getReference_URL(),list.get(i).getReferencePaths()});
-			logger.info("Added the data item "+count+" to the report");
+				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getLastModifiedBy(),
+					 list.get(i).getMigration_content_id(),list.get(i).getMigration_content_name(),list.get(i).getMigration_content_type(),
+					list.get(i).getTitle(),list.get(i).getFormname(),list.get(i).getFormid()});			
 			}
 			 logger.info("Creating the EXCEL sheet");
 			//Iterate over data and write to sheet
@@ -262,19 +271,17 @@ public class ExperienceFgmtReportCSVGenService {
 	     Map<String, String> map = new HashMap<String, String>();	    
 	     // create query description as hash map (simplest way, same as form post)	                  
 	     map.put("path", folderSelection);
-	     map.put("type", "cq:PageContent");
+	     map.put("type", "nt:unstructured");
 	     map.put("property.hits", "full");
-	     map.put("property.depth", "0");
+	     map.put("property.depth", "3");
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
 	     map.put("p.offset", "0");
-	     map.put("p.limit", "2000");
-	   //Adding Predicate to exclude thank-you pages
-	     map.put("property", "cq:template"); //the property to check for
+	     map.put("p.limit", "2000"); 
+	     map.put("property", "sling:resourceType"); //the property to check for
 	     map.put("property.operation", "equals"); // or like or like etc..
-	     map.put("property.value", "/libs/cq/experience-fragments/components/experiencefragment/template"); 
+	     map.put("property.value", "bmc/components/forms/field-set"); 
 	     return map;
-	     // can be done in map or with Query methods
-	    
+	     // can be done in map or with Query methods	    
 	 }
 	 
 	 /*
