@@ -1,0 +1,61 @@
+<sly data-sly-use.assetTypeList="com.bmc.components.AssetTypeList"/> 
+<sly data-sly-test = "${properties.assetsSubheadColor == 'Orange'}">
+<sly data-sly-test.assetsWrapper="h4 medium-orange"/>
+</sly>
+
+<sly data-sly-test.assetClass1 = "${assetTypeList.assetClass1}"/>
+<sly data-sly-test.assetClass2 = "${assetTypeList.assetClass2}"/>
+<sly data-sly-test.assetClass3 = "${assetTypeList.assetClass3}"/>
+
+<!-- /* Assets Links 1 */ -->
+<div class="${assetsWrapper} ${assetClass1}">
+	<div data-sly-test="${properties.iconLink1 != 'resource-video'}" class="${properties.iconLink1}"></div>
+      <strong>${properties.assetsSubheadingPrefix1}<sly data-sly-test="${properties.assetsSubheadingPrefix1}">:</sly> ${properties.assetsSubheading1} </strong>
+		 <ul class="plain">
+			<sly data-sly-list.asset="${assetTypeList.assetLinkSet1}">
+			  <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
+			     <sly data-sly-test="${assetLink.href}">
+			          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+				 </sly>
+				 <sly data-sly-test="${!assetLink.href}">
+					 <sly data-sly-test.resolvedLink="${asset.pagePath}"></sly>
+				 </sly>
+			      <li> <a href="${resolvedLink}" class="${assetLink.cssClass}">${asset.title @ context='html'} &nbsp;&#8250; </a> </li>
+			</sly>
+		   </ul>
+</div>
+<!-- /* Assets Links 2 */ -->
+<div class="${assetsWrapper} ${assetClass2}">
+	<div data-sly-test="${properties.iconLink2 != 'resource-video'}" class="${properties.iconLink2}"></div>
+    <strong>${properties.assetsSubheadingPrefix2}<sly data-sly-test="${properties.assetsSubheadingPrefix2}">: </sly>${properties.assetsSubheading2} </strong>
+ 	<ul class="plain">
+		<sly data-sly-list.asset="${assetTypeList.assetLinkSet2}">
+  			<sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
+  				 <sly data-sly-test="${assetLink.href}">
+			         <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+			      </sly>
+			      <sly data-sly-test="${!assetLink.href}">
+			         <sly data-sly-test.resolvedLink="${asset.pagePath}"></sly>
+			       </sly>
+      	<li> <a href="${resolvedLink}" class="${assetLink.cssClass}">${asset.title @ context='html'} &nbsp;&#8250; </a> </li>
+	</sly>
+   </ul>
+</div>
+<!-- /* Assets Links 3 */ -->
+<div class="${assetsWrapper} ${assetClass3}">
+	<div data-sly-test="${properties.iconLink3 != 'resource-video'}" class="${properties.iconLink3}"></div>
+	<strong>${properties.assetsSubheadingPrefix3}<sly data-sly-test="${properties.assetsSubheadingPrefix3}">:</sly> ${properties.assetsSubheading3} </strong>
+ 	<ul class="plain">
+		<sly data-sly-list.asset="${assetTypeList.assetLinkSet3}">
+  			<sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=asset.pagePath}"></sly>
+   				<sly data-sly-test="${assetLink.href}">
+			         <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+			    </sly>
+			    <sly data-sly-test="${!assetLink.href}">
+			        <sly data-sly-test.resolvedLink="${asset.pagePath}"></sly>
+			    </sly>
+     		   <li> <a href="${resolvedLink}" class="${assetLink.cssClass}">${asset.title @ context='html'} &nbsp;&#8250; </a> </li>
+		</sly>
+   </ul>
+</div>
+

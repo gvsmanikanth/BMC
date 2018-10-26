@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Asset Type and List Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <assetLinks1Set
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset Links 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <general
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="General"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <assetsSubheadColor
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Select Subheading color .. use case industry-healthcare.html"
+                                                multiple="{Boolean}false"
+                                                name="./assetsSubheadColor">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <noneselected
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="none selected"
+                                                        value=""/>
+                                                    <orange
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Orange"
+                                                        value="Orange"/>
+                                                </items>
+                                            </assetsSubheadColor>
+                                        </items>
+                                    </general>
+                                    <iconLink1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 1 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink1">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink1>
+                                    <assetsSubheadingPrefix1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 1 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix1">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="Datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
+                                        </items>
+                                    </assetsSubheadingPrefix1>
+                                    <assetsSubheading1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 1"
+                                        name="./assetsSubheading1"/>
+                                    <assetLinks1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 1">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks1"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </assetLinks1>
+                                </items>
+                            </column>
+                        </items>
+                    </assetLinks1Set>
+                    <assetLinks2Set
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset Links 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <iconLink2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 2 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink2">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink2>
+                                    <assetsSubheadingPrefix2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 2 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix2">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                             <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="Datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
+                                        </items>
+                                    </assetsSubheadingPrefix2>
+                                    <assetsSubheading2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 2"
+                                        name="./assetsSubheading2"/>
+                                    <assetLinks2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 2">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks2"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </assetLinks2>
+                                </items>
+                            </column>
+                        </items>
+                    </assetLinks2Set>
+                    <assetLinks3Set
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Asset Links 3"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <iconLink3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 3 icon"
+                                        multiple="{Boolean}false"
+                                        name="./iconLink3">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <icon-document
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Document icon"
+                                                value="icon-document"/>
+                                            <icon-documents
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Documents icon"
+                                                value="icon-documents"/>
+                                            <resource-video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video icon"
+                                                value="resource-video"/>
+                                        </items>
+                                    </iconLink3>
+                                    <assetsSubheadingPrefix3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Select asset 3 sub heading prefix. (:) will be appended automatically"
+                                        multiple="{Boolean}false"
+                                        name="./assetsSubheadingPrefix3">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <noneselected
+                                                jcr:primaryType="nt:unstructured"
+                                                text="none selected"
+                                                value=""/>
+                                            <datasheet
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheet"
+                                                value="Datasheet"/>
+                                            <datasheets
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Datasheets"
+                                                value="Datasheets"/>
+                                             <white-paper
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White paper"
+                                                value="White paper"/>
+                                             <white-papers
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White papers"
+                                                value="White papers"/>
+                                             <solution-overview
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overview"
+                                                value="Solution overview"/>
+                                             <solution-overviews
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution overviews"
+                                                value="Solution overviews"/>
+                                             <solution-brief
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution brief"
+                                                value="Solution brief"/>
+                                             <solution-briefs
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Solution briefs"
+                                                value="Solution briefs"/>
+                                             <analyst-research
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Analyst research"
+                                                value="Analyst research"/>
+                                             <case-study
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case study"
+                                                value="Case study"/>
+                                             <case-studies
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Case studies"
+                                                value="Case studies"/>
+                                             <customer-story
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer story"
+                                                value="Customer story"/>
+                                             <customer-stories
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer stories"
+                                                value="Customer stories"/>
+                                             <video
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Video"
+                                                value="Video"/>
+                                             <videos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Videos"
+                                                value="Videos"/>
+                                             <demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demo"
+                                                value="Demo"/>
+                                             <demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Demos"
+                                                value="Demos"/>
+                                             <on-demand-demo
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demo"
+                                                value="On-demand demo"/>
+                                             <on-demand-demos
+                                                jcr:primaryType="nt:unstructured"
+                                                text="On-demand demos"
+                                                value="On-demand demos"/>
+                                             <webinar
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinar"
+                                                value="Webinar"/>
+                                             <webinars
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Webinars"
+                                                value="Webinars"/>
+                                             <e-book
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Book"
+                                                value="E-Book"/>
+                                             <e-books
+                                                jcr:primaryType="nt:unstructured"
+                                                text="E-Books"
+                                                value="E-Books"/>
+                                             <infographic
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographic"
+                                                value="Infographic"/>
+                                             <infographics
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Infographics"
+                                                value="Infographics"/>
+                                        </items>
+                                    </assetsSubheadingPrefix3>
+                                    <assetSubheading3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Use sentence case."
+                                        fieldLabel="Asset Sub Heading 3"
+                                        name="./assetsSubheading3"/>
+                                    <assetLinks3
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="Asset Links 3">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./assetLinks3"
+                                            wrapperClass="core-wcm-form-options-toggle-set">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Override Title"
+                                                            fieldLabel="Title Override (Optional)"
+                                                            name="./overrideTitle"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                            fieldLabel="Page Path or external URL"
+                                                            name="./pagePath"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </assetLinks3>
+                                </items>
+                            </column>
+                        </items>
+                    </assetLinks3Set>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
