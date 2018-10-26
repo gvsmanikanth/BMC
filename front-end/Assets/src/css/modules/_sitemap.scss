@@ -1,0 +1,35 @@
+.sitemap{
+	h2,h3,h4{
+		font-weight:400;
+	}
+	h1{
+		margin-top:2rem;
+		--color: #fe5000;
+	}
+	.h2{
+		color: #fe5000;
+		margin: 1rem 0;
+	}
+	hr{
+		border-color: #eeeeee;
+	}
+	ul{
+		column-count: 1;
+		column-gap: 0rem;
+		@include media(breakpointMedium) {
+			column-count: 2;
+			column-gap: .5rem;
+		}
+		@include media(breakpointLarge) {
+			column-count: 4;
+			column-gap: .5rem;
+		}
+		
+		padding: 0;
+		li{
+			width:100%;
+			list-style:none;
+			margin-bottom: 0.5em;
+		}
+	}
+}
