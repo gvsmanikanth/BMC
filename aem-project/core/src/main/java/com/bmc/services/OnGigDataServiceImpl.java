@@ -49,8 +49,7 @@ import com.bmc.components.OnGigDataItem;
         label = "Ongig data Service",
         description = "Helper Service for Ongig data web service API call",
         immediate = true)
-
-@Service(value=OnGigDataServiceImpl.class)
+@Service
 public class OnGigDataServiceImpl implements OnGigDataService {
 
 	/** Default log. */
@@ -113,6 +112,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
      * Stores the customer data from ongig data call in the Adobe CQ JCR
      * @see com.bmc.services.OnGigDataService#injestonGigData(java.util.ArrayList, java.lang.String)
      */
+	    @Override
 	public int injestonGigData(ArrayList<OnGigDataItem> data) {
 			
 		logger.info("Method injestonGigData(ArrayList<OnGigDataItem> data) of OnGigDataServiceImpl");	
@@ -276,6 +276,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * 0 - if the node exists; however, contains no children
 	 * number - the number of children that the content/customer node contains
 	*/
+	    @Override
 	public int doesDataExist(Node rootNode, String nodeName) {
 		// TODO Auto-generated method stub
 			
@@ -317,6 +318,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * Fetches the Data into an JSONArray from the API using REST.
 	 * @see com.bmc.services.OnGigDataService#getDatafromAPICall(java.lang.String)
 	 */
+	    @Override
 	public ArrayList<OnGigDataItem> getDatafromAPICall(String responseBody) {
 		// TODO Auto-generated method stub
 				try
@@ -373,6 +375,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * Data Connection call to onGig API
 	 * @see com.bmc.services.OnGigDataService#getdataConnection(java.lang.String)
 	 */
+	    @Override
 	public ArrayList<OnGigDataItem> getdataConnection() {
 		
 		// Implement custom handling of GET requests 
@@ -421,6 +424,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * Fetching Careers team data
 	 * @see com.bmc.services.OnGigDataService#getCareersTeamData(java.lang.String)
 	 */
+	    @Override
 	public CareersTeamItem getCareersTeamData(String title) {
 		//fetch the values of the node 		
 		try {            
@@ -514,6 +518,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 	 * Careers Location data
 	 * @see com.bmc.services.OnGigDataService#getCareersLocationData(java.lang.String, java.lang.String)
 	 */
+	    @Override
 	public CareersLocationItem getCareersLocationData(String countryName, String continent) {
 		//fetch the values of the node 				
 				try { 
@@ -619,9 +624,7 @@ public class OnGigDataServiceImpl implements OnGigDataService {
 				//set the values to the careers Data item and return.
 				return careersLocationItem;
 			}
-		
+
+
 }
 	
-
-
-
