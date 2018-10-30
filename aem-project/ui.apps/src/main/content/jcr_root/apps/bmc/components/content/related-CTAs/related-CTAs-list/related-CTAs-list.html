@@ -3,7 +3,7 @@
     <h2 data-sly-test="${data.headingText}">${data.headingText @ context = 'html', i18n}:</h2>
     <sly data-sly-list.item="${data.items}">
         <h3><a href="${item.href}" class="${item.cssClass}" target="${item.target}">${item.text @ context='html'}</a></h3>
-        <p data-sly-test="${item.description}">${item.description @ context='html'}</p>
+        <p data-sly-test="${item.short_description}">${item.short_description @ context='html'}</p>
         <a href="${item.href}" class="${item.cssClass}">${"Learn More" @ context = 'html', i18n}</a>
         <sly data-sly-test="${item.hasSecondaryCta}">
             <span> | </span>
