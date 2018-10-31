@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Header Video - Careers"
     sling:resourceType="cq/gui/components/authoring/dialog"
@@ -17,35 +17,70 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-
                             <heading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="Enter the heading text"
-                                    fieldLabel="Heading text"
-                                    name="./headerText"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the heading text"
+                                fieldLabel="Heading text"
+                                name="./headerText"/>
                             <subheading
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldDescription="Enter the sub-heading text"
-                                    fieldLabel="Sub-heading text"
-                                    name="./subHeaderText"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the sub-heading text"
+                                fieldLabel="Sub-heading text"
+                                name="./subHeaderText"/>
                             <introtext
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldDescription="Enter the introduction text"
-                                    fieldLabel="Introductory text"
-                                    name="./introtext"/>
-
-                            <videolink
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldDescription="Enter the video link"
-                                    fieldLabel="Video link"
-                                    name="./videolink"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter the introduction text"
+                                fieldLabel="Introductory text"
+                                name="./introtext"/>
+                            <bgvideolink1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Enter the video link for the .mp4"
+                                fieldLabel="Video link .mp4 "
+                                name="./bgvideolink1"/>
+                            <mainvideolink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Enter the Video Data object"
+                                fieldLabel="Video Page Link."
+                                name="./mainvideolink"
+                                rootPath="/content/bmc/videos"/>
+                            <bgvideolink2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Enter the video link for webm."
+                                fieldLabel="Video link for Webm file."
+                                name="./bgvideolink2"/>
+                            <bg-image
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Background Image"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <file
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Background image"
+                                                fileNameParameter="./bg/fileName"
+                                                fileReferenceParameter="./bg/fileReference"
+                                                mimeTypes="[image]"
+                                                multiple="{Boolean}false"
+                                                name="./bg/file"
+                                                title="Upload Image Asset"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </bg-image>
                         </items>
                     </column>
                 </items>
