@@ -44,8 +44,10 @@ body {
 		height: 100%;
 		overflow: hidden;
 		position:fixed;
-
-		@include media(breakpointLarge) {
+		@include media(breakpointMedium) {
+			position:absolute; 
+		}
+		@include media(breakpointLarge){
 			height: auto;
 			overflow: auto;
 		}
