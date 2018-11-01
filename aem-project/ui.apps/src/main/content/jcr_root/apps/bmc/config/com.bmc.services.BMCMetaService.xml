@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OsgiConfig"
-    draftIssuePath="/SC_EditDraftCasePage?CaseId="
-    environment="dev."
-    issueEnvironment="https://bmcsites.force.com/casemgmt"
-    issuePath="/SC_CaseDetailPage?CaseId="/>
+          jcr:primaryType="sling:OsgiConfig"
+          environment="dev."
+          issueEnvironment="https://bmcsites.force.com/casemgmt"
+          issuePath="/SC_CaseDetailPage?CaseId="
+          draftIssuePath="/SC_EditDraftCasePage?CaseId="
+/>
