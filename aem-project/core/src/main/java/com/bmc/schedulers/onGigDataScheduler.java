@@ -52,7 +52,7 @@ public class onGigDataScheduler implements Runnable {
  
     private final Logger log = LoggerFactory.getLogger(this.getClass());
     
-    @Reference
+  
     private OnGigDataServiceImpl dataService;
         
     ArrayList<OnGigDataItem> dataListItem;
