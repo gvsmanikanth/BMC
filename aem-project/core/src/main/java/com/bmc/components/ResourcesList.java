@@ -13,15 +13,29 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider, UrlResolver {
-    public static class Item {
-        public Item(String header, Stream<LinkInfo> links) {
+import com.bmc.mixins.MetadataInfoProvider;
+import com.bmc.mixins.MetadataInfoProvider_RequestCached;
+import com.day.cq.wcm.api.Page;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.util.HashMap;
+
+
+public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider, UrlResolver,MetadataInfoProvider_RequestCached {
+	private static final Logger logger = LoggerFactory.getLogger(ResourcesList.class);
+	protected HashMap<String,String> link;
+	public static class Item {
+        public Item(String header, Stream<HashMap> links) {
             this.header = header;
             this.links = (links == null) ? Collections.emptyList() : links.collect(Collectors.toList());
         }
         public String getHeader() { return header; } private String header;
-        public List<LinkInfo> getLinks() { return links; } private List<LinkInfo> links;
+        public List<HashMap> getLinks() { return links; } private List<HashMap> links;
     }
+	
+	
 
     public List<Item> getReadResources() { return readResources; } private List<Item> readResources;
     public List<Item> getExperienceResources() { return experienceResources; } private List<Item> experienceResources;
@@ -46,13 +60,29 @@ public class ResourcesList extends WCMUsePojo implements MultifieldDataProvider,
         if (resItems == null)
             return new Item(header, Stream.empty());
 
-        Stream<LinkInfo> links = Arrays.stream(resItems)
+       /* Stream<LinkInfo> links = Arrays.stream(resItems)
                 .map(this::getResourceLinkInfo)
-                .filter(l->l.getType() != UrlType.Undefined);
-
+                .filter(l->l.getType() != UrlType.Undefined);*/
+        
+        Stream<HashMap> links = Arrays.stream(resItems)
+                .map(this::getResourceLinkInfo);
         return new Item(header, links);
     }
-    private LinkInfo getResourceLinkInfo(ValueMap map) {
-        return getLinkInfo(map.get("resPath", ""));
+    private HashMap getResourceLinkInfo(ValueMap map) {
+    	 link = new HashMap<>();
+         link.put("pagePath", map.get("resPath").toString());
+         
+         
+         Page page = this.getResourceProvider().getPage(map.get("resPath").toString());
+         if (page != null){
+         	ValueMap pageMap = page.getProperties();
+         	 link.put("title", pageMap.getOrDefault("navTitle","").toString());
+         }
+        // override title 
+        if(map.get("overrideTitle") != null && !map.get("overrideTitle").toString().trim().isEmpty()){
+     	   link.put("title", map.get("overrideTitle").toString());
+    		}
+    	return link;
+    	
     }
 }
