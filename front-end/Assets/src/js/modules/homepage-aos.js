@@ -87,7 +87,7 @@ $(document).ready(function () {
 	});
 	
 	// Search form animation WEB-2853
-		$(document).click(function() {
+		$("#bodyOverlay").click(function() {
 			$('.search-overlay').removeClass('on');
 			$('body').removeClass('no-scroll');
 			$('#bodyOverlay').removeClass('backgroundColor');
