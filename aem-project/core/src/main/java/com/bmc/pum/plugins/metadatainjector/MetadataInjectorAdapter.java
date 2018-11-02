@@ -1,7 +1,7 @@
 package com.bmc.pum.plugins.metadatainjector;
 
 import com.bmc.pum.plugins.PUMAdapter;
-import com.bmc.services.ResourceServiceImpl;
+import com.bmc.services.ResourceService;
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
@@ -18,8 +18,8 @@ public class MetadataInjectorAdapter implements PUMAdapter {
 
     private static final Logger log = LoggerFactory.getLogger(MetadataInjectorAdapter.class);
 
-    @Reference
-    ResourceServiceImpl resourceService;
+    @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=caching)")
+    ResourceService resourceService;
 
     @Property(name="adapters")
     public static final String[] ADAPTER_CLASSES = {

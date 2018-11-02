@@ -1,6 +1,5 @@
 package com.bmc.services;
 
-import com.bmc.pum.plugins.metadatainjector.MetadataInjectorAdapter;
 import com.day.cq.commons.jcr.JcrConstants;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.*;
@@ -16,11 +15,14 @@ import java.util.Map;
 /**
  * TODO: Documentation
  */
-@Component(label = "Resource Service", metatype = true)
-@Service(value=ResourceServiceImpl.class)
-public class ResourceServiceImpl implements ConfigurableService {
+@Component(label = "Resource Service (Base)", metatype = true)
+@Service(value=ResourceService.class)
+@Properties({
+        @Property(name = ResourceService.SERVICE_TYPE, value = "base", propertyPrivate = true)
+})
+public class ResourceServiceBaseImpl implements ConfigurableService, ResourceService {
 
-    private static final Logger log = LoggerFactory.getLogger(MetadataInjectorAdapter.class);
+    private static final Logger log = LoggerFactory.getLogger(ResourceServiceBaseImpl.class);
 
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "bmcdataservice";
 
@@ -48,6 +50,7 @@ public class ResourceServiceImpl implements ConfigurableService {
 
     /**
      * TODO: Documentation
+     * TODO: Cache (Key: propertyName + propertyValue, Value: title)
      * @param propertyName
      * @param propertyValue
      * @param resolver
