@@ -3,7 +3,10 @@ package com.bmc.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.rmi.ServerException;
+import java.util.Set;
 
+import org.apache.sling.settings.SlingSettingsService;
+import com.day.cq.commons.Externalizer;
 import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
@@ -18,6 +21,7 @@ import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.adobe.cq.sightly.SightlyWCMMode;
 import com.bmc.services.ExternalLinkRewriterService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
  
@@ -48,10 +52,12 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 
      private Session session;
      
-@Reference
+     @Reference
      private ExternalLinkRewriterService dataService;
      
-
+     @Reference
+     private SlingSettingsService slingSettingsService;
+     
      private String linkAbstractorExternalURL = null;
      
      private String linkAbstractorTarget = null;
@@ -61,12 +67,12 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
         
     	   try {
+    		   
     			logger.info("START CLASS ----ExternalLinkServlet");           
     			Node currentNode = request.getResource().adaptTo(Node.class);
     			session = currentNode.getSession();
     			String linkAbstractor = currentNode.getProperty("linkAbstractor").getValue().toString();
      			session.save();
-     			
      			for(PropertyIterator propeIterator = currentNode.getProperties() ; propeIterator.hasNext();)  
 				   {  
 				        Property prop= propeIterator.nextProperty();
@@ -104,13 +110,16 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			                		out.println("<html><head>");
 			                		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");			                	
 			                		out.println("</head>");
+			                		if(runModes())
+			                		{
 			                		out.println("<body>");
 			                		out.println("<h1>External Link</h1>");
 			                		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
 			                		out.println("</a><br>");
 			                		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
-			                		out.println("</body></html>");
-              
+			                		out.println("</body>");
+			                		}
+			                		out.println("</html>");	
 		           		} catch (Exception e) {
 		           			logger.error(e.getMessage());
 		           		} finally {
@@ -118,5 +127,13 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 		           				session.logout();
 		           					}
      					}
+     
+     public boolean runModes()
+     {
+    		Set<String> runmodes = slingSettingsService.getRunModes();	
+    		boolean isAuthor = runmodes.contains(Externalizer.PUBLISH);
+    		return isAuthor;
+     }
+     
 }
 
