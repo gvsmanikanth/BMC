@@ -53,9 +53,9 @@ public class ResourceServiceCachingImpl implements ResourceService {
     @Override
     public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
         try {
-            Optional<String> cachedTitle = titleCache.get(
-                    propertyName + propertyValue, ()
-                            -> Optional.fromNullable(baseImpl.getTitle(propertyName, propertyValue, resolver)));
+            String cacheKey = propertyName + propertyValue;
+            Optional<String> cachedTitle = titleCache.get(cacheKey,
+                    () -> Optional.fromNullable(baseImpl.getTitle(propertyName, propertyValue, resolver)));
             return cachedTitle.isPresent() ? cachedTitle.get() : null;
         } catch (ExecutionException e) {
             log.error("An error occurred. Fetching title from JCR", e);

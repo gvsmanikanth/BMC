@@ -31,8 +31,8 @@ public class PUMTransformerFactory implements TransformerFactory {
 
     private static final Logger log = LoggerFactory.getLogger(PUMTransformerFactory.class);
 
-    @Reference
-    PUMService pumService;
+    @Reference(target = "(" + PUMService.SERVICE_TYPE + "=caching)")
+    private PUMService pumService;
 
     @Activate
     protected void activate(Map<String, Object> properties) {

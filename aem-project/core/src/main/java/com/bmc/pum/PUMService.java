@@ -8,6 +8,8 @@ import org.apache.sling.api.SlingHttpServletRequest;
  */
 public interface PUMService extends ConfigurableService {
 
+    String SERVICE_TYPE = "serviceType";
+
     /**
      * TODO: Documentation
      * @param request
