@@ -19,15 +19,16 @@ public interface LoggingHelper {
                 "*** ********************\n" +
                 "*** Cache Stats\n" +
                 "*** ********************\n" +
+                "*** Size: %d\n" +
                 "*** Hit Count/Rate: %d / %s\n" +
                 "*** Miss Count/Rate: %d / %s\n" +
                 "*** Request Count: %d\n" +
                 "*** Load Count: %d\n" +
                 "*** Avg. Load Penalty: %s milliseconds\n" +
                 "*** ********************",
-                cacheStats.hitCount(), df2.format(cacheStats.hitRate()), cacheStats.missCount(),
-                df2.format(cacheStats.missRate()), cacheStats.requestCount(), cacheStats.loadCount(),
-                df2.format(cacheStats.averageLoadPenalty() / 1000000));
+                cache.size(), cacheStats.hitCount(), df2.format(cacheStats.hitRate()),
+                cacheStats.missCount(), df2.format(cacheStats.missRate()), cacheStats.requestCount(),
+                cacheStats.loadCount(), df2.format(cacheStats.averageLoadPenalty() / 1000000));
     }
 
 }
