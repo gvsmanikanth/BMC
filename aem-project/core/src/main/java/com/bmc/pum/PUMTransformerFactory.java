@@ -64,7 +64,8 @@ public class PUMTransformerFactory implements TransformerFactory {
         @Override
         public void startDocument() throws SAXException {
             this.millisStart = Calendar.getInstance().getTimeInMillis();
-            log.info("Begin link metadata injection");
+            log.info("Begin PUM processing");
+            pumService.initPumPluginChain();
             this.getContentHandler().startDocument();
         }
 
@@ -93,7 +94,8 @@ public class PUMTransformerFactory implements TransformerFactory {
         @Override
         public void endDocument() throws SAXException {
             long millisEnd = Calendar.getInstance().getTimeInMillis();
-            log.info("Finished processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
+            log.info("Finished PUM processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
+            pumService.terminatePumPluginChain();
             this.getContentHandler().endDocument();
         }
 

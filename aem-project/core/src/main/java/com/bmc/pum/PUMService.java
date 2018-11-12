@@ -18,6 +18,10 @@ public interface PUMService extends ConfigurableService {
      */
     public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl);
 
+    /**
+     * TODO: Documentation
+     */
+    public void initPumPluginChain();
 
     /**
      * TODO: Documentation
@@ -25,5 +29,10 @@ public interface PUMService extends ConfigurableService {
      * @param output
      */
     public void executePumPluginChain(PUMInput input, PUMOutput output);
+
+    /**
+     * TODO: Documentation
+     */
+    public void terminatePumPluginChain();
 
 }

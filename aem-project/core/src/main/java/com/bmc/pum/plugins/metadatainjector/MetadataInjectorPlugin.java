@@ -4,7 +4,12 @@ import com.bmc.pum.PUMInput;
 import com.bmc.pum.PUMOutput;
 import com.bmc.pum.plugins.PUMParameters;
 import com.bmc.pum.plugins.PUMPlugin;
+import com.bmc.services.ResourceService;
+import com.bmc.services.ResourceServiceCachingImpl;
+import com.bmc.util.LoggingHelper;
+import com.google.common.cache.Cache;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
@@ -19,6 +24,9 @@ import org.slf4j.LoggerFactory;
 public class MetadataInjectorPlugin implements PUMPlugin<MetadataInjectorModel> {
 
     private static final Logger log = LoggerFactory.getLogger(MetadataInjectorPlugin.class);
+
+    @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=caching)")
+    ResourceService resourceService;
 
     @Override
     public MetadataInjectorModel createModel(Resource resource) {
@@ -40,4 +48,15 @@ public class MetadataInjectorPlugin implements PUMPlugin<MetadataInjectorModel> 
         log.debug("End PUM metadata injection");
     }
 
+    @Override
+    public void terminate() {
+        if (resourceService instanceof ResourceServiceCachingImpl) {
+            ResourceServiceCachingImpl resourceServiceCachingImpl = (ResourceServiceCachingImpl)resourceService;
+            if (resourceServiceCachingImpl.isResourceTitleCacheStatsEnabled()) {
+                Cache titleCache = resourceServiceCachingImpl.getTitleCache();
+                String titleCacheStats = LoggingHelper.getFormattedCacheStats(titleCache);
+                log.error("Resource title cache statistics:\n" + titleCacheStats);
+            }
+        }
+    }
 }

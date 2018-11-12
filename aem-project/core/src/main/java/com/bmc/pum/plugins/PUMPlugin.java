@@ -24,10 +24,22 @@ public interface PUMPlugin<T extends PUMModel> {
 
     /**
      * TODO: Documentation
+     */
+    default void init() {
+    };
+
+    /**
+     * TODO: Documentation
      * @param input
      * @param output
      */
     void execute(PUMInput input, PUMOutput output);
+
+    /**
+     * TODO: Documentation
+     */
+    default void terminate() {
+    }
 
     /**
      *

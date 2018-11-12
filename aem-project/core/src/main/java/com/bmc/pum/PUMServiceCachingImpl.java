@@ -1,5 +1,6 @@
 package com.bmc.pum;
 
+import com.bmc.util.LoggingHelper;
 import com.google.common.base.Optional;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
@@ -39,6 +40,11 @@ public class PUMServiceCachingImpl implements PUMService {
     public static final String CONTENT_RESOURCE_CACHE_TTL = "content.resource.cache.ttl";
     private long contentResourceCacheTtl;
 
+    @Property(label = "Content Resource Cache Statistics Enabled", boolValue = false,
+            description = "Content resource cache statistics enabled")
+    public static final String CONTENT_RESOURCE_CACHE_STATS_ENABLED = "content.resource.cache.stats.enabled";
+    private boolean contentResourceCacheStatsEnabled;
+
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private PUMService baseImpl;
 
@@ -46,10 +52,16 @@ public class PUMServiceCachingImpl implements PUMService {
     public void activate(ComponentContext context) {
         this.contentResourceCacheSize = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_SIZE), 5000);
         this.contentResourceCacheTtl = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_TTL), 300);
-        contentResourceCache = CacheBuilder.newBuilder()
+        this.contentResourceCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(CONTENT_RESOURCE_CACHE_STATS_ENABLED), false);
+
+        CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(contentResourceCacheSize)
-                .expireAfterWrite(contentResourceCacheTtl, TimeUnit.SECONDS)
-                .build();
+                .expireAfterWrite(contentResourceCacheTtl, TimeUnit.SECONDS);
+        if (this.contentResourceCacheStatsEnabled) {
+            cacheBuilder.recordStats();
+        }
+
+        contentResourceCache = cacheBuilder.build();
     }
 
     @Override
@@ -66,8 +78,22 @@ public class PUMServiceCachingImpl implements PUMService {
     }
 
     @Override
+    public void initPumPluginChain() {
+        baseImpl.initPumPluginChain();
+    }
+
+    @Override
     public void executePumPluginChain(PUMInput input, PUMOutput output) {
         baseImpl.executePumPluginChain(input, output);
+    }
+
+    @Override
+    public void terminatePumPluginChain() {
+        baseImpl.terminatePumPluginChain();
+        if (contentResourceCacheStatsEnabled) {
+            String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats(contentResourceCache);
+            log.error("Content resource cache statistics:\n" + contentResourceCacheStats);
+        }
     }
 
 }

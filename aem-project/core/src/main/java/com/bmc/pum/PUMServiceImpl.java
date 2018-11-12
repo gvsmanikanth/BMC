@@ -102,10 +102,26 @@ public class PUMServiceImpl implements PUMService {
     }
 
     @Override
+    public void initPumPluginChain() {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Initializing PUM plugin {}", plugin.getClass().getName());
+            plugin.init();
+        }
+    }
+
+    @Override
     public void executePumPluginChain(PUMInput input, PUMOutput output) {
         for (PUMPlugin plugin : plugins.values()) {
             log.debug("Executing PUM plugin {}", plugin.getClass().getName());
             plugin.execute(input, output);
+        }
+    }
+
+    @Override
+    public void terminatePumPluginChain() {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Terminating PUM plugin {}", plugin.getClass().getName());
+            plugin.terminate();
         }
     }
 

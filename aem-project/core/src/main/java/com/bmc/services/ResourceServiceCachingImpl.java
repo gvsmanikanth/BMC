@@ -37,6 +37,11 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public static final String RESOURCE_TITLE_CACHE_TTL = "resource.title.cache.ttl";
     private long resourceTitleCacheTtl;
 
+    @Property(label = "Resource Title Cache Statistics Enabled", boolValue = false,
+            description = "Resource title cache statistics enabled")
+    public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = "resource.title.cache.stats.enabled";
+    private boolean resourceTitleCacheStatsEnabled;
+
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private ResourceService baseImpl;
 
@@ -44,10 +49,16 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public void activate(ComponentContext context) {
         this.resourceTitleCacheSize = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_SIZE), 5000);
         this.resourceTitleCacheTtl = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_TTL), 300);
-        titleCache = CacheBuilder.newBuilder()
+        this.resourceTitleCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
+
+        CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(resourceTitleCacheSize)
-                .expireAfterWrite(resourceTitleCacheTtl, TimeUnit.SECONDS)
-                .build();
+                .expireAfterWrite(resourceTitleCacheTtl, TimeUnit.SECONDS);
+        if (this.resourceTitleCacheStatsEnabled) {
+            cacheBuilder.recordStats();
+        }
+
+        titleCache = cacheBuilder.build();
     }
 
     @Override
@@ -62,4 +73,13 @@ public class ResourceServiceCachingImpl implements ResourceService {
             return baseImpl.getTitle(propertyName, propertyValue, resolver);
         }
     }
+
+    public boolean isResourceTitleCacheStatsEnabled() {
+        return resourceTitleCacheStatsEnabled;
+    }
+
+    public Cache<String, Optional<String>> getTitleCache() {
+        return titleCache;
+    }
+
 }
