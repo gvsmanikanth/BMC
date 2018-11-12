@@ -3,6 +3,7 @@ package com.bmc.pum;
 import com.adobe.acs.commons.rewriter.AbstractTransformer;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.*;
+import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.rewriter.ProcessingComponentConfiguration;
 import org.apache.sling.rewriter.ProcessingContext;
@@ -21,15 +22,22 @@ import java.util.Map;
  * Factory that instantiates instances of {@link PUMTransformer} for the Post-Render URL Manipulator (PUM) framework.
  * Registration can be verified via ${BASE_URL}/system/console/status-slingrewriter
  */
-@Component(immediate = true)
+@Component(label = "PUM Transformer Factory", immediate = true, metatype = true,
+        description = "Entry point into the PUM framework")
 @Service(value = TransformerFactory.class)
 @Properties({@Property(
         name = "pipeline.type",
-        value = "pum"
+        value = "pum",
+        propertyPrivate = true
 )})
 public class PUMTransformerFactory implements TransformerFactory {
 
     private static final Logger log = LoggerFactory.getLogger(PUMTransformerFactory.class);
+
+    @Property(label = "PUM Framework Enabled", boolValue = false,
+            description = "Global on/off switch for the PUM framework")
+    public static final String PUM_FRAMEWORK_ENABLED = "pum.framework.enabled";
+    private boolean pumFrameworkEnabled;
 
     @Reference(target = "(" + PUMService.SERVICE_TYPE + "=caching)")
     private PUMService pumService;
@@ -37,11 +45,12 @@ public class PUMTransformerFactory implements TransformerFactory {
     @Activate
     protected void activate(Map<String, Object> properties) {
         log.info("Initializing PUMTransformerFactory");
+        this.pumFrameworkEnabled = PropertiesUtil.toBoolean(properties.get(PUM_FRAMEWORK_ENABLED), false);
     }
 
     @Override
     public Transformer createTransformer() {
-        return new PUMTransformer();
+        return pumFrameworkEnabled ? new PUMTransformer() : new NullTransformer();
     }
 
     /**
@@ -99,6 +108,9 @@ public class PUMTransformerFactory implements TransformerFactory {
             this.getContentHandler().endDocument();
         }
 
+    }
+
+    public class NullTransformer extends AbstractTransformer {
     }
 
 }
