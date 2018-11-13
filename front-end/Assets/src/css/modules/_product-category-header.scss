@@ -356,9 +356,11 @@
 					
 		.bannerContent{
 			padding-top:0px;
+			height: 200px;
 			min-height: 200px;
 			@include media(breakpointSmall) {
 				padding-top:10px;
+				height:420px;
 				min-height:420px;
 			}
 			

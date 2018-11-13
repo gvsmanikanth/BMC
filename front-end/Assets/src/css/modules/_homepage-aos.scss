@@ -496,12 +496,6 @@ img {
 			font-size: 40px;
 		}
 	}
-	.bannerContent{
-		height: 200px;
-		@include media(breakpointSmall) {
-			height:420px;
-		}
-	}
 }
 
 .section-wrap#section1,
