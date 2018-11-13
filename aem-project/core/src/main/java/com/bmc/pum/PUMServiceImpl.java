@@ -145,17 +145,22 @@ public class PUMServiceImpl implements PUMService {
             resourcePath = request.getPathInfo();
         } else {
             // Handle other links. E.g. https://www.bmc.com/external-links/https-www-googlecom.html
-            URI linkUri = URI.create(linkUrl);
-            if (StringUtils.isEmpty(linkUri.getHost())) {
-                linkUri = URI.create(getBaseUrl(request) + linkUrl);
-            }
+            try {
+                URI linkUri = URI.create(linkUrl);
+                if (StringUtils.isEmpty(linkUri.getHost())) {
+                    linkUri = URI.create(getBaseUrl(request) + linkUrl);
+                }
 
-            if (!domainMapping.containsKey(linkUri.getHost())) {
-                log.debug("Host {} not on whitelist. Returning null", linkUri.getHost());
+                if (!domainMapping.containsKey(linkUri.getHost())) {
+                    log.debug("Host {} not on whitelist. Returning null", linkUri.getHost());
+                    return null;
+                }
+
+                resourcePath = domainMapping.get(linkUri.getHost()) + linkUri.getPath();
+            } catch (IllegalArgumentException e) {
+                log.debug("{} is not a valid URI. Returning null", linkUrl);
                 return null;
             }
-
-            resourcePath = domainMapping.get(linkUri.getHost()) + linkUri.getPath();
         }
 
         return resourcePath;
