@@ -63,7 +63,7 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
         ValueMap[] subMenuItems = map.get("tabLinks", ValueMap[].class);
         ArrayList<SupportNavigationItem> items = new ArrayList<SupportNavigationItem>();
         if (subMenuItems == null)
-            return new MenuItem(null,null);
+            return new MenuItem(tabTitle,null);
         else
         //Iterate over each SubMenuItems
         for(int i=0;i<subMenuItems.length;i++){

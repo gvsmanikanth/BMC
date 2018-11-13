@@ -3,19 +3,27 @@
 	<sly data-sly-list.menuitem="${data.supportNavigation}">
         <li class="menu-item js-show-sub-trigger">
             <a href="#" class="menu-anchor">
-               ${menuitem.tabTitle @ context='html'}
+            	<sly data-sly-test="${menuitem.tabTitle}">
+               		${menuitem.tabTitle @ context='html'}
+            	</sly>
             </a>
             <ul data-sly-list.item="${menuitem.submenuitems}" class="sub-menu">
-            <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=item.navigationPath}"></sly>
+            	<sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=item.navigationPath}"></sly>
 				     <sly data-sly-test="${assetLink.href}">
 				          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
 					 </sly>
 					 <sly data-sly-test="${!assetLink.href}">
 						 <sly data-sly-test.resolvedLink="${item.navigationPath}"></sly>
 					 </sly>
-                <li class="sub-menu-item">
-                  <a class="${item.className}" href="${resolvedLink}" target="${item.target}">${item.navigationTitle @ context='html'}</a>
-                 </li>
+					 <sly data-sly-test="${!item.navigationTitle}">
+						 <sly data-sly-test.resolvedTitle="${assetLink.text}"></sly>
+					 </sly>
+                      <sly data-sly-test="${item.navigationTitle}">
+						 <sly data-sly-test.resolvedTitle="${item.navigationTitle}"></sly>
+					 </sly>
+                	<li class="sub-menu-item">
+                  		<a class="${item.className}" href="${resolvedLink}" target="${item.target}">${resolvedTitle @ context='html'}</a>
+                 	</li>
             </ul>
         </li>
     </ul></sly>
