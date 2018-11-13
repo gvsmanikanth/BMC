@@ -6,9 +6,16 @@
             <sly data-sly-list.section="${data.readResources}">
                 <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
+					 <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=link.pagePath}"></sly>
+				     <sly data-sly-test="${assetLink.href}">
+				          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+					 </sly>
+					 <sly data-sly-test="${!assetLink.href}">
+						 <sly data-sly-test.resolvedLink="${link.pagePath}"></sly>
+					 </sly>
                     <li>
-                        <a class="${link.cssClass}" href="${link.href}" target="_self">
-                            ${link.text @ context='html'} &nbsp;&#8250;
+                        <a class="${assetLink.cssClass}" href="${resolvedLink}">
+                            ${link.title @ context='html'} &nbsp;&#8250;
                         </a>
                     </li>
                 </ul>
@@ -19,9 +26,16 @@
             <sly data-sly-list.section="${data.experienceResources}">
                 <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
+					 <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=link.pagePath}"></sly>
+				     <sly data-sly-test="${assetLink.href}">
+				          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+					 </sly>
+					 <sly data-sly-test="${!assetLink.href}">
+						 <sly data-sly-test.resolvedLink="${link.pagePath}"></sly>
+					 </sly>
                     <li>
-                        <a class="${link.cssClass}" href="${link.href}" target="_self">
-                            ${link.text @ context='html'} &nbsp;&#8250;
+                        <a class="${assetLink.cssClass}" href="${resolvedLink}">
+                            ${link.title @ context='html'} &nbsp;&#8250;
                         </a>
                     </li>
                 </ul>
@@ -32,9 +46,16 @@
             <sly data-sly-list.section="${data.exploreResources}">
                 <h5>${section.header @ context='html'}:</h5>
                 <ul data-sly-list.link="${section.links}">
+					 <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=link.pagePath}"></sly>
+				     <sly data-sly-test="${assetLink.href}">
+				          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+					 </sly>
+					 <sly data-sly-test="${!assetLink.href}">
+						 <sly data-sly-test.resolvedLink="${link.pagePath}"></sly>
+					 </sly>
                     <li>
-                        <a class="${link.cssClass}" href="${link.href}" target="_self">
-                            ${link.text @ context='html'} &nbsp;&#8250;
+                        <a class="${assetLink.cssClass}" href="${resolvedLink}">
+                            ${link.title @ context='html'} &nbsp;&#8250;
                         </a>
                     </li>
                 </ul>
@@ -42,6 +63,6 @@
         </div>
     </div>
     <p data-sly-test="${data.cta.text && data.cta.href}" class="text-center">
-        <a class="btn ${data.cta.cssClass}" href="${data.cta.href}" target="_self">${data.cta.text @ context='html'} &nbsp;â€º</a>
+        <a class="btn ${data.cta.cssClass}" href="${data.cta.href}">${data.cta.text @ context='html'} &nbsp;›</a>
     </p>
 </section>

@@ -43,3 +43,19 @@
 		font-weight: bold;
 		margin-top: 0.75em;
 	}
+	
+.support-central {
+	.icon-point-list.five-column-layout{
+		.icon-point-list-item {
+			@include media(breakpointMedium) {
+				width: 50%;
+			}
+			@include media(breakpointLarge) {
+				width: 30%;
+			}
+			@include media(breakpointExtraLarge) {
+				width: 20%;
+			}
+		}
+	}
+}

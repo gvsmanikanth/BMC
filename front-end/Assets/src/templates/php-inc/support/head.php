@@ -10,7 +10,7 @@
 	<meta name="apple-mobile-web-app-title" content="BMC Software">
 	
 	<!-- icon and tile color in hex # for Windows phones -->
-	<meta name="msapplication-TileImage" content="Assets/dist/touch-icon.png">
+	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	
 	<script src="Assets/dist/head.js"></script>
@@ -19,9 +19,9 @@
 	<link rel="stylesheet" media="all" href="Assets/dist/style.css">
 
 	<!-- For everything else --> 
-	<link rel="shortcut icon" href="Assets/dist/favicon.png"> 
+	<link rel="shortcut icon" href="includes/favicon.png"> 
 	<!-- Serve one icon for all Apple devices -->
-	<link rel="apple-touch-icon-precomposed" href="Assets/dist/touch-icon.png"> 
+	<link rel="apple-touch-icon-precomposed" href="includes/touch-icon.png"> 
 </head>
 
 <body class="<?php echo $bodyClass; ?>">

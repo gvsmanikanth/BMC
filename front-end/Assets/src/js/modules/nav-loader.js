@@ -5,9 +5,11 @@ jQuery(function($){
 		if (window.matchMedia('(max-width: 767px)').matches || window.matchMedia('(max-width: 1023px)').matches) {
 			//$("#bodyOverlay,.search-overlay").insertAfter("nav.layout-navigation"); 
 			$(".navigation-utility .scrollTextHide").show();
-			if(!$('header.layout-header .layout-inner-wrap a').hasClass("headerSearch")){
-				$('header.layout-header .layout-inner-wrap').append("<a class='navigation-search js-navigation-search headerSearch mobile-only'></a>"); 
-				$(".navigation-utility .scrollTextHide").show();
+			if($(".layout-wrapper nav.layout-navigation").length === 1){
+				if(!$('header.layout-header .layout-inner-wrap a').hasClass("headerSearch")){
+					$('header.layout-header .layout-inner-wrap').append("<a class='navigation-search js-navigation-search headerSearch mobile-only'></a>"); 
+					$(".navigation-utility .scrollTextHide").show();
+				}
 			}
 			
 		}

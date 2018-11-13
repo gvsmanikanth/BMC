@@ -90,6 +90,12 @@
                                                             <column jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
+                                                                    <overrrideTitle
+				                                                    jcr:primaryType="nt:unstructured"
+				                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+				                                                    fieldDescription="Use Title case."
+				                                                    fieldLabel="Override Title (optional)"
+				                                                    name="./overrideTitle"/>
                                                                     <resourcePath jcr:primaryType="nt:unstructured"
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                                   fieldDescription="Use the path picker to select a page within the site"
@@ -191,6 +197,12 @@
                                                             <column jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
+                                                                	<overrrideTitle
+				                                                    jcr:primaryType="nt:unstructured"
+				                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+				                                                    fieldDescription="Use Title case."
+				                                                    fieldLabel="Override Title (optional)"
+				                                                    name="./overrideTitle"/>
                                                                     <resourcePath jcr:primaryType="nt:unstructured"
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                                   fieldDescription="Use the path picker to select a page within the site"
@@ -288,6 +300,12 @@
                                                             <column jcr:primaryType="nt:unstructured"
                                                                     sling:resourceType="granite/ui/components/foundation/container">
                                                                 <items jcr:primaryType="nt:unstructured">
+                                                                    <overrrideTitle
+				                                                    jcr:primaryType="nt:unstructured"
+				                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+				                                                    fieldDescription="Use Title case."
+				                                                    fieldLabel="Override Title (optional)"
+				                                                    name="./overrideTitle"/>
                                                                     <resourcePath jcr:primaryType="nt:unstructured"
                                                                                   sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                                                                   fieldDescription="Use the path picker to select a page within the site"
