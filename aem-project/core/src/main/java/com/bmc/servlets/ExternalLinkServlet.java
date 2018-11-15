@@ -6,7 +6,9 @@ import java.rmi.ServerException;
 import java.util.Set;
 
 import org.apache.sling.settings.SlingSettingsService;
+
 import com.day.cq.commons.Externalizer;
+
 import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
@@ -24,6 +26,7 @@ import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.SightlyWCMMode;
 import com.bmc.services.ExternalLinkRewriterService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
+import com.day.cq.wcm.api.WCMMode;
  
 /*
  * WEB-2392 & WEB-2360
@@ -106,20 +109,30 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				        }
 			        	 
 				   }
-			                		PrintWriter out = response.getWriter();
-			                		out.println("<html><head>");
-			                		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");			                	
-			                		out.println("</head>");
-			                		if(runModes())
-			                		{
-			                		out.println("<body>");
-			                		out.println("<h1>External Link</h1>");
-			                		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
-			                		out.println("</a><br>");
-			                		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");
-			                		out.println("</body>");
-			                		}
-			                		out.println("</html>");	
+     							PrintWriter out = response.getWriter();
+     							final WCMMode mode = WCMMode.fromRequest(request);	
+				        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---Start
+				        		// Only execute in Publish mode & Preview mode of Author env.
+				     	       if ((mode == null || WCMMode.DISABLED.equals(mode)))
+				     	       {
+				     	    	   	out.println("<html><head>");
+				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");			                	
+				            		out.println("</head>");   
+				            		out.println("</html>");	 
+				     	       }else{
+				     	    	   //Will only show on Editor mode in author env.
+				     	    	out.println("<html><head>");
+				     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");
+				            	out.println("</head>");   
+				     	    	out.println("<body>");					     	       					     	       
+				        		out.println("<h1>External Link</h1>");
+				        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
+				        		out.println("</a><br>");
+				        		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");			                		
+				        		out.println("</body>");
+				        		out.println("</html>");	
+        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---End
+		}	
 		           		} catch (Exception e) {
 		           			logger.error(e.getMessage());
 		           		} finally {
