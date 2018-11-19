@@ -56,7 +56,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
 
     @Override
     public void activate() throws Exception {
-        items = mapMultiFieldValues("internalPagePaths", path -> getLinkPath(path,getLinkInfo(path, false), this));
+        items = mapMultiFieldValues("internalPagePaths", path -> getLinkPath(path,getLinkInfo(path, true), this));
         headingText = resolveHeadingText();
     }
 
