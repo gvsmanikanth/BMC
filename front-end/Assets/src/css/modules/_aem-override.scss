@@ -31,3 +31,10 @@ fieldset {
 	}
 	
 }
+
+//WEB-2396
+.cmp-image{ 
+	&+&{
+		padding-top: 1rem;
+	}
+}
