@@ -17,6 +17,25 @@
 		</div>
 	</div>
 </section>
+<div class="htmlarea aem-GridColumn aem-GridColumn--default--12"><div class="video-hero-header">
+    <section class="hero flex-col">
+        <div class="hero-image xs-only" style="background-image: url(//www.bmc.com/content/dam/bmc/info/careers-header.jpg);"></div>
+        <div class="hero-image video xs-max-hide">
+            <div class="vidbg-box" style="width: 100%; height: 100%; position: relative; z-index: 1;" data-vidbg-bg="mp4://www.bmc.com/content/dam/bmc/info/careers-header.mp4,webm://www.bmc.com/content/dam/bmc/info/careers-header.webm,poster: //www.bmc.com/content/dam/bmc/info/careers-header.jpg" data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3"><div class="vidbg-container" style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; background-image: none;"><video id="video_id" class="visible" autoplay="" loop="" muted="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: none; visibility: visible; opacity: 1; width: auto; height: 2px;"><source src="//www.bmc.com/content/dam/bmc/info/careers-header.mp4" type="video/mp4"><source src="//www.bmc.com/content/dam/bmc/info/careers-header.webm" type="video/webm"></video><div class="vidbg-overlay" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.3);"></div></div></div>
+        </div>
+        <div class="hero-content ">
+			<a href="//www.bmc.com/content/bmc/videos.html?vID=JOrfbJA5PrU" target="_self" class="modal-youtube-video-player" title="We're a great place to work">
+				<img class="mb2" src="//www.bmc.com/content/dam/bmc/web-services/play-icon-white.png">
+			</a>
+            <strong class="ha mb2 strongWeight">We're a great place to work</strong>
+            <div class="h3 mb3">BMC employees know that every day is an opportunity to impact customer success in a collaborative, productive atmosphere.</div>
+            <!-- <div class="p2 bolder">Watch the video to learn more about BMC (1:35)</div> -->
+			<center><a class="btn learn-more" href="/careers/careers.html">Explore career opportunities</a></center>
+        </div>
+    </section>
+</div>
+
+</div>
 <div class="scroll-container">
 	<section id="scroll-nav" class="section bg-white">
 		<div class="section-content">
