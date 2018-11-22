@@ -55,7 +55,7 @@ public class MetadataInjectorPlugin implements PUMPlugin<MetadataInjectorModel> 
             if (resourceServiceCachingImpl.isResourceTitleCacheStatsEnabled()) {
                 Cache titleCache = resourceServiceCachingImpl.getTitleCache();
                 String titleCacheStats = LoggingHelper.getFormattedCacheStats(titleCache);
-                log.error("Resource title cache statistics:\n" + titleCacheStats);
+                log.info("Resource title cache statistics:\n" + titleCacheStats);
             }
         }
     }

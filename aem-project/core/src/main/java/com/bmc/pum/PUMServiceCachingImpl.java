@@ -92,7 +92,7 @@ public class PUMServiceCachingImpl implements PUMService {
         baseImpl.terminatePumPluginChain();
         if (contentResourceCacheStatsEnabled) {
             String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats(contentResourceCache);
-            log.error("Content resource cache statistics:\n" + contentResourceCacheStats);
+            log.info("Content resource cache statistics:\n" + contentResourceCacheStats);
         }
     }
 
