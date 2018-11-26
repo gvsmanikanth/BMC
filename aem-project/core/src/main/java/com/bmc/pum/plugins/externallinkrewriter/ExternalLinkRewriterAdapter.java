@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * TODO
+ * TODO: Documentation
  */
 @Component(label = "PUM External Link Rewriter Adapter")
 @Service
@@ -35,13 +35,22 @@ public class ExternalLinkRewriterAdapter implements PUMAdapter {
         return null;
     }
 
-    @SuppressWarnings("unchecked")
     private <AdapterType> AdapterType adaptFromResource(Resource resource, Class<AdapterType> type) {
         ExternalLinkRewriterModel model = new ExternalLinkRewriterModel();
 
+        // External link
         model.setExternalLink("external-link".equals(resource.getValueMap().get("linkAbstractor", String.class)));
-        model.setUrl(resource.getValueMap().get("linkAbstractorExternalURL", String.class));
+        model.setExternalUrl(resource.getValueMap().get("linkAbstractorExternalURL", String.class));
         model.setTarget(resource.getValueMap().get("linkAbstractorTarget", String.class));
+
+        // External document
+        model.setExternalDocument("external-document".equals(resource.getValueMap().get("linkAbstractor", String.class)));
+        model.setDocumentType(resource.getValueMap().get("documentType", String.class));
+        if ("children".equals(model.getDocumentType())) {
+            model.setDocumentUrl(resource.getValueMap().get("linkAbstractorExternalAsset", String.class));
+        } else if ("search".equals(model.getDocumentType())) {
+            model.setDocumentUrl(resource.getValueMap().get("linkAbstractorDAMAsset", String.class));
+        }
 
         return (AdapterType)model;
     }
