@@ -28,9 +28,9 @@ import java.util.TreeMap;
 @Properties({
         @Property(name = PUMService.SERVICE_TYPE, value = "base", propertyPrivate = true)
 })
-public class PUMServiceImpl implements PUMService {
+public class PUMServiceBaseImpl implements PUMService {
 
-    private static final Logger log = LoggerFactory.getLogger(PUMServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(PUMServiceBaseImpl.class);
 
     private TreeMap<String, PUMPlugin> plugins = new TreeMap<>();
 
@@ -77,55 +77,7 @@ public class PUMServiceImpl implements PUMService {
     }
 
     @Override
-    public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl) {
-        if (StringUtils.isEmpty(linkUrl)) {
-            log.debug("Link URI invalid. Returning null");
-            return null;
-        }
-
-        PUMInput input = new PUMInput();
-
-        String resourcePath = getPumInputResourcePath(request, linkUrl);
-        Resource content = getPumInputResource(request, resourcePath);
-
-        // Invoke plugin's adapters to populate data object
-        if (content != null) {
-            for (PUMPlugin plugin : plugins.values()) {
-                PUMModel pluginModel = plugin.createModel(content);
-                if (pluginModel != null) {
-                    input.put(plugin.getClass().getName(), pluginModel);
-                }
-            }
-        }
-
-        return input;
-    }
-
-    @Override
-    public void initPumPluginChain() {
-        for (PUMPlugin plugin : plugins.values()) {
-            log.debug("Initializing PUM plugin {}", plugin.getClass().getName());
-            plugin.init();
-        }
-    }
-
-    @Override
-    public void executePumPluginChain(PUMInput input, PUMOutput output) {
-        for (PUMPlugin plugin : plugins.values()) {
-            log.debug("Executing PUM plugin {}", plugin.getClass().getName());
-            plugin.execute(input, output);
-        }
-    }
-
-    @Override
-    public void terminatePumPluginChain() {
-        for (PUMPlugin plugin : plugins.values()) {
-            log.debug("Terminating PUM plugin {}", plugin.getClass().getName());
-            plugin.terminate();
-        }
-    }
-
-    private String getPumInputResourcePath(SlingHttpServletRequest request, String linkUrl) {
+    public String getPumResourcePath(SlingHttpServletRequest request, String linkUrl) {
         String resourcePath;
 
         if (linkUrl.startsWith("/content")) {
@@ -166,7 +118,8 @@ public class PUMServiceImpl implements PUMService {
         return resourcePath;
     }
 
-    private Resource getPumInputResource(SlingHttpServletRequest request, String resourcePath) {
+    @Override
+    public Resource getPumResource(SlingHttpServletRequest request, String resourcePath) {
         ResourceResolver resourceResolver = request.getResourceResolver();
 
         if (StringUtils.isNotEmpty(resourcePath)) {
@@ -189,6 +142,47 @@ public class PUMServiceImpl implements PUMService {
 
         log.debug("Invalid resourcePath {}. Returning null", resourcePath);
         return null;
+    }
+
+    @Override
+    public PUMInput getPumInput(Resource resource) {
+        PUMInput input = new PUMInput();
+
+        // Invoke plugin's adapters to populate data object
+        if (resource != null) {
+            for (PUMPlugin plugin : plugins.values()) {
+                PUMModel pluginModel = plugin.createModel(resource);
+                if (pluginModel != null) {
+                    input.put(plugin.getClass().getName(), pluginModel);
+                }
+            }
+        }
+
+        return input;
+    }
+
+    @Override
+    public void initPumPluginChain() {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Initializing PUM plugin {}", plugin.getClass().getName());
+            plugin.init();
+        }
+    }
+
+    @Override
+    public void executePumPluginChain(PUMInput input, PUMOutput output) {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Executing PUM plugin {}", plugin.getClass().getName());
+            plugin.execute(input, output);
+        }
+    }
+
+    @Override
+    public void terminatePumPluginChain() {
+        for (PUMPlugin plugin : plugins.values()) {
+            log.debug("Terminating PUM plugin {}", plugin.getClass().getName());
+            plugin.terminate();
+        }
     }
 
     private String getBaseUrl(SlingHttpServletRequest request) {

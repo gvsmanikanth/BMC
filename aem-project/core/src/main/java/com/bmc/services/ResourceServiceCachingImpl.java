@@ -64,6 +64,11 @@ public class ResourceServiceCachingImpl implements ResourceService {
     @Override
     public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
         try {
+            if (propertyName == null || propertyValue == null || resolver == null) {
+                log.debug("Invalid input {} {} {}. Returning null", propertyName, propertyValue, resolver);
+                return null;
+            }
+
             String cacheKey = propertyName + propertyValue;
             Optional<String> cachedTitle = titleCache.get(cacheKey,
                     () -> Optional.fromNullable(baseImpl.getTitle(propertyName, propertyValue, resolver)));

@@ -7,6 +7,7 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class PUMServiceCachingImpl implements PUMService {
 
     private static final Logger log = LoggerFactory.getLogger(PUMServiceCachingImpl.class);
 
-    private Cache<String, Optional<PUMInput>> contentResourceCache;
+    private Cache<String, Optional<Resource>> contentResourceCache;
 
     @Property(label = "Content Resource Cache Size", longValue = 5000,
             description = "Content resource maximum cache item count")
@@ -65,16 +66,30 @@ public class PUMServiceCachingImpl implements PUMService {
     }
 
     @Override
-    public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl) {
+    public String getPumResourcePath(SlingHttpServletRequest request, String linkUrl) {
+        return baseImpl.getPumResourcePath(request, linkUrl);
+    }
+
+    @Override
+    public Resource getPumResource(SlingHttpServletRequest request, String resourcePath) {
         try {
-            String cacheKey = request.getRequestURL().toString() + linkUrl;
-            Optional<PUMInput> cachedContentResouce = contentResourceCache.get(cacheKey,
-                    () -> Optional.fromNullable(baseImpl.getPumInput(request, linkUrl)));
+            if (request == null || resourcePath == null) {
+                log.debug("Invalid input {} {}. Returning null", request, resourcePath);
+                return null;
+            }
+
+            Optional<Resource> cachedContentResouce = contentResourceCache.get(resourcePath,
+                    () -> Optional.fromNullable(baseImpl.getPumResource(request, resourcePath)));
             return cachedContentResouce.isPresent() ? cachedContentResouce.get() : null;
         } catch (ExecutionException e) {
             log.error("An error occurred. Fetching content resource from JCR", e);
-            return baseImpl.getPumInput(request, linkUrl);
+            return baseImpl.getPumResource(request, resourcePath);
         }
+    }
+
+    @Override
+    public PUMInput getPumInput(Resource resource) {
+        return baseImpl.getPumInput(resource);
     }
 
     @Override
@@ -91,7 +106,7 @@ public class PUMServiceCachingImpl implements PUMService {
     public void terminatePumPluginChain() {
         baseImpl.terminatePumPluginChain();
         if (contentResourceCacheStatsEnabled) {
-            String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats(contentResourceCache);
+            String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats("Content Resource Cache", contentResourceCache);
             log.info("Content resource cache statistics:\n" + contentResourceCacheStats);
         }
     }

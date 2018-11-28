@@ -50,7 +50,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     /**
      * TODO: Documentation
-     * TODO: Cache (Key: propertyName + propertyValue, Value: title)
      * @param propertyName
      * @param propertyValue
      * @param resolver
