@@ -5,7 +5,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.rewriter.ProcessingComponentConfiguration;
 import org.apache.sling.rewriter.ProcessingContext;
 import org.apache.sling.rewriter.Transformer;
@@ -89,8 +88,7 @@ public class PUMTransformerFactory implements TransformerFactory {
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
                 String resourcePath = pumService.getPumResourcePath(request, href);
-                Resource resource = pumService.getPumResource(request, resourcePath);
-                PUMInput input = pumService.getPumInput(resource);
+                PUMInput input = pumService.getPumInput(request, resourcePath);
                 if (input == null) {
                     log.debug("No PUM input data found for {}. Leaving link untouched", href);
                 } else {

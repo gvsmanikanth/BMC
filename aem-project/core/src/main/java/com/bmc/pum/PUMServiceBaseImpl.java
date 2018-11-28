@@ -119,42 +119,36 @@ public class PUMServiceBaseImpl implements PUMService {
     }
 
     @Override
-    public Resource getPumResource(SlingHttpServletRequest request, String resourcePath) {
-        ResourceResolver resourceResolver = request.getResourceResolver();
-
-        if (StringUtils.isNotEmpty(resourcePath)) {
-            // Make sure resource exists
-            Resource resource = resourceResolver.resolve(resourcePath);
-            if (ResourceUtil.isNonExistingResource(resource)) {
-                log.debug("No resource found at {}. Returning null", resourcePath);
-                return null;
-            }
-
-            // Make sure content exists
-            Resource content = resource.getChild(JcrConstants.JCR_CONTENT);
-            if (ResourceUtil.isNonExistingResource(content)) {
-                log.debug("No content found at {}. Returning null", resourcePath + "/" + JcrConstants.JCR_CONTENT);
-                return null;
-            }
-
-            return content;
+    public PUMInput getPumInput(SlingHttpServletRequest request, String resourcePath) {
+        if (request == null || StringUtils.isEmpty(resourcePath)) {
+            log.debug("Invalid input {} {}. Returning null", request, resourcePath);
+            return null;
         }
 
-        log.debug("Invalid resourcePath {}. Returning null", resourcePath);
-        return null;
-    }
+        ResourceResolver resourceResolver = request.getResourceResolver();
 
-    @Override
-    public PUMInput getPumInput(Resource resource) {
+        // Make sure resource exists. Appending "/jcr:content" directly will not work in cases where path contains
+        // an extension (e.g. ".html")
+        Resource resource = resourceResolver.resolve(resourcePath);
+        if (ResourceUtil.isNonExistingResource(resource)) {
+            log.debug("No resource found at {}. Returning null", resourcePath);
+            return null;
+        }
+
+        // Make sure content exists
+        Resource content = resource.getChild(JcrConstants.JCR_CONTENT);
+        if (content == null || ResourceUtil.isNonExistingResource(content)) {
+            log.debug("No content found at {}. Returning null", resourcePath + "/" + JcrConstants.JCR_CONTENT);
+            return null;
+        }
+
         PUMInput input = new PUMInput();
 
         // Invoke plugin's adapters to populate data object
-        if (resource != null) {
-            for (PUMPlugin plugin : plugins.values()) {
-                PUMModel pluginModel = plugin.createModel(resource);
-                if (pluginModel != null) {
-                    input.put(plugin.getClass().getName(), pluginModel);
-                }
+        for (PUMPlugin plugin : plugins.values()) {
+            PUMModel pluginModel = plugin.createModel(content);
+            if (pluginModel != null) {
+                input.put(plugin.getClass().getName(), pluginModel);
             }
         }
 
