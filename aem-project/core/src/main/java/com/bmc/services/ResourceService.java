@@ -5,7 +5,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 /**
  * TODO: Documentation
  */
-public interface ResourceService extends ConfigurableService{
+public interface ResourceService {
 
     String SERVICE_TYPE = "serviceType";
 
