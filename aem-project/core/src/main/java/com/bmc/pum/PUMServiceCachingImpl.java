@@ -7,10 +7,12 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -45,14 +47,23 @@ public class PUMServiceCachingImpl implements PUMService {
     public static final String CONTENT_RESOURCE_CACHE_STATS_ENABLED = "content.resource.cache.stats.enabled";
     private boolean contentResourceCacheStatsEnabled;
 
+    @Property(label = "Content Resource Cache Flush", boolValue = false,
+            description = "Content resource cache flush")
+    public static final String CONTENT_RESOURCE_CACHE_FLUSH = "content.resource.cache.flush";
+    private boolean contentResourceCacheFlush;
+
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private PUMService baseImpl;
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
 
     @Activate
     public void activate(ComponentContext context) {
         this.contentResourceCacheSize = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_SIZE), 5000);
         this.contentResourceCacheTtl = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_TTL), 300);
         this.contentResourceCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(CONTENT_RESOURCE_CACHE_STATS_ENABLED), false);
+        this.contentResourceCacheFlush = PropertiesUtil.toBoolean(context.getProperties().get(CONTENT_RESOURCE_CACHE_FLUSH), false);
 
         CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(contentResourceCacheSize)
@@ -62,18 +73,35 @@ public class PUMServiceCachingImpl implements PUMService {
         }
 
         contentResourceCache = cacheBuilder.build();
+
+        if (contentResourceCacheFlush) {
+            try {
+                setConfigProperty(PUMServiceCachingImpl.class.getName(), CONTENT_RESOURCE_CACHE_FLUSH, false);
+            } catch (IOException e) {
+                log.error("Failed to set property {} to {}", CONTENT_RESOURCE_CACHE_FLUSH, false);
+            }
+        }
     }
 
     @Override
-    public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl) {
+    public String getPumResourcePath(SlingHttpServletRequest request, String linkUrl) {
+        return baseImpl.getPumResourcePath(request, linkUrl);
+    }
+
+    @Override
+    public PUMInput getPumInput(SlingHttpServletRequest request, String resourcePath) {
         try {
-            String cacheKey = request.getRequestURL().toString() + linkUrl;
-            Optional<PUMInput> cachedContentResouce = contentResourceCache.get(cacheKey,
-                    () -> Optional.fromNullable(baseImpl.getPumInput(request, linkUrl)));
-            return cachedContentResouce.isPresent() ? cachedContentResouce.get() : null;
+            if (request == null || resourcePath == null) {
+                log.debug("Invalid input {} {}. Returning null", request, resourcePath);
+                return null;
+            }
+
+            Optional<PUMInput> cachedPumInput = contentResourceCache.get(resourcePath,
+                    () -> Optional.fromNullable(baseImpl.getPumInput(request, resourcePath)));
+            return cachedPumInput.isPresent() ? cachedPumInput.get() : null;
         } catch (ExecutionException e) {
             log.error("An error occurred. Fetching content resource from JCR", e);
-            return baseImpl.getPumInput(request, linkUrl);
+            return baseImpl.getPumInput(request, resourcePath);
         }
     }
 
@@ -91,9 +119,13 @@ public class PUMServiceCachingImpl implements PUMService {
     public void terminatePumPluginChain() {
         baseImpl.terminatePumPluginChain();
         if (contentResourceCacheStatsEnabled) {
-            String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats(contentResourceCache);
-            log.error("Content resource cache statistics:\n" + contentResourceCacheStats);
+            String contentResourceCacheStats = LoggingHelper.getFormattedCacheStats("Content Resource Cache", contentResourceCache);
+            log.info("Content resource cache statistics:\n" + contentResourceCacheStats);
         }
     }
 
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
+    }
 }

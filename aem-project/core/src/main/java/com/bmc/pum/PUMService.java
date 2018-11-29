@@ -16,7 +16,15 @@ public interface PUMService extends ConfigurableService {
      * @param linkUrl
      * @return
      */
-    public PUMInput getPumInput(SlingHttpServletRequest request, String linkUrl);
+    public String getPumResourcePath(SlingHttpServletRequest request, String linkUrl);
+
+    /**
+     * TODO: Documentation
+     * @param request
+     * @param resourcePath
+     * @return
+     */
+    public PUMInput getPumInput(SlingHttpServletRequest request, String resourcePath);
 
     /**
      * TODO: Documentation

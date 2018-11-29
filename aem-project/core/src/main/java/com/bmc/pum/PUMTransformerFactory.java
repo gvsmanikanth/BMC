@@ -87,7 +87,8 @@ public class PUMTransformerFactory implements TransformerFactory {
             // Only process if element is anchor with valid href attribute
             if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
                 // Read PUM metadata from JCR
-                PUMInput input = pumService.getPumInput(request, href);
+                String resourcePath = pumService.getPumResourcePath(request, href);
+                PUMInput input = pumService.getPumInput(request, resourcePath);
                 if (input == null) {
                     log.debug("No PUM input data found for {}. Leaving link untouched", href);
                 } else {
