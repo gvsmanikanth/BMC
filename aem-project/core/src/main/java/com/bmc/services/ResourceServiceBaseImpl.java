@@ -1,6 +1,5 @@
 package com.bmc.services;
 
-import com.day.cq.commons.jcr.JcrConstants;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.resource.Resource;
@@ -27,19 +26,20 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "bmcdataservice";
 
-    @Property(description = "Mapping of property names to their corresponding JCR paths",
-            value = { "product_interest, /content/bmc/resources/product-interests",
-            "product_line, /content/bmc/resources/product-lines",
-            "topics, /content/bmc/resources/topic",
-            "ic-content-type, /content/bmc/resources/intelligent-content-types",
-            "ic-topics, /content/bmc/resources/intelligent-content-topics",
-            "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage",
-            "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona",
-            "ic-target-industry, /content/bmc/resources/intelligent-content-target-industry",
-            "ic-company-size, /content/bmc/resources/intelligent-content-company-size"
+    @Property(description = "Mapping of property names to their corresponding JCR paths and JCR property names",
+            value = { "product_interest, /content/bmc/resources/product-interests, jcr:title",
+            "product_line, /content/bmc/resources/product-lines, text",
+            "topics, /content/bmc/resources/topic, jcr:title",
+            "ic-content-type, /content/bmc/resources/intelligent-content-types, jcr:title",
+            "ic-topics, /content/bmc/resources/intelligent-content-topics, jcr:title",
+            "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, jcr:title",
+            "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona, jcr:title",
+            "ic-target-industry, /content/bmc/resources/intelligent-content-target-industry, jcr:title",
+            "ic-company-size, /content/bmc/resources/intelligent-content-company-size, jcr:title"
     })
     static final String PROPERTY_MAPPING = "property.mapping";
-    private Map<String, String> propertyMapping;
+    private Map<String, String> propertyPathMapping;
+    private Map<String, String> propertyNameMapping;
 
     @Reference
     private ResourceResolverFactory resolverFactory;
@@ -49,7 +49,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     @Activate
     protected void activate(final Map<String, Object> props) {
-        this.propertyMapping = toMap((String[]) props.get(PROPERTY_MAPPING));
+        this.propertyPathMapping = toMap((String[]) props.get(PROPERTY_MAPPING));
+        this.propertyNameMapping = toMap((String[]) props.get(PROPERTY_MAPPING), 0, 2);
     }
 
     /**
@@ -60,7 +61,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
      * @return
      */
     public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
-        if (!propertyMapping.containsKey(propertyName)) {
+        if (!propertyPathMapping.containsKey(propertyName) || !propertyNameMapping.containsKey(propertyName)) {
             log.debug("No mapping exists for property name {}", propertyName);
             return propertyValue;
         }
@@ -69,11 +70,12 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             return propertyValue;
         }
 
-        String path = propertyMapping.get(propertyName) + "/" + propertyValue;
+        String path = propertyPathMapping.get(propertyName) + "/" + propertyValue;
+        String name = propertyNameMapping.get(propertyName);
         Resource resource = resolver.resolve(path);
         return ResourceUtil.isNonExistingResource(resource)
                 ? propertyValue
-                : (String)resource.getValueMap().getOrDefault(JcrConstants.JCR_TITLE, propertyValue);
+                : (String)resource.getValueMap().getOrDefault(name, propertyValue);
     }
 
     @Override
