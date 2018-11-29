@@ -7,10 +7,12 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -45,14 +47,23 @@ public class PUMServiceCachingImpl implements PUMService {
     public static final String CONTENT_RESOURCE_CACHE_STATS_ENABLED = "content.resource.cache.stats.enabled";
     private boolean contentResourceCacheStatsEnabled;
 
+    @Property(label = "Content Resource Cache Flush", boolValue = false,
+            description = "Content resource cache flush")
+    public static final String CONTENT_RESOURCE_CACHE_FLUSH = "content.resource.cache.flush";
+    private boolean contentResourceCacheFlush;
+
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private PUMService baseImpl;
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
 
     @Activate
     public void activate(ComponentContext context) {
         this.contentResourceCacheSize = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_SIZE), 5000);
         this.contentResourceCacheTtl = PropertiesUtil.toLong(context.getProperties().get(CONTENT_RESOURCE_CACHE_TTL), 300);
         this.contentResourceCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(CONTENT_RESOURCE_CACHE_STATS_ENABLED), false);
+        this.contentResourceCacheFlush = PropertiesUtil.toBoolean(context.getProperties().get(CONTENT_RESOURCE_CACHE_FLUSH), false);
 
         CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(contentResourceCacheSize)
@@ -62,6 +73,14 @@ public class PUMServiceCachingImpl implements PUMService {
         }
 
         contentResourceCache = cacheBuilder.build();
+
+        if (contentResourceCacheFlush) {
+            try {
+                setConfigProperty(PUMServiceCachingImpl.class.getName(), CONTENT_RESOURCE_CACHE_FLUSH, false);
+            } catch (IOException e) {
+                log.error("Failed to set property {} to {}", CONTENT_RESOURCE_CACHE_FLUSH, false);
+            }
+        }
     }
 
     @Override
@@ -105,4 +124,8 @@ public class PUMServiceCachingImpl implements PUMService {
         }
     }
 
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
+    }
 }

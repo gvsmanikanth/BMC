@@ -10,6 +10,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -53,6 +54,9 @@ public class PUMServiceBaseImpl implements PUMService {
                     "www.bmcsoftware.uk, /content/bmc/uk/en"})
     static final String DOMAIN_MAPPING = "pum.domain.mapping";
     private Map domainMapping;
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
 
     @Activate
     protected void activate(final Map<String, Object> props) {
@@ -189,4 +193,8 @@ public class PUMServiceBaseImpl implements PUMService {
         return requestUrl.substring(0, requestUrl.length() - requestPathInfo.length()) + "/";
     }
 
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
+    }
 }
