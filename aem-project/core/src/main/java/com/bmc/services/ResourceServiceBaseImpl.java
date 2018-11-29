@@ -7,6 +7,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ResourceUtil;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,9 +27,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "bmcdataservice";
 
-    @Reference
-    private ResourceResolverFactory resolverFactory;
-
     @Property(description = "Mapping of property names to their corresponding JCR paths",
             value = { "product_interest, /content/bmc/resources/product-interests",
             "product_line, /content/bmc/resources/product-lines",
@@ -43,6 +41,12 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     static final String PROPERTY_MAPPING = "property.mapping";
     private Map<String, String> propertyMapping;
 
+    @Reference
+    private ResourceResolverFactory resolverFactory;
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
+
     @Activate
     protected void activate(final Map<String, Object> props) {
         this.propertyMapping = toMap((String[]) props.get(PROPERTY_MAPPING));
@@ -50,7 +54,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     /**
      * TODO: Documentation
-     * TODO: Cache (Key: propertyName + propertyValue, Value: title)
      * @param propertyName
      * @param propertyValue
      * @param resolver
@@ -73,4 +76,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                 : (String)resource.getValueMap().getOrDefault(JcrConstants.JCR_TITLE, propertyValue);
     }
 
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
+    }
 }
