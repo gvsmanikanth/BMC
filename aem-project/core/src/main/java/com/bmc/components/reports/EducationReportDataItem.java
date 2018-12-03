@@ -16,17 +16,17 @@ public class EducationReportDataItem {
 	private String Translation_Status;
 	private String media_URL;
 	private String Last_modified_Date;
-	private String education_broad_role;
 	private String education_broad_roles;
 	private String education_products;
 	private String education_specific_types;
 	private String education_version_numbers;
-	private String eduction_specific_roles;
+	private String education_specific_roles;
 	private String ic_app_inclusion;
 	private String ic_weighting;
 	private String course_Delivery;
 	private String jcr_path;
-	
+	private String course_Type;
+	private String course_Duration;
 	
 	
 	public String getJcr_path() {
@@ -61,17 +61,8 @@ public class EducationReportDataItem {
 	public void setCourse_Duration(String course_Duration) {
 		this.course_Duration = course_Duration;
 	}
-	private String course_Type;
-	private String course_Duration;
 	
 	
-	
-	public String getEduction_specific_roles() {
-		return eduction_specific_roles;
-	}
-	public void setEduction_specific_roles(String eduction_specific_roles) {
-		this.eduction_specific_roles = eduction_specific_roles;
-	}
 	public String getIc_app_inclusion() {
 		return ic_app_inclusion;
 	}
@@ -187,13 +178,6 @@ public class EducationReportDataItem {
 	public void setEducation_version_numbers(String education_version_numbers) {
 		this.education_version_numbers = education_version_numbers;
 	}
-	
-	public String getEducation_broad_role() {
-		return education_broad_role;
-	}
-	public void setEducation_broad_role(String education_broad_role) {
-		this.education_broad_role = education_broad_role;
-	}
 	public String getEducation_broad_roles() {
 		return education_broad_roles;
 	}
@@ -205,6 +189,12 @@ public class EducationReportDataItem {
 	}
 	public void setProduct(String product) {
 		Product = product;
+	}
+	public String getEducation_specific_roles() {
+		return education_specific_roles;
+	}
+	public void setEducation_specific_roles(String education_specific_roles) {
+		this.education_specific_roles = education_specific_roles;
 	}
 	
 	

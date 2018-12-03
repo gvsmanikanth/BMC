@@ -36,6 +36,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bmc.components.reports.FormsReportDataItem;
+import com.bmc.components.utils.ReportsMetaDataProvider;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -76,7 +77,8 @@ public class FormsReportCSVGenService {
 	
 	private String DAM_LOCATION = "/content/dam/bmc/reports/";
 	
-   
+	private ReportsMetaDataProvider metaDataProvider;
+	
     private static  ArrayList<FormsReportDataItem> list = new ArrayList<FormsReportDataItem>();
        
 	
@@ -262,7 +264,7 @@ public class FormsReportCSVGenService {
 										        		String content_prefs  = prop.getValue().getString();
 										        		//logger.info("content_prefs : "+content_prefs);			
 														//Adding the property to the POJO object
-										        	   formDataitem.setForm_Content_Preferences(content_prefs);
+										        	   formDataitem.setForm_Content_Preferences(metaDataProvider.getContent_Prefs_Value(content_prefs, session));
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("cq:LastReplicationAction"))
 										        	{
@@ -310,7 +312,7 @@ public class FormsReportCSVGenService {
 										        		String product_interest  = prop.getValue().getString();
 										        		//logger.info("product interest : "+product_interest);			
 														//Adding the property to the POJO object
-										        	   formDataitem.setProduct_Interest(product_interest);
+										        	   formDataitem.setProduct_Interest(metaDataProvider.getProductInterestValue(product_interest, session));
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("product_line"))
 										        	{
@@ -318,7 +320,7 @@ public class FormsReportCSVGenService {
 										        		String product_line  = prop.getValue().getString();
 										        		//logger.info("product Line : "+product_line);			
 														//Adding the property to the POJO object
-										        	   formDataitem.setProduct_Line(product_line);
+										        	   formDataitem.setProduct_Line(metaDataProvider.getProductLineValue(product_line, session));
 										        	}
 										        	else if(prop.getName().equalsIgnoreCase("cq:template"))
 										        	{
