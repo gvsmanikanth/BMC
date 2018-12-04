@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
@@ -93,7 +94,7 @@ public class CategoriesReportCSVGenService {
     
     private static ArrayList<CustomersReportDataItem> list4 = new ArrayList<CustomersReportDataItem>();
        	
-    private String[] TableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Industry","Status",
+    private String[] TableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Industry","Migration Raw URL",
     		"Short Description","Meta Description","Ic app inclusion","Ic_weighting","Creation Date"};
 	
     private String[] TableNames2 = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Education specific types","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
@@ -593,8 +594,8 @@ public class CategoriesReportCSVGenService {
 										            	 reportDataitem.setJcr_path(metadataProvider.getJCR_Path(formDataNode));						            	 
 										            	 reportDataitem.setUrl_resource_name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(formDataNode)));
 										            	 reportDataitem.setTopics(getPropertyValues(formDataNode, "topics","jcr:title","topic",session));
-										            	 reportDataitem.setProduct_interest(getPropertyValues(formDataNode, "product_interest","jcr:title","product_interests",session));
-										            	 reportDataitem.setProduct_Line(getPropertyValues(formDataNode, "product_line","text","product_line",session));
+										            	 reportDataitem.setProduct_interest(getPropertyValues(formDataNode, "product_interest","jcr:title","product-interests",session));
+										            	 reportDataitem.setProduct_Line(getPropertyValues(formDataNode, "product_line","text","product-lines",session));
 										            	 reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "pageTitle","jcr:title","pageTitle",session));
 										            	 reportDataitem.setMeta_Description(getPropertyValues(formDataNode, "meta_description","jcr:title","meta_description", session));
 										            	 reportDataitem.setShort_Description(getPropertyValues(formDataNode, "short_description","jcr:title","short_description", session));
@@ -604,6 +605,7 @@ public class CategoriesReportCSVGenService {
 										            	 reportDataitem.setIc_app_inclusion(getPropertyValues(formDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
 										            	 reportDataitem.setIc_weighting(getPropertyValues(formDataNode, "ic-weighting","jcr:title","ic-weighting", session));
 										            	 reportDataitem.setCreation_Date(getPropertyValues(formDataNode, "cq:lastReplicated", "jcr:title","cq:lastReplicated",session));
+										            	 reportDataitem.setStatus(getPropertyValues(formDataNode, "migration_raw_url", "jcr:title","cq:lastReplicated",session));
 										            	 logger.info("List Size of forms"+list.size());
 										            	 list.add(reportDataitem);	
 							            		 	}
@@ -956,8 +958,10 @@ public class CategoriesReportCSVGenService {
 			return  date.replace(" ", "_"); //2016/11/16 12:08:43
 		 }	
 	 
-	 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException {
-		    if (node.hasProperty(propertyName)) {
+	 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException ,PathNotFoundException{
+		  
+			   if (node.hasProperty(propertyName)) {
+		   
 		        Property prop = node.getProperty(propertyName);
 		        Value[] values;
 		        List<String> propVals = new ArrayList<>();
@@ -969,9 +973,18 @@ public class CategoriesReportCSVGenService {
 		            	propVals.add(v.getString());
 	                }
 		        
-		            for(String v : propVals) {		            	
-		    			 v = session.getNode("/content/bmc/resources/"+resourceName+"/" + v.toString()).getProperty(propertyValue).getString();		            	
-		    			 v = v.replace(" ", "_").toLowerCase();
+		            for(String v : propVals) {
+		            	if(stringContainsNumber(v)){
+		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
+		            	try
+		            	{
+		    			 v = session.getNode(nodeName).getProperty(propertyValue).getString();
+		            	}catch(PathNotFoundException pn)
+		            	{
+		            		v = "";
+		            	}
+		            	}else
+		            	{ v = v.toString();}
 		    			 if(prop.isMultiple()){							        				 
 		            		  updatedPropVals.add(v);
 		            	  }
@@ -980,40 +993,31 @@ public class CategoriesReportCSVGenService {
 		         else {
 		            values = new Value[1];
 		            values[0] = prop.getValue();
+		            if((propertyName.equals("product_interest") || propertyName.equals("product_line") || propertyName.equals("topics"))&&(stringContainsNumber(values[0].toString())))
+		            {
+		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
+		            	String nodeValue = null;
+		            	try
+		            	{
+		            	nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
+		            	}catch(PathNotFoundException ex){
+		            		nodeValue = "";
+		            	}		            	
+		            	updatedPropVals.add(nodeValue);
+		            }else{
 		            updatedPropVals.add(prop.getValue().toString());
+		            }
 		        }
 		       
 		        return (String.join(",", updatedPropVals));
 		    }
 
-		    return new Value[0].toString();
+		    return "";
+		    
 		}
 	 
-	 private String getPropertyMetaDataValues(String propertyName,String propertyValue,Session session) throws ValueFormatException, PathNotFoundException, RepositoryException
+	 public boolean stringContainsNumber( String s )
 	 {
-		 if ((propertyName.equals("product_line")) || (propertyName.equals("content-preferences")))
-		 {
-			 String v = session.getNode("/content/bmc/resources/"+propertyName+"/" + propertyValue).getProperty("text").getString();
-			 v = v.replace(" ", "_");		 
-			 return v;
-		 }
-		 else if (propertyName.equals("product_interest"))
-		 {
-			 String v = session.getNode("/content/bmc/resources/product-interests/" + propertyValue).getProperty("jcr:title").getString();
-			 v = v.replace(" ", "_");		 
-			 return v;
-		 }
-		 else if (propertyName.equals("topics"))
-		 {
-			 String v = session.getNode("/content/bmc/resources/topic/" + propertyValue).getProperty("jcr:title").getString();
-			 v = v.replace(" ", "_");		 
-			 return v;
-		 }
-		 else
-		 {
-			 String v = session.getNode("/content/bmc/resources/"+propertyName+"/" + propertyValue).getProperty("jcr:title").getString();
-			 v = v.replace(" ", "_");		 
-			 return v;
-		 }
+	     return Pattern.compile( "[0-9]" ).matcher( s ).find();
 	 }
 }
