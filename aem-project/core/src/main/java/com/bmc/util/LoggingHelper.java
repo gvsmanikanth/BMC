@@ -13,11 +13,11 @@ public interface LoggingHelper {
 
     DecimalFormat df2 = new DecimalFormat("0.00");
 
-    static String getFormattedCacheStats(String cacheName, Cache cache) {
+    static String getFormattedCacheStats(Cache cache) {
         CacheStats cacheStats = cache.stats();
         return String.format(
                 "*** ********************\n" +
-                "*** %s\n" +
+                "*** Cache Stats\n" +
                 "*** ********************\n" +
                 "*** Size: %d\n" +
                 "*** Hit Count/Rate: %d / %s\n" +
@@ -26,7 +26,7 @@ public interface LoggingHelper {
                 "*** Load Count: %d\n" +
                 "*** Avg. Load Penalty: %s milliseconds\n" +
                 "*** ********************",
-                cacheName, cache.size(), cacheStats.hitCount(), df2.format(cacheStats.hitRate()),
+                cache.size(), cacheStats.hitCount(), df2.format(cacheStats.hitRate()),
                 cacheStats.missCount(), df2.format(cacheStats.missRate()), cacheStats.requestCount(),
                 cacheStats.loadCount(), df2.format(cacheStats.averageLoadPenalty() / 1000000));
     }

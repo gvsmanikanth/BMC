@@ -32,12 +32,9 @@ public class ExternalLinkRewriterPlugin implements PUMPlugin<ExternalLinkRewrite
 
         ExternalLinkRewriterModel model = getModel(input);
 
-        if (model != null) {
-            if (model.isExternalLink() && StringUtils.isNotEmpty(model.getExternalUrl())) {
-                addOrUpdateAttribute(output.getLinkAttributes(), "href", model.getExternalUrl());
-            }
-            if (model.isExternalDocument() && StringUtils.isNotEmpty(model.getDocumentUrl())) {
-                addOrUpdateAttribute(output.getLinkAttributes(), "href", model.getDocumentUrl());
+        if (model != null && model.isExternalLink()) {
+            if (StringUtils.isNotEmpty(model.getUrl())) {
+                addOrUpdateAttribute(output.getLinkAttributes(), "href", model.getUrl());
             }
             if (StringUtils.isNotEmpty(model.getTarget())) {
                 addOrUpdateAttribute(output.getLinkAttributes(), "target", model.getTarget());
