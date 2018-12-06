@@ -146,7 +146,7 @@ public class BmcEduMeta {
         try {
             if(pageNode.hasProperty(resName)) {
                 List<String> propVals = new ArrayList<>();
-                List<String> updatedPropVals = new ArrayList<>();
+                //List<String> updatedPropVals = new ArrayList<>();
                 Property metaProp = pageNode.getProperty(resName);
 
                 if(metaProp.isMultiple()){
@@ -159,131 +159,11 @@ public class BmcEduMeta {
                 }
 
                 for(String v : propVals) {
-                // Replace existing nodes with new values
-                if(resName.equals("education-broad-roles")){
-                	v=v.replace("Administrators","edu-broad-roles-128744427");
-                    v=v.replace("Developers","edu-broad-roles-124114936");
-                    v=v.replace("Operators","edu-broad-roles-173472440");
-                    v=v.replace("Users","edu-broad-roles-193340018");
-                }
-                if(resName.equals("education-specific-role")){
-                	v=v.replace("Administrators","edu-specific-roles-202904730");
-                    v=v.replace("Application_Administrators","edu-specific-roles-171671476");
-                    v=v.replace("Application_Owners","edu-specific-roles-193286937");
-                    v=v.replace("Architects","edu-specific-roles-221268940");
-                    v=v.replace("Automation_Leads","edu-specific-roles-135510914");
-                    v=v.replace("Business_Analysts","edu-specific-roles-191040302");
-                    v=v.replace("Capacity_Planners","edu-specific-roles-190858992");
-                    v=v.replace("Change_Agents","edu-specific-roles-178691158");
-                    v=v.replace("Change_Managers","edu-specific-roles-137400439");
-                    v=v.replace("Client_Users","edu-specific-roles-128971683");
-                    v=v.replace("Configuration_Managers","edu-specific-roles-217407208");
-                    v=v.replace("Data_Center_Leads","edu-specific-roles-163470675");
-                    v=v.replace("DevOps_Practitioners","edu-specific-roles-196277565");
-                    v=v.replace("Developers","edu-specific-roles-168406109");
-                    v=v.replace("Employees_and_Partners_Only","edu-specific-roles-188895775");
-                    v=v.replace("IT_Executives","edu-specific-roles-219656796");
-                    v=v.replace("IT_Implementers","edu-specific-roles-206503053");
-                    v=v.replace("IT_Managers","edu-specific-roles-169265857");
-                    v=v.replace("IT_Operations_Managers","edu-specific-roles-136770435");
-                    v=v.replace("Mainframe_Operators","edu-specific-roles-168279692");
-                    v=v.replace("Operators","edu-specific-roles-165908436");
-                    v=v.replace("Performance_Analysts","edu-specific-roles-222481216");
-                    v=v.replace("Process_Designers","edu-specific-roles-124325248");
-                    v=v.replace("Process_Owners","edu-specific-roles-141075308");
-                    v=v.replace("Project_Managers","edu-specific-roles-131724789");
-                    v=v.replace("Schedulers","edu-specific-roles-196385337");
-                    v=v.replace("Security_Personnel","edu-specific-roles-136582078");
-                    v=v.replace("Service_Delivery_Professionals","edu-specific-roles-128480810");
-                    v=v.replace("Staff_Users","edu-specific-roles-191047726");
-                    v=v.replace("Stakeholders","edu-specific-roles-156905186");
-                    v=v.replace("Storage_Managers","edu-specific-roles-198378766");
-                    v=v.replace("System_Programmers","edu-specific-roles-217272105");
-                    v=v.replace("Users","edu-specific-roles-132076472");
-                }
-                	 v=v.replace("Self Paced","course-delivery-133337271");
-                     v=v.replace("Assisted Self-Paced","course-delivery-126590603");
-                     v=v.replace("Instructor Led","course-delivery-126292444");
-                     
-                     v=v.replace("Learning_Path","edu-specific-types-159150236");
-                     v=v.replace("Course","edu-specific-types-220818351");
-                     v=v.replace("Certification","edu-specific-types-177151087");
-                     
-                     v=v.replace("BMC_Atrium_CMDB","education-products-142854695");
-                     v=v.replace("BMC_Atrium_Orchestrator","education-products-189140656");
-                     v=v.replace("BladeLogic_Database_Automation","education-products-187351378");
-                     v=v.replace("BladeLogic_Network_Automation","education-products-117007007");
-                     v=v.replace("BladeLogic_Server_Automation","education-products-180838924");
-                     v=v.replace("BladeLogic_Threat_Director","education-products-175290979");
-                     v=v.replace("Client_Management","education-products-176265233");
-                     v=v.replace("Cloud_Lifecycle_Management","education-products-175672617");
-                     v=v.replace("Control-M","education-products-126375736");
-                     v=v.replace("Dashboards_and_Analytics","education-products-188549682");
-                     v=v.replace("DevOps","education-products-155430638");
-                     v=v.replace("Discovery_ADDM","education-products-177937656");
-                     v=v.replace("FootPrints_service_desk","education-products-176432861");
-                     v=v.replace("HR_Case_Management","education-products-107968425");
-                     v=v.replace("ITIL","education-products-189020579");
-                     v=v.replace("Innovation_Suite","education-products-112512823");
-                     v=v.replace("MyIT","education-products-143958364");
-                     v=v.replace("ProactiveNet","education-products-186068586");
-                     v=v.replace("Remedy_AR_System","education-products-195011486");
-                     v=v.replace("Remedy_ITSM","education-products-183047196");
-                     v=v.replace("Remedyforce","education-products-161725919");
-                     v=v.replace("Service_Level_Management","education-products-115258401");
-                     v=v.replace("Smart_IT","education-products-124016733");
-                     v=v.replace("Track-It","education-products-138131082");
-                     v=v.replace("TrueSight_App_Visibility_Manager","education-products-130779424");
-                     v=v.replace("TrueSight_Capacity_Optimization","education-products-122416938");
-                     v=v.replace("TrueSight_IT_Data_Analytics","education-products-120151154");
-                     v=v.replace("TrueSight_Infrastructure_Management","education-products-118396779");
-                     v=v.replace("TrueSight_Middleware_Monitoring","education-products-171789609");
-                     v=v.replace("TrueSight_Operations_Management","education-products-123342760");
-                   
-                     
-                     v=v.replace("x1.x","edu-version-numbers-186635808");
-                     v=v.replace("x2.x","edu-version-numbers-184339789");
-                     v=v.replace("x3.x","edu-version-numbers-191609406");
-                     v=v.replace("x4.x","edu-version-numbers-198246805");
-                     v=v.replace("x5.x","edu-version-numbers-196099662");
-                     v=v.replace("x6.x","edu-version-numbers-179890152");
-                     v=v.replace("x7.x","edu-version-numbers-217471601");
-                     v=v.replace("x8.x","edu-version-numbers-151683129");
-                     v=v.replace("x9.x","edu-version-numbers-218759021");
-                     v=v.replace("x10.x","edu-version-numbers-135026253");
-                     v=v.replace("x11.x","edu-version-numbers-201437068");
-                     v=v.replace("x12.x","edu-version-numbers-141329026");
-                     v=v.replace("x13.x","edu-version-numbers-197619941");
-                     v=v.replace("x14.x","edu-version-numbers-218606236");
-                     v=v.replace("x15.x","edu-version-numbers-200967387");
-                     v=v.replace("x16.x","edu-version-numbers-156203152");
-                     v=v.replace("x17.x","edu-version-numbers-166381638");
-                     v=v.replace("x18.x","edu-version-numbers-187632261");
-                     v=v.replace("x19.x","edu-version-numbers-204646652");
-                     v=v.replace("x20.x","edu-version-numbers-199791643");
-                     v=v.replace("x2014","edu-version-numbers-149651734");
-                     v=v.replace("x2015","edu-version-numbers-217461623");
-                     v=v.replace("x2016","edu-version-numbers-124641331");
-                     v=v.replace("x2017","edu-version-numbers-27046001");
-                     v=v.replace("x2018","edu-version-numbers-126100366");
-                     v=v.replace("x2019","edu-version-numbers-161707190");
-                     v=v.replace("x2020","edu-version-numbers-198345494");
-                     
-                	  if(metaProp.isMultiple()){
-                		  updatedPropVals.add(v);
-                	  }else{
-	                     pageNode.setProperty(resName,v);
-	                     session.save();
-                	  }
                 	String hashCode = v.replace(" ", "_").toLowerCase(); // Hashcode for filtering 
                     attrHolder.add(v.equals("Any") ? "0" : hashCode);
-                   
                 }
                
-                if(metaProp.isMultiple()){
-                	  pageNode.setProperty(resName,updatedPropVals.toArray(new String[updatedPropVals.size()]));
-                	  session.save();
-                }
+              
                 
             }
         } catch (RepositoryException e) {
