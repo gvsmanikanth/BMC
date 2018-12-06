@@ -75,7 +75,7 @@ public class PUMTransformerFactory implements TransformerFactory {
             this.millisStart = Calendar.getInstance().getTimeInMillis();
             log.info("Begin PUM processing");
             pumService.initPumPluginChain();
-            this.getContentHandler().startDocument();
+            super.startDocument();
         }
 
         @Override
@@ -98,7 +98,7 @@ public class PUMTransformerFactory implements TransformerFactory {
                 }
             }
 
-            this.getContentHandler().startElement(namespaceURI, localName, qName, output.getLinkAttributes());
+            super.startElement(namespaceURI, localName, qName, output.getLinkAttributes());
         }
 
         @Override
@@ -106,7 +106,7 @@ public class PUMTransformerFactory implements TransformerFactory {
             long millisEnd = Calendar.getInstance().getTimeInMillis();
             log.info("Finished PUM processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
             pumService.terminatePumPluginChain();
-            this.getContentHandler().endDocument();
+            super.endDocument();
         }
 
     }
