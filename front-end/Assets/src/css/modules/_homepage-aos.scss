@@ -338,13 +338,11 @@ img {
 				font-weight: 400;
 				
 				@include media(breakpointMedium){
-					width: 70%; 
 					font-size: 3rem;
 					line-height: 3rem;
 				}
 				@include media(breakpointLarge){
-					width: 45%; 
-					font-size: 3.5rem;
+					font-size: 4.2rem;
 					line-height: 3.5rem;
 				}
 				
@@ -355,16 +353,20 @@ img {
 			.h3 {
 				width: 100%;
 				font-size: 1.25rem;
-				line-height: 41px;
+				line-height: 30px;
 				font-weight: 400;
 				color: #fff;
 				padding-bottom: 1rem;
 				@include media(breakpointMedium){
-					width: 60%; 
+					width: 60%;
+					font-size: 1.6rem;
+					line-height: 35px;
 					padding-bottom: 2rem;
 				}
 				@include media(breakpointLarge){
-					width: 100%;
+					width: 38%;
+					font-size: 2rem;
+					line-height: 41px;
 					padding-bottom: 2rem;
 				}
 				
