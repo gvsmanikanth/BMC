@@ -60,6 +60,7 @@ public class PUMTransformerFactory implements TransformerFactory {
 
         private SlingHttpServletRequest request;
 
+        private boolean isValidPumRequest;
         private long millisStart;
         private int numLinksTotal;
         private int numLinksProcessed;
@@ -72,29 +73,38 @@ public class PUMTransformerFactory implements TransformerFactory {
 
         @Override
         public void startDocument() throws SAXException {
-            this.millisStart = Calendar.getInstance().getTimeInMillis();
-            log.info("Begin PUM processing");
-            pumService.initPumPluginChain();
-            super.startDocument();
+            // Only process if request path = "/content/bmc/" and request extension = "html"
+            this.isValidPumRequest = request.getResource().getPath().startsWith("/content/bmc/")
+                    && "html".equals(request.getRequestPathInfo().getExtension());
+
+            if (isValidPumRequest) {
+                this.millisStart = Calendar.getInstance().getTimeInMillis();
+                log.info("Begin PUM processing");
+                pumService.initPumPluginChain();
+                super.startDocument();
+            }
         }
 
         @Override
         public void startElement(String namespaceURI, String localName, String qName, Attributes nextAttributes) throws SAXException {
             PUMOutput output = new PUMOutput(nextAttributes);
             String href = nextAttributes.getValue("", "href");
-            numLinksTotal++;
 
-            // Only process if element is anchor with valid href attribute
-            if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
-                // Read PUM metadata from JCR
-                String resourcePath = pumService.getPumResourcePath(request, href);
-                PUMInput input = pumService.getPumInput(request, resourcePath);
-                if (input == null) {
-                    log.debug("No PUM input data found for {}. Leaving link untouched", href);
-                } else {
-                    // Execute PUM plugin chain
-                    pumService.executePumPluginChain(input, output);
-                    numLinksProcessed++;
+            if (isValidPumRequest) {
+                // Only process if element is anchor with valid href attribute
+                if ("a".equals(localName) && StringUtils.isNotEmpty(href)) {
+                    numLinksTotal++;
+
+                    // Read PUM metadata from JCR
+                    String resourcePath = pumService.getPumResourcePath(request, href);
+                    PUMInput input = pumService.getPumInput(request, resourcePath);
+                    if (input == null) {
+                        log.debug("No PUM input data found for {}. Leaving link untouched", href);
+                    } else {
+                        // Execute PUM plugin chain
+                        pumService.executePumPluginChain(input, output);
+                        numLinksProcessed++;
+                    }
                 }
             }
 
@@ -103,10 +113,12 @@ public class PUMTransformerFactory implements TransformerFactory {
 
         @Override
         public void endDocument() throws SAXException {
-            long millisEnd = Calendar.getInstance().getTimeInMillis();
-            log.info("Finished PUM processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
-            pumService.terminatePumPluginChain();
-            super.endDocument();
+            if (isValidPumRequest) {
+                long millisEnd = Calendar.getInstance().getTimeInMillis();
+                log.info("Finished PUM processing {} out of {} links in {} milliseconds", numLinksProcessed, numLinksTotal, millisEnd - this.millisStart);
+                pumService.terminatePumPluginChain();
+                super.endDocument();
+            }
         }
 
     }
