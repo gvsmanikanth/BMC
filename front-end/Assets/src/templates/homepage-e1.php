@@ -17,7 +17,12 @@ include 'php-inc/svg.php';
 		display:block;
 	}
 }
-@media only screen and (min-width:0) and (max-width: 767px) {
+@media only screen and (min-width:768px) and (max-width: 1023px) {
+	.hidden-xs{
+		background-image: url(//www.bmc.com/content/dam/bmc/home/holiday_season/HP-Takeover-Desktop.jpg);
+	}
+} 
+@media only screen and (min-width:0) and (max-width: 630px) {
 	.hidden-xs{
 		visibility:hidden;
 		display:none;
@@ -523,32 +528,3 @@ load_backgrundImage();
 <?php
 include 'php-inc/foot.php';
 ?>
-
-<script>  
-
-
-function safari(){
-    $(window).load(function(){
-        var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        var vid = document.getElementById('video_id');
-        
-        if (is_safari){
-            setTimeout(function(){
-                if(vid){
-                	vid.pause();
-                }
-                    //$(".vidbg-box").remove();
-            }, 12000);
-        }
-    }); 
-}
-
-function defer(method) {
-   if (window.jQuery)
-       method();
-   else
-       setTimeout(function() { defer(method) }, 50);
-}
- defer(safari);
-
-</script>
