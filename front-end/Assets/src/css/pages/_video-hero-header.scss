@@ -61,7 +61,7 @@
 			}
 		}
 		&.xs-only {
-			background-image: url("#{$imagesFolder}careers-header.jpg");
+			--background-image: url("#{$imagesFolder}careers-header.jpg");
 			background-position: center;
 			background-size: cover;
 		}
