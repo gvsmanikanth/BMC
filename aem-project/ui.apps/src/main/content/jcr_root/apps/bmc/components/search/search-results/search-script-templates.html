@@ -17,8 +17,7 @@
             install: {
                 hooks: {
                     query_filter: function(query) {
-                        //query.setFilterDataByDocumentTypeSlugAndFilterField('page', 'FIELD_NAME', { values: ['VALUE1', 'VALUE2'], type: "and" });
-                        query.setFilterDataByDocumentTypeSlugAndFilterField('${qPage @context="unsafe"}', 'source', {
+                        query.setFilterDataByDocumentTypeSlugAndFilterField('${qPage @context="unsafe"}', "source", {
                                 values: ['${PageLocale @context="unsafe"}'],
                                 type: "or"
                         }),
@@ -70,28 +69,17 @@
 <sly data-sly-template.autocompleteQuery="${@qPage, PageLocale, qFieldName, qValues, qType}">
 
 <script>
-function defer(method) {
-	if (window.jQuery)
+function deferSearch(method) {
+	if (typeof($)!="undefined")
 		method();
 	else
-		setTimeout(function() { defer(method) }, 500);
+		setTimeout(function() { deferSearch(method) }, 500);
 }
 
 function autoCompleteSearchTopNav(){
 	$(function() {
 		queryString();
           var customResultRenderFunction = function(ctx, data) {
-		  $("input#st-search-input").keyup(function(){
-				/*if($(this).val().length < 3 ){
-					$(".overlay_keywords").show();
-					$(".autocomplete").hide();
-				}else{
-					$(".overlay_keywords").hide();
-					$(".autocomplete").show();
-				}*/
-			});
-		  
-		  //console.log(data);
             var withSections = [],
               noSections = [];
             $.each(data, function(docType, results) {
@@ -110,11 +98,10 @@ function autoCompleteSearchTopNav(){
 			
 			
             $.each(withSections, function(idx, item) {
-			//console.log("idx -> "+idx+" , item -> "+JSON.stringify(item.title));
-			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
+				ctx.registerResult($('<a class="result" href="' + item['url'] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
             });
             $.each(noSections, function(idx, item) {
-			ctx.registerResult($('<a class="result" href="' + item["url"] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
+				ctx.registerResult($('<a class="result" href="' + item['url'] + '">' +item['title'].replace(' - BMC Software','') + '</a>').appendTo(withSectionsList), item);
             });
             if (withSections.length > 0) {
               withSectionsList.appendTo(ctx.list);
@@ -162,7 +149,7 @@ $("#viewAll").click(function(){
 	localStorage.setItem("searchText", searchText);
 });
 }
-defer(autoCompleteSearchTopNav)
+deferSearch(autoCompleteSearchTopNav)
 </script>
 </sly>
 
