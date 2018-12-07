@@ -22,7 +22,7 @@ XT.yt = {
 
         var j = document.createElement("script"),
             f = document.getElementsByTagName("script")[0];
-        j.src = "//www.youtube.com/iframe_api";
+        j.src = "https://www.youtube.com/iframe_api";
         j.async = true;
         f.parentNode.insertBefore(j, f);
     },
