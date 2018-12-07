@@ -13,7 +13,7 @@
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Atrium Orchestrator"
-          versions="[edu-version-numbers-217471601]"/>
+          versions="[edu-version-numbers-217471601,edu-version-numbers-151683129]"/>
     <education-products-187351378
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Database Automation"
