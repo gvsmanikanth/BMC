@@ -682,7 +682,8 @@ var Support = Support || {};
 					if (this.messages[0].scrollHeight > this.messages.innerHeight()) {
 						actionB.prop("disabled", true);
 						this.messages.bind('scroll', function() {
-							if ($(this)[0].scrollHeight - $(this).scrollTop() <= $(this).innerHeight()) {
+                            var scrollTop = Math.floor($(this)[0].scrollHeight - $(this).scrollTop());
+							if (scrollTop <= $(this).innerHeight()) {
 								actionB.prop("disabled", false);
 							}
 						});

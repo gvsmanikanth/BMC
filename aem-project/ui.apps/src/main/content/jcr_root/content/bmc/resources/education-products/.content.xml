@@ -12,12 +12,11 @@
         versions="[edu-version-numbers-151683129,edu-version-numbers-218759021]"/>
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Atrium Orchestrator"
-          versions="[edu-version-numbers-217471601]"/>
+        jcr:title="BMC TrueSight/Atrium Orchestration"
+        versions="[edu-version-numbers-217471601,edu-version-numbers-151683129]"/>
     <education-products-187351378
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Database Automation"
-        
         versions="[edu-version-numbers-151683129]"/>
     <education-products-117007007
         jcr:primaryType="nt:unstructured"
@@ -26,7 +25,7 @@
         versions="[edu-version-numbers-151683129]"/>
     <education-products-180838924
         jcr:primaryType="nt:unstructured"
-        jcr:title="BladeLogic Server Automation"
+        jcr:title="BMC TrueSight/BladeLogic Server Automation"
         
         versions="[edu-version-numbers-151683129]"/>
     <education-products-175290979
@@ -87,7 +86,7 @@
     <education-products-143958364
        
         jcr:primaryType="nt:unstructured"
-        jcr:title="MyIT"
+        jcr:title="MyIT Digital Workplace"
        
         versions="[edu-version-numbers-186635808,edu-version-numbers-184339789,edu-version-numbers-191609406]"/>
     <education-products-186068586

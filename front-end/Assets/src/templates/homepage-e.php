@@ -43,7 +43,54 @@ include 'php-inc/svg.php';
 				</div>
 			</div>
 		</div>
-	</div>		
+		
+		
+	</div>	
+
+			<div class="assetStrip assetStripBottom">
+				<div class="inner">
+					<div class="sm-flex flex-justify-center contentContainer">
+						<a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 shadow-top assetStripItem">
+							<div class="inner assetTxt">
+								<div class="flex-center">
+									<img src="//www.bmc.com/content/dam/bmc/images/Video_TEST.png" alt="">
+									<div class="inner">
+										<h5>Demo:</h5>
+										<p>Customizable video</p>
+										<p class="link">Watch it now ›</p>
+									</div>
+								</div>
+							</div>
+						</a> <a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 shadow-top assetStripItem">
+							<div class="inner assetTxt">
+								<div class="flex-center ">
+
+									<img src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png" alt="">
+									<div class="inner">
+										<h5>Datasheet:</h5>
+										<p>Control-M</p>
+										<p class="link">Download now ›</p>
+									</div>
+
+								</div>
+							</div>
+						</a> <a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 no-border shadow-top assetStripItem">
+							<div class="inner assetTxt">
+								<div class="flex-center">
+
+									<img src="//www.bmc.com/content/dam/bmc/images/AnalystReport_TEST.png" alt="">
+									<div class="inner">
+										<h5>Analyst report:</h5>
+										<p>Forrester's Total Economic Impact Study</p>
+										<p class="link learn-more">Download the report</p>
+									</div>
+
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>	
 </section>
 <!-- 
 <section class="section-wrap-header sectionCommon backgroundVideoImage" id="section0" style="background-color: rgb(65, 64, 66);background-size: cover;"> 

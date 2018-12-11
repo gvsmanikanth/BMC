@@ -350,7 +350,7 @@
 		//-ms-flex-direction:column;
 		
 		h5{
-			font-family: Open Sans;
+			font-family: "Open Sans", Helvetica, Arial, sans-serif;
 			font-weight: normal;
 		}
 					
@@ -411,10 +411,11 @@
 				
 		           h1 {
 		           
-		           		font-family: Open Sans;
+		           		font-family: "Open Sans", Helvetica, Arial, sans-serif;
 						font-weight: normal !important;
 						letter-spacing: -2.3px;
-						font-size: 38px;
+						--font-size: 38px;
+						font-size: 26px;
 						margin-bottom:0;
 						margin-top:0px;
 						margin-right:10px;
@@ -432,17 +433,20 @@
 					}
 				   
 				   h2 {
-						font-family: Open Sans;
+						font-family: "Open Sans", Helvetica, Arial, sans-serif;
 						font-weight: normal !important;
 						letter-spacing: 0.2px;
-						line-height: 1.7rem;
+						--line-height: 1.7rem;
 						max-width: 100%;
-						font-size: 23px;
+						--font-size: 23px;
+						font-size: 14px;
+						line-height: 1.2rem;
 						margin-bottom:5px;
 						margin-top:12px;
 						@include media(breakpointSmall) {
 							line-height: 2rem;
 							font-size: 25px;
+							
 							margin-bottom:35px; 
 							margin-top:18px
 						}
