@@ -17,12 +17,12 @@ import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.Resource;
 /**
- * Created by pheide on 9/7/17.
+ * Created by ssupraja on 12/04/2018.
  *
- * Helper methods for the Page component.
+ * Created to fix security patch issue
  */
-public class Page extends WCMUsePojo {
-    private static final Logger logger = LoggerFactory.getLogger(Page.class);
+public class PageWrapper extends WCMUsePojo {
+    private static final Logger logger = LoggerFactory.getLogger(PageWrapper.class);
 
     private ValueMap properties;
     private SlingHttpServletResponse response;
