@@ -1,0 +1,17 @@
+<template data-sly-template.renderServerContext="${ @ model }">
+    <sly data-sly-test="${model.isEnabled}">
+        <!--
+        <script>
+            var pageContext = {
+                "renderDateTime": "${model.renderDateTime}",
+                "context": "${model.context}",
+                "givenName": "${model.givenName}",
+                "resourcePath": "${model.resourcePath}",
+                "requestUrl": "${model.requestUrl}"
+            }
+        </script>
+        -->
+    </sly>
+</template>
+
+<sly data-sly-use.model="com.bmc.components.ServerContext" data-sly-call="${renderServerContext @ model=model}"/>

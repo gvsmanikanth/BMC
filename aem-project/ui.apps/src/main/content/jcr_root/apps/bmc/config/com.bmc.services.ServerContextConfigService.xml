@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    run.mode.whitelist="[author,dev,localdev,prod,publish,publish1,publish2,stage]"
+    given.name.mapping="[TODO\, s_author, 158ba944-4605-43c6-a613-d50b9fa2de66\, s_publish1, a0f29591-ff59-48d1-ad4d-0a23b528b0af\, s_publish2, 7d92c788-befc-45f5-ae42-fbdc8c6d101b\, p_author, 5f3ab8f2-532d-451a-866f-4a97b6058120\, p_publish1, 0de90020-c6ea-4ab9-ab93-b55f9933439e\, p_publish2]"/>
