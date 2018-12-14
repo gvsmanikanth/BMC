@@ -6,10 +6,12 @@ import com.google.common.cache.CacheBuilder;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -42,14 +44,23 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = "resource.title.cache.stats.enabled";
     private boolean resourceTitleCacheStatsEnabled;
 
+    @Property(label = "Resource Title Cache Flush", boolValue = false,
+            description = "Resource title cache flush")
+    public static final String RESOURCE_TITLE_CACHE_FLUSH = "resource.title.cache.flush";
+    private boolean resourceTitleCacheFlush;
+
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private ResourceService baseImpl;
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
 
     @Activate
     public void activate(ComponentContext context) {
         this.resourceTitleCacheSize = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_SIZE), 5000);
         this.resourceTitleCacheTtl = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_TTL), 300);
         this.resourceTitleCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
+        this.resourceTitleCacheFlush= PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_FLUSH), false);
 
         CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(resourceTitleCacheSize)
@@ -59,11 +70,24 @@ public class ResourceServiceCachingImpl implements ResourceService {
         }
 
         titleCache = cacheBuilder.build();
+
+        if (resourceTitleCacheFlush) {
+            try {
+                setConfigProperty(ResourceServiceCachingImpl.class.getName(), RESOURCE_TITLE_CACHE_FLUSH, false);
+            } catch (IOException e) {
+                log.error("Failed to set property {} to {}", RESOURCE_TITLE_CACHE_FLUSH, false);
+            }
+        }
     }
 
     @Override
     public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
         try {
+            if (propertyName == null || propertyValue == null || resolver == null) {
+                log.debug("Invalid input {} {} {}. Returning null", propertyName, propertyValue, resolver);
+                return null;
+            }
+
             String cacheKey = propertyName + propertyValue;
             Optional<String> cachedTitle = titleCache.get(cacheKey,
                     () -> Optional.fromNullable(baseImpl.getTitle(propertyName, propertyValue, resolver)));
@@ -82,4 +106,8 @@ public class ResourceServiceCachingImpl implements ResourceService {
         return titleCache;
     }
 
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
+    }
 }
