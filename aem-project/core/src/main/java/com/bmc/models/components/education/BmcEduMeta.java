@@ -55,7 +55,7 @@ public class BmcEduMeta {
         setFilterCriteria(productsHashMap);
     }
 
-    public ProductValues processNode(Resource resource, Session session, Node node){
+   public ProductValues processNode(Resource resource, Session session, Node node){
         try {
             ProductValues productValues = new ProductValues();
 
@@ -99,28 +99,33 @@ public class BmcEduMeta {
             while (allCourses.hasNext()){
                 Page page = allCourses.next();
                 ListItems newItem = new ListItems();
-                List<Integer> roles = new ArrayList<>();
-                List<Integer> versions = new ArrayList<>();
-                List<Integer> types = new ArrayList<>();
-                List<Integer> deliveryMethod = new ArrayList<>();
-                List<Integer> specificRoles = new ArrayList<>();
+                List<String> roles = new ArrayList<>();
+                List<String> versions = new ArrayList<>();
+                List<String> types = new ArrayList<>();
+                List<String> deliveryMethod = new ArrayList<>();
+                List<String> specificRoles = new ArrayList<>();
 
                 if(page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/course-template") || page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/learning-path-template") || page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/certification-template")) {
                     ValueMap pageProps = page.getProperties();
-                    List<Integer> products = new ArrayList<>();
+                    List<String> products = new ArrayList<>();
+                    //List<String> productss = new ArrayList<>();
                     newItem.setId(itemIndex);
                     UrlResolver urlResolver = UrlResolver.from(resourcePage.getContentResource());
 
                     Node pageJCRContent = session.getNode(page.getPath()+"/jcr:content");
-
+                    
                     addMetaFilters("education-products", products, pageJCRContent, session);
                     addMetaFilters("education-specific-types", types, pageJCRContent, session);
                     addMetaFilters("education-version-numbers", versions, pageJCRContent, session);
                     addMetaFilters("education-broad-roles", roles, pageJCRContent, session);
                     addMetaFilters("course-delivery", deliveryMethod, pageJCRContent, session);
                     addMetaFilters("education-specific-role", specificRoles, pageJCRContent, session);
-
-                    
+                    try{
+                    Node versionNode=session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versions.get(versions.size()-1));
+                    newItem.setLatestVersion(Integer.valueOf(versionNode.getProperty("jcr:title").getValue().toString().replace(".x","")));
+                    }catch(Exception e){
+                    	
+                    }
                     newItem.setSubHeader(pageProps.getOrDefault("isAccreditationAvailable","").toString());
                     newItem.setDuration(!pageProps.getOrDefault("course-duration","").toString().equals("") ? pageProps.getOrDefault("course-duration","").toString()+" Hours" : "");
                     newItem.setBlnFeatured(Boolean.parseBoolean(pageProps.getOrDefault("blnFeatured",false ).toString()));
@@ -136,7 +141,12 @@ public class BmcEduMeta {
                     itemIndex++;
                 }
             }
-
+            /* sort based on latest versions */
+             Collections.sort(listItems,new Comparator<ListItems>() {
+            	 public int compare(ListItems o1, ListItems o2) {
+    	    	 return o2.getLatestVersion() - o1.getLatestVersion();
+    	    	}
+             });
         }catch (Exception e){
                 logger.error("{}",e.getMessage());
         }
