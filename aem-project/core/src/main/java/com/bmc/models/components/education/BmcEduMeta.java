@@ -18,18 +18,24 @@ public class BmcEduMeta {
 
     private List<HashMap> filterCriteria;
     private List<ListItems> listItems;
+    
+    ProductTypeCollection productCollection=new ProductTypeCollection();
 
+  
     private transient String RESOURCE_ROOT = "/content/bmc/resources/";
 
     public BmcEduMeta(Session session, Resource resource, Page page) {
         filterCriteria = new ArrayList<>();
 
+        buildItemsList(page, session);
         buildProducts(session, resource);
         buildRoles(session);
         learningFormats(session);
         buildTypes(session);
-        buildItemsList(page, session);
         buildVersions(session);
+        ArrayList<ProductValues> productTypes=productCollection.getProductTypeCollection();
+        
+       
     }
 
     private void buildProducts(Session session, Resource resource) {
@@ -64,24 +70,44 @@ public class BmcEduMeta {
 
             productValues.setName(node.getProperty("jcr:title").getValue().getString());
             productValues.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
-            //productValues.setId(getEdFilterID(node,session));
-
-            Value[] versions = node.getProperty("versions").getValues();
+           
             Versions allVers = new Versions();
             allVers.setName("All Versions");
             allVers.setId("0");
             productValues.setVersions(allVers);
-
-            for (Value ver: versions) {
-                Versions newVer = new Versions();
-                Node verNode;
-                if(!ver.getString().equals("Any")) {
-                    verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + ver.getString());
-                    newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
-                    newVer.setId(getEdFilterID(verNode,session));
-                }
-                productValues.setVersions(newVer);
+            Set<String> versionNames=productCollection.getVersionNamesByProductName(productValues.getId());
+            ArrayList<Integer> sortedVersionNames=new ArrayList<Integer>();
+            if(versionNames != null){
+            	Iterator<String> versionIterator=versionNames.iterator();
+                while(versionIterator.hasNext())
+                {
+                	String versionName=(String)versionIterator.next();
+                	Node verNode;
+                	if(!versionName.equals("Any") && !versionName.equals("0")) {
+                	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
+                	     sortedVersionNames.add(Integer.valueOf(verNode.getProperty("jcr:title").getValue().toString().replace(".x","")));
+                	  }
+                	  }
             }
+           
+            Collections.sort(sortedVersionNames, Collections.reverseOrder());
+
+            if(sortedVersionNames != null){
+                for(int sortedVersion:sortedVersionNames){
+                	if(sortedVersion != 0) {
+                		String versionName=getVersionID(String.valueOf(sortedVersion),session);
+                		Versions newVer = new Versions();
+                		Node verNode;
+                    	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
+                        newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
+                     
+                        newVer.setId(versionName);
+                        productValues.setVersions(newVer);
+                     }
+                
+                }
+                }
+            
             return productValues;
         } catch (RepositoryException e) {
             logger.error("ERROR processing Education node", e.getMessage());
@@ -108,7 +134,6 @@ public class BmcEduMeta {
                 if(page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/course-template") || page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/learning-path-template") || page.getTemplate().getPath().equals("/conf/bmc/settings/wcm/templates/certification-template")) {
                     ValueMap pageProps = page.getProperties();
                     List<String> products = new ArrayList<>();
-                    //List<String> productss = new ArrayList<>();
                     newItem.setId(itemIndex);
                     UrlResolver urlResolver = UrlResolver.from(resourcePage.getContentResource());
 
@@ -126,6 +151,15 @@ public class BmcEduMeta {
                     }catch(Exception e){
                     	
                     }
+                    
+                    
+                 if(products.size() > 0)   {
+                    for(int i=0;i<versions.size();i++)
+                    {
+                    	productCollection.addNewVersionName(products.get(0),versions.get(i));
+                    }
+                 }  
+                    
                     newItem.setSubHeader(pageProps.getOrDefault("isAccreditationAvailable","").toString());
                     newItem.setDuration(!pageProps.getOrDefault("course-duration","").toString().equals("") ? pageProps.getOrDefault("course-duration","").toString()+" Hours" : "");
                     newItem.setBlnFeatured(Boolean.parseBoolean(pageProps.getOrDefault("blnFeatured",false ).toString()));
@@ -256,7 +290,8 @@ public class BmcEduMeta {
             while (tNodes.hasNext()) {
                 Node node = (Node) tNodes.next();
                 Versions verVal = new Versions();
-                verVal.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
+                //verVal.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
+                verVal.setId(node.getProperty("jcr:title").getValue().toString());
                 verVal.setName(node.getProperty("jcr:title").getValue().toString());
                 versValues.add(verVal);
             }
@@ -267,31 +302,32 @@ public class BmcEduMeta {
             logger.error("{}",e.getMessage());
         }
     }
+    
+    private String getVersionID(String versionName,Session session){
+    	 String versionVal=null;
+    	try {
+            Iterator tNodes = session.getNode(RESOURCE_ROOT+"education-version-numbers").getNodes();
+            
+            while (tNodes.hasNext()) {
+                Node node = (Node) tNodes.next();
+                if(node.getProperty("jcr:title").getValue().toString().replace(".x","").equals(versionName)){
+                	versionVal=node.getName();
+                }
+            }
+        }catch(Exception e) {
+            logger.error("{}",e.getMessage());
+        }
+    	return versionVal;
+    }
 
     private String getEdFilterID(Node filterNode, Session session){
         String filterID = null;
       //WEB-3214:Replaced filterID logic with nodename for more readability 
         try {
-            filterID = filterNode.getName().replace(" ", "_").toLowerCase();
-        } catch (RepositoryException e) {
+           filterID = filterNode.getName().replace(" ", "_").toLowerCase();
+        	   } catch (RepositoryException e) {
             e.printStackTrace();
         }
-       /* try {
-            if(!filterNode.hasProperty("jcr:mixinTypes")){
-                filterNode.addMixin("mix:referenceable");
-            }
-            if(!filterNode.hasProperty("filterID")) {
-                filterID = filterNode.getProperty("jcr:uuid").getValue().getString();
-                filterNode.setProperty("filterID",filterID);
-                session.save();
-            }else{
-                //filterID = filterNode.getProperty("filterID").getValue().getString();
-            	 Replaced filterID logic with jcr:title for more readability 
-            	filterID = filterNode.getProperty("jcr:title").getValue().getString().replace(" ", "_").toLowerCase();
-            }
-        } catch (RepositoryException e) {
-            e.printStackTrace();
-        }*/
         return filterID;
     }
 
@@ -311,4 +347,62 @@ public class BmcEduMeta {
     public void setListItems(ListItems listItems) {
         this.listItems.add(listItems);
     }
+}
+
+
+
+class ProductTypeCollection
+{
+	ArrayList<ProductValues> productTypes;
+	ProductTypeCollection()
+	{
+		productTypes=new ArrayList<ProductValues>();
+	}
+	
+	public void addNewVersionName(String productName,String versionName)
+	{
+		int foundProductAtIndex=-1;
+		for(int index=0;index<productTypes.size();index++)
+		{
+			ProductValues productType=productTypes.get(index);
+			if(productType.getProductName().equals(productName))
+			{
+				foundProductAtIndex=index;
+				break;
+			}
+		}
+		if(foundProductAtIndex!=-1)
+		{
+			// product name already created ..so need not create new ProductValues
+			ProductValues existingProductType=productTypes.get(foundProductAtIndex);
+			
+			//check for duplicate versionname
+			existingProductType.versionNames.add(versionName);
+		}
+		else
+		{
+			//create new ProductType
+			ProductValues newProductType=new ProductValues(productName);
+			newProductType.versionNames.add(versionName);
+			
+			// add new ProductType to productTypesCollection
+			productTypes.add(newProductType);
+		}
+	
+	}
+	public ArrayList<ProductValues> getProductTypeCollection()
+	{
+		return productTypes;
+	}
+	public Set<String> getVersionNamesByProductName(String productName)
+	{
+		for(int index=0;index<productTypes.size();index++)
+		{
+			if(productTypes.get(index).getProductName().equals(productName))
+			{
+				return productTypes.get(index).getVersionNames();
+			}
+		}
+		return null;
+	}
 }
