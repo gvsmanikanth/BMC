@@ -82,7 +82,7 @@ public class AlternateLinks  extends WCMUsePojo {
         if (canonicalMatcher.matches()) {
             canonicalPath = canonicalMatcher.group(4);
         }
-        if(req.getServerName().equals("www.bmc.com")){
+        if(req.getServerName().contains("bmc.com")){
         	canonicalScheme = "https";
         }else{
         	canonicalScheme = "http";
