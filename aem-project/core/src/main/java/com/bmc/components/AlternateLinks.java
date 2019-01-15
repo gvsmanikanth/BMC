@@ -65,7 +65,7 @@ public class AlternateLinks  extends WCMUsePojo {
         // Build map of alternate locale links.
         String canonicalScheme = "http";
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	if(entry.getKey().equals("en-us")){
+        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
         		canonicalScheme = "https";
         	}else{
         		canonicalScheme = "http";
