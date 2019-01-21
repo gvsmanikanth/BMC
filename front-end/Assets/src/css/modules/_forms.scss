@@ -84,6 +84,9 @@ fieldset:not(#foo) {
 		select {
 			outline: none;
 		}
+		select::-ms-expand {
+			display: none;
+		}
 	}
 
 	//input groups
