@@ -70,13 +70,14 @@ fieldset:not(#foo) {
 	// these decorator styles are for browsers that can have custom selects
 	.decorator-select {
 		&:after {
-			content: url('#{$imagesFolder}bg-select-arrow.png');
+			--content: url('#{$imagesFolder}bg-select-arrow.png');
+			content: '\e601';
+			font-family: "icomoon";
 			height: $inputHeight;
 			pointer-events: none;
 			position: absolute;
-			right: 0px;
-			top: -2px;
-			width: 58px;
+			right: 10px;
+			top: 10px;
 			z-index: (z(content)+1);
 		}
 
