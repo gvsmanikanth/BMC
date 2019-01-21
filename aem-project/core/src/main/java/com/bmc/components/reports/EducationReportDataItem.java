@@ -27,6 +27,20 @@ public class EducationReportDataItem {
 	private String jcr_path;
 	private String course_Type;
 	private String course_Duration;
+	private String last_modified_by;
+	public String getLast_modified_by() {
+		return last_modified_by;
+	}
+	public void setLast_modified_by(String last_modified_by) {
+		this.last_modified_by = last_modified_by;
+	}
+	public String getLast_replication_action() {
+		return last_replication_action;
+	}
+	public void setLast_replication_action(String last_replication_action) {
+		this.last_replication_action = last_replication_action;
+	}
+	private String last_replication_action;
 	
 	
 	public String getJcr_path() {

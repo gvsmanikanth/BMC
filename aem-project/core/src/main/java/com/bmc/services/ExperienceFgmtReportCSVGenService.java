@@ -438,7 +438,15 @@ public class ExperienceFgmtReportCSVGenService {
 			 date = date.replace(":", "_");
 			return  date.replace(" ", "_"); //2016/11/16 12:08:43
 		 }
-		 	 
+		
+	 
+	 public void clearData(String reportType)
+	 {
+		 if(reportType.equals("experienceFragment"))
+		 {
+			 list.clear();			
+		 }
+	 }
 	 }
 
 

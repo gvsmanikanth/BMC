@@ -93,17 +93,18 @@ public class CategoriesReportCSVGenService {
     private static ArrayList<StickyHeaderReportDataItem> list3 = new ArrayList<StickyHeaderReportDataItem>();
     
     private static ArrayList<CustomersReportDataItem> list4 = new ArrayList<CustomersReportDataItem>();
+    
+    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
        	
     private String[] TableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Industry","Migration Raw URL",
     		"Short Description","Meta Description","Ic app inclusion","Ic_weighting","Creation Date"};
 	
-    private String[] TableNames2 = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Education specific types","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
-    		,"Course Duration"};
+    private String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
+    		,"Course Duration","Last Modified By","Last Modified Date","Last Replication Action","Translation Status"};
     
     private String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText"};
 
-    private String[] CustomersList = {"ID","Creation_Date","Page_URL","URL Resource Name","CMS_Title","Industry","Topics","Company_size"
-    			,"Brand","language","Product","Product_line",
+    private String[] CustomersList = {"ID","Creation_Date","Page_URL","URL Resource Name","Card Title","Industry","Topics",
     			"URL_Resource_Name","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
     			"IC App Inclusion","IC Weighting"};
 
@@ -151,7 +152,7 @@ public class CategoriesReportCSVGenService {
 			                  String damFileName = fileName +".xls" ;
 			                  workbook = write();	                 	                  
 			              }	
-			             list.clear();
+			             
 	    		 }
 	    		 else if(reportPath.contains("education"))
 	    		 {
@@ -163,7 +164,7 @@ public class CategoriesReportCSVGenService {
 			                      //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = write2(); 				                  
 			              }	 
-			             list2.clear();
+			            
 	    		 }else if(reportPath.contains("/customers"))
 	    		 {
 	    			 list4 = getCustomersData(reportPath);
@@ -174,7 +175,7 @@ public class CategoriesReportCSVGenService {
 			                      //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = writeCustomerData(); 				                  
 			              }
-			             list4.clear();
+			             
 	    		 }	    		
 	    	}	       
 	   catch(Exception e)
@@ -207,7 +208,7 @@ public class CategoriesReportCSVGenService {
 			                  //WriteExcel formsReport = new WriteExcel(); 
 			                  workbook = write3(); 			                  
 			              }	 
-		    		 list3.clear();
+		    		 
 		    	}	       
 		   catch(Exception e)
 		       {
@@ -288,117 +289,28 @@ public class CategoriesReportCSVGenService {
 						             Long totalHits = result.getTotalMatches();
 						            for (Hit hit : result.getHits()) {
 						            		EducationReportDataItem reportDataitem = new EducationReportDataItem();  
-						            		Node formDataNode = hit.getResource().adaptTo(Node.class);	
-						            		reportDataitem.setJcr_path(metadataProvider.getJCR_Path(formDataNode));						            	 
-						            		reportDataitem.setURLResourceName(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(formDataNode)));						            	 								        	
-						            		for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
-						            			{  
-						            				Property prop= propeIterator.nextProperty();
-						            				  if(prop.getDefinition().isMultiple())
-					            					 {
-					            						 if(prop.getName().equalsIgnoreCase("education-broad-roles"))
-												        	{	
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements.
-											        		  reportDataitem.setEducation_broad_roles(metadataProvider.addEducationMetaFilters(prop.getName().toString(),"jcr:title", prop, session));										        		   										        		  									        											        	
-												        	}	
-											        	 
-					            					 }
-						            				  else if(!prop.getDefinition().isMultiple())
-						            					{									        	
-												       												        	
-												        	 if(prop.getName().equalsIgnoreCase("jcr:title"))
-												        	{									        		
-												        		String jcr_title  = prop.getValue().getString();		
-																//Adding the property to the POJO object
-												        	   reportDataitem.setCMS_Title(jcr_title);
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("product_interest"))
-												        	{									        		
-												        		String Product  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        		reportDataitem.setProduct_Interest(metadataProvider.getProductInterestValue(Product, session));									        				        	   
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("product_Line"))
-												        	{									        		
-												        		String Product_Line  = prop.getValue().getString();		
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        		reportDataitem.setProduct_Line(metadataProvider.getProductLineValue(Product_Line, session));
-												        	}
-												        	
-												        	else if(prop.getName().equalsIgnoreCase("education-products"))
-												        	{									        		
-												        		String education_products  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        	   reportDataitem.setEducation_products(metadataProvider.getEducation_Products_Value(education_products, session));
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("education-specific-types"))
-												        	{									        		
-												        		String education_specific_types  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        	   reportDataitem.setEducation_specific_types(metadataProvider.getEducation_Specific_Types_Value(education_specific_types, session));
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("education-specific-role"))
-												        	{									        		
-												        		String education_specific_roles  = prop.getValue().getString();		
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        			reportDataitem.setEducation_specific_roles(metadataProvider.getEducation_Specific_Roles_Value(education_specific_roles, session));									  			        	   
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("education-version-numbers"))
-												        	{										        		
-												        		String education_version_numbers  = prop.getValue().getString();		
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        	   reportDataitem.setEducation_version_numbers(metadataProvider.getEducation_Version_Numbers_Value(education_version_numbers, session));
-												        	}									        													        													        									        	
-												        	else if(prop.getName().equalsIgnoreCase("ic-app-inclusion"))
-												        	{									        		
-												        		String ic_app_inclusion  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        		//WEB-4209 AEM Reporting Phase2 Enhancements
-												        	   reportDataitem.setIc_app_inclusion(ic_app_inclusion);
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("ic-weighting"))
-												        	{									        		
-												        		String ic_weighting  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        	   reportDataitem.setIc_weighting(ic_weighting);
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("course-duration"))
-												        	{									        		
-												        		String course_duration  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        	   reportDataitem.setCourse_Duration(course_duration);
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("course-delivery"))
-												        	{									        		
-												        		String course_delivery  = prop.getValue().getString();		
-																//Adding the property to the POJO object
-												        	   reportDataitem.setCourse_Delivery(metadataProvider.getCourse_Delivery_Value(course_delivery, session));
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("course-type"))
-												        	{									        		
-												        		String course_type  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        	   reportDataitem.setCourse_Type(course_type);
-												        	}
-												        	else if(prop.getName().equalsIgnoreCase("pageTitle"))
-												        	{									        		
-												        		String pageTitle  = prop.getValue().getString();			
-																//Adding the property to the POJO object
-												        	   reportDataitem.setPage_Name(pageTitle);
-												        	}
-												        	if(prop.getName().equalsIgnoreCase("education-broad-role"))
-													        	{
-												        		 reportDataitem.setEducation_broad_roles(metadataProvider.getEducation_Broad_Roles_Value(prop.getValue().getString(),session));
-													        	}									        	
-						            					}
-						            					
-						            			}
+						            		Node reportDataNode = hit.getResource().adaptTo(Node.class);
+						            		reportDataitem.setJcr_path(metadataProvider.getJCR_Path(reportDataNode));						            	 
+							            	reportDataitem.setURLResourceName(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(reportDataNode)));
+							            	reportDataitem.setProduct_Interest(getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
+							            	reportDataitem.setProduct_Line(getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
+							            	reportDataitem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
+							            	reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+							            	reportDataitem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
+							            	reportDataitem.setLast_modified_Date(getPropertyValues(reportDataNode, "cq:lastModified", "cq:lastModified", "cq:lastModified", session)); 
+							            	reportDataitem.setLast_modified_by(getPropertyValues(reportDataNode, "cq:lastModifiedBy", "cq:lastModifiedBy", "cq:lastModifiedBy", session));
+							            	reportDataitem.setLast_replication_action(getPropertyValues(reportDataNode, "cq:lastReplicationAction", "cq:lastReplicationAction", "cq:lastReplicationAction", session));
+							            	reportDataitem.setTranslation_Status(getPropertyValues(reportDataNode, "translation-status", "translation-status", "translation-status", session));
+							            	//Additional Education specific properties							            	 
+							            	reportDataitem.setEducation_products(getPropertyValues(reportDataNode, "education-products","jcr:title","education-products",session));
+							            	reportDataitem.setEducation_specific_roles(getPropertyValues(reportDataNode, "education-specific-role", "jcr:title", "education-specific-roles", session));									 
+							            	reportDataitem.setEducation_version_numbers(getPropertyValues(reportDataNode, "education-version-numbers", "jcr:title", "education-version-numbers", session));
+							          	   	reportDataitem.setCourse_Duration(getPropertyValues(reportDataNode, "course-duration", "jcr:title", "course-duration", session));
+							          	   	reportDataitem.setCourse_Delivery(getPropertyValues(reportDataNode, "course-delivery", "jcr:title", "course-delivery", session));
+							          	   	reportDataitem.setCourse_Type(getPropertyValues(reportDataNode, "education-specific-types", "jcr:title", "education-specific-types", session));
+							          	   	reportDataitem.setPage_Name(getPropertyValues(reportDataNode, "pageTitle", "pageTitle", "pageTitle", session));
+							          	   	reportDataitem.setEducation_broad_roles(getPropertyValues(reportDataNode, "education-broad-roles", "jcr:title", "education-broad-roles", session));
+							            	
 					        list2.add(reportDataitem);					        
 					    }
 						   logger.info("List Size of education"+list2.size());
@@ -423,132 +335,32 @@ public class CategoriesReportCSVGenService {
 			ResourceResolver resourceResolver = generateResourceResolver();
 			Session session = resourceResolver.adaptTo(Session.class); 
 			Resource resource = resourceResolver.getResource(reportPath);
-				    if(resource != null)
-						    {						    		
-						        	Map<String,String> map = createQuery(null, null, reportPath);
-						        	 Query query = builder.createQuery(PredicateGroup.create(map), session);		                							             
-						             SearchResult result = query.getResult();
-						             Long totalHits = result.getTotalMatches();
-						            		 for (Hit hit : result.getHits()) {
-						            	CustomersReportDataItem reportDataitem = new CustomersReportDataItem(); 						            	
-						            	 Node formDataNode = hit.getResource().adaptTo(Node.class);	
-						            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-						            	 reportDataitem.setPage_URL(PagePath);
-						            	 if(!PagePath.equals(null))
-						            	 {
-						            	 reportDataitem.setURL_Resource_Name(PagePath.substring(PagePath.lastIndexOf('/') + 1));
-						            	 }
-									   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
-									   {  
-									        Property prop= propeIterator.nextProperty();  
-									         if(!prop.getDefinition().isMultiple()){
-
-									        	if(prop.getName().equalsIgnoreCase("contentId"))
-									        	{									        		
-									        		String contentId  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setID(contentId);
-									        	}
-									        	
-									        	else if(prop.getName().equalsIgnoreCase("navTitle"))
-									        	{									        		
-									        		String navTitle  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCMS_Title(navTitle);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("jcr:created"))
-									        	{									        		
-									        		String creation_Date  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCreation_Date(creation_Date);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("cardDescription"))
-									        	{									        		
-									        		String cardDescription  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCardDescription(cardDescription);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("cardLogoSrc"))
-									        	{									        		
-									        		String cardLogoSrc  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCardLogoSrc(cardLogoSrc);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("cardTitle"))
-									        	{									        		
-									        		String cardTitle  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCMS_Title(cardTitle);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("companySize"))
-									        	{									        		
-									        		String companySize  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCompany_size(metadataProvider.getIC_company_size_Value(companySize, session));
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("industries"))
-									        	{									        		
-									        		String industry  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setIndustry(metadataProvider.getIC_target_industry_Value(industry, session));
-									        	}
-									        	
-									        	else if(prop.getName().equalsIgnoreCase("topics"))
-									        	{									        		
-									        		String topics  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        		//WEB-4209 AEM Reporting Phase2 Enhancements
-									        	   reportDataitem.setTopics(metadataProvider.getIC_topics_Value(topics, session));
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("cardSecondaryLinkText"))
-									        	{									        		
-									        		String cardSecondaryLinkText  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCardSecondaryLinkText(cardSecondaryLinkText);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("cardSecondaryLinkUrl"))
-									        	{									        		
-									        		String cardSecondaryLinkUrl  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setCardSecondaryLinkUrl(cardSecondaryLinkUrl);
-									        	}
-									        										        	
-									        	else if(prop.getName().equalsIgnoreCase("Language"))
-									        	{									        		
-									        		String Language  = prop.getValue().getString();		
-													//Adding the property to the POJO object
-									        	   reportDataitem.setLanguage(Language);
-									        	}
-									        									        	
-									        	else if(prop.getName().equalsIgnoreCase("ic-app-inclusion"))
-									        	{									        		
-									        		String ic_app_inclusion  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setIc_app_inclusion(ic_app_inclusion);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("ic-weighting"))
-									        	{									        		
-									        		String ic_weighting  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        	   reportDataitem.setIc_weighting(ic_weighting);
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("product-interest"))
-									        	{									        		
-									        		String product  = prop.getValue().getString();			
-													//Adding the property to the POJO object
-									        		//WEB-4209 AEM Reporting Phase2 Enhancements
-									        	 	reportDataitem.setProduct(metadataProvider.getProductInterestValue(product, session));
-									        	}
-									        	else if(prop.getName().equalsIgnoreCase("product_line"))
-									        	{									        		
-									        		String product_line  = prop.getValue().getString();			
-													//Adding the property to the POJO object	
-									        		//WEB-4209 AEM Reporting Phase2 Enhancements
-									        		reportDataitem.setProduct_line(metadataProvider.getProductLineValue(product_line, session));
-									        	}
-									        								        	
-					                }						                 
-					                 }
+			if(resource != null)
+		    {
+		    		
+		        	Map<String,String> map = createQuery(null, null, reportPath);
+		        	 Query query = builder.createQuery(PredicateGroup.create(map), session);        							             
+		             SearchResult result = query.getResult();
+		             Long totalHits = result.getTotalMatches();
+		            		 for (Hit hit : result.getHits()) 
+		            		 {
+					            	CustomersReportDataItem reportDataitem = new CustomersReportDataItem();  
+					            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
+					            	   reportDataitem.setID(getPropertyValues(formDataNode, "cardTitle","jcr:title","cardTitle",session));
+					            	   reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "cardTitle","jcr:title","cardTitle",session));
+					            	   reportDataitem.setCreation_Date(getPropertyValues(formDataNode,"jcr:created","jcr:title","jcr:created",session));
+					            	   reportDataitem.setCardDescription(getPropertyValues(formDataNode, "cardDescription","jcr:title","cardDescription",session));
+					            	   reportDataitem.setCardLogoSrc(getPropertyValues(formDataNode, "cardLogoSrc","jcr:title","cardLogoSrc",session));
+					            	   reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "pageTitle","jcr:title","pageTitle",session));
+					            	   reportDataitem.setCompany_size(getPropertyValues(formDataNode, "company-size","jcr:title", "company-size",session));
+					            	   reportDataitem.setIndustry(getPropertyValues(formDataNode, "industries","jcr:title", "industry",session));
+					            	   reportDataitem.setTopics(getPropertyValues(formDataNode, "topics","jcr:title","topic",session));
+					            	   reportDataitem.setCardSecondaryLinkText(getPropertyValues(formDataNode, "cardSecondaryLinkText","jcr:title","cardSecondaryLinkText",session));
+					            	   reportDataitem.setCardSecondaryLinkUrl(getPropertyValues(formDataNode, "cardSecondaryLinkUrl","jcr:title","cardSecondaryLinkUrl",session));
+					            	   reportDataitem.setLanguage(getPropertyValues(formDataNode, "Language","jcr:title","Language",session));
+					            	   reportDataitem.setIc_app_inclusion(getPropertyValues(formDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+					            	   reportDataitem.setIc_weighting(getPropertyValues(formDataNode, "ic-weighting","jcr:title","ic-weighting", session));					            	
+					            	   reportDataitem.setURL_Resource_Name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(formDataNode)));
 					        logger.info("List Size of forms"+list4.size());
 					        list4.add(reportDataitem);	
 					    }
@@ -673,15 +485,15 @@ public class CategoriesReportCSVGenService {
 		
 			//This data needs to be written (Object[])
 			Map<String, Object[]> data = new TreeMap<String, Object[]>();
-			data.put("1", TableNames2);					
+			data.put("1", EducationReportTableNames);					
 			for(int i=2;i<list2.size();i++)
 			{				
 				Integer count = i; 		
 			data.put(count.toString(), new Object[] {list2.get(i).getPage_Name(),list2.get(i).getJcr_path(),list2.get(i).getURLResourceName(),list2.get(i).getCMS_Title(),list2.get(i).getProduct_Interest(),
-									list2.get(i).getProduct_Line(),list2.get(i).getEducation_broad_roles(),list2.get(i).getEducation_products(),list2.get(i).getEducation_specific_types(),
+									list2.get(i).getProduct_Line(),list2.get(i).getEducation_broad_roles(),list2.get(i).getEducation_products(),
 									list2.get(i).getEducation_specific_roles(),list2.get(i).getEducation_version_numbers(),list2.get(i).getIc_app_inclusion(),
 									list2.get(i).getIc_weighting(),list2.get(i).getCourse_Delivery(),list2.get(i).getCourse_Type(),
-									list2.get(i).getCourse_Duration()});
+									list2.get(i).getCourse_Duration(),list2.get(i).getLast_modified_by(),list2.get(i).getLast_modified_Date(),list2.get(i).getLast_replication_action(),list2.get(i).getTranslation_Status()});
 			}
 			logger.info("Creating the EXCEL sheet");
 			//Blank workbook
@@ -764,8 +576,8 @@ public class CategoriesReportCSVGenService {
 			{				
 				Integer count = i; 				
 			data.put(count.toString(), new Object[] {list4.get(i).getID() ,list4.get(i).getCreation_Date(),
-				list4.get(i).getPage_URL(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),list4.get(i).getCompany_size(),list4.get(i).getBrand()
-				,list4.get(i).getLanguage(),list4.get(i).getProduct(),list4.get(i).getProduct_line(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCardDescription(),
+				list4.get(i).getPage_URL(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),
+				list4.get(i).getURL_Resource_Name(),list4.get(i).getCardDescription(),
 				list4.get(i).getCardLogoSrc(),list4.get(i).getCardSecondaryLinkText(),list4.get(i).getCardSecondaryLinkUrl(),
 				list4.get(i).getIc_app_inclusion(),list4.get(i).getIc_weighting()});
 			}
@@ -892,10 +704,8 @@ public class CategoriesReportCSVGenService {
 				    } 
 			    } catch (IOException e) {
 			        e.printStackTrace();
-			    }
-				return DAM_LOCATION+filename;
-
-		   	   
+			    }			   
+				return DAM_LOCATION+filename;		   	   
 	 	}
 	 
 	 /*
@@ -974,7 +784,7 @@ public class CategoriesReportCSVGenService {
 	                }
 		        
 		            for(String v : propVals) {
-		            	if(stringContainsNumber(v)){
+		            	if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
 		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
 		            	try
 		            	{
@@ -993,7 +803,7 @@ public class CategoriesReportCSVGenService {
 		         else {
 		            values = new Value[1];
 		            values[0] = prop.getValue();
-		            if((propertyName.equals("product_interest") || propertyName.equals("product_line") || propertyName.equals("topics"))&&(stringContainsNumber(values[0].toString())))
+		            if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
 		            {
 		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
 		            	String nodeValue = null;
@@ -1019,5 +829,38 @@ public class CategoriesReportCSVGenService {
 	 public boolean stringContainsNumber( String s )
 	 {
 	     return Pattern.compile( "[0-9]" ).matcher( s ).find();
+	 }
+	 
+	 public static boolean stringContainsItemFromList(String inputStr) {
+		 
+		 for(int i =0; i < resourceItems.length; i++)
+		    {
+		        if(inputStr.contains(resourceItems[i]))
+		        {
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+	 
+	 public void clearData(String reportType)
+	 {
+		 if(reportType.equals("it-solutions"))
+		 {
+			 list.clear();
+			
+		 }else if(reportType.equals("education-courses"))
+		 {
+			 list2.clear();
+			
+		 }else if(reportType.equals("sticky-headers"))
+		 {
+			 list3.clear();
+		
+		 }
+		 else if(reportType.equals("customers"))
+		 {
+			 list4.clear();
+		 }
 	 }
 }

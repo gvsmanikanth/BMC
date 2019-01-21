@@ -57,8 +57,8 @@ public class CustomersReportDataItem {
 		public String getCreation_Date() {
 			return Creation_Date;
 		}
-		public void setCreation_Date(String creation_Date) {
-			Creation_Date = creation_Date;
+		public String setCreation_Date(String creation_Date) {
+			return Creation_Date = creation_Date;
 		}
 		public String getContent_Type() {
 			return Content_Type;

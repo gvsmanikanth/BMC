@@ -143,24 +143,28 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
                 		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
+            	        expFgmtService.clearData(reportType);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
                 		workBook = videoService.generateDataReport(true,fileName);               			                		
             	        jsonDAMPath = videoService.writeJSONtoDAM(fileName);
             	        excelDAMPath = videoService.writeExceltoDAM(workBook, fileName);
+            	        videoService.clearData(reportType);
 	                	break;
 	                case "it-solutions":
 	                	//Generate the report for forms 	                		
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "sticky-headers":
 	                	//Generate the report for forms 	                		               		 
                 		workBook = categoriesService.generateStickyHeaderDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                
 	                case "education-courses":
@@ -168,12 +172,14 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "customers":
 	                	//Generate the report for forms 	                		
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "generic":
 	                	//Generate the report for forms 	                		
