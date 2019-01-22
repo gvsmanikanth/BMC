@@ -70,23 +70,21 @@ fieldset:not(#foo) {
 	// these decorator styles are for browsers that can have custom selects
 	.decorator-select {
 		&:after {
-			--content: url('#{$imagesFolder}bg-select-arrow.png');
-			content: '\e601';
-			font-family: "icomoon";
+			content: url('#{$imagesFolder}bg-select-arrow.png');
 			height: $inputHeight;
 			pointer-events: none;
 			position: absolute;
-			right: 10px;
-			top: 10px;
+			right: 0px;
+			top: -2px;
+			width: 58px;
 			z-index: (z(content)+1);
 		}
 
 		select {
 			outline: none;
+			z-index: (z(content)+2);
 		}
-		select::-ms-expand {
-			display: none;
-		}
+		
 	}
 
 	//input groups
