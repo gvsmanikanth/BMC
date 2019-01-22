@@ -79,10 +79,12 @@ fieldset:not(#foo) {
 			width: 58px;
 			z-index: (z(content)+1);
 		}
-
 		select {
 			outline: none;
 			z-index: (z(content)+2);
+		}
+		select::-ms-expand {
+			display: none;
 		}
 		
 	}
