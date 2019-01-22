@@ -80,8 +80,7 @@ public class CategoriesReportCSVGenService {
 	
 	@Reference
     private QueryBuilder builder;
-	
-	
+		
 	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
 	
 	private String DAM_LOCATION = "/content/dam/bmc/reports/";
@@ -95,18 +94,18 @@ public class CategoriesReportCSVGenService {
     private static ArrayList<CustomersReportDataItem> list4 = new ArrayList<CustomersReportDataItem>();
     
     private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
-       	
-    private String[] TableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Industry","Migration Raw URL",
-    		"Short Description","Meta Description","Ic app inclusion","Ic_weighting","Creation Date"};
+
+    private String[] ITSolutionsTableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Meta Description","Short Description","Description(Reusable)",
+    		"Ic app inclusion","Ic_weighting","Creation Date"};
 	
     private String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
     		,"Course Duration","Last Modified By","Last Modified Date","Last Replication Action","Translation Status"};
     
-    private String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText"};
+    private String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText","Template Type"};
 
-    private String[] CustomersList = {"ID","Creation_Date","Page_URL","URL Resource Name","Card Title","Industry","Topics",
-    			"URL_Resource_Name","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
-    			"IC App Inclusion","IC Weighting"};
+    private String[] CustomersList = {"ID","Creation_Date","Page URL","URL Resource Name","Page Title","Industry","Topics",
+    			"URL_Resource_Name","Card Title","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
+    			"IC App Inclusion","IC Weighting","Meta Description"};
 
 
     /*
@@ -229,41 +228,16 @@ public class CategoriesReportCSVGenService {
 	    {
 	    		
 	        	Map<String,String> map = createQuery(null, null, reportPath);
-	        	 Query query = builder.createQuery(PredicateGroup.create(map), session);
-    							             
+	        	 Query query = builder.createQuery(PredicateGroup.create(map), session);   							             
 	             SearchResult result = query.getResult();
-	             Long totalHits = result.getTotalMatches();
 	             for (Hit hit : result.getHits()) {
 	            	 	StickyHeaderReportDataItem reportDataitem = new StickyHeaderReportDataItem();  
-	            		Node formDataNode = hit.getResource().adaptTo(Node.class);
-	            		String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-	            		reportDataitem.setJcr_path(PagePath);
-	            			for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
-	            				{  
-	            					Property prop= propeIterator.nextProperty();  
-				         if(!prop.getDefinition().isMultiple()){
-				        	
-				        	if(prop.getName().equalsIgnoreCase("jcr:title"))
-				        	{				        		
-				        		String title  = prop.getValue().getString();			
-								//Adding the property to the POJO object
-				        	   reportDataitem.setJcr_content(title);
-				        	}
-				        	
-				        	else if(prop.getName().equalsIgnoreCase("secondaryCtaHref"))
-				        	{				        		
-				        		String secondaryCtaHref  = prop.getValue().getString();		
-								//Adding the property to the POJO object
-				        		reportDataitem.setSecondaryCtaHref(secondaryCtaHref);
-				        	}
-				        	else if(prop.getName().equalsIgnoreCase("secondaryCtaText"))
-				        	{				        		
-				        		String secondaryCtaText  = prop.getValue().getString();			
-								//Adding the property to the POJO object
-				        		 reportDataitem.setSecondaryCtaText(secondaryCtaText);
-				        	}				        									        	
-				         }						                 
-				   	}      
+	            		Node reportDataNode = hit.getResource().adaptTo(Node.class);
+	            		reportDataitem.setJcr_content(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
+	            		reportDataitem.setJcr_path(metadataProvider.getJCR_Path(reportDataNode));
+	            		reportDataitem.setSecondaryCtaHref(getPropertyValues(reportDataNode, "secondaryCtaHref","secondaryCtaHref","secondaryCtaHref",session));
+	            		reportDataitem.setSecondaryCtaText(getPropertyValues(reportDataNode, "secondaryCtaText","secondaryCtaText","secondaryCtaText",session));
+	            		reportDataitem.setTemplateType(getPropertyValues(reportDataNode, "cq:template","cq:template","cq:template",session));	            		     
 				   list3.add(reportDataitem);	
 	            		 }
 	    		}
@@ -345,22 +319,24 @@ public class CategoriesReportCSVGenService {
 		            		 for (Hit hit : result.getHits()) 
 		            		 {
 					            	CustomersReportDataItem reportDataitem = new CustomersReportDataItem();  
-					            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
-					            	   reportDataitem.setID(getPropertyValues(formDataNode, "cardTitle","jcr:title","cardTitle",session));
-					            	   reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "cardTitle","jcr:title","cardTitle",session));
-					            	   reportDataitem.setCreation_Date(getPropertyValues(formDataNode,"jcr:created","jcr:title","jcr:created",session));
-					            	   reportDataitem.setCardDescription(getPropertyValues(formDataNode, "cardDescription","jcr:title","cardDescription",session));
-					            	   reportDataitem.setCardLogoSrc(getPropertyValues(formDataNode, "cardLogoSrc","jcr:title","cardLogoSrc",session));
-					            	   reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "pageTitle","jcr:title","pageTitle",session));
-					            	   reportDataitem.setCompany_size(getPropertyValues(formDataNode, "company-size","jcr:title", "company-size",session));
-					            	   reportDataitem.setIndustry(getPropertyValues(formDataNode, "industries","jcr:title", "industry",session));
-					            	   reportDataitem.setTopics(getPropertyValues(formDataNode, "topics","jcr:title","topic",session));
-					            	   reportDataitem.setCardSecondaryLinkText(getPropertyValues(formDataNode, "cardSecondaryLinkText","jcr:title","cardSecondaryLinkText",session));
-					            	   reportDataitem.setCardSecondaryLinkUrl(getPropertyValues(formDataNode, "cardSecondaryLinkUrl","jcr:title","cardSecondaryLinkUrl",session));
-					            	   reportDataitem.setLanguage(getPropertyValues(formDataNode, "Language","jcr:title","Language",session));
-					            	   reportDataitem.setIc_app_inclusion(getPropertyValues(formDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
-					            	   reportDataitem.setIc_weighting(getPropertyValues(formDataNode, "ic-weighting","jcr:title","ic-weighting", session));					            	
-					            	   reportDataitem.setURL_Resource_Name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(formDataNode)));
+					            	 Node reportDataNode = hit.getResource().adaptTo(Node.class);
+					            	   reportDataitem.setID(getPropertyValues(reportDataNode, "cardTitle","jcr:title","cardTitle",session));
+					            	   reportDataitem.setCardTitle(getPropertyValues(reportDataNode, "cardTitle","jcr:title","cardTitle",session));
+					            	   reportDataitem.setCreation_Date(getPropertyValues(reportDataNode,"jcr:created","jcr:title","jcr:created",session));
+					            	   reportDataitem.setCardDescription(getPropertyValues(reportDataNode, "cardDescription","jcr:title","cardDescription",session));
+					            	   reportDataitem.setCardLogoSrc(getPropertyValues(reportDataNode, "cardLogoSrc","jcr:title","cardLogoSrc",session));
+					            	   reportDataitem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
+					            	   reportDataitem.setCompany_size(getPropertyValues(reportDataNode, "company-size","jcr:title", "company-size",session));
+					            	   reportDataitem.setIndustry(getPropertyValues(reportDataNode, "industries","jcr:title", "industry",session));
+					            	   reportDataitem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic",session));
+					            	   reportDataitem.setCardSecondaryLinkText(getPropertyValues(reportDataNode, "cardSecondaryLinkText","jcr:title","cardSecondaryLinkText",session));
+					            	   reportDataitem.setCardSecondaryLinkUrl(getPropertyValues(reportDataNode, "cardSecondaryLinkUrl","jcr:title","cardSecondaryLinkUrl",session));
+					            	   reportDataitem.setLanguage(getPropertyValues(reportDataNode, "Language","jcr:title","Language",session));
+					            	   reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+					            	   reportDataitem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));					            	
+					            	   reportDataitem.setURL_Resource_Name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(reportDataNode)));
+					            	   reportDataitem.setPage_URL(metadataProvider.getJCR_Path(reportDataNode));
+					            	   reportDataitem.setMeta_description(getPropertyValues(reportDataNode, "meta_description","jcr:title","meta_description", session));
 					        logger.info("List Size of forms"+list4.size());
 					        list4.add(reportDataitem);	
 					    }
@@ -373,7 +349,7 @@ public class CategoriesReportCSVGenService {
 
 	public String[] getTableNames()
   	{
-  		return this.TableNames;
+  		return this.ITSolutionsTableNames;
   	}
 
   	/*
@@ -402,23 +378,22 @@ public class CategoriesReportCSVGenService {
 							            		 for (Hit hit : result.getHits()) 
 							            		 {
 										            	CategoriesReportDataItem reportDataitem = new CategoriesReportDataItem();  
-										            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
-										            	 reportDataitem.setJcr_path(metadataProvider.getJCR_Path(formDataNode));						            	 
-										            	 reportDataitem.setUrl_resource_name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(formDataNode)));
-										            	 reportDataitem.setTopics(getPropertyValues(formDataNode, "topics","jcr:title","topic",session));
-										            	 reportDataitem.setProduct_interest(getPropertyValues(formDataNode, "product_interest","jcr:title","product-interests",session));
-										            	 reportDataitem.setProduct_Line(getPropertyValues(formDataNode, "product_line","text","product-lines",session));
-										            	 reportDataitem.setCMS_Title(getPropertyValues(formDataNode, "pageTitle","jcr:title","pageTitle",session));
-										            	 reportDataitem.setMeta_Description(getPropertyValues(formDataNode, "meta_description","jcr:title","meta_description", session));
-										            	 reportDataitem.setShort_Description(getPropertyValues(formDataNode, "short_description","jcr:title","short_description", session));
-										            	 reportDataitem.setContent_Type(getPropertyValues(formDataNode, "migration_content_type","jcr:title","migration_content_type", session));
-										            	 reportDataitem.setIndustry(getPropertyValues(formDataNode, "Industry","jcr:title", "industry",session));
-										            	 reportDataitem.setPage_Type(getPropertyValues(formDataNode, "Page Type","jcr:title","Page Type",session));
-										            	 reportDataitem.setIc_app_inclusion(getPropertyValues(formDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
-										            	 reportDataitem.setIc_weighting(getPropertyValues(formDataNode, "ic-weighting","jcr:title","ic-weighting", session));
-										            	 reportDataitem.setCreation_Date(getPropertyValues(formDataNode, "cq:lastReplicated", "jcr:title","cq:lastReplicated",session));
-										            	 reportDataitem.setStatus(getPropertyValues(formDataNode, "migration_raw_url", "jcr:title","cq:lastReplicated",session));
-										            	 logger.info("List Size of forms"+list.size());
+										            	 Node reportDataNode = hit.getResource().adaptTo(Node.class);
+										            	 reportDataitem.setJcr_path(metadataProvider.getJCR_Path(reportDataNode));						            	 
+										            	 reportDataitem.setUrl_resource_name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(reportDataNode)));
+										            	 reportDataitem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic",session));
+										            	 reportDataitem.setProduct_interest(getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
+										            	 reportDataitem.setProduct_Line(getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
+										            	 reportDataitem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
+										            	 reportDataitem.setMeta_Description(getPropertyValues(reportDataNode, "meta_description","jcr:title","meta_description", session));
+										            	 reportDataitem.setShort_Description(getPropertyValues(reportDataNode, "short_description","jcr:title","short_description", session));
+										            	 reportDataitem.setDescription(getPropertyValues(reportDataNode, "jcr:description","jcr:title","short_description", session));
+										            	 reportDataitem.setContent_Type(getPropertyValues(reportDataNode, "migration_content_type","jcr:title","migration_content_type", session));
+										            	 reportDataitem.setPage_Type(getPropertyValues(reportDataNode, "Page Type","jcr:title","Page Type",session));
+										            	 reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+										            	 reportDataitem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
+										            	 reportDataitem.setCreation_Date(getPropertyValues(reportDataNode, "cq:lastReplicated", "jcr:title","cq:lastReplicated",session));
+										            	 reportDataitem.setPage_URL(getPropertyValues(reportDataNode, "migration_content_url", "jcr:title","cq:lastReplicated",session));
 										            	 list.add(reportDataitem);	
 							            		 	}
 							    			}
@@ -441,15 +416,15 @@ public class CategoriesReportCSVGenService {
 		
 			//This data needs to be written (Object[])
 			Map<String, Object[]> data = new TreeMap<String, Object[]>();
-			data.put("1", TableNames);					
+			data.put("1", ITSolutionsTableNames);					
 			for(int i=2;i<list.size();i++)
 			{
 				
 				Integer count = i; 
 				
-			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getUrl_resource_name(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL(),list.get(i).getTopics(),
-									list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getPage_Type(),list.get(i).getIndustry(),list.get(i).getStatus(),list.get(i).getShort_Description(),list.get(i).getMeta_Description()
-									,list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
+			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getUrl_resource_name(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL()
+				,list.get(i).getTopics(),list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getPage_Type(),list.get(i).getMeta_Description(),list.get(i).getShort_Description(),list.get(i).getDescription(),
+									list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
 		
 			}
 			//Blank workbook
@@ -534,7 +509,7 @@ public class CategoriesReportCSVGenService {
 			{				
 				Integer count = i; 				
 			data.put(count.toString(), new Object[] {list3.get(i).getJcr_content(), list3.get(i).getJcr_path(),
-				list3.get(i).getSecondaryCtaHref(),list3.get(i).getSecondaryCtaText()});
+				list3.get(i).getSecondaryCtaHref(),list3.get(i).getSecondaryCtaText(),list3.get(i).getTemplateType()});
 			}
 			logger.info("Creating the EXCEL sheet");
 			//Blank workbook
@@ -577,9 +552,9 @@ public class CategoriesReportCSVGenService {
 				Integer count = i; 				
 			data.put(count.toString(), new Object[] {list4.get(i).getID() ,list4.get(i).getCreation_Date(),
 				list4.get(i).getPage_URL(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),
-				list4.get(i).getURL_Resource_Name(),list4.get(i).getCardDescription(),
+				list4.get(i).getURL_Resource_Name(),list4.get(i).getCardTitle(),list4.get(i).getCardDescription(),
 				list4.get(i).getCardLogoSrc(),list4.get(i).getCardSecondaryLinkText(),list4.get(i).getCardSecondaryLinkUrl(),
-				list4.get(i).getIc_app_inclusion(),list4.get(i).getIc_weighting()});
+				list4.get(i).getIc_app_inclusion(),list4.get(i).getIc_weighting(),list4.get(i).getMeta_description()});
 			}
 			
 		

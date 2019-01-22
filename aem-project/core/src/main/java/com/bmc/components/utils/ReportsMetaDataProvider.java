@@ -9,6 +9,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -161,30 +162,16 @@ public class ReportsMetaDataProvider {
 		return node.getPath().replace("/jcr:content", "");
 	}
 	
+	public String getExperiencefgmtPath(Node node)
+	{
+		try {
+			return(StringUtils.substringBefore(node.getPath(), "/jcr:content"));
+		} catch (RepositoryException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 	
-	 public String addEducationMetaFilters(String propertyName,String propertyValue,Property prop, Session session) throws RepositoryException{
-		 
-		//WEB-4209 AEM Reporting Phase2 Enhancements.
- 			List<String> propVals = new ArrayList<>();
- 			List<String> updatedPropVals = new ArrayList<>();
- 			if(prop.isMultiple()){
-                Value[] metaValues = prop.getValues();
-                for(Value v : metaValues) {
-                    propVals.add(v.getString());
-                }
-            }
- 		   for(String v : propVals) {
- 			 v = session.getNode("/content/bmc/resources/"+propertyName+"/" + v.toString()).getProperty(propertyValue).getString();
- 			 v = v.replace(" ", "_").toLowerCase();
- 			 if(prop.isMultiple()){							        				 
-         		  updatedPropVals.add(v);
-         	  }
- 		   }
- 		   if(prop.isMultiple()){
-          	  return(String.join(",", updatedPropVals ));          	  
-          }	else
-          {
-        	  return null;
- 	}		
-	    }
 }
