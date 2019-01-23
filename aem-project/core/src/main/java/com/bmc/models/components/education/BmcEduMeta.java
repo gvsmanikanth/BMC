@@ -13,6 +13,7 @@ import java.util.*;
 /**
  * Created by elambert on 7/19/17.
  */
+
 public class BmcEduMeta {
     private static final Logger logger = LoggerFactory.getLogger(BmcEduMeta.class);
 
@@ -27,7 +28,7 @@ public class BmcEduMeta {
     public BmcEduMeta(Session session, Resource resource, Page page) {
         filterCriteria = new ArrayList<>();
 
-        buildItemsList(page, session);
+        buildItemsList(page, session); // build the list items with its metadata
         buildProducts(session, resource);
         buildRoles(session);
         learningFormats(session);
@@ -75,6 +76,7 @@ public class BmcEduMeta {
             allVers.setName("All Versions");
             allVers.setId("0");
             productValues.setVersions(allVers);
+            // Append the versions to the product
             Set<String> versionNames=productCollection.getVersionNamesByProductName(productValues.getId());
             ArrayList<Integer> sortedVersionNames=new ArrayList<Integer>();
             if(versionNames != null){
@@ -85,13 +87,12 @@ public class BmcEduMeta {
                 	Node verNode;
                 	if(!versionName.equals("Any") && !versionName.equals("0")) {
                 	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
-                	     sortedVersionNames.add(Integer.valueOf(verNode.getProperty("jcr:title").getValue().toString().replace(".x","")));
-                	  }
-                	  }
+                	     sortedVersionNames.add(Integer.valueOf(verNode.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","")));
+                	 }
+                }
             }
            
             Collections.sort(sortedVersionNames, Collections.reverseOrder());
-
             if(sortedVersionNames != null){
                 for(int sortedVersion:sortedVersionNames){
                 	if(sortedVersion != 0) {
@@ -100,17 +101,15 @@ public class BmcEduMeta {
                 		Node verNode;
                     	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
                         newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
-                     
                         newVer.setId(versionName);
                         productValues.setVersions(newVer);
                      }
                 
+                	}
                 }
-                }
-            
             return productValues;
         } catch (RepositoryException e) {
-            logger.error("ERROR processing Education node", e.getMessage());
+            logger.error("ERROR processing product node", e.getMessage());
             return null;
         }
     }
@@ -147,19 +146,15 @@ public class BmcEduMeta {
                     addMetaFilters("education-specific-role", specificRoles, pageJCRContent, session);
                     try{
                     Node versionNode=session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versions.get(versions.size()-1));
-                    newItem.setLatestVersion(Integer.valueOf(versionNode.getProperty("jcr:title").getValue().toString().replace(".x","")));
+                    newItem.setLatestVersion(Integer.valueOf(versionNode.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","")));
                     }catch(Exception e){
-                    	
                     }
-                    
-                    
-                 if(products.size() > 0)   {
-                    for(int i=0;i<versions.size();i++)
-                    {
-                    	productCollection.addNewVersionName(products.get(0),versions.get(i));
-                    }
-                 }  
-                    
+                    if(products.size() > 0)   {
+	                    for(int i=0;i<versions.size();i++)
+	                    {
+	                    	productCollection.addNewVersionName(products.get(0),versions.get(i));
+	                    }
+                    }  
                     newItem.setSubHeader(pageProps.getOrDefault("isAccreditationAvailable","").toString());
                     newItem.setDuration(!pageProps.getOrDefault("course-duration","").toString().equals("") ? pageProps.getOrDefault("course-duration","").toString()+" Hours" : "");
                     newItem.setBlnFeatured(Boolean.parseBoolean(pageProps.getOrDefault("blnFeatured",false ).toString()));
@@ -175,11 +170,38 @@ public class BmcEduMeta {
                     itemIndex++;
                 }
             }
-            /* sort based on latest versions */
+            /* sort based on the below order 
+	            1.	Newer versions
+				2.	Learning Path
+				3.	Subscriptions
+				4.	Certification
+				5.	Courses
+				6.	Skills Assessments
+             */
+            /* First sort based on latest versions */
              Collections.sort(listItems,new Comparator<ListItems>() {
             	 public int compare(ListItems o1, ListItems o2) {
     	    	 return o2.getLatestVersion() - o1.getLatestVersion();
     	    	}
+             });
+            
+             /* sort based on defined order */
+            Collections.sort(listItems,new Comparator<ListItems>() {
+            public int compare(ListItems o1, ListItems o2) {
+            		String o1Type="empty";
+            		String o2Type="empty";
+            	    if(o1.getType().size() > 0){
+ 	                	o1Type=o1.getType().get(0);
+ 	                 }
+ 	                if(o2.getType().size() > 0){
+ 	                	o2Type=o2.getType().get(0);
+ 	                 }
+ 	                return orderOf(o1Type) - orderOf(o2Type);
+            		}
+            	    private int orderOf(String name) {   
+            	        return ((List)Arrays.asList("edu-specific-types-159150236","edu-specific-types-188151987","edu-specific-types-177151087","edu-specific-types-220818351","edu-specific-types-288161552","empty")).indexOf(name);
+            	    }
+            	 
              });
         }catch (Exception e){
                 logger.error("{}",e.getMessage());
@@ -206,9 +228,6 @@ public class BmcEduMeta {
                 	String hashCode = v.replace(" ", "_").toLowerCase(); // Hashcode for filtering 
                     attrHolder.add(v.equals("Any") ? "0" : hashCode);
                 }
-               
-              
-                
             }
         } catch (RepositoryException e) {
             logger.error("ERROR: addMetaFilters", e.getMessage());
@@ -291,9 +310,11 @@ public class BmcEduMeta {
                 Node node = (Node) tNodes.next();
                 Versions verVal = new Versions();
                 //verVal.setId(node.getName().equals("Any") ? "0" : getEdFilterID(node,session));
+               if(!node.getName().equals("jcr:content")){
                 verVal.setId(node.getProperty("jcr:title").getValue().toString());
                 verVal.setName(node.getProperty("jcr:title").getValue().toString());
                 versValues.add(verVal);
+               }
             }
 
             versHashMap.put("values", versValues);
@@ -310,12 +331,12 @@ public class BmcEduMeta {
             
             while (tNodes.hasNext()) {
                 Node node = (Node) tNodes.next();
-                if(node.getProperty("jcr:title").getValue().toString().replace(".x","").equals(versionName)){
+                if(!node.getName().equals("jcr:content") && node.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","").equals(versionName)){
                 	versionVal=node.getName();
                 }
             }
         }catch(Exception e) {
-            logger.error("{}",e.getMessage());
+            logger.error("error in version",e.getMessage());
         }
     	return versionVal;
     }
@@ -349,8 +370,7 @@ public class BmcEduMeta {
     }
 }
 
-
-
+/* Construct Product and its versions dynamically */
 class ProductTypeCollection
 {
 	ArrayList<ProductValues> productTypes;
