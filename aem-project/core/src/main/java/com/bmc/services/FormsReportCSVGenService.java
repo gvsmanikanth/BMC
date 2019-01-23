@@ -512,6 +512,7 @@ public class FormsReportCSVGenService {
 		    }
 		    return false;
 		}
+	 
 	 public void clearData(String reportType)
 	 {
 		 list.clear();
