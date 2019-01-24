@@ -95,7 +95,7 @@ public class CategoriesReportCSVGenService {
     
     private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 
-    private String[] ITSolutionsTableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Page Type","Meta Description","Short Description","Description(Reusable)",
+    private String[] ITSolutionsTableNames = {"CMS Title","URL Resource Name","JCR Path","Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest","Meta Description","Short Description","Description(Reusable)",
     		"Ic app inclusion","Ic_weighting","Creation Date"};
 	
     private String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
@@ -384,7 +384,7 @@ public class CategoriesReportCSVGenService {
 										            	 reportDataitem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic",session));
 										            	 reportDataitem.setProduct_interest(getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
 										            	 reportDataitem.setProduct_Line(getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
-										            	 reportDataitem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
+										            	 reportDataitem.setCMS_Title(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
 										            	 reportDataitem.setMeta_Description(getPropertyValues(reportDataNode, "meta_description","jcr:title","meta_description", session));
 										            	 reportDataitem.setShort_Description(getPropertyValues(reportDataNode, "short_description","jcr:title","short_description", session));
 										            	 reportDataitem.setDescription(getPropertyValues(reportDataNode, "jcr:description","jcr:title","short_description", session));
@@ -423,7 +423,7 @@ public class CategoriesReportCSVGenService {
 				Integer count = i; 
 				
 			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getUrl_resource_name(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL()
-				,list.get(i).getTopics(),list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getPage_Type(),list.get(i).getMeta_Description(),list.get(i).getShort_Description(),list.get(i).getDescription(),
+				,list.get(i).getTopics(),list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getMeta_Description(),list.get(i).getShort_Description(),list.get(i).getDescription(),
 									list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
 		
 			}
