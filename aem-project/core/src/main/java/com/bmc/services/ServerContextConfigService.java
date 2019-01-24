@@ -3,7 +3,11 @@ package com.bmc.services;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Map;
 
 /**
@@ -13,8 +17,10 @@ import java.util.Map;
 @Service(value=ServerContextConfigService.class)
 public class ServerContextConfigService implements ConfigurableService {
 
+    private static final Logger log = LoggerFactory.getLogger(ServerContextConfigService.class);
+
     String[] runModeWhitelist;
-    Map<String, String> givenNameMapping;
+    String givenName;
 
     @Property(label = "Server context enabled", boolValue = true,
             description = "Include server context information at the end of each page.")
@@ -22,18 +28,24 @@ public class ServerContextConfigService implements ConfigurableService {
     private boolean serverContextEnabled;
 
     @Property(unbounded = PropertyUnbounded.ARRAY, label = "Run mode whitelist",
-            description = "Only run modes that are listed here will be exposed.")
+            description = "Only run modes that are listed here will be exposed.",
+            value = { "author", "dev", "localdev", "prod", "publish", "publish1", "publish2", "stage" })
     private static final String RUN_MODE_WHITELIST = "run.mode.whitelist";
 
-    @Property(unbounded = PropertyUnbounded.ARRAY, label = "Given name mapping",
-            description = "Map Sling IDs to given names. The Sling ID of a server can be found under /var/discovery/oak/clusterInstances. If no mapping exists, the server's IP address will be used.")
-    private static final String GIVEN_NAME_MAPPING = "given.name.mapping";
+    @Property(label = "Given name",
+            description = "If no given name is assigned, the server's IP address will be used as a default.")
+    private static final String GIVEN_NAME = "given.name";
 
     @Activate
     public void activate(Map<String, Object> properties) {
         this.serverContextEnabled = PropertiesUtil.toBoolean(properties.get(SERVER_CONTEXT_ENABLED), true);
         this.runModeWhitelist = PropertiesUtil.toStringArray(properties.get(RUN_MODE_WHITELIST));
-        this.givenNameMapping = toMap((String[]) properties.get(GIVEN_NAME_MAPPING));
+        this.givenName = PropertiesUtil.toString(properties.get(GIVEN_NAME), "");
+        try {
+            this.givenName = StringUtils.isNotBlank(givenName) ? givenName : InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            log.error("Unable to determine server's IP address", e);
+        }
     }
 
     public boolean isServerContextEnabled() {
@@ -55,7 +67,7 @@ public class ServerContextConfigService implements ConfigurableService {
         return regex;
     }
 
-    public Map<String, String> getGivenNameMapping() {
-        return givenNameMapping;
+    public String getGivenName() {
+        return givenName;
     }
 }

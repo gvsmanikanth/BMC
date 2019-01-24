@@ -61,12 +61,8 @@ public class ServerContext extends WCMUsePojo {
             this.context = this.context.substring(0, this.context.lastIndexOf(","));
         }
 
-        String slingId = discoveryService.getTopology().getLocalInstance().getSlingId();
-        String givenName = serverContextConfig.getGivenNameMapping().get(slingId);
-        this.givenName = StringUtils.isNotBlank(givenName) ? givenName : InetAddress.getLocalHost().getHostAddress();
-
+        this.givenName = serverContextConfig.getGivenName();
         this.resourcePath = getCurrentPage().getPath();
-
         this.requestUrl = getRequest().getRequestURL().toString();
     }
 
