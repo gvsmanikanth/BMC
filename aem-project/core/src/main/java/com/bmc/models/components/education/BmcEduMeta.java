@@ -33,7 +33,7 @@ public class BmcEduMeta {
         buildRoles(session);
         learningFormats(session);
         buildTypes(session);
-        buildVersions(session);
+        //buildVersions(session);
         ArrayList<ProductValues> productTypes=productCollection.getProductTypeCollection();
         
        
@@ -77,36 +77,53 @@ public class BmcEduMeta {
             allVers.setId("0");
             productValues.setVersions(allVers);
             // Append the versions to the product
+            ArrayList<String> sortedVersionIDs=new ArrayList<String>();
             Set<String> versionNames=productCollection.getVersionNamesByProductName(productValues.getId());
-            ArrayList<Integer> sortedVersionNames=new ArrayList<Integer>();
             if(versionNames != null){
-            	Iterator<String> versionIterator=versionNames.iterator();
+            	try {
+                     Iterator tNodes = session.getNode(RESOURCE_ROOT+"education-version-numbers").getNodes();
+                     while (tNodes.hasNext()) {
+                         Node educationVersionNode = (Node) tNodes.next();
+                         if(!educationVersionNode.getName().equals("jcr:content")){
+                        	 sortedVersionIDs.add(educationVersionNode.getName());
+                         }
+                     }
+                     Collections.reverse(sortedVersionIDs);
+            	 }catch(Exception e){
+            		 logger.error("Error in processing product nodes"+e.getMessage());
+            	 }
+            	
+            	 List<String> versionList = new ArrayList<String>();
+            	 versionList.addAll(versionNames);
+            	 
+            	// Sort the versions in the reverse order of education-version-numbers nodes
+            	Collections.sort(versionList,new Comparator<String>() {
+            		public int compare(String s1, String s2) {
+        		        return orderOf(s1) - orderOf(s2);
+        				}
+        		        private int orderOf(String name) {    
+        		        	return sortedVersionIDs.indexOf(name);
+        		        }
+            	});
+            	Iterator<String> versionIterator=versionList.iterator();
                 while(versionIterator.hasNext())
                 {
                 	String versionName=(String)versionIterator.next();
                 	Node verNode;
+                	Versions newVer = new Versions();
                 	if(!versionName.equals("Any") && !versionName.equals("0")) {
-                	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
-                	     sortedVersionNames.add(Integer.valueOf(verNode.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","")));
-                	 }
-                }
-            }
-           
-            Collections.sort(sortedVersionNames, Collections.reverseOrder());
-            if(sortedVersionNames != null){
-                for(int sortedVersion:sortedVersionNames){
-                	if(sortedVersion != 0) {
-                		String versionName=getVersionID(String.valueOf(sortedVersion),session);
-                		Versions newVer = new Versions();
-                		Node verNode;
-                    	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
-                        newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
-                        newVer.setId(versionName);
-                        productValues.setVersions(newVer);
-                     }
-                
+                		try{
+                        	verNode = session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versionName);
+                            newVer.setName(verNode.getProperty("jcr:title").getValue().toString().replace(" ", "_"));
+                            newVer.setId(versionName);
+                            productValues.setVersions(newVer);
+                    		 }catch(PathNotFoundException ex){
+                    			 logger.error("ERROR processing product node with its sorted version", ex.getMessage());
+                    		 }
                 	}
                 }
+                
+            }
             return productValues;
         } catch (RepositoryException e) {
             logger.error("ERROR processing product node", e.getMessage());
@@ -144,11 +161,7 @@ public class BmcEduMeta {
                     addMetaFilters("education-broad-roles", roles, pageJCRContent, session);
                     addMetaFilters("course-delivery", deliveryMethod, pageJCRContent, session);
                     addMetaFilters("education-specific-role", specificRoles, pageJCRContent, session);
-                    try{
-                    Node versionNode=session.getNode(RESOURCE_ROOT + "education-version-numbers/" + versions.get(versions.size()-1));
-                    newItem.setLatestVersion(Integer.valueOf(versionNode.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","")));
-                    }catch(Exception e){
-                    }
+                   
                     if(products.size() > 0)   {
 	                    for(int i=0;i<versions.size();i++)
 	                    {
@@ -170,39 +183,7 @@ public class BmcEduMeta {
                     itemIndex++;
                 }
             }
-            /* sort based on the below order 
-	            1.	Newer versions
-				2.	Learning Path
-				3.	Subscriptions
-				4.	Certification
-				5.	Courses
-				6.	Skills Assessments
-             */
-            /* First sort based on latest versions */
-             Collections.sort(listItems,new Comparator<ListItems>() {
-            	 public int compare(ListItems o1, ListItems o2) {
-    	    	 return o2.getLatestVersion() - o1.getLatestVersion();
-    	    	}
-             });
-            
-             /* sort based on defined order */
-            Collections.sort(listItems,new Comparator<ListItems>() {
-            public int compare(ListItems o1, ListItems o2) {
-            		String o1Type="empty";
-            		String o2Type="empty";
-            	    if(o1.getType().size() > 0){
- 	                	o1Type=o1.getType().get(0);
- 	                 }
- 	                if(o2.getType().size() > 0){
- 	                	o2Type=o2.getType().get(0);
- 	                 }
- 	                return orderOf(o1Type) - orderOf(o2Type);
-            		}
-            	    private int orderOf(String name) {   
-            	        return ((List)Arrays.asList("edu-specific-types-159150236","edu-specific-types-188151987","edu-specific-types-177151087","edu-specific-types-220818351","edu-specific-types-288161552","empty")).indexOf(name);
-            	    }
-            	 
-             });
+           
         }catch (Exception e){
                 logger.error("{}",e.getMessage());
         }
@@ -299,7 +280,7 @@ public class BmcEduMeta {
         }
     }
 
-    private void buildVersions(Session session) {
+   /* private void buildVersions(Session session) {
         List<Versions> versValues = new ArrayList<>();
         HashMap<String, Object> versHashMap = new HashMap<>();
         versHashMap.put("name","versions");
@@ -322,24 +303,9 @@ public class BmcEduMeta {
         }catch(Exception e) {
             logger.error("{}",e.getMessage());
         }
-    }
+    }*/
     
-    private String getVersionID(String versionName,Session session){
-    	 String versionVal=null;
-    	try {
-            Iterator tNodes = session.getNode(RESOURCE_ROOT+"education-version-numbers").getNodes();
-            
-            while (tNodes.hasNext()) {
-                Node node = (Node) tNodes.next();
-                if(!node.getName().equals("jcr:content") && node.getProperty("jcr:title").getValue().toString().replace(".","").replace("x","").equals(versionName)){
-                	versionVal=node.getName();
-                }
-            }
-        }catch(Exception e) {
-            logger.error("error in version",e.getMessage());
-        }
-    	return versionVal;
-    }
+ 
 
     private String getEdFilterID(Node filterNode, Session session){
         String filterID = null;

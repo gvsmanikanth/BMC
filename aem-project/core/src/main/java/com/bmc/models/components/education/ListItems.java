@@ -9,7 +9,6 @@ public class ListItems {
 	
     private int id = 0;
     private String name = "";
-    private int latestVersion=0;
     private List<String> products;
     private List<String> versions;
     private List<String> type;
@@ -42,13 +41,7 @@ public class ListItems {
         this.name = name;
     }
     
-    public int getLatestVersion() {
-        return latestVersion;
-    }
-
-    public void setLatestVersion(int latestVersion) {
-        this.latestVersion = latestVersion;
-    }
+  
 
     public List<String> getProducts() {
         return products;
