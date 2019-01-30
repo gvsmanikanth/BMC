@@ -17,12 +17,12 @@ public class ExternalLinkRewriterAdapter implements PUMAdapter {
 
     private static final Logger log = LoggerFactory.getLogger(ExternalLinkRewriterAdapter.class);
 
-    @Property(name="adapters")
+    @Property(name="adapters", propertyPrivate = true)
     public static final String[] ADAPTER_CLASSES = {
             ExternalLinkRewriterModel.class.getName()
     };
 
-    @Property(name="adaptables")
+    @Property(name="adaptables", propertyPrivate = true)
     public static final String[] ADAPTABLE_CLASSES = {
             Resource.class.getName()
     };
