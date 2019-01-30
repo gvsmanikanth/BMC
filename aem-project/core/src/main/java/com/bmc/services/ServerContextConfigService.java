@@ -3,6 +3,7 @@ package com.bmc.services;
 import org.apache.commons.lang.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +36,9 @@ public class ServerContextConfigService implements ConfigurableService {
     @Property(label = "Given name",
             description = "If no given name is assigned, the server's IP address will be used as a default.")
     private static final String GIVEN_NAME = "given.name";
+
+    @Reference
+    private ConfigurationAdmin configAdmin;
 
     @Activate
     public void activate(Map<String, Object> properties) {
@@ -69,5 +73,10 @@ public class ServerContextConfigService implements ConfigurableService {
 
     public String getGivenName() {
         return givenName;
+    }
+
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
     }
 }
