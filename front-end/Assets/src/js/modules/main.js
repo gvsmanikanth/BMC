@@ -131,6 +131,7 @@ function addFilterToArrayProtoype() {
 
 	// wrap selects in a decorator
 	$('select').wrap('<div class="decorator-select"></div>');
+	$(".decorator-select").append("<span class='arrow'></span>");
 
 	addNthChildClasses();  //BMC-527 - Uncommented code.
 
@@ -383,6 +384,7 @@ function addFilterToArrayProtoype() {
 			var element2 = $('.three-up', this);
 			setEqHeight(element2); // WEB-451 cleanup
 		});
+		
 	}
 	
 	window.onload = eqHeight;
