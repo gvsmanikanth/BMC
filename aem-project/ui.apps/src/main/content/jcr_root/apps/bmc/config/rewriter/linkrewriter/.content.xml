@@ -7,7 +7,7 @@
     order="{Long}1"
     paths="/content/bmc/"
     serializerType="htmlwriter"
-    transformerTypes="[linkrewriter]">
+    transformerTypes="[linkrewriter,pum]">
     <generator-htmlparser
         jcr:primaryType="nt:unstructured"
         includeTags="[A,/A,IMG,AREA,FORM,BASE,LINK,SCRIPT,BODY,/BODY]"/>

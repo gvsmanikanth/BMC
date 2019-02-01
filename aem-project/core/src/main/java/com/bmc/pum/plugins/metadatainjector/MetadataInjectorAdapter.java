@@ -2,6 +2,7 @@ package com.bmc.pum.plugins.metadatainjector;
 
 import com.bmc.pum.plugins.PUMAdapter;
 import com.bmc.services.ResourceService;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
@@ -21,12 +22,12 @@ public class MetadataInjectorAdapter implements PUMAdapter {
     @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=caching)")
     ResourceService resourceService;
 
-    @Property(name="adapters")
+    @Property(name="adapters", propertyPrivate = true)
     public static final String[] ADAPTER_CLASSES = {
             MetadataInjectorModel.class.getName()
     };
 
-    @Property(name="adaptables")
+    @Property(name="adaptables", propertyPrivate = true)
     public static final String[] ADAPTABLE_CLASSES = {
             Resource.class.getName()
     };
@@ -45,12 +46,17 @@ public class MetadataInjectorAdapter implements PUMAdapter {
                     "ic-target-industry, data-ic-target-industry",
                     "ic-company-size, data-ic-company-size"
             })
-    static final String METADATA_INJECTOR_MAPPING = "pum.metadata.injector.mapping";
+    public static final String METADATA_INJECTOR_MAPPING = "pum.metadata.injector.mapping";
     private Map<String, String> metadataInjectorMapping;
+
+    @Property(description="Separator for multi-value properties", value = "|")
+    public static final String METADATA_INJECTOR_SEPARATOR = "pum.metadata.injector.separator";
+    private String separator;
 
     @Activate
     protected void activate(final Map<String, Object> props) {
         this.metadataInjectorMapping = toMap((String[]) props.get(METADATA_INJECTOR_MAPPING));
+        this.separator = (String) props.get(METADATA_INJECTOR_SEPARATOR);
     }
 
     @Override
@@ -65,11 +71,17 @@ public class MetadataInjectorAdapter implements PUMAdapter {
         MetadataInjectorModel model = new MetadataInjectorModel();
 
         for (String propertyName : metadataInjectorMapping.keySet()) {
-            // Read plain property value
-            String propertyValue = resource.getValueMap().get(propertyName, String.class);
+            String result = new String();
+            // Read plain property values
+            String[] propertyValues = resource.getValueMap().get(propertyName, String[].class);
             // Translate plain value into human readable value
-            propertyValue = resourceService.getTitle(propertyName, propertyValue, resource.getResourceResolver());
-            model.put(metadataInjectorMapping.get(propertyName), propertyValue);
+            if (propertyValues != null) {
+                for (String propertyValue : propertyValues) {
+                    propertyValue = resourceService.getTitle(propertyName, propertyValue, resource.getResourceResolver());
+                    result += propertyValue + this.separator;
+                }
+                model.put(metadataInjectorMapping.get(propertyName), StringUtils.chop(result));
+            }
         }
 
         return (AdapterType)model;

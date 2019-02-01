@@ -56,7 +56,7 @@ public interface PUMPlugin<T extends PUMModel> {
         if (attributeIndex >= 0) {
             anchorAttributes.setValue(attributeIndex, value);
         } else {
-            anchorAttributes.addAttribute(null, name, name, null, value);
+            anchorAttributes.addAttribute("", name, name, "", value);
         }
     }
 
