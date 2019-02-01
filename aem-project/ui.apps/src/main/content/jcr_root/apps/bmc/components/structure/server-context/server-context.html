@@ -1,0 +1,17 @@
+<template data-sly-template.renderServerContext="${ @ model }">
+    <sly data-sly-test="${model.isEnabled}">
+        <script type="text/javascript">
+            var bmcMeta = bmcMeta || {};
+            bmcMeta.page = bmcMeta.page || {};
+            bmcMeta.page.context = {
+                "renderDateTime": "${model.renderDateTime @ context='unsafe'}",
+                "context": "${model.context @ context='unsafe'}",
+                "givenName": "${model.givenName @ context='unsafe'}",
+                "resourcePath": "${model.resourcePath @ context='unsafe'}",
+                "requestUrl": "${model.requestUrl @ context='unsafe'}"
+            };
+        </script>
+    </sly>
+</template>
+
+<sly data-sly-use.model="com.bmc.components.ServerContext" data-sly-call="${renderServerContext @ model=model}"/>

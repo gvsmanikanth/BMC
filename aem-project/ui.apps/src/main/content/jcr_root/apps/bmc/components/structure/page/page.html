@@ -10,5 +10,6 @@
         <sly data-sly-include="body.html"></sly>
         <sly data-sly-call="${footer.footer @ page = page}"></sly>
         <sly data-sly-include="body.socialmedia_end.html"></sly>
+        <sly data-sly-resource="${'.' @ resourceType='bmc/components/structure/server-context'}"></sly>
     </body>
 </html>
