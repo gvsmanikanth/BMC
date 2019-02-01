@@ -37,7 +37,7 @@ import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bmc.components.Page;
+import com.bmc.components.PageWrapper;
 import com.bmc.components.reports.CategoriesReportDataItem;
 import com.bmc.components.reports.CustomersReportDataItem;
 import com.bmc.components.reports.EducationReportDataItem;
