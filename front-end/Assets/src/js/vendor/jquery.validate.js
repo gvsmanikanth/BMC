@@ -246,6 +246,10 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					else {
 						$form.submit();
 					}
+					//fired Event2 on form submit
+					if(_satellite){
+						_satellite.track("form_completion");
+					}
 				}
 				else {
 					scrollToInvalid();
