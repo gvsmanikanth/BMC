@@ -38,8 +38,9 @@
 					<option value="Director">Director</option>
 					<option value="Manager">Manager</option>
 					<option value="IT Professional">IT Professional</option>
-					<option value="Business Professional">Business Professional</option>
+					<option value="Business Professional">BMC TrueSight/BladeLogic Server Automation BladeLogic Server Automation adeLogic Server Automation</option>
 				</select>
+				 <!--<span class="arrow"></span>-->
 			</li>
 			<li id="row_C_Address1">
 				<label for="C_Address1" class="accessibility">Address Line 1</label>
