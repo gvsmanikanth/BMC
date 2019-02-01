@@ -17,10 +17,13 @@ public class CategoriesReportDataItem {
 	private String Status;
 	private String Meta_Description;
 	private String Short_Description;
+	private String description;
 	private String ic_app_inclusion;
 	private String jcr_path;
 	private String product_interest;
 	private String url_resource_name;
+	
+	
 	public String getIc_app_inclusion() {
 		return ic_app_inclusion;
 	}
@@ -138,6 +141,12 @@ public class CategoriesReportDataItem {
 	}
 	public void setUrl_resource_name(String url_resource_name) {
 		this.url_resource_name = url_resource_name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

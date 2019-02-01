@@ -6,6 +6,8 @@ public class StickyHeaderReportDataItem {
 	private String secondaryCtaText;
 	private String jcr_path;
 	private String jcr_content;
+	private String templateType;
+	
 	public String getSecondaryCtaHref() {
 		return secondaryCtaHref;
 	}
@@ -29,6 +31,12 @@ public class StickyHeaderReportDataItem {
 	}
 	public void setJcr_content(String jcr_content) {
 		this.jcr_content = jcr_content;
+	}
+	public String getTemplateType() {
+		return templateType;
+	}
+	public void setTemplateType(String templateType) {
+		this.templateType = templateType;
 	}
 	
 }

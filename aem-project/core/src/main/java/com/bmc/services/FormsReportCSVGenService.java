@@ -14,16 +14,21 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 import java.beans.Encoder;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.Value;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
@@ -36,6 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bmc.components.reports.FormsReportDataItem;
+import com.bmc.components.utils.ReportsMetaDataProvider;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -71,18 +77,22 @@ public class FormsReportCSVGenService {
 	 
 	private  Workbook workbook;
 	
+	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
+	
 	@Reference
     private QueryBuilder builder;
 	
 	private String DAM_LOCATION = "/content/dam/bmc/reports/";
 	
-   
+	private ReportsMetaDataProvider metaDataProvider;
+	
     private static  ArrayList<FormsReportDataItem> list = new ArrayList<FormsReportDataItem>();
        
-	
-    private String[] TableNames = {"Page URL","C_Lead_Offer_Most_Recent1","Form-2 Parent ID", "Title", "Form-2 Publish Status","Node Name", "FieldSet", "FieldSet ID","Email ID", "Form URL", 
-			"Form PURL","Content Preferences", "Eloqua Form Name", "Eloqua Form ID","Eloqua Campaign ID", "Campaign ID (SFDC Campaign ID)", "Business Unit",
-			"Product Line", "Lead Offer", "Product Interest","External Activity Type", "External Activity", "External Asset Name", "Is Updated","Created Date","forceOptIn"};	
+    private static String[] resourceItems = {"product_interest","productLine1","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
+
+    
+    private String[] TableNames = {"Page URL","Creation Date","Form Type","Business Unit","Form Action","Form Action Type","Is Non-Lead Gen Form?","Is Parallel Email Form?",
+    		"EmailID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner","Contact me ","Experience Fragment path"};
 	
 	 /*
 	  	* generateReport()
@@ -155,207 +165,41 @@ public class FormsReportCSVGenService {
 						Resource resource = resourceResolver.getResource(fileLocation);														
 							    if(resource != null)
 							    {							    		
-							        	Map<String,String> map = createQuery(null, null,fileLocation);
+							        	Map<String,String> map = createQueryPredicates2(fileLocation);
 							        	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
 							             SearchResult result = query.getResult();
-							            		 for (Hit hit : result.getHits()) {
-							            	FormsReportDataItem formDataitem = new FormsReportDataItem();  
-							            	 Node formDataNode = hit.getResource().adaptTo(Node.class);
-							            	 String PagePath = formDataNode.getPath().replace("/jcr:content", "");
-							            	 formDataitem.setPageURL(PagePath); 
-										   for(PropertyIterator propeIterator = formDataNode.getProperties() ; propeIterator.hasNext();)  
-										   {  
-										        Property prop= propeIterator.nextProperty();  
-										         if(!prop.getDefinition().isMultiple()){
-										        	
-										        	if(prop.getName().equalsIgnoreCase("emailid"))
-										        	{
-										        		
-										        		String emailID  = prop.getValue().getString();
-										        		//logger.info("email ID : "+emailID);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setEmail_ID(emailID);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("jcr:created"))
-										        	{
-										        		
-										        		String jcrCreated  = prop.getValue().getString();
-										        		//logger.info("jcr Created : "+jcrCreated);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setCreated_Date(jcrCreated);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("C_Lead_Business_Unit1"))
-										        	{
-										        		
-										        		String C_Lead_Business_Unit1  = prop.getValue().getString();
-										        		logger.info("C_Lead_Business_Unit1 : "+C_Lead_Business_Unit1);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setBusiness_Unit(C_Lead_Business_Unit1);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("elqCampaignID"))
-										        	{
-										        		
-										        		String elqCampaignID  = prop.getValue().getString();
-										        		//logger.info("elqoqua CampaignID : "+elqCampaignID);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setEloqua_Campaign_ID(elqCampaignID);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("formid"))
-										        	{
-										        		
-										        		String formid  = prop.getValue().getString();
-										        		//logger.info("Elq form id : "+formid);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setEloqua_Form_ID(formid);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("formLayout"))
-										        	{
-										        		
-										        		String formLayout  = prop.getValue().getString();
-										        		//logger.info("formLayout : "+formLayout);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_FieldSet(formLayout);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("migration_content_id"))
-										        	{
-										        		
-										        		String migration_content_id  = prop.getValue().getString();
-										        		//logger.info("migration_content_id : "+migration_content_id);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_FieldSet_ID(migration_content_id);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("ex_assettype"))
-										        	{
-										        		
-										        		String ex_assettype  = prop.getValue().getString();
-										        		//logger.info("ex_assettype : "+ex_assettype);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setExternal_Activity_Type(ex_assettype);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("ex_act"))
-										        	{
-										        		
-										        		String ex_act  = prop.getValue().getString();
-										        		//logger.info("ex_act : "+ex_act);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setExternal_Activity(ex_act);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("ex_assetname"))
-										        	{
-										        		
-										        		String ex_assetname  = prop.getValue().getString();
-										        		//logger.info("ex_assetname : "+ex_assetname);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setExternal_Asset_Name(ex_assetname);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("C_OptIn"))
-										        	{
-										        		
-										        		String C_OptIn  = prop.getValue().getString();
-										        		//logger.info("C_OptIn : "+C_OptIn);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForceOptIn(C_OptIn);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("content_prefs"))
-										        	{
-										        		
-										        		String content_prefs  = prop.getValue().getString();
-										        		//logger.info("content_prefs : "+content_prefs);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_Content_Preferences(content_prefs);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("cq:LastReplicationAction"))
-										        	{
-										        		
-										        		String LastReplicationAction  = prop.getValue().getString();
-										        		//logger.info("Last Replication Action BY User: "+LastReplicationAction);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_Publish_Status(LastReplicationAction);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("migration_content_id"))
-										        	{
-										        		
-										        		String migration_content_id1  = prop.getValue().getString();
-										        		//logger.info("formLayout : "+migration_content_id1);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_Parent_ID(migration_content_id1);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("migration_content_url"))
-										        	{
-										        		
-										        		String migration_content_url  = prop.getValue().getString();
-										        		//logger.info("migration_content_url : "+migration_content_url);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_PURL(migration_content_url);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("title"))
-										        	{
-										        		
-										        		String title  = prop.getValue().getString();
-										        		//logger.info("title : "+title);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_title(title);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("migration_raw_url"))
-										        	{
-										        		
-										        		String migration_raw_url  = prop.getValue().getString();
-										        		//logger.info("Migration Raw URL : "+migration_raw_url);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setForm_URL(migration_raw_url);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("product_interest"))
-										        	{
-										        		
-										        		String product_interest  = prop.getValue().getString();
-										        		//logger.info("product interest : "+product_interest);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setProduct_Interest(product_interest);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("product_line"))
-										        	{
-										        		
-										        		String product_line  = prop.getValue().getString();
-										        		//logger.info("product Line : "+product_line);			
-														//Adding the property to the POJO object
-										        	   formDataitem.setProduct_Line(product_line);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("cq:template"))
-										        	{
-										        		
-										        		String formTemplate  = prop.getValue().getString();
-										        		//logger.info("form Template: "+formTemplate);			
-														//Adding the property to the POJO object
-										        		formDataitem.setEloqua_Form_Name(formTemplate);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("C_Lead_Offer_Most_Recent1"))
-										        	{
-										        		
-										        		String C_Lead_Offer_Most_Recent1  = prop.getValue().getString();
-										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
-														//Adding the property to the POJO object
-										        		formDataitem.setC_Lead_Offer_Most_Recent1(C_Lead_Offer_Most_Recent1);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("campaignid"))
-										        	{
-										        		
-										        		String campaignid  = prop.getValue().getString();
-										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
-														//Adding the property to the POJO object
-										        		formDataitem.setSFDC_Campaign_ID(campaignid);
-										        	}
-										        	else if(prop.getName().equalsIgnoreCase("C_Lead_Offer_Most_Recent1"))
-										        	{
-										        		
-										        		String C_Lead_Offer_Most_Recent1  = prop.getValue().getString();
-										        		//logger.info("C_Lead_Offer_Most_Recent1: "+C_Lead_Offer_Most_Recent1);			
-														//Adding the property to the POJO object
-										        		formDataitem.setC_Lead_Offer_Most_Recent1(C_Lead_Offer_Most_Recent1);
-										        	}
-										        	
-													}
-						                }
-						    	                  list.add(formDataitem);
+							            for (Hit hit : result.getHits()) {
+								            	FormsReportDataItem formDataitem = new FormsReportDataItem();  
+								            	 Node formNode = hit.getResource().adaptTo(Node.class);	
+								            	 Node expFgmtNode = formNode.getNode("experiencefragment");
+								            	 formDataitem.setExpFgmtPath(getPropertyValues(expFgmtNode, "fragmentPath","fragmentPath","fragmentPath",session));
+								            	 formDataitem.setForm_URL(metadataProvider.getExperiencefgmtPath(formNode));
+								            	 formDataitem.setForm_Publish_Status(getPropertyValues(formNode, "cq:LastReplicationAction","cq:LastReplicationAction","cq:LastReplicationAction",session));
+								            	 formDataitem.setCreated_Date(getPropertyValues(formNode, "jcr:created","jcr:created","jcr:created",session));
+								            	 formDataitem.setBusiness_Unit(getPropertyValues(formNode, "C_Lead_Business_Unit1","jcr:title","C_Lead_Business_Unit1",session));
+								            	 formDataitem.setEloqua_Campaign_ID(getPropertyValues(formNode, "elqCampaignID","elqCampaignID","elqCampaignID",session));
+								            	 formDataitem.setForm_ID(getPropertyValues(formNode, "formid","formid","formid",session));							            	
+								            	 formDataitem.setExternal_Asset_Type(getPropertyValues(formNode, "ex_assettype","ex_assettype","ex_assettype",session));
+								            	 formDataitem.setExternal_Activity(getPropertyValues(formNode, "ex_act","ex_act","ex_act",session));
+								            	 formDataitem.setExternal_Asset_Name(getPropertyValues(formNode, "ex_assetname","ex_assetname","ex_assetname",session));
+								            	 formDataitem.setForceOptIn(getPropertyValues(formNode, "C_OptIn","C_OptIn","C_OptIn",session));
+								            	 formDataitem.setForm_Content_Preferences(getPropertyValues(formNode, "content_prefs","content_prefs","content_prefs",session));							            	
+								            	 formDataitem.setForm_type(getPropertyValues(formNode, "formType","formType","formType",session));
+								            	 formDataitem.setActivePURLPattern(getPropertyValues(formNode, "activePURLPattern","activePURLPattern","activePURLPattern",session));
+								            	 formDataitem.setActivePURLRedirect(getPropertyValues(formNode, "activePURLRedirect","activePURLRedirect","activePURLRedirect",session));
+								            	 formDataitem.setProduct_Interest(getPropertyValues(formNode, "product_interest","jcr:title","product-interests",session));
+								            	 formDataitem.setProduct_Line(getPropertyValues(formNode, "productLine1","text","product-lines",session));
+								            	 formDataitem.setCampaign_ID(getPropertyValues(formNode, "campaignid","campaignid","campaignid",session));
+								            	 formDataitem.setLMA_License(getPropertyValues(formNode, "LMA_License","LMA_License","LMA_License",session));
+								            	 formDataitem.setC_Lead_Offer_Most_Recent1(getPropertyValues(formNode, "C_Lead_Offer_Most_Recent1","C_Lead_Offer_Most_Recent1","C_Lead_Offer_Most_Recent1",session));
+								            	 formDataitem.setAWS_trial(getPropertyValues(formNode, "AWS_Trial","AWS_Trial","AWS_Trial",session));
+								            	 formDataitem.setC_Assign_to_Owner(getPropertyValues(formNode, "C_Assign_to_Owner","C_Assign_to_Owner","C_Assign_to_Owner",session));
+								            	 formDataitem.setC_Contact_Me1(getPropertyValues(formNode, "C_Contact_Me1","C_Contact_Me1","C_Contact_Me1",session));
+								            	 formDataitem.setPageURL(getPropertyValues(formNode, "PURLPageUrl","PURLPageUrl","PURLPageUrl",session));
+								            	 formDataitem.setAction(getPropertyValues(formNode, "action","action","action",session));
+								            	 formDataitem.setActionTYpe(getPropertyValues(formNode, "actionType","actionType","actionType",session));
+								            	 formDataitem.setEmail_ID(getPropertyValues(formNode, "emailid","emailid","emailid",session));
+						    	             list.add(formDataitem);
 						                 
 						                 }
 						        logger.info("List Size of forms"+list.size());
@@ -392,10 +236,13 @@ public class FormsReportCSVGenService {
 			{
 				logger.info("Data Item:"+i);
 				Integer count = i; 
-			data.put(count.toString(), new Object[] {list.get(i).getPageURL(),list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getForm_Parent_ID(), list.get(i).getForm_title(), list.get(i).getForm_Publish_Status(),list.get(i).getForm_Node_Name(),list.get(i).getForm_FieldSet(),list.get(i).getForm_FieldSet_ID(),list.get(i).getEmail_ID(),list.get(i).getForm_URL(),
-					list.get(i).getForm_PURL(),list.get(i).getForm_Content_Preferences(),list.get(i).getEloqua_Form_Name(),list.get(i).getEloqua_Form_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getSFDC_Campaign_ID(),list.get(i).getBusiness_Unit(),
-					list.get(i).getProduct_Line(),list.get(i).getProduct_Interest(),list.get(i).getExternal_Activity_Type(),list.get(i).getExternal_Activity(),list.get(i).getExternal_Asset_Name(),list.get(i).getIs_Updated(),list.get(i).getCreated_Date(),list.get(i).getForceOptIn()});
-			logger.info("Added the data item "+count+" to the report");
+				
+			data.put(count.toString(), new Object[] {list.get(i).getForm_URL(),list.get(i).getCreated_Date(),list.get(i).getForm_type(),list.get(i).getBusiness_Unit()
+				,list.get(i).getAction(),list.get(i).getActionTYpe(),list.get(i).getIsNonLeadGenForm(),list.get(i).getIsParallelEmailForm(),
+				list.get(i).getEmail_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getCampaign_ID(),list.get(i).getExternal_Asset_Name(),list.get(i).getExternal_Asset_Type(),
+				list.get(i).getExternal_Activity(),list.get(i).getForceOptIn(),list.get(i).getForm_Content_Preferences(),list.get(i).getPageURL(),
+				list.get(i).getActivePURLPattern(),list.get(i).getActivePURLRedirect(),list.get(i).getProduct_Interest(),list.get(i).getProduct_Line(),list.get(i).getLMA_License(),
+				list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getAWS_trial(), list.get(i).getC_Assign_to_Owner(), list.get(i).getC_Contact_Me1(),list.get(i).getExpFgmtPath()});
 			}
 			 logger.info("Creating the EXCEL sheet");
 			//Iterate over data and write to sheet
@@ -418,34 +265,7 @@ public class FormsReportCSVGenService {
 			 return workbook;    
 	 }
 	 
-	 /*public String getOutputList(String reportLocation)
-	 	{
-		 	String forLoop1 = null;
-		 	String mainTable = null;
-		    String tableHeader = "<table style='font-size: 12px;border: 2px solid #000; font-family: Times New Roman, Times, serif;'>"+"<thead>"+"<tr style='border: 1px solid #CCC;'>";
-		    for(int i=0;i<TableNames.length;i++)
-		    {
-		     forLoop1 = forLoop1 + "<th style='background-color: #748A8B; color: #FFF;font-weight: bold;'>" +TableNames[i].toString()+ "</th>";
-			}
-			tableHeader = tableHeader + forLoop1 +"</tr>"+"</thead>"+"<tbody>";
-		    
-		    for(int i=0;i<list.size();i++)
-		    {
-		    	FormsReportDataItem dataItem = new FormsReportDataItem();
-		    	dataItem = list.get(i);	
-		    
-		    	mainTable = mainTable +"<tr style='border: 1px solid #000;'>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getC_Lead_Offer_Most_Recent1()+"</td>"
-		    	+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_Parent_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_title()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_Publish_Status()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_Node_Name()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_FieldSet()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+
-		    	dataItem.getForm_FieldSet_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getEmail_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_URL()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_PURL()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getForm_Content_Preferences()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getEloqua_Form_Name()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getEloqua_Form_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getEloqua_Campaign_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getSFDC_Campaign_ID()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getBusiness_Unit()+"</td>"+
- 			"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getProduct_Line()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+
-		    	dataItem.getProduct_Interest()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getExternal_Activity_Type()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getExternal_Activity()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+
-		    	dataItem.getExternal_Asset_Name()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getIs_Updated()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+dataItem.getCreated_Date()+"</td>"+"<td class='padding: 4px;margin: 3px;border: 1px solid #000;'>"+
-		    	dataItem.getForceOptIn()+"</td>"+"</tr>";
-		    }		    			  		    			    
-		    String outputString = tableHeader+ mainTable +"</tbody>"+"</table>";
-		    //logger.info("FINALOUTPUT " +outputString);
-		    return outputString;
-	 	}*/
+	
 	 
 	 /*
 	  * createQuery()
@@ -470,6 +290,31 @@ public class FormsReportCSVGenService {
 	     map.put("property", "cq:template"); //the property to check for
 	     map.put("property.operation", "unequals"); // or like or like etc..
 	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-thank-you");     
+	     return map;
+	     // can be done in map or with Query methods
+	    
+	 }
+	 
+	 
+	 /*
+	  * createQuery()
+	  * This method generates a custom Predicate based on user input.
+	  * Arguments includes RootPath as a string
+	  * FultextSearchTerm - predicates for future.
+	  * 
+	  */
+	 public Map<String,String> createQueryPredicates2(String fileLocation)
+	 {
+		 // create query description as hash map (simplest way, same as form post)
+	     Map<String, String> map = new HashMap<String, String>();	    
+	     // create query description as hash map (simplest way, same as form post)	
+	     map.put("path", fileLocation);
+	     map.put("type", "nt:unstructured");
+	     map.put("property.hits", "full");
+	     map.put("orderby", "@jcr:content/jcr:lastModified");
+	     map.put("p.offset", "0");
+	     map.put("p.limit", "2000");
+	     map.put("nodename","form");
 	     return map;
 	     // can be done in map or with Query methods
 	    
@@ -593,5 +438,83 @@ public class FormsReportCSVGenService {
 			 date = date.replace(":", "_");
 			return  date.replace(" ", "_"); //2016/11/16 12:08:43
 		 }
+		
+	 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException ,PathNotFoundException{
+		  
+		   if (node.hasProperty(propertyName)) {
+	   
+	        Property prop = node.getProperty(propertyName);
+	        Value[] values;
+	        List<String> propVals = new ArrayList<>();
+	        List<String> updatedPropVals = new ArrayList<>();
+	        // This check is necessary to ensure a multi-valued field is applied...
+	        if (prop.isMultiple()) {
+	            values = prop.getValues();
+	            for(Value v : values) {		            	
+	            	propVals.add(v.getString());
+              }
+	        
+	            for(String v : propVals) {
+	            	if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
+	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
+	            	try
+	            	{
+	    			 v = session.getNode(nodeName).getProperty(propertyValue).getString();
+	            	}catch(PathNotFoundException pn)
+	            	{
+	            		v = "";
+	            	}
+	            	}else
+	            	{ v = v.toString();}
+	    			 if(prop.isMultiple()){							        				 
+	            		  updatedPropVals.add(v);
+	            	  }
+	            }
+	        }	   
+	         else {
+	            values = new Value[1];
+	            values[0] = prop.getValue();
+	            if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
+	            {
+	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
+	            	String nodeValue = null;
+	            	try
+	            	{
+	            	nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
+	            	}catch(PathNotFoundException ex){
+	            		nodeValue = "";
+	            	}		            	
+	            	updatedPropVals.add(nodeValue);
+	            }else{
+	            updatedPropVals.add(prop.getValue().toString());
+	            }
+	        }
+	       
+	        return (String.join(",", updatedPropVals));
+	    }
+
+	    return "";
+	    
+	}
+	 public boolean stringContainsNumber( String s )
+	 {
+	     return Pattern.compile( "[0-9]" ).matcher( s ).find();
+	 }
+	 
+	 public static boolean stringContainsItemFromList(String inputStr) {
 		 
+		 for(int i =0; i < resourceItems.length; i++)
+		    {
+		        if(inputStr.contains(resourceItems[i]))
+		        {
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+	 
+	 public void clearData(String reportType)
+	 {
+		 list.clear();
+	 }
 }

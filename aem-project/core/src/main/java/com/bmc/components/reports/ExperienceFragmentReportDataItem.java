@@ -19,7 +19,7 @@ public class ExperienceFragmentReportDataItem {
 	
 	private String Reference_URL;
 	
-	private ArrayList<String> referencePaths;
+	private String referencePaths;
 	
 	private String LastReplicatedBy;
 	
@@ -124,13 +124,7 @@ public class ExperienceFragmentReportDataItem {
 		Reference_URL = reference_URL;
 	}
 
-	public ArrayList<String> getReferencePaths() {
-		return referencePaths;
-	}
-
-	public void setReferencePaths(ArrayList<String> referencePaths) {
-		this.referencePaths = referencePaths;
-	}
+	
 
 	public String getLastReplicatedBy() {
 		return LastReplicatedBy;
@@ -154,6 +148,14 @@ public class ExperienceFragmentReportDataItem {
 
 	public void setLastReplicatedDate(String lastReplicatedDate) {
 		LastReplicatedDate = lastReplicatedDate;
+	}
+
+	public String getReferencePaths() {
+		return referencePaths;
+	}
+
+	public void setReferencePaths(String referencePaths) {
+		this.referencePaths = referencePaths;
 	}
 
 	
