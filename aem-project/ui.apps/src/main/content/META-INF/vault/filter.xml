@@ -75,7 +75,6 @@
 	<filter root="/content/bmc/resources/industry" mode="replace"/>
 	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
 	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
-	<filter root="/content/bmc/resources/content-preferences" mode="replace"/>
 	
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
