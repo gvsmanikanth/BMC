@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-     <None_Selected
+    <None_Selected
         jcr:primaryType="nt:unstructured"
         text="None Selected"
         value="None Selected"/>
     <AIOps
-            jcr:primaryType="nt:unstructured"
-            text="AIOps"/>
+        jcr:primaryType="nt:unstructured"
+        text="AIOps"/>
     <Application_Development
-            jcr:primaryType="nt:unstructured"
-            text="Application Development"/>
+        jcr:primaryType="nt:unstructured"
+        text="Application Development"/>
     <Application_Performance_Management
-            jcr:primaryType="nt:unstructured"
-            text="Application Performance Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Application Performance Management"/>
     <Batch_Scheduling_and_WLA
-            jcr:primaryType="nt:unstructured"
-            text="Batch Scheduling and WLA"/>
+        jcr:primaryType="nt:unstructured"
+        text="Batch Scheduling and WLA"/>
     <Big_Data
-            jcr:primaryType="nt:unstructured"
-            text="Big Data"/>
+        jcr:primaryType="nt:unstructured"
+        text="Big Data"/>
     <Change_Management
-            jcr:primaryType="nt:unstructured"
-            text="Change Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Change Management"/>
     <Cloud_Management
-            jcr:primaryType="nt:unstructured"
-            text="Cloud Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Cloud Management"/>
     <CMDB
-            jcr:primaryType="nt:unstructured"
-            text="CMDB"/>
+        jcr:primaryType="nt:unstructured"
+        text="CMDB"/>
     <Data_Center_Automation
-            jcr:primaryType="nt:unstructured"
-            text="Data Center Automation"/>
+        jcr:primaryType="nt:unstructured"
+        text="Data Center Automation"/>
     <DevOps
-            jcr:primaryType="nt:unstructured"
-            text="DevOps"/>
+        jcr:primaryType="nt:unstructured"
+        text="DevOps"/>
     <Digital_Workplace
-            jcr:primaryType="nt:unstructured"
-            text="Digital Workplace"/>
+        jcr:primaryType="nt:unstructured"
+        text="Digital Workplace"/>
     <Digital_Service_Management
-            jcr:primaryType="nt:unstructured"
-            text="Digital Service Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Digital Service Management"/>
     <Discovery
-            jcr:primaryType="nt:unstructured"
-            text="Discovery"/>
+        jcr:primaryType="nt:unstructured"
+        text="Discovery"/>
     <HR_Case_Management
-            jcr:primaryType="nt:unstructured"
-            text="HR Case Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="HR Case Management"/>
     <IT_Capacity_Management
-            jcr:primaryType="nt:unstructured"
-            text="IT Capacity Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="IT Capacity Management"/>
     <IT_Compliance_and_Secure_Ops
-            jcr:primaryType="nt:unstructured"
-            text="IT Compliance and Secure Ops"/>
+        jcr:primaryType="nt:unstructured"
+        text="IT Compliance and Secure Ops"/>
     <IT_Monitoring
-            jcr:primaryType="nt:unstructured"
-            text="IT Monitoring"/>
+        jcr:primaryType="nt:unstructured"
+        text="IT Monitoring"/>
     <IT_Operations_Analytics
-            jcr:primaryType="nt:unstructured"
-            text="IT Operations Analytics"/>
+        jcr:primaryType="nt:unstructured"
+        text="IT Operations Analytics"/>
     <IT_Operations_Management
-            jcr:primaryType="nt:unstructured"
-            text="IT Operations Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="IT Operations Management"/>
     <ITIL
-            jcr:primaryType="nt:unstructured"
-            text="ITIL"/>
+        jcr:primaryType="nt:unstructured"
+        text="ITIL"/>
     <Mainframe_DB2_Database_Management
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe DB2 Database Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe DB2 Database Management"/>
     <Mainframe_MLC_Cost_Management
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe MLC Cost Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe MLC Cost Management"/>
     <Mainframe_Systems_Management
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe Systems Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe Systems Management"/>
     <Mainframe_IMS_Database_Management
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe IMS Database Management"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe IMS Database Management"/>
     <Mainframe_Executive
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe Executive"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe Executive"/>
     <Service_Desk_Automation
-            jcr:primaryType="nt:unstructured"
-            text="Service Desk Automation"/>
+        jcr:primaryType="nt:unstructured"
+        text="Service Desk Automation"/>
 </jcr:root>

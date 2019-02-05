@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
+    <None_Selected
+        jcr:primaryType="nt:unstructured"
+        text="None Selected"
+        value="None Selected"/>
     <_x0031_35765208
         jcr:primaryType="nt:unstructured"
         text="DBA"/>
@@ -22,12 +26,9 @@
     <_x0037_31979597
         jcr:primaryType="nt:unstructured"
         text="Other"/>
-    <_x0031_34378251
-        jcr:primaryType="nt:unstructured"
-        text="P&amp;A"/>
     <_x0035_09328107
         jcr:primaryType="nt:unstructured"
-        text="SCT"/>
+        text="DSO"/>
     <_x0031_53989625
         jcr:primaryType="nt:unstructured"
         text="Select Technologies"/>
