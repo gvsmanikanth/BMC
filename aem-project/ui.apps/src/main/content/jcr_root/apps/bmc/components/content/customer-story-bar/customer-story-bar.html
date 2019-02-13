@@ -34,9 +34,11 @@
                     </a>
                 </div>
             </div>
-            <p class="text-center">
-                <a class="btn" href="${bar.linkHref}"  target="_self">${bar.linkText @ context='html'}&nbsp;&#8250;</a>
-            </p>
+            <sly data-sly-test="${bar.linkText}">
+	            <p class="text-center">
+	                <a class="btn" href="${bar.linkHref}"  target="_self">${bar.linkText @ context='html'}&nbsp;&#8250;</a>
+	            </p>
+            </sly>
         </div>
     </div>
 </section>
