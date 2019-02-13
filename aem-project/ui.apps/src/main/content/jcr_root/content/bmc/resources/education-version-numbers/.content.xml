@@ -40,17 +40,17 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="8.x"
        />
-    <edu-version-numbers-218759871
+    <edu-version-numbers-218759021
         jcr:primaryType="nt:unstructured"
-        jcr:title="9.0.19"
+        jcr:title="9.x"
         />
     <edu-version-numbers-218798611
         jcr:primaryType="nt:unstructured"
         jcr:title="9.0.18"
         />
-    <edu-version-numbers-218759021
+     <edu-version-numbers-218759871
         jcr:primaryType="nt:unstructured"
-        jcr:title="9.x"
+        jcr:title="9.0.19"
         />
     <edu-version-numbers-135026253
         jcr:primaryType="nt:unstructured"
