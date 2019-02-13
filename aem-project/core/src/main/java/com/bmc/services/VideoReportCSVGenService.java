@@ -455,7 +455,14 @@ public class VideoReportCSVGenService {
 	 	    } 
 	 	}
 		
-	
+	 public void clearData(String reportType)
+	 {
+		 if(reportType.equals("video"))
+		 {
+			 list.clear();			
+		 }
+	 }
+
 
 	public String getFileName(String reportName)
 		{

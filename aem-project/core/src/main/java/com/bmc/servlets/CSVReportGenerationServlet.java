@@ -137,30 +137,35 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	                		//  writes the workbook and creates a JSON, XML and XSL versions	                		
 	            	        jsonDAMPath = formsService.writeJSONtoDAM(fileName);
 	            	        excelDAMPath = formsService.writeExceltoDAM(workBook, fileName);
+	            	        formsService.clearData(reportType);
 	                		break;
 	                case "experienceFragment":
 	                	//Generate the report for forms 	                		
                 		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
+            	        expFgmtService.clearData(reportType);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
                 		workBook = videoService.generateDataReport(true,fileName);               			                		
             	        jsonDAMPath = videoService.writeJSONtoDAM(fileName);
             	        excelDAMPath = videoService.writeExceltoDAM(workBook, fileName);
+            	        videoService.clearData(reportType);
 	                	break;
 	                case "it-solutions":
 	                	//Generate the report for forms 	                		
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "sticky-headers":
 	                	//Generate the report for forms 	                		               		 
                 		workBook = categoriesService.generateStickyHeaderDataReport(true, fileName,reportLocation);	                		
             	        jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                
 	                case "education-courses":
@@ -168,12 +173,14 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "customers":
 	                	//Generate the report for forms 	                		
                 		workBook = categoriesService.generateDataReport(true, fileName,reportLocation);
                 		jsonDAMPath = categoriesService.writeJSONtoDAM(fileName,reportType);
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
+            	        categoriesService.clearData(reportType);
 	                	break;
 	                case "generic":
 	                	//Generate the report for forms 	                		
@@ -187,7 +194,7 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 				                outPrint.println("</meta>"); 
 				                outPrint.println("</head>"); 
 				                outPrint.println("<body>");
-				                outPrint.println("<h2>Reports Solution. </h2>");
+				                outPrint.println("<h2>Links to the Reports. </h2>");
 				                outPrint.println("<h4>Download the report in excel Format from<a href='");
 				                outPrint.println(excelDAMPath);
 				                outPrint.println("'> here</a>.</h4>");

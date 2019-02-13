@@ -10,14 +10,18 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
@@ -34,6 +38,7 @@ import org.slf4j.LoggerFactory;
 import com.bmc.components.reports.ExperienceFragmentReportDataItem;
 import com.bmc.components.reports.FormsReportDataItem;
 import com.bmc.components.reports.VideoReportDataItem;
+import com.bmc.components.utils.ReportsMetaDataProvider;
 import com.day.cq.dam.api.Asset;
 import com.day.cq.dam.api.AssetManager;
 import com.day.cq.search.PredicateGroup;
@@ -65,6 +70,8 @@ public class ExperienceFgmtReportCSVGenService {
 	@Reference
 	private ResourceResolverFactory resolverFactory;
 	 
+	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
+	
 	private  Workbook workbook;
 	
 	@Reference
@@ -76,10 +83,10 @@ public class ExperienceFgmtReportCSVGenService {
 	
     private static  ArrayList<ExperienceFragmentReportDataItem> list = new ArrayList<ExperienceFragmentReportDataItem>();
        
-
+    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 	
     private String[] TableNames = {"Exp Fragment URL","Last Modified By","migration_content_id","migration_content_name","migration_content_type"
-    		,"title","formname","formid"};
+    		,"title","formname","formid", "Reference Form URL"};
 	
 	
 	 /*
@@ -147,61 +154,17 @@ public class ExperienceFgmtReportCSVGenService {
 							             SearchResult result = query.getResult();							            
 							            		 for (Hit hit : result.getHits()) {
 							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
-							            	 		Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 		reportDataItem.setExp_Fragment_URL(reportDataNode.getPath());          	 								            	 			            
-							            	 for(PropertyIterator propeIterator1 = reportDataNode.getProperties() ; propeIterator1.hasNext();)  
-											   {  
-											        Property prop= propeIterator1.nextProperty();  
-											         if(!prop.getDefinition().isMultiple()){
-															 if(prop.getName().equalsIgnoreCase("title"))
-												        	{
-												        		
-												        		String 	title  = prop.getValue().getString();					        		
-												        	   reportDataItem.setTitle(title);
-												        	}
-															
-															else if(prop.getName().equalsIgnoreCase("author"))
-												        	{
-												        		
-												        		String LastModifiedBy  = prop.getValue().getString();					        	
-												        	   reportDataItem.setLastModifiedBy(LastModifiedBy);
-												        	}
-															
-															else if(prop.getName().equalsIgnoreCase("formid"))
-												        	{
-												        		
-												        		String formid  = prop.getValue().getString();					        	
-												        	   reportDataItem.setFormid(formid);
-												        	}
-															else if(prop.getName().equalsIgnoreCase("formname"))
-												        	{
-												        		
-												        		String formname  = prop.getValue().getString();					        	
-												        	   reportDataItem.setFormname(formname);
-												        	}
-															else if(prop.getName().equalsIgnoreCase("migration_content_id"))
-												        	{
-												        		
-												        		String migration_content_id  = prop.getValue().getString();
-												        		reportDataItem.setMigration_content_id(migration_content_id);
-												        	}
-															else if(prop.getName().equalsIgnoreCase("migration_content_name"))
-												        	{
-												        		
-												        		String migration_content_name  = prop.getValue().getString();
-												        		reportDataItem.setMigration_content_name(migration_content_name);
-												        	}
-															else if(prop.getName().equalsIgnoreCase("migration_content_type"))
-												        	{
-												        		
-												        		String migration_content_type  = prop.getValue().getString();
-												        		reportDataItem.setMigration_content_type(migration_content_type);
-												        	}
-															
-															
-												        															
-											         }						    	                  
-											   }
+							            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);
+							            	 			reportDataItem.setTitle(getPropertyValues(reportDataNode, "title","title","title",session));
+							            	 			reportDataItem.setExp_Fragment_URL(metadataProvider.getExperiencefgmtPath(reportDataNode));
+							            	 			reportDataItem.setExp_Fragment_Name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(reportDataNode)));
+							            	 			reportDataItem.setLastModifiedBy(getPropertyValues(reportDataNode, "author","author","author",session));
+							            	 			reportDataItem.setFormid(getPropertyValues(reportDataNode, "formid","formid","formid",session));
+							            	 			reportDataItem.setFormname(getPropertyValues(reportDataNode, "formname","formname","formname",session));
+							            	 			reportDataItem.setMigration_content_id(getPropertyValues(reportDataNode, "migration_content_id","migration_content_id","migration_content_id",session));
+							            	 			reportDataItem.setMigration_content_name(getPropertyValues(reportDataNode, "migration_content_name","migration_content_name","migration_content_name",session));
+							            	 			reportDataItem.setMigration_content_type(getPropertyValues(reportDataNode, "migration_content_type","migration_content_type","migration_content_type",session));
+							            	 			reportDataItem.setReferencePaths(getExpFragmentLinks(metadataProvider.getExperiencefgmtPath(reportDataNode), session));							            	 
 							            	 list.add(reportDataItem);
 						                 }
 						        logger.info("List Size of forms"+list.size());
@@ -238,7 +201,7 @@ public class ExperienceFgmtReportCSVGenService {
 				Integer count = i; 
 				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getLastModifiedBy(),
 					 list.get(i).getMigration_content_id(),list.get(i).getMigration_content_name(),list.get(i).getMigration_content_type(),
-					list.get(i).getTitle(),list.get(i).getFormname(),list.get(i).getFormid()});			
+					list.get(i).getTitle(),list.get(i).getFormname(),list.get(i).getFormid(),list.get(i).getReferencePaths()});			
 			}
 			 logger.info("Creating the EXCEL sheet");
 			//Iterate over data and write to sheet
@@ -291,8 +254,9 @@ public class ExperienceFgmtReportCSVGenService {
 	 {
 		 // create query description as hash map (simplest way, same as form post)
 	     Map<String, String> map = new HashMap<String, String>();	    
-	     // create query description as hash map (simplest way, same as form post)	                  
-	     map.put("path", "/content/bmc");
+	     // create query description as hash map (simplest way, same as form post)
+	     
+	     map.put("path", "/content/bmc/language-masters");
 	     map.put("type", "cq:PageContent");
 	     map.put("contains", path);
 	     map.put("property.hits", "full");
@@ -309,13 +273,9 @@ public class ExperienceFgmtReportCSVGenService {
 	     map.put("property", "cq:template"); //the property to check for
 	     map.put("property.operation", "equals"); // or like or like etc..
 	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-landing-page-full-width");
-	     map.put("property.operation", "or");
-	     //Adding Predicate to exclude thank-you pages
-	     map.put("property", "cq:template"); //the property to check for
-	     map.put("property.operation", "equals"); // or like or like etc..
-	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-thank-you");
+	     map.put("property.operation", "or");	    
 	     map.put("p.offset", "0");
-	     map.put("p.limit", "300");	     
+	     map.put("p.limit", "100");	     
 	     return map;
 	     // can be done in map or with Query methods
 	    
@@ -438,7 +398,105 @@ public class ExperienceFgmtReportCSVGenService {
 			 date = date.replace(":", "_");
 			return  date.replace(" ", "_"); //2016/11/16 12:08:43
 		 }
-		 	 
+		
+	 
+	 public void clearData(String reportType)
+	 {
+		 if(reportType.equals("experienceFragment"))
+		 {
+			 list.clear();			
+		 }
 	 }
+	 
+	 
+	 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException ,PathNotFoundException{
+		  
+		   if (node.hasProperty(propertyName)) {
+	   
+	        Property prop = node.getProperty(propertyName);
+	        Value[] values;
+	        List<String> propVals = new ArrayList<>();
+	        List<String> updatedPropVals = new ArrayList<>();
+	        // This check is necessary to ensure a multi-valued field is applied...
+	        if (prop.isMultiple()) {
+	            values = prop.getValues();
+	            for(Value v : values) {		            	
+	            	propVals.add(v.getString());
+              }
+	        
+	            for(String v : propVals) {
+	            	if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
+	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
+	            	try
+	            	{
+	    			 v = session.getNode(nodeName).getProperty(propertyValue).getString();
+	            	}catch(PathNotFoundException pn)
+	            	{
+	            		v = "";
+	            	}
+	            	}else
+	            	{ v = v.toString();}
+	    			 if(prop.isMultiple()){							        				 
+	            		  updatedPropVals.add(v);
+	            	  }
+	            }
+	        }	   
+	         else {
+	            values = new Value[1];
+	            values[0] = prop.getValue();
+	            if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
+	            {
+	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
+	            	String nodeValue = null;
+	            	try
+	            	{
+	            	nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
+	            	}catch(PathNotFoundException ex){
+	            		nodeValue = "";
+	            	}		            	
+	            	updatedPropVals.add(nodeValue);
+	            }else{
+	            updatedPropVals.add(prop.getValue().toString());
+	            }
+	        }
+	       
+	        return (String.join(",", updatedPropVals));
+	    }
+
+	    return "";
+	    
+	}
+	 
+	 public boolean stringContainsNumber( String s )
+	 {
+	     return Pattern.compile( "[0-9]" ).matcher( s ).find();
+	 }
+	 
+	 public static boolean stringContainsItemFromList(String inputStr) {
+		 
+		 for(int i =0; i < resourceItems.length; i++)
+		    {
+		        if(inputStr.contains(resourceItems[i]))
+		        {
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+	 
+	 
+	 private String getExpFragmentLinks(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
+	 {
+		 List<String> propVals = new ArrayList<>();
+		 Map<String,String> map = createQueryReferences(jcrPath);
+     	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
+          SearchResult result = query.getResult();							            
+         		 for (Hit hit : result.getHits()) {
+         			Node node = hit.getResource().adaptTo(Node.class);
+         			propVals.add(node.getPath().toString());         			
+         		 }
+         		return (String.join(",", propVals));
+	 }
+}
 
 

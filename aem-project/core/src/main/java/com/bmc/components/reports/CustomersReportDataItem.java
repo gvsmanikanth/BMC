@@ -23,6 +23,8 @@ public class CustomersReportDataItem {
 		private String cardSecondaryLinkText;
 		private String cardSecondaryLinkUrl;
 		private String ic_app_inclusion;
+		private String cardTitle;
+		private String meta_description;
 		
 		
 		
@@ -57,8 +59,8 @@ public class CustomersReportDataItem {
 		public String getCreation_Date() {
 			return Creation_Date;
 		}
-		public void setCreation_Date(String creation_Date) {
-			Creation_Date = creation_Date;
+		public String setCreation_Date(String creation_Date) {
+			return Creation_Date = creation_Date;
 		}
 		public String getContent_Type() {
 			return Content_Type;
@@ -156,6 +158,18 @@ public class CustomersReportDataItem {
 		}
 		public void setCardSecondaryLinkUrl(String cardSecondaryLinkUrl) {
 			this.cardSecondaryLinkUrl = cardSecondaryLinkUrl;
+		}
+		public String getCardTitle() {
+			return cardTitle;
+		}
+		public void setCardTitle(String cardTitle) {
+			this.cardTitle = cardTitle;
+		}
+		public String getMeta_description() {
+			return meta_description;
+		}
+		public void setMeta_description(String meta_description) {
+			this.meta_description = meta_description;
 		}
 		
 

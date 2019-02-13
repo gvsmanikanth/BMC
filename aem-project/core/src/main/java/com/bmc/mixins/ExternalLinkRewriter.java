@@ -51,7 +51,7 @@ public class ExternalLinkRewriter implements TransformerFactory {
     
     @Activate
     protected void activate(Map<String, Object> properties) {
-    	logger.info("Activated the ExternalLinkRewriterPlugin");
+    	logger.info("Activated the ExternalLinkRewriter");
     	
     }
 

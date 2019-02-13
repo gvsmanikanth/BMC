@@ -5,153 +5,113 @@
     <Any
         jcr:primaryType="nt:unstructured"
         jcr:title="All Products"
-        versions="[]"/>
+        />
     <education-products-142854695
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Atrium CMDB"
-        versions="[edu-version-numbers-151683129,edu-version-numbers-218759021]"/>
+        />
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC TrueSight/Atrium Orchestration"
-        versions="[edu-version-numbers-217471601,edu-version-numbers-151683129]"/>
+        />
     <education-products-187351378
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Database Automation"
-        versions="[edu-version-numbers-151683129]"/>
+       />
     <education-products-117007007
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Network Automation"
-       
-        versions="[edu-version-numbers-151683129]"/>
+       />
     <education-products-180838924
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC TrueSight/BladeLogic Server Automation"
-        
-        versions="[edu-version-numbers-151683129]"/>
+       />
     <education-products-175290979
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Threat Director"
-       
-        versions="[edu-version-numbers-186635808,edu-version-numbers-184339789]"/>
+       />
     <education-products-176265233
         jcr:primaryType="nt:unstructured"
         jcr:title="Client Management"
-        
-        versions="[edu-version-numbers-141329026]"/>
+       />
     <education-products-175672617
         jcr:primaryType="nt:unstructured"
         jcr:title="Cloud Lifecycle Management"
-      
-        versions="[edu-version-numbers-198246805]"/>
+      />
     <education-products-126375736
         jcr:primaryType="nt:unstructured"
         jcr:title="Control-M"
-    
-        versions="[edu-version-numbers-179890152,edu-version-numbers-217471601,edu-version-numbers-151683129,edu-version-numbers-218759021]"/>
+    />
     <education-products-188549682
         jcr:primaryType="nt:unstructured"
         jcr:title="Dashboards and Analytics"
-      
-        versions="[edu-version-numbers-217471601,edu-version-numbers-151683129]"/>
+      />
     <education-products-155430638
         jcr:primaryType="nt:unstructured"
         jcr:title="DevOps"
-      
-        versions="[edu-version-numbers-198246805]"/>
+      />
     <education-products-177937656
         jcr:primaryType="nt:unstructured"
         jcr:title="Discovery (ADDM)"
-      
-        versions="[edu-version-numbers-135026253,edu-version-numbers-201437068]"/>
+      />
     <education-products-176432861
         jcr:primaryType="nt:unstructured"
         jcr:title="FootPrints service desk"
-       
-        versions="[edu-version-numbers-141329026]"/>
+       />
     <education-products-107968425
         jcr:primaryType="nt:unstructured"
         jcr:title="HR Case Management"
-       
-        versions="[edu-version-numbers-198246805]"/>
+       />
     <education-products-189020579
         jcr:primaryType="nt:unstructured"
         jcr:title="ITIL®"
-       
-        versions="[edu-version-numbers-191609406]"/>
+       />
     <education-products-112512823
         jcr:primaryType="nt:unstructured"
         jcr:title="Innovation Suite"
-       
-        versions="[]"/>
+       />
     <education-products-143958364
        
         jcr:primaryType="nt:unstructured"
         jcr:title="MyIT Digital Workplace"
-       
-        versions="[edu-version-numbers-186635808,edu-version-numbers-184339789,edu-version-numbers-191609406]"/>
+       />
     <education-products-186068586
         jcr:primaryType="nt:unstructured"
-        jcr:title="ProactiveNet"
-        
-        versions="[edu-version-numbers-218759021]"/>
+        jcr:title="ProactiveNet"/>
     <education-products-195011486
         jcr:primaryType="nt:unstructured"
-        jcr:title="Remedy AR System"
-        
-        versions="[edu-version-numbers-151683129,edu-version-numbers-218759021]"/>
+        jcr:title="Remedy AR System"/>
     <education-products-183047196
         jcr:primaryType="nt:unstructured"
-        jcr:title="Remedy ITSM"
-       
-        versions="[edu-version-numbers-186635808,edu-version-numbers-191609406,edu-version-numbers-151683129,edu-version-numbers-218759021]"/>
+        jcr:title="Remedy ITSM"/>
     <education-products-161725919
         jcr:primaryType="nt:unstructured"
-        jcr:title="Remedyforce"
-        
-        versions="[edu-version-numbers-149651734,edu-version-numbers-217461623]"/>
+        jcr:title="Remedyforce"/>
     <education-products-115258401
         jcr:primaryType="nt:unstructured"
-        jcr:title="Service Level Management"
-       
-        versions="[edu-version-numbers-151683129]"/>
+        jcr:title="Service Level Management"/>
     <education-products-124016733
         jcr:primaryType="nt:unstructured"
-        jcr:title="Smart IT"
-       
-        versions="[edu-version-numbers-186635808,edu-version-numbers-191609406]"/>
+        jcr:title="Smart IT"/>
     <education-products-138131082
         jcr:primaryType="nt:unstructured"
-        jcr:title="Track-It!"
-       
-        versions="[edu-version-numbers-201437068]"/>
+        jcr:title="Track-It!"/>
     <education-products-130779424
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight App Visibility Manager"
-
-        versions="[edu-version-numbers-184339789,edu-version-numbers-135026253]"/>
+        jcr:title="TrueSight App Visibility Manager"/>
     <education-products-122416938
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Capacity Optimization"
-      
-        versions="[edu-version-numbers-135026253,edu-version-numbers-201437068]"/>
+        jcr:title="TrueSight Capacity Optimization"/>
     <education-products-120151154
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight IT Data Analytics"
-   
-        versions="[edu-version-numbers-186635808,edu-version-numbers-184339789]"/>
+        jcr:title="TrueSight IT Data Analytics"/>
     <education-products-118396779
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Infrastructure Management"
-  
-        versions="[edu-version-numbers-135026253]"/>
+        jcr:title="TrueSight Infrastructure Management"/>
     <education-products-171789609
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Middleware Monitoring"
-        
-        versions="[edu-version-numbers-217471601]"/>
+        jcr:title="TrueSight Middleware Monitoring"/>
     <education-products-123342760
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Operations Management"
-        
-        versions="[edu-version-numbers-135026253,edu-version-numbers-201437068]"/>
+        jcr:title="TrueSight Operations Management"/>
 </jcr:root>
