@@ -3,13 +3,12 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:lastModified="{Date}2018-12-03T08:21:33.666-05:00"
-        cq:lastModifiedBy="mannalda@bmc.com"
-        cq:lastReplicated="{Date}2018-12-03T08:23:56.173-05:00"
-        cq:lastReplicatedBy="mannalda@bmc.com"
+        cq:lastModified="{Date}2017-07-06T00:35:20.179-07:00"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-06-09T15:17:45.732-07:00"
+        cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/support-central"
-        jcr:mixinTypes="[]"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page">
         <root
@@ -18,11 +17,10 @@
             <supportcentral_heade
                 jcr:created="{Date}2017-06-17T12:50:36.473-07:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2019-02-13T02:10:51.685+05:30"
+                jcr:lastModified="{Date}2017-06-17T12:50:36.473-07:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-header"
-                tabs="[{&quot;tabTitle&quot;:&quot;My Support&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;https://communities.bmc.com/docs/DOC-40484&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;New Customer Orientation&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/issue-defect-management.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Case and Defect Management&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-profile.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;My Support Profile&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-licensing-passwords.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;License and Passwords&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/bmc-annual-support-offerings.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;All Support Offerings&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-maintenance-renewal.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Maintenance &amp; Invoice Queries&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/review-policies/bmc-customer-support-policies.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Customer Support Policies&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/create-modify-pn-subscription-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Alerts (Proactive Notifications)&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}]},{&quot;tabTitle&quot;:&quot;Downloads &amp;amp; Products&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;/available/epd.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Downloads&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/supported-product-az-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Patches&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/productsupport&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Support&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/patch-download.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Remedy Heritage Patches&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/mainframe-maintenance.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Mainframe Maintenance&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/support/resources/mainframe-installation.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Mainframe Installation&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/available/product-defects.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Defects&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/support/reg/esd-password.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;FTP Sites&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}]},{&quot;tabTitle&quot;:&quot;Resources&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;/available/search-kb.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Knowledge Base&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/community/support/blog/2013/09/21/webinars-and-bmc-customer-support&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Connect with Webinars&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/community/support/blog/2018/09/17/support-videos&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Support Videos&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/dashboard.action&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Documentation&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/supported-product-az-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Supported Products A-Z&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/corporate/product-security-and-quality.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Application Security&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/display/PRD/Home&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Parameter Reference Database&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-licensing-passwords.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;License and Passwords&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/spac.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Compatibility (SPAC)&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/withdrawn-product-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Withdrawn Product List&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/mainframe-demonstrations/&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Mainframe Quick Courses&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}]},{&quot;tabTitle&quot;:&quot;Additional Support Centers&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;http://i.onbmc.com&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;BMC On Demand&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;_blank&quot;}\,{&quot;url&quot;:&quot;https://www.bladelogic.com/supportRedirect.jsp&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;BladeLogic (licensing\, forum) &quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://help.truesight.bmc.com&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;TrueSight Pulse&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}]},{&quot;tabTitle&quot;:&quot;Contact Support&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;/contacts-locations/united-states.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;United States&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/content/bmc/language-masters/en/contacts-locations/india&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;India&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/content/bmc/language-masters/en/contacts-locations/united-kingdom&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;United Kingdom&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/content/bmc/language-masters/en/contacts-locations/germany&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Germany&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/content/bmc/language-masters/en/contacts-locations/canada&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Canada&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/content/bmc/language-masters/en/contacts-locations/support-contacts&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Other Country&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}]}]"/>
+                sling:resourceType="bmc/components/structure/supportcentral-header"/>
             <supportcentral_accou
                 jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
                 jcr:createdBy="admin"
@@ -31,42 +29,19 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-accountinfo"/>
             <supportcentral_news
-                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-12-03T08:21:33.661-05:00"
-                jcr:lastModifiedBy="mannalda@bmc.com"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-news">
-                <supportnewsdata jcr:primaryType="nt:unstructured">
-                    <item0
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Quarterly Product Change Notification October 2018"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/12/03/quarterly-product-change-notification-october-2018"/>
-                    <item1
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Changes Coming to BMC Downloads (EPD)"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/10/31/changes-coming-to-bmc-downloads-epd"/>
-                    <item2
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Remedy Service Management Subscriptions are Now Available"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/25/bmc-education-introduces-our-latest-subscription-service-remedy-service-management-subscriptions-are-now-available"/>
-                    <item3
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Removing the Historical Cases Link from Support Central"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/13/removing-the-historical-cases-link-from-support-central"/>
-                    <item4
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="New Browser Requirements for Support Central Starting September 23rd"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/08/31/new-browser-requirements-for-support-central-starting-september-23rd"/>
-                </supportnewsdata>
-            </supportcentral_news>
+                    jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/supportcentral-news"/>
             <supportcentral_cases
-                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-cases"/>
+                    jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/supportcentral-cases"/>
             <supportcentral_searc
                 jcr:created="{Date}2017-06-17T18:18:52.134-07:00"
                 jcr:createdBy="admin"

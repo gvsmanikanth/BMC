@@ -24,9 +24,7 @@
 	  <filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/reporting-page" mode="merge"/>
     <!-- WEB-2437 Added for Report generation END -->
-	 <!-- WEB-3358 Added for Support Central Navigation START -->
-	 <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="merge"/>
-     <!-- WEB-3358 Added for Support Central Navigation START -->
+
     <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/form-event-thank-you" mode="merge"/>
 
