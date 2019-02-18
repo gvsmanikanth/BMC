@@ -40,7 +40,8 @@
 		li.active a,
 		li.r-tabs-state-active a {
 			background-color: color(seashell);
-			color: color(colorCorporateAction);
+			--color: color(colorCorporateAction);
+			color: #0093c9;
 		}
 	}
 	&.bg-white {
