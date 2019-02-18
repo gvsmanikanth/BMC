@@ -60,7 +60,10 @@
   }
 
   .tagline {
-    @include font-size(30);
+    @include font-size(24);
+	@include media(breakpointLarge) {
+	  @include font-size(30);
+	}
   }
 
 

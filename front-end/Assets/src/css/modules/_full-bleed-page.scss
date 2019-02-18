@@ -104,9 +104,12 @@
   }
 
   .tagline {
-    @include font-size(30);
+    @include font-size(24);
     margin-top: .5em;
     text-align: center;
+	@include media(breakpointLarge) {
+	  @include font-size(30);
+	}
   }
 
 
