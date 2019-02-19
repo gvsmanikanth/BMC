@@ -148,15 +148,17 @@ button,
 
 .btn-secondary {
 	@extend %button-config;
-	background-color: color(colorAction);
-	border-color: color(colorAction);
-	color: #fff;
+	--background-color: color(colorAction);
+	--border-color: color(colorAction);
+	background-color: #e8f2de;
+	border-color: #e8f2de;
+	color: #414042;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: #0B8005;
-		border-color: #0B8005;
+		background-color: #414042;
+		border-color: #414042;
 		color: #fff;
 	}
 
