@@ -161,11 +161,11 @@ h4 {
 	margin: 1em 0 0.33em;
 
 	@include media(breakpointMedium) {
-		@include font-size(22);
+		@include font-size(24);
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(24);
+		@include font-size(28);
 	}
 
 	&:first-child {
