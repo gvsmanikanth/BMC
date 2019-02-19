@@ -469,10 +469,11 @@
       width: 18px;
 
       &.active {
-        background-color: color(mediumOrange);
+        --background-color: color(mediumOrange);
+        background-color: #29a5d6;
       }
       &:hover {
-        background-color: color(mediumOrange);
+        background-color: #29a5d6;
         opacity: .8;
       }
     }
