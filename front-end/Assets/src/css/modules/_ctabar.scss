@@ -39,8 +39,11 @@
 
     .tagline {
       display: block;
-      @include font-size(30);
+      @include font-size(24);
       margin-bottom: .25em;
+	  @include media(breakpointLarge) {
+          @include font-size(30);
+        }
 
       p {
         font-size: inherit;
@@ -57,7 +60,10 @@
   }
 
   .tagline {
-    @include font-size(30);
+    @include font-size(24);
+	@include media(breakpointLarge) {
+	  @include font-size(30);
+	}
   }
 
 
