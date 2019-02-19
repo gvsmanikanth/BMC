@@ -66,7 +66,8 @@
 
 		&:hover,
 		&:active {
-			color: color(colorCorporateAction);
+			--color: color(colorCorporateAction);
+			color: #0093c9;
 		}
 
 		&.btn {
