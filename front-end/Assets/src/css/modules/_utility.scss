@@ -176,7 +176,8 @@ a.white:focus,
 }
 
 .bg-corduroy {
-    background-color: color(corduroy);
+    --background-color: color(corduroy);
+    background-color: #75777a;
 }
 
 .bg-abbey {
