@@ -102,15 +102,15 @@ h2 {
 }
 
 h2 {
-	@include font-size(32);
+	@include font-size(30);
 
 	@include media(breakpointMedium) {
-		@include font-size(32);
+		@include font-size(30);
 		font-weight: 800;
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(32);
+		@include font-size(30);
 	}
 }
 

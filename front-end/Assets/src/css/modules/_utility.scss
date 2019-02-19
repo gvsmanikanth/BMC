@@ -147,12 +147,13 @@ a.white:focus,
 }
 
 .bg-seashell {
-    background-color: color(seashell);
+    --background-color: color(seashell);
+    background-color: #ffffff;
 }
 
 .bg-seashell-hover:hover,
 .bg-seashell-hover:focus {
-    background-color: color(seashell);
+    background-color: #ffffff;
 }
 
 .bg-iron {
@@ -176,7 +177,8 @@ a.white:focus,
 }
 
 .bg-corduroy {
-    background-color: color(corduroy);
+    --background-color: color(corduroy);
+    background-color: #75777a;
 }
 
 .bg-abbey {
