@@ -147,7 +147,7 @@ button,
 	padding: em(10 , (context: 14)) em(14, (context: 14));
 }
 
-.btn-secondary {
+.btn.btn-secondary {
 	@extend %button-config;
 	--background-color: color(colorAction);
 	--border-color: color(colorAction);
@@ -160,6 +160,25 @@ button,
 	&:focus {
 		background-color: #414042;
 		border-color: #414042;
+		color: #fff;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
+.btn-secondary {
+	@extend %button-config;
+	background-color: color(colorAction);
+	border-color: color(colorAction);
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: #0b8005;
+		border-color: #0b8005;
 		color: #fff;
 	}
 
