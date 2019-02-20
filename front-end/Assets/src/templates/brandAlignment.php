@@ -372,6 +372,68 @@
                   </div>
                </div>
             </div>
+			<div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+   <!-- ID=404722946 pageLocation=FullWidthColumn ModaleVideo= --> 
+   <section class="wallpapered bg-corduroy bar wallpaper">
+      <div class="section">
+         <div class="section-content p3">
+            <h2 class="section-title text-center white">BMC Helix Discovery is transforming digital enterprises</h2>
+            <div class="flex-wrap flex-justify-center mb2">
+               <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
+                  <a href="http://www.bmc.com/customers/windstream.html" target="_self" class="m1 card tundora bg-white js-ehItem ">
+                     <div class="p1 card-image text-center logo-max-height"> 
+                        <img src="https://www.bmc.com/content/dam/bmc/migration/image/colour_Windstream_logo.png" alt="Windstream" title="Windstream" width="750" height="250" border="0"> 
+                     </div>
+                     <div class="px2 card-content">
+                        <p class="-sm m0 py1"> Windstream </p>
+                        <p class="-sm bold"> $6B communications service provider automates comprehensive daily scanning of its IT server assets </p>
+                        <p class="-sm bold cust-links"> Read the story </p>
+                     </div>
+                  </a>
+               </div>
+               <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
+                  <a href="http://www.bmc.com/customers/news-uk.html" target="_self" class="m1 card tundora bg-white js-ehItem ">
+                     <div class="p1 card-image text-center logo-max-height"> 
+                        <img src="https://www.bmc.com/content/dam/bmc/migration/image/logo_News_UK_color.png" alt="News UK" title="News UK" width="850" height="250" border="0"> 
+                     </div>
+                     <div class="px2 card-content">
+                        <p class="-sm m0 py1"> News UK </p>
+                        <p class="-sm bold"> Publisher optimizes digital service management to keep presses rolling for 11MM readers </p>
+                        <p class="-sm bold cust-links"> Read the story </p>
+                     </div>
+                  </a>
+               </div>
+               <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
+                  <a href="http://www.bmc.com/customers/mercator.html" target="_self" class="m1 card tundora bg-white js-ehItem ">
+                     <div class="p1 card-image text-center logo-max-height"> 
+                        <img src="https://www.bmc.com/content/dam/bmc/migration/image/Logo-mercator-color.png" alt="Mercator" title="Mercator" width="2561" height="506" border="0"> 
+                     </div>
+                     <div class="px2 card-content">
+                        <p class="-sm m0 py1"> Mercator </p>
+                        <p class="-sm bold"> International retailer gains efficiency and revenue with best-in-class ITSM </p>
+                        <p class="-sm bold cust-links"> Read the story </p>
+                     </div>
+                  </a>
+               </div>
+               <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
+                  <a href="http://www.bmc.com/customers/wageningen-ur.html" target="_self" class="m1 card tundora bg-white js-ehItem ">
+                     <div class="p1 card-image text-center logo-max-height"> 
+                        <img src="https://www.bmc.com/content/dam/bmc/migration/image/customer-story-logos_wageningenur_color.png" alt="Wageningen University and Research Centre" title="Wageningen University and Research Centre" width="3253" height="506" border="0"> 
+                     </div>
+                     <div class="px2 card-content">
+                        <p class="-sm m0 py1"> Wageningen University and Research Centre </p>
+                        <p class="-sm bold"> Acclaimed institute optimizes vast and complex IT infrastructure </p>
+                        <p class="-sm bold cust-links"> Read the story </p>
+                     </div>
+                  </a>
+               </div>
+            </div>
+            <p class="text-center"> <a class="btn" href="http://www.bmc.com/customers/success-stories.html" target="_self">View all customer stories&nbsp;›</a> </p>
+         </div>
+      </div>
+      <div class="wallpaper-container"></div>
+   </section>
+</div>
             <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
                <!-- ID=427898013 pageLocation=FullWidthColumn ModaleVideo= --> 
                <section class="resources" id="resources">
