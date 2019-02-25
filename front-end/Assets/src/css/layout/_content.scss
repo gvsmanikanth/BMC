@@ -1554,6 +1554,7 @@
 	h4,
 	h5 { color: #fff; font-weight:800; }
 
+	h1 {font-weight:400; }
 	p { color: #fff; }
 
 	@include media(breakpointLarge) {
@@ -1573,6 +1574,7 @@
 	h3,
 	h4,
 	h5 { color: #fff; font-weight:800; }
+	h1 {font-weight:400; }
 
 	p { color: #fff; font-size:1.5rem;  }
 
