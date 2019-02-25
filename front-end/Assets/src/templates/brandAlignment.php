@@ -43,7 +43,7 @@
                            <a href="/content/bmc/videos.html?vID=d8LXSDmx9FM" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
                               <div class="inner assetTxt">
                                  <div class="flex-center">
-                                    <img src="/content/dam/bmc/solutions/icons/icon-video.png" alt="">
+                                    <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
                                     <div class="inner">
                                        <h5>Video:</h5>
                                        <p>Watch the overview video (1:55)</p>
@@ -55,7 +55,7 @@
                            <a href="http://documents.bmc.com/products/documents/34/98/493498/493498.pdf" class="flex-item sm-col-4   shadow-top assetStripItem" target="_blank">
                               <div class="inner assetTxt">
                                  <div class="flex-center">
-                                    <img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
+                                    <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/icon-read.png" alt="">
                                     <div class="inner">
                                        <h5>Datasheet:</h5>
                                        <p>TrueSight Cloud   Cost Control</p>
@@ -67,7 +67,7 @@
                            <a href="http://www.bmc.com/forms/five-steps-cloud-cost-optimization-forbes-ebook.html?productInterest=truesight cloud cost control" class="flex-item sm-col-4   shadow-top assetStripItem" data-inc="1">
                               <div class="inner assetTxt">
                                  <div class="flex-center">
-                                    <img src="/content/dam/bmc/solutions/icons/icon-magnifier-pdf.png" alt="">
+                                    <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/icon-explore.png" alt="">
                                     <div class="inner">
                                        <h5>E-book:</h5>
                                        <p>Forbes Insights: Avoid Sticker Shock:How to Determine the True Cost of Clouds</p>
