@@ -107,7 +107,7 @@ section.bmc-engage-header.layout-full-bleed {
 	}
 
 	h1, h2 {
-		font-weight: 600;
+		font-weight: 400;
 		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 
 		@include media(breakpointExtraLarge) {
@@ -116,7 +116,7 @@ section.bmc-engage-header.layout-full-bleed {
 	}
 
 	h1 {
-
+		font-weight: 400;
 		@include media(breakpointExtraLarge) {
 			font-size: em(85);
 		}

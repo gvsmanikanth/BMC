@@ -60,7 +60,7 @@ p {
 
 h1 {
 	color: color(colorCorporate);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -76,7 +76,7 @@ h1 {
 
 	@include media(breakpointMedium) {
 		@include font-size(54);
-		font-weight: 800;
+		font-weight: 400;
 	}
 
 	@include media(breakpointExtraLarge) {
