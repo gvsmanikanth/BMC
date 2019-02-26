@@ -843,7 +843,7 @@
 		@include media(breakpointMedium) {
 			color: color(mediumOrange);
 			@include font-size(24);
-			font-weight: 800;
+			font-weight: 400;
 
 		}
 	}
@@ -852,7 +852,7 @@
 		@include media(breakpointMedium) {
 			color: color(colorCorporate);
 			@include font-size(20);
-			font-weight: 800;
+			font-weight: 400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
 		}
 	}
