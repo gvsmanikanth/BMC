@@ -4,14 +4,21 @@
      data-sly-unwrap="${wcmmode.disabled}"
      class="cq-dd-image">
     <sly data-sly-test="${properties.linkURL}" data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.linkURL}"></sly>
+			 <sly data-sly-test="${cta.href}">
+                    <sly data-sly-test.linkURL="${cta.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!cta.href}">
+                 <sly data-sly-test.linkURL="${properties.linkURL}"></sly>
+             </sly>
+
     <a data-sly-unwrap="${!image.link}"
-       class="cmp-image--link ${cta.isVideo ? 'modal-youtube-video-player' : ''}"
-       href="${cta.href}"
+       class="cmp-image--link ${cta.cssClass}"
+       href="${linkURL}"
        data-title="${image.title || image.alt}" data-asset="${image.fileReference}">
             <img src="${image.src}"
                  alt="${image.alt || (image.displayPopupTitle && image.title) || true}"
                  title="${image.displayPopupTitle && image.title}"/>
     </a>
-    <span class="cmp-image--title" data-sly-test="${!image.displayPopupTitle && image.title}">${image.title}</span>
+    <span class="cmp-image--title" data-sly-test="${!image.displayPopupTitle && image.title}"><a class="${cta.cssClass}" href="${linkURL}">${image.title}</a></span>
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cq-dd-image'}"></sly>
