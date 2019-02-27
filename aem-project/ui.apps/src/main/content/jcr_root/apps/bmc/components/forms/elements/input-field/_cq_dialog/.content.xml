@@ -114,7 +114,11 @@
                                             <emailbusinesscompetitor
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Email (business competitor)"
-                                                value="email-business-competitor"/>                                                       
+                                                value="email-business-competitor"/>
+                                                 <noinitialspace
+                                                jcr:primaryType="nt:unstructured"
+                                                text="No initial space"
+                                                value="no_initial_space"/>                                                       
                                         </items>
                                     </validationType>                                    
                                 </items>

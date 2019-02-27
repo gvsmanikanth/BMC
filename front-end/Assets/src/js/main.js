@@ -22,6 +22,7 @@ require('./modules/utilities.js');
 //require('./modules/geoip.js'); //added js file for GeoIP.
 require('./modules/header-prompt.js'); //added js file for GeoIP.
 require('./modules/menu.js');
+require('./modules/jquery.backDetect.js');
 require('./modules/opentip.js');
 require('./modules/menu-adapter.js');
 require('./modules/menu-adapter-manager.js');
@@ -39,16 +40,18 @@ require('./modules/nav-loader.js');
 require('./modules/customer-story.js');
 require('./modules/state-select.js');
 require('./modules/equal-heights.js');
+require('./modules/center-align-content.js');
 require('./modules/main.js');
 require('./vendor/jquery.smooth-scroll.js');
+require('./vendor/jquery.swiftype.autocomplete.js');
 require('./modules/demandbase-formconfig.js');
-require('./vendor/jquery.fs.wallpaper.min.js');
+require('./vendor/jquery.fs.wallpaper.js');
 require('./modules/accordion.js');
 require('./modules/truesight.js');
 require('./modules/support.js');
 require('./modules/ticker.js');
 require('./modules/t-minus-countdown.js');
-require('./vendor/jquery.stickynav.js');
+require('./vendor/jquery.stickynav.js'); 
 require('./modules/industry.js');
 require('./modules/patternLibrary.js');
 require("./modules/carouselautoplay.js");

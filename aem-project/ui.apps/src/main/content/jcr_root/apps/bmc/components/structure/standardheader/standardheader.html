@@ -16,23 +16,55 @@
         <ul class="navigation-utility">
 			<sly data-sly-test.hasSecondaryCTA="${(pageProperties.secondaryCtaText && pageProperties.secondaryCtaHref)}"></sly>
 			<li class="navigation-trials ${(hasSecondaryCTA ? 'nav-li-override-hide' : '')}">
-                <a href="/it-solutions/free-product-trials.html" class="">${'Free Trials' @ i18n}</a>
+                <a href="/it-solutions/free-product-trials.html" class=""><span class="">${'Free Trials' @ i18n}</span><span class="verticalBar">|</span></a>
             </li>
 			<li class="navigation-trials nav-li-override" data-sly-test="${hasSecondaryCTA}">
-				<a href="${pageProperties.secondaryCtaHref}">${pageProperties.secondaryCtaText @ context='html',i18n}</a>
+				<sly data-sly-use.secondaryCta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=pageProperties.secondaryCtaHref}"></sly>
+			   	 <sly data-sly-test="${secondaryCta.href}">
+                    <sly data-sly-test.secondaryCtaHref="${secondaryCta.href}"></sly>
+             	 </sly>  
+	             <sly data-sly-test="${!secondaryCta.href}">
+	                 <sly data-sly-test.secondaryCtaHref="${pageProperties.secondaryCtaHref}"></sly>
+	             </sly>
+				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
-                <a href="#" class="contact-bmc">${'Contact BMC' @ i18n}</a>
+				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
+			</li>
+            <li class="navigation-country">
+                <a href="#" class="select-country"><span class="hideInDesktop md-hide  lg-hide">${'Worldwide (English)' @ i18n}</span><span class="verticalBar">|</span></a>
             </li>
-			<li class="navigation-country">
-                <a href="#" class="select-country">${'Worldwide (English)' @ i18n}</a>
-            </li>
-			<li class="navigation-search js-navigation-search">
-					<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
+			<li class="navigation-search js-navigation-search searchIcon desktop-only">
+				<span class="navigation_search_link"></span>
 			</li>
 		</ul>
 	</div>
 	<!-- / layout-inner-wrap -->
+		<!-- Search Overlay -->
+		
+	 <div id="bodyOverlay" title="Click anywhere to close overlay."></div>
+	<div class="search-overlay off"> 
+        <div class="rows_flex">
+			<div id="search_header" class="columns">
+			   <div class="component_search">
+					<span class="component_search_close" id="component_search_close"></span>
+				  <div class="search-panel">
+					 <form id="search_form" method="get" action="/search/" >
+						<input type='text' id='st-search-input' placeholder='Search'/>
+						<!--<input id="st-search-input" class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  
+						<div class="search_click btn-white">Search</div>-->
+						<button type="submit" class="btn btn-default search_click viewAll btn-white">Search</button>						
+					 </form>
+					 <div class="drop_overlay"></div>
+				  </div>
+				  <div class="resultHeading">Search Result</div>
+				  <p class="viewResults"><a class="btn btn-small btn-corporate learn-more" id="viewAll" href="/search/" id="viewAll">View all results</a></p>
+				  <sly data-sly-resource="${HeaderModel.SearchTermsPath @resourceType='bmc/components/content/htmlarea'}" data-sly-unwrap></sly>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ Search Overlay -->
 </nav>
 <!-- / layout-nav -->
 

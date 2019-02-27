@@ -12,7 +12,6 @@
 
 (function($){
 	$.fn.externalLink = function(options){
-
 	    var defaults = {fileTypes:""};
 	    var opts = $.extend(defaults,options);
 	    var typesArray = opts.fileTypes.split(',');
@@ -21,10 +20,13 @@
 		var isForm = new RegExp('\/forms\/');
 	   	    
 	    return this.each(function(){
-
 	    	if(!extValid.test(this.href)) {
 	    		if(!jsValid.test(this.href)){
-	    			this.target="_blank";
+					if(!this.href.indexOf("mailto")){
+						this.target="";
+					}else{
+						this.target="_blank";
+					}
 	    		}
 	    	}
 	    	else {
@@ -35,6 +37,7 @@
 		    			}
 		    		}
 		    	}
+				
 	    	}
 			
 

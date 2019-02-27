@@ -13,6 +13,7 @@ import javax.jcr.Value;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.*;
 
 /**
  * Created by elambert on 7/19/17.
@@ -23,15 +24,22 @@ public class ProductValues {
     private String name;
     private List<Versions> versions;
 
+    String productName;
+	Set<String> versionNames;
+    
     private static final Logger logger = LoggerFactory.getLogger(BmcEduMeta.class);
-
 
     public ProductValues() {
 //        name = "All Products";
        versions = new ArrayList<>();
 //        setVersions(new Versions());
     }
-
+    ProductValues(String productName)
+	{
+		this.productName=productName;
+		versionNames=new HashSet<String>();
+	}
+	
 
 
     //Getters & Setters
@@ -58,4 +66,23 @@ public class ProductValues {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public void setProductName(String productName)
+	{
+		this.productName=productName;
+	}
+	public String getProductName()
+	{
+		return productName;
+	}
+	
+	public void addVersion(String versionName)
+	{
+		versionNames.add(versionName);
+	}
+	
+	public Set<String> getVersionNames()
+	{
+		return versionNames;
+	}
 }

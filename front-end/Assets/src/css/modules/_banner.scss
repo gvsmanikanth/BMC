@@ -76,7 +76,6 @@
 
 	.bg-home {
 		@include media(breakpointLarge) {
-			//background: no-repeat url('#{$imagesFolder}2015-engage-home-desk.png') top right;
 			background: no-repeat url('#{$imagesFolder}Engage_Countdown_Desktop_436x183_Final.png') center right;
 			background-size: 100% auto;
 		}
@@ -103,17 +102,6 @@
   
 }
 
-/*
-// DXP-1057 : HeaderBasic - Extra Margin at bottom 
-// Removed extra padding
-.header-basic {
-	margin-bottom: rem(30);
-	@include media(breakpointLarge) {
-		margin-bottom: rem(60);
-	}
-}
-*/
-
 .header-form-basic {
   	background-color: color(mediumOrange);
 	padding: 2em 0;
@@ -136,7 +124,3 @@
 	}
 }
 
-/*
-.oldie .bg-image {
-	background: none;
-}*/

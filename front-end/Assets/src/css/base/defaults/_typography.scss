@@ -2,7 +2,7 @@ a {
 	color: color(colorCorporateAction);
 	text-decoration: none;
 	@include transition((property: color));
-	text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
 
 	svg {
 		@include transition((property: fill));
@@ -137,7 +137,7 @@ h3 {
 		line-height:1.1em;
 		letter-spacing:-.03em;
 		text-decoration: none;
-		text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+		//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
 
 		&:hover,
 		&:active,
@@ -208,7 +208,7 @@ h6 {
 	@include transition((property: color));
 	color: #ffffff;
 	text-decoration: none;
-	text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
 
 	&:hover,
 	&:active,
@@ -228,7 +228,7 @@ h6 {
 	@include transition((property: color));
 	color: #ffffff;
 	text-decoration: none;
-	text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
+	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
 
 	&:hover,
 	&:active,

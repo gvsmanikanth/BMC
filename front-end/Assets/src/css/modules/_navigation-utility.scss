@@ -1,3 +1,6 @@
+body.no-scroll{
+	overflow: hidden;
+}
 // @category modules
 
 // @function navigation
@@ -26,29 +29,38 @@ $mobileUtilityNavHeight: 49px;
 			float: left;
 			height: $utilityNavHeight;
 			line-height: $utilityNavHeight;
-			margin-left: 12px;
+			--margin-left: 12px;
 			position: relative;
 		}
 		> a {
 			@include box-sizing();
 			display: block;
-			padding: .5em 1em;
+			margin: 0 1rem;
+			padding: 0;
 			@include media(breakpointLarge) {
 				@include font-size(13);
 				font-weight: 700;
-				padding: 0 1em;
 			}
 			@include media(breakpointExtraLarge) {
 				@include font-size(14);
 			}
+			> .verticalBar {
+				color : #ededed;
+				padding-left: 1em;
+				display:none;
+				@include media(breakpointMedium) {
+					display:inline;
+				}
+			}
+		}
+		a.navigation_search_link{
+			cursor:pointer;
 		}
 	}
-//ul, li {  //Commented BMC-527 to add margin and padding.
-  // margin: 0;
-  // padding: 0;
-//}
+
 	a {
 		color: color(colorCorporateAction);
+		text-shadow: none;
 		&:hover {
 			color: darken(color(colorCorporateAction), 10);
 		}
@@ -79,27 +91,28 @@ $mobileUtilityNavHeight: 49px;
 // -------------------------------------------------------------- //
 @include media(breakpointLarge) {
 	.navigation-utility .navigation-contact a {
-		padding-left: 56px;
+		padding-left: 40px;
 	}
 	.navigation-utility .navigation-support a {
 		padding-left: 26px;
 	}
-	.navigation-utility .navigation-country a {
-    padding-left: 26px;
-  }
+	.navigation-utility .navigation-search{
+		--padding-left: 26px;
+		cursor:pointer;
+	}
 }
 
 // Icons
 // -------------------------------------------------------------- //
 .navigation-country a:after,
 .navigation-contact a:after,
+.navigation-search a:after,
 .navigation-support a:after{
 	@include icon();
 	@include font-size(16);
 	margin-left: 12px;
 	position: relative;
 	top: 3px;
-
 	@include media(breakpointLarge) {
 		left: 0;
 		margin: 0;
@@ -113,10 +126,11 @@ $mobileUtilityNavHeight: 49px;
 }
 .navigation-country a:after,
 .navigation-contact a:after,
-.navigation-support a:after {
+.navigation-support a:after,
+.navigation-search a:after {
 	color: #999;
-} 
-
+	font-size: 1.1rem;
+}
 .navigation-country a:after{
   content: $iconGlobe; //
 }
@@ -152,10 +166,18 @@ $mobileUtilityNavHeight: 49px;
 // Search
 // -------------------------------------------------------------- //
 
+.global-option.navigation-search{
+	width: 200px;
+	&:after {
+		content: "";
+	}
+}
 .navigation-search {
 	position: relative;
+	width: 40px;
+	cursor: pointer;
 	@include media(breakpointLarge) {
-		width: 200px;
+		--width: 200px;
 	}
 	.search-site {
 		position: absolute;
@@ -186,9 +208,6 @@ $mobileUtilityNavHeight: 49px;
 			top: 6px;
 			z-index: -1;
 
-			/*.ie8 & {
-				display: none;
-			}*/
 		}
 	}
 	.search-focus {
@@ -215,9 +234,7 @@ $mobileUtilityNavHeight: 49px;
 			@include transition();
 		}
 
-		/*.ie8 & {
-			margin-top: 4px;
-		}*/
+		
 	}
 	button {
 		background-color: transparent;
@@ -236,23 +253,46 @@ $mobileUtilityNavHeight: 49px;
 			border-left: 1px solid rgba(0,0,0,.1);
 		}
 
-		/*.ie8 & {
-			&:after {
-				@include icon();
-				color: color(darkGrey);
-				content: $iconSearch;
-				display: block;
-				font-size: 21px;
-				pointer-events: none;
-				position: absolute;
-				right: 8px;
-				top: 3px;
-				z-index: -1;
+	}
+	&:after {
+			font-family: "icomoon";
+			content: "";
+			color: #999;
+			font-size: 1.1rem; 
+		}
+}
+
+.scrolled-up .navigation-utility > li.navigation-search:after{
+	padding-left: 14px;
+}
+.scrolled-down {
+	.navigation-utility > li.navigation-search:after{
+		padding-left: 14px;
+	}
+	#hf-search-container {
+		top: 0px;
+		height: 50px;
+		#hf-search-box {
+			height: 50px;
+			.hf-centered-content {
+				#hf-search-form {
+					#hf-search-text {
+						height: 50px;
+					}
+					#hf-search {
+						&:before {
+							margin-top: -40px;
+						}
+					}
+				}
+				#hf-search-right-wedge {
+					padding: 10px 35px 0 25px;
+				}
 			}
 		}
-		*/
 	}
 }
+
 
 // Scrolled effects
 // ------------------------------------------------------------------ //
@@ -273,14 +313,20 @@ $scrolledUtilityNavHeight: 49px;
 			height: $scrolledUtilityNavHeight;
 			line-height: $mobileUtilityNavHeight;
 		}
+		> a {
+			.verticalBar{
+				display:none;
+			}
+		}
 	}
 	.navigation-search {
+		
 		@include media(breakpointLarge) {
 			border-right: solid 1px color(mediumGrey);
 			width: 50px;
 
 			&.on {
-				width: 200px;
+				--width: 200px;
 				.search-site-b {
 					padding-left: 10px;
 					padding-right: 40px;
@@ -301,9 +347,6 @@ $scrolledUtilityNavHeight: 49px;
 					right: 13px;
 					top: 13px;
 
-					/*.ie8 & {
-						top: 15px;
-					}*/
 				}
 			}
 			[type="text"] {
@@ -311,22 +354,10 @@ $scrolledUtilityNavHeight: 49px;
 				padding-left: 50px;
 				top: 0;
 
-				/*.ie8 & {
-					margin-top: -12px;
-					height: $scrolledUtilityNavHeight;
-					margin-left: -15px;
-				}*/
-
-
 				&:focus {
 					cursor: auto;
 					padding-left: 0;
 
-					/*.ie8 & {
-						margin-left: auto;
-						margin-top: 4px;
-						height: auto;
-					}*/
 				}
 			}
 			button {
@@ -336,11 +367,9 @@ $scrolledUtilityNavHeight: 49px;
 				top: 0;
 				width: $scrolledUtilityNavHeight;
 
-				/*.ie8 &:after {
-					display: none;
-				}*/
 			}
 		}
+		
 	}
 	@include media(breakpointLarge) {
 		.navigation-utility {
@@ -354,7 +383,7 @@ $scrolledUtilityNavHeight: 49px;
       padding-left: 40px;
     }
 		.navigation-utility .navigation-contact a {
-			padding-left: 68px;
+			padding-left: 50px;
 		}
 		.navigation-utility .navigation-support,
 		.navigation-utility .navigation-country {
@@ -364,7 +393,8 @@ $scrolledUtilityNavHeight: 49px;
 		}
 		.navigation-country a:after,
 		.navigation-contact a:after,
-		.navigation-support a:after {
+		.navigation-support a:after,
+		.navigation-search a:after {
 			left: 12px;
 			top: 16px;
 		}
@@ -376,11 +406,12 @@ $scrolledUtilityNavHeight: 49px;
 		  margin-left:0px;
 		}
 		
-		.nav-li-override-hide{
+	.nav-li-override-hide{
       display: none;
     }
     .nav-li-override{
       display: block;
+      background-color: color(mediumOrange);
     }
     
     .nav-li-override a{
@@ -404,6 +435,22 @@ $scrolledUtilityNavHeight: 49px;
 	}
 }
 
+.scrolled-down,
+.scrolled-up {
+	.scrollTextHide{
+		display:none;
+		@media only screen and (min-width:0) and (max-width: 960px) {
+			display:inline;
+		} 
+	}
+}
+
+.hideInDesktop{
+	display:none;
+		@media only screen and (min-width:0) and (max-width: 960px) {
+			display:inline;
+		} 
+}
 
 .display-scrolled-menu {
 	@include media(breakpointLarge) {
@@ -412,4 +459,11 @@ $scrolledUtilityNavHeight: 49px;
 			top: -100%;
 		}
 	}
+}
+
+.bmc-nav-loader-navigation .layout-header .headerSearch{
+&.mobile-only{
+	text-align:center;
+	margin-right : 24px;
+}
 }

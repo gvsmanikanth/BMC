@@ -2,6 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
           environment="stage."
-          issueEnvironment="http://sfaqa-bmcsites.cs94.force.com/casemgmt"
+          issueEnvironment="http://sfaqa-bmcsites.cs23.force.com/casemgmt"
           issuePath="/SC_CaseDetailPage?CaseId="
+          draftIssuePath="/SC_EditDraftCasePage?CaseId="
 />

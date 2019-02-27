@@ -4,9 +4,13 @@
 /**********************************Customers*************************************/
 /**********************************************Stories***********************************************************************/
 .page-homepage-e {
-	//background-color: white;
     background-size: cover;
-
+	.product-category-header{
+		h1.page-header,
+		h2.subHeading{
+			width: 85%;
+		}
+	}	
 /*Right Side Scroll Navigation*/
 
 #fp-nav {
@@ -126,7 +130,9 @@
 	}
 }
 
-/********************************************************Right Side Scroll Navigation***************************************************/
+
+/*************************************************Right Side Scroll Navigation*****************************************/
+
 
 .section-content{
 	.full-bleed-two-column{
@@ -135,7 +141,6 @@
 				margin-top : 0px;
 			}
 			@include media(breakpointLarge){
-				//margin-top :-60px;
 			}
 			margin-top : 0px;
 		}
@@ -154,7 +159,6 @@
 		@include media(breakpointLarge){
 			margin-left: 70px;
 			margin-right: 70px;
-			//margin:auto;
 		}
 		margin: 0;
 		align-items: center;
@@ -195,13 +199,6 @@
 		letter-spacing: 0.5px;
 	}
 	.partners_sec {
-		//@include media(breakpointMedium){
-			//padding:0;
-		//}
-		//@include media(breakpointLarge){
-			//padding: 40px 0 88px 0px;
-		//}
-		//padding: 0;
 		text-align: center;
 		h2 {
 			padding: 61px 0 64px 0;
@@ -215,17 +212,7 @@
 			padding: 0;
 			li {
 				display: inline-block;
-				//padding: 0 0 20px 0;
 				vertical-align: middle;
-				//@include media(breakpointMedium){
-				//	padding: 0 20px 20px 0;
-				//}
-				//@include media(breakpointLarge){
-				//	padding: 0 100px 0 0;
-				//}
-				
-				
-				
 				img{
 					width: 230px;
 					@include media(breakpointMedium){
@@ -250,9 +237,7 @@
 		}
 	}
 }
-/** {
-	box-sizing: border-box;
-}*/
+
 fieldset {
 	border: 0;
 }
@@ -289,11 +274,58 @@ img {
 		top: 0px; 
 		bottom: 0px;
 	}
+	.assetStripBottom{
+		position: absolute;
+		bottom: 0;
+	}
 	.video-hero-header {
-		max-height: 100%;
+		/*max-height: 100%;
 		height: 100%;
 		position: absolute;
-		width: 100%;
+		width: 100%;*/
+		.middle{
+			display: table;
+			width: 100%;
+			.inner{
+				vertical-align: middle;
+				display: table-cell;
+				.page-header{
+					font-size: 1.5rem;
+					margin-bottom: 0.8rem;
+					@include media(breakpointMedium){
+						font-size: 2.5rem;
+						margin-bottom: 24px;
+					}
+					@include media(breakpointLarge){
+						font-size: 64px; 
+						margin-bottom: 24px;
+					}
+				}
+				.subHeading{
+					margin-top: 0;
+					font-size: 0.8rem;
+					margin-bottom: 50px;
+					@include media(breakpointMedium){
+						font-size: 1.3rem;
+						margin-bottom: 50px;
+					}
+					@include media(breakpointLarge){
+						font-size: 24px;
+						margin-bottom: 50px;
+						font-weight:400;
+					}
+				}
+				.btn-secondary{
+					margin-bottom: 0rem;
+					@include media(breakpointMedium){
+						margin-bottom: 1rem;
+					}
+					@include media(breakpointLarge){
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
 		.video-content {
 			.hero-image.xs-only{
 				background-image: none;
@@ -306,13 +338,11 @@ img {
 				font-weight: 400;
 				
 				@include media(breakpointMedium){
-					width: 70%; 
 					font-size: 3rem;
 					line-height: 3rem;
 				}
 				@include media(breakpointLarge){
-					width: 45%; 
-					font-size: 3.5rem;
+					font-size: 4.2rem;
 					line-height: 3.5rem;
 				}
 				
@@ -323,17 +353,20 @@ img {
 			.h3 {
 				width: 100%;
 				font-size: 1.25rem;
-				line-height: 41px;
+				line-height: 30px;
 				font-weight: 400;
 				color: #fff;
-				//font-style: italic;
 				padding-bottom: 1rem;
 				@include media(breakpointMedium){
-					width: 60%; 
+					width: 60%;
+					font-size: 1.6rem;
+					line-height: 35px;
 					padding-bottom: 2rem;
 				}
 				@include media(breakpointLarge){
-					width: 100%;
+					width: 38%;
+					font-size: 2rem;
+					line-height: 41px;
 					padding-bottom: 2rem;
 				}
 				
@@ -350,12 +383,29 @@ img {
 		}
 		/*Bounce Scroll ICON*/
 		.arrow {
-		  position: absolute;
-		  bottom: 1rem;
-		  left: 50%;
-		  margin-left: -20px;
-		  width: 40px;
+			position: absolute;
+			bottom: 1rem;
+			left: 50%;
+			margin-left: -20px;
+			width: 40px;
+			height: 60px;
+			cursor: pointer;
+			i.down{
+				display: block;
+				color: #fff;
+				font-style: normal;
+			}
+			.down:before {
+				content: $iconArrowDown;
+				font-family: "icomoon";
+				font-size:3rem;
+			}
+		}
+		//Based on New Design
+		.bigger {
+		  bottom: auto;
 		  height: 60px;
+		  margin:0 auto;
 		  cursor:pointer;
 			i.down{
 				display: block;
@@ -366,6 +416,12 @@ img {
 				content: $iconArrowDown;
 				font-family: "icomoon";
 				font-size:3rem;
+				@include media(breakpointMedium){
+					font-size:4rem;
+				}
+				@include media(breakpointLarge){
+					font-size:5rem;
+				}
 			}
 		}
 		.bounce {
@@ -432,7 +488,6 @@ img {
 		font-size: 18px;
 		font-weight: 300;
 		letter-spacing: 0.5px;
-		--padding: 0px 0 20px 0;
 		color: #000000;
 		text-align: center;
 		margin-bottom:0;
@@ -443,6 +498,12 @@ img {
 			font-size: 40px;
 		}
 	}
+	.bannerContent{
+		height: 200px;
+			@include media(breakpointSmall) {
+				height:420px;
+			}
+		}
 }
 
 .section-wrap#section1,
@@ -517,7 +578,6 @@ img {
 		padding: 0 0 30px;
 		color: #414042;
 		font-weight: 400;
-		//font-family: 'Open Sans', sans-serif;
 	}
 	ul {
 		display: block;
@@ -553,7 +613,6 @@ img {
 					@include media(breakpointLarge){
 						line-height: 32px;
 					}
-					//line-height: 32px;
 					font-weight: 400;
 					font-family: 'Open Sans', sans-serif;
 					padding: 0;
@@ -566,34 +625,6 @@ img {
 	li {
 		display: block;
 		margin-bottom: 10px;
-		
-		/*.bubbleDiv{
-			position: absolute;
-			background-color: #fe5000;
-			height: auto;
-			width: 100%;
-			bottom: -1rem;
-			padding: 0 0 0.2rem;
-			border-radius: 1rem;
-			&:after {
-				z-index: -1;
-				position: absolute;
-				bottom: 100%;
-				left: 50%;
-				margin-left: -10px;
-				content:'';
-				width: 0;
-				height: 0;
-				border-bottom: solid 10px #fe5000;
-				border-left: solid 10px transparent;
-				border-right: solid 10px transparent;
-			}
-			.bubbleText{
-				font-size: 18px;
-				line-height: 26px;
-				color: #fff;
-			}
-		}*/
 	}
 	.circle{
 			position: absolute;
@@ -686,7 +717,6 @@ ul {
 	background-color:#fff;
 	.stories_blk {
 		text-align: center;
-		//padding: 38px 0 109px;
 		padding: 3rem 0;
 		.learn-more {
 			width: 263px;
@@ -709,7 +739,6 @@ ul {
 	background-color:#fff;
 	.contact-us_blk {
 		text-align: center;
-		//padding: 38px 0 109px;
 		padding: 0 0 3rem 0;
 		--background-color: rgba(247, 247, 247, 0.4);
 		.learn-more {
@@ -753,7 +782,6 @@ ul {
 			padding: 0 18px 40px 18px;
 			color: #000000;
 			font-family: 'Open Sans', sans-serif;
-			//font-size: 40px;
 			font-weight: 300;
 			line-height: 48px;
 			letter-spacing: 0.5px;
@@ -815,13 +843,4 @@ object{
 	}
 	
 }
-
-
-
-
-
-
-
 } 
-
-	

@@ -1,6 +1,6 @@
 <sly data-sly-use.CtaModel="com.bmc.models.components.ctabuttons.CtaButtons"/>
 <sly data-sly-test.buttonURL="${CtaModel.ResolvedLink}"/>
-<a class="aem--inline-block aem--no-grid ${properties.buttonColor} ${properties.learnMore ? 'learn-more' : ''}" href="${buttonURL}">
+<a class="aem--inline-block aem--no-grid ${properties.buttonColor} ${properties.learnMore ? 'learn-more' : ''} ${CtaModel.LinkType == 'VideoModal' ? 'modal-youtube-video-player' : ''}" href="${buttonURL}">
     <sly data-sly-test="${!properties.customButtonText}">${properties.buttonText @ context='html'}</sly>
     <sly data-sly-test="${properties.customButtonText}">${properties.customButtonText @ context='html'}</sly>
 </a>

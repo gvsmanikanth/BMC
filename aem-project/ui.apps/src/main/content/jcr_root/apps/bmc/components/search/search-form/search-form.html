@@ -1,7 +1,27 @@
+<sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
+<sly data-sly-list="${SearchResultsModel.QueryMap}">
+    <sly data-sly-test.qFieldName="${SearchResultsModel.QueryMap[0]['fieldName']}"/>
+    <sly data-sly-test.qPage="${SearchResultsModel.QueryMap[0]['page']}"/>
+    <sly data-sly-list.vMapItem="${SearchResultsModel.QueryMap[0]['valueMap']}">
+        <sly data-sly-test="${vMapItem == 'values'}" data-sly-test.qValues="${SearchResultsModel.QueryMap[0]['valueMap']['values']}"/>
+        <sly data-sly-test="${vMapItem == 'type'}" data-sly-test.qType="${SearchResultsModel.QueryMap[0]['valueMap']['type']}"/>
+    </sly>
+</sly>
+
+<sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}"/>
+<sly data-sly-test.SearchFilter="${SearchResultsModel.SearchFilter}"/>
 
 <sly data-sly-use.SearchBoxModel="com.bmc.models.components.search.SearchBoxModel">
-    <sly data-sly-use.FooterTemplates="search-form-templates.html"/>
-
+<sly data-sly-use.FooterTemplates="search-form-templates.html"/>
     <sly data-sly-test="${SearchBoxModel.ParentName == 'header'}" data-sly-call="${FooterTemplates.HeaderSearch}"/>
     <sly data-sly-test="${SearchBoxModel.ParentName == 'footer'}" data-sly-call="${FooterTemplates.FooterSearch}"/>
 </sly>
+
+<sly data-sly-use.ScriptTemplates="/apps/bmc/components/search/search-results/search-script-templates.html"/>
+<sly data-sly-test="${qFieldName == 'category'}" data-sly-call="${ScriptTemplates.DoubleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
+<sly data-sly-test="${qFieldName != 'category'}" data-sly-call="${ScriptTemplates.SingleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
+
+<sly  data-sly-call="${ScriptTemplates.autocompleteQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/> 
+
+
+

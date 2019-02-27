@@ -238,7 +238,6 @@ $menuBottomPadding: 1em;
 
 		@include media(breakpointMedium) {
 			background-image: url('#{$imagesFolder}bmc-logo-white-on-grey.png');
-			//background-size: 105px auto; //WEB-840: Commented to align logo on mobile view inside menu.
 			background-position-x: -5px;
 		}
 	}
@@ -326,7 +325,7 @@ $menuBottomPadding: 1em;
 	font-size: 2.5em;
 	vertical-align: middle;
 	text-align: center;
-  float:right;
+	float:right;
 	.support-header.expanded & {
 		background-image: url('#{$imagesFolder}bmc-support-mobile-close.png');
 	}

@@ -39,7 +39,7 @@
 
     function syncValidationTypes(reset){
         var ignoredFieldTypes = ['textarea', 'date', 'number', 'tel', 'password'];
-        var textValidationTypes = ['none', 'alpha-only', 'first-name', 'last-name'];
+        var textValidationTypes = ['none', 'alpha-only', 'first-name', 'last-name','no_initial_space'];
         var emailValidationTypes = ['none', 'email-all', 'email-business', 'email-business-competitor'];
 
         //disable or enable, access to the validation select list, based on of if field type is flagged as an ignored type or not.

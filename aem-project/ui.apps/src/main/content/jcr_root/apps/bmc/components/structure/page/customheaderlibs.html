@@ -9,8 +9,6 @@
     <link rel="alternate" href="${alternateLinks.alternateLinksMap[item]}" hreflang="${item}" data-sly-repeat="${alternateLinks.alternateLinksMap.keySet.iterator}" />
 </sly>
 
-<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
-
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.all @ categories='bmc.head'}" />
 
@@ -30,4 +28,11 @@
     </script>
 </sly>
 
-<script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562.js"></script>
+
+<sly data-sly-use.runMode="com.bmc.models.RunModes"/>
+<sly data-sly-test ="${runmode.mode == 'prod'}">
+  <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562.js"></script>
+</sly>
+<sly data-sly-test ="${runmode.mode != 'prod'}">
+ <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
+</sly>

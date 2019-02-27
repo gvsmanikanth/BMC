@@ -43,8 +43,11 @@ body {
 	&.navigation-open {
 		height: 100%;
 		overflow: hidden;
-
-		@include media(breakpointLarge) {
+		position:fixed;
+		@include media(breakpointMedium) {
+			position:absolute; 
+		}
+		@include media(breakpointLarge){
 			height: auto;
 			overflow: auto;
 		}
@@ -79,7 +82,7 @@ html{
 body{
   height: 100% !important;
   left: 0;
-  position: absolute !important;
+  position: absolute;
   top: 0;
   width: 100% !important;
 }

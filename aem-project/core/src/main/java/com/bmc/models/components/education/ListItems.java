@@ -6,23 +6,24 @@ import java.util.List;
  * Created by elambert on 7/19/17.
  */
 public class ListItems {
-
+	
     private int id = 0;
     private String name = "";
-    private List<Integer> products;
-    private List<Integer> versions;
-    private List<Integer> type;
+    private List<String> products;
+    private List<String> versions;
+    private List<String> type;
     private String url= "";
-    private List<Integer> learningFormats;
+    private List<String> learningFormats;
     private String duration="";
     private String subHeader="";
-    private List<Integer> roles;
+    private List<String> roles;
     private Boolean blnFeatured = false;
     private Boolean blnPrerequisite = false;
 
     public ListItems() {
 
     }
+  
 
     public int getId() {
         return id;
@@ -39,28 +40,30 @@ public class ListItems {
     public void setName(String name) {
         this.name = name;
     }
+    
+  
 
-    public List<Integer> getProducts() {
+    public List<String> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Integer> products) {
+    public void setProducts(List<String> products) {
         this.products = products;
     }
 
-    public List<Integer> getVersions() {
+    public List<String> getVersions() {
         return versions;
     }
 
-    public void setVersions(List<Integer> versions) {
+    public void setVersions(List<String> versions) {
         this.versions = versions;
     }
 
-    public List<Integer> getType() {
+    public List<String> getType() {
         return type;
     }
 
-    public void setType(List<Integer> type) {
+    public void setType(List<String> type) {
         this.type = type;
     }
 
@@ -72,11 +75,11 @@ public class ListItems {
         this.url = url;
     }
 
-    public List<Integer> getLearningFormats() {
+    public List<String> getLearningFormats() {
         return learningFormats;
     }
 
-    public void setLearningFormats(List<Integer> learningFormats) {
+    public void setLearningFormats(List<String> learningFormats) {
         this.learningFormats = learningFormats;
     }
 
@@ -96,11 +99,11 @@ public class ListItems {
         this.subHeader = subHeader;
     }
 
-    public List<Integer> getRoles() {
+    public List<String> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<Integer> roles) {
+    public void setRoles(List<String> roles) {
         this.roles = roles;
     }
 
@@ -118,5 +121,6 @@ public class ListItems {
 
     public void setBlnPrerequisite(Boolean blnPrerequisite) {
         this.blnPrerequisite = blnPrerequisite;
-    }
+    } 
+    
 }

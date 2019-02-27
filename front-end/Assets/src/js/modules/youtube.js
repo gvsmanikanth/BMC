@@ -22,15 +22,13 @@ XT.yt = {
 
         var j = document.createElement("script"),
             f = document.getElementsByTagName("script")[0];
-        j.src = "//www.youtube.com/iframe_api";
+        j.src = "https://www.youtube.com/iframe_api";
         j.async = true;
         f.parentNode.insertBefore(j, f);
-        //console.log('API Loaded');
     },
 
 	//default youtube api listener
 	onYouTubeIframeAPIReady: function () {
-	    //console.log('API Ready?');
 	    
 	    var youtubeVideos = $(".youtube-video");
 
@@ -41,8 +39,6 @@ XT.yt = {
 	    	var objReturn = new Object();
 		
 				objReturn.width = $(video).width();
-				//if(objReturn.width > 960)
-				//objReturn.width = 960;
 				objReturn.height = objReturn.width * 9 / 16;
 			
 	    	$( video ).height( objReturn.height );
@@ -50,8 +46,6 @@ XT.yt = {
 	     	var videoUrl = $(video).find('.youtubePlayer').data("src");
 	     	var p_autoplay = $(video).find('.youtubePlayer').data("autoplay");
 	     	var p_fullscreen = $(video).find('.youtubePlayer').data("fullscreen");
-            
-		    //console.log("videoUrl " + videoUrl);
 		    var playerAPIID = "ytplayer_"+videoUrl;
 		    window.YT = window.YT || {};
 		    if (typeof window.YT.Player === 'function') {
@@ -84,13 +78,10 @@ XT.yt = {
 	},
 
     onPlayerReady: function(e) {
-        //console.log('player ready');
-        //player.playVideo(); //start the video
-        //player.setVolume(1); //set volume to 1 (accepts 0-100)
+     
     },
 
     onPlayerStateChange: function (e) {
-        //console.log(e.data, YT.PlayerState.PLAYING, e.data === YT.PlayerState.PLAYING);
         var player = e.target;
         var videoData = player.getVideoData();
         var videoID = videoData.video_id;
@@ -250,11 +241,11 @@ XT.yt = {
     },
 
     onPlayerStop: function(){
-        //console.log('video ended');
+        
     },
 
     onPlayerError: function (e) {
-        //console.log( "youtube: " + e.target.src + " - " + e.data);
+        
     },
     
     init: function () {

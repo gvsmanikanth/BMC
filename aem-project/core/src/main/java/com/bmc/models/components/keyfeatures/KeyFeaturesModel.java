@@ -1,8 +1,15 @@
 package com.bmc.models.components.keyfeatures;
 
+
+import com.bmc.models.components.video.VideoInfo;
+import com.bmc.models.url.UrlInfo;
 import com.bmc.mixins.UrlResolver;
+import com.bmc.mixins.VideoInfoProvider;
+import com.day.cq.wcm.api.Page;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.slf4j.Logger;
@@ -15,6 +22,7 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -68,8 +76,10 @@ public class KeyFeaturesModel {
                     ctaButton.put("assetType", getButtonAssetType(button,"assetType", "altButtonName"));
                     ctaButton.put("buttonColor", button.getProperty("buttonColor").getString());
                     ctaButton.put("assetName", getButtonTitleByPath(button));
-                    ctaButton.put("ctaPath", button.getProperty("ctaPath").getString());
+                    //WEB-3681 Key Features -Picker Functionality
+                    ctaButton.put("ctaPath", getCtaPathHref(button));
                     ctaButtons.add(ctaButton);
+                    ctaButton.put("cssClass", getCssClass(button));
                 }
             }
         	}
@@ -78,7 +88,9 @@ public class KeyFeaturesModel {
         }
     }
 
-    private String getButtonAssetType(Node button, String assetType, String altButtonName){
+   
+
+	private String getButtonAssetType(Node button, String assetType, String altButtonName){
         try {
             if(button.hasProperty(assetType) && button.hasProperty(altButtonName)) {
                 return button.getProperty(assetType).getString().equals("custom") ? (!button.getProperty(altButtonName).getString().trim().isEmpty() ? button.getProperty(altButtonName).getString().trim() : null) : button.getProperty(assetType).getString();
@@ -98,9 +110,11 @@ public class KeyFeaturesModel {
             if(button.hasProperty("overrideButtonTitle")){
                 return button.getProperty("overrideButtonTitle").getString();
             }
-            if (button.hasProperty("ctaPath") && session.itemExists(button.getProperty("ctaPath").getString())) {
-                UrlResolver urlResolver = UrlResolver.from(resource);
-                return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
+            if (button.hasProperty("ctaPath")) {
+            	 UrlResolver urlResolver = UrlResolver.from(resource);
+                 return urlResolver.getLinkInfo(button.getProperty("ctaPath").getString()).getText();
+            }else{
+            	return null;
             }
         }catch (Exception e){
             logger.error("ERROR:", e.getMessage());
@@ -115,4 +129,46 @@ public class KeyFeaturesModel {
     public List<HashMap> getCtaButtons() {
         return ctaButtons;
     }
+    
+    //WEB-3681 Key Features -Picker Functionality
+    private String getCtaPathHref(Node button)
+    {
+ 	   try {
+ 		   //WEB-3899 Video not working in Modal COmponent.
+ 		  if (button.hasProperty("ctaPath")) {			   
+ 			 UrlResolver urlResolver = UrlResolver.from(resource);
+ 			 UrlInfo urlInfo = urlResolver.getUrlInfo(button.getProperty("ctaPath").getString(), true);
+ 			 return urlInfo.getHref();		   
+		   }
+ 		 else 
+ 		   {
+ 			   return null;
+ 		   }
+ 	   }catch (Exception e){
+            logger.error("ERROR:", e.getMessage());
+ 	   }
+ 	return null;
+    }
+   /*
+    * Added a new class to return the cssClass for the Asset Type.
+    * WEB-3899 
+    */
+    private String getCssClass(Node button) {
+    	try {
+  		   //WEB-3899 Video not working in Modal COmponent.
+  		  if (button.hasProperty("ctaPath")) {			   
+  			 UrlResolver urlResolver = UrlResolver.from(resource);
+  			 UrlInfo urlInfo = urlResolver.getUrlInfo(button.getProperty("ctaPath").getString(), true);
+  			 return urlInfo.getCssClass();		   
+ 		   }
+  		 else 
+  		   {
+  			   return null;
+  		   }
+  	   }catch (Exception e){
+             logger.error("ERROR:", e.getMessage());
+  	   }
+  	return null;
+     }
+	
 }

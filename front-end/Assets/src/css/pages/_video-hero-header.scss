@@ -1,6 +1,5 @@
 .video-hero-header {
 
-		// hero
 	.hero {
 		position: relative;
 		text-align: center;
@@ -15,7 +14,6 @@
 			padding: 5rem 0;
 		}
 		@media (min-width: $break-lg) {
-			//padding: 8rem 0;
 		}
 		
 		.videoInstructions{
@@ -46,8 +44,7 @@
 		&:before {
 			content: '';
 			display: block;
-			//padding-top: 75%; DXP-1108 : Commented to remove top padding
-			
+
 			.vidbg-box{
             width: 650px;
             height: 338px;
@@ -64,7 +61,7 @@
 			}
 		}
 		&.xs-only {
-			background-image: url("#{$imagesFolder}careers-header.jpg");
+			--background-image: url("#{$imagesFolder}careers-header.jpg");
 			background-position: center;
 			background-size: cover;
 		}

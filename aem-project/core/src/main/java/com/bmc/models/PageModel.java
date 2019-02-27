@@ -27,6 +27,9 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 /**
  * Created by elambert on 5/26/17.
@@ -115,7 +118,62 @@ public class PageModel {
             return "";
         }
     }
+    
+    private String getTopicsValue(String nodeName) { // Adobe variable mapping is Content core topic
+        try {
+            return session.getNode("/content/bmc/resources/topic/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_buyer_stage_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-buyer-stage/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_content_type_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-types/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_topics_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-topics/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
 
+    private String getIC_target_persona_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-target-persona/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_target_industry_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-target-industry/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
+    
+    private String getIC_company_size_Value(String nodeName) {
+        try {
+            return session.getNode("/content/bmc/resources/intelligent-content-company-size/" + nodeName).getProperty("jcr:title").getString().toLowerCase();
+        } catch (RepositoryException e) {
+            return "";
+        }
+    }
     private BmcMeta gatherAnalytics() {
         BmcMeta bmcMeta = new BmcMeta();
         bmcMeta.getPage().setLongName(formatLongName());
@@ -129,7 +187,7 @@ public class PageModel {
         String templatePath = (template != null) ? template.getPath() : "";
         String templateName = (template != null) ? template.getName() : "";
         // If Thank-you Page, pull info from parent form page
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-thank-you")) {
             bmcMeta.getPage().setPurl("true");
             resourcePage = resourcePage.getParent();
             contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
@@ -147,11 +205,54 @@ public class PageModel {
 
         String productsList = Arrays.stream(products).map(s -> getProductInterestValue(s)).collect(Collectors.joining("|"));
         String linesList = Arrays.stream(productLines).map(s -> getProductLineValue(s)).collect(Collectors.joining("|"));
-
+        
+        String[] topics = resourcePage.getContentResource().getValueMap().get("topics", new String[] {});
+        String topicsList = Arrays.stream(topics).map(s -> getTopicsValue(s)).collect(Collectors.joining("|"));
+      
+        String ic_app_inclusion = resourcePage.getProperties().getOrDefault("ic-app-inclusion","").toString();
+        //String ic_app_inclusion_list = Arrays.stream(ic_app_inclusion).map(s -> getIC_app_inclusion_Value(s)).collect(Collectors.joining("|"));
+        
+        String[] ic_content_type = resourcePage.getContentResource().getValueMap().get("ic-content-type", new String[] {});
+        String ic_content_type_list = Arrays.stream(ic_content_type).map(s -> getIC_content_type_Value(s)).collect(Collectors.joining("|"));
+      
+        String ic_weighting = resourcePage.getProperties().getOrDefault("ic-weighting","").toString();
+        
+        
+        String[] ic_topics = resourcePage.getContentResource().getValueMap().get("ic-topics", new String[] {});
+        String ic_topics_list = Arrays.stream(ic_topics).map(s -> getIC_topics_Value(s)).collect(Collectors.joining("|"));
+        
+        String[] ic_buyer_stage = resourcePage.getContentResource().getValueMap().get("ic-buyer-stage", new String[] {});
+        String ic_buyer_stage_list = Arrays.stream(ic_buyer_stage).map(s -> getIC_buyer_stage_Value(s)).collect(Collectors.joining("|"));
+        
+        String[] ic_target_persona = resourcePage.getContentResource().getValueMap().get("ic-target-persona", new String[] {});
+        String ic_target_persona_list = Arrays.stream(ic_target_persona).map(s -> getIC_target_persona_Value(s)).collect(Collectors.joining("|"));
+        String ic_source_publish_date ="";
+        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
+        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
+        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
+        }
+        String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
+        String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
+        
+        String[] ic_company_size = resourcePage.getContentResource().getValueMap().get("ic-company-size", new String[] {});
+        String ic_company_size_list = Arrays.stream(ic_company_size).map(s -> getIC_company_size_Value(s)).collect(Collectors.joining("|"));
+       
+       
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
+        bmcMeta.getPage().setTopicsCategories(topicsList);
+        
+        bmcMeta.getPage().getIc().setAppInclusion(ic_app_inclusion);
+        bmcMeta.getPage().getIc().setContentType(ic_content_type_list);
+        bmcMeta.getPage().getIc().setWeighting(ic_weighting);
+        bmcMeta.getPage().getIc().setContentMarketTopics(ic_topics_list);
+        bmcMeta.getPage().getIc().setBuyerStage(ic_buyer_stage_list);
+        bmcMeta.getPage().getIc().setTargetPersona(ic_target_persona_list);
+        bmcMeta.getPage().getIc().setSourcePublishDate(ic_source_publish_date);
+        bmcMeta.getPage().getIc().setTargetIndustry(ic_target_industry_list);
+        bmcMeta.getPage().getIc().setCompanySize(ic_company_size_list);
 
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template")) {
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-page-template")) {
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
                 setPageMetaFromForm(bmcMeta, form);
@@ -180,6 +281,7 @@ public class PageModel {
                 bmcMeta.getUser().setSupportAuthenticated(true);
                 bmcMeta.getSupport().setIssueEnvironment(service.getIssueEnvironment());
                 bmcMeta.getSupport().setIssuePath(service.getIssuePath());
+                bmcMeta.getSupport().setDraftIssuePath(service.getDraftIssuePath());
             }
         }
 
@@ -243,7 +345,7 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
-            } else if (getContentType().contains("form-thank-you")) {
+            } else if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you")) {
                     formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
             } else if (getContentType().contains("form-")) {
                     formattedLongName.append(":forms-start" + ":"+resourcePage.getName().toString());
@@ -260,7 +362,7 @@ public class PageModel {
     }
 
     private String formatPageType(String path) {
-        if (getContentType().contains("form-thank-you")) {
+        if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you")) {
             return "forms-complete";
         } else if (getContentType().contains("form")) {
             return "forms-start";

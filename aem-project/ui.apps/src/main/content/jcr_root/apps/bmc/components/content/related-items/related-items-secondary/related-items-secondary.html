@@ -4,7 +4,7 @@
 
     <sly data-sly-list.link="${data.links}">
         <h4>
-            <a href="${link.href}" target="${link.target}">${link.text @ context='html'}</a>
+            <a href="${link.href}" class="${link.type == 'VideoModal' ?'modal-youtube-video-player' : ''}" target="${link.target}">${link.text @ context='html'}</a>
         </h4>
         <p data-sly-test="${data.showLinkDescriptions && link.description}">${link.description @ context='html'}</p>
     </sly>

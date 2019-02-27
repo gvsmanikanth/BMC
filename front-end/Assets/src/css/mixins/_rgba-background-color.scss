@@ -12,11 +12,5 @@
 	background-color: $color;
 	background-color: rgba($color, $alpha);
 
-	@if $image {
-		/*.oldie & {
-			background-color: transparent;
-			background-image: url('#{$imagesFolder}#{$image}.png');
-			background-repeat: repeat;
-		}*/
-	}
+
 }

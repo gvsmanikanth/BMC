@@ -1,16 +1,6 @@
 <sly data-sly-use.SearchResultsModel="com.bmc.models.components.search.SearchResultsModel" />
-<sly data-sly-list="${SearchResultsModel.QueryMap}">
-    <sly data-sly-test.qFieldName="${SearchResultsModel.QueryMap[0]['fieldName']}"/>
-    <sly data-sly-test.qPage="${SearchResultsModel.QueryMap[0]['page']}"/>
-    <sly data-sly-list.vMapItem="${SearchResultsModel.QueryMap[0]['valueMap']}">
-        <sly data-sly-test="${vMapItem == 'values'}" data-sly-test.qValues="${SearchResultsModel.QueryMap[0]['valueMap']['values']}"/>
-        <sly data-sly-test="${vMapItem == 'type'}" data-sly-test.qType="${SearchResultsModel.QueryMap[0]['valueMap']['type']}"/>
-    </sly>
-</sly>
-
 <sly data-sly-test.PageLocale="${SearchResultsModel.PageLocale}"/>
 <sly data-sly-test.SearchFilter="${SearchResultsModel.SearchFilter}"/>
-
 <header class="search-results-header">
     <form id="submitForm" name="submitForm" method="get" onsubmit="return validateForm();">
         <fieldset>
@@ -21,6 +11,7 @@
                 <option value="all" selected="${SearchFilter == 'all'}">All Results</option>
                 <option value="corporate" selected="${SearchFilter == 'corporate'}">Corporate</option>
                 <option value="productsSolutions" selected="${SearchFilter == 'productsSolutions'}">Products/Solutions</option>
+                <option value="forms" selected="${SearchFilter == 'forms'}">Free Trials and Offers</option>
                 <option value="services" selected="${SearchFilter == 'services'}">Services</option>
                 <option value="education" selected="${SearchFilter == 'education'}">Education</option>
                 <option value="blogs" selected="${SearchFilter == 'blogs'}">Blogs</option>
@@ -58,7 +49,4 @@
 <div class="st-search-container">
 </div>
 
-<sly data-sly-use.ScriptTemplates="search-script-templates.html"/>
 
-<sly data-sly-test="${qFieldName == 'category'}" data-sly-call="${ScriptTemplates.DoubleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>
-<sly data-sly-test="${qFieldName != 'category'}" data-sly-call="${ScriptTemplates.SingleQuery @qPage=qPage, PageLocale=PageLocale, qFieldName=qFieldName, qValues=qValues, qType=qType}"/>

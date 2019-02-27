@@ -15,7 +15,6 @@
 @import "fancybox";
 @import "feature";
 @import "forms";
-@import "icons";
 @import "icon-point-list";
 @import "lists";
 @import "logo-block";
@@ -28,9 +27,11 @@
 @import "navigation-supplementary";
 @import "navigation-tertiary";
 @import "navigation-utility";
+@import "search_overlay";
 @import "navigation-upgrade";
 @import "nav-breadcrumb";
 @import "nav-pagination";
+@import "sitemap";
 @import "opentip";
 @import "owl-carousel";
 @import "pattern-library";
@@ -91,5 +92,3 @@
 
 @import "homepage-aos"; 
 @import "bottom-line-tabs";
-
-//@import "oldie";

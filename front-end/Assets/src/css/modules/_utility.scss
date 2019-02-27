@@ -967,7 +967,6 @@ a.white:focus,
 
     .card {
       display: inline-block;
-      //width: auto; //WEB-907 : Removed width auto for no-flexbox.
     }
 
 .mxn1 {
@@ -1062,8 +1061,7 @@ a.white:focus,
       padding: 0;
 
       @include media(breakpointLarge) {
-    //    @include font-size(18);
-    //    margin: 1.5em 0 0;
+   
       }
     }
 }
@@ -1282,7 +1280,6 @@ a.white:focus,
 
     .card {
       display: inline-block;
-      //width: auto; //WEB-907 : Removed width auto for no-flexbox.
     }
 }
 
@@ -1392,8 +1389,7 @@ iframe[name='google_conversion_frame'] {
       padding: 0;
 
       @include media(breakpointLarge) {
-    //    @include font-size(18);
-    //    margin: 1.5em 0 0;
+    
       }
     }
 }

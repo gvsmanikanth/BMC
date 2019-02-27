@@ -366,7 +366,6 @@ window.FilterList;
 		FilterList.prototype.getListItemHTML = function(item) {
 			var self = this;
 			
-			//var itemHTML = '<div class="flex-item"><a href="' + item.url + '"><div><p class="course-type">' + item.type + '</p><h5 class="title">' + self.isPre_requisite(item) + item.name + '</h5><p class="course-details">' + self.getName("learningFormats", item) + ' | ' + item.duration + '</p><p class="course-audience">' + self.getName("roles", item) + '</p></div> </a></div>';
 			var itemHTML = '<div class="flex-item"><a href=""><div><p class="course-type">SK</p><h5 class="title">MK</h5><p class="course-details">DK</p><p class="course-audience">NK</p></div> </a></div>';
 			return itemHTML;
 		};
@@ -390,7 +389,7 @@ window.FilterList;
 							//list.append(htmlMarkup);
 						}
 					}
-				//var strtIndexDisplayVal = 0;
+				
 				
 				if(self.showDisplayCount == "true"){
 					if(displayCount == 0)
@@ -439,9 +438,6 @@ window.FilterList;
 					cardsWrapper.empty();
 					
 					cardsWrapper.append(self.getListItemPaginationBlock(data));
-					
-					//$(window).trigger("resize");
-					
 					
 					var resetHeight = setTimeout(function(){window.onResizeSetHeight();clearTimeout(resetHeight);}, 250);
 					
@@ -567,7 +563,6 @@ window.FilterList;
 
 			// Call the renderCoursesPage.
 			// As it's argument give the object with filtered list.
-			//renderCoursesPage(results);
 
 			if (!isFilterMatched) {
 				results = list;
@@ -608,7 +603,6 @@ window.FilterList;
 		FilterList.prototype.initializeFilters = function() {
 					var self = this;
 					
-					//self.filteringOptions = this.filteringOptions;
 					self.filteringOptions.forEach(function(item) {
 						var selector = "#" + item.name;
 						self.popupateFilters($(selector), item.values, item.name);
@@ -660,7 +654,6 @@ window.FilterList;
 		
 		FilterList.prototype.onTextChange = function(text) {
 			var self = this;
-			//alert("hello I am clicked - " + text);
 			
 			//Remove pagination from Filter
 			
@@ -678,34 +671,7 @@ window.FilterList;
 		};
 		
 		FilterList.prototype.scrollOnFilterChange = function(){
-			/*
-			 * Commented auto scroll functionality.
-			 
-			var desktopBreakpoint =  768;
 			
-			var isDesktop = function() {
-				// in case media queries aren't supported by the browser, then default to using the width of the window
-				return Modernizr.mq('(min-width: ' + desktopBreakpoint + 'px)') || $(window).width() >= desktopBreakpoint;
-			};
-			var isMobile = function() {
-				return !isDesktop();
-			};
-			
-			if(isMobile()){ 
-				if($(".fixed-filter-btn").is(":visible"))
-				{
-					$('html, body').animate({
-				        scrollTop: $(".pagination").offset().top -100
-				    }, 2000);
-			   	}
-			   	else
-			   	{
-			   		$('html, body').animate({
-				        scrollTop: $(".pagination").offset().top - 250
-				    }, 2000);
-			   	}
-		   	}
-		   	*/
 		};
 
 		$("#name").keyup(function (e) {
@@ -719,12 +685,6 @@ window.FilterList;
 			self = this;
 			self.onTextChange($("#name").val());
 		});
-		
-		//Commented Quick jump.
-		// $(".fixed-filter-btn").click(function (e) {
-			 // $('html, body').animate({
-		        // scrollTop: 0
-		    // }, 1000);
-		// });
+
 		
 })(jQuery);
