@@ -90,7 +90,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
       
         ValueMap map = page.getProperties();
         if(getCurrentPage().getTemplate().getName().equals("customerstory")){
-        	    if(map.containsKey("secondaryCtaTextCustomer") ||  map.containsKey("secondaryCtaHrefCustomer")){
+        	    if(map.containsKey("secondaryCtaTextCustomer") &&  map.containsKey("secondaryCtaHrefCustomer")){
         		  return new Item(link, map.get("secondaryCtaTextCustomer", ""), map.get("secondaryCtaHrefCustomer", ""));
                	}else{
                		return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
@@ -108,7 +108,7 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
         LinkInfo link = LinkInfo.from(page);
         ValueMap map = page.getProperties();
        // return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
-        if(map.containsKey("secondaryCtaTextProducts") ||  map.containsKey("secondaryCtaHrefProducts")){
+        if(map.containsKey("secondaryCtaTextProducts") &&  map.containsKey("secondaryCtaHrefProducts")){
         	return new Item(link, map.get("secondaryCtaTextProducts", ""), map.get("secondaryCtaHrefProducts", ""));
         }else{
         	return new Item(link, "Start a free trial", map.get("secondaryCtaHref", ""));
