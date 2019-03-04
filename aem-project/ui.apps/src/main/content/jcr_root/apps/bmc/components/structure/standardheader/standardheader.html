@@ -28,6 +28,11 @@
 	             </sly>
 				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
+			     <!-- WEB-4651 Get Pricing link locations START -->
+			<li class="navigation-pricing">
+				<a href="/forms/pricing-request.html"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
+			</li>
+			     <!-- WEB-4651 Get Pricing link locations END -->
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
@@ -80,12 +85,15 @@
          <p>${'Select the link below that best matches your interest.' @ i18n}</p>
          <ul>
             <li><a href="/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html">${'Contact Sales' @ i18n}</a></li>
+            <!-- WEB-4651 Get Pricing link locations START -->
+            <li><a href="/forms/pricing-request.html">${'Pricing Request' @ i18n}</a></li>
+            <!-- WEB-4651 Get Pricing link locations END -->
             <li id="liveagent_text_online" style="display:none;" class="desktop-only"><a href="javascript:void(0);">${'Chat with Sales' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'Contact Support' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'All Other Inquiries' @ i18n}</a></li>
          </ul>
          <p>${'For questions about BMC products, solutions, and services, you can also phone the number below:' @ i18n}</p>
-         <a href="tel:1‑855‑834‑7487">1‑855‑834‑7487</a>
+         <a href="tel:1â€‘855â€‘834â€‘7487">1â€‘855â€‘834â€‘7487</a>
       </div>
    </div>
    <!--/ contact-modal-inner-wrap -->			
@@ -103,11 +111,11 @@
                <li class="topic four-up">
                   <h3>Americas</h3>
                   <ul>
-                     <li data-langid="es-XL"><a href='http://www.bmcsoftware.com.ar'><img class ="flag flag-ar"></img>Argentina (Español)</a></li>
-                     <li data-langid="pt-BR"><a href='http://www.bmcsoftware.com.br'><img class ="flag flag-br"></img>Brazil (Português)</a></li>
+                     <li data-langid="es-XL"><a href='http://www.bmcsoftware.com.ar'><img class ="flag flag-ar"></img>Argentina (EspaÃ±ol)</a></li>
+                     <li data-langid="pt-BR"><a href='http://www.bmcsoftware.com.br'><img class ="flag flag-br"></img>Brazil (PortuguÃªs)</a></li>
                      <li data-langid="en-CA"><a href='http://www.bmcsoftware.ca'><img class ="flag flag-ca"></img>Canada (English)</a></li>
-                     <li data-langid="fr-CA"><a href='http://fr.bmcsoftware.ca'><img class ="flag flag-ca"></img>Canada (Français)</a></li>
-                     <li data-langid="es-MX"><a href='http://www.bmcsoftware.mx'><img class ="flag flag-mx"></img>Mexico (Español)</a></li>
+                     <li data-langid="fr-CA"><a href='http://fr.bmcsoftware.ca'><img class ="flag flag-ca"></img>Canada (FranÃ§ais)</a></li>
+                     <li data-langid="es-MX"><a href='http://www.bmcsoftware.mx'><img class ="flag flag-mx"></img>Mexico (EspaÃ±ol)</a></li>
                      <li data-langid="en-US"><a href='http://www.bmc.com'><img class ="flag flag-us"></img>United States (English)</a></li>
                   </ul>
                </li>
@@ -116,15 +124,15 @@
                   <ul>
                      <li data-langid="de-AT"><a href='http://www.bmcsoftware.at'><img class ="flag flag-at"></img>Austria (Deutsch)</a></li>
                      <li data-langid="da-DK"><a href='http://www.bmcsoftware.dk'><img class ="flag flag-dk"></img>Denmark (English)</a></li>
-                     <li data-langid="fr-FR"><a href='http://www.bmcsoftware.fr'><img class ="flag flag-fr"></img>France (Français)</a></li>
+                     <li data-langid="fr-FR"><a href='http://www.bmcsoftware.fr'><img class ="flag flag-fr"></img>France (FranÃ§ais)</a></li>
                      <li data-langid="de-DE"><a href='http://www.bmcsoftware.de'><img class ="flag flag-de"></img>Germany (Deutsch)</a></li>
                      <li data-langid="el-GR"><a href='http://www.bmcsoftware.gr'><img class ="flag flag-gr"></img>Greece (English)</a></li>
                      <li data-langid="it-IT"><a href='http://www.bmcsoftware.it'><img class ="flag flag-it"></img>Italy (English)</a></li>
                      <li data-langid="nl-NL"><a href='http://www.bmcsoftware.nl'><img class ="flag flag-nl"></img>Netherlands (English)</a></li>
                      <li data-langid="pl-PL"><a href='http://www.bmcsoftware.pl'><img class ="flag flag-pl"></img>Poland (English)</a></li>
-                     <li data-langid="pt-PT"><a href='http://www.bmcsoftware.pt'><img class ="flag flag-pt"></img>Portugal (Português)</a></li>
+                     <li data-langid="pt-PT"><a href='http://www.bmcsoftware.pt'><img class ="flag flag-pt"></img>Portugal (PortuguÃªs)</a></li>
                      <li data-langid="ru-RU"><a href='http://www.bmcsoftware.ru'><img class ="flag flag-ru"></img>Russia (English)</a></li>
-                     <li data-langid="es-ES"><a href='http://www.bmcsoftware.es'><img class ="flag flag-es"></img>Spain (Español)</a></li>
+                     <li data-langid="es-ES"><a href='http://www.bmcsoftware.es'><img class ="flag flag-es"></img>Spain (EspaÃ±ol)</a></li>
                      <li data-langid="de-CH"><a href='http://www.bmcsoftware.ch'><img class ="flag flag-ch"></img>Switzerland (Deutsch)</a></li>
                      <li data-langid="en-GB"><a href='http://www.bmcsoftware.uk'><img class ="flag flag-gb"></img>United Kingdom (English)</a></li>
                   </ul>
@@ -142,13 +150,13 @@
                   <h3>Asia Pacific</h3>
                   <ul>
                      <li data-langid="en-AU"><a href='http://www.bmcsoftware.com.au'><img class ="flag flag-au"></img>Australia (English)</a></li>
-                     <li data-langid="zh-CN"><a href='http://www.bmcsoftware.cn'><img class ="flag flag-cn"></img>Mainland China (简体中文)</a></li>
+                     <li data-langid="zh-CN"><a href='http://www.bmcsoftware.cn'><img class ="flag flag-cn"></img>Mainland China (ç®€ä½“ä¸­æ–‡)</a></li>
                      <li data-langid="en-HK"><a href='http://www.bmcsoftware.hk'><img class ="flag flag-hk"></img>Hong Kong of China (English)</a></li>
                      <li data-langid="en-IN"><a href='http://www.bmcsoftware.in'><img class ="flag flag-in"></img>India (English)</a></li>
-                     <li data-langid="ja-JP"><a href='http://www.bmcsoftware.jp'><img class ="flag flag-jp"></img>Japan (日本語)</a></li>
+                     <li data-langid="ja-JP"><a href='http://www.bmcsoftware.jp'><img class ="flag flag-jp"></img>Japan (æ—¥æœ¬èªž)</a></li>
                      <li data-langid="ko-KR"><a href='http://www.bmcsoftware.kr'><img class ="flag flag-kr"></img>Republic of Korea (English)</a></li>
                      <li data-langid="en-SG"><a href='http://www.bmcsoftware.sg'><img class ="flag flag-sg"></img>Singapore (English)</a></li>
-                     <li data-langid="zh-TW"><a href='http://www.bmcsoftware.tw'><img class ="flag flag-tw"></img>Taiwan of China (繁体中文)</a></li>
+                     <li data-langid="zh-TW"><a href='http://www.bmcsoftware.tw'><img class ="flag flag-tw"></img>Taiwan of China (ç¹�ä½“ä¸­æ–‡)</a></li>
                   </ul>
                </li>
             </ul>
