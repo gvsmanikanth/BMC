@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-    <Placeholder
+    <jcr:content jcr:primaryType="cq:PageContent"/>
+    <caption
         jcr:primaryType="nt:unstructured"
-        jcr:title="Product Interest"
-        dropDownDisplay="Yes"
         disabled="true"
+        dropDownDisplay="true"
         selected="true"
         text="Product Interest"/>
+    <uncategorized
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Uncategorized"
+        dropDownDisplay="No"/>
+    <_x0038_46325100
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Helix"
+        dropDownDisplay="Yes"
+        text="BMC Helix"
+        value="Helix"/>
     <_x0035_76550803
         jcr:primaryType="nt:unstructured"
         jcr:title="APM"
-        dropDownDisplay="Yes"
+        dropDownDisplay="No"
         text="BMC Application Management Suite"
         value="APM"/>
     <_x0038_00480197
@@ -24,8 +34,10 @@
         dropDownDisplay="No"/>
     <_x0036_42178370
         jcr:primaryType="nt:unstructured"
-        jcr:title="BAO"
-        dropDownDisplay="No"/>
+        jcr:title="TrueSight Orchestration"
+        dropDownDisplay="Yes"
+        text="TrueSight Orchestration"
+        value="TrueSight Orchestration"/>
     <_x0033_30402112
         jcr:primaryType="nt:unstructured"
         jcr:title="BCA"
@@ -68,27 +80,35 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BNA"
         dropDownDisplay="Yes"
-        text="BMC Bladelogic Network Automation"
+        text="TrueSight Network Automation"
         value="BNA"/>
     <_x0031_13394324
         jcr:primaryType="nt:unstructured"
-        jcr:title="BPPM"
-        dropDownDisplay="No"/>
+        jcr:title="TrueSight Operations Management"
+        dropDownDisplay="Yes"
+        text="TrueSight Operations Management"
+        value="TrueSight Operations Management"/>
     <_x0032_12041549
         jcr:primaryType="nt:unstructured"
         jcr:title="BSA"
         dropDownDisplay="Yes"
-        text="BMC BladeLogic Server Automation"
+        text="TrueSight Server Automation"
         value="BSA"/>
     <_x0030_00918022
         jcr:primaryType="nt:unstructured"
-        jcr:title="BTD OnPrem"
+        jcr:title="TrueSight Vulnerability Management"
+        dropDownDisplay="Yes"
+        text="TrueSight Vulnerability Management"
+        value="TrueSight Vulnerability Management"/>
+    <_x0037_43511112
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Business Workflows"
         dropDownDisplay="No"/>
     <_x0032_44922076
         jcr:primaryType="nt:unstructured"
         jcr:title="CLM"
         dropDownDisplay="Yes"
-        text="BMC Cloud Lifecycle Management"
+        text="Cloud Lifecycle Management"
         value="CLM"/>
     <_x0039_83747628
         jcr:primaryType="nt:unstructured"
@@ -315,8 +335,7 @@
     <_x0035_46422315
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS AppZone"
-        dropDownDisplay="No"
-        />
+        dropDownDisplay="No"/>
     <_x0038_64438642
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS BCM"
@@ -328,8 +347,7 @@
     <_x0037_85764064
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Marketplace"
-        dropDownDisplay="No"
-        />
+        dropDownDisplay="No"/>
     <_x0038_61753444
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS MyIT"
@@ -360,22 +378,26 @@
         dropDownDisplay="No"/>
     <_x0036_77181073
         jcr:primaryType="nt:unstructured"
-        jcr:title="SaaS SecOps Policy"
-        dropDownDisplay="No"/>
+        jcr:title="TrueSight Cloud Security"
+        dropDownDisplay="Yes"
+        text="TrueSight Cloud Security"
+        value="TrueSight Cloud Security"/>
     <_x0038_18409632
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS SecOps Response"
         dropDownDisplay="No"/>
     <_x0034_81296265
         jcr:primaryType="nt:unstructured"
-        jcr:title="SaaS TrueSight Intelligence"
+        jcr:title="TrueSight Intelligence"
         dropDownDisplay="Yes"
         text="BMC TrueSight"
         value="SaaS TrueSight Intelligence"/>
     <_x0033_23972721
         jcr:primaryType="nt:unstructured"
-        jcr:title="SaaS TrueSight Pulse"
-        dropDownDisplay="No"/>
+        jcr:title="TrueSight Pulse"
+        dropDownDisplay="Yes"
+        text="TrueSight Pulse"
+        value="TrueSight Pulse"/>
     <_x0031_26581011
         jcr:primaryType="nt:unstructured"
         jcr:title="SCT MarketZone"
@@ -401,19 +423,21 @@
     <_x0039_85393383
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight APM"
-        dropDownDisplay="Yes"
+        dropDownDisplay="No"
         text="BMC Application Performance Management"
         value="TrueSight APM"/>
     <_x0030_04182175
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Capacity"
         dropDownDisplay="Yes"
-        text="BMC TrueSight Capacity"
+        text="TrueSight Capacity Optimization"
         value="TrueSight Capacity"/>
     <_x0031_55163094
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Cloud Cost Control"
-        dropDownDisplay="No"/>
+        dropDownDisplay="Yes"
+        text="TrueSight Cloud Cost Control"
+        value="TrueSight Cloud Cost Control"/>
     <_x0031_78280437
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Infrastructure"
@@ -424,8 +448,10 @@
         dropDownDisplay="No"/>
     <_x0032_04033756
         jcr:primaryType="nt:unstructured"
-        jcr:title="Turbonomic"
-        dropDownDisplay="No"/>
+        jcr:title="TrueSight Intelligence"
+        dropDownDisplay="Yes"
+        text="TrueSight Intelligence"
+        value="TrueSight Intelligence"/>
     <_x0038_93850432
         jcr:primaryType="nt:unstructured"
         jcr:title="Unknown"
