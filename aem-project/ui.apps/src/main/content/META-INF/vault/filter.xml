@@ -63,16 +63,19 @@
     <filter root="/content/bmc/resources/intelligent-content-company-size"/>
 	
     <filter root="/content/bmc/resources/education-products" mode="replace"/> 
-	  <filter root="/content/bmc/resources/education-broad-roles" mode="replace"/>
+	<filter root="/content/bmc/resources/education-broad-roles" mode="replace"/>
   	<filter root="/content/bmc/resources/education-specific-roles" mode="replace"/>
-	  <filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
+	<filter root="/content/bmc/resources/education-specific-types" mode="replace"/>
     <filter root="/content/bmc/resources/education-version-numbers" mode="replace"/>
     <filter root="/content/bmc/resources/course-delivery" mode="replace"/>
     <filter root="/content/bmc/resources/topic" mode="replace"/>
 
     <filter root="/content/bmc/resources/content-preferences" mode="replace"/>
-	  <filter root="/content/bmc/resources/company-size" mode="replace"/>
-	  <filter root="/content/bmc/resources/industry" mode="replace"/>
+	<filter root="/content/bmc/resources/company-size" mode="replace"/>
+	<filter root="/content/bmc/resources/industry" mode="replace"/>
+	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
+	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
+	
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
