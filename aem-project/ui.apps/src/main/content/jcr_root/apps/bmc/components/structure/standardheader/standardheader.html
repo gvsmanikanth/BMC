@@ -28,6 +28,11 @@
 	             </sly>
 				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
+			<!-- WEB-4651 Get Pricing link locations START -->
+			<li class="navigation-pricing">
+				<a href="/forms/pricing-request.html" class="pricing-request"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
+			</li>
+			     <!-- WEB-4651 Get Pricing link locations END -->
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
@@ -80,6 +85,9 @@
          <p>${'Select the link below that best matches your interest.' @ i18n}</p>
          <ul>
             <li><a href="/forms/contact-bmc.html">${'Contact Sales' @ i18n}</a></li>
+            <!-- WEB-4651 Get Pricing link locations START -->
+            <li><a href="/forms/pricing-request.html">${'Request Pricing' @ i18n}</a></li>
+            <!-- WEB-4651 Get Pricing link locations END -->
             <li id="liveagent_text_online" style="display:none;" class="desktop-only"><a href="javascript:void(0);">${'Chat with Sales' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'Contact Support' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'All Other Inquiries' @ i18n}</a></li>
