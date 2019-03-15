@@ -18,7 +18,15 @@
                             sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
 
-
+                            <addClass
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                fieldDescription="Check to add the topcontent class"
+                                name="./addClass"
+                                text="Add &quot;topcontent&quot; class"
+                                uncheckedValue="false"
+                                value="true"/>
                             <headerText
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

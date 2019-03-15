@@ -1,0 +1,26 @@
+<section data-sly-use.data="com.bmc.components.RelatedItemsSecondaryFlexi">
+    <h3 data-sly-test="${data.headingText}">${data.headingText @ context='html'}</h3>
+    <p data-sly-test="${data.descriptionHtml}">${data.descriptionHtml @ context='html'}</p>
+				<!--/*Iterate through the items  */--> 
+    			<sly data-sly-list.link="${data.links}">
+
+	        				 	<sly data-sly-use.pageLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=link.pagePath}"></sly>
+			                    <sly data-sly-test="${pageLink.href}">
+			                        <sly data-sly-test.resolvedLink="${pageLink.href}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${!pageLink.href}">
+			                        <sly data-sly-test.resolvedLink="${link.pagePath}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${pageLink.cssClass}">
+			                        <sly data-sly-test.cssClass="${pageLink.cssClass}"></sly>
+			                    </sly>
+			                    <sly data-sly-test="${!pageLink.cssClass}">
+			                        <sly data-sly-test.cssClass=" "></sly>
+			                    </sly>
+
+                                <h4>
+           							 <a href="${resolvedLink}" class="${cssClass}">${link.title @ context='html'}</a>
+    						    </h4>
+                                <p data-sly-test="$link.description}">${link.description @ context='html'}</p>
+   				</sly>
+</section>

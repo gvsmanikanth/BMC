@@ -443,7 +443,7 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <secondary
                                             jcr:primaryType="nt:unstructured"
-                                            jcr:title="Related CTAs - Secondary CTA"
+                                            jcr:title="Sticky header"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
                                             <text
@@ -466,6 +466,58 @@
                                                       name="./secondaryCtaHref" />
                                         </items>
                                     </secondary>
+                                    <productsSolutionsLanding
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="ProductsSolutionsLanding"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text here that will be the CTA Link Text for the Second CTA in the Related CTAs Component"
+                                                fieldLabel="Secondary CTA Link Text for ProductsSolutionsLanding"
+                                                name="./secondaryCtaTextProducts"
+                                                renderReadOnly="{Boolean}false">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="secondaryCtaTextProducts"/>
+                                            </text>
+                                            <linkPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                fieldLabel="Secondary CTA URL for ProductsSolutionsLanding"
+                                                name="./secondaryCtaHrefProducts"
+                                                rootPath="/content/bmc"/>
+                                        </items>
+                                    </productsSolutionsLanding>
+                                    <customerStoryPage
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Customer Story Pages"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text here that will be the CTA Link Text for the Second CTA in the Related CTAs Component"
+                                                fieldLabel="Secondary CTA Link Text for Customer Story pages"
+                                                name="./secondaryCtaTextCustomer"
+                                                renderReadOnly="{Boolean}false">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="secondaryCtaTextProducts"/>
+                                            </text>
+                                            <linkPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                fieldLabel="Secondary CTA URL for Customer Story page"
+                                                name="./secondaryCtaHrefCustomer"
+                                                rootPath="/content/bmc"/>
+                                        </items>
+                                    </customerStoryPage>
                                 </items>
                             </column>
                         </items>

@@ -1,4 +1,11 @@
-<section class="${properties.bgcolor} ctabar">
+<sly data-sly-test="${properties.addClass}">
+		<sly data-sly-test.addClass="topcontent"></sly>
+</sly>
+<sly data-sly-test="${!properties.addClass}">
+		<sly data-sly-test.addClass=" "></sly>
+</sly>
+
+<section class="${properties.bgcolor} ${addClass} ctabar">
     <div class="layout-inner-wrap">
         <div class="cta-content text-center">
             <h2 data-sly-test="${properties.headerText}">${properties.headerText @ context ='html'}</h2>

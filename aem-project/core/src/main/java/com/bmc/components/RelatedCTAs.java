@@ -14,11 +14,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
 public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider, UrlResolver {
-    enum HeadingType {
+	 private final Logger logger = LoggerFactory.getLogger(getClass());
+
+	enum HeadingType {
         Custom(0),
         FeaturedOfferings(1);
 
@@ -78,14 +83,21 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
                 throw new NotImplementedException();
         }
     }
-    static Item getLinkPath(String pageOrAssetPath,LinkInfo link, ResourceProvider resourceProvider) {
+     Item getLinkPath(String pageOrAssetPath,LinkInfo link, ResourceProvider resourceProvider) {
         Page page = resourceProvider.getPage(pageOrAssetPath);
         if (page == null)
             return null;
-
       
         ValueMap map = page.getProperties();
-        return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+        if(getCurrentPage().getTemplate().getName().equals("customerstory")){
+        	    if(map.containsKey("secondaryCtaTextCustomer") &&  map.containsKey("secondaryCtaHrefCustomer")){
+        		  return new Item(link, map.get("secondaryCtaTextCustomer", ""), map.get("secondaryCtaHrefCustomer", ""));
+               	}else{
+               		return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+              	}
+        }else{
+        	return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+        }
     }
     
     static Item getLinkItem(String pageOrAssetPath, ResourceProvider resourceProvider) {
@@ -95,6 +107,12 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
 
         LinkInfo link = LinkInfo.from(page);
         ValueMap map = page.getProperties();
-        return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
-    }
+       // return new Item(link, map.get("secondaryCtaText", ""), map.get("secondaryCtaHref", ""));
+        if(map.containsKey("secondaryCtaTextProducts") &&  map.containsKey("secondaryCtaHrefProducts")){
+        	return new Item(link, map.get("secondaryCtaTextProducts", ""), map.get("secondaryCtaHrefProducts", ""));
+        }else{
+        	return new Item(link, "Start a free trial", map.get("secondaryCtaHref", ""));
+
+        }
+        }
 }
