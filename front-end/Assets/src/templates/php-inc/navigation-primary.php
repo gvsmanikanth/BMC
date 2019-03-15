@@ -63,8 +63,11 @@
 <!-- 			</li> -->
 		</ul>
 		<ul class="navigation-utility">
-			<li class="navigation-trials ">
+			<li class="navigation-trials">
 				<a href="http://www.bmc.com/it-solutions/free-product-trials.html" class=""><span class="">Free Trials</span><span class="verticalBar">|</span></a>
+			</li>
+			<li class="navigation-pricing">
+				<a href="http://staging.bmc.com/forms/pricing-request.html?productInterest=discovery" class="pricing-request"><span class="scrollTextHide">Get Pricing</span><span class="verticalBar">|</span></a>
 			</li>
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
