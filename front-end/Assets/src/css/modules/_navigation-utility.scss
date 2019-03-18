@@ -152,6 +152,7 @@ $mobileUtilityNavHeight: 49px;
 
 .navigation-utility .navigation-trials a {
 	color: color(mediumOrange);
+	margin-right:0rem;
 	@include media(breakpointLarge) {
 		@include font-size(14);
 	}
@@ -442,6 +443,12 @@ $scrolledUtilityNavHeight: 49px;
 		@media only screen and (min-width:0) and (max-width: 960px) {
 			display:inline;
 		} 
+	}
+	.navigation-utility .navigation-trials a{
+		margin-right:1rem;
+	}
+	.navigation-pricing{
+		display:none;
 	}
 }
 

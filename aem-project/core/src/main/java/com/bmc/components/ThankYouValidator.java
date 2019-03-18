@@ -39,12 +39,12 @@ public class ThankYouValidator extends WCMUsePojo {
         List<String> list = Arrays.asList(selectors);
         if (list.contains("mk-denied")) {
             message = "<p>Thank you for your interest in trying BMC products. However, you are not authorized to access this product trial based on the information provided. If you have a specific question or would like to speak with sales, please use the link below.\n" +
-                    "<br><a href=\"http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html\">Contact Sales</a></p>";
+                    "<br><a href=\"http://www.bmc.com/forms/contact-bmc.html\">Contact Sales</a></p>";
         }
         if (list.contains("mk-unavailable")) {
             message = "<p>Thank you for your interest in trying BMC products.  Our trial environment is temporarily unavailable due to maintenance. If you have a specific question or would like to speak with sales, please click below and we will get back to you within one business day.</p>\n" +
                     "\n" +
-                    "<p><a class=\"btn-secondary\" href=\"/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html\">Contact Me ›</a></p>";
+                    "<p><a class=\"btn-secondary\" href=\"/forms/contact-bmc.html\">Contact Me ›</a></p>";
         }
         return message;
     }
