@@ -22,7 +22,7 @@
 		</div>
 		<div class="section-content mb2">
 			<div class="flex-wrap mb2">
-				<div class="col-12 sm-col-6 lg-col-4 mb1 p1">
+				<div class="col-12 sm-col-6 lg-col-3 mb1 p1">
 					<div class="card flex-col ">
 						<div class="card-image">
 							<img src="//media.cms.bmc.com/designimages/teams-development.jpg">
@@ -50,7 +50,7 @@
 				
 				
 				
-				<div class="col-12 sm-col-6 lg-col-4 mb1 p1">
+				<div class="col-12 sm-col-6 lg-col-3 mb1 p1">
 					<div  class="card flex-col">
 						<div class="card-image">
 							<img src="//media.cms.bmc.com/designimages/teams-it.jpg">
@@ -76,7 +76,7 @@
 				
 				
 				
-				<div class="col-12 sm-col-6 lg-col-4 mb1 p1">
+				<div class="col-12 sm-col-6 lg-col-3 mb1 p1">
 					<div  class="card flex-col">
 						<div class="card-image">
 							<img src="//media.cms.bmc.com/designimages/teams-finance.jpg">
@@ -103,7 +103,7 @@
 				</div>
 				
 				
-				<div class="col-12 sm-col-6 lg-col-4 mb1 p1">
+				<div class="col-12 sm-col-6 lg-col-3 mb1 p1">
 					<div  class="card flex-col">
 						<div class="card-image">
 							<img src="//media.cms.bmc.com/designimages/teams-sales.jpg">
@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				
-				<div class="col-12 sm-col-6 lg-col-4 mb1 p1">
+				<div class="col-12 sm-col-6 lg-col-3 mb1 p1">
 					<div class="card flex-col">
 						<div class="card-image">
 							<img src="//media.cms.bmc.com/designimages/teams-marketing.jpg">

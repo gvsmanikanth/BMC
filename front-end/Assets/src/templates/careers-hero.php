@@ -1,3 +1,4 @@
+<!--
 <section class="hero flex-col">
 	<div class="hero-image xs-only"></div>
 	<div class="hero-image video xs-max-hide">
@@ -13,6 +14,28 @@
 		<a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4P2AMa53wSY" class="modal-youtube-video-player" title="Transforming the Digital Enterprise">
 			<img class="videoIcon" src="//media.cms.bmc.com/designimages/icon-slide-video.png" class=""></div>
 		</a>
+	</div>
+	
+</section> -->
+
+
+
+<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options="{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png","(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}">
+	<div class="offset-wrapper flex-center">
+		<div class="inner">
+			<div class="bannerContent">
+				<div class="layout-inner-wrap">
+					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
+					<h1 class="white">Lorem ipsum dolor sit</h1>
+					<h2>Lorem ipsum dolor sit amet, consectetur adipiscin Aliquam felis sapien, ornare condimentum</h2>
+					<div class="button-wrapper">
+						<a class="btn-secondary learn-more mr1" href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example</a>
+						<a class="btn-secondary learn-more mr1" href="http://www.bmc.com/forms/control-m-enterprise-free-trial-runaware.html">CTA Example</a>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="job-opening-selector" class="hero_cta">
 		<div class="mx-auto sm-flex max-wd-770px">
@@ -46,3 +69,4 @@
 		</div>
 	</div>
 </section>
+
