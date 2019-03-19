@@ -15,58 +15,47 @@
 			</li>
 		</ul>
 	</div>
-	<section id="overview-slides" class="section text-center">
-		<div class="section-content mb2">
-			<div class="ha mb1">Big company. <br>Start-up attitude.</div>
-			<div class="h3 p readability">Join an established, growing company making a huge impact in the enterprise software industry.</div>
-		</div>
-		<div class="section-content">
-					<img src="//media.cms.bmc.com/designimages/tab-overview-bg.jpg" class="block-center">
-				</div>
-				<div class="bg-mediumOrange pattern">
-					<div class="h2 p white readability"><strong>82% of the Fortune 500</strong> fast track their business with BMC digital IT solutions, from mainframe to mobile to cloud and beyond.</div>
+	<section id="overview-slides" class="section text-center do-what">
+		<div class="section-content mb2 common-cont">
+			<h3 class=" mb1">Do What You Love.</h3>
+			<h4 >Cultivate your career with a company <br> of collaborators and innovators</h4>
+			<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/OverviewGroupPhoto.jpg" class="block-center ">
 		</div>
 	</section>
-	<section id="work-for-bmc" class="section bg-white">
-		<div class="section-content py4 text-center">
-			<div class="ha mb2">Work for BMC</div>
-			<div class="h4 p mb1">Dream bigger. Work smarter. Live happier.</div>
-			<div class="divider--orange mb1"></div>
-			<div class="h4 p readability-large">With access to the best training on the best products in the market, you'll expand your skillset while collaborating with some of the most innovative minds in the industry.</div>
+	
+	<section class="section benifits " >	
+		<div class="section-content text-center common-cont ">
+			<div class="lg-flex flex-justify-center">
+				<div class="flex-item col-12 lg-col-6 " >
+					<h3 class="mb1 ">Benifits that Work</h3>
+					<h4>From paid volunteer time off (VTO), to gym memberships, to pet insurance, to some of the best parental leave policies around, BMC benifits are another way we show you how important you are.</h4>
+				</div>		
+			</div>
+		</div>
+	</section>
+	<section id="work-for-bmc" class="section bg-white culture-com">
+		<div class="section-content text-center common-cont">
+			<h3 class="mb1">A Culture of Community</h3>
+			<h4 >Opportunity at BMC are limitless when you prioritize collaboration success, and continual learning</h4>
+		</div>
+		<div class="lg-flex flex-justify-center">
+			<div class="flex-item col-12 lg-col-6 " >
+				<a href="/templates/Media_Video_Mobile?vID=b482a89cbcb94" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
+					<div class=" card-image ">
+						<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
+						<svg class="icon--playButton pos-center">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
+						</svg>
+					</div>
+					<div class="card-content text-left white p1">
+						<h4> <strong>One BMC</strong> </h4>
+						<h4>At BMC, we are passionante about more than just our careers. We know that living the values that have defined BMC enables our continued success.</h4>
+					</div>
+				</a>
+			</div>
 		</div>
 		
-		<section class="section three-column-layout">
-				<div class="section-content text-center">
-					<div class="lg-flex mb2 flex-justify-center">
-						<div class="flex-item col-12 lg-col-4 mb1 p1" style="height: 375px;">
-							<a href="/templates/Media_Video_Mobile?vID=b482a89cbcb94" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=8635030831d3d_1&quot;;return this.s_oc?this.s_oc(e):true">
-								<div class="ha card-image mb2">
-									<img src="http://media.cms.bmc.com/images/careers-fast-track.jpg">
-									<svg class="icon--playButton pos-center">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
-									</svg>
-								</div>
-								<div class="card-content">
-									<div class="h4 ship-gray">BMC Fast Track</div>
-								</div>
-							</a>
-						</div>
-						<div class="flex-item col-12 lg-col-4 mb1 p1" style="height: 375px;">
-							<a href="/templates/Media_Video_Mobile?vID=0ef340fca3c8e" class="card flex-col modal-video-player" onclick="s_objectID=&quot;http://stage.www.bmc.com/templates/Media_Video_Mobile?vID=0ef340fca3c8e_1&quot;;return this.s_oc?this.s_oc(e):true">
-								<div class="ha card-image mb2">
-									<img src="http://media.cms.bmc.com/images/careers-brings-dem.jpg">
-									<svg class="icon--playButton pos-center">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
-									</svg>
-								</div>
-								<div class="card-content">
-									<div class="h4 ship-gray">BMC Global Command Center</div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-		</section>
+		
 
 		<!-- <div class="section-content-full text-center md-text-left">
 			<div class="owl-carousel owl-responsive owl-theme--orange">
@@ -106,53 +95,6 @@
 			</div>
 		</div> -->
 	</section>
-	<section id="join-leader" class="section white bg-shakespeare">
-		<div class="section-content text-center">
-			<div class="ha mb3">Join a Leader</div>
-			<div class="h3 p mb1 readability-large">BMC is a leading provider of software solutions that enable businesses to thrive in the era of digital IT.</div>
-			<div class="divider--orange mb2"></div>
-			<div class="h3 p mb1">36 years of demonstrated enterprise software innovation</div>
-			<div class="divider--white-shade mb2 sm-max-hide"></div>
-			<div class="h3 p mb1">Over 10,000 customers in 120 countries</div>
-			<div class="divider--white-shade mb2 sm-max-hide"></div>
-			<div class="h3 p mb3">Annual revenue of over $2 billion USD</div>
-			<div class="trophies sm-flex mb2 mx-auto">
-				<div class="sm-col-6 trophy-1 mb2">
-					<div class="xl-flex">
-						<div class="xl-col-6 trophy">
-							<svg class="svg-inline">
-								<use xlink:href="#s-trophy" />
-							</svg>
-							<span class="no">NO</span>
-							<span class="num">1</span>
-						</div>
-						<div class="xl-col-6 trophy-list">
-							<span>Service Management</span>
-							<span>Application Management</span>
-							<span>Compliance</span>
-							<span>Virtualization</span>
-							<span>Workload Automation</span>
-						</div>
-					</div>
-				</div>
-				<div class="sm-col-6 trophy-2 mb2">
-					<div class="xl-flex">
-						<div class="xl-col-6 trophy">
-							<svg class="svg-inline">
-								<use xlink:href="#s-trophy" />
-							</svg>
-							<span class="no">NO</span>
-							<span class="num">2</span>
-						</div>
-						<div class="xl-col-6 trophy-list">
-							<span>Operations</span>
-							<span>Cloud</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<em>Consolidated rankings from leading industry analysts</em>
-		</div>
-	</section>
+	
 </div>
 <?php include 'php-inc/foot.php'; ?>
