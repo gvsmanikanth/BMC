@@ -26,7 +26,10 @@
 			background-image: url("https://www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg");
 
 			.section-content {
-				padding: 5rem 0;
+				padding: 2.2rem 0;
+				@media (min-width: $break-md) {
+					padding: 5rem 0;
+				}
 			}
 			.common-cont {
 					h3, h4{
@@ -40,7 +43,10 @@
 		}
 
 		.culture-com{
-			padding: 96px 0;
+			padding: 40px 0;
+			@media(min-width: $break-md){
+				padding: 96px 0;
+			}
 			.common-cont{
 				h4{					
 					@media(min-width: $break-md){
@@ -56,17 +62,17 @@
 				}
 			} 
 			.card-content {
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					padding: 50px 76px;
-
+					
+					@media(min-width: $break-lg){
+						padding: 30px 0px;
+					}
+					padding: 30px;
 					h4{
 						font-weight: 400;
-						color: #fff;
-						font-size: 22px;
-
+						font-size: 16px;
+						@media(min-width: $break-md){
+							font-size: 22px;
+						}	
 						strong {
 							font-weight: 600;
 						}
@@ -76,22 +82,35 @@
 
 		.common-cont{
 				h3 {
-					font-size: 45px;
+					font-size: 32px;
 					font-weight: 400;
 					color: #414042;
 					letter-spacing: 0.7px;
 			}
 			h4{
-					font-size: 22px;
+					font-size: 16px;
 					font-weight: 400;
 					color: #75777A;
 			}
+			@media(min-width: $break-md){
+				h3{
+					font-size: 45px;
+				}
+				h4{
+					font-size: 22px;
+				}
+			}
 		}
 		.do-what{
-			img{
-				margin-top: 48px;
-				margin-bottom: 96px;
+				img{
+					margin-top: 35px;
+					margin-bottom: 35px;
+					@media(min-width: $break-md){
+						margin-top: 48px;
+						margin-bottom: 96px;
+					}
 			}
+			
 		}
 	
 		.product-category-header{
@@ -99,11 +118,10 @@
 			.inner{
 				.bannerContent{
 					.layout-inner-wrap{
-						.add-top-bottom-margin-110px{
-									margin-top: 97px;
+						.add-top-bottom-margin-110px{									
 									h2{										
-										@media (min-width: $break-sm) {
-											max-width: 70%;
+										@media (min-width: $break-md) {
+											max-width: 70%;											
 										}
 									}
 							}
@@ -652,6 +670,7 @@
 	background-size: 100% auto;
 	.section-content {
 		padding: 2rem 0 4rem;
+	
 	}
 	.trophies {
 		@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
@@ -872,10 +891,96 @@
 			margin-right: auto;
 		}
 	}
+	.team-content{
+		padding-top: 30px;
+		h3{
+			color:#414042;
+			font-size: 32px;	
+			@media (min-width: $break-md){
+				font-size: 45px;	
+			}
+		}
+		h4{
+			color:#75777A;
+			font-size: 16px;	
+			@media (min-width: $break-md){
+				font-size: 22px;	
+			}
+		}
+		h3,h4{
+			font-weight:400;
+		}		
+	}
+
+	.card-content{
+		text-align:center;
+		 a{
+			color: #0093C9;
+		 }
+	}
+	.pcust {
+		padding: 7.5px;
+	}
+	.mcust {
+			margin-bottom: 40px;
+	}
+	
+
 }
-.careers_life .pattern {
-	background-image: url("#{$imagesFolder}careers-teams-pattern.png");
-}
+.careers_life
+{
+	.pattern {
+		background-image: url("https://www.bmc.com/content/dam/bmc/corporate/Teams/GreenHelixBackground.jpg");
+		background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+	}
+	.content-text{
+		padding: 50px 0;
+		margin: 50px 0;
+		
+		@media (min-width: $break-md) {
+			padding: 96px 0;
+			margin: 56px 0 86px 0;	
+		}
+		h3,h4{ font-weight: 400; color: #fff; }
+		h3{
+			font-size: 32px;
+			@media (min-width: $break-md) {
+				font-size: 45px;
+			}
+		}
+		h4{
+			font-size: 16px;
+			@media (min-width: $break-md) {
+				font-size: 22px;
+			}
+			&:after {
+				content: "";
+				background : url(https://www.bmc.com/content/dam/bmc/corporate/Teams/Quatation_mark_right.png) no-repeat;
+				position: relative;
+				width: 42px;
+				height: 40px;
+				display: inline-block;
+				vertical-align: top;
+				margin-left: 10px;
+				margin-top: 5px;
+			}
+			&:before {
+				content: "";
+				background : url(https://www.bmc.com/content/dam/bmc/corporate/Teams/Quatation_mark_left.png) no-repeat;
+				position: relative;
+				width: 42px;
+				height: 40px;
+				display: inline-block;
+				vertical-align: bottom;
+				margin-right: 10px;
+				margin-top: 0;
+				margin-left: -42px;
+			}
+		}
+	}
+} 
 
 #careers_locations_map {
 	@media (max-width: $break-sm - 1px) {

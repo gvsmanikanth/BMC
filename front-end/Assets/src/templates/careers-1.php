@@ -53,9 +53,7 @@
 					</div>
 				</a>
 			</div>
-		</div>
-		
-		
+		</div>	
 
 		<!-- <div class="section-content-full text-center md-text-left">
 			<div class="owl-carousel owl-responsive owl-theme--orange">
