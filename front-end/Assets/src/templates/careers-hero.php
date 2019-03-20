@@ -17,9 +17,16 @@
 	</div>
 	
 </section> -->
+<!--
+data-wallpaper-options='{"source":"http:////www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"}'	
 
+data-wallpaper-options="{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png",
+	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}" --> 
 
-<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":"http:////www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"}' >
+<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{
+	"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png",
+	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"
+	}}'  >
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent">
@@ -53,20 +60,6 @@
 			</div>
 			<div class="col-1">&nbsp;</div>
 			<div class="col-12 lg-col-6 container">
-				<span class="jq-dropdown-trigger block" data-jq-dropdown="#job-openings-locations"><span><span class="xs-max-hide">Job </span>Openings by Locations</span><svg class="svg-inline pointer-event-none"><use xlink:href="#s-chevronDown" /></svg></span>
-				<div id="job-openings-locations" class="jq-dropdown jq-dropdown-relative">
-					<ul class="jq-dropdown-menu">
-						<li><a href="#1">Item 1</a></li>
-						<li><a href="#2">Item 2</a></li>
-						<li><a href="#3">Item 3</a></li>
-						<li><a href="#4">Item 4</a></li>
-						<li><a href="#5">Item 5</a></li>
-						<li><a href="#5">Item 6</a></li>
-					</ul>
-				</div>
-			</div>			
-		</div>
-		<div class="col-12 container">
 				<form method="get" class="searchForm">
 					<fieldset>
 						<div class="pxsm-flex max-wd-770px searchDiv">
@@ -74,7 +67,8 @@
 						</div>
 					</fieldset>
 				</form>
-			</div>
+			</div>			
+		</div>
 	</div>
 </section>
 

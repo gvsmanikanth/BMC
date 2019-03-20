@@ -1,6 +1,6 @@
 <?php $pageTitle='BMC Careers' ; $bodyClass='home page-careers' ; include 'php-inc/head.php'; ?>
 <?php include 'php-inc/svg.php'; ?>
-<?php include 'careers-hero.php'; ?>
+<?php include 'careers-hero2.php'; ?>
 <div id="page-content" class="bg-white">
 	<nav class="careers-nav">
 		<ul class="section-content flex">
@@ -277,7 +277,7 @@
 	<section class="careers_life section">
 		<div class="white content-text pattern">
 			<div class="lg-flex flex-wrap ">
-				<div class="image-container flex-item col col-12 md-col-7">
+				<div class="image-container flex-item col col-12 sm-col-10 md-col-7">
 					<h3 >BMC Cares</h3>
 					<h4>Our Bmc Program is driven by thousands of employees who give of themselves to make the world a better place. We pursue environmental responsibilty, diversity, and inclusion, and a foundation of ethics and integrity through our policies  and operating practices.</h4>
 					<p>- Peter Leav, President & CEO, BMC</p>

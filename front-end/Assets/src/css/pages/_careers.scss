@@ -16,8 +16,15 @@
 					border-color: #ccc;
 				}
 			}
+			.layout-inner-wrap {				
+				.add-top-bottom-margin-110px{
+					@media (min-width: $break-md){
+						margin-top: 97px !important;
+						margin-bottom: 97px !important;
+					}					
+				}
+			}
 			
-
 			h1{
 				font-size: 62px;
 			}
@@ -45,7 +52,7 @@
 		.culture-com{
 			padding: 40px 0;
 			@media(min-width: $break-md){
-				padding: 96px 0;
+				padding: 86px 0;
 			}
 			.common-cont{
 				h4{					
@@ -118,10 +125,14 @@
 			.inner{
 				.bannerContent{
 					.layout-inner-wrap{
-						.add-top-bottom-margin-110px{									
+						.add-top-bottom-margin-110px{		
+									h1{
+										letter-spacing: initial;
+									}
 									h2{										
 										@media (min-width: $break-md) {
 											max-width: 70%;											
+											font-size: 24px;
 										}
 									}
 							}
@@ -166,12 +177,12 @@
 				.searchDiv{
 					margin-left: auto;
 					margin-right: auto;
-					margin-top: 1rem;
 
 					input[type="text"]{
 							border: none;
 							border-radius: 0;
 							padding: 7px 25px;
+							height: 42px;
 
 					}
 				}
@@ -181,6 +192,9 @@
 			}
 			.jq-dropdown-trigger {
 				border-radius: 0;
+				span{
+					color: #6c6c6c;
+				}
 					svg{
 						fill: #0093c9;
 					}
@@ -242,6 +256,54 @@
 			background-size: cover;
 		}
 
+	}
+.findoff{
+		background: #0093C9;
+    border-radius: 0;
+}
+	// teams header
+
+	.teams-hero{
+		.offset-wrapper{
+			background-color: rgba(76, 155, 0, 0.2);
+			.flex-item{
+				h1{				
+					@media (min-width: $break-md) {
+						font-size: 62px;										
+					}
+				}
+			}
+			
+		}
+		.hero_cta {
+			background-color: rgba(215, 223, 15, .8);
+		}
+		.cflex-center{
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	// location hero 
+	.locations-hero{
+		.offset-wrapper{
+			background-color: rgba(#009A8E, 0.2);
+			.flex-item{
+				h1{					
+					@media (min-width: $break-md) {
+						font-size: 62px;										
+					}
+				}
+			}
+			
+		}
+		.hero_cta {
+			background-color: rgba(#77DDD3, .8);
+		}
+		.cflex-center{
+			display: flex;
+			align-items: center;
+		}
 	}
 
 	%career-divider {
@@ -799,7 +861,7 @@
 			padding-top: 3rem;
 		}
 		@media (min-width: $break-lg) {
-			padding-top: 5rem;
+			padding-top: 87px;
 		}
 	}
 }
@@ -892,7 +954,10 @@
 		}
 	}
 	.team-content{
-		padding-top: 30px;
+			@media (min-width: $break-sm){
+				padding: 30px 20px 20px 20px;	
+			}
+		
 		h3{
 			color:#414042;
 			font-size: 32px;	
@@ -952,8 +1017,10 @@
 		}
 		h4{
 			font-size: 16px;
+			padding: 0 40px;
 			@media (min-width: $break-md) {
 				font-size: 22px;
+				padding: 0;
 			}
 			&:after {
 				content: "";
@@ -980,6 +1047,9 @@
 			}
 		}
 	}
+	.masonry {
+			padding-bottom: 96px;
+	}
 } 
 
 #careers_locations_map {
@@ -994,7 +1064,7 @@
 	color: #fff;
 	padding: 1rem 0;
 	@media (min-width: $break-sm) {
-		background-image: url("#{$imagesFolder}careers-location-pattern.png");
+		background-image: url("https://www.bmc.com/content/dam/bmc/corporate/MobileImages/TealHelixBackground.jpg");
 		padding: 2rem 0;
 	}
 	@media (min-width: $break-lg) {
