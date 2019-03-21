@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="third-party-track-it-macro">
+         <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Third Party Track-IT"/>
+            <_x0038_87383689
+                jcr:primaryType="nt:unstructured"
+                text="Agree"
+                value="Yes"/>
+            <_x0038_85515081
+                jcr:primaryType="nt:unstructured"
+                text="Disagree"
+                value="No"/>
+      
+</jcr:root>

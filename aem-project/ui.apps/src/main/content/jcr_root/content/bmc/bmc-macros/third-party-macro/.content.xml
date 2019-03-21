@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="third-party-macro">
+          <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Third Party"/>
+            <_x0037_12864459
+                jcr:primaryType="nt:unstructured"
+                text="Agree"
+                value="Yes"/>
+            <_x0038_56933482
+                jcr:primaryType="nt:unstructured"
+                text="Disagree"
+                value="No"/>
+      
+</jcr:root>

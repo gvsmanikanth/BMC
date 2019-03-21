@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="job-level-macro">
+            <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Job Level"/>
+            <_x0038_75660645
+                jcr:primaryType="nt:unstructured"
+                text="C-Level"
+                value="C-Level"/>
+            <_x0037_20086859
+                jcr:primaryType="nt:unstructured"
+                text="Vice President"
+                value="Vice President"/>
+            <_x0036_62609712
+                jcr:primaryType="nt:unstructured"
+                text="Director"
+                value="Director"/>
+            <_x0035_25704055
+                jcr:primaryType="nt:unstructured"
+                text="Manager"
+                value="Manager"/>
+            <_x0038_03089738
+                jcr:primaryType="nt:unstructured"
+                text="IT Professional"
+                value="IT Professional"/>
+            <_x0031_54845383
+                jcr:primaryType="nt:unstructured"
+                text="Business Professional"
+                value="Business Professional"/>
+</jcr:root>

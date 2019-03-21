@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="job-function-macro">
+          <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Job Function"/>
+            <_x0033_34161872
+                jcr:primaryType="nt:unstructured"
+                text="Accounting/Finance"
+                value="Accounting/Finance"/>
+            <_x0033_29632632
+                jcr:primaryType="nt:unstructured"
+                text="Analysis - Data"
+                value="Analysis - Data"/>
+            <_x0038_23367689
+                jcr:primaryType="nt:unstructured"
+                text="Asset Management"
+                value="Asset Management"/>
+            <_x0033_21130078
+                jcr:primaryType="nt:unstructured"
+                text="Business unit Manager (BUM)"
+                value="Business unit Manager (BUM)"/>
+            <_x0032_54657298
+                jcr:primaryType="nt:unstructured"
+                text="Call Center"
+                value="Call Center"/>
+            <_x0035_36232247
+                jcr:primaryType="nt:unstructured"
+                text="Capacity Planner"
+                value="Capacity Planner"/>
+            <_x0037_49971588
+                jcr:primaryType="nt:unstructured"
+                text="CFO"
+                value="CFO"/>
+            <_x0031_29926051
+                jcr:primaryType="nt:unstructured"
+                text="Change Management"
+                value="Change Management"/>
+            <_x0039_45582790
+                jcr:primaryType="nt:unstructured"
+                text="Chief IT Security Officer"
+                value="Chief IT Security Officer"/>
+            <_x0031_66677801
+                jcr:primaryType="nt:unstructured"
+                text="CIO/CTO"
+                value="CIO/CTO"/>
+            <_x0037_55701396
+                jcr:primaryType="nt:unstructured"
+                text="DBA"
+                value="DBA"/>
+            <_x0036_79207638
+                jcr:primaryType="nt:unstructured"
+                text="DBA Manager"
+                value="DBA Manager"/>
+            <_x0036_51441074
+                jcr:primaryType="nt:unstructured"
+                text="Director of Infrastructure"
+                value="Director of Infrastructure"/>
+            <_x0034_63480222
+                jcr:primaryType="nt:unstructured"
+                text="Director of Strategic Planning"
+                value="Director of Strategic Planning"/>
+            <_x0031_85178811
+                jcr:primaryType="nt:unstructured"
+                text="Director of Systems"
+                value="Director of Systems"/>
+            <_x0035_30245192
+                jcr:primaryType="nt:unstructured"
+                text="E-Business/E-Commerce"
+                value="E-Business/E-Commerce"/>
+            <_x0039_34166988
+                jcr:primaryType="nt:unstructured"
+                text="IS/IT Support"
+                value="IS/IT Support"/>
+            <_x0039_79232581
+                jcr:primaryType="nt:unstructured"
+                text="IT Applications Manager"
+                value="IT Applications Manager"/>
+            <_x0034_98456735
+                jcr:primaryType="nt:unstructured"
+                text="IT Apps - Dev/Programmer"
+                value="IT Apps  - Dev/Programmer"/>
+            <_x0038_20461771
+                jcr:primaryType="nt:unstructured"
+                text="IT Consultant"
+                value="IT Consultant"/>
+            <_x0030_86952226
+                jcr:primaryType="nt:unstructured"
+                text="IT Director / VP"
+                value="IT Director / VP"/>
+            <_x0032_69823073
+                jcr:primaryType="nt:unstructured"
+                text="IT Manager"
+                value="IT Manager"/>
+            <_x0034_05121070
+                jcr:primaryType="nt:unstructured"
+                text="IT Project Management"
+                value="IT Project Management"/>
+            <_x0032_97580781
+                jcr:primaryType="nt:unstructured"
+                text="IT R &amp; D"
+                value="IT R &amp; D"/>
+            <_x0031_07617329
+                jcr:primaryType="nt:unstructured"
+                text="IT Security"
+                value="IT Security"/>
+            <_x0031_04674033
+                jcr:primaryType="nt:unstructured"
+                text="IT Sys Engineer/Integration"
+                value="IT Sys Engineer/Integration"/>
+            <_x0033_22183102
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Administration"
+                value="IT Systems Administration"/>
+            <_x0038_63826615
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Manager"
+                value="IT Systems Manager"/>
+            <_x0037_37210642
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Programmer"
+                value="IT Systems Programmer"/>
+            <_x0033_01540715
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Scheduling"
+                value="IT Systems Scheduling"/>
+            <_x0035_79335318
+                jcr:primaryType="nt:unstructured"
+                text="IT Training/Education"
+                value="IT Training/Education"/>
+            <_x0031_71258669
+                jcr:primaryType="nt:unstructured"
+                text="IT-Other"
+                value="IT-Other"/>
+            <_x0033_08588220
+                jcr:primaryType="nt:unstructured"
+                text="Mainframe Monitoring"
+                value="Mainframe Monitoring"/>
+            <_x0037_73277332
+                jcr:primaryType="nt:unstructured"
+                text="Mainframe Planning/Performance"
+                value="Mainframe Planning/Performance"/>
+            <_x0036_36941094
+                jcr:primaryType="nt:unstructured"
+                text="Network Administration"
+                value="Network Administration"/>
+            <_x0037_90617779
+                jcr:primaryType="nt:unstructured"
+                text="Network Mgr/Dir/VP"
+                value="Network Mgr/Dir/VP"/>
+            <_x0038_50143416
+                jcr:primaryType="nt:unstructured"
+                text="Operations"
+                value="Operations"/>
+            <_x0033_14879993
+                jcr:primaryType="nt:unstructured"
+                text="Operation Mgr/Dir/VP"
+                value="Operation Mgr/Dir/VP"/>
+            <_x0039_60241339
+                jcr:primaryType="nt:unstructured"
+                text="Performance Analyst"
+                value="Performance Analyst"/>
+            <_x0037_57679923
+                jcr:primaryType="nt:unstructured"
+                text="President/CEO"
+                value="President/CEO"/>
+            <_x0035_61700559
+                jcr:primaryType="nt:unstructured"
+                text="Purchasing/Procurement"
+                value="Purchasing/Procurement"/>
+            <_x0031_33088986
+                jcr:primaryType="nt:unstructured"
+                text="Storage"
+                value="Storage"/>
+            <_x0031_57472152
+                jcr:primaryType="nt:unstructured"
+                text="Storage Administrator"
+                value="Storage Administrator"/>
+            <_x0036_85570008
+                jcr:primaryType="nt:unstructured"
+                text="Systems Analyst"
+                value="Systems Analyst"/>
+            <_x0031_41896992
+                jcr:primaryType="nt:unstructured"
+                text="Systems Programmer"
+                value="Systems Programmer"/>
+            <_x0036_87640554
+                jcr:primaryType="nt:unstructured"
+                text="VP Application Development"
+                value="VP Application Development"/>
+            <_x0038_93120322
+                jcr:primaryType="nt:unstructured"
+                text="VP Application Support"
+                value="VP Application Support"/>
+            <_x0036_51592127
+                jcr:primaryType="nt:unstructured"
+                text="VP Customer Support"
+                value="VP Customer Support"/>
+            <_x0038_34170188
+                jcr:primaryType="nt:unstructured"
+                text="VP Data Center Support"
+                value="VP Data Center Support"/>
+            <_x0035_80285505
+                jcr:primaryType="nt:unstructured"
+                text="VP Infrastructure"
+                value="VP Infrastructure"/>
+            <_x0037_46967426
+                jcr:primaryType="nt:unstructured"
+                text="VP IT Architecture"
+                value="VP IT Architecture"/>
+            <_x0039_50643020
+                jcr:primaryType="nt:unstructured"
+                text="VP Production Operations"
+                value="VP Production Operations"/>
+            <_x0037_44535637
+                jcr:primaryType="nt:unstructured"
+                text="VP Security"
+                value="VP Security"/>
+            <_x0030_63914395
+                jcr:primaryType="nt:unstructured"
+                text="VP Sevice Delivery"
+                value="VP Sevice Delivery"/>
+            <_x0033_60389668
+                jcr:primaryType="nt:unstructured"
+                text="VP Service Support"
+                value="VP Service Support"/>
+            <_x0038_47241400
+                jcr:primaryType="nt:unstructured"
+                text="VP Strategic Planning"
+                value="VP Strategic Planning"/>
+            <_x0039_21566313
+                jcr:primaryType="nt:unstructured"
+                text="VP Technical Support"
+                value="VP Technical Support"/>
+            <_x0034_34395201
+                jcr:primaryType="nt:unstructured"
+                text="Web Administration"
+                value="Web Administration"/>
+            <_x0038_15246473
+                jcr:primaryType="nt:unstructured"
+                text="Other"
+                value="Other"/>
+</jcr:root>

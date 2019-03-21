@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="job-role-chg-mgmt-macro">
+            <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Job Role - Chg Mgmt"/>
+            <_x0037_70955320
+                jcr:primaryType="nt:unstructured"
+                text="Change Manager"
+                value="Change Manager"/>
+            <_x0031_94736985
+                jcr:primaryType="nt:unstructured"
+                text="IT/Shared Service Manager"
+                value="IT-Shared Service Manager"/>
+            <_x0035_22689054
+                jcr:primaryType="nt:unstructured"
+                text="IT Manager"
+                value="IT Manager"/>
+            <_x0034_24894286
+                jcr:primaryType="nt:unstructured"
+                text="End User Services Manager"
+                value="End User Services Manager"/>
+      
+</jcr:root>

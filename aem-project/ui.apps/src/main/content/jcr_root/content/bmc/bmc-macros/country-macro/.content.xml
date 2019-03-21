@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="country-macro">
+              <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Country"/>
+            <_x0038_20217415
+                jcr:primaryType="nt:unstructured"
+                text="United States"
+                value="USA"/>
+            <_x0035_20040081
+                jcr:primaryType="nt:unstructured"
+                text="Canada"
+                value="Canada"/>
+            <_x0033_11704784
+                jcr:primaryType="nt:unstructured"
+                text="Afghanistan"
+                value="Afghanistan"/>
+            <_x0033_51661207
+                jcr:primaryType="nt:unstructured"
+                text="Albania"
+                value="Albania"/>
+            <_x0039_21242009
+                jcr:primaryType="nt:unstructured"
+                text="Algeria"
+                value="Algeria"/>
+            <_x0035_80377176
+                jcr:primaryType="nt:unstructured"
+                text="American Samoa"
+                value="American Samoa"/>
+            <_x0039_06379901
+                jcr:primaryType="nt:unstructured"
+                text="Andorra"
+                value="Andorra"/>
+            <_x0036_95419287
+                jcr:primaryType="nt:unstructured"
+                text="Angola"
+                value="Angola"/>
+            <_x0035_40082329
+                jcr:primaryType="nt:unstructured"
+                text="Anguilla"
+                value="Anguilla"/>
+            <_x0031_89684031
+                jcr:primaryType="nt:unstructured"
+                text="Antarctica"
+                value="Antarctica"/>
+            <_x0031_57389839
+                jcr:primaryType="nt:unstructured"
+                text="Antigua and Barbuda"
+                value="Antigua and Barbuda"/>
+            <_x0030_86340630
+                jcr:primaryType="nt:unstructured"
+                text="Argentina"
+                value="Argentina"/>
+            <_x0039_30856631
+                jcr:primaryType="nt:unstructured"
+                text="Aruba"
+                value="Aruba"/>
+            <_x0034_35674466
+                jcr:primaryType="nt:unstructured"
+                text="Australia"
+                value="Australia"/>
+            <_x0031_61871146
+                jcr:primaryType="nt:unstructured"
+                text="Austria"
+                value="Austria"/>
+            <_x0035_40411475
+                jcr:primaryType="nt:unstructured"
+                text="Bahamas"
+                value="Bahamas"/>
+            <_x0032_71472821
+                jcr:primaryType="nt:unstructured"
+                text="Bahrain"
+                value="Bahrain"/>
+            <_x0032_96790022
+                jcr:primaryType="nt:unstructured"
+                text="Bangladesh"
+                value="Bangladesh"/>
+            <_x0030_95589325
+                jcr:primaryType="nt:unstructured"
+                text="Barbados"
+                value="Barbados"/>
+            <_x0038_44816672
+                jcr:primaryType="nt:unstructured"
+                text="Belarus"
+                value="Belarus"/>
+            <_x0037_72257644
+                jcr:primaryType="nt:unstructured"
+                text="Belgium"
+                value="Belgium"/>
+            <_x0033_48285403
+                jcr:primaryType="nt:unstructured"
+                text="Belize"
+                value="Belize"/>
+            <_x0036_07229902
+                jcr:primaryType="nt:unstructured"
+                text="Benin"
+                value="Benin"/>
+            <_x0030_63886468
+                jcr:primaryType="nt:unstructured"
+                text="Bermuda"
+                value="Bermuda"/>
+            <_x0034_80548708
+                jcr:primaryType="nt:unstructured"
+                text="Bhutan"
+                value="Bhutan"/>
+            <_x0036_02248701
+                jcr:primaryType="nt:unstructured"
+                text="Bolivia"
+                value="Bolivia"/>
+            <_x0033_58275921
+                jcr:primaryType="nt:unstructured"
+                text="Bosnia and Herzegovina"
+                value="Bosnia and Herzegovina"/>
+            <_x0034_84387358
+                jcr:primaryType="nt:unstructured"
+                text="Botswana"
+                value="Botswana"/>
+            <_x0032_34470059
+                jcr:primaryType="nt:unstructured"
+                text="Bouvet Island"
+                value="Bouvet Island"/>
+            <_x0031_62655830
+                jcr:primaryType="nt:unstructured"
+                text="Brazil"
+                value="Brazil"/>
+            <_x0039_39116184
+                jcr:primaryType="nt:unstructured"
+                text="British Indian Ocean Territory"
+                value="British Indian Ocean Territory"/>
+            <_x0039_15449414
+                jcr:primaryType="nt:unstructured"
+                text="Brunei Darussalam"
+                value="Brunei Darussalam"/>
+            <_x0036_37943537
+                jcr:primaryType="nt:unstructured"
+                text="Bulgaria"
+                value="Bulgaria"/>
+            <_x0035_69464641
+                jcr:primaryType="nt:unstructured"
+                text="Burkina Faso"
+                value="Burkina Faso"/>
+            <_x0037_69889861
+                jcr:primaryType="nt:unstructured"
+                text="Burundi"
+                value="Burundi"/>
+            <_x0039_10601393
+                jcr:primaryType="nt:unstructured"
+                text="Cambodia"
+                value="Cambodia"/>
+            <_x0039_20035781
+                jcr:primaryType="nt:unstructured"
+                text="Cameroon"
+                value="Cameroon"/>
+            <_x0030_50500871
+                jcr:primaryType="nt:unstructured"
+                text="Cape Verde"
+                value="Cape Verde"/>
+            <_x0033_22384865
+                jcr:primaryType="nt:unstructured"
+                text="Cayman Islands"
+                value="Cayman Islands"/>
+            <_x0034_31390451
+                jcr:primaryType="nt:unstructured"
+                text="Central African Republic"
+                value="Central African Republic"/>
+            <_x0039_35131097
+                jcr:primaryType="nt:unstructured"
+                text="Chad"
+                value="Chad"/>
+            <_x0039_31988288
+                jcr:primaryType="nt:unstructured"
+                text="Chile"
+                value="Chile"/>
+            <_x0034_02961594
+                jcr:primaryType="nt:unstructured"
+                text="China"
+                value="China"/>
+            <_x0031_60635154
+                jcr:primaryType="nt:unstructured"
+                text="Christmas Island"
+                value="Christmas Island"/>
+            <_x0036_52947197
+                jcr:primaryType="nt:unstructured"
+                text="Cocos (Keeling) Islands"
+                value="Cocos (Keeling) Islands"/>
+            <_x0036_23177511
+                jcr:primaryType="nt:unstructured"
+                text="Colombia"
+                value="Colombia"/>
+            <_x0033_06086863
+                jcr:primaryType="nt:unstructured"
+                text="Comoros"
+                value="Comoros"/>
+            <_x0031_18535338
+                jcr:primaryType="nt:unstructured"
+                text="Cook Islands"
+                value="Cook Islands"/>
+            <_x0035_65176184
+                jcr:primaryType="nt:unstructured"
+                text="Costa Rica"
+                value="Costa Rica"/>
+            <_x0034_32501923
+                jcr:primaryType="nt:unstructured"
+                text="Croatia"
+                value="Croatia"/>
+            <_x0034_17071766
+                jcr:primaryType="nt:unstructured"
+                text="Cyprus"
+                value="Cyprus"/>
+            <_x0031_80522590
+                jcr:primaryType="nt:unstructured"
+                text="Czech Republic"
+                value="CZECH Republic"/>
+            <_x0034_15644233
+                jcr:primaryType="nt:unstructured"
+                text="Denmark"
+                value="Denmark"/>
+            <_x0032_92717289
+                jcr:primaryType="nt:unstructured"
+                text="Djibouti"
+                value="Djibouti"/>
+            <_x0032_84387892
+                jcr:primaryType="nt:unstructured"
+                text="Dominica"
+                value="Dominica"/>
+            <_x0032_71888552
+                jcr:primaryType="nt:unstructured"
+                text="Dominican Republic"
+                value="Dominican Republic"/>
+            <_x0032_13990023
+                jcr:primaryType="nt:unstructured"
+                text="East Timor"
+                value="East Timor"/>
+            <_x0037_34347304
+                jcr:primaryType="nt:unstructured"
+                text="Ecuador"
+                value="Ecuador"/>
+            <_x0032_21173540
+                jcr:primaryType="nt:unstructured"
+                text="Egypt"
+                value="Egypt"/>
+            <_x0033_37575990
+                jcr:primaryType="nt:unstructured"
+                text="El Salvador"
+                value="El Salvador"/>
+            <_x0033_61967110
+                jcr:primaryType="nt:unstructured"
+                text="Equatorial Guinea"
+                value="Equatorial Guinea"/>
+            <_x0038_69386334
+                jcr:primaryType="nt:unstructured"
+                text="Eritrea"
+                value="Eritrea"/>
+            <_x0032_16782318
+                jcr:primaryType="nt:unstructured"
+                text="Estonia"
+                value="Estonia"/>
+            <_x0033_61267798
+                jcr:primaryType="nt:unstructured"
+                text="Ethiopia"
+                value="Ethiopia"/>
+            <_x0038_28735492
+                jcr:primaryType="nt:unstructured"
+                text="Falkland Islands (Malvinas)"
+                value="Falkland Islands (Malvinas)"/>
+            <_x0032_41760846
+                jcr:primaryType="nt:unstructured"
+                text="Faroe Islands"
+                value="Faroe Islands"/>
+            <_x0036_74570781
+                jcr:primaryType="nt:unstructured"
+                text="Fiji"
+                value="Fiji"/>
+            <_x0036_78917224
+                jcr:primaryType="nt:unstructured"
+                text="Finland"
+                value="Finland"/>
+            <_x0031_38646171
+                jcr:primaryType="nt:unstructured"
+                text="France"
+                value="France"/>
+            <_x0031_88945392
+                jcr:primaryType="nt:unstructured"
+                text="French Guiana"
+                value="French Guiana"/>
+            <_x0039_68855251
+                jcr:primaryType="nt:unstructured"
+                text="French Polynesia"
+                value="French Polynesia"/>
+            <_x0035_55556410
+                jcr:primaryType="nt:unstructured"
+                text="French Southern Territories"
+                value="French Southern Territories"/>
+            <_x0032_42095969
+                jcr:primaryType="nt:unstructured"
+                text="Gabon"
+                value="Gabon"/>
+            <_x0032_00733975
+                jcr:primaryType="nt:unstructured"
+                text="Gambia"
+                value="Gambia"/>
+            <_x0038_20973278
+                jcr:primaryType="nt:unstructured"
+                text="Georgia"
+                value="Georgia"/>
+            <_x0038_73104232
+                jcr:primaryType="nt:unstructured"
+                text="Germany"
+                value="Germany"/>
+            <_x0039_07846218
+                jcr:primaryType="nt:unstructured"
+                text="Ghana"
+                value="Ghana"/>
+            <_x0030_20251247
+                jcr:primaryType="nt:unstructured"
+                text="Gibraltar"
+                value="Gibraltar"/>
+            <_x0031_29072420
+                jcr:primaryType="nt:unstructured"
+                text="Greece"
+                value="Greece"/>
+            <_x0033_79378058
+                jcr:primaryType="nt:unstructured"
+                text="Greenland"
+                value="Greenland"/>
+            <_x0037_93679219
+                jcr:primaryType="nt:unstructured"
+                text="Grenada"
+                value="Grenada"/>
+            <_x0032_68173446
+                jcr:primaryType="nt:unstructured"
+                text="Guadeloupe"
+                value="Guadeloupe"/>
+            <_x0037_30082364
+                jcr:primaryType="nt:unstructured"
+                text="Guam"
+                value="Guam"/>
+            <_x0037_86035988
+                jcr:primaryType="nt:unstructured"
+                text="Guatemala"
+                value="Guatemala"/>
+            <_x0034_36408244
+                jcr:primaryType="nt:unstructured"
+                text="Guinea-Bissau"
+                value="Guinea-Bissau"/>
+            <_x0030_65791864
+                jcr:primaryType="nt:unstructured"
+                text="Guyana"
+                value="Guyana"/>
+            <_x0033_54068457
+                jcr:primaryType="nt:unstructured"
+                text="Haiti"
+                value="Haiti"/>
+            <_x0037_20568383
+                jcr:primaryType="nt:unstructured"
+                text="Heard Island and Mcdonald Islands"
+                value="Heard and McDonald Islands"/>
+            <_x0037_20510307
+                jcr:primaryType="nt:unstructured"
+                text="Holy See (Vatican City State)"
+                value="Vatican City State"/>
+            <_x0038_90528150
+                jcr:primaryType="nt:unstructured"
+                text="Honduras"
+                value="Honduras"/>
+            <_x0033_32371880
+                jcr:primaryType="nt:unstructured"
+                text="Hong Kong"
+                value="Hong Kong"/>
+            <_x0036_66255171
+                jcr:primaryType="nt:unstructured"
+                text="Hungary"
+                value="Hungary"/>
+            <_x0034_21865976
+                jcr:primaryType="nt:unstructured"
+                text="Iceland"
+                value="Iceland"/>
+            <_x0039_15955531
+                jcr:primaryType="nt:unstructured"
+                text="India"
+                value="India"/>
+            <_x0037_02165174
+                jcr:primaryType="nt:unstructured"
+                text="Indonesia"
+                value="Indonesia"/>
+            <_x0032_55596509
+                jcr:primaryType="nt:unstructured"
+                text="Ireland"
+                value="Ireland"/>
+            <_x0036_61794262
+                jcr:primaryType="nt:unstructured"
+                text="Israel"
+                value="Israel"/>
+            <_x0034_44397730
+                jcr:primaryType="nt:unstructured"
+                text="Italy"
+                value="Italy"/>
+            <_x0034_46172691
+                jcr:primaryType="nt:unstructured"
+                text="Jamaica"
+                value="Jamaica"/>
+            <_x0031_73978260
+                jcr:primaryType="nt:unstructured"
+                text="Japan"
+                value="Japan"/>
+            <_x0031_46908651
+                jcr:primaryType="nt:unstructured"
+                text="Jordan"
+                value="Jordan"/>
+            <_x0035_30116118
+                jcr:primaryType="nt:unstructured"
+                text="Kazakhstan"
+                value="Kazakhstan"/>
+            <_x0034_97464763
+                jcr:primaryType="nt:unstructured"
+                text="Kenya"
+                value="Kenya"/>
+            <_x0030_10461024
+                jcr:primaryType="nt:unstructured"
+                text="Kiribati"
+                value="Kiribati"/>
+            <_x0037_77020497
+                jcr:primaryType="nt:unstructured"
+                text="Korea, Republic of"
+                value="Korea, Republic of"/>
+            <_x0035_47337462
+                jcr:primaryType="nt:unstructured"
+                text="Kuwait"
+                value="Kuwait"/>
+            <_x0039_22686656
+                jcr:primaryType="nt:unstructured"
+                text="Kyrgyzstan"
+                value="Kyrgyzsta"/>
+            <_x0033_90526976
+                jcr:primaryType="nt:unstructured"
+                text="Lao People's Democratic Republic"
+                value="Lao People's Democratic Republic"/>
+            <_x0032_38920604
+                jcr:primaryType="nt:unstructured"
+                text="Latvia"
+                value="Latvia"/>
+            <_x0032_38920624
+                jcr:primaryType="nt:unstructured"
+                text="Lebanon"
+                value="Lebanon"/>
+            <_x0035_18013278
+                jcr:primaryType="nt:unstructured"
+                text="Lesotho"
+                value="Lesotho"/>
+            <_x0034_82970944
+                jcr:primaryType="nt:unstructured"
+                text="Liechtenstein"
+                value="Liechtenstein"/>
+            <_x0034_40459499
+                jcr:primaryType="nt:unstructured"
+                text="Lithuania"
+                value="Lithuania"/>
+            <_x0031_24042622
+                jcr:primaryType="nt:unstructured"
+                text="Luxembourg"
+                value="Luxembourg"/>
+            <_x0035_41114196
+                jcr:primaryType="nt:unstructured"
+                text="Macau"
+                value="Macau"/>
+            <_x0039_16889251
+                jcr:primaryType="nt:unstructured"
+                text="Macedonia, the Former Yugoslav Republic of"
+                value="Macedonia, the Former Yugosla"/>
+            <_x0031_31903963
+                jcr:primaryType="nt:unstructured"
+                text="Madagascar"
+                value="Madagascar"/>
+            <_x0036_79850285
+                jcr:primaryType="nt:unstructured"
+                text="Malawi"
+                value="Malawi"/>
+            <_x0037_09921431
+                jcr:primaryType="nt:unstructured"
+                text="Malaysia"
+                value="Malaysia"/>
+            <_x0037_38538242
+                jcr:primaryType="nt:unstructured"
+                text="Maldives"
+                value="Maldives"/>
+            <_x0037_21609972
+                jcr:primaryType="nt:unstructured"
+                text="Mali"
+                value="Mali"/>
+            <_x0035_76555867
+                jcr:primaryType="nt:unstructured"
+                text="Malta"
+                value="Malta"/>
+            <_x0031_51632403
+                jcr:primaryType="nt:unstructured"
+                text="Marshall Islands"
+                value="Marshall Islands"/>
+            <_x0037_26168520
+                jcr:primaryType="nt:unstructured"
+                text="Martinique"
+                value="Martinique"/>
+            <_x0032_06731780
+                jcr:primaryType="nt:unstructured"
+                text="Mauritania"
+                value="Mauritania"/>
+            <_x0033_95579026
+                jcr:primaryType="nt:unstructured"
+                text="Mauritius"
+                value="Mauritius"/>
+            <_x0037_63061572
+                jcr:primaryType="nt:unstructured"
+                text="Mayotte"
+                value="Mayotte"/>
+            <_x0032_66411746
+                jcr:primaryType="nt:unstructured"
+                text="Mexico"
+                value="Mexico"/>
+            <_x0033_97414657
+                jcr:primaryType="nt:unstructured"
+                text="Micronesia, Federated States of"
+                value="Micronesia, Federated States o"/>
+            <_x0033_37164069
+                jcr:primaryType="nt:unstructured"
+                text="Moldova, Republic of"
+                value="Moldova, Republic of"/>
+            <_x0037_88643884
+                jcr:primaryType="nt:unstructured"
+                text="Monaco"
+                value="Monaco"/>
+            <_x0039_35154913
+                jcr:primaryType="nt:unstructured"
+                text="Mongolia"
+                value="Mongolia"/>
+            <_x0033_30644804
+                jcr:primaryType="nt:unstructured"
+                text="Montenegro"
+                value="Montenegro"/>
+            <_x0030_60138717
+                jcr:primaryType="nt:unstructured"
+                text="Montserrat"
+                value="Montserrat"/>
+            <_x0039_68374185
+                jcr:primaryType="nt:unstructured"
+                text="Morocco"
+                value="Morocco"/>
+            <_x0030_96567690
+                jcr:primaryType="nt:unstructured"
+                text="Mozambique"
+                value="Mozambique"/>
+            <_x0034_63174127
+                jcr:primaryType="nt:unstructured"
+                text="Namibia"
+                value="Namibia"/>
+            <_x0036_02092782
+                jcr:primaryType="nt:unstructured"
+                text="Nauru"
+                value="Nauru"/>
+            <_x0033_49711659
+                jcr:primaryType="nt:unstructured"
+                text="Nepal"
+                value="Nepal"/>
+            <_x0037_21126380
+                jcr:primaryType="nt:unstructured"
+                text="Netherlands"
+                value="Netherlands"/>
+            <_x0034_78298647
+                jcr:primaryType="nt:unstructured"
+                text="Netherlands Antilles"
+                value="Netherlands Antilles"/>
+            <_x0031_16413329
+                jcr:primaryType="nt:unstructured"
+                text="New Caledonia"
+                value="New Caledonia"/>
+            <_x0032_96416852
+                jcr:primaryType="nt:unstructured"
+                text="New Zealand"
+                value="New Zealand"/>
+            <_x0034_27587661
+                jcr:primaryType="nt:unstructured"
+                text="Nicaragua"
+                value="Nicaragua"/>
+            <_x0031_00117097
+                jcr:primaryType="nt:unstructured"
+                text="Niger"
+                value="Niger"/>
+            <_x0031_97466824
+                jcr:primaryType="nt:unstructured"
+                text="Nigeria"
+                value="Nigeria"/>
+            <_x0033_74419402
+                jcr:primaryType="nt:unstructured"
+                text="Niue"
+                value="Niue"/>
+            <_x0038_70029321
+                jcr:primaryType="nt:unstructured"
+                text="Norfolk Island"
+                value="Norfolk island"/>
+            <_x0034_26029985
+                jcr:primaryType="nt:unstructured"
+                text="Northern Mariana Islands"
+                value="Northern Mariana Islands"/>
+            <_x0031_56487255
+                jcr:primaryType="nt:unstructured"
+                text="Norway"
+                value="Norway"/>
+            <_x0036_68702115
+                jcr:primaryType="nt:unstructured"
+                text="Oman"
+                value="Oman"/>
+            <_x0033_98699261
+                jcr:primaryType="nt:unstructured"
+                text="Pakistan"
+                value="Pakistan"/>
+            <_x0036_59254281
+                jcr:primaryType="nt:unstructured"
+                text="Palau"
+                value="Palau"/>
+            <_x0037_76595044
+                jcr:primaryType="nt:unstructured"
+                text="Palestinian Territory, Occupied"
+                value="PS"/>
+            <_x0038_10860764
+                jcr:primaryType="nt:unstructured"
+                text="Panama"
+                value="Panama"/>
+            <_x0036_20456748
+                jcr:primaryType="nt:unstructured"
+                text="Papua New Guinea"
+                value="Papua New Guinea"/>
+            <_x0033_79267035
+                jcr:primaryType="nt:unstructured"
+                text="Paraguay"
+                value="Paraguay"/>
+            <_x0034_03557184
+                jcr:primaryType="nt:unstructured"
+                text="Peru"
+                value="Peru"/>
+            <_x0038_27949679
+                jcr:primaryType="nt:unstructured"
+                text="Philippines"
+                value="Philippines"/>
+            <_x0037_31867925
+                jcr:primaryType="nt:unstructured"
+                text="Pitcairn"
+                value="Pitcairn"/>
+            <_x0034_56094622
+                jcr:primaryType="nt:unstructured"
+                text="Poland"
+                value="Poland"/>
+            <_x0035_02329613
+                jcr:primaryType="nt:unstructured"
+                text="Portugal"
+                value="Portugal"/>
+            <_x0033_67973588
+                jcr:primaryType="nt:unstructured"
+                text="Puerto Rico"
+                value="Puerto Rico"/>
+            <_x0035_32305021
+                jcr:primaryType="nt:unstructured"
+                text="Qatar"
+                value="Qatar"/>
+            <_x0039_05510689
+                jcr:primaryType="nt:unstructured"
+                text="Reunion"
+                value="Reunion"/>
+            <_x0035_91942171
+                jcr:primaryType="nt:unstructured"
+                text="Romania"
+                value="Romania"/>
+            <_x0036_43720302
+                jcr:primaryType="nt:unstructured"
+                text="Rwanda"
+                value="Rwanda"/>
+            <_x0035_30320899
+                jcr:primaryType="nt:unstructured"
+                text="Saint Helena"
+                value="St Helena"/>
+            <_x0034_19540198
+                jcr:primaryType="nt:unstructured"
+                text="Saint Kitts and Nevis"
+                value="Saint Kitts and Nevis"/>
+            <_x0036_47213399
+                jcr:primaryType="nt:unstructured"
+                text="Saint Lucia"
+                value="Saint Lucia"/>
+            <_x0034_30211177
+                jcr:primaryType="nt:unstructured"
+                text="Saint Pierre and Miquelon"
+                value="St Pierre And Miquelon"/>
+            <_x0032_75609589
+                jcr:primaryType="nt:unstructured"
+                text="Saint Vincent and the Grenadines"
+                value="Saint Vincent and the Grenadi"/>
+            <_x0036_19205507
+                jcr:primaryType="nt:unstructured"
+                text="Samoa"
+                value="Samoa"/>
+            <_x0038_83928268
+                jcr:primaryType="nt:unstructured"
+                text="San Marino"
+                value="San Marino"/>
+            <_x0035_86585482
+                jcr:primaryType="nt:unstructured"
+                text="Sao Tome and Principe"
+                value="Sao Tome and Principe"/>
+            <_x0038_97124430
+                jcr:primaryType="nt:unstructured"
+                text="Saudi Arabia"
+                value="Saudi Arabia"/>
+            <_x0036_39883314
+                jcr:primaryType="nt:unstructured"
+                text="Senegal"
+                value="Senegal"/>
+            <_x0034_70171599
+                jcr:primaryType="nt:unstructured"
+                text="Serbia"
+                value="Serbia"/>
+            <_x0031_26645963
+                jcr:primaryType="nt:unstructured"
+                text="Seychelles"
+                value="Seychelles"/>
+            <_x0036_75734490
+                jcr:primaryType="nt:unstructured"
+                text="Singapore"
+                value="Singapore"/>
+            <_x0039_20658702
+                jcr:primaryType="nt:unstructured"
+                text="Slovak Republic"
+                value="Slovak Republic"/>
+            <_x0038_33961691
+                jcr:primaryType="nt:unstructured"
+                text="Slovenia"
+                value="Slovenia"/>
+            <_x0033_28124793
+                jcr:primaryType="nt:unstructured"
+                text="Solomon Islands"
+                value="Solomon Islands"/>
+            <_x0038_77947368
+                jcr:primaryType="nt:unstructured"
+                text="South Africa"
+                value="South Africa"/>
+            <_x0031_04187849
+                jcr:primaryType="nt:unstructured"
+                text="South Georgia and the South Sandwich Islands"
+                value="South Georgia And The South Sa"/>
+            <_x0031_40343488
+                jcr:primaryType="nt:unstructured"
+                text="Spain"
+                value="Spain"/>
+            <_x0038_09743878
+                jcr:primaryType="nt:unstructured"
+                text="Sri Lanka"
+                value="Sri Lanka"/>
+            <_x0037_05091304
+                jcr:primaryType="nt:unstructured"
+                text="Suriname"
+                value="Suriname"/>
+            <_x0034_01918163
+                jcr:primaryType="nt:unstructured"
+                text="Svalbard and Jan Mayen"
+                value="SJ"/>
+            <_x0038_76983206
+                jcr:primaryType="nt:unstructured"
+                text="Swaziland"
+                value="Swaziland"/>
+            <_x0034_98796199
+                jcr:primaryType="nt:unstructured"
+                text="Sweden"
+                value="Sweden"/>
+            <_x0036_79774669
+                jcr:primaryType="nt:unstructured"
+                text="Switzerland"
+                value="Switzerland"/>
+            <_x0031_20682906
+                jcr:primaryType="nt:unstructured"
+                text="Taiwan"
+                value="Taiwan, Republic of China"/>
+            <_x0035_66395675
+                jcr:primaryType="nt:unstructured"
+                text="Tajikistan"
+                value="Tajikistan"/>
+            <_x0032_43937062
+                jcr:primaryType="nt:unstructured"
+                text="Tanzania, United Republic of"
+                value="Tanzania, United Republic of"/>
+            <_x0035_53130203
+                jcr:primaryType="nt:unstructured"
+                text="Thailand"
+                value="Thailand"/>
+            <_x0037_26700645
+                jcr:primaryType="nt:unstructured"
+                text="Timor-Leste"
+                value="East Timor"/>
+            <_x0032_52805583
+                jcr:primaryType="nt:unstructured"
+                text="Togo"
+                value="Togo"/>
+            <_x0032_90317570
+                jcr:primaryType="nt:unstructured"
+                text="Tokelau"
+                value="Tokelau"/>
+            <_x0031_00321735
+                jcr:primaryType="nt:unstructured"
+                text="Tonga"
+                value="Tonga"/>
+            <_x0038_77948013
+                jcr:primaryType="nt:unstructured"
+                text="Trinidad and Tobago"
+                value="Trinidad &amp; Tobago"/>
+            <_x0035_90745889
+                jcr:primaryType="nt:unstructured"
+                text="Tunisia"
+                value="Tunisia"/>
+            <_x0037_39882671
+                jcr:primaryType="nt:unstructured"
+                text="Turkey"
+                value="Turkey"/>
+            <_x0037_79161811
+                jcr:primaryType="nt:unstructured"
+                text="Turkmenistan"
+                value="Turkmenistan"/>
+            <_x0037_73658643
+                jcr:primaryType="nt:unstructured"
+                text="Turks and Caicos Islands"
+                value="Turks and Caicos Islands"/>
+            <_x0038_80682278
+                jcr:primaryType="nt:unstructured"
+                text="Tuvalu"
+                value="Tuvalu"/>
+            <_x0034_31956412
+                jcr:primaryType="nt:unstructured"
+                text="Uganda"
+                value="Uganda"/>
+            <_x0031_81959528
+                jcr:primaryType="nt:unstructured"
+                text="Ukraine"
+                value="Ukraine"/>
+            <_x0035_79806168
+                jcr:primaryType="nt:unstructured"
+                text="United Arab Emirates"
+                value="United Arab Emirates"/>
+            <_x0034_82859788
+                jcr:primaryType="nt:unstructured"
+                text="United Kingdom"
+                value="United Kingdom"/>
+            <_x0031_69498969
+                jcr:primaryType="nt:unstructured"
+                text="United States Minor Outlying Islands"
+                value="United States Minor Outlying I"/>
+            <_x0038_88320514
+                jcr:primaryType="nt:unstructured"
+                text="Uruguay"
+                value="Uruguay"/>
+            <_x0036_07289898
+                jcr:primaryType="nt:unstructured"
+                text="Vanuatu"
+                value="Vanuatu"/>
+            <_x0035_05607257
+                jcr:primaryType="nt:unstructured"
+                text="Venezuela"
+                value="Venezuela"/>
+            <_x0033_94303780
+                jcr:primaryType="nt:unstructured"
+                text="Vietnam"
+                value="Vietnam"/>
+            <_x0037_09088017
+                jcr:primaryType="nt:unstructured"
+                text="Virgin Islands, British"
+                value="Virgin Islands (British)"/>
+            <_x0031_74448468
+                jcr:primaryType="nt:unstructured"
+                text="Virgin Islands, US"
+                value="Virgin Islands (US)"/>
+            <_x0031_14088301
+                jcr:primaryType="nt:unstructured"
+                text="Wallis and Futuna"
+                value="Wallis and Futuna Islands"/>
+            <_x0036_97354193
+                jcr:primaryType="nt:unstructured"
+                text="Western Sahara"
+                value="Western Sahara"/>
+            <_x0032_55065606
+                jcr:primaryType="nt:unstructured"
+                text="Yemen"
+                value="Yemen"/>
+            <_x0032_29160419
+                jcr:primaryType="nt:unstructured"
+                text="Yugoslavia"
+                value="Yugoslavia"/>
+            <_x0030_05373605
+                jcr:primaryType="nt:unstructured"
+                text="Zaire"
+                value="Zaire"/>
+            <_x0030_44790911
+                jcr:primaryType="nt:unstructured"
+                text="Zambia"
+                value="Zambia"/>
+</jcr:root>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="timeframe--short--macro">
+        <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Project Timeline"/>
+            <_x0035_83165390
+                jcr:primaryType="nt:unstructured"
+                text="> 365 Days"
+                value="> 365 Days"/>
+            <_x0036_81546099
+                jcr:primaryType="nt:unstructured"
+                text="181 - 365 Days"
+                value="181 - 365 Days"/>
+            <_x0035_67624230
+                jcr:primaryType="nt:unstructured"
+                text="91 - 180 Days"
+                value="91 - 180 Days"/>
+            <_x0031_28524749
+                jcr:primaryType="nt:unstructured"
+                text="&lt; 90 Days"
+                value="&lt; 90 Days"/>
+            <_x0032_60562221
+                jcr:primaryType="nt:unstructured"
+                text="No Project"
+                value="No Project"/>
+            <_x0035_96397428
+                jcr:primaryType="nt:unstructured"
+                text="Unknown"
+                value="Unknown"/>
+      
+</jcr:root>
