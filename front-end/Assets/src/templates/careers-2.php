@@ -333,11 +333,6 @@
 					</div>
 				</div>
 			</div>
-			<!--<div class="section-content text-center py4">
-				<a href="explore" class="btn-corporate btn-flat"><svg class="svg-inline">
-					<use xlink:href="#s-cloud-download" />
-				</svg>&nbsp;&nbsp;Download Benefits</a>
-			</div>-->
 		</div>
 	</section>
 <?php include 'php-inc/foot.php'; ?>
