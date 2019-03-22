@@ -155,7 +155,7 @@ public class ExperienceFgmtReportCSVGenService {
 							            		 for (Hit hit : result.getHits()) {
 							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 			Node fieldSetNode = getExpFragmentFieldSet(reportDataNode.getPath(), session);
+							            	 			Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);
 							            	 			if(fieldSetNode != null)
 							            	 			{
 							            	 				//field set values retrieval 
@@ -272,11 +272,7 @@ public class ExperienceFgmtReportCSVGenService {
 	     //For form fielsets and Customer Spptlight experience fargment
 	     map.put("property", "sling:resourceType"); //the property to check for
 	     map.put("property.operation", "equals"); // or like or like etc..
-	     map.put("property.value", "bmc/components/forms/field-set"); 
-	     map.put("property.operation", "or");
-	     map.put("property", "sling:resourceType"); //the property to check for
-	     map.put("property.operation", "equals"); // or like or like etc..
-	     map.put("property.value", "bmc/components/content/customer-spotlight"); 
+	     map.put("property.value", "bmc/components/forms/field-set"); 	     
 	     return map;
 	     // can be done in map or with Query methods	    
 	 }
