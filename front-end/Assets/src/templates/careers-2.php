@@ -258,10 +258,10 @@
 						</div>
 						<div class="card-content">
 							<div class="h3">Support</div>
-							<div class="h4"><a href="#">View  openings </a> | <a href="#Legal" class="modal-inline">Learn more </a></div>
+							<div class="h4"><a href="#">View  openings </a> | <a href="#support" class="modal-inline">Learn more </a></div>
 						</div>
 					</div>
-					<div id="Legal" style="display:none;">
+					<div id="support" style="display:none;">
 					<section class="lg-flex section p3">
 						<div class="flex-auto">
 							<div class="section-content">
