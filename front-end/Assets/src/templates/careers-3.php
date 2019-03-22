@@ -16,10 +16,11 @@
 		</ul>
 	</div>
 	<section id="careers_locations_map" class="section text-center map-section">
-		<div class="section-content">
-			<div class="ha mb2">Around the World and Right at Home</div>
-			<div class="h3 p readability-large mb3">BMC has Locations in every major continent and also offers work-from-home flexibilty, So you can do your best work where you work best.</div>
-			<img src="http:////www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" class="block-center xs-max-hide">
+		<div class="section-content common-cont">
+			<h3 class="mb1">Around the World and Right at Home</h3>
+			<h4 >BMC has Locations in every major continent and also offers work-from-home flexibilty, So you can do your best work where you work best.</h4>			
+			<img src="http:////www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" class="block-center desktop-only">
+			<img src="https://www.bmc.com/content/dam/bmc/corporate/MobileImages/Locations_map_680px%20x%20360p.png" class="block-center mobile-only">
 		</div>
 	</section>
 	<section id="careers_locations_list" class="section pattern">
@@ -53,7 +54,6 @@
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9403">Greece</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9408">Ireland</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9410">Italy</a>
-							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29392">Luxembourg</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9415">Netherlands</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9417">Norway</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9420">Poland</a>
@@ -76,7 +76,7 @@
 						</div>
 						<div class="bold mb1">Middle East</div>
 						<div class="mb2">
-							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29392">Dubai</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9434">Dubai</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9409">Israel</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9423">Saudi Arabia</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9431">Turkey</a>
@@ -101,7 +101,6 @@
 							<a href="hhttps://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9424">Singapore</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9429">Taiwan</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9430">Thailand</a>
-							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29392">Vietnam</a>
 						</div>
 					</div>
 				</div>

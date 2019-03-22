@@ -258,7 +258,7 @@
 						</div>
 						<div class="card-content">
 							<div class="h3">Support</div>
-							<div class="h4"><a href="#">View  openings </a> | <a href="#support" class="modal-inline">Learn more </a></div>
+							<div class="h4"><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=1190358">View  openings </a> | <a href="#support" class="modal-inline">Learn more </a></div>
 						</div>
 					</div>
 					<div id="support" style="display:none;">
@@ -268,7 +268,7 @@
 								<h2 class="section-title -sm mb1">Support</h2>
 								<p class="-sm">BMC Customer Support delivers a fast and easy customer experience and accelerates the adoption of BMC technology for our customers and partners through proactive training, support, webinars, blogs and videos.</p>
 							
-								<button class="btn btn-primary-with-border" onclick="window.location.href=''">View  openings  &rsaquo;</button>
+								<button class="btn btn-primary-with-border" onclick="window.location.href=' https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=1190358'">View  openings  &rsaquo;</button>
 							</div>
 						</div>
 					</section>

@@ -10,7 +10,7 @@
 						<h1 class="white">BMC + You</h1>
 						<h2>When your career and your company are the perfect match, every day is inspiring and energizing.</h2>
 						<div class="button-wrapper">
-							<a class="btn-white learn-more " href="#.">View Open positions</a>
+							<a class="btn-white learn-more " href="https://bmcrecruit.avature.net/Careers/SearchJobs">View Open positions</a>
 							
 						</div>
 					</div>

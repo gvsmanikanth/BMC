@@ -41,10 +41,18 @@
 			.common-cont {
 					h3, h4{
 					color: #fff;
-					line-height: 32px;
+					line-height: initial;
+					@media (min-width: $break-sm){
+						line-height: 32px;
+					}
+				
 				}
 				h4{
-					margin-top: 32px;
+					margin-top: 14px;
+					@media (min-width: $break-sm){
+						margin-top: 32px;
+					}
+
 				}
 			}
 		}
@@ -89,7 +97,10 @@
 
 		.common-cont{
 				h3 {
-					font-size: 32px;
+					@media(min-width: $break-md){
+						font-size: 32px;
+					}
+					font-size: 26px;
 					font-weight: 400;
 					color: #414042;
 					letter-spacing: 0.7px;
@@ -315,7 +326,27 @@
 	}
 
 	.map-section{
-		padding-bottom: 96px;
+		padding-bottom: 30px;
+		@media (min-width: $break-sm) {
+			padding-bottom: 96px;
+		}
+		.hide-on-desk{
+			display: block;
+			@media (min-width: $break-sm) {
+				display: none;
+			}
+		}
+		.common-cont{
+			h4{
+				margin-bottom: 20px;
+				@media (min-width: $break-sm) {
+					max-width: 43%;
+					margin-left: auto;
+					margin-right: auto;
+					margin-bottom: 48px;
+				}
+			}
+		}
 	}
 
 	%career-divider {
@@ -974,7 +1005,7 @@
 		
 		h3{
 			color:#414042;
-			font-size: 32px;	
+			font-size: 26px;	
 			@media (min-width: $break-md){
 				font-size: 45px;	
 			}
@@ -1001,7 +1032,11 @@
 		padding: 7.5px;
 	}
 	.mcust {
-			margin-bottom: 40px;
+		margin-bottom: 10px;
+			@media (min-width: $break-md ) {
+				margin-bottom: 40px;
+			}
+			
 	}
 	
 	.mob-view{
@@ -1030,7 +1065,7 @@
 	}
 	.content-text{
 		padding: 50px 0;
-		margin: 50px 0;
+		margin: 0 0 30px 0;
 		
 		@media (min-width: $break-md) {
 			padding: 96px 0;
@@ -1076,19 +1111,22 @@
 		}
 	}
 	.masonry {
-			padding-bottom: 96px;
+			padding-bottom: 20px;
+			@media (min-width: $break-sm) {
+				padding-bottom: 20px;
+			}
 	}
 } 
 
 #careers_locations_map {
 	@media (max-width: $break-sm - 1px) {
-		background-color: color(shakespeare);
-		color: #fff;
+		background-color: #fff;
+    color: initial;
 	}
 }
 
 #careers_locations_list {
-	background-color: color(shakespeare);
+	background-color: #009A8E;
 	color: #fff;
 	padding: 1rem 0;
 	@media (min-width: $break-sm) {
