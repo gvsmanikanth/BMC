@@ -177,15 +177,15 @@
 					margin-top: 20px;
 					position: relative;
 
-					&:after {
-						content: $iconSearch;
-						font-family: "icomoon";
-						font-size: 25px;
-						position: absolute;
-						right: 10px;
-						top: 5px;
-						color: #6c6c6c;
-					}
+					// &:after {
+					// 	content: $iconSearch;
+					// 	font-family: "icomoon";
+					// 	font-size: 25px;
+					// 	position: absolute;
+					// 	right: 10px;
+					// 	top: 5px;
+					// 	color: #6c6c6c;
+					// }
 					input[type="text"]{
 							border: none;
 							border-radius: 0;
@@ -1142,5 +1142,5 @@
 		}
 	}
 
-	
+
 }

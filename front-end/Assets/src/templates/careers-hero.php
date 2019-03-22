@@ -1,28 +1,3 @@
-<!--
-<section class="hero flex-col">
-	<div class="hero-image xs-only"></div>
-	<div class="hero-image video xs-max-hide">
-		<div class="vidbg-box" style="width: 650px; height: 338px;"
-			data-vidbg-bg="mp4://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized/file.mp4,webm://service.twistage.com/videos/7cdbb642154d7/formats/360p-BitRateOptimized-Webm/file.webm,poster: http://media.cms.bmc.com/designimages/careers-header.jpg"
-			data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3">
-		</div>
-	</div>
-	<div class="hero-content">
-		<strong class="ha mb2">Employees Love Us</strong>
-		<div class="h3">BMC is ranked highest among IT operations management software companies on Glassdoor</div>
-		<div class="p2 videoInstructions">Watch the video to learn more about BMC (1:00)</div>
-		<a href="http://www.bmc.com/templates/Media_Video_Mobile?vID=4P2AMa53wSY" class="modal-youtube-video-player" title="Transforming the Digital Enterprise">
-			<img class="videoIcon" src="//media.cms.bmc.com/designimages/icon-slide-video.png" class=""></div>
-		</a>
-	</div>
-	
-</section> -->
-<!--
-data-wallpaper-options='{"source":"http:////www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"}'	
-
-data-wallpaper-options="{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png",
-	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}" --> 
-
 <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{
 	"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png",
 	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"
