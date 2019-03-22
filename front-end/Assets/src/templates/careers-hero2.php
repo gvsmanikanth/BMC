@@ -2,7 +2,7 @@
 data-wallpaper-options='{"source":{
 	"fallback": "//www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg",
 	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Teams/TeamsTopBanner.jpg"
-	}}' style="background-color:#009A8E">
+	}}' style="background-color:#4C9B00">
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent">

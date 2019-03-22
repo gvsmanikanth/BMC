@@ -1,6 +1,6 @@
 <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 locations-hero"
 data-wallpaper-options='{"source":{
-	"fallback": "//www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg",
+	"fallback": "//www.bmc.com/content/dam/bmc/header-mobile-images/Teal-700x700px.jpg",
 	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Locations/LocationsTopBanner.jpg"
 	}}'  style="background-color:#009A8E">
 	<div class="offset-wrapper flex-center">
