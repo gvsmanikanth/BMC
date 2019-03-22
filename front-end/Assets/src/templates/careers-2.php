@@ -184,7 +184,7 @@
 						</div>
 						<div class="card-content">
 							<div class="h3">People</div>
-							<div class="h4"><a href="#">View  openings </a> | <a href="#People" class="modal-inline">Learn more </a></div>
+							<div class="h4"><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29393">View  openings </a> | <a href="#People" class="modal-inline">Learn more </a></div>
 						</div>
 					</div>
 					<div id="People" style="display:none;">
@@ -194,7 +194,7 @@
 								<h2 class="section-title -sm mb1">People</h2>
 								<p class="-sm">Robert "Bob" Beauchamp is chairman of the board, president and chief executive officer of BMC Software, the recognized leader in business service management.</p>
 								<p class="-sm">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
-								<button class="btn btn-primary-with-border" onclick="window.location.href=''">View  openings  &rsaquo;</button>
+								<button class="btn btn-primary-with-border" onclick="window.location.href='https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29393'">View  openings  &rsaquo;</button>
 							</div>
 						</div>
 					</section>
@@ -208,7 +208,7 @@
 						</div>
 						<div class="card-content">
 							<div class="h3">Finance &amp; Accounting</div>
-							<div class="h4"><a href="#">View  openings </a> | <a href="#Finance" class="modal-inline">Learn more </a></div>
+							<div class="h4"><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29392">View  openings </a> | <a href="#Finance" class="modal-inline">Learn more </a></div>
 						
 						</div>
 					</div>
@@ -220,7 +220,7 @@
 								<h2 class="section-title -sm mb1">Finance &amp; Accounting</h2>
 								<p class="-sm">Robert "Bob" Beauchamp is chairman of the board, president and chief executive officer of BMC Software, the recognized leader in business service management.</p>
 								<p class="-sm">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
-								<button class="btn btn-primary-with-border" onclick="window.location.href=''">View  openings  &rsaquo;</button>
+								<button class="btn btn-primary-with-border" onclick="window.location.href='https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29392'">View  openings  &rsaquo;</button>
 							</div>
 						</div>
 					</section>
@@ -234,7 +234,7 @@
 						</div>
 						<div class="card-content">
 							<div class="h3">Legal</div>
-							<div class="h4"><a href="#">View  openings </a> | <a href="#Legal" class="modal-inline">Learn more </a></div>
+							<div class="h4"><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29395">View  openings </a> | <a href="#Legal" class="modal-inline">Learn more </a></div>
 						</div>
 					</div>
 					<div id="Legal" style="display:none;">
@@ -244,7 +244,7 @@
 								<h2 class="section-title -sm mb1">Legal</h2>
 								<p class="-sm">Robert "Bob" Beauchamp is chairman of the board, president and chief executive officer of BMC Software, the recognized leader in business service management.</p>
 								<p class="-sm">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
-								<button class="btn btn-primary-with-border" onclick="window.location.href=''">View  openings  &rsaquo;</button>
+								<button class="btn btn-primary-with-border" onclick="window.location.href='https://bmcrecruit.avature.net/Careers/SearchJobs/?3_105_3=29395'">View  openings  &rsaquo;</button>
 							</div>
 						</div>
 					</section>
@@ -265,9 +265,9 @@
 					<section class="lg-flex section p3">
 						<div class="flex-auto">
 							<div class="section-content">
-								<h2 class="section-title -sm mb1">Legal</h2>
-								<p class="-sm">Robert "Bob" Beauchamp is chairman of the board, president and chief executive officer of BMC Software, the recognized leader in business service management.</p>
-								<p class="-sm">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
+								<h2 class="section-title -sm mb1">Support</h2>
+								<p class="-sm">BMC Customer Support delivers a fast and easy customer experience and accelerates the adoption of BMC technology for our customers and partners through proactive training, support, webinars, blogs and videos.</p>
+							
 								<button class="btn btn-primary-with-border" onclick="window.location.href=''">View  openings  &rsaquo;</button>
 							</div>
 						</div>
