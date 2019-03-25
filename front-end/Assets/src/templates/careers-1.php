@@ -37,23 +37,24 @@
 		<div class="section-content text-center common-cont">
 			<h3 class="mb1">A Culture of Community</h3>
 			<h4 >Opportunity at BMC are limitless when you prioritize collaboration success, and continual learning</h4>
-		</div>
-		<div class="lg-flex flex-justify-center">
-			<div class="flex-item col-12 lg-col-6 " >
-				<a href="/templates/Media_Video_Mobile?vID=b482a89cbcb94" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
-					<div class=" card-image ">
-						<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
-						<svg class="icon--playButton pos-center">
-							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
-						</svg>
-					</div>
-					<div class="card-content text-left white p1">
-						<h4> <strong>One BMC</strong> </h4>
-						<h4>At BMC, we are passionante about more than just our careers. We know that living the values that have defined BMC enables our continued success.</h4>
-					</div>
-				</a>
+			<div class="lg-flex flex-justify-center">
+				<div class="flex-item col-12 lg-col-6 " >
+					<a href="/templates/Media_Video_Mobile?vID=b482a89cbcb94" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
+						<div class=" card-image ">
+							<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
+							<svg class="icon--playButton pos-center">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
+							</svg>
+						</div>
+						<div class="card-content text-left white p1">
+							<h4> <strong>One BMC</strong> </h4>
+							<h4>At BMC, we are passionante about more than just our careers. We know that living the values that have defined BMC enables our continued success.</h4>
+						</div>
+					</a>
+				</div>
 			</div>
-		</div>	
+		</div>
+			
 
 		<!-- <div class="section-content-full text-center md-text-left">
 			<div class="owl-carousel owl-responsive owl-theme--orange">
