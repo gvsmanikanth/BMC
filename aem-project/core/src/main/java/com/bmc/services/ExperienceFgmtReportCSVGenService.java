@@ -286,7 +286,7 @@ public class ExperienceFgmtReportCSVGenService {
 	     Map<String, String> map = new HashMap<String, String>();	    
 	     // create query description as hash map (simplest way, same as form post)
 	     
-	     map.put("path", "/content/bmc/language-masters");
+	     map.put("path", "/content/bmc/language-masters/en");
 	     map.put("type", "cq:PageContent");
 	     map.put("contains", path);
 	     map.put("property.hits", "full");
@@ -523,7 +523,15 @@ public class ExperienceFgmtReportCSVGenService {
           SearchResult result = query.getResult();							            
          		 for (Hit hit : result.getHits()) {
          			Node node = hit.getResource().adaptTo(Node.class);
-         			propVals.add(node.getPath().toString());         			
+         			String propertyValue = node.getPath().toString();
+         			//Converting canonical links to the actual URLs
+         			if (!propertyValue.equals(null))
+         			{
+         				propertyValue = propertyValue.replace("/jcr:content", ".html");
+         				propertyValue = propertyValue.replace("/content/bmc/language-masters/en", "https://www.bmc.com");
+         			}
+         			
+         			propVals.add(propertyValue);      			
          		 }
          		return (String.join(",", propVals));
 	 }
