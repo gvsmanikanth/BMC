@@ -169,6 +169,19 @@
 				<img src="//media.cms.bmc.com/designimages/careers-locations-c15.jpg">
 				<div class="slide-caption">Pune, India</div>
 			</div>
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c16.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c17.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>			
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c18.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>		
+			
 		</div>
 		<div class="section-content owl-carousel-dropdown">
 			<a href="#" class="jq-dropdown-trigger jq-dropdown-orange findoff" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span><svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg></a>
@@ -192,6 +205,9 @@
 		<li><span data-owl-slide="12">Collaboration Bench in Paris, France</span></li>
 		<li><span data-owl-slide="13">Courtyard in Winnersh, UK</span></li>
 		<li><span data-owl-slide="14">Pune, India</span></li>
+		<li><span data-owl-slide="15">Tel-Hai, Israel</span></li>
+		<li><span data-owl-slide="16">Tel-Hai, Israel</span></li>
+		<li><span data-owl-slide="17">Tel-Hai, Israel</span></li>
 	</ul>
 </div>
 <?php include 'php-inc/foot.php'; ?>

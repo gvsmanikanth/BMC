@@ -16,6 +16,14 @@
 						border-color: #414042;
 						color: #fff;
 					}
+					&:visited{
+						background: #fff;
+						color: #0093C9;
+						border-color: #fff;
+					}
+
+					
+
 				}
 				.layout-inner-wrap {				
 					.add-top-bottom-margin-110px{
@@ -282,10 +290,13 @@
 			}
 	
 		}
-	.findoff{
-			background: #0093C9;
-			border-radius: 0;
-	}
+		.owl-carousel-dropdown{
+			.findoff{
+				background: #0093C9;
+				border-radius: 0;
+			}
+		}
+	
 		// teams header
 	
 		.teams-hero{
