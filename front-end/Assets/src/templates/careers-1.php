@@ -27,8 +27,8 @@
 		<div class="section-content text-center common-cont ">
 			<div class="lg-flex flex-justify-center">
 				<div class="flex-item col-12 lg-col-6 " >
-					<h3 class="mb1 ">Benifits that Work</h3>
-					<h4>From paid volunteer time off (VTO), to gym memberships, to pet insurance, to some of the best parental leave policies around, BMC benifits are another way we show you how important you are.</h4>
+					<h3 class="mb1 ">Benefits that Work</h3>
+					<h4>From paid volunteer time off (VTO), to gym memberships, pet insurance and some of the best parental leave policies around, BMC Benefits are another way we show how valued you are.</h4>
 				</div>		
 			</div>
 		</div>
@@ -36,10 +36,10 @@
 	<section id="work-for-bmc" class="section bg-white culture-com">
 		<div class="section-content text-center common-cont">
 			<h3 class="mb1">A Culture of Community</h3>
-			<h4 >Opportunity at BMC are limitless when you prioritize collaboration success, and continual learning</h4>
+			<h4 >Opportunities at BMC are limitless when you prioritize collaboration, customer success, and continual learning.</h4>
 			<div class="lg-flex flex-justify-center">
 				<div class="flex-item col-12 lg-col-6 " >
-					<a href="/templates/Media_Video_Mobile?vID=b482a89cbcb94" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
+					<a href="/templates/Media_Video_Mobile?vID=3t48hxGdBis" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
 						<div class=" card-image ">
 							<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
 							<svg class="icon--playButton pos-center">
@@ -48,7 +48,7 @@
 						</div>
 						<div class="card-content text-left white p1">
 							<h4> <strong>One BMC</strong> </h4>
-							<h4>At BMC, we are passionante about more than just our careers. We know that living the values that have defined BMC enables our continued success.</h4>
+							<h4>At BMC, we are passionate about more than just our careers because we know our success is enabled by living BMC’s defined values.</h4>
 						</div>
 					</a>
 				</div>

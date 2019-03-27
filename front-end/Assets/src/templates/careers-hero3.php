@@ -8,7 +8,7 @@ data-wallpaper-options='{"source":{
 			<div class="bannerContent">
 				<div class="layout-inner-wrap cflex-center">
 					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
-						<h1 class="white">Worldwide Locations.<br> Infinite Possibilities.</h1>						
+						<h1 class="white">Worldwide Locations<br> Infinite Possibilities</h1>						
 					</div>
 				</div>
 			</div>
@@ -20,15 +20,15 @@ data-wallpaper-options='{"source":{
 				<span class="jq-dropdown-trigger block" data-jq-dropdown="#job-openings-teams"><span><span class="xs-max-hide">Job </span>Openings by Teams</span><svg class="svg-inline pointer-event-none"><use xlink:href="#s-chevronDown" /></svg></span>
 				<div id="job-openings-teams" class="jq-dropdown jq-dropdown-relative">
 					<ul class="jq-dropdown-menu">
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/product%20development?3_105_3=29397" target="_blank">Product Development </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/sales?3_105_3=29398">Sales </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/marketing?3_105_3=29396">Marketing </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/professional%20services?3_105_3=29391">Professional Services</a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/it?3_105_3=29394">IT </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/facilities%20and%20operations?3_105_3=29390">Facilities & Operations </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/people?3_105_3=29393">People  </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/finance%20and%20accounting?3_105_3=29392">Finance & Accounting  </a></li>
-						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs/legal?3_105_3=29395">Legal  </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29397" target="_blank">Product Development </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29398">Sales </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29396">Marketing </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29391">Professional Services</a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29394">IT </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29390">Facilities & Operations </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29393">People  </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29392">Finance & Accounting  </a></li>
+						<li><a href="https://bmcrecruit.avature.net/Careers/SearchJobs?3_105_3=29395">Legal  </a></li>
 					</ul>
 				</div>
 			</div>

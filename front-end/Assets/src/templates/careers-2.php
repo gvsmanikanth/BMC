@@ -19,7 +19,7 @@
 		<div class="section-content mb2">
 		<div class="section-content team-content text-center mob-view">
 			<h3>Our Amazing Teams</h3>
-			<h4>Great work begins with great employees, and when you'r hired at BMC, you become part of a team of people who strive to continually improve every day.</h4>
+			<h4>Great work begins with exceptional employees. When you’re hired at BMC, you join a team who strive to continually improve every day.</h4>
 		</div>
 			<div class="flex-wrap mb2">
 				<div class="col-12 sm-col-6 lg-col-3 mcust pcust">
@@ -151,7 +151,7 @@
 				<div class="col-12 sm-col-6 lg-col-6 mcust pcust desk-view">
 					<div class="section-content team-content text-center flex-center">
 						<h3>Our Amazing Teams</h3>
-						<h4>Great work begins with great employees, and when you'r hired at BMC, you become part of a team of people who strive to continually improve every day.</h4>
+						<h4>Great work begins with exceptional employees. When you’re hired at BMC, you join a team who strive to continually improve every day.</h4>
 					</div>
 				</div>
 
@@ -284,7 +284,7 @@
 			<div class="lg-flex flex-wrap ">
 				<div class="image-container flex-item col col-12 sm-col-10 md-col-7">
 					<h3 >BMC Cares</h3>
-					<h4>Our Bmc Program is driven by thousands of employees who give of themselves to make the world a better place. We pursue environmental responsibilty, diversity, and inclusion, and a foundation of ethics and integrity through our policies  and operating practices.</h4>
+					<h4>Our BMC Cares Program is driven by thousands of employees who give of themselves to make the world a better place. We pursue environmental responsibility, diversity, inclusion, and a foundation of ethics and integrity through our policies and operating practices.</h4>
 					<p>- Peter Leav, President & CEO, BMC</p>
 				</div>
 			</div>
