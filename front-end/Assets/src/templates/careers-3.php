@@ -98,7 +98,7 @@
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9412">Korea</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9413">Malaysia</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9419">Philippines</a>
-							<a href="hhttps://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9424">Singapore</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9424">Singapore</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9429">Taiwan</a>
 							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9430">Thailand</a>
 						</div>
