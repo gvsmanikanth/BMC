@@ -9,10 +9,7 @@
 					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
 						<h1 class="white">BMC + You</h1>
 						<h2>When your career and your company are the perfect match, every day is inspiring and energizing.</h2>
-						<div class="button-wrapper">
-							<a class="btn-white learn-more " href="https://bmcrecruit.avature.net/Careers/SearchJobs">View Open positions</a>
-							
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -67,6 +64,7 @@
 				<fieldset>
 					<div class="pxsm-flex max-wd-770px searchDiv">
 					<input name="query" title="Search" value="" id="query" placeholder="Search job by keyword" class="search-input-box max-wd-770px" type="text">
+					<button></button>
 					</div>
 				</fieldset>
 			</form>

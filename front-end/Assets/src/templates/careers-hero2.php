@@ -63,6 +63,7 @@ data-wallpaper-options='{"source":{
 					<fieldset>
 						<div class="pxsm-flex max-wd-770px searchDiv">
 						<input name="query" title="Search" value="" id="query" placeholder="Search job by keyword" class="search-input-box max-wd-770px" type="text">
+						<button></button>
 						</div>
 					</fieldset>
 				</form>

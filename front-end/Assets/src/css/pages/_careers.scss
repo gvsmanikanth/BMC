@@ -44,7 +44,7 @@
 				.section-content {
 					padding: 2.2rem 0;
 					@media (min-width: $break-md) {
-						padding: 5rem 0;
+						padding: 96px 0 92px 0;
 					}
 				}
 				.common-cont {
@@ -75,6 +75,7 @@
 					h4{					
 						@media(min-width: $break-md){
 							margin: 22px auto 8px auto;
+							    max-width: 45%;
 						}
 					}
 				}
@@ -97,6 +98,7 @@
 							font-size: 16px;
 							@media(min-width: $break-md){
 								font-size: 22px;
+								max-width: initial;
 							}	
 							strong {
 								font-weight: 600;
@@ -203,15 +205,7 @@
 						margin-top: 20px;
 						position: relative;
 	
-						&:after {
-							content: $iconSearch;
-							font-family: "icomoon";
-							font-size: 25px;
-							position: absolute;
-							right: 10px;
-							top: 5px;
-							color: #6c6c6c;
-						}
+						
 						input[type="text"]{
 								border: none;
 								border-radius: 0;
@@ -219,6 +213,26 @@
 								height: 42px;				
 						}
 						
+						button {
+							position: absolute;
+							right: 0;
+							top: 0;
+							padding: 4px 24px;
+							height: 42px;
+							border: none;
+							background: transparent;
+							margin: 0;
+
+							&:after {
+								content: $iconSearch;
+								font-family: "icomoon";
+								font-size: 25px;
+								position: absolute;
+								right: 10px;
+								top: 10px;
+								color: #6c6c6c;
+							}
+						}
 					}
 					width: 100%;
 					text-align: center;	
@@ -307,6 +321,11 @@
 					h1{				
 						@media (min-width: $break-md) {
 							font-size: 62px;										
+						}
+					}
+					h2{				
+						@media (min-width: $break-md) {
+							margin-top: 45px;									
 						}
 					}
 				}
@@ -922,7 +941,7 @@
 				padding-top: 3rem;
 			}
 			@media (min-width: $break-lg) {
-				padding-top: 87px;
+				padding-top: 90px;
 			}
 		}
 	}
@@ -1047,12 +1066,12 @@
 			 }
 		}
 		.pcust {
-			padding: 7.5px;
+			padding: 7px;
 		}
 		.mcust {
 			margin-bottom: 10px;
 				@media (min-width: $break-md ) {
-					margin-bottom: 40px;
+					margin-bottom: 32px;
 				}
 				
 		}
@@ -1086,8 +1105,8 @@
 			margin: 0 0 30px 0;
 			
 			@media (min-width: $break-md) {
-				padding: 96px 0;
-				margin: 20px 0 86px 0;	
+				padding: 87px 0 69px 0;
+				margin: 38px 0 86px 0;	
 			}
 			h3,h4{ font-weight: 400; color: #fff; }
 			h3{
@@ -1102,6 +1121,7 @@
 				@media (min-width: $break-md) {
 					font-size: 22px;
 					padding: 0;
+					margin-top: 0;
 				}
 				&:after {
 					content: "";
@@ -1155,7 +1175,7 @@
 			padding: 2rem 0;
 		}
 		@media (min-width: $break-lg) {
-			padding: 3rem 0;
+			padding: 90px 0 42px 0;	
 		}
 		a {
 			color: #fff;
@@ -1169,7 +1189,7 @@
 	}
 	
 	#careers_locations_owl {
-		padding-bottom: 150px;
+		padding-bottom: 192px;
 		.owl-carousel {
 			z-index: 1;
 		}
@@ -1179,7 +1199,7 @@
 		.jq-dropdown-trigger {
 			left: 50%;
 			position: absolute;
-			top: 35px;
+			top: 49px;
 			transform: translateX(-50%);
 		}
 	}

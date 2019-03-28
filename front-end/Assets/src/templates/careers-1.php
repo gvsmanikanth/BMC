@@ -19,7 +19,7 @@
 		<div class="section-content mb2 common-cont">
 			<h3 class=" mb1">Do What You Love.</h3>
 			<h4 >Cultivate your career with a company <br> of collaborators and innovators</h4>
-			<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/OverviewGroupPhoto.jpg" class="block-center ">
+			<img src="http://www.bmc.com/content/dam/bmc/corporate/Overview/OverviewGroupPhoto.jpg" class="block-center ">
 		</div>
 	</section>
 	
@@ -39,18 +39,19 @@
 			<h4 >Opportunities at BMC are limitless when you prioritize collaboration, customer success, and continual learning.</h4>
 			<div class="lg-flex flex-justify-center">
 				<div class="flex-item col-12 lg-col-6 " >
-					<a href="/templates/Media_Video_Mobile?vID=3t48hxGdBis" target="_self" class="card flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
+					<a href="/templates/Media_Video_Mobile?vID=3t48hxGdBis" target="_self" class=" flex-col video-play modal-video-player" onclick="s_objectID=&quot;http://www.bmc.com/templates/Media_Video_Mobile?vID=3t48hxGdBis&quot;;return this.s_oc?this.s_oc(e):true">
 						<div class=" card-image ">
-							<img src="http:////www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
+							<img src="http://www.bmc.com/content/dam/bmc/corporate/Overview/VideoPlayerImage.jpg">
 							<svg class="icon--playButton pos-center">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use>
 							</svg>
 						</div>
+						</a>	
 						<div class="card-content text-left white p1">
 							<h4> <strong>One BMC</strong> </h4>
 							<h4>At BMC, we are passionate about more than just our careers because we know our success is enabled by living BMC’s defined values.</h4>
 						</div>
-					</a>
+					
 				</div>
 			</div>
 		</div>

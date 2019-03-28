@@ -19,7 +19,7 @@
 		<div class="section-content common-cont">
 			<h3 class="mb1">Around the World and Right at Home</h3>
 			<h4 >BMC has locations in every major continent and offers generous work-from-home flexibility, so you can work where you work best!</h4>			
-			<img src="http:////www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" class="block-center desktop-only">
+			<img src="http://www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" class="block-center desktop-only">
 			<img src="https://www.bmc.com/content/dam/bmc/corporate/MobileImages/Locations_map_680px%20x%20360p.png" class="block-center mobile-only">
 		</div>
 	</section>
