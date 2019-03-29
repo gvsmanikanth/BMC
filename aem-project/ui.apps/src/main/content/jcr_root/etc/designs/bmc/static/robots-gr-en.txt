@@ -35,7 +35,7 @@
 #  ;;;;;;;;;;                                                                               
 #  ;;;;;;;;                                                                                 
 #  ;;;;;;                                                                                   
-#   ;;;;   
+#   ;;;; 
 
 
 User-agent: *
@@ -53,7 +53,7 @@ Disallow: /info/dwdjosmhbn.html
 Disallow: /apps
 Disallow: /available
 Disallow: *ty.PURL*
-Sitemap: http://www.bmc.com/sitemap.xml
+Sitemap: http://www.bmcsoftware.gr/sitemap.xml
 
 User-agent: Nutch
 Disallow: /
