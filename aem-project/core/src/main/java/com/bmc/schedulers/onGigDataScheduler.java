@@ -32,15 +32,16 @@ import com.bmc.services.OnGigDataServiceImpl;
         immediate = true,
         metatype = true
 )
- 
+ 	
 
 
         @Property(
                 label = "Cron expression defining when this Scheduled Service will run",
                 description = "[every 10 minutes = 10 * * * * ?], [12:01am daily = 0 1 0 ? * *]",
                 name = "scheduler.expression",
-                value = "0 0 0 1/1 * ? *"
-               
+                /*Removed the scheduler expression to disable the ongig integration as a part of WEB-4850
+                value = "0 0 0 1/1 * ? *"*/
+                value = ""
         )
        
 @Service
