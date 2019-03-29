@@ -9,7 +9,7 @@ public class ExperienceFragmentReportDataItem {
 	
 	private String Exp_Fragment_URL;
 	
-	private Date Created_Date;
+	private String Created_Date;
 	
 	private String LastModifiedDate;
 	
@@ -24,6 +24,8 @@ public class ExperienceFragmentReportDataItem {
 	private String LastReplicatedBy;
 	
 	private String migration_content_id;
+	
+	private String fieldSetAuthor;
 	
 	public String getMigration_content_id() {
 		return migration_content_id;
@@ -100,11 +102,11 @@ public class ExperienceFragmentReportDataItem {
 		Exp_Fragment_URL = exp_Fragment_URL;
 	}
 
-	public Date getCreated_Date() {
+	public String getCreated_Date() {
 		return Created_Date;
 	}
 
-	public void setCreated_Date(Date created_Date) {
+	public void setCreated_Date(String created_Date) {
 		Created_Date = created_Date;
 	}
 
@@ -156,6 +158,14 @@ public class ExperienceFragmentReportDataItem {
 
 	public void setReferencePaths(String referencePaths) {
 		this.referencePaths = referencePaths;
+	}
+
+	public String getFieldSetAuthor() {
+		return fieldSetAuthor;
+	}
+
+	public void setFieldSetAuthor(String fieldSetAuthor) {
+		this.fieldSetAuthor = fieldSetAuthor;
 	}
 
 	
