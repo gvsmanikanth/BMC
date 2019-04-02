@@ -135,6 +135,7 @@ fieldset:not(#foo) {
 	
 	//DXP-1112 - Added P tags style attribute to support text inside fieldset.
 	.cmp-text{
+		
 		line-height: 1.45;
 		@include font-size(14);
   		margin: 0 0 1.78571em 0; 

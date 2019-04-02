@@ -49,6 +49,14 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			$submitButton = $form.find('button[type="submit"]'),
 			ajaxForm = $form.data('ajax-url') !== undefined;	// boolean that determines if a form is submitted with AJAX
 
+			//checking the forms-redesign class is present or not			
+			var redesign_form_flag;	
+			if ( $('form').children().find('.forms-redesign').length ) {
+				redesign_form_flag = 1;					
+			} else {
+				redesign_form_flag = 0;
+			}			
+
 		// initialize the form state
 		$form.data('valid', true);
 		enableLoadingState($submitButton);
@@ -86,17 +94,25 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			else if (radioOrCheckbox) {
 				$('[name="' + name + '"]').parent().find('label').addClass('validation-error');
 			}
-			else {
+			else {		
+	
 				$input.addClass('validation-error');
-
 				//Logic to show Error hint
 				var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
-				$input.prev('label:first').text(err_hint);
+
+					if(redesign_form_flag){				
+						$input.next('.error-text').text(err_hint);
+					}else {
+						$input.prev('label:first').text(err_hint);
+					}
+			
+			
 			}
 			
 			// reset to Original Label
 			$input
-			.on('keyup change', function() {
+			.on('keyup change', function() {		
+				
 			  if($input.val().length == 0)
 			    $input.prev('label:first').text($input.attr('placeholder'));
 			});
@@ -128,8 +144,23 @@ if($('#leadgen') || $('#nonleadgen'))	{
 
 			$form
 				.data('valid', false);
-		}
 
+			// validation for every key input
+			$input.keyup(function() {
+				$(this).addClass('valid-input');
+				$(this).next().text('');
+			//	console.log($input);
+				// var inputVal = $input.val();
+				// var alphaOnly = $this.patterns["alpha-only"];
+				// if(alphaOnly.test(inputVal)){
+				// 		$(this).addClass('valid-input');
+				// 		$(this).next().text('');
+				// }					
+			});	
+
+		}
+		
+		
 		function scrollToForm() {
 			$('html, body')
 				.animate({
