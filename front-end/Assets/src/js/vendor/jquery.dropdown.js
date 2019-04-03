@@ -129,7 +129,11 @@ if (jQuery) (function ($) {
     }
 
     $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);
+    $(document).on('touchstart.jq-dropdown', '[data-jq-dropdown]', show);
+ 
     $(document).on('click.jq-dropdown', hide);
+    $(document).on('touchstart.jq-dropdown', hide);
+    
     $(window).on('resize', position);
 
 })(jQuery);
