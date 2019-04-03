@@ -1,15 +1,14 @@
-<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{
-	"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png",
-	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/OverviewTopBanner.jpg"
-	}}' style="background-color:#0091DD" >
+<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 teams-hero" 
+data-wallpaper-options='{"source":{
+	"fallback": "//www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg",
+	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Teams/TeamsTopBanner.jpg"
+	}}' style="background-color:#4C9B00">
 	<div class="offset-wrapper flex-center">
 		<div class="inner">
 			<div class="bannerContent">
-				<div class="layout-inner-wrap">
+				<div class="layout-inner-wrap cflex-center">
 					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
-						<h1 class="white">BMC + You</h1>
-						<h2>When your career and your company are the perfect match, every day is inspiring and energizing.</h2>
-						
+						<h1 class="white">Great Collaboration <br> Amazing Innovations</h1>						
 					</div>
 				</div>
 			</div>
@@ -61,15 +60,15 @@
 			</div>			
 		</div>
 		<div class="col-12 container">
-			<form method="get" onsubmit="return validateForm();" class="searchForm">
-				<fieldset>
-					<div class="pxsm-flex max-wd-770px searchDiv">
-					<input name="query" title="Search" value="" id="query" placeholder="Search job by keyword" class="search-input-box max-wd-770px" type="text">
-					<button></button>
-					</div>
-				</fieldset>
-			</form>
-		</div>
+		<form method="get" onsubmit="return validateForm();" class="searchForm">
+					<fieldset>
+						<div class="pxsm-flex max-wd-770px searchDiv">
+						<input name="query" title="Search" value="" id="query" placeholder="Search job by keyword" class="search-input-box max-wd-770px" type="text">
+						<button></button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
 	</div>
 </section>
 

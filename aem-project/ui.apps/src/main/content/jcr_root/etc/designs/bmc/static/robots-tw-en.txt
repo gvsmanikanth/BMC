@@ -53,7 +53,7 @@ Disallow: /info/dwdjosmhbn.html
 Disallow: /apps
 Disallow: /available
 Disallow: *ty.PURL*
-Sitemap: http://www.bmc.com/sitemap.xml
+Sitemap: http://www.bmcsoftware.tw/sitemap.xml
 
 User-agent: Nutch
 Disallow: /
