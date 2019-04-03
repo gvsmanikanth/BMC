@@ -331,8 +331,8 @@
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
-                                             <label for="C_State_Prov" class="">State or Province</label>
-                                             <input type="text" id="C_State_Prov" placeholder="State or Province" name="C_State_Prov" required="false"/>
+                                             <label for="C_State_Prov1" class="">State or Province</label>
+                                             <input type="text" id="C_State_Prov1" placeholder="State or Province" name="C_State_Prov1" required="false"/>
                                           </div>
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <label for="C_Product_Interest1" class=""></label>

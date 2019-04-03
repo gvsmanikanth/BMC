@@ -113,8 +113,10 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			$input
 			.on('keyup change', function() {		
 				
-			  if($input.val().length == 0)
-			    $input.prev('label:first').text($input.attr('placeholder'));
+				if($input.val().length == 0)
+					if(!redesign_form_flag){	
+						$input.prev('label:first').text($input.attr('placeholder'));
+					}
 			});
 
 			// remove error styles if a value is changed
@@ -125,7 +127,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						.removeClass('validation-error')
 						.parent()
 						.removeClass('validation-error');
-						$(this).addClass('valid-input');
+					
 
 					//clears out valid all radios in groups
 					if($(this).is('[type="radio"]')){
@@ -147,31 +149,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				.data('valid', false);
 
 
-
-			// validation for every key input
-			if(redesign_form_flag){	
-				$input.blur(function() {	
-						var $input = $(this);
-						var	value = $input.val(),
-						required = $input.attr('required') !== undefined,
-						type = $input.attr('type');
-						console.log(type);
-						
-						if(type == 'text'){
-							var validationType = ($input.data('validation-type')) ? $input.data('validation-type') : type;
-							if(validationType == 'first-name'){
-								var alphaOnly = new RegExp($this.patterns["alpha-only"]);
-								if(alphaOnly.test($input)){
-									$(this).addClass('valid-input');
-								}
-							}
-						}
-						
-
-						
-				});
-					
-		}  //IF CONDITION FOR FORM REDESIGN
+		
 
 		}
 		
@@ -302,4 +280,8 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				}
 			});
 	};
+
+		
+	
 }) (jQuery);
+
