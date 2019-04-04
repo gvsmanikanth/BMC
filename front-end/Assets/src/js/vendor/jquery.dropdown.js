@@ -128,12 +128,19 @@ if (jQuery) (function ($) {
         }
     }
 
-    $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);
-    $(document).on('touchstart.jq-dropdown', '[data-jq-dropdown]', show);
- 
-    $(document).on('click.jq-dropdown', hide);
-    $(document).on('touchstart.jq-dropdown', hide);
-    
+   
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if(iOS){
+        $(document).on('touchstart.jq-dropdown', '[data-jq-dropdown]', show);
+        $(document.body).click( function(e) {
+            $('.jq-dropdown').css('display', 'none');
+       });
+        //$(document).on('touchstart.jq-dropdown', hide);
+    } else {
+        $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);     
+        $(document).on('click.jq-dropdown', hide);
+    }
+
     $(window).on('resize', position);
 
 })(jQuery);
