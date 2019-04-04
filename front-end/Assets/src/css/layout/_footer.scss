@@ -29,7 +29,7 @@
 	--background-position: left 10px;
 	background-repeat: no-repeat;
 	background-size: auto;
-	max-width: 200px;
+	max-width: 125px;
 	height: 45px;
 	margin-bottom: em(30);
 	margin-right: 0rem;
@@ -48,8 +48,7 @@
 		float: $defaultFloat;
 		min-height: 1px;
 		width: 100%; //BMC-527 Added default width 100%;
-		--margin: 0;
-		width: columns(1.2);
+		--width: columns(1.2);
 		margin-right: 2.5rem;
 		--margin-left: -0.5rem;  
 	}
