@@ -1,79 +1,84 @@
-.forms-redesign{
+.form2{
     
-    fieldset:not(#foo){
-        label{
-            margin-bottom: 5px;
-            color: #000;
-        }
-        .decorator-select 
-        {
-            margin-top: 0;
-            margin-bottom: 0;
-            select {
-                background: #fff;
-             }
-             // arrow down options for select fields
-             &:after {
-                content: "\e601";
-                height: 48px;
-                pointer-events: none;
-                position: absolute;
-                right: 0;
-                top: 15px;
-                width: 58px;
-                z-index: (z(content)+1);
-                font-family: 'icomoon';
+   
+    form{
+        padding: 1.5em;
+        background: #f0f0f0;
+        width: auto;
+        .btn-secondary {
+            background-color: #000;
+            border-color: #000;
+            text-transform: uppercase;
+    
+            + p{
                 text-align: center;
             }
+        } 
+        #C_OptIn_group{
+            display: block
         }
-        .cmp-options {
-            padding-top: .5em;
-            padding-bottom: .5em;
-        }
-        .decorator-select.validation-error{
-            padding: 0;
-        }
+        .cmp-title{
+            h3,h5{
+                font-weight: 400;
+            }       
+        }  
 
-        // aligning valdation exlamation at the right side
-        .validation-error{
-            background-position: 97%;
-            padding: 0.44444em 1.77778em 0.44444em 0.44444em ;
-        }
-        .valid-input {
-            border: 2px solid #37a447;
-            background: #fff url(head/icon-error.png) .44444em center no-repeat;
-        }
-        .error-text {
-            color: #de2a12;
-            padding: 8px 0 0 0;
-            display: inline-block;
-            font-size: 14px;
-            font-style: italic;
-        }
-    }
 
-}
-
-.form_wrap{
-    padding: 1.5em;
-    background: #f0f0f0;
-    .btn-secondary {
-        background-color: #000;
-        border-color: #000;
-        text-transform: uppercase;
-
-        + p{
-            text-align: center;
-        }
-    } 
-    #C_OptIn_group{
-        display: block
-    }
-    .cmp-title{
-        h3,h5{
-            font-weight: 400;
-        }       
-    }
+        fieldset:not(#foo){
+            label{
+                margin-bottom: 5px;
+                color: #000;
+            }
+            .decorator-select 
+            {
+                margin-top: 0;
+                margin-bottom: 0;
+                select {
+                    background: #fff;
+                 }
+                 // arrow down options for select fields
+                 &:after {
+                    content: "\e601";
+                    height: 48px;
+                    pointer-events: none;
+                    position: absolute;
+                    right: 0;
+                    top: 15px;
+                    width: 58px;
+                    z-index: (z(content)+1);
+                    font-family: 'icomoon';
+                    text-align: center;
+                }
+            }
+            .cmp-options {
+                padding-top: .5em;
+                padding-bottom: .5em;
+            }
+            .decorator-select.validation-error{
+                padding: 0;
+            }
     
-       
+            // aligning valdation exlamation at the right side
+            .validation-error{
+                background-position: 97%;
+                padding: 0.44444em 1.77778em 0.44444em 0.44444em ;
+            }
+            .valid-input {
+                border: 2px solid #37a447;
+                background: #fff url(head/icon-error.png) .44444em center no-repeat;
+            }
+            .error-text {
+                color: #de2a12;
+                padding: 8px 0 0 0;
+                display: inline-block;
+                font-size: 14px;
+                font-style: italic;
+            }
+        }   
+           
+    }
+
+    
+
 }
+

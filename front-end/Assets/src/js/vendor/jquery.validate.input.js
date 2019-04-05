@@ -2,9 +2,7 @@
 	
 
 (function($) {
-    //checking the forms-redesign class is present or not			
-   
-
+    //checking the form2 class is present or not	
 	$.fn.validateInputs = function() {
 		var $this = this;	          
 
@@ -65,7 +63,7 @@
 
 		}	
 		      
-    if ( $('form').children().find('.forms-redesign').length ) {  
+    if ( $('body').hasClass('form2') ) {  
         $inputs = $('form').find('input, textarea, select'),      
         $inputs.validateInputs();				
     } 

@@ -1,59 +1,46 @@
 <?php
 	$pageTitle = 'Contact Us Forms new';
-	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav';
+	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2';
 	include_once 'php-inc/head.php';
 ?>
 
 
 <div class="page-campaign-landing">
-   <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('//www.bmc.com/content/dam/bmc/forms/banners/Generic_form_banner.png');">
+   <section class="layout-full-bleed layout-full-bleed-image ornate-header" style="background-image: url('//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg');">
       <!-- has foreground image -->
-      <!-- no foreground image -->
-      <div class="layout-inner-wrap py2">
-         <h1>
-            <span>
-            Contact BMC Sales
-            </span>
-         </h1>
-      </div>
+      <!-- no foreground image -->            
+      <div class="flex">
+         <div class="flex-item col-6"></div>
+         <div class="flex-item col-6 text-left text-white">
+            <h4>Explore the next wave of IT Automation</h4>
+            <ul>
+               <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
+               <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
+               <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
+            </ul>
+         </div>
+      </div>              
    </section>
 </div>
 </div>
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   layout-full-bleed">
       <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
-         <section>
-            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+         <section class="">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap pt0 mt0">
                <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                        <h2></h2>
-                     </div>
-                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                        <p>Thank you for your interest in BMC Solutions. Please provide your contact details and area of interest and someone will get back to you<b> as soon as possible.</b><br /></p>
-                        <p>Whether you're in the early stages of product research, evaluating competitive solutions, or just trying to scope your needs to begin a project, we're happy to help you get the information you need to move forward with your IT initiatives.<br />             </p>
-                     </div>
-                     <div class="Forbes-global responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                        <section class="feature-message">
-                           <div class="layout-inner-wrap">
-                              <h2 style="text-align: center;">BMC solutions power <span>92</span> of the<span><br> Forbes Global 100</span> </h2>
-                        </section>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
                         <div class="cmp cmp-form aem-GridColumn aem-GridColumn--default--12">
-                           <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" class="aem-Grid aem-Grid--12 aem-Grid--default--12  customerform form_wrap" data-leadgen="leadgen">
+                           <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" 
+                              class="aem-Grid aem-Grid--12 aem-Grid--default--12  customerform " data-leadgen="leadgen">
                               <input type="hidden" name="_charset_" value="UTF-8"/>
                               <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
                               <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                 <h3>Sign up for a free trial of Control-M</h3>
-                                 <h5>All elds are required for completion</h5>
+                                 
                               </div>
                               <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                    <div class="field-set forms-redesign responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                    <div class="field-set  responsivegrid aem-GridColumn aem-GridColumn--default--12">
                                        <fieldset class="aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--phone--12  ">
                                           <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
@@ -95,8 +82,8 @@
                                                 <option value="Manager">Manager</option>
                                                 <option value="IT Professional">IT Professional</option>
                                                 <option value="Business Professional">Business Professional</option>    
-                                            </select>
-                                            <span class="error-text"></span>
+                                             </select>
+                                             <span class="error-text"></span>
                                              
                                           </div>
                                           <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
@@ -428,9 +415,26 @@
                         </div>
                      </div>
                   </div>
+                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
+                        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                           <h2></h2>
+                        </div>
+                        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                           <p>Thank you for your interest in BMC Solutions. Please provide your contact details and area of interest and someone will get back to you<b> as soon as possible.</b><br /></p>
+                           <p>Whether you're in the early stages of product research, evaluating competitive solutions, or just trying to scope your needs to begin a project, we're happy to help you get the information you need to move forward with your IT initiatives.<br />             </p>
+                        </div>
+                        <div class="Forbes-global responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                           <section class="feature-message">
+                              <div class="layout-inner-wrap">
+                                 <h2 style="text-align: center;">BMC solutions power <span>92</span> of the<span><br> Forbes Global 100</span> </h2>
+                           </section>
+                           </div>
+                        </div>
+                  </div>              
                </div>
          </section>
-         </div>
+      </div>
    </section>
    </div>
 </div>
