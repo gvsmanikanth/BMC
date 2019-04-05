@@ -40,11 +40,11 @@
             padding: 0.44444em 1.77778em 0.44444em 0.44444em ;
         }
         .valid-input {
-            border: 2px solid #4caf50;
+            border: 2px solid #37a447;
             background: #fff url(head/icon-error.png) .44444em center no-repeat;
         }
         .error-text {
-            color: #f00;
+            color: #de2a12;
             padding: 8px 0 0 0;
             display: inline-block;
             font-size: 14px;
@@ -55,11 +55,12 @@
 }
 
 .form_wrap{
-    padding: 1em;
-    background: #f1f1f1;
+    padding: 1.5em;
+    background: #f0f0f0;
     .btn-secondary {
         background-color: #000;
         border-color: #000;
+        text-transform: uppercase;
 
         + p{
             text-align: center;
@@ -67,6 +68,11 @@
     } 
     #C_OptIn_group{
         display: block
+    }
+    .cmp-title{
+        h3,h5{
+            font-weight: 400;
+        }       
     }
     
        

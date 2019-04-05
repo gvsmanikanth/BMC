@@ -48,9 +48,8 @@
                               <input type="hidden" name="_charset_" value="UTF-8"/>
                               <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
                               <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                 <h5>
-                                    Please complete this form for a call back.
-                                 </h5>
+                                 <h3>Sign up for a free trial of Control-M</h3>
+                                 <h5>All elds are required for completion</h5>
                               </div>
                               <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
@@ -395,15 +394,30 @@
                                                       I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
                                                       </label>
                                                    </li>
+                                                   <hr>
+                                                   <li>
+                                                      <input name="" id="C_aggr" value="Yes" type="checkbox" checked="">
+                                                      <label for="C_aggr">
+                                                      Yes, I agree to the terms of the <a href="#.">Online Trial Agreement</a>  
+                                                      </label>
+                                                   </li>
+                                                   <li>
+                                                      <input name="" id="C_gdpr" value="Yes" type="checkbox" checked="">
+                                                      <label for="C_gdpr">
+                                                      GDPR message   
+                                                      </label>
+                                                   </li>
+                                                   <hr>
                                                 </ol>
                                              </div>
+                                             
                                           </div>
                                        </fieldset>
                                     </div>
                                  </div>
                               </div>
-                              <button type="SUBMIT" class="btn-secondary">Contact Me</button>
-                              <p>By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
+                              <div class="text-center"> <button type="SUBMIT" class="btn-secondary">Start Your Trial</button></div>
+                              <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
                               <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
                               <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
                               <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>
