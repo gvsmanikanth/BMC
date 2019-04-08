@@ -139,7 +139,12 @@
         	<artifactId>poi-ooxml</artifactId>
         	<version>3.16</version>
     	</dependency>
-		<!-- WEB- 2437 Added Dependency for APache Poi workbook/report generation END -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
+        <!-- WEB- 2437 Added Dependency for APache Poi workbook/report generation END -->
     </dependencies>
 
     <!-- ====================================================================== -->
