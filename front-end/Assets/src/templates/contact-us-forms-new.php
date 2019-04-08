@@ -9,10 +9,10 @@
    <section class="layout-full-bleed layout-full-bleed-image ornate-header" style="background-image: url('//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg');">
       <!-- has foreground image -->
       <!-- no foreground image -->            
-      <div class="flex">
-         <div class="flex-item col-6"></div>
-         <div class="flex-item col-6 text-left text-white">
-            <h4>Explore the next wave of IT Automation</h4>
+      <div class="flex layout-inner-wrap">
+         <div class="flex-item  md-col-6"></div>
+         <div class="flex-item md-col-6 text-left text-white">
+            <h4>How can the BMC sales team help?</h4>
             <ul>
                <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
                <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
@@ -21,14 +21,14 @@
          </div>
       </div>              
    </section>
-</div>
-</div>
-<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-   <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   layout-full-bleed">
-      <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
-         <section class="">
-            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap pt0 mt0">
-               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+
+
+   <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+      <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+         <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+            <section class="">
+               <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap pt0 mt0">
+                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
                         <div class="cmp cmp-form aem-GridColumn aem-GridColumn--default--12">
                            <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" 
@@ -36,7 +36,8 @@
                               <input type="hidden" name="_charset_" value="UTF-8"/>
                               <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
                               <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                 
+                                 <h1>Sign up for a free trial of Control-M</h1>
+                                 <h5>All fields are required for completion </h5>
                               </div>
                               <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
@@ -421,23 +422,65 @@
                            <h2></h2>
                         </div>
                         <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                           <p>Thank you for your interest in BMC Solutions. Please provide your contact details and area of interest and someone will get back to you<b> as soon as possible.</b><br /></p>
-                           <p>Whether you're in the early stages of product research, evaluating competitive solutions, or just trying to scope your needs to begin a project, we're happy to help you get the information you need to move forward with your IT initiatives.<br />             </p>
-                        </div>
-                        <div class="Forbes-global responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                           <section class="feature-message">
-                              <div class="layout-inner-wrap">
-                                 <h2 style="text-align: center;">BMC solutions power <span>92</span> of the<span><br> Forbes Global 100</span> </h2>
-                           </section>
-                           </div>
-                        </div>
+                           <img src="https://www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" alt="" >
+                           <p>We know you need to keep running your
+                           business, even while you reinvent it. Our
+                           solutions address business challenges in service
+                           management, automation, operations and the
+                           mainframe. The more you can tell us about
+                           your unique business needs, the better we can
+                           support your digital transformation, and keep
+                           your focus on meeting your goals.<br />
+                           </p>                           
+                        </div>                        
                   </div>              
                </div>
-         </section>
-      </div>
-   </section>
+            </section>
+         </div>
+      </section>
+
+      <section class="contact-info layout-inner-wrap p3">
+         <div class="flex">
+            <div class="flex-item md-col-6 lg-col-4 p1">
+               <div class="contact-block">
+                  <h3 class="block-title">Customer Support</h3>
+                  <address>
+                  Business hours <br>
+                  7:00 a.m. - 7:00 p.m. Central Time<br>
+                  Support line open 24/7 <br>
+                  Telephone : <a href="tel:+7139182950"></a> (713) 918 2950</a> <br>
+                  Toll-Free : <a href="tel:+8005371813">(800) 537 1813 </a><br>
+                  <a href="mailto:customer_support@bmc.com" target="_top">customer_support@bmc.com</a>  
+                  </address>
+               </div>
+            </div>
+            <div class="flex-item md-col-6 lg-col-4 p1">
+               <div class="contact-block">
+                  <h3 class="block-title">Sales</h3>
+                  <p><a href="tel:+8558347487">(855) 834-7487 – Press Option 1 for sales BMC Sales Contact Form </a></p>
+                  <h3 class="block-title">General Comments and Feedback</h3>
+                  <p><a href="tel:+8008412031">(800) 841-2031</a></p>
+
+               </div>
+            </div>
+            <div class="flex-item md-col-6 lg-col-4 p1">
+               <div class="contact-block">
+                  <h3 class="block-title">Corporate Headquarters</h3>
+                  <address>
+                     2103 CityWest Boulevard <br>
+                     Houston, Texas 77042 <br>
+                    <a href="tel:+8007934262"> (800) 793-4262</a>
+                  </address>
+                  <address>
+                  Executive Brie􀃒ng Center <br>
+                  <a href="tel:+8007934262">(800) 793-4262</a><br>
+                  Information
+                  </address>
+               </div>
+            </div>                    
+         </div>  
+      </section>
    </div>
-</div>
 </div>
 
 <?php include_once 'php-inc/foot.php'; ?>
