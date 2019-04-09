@@ -1,0 +1,93 @@
+.trialform-thank-you{
+    background: #fff;
+   section{
+
+        padding: 30px 0;
+        @media (min-width: $break-sm) {
+            padding: 50px 0;
+        }
+        .md-flex{
+            @media (max-width: 800px) {
+                display: flex;
+                flex-flow: column;
+            }
+        }       
+        .img-wrap{
+            @media (max-width: 800px) {
+                order: 1;
+                padding:0 0 10px 0; 
+            }           
+        } 
+        .content-wrap{
+            @media (max-width: 800px) {
+                order: 2;
+                padding:0; 
+            }           
+        } 
+    }
+    
+
+    blockquote {
+        margin: 0 auto;
+        max-width: 1440px;
+        h1 {
+            font-weight: 400;
+            color: #fff;         
+            font-size: 3.27778rem;
+        }
+        p{
+            @media (min-width: $break-sm) {
+                font-size: 1.4rem;
+                margin-bottom: 0;
+                max-width: 500px;
+            }
+           
+            color: #fff;
+           
+        }
+    }
+    .page-caption{
+        h2{
+            color: #414042;
+            font-weight: 400;
+            margin: 0;
+            
+            @media (min-width: $break-sm) {
+                line-height: 1.45em;
+                 font-size: 1.96667rem;
+            }
+        }
+    }
+   
+             
+   
+    .content-wrap{
+        h2{
+            color: #414042;
+            font-weight: 400;
+            margin: 0 0 1em 0;
+            text-align: left;
+           
+            @media (min-width: $break-sm) {
+                line-height: 1.45em;
+                font-size: 2.66667rem;
+            }
+        }
+        p{           
+            @media (min-width: $break-sm) {
+                font-size: 1.4rem;
+            } 
+        }
+        li{
+            @media (min-width: $break-sm) {
+                font-size: 1.2rem;
+            }             
+            a{  
+                color: #fe5000;
+            }
+        }
+        a{  
+            color: #fe5000;
+        }
+    }
+}

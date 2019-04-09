@@ -11,7 +11,7 @@
       <!-- no foreground image -->            
       <div class="flex layout-inner-wrap">
          <div class="flex-item  md-col-6"></div>
-         <div class="flex-item md-col-6 text-left text-white">
+         <div class="flex-item md-col-6 text-left text-white py2">
             <h4>How can the BMC sales team help?</h4>
             <ul>
                <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
