@@ -10,7 +10,7 @@
         cq:template="/conf/bmc/settings/wcm/templates/form-thank-you"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page"
-        bodyClass="page-campaign-landing bmc-nav-loader-nav">
+        bodyClass="page-campaign-landing bmc-nav-loader-nav form2">
         <root
             jcr:lastModified="{Date}2017-08-23T17:21:55.804-04:00"
             jcr:lastModifiedBy="dtayeh"

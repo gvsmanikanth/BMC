@@ -10,7 +10,7 @@
         cq:template="/conf/bmc/settings/wcm/templates/form-landing-page-template2"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page"
-        bodyClass="page-campaign-landing bmc-nav-loader-nav">
+        bodyClass="page-campaign-landing bmc-nav-loader-nav form2">
         <root
             jcr:lastModified="{Date}2017-08-23T17:46:06.136-04:00"
             jcr:lastModifiedBy="dtayeh"
@@ -29,7 +29,7 @@
                     jcr:lastModified="{Date}2017-08-23T17:54:14.830-04:00"
                     jcr:lastModifiedBy="dtayeh"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/content/header-form"/>
+                    sling:resourceType="bmc/components/content/header-form2"/>
                 <maincontentcontainer
                     jcr:created="{Date}2017-07-17T15:41:38.037-07:00"
                     jcr:createdBy="admin"
