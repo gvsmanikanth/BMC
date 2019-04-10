@@ -1,0 +1,27 @@
+<sly data-sly-use.HeaderBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='bg'}"/>
+<sly data-sly-test.bgImg="${HeaderBgImgChildProps.ChildProperties['fileReference']}"/>
+<sly data-sly-test="${!properties.headerBackground}">
+	<section class="layout-full-bleed layout-full-bleed-image ornate-header" style="background-image: url('${bgImg @ context='uri'}');">
+     	 <!-- no foreground image -->            
+      	<div class="flex layout-inner-wrap">
+         <div class="flex-item  md-col-6"></div>
+         <div class="flex-item md-col-6 text-left text-white px2"> 
+			<!-- Section where the placeholder recides. -->
+			<sly data-sly-resource="${'right' @ resourceType='wcm/foundation/components/responsivegrid', cssClassName='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12 equal-column',decorationTagName='div'}"/>
+         </div>
+      </div>              
+   </section>
+   </sly>
+   <sly data-sly-test="${properties.headerBackground}">
+		<section class="layout-full-bleed layout-full-bleed-image ornate-header" style="background-color: ${properties.headerBackground @ context='html'};">
+     	 <!-- no foreground image -->            
+      	<div class="flex layout-inner-wrap">
+         <div class="flex-item  md-col-6"></div>
+         <div class="flex-item md-col-6 text-left text-white px2"> 
+			<!-- Section where the placeholder recides. -->
+			<sly data-sly-resource="${'right' @ resourceType='wcm/foundation/components/responsivegrid', cssClassName='aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12 equal-column',decorationTagName='div'}"/>
+         </div>
+      </div>              
+   </section>
+   </sly>
+
