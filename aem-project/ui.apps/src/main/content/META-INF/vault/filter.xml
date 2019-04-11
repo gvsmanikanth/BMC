@@ -21,8 +21,8 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
 	
     <!-- WEB-4925 Forms redesign new templates START -->
-	  <filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/templates/form-landing-page-template2" mode="merge"/>
+	<filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="replace"/>
+    	<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-template2" mode="replace"/>
     <!-- WEB-4925 Forms redesign new templates END -->
     <!-- WEB-2437 Added for Report generation START -->
 	<filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
