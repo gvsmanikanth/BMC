@@ -5,65 +5,241 @@
 ?>
 
 <section class="layout-full-bleed thanks-header text-left p1" style="background-image: url('//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg');">
-      <blockquote class="p2">
-         <h1>Thank you, Karen!</h1>
-         <P>It’s now in your hands. Explore Control- M and go beyond traditional work</P>
-      </blockquote>     
-   </section>
-   <section class="bg-white " >
-        <div class="md-flex layout-inner-wrap">
-            <div class="flex-item md-col-6 img-wrap p2">
-                <div class="what-next bg-seashell p2 px2 ">
-                    <h3>What's Next?</h3>
-                    <p>Start your personalized demo environment.</p>
-                    <button class="btn-secondary">BEGIN DEMO</button>
+    <blockquote class="p2">
+        <h1>Thank you, Karen!</h1>
+        <P>It’s now in your hands. Explore Control- M and go beyond traditional work</P>
+    </blockquote>     
+</section>
+
+<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+   <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+      <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+         <section>
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+               <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                        <h2>
+                           Custom Heading Goes Here
+                        </h2>
+                     </div>
+                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                        <p>Primary content goes here.</p>
+                     </div>
+                     <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                              <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+         <section>
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+               <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                       <h2>
+                                          Education &amp; Certification
+                                       </h2>
+                                    </div>
+                                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                       <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
+                                       <ul>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">Search for Courses</a></li>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">IT Certi</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                       <div class="cq-dd-image text-center">
+                                          <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+         <section>
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+               <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                       <h2>
+                                          Education &amp; Certification
+                                       </h2>
+                                    </div>
+                                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                       <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
+                                       <ul>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">Search for Courses</a></li>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">IT Certi</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                       <div class="cq-dd-image text-center">
+                                          <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+         <section>
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+               <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                       <h2>
+                                          Education &amp; Certification
+                                       </h2>
+                                    </div>
+                                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                       <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
+                                       <ul>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">Search for Courses</a></li>
+                                          <li><a href="http://localhost/front-end/contact-thank-you-page.php#." target="_blank">IT Certi</a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                       <div class="cq-dd-image text-center">
+                                          <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+        <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+            <section>
+                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                    <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                        <div class="25-75contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                            <section>
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                                    <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                                <h2>
+                                                    Education &amp; Certification
+                                                </h2>
+                                            </div>
+                                            <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                                <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
+                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                            <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                                <div class="cq-dd-image text-center">
+                                                    <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                               
+                                </div>
+                            </section>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="flex-item md-col-6 content-wrap p2">
-                <h2>Supporting Resources</h2>
-                <p>Now that you have access to your trial experience,explore these resources to help you understand
-                    how best to leverage Control-M and build your case for making it a part of your solution.
-                </p>
-            </div>            
+            </section>
         </div>
-    </section>
-    <section class="bg-seashell " >
-        <div class="md-flex layout-inner-wrap">
-            <div class="flex-item md-col-8  content-wrap p2">
-                <span class="tags">Datasheets</span>
-                <h2>Supported Platforms and Applications</h2>
-                <a href="#." class="btn-link">Download ></a>
-            </div>
-            <div class="flex-item md-col-4 img-wrap p2">
-                <img src="https://www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
-            </div>
+        <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+            <section>
+                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                    <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                        <div class="25-75contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                            <section>
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                                    <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                                <h2>
+                                                    Education &amp; Certification
+                                                </h2>
+                                            </div>
+                                            <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                                <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
+                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                            <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                                <div class="cq-dd-image text-center">
+                                                    <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                               
+                                </div>
+                            </section>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section class="bg-white " >
-        <div class="md-flex layout-inner-wrap">           
-            <div class="flex-item md-col-4 img-wrap p2">
-                <img src="https://www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
-            </div>
-            <div class="flex-item md-col-8  content-wrap p2">
-                <span class="tags">Video</span>
-                <h2>Drastically Reduce Upgrade Time, Effort & Cost</h2>
-                <a href="#." class="btn-link">Watch ></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-seashell " >
-        <div class="md-flex layout-inner-wrap">
-            <div class="flex-item md-col-8  content-wrap p2">
-                <span class="tags">Infographic</span>
-                <h2>The Keys to Big Data Success: Automation and Orchestration</h2>
-                <a href="#." class="btn-link">View ></a>
-            </div>
-            <div class="flex-item md-col-4 img-wrap p2">
-                <img src="https://www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
-            </div>
-        </div>
-    </section>
+   </section>
+</div>
+   
 
 <?php include_once 'php-inc/foot.php'; ?>
