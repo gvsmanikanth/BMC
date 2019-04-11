@@ -134,7 +134,13 @@ if (jQuery) (function ($) {
         $(document).on('touchstart.jq-dropdown', '[data-jq-dropdown]', show);
         $('.hero_cta .jq-dropdown-menu').on('click', function() {
             $('.jq-dropdown').css('display', 'none');
-        });        
+        }); 
+        // $(document).on('click touchstart', function () {
+        //     $('.hero_cta .jq-dropdown').css('display', 'none');   
+        //     $('#careers-dropdown-locations').css('display', 'none');                 
+        // });
+        
+               
     } else {
         $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);     
         $(document).on('click.jq-dropdown', hide);
