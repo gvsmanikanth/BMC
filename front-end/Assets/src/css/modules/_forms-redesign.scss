@@ -10,9 +10,8 @@
         background: #f0f0f0;
         width: auto;
         border-top: 5px solid #fe5000;
-        @media (min-width: $break-md) {
-            margin-top: -200px;
-        }
+        z-index: 1056;
+        position: relative;
         
         .btn-secondary {
             background-color: #000;
