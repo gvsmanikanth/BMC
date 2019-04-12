@@ -1,0 +1,183 @@
+.thank-you-form2{
+    background: #fff;
+    .cmp-title{
+        h2{
+            color: #414042;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 15px;
+            
+            @media (min-width: $break-sm) {
+                line-height: 1.45em;
+                 font-size: 1.96667rem;
+            }
+        }
+    }
+    .cmp-text{
+        li{
+            @media (min-width: $break-sm) {
+                font-size: 1.2rem;
+            }             
+            a{  
+                color: #fe5000;
+            }
+        }
+        a{  
+            color: #fe5000;
+        }
+        p{           
+            @media (min-width: $break-sm) {
+                font-size: 1.4rem;
+            } 
+        }
+    }
+    
+   section{
+
+        padding: 15px 0;
+       
+        .md-flex{
+            @media (max-width: 800px) {
+                display: flex;
+                flex-flow: column;
+            }
+        }       
+        .img-wrap{
+            @media (max-width: 800px) {
+                order: 1;
+                padding:0 0 10px 0; 
+            }           
+        } 
+        .content-wrap{
+            @media (max-width: 800px) {
+                order: 2;
+                padding:0; 
+            }           
+        } 
+    }
+    
+
+    blockquote {
+        margin: 0 auto;
+        max-width: 1440px;
+        position: relative;
+        z-index: 1;
+        h1 {
+            font-weight: 400;
+            color: #fff;         
+            @media (min-width: $break-sm) {
+                font-size: 3.27778rem;              
+            }  
+            font-size: 2.27778rem;
+        }
+        p{
+            @media (min-width: $break-sm) {
+                font-size: 1.4rem;
+                margin-bottom: 0;               
+            }           
+            color: #fff;
+           
+        }
+    }
+    .page-caption{
+        h2{
+            color: #414042;
+            font-weight: 400;
+            margin: 0;
+            
+            @media (min-width: $break-sm) {
+                line-height: 1.45em;
+                 font-size: 1.96667rem;
+            }
+        }
+    }
+   
+  
+    
+    .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(odd){
+            background: #ffffff;
+            .layout-inner-wrap{
+                .responsivegrid:first-child{
+                    float: right;
+                    padding-left: 1.25%;
+                }
+                .responsivegrid:last-child{
+                    float: left;
+                    padding-right: 1.25%;
+                }
+            }
+    }
+    .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(even){
+        background: #f1f1f1;      
+    }  
+    .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:last-child{
+        padding-bottom: o;
+    }
+
+   
+}
+
+
+// Contact thank you page css
+.contact-form{
+    .top-content{
+        section {
+            margin: 0 0 30px 0 !important;
+            padding: 0;
+        }
+    } 
+    blockquote {
+        h1 {               
+            @media (min-width: $break-sm) {
+                font-size: 2.27778rem;           
+            }  
+        }
+        p{
+            @media (min-width: $break-sm) {
+                font-size: 1.1rem;          
+            }           
+           
+        }
+    }
+}
+
+// trial form thank you page css
+.trial-form2{
+    .call-to-action-block {
+        background: #f1f1f1;
+        padding: 40px;
+        @media (min-width: $break-sm) {
+            max-width: 75%;      
+        }  
+       
+        h2{
+            line-height: 1.45em;
+            font-size: 1.96667rem;
+            color: #414042;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+        p  {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .btn-secondary {
+            border-radius: 0;
+        }
+    }
+    .cmp-title{
+        h2{           
+            color: #555557;   
+            @media (min-width: $break-sm) {
+                line-height: 1.45em;
+                 font-size: 2.5rem;
+            }
+        }
+    }
+    span.tags {
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 5px;
+    }
+}

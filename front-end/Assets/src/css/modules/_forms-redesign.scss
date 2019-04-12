@@ -14,8 +14,8 @@
         position: relative;
         
         .btn-secondary {
-            background-color: #000;
-            border-color: #000;
+            background-color: #2d6d91;
+            border-color: #2d6d91;
             text-transform: uppercase;
     
             + p{
@@ -93,6 +93,11 @@
         h3{
             font-weight: 400;
         }
+    }
+    .header-content {
+        @media (min-width: $break-sm) {
+            padding-left: 50px;             
+        }        
     }
 
     
