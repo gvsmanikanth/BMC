@@ -2,6 +2,13 @@
 
 // @function footer
 // The location to define major column layouts and styles for the footer.
+.plainfooter{
+	.layout-footer{
+		.footer-logo{
+			margin-top: 0.3rem;
+		}
+	}
+}
 .layout-footer {
 	@extend %column-config;
 	background: color(colorCorporate);
@@ -24,16 +31,17 @@
 }
 
 .footer-logo {
-	@include svg-image(logo_footer_msg); 
+	@include svg-image(Tagline-Logo-Lockup); 
 	--background-image:url('logo_footer_msg.png');
-	background-position: left 10px;
+	--background-position: left 10px;
 	background-repeat: no-repeat;
 	background-size: auto;
-	max-width: 300px;
-	height: 75px;
-	margin-bottom: em(16);
+	max-width: 200px;
+	height: 80px;
+	margin-bottom: em(30);
 	margin-right: 0rem;
-	margin-left: -0.5rem;
+	--margin-left: -0.5rem;
+	margin-top: 0.9rem; 
 
 	> a { 
 		display: block; 
@@ -45,13 +53,11 @@
 	@include media(breakpointLarge) {
 		box-sizing: border-box;
 		float: $defaultFloat;
-		margin: 0;
 		min-height: 1px;
-		width: 100%; //BMC-527 Added default width 100%;
-		margin: 0;
-		width: columns(3);
-		margin-right: 2rem;
-		margin-left: -0.5rem;
+		width: 20%; //BMC-527 Added default width 100%;
+		--width: columns(1.4);
+		margin-right: 2.5rem;
+		--margin-left: -0.5rem;  
 	}
 }
 
