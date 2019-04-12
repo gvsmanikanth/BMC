@@ -184,7 +184,7 @@
 			
 		</div>
 		<div class="section-content owl-carousel-dropdown">
-			<a href="#" class="jq-dropdown-trigger jq-dropdown-orange findoff" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span><svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg></a>
+			<a href="#." class="jq-dropdown-trigger jq-dropdown-orange findoff" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span><svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg></a>
 		</div>
 	</section>
 </div>
