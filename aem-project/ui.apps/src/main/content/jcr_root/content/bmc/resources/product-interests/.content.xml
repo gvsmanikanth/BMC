@@ -20,17 +20,17 @@
         value="Helix"/>
     <_x0035_76550803
         jcr:primaryType="nt:unstructured"
-        jcr:title="APM"
+        jcr:title="TrueSight AppVisibility"
         dropDownDisplay="No"
         text="BMC Application Management Suite"
-        value="APM"/>
-    <_x0038_00480197
+        value="TrueSight AppVisibility"/>
+    <!-- SAFE DELETE <_x0038_00480197
         jcr:primaryType="nt:unstructured"
         jcr:title="App_Ops MarketZone License"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0039_81173424
         jcr:primaryType="nt:unstructured"
-        jcr:title="Atrium CMDB"
+        jcr:title="CMDB"
         dropDownDisplay="No"/>
     <_x0036_42178370
         jcr:primaryType="nt:unstructured"
@@ -44,44 +44,44 @@
         dropDownDisplay="No"/>
     <_x0034_99579858
         jcr:primaryType="nt:unstructured"
-        jcr:title="BCM"
+        jcr:title="Client Management"
         dropDownDisplay="Yes"
         text="BMC Client Management (Asset Core)"
-        value="BCM"/>
+        value="Client Management"/>
     <_x0037_03588770
         jcr:primaryType="nt:unstructured"
-        jcr:title="BDA"
+        jcr:title="Bladelogic Database Automation"
         dropDownDisplay="Yes"
         text="BMC Bladelogic Automation Suite"
-        value="BDA"/>
-    <_x0033_70187697
+        value="Bladelogic Database Automation"/>
+    <!-- SAFE DELETE <_x0033_70187697
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Threat Director"
-        dropDownDisplay="No"/>
-    <_x0036_91627420
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0036_91627420
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic UCS Royalty (Cisco)"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0037_67365114
         jcr:primaryType="nt:unstructured"
-        jcr:title="BMA"
+        jcr:title="Bladelogic Middleware Automation"
         dropDownDisplay="Yes"
         text="BMC BladeLogic Middleware Automation"
-        value="BMA"/>
+        value="Bladelogic Middleware Automation"/>
     <_x0032_15078746
         jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Consulting"
+        jcr:title="Consulting Services"
         dropDownDisplay="No"/>
     <_x0037_32296000
         jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Education"
+        jcr:title="Education Services"
         dropDownDisplay="No"/>
     <_x0035_49295455
         jcr:primaryType="nt:unstructured"
-        jcr:title="BNA"
+        jcr:title="TrueSight Network Automation"
         dropDownDisplay="Yes"
         text="TrueSight Network Automation"
-        value="BNA"/>
+        value="TrueSight Network Automation"/>
     <_x0031_13394324
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Operations Management"
@@ -90,10 +90,10 @@
         value="TrueSight Operations Management"/>
     <_x0032_12041549
         jcr:primaryType="nt:unstructured"
-        jcr:title="BSA"
+        jcr:title="TrueSight Server Automation"
         dropDownDisplay="Yes"
         text="TrueSight Server Automation"
-        value="BSA"/>
+        value="TrueSight Server Automation"/>
     <_x0030_00918022
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Vulnerability Management"
@@ -110,12 +110,12 @@
         dropDownDisplay="Yes"
         text="Cloud Lifecycle Management"
         value="CLM"/>
-    <_x0039_83747628
+   <!-- SAFE DELETE <_x0039_83747628
         jcr:primaryType="nt:unstructured"
         jcr:title="Consulting"
         dropDownDisplay="Yes"
         text="BMC Consulting Services"
-        value="Consulting"/>
+        value="Consulting"/>-->
     <_x0038_61762869
         jcr:primaryType="nt:unstructured"
         jcr:title="Control D"
@@ -160,10 +160,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Control M Workload Change Manager"
         dropDownDisplay="No"/>
-    <_x0039_21328781
+    <!-- SAFE DELETE <_x0039_21328781
         jcr:primaryType="nt:unstructured"
         jcr:title="D&amp;A"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0031_74236796
         jcr:primaryType="nt:unstructured"
         jcr:title="DB2"
@@ -178,14 +178,14 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="DB2 NGT"
         dropDownDisplay="No"/>
-    <_x0034_71833371
+    <!-- SAFE DELETE <_x0034_71833371
         jcr:primaryType="nt:unstructured"
         jcr:title="DB2 SQL Performance-Recovery"
-        dropDownDisplay="No"/>
-    <_x0034_86408431
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0034_86408431
         jcr:primaryType="nt:unstructured"
         jcr:title="DCA MarketZone"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0034_72046068
         jcr:primaryType="nt:unstructured"
         jcr:title="DevOps"
@@ -196,30 +196,30 @@
         dropDownDisplay="Yes"
         text="BMC Discovery"
         value="Discovery"/>
-    <_x0034_99515849
+    <!-- SAFE DELETE <_x0034_99515849
         jcr:primaryType="nt:unstructured"
         jcr:title="DM - DS"
         dropDownDisplay="Yes"
         text="BMC DM-DS"
-        value="DM - DS"/>
-    <_x0037_15734082
+        value="DM - DS"/>-->
+    <!-- SAFE DELETE <_x0037_15734082
         jcr:primaryType="nt:unstructured"
         jcr:title="DM - MF"
         dropDownDisplay="Yes"
         text="BMC Mainframe Solutions"
-        value="DM - MF"/>
-    <_x0032_66594071
+        value="DM - MF"/>-->
+    <!-- SAFE DELETE <_x0032_66594071
         jcr:primaryType="nt:unstructured"
         jcr:title="DM - MF"
-        dropDownDisplay="No"/>
-    <_x0036_45390825
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0036_45390825
         jcr:primaryType="nt:unstructured"
         jcr:title="DM MarketZone"
-        dropDownDisplay="No"/>
-    <_x0035_90613607
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0035_90613607
         jcr:primaryType="nt:unstructured"
         jcr:title="DM Other"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0033_60899534
         jcr:primaryType="nt:unstructured"
         jcr:title="Education"
@@ -236,18 +236,18 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="FootPrints Service Core"
         dropDownDisplay="No"/>
-    <_x0034_12363316
+    <!-- SAFE DELETE <_x0034_12363316
         jcr:primaryType="nt:unstructured"
         jcr:title="HR Case Management"
-        dropDownDisplay="No"/>
-    <_x0038_09680720
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0038_09680720
         jcr:primaryType="nt:unstructured"
         jcr:title="Identify"
-        dropDownDisplay="No"/>
-    <_x0039_16010442
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0039_16010442
         jcr:primaryType="nt:unstructured"
         jcr:title="IDM"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0031_80034581
         jcr:primaryType="nt:unstructured"
         jcr:title="IMS"
@@ -260,10 +260,10 @@
         dropDownDisplay="Yes"
         text="BMC Innovation Suite"
         value="Innovation Suite"/>
-    <_x0031_64351178
+    <!-- SAFE DELETE <_x0031_64351178
         jcr:primaryType="nt:unstructured"
         jcr:title="ITBM"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0036_91273051
         jcr:primaryType="nt:unstructured"
         jcr:title="ITSM MarketZone"
@@ -274,16 +274,16 @@
         dropDownDisplay="Yes"
         text="BMC MainView"
         value="Mainview"/>
-    <_x0038_36735200
+    <!-- SAFE DELETE <_x0038_36735200
         jcr:primaryType="nt:unstructured"
         jcr:title="Mobility"
         dropDownDisplay="Yes"
         text="BMC Mobile Device Manager"
-        value="Mobility"/>
-    <_x0030_83097554
+        value="Mobility"/>-->
+    <!-- SAFE DELETE <_x0030_83097554
         jcr:primaryType="nt:unstructured"
         jcr:title="Mobility Classic"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0035_07778250
         jcr:primaryType="nt:unstructured"
         jcr:title="MyIT"
@@ -294,30 +294,30 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="MyIT Service Broker"
         dropDownDisplay="No"/>
-    <_x0037_65172176
+    <!-- SAFE DELETE <_x0037_65172176
         jcr:primaryType="nt:unstructured"
         jcr:title="P&amp;A MarketZone"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0034_38283521
         jcr:primaryType="nt:unstructured"
         jcr:title="R4"
         dropDownDisplay="No"/>
-    <_x0032_06500945
+    <!-- SAFE DELETE <_x0032_06500945
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-AAI"
-        dropDownDisplay="No"/>
-    <_x0031_28836828
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0031_28836828
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-CAZE"
-        dropDownDisplay="No"/>
-    <_x0033_51717545
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0033_51717545
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-ICAP"
-        dropDownDisplay="No"/>
-    <_x0032_87102587
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0032_87102587
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-SUBZERO"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0036_01439928
         jcr:primaryType="nt:unstructured"
         jcr:title="Remedy"
@@ -328,44 +328,44 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Remedy HR Case Mgmt"
         dropDownDisplay="No"/>
-    <_x0038_61054420
+    <!-- SAFE DELETE <_x0038_61054420
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS APM"
-        dropDownDisplay="No"/>
-    <_x0035_46422315
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0035_46422315
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS AppZone"
-        dropDownDisplay="No"/>
-    <_x0038_64438642
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0038_64438642
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS BCM"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0033_84220394
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS EUEM"
         dropDownDisplay="No"/>
-    <_x0037_85764064
+    <!-- SAFE DELETE <_x0037_85764064
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Marketplace"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0038_61753444
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS MyIT"
         dropDownDisplay="No"/>
     <_x0038_09441375
-        jcr:primaryType="nt:unstructured"
+    <!--    jcr:primaryType="nt:unstructured"
         jcr:title="SaaS MyIT"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0032_48677372
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Remedy Force"
         dropDownDisplay="Yes"
         text="BMC Remedyforce"
         value="SaaS Remedy Force"/>
-    <_x0030_55929804
+    <!-- SAFE DELETE <_x0030_55929804
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Remedy HR Case Mgmt"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0037_62200338
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Remedy On Demand"
@@ -402,18 +402,18 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="SCT MarketZone"
         dropDownDisplay="No"/>
-    <_x0036_79964557
+    <!-- SAFE DELETE <_x0036_79964557
         jcr:primaryType="nt:unstructured"
         jcr:title="SDE"
-        dropDownDisplay="No"/>
-    <_x0037_25543789
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0037_25543789
         jcr:primaryType="nt:unstructured"
         jcr:title="SLM"
-        dropDownDisplay="No"/>
-    <_x0038_19794873
+        dropDownDisplay="No"/>-->
+    <!-- SAFE DELETE <_x0038_19794873
         jcr:primaryType="nt:unstructured"
         jcr:title="TMart"
-        dropDownDisplay="No"/>
+        dropDownDisplay="No"/>-->
     <_x0039_23900731
         jcr:primaryType="nt:unstructured"
         jcr:title="Track-It!"
