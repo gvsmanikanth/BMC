@@ -1,124 +1,141 @@
 package com.bmc.services;
 
+import com.bmc.models.resourcecenter.ResourceFilter;
+import com.bmc.models.resourcecenter.ResourceItem;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import org.apache.felix.scr.annotations.Activate;
-import org.apache.felix.scr.annotations.Component;
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.Service;
+import com.google.gson.Gson;
+import org.apache.felix.scr.annotations.*;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import javax.jcr.Session;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Component(label = "Resource Center Service", metatype = true)
 @Service(value=ResourceCenterService.class)
 public class ResourceCenterServiceImpl implements ResourceCenterService {
 
-    // QueryBuilder parameters
-    private static final String QB_PATH  = "/content/bmc/resources";
-    private static final String QB_NODE  = "intelligent-content-";
-    private static final String QB_TYPE  = "cq:Page";
-    private static final String QB_LIMIT = "10";
-
     @Reference
     private QueryBuilder queryBuilder;
-
     private Map<String, String> queryParamsMap;
 
+    // Serialization Helper
+    private Gson gson = new Gson();
+
+    // Configurable List of Resource ResourceFilter Node Names (Appended to Resource Path listed above)
+    @Property(
+        description = "JCR Node Names of Resource Center Filters",
+        value = {
+                "intelligent-content-topics",
+                "intelligent-content-types",
+                "intelligent-content-buyer-stage",
+                "intelligent-content-target-persona",
+                "intelligent-content-target-industry",
+                "intelligent-content-company-size"
+        })
+    private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
+    private List<String> resourceFiltersList;
+
     @Activate
-    protected void activate() {
-
-        if(queryParamsMap == null) {
-            queryParamsMap = new HashMap();
-        }
-
-        queryParamsMap.put("path", QB_PATH);
-        queryParamsMap.put("type", QB_TYPE);
-        queryParamsMap.put("p.limit", QB_LIMIT);
-        queryParamsMap.put("nodename", QB_NODE);
-        // queryParamsMap.put("guessTotal", "true"); // to be used for pagination
-        // queryParamsMap.put("p.offset", QB_LIMIT); // to be used for pagination
-
+    protected void activate(final Map<String, Object> props) {
+        resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
     }
 
     @Override
-    public JSONObject getResourceOptions(Session session) {
+    public List<ResourceFilter> getResourceFilters(Session session) {
 
-        // wildcard to get all nodes that are prefixed with 'intelligent-content-'
-        queryParamsMap.put("nodename", QB_NODE + "*");
+        // add the necessary resource filter parameters for query builder
+        addFilterParamsToBuilder();
 
-        return getResourcesOptionsJSON(session);
-    }
-
-    @Override
-    public JSONObject getResourceOptions(Session session, String option) {
-        return null;
-    }
-
-    @Override
-    public JSONObject getResourceOptions(Session session, String[] options) {
-        return null;
-    }
-
-    private JSONObject getResourcesOptionsJSON(Session session) {
-
-        JSONObject resultsObject = new JSONObject();
-        JSONArray resultsArray = new JSONArray();
-        JSONObject singleResult;
+        // filter list to return
+        List<ResourceFilter> resourceFiltersList = new ArrayList<>();
 
         try {
-
             Query query = queryBuilder.createQuery(PredicateGroup.create(queryParamsMap), session);
             SearchResult result = query.getResult();
             Resource resource;
-
             for(Hit hit : result.getHits()) {
-
-                singleResult = new JSONObject();
                 resource = hit.getResource();
-
                 if(resource != null){
-                    singleResult.put("name", resource.getName());
-                    singleResult.put("options", getChildrenOptions(resource));
-                    resultsArray.put(singleResult);
+                    resourceFiltersList.add(new ResourceFilter(resource.getName(), getFilterOptions(resource)));
                 }
-
-                resultsObject.put("results", resultsArray);
             }
-
-            resultsObject.put("startAt", result.getStartIndex());
-
         } catch(Exception e) {
             e.printStackTrace();
         }
 
-        return resultsObject;
+        return resourceFiltersList;
     }
 
-    private JSONArray getChildrenOptions(Resource resource) {
+    @Override
+    public String getResourceFiltersJSON(Session session) {
+        return gson.toJson(getResourceFilters(session));
+    }
 
-        JSONArray childrenJSON = new JSONArray();
-        JSONObject childJSON;
+    @Override
+    public List<ResourceItem> getResourceResults(Session session) {
+        return null;
+    }
+
+    @Override
+    public String getResourceResultsJSON(Session session) {
+        return gson.toJson(getResourceResults(session));
+    }
+
+    /**
+     * Helper Method -
+     * Searches the children of a given resource node and returns a Map of Key (Node name) Value (Jcr:title) pairs of filter options
+     * @param resource
+     * @return Map<Node name, Jcr:title>
+     */
+    private Map<String, String> getFilterOptions(Resource resource) {
+
+        Map<String, String> options = new HashMap<>();
         ValueMap valueMap;
 
         if(resource.hasChildren()) {
             for(Resource child : resource.getChildren()) {
-                childJSON = new JSONObject();
                 valueMap = child.getValueMap();
-                childJSON.put("name", child.getName());
-                childJSON.put("title", valueMap.get("jcr:title"));
-                childrenJSON.put(childJSON);
+                options.put(child.getName(), valueMap.get("jcr:title").toString());
             }
         }
 
-        return childrenJSON;
+        return options;
+    }
+
+    /**
+     * Adds necessary parameters to a map to search for resource filters
+     *
+     */
+    private void addFilterParamsToBuilder() {
+
+        if(queryParamsMap == null) {
+            queryParamsMap = new HashMap<>();
+        }
+
+        queryParamsMap.put("path", "/content/bmc/resources");
+        queryParamsMap.put("type", "cq:Page");
+
+        // add each node name to the predicate group
+        queryParamsMap.put("group.p.or", "true");
+        for(int i = 1; i <= resourceFiltersList.size(); i++) {
+            queryParamsMap.put("group." + i + "_nodename", resourceFiltersList.get(i-1));
+        }
+    }
+
+    /**
+     * Adds necessary parameters to a map to search for resources
+     *
+     */
+    private void addResourceParamsToBuilder() {
+
+        if(queryParamsMap == null) {
+            queryParamsMap = new HashMap<>();
+        }
+
     }
 }

@@ -1,13 +1,17 @@
 package com.bmc.services;
 
-import org.json.JSONObject;
+import com.bmc.models.resourcecenter.ResourceFilter;
+import com.bmc.models.resourcecenter.ResourceItem;
 
 import javax.jcr.Session;
+import java.util.List;
 
 public interface ResourceCenterService {
 
-    JSONObject getResourceOptions(Session session);
-    JSONObject getResourceOptions(Session session, String option);
-    JSONObject getResourceOptions(Session session, String[] options);
+    List<ResourceFilter> getResourceFilters(Session session);
+    String getResourceFiltersJSON(Session session);
+
+    List<ResourceItem> getResourceResults(Session session);
+    String getResourceResultsJSON(Session session);
 
 }

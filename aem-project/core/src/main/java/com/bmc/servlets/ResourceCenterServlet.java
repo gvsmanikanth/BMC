@@ -6,7 +6,6 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.jcr.Session;
@@ -40,7 +39,7 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         // delegate to the appropriate method
         switch(method) {
             case FILTERS_METHOD:
-                getFilterOptions(request, response);
+                getResourceFilters(request, response);
                 break;
             case RESOURCES_METHOD:
                 getResourceResults(request, response);
@@ -51,34 +50,23 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         }
     }
 
-    private void getFilterOptions(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
+    private void getResourceFilters(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
 
         // for testing
-        response.getWriter().write("getFilterOptions()");
-
-        // grab filterOptions (multi-value)
-        String[] filterOptions = request.getParameterValues("filterOptions");
+        response.getWriter().write("getResourceFilters()");
 
         // session required for QueryBuilder in OSGi service
         Session session = request.getResourceResolver().adaptTo(Session.class);
 
-        // JSON to return
-        JSONObject jsonObject = null;
+        // JSON String to return
+        String resourceFiltersJsonStr = null;
 
-        // invoke the appropriate overloaded method getResourceOptions() of the OSGi service
-        if(filterOptions == null || filterOptions.length == 0) {
-            jsonObject = resourceCenterService.getResourceOptions(session);
-        } else if(filterOptions.length == 1) {
-            jsonObject = resourceCenterService.getResourceOptions(session, filterOptions[0]);
-        } else if(filterOptions.length > 1) {
-            jsonObject = resourceCenterService.getResourceOptions(session, filterOptions);
-        } else {
-            response.sendError(404);
-        }
+        // invoke method from the OSGi service
+        resourceFiltersJsonStr = resourceCenterService.getResourceFiltersJSON(session);
 
         // success
-        if(jsonObject != null) {
-            response.getWriter().write(jsonObject.toString());
+        if(resourceFiltersJsonStr != null) {
+            response.getWriter().write(resourceFiltersJsonStr);
             return;
         }
 
@@ -97,6 +85,8 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         if(parameters != null) {
             // invoke an OSGi service method getResources(Map<String, String[]>)
         }
+
+        response.sendError(404);
 
     }
 
