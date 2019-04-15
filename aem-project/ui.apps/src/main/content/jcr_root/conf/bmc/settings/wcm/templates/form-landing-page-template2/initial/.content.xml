@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-04-04T16:18:02.001+05:30"
+        cq:lastModified="{Date}2019-04-15T20:55:20.177+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:05.422-04:00"
         cq:lastReplicatedBy="admin"
@@ -118,11 +118,10 @@
                             <htmlarea
                                 jcr:created="{Date}2019-04-04T16:17:57.417+05:30"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2019-04-04T16:18:01.993+05:30"
+                                jcr:lastModified="{Date}2019-04-15T20:55:20.148+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/htmlarea"
-                                text="&lt;section class=&quot;layout-full-bleed&quot;>&#xd;&#xa;   &lt;div class=&quot;layout-inner-wrap&quot;>&#xd;&#xa;      &#xd;&#xa;         &lt;div class=&quot;three-up&quot;>&#xd;&#xa;            &lt;h3>Sales&lt;/h3>&#xd;&#xa;            &lt;address>&#xd;&#xa;               &lt;a href=&quot;tel:(855) 834-7487 – Press Option 1 for sales&quot;>(855) 834-7487 – Press Option 1 for sales&lt;/a>&lt;br>&#xd;&#xa;               &lt;a href=&quot;/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html&quot;>BMC Sales Contact Form&lt;/a>&#xd;&#xa;            &lt;/address>&#xd;&#xa;            &lt;br>  &#xd;&#xa;            &lt;h3>General Comments and Feedback&lt;/h3>&#xd;&#xa;            &lt;address>&#xd;&#xa;               &lt;a href=&quot;tel:(800) 841-2031&quot;>(800) 841-2031&lt;/a>&lt;br>&#xd;&#xa;            &lt;/address>&#xd;&#xa;            &lt;br>             &#xd;&#xa;         &lt;/div>&#xd;&#xa;         &lt;div class=&quot;three-up&quot;>&#xd;&#xa;            &lt;h3>Customer Support&lt;/h3>&#xd;&#xa;            &lt;address>&#xd;&#xa;               Business hours&lt;br>&#xd;&#xa;               7:00 a.m. - 7:00 p.m. Central Time&lt;br>&#xd;&#xa;               Support line open 24/7 &lt;br>&#xd;&#xa;               Telephone :&#xd;&#xa;               &lt;a href=&quot;tel:(713)   918 2950&quot;>(713)   918 2950&lt;/a>&lt;br>&#xd;&#xa;               Toll-Free :&#xd;&#xa;               &lt;a href=&quot;tel:(800)   537 1813&quot;>(800)   537 1813&lt;/a>&lt;br>&#xd;&#xa;               &lt;a href=&quot;mailto:customer_support@bmc.com&quot;>customer_support@bmc.com&lt;/a>&lt;br>&#xd;&#xa;            &lt;/address>&#xd;&#xa;           &#xd;&#xa;         &lt;/div>&#xd;&#xa;&#x9;&#x9; &lt;div class=&quot;three-up&quot;>&#xd;&#xa;&#x9;&#x9;  &lt;h3>Corporate Headquarters&lt;/h3>&#xd;&#xa;            &lt;address>&#xd;&#xa;               2103 CityWest Boulevard&lt;br>&#xd;&#xa;               Houston, Texas 77042&lt;br>&#xd;&#xa;               &lt;a href=&quot;tel:+1  (800) 793-4262&quot;>+1  (800) 793-4262&lt;/a>&lt;br>&#xd;&#xa;            &lt;/address>&#xd;&#xa;            &lt;strong>Executive Briefing Center&lt;/strong>&#xd;&#xa;            &lt;p>&#xd;&#xa;               &lt;a href=&quot;tel:+1  (800) 793-4262&quot;>+1  (800) 793-4262&lt;/a>&lt;br>&#xd;&#xa;               &lt;a href=&quot;/corporate/customer-experience-program.html&quot;>Information&lt;/a>&#xd;&#xa;            &lt;/p>&#xd;&#xa;&#x9;&#x9;&#x9;&lt;/div>&#xd;&#xa;     &#xd;&#xa;   &lt;/div>&#xd;&#xa;   &lt;!-- / layout-inner-wrap -->&#xd;&#xa;&lt;/section>&#xd;&#xa;&lt;!-- / layout-full-bleed -->"/>
+                                sling:resourceType="bmc/components/content/htmlarea"/>
                         </center>
                     </_100contentcontainer>
                 </maincontentcontainer>
