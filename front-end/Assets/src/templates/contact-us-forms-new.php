@@ -6,22 +6,25 @@
 
 
 <div class="page-campaign-landing">
-   <section class="layout-full-bleed layout-full-bleed-image ornate-header" style="background-image: url('//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg');">
-      <!-- has foreground image -->
-      <!-- no foreground image -->            
-      <div class="flex layout-inner-wrap">
-         <div class="flex-item  md-col-6"></div>
-         <div class="flex-item md-col-6 text-left text-white py2">
-            <div class="header-content">
-               <h4>How can the BMC sales team help?</h4>
-               <ul>
-                  <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                  <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-                  <li>Sed ut perspiciatis unde omnis iste natus error sit</li>
-               </ul>              
-            </div>                      
+  
+
+   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 ornate-header" data-wallpaper-options='{"source":{
+	"fallback": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg",
+	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg"
+   }}'  style="background-color:#0091DD">
+      <div class="offset-wrapper flex-center">
+         <div class="inner">
+            <div class="bannerContent">
+               <div class="layout-inner-wrap flex">
+                  <div class="flex-item  md-col-6"></div>
+                  <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
+                     <h1 class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                     <h2>We know you need to keep running your business, even while you reinvent it. Our solutions address business challenges in service management, automation, operations and the mainframe. </h2>					
+                  </div>
+               </div>
+            </div>
          </div>
-      </div>              
+      </div>
    </section>
 
 
@@ -383,8 +386,7 @@
                                                       <label for="C_OptIn">
                                                       I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
                                                       </label>
-                                                   </li>
-                                                   <hr>
+                                                   </li>                                                   
                                                    <li>
                                                       <input name="" id="C_aggr" value="Yes" type="checkbox" checked="">
                                                       <label for="C_aggr">
@@ -397,7 +399,7 @@
                                                       GDPR message   
                                                       </label>
                                                    </li>
-                                                   <hr>
+                                                   
                                                 </ol>
                                              </div>
                                              
@@ -406,7 +408,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <div class="text-center"> <button type="SUBMIT" class="btn-secondary">Start Your Trial</button></div>
+                              <button type="SUBMIT" class="btn-secondary">Start Your Trial</button>
                               <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
                               <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
                               <input type="hidden" id="Email_Source" name="Email_Source" value=""/>

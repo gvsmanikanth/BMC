@@ -4,18 +4,26 @@
 	include_once 'php-inc/head.php';
 ?>
 
-<section class="wallpapered bar layout-full-bleed thanks-header text-left p1" 
-data-wallpaper-options='{"source":{
+
+
+<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{
 	"fallback": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg",
 	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg"
-   }}' style="background-color:#0091DD" >
-      <blockquote class="p2">
-         <h1>Thank you for contacting BMC Sales, Karen</h1>
-         <P>You’ll be hearing from us by your preferred contact method within a week. We look forward to learning more about how we can help. In the meantime, there
-are lots of ways in which you can explore our solutions and products.</P>
-      </blockquote>     
-   </section>
-   
+   }}'  style="background-color:#0091DD">
+	<div class="offset-wrapper flex-center">
+		<div class="inner">
+			<div class="bannerContent">
+				<div class="layout-inner-wrap">
+					<div class="flex-item col col-12 md-col-12 sm-col-12 add-top-bottom-margin-110px text-center">
+					<h1 class="white">Thank you for contacting BMC Sales, Karen</h1>
+					<h2>You’ll be hearing from us by your preferred contact method within a week. We look forward to learning more about how we can help. In the meantime, there
+                  are lots of ways in which you can explore our solutions and products.</h2>					
+					</div>
+				</div>
+         </div>
+      </div>
+   </div>
+</section>
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
       <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12 top-content">
@@ -24,7 +32,7 @@ are lots of ways in which you can explore our solutions and products.</P>
                <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                      <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12 text-center">
-                         <h2 class="ship-gray m0">Supporting Resources</h2>
+                         <h3 class="ship-gray m0">Supporting Resources</h3>
                      </div>                     
                   </div>
                </div>
@@ -42,9 +50,9 @@ are lots of ways in which you can explore our solutions and products.</P>
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h2>
+                                       <h3>
                                           Education &amp; Certification
-                                       </h2>
+                                       </h3>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
@@ -83,9 +91,9 @@ are lots of ways in which you can explore our solutions and products.</P>
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h2>
+                                       <h3>
                                           Education &amp; Certification
-                                       </h2>
+                                       </h3>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
@@ -124,9 +132,9 @@ are lots of ways in which you can explore our solutions and products.</P>
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h2>
+                                       <h3>
                                           Education &amp; Certification
-                                       </h2>
+                                       </h3>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
