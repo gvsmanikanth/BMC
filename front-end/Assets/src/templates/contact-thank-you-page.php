@@ -1,6 +1,6 @@
 <?php
 	$pageTitle = 'Contact New Thank';
-	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav thank-you-form2 contact-form';
+	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav thank-you-form2';
 	include_once 'php-inc/head.php';
 ?>
 

@@ -75,19 +75,11 @@
             .cmp-options {
                 padding-top: .5em;
                 padding-bottom: .5em;
-                ol{
-                    
-                    li:first-child{
-                        border-bottom: 1px solid #ccc;
-                        margin-bottom: 15px;
-                        padding-bottom: 15px;
-                    }
-                    li:last-child{
-                        border-bottom: 1px solid #ccc;
-                        margin-bottom: 15px;
-                        padding-bottom: 15px;
-                    }
-                    
+                font-size: 0.94rem;
+                ol#C_Contact_Me1_group, ol#C_OptIn_group {
+                    border-bottom: 1px solid #ccc;
+                    margin-bottom: 15px;
+                    padding-bottom: 15px;                   
                 }
             }
             .decorator-select.validation-error{

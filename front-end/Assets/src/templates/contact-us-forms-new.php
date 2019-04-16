@@ -379,31 +379,43 @@
                                           <input type="hidden" id="GDPR_Eligible" name="GDPR_Eligible" value="No"/>
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <div class="form-group checkbox">
-                                                <label for="C_OptIn"></label>
-                                                <ol id="C_OptIn_group">
+                                                <label for="C_Contact_Me1_group"></label>
+                                                <ol id="C_Contact_Me1_group">
                                                    <li>
-                                                      <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked">
-                                                      <label for="C_OptIn">
-                                                      I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
-                                                      </label>
-                                                   </li>                                                   
-                                                   <li>
-                                                      <input name="" id="C_aggr" value="Yes" type="checkbox" checked="">
-                                                      <label for="C_aggr">
-                                                      Yes, I agree to the terms of the <a href="#.">Online Trial Agreement</a>  
+                                                      <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="false">
+                                                      <label for="C_Contact_Me1">
+                                                      Would you like someone from BMC  to connect with you about Control-M
                                                       </label>
                                                    </li>
-                                                   <li>
-                                                      <input name="" id="C_gdpr" value="Yes" type="checkbox" checked="">
-                                                      <label for="C_gdpr">
-                                                      GDPR message   
-                                                      </label>
-                                                   </li>
-                                                   
                                                 </ol>
                                              </div>
-                                             
                                           </div>
+                                          <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
+                                             <div class="form-group checkbox">
+                                                <label for="licenseAgreement"></label>
+                                                <ol id="licenseAgreement_group">
+                                                   <li>
+                                                      <input name="licenseAgreement" id="licenseAgreement" value="on" required="true" type="checkbox">
+                                                      <label for="licenseAgreement">
+                                                      By checking this box, I agree to be bound by the terms of <a href="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590" target="_blank">Online Trial Agreement</a>.
+                                                      </label>
+                                                   </li>
+                                                </ol>
+                                             </div>
+                                          </div>
+                                          <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
+                                          <div class="form-group checkbox">
+                                             <label for="C_OptIn"></label>
+                                             <ol id="C_OptIn_group">
+                                                <li>
+                                                   <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked">
+                                                   <label for="C_OptIn">
+                                                   I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
+                                                   </label>
+                                                </li>
+                                             </ol>
+                                          </div>
+                                       </div>                                          
                                        </fieldset>
                                     </div>
                                  </div>
