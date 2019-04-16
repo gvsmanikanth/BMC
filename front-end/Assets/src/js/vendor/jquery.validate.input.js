@@ -5,7 +5,7 @@
     //checking the form2 class is present or not	
 	$.fn.validateInputs = function() {
 		var $this = this;	          
-
+        $this.after('<span class="error-text"></span>'); 
             // base regex patterns; http://regex101.com/ is a good testing environment
             $this.patterns = {
                 'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
@@ -23,6 +23,7 @@
                     required = $input.attr('required') !== undefined,
                     type = $input.attr('type');
                     var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
+                   
                     console.log($input);
                     if($input.get(0).getAttribute('required') != 'false'){
                         if(!(required && (value === '' || value === null))){
@@ -31,7 +32,7 @@
                                 var alphaOnly = new RegExp($this.patterns[validationType]);
                                 if(!alphaOnly.test(value)){
                                     $(this).addClass('validation-error');
-                                    $(this).removeClass('valid-input');                               
+                                    $(this).removeClass('valid-input');                                                               
                                     $input.next('.error-text').text(err_hint);                                 					
                                 }else{
                                     $(this).removeClass('validation-error');
@@ -47,7 +48,7 @@
                             }
                          } else{
                             $(this).addClass('validation-error');
-                            $(this).removeClass('valid-input');                       
+                            $(this).removeClass('valid-input');                     
                             $input.next('.error-text').text(err_hint);
     
                             // for select 

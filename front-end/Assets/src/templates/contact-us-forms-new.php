@@ -52,31 +52,31 @@
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-219511447" class="">First Name</label>
                                              <input type="text" id="form-text-219511447" placeholder="" name="C_FirstName" data-validation-type="first-name"  data-error-hint="Required. Please add your first name" required="true"/>
-                                             <span class="error-text"></span>
+                                           
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-219511448" class="">Last Name</label>
                                              <input type="text" id="form-text-219511448" placeholder="" name="C_LastName" data-validation-type="last-name" data-error-hint="Required. Please add your last name"  required="true"/>
-                                             <span class="error-text"></span>
+                                           
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12  aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-170708906" class="">Business Email</label>
                                              <input type="email" id="form-text-170708906" placeholder="" name="C_EmailAddress" data-error-hint="Please enter a valid business email address" data-validation-type="email-business" required="true"/>
-                                             <span class="error-text"></span>
+                                           
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12  aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-219511450" class="">Company</label>
                                              <input type="text" id="form-text-219511450" placeholder="" name="C_Company" data-validation-type="no_initial_space" data-error-hint="Required. Please add your company"  required="true"/>
-                                             <span class="error-text"></span>
+                                           
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-219511451" class="">Business Phone</label>
                                              <input type="tel" id="form-text-219511451" placeholder="(555) 123-1234" name="C_BusPhone" data-error-hint="Required. Please add your business phone"  required="true"/>
-                                             <span class="error-text"></span>
+                                           
                                           </div>
                                           <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <label for="C_Job_Level1" class="">Job Level</label>
@@ -89,7 +89,7 @@
                                                 <option value="IT Professional">IT Professional</option>
                                                 <option value="Business Professional">Business Professional</option>    
                                              </select>
-                                             <span class="error-text"></span>
+                                           
                                              
                                           </div>
                                           <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
