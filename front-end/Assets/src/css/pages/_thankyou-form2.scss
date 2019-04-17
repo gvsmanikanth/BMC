@@ -75,16 +75,16 @@
     
     .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(odd){
             background: #ffffff;
-            .layout-inner-wrap{
-                .responsivegrid:first-child{
-                    float: right;
-                    padding-left: 1.25%;
-                }
-                .responsivegrid:last-child{
-                    float: left;
-                    padding-right: 1.25%;
-                }
-            }
+            // .layout-inner-wrap{
+            //     .responsivegrid:first-child{
+            //         float: right;
+            //         padding-left: 1.25%;
+            //     }
+            //     .responsivegrid:last-child{
+            //         float: left;
+            //         padding-right: 1.25%;
+            //     }
+            // }
     }
     .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(even){
         background: #f1f1f1;      
