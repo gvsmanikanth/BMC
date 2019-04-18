@@ -82,6 +82,7 @@ fieldset:not(#foo) {
 
 		select {
 			outline: none;
+			z-index: 105;
 		}
 	}
 
