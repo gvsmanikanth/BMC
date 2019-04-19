@@ -234,6 +234,13 @@
         
     }
    
+    @media (max-width: $break-md) {
+        .aem-Grid.aem-Grid--12 > .aem-GridColumn.aem-GridColumn--phone--12 {
+            
+            width: 100%;
+        }
+    }
+    
 }
 
 
