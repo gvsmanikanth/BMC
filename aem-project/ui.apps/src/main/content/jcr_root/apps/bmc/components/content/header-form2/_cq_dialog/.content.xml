@@ -75,7 +75,7 @@
                             <headerBackground
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                fieldDescription="Default background color: #000000"
+                                fieldDescription="Default background color: #0091DD (mid blue)"
                                 fieldLabel="Header Background (optional)"
                                 multiple="{Boolean}false"
                                 name="./headerBackground">
@@ -83,7 +83,7 @@
                                     <select
                                         jcr:primaryType="nt:unstructured"
                                         text="Select an Option."
-                                        value="none"/>
+                                        value=""/>
                                     <black
                                         jcr:primaryType="nt:unstructured"
                                         text="Black"
