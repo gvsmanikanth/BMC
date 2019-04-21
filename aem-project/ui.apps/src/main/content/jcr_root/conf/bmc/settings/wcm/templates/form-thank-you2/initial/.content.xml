@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-04-15T18:56:41.721+05:30"
+        cq:lastModified="{Date}2019-04-22T00:41:07.356+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:06.179-04:00"
         cq:lastReplicatedBy="admin"
@@ -23,14 +23,48 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
-                <header_brand
+                <header-form2-thank-you
                     jcr:created="{Date}2017-08-23T17:23:49.731-04:00"
                     jcr:createdBy="dtayeh"
                     jcr:lastModified="{Date}2017-08-23T17:23:49.731-04:00"
                     jcr:lastModifiedBy="dtayeh"
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/content/header-brand2"
-                    heading="Thanks."/>
+                    sling:resourceType="bmc/components/content/header-form2-thank-you"
+                    heading="Thanks.">
+                    <center
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/responsivegrid">
+                        <title
+                            jcr:created="{Date}2019-04-22T00:33:30.882+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-04-22T00:34:15.018+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Thank you!"
+                            sling:resourceType="bmc/components/content/title"/>
+                        <title_1441199697
+                            jcr:created="{Date}2019-04-22T00:33:45.672+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-04-22T00:34:58.330+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="It's now in your hands. Explore Control-M and go beyond  traditional workflow automation."
+                            sling:resourceType="bmc/components/content/title"
+                            type="h2"/>
+                        <ctabutton
+                            jcr:created="{Date}2019-04-22T00:35:05.823+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-04-22T00:41:07.350+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/CTAbutton"
+                            buttonColor="btn btn-blue"
+                            buttonText="Specify Text"
+                            buttonURL="http://www.runaware.com/clients/bmc/?product=ctm"
+                            customButtonText="LAUNCH YOUR TRIAL"
+                            learnMore="true"/>
+                    </center>
+                </header-form2-thank-you>
                 <maincontentcontainer
                     jcr:created="{Date}2017-08-23T17:23:20.236-04:00"
                     jcr:createdBy="dtayeh"
