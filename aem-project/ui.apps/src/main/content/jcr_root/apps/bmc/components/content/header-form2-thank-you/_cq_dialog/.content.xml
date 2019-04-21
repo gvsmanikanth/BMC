@@ -72,30 +72,48 @@
                                     </column>
                                 </items>
                             </mobileHeaderImage>
-                            <title
+                            <headerBackground
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Use Title case."
-                                fieldLabel="Title (H1)"
-                                name="./title"/>
-                            <subTitle
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Use sentence case."
-                                fieldLabel="Subtitle (H2) (optional)"
-                                name="./subTitle"/>
-                            <ctaButtonText
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Use sentence case."
-                                fieldLabel="CTA Button Text (optional)"
-                                name="./ctaButtonText"/>
-                            <ctaButtonURL
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                fieldDescription="Select a page using the path tool, or enter an external HTTP link"
-                                fieldLabel="CTA Button URL (optional)"
-                                name="./ctaButtonURL"/>
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Default background color: #0091DD (mid blue)"
+                                fieldLabel="Header Background (optional)"
+                                multiple="{Boolean}false"
+                                name="./headerBackground">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <black
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Black"
+                                        value="#000000"/>
+                                    <blue
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Blue"
+                                        value="#126CC3"/>
+                                    <green
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Green"
+                                        value="#4C9B00"/>
+                                    <grey
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Grey"
+                                        value="#5F6165"/>
+                                    <lightOrange
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Light Orange"
+                                        value="#FC7A00"/>
+                                    <midBlue
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MidBlue"
+                                        value="#0091DD"/>
+                                    <midGreen
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MidGreen"
+                                        value="#93B400"/>
+                                    <teal
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Teal"
+                                        value="#009A8E"/>
+                                </items>
+                            </headerBackground>
                         </items>
                     </column>
                 </items>
