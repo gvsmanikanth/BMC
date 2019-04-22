@@ -14,13 +14,15 @@
         background: #f1f1f1;
         width: auto;
         border-top: 5px solid #fe5000;
-        @media (min-width: $break-sm) {
-            z-index: 1056;           
-        }   
-        
         position: relative;
-       
-        
+        @media (min-width: $break-md) {
+            z-index: 10; 
+            margin-top: -300px;          
+        }  
+        @media (max-width: $break-md) {
+            margin-top: 0px !important;         
+        }  
+                        
         .btn-secondary {
             background-color: #2d6d91;
             text-transform: uppercase;
@@ -85,11 +87,11 @@
                 padding-top: .5em;
                 padding-bottom: .5em;
                 font-size: 0.94rem;
-                ol#C_Contact_Me1_group, ol#C_OptIn_group {
-                    border-bottom: 1px solid #ccc;
-                    margin-bottom: 15px;
-                    padding-bottom: 15px;                   
-                }
+                // ol#C_Contact_Me1_group, ol#C_OptIn_group {
+                //     border-bottom: 1px solid #ccc;
+                //     margin-bottom: 15px;
+                //     padding-bottom: 15px;                   
+                // }
             }
             .decorator-select.validation-error{
                 padding: 0;
@@ -110,6 +112,7 @@
                 display: inline-block;
                 font-size: 14px;
                 font-style: italic;
+                line-height: 14px;
             }
         }   
            
@@ -124,6 +127,11 @@
         @media (min-width: $break-sm) {
             padding-left: 50px;             
         }        
+    }
+    .field-sep hr{
+        border-bottom: 1px solid #ccc;
+        margin: 15px auto;          
+            
     }
 
     

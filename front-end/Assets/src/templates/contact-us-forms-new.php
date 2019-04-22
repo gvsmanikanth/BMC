@@ -390,6 +390,7 @@
                                                 </ol>
                                              </div>
                                           </div>
+                                          
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <div class="form-group checkbox">
                                                 <label for="licenseAgreement"></label>
@@ -403,19 +404,21 @@
                                                 </ol>
                                              </div>
                                           </div>
+                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr style="/"></div>
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-                                          <div class="form-group checkbox">
-                                             <label for="C_OptIn"></label>
-                                             <ol id="C_OptIn_group">
-                                                <li>
-                                                   <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked">
-                                                   <label for="C_OptIn">
-                                                   I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
-                                                   </label>
-                                                </li>
-                                             </ol>
-                                          </div>
-                                       </div>                                          
+                                             <div class="form-group checkbox">
+                                                <label for="C_OptIn"></label>
+                                                <ol id="C_OptIn_group">
+                                                   <li>
+                                                      <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked">
+                                                      <label for="C_OptIn">
+                                                      I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
+                                                      </label>
+                                                   </li>
+                                                </ol>
+                                             </div>                                          
+                                          </div>    
+                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr style="/"></div>                                      
                                        </fieldset>
                                     </div>
                                  </div>

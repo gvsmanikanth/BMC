@@ -4,8 +4,11 @@
 (function($) {
     //checking the form2 class is present or not	
 	$.fn.validateInputs = function() {
-		var $this = this;	          
-        $this.after('<span class="error-text"></span>'); 
+        var $this = this;	        
+        $this.after('<span class="error-text"></span>');        
+                 
+        $('.checkbox .error-text').insertAfter( $('.checkbox label') );
+                              
             // base regex patterns; http://regex101.com/ is a good testing environment
             $this.patterns = {
                 'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
@@ -24,7 +27,7 @@
                     type = $input.attr('type');
                     var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
                    
-                    console.log($input);
+                   // console.log($input);
                     if($input.get(0).getAttribute('required') != 'false'){
                         if(!(required && (value === '' || value === null))){
                             if(type == 'text' || type == 'tel' || type == 'email'){
@@ -61,14 +64,13 @@
                     }                    
                     				
             });	
-
+            
 		}	
 		      
-    if ( $('body').hasClass('form2') ) {  
-        $inputs = $('form').find('input, textarea, select'),      
+    if ( $('body').hasClass('form2') ) { 
+        $inputs = $('form').find('input, textarea, select'),
         $inputs.validateInputs();				
     } 
-		
-	
+
 }) (jQuery);
 
