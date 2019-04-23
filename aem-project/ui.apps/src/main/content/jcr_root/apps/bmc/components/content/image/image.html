@@ -20,6 +20,13 @@
                  title="${image.displayPopupTitle && image.title}"/>
     </a>
 
+<sly data-sly-test="${!properties.isDecorative}">
     <span class="cmp-image--title" data-sly-test="${properties.showCaptionAsHyperLink && image.title}"><a class="${cta.cssClass}" href="${linkURL}">${image.title}</a></span>
+</sly>
+<!--/*
+<sly data-sly-test="${properties.isDecorative}">
+    <span class="cmp-image--title" data-sly-test="${image.title}">${image.title}</span>
+</sly> */-->
+
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cq-dd-image'}"></sly>

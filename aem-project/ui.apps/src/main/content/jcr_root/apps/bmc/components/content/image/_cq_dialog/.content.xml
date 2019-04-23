@@ -77,7 +77,8 @@
                                 name="./showCaptionAsHyperLink"
                                 text="Show caption as hyper link"
                                 uncheckedValue="{Boolean}false"
-                                value="{Boolean}true"/>
+                                value="{Boolean}true"
+                                wrapperClass="core-image-hyperlink"/>
                             <imagehorizontalPosition
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
