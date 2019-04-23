@@ -57,9 +57,9 @@
             {
                 margin-top: 0;
                 margin-bottom: 0;
+                background: #fff;
                 select {
-                    
-                    background: #fff;                  
+                                    
                     appearance: none;
                     
                  }
@@ -75,36 +75,41 @@
                     right: 0;
                     top: 0;
                     width: 54px;
-                    z-index: 11;
+                    z-index: 105;
                     font-family: 'icomoon';
                     text-align: center;
                     border-left: 1px solid #ccc;
                     line-height: 48px;
                     color: #0091dd;
                 }
+                .validation-error {
+                   background-image: none;
+                  padding: 0;
+                }
             }
+            .decorator-select.validation-error {
+                padding: 0 40px 0 10px;
+               
+             }
+             .decorator-select.valid-input {
+                    padding: 0 40px 0 15px;
+                }
             .cmp-options {
                 padding-top: .5em;
                 padding-bottom: .5em;
-                font-size: 0.94rem;
-                // ol#C_Contact_Me1_group, ol#C_OptIn_group {
-                //     border-bottom: 1px solid #ccc;
-                //     margin-bottom: 15px;
-                //     padding-bottom: 15px;                   
-                // }
-            }
-            .decorator-select.validation-error{
-                padding: 0;
+                font-size: 0.94rem;               
             }
     
             // aligning valdation exlamation at the right side
-            .validation-error{
+            .validation-error{                
+                background: #ffffff url(icon-error.png) no-repeat;
                 background-position: 97%;
-                padding: 0.44444em 1.77778em 0.44444em 0.44444em ;
+                padding: 0 10px;
             }
             .valid-input {
                 border: 2px solid #37a447;
-                background: #fff url(head/icon-error.png) .44444em center no-repeat;
+                background: #fff url(icon-success.png) .44444em center no-repeat;
+                background-position: 97%;
             }
             .error-text {
                 color: #de2a12;
@@ -113,6 +118,20 @@
                 font-size: 14px;
                 font-style: italic;
                 line-height: 14px;
+            }
+            .form-group.checkbox{
+                li{
+                    label{
+                        display: table;
+                        padding-left: 5px;
+                        &::before{
+                            padding-right: 20px;
+                            display: table-cell;
+                            vertical-align: text-top;
+                        }
+                    }
+                }                
+                
             }
         }   
            

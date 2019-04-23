@@ -319,7 +319,7 @@
                                                 <option value="Yugoslavia">Yugoslavia</option>
                                                 <option value="Zaire">Zaire</option>
                                                 <option value="Zambia">Zambia</option>
-                                             </select><span class="error-text"></span>
+                                             </select>
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
@@ -366,7 +366,7 @@
                                                 <option value="TrueSight Capacity">TrueSight Capacity Optimization</option>
                                                 <option value="TrueSight Cloud Cost Control">TrueSight Cloud Cost Control</option>
                                                 <option value="TrueSight Intelligence">TrueSight Intelligence</option>
-                                             </select><span class="error-text"></span>
+                                             </select>
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
@@ -382,9 +382,9 @@
                                                 <label for="C_Contact_Me1_group"></label>
                                                 <ol id="C_Contact_Me1_group">
                                                    <li>
-                                                      <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="false">
+                                                      <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="true">
                                                       <label for="C_Contact_Me1">
-                                                      Would you like someone from BMC  to connect with you about Control-M
+                                                      Would you like someone from BMC  to connect with you about Control&#8209M
                                                       </label>
                                                    </li>
                                                 </ol>
@@ -410,7 +410,7 @@
                                                 <label for="C_OptIn"></label>
                                                 <ol id="C_OptIn_group">
                                                    <li>
-                                                      <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked">
+                                                      <input name="C_OptIn" id="C_OptIn" value="Yes" type="checkbox" checked="checked"  required="true"  >
                                                       <label for="C_OptIn">
                                                       I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
                                                       </label>
