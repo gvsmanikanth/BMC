@@ -84,15 +84,15 @@
                 }
                 .validation-error {
                    background-image: none;
-                  padding: 0;
+                 
                 }
             }
             .decorator-select.validation-error {
-                padding: 0 40px 0 10px;
+                 background-image: none;
                
              }
              .decorator-select.valid-input {
-                    padding: 0 40px 0 15px;
+                   background-image: none;
                 }
             .cmp-options {
                 padding-top: .5em;
@@ -104,7 +104,8 @@
             .validation-error{                
                 background: #ffffff url(icon-error.png) no-repeat;
                 background-position: 97%;
-                padding: 0 10px;
+                padding-left: 0.44444em;
+              
             }
             .valid-input {
                 border: 2px solid #37a447;
