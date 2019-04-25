@@ -26,39 +26,21 @@
 
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12 trial-form2">
    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
-      <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12 top-content">
+   <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12 top-content">
          <section>
             <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
-                        <section>
-                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
-                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                    <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
-                                       <h3>
-                                       Supporting Resources
-                                       </h3>
-                                    </div>
-                                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                                       <p>Now that you have access to your trial experience, explore these resources to help you understand
-                                          how best to leverage Control-M and build your case for making it a part of your solution.</p>                            
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                   <div class="call-to-action-block">
-                                       <h2>What's Next?</h2>
-                                       <p>Start your personalized demo environment.</p>
-                                       <button class="btn-secondary beg-demo">BEGIN DEMO</button>   
-                                   </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </section>
+                     <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
+                        <h3>
+                           What's next?
+                        </h3>
                      </div>
+                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                        <p>Now that you have access to your trial experience, explore these resources to help you understand
+                           how best to leverage Control-M and build your case for making it a part of your solution.</p>                            
+                           <p><span class="black">Ready to take the next step? </span><strong><a href="#.">Talk to BMC expert ></a></strong></p>
+                     </div>                                    
                   </div>
                </div>
             </div>
@@ -72,6 +54,15 @@
                      <div class="25-75contentcontainer aem-GridColumn aem-GridColumn--default--12">
                            <section>
                               <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                                 <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
+                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                             <div class="cq-dd-image text-center">
+                                                   <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                             </div>
+                                          </div>
+                                       </div>
+                                 </div>   
                                  <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                           <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
@@ -85,15 +76,7 @@
                                           </div>
                                        </div>
                                  </div>
-                                 <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
-                                             <div class="cq-dd-image text-center">
-                                                   <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
-                                             </div>
-                                          </div>
-                                       </div>
-                                 </div>                               
+                                                             
                               </div>
                            </section>
                      </div>
@@ -110,6 +93,15 @@
                      <div class="25-75contentcontainer aem-GridColumn aem-GridColumn--default--12">
                            <section>
                               <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                                  <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
+                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                             <div class="cq-dd-image text-center">
+                                                   <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                             </div>
+                                          </div>
+                                       </div>
+                                 </div>  
                                  <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                           <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
@@ -123,15 +115,7 @@
                                           </div>
                                        </div>
                                  </div>
-                                 <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
-                                             <div class="cq-dd-image text-center">
-                                                   <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
-                                             </div>
-                                          </div>
-                                       </div>
-                                 </div>                               
+                                                              
                               </div>
                            </section>
                      </div>
@@ -148,27 +132,28 @@
                      <div class="25-75contentcontainer aem-GridColumn aem-GridColumn--default--12">
                            <section>
                               <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-                                 <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                          <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
-                                             <span class="tags">Infographic</span>
-                                             <h3>The Keys to Big Data Success: Automation and Orchestration  </h3>
-                                          </div>
-                                          <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                                             <a href="#.">View ></a>
-                                          </div>
-                                       </div>
-                                 </div>
                                  <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
-                                             <div class="cq-dd-image text-center">
-                                                   <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                          <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                             <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                                <div class="cq-dd-image text-center">
+                                                      <img src="//www.bmc.com/it-services/strategic-services/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/image_copy.img.jpg" alt="">
+                                                </div>
                                              </div>
                                           </div>
-                                       </div>
-                                 </div>                               
-                              </div>
+                                    </div>     
+                                 <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+                                          <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                             <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
+                                                <span class="tags">Infographic</span>
+                                                <h3>The Keys to Big Data Success: Automation and Orchestration  </h3>
+                                             </div>
+                                             <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                                <a href="#.">View ></a>
+                                             </div>
+                                          </div>
+                                    </div>
+                                                               
+                                 </div>
                            </section>
                      </div>
                      </div>

@@ -55,7 +55,13 @@
         
         .bannerContent{
             min-height: min-content;
+            .layout-inner-wrap{
+                .flex-item{
+                    margin-left: 0;
+                }
+            }
         }
+        
     }
 
     .page-caption{
@@ -97,7 +103,7 @@
         h3{
             @media (min-width: $break-md) {
                 line-height: 1.45em;
-                 font-size: 2.5rem;
+                 font-size: 2.2rem;
             }
         }
     }

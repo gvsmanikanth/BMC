@@ -29,11 +29,11 @@
 
 
    <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-      <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+      <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed ">
          <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
             <section class="">
                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap pt0 mt0">
-                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 form-wrap">
                      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
                         <div class="cmp cmp-form aem-GridColumn aem-GridColumn--default--12">
                            <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" 
