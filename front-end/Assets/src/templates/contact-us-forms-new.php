@@ -436,22 +436,44 @@
                      </div>
                   </div>
                   <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                           <h2></h2>
+                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                           <h2>
+                              Take Control-M for a test drive
+                           </h2>
                         </div>
                         <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                           <img src="https://www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" alt="" >
-                           <p>We know you need to keep running your
-                           business, even while you reinvent it. Our
-                           solutions address business challenges in service
-                           management, automation, operations and the
-                           mainframe. The more you can tell us about
-                           your unique business needs, the better we can
-                           support your digital transformation, and keep
-                           your focus on meeting your goals.<br />
-                           </p>                           
-                        </div>                        
+                           <p>Try out key Control-M features in a self-guided live environment.</p>
+                           <ul>
+                              <li>Explore multiple use cases</li>
+                              <li>Create, build, and run jobs</li>
+                              <li>Dynamically monitor job flows</li>
+                              <li>Automate internal and external file transfers</li>
+                              <li>Enable users to perform basic tasks with&nbsp;self service</li>
+                           </ul>
+                           <p>See how easy it is to get started automating workloads with Control-M.<br>
+                              <b>Try it now!</b>
+                           </p>
+                        </div>
+                        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                           <h2>
+                              Take Control-M for a test drive
+                           </h2>
+                        </div>
+                        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                           <p>Try out key Control-M features in a self-guided live environment.</p>
+                           <ul>
+                              <li>Explore multiple use cases</li>
+                              <li>Create, build, and run jobs</li>
+                              <li>Dynamically monitor job flows</li>
+                              <li>Automate internal and external file transfers</li>
+                              <li>Enable users to perform basic tasks with&nbsp;self service</li>
+                           </ul>
+                           <p>See how easy it is to get started automating workloads with Control-M.<br>
+                              <b>Try it now!</b>
+                           </p>
+                        </div>
+                     </div>
                   </div>              
                </div>
             </section>

@@ -6,7 +6,7 @@
 	$.fn.validateInputs = function() {
         var $this = this;      
 
-        $('form input[type="text"]').after('<span class="error-text"></span>');
+        $('form input[type="text"], form input[type="tel"], form input[type="email"] ').after('<span class="error-text"></span>');
         $('form select').after('<span class="error-text"></span>');
         $('form input[type="checkbox"] + label').after('<span class="error-text"></span>');
                                       

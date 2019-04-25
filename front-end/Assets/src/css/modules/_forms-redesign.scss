@@ -13,7 +13,7 @@
         padding: 1.5em;
         background: #f1f1f1;
         width: auto;
-        border-top: 5px solid #fe5000;
+        border-top: 10px solid #fe5000;
         position: relative;
         @media (min-width: $break-md) {
             z-index: 10; 
@@ -81,6 +81,7 @@
                     border-left: 1px solid #ccc;
                     line-height: 48px;
                     color: #0091dd;
+                    background: #fff;
                 }
                 .validation-error {
                    background-image: none;
@@ -135,6 +136,11 @@
                 
             }
         }   
+        hr.field-sep{
+            border-bottom: 1px solid #ccc;
+            margin: 15px -1.5em;    
+                
+        }
            
     }
     .contact-info {
@@ -148,12 +154,14 @@
             padding-left: 50px;             
         }        
     }
-    .field-sep hr{
-        border-bottom: 1px solid #ccc;
-        margin: 15px auto;          
-            
+    
+    .layout-inner-wrap{
+        .cmp-title  {
+            h2{
+                color: #333;
+            }            
+        }
     }
-
     
 
 }

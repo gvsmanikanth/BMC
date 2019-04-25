@@ -51,7 +51,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 
 			//checking the forms-redesign class is present or not			
 			var redesign_form_flag;	
-			if ( $('form').children().find('.forms-redesign').length ) {
+			if ($('body').hasClass('form2')) {
 				redesign_form_flag = 1;					
 			} else {
 				redesign_form_flag = 0;
