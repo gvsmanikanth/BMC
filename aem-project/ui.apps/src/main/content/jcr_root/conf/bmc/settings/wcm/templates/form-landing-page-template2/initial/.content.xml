@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-04-22T00:59:21.265+05:30"
+        cq:lastModified="{Date}2019-04-26T13:49:42.956+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:05.422-04:00"
         cq:lastReplicatedBy="admin"
@@ -82,12 +82,21 @@
                                 <title
                                     jcr:created="{Date}2017-08-23T17:58:37.148-04:00"
                                     jcr:createdBy="dtayeh"
-                                    jcr:lastModified="{Date}2019-04-22T00:51:33.769+05:30"
+                                    jcr:lastModified="{Date}2019-04-26T13:44:53.054+05:30"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
-                                    jcr:title="Create a free trial account for [Product Name] &lt;br>&lt;i>&lt;h6>All fields are required.&lt;/i>&lt;h6>"
+                                    jcr:title="Create a free trial account for [Product Name]"
                                     sling:resourceType="bmc/components/content/title"
                                     type="h4"/>
+                                <subtitle
+                                    jcr:created="{Date}2017-08-23T17:58:37.148-04:00"
+                                    jcr:createdBy="dtayeh"
+                                    jcr:lastModified="{Date}2019-04-26T13:44:08.201+05:30"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="&lt;i>All fields are required.&lt;/i>"
+                                    sling:resourceType="bmc/components/content/title"
+                                    type="h6"/>
                                 <experiencefragment
                                     jcr:created="{Date}2017-08-23T17:59:09.816-04:00"
                                     jcr:createdBy="dtayeh"
@@ -96,11 +105,11 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"/>
                                 <form-terms
-                                    jcr:lastModified="{Date}2019-04-22T00:59:21.256+05:30"
+                                    jcr:lastModified="{Date}2019-04-26T13:49:42.948+05:30"
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bmc/components/content/text"
-                                    text="&lt;p>By registering for this trial, you are confirming that you have&amp;nbsp; read and agree to &lt;a href=&quot;/content/bmc/language-masters/en/legal/personal-information.html&quot; target=&quot;Target&quot;>BMC’s policy regarding personal information.&lt;/a>&lt;br>&#xa;&lt;/p>&#xa;"
+                                    text="&lt;p>By registering for this offer you are confirming that you have read and agreed to &lt;a href=&quot;/legal/personal-information.html&quot; target=&quot;Target&quot;>BMC’s Privacy Policy&lt;/a>.&lt;br>&#xa;&lt;/p>&#xa;"
                                     textIsRich="true"/>
                                 <form-btn
                                     jcr:lastModified="{Date}2019-04-22T00:52:21.903+05:30"
@@ -143,15 +152,7 @@
                         sling:resourceType="bmc/components/structure/100contentcontainer">
                         <center
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm/foundation/components/responsivegrid">
-                            <htmlarea
-                                jcr:created="{Date}2019-04-04T16:17:57.417+05:30"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2019-04-15T20:55:20.148+05:30"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/htmlarea"/>
-                        </center>
+                            sling:resourceType="wcm/foundation/components/responsivegrid"/>
                     </_100contentcontainer>
                 </maincontentcontainer>
             </responsivegrid>
