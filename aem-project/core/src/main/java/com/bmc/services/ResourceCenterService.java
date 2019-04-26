@@ -1,17 +1,17 @@
 package com.bmc.services;
 
-import com.bmc.models.resourcecenter.ResourceFilter;
-import com.bmc.models.resourcecenter.ResourceItem;
+import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.BmcContent;
 
-import javax.jcr.Session;
 import java.util.List;
+import java.util.Map;
 
 public interface ResourceCenterService {
 
-    List<ResourceFilter> getResourceFilters(Session session);
-    String getResourceFiltersJSON(Session session);
+    List<BmcContentFilter> getResourceFilters();
+    String getResourceFiltersJSON();
 
-    List<ResourceItem> getResourceResults(Session session);
-    String getResourceResultsJSON(Session session);
+    List<BmcContent> getResourceResults(Map<String, String[]> parameters);
+    String getResourceResultsJSON(Map<String, String[]> parameters);
 
 }

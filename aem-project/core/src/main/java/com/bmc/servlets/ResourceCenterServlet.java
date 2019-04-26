@@ -6,7 +6,6 @@ import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
-import org.json.JSONObject;
 
 import javax.jcr.Session;
 import java.io.IOException;
@@ -15,11 +14,11 @@ import java.util.Map;
 
 @SlingServlet(
         methods = {"GET"},
-        paths   = {"/bin/resourcecenter/filters", "/bin/resourcecenter/resources"})
+        paths   = {"/bin/contentapi/filters", "/bin/contentapi/content"})
 public class ResourceCenterServlet extends SlingSafeMethodsServlet {
 
     private static final String FILTERS_METHOD = "/filters";
-    private static final String RESOURCES_METHOD = "/resources";
+    private static final String RESOURCES_METHOD = "/content";
 
     @Reference
     private ResourceCenterService resourceCenterService;
@@ -62,7 +61,7 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         String resourceFiltersJsonStr = null;
 
         // invoke method from the OSGi service
-        resourceFiltersJsonStr = resourceCenterService.getResourceFiltersJSON(session);
+        resourceFiltersJsonStr = resourceCenterService.getResourceFiltersJSON();
 
         // success
         if(resourceFiltersJsonStr != null) {
@@ -82,8 +81,17 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         // grab parameters to search by
         Map<String, String[]> parameters = request.getParameterMap();
 
+        // JSON String to return
+        String resourceResultsJsonStr = null;
+
         if(parameters != null) {
-            // invoke an OSGi service method getResources(Map<String, String[]>)
+
+            // invoke an OSGi service method getResourceResultsJSON(Map<String, String[]>)
+            resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
+
+            if(resourceResultsJsonStr != null) {
+
+            }
         }
 
         response.sendError(404);
