@@ -17,4 +17,24 @@
             <a href="${secondaryCtaHref}" class="${secondaryCta.cssClass}">${item.secondaryCtaText @ context='html'}</a>
         </sly>
     </sly>
+     <!--/*Iterate through the items  */--> 
+    <sly data-sly-list.flexiLinkItem="${data.relatedLinks}">
+	    	<sly data-sly-use.relatedLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=flexiLinkItem.pagePath}"></sly>
+			<sly data-sly-test="${relatedLink.href}">
+				 <sly data-sly-test.resolvedLink="${relatedLink.href}"></sly>
+			</sly>
+			<sly data-sly-test="${!relatedLink.href}">
+				<sly data-sly-test.resolvedLink="${flexiLinkItem.pagePath}"></sly>
+			</sly>
+			<sly data-sly-test="${relatedLink.cssClass}">
+				<sly data-sly-test.cssClass="${relatedLink.cssClass}"></sly>
+			</sly>
+			<sly data-sly-test="${!relatedLink.cssClass}">
+			     <sly data-sly-test.cssClass=" "></sly>
+			</sly>
+			<h3> <a href="${resolvedLink}" class="${cssClass}">${flexiLinkItem.title @ context='html'}</a></h3>
+        	<p data-sly-test="${flexiLinkItem.description}">${flexiLinkItem.description @ context='html'}</p>
+       	    <a href="${resolvedLink}" class="${flexiLinkItem.cssClass}">${"Learn More" @ context = 'html', i18n}</a>
+	</sly>
 </section>
+
