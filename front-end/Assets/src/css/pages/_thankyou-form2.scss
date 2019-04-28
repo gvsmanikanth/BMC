@@ -10,11 +10,19 @@
     	max-width:1300px;
     }
     
+    @media (min-width: $break-md) {
+    .layout-primary{
+    	padding-left: 4%;
+     }
+    }
+    
+    
     button{
         border: none;
         border-radius: 0;
     }
     .cmp-title{
+       /*
         h3{
             color: #414042;
             font-weight: 400;
@@ -25,6 +33,10 @@
                 line-height: 1.45em;
                  font-size: 1.96667rem;
             }
+        }
+      */  
+        h2{
+        	margin-bottom: 1rem;
         }
     }
     .cmp-text{
@@ -118,10 +130,10 @@
         }
     }
     span.tags {
-        font-size: .8rem;
-        @media (min-width: $break-sm) {
-            font-size: 1.4rem;
-        }        
+        //font-size: .8rem;
+        //@media (min-width: $break-sm) {
+            //font-size: 1.4rem;
+        //}        
         display: block;
         margin-bottom: 5px;
     }
@@ -258,10 +270,3 @@
     }
     
 }
-
-
-
-
-
-
-

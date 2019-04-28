@@ -32,9 +32,9 @@
                <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                      <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
-                        <h3>
+                        <h2 class="h2-variation-1">
                            What's next?
-                        </h3>
+                        </h2>
                      </div>
                      <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                         <p>Now that you have access to your trial experience, explore these resources to help you understand
@@ -67,9 +67,9 @@
                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                           <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
                                              <span class="tags">Datasheet</span>
-                                             <h3>
+                                             <h2 class="h2-variation-1">
                                                 Supported Platforms and Applications
-                                             </h3>
+                                             </h2>
                                           </div>
                                           <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                              <a href="#.">Download ></a>
@@ -106,9 +106,9 @@
                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                           <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
                                              <span class="tags">Video</span>
-                                             <h3>
+                                             <h2 class="h2-variation-1">
                                              Drastically Reduce Upgrade Time, Effort & Cost
-                                             </h3>
+                                             </h2>
                                           </div>
                                           <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                              <a href="#.">Watch ></a>
@@ -145,7 +145,7 @@
                                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                              <div class="cmp cmp-title cmp-title-large aem-GridColumn aem-GridColumn--default--12">
                                                 <span class="tags">Infographic</span>
-                                                <h3>The Keys to Big Data Success: Automation and Orchestration  </h3>
+                                                <h2 class="h2-variation-1">The Keys to Big Data Success: Automation and Orchestration  </h2>
                                              </div>
                                              <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                                 <a href="#.">View ></a>
