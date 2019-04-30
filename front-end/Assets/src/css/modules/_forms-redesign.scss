@@ -167,6 +167,53 @@
             }            
         }
     }
+
+    .cust-info{
+        .card {
+            text-align: center; 
+            display: block;
+            @media (min-width: $break-sm) {
+                display: flex;
+                text-align: left;
+            }
+            .card-image {
+                
+                @media (min-width: $break-sm) {
+                    padding-right: 30px;
+                    min-width: 150px;
+                    
+                }
+                
+                img{
+                    border: 2px solid #37a447;
+                }
+            }
+            .card-content{
+                strong{
+                   color: #333; 
+                }
+            }
+           
+        }
+    }
+    .red-bullets{
+        list-style: none;
+        li{
+            position: relative;
+            &:before {
+                content: ' ';
+                width: 8px;
+                height: 8px;
+                background: #f00;
+                position: absolute;
+                left: -20px;
+                border-radius: 50%;
+                top: 8px;
+            }
+        }
+        
+       
+    }
 	
 	@media (min-width: $break-lg) {
 		.product-category-header.product-category-header2 .bannerContent .layout-inner-wrap .flex-item {

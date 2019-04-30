@@ -444,7 +444,7 @@
                         </div>
                         <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                            <p>Try out key Control-M features in a self-guided live environment.</p>
-                           <ul>
+                           <ul class="red-bullets">
                               <li>Explore multiple use cases</li>
                               <li>Create, build, and run jobs</li>
                               <li>Dynamically monitor job flows</li>
@@ -454,25 +454,20 @@
                            <p>See how easy it is to get started automating workloads with Control-M.<br>
                               <b>Try it now!</b>
                            </p>
-                        </div>
-                        <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                           <h2>
-                              Take Control-M for a test drive
-                           </h2>
-                        </div>
-                        <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                           <p>Try out key Control-M features in a self-guided live environment.</p>
-                           <ul>
-                              <li>Explore multiple use cases</li>
-                              <li>Create, build, and run jobs</li>
-                              <li>Dynamically monitor job flows</li>
-                              <li>Automate internal and external file transfers</li>
-                              <li>Enable users to perform basic tasks with&nbsp;self service</li>
-                           </ul>
-                           <p>See how easy it is to get started automating workloads with Control-M.<br>
-                              <b>Try it now!</b>
-                           </p>
-                        </div>
+                        </div>                        
+                     </div>
+
+                     <div class="cust-info mb3 mt3">
+                        <div class="card ">
+                           <div class="card-image mb2">
+                              <img class="circle" src="http://vw-hou-cpg-dv01.bmc.com/pattern-authoring-system/uploads/assets/74/Beauchamp-1494431218.jpeg" alt="Robert Beauchamp" style="width:100%;max-width:300px;">
+                           </div>
+                           <div class="card-content">
+                              <p>After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC’s highly successful transformation from a mainframe tools vendor to
+                               the company that delivers the industry’s most strategic enterprise.</p>
+                              <strong class="curious-blue dark-blue-hover"> - Robert Redd, Release Engineer, Railinc</strong>                         
+                           </div>
+                        </a>                      
                      </div>
                   </div>              
                </div>
