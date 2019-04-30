@@ -63,10 +63,8 @@
                 margin-bottom: 0;
                 background: #fff;
                 select {
-                                    
-                    appearance: none;
-                    
-                 }
+                	appearance: none;
+                }
                  select::-ms-expand {
                     display: none;
                 }
@@ -100,10 +98,18 @@
                    background-image: none;
                 }
             .cmp-options {
-                padding-top: 0;
-                padding-bottom: 0;
-                font-size: 0.94rem;               
+                padding-top: .5rem;
+                padding-bottom: .5rem;               
             }
+            
+            .checkbox{
+             	label{
+             		margin-bottom:0px;
+             		padding-bottom:0px;
+             		margin-top:0px;
+             		padding-top:0px;
+             	}
+             }
     
             // aligning valdation exlamation at the right side
             .validation-error{                
@@ -177,11 +183,11 @@
                 text-align: left;
             }
             .card-image {
-                
+            	margin: auto;
+                max-width: 150px;
                 @media (min-width: $break-sm) {
                     padding-right: 30px;
                     min-width: 150px;
-                    
                 }
                 
                 img{
@@ -189,6 +195,9 @@
                 }
             }
             .card-content{
+            	p{
+            		line-height: 1.4rem;
+                }
                 strong{
                    color: #333; 
                 }
@@ -213,6 +222,19 @@
         }
         
        
+    }
+    
+    .header-Mobile-View{
+    	margin-right: -10%;
+		margin-left: -10%;
+		width: 120%;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		float: left;
+		.offset-wrapper{
+			width:90%;
+			min-height: auto;
+		}
     }
 	
 	@media (min-width: $break-lg) {

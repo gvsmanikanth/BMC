@@ -9,7 +9,9 @@ function insertAfter(){
 			$(".form-wrap").css('width','50%');
 			$('.product-category-header').insertBefore($('.form-wrap').parents().closest(".maincontentcontainer")); 
 			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6:first-child').css('display','block');
-			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6').removeClass('md-col-12');
+			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').addClass('md-col-6');
+			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').removeClass('md-col-12');
+			$('.form2 .product-category-header2').removeClass('header-Mobile-View');
 		} else{
 			// for rmoving header from top and add to after form 
 			$('.product-category-header').insertAfter('.form-wrap');
@@ -17,6 +19,8 @@ function insertAfter(){
 			$('.form2 form').css('margin-top','0px'); 
 			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6:first-child').css('display','none');
 			$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6').addClass('md-col-12');
+			$('.form2 .product-category-header2').addClass('header-Mobile-View');
+			
 		}
 	}
 }
