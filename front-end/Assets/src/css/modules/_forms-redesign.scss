@@ -13,6 +13,7 @@
             color: #fff;
         }
     }
+    .cmp-form{
     form{
         padding: 1.5em;
         background: #f1f1f1;
@@ -54,7 +55,6 @@
         fieldset:not(#foo){
             label{
                 margin-bottom: 5px;
-                color: #000;
                 line-height:1.2rem;
             }
             .decorator-select 
@@ -108,20 +108,27 @@
              		padding-bottom:0px;
              		margin-top:0px;
              		padding-top:0px;
+             		
+             		&.validation-error{
+             			::before{
+             				color:#e6e6e6;
+             			}
+             		}
              	}
+             	
+             	
+             	
              }
     
             // aligning valdation exlamation at the right side
             .validation-error{                
-                --background: #ffffff url(icon-error.png) no-repeat;
-                background: #ffffff;
+               	background: transparent;
                 background-position: 97%;
                 padding-left: 0.44444em;
               
             }
             .valid-input {
                 border: 2px solid #37a447;
-                background: #fff url(icon-success.png) .44444em center no-repeat;
                 background-position: 97%;
             }
             .error-text {
@@ -153,6 +160,7 @@
   			border-bottom: 0px;    
         }
            
+    }
     }
     .contact-info {
         background: #fff;
