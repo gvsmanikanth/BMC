@@ -249,11 +249,18 @@
         }
         
     }
+    
+    
    
     @media (max-width: $break-md) {
-        .aem-Grid.aem-Grid--12 > .aem-GridColumn.aem-GridColumn--phone--12 {
-            
+        .aem-Grid.aem-Grid--12 > .aem-GridColumn.aem-GridColumn--phone--12 {            
             width: 100%;
+        }
+        .aem-GridColumn{
+            .layout-primary:last-child {
+                padding-left: 0;
+                padding-bottom: 25px;
+            }
         }
     }
     
