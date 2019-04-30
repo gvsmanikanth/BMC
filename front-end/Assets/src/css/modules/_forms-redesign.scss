@@ -1,7 +1,7 @@
 .form2{
     background-color: #fff;
     .ornate-header{
-        min-height: min-content;
+        min-height: 300px;
         .bannerContent{
             min-height: min-content;
 			padding: 0 1rem;
@@ -114,7 +114,8 @@
              				color:#e6e6e6;
              			}
              		}
-             	}
+                 }
+                 
              	
              	
              	
@@ -122,11 +123,18 @@
     
             // aligning valdation exlamation at the right side
             .validation-error{                
-               	background: transparent;
+               	background: #fff;
                 background-position: 97%;
                 padding-left: 0.44444em;
               
             }
+            .checkbox{
+                .validation-error{                
+                    background: transparent;
+                
+                }
+            }
+
             .valid-input {
                 border: 2px solid #37a447;
                 background-position: 97%;
@@ -194,10 +202,11 @@
             	margin: auto;
                 max-width: 150px;
                 padding-right: 4px;
+                margin-bottom: 20px;
                 @media (min-width: $break-lg) {
                     padding-right: 30px;
                     min-width: 150px;
-                   
+                    margin-bottom: 0px;                  
                 }
                 
                 img{
