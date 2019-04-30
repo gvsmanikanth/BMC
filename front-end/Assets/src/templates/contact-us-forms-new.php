@@ -404,7 +404,7 @@
                                                 </ol>
                                              </div>
                                           </div>
-                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr style="/"></div>
+                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr class="field-sep"></div>
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <div class="form-group checkbox">
                                                 <label for="C_OptIn"></label>
@@ -418,7 +418,7 @@
                                                 </ol>
                                              </div>                                          
                                           </div>    
-                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr style="/"></div>                                      
+                                          <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr class="field-sep"></div>                                      
                                        </fieldset>
                                     </div>
                                  </div>

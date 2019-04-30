@@ -51,11 +51,11 @@
             }       
         }  
 
-
         fieldset:not(#foo){
             label{
                 margin-bottom: 5px;
                 color: #000;
+                line-height:1.2rem;
             }
             .decorator-select 
             {
@@ -100,8 +100,8 @@
                    background-image: none;
                 }
             .cmp-options {
-                padding-top: .5em;
-                padding-bottom: .5em;
+                padding-top: 0;
+                padding-bottom: 0;
                 font-size: 0.94rem;               
             }
     
@@ -137,14 +137,14 @@
                             vertical-align: text-top;
                         }
                     }
-                }                
-                
+                }                   
             }
+            
         }   
         hr.field-sep{
-            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
             margin: 15px -1.5em;    
-                
+  			border-bottom: 0px;    
         }
            
     }
