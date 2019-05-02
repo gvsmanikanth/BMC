@@ -4,7 +4,7 @@
 	include_once 'php-inc/head.php';
 ?>
 
-
+<div class="header-form2-thank-you">
 <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{
 	"fallback": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg",
 	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg"
@@ -13,16 +13,31 @@
 		<div class="inner">
 			<div class="bannerContent">
 				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
-					<h1 class="white">Thank you, Karen!</h1>
-					<h2>It’s now in your hands. Explore Control-M and go beyond traditional workflow automation.</h2>
-					
+					<div>
+					 <div class="center responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+						<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+							<div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+							<h1>Thank you!</h1>
+							</div>
+							<div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+							<h2>
+							    It's now in your hands. Explore Control-M and go beyond  traditional workflow automation.</h2>
+							</div>
+							<div class="CTAbutton aem-GridColumn aem-GridColumn--default--12">
+								<a class="aem--inline-block aem--no-grid btn btn-blue learn-more " href="http://www.runaware.com/clients/bmc/?product=ctm" target="_blank">
+								    LAUNCH YOUR TRIAL
+								</a>
+							</div>
+						</div>
+					</div>
+
 					</div>
 				</div>
          </div>
       </div>
    </div>
 </section>
+</div>
 
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12 trial-form2">
    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">

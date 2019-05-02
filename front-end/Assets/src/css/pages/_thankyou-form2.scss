@@ -30,7 +30,7 @@
     .cmp-text{
         li{
             @media (min-width: $break-sm) {
-                font-size: 1.2rem;
+                //font-size: 1.2rem;
             }             
             a{  
                 color: #fe5000;
@@ -41,7 +41,7 @@
         }
         p{           
             @media (min-width: $break-sm) {
-                font-size: 1.4rem;
+                //font-size: 1.4rem;
             } 
         }
     }
@@ -58,22 +58,7 @@
       
     }
     
-    .product-category-header{
-        min-height: min-content;
-        
-        .bannerContent{
-            min-height: min-content;
-            .layout-inner-wrap{
-                .flex-item{
-                    margin-left: 0;
-                }
-                h2{
-                    margin-top: 0;
-                }
-            }
-        }
-        
-    }
+  
 
     .page-caption{
         h2{
@@ -83,7 +68,7 @@
             
             @media (min-width: $break-sm) {
                 line-height: 1.45em;
-                 font-size: 1.96667rem;
+                 //font-size: 1.96667rem;
             }
         }
     }
@@ -114,7 +99,7 @@
         h3{
             @media (min-width: $break-md) {
                 line-height: 1.45em;
-                 font-size: 2.2rem;
+                //font-size: 2.2rem;
             }
         }
     }
@@ -127,50 +112,10 @@
         margin-bottom: 5px;
     }
 
-
-
-// trial form thank you page css
-.call-to-action-block {
-    background: #f1f1f1;
-    padding: 40px;
-    max-width: 100%; 
-    text-align: center;
-    margin-bottom: 20px;
-    @media (min-width: $break-md) {
-        max-width: 75%;   
-        text-align: left;   
-        margin-bottom: 0;
-    }  
-   
-    h2{
-        line-height: 1.45em;
-        font-size: 1.96667rem;
-        color: #414042;
-        font-weight: 400;
-        margin: 0;
-        margin-bottom: 5px;
-        @media (min-width: $break-sm) {
-            font-size: 1.2rem;
-        } 
-    }
-    p  {
-        @media (min-width: $break-sm) {
-            font-size: 1rem;
-        } 
-        margin-bottom: 10px;
-    }
-    .btn-secondary {
-        border-radius: 0;
-    }
-}
-
-
 .trial-form2{
-    
     .cmp-title{
         h3{           
             color: #555557;  
-         
         }
     }
     
@@ -185,7 +130,7 @@
             margin: 0 0 20px 0;
             @media (min-width: $break-sm) {
                 line-height: 1.45em;
-                font-size: 1.96667rem;      
+                //font-size: 1.96667rem;      
                 margin: 0;
             } 
             @media (min-width: $break-md) {    
@@ -201,7 +146,7 @@
         }
         
     }
-
+/*
     .short-form{
         padding: 50px 30px;
         form{
@@ -221,7 +166,7 @@
             h3{
                 @media (min-width: $break-sm) {
                     line-height: 1.45em;
-                    font-size: 1.96667rem;      
+                    //font-size: 1.96667rem;      
                 } 
                 font-weight: 400;
                 margin: 0;
@@ -229,7 +174,7 @@
             }
             p {
                 @media (min-width: $break-sm) {
-                    font-size: 1.3rem;      
+                    //font-size: 1.3rem;      
                 } 
             }  
              button{
@@ -239,13 +184,13 @@
             }
             .helptext{
                 @media (min-width: $break-sm) {
-                    font-size: 1rem;      
+                    //font-size: 1rem;      
                 } 
             }
         }
         
     }
-    
+ */   
     
    
     @media (max-width: $break-md) {
@@ -260,4 +205,35 @@
         }
     }
     
+}
+
+
+.header-form2-thank-you{
+	  .product-category-header{
+        min-height: min-content;
+        .bannerContent{
+            min-height: min-content;
+            padding-bottom: 2rem;
+            padding-top:2rem;
+            
+            .layout-inner-wrap{
+                .flex-item{
+                    margin-left: 0;
+                }
+                h2{
+                    margin-top: 0;
+                }
+            }
+            
+            h1{
+            	margin-top: 18px;;
+            }
+            
+            .btn{
+            	border-radius:0px;
+            	border: 0px;
+            	box-shadow:1px 1px black;
+            }
+        }
+    }
 }

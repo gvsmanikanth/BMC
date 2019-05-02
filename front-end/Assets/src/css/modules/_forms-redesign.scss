@@ -1,4 +1,9 @@
 .form2{
+	
+	.maincontentcontainer>section:first-child>div:first-child{
+		padding-bottom:0px !important;
+	}
+	
     background-color: #fff;
     .ornate-header{
         min-height: 300px;
@@ -53,6 +58,7 @@
         }  
 
         fieldset:not(#foo){
+        	padding-top:.8rem;
             label{
                 margin-bottom: 5px;
                 line-height:1.2rem;
@@ -123,7 +129,7 @@
     
             // aligning valdation exlamation at the right side
             .validation-error{                
-               	background: #fff;
+               	background: #fff; 
                 background-position: 97%;
                 padding-left: 0.44444em;
               
@@ -195,7 +201,7 @@
             text-align: center; 
             display: block;
             @media (min-width: $break-lg) {
-                display: flex;
+                display: table;
                 text-align: left;
             }
             .card-image {
@@ -206,7 +212,9 @@
                 @media (min-width: $break-lg) {
                     padding-right: 30px;
                     min-width: 150px;
-                    margin-bottom: 0px;                  
+                    margin-bottom: 0px; 
+                    display: table-cell; 
+                    vertical-align:top;                
                 }
                 
                 img{
@@ -219,6 +227,9 @@
                 }
                 strong{
                    color: #333; 
+                }
+                @media (min-width: $break-lg) {
+                    display: table-cell;                 
                 }
             }
            
