@@ -112,14 +112,7 @@
         margin-bottom: 5px;
     }
 
-.trial-form2{
-    .cmp-title{
-        h3{           
-            color: #555557;  
-        }
-    }
-    
-}
+
     
 //ebook thank page css
     .call-to-action-sec{
@@ -194,6 +187,15 @@
     
    
     @media (max-width: $break-md) {
+        .layout-inner-wrap{
+            .responsivegrid{
+                .cmp.cmp-image{
+                    margin-top: 0;
+                    padding-top: 0;
+                }
+            }
+        }
+        
         .aem-Grid.aem-Grid--12 > .aem-GridColumn.aem-GridColumn--phone--12 {            
             width: 100%;
         }
