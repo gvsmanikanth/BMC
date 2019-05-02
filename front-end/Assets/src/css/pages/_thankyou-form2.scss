@@ -47,8 +47,6 @@
     }
     
    section{
-
-        padding: 15px 0;
         .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12{
             .layout-inner-wrap{
                 @media (max-width: $break-md) {
@@ -68,6 +66,9 @@
             .layout-inner-wrap{
                 .flex-item{
                     margin-left: 0;
+                }
+                h2{
+                    margin-top: 0;
                 }
             }
         }
@@ -126,12 +127,7 @@
         margin-bottom: 5px;
     }
 
-// Contact thank you page css
-.top-content{
-    section {
-        margin: 0 !important;
-    }
-} 
+
 
 // trial form thank you page css
 .call-to-action-block {

@@ -32,7 +32,7 @@
                <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                      <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12 text-center">
-                         <h3 class="ship-gray m0">Supporting Resources</h3>
+                     <h2 class="h2-variation-1 text-center">   Supporting Resources</h2>
                      </div>                     
                   </div>
                </div>
@@ -50,9 +50,9 @@
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h3>
+                                    <h2 class="h2-variation-1 "> 
                                           Education &amp; Certification
-                                       </h3>
+                                          </h2>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
@@ -91,9 +91,9 @@
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h3>
+                                    <h2 class="h2-variation-1 "> 
                                           Education &amp; Certification
-                                       </h3>
+                                          </h2>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
@@ -132,9 +132,9 @@
                               <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                       <h3>
+                                    <h2 class="h2-variation-1"> 
                                           Education &amp; Certification
-                                       </h3>
+                                       </h2>
                                     </div>
                                     <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                        <p>Information about this, if necessary. Body copy description will go here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dol.</p>
