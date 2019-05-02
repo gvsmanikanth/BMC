@@ -177,7 +177,7 @@
          </section>
       </div>
    </section>
-   <section class="short-form bg-sirocco text-center white">
+   <!-- <section class="short-form bg-sirocco text-center white">
       <form action="">
          <h3 class="white">How can the sales team help?</h3>
          <p>Tell us more about your business, we'll help you cut cost and improve service quality</p>
@@ -185,7 +185,7 @@
          <button class="btn-secondary bg-boston-blue">Contact Us</button> 
          <p  class="helptext">By providing my contact information, I have read and agreed to BMC’s policy regarding&nbsp;<a href="http://www.bmc.com/legal/personal-information.html" target="_blank">Personal Information</a>.</p>
       </form>
-   </section>
+   </section> -->
 </div>
    
 
