@@ -128,8 +128,25 @@ if (jQuery) (function ($) {
         }
     }
 
-    $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);
-    $(document).on('click.jq-dropdown', hide);
+   
+   
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if(iOS){
+        $(document).on('touchstart.jq-dropdown', '[data-jq-dropdown]', show);
+		$(document).on('touchstart.jq-dropdown', hide);
+		
+		$(document).on("touchstart",".jq-dropdown-menu li a",function(e) {
+			e.stopPropagation();
+		}); 
+        
+               
+    } else {
+        $(document).on('click.jq-dropdown', '[data-jq-dropdown]', show);     
+        $(document).on('click.jq-dropdown', hide);
+    } 
+ 
+
+
     $(window).on('resize', position);
 
 })(jQuery);

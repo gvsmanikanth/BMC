@@ -435,6 +435,7 @@ body.support-central {
 			display: inline-block;
 			vertical-align: middle;
 			width: 250px;
+			select::-ms-value {background: none; color:#000;}
 		}
 	}
 
