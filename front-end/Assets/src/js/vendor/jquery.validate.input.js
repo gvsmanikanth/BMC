@@ -65,6 +65,33 @@
                     }                    
                     				
             });	
+            $this.change(function() {	
+                var $input = $(this);
+                var	value = $input.val(),
+                required = $input.attr('required') !== undefined,
+                type = $input.attr('type');
+                var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
+               
+               // console.log($input);
+                if($input.get(0).getAttribute('required') != 'false'){
+                    if(!(required && (value === '' || value === null))){                        
+                        // for select error text
+                        if ($input.parent().is('.decorator-select')) {
+                            $input.parent().removeClass('validation-error');
+                            $input.parent().addClass('valid-input'); 
+                            $input.parent().next('.error-text').text('');
+                        }
+                     } else{
+                         // for select 
+                        if ($input.parent().is('.decorator-select')) {
+                            $input.parent().addClass('validation-error');
+                            $input.parent().removeClass('valid-input'); 
+                            $input.parent().next('.error-text').text(err_hint);
+                        }
+                    }
+                }                    
+                                
+        });
             
 		}	
 		      

@@ -95,6 +95,22 @@
                    background-image: none;
                  
                 }
+
+                // mozila : to remove dotted border around option in 
+                select:-moz-focusring {
+                    color: transparent;
+                    text-shadow: 0 0 0 #000;
+                }
+                option:not(:checked) {
+                  color: black; /* prevent <option>s from becoming transparent as well */
+                }
+
+                // IE: for removing blue background behind options
+                select::-ms-value {
+                    background: none;
+                    color:#000;
+                }
+
             }
             .decorator-select.validation-error {
                  background-image: none;
