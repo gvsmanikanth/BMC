@@ -9,8 +9,8 @@
   
 
    <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 ornate-header" data-wallpaper-options='{"source":{
-	"fallback": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg",
-	"(min-width: 640px)": "//www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg"
+	"fallback": "",
+	"(min-width: 640px)": ""
    }}'  style="background-color:#0091DD">
       <div class="offset-wrapper flex-center">
          <div class="inner">
@@ -18,9 +18,22 @@
                <div class="layout-inner-wrap flex">
                   <div class="flex-item  md-col-6"></div>
                   <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
-                     <h1 class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
-                     <h2>We know you need to keep running your business, even while you reinvent it. Our solutions address business challenges in service management, automation, operations and the mainframe. </h2>					
+                     <h1 >Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+                     
                   </div>
+
+                  <!-- <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
+                     <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                           <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                              <div class="cq-dd-image text-center">
+                                 <img src="http://staging.bmc.com/forms/control-m-enterprise-free-trial-runaware2/_jcr_content/root/responsivegrid/header_form/right/image.img.png" alt="banner2">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div> -->
+                  
                </div>
             </div>
          </div>
@@ -321,11 +334,7 @@
                                                 <option value="Zambia">Zambia</option>
                                              </select>
                                           </div>
-                                          <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                             <!-- /*Adding changes for WEB-2633 START*/ -->
-                                             <label for="C_State_Prov1" class="">State or Province</label>
-                                             <input type="text" id="C_State_Prov1" placeholder="State or Province" name="C_State_Prov1" required="false"/>
-                                          </div>
+                                          
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <label for="C_Product_Interest1" class=""></label>
                                              <select name="C_Product_Interest1" id="C_Product_Interest1" class="form-control"  data-error-hint="Required. Please add your product interest" required="true">
@@ -367,6 +376,13 @@
                                                 <option value="TrueSight Cloud Cost Control">TrueSight Cloud Cost Control</option>
                                                 <option value="TrueSight Intelligence">TrueSight Intelligence</option>
                                              </select>
+                                          </div>
+                                          <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"><!-- /*Adding changes for WEB-2633 START*/ -->
+
+                                                <label for="C_State_Prov">State or Province</label>
+                                                
+                                                <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true" class="validation-error"><span class="error-text">Required. Please add your State or Province.</span>
+
                                           </div>
                                           <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
@@ -476,7 +492,7 @@
       </section>
 
       <section class="contact-info layout-inner-wrap p3">
-         <div class="flex">
+         <div class="sm-flex">
             <div class="flex-item md-col-6 lg-col-4 p1">
                <div class="contact-block">
                   <h3 class="block-title">Customer Support</h3>
@@ -508,7 +524,7 @@
                     <a href="tel:+8007934262"> (800) 793-4262</a>
                   </address>
                   <address>
-                  Executive Brie􀃒ng Center <br>
+                  Executive Briefing Center<br>
                   <a href="tel:+8007934262">(800) 793-4262</a><br>
                   Information
                   </address>

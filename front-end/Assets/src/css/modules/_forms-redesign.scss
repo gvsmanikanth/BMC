@@ -6,14 +6,26 @@
 	
     background-color: #fff;
     .ornate-header{
-        min-height: 300px;
+        min-height: auto;
+        @media (min-width: $break-md) {
+            min-height: 300px;
+        }
         .bannerContent{
             min-height: min-content;
-			padding: 0 1rem;
+            padding: 0 1rem;
+            .responsivegrid{
+                @media (max-width: $break-md) {
+                    margin: 0 auto;
+                }
+            }
 			@include media(breakpointMedium){
 				padding: 0;
-			}
-        }
+            }  
+            .layout-inner-wrap.flex{
+                align-items: center;
+            }
+
+         }
         *{
             color: #fff;
         }
@@ -288,7 +300,10 @@
 		}
 		
 		.bannerContent .layout-inner-wrap{
-			text-align:center;
+            text-align:center;
+            h1{
+                color: #fff;
+            }
 		}
     }
 	
