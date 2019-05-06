@@ -1,11 +1,14 @@
 package com.bmc.servlets;
 
+import com.bmc.consts.RecourceCenterConsts;
 import com.bmc.services.ResourceCenterService;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Session;
 import java.io.IOException;
@@ -16,6 +19,7 @@ import java.util.Map;
         methods = {"GET"},
         paths   = {"/bin/contentapi/filters", "/bin/contentapi/content"})
 public class ResourceCenterServlet extends SlingSafeMethodsServlet {
+    private final Logger log = LoggerFactory.getLogger(RecourceCenterConsts.loggerName);
 
     private static final String FILTERS_METHOD = "/filters";
     private static final String RESOURCES_METHOD = "/content";
@@ -90,7 +94,8 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
             resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
 
             if(resourceResultsJsonStr != null) {
-
+                response.getWriter().write(resourceResultsJsonStr);
+                return;
             }
         }
 
