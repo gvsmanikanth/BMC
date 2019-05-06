@@ -2,6 +2,8 @@ package com.bmc.services;
 
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.BmcContent;
+import com.bmc.models.utils.FormExposeProperties;
+import com.bmc.util.JsonSerializer;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
@@ -13,6 +15,8 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Session;
 import java.util.*;
@@ -20,13 +24,11 @@ import java.util.*;
 @Component(label = "Resource Center Service", metatype = true)
 @Service(value=ResourceCenterService.class)
 public class ResourceCenterServiceImpl implements ResourceCenterService {
+    private final Logger log = LoggerFactory.getLogger("recourceCenter");
 
     @Reference
     private QueryBuilder queryBuilder;
-    private Map<String, String> queryParamsMap;
-
-    // Serialization Helper
-    private Gson gson = new Gson();
+//    private Map<String, String> queryParamsMap;
 
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
@@ -68,7 +70,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
     public List<BmcContentFilter> getResourceFilters() {
 
         // add the necessary resource filter parameters for query builder
-        addFilterParamsToBuilder();
+        Map<String, String> queryParamsMap = addFilterParamsToBuilder();
 
         // filter list to return
         List<BmcContentFilter> resourceFiltersList = new ArrayList<>();
@@ -92,14 +94,14 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     @Override
     public String getResourceFiltersJSON() {
-        return gson.toJson(getResourceFilters());
+        return JsonSerializer.serialize(getResourceFilters());
     }
 
     @Override
     public List<BmcContent> getResourceResults(Map<String, String[]> parameters) {
 
         // add the necessary resource content parameters for query builder
-        addResourceParamsToBuilder(parameters);
+        Map<String, String> queryParamsMap = addResourceParamsToBuilder(parameters);
 
         // results list to return
         List<BmcContent> resourceContentList = new ArrayList<>();
@@ -120,7 +122,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     @Override
     public String getResourceResultsJSON(Map<String, String[]> parameters) {
-        return gson.toJson(getResourceResults(parameters));
+        return JsonSerializer.serialize(getResourceResults(parameters));
     }
 
     /**
@@ -148,11 +150,8 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
      * Adds necessary parameters to a map to search for resource filters
      *
      */
-    private void addFilterParamsToBuilder() {
-
-        if(queryParamsMap == null) {
-            queryParamsMap = new HashMap<>();
-        }
+    private Map<String, String>  addFilterParamsToBuilder() {
+        Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // reset
         queryParamsMap.clear();
@@ -167,6 +166,8 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         for(int i = 1; i <= resourceFiltersList.size(); i++) {
             queryParamsMap.put("group." + i + "_nodename", resourceFiltersList.get(i-1));
         }
+
+        return queryParamsMap;
     }
 
     /**
@@ -180,14 +181,8 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
      *                       honorWeights
      *
      */
-    private void addResourceParamsToBuilder(Map<String, String[]> parameters) {
-
-        if(queryParamsMap == null) {
-            queryParamsMap = new HashMap<>();
-        }
-
-        // reset
-        queryParamsMap.clear();
+    private Map<String, String> addResourceParamsToBuilder(Map<String, String[]> parameters) {
+        Map<String, String> queryParamsMap = addFilterParamsToBuilder();
 
         // should not have more than 1 rootPath param value
         if(parameters.get("rootPath") != null && parameters.get("rootPath").length == 1) {
@@ -203,5 +198,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         if(parameters.get("pagination") != null) {
         }
 
+        log.error("addResourceParamsToBuilder------------>   " + JsonSerializer.serialize(queryParamsMap));
+        return queryParamsMap;
     }
 }
