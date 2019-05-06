@@ -110,6 +110,7 @@
 					pointer-events: none;
 					background-color: white;
 				}
+				select::-ms-value {background: none; color:#000;}
 			}
 		}
 	}

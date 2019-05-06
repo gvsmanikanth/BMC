@@ -95,6 +95,7 @@
 	.decorator-select {
 		vertical-align: middle;
 		width: 100%;
+		select::-ms-value {background: none; color:#000;}
 	}
 
 	.results-count {
