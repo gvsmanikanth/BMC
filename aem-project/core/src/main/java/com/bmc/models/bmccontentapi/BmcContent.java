@@ -2,25 +2,24 @@ package com.bmc.models.bmccontentapi;
 
 public class BmcContent {
 
-//    private String title;
-//    private String description;
-//    private String color;
-//    private String backgroundImage;
-
-
+    private long index;
     private String path;
     private String excerpt;
-    private String name;
     private String title;
-//    private String lastModified;
-//    private String created;
 
-    public BmcContent(String path, String excerpt, String name, String title) {
+    public BmcContent(long index, String path, String excerpt, String title) {
+        this.index = index;
         this.path = path;
         this.excerpt = excerpt;
-        this.name = name;
         this.title = title;
+    }
 
+    public long getIndex() {
+        return index;
+    }
+
+    public void setIndex(long index) {
+        this.index = index;
     }
 
     public String getPath() {
@@ -37,14 +36,6 @@ public class BmcContent {
 
     public void setExcerpt(String excerpt) {
         this.excerpt = excerpt;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getTitle() {
