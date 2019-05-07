@@ -4,7 +4,7 @@ package com.bmc.models.components.datasource;
  * Created by elambert on 5/18/17.
  */
 
-import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
+//import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
 import com.adobe.granite.ui.components.ds.SimpleDataSource;
 import com.adobe.granite.ui.components.ds.ValueMapResource;
 import com.day.cq.i18n.I18n;
@@ -23,9 +23,9 @@ import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Model(adaptables = SlingHttpServletRequest.class,
-        adapters = DataSourceModel.class,
+        //adapters = DataSourceModel.class,
         resourceType = PositionsFormOptionsDataSource.RESOURCE_TYPE)
-public class PositionsFormOptionsDataSource extends DataSourceModel {
+public class PositionsFormOptionsDataSource {
 
     protected final static String RESOURCE_TYPE = "bmc/components/content/forms/elements/options/datasource/positionsdatasource";
 
@@ -48,8 +48,8 @@ public class PositionsFormOptionsDataSource extends DataSourceModel {
         final ResourceBundle bundle = request.getResourceBundle(pageLocale);
         i18n = new I18n(bundle);
 
-        SimpleDataSource positionsDataSource = new SimpleDataSource(buildPositionsList().iterator());
-        initDataSource(request, positionsDataSource);
+        /*SimpleDataSource positionsDataSource = new SimpleDataSource(buildPositionsList().iterator());
+        initDataSource(request, positionsDataSource);*/
     }
 
     private List<Resource> buildPositionsList() {
