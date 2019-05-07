@@ -2,6 +2,7 @@ package com.bmc.servlets;
 
 import com.bmc.consts.RecourceCenterConsts;
 import com.bmc.services.ResourceCenterService;
+import com.bmc.util.JsonSerializer;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
