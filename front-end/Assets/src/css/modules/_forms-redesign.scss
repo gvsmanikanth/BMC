@@ -24,9 +24,14 @@
             .layout-inner-wrap.flex{
                 align-items: center;
             }
-            h1{
-                color: #fff;
+            .layout-inner-wrap{
+                .cmp-title{
+                    h1{
+                        color: #fff;
+                    }
+                }                
             }
+            
 
          }
         *{
@@ -136,7 +141,30 @@
                 }
             .cmp-options {
                 padding-top: .5rem;
-                padding-bottom: .5rem;               
+                padding-bottom: .5rem;  
+                
+                + .floatlabel-wrapper{
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    @media (min-width: $break-md) {
+                        display: inline-block;
+                        width: calc(50% - 3px);
+                    } 
+                    label{
+                        position: relative !important;
+                        top: auto !important;
+                        left: auto !important;
+                        display: block !important;
+                        opacity: 1 !important;
+                    } 
+                    
+                    input[type="text"].active-floatlabel {
+                        height: 48px;
+                        padding-top: 0 !important;
+                    }
+                                 
+                    
+                }
             }
             
             .checkbox{
@@ -197,6 +225,12 @@
                     }
                 }                   
             }
+
+            @media screen and (max-width: 1371px) and (min-width: 901px) {
+                label[for="form-text-219511451"] {
+                    min-height: 42px;
+                }
+              }
             
         }   
         hr.field-sep{

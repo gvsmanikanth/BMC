@@ -92,7 +92,7 @@
                                            
                                           </div>
                                           <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                             <label for="C_Job_Level1" class="">Job Level</label>
+                                             <label for="C_Job_Level1" class="">Which title best reflects your job?</label>
                                              <select name="C_Job_Level1" id="C_Job_Level1" class="form-control"  data-error-hint="Required. Please add your job level"  required="true">
                                                 <option selected disabled>Job Level</option>
                                                 <option value="C-Level">C-Level</option>
@@ -334,6 +334,12 @@
                                                 <option value="Zambia">Zambia</option>
                                              </select>
                                           </div>
+                                          <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"><!-- /*Adding changes for WEB-2633 START*/ -->
+
+                                                <label for="C_State_Prov">State or Province</label>
+                                                
+                                                <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true" class="">
+                                                                                          </div>
                                           
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                              <label for="C_Product_Interest1" class=""></label>
@@ -377,13 +383,7 @@
                                                 <option value="TrueSight Intelligence">TrueSight Intelligence</option>
                                              </select>
                                           </div>
-                                          <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"><!-- /*Adding changes for WEB-2633 START*/ -->
-
-                                                <label for="C_State_Prov">State or Province</label>
-                                                
-                                                <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true" class="validation-error"><span class="error-text">Required. Please add your State or Province.</span>
-
-                                          </div>
+                                          
                                           <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12">
                                              <!-- /*Adding changes for WEB-2633 START*/ -->
                                              <label for="form-text-1661326693" class="">What would you like to know?</label>
