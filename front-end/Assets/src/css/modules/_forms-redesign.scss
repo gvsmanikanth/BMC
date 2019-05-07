@@ -13,11 +13,7 @@
         .bannerContent{
             min-height: min-content;
             padding: 0 1rem;
-            .responsivegrid{
-                @media (max-width: $break-md) {
-                    margin: 0 auto;
-                }
-            }
+            
 			@include media(breakpointMedium){
 				padding: 0;
             }  
@@ -340,6 +336,9 @@
             text-align:center;
             h1{
                 color: #fff;
+            }
+            .responsivegrid{
+                margin: 0 auto;
             }
 		}
     }

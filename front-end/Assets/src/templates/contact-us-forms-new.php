@@ -17,12 +17,12 @@
             <div class="bannerContent">
                <div class="layout-inner-wrap flex">
                   <div class="flex-item  md-col-6"></div>
-                  <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
+                  <!-- <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
                      <h1 >Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
                      
-                  </div>
+                  </div> -->
 
-                  <!-- <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
+                  <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
                      <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                            <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
@@ -32,7 +32,7 @@
                            </div>
                         </div>
                      </div>
-                  </div> -->
+                  </div>
                   
                </div>
             </div>

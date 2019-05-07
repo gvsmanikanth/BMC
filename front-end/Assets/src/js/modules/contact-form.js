@@ -8,7 +8,10 @@ function insertAfter(){
 		if (!isMobile) {
 			// getting current header height and add ttop minus margin to the form
 			var headerHeight = '-'+ $(".ornate-header").height()+'px';
-			$('.form2 form').css('margin-top',headerHeight); 
+			$('.form2 form').css({
+				'margin-top':headerHeight,
+				'transition': '2s linear'
+			}); 
 			respGridContainers.addClass('aem-GridColumn--default--6');
 			respGridContainers.removeClass('aem-GridColumn--default--12');
 			$('.product-category-header').insertBefore(formContainer.parents().closest(".maincontentcontainer")); 
