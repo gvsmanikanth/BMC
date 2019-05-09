@@ -1,6 +1,5 @@
-
-function insertAfter(){
-	if ($('body').hasClass('form2')) {
+if ($('body').hasClass('form2')) {
+function insertAfter(){	
 		var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
 		var formContainer =  $(".maincontentcontainer .50-50contentcontainer:first .responsivegrid:first");
 		var respGridContainers =  $(".maincontentcontainer .50-50contentcontainer:first>section>.aem-Grid").children();
@@ -30,10 +29,21 @@ function insertAfter(){
 			$('.form2 .product-category-header2').addClass('header-Mobile-View');
 			
 		}
-	}
+	
 }
 insertAfter();
-
 $(window).resize(function() {
 	  insertAfter();
 });
+
+
+$('[name="C_BusPhone"]').prev().addClass('business_phone_label');
+
+$("select[name^='C_Country']").on('change', function() { 
+	if(($('#C_State_Prov').parent().attr('class')) == 'decorator-select'){
+		$('#C_State_Prov').parent().wrap('<div class="state-wrap"></div>');
+		$('.state-wrap').prepend('<label>State or Province</label>');
+	}	
+});	
+
+}

@@ -10,8 +10,14 @@
         @media (min-width: $break-md) {
             min-height: 300px;
         }
+        .offset-wrapper{
+            min-height: auto;
+            @media (min-width: $break-md) {
+                min-height: 300px;
+            }
+        }
         .bannerContent{
-            min-height: min-content;
+            min-height: auto;
             padding: 0 1rem;
             
 			@include media(breakpointMedium){
@@ -19,6 +25,13 @@
             }  
             .layout-inner-wrap.flex{
                 align-items: center;
+                min-height: auto;   
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    @media (min-width: $break-md) {
+                        min-height: 300px;
+                    }
+                }
+               
             }
             .layout-inner-wrap{
                 .cmp-title{
@@ -138,6 +151,15 @@
             .cmp-options {
                 padding-top: .5rem;
                 padding-bottom: .5rem;  
+
+                + .state-wrap{
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;
+                    @media (min-width: $break-md) {
+                        display: inline-block;
+                        width: calc(50% - 3px);
+                    }
+                }
                 
                 + .floatlabel-wrapper{
                     padding-top: .5rem;
@@ -223,7 +245,7 @@
             }
 
             @media screen and (max-width: 1371px) and (min-width: 901px) {
-                label[for="form-text-219511451"] {
+                label.business_phone_label {
                     min-height: 42px;
                 }
               }
