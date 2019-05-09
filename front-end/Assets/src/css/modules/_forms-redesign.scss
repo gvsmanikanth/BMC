@@ -152,14 +152,15 @@
                 padding-top: .5rem;
                 padding-bottom: .5rem;  
 
-                + .state-wrap{
-                    padding-top: .5rem;
-                    padding-bottom: .5rem;
+                + .decorator-select{
+                    padding-top: 0;
+                    padding-bottom: 0;
                     @media (min-width: $break-md) {
                         display: inline-block;
                         width: calc(50% - 3px);
                     }
                 }
+              
                 
                 + .floatlabel-wrapper{
                     padding-top: .5rem;
