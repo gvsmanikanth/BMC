@@ -1,4 +1,7 @@
 .form2{
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 400;
+    }
 	
 	.maincontentcontainer>section:first-child>div:first-child{
 		padding-bottom:0px !important;
@@ -97,6 +100,7 @@
                 margin-top: 0;
                 margin-bottom: 0;
                 background: #fff;
+                border-radius: 0;
                 select {
                 	appearance: none;
                 }
@@ -210,6 +214,7 @@
                	background: #fff; 
                 background-position: 97%;
                 padding-left: 0.44444em;
+                border-radius: 0;
               
             }
             .checkbox{
@@ -249,6 +254,15 @@
                 label.business_phone_label {
                     min-height: 42px;
                 }
+              }
+
+              input[type="text"],
+              input[type="number"],
+              input[type="password"],
+              input[type="email"],
+              input[type="tel"],
+              textarea{
+                  border-radius: 0;
               }
             
         }   
