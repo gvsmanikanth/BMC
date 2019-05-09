@@ -43,6 +43,7 @@ $("select[name^='C_Country']").on('change', function() {
 	 if(($('#C_State_Prov').parent().attr('class')) == 'decorator-select'){
 	// 	$('#C_State_Prov').parent().wrap('<div class="state-wrap"></div>');
 	// 	$('.state-wrap').prepend('<label>State or Province</label>');
+	//
 	 }	
 });	
 
