@@ -524,7 +524,7 @@ function addFilterToArrayProtoype() {
 		//Assemble file name for state JSON
 		var uri = window.location.toString(); 
 		if (uri.indexOf("localhost") > 0) {
-			fname = '/bmc-dxp/front-end/Assets/src/jsondatafiles/states_' +country+ '.json';
+			fname = '/front-end/Assets/src/jsondatafiles/states_' +country+ '.json';
 		}
 		else{
 			fname = '/etc/designs/bmc/state-lists/states_' +country+ '.json';
@@ -584,7 +584,7 @@ function addFilterToArrayProtoype() {
 				if($('#C_State_Prov').prop('nodeName') == "SELECT")
 				{
 					$('#C_State_Prov').children().remove();
-					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><input type='text' name='C_State_Prov' id='C_State_Prov' placeholder='State or Province (optional)'>" + "</div>");
+					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province (optional)</label><input type='text' name='C_State_Prov' id='C_State_Prov' >" + "</div>");
 				}
 			}	
 			

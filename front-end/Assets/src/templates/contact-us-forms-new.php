@@ -483,7 +483,7 @@
                      <div class="cust-info mb3 mt3">
                         <div class="card ">
                            <div class="card-image mb2">
-                              <img class="circle" src="http://vw-hou-cpg-dv01.bmc.com/pattern-authoring-system/uploads/assets/74/Beauchamp-1494431218.jpeg" alt="Robert Beauchamp" style="width:100%;max-width:300px;">
+                              <img class="circle" src="http://staging.bmc.com/content/dam/bmc/collateral/bmc/Placeholder-Man-img.jpg" alt="Robert Beauchamp" style="width:100%;max-width:300px;">
                            </div>
                            <div class="card-content">
                               <p>After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC’s highly successful transformation from a mainframe tools vendor to

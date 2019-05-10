@@ -52,14 +52,15 @@
     }
     .cmp-form{
     form{
-        padding: 1.5em;
+        padding: 1em;
         background: #f1f1f1;
         width: auto;
         border-top: 10px solid #fe5000;
         position: relative;
         @media (min-width: $break-md) {
             z-index: 10; 
-            margin-top: -300px;          
+            margin-top: -300px; 
+            padding: 1.5em;         
         }  
         @media (max-width: $break-md) {
             margin-top: 0px !important;         
@@ -114,7 +115,7 @@
                     pointer-events: none;
                     position: absolute;
                     right: 0;
-                    top: 0;
+                    top: 1px;
                     width: 54px;
                     z-index: 105;
                     font-family: 'icomoon';
@@ -126,6 +127,7 @@
                 }
                 .validation-error {
                    background-image: none;
+                   
                  
                 }
 
@@ -147,6 +149,7 @@
             }
             .decorator-select.validation-error {
                  background-image: none;
+                 padding-left: 0;
                
              }
              .decorator-select.valid-input {
@@ -265,12 +268,19 @@
               textarea{
                   border-radius: 0;
               }
-            
+            .horizontal-Tag{
+                + .cmp-options{
+                    padding: 0;
+                }
+            }
         }   
         hr.field-sep{
             border-top: 1px solid #ccc;
-            margin: 15px -1.5em;    
-  			border-bottom: 0px;    
+            margin: 10px -1em;    
+            border-bottom: 0px;
+            @media (min-width: $break-md) {
+                margin: 10px -1.5em;         
+            }       
         }
            
     }
