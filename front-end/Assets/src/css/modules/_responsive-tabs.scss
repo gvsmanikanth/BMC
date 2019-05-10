@@ -73,3 +73,46 @@
 .r-tabs .r-tabs-accordion-title.r-tabs-state-disabled {
 	opacity: 0.5;
 }
+
+/* Image Vertical Alignment inside Tab Comp */
+.tabs {
+	.r-tabs{
+		.r-tabs-panel{
+			.layout-inner-wrap{
+				.layout-inner-wrap{
+					display: flex;
+						.layout-secondary{
+							display:none;
+							@media (min-width: 832px){
+								display: block;
+								width: 370px;
+								min-width: 370px;
+							}
+							.cmp-image.align_bottom{
+								img{
+									bottom: 0;
+									padding-bottom: 0;
+									display: none;
+									@media (min-width: 832px){
+										position: absolute;
+										display: block;
+										width: 370px;
+										max-width: 370px;
+										min-width: 370px;
+									}
+								}
+							}
+						}
+						.layout-primary{
+							width: 100%;
+							@media (min-width: 832px){
+								width: 67.7%;
+							}
+						}
+						
+				}
+			}
+			
+		}
+	}
+}
