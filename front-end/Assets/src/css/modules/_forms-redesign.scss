@@ -53,9 +53,9 @@
     .cmp-form{
     form{
         padding: 1em;
-        background: #f1f1f1;
+        background: #efefef;
         width: auto;
-        border-top: 10px solid #fe5000;
+        border-top: 10px solid #fe4601;
         position: relative;
         @media (min-width: $break-md) {
             z-index: 10; 
@@ -67,7 +67,7 @@
         }  
                         
         .btn-secondary {
-            background-color: #2d6d91;
+            background-color: #3980b2;
             text-transform: uppercase;
             border: none;
             border-radius: 0;
@@ -95,6 +95,7 @@
             label{
                 margin-bottom: 5px;
                 line-height:1.2rem;
+                color: #333;
             }
             .decorator-select 
             {
@@ -102,6 +103,7 @@
                 margin-bottom: 0;
                 background: #fff;
                 border-radius: 0;
+                border-color: #8a8a8a;
                 select {
                 	appearance: none;
                 }
@@ -122,7 +124,7 @@
                     text-align: center;
                     border-left: 1px solid #ccc;
                     line-height: 48px;
-                    color: #0091dd;
+                    color: #336699;
                     background: #fff;
                 }
                 .validation-error {
@@ -229,7 +231,7 @@
             }
 
             .valid-input {
-                border: 2px solid #37a447;
+                border: 2px solid #36ba2f;
                 background-position: 97%;
             }
             .error-text {
@@ -267,6 +269,7 @@
               input[type="tel"],
               textarea{
                   border-radius: 0;
+                  border-color: #8a8a8a;
               }
             .horizontal-Tag{
                 + .cmp-options{
@@ -275,7 +278,7 @@
             }
         }   
         hr.field-sep{
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #8a8a8a;
             margin: 10px -1em;    
             border-bottom: 0px;
             @media (min-width: $break-md) {
@@ -332,7 +335,7 @@
                 }
                 
                 img{
-                    border: 2px solid #37a447;
+                    border: 2px solid #00a79d;
                 }
             }
             .card-content{
@@ -357,7 +360,7 @@
                 content: ' ';
                 width: 8px;
                 height: 8px;
-                background: #f00;
+                background: #fe4601;
                 position: absolute;
                 left: -20px;
                 border-radius: 50%;
