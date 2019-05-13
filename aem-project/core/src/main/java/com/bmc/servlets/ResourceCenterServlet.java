@@ -1,6 +1,6 @@
 package com.bmc.servlets;
 
-import com.bmc.consts.ResourceCenterConsts;
+import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.services.ResourceCenterService;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
@@ -19,7 +19,7 @@ import java.util.Map;
         methods = {"GET"},
         paths   = {"/bin/contentapi/filters", "/bin/contentapi/content"})
 public class ResourceCenterServlet extends SlingSafeMethodsServlet {
-    private final Logger log = LoggerFactory.getLogger(ResourceCenterConsts.loggerName);
+    private final Logger log = LoggerFactory.getLogger(ResourceCenterConstants.loggerName);
 
     private static final String FILTERS_METHOD = "/filters";
     private static final String RESOURCES_METHOD = "/content";

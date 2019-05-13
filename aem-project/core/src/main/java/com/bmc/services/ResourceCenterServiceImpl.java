@@ -1,7 +1,7 @@
 package com.bmc.services;
 
-import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.util.JsonSerializer;
 import com.day.cq.search.PredicateGroup;
@@ -23,7 +23,7 @@ import java.util.*;
 @Component(label = "Resource Center Service", metatype = true)
 @Service(value=ResourceCenterService.class)
 public class ResourceCenterServiceImpl implements ResourceCenterService {
-    private final Logger log = LoggerFactory.getLogger(ResourceCenterConsts.loggerName);
+    private final Logger log = LoggerFactory.getLogger(ResourceCenterConstants.loggerName);
 
     @Reference
     private QueryBuilder queryBuilder;
@@ -166,22 +166,22 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     private String buildQueryPredicateName(int id, String queryParam) {
         StringBuilder queryPredicate = new StringBuilder();
-        queryPredicate.append(ResourceCenterConsts.PREDICATE_PREFIX).append(id).append("_").append(queryParam);
+        queryPredicate.append(ResourceCenterConstants.PREDICATE_PREFIX).append(id).append("_").append(queryParam);
         return queryPredicate.toString();
     }
 
     private void addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
         try {
             // if url parameters does not have such parameter(urlParam), then return
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER) == null)
+            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_FILTER) == null)
                 return;
 
             // extract url params and put them into query params
-            String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
+            String[] queryValues = urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_FILTER);
             for(int i = 0; i < queryValues.length; i++) {
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP_VAL), queryValues[i]);
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
+                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP_VAL), queryValues[i]);
+                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP_OPERATION), ResourceCenterConstants.QUERY_PARAM_PROP_OPERATION_LIKE);
 
             }
 
@@ -211,14 +211,14 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         try {
             Integer pageIndex = 0;
             Integer resultsPerPage = 0;
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PAGE_INDEX)!=null)
-                pageIndex = Integer.parseInt(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PAGE_INDEX)[0]);
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_RESULTS_PER_PAGE)!=null)
-                resultsPerPage = Integer.parseInt(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_RESULTS_PER_PAGE)[0]);
+            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX) != null)
+                pageIndex = Integer.parseInt(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX)[0]);
+            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_RESULTS_PER_PAGE) != null)
+                resultsPerPage = Integer.parseInt(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_RESULTS_PER_PAGE)[0]);
 
-            if(resultsPerPage>0) {
-                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PAGE_IDX, new Integer(pageIndex * resultsPerPage).toString());
-                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_RESULT_PER_PAGE, resultsPerPage.toString());
+            if(resultsPerPage > 0) {
+                queryParamsMap.put(ResourceCenterConstants.QUERY_PARAM_PAGE_IDX, new Integer(pageIndex * resultsPerPage).toString());
+                queryParamsMap.put(ResourceCenterConstants.QUERY_PARAM_RESULT_PER_PAGE, resultsPerPage.toString());
             }
         } catch (Exception e) {
 
@@ -240,14 +240,14 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         Map<String, String> queryParamsMap = getBaseQueryParams();
 
         // should not have more than 1 rootPath param value
-        if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH) != null
-                && urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH).length == 1) {
-            queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH)[0]);
+        if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH) != null
+                && urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH).length == 1) {
+            queryParamsMap.put(ResourceCenterConstants.RC_QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH)[0]);
         }
         // adding other url parameters into query parameters
-//        addSearchPredicates(urlParameters, ResourceCenterConsts.RC_URL_PARAM_KEYWORD, queryParamsMap, ResourceCenterConsts.QUERY_PARAM_KEYWORD);
+//        addSearchPredicates(urlParameters, ResourceCenterConstants.RC_URL_PARAM_KEYWORD, queryParamsMap, ResourceCenterConstants.QUERY_PARAM_KEYWORD);
         addSearchFilter(urlParameters, queryParamsMap);
-//        addSearchPredicates(urlParameters, ResourceCenterConsts.RC_URL_PARAM_PAGINATION, queryParamsMap, ResourceCenterConsts.QUERY_PARAM_PAGINATION);
+//        addSearchPredicates(urlParameters, ResourceCenterConstants.RC_URL_PARAM_PAGINATION, queryParamsMap, ResourceCenterConstants.QUERY_PARAM_PAGINATION);
         addPaginationPredicates(urlParameters, queryParamsMap);
 
         log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
