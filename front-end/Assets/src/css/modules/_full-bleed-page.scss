@@ -395,10 +395,10 @@
     height: 0;
     list-style: none;
     margin: 0;
-    opacity: .5;
+    opacity: 0;
     padding: 0;
     position: absolute;
-    right: -1000%;
+    --right: -1000%;
 	top: 0;
     transition: 1s opacity ease;
 	
