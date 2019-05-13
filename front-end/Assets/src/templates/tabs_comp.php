@@ -121,8 +121,8 @@ include 'php-inc/head.php';
                                                             <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                                                                <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
                                                                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                                                     <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12 align_bottom">
-                                                                        <div class="cq-dd-image text-center">
+                                                                     <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12 ">
+                                                                        <div class="cq-dd-image text-center align_bottom">
                                                                            <img src="https://www.bmc.com/content/dam/bmc/migration/image/truesight-TI-Tab-03.jpg" alt="asdfdf">
                                                                         </div>
                                                                      </div>
