@@ -26,11 +26,11 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <item1
                                         jcr:primaryType="nt:unstructured"
-                                        text="Full Bleed (Default)"
+                                        text="Teal background(Default)"
                                         value="fullbleed"/>
                                     <item2
                                         jcr:primaryType="nt:unstructured"
-                                        text="Light Option"
+                                        text="White background"
                                         value="light"/>
                                 </items>
                             </pullQuoteType>
