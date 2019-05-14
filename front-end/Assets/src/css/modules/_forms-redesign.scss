@@ -95,7 +95,6 @@
             label{
                 margin-bottom: 5px;
                 line-height:1.2rem;
-                color: #333;
             }
             .decorator-select 
             {
@@ -103,7 +102,6 @@
                 margin-bottom: 0;
                 background: #fff;
                 border-radius: 0;
-                border-color: #8a8a8a;
                 select {
                 	appearance: none;
                 }
@@ -269,7 +267,6 @@
               input[type="tel"],
               textarea{
                   border-radius: 0;
-                  border-color: #8a8a8a;
               }
             .horizontal-Tag{
                 + .cmp-options{
@@ -278,7 +275,7 @@
             }
         }   
         hr.field-sep{
-            border-top: 1px solid #8a8a8a;
+            border-top: 1px solid #ccc;
             margin: 10px -1em;    
             border-bottom: 0px;
             @media (min-width: $break-md) {
