@@ -2,7 +2,7 @@
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-test="${image.src}"
      
-     class="cq-dd-image ${properties.imagehorizontalPosition}">
+     class="cq-dd-image ${properties.imagehorizontalPosition} ${properties.imageverticalPosition}">
     <sly data-sly-test="${properties.linkURL}" data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.linkURL}"></sly>
 			 <sly data-sly-test="${cta.href}">
                     <sly data-sly-test.linkURL="${cta.href}"></sly>
