@@ -109,7 +109,8 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <top
                                         jcr:primaryType="nt:unstructured"
-                                        text="Top(default)"/>
+                                        text="Top(default)"
+                                        value=""/>
                                     <bottom
                                         jcr:primaryType="nt:unstructured"
                                         text="Bottom"
