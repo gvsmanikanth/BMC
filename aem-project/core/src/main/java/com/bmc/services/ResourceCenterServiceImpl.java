@@ -1,5 +1,6 @@
 package com.bmc.services;
 
+import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.BmcContent;
@@ -225,6 +226,26 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         }
     }
 
+    private void addSortingPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
+        try {
+            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)!=null) {
+                String searchCriteria = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)[0];
+                if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
+                    queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_ORDER_BY, ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+                }
+            }
+            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)!=null) {
+                String urlParamSortDirection = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)[0];
+                String sortDirection = urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
+                        || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ?
+                        ResourceCenterConsts.QUERY_PARAM_SORT_DESC : ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
+                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, sortDirection);
+            }
+        } catch (Exception e) {
+
+        }
+    }
+
     /**
      * Adds necessary parameters to a map to search for resources.
      *
@@ -249,6 +270,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         addSearchFilter(urlParameters, queryParamsMap);
 //        addSearchPredicates(urlParameters, ResourceCenterConsts.RC_URL_PARAM_PAGINATION, queryParamsMap, ResourceCenterConsts.QUERY_PARAM_PAGINATION);
         addPaginationPredicates(urlParameters, queryParamsMap);
+        addSortingPredicates(urlParameters, queryParamsMap);
 
         log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
         return queryParamsMap;
@@ -271,7 +293,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             for(Hit hit : result.getHits()) {
                 resource = hit.getResource();
                 if(resource != null){
-                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), hit.getNode().getParent().getName()));
+                    String title = hit.getNode().getParent().getName();
+                    if(hit.getNode().hasProperty(JcrConsts.TITLE))
+                        title = hit.getNode().getProperty(JcrConsts.TITLE).getString();
+                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), title));
                 }
             }
         } catch(Exception e) {
