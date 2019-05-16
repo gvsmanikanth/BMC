@@ -14,9 +14,7 @@
     .layout-primary{
     	padding-left: 4%;
      }
-    }
-   
-    
+    }     
     
     button{
         border: none;
@@ -29,9 +27,7 @@
     }
     .cmp-text{
         li{
-            @media (min-width: $break-sm) {
-                //font-size: 1.2rem;
-            }             
+                        
             a{  
                 color: #fe5000;
             }
@@ -41,7 +37,6 @@
         }
         p{           
             @media (min-width: $break-sm) {
-                //font-size: 1.4rem;
             } 
         }
     }
@@ -57,9 +52,6 @@
         }       
       
     }
-    
-  
-
     .page-caption{
         h2{
             color: #414042;
@@ -68,25 +60,11 @@
             
             @media (min-width: $break-sm) {
                 line-height: 1.45em;
-                 //font-size: 1.96667rem;
             }
         }
     }
-   
-  
-    
     .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(odd){
-            background: #ffffff;
-            // .layout-inner-wrap{
-            //     .responsivegrid:first-child{
-            //         float: right;
-            //         padding-left: 1.25%;
-            //     }
-            //     .responsivegrid:last-child{
-            //         float: left;
-            //         padding-right: 1.25%;
-            //     }
-            // }
+            background: #ffffff;            
     }
     .layout-full-bleed > .aem-GridColumn.aem-GridColumn--default--12:nth-of-type(even){
         background: #f1f1f1;      
@@ -99,22 +77,14 @@
         h3{
             @media (min-width: $break-md) {
                 line-height: 1.45em;
-                //font-size: 2.2rem;
             }
         }
     }
-    span.tags {
-        //font-size: .8rem;
-        //@media (min-width: $break-sm) {
-            //font-size: 1.4rem;
-        //}        
+    span.tags {               
         display: block;
         margin-bottom: 5px;
     }
-
-
-    
-//ebook thank page css
+    //ebook thank page css
     .call-to-action-sec{
         margin-bottom: 40px;
         h3{
@@ -122,8 +92,7 @@
             font-weight: 400;
             margin: 0 0 20px 0;
             @media (min-width: $break-sm) {
-                line-height: 1.45em;
-                //font-size: 1.96667rem;      
+                line-height: 1.45em;    
                 margin: 0;
             } 
             @media (min-width: $break-md) {    
@@ -139,53 +108,7 @@
         }
         
     }
-/*
-    .short-form{
-        padding: 50px 30px;
-        form{
-            max-width:100%;
-            @media (min-width: $break-md) {
-                max-width:55%;
-                margin: 0 auto;
-                      
-            } 
-            textarea{
-                width: 90%;
-                @media (min-width: $break-md) {
-                    width: 100%;                          
-                } 
-                padding: 15px;
-            }
-            h3{
-                @media (min-width: $break-sm) {
-                    line-height: 1.45em;
-                    //font-size: 1.96667rem;      
-                } 
-                font-weight: 400;
-                margin: 0;
-                margin-bottom: 15px;
-            }
-            p {
-                @media (min-width: $break-sm) {
-                    //font-size: 1.3rem;      
-                } 
-            }  
-             button{
-                margin: 20px 0;
-                text-transform: uppercase;
-                padding: 13px 40px;
-            }
-            .helptext{
-                @media (min-width: $break-sm) {
-                    //font-size: 1rem;      
-                } 
-            }
-        }
-        
-    }
- */   
-    
-   
+
     @media (max-width: $break-md) {
         .layout-inner-wrap{
             .responsivegrid{
@@ -208,8 +131,6 @@
     }
     
 }
-
-
 .header-form2-thank-you{
 	  .product-category-header{
         min-height: auto;
@@ -234,7 +155,6 @@
             .btn{
             	border-radius:0px;
             	border: 0px;
-            	// box-shadow:1px 1px black;
             }
         }
     }
