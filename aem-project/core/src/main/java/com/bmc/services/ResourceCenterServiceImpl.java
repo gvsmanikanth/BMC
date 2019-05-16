@@ -287,8 +287,8 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         // adding other url parameters into query parameters
         int predicateIndex = 1;
         predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
-        addPaginationPredicates(urlParameters, queryParamsMap);
         predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
+        addPaginationPredicates(urlParameters, queryParamsMap);
 
         log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
         return queryParamsMap;
