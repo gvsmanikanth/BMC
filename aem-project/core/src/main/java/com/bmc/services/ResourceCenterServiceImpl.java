@@ -28,7 +28,6 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     @Reference
     private QueryBuilder queryBuilder;
-//    private Map<String, String> queryParamsMap;
 
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
@@ -231,7 +230,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)!=null) {
                 String searchCriteria = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)[0];
                 if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
-                    queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_ORDER_BY, ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+                    queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_ORDER_BY, "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
                 }
             }
             if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)!=null) {
@@ -266,9 +265,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH)[0]);
         }
         // adding other url parameters into query parameters
-//        addSearchPredicates(urlParameters, ResourceCenterConsts.RC_URL_PARAM_KEYWORD, queryParamsMap, ResourceCenterConsts.QUERY_PARAM_KEYWORD);
         addSearchFilter(urlParameters, queryParamsMap);
-//        addSearchPredicates(urlParameters, ResourceCenterConsts.RC_URL_PARAM_PAGINATION, queryParamsMap, ResourceCenterConsts.QUERY_PARAM_PAGINATION);
         addPaginationPredicates(urlParameters, queryParamsMap);
         addSortingPredicates(urlParameters, queryParamsMap);
 
@@ -293,10 +290,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             for(Hit hit : result.getHits()) {
                 resource = hit.getResource();
                 if(resource != null){
-                    String title = hit.getNode().getParent().getName();
-                    if(hit.getNode().hasProperty(JcrConsts.TITLE))
-                        title = hit.getNode().getProperty(JcrConsts.TITLE).getString();
-                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), title));
+                    String title = hit.getNode().hasProperty(JcrConsts.TITLE)? hit.getNode().getProperty(JcrConsts.TITLE).getString() : hit.getNode().getParent().getName();
+                    String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
+                    String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
+                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), title, created, lastModified));
                 }
             }
         } catch(Exception e) {

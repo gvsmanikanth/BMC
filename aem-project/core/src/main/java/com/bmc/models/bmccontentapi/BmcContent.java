@@ -1,17 +1,23 @@
 package com.bmc.models.bmccontentapi;
 
+import java.util.Calendar;
+
 public class BmcContent {
 
     private long index;
     private String path;
     private String excerpt;
     private String title;
+    private String created;
+    private String lastModified;
 
-    public BmcContent(long index, String path, String excerpt, String title) {
+    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
         this.title = title;
+        this.created = created;
+        this.lastModified = lastModified;
     }
 
     public long getIndex() {
@@ -44,5 +50,21 @@ public class BmcContent {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public void setCreated(String created) {
+        this.created = created;
+    }
+
+    public String getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(String lastModified) {
+        this.lastModified = lastModified;
     }
 }
