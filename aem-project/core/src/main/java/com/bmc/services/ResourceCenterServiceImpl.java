@@ -164,48 +164,51 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     /***  Results ------->  *********************************************************/
 
-    private String buildQueryPredicateName(int id, String queryParam) {
+    private String buildQueryPredicateName(int id, String queryParam, boolean withGroup) {
         StringBuilder queryPredicate = new StringBuilder();
-        queryPredicate.append(ResourceCenterConsts.PREDICATE_PREFIX).append(id).append("_").append(queryParam);
+        if(withGroup)
+            queryPredicate.append(ResourceCenterConsts.PREDICATE_PREFIX);
+        queryPredicate.append(id).append("_").append(queryParam);
         return queryPredicate.toString();
     }
 
-    private void addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
+    private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             // if url parameters does not have such parameter(urlParam), then return
             if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER) == null)
-                return;
+                return predicateIndex;
 
             // extract url params and put them into query params
             String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
-            for(int i = 0; i < queryValues.length; i++) {
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP_VAL), queryValues[i]);
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+            for(int i = 0; i < queryValues.length; i++, predicateIndex++) {
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
 
             }
 
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
         }
+        return predicateIndex;
     }
 
-    private void addSearchPredicates(Map<String, String[]> urlParameters, String urlParam, Map<String, String> queryParamsMap, String queryParam) {
-        try {
-            // if url parameters does not have such parameter(urlParam), then return
-            if(urlParameters.get(urlParam) == null)
-                return;
-
-            // extract url params and put them into query params
-            String[] queryValues = urlParameters.get(urlParam);
-            for(int i = 0; i < queryValues.length; i++) {
-                queryParamsMap.put(buildQueryPredicateName(i+1, queryParam), queryValues[i]);
-            }
-
-        } catch (Exception e) {
-
-        }
-    }
+//    private void addSearchPredicates(Map<String, String[]> urlParameters, String urlParam, Map<String, String> queryParamsMap, String queryParam) {
+//        try {
+//            // if url parameters does not have such parameter(urlParam), then return
+//            if(urlParameters.get(urlParam) == null)
+//                return;
+//
+//            // extract url params and put them into query params
+//            String[] queryValues = urlParameters.get(urlParam);
+//            for(int i = 0; i < queryValues.length; i++) {
+//                queryParamsMap.put(buildQueryPredicateName(i+1, queryParam), queryValues[i]);
+//            }
+//
+//        } catch (Exception e) {
+//
+//        }
+//    }
 
     private void addPaginationPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
         try {
@@ -225,24 +228,41 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         }
     }
 
-    private void addSortingPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
+    private int addSortingPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)!=null) {
-                String searchCriteria = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)[0];
-                if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
-                    queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_ORDER_BY, "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
-                }
-            }
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)!=null) {
-                String urlParamSortDirection = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)[0];
+            String[] searchCriterias = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA);
+            String[] urlParamSortDirections = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER);
+            if(searchCriterias==null) return predicateIndex;
+
+            for(int i = 0; i < searchCriterias.length; i++, predicateIndex++) {
+                String searchCriteria = searchCriterias[i];
+                String urlParamSortDirection = urlParamSortDirections[i];
                 String sortDirection = urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
                         || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ?
                         ResourceCenterConsts.QUERY_PARAM_SORT_DESC : ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
-                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, sortDirection);
+                if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
+                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_ORDER_BY, false), "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, false), sortDirection);
+                }
             }
+            //for single
+//            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)!=null) {
+//                String searchCriteria = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA)[0];
+//                if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
+//                    queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_ORDER_BY, "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+//                }
+//            }
+//            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)!=null) {
+//                String urlParamSortDirection = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER)[0];
+//                String sortDirection = urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
+//                        || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ?
+//                        ResourceCenterConsts.QUERY_PARAM_SORT_DESC : ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
+//                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, sortDirection);
+//            }
         } catch (Exception e) {
 
         }
+        return predicateIndex;
     }
 
     /**
@@ -265,9 +285,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH)[0]);
         }
         // adding other url parameters into query parameters
-        addSearchFilter(urlParameters, queryParamsMap);
+        int predicateIndex = 1;
+        predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
         addPaginationPredicates(urlParameters, queryParamsMap);
-        addSortingPredicates(urlParameters, queryParamsMap);
+        predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
 
         log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
         return queryParamsMap;
