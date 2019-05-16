@@ -90,6 +90,11 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			// apply error styles
 			if ($input.parent().is('.decorator-select')) {
 				$input.parent().addClass('validation-error');
+				if(redesign_form_flag){		
+					var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');		
+					$input.parent().next('.error-text').text(err_hint);						
+				}
+				
 			}
 			else if (radioOrCheckbox) {
 				$('[name="' + name + '"]').parent().find('label').addClass('validation-error');
@@ -101,7 +106,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
 
 					if(redesign_form_flag){				
-						$input.next('.error-text').text(err_hint);
+						$input.next('.error-text').text(err_hint);						
 					}else {
 						$input.prev('label:first').text(err_hint);
 					}

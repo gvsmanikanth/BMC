@@ -345,7 +345,7 @@
 
                                                 <label for="C_State_Prov">State or Province</label>
                                                 
-                                                <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true" class="">
+                                                <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province."  class="">
                                                                                           </div>
                                           
                                           <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">

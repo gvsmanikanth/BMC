@@ -5,11 +5,9 @@
     //checking the form2 class is present or not	
 	$.fn.validateInputs = function() {
         var $this = this;      
-
         $('form input[type="text"], form input[type="tel"], form input[type="email"] ').after('<span class="error-text"></span>');
         $('form select').after('<span class="error-text"></span>');
-        $('form input[type="checkbox"] + label').after('<span class="error-text"></span>');
-                                      
+        $('form input[type="checkbox"] + label').after('<span class="error-text"></span>');                                              
             // base regex patterns; http://regex101.com/ is a good testing environment
             $this.patterns = {
                 'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
@@ -35,80 +33,64 @@
                                 var validationType = ($input.data('validation-type')) ? $input.data('validation-type') : type;                            
                                 var alphaOnly = new RegExp($this.patterns[validationType]);
                                 if(!alphaOnly.test(value)){
-                                    $(this).addClass('validation-error');
+                                    $(this).addClass('validation-error-redesign');
                                     $(this).removeClass('valid-input');                                                               
                                     $input.next('.error-text').text(err_hint);                                 					
                                 }else{
-                                    $(this).removeClass('validation-error');
+                                    $(this).removeClass('validation-error-redesign');
                                     $(this).addClass('valid-input');
                                     $input.next('.error-text').text('');                                 
                                 }                            
                             }	
                             // for select error text
                             if ($input.parent().is('.decorator-select')) {
-                                $input.parent().removeClass('validation-error');
+                                $input.parent().removeClass('validation-error-redesign');
                                 $input.parent().addClass('valid-input'); 
                                 $input.parent().next('.error-text').text('');
                             }
                          } else{
-                            $(this).addClass('validation-error');
+                            $(this).addClass('validation-error-redesign');
                             $(this).removeClass('valid-input');                     
                             $input.next('.error-text').text(err_hint);
     
                             // for select 
                             if ($input.parent().is('.decorator-select')) {
-                                $input.parent().addClass('validation-error');
+                                $input.parent().addClass('validation-error-redesign');
                                 $input.parent().removeClass('valid-input'); 
                                 $input.parent().next('.error-text').text(err_hint);
                             }
                         }
-                    }                    
-                    				
+                    }                                       				
             });	
             $this.change(function() {	
                 var $input = $(this);
                 var	value = $input.val(),
                 required = $input.attr('required') !== undefined,
                 type = $input.attr('type');
-                var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
-               
-               // console.log($input);
+                var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');                
                 if($input.get(0).getAttribute('required') != 'false'){
                     if(!(required && (value === '' || value === null))){                        
                         // for select error text
                         if ($input.parent().is('.decorator-select')) {
-                            $input.parent().removeClass('validation-error');
+                            $input.parent().removeClass('validation-error-redesign');
                             $input.parent().addClass('valid-input'); 
                             $input.parent().next('.error-text').text('');
-
-
-                            //  //adding state input if value is US
-                            // var state = '<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">                             <label for="C_State_Prov1" class="">State or Province</label><input type="text" id="C_State_Prov1" placeholder="State or Province" name="C_State_Prov1" required="false"/></div>';
-                            // if(value == "USA"){
-                            //     state.insertAfter('.decorator-select');
-                            // }
-                           
-
                         }
                      } else{
                          // for select 
                         if ($input.parent().is('.decorator-select')) {
-                            $input.parent().addClass('validation-error');
+                            $input.parent().addClass('validation-error-redesign');
                             $input.parent().removeClass('valid-input'); 
                             $input.parent().next('.error-text').text(err_hint);
                         }
                     }
-                }                    
-                                
-        });
-            
-		}	
-		      
+                }                                                  
+            });            
+		}
+       
     if ( $('body').hasClass('form2') ) { 
         $inputs = $('form').find('input, textarea, select'),
-        $inputs.validateInputs();
-        			
-    } 
-
+        $inputs.validateInputs();        			
+    }    
 }) (jQuery);
 

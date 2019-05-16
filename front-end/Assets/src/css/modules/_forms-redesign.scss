@@ -1,12 +1,10 @@
 .form2{
     h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
-    }
-	
+    }	
 	.maincontentcontainer>section:first-child>div:first-child{
 		padding-bottom:0px !important;
-	}
-	
+	}	
     background-color: #fff;
     .ornate-header{
         min-height: auto;
@@ -42,8 +40,7 @@
                         color: #fff;
                     }
                 }                
-            }
-            
+            }            
 
          }
         *{
@@ -51,239 +48,209 @@
         }
     }
     .cmp-form{
-    form{
-        padding: 1em;
-        background: #efefef;
-        width: auto;
-        border-top: 10px solid #fe4601;
-        position: relative;
-        @media (min-width: $break-md) {
-            z-index: 10; 
-            margin-top: -300px; 
-            padding: 1.5em;         
-        }  
-        @media (max-width: $break-md) {
-            margin-top: 0px !important;         
-        }  
-                        
-        .btn-secondary {
-            background-color: #3980b2;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 0;
-            max-width: 210px;
-            margin: 15px auto;
-            display: block;
-            + p{
-                text-align: center;
-            }
-        } 
-        #C_OptIn_group{
-            display: block
-        }
-        .cmp-title{
-            h1{
-                font-size: 30px;
-            }
-            h1,h5{
-                font-weight: 500;
-            }       
-        }  
-
-        fieldset:not(#foo){
-        	padding-top:.8rem;
-            label{
-                margin-bottom: 5px;
-                line-height:1.2rem;
-            }
-            .decorator-select 
-            {
-                margin-top: 0;
-                margin-bottom: 0;
-                background: #fff;
-                border-radius: 0;
-                select {
-                	appearance: none;
-                }
-                 select::-ms-expand {
-                    display: none;
-                }
-                 // arrow down options for select fields
-                 &:after {
-                    content: "\e601";
-                    height: 42px;
-                    pointer-events: none;
-                    position: absolute;
-                    right: 0;
-                    top: 1px;
-                    width: 54px;
-                    z-index: 105;
-                    font-family: 'icomoon';
-                    text-align: center;
-                    border-left: 1px solid #ccc;
-                    line-height: 48px;
-                    color: #336699;
-                    background: #fff;
-                }
-                .validation-error {
-                   background-image: none;
-                   
-                 
-                }
-
-                // mozila : to remove dotted border around option in 
-                select:-moz-focusring {
-                    color: transparent;
-                    text-shadow: 0 0 0 #000;
-                }
-                option:not(:checked) {
-                  color: black; /* prevent <option>s from becoming transparent as well */
-                }
-
-                // IE: for removing blue background behind options
-                select::-ms-value {
-                    background: none;
-                    color:#000;
-                }
-
-            }
-            .decorator-select.validation-error {
-                 background-image: none;
-                 padding-left: 0;
-               
-             }
-             .decorator-select.valid-input {
-                   background-image: none;
-                }
-            .cmp-options {
-                padding-top: .5rem;
-                padding-bottom: .5rem;  
-/*
-                + .decorator-select{
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    @media (min-width: $break-md) {
-                        display: inline-block;
-                        width: calc(50% - 3px);
-                    }
-                }
-              
-                
-                + .floatlabel-wrapper{
-                    padding-top: .5rem;
-                    padding-bottom: .5rem;
-                    @media (min-width: $break-md) {
-                        display: inline-block;
-                        width: calc(50% - 3px);
-                    } 
-                    label{
-                        position: relative !important;
-                        top: auto !important;
-                        left: auto !important;
-                        display: block !important;
-                        opacity: 1 !important;
-                    } 
-                    
-                    input[type="text"].active-floatlabel {
-                        height: 48px;
-                        padding-top: 0 !important;
-                    }
-                                 
-                    
-                }
- */               
-            }
-            
-            .checkbox{
-             	label{
-             		margin-bottom:0px;
-             		padding-bottom:0px;
-             		margin-top:0px;
-             		padding-top:0px;
-             		
-             		&.validation-error{
-             			::before{
-             				color:#e6e6e6;
-             			}
-             		}
-                 }
-                 
-             	
-             	
-             	
-             }
-    
-            // aligning valdation exlamation at the right side
-            .validation-error{                
-               	background: #fff; 
-                background-position: 97%;
-                padding-left: 0.44444em;
-                border-radius: 0;
-              
-            }
-            .checkbox{
-                .validation-error{                
-                    background: transparent;
-                
-                }
-            }
-
-            .valid-input {
-                border: 2px solid #36ba2f;
-                background-position: 97%;
-            }
-            .error-text {
-                color: #de2a12;
-                padding: 8px 0 0 0;
-                display: inline-block;
-                font-size: 14px;
-                font-style: italic;
-                line-height: 14px;
-            }
-            .form-group.checkbox{
-                li{
-                    label{
-                        display: table;
-                        padding-left: 5px;
-                        &::before{
-                            padding-right: 20px;
-                            display: table-cell;
-                            vertical-align: text-top;
-                        }
-                    }
-                }                   
-            }
-
-            @media screen and (max-width: 1371px) and (min-width: 901px) {
-                label.business_phone_label {
-                    min-height: 42px;
-                }
-              }
-
-              input[type="text"],
-              input[type="number"],
-              input[type="password"],
-              input[type="email"],
-              input[type="tel"],
-              textarea{
-                  border-radius: 0;
-              }
-            .horizontal-Tag{
-                + .cmp-options{
-                    padding: 0;
-                }
-            }
-        }   
-        hr.field-sep{
-            border-top: 1px solid #ccc;
-            margin: 10px -1em;    
-            border-bottom: 0px;
+        form{
+            padding: 1em;
+            background: #efefef;
+            width: auto;
+            border-top: 10px solid #fe4601;
+            position: relative;
             @media (min-width: $break-md) {
-                margin: 10px -1.5em;         
-            }       
+                z-index: 10; 
+                margin-top: -300px; 
+                padding: 1.5em;         
+            }  
+            @media (max-width: $break-md) {
+                margin-top: 0px !important;         
+            }  
+                            
+            .btn-secondary {
+                background-color: #3980b2;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 0;
+                max-width: 210px;
+                margin: 15px auto;
+                display: block;
+                + p{
+                    text-align: center;
+                }
+            } 
+            #C_OptIn_group{
+                display: block
+            }
+            .cmp-title{
+                h1{
+                    font-size: 30px;
+                }
+                h1,h5{
+                    font-weight: 500;
+                }       
+            }  
+
+            fieldset:not(#foo){
+                padding-top:.8rem;
+                label{
+                    margin-bottom: 5px;
+                    line-height:1.2rem;
+                }
+                .decorator-select 
+                {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    background: #fff;
+                    border-radius: 0;
+                    select {
+                        appearance: none;
+                    }
+                    select::-ms-expand {
+                        display: none;
+                    }
+                    // arrow down options for select fields
+                    &:after {
+                        content: "\e601";
+                        height: 42px;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 1px;
+                        width: 54px;
+                        z-index: 105;
+                        font-family: 'icomoon';
+                        text-align: center;
+                        border-left: 1px solid #ccc;
+                        line-height: 48px;
+                        color: #336699;
+                        background: #fff;
+                    }
+                    .validation-error {
+                    background-image: none;                   
+                    
+                    }
+
+                    // mozila : to remove dotted border around option in 
+                    select:-moz-focusring {
+                        color: transparent;
+                        text-shadow: 0 0 0 #000;
+                    }
+                    option:not(:checked) {
+                    color: black; /* prevent <option>s from becoming transparent as well */
+                    }
+
+                    // IE: for removing blue background behind options
+                    select::-ms-value {
+                        background: none;
+                        color:#000;
+                    }
+                    .validation-error-redesign {
+                        border: none;                  
+                    }
+
+                }
+                .decorator-select.validation-error {
+                    background-image: none;
+                    padding-left: 0;
+                    border: 2px solid #fe4601;
+                
+                }
+                .decorator-select.validation-error-redesign {
+                    background-image: none;
+                    padding-left: 0;
+                    border: 2px solid #fe4601;
+                
+                }                
+                .decorator-select.valid-input {
+                    background-image: none;
+                    }
+                .cmp-options {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;                
+                }
+                
+                .checkbox{
+                    label{
+                        margin-bottom:0px;
+                        padding-bottom:0px;
+                        margin-top:0px;
+                        padding-top:0px;
+                        
+                        &.validation-error-redesign{
+                            ::before{
+                                color:#e6e6e6;
+                            }
+                        }
+                    }                    
+                }
+        
+                // aligning valdation exlamation at the right side
+                .validation-error-redesign,.validation-error{             
+                    background: #fff; 
+                    background-position: 97%;
+                    padding-left: 0.44444em;
+                    border-radius: 0;
+                    border: 2px solid #fe4601;
+                
+                }
+                .checkbox{
+                    .validation-error-redesign, .validation-error{                
+                        background: transparent;   
+                        border: none;             
+                    }
+                }
+                .valid-input {
+                    border: 2px solid #36ba2f;
+                    background-position: 97%;
+                }
+                .error-text {
+                    color: #de2a12;
+                    padding: 8px 0 0 0;
+                    display: inline-block;
+                    font-size: 14px;
+                    font-style: italic;
+                    line-height: 14px;
+                }
+                .form-group.checkbox{
+                    li{
+                        label{
+                            display: table;
+                            padding-left: 5px;
+                            &::before{
+                                padding-right: 20px;
+                                display: table-cell;
+                                vertical-align: text-top;
+                            }
+                        }
+                    }                   
+                }
+
+                @media screen and (max-width: 1371px) and (min-width: 901px) {
+                    label.business_phone_label {
+                        min-height: 42px;
+                    }
+                }
+
+                input[type="text"],
+                input[type="number"],
+                input[type="password"],
+                input[type="email"],
+                input[type="tel"],
+                textarea{
+                    border-radius: 0;
+                }
+                .horizontal-Tag{
+                    + .cmp-options{
+                        padding: 0;
+                    }
+                }
+            }   
+            hr.field-sep{
+                border-top: 1px solid #ccc;
+                margin: 10px -1em;    
+                border-bottom: 0px;
+                @media (min-width: $break-md) {
+                    margin: 10px -1.5em;         
+                }       
+            }            
         }
-           
-    }
     }
     .contact-info {
         background: #fff;
