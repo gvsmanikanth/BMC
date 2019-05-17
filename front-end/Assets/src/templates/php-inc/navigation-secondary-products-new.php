@@ -34,8 +34,8 @@
 
 	<li class="navigation-column">
 		<ul>
-			<li class="navigation-section-header"><a class="boldlink"
-				href="https://www.bmc.com/it-solutions/service-management.html">Service Management ›</a></li>
+			<li class="navigation-section-header"><a class="boldlink learn-more"
+				href="https://www.bmc.com/it-solutions/service-management.html">Service Management</a></li>
 			<li><a href="https://www.bmc.com/it-solutions/remedy-itsm.html">Remedy Service Management</a></li>
 			<li><a
 				href="https://www.bmc.com/it-solutions/discovery-dependency-mapping.html">Discovery</a></li>

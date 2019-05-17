@@ -144,7 +144,7 @@
 			}
 		
 			.product-category-header{
-				overflow: initial;
+				overflow: visible;
 				z-index: 10;
 				.inner{
 					.bannerContent{
@@ -251,6 +251,9 @@
 						}			
 				}
 				.jq-dropdown-menu{
+					@media (max-width: 767px) {
+						max-width: 100%;	
+					}					
 					li{
 							a{
 							color:#414042;
@@ -383,6 +386,11 @@
 						margin-bottom: 48px;
 					}
 				}
+			}
+		}
+		.jq-dropdown-scroll{
+			.jq-dropdown-menu{
+				// max-height: inherit;
 			}
 		}
 	
@@ -1123,6 +1131,9 @@
 					padding: 0;
 					margin-top: 0;
 				}
+
+				/* quoteation marke remove
+
 				&:after {
 					content: "";
 					background : url(https://www.bmc.com/content/dam/bmc/corporate/Teams/Quatation_mark_right.png) no-repeat;
@@ -1145,7 +1156,8 @@
 					margin-right: 10px;
 					margin-top: 0;
 					margin-left: -42px;
-				}
+				} */
+
 			}
 			.image-container{
 				max-width: 1200px;
@@ -1223,4 +1235,5 @@
 	
 	
 	}
+	
 	

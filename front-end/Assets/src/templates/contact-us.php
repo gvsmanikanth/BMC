@@ -417,4 +417,16 @@
 	</div><!-- / layout-inner-wrap -->
 </section><!-- / layout-full-bleed -->
 
-<?php include_once 'php-inc/foot.php'; ?>
+<div class="plainfooter aem-GridColumn aem-GridColumn--default--12">
+<footer class="layout-footer">
+        <div class="layout-inner-wrap at-element-marker">
+            <div class="footer-logo" style="background-position: 0 100% !important;">
+               
+			   <a href="/">BMC</a>
+            </div>
+            <p class="legal-copyright">
+                © Copyright 2005-2019 BMC Software, Inc. Use of this site signifies your acceptance of BMC's <a href="/legal/terms-of-use.html">Terms of Use</a>, <a href="/legal/privacy-policy.html">Privacy Policy</a> and <a href="/legal/cookie-notice.html">Cookie Notice</a>. BMC, BMC Software, the BMC logos, and other BMC marks are <a href="/legal/trademarks.html">trademarks or registered trademarks</a> of BMC Software, Inc. in the U.S. and/or certain other countries.
+            <br><div id="teconsent" style="vertical-align:middle !important" consent="0,1,2"><script src="https://consent.trustarc.com/asset/notice.js/v/v1.7-207" async="async" crossorigin=""></script><a id="icon-id09535618130865824" tabindex="0" role="button" lang="en" style="cursor: pointer;">Cookie Consent</a></div></p>
+        </div>
+    </footer>
+</div>
