@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="nt:unstructured"
-          jcr:title="please-send-me-more-valuable-information-like-this-from-industry ">
+          jcr:title="please-send-me-more-valuable-information-like-this-from-industry">
          <caption
                 jcr:primaryType="nt:unstructured"
                 disabled="true"
