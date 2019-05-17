@@ -23,32 +23,41 @@ $(document).ready(function () {
       startEvent: 'load',
   });	
 		
-    //Set the height for all sections wraps equal.
-	function setHeight() {
-		windowHeight = $(window).innerHeight();
-        stripHeight = $(".assetStripBottom").innerHeight();
-        $('.section-wrap-header').css('height', windowHeight-120);
-        
-        if($(".js-content-center") && $(".js-content-center-item")){
-			var compHeight = $(".js-content-center").innerHeight() - $(".assetStrip.assetStripBottom").innerHeight(); 
-			var contentHeight = $(".js-content-center-item").innerHeight();
-			$('.js-content-center-item').css('margin-top', (compHeight-contentHeight)/2);
-			$('.js-content-center-item').css('margin-bottom', (compHeight-contentHeight)/2);
-		}
-        
-		if (stripHeight != null){
-			$('.section-wrap-header.middle').css('height', windowHeight-(stripHeight+120));
-		}
-		$('.section-wrap-header').css('min-height', 500);
-        $('.section-wrap-header.middle').css('min-height', 0);
-        $('.section-wrap').css('min-height', windowHeight-50);
-
-        if($(".ub-emb-bar-frame").length == 1){
-            $('.arrow.bounce').css('bottom', '5.5rem');
-        }else{
-            $('.arrow.bounce').css('bottom', '1rem');
-        }
-	};
+	//Set the height for all sections wraps equal.
+   function setHeight() {
+          windowHeight = $(window).innerHeight();
+    stripHeight = $(".assetStripBottom").innerHeight();
+          var componentHeight = $(".js-content-center-item").innerHeight() + stripHeight + 30;
+          if(componentHeight > windowHeight){
+                 $('.section-wrap-header').css('min-height', componentHeight);
+                 $('.js-content-center-item').css('margin-top', "1rem");
+                 $('.js-content-center-item').css('margin-bottom', "1rem");
+          }
+          else{
+                 $('.section-wrap-header').css('height', windowHeight-120);
+                 if($(".js-content-center") && $(".js-content-center-item")){
+                       var compHeight = $(".js-content-center").innerHeight() - $(".assetStrip.assetStripBottom").innerHeight(); 
+                       var contentHeight = $(".js-content-center-item").innerHeight();
+                       $('.js-content-center-item').css('margin-top', (compHeight-contentHeight)/2);
+                       $('.js-content-center-item').css('margin-bottom', (compHeight-contentHeight)/2);
+                 }
+                 if (stripHeight != null){
+                       $('.section-wrap-header.middle').css('height', windowHeight-(stripHeight+120));
+                 }
+                 
+                 $('.section-wrap-header').css('min-height', 500);
+                 
+                 $('.section-wrap-header.middle').css('min-height', 0);
+           $('.section-wrap').css('min-height', windowHeight-50);
+ 
+               if($(".ub-emb-bar-frame").length == 1){
+               $('.arrow.bounce').css('bottom', '5.5rem');
+           }else{
+               $('.arrow.bounce').css('bottom', '1rem');
+           }
+          }
+    
+   };
 
 	setHeight();
 		  

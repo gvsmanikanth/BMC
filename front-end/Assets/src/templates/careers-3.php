@@ -1,6 +1,6 @@
 <?php $pageTitle='BMC Careers' ; $bodyClass='home page-careers' ; include 'php-inc/head.php'; ?>
 <?php include 'php-inc/svg.php'; ?>
-<?php include 'careers-hero.php'; ?>
+<?php include 'careers-hero3.php'; ?>
 <div id="page-content" class="careers_locations bg-white">
 	<div class="careers-nav">
 		<ul class="section-content flex">
@@ -15,11 +15,12 @@
 			</li>
 		</ul>
 	</div>
-	<section id="careers_locations_map" class="section text-center">
-		<div class="section-content">
-			<div class="ha mb2">Global. Local.</div>
-			<div class="h3 p readability-large mb3">With office locations in every major continent, you can be a part of BMC wherever you are in the world.</div>
-			<img src="//media.cms.bmc.com/designimages/careers-map.png" class="block-center xs-max-hide">
+	<section id="careers_locations_map" class="section text-center map-section">
+		<div class="section-content common-cont">
+			<h3 class="mb1">Around the World and Right at Home</h3>
+			<h4 >BMC has locations in every major continent and offers generous work-from-home flexibility, so you can work where you work best!</h4>			
+			<img src="http://www.bmc.com/content/dam/bmc/corporate/Locations/Locations_map.jpg" class="block-center desktop-only">
+			<img src="https://www.bmc.com/content/dam/bmc/corporate/MobileImages/Locations_map_680px%20x%20360p.png" class="block-center mobile-only">
 		</div>
 	</section>
 	<section id="careers_locations_list" class="section pattern">
@@ -30,39 +31,38 @@
 					<div class="col-12 sm-col-6 p1">
 						<div class="bold mb1">North America</div>
 						<div class="mb3">
-							<a href="#">Canada</a>
-							<a href="#">United States</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9392">Canada</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9432">United States</a>
 						</div>
 						<div class="bold mb1">South America</div>
 						<div class="mb2">
-							<a href="#">Argentina</a>
-							<a href="#">Brazil</a>
-							<a href="#">Colombia</a>
-							<a href="#">Mexico</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9384">Argentina</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9389">Brazil</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9395">Colombia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9414">Mexico</a>
 						</div>
 					</div>
 					<div class="col-12 sm-col-6 p1">
 						<div class="bold mb1">Europe</div>
 						<div class="mb3">
-							<a href="#">Austria</a>
-							<a href="#">Belgium</a>
-							<a href="#">Denmark</a>
-							<a href="#">Finland</a>
-							<a href="#">France</a>
-							<a href="#">Germany</a>
-							<a href="#">Greece</a>
-							<a href="#">Ireland</a>
-							<a href="#">Italy</a>
-							<a href="#">Luxembourg</a>
-							<a href="#">Netherlands</a>
-							<a href="#">Norway</a>
-							<a href="#">Poland</a>
-							<a href="#">Portugal</a>
-							<a href="#">Russia</a>
-							<a href="#">Spain</a>
-							<a href="#">Sweden</a>
-							<a href="#">Switzerland</a>
-							<a href="#">United Kingdom</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9386">Austria</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9387">Belgium</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9397">Denmark</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9400">Finland</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9401">France</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9402">Germany</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9403">Greece</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9408">Ireland</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9410">Italy</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9415">Netherlands</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9417">Norway</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9420">Poland</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9421">Portugal</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9422">Russia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9426">Spain</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9427">Sweden</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9428">Switzerland</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9435">United Kingdom</a>
 						</div>
 					</div>
 				</div>
@@ -72,36 +72,35 @@
 					<div class="col-12 sm-col-6 p1">
 						<div class="bold mb1">Africa</div>
 						<div class="mb3">
-							<a href="#">South Africa</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9425">South Africa</a>
 						</div>
 						<div class="bold mb1">Middle East</div>
 						<div class="mb2">
-							<a href="#">Dubai</a>
-							<a href="#">Israel</a>
-							<a href="#">Saudi Arabia</a>
-							<a href="#">Turkey</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9434">Dubai</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9409">Israel</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9423">Saudi Arabia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9431">Turkey</a>
 						</div>
 						<div class="bold mb1">Oceania</div>
 						<div class="mb2">
-							<a href="#">Australia</a>
-							<a href="#">New Zealand</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9385">Australia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9416">New Zealand</a>
 						</div>
 					</div>
 					<div class="col-12 sm-col-6 p1">
 						<div class="bold mb1">Asia Pacific</div>
 						<div class="mb3">
-							<a href="#">China</a>
-							<a href="#">Hong Kong</a>
-							<a href="#">India</a>
-							<a href="#">Indonesia</a>
-							<a href="#">Japan</a>
-							<a href="#">Korea</a>
-							<a href="#">Malaysia</a>
-							<a href="#">Philippines</a>
-							<a href="#">Singapore</a>
-							<a href="#">Taiwan</a>
-							<a href="#">Thailand</a>
-							<a href="#">Vietnam</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9394">China</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9404">Hong Kong</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9406">India</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9407">Indonesia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9411">Japan</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9412">Korea</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9413">Malaysia</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9419">Philippines</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9424">Singapore</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9429">Taiwan</a>
+							<a href="https://bmcrecruit.avature.net/Careers/SearchJobs/?3_171_3=9430">Thailand</a>
 						</div>
 					</div>
 				</div>
@@ -170,9 +169,22 @@
 				<img src="//media.cms.bmc.com/designimages/careers-locations-c15.jpg">
 				<div class="slide-caption">Pune, India</div>
 			</div>
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c16.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c17.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>			
+			<div>
+				<img src="//www.bmc.com/content/dam/bmc/corporate/careers-locations-c18.jpg">
+				<div class="slide-caption">Tel-Hai, Israel</div>
+			</div>		
+			
 		</div>
 		<div class="section-content owl-carousel-dropdown">
-			<a href="#" class="jq-dropdown-trigger jq-dropdown-orange" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span><svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg></a>
+			<a href="#." class="jq-dropdown-trigger jq-dropdown-orange findoff" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span><svg class="svg-inline"><use xlink:href="#s-chevronDown" /></svg></a>
 		</div>
 	</section>
 </div>
@@ -193,6 +205,9 @@
 		<li><span data-owl-slide="12">Collaboration Bench in Paris, France</span></li>
 		<li><span data-owl-slide="13">Courtyard in Winnersh, UK</span></li>
 		<li><span data-owl-slide="14">Pune, India</span></li>
+		<li><span data-owl-slide="15">Tel-Hai, Israel</span></li>
+		<li><span data-owl-slide="16">Tel-Hai, Israel</span></li>
+		<li><span data-owl-slide="17">Tel-Hai, Israel</span></li>
 	</ul>
 </div>
 <?php include 'php-inc/foot.php'; ?>

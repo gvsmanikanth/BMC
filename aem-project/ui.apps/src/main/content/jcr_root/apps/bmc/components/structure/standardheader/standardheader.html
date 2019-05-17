@@ -55,7 +55,9 @@
 					<span class="component_search_close" id="component_search_close"></span>
 				  <div class="search-panel">
 					 <form id="search_form" method="get" action="/search/" >
-						<input type='text' id='st-search-input' placeholder='Search'/>
+					 	<!--/* WEB-4528 added name="q" for analytics START */-->
+						<input type='text' id='st-search-input' placeholder='Search' name='q'/>
+						<!--/* WEB-4528 END */-->
 						<!--<input id="st-search-input" class="search_input st-default-search-input" autocapitalize="off" autocorrect="off" aria-haspopup="false" autocomplete="on" aria-autocomplete="both" dir="ltr" autofocus="" type="text" name="q" title="search" value="" id="search_input" x-webkit-speech="" x-webkit-grammar="builtin:search" lang="en" spellcheck="false" placeholder="Search">  
 						<div class="search_click btn-white">Search</div>-->
 						<button type="submit" class="btn btn-default search_click viewAll btn-white">Search</button>						

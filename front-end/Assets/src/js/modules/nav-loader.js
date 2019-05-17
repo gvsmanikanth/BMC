@@ -263,7 +263,7 @@ jQuery(function($){
 				thisRelativeLeft = thisRelativePosition.left || 0;
 
 				// determine the appropriate 'left' positioning property.
-				if ( thisRelativeLeft + $thisNavSecondary.width() <= $('.navigation-primary').width() ) {
+				if ( thisRelativeLeft + $thisNavSecondary.width() <= $('.navigation-primary').width() - 5) {
 					thisNavSecondaryLeft = thisRelativeLeft;
 				} else {
 					thisNavSecondaryLeft = 'auto';
