@@ -61,7 +61,7 @@ include 'php-inc/head.php';
 				</li>
 				<li data-slide="1">
 					<figure>
-						<a href="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_mobileapp1_small_900x516.jpg" class="modal-image" rel="carousalGroup" title="All the power of Remedy 9 on any device"> <img src="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_mobileapp1_small_900x516.jpg" alt="second">
+						<a href="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_akm+deploy_large_1200x690.jpg" class="modal-image" rel="carousalGroup" title="All the power of Remedy 9 on any device"> <img src="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_akm+deploy_small_900x516.jpg" alt="second">
 						</a>
 						<figcaption>
 							All the power of Remedy 9 on any device
@@ -70,7 +70,7 @@ include 'php-inc/head.php';
 				</li>
 				<li data-slide="2">
 					<figure>
-						<a href="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_mobileapp1_small_900x516.jpg" class="modal-image" rel="carousalGroup" title="Be more productive with formless data entry"> <img src="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_mobileapp1_small_900x516.jpg" alt="third">
+						<a href="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_new+dashlets_large_1200x690.jpg" class="modal-image" rel="carousalGroup" title="Be more productive with formless data entry"> <img src="https://www.bmc.com/content/dam/bmc/migration/image/Screenshot_new+dashlets_small_900x516.jpg" alt="third">
 						</a>
 						<figcaption>
 							Be more productive with formless data entry
