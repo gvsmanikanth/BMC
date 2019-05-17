@@ -390,9 +390,12 @@
 		}
 		.jq-dropdown-scroll{
 			.jq-dropdown-menu{
-				// max-height: inherit;
+				@media (max-width: $break-sm){
+					max-width: 270px;
+				}
 			}
 		}
+
 	
 		%career-divider {
 			display: inline-block;
@@ -1221,6 +1224,10 @@
 		@media (min-width: $break-sm) {
 			margin-left: -90px;
 		}
+		@media (max-width: $break-sm) {
+			margin-left: -40px;
+		}
+
 	}
 	
 	.no-flexbox {
