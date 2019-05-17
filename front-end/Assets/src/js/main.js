@@ -67,5 +67,9 @@ require("./modules/events.js");
 //require("./modules/youtube.js");
 require("./vendor/aos.js");
 require("./modules/homepage-aos.js");
+
+require('./vendor/jquery.validate.input.js');
 //require("./vendor/jquery.slimscroll.min.js");
 //require("./vendor/jquery.fullPage.min.js");
+
+require('./modules/contact-form.js');

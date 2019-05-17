@@ -371,7 +371,7 @@ include 'php-inc/head.php';
 			</div>
 		</div>
 		<div class="section-content owl-carousel-dropdown">
-			<a href="#" class="jq-dropdown-trigger jq-dropdown-orange" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span>
+			<a href="#." class="jq-dropdown-trigger jq-dropdown-orange" data-jq-dropdown="#careers-dropdown-locations"><span>Find office images</span>
 			<svg class="svg-inline">
 				<use xlink:href="#s-chevronDown" />
 			</svg></a>
