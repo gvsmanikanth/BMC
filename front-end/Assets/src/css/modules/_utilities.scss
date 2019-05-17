@@ -145,6 +145,9 @@
 			margin-top: columns(0.3);
 		}
 	}
+	.cmp-text p{
+		padding-top: 1rem;
+	}
 
 }
 
@@ -188,6 +191,9 @@
 		&.nth-child-np5 {
 			margin-top: columns(0.26);
 		}
+	}
+	.cmp-text p{
+		padding-top: 1rem;
 	}
 }
 
