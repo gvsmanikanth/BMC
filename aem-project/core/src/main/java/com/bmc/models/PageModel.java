@@ -187,7 +187,9 @@ public class PageModel {
         String templatePath = (template != null) ? template.getPath() : "";
         String templateName = (template != null) ? template.getName() : "";
         // If Thank-you Page, pull info from parent form page
-        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-thank-you")) {
+        //WEB-4924 Forms Redesign : START added form-thank-you2 to this loop 
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you") || templatePath.equals("/conf/bmc/settings/wcm/templates/form-event-thank-you")
+        		|| templatePath.equals("/conf/bmc/settings/wcm/templates/form-thank-you2")) {
             bmcMeta.getPage().setPurl("true");
             resourcePage = resourcePage.getParent();
             contentId = (String) resourcePage.getProperties().getOrDefault("contentId", "");
@@ -195,6 +197,7 @@ public class PageModel {
             templatePath = (template != null) ? template.getPath() : "";
             templateName = (template != null) ? template.getName() : "";
         }
+        //WEB-4924 Forms Redesign : END  
         bmcMeta.getPage().setContentId(getContentID());
         bmcMeta.getPage().setContentType(getContentType());
         bmcMeta.getSite().setCultureCode(formatMetaLocale().toLowerCase());
@@ -261,6 +264,17 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
+        //WEB-4924 Forms Redesign : START added form-landing-page-template2 to this loop. 
+        if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template2")) {
+            try {
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/left/form");
+                setPageMetaFromForm(bmcMeta, form);
+                setFormMeta(bmcMeta, form);
+            } catch (RepositoryException e) {
+                e.printStackTrace();
+            }
+        }
+        //WEB-4924 Forms Redesign : END 
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
@@ -345,7 +359,9 @@ public class PageModel {
             } else if (depth == 5) {
                 if (!formattedLongName.toString().contains("forms-complete:"))
                     formattedLongName.append(":" + resourcePage.getName()).toString();
-            } else if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you")) {
+              //WEB-4924 Forms Redesign : START added form-landing-page-template2 to this loop. 
+            } else if (getContentType().contains("form-thank-you") || getContentType().contains("form-event-thank-you") || getContentType().contains("form-thank-you2")) {
+            	//WEB-4924 Forms Redesign : END. 
                     formattedLongName.append(":forms-complete" + ":"+resourcePage.getParent().getName().toLowerCase());
             } else if (getContentType().contains("form-")) {
                     formattedLongName.append(":forms-start" + ":"+resourcePage.getName().toString());
