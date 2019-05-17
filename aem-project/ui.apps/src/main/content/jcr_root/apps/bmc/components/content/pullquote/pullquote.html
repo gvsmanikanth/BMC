@@ -1,6 +1,7 @@
 <sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.ctaurl}"></sly>
 <sly data-sly-use.sourcelink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.sourcelinkeurl}"></sly>
 
+<div data-sly-test="${properties.pullQuoteType != 'light'}">
 <blockquote class="${properties.fullBleedCenterText ? 'fullbleed-blockquote' : 'testimonial divider'}">
     <div class="layout-inner-wrap">
 
@@ -36,3 +37,41 @@
         </section>
     </div>
 </blockquote>
+</div>
+<div data-sly-test="${properties.pullQuoteType == 'light'}" class="pullquote-light">
+<blockquote class="fullbleed-blockquote">
+    <div class="layout-inner-wrap">
+
+        <sly data-sly-test="${properties.fullBleedCenterText}">
+            ${properties.quote @ context='html'}
+        </sly>
+        <sly data-sly-test="${!properties.fullBleedCenterText}">
+            <p>${properties.quote @ context='html'}</p>
+        </sly>
+
+        <cite data-sly-test="${properties.citation}">
+            — ${properties.citation @ context='html'}
+        </cite>
+
+        <sly data-sly-test="${properties.sourcelinktext}">
+         <sly data-sly-test="${sourcelink.href}">
+                    <sly data-sly-test.sourceResolvedLink="${sourcelink.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!sourcelink.href}">
+                 <sly data-sly-test.sourceResolvedLink="${properties.sourcelinkeurl}"></sly>
+             </sly>
+            <h5><a class="${sourcelink.isVideo ? 'modal-youtube-video-player' : ''}" href="${sourceResolvedLink}">${properties.sourcelinktext @ context='html'}</a></h5>
+       </sly>
+
+        <section data-sly-test="${properties.ctatext}">
+             <sly data-sly-test="${cta.href}">
+                    <sly data-sly-test.ctaResolvedLink="${cta.href}"></sly>
+             </sly>  
+             <sly data-sly-test="${!cta.href}">
+                 <sly data-sly-test.ctaResolvedLink="${properties.ctaurl}"></sly>
+             </sly>
+            <a class="btn-white learn-more ${cta.isVideo ? 'modal-youtube-video-player' : ''}" href="${ctaResolvedLink}">${properties.ctatext}</a>
+        </section>
+    </div>
+</blockquote>
+</div>
