@@ -77,11 +77,14 @@ fieldset:not(#foo) {
 			right: 0px;
 			top: -2px;
 			width: 58px;
-			z-index: (z(content)+1);
+			z-index: (z(content)+1);	
+		
 		}
 
 		select {
 			outline: none;
+
+		
 			
 		}
 		select::-ms-value {background: none; color:#000;}
@@ -204,6 +207,12 @@ fieldset {
 		position: relative;
 		width: 100%;
 		z-index: zIndex(content);
+			// WEB-5147
+		
+			@supports (-ms-ime-align:auto) {
+				z-index: 12;
+				padding-right: 60px;
+			}
 	}
 	select::-ms-value {background: none; color:#000;}
 }
