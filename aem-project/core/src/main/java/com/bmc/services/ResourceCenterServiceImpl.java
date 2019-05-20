@@ -18,6 +18,7 @@ import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Node;
 import javax.jcr.Session;
 import java.util.*;
 
@@ -311,10 +312,19 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             for(Hit hit : result.getHits()) {
                 resource = hit.getResource();
                 if(resource != null){
-                    String title = hit.getNode().hasProperty(JcrConsts.TITLE)? hit.getNode().getProperty(JcrConsts.TITLE).getString() : hit.getNode().getParent().getName();
-                    String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
-                    String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), title, created, lastModified));
+                    try {
+                        Node parentNode = hit.getNode().getParent();
+                        String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
+                        String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                        String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
+                        String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
+                        String assetLink = hit.getNode().hasProperty(JcrConsts.ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.ASSET_LINK).getString() : null;
+                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
+                                lastModified, assetLink));
+                    } catch (Exception e) {
+                        log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
+                                + " with error: " + e.getMessage(), e);
+                    }
                 }
             }
         } catch(Exception e) {
