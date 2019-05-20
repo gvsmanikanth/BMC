@@ -5,7 +5,9 @@
     compatVersion="{Long}2"
     evaluatePathRestrictions="{Boolean}true"
     excludedPaths="[/var,/etc/replication,/etc/workflow/instances,/jcr:system]"
-    type="lucene">
+    type="lucene"
+    recreateOnUpdate="{Boolean}true"
+    forceIndex="{Boolean}true">
     <indexRules jcr:primaryType="nt:unstructured">
         <nt:base jcr:primaryType="nt:unstructured">
             <properties jcr:primaryType="nt:unstructured">
