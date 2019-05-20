@@ -183,12 +183,8 @@
                                         value="right"/>
                                     <item3
                                         jcr:primaryType="nt:unstructured"
-                                        text="Above"
-                                        value="above"/>
-                                    <item4
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Below"
-                                        value="below"/>
+                                        text="Center"
+                                        value="center"/>
                                 </items>
                             </image_x0020_Location>
                         </items>

@@ -16,25 +16,51 @@
 
 <sly data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text = 'cta_text', urlOrPath = 'cta_url'}"></sly>
 
-<sly data-sly-test="${properties.image_location != 'below'}">
-    <section class="topcontent ${bgClass}">
-        <div class="layout-inner-wrap">
-            <div class="report ${imageLocation}">
-                <a href="${cta.href}" class="${cta.cssClass}">
-                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" alt="${image.alt @ context='html'}" title="${image.alt @ context='html'}" width="320" height="280" border="0"></img>
-                </a>
-                <div class="report-text">
-                	<div class="cmp cmp-title>
-						 <span class="tags">${properties.assetsHeadingPrefix}</span>
-                           <h3>${properties.heading @ context='html'}</h3>
-						</div>
-                        <div class="cmp cmp-text">
-                         <a href="${cta.href}">${cta.text @ context='html'}
-                        <sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly> </div>
-                        </a>
-                </div>
+<sly data-sly-test="${properties.image_location == 'left'}">
+	<section class="topcontent ${bgClass}">
+			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                              
+                              	<div class="layout-secondaryaem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                             <div class="cq-dd-image text-center">
+                                                   <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                             </div>
+                                 </div> 
+                                 <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
+											<div class="cmp cmp-title cmp-title-large">
+												<span class="tags">${properties.assetsHeadingPrefix}</span>
+												<h2 class="h2-variation-1">
+													${properties.heading @ context='html'}
+												</h2>
+											</div>
+											<div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a href="${cta.href}">${cta.text @ context='html'}
+													<sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly> 
+												</a>
+											</div>                                      
+                                </div>
             </div>
-        </div>
-    </section>
+    </section>                     
 </sly>
-
+<sly data-sly-test="${properties.image_location == 'right'}">
+	<section class="topcontent ${bgClass}">
+			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                               
+                                 <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
+											<div class="cmp cmp-title cmp-title-large">
+												<span class="tags">${properties.assetsHeadingPrefix}</span>
+												<h2 class="h2-variation-1">
+													${properties.heading @ context='html'}
+												</h2>
+											</div>
+											<div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a href="${cta.href}">${cta.text @ context='html'}
+													<sly data-sly-test="${cta.text}">&nbsp;&#8250;</sly> 
+												</a>
+											</div>                                      
+                                </div>
+                                <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                             <div class="cq-dd-image text-center">
+                                                   <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                             </div>
+                                 </div> 
+            </div>
+    </section>     
+</sly>
