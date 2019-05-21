@@ -61,14 +61,16 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Additional information about the image."
                                 fieldLabel="Caption"
-                                name="./jcr:title"/>
+                                name="./jcr:title"
+                                wrapperClass="hide-for-tab"/>
                             <displayCaptionPopup
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                 fieldDescription="When checked, the caption won't be displayed below the image, but as a pop-up displayed by some browsers when hovering over the image."
                                 name="./displayPopupTitle"
                                 text="Show caption as hover text"
-                                value="{Boolean}true"/>
+                                value="{Boolean}true"
+                                wrapperClass="hide-for-tab-caption-popup"/>
                             <showCaptionAsHyperLink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
@@ -103,6 +105,7 @@
                             <imageverticalPosition
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="dropdownselect"
                                 fieldLabel="Image vertical position (To be used for tabs)"
                                 multiple="{Boolean}false"
                                 name="./imageverticalPosition">
