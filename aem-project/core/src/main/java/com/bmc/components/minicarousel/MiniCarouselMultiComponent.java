@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.MetadataInfoProvider_RequestCached;
 import com.bmc.mixins.MultifieldDataProvider;
+import com.bmc.mixins.UrlResolver;
+import com.bmc.models.url.LinkInfo;
 
 public class MiniCarouselMultiComponent extends WCMUsePojo implements MultifieldDataProvider, MetadataInfoProvider_RequestCached {
 
@@ -30,13 +32,10 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
                 Resource childPage = pagePathsNodes.next();
                 //pagePathList.add(childPage.getValueMap().get("ctaPath").toString());
                 carouselItem = new HashMap<>();
-                carouselItem.put("assetType", getAssetType(childPage,"assetType", "customAssetType"));
-                carouselItem.put("iconImagePath", childPage.getValueMap().get("iconImagePath").toString());
+                carouselItem.put("assetType", getAssetType(childPage,"assetType", "customAssetType"));               
                 carouselItem.put("figureCaption", childPage.getValueMap().get("figureCaption").toString());
-                carouselItem.put("figurePath", childPage.getValueMap().get("figurePath").toString());
+                carouselItem.put("figurePath", );
                 carouselItem.put("thumbNailPath", childPage.getValueMap().get("thumbNailPath").toString());
-                carouselItem.put("xOffset", getXOffSet(childPage,"xOffset"));
-                carouselItem.put("yOffset", getXOffSet(childPage,"yOffset"));
                 carouselItem.put("assetIndex", Integer.toString(carouselItems.size()));
                 carouselItems.add(carouselItem);
             }
@@ -57,6 +56,20 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
             }
         
     }
+    
+    private String getfigurePath(Resource childPage){
+            if(childPage.getValueMap().get("assetType").toString().equals("video") && (!childPage.getValueMap().get("figurePath").toString().isEmpty())) {
+            	UrlResolver urlResolver = UrlResolver.from(childPage);
+                LinkInfo info = urlResolver.getLinkInfo(childPage.getValueMap().get("figurePath").toString());
+                return info.getHref();
+            } else if(childPage.getValueMap().get("assetType").toString().equals("image")){
+                return childPage.getValueMap().get("figurePath").toString();
+            } else {
+                return null;
+            }
+    }
+        
+    
     // Add default X- offset 
     private String getXOffSet(Resource childPage,String xOffset){
         	if(childPage.getValueMap().get("assetType").toString() == "image")
