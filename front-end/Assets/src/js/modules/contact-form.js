@@ -12,7 +12,7 @@ jQuery(function ($) {
 				$('.form2 .maincontentcontainer form').css({
 					'margin-top':headerHeight,
 					'transition-property': 'margin-top',
-					'transition': '2s linear'
+					'transition': '0s linear'
 				}); 
 
 				respGridContainers.addClass('aem-GridColumn--default--6');
