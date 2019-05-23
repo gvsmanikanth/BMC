@@ -49,6 +49,14 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			$submitButton = $form.find('button[type="submit"]'),
 			ajaxForm = $form.data('ajax-url') !== undefined;	// boolean that determines if a form is submitted with AJAX
 
+			//checking the forms-redesign class is present or not			
+			var redesign_form_flag;	
+			if ($('body').hasClass('form2')) {
+				redesign_form_flag = 1;					
+			} else {
+				redesign_form_flag = 0;
+			}			
+
 		// initialize the form state
 		$form.data('valid', true);
 		enableLoadingState($submitButton);
@@ -82,23 +90,38 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			// apply error styles
 			if ($input.parent().is('.decorator-select')) {
 				$input.parent().addClass('validation-error');
+				if(redesign_form_flag){		
+					var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');		
+					$input.parent().next('.error-text').text(err_hint);						
+				}
+				
 			}
 			else if (radioOrCheckbox) {
 				$('[name="' + name + '"]').parent().find('label').addClass('validation-error');
 			}
-			else {
+			else {		
+	
 				$input.addClass('validation-error');
-
 				//Logic to show Error hint
 				var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');
-				$input.prev('label:first').text(err_hint);
+
+					if(redesign_form_flag){				
+						$input.next('.error-text').text(err_hint);						
+					}else {
+						$input.prev('label:first').text(err_hint);
+					}
+			
+			
 			}
 			
 			// reset to Original Label
 			$input
-			.on('keyup change', function() {
-			  if($input.val().length == 0)
-			    $input.prev('label:first').text($input.attr('placeholder'));
+			.on('keyup change', function() {		
+				
+				if($input.val().length == 0)
+					if(!redesign_form_flag){	
+						$input.prev('label:first').text($input.attr('placeholder'));
+					}
 			});
 
 			// remove error styles if a value is changed
@@ -109,6 +132,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						.removeClass('validation-error')
 						.parent()
 						.removeClass('validation-error');
+					
 
 					//clears out valid all radios in groups
 					if($(this).is('[type="radio"]')){
@@ -128,8 +152,13 @@ if($('#leadgen') || $('#nonleadgen'))	{
 
 			$form
 				.data('valid', false);
-		}
 
+
+		
+
+		}
+		
+		
 		function scrollToForm() {
 			$('html, body')
 				.animate({
@@ -256,4 +285,8 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				}
 			});
 	};
+
+		
+	
 }) (jQuery);
+

@@ -1,0 +1,375 @@
+.form2{
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 400;
+    }	
+	.maincontentcontainer>section:first-child>div:first-child{
+		padding-bottom:0px !important;
+	}	
+    background-color: #fff;
+    .ornate-header{
+        min-height: auto;
+        @media (min-width: $break-md) {
+            min-height: 300px;
+        }
+        .offset-wrapper{
+            min-height: auto;
+            @media (min-width: $break-md) {
+                min-height: 300px;
+            }
+        }
+        .bannerContent{
+            min-height: auto;
+            padding: 0 1rem;
+            
+			@include media(breakpointMedium){
+				padding: 0;
+            }  
+            .layout-inner-wrap.flex{
+                align-items: center;
+                min-height: auto;   
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    @media (min-width: $break-md) {
+                        min-height: 300px;
+                    }
+                }
+               
+            }
+            .layout-inner-wrap{
+                .cmp-title{
+                    h1{
+                        color: #fff;
+                    }
+                }                
+            }            
+
+         }
+        *{
+            color: #fff;
+        }
+    }
+    .cmp-form{
+        form{
+            padding: 1em;
+            background: #efefef;
+            width: auto;
+            border-top: 10px solid #fe4601;
+            position: relative;
+            @media (min-width: $break-md) {
+                z-index: 10; 
+                margin-top: -300px; 
+                padding: 1.5em;         
+            }  
+            @media (max-width: $break-md) {
+                margin-top: 0px !important;         
+            }  
+                            
+            .btn-secondary {
+                background-color: #3980b2;
+                text-transform: uppercase;
+                border: none;
+                border-radius: 0;
+                max-width: 210px;
+                margin: 15px auto;
+                display: block;
+                + p{
+                    text-align: center;
+                }
+            } 
+            #C_OptIn_group{
+                display: block
+            }
+            .cmp-title{
+                h1{
+                    font-size: 30px;
+                }
+                h1,h5{
+                    font-weight: 500;
+                }       
+            }  
+
+            fieldset:not(#foo){
+                padding-top:.8rem;
+                label{
+                    margin-bottom: 5px;
+                    line-height:1.2rem;
+                }
+                .decorator-select 
+                {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    background: #fff;
+                    border-radius: 0;
+                    select {
+                        appearance: none;
+                    }
+                    select::-ms-expand {
+                        display: none;
+                    }
+                    // arrow down options for select fields
+                    &:after {
+                        content: "\e601";
+                        height: 42px;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 1px;
+                        width: 54px;
+                        z-index: 105;
+                        font-family: 'icomoon';
+                        text-align: center;
+                        border-left: 1px solid #ccc;
+                        line-height: 48px;
+                        color: #336699;
+                        background: #fff;
+                    }
+                    .validation-error {
+                    background-image: none;                   
+                    
+                    }
+
+                    // mozila : to remove dotted border around option in 
+                    select:-moz-focusring {
+                        color: transparent;
+                        text-shadow: 0 0 0 #000;
+                    }
+                    option:not(:checked) {
+                    color: black; /* prevent <option>s from becoming transparent as well */
+                    }
+
+                    // IE: for removing blue background behind options
+                    select::-ms-value {
+                        background: none;
+                        color:#000;
+                    }
+                    .validation-error-redesign {
+                        border: none;                  
+                    }
+
+                }
+                .decorator-select.validation-error {
+                    background-image: none;
+                    padding-left: 0;
+                    border: 2px solid #fe4601;
+                
+                }
+                .decorator-select.validation-error-redesign {
+                    background-image: none;
+                    padding-left: 0;
+                    border: 2px solid #fe4601;
+                
+                }                
+                .decorator-select.valid-input {
+                    background-image: none;
+                    }
+                .cmp-options {
+                    padding-top: .5rem;
+                    padding-bottom: .5rem;                
+                }
+                
+                .checkbox{
+                    label{
+                        margin-bottom:0px;
+                        padding-bottom:0px;
+                        margin-top:0px;
+                        padding-top:0px;
+                        
+                        &.validation-error-redesign{
+                            ::before{
+                                color:#e6e6e6;
+                            }
+                        }
+                    }                    
+                }
+        
+                // aligning valdation exlamation at the right side
+                .validation-error-redesign,.validation-error{             
+                    background: #fff; 
+                    background-position: 97%;
+                    padding-left: 0.44444em;
+                    border-radius: 0;
+                    border: 2px solid #fe4601;
+                
+                }
+                .checkbox{
+                    .validation-error-redesign, .validation-error{                
+                        background: transparent;   
+                        border: none;             
+                    }
+                }
+                .valid-input {
+                    border: 2px solid #36ba2f;
+                    background-position: 97%;
+                }
+                .error-text {
+                    color: #de2a12;
+                    padding: 8px 0 0 0;
+                    display: inline-block;
+                    font-size: 14px;
+                    font-style: italic;
+                    line-height: 14px;
+                }
+                .form-group.checkbox{
+                    li{
+                        label{
+                            display: table;
+                            padding-left: 5px;
+                            &::before{
+                                padding-right: 20px;
+                                display: table-cell;
+                                vertical-align: text-top;
+                            }
+                        }
+                    }                   
+                }
+
+                @media screen and (max-width: 1371px) and (min-width: 901px) {
+                    label.business_phone_label {
+                        min-height: 42px;
+                    }
+                }
+
+                input[type="text"],
+                input[type="number"],
+                input[type="password"],
+                input[type="email"],
+                input[type="tel"],
+                textarea{
+                    border-radius: 0;
+                }
+                .horizontal-Tag{
+                    + .cmp-options{
+                        padding: 0;
+                    }
+                }
+            }   
+            hr.field-sep{
+                border-top: 1px solid #ccc;
+                margin: 10px -1em;    
+                border-bottom: 0px;
+                @media (min-width: $break-md) {
+                    margin: 10px -1.5em;         
+                }       
+            }            
+        }
+    }
+    .contact-info {
+        background: #fff;
+        h3{
+            font-weight: 400;
+        }
+    }
+    .header-content {
+        @media (min-width: $break-sm) {
+            padding-left: 50px;             
+        }        
+    }
+    
+    .layout-inner-wrap{
+        .cmp-title  {
+            h2{
+                color: #333;
+                margin-bottom: 10px;
+            }  
+            h1{
+                color: #333;
+                margin-bottom: 10px;
+            }            
+        }
+    }
+
+    .cust-info{
+        .card {
+            text-align: center; 
+            display: block;
+            @media (min-width: $break-lg) {
+                display: table;
+                text-align: left;
+            }
+            .card-image {
+            	margin: auto;
+                max-width: 150px;
+                padding-right: 4px;
+                margin-bottom: 20px;
+                @media (min-width: $break-lg) {
+                    padding-right: 30px;
+                    min-width: 150px;
+                    margin-bottom: 0px; 
+                    display: table-cell; 
+                    vertical-align:top;                
+                }
+                
+                img{
+                    border: 2px solid #00a79d;
+                }
+            }
+            .card-content{
+            	p{
+            		line-height: 1.4rem;
+                }
+                strong{
+                   color: #333; 
+                }
+                @media (min-width: $break-lg) {
+                    display: table-cell;                 
+                }
+            }
+           
+        }
+    }
+    .red-bullets{
+        list-style: none;
+        li{
+            position: relative;
+            &:before {
+                content: ' ';
+                width: 8px;
+                height: 8px;
+                background: #fe4601;
+                position: absolute;
+                left: -20px;
+                border-radius: 50%;
+                top: 8px;
+            }
+        }
+        
+       
+    }
+    
+    .header-Mobile-View{
+    	margin-right: -10%;
+		margin-left: -10%;
+		width: 120%;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		float: left;
+		.offset-wrapper{
+			width:80%;
+			min-height: auto;	
+		}
+		
+		.bannerContent .layout-inner-wrap{
+            text-align:center;
+            h1{
+                color: #fff;
+            }
+            .responsivegrid{
+                margin: 0 auto;
+            }
+		}
+    }
+	
+	@media (min-width: $break-lg) {
+		.product-category-header.product-category-header2 .bannerContent .layout-inner-wrap .flex-item {
+			margin-left: 30px;
+		}
+	}
+	@media (min-width: $break-md) {
+		[class*="50-50contentcontainer"] .equal-column:last-child {
+			padding-left: 2.05%;
+		}
+		
+	}
+    
+
+}
+
