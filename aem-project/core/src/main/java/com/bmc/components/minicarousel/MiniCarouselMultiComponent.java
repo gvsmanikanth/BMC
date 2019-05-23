@@ -34,7 +34,7 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
                 carouselItem = new HashMap<>();
                 carouselItem.put("assetType", getAssetType(childPage,"assetType", "customAssetType"));               
                 carouselItem.put("figureCaption", childPage.getValueMap().get("figureCaption").toString());
-                carouselItem.put("figurePath", );
+                carouselItem.put("figurePath", getfigurePath(childPage));
                 carouselItem.put("thumbNailPath", childPage.getValueMap().get("thumbNailPath").toString());
                 carouselItem.put("assetIndex", Integer.toString(carouselItems.size()));
                 carouselItems.add(carouselItem);
