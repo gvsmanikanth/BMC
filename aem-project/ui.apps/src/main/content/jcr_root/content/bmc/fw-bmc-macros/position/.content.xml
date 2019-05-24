@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="position">
+          <caption
+                jcr:primaryType="nt:unstructured"
+                disabled="true"
+                selected="true"
+                text="Position">
+                <Web_x0020_Administration
+                    jcr:primaryType="nt:unstructured"
+                    text="Web Administration"
+                    value="Web Administrationr"/>
+            </caption>
+            <Accounting-Finance
+                jcr:primaryType="nt:unstructured"
+                text="Accounting/Finance"
+                value="Accounting/Finance"/>
+            <Analysis-Data
+                jcr:primaryType="nt:unstructured"
+                text="Analysis - Data"
+                value="Analysis - Data"/>
+            <Analysis_x0020_-_x0020_Financial
+                jcr:primaryType="nt:unstructured"
+                text="Analysis - Financial"
+                value="Analysis - Financial"/>
+            <Analysis_x0020_-_x0020_Industry
+                jcr:primaryType="nt:unstructured"
+                text="Analysis - Industry"
+                value="Analysis - Industry"/>
+            <Asset_x0020_Management
+                jcr:primaryType="nt:unstructured"
+                text="Asset Management"
+                value="Asset Management"/>
+            <Associate_x0020_Partner
+                jcr:primaryType="nt:unstructured"
+                text="Associate Partner"
+                value="Associate Partner"/>
+            <Business_x0020_Unit_x0020_Manager_x0020__x0028_BUM_x0029_
+                jcr:primaryType="nt:unstructured"
+                text="Business Unit Manager (BUM)"
+                value="Business Unit Manager (BUM)"/>
+            <Call_x0020_Center
+                jcr:primaryType="nt:unstructured"
+                text="Call Center"
+                value="Call Center"/>
+            <CFO
+                jcr:primaryType="nt:unstructured"
+                text="CFO"
+                value="CFO"/>
+            <Change_x0020_Management
+                jcr:primaryType="nt:unstructured"
+                text="Change Management"
+                value="Change Management"/>
+            <Chief_x0020_IT_x0020_Security_x0020_Officer
+                jcr:primaryType="nt:unstructured"
+                text="Chief IT Security Officer"
+                value="Chief IT Security Officer"/>
+            <CIO-CTO
+                jcr:primaryType="nt:unstructured"
+                text="CIO/CTO"
+                value="CIO/CTO"/>
+            <DBA
+                jcr:primaryType="nt:unstructured"
+                text="DBA"
+                value="DBA"/>
+            <DBA_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="DBA Manager"
+                value="DBA Manager"/>
+            <Director_x0020_of_x0020_Infrastructure
+                jcr:primaryType="nt:unstructured"
+                text="Director of Infrastructure"
+                value="Director of Infrastructure"/>
+            <Director_x0020_of_x0020_Strategic_x0020_Planning
+                jcr:primaryType="nt:unstructured"
+                text="Director of Strategic Planning"
+                value="Director of Strategic Planning"/>
+            <Director_x0020_of_x0020_Systems
+                jcr:primaryType="nt:unstructured"
+                text="Director of Systems"
+                value="Director of Systems"/>
+            <E-Business-E-Commerce
+                jcr:primaryType="nt:unstructured"
+                text="E-Business/E-Commerce"
+                value="E-Business/E-Commerce"/>
+            <Human_x0020_Resources
+                jcr:primaryType="nt:unstructured"
+                text="Human Resources"
+                value="Human Resources"/>
+            <IS-IT_x0020_Support
+                jcr:primaryType="nt:unstructured"
+                text="IS/IT Support"
+                value="IS/IT Support"/>
+            <IT_x0020_Applications_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="IT Applications Manager"
+                value="IT Applications Manager"/>
+            <IT_x0020_Apps_x0020_-_x0020_Dev-Programmer
+                jcr:primaryType="nt:unstructured"
+                text="IT Apps - Dev/Programmer"
+                value="IT Apps - Dev/Programmer"/>
+            <Web_x0020_Administration
+                jcr:primaryType="nt:unstructured"
+                text="Web Administration"
+                value="Web Administrationr"/>
+            <VP_x0020_Service_x0020_Support
+                jcr:primaryType="nt:unstructured"
+                text="VP Service Support"
+                value="VP Service Support"/>
+            <VP_x0020_Strategic_x0020_Planning
+                jcr:primaryType="nt:unstructured"
+                text="VP Strategic Planning"
+                value="VP Strategic Planning&#xa;"/>
+            <VP_x0020_Technical_x0020_Support
+                jcr:primaryType="nt:unstructured"
+                text="VP Technical Support"
+                value="VP Technical Support&#xa;"/>
+            <Sales-Marketing
+                jcr:primaryType="nt:unstructured"
+                text="Sales/Marketing"
+                value="Sales/Marketing"/>
+            <Service_x0020_Delivery_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="Service Delivery Manager"
+                value="Service Delivery Manager"/>
+            <Storage
+                jcr:primaryType="nt:unstructured"
+                text="Storage"
+                value="Storage"/>
+            <Supplier_x0020_Relationship_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="Supplier Relationship Manager"
+                value="Supplier Relationship Manager"/>
+            <Systems_x0020_Analyst
+                jcr:primaryType="nt:unstructured"
+                text="Systems Analyst"
+                value="Systems Analyst"/>
+            <Telecom_x0020_Administration
+                jcr:primaryType="nt:unstructured"
+                text="Telecom Administration"
+                value="Telecom Administration"/>
+            <Top_x0020_Decision_x0020_Maker
+                jcr:primaryType="nt:unstructured"
+                text="Top Decision Maker"
+                value="Top Decision Maker"/>
+            <VP_x0020_Application_x0020_Development
+                jcr:primaryType="nt:unstructured"
+                text="VP Application Development"
+                value="VP Application Development"/>
+            <VP_x0020_Application_x0020_Support
+                jcr:primaryType="nt:unstructured"
+                text="VP Application Support"
+                value="VP Application Support"/>
+            <VP_x0020_Customer_x0020_Support
+                jcr:primaryType="nt:unstructured"
+                text="VP Customer Support"
+                value="VP Customer Support"/>
+            <VP_x0020_Data_x0020_Center_x0020_Operations
+                jcr:primaryType="nt:unstructured"
+                text="VP Data Center Operations"
+                value="VP Data Center Operations"/>
+            <VP_x0020_Infrastructure
+                jcr:primaryType="nt:unstructured"
+                text="VP Infrastructure"
+                value="VP Infrastructure"/>
+            <VP_x0020_IT_x0020_Architecture
+                jcr:primaryType="nt:unstructured"
+                text="VP IT Architecture"
+                value="VP IT Architecture"/>
+            <VP_x0020_Production_x0020_Operations
+                jcr:primaryType="nt:unstructured"
+                text="VP Production Operations"
+                value="VP Production Operations"/>
+            <VP_x0020_Security
+                jcr:primaryType="nt:unstructured"
+                text="VP Security"
+                value="VP Security"/>
+            <VP_x0020_Service_x0020_Delivery
+                jcr:primaryType="nt:unstructured"
+                text="VP Service Delivery"
+                value="VP Service Delivery"/>
+            <IT_x0020_Consultant
+                jcr:primaryType="nt:unstructured"
+                text="IT Consultant"
+                value="IT Consultant"/>
+            <IT_x0020_Director-VP
+                jcr:primaryType="nt:unstructured"
+                text="IT Director / VP"
+                value="IT Director / VP"/>
+            <IT_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="IT Manager"
+                value="IT Manager"/>
+            <IT_x0020_Project_x0020_Management
+                jcr:primaryType="nt:unstructured"
+                text="IT Project Management"
+                value="IT Project Management"/>
+            <IT_x0020_R_x0020__x0026__x0020_D
+                jcr:primaryType="nt:unstructured"
+                text="IT R &amp; D"
+                value="IT R &amp; D"/>
+            <IT_x0020_Security
+                jcr:primaryType="nt:unstructured"
+                text="IT Security"
+                value="IT Security"/>
+            <IT_x0020_Sys_x0020_Engineer-Integration
+                jcr:primaryType="nt:unstructured"
+                text="IT Sys Engineer/Integration"
+                value="IT Sys Engineer/Integration"/>
+            <IT_x0020_Systems_x0020_Administration
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Administration"
+                value="IT Systems Administration"/>
+            <IT_x0020_Systems_x0020_Manager
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Manager"
+                value="IT Systems Manager"/>
+            <Purchasing-Procurement
+                jcr:primaryType="nt:unstructured"
+                text="Purchasing/Procurement"
+                value="Purchasing/Procurement"/>
+            <President-CEO
+                jcr:primaryType="nt:unstructured"
+                text="President/CEO"
+                value="President/CEO"/>
+            <Performance_x0020_Analyst
+                jcr:primaryType="nt:unstructured"
+                text="Performance Analyst"
+                value="Performance Analyst"/>
+            <Other
+                jcr:primaryType="nt:unstructured"
+                text="Other"
+                value="Other"/>
+            <Operations_x0020_Mgr-Dir-VP
+                jcr:primaryType="nt:unstructured"
+                text="Operations Mgr/Dir/VP"
+                value="Operations Mgr/Dir/VP"/>
+            <Operations
+                jcr:primaryType="nt:unstructured"
+                text="Operations"
+                value="Operations"/>
+            <IT_x0020_Systems_x0020_Programmer
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Programmer"
+                value="IT Systems Programmer"/>
+            <IT_x0020_Systems_x0020_Scheduling
+                jcr:primaryType="nt:unstructured"
+                text="IT Systems Scheduling"
+                value="IT Systems Scheduling"/>
+            <IT_x0020_Training-Education
+                jcr:primaryType="nt:unstructured"
+                text="IT Training/Education"
+                value="IT Training/Education"/>
+            <IT-Other
+                jcr:primaryType="nt:unstructured"
+                text="IT-Other"
+                value="IT-Other"/>
+            <Legal
+                jcr:primaryType="nt:unstructured"
+                text="Legal"
+                value="Legal"/>
+            <Mainframe_x0020_Monitoring
+                jcr:primaryType="nt:unstructured"
+                text="Mainframe Monitoring"
+                value="Mainframe Monitoring"/>
+            <Mainframe_x0020_Planning-Performance
+                jcr:primaryType="nt:unstructured"
+                text="Mainframe Planning/Performance"
+                value="Mainframe Planning/Performance"/>
+            <Midrange_x0020_Systems
+                jcr:primaryType="nt:unstructured"
+                text="Midrange Systems"
+                value="Midrange Systems"/>
+            <Multiple_x0020_IT_x0020_Role
+                jcr:primaryType="nt:unstructured"
+                text="Multiple IT Role"
+                value="Multiple IT Role"/>
+            <Network_x0020_Administration
+                jcr:primaryType="nt:unstructured"
+                text="Network Administration"
+                value="Network Administration"/>
+            <Network_x0020_Mgr-Dir-VP
+                jcr:primaryType="nt:unstructured"
+                text="Network Mgr/Dir/VP"
+                value="Network Mgr/Dir/VP"/>
+            <Non_x0020_IT_x0020_Directors_x0020_-_x0020_VP
+                jcr:primaryType="nt:unstructured"
+                text="Non IT Directors / VP"
+                value="Non IT Directors / VP"/>
+      
+      
+</jcr:root>

@@ -4,10 +4,17 @@
 (function($) {
     //checking the form2 class is present or not	
 	$.fn.validateInputs = function() {
-        var $this = this;      
-        $('form input[type="text"], form input[type="tel"], form input[type="email"] ').after('<span class="error-text"></span>');
-        $('form select').after('<span class="error-text"></span>');
-        $('form input[type="checkbox"] + label').after('<span class="error-text"></span>');                                              
+        var $this = this;  
+        if(($('form input[type="text"], form input[type="tel"], form input[type="email"] ').next('span.error-text').length) == 0){
+            $('form input[type="text"], form input[type="tel"], form input[type="email"] ').after('<span class="error-text"></span>');
+        }  
+        if(($('form select').next('span.error-text').length) == 0){
+            $('form select').after('<span class="error-text"></span>');    
+        }              
+        if(($('form input[type="checkbox"] + label').next('span.error-text').length) == 0){
+            $('form input[type="checkbox"] + label').after('<span class="error-text"></span>');    
+        }
+                                                 
             // base regex patterns; http://regex101.com/ is a good testing environment
             $this.patterns = {
                 'alpha-only' : "^[^0-9 ][A-z ]+$",	//this will exclude numeric data and cannot begin with space but can have space in-between for double names
