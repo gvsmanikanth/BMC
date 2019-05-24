@@ -36,6 +36,7 @@
 	});
 
 
+
     function toggleInputs(isDecorative) {
 
         var alt = $(".core-image-alt");
@@ -61,5 +62,6 @@
     $(document).on("change", ".core-image-decorative", function(e) {
         toggleInputs(e.target);
     });
+
 
 })(jQuery);
