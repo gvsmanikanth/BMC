@@ -14,6 +14,7 @@
  * limitations under the License.
  ******************************************************************************/
 (function () {
+	
     'use strict';
 
     var devicePixelRatio = window.devicePixelRatio || 1;
