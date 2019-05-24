@@ -80,6 +80,8 @@
 	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
 	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
 	
+    <filter root="/content/bmc/bmc-macros" mode="replace"/>
+     <filter root="/content/bmc/fw-bmc-macros" mode="replace"/>
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
