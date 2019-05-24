@@ -13,13 +13,13 @@ Parameters: none
 ### general param
     - rootPath
         - single value
-        - example: rootPath=/content/bmc/us/en
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en
     
 ### filter
     - filter
         - multi value
         - filter values: everything returned by filters API
-        - example: filter=ic-target-industry-272486674&filter=ic-topics-773791639
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&filter=ic-target-industry-272486674&filter=ic-topics-773791639
 
 ### sorting
     - sortCriteria & sortOrder
@@ -31,17 +31,13 @@ Parameters: none
         - sortOrder values:
             - asc
             - desc
-        - example: sortCriteria=modified&sortOrder=asc&sortCriteria=title&sortOrder=asc&filter=ic-buyer-stage-776139085
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&sortCriteria=modified&sortOrder=asc&sortCriteria=title&sortOrder=asc&filter=ic-buyer-stage-776139085
 
 
 ### pagination
-    - resultsPerPage
+    - resultsPerPage & pageIndex
         - single value
-        - example: resultsPerPage=10
-        
-    - pageIndex
-        - single value
-        - example: pageIndex=0
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&resultsPerPage=10&pageIndex=0
 
 
 
