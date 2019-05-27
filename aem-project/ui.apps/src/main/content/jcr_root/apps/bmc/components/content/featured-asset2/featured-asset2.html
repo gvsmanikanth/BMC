@@ -1,0 +1,64 @@
+<sly data-sly-test="${properties.bg_color == 'grey'}">
+    <sly data-sly-test.bgClass="bg-seashell"></sly>
+</sly>
+<sly data-sly-test="${properties.bg_color != 'grey'}">
+    <sly data-sly-test.bgClass="bg-white"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'above'}">
+    <sly data-sly-test.imageLocation="img-top-bottom"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'left'}">
+    <sly data-sly-test.imageLocation="img-left"></sly>
+</sly>
+<sly data-sly-test="${properties.image_location == 'right'}">
+    <sly data-sly-test.imageLocation="img-right"></sly>
+</sly>
+
+<sly data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text = 'cta_text', urlOrPath = 'cta_url'}"></sly>
+
+<sly data-sly-test="${properties.image_location == 'left'}">
+	<section class="topcontent ${bgClass}">
+			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                              
+                              	<div class="layout-secondaryaem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                             <div class="cq-dd-image text-center">
+                                                   <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                             </div>
+                                 </div> 
+                                 <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
+											<div class="cmp cmp-title cmp-title-large">
+												<h2 class="h2-variation-1">${properties.assetsHeadingPrefix}</h2>
+												<p>
+													${properties.heading @ context='html'}
+												</p>
+											</div>
+											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a class="learn-more" href="${cta.href}">${cta.text @ context='html'}												
+												</a>
+											</div>                                      
+                                </div>
+            </div>
+    </section>                     
+</sly>
+<sly data-sly-test="${properties.image_location == 'right'}">
+	<section class="topcontent ${bgClass}">
+			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                               
+                                 <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
+											<div class="cmp cmp-title cmp-title-large">
+												<h2 class="h2-variation-1">${properties.assetsHeadingPrefix}</h2>
+												<p>
+													${properties.heading @ context='html'}
+												</p>
+											</div>
+											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a class="learn-more" href="${cta.href}">${cta.text @ context='html'}
+												</a>
+											</div>                                      
+                                </div>
+                                <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                             <div class="cq-dd-image text-center">
+                                                   <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                             </div>
+                                 </div> 
+            </div>
+    </section>     
+</sly>

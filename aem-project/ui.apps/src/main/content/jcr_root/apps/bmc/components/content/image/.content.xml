@@ -6,3 +6,4 @@
           componentGroup="BMC.content"
           sling:resourceSuperType="core/wcm/components/image/v1/image"
 />
+
