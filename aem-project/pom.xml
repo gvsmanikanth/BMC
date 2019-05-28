@@ -9,7 +9,6 @@
     <groupId>com.bmc</groupId>
     <artifactId>DXP</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <version>3.8.2</version>
     <packaging>pom</packaging>
 
     <name>BMC DXP - Reactor Project</name>
