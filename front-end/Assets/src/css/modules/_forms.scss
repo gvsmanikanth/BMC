@@ -77,12 +77,12 @@ fieldset:not(#foo) {
 			right: 0px;
 			top: -2px;
 			width: 58px;
-			z-index: (z(content)+1);
+			z-index: (z(content)+1);	
+		
 		}
 
 		select {
 			outline: none;
-			
 		}
 		select::-ms-value {background: none; color:#000;}
 	}
@@ -137,6 +137,7 @@ fieldset:not(#foo) {
 	
 	//DXP-1112 - Added P tags style attribute to support text inside fieldset.
 	.cmp-text{
+		
 		line-height: 1.45;
 		@include font-size(14);
   		margin: 0 0 1.78571em 0; 
@@ -204,6 +205,12 @@ fieldset {
 		position: relative;
 		width: 100%;
 		z-index: zIndex(content);
+			// WEB-5147
+		
+			@supports (-ms-ime-align:auto) {
+				z-index: 12;
+				padding-right: 60px;
+			}
 	}
 	select::-ms-value {background: none; color:#000;}
 }

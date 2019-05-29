@@ -520,9 +520,18 @@ function addFilterToArrayProtoype() {
 		var country = $(this).val().toLowerCase().replace(' ', '_');
 		var newstateoptions = '';
 
+		var fname = "";
 		//Assemble file name for state JSON
-		var fname = '/etc/designs/bmc/state-lists/states_' +country+ '.json';
-
+		var uri = window.location.toString(); 
+		if (uri.indexOf("localhost") > 0) {
+			fname = '/front-end/Assets/src/jsondatafiles/states_' +country+ '.json';
+		}
+		else{
+			fname = '/etc/designs/bmc/state-lists/states_' +country+ '.json';
+		}
+		
+		
+		
 		$.getJSON(fname, function(data) {
 			if(data.length > 0)
 			{
@@ -535,30 +544,55 @@ function addFilterToArrayProtoype() {
 						newstateoptions += "<option value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
 					}
 				}
-
-				//Check if StateProv field is text make it back to select and then add the Options
-				if($('#C_State_Prov').attr('type') == "text")
-				{
-					$('#C_State_Prov').parent().replaceWith("<div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' required></select></div>");
+				
+				if($('.form2').length==0){
+					//Check if StateProv field is text make it back to select and then add the Options
+					if($('#C_State_Prov').attr('type') == "text")
+					{
+						$('#C_State_Prov').parent().replaceWith("<div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' required></select></div>");
+					}
+					$('#C_State_Prov').children().remove().end().append(newstateoptions);
+					
+				}else{
+					if($('#C_State_Prov').attr('type') == "text")
+					{
+						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");
+						$inputs = $('form').find('input, textarea, select'),
+						$inputs.validateInputs();  
+					}
+					$('#C_State_Prov').children().remove().end().append(newstateoptions);
 				}
-				$('#C_State_Prov').children().remove().end().append(newstateoptions);
 			}
 
 		})
 		.fail(function () {
-			$('#C_State_Prov').children().remove();
-			$('#C_State_Prov').parent().replaceWith("<input type='text' name='C_State_Prov' id='C_State_Prov' placeholder='State or Province (optional)'>");
-
-			// only use floatlabels when the browser supports transitions and placeholders
-			if (Modernizr.csstransitions && Modernizr.input.placeholder) {
-				$('#C_State_Prov').floatlabel({
-					labelEndTop: '15px'
-				});
+			
+			if($('.form2').length==0){
+				$('#C_State_Prov').children().remove();
+				$('#C_State_Prov').parent().replaceWith("<input type='text' name='C_State_Prov' id='C_State_Prov' placeholder='State or Province (optional)'>");
+				
+				// only use floatlabels when the browser supports transitions and placeholders
+				if (Modernizr.csstransitions && Modernizr.input.placeholder) {
+					$('#C_State_Prov').floatlabel({
+						labelEndTop: '15px'
+					});
+				}
+				// otherwise show the standard labels
+				else {
+					$('label').removeClass('accessibility');
+				}
 			}
-			// otherwise show the standard labels
-			else {
-				$('label').removeClass('accessibility');
-			}
+			else{
+				
+				if($('#C_State_Prov').prop('nodeName') == "SELECT")
+				{
+					$('#C_State_Prov').children().remove();
+					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province (optional)</label><input type='text' name='C_State_Prov' id='C_State_Prov' >" + "</div>");
+					$inputs = $('form').find('input, textarea, select'),
+				$inputs.validateInputs();
+				}
+			}	
+			
 
 		});	//EO Fail
 

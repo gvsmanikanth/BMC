@@ -19,9 +19,13 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
-
+	
+    <!-- WEB-4924 Forms redesign new templates START -->
+	<filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="merge"/>
+    	<filter root="/conf/bmc/settings/wcm/templates/form-landing-page-template2" mode="merge"/>
+    <!-- WEB-4924 Forms redesign new templates END -->
     <!-- WEB-2437 Added for Report generation START -->
-	  <filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
+	<filter root="/conf/bmc/settings/wcm/templates/reporting-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/template-types/reporting-page" mode="merge"/>
     <!-- WEB-2437 Added for Report generation END -->
 
@@ -76,6 +80,8 @@
 	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
 	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
 	
+    <filter root="/content/bmc/bmc-macros" mode="replace"/>
+     <filter root="/content/bmc/fw-bmc-macros" mode="replace"/>
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->

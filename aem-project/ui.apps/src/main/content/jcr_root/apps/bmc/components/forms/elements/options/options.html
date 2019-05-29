@@ -23,11 +23,13 @@
     <sly data-sly-test="${options.type.value == 'drop-down' || options.type.value == 'multi-drop-down'}">
         <label for="${options.name}" class="${properties.hideTitle? 'accessibility' : '' }">${options.title @ context='html'}</label>
         <p class="help-block" data-sly-test="${options.helpMessage}">${options.helpMessage}</p>
+        <!-- /*Adding changes for WEB-5247 START*/ -->
         <select name="${options.name}" id="${options.id}" class="form-control" data-sly-list.optionItem="${options.items}"
-                data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}" data-validation-type="${properties.validationType}" required="${properties.required ? 'true' : 'false'}">
+                data-sly-attribute.multiple="${options.type.value == 'multi-drop-down'}" data-validation-type="${properties.validationType}" required="${properties.required ? 'true' : 'false'}" data-error-hint="${properties.requiredMessage}">
 			<sly data-sly-use.gdprCountry="${'com.bmc.models.components.forms.FieldSetModel' @ text= optionItem.text}"></sly>
 			<option value="${optionItem.value}" data-gdpr="${gdprCountry.isGdpr?'true':''}" selected="${optionItem.selected}" disabled="${optionItem.disabled}">${optionItem.text}</option>
 		</select>
+          <!-- /*Adding changes for WEB-5247 END*/ -->
     </sly>
 </sly>
 <sly data-sly-call="${template.placeholder @ isEmpty=!isNotEmpty}"></sly>
