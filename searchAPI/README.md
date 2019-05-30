@@ -5,11 +5,14 @@
     - Get content: <host>:<port>/bin/contentapi/content
 
 ## Filters API - /bin/contentapi/filters
-payload type: get
-Parameters: none
+    - payload type: get
+    - Parameters: none
 
 
 ## Content API - /bin/contentapi/content
+    - payload type: get
+    - Parameters: see below
+
 ### general param
     - rootPath
         - single value
