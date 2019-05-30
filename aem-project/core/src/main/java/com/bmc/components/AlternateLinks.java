@@ -62,16 +62,7 @@ public class AlternateLinks  extends WCMUsePojo {
             hrefUri = matcher.group(4);
         }
 
-        // Build map of alternate locale links.
         String canonicalScheme = "http";
-        for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
-        		canonicalScheme = "https";
-        	}else{
-        		canonicalScheme = "http";
-        	}
-            alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
-        }
 
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
         String mappedResourcePath = getResourceResolver().map(resourcePath);
@@ -88,6 +79,22 @@ public class AlternateLinks  extends WCMUsePojo {
         	canonicalScheme = "http";
         }
         canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
+        
+        
+        // Build map of alternate locale links.
+        for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
+        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
+        		canonicalScheme = "https";
+        	}else{
+        		canonicalScheme = "http";
+        	}
+        	if(!canonicalPath.startsWith("/content/bmc/404")) {
+        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
+        	}else{
+        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + canonicalPath);
+        	}
+        	
+        }
     }
 
     public Map<String, String> getAlternateLinksMap() {
