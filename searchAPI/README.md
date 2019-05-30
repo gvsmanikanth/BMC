@@ -11,21 +11,21 @@
 
 ## Content API - /bin/contentapi/content
     - payload type: get
-    - Parameters: see below
+    - Parameters:
 
 ### general param
-    - rootPath
+    - [rootPath] A path filter to query in JCR. All results will come under rootPath
         - single value
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en
     
 ### filter
-    - filter
+    - [filter] filter results by returning only pages with matching filter value in the metadata.
         - multi value
-        - filter values: everything returned by filters API
+        - filter values: all possible values can be found from response of /bin/contentapi/filters
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&filter=ic-target-industry-272486674&filter=ic-topics-773791639
 
 ### sorting
-    - sortCriteria & sortOrder
+    - [sortCriteria] & [sortOrder] sort result base on sort criteria and sort direction
         - multi value
         - sortCriteria values:
             - creation : sort by creation time
@@ -38,7 +38,7 @@
 
 
 ### pagination
-    - resultsPerPage & pageIndex
+    - [resultsPerPage] & [pageIndex] breaks up the result with pagination
         - single value
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&resultsPerPage=10&pageIndex=0
 
