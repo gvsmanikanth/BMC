@@ -7,8 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AlternateLinks  extends WCMUsePojo {
+	private static final Logger logger = LoggerFactory.getLogger(AlternateLinks.class);
     private static final Map<String, String> hrefLangMap = new HashMap<String, String>() {{
         put("x-default", "www.bmc.com");
         put("en-sa", "www.bmcsoftware.sa");
@@ -88,13 +91,13 @@ public class AlternateLinks  extends WCMUsePojo {
         	}else{
         		canonicalScheme = "http";
         	}
-        	if(!canonicalPath.startsWith("/content/bmc/404")) {
+        	/*logger.info("link path before"+getRequest().getRequestPathInfo().getResourcePath()); */
+        	if(!getRequest().getRequestPathInfo().getResourcePath().startsWith("/content/bmc/404/")) {
         		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
         	}else{
-        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + canonicalPath);
+        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + "/content/bmc/404");
         	}
-        	
-        }
+        	}
     }
 
     public Map<String, String> getAlternateLinksMap() {
