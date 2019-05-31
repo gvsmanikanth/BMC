@@ -277,7 +277,8 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
      *                       honorWeights
      *
      */
-    private Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
+    public Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
+
         Map<String, String> queryParamsMap = getBaseQueryParams();
 
         // should not have more than 1 rootPath param value
