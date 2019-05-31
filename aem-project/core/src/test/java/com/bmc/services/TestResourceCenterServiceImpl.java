@@ -1,6 +1,5 @@
 package com.bmc.services;
 
-import com.bmc.models.bmccontentapi.BmcContent;
 import com.tacitknowledge.jcr.mocking.JcrMockService;
 import com.tacitknowledge.jcr.mocking.impl.JsonMockService;
 import com.tacitknowledge.jcr.testing.NodeFactory;
@@ -10,14 +9,11 @@ import org.apache.felix.scr.annotations.Service;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.jcr.Node;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
 
 @Component(label = "Test for Resource Center Service", metatype = true)
 @Service(value=TestResourceCenterServiceImpl.class)
@@ -76,9 +72,5 @@ public class TestResourceCenterServiceImpl  {
 
         assertTrue(queryParamsMap.get("5_orderby").equals("@jcr:title"));
         assertTrue(queryParamsMap.get("5_orderby.sort").equals("desc"));
-        
     }
-
-
-
 }
