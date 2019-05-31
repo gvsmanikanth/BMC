@@ -9,11 +9,11 @@ jQuery(function ($) {
 			if (!isMobile) {
 				// getting current header height and add ttop minus margin to the form
 				var headerHeight = '-'+ $(".ornate-header").height()+'px';
-				$('.form2 .maincontentcontainer form').css({
-					'margin-top':headerHeight,
-					'transition-property': 'margin-top',
-					'transition': '0s linear'
-				}); 
+				// $('.form2 .maincontentcontainer form').css({
+				// 	'margin-top':headerHeight,
+				// 	'transition-property': 'margin-top',
+				// 	'transition': '0s linear'
+				// }); 
 
 				respGridContainers.addClass('aem-GridColumn--default--6');
 				respGridContainers.removeClass('aem-GridColumn--default--12');
