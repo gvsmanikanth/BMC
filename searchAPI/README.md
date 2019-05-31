@@ -24,6 +24,12 @@
         - filter values: all possible values can be found from response of /bin/contentapi/filters
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&filter=ic-target-industry-272486674&filter=ic-topics-773791639
 
+### keyword
+    - [keyword] search pages with the keywords that are within jcr title and jcr description
+        - multi value
+        - keyword values: any keyword you would like to search
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&keyword=Supplier&keyword=Corporate
+
 ### sorting
     - [sortCriteria] & [sortOrder] sort result base on sort criteria and sort direction
         - multi value
