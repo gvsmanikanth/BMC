@@ -12,6 +12,7 @@ public class ResourceCenterConsts {
     public static final String RC_URL_PARAM_PATH = "rootPath";
     public static final String RC_URL_PARAM_KEYWORD = "keyword";
     public static final String RC_URL_PARAM_FILTER = "filter";
+    public static final String RC_URL_PARAM_OR_FILTERS = "orFilters";
     //pagination
     public static final String RC_URL_PARAM_PAGE_INDEX = "pageIndex";
     public static final String RC_URL_PARAM_RESULTS_PER_PAGE = "resultsPerPage";
@@ -30,6 +31,7 @@ public class ResourceCenterConsts {
     /* url parameters values */
     /* query parameters */
     public static final String QUERY_PARAM_PATH = "path";
+    public static final String QUERY_PARAM_GROUP_OR = "group.p.or";
 
     /* property fields */
     public static final String QUERY_PARAM_PROP = "property";

@@ -1,5 +1,6 @@
 package com.bmc.services;
 
+import com.bmc.consts.GeneralConsts;
 import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
@@ -68,13 +69,19 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     /************************************************************************************************************/
     /*** common -------> *********************************************************/
-    private Map<String, String>  getBaseQueryParams() {
+    private Map<String, String>  getBaseQueryParams(Map<String, String[]> urlParameters) {
         Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // add default path
         queryParamsMap.put("path", "/content/bmc/resources");
         //queryParamsMap.put("type", "cq:Page");
-        queryParamsMap.put("group.p.or", "true");
+
+        String groupFilter = urlParameters!=null
+                            && urlParameters.containsKey(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)
+                            && urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)[0].equalsIgnoreCase(GeneralConsts.FALSE) ?
+                            GeneralConsts.FALSE : GeneralConsts.TRUE;
+
+        queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, groupFilter);
 
         return queryParamsMap;
     }
@@ -93,7 +100,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // path and page for resources
-        queryParamsMap.putAll(getBaseQueryParams());
+        queryParamsMap.putAll(getBaseQueryParams(null));
         queryParamsMap.put("type", "cq:Page");
 
         // Note: we return all the filters that are specified in the resource filter property list of this service
@@ -194,6 +201,15 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         return predicateIndex;
     }
 
+    private int addSearchkeyword(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
+        try {
+
+        } catch (Exception e) {
+            log.error("An exception had occured in addSearchkeyword function with error: " + e.getMessage(), e);
+        }
+        return predicateIndex;
+    }
+
 //    private void addSearchPredicates(Map<String, String[]> urlParameters, String urlParam, Map<String, String> queryParamsMap, String queryParam) {
 //        try {
 //            // if url parameters does not have such parameter(urlParam), then return
@@ -279,7 +295,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
      */
     public Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
 
-        Map<String, String> queryParamsMap = getBaseQueryParams();
+        Map<String, String> queryParamsMap = getBaseQueryParams(urlParameters);
 
         // should not have more than 1 rootPath param value
         if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH) != null
