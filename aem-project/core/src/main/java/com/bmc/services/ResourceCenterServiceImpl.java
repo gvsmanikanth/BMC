@@ -192,7 +192,6 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
-
             }
 
         } catch (Exception e) {
@@ -203,7 +202,21 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     private int addSearchkeyword(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
+            // if url parameters does not have such parameter(urlParam), then return
+            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_KEYWORD) == null)
+                return predicateIndex;
 
+            // extract keywords and put them into query params
+            String[] keywordValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_KEYWORD);
+            for(int i = 0; i < keywordValues.length; i++, predicateIndex+=2) {
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), JcrConsts.TITLE);
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), "%"+keywordValues[i]+"%");
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP, true), JcrConsts.DESCRIPTION);
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), "%"+keywordValues[i]+"%");
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+            }
         } catch (Exception e) {
             log.error("An exception had occured in addSearchkeyword function with error: " + e.getMessage(), e);
         }
@@ -305,6 +318,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         // adding other url parameters into query parameters
         int predicateIndex = 1;
         predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
+        predicateIndex = addSearchkeyword(urlParameters, queryParamsMap, predicateIndex);
         predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
         addPaginationPredicates(urlParameters, queryParamsMap);
 

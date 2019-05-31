@@ -8,4 +8,5 @@ public class JcrConsts {
     public static final String MODIFIED = "cq:lastModified";
     public static final String PRIMARY_TYPE = "jcr:primaryType";
     public static final String ASSET_LINK = "linkAbstractorExternalAsset";
+    public static final String DESCRIPTION = "jcr:description";
 }
