@@ -301,7 +301,7 @@
     <_x0034_38283521
         jcr:primaryType="nt:unstructured"
         jcr:title="Mainframe MLC Cost Management"
-        dropDownDisplay="No"/>
+        dropDownDisplay="Yes"/>
     <!-- SAFE DELETE <_x0032_06500945
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-AAI"
@@ -327,7 +327,7 @@
     <_x0039_40824846
         jcr:primaryType="nt:unstructured"
         jcr:title="Helix Business Workflows"
-        dropDownDisplay="No"/>
+        dropDownDisplay="Yes"/>
     <!-- SAFE DELETE <_x0038_61054420
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS APM"
@@ -438,6 +438,12 @@
         dropDownDisplay="Yes"
         text="TrueSight Cloud Cost Control"
         value="TrueSight Cloud Cost Control"/>
+    <_x0031_54177794
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Cloud Operations"
+        dropDownDisplay="Yes"
+        text="TrueSight Cloud Operations"
+        value="TrueSight Cloud Operations"/>
     <_x0031_78280437
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Infrastructure"
@@ -476,5 +482,5 @@
     <_x0031_52162027
             jcr:primaryType="nt:unstructured"
             jcr:title="Automated Mainframe Intelligence (AMI)"
-            dropDownDisplay="No"/>
+            dropDownDisplay="Yes"/>
 </jcr:root>
