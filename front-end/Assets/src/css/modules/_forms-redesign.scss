@@ -60,7 +60,7 @@
                 padding: 1.5em;         
             }  
             @media (max-width: $break-md) {
-                margin-top: 0px !important;         
+                margin-top: 30px !important;         
             }  
                             
             .btn-secondary {
@@ -366,9 +366,26 @@
 	@media (min-width: $break-md) {
 		[class*="50-50contentcontainer"] .equal-column:last-child {
 			padding-left: 2.05%;
-		}
-		
-	}
+		}		
+    }
+    
+    .redesign-wrapper {
+        position: relative;
+        .form-wrapp {
+            @media (min-width: $break-md) {
+                position: absolute;
+                top: 40px;
+                left: 0;    
+                right: 0;	
+            }           
+        }
+    }
+    .pointer-none{
+        pointer-events: none;
+    }
+    .pointer-auto{
+        pointer-events: auto;
+    }
     
 
 }
