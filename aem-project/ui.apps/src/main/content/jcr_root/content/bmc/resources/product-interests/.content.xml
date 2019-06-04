@@ -432,12 +432,19 @@
         dropDownDisplay="Yes"
         text="TrueSight Capacity Optimization"
         value="TrueSight Capacity Optimization"/>
+    <_x0031_87169023
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Cloud Cost"
+        dropDownDisplay="Yes"
+        text="TrueSight Cloud Cost"
+        value="TrueSight Cloud Cost"/>
     <_x0031_55163094
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Cloud Cost Control"
         dropDownDisplay="Yes"
         text="TrueSight Cloud Cost Control"
         value="TrueSight Cloud Cost Control"/>
+        
     <_x0031_54177794
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Cloud Operations"
