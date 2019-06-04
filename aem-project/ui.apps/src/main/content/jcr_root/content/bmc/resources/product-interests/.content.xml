@@ -301,7 +301,9 @@
     <_x0034_38283521
         jcr:primaryType="nt:unstructured"
         jcr:title="Mainframe MLC Cost Management"
-        dropDownDisplay="Yes"/>
+        dropDownDisplay="Yes"
+        text="Mainframe MLC Cost Management"
+        value="Mainframe MLC Cost Management"/>
     <!-- SAFE DELETE <_x0032_06500945
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-AAI"
@@ -327,7 +329,9 @@
     <_x0039_40824846
         jcr:primaryType="nt:unstructured"
         jcr:title="Helix Business Workflows"
-        dropDownDisplay="Yes"/>
+        dropDownDisplay="Yes"
+        text="BMC Helix Business Workflows"
+        value="Helix Business Workflows"/> <!-- WEB-5294 -->
     <!-- SAFE DELETE <_x0038_61054420
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS APM"
@@ -489,5 +493,7 @@
     <_x0031_52162027
             jcr:primaryType="nt:unstructured"
             jcr:title="Automated Mainframe Intelligence (AMI)"
-            dropDownDisplay="Yes"/>
+            dropDownDisplay="Yes"
+            text="Automated Mainframe Intelligence (AMI)"
+        	value="Automated Mainframe Intelligence (AMI)"/> <!-- WEB-5294 -->
 </jcr:root>
