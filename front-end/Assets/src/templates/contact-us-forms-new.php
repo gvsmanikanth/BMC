@@ -1,13 +1,13 @@
 <?php
 	$pageTitle = 'Contact Us Forms new';
-	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2';
+	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2 js-eleht';
 	include_once 'php-inc/head.php';
 ?>
 
 
 <div class="page-campaign-landing">  
-   <div class="redesign-wrapper">
-      <div class="md-flex form-wrapp layout-inner-wrap pointer-none">
+   <div class="redesign-wrapper js-elehtItem">     
+      <div class="md-flex form-wrapp layout-inner-wrap pointer-none js-elehtItem">
          <div class="md-col-6 pointer-auto">
             <div class="cmp cmp-form aem-GridColumn aem-GridColumn--default--12">
                <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" 
@@ -413,7 +413,7 @@
          </div>
          <div class="md-col-6 pointer-none"></div>
       </div>
-
+      
       <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 
          ornate-header" data-wallpaper-options='{"source":{	"fallback": "",	"(min-width: 640px)": ""   }}'  style="background-color:#0091DD">
          <div class="offset-wrapper flex-center ">
@@ -469,16 +469,7 @@
                            </div>
                            <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                               <p>Try out key Control-M features in a self-guided live environment.</p>
-                              <ul class="red-bullets">
-                                 <li>Explore multiple use cases</li>
-                                 <li>Create, build, and run jobs</li>
-                                 <li>Dynamically monitor job flows</li>
-                                 <li>Automate internal and external file transfers</li>
-                                 <li>Enable users to perform basic tasks with&nbsp;self service</li>
-                              </ul>
-                              <p>See how easy it is to get started automating workloads with Control-M.<br>
-                                 <b>Try it now!</b>
-                              </p>
+                            
                            </div>                        
                         </div>
 
@@ -500,7 +491,7 @@
             </div>
          </section>
       </div>
-      
+
    </div>
    <!-- redesign-wrapper-end -->
     

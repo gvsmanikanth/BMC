@@ -590,6 +590,12 @@ function addFilterToArrayProtoype() {
 					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province (optional)</label><input type='text' name='C_State_Prov' id='C_State_Prov' >" + "</div>");
 					$inputs = $('form').find('input, textarea, select'),
 				$inputs.validateInputs();
+				}else if($('#C_State_Prov').prop('nodeName') == "INPUT")
+				{
+					$('#C_State_Prov').children().remove();
+					$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province <span class='optional-text'>(optional)</span></label><input type='text' name='C_State_Prov' id='C_State_Prov' required='false' >" + "</div>");
+					$inputs = $('form').find('input, textarea, select'),
+					$inputs.validateInputs();
 				}
 			}	
 			
