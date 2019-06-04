@@ -420,7 +420,7 @@
             <div class="inner">
                <div class="bannerContent">
                   <div class="layout-inner-wrap flex">
-                     <div class="flex-item  md-col-6 pointer-none"></div>
+                     <div class="flex-item  md-col-6 pointer-none "></div>
                      <!-- <div class="flex-item  md-col-6 add-top-bottom-margin-110px">
                         <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
@@ -438,6 +438,7 @@
                               <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                                  <div class="cq-dd-image text-center">
                                     <img src="http://staging.bmc.com/forms/control-m-enterprise-free-trial-runaware2/_jcr_content/root/responsivegrid/header_form/right/image.img.png" alt="banner2">                                    
+                                    <p>Try out key Control-M features in a self-guided live environment.</p>
                                  </div>
                               </div>
                            </div>
@@ -456,8 +457,8 @@
                <section class="">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap pt0 mt0">
                      <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 pointer-none">
-                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                           dfgd
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 minHeight-1px  ">
+                           
                         </div>
                      </div>
                      <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 pointer-auto">
@@ -469,7 +470,13 @@
                            </div>
                            <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                               <p>Try out key Control-M features in a self-guided live environment.</p>
-                            
+                                 <ul class="red-bullets">
+                                    <li>Explore multiple use cases</li>
+                                    <li>Create, build, and run jobs</li>
+                                    <li>Dynamically monitor job flows</li>
+                                    <li>Automate internal and external file transfers</li>
+                                    <li>Enable users to perform basic tasks with&nbsp;self service</li>
+                                 </ul>
                            </div>                        
                         </div>
 
