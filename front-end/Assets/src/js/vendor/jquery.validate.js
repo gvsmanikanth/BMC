@@ -273,7 +273,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						submitValidAjaxForm();
 					}
 					else {
-						$form.submit();
+						$form.submit();						
 					}
 					//fired Event2 on form submit
 					if(_satellite){

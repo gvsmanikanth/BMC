@@ -11,6 +11,12 @@
     background-color: #fff;
     .ornate-header{
         min-height: auto;
+        padding: 40px 0 !important;
+        @media (max-width: 900px) {
+           margin-top: 30px;
+           float: left;
+            
+         }
         @media (min-width: $break-md) {
             min-height: 300px;
         }
@@ -34,6 +40,10 @@
                     @media (min-width: $break-md) {
                         min-height: 300px;
                     }
+                }
+                @media (max-width: 900px) {
+                   flex-direction: column;
+
                 }
                
             }
@@ -62,7 +72,7 @@
               //  margin-top: -300px; 
                 padding: 1.5em;         
             }  
-            @media (max-width: $break-md) {
+            @media (max-width: 900px) {
                 margin-top: 30px !important;         
             }  
                             
@@ -375,7 +385,7 @@
     .redesign-wrapper {
         position: relative;
         .form-wrapp {
-            @media (min-width: $break-md) {
+            @media (min-width: 900px) {
                 position: absolute;
                 top: 40px;
                 left: 0;    
@@ -395,7 +405,21 @@
     .form-wrapp{
         .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
             margin-top: 0;
-        }
+        }       
+        .aem-Grid.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--6 {
+                @media (max-width: 900px) {
+                    float: none;
+                    clear: both;
+                    width: 100%;
+                }
+        }   
+        
+    }
+    .form-wrapp-absolute{
+        position: absolute;
+        top: 40px;
+        left: 0;    
+        right: 0;
     }
 
 }
