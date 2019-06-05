@@ -385,7 +385,10 @@
     .redesign-wrapper {
         position: relative;
         .form-wrapp {
-            width: 100%;
+            
+            @media (min-width: $break-md) {
+                width: 100%;
+            }
             @media (min-width: 900px) {
                 position: absolute;
                 top: 40px;
@@ -416,12 +419,7 @@
         }   
         
     }
-    .form-wrapp-absolute{
-        position: absolute;
-        top: 40px;
-        left: 0;    
-        right: 0;
-    }
+    
 
 }
 
