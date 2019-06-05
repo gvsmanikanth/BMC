@@ -389,7 +389,14 @@
     .pointer-auto{
         pointer-events: auto;
     }
-    
+    .form-wrapp > .aem-GridColumn.aem-GridColumn--default--12 > section {
+        padding: 0;
+    }
+    .form-wrapp{
+        .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+            margin-top: 0;
+        }
+    }
 
 }
 

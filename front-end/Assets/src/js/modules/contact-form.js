@@ -51,7 +51,7 @@ jQuery(function ($) {
 							var ehInstance = $(this),
 								itemHeight = $(ehInstance).outerHeight();
 							if ( itemHeight > maxHeight ) {
-								maxHeight = itemHeight + 40;
+								maxHeight = itemHeight + 50;
 							}
 						});
 						if(maxHeight !=0)
