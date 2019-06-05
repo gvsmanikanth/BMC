@@ -51,11 +51,7 @@ public class PageWrapper extends WCMUsePojo {
 	        	        	 trialForm= currentPage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form");
 	 	        		  }else if(currentPage.getTemplate().getName().equals("form-landing-page-full-width")){
 	 	        			 trialForm = currentPage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
-	 	        	      }// WEB-5345: Forms - Redesign functionality. START
-	 	        		  else if(currentPage.getTemplate().getName().equals("form-landing-page-template2")){
-		        	        	 trialForm= currentPage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/customcontentcontain/customcontentcontain_1/_50_50contentcontain/left/customcontentcontain_2/maincontentcontainer/form");
-		 	        		  }
-	        	         // WEB-5345: Forms - Redesign functionality. END 
+	 	        	      } 
 		         		  if(trialForm.getProperty("C_Lead_Offer_Most_Recent1").getString().equals("Trial Download")){
 		                   response.sendRedirect(nodeFormSettings.getProperty("redirectDestURL").getValue().toString());
 		                   }
