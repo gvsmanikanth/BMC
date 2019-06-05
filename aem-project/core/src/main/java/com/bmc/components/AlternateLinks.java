@@ -49,6 +49,7 @@ public class AlternateLinks  extends WCMUsePojo {
 
     private Map<String, String> alternateLinksMap = new HashMap<String, String>();
     private String canonicalLink;
+    private Boolean isPageNotFound;
 
     @Override
     public void activate() throws Exception {
@@ -95,6 +96,7 @@ public class AlternateLinks  extends WCMUsePojo {
         	if(!getRequest().getRequestPathInfo().getResourcePath().startsWith("/content/bmc/404/")) {
         		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
         	}else{
+        		isPageNotFound=true;
         		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + "/content/bmc/404");
         	}
         	}
@@ -106,5 +108,8 @@ public class AlternateLinks  extends WCMUsePojo {
 
     public String getCanonicalLink() {
         return canonicalLink;
+    }
+    public Boolean getIsPageNotFound() {
+        return isPageNotFound;
     }
 }
