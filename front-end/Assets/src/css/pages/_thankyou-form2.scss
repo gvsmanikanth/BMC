@@ -138,6 +138,22 @@
         }
     }
     
+    .topcontent {
+        padding-bottom: 1.5em;
+        section.topcontent .layout-secondaryaem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--3 {
+            @media (max-width: $break-md) {
+                width: 100%;
+                float: none;
+                clear: both;
+            }
+            .cq-dd-image.text-center {
+                @media (max-width: $break-md) {
+                    text-align: left;
+                }                
+            }
+        }
+
+    }
 }
 .header-form2-thank-you{
 	  .product-category-header{

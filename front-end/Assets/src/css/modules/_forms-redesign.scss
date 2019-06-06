@@ -1,5 +1,14 @@
 .form2{
     background-color : #fff;
+
+    // IE footer white bar fix
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+       background-color : #414042;
+       .plainheader + .responsivegrid {
+            background: #fff;
+        }
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
     }
@@ -278,7 +287,8 @@
         .cmp-title  {
             h2{
                 color: #333;
-                margin-bottom: 10px;
+                margin-bottom: 1.5rem;
+                line-height: 1.3em;
             }  
             h1{
                 color: #333;
@@ -417,7 +427,9 @@
         }   
         
     }
-    
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+        margin-top: 0;
+    }
 
 }
 
