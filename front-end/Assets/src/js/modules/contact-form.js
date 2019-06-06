@@ -37,19 +37,20 @@ jQuery(function ($) {
 						maxHeight = itemHeight + 50;
 					}
 				});
-				if(maxHeight !=0)
-					$(ehItem).height(maxHeight);
+				
+				var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
+				if (!isMobile && maxHeight !=0) {
+						$(ehItem).height(maxHeight);
+				}
+				else{
+					$(ehItem).css('height', 'auto');	
+				}
 			});
 		};	
 
-		var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
-		if (!isMobile) {
-			$('.form-wrapp form').bind('heightChange', function(){			
-				setFormHeight('.form2');
-			});	
-		}
-		
-		
+		$('.form-wrapp form').bind('heightChange', function(){			
+			setFormHeight('.form2');
+		});	
 		
 		function insertAfter(){	
 			var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
@@ -60,30 +61,24 @@ jQuery(function ($) {
 				respGridContainers.addClass('aem-GridColumn--default--6');
 				respGridContainers.removeClass('aem-GridColumn--default--12');		
 				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').addClass('md-col-6');
-				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').removeClass('md-col-12');
-				// event triggering for getting the height of the changed form
-                 $(".form-wrapp form").trigger('heightChange');                                              
-
+				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').removeClass('md-col-12');	                                           
 			} else{
 				respGridContainers.addClass('aem-GridColumn--default--12');
 				respGridContainers.removeClass('aem-GridColumn--default--6');			
 				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6').addClass('md-col-12');
-				var setFormHeight = function(eh) {
-					$(eh).each(function(i) {
-						var ehItem = $(this).find('.js-elehtItem'),
-							maxHeight = 0;
-						$(ehItem).css('height', 'auto');							
-					});
-				};	
-				setFormHeight('.js-eleht');
-				
 			}
+			
+			// event triggering for getting the height of the changed form
+            $(".form-wrapp form").trigger('heightChange');  
 		
 		}
+		
 		insertAfter();
+		
 		$(window).resize(function() {
 			insertAfter();
 		});
+		
 		$(".form2 .ornate-header img").on("load", function() {
 			insertAfter();
 		});
