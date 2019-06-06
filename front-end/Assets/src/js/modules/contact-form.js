@@ -20,6 +20,7 @@ jQuery(function ($) {
 		$('.form2 form .btn-secondary').click(function(){
 			setTimeout(function(){
 				$(".form-wrapp form").trigger('heightChange'); 
+				
 			}, 100);
 			 
 		})		
