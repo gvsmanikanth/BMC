@@ -1,4 +1,22 @@
 .thank-you-form2{
+    .red-bullets{
+        list-style: none;
+        li{
+            position: relative;
+            &:before {
+                content: ' ';
+                width: 8px;
+                height: 8px;
+                background: #fe4601;
+                position: absolute;
+                left: -20px;
+                border-radius: 50%;
+                top: 8px;
+            }
+        }
+        
+       
+    }
 	   
     .full-bleed-page-banner .layout-inner-wrap{
     	max-width:1300px;

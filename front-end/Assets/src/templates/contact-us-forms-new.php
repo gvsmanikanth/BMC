@@ -1,6 +1,6 @@
 <?php
 	$pageTitle = 'Contact Us Forms new';
-	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2 js-eleht';
+	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2';
 	include_once 'php-inc/head.php';
 ?>
 

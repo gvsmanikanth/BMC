@@ -19,13 +19,12 @@ jQuery(function ($) {
 
 		$('.form2 form .btn-secondary').click(function(){
 			setTimeout(function(){
-				$(".form-wrapp form").trigger('heightChange'); 
-				
+				$(".form-wrapp form").trigger('heightChange'); 				
 			}, 100);
 			 
 		})		
 
-		var setHeights = function(eh) {						
+		var setFormHeight = function(eh) {						
 			$(eh).each(function(i) {
 				var ehItem = $(this).find('.js-elehtItem'),
 					maxHeight = 0;
@@ -46,7 +45,7 @@ jQuery(function ($) {
 		var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
 		if (!isMobile) {
 			$('.form-wrapp form').bind('heightChange', function(){			
-				setHeights('.js-eleht');
+				setFormHeight('.form2');
 			});	
 		}
 		
@@ -69,14 +68,14 @@ jQuery(function ($) {
 				respGridContainers.addClass('aem-GridColumn--default--12');
 				respGridContainers.removeClass('aem-GridColumn--default--6');			
 				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-6').addClass('md-col-12');
-				var setHeights = function(eh) {
+				var setFormHeight = function(eh) {
 					$(eh).each(function(i) {
 						var ehItem = $(this).find('.js-elehtItem'),
 							maxHeight = 0;
 						$(ehItem).css('height', 'auto');							
 					});
 				};	
-				setHeights('.js-eleht');
+				setFormHeight('.js-eleht');
 				
 			}
 		
