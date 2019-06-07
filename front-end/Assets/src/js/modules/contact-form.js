@@ -1,16 +1,15 @@
 jQuery(function ($) {
 	if ($('body').hasClass('form2')) {
 		function addOptionalText(){
-			$('form .experiencefragment').find('input, textarea, select').each(function(){	
-				if((($(this).filter("[required = 'false']").length) == '1') || (!($(this).prop('required')))){
+			$('form .experiencefragment').find('input, textarea, select').each(function(){					
+				if($(this).get(0).getAttribute('required') == 'false'){									
 					if(!($(this).is(':hidden'))){	
 						var ele_id = $(this).attr('id');
 						if(($('label[for="'+ ele_id +'"] > span.optional-text').length) != '1'){
 							$('label[for="'+ ele_id +'"]').append('<span class="optional-text"> (optional)</span>');
 						}else{
 							$('label[for="'+ ele_id +'"] > span.optional-text').replaceWith('<span class="optional-text">(optional)</span>');
-						}				
-											
+						}														
 					}			
 				}
 			});
