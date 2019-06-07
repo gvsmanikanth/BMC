@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="oak:Unstructured"
+    async="async"
+    compatVersion="{Long}2"
+    evaluatePathRestrictions="{Boolean}true"
+    excludedPaths="[/var,/etc/replication,/etc/workflow/instances,/jcr:system]"
+    type="lucene"
+    recreateOnUpdate="{Boolean}true"
+    forceIndex="{Boolean}true">
+    <indexRules jcr:primaryType="nt:unstructured">
+        <nt:base jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <ictopics name="ic-topics" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+         		<ictargetindustry name="ic-target-industry" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icappinclusion name="ic-app-inclusion" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+                <iccontenttype name="ic-content-type" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icbuyerstage name="ic-buyer-stage" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<ictargetpersona name="ic-target-persona" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+      		</properties>
+        </nt:base>
+    </indexRules>
+</jcr:root>

@@ -1,5 +1,8 @@
 package com.bmc.services;
 
+import com.bmc.consts.GeneralConsts;
+import com.bmc.consts.JcrConsts;
+import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.models.bmccontentapi.BmcContent;
@@ -17,6 +20,7 @@ import org.apache.sling.api.resource.ValueMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.Node;
 import javax.jcr.Session;
 import java.util.*;
 
@@ -27,7 +31,6 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     @Reference
     private QueryBuilder queryBuilder;
-//    private Map<String, String> queryParamsMap;
 
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
@@ -67,13 +70,19 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     /************************************************************************************************************/
     /*** common -------> *********************************************************/
-    private Map<String, String>  getBaseQueryParams() {
+    private Map<String, String>  getBaseQueryParams(Map<String, String[]> urlParameters) {
         Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // add default path
         queryParamsMap.put("path", "/content/bmc/resources");
         //queryParamsMap.put("type", "cq:Page");
-        queryParamsMap.put("group.p.or", "true");
+
+        String groupFilter = urlParameters!=null
+                            && urlParameters.containsKey(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)
+                            && urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)[0].equalsIgnoreCase(GeneralConsts.FALSE) ?
+                            GeneralConsts.FALSE : GeneralConsts.TRUE;
+
+        queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, groupFilter);
 
         return queryParamsMap;
     }
@@ -92,7 +101,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // path and page for resources
-        queryParamsMap.putAll(getBaseQueryParams());
+        queryParamsMap.putAll(getBaseQueryParams(null));
         queryParamsMap.put("type", "cq:Page");
 
         // Note: we return all the filters that are specified in the resource filter property list of this service
@@ -164,47 +173,63 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
 
     /***  Results ------->  *********************************************************/
 
-    private String buildQueryPredicateName(int id, String queryParam) {
+    private String buildQueryPredicateName(int id, String queryParam, boolean withGroup) {
         StringBuilder queryPredicate = new StringBuilder();
-        queryPredicate.append(ResourceCenterConstants.PREDICATE_PREFIX).append(id).append("_").append(queryParam);
+        if(withGroup)
+            queryPredicate.append(ResourceCenterConsts.PREDICATE_PREFIX);
+        queryPredicate.append(id).append("_").append(queryParam);
         return queryPredicate.toString();
     }
 
-    private void addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
+    private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             // if url parameters does not have such parameter(urlParam), then return
-            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_FILTER) == null)
-                return;
+            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER) == null)
+                return predicateIndex;
 
             // extract url params and put them into query params
-            String[] queryValues = urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_FILTER);
-            for(int i = 0; i < queryValues.length; i++) {
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP_VAL), queryValues[i]);
-                queryParamsMap.put(buildQueryPredicateName(i+1, ResourceCenterConstants.QUERY_PARAM_PROP_OPERATION), ResourceCenterConstants.QUERY_PARAM_PROP_OPERATION_LIKE);
-
+            String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
+            for(int i = 0; i < queryValues.length; i++, predicateIndex++) {
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
             }
 
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
         }
+        return predicateIndex;
     }
 
-    private void addSearchPredicates(Map<String, String[]> urlParameters, String urlParam, Map<String, String> queryParamsMap, String queryParam) {
+    private String buildKeywordValuePredicate( Integer index) {
+        StringBuilder queryPredicate = new StringBuilder();
+        queryPredicate.append(ResourceCenterConsts.QUERY_PARAM_PROP).append(".").append(index+1).append("_value");
+        return queryPredicate.toString();
+    }
+
+    private int addSearchkeyword(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             // if url parameters does not have such parameter(urlParam), then return
-            if(urlParameters.get(urlParam) == null)
-                return;
+            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_KEYWORD) == null)
+                return predicateIndex;
 
-            // extract url params and put them into query params
-            String[] queryValues = urlParameters.get(urlParam);
-            for(int i = 0; i < queryValues.length; i++) {
-                queryParamsMap.put(buildQueryPredicateName(i+1, queryParam), queryValues[i]);
+            // extract keywords and put them into query params
+            String[] keywordValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_KEYWORD);
+
+            queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP, true), JcrConsts.TITLE);
+            queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+            queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, ResourceCenterConsts.QUERY_PARAM_PROP, true), JcrConsts.DESCRIPTION);
+            queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+
+            for(int i = 0; i < keywordValues.length; i++) {
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, buildKeywordValuePredicate(i), true), "%"+keywordValues[i]+"%");
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, buildKeywordValuePredicate(i), true), "%"+keywordValues[i]+"%");
             }
-
+            predicateIndex+=2;
         } catch (Exception e) {
-
+            log.error("An exception had occured in addSearchkeyword function with error: " + e.getMessage(), e);
         }
+        return predicateIndex+2;
     }
 
     private void addPaginationPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
@@ -225,6 +250,29 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         }
     }
 
+    private int addSortingPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
+        try {
+            String[] searchCriterias = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA);
+            String[] urlParamSortDirections = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER);
+            if(searchCriterias==null) return predicateIndex;
+
+            for(int i = 0; i < searchCriterias.length; i++, predicateIndex++) {
+                String searchCriteria = searchCriterias[i];
+                String urlParamSortDirection = urlParamSortDirections[i];
+                String sortDirection = urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
+                        || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ?
+                        ResourceCenterConsts.QUERY_PARAM_SORT_DESC : ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
+                if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
+                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_ORDER_BY, false), "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, false), sortDirection);
+                }
+            }
+        } catch (Exception e) {
+
+        }
+        return predicateIndex;
+    }
+
     /**
      * Adds necessary parameters to a map to search for resources.
      *
@@ -236,8 +284,9 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
      *                       honorWeights
      *
      */
-    private Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
-        Map<String, String> queryParamsMap = getBaseQueryParams();
+    public Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
+
+        Map<String, String> queryParamsMap = getBaseQueryParams(urlParameters);
 
         // should not have more than 1 rootPath param value
         if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH) != null
@@ -245,9 +294,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             queryParamsMap.put(ResourceCenterConstants.RC_QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH)[0]);
         }
         // adding other url parameters into query parameters
-//        addSearchPredicates(urlParameters, ResourceCenterConstants.RC_URL_PARAM_KEYWORD, queryParamsMap, ResourceCenterConstants.QUERY_PARAM_KEYWORD);
-        addSearchFilter(urlParameters, queryParamsMap);
-//        addSearchPredicates(urlParameters, ResourceCenterConstants.RC_URL_PARAM_PAGINATION, queryParamsMap, ResourceCenterConstants.QUERY_PARAM_PAGINATION);
+        int predicateIndex = 1;
+        predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
+        predicateIndex = addSearchkeyword(urlParameters, queryParamsMap, predicateIndex);
+        predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
         addPaginationPredicates(urlParameters, queryParamsMap);
 
         log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
@@ -260,7 +310,6 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         // add the necessary resource content parameters for query builder
         Map<String, String> queryParamsMap = addResourceParamsToBuilder(urlParameters);
 
-
         // results list to return
         List<BmcContent> resourceContentList = new ArrayList<>();
 
@@ -271,7 +320,19 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             for(Hit hit : result.getHits()) {
                 resource = hit.getResource();
                 if(resource != null){
-                    resourceContentList.add(new BmcContent(hit.getIndex(), hit.getPath(), hit.getExcerpt(), hit.getNode().getParent().getName()));
+                    try {
+                        Node parentNode = hit.getNode().getParent();
+                        String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
+                        String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                        String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
+                        String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
+                        String assetLink = hit.getNode().hasProperty(JcrConsts.ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.ASSET_LINK).getString() : null;
+                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
+                                lastModified, assetLink));
+                    } catch (Exception e) {
+                        log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
+                                + " with error: " + e.getMessage(), e);
+                    }
                 }
             }
         } catch(Exception e) {
