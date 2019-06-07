@@ -371,7 +371,7 @@
                                                                         <label for="C_Contact_Me1_group"></label>
                                                                         <ol id="C_Contact_Me1_group">
                                                                            <li>
-                                                                              <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="true">
+                                                                              <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="false">
                                                                               <label for="C_Contact_Me1">
                                                                               Would you like someone from BMC  to connect with you about Control&#8209M
                                                                               </label>
@@ -379,7 +379,20 @@
                                                                         </ol>
                                                                      </div>
                                                                   </div>
-                                                                  
+                                                                  <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
+                                                                     <div class="form-group checkbox">
+                                                                        <label for="C_OptIn"></label>
+                                                                        <ol id="C_OptIn_group" style="display: none;">
+                                                                           <li>
+                                                                              <input name="C_OptIn" id="C_OptIn" value="Yes" type="hidden" checked="checked">
+                                                                              <label for="C_OptIn">
+                                                                              I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
+                                                                              <span class="dynamic-optional-text optional-text" style="display:none;"> (optional)</span> 
+                                                                              </label><span class="error-text"></span>
+                                                                           </li>
+                                                                        </ol>
+                                                                     </div>
+                                                                  </div>
                                                                   <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
                                                                      <div class="form-group checkbox">
                                                                         <label for="licenseAgreement"></label>

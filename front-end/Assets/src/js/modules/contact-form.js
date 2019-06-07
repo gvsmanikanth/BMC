@@ -9,13 +9,14 @@ jQuery(function ($) {
 							$('label[for="'+ ele_id +'"]').append('<span class="optional-text"> (optional)</span>');
 						}else{
 							$('label[for="'+ ele_id +'"] > span.optional-text').replaceWith('<span class="optional-text">(optional)</span>');
-						}					
+						}				
 											
 					}			
 				}
 			});
 		}
-		addOptionalText();	
+		addOptionalText();
+		
 
 		$('.form2 form .btn-secondary').click(function(){
 			setTimeout(function(){
@@ -84,6 +85,20 @@ jQuery(function ($) {
 		});
 
 		$('[name="C_BusPhone"]').prev().addClass('business_phone_label');	
+
+		function addDisplayProp(){
+			var displayStyle = $('#C_OptIn_group')[0].style.display;
+			if(displayStyle == 'none'){
+			$('#C_OptIn_group').parent().parent().css("display", "none");
+			}else{
+			$('#C_OptIn_group').parent().parent().css("display", "block");
+			}
+		}
+		addDisplayProp();
+
+		$('.form-wrapp form').bind('addDisplayProp', function(){			
+			addDisplayProp();
+		});	
 	}
 
 });
