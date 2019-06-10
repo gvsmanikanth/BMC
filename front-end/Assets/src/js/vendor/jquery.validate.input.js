@@ -97,8 +97,7 @@
                 }   
                  // event triggering for getting the height of the changed form
                  $(".form-wrapp form").trigger('heightChange');  
-                 // event to add remove C_OptIn_group display property
-                 $(".form-wrapp form").trigger('addDisplayProp');                                              
+                                                             
             });            
 		}
        

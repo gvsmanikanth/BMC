@@ -4,6 +4,56 @@
 	include_once 'php-inc/head.php';
 ?>
 
+<<script type="text/javascript">
+var bmcMeta = {
+		  "form": {
+		    "id": "22",
+		    "name": "FormTemplate1",
+		    "leadOffer": "Contact Me",
+		    "optIn": "true"
+		  },
+		  "page": {
+		    "contentId": "7851e34c-77f8-40ba-a71e-fe0bf3f01f73",
+		    "contentType": "form-landing-page-template2",
+		    "longName": "en-us:forms-start:contact-bmc3",
+		    "productCategories": "unknown",
+		    "productLineCategories": "unknown",
+		    "topicsCategories": "",
+		    "errorCode": "",
+		    "isPurl": "false",
+		    "modalOpen": {
+		      "evidon": false,
+		      "contact": false,
+		      "content": false,
+		      "supportAlerts": false,
+		      "salesChat": false,
+		      "qualtrics": false
+		    },
+		    "GeoIP": {
+		      "GeoIPRedirectExcluded": false,
+		      "GeoIPLanguageCode": ""
+		    },
+		    "ic": {
+		      "appInclusion": "no",
+		      "contentType": "",
+		      "weighting": "5",
+		      "contentMarketTopics": "",
+		      "buyerStage": "",
+		      "targetPersona": "",
+		      "sourcePublishDate": "",
+		      "targetIndustry": "",
+		      "companySize": ""
+		    }
+		  },
+		  "site": {
+		    "cultureCode": "en-us",
+		    "environment": "stage."
+		  },
+		  "user": {
+		    "sVi": ""
+		  }
+		};
+</script>
 
 <div class="page-campaign-landing">  
    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">

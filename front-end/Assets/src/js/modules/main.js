@@ -155,13 +155,18 @@ function addFilterToArrayProtoype() {
 		//When switching from a  country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
 		if(bmcMeta.form.optIn == 'true'){
 			$("#C_OptIn_group").hide();
-			
+			if ($('body').hasClass('form2')) {
+				$('#C_OptIn_group').parent().parent().hide();
+			}
 			var checkSelection = function(){
 				//var status = $('option:selected', this).attr('data-id');
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
 				if(status == true){
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
+						if ($('body').hasClass('form2')) {
+							$('#C_OptIn_group').parent().parent().show();
+						}
 						$("#C_OptIn").attr("checked",false);
 						$("#C_OptIn").attr("type","checkbox");
 						$("#C_OptIn").attr("value","No");
@@ -170,6 +175,9 @@ function addFilterToArrayProtoype() {
 					}
 				}else{
 					$("#C_OptIn_group").hide();
+					if ($('body').hasClass('form2')) {
+						$('#C_OptIn_group').parent().parent().hide();
+					}
 					$("#C_OptIn").attr("checked",true);
 					$("#C_OptIn").attr("type","hidden");
 					$("#C_OptIn").attr("value","Yes");
@@ -180,7 +188,7 @@ function addFilterToArrayProtoype() {
 			
 			//Check on page load.
 			checkSelection();
-			
+			 
 			$("select[name^='C_Country']").on('change', function() { 
 				checkSelection();
 			});
