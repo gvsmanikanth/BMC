@@ -9,15 +9,15 @@
     recreateOnUpdate="{Boolean}true"
     forceIndex="{Boolean}true">
     <indexRules jcr:primaryType="nt:unstructured">
-        <nt:base jcr:primaryType="nt:unstructured">
+        <cq:Page jcr:primaryType="nt:unstructured">
             <properties jcr:primaryType="nt:unstructured">
-                <ictopics name="ic-topics" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-         		<ictargetindustry name="ic-target-industry" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-            	<icappinclusion name="ic-app-inclusion" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-                <iccontenttype name="ic-content-type" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-            	<icbuyerstage name="ic-buyer-stage" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-            	<ictargetpersona name="ic-target-persona" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+                <ictopics name="jcr:content/ic-topics" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+         		<ictargetindustry name="jcr:content/ic-target-industry" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icappinclusion name="jcr:content/ic-app-inclusion" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+                <iccontenttype name="jcr:content/ic-content-type" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icbuyerstage name="jcr:content/ic-buyer-stage" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<ictargetpersona name="jcr:content/ic-target-persona" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
       		</properties>
-        </nt:base>
+        </cq:Page>
     </indexRules>
 </jcr:root>
