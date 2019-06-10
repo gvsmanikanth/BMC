@@ -3,6 +3,7 @@ package com.bmc.services;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.pum.PUMService;
+import com.bmc.util.JsonSerializer;
 import com.google.common.base.Optional;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
@@ -15,10 +16,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * TODO: Documentation
@@ -32,26 +36,26 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
     private static final Logger log = LoggerFactory.getLogger(ResourceCenterServiceCachingImpl.class);
 
-    private Cache<String, Optional<String>> titleCache;
+    private Cache<String, Optional<List<BmcContent>>> contentCache;
 
     @Property(label = "Resource Title Cache Size", longValue = 5000,
             description = "Resource title maximum cache item count")
-    public static final String RESOURCE_TITLE_CACHE_SIZE = "resource.title.cache.size";
+    public static final String RESOURCE_TITLE_CACHE_SIZE = "resourcecenter.content.cache.size";
     private long resourceTitleCacheSize;
 
     @Property(label = "Resource Title Cache TTL", longValue = 300,
             description = "Resource title cached item time to live (seconds)")
-    public static final String RESOURCE_TITLE_CACHE_TTL = "resource.title.cache.ttl";
+    public static final String RESOURCE_TITLE_CACHE_TTL = "resourcecenter.content.cache.ttl";
     private long resourceTitleCacheTtl;
 
     @Property(label = "Resource Title Cache Statistics Enabled", boolValue = false,
             description = "Resource title cache statistics enabled")
-    public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = "resource.title.cache.stats.enabled";
+    public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = "resourcecenter.content.cache.stats.enabled";
     private boolean resourceTitleCacheStatsEnabled;
 
     @Property(label = "Resource Title Cache Flush", boolValue = false,
             description = "Resource title cache flush")
-    public static final String RESOURCE_TITLE_CACHE_FLUSH = "resource.title.cache.flush";
+    public static final String RESOURCE_TITLE_CACHE_FLUSH = "resourcecenter.content.cache.flush";
     private boolean resourceTitleCacheFlush;
 
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
@@ -74,7 +78,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
             cacheBuilder.recordStats();
         }
 
-        titleCache = cacheBuilder.build();
+        contentCache = cacheBuilder.build();
 
         if (resourceTitleCacheFlush) {
             try {
@@ -85,14 +89,10 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
         }
     }
 
-    
 
-    public boolean isResourceTitleCacheStatsEnabled() {
-        return resourceTitleCacheStatsEnabled;
-    }
 
-    public Cache<String, Optional<String>> getTitleCache() {
-        return titleCache;
+    public Cache<String, Optional<List<BmcContent>>> getContentCache() {
+        return contentCache;
     }
 
     @Override
@@ -102,25 +102,43 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
 	@Override
 	public List<BmcContentFilter> getResourceFilters() {
-		// TODO Auto-generated method stub
-		return null;
+		return baseImpl.getResourceFilters();
 	}
 
 	@Override
 	public String getResourceFiltersJSON() {
-		// TODO Auto-generated method stub
-		return null;
+		return baseImpl.getResourceFiltersJSON();
 	}
 
 	@Override
 	public List<BmcContent> getResourceResults(Map<String, String[]> parameters) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+            if (parameters == null || parameters.isEmpty()) {
+                log.debug("Invalid input {} {} {}. Returning null", parameters);
+                return null;
+            }
+
+            String cacheKey = this.generatekey(parameters);
+            Optional<List<BmcContent> > cachedContent = contentCache.get(cacheKey,
+                    () -> Optional.fromNullable(baseImpl.getResourceResults(parameters)));
+            return cachedContent.isPresent() ? cachedContent.get() : null;
+        } catch (ExecutionException e) {
+            log.error("An error occurred. Fetching title from JCR", e);
+            return baseImpl.getResourceResults(parameters);
+        }
 	}
 
 	@Override
 	public String getResourceResultsJSON(Map<String, String[]> parameters) {
-		// TODO Auto-generated method stub
-		return null;
+		return JsonSerializer.serialize(getResourceResults(parameters));
+	}
+	
+	private String generatekey(Map<String, String[]> parameters) {
+		String result = parameters.entrySet().stream()
+                .filter(Objects::nonNull)
+                .map(map -> Arrays.toString(map.getValue()))
+                .collect(Collectors.joining());
+		
+		return result;
 	}
 }
