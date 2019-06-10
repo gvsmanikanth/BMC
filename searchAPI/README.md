@@ -67,6 +67,7 @@ Oak Lucene index is configured to avoid full traversal when filtering content. I
                             - propertyIndex = true
                             - name = jcr:content/ic-target-persona
 
-To confirm that index works, run Explain Query in /libs/granite/operations/content/diagnosis/tool.html/granite_queryperformance
-
+To confirm that index works, run Explain Query in ```/libs/granite/operations/content/diagnosis/tool.html/granite_queryperformance```
+```
 /jcr:root/content/bmc/us/en/documents//element(*, cq:Page) [ (jcr:content/@ic-buyer-stage = 'ic-buyer-stage-453243382')  ]
+```
