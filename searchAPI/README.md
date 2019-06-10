@@ -54,7 +54,7 @@
 Oak Lucene index is configured to avoid full traversal when filtering content. Index is configured using ACS Commons Ensure Index https://adobe-consulting-services.github.io/acs-aem-commons/features/ensure-oak-index/index.html
 
 
-Example
+### Example
     - oak:index
         - icResource
             - indexRules
