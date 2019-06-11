@@ -220,7 +220,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Education Services"
         dropDownDisplay="Yes"
-        text="Education & Services"
+        text="Education &amp; Services"
         value="Education Services"/> <!-- WEB-5296 -->
     <_x0031_96956382
         jcr:primaryType="nt:unstructured"
