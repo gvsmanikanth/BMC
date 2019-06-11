@@ -73,3 +73,5 @@ require('./vendor/jquery.validate.input.js');
 //require("./vendor/jquery.fullPage.min.js");
 
 require('./modules/contact-form.js');
+require('./modules/document_container.js');
+
