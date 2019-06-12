@@ -21,8 +21,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight AppVisibility"
         dropDownDisplay="No"
-        text="TrueSight AppVisibility"
-        value="TrueSight AppVisibility"/>
+        /><!-- WEB-5294 -->
     <!-- SAFE DELETE <_x0038_00480197
         jcr:primaryType="nt:unstructured"
         jcr:title="App_Ops MarketZone License"
@@ -421,8 +420,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight APM"
         dropDownDisplay="No"
-        text="BMC Application Performance Management"
-        value="TrueSight APM"/>
+       /> <!-- WEB-5294 -->
     <_x0030_04182175
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Capacity Optimization"
