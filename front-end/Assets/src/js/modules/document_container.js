@@ -14,7 +14,10 @@
             return actualHeight;
         }    
         var windowHeight = getAvailableHeight();    
-        document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
+        if(document.getElementById("pdfReader")){
+            document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
+        }
+        
 
     }
 
