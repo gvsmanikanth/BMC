@@ -264,17 +264,21 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
-        //WEB-4924 Forms Redesign : START added form-landing-page-template2 to this loop. 
+      //WEB-4924 Forms Redesign : START added form-landing-page-template2 to this loop. 
+        // WEB-5345: Forms Redesign.
+        //WEB-5369 Adding new form container links to PageModel.java START        
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-template2")) {
             try {
-                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/left/form");
+            	//New path for form container from form redesign.
+                Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/customcontentcontain/customcontentcontain_1/_50_50contentcontain/left/customcontentcontain_2/maincontentcontainer/form");
                 setPageMetaFromForm(bmcMeta, form);
                 setFormMeta(bmcMeta, form);
             } catch (RepositoryException e) {
                 e.printStackTrace();
             }
-        }
+        }       
         //WEB-4924 Forms Redesign : END 
+        //WEB-5369 Adding new form container links to PageModel.java END
         if (templatePath.equals("/conf/bmc/settings/wcm/templates/form-landing-page-full-width")) {
             try {
                 Node form = resourcePage.adaptTo(Node.class).getNode("jcr:content/root/responsivegrid/maincontentcontainer/100contentcontain/center/form");
