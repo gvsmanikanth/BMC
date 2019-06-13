@@ -19,13 +19,21 @@
 
   function showorhidecaption() {
          if($('.dropdownselect option:selected').val() == 'align_bottom'){
-        $('.hide-for-tab').addClass("hide");
+        /*$('.hide-for-tab').addClass("hide");
         $('.hide-for-tab-caption-popup').addClass("hide");
-        $('.core-image-hyperlink').addClass("hide");
+        $('.core-image-hyperlink').addClass("hide");*/
+		
+		$('.core-image-link .coral-InputGroup-input').attr('disabled','disabled');
+		$('.hide-for-tab-caption-popup .coral-Checkbox-input').attr('disabled','disabled');
+		$('.core-image-hyperlink .coral-Checkbox-input').attr('disabled','disabled');
     }else{
-		$('.hide-for-tab').removeClass("hide");
+		/*$('.hide-for-tab').removeClass("hide");
         $('.hide-for-tab-caption-popup').removeClass("hide");
-        $('.core-image-hyperlink').removeClass("hide");
+        $('.core-image-hyperlink').removeClass("hide");*/
+		
+		$('.core-image-link .coral-InputGroup-input').removeAttr('disabled');
+		$('.hide-for-tab-caption-popup .coral-Checkbox-input').removeAttr('disabled');
+		$('.core-image-hyperlink .coral-Checkbox-input').removeAttr('disabled');
     }
   }
 
