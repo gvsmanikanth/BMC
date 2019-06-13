@@ -564,11 +564,16 @@ function addFilterToArrayProtoype() {
 				}else{
 					if($('#C_State_Prov').attr('type') == "text")
 					{
-						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");
+						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");					
 						$inputs = $('form').find('input, textarea, select'),
 						$inputs.validateInputs();  
 					}
 					$('#C_State_Prov').children().remove().end().append(newstateoptions);
+
+					//Remove validations text and style
+					$('#C_State_Prov').parent().removeClass('valid-input');					
+					$('#C_State_Prov').parent().removeClass('validation-error-redesign validation-error');
+					$('#C_State_Prov').parent().next().text('');
 				}
 			}
 
@@ -597,7 +602,7 @@ function addFilterToArrayProtoype() {
 					$('#C_State_Prov').children().remove();
 					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province (optional)</label><input type='text' name='C_State_Prov' id='C_State_Prov' >" + "</div>");
 					$inputs = $('form').find('input, textarea, select'),
-				$inputs.validateInputs();
+					$inputs.validateInputs();
 				}else if($('#C_State_Prov').prop('nodeName') == "INPUT")
 				{
 					$('#C_State_Prov').children().remove();
