@@ -4,7 +4,7 @@
 	include_once 'php-inc/head.php';
 ?>
 
-<<script type="text/javascript">
+<script type="text/javascript">
 var bmcMeta = {
 		  "form": {
 		    "id": "22",
@@ -77,7 +77,7 @@ var bmcMeta = {
                                                       <input type="hidden" name="_charset_" value="UTF-8"/>
                                                       <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
                                                       <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                                         <h2>Sign up for a free trial of Control-M</h2>
+                                                         <h2>Sign up for a free trial of Control-M free trial of Control-M</h2>
                                                          <h6>All fields are required for completion </h6>
                                                       </div>
                                                       <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
@@ -511,18 +511,18 @@ var bmcMeta = {
                                  <!-- Section where the placeholder recides. -->
                                  <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
                                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                          <!-- <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                             <h1 class="white">
+                                          <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                             <h2>
                                              How can the BMC Sales team help?
-                                             </h1>
-                                          </div> -->
-                                          <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                                             </h2>
+                                          </div>
+                                          <!-- <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                                              <div class="cq-dd-image text-center ">
                                              <img src="http://staging.bmc.com/forms/control-m-enterprise-free-trial-runaware2/_jcr_content/root/responsivegrid/header_form/right/image.img.png" alt="banner1"/>
                                              </div>
                                           </div>
                                           <div class="new newpar section aem-Grid-newComponent">
-                                          </div>
+                                          </div> -->
                                        </div>
                                  </div>
                                  </div>
