@@ -271,7 +271,21 @@
                 @media (min-width: $break-md) {
                     margin: 10px -1.5em;         
                 }       
-            }            
+            }
+            .dynamic-hr{
+                display: block !important;
+            }
+            .dynamic-optional-text{
+                display: inline-block !important;
+            }
+            .optional-text {
+                color: #a4a4a4;
+                font-style: italic;
+            }  
+            .validation-help-text {
+                font-style: italic;
+            }
+
         }
     }
     .contact-info {
