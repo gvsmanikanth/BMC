@@ -30,7 +30,7 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/structure/customcontentcontainer"
-                    cssClassName="redesign-wrapper js-ehItem">
+                    cssClassName="redesign-wrapper js-elehtItem">
                     <customcontentcontain_1
                         jcr:created="{Date}2019-06-04T15:57:53.735+05:30"
                         jcr:createdBy="admin"
@@ -38,7 +38,7 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/structure/customcontentcontainer"
-                        cssClassName="form-wrapp layout-inner-wrap pointer-none js-ehItem">
+                        cssClassName="form-wrapp layout-inner-wrap pointer-none js-elehtItem">
                         <_50_50contentcontain
                             jcr:created="{Date}2019-06-04T16:04:09.353+05:30"
                             jcr:createdBy="admin"
