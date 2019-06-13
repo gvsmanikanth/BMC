@@ -85,6 +85,10 @@
                                              <h2 class="h2-variation-1">
                                                 Supported Platforms and Applications
                                              </h2>
+                                             <ul class="red-bullets">
+                                                <li>Create dynamic storyboards to present the full service management picture – and drill down through the data in real time for additional insights.</li>
+                                                <li>Try out the library of more than 90 out-of-the-box out-of-the-box ITSM performance/productivity reports to get a better understanding of trends and significant data.</li>
+                                             </ul>
                                           </div>
                                           <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
                                              <a href="#.">Download ></a>

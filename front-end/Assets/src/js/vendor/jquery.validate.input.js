@@ -67,7 +67,10 @@
                                 $input.parent().next('.error-text').text(err_hint);
                             }
                         }
-                    }                                       				
+                    }    
+
+                    // event triggering for getting the height of the changed form
+                    $(".form-wrapp form").trigger('heightChange');                                   				
             });	
             $this.change(function() {	
                 var $input = $(this);
@@ -91,7 +94,10 @@
                             $input.parent().next('.error-text').text(err_hint);
                         }
                     }
-                }                                                  
+                }   
+                 // event triggering for getting the height of the changed form
+                 $(".form-wrapp form").trigger('heightChange');  
+                                                             
             });            
 		}
        

@@ -1,13 +1,29 @@
 .form2{
+    background-color : #fff;
+
+    // IE footer white bar fix
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+       background-color : #414042;
+       .plainheader + .responsivegrid {
+            background: #fff;
+        }
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
+    }
+    .minHeight-1px{
+        min-height: 1px;
     }	
 	.maincontentcontainer>section:first-child>div:first-child{
 		padding-bottom:0px !important;
-	}	
-    background-color: #fff;
+	}	    
     .ornate-header{
         min-height: auto;
+        padding: 40px 0 !important;
+        @media only screen and (max-width: 900px) {           
+           float: left;            
+         }
         @media (min-width: $break-md) {
             min-height: 300px;
         }
@@ -21,9 +37,7 @@
             min-height: auto;
             padding: 0 1rem;
             
-			@include media(breakpointMedium){
-				padding: 0;
-            }  
+			 
             .layout-inner-wrap.flex{
                 align-items: center;
                 min-height: auto;   
@@ -32,12 +46,17 @@
                         min-height: 300px;
                     }
                 }
+                @media  only screen and (max-width: 900px) {
+                   flex-direction: column;
+
+                }
                
             }
             .layout-inner-wrap{
                 .cmp-title{
-                    h1{
+                    h1, h2{
                         color: #fff;
+                        line-height: 1.3em;
                     }
                 }                
             }            
@@ -56,11 +75,11 @@
             position: relative;
             @media (min-width: $break-md) {
                 z-index: 10; 
-                margin-top: -300px; 
+              //  margin-top: -300px; 
                 padding: 1.5em;         
             }  
-            @media (max-width: $break-md) {
-                margin-top: 0px !important;         
+            @media only screen and (max-width: 900px) {
+                margin-top: 30px !important;         
             }  
                             
             .btn-secondary {
@@ -79,8 +98,10 @@
                 display: block
             }
             .cmp-title{
-                h1{
+                h1,h2{
                     font-size: 30px;
+                    line-height: 1.3em;
+                    margin-bottom: 10px;
                 }
                 h1,h5{
                     font-weight: 500;
@@ -217,12 +238,13 @@
                                 padding-right: 20px;
                                 display: table-cell;
                                 vertical-align: text-top;
+                                width: 15px;
                             }
                         }
                     }                   
                 }
 
-                @media screen and (max-width: 1371px) and (min-width: 901px) {
+                @media screen and (max-width: 1298px) and (min-width: 901px) {
                     label.business_phone_label {
                         min-height: 42px;
                     }
@@ -268,7 +290,8 @@
         .cmp-title  {
             h2{
                 color: #333;
-                margin-bottom: 10px;
+                margin-bottom: 1.5rem;
+                line-height: 1.3em;
             }  
             h1{
                 color: #333;
@@ -360,16 +383,56 @@
 	
 	@media (min-width: $break-lg) {
 		.product-category-header.product-category-header2 .bannerContent .layout-inner-wrap .flex-item {
-			margin-left: 30px;
+			margin-left: 3rem;
 		}
 	}
 	@media (min-width: $break-md) {
 		[class*="50-50contentcontainer"] .equal-column:last-child {
-			padding-left: 2.05%;
-		}
-		
-	}
+			padding-left: 3rem;
+		}		
+    }
     
+    .redesign-wrapper {
+        position: relative;
+        .form-wrapp {
+            background: #fff;
+            padding-bottom: 30px;
+            @media (min-width: 901px) {
+                position: absolute;
+                top: 40px;
+                left: 0;    
+                right: 0;	
+                width: 100%;
+                background: transparent;
+                padding-bottom: initial;
+            }           
+        }
+    }
+    .pointer-none{
+        pointer-events: none;
+    }
+    .pointer-auto{
+        pointer-events: auto;
+    }
+    .form-wrapp > .aem-GridColumn.aem-GridColumn--default--12 > section {
+        padding: 0;
+    }
+    .form-wrapp{
+        .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+            margin-top: 0;
+        }       
+        .aem-Grid.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--6 {
+                @media only screen and (max-width: 900px) {
+                    float: none;
+                    clear: both;
+                    width: 100%;
+                }
+        }   
+        
+    }
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+        margin-top: 0;
+    }
 
 }
 
