@@ -131,6 +131,12 @@
                                         value="Infographics"/>
                                 </items>
                             </assetsHeadingPrefix>
+                            <customAssetHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="You may add your own custom text for the asset heading here."
+                                fieldLabel="Optional: custom asset heading text."
+                                name="./customAssetHeading"/>
                             <heading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
