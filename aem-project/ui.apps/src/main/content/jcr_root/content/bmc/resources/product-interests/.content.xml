@@ -1,56 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="cq:Page">
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
     <jcr:content jcr:primaryType="cq:PageContent"/>
     <caption
-        jcr:primaryType="nt:unstructured"
-        disabled="true"
-        dropDownDisplay="true"
-        selected="true"
-        text="Product Interest"/>
+            jcr:primaryType="nt:unstructured"
+            disabled="true"
+            dropDownDisplay="true"
+            selected="true"
+            text="Product Interest"/>
     <uncategorized
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Uncategorized"
-        dropDownDisplay="No"/>
-    <_x0038_46325100
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix"
-        dropDownDisplay="No"
-       /><!-- WEB-5295 -->
-    <_x0035_76550803
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight AppVisibility"
-        dropDownDisplay="No"
-        /><!-- WEB-5294 -->
-    <!-- SAFE DELETE <_x0038_00480197
-        jcr:primaryType="nt:unstructured"
-        jcr:title="App_Ops MarketZone License"
-        dropDownDisplay="No"/>-->
-    <_x0039_81173424
-        jcr:primaryType="nt:unstructured"
-        jcr:title="CMDB"
-        dropDownDisplay="No"/>
-    <_x0036_42178370
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Orchestration"
-        dropDownDisplay="Yes"
-        text="TrueSight Orchestration"
-        value="TrueSight Orchestration"/>
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Uncategorized"
+            dropDownDisplay="No"/>
+    <_x0031_89379811
+            jcr:primaryType="nt:unstructured"
+            jcr:title="All PL Products"
+            dropDownDisplay="No"/>
+    <_x0031_52162027
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Automated Mainframe Intelligence (AMI)"
+            dropDownDisplay="Yes"
+            text="Automated Mainframe Intelligence (AMI)"
+            value="Automated Mainframe Intelligence (AMI)"/>
     <_x0033_30402112
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BCA"
-        dropDownDisplay="No"/>
-    <_x0034_99579858
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Client Management"
-        dropDownDisplay="Yes"
-        text="BMC Helix Client Management"
-        value="Helix Client Management"/> <!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BCA"
+            dropDownDisplay="No"/>
+    <!-- WEB-5296 -->
     <_x0037_03588770
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Bladelogic Database Automation"
-        dropDownDisplay="No"
-       /><!--  WEB-5295 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Bladelogic Database Automation"
+            dropDownDisplay="No"
+    /><!--  WEB-5295 -->
     <!-- SAFE DELETE <_x0033_70187697
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Threat Director"
@@ -60,119 +42,336 @@
         jcr:title="BladeLogic UCS Royalty (Cisco)"
         dropDownDisplay="No"/>-->
     <_x0037_67365114
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Bladelogic Middleware Automation"
-        dropDownDisplay="No"
-        /><!--  WEB-5295 -->
-    <_x0032_15078746
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Consulting Services"
-        dropDownDisplay="No"/>
-    <_x0037_32296000
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Education Services"
-        dropDownDisplay="No"/>
-    <_x0035_49295455
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Network Automation"
-        dropDownDisplay="Yes"
-        text="TrueSight Network Automation"
-        value="TrueSight Network Automation"/>
-    <_x0031_13394324
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Operations Management"
-        dropDownDisplay="Yes"
-        text="TrueSight Operations Management"
-        value="TrueSight Operations Management"/>
-    <_x0032_12041549
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Server Automation"
-        dropDownDisplay="Yes"
-        text="TrueSight Server Automation"
-        value="TrueSight Server Automation"/>
-    <_x0030_00918022
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Vulnerability Management"
-        dropDownDisplay="Yes"
-        text="TrueSight Vulnerability Management"
-        value="TrueSight Vulnerability Management"/>
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Bladelogic Middleware Automation"
+            dropDownDisplay="No"
+    />
     <_x0037_43511112
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Business Workflows"
-        dropDownDisplay="No"/>
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Business Workflows"
+            dropDownDisplay="No"/>
     <_x0032_44922076
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Cloud Lifecycle Management"
-        dropDownDisplay="Yes"
-        text="Cloud Lifecycle Management"
-        value="Cloud Lifecycle Management"/>
-   <!-- SAFE DELETE <_x0039_83747628
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Consulting"
-        dropDownDisplay="Yes"
-        text="BMC Consulting Services"
-        value="Consulting"/>-->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Cloud Lifecycle Management"
+            dropDownDisplay="Yes"
+            text="Cloud Lifecycle Management"
+            value="Cloud Lifecycle Management"/>
+    <_x0039_81173424
+            jcr:primaryType="nt:unstructured"
+            jcr:title="CMDB"
+            dropDownDisplay="No"/>
+    <!-- Added 5/3/19 -->
+    <_x0031_83171031
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Cognitive Service Management"
+            dropDownDisplay="No"/>
+    <!--  WEB-5295 -->
+    <_x0032_15078746
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Consulting Services"
+            dropDownDisplay="No"/>
     <_x0038_61762869
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-D"
-        dropDownDisplay="No"
-        /><!-- WEB-5295 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-D"
+            dropDownDisplay="No"
+    /><!-- WEB-5295 -->
     <_x0031_63366495
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M"
-        dropDownDisplay="Yes"
-        text="Control-M"
-        value="Control-M"/> <!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M"
+            dropDownDisplay="Yes"
+            text="Control-M"
+            value="Control-M"/> <!-- WEB-5296 -->
     <_x0031_64411013
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Application Integrator"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Application Integrator"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0035_66639210
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Automation API"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Automation API"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0036_37969887
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Batch Impact Manager"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Batch Impact Manager"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0034_14177221
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M for Hadoop"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M for Hadoop"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0032_65389868
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M for SAP"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M for SAP"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0039_78261752
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Managed File Transfer"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Managed File Transfer"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0037_53538028
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Self Service"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Self Service"
+            dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0035_89742557
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Control-M Workload Change Manager"
+            dropDownDisplay="No"/>
+    <_x0037_04248823
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DB2 Lob Master"
+            dropDownDisplay="No"/>
+    <_x0039_49842808
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DB2 NGT"
+            dropDownDisplay="No"/>
+    <_x0036_91273051
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DSM Marketzone"
+            dropDownDisplay="No"/>
+    <!-- WEB-5295 -->
+    <_x0031_26581011
+            jcr:primaryType="nt:unstructured"
+            jcr:title="DSO Marketzone"
+            dropDownDisplay="No"/>
+    <_x0037_32296000
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Education Services"
+            dropDownDisplay="No"/>
+    <_x0033_60899534
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Education Services"
+            dropDownDisplay="Yes"
+            text="Education &amp; Services"
+            value="Education Services"/>
+    <!-- WEB-5296 -->
+    <_x0031_96956382
+            jcr:primaryType="nt:unstructured"
+            jcr:title="FootPrints Service Core"
+            dropDownDisplay="No"
+    /><!-- WEB-5295 -->
+
+    <_x0034_08630474
+            jcr:primaryType="nt:unstructured"
+            jcr:title="FootPrints Service Core"
+            dropDownDisplay="No"/>
+    <_x0038_46325100
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix"
+            dropDownDisplay="No"
+    />
+    <!-- WEB-5296 -->
+    <_x0039_40824846
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Business Workflows"
+            dropDownDisplay="Yes"
+            text="BMC Helix Business Workflows"
+            value="Helix Business Workflows"/>
+    <_x0034_99579858
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Client Management"
+            dropDownDisplay="Yes"
+            text="BMC Helix Client Management"
+            value="Helix Client Management"/>
+    <_x0035_07778250
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Digital Workplace"
+            dropDownDisplay="Yes"
+            text="BMC Helix Digital Workplace"
+            value="Helix Digital Workplace"/>
+    <_x0031_45457443
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Discovery"
+            dropDownDisplay="Yes"
+            text="BMC Helix Discovery"
+            value="Helix Discovery"/>
+    <_x0037_62200338
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix ITSM"
+            dropDownDisplay="Yes"
+            text="BMC Helix ITSM"
+            value="Helix ITSM"/>
+    <_x0038_66789680
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Platform"
+            dropDownDisplay="Yes"
+            text="BMC Helix Platform"
+            value="Helix Platform"/>
+    <_x0032_48677372
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Remedyforce"
+            dropDownDisplay="Yes"
+            text="BMC Helix Remedyforce"
+            value="Helix Remedyforce"/>
+    <_x0031_74236796
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe Data Management for DB2"
+            dropDownDisplay="Yes"
+            text="Mainframe Data Management for DB2"
+            value="Mainframe Data Management for DB2"/>
+    <_x0031_80034581
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe Data Management for IMS"
+            dropDownDisplay="Yes"
+            text="Mainframe Data Management for IMS"
+            value="Mainframe Data Management for IMS"/>
+    <_x0034_38283521
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe MLC Cost Management"
+            dropDownDisplay="Yes"
+            text="Mainframe MLC Cost Management"
+            value="Mainframe MLC Cost Management"/>
+    <_x0037_88612595
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Mainframe Systems Management"
+            dropDownDisplay="Yes"
+            text="Mainframe Systems Management (MainView)"
+            value="Mainframe Systems Management"/>
+    <_x0031_33164715
+            jcr:primaryType="nt:unstructured"
+            jcr:title="MyIT Service Broker"
+            dropDownDisplay="No"/>
+    <_x0034_72046068
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Release Lifecycle Management"
+            dropDownDisplay="No"/>
+    <_x0036_01439928
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Remedy"
+            dropDownDisplay="Yes"
+            text="Remedy (On Prem)"
+            value="Remedy"/>
+    <_x0038_61753444
+            jcr:primaryType="nt:unstructured"
+            jcr:title="SaaS MyIT"
+            dropDownDisplay="No"/>
+    <_x0038_91064966
+            jcr:primaryType="nt:unstructured"
+            jcr:title="SaaS Remedyforce"
+            dropDownDisplay="No"/>
+    <_x0039_23900731
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Track-It!"
+            dropDownDisplay="No"
+    />
+    <!-- WEB-5295 -->
+    <_x0039_85393383
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight APM"
+            dropDownDisplay="No"
+    />
+    <_x0033_84220394
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Application Management"
+            dropDownDisplay="No"/>
+    <!-- WEB-5295 -->
+    <_x0035_76550803
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight AppVisibility"
+            dropDownDisplay="No"
+    />
+    <!-- WEB-5294 -->
+    <_x0030_04182175
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Capacity Optimization"
+            dropDownDisplay="Yes"
+            text="TrueSight Capacity Optimization"
+            value="TrueSight Capacity Optimization"/>
+    <_x0031_87169023
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Cost"
+            dropDownDisplay="Yes"
+            text="TrueSight Cloud Cost"
+            value="TrueSight Cloud Cost"/>
+    <_x0031_55163094
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Cost Control"
+            dropDownDisplay="Yes"
+            text="TrueSight Cloud Cost Control"
+            value="TrueSight Cloud Cost Control"/>
+
+    <_x0031_54177794
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Operations"
+            dropDownDisplay="Yes"
+            text="TrueSight Cloud Operations"
+            value="TrueSight Cloud Operations"/>
+    <_x0036_77181073
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Security"
+            dropDownDisplay="Yes"
+            text="TrueSight Cloud Security"
+            value="TrueSight Cloud Security"/>
+    <_x0031_78280437
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Infrastructure"
+            dropDownDisplay="No"/>
+    <_x0034_81296265
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Intelligence"
+            dropDownDisplay="No"
+    />
+    <_x0032_04033756
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Intelligence"
+            dropDownDisplay="No"
+    />
+    <_x0037_40355219
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Middleware"
+            dropDownDisplay="No"/>
+    <_x0035_49295455
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Network Automation"
+            dropDownDisplay="Yes"
+            text="TrueSight Network Automation"
+            value="TrueSight Network Automation"/>
+    <_x0031_13394324
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Operations Management"
+            dropDownDisplay="Yes"
+            text="TrueSight Operations Management"
+            value="TrueSight Operations Management"/>
+    <!-- WEB-5294 -->
+    <!-- SAFE DELETE <_x0038_00480197
         jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M Workload Change Manager"
-        dropDownDisplay="No"/><!-- WEB-5296 -->
+        jcr:title="App_Ops MarketZone License"
+        dropDownDisplay="No"/>-->
+    <_x0036_42178370
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Orchestration"
+            dropDownDisplay="Yes"
+            text="TrueSight Orchestration"
+            value="TrueSight Orchestration"/>
+    <!-- WEB-5295 -->
+    <_x0033_23972721
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Pulse"
+            dropDownDisplay="No"
+    />
+    <_x0032_12041549
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Server Automation"
+            dropDownDisplay="Yes"
+            text="TrueSight Server Automation"
+            value="TrueSight Server Automation"/>
+    <_x0030_00918022
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Vulnerability Management"
+            dropDownDisplay="Yes"
+            text="TrueSight Vulnerability Management"
+            value="TrueSight Vulnerability Management"/>
+
+
+    <!-- SAFE DELETE <_x0039_83747628
+         jcr:primaryType="nt:unstructured"
+         jcr:title="Consulting"
+         dropDownDisplay="Yes"
+         text="BMC Consulting Services"
+         value="Consulting"/>-->
+    <!-- WEB-5296 -->
     <!-- SAFE DELETE <_x0039_21328781
         jcr:primaryType="nt:unstructured"
         jcr:title="D&amp;A"
         dropDownDisplay="No"/>-->
-    <_x0031_74236796
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Mainframe Data Management for DB2"
-        dropDownDisplay="Yes"
-        text="Mainframe Data Management for DB2"
-        value="Mainframe Data Management for DB2"/>
-    <_x0037_04248823
-        jcr:primaryType="nt:unstructured"
-        jcr:title="DB2 Lob Master"
-        dropDownDisplay="No"/>
-    <_x0039_49842808
-        jcr:primaryType="nt:unstructured"
-        jcr:title="DB2 NGT"
-        dropDownDisplay="No"/>
+
+
     <!-- SAFE DELETE <_x0034_71833371
         jcr:primaryType="nt:unstructured"
         jcr:title="DB2 SQL Performance-Recovery"
@@ -181,16 +380,8 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="DCA MarketZone"
         dropDownDisplay="No"/>-->
-    <_x0034_72046068
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Release Lifecycle Management"
-        dropDownDisplay="No"/>
-    <_x0031_45457443
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Discovery"
-        dropDownDisplay="Yes"
-        text="BMC Helix Discovery"
-        value="Helix Discovery"/><!-- WEB-5296 -->
+
+    <!-- WEB-5296 -->
     <!-- SAFE DELETE <_x0034_99515849
         jcr:primaryType="nt:unstructured"
         jcr:title="DM - DS"
@@ -215,22 +406,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="DM Other"
         dropDownDisplay="No"/>-->
-    <_x0033_60899534
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Education Services"
-        dropDownDisplay="Yes"
-        text="Education &amp; Services"
-        value="Education Services"/> <!-- WEB-5296 -->
-    <_x0031_96956382
-        jcr:primaryType="nt:unstructured"
-        jcr:title="FootPrints Service Core"
-        dropDownDisplay="No"
-       /><!-- WEB-5295 -->
-       
-    <_x0034_08630474
-        jcr:primaryType="nt:unstructured"
-        jcr:title="FootPrints Service Core"
-        dropDownDisplay="No"/>
+
     <!-- SAFE DELETE <_x0034_12363316
         jcr:primaryType="nt:unstructured"
         jcr:title="HR Case Management"
@@ -243,32 +419,14 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="IDM"
         dropDownDisplay="No"/>-->
-    <_x0031_80034581
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Mainframe Data Management for IMS"
-        dropDownDisplay="Yes"
-        text="Mainframe Data Management for IMS"
-        value="Mainframe Data Management for IMS"/>
-    <_x0038_66789680
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Platform"
-        dropDownDisplay="Yes"
-        text="BMC Helix Platform"
-        value="Helix Platform"/><!-- WEB-5296 -->
+
+    <!-- WEB-5296 -->
     <!-- SAFE DELETE <_x0031_64351178
         jcr:primaryType="nt:unstructured"
         jcr:title="ITBM"
         dropDownDisplay="No"/>-->
-    <_x0036_91273051
-        jcr:primaryType="nt:unstructured"
-        jcr:title="DSM Marketzone"
-        dropDownDisplay="No"/>
-    <_x0037_88612595
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Mainframe Systems Management"
-        dropDownDisplay="Yes"
-        text="Mainframe Systems Management (MainView)"
-        value="Mainframe Systems Management"/><!-- WEB-5296 -->
+
+    <!-- WEB-5296 -->
     <!-- SAFE DELETE <_x0038_36735200
         jcr:primaryType="nt:unstructured"
         jcr:title="Mobility"
@@ -279,26 +437,11 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Mobility Classic"
         dropDownDisplay="No"/>-->
-    <_x0035_07778250
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Digital Workplace"
-        dropDownDisplay="Yes"
-        text="BMC Helix Digital Workplace"
-        value="Helix Digital Workplace"/>
-    <_x0031_33164715
-        jcr:primaryType="nt:unstructured"
-        jcr:title="MyIT Service Broker"
-        dropDownDisplay="No"/>
     <!-- SAFE DELETE <_x0037_65172176
         jcr:primaryType="nt:unstructured"
         jcr:title="P&amp;A MarketZone"
         dropDownDisplay="No"/>-->
-    <_x0034_38283521
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Mainframe MLC Cost Management"
-        dropDownDisplay="Yes"
-        text="Mainframe MLC Cost Management"
-        value="Mainframe MLC Cost Management"/>
+
     <!-- SAFE DELETE <_x0032_06500945
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-AAI"
@@ -315,18 +458,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="R4-SUBZERO"
         dropDownDisplay="No"/>-->
-    <_x0036_01439928
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Remedy"
-        dropDownDisplay="Yes"
-        text="Remedy (On Prem)"
-        value="Remedy"/><!-- WEB-5296 -->
-    <_x0039_40824846
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Business Workflows"
-        dropDownDisplay="Yes"
-        text="BMC Helix Business Workflows"
-        value="Helix Business Workflows"/> <!-- WEB-5294 -->
+    <!-- WEB-5294 -->
     <!-- SAFE DELETE <_x0038_61054420
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS APM"
@@ -339,66 +471,23 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS BCM"
         dropDownDisplay="No"/>-->
-    <_x0033_84220394
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Application Management"
-        dropDownDisplay="No"/>
     <!-- SAFE DELETE <_x0037_85764064
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Marketplace"
         dropDownDisplay="No"/>-->
-    <_x0038_61753444
-        jcr:primaryType="nt:unstructured"
-        jcr:title="SaaS MyIT"
-        dropDownDisplay="No"/>
     <!-- SAFE DELETE<_x0038_09441375
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS MyIT"
         dropDownDisplay="No"/>-->
-    <_x0032_48677372
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix Remedyforce"
-        dropDownDisplay="Yes"
-        text="BMC Helix Remedyforce"
-        value="Helix Remedyforce"/><!-- WEB-5296 -->
+    <!-- WEB-5296 -->
     <!-- SAFE DELETE <_x0030_55929804
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Remedy HR Case Mgmt"
         dropDownDisplay="No"/>-->
-    <_x0037_62200338
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Helix ITSM"
-        dropDownDisplay="Yes"
-        text="BMC Helix ITSM"
-        value="Helix ITSM"/><!-- WEB-5296 -->
-    <_x0038_91064966
-        jcr:primaryType="nt:unstructured"
-        jcr:title="SaaS Remedyforce"
-        dropDownDisplay="No"/>
-    <_x0036_77181073
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Cloud Security"
-        dropDownDisplay="Yes"
-        text="TrueSight Cloud Security"
-        value="TrueSight Cloud Security"/>
     <_x0038_18409632
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Vulnerability Management"
-        dropDownDisplay="No"/>
-    <_x0034_81296265
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Intelligence"
-        dropDownDisplay="No"
-        /><!-- WEB-5295 -->
-    <_x0033_23972721
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Pulse"
-        dropDownDisplay="No"
-       /><!-- WEB-5295 -->
-    <_x0031_26581011
-        jcr:primaryType="nt:unstructured"
-        jcr:title="DSO Marketzone"
-        dropDownDisplay="No"/>
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Vulnerability Management"
+            dropDownDisplay="No"/>
     <!-- SAFE DELETE <_x0036_79964557
         jcr:primaryType="nt:unstructured"
         jcr:title="SDE"
@@ -411,79 +500,18 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="TMart"
         dropDownDisplay="No"/>-->
-    <_x0039_23900731
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Track-It!"
-        dropDownDisplay="No"
-       /><!-- WEB-5295 -->
-    <_x0039_85393383
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight APM"
-        dropDownDisplay="No"
-       /> <!-- WEB-5294 -->
-    <_x0030_04182175
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Capacity Optimization"
-        dropDownDisplay="Yes"
-        text="TrueSight Capacity Optimization"
-        value="TrueSight Capacity Optimization"/>
-    <_x0031_87169023
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Cloud Cost"
-        dropDownDisplay="Yes"
-        text="TrueSight Cloud Cost"
-        value="TrueSight Cloud Cost"/>
-    <_x0031_55163094
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Cloud Cost Control"
-        dropDownDisplay="Yes"
-        text="TrueSight Cloud Cost Control"
-        value="TrueSight Cloud Cost Control"/>
-        
-    <_x0031_54177794
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Cloud Operations"
-        dropDownDisplay="Yes"
-        text="TrueSight Cloud Operations"
-        value="TrueSight Cloud Operations"/>
-    <_x0031_78280437
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Infrastructure"
-        dropDownDisplay="No"/>
-    <_x0037_40355219
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Middleware"
-        dropDownDisplay="No"/>
-    <_x0032_04033756
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Intelligence"
-        dropDownDisplay="No"
-        /><!-- WEB-5295 -->
+    <!-- WEB-5295 -->
     <_x0038_93850432
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Unknown"
-        dropDownDisplay="No"/>
-    <_x0031_40086823
-        jcr:primaryType="nt:unstructured"
-        jcr:title="WLA MarketZone"
-        dropDownDisplay="No"/>
-    <!-- Added 5/3/19 -->
-    <_x0031_83171031
             jcr:primaryType="nt:unstructured"
-            jcr:title="Cognitive Service Management"
+            jcr:title="Unknown"
             dropDownDisplay="No"/>
+    <_x0031_40086823
+            jcr:primaryType="nt:unstructured"
+            jcr:title="WLA MarketZone"
+            dropDownDisplay="No"/>
+
     <_x0031_99147377
             jcr:primaryType="nt:unstructured"
             jcr:title="XPL"
             dropDownDisplay="No"/>
-    <_x0031_89379811
-            jcr:primaryType="nt:unstructured"
-            jcr:title="All PL Products"
-            dropDownDisplay="No"/>
-    <_x0031_52162027
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Automated Mainframe Intelligence (AMI)"
-            dropDownDisplay="Yes"
-            text="Automated Mainframe Intelligence (AMI)"
-        	value="Automated Mainframe Intelligence (AMI)"/> <!-- WEB-5294 -->
 </jcr:root>
