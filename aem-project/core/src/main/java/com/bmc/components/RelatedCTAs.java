@@ -9,18 +9,24 @@ import com.day.cq.wcm.api.Page;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.sling.api.resource.ValueMap;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
+import com.bmc.mixins.MetadataInfoProvider_RequestCached;
+import com.bmc.mixins.MetadataInfoProvider;
 
 /**
  * Provides Related CTAs Component properties (components/content/related-CTAs) for Use
  */
-public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, ResourceProvider, UrlResolver {
+public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider,MetadataInfoProvider_RequestCached, ResourceProvider, UrlResolver {
 	 private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	enum HeadingType {
@@ -58,13 +64,44 @@ public class RelatedCTAs extends WCMUsePojo implements MultifieldDataProvider, R
     public List<Item> getItems() { return items; }
     private String headingText = "";
     private List<Item> items;
+    public List<HashMap> getRelatedLinks() {
+        return relatedLinks;
+    }
+    
+    protected HashMap<String,String> relatedLink;
+
+    protected List<HashMap> relatedLinks;
+
 
     @Override
     public void activate() throws Exception {
         items = mapMultiFieldValues("internalPagePaths", path -> getLinkPath(path,getLinkInfo(path, true), this));
         headingText = resolveHeadingText();
-    }
-
+        Resource resource = getResource();
+     // iterate through the multifield card and fetch its page properties
+        ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("flexiLinkItems").listIterator();
+        relatedLinks = new ArrayList<>();
+        while (pagePathsNodes.hasNext()) {
+            Resource childPage = pagePathsNodes.next();
+            relatedLink = new HashMap<>();
+            relatedLink.put("pagePath", childPage.getValueMap().get("pagePath").toString());
+            Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
+            if (page != null){
+            	ValueMap pageMap = page.getProperties();
+            	 relatedLink.put("title", pageMap.getOrDefault("navTitle","").toString());
+            	 relatedLink.put("description", pageMap.getOrDefault("short_description","").toString());
+            }
+           // override title and description
+           if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
+        	   relatedLink.put("title", childPage.getValueMap().get("overrideTitle").toString());
+       		}
+           if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
+        	   relatedLink.put("description", childPage.getValueMap().get("overrideDescription").toString());
+       		}
+            relatedLinks.add(relatedLink);
+        	} 
+        }
+    
     private String resolveHeadingText() {
         ValueMap map = getResource().getValueMap();
 

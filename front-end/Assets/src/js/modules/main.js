@@ -155,13 +155,18 @@ function addFilterToArrayProtoype() {
 		//When switching from a  country to a non-GDPR country, remember to also check the box. When going the other way (non-GDPR to GDPR country) uncheck the box
 		if(bmcMeta.form.optIn == 'true'){
 			$("#C_OptIn_group").hide();
-			
+			if ($('body').hasClass('form2')) {
+				$('#C_OptIn_group').parent().parent().hide();
+			}
 			var checkSelection = function(){
 				//var status = $('option:selected', this).attr('data-id');
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
 				if(status == true){
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
+						if ($('body').hasClass('form2')) {
+							$('#C_OptIn_group').parent().parent().show();
+						}
 						$("#C_OptIn").attr("checked",false);
 						$("#C_OptIn").attr("type","checkbox");
 						$("#C_OptIn").attr("value","No");
@@ -170,6 +175,9 @@ function addFilterToArrayProtoype() {
 					}
 				}else{
 					$("#C_OptIn_group").hide();
+					if ($('body').hasClass('form2')) {
+						$('#C_OptIn_group').parent().parent().hide();
+					}
 					$("#C_OptIn").attr("checked",true);
 					$("#C_OptIn").attr("type","hidden");
 					$("#C_OptIn").attr("value","Yes");
@@ -180,7 +188,7 @@ function addFilterToArrayProtoype() {
 			
 			//Check on page load.
 			checkSelection();
-			
+			 
 			$("select[name^='C_Country']").on('change', function() { 
 				checkSelection();
 			});
@@ -556,11 +564,16 @@ function addFilterToArrayProtoype() {
 				}else{
 					if($('#C_State_Prov').attr('type') == "text")
 					{
-						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");
+						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");					
 						$inputs = $('form').find('input, textarea, select'),
 						$inputs.validateInputs();  
 					}
 					$('#C_State_Prov').children().remove().end().append(newstateoptions);
+
+					//Remove validations text and style
+					$('#C_State_Prov').parent().removeClass('valid-input');					
+					$('#C_State_Prov').parent().removeClass('validation-error-redesign validation-error');
+					$('#C_State_Prov').parent().next().text('');
 				}
 			}
 
@@ -589,7 +602,13 @@ function addFilterToArrayProtoype() {
 					$('#C_State_Prov').children().remove();
 					$('#C_State_Prov').parent().parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province (optional)</label><input type='text' name='C_State_Prov' id='C_State_Prov' >" + "</div>");
 					$inputs = $('form').find('input, textarea, select'),
-				$inputs.validateInputs();
+					$inputs.validateInputs();
+				}else if($('#C_State_Prov').prop('nodeName') == "INPUT")
+				{
+					$('#C_State_Prov').children().remove();
+					$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province <span class='optional-text'>(optional)</span></label><input type='text' name='C_State_Prov' id='C_State_Prov' required='false' >" + "</div>");
+					$inputs = $('form').find('input, textarea, select'),
+					$inputs.validateInputs();
 				}
 			}	
 			

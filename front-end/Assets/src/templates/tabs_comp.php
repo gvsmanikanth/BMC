@@ -32,6 +32,9 @@ include 'php-inc/head.php';
                                        <li class="p2 flex-cell n-col-3 r-tabs-state-default r-tabs-tab">
                                           <a class="white bold no-scroll r-tabs-anchor" href="#tab-d0be9a15-decf-4133-972a-191c40804ed9" onclick="">Bottom Align</a>
                                        </li>
+									   <li class="p2 flex-cell n-col-3 r-tabs-state-default r-tabs-tab">
+                                          <a class="white bold no-scroll r-tabs-anchor" href="#tab-d0be9a15-decf-4133-972a-191c40805ed9" onclick="">Content Height</a>
+                                       </li>
                                     </ul>
                                     <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-936679b5-2164-4bd5-852b-ab00e1ee3abf" class="r-tabs-anchor">Top Align</a></div>
                                     <div id="tab-936679b5-2164-4bd5-852b-ab00e1ee3abf" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
@@ -163,6 +166,41 @@ include 'php-inc/head.php';
                                                                               <li><a href="/content/bmc/videos.html?vID=KUHmfrl3Ev4" target="_self" class="modal-youtube-video-player">Transform digital service delivery in less than 45 days (1:43) &nbsp;›</a></li>
                                                                            </ul>
                                                                         </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                            </div>
+                                                         </section>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </section>
+                                          </div>
+                                       </div>
+                                    </div>           
+									<div class="r-tabs-accordion-title"><a href="#tab-d0be9a15-decf-4133-972a-191c40805ed9" class="r-tabs-anchor">Content Height</a></div>
+                                    <div id="tab-d0be9a15-decf-4133-972a-191c40805ed9" class="section bg-seashell r-tabs-state-default r-tabs-panel">
+                                       <div class="section-content flex-tab">
+                                          <div class="section responsivegrid">
+                                             <section>
+                                                <div class="layout-inner-wrap">
+                                                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                                      <div class="33-66contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                                                         <section>
+                                                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                                                               <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
+                                                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                                                     <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12 ">
+                                                                        <div class="cq-dd-image text-center align_bottom">
+                                                                           <img src="https://www.bmc.com/content/dam/bmc/migration/image/truesight-TI-Tab-03.jpg" alt="asdfdf">
+                                                                        </div>
+                                                                     </div>
+                                                                  </div>
+                                                               </div>
+                                                               <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--8">
+                                                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                                                     <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+                                                                        <p>Make your IT department a key enabler of digital transform.</p>
                                                                      </div>
                                                                   </div>
                                                                </div>
