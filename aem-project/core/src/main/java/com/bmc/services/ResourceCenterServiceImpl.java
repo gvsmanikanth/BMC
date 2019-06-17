@@ -299,7 +299,7 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
         addPaginationPredicates(urlParameters, queryParamsMap);
 
-        log.error("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
+        log.debug("\n\n\naddResourceParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
         return queryParamsMap;
     }
 
