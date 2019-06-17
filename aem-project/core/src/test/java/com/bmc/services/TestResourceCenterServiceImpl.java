@@ -79,7 +79,7 @@ public class TestResourceCenterServiceImpl  {
 
     @Before
     public void setUp() throws Exception {
-        jcrResource = aemContext.load().json("/pages/bmc-content-pages.json", "/content/bmc/us/en");
+//        jcrResource = aemContext.load().json("/pages/bmc-content-pages.json", "/content/bmc/us/en");
 
         when(mockResolverFactory.getServiceResourceResolver(any(Map.class))).thenReturn(aemContext.resourceResolver());
         aemContext.registerService(QueryBuilder.class);
@@ -112,18 +112,14 @@ public class TestResourceCenterServiceImpl  {
 
         assertNotNull(queryParamsMap);
         assertTrue(!queryParamsMap.isEmpty());
-        assertTrue(queryParamsMap.get("group.1_property").equals("ic-topics"));
+        assertTrue(queryParamsMap.get("group.1_property").equals("jcr:content/ic-topics"));
         assertTrue(queryParamsMap.get("group.1_property.value").equals("ic-topics-773791639"));
-        assertTrue(queryParamsMap.get("group.1_property.operation").equals("like"));
 
-        assertTrue(queryParamsMap.get("group.2_property").equals("ic-target-industry"));
+        assertTrue(queryParamsMap.get("group.2_property").equals("jcr:content/ic-target-industry"));
         assertTrue(queryParamsMap.get("group.2_property.value").equals("ic-target-industry-272486674"));
-        assertTrue(queryParamsMap.get("group.2_property.operation").equals("like"));
 
-        assertTrue(queryParamsMap.get("group.3_property").equals("ic-buyer-stage"));
+        assertTrue(queryParamsMap.get("group.3_property").equals("jcr:content/ic-buyer-stage"));
         assertTrue(queryParamsMap.get("group.3_property.value").equals("ic-buyer-stage-776139085"));
-        assertTrue(queryParamsMap.get("group.3_property.operation").equals("like"));
-
 
         assertTrue(queryParamsMap.get("p.limit").equals("2"));
         assertTrue(queryParamsMap.get("p.offset").equals("6"));
@@ -131,7 +127,7 @@ public class TestResourceCenterServiceImpl  {
         assertTrue(queryParamsMap.get("4_orderby").equals("@cq:lastModified"));
         assertTrue(queryParamsMap.get("4_orderby.sort").equals("asc"));
 
-        assertTrue(queryParamsMap.get("5_orderby").equals("@jcr:title"));
+        assertTrue(queryParamsMap.get("5_orderby").equals("@jcr:content/jcr:title"));
         assertTrue(queryParamsMap.get("5_orderby.sort").equals("desc"));
     }
 
