@@ -4,6 +4,8 @@ import com.bmc.consts.GeneralConsts;
 import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.ResourceCenterConstants;
+import com.bmc.pum.PUMService;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.util.JsonSerializer;
 import com.day.cq.search.PredicateGroup;
@@ -12,10 +14,12 @@ import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
 import org.apache.felix.scr.annotations.*;
+import org.apache.felix.scr.annotations.Properties;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +29,11 @@ import java.util.*;
 
 @Component(label = "Resource Center Service", metatype = true)
 @Service(value=ResourceCenterService.class)
-public class ResourceCenterServiceImpl implements ResourceCenterService {
-    private final Logger log = LoggerFactory.getLogger(ResourceCenterConsts.loggerName);
+@Properties({
+    @Property(name = PUMService.SERVICE_TYPE, value = "base", propertyPrivate = true)
+})
+public class ResourceCenterServiceImpl implements ConfigurableService, ResourceCenterService {
+    private final Logger log = LoggerFactory.getLogger(ResourceCenterConstants.loggerName);
 
     @Reference
     private QueryBuilder queryBuilder;
@@ -51,6 +58,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
     private List<String> resourceFiltersList;
 
+    @Reference
+    private ConfigurationAdmin configAdmin;
+    
+    
     @Activate
     protected void activate(final Map<String, Object> props) {
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
@@ -189,9 +200,9 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
             // extract url params and put them into query params
             String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
             for(int i = 0; i < queryValues.length; i++, predicateIndex++) {
-                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), "jcr:content/" + queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
-                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+                //queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
             }
 
         } catch (Exception e) {
@@ -235,14 +246,14 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         try {
             Integer pageIndex = 0;
             Integer resultsPerPage = 0;
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PAGE_INDEX)!=null)
-                pageIndex = Integer.parseInt(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PAGE_INDEX)[0]);
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_RESULTS_PER_PAGE)!=null)
-                resultsPerPage = Integer.parseInt(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_RESULTS_PER_PAGE)[0]);
+            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX) != null)
+                pageIndex = Integer.parseInt(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX)[0]);
+            if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_RESULTS_PER_PAGE) != null)
+                resultsPerPage = Integer.parseInt(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_RESULTS_PER_PAGE)[0]);
 
-            if(resultsPerPage>0) {
-                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PAGE_IDX, new Integer(pageIndex * resultsPerPage).toString());
-                queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_RESULT_PER_PAGE, resultsPerPage.toString());
+            if(resultsPerPage > 0) {
+                queryParamsMap.put(ResourceCenterConstants.QUERY_PARAM_PAGE_IDX, new Integer(pageIndex * resultsPerPage).toString());
+                queryParamsMap.put(ResourceCenterConstants.QUERY_PARAM_RESULT_PER_PAGE, resultsPerPage.toString());
             }
         } catch (Exception e) {
 
@@ -288,9 +299,9 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
         Map<String, String> queryParamsMap = getBaseQueryParams(urlParameters);
 
         // should not have more than 1 rootPath param value
-        if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH) != null
-                && urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH).length == 1) {
-            queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_PATH)[0]);
+        if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH) != null
+                && urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH).length == 1) {
+            queryParamsMap.put(ResourceCenterConstants.RC_QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH)[0]);
         }
         // adding other url parameters into query parameters
         int predicateIndex = 1;
@@ -325,7 +336,10 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
                         String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        String assetLink = hit.getNode().hasProperty(JcrConsts.ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.ASSET_LINK).getString() : null;
+                        String assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
+                        if(assetLink == null && hit.getNode().hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
+                        	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                        }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
                                 lastModified, assetLink));
                     } catch (Exception e) {
@@ -344,6 +358,11 @@ public class ResourceCenterServiceImpl implements ResourceCenterService {
     @Override
     public String getResourceResultsJSON(Map<String, String[]> urlParameters) {
         return JsonSerializer.serialize(getResourceResults(urlParameters));
+    }
+
+    @Override
+    public ConfigurationAdmin getConfigurationAdmin() {
+        return configAdmin;
     }
 
 

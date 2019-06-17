@@ -1,4 +1,4 @@
-# BMC-DXP read-me for search API
+# BMC-DXP Readme for search API
 
 # API end points:
     - Get all filters: <host>:<port>/bin/contentapi/filters
@@ -49,5 +49,25 @@
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&resultsPerPage=10&pageIndex=0
 
 
+# Indexes
+
+Oak Lucene index is configured to avoid full traversal when filtering content. Index is configured using ACS Commons Ensure Index https://adobe-consulting-services.github.io/acs-aem-commons/features/ensure-oak-index/index.html
 
 
+### Example
+    - oak:index
+        - icResource
+            - indexRules
+                - cq:Page
+                    - properties
+                        - ictopics
+                            - propertyIndex = true
+                            - name = jcr:content/ic-topics
+                        - ictargetpersona
+                            - propertyIndex = true
+                            - name = jcr:content/ic-target-persona
+
+To confirm that index works, run Explain Query in ```/libs/granite/operations/content/diagnosis/tool.html/granite_queryperformance```
+```
+/jcr:root/content/bmc/us/en/documents//element(*, cq:Page) [ (jcr:content/@ic-buyer-stage = 'ic-buyer-stage-453243382')  ]
+```
