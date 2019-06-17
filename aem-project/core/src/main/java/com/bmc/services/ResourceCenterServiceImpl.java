@@ -85,7 +85,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
         // add default path
         queryParamsMap.put("path", "/content/bmc/resources");
-        //queryParamsMap.put("type", "cq:Page");
 
         String groupFilter = urlParameters!=null
                             && urlParameters.containsKey(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)
@@ -112,7 +111,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
         // path and page for resources
         queryParamsMap.putAll(getBaseQueryParams(null));
-        queryParamsMap.put("type", "cq:Page");
+//        queryParamsMap.put("type", "cq:Page");
 
         // Note: we return all the filters that are specified in the resource filter property list of this service
         // add each node name to the predicate group
@@ -297,6 +296,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     public Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
 
         Map<String, String> queryParamsMap = getBaseQueryParams(urlParameters);
+        queryParamsMap.put("type", "cq:Page");
 
         // should not have more than 1 rootPath param value
         if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH) != null
