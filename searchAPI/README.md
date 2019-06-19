@@ -71,3 +71,25 @@ To confirm that index works, run Explain Query in ```/libs/granite/operations/co
 ```
 /jcr:root/content/bmc/us/en/documents//element(*, cq:Page) [ (jcr:content/@ic-buyer-stage = 'ic-buyer-stage-453243382')  ]
 ```
+
+
+# Unit Testing:
+
+## Frameworks for testing
+ - Mockito
+ - Powermock
+ 
+ ## How and what are being tested
+  - We only test custom code. We do not test AEM modules. The reason why is because AEM should already be working, there is no point testing the functionality of AEM components (Example: QueryBuilder & Query Search)
+ 
+ - We test functions that uses AEM components by using powermock framework to mock the behavior of AEM component. For example, to mock the output of
+ ```resourceResolver.resolve(String str)```
+ we do
+ 
+ ```
+ ResourceResolver mockResourceResolve = mock(ResourceResolver.class);
+ Resource resource = mock(Resource.class);
+ when(mockResourceResolver.resolve(any(String.class))).thenReturn(mockResource);
+ ```
+that way, the function to be tested won't be stuck on the part where it uses AEM component such as ResourceResolver.
+
