@@ -114,6 +114,10 @@
                     margin-bottom: 5px;
                     line-height:1.2rem;
                 }
+                // WEB-5510: adding border to decorator select on focus
+                .focus-border{
+                    border: 2px solid #29a5d6;
+                }
                 .decorator-select 
                 {
                     margin-top: 0;
