@@ -53,6 +53,13 @@ public class BmcEduMeta {
             }
 
             productsHashMap.put("name","products");
+			// Sort the products dropdown with alphabetical order
+            Collections.sort(productValues,new Comparator<ProductValues>() {
+			  public int compare(ProductValues o1, ProductValues o2) { //return
+			    return o1.getName().compareTo(o2.getName());
+			  }
+			});
+			 
             productsHashMap.put("values", productValues);
 
         }catch (Exception e){
