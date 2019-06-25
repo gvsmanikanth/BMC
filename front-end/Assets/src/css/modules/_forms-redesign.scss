@@ -93,6 +93,12 @@
                 + p{
                     text-align: center;
                 }
+                &:hover{
+                    background: #0091DD;
+                }
+                &:focus{
+                    background: #0091DD;
+                }
             } 
             #C_OptIn_group{
                 display: block
