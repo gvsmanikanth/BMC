@@ -6,42 +6,78 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="All Products"
         />
+    <education-products-183047196
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix ITSM"/>
+     <education-products-143958364
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Digital Workplace"
+       />
     <education-products-142854695
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix CMDB"
         />
+    <education-products-161725919
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Remedyforce"/>
+    <education-products-176265233
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Client Management"
+       />
+    <education-products-177937656
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC (Helix) Discovery"
+      />  
+    <education-products-112512823
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Platform (Innovation Suite)"
+       />
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Orchestration"
         />
-    <education-products-187351378
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BladeLogic Database Automation"
-       />
-    <education-products-117007007
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BladeLogic Network Automation"
-       />
     <education-products-180838924
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Server Automation"
        />
+    <education-products-123342760
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Operations Management"/>
+    <education-products-122416938
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Capacity Optimization"/>
+    <education-products-130779424
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight AppVisibility"/>
+    <education-products-171789609
+        jcr:primaryType="nt:unstructured"
+        jcr:title="TrueSight Middleware Monitor"/>
+     
     <education-products-175290979
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Vulnerability Management"
        />
-    <education-products-176265233
+     <education-products-117007007
         jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Helix Client Management"
+        jcr:title="TrueSight Network Automation"
+       />  
+    <education-products-126375736
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Control-M"
+    />
+    <education-products-189020579
+        jcr:primaryType="nt:unstructured"
+        jcr:title="ITIL"
+       />
+  	 <education-products-187351378
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BladeLogic Database Automation"
        />
     <education-products-175672617
         jcr:primaryType="nt:unstructured"
         jcr:title="Cloud Life Cycle Management"
       />
-    <education-products-126375736
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M"
-    />
+   
    <!--  <education-products-188549682
         jcr:primaryType="nt:unstructured"
         jcr:title="Dashboards and Analytics"
@@ -50,10 +86,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="DevOps"
       />-->
-    <education-products-177937656
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Discovery (ADDM)"
-      />
+  
     <education-products-176432861
         jcr:primaryType="nt:unstructured"
         jcr:title="Footprints Service Desk"
@@ -62,56 +95,28 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="HR Case Management"
        /> -->
-    <education-products-189020579
+   
+   <education-products-138131082
         jcr:primaryType="nt:unstructured"
-        jcr:title="ITIL"
-       />
-    <education-products-112512823
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Helix Platform (InnovationSuite)"
-       />
-    <education-products-143958364
-       
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Helix Digital Workplace"
-       />
-    <education-products-186068586
+        jcr:title="Track-It!"/>
+   
+   <!--  <education-products-186068586
         jcr:primaryType="nt:unstructured"
         jcr:title="ProactiveNet"/>
     <education-products-195011486
         jcr:primaryType="nt:unstructured"
         jcr:title="Remedy AR System"/>
-    <education-products-183047196
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Helix ITSM"/>
-    <education-products-161725919
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BMC Helix Remedyforce"/>
     <education-products-115258401
         jcr:primaryType="nt:unstructured"
         jcr:title="Service Level Management"/>
     <education-products-124016733
         jcr:primaryType="nt:unstructured"
         jcr:title="Smart IT"/>
-    <education-products-138131082
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Track-It!"/>
-    <education-products-130779424
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight AppVisibility"/>
-    <education-products-122416938
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Capacity Optimization"/>
     <education-products-120151154
         jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight IT Data Analytics"/>
+        jcr:title="TrueSight IT Data Analytics"/> -->
   <!--   <education-products-118396779
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Infrastructure Management"/> -->
-    <education-products-171789609
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Middleware Monitor"/>
-    <education-products-123342760
-        jcr:primaryType="nt:unstructured"
-        jcr:title="TrueSight Operations Management"/>
+   
 </jcr:root>
