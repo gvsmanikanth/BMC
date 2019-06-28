@@ -5,8 +5,10 @@
 <meta name="apple-mobile-web-app-title" content="BMC Software">
 
 <sly data-sly-use.alternateLinks="${'com.bmc.components.AlternateLinks'}">
-    <link rel="canonical" href="${alternateLinks.canonicalLink}"/>
-    <link rel="alternate" href="${alternateLinks.alternateLinksMap[item]}" hreflang="${item}" data-sly-repeat="${alternateLinks.alternateLinksMap.keySet.iterator}" />
+   <sly data-sly-test="${!alternateLinks.isPageNotFound}">
+		<link rel="canonical" href="${alternateLinks.canonicalLink}"/>
+		<link rel="alternate"  href="${alternateLinks.alternateLinksMap[item]}" hreflang="${item}" data-sly-repeat="${alternateLinks.alternateLinksMap.keySet.iterator}"/>
+	</sly>
 </sly>
 
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
