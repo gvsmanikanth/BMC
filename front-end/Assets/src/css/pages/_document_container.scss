@@ -1,0 +1,11 @@
+.document_container{
+    .maincontentcontainer{
+        #pdfReader{
+            border: 1px solid black; width: 100%;
+            embed{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
