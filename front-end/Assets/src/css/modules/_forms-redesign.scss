@@ -93,6 +93,12 @@
                 + p{
                     text-align: center;
                 }
+                &:hover{
+                    background: #0091DD;
+                }
+                &:focus{
+                    background: #0091DD;
+                }
             } 
             #C_OptIn_group{
                 display: block
@@ -113,6 +119,10 @@
                 label{
                     margin-bottom: 5px;
                     line-height:1.2rem;
+                }
+                // WEB-5510: adding border to decorator select on focus
+                .focus-border{
+                    border: 2px solid #29a5d6;
                 }
                 .decorator-select 
                 {
