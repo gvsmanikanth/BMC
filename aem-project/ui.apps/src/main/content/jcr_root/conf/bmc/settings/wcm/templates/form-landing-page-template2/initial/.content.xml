@@ -80,7 +80,7 @@
                                                 jcr:lastModified="{Date}2019-06-04T15:28:37.898+05:30"
                                                 jcr:lastModifiedBy="admin"
                                                 jcr:primaryType="nt:unstructured"
-                                                jcr:title="Create a free trial account for Control-M"
+                                                jcr:title="Sign up for the Forrester report &lt;span class=&quot;subtext-form&quot;>“Hadoop Workflow Automation Improves Efficiency And Increases  Competitive Advantage”&lt;/span>"
                                                 sling:resourceType="bmc/components/content/title"
                                                 type="h1"/>
                                             <experiencefragment
@@ -177,6 +177,14 @@
                             <left
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <htmlarea
+                                    jcr:created="{Date}2019-06-25T06:13:31.915-04:00"
+                                    jcr:createdBy="admin"
+                                    jcr:lastModified="{Date}2019-06-25T06:13:47.205-04:00"
+                                    jcr:lastModifiedBy="admin"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/htmlarea"
+                                    text="&lt;p>&lt;/p>"/>
                                 <customcontentcontain
                                     jcr:created="{Date}2019-06-04T17:00:44.919+05:30"
                                     jcr:createdBy="admin"
