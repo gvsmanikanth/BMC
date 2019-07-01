@@ -4,9 +4,6 @@
 <sly data-sly-test="${properties.bg_color != 'grey'}">
     <sly data-sly-test.bgClass="bg-white"></sly>
 </sly>
-<sly data-sly-test="${properties.image_location == 'above'}">
-    <sly data-sly-test.imageLocation="img-top-bottom"></sly>
-</sly>
 <sly data-sly-test="${properties.image_location == 'left'}">
     <sly data-sly-test.imageLocation="img-left"></sly>
 </sly>
@@ -20,9 +17,9 @@
 	<section class="topcontent ${bgClass}">
 			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                              
                               	<div class="layout-secondaryaem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <div class="cq-dd-image text-center">
+                                             <a href="${cta.href}" class="cq-dd-image text-center">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
-                                             </div>
+                                             </a>
                                  </div> 
                                  <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
 											<div class="cmp cmp-title cmp-title-large">
@@ -33,12 +30,17 @@
                                                 <sly data-sly-test="${properties.customAssetHeading}">
                                                 	<h2 class="h2-variation-1">${properties.customAssetHeading @ context='html'}</h2>
                                                 </sly>
-												<p>
-													${properties.heading @ context='html'}
-												</p>
+												<h5>
+													${properties.title @ context='html'}
+												</h5>
+                                                <sly data-sly-test="${properties.description}">
+                                                	<h5 class="fontweight-normal">
+														${properties.description @ context='html'}
+													</h5>
+                                                </sly>
 											</div>
 											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-												<a class="learn-more" href="${cta.href}">${cta.text @ context='html'}												
+												<a class="bold learn-more" href="${cta.href}">${cta.text @ context='html'}												
 												</a>
 											</div>                                      
                                 </div>
@@ -56,19 +58,24 @@
                                                 <sly data-sly-test="${properties.customAssetHeading}">
                                                 	<h2 class="h2-variation-1">${properties.customAssetHeading @ context='html'}</h2>
                                                 </sly>
-												<p>
-													${properties.heading @ context='html'}
-												</p>
+												<h5>
+													${properties.title @ context='html'}
+												</h5>
+                                                <sly data-sly-test="${properties.description}">
+                                                	<h5 class="fontweight-normal">
+														${properties.description @ context='html'}
+													</h5>
+                                                </sly>
 											</div>
 											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-												<a class="learn-more" href="${cta.href}">${cta.text @ context='html'}
+												<a class="bold learn-more" href="${cta.href}">${cta.text @ context='html'}
 												</a>
 											</div>                                      
                                 </div>
                                 <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <div class="cq-dd-image text-center">
+                                             <a href="${cta.href}" class="cq-dd-image text-center">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
-                                             </div>
+                                             	</a>
                                  </div> 
             </div>
     </section>     
