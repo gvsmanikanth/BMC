@@ -1,73 +1,44 @@
-<!-- Horizontal full-width display - 3 column - Begin -->
 <section class="topcontent bg-white" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
    <div class="layout-inner-wrap">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex py3">
-
-
-
-
-
 	<!--/*Iterate through the blogs  */--> 
     			<sly data-sly-list.blog="${blogSet.blogs}">
-
-
-<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
-				<sly data-sly-test="${properties.numberOfBlogs == '3'}">
-			    	<sly data-sly-test.blogClass="flex-item sm-col-4 p2"></sly>
-				</sly>
-				<sly data-sly-test="${properties.numberOfBlogs == '4'}">
-				    <sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
-				</sly>
- <div class="${blogClass}">
-
-
-	        				 	<sly data-sly-use.blogLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=blog.linkURL}"></sly>
-			                    <sly data-sly-test="${blogLink.href}">
+					<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
+					<sly data-sly-test="${properties.numberOfBlogs == '3'}">
+						<sly data-sly-test.blogClass="flex-item sm-col-4 p2"></sly>
+					</sly>
+					<sly data-sly-test="${properties.numberOfBlogs == '4'}">
+						<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
+					</sly>
+				<div class="${blogClass}">
+					<sly data-sly-use.blogLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=blog.linkURL}"></sly>
+			        <sly data-sly-test="${blogLink.href}">
 			                        <sly data-sly-test.resolvedLink="${blogLink.href}"></sly>
-			                    </sly>
-			                    <sly data-sly-test="${!blogLink.href}">
+			        </sly>
+			        <sly data-sly-test="${!blogLink.href}">
 			                        <sly data-sly-test.resolvedLink="${blog.linkURL}"></sly>
-			                    </sly>
-			                    <sly data-sly-test="${blogLink.cssClass}">
+			        </sly>
+					<sly data-sly-test="${blogLink.cssClass}">
 			                        <sly data-sly-test.cssClass="${blogLink.cssClass}"></sly>
-			                    </sly>
-			                    <sly data-sly-test="${!blogLink.cssClass}">
+			        </sly>
+			        <sly data-sly-test="${!blogLink.cssClass}">
 			                        <sly data-sly-test.cssClass=" "></sly>
-			                    </sly>
-
-
-            <section>
-               <a href="${resolvedLink}" class="${cssClass}">
-                  <figure>
-                     <img src="${blog.externalImagePath}" alt="">
-                  </figure>
-                 ${blog.caption  @ context='html'}
-               </a>
-            </section>
-         </div>
-
-
-
-
-   				</sly>
-
-
-
-
-
-
-
-
-
-
-
-
-
+			        </sly>
+					<section>
+					   <a href="${resolvedLink}" class="${cssClass}">
+						  <figure>
+							 <img src="${blog.externalImagePath}" alt="">
+						  </figure>
+						 ${blog.caption  @ context='html'}
+					   </a>
+					</section>
+				</div>
+   			</sly>
       </div>
    </div>
 </section>
-<!-- Horizontal full-width display - 3 column - End -->
+
 
 
 
