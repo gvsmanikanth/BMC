@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
+
+import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
+import javax.jcr.RepositoryException;
+import javax.jcr.ValueFormatException;
+
 import org.apache.sling.api.resource.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +26,8 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
     protected HashMap<String,String> carouselItem;
 
     protected List<HashMap> carouselItems;
+    
+    protected String videoPath;
 
     @Override
     public void activate() throws Exception {
@@ -37,6 +45,9 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
                 carouselItem.put("figurePath", getfigurePath(childPage));
                 carouselItem.put("thumbNailPath", childPage.getValueMap().get("thumbNailPath").toString());
                 carouselItem.put("assetIndex", Integer.toString(carouselItems.size()));
+                carouselItem.put("cssClassName", getClassName(childPage));
+                carouselItem.put("incrementalIndex", getIncrementalIndex(Integer.parseInt(carouselItem.get("assetIndex"))));
+                carouselItem.put("videoId", getVideoId(childPage));
                 carouselItems.add(carouselItem);
             }
           
@@ -45,7 +56,49 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
         }
        
     }
-    // set custom text value if assetType drop-down is none selected
+  
+    /*
+     * returns the videoId for the video page.
+     */
+	private String getVideoId(Resource childPage) {
+		try {
+			String figurePath = childPage.getValueMap().get("figurePath").toString();			
+			if(childPage.getValueMap().get("assetType").toString().equals("video"))
+			{
+				Resource resource = getResourceResolver().getResource(figurePath+"/jcr:content/video-data");
+		        Node nodeVideo = resource.adaptTo(Node.class);
+		       
+				videoPath = nodeVideo.getProperty("vID").getValue().toString();
+			}else
+			{
+				videoPath = "";
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return videoPath; 
+	}
+
+	
+	private String getIncrementalIndex(int assetIndex) {
+		// TODO Auto-generated method stub
+		Integer IncremntalIndex =  assetIndex+1;
+		return Integer.toString(IncremntalIndex);
+	}
+
+	/*
+	 * To set active class
+	 */
+	private String getClassName(Resource childPage) {
+		// TODO Auto-generated method stub
+		if(carouselItems.size() == 0)
+		{
+			return "active";			
+		}
+		else return "";
+	}
+	// set custom text value if assetType drop-down is none selected
     private String getAssetType(Resource childPage,String assetType, String customAssetType){
             if(childPage.getValueMap().get("assetType").toString().equals("custom") && (!childPage.getValueMap().get("customAssetType").toString().trim().isEmpty())) {
                 return childPage.getValueMap().get("customAssetType").toString();
@@ -130,7 +183,7 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
 	 * Getter class for the list size.
 	 */
 	public int getNoOfItems() { 
-		         return carouselItem.size(); 
+		         return carouselItems.size(); 
 		     } 
 	
 	

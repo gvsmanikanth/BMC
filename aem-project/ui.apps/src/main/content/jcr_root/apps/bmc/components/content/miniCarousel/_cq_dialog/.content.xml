@@ -78,12 +78,6 @@
                                                     name="./thumbNailPath"
                                                     required="{Boolean}true"
                                                     rootPath="/content/dam/bmc"/>
-                                                <assetIndex
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/foundation/form/hidden"
-                                                    defaultValue="0"
-                                                    name="./assetIndex"
-                                                    value="0"/>
                                             </items>
                                         </column>
                                     </items>
