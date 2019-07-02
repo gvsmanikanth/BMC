@@ -1,7 +1,7 @@
 <?php
 	$pageTitle = 'Contact Us Forms new';
 	$bodyClass = 'page-campaign-landing bmc-nav-loader-nav form2';
-	include_once 'php-inc/head.php';
+	include_once 'php-inc/head-plain.php';
 ?>
 
 <script type="text/javascript">
@@ -622,7 +622,7 @@ var bmcMeta = {
    
 </div>
 
-<?php include_once 'php-inc/foot.php'; ?>
+<?php include_once 'php-inc/foot-plain.php'; ?>
 
 
                         
