@@ -14,10 +14,10 @@ include 'php-inc/head.php';
                      <div class="layout-inner-wrap">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                            <div class="flexi-featured-analyst-blog aem-GridColumn aem-GridColumn--default--12">
-                              <section class="topcontent bg-white">
+                              <section class="topcontent">
                                  <div class="layout-inner-wrap">
                                     <div class="tagline"> Featured Blogs with Component</div>
-                                    <div class="sm-flex py3">
+                                    <div class="sm-flex">
                                        <div class="flex-item sm-col-4 p2">
                                           <section>
                                              <a href="/content/bmc/language-masters/en/forms/forrester-report-general-data-protection-regulation.html" data-product-interest="TrueSight Server Automation" data-product-line="DSO">
