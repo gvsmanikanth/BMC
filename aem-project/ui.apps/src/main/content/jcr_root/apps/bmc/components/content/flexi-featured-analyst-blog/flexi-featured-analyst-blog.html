@@ -1,4 +1,4 @@
-<section class="topcontent bg-white" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
+<section class="topcontent" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
    <div class="layout-inner-wrap">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex py3">
@@ -28,7 +28,7 @@
 					<section>
 					   <a href="${resolvedLink}" class="${cssClass}">
 						  <figure>
-							 <img src="${blog.externalImagePath}" alt="">
+							 <img src="${blog.externalImagePath}" alt="${blog.altText}">
 						  </figure>
 						 ${blog.caption  @ context='html'}
 					   </a>
