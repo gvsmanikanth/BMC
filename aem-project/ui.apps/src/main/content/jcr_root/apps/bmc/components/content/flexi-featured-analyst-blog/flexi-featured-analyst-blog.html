@@ -1,7 +1,7 @@
 <section class="topcontent" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
    <div class="layout-inner-wrap">
       <div class="tagline"> ${properties.title @ context='html'}</div>
-      <div class="sm-flex py3">
+      <div class="sm-flex">
 	<!--/*Iterate through the blogs  */--> 
     			<sly data-sly-list.blog="${blogSet.blogs}">
 					<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
