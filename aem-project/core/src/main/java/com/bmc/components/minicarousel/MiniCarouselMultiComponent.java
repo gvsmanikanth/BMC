@@ -48,6 +48,7 @@ public class MiniCarouselMultiComponent extends WCMUsePojo implements Multifield
                 carouselItem.put("cssClassName", getClassName(childPage));
                 carouselItem.put("incrementalIndex", getIncrementalIndex(Integer.parseInt(carouselItem.get("assetIndex"))));
                 carouselItem.put("videoId", getVideoId(childPage));
+                carouselItem.put("addMagnifierIcon", childPage.getValueMap().get("addMagnifierIcon").toString());
                 carouselItems.add(carouselItem);
             }
           

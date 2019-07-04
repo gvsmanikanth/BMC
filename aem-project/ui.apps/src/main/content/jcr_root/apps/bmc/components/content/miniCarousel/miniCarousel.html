@@ -3,23 +3,26 @@
 <div class="carousel-wrap">
 	<ul class="carousel" data-sly-list.data="${carouselItem.carouselItems}">
 			<li data-slide="${data.assetIndex}" class="${data.cssClassName}">
-                          <!-- Adding the conditions for the Image. -->
-                            <sly data-sly-test="${data.assetType == 'image'}">
+                       <!-- Adding the conditions for the Image. -->
+                        <sly data-sly-test="${data.assetType == 'image'}">
                             <figure>  
                                 <a href="${data.figurePath}" rel="carouselGroup-416145443" class="modal-image"  title="${data.figureCaption}"> 
-                                    <img src="${data.thumbNailPath}" alt="${data.figureCaption}" title="${data.figureCaption}" width="900" height="516" border="0"/>                                   
+                                    <img src="${data.thumbNailPath}" alt="${data.figureCaption}" title="${data.figureCaption}" width="900" height="516" border="0"/>
+                                  	<div data-sly-test="${data.addMagnifierIcon}" class="carousel-icon icon-img" data-percentage-right="7" data-percentage-top="0" style="right: 7%; background-position: 50% 0%;">
                                 </a>
                                 <figcaption>${data.figureCaption}</figcaption>
-                            </figure></sly>
-                            <!-- Adding the conditions for the video player. -->
-							<sly data-sly-test="${data.assetType == 'video'}">
+                            </figure>
+                        </sly>
+                        <!-- Adding the conditions for the video player. -->
+						<sly data-sly-test="${data.assetType == 'video'}">
                             <figure>    
                                 <a class="modal-youtube-video-player" rel="carouselGroup-400375341" href="/content/bmc/videos.html?vID=${data.videoId}" target="_self" title="${data.figureCaption}">
                                     <img src="${data.thumbNailPath}" alt="${data.figureCaption}" title="${data.figureCaption}" width="900" height="516" border="0"/> 
-                                    <div class="carousel-icon icon-vid" data-percentage-right="43" data-percentage-top="50"></div> 
+                                    <div data-sly-test="${data.addMagnifierIcon}" class="carousel-icon icon-vid" data-percentage-right="43" data-percentage-top="50"></div> 
                                 </a>
                                 <figcaption>${data.figureCaption}</figcaption>
-                            </figure></sly>						
+                            </figure>
+                         </sly>						
                         </li> 
 	</ul>
      <sly data-sly-list.NoOfItems ="${carouselItem.noOfItems}">

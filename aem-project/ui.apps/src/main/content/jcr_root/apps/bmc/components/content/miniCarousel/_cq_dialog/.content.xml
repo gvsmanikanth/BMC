@@ -81,6 +81,15 @@
                                                     required="{Boolean}true"
                                                     rootPath="/content"
                                                     value="/content/dam/bmc/web-services/Placeholder_1200x690.png"/>
+                                                <addMagnifierIcon
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                    checked="{Boolean}false"
+                                                    fieldDescription="Check to add the magnifier/Video icon to image."
+                                                    name="./addMagnifierIcon"
+                                                    text="Add Magnifier/Video Icon."
+                                                    uncheckedValue="false"
+                                                    value="true"/>
                                             </items>
                                         </column>
                                     </items>
