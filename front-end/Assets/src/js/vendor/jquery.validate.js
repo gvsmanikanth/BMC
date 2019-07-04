@@ -93,11 +93,15 @@ if($('#leadgen') || $('#nonleadgen'))	{
 				if(redesign_form_flag){		
 					var err_hint = ($input.data('error-hint') != '') ? $input.data('error-hint') : $input.attr('placeholder');		
 					$input.parent().next('.error-text').text(err_hint);						
+										
 				}
 				
 			}
 			else if (radioOrCheckbox) {
 				$('[name="' + name + '"]').parent().find('label').addClass('validation-error');
+				// WEB-5428: adding validation class to checkboxes for analytics
+				$('[name="' + name + '"]').addClass('validation-error');
+				
 			}
 			else {		
 	

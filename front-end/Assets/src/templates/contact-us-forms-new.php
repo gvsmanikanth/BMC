@@ -77,8 +77,8 @@ var bmcMeta = {
                                                       <input type="hidden" name="_charset_" value="UTF-8"/>
                                                       <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
                                                       <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                                         <h2>Sign up for a free trial of Control-M free trial of Control-M</h2>
-                                                         <h6>All fields are required for completion </h6>
+                                                         <h1>Sign up for the Forrester report <span class="subtext-form">“Hadoop Workflow Automation Improves Efficiency And Increases  Competitive Advantage”</span></h1>
+                                                         
                                                       </div>
                                                       <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
                                                          <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">

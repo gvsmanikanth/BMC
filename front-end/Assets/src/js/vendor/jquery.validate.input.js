@@ -70,7 +70,15 @@
                     }    
 
                     // event triggering for getting the height of the changed form
-                    $(".form-wrapp form").trigger('heightChange');                                   				
+                    $(".form-wrapp form").trigger('heightChange');   
+                    
+                    // WEB-5510: adding border to decorator select on focus
+                    $(".decorator-select select").focus(function(){
+                        $(this).parent().addClass('focus-border');                 
+                    }).blur(function(){
+                        $(this).parent().removeClass('focus-border');
+                    })
+                                                                         
             });	
             $this.change(function() {	
                 var $input = $(this);

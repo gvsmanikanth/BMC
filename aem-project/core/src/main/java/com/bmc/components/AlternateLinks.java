@@ -7,8 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AlternateLinks  extends WCMUsePojo {
+	private static final Logger logger = LoggerFactory.getLogger(AlternateLinks.class);
     private static final Map<String, String> hrefLangMap = new HashMap<String, String>() {{
         put("x-default", "www.bmc.com");
         put("en-sa", "www.bmcsoftware.sa");
@@ -46,6 +49,7 @@ public class AlternateLinks  extends WCMUsePojo {
 
     private Map<String, String> alternateLinksMap = new HashMap<String, String>();
     private String canonicalLink;
+    private Boolean isPageNotFound;
 
     @Override
     public void activate() throws Exception {
@@ -62,16 +66,7 @@ public class AlternateLinks  extends WCMUsePojo {
             hrefUri = matcher.group(4);
         }
 
-        // Build map of alternate locale links.
         String canonicalScheme = "http";
-        for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
-        		canonicalScheme = "https";
-        	}else{
-        		canonicalScheme = "http";
-        	}
-            alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
-        }
 
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
         String mappedResourcePath = getResourceResolver().map(resourcePath);
@@ -88,6 +83,23 @@ public class AlternateLinks  extends WCMUsePojo {
         	canonicalScheme = "http";
         }
         canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
+        
+        
+        // Build map of alternate locale links.
+        for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
+        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
+        		canonicalScheme = "https";
+        	}else{
+        		canonicalScheme = "http";
+        	}
+        	/*logger.info("link path before"+getRequest().getRequestPathInfo().getResourcePath()); */
+        	if(!getRequest().getRequestPathInfo().getResourcePath().startsWith("/content/bmc/404/")) {
+        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
+        	}else{
+        		isPageNotFound=true;
+        		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + "/content/bmc/404");
+        	}
+        	}
     }
 
     public Map<String, String> getAlternateLinksMap() {
@@ -96,5 +108,8 @@ public class AlternateLinks  extends WCMUsePojo {
 
     public String getCanonicalLink() {
         return canonicalLink;
+    }
+    public Boolean getIsPageNotFound() {
+        return isPageNotFound;
     }
 }
