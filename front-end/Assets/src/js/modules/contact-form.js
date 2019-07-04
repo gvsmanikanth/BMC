@@ -87,6 +87,10 @@ jQuery(function ($) {
 		});
 
 		$('[name="C_BusPhone"]').prev().addClass('business_phone_label');	
+		//WEB-5587
+		$('.decorator-select select').change(function(){		
+			 $(".form-wrapp form").trigger('heightChange');  
+		});
 	}
 
 });
