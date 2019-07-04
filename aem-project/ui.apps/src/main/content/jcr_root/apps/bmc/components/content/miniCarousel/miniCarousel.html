@@ -1,5 +1,5 @@
 <sly data-sly-use.carouselItem="com.bmc.components.minicarousel.MiniCarouselMultiComponent">
-<div data-sly-test="${!carouselItem}">Add values in Dialog</div>
+<div data-sly-test="${!carouselItem.carouselItems}">Add values in Dialog</div>
 <div class="carousel-wrap">
 	<ul class="carousel" data-sly-list.data="${carouselItem.carouselItems}">
 			<li data-slide="${data.assetIndex}" class="${data.cssClassName}">

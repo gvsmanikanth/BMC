@@ -61,23 +61,26 @@
                                                     fieldDescription="Enter Item Caption."
                                                     fieldLabel="Item Caption"
                                                     name="./figureCaption"
-                                                    required="{Boolean}true"/>
-                                                <mainImagePath
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Select  Main Image or Video link "
-                                                    fieldLabel="Select  Main Image/Video link "
-                                                    name="./figurePath"
                                                     required="{Boolean}true"
-                                                    rootPath="/content"/>
+                                                    value="Please add a caption here"/>
                                                 <thumbnailImagePath
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Select Thumbnail for Image/Video"
-                                                    fieldLabel="Thumbnail or Display Image"
+                                                    fieldDescription="Select Small Image (900x516)"
+                                                    fieldLabel="Select Small Image (900x516)"
                                                     name="./thumbNailPath"
                                                     required="{Boolean}true"
-                                                    rootPath="/content/dam/bmc"/>
+                                                    rootPath="/content/dam/bmc"
+                                                    value="/content/dam/bmc/web-services/Placeholder_900x516.png"/>
+                                                <mainImagePath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Select Large Image (1200x690) or Video Path"
+                                                    fieldLabel="Select Large Image (1200x690) or Video Path"
+                                                    name="./figurePath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content"
+                                                    value="/content/dam/bmc/web-services/Placeholder_1200x690.png"/>
                                             </items>
                                         </column>
                                     </items>
