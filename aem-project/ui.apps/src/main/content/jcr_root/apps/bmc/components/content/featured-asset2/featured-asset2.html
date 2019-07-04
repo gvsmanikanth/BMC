@@ -10,14 +10,13 @@
 <sly data-sly-test="${properties.image_location == 'right'}">
     <sly data-sly-test.imageLocation="img-right"></sly>
 </sly>
-
-<sly data-sly-use.cta="${'com.bmc.components.utils.GetLinkInfo' @ text = 'cta_text', urlOrPath = 'cta_url'}"></sly>
+<sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.cta_url}"></sly>
 
 <sly data-sly-test="${properties.image_location == 'left'}">
 	<section class="topcontent ${bgClass}">
-			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                              
-                              	<div class="layout-secondaryaem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <a href="${cta.href}" class="cq-dd-image text-center">
+			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                          
+                              	<div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                             <a href="${cta.href}" class="cq-dd-image text-center ${cta.isVideo ? 'modal-youtube-video-player' : ''}">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
                                              </a>
                                  </div> 
@@ -39,8 +38,8 @@
 													</h5>
                                                 </sly>
 											</div>
-											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-												<a class="bold learn-more" href="${cta.href}">${cta.text @ context='html'}												
+											<div data-sly-test="${properties.cta_text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a class="bold learn-more ${cta.isVideo ? 'modal-youtube-video-player' : ''}" href="${cta.href}">${properties.cta_text @ context='html'}												
 												</a>
 											</div>                                      
                                 </div>
@@ -67,13 +66,13 @@
 													</h5>
                                                 </sly>
 											</div>
-											<div data-sly-test="${cta.text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-												<a class="bold learn-more" href="${cta.href}">${cta.text @ context='html'}
+											<div data-sly-test="${properties.cta_text}" class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+												<a href="${cta.href}" class="bold learn-more ${cta.isVideo ? 'modal-youtube-video-player' : ''}">${properties.cta_text @ context='html'}
 												</a>
 											</div>                                      
                                 </div>
                                 <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <a href="${cta.href}" class="cq-dd-image text-center">
+                                             <a href="${cta.href}" class="cq-dd-image text-center ${cta.isVideo ? 'modal-youtube-video-player' : ''}">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
                                              	</a>
                                  </div> 
