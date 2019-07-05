@@ -25,12 +25,12 @@
            float: left;            
          }
         @media (min-width: $break-md) {
-            min-height: 300px;
+            min-height: auto;
         }
         .offset-wrapper{
             min-height: auto;
             @media (min-width: $break-md) {
-                min-height: 300px;
+                min-height: auto;
             }
         }
         .bannerContent{
@@ -43,7 +43,7 @@
                 min-height: auto;   
                 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
                     @media (min-width: $break-md) {
-                        min-height: 300px;
+                        min-height: auto;
                     }
                 }
                 @media  only screen and (max-width: 900px) {
