@@ -61,7 +61,10 @@ jQuery(function ($) {
 				respGridContainers.addClass('aem-GridColumn--default--6');
 				respGridContainers.removeClass('aem-GridColumn--default--12');		
 				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').addClass('md-col-6');
-				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').removeClass('md-col-12');	                                           
+				$('.form2 .product-category-header2 .bannerContent .flex-item.md-col-12').removeClass('md-col-12');	
+				// WEB-5587
+				$('.form-wrapp').css("top","0");
+				$('.cmp-form form').css("margin-top","40px");                                           
 			} else{
 				respGridContainers.addClass('aem-GridColumn--default--12');
 				respGridContainers.removeClass('aem-GridColumn--default--6');			
@@ -84,6 +87,10 @@ jQuery(function ($) {
 		});
 
 		$('[name="C_BusPhone"]').prev().addClass('business_phone_label');	
+		//WEB-5587
+		$('.decorator-select select').change(function(){		
+			 $(".form-wrapp form").trigger('heightChange');  
+		});
 	}
 
 });
