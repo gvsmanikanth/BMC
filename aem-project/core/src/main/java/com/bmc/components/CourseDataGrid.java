@@ -62,7 +62,7 @@ public class CourseDataGrid extends WCMUsePojo implements MetadataInfoProvider_R
 						Resource r = getResourceResolver().getResource(path);
 						if(r != null)
 							return r.getValueMap().getOrDefault("jcr:title",s).toString();
-						return s;
+						return "";
 					})
 					.collect(Collectors.toList());
 
