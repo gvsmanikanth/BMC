@@ -19,7 +19,9 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.commons.osgi.PropertiesUtil;
 import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,12 +60,19 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
     private List<String> resourceFiltersList;
 
+    @Property(label = "Resource Center Query API switch", boolValue = false,
+            description = "Resource Center Query API switch")
+    public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = ResourceCenterConsts.RESOURCE_CENTER_QUERY_API_PROP_NAME;
+    private boolean resourceCenterApiSwitch;
+
     @Reference
     private ConfigurationAdmin configAdmin;
     
     
     @Activate
-    protected void activate(final Map<String, Object> props) {
+    protected void activate(final Map<String, Object> props, ComponentContext context) {
+        this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
+
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
 
         // set auth info as "bmcdataservice" -> defined under /apps/home/users/system
@@ -173,6 +182,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     @Override
     public String getResourceFiltersJSON() {
+        if(!isApiOn())
+            return ResourceCenterConsts.API_OFF_RESPONSE;
         return JsonSerializer.serialize(getResourceFilters());
     }
 
@@ -316,7 +327,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     @Override
     public List<BmcContent> getResourceResults(Map<String, String[]> urlParameters) {
-
         // add the necessary resource content parameters for query builder
         Map<String, String> queryParamsMap = addResourceParamsToBuilder(urlParameters);
 
@@ -357,6 +367,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     @Override
     public String getResourceResultsJSON(Map<String, String[]> urlParameters) {
+        if(!isApiOn())
+            return ResourceCenterConsts.API_OFF_RESPONSE;
         return JsonSerializer.serialize(getResourceResults(urlParameters));
     }
 
@@ -368,4 +380,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     /*** <------- Filters *********************************************************/
 
+    @Override
+    public boolean isApiOn() {
+        return resourceCenterApiSwitch;
+    }
 }
