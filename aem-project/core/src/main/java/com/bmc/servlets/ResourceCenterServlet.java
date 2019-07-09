@@ -40,6 +40,7 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         // extract method from the path (either '/filters' OR '/resources')
         String method = pathInfo.substring(pathInfo.lastIndexOf("/"));
 
+
         // delegate to the appropriate method
         switch(method) {
             case FILTERS_METHOD:
@@ -48,16 +49,13 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
             case RESOURCES_METHOD:
                 getResourceResults(request, response);
                 break;
-            default:
-                response.sendError(404);
-                break;
+             default:
+                 response.sendError(404);
+                 break;
         }
     }
 
     private void getResourceFilters(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
-
-        // for testing
-        response.getWriter().write("getResourceFilters()");
 
         // session required for QueryBuilder in OSGi service
         Session session = request.getResourceResolver().adaptTo(Session.class);
@@ -79,9 +77,6 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
     }
 
     private void getResourceResults(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
-
-        // for testing
-        response.getWriter().write("getResourceResults()");
 
         // grab parameters to search by
         Map<String, String[]> parameters = request.getParameterMap();
