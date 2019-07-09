@@ -32,4 +32,7 @@ public interface ResourceCenterService extends ConfigurableService  {
      */
     String getResourceResultsJSON(Map<String, String[]> parameters);
 
+
+    boolean isApiOn();
+
 }

@@ -8,6 +8,10 @@ public class ResourceCenterConsts {
 
     public static final String PREDICATE_PREFIX = "group.";
 
+    public static final String API_OFF_RESPONSE = "This API is turned off in OSGI config. ";
+
+    public static final String RESOURCE_CENTER_QUERY_API_PROP_NAME = "resourcecenter.switch";
+
     /* url parameters */
     public static final String RC_URL_PARAM_PATH = "rootPath";
     public static final String RC_URL_PARAM_KEYWORD = "keyword";

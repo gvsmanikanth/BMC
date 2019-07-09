@@ -1,5 +1,6 @@
 package com.bmc.services;
 
+import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.pum.PUMService;
@@ -107,11 +108,14 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
 	@Override
 	public String getResourceFiltersJSON() {
+        if(!isApiOn())
+            return ResourceCenterConsts.API_OFF_RESPONSE;
 		return baseImpl.getResourceFiltersJSON();
 	}
 
 	@Override
 	public List<BmcContent> getResourceResults(Map<String, String[]> parameters) {
+
 		try {
             if (parameters == null || parameters.isEmpty()) {
                 log.debug("Invalid input {} {} {}. Returning null", parameters);
@@ -130,6 +134,8 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
 	@Override
 	public String getResourceResultsJSON(Map<String, String[]> parameters) {
+        if(!isApiOn())
+            return ResourceCenterConsts.API_OFF_RESPONSE;
 		return JsonSerializer.serialize(getResourceResults(parameters));
 	}
 	
@@ -141,4 +147,9 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 		
 		return result;
 	}
+
+    @Override
+    public boolean isApiOn() {
+        return baseImpl.isApiOn();
+    }
 }
