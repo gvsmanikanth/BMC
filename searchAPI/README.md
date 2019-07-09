@@ -93,3 +93,10 @@ To confirm that index works, run Explain Query in ```/libs/granite/operations/co
  ```
 that way, the function to be tested won't be stuck on the part where it uses AEM component such as ResourceResolver.
 
+# API switch:
+
+## A flag in OSGI config is responsible for turn this API on/off. When the flag is turned off, the API will return a string "This API is turned off in OSGI config."
+
+## Go to /system/console/configMgr and search for "Resource Center Service". In the dialog, the "Resource Center Query API switch" is a boolean flag to turn the API on/off.
+## The configuration is also in the source code -> aem-project/ui.apps/src/main/content/jcr_root/apps/bmc/config/com.bmc.services.ResourceCenterServiceImpl.xml
+
