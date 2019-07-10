@@ -137,12 +137,18 @@
                                 fieldDescription="You may add your own custom text for the asset heading here."
                                 fieldLabel="Optional: custom asset heading text."
                                 name="./customAssetHeading"/>
-                            <heading
+                            <title
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                fieldDescription="Enter the heading"
-                                fieldLabel="Heading"
-                                name="./heading"/>
+                                fieldDescription="Enter the title"
+                                fieldLabel="Title"
+                                name="./title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter the Description."
+                                fieldLabel="Description(Optional)."
+                                name="./description"/>
                             <bgcolor
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
@@ -187,10 +193,6 @@
                                         jcr:primaryType="nt:unstructured"
                                         text="Right"
                                         value="right"/>
-                                    <item3
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Center"
-                                        value="center"/>
                                 </items>
                             </image_x0020_Location>
                         </items>
