@@ -456,13 +456,13 @@ var bmcMeta = {
                                                                         </ol>
                                                                      </div>
                                                                   </div>
-                                                                  <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr class="field-sep"></div>
+                                                                  
                                                                                                       
                                                                </fieldset>
                                                             </div>
                                                          </div>
                                                       </div>
-                                                      <button type="SUBMIT" class="btn-secondary">Start Your Trial</button>
+                                                      <span class="submit-btn-wrap"><button type="SUBMIT" class="btn-secondary">Start Your Trial</button></span>
                                                       <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
                                                       <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
                                                       <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
