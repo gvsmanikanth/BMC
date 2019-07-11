@@ -1,6 +1,6 @@
 package com.bmc.models.components.datasource;
 
-import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
+//import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
 import com.adobe.granite.ui.components.ds.SimpleDataSource;
 import com.adobe.granite.ui.components.ds.ValueMapResource;
 import com.day.cq.i18n.I18n;
@@ -22,9 +22,9 @@ import java.util.*;
  * Created by elambert on 5/18/17.
  */
 @Model(adaptables = SlingHttpServletRequest.class,
-        adapters = DataSourceModel.class,
+       // adapters = DataSourceModel.class,
         resourceType = ISOCountries.RESOURCE_TYPE)
-public class ISOCountries extends DataSourceModel {
+public class ISOCountries  {
     protected final static String RESOURCE_TYPE = "bmc/components/content/forms/elements/options/datasource/countriesdatasource";
     protected final static String COUNTRY_OPTIONS_HEADER = "Country";
 
@@ -45,8 +45,8 @@ public class ISOCountries extends DataSourceModel {
         final ResourceBundle bundle = request.getResourceBundle(pageLocale);
         i18n = new I18n(bundle);
 
-        SimpleDataSource countriesDataSource = new SimpleDataSource(buildCountriesList().iterator());
-        initDataSource(request, countriesDataSource);
+        /*SimpleDataSource countriesDataSource = new SimpleDataSource(buildCountriesList().iterator());
+        initDataSource(request, countriesDataSource);*/
     }
 
 
