@@ -74,6 +74,14 @@
         <!--[if IE]><link rel="shortcut icon" href="${faviconIco}"/><![endif]-->
     </sly>
     <!--/* Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. */-->
+     <!--/* WEB-5625 Conditional indexing for thank-you pages on forms START */-->
+     <sly data-sly-test="${templateName == 'form-thank-you2' || templateName == 'form-thank-you' }">
+		<meta name="robots" content="noindex, nofollow"> 
+	</sly>
+	<sly data-sly-test="${templateName != 'form-thank-you2' || templateName != 'form-thank-you' }">
+		<meta name="robots" content="index, follow"> 
+	</sly>
+      <!--/* WEB-5625 Conditional indexing for thank-you pages on forms END */-->
     <link data-sly-test.faviconPng="${page.favicons['faviconPng']}"
           rel="icon" type="image/png" href="${faviconPng}"/>
 
