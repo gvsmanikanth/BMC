@@ -91,10 +91,6 @@ jQuery(function ($) {
 		$('.decorator-select select').change(function(){		
 			 $(".form-wrapp form").trigger('heightChange');  
 		});
-		
-		$('.form-group.checkbox').parent().css({
-			'padding' : '0px'
-		});
 	}
 
 });
