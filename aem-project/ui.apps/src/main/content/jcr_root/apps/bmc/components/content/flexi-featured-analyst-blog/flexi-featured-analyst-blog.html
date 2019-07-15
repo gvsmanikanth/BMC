@@ -4,7 +4,7 @@
    <div class="${properties.numberOfBlogs == '4' ? '' : 'layout-inner-wrap'}">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex">
-	<!--/*Iterate through the blogs  */--> 
+	
    				 <sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
 					<sly data-sly-test="${properties.numberOfBlogs == '3'}">
 						<sly data-sly-test.blogClass="flex-item sm-col-4 p2"></sly>
@@ -12,7 +12,7 @@
 					<sly data-sly-test="${properties.numberOfBlogs == '4'}">
 						<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
 					</sly>
-
+<!--/*Iterate through the blogs  */--> 
     			<sly data-sly-list.blog="${blogSet.blogs}">
 
 				<div class="${blogClass}">
