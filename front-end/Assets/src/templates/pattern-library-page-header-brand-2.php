@@ -4,7 +4,7 @@
 	include 'php-inc/head.php';
 ?>
 
-<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0" data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png", "(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>            
+<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 header-brand2 padding-bottom-0" data-wallpaper-options='{"source":{"fallback": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-MobileBanner-Test-700x700px.png", "(min-width: 640px)": "//www.bmc.com/content/dam/bmc/images/NewBrandImage-WebBanner-Test-1900px700px.png"}}'>            
     <div class="offset-wrapper flex-center">
         <div class="inner">
             <div class="bannerContent">

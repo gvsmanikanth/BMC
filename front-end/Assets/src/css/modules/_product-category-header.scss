@@ -468,29 +468,41 @@
 		
 						
 				}
-			}
+			}			
 			
-			.breadcrumb{
-				list-style: none;
-				padding: 0;
-				li{
-					display: inline-block;
-					margin-bottom: 0;
-					a{
-						font-weight: 700;
-						color:#fff;				
-					}
-					&:after {
-						content: " \00203A";
-					}
+		}
+	}
+	&.header-brand2{
+		.breadcrumb{
+			list-style: none;
+			padding: 0;
+			margin: 20px 0 15px 0;
+			li{
+				display: inline-block;
+				margin-bottom: 0;
+				a{
+					font-weight: 700;
+					color:#fff;				
 				}
-				li.active{
-					&:after {
-						content: "";
-					}
+				&:after {
+					content: " \00203A";
+				}
+			}
+			li.active{
+				&:after {
+					content: "";
 				}
 			}
 		}
+		.bannerContent{
+			.layout-inner-wrap {
+				.flex-item.add-top-bottom-margin-110px{
+					@include media(breakpointSmall) {
+						margin-top: 22px;
+					}
+				}
+			}
+		} 
 	}
 	
 	&.banner-image-from-top {
@@ -526,6 +538,8 @@
 		text-decoration: underline;
 	}
 }
+
+
 
 
 
