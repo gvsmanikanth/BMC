@@ -138,19 +138,17 @@ body.support-central {
 	}
 }
 
-.support-chat-now{
-	svg{
-		height:30px;
+@media only screen and (min-width: 1024px) {
+	.support-chat-now{
+		 &:hover{
+			svg{
+			  -webkit-transform: scale(1.3);
+			  transform: scale(1.3);
+			  -webkit-transition: .3s ease-in-out;
+			  transition: .3s ease-in-out;
+			}
+		  }
 	}
-	 &:hover{
-        svg{
-          -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-          -webkit-transition: .3s ease-in-out;
-          transition: .3s ease-in-out;
-		  height:30px;
-        }
-      }
 }
 
 // persistent fixed position tab similar to .support-chat-now

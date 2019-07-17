@@ -62,7 +62,7 @@ include 'php-inc/head.php';
    </section>
 </div>
 
-<div id="liveagent_button_online_573140000000TRy" onclick="liveagent.startChat('573140000000TRy')" style="display:block;border-radius:50%;margin:1rem;right:0px;background-color: #3CB6CE;width: 30px;cursor: pointer;" class="support-chat-now on-screen"><svg width="34" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+<div id="liveagent_button_online_573140000000TRy" onclick="liveagent.startChat('573140000000TRy')" style="display:block;border-radius:50%;margin:1rem;right:0px;background-color: #3CB6CE;width: 30px;cursor: pointer;" class="support-chat-now on-screen"><svg style='margin-left: -3px;' width="34" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <g>
   <title>Layer 1</title>
   <path fill="#ffffff" id="svg_1" d="m13.204,3.491l18.555,0l0,13.453l-5.422,0l0,3.169c-0.961,-0.629 -2.94,-1.785 -3.992,-2.677c-0.538,-0.446 -1.91,-0.503 -2.711,-0.503l-6.441,0l0,-13.51l0.011,0.069l0,-0.001zm-0.732,-2.643c-1.121,0 -1.91,0.789 -1.91,1.91l0,14.654c0,1.121 0.789,1.91 1.91,1.91c0,0 3.489,0 5.72,0c1.121,0 1.121,0 1.602,0c0.16,0 0.32,0.023 0.32,0.023s8.786,5.274 8.934,5.274l0,0l0,-5.297l3.352,0c1.121,0 1.91,-0.789 1.91,-1.91l0,-14.654c0,-1.121 -0.789,-1.91 -1.91,-1.91c0,0 -19.928,0 -19.928,0zm3.649,22.502l-1.602,0c-0.629,0 -1.316,-0.057 -2.711,0.629c-1.121,0.789 -2.883,1.602 -3.992,2.231l0,-2.86l-5.182,0l0,-13.259l5.285,0l0,-2.643l-6.006,0c-1.121,0 -1.91,0.961 -1.91,1.91l0,14.654c0,1.121 0.789,1.91 1.91,1.91l3.363,0l0,5.228c0.16,0 7.962,-4.439 8.923,-5.068c0.16,0 0.16,-0.16 0.32,-0.16c0.48,0 0.48,0 1.602,0c2.231,0 9.644,0 9.644,0c0,0.16 -4.53,-2.643 -4.53,-2.643s-5.114,0.069 -5.114,0.069l0,0.002z"/> 
