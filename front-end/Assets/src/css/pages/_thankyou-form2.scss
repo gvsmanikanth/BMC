@@ -152,6 +152,12 @@
                 }                
             }
         }
+        // WEB-5449
+        .cq-dd-image {
+            @media (max-width: $break-md) {
+                display: block;
+            }              
+        }
 
     }
 
