@@ -1,7 +1,7 @@
 <section class="topcontent" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
  <h2 data-sly-test="${(wcmmode.edit || wcmmode.design) && !(properties.title || blogSet.blogs.size > 0)}">[Featured Blogs/Additional Resources]</h2>
 
-   <div class="${properties.numberOfBlogs == '4' ? '' : 'layout-inner-wrap'}">
+   <div class="${properties.numberOfBlogs == '3' ? 'layout-inner-wrap' : ''}">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex">
 	

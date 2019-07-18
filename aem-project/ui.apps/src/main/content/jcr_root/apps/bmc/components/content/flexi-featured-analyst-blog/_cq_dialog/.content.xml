@@ -22,6 +22,7 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Use Title case."
                                 fieldLabel="Title"
+                                value="Featured Blogs/Additional Resources"
                                 name="./title"/>
                             <blogs
                                 jcr:primaryType="nt:unstructured"
