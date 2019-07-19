@@ -57,6 +57,18 @@
                     flex-flow: column-reverse;
                 }
             }
+            .img-left{
+                @media (max-width: $break-md) {
+                    display: flex;
+                    flex-flow: column-reverse;
+                }
+            }
+            .img-right{
+                @media (max-width: $break-md) {
+                    display: flex;
+                    flex-flow: column;
+                }
+            }
         }       
       
     }
