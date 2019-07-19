@@ -251,7 +251,13 @@
                                 width: 15px;
                             }
                         }
-                    }                   
+                    }
+                     // web-5595 for mozilla browsers only
+                     @-moz-document url-prefix() {
+                        line-height: 0;
+                    }  
+                    
+                                   
                 }
 
                 @media screen and (max-width: 1298px) and (min-width: 901px) {
@@ -300,6 +306,12 @@
                 font-size: 18px;
                 line-height: 1.3em;
                 margin-top: 10px;
+            }
+            .submit-btn-wrap {
+                display: block;
+                clear: both;
+                float: left;
+                width: 100%;
             }
 
         }

@@ -462,63 +462,16 @@ var bmcMeta = {
                                                                </div>
                                                             </div>
                                                          </div>
-                                                         <button type="SUBMIT" class="btn-secondary">Start Your Trial</button>
-                                                         <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
-                                                         <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
-                                                         <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
-                                                         <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>
-                                                         <input type="hidden" id="C_Source_Name1" name="C_Source_Name1" value=""/>
-                                                         <input type="hidden" id="adobe_unique_hit_id" name="adobe_unique_hit_id" value=""/>
-                                                         <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><input type="text" name="Surname" id="Surname"></span>
-                                                      </form>
-                                                   </div>
-                                                   </section>
-                                                </div>
-                                             </section>
-                                       </div>
-                                       <div class="new newpar section aem-Grid-newComponent">
-                                       </div>
-                                       </div>
-                                    </div>
-                                    <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                       <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                                             <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   pointer-none">
-                                             </section>
-                                       </div>
-                                       <div class="new newpar section aem-Grid-newComponent">
-                                       </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                           </section>
-                        </div>                    
-                     </section>
-                  </div>
-                  <div class="header-form2 aem-GridColumn aem-GridColumn--default--12">
-                     <!-- /* MObile or thumbnail Image */-->
-                     <!-- /* Header Background Image  */-->
-                     
-                  </div>
-                  <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 ornate-header" data-wallpaper-options='{"source":{
-                        "fallback": "","(min-width: 640px)": ""}}' style="background-color:#0091DD;">
-                        <div class="offset-wrapper flex-center">
-                        <div class="inner">
-                              <div class="bannerContent">
-                                 <div class="layout-inner-wrap flex">
-                                    <div class="flex-item  md-col-6"></div>
-                                    <div class="flex-item  md-col-6">
-                                    <!-- Section where the placeholder recides. -->
-                                    <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                          <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                             <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                                <h2>
-                                                How can the BMC Sales team help?
-                                                </h2>
-                                             </div>
-                                             <!-- <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
-                                                <div class="cq-dd-image text-center ">
-                                                <img src="http://staging.bmc.com/forms/control-m-enterprise-free-trial-runaware2/_jcr_content/root/responsivegrid/header_form/right/image.img.png" alt="banner1"/>
+                                                      </div>
+                                                      <span class="submit-btn-wrap"> <button type="SUBMIT" class="btn-secondary">Start Your Trial</button></span>
+                                                      <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
+                                                      <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
+                                                      <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
+                                                      <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>
+                                                      <input type="hidden" id="C_Source_Name1" name="C_Source_Name1" value=""/>
+                                                      <input type="hidden" id="adobe_unique_hit_id" name="adobe_unique_hit_id" value=""/>
+                                                      <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><input type="text" name="Surname" id="Surname"></span>
+                                                   </form>
                                                 </div>
                                              </div>
                                              <div class="new newpar section aem-Grid-newComponent">

@@ -91,6 +91,11 @@ jQuery(function ($) {
 		$('.decorator-select select').change(function(){		
 			 $(".form-wrapp form").trigger('heightChange');  
 		});
+		
+		//WEB-5595
+		$('.form-group.checkbox').parent().css({
+			'padding' : '0px' 
+		});
 	}
 
 });
