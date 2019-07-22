@@ -195,6 +195,15 @@
                                         value="right"/>
                                 </items>
                             </image_x0020_Location>
+                            <addMagnifierIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                fieldDescription="Check to add the magnifier/Video icon to image."
+                                name="./addMagnifierIcon"
+                                text="Add Magnifier/Video Icon."
+                                uncheckedValue="false"
+                                value="true"/>
                         </items>
                     </column>
                 </items>
