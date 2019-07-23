@@ -1,6 +1,6 @@
 <?php
    $pageTitle = 'Brand Alignment';
-   $bodyClass = 'company page-about-us';
+   $bodyClass = 'company page-about-us product-page';
    include 'php-inc/head.php';
    ?>
    
@@ -107,7 +107,7 @@
                   </div>
                </section>
             </div>
-            <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+            <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section-odd">
                <section>
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
                      <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
@@ -126,7 +126,7 @@
                                  </ul>
                                  <ul class="button-set">
                                     <li>
-                                       <a class="btn btn-blue " href="http://documents.bmc.com/products/documents/34/98/493498/493498.pdf" target="_blank">
+                                       <a class="btn" href="http://documents.bmc.com/products/documents/34/98/493498/493498.pdf" target="_blank">
                                        Datasheet
                                        </a>
                                        <a href="#resources" class="resource-downloads-a icon-documents">Explore Additional Resources &nbsp;›</a>

@@ -513,7 +513,8 @@ img {
 	}
 }
 .section-wrap#section1 {
-	background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;
+	// background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;
+	background: #0093C9;
 	background-size: cover; 
 	transition-delay: 2s;
 }
@@ -521,10 +522,13 @@ img {
 	background-color: rgba(247, 247, 246, 0.4);
 }
 .section-wrap.section2 {
-	background-color: rgba(241, 241, 241, 0.4); 
+	background-color: #f1f2f2; 
 }
 .section-wrap#section9 {
 	min-height: auto !important;
+}
+.section-odd{
+	background: #fff;
 }
 .section-wrap {
 	.section-content.py4 {
@@ -547,7 +551,7 @@ img {
 		}
 		font-size: 24px;
 		line-height: 32px;
-		color: #fe5000;
+		color: #414042;
 		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		letter-spacing: 0.5px;
@@ -628,12 +632,13 @@ img {
 	}
 	.circle{
 			position: absolute;
-			background: #fd5507;
+			background: #EC4D00;
 			border-radius: 50%;
 			color: white;
 			height: 4.5rem;
 			width: 4.5rem;
 			display: none;
+			font-weight: 600;
 			@include media(breakpointMedium){
 				height: 4rem;
 				width: 4rem;
@@ -666,7 +671,7 @@ img {
 		}
 		
 		color: #414042;
-		font-weight: 300;
+		font-weight: 400;
 		font-family: 'Open Sans', sans-serif;
 		b{
 			font-weight: normal;
@@ -680,7 +685,7 @@ img {
 			font-size: 20px;
 		}
 		display: inline-block;
-		color: #3cb6ce;
+		color: #0093C9;
 		font-size: 16px;
 		//line-height: 26px;
 		font-weight: 400;
@@ -721,10 +726,10 @@ ul {
 		.learn-more {
 			width: 263px;
 			background: #fff;
-			border: 1px solid #88c1dd;
+			border: 1px solid #0093C9;
 			text-align: center;
 			height: 73px;
-			color: #3cb6ce;
+			color: #0093C9;
 			font-size: 20px;
 			line-height: 22px;
 			font-weight: 600;
