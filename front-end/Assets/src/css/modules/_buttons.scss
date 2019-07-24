@@ -151,9 +151,9 @@ button,
 	@extend %button-config;
 	--background-color: color(colorAction);
 	--border-color: color(colorAction);
-	background-color: #e8f2de;
-	border-color: #e8f2de;
-	color: #414042;
+	background-color: #fff;
+	border-color: #fff;
+	color: #0093C9;
 
 	&:hover,
 	&:active,

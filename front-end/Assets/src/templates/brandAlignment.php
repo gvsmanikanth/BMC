@@ -107,7 +107,7 @@
                   </div>
                </section>
             </div>
-            <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section-odd">
+            <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 bg-white">
                <section>
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
                      <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
@@ -193,7 +193,7 @@
                </section>
             </div>
             <div class="CTAbar responsivegrid aem-GridColumn aem-GridColumn--default--12">
-               <section class="bg-ship-gray ctabar">
+               <section class="bg-seashell ctabar">
                   <div class="layout-inner-wrap">
                      <div class="cta-content text-center">
                         <div class="tagline">
@@ -222,17 +222,17 @@
                      <h2 class="m0 text-center white">Control your multi-cloud costs</h2>
                      <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table r-tabs-nav">
                         <li class="p2 flex-cell n-col-3 r-tabs-tab r-tabs-state-active">
-                           <a class="white bold no-scroll r-tabs-anchor" href="#tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" onclick="">Simplify Cloud Cost Management</a>
+                           <a class="white no-scroll r-tabs-anchor" href="#tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" onclick="">Simplify Cloud Cost Management</a>
                         </li>
                         <li class="p2 flex-cell n-col-3 r-tabs-state-default r-tabs-tab">
-                           <a class="white bold no-scroll r-tabs-anchor" href="#tab-fbd559fa-7de8-4879-8007-56d51bf626da" onclick="">Simulate Migrations</a>
+                           <a class="white no-scroll r-tabs-anchor" href="#tab-fbd559fa-7de8-4879-8007-56d51bf626da" onclick="">Simulate Migrations</a>
                         </li>
                         <li class="p2 flex-cell n-col-3 r-tabs-state-default r-tabs-tab">
-                           <a class="white bold no-scroll r-tabs-anchor" href="#tab-d590b7af-a611-4885-aab0-96b47de4beb7" onclick="">Optimize Resources and Costs</a>
+                           <a class="white no-scroll r-tabs-anchor" href="#tab-d590b7af-a611-4885-aab0-96b47de4beb7" onclick="">Optimize Resources and Costs</a>
                         </li>
                      </ul>
                      <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="r-tabs-anchor">Simplify Cloud Cost Management</a></div>
-                     <div id="tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
+                     <div id="tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="section bg-white r-tabs-panel r-tabs-state-active" style="display: block;">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>
@@ -279,7 +279,7 @@
                         </div>
                      </div>
                      <div class="r-tabs-accordion-title"><a href="#tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="r-tabs-anchor">Simulate Migrations</a></div>
-                     <div id="tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="section bg-seashell r-tabs-state-default r-tabs-panel">
+                     <div id="tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="section bg-white r-tabs-state-default r-tabs-panel">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>
@@ -319,7 +319,7 @@
                         </div>
                      </div>
                      <div class="r-tabs-accordion-title"><a href="#tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="r-tabs-anchor">Optimize Resources and Costs</a></div>
-                     <div id="tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="section bg-seashell r-tabs-state-default r-tabs-panel">
+                     <div id="tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="section bg-white r-tabs-state-default r-tabs-panel">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>
@@ -374,10 +374,10 @@
             </div>
 			<div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
    <!-- ID=404722946 pageLocation=FullWidthColumn ModaleVideo= --> 
-   <section class="wallpapered bg-corduroy bar wallpaper">
+   <section class="wallpapered bg-seashell bar wallpaper">
       <div class="section">
          <div class="section-content p3">
-            <h2 class="section-title text-center white">BMC Helix Discovery is transforming digital enterprises</h2>
+            <h2 class="section-title text-center ">BMC Helix Discovery is transforming digital enterprises</h2>
             <div class="flex-wrap flex-justify-center mb2">
                <div class="py1 flex flex-item sm-col sm-col-6 md-col-3">
                   <a href="http://www.bmc.com/customers/windstream.html" target="_self" class="m1 card tundora bg-white js-ehItem ">

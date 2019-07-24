@@ -148,7 +148,7 @@ a.white:focus,
 
 .bg-seashell {
     --background-color: color(seashell);
-    background-color: #ffffff;
+    background-color: color(seashell);
 }
 
 .bg-seashell-hover:hover,
@@ -178,7 +178,7 @@ a.white:focus,
 
 .bg-corduroy {
     --background-color: color(corduroy);
-    background-color: #75777a;
+    background-color: color(corduroy);
 }
 
 .bg-abbey {
