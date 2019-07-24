@@ -140,7 +140,7 @@
     
     .topcontent {
         padding-bottom: 1.5em;
-        .layout-secondaryaem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--3 {
+        .layout-secondary.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--3 {
             @media (max-width: $break-md) {
                 width: 100%;
                 float: none;
@@ -148,9 +148,33 @@
             }
             .cq-dd-image.text-center {
                 @media (max-width: $break-md) {
-                    text-align: left;
+                    text-align: center;
                 }                
             }
+        }
+        // WEB-5449
+        .cq-dd-image {
+            @media (max-width: $break-md) {
+                display: block;
+            }              
+        }
+        .layout-secondary {
+            position: relative;
+
+            @media (max-width: $break-md) {
+                text-align: center;
+            }       
+            .video-icon.icon-vid {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 40%;
+                background-image: url('icon-slide-video.png');
+                left: 30%;
+                right: 30%;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }       
         }
 
     }

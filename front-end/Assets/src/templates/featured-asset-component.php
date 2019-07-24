@@ -82,7 +82,7 @@
                               <section class="topcontent bg-white">
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/_100contentcontainer_270526998/center/featured_asset2.img.png" title="helix-itsm-service" alt="helix-itsm-service">
+                                       <img src="https://stage-author.cms.bmc.comhttps://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/_100contentcontainer_270526998/center/featured_asset2.img.png" title="helix-itsm-service" alt="helix-itsm-service">
                                        <a href="/content/bmc/videos.html?vID=7b7gic9o5ZI" class="cq-dd-image text-center modal-youtube-video-player">
                                        </a>
                                     </div>
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                        <a href="http://documents.bmc.com/products/documents/87/34/498734/498734.pdf" class="cq-dd-image text-center" data-ic-weighting="5" data-product-interest="Control-M" data-ic-app-inclusion="yes" data-ic-target-persona="Manager" data-product-line="DBA" data-ic-target-industry="Information Technology" data-ic-company-size="1000-4999" data-ic-content-type="Datasheets" data-ic-topics="Business &amp; IT Automation" data-ic-buyer-stage="Buy" data-ic-source-publish-date="2019-02-13T16:23:00.000+05:30" data-topics="Automation" target="_blank">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/Copy%20of%20_100contentcontainer_270526998/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
+                                       <img src="https://stage-author.cms.bmc.comhttps://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/Copy%20of%20_100contentcontainer_270526998/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
                                        </a>
                                     </div>
                                  </div>
@@ -153,7 +153,7 @@
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                        <a href="http://documents.bmc.com/products/documents/12/48/511248/511248.pdf" class="cq-dd-image text-center" data-ic-weighting="5" data-ic-app-inclusion="no" target="_blank">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
+                                       <img src="https://stage-author.cms.bmc.comhttps://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
                                        </a>
                                     </div>
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
@@ -188,7 +188,7 @@
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                        <a href="/content/bmc/language-masters/en/forms/control-m-automationapi-trial.html" class="cq-dd-image text-center" data-ic-weighting="5" data-ic-app-inclusion="no">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_261497890/center/featured_asset2_1640600719.img.png" title="banner19" alt="banner19">
+                                       <img src="https://stage-author.cms.bmc.comhttps://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_261497890/center/featured_asset2_1640600719.img.png" title="banner19" alt="banner19">
                                        </a>
                                     </div>
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
@@ -224,7 +224,7 @@
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                        <a href="/content/bmc/language-masters/en/forms/control-m-automationapi-trial.html" class="cq-dd-image text-center" data-ic-weighting="5" data-ic-app-inclusion="no">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_1748471013/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
+                                       <img src="https://stage-author.cms.bmc.comhttps://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_1748471013/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
                                        </a>
                                     </div>
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
