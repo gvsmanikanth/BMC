@@ -158,6 +158,11 @@
                 display: block;
             }              
         }
+        .layout-secondary {
+            @media (max-width: $break-md) {
+                text-align: center;
+            }  
+        }
 
     }
 

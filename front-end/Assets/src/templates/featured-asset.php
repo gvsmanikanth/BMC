@@ -253,6 +253,44 @@
                   </div>
                </section>
             </div>
+
+            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+               <section class="bg-seashell">
+                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                     <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                           <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                              <section class="topcontent bg-seashell">
+                                 <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
+                                    <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
+                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_523091307/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
+                                       <a href="/content/bmc/videos.html?vID=mw91PuygegM" class="cq-dd-image text-center modal-youtube-video-player">
+                                          <div class="video-icon icon-vid"></div>
+                                       </a>
+                                    </div>
+                                    <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+                                       <div class="cmp cmp-title cmp-title-large">
+                                          <h2 class="h2-variation-1">Videos</h2>
+                                          <h5>
+                                             Supported Platforms and Applications
+                                          </h5>
+                                          <h5 class="normal">
+                                             Webinar: Making Business Workflows First-Class Citizens In The Modern Software Delivery Life Cycle
+                                          </h5>
+                                       </div>
+                                       <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+                                          <a class="bold learn-more modal-youtube-video-player" href="/content/bmc/videos.html?vID=mw91PuygegM">Watch now												
+                                          </a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </section>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+            </div>
           
          </section>
       </div>
