@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-07-22T10:23:09.268-04:00"
+        cq:lastModified="{Date}2019-07-25T12:32:54.416+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:05.422-04:00"
         cq:lastReplicatedBy="admin"
@@ -149,15 +149,6 @@
                                 fileReference="/content/dam/bmc/it-media/images/Placeholder-750x400.png"
                                 imagehorizontalPosition="text-center"
                                 showCaptionAsHyperLink="false"/>
-                            <title
-                                jcr:created="{Date}2019-04-22T00:43:56.923+05:30"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2019-06-03T15:20:16.114+05:30"
-                                jcr:lastModifiedBy="admin"
-                                jcr:primaryType="nt:unstructured"
-                                jcr:title="Default Title here."
-                                sling:resourceType="bmc/components/content/title"
-                                type="h2"/>
                         </right>
                     </header_form>
                     <maincontentcontainer
