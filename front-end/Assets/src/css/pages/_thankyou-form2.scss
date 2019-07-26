@@ -164,6 +164,17 @@
                 }                
             }
         }
+        // WEB-5449
+        .cq-dd-image {
+            @media (max-width: $break-md) {
+                display: block;
+            }              
+        }
+        .layout-secondary {
+            @media (max-width: $break-md) {
+                text-align: center;
+            }  
+        }
 
     }
 
