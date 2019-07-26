@@ -233,7 +233,7 @@
 //DXP-1350 - KeyFeature - Heading font is large
 .key-features {
   h2{
-    color: #75777a; 
+    color: #4f5a65; 
     font-weight: normal; 
     margin: 0 0 1em 0; 
     text-align: left; 
@@ -387,6 +387,7 @@
     display: inline-block;
     font-weight: bold;
     height: 34px;
+    color: #29a5d6;
 
     &.icon-document {
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
@@ -622,7 +623,7 @@
     
     h2 {
       --color: color(ship-gray);
-      color: #75777a;
+      color: #4f5a65;
       font-weight: normal;
       margin: 0;
       text-align: center;
@@ -1037,7 +1038,7 @@
     }
 
     h2 {
-      color: color(ship-gray);
+      color: #4f5a65;
       font-weight: normal;
       margin-bottom: 1.5em;
 		

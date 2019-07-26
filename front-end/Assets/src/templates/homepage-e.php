@@ -53,7 +53,7 @@ include 'php-inc/svg.php';
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
-									<img src="//www.bmc.com/content/dam/bmc/images/Video_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
 									<div class="inner">
 										<h5>Demo:</h5>
 										<p>Customizable video</p>
@@ -65,7 +65,7 @@ include 'php-inc/svg.php';
 							<div class="inner assetTxt">
 								<div class="flex-center ">
 
-									<img src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-read.png" alt="">
 									<div class="inner">
 										<h5>Datasheet:</h5>
 										<p>Control-M</p>
@@ -78,7 +78,7 @@ include 'php-inc/svg.php';
 							<div class="inner assetTxt">
 								<div class="flex-center">
 
-									<img src="//www.bmc.com/content/dam/bmc/images/AnalystReport_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-explore.png" alt="">
 									<div class="inner">
 										<h5>Analyst report:</h5>
 										<p>Forrester's Total Economic Impact Study</p>
