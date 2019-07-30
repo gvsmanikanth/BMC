@@ -1,13 +1,22 @@
 .flexi-featured-analyst-blog{
 	.layout-inner-wrap{
-		img{
-			width: 320px;
-			height: 170px;
+		section{
+			position: relative;
 		}
-	}
-	.topcontent{
-		padding-top: 0.5em;
-	}
+		.modal-youtube-video-player{
+			position: relative;
+			display: block;
+			.carousel-icon.icon-vid{
+				background: url(./icon-slide-video.png) 50% 0 no-repeat;
+				width: 50%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top: 0;
+				transform: scale(0.5);
+			}
+		}
+	}	
 }
 
 

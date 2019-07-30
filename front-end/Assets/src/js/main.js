@@ -74,4 +74,5 @@ require('./vendor/jquery.validate.input.js');
 
 require('./modules/contact-form.js');
 require('./modules/document_container.js');
+require('./modules/imageAlignment.js');
 

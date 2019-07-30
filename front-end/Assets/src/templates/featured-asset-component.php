@@ -290,7 +290,7 @@
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                      <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                           <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                           <div class="flexi-featured-analyst-blog cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                               <section class="topcontent bg-white">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-right">
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
@@ -309,10 +309,14 @@
                                        </div>
                                     </div>
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_943986914/center/featured_asset2_1640600719.img.png" title="banner1" alt="banner1">
-                                       <a href="/content/bmc/videos.html?vID=mw91PuygegM" class="cq-dd-image text-center modal-youtube-video-player">
-                                          <div class="video-icon icon-vid"></div>
-                                       </a>
+                                       <section>
+                                          <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
+                                                <figure>
+                                                   <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_1054535558/center/featured_asset2_1640600719.img.png" alt="Achieve Cloud Migration Success">
+                                                   <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" style="right: 25%; background-position: 50% 0%;"></div>
+                                             </figure>
+                                          </a>
+                                       </section>
                                     </div>
                                  </div>
                               </section>
@@ -364,7 +368,7 @@
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                      <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                           <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                           <div class="flexi-featured-analyst-blog cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                               <section class="topcontent bg-white">
                                  <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-right">
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
@@ -383,10 +387,10 @@
                                        </div>
                                     </div>
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                       <a href="/content/bmc/language-masters/en/customers/amadeus.html" class="cq-dd-image text-center" data-ic-weighting="5" data-ic-app-inclusion="no" data-topics="Automation">
+                                        <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
                                           <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_151044737/center/featured_asset2_1640600719.img.jpg" title="banner1" alt="banner1">
-                                          <div class="video-icon icon-vid"></div>
-                                       </a>
+                                          <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" ></div>
+                                       </a>                                       
                                     </div>
                                  </div>
                               </section>

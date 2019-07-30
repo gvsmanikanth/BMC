@@ -160,21 +160,10 @@
         }
         .layout-secondary {
             position: relative;
-
             @media (max-width: $break-md) {
                 text-align: center;
-            }       
-            .video-icon.icon-vid {
-                position: absolute;
-                top: 0;
-                height: 100%;
-                width: 40%;
-                background-image: url('icon-slide-video.png');
-                left: 30%;
-                right: 30%;
-                background-position: center center;
-                background-repeat: no-repeat;
-            }       
+            }    
+                 
         }
 
     }
