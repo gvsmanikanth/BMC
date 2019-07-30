@@ -19,7 +19,8 @@
 			 </sly>
 
 <sly data-sly-test="${properties.image_location == 'left'}">
-	<section class="topcontent ${bgClass}">
+<div class="flexi-featured-analyst-blog">
+    <section class="topcontent ${bgClass}">
 			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                          
                               	<div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                              <sly data-sly-test="${!cta.isVideo}">
@@ -29,10 +30,12 @@
                                              	</a>
                                              </sly>
                                              <sly data-sly-test="${cta.isVideo}">
-                                             	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
-                                             		<a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">
-                                                   		<div data-sly-test="${properties.addVideoIcon}" class="video-icon icon-vid"></div> 
-                                             		</a>
+                                                    <a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">													
+													<figure>
+                                                    	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                                   			<div data-sly-test="${properties.addVideoIcon}" class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0"></div> 
+													</figure>
+                                                </a>
                                               </sly>
                                  </div> 
                                  <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
@@ -60,8 +63,10 @@
                                 </div>
             </div>
     </section>                     
+</div>
 </sly>
 <sly data-sly-test="${properties.image_location == 'right'}">
+<div class="flexi-featured-analyst-blog">
 	<section class="topcontent ${bgClass}">
 			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                               
                                  <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
@@ -94,12 +99,15 @@
                                              	</a>
                                              </sly>
                                              <sly data-sly-test="${cta.isVideo}">
-                                             	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
-                                             	<a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">
-                                                   <div data-sly-test="${properties.addVideoIcon}" class="video-icon icon-vid"></div> 
-                                             	</a>
+                                             	<a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">													
+													<figure>
+                                                    	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                                   			<div data-sly-test="${properties.addVideoIcon}" class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0"></div> 
+                                             		</figure>
+                                                </a>
                                              </sly>
                                  </div> 
             </div>
-    </section>     
+    </section>
+ </div>
 </sly>
