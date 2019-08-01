@@ -313,7 +313,7 @@
                                           <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
                                                 <figure>
                                                    <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_1054535558/center/featured_asset2_1640600719.img.png" alt="Achieve Cloud Migration Success">
-                                                   <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" style="right: 25%; background-position: 50% 0%;"></div>
+                                                   <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="50" ></div>
                                              </figure>
                                           </a>
                                        </section>
@@ -389,7 +389,7 @@
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
                                         <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
                                           <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/copy_of__100contentc_151044737/center/featured_asset2_1640600719.img.jpg" title="banner1" alt="banner1">
-                                          <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" ></div>
+                                          <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="50" ></div>
                                        </a>                                       
                                     </div>
                                  </div>
@@ -408,11 +408,15 @@
                            <div class="flexi-featured-analyst-blog cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                               <section class="topcontent bg-white">
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
-                                    <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                       <img src="https://stage-author.cms.bmc.com/content/bmc/language-masters/en/web-services/featuredAsset2/jcr%3acontent/root/responsivegrid/maincontentcontainer/_100contentcontainer_75089940/center/featured_asset2_1200907236.img.jpg" title="Control-M-Trial" alt="Control-M-Trial">
-                                       <a href="/content/bmc/videos.html?vID=/content/dam/bmc/migration/video/Cluster.mp4" class="cq-dd-image text-center modal-youtube-video-player">
-                                          <div class="video-icon icon-vid"></div>
-                                       </a>
+                                    <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">                                       
+                                       <section>
+                                          <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
+                                                <figure>
+                                                <img src="https://staging.bmc.com/web-services/featuredAsset2/_jcr_content/root/responsivegrid/maincontentcontainer/copy_of__100contentc_151044737/center/featured_asset2.img.jpg" title="Control-M-Trial" alt="Control-M-Trial">
+                                                   <div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="50" ></div>
+                                             </figure>
+                                          </a>
+                                       </section>
                                     </div>
                                     <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
                                        <div class="cmp cmp-title cmp-title-large">
