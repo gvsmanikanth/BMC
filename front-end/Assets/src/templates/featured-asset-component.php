@@ -405,7 +405,7 @@
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                      <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                           <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
+                           <div class="flexi-featured-analyst-blog cmp cmp-image aem-GridColumn aem-GridColumn--default--12">
                               <section class="topcontent bg-white">
                                  <div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap img-left">
                                     <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">

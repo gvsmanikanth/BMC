@@ -16,7 +16,13 @@
 				transform: scale(0.5);
 			}
 		}
-	}	
+		img{
+			width: 320px;
+			height: 170px;
+		}
+	}
+	.topcontent{
+		background:none;
+		padding: 1.5rem 0;
+	}
 }
-
-

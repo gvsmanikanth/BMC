@@ -178,6 +178,41 @@
     footer.layout-footer {
         margin-top: 0;
     }
+
+ 
+    .flexi-featured-analyst-blog{
+        .layout-inner-wrap{
+            section{
+                position: relative;
+            }
+            .modal-youtube-video-player{
+                position: relative;
+                display: block;
+                .carousel-icon.icon-vid{
+                    background: url(./icon-slide-video.png) 50% 0 no-repeat;
+                    width: 50%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    transform: scale(0.5);
+                    padding-top: 15px;
+                }
+            }
+            img{
+                width: initial;
+                height: initial;
+            }
+        }
+        .topcontent{
+            background:initial;
+            padding: 1.5em 0;
+            figure {
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }
 .header-form2-thank-you{
 	  .product-category-header{
