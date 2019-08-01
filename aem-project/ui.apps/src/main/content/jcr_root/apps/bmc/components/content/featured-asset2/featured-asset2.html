@@ -10,6 +10,7 @@
 <sly data-sly-test="${properties.image_location == 'right'}">
     <sly data-sly-test.imageLocation="img-right"></sly>
 </sly>
+
 <sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.cta_url}"></sly>
 			<sly data-sly-test="${cta.href}">
 			 	<sly data-sly-test.CtaResolvedLink="${cta.href}"></sly>
@@ -17,6 +18,7 @@
 			 <sly data-sly-test="${!cta.href}">
 			 	<sly data-sly-test.CtaResolvedLink="${properties.cta_url}"></sly>
 			 </sly>
+
 
 <sly data-sly-test="${properties.image_location == 'left'}">
 <div class="flexi-featured-analyst-blog">
@@ -65,6 +67,7 @@
     </section>                     
 </div>
 </sly>
+
 <sly data-sly-test="${properties.image_location == 'right'}">
 <div class="flexi-featured-analyst-blog">
 	<section class="topcontent ${bgClass}">
