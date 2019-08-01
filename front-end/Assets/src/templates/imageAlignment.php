@@ -39,15 +39,16 @@ include 'php-inc/head.php';
                                           </section>
                                        </div>
                                        <div class="flex-item sm-col-4 p2">
-                                          <section>
-                                             <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
-                                                <figure>
-                                                   <img src="http://blogs.bmc.com/wp-content/uploads/2019/06/bigdatablog-700x400-48x27.jpg" alt="">
-                                                </figure>
-                                                Achieve Cloud Migration Success
-                                             </a>
-                                          </section>
-                                       </div>
+											<section>
+											   <a href="/content/bmc/videos.html?vID=qPIKPP6dewo" class="modal-youtube-video-player">
+												  <figure>
+													 <img src="http://blogs.bmc.com/wp-content/uploads/2019/06/bigdatablog-700x400-48x27.jpg" alt="Achieve Cloud Migration Success">
+													<div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0"></div>
+												  </figure>
+												 Achieve Cloud Migration Success 
+											   </a>
+											</section>
+										</div>
                                     </div>
                                  </div>
                               </section>

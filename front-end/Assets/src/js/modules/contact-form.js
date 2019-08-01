@@ -34,8 +34,10 @@ jQuery(function ($) {
 					var ehInstance = $(this),
 						itemHeight = $(ehInstance).outerHeight();
 					if ( itemHeight > maxHeight ) {
-						maxHeight = itemHeight + 50;
+						maxHeight = itemHeight;
+						ehItem.css('margin-bottom','30px');
 					}
+					
 				});
 				
 				var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;

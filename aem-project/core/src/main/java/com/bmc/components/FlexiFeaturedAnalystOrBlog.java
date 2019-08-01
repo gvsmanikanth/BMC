@@ -28,6 +28,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.*;
+
+import javax.jcr.Node;
+import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
 /**
  * FlexiFeaturedAnalystOrBlog class is a class backing the FlexiFeaturedAnalystOrBlog component.
  * this class resolves it to the correct model(multifield property)
@@ -39,24 +43,39 @@ public class FlexiFeaturedAnalystOrBlog extends WCMUsePojo implements Multifield
     protected HashMap<String,String> blog;
 
     protected List<HashMap> blogs;
-
+    protected int numberOfBlogs;
+    protected int count=0;
 
     @Override
     public void activate() throws Exception {
-
         try {
-        	 
+        	Node currentNode = getResource().adaptTo(Node.class);
+	         for(PropertyIterator propeIterator = currentNode.getProperties() ; 
+	        		 propeIterator.hasNext();)  
+				   {  
+				    Property prop= propeIterator.nextProperty(); 
+	                if(currentNode.hasProperty("numberOfBlogs")){
+			        	 Property propVal = currentNode.getProperty(prop.getName()); 
+			        	 if(prop.getName().equalsIgnoreCase("numberOfBlogs")){
+			        		 numberOfBlogs = Integer.parseInt(prop.getValue().toString());
+			        	 }
+	                }else{
+	                	numberOfBlogs =4;
+	                }
+				   }
             ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("blogs").listIterator();
             blogs = new ArrayList<>();
-            while (pagePathsNodes.hasNext()) {
+             while (pagePathsNodes.hasNext()) {
                 Resource childPage = pagePathsNodes.next();
-                //pagePathList.add(childPage.getValueMap().get("ctaPath").toString());
                 blog = new HashMap<>();
                 blog.put("externalImagePath", childPage.getValueMap().get("externalImagePath").toString());
                 blog.put("linkURL", childPage.getValueMap().get("linkURL").toString());
                 blog.put("caption", childPage.getValueMap().get("caption").toString());
                 blog.put("altText", childPage.getValueMap().get("altText").toString());
-                blogs.add(blog);
+                if(count < numberOfBlogs){ // display cards based on count
+	                blogs.add(blog);
+	            	count++;
+                }
             }
           
         } catch (Exception e){
@@ -69,5 +88,6 @@ public class FlexiFeaturedAnalystOrBlog extends WCMUsePojo implements Multifield
     	
         return blogs;
     }
+ 
 }
 
