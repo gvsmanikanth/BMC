@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-04-22T00:41:07.356+05:30"
+        cq:lastModified="{Date}2019-07-22T10:24:39.519-04:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:06.179-04:00"
         cq:lastReplicatedBy="admin"
@@ -78,7 +78,49 @@
                         jcr:lastModified="{Date}2017-08-23T17:56:30.073-04:00"
                         jcr:lastModifiedBy="dtayeh"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/structure/100contentcontainer"/>
+                        sling:resourceType="bmc/components/structure/100contentcontainer">
+                        <center
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title_copy_copy_copy
+                                cq:lastRolledout="{Date}2019-07-17T08:04:30.888-04:00"
+                                cq:lastRolledoutBy="ropandit@bmc.com"
+                                jcr:created="{Date}2019-06-03T07:28:52.124-04:00"
+                                jcr:createdBy="ropandit@bmc.com"
+                                jcr:lastModified="{Date}2019-07-17T08:04:30.885-04:00"
+                                jcr:lastModifiedBy="ropandit@bmc.com"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="What’s next?"
+                                sling:resourceType="bmc/components/content/title"
+                                className="h2-variation-1"
+                                type="h2"/>
+                            <text_copy
+                                cq:lastRolledout="{Date}2019-07-17T08:04:30.895-04:00"
+                                cq:lastRolledoutBy="ropandit@bmc.com"
+                                jcr:created="{Date}2019-07-04T08:15:21.404-04:00"
+                                jcr:createdBy="ropandit@bmc.com"
+                                jcr:lastModified="{Date}2019-07-17T08:04:30.890-04:00"
+                                jcr:lastModifiedBy="saduncan@bmc.com"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>Now that you have access to the e-book, explore the resources below to learn more about BMC capacity optimization solutions.&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                            <text_copy_copy_copy_
+                                cq:lastRolledout="{Date}2019-07-17T08:04:30.901-04:00"
+                                cq:lastRolledoutBy="ropandit@bmc.com"
+                                jcr:created="{Date}2019-06-11T10:46:41.309-04:00"
+                                jcr:createdBy="ropandit@bmc.com"
+                                jcr:lastModified="{Date}2019-07-17T08:04:30.898-04:00"
+                                jcr:lastModifiedBy="ropandit@bmc.com"
+                                jcr:mixinTypes="[cq:LiveRelationship]"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;black&quot;>Ready to start a conversation? &lt;/span>&lt;b>&lt;a href=&quot;/forms/contact-bmc.html&quot; class=&quot;learn-more&quot;>Talk to a BMC expert&lt;/a>&lt;/b>&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                        </center>
+                    </_x0031_00contentcontain>
                 </maincontentcontainer>
             </responsivegrid>
         </root>

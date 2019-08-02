@@ -34,8 +34,10 @@ jQuery(function ($) {
 					var ehInstance = $(this),
 						itemHeight = $(ehInstance).outerHeight();
 					if ( itemHeight > maxHeight ) {
-						maxHeight = itemHeight + 50;
+						maxHeight = itemHeight;
+						ehItem.css('margin-bottom','30px');
 					}
+					
 				});
 				
 				var isMobile = window.matchMedia("only screen and (max-width: 900px)").matches;
@@ -90,6 +92,11 @@ jQuery(function ($) {
 		//WEB-5587
 		$('.decorator-select select').change(function(){		
 			 $(".form-wrapp form").trigger('heightChange');  
+		});
+		
+		//WEB-5595
+		$('.form-group.checkbox').parent().css({
+			'padding' : '0px' 
 		});
 	}
 

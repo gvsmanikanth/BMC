@@ -1,16 +1,20 @@
 <section class="topcontent" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
-   <div class="layout-inner-wrap">
+ <h2 data-sly-test="${(wcmmode.edit || wcmmode.design) && !(properties.title || blogSet.blogs.size > 0)}">[Featured Blogs/Additional Resources]</h2>
+
+   <div class="${properties.numberOfBlogs == '3' ? 'layout-inner-wrap' : ''}">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex">
-	<!--/*Iterate through the blogs  */--> 
-    			<sly data-sly-list.blog="${blogSet.blogs}">
-					<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
+	
+   				 <sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
 					<sly data-sly-test="${properties.numberOfBlogs == '3'}">
 						<sly data-sly-test.blogClass="flex-item sm-col-4 p2"></sly>
 					</sly>
 					<sly data-sly-test="${properties.numberOfBlogs == '4'}">
 						<sly data-sly-test.blogClass="flex-item sm-col-3 p2"></sly>
 					</sly>
+<!--/*Iterate through the blogs  */--> 
+    			<sly data-sly-list.blog="${blogSet.blogs}">
+
 				<div class="${blogClass}">
 					<sly data-sly-use.blogLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=blog.linkURL}"></sly>
 			        <sly data-sly-test="${blogLink.href}">
@@ -29,6 +33,9 @@
 					   <a href="${resolvedLink}" class="${cssClass}">
 						  <figure>
 							 <img src="${blog.externalImagePath}" alt="${blog.altText}">
+								<sly data-sly-test="${blogLink.isVideo}">
+								<div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" style="right: 25%; background-position: 50% 0%;"></div>
+								</sly>
 						  </figure>
 						 ${blog.caption  @ context='html'}
 					   </a>
