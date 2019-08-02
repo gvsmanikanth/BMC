@@ -1,8 +1,10 @@
-package com.bmc.models.components.datasource;
+/****** Commented as part of AEM 6.5 migration *****/
 
-/**
+/*package com.bmc.models.components.datasource;
+
+*//**
  * Created by elambert on 5/18/17.
- */
+ *//*
 
 import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
 import com.adobe.granite.ui.components.ds.SimpleDataSource;
@@ -129,11 +131,11 @@ public class PositionsFormOptionsDataSource extends DataSourceModel {
 
 
         // Sort based on translated display text:
-        /*Collections.sort(countries, new Comparator<Resource>() {
+        Collections.sort(countries, new Comparator<Resource>() {
             public int compare(Resource o1, Resource o2) {
                 return o1.adaptTo(ValueMap.class).get("text", "").compareTo(o2.adaptTo(ValueMap.class).get("text", ""));
             }
-        });*/
+        });
 
         // add the header of the country options
         addPositionOptionHeader(positions);
@@ -159,4 +161,4 @@ public class PositionsFormOptionsDataSource extends DataSourceModel {
         positions.add(0, positionRes);
     }
 
-}
+}*/

@@ -1,4 +1,6 @@
-package com.bmc.models.components.datasource;
+/**** Commented as part of AEM 6.5 migration *****/
+
+/*package com.bmc.models.components.datasource;
 
 import com.adobe.cq.wcm.core.components.models.form.DataSourceModel;
 import com.adobe.granite.ui.components.ds.SimpleDataSource;
@@ -18,9 +20,9 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import javax.annotation.PostConstruct;
 import java.util.*;
 
-/**
+*//**
  * Created by elambert on 5/18/17.
- */
+ *//*
 @Model(adaptables = SlingHttpServletRequest.class,
         adapters = DataSourceModel.class,
         resourceType = ISOCountries.RESOURCE_TYPE)
@@ -90,4 +92,4 @@ public class ISOCountries extends DataSourceModel {
         ValueMapResource countryRes = new ValueMapResource(resolver, "", "", vm);
         countries.add(0, countryRes);
     }
-}
+}*/
