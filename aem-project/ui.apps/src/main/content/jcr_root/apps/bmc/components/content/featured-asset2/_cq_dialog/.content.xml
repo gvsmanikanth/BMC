@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="FeaturedAsset Forms"
+    jcr:title="FeaturedAsset2 Component"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="[core.wcm.components.image.v1.editor]">
     <content
@@ -195,6 +195,15 @@
                                         value="right"/>
                                 </items>
                             </image_x0020_Location>
+                            <addVideoIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                fieldDescription="Check to add the video icon to image."
+                                name="./addVideoIcon"
+                                text="Add Video Icon."
+                                uncheckedValue="false"
+                                value="true"/>
                         </items>
                     </column>
                 </items>
