@@ -6,7 +6,7 @@
     mode="edit">
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container">
+        sling:resourceType="granite/ui/components/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <regionalWebsite
                 jcr:primaryType="nt:unstructured"
