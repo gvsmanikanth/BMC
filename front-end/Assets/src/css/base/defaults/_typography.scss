@@ -1,6 +1,5 @@
 a {
-	--color: color(colorCorporateAction);
-	color: #0093c9;
+	color: color(colorCorporateAction);
 	text-decoration: none;
 	@include transition((property: color));
 	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
@@ -135,7 +134,6 @@ h3 {
 		@include font-size(26);
 		@include transition((property: color));
 		--color: color(colorCorporateAction);
-		color: #0093c9;
 		line-height:1.1em;
 		letter-spacing:-.03em;
 		text-decoration: none;
@@ -235,8 +233,7 @@ h6 {
 	&:hover,
 	&:active,
 	&:focus {
-		--color: color(colorCorporateAction);
-		color: #0093c9;
+		--color: color(boston-blue);
 	}
 }
 
