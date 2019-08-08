@@ -7,35 +7,45 @@
     <cq:editConfig/>
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
         <items jcr:primaryType="nt:unstructured">
             <page1
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Page1"
-                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
                     <column
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
                             <fieldset
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Page 1 Dashboard"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        sling:resourceType="granite/ui/components/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
                                             <page
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter TabName"
                                                 fieldLabel="Enter Tab Name"
                                                 name="./opage"/>
                                             <path
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                 fieldDescription="Select Path"
                                                 fieldLabel="Path"
                                                 name="./opath"/>
@@ -50,30 +60,36 @@
             <page2
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Page2"
-                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
                     <column
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
                             <fieldset
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Page 2 Dashboard"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        sling:resourceType="granite/ui/components/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
                                             <page
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter Tab Name"
                                                 fieldLabel="Tab Name"
                                                 name="./tpage"/>
                                             <path
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                 fieldDescription="Select Path"
                                                 fieldLabel="Path"
                                                 name="./tpath"
@@ -89,30 +105,36 @@
             <page3
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Page3"
-                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
                     <column
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
                             <fieldset
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Page 3 Dashboard"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                                 <items jcr:primaryType="nt:unstructured">
                                     <column
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        sling:resourceType="granite/ui/components/foundation/container">
                                         <items jcr:primaryType="nt:unstructured">
                                             <page
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter Tab Name"
                                                 fieldLabel="Tab Name"
                                                 name="./lpage"/>
                                             <path
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                 fieldDescription="Select Path"
                                                 fieldLabel="Path"
                                                 name="./lpath"
