@@ -28,7 +28,8 @@
                                 value="true"/>
                             <useHorizontalDisplayType
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                sling:orderBefore="linkItems"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./useHorizontalDisplay@TypeHint"
                                 value="Boolean"/>
                         </items>

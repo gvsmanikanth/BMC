@@ -5,7 +5,7 @@
     sling:resourceType="cq/gui/components/authoring/dialog">
     <content
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="granite/ui/components/coral/foundation/container">
+        sling:resourceType="granite/ui/components/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <html
                 jcr:primaryType="nt:unstructured"
@@ -32,7 +32,7 @@
                                 value="true"/>
                             <useModalType
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                 name="./useModal@TypeHint"
                                 value="Boolean"/>
                         </items>
