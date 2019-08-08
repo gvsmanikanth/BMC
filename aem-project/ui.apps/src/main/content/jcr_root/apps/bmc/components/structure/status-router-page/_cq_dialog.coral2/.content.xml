@@ -19,31 +19,36 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
                                             <availableCheckbox
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
                                                 name="./available"
                                                 text="Target Available"
                                                 value="true"/>
                                             <availableType
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                                 name="./available@TypeHint"
                                                 value="Boolean"/>
                                             <urlProd
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter the Production Destination URL for the service router"
                                                 fieldLabel="Destination URL Production"
                                                 name="./destination_url"/>
                                             <urlStage
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter the Stage Destination URL for the service router"
                                                 fieldLabel="Destination URL Stage"
                                                 name="./destination_url_stage"/>
                                             <urlDev
+                                                cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                 fieldDescription="Enter the Dev Destination URL for the service router"
                                                 fieldLabel="Destination URL Dev"
                                                 name="./destination_url_dev"/>

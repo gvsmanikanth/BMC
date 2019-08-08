@@ -16,7 +16,8 @@
                                         <items jcr:primaryType="nt:unstructured">
                                             <redirect_permanent
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                sling:orderBefore="designs"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
                                                 fieldLabel="Redirect Type"
                                                 multiple="false"
                                                 name="./redirectPermanent">
@@ -37,7 +38,7 @@
                                             </redirect_permanent>
                                             <redirect_permanent_type
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
                                                 name="./redirectPermanent@TypeHint"
                                                 value="Boolean"/>
                                         </items>
