@@ -129,7 +129,7 @@
                                        <a class="btn" href="http://documents.bmc.com/products/documents/34/98/493498/493498.pdf" target="_blank">
                                        Datasheet
                                        </a>
-                                       <a href="#resources" class="resource-downloads-a icon-documents">Explore Additional Resources &nbsp;›</a>
+                                       <a href="#resources" class="btn btn-secondary-corporate">Explore Additional Resources </a>
                                     </li>
                                  </ul>
                               </section>

@@ -118,8 +118,7 @@
 	}
 
 	a {
-		--color: color(colorCorporateAction);
-		color: #0093c9;
+		color: color(colorCorporateAction);
 		display: block;
 		font-weight: normal;
 		padding: em(6) 0;
@@ -132,20 +131,17 @@
 
 		&:hover,
 		&:active {
-			--color: color(colorCorporateAction);
-			color: #0093c9;
+			color: color(boston-blue);
 		}
 
 		&.link-view-all {
-			--color: color(colorCorporateAction);
-			color: #0093c9;
+			color: color(colorCorporateAction);
 			font-weight: bold;
 			margin-top: em(8);
 
 			&:hover,
 			&:active {
-				--color: color(colorCorporateAction);
-				color: #0093c9;
+				color: color(colorCorporateAction);
 			}
 		}
 	}

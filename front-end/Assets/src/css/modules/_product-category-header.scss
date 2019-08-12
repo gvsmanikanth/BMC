@@ -116,8 +116,8 @@
 		text-align: left;
 
 		@media screen and (max-width: 640px) {
-					background-color: rgba(0, 0, 0, 0.7);
-					border-top: 1px solid  #fe5000;
+					background-color: rgba(255, 255, 255, 0.87);
+					border-top: 4px solid #fe5000;
 				}
 
 		> .inner {
@@ -145,7 +145,7 @@
 			@media screen and (max-width: 640px) {
 					margin-right: 1rem;
 					margin-left: 1rem;
-			}
+			}	
 
 		}
 
@@ -171,7 +171,7 @@
 		}
 
 		h5 {
-			color: #414042;
+			color: color(abbey);
 			font-size: 16px;
 			margin-bottom: 0;
 		}
@@ -190,7 +190,7 @@
 			width: 100%;
 
 			.link{
-				color: #046e96;
+				color: color(darkBlue);
 				margin-top: .25rem;
 				font-size: 14px;
 
@@ -214,6 +214,7 @@
 			p{
 				font-size: 16px;
 				margin-top:.25rem;
+				color: color(ship-gray);
 			}
 		}
 
@@ -225,6 +226,11 @@
 
 				@media screen and (max-width: 640px) {
 					background:none;
+				}
+				&:first-child{
+					@media screen and (max-width: 640px) {
+						border-top: none;
+					}				
 				}
 			}
 
@@ -302,7 +308,7 @@
 					p{
 						font-size: 18px;
 						margin-top:.25rem;
-						color:#414042;
+						color:color(ship-gray);
 					}
 					.link{
 						font-size: 16px;

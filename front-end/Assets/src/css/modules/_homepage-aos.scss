@@ -514,7 +514,7 @@ img {
 }
 .section-wrap#section1 {
 	// background: url(//www.bmc.com/content/dam/bmc/home/section_bluetexture_background_preview.jpeg)no-repeat center center;
-	background: #0093C9;
+	background: color(pacific-blue);
 	background-size: cover; 
 	transition-delay: 2s;
 }
@@ -685,7 +685,7 @@ img {
 			font-size: 20px;
 		}
 		display: inline-block;
-		color: #0093C9;
+		color: color(pacific-blue);
 		font-size: 16px;
 		//line-height: 26px;
 		font-weight: 400;
@@ -726,10 +726,10 @@ ul {
 		.learn-more {
 			width: 263px;
 			background: #fff;
-			border: 1px solid #0093C9;
+			border: 1px solid color(pacific-blue);
 			text-align: center;
 			height: 73px;
-			color: #0093C9;
+			color: color(pacific-blue);
 			font-size: 20px;
 			line-height: 22px;
 			font-weight: 600;

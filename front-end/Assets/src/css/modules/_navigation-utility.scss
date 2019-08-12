@@ -59,11 +59,10 @@ $mobileUtilityNavHeight: 49px;
 	}
 
 	a {
-		--color: color(colorCorporateAction);
-		color: #0093c9;
+		color: color(colorCorporateAction);
 		text-shadow: none;
 		&:hover {
-			color: #3980B2;
+			color: color(boston-blue);
 		}
 	}
 	.btn-small.btn {
