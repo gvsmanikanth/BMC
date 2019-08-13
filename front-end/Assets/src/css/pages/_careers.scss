@@ -1,796 +1,1248 @@
 .page-careers {
 
-	// hero
-	.hero {
-		position: relative;
-		text-align: center;
-	}
-	.hero-content {
-		@include box-sizing(border-box);
-		background-color: rgba(0,0,0,.65);
-		color: #fff;
-		padding: 2rem;
-		width: 100%;
-		@media (min-width: $break-sm) {
-			padding: 5rem 0;
-		}
-		@media (min-width: $break-lg) {
-		}
 
-		.videoInstructions{
-			color: color(mediumOrange);
-			font-weight:800;
-		}
 
-		.videoIcon{
-			width:100px;
-		}
-	}
-	.hero_cta {
-		form.searchForm{
-			.searchDiv{
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 1rem;
+	// overview
+	
+			.bannerContent{
+				.learn-more{
+					background: #fff;
+					color: #0093C9;
+					border-radius: 0;
+					padding: 8px 32px;
+	
+					&:hover{
+						background-color: #414042;
+						border-color: #414042;
+						color: #fff;
+					}
+					&:visited{
+						background: #fff;
+						color: #0093C9;
+						border-color: #fff;
+					}
+
+					
+
+				}
+				.layout-inner-wrap {				
+					.add-top-bottom-margin-110px{
+						@media (min-width: $break-md){
+							margin-top: 97px !important;
+							margin-bottom: 97px !important;
+						}					
+					}
+				}
+				
+				h1{
+					font-size: 62px;
+				}
 			}
-			width: 100%;
-			text-align: center;	
-			margin: auto;
+			.benifits{
+				background-image: url("https://www.bmc.com/content/dam/bmc/corporate/Overview/BlueHelixBackground.jpg");
+	
+				.section-content {
+					padding: 2.2rem 0;
+					@media (min-width: $break-md) {
+						padding: 96px 0 92px 0;
+					}
+				}
+				.common-cont {
+						h3, h4{
+						color: #fff;
+						line-height: initial;
+						@media (min-width: $break-sm){
+							line-height: 32px;
+						}
+					
+					}
+					h4{
+						margin-top: 14px;
+						@media (min-width: $break-sm){
+							margin-top: 32px;
+						}
+	
+					}
+				}
+			}
+	
+			.culture-com{
+				padding: 40px 0;
+				@media(min-width: $break-md){
+					padding: 86px 0;
+				}
+				.common-cont{
+					h4{					
+						@media(min-width: $break-md){
+							margin: 22px auto 8px auto;
+							    max-width: 45%;
+						}
+					}
+				}
+				.card-image{
+					margin-top: 48px;
+					img{
+						max-width: 100%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+				} 
+				.card-content {
+						
+						@media(min-width: $break-lg){
+							padding: 0px 0px;
+						}
+						padding: 15px 0;
+						h4{
+							font-weight: 400;
+							font-size: 16px;
+							@media(min-width: $break-md){
+								font-size: 22px;
+								max-width: 100%;
+							}	
+							strong {
+								font-weight: 600;
+							}
+						}
+				}
+			}
+	
+			.common-cont{
+					h3 {
+						@media(min-width: $break-md){
+							font-size: 32px;
+						}
+						font-size: 26px;
+						font-weight: 400;
+						color: #414042;
+						letter-spacing: 0.7px;
+				}
+				h4{
+						font-size: 16px;
+						font-weight: 400;
+						color: #75777A;
+				}
+				@media(min-width: $break-md){
+					h3{
+						font-size: 45px;
+					}
+					h4{
+						font-size: 22px;
+					}
+				}
+			}
+			.do-what{
+					img{
+						margin-top: 35px;
+						margin-bottom: 35px;
+						@media(min-width: $break-md){
+							margin-top: 48px;
+							margin-bottom: 78px;
+						}
+				}
+				
+			}
+		
+			.product-category-header{
+				overflow: visible;
+				z-index: 10;
+				.inner{
+					.bannerContent{
+						.layout-inner-wrap{
+							.add-top-bottom-margin-110px{
+									h1{
+										letter-spacing: initial;
+										@media (min-width: $break-sm) {
+											font-size: 62px;
+										}
+									}									
+										
+										h2{										
+											@media (min-width: $break-md) {
+												max-width: 70%;											
+												font-size: 24px;
+											}
+										}
+								}
+						}
+					}
+				}
+				
+				
+			}
+	
+		// hero
+		.hero {
+			position: relative;
+			text-align: center;
 		}
-		background-color: rgba(#fe5000, .9);
-		padding: 1.5rem;
-		@media (min-width: $break-sm) {
+		.hero-content {
+			@include box-sizing(border-box);
+			background-color: rgba(0,0,0,.65);
+			color: #fff;
 			padding: 2rem;
-		}
-		@media (min-width: $break-lg) {
-			background-color: rgba(#fe5000, .8);
-			padding: 4rem 2rem;
-		}
-	}
-	.hero-image {
-		height: 100%;
-		left: 0;
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: -1;
-		&:before {
-			content: '';
-			display: block;
-
-			.vidbg-box{
-            width: 650px;
-            height: 338px;
-      }
-		}
-		img {
-			@media (max-width: 1279px) {
-				height: 100%;
-				max-width: none;
-			}
-			@media (min-width: 1280px) {
-				height: auto;
-				width: 100%;
-			}
-		}
-		&.xs-only {
-			background-image: url("#{$imagesFolder}careers-header.jpg");
-			background-position: center;
-			background-size: cover;
-		}
-
-	}
-
-	%career-divider {
-		display: inline-block;
-		height: 1px;
-		margin-top: 6px;
-		width: 60px;
-		@media (min-width: $break-md) {
-			height: 2px;
-		}
-	}
-
-	.divider--orange {
-		@extend %career-divider;
-		background: #fe5000;
-	}
-
-	.divider--white-shade {
-		@extend %career-divider;
-		background: rgba(#fff, .5);
-	}
-
-	.btn-flat,
-	.jq-dropdown-trigger {
-		border-radius: 4px;
-		box-shadow: 1px 1px 4px rgba(0,0,0,.25);
-		@media (max-width: $break-sm - 1px) {
-			font-size: .875rem;
-		}
-	}
-
-	.card-image img {
-		display: block;
-		max-width: 640px;
-		width: 100%;
-		@media (min-width: $break-md) {
-			max-width: 440px;
-		}
-	}
-
-	.slide-caption {
-		@extend .h3;
-		@extend .pos-bottom;
-		@extend .p2;
-		width: 100%;
-	}
-
-
-	.three-column-layout{
-    .card-image img {
-      width: 80%;
-      margin:auto;
-      // 640px
-      @media (min-width: $break-sm) {
-        width: 50%;
-
-      }
-      // 1024px
-      @media (min-width: $break-lg) {
-        width: 100%;
-      }
-    }
-
-    .card-content{
-          text-align:center;
-         // 1024px
-          @media (min-width: $break-lg) {
-            text-align:left;
-          }
-      }
-  }
-
-	$dot-width:				10px !default;
-	$dot-height:			10px !default;
-	$dot-rounded:			30px !default;
-	$dot-margin: 			5px 7px !default;
-
-	.owl-carousel {
-		position: relative;
-		.owl-controls {
-			height: 100%;
-			left: 0;
-			position: absolute;
-			top: 0;
 			width: 100%;
-		}
-		.owl-nav {
-			left: 0;
-			position: absolute;
-			width: 100%;
-			z-index: 1;
-			@media (min-width: $break-md) {
-				height: 100%;
-			}
-		}
-	}
-
-
-
-	.owl-next,
-	.owl-prev {
-		@include box-sizing();
-		display: block;
-		height: 100%;
-		padding: 0;
-		position: absolute;
-		top: 0;
-		svg {
-			height: 1em;
-			width: 1em;
-			@media (min-width: $break-md) {
-				height: 60px;
-				margin-top: -30px;
-				position: absolute;
-				top: 50%;
-				width: 30px;
+			@media (min-width: $break-sm) {
+				padding: 5rem 0;
 			}
 			@media (min-width: $break-lg) {
-				height: 100px;
-				margin-top: -50px;
-				top: 50%;
-				width: 50px;
+			}
+	
+			.videoInstructions{
+				color: color(mediumOrange);
+				font-weight:800;
+			}
+	
+			.videoIcon{
+				width:100px;
 			}
 		}
-		@media (max-width: $break-sm - 1px) {
-			font-size: 14px;
-			height: 26px;
-			line-height: 18px;
-			padding: 4px;
-			width: 26px;
+		.hero_cta {
+				form.searchForm{
+					.searchDiv{
+						margin-left: auto;
+						margin-right: auto;
+						margin-top: 20px;
+						position: relative;
+	
+						
+						input[type="text"]{
+								border: none;
+								border-radius: 0;
+								padding: 7px 25px;
+								height: 42px;				
+						}
+						
+						button {
+							position: absolute;
+							right: 0;
+							top: 0;
+							padding: 4px 24px;
+							height: 42px;
+							border: none;
+							background: transparent;
+							margin: 0;
+
+							&:after {
+								content: $iconSearch;
+								font-family: "icomoon";
+								font-size: 25px;
+								position: absolute;
+								right: 10px;
+								top: 10px;
+								color: #6c6c6c;
+							}
+						}
+					}
+					width: 100%;
+					text-align: center;	
+					margin: auto;
+				}
+				.jq-dropdown-trigger {
+					border-radius: 0;
+					span{
+						color: #6c6c6c;
+					}
+						svg{
+							fill: #0093c9;
+						}
+						span:after{
+							background: #0093c9;
+						}			
+				}
+				.jq-dropdown-menu{
+					@media (max-width: 767px) {
+						max-width: 100%;	
+					}					
+					li{
+							a{
+							color:#414042;
+						}
+					}
+					
+			}
+			
+			
+			background-color: rgba(#1DC7E8, .8);
+			padding: 1.5rem;
+			position: relative;			
+			z-index: 105;
+			@media (min-width: $break-sm) {
+				padding: 2rem;
+			}
+			@media (min-width: $break-lg) {
+				background-color: rgba(#1DC7E8, .8);
+				padding: 3rem 2rem;
+			}
 		}
-		@media (max-width: $break-md - 1px) {
-			border: 2px solid color(mediumOrange);
-			border-radius: 50%;
+		.hero-image {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+			&:before {
+				content: '';
+				display: block;
+	
+				.vidbg-box{
+							width: 650px;
+							height: 338px;
+				}
+			}
+			img {
+				@media (max-width: 1279px) {
+					height: 100%;
+					max-width: none;
+				}
+				@media (min-width: 1280px) {
+					height: auto;
+					width: 100%;
+				}
+			}
+			&.xs-only {
+				background-image: url("#{$imagesFolder}careers-header.jpg");
+				background-position: center;
+				background-size: cover;
+			}
+	
 		}
-		@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
-			font-size: 24px;
-			height: 42px;
-			line-height: 36px;
-			padding: 4px;
-			width: 42px;
+		.owl-carousel-dropdown{
+			.findoff{
+				background: #0093C9;
+				border-radius: 0;
+			}
 		}
-		@media (min-width: $break-md) {
+	
+		// teams header
+	
+		.teams-hero{
+			.offset-wrapper{
+				
+				.flex-item{
+					h1{				
+						@media (min-width: $break-md) {
+							font-size: 62px;										
+						}
+					}
+					h2{				
+						@media (min-width: $break-md) {
+							margin-top: 45px;									
+						}
+					}
+				}
+				
+			}
+			.hero_cta {
+				background-color: rgba(215, 223, 15, .8);
+			}
+			.cflex-center{
+				display: flex;
+				align-items: center;
+			}
+		}
+	
+		// location hero 
+		.locations-hero{
+			.offset-wrapper{
+				
+				.flex-item{
+					h1{					
+						@media (min-width: $break-md) {
+							font-size: 62px;										
+						}
+					}
+				}
+				
+			}
+			.hero_cta {
+				background-color: rgba(#77DDD3, .8);
+			}
+			.cflex-center{
+				display: flex;
+				align-items: center;
+			}
+		}
+	
+		.map-section{
+			padding-bottom: 30px;
+			@media (min-width: $break-sm) {
+				padding-bottom: 96px;
+			}
+			.hide-on-desk{
+				display: block;
+				@media (min-width: $break-sm) {
+					display: none;
+				}
+			}
+			.common-cont{
+				h4{
+					margin-bottom: 20px;
+					@media (min-width: $break-sm) {
+						max-width: 43%;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 48px;
+					}
+				}
+			}
+		}
+		.jq-dropdown-scroll{
+			.jq-dropdown-menu{
+				@media (max-width: $break-sm){
+					max-width: 270px;
+				}
+			}
+		}
+
+	
+		%career-divider {
+			display: inline-block;
+			height: 1px;
+			margin-top: 6px;
+			width: 60px;
+			@media (min-width: $break-md) {
+				height: 2px;
+			}
+		}
+	
+		.divider--orange {
+			@extend %career-divider;
+			background: #fe5000;
+		}
+	
+		.divider--white-shade {
+			@extend %career-divider;
+			background: rgba(#fff, .5);
+		}
+	
+		.btn-flat,
+		.jq-dropdown-trigger {
+			border-radius: 4px;
+			box-shadow: 1px 1px 4px rgba(0,0,0,.25);
+			@media (max-width: $break-sm - 1px) {
+				font-size: .875rem;
+			}
+		}
+	
+		.card-image img {
+			display: block;
+			max-width: 640px;
+			width: 100%;
+			@media (min-width: $break-md) {
+				max-width: 440px;
+			}
+		}
+	
+		.slide-caption {
+			@extend .h3;
+			@extend .pos-bottom;
+			@extend .p2;
+			width: 100%;
+		}
+	
+	
+		.three-column-layout{
+			.card-image img {
+				width: 80%;
+				margin:auto;
+				// 640px
+				@media (min-width: $break-sm) {
+					width: 50%;
+	
+				}
+				// 1024px
+				@media (min-width: $break-lg) {
+					width: 100%;
+				}
+			}
+	
+			.card-content{
+						text-align:center;
+					 // 1024px
+						@media (min-width: $break-lg) {
+							text-align:left;
+						}
+				}
+		}
+	
+		$dot-width:				10px !default;
+		$dot-height:			10px !default;
+		$dot-rounded:			30px !default;
+		$dot-margin: 			5px 7px !default;
+	
+		.owl-carousel {
+			position: relative;
+			.owl-controls {
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+			.owl-nav {
+				left: 0;
+				position: absolute;
+				width: 100%;
+				z-index: 1;
+				@media (min-width: $break-md) {
+					height: 100%;
+				}
+			}
+		}
+	
+	
+	
+		.owl-next,
+		.owl-prev {
+			@include box-sizing();
+			display: block;
+			height: 100%;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			svg {
+				height: 1em;
+				width: 1em;
+				@media (min-width: $break-md) {
+					height: 60px;
+					margin-top: -30px;
+					position: absolute;
+					top: 50%;
+					width: 30px;
+				}
+				@media (min-width: $break-lg) {
+					height: 100px;
+					margin-top: -50px;
+					top: 50%;
+					width: 50px;
+				}
+			}
+			@media (max-width: $break-sm - 1px) {
+				font-size: 14px;
+				height: 26px;
+				line-height: 18px;
+				padding: 4px;
+				width: 26px;
+			}
+			@media (max-width: $break-md - 1px) {
+				border: 2px solid color(mediumOrange);
+				border-radius: 50%;
+			}
+			@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
+				font-size: 24px;
+				height: 42px;
+				line-height: 36px;
+				padding: 4px;
+				width: 42px;
+			}
+			@media (min-width: $break-md) {
+				width: 60px;
+			}
+			@media (min-width: $break-lg) {
+				width: 100px;
+			}
+		}
+	
+		.owl-dots {
+			left: 50%;
+			position: absolute;
+			text-align: center;
+			transform: translateX(-50%);
+			-webkit-tap-highlight-color: transparent;
+			@media (max-width: $break-sm - 1px) {
+				bottom: 30px;
+			}
+			@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
+				bottom: 50px;
+			}
+			@media (min-width: $break-sm) {
+				bottom: 50px;
+			}
+			.owl-dot {
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+				span {
+					border-radius: 30px;
+					display: block;
+					width: $dot-width;
+					height: $dot-height;
+					margin: $dot-margin;
+					-webkit-backface-visibility: visible;
+					transition: opacity 200ms ease;
+				}
+			}
+		}
+	
+		// Owl Themes
+	
+		.owl-theme--white {
+			.owl-next,
+			.owl-prev {
+				@media (max-width: $break-md - 1px) {
+					border-color: #fff;
+					svg {
+						stroke: #fff;
+					}
+				}
+				svg {
+					fill: #fff;
+				}
+			}
+			.owl-dots .owl-dot {
+				span {
+					background: rgba(#fff, .5);
+				}
+				&.active,
+				&:hover {
+					span {
+						background: #fff;
+					}
+				}
+			}
+		}
+	
+		.owl-theme--orange {
+			.owl-next,
+			.owl-prev {
+				@media (max-width: $break-md - 1px) {
+					border-color: color(mediumOrange);
+					svg {
+						stroke: color(mediumOrange);
+					}
+				}
+				svg {
+					fill: color(mediumOrange);
+				}
+			}
+			.owl-dots .owl-dot {
+				span {
+					background: color(aluminium);
+				}
+				&.active,
+				&:hover {
+					span {
+						background: color(mediumOrange);
+					}
+				}
+			}
+		}
+	
+		.owl-responsive {
+			padding-bottom: 80px;
+			@media (min-width: $break-sm) {
+				padding-bottom: 140px;
+				padding-left: 60px;
+				padding-right: 60px;
+			}
+			@media (min-width: $break-md) {
+				padding-bottom: 120px;
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+			.owl-stage {
+				display: flex;
+			}
+		}
+	
+		#overview-slides,
+		#work-for-bmc {
+			.owl-nav {
+				@media (max-width: $break-sm - 1px) {
+					bottom: 60px;
+				}
+				@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
+					bottom: 88px;
+				}
+			}
+			.owl-next {
+				@media (max-width: $break-md - 1px) {
+					margin-right: -150px;
+					right: 50%;
+				}
+				@media (min-width: $break-md) {
+					right: 0;
+					svg {
+						left: 0;
+					}
+				}
+			}
+			.owl-prev {
+				@media (max-width: $break-md - 1px) {
+					left: 50%;
+					margin-left: -150px;
+				}
+				@media (min-width: $break-md) {
+					left: 0;
+					svg {
+						right: 0;
+					}
+				}
+			}
+		}
+	
+		#overview-slides {
+			.section-content {
+				@media (max-width: $break-md - 1px) {
+					margin-left: 18px;
+					margin-right: 18px;
+				}
+				@media (min-width: $break-md) and (max-width: $break-lg - 1px) {
+					margin-left: 100px;
+					margin-right: 100px;
+				}
+				@media (min-width: $break-lg) and (max-width: $break-xl - 1px) {
+					margin-left: 150px;
+					margin-right: 150px;
+				}
+			}
+			.owl-nav {
+				svg {
+					@media (min-width: $break-md) {
+						fill: color(mediumOrange);
+						margin-top: -150px;
+					}
+					@media (min-width: $break-lg) {
+						margin-top: -160px;
+					}
+				}
+			}
+		}
+	
+		#work-for-bmc {
+			.owl-stage-outer {
+				z-index: 2;
+			}
+			.owl-controls {
+				z-index: 1;
+			}
+			.owl-nav {
+				svg {
+					@media (min-width: $break-md) {
+						margin-top: -120px;
+					}
+					@media (min-width: $break-lg) {
+						margin-top: -145px;
+					}
+				}
+			}
+			.owl-item {
+				@media (min-width: $break-sm) {
+					padding: .5rem;
+				}
+			}
+			
+		}
+	
+		#owl-location {
+			.owl-stage-outer {
+				@media (min-width: 460px) and (max-width: $break-md - 1px) {
+					padding-bottom: 0px;
+				}
+			}
+			.owl-stage {
+				background: #000;
+			}
+			.owl-item {
+				opacity: .5;
+				transition: opacity .5s;
+				&.active {
+					opacity: 1;
+				}
+			}
+			.owl-nav {
+				bottom: 0;
+				height: 100%;
+				@media (min-width: $break-md) {
+					height: 100%;
+					margin-top: 0;
+					top: 0;
+				}
+			}
+			.owl-next,
+			.owl-prev {
+				@media (max-width: $break-sm - 1px) {
+					margin-top: -13px;
+				}
+				@media (max-width: $break-md - 1px) {
+					top: 50%;
+				}
+				@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
+					margin-top: -21px;
+				}
+			}
+			.owl-next,
+			.owl-prev {
+				@media (min-width: $break-md) {
+					height: 100%;
+				}
+			}
+			.owl-next {
+				@media (max-width: $break-md - 1px) {
+					right: 20px;
+				}
+				@media (min-width: $break-md) {
+					right: 0;
+					svg {
+						left: 0;
+					}
+				}
+			}
+			.owl-prev {
+				@media (max-width: $break-md - 1px) {
+					left: 20px;
+				}
+				@media (min-width: $break-md) {
+					left: 0;
+					svg {
+						right: 0;
+					}
+				}
+			}
+			.owl-dots {
+				display: none !important;
+			}
+			.owl-carousel-dropdown {
+				max-width: 260px;
+			}
+		}
+		.icon--playButton {
+			fill: #fff;
+			height: 60px;
+			stroke: #fff;
 			width: 60px;
 		}
-		@media (min-width: $break-lg) {
-			width: 100px;
-		}
 	}
-
-	.owl-dots {
-		left: 50%;
-		position: absolute;
-		text-align: center;
-		transform: translateX(-50%);
-		-webkit-tap-highlight-color: transparent;
-		@media (max-width: $break-sm - 1px) {
-			bottom: 30px;
-		}
-		@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
-			bottom: 50px;
-		}
-		@media (min-width: $break-sm) {
-			bottom: 50px;
-		}
-		.owl-dot {
-			display: inline-block;
-			zoom: 1;
-			*display: inline;
-			span {
-				border-radius: 30px;
-				display: block;
-				width: $dot-width;
-				height: $dot-height;
-				margin: $dot-margin;
-				-webkit-backface-visibility: visible;
-				transition: opacity 200ms ease;
-			}
-		}
-	}
-
-	// Owl Themes
-
-	.owl-theme--white {
-		.owl-next,
-		.owl-prev {
-			@media (max-width: $break-md - 1px) {
-				border-color: #fff;
-				svg {
-					stroke: #fff;
-				}
-			}
-			svg {
-				fill: #fff;
-			}
-		}
-		.owl-dots .owl-dot {
-			span {
-				background: rgba(#fff, .5);
-			}
-			&.active,
-			&:hover {
-				span {
-					background: #fff;
-				}
-			}
-		}
-	}
-
-	.owl-theme--orange {
-		.owl-next,
-		.owl-prev {
-			@media (max-width: $break-md - 1px) {
-				border-color: color(mediumOrange);
-				svg {
-					stroke: color(mediumOrange);
-				}
-			}
-			svg {
-				fill: color(mediumOrange);
-			}
-		}
-		.owl-dots .owl-dot {
-			span {
-				background: color(aluminium);
-			}
-			&.active,
-			&:hover {
-				span {
-					background: color(mediumOrange);
-				}
-			}
-		}
-	}
-
-	.owl-responsive {
-		padding-bottom: 80px;
-		@media (min-width: $break-sm) {
-			padding-bottom: 140px;
-			padding-left: 60px;
-			padding-right: 60px;
-		}
-		@media (min-width: $break-md) {
-			padding-bottom: 120px;
-			padding-left: 120px;
-			padding-right: 120px;
-		}
-		.owl-stage {
-			display: flex;
-		}
-	}
-
-	#overview-slides,
-	#work-for-bmc {
-		.owl-nav {
-			@media (max-width: $break-sm - 1px) {
-				bottom: 60px;
-			}
-			@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
-				bottom: 88px;
-			}
-		}
-		.owl-next {
-			@media (max-width: $break-md - 1px) {
-				margin-right: -150px;
-				right: 50%;
-			}
-			@media (min-width: $break-md) {
-				right: 0;
-				svg {
-					left: 0;
-				}
-			}
-		}
-		.owl-prev {
-			@media (max-width: $break-md - 1px) {
-				left: 50%;
-				margin-left: -150px;
-			}
-			@media (min-width: $break-md) {
-				left: 0;
-				svg {
-					right: 0;
-				}
-			}
-		}
-	}
-
-	#overview-slides {
+	
+	#join-leader {
+		background-image: url("#{$imagesFolder}careers-trophy-bg.jpg");
+		background-position: center bottom;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
 		.section-content {
-			@media (max-width: $break-md - 1px) {
-				margin-left: 18px;
-				margin-right: 18px;
-			}
-			@media (min-width: $break-md) and (max-width: $break-lg - 1px) {
-				margin-left: 100px;
-				margin-right: 100px;
-			}
-			@media (min-width: $break-lg) and (max-width: $break-xl - 1px) {
-				margin-left: 150px;
-				margin-right: 150px;
-			}
-		}
-		.owl-nav {
-			svg {
-				@media (min-width: $break-md) {
-					fill: color(mediumOrange);
-					margin-top: -150px;
-				}
-				@media (min-width: $break-lg) {
-					margin-top: -160px;
-				}
-			}
-		}
-	}
-
-	#work-for-bmc {
-		.owl-stage-outer {
-			z-index: 2;
-		}
-		.owl-controls {
-			z-index: 1;
-		}
-		.owl-nav {
-			svg {
-				@media (min-width: $break-md) {
-					margin-top: -120px;
-				}
-				@media (min-width: $break-lg) {
-					margin-top: -145px;
-				}
-			}
-		}
-		.owl-item {
-			@media (min-width: $break-sm) {
-				padding: .5rem;
-			}
-		}
+			padding: 2rem 0 4rem;
 		
-	}
-
-	#owl-location {
-		.owl-stage-outer {
-			@media (min-width: 460px) and (max-width: $break-md - 1px) {
-				padding-bottom: 0px;
-			}
 		}
-		.owl-stage {
-			background: #000;
-		}
-		.owl-item {
-			opacity: .5;
-			transition: opacity .5s;
-			&.active {
-				opacity: 1;
-			}
-		}
-		.owl-nav {
-			bottom: 0;
-			height: 100%;
-			@media (min-width: $break-md) {
-				height: 100%;
-				margin-top: 0;
-				top: 0;
-			}
-		}
-		.owl-next,
-		.owl-prev {
-			@media (max-width: $break-sm - 1px) {
-				margin-top: -13px;
-			}
-			@media (max-width: $break-md - 1px) {
-				top: 50%;
-			}
+		.trophies {
 			@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
-				margin-top: -21px;
-			}
-		}
-		.owl-next,
-		.owl-prev {
-			@media (min-width: $break-md) {
-				height: 100%;
-			}
-		}
-		.owl-next {
-			@media (max-width: $break-md - 1px) {
-				right: 20px;
+				max-width: 500px;
 			}
 			@media (min-width: $break-md) {
-				right: 0;
-				svg {
-					left: 0;
-				}
+				max-width: 800px;
+			}
+			@media (min-width: $break-xl) {
+				max-width: 1200px;
 			}
 		}
-		.owl-prev {
-			@media (max-width: $break-md - 1px) {
-				left: 20px;
+		.trophy {
+			position: relative;
+			span {
+				position: absolute;
 			}
-			@media (min-width: $break-md) {
-				left: 0;
-				svg {
-					right: 0;
-				}
-			}
-		}
-		.owl-dots {
-			display: none !important;
-		}
-		.owl-carousel-dropdown {
-			max-width: 260px;
-		}
-	}
-	.icon--playButton {
-		fill: #fff;
-		height: 60px;
-		stroke: #fff;
-		width: 60px;
-	}
-}
-
-#join-leader {
-	background-image: url("#{$imagesFolder}careers-trophy-bg.jpg");
-	background-position: center bottom;
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	.section-content {
-		padding: 2rem 0 4rem;
-	}
-	.trophies {
-		@media (min-width: $break-sm) and (max-width: $break-md - 1px) {
-			max-width: 500px;
-		}
-		@media (min-width: $break-md) {
-			max-width: 800px;
-		}
-		@media (min-width: $break-xl) {
-			max-width: 1200px;
-		}
-	}
-	.trophy {
-		position: relative;
-		span {
-			position: absolute;
-		}
-		.no {
-			font-size: 1.2rem;
-			left: 50%;
-			margin-left: -1.75rem;
-			top: 1.5rem;
-		}
-		.num {
-			font-size: 3rem;
-			font-weight: 700;
-			left: 50%;
-			top: 0;
-		}
-		svg {
-			fill: #75c5d5;
-			font-size: 7rem;
-			top: 0;
-		}
-		@media (min-width: $break-md) {
 			.no {
-				font-size: 2.4rem;
-				margin-left: -3.75rem;
-				top: 4rem;
+				font-size: 1.2rem;
+				left: 50%;
+				margin-left: -1.75rem;
+				top: 1.5rem;
 			}
 			.num {
-				font-size: 6rem;
-				top: .5rem;
+				font-size: 3rem;
+				font-weight: 700;
+				left: 50%;
+				top: 0;
 			}
 			svg {
-				font-size: 15rem;
+				fill: #75c5d5;
+				font-size: 7rem;
+				top: 0;
+			}
+			@media (min-width: $break-md) {
+				.no {
+					font-size: 2.4rem;
+					margin-left: -3.75rem;
+					top: 4rem;
+				}
+				.num {
+					font-size: 6rem;
+					top: .5rem;
+				}
+				svg {
+					font-size: 15rem;
+				}
+			}
+		}
+		@media (min-width: $break-xl) {
+			.trophy-1 {
+				.trophy {
+					order: 2;
+				}
+				.trophy-list {
+					order: 1;
+					text-align: right;
+				}
+			}
+			.trophy-2 .trophy-list {
+				text-align: left;
+			}
+		}
+		.trophy-list {
+			@extend .h3;
+			font-weight: 600;
+			line-height: 1.5em;
+			text-transform: uppercase;
+			span {
+				display: block;
 			}
 		}
 	}
-	@media (min-width: $break-xl) {
-		.trophy-1 {
-			.trophy {
-				order: 2;
+	
+	.careers-nav {
+		@extend %clearfix;
+		background: #000;
+		margin: 0;
+		ul {
+			list-style: none;
+			margin-top: 0;
+			margin-bottom: 0;
+			padding: 0;
+		}
+		li {
+			border: 0 none;
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+			flex: 1 1 auto;
+			margin: 0 1px 0 0;
+			position: relative;
+			&:after {
+				background: color(abbey);
+				content: "";
+				display: inline-block;
+				height: 72%;
+				position: absolute;
+				right: -2px;
+				top: 15%;
+				width: 1px;
 			}
-			.trophy-list {
-				order: 1;
-				text-align: right;
+			a {
+				color: #fff;
+				display: block;
+				padding: 1rem;
+				text-align: center;
+			}
+			&.active {
+				background-color: #fff;
+				border: 1px #fff solid;
+				font-weight: 400;
+				&:after {
+					display: none;
+				}
+				a {
+					color: color(ship-gray);
+				}
+			}
+			&:last-child:after {
+				display: none;
 			}
 		}
-		.trophy-2 .trophy-list {
-			text-align: left;
+		+ .section {
+			padding-top: 2rem;
+			@media (min-width: $break-md) {
+				padding-top: 3rem;
+			}
+			@media (min-width: $break-lg) {
+				padding-top: 90px;
+			}
 		}
 	}
-	.trophy-list {
-		@extend .h3;
-		font-weight: 600;
-		line-height: 1.5em;
-		text-transform: uppercase;
-		span {
+	
+	.careers_overview,
+	.careers_teams,
+	.careers_locations {
+		.pattern {
+			background-position: center top;
+			background-size: cover;
+			position: relative;
+		}
+	}
+	
+	.careers_overview {
+		.pattern {
+			background-image: url("#{$imagesFolder}careers-overview-pattern.png");
+			padding: 24px 40px 80px;
+			@media (min-width: $break-sm) {
+				padding: 40px 40px 120px;
+			}
+			@media (min-width: $break-lg) {
+				padding: 60px 40px 120px;
+			}
+			&:before {
+				border-bottom: 20px solid #fe5203;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				content: "";
+				display: block;
+				left: 50%;
+				position: absolute;
+				top: -20px;
+				transform: translateX(-20px);
+				@media (min-width: $break-sm) {
+					border-bottom-width: 40px;
+					border-left-width: 40px;
+					border-right-width: 40px;
+					top: -39px;
+					transform: translateX(-40px);
+				}
+				@media (min-width: $break-lg) {
+					border-bottom-width: 60px;
+					border-left-width: 60px;
+					border-right-width: 60px;
+					top: -60px;
+					transform: translateX(-60px);
+				}
+			}
+		}
+	}
+	.careers_teams {
+		.card-image img {
+			opacity: 1;
+			transition: opacity .2s;
+		}
+	
+		
+	
+		.h3{
+			margin-bottom : .3rem;
+		}
+		@media (max-width: $break-sm - 1px) {
+			.card-content {
+				background-color: rgba(0,0,0,.5);
+				bottom: 0;
+				color: #fff;
+				padding: 1rem;
+				position: absolute;
+				width: 100%;
+			}
+			.h3 {
+				font-weight: 400;
+			}
+		}
+		@media (min-width: $break-sm) {
+			.card-image {
+				margin-bottom: .5rem;
+			}
+			.h3 {
+				color: #75777a;
+			}
+			.h4 {
+				color: #75777a;
+				padding-bottom:.2rem;
+			}
+		}
+		@media (min-width: $break-sm) and (max-width: $break-lg - 1px) {
+			.flex-wrap > div:last-child {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.team-content{
+				@media (min-width: $break-sm){
+					padding: 30px 20px 20px 20px;	
+				}
+			
+			h3{
+				color:#414042;
+				font-size: 26px;	
+				@media (min-width: $break-md){
+					font-size: 45px;	
+				}
+			}
+			h4{
+				color:#75777A;
+				font-size: 16px;	
+				@media (min-width: $break-md){
+					font-size: 22px;	
+				}
+			}
+			h3,h4{
+				font-weight:400;
+			}		
+		}
+	
+		.card-content{
+			text-align:center;
+			 a{
+				color: #0093C9;
+			 }
+		}
+		.pcust {
+			padding: 7px;
+		}
+		.mcust {
+			margin-bottom: 10px;
+				@media (min-width: $break-md ) {
+					margin-bottom: 32px;
+				}
+				
+		}
+		
+		.mob-view{
 			display: block;
+			@media (min-width: $break-md ) {
+				display: none;
+			}
+	}
+	
+	.desk-view{
+			display: none;
+			@media(min-width: $break-md){
+				display: block;
+			}
+	
+		}
+	
+	}
+	.careers_life
+	{
+		.pattern {
+			background-image: url("https://www.bmc.com/content/dam/bmc/corporate/Teams/GreenHelixBackground.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		.content-text{
+			padding: 50px 0;
+			margin: 0 0 30px 0;
+			
+			@media (min-width: $break-md) {
+				padding: 87px 0 69px 0;
+				margin: 38px 0 86px 0;	
+			}
+			h3,h4{ font-weight: 400; color: #fff; }
+			h3{
+				font-size: 32px;
+				@media (min-width: $break-md) {
+					font-size: 45px;
+				}
+			}
+			h4{
+				font-size: 16px;
+				padding: 0 40px;
+				@media (min-width: $break-md) {
+					font-size: 22px;
+					padding: 0;
+					margin-top: 0;
+				}
+
+				/* quoteation marke remove
+
+				&:after {
+					content: "";
+					background : url(https://www.bmc.com/content/dam/bmc/corporate/Teams/Quatation_mark_right.png) no-repeat;
+					position: relative;
+					width: 42px;
+					height: 40px;
+					display: inline-block;
+					vertical-align: top;
+					margin-left: 10px;
+					margin-top: 5px;
+				}
+				&:before {
+					content: "";
+					background : url(https://www.bmc.com/content/dam/bmc/corporate/Teams/Quatation_mark_left.png) no-repeat;
+					position: relative;
+					width: 42px;
+					height: 40px;
+					display: inline-block;
+					vertical-align: bottom;
+					margin-right: 10px;
+					margin-top: 0;
+					margin-left: -42px;
+				} */
+
+			}
+			.image-container{
+				max-width: 1200px;
+			}
+		}
+		.masonry {
+				padding-bottom: 20px;
+				@media (min-width: $break-sm) {
+					padding-bottom: 86px;
+				}
+		}
+	} 
+	
+	#careers_locations_map {
+		@media (max-width: $break-sm - 1px) {
+			background-color: #fff;
+			color: initial;
 		}
 	}
-}
-
-.careers-nav {
-	@extend %clearfix;
-	background: #000;
-	margin: 0;
-	ul {
-		list-style: none;
-		margin-top: 0;
-		margin-bottom: 0;
-		padding: 0;
-	}
-	li {
-		border: 0 none;
-		border-top-right-radius: 0;
-		border-top-left-radius: 0;
-		flex: 1 1 auto;
-		margin: 0 1px 0 0;
-		position: relative;
-		&:after {
-			background: color(abbey);
-			content: "";
-			display: inline-block;
-			height: 72%;
-			position: absolute;
-			right: 0;
-			top: 15%;
-			width: 1px;
+	
+	#careers_locations_list {
+		background-color: #009A8E;
+		color: #fff;
+		padding: 1rem 0;
+		@media (min-width: $break-sm) {
+			background-image: url("https://www.bmc.com/content/dam/bmc/corporate/MobileImages/TealHelixBackground.jpg");
+			padding: 2rem 0;
+		}
+		@media (min-width: $break-lg) {
+			padding: 90px 0 42px 0;	
 		}
 		a {
 			color: #fff;
 			display: block;
-			padding: 1rem;
-			text-align: center;
-		}
-		&.active {
-			background-color: #fff;
-			border: 1px #fff solid;
-			font-weight: 400;
-			&:after {
-				display: none;
-			}
-			a {
-				color: color(ship-gray);
+			&:hover,
+			&:active,
+			&:focus {
+				color: color(mediumOrange);
 			}
 		}
-		&:last-child:after {
-			display: none;
-		}
 	}
-	+ .section {
-		padding-top: 2rem;
-		@media (min-width: $break-md) {
-			padding-top: 3rem;
-		}
-		@media (min-width: $break-lg) {
-			padding-top: 4rem;
-		}
-	}
-}
 
-.careers_overview,
-.careers_teams,
-.careers_locations {
-	.pattern {
-		background-position: center top;
-		background-size: cover;
-		position: relative;
-	}
-}
+	
+	#careers_locations_owl {
+		padding-bottom: 192px;
+		.owl-carousel {
+			z-index: 1;
 
-.careers_overview {
-	.pattern {
-		background-image: url("#{$imagesFolder}careers-overview-pattern.png");
-		padding: 24px 40px 80px;
-		@media (min-width: $break-sm) {
-			padding: 40px 40px 120px;
 		}
-		@media (min-width: $break-lg) {
-			padding: 60px 40px 120px;
+		.owl-carousel-dropdown {
+			z-index: 2;
 		}
-		&:before {
-			border-bottom: 20px solid #fe5203;
-			border-left: 20px solid transparent;
-			border-right: 20px solid transparent;
-			content: "";
-			display: block;
+		.jq-dropdown-trigger {
 			left: 50%;
 			position: absolute;
-			top: -20px;
-			transform: translateX(-20px);
-			@media (min-width: $break-sm) {
-				border-bottom-width: 40px;
-				border-left-width: 40px;
-				border-right-width: 40px;
-				top: -39px;
-				transform: translateX(-40px);
+			top: 49px;
+			transform: translateX(-50%);
+		}
+	}
+	
+	#careers-dropdown-locations {
+		margin-left: -54px;
+		@media (min-width: $break-sm) {
+			margin-left: -90px;
+		}
+		@media (max-width: $break-sm) {
+			margin-left: -40px;
+		}
+
+	}
+	
+	.no-flexbox {
+		.page-careers {
+			.flex,
+			.sm-flex,
+			.md-flex,
+			.lg-flex {
+				display: flex !important;
 			}
-			@media (min-width: $break-lg) {
-				border-bottom-width: 60px;
-				border-left-width: 60px;
-				border-right-width: 60px;
-				top: -60px;
-				transform: translateX(-60px);
-			}
 		}
+	
+	
 	}
-}
-.careers_teams {
-	.card-image img {
-		opacity: 1;
-		transition: opacity .2s;
-	}
-
-	.h3{
-		margin-bottom : .3rem;
-	}
-	@media (max-width: $break-sm - 1px) {
-		.card-content {
-			background-color: rgba(0,0,0,.5);
-			bottom: 0;
-			color: #fff;
-			padding: 1rem;
-			position: absolute;
-			width: 100%;
-		}
-		.h3 {
-			font-weight: 400;
-		}
-	}
-	@media (min-width: $break-sm) {
-		.card-image {
-			margin-bottom: .5rem;
-		}
-		.h3 {
-			color: color(ship-gray);
-		}
-		.h4 {
-			color: color(gray);
-			padding-bottom:.2rem;
-		}
-	}
-	@media (min-width: $break-sm) and (max-width: $break-lg - 1px) {
-		.flex-wrap > div:last-child {
-			margin-left: auto;
-			margin-right: auto;
-		}
-	}
-}
-.careers_life .pattern {
-	background-image: url("#{$imagesFolder}careers-teams-pattern.png");
-}
-
-#careers_locations_map {
-	@media (max-width: $break-sm - 1px) {
-		background-color: color(shakespeare);
-		color: #fff;
-	}
-}
-
-#careers_locations_list {
-	background-color: color(shakespeare);
-	color: #fff;
-	padding: 1rem 0;
-	@media (min-width: $break-sm) {
-		background-image: url("#{$imagesFolder}careers-location-pattern.png");
-		padding: 2rem 0;
-	}
-	@media (min-width: $break-lg) {
-		padding: 3rem 0;
-	}
-	a {
-		color: #fff;
-		display: block;
-		&:hover,
-		&:active,
-		&:focus {
-			color: color(mediumOrange);
-		}
-	}
-}
-
-#careers_locations_owl {
-	padding-bottom: 120px;
-	.owl-carousel {
-		z-index: 1;
-	}
-	.owl-carousel-dropdown {
-		z-index: 2;
-	}
-	.jq-dropdown-trigger {
-		left: 50%;
-		position: absolute;
-		top: 35px;
-		transform: translateX(-50%);
-	}
-}
-
-#careers-dropdown-locations {
-	margin-left: -54px;
-	@media (min-width: $break-sm) {
-		margin-left: -90px;
-	}
-}
-
-.no-flexbox {
-	.page-careers {
-		.flex,
-		.sm-flex,
-		.md-flex,
-		.lg-flex {
-			display: flex !important;
-		}
-	}
-}
+	
+	
