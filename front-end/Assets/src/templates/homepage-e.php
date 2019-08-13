@@ -166,7 +166,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="flex flex-center section-wrap sectionCommon section-odd" id="section3">
+   <section class="flex flex-center section-wrap sectionCommon section1" id="section3">
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">
@@ -257,7 +257,7 @@ include 'php-inc/svg.php';
       </div>
    </section>
    
-   <section class="flex flex-center section-wrap section-odd sectionCommon" id="section5">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section5">
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">
@@ -333,7 +333,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="flex flex-center section-wrap section-odd sectionCommon" id="section7">
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section7">
       <div class=" flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1 ">
