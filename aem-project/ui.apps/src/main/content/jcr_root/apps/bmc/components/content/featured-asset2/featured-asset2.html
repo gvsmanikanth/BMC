@@ -10,6 +10,7 @@
 <sly data-sly-test="${properties.image_location == 'right'}">
     <sly data-sly-test.imageLocation="img-right"></sly>
 </sly>
+
 <sly data-sly-use.cta="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.cta_url}"></sly>
 			<sly data-sly-test="${cta.href}">
 			 	<sly data-sly-test.CtaResolvedLink="${cta.href}"></sly>
@@ -17,13 +18,26 @@
 			 <sly data-sly-test="${!cta.href}">
 			 	<sly data-sly-test.CtaResolvedLink="${properties.cta_url}"></sly>
 			 </sly>
+<!--/* WEB-5688 Featured Asset2 video icon changes START */-->
 <sly data-sly-test="${properties.image_location == 'left'}">
-	<section class="topcontent ${bgClass}">
-			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                          
+<div class="flexi-featured-analyst-blog">
+    <section class="topcontent ${bgClass}">
+			<div class=" aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap ${imageLocation}">                          
                               	<div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <a href="${CtaResolvedLink}" class="cq-dd-image text-center ${cta.isVideo ? 'modal-youtube-video-player' : ''}">
+                                             <sly data-sly-test="${!cta.isVideo}">
+                                             	<a href="${CtaResolvedLink}" class="cq-dd-image text-center">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
-                                             </a>
+                                                   <div data-sly-test="${properties.addVideoIcon}" class="video-icon icon-vid"></div> 
+                                             	</a>
+                                             </sly>
+                                             <sly data-sly-test="${cta.isVideo}">
+                                                    <a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">													
+													<figure>
+                                                    	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                                   			<div data-sly-test="${properties.addVideoIcon}" class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="50"></div> 
+													</figure>
+                                                </a>
+                                              </sly>
                                  </div> 
                                  <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
 											<div class="cmp cmp-title cmp-title-large">
@@ -50,10 +64,13 @@
                                 </div>
             </div>
     </section>                     
+</div>
 </sly>
+
 <sly data-sly-test="${properties.image_location == 'right'}">
+<div class="flexi-featured-analyst-blog">
 	<section class="topcontent ${bgClass}">
-			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">                                               
+			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap ${imageLocation}">                                               
                                  <div class="layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">                                       
 											<div class="cmp cmp-title cmp-title-large">
 												<sly data-sly-test="${!properties.customAssetHeading}">
@@ -77,10 +94,22 @@
 											</div>                                      
                                 </div>
                                 <div class="layout-secondary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3">
-                                             <a href="${CtaResolvedLink}" class="cq-dd-image text-center ${cta.isVideo ? 'modal-youtube-video-player' : ''}">
+                                             <sly data-sly-test="${!cta.isVideo}">
+                                             	<a href="${CtaResolvedLink}" class="cq-dd-image text-center">
                                                    <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                                   <div data-sly-test="${properties.addVideoIcon}" class="video-icon icon-vid"></div> 
                                              	</a>
+                                             </sly>
+                                             <sly data-sly-test="${cta.isVideo}">
+                                             	<a href="${CtaResolvedLink}" class="cq-dd-image text-center modal-youtube-video-player">													
+													<figure>
+                                                    	<img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+                                                   			<div data-sly-test="${properties.addVideoIcon}" class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="50"></div> 
+                                             		</figure>
+                                                </a>
+                                             </sly>
                                  </div> 
             </div>
-    </section>     
+    </section>
+ </div>
 </sly>

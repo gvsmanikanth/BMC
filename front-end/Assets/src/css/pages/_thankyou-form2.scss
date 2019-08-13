@@ -57,6 +57,18 @@
                     flex-flow: column-reverse;
                 }
             }
+            .img-left{
+                @media (max-width: $break-md) {
+                    display: flex;
+                    flex-flow: column-reverse;
+                }
+            }
+            .img-right{
+                @media (max-width: $break-md) {
+                    display: flex;
+                    flex-flow: column;
+                }
+            }
         }       
       
     }
@@ -140,7 +152,7 @@
     
     .topcontent {
         padding-bottom: 1.5em;
-        .layout-secondaryaem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--3 {
+        .layout-secondary.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--3 {
             @media (max-width: $break-md) {
                 width: 100%;
                 float: none;
@@ -148,9 +160,22 @@
             }
             .cq-dd-image.text-center {
                 @media (max-width: $break-md) {
-                    text-align: left;
+                    text-align: center;
                 }                
             }
+        }
+        // WEB-5449
+        .cq-dd-image {
+            @media (max-width: $break-md) {
+                display: block;
+            }              
+        }
+        .layout-secondary {
+            position: relative;
+            @media (max-width: $break-md) {
+                text-align: center;
+            }    
+          
         }
 
     }
@@ -165,6 +190,40 @@
     footer.layout-footer {
         margin-top: 0;
     }
+
+ 
+    .flexi-featured-analyst-blog{
+        .layout-inner-wrap{
+            section{
+                position: relative;
+            }
+            .modal-youtube-video-player{
+                position: relative;
+                display: block;
+                .carousel-icon.icon-vid{
+                    background: url(./icon-slide-video.png) 50% 0 no-repeat;
+                    width: 50%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    transform: scale(0.5);
+                }
+            }
+            img{
+                width: initial;
+                height: initial;
+            }
+        }
+        .topcontent{
+            background:initial;
+            padding: 1.5em 0;
+            figure {
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }
 .header-form2-thank-you{
 	  .product-category-header{
