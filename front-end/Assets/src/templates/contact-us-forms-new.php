@@ -57,81 +57,86 @@ var bmcMeta = {
 
 <div class="page-campaign-landing">  
    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
-      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
+      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
          <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-            <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   redesign-wrapper js-elehtItem">
-                  <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                     <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   form-wrapp layout-inner-wrap pointer-none js-elehtItem">
-                        <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
-                           <section>
-                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
-                                    <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                       <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                                             <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   pointer-auto">
-                                                <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                                                   <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   layout-full-bleed">
-                                                   <div class="cmp cmp-form">
-                                                   <form id="leadgen" name="leadgen" method="POST" action="/forms/contact-bmc/_jcr_content/root/responsivegrid/maincontentcontainer/_50_50contentcontain/right/form.post.html" enctype="multipart/form-data" 
-                                                         class="aem-Grid aem-Grid--12 aem-Grid--default--12  customerform " data-leadgen="leadgen">
-                                                         <input type="hidden" name="_charset_" value="UTF-8"/>
-                                                         <span style="display:none;"><input type="text" name="Address3" id="Address3"/><input type="text" name="Surname" id="Surname"/></span>
-                                                         <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                                            <h1>Sign up for the Forrester report <span class="subtext-form">“Hadoop Workflow Automation Improves Efficiency And Increases  Competitive Advantage”</span></h1>
-                                                            
-                                                         </div>
-                                                         <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
-                                                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
-                                                               <div class="field-set  responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                                                                  <fieldset class="aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--phone--12  ">
-                                                                     <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-219511447" class="">First Name</label>
-                                                                        <input type="text" id="form-text-219511447" placeholder="" name="C_FirstName" data-validation-type="first-name"  data-error-hint="Required. Please add your first name" required="true"/>
-                                                                        
-                                                                     </div>
-                                                                     <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-219511448" class="">Last Name</label>
-                                                                        <input type="text" id="form-text-219511448" placeholder="" name="C_LastName" data-validation-type="last-name" data-error-hint="Required. Please add your last name"  required="true"/>
-                                                                        
-                                                                     </div>
-                                                                     <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12  aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-170708906" class="">Business Email</label>
-                                                                        <input type="email" id="form-text-170708906" placeholder="" name="C_EmailAddress" data-error-hint="Please enter a valid business email address" data-validation-type="email-business" required="true"/>
-                                                                        
-                                                                     </div>
-                                                                     <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12  aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-219511450" class="">Company</label>
-                                                                        <input type="text" id="form-text-219511450" placeholder="" name="C_Company" data-validation-type="no_initial_space" data-error-hint="Required. Please add your company"  required="true"/>
-                                                                        
-                                                                     </div>
-                                                                     <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-219511451" class="">Business Phone</label>
-                                                                        <input type="tel" id="form-text-219511451" placeholder="(555) 123-1234" name="C_BusPhone" data-error-hint="Required. Please add your business phone"  required="true"/>
-                                                                        
-                                                                     </div>
-                                                                     <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <label for="C_Job_Level1" class="">Which title best reflects your job?</label>
-                                                                        <select name="C_Job_Level1" id="C_Job_Level1" class="form-control"  data-error-hint="Required. Please add your job level"  required="true">
-                                                                           <option selected disabled>Job Level</option>
+            <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  redesign-wrapper js-elehtItem" style="height: 1230px; margin-bottom: 30px;">
+               <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                  <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  form-wrapp layout-inner-wrap pointer-none js-elehtItem" style="top: 0px; height: 1230px; margin-bottom: 30px;">
+                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                       <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  pointer-auto">
+                                          <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                             <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+                                                <div class="cmp cmp-form aem-GridColumn aem-GridColumn--default--12">
+                                                   <form id="leadgen" name="leadgen" method="POST" action="/forms/control-m-enterprise-free-trial-runaware/_jcr_content/root/responsivegrid/customcontentcontain/customcontentcontain_1/_50_50contentcontain/left/customcontentcontain_2/maincontentcontainer/form.post.html" enctype="multipart/form-data" class="aem-Grid aem-Grid--12 aem-Grid--default--12 customerform" data-leadgen="leadgen" novalidate="novalidate" style="margin-top: 40px;">
+                                                      <input type="hidden" name="_charset_" value="UTF-8">
+                                                      <span style="display:none;"><input type="text" name="Address3" id="Address3"><span class="error-text"></span><input type="text" name="Surname" id="Surname"><span class="error-text"></span></span>
+                                                      <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                                         <h1>
+                                                            Start your free <span class="nowrap"><b>Control-M</b></span> trial
+                                                         </h1>
+                                                      </div>
+                                                      <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+                                                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                                            <div class="field-set responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                                               <fieldset class="aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--phone--12 ">
+                                                                  <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                                                     <h5 class="validation-help-text">
+                                                                        All fields are required except where noted.
+                                                                     </h5>
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="form-text-172647829">First Name</label>
+                                                                     <input type="text" id="form-text-172647829" name="C_FirstName" data-error-hint="Required. Please add your First Name." data-validation-type="first-name" required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="form-text-172647830">Last Name</label>
+                                                                     <input type="text" id="form-text-172647830" name="C_LastName" data-error-hint="Required. Please add your Last Name." data-validation-type="last-name" required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="form-text-1519225752">Business Email</label>
+                                                                     <input type="email" id="form-text-1519225752" name="C_EmailAddress" data-error-hint="Please enter a valid business email. Addresses commonly associated with personal email accounts (i.e. Gmail, Yahoo, etc.) are not valid." data-validation-type="email-business-competitor" required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="form-text-172647832">Company</label>
+                                                                     <input type="text" id="form-text-172647832" name="C_Company" data-error-hint="Required. Please add your company." required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="form-text-172647833" class="business_phone_label">Business Phone</label>
+                                                                     <input type="tel" id="form-text-172647833" name="C_BusPhone" data-error-hint="Please enter a valid business phone number including area code." required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <label for="C_Job_Level1">Which title best reflects your job?</label>
+                                                                     <!-- /*Adding changes for WEB-5247 START*/ -->
+                                                                     <div class="decorator-select">
+                                                                        <select name="C_Job_Level1" id="C_Job_Level1" class="form-control" required="true" data-error-hint="Required. Please add your job type.">
+                                                                           <option selected="" disabled="">Job Level</option>
                                                                            <option value="C-Level">C-Level</option>
                                                                            <option value="Vice President">Vice President</option>
                                                                            <option value="Director">Director</option>
                                                                            <option value="Manager">Manager</option>
                                                                            <option value="IT Professional">IT Professional</option>
-                                                                           <option value="Business Professional">Business Professional</option>    
+                                                                           <option value="Business Professional">Business Professional</option>
                                                                         </select>
-                                                                        
-                                                                        
                                                                      </div>
-                                                                     <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
-                                                                        <label for="C_Country" class="">Country</label>
-                                                                        <select name="C_Country" id="C_Country" class="form-control"  data-error-hint="Required. Please add your country" required="true">
-                                                                           <option selected disabled>Country</option>
+                                                                     <span class="error-text"></span>
+                                                                     <!-- /*Adding changes for WEB-5247 END*/ -->
+                                                                  </div>
+                                                                  <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <label for="C_Country">Business Country</label>
+                                                                     <!-- /*Adding changes for WEB-5247 START*/ -->
+                                                                     <div class="decorator-select">
+                                                                        <select name="C_Country" id="C_Country" class="form-control" required="true" data-error-hint="Required. Please add your Country.">
+                                                                           <option selected="" disabled="">Country</option>
                                                                            <option value="USA">United States</option>
                                                                            <option value="Canada" data-gdpr="true">Canada</option>
                                                                            <option value="Afghanistan">Afghanistan</option>
@@ -239,7 +244,7 @@ var bmcMeta = {
                                                                            <option value="Korea, Republic of" data-gdpr="true">Korea, Republic of</option>
                                                                            <option value="Kuwait">Kuwait</option>
                                                                            <option value="Kyrgyzsta">Kyrgyzstan</option>
-                                                                           <option value="Lao People&#39;s Democratic Republic">Lao People&#39;s Democratic Republic</option>
+                                                                           <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
                                                                            <option value="Latvia" data-gdpr="true">Latvia</option>
                                                                            <option value="Lebanon">Lebanon</option>
                                                                            <option value="Lesotho">Lesotho</option>
@@ -357,188 +362,187 @@ var bmcMeta = {
                                                                            <option value="Zambia">Zambia</option>
                                                                         </select>
                                                                      </div>
-                                                                     <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0"><!-- /*Adding changes for WEB-2633 START*/ -->
-
-                                                                           <label for="C_State_Prov">State or Province</label>
-                                                                           
-                                                                           <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province."  class="">
-                                                                                                                     </div>
-                                                                     
-                                                                     <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-                                                                        <label for="C_Product_Interest1" class=""></label>
-                                                                        <select name="C_Product_Interest1" id="C_Product_Interest1" class="form-control"  data-error-hint="Required. Please add your product interest" required="true">
-                                                                           <option selected disabled>Product Interest</option>
-                                                                           <option value="Helix">BMC Helix</option>
-                                                                           <option value="APM">BMC Application Management Suite</option>
-                                                                           <option value="TrueSight Orchestration">TrueSight Orchestration</option>
-                                                                           <option value="BCM">BMC Client Management (Asset Core)</option>
-                                                                           <option value="BDA">BMC Bladelogic Automation Suite</option>
-                                                                           <option value="BMA">BMC BladeLogic Middleware Automation</option>
-                                                                           <option value="BNA">TrueSight Network Automation</option>
-                                                                           <option value="TrueSight Operations Management">TrueSight Operations Management</option>
-                                                                           <option value="BSA">TrueSight Server Automation</option>
-                                                                           <option value="TrueSight Vulnerability Management">TrueSight Vulnerability Management</option>
-                                                                           <option value="CLM">Cloud Lifecycle Management</option>
-                                                                           <option value="Consulting">BMC Consulting Services</option>
-                                                                           <option value="Control D">BMC Control-D</option>
-                                                                           <option value="Control M">BMC Control-M</option>
-                                                                           <option value="DB2">BMC Data Management Solutions for DB2</option>
-                                                                           <option value="Discovery">BMC Discovery</option>
-                                                                           <option value="DM - DS">BMC DM-DS</option>
-                                                                           <option value="DM - MF">BMC Mainframe Solutions</option>
-                                                                           <option value="Education">BMC Education Services</option>
-                                                                           <option value="FootPrints Service Core">BMC Footprints Service Core</option>
-                                                                           <option value="IMS">BMC Data Management Solutions for IMS</option>
-                                                                           <option value="Innovation Suite">BMC Innovation Suite</option>
-                                                                           <option value="Mainview">BMC MainView</option>
-                                                                           <option value="Mobility">BMC Mobile Device Manager</option>
-                                                                           <option value="MyIT">BMC MyIT</option>
-                                                                           <option value="Remedy">BMC Remedy ITSM Suite</option>
-                                                                           <option value="SaaS Remedy Force">BMC Remedyforce</option>
-                                                                           <option value="SaaS Remedy On Demand">BMC Remedy OnDemand</option>
-                                                                           <option value="TrueSight Cloud Security">TrueSight Cloud Security</option>
-                                                                           <option value="SaaS TrueSight Intelligence">BMC TrueSight</option>
-                                                                           <option value="TrueSight Pulse">TrueSight Pulse</option>
-                                                                           <option value="Track-It!">BMC Track-IT!</option>
-                                                                           <option value="TrueSight APM">BMC Application Performance Management</option>
-                                                                           <option value="TrueSight Capacity">TrueSight Capacity Optimization</option>
-                                                                           <option value="TrueSight Cloud Cost Control">TrueSight Cloud Cost Control</option>
-                                                                           <option value="TrueSight Intelligence">TrueSight Intelligence</option>
-                                                                        </select>
+                                                                     <span class="error-text"></span>
+                                                                     <!-- /*Adding changes for WEB-5247 END*/ -->
+                                                                  </div>
+                                                                  <div class="cmp cmp-form-field aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
+                                                                     <!-- /*Adding changes for WEB-2633 START*/ -->
+                                                                     <label for="C_State_Prov">State or Province</label>
+                                                                     <input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true"><span class="error-text"></span>
+                                                                  </div>
+                                                                  <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12" style="padding: 0px;">
+                                                                     <div class="form-group checkbox">
+                                                                        <label for="C_Contact_Me1_group"></label>
+                                                                        <ol id="C_Contact_Me1_group">
+                                                                           <li>
+                                                                              <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="false">
+                                                                              <label for="C_Contact_Me1">
+                                                                              I would like someone from BMC to contact me.
+                                                                              <span class="optional-text"> (optional)</span></label><span class="error-text"></span>
+                                                                           </li>
+                                                                        </ol>
                                                                      </div>
-                                                                     
-                                                                     <div class="cmp cmp-form-field aem-GridColumn aem-GridColumn--default--12">
-                                                                        <!-- /*Adding changes for WEB-2633 START*/ -->
-                                                                        <label for="form-text-1661326693" class="">What would you like to know?</label>
-                                                                        <textarea id="form-text-1661326693" placeholder="" name="C_Description1" required="false" rows="4"></textarea>
+                                                                  </div>
+                                                                  <input type="hidden" id="GDPR_Eligible" name="GDPR_Eligible" value="No">
+                                                                  <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12" style="display: none; padding: 0px;">
+                                                                     <div class="form-group checkbox">
+                                                                        <label for="C_OptIn"></label>
+                                                                        <ol id="C_OptIn_group" style="display: none;">
+                                                                           <li>
+                                                                              <input name="C_OptIn" id="C_OptIn" value="Yes" type="hidden" checked="checked">
+                                                                              <label for="C_OptIn">
+                                                                              I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
+                                                                              <span class="dynamic-optional-text optional-text" style="display:none;"> (optional)</span> 
+                                                                              </label><span class="error-text"></span>
+                                                                           </li>
+                                                                        </ol>
                                                                      </div>
-                                                                     <div class="visible aem-GridColumn aem-GridColumn--default--12">
-                                                                        <input type="hidden" id="form-hidden-2125544906" name="elqFormName" value="FormTemplate1"/>
+                                                                  </div>
+                                                                  <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12" style="padding: 0px;">
+                                                                     <div class="form-group checkbox">
+                                                                        <label for="licenseAgreement"></label>
+                                                                        <ol id="licenseAgreement_group">
+                                                                           <li>
+                                                                              <input name="licenseAgreement" id="licenseAgreement" value="on" required="true" type="checkbox">
+                                                                              <label for="licenseAgreement">
+                                                                              By checking this box, I agree to be bound by the terms of <a href="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590" target="_blank">Online Trial Agreement</a>.
+                                                                              </label><span class="error-text"></span>
+                                                                           </li>
+                                                                        </ol>
                                                                      </div>
-                                                                     <input type="hidden" id="GDPR_Eligible" name="GDPR_Eligible" value="No"/>
-                                                                     <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-                                                                        <div class="form-group checkbox">
-                                                                           <label for="C_Contact_Me1_group"></label>
-                                                                           <ol id="C_Contact_Me1_group">
-                                                                              <li>
-                                                                                 <input type="checkbox" name="C_Contact_Me1" id="C_Contact_Me1" value="Yes" required="false">
-                                                                                 <label for="C_Contact_Me1">
-                                                                                 Would you like someone from BMC  to connect with you about Control&#8209M
-                                                                                 </label>
-                                                                              </li>
-                                                                           </ol>
-                                                                        </div>
-                                                                     </div>
-                                                                     <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-                                                                        <div class="form-group checkbox">
-                                                                           <label for="C_OptIn"></label>
-                                                                           <ol id="C_OptIn_group" style="display: none;">
-                                                                              <li>
-                                                                                 <input name="C_OptIn" id="C_OptIn" value="Yes" type="hidden" checked="checked">
-                                                                                 <label for="C_OptIn">
-                                                                                 I would like to receive marketing communications regarding BMC products, services, and events. I can unsubscribe at a later time.
-                                                                                 <span class="dynamic-optional-text optional-text" style="display:none;"> (optional)</span> 
-                                                                                 </label><span class="error-text"></span>
-                                                                              </li>
-                                                                           </ol>
-                                                                        </div>
-                                                                     </div>
-                                                                     <div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-                                                                        <div class="form-group checkbox">
-                                                                           <label for="licenseAgreement"></label>
-                                                                           <ol id="licenseAgreement_group">
-                                                                              <li>
-                                                                                 <input name="licenseAgreement" id="licenseAgreement" value="on" required="true" type="checkbox">
-                                                                                 <label for="licenseAgreement">
-                                                                                 By checking this box, I agree to be bound by the terms of <a href="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590" target="_blank">Online Trial Agreement</a>.
-                                                                                 </label>
-                                                                              </li>
-                                                                           </ol>
-                                                                        </div>
-                                                                     </div>
-                                                                     <div class="horizontal-Tag aem-GridColumn aem-GridColumn--default--12 field-sep"><hr class="field-sep"></div>
-                                                                                                         
-                                                                  </fieldset>
-                                                               </div>
+                                                                  </div>
+                                                               </fieldset>
                                                             </div>
                                                          </div>
                                                       </div>
-                                                      <span class="submit-btn-wrap"> <button type="SUBMIT" class="btn-secondary">Start Your Trial</button></span>
-                                                      <p class="text-center">By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="http://www.bmc.com/legal/personal-information.html">Personal Information</a>.</p>
-                                                      <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
-                                                      <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
-                                                      <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>
-                                                      <input type="hidden" id="C_Source_Name1" name="C_Source_Name1" value=""/>
-                                                      <input type="hidden" id="adobe_unique_hit_id" name="adobe_unique_hit_id" value=""/>
-                                                      <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><input type="text" name="Surname" id="Surname"></span>
+                                                      <span class="submit-btn-wrap">
+                                                      <button type="SUBMIT" class="btn-secondary">START YOUR TRIAL</button>
+                                                      </span>        
+                                                      <p>By registering for this offer you are confirming that you have read and agreed to <a href="/legal/personal-information.html" target="Target">BMC’s Privacy Policy</a>.<br></p>
+                                                      <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value="90365866543543641402318006861783153135">
+                                                      <input type="hidden" id="Email_Source" name="Email_Source" value="">
+                                                      <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value="">
+                                                      <input type="hidden" id="C_Source_Name1" name="C_Source_Name1" value="">
+                                                      <input type="hidden" id="adobe_unique_hit_id" name="adobe_unique_hit_id" value="903658665435436414023180068617831531351565941112928">
+                                                      <span class="form-hidden" style="display:none;"><input type="text" name="Address3" id="Address3"><span class="error-text"></span><input type="text" name="Surname" id="Surname"><span class="error-text"></span></span>
                                                    </form>
                                                 </div>
-                                             </div>
-                                             <div class="new newpar section aem-Grid-newComponent">
-                                             </div> -->
+                                             </section>
                                           </div>
-                                    </div>
+                                       </section>
                                     </div>
                                  </div>
                               </div>
-                        </div>
-                        </div>
-                     </section>
-                  <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                     <section class="aem-Grid aem-Grid--12 aem-Grid--default--12   layout-full-bleed">
-                        <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
-                        <section>
-                              <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
-                                 <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 minHeight-1px  ">
-                                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                                       
-                                    </div>
-                                    <div class="new newpar section aem-Grid-newComponent">
-                                    </div>
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                       <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  pointer-none">
+                                       </section>
                                     </div>
                                  </div>
-                                 <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
+                              </div>
+                           </div>
+                        </section>
+                     </div>
+                  </section>
+               </div>
+               <div class="header-form2 aem-GridColumn aem-GridColumn--default--12">
+                  <!-- /* MObile or thumbnail Image */-->
+                  <!-- /* Header Background Image  */-->
+                  <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 ornate-header wallpaper" data-wallpaper-options="{&quot;source&quot;:{
+                     &quot;fallback&quot;: &quot;&quot;,&quot;(min-width: 640px)&quot;: &quot;&quot;}}" style="background-color:#0091DD;">
+                     <div class="offset-wrapper flex-center">
+                        <div class="inner">
+                           <div class="bannerContent">
+                              <div class="layout-inner-wrap flex">
+                                 <div class="flex-item  md-col-6"></div>
+                                 <div class="flex-item  md-col-6">
+                                    <!-- Section where the placeholder recides. -->
+                                    <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                       <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                          <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                             <h2 class="h1-variation-1">
+                                                We’ll help you run your business as you reinvent it
+                                             </h2>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="wallpaper-container">
+                        <div class="wallpaper-media wallpaper-image wallpaper-responsive" style="height: 438px; top: 0px;"><img alt="" src=""></div>
+                     </div>
+                  </section>
+               </div>
+               <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                  <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+                     <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                        <section>
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="customcontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                                       <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  minHeight-1px">
+                                       </section>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
+                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                                     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-                                          <h2>
-                                             Take Control-M for a test drive
-                                          </h2>
+                                       <h2>
+                                          Try out Control-M capabilities in a live environment
+                                       </h2>
                                     </div>
                                     <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
-                                          <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-                                             <p>Try out key Control-M features in a self-guided live environment.</p>
-                                          
-                                             <p>See how easy it is to get started automating workloads with Control-M.<br>
-                                                <b>Try it now!</b>
-                                             </p>
-                                          </div>
+                                       <div>
+                                          <p><b>Get free access</b> to explore common use cases for workflow orchestration and automation through a step-by-step guide. See how easy it is to:</p>
+                                          <ul class="red-bullets mb3">
+                                             <li>Create, build, and run jobs</li>
+                                             <li>Model service-level impacts</li>
+                                             <li>Apply a Jobs-as-Code approach to application development</li>
+                                             <li>Automate internal and external file transfers</li>
+                                             <li>Enable self-service so users can perform basic tasks </li>
+                                          </ul>
+                                       </div>
                                     </div>
-                                    
-                                    <div class="new newpar section aem-Grid-newComponent">
+                                    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+                                       <h2>
+                                          Our customers see real results
+                                       </h2>
                                     </div>
+                                    <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+                                       <div>
+                                          <p>Management Science Associates leveraged Control-M to turn big data into big insights for clients, and in the process:</p>
+                                          <ul class="red-bullets mb3">
+                                             <li>Reduced failure rates from 20 percent to 0.5 percent </li>
+                                             <li>Reassigned 15% of staff to value-added tasks</li>
+                                             <li>Cut 12-18 hours from weekly process times</li>
+                                          </ul>
+                                       </div>
                                     </div>
                                  </div>
                               </div>
+                           </div>
                         </section>
+                     </div>
+                  </section>
+               </div>
+               <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                  <section>
+                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                           </div>
                         </div>
-                     </section>
-                  </div>
+                     </div>
+                  </section>
+               </div>
             </section>
          </div>
-         <div class="pullquote aem-GridColumn aem-GridColumn--default--12">
-            <div class="pullquote-light">
-               <blockquote class="fullbleed-blockquote">
-                  <div class="layout-inner-wrap">
-                     "Only 42 percent of respondents rate their organizations’ ability to minimize or mitigate IT security risk as high...Their organizations’ approach to dealing with threats is reactive, focusing on the immediate threat or ‘hack du jour.’”
-                     <cite>
-                     — Ponemon Institute: Separating the Truths from the Myths in Cybersecurity
-                     </cite>
-                  </div>
-               </blockquote>
-            </div>
-         </div>
-        
       </div>
    </div>
    
