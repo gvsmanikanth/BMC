@@ -117,7 +117,6 @@ var bmcMeta = {
                                                                   <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                                                      <label for="C_Job_Level1">Which title best reflects your job?</label>
                                                                      <!-- /*Adding changes for WEB-5247 START*/ -->
-                                                                     <div class="decorator-select">
                                                                         <select name="C_Job_Level1" id="C_Job_Level1" class="form-control" required="true" data-error-hint="Required. Please add your job type.">
                                                                            <option selected="" disabled="">Job Level</option>
                                                                            <option value="C-Level">C-Level</option>
@@ -127,14 +126,12 @@ var bmcMeta = {
                                                                            <option value="IT Professional">IT Professional</option>
                                                                            <option value="Business Professional">Business Professional</option>
                                                                         </select>
-                                                                     </div>
                                                                      <span class="error-text"></span>
                                                                      <!-- /*Adding changes for WEB-5247 END*/ -->
                                                                   </div>
                                                                   <div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">
                                                                      <label for="C_Country">Business Country</label>
                                                                      <!-- /*Adding changes for WEB-5247 START*/ -->
-                                                                     <div class="decorator-select">
                                                                         <select name="C_Country" id="C_Country" class="form-control" required="true" data-error-hint="Required. Please add your Country.">
                                                                            <option selected="" disabled="">Country</option>
                                                                            <option value="USA">United States</option>
@@ -361,7 +358,6 @@ var bmcMeta = {
                                                                            <option value="Zaire">Zaire</option>
                                                                            <option value="Zambia">Zambia</option>
                                                                         </select>
-                                                                     </div>
                                                                      <span class="error-text"></span>
                                                                      <!-- /*Adding changes for WEB-5247 END*/ -->
                                                                   </div>
