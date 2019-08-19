@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          jcr:description="The BMC ad hoc page component"
-          jcr:primaryType="cq:Component"
-          jcr:title="Ad Hoc Page"
-          sling:resourceSuperType="bmc/components/structure/page"
-          componentGroup=".hidden"/>
+    jcr:description="The BMC ad hoc page component"
+    jcr:primaryType="cq:Component"
+    jcr:title="Ad Hoc Page"
+    sling:resourceSuperType="bmc/components/structure/page"
+    componentGroup=".hidden"/>
