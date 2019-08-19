@@ -117,13 +117,8 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bmc/components/structure/customcontentcontainer"
-                                    cssClassName="pointer-none">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            behavior="hide"/>
-                                    </cq:responsive>
-                                </customcontentcontain_2>
+                                    cssClassName="pointer-none"/>
+                                    
                             </right>
                         </_50_50contentcontain>
                     </customcontentcontain_1>
@@ -184,13 +179,8 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bmc/components/content/htmlarea"
-                                    text="&lt;p>&lt;/p>">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            behavior="hide"/>
-                                    </cq:responsive>
-                                </htmlarea>
+                                    text="&lt;p>&lt;/p>"/>
+                                    
                                 <customcontentcontain
                                     jcr:created="{Date}2019-06-04T17:00:44.919+05:30"
                                     jcr:createdBy="admin"
@@ -198,13 +188,8 @@
                                     jcr:lastModifiedBy="admin"
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bmc/components/structure/customcontentcontainer"
-                                    cssClassName="minHeight-1px">
-                                    <cq:responsive jcr:primaryType="nt:unstructured">
-                                        <default
-                                            jcr:primaryType="nt:unstructured"
-                                            behavior="hide"/>
-                                    </cq:responsive>
-                                </customcontentcontain>
+                                    cssClassName="minHeight-1px"/>
+                                    
                             </left>
                             <right
                                 jcr:primaryType="nt:unstructured"
