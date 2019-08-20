@@ -341,7 +341,16 @@
             }            
         }
     }
-
+    .product-category-header.product-category-header2 .bannerContent .layout-inner-wrap .flex-item {
+        .h1-variation-1{
+            font-size: 26px; 
+            margin: 0 0 2px 0;   
+            @media (min-width: $break-sm) {
+                font-size: 50px;
+            }
+        } 
+    }
+   
     .cust-info{
         .card {
             text-align: center; 
