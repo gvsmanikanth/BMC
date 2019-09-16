@@ -13,6 +13,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Digital Workplace"
        />
+        <!-- WEB-5990 Category Update - Education Find Courses web page - PDWO00001223865 -->
+    <education-products-186068589
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Chatbot"/>
     <education-products-142854695
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix CMDB"
