@@ -157,7 +157,7 @@
                                  <div class="carousel-wrap">
                                     <!-- ID=395789891 pageLocation=SecondaryColumn ModaleVideo=modal --> 
                                     <ul class="carousel">
-                                       <li data-slide="0" class="">
+                                       <li data-slide="0" class="active">
                                           <figure>
                                              <a href="/content/dam/bmc/migration/image/Screenshot_mobileapp1_large_500x665.jpg" class="modal-image" rel="carouselGroup-395789891" title="See and act on application status, right in the TrueOps for iOS app"> <img src="/content/dam/bmc/migration/image/Screenshot_mobileapp1_small_900x516.jpg" alt="" title="" width="900" height="516" border="0"> </a> 
                                              <figcaption>
@@ -165,7 +165,7 @@
                                              </figcaption>
                                           </figure>
                                        </li>
-                                       <li data-slide="1" class="active">
+                                       <li data-slide="1" class="">
                                           <figure>
                                              <a href="/content/dam/bmc/migration/image/Screenshot_akm+deploy_large_1200x690.jpg" class="modal-image" rel="carouselGroup-395789891" title="Easily deploy out-of-the-box data metric collection ">
                                                 <img src="/content/dam/bmc/migration/image/Screenshot_akm+deploy_small_900x516.jpg" alt="" title="" width="900" height="516" border="0">
@@ -191,8 +191,8 @@
                                        </li>
                                     </ul>
                                     <ul class="carousel-control">
-                                       <li> <a href="#" data-slide="0" class="">1</a> </li>
-                                       <li> <a href="#" data-slide="1" class="active">2</a> </li>
+                                       <li> <a href="#" data-slide="0" class="active">1</a> </li>
+                                       <li> <a href="#" data-slide="1" class="">2</a> </li>
                                        <li> <a href="#" data-slide="2" class="">3</a> </li>
                                     </ul>
                                  </div>
@@ -231,10 +231,10 @@
                      <div class="tab-wrapper bg-corduroy  r-tabs">
                         <h2 class="m0 text-center white">Get AIOps insight into infrastructure and applications for multi-cloud management</h2>
                         <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table r-tabs-nav">
-                           <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
+                           <li class="p2 flex-cell n-col-4 r-tabs-tab r-tabs-state-active">
                               <a class="white bold no-scroll r-tabs-anchor" href="#tab-abf2b3c2-4407-4f29-b63c-36002779cad8" onclick="">Infrastructure Management</a>
                            </li>
-                           <li class="p2 flex-cell n-col-4 r-tabs-tab r-tabs-state-active">
+                           <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
                               <a class="white bold no-scroll r-tabs-anchor" href="#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" onclick="">Log Analytics</a>
                            </li>
                            <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
@@ -244,8 +244,8 @@
                               <a class="white bold no-scroll r-tabs-anchor" href="#tab-f1b1fb3a-7211-4308-b44d-05312c1ed789" onclick="">Service Resolution</a>
                            </li>
                         </ul>
-                        <div class="r-tabs-accordion-title"><a href="#tab-abf2b3c2-4407-4f29-b63c-36002779cad8" class="r-tabs-anchor">Infrastructure Management</a></div>
-                        <div id="tab-abf2b3c2-4407-4f29-b63c-36002779cad8" class="section bg-seashell r-tabs-state-default r-tabs-panel">
+                        <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-abf2b3c2-4407-4f29-b63c-36002779cad8" class="r-tabs-anchor">Infrastructure Management</a></div>
+                        <div id="tab-abf2b3c2-4407-4f29-b63c-36002779cad8" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
                            <div class="section-content flex-tab">
                               <div class="section responsivegrid">
                                  <section>
@@ -297,8 +297,8 @@
                               </div>
                            </div>
                         </div>
-                        <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" class="r-tabs-anchor">Log Analytics</a></div>
-                        <div id="tab-8b574410-d515-4c65-a7e7-600a4827f6d8" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
+                        <div class="r-tabs-accordion-title"><a href="#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" class="r-tabs-anchor">Log Analytics</a></div>
+                        <div id="tab-8b574410-d515-4c65-a7e7-600a4827f6d8" class="section bg-seashell r-tabs-state-default r-tabs-panel">
                            <div class="section-content flex-tab">
                               <div class="section responsivegrid">
                                  <section>
@@ -658,7 +658,7 @@
                            <ul>
                               <li> <a href="/it-solutions/it-operations-management.html" target="_self" class="learn-more">ITOM: IT Operations Management</a> </li>
                               <li> <a href="/it-solutions/truesight-infrastructure-management.html" target="_self" class="learn-more"> TrueSight Infrastructure Management</a> </li>
-                              <li> <a href="/it-solutions/truesight-operations-management.html#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" target="_self" class="learn-more"> TrueSight IT Data Analytics</a> </li>
+                              <li> <a href="http://localhost/front-end/truesight-operations-management.php#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" target="_self" class="learn-more tab_link"> TrueSight IT Data Analytics</a> </li>
                               <li> <a href="/it-solutions/app-visibility-manager.html" target="_self" class="learn-more"> TrueSight AppVisibility</a> </li>
                               <li> <a href="/it-solutions/middleware-management.html" target="_self" class="learn-more"> Middleware Management</a> </li>
                            </ul>
@@ -700,25 +700,39 @@ include 'php-inc/foot.php';
 
 <script>
 
-$('.learn-more').click(function(){
-	var tab_id= $(this).attr('href');
-	var myString = tab_id.substr(tab_id.indexOf("#"));
-	console.log(myString);
-	$('.r-tabs-anchor').each(function(index, value){
-		var all_tabs = $(this).attr('href');
-		if(all_tabs == tab_id){
-			var parentTag = $( this ).parent().get( 0 );
-			$(parentTag).toggleClass('r-tabs-state-default r-tabs-state-active');
-			
-		}else{
-			var other_parentTag = $( this ).parent().hasClass('r-tabs-state-active');			
-			if(other_parentTag){
-				console.log(other_parentTag);	
-			   $(other_parentTag).toggleClass('r-tabs-state-active r-tabs-state-default');
-			  }
-		}
-	});	
-});
-</script>
 
-<a href="#tab-8b574410-d515-4c65-a7e7-600a4827f6d8" target="_self" class="learn-more optab"> TrueSight IT Data Analytics</a>
+// $('.learn-more').click(function(){
+// 	var tab_id= $(this).attr('href');
+// 	var tab_id = tab_id.substr(tab_id.indexOf("#"));
+// 	console.log(tab_id);
+// 	$('.r-tabs-anchor').each(function(index, value){
+// 		var all_tabs = $(this).attr('href');
+// 		if(all_tabs == tab_id){
+//          var parentTag = $( this ).parent().get( 0 );
+//          console.log('parent tag '+parentTag);
+//          $(parentTag).addClass('r-tabs-state-active').removeClass('r-tabs-state-default');
+			
+// 		}else{
+// 			var is_parent_active = $( this ).parent().hasClass('r-tabs-state-active');			
+// 			if(is_parent_active){
+//             var other_parentTag = $( this ).parent().get( 0 );
+// 				console.log('other parent tag ' +other_parentTag);	
+//             $(other_parentTag).addClass('r-tabs-state-default').removeClass('r-tabs-state-active');
+// 			  }
+// 		}
+// 	});	
+// });
+// $('.tab_link').click(function() {
+//    //alert('pradip');
+// 		// if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+// 		// 	var target = $(this.hash);
+// 		// 	target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+// 		// 	if (target.length) {
+//             $('html,body').animate({
+//                scrollTop: $(".tab-wrapper").offset().top},
+//          1000);
+// 		// 		return false;
+// 		// 	}
+// 		// }
+// 	});	
+</script>
