@@ -11,10 +11,5 @@ $(function() {
 				return false;
 			}
 		}
-	});	
-	$('.tab_link').click(function() {
-		$('html,body').animate({
-			scrollTop: $(".tab-wrapper").offset().top
-		}, 1000);
 	});
 });
