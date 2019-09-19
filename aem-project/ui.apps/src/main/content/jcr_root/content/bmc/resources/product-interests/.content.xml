@@ -169,6 +169,24 @@
             dropDownDisplay="Yes"
             text="BMC Helix Client Management"
             value="Helix Client Management"/>
+    <_x0031_87169023
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Cost"
+            dropDownDisplay="Yes"
+            text="BMC Helix Cloud Cost"
+            value="TrueSight Cloud Cost"/>
+    <_x0031_54177794
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Operations"
+            dropDownDisplay="Yes"
+            text="BMC Helix Cloud Operations"
+            value="TrueSight Cloud Operations"/>
+    <_x0036_77181073
+            jcr:primaryType="nt:unstructured"
+            jcr:title="TrueSight Cloud Security"
+            dropDownDisplay="Yes"
+            text="BMC Helix Cloud Security"
+            value="TrueSight Cloud Security"/>
     <_x0035_07778250
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Digital Workplace"
@@ -273,31 +291,13 @@
             dropDownDisplay="Yes"
             text="TrueSight Capacity Optimization"
             value="TrueSight Capacity Optimization"/>
-    <_x0031_87169023
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Cloud Cost"
-            dropDownDisplay="Yes"
-            text="TrueSight Cloud Cost"
-            value="TrueSight Cloud Cost"/>
+
     <_x0031_55163094
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Cloud Cost Control"
-            dropDownDisplay="Yes"
-            text="TrueSight Cloud Cost Control"
-            value="TrueSight Cloud Cost Control"/>
+            dropDownDisplay="No"
+    />
 
-    <_x0031_54177794
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Cloud Operations"
-            dropDownDisplay="Yes"
-            text="TrueSight Cloud Operations"
-            value="TrueSight Cloud Operations"/>
-    <_x0036_77181073
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Cloud Security"
-            dropDownDisplay="Yes"
-            text="TrueSight Cloud Security"
-            value="TrueSight Cloud Security"/>
     <_x0031_78280437
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Infrastructure"

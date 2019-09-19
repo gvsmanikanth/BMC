@@ -62,10 +62,12 @@
 		var prodIntrest  = bmcMeta.page.productCategories;
 		if(prodIntrest != ""){
 			 return this.each(function(){
-			    	if(isForm.test(this.href)){
-		    			var prodIntrest  = bmcMeta.page.productCategories;
+				if($(this).attr("href") !== '#'){ //WEB-3260
+					if(isForm.test(this.href)){
+						var prodIntrest  = bmcMeta.page.productCategories;
 						$(this).attr("href", UpdateQueryString("productInterest" , prodIntrest,this.href));
-		    		} 
+					}
+				} 
 			});
 		}
 	    }
