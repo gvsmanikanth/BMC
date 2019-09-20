@@ -658,8 +658,8 @@
                            <ul>
                               <li> <a href="/it-solutions/it-operations-management.html" target="_self" class="learn-more">ITOM: IT Operations Management</a> </li>
                               <li> <a href="/it-solutions/truesight-infrastructure-management.html" target="_self" class="learn-more"> TrueSight Infrastructure Management</a> </li>
-                              <li> <a href="jumpTo_tab-8b574410-d515-4c65-a7e7-600a4827f6d8" target="_self" class="learn-more"> TrueSight IT Data Analytics</a> </li>
-                              <li> <a href="/it-solutions/app-visibility-manager.html" target="_self" class="learn-more"> TrueSight AppVisibility</a> </li>
+                              <li> <a href="#jumpTo_tab-8b574410-d515-4c65-a7e7-600a4827f6d8" target="_self" class="learn-more tab_link"> TrueSight IT Data Analytics</a> </li>
+                              <li> <a href="jumpTo_tab-f1b1fb3a-7211-4308-b44d-05312c1ed789" target="_self" class="learn-more"> TrueSight AppVisibility</a> </li>
                               <li> <a href="/it-solutions/middleware-management.html" target="_self" class="learn-more"> Middleware Management</a> </li>
                            </ul>
                         </div>

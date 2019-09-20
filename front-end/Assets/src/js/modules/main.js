@@ -817,7 +817,12 @@ $('a').click(function(e) {
 	var href = $(this).attr("href"); 
     if(href && href.indexOf("jumpTo_") > -1){ 
 		e.preventDefault();
-		var newHref = "#"+ href.replace("jumpTo_",'');
+		// WEB-5951 added condition to cover #jumpTo_ link
+		if(href.indexOf("#jumpTo_") > -1){
+			var newHref = href.replace("jumpTo_",'');
+		}else{
+			var newHref = "#"+ href.replace("jumpTo_",'');
+		}		
 		window.location.hash = newHref;
 		if($(".tab-wrapper").length >= 1){
 		$(".r-tabs-nav .r-tabs-tab").each(function(){
