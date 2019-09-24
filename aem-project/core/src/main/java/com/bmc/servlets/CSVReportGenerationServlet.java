@@ -187,14 +187,14 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	                	break;
 	                case "document-containers":
 	                	//Generate the report for forms 	                		
-	                	workBook = containersService.generateDataReport(true, fileName,reportLocation);
+	                	workBook = containersService.generateDataReport(fileName,reportLocation);
                 		jsonDAMPath = containersService.writeJSONtoDAM(fileName);
             	        excelDAMPath = containersService.writeExceltoDAM(workBook, fileName);
             	        containersService.clearData(reportType);
 	                	break;
 	                case "extenal-link-containers":
 	                	//Generate the report for forms 	                		
-                		workBook = containersService.generateDataReport(true, fileName,reportLocation);
+                		workBook = containersService.generateDataReport( fileName,reportLocation);
                 		jsonDAMPath = containersService.writeJSONtoDAM(fileName);
             	        excelDAMPath = containersService.writeExceltoDAM(workBook, fileName);
             	        containersService.clearData(reportType);

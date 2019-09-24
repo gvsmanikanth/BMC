@@ -86,24 +86,20 @@ public class ContainersReportCSVGenSevice {
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport(boolean report, String fileName,String folder) {    	
+	    public Workbook generateDataReport(String fileName,String folder) {    	
 	    	try
-	    	{	    		
-	    		//Fetch the data from forms 
-	    			 document_list  = getJCRData(folder);
-	             //If user selected a custom report -- generate the report and store it in the JCR
-	             if (report)
-	              {	            	 
-	                  String damFileName = fileName +".xls" ;
-	                  workbook = write(); 		                  
-	              }	               
-	    	}	       
-	   catch(Exception e)
-	       {
-	        e.printStackTrace();
-	       }
-	       return workbook;
-	   }
+	    			{		    			    			    	 
+	    			 	document_list  = getJCRData(folder);	             
+	    			 	String damFileName = fileName +".xls" ;
+			            workbook = write(); 		                  			              	               
+
+	    			}
+				   catch(Exception e)
+				       {
+				        e.printStackTrace();
+				       }
+				       return workbook;
+				   }
     
 	    public String[] getTableNames()
 	  	{
@@ -160,7 +156,7 @@ public class ContainersReportCSVGenSevice {
 								            	 			{
 								            	 			reportDataItem.setDocument_url(getPropertyValues(reportDataNode, "linkAbstractorDAMAsset","linkAbstractorDAMAsset","linkAbstractorDAMAsset",session));
 								            	 			}else{reportDataItem.setDocument_url(getPropertyValues(reportDataNode, "linkAbstractorExternalAsset","linkAbstractorExternalAsset","linkAbstractorExternalAsset",session));}
-								            	 			//reportDataItem.setReferencePaths(getContainerReferences(metadataProvider.getExperiencefgmtPath(reportDataNode), session));							            	 
+								            	 			reportDataItem.setReferencePaths(getContainerReferences(metadataProvider.getExperiencefgmtPath(reportDataNode), session));							            	 
 								            	 document_list.add(reportDataItem);
 							                 }
 							        logger.info("Size of forms"+document_list.size());
@@ -248,16 +244,11 @@ public class ContainersReportCSVGenSevice {
 		 {
 			 // create query description as hash map (simplest way, same as form post)
 		     Map<String, String> map = new HashMap<String, String>();	    
-		     // create query description as hash map (simplest way, same as form post)
-		     
-		     map.put("path", "/content/bmc/language-masters/en");
-		     map.put("type", "cq:PageContent");
-		     map.put("contains", path);
+		     // create query description as hash map (simplest way, same as form post)	
+		     map.put("path", "/content/bmc/language-masters");
+		     map.put("fulltext", path);	
 		     map.put("property.hits", "full");
-		     map.put("property.depth", "0");
-		     map.put("orderby", "@jcr:content/jcr:lastModified");
-		     map.put("p.offset", "0");
-		     map.put("p.limit", "2000");	    	     
+		     map.put("property.depth", "10");
 		     return map;
 		     // can be done in map or with Query methods
 		    
@@ -474,14 +465,11 @@ public class ContainersReportCSVGenSevice {
 	          SearchResult result = query.getResult();							            
 	         		 for (Hit hit : result.getHits()) {
 	         			Node node = hit.getResource().adaptTo(Node.class);
-	         			String propertyValue = node.getPath().toString();
-	         			//Converting canonical links to the actual URLs
+	         			String propertyValue = node.getPath().toString();	
 	         			if (!propertyValue.equals(null))
 	         			{
-	         				propertyValue = propertyValue.replace("/jcr:content", ".html");
-	         				propertyValue = propertyValue.replace("/content/bmc/language-masters/en", "https://www.bmc.com");
+	         				propertyValue = propertyValue.substring(0, propertyValue.indexOf("/jcr:content"));
 	         			}
-	         			
 	         			propVals.add(propertyValue);      			
 	         		 }
 	         		return (String.join(",", propVals));
