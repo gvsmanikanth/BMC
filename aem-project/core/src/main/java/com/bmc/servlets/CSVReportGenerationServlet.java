@@ -215,7 +215,7 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 				                outPrint.println("<h4>Download the report in excel Format from<a x-cq-linkchecker='skip' href='");
 				                outPrint.println(excelDAMPath);
 				                outPrint.println("'> here</a>.</h4>");
-				                outPrint.println("<h4>Download the report in JSON Format from<a href='");
+				                outPrint.println("<h4>Download the report in JSON Format from<a x-cq-linkchecker='skip' href='");
 				                outPrint.println(jsonDAMPath);
 				                outPrint.println("'> here</a>.</h4>");				  
 				                //outPrint.println(finalOutput);
