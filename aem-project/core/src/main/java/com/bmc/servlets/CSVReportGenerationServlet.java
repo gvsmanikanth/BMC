@@ -192,7 +192,7 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
             	        excelDAMPath = containersService.writeExceltoDAM(workBook, fileName);
             	        containersService.clearData(reportType);
 	                	break;
-	                case "extenal-link-containers":
+	                case "external-link-containers":
 	                	//Generate the report for forms 	                		
                 		workBook = containersService.generateDataReport( fileName,reportLocation);
                 		jsonDAMPath = containersService.writeJSONtoDAM(fileName);
@@ -212,7 +212,7 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 				                outPrint.println("</head>"); 
 				                outPrint.println("<body>");
 				                outPrint.println("<h2>Links to the Reports. </h2>");
-				                outPrint.println("<h4>Download the report in excel Format from<a href='");
+				                outPrint.println("<h4>Download the report in excel Format from<a x-cq-linkchecker='skip' href='");
 				                outPrint.println(excelDAMPath);
 				                outPrint.println("'> here</a>.</h4>");
 				                outPrint.println("<h4>Download the report in JSON Format from<a href='");
