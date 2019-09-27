@@ -63,6 +63,10 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Customers Report"
                                                         value="customers"/>
+                                                    <item10
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Document Containers"
+                                                        value="document-containers"/>
                                                 </items>
                                             </reportType>
                                             <reportFileName
@@ -77,7 +81,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                                 fieldDescription="Enter the content path for which you ,want the Report."
-                                                fieldLabel="Please select a form path."
+                                                fieldLabel="Please select a report path."
                                                 name="./reportFileLocation"/>
                                         </items>
                                     </basic>
