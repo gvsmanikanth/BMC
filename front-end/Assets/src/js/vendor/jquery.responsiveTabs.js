@@ -79,6 +79,10 @@
         $(window).on('hashchange', function(e) {
             var tabRef = _this._getTabRefBySelector(window.location.hash);
             var oTab = _this._getTab(tabRef);
+            //WEB-5951 Setting _ignoreHashChange = false to open the tab from different anchor tag
+            if(oTab){
+                oTab._ignoreHashChange = false;
+            }            
 
             // Check if a tab is found that matches the hash
             if(tabRef >= 0 && !oTab._ignoreHashChange && !oTab.disabled) {
