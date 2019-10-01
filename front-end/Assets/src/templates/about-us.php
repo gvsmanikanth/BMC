@@ -29,7 +29,7 @@
 					  <a href="/content/bmc/videos.html?vID=y7kJPKvD9e4" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
-							   <img src="/content/dam/bmc/solutions/icons/icon-video.png" alt="">
+							   <img src="/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
 							   <div class="inner">
 								  <h5>Video:</h5>
 								  <p>BMC Helix Discovery Overview (1:50)</p>
@@ -38,10 +38,10 @@
 							</div>
 						 </div>
 					  </a>
-					  <a href="http://www.bmc.com/documents/datasheets/bmc-helix-discovery.html" class="flex-item sm-col-4   shadow-top assetStripItem" target="_blank">
+					  <a href="http://www.bmc.com/documents/datasheets/bmc-helix-discovery.html" class="flex-item sm-col-4 shadow-top assetStripItem" target="_blank">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
-							   <img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
+							   <img src="/content/dam/bmc/solutions/icons/icon-read.png" alt="">
 							   <div class="inner">
 								  <h5>Datasheet:</h5>
 								  <p>BMC Helix Discovery</p>
@@ -50,10 +50,10 @@
 							</div>
 						 </div>
 					  </a>
-					  <a href="http://www.bmc.com/documents/datasheets/bmc-helix-discovery.html" class="flex-item sm-col-4   shadow-top assetStripItem" target="_blank">
+					  <a href="http://www.bmc.com/documents/datasheets/bmc-helix-discovery.html" class="flex-item sm-col-4 shadow-top assetStripItem" target="_blank">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
-							   <img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
+							   <img src="/content/dam/bmc/solutions/icons/icon-explore.png" alt="">
 							   <div class="inner">
 								  <h5>Datasheet:</h5>
 								  <p>BMC Helix Discovery</p>
@@ -97,7 +97,7 @@
 					  <a href="/content/bmc/videos.html?vID=y7kJPKvD9e4" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
-							   <img src="/content/dam/bmc/solutions/icons/icon-video.png" alt="">
+							   <img src="/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
 							   <div class="inner">
 								  <h5>Video:</h5>
 								  <p>BMC Helix Discovery Overview (1:50)</p>
@@ -109,7 +109,7 @@
 					  <a href="http://www.bmc.com/documents/datasheets/bmc-helix-discovery.html" class="flex-item sm-col-4   shadow-top assetStripItem" target="_blank">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
-							   <img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
+							   <img src="/content/dam/bmc/solutions/icons/icon-read.png" alt="">
 							   <div class="inner">
 								  <h5>Datasheet:</h5>
 								  <p>BMC Helix Discovery</p>
@@ -155,7 +155,7 @@
                      <a href="http://documents.bmc.com/products/documents/72/61/517261/517261.pdf" class="flex-item sm-col-6   shadow-top assetStripItem" target="_blank">
                         <div class="inner assetTxt">
                            <div class="flex-center">
-                              <img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
+                              <img src="/content/dam/bmc/solutions/icons/icon-read.png" alt="">
                               <div class="inner">
                                  <h5>Company overview:</h5>
                                  <p>Run and Reinvent Your Business</p>
