@@ -88,6 +88,8 @@ public class FormsReportDataItem {
 	
 	private String Last_Modified_By;
 	
+	private String Last_Replication_Action;
+	
 	public String getForm_type() {
 		return form_type;
 	}
@@ -427,6 +429,14 @@ public class FormsReportDataItem {
 
 	public void setLast_Modified_By(String last_Modified_By) {
 		Last_Modified_By = last_Modified_By;
+	}
+
+	public String getLast_Replication_Action() {
+		return Last_Replication_Action;
+	}
+
+	public void setLast_Replication_Action(String last_Replication_Action) {
+		Last_Replication_Action = last_Replication_Action;
 	}
 
 
