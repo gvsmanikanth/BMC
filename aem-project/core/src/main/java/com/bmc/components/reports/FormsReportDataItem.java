@@ -80,6 +80,14 @@ public class FormsReportDataItem {
 	
 	private String expFgmtPath;
 	
+	private String Creation_Date;
+	
+	private String Last_Modified_Date;
+	
+	private String Creation_By;
+	
+	private String Last_Modified_By;
+	
 	public String getForm_type() {
 		return form_type;
 	}
@@ -387,6 +395,38 @@ public class FormsReportDataItem {
 
 	public void setExpFgmtPath(String expFgmtPath) {
 		this.expFgmtPath = expFgmtPath;
+	}
+
+	public String getCreation_Date() {
+		return Creation_Date;
+	}
+
+	public void setCreation_Date(String creation_Date) {
+		Creation_Date = creation_Date;
+	}
+
+	public String getLast_Modified_Date() {
+		return Last_Modified_Date;
+	}
+
+	public void setLast_Modified_Date(String last_Modified_Date) {
+		Last_Modified_Date = last_Modified_Date;
+	}
+
+	public String getCreation_By() {
+		return Creation_By;
+	}
+
+	public void setCreation_By(String creation_By) {
+		Creation_By = creation_By;
+	}
+
+	public String getLast_Modified_By() {
+		return Last_Modified_By;
+	}
+
+	public void setLast_Modified_By(String last_Modified_By) {
+		Last_Modified_By = last_Modified_By;
 	}
 
 

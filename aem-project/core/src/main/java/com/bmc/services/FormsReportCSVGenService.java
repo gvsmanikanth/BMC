@@ -91,7 +91,7 @@ public class FormsReportCSVGenService {
     private static String[] resourceItems = {"product_interest","productLine1","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 
     
-    private String[] TableNames = {"Page URL","Creation Date","Form Type","Business Unit","Form Action","Form Action Type","Is Non-Lead Gen Form?","Is Parallel Email Form?",
+    private String[] TableNames = {"Page URL","Page Created Date","Page Created By","Page Last Modified date","Page Last modified by","Form Type","Business Unit","Form Action","Form Action Type","Is Non-Lead Gen Form?","Is Parallel Email Form?",
     		"EmailID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner","Contact me ","Experience Fragment path"};
 	
 	 /*
@@ -170,13 +170,20 @@ public class FormsReportCSVGenService {
 							             SearchResult result = query.getResult();
 							            for (Hit hit : result.getHits()) {
 								            	FormsReportDataItem formDataitem = new FormsReportDataItem();  
-								            	 Node formNode = hit.getResource().adaptTo(Node.class);	
+								            	 Node formNode = hit.getResource().adaptTo(Node.class);
+								            	//Fetch JCR node and extract the properties
+								            	 String jcrContentNode = formNode.getPath().substring(0, formNode.getPath().indexOf("/root"));
+								            	 Node formJcrNode = session.getNode(jcrContentNode);								            	 								            	 
+								            	 formDataitem.setForm_Publish_Status(getPropertyValues(formJcrNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
+								            	 formDataitem.setCreated_Date(getPropertyValues(formJcrNode, "jcr:created","jcr:created","jcr:created",session));
+								            	 formDataitem.setCreation_By(getPropertyValues(formJcrNode, "jcr:createdBy","jcr:createdBy","jcr:createdBy",session));
+								            	 formDataitem.setLast_Modified_By(getPropertyValues(formJcrNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
+								            	 formDataitem.setLast_Modified_Date(getPropertyValues(formJcrNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));						            	 		
+								            	 //Experience Fragments properties
 								            	 Node expFgmtNode = formNode.getNode("experiencefragment");
 								            	 formDataitem.setExpFgmtPath(getPropertyValues(expFgmtNode, "fragmentPath","fragmentPath","fragmentPath",session));
-								            	 formDataitem.setForm_URL(metadataProvider.getExperiencefgmtPath(formNode));
-								            	 formDataitem.setForm_Publish_Status(getPropertyValues(formNode, "cq:LastReplicationAction","cq:LastReplicationAction","cq:LastReplicationAction",session));
-								            	 formDataitem.setCreated_Date(getPropertyValues(formNode, "jcr:created","jcr:created","jcr:created",session));
-								            	 formDataitem.setBusiness_Unit(getPropertyValues(formNode, "C_Lead_Business_Unit1","jcr:title","C_Lead_Business_Unit1",session));
+								            	 //Form data properties
+								            	 formDataitem.setForm_URL(metadataProvider.getExperiencefgmtPath(formNode));formDataitem.setBusiness_Unit(getPropertyValues(formNode, "C_Lead_Business_Unit1","jcr:title","C_Lead_Business_Unit1",session));
 								            	 formDataitem.setEloqua_Campaign_ID(getPropertyValues(formNode, "elqCampaignID","elqCampaignID","elqCampaignID",session));
 								            	 formDataitem.setForm_ID(getPropertyValues(formNode, "formid","formid","formid",session));							            	
 								            	 formDataitem.setExternal_Asset_Type(getPropertyValues(formNode, "ex_assettype","ex_assettype","ex_assettype",session));
@@ -237,7 +244,7 @@ public class FormsReportCSVGenService {
 				logger.info("Data Item:"+i);
 				Integer count = i; 
 				
-			data.put(count.toString(), new Object[] {list.get(i).getForm_URL(),list.get(i).getCreated_Date(),list.get(i).getForm_type(),list.get(i).getBusiness_Unit()
+			     data.put(count.toString(), new Object[] {list.get(i).getForm_URL(),list.get(i).getCreated_Date(),list.get(i).getCreation_By(),list.get(i).getLast_Modified_Date(),list.get(i).getLast_Modified_By(),list.get(i).getForm_type(),list.get(i).getBusiness_Unit()
 				,list.get(i).getAction(),list.get(i).getActionTYpe(),list.get(i).getIsNonLeadGenForm(),list.get(i).getIsParallelEmailForm(),
 				list.get(i).getEmail_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getCampaign_ID(),list.get(i).getExternal_Asset_Name(),list.get(i).getExternal_Asset_Type(),
 				list.get(i).getExternal_Activity(),list.get(i).getForceOptIn(),list.get(i).getForm_Content_Preferences(),list.get(i).getPageURL(),
