@@ -1129,7 +1129,10 @@
   @include font-size(24);
   padding: 1.75em 0;
   text-align: center;
-
+  padding: 40px;
+	@include media(breakpointMedium) {
+		padding: 60px;
+	}
   
   
   h5{
