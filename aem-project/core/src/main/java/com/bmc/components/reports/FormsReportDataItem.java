@@ -90,6 +90,48 @@ public class FormsReportDataItem {
 	
 	private String Last_Replication_Action;
 	
+	private String  Email_Subject__Line;
+	
+    private String BMC_Email_Notification_Recipient;
+	
+	private String Shared_Contact_List_ID;
+	
+	private String Program_Step_ID;
+	
+	public String getEmail_Subject__Line() {
+		return Email_Subject__Line;
+	}
+
+	public void setEmail_Subject__Line(String email_Subject__Line) {
+		Email_Subject__Line = email_Subject__Line;
+	}
+
+	public String getBMC_Email_Notification_Recipient() {
+		return BMC_Email_Notification_Recipient;
+	}
+
+	public void setBMC_Email_Notification_Recipient(String bMC_Email_Notification_Recipient) {
+		BMC_Email_Notification_Recipient = bMC_Email_Notification_Recipient;
+	}
+
+	public String getShared_Contact_List_ID() {
+		return Shared_Contact_List_ID;
+	}
+
+	public void setShared_Contact_List_ID(String shared_Contact_List_ID) {
+		Shared_Contact_List_ID = shared_Contact_List_ID;
+	}
+
+	public String getProgram_Step_ID() {
+		return Program_Step_ID;
+	}
+
+	public void setProgram_Step_ID(String program_Step_ID) {
+		Program_Step_ID = program_Step_ID;
+	}
+
+	
+	
 	public String getForm_type() {
 		return form_type;
 	}
