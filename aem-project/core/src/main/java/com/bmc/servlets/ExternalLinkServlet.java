@@ -113,16 +113,19 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      							final WCMMode mode = WCMMode.fromRequest(request);	
 				        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---Start
 				        		// Only execute in Publish mode & Preview mode of Author env.
+     							//WEB-5902 Added noIndex , follow meta tag 
 				     	       if ((mode == null || WCMMode.DISABLED.equals(mode)))
 				     	       {
 				     	    	   	out.println("<html><head>");
+				     	    	   	out.println("<meta name=\"robots\" content=\"noindex, follow\">");
 				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");			                	
 				            		out.println("</head>");   
 				            		out.println("</html>");	 
 				     	       }else{
 				     	    	   //Will only show on Editor mode in author env.
 				     	    	out.println("<html><head>");
-				     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");
+			     	    	   	out.println("<meta name=\"robots\" content=\"noindex, follow\">");
+			     	    		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");	
 				            	out.println("</head>");   
 				     	    	out.println("<body>");					     	       					     	       
 				        		out.println("<h1>External Link</h1>");
