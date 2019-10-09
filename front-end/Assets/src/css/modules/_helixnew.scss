@@ -8,7 +8,9 @@
 			}
 			.heading{
 				font-size: 2rem;
-				padding: 1rem 0;
+				margin: 1rem 0;
+				color:#000;
+				font-weight: 600;
 			}
 			.subHeading{
 				font-size: 1.5rem;
@@ -34,8 +36,12 @@
 		figure:first-child {
 			margin-top: 1rem;
 		}
+		.bmcHelixSolution{
+			margin-bottom: -1rem;
+		}
 	}
-	.assetStrip{
+	
+	/*.assetStrip{
 		padding: 4rem;
 		.assetStripItem{
 			min-height: 124px;
@@ -92,6 +98,13 @@
 					}
 				}
 			}
+		}
+	}*/
+	
+	.helix-quote{
+		padding: 4rem;
+		.testimonial{
+			margin: 1rem 0;
 		}
 	}
 	

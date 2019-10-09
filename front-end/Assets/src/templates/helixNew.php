@@ -5,7 +5,7 @@
    ?>
    
 <div class="helix_new_design bg-seashell">
-	<div class="flex-tab unknown-section layout-inner-wrap">
+	<!--<div class="flex-tab unknown-section layout-inner-wrap">
 	   <div class="section responsivegrid">
 		 <div class="layout-inner-wrap">
 			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
@@ -29,6 +29,32 @@
 			</div>
 		 </div>
 	   </div>
+	</div>--> 
+	
+	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
+	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 wallpaper" data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tb-trueSight-cloud-operations.jpg&quot;}}" style="background-color:#126CC3;">
+		  <div class="offset-wrapper flex-center js-content-center-item"> 
+			 <div class="inner">
+				<div class="bannerContent flex-center unknown-section">
+				   <div class="layout-inner-wrap">
+					  <div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-82px">
+						 <div class="bg-white">
+							<div class="helix-logo">
+								<img class="" src="https://cdn01.demochimp.com/static/files/thumbnail/bmchelix-oneline-25822n4j.png"> 
+							</div>
+							<div class="heading black ">Know the Unknowns</div>
+							<div class="subHeading black ">Get more intelligence to see around corners for your operations and service management</div>
+							<button class="">Get a Free Demo</button>
+						 </div>
+					  </div>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+		  <div class="wallpaper-container">
+			 <div class="wallpaper-media wallpaper-image wallpaper-responsive native" style="background-image: url(&quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-dsm-remedy.jpg&quot;); left: 0px; top: -62.5526px; opacity: 1;"><img alt="" src="https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-dsm-remedy.jpg"></div>
+		  </div>
+	   </section>
 	</div>
 	
 	<!--Business and technology -->
@@ -48,7 +74,7 @@
 	<!--First and only -->
 	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 helix-solutions">
 	   <section class="topcontent bg-seashell">
-		  <div class="layout-inner-wrap">
+		  <div class="layout-inner-wrap text-center">
 			 <div class="tagline">BMC Helix</div>
 			 <div class="tagline">The first and only it services and operations platform that’s integrated with 360-degree intelligence.</div>
 			 <div class="sm-flex py3">
@@ -74,7 +100,7 @@
 						 </figure>
 					  </a>
 					  <a class="btn btn-small grey">Monitor</a>
-					  <a class="btn btn-small grey">Service,</a>
+					  <a class="btn btn-small grey">Service</a>
 					  <a class="btn btn-small grey">Remediate</a>
 					  <a class="btn btn-small grey">Optimize IT functions</a>
 				   </section>
@@ -89,15 +115,16 @@
 					  </a>
 					  <a class="btn btn-small grey">Manage compliance</a>
 					  <a class="btn btn-small grey">compliance</a>
-					  <a class="btn btn-small grey">Manage governance,</a>
+					  <a class="btn btn-small grey">Manage governance</a>
 				   </section>
 				</div>
 			 </div>
+			 <button class="bmcHelixSolution btn btn-small grey">View all BMC Helix Solutions</button>
 		  </div>
 	   </section>
 	</div>
 	
-	<div class="assetStrip bg-white ">
+	<!--<div class="assetStrip bg-white ">
 	   <div class="inner">
 		  <div class="sm-flex flex-justify-center contentContainer">
 			 <a href="http://www.bmc.com/forms/mainframe-survey-results.html?productInterest=mainframe systems management" class="flex-item sm-col-6  shadow-top assetStripItem" data-inc="1">
@@ -114,7 +141,22 @@
 			 </a>
 		  </div>
 	   </div>
+	</div>-->
+	
+	<!--Helix Quote -->
+	<div class="pullquote aem-GridColumn aem-GridColumn--default--12 sm-flex flex-justify-center bg-white helix-quote ">
+	   <div class="flex-item sm-col-6">
+		  <blockquote class="testimonial divider">
+			 <div class="layout-inner-wrap">
+				<p>“We’re heading toward the integration.”</p>
+				<cite>
+				— Patrick McDonagh, Senior IT Infrastructure Manager
+				</cite>
+			 </div>
+		  </blockquote>
+	   </div>
 	</div>
+	
 	
 	<!--Be Better Informed -->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 better-info">
@@ -290,7 +332,7 @@
 		  <div class="layout-inner-wrap">
 			 <div class="text-center content">
 				<div class="">Be first in your industry with BMC Helix — the first and only intelligenceenriched, integrated IT services and operations platform.</div>
-				<button class="text-center">Get a Free Demo</button>
+				<button class="">Get a Free Demo</button>
 			 </div>
 		  </div>
 	   </section>
