@@ -91,8 +91,8 @@ public class FormsReportCSVGenService {
     private static String[] resourceItems = {"product_interest","productLine1","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 
     
-    private String[] TableNames = {"Page URL","Creation Date","Form Type","Business Unit","Form Action","Form Action Type","Is Non-Lead Gen Form?","Is Parallel Email Form?",
-    		"EmailID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner","Contact me ","Experience Fragment path"};
+    private String[] TableNames = {"Page URL","Page Created Date","Page Created By","Page Last Modified date","Page Last modified by","Last Replication Action","Form Type","Business Unit","Form Action","Form Action Type","Email Subject Line","BMC Email Notification Recipient","Shared Contact List ID","Program Step ID",
+    		"EmailID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner ID","Contact me ","Experience Fragment path"};
 	
 	 /*
 	  	* generateReport()
@@ -170,13 +170,21 @@ public class FormsReportCSVGenService {
 							             SearchResult result = query.getResult();
 							            for (Hit hit : result.getHits()) {
 								            	FormsReportDataItem formDataitem = new FormsReportDataItem();  
-								            	 Node formNode = hit.getResource().adaptTo(Node.class);	
+								            	 Node formNode = hit.getResource().adaptTo(Node.class);
+								            	//Fetch JCR node and extract the properties - WEB-6060
+								            	 String jcrContentNode = formNode.getPath().substring(0, formNode.getPath().indexOf("/root"));
+								            	 Node formJcrNode = session.getNode(jcrContentNode);								            	 								            	 
+								            	 formDataitem.setForm_Publish_Status(getPropertyValues(formJcrNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
+								            	 formDataitem.setCreated_Date(getPropertyValues(formJcrNode, "jcr:created","jcr:created","jcr:created",session));
+								            	 formDataitem.setCreation_By(getPropertyValues(formJcrNode, "jcr:createdBy","jcr:createdBy","jcr:createdBy",session));
+								            	 formDataitem.setLast_Modified_By(getPropertyValues(formJcrNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
+								            	 formDataitem.setLast_Modified_Date(getPropertyValues(formJcrNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));						            	 		
+								            	 formDataitem.setLast_Replication_Action(getPropertyValues(formJcrNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
+								            	 //Experience Fragments properties
 								            	 Node expFgmtNode = formNode.getNode("experiencefragment");
 								            	 formDataitem.setExpFgmtPath(getPropertyValues(expFgmtNode, "fragmentPath","fragmentPath","fragmentPath",session));
-								            	 formDataitem.setForm_URL(metadataProvider.getExperiencefgmtPath(formNode));
-								            	 formDataitem.setForm_Publish_Status(getPropertyValues(formNode, "cq:LastReplicationAction","cq:LastReplicationAction","cq:LastReplicationAction",session));
-								            	 formDataitem.setCreated_Date(getPropertyValues(formNode, "jcr:created","jcr:created","jcr:created",session));
-								            	 formDataitem.setBusiness_Unit(getPropertyValues(formNode, "C_Lead_Business_Unit1","jcr:title","C_Lead_Business_Unit1",session));
+								            	 //Form data properties
+								            	 formDataitem.setForm_URL(metadataProvider.getExperiencefgmtPath(formNode));formDataitem.setBusiness_Unit(getPropertyValues(formNode, "C_Lead_Business_Unit1","jcr:title","C_Lead_Business_Unit1",session));
 								            	 formDataitem.setEloqua_Campaign_ID(getPropertyValues(formNode, "elqCampaignID","elqCampaignID","elqCampaignID",session));
 								            	 formDataitem.setForm_ID(getPropertyValues(formNode, "formid","formid","formid",session));							            	
 								            	 formDataitem.setExternal_Asset_Type(getPropertyValues(formNode, "ex_assettype","ex_assettype","ex_assettype",session));
@@ -190,16 +198,21 @@ public class FormsReportCSVGenService {
 								            	 formDataitem.setProduct_Interest(getPropertyValues(formNode, "product_interest","jcr:title","product-interests",session));
 								            	 formDataitem.setProduct_Line(getPropertyValues(formNode, "productLine1","text","product-lines",session));
 								            	 formDataitem.setCampaign_ID(getPropertyValues(formNode, "campaignid","campaignid","campaignid",session));
-								            	 formDataitem.setLMA_License(getPropertyValues(formNode, "LMA_License","LMA_License","LMA_License",session));
+								            	 formDataitem.setLMA_License(getPropertyValues(formNode, "LMA_license","LMA_license","LMA_license",session));
 								            	 formDataitem.setC_Lead_Offer_Most_Recent1(getPropertyValues(formNode, "C_Lead_Offer_Most_Recent1","C_Lead_Offer_Most_Recent1","C_Lead_Offer_Most_Recent1",session));
 								            	 formDataitem.setAWS_trial(getPropertyValues(formNode, "AWS_Trial","AWS_Trial","AWS_Trial",session));
-								            	 formDataitem.setC_Assign_to_Owner(getPropertyValues(formNode, "C_Assign_to_Owner","C_Assign_to_Owner","C_Assign_to_Owner",session));
+								            	 formDataitem.setC_Assign_to_Owner(getPropertyValues(formNode, "C_Assign_to_Owner_ID1","C_Assign_to_Owner_ID1","C_Assign_to_Owner_ID1",session));
 								            	 formDataitem.setC_Contact_Me1(getPropertyValues(formNode, "C_Contact_Me1","C_Contact_Me1","C_Contact_Me1",session));
 								            	 formDataitem.setPageURL(getPropertyValues(formNode, "PURLPageUrl","PURLPageUrl","PURLPageUrl",session));
 								            	 formDataitem.setAction(getPropertyValues(formNode, "action","action","action",session));
 								            	 formDataitem.setActionTYpe(getPropertyValues(formNode, "actionType","actionType","actionType",session));
 								            	 formDataitem.setEmail_ID(getPropertyValues(formNode, "emailid","emailid","emailid",session));
-						    	             list.add(formDataitem);
+								            	//Additional properties added from WEB-6060
+								            	 formDataitem.setEmail_Subject__Line(getPropertyValues(formNode, "emailSubjectLine","emailSubjectLine","emailSubjectLine",session));
+								            	 formDataitem.setBMC_Email_Notification_Recipient(getPropertyValues(formNode, "recipient","recipient","recipient",session));
+								            	 formDataitem.setShared_Contact_List_ID(getPropertyValues(formNode, "sharedlistid","sharedlistid","sharedlistid",session));
+								            	 formDataitem.setProgram_Step_ID(getPropertyValues(formNode, "programstepid","programstepid","programstepid",session));
+								            	 list.add(formDataitem);
 						                 
 						                 }
 						        logger.info("List Size of forms"+list.size());
@@ -236,9 +249,8 @@ public class FormsReportCSVGenService {
 			{
 				logger.info("Data Item:"+i);
 				Integer count = i; 
-				
-			data.put(count.toString(), new Object[] {list.get(i).getForm_URL(),list.get(i).getCreated_Date(),list.get(i).getForm_type(),list.get(i).getBusiness_Unit()
-				,list.get(i).getAction(),list.get(i).getActionTYpe(),list.get(i).getIsNonLeadGenForm(),list.get(i).getIsParallelEmailForm(),
+			     data.put(count.toString(), new Object[] {list.get(i).getForm_URL(),list.get(i).getCreated_Date(),list.get(i).getCreation_By(),list.get(i).getLast_Modified_Date(),list.get(i).getLast_Modified_By(),list.get(i).getLast_Replication_Action(),list.get(i).getForm_type(),list.get(i).getBusiness_Unit()
+				,list.get(i).getAction(),list.get(i).getActionTYpe(),list.get(i).getEmail_Subject__Line(),list.get(i).getBMC_Email_Notification_Recipient(),list.get(i).getShared_Contact_List_ID(),list.get(i).getProgram_Step_ID(),
 				list.get(i).getEmail_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getCampaign_ID(),list.get(i).getExternal_Asset_Name(),list.get(i).getExternal_Asset_Type(),
 				list.get(i).getExternal_Activity(),list.get(i).getForceOptIn(),list.get(i).getForm_Content_Preferences(),list.get(i).getPageURL(),
 				list.get(i).getActivePURLPattern(),list.get(i).getActivePURLRedirect(),list.get(i).getProduct_Interest(),list.get(i).getProduct_Line(),list.get(i).getLMA_License(),
