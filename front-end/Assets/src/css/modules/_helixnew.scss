@@ -6,101 +6,59 @@
 				max-width: 300px;
 				max-height: 70px;
 			}
-			.heading{
+			.block-title{
 				font-size: 2rem;
 				margin: 1rem 0;
-				color:#000;
-				font-weight: 600;
+				font-weight: 400;
+				color: #333;
 			}
-			.subHeading{
+			.subblock-title{
 				font-size: 1.5rem;
 				padding-bottom: 1rem;
 			}
 		}
 	}
-	.business-section{
+
+// Welcome Section Starts
+
+	.welcome-section{
 		padding: 3rem;
 		.content{
-			--padding: 0 3rem;
-			.heading{
+			.block-title{
 				font-size: 2rem;
 				padding: 1rem 0;
+				font-weight: 400;
+				color: #333;
 			}
-			.subHeading{
+			.subblock-title{
 				font-size: 1.5rem;
-				width: 70%;
 			}
 		}
 	}
-	.helix-solutions{
-		figure:first-child {
-			margin-top: 1rem;
-		}
-		.bmcHelixSolution{
-			margin-bottom: -1rem;
-		}
-	}
-	
-	/*.assetStrip{
-		padding: 4rem;
-		.assetStripItem{
-			min-height: 124px;
-			margin-bottom: 0;
-			background-color: rgba(0,0,0,.7);
-			border-top: 2px solid #fe5000;
-			-webkit-transition: .5s ease;
-			transition: .5s ease;
-			display: flex;
-			margin-right: .5rem;
-			margin-left: .5rem;
-			.assetTxt{
-				padding: .8rem 1.3rem;
-				width: 100%;
-				display: flex;
-				text-align: center;
+// Welcome Section Ends	
+
+// Feature Section Starts
+
+	.feature-section{		
+		.feature-block {
+			box-shadow: 0px 0px 16px rgba(204, 204, 204, 0.6784313725490196);
+			border-radius: 10px;
+			h3{
+				font-weight: 400;
+			}
+			.tags {
+				padding: 0.42857em 0.85714em;
+				margin: 5px;
+				display: inline-block;
 				color: #fff;
-				.flex-center{
-					img{
-						margin-top: .2rem;
-						display: inline;
-						max-width: 72px;
-						width: auto;
-						margin: auto;
-						vertical-align: top;
-					}
-					.inner{
-						margin-left: 16px;
-						max-width: 60%;
-						width: auto;
-						display: inline-block;
-						text-align: left;
-						vertical-align: middle;
-						h5{
-							font-size: 16px;
-							font-family: "Open Sans",Helvetica,Arial,sans-serif;
-							font-weight: 400;
-							color: #Fe5000;
-							width: 100%;
-							font-size: 16px;
-							margin-bottom: 0;
-						}
-						p{
-							font-size: 18px;
-							margin-top: .25rem;
-							line-height: 1.2;
-							margin: .5em 0 0 0;
-						}
-						.link{
-							font-size: 18px;
-							margin-top: .6rem;
-							color: #3cb6ce;
-						}
-					}
-				}
+				font-size: 0.9rem;
+				text-transform: capitalize;
 			}
 		}
-	}*/
+	}
 	
+	// Feature Section Ends
+
 	.helix-quote{
 		padding: 4rem;
 		.testimonial{
@@ -109,6 +67,10 @@
 	}
 	
 	.better-info {
+		background-color: #006bcb;
+		.orange-tick-bullets{
+			margin-left: 30px;
+		}
 		.helix-content {
 			margin: 0 0 1rem 54px;
 			padding: 0;
@@ -179,5 +141,11 @@
 		background: url(https://www.bmc.com/etc/clientlibs/bmc/head/bg-summary-li.png) left 4px no-repeat;
 	}
 }
-	
+	.btn, button{
+		border-radius: 0;
+	}
+	.arrow{
+		min-height: 300px;
+		background-image: url('/');
+	}
 }

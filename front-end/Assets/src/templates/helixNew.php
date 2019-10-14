@@ -4,46 +4,20 @@
    include_once 'php-inc/head.php';
    ?>
    
-<div class="helix_new_design bg-seashell">
-	<!--<div class="flex-tab unknown-section layout-inner-wrap">
-	   <div class="section responsivegrid">
-		 <div class="layout-inner-wrap">
-			<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-			   <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
-				  <div class="md-flex">
-					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item"> 
-						 <div class="bg-white">
-							<div class="helix-logo">
-								<img class="" src="https://cdn01.demochimp.com/static/files/thumbnail/bmchelix-oneline-25822n4j.png"> 
-							</div>
-							<div class="heading">Know the Unknowns</div>
-							<div class="subHeading">Get more intelligence to see around corners for your operations and service management</div>
-							<button class="">Get a Free Demo</button>
-						 </div>
-					</div>
-					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item imageContainer"> 
-						<img class="" src="https://www.bmc.com/it-solutions/multi-cloud-migration/_jcr_content/root/responsivegrid/maincontentcontainer/tabs_612727094/section/_50_50contentcontain/left/image.img.jpg" alt="" title=""> 
-					</div>
-				  </div>
-			   </div>
-			</div>
-		 </div>
-	   </div>
-	</div>--> 
-	
+<div class="helix_new_design bg-seashell">	
 	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 wallpaper" data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tb-trueSight-cloud-operations.jpg&quot;}}" style="background-color:#126CC3;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
 			 <div class="inner">
 				<div class="bannerContent flex-center unknown-section">
 				   <div class="layout-inner-wrap">
-					  <div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-82px">
+					  <div class="flex-item col col-12 md-col-5 sm-col-8 add-top-bottom-margin-82px">
 						 <div class="bg-white">
 							<div class="helix-logo">
 								<img class="" src="https://cdn01.demochimp.com/static/files/thumbnail/bmchelix-oneline-25822n4j.png"> 
 							</div>
-							<div class="heading black ">Know the Unknowns</div>
-							<div class="subHeading black ">Get more intelligence to see around corners for your operations and service management</div>
+							<h2 class="block-title black ">Know the Unknowns</h2>
+							<p class="subblock-title black ">Get more intelligence to see around corners for your operations and service management</p>
 							<button class="">Get a Free Demo</button>
 						 </div>
 					  </div>
@@ -58,90 +32,66 @@
 	</div>
 	
 	<!--Business and technology -->
-	<div class="bg-white business-section">
+	<div class="bg-white welcome-section text-center">
 		<div class="layout-inner-wrap"> 
 			<div class="content"> 
-				<div class="heading">Business and technology change constantly.</div>
-				<div class="subHeading">You want to do something about it, but not until seeying where you need to go.</div>
+				<h2 class="block-title">Business and technology change constantly.</h2>
+				<p class="subblock-title">You want to do something about it, but not until seeying where you need to go.</p>
 			</div>
 			<div class="content"> 
-				<div class="heading">We get that.</div>
-				<div class="subHeading">So, we made something different.</div>
+				<h2 class="block-title">We get that.</h2>
+				<p class="subblock-title">So, we made something different.</p>
 			</div>
 		</div>
 	</div>
 	
 	<!--First and only -->
-	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 helix-solutions">
+	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section">
 	   <section class="topcontent bg-seashell">
 		  <div class="layout-inner-wrap text-center">
 			 <div class="tagline">BMC Helix</div>
 			 <div class="tagline">The first and only it services and operations platform that’s integrated with 360-degree intelligence.</div>
 			 <div class="sm-flex py3">
-				<div class="flex-item sm-col-4 p2">
+				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
 				   <section>
-					  <a href="/blogs/shaping-the-future-of-mainframe-management/" target="blank">
-						Cognitive capabilities
+					  <h3>Smarter IT Functions</h3>
 						 <figure>
 							<img src="https://blogs.bmc.com/wp-content/uploads/2018/10/PuzzlePieces.Hands-639198068-700x400-300x171.jpg" alt="Shaping the Future of Mainframe Management">
 						 </figure>
-					  </a>
-					  <a class="btn btn-small grey">AI</a>
-					  <a class="btn btn-small grey">ML</a>
-					  <a class="btn btn-small grey">predictive analytics</a>
+					  
+					  <span class="tags bg-tangerine">AI</span>
+					  <span class="tags bg-tangerine">ML</span>
+					  <span class="tags bg-tangerine">predictive analytics</span>
 				   </section>
 				</div>
-				<div class="flex-item sm-col-4 p2">
+				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
 				   <section>
-					  <a href="/blogs/modernizing-the-mainframe-for-a-bright-future/" target="blank">
-						Smarter Discovery
+				   <h3>Better data</h3>
 						 <figure>
 							<img src="https://blogs.bmc.com/wp-content/uploads/2018/10/tb-MainframeSurvey_BMCblogs-320x171.jpg" alt="Modernizing the Mainframe for a Bright Future">
 						 </figure>
-					  </a>
-					  <a class="btn btn-small grey">Monitor</a>
-					  <a class="btn btn-small grey">Service</a>
-					  <a class="btn btn-small grey">Remediate</a>
-					  <a class="btn btn-small grey">Optimize IT functions</a>
+					  <span class="tags bg-darkBlue ">Monitor</span>
+					  <span class="tags bg-darkBlue ">Service</span>
+					  <span class="tags bg-darkBlue ">Remediate</span>
+					  <span class="tags bg-darkBlue ">Optimize IT functions</span>
 				   </section>
 				</div>
-				<div class="flex-item sm-col-4 p2">
+				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
 				   <section>
-					  <a href="/blogs/aiops-its-coming-are-you-ready/" target="blank">
-					  Better data
+				   <h3>Unrivaled Experiance</h3>
 						 <figure>
 							<img src="http://blogs.bmc.com/wp-content/uploads/2018/05/6-Tips-Automation-Strategy-700x400-300x171.jpg" alt="AIOps: It’s coming—are you ready?">
 						 </figure>
-					  </a>
-					  <a class="btn btn-small grey">Manage compliance</a>
-					  <a class="btn btn-small grey">compliance</a>
-					  <a class="btn btn-small grey">Manage governance</a>
+					  <span class="tags bg-apple">Manage compliance</span>
+					  <span class="tags bg-apple">compliance</span>
+					  <span class="tags bg-apple">Manage governance</span>
 				   </section>
 				</div>
 			 </div>
-			 <button class="bmcHelixSolution btn btn-small grey">View all BMC Helix Solutions</button>
+			 <button class=" btn btn-blue">View all BMC Helix Solutions</button>
 		  </div>
 	   </section>
 	</div>
-	
-	<!--<div class="assetStrip bg-white ">
-	   <div class="inner">
-		  <div class="sm-flex flex-justify-center contentContainer">
-			 <a href="http://www.bmc.com/forms/mainframe-survey-results.html?productInterest=mainframe systems management" class="flex-item sm-col-6  shadow-top assetStripItem" data-inc="1">
-				<div class="inner assetTxt">
-				   <div class="flex-center">
-					  <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
-					  <div class="inner">
-						 <h5>BMC research:</h5>
-						 <p>14th Annual Mainframe Survey Results</p>
-						 <p class="link">Download now&nbsp;›</p>
-					  </div>
-				   </div>
-				</div>
-			 </a>
-		  </div>
-	   </div>
-	</div>-->
 	
 	<!--Helix Quote -->
 	<div class="pullquote aem-GridColumn aem-GridColumn--default--12 sm-flex flex-justify-center bg-white helix-quote ">
@@ -177,7 +127,7 @@
 						 <li>One go-to for discovery capabilities — comprehensive for assets and clouds</li>
 					  </ul>
 					  <p>So, you can know more about events &amp; alerts, vulnerabilities, resource-spending and usage levels.</p>
-					  <button class="">Get a Free Demo</button>
+					  <button class="btn btn-blue">Get a Free Demo</button>
 				   </section>
 				</div>
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -207,7 +157,7 @@
 		  </div>
 	   </section>
 	</div>
-	
+
 	<!--Be Future Ready-->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 future-ready bg-white">
 	   <section>
@@ -237,7 +187,7 @@
 							   <li>Know, scale and grow</li>
 							   <li>Propel innovation and evolve your business</li>
 							</ul>
-							<button class="">Learn About Area</button>
+							<button class="btn btn-blue">Learn About Area</button>
 						 </section>
 					  </div>
 				   </div>
@@ -266,7 +216,7 @@
 								<li>Automated ease and efficiency</li>
 								<li>Flexibility as all features are available as a service</li>
 							 </ul>
-							 <button class="">Get a Free Demo</button>
+							 <button class="btn btn-blue">Get a Free Demo</button>
 						  </section>
 				   </div>
 				   </div>
@@ -332,100 +282,14 @@
 		  <div class="layout-inner-wrap">
 			 <div class="text-center content">
 				<div class="">Be first in your industry with BMC Helix — the first and only intelligenceenriched, integrated IT services and operations platform.</div>
-				<button class="">Get a Free Demo</button>
+				<button class="btn btn-blue">Get a Free Demo</button>
 			 </div>
 		  </div>
 	   </section>
 	</div>
 	
 	<!-- BMC Helix Solutions-->
-	<!--<div class="product-cards aem-GridColumn aem-GridColumn--default--12">
-	   <section class="wallpapered bg-seashell wallpaper product-cards">
-		  <div class="section" id="products">
-			 <div class="section-content py3">
-				<h2 class="h2-variation-1 text-center center-block">
-				   All BMC Helix Solutions
-				   <br>
-				   <span style="font-size: 1rem;">  </span>
-				</h2>
-				<div class="flex-wrap flex-justify-center mb2 js-eh">
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col" >
-							<div class="card-content">
-							   <h3>Solution 1</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 2</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 3</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 4</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 5</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 6</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 7</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				   <div class="flex flex-item sm-col sm-col-12 md-col-3">
-					  <div class="card-wrap m2">
-						 <a href="" target="_self" class="p2 card tundora purchasing-col">
-							<div class="card-content">
-							   <h3>Solution 8</h3>
-							</div>
-						 </a>
-					  </div>
-				   </div>
-				</div>
-			 </div>
-		  </div>
-	   </section>
-	</div>-->
+	
 	
 	<div class="customer-story-bar aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bg-seashell bar wallpaper">
