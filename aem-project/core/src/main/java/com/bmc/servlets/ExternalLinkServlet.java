@@ -65,6 +65,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      
      private String linkAbstractorTarget = null;
      
+     private Boolean isDocumentPDF;
      
      @Override
      protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
@@ -104,6 +105,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				        		else if(prop.getName().equalsIgnoreCase("linkAbstractorExternalAsset"))
 				        	{
 				        			linkAbstractorExternalURL = prop.getValue().getString();
+				        			isDocumentPDF = true;
 				        	}
 				        
 				        }
@@ -112,21 +114,27 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      							PrintWriter out = response.getWriter();
      							final WCMMode mode = WCMMode.fromRequest(request);	
 				        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---Start
-				        		// Only execute in Publish mode & Preview mode of Author env.
+				        		// Only execute in Publish mode & Preview mode of Author environment.
      							//WEB-5902 Added noIndex , follow meta tag 
 				     	       if ((mode == null || WCMMode.DISABLED.equals(mode)))
 				     	       {
 				     	    	   	out.println("<html><head>");
-				     	    	   	out.println("<meta name=\"robots\" content=\"noindex, follow\">");
-				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");			                	
+				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");			                	
+				            		if(isDocumentPDF)
+			     	    	   		{
+			     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
+			     	    	   		}
 				            		out.println("</head>");   
 				            		out.println("</html>");	 
 				     	       }else{
-				     	    	   //Will only show on Editor mode in author env.
-				     	    	out.println("<html><head>");
-			     	    	   	out.println("<meta name=\"robots\" content=\"noindex, follow\">");
-			     	    		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'>\" /");	
-				            	out.println("</head>");   
+				     	    	   //Will only show on Editor mode in author environment.
+				     	    	out.println("<html><head>");			     	    	   
+				     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");
+			     	    		if(isDocumentPDF)
+		     	    	   		{
+		     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
+		     	    	   		}
+			     	    		out.println("</head>");   
 				     	    	out.println("<body>");					     	       					     	       
 				        		out.println("<h1>External Link</h1>");
 				        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
