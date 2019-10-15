@@ -52,10 +52,10 @@
 	  		 <h2 class="block-title">Introducing BMC Helix</h2>
 			   <p class="block_text">The first and only it services and operations platform that’s integrated with 360-degree intelligence.</p>
 			 <div class="sm-flex py2">
-				<div class="flex-item sm-col-4 p2 feature-block ">
+				<div class="flex-item sm-col-4 p2 feature-block "> 
 				   <section>
 					  <h3>Smarter IT Functions</h3>
-					 	<img src="../img/Icon_smarter_IT.svg" alt="">
+					 	<img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="">
 				   </section>
 				</div>
 				<div class="flex-item sm-col-4 p2 feature-block ">
