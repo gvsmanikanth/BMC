@@ -1,36 +1,41 @@
-.helix_new_design{
-	.unknown-section{
+// banner-caption Starts
+	.banner-caption{
 		.bg-white{
-			padding: 2rem;
-			.helix-logo img{
-				max-width: 300px;
-				max-height: 70px;
-			}
+			padding: 2rem;			
 			.block-title{
-				font-size: 2rem;
+				font-size: 2rem !important;
 				margin: 1rem 0;
 				font-weight: 400;
 				color: #333;
 			}
-			.subblock-title{
-				font-size: 1.5rem;
-				padding-bottom: 1rem;
+			.block_text{
+				font-size: 1rem;
+			}
+			.btn{
+				background: color(boston-blue);
+				border: none;
+				padding-left: 30px;
+				padding-right: 30px;
 			}
 		}
 	}
+
+// banner-caption Ends
 
 // Welcome Section Starts
 
 	.welcome-section{
 		padding: 3rem;
 		.content{
+			max-width: 64%;
+			margin: auto;
 			.block-title{
 				font-size: 2rem;
 				padding: 1rem 0;
 				font-weight: 400;
 				color: #333;
 			}
-			.subblock-title{
+			.block_text{
 				font-size: 1.5rem;
 			}
 		}
@@ -39,21 +44,21 @@
 
 // Feature Section Starts
 
-	.feature-section{		
+	.feature-section{	
+		padding: 3rem;
+		.block-title{
+			margin-top: 0;
+			font-size: 3rem;
+			color: #fff;
+			font-weight: 600;
+		}
 		.feature-block {
-			box-shadow: 0px 0px 16px rgba(204, 204, 204, 0.6784313725490196);
-			border-radius: 10px;
 			h3{
 				font-weight: 400;
-			}
-			.tags {
-				padding: 0.42857em 0.85714em;
-				margin: 5px;
-				display: inline-block;
 				color: #fff;
-				font-size: 0.9rem;
-				text-transform: capitalize;
 			}
+			
+			
 		}
 	}
 	
@@ -148,4 +153,3 @@
 		min-height: 300px;
 		background-image: url('/');
 	}
-}

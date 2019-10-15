@@ -4,21 +4,22 @@
    include_once 'php-inc/head.php';
    ?>
    
-<div class="helix_new_design bg-seashell">	
+
 	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 wallpaper" data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tb-trueSight-cloud-operations.jpg&quot;}}" style="background-color:#126CC3;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
 			 <div class="inner">
-				<div class="bannerContent flex-center unknown-section">
+				<div class="bannerContent flex-center banner-caption">
 				   <div class="layout-inner-wrap">
-					  <div class="flex-item col col-12 md-col-5 sm-col-8 add-top-bottom-margin-82px">
+					  <div class="flex-item col col-12 lg-col-4 md-col-6 sm-col-8 add-top-bottom-margin-82px">
 						 <div class="bg-white">
 							<div class="helix-logo">
 								<img class="" src="https://cdn01.demochimp.com/static/files/thumbnail/bmchelix-oneline-25822n4j.png"> 
 							</div>
 							<h2 class="block-title black ">Know the Unknowns</h2>
-							<p class="subblock-title black ">Get more intelligence to see around corners for your operations and service management</p>
-							<button class="">Get a Free Demo</button>
+							<p class="block_text black ">Get more intelligence to see around corners for your operations and service management</p>
+							<a href="#." class="btn ">Get a Free Demo Now</a>
+							<a href="#." class="play_link">PLAY</a>
 						 </div>
 					  </div>
 				   </div>
@@ -36,35 +37,28 @@
 		<div class="layout-inner-wrap"> 
 			<div class="content"> 
 				<h2 class="block-title">Business and technology change constantly.</h2>
-				<p class="subblock-title">You want to do something about it, but not until seeying where you need to go.</p>
+				<p class="block_text">While you want to do something about it, but not until seeying where you need to go.</p>
 			</div>
 			<div class="content"> 
 				<h2 class="block-title">We get that.</h2>
-				<p class="subblock-title">So, we made something different.</p>
+				<p class="block_text">So, we made something different.</p>
 			</div>
 		</div>
 	</div>
 	
 	<!--First and only -->
-	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section">
-	   <section class="topcontent bg-seashell">
-		  <div class="layout-inner-wrap text-center">
-			 <div class="tagline">BMC Helix</div>
-			 <div class="tagline">The first and only it services and operations platform that’s integrated with 360-degree intelligence.</div>
-			 <div class="sm-flex py3">
-				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
+	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section bg-boston-blue white text-center">
+	   <section class="">
+	  		 <h2 class="block-title">Introducing BMC Helix</h2>
+			   <p class="block_text">The first and only it services and operations platform that’s integrated with 360-degree intelligence.</p>
+			 <div class="sm-flex py2">
+				<div class="flex-item sm-col-4 p2 feature-block ">
 				   <section>
 					  <h3>Smarter IT Functions</h3>
-						 <figure>
-							<img src="https://blogs.bmc.com/wp-content/uploads/2018/10/PuzzlePieces.Hands-639198068-700x400-300x171.jpg" alt="Shaping the Future of Mainframe Management">
-						 </figure>
-					  
-					  <span class="tags bg-tangerine">AI</span>
-					  <span class="tags bg-tangerine">ML</span>
-					  <span class="tags bg-tangerine">predictive analytics</span>
+					 	<img src="../img/Icon_smarter_IT.svg" alt="">
 				   </section>
 				</div>
-				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
+				<div class="flex-item sm-col-4 p2 feature-block ">
 				   <section>
 				   <h3>Better data</h3>
 						 <figure>
@@ -76,7 +70,7 @@
 					  <span class="tags bg-darkBlue ">Optimize IT functions</span>
 				   </section>
 				</div>
-				<div class="flex-item sm-col-4 p2 feature-block bg-white m2">
+				<div class="flex-item sm-col-4 p2 feature-block ">
 				   <section>
 				   <h3>Unrivaled Experiance</h3>
 						 <figure>
@@ -88,8 +82,7 @@
 				   </section>
 				</div>
 			 </div>
-			 <button class=" btn btn-blue">View all BMC Helix Solutions</button>
-		  </div>
+			 <button class=" btn btn-white">View all BMC Helix Solutions</button>		  
 	   </section>
 	</div>
 	
@@ -403,6 +396,6 @@
 	   </section>
 	</div>
 	
-</div>
+
 
 <?php include_once 'php-inc/foot.php'; ?>
