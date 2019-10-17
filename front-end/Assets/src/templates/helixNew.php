@@ -48,6 +48,7 @@
 	
 	<!--First and only -->
 	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section bg-boston-blue white text-center">
+
 	   <section class="layout-inner-wrap">
 			<div class="feature-head">
 					<h2 class="block-title">Introducing BMC Helix</h2>
@@ -61,6 +62,7 @@
 					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="">
 						</figure>	
 						<p>Power smarter IT functions for Discovery, Monitorying, Service, Remediation and optimization with AI/ML and predictive analytics.</p>				 	
+
 				   </section>
 				</div>
 				<div class="flex-item sm-col-6 md-col-4  feature-block ">
