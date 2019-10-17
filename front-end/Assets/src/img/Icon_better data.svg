@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="265px" height="146px" viewBox="0 0 265 146" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Icon - better data</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BMC-Helix-Option-3A-V3" transform="translate(-588.000000, -1684.000000)" stroke-width="8.42399996">
+            <g id="Inro-Bmc-Helix" transform="translate(0.000000, 1292.000000)">
+                <g id="Group-21" transform="translate(532.000000, 286.000000)">
+                    <g id="Icon---better-data" transform="translate(60.282609, 111.000000)">
+                        <g id="Group-16" transform="translate(22.835992, 24.056136)" stroke="#D6F0F5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M187.826712,42.5255998 L208.483825,42.5255998" id="Path"></path>
+                            <path d="M171.728191,4.86719998 L194.138608,4.86719998" id="Path"></path>
+                            <path d="M173.067077,80.6831996 L194.138608,80.6831996" id="Path"></path>
+                            <path d="M63.087078,31.1063999 L-4.52970994e-13,31.1063999" id="Path"></path>
+                            <path d="M67.008104,69.4199997 L26.777739,69.4199997" id="Path"></path>
+                            <path d="M60.1861562,48.8279998 L28.2122607,48.8279998" id="Path"></path>
+                            <path d="M26.4589564,48.8279998 L26.4589564,1.15463195e-13" id="Path"></path>
+                            <path d="M26.777739,89.7623996 L26.777739,70.9175997" id="Path"></path>
+                        </g>
+                        <ellipse id="Oval" stroke="#FFFFFF" cx="146.842426" cy="66.1137357" rx="60.887478" ry="59.5919997"></ellipse>
+                        <rect id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" x="233.232513" y="55.3185357" width="22.6654434" height="22.1831999"></rect>
+                        <rect id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" x="218.887296" y="17.6601359" width="22.6654434" height="22.1831999"></rect>
+                        <rect id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" x="218.887296" y="93.4761356" width="22.6654434" height="22.1831999"></rect>
+                        <rect id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" transform="translate(11.332722, 55.323216) rotate(-180.000000) translate(-11.332722, -55.323216) " x="-1.63868918e-13" y="44.2316158" width="22.6654434" height="22.1831999"></rect>
+                        <rect id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" transform="translate(49.151178, 124.923863) rotate(-180.000000) translate(-49.151178, -124.923863) " x="37.8184558" y="113.832263" width="22.6654434" height="22.1831999"></rect>
+                        <polygon id="Rectangle" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" transform="translate(49.118980, 11.091600) rotate(-90.000000) translate(-49.118980, -11.091600) " points="38.0273805 -0.241121738 60.2105804 -0.241121738 60.2105804 22.4243216 38.0273805 22.4243216"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
