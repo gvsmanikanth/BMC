@@ -52,14 +52,16 @@
 
 	.welcome-section{
 		padding: 3rem;
+		padding-top: 1rem;
 		@media (max-width: $tablet) {
 			padding: 1rem;
 		}
 		.content{
-			@media (min-width: $break-md) {
-				max-width: 64%;
-			}
-			margin: auto;
+			@media (min-width: 690px) {
+				width: 60%; 
+				padding-left:20%;
+			}			
+			padding-top: 2rem;
 			.block-title{
 				font-size: 2.3rem;
 				@media (max-width: $tablet) {
@@ -75,6 +77,12 @@
 					font-size: 1.1rem;
 				}
 			}
+			.lineStart{
+				display: inline-block;
+			}
+			.lineEnd{
+				display: inline-block;
+			}
 		}
 	}
 // Welcome Section Ends	
@@ -82,9 +90,9 @@
 // Feature Section Starts
 
 	.feature-section{	
-		padding: 3rem;
+		padding: 4rem 0;
 		@media (max-width: $tablet) {
-			padding: 1rem;
+			padding: 2rem 1rem;
 		}
 		.feature-head{
 			@media (min-width: $break-md) {
@@ -147,7 +155,12 @@
 		padding: 5rem 1rem;
    		background: #fafafa;
 		blockquote {
-			background-image: url('/front-end/Assets/src/img/Icon - quote.svg') no-repeat;
+			background-image: url('/front-end/Assets/src/img/Icon - quote.svg');
+			background-repeat: no-repeat;
+			@media (max-width: $tablet) {
+				background-size: 80px;
+    			padding: 1rem;
+			}
 			@media (min-width: $break-md) {
 				max-width: 80%;
 				padding: 2rem 4rem;
@@ -186,6 +199,8 @@
 		.btn{
 			border-radius: 0;
 			border-width: 1px;
+			border-color: #0093C9;
+			color: #0093C9;
 		}	
 		.bg-white{
 			padding: 3rem 0;
@@ -226,14 +241,18 @@
 	}
 
 	.direction-text{
-		padding: 3rem 2rem;
+		padding: 0;
 		background: #fff;
 		text-align: center;
-		.text-content{
-			margin: auto;				
-			@media (min-width: $break-md) {
-				max-width: 60%;							
-			}
+		.content{
+			padding-top: 3rem;
+			padding-bottom: 3rem;
+			@media (min-width: 690px) {
+				width: 60%; 
+				padding-left:20%;
+				padding-top: 4rem;
+				padding-bottom: 7rem;
+			}				
 			h4{
 				color: #FC7A00;
 				font-size: 2.3rem;
@@ -241,6 +260,12 @@
 				@media (max-width: $tablet) {
 				    font-size: 1.4rem;
 				}
+			}
+			.lineStart{
+				display: inline-block;
+			}
+			.lineEnd{
+				display: inline-block;
 			}
 		}		
 	}
@@ -266,8 +291,7 @@
 				border-radius: 0;
 				border: 1px solid #0093C9;
 			}
-			.btn-bg-white{
-				
+			.btn-bg-white{				
 				background: #fff;
 				color: color(boston-blue);
 				padding: 10px 50px;
@@ -307,6 +331,10 @@
 			&:hover{
 				box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.33);
 				transition: 0.3s linear;
+				.learn-more {
+					font-weight: 600;
+					transition: 0.3s linear;
+				}
 			}
 			.card-header{
 				h4{
@@ -350,6 +378,7 @@
 					font-size: 0.9rem;
 					display: block;
 					text-align: right;
+					transition: 0.3s linear;
 				}
 			}
 

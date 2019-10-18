@@ -26,9 +26,9 @@
 			    var radius = 4;
 			    context.lineWidth = 2;
 			    context.beginPath();
-			    context.strokeStyle = "#29a5d6";
+			    context.strokeStyle = "#0091DD";
 			    context.arc(startPointX, startPointY, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#29a5d6";
+			    context.fillStyle = "#0091DD";
 			    context.stroke();
 			   
 			    //Line1
@@ -114,14 +114,14 @@
 		    var radius = 4;
 		    context.lineWidth = 2;
 		    context.beginPath();
-		    context.strokeStyle = "#29a5d6";
+		    context.strokeStyle = "#0091DD";
 		    
 		    var cornerRadius = 7;
 		    var leftPositionX = $(".subTitleBlock")[0].offsetLeft-100;
 		    
 		    if(pDirection == "ltr"){
 			    context.arc(firstLineEndX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#29a5d6";
+			    context.fillStyle = "#0091DD";
 			    context.stroke();
 			    context.moveTo(firstLineEndX,radius+15);
 			    context.lineTo(firstLineEndX,endPointY-radius)
@@ -139,7 +139,7 @@
 		    }
 		    else{
 		    	context.arc(leftPositionX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#29a5d6";
+			    context.fillStyle = "#0091DD";
 			    context.stroke();
 			    if(pEndAtMiddlePoint){
 			    	firstLineEndX = parentDiv.clientWidth/2;
@@ -174,14 +174,14 @@
 	var secondArrowInstance = new CanvasBGArrowOuter("arrowBG1","ltr",false);
 	var thirdArrowInstance = new CanvasBGArrowOuter("arrowBG2","rtl",false);
 	var fourthArrowInstance = new CanvasBGArrowOuter("arrowBG3","ltr",true);
-	var fifthArrowInstance = new CanvasBGArrowOuter("arrowBG4","rtl",true);
+	// var fifthArrowInstance = new CanvasBGArrowOuter("arrowBG4","rtl",true);
 	
 	$(window).resize(function() {
 		setTimeout(firstArrowInstance.drawArrow());
 		setTimeout(secondArrowInstance.drawArrow());
 		setTimeout(thirdArrowInstance.drawArrow());
 		setTimeout(fourthArrowInstance.drawArrow());
-		setTimeout(fifthArrowInstance.drawArrow());
+		// setTimeout(fifthArrowInstance.drawArrow());
 		
 	});
 	

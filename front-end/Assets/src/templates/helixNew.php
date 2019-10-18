@@ -1,6 +1,6 @@
 <?php
    $pageTitle = 'DSOM New';
-   $bodyClass = 'contact full-width';
+   $bodyClass = 'full-width dsomLandingPage';
    include_once 'php-inc/head.php';
    ?>
    
@@ -19,7 +19,7 @@
 							<h2 class="block-title black ">Know the Unknowns</h2>
 							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
 							<a href="#." class="btn ">Get a Free Demo Now</a>
-							<a href="#." class="play_link"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>
+							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
 						 </div>
 					  </div>
 				   </div>
@@ -33,14 +33,16 @@
 	</div>
 	
 	<!--Business and technology -->
-	<div class="bg-white welcome-section text-center">
-		<div class="layout-inner-wrap"> 
+	<div class="welcome-section text-center bg-white" >
+		<div class="layout-inner-wrap"  id="arrowBG"> 
 			<div class="content"> 
-				<h2 class="block-title">Business and technology change constantly</h2>
-				<p class="block-text">While you want to do something about it, you also don’t want to do anything until you can see where you need to go. </p>
+				<h2 class="block-title">Business and technology change constantly.<span class="lineStart" ></span></h2>				
+				<div>
+					<p class="block-text subTitleBlock">While you want to do smoething about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" style="width:1px;height:1px;background-color:transparent;display: inline-block;"></span></p>				
+				</div>
 			</div>
-			<div class="content"> 
-				<h2 class="block-title">We get that.</h2>
+			<div class="content" > 
+				<h2 class="block-title"><span class="lineEnd"></span>We get that.</h2>
 				<p class="block-text">So, we made something different.</p>
 			</div>
 		</div>
@@ -59,7 +61,7 @@
 				   <section class="p2">
 					  <h3>Smarter IT Functions</h3>
 					 	 <figure>
-					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="">
+					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="Smarter IT Functions">
 						</figure>	
 						<p>Power smarter IT functions for Discovery, Monitorying, Service, Remediation and optimization with AI/ML and predictive analytics.</p>				 	
 
@@ -69,7 +71,7 @@
 				   <section class="p2">
 				   <h3>Better Data</h3>
 						 <figure>
-							<img src="/front-end/Assets/src/img/Icon_better data.svg" alt="">
+							<img src="/front-end/Assets/src/img/Icon_better data.svg" alt="Better Data">
 						 </figure>
 					  	<p>Proactively manage compliance and governance with the right data at the right time.</p>
 				   </section>
@@ -78,7 +80,7 @@
 				   <section class="p2">
 				   <h3>Unrivaled Experience and Expertize</h3>
 						 <figure>
-							<img src="/front-end/Assets/src/img/Icon - unrivaled experience.svg" alt="">
+							<img src="/front-end/Assets/src/img/Icon_unrivaled experience.svg" alt="Unrivaled Experience and Expertize">
 						 </figure>
 						 <p>BMC has unmatched experience in IT management, supporting 92 of the Forbes Global 100.</p>					 
 				   </section>
@@ -103,7 +105,7 @@
 	
 	<!--Be Better Informed -->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
-	   <section class="bg-white">
+	   <section class="bg-white" style="padding-bottom: 0">
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -130,13 +132,17 @@
 		  </div>
 	</div>
 
-	<section class="direction-text">
-		<div class="text-content">
-			<h4>
+
+
+	<div class="bg-white direction-text text-center" >
+		<div class="layout-inner-wrap"  id="arrowBG1"> 
+			<div class="content " > 
+				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				With BMC Helix, you can protect your systems and get access to data that helps improve your business.
-			</h4>
+				<span class="lineEnd" ></span></h4>			
+			</div>
 		</div>
-	</section>
+	</div>
 
 	<!--Deliver a simple-->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
@@ -160,23 +166,25 @@
 					</div>
 					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item first-half">
 						<figure><img src="/front-end/Assets/src/img/illustration - simpler smarter.svg" alt=""></figure>
-					</div>
-					
-					
+					</div>						
 				</div>
 			</div>
 		</section>
-		</div>	
-	<section class="direction-text">
-		<div class="text-content">
-			<h4>
+	</div>
+
+	<div class="bg-white direction-text text-center" >
+		<div class="layout-inner-wrap"  id="arrowBG2"> 
+			<div class="content " > 
+				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				BMC Helix empowers end users
-			</h4>
-		</div>		
-	</section>
+				<span class="lineEnd" ></span></h4>			
+			</div>
+		</div>
+	</div>
+
 	<!--Be Future Ready-->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
-	   <section class="bg-white">
+	   <section class="bg-white" style="padding-bottom: 0">
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">			 	
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -200,13 +208,23 @@
 		  </div>
 	   </section>
 	</div>
+
+	<div class="bg-white direction-text text-center" >
+		<div class="layout-inner-wrap"  id="arrowBG3"> 
+			<div class="content " > 
+				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
+				
+				<span class="lineEnd" ></span></h4>			
+			</div>
+		</div>
+	</div>
 	
 	
 	<!--Be first in your industry -->
 	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 first-industry  bg-boston-blue white text-center">
 		<div class="layout-inner-wrap">
 			<div class="content">
-				<h3>Be first in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated IT services and operations platform</h3>
+				<h3>Be <i>first</i> in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated IT services and operations platform</h3>
 				<button class=" btn btn-bg-white">Get a free demo</button>
 			</div>
 		</div>
