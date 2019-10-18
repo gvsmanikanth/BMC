@@ -198,7 +198,11 @@
 
 	.section_50_50 {
 		.orange-tick-bullets {
-			margin-left: 30px;
+			margin: 0;
+			padding: 0 0 30px 30px;
+			@media (min-width: $break-md) {
+				max-width: 75%;
+			}			
 			li {
 				background: url(https://www.bmc.com/etc/clientlibs/bmc/head/bg-summary-li.png) left 4px no-repeat;
 			}
