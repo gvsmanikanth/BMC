@@ -129,6 +129,9 @@
 			    if(pEndAtMiddlePoint){
 			    	leftPositionX = parentDiv.clientWidth/2;
 			    }
+			    else{
+			    	leftPositionX = parentDiv.clientWidth/4;
+			    }
 			    context.lineTo(leftPositionX+cornerRadius,endPointY);
 			    context.quadraticCurveTo(leftPositionX, endPointY, leftPositionX, endPointY+cornerRadius);
 			    context.lineTo(leftPositionX,parentDiv.clientHeight-7);
@@ -143,6 +146,9 @@
 			    context.stroke();
 			    if(pEndAtMiddlePoint){
 			    	firstLineEndX = parentDiv.clientWidth/2;
+			    }
+			    else{
+			    	firstLineEndX = parentDiv.clientWidth/4*3;
 			    }
 			    context.moveTo(leftPositionX,radius+15)
 			    context.lineTo(leftPositionX,endPointY-radius)
