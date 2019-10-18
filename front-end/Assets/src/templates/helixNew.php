@@ -18,7 +18,7 @@
 							</div>
 							<h2 class="block-title black ">Know the Unknowns</h2>
 							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
-							<a href="#." class="btn ">Get a Free Demo Now</a>
+							<a href="#product-list" class="btn ">View all BMC Helix Solutions</a>
 							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
 						 </div>
 					  </div>
@@ -38,7 +38,7 @@
 			<div class="content"> 
 				<h2 class="block-title">Business and technology change constantly.<span class="lineStart" ></span></h2>				
 				<div>
-					<p class="block-text subTitleBlock">While you want to do smoething about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" style="width:1px;height:1px;background-color:transparent;display: inline-block;"></span></p>				
+					<p class="block-text subTitleBlock">While you want to do smoething about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" ></span></p>				
 				</div>
 			</div>
 			<div class="content" > 
@@ -86,7 +86,7 @@
 				   </section>
 				</div>
 			 </div>
-			 <button class=" btn btn-bg-white">Get a free demo</button>		  
+			 <a href="#product-list"  class=" btn btn-bg-white">View all BMC Helix Solutions</a>		  
 	   </section>
 	</div>
 	
@@ -120,7 +120,7 @@
 						 <li>One go-to for discovery capabilities — comprehensive for assets and clouds</li>
 					  </ul>
 					  <p>So, you can know more about events & alerts, vulnerabilities, resource-spending and usage levels.</p>
-					  <button class="btn btn-blue">Get a free demo</button>
+					  <a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
 				   </section>
 				</div>
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -161,7 +161,7 @@
 								<li>Omni-channel experience across Slack, Chatbot, Skype and more</li>
 								<li>Flexibility as all features are available as a service</li>
 								</ul>
-								<button class="btn btn-blue">Get a free demo</button>
+								<a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
 						</section>
 					</div>
 					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item first-half">
@@ -172,9 +172,9 @@
 		</section>
 	</div>
 
-	<div class="bg-white direction-text text-center" >
+	<div class="bg-white direction-text text-center " >
 		<div class="layout-inner-wrap"  id="arrowBG2"> 
-			<div class="content " > 
+			<div class="content arrow-med-text" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				BMC Helix empowers end users
 				<span class="lineEnd" ></span></h4>			
@@ -198,7 +198,7 @@
 							<li>Know, scale and grow</li>
 							<li>Propel innovation and evolve your business</li>
 						</ul>
-						<button class="btn btn-blue">Get a free demo</button>
+						<a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
 					</section>
 				</div>
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -225,7 +225,7 @@
 		<div class="layout-inner-wrap">
 			<div class="content">
 				<h3>Be <i>first</i> in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated IT services and operations platform</h3>
-				<button class=" btn btn-bg-white">Get a free demo</button>
+				<a href="#product-list"  class=" btn btn-bg-white">View all BMC Helix Solutions</a>
 			</div>
 		</div>
 	</div>
@@ -234,8 +234,8 @@
 	
 		
 
-	<section class="product-list ">
-		<div class=" layout-inner-wrap">			
+	<section class="product-list " >
+		<div class=" layout-inner-wrap" id="product-list">			
 			<h2 class="h2-variation-1">All BMC Helix Solutions</h2>
 			<div class="flex-wrap flex-justify-center mb2">
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
