@@ -120,6 +120,9 @@
 		    var leftPositionX = $(".subTitleBlock")[0].offsetLeft-100;
 		    
 		    if(pDirection == "ltr"){
+		    	//always 25%
+		    	firstLineEndX = parentDiv.clientWidth/4*3;
+		    	
 			    context.arc(firstLineEndX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
 			    context.fillStyle = "#0091DD";
 			    context.stroke();
@@ -141,6 +144,9 @@
 			    context.stroke();
 		    }
 		    else{
+		    	//always 25%
+		    	leftPositionX = parentDiv.clientWidth/4;
+		    	
 		    	context.arc(leftPositionX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
 			    context.fillStyle = "#0091DD";
 			    context.stroke();
