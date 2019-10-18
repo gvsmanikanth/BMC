@@ -58,7 +58,7 @@
 			</div>	  		
 			 <div class="flex-wrap flex-justify-center py2">
 				<div class="flex-item sm-col-6 md-col-4 feature-block ">
-				   <section class="p2">
+				   <section class="content">
 					  <h3>Smarter IT Functions</h3>
 					 	 <figure>
 					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="Smarter IT Functions">
@@ -68,7 +68,7 @@
 				   </section>
 				</div>
 				<div class="flex-item sm-col-6 md-col-4  feature-block ">
-				   <section class="p2">
+				   <section class="content">
 				   <h3>Better Data</h3>
 						 <figure>
 							<img src="/front-end/Assets/src/img/Icon_better data.svg" alt="Better Data">
@@ -77,7 +77,7 @@
 				   </section>
 				</div>
 				<div class="flex-item sm-col-6 md-col-4  feature-block ">
-				   <section class="p2">
+				   <section class="content">
 				   <h3>Unrivaled Experience and Expertize</h3>
 						 <figure>
 							<img src="/front-end/Assets/src/img/Icon_unrivaled experience.svg" alt="Unrivaled Experience and Expertize">
@@ -105,7 +105,7 @@
 	
 	<!--Be Better Informed -->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
-	   <section class="bg-white" style="padding-bottom: 0">
+	   <section class="bg-white" style="padding-top: 5rem">
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -165,7 +165,7 @@
 						</section>
 					</div>
 					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item first-half">
-						<figure><img src="/front-end/Assets/src/img/illustration - simpler smarter.svg" alt=""></figure>
+						<figure style="background: #FAFAFA; padding: 50px 0;"><img src="/front-end/Assets/src/img/illustration - simpler smarter.svg" alt=""></figure>
 					</div>						
 				</div>
 			</div>
@@ -184,7 +184,7 @@
 
 	<!--Be Future Ready-->
 	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
-	   <section class="bg-white" style="padding-bottom: 0">
+	   <section class="bg-white" >
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">			 	
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -211,7 +211,7 @@
 
 	<div class="bg-white direction-text text-center" >
 		<div class="layout-inner-wrap"  id="arrowBG3"> 
-			<div class="content " > 
+			<div class="content  small-arrow" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				
 				<span class="lineEnd" ></span></h4>			

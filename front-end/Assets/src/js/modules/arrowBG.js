@@ -24,7 +24,7 @@
 			    endPointX = lineEnd.offsetLeft - parentDiv.offsetLeft - 30;
 			    
 			    var radius = 4;
-			    context.lineWidth = 2;
+			    context.lineWidth = 3;
 			    context.beginPath();
 			    context.strokeStyle = "#0091DD";
 			    context.arc(startPointX, startPointY, radius, 0, 2 * Math.PI, false);
@@ -112,7 +112,7 @@
 		    }
 		    
 		    var radius = 4;
-		    context.lineWidth = 2;
+		    context.lineWidth = 3;
 		    context.beginPath();
 		    context.strokeStyle = "#0091DD";
 		    
