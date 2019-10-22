@@ -24,11 +24,11 @@
 			    endPointX = lineEnd.offsetLeft - parentDiv.offsetLeft - 30;
 			    
 			    var radius = 4;
-			    context.lineWidth = 3;
+			    context.lineWidth = 1;
 			    context.beginPath();
-			    context.strokeStyle = "#0091DD";
+			    context.strokeStyle = "#0093C9";
 			    context.arc(startPointX, startPointY, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#0091DD";
+			    context.fillStyle = "#0093C9";
 			    context.stroke();
 			   
 			    //Line1
@@ -41,13 +41,13 @@
 			    
 			    var subTitleBlock = "#"+parentDivID+" .subTitleBlock";
 			    context.moveTo(startPointX + 10,startPointY);
-			    var firstLineEndX = $(subTitleBlock).width() +$(subTitleBlock).width()/4 + 150;
+			    var firstLineEndX = $(subTitleBlock).width() +$(subTitleBlock).width()/4 + 50;
 			    if((firstLineEndX-startPointX)<50){
 			    	firstLineEndX = startPointX+50;	
 			    }
 			    
 			    var cornerRadius = 7;
-			    var arrowWidth = 5;
+			    var arrowWidth = 6;
 			    context.lineTo(firstLineEndX-cornerRadius,startPointY);
 			    context.quadraticCurveTo(firstLineEndX, startPointY, firstLineEndX, startPointY+cornerRadius);
 			    var middleLineY = endPointY-60;
@@ -60,6 +60,7 @@
 			    context.quadraticCurveTo(middleLineEndX, endPointY, middleLineEndX+cornerRadius, endPointY);
 			    context.lineTo(endPointX,endPointY);
 			    
+			    //endPointX = endPointX+4
 			    context.moveTo(endPointX,endPointY+arrowWidth);
 			    context.lineTo(endPointX+arrowWidth,endPointY);
 			    context.lineTo(endPointX,endPointY-arrowWidth);
@@ -68,7 +69,11 @@
 			    if(parentDiv.clientWidth < 640){
 			    	parentDiv.style.backgroundImage = null;
 		    	}else{
+		    		context.webkitImageSmoothingEnabled = false;
+		    		context.mozImageSmoothingEnabled = false;
+		    		context.imageSmoothingEnabled = false;
 		    		var img = canvas.toDataURL("image/png");
+		    		 
 				    parentDiv.style.backgroundImage = "url(" + img + ")";
 		    	}
 			    
@@ -84,7 +89,7 @@
 	    var context = canvas.getContext("2d");
 	    var pDirection = direction;
 	    var pEndAtMiddlePoint = endAtMiddlePoint
-	    var arrowWidth = 5;
+	    var arrowWidth = 6;
 	    this.drawArrow = function(){
 	    
 	    	canvas.width = parentDiv.clientWidth;
@@ -112,10 +117,10 @@
 		    }
 		    
 		    var radius = 4;
-		    context.lineWidth = 3;
+		    context.lineWidth = 1;
 		    context.beginPath();
-		    context.strokeStyle = "#0091DD";
-		    
+		    context.strokeStyle = "#0093C9";
+		    context.fillStyle = "#0093C9";
 		    var cornerRadius = 7;
 		    var leftPositionX = $(".subTitleBlock")[0].offsetLeft-100;
 		    
@@ -124,7 +129,7 @@
 		    	firstLineEndX = parentDiv.clientWidth/4*3;
 		    	
 			    context.arc(firstLineEndX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#0091DD";
+			    
 			    context.stroke();
 			    context.moveTo(firstLineEndX,radius+15);
 			    context.lineTo(firstLineEndX,endPointY-radius)
@@ -137,21 +142,20 @@
 			    }
 			    context.lineTo(leftPositionX+cornerRadius,endPointY);
 			    context.quadraticCurveTo(leftPositionX, endPointY, leftPositionX, endPointY+cornerRadius);
-			    context.lineTo(leftPositionX,parentDiv.clientHeight-7);
-			    context.moveTo(leftPositionX-arrowWidth,parentDiv.clientHeight-arrowWidth-2);
+			    context.lineTo(leftPositionX,parentDiv.clientHeight-10);
+			    //leftPositionX - 4;
+			    context.moveTo(leftPositionX-arrowWidth,parentDiv.clientHeight-arrowWidth-4);
 			    context.lineTo(leftPositionX,parentDiv.clientHeight-3);
-			    context.lineTo(leftPositionX+arrowWidth,parentDiv.clientHeight-arrowWidth-2);
+			    context.lineTo(leftPositionX+arrowWidth,parentDiv.clientHeight-arrowWidth-4);
 			    context.stroke();
 		    }
 		    else{
 		    	//always 25%
 		    	leftPositionX = parentDiv.clientWidth/4;
-		    	
 		    	context.arc(leftPositionX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    context.fillStyle = "#0091DD";
 			    context.stroke();
 			    if(pEndAtMiddlePoint){
-			    	firstLineEndX = parentDiv.clientWidth/2;
+			    	firstLineEndX = parentDiv.clientWidth/2; 
 			    }
 			    else{
 			    	firstLineEndX = parentDiv.clientWidth/4*3;
@@ -161,10 +165,11 @@
 			    context.quadraticCurveTo(leftPositionX, endPointY, leftPositionX+cornerRadius, endPointY);
 			    context.lineTo(firstLineEndX-cornerRadius,endPointY);
 			    context.quadraticCurveTo(firstLineEndX, endPointY, firstLineEndX, endPointY+cornerRadius);
-			    context.lineTo(firstLineEndX,parentDiv.clientHeight-7);
-			    context.moveTo(firstLineEndX-arrowWidth,parentDiv.clientHeight-arrowWidth-2);
+			    context.lineTo(firstLineEndX,parentDiv.clientHeight-10);
+			    //firstLineEndX = -4;
+			    context.moveTo(firstLineEndX-arrowWidth,parentDiv.clientHeight-arrowWidth-4);
 			    context.lineTo(firstLineEndX,parentDiv.clientHeight-3);
-			    context.lineTo(firstLineEndX+arrowWidth,parentDiv.clientHeight-arrowWidth-2);
+			    context.lineTo(firstLineEndX+arrowWidth,parentDiv.clientHeight-arrowWidth-4);
 			    context.stroke(); 
 		    }
 		   
