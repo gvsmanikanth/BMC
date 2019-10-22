@@ -19,9 +19,8 @@
 				}
 			}
 			.btn{
-				background: color(boston-blue);
+				//background: color(boston-blue);
 				border:none;    
-				padding: 13px 40px;
 				font-size: 18px;
 				border-radius: 0;
 				border-width: 1px;	
@@ -29,20 +28,20 @@
 					font-size: 24px;
 				}		
 			}
-			.play_link{
-				font-weight: 700;
-				font-size: 24px;
-				color: #3980B2;
-				display: inline-block;
-				img {
-					vertical-align: middle;
-					margin: 0 10px;
-					@media (max-width: $tablet) {
-						width: 31px;
-					}
-				}
+			// .play_link{
+			// 	font-weight: 700;
+			// 	font-size: 24px;
+			// 	color: #3980B2;
+			// 	display: inline-block;
+			// 	img {
+			// 		vertical-align: middle;
+			// 		margin: 0 10px;
+			// 		@media (max-width: $tablet) {
+			// 			width: 31px;
+			// 		}
+			// 	}
 				
-			} 
+			// } 
 		}
 	}
 
@@ -57,9 +56,9 @@
 			padding: 1rem;
 		}
 		.content{
-			@media (min-width: 690px) {
-				width: 60%; 
-				padding-left:20%;
+			@media (min-width: 640px) {
+				width: 70%; 
+				padding-left:15%;
 			}			
 			padding-top: 2rem;
 			.block-title{
@@ -114,7 +113,6 @@
 		}
 		.feature-block {
 			h3{
-				font-weight: 400;
 				color: #fff;
 				margin-bottom: 50px;
 				font-size: 24px;				
@@ -145,16 +143,21 @@
 			
 			background: #fff;
 			color: color(boston-blue);
-			padding: 15px 50px;
+			//padding: 15px 50px;
 			color: #0093C9;
 			font-size: 22px;
 			margin-top: 25px;
 			@media (min-width: $break-sm) {
-				min-width: 370px;
+				//min-width: 370px;
 			}
 			@media (max-width: $tablet) {
 				font-size: 18px;
 				padding: 10px 30px;
+			}
+			&:hover{
+				background-color: #046e96;
+				border-color: #046e96;
+				color: #fff;
 			}
 		}
 	}
@@ -163,13 +166,17 @@
 
 	.simple-pullqoute{
 		padding: 5rem 1rem;
+		@media (max-width: $tablet) {
+			padding: 2rem 1rem;
+		}
    		background: #fafafa;
 		blockquote {
 			background-image: url('/content/dam/bmc/dsom-landing-page/Icon - quote.svg');
 			background-repeat: no-repeat;
 			@media (max-width: $tablet) {
 				background-size: 80px;
-    			padding: 1rem;
+				padding: 3rem 0rem;
+				background-position: 50% 0;
 			}
 			@media (min-width: $break-md) {
 				max-width: 80%;
@@ -225,7 +232,11 @@
 			margin-bottom: 26px;
 		}
 		.btn.btn-blue {
-			padding: 12px 50px;
+			&:hover{
+				background-color: #046e96;
+				border-color: #046e96;
+				color: #fff;
+			}
 		}
 		.content {
 			
@@ -275,7 +286,7 @@
 		.content{
 			padding-top: 3rem;
 			padding-bottom: 3rem;
-			@media (min-width: 690px) {
+			@media (min-width: 640px) {
 				width: 50%; 
 				padding-left:25%;
 				padding-top: 5rem;
@@ -305,7 +316,8 @@
 		.small-arrow{
 			padding-top: 1rem;
 			padding-bottom: 1rem;
-			@media (min-width: 690px) {
+			margin-bottom: 20px;
+			@media (min-width: 640px) {
 				width: 55%; 
 				padding-left:20%;
 				padding-top: 5rem;
@@ -315,7 +327,7 @@
 		.arrow-med-text	{
 			padding-top: 1rem;
 			padding-bottom: 1rem;
-			@media (min-width: 690px) {
+			@media (min-width: 640px) {
 				padding-top: 9rem;
 				padding-bottom: 9rem;
 			}	
@@ -349,12 +361,17 @@
 			.btn-bg-white{				
 				background: #fff;
 				color: color(boston-blue);
-				padding: 15px 50px;
+				//padding: 15px 50px;
 				color: #0093C9;
 				font-size: 22px;
 				margin-top: 25px;
 				@media (min-width: $break-sm) {
-					min-width: 370px;
+					// min-width: 370px;
+				}
+				&:hover{
+					background-color: #046e96;
+					border-color: #046e96;
+					color: #fff;
 				}
 			}		
 		}
@@ -381,15 +398,24 @@
 		}
 		.card{
 			padding: 24px;
-			padding-bottom: 10px;
+			padding-bottom: 0px;
 			box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
 			transition: 0.3s linear;
 			&:hover{
-				box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.33);
+				box-shadow: none;
+				background: #ebf2f7;
 				transition: 0.3s linear;
 				.learn-more {
 					font-weight: 600;
 					transition: 0.3s linear;
+					color: #fff !important;
+				}
+				.card-footer{
+					background: #3d81b0;
+					text-align: center;
+					transition: 0.3s linear;
+					margin-left: -24px;
+					margin-right: -24px;
 				}
 			}
 			.card-header{
@@ -414,6 +440,7 @@
 					color: #3980B2;
 					font-weight: 400;
 					margin-bottom: 15px;
+					padding-top: 15px;
 				}
 				p {
 					color: #414042;
@@ -429,11 +456,14 @@
 				border-top: 1px solid #3980B2;
 				padding-top: 10px;
 				margin-top: 50px;
+				text-align: right;
+				padding-bottom: 10px;
+				transition: 0.3s linear;
+				
 				.learn-more {
 					color: #3980B2;
 					font-size: 0.9rem;
-					display: block;
-					text-align: right;
+					display: block;				
 					transition: 0.3s linear;
 				}
 			}

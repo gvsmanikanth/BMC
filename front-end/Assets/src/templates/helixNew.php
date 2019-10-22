@@ -18,7 +18,7 @@
 							</div>
 							<h2 class="block-title black ">Know the Unknowns</h2>
 							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
-							<a href="#product-list" class="btn ">View all BMC Helix Solutions</a>
+							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet BMC Helix</a>
 							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
 						 </div>
 					  </div>
@@ -51,7 +51,7 @@
 	<!--First and only -->
 	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section bg-boston-blue white text-center">
 
-	   <section class="layout-inner-wrap">
+	   <section class="layout-inner-wrap" id="introducing_BMC_helix">
 			<div class="feature-head">
 					<h2 class="block-title">Introducing BMC Helix</h2>
 					<p class="block-text">The first and only IT services and operations platform that’s integrated with 360-degree intelligence.</p>
@@ -63,7 +63,7 @@
 					 	 <figure>
 					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="Smarter IT Functions">
 						</figure>	
-						<p>Power smarter IT functions for Discovery, Monitorying, Service, Remediation and optimization with AI/ML and predictive analytics.</p>				 	
+						<p>Power smarter IT functions for Discovery, Monitoring, Service, Remediation and optimization with AI/ML and predictive analytics.</p>				 	
 
 				   </section>
 				</div>
@@ -78,7 +78,7 @@
 				</div>
 				<div class="flex-item sm-col-6 md-col-4  feature-block ">
 				   <section class="content">
-				   <h3>Unrivaled Experience and Expertize</h3>
+				   <h3>Unrivaled Experience and Expertise</h3>
 						 <figure>
 							<img src="/front-end/Assets/src/img/Icon_unrivaled experience.svg" alt="Unrivaled Experience and Expertize">
 						 </figure>
@@ -86,7 +86,7 @@
 				   </section>
 				</div>
 			 </div>
-			 <a href="#product-list"  class=" btn btn-bg-white">View all BMC Helix Solutions</a>		  
+			 <a href="#product-list"  class=" btn learn-more btn-bg-white">View BMC Helix Products</a>		  
 	   </section>
 	</div>
 	
@@ -94,10 +94,9 @@
 	<section class="simple-pullqoute text-center ">
 		<div class="layout-inner-wrap">
 			<blockquote>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis Lorem ipsum </p>
+					<p>BMC is closer to the magic recipe for integration than ever before.</p>
 					<hr class="shortSep">
-						<cite>Director of IT</cite>			 
+						<cite> Sr. IT Professional</cite>			 
 			</blockquote>
 		</div>		  
 	</section>
@@ -120,7 +119,7 @@
 						 <li>One go-to for discovery capabilities — comprehensive for assets and clouds</li>
 					  </ul>
 					  <p>So, you can know more about events & alerts, vulnerabilities, resource-spending and usage levels.</p>
-					  <a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
+					  <a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
 				   </section>
 				</div>
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -161,7 +160,7 @@
 								<li>Omni-channel experience across Slack, Chatbot, Skype and more</li>
 								<li>Flexibility as all features are available as a service</li>
 								</ul>
-								<a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
+								<a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
 						</section>
 					</div>
 					<div class="flex-item col col-12 md-col-6 fixed-width-flex-item first-half">
@@ -198,7 +197,7 @@
 							<li>Know, scale and grow</li>
 							<li>Propel innovation and evolve your business</li>
 						</ul>
-						<a href="#product-list"  class="btn btn-blue">View all BMC Helix Solutions</a>
+						<a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
 					</section>
 				</div>
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
@@ -225,7 +224,7 @@
 		<div class="layout-inner-wrap">
 			<div class="content">
 				<h3>Be <i>first</i> in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated IT services and operations platform</h3>
-				<a href="#product-list"  class=" btn btn-bg-white">View all BMC Helix Solutions</a>
+				<a href="#product-list"  class=" btn learn-more btn-bg-white">View BMC Helix Products</a>
 			</div>
 		</div>
 	</div>
@@ -236,17 +235,15 @@
 
 	<section class="product-list " >
 		<div class=" layout-inner-wrap" id="product-list">			
-			<h2 class="h2-variation-1">All BMC Helix Solutions</h2>
+			<h2 class="h2-variation-1">Featured BMC Helix Products</h2>
 			<div class="flex-wrap flex-justify-center mb2">
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
-							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+							<div class="card-header">								
+								<img src="/front-end/Assets/src/img/helix_icons/helix_itsm.png" alt="">
 							</div>
-							<div class="card-content">
-								<hr>
+							<div class="card-content">								
 								<h2>BMC Helix ITSM</h2>
 								<p>Predictive ITSM with intelligent, people-centric user experiences that help you work smarter</p>
 							</div>
@@ -260,11 +257,11 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/helix_discovery.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
+								
 								<h2>BMC Helix Discovery</h2>
 								<p>Automatic discovery of data center and multi-cloud inventory, configuration, and relationship data</p>
 							</div>
@@ -278,11 +275,11 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/helix_digital_workplace.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
+								
 								<h2>BMC Helix Digital Workplace</h2>
 								<p>Intelligent, omni-channel employee experiences to help organizations step into the future of work</p>
 							</div>
@@ -296,12 +293,12 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/helix_chatbot.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
-								<h2>BMC Helix Remedyforce</h2>
+								
+								<h2>BMC Helix Chatbot</h2>
 								<p>Complete IT service management built on Salesforce App Cloud</p>
 							</div>
 							<div class="card-footer">
@@ -314,12 +311,12 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/cloud_cost.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
-								<h2>BMC Helix Cloud Cost</h2>
+								
+								<h2>BMC Helix CloudCost</h2>
 								<p>Provides visibility and control over multi-cloud costs and resources</p>
 							</div>
 							<div class="card-footer">
@@ -332,11 +329,11 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/cloud_security.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
+								
 								<h2>BMC Helix Cloud Security</h2>
 								<p>Embeds compliance and security testing with automated remediation into IT operations</p>
 							</div>
@@ -350,13 +347,12 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/trusesight_capacity_optimization.png" alt="">
 							</div>
 							<div class="card-content">
-								<hr>
-								<h2>Product name</h2>
-								<p>Product Description</p>
+								
+								<h2>BMC Helix Capacity Optimization</h2>
 							</div>
 							<div class="card-footer">
 								<span href="#." class="learn-more"> Learn More</span>
@@ -368,13 +364,11 @@
 					<a href="#." class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
-								<h4>Lorem Epsum</h4>
-								<img src="/front-end/Assets/src/img/Orange_Cloud-Accelerate.png" alt="">
+								
+								<img src="/front-end/Assets/src/img/helix_icons/helix_platform.png" alt="">
 							</div>
-							<div class="card-content">
-								<hr>
-								<h2>Product name</h2>
-								<p>Product Description</p>
+							<div class="card-content">								
+								<h2>BMC Helix Platform</h2>
 							</div>
 							<div class="card-footer">
 								<span href="#." class="learn-more"> Learn More</span>
