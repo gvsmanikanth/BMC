@@ -4,7 +4,7 @@
    include_once 'php-inc/head.php';
    ?>
    
-
+<?php /*
 	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 wallpaper" data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Green-700x700px.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tb-trueSight-cloud-operations.jpg&quot;}}" style="background-color:#126CC3;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
@@ -29,6 +29,36 @@
 		  <div class="wallpaper-container">
 			 <div class="wallpaper-media wallpaper-image wallpaper-responsive native" style="background-image: url(&quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-dsm-remedy.jpg&quot;); left: 0px; top: -62.5526px; opacity: 1;"><img alt="" src="https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-dsm-remedy.jpg"></div>
 		  </div>
+	   </section>
+	</div>
+*/ ?>
+
+	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
+	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
+	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Blue-700x700px.png&quot;,&quot;(min-width: 640px)&quot;: &quot;http://localhost/front-end/Assets/src/img/helix_bg2.png&quot;}}" 
+	   style="background-color:#126CC3;">
+		  <div class="offset-wrapper flex-center js-content-center-item"> 
+			 <div class="inner">
+				<div class="bannerContent flex-center ">
+				   <div class="layout-inner-wrap">
+					  <div class="flex-item col col-12 lg-col-3 md-col-5 sm-col-8 add-top-bottom-margin-82px">
+						 <div class="banner-caption">
+							<div class="helix-logo">
+								<img class="" src="/front-end/Assets/src/img/bmchelix-oneline.png"> 
+							</div>
+							<h2 class="block-title black ">Know the Unknowns</h2>
+							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
+							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet the Helix Chatbot</a>
+							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
+						 </div>
+					  </div>
+				   </div>
+				</div>
+			 </div>
+		  </div>
+		  <!-- <div class="wallpaper-container">
+			 <div class="wallpaper-media wallpaper-image wallpaper-responsive native" style="background-image: url(/front-end/Assets/src/img/helix_bg.png"></div>
+		  </div> -->
 	   </section>
 	</div>
 	
@@ -238,140 +268,144 @@
 			<h2 class="h2-variation-1">Featured BMC Helix Products</h2>
 			<div class="flex-wrap flex-justify-center mb2">
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-itsm.html" class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">								
 								<img src="/front-end/Assets/src/img/helix_icons/helix_itsm.png" alt="">
 							</div>
-							<div class="card-content">								
+							<div class="card-content">
+								<hr>								
 								<h2>BMC Helix ITSM</h2>
-								<p>Predictive ITSM with intelligent, people-centric user experiences that help you work smarter</p>
+								<p>Predictive IT service management for your modern enterprise</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/discovery-dependency-mapping.html" class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/helix_discovery.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix Discovery</h2>
 								<p>Automatic discovery of data center and multi-cloud inventory, configuration, and relationship data</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span  class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/digital-workplace.html" class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/helix_digital_workplace.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix Digital Workplace</h2>
-								<p>Intelligent, omni-channel employee experiences to help organizations step into the future of work</p>
+								<p>Engaging omni-channel experiences to support employees however they want to work</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span  class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-chatbot.html" class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/helix_chatbot.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix Chatbot</h2>
-								<p>Complete IT service management built on Salesforce App Cloud</p>
+								<p>Intelligent, conversational, omni-channel experiences for users to find and request services</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-cloud-cost.html " class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/cloud_cost.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix CloudCost</h2>
-								<p>Provides visibility and control over multi-cloud costs and resources</p>
+								<p>Provides visibility and control to optimize multi-cloud costs</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-cloud-security.html" class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/cloud_security.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix Cloud Security</h2>
-								<p>Embeds compliance and security testing with automated remediation into IT operations</p>
+								<p>Automates security testing and configuration of the cloud resources and containers your apps consume</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-capacity-optimization.html " class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/trusesight_capacity_optimization.png" alt="">
 							</div>
 							<div class="card-content">
-								
+								<hr>
 								<h2>BMC Helix Capacity Optimization</h2>
+								<p>Cloud-based capacity analytics and modeling to align IT resources with business service demand</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
 				</div>	<!-- col -->	
 				<div class="flex flex-item sm-col sm-col-6 md-col-4 lg-col-3">
-					<a href="#." class="guttor-width">
+					<a href="http://www.bmc.com/it-solutions/bmc-helix-platform.html " class="guttor-width">
 						<div class="card bg-white">
 							<div class="card-header">
 								
 								<img src="/front-end/Assets/src/img/helix_icons/helix_platform.png" alt="">
 							</div>
-							<div class="card-content">								
+							<div class="card-content">		
+								<hr>						
 								<h2>BMC Helix Platform</h2>
+								<p>Empowers developers and business users to co-create digital enterprise apps</p>
 							</div>
 							<div class="card-footer">
-								<span href="#." class="learn-more"> Learn More</span>
+								<span class="learn-more"> Learn More</span>
 							</div>
 						</div>
 					</a>					
