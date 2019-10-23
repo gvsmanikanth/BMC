@@ -35,7 +35,7 @@
 
 	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
-	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Blue-700x700px.png&quot;,&quot;(min-width: 640px)&quot;: &quot;http://localhost/front-end/Assets/src/img/helix_bg2.png&quot;}}" 
+	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Blue-700x700px.png&quot;,&quot;(min-width: 640px)&quot;: &quot;http://localhost/front-end/Assets/src/img/helix_bg2.jpg&quot;}}" 
 	   style="background-color:#1f2b90;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
 			 <div class="inner">
@@ -56,9 +56,6 @@
 				</div>
 			 </div>
 		  </div>
-		  <!-- <div class="wallpaper-container">
-			 <div class="wallpaper-media wallpaper-image wallpaper-responsive native" style="background-image: url(/front-end/Assets/src/img/helix_bg.png"></div>
-		  </div> -->
 	   </section>
 	</div>
 	
