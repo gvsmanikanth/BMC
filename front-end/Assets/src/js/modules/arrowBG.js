@@ -23,13 +23,15 @@
 			    endPointY = lineEnd.offsetTop - parentDiv.offsetTop-15;
 			    endPointX = lineEnd.offsetLeft - parentDiv.offsetLeft - 30;
 			    
-			    var radius = 4;
-			    context.lineWidth = 1;
+			    var radius = 3;
+			    context.lineWidth = 2;
 			    context.beginPath();
 			    context.strokeStyle = "#0093C9";
+			    //context.lineWidth = 2;
 			    context.arc(startPointX, startPointY, radius, 0, 2 * Math.PI, false);
 			    context.fillStyle = "#0093C9";
 			    context.stroke();
+			    //context.lineWidth = 2;
 			   
 			    //Line1
 			    var subTitleEnd = "#"+parentDivID+" .subTitleEnd";
@@ -59,8 +61,10 @@
 			    context.lineTo(middleLineEndX,endPointY-cornerRadius);
 			    context.quadraticCurveTo(middleLineEndX, endPointY, middleLineEndX+cornerRadius, endPointY);
 			    context.lineTo(endPointX,endPointY);
-			    
-			    //endPointX = endPointX+4
+			    context.stroke();
+			    context.beginPath();
+			    endPointX = endPointX+3
+			    //context.lineWidth = 2;
 			    context.moveTo(endPointX,endPointY+arrowWidth);
 			    context.lineTo(endPointX+arrowWidth,endPointY);
 			    context.lineTo(endPointX,endPointY-arrowWidth);
@@ -122,14 +126,18 @@
 		    context.strokeStyle = "#0093C9";
 		    context.fillStyle = "#0093C9";
 		    var cornerRadius = 7;
-		    var leftPositionX = $(".subTitleBlock")[0].offsetLeft-100;
+		    
+		    //var subTitleBlock = "#"+parentDivID+" .subTitleBlock";
+		    var leftPositionX = $(subTitleBlock)[0].offsetLeft;
 		    
 		    if(pDirection == "ltr"){
 		    	//always 25%
-		    	firstLineEndX = parentDiv.clientWidth/4*3;
-		    	
+		    	if(firstLineEndX < parentDiv.clientWidth/4*3){
+		    		firstLineEndX = parentDiv.clientWidth/4*3;
+		    	}
+		    	context.lineWidth = 2;
 			    context.arc(firstLineEndX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    
+			    context.lineWidth = 1;
 			    context.stroke();
 			    context.moveTo(firstLineEndX,radius+15);
 			    context.lineTo(firstLineEndX,endPointY-radius)
@@ -151,8 +159,16 @@
 		    }
 		    else{
 		    	//always 25%
-		    	leftPositionX = parentDiv.clientWidth/4;
+		    	if(leftPositionX < (parentDiv.clientWidth/4)){
+		    		leftPositionX = leftPositionX;
+		    	}
+		    	else{
+		    		leftPositionX = parentDiv.clientWidth/4;
+		    	}
+		    	
+		    	context.lineWidth = 2;
 		    	context.arc(leftPositionX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
+		    	context.lineWidth = 1;
 			    context.stroke();
 			    if(pEndAtMiddlePoint){
 			    	firstLineEndX = parentDiv.clientWidth/2; 
