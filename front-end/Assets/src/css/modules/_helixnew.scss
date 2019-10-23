@@ -88,8 +88,10 @@
 				display: inline-block;
 			}
 			&:last-child .block-title{
-				padding-top: 2rem;
-				margin-bottom: 0;
+				@media (max-width: $tablet) {
+					padding-top: 2rem;
+					margin-bottom: 0;
+				}				
 			}
 		}
 	}
@@ -185,22 +187,24 @@
 	// Feature Section Ends
 
 	.simple-pullqoute{
-		padding: 5rem 1rem;
+		padding: 4rem 1rem;
 		@media (max-width: $tablet) {
 			padding: 2rem 1rem;
 		}
    		background: #fafafa;
 		blockquote {
-			background-image: url('/content/dam/bmc/dsom-landing-page/Icon - quote.svg');
+			background-image: url('/front-end/Assets/src/img/Icon - quote.svg');
 			background-repeat: no-repeat;
 			@media (max-width: $tablet) {
-				background-size: 80px;
+				background-size: 120px;
 				padding: 3rem 0rem;
 				background-position: 50% 0;
+				padding-bottom: 1rem;
 			}
 			@media (min-width: $break-md) {
 				max-width: 80%;
-				padding: 2rem 4rem;
+				padding: 3rem 4rem;
+				background-position: 7% 0;
 			}
 			margin: auto;
 			p {
@@ -227,6 +231,12 @@
 
 
 	.section_50_50 {
+		.top_padding_5rem{
+			padding-top: 2rem !important;
+			@media (min-width: 640px) {
+				padding-top: 5rem !important;
+			}	
+		}
 		.orange-tick-bullets {
 			margin: 0;
 			padding: 0 0 30px 30px;
@@ -270,7 +280,8 @@
 		figure{
 			text-align: center;
 			@media (max-width: 640px) {
-				margin-top: 15px;
+				margin-top: 30px;
+				margin-bottom: 30px;
 			}
 		}
 		.col-sm-push-6 {
@@ -355,6 +366,15 @@
 				padding-bottom: 9rem;
 			}	
 		}
+		#arrowBG3{
+			display:block;
+			@media (max-width: 640px) {
+				display:none;
+			}
+		}
+			
+
+		
 	}
 	.first-industry{
 		.content{
@@ -487,7 +507,7 @@
 				background: linear-gradient(to right, #3980B2 50%, white 50%);
 				background-size: 200% 100%;
 				background-position: right bottom;
-				transition: all .5s ease-out;
+				//transition: all .5s ease-out;
 				margin-left: -24px;
 				margin-right: -24px;
 				padding-left: 20px;

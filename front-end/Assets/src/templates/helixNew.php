@@ -36,7 +36,7 @@
 	<div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
 	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/Blue-700x700px.png&quot;,&quot;(min-width: 640px)&quot;: &quot;http://localhost/front-end/Assets/src/img/helix_bg2.png&quot;}}" 
-	   style="background-color:#126CC3;">
+	   style="background-color:#1f2b90;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
 			 <div class="inner">
 				<div class="bannerContent flex-center ">
@@ -48,7 +48,7 @@
 							</div>
 							<h2 class="block-title black ">Know the Unknowns</h2>
 							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
-							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet the Helix Chatbot</a>
+							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet BMC Helix</a>
 							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
 						 </div>
 					  </div>
@@ -133,8 +133,8 @@
 	
 	
 	<!--Be Better Informed -->
-	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
-	   <section class="bg-white" style="padding-top: 5rem">
+	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50 ">
+	   <section class="bg-white top_padding_5rem" >
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">
 				<div class="flex-item col col-12 md-col-6 fixed-width-flex-item">
