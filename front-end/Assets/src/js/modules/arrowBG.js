@@ -23,7 +23,7 @@
 			    endPointY = lineEnd.offsetTop - parentDiv.offsetTop-15;
 			    endPointX = lineEnd.offsetLeft - parentDiv.offsetLeft - 30;
 			    
-			    var radius = 3;
+			    var radius = 4;
 			    context.lineWidth = 2;
 			    context.beginPath();
 			    context.strokeStyle = "#0093C9";
@@ -121,7 +121,7 @@
 		    }
 		    
 		    var radius = 4;
-		    context.lineWidth = 1;
+		    context.lineWidth = 2;
 		    context.beginPath();
 		    context.strokeStyle = "#0093C9";
 		    context.fillStyle = "#0093C9";
@@ -137,7 +137,7 @@
 		    	}
 		    	context.lineWidth = 2;
 			    context.arc(firstLineEndX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-			    context.lineWidth = 1;
+			    //context.lineWidth = 1;
 			    context.stroke();
 			    context.moveTo(firstLineEndX,radius+15);
 			    context.lineTo(firstLineEndX,endPointY-radius)
@@ -168,7 +168,7 @@
 		    	
 		    	context.lineWidth = 2;
 		    	context.arc(leftPositionX, startPointY+radius+2, radius, 0, 2 * Math.PI, false);
-		    	context.lineWidth = 1;
+		    	//context.lineWidth = 1;
 			    context.stroke();
 			    if(pEndAtMiddlePoint){
 			    	firstLineEndX = parentDiv.clientWidth/2; 
