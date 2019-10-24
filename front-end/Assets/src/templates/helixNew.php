@@ -1,6 +1,6 @@
 <?php
    $pageTitle = 'DSOM New';
-   $bodyClass = 'full-width dsomLandingPage';
+   $bodyClass = 'full-width arrow_bg_landing_page';
    include_once 'php-inc/head.php';
    ?>
    
