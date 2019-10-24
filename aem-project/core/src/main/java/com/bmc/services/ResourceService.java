@@ -1,5 +1,7 @@
 package com.bmc.services;
 
+import java.util.List;
+
 import org.apache.sling.api.resource.ResourceResolver;
 
 /**
@@ -17,5 +19,7 @@ public interface ResourceService extends ConfigurableService{
      * @return
      */
     String getTitle(String propertyName, String propertyValue, ResourceResolver resolver);
+
+    List<String> getPropertyNames();
 
 }

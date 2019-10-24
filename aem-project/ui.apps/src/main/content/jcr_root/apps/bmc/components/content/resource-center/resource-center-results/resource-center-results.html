@@ -1,0 +1,16 @@
+<div data-sly-test="${wcmmode.edit}">[ Edit ${component.title} Component ]</div>
+
+<div data-sly-test="${!wcmmode.edit}" class="rc-result-component">
+    <div class="container pb-4">
+        <div id="resultItemsContainer"></div>
+        <div class="no-results col-12 text-left p-0 d-none" hidden>
+            <p>${properties.noResultLabel || "We're sorry, it seems like we can't find any results that match." @ i18n}</p>
+        </div>
+        <div class="error-call col-12 text-left p-0 d-none" hidden>
+            <p>${properties.errorLabel || 'Oops, please try again. It looks like we may be experiencing some technical issues.' @ i18n}</p>
+        </div>
+    </div>
+</div>
+
+<script id="resultItemsTemplate" type="text/x-handlebars-template" data-sly-include="modules/resultItemsTemplate.html"></script>
+

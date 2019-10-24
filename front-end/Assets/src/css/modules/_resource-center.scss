@@ -1,0 +1,193 @@
+// Customized UI for Resource Center Filters
+.rc-filter-panel-group {
+    background-color: #fff;
+
+    .heading-group ul {
+      list-style-type: none; /* Remove bullets */
+      padding: 0; /* Remove padding */
+      margin: 0; /* Remove margins */
+    }
+  
+    .heading-group li {
+      border: 1px solid #ddd; /* Add a thin border to each list item */
+      margin-top: -1px; /* Prevent double borders */
+      /*background-color: #f6f6f6; /* Add a grey background color */
+      padding: 12px; /* Add some padding */
+      margin-bottom: 0px;
+      text-transform: uppercase; 
+      font-weight: bold; 
+    }
+
+    .list-group ul {
+      list-style-type: none; /* Remove bullets */
+      padding: 0; /* Remove padding */
+      margin: 0; /* Remove margins */
+    }
+
+    .list-group li {
+      border: 1px solid #ddd; /* Add a thin border to each list item */
+      margin-top: -1px; /* Prevent double borders */
+      padding: 12px; /* Add some padding */
+      margin-bottom: 0px;
+      color: #29a5d6;
+      cursor: pointer;
+    }
+
+    .list-group li.active {
+      border-right: solid;
+    }
+}
+
+.rc-filter-top-bar {
+  border: 1px solid #ddd; /* Add a thin border to each list item */
+  margin-top: -1px; /* Prevent double borders */
+  padding: 12px; /* Add some padding */
+  margin-bottom: 0px;
+  color: #177ba2;
+  background: white;
+}
+
+// Customized UI for Resource Center Cards
+.rc-cards-3-col {
+  @extend %cards-wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  
+  @include media(breakpointSmall) {
+    justify-content: space-around;
+  }
+
+  @include media(breakpointMedium) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  h2 {
+    margin-bottom: auto;
+  }
+
+  .rc-primary-card {
+     width:100%;
+     background: white;
+     border: 1px solid #ddd;
+     transition: all 0.2s ease-in-out;
+     display: inline-block;
+
+    img, figcaption {
+      @include box-sizing();
+    }
+    
+    figcaption {
+      padding: 1em 1em 0em;
+    }
+
+    img {
+      width: 100%;
+      
+    }
+  }
+
+  .rc-card {
+     margin: 1em;
+     width:100%;
+     background: white;
+     border: 1px solid #ddd;
+     transition: all 0.2s ease-in-out;
+     display: inline-block;
+
+    img, figcaption {
+      @include box-sizing();
+    }
+    
+    figcaption {
+      padding: 1em 1em 0em;
+    }
+
+    img {
+      width: 100%;
+      
+    }
+    
+    @include media(breakpointMedium) {
+      max-width: none;
+      width: 42%;
+      display: inline-block;
+      img {
+        max-width: none;
+        padding: 0;
+      }   
+    }
+
+    @include media(breakpointLarge) {
+      margin: 1em;
+      width: 27%;
+      display: inline-block;
+      img,
+      figcaption {
+        float: none;
+        margin: 0;
+      }
+    }
+    @include media(breakpointExtraLarge) {
+      display: inline-block;
+      img,
+      figcaption {
+        margin: 0;
+        width: 100%;
+      }
+
+      img {
+        padding: 0;
+      }
+    }
+  }
+  .rc-card-body {
+    // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+    // as much space as possible, ensuring footers are aligned to the bottom.
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    height: 50%;
+  }
+
+  .rc-card-title {
+    margin-bottom: .75rem;
+  }
+
+  .rc-card-header {
+    padding: .75rem 1.25rem;;
+    margin-bottom: 0; // Removes the default margin-bottom of <hN>
+    color: #29a5d6;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: smaller;
+
+    + .list-group {
+      .list-group-item:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  .rc-card-footer {
+    padding: .75rem 1.25rem;
+    border-top: 1px solid rgba(0,0,0,.125);
+    border-top-color: #177ba2;
+    margin-right: 15px;
+    margin-left: 15px;
+
+    &:last-child {
+      border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+    }
+  }
+
+  .rc-card-footer-action {
+    float: right;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: smaller;
+    margin-bottom: 10px;
+    color: #177ba2;
+  }
+}

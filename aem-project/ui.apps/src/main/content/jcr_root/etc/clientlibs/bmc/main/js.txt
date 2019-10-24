@@ -1,2 +1,3 @@
 #base=js
 main.js
+handlebars-v4.2.0.js

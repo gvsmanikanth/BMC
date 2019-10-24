@@ -1,0 +1,62 @@
+<div data-sly-test="${wcmmode.edit}">[ Edit ${component.title} Component ]</div>
+<sly data-sly-use.helper="${'com.bmc.models.components.resourcecenter.ResourceCenterFiltersModel'}"></sly>
+
+<div class="rc-filter-component">
+    <form>
+        <section class="bg-seashell">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+                <div class="aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary p1 py2">
+                    <div data-sly-test="${wcmmode.edit}">[ Edit Filters to Display ]</div>
+                    <div data-sly-test="${!wcmmode.edit}" class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                        <div class="rc-filter-panel-group mb2">
+                            <div class="heading-group bg-white">
+                                <ul class="list-group-item list-group-item-action">
+                                    <li class="list-group-item list-group-item-action">${'Search' @ i18n}</li>
+                                </ul>
+                            </div>
+                            <div class="list-group">
+                                <ul>
+                                    <li class="list-group-item list-group-item-action">${'Keyword Search' @ i18n}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <sly data-sly-list.item="${helper.filters}">
+                            <div data-sly-test="${item.display}" class="rc-filter-panel-group mb2">
+                                <div class="heading-group">
+                                    <ul class="list-group-item list-group-item-action">
+                                        <li class="list-group-item list-group-item-action">${item.label}</li>
+                                    </ul>
+                                </div>
+                                <div class="list-group">
+                                    <ul>
+                                        <sly data-sly-list.option="${item.options}">
+                                            <div class="filter-checkbox-item">
+                                                <li id="${option.name}">${option.title}</li>
+                                                <input id="checkbox-${option.name}" type="checkbox" hidden data-name="${option.name}"/>
+                                            </div>
+                                        </sly>
+                                    </ul>
+                                </div>
+                            </div>
+                        </sly>
+                    </div>
+                </div>
+                <div class="aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn layout-secondary  p1 py2">
+                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 panel-group">
+                        <div data-sly-test="${!wcmmode.edit}" class="rc-filter-top-bar">
+                            <div class="filterheadering">
+                                <span style="text-transform: uppercase;font-weight: bold;">${'Filters' @ i18n}</span>
+                                <span class="verticalBar">|</span>
+                                <span style="font-size: smaller;color: black;">Select your filter on the left</span>
+                            </div>
+                        </div>
+                        <sly data-sly-resource="${'results' @ resourceType='wcm/foundation/components/responsivegrid'}" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
+
+
+<!-- <script id="filtersTemplate" type="text/x-handlebars-template" data-sly-include="modules/filtersTemplate.html"></script> -->

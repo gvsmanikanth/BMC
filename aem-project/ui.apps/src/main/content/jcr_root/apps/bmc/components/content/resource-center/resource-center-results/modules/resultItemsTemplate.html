@@ -1,0 +1,15 @@
+<div class="resource-results">
+    <div class="rc-cards-3-col">
+        {{#each items}}
+        <div class="{{#if @index}}rc-card{{else}}rc-primary-card{{/if}}" sryle="height: 286px;">
+            <div class="rc-card-header">Type</div>
+            <div class="rc-card-body">
+                <h4 class="rc-card-title">{{title}}</h4>
+            </div>
+            <div class="rc-card-footer">
+                <a class="rc-card-footer-action">Action</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
