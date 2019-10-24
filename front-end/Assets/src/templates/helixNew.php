@@ -41,13 +41,13 @@
 			 <div class="inner">
 				<div class="bannerContent flex-center ">
 				   <div class="layout-inner-wrap">
-					  <div class="flex-item col col-12 lg-col-3 md-col-5 sm-col-8 add-top-bottom-margin-82px">
+					  <div class="flex-item col col-12 lg-col-4 md-col-5 sm-col-6 add-top-bottom-margin-82px">
 						 <div class="banner-caption">
 							<div class="helix-logo">
 								<img class="" src="/front-end/Assets/src/img/bmchelix-oneline.png"> 
 							</div>
-							<h2 class="block-title black ">Know the Unknowns</h2>
-							<p class="block-text black ">Get more intelligence to see around corners for your operations and service management</p>
+							<h1 class="block-title">Know the Unknowns</h1>
+							<p class="block-text">Get more intelligence to see around corners for your operations and service management</p>
 							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet BMC Helix</a>
 							<!-- <a href="//www.youtube.com/embed/KTLWge6nTN0" class="play_link modal-video-player"><img src="/front-end/Assets/src/img/Icon - play.svg" alt="">PLAY</a>	 -->
 						 </div>
@@ -65,7 +65,7 @@
 			<div class="content"> 
 				<h2 class="block-title">Business and technology change constantly.<span class="lineStart" ></span></h2>				
 				<div>
-					<p class="block-text subTitleBlock">While you want to do smoething about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" ></span></p>				
+					<p class="block-text subTitleBlock">While you want to do something about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" ></span></p>				
 				</div>
 			</div>
 			<div class="content" > 
@@ -90,7 +90,7 @@
 					 	 <figure>
 					 		 <img src="/front-end/Assets/src/img/icon_smarter_IT.svg" alt="Smarter IT Functions">
 						</figure>	
-						<p>Power smarter IT functions for Discovery, Monitoring, Service, Remediation and optimization with AI/ML and predictive analytics.</p>				 	
+						<p>Power smarter IT functions for discovery, monitoring, service, remediation and optimization with AI/ML and predictive analytics.</p>				 	
 
 				   </section>
 				</div>
@@ -121,7 +121,8 @@
 	<section class="simple-pullqoute text-center ">
 		<div class="layout-inner-wrap">
 			<blockquote>
-					<p>BMC is closer to the magic recipe for integration than ever before.</p>
+					<p>The AI/ML can help you parse through the data and see if something is smoldering before you 
+					see flames.</p>
 					<hr class="shortSep">
 						<cite> Sr. IT Professional</cite>			 
 			</blockquote>
@@ -143,9 +144,9 @@
 					  <ul class="orange-tick-bullets">
 						 <li>One unified IT landscape to look at</li>
 						 <li>One integrated services and operations platform to manage</li>
-						 <li>One go-to for discovery capabilities — comprehensive for assets and clouds</li>
+						 <li>One go-to for discovery capabilities — comprehensive of assets and clouds</li>
 					  </ul>
-					  <p>So, you can know more about events & alerts, vulnerabilities, resource-spending and usage levels.</p>
+					  <p>So, you can know more about events and alerts, vulnerabilities, resource-spending, and usage levels.</p>
 					  <a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
 				   </section>
 				</div>
@@ -184,7 +185,7 @@
 		
 								<ul class="orange-tick-bullets">
 								<li>Automated ease and efficiency</li>
-								<li>Omni-channel experience across Slack, Chatbot, Skype and more</li>
+								<li>Omni-channel experience across Slack, Chatbot, Skype, and more</li>
 								<li>Flexibility as all features are available as a service</li>
 								</ul>
 								<a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
@@ -221,7 +222,7 @@
 						<p>With BMC Helix, you can take care of today, so you can take tomorrow to the next level.</p>
 						
 						<ul class="orange-tick-bullets">
-							<li>Know, scale and grow</li>
+							<li>Know, scale, and grow</li>
 							<li>Propel innovation and evolve your business</li>
 						</ul>
 						<a href="#product-list"  class="btn learn-more btn-blue">View BMC Helix Products</a>
@@ -251,7 +252,7 @@
 		<div class="layout-inner-wrap">
 			<div class="content">
 				<h3>Be <i>first</i> in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated IT services and operations platform</h3>
-				<a href="#product-list"  class=" btn learn-more btn-bg-white">View BMC Helix Products</a>
+				<a href="https://www.bmc.com/forms/contact-bmc.html?productInterest=helix"  class=" btn learn-more btn-bg-white">Connect with a BMC Helix Expert</a>
 			</div>
 		</div>
 	</div>
@@ -344,7 +345,7 @@
 							</div>
 							<div class="card-content">
 								<hr>
-								<h2>BMC Helix CloudCost</h2>
+								<h2>BMC Helix Cloud Cost</h2>
 								<p>Provides visibility and control to optimize multi-cloud costs</p>
 							</div>
 							<div class="card-footer">
