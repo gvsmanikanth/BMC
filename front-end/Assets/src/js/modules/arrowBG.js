@@ -1,6 +1,5 @@
 ;( function($) {
 	if ($('body').hasClass('arrow_bg_landing_page')) {
-		alert('apna page');
 		var CanvasBGArrowInner = function (parentDivID){
 				var parentDiv = document.getElementById(parentDivID);//"arrowBG");
 				var canvas = document.createElement("canvas");
