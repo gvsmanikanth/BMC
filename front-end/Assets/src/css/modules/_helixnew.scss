@@ -54,7 +54,7 @@
 // Welcome Section Starts
 
 	.welcome-section{
-		padding: 3rem;
+		padding: 4rem 3rem;
 		padding-top: 1rem;
 		@media (max-width: $tablet) {
 			padding: 1rem;
@@ -67,7 +67,7 @@
 			@media (min-width: 640px) {
 				width: 70%; 
 				padding-left:15%;
-				padding-top: 1rem;
+				padding-top: 2rem;
 			}								
 			.block-title{
 				font-size: 2.3rem;
@@ -216,19 +216,53 @@
 				background-position: 50% 0;
 				padding-bottom: 1rem;
 			}
-			@media (min-width: $break-md) {
-				max-width: 80%;
+			@media (min-width: $break-sm) {
+				max-width: 65%;
 				padding: 3rem 4rem;
 				background-position: 7% 0;
 			}
+			@media (max-width: 640px) {
+				padding-top: 1rem;
+			}
+
 			margin: auto;
 			p {
-				font-size: 1.7rem;
-				@media (max-width: $tablet) {
-					font-size: 1.4rem;
-				}
-				font-style: italic;
+				font-size: 40px;
+				font-style: normal;
 				margin: 0;
+				position: relative;
+				font-weight: 600;
+				@media (max-width: $tablet) {
+					font-size: 28px;
+				}
+				span.quote_icon{
+						position: absolute;
+						left: -76px;
+						top: -50px;
+						font-size: 240px;
+						font-style: italic;
+						color: #E0EFF6;
+						-webkit-transform: rotateZ(180deg);
+						-ms-transform: rotate(180deg);
+						transform: rotateZ(180deg);
+						line-height: 10px;
+						@media (max-width: 640px) {
+							position: relative;
+							left: 0;
+							top: 0;
+							font-size: 240px;
+							font-style: italic;
+							color: #E0EFF6;	
+							display: inline-block;
+							width: 100%;
+							text-align: center;
+						}
+					
+				}	
+				@media (max-width: 640px) {
+					text-align: center;
+					font-size: 26px;
+				}			
 			}
 			hr.shortSep {
 				width: 64px;
@@ -237,8 +271,18 @@
 			}
 			cite {
 				font-style: normal;
-				font-weight: 700;
-				font-size: 24px;
+				font-weight: 600;
+				font-size: 22px;
+				float: right;
+				padding-right: 30px;
+				padding-top: 20px;
+				@media (max-width: 640px) {
+					font-size: 20px;
+					float: none;
+					padding-right: 0;
+					padding-top: 20px;
+					display: block;
+				}
 			}
 		}
 	}

@@ -39,7 +39,7 @@
 	   style="background-color:#1f2b90;">
 		  <div class="offset-wrapper flex-center js-content-center-item"> 
 			 <div class="inner">
-				<div class="bannerContent flex-center ">
+				<div class="bannerContent flex-center " style="min-height: 550px;">
 				   <div class="layout-inner-wrap">
 					  <div class="flex-item col col-12 lg-col-4 md-col-5 sm-col-6 add-top-bottom-margin-82px">
 						 <div class="banner-caption">
@@ -81,7 +81,7 @@
 	   <section class="layout-inner-wrap" id="introducing_BMC_helix">
 			<div class="feature-head">
 					<h2 class="block-title">Introducing BMC Helix</h2>
-					<p class="block-text">The first and only IT services and operations platform that’s integrated with 360-degree intelligence.</p>
+					<p class="block-text">The first and only IT service and operations platform that’s integrated with 360-degree intelligence.</p>
 			</div>	  		
 			 <div class="flex-wrap flex-justify-center py2">
 				<div class="flex-item sm-col-6 md-col-4 feature-block ">
@@ -118,13 +118,11 @@
 	</div>
 	
 	<!-- Quote -->
-	<section class="simple-pullqoute text-center ">
+	<section class="simple-pullqoute text-left ">
 		<div class="layout-inner-wrap">
 			<blockquote>
-					<p>The AI/ML can help you parse through the data and see if something is smoldering before you 
-					see flames.</p>
-					<hr class="shortSep">
-						<cite> Sr. IT Professional</cite>			 
+					<p> <span class="quote_icon" >"</span> <span>The AI/ML can help you parse through the data and see if something is smoldering before you 
+					see flames.</span> <cite> Sr. IT Professional</cite></p>												 
 			</blockquote>
 		</div>		  
 	</section>
