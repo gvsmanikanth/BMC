@@ -33,6 +33,25 @@
       cursor: pointer;
     }
 
+    .keyword-search input {
+      width: 100%;
+      border: 0px;
+    }
+    .keyword-search input {
+      &::-webkit-input-placeholder {
+        color: #29a5d6;
+      }
+      &:-ms-input-placeholder {
+        color: #29a5d6;
+      }
+      &::-ms-input-placeholder {
+        color: #29a5d6;
+      }
+      &::placeholder {
+        color: #29a5d6;
+      }
+    }
+
     .list-group li.active {
       border-right: solid;
     }
@@ -48,12 +67,13 @@
 }
 
 // Customized UI for Resource Center Cards
-.rc-cards-3-col {
-  @extend %cards-wrap;
-  align-items: center;
-  justify-content: center;
-  padding-top: .5em;
-  padding-bottom: .5em;
+.rc-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-block-start: 15px;
+  padding-block-end: 15px;
   
   @include media(breakpointSmall) {
     justify-content: space-around;
@@ -63,17 +83,15 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  
-  h2 {
-    margin-bottom: auto;
-  }
 
   .rc-primary-card {
-     width:100%;
-     background: white;
-     border: 1px solid #ddd;
-     transition: all 0.2s ease-in-out;
-     display: inline-block;
+    width:100%;
+    background: white;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    padding-block-end: 15px;
+    padding-block-start: 15px;
 
     img, figcaption {
       @include box-sizing();
@@ -86,11 +104,34 @@
     img {
       width: 100%;
       
+    }
+  }
+
+  .rc-card-col {
+    flex: 0 0 33.33%;
+    max-width:33.33%;
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+
+    @include media(breakpointSmall) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    @include media(breakpointMedium) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @include media(breakpointLarge) {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
     }
   }
 
   .rc-card {
-     margin: 1em;
      width:100%;
      background: white;
      border: 1px solid #ddd;
@@ -108,39 +149,6 @@
     img {
       width: 100%;
       
-    }
-    
-    @include media(breakpointMedium) {
-      max-width: none;
-      width: 42%;
-      display: inline-block;
-      img {
-        max-width: none;
-        padding: 0;
-      }   
-    }
-
-    @include media(breakpointLarge) {
-      margin: 1em;
-      width: 27%;
-      display: inline-block;
-      img,
-      figcaption {
-        float: none;
-        margin: 0;
-      }
-    }
-    @include media(breakpointExtraLarge) {
-      display: inline-block;
-      img,
-      figcaption {
-        margin: 0;
-        width: 100%;
-      }
-
-      img {
-        padding: 0;
-      }
     }
   }
   .rc-card-body {

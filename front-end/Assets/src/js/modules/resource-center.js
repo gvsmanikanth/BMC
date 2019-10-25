@@ -2,6 +2,7 @@ ResourceCenterFilters = {
 
     init: function () {
         this.$component = $('.rc-filter-component');
+        this.$keywordSearch= $('.keyword-search input');
         this.$filter = $('.filter-checkbox-item li');
         this.$dataResults = [];
         //this.initFilters();
@@ -11,7 +12,15 @@ ResourceCenterFilters = {
 
     bindEvents: function () {
         this.setResetFilterClickEvent();
+        this.setKeywordSearchEvent();
         this.setFilterClickEvent();
+    },
+
+    setKeywordSearchEvent: function () {
+        var self = this;
+        this.$keywordSearch.on('keyup', function () {
+            self.loadData();
+        });
     },
 
     setFilterClickEvent: function () {
@@ -30,8 +39,6 @@ ResourceCenterFilters = {
               self.loadData();
         });
         
-
-              
               //  buildurl
               //  call ajax
               //  setUrlSelectors
@@ -63,6 +70,13 @@ ResourceCenterFilters = {
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             url += '&filter=' + $(this).attr('data-name');
         });
+        var keywords = $(".keyword-search").find('input').val().split(' ');
+        for (i = 0; i < keywords.length; i += 1) {
+            if (keywords[i] != '') {
+                url += '&keyword=' + keywords[i];
+            }
+        }
+        history.replaceState(null, null, '#rootPath=/content/bmc/us/en' + url);
         return path + url;
     },
 
