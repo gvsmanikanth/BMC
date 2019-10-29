@@ -10,4 +10,7 @@ public class JcrConsts {
     public static final String EXTERNAL_ASSET_LINK = "jcr:content/linkAbstractorExternalAsset";
     public static final String DAM_ASSET_LINK = "jcr:content/linkAbstractorDAMAsset";
     public static final String DESCRIPTION = "jcr:content/jcr:description";
+    public static final String CONTENT_TYPE = "jcr:content/ic-content-type";
+    public static final String THUMBNAIL = "jcr:content/thumbnail";
+
 }

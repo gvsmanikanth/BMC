@@ -1,5 +1,7 @@
 package com.bmc.models.bmccontentapi;
 
+import java.util.Map;
+
 public class BmcContent {
 
     private long index;
@@ -9,9 +11,12 @@ public class BmcContent {
     private String created;
     private String lastModified;
     private String assetLink;
+    private String thumbnail;
+    private BmcContentType type;
+    private Map<String, String> metadata;
 
-
-    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, String assetLink) {
+    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
+            String assetLink, String thumbnail, String type, String labelType, Map<String, String> metadata) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -19,6 +24,9 @@ public class BmcContent {
         this.created = created;
         this.lastModified = lastModified;
         this.assetLink = assetLink;
+        this.thumbnail = thumbnail;
+        this.type = new BmcContentType(type, labelType);
+        this.metadata = metadata;
     }
 
     public long getIndex() {
@@ -75,5 +83,56 @@ public class BmcContent {
 
     public void setAssetLink(String assetLink) {
         this.assetLink = assetLink;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public BmcContentType getType() {
+        return type;
+    }
+
+    public void setType(BmcContentType type) {
+        this.type = type;
+    }
+
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
+    public class BmcContentType {
+
+        private String id;
+        private String label;
+
+        public BmcContentType(String id, String label) {
+            this.id = id;
+            this.label = label;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getLabel() {
+            return label;
+        }
+
+        public void setLabel(String label) {
+            this.label = label;
+        }
     }
 }

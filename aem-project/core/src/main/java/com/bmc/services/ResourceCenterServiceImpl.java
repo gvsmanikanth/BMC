@@ -1,33 +1,43 @@
 package com.bmc.services;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.jcr.Node;
+import javax.jcr.Session;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Properties;
+import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.api.resource.ValueMap;
+import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.component.ComponentContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.bmc.consts.GeneralConsts;
 import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
+import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.pum.PUMService;
-import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.util.JsonSerializer;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import org.apache.felix.scr.annotations.*;
-import org.apache.felix.scr.annotations.Properties;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.resource.ValueMap;
-import org.apache.sling.commons.osgi.PropertiesUtil;
-import org.osgi.service.cm.ConfigurationAdmin;
-import org.osgi.service.component.ComponentContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.jcr.Node;
-import javax.jcr.Session;
-import java.util.*;
 
 @Component(label = "Resource Center Service", metatype = true)
 @Service(value=ResourceCenterService.class)
@@ -67,8 +77,10 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     @Reference
     private ConfigurationAdmin configAdmin;
-    
-    
+
+    @Reference
+    private ResourceService baseImpl;
+
     @Activate
     protected void activate(final Map<String, Object> props, ComponentContext context) {
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
@@ -350,8 +362,26 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         if(assetLink == null && hit.getNode().hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
                         	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
                         }
+                        String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                        //  content type
+                        String contentType = hit.getNode().hasProperty(JcrConsts.CONTENT_TYPE)
+                                ? hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
+                        String labelType = baseImpl.getTitle("ic-content-type", contentType, 
+                                hit.getResource().getResourceResolver());
+                        //  metadata
+                        Map<String, String> metadata = new HashMap<>();
+                        for (String property : baseImpl.getPropertyNames()) {
+                            if(hit.getNode().hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
+                                javax.jcr.Property prop = hit.getNode().getProperty(JcrConsts.JCR_CONTENT + "/" + property);
+                                if (prop.isMultiple()) {
+                                    metadata.put(property, StringUtils.join(prop.getValues(), '|'));
+                                } else {
+                                    metadata.put(property, prop.getValue().getString());
+                                }
+                            }
+                        }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink));
+                                lastModified, assetLink, thumbnail, contentType, labelType, metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
