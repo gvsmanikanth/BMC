@@ -84,14 +84,12 @@
     justify-content: flex-start;
   }
 
-  .rc-primary-card {
-    width:100%;
-    background: white;
-    border: 1px solid #ddd;
-    transition: all 0.2s ease-in-out;
-    display: inline-block;
-    padding-block-end: 15px;
-    padding-block-start: 15px;
+  .rc-primary-card-col {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
 
     img, figcaption {
       @include box-sizing();
@@ -163,8 +161,13 @@
     margin-bottom: .75rem;
   }
 
+  .rc-card-img-top {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+  }
+
   .rc-card-header {
-    padding: .75rem 1.25rem;;
+    padding: .75rem 1.25rem;
     margin-bottom: 0; // Removes the default margin-bottom of <hN>
     color: #29a5d6;
     text-transform: uppercase;

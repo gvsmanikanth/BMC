@@ -145,8 +145,14 @@ ResourceCenterResults = {
             var source = $('#resultItemsTemplate').html();
             var template;
             var html;
+            var index = 0;
+            var curr;
             if (source) {
                 template = Handlebars.compile(source);
+                for (index; index < results.length; index += 1) {
+                  curr = results[index];
+                  curr.linkType = 'ic_download';
+                }
                 html = template({
                     items: results
                 });
