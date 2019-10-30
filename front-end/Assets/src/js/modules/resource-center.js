@@ -33,18 +33,9 @@ ResourceCenterFilters = {
                   $('#checkbox-' + this.id).attr('checked', true);
                   $(this).addClass('active');
               }
-              $(".filter-checkbox-item").find('input[checked]').each(function () {
-                console.log($(this).attr('data-name') + $(this).attr('value'));
-              });
               self.loadData();
+              self.updateHeader();
         });
-        
-              //  buildurl
-              //  call ajax
-              //  setUrlSelectors
-              //  applyFilters
-
-        //  resetFilter
     },
 
     resetFilter: function () {
@@ -62,6 +53,19 @@ ResourceCenterFilters = {
 //            self.resetFilter(true);
 //            self.loadData();
 //        });
+    },
+
+    updateHeader: function () {
+        var label = '';
+        $('.js-filter-title').html('');
+        $(".filter-checkbox-item").find('input[checked]').each(function () {
+            $('.js-filter-title').append('<span class="' + "badge-filter-title" + '">' + $('#' + $(this).attr('data-name')).text() + '</span>');
+        });
+        if ($('.js-filter-title span').size() > 0) {
+          $('.empty-filter').attr('hidden', true);
+        } else {
+          $('.empty-filter').removeAttr('hidden');
+        }
     },
 
     buildUrl: function () {
@@ -119,6 +123,12 @@ ResourceCenterResults = {
     init: function () {
         this.$component = $('.rc-result-component');
         this.$container = $('#resultItemsContainer');
+        this.$resultsInfo = $('.results-info');
+        this.$resultsPage = $('.js-results-page');
+        this.$resultPage = $('.result-page');
+        this.$currentPage = 1;
+        this.$currentItems = 0;
+        this.$totalItems = 0;
         this.$dataResults = [];
         //this.initFilters();
         this.bindEvents();
@@ -126,21 +136,33 @@ ResourceCenterResults = {
     },
 
     bindEvents: function () {
-        //this.setResetFilterClickEvent();
-        //this.setFilterClickEvent();
         this.setClearEvents();
+        this.setPaginationEvents();
         this.setRenderResultsEvents();
     },
 
     setClearEvents: function () {
-        this.$container.on( "filterClearResultsEvent", function() {
-            $('#resultItemsContainer').html('');
+        var self = this;
+        this.$container.on( "filterClearResultsEvent", function(event) {
+            self.$currentPage = 1;
+            self.$currentItems = 0;
+            self.$totalItems = 0;
+            self.$container.html('');
+            self.$resultsPage.html('');
             //  hide no results messages
             $('.no-results').attr('hidden', true);
         });
     },
 
+    setPaginationEvents: function () {
+        var self = this;
+        this.$resultPage.click(function () {
+            log.console($(this));
+        });
+    },
+
     setRenderResultsEvents: function () {
+        var self = this;
         this.$container.on( "filterResultsLoadedEvent", function(event, results) {
             var source = $('#resultItemsTemplate').html();
             var template;
@@ -156,11 +178,26 @@ ResourceCenterResults = {
                 html = template({
                     items: results
                 });
-                $('#resultItemsContainer').append(html);
+                self.$container.append(html);
+                self.$currentItems += results.length;
+                self.$totalItems += 100;
+                self.$resultsInfo.text(self.formatString(self.$resultsInfo.data('template'), 
+                  self.$currentItems * (self.$currentPage - 1), self.$currentItems, 100));
+                for (k = 0; k < self.$totalItems / 10; k += 1) {
+                   self.$resultsPage.append('<span><a class="result-page" href="#">' + (k+1) + '</a></span>'); 
+                }
+                self.$resultsPage.append('<span><a class="result-page" href="#">' + '>' + '</a></span>'); 
             }
         });
     },
 
+    formatString: function (format) {
+        var k;
+        for (k = 0; k < arguments.length; k += 1) {
+            format = format.replace('{' + k + '}', arguments[k]);
+        }
+        return format;
+    }
 };
 
 if ($('.rc-result-component').length) {

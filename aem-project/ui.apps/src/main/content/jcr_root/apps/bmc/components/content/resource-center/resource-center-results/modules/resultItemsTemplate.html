@@ -1,7 +1,7 @@
 <div class="resource-results">
     <div class="rc-card-row">
         {{#each items}}
-        <div class="{{#if @index}}rc-card-col{{else}}rc-primary-card-col{{/if}}">
+        <div class="rc-card-col">
             <div class="rc-card" style="height: 286px;">
                 {{#if thumbnail}}
                 <div class="rc-card-img-top overflow-hidden" style="height: 8.4rem;">
@@ -14,6 +14,7 @@
                     <h4 class="rc-card-title">{{title}}</h4>
                 </div>
                 <div class="rc-card-footer">
+                    {{#if assetLink}}
                     <a class="rc-card-footer-action" href="{{assetLink}}">
                         <svg class="align-middle" style="width: 1.2rem; height: 1.2rem;">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
@@ -24,6 +25,7 @@
                         ${'Download' @ i18n}
                        {{/ifCond}}
                     </a>
+                    {{/if}}
                 </div>
             </div>
         </div>

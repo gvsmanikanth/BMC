@@ -43,13 +43,17 @@
                         </sly>
                     </div>
                 </div>
-                <div class="aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn layout-secondary  p1 py2">
+                <div class="aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn layout-secondary py2">
                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 panel-group">
-                        <div data-sly-test="${!wcmmode.edit}" class="rc-filter-top-bar">
-                            <div class="filterheadering">
-                                <span style="text-transform: uppercase;font-weight: bold;">${'Filters' @ i18n}</span>
+                        <div data-sly-test="${!wcmmode.edit}">
+                            <div class="rc-filter-header">
+                                <span class="main-title">${'Filters' @ i18n}</span>
                                 <span class="verticalBar">|</span>
-                                <span style="font-size: smaller;color: black;">Select your filter on the left</span>
+                                <span class="empty-filter">${'Select your filter on the left' @ i18n}</span>
+                                <div class="js-filter-title inline-block"></div>
+                                <div class="inline-block" style="float: right;">
+                                    <a class="reset-btn" href="#">${'Reset Filters' @ i18n}</a>
+                                </div>
                             </div>
                         </div>
                         <sly data-sly-resource="${'results' @ resourceType='wcm/foundation/components/responsivegrid'}" />
@@ -59,6 +63,3 @@
         </section>
     </form>
 </div>
-
-
-<!-- <script id="filtersTemplate" type="text/x-handlebars-template" data-sly-include="modules/filtersTemplate.html"></script> -->

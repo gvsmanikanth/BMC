@@ -57,23 +57,80 @@
     }
 }
 
-.rc-filter-top-bar {
+.rc-filter-header {
   border: 1px solid #ddd; /* Add a thin border to each list item */
   margin-top: -1px; /* Prevent double borders */
   padding: 12px; /* Add some padding */
   margin-bottom: 0px;
   color: #177ba2;
   background: white;
+
+  .main-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: initial;
+  }
+
+  .empty-filter {
+    font-size: smaller;
+    color: #a7a9ab;
+  }
+
+  .badge-filter-title {
+    margin-right: 2px;
+    margin-left: 2px;
+    display: inline-block;
+    background-color: white;
+    padding: .25em .4em;
+    font-size: 65%;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-radius: 10rem;
+    color: #29a5d6;
+    border: 1px solid #29a5d6;
+  }
+
+  .reset-btn {
+    color: #177ba2;
+    border-style: solid;
+    border-width: 2px;
+    font-weight: bold;
+    font-size: initial;
+    padding: 6px;
+    cursor: pointer;
+  }
+}
+
+.rc-result-header {
+  border: 1px solid #ddd; /* Add a thin border to each list item */
+  margin-top: -1px; /* Prevent double borders */
+  padding: 12px; /* Add some padding */
+  margin-bottom: 0px;
+  color: #177ba2;
+  background: white;
+
+  .results-info {
+    font-size: small;
+    color: black;
+  }
+
+  .pages-info {
+    font-size: small;
+    color: black;
+  }
+
+  .result-page {
+    padding: 5px;
+    font-size: small;
+  }
 }
 
 // Customized UI for Resource Center Cards
 .rc-card-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
   padding-block-start: 15px;
-  padding-block-end: 15px;
+  margin-right: -20px;
   
   @include media(breakpointSmall) {
     justify-content: space-around;
@@ -84,12 +141,10 @@
     justify-content: flex-start;
   }
 
-  .rc-primary-card-col {
+  .rc-featured-card-col {
     flex: 0 0 100%;
     box-sizing: border-box;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 15px;
+    padding-right: 20px;
 
     img, figcaption {
       @include box-sizing();
@@ -109,9 +164,8 @@
     flex: 0 0 33.33%;
     max-width:33.33%;
     box-sizing: border-box;
-    padding-right: 15px;
-    padding-left: 15px;
     padding-bottom: 15px;
+    padding-right: 20px;
 
     @include media(breakpointSmall) {
       flex: 0 0 100%;
@@ -131,7 +185,7 @@
 
   .rc-card {
      width:100%;
-     background: white;
+     background-color: white;
      border: 1px solid #ddd;
      transition: all 0.2s ease-in-out;
      display: inline-block;

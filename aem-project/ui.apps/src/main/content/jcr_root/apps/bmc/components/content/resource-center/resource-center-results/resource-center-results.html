@@ -1,7 +1,38 @@
 <div data-sly-test="${wcmmode.edit}">[ Edit ${component.title} Component ]</div>
+<sly data-sly-use.helper="${'com.bmc.models.components.resourcecenter.ResourceCenterFeaturedCardModel'}"></sly>
+<sly data-sly-test.featuredCard="${helper.card}"/>
+
+<sly data-sly-use.FeaturedCardBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='fb'}"/>
+<sly data-sly-test.fbImg="${FeaturedCardBgImgChildProps.ChildProperties['fileReference']}"/>
 
 <div data-sly-test="${!wcmmode.edit}" class="rc-result-component">
     <div class="container pb-4">
+        <div class="rc-result-header">
+            <span class="results-info" data-template="${'Showing {1} - {2} of {3}' @ i18n}"></span>
+            <div style="float: right;">
+                <span class="pages-info">${'Results Page' @ i18n}</span>
+                <div class="js-results-page inline-block"></div>
+                <span class="verticalBar">|</span>
+            </div>
+        </div>
+        <div data-sly-test="${featuredCard}" class="rc-card-row">
+            <div class="rc-featured-card-col">
+                <div class="rc-card" style="height: 286px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-color: white;">
+                    <div class="rc-card-header">${featuredCard.type.label}</div>
+                    <div class="rc-card-body">
+                        <h4 class="rc-card-title">${featuredCard.title}</h4>
+                    </div>
+                    <div class="rc-card-footer">
+                        <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action" href="${featuredCard.assetLink}">
+                            <svg class="align-middle" style="width: 1.2rem; height: 1.2rem;">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-ic_download"></use>
+                            </svg>
+                            ${'Download' @ i18n}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="resultItemsContainer"></div>
         <div class="no-results col-12 text-left p-0 d-none" hidden>
             <p>${properties.noResultLabel || "We're sorry, it seems like we can't find any results that match." @ i18n}</p>
