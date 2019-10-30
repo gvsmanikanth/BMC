@@ -69,7 +69,8 @@ ResourceCenterFilters = {
     },
 
     buildUrl: function () {
-        var path = '/bin/contentapi/content?rootPath=/content/bmc/us/en';
+        var rootPath = this.getRootPath();
+        var path = '/bin/contentapi/content?rootPath=' + rootPath;
         var url = '';
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             url += '&filter=' + $(this).attr('data-name');
@@ -80,8 +81,14 @@ ResourceCenterFilters = {
                 url += '&keyword=' + keywords[i];
             }
         }
-        history.replaceState(null, null, '#rootPath=/content/bmc/us/en' + url);
+        history.replaceState(null, null, '#' + url);
         return path + url;
+    },
+
+    getRootPath: function () {
+        var url = window.location.pathname;
+        var pagename = url.substring(0, url.lastIndexOf('/'));
+        return pagename;
     },
 
     loadData: function () {
