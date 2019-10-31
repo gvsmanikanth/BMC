@@ -9,7 +9,10 @@
                     </div>
                 </div>
                 {{/if}}
-                <div class="rc-card-header">{{type.label}}</div>
+                <div class="rc-card-header">
+                    <span class="inline-block">{{type.label}}</span>
+                    <span class="{{linkType}}" style="float: right;width: 35px; height: 50px;"></span>
+                </div>
                 <div class="rc-card-body">
                     <h4 class="rc-card-title">{{title}}</h4>
                 </div>

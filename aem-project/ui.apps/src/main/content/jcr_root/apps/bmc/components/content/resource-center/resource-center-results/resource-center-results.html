@@ -13,12 +13,21 @@
                 <span class="pages-info">${'Results Page' @ i18n}</span>
                 <div class="js-results-page inline-block"></div>
                 <span class="verticalBar">|</span>
+                <div class="inline-block">
+                    <select id="order_select" class="rc-sort-select">
+                        <option value="modified">Sort By Recent</option>
+                        <option value="title">Sort By Title</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div data-sly-test="${featuredCard}" class="rc-card-row">
             <div class="rc-featured-card-col">
                 <div class="rc-card" style="height: 286px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-color: white;">
-                    <div class="rc-card-header">${featuredCard.type.label}</div>
+                    <div class="rc-card-header">
+                        <span class="inline-block">${featuredCard.type.label}</span>
+                        <span class="ic_download" style="float: right;width: 35px; height: 50px;"></span>
+                    </div>
                     <div class="rc-card-body">
                         <h4 class="rc-card-title">${featuredCard.title}</h4>
                     </div>
@@ -44,4 +53,3 @@
 </div>
 
 <script id="resultItemsTemplate" type="text/x-handlebars-template" data-sly-include="modules/resultItemsTemplate.html"></script>
-

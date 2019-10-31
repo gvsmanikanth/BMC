@@ -123,6 +123,14 @@
     padding: 5px;
     font-size: small;
   }
+
+  .rc-sort-select {
+    color: #29a5d6 !important;
+    border: 0px;
+    background: white;
+    text-transform: uppercase;
+    font-size: initial;
+  }
 }
 
 // Customized UI for Resource Center Cards
@@ -233,6 +241,18 @@
         border-top: 0;
       }
     }
+  }
+
+  .ic_play {
+    background-image: url("ic_play.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    }
+
+  .ic_download {
+    background-image: url("ic_download.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 
   .rc-card-footer {

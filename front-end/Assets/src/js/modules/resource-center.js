@@ -14,6 +14,7 @@ ResourceCenterFilters = {
         this.setResetFilterClickEvent();
         this.setKeywordSearchEvent();
         this.setFilterClickEvent();
+        this.setOrderByEvent();
     },
 
     setKeywordSearchEvent: function () {
@@ -35,6 +36,13 @@ ResourceCenterFilters = {
               }
               self.loadData();
               self.updateHeader();
+        });
+    },
+
+    setOrderByEvent: function () {
+        var self = this;
+        $('.rc-sort-select').change(function () {
+            self.loadData();
         });
     },
 
@@ -81,7 +89,12 @@ ResourceCenterFilters = {
                 url += '&keyword=' + keywords[i];
             }
         }
+        var order = $( "#order_select option:selected" ).val();
+        url += "&sortCriteria=" + order;
+        
+        // change url
         history.replaceState(null, null, '#' + url);
+
         return path + url;
     },
 
@@ -140,6 +153,11 @@ ResourceCenterResults = {
         //this.initFilters();
         this.bindEvents();
         //this.loadData();
+
+        //  TODO: unwrap selects decorator
+        setTimeout(function() { 
+            $('.rc-result-header select').unwrap('<div class="decorator-select"></div>'); 
+        }, 1000);
     },
 
     bindEvents: function () {
@@ -180,16 +198,20 @@ ResourceCenterResults = {
                 template = Handlebars.compile(source);
                 for (index; index < results.length; index += 1) {
                   curr = results[index];
-                  curr.linkType = 'ic_download';
+                  if (curr.type.id === 'ic-type-185980791') {
+                    curr.linkType = 'ic_play';  
+                  } else {
+                    curr.linkType = 'ic_download';
+                  }
                 }
                 html = template({
                     items: results
                 });
                 self.$container.append(html);
                 self.$currentItems += results.length;
-                self.$totalItems += 100;
+                self.$totalItems += results.length; // TODO: include total in content API
                 self.$resultsInfo.text(self.formatString(self.$resultsInfo.data('template'), 
-                  self.$currentItems * (self.$currentPage - 1), self.$currentItems, 100));
+                  self.$currentItems * (self.$currentPage - 1) + 1, self.$currentItems, self.$totalItems));
                 for (k = 0; k < self.$totalItems / 10; k += 1) {
                    self.$resultsPage.append('<span><a class="result-page" href="#">' + (k+1) + '</a></span>'); 
                 }
