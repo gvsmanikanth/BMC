@@ -32,6 +32,18 @@
                                         min="{Long}1"
                                         multiple="{Boolean}true"
                                         name="./pageSize"/>
+                                    <noResultsLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Default Value: We're sorry, it seems like we can't find any results."
+                                        fieldLabel="No Results Label"
+                                        name="./noResultLabel"/>
+                                    <errorLabel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
+                                        fieldDescription="Default Value: Oops, please try again. It looks like we may be experiencing some technical issues"
+                                        fieldLabel="Error Label"
+                                        name="./errorLabel"/>
                                 </items>
                             </column>
                         </items>

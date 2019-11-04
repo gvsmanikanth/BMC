@@ -14,7 +14,29 @@
                 <items jcr:primaryType="nt:unstructured">
                     <tab-0
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Filter Config"
+                        jcr:title="Config"
+                        margin="{Boolean}true"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <filter
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                        defaultChecked="{Boolean}true"
+                                        name="./keywordSearch"
+                                        text="Enable Search"
+                                        fieldDescription="Ticking to enabled keyword search."
+                                        value="{Boolean}true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </tab-0>
+                    <tab-1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Filters"
                         margin="{Boolean}true"
                         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                         <items jcr:primaryType="nt:unstructured">
@@ -602,7 +624,7 @@
                                 </items>
                             </column>
                         </items>
-                    </tab-0>
+                    </tab-1>
                 </items>
             </tabs>
         </items>

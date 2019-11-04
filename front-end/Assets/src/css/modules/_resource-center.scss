@@ -215,7 +215,7 @@
     // Enable `flex-grow: 1` for decks and groups so that card blocks take up
     // as much space as possible, ensuring footers are aligned to the bottom.
     flex: 1 1 auto;
-    padding: 1.25rem;
+    padding: .75rem 1.25rem;
     height: 50%;
   }
 
@@ -224,8 +224,11 @@
   }
 
   .rc-card-img-top {
-    padding: .75rem 1.25rem;
     margin-bottom: 0;
+  }
+
+  .rc-card-header-icon {
+    padding: .75rem 1.25rem;
   }
 
   .rc-card-header {
@@ -247,12 +250,18 @@
     background-image: url("ic_play.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    float: right;
+    width: 35px; 
+    height: 50px;
     }
 
   .ic_download {
     background-image: url("ic_download.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    float: right;
+    width: 35px; 
+    height: 50px;
   }
 
   .rc-card-footer {
@@ -275,4 +284,8 @@
     margin-bottom: 10px;
     color: #177ba2;
   }
+}
+
+.text-white {
+  color: white;  
 }

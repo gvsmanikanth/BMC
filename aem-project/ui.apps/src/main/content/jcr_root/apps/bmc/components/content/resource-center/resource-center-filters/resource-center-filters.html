@@ -8,7 +8,7 @@
                 <div class="aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary p1 py2">
                     <div data-sly-test="${wcmmode.edit}">[ Edit Filters to Display ]</div>
                     <div data-sly-test="${!wcmmode.edit}" class="aem-Grid aem-Grid--12 aem-Grid--default--12">
-                        <div class="rc-filter-panel-group mb2">
+                        <div data-sly-test="${properties.keywordSearch}" class="rc-filter-panel-group mb2">
                             <div class="heading-group bg-white">
                                 <ul class="list-group-item list-group-item-action">
                                     <li class="list-group-item list-group-item-action">${'Search' @ i18n}</li>

@@ -4,6 +4,7 @@ ResourceCenterFilters = {
         this.$component = $('.rc-filter-component');
         this.$keywordSearch= $('.keyword-search input');
         this.$filter = $('.filter-checkbox-item li');
+        this.$resultContainer = $('#resultItemsContainer');
         this.$dataResults = [];
         //this.initFilters();
         this.bindEvents();
@@ -47,20 +48,22 @@ ResourceCenterFilters = {
     },
 
     resetFilter: function () {
+        // TODO: reste filter avlues
         this.resetResults()
     },
 
     resetResults: function () {
-        $('#resultItemsContainer').trigger("filterClearResultsEvent");
+        this.$resultContainer.trigger("filterClearResultsEvent");
     },
 
     setResetFilterClickEvent: function () {
-//        var self = this;
-//        $('.reset-btn').click(function (event) {
-//            event.preventDefault();
-//            self.resetFilter(true);
-//            self.loadData();
-//        });
+        var self = this;
+        $('.reset-btn').click(function (event) {
+            event.preventDefault();
+            self.resetFilter();
+            self.updateHeader();
+            self.loadData();
+        });
     },
 
     updateHeader: function () {
@@ -83,11 +86,13 @@ ResourceCenterFilters = {
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             url += '&filter=' + $(this).attr('data-name');
         });
-        var keywords = $(".keyword-search").find('input').val().split(' ');
-        for (i = 0; i < keywords.length; i += 1) {
-            if (keywords[i] != '') {
-                url += '&keyword=' + keywords[i];
-            }
+        if ($(".keyword-search").length > 0) {
+          var keywords = $(".keyword-search").find('input').val().split(' ');
+          for (i = 0; i < keywords.length; i += 1) {
+              if (keywords[i] != '') {
+                  url += '&keyword=' + keywords[i];
+              }
+          }
         }
         var order = $( "#order_select option:selected" ).val();
         url += "&sortCriteria=" + order;
@@ -116,21 +121,21 @@ ResourceCenterFilters = {
                 }
                 if (res.length === 0) {
                     self.resetResults();
-                    $('.no-results').removeAttr('hidden');
+                    self.$resultContainer.trigger("showNoResultsMsgEvent");
                 } else {
                     self.$dataResults = res;
                     self.loadResults(res);
                 }
             },
             error: function () {
-                //
+                self.$resultContainer.trigger("showErrorMsgEvent");
             }
         });
     },
 
     loadResults: function (res) {
         this.resetResults();
-        $('#resultItemsContainer').trigger("filterResultsLoadedEvent", [res]);
+        this.$resultContainer.trigger("filterResultsLoadedEvent", [res]);
     }
 };
 
@@ -143,6 +148,8 @@ ResourceCenterResults = {
     init: function () {
         this.$component = $('.rc-result-component');
         this.$container = $('#resultItemsContainer');
+        this.$errorCall = $('.error-call');
+        this.$noResults = $('.no-results');
         this.$resultsInfo = $('.results-info');
         this.$resultsPage = $('.js-results-page');
         this.$resultPage = $('.result-page');
@@ -164,18 +171,21 @@ ResourceCenterResults = {
         this.setClearEvents();
         this.setPaginationEvents();
         this.setRenderResultsEvents();
+        this.showError();
+        this.noResults();
     },
 
     setClearEvents: function () {
         var self = this;
-        this.$container.on( "filterClearResultsEvent", function(event) {
+        this.$container.on("filterClearResultsEvent", function(event) {
             self.$currentPage = 1;
             self.$currentItems = 0;
             self.$totalItems = 0;
             self.$container.html('');
             self.$resultsPage.html('');
-            //  hide no results messages
-            $('.no-results').attr('hidden', true);
+            //  hide error / no results messages
+            self.$errorCall.attr('hidden', true);
+            self.$noResults.attr('hidden', true);
         });
     },
 
@@ -226,6 +236,20 @@ ResourceCenterResults = {
             format = format.replace('{' + k + '}', arguments[k]);
         }
         return format;
+    },
+
+    showError: function () {
+        var self = this;
+        this.$container.on("showErrorMsgEvent", function() {
+          self.$errorCall.removeAttr('hidden');
+        });
+    },
+
+    noResults: function () {
+        var self = this;
+        this.$container.on("showNoResultsMsgEvent", function() {
+          self.$noResults.removeAttr('hidden');
+        });
     }
 };
 
