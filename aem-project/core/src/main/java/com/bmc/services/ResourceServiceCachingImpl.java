@@ -36,7 +36,7 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public static final String RESOURCE_TITLE_CACHE_SIZE = "resource.title.cache.size";
     private long resourceTitleCacheSize;
 
-    @Property(label = "Resource Title Cache TTL", longValue = 300,
+    @Property(label = "Resource Title Cache TTL", longValue = 3,
             description = "Resource title cached item time to live (seconds)")
     public static final String RESOURCE_TITLE_CACHE_TTL = "resource.title.cache.ttl";
     private long resourceTitleCacheTtl;

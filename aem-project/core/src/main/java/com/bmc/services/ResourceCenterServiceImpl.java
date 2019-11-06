@@ -68,6 +68,15 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 "intelligent-content-company-size"
         })
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
+    
+    @Property(
+            description = "Map prefix to property name",
+            value = {
+                    "ic-type, ic-content-type",
+                    "n/a, n/a"
+            })
+    private static final String RESOURCE_PREFIX_MAP = "resourcecenter.prefix.map";
+    
     private List<String> resourceFiltersList;
 
     @Property(label = "Resource Center Query API switch", boolValue = false,
@@ -75,6 +84,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = ResourceCenterConsts.RESOURCE_CENTER_QUERY_API_PROP_NAME;
     private boolean resourceCenterApiSwitch;
 
+    private Map<String, String> prefixMapping;
+    
     @Reference
     private ConfigurationAdmin configAdmin;
 
@@ -87,6 +98,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
 
+        prefixMapping = toMap((String[]) props.get(RESOURCE_PREFIX_MAP));
+        
         // set auth info as "bmcdataservice" -> defined under /apps/home/users/system
         Map<String, Object> authInfo = new HashMap<>();
         authInfo.put(ResourceResolverFactory.SUBSERVICE, "bmcdataservice");
@@ -95,6 +108,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             session = resourceResolver.adaptTo(Session.class);
         } catch(Exception e) {
             e.printStackTrace();
+            log.error("Error activating ", e.getLocalizedMessage());
         }
 
     }
@@ -222,7 +236,10 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             // extract url params and put them into query params
             String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
             for(int i = 0; i < queryValues.length; i++, predicateIndex++) {
-                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), "jcr:content/" + queryValues[i].substring(0, queryValues[i].lastIndexOf("-")));
+            	
+            	String filterPrefix = queryValues[i].substring(0, queryValues[i].lastIndexOf("-"));
+            	String propertyName = ( prefixMapping != null & prefixMapping.containsKey(filterPrefix))	? 	prefixMapping.get(filterPrefix) : filterPrefix;
+                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), "jcr:content/" + propertyName);
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
                 //queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
             }
