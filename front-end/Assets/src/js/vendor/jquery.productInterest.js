@@ -65,7 +65,7 @@
 				if($(this).attr("href") !== '#'){ //WEB-3260
 					if(isForm.test(this.href)){
 						var prodIntrest  = bmcMeta.page.productCategories;
-						$(this).attr("href", UpdateQueryString("productInterest" , prodIntrest,this.href));
+						$(this).attr("href", UpdateQueryString("productInterest" , encodeURIComponent(prodIntrest),this.href));
 					}
 				} 
 			});
@@ -76,12 +76,14 @@
 	
 	//Check the parameter from the URL and match the Option value.
 	if(window.location.href.indexOf("form") > -1) {
-		var selectedText = getUrlVars()["productInterest"];
+		var selectedText = decodeURIComponent(getUrlVars()["productInterest"]);
+		var selectedTextFinal;
 		if(selectedText){
-			selectedText = selectedText.toLowerCase().replace(/%20|_/g,' ');
+			selectedText = selectedText.toLowerCase().replace(/%20|_/g,' ').trim();
+			selectedTextFinal = selectedText.substr(0, selectedText.indexOf('|')).trim();
 			$( document ).ready(function() {
 				$('[name="C_Product_Interest1"]').find("option").each(function(){
-					if(this.value.toLowerCase() == selectedText){
+					if(this.value.toLowerCase() === selectedTextFinal){
 						$(this).attr("selected","selected");    
 					}
 				});
