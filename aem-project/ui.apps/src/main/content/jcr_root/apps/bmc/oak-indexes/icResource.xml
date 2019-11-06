@@ -4,10 +4,8 @@
     async="async"
     compatVersion="{Long}2"
     evaluatePathRestrictions="{Boolean}true"
-    excludedPaths="[/var,/etc/replication,/etc/workflow/instances,/jcr:system]"
-    type="lucene"
-    recreateOnUpdate="{Boolean}true"
-    forceIndex="{Boolean}true">
+    includedPaths="[/content/bmc]"
+    type="lucene">
     <indexRules jcr:primaryType="nt:unstructured">
         <cq:Page jcr:primaryType="nt:unstructured">
             <properties jcr:primaryType="nt:unstructured">
