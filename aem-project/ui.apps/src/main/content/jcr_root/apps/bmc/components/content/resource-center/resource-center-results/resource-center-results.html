@@ -7,6 +7,8 @@
 <sly data-sly-test.textColor="${fbImg ? 'white' : '#177ba2'}"/>
 
 <div data-sly-test="${!wcmmode.edit}" class="rc-result-component">
+    <text id="rootPath" hidden>${properties.rootPath}</text>
+    <text id="pageSize" hidden>${properties.pageSize}</text>
     <div class="container pb-4">
         <div class="rc-result-header">
             <span class="results-info" data-template="${'Showing {1} - {2} of {3}' @ i18n}"></span>
@@ -26,7 +28,7 @@
             <div class="rc-featured-card-col">
                 <div class="rc-card" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;">
                     <div class="rc-card-header-icon">
-                        <span class="ic_download ${textWhite}"></span>
+                        <span class="ic_${featuredCard.type.linkType} ${textWhite}"></span>
                     </div>
                     <div class="rc-card-header">
                         <span class="inline-block" style="color:${textColor @ context='html'};">${featuredCard.type.label}</span>
@@ -47,7 +49,7 @@
         </div>
         <div id="resultItemsContainer"></div>
         <div class="no-results mt2" hidden>
-            <p>${properties.noResultLabel || "We're sorry, it seems like we can't find any results that match." @ i18n}</p>
+            <p>${properties.noResultLabel || "No results found. Try adjusting your filters." @ i18n}</p>
         </div>
         <div class="error-call mt2" hidden>
             <p>${properties.errorLabel || 'Oops, please try again. It looks like we may be experiencing some technical issues.' @ i18n}</p>

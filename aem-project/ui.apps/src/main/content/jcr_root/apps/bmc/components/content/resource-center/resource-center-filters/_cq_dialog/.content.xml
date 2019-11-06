@@ -230,6 +230,7 @@
                                             </options>
                                         </items>
                                     </ic-target-persona>
+                                    <!-- 
                                     <ic-source-publish
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Source Publish Date"
@@ -246,6 +247,7 @@
                                                 typeHint="IC Source Publish Date (MM-YYYY)"/>
                                         </items>
                                     </ic-source-publish>
+                                     -->
                                     <ic-topics
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Topics"

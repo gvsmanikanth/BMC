@@ -16,7 +16,7 @@ public class BmcContent {
     private Map<String, String> metadata;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, String type, String labelType, Map<String, String> metadata) {
+            String assetLink, String thumbnail, String type, String labelType, String linkType ,Map<String, String> metadata) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -25,7 +25,7 @@ public class BmcContent {
         this.lastModified = lastModified;
         this.assetLink = assetLink;
         this.thumbnail = thumbnail;
-        this.type = new BmcContentType(type, labelType);
+        this.type = new BmcContentType(type, labelType, linkType);
         this.metadata = metadata;
     }
 
@@ -113,10 +113,12 @@ public class BmcContent {
 
         private String id;
         private String label;
+        private String linkType;
 
-        public BmcContentType(String id, String label) {
+        public BmcContentType(String id, String label, String linkType) {
             this.id = id;
             this.label = label;
+            this.linkType = linkType;
         }
 
         public String getId() {
@@ -133,6 +135,14 @@ public class BmcContent {
 
         public void setLabel(String label) {
             this.label = label;
+        }
+
+        public String getLinkType() {
+            return linkType;
+        }
+
+        public void setLinkType(String linkType) {
+            this.linkType = linkType;
         }
     }
 }

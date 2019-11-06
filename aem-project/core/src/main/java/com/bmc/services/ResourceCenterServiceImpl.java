@@ -30,6 +30,7 @@ import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.BmcContentResult;
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.pum.PUMService;
 import com.bmc.util.JsonSerializer;
@@ -338,12 +339,14 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     }
 
     @Override
-    public List<BmcContent> getResourceResults(Map<String, String[]> urlParameters) {
+    public BmcContentResult getResourceResults(Map<String, String[]> urlParameters) {
         // add the necessary resource content parameters for query builder
         Map<String, String> queryParamsMap = addResourceParamsToBuilder(urlParameters);
 
         // results list to return
         List<BmcContent> resourceContentList = new ArrayList<>();
+        // results list and pagination
+        BmcContentResult contentResult = new BmcContentResult(resourceContentList); 
 
         try {
             Query query = queryBuilder.createQuery(PredicateGroup.create(queryParamsMap), session);
@@ -364,10 +367,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         }
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         //  content type
-                        String contentType = hit.getNode().hasProperty(JcrConsts.CONTENT_TYPE)
+                        String contentType = hit.getNode().hasProperty(JcrConsts.CONTENT_TYPE) && !hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).isMultiple()
                                 ? hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
                         String labelType = baseImpl.getTitle("ic-content-type", contentType, 
                                 hit.getResource().getResourceResolver());
+                        String linkType = getLinkType(contentType);
                         //  metadata
                         Map<String, String> metadata = new HashMap<>();
                         for (String property : baseImpl.getPropertyNames()) {
@@ -381,18 +385,34 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                             }
                         }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, contentType, labelType, metadata));
+                                lastModified, assetLink, thumbnail, contentType, labelType, linkType,  metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
                     }
                 }
             }
+            contentResult = new BmcContentResult(resourceContentList, result.getHitsPerPage(), result.getTotalMatches());
         } catch(Exception e) {
             log.error("An exception had occured in getResourceResults function with error: " + e.getMessage(), e);
         }
 
-        return resourceContentList;
+        return contentResult;
+    }
+
+    private String getLinkType(String contentTypeId) {
+        if (StringUtils.isEmpty(contentTypeId)) {
+            return "";
+        }
+        switch (contentTypeId) {
+        case "ic-type-185980791":
+            //  videos
+            return "play";
+        default:
+            //  rests of content
+            return "download";
+        }
+        //  TODO: complete actions by content type
     }
 
     @Override

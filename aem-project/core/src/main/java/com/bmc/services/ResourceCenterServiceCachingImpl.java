@@ -1,21 +1,5 @@
 package com.bmc.services;
 
-import com.bmc.consts.ResourceCenterConsts;
-import com.bmc.models.bmccontentapi.BmcContent;
-import com.bmc.models.bmccontentapi.BmcContentFilter;
-import com.bmc.pum.PUMService;
-import com.bmc.util.JsonSerializer;
-import com.google.common.base.Optional;
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import org.apache.felix.scr.annotations.*;
-import org.apache.jackrabbit.oak.commons.PropertiesUtil;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.osgi.service.cm.ConfigurationAdmin;
-import org.osgi.service.component.ComponentContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +8,26 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Properties;
+import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
+import org.apache.jackrabbit.oak.commons.PropertiesUtil;
+import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.component.ComponentContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.bmc.consts.ResourceCenterConsts;
+import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.BmcContentResult;
+import com.bmc.util.JsonSerializer;
+import com.google.common.base.Optional;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 
 /**
  * TODO: Documentation
@@ -37,7 +41,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
     private static final Logger log = LoggerFactory.getLogger(ResourceCenterServiceCachingImpl.class);
 
-    private Cache<String, Optional<List<BmcContent>>> contentCache;
+    private Cache<String, Optional<BmcContentResult>> contentCache;
 
     @Property(label = "Resource Title Cache Size", longValue = 5000,
             description = "Resource title maximum cache item count")
@@ -92,7 +96,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
 
 
-    public Cache<String, Optional<List<BmcContent>>> getContentCache() {
+    public Cache<String, Optional<BmcContentResult>> getContentCache() {
         return contentCache;
     }
 
@@ -114,7 +118,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 	}
 
 	@Override
-	public List<BmcContent> getResourceResults(Map<String, String[]> parameters) {
+	public BmcContentResult getResourceResults(Map<String, String[]> parameters) {
 
 		try {
             if (parameters == null || parameters.isEmpty()) {
@@ -123,7 +127,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
             }
 
             String cacheKey = this.generatekey(parameters);
-            Optional<List<BmcContent> > cachedContent = contentCache.get(cacheKey,
+            Optional<BmcContentResult> cachedContent = contentCache.get(cacheKey,
                     () -> Optional.fromNullable(baseImpl.getResourceResults(parameters)));
             return cachedContent.isPresent() ? cachedContent.get() : null;
         } catch (ExecutionException e) {

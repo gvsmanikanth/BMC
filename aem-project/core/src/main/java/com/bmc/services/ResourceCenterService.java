@@ -1,10 +1,10 @@
 package com.bmc.services;
 
-import com.bmc.models.bmccontentapi.BmcContentFilter;
-import com.bmc.models.bmccontentapi.BmcContent;
-
 import java.util.List;
 import java.util.Map;
+
+import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.models.bmccontentapi.BmcContentResult;
 
 public interface ResourceCenterService extends ConfigurableService  {
 
@@ -24,7 +24,7 @@ public interface ResourceCenterService extends ConfigurableService  {
      * @param parameters
      * @return
      */
-    List<BmcContent> getResourceResults(Map<String, String[]> parameters);
+    BmcContentResult getResourceResults(Map<String, String[]> parameters);
     
     /**
      * @param parameters

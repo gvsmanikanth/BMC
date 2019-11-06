@@ -1,44 +1,45 @@
 package com.bmc.services;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.powermock.api.mockito.PowerMockito.when;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import javax.jcr.Node;
+import javax.jcr.Property;
+import javax.jcr.Session;
+
+import org.apache.jackrabbit.commons.JcrUtils;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Spy;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+import org.powermock.reflect.Whitebox;
+
 import com.bmc.consts.JcrConsts;
-import com.bmc.models.bmccontentapi.BmcContent;
+import com.bmc.models.bmccontentapi.BmcContentResult;
 import com.day.cq.commons.jcr.JcrUtil;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.day.crx.JcrConstants;
+
 import io.wcm.testing.mock.aem.junit.AemContext;
-import org.apache.jackrabbit.commons.JcrUtils;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
-//import org.apache.sling.testing.mock.jcr.MockJcr;
-import org.apache.sling.testing.mock.sling.ResourceResolverType;
-import org.apache.sling.testing.mock.sling.junit.SlingContext;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.Spy;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-import org.powermock.modules.junit4.rule.PowerMockRule;
-import org.powermock.reflect.Whitebox;
-
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
-import static org.powermock.api.mockito.PowerMockito.when;
-
-import javax.jcr.Node;
-import javax.jcr.Property;
-import javax.jcr.Session;
-import java.util.*;
 
 @PrepareForTest({ResourceCenterServiceImpl.class, JcrUtil.class, JcrUtils.class})
 @RunWith(PowerMockRunner.class)
@@ -164,12 +165,12 @@ public class TestResourceCenterServiceImpl  {
         mockHits.add(mockHit);
         mockHits.add(mockHit);
 
-        List<BmcContent> bmcContents = Whitebox.invokeMethod(service, "getResourceResults", urlParameters);
+        BmcContentResult bmcContents = Whitebox.invokeMethod(service, "getResourceResults", urlParameters);
 
-        assertEquals(bmcContents.size(), 2);
-        assertEquals(bmcContents.get(0).getPath(), "/content/bmc/us/en/aberdeen-checklist-5-indicators-that-you-need-workload-automation-in-retail");
-        assertEquals(bmcContents.get(0).getTitle(), "Enterprise Management Associates Impact Brief: Control-M Application Integrator");
-        assertEquals(bmcContents.get(0).getCreated(), "2019-04-30T10:34:05.292-07:00");
-        assertEquals(bmcContents.get(0).getLastModified(), "2018-09-12T06:46:31.043-04:00");
+        assertEquals(bmcContents.getResults().size(), 2);
+        assertEquals(bmcContents.getResults().get(0).getPath(), "/content/bmc/us/en/aberdeen-checklist-5-indicators-that-you-need-workload-automation-in-retail");
+        assertEquals(bmcContents.getResults().get(0).getTitle(), "Enterprise Management Associates Impact Brief: Control-M Application Integrator");
+        assertEquals(bmcContents.getResults().get(0).getCreated(), "2019-04-30T10:34:05.292-07:00");
+        assertEquals(bmcContents.getResults().get(0).getLastModified(), "2018-09-12T06:46:31.043-04:00");
     }
 }
