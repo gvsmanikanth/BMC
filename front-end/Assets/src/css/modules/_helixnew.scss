@@ -3,7 +3,15 @@
 
 // banner-caption Starts
 .product-category-header{
-	.banner-caption{				
+	.bannerContent{
+		min-height: 570px;
+	}
+	.banner-caption{	
+		.helix-logo	{
+			img{
+				height:45px
+			}
+		}		
 		.block-title{	
 			font-size: 46px !important;
 			line-height: initial;
@@ -115,6 +123,12 @@
 		@media (max-width: $tablet) {
 			padding: 2rem 1rem;
 		}
+		@media (max-width: 640px) {
+			padding: 2rem 0rem;
+		}
+		.justify-center{
+			justify-content: center;
+		}
 		.feature-head{
 			@media (min-width: $break-md) {
 				max-width: 56%;
@@ -122,16 +136,19 @@
 			}
 			.block-title{
 				margin-top: 0;
-				font-size: 3rem;
+				font-size: 46px; 
 				@media (max-width: $tablet) {
-					font-size: 2.25rem;
-					line-height: 55px;
+					font-size: 36px; 
+					line-height: initial;
 				}
 				color: #fff;
 				font-weight: 600;
 			}
 			.block-text{
-				font-size: 1.3rem;
+				font-size: 25px; 
+				@media (max-width: $tablet) {
+					font-size: 18px; 
+				}
 			}
 		}
 		.feature-block {
@@ -182,7 +199,7 @@
 			color: color(boston-blue);
 			//padding: 15px 50px;
 			color: #0093C9;
-			font-size: 22px;
+			font-size: 18px;
 			margin-top: 25px;
 			@media (min-width: $break-sm) {
 				//min-width: 370px;
@@ -290,6 +307,13 @@
 
 
 	.section_50_50 {
+		.chat-img{
+			background: #FAFAFA;
+			padding: 50px 10px;
+			@media (max-width: 640px){
+				padding: 30px 20px;
+			}
+		}
 		.top_padding_5rem{
 			padding-top: 2rem !important;
 			@media (min-width: 640px) {
@@ -512,6 +536,7 @@
 			padding-bottom: 0px;
 			box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
 			transition: 0.3s linear;
+			padding-bottom: 80px;
 			&:hover{
 				box-shadow: none;
 				background: #ebf2f7;
@@ -556,7 +581,7 @@
 				hr {
 					border-bottom: 2px solid #3980B2;
 					max-width: 40px;
-					margin: 0 0 auto 0;
+					margin: 0 auto 0 0;
 				}
 			}
 			.card-footer{	
@@ -567,10 +592,13 @@
 				background-size: 200% 100%;
 				background-position: right bottom;
 				//transition: all .5s ease-out;
-				margin-left: -24px;
-				margin-right: -24px;
+				margin: 0 -1px 0 -1px;
 				padding-left: 20px;
-   				padding-right: 20px;
+				padding-right: 20px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
 				
 				.learn-more {
 					color: #3980B2;
