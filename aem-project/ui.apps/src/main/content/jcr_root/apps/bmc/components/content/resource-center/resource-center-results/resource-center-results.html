@@ -31,17 +31,19 @@
                         <span class="ic_${featuredCard.type.linkType} ${textWhite}"></span>
                     </div>
                     <div class="rc-card-header">
-                        <span class="inline-block" style="color:${textColor @ context='html'};">${featuredCard.type.label}</span>
+                        <span class="inline-block rc-featured-card-header-title" style="color:${textColor @ context='html'};">${featuredCard.type.label}</span>
+                        <div class="rc-card-header-separator"></div>
                     </div>
                     <div class="rc-card-body">
                         <h4 class="rc-card-title" style="color:${textColor @ context='html'};">${featuredCard.title}</h4>
                     </div>
                     <div class="rc-card-footer" style="border-top-color:${textColor @ context='html'};">
-                        <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action" href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};">
-                            <svg class="align-middle" style="width: 1.2rem; height: 1.2rem;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-ic_download"></use>
+                        <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action ${featuredCard.type.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" 
+                            href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};">
+                            <svg class="align-middle s-${featuredCard.type.linkType}-white" style="width: 1.4rem; height: 1.4rem;">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.type.linkType}-white"></use>
                             </svg>
-                            ${'Download' @ i18n}
+                            ${featuredCard.type.linkType == 'play' ? 'Play' : 'Download' @ i18n}
                         </a>
                     </div>
                 </div>

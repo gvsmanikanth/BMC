@@ -97,7 +97,26 @@ svg {
 	height: 50px;
 	width: 50px;
 }
-
+.s-download {
+	background-image: url('#{$imagesFolder}s-download.svg');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
+.s-play {
+	background-image: url('#{$imagesFolder}s-play.svg');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
+.s-download-white {
+	background-image: url('#{$imagesFolder}s-download-white.png');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
+.s-play-white {
+	background-image: url('#{$imagesFolder}s-play-white.png');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 	.s-CloudMgmt {
@@ -148,4 +167,25 @@ svg {
 	.s-close {
 		background-image: url('#{$imagesFolder}s-close-2x.png');
 	}
+	.s-download {
+		background-image: url('#{$imagesFolder}s-download.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.s-play {
+		background-image: url('#{$imagesFolder}s-play.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.s-download-white {
+		background-image: url('#{$imagesFolder}s-download-white.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.s-play-white {
+		background-image: url('#{$imagesFolder}s-play-white.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
 }
