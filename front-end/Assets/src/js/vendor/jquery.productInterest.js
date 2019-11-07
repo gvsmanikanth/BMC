@@ -77,13 +77,15 @@
 	//Check the parameter from the URL and match the Option value.
 	if(window.location.href.indexOf("form") > -1) {
 		var selectedText = decodeURIComponent(getUrlVars()["productInterest"]);
-		var selectedTextFinal;
 		if(selectedText){
 			selectedText = selectedText.toLowerCase().replace(/%20|_/g,' ').trim();
-			selectedTextFinal = selectedText.substr(0, selectedText.indexOf('|')).trim();
+			if(selectedText.indexOf('|') > 0){
+				selectedText = selectedText.substr(0, selectedText.indexOf('|')).trim();
+			}
+			
 			$( document ).ready(function() {
 				$('[name="C_Product_Interest1"]').find("option").each(function(){
-					if(this.value.toLowerCase() === selectedTextFinal){
+					if(this.value.toLowerCase() === selectedText){
 						$(this).attr("selected","selected");    
 					}
 				});
