@@ -247,6 +247,10 @@ ResourceCenterFilters = {
         var rootPath = ResourceCenterResults.$rootPath;
         var path = '/bin/contentapi/content?rootPath=' + rootPath;
         var url = '';
+        //  pre filter
+        $(".pre-filter-option").each(function () {
+           url += '&filter=' + $(this).html();
+        });
         //  filters
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             url += '&filter=' + $(this).attr('data-name');

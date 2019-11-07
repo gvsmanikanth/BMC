@@ -30,12 +30,23 @@
                             ${'Play' @ i18n}
                         </a>
                         {{else}}
-                        <a class="rc-card-footer-action" href="{{assetLink}}" target="_blank">
-                            <svg class="align-middle s-download" style="width: 1.0rem; height: 1.0rem;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                            </svg>
-                            ${'Download' @ i18n}
-                        </a>
+                            {{#ifCond type.linkType '===' "download"}}
+                            <a class="rc-card-footer-action" href="{{assetLink}}" target="_blank">
+                                <svg class="align-middle s-download" style="width: 1.0rem; height: 0.8rem;">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
+                                </svg>
+                                ${'Download' @ i18n}
+                            </a>
+                            {{else}}
+                                {{#ifCond type.linkType '===' "view"}}
+                                <a class="rc-card-footer-action" href="{{assetLink}}" target="_blank">
+                                    <svg class="align-middle s-view" style="width: 0.8rem; height: 0.7rem;">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                    </svg>
+                                    ${'View' @ i18n}
+                                </a>
+                                {{/ifCond}}
+                            {{/ifCond}}
                         {{/ifCond}}
                     {{/if}}
                 </div>

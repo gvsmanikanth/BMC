@@ -107,6 +107,11 @@ svg {
 	background-repeat: no-repeat;
     	background-size: contain;
 }
+.s-view {
+	background-image: url('#{$imagesFolder}s-view.svg');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
 .s-download-white {
 	background-image: url('#{$imagesFolder}s-download-white.png');
 	background-repeat: no-repeat;
@@ -114,6 +119,11 @@ svg {
 }
 .s-play-white {
 	background-image: url('#{$imagesFolder}s-play-white.png');
+	background-repeat: no-repeat;
+    	background-size: contain;
+}
+.s-view-white {
+	background-image: url('#{$imagesFolder}s-view-white.png');
 	background-repeat: no-repeat;
     	background-size: contain;
 }
@@ -177,6 +187,11 @@ svg {
 		background-repeat: no-repeat;
 		background-size: contain;
 	}
+	.s-view {
+		background-image: url('#{$imagesFolder}s-view.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 	.s-download-white {
 		background-image: url('#{$imagesFolder}s-download-white.png');
 		background-repeat: no-repeat;
@@ -184,6 +199,11 @@ svg {
 	}
 	.s-play-white {
 		background-image: url('#{$imagesFolder}s-play-white.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	.s-view-white {
+		background-image: url('#{$imagesFolder}s-view-white.png');
 		background-repeat: no-repeat;
 		background-size: contain;
 	}

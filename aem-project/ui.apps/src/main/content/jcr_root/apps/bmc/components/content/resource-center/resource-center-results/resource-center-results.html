@@ -40,10 +40,12 @@
                     <div class="rc-card-footer" style="border-top-color:${textColor @ context='html'};">
                         <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action ${featuredCard.type.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" 
                             href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};">
-                            <svg class="align-middle s-${featuredCard.type.linkType}-white" style="width: 1.4rem; height: 1.4rem;">
+                            <svg class="align-middle s-${featuredCard.type.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.type.linkType}-white"></use>
                             </svg>
-                            ${featuredCard.type.linkType == 'play' ? 'Play' : 'Download' @ i18n}
+                            ${featuredCard.type.linkType == 'play' ? 'Play' : '' @ i18n}
+                            ${featuredCard.type.linkType == 'download' ? 'Download' : '' @ i18n}
+                            ${featuredCard.type.linkType == 'view' ? 'View' : '' @ i18n}
                         </a>
                     </div>
                 </div>

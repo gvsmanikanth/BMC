@@ -363,7 +363,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
-                                                name="./product-lines-filter"
+                                                name="./product_line-filter"
                                                 text="Filter on this category"
                                                 fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
@@ -371,7 +371,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
-                                                name="./product-lines-display"
+                                                name="./product_line-display"
                                                 text="Display this filter on the resource page"
                                                 fieldDescription="Ticking to display this filter on the resource page."
                                                 value="{Boolean}true"
@@ -394,7 +394,7 @@
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
                                                         emptyText="Product Lines"
-                                                        name="./product-lines-label">
+                                                        name="./product_line-label">
                                                     </label>
                                                 </items>
                                             </filterLabel>
@@ -425,7 +425,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
-                                                name="./product-interest-filter"
+                                                name="./product_interest-filter"
                                                 text="Filter on this category"
                                                 fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
@@ -433,7 +433,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
-                                                name="./product-interest-display"
+                                                name="./product_interest-display"
                                                 text="Display this filter on the resource page"
                                                 fieldDescription="Ticking to display this filter on the resource page."
                                                 value="{Boolean}true"
@@ -456,7 +456,7 @@
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
                                                         emptyText="Products"
-                                                        name="./product-interest-label">
+                                                        name="./product_interest-label">
                                                     </label>
                                                 </items>
                                             </filterLabel>

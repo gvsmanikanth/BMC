@@ -40,23 +40,30 @@ public class ResourceCenterFiltersModel {
     private SlingHttpServletRequest request;
 
     private List<ContentFilter> filters;
+    private List<ContentFilterOption> preFiltersOption;
 
     @PostConstruct
     public void init() {
         filters = new ArrayList<ContentFilter>();
+        preFiltersOption = new ArrayList<ContentFilterOption>();
         for (String propertyName : baseImpl.getPropertyNames()) {
             // Read plain property values
             String[] propertyValues = resource.getValueMap().get(propertyName, String[].class);
             String label = resource.getValueMap().get(propertyName + "-label", propertyName);
-            Boolean filter = resource.getValueMap().get(propertyName + "-filter", false);
+            Boolean preFilter = resource.getValueMap().get(propertyName + "-filter", false);
             Boolean display = resource.getValueMap().get(propertyName + "-display", false);
-            if (propertyValues != null && (filter || display)) {
+            if (propertyValues != null && (preFilter || display)) {
                 List<ContentFilterOption> options = new ArrayList<>();
                 for (String propertyValue : propertyValues) {
                     options.add(new ContentFilterOption(propertyValue, 
                             baseImpl.getTitle(propertyName, propertyValue, resourceResolver)));
                 }
-                filters.add(new ContentFilter(propertyName, label, display, options));
+                if (display) {
+                    filters.add(new ContentFilter(propertyName, label, display, options));
+                }
+                if (preFilter) {
+                    preFiltersOption.addAll(options);
+                }
             }
         }
     }
@@ -65,4 +72,7 @@ public class ResourceCenterFiltersModel {
         return filters;
     }
 
+    public List<ContentFilterOption> getPreFilters() {
+        return preFiltersOption;
+    }
 }
