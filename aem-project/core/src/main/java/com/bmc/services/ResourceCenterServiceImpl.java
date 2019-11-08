@@ -368,6 +368,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         try {
             Query query = queryBuilder.createQuery(PredicateGroup.create(queryParamsMap), session);
             SearchResult result = query.getResult();
+            log.debug("Query {}", result.getQueryStatement());
             Resource resource;
             for(Hit hit : result.getHits()) {
                 resource = hit.getResource();
