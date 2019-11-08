@@ -361,8 +361,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 }
                 
                 if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
-                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_ORDER_BY, false), "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
-                    queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, false), sortDirection);
+                	queryParamsMap.put("orderby", "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
+                	queryParamsMap.put("orderby.sort", sortDirection);
                 }
             }
         } catch (Exception e) {
