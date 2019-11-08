@@ -93,15 +93,10 @@ ResourceCenterResults = {
             var curr;
             if (source) {
                 template = Handlebars.compile(source);
-                for (index; index < contentResult.results.length; index += 1) {
-                  curr = contentResult.results[index];
-                  curr.analyticsAttributes = self.getAnalyticsAttributesList(curr.metadata);
-                }
                 html = template({
                     items: contentResult.results
                 });
                 self.$container.append(html);
-                //  pagination data
                 self.$totalItems = contentResult.pagination.totalMatches;
                 self.$totalPages = contentResult.pagination.numberOfPages;
                 var startIndex = (self.$pageSize * self.$currentPage) + 1;
@@ -116,21 +111,10 @@ ResourceCenterResults = {
                     self.$resultsPage.append('<span><a class="result-page" href="#">' + '>' + '</a></span>'); 
                   }
                   self.setPaginationEvents();
+                  self.setVideoCardEvents();
                 }
-                //  video card events
-                self.setVideoCardEvents();
             }
         });
-    },
-
-    getAnalyticsAttributesList: function (metadata) {
-        var strOutput = "";
-        for (var key in metadata) {
-            if (metadata.hasOwnProperty(key)) {
-                strOutput += "data-" + key + "='" + metadata[key] + "' ";
-            }
-        }
-        return strOutput; 
     },
 
     formatString: function (format) {
@@ -259,18 +243,22 @@ ResourceCenterFilters = {
     },
 
     buildUrl: function () {
+        var self = this;
         //var rootPath = this.getRootPath();
         var rootPath = ResourceCenterResults.$rootPath;
         var path = '/bin/contentapi/content?rootPath=' + rootPath;
         var url = '';
-        //  pre filter
+        var filters = new Map();
+        //  prefiltered and filters
         $(".pre-filter-option").each(function () {
-           url += '&filter=' + $(this).html();
+            self.addFilterKeyValue(filters, $(this).data('name'), $(this).data('value'));
         });
-        //  filters
         $(".filter-checkbox-item").find('input[checked]').each(function () {
-            url += '&filter=' + $(this).attr('data-name');
+            self.addFilterKeyValue(filters, $(this).parent().data('name'), $(this).data('name'));
         });
+        for (var filterKey of filters.keys()) {
+            url += '&' + filterKey + '=' + filters.get(filterKey);
+        }
         //  keyword search
         if ($(".keyword-search").length > 0) {
           var keywords = $(".keyword-search").find('input').val().split(' ');
@@ -294,6 +282,16 @@ ResourceCenterFilters = {
         history.replaceState(null, null, '#' + url);
 
         return path + url;
+    },
+
+    addFilterKeyValue: function(filterMap, filterKey, value) {
+        var val = "";
+        if (filterMap.has(filterKey)) {
+            val = filterMap.get(filterKey) + ',' + value;
+        } else {
+            val = value;
+        }
+        filterMap.set(filterKey, val);
     },
 
     getRootPath: function () {

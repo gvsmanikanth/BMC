@@ -3,7 +3,7 @@
 
 <div class="rc-filter-component">
     <sly data-sly-list.item="${helper.preFilters}">
-        <text class="pre-filter-option" hidden>${item.name}</text>
+        <text class="pre-filter-option" data-name="${item.filterName}" data-value="${item.name}" hidden></text>
     </sly>
     <form>
         <section class="bg-seashell">
@@ -35,7 +35,7 @@
                                 <div class="list-group">
                                     <ul>
                                         <sly data-sly-list.option="${item.options}">
-                                            <div class="filter-checkbox-item">
+                                            <div class="filter-checkbox-item" data-name="${item.name}">
                                                 <li id="${option.name}">${option.title}</li>
                                                 <input id="checkbox-${option.name}" type="checkbox" hidden data-name="${option.name}"/>
                                             </div>

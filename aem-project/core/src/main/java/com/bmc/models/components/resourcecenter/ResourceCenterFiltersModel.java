@@ -56,7 +56,7 @@ public class ResourceCenterFiltersModel {
                 List<ContentFilterOption> options = new ArrayList<>();
                 for (String propertyValue : propertyValues) {
                     options.add(new ContentFilterOption(propertyValue, 
-                            baseImpl.getTitle(propertyName, propertyValue, resourceResolver)));
+                            baseImpl.getTitle(propertyName, propertyValue, resourceResolver), propertyName));
                 }
                 if (display) {
                     filters.add(new ContentFilter(propertyName, label, display, options));
