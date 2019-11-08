@@ -31,7 +31,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     @Property(description = "Mapping of property names to their corresponding JCR paths and JCR property names",
             value = { "product_interest, /content/bmc/resources/product-interests, jcr:title",
             "product_line, /content/bmc/resources/product-lines, text",
-            "topics, /content/bmc/resources/topic, jcr:title",
             "ic-content-type, /content/bmc/resources/intelligent-content-types, jcr:title",
             "ic-topics, /content/bmc/resources/intelligent-content-topics, jcr:title",
             "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, jcr:title",

@@ -25,7 +25,6 @@ import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.bmc.consts.GeneralConsts;
 import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
@@ -66,17 +65,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 "intelligent-content-buyer-stage",
                 "intelligent-content-target-persona",
                 "intelligent-content-target-industry",
-                "intelligent-content-company-size"
+                "intelligent-content-company-size",
+                "product-lines",
+                "product-interests"
         })
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
-    
-    @Property(
-            description = "Map prefix to property name",
-            value = {
-                    "ic-type, ic-content-type",
-                    "n/a, n/a"
-            })
-    private static final String RESOURCE_PREFIX_MAP = "resourcecenter.prefix.map";
     
     private List<String> resourceFiltersList;
 
@@ -84,8 +77,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             description = "Resource Center Query API switch")
     public static final String RESOURCE_TITLE_CACHE_STATS_ENABLED = ResourceCenterConsts.RESOURCE_CENTER_QUERY_API_PROP_NAME;
     private boolean resourceCenterApiSwitch;
-
-    private Map<String, String> prefixMapping;
     
     @Reference
     private ConfigurationAdmin configAdmin;
@@ -98,8 +89,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
-
-        prefixMapping = toMap((String[]) props.get(RESOURCE_PREFIX_MAP));
         
         // set auth info as "bmcdataservice" -> defined under /apps/home/users/system
         Map<String, Object> authInfo = new HashMap<>();
@@ -122,41 +111,28 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         // add default path
         queryParamsMap.put("path", "/content/bmc/resources");
 
-        String groupFilter = urlParameters!=null
-                            && urlParameters.containsKey(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)
-                            && urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_OR_FILTERS)[0].equalsIgnoreCase(GeneralConsts.FALSE) ?
-                            GeneralConsts.FALSE : GeneralConsts.TRUE;
-
-        queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, groupFilter);
-
         return queryParamsMap;
     }
-    /*** <------- common *********************************************************/
-
-
-    /************************************************************************************************************/
-
-    /*** Filters -------> *********************************************************/
-
+    
     /**
      * Adds necessary parameters to a map to search for resource filters
      *
      */
     private Map<String, String>  addFilterParamsToBuilder() {
-        Map<String, String> queryParamsMap = new HashMap<String, String> ();
+
+    	Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // path and page for resources
         queryParamsMap.putAll(getBaseQueryParams(null));
-//        queryParamsMap.put("type", "cq:Page");
 
+        queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, "true");
+        
         // Note: we return all the filters that are specified in the resource filter property list of this service
         // add each node name to the predicate group
         for(int i = 1; i <= resourceFiltersList.size(); i++) {
             queryParamsMap.put("group." + i + "_nodename", resourceFiltersList.get(i-1));
         }
-
-//        log.error("\n\n\naddFilterParamsToBuilder ==============>   " + JsonSerializer.serialize(queryParamsMap));
-
+        
         return queryParamsMap;
     }
 
@@ -174,7 +150,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         if(resource.hasChildren()) {
             for(Resource child : resource.getChildren()) {
                 valueMap = child.getValueMap();
-                options.put(child.getName(), valueMap.get("jcr:title").toString());
+                String text = valueMap.get("jcr:title") != null ? valueMap.get("jcr:title").toString(): "";
+                if(StringUtils.isEmpty(text)) {
+                	text = valueMap.get("text") != null ? valueMap.get("text").toString(): "";
+                }
+                options.put(child.getName(), text);
             }
         }
 
@@ -228,22 +208,67 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return queryPredicate.toString();
     }
 
+    /**
+     * Build group predicates
+     * 
+     * @param propertyName
+     * @param values
+     * @param queryParamsMap
+     * @param predicateIndex
+     */
+    private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
+    
+    	queryParamsMap.put(groupIndex + "_group.p.or", "true");
+    	
+    	int i = 1;
+		for(String value : values) {
+			// Example: 1_group.1_property=jcr:content/ic-content-type
+			queryParamsMap.put(groupIndex + "_group." + i + "_property", "jcr:content/" + propertyName);
+			// Exampe: 1_group.1_property.value=ic-type-196363946
+			queryParamsMap.put(groupIndex + "_group." + i + "_property.value", value);
+			i++;
+		}
+    }
+    
+    
+    /**
+     * Builds query parameters from the URL parameters. For example 
+     * rootPath=/content/bmc/us/en/documents
+     * &ic-content-type=ic-type-196363946,ic-type-146731505&ic-topics=ic-topics-017644695,ic-topics-594037608
+     * &sortCriteria=modified&resultsPerPage=10&pageIndex=0
+     * 
+     * 1_group.p.or=true
+	 * 1_group.1_property.value=ic-type-196363946
+     * 1_group.1_property=jcr:content/ic-content-type
+     * 1_group.2_property.value=ic-type-146731505
+	 * 1_group.2_property=jcr:content/ic-content-type
+     * 2_group.p.or=true
+     * 2_group.1_property=jcr:content/ic-topics
+     * 2_group.1_property.value=ic-topics-017644695
+     * 2_group.2_property=jcr:content/ic-topics
+     * 2_group.2_property.value=ic-topics-594037608
+     * 
+     * @param urlParameters
+     * @param queryParamsMap
+     * @param predicateIndex
+     * @return
+     */
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-            // if url parameters does not have such parameter(urlParam), then return
-            if(urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER) == null)
-                return predicateIndex;
-
-            // extract url params and put them into query params
-            String[] queryValues = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_FILTER);
-            for(int i = 0; i < queryValues.length; i++, predicateIndex++) {
-            	
-            	String filterPrefix = queryValues[i].substring(0, queryValues[i].lastIndexOf("-"));
-            	String propertyName = ( prefixMapping != null & prefixMapping.containsKey(filterPrefix))	? 	prefixMapping.get(filterPrefix) : filterPrefix;
-                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP, true), "jcr:content/" + propertyName);
-                queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_VAL, true), queryValues[i]);
-                //queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
+            
+            int i = 1;
+            
+            // check if any of the supported properties are present in the URL
+            for(String propertyName : baseImpl.getPropertyNames()) {
+            	if(urlParameters.containsKey(propertyName)) {
+            		
+            		String[] filterValues = urlParameters.get(propertyName);
+            		String[] values = filterValues[0].split(",");
+            		
+            		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
+            	}
             }
+            
 
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
@@ -282,10 +307,16 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return predicateIndex+2;
     }
 
+    /**
+     * @param urlParameters
+     * @param queryParamsMap
+     */
     private void addPaginationPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap) {
+    	
         try {
             Integer pageIndex = 0;
             Integer resultsPerPage = 0;
+            
             if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX) != null)
                 pageIndex = Integer.parseInt(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PAGE_INDEX)[0]);
             if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_RESULTS_PER_PAGE) != null)
@@ -296,30 +327,48 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 queryParamsMap.put(ResourceCenterConstants.QUERY_PARAM_RESULT_PER_PAGE, resultsPerPage.toString());
             }
         } catch (Exception e) {
-
+        	log.error("Error creating pagination predicates ", e);
         }
     }
 
+    /**
+     * @param urlParameters
+     * @param queryParamsMap
+     * @param predicateIndex
+     * @return
+     */
     private int addSortingPredicates(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             String[] searchCriterias = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_CRITERIA);
             String[] urlParamSortDirections = urlParameters.get(ResourceCenterConsts.RC_URL_PARAM_SORT_ORDER);
-            if(searchCriterias==null) return predicateIndex;
+            
+            if( searchCriterias == null) return predicateIndex;
 
             for(int i = 0; i < searchCriterias.length; i++, predicateIndex++) {
                 String searchCriteria = searchCriterias[i];
-                String urlParamSortDirection = urlParamSortDirections[i];
-                String sortDirection = urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
-                        || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ?
-                        ResourceCenterConsts.QUERY_PARAM_SORT_DESC : ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
+                
+                // Default to ASC
+                String sortDirection = ResourceCenterConsts.QUERY_PARAM_SORT_ASC;
+                
+                if( urlParamSortDirections != null ) {
+                	String urlParamSortDirection = urlParamSortDirections[i];
+                	if( urlParamSortDirection.equals(ResourceCenterConsts.RC_URL_PARAM_VAL_SORT_ORDER_DESCENDING)
+                            || urlParamSortDirection.equals(ResourceCenterConsts.QUERY_PARAM_SORT_DESC) ) {
+                		
+                		sortDirection = ResourceCenterConsts.QUERY_PARAM_SORT_DESC;
+                	}
+                            
+                }
+                
                 if(ResourceCenterConsts.SORT_CRITERIA_MAP.containsKey(searchCriteria)) {
                     queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_ORDER_BY, false), "@"+ResourceCenterConsts.SORT_CRITERIA_MAP.get(searchCriteria));
                     queryParamsMap.put(buildQueryPredicateName(predicateIndex, ResourceCenterConsts.QUERY_PARAM_SORT_DIRECTION, false), sortDirection);
                 }
             }
         } catch (Exception e) {
-
+        	log.error("Error creating search predicates ", e);
         }
+        
         return predicateIndex;
     }
 
@@ -428,9 +477,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     public ConfigurationAdmin getConfigurationAdmin() {
         return configAdmin;
     }
-
-
-    /*** <------- Filters *********************************************************/
 
     @Override
     public boolean isApiOn() {
