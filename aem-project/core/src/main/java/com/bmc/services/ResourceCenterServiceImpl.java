@@ -389,7 +389,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                                 ? hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
                         String labelType = baseImpl.getTitle("ic-content-type", contentType, 
                                 hit.getResource().getResourceResolver());
-                        String linkType = getLinkType(contentType);
                         //  metadata
                         Map<String, String> metadata = new HashMap<>();
                         for (String property : baseImpl.getPropertyNames()) {
@@ -403,7 +402,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                             }
                         }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, contentType, labelType, linkType,  metadata));
+                                lastModified, assetLink, thumbnail, contentType, labelType, metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -416,21 +415,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
 
         return contentResult;
-    }
-
-    private String getLinkType(String contentTypeId) {
-        if (StringUtils.isEmpty(contentTypeId)) {
-            return "";
-        }
-        switch (contentTypeId) {
-        case "ic-type-185980791":
-            //  videos
-            return "play";
-        default:
-            //  rests of content
-            return "download";
-        }
-        //  TODO: complete actions by content type
     }
 
     @Override

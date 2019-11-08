@@ -3,7 +3,6 @@ package com.bmc.models.components.resourcecenter;
 import javax.annotation.PostConstruct;
 import javax.jcr.Node;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -65,30 +64,14 @@ public class ResourceCenterFeaturedCardModel {
                         ? node.getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
                 String labelType = baseImpl.getTitle("ic-content-type", contentType, 
                         resource.getResourceResolver());
-                String linkType = getLinkType(contentType);
     
                 card = new BmcContent(0, path, title, title, created,
-                        lastModified, assetLink, thumbnail, contentType, labelType, linkType, null);
+                        lastModified, assetLink, thumbnail, contentType, labelType, null);
             }
         } catch (Exception e) {
             log.error("An exception has occured while adding hit to response with resource: " + path
                     + " with error: " + e.getMessage(), e);
         }
-    }
-
-    private String getLinkType(String contentTypeId) {
-        if (StringUtils.isEmpty(contentTypeId)) {
-            return "";
-        }
-        switch (contentTypeId) {
-        case "ic-type-185980791":
-            //  videos
-            return "play";
-        default:
-            //  rests of content
-            return "download";
-        }
-        //  TODO: complete actions by content type
     }
 
     public BmcContent getCard() {

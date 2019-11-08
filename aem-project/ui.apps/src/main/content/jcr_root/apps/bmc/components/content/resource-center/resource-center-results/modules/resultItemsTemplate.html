@@ -15,22 +15,39 @@
                 {{/if}}
                 <div class="rc-card-header">
                     <span class="inline-block">{{type.label}}</span>
+                    <div class="rc-card-header-separator"></div>
                 </div>
                 <div class="rc-card-body" style="{{#if thumbnail}}height:10%;{{/if}}">
                     <h4 class="rc-card-title">{{title}}</h4>
                 </div>
                 <div class="rc-card-footer">
                     {{#if assetLink}}
-                    <a class="rc-card-footer-action" href="{{assetLink}}">
-                        <svg class="align-middle" style="width: 1.2rem; height: 1.2rem;">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                        </svg>
-                       {{#ifCond linkType '===' "ic_play"}}
-                        ${'Play' @ i18n}
-                       {{else}}
-                        ${'Download' @ i18n}
-                       {{/ifCond}}
-                    </a>
+                        {{#ifCond type.linkType '===' "play"}}
+                        <a class="rc-card-footer-action rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_blank">
+                            <svg class="align-middle s-play" style="width: 1.0rem; height: 1.0rem;">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play"></use>
+                            </svg>
+                            ${'Play' @ i18n}
+                        </a>
+                        {{else}}
+                            {{#ifCond type.linkType '===' "download"}}
+                            <a class="rc-card-footer-action" href="{{assetLink}}" target="_blank">
+                                <svg class="align-middle s-download" style="width: 1.0rem; height: 0.8rem;">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
+                                </svg>
+                                ${'Download' @ i18n}
+                            </a>
+                            {{else}}
+                                {{#ifCond type.linkType '===' "view"}}
+                                <a class="rc-card-footer-action" href="{{assetLink}}" target="_blank">
+                                    <svg class="align-middle s-view" style="width: 0.8rem; height: 0.7rem;">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                    </svg>
+                                    ${'View' @ i18n}
+                                </a>
+                                {{/ifCond}}
+                            {{/ifCond}}
+                        {{/ifCond}}
                     {{/if}}
                 </div>
             </div>

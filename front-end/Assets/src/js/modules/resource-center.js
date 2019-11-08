@@ -30,6 +30,7 @@ ResourceCenterResults = {
         this.setRenderResultsEvents();
         this.showError();
         this.noResults();
+        this.setVideoCardEvents();
     },
 
     setClearEvents: function () {
@@ -61,6 +62,27 @@ ResourceCenterResults = {
         });
     },
 
+    setVideoCardEvents: function() {
+      $('a.rc-card-modal-youtube-video-player').on('click', function(event) {
+          event.preventDefault();
+          $.fancybox({
+              width: getVideoHeightWidth_16X9().width,
+              height: getVideoHeightWidth_16X9().height,
+              href : this.href,
+              aspectRatio: true,
+              type: 'iframe',
+              loop: false,
+              padding: 0,
+              autoSize : true,
+              overlayShow : true,
+                  centerOnScroll : true,
+              iframe: {
+                preload: false
+              }
+          });
+        }); 
+    },
+
     setRenderResultsEvents: function () {
         var self = this;
         this.$container.on( "filterResultsLoadedEvent", function(event, contentResult) {
@@ -89,6 +111,7 @@ ResourceCenterResults = {
                     self.$resultsPage.append('<span><a class="result-page" href="#">' + '>' + '</a></span>'); 
                   }
                   self.setPaginationEvents();
+                  self.setVideoCardEvents();
                 }
             }
         });
@@ -173,7 +196,13 @@ ResourceCenterFilters = {
     },
 
     resetFilter: function () {
-        // TODO: reste filter avlues
+        //  clean filters
+        $(".filter-checkbox-item").find('input[checked]').each(function () {
+            $(this).attr('checked', false);
+            $('#' + this.id.substring(this.id.indexOf("-") + 1)).removeClass('active');
+        });
+        $('.keyword-search input').val('');
+        //  reload results
         this.resetResults()
     },
 
@@ -208,6 +237,7 @@ ResourceCenterFilters = {
     setOrderByEvent: function () {
         var self = this;
         $('.rc-sort-select').change(function () {
+            ResourceCenterResults.$currentPage = 0;
             self.loadData();
         });
     },
@@ -217,6 +247,10 @@ ResourceCenterFilters = {
         var rootPath = ResourceCenterResults.$rootPath;
         var path = '/bin/contentapi/content?rootPath=' + rootPath;
         var url = '';
+        //  pre filter
+        $(".pre-filter-option").each(function () {
+           url += '&filter=' + $(this).html();
+        });
         //  filters
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             url += '&filter=' + $(this).attr('data-name');
