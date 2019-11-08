@@ -93,10 +93,15 @@ ResourceCenterResults = {
             var curr;
             if (source) {
                 template = Handlebars.compile(source);
+                for (index; index < contentResult.results.length; index += 1) {
+                  curr = contentResult.results[index];
+                  curr.analyticsAttributes = self.getAnalyticsAttributesList(curr.metadata);
+                }
                 html = template({
                     items: contentResult.results
                 });
                 self.$container.append(html);
+                //  pagination data
                 self.$totalItems = contentResult.pagination.totalMatches;
                 self.$totalPages = contentResult.pagination.numberOfPages;
                 var startIndex = (self.$pageSize * self.$currentPage) + 1;
@@ -111,10 +116,21 @@ ResourceCenterResults = {
                     self.$resultsPage.append('<span><a class="result-page" href="#">' + '>' + '</a></span>'); 
                   }
                   self.setPaginationEvents();
-                  self.setVideoCardEvents();
                 }
+                //  video card events
+                self.setVideoCardEvents();
             }
         });
+    },
+
+    getAnalyticsAttributesList: function (metadata) {
+        var strOutput = "";
+        for (var key in metadata) {
+            if (metadata.hasOwnProperty(key)) {
+                strOutput += "data-" + key + "='" + metadata[key] + "' ";
+            }
+        }
+        return strOutput; 
     },
 
     formatString: function (format) {

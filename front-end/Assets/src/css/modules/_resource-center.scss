@@ -261,17 +261,12 @@
     margin-top: 13px;
   }
 
-  .ic_play {
-    background-image: url("ic_play.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    float: right;
-    width: 35px; 
-    height: 50px;
-    }
+  .rc-card-header-separator-white {
+    @extend .rc-card-header-separator;
+    background-color: white;
+  }
 
-  .ic_download {
-    background-image: url("ic_download.png");
+  .ic-card-action {
     background-repeat: no-repeat;
     background-size: 100%;
     float: right;
@@ -279,13 +274,19 @@
     height: 50px;
   }
 
+  .ic_play {
+    @extend .ic-card-action;
+    background-image: url("ic_play.png");
+  }
+
+  .ic_download {
+    @extend .ic-card-action;
+    background-image: url("ic_download.png");
+  }
+
   .ic_view {
+    @extend .ic-card-action;
     background-image: url("ic_view.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    float: right;
-    width: 35px; 
-    height: 50px;
   }
 
   .rc-card-footer {
