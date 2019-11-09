@@ -1,6 +1,6 @@
 package com.bmc.models.bmccontentapi;
 
-import java.util.Map;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -14,11 +14,12 @@ public class BmcContent {
     private String lastModified;
     private String assetLink;
     private String thumbnail;
-    private BmcContentType type;
-    private Map<String, String> metadata;
+    private String type;
+    private String linkType;
+    private List<BmcMetadata> metadata;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, String type, String labelType, Map<String, String> metadata) {
+            String assetLink, String thumbnail, List<BmcMetadata> metadata) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -27,8 +28,12 @@ public class BmcContent {
         this.lastModified = lastModified;
         this.assetLink = assetLink;
         this.thumbnail = thumbnail;
-        this.type = new BmcContentType(type, labelType);
         this.metadata = metadata;
+        BmcMetadata contentType = getContentTypeMeta();
+        if (contentType != null) {
+            type = contentType.getDisplayValue();
+            linkType = getLinkType(contentType.getValue());
+        }
     }
 
     public long getIndex() {
@@ -95,84 +100,64 @@ public class BmcContent {
         this.thumbnail = thumbnail;
     }
 
-    public BmcContentType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BmcContentType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public Map<String, String> getMetadata() {
+    public String getLinkType() {
+        return linkType;
+    }
+
+    public void setLinkType(String linkType) {
+        this.linkType = linkType;
+    }
+
+    public List<BmcMetadata> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Map<String, String> metadata) {
+    public void setMetadata(List<BmcMetadata> metadata) {
         this.metadata = metadata;
     }
 
-    public class BmcContentType {
-
-        private String id;
-        private String label;
-        private String linkType;
-
-        public BmcContentType(String id, String label) {
-            this.id = id;
-            this.label = label;
-            this.linkType = getLinkType(id);
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getLabel() {
-            return label;
-        }
-
-        public void setLabel(String label) {
-            this.label = label;
-        }
-
-        public String getLinkType() {
-            return linkType;
-        }
-
-        public void setLinkType(String linkType) {
-            this.linkType = linkType;
-        }
-
-        private String getLinkType(String contentTypeId) {
-            if (StringUtils.isEmpty(contentTypeId)) {
-                return "";
+    private BmcMetadata getContentTypeMeta() {
+        for (BmcMetadata bmcMetadata : metadata) {
+            if ("ic-content-type".equals(bmcMetadata.getId())) {
+                return bmcMetadata;
             }
-            switch (contentTypeId) {
-            case "ic-type-185980791":   //  Videos
-                return "play";
-            case "ic-type-546577064":   //  White Papers
-            case "ic-type-196363946":   //  Analyst Research
-            case "ic-type-146731505":   //  Datasheets
-            case "ic-type-621970361":   //  Customer Stories
-            case "ic-type-790775692":   //  Competitive Comparisons
-            case "ic-type-165669365":   //  E-books
-                return "download";
-            case "ic-type-6549684174":  //  Interactive Tools
-            case "ic-type-353700740":   //  Articles/Blogs 
-            case "ic-type-828555634":   //  Events 
-            case "ic-type-343858909":   //  Infographics
-            case "ic-type-920200003":   //  Trials
-            case "ic-type-291550317":   //  Webinars
-            case "ic-type-464000615":   //  Demos
-            case "ic-type-188743546":   //  UnCategorized
-                return "view";
-            default:
-                return "";
-            }
+        }
+        return null;
+    }
+
+    private String getLinkType(String contentTypeId) {
+        if (StringUtils.isEmpty(contentTypeId)) {
+            return "";
+        }
+        switch (contentTypeId) {
+        case "ic-type-185980791":   //  Videos
+            return "play";
+        case "ic-type-546577064":   //  White Papers
+        case "ic-type-196363946":   //  Analyst Research
+        case "ic-type-146731505":   //  Datasheets
+        case "ic-type-621970361":   //  Customer Stories
+        case "ic-type-790775692":   //  Competitive Comparisons
+        case "ic-type-165669365":   //  E-books
+            return "download";
+        case "ic-type-6549684174":  //  Interactive Tools
+        case "ic-type-353700740":   //  Articles/Blogs 
+        case "ic-type-828555634":   //  Events 
+        case "ic-type-343858909":   //  Infographics
+        case "ic-type-920200003":   //  Trials
+        case "ic-type-291550317":   //  Webinars
+        case "ic-type-464000615":   //  Demos
+        case "ic-type-188743546":   //  UnCategorized
+            return "view";
+        default:
+            return "";
         }
     }
 }

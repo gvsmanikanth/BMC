@@ -1,8 +1,14 @@
 package com.bmc.models.components.resourcecenter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.PostConstruct;
 import javax.jcr.Node;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -18,6 +24,7 @@ import org.slf4j.LoggerFactory;
 import com.adobe.acs.commons.models.injectors.annotation.AemObject;
 import com.bmc.consts.JcrConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
+import com.bmc.models.bmccontentapi.BmcMetadata;
 import com.bmc.services.ResourceService;
 import com.day.cq.wcm.api.Page;
 
@@ -42,6 +49,7 @@ public class ResourceCenterFeaturedCardModel {
     private String path;
 
     private BmcContent card;
+    private Map<String, String> analiticData;
 
     @PostConstruct
     public void init() {
@@ -59,14 +67,10 @@ public class ResourceCenterFeaturedCardModel {
                     assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
                 }
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
-                //  content type
-                String contentType = node.hasProperty(JcrConsts.CONTENT_TYPE)
-                        ? node.getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
-                String labelType = baseImpl.getTitle("ic-content-type", contentType, 
-                        resource.getResourceResolver());
-    
-                card = new BmcContent(0, path, title, title, created,
-                        lastModified, assetLink, thumbnail, contentType, labelType, null);
+                //  metadata
+                List<BmcMetadata> metadata = getMetadata(resource);
+                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, metadata);
+                analiticData = buildAnaliticData();
             }
         } catch (Exception e) {
             log.error("An exception has occured while adding hit to response with resource: " + path
@@ -74,8 +78,43 @@ public class ResourceCenterFeaturedCardModel {
         }
     }
 
+    private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
+        List<BmcMetadata> metadata = new ArrayList<>();
+        Node node = resource.adaptTo(Node.class);
+        for (String property : baseImpl.getPropertyNames()) {
+            if(node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
+                javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
+                if (prop.isMultiple()) {
+                    String displayValues = "";
+                    for (int i = 0; i < prop.getValues().length; i++) {
+                        displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
+                                        resource.getResourceResolver());
+                    }
+                    metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
+                } else {
+                    String propValue = prop.getValue().getString();
+                    metadata.add(new BmcMetadata(property, propValue,
+                            baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
+                }
+            }
+        }
+        return metadata;
+    }
+
+    private Map<String, String> buildAnaliticData() {
+        Map<String, String> result = new HashMap<String, String>();
+        for (BmcMetadata metadata : card.getMetadata()) {
+            result.put("data-" + metadata.getId(), metadata.getDisplayValue());
+        }
+        return result;
+    }
+
     public BmcContent getCard() {
         return card;
+    }
+
+    public Map<String, String> getAnaliticData() {
+        return analiticData;
     }
 
 }

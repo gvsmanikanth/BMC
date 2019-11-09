@@ -30,6 +30,7 @@ import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.BmcContentResult;
+import com.bmc.models.bmccontentapi.BmcMetadata;
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import com.bmc.pum.PUMService;
 import com.bmc.util.JsonSerializer;
@@ -433,25 +434,10 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
                         }
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
-                        //  content type
-                        String contentType = hit.getNode().hasProperty(JcrConsts.CONTENT_TYPE) && !hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).isMultiple()
-                                ? hit.getNode().getProperty(JcrConsts.CONTENT_TYPE).getString() : null;
-                        String labelType = baseImpl.getTitle("ic-content-type", contentType, 
-                                hit.getResource().getResourceResolver());
                         //  metadata
-                        Map<String, String> metadata = new HashMap<>();
-                        for (String property : baseImpl.getPropertyNames()) {
-                            if(hit.getNode().hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
-                                javax.jcr.Property prop = hit.getNode().getProperty(JcrConsts.JCR_CONTENT + "/" + property);
-                                if (prop.isMultiple()) {
-                                    metadata.put(property, StringUtils.join(prop.getValues(), '|'));
-                                } else {
-                                    metadata.put(property, prop.getValue().getString());
-                                }
-                            }
-                        }
+                        List<BmcMetadata> metadata = getMetadata(hit.getResource());
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, contentType, labelType, metadata));
+                                lastModified, assetLink, thumbnail, metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -464,6 +450,29 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
 
         return contentResult;
+    }
+
+    private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
+        List<BmcMetadata> metadata = new ArrayList<>();
+        Node node = resource.adaptTo(Node.class);
+        for (String property : baseImpl.getPropertyNames()) {
+            if(node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
+                javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
+                if (prop.isMultiple()) {
+                    String displayValues = "";
+                    for (int i = 0; i < prop.getValues().length; i++) {
+                        displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
+                                        resource.getResourceResolver());
+                    }
+                    metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
+                } else {
+                    String propValue = prop.getValue().getString();
+                    metadata.add(new BmcMetadata(property, propValue,
+                            baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
+                }
+            }
+        }
+        return metadata;
     }
 
     @Override

@@ -28,24 +28,24 @@
             <div class="rc-featured-card-col">
                 <div class="rc-card" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;">
                     <div class="rc-card-header-icon">
-                        <span class="ic_${featuredCard.type.linkType} ${textWhite}"></span>
+                        <span class="ic_${featuredCard.linkType} ${textWhite}"></span>
                     </div>
                     <div class="rc-card-header">
-                        <span class="inline-block rc-featured-card-header-title" style="color:${textColor @ context='html'};">${featuredCard.type.label}</span>
+                        <span class="inline-block rc-featured-card-header-title" style="color:${textColor @ context='html'};">${featuredCard.type}</span>
                         <div class="rc-card-header-separator-white"></div>
                     </div>
                     <div class="rc-card-body">
                         <h4 class="rc-card-title" style="color:${textColor @ context='html'};">${featuredCard.title}</h4>
                     </div>
                     <div class="rc-card-footer" style="border-top-color:${textColor @ context='html'};">
-                        <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action ${featuredCard.type.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" 
-                            href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};">
-                            <svg class="align-middle s-${featuredCard.type.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.type.linkType}-white"></use>
+                        <a data-sly-test="${featuredCard.assetLink}" class="rc-card-footer-action ${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" 
+                            href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};" data-sly-attribute="${helper.analiticData}">
+                            <svg class="align-middle s-${featuredCard.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                             </svg>
-                            ${featuredCard.type.linkType == 'play' ? 'Play' : '' @ i18n}
-                            ${featuredCard.type.linkType == 'download' ? 'Download' : '' @ i18n}
-                            ${featuredCard.type.linkType == 'view' ? 'View' : '' @ i18n}
+                            ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
+                            ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
+                            ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
                         </a>
                     </div>
                 </div>
