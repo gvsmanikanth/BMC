@@ -191,123 +191,102 @@
     }
   }
 
-  .rc-card {
-     width:100%;
-     background-color: white;
-     border: 1px solid #ddd;
-     transition: all 0.2s ease-in-out;
-     display: inline-block;
-
-    img, figcaption {
-      @include box-sizing();
-    }
-    
-    figcaption {
-      padding: 1em 1em 0em;
-    }
-
-    img {
-      width: 100%;
+  .card{
+      padding: 24px;
+      padding-bottom: 0px;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
+      transition: 0.3s linear;
       
-    }
-  }
-  .rc-card-body {
-    // Enable `flex-grow: 1` for decks and groups so that card blocks take up
-    // as much space as possible, ensuring footers are aligned to the bottom.
-    flex: 1 1 auto;
-    padding: .75rem 1.25rem;
-    height: 50%;
-  }
-
-  .rc-card-title {
-    margin-bottom: .75rem;
-  }
-
-  .rc-card-img-top {
-    margin-bottom: 0;
-  }
-
-  .rc-card-header-icon {
-    padding: .75rem 1.25rem;
-  }
-
-  .rc-card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0; // Removes the default margin-bottom of <hN>
-    color: #29a5d6;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: small;
-
-    + .list-group {
-      .list-group-item:first-child {
-        border-top: 0;
+      .card-header{
+        h4{
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: small;
+          color: #29a5d6;
+          float: left;
+          padding-top: 1.25rem;
+        }
+        h3{
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: smaller;
+          color: #29a5d6;
+          float: left;
+          padding-top: 1.25rem;
+        }
+        .card-icon{
+          background-repeat: no-repeat;
+          background-size: 100%;
+          float: right;
+          width: 35px; 
+          height: 50px;
+        }
+        .card-thumbnail{
+          height: 8.4rem;
+          left: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
+      .card-content{
+        clear: both;
+        min-height: 191px;
+        h4 {
+          color: #414042;
+          font-weight: 400;
+          margin-bottom: 15px;
+        }
+        h2 {
+          color: #414042;
+          font-weight: 400;
+          margin-bottom: 15px;
+        }
+        p {
+          color: #414042;
+          font-size: 0.9rem;
+        }
+        hr {
+          border-bottom: 2px solid #3980B2;
+          max-width: 40px;
+          margin: 0 0 auto 0;
+        }
+      }
+      .card-footer{ 
+        text-align: right;
+        padding-bottom: 10px;
+        //background: linear-gradient(to right, #3980B2 50%, white 50%);
+        //background-size: 200% 100%;
+        background-position: right bottom;
+        //transition: all .5s ease-out;
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .card-footer-action {
+          color: #3980B2;
+          display: block;
+          text-transform: uppercase;
+          font-size: smaller;
+          font-weight: 600;
+          transition: .3s linear;
+          border-top: 1px solid #3980B2;
+          padding-top: 10px;
+        }
+      }
+
     }
-
-    .rc-featured-card-header-title {
-      font-size: initial;
-    }
-  }
-
-  .rc-card-header-separator {
-    background-color: rgba(0,147,201,1.0);
-    height: 4px;
-    width: 40px;
-    position: absolute;
-    -ms-transform: rotate(0);
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    margin-top: 13px;
-  }
-
-  .rc-card-header-separator-white {
-    @extend .rc-card-header-separator;
-    background-color: white;
-  }
-
-  .ic-card-action {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    float: right;
-    width: 35px; 
-    height: 50px;
-  }
 
   .ic_play {
-    @extend .ic-card-action;
     background-image: url("ic_play.png");
   }
 
   .ic_download {
-    @extend .ic-card-action;
     background-image: url("ic_download.png");
   }
 
   .ic_view {
-    @extend .ic-card-action;
     background-image: url("ic_view.png");
-  }
-
-  .rc-card-footer {
-    padding: .75rem 1.25rem;
-    border-top: 1px solid rgba(0,0,0,.125);
-    border-top-color: #177ba2;
-    margin-right: 15px;
-    margin-left: 15px;
-
-    &:last-child {
-      border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
-    }
-  }
-
-  .rc-card-footer-action {
-    float: right;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: smaller;
-    margin-bottom: 10px;
-    color: #177ba2;
   }
 }
 
