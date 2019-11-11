@@ -4,7 +4,7 @@
    include_once 'php-inc/head.php';
    ?>
    
-   <div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
+   <div class="header-solutions helix-header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
 	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/landing-page-web-banner-chatbot.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-landing-page-web-banner-chatbot.jpg&quot;}}" 
 	   style="background-color:#002c8f;">
@@ -27,23 +27,6 @@
 			 </div>
 		  </div>
 	   </section>
-	</div>
-
-	
-	<!--Business and technology -->
-	<div class="welcome-section text-center bg-white" style="display:none" >
-		<div class="layout-inner-wrap"  id="arrowBG"> 
-			<div class="content"> 
-				<h2 class="block-title">Business and technology change constantly.<span class="lineStart" ></span></h2>				
-				<div>
-					<p class="block-text subTitleBlock">While you want to do something about it, you also don't want to do anything until you can see where you need to go.<span class="subTitleEnd" ></span></p>				
-				</div>
-			</div>
-			<div class="content" > 
-				<h2 class="block-title"><span class="lineEnd"></span>We get that.</h2>
-				<p class="block-text">So, we made something different.</p>
-			</div>
-		</div>
 	</div>
 	
 	<!--First and only -->
@@ -111,7 +94,7 @@
 
 
 	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap"  id="arrowBG1"> 
+		<div class="layout-inner-wrap arrow-bg"  id="arrowBG1" data-position = "ltr" data-bool = "false" > 
 			<div class="content " > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				With BMC Helix, you can protect your systems and get access to data that helps improve your business.
@@ -148,7 +131,7 @@
     </div>
 
 	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap"  id="arrowBG2"> 
+		<div class="layout-inner-wrap arrow-bg"  id="arrowBG2" data-position = "rtl" data-bool = "false" > 
 			<div class="content arrow-med-text" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				BMC Helix empowers end users across your&nbsp;enterprise.
@@ -186,7 +169,7 @@
     </div>
 
 	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap"  id="arrowBG3"> 
+		<div class="layout-inner-wrap  arrow-bg"  id="arrowBG3"  data-position = "ltr" data-bool = "true" > 
 			<div class="content  small-arrow" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				

@@ -201,22 +201,36 @@
 			
 			this.drawArrow();
 	}
-		
-		
-		var firstArrowInstance = new CanvasBGArrowInner("arrowBG");
-		var secondArrowInstance = new CanvasBGArrowOuter("arrowBG1","ltr",false);
-		var thirdArrowInstance = new CanvasBGArrowOuter("arrowBG2","rtl",false);
-		var fourthArrowInstance = new CanvasBGArrowOuter("arrowBG3","ltr",true);
-		// var fifthArrowInstance = new CanvasBGArrowOuter("arrowBG4","rtl",true);
-		
-		$(window).resize(function() {
-			setTimeout(firstArrowInstance.drawArrow());
-			setTimeout(secondArrowInstance.drawArrow());
-			setTimeout(thirdArrowInstance.drawArrow());
-			setTimeout(fourthArrowInstance.drawArrow());
-			// setTimeout(fifthArrowInstance.drawArrow());
+
+	var arrowInstance_array = [];
+
+		$(".arrow-bg").each(function () {
+			var id = $(this).attr("id");
+			var position = $(this).attr("data-position");
+			var bool = Boolean($(this).data("bool"));
+			if(id != null && position != null && bool != null ){
+				var arrowInstance = new CanvasBGArrowOuter(id, position, bool);
+				arrowInstance_array.push(arrowInstance);
+			}	
 			
 		});
+
+		$(window).resize(function() {			
+			for(i=0; i<=arrowInstance_array.length;i++){
+				setTimeout(arrowInstance_array[i].drawArrow());
+			}	
+		});
+
+
+		// var secondArrowInstance = new CanvasBGArrowOuter("arrowBG1","ltr",false);
+		// var thirdArrowInstance = new CanvasBGArrowOuter("arrowBG2","rtl",false);
+		// var fourthArrowInstance = new CanvasBGArrowOuter("arrowBG3","ltr",true);
+		
+		// $(window).resize(function() {
+		// 	setTimeout(secondArrowInstance.drawArrow());
+		// 	setTimeout(thirdArrowInstance.drawArrow());
+		// 	setTimeout(fourthArrowInstance.drawArrow());			
+		// });
 	
 	}
 }(jQuery));
