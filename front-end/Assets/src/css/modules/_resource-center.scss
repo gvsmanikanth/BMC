@@ -175,17 +175,17 @@
     padding-bottom: 15px;
     padding-right: 20px;
 
-    @include media(breakpointSmall) {
+    @media (max-width: $tablet) {
       flex: 0 0 100%;
       max-width: 100%;
     }
 
-    @include media(breakpointMedium) {
+    @media (min-width: $break-md) {
       flex: 0 0 50%;
       max-width: 50%;
     }
 
-    @include media(breakpointLarge) {
+    @media (min-width: $break-lg) {
       flex: 0 0 33.33333%;
       max-width: 33.33333%;
     }
@@ -196,7 +196,20 @@
       padding-bottom: 0px;
       box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
       transition: 0.3s linear;
-      
+      &:hover{
+        box-shadow: none;
+        background: #ebf2f7;
+        transition: 0.3s linear;
+        .learn-more {
+          transition: 0.3s linear;
+          color: #fff !important;
+        }
+        .card-footer{
+          transition: 0.3s linear;          
+          padding-right: 20px;
+          background-position: left bottom;
+        }
+      }
       .card-header{
         h4{
           text-transform: uppercase;
