@@ -19,9 +19,9 @@ ResourceCenterResults = {
         //this.loadData();
 
         //  TODO: unwrap selects decorator
-        setTimeout(function() { 
-            $('.rc-result-header select').unwrap('<div class="decorator-select"></div>'); 
-        }, 1000);
+        $(document).ready( function () {
+            $('.rc-result-header select').unwrap('<div class="decorator-select"></div>');
+        });
     },
 
     bindEvents: function () {
