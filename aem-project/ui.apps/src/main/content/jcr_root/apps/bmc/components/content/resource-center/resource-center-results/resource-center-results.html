@@ -26,28 +26,28 @@
         </div>
         <div data-sly-test="${featuredCard}" class="rc-card-row">
             <div class="rc-featured-card-col">
-                <div class="card" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;">
-                    <div class="card-header">
-                        <h3 style="color:${textColor @ context='html'};">${featuredCard.type}</h3>
-                        <div class="card-icon ic_${featuredCard.linkType} ${textWhite}"></div>
+                <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
+                    <div class="card" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;">
+                        <div class="card-header">
+                            <h3 style="color:${textColor @ context='html'};">${featuredCard.type}</h3>
+                            <div class="card-icon ic_${featuredCard.linkType} ${textWhite}"></div>
+                        </div>
+                        <div class="card-content">
+                            <hr style="border-color:${textColor @ context='html'};"/>
+                            <h2 style="color:${textColor @ context='html'};">${featuredCard.title}</h2>
+                        </div>
+                        <div class="card-footer" style="border-top-color:${textColor @ context='html'};">
+                            <span class="card-footer-action" style="color:${textColor @ context='html'};border-top-color:${textColor @ context='html'};">
+                                <svg class="align-middle s-${featuredCard.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                </svg>
+                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
+                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
+                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                            </span>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <hr style="border-color:${textColor @ context='html'};"/>
-                        <h2 style="color:${textColor @ context='html'};">${featuredCard.title}</h2>
-                    </div>
-                    <div class="card-footer" style="border-top-color:${textColor @ context='html'};">
-                        <a data-sly-test="${featuredCard.assetLink}" class="card-footer-action ${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" 
-                            href="${featuredCard.assetLink}" style="color:${textColor @ context='html'};border-top-color:${textColor @ context='html'};" 
-                            data-sly-attribute="${helper.analiticData}">
-                            <svg class="align-middle s-${featuredCard.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
-                            </svg>
-                            ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                            ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                            ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
-                        </a>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
         <div id="resultItemsContainer"></div>
