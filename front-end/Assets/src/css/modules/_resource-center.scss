@@ -223,7 +223,7 @@ body.no-scroll{
         box-shadow: none;
         background: #ebf2f7;
         transition: 0.3s linear;
-        .learn-more {
+        .card-footer-action {
           transition: 0.3s linear;
           color: #fff !important;
         }
@@ -291,11 +291,11 @@ body.no-scroll{
       .card-footer{ 
         text-align: right;
         padding-bottom: 10px;
-        //background: linear-gradient(to right, #3980B2 50%, white 50%);
-        //background-size: 200% 100%;
+        background: linear-gradient(to right, #3980B2 50%, white 50%);
+        background-size: 200% 100%;
         background-position: right bottom;
         //transition: all .5s ease-out;
-        margin-left: -24px;
+        margin-left: -25px;
         margin-right: -24px;
         padding-left: 20px;
         padding-right: 20px;
@@ -309,8 +309,15 @@ body.no-scroll{
           border-top: 1px solid #3980B2;
           padding-top: 10px;
         }
+        .s-action {
+          padding-right: 5px;
+        }
       }
-
+      .featured-card-footer {
+        @extend .card-footer;
+        background: none;
+        background-size: none;
+      }
     }
 
   .ic_play {

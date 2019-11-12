@@ -36,14 +36,17 @@
                             <hr style="border-color:${textColor @ context='html'};"/>
                             <h2 style="color:${textColor @ context='html'};">${featuredCard.title}</h2>
                         </div>
-                        <div class="card-footer" style="border-top-color:${textColor @ context='html'};">
-                            <span class="card-footer-action" style="color:${textColor @ context='html'};border-top-color:${textColor @ context='html'};">
-                                <svg class="align-middle s-${featuredCard.linkType}-white" style="width: 1.7rem; height: 1.4rem;">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
-                                </svg>
-                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                        <div class="featured-card-footer" style="border-top-color:${textColor @ context='html'};">
+                            <span class="card-footer-action" style="color:${textColor @ context='html'};border-top-color:${textColor @ context='html'};font-size: large;">
+                                <div data-sly-test="${featuredCard.linkType == 'play'}" data-sly-unwrap>
+                                    <span class="s-action">&#9658;</span>${'Play' @ i18n}
+                                </div>
+                                <div data-sly-test="${featuredCard.linkType == 'download'}" data-sly-unwrap>
+                                    <span class="s-action">&#10515;</span>${'Download' @ i18n}
+                                </div>
+                                <div data-sly-test="${featuredCard.linkType == 'view'}" data-sly-unwrap>
+                                    <span class="s-action">&#10095;</span>${'View' @ i18n}
+                                </div>
                             </span>
                         </div>
                     </div>
