@@ -361,14 +361,6 @@ ResourceCenterFilters = {
             }, 250);
         });
     },
-    resetHeight: function () {
-    },
-
-    setMobileViewForSearch: function() {
-    },
-
-    resetMenuModal: function () {
-    },
 
     initMobileMenuEvents: function () {
         var self = this;

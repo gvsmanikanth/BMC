@@ -11,6 +11,8 @@
                 <div class="aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary p1 py2">
                     <div data-sly-test="${wcmmode.edit}">[ Edit Filters to Display ]</div>
                     <div data-sly-test="${!wcmmode.edit}" class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                        <!-- filter-search-overlay classes for mobile menu -->
+                        <div id="filterBodyOverlay" title="Click anywhere to close overlay."></div>
                         <div id="filter-menu" class="filter-menu"> 
                            <div class="rows_flex"><div id="search_header" class="columns"><div class="component_search">
                     	   <div class="search-panel">
@@ -24,6 +26,8 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- keyword search -->
                             <div data-sly-test="${properties.keywordSearch}" class="rc-filter-panel-group mb2">
                                 <div class="heading-group bg-white">
                                     <ul class="list-group-item list-group-item-action">
@@ -59,7 +63,7 @@
                                 </div>
                             </sly>
                             <!-- mobile menu header -->
-                            <div class="rc-filter-header filter-menu-mobile">
+                            <div class="rc-filter-header filter-menu-mobile" style="margin-bottom: 20%;">
                                 <div>
                                     <button class="submit-btn" href="#">${'Submit' @ i18n}</button>
                                 </div>
