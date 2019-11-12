@@ -169,6 +169,9 @@ ResourceCenterFilters = {
         //this.initFilters();
         this.bindEvents();
         this.loadData();
+
+        // timer to prevent multiple resize events
+        this.$resizeTimer;
     },
 
     bindEvents: function () {
@@ -177,6 +180,8 @@ ResourceCenterFilters = {
         this.setFilterClickEvent();
         this.setOrderByEvent();
         this.loadDataEvent();
+        this.setResize();
+        this.initMobileMenuEvents();
     },
 
     setKeywordSearchEvent: function () {
@@ -247,6 +252,9 @@ ResourceCenterFilters = {
         } else {
           $('.empty-filter').removeAttr('hidden');
         }
+        //  mobile selected filters count
+        var count = $(".filter-checkbox-item").find('input[checked]').length;
+        $("#filter-count").text(ResourceCenterResults.formatString($("#filter-count").data('template'), count > 0 ? '(' + count + ')' : ''));
     },
 
     setOrderByEvent: function () {
@@ -341,6 +349,73 @@ ResourceCenterFilters = {
     loadResults: function (res) {
         this.resetResults();
         this.$resultContainer.trigger("filterResultsLoadedEvent", [res]);
+    },
+
+    setResize: function () {
+        var self = this;
+        $(window).on( 'resize', function(e) {
+            clearTimeout(self.resizeTimer);
+            // https://css-tricks.com/snippets/jquery/done-resizing-event/
+            resizeTimer = setTimeout(function() {
+                self.closeMobileMenu();
+            }, 250);
+        });
+    },
+    resetHeight: function () {
+    },
+
+    setMobileViewForSearch: function() {
+    },
+
+    resetMenuModal: function () {
+    },
+
+    initMobileMenuEvents: function () {
+        var self = this;
+        $("#filter-count").text(ResourceCenterResults.formatString($("#filter-count").data('template'), ''));
+
+        $(document).on("click",".filter-menu-btn",function(e) {
+            if ($('#filter-menu').hasClass('filter-search-overlay')) {
+              $('.filter-search-overlay').addClass('on');
+            } else {
+              $('#filter-menu').addClass('filter-search-overlay on');
+            }
+            $('body').addClass('no-scroll');
+            $('#filterBodyOverlay').addClass('backgroundColor');
+            $(".filter-search-overlay #search_input").focus();
+            $(".filter-search-overlay").css({"right": (-1)*$(".filter-search-overlay").width()});
+            $(".filter-search-overlay").animate({right: '0px'});
+            if($('body').hasClass("scrolled-down") || $('body').hasClass("scrolled-up")){
+              $(".filter-search-overlay").addClass("topHeader");
+            }else{
+              $(".filter-search-overlay").removeClass("topHeader");
+            }
+            $('.rc-filter-panel-group').removeClass('mb2');
+        });
+
+        $(".filter_component_search_close").click(function(){
+            self.closeMobileMenu();
+        });
+        
+        $('.filter-search-overlay').click(function(e) {
+            e.stopPropagation();
+        });
+
+        $('.submit-btn').click(function (event) {
+            event.preventDefault();
+            self.closeMobileMenu();
+        });
+    },
+
+    closeMobileMenu: function () {
+        $(".filter-search-overlay").animate({right:(-1)*$(".filter-search-overlay").width()}, function(){
+            $('.filter-search-overlay').removeClass('filter-search-overlay on');
+            $('body').removeClass('no-scroll');
+            $('#filterBodyOverlay').removeClass('backgroundColor');
+            $(".filter-search-overlay #search_input").val("");
+            $(".filter-search-overlay").css("right","0px");
+            $('.rc-filter-panel-group').addClass('mb2');
+        });
     }
 };
 
