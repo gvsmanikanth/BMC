@@ -1,5 +1,4 @@
 ;( function($) {
-	if ($('body').hasClass('arrow_bg_landing_page')) {
 		var CanvasBGArrowInner = function (parentDivID){
 				var parentDiv = document.getElementById(parentDivID);//"arrowBG");
 				var canvas = document.createElement("canvas");
@@ -202,16 +201,22 @@
 			this.drawArrow();
 	}
 
-	
-		var secondArrowInstance = new CanvasBGArrowOuter("arrowBG1","ltr",false);
-		var thirdArrowInstance = new CanvasBGArrowOuter("arrowBG2","rtl",false);
-		var fourthArrowInstance = new CanvasBGArrowOuter("arrowBG3","ltr",true);
-		
-		$(window).resize(function() {
-			setTimeout(secondArrowInstance.drawArrow());
-			setTimeout(thirdArrowInstance.drawArrow());
-			setTimeout(fourthArrowInstance.drawArrow());			
+	var arrowInstance_array = [];
+
+		$(".arrow-bg").each(function () {
+			var id = $(this).attr("id");
+			var position = $(this).attr("data-position");
+			var bool = Boolean($(this).data("bool"));
+			if(id != null && position != null && bool != null ){
+				var arrowInstance = new CanvasBGArrowOuter(id, position, bool);
+				arrowInstance_array.push(arrowInstance);
+			}	
+			
 		});
-	
-	}
+
+		$(window).resize(function() {			
+			for(i=0; i<=arrowInstance_array.length;i++){
+				setTimeout(arrowInstance_array[i].drawArrow());
+			}	
+		});	
 }(jQuery));
