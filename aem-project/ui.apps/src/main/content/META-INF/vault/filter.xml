@@ -19,7 +19,9 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/support-search" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
-	
+	 <!-- WEB-6185 RC Template START -->
+		<filter root="/conf/bmc/settings/wcm/templates/resource-center-template" mode="replace"/>   	
+    <!-- WEB-6185 RC Template END -->
     <!-- WEB-4924 Forms redesign new templates START -->
     <!-- WEB-5345 remove merge and add replace. -->
 		<filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="replace"/>
