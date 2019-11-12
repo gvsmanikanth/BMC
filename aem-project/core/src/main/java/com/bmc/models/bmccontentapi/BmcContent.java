@@ -157,7 +157,7 @@ public class BmcContent {
         case "ic-type-188743546":   //  UnCategorized
             return "view";
         default:
-            return "";
+            return "download";
         }
     }
 }
