@@ -241,12 +241,27 @@ ResourceCenterFilters = {
         });
     },
 
+    setCloseFilterClickEvent: function () {
+        var self = this;
+        $('.cross-filter-close').on('click', function () {
+            event.preventDefault();
+            var filterId = $(this).attr('data-name');
+            $('#checkbox-' + filterId).attr('checked', false);
+            $('#' + filterId).removeClass('active');
+            ResourceCenterResults.$currentPage = 0;
+            self.updateHeader();
+            self.loadData();
+        });
+    },
+
     updateHeader: function () {
         var label = '';
         $('.js-filter-title').html('');
         $(".filter-checkbox-item").find('input[checked]').each(function () {
-            $('.js-filter-title').append('<span class="' + "badge-filter-title" + '">' + $('#' + $(this).attr('data-name')).text() + '</span>');
+            $('.js-filter-title').append('<span class="' + "badge-filter-title" + '">' + $('#' + $(this).attr('data-name')).text() +
+              '<a class="cross-filter-close" href="#" style="padding-left: 6px;font-weight: 400;" data-name="' + $(this).attr('data-name') + '">X</a>' + '</span>');
         });
+        this.setCloseFilterClickEvent();
         if ($('.js-filter-title span').size() > 0) {
           $('.empty-filter').attr('hidden', true);
         } else {
