@@ -175,7 +175,6 @@ body.no-scroll{
   .rc-featured-card-col {
     flex: 0 0 100%;
     box-sizing: border-box;
-    padding-right: 20px;
 
     img, figcaption {
       @include box-sizing();
@@ -214,6 +213,10 @@ body.no-scroll{
     }
   }
 
+  .pr-20 {
+    padding-right: 20px;
+  }
+
   .card{
       padding: 24px;
       padding-bottom: 0px;
@@ -229,7 +232,7 @@ body.no-scroll{
         }
         .card-footer{
           transition: 0.3s linear;          
-          padding-right: 20px;
+          //padding-right: 20px;
           background-position: left bottom;
         }
       }
@@ -290,15 +293,17 @@ body.no-scroll{
       }
       .card-footer{ 
         text-align: right;
-        padding-bottom: 10px;
         background: linear-gradient(to right, #3980B2 50%, white 50%);
         background-size: 200% 100%;
         background-position: right bottom;
         //transition: all .5s ease-out;
-        margin-left: -25px;
-        margin-right: -24px;
+        margin: 0 -1px 0 -1px;
         padding-left: 20px;
         padding-right: 20px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         .card-footer-action {
           color: #3980B2;
           display: block;
@@ -307,7 +312,7 @@ body.no-scroll{
           font-weight: 600;
           transition: .3s linear;
           border-top: 1px solid #3980B2;
-          padding-top: 10px;
+          padding: 10px;
         }
         .s-action {
           padding-right: 5px;
@@ -316,9 +321,18 @@ body.no-scroll{
       .featured-card-footer {
         @extend .card-footer;
         background: none;
-        background-size: none;
-      }
+      } 
+
     }
+
+  //  temporal hover to featured-card  
+  .featured-card{
+    @extend .card;
+    &:hover{
+      box-shadow: none;
+      background: none;
+    }
+  }
 
   .ic_play {
     background-image: url("ic_play.png");

@@ -24,10 +24,10 @@
                 </div>
             </div>
         </div>
-        <div data-sly-test="${featuredCard}" class="rc-card-row">
+        <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
             <div class="rc-featured-card-col">
                 <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
-                    <div class="card" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;">
+                    <div class="featured-card bg-white" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-color: white;">
                         <div class="card-header">
                             <h3 style="color:${textColor @ context='html'};">${featuredCard.type}</h3>
                             <div class="card-icon ic_${featuredCard.linkType} ${textWhite}"></div>
