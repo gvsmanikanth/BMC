@@ -33,6 +33,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             "product_line, /content/bmc/resources/product-lines, text",
             "ic-content-type, /content/bmc/resources/intelligent-content-types, jcr:title",
             "ic-topics, /content/bmc/resources/intelligent-content-topics, jcr:title",
+            "topics, /content/bmc/resources/topic, jcr:title",
             "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, jcr:title",
             "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona, jcr:title",
             "ic-target-industry, /content/bmc/resources/intelligent-content-target-industry, jcr:title",
