@@ -296,7 +296,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
             queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, ResourceCenterConsts.QUERY_PARAM_PROP, true), JcrConsts.DESCRIPTION);
             queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION, true), ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_LIKE);
-
+            queryParamsMap.put("group.p.or", "true");
+            
             for(int i = 0; i < keywordValues.length; i++) {
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex+1, buildKeywordValuePredicate(i), true), "%"+keywordValues[i]+"%");
                 queryParamsMap.put(buildQueryPredicateName(predicateIndex+2, buildKeywordValuePredicate(i), true), "%"+keywordValues[i]+"%");
@@ -397,7 +398,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         // adding other url parameters into query parameters
         int predicateIndex = 1;
         predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
-        predicateIndex = addSearchkeyword(urlParameters, queryParamsMap, predicateIndex);
+        predicateIndex = addSearchkeyword(urlParameters, queryParamsMap, 0);
         predicateIndex = addSortingPredicates(urlParameters, queryParamsMap, predicateIndex);
         addPaginationPredicates(urlParameters, queryParamsMap);
 
