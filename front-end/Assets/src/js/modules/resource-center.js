@@ -206,6 +206,17 @@ ResourceCenterFilters = {
               self.loadData();
               self.updateHeader();
         });
+
+        //  collapse/uncollapse filter options
+        $('.parent-filter').on('click', function () {
+            var childFilter = '[data-name="' + $(this).attr('data-name') + '"]';
+            if ($('.child-filter').find(childFilter).first().css('display') == "none") {
+                $(this).find('li span').html("&#8743;");
+            } else {
+                $(this).find('li span').html("&#8744");
+            }
+            $('.child-filter').find(childFilter).slideToggle();
+        });
     },
 
     loadDataEvent: function () {

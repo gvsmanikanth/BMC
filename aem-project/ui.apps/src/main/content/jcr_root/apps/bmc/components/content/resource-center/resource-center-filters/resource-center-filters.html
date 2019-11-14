@@ -46,12 +46,14 @@
                             <sly data-sly-list.item="${helper.filters}">
                                 <div data-sly-test="${item.display}" class="rc-filter-panel-group mb2">
                                     <div class="heading-group">
-                                        <ul class="list-group-item list-group-item-action">
-                                            <li class="list-group-item list-group-item-action">${item.label}</li>
+                                        <ul class="list-group-item list-group-item-action parent-filter" data-name="${item.name}">
+                                            <li class="list-group-item list-group-item-action">${item.label}
+                                                <span style="float: right;color: #177ba2;">&#8743;</span>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="list-group">
-                                        <ul>
+                                        <ul class="child-filter">
                                             <sly data-sly-list.option="${item.options}">
                                                 <div class="filter-checkbox-item" data-name="${item.name}">
                                                     <li id="${option.name}">${option.title}</li>
