@@ -189,6 +189,33 @@ body.no-scroll{
       width: 100%;
       
     }
+
+    .card-desktop {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+
+      @media (min-width: $break-md) {
+        display: inline-block;
+      }
+
+      @media (min-width: $break-lg) {
+        display: inline-block;
+      }
+    }
+    .card-mobile {
+      @media (max-width: $tablet) {
+        display: block;
+      }
+
+      @media (min-width: $break-md) {
+        display: none;
+      }
+
+      @media (min-width: $break-lg) {
+        display: none;
+      }
+    }
   }
 
   .rc-card-col {
@@ -214,16 +241,108 @@ body.no-scroll{
     }
   }
 
-  .pr-20 {
-    padding-right: 20px;
+  .card{
+    padding: 24px;
+    padding-bottom: 0px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
+    transition: 0.3s linear;
+    .card-header{
+      h4{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: small;
+        color: #29a5d6;
+        float: left;
+        padding-top: 1.25rem;
+      }
+      h3{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: smaller;
+        color: #29a5d6;
+        float: left;
+        padding-top: 1.25rem;
+      }
+      .card-icon{
+        background-repeat: no-repeat;
+        background-size: 100%;
+        float: right;
+        width: 35px; 
+        height: 50px;
+      }
+      .card-thumbnail{
+        height: 8.4rem;
+        left: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    .card-content{
+      clear: both;
+      min-height: 191px;
+      h4 {
+        color: #414042;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+      h2 {
+        color: #414042;
+        font-weight: 400;
+        margin-bottom: 15px;
+      }
+      p {
+        color: #414042;
+        font-size: 0.9rem;
+      }
+      hr {
+        border-bottom: 2px solid #3980B2;
+        max-width: 40px;
+        margin: 0 0 auto 0;
+      }
+    }
+    .card-footer{ 
+      text-align: right;
+      background: linear-gradient(to right, #3980B2 50%, white 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      //transition: all .5s ease-out;
+      margin: 0 -1px 0 -1px;
+      padding-left: 20px;
+      padding-right: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      .card-footer-action {
+        color: #3980B2;
+        display: block;
+        text-transform: uppercase;
+        font-size: smaller;
+        font-weight: 600;
+        transition: .3s linear;
+        border-top: 1px solid #3980B2;
+        padding: 10px;
+      }
+      .s-action {
+        padding-right: 5px;
+      }
+    }
+    .featured-card-footer {
+      @extend .card-footer;
+      background: none;
+      .card-footer-action {
+        color:white;
+        font-size: large;
+        text-align: center;
+      }
+    }
   }
 
-  .card{
-      padding: 24px;
-      padding-bottom: 0px;
-      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
-      transition: 0.3s linear;
-      &:hover{
+  //  simple cards
+  .simple-card{
+    @extend .card;
+    &:hover{
         box-shadow: none;
         background: #ebf2f7;
         transition: 0.3s linear;
@@ -237,119 +356,179 @@ body.no-scroll{
           background-position: left bottom;
         }
       }
-      .card-header{
-        h4{
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: small;
-          color: #29a5d6;
-          float: left;
-          padding-top: 1.25rem;
-        }
-        h3{
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: smaller;
-          color: #29a5d6;
-          float: left;
-          padding-top: 1.25rem;
-        }
-        .card-icon{
-          background-repeat: no-repeat;
-          background-size: 100%;
-          float: right;
-          width: 35px; 
-          height: 50px;
-        }
-        .card-thumbnail{
-          height: 8.4rem;
-          left: 0;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-      }
-      .card-content{
-        clear: both;
-        min-height: 191px;
-        h4 {
-          color: #414042;
-          font-weight: 400;
-          margin-bottom: 15px;
-        }
-        h2 {
-          color: #414042;
-          font-weight: 400;
-          margin-bottom: 15px;
-        }
-        p {
-          color: #414042;
-          font-size: 0.9rem;
-        }
-        hr {
-          border-bottom: 2px solid #3980B2;
-          max-width: 40px;
-          margin: 0 0 auto 0;
-        }
-      }
-      .card-footer{ 
-        text-align: right;
-        background: linear-gradient(to right, #3980B2 50%, white 50%);
-        background-size: 200% 100%;
-        background-position: right bottom;
-        //transition: all .5s ease-out;
-        margin: 0 -1px 0 -1px;
-        padding-left: 20px;
-        padding-right: 20px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        .card-footer-action {
-          color: #3980B2;
-          display: block;
-          text-transform: uppercase;
-          font-size: smaller;
-          font-weight: 600;
-          transition: .3s linear;
-          border-top: 1px solid #3980B2;
-          padding: 10px;
-        }
-        .s-action {
-          padding-right: 5px;
-        }
-      }
-      .featured-card-footer {
-        @extend .card-footer;
-        background: none;
-      } 
+  }
 
-    }
-
-  //  temporal hover to featured-card  
+  //  featured card
   .featured-card{
     @extend .card;
+    .card-header{
+      h3{
+        padding-top: 2.25rem;
+      }
+    }
+  }
+  .featured-card-right-panel{
+    width: 40%;
+    float: right;
+    .card-content {
+      hr {
+       border-bottom: 2px solid white;
+      }
+    }
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+  .featured-card-left-panel{
+    width: 60%;
     &:hover{
-      box-shadow: none;
-      background: none;
+      .card-header {
+        h3{
+          color: white;
+        }
+      }
+      .card-content {
+        h2{
+          color: white;
+        }
+        hr {
+         border-bottom: 2px solid white;
+        }
+      }
+      .card-footer-action {
+        transition: 0.3s linear;
+        border-top-color:white;
+      }
+    }
+  }
+  .featured-card-bg-bmc-blue{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #3980b2;
+      .card-footer-action {
+        color: #3980b2 !important;
+      }
+    }
+  }
+  .featured-card-bg-bmc-mid-blue{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #0093c9;
+      .card-footer-action {
+        color: #0093c9 !important;
+      }
+    }
+  }
+  .featured-card-bg-bmc-green{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #7fbc00;
+      .card-footer-action {
+        color: #7fbc00 !important;
+      }
+    }
+  }
+  .featured-card-bg-bmc-mid-green{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #aacc07;
+      .card-footer-action {
+        color: #aacc07 !important;
+      }
+    }
+  }
+  .featured-card-bg-bmc-grey{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #414042;
+      .card-footer-action {
+        color: #414042 !important;
+      }
+    }
+  }
+  .featured-card-bg-bmc-teal{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #00a79d;
+      .card-footer-action {
+        color: #00a79d !important;
+      }
+    }
+  }
+  .featured-card-bg-light-orange{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #f98700;
+      .card-footer-action {
+        color: #f98700 !important;
+      }
+    }
+  }
+  .featured-card-bg-forrester-green{
+    @extend .featured-card-left-panel;
+    &:hover{
+      background: #16563F;
+      .card-footer-action {
+        color: #16563F !important;
+      }
     }
   }
 
+  //  cards icons
   .ic_play {
     background-image: url("ic_play.png");
   }
-
+  .ic_play-white {
+    background-image: url("ic_play-white.png");
+  }
   .ic_download {
     background-image: url("ic_download.png");
   }
-
-  .ic_view {
-    background-image: url("ic_view.png");
+  .ic_download-white {
+    background-image: url("ic_download-white.png");
+  }
+  .ic_view-white {
+    background-image: url("ic_view-white.png");
   }
 }
 
 .text-white {
-  color: white;  
+  color: white !important;  
+}
+.pr-0 {
+  padding-right: 0px;
+}
+.pl-0 {
+  padding-left: 0px;
+}
+.pr-20 {
+  padding-right: 20px;
+}
+
+//  BMC colors
+.bg-bmc-blue{
+  background-color: #3980b2;
+}
+.bg-bmc-mid-blue{
+  background-color: #0093c9;
+}
+.bg-bmc-green{
+  background-color: #7fbc00;
+}
+.bg-bmc-mid-green{
+  background-color: #aacc07;
+}
+.bg-bmc-grey{
+  background-color: #414042;
+}
+.bg-bmc-teal{
+  background-color: #00a79d;
+}
+.bg-light-orange{
+  background-color: #f98700;
+}
+.bg-forrester-green{
+  background-color: #16563F;
 }
 
 // Customized UI for Mobiles Resource Center Filters

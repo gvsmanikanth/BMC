@@ -27,17 +27,52 @@
         <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
             <div class="rc-featured-card-col">
                 <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
-                    <div class="featured-card bg-white" style="height: 310px; background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-color: white;">
+                    <!-- desktop featured card -->
+                    <div class="featured-card featured-card-${properties.bgColor ? properties.bgColor : 'left-panel'} bg-white card-desktop" style="height: 310px;">
                         <div class="card-header">
-                            <h3 style="color:${textColor @ context='html'};">${featuredCard.type}</h3>
-                            <div class="card-icon ic_${featuredCard.linkType} ${textWhite}"></div>
+                            <h3>${featuredCard.type}</h3>
                         </div>
                         <div class="card-content">
-                            <hr style="border-color:${textColor @ context='html'};"/>
-                            <h2 style="color:${textColor @ context='html'};">${featuredCard.title}</h2>
+                            <hr/>
+                            <h2>${featuredCard.title}</h2>
                         </div>
-                        <div class="featured-card-footer" style="border-top-color:${textColor @ context='html'};">
-                            <span class="card-footer-action" style="color:${textColor @ context='html'};border-top-color:${textColor @ context='html'};font-size: large;">
+                        <div class="featured-card-footer" style="padding-right: 0px;">
+                            <span class="card-footer-action" style="font-size: large;color: white;">
+                                <div data-sly-unwrap>Action</div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="featured-card featured-card-right-panel card-desktop ${properties.bgColor}" style="height: 310px;">
+                        <div class="card-header">
+                            <div class="card-icon ic_${featuredCard.linkType}-white"></div>
+                        </div>
+                        <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
+                        <div class="featured-card-footer" style="padding-left: 0px;">
+                            <span class="card-footer-action" style="border-top-color:white;">
+                                <div data-sly-test="${featuredCard.linkType == 'play'}" data-sly-unwrap>
+                                    <span class="s-action">&#9658;</span>${'Play' @ i18n}
+                                </div>
+                                <div data-sly-test="${featuredCard.linkType == 'download'}" data-sly-unwrap>
+                                    <span class="s-action">&#10515;</span>${'Download' @ i18n}
+                                </div>
+                                <div data-sly-test="${featuredCard.linkType == 'view'}" data-sly-unwrap>
+                                    <span class="s-action">&#10095;</span>${'View' @ i18n}
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- mobile featured card -->
+                    <div class="featured-card featured-card-right-panel card-mobile ${properties.bgColor}" style="height: 310px;">
+                        <div class="card-header" style="background: url(${fbImg @ context='uri'}) no-repeat top left / cover;background-size: contain;min-height: 10%;">
+                            <h3 class="text-white">${featuredCard.type}</h3>
+                            <div class="card-icon ic_${featuredCard.linkType}-white"></div>
+                        </div>
+                        <div class="card-content">
+                            <hr/>
+                            <h4 class="text-white">${featuredCard.title}</h4>
+                        </div>
+                        <div class="featured-card-footer" style="padding-left: 0px;">
+                            <span class="card-footer-action" style="border-top-color:white;">
                                 <div data-sly-test="${featuredCard.linkType == 'play'}" data-sly-unwrap>
                                     <span class="s-action">&#9658;</span>${'Play' @ i18n}
                                 </div>
