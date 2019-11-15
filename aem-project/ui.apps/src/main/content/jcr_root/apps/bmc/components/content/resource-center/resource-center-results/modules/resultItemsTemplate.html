@@ -19,7 +19,13 @@
                 </div>
                 <div class="card-content">
                     <hr/>
-                    <h4>{{title}}</h4>
+                    <h4>
+                        {{#if thumbnail}}
+                            {{{truncateText title 70}}}
+                        {{else}}
+                            {{{truncateText title 110}}}
+                        {{/if}}
+                    </h4>
                 </div>
                 <div class="card-footer">
                     <span class="card-footer-action">

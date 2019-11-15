@@ -34,7 +34,8 @@
                         </div>
                         <div class="card-content">
                             <hr/>
-                            <h2>${featuredCard.title}</h2>
+                            <h2 data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=110}">
+                                ${truncateText.finalText}</h2>
                         </div>
                         <div class="featured-card-footer" style="padding-right: 0px;">
                             <span class="card-footer-action" style="font-size: large;color: white;">
@@ -69,7 +70,8 @@
                         </div>
                         <div class="card-content">
                             <hr/>
-                            <h4 class="text-white">${featuredCard.title}</h4>
+                            <h4 class="text-white" data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=110}">
+                                ${truncateText.finalText}</h4>
                         </div>
                         <div class="featured-card-footer" style="padding-left: 0px;">
                             <span class="card-footer-action" style="border-top-color:white;">

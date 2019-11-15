@@ -23,7 +23,11 @@ HandlebarHelpers = {
                 return options.inverse(this);
             }
         });
-    }
+
+        Handlebars.registerHelper('truncateText', function (text, chars) {
+            return CommonUtils.truncateText(text, chars);
+        });
+    },
 };
 
 HandlebarHelpers.registerHelpers();
