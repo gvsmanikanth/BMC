@@ -78,10 +78,12 @@
                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 panel-group">
                         <div data-sly-test="${!wcmmode.edit}">
                             <div class="rc-filter-header filter-menu">
-                                <span class="header-label">${'Filters' @ i18n}</span>
-                                <span class="verticalBar">|</span>
+                                <div class="inline-block" style="vertical-align: top;">
+                                    <span class="header-label">${'Filters' @ i18n}</span>
+                                    <span class="verticalBar">|</span>
+                                </div>
                                 <span class="empty-filter">${'Select your filter on the left' @ i18n}</span>
-                                <div class="js-filter-title inline-block"></div>
+                                <div class="js-filter-title inline-block" style="max-width: 70%;"></div>
                                 <div class="inline-block" style="float: right;">
                                     <a class="reset-btn" href="#">${'Reset Filters' @ i18n}</a>
                                 </div>
