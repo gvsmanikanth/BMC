@@ -156,4 +156,16 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     public boolean isApiOn() {
         return baseImpl.isApiOn();
     }
+
+
+
+    @Override
+    public String getContentTypeDisplayValue(String contentType) {
+        return baseImpl.getContentTypeDisplayValue(contentType);
+    }
+
+    @Override
+    public String getContentTypeActionValue(String contentType) {
+        return baseImpl.getContentTypeActionValue(contentType);
+    }
 }

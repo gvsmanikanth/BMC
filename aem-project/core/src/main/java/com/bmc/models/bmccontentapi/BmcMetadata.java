@@ -35,4 +35,8 @@ public class BmcMetadata {
     public void setDisplayValue(String displayValue) {
         this.displayValue = displayValue;
     }
+
+    public String getFirstValue() {
+        return value != null ? value.split("\\|")[0] : "";
+    }
 }

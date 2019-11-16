@@ -2,8 +2,6 @@ package com.bmc.models.bmccontentapi;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class BmcContent {
 
     private long index;
@@ -19,7 +17,7 @@ public class BmcContent {
     private List<BmcMetadata> metadata;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, List<BmcMetadata> metadata) {
+            String assetLink, String thumbnail, String type, String linkType, List<BmcMetadata> metadata) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -29,11 +27,8 @@ public class BmcContent {
         this.assetLink = assetLink;
         this.thumbnail = thumbnail;
         this.metadata = metadata;
-        BmcMetadata contentType = getContentTypeMeta();
-        if (contentType != null) {
-            type = contentType.getDisplayValue();
-            linkType = getLinkType(contentType.getValue());
-        }
+        this.type = type;
+        this.linkType = linkType;
     }
 
     public long getIndex() {
@@ -122,42 +117,5 @@ public class BmcContent {
 
     public void setMetadata(List<BmcMetadata> metadata) {
         this.metadata = metadata;
-    }
-
-    private BmcMetadata getContentTypeMeta() {
-        for (BmcMetadata bmcMetadata : metadata) {
-            if ("ic-content-type".equals(bmcMetadata.getId())) {
-                return bmcMetadata;
-            }
-        }
-        return null;
-    }
-
-    private String getLinkType(String contentTypeId) {
-        if (StringUtils.isEmpty(contentTypeId)) {
-            return "";
-        }
-        switch (contentTypeId) {
-        case "ic-type-185980791":   //  Videos
-            return "play";
-        case "ic-type-546577064":   //  White Papers
-        case "ic-type-196363946":   //  Analyst Research
-        case "ic-type-146731505":   //  Datasheets
-        case "ic-type-621970361":   //  Customer Stories
-        case "ic-type-790775692":   //  Competitive Comparisons
-        case "ic-type-165669365":   //  E-books
-            return "download";
-        case "ic-type-6549684174":  //  Interactive Tools
-        case "ic-type-353700740":   //  Articles/Blogs 
-        case "ic-type-828555634":   //  Events 
-        case "ic-type-343858909":   //  Infographics
-        case "ic-type-920200003":   //  Trials
-        case "ic-type-291550317":   //  Webinars
-        case "ic-type-464000615":   //  Demos
-        case "ic-type-188743546":   //  UnCategorized
-            return "view";
-        default:
-            return "download";
-        }
     }
 }

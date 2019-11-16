@@ -71,8 +71,30 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 "product-interests"
         })
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
-    
+
+    @Property(description = "Mapping of content types to their correspondig display values and action type",
+            value = { "ic-type-196363946, Analyst Research, download",
+            "ic-type-353700740, Article/Blog, view",
+            "ic-type-790775692, Competitive Comparison, download",
+            "ic-type-621970361, Customer Story, download",
+            "ic-type-146731505, Datasheet, download",
+            "ic-type-464000615, Demo, view",
+            "ic-type-165669365, E-book, download",
+            "ic-type-828555634, Event, view",
+            "ic-type-343858909, Infographic, view",
+            "ic-type-654968417, Interactive Tool, view",
+            "ic-type-920200003, Trial, view",
+            "ic-type-185980791, Videos, play",
+            "ic-type-291550317, Webinar, view",
+            "ic-type-546577064, White Paper, download",
+            "ic-type-188743546, UnCategorized, view"
+    })
+    static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
+
     private List<String> resourceFiltersList;
+
+    private Map<String, String> contentTypeValueMapping;
+    private Map<String, String> contentTypeActionMapping;
 
     @Property(label = "Resource Center Query API switch", boolValue = false,
             description = "Resource Center Query API switch")
@@ -90,7 +112,10 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
-        
+
+        this.contentTypeValueMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING));
+        this.contentTypeActionMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING), 0, 2);
+
         // set auth info as "bmcdataservice" -> defined under /apps/home/users/system
         Map<String, Object> authInfo = new HashMap<>();
         authInfo.put(ResourceResolverFactory.SUBSERVICE, "bmcdataservice");
@@ -437,8 +462,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         //  metadata
                         List<BmcMetadata> metadata = getMetadata(hit.getResource());
+                        BmcMetadata contentType = getContentTypeMeta(metadata);
+                        String type = getContentTypeDisplayValue(contentType.getFirstValue());
+                        String linkType = getContentTypeActionValue(contentType.getFirstValue());
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, metadata));
+                                lastModified, assetLink, thumbnail, type, linkType, metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -476,6 +504,15 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return metadata;
     }
 
+    private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+        for (BmcMetadata bmcMetadata : metadata) {
+            if ("ic-content-type".equals(bmcMetadata.getId())) {
+                return bmcMetadata;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String getResourceResultsJSON(Map<String, String[]> urlParameters) {
         if(!isApiOn())
@@ -491,5 +528,23 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     @Override
     public boolean isApiOn() {
         return resourceCenterApiSwitch;
+    }
+
+    @Override
+    public String getContentTypeDisplayValue(String contentType) {
+        if (!contentTypeValueMapping.containsKey(contentType)) {
+            log.debug("No mapping exists for content type {}", contentType);
+            return contentType;
+        }
+        return contentTypeValueMapping.get(contentType);
+    }
+
+    @Override
+    public String getContentTypeActionValue(String contentType) {
+        if (!contentTypeActionMapping.containsKey(contentType)) {
+            log.debug("No mapping exists for content type {}", contentType);
+            return contentType;
+        }
+        return contentTypeActionMapping.get(contentType);
     }
 }

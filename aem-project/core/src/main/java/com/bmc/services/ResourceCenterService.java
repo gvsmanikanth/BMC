@@ -35,4 +35,7 @@ public interface ResourceCenterService extends ConfigurableService  {
 
     boolean isApiOn();
 
+    String getContentTypeDisplayValue(String contentType);
+
+    String getContentTypeActionValue(String contentType);
 }

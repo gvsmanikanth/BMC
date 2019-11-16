@@ -25,6 +25,7 @@ import com.adobe.acs.commons.models.injectors.annotation.AemObject;
 import com.bmc.consts.JcrConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcMetadata;
+import com.bmc.services.ResourceCenterService;
 import com.bmc.services.ResourceService;
 import com.day.cq.wcm.api.Page;
 
@@ -35,6 +36,9 @@ public class ResourceCenterFeaturedCardModel {
 
     @OSGiService
     private ResourceService baseImpl;
+
+    @OSGiService
+    private ResourceCenterService resourceCenterService;
 
     @AemObject
     private Page currentPage;
@@ -69,7 +73,10 @@ public class ResourceCenterFeaturedCardModel {
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
-                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, metadata);
+                BmcMetadata contentType = getContentTypeMeta(metadata);
+                String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
+                String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
+                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
                 analiticData = buildAnaliticData();
             }
         } catch (Exception e) {
@@ -99,6 +106,15 @@ public class ResourceCenterFeaturedCardModel {
             }
         }
         return metadata;
+    }
+
+    private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+        for (BmcMetadata bmcMetadata : metadata) {
+            if ("ic-content-type".equals(bmcMetadata.getId())) {
+                return bmcMetadata;
+            }
+        }
+        return null;
     }
 
     private Map<String, String> buildAnaliticData() {
