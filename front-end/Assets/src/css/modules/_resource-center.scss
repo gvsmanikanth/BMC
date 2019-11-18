@@ -145,6 +145,22 @@
     background: white;
     text-transform: uppercase;
     font-size: initial;
+
+    padding-right: 2.0em;
+    padding-left: 0.5em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+
+    background-image: linear-gradient(45deg, transparent 50%, #29a5d6 50%), linear-gradient(135deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+    background-position: calc(100% - 20px) calc(0.5em + 1px), calc(100% - 15px) calc(0.5em + 1px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 0px 0em;
+    background-repeat: no-repeat;
+    outline: none;
+  }
+  /*For IE10+*/
+  .rc-sort-select-wrapper select::-ms-expand {
+    display: none;
   }
 }
 .rc-result-header-bottom {
@@ -157,11 +173,26 @@ body.no-scroll{
   overflow: hidden;
 }
 
+
+.rc-arrow-down {
+  background-image: linear-gradient(45deg, transparent 50%, #29a5d6 50%), linear-gradient(135deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 0px 0em;
+  background-repeat: no-repeat;
+}
+
+.rc-arrow-up {
+  background-image: linear-gradient(135deg, transparent 50%, #29a5d6 50%), linear-gradient(45deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 0px 0em;
+  background-repeat: no-repeat;
+}
+
 // Customized UI for Resource Center Cards
 .rc-card-row {
   display: flex;
   flex-wrap: wrap;
-  padding-block-start: 15px;
+  padding-top: 15px;
   margin-right: -20px;
 
   .rc-featured-card-col {
@@ -284,6 +315,7 @@ body.no-scroll{
         border-bottom: 2px solid #3980B2;
         max-width: 40px;
         margin: 0 0 auto 0;
+        text-align: left;
       }
     }
     .card-footer{ 
