@@ -163,15 +163,6 @@ body.no-scroll{
   flex-wrap: wrap;
   padding-block-start: 15px;
   margin-right: -20px;
-  
-  @include media(breakpointSmall) {
-    justify-content: space-around;
-  }
-
-  @include media(breakpointMedium) {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
 
   .rc-featured-card-col {
     flex: 0 0 100%;
@@ -190,29 +181,22 @@ body.no-scroll{
       
     }
 
+    // Customized media queries for cards
     .card-desktop {
-      @media (max-width: $tablet) {
+      @media (max-width: $break-md) {
         display: none;
       }
 
-      @media (min-width: $break-md) {
-        display: inline-block;
-      }
-
-      @media (min-width: $break-lg) {
+      @media all and (min-width: $break-md) {
         display: inline-block;
       }
     }
     .card-mobile {
-      @media (max-width: $tablet) {
+      @media (max-width: $break-md) {
         display: block;
       }
 
-      @media (min-width: $break-md) {
-        display: none;
-      }
-
-      @media (min-width: $break-lg) {
+      @media all and (min-width: $break-md) {
         display: none;
       }
     }
@@ -225,16 +209,15 @@ body.no-scroll{
     padding-bottom: 15px;
     padding-right: 20px;
 
-    @media (max-width: $tablet) {
+    // Customized media queries for cards
+    @media (max-width: $break-sm) {
       flex: 0 0 100%;
       max-width: 100%;
     }
-
-    @media (min-width: $break-md) {
+    @media all and (min-width: $break-sm) and (max-width: $break-md) {
       flex: 0 0 50%;
       max-width: 50%;
     }
-
     @media (min-width: $break-lg) {
       flex: 0 0 33.33333%;
       max-width: 33.33333%;
@@ -377,7 +360,7 @@ body.no-scroll{
        border-bottom: 2px solid white;
       }
     }
-    @media (max-width: $tablet) {
+    @media (max-width: $break-md) {
       width: 100%;
     }
   }
@@ -400,6 +383,14 @@ body.no-scroll{
       .card-footer-action {
         transition: 0.3s linear;
         border-top-color:white;
+      }
+    }
+    @media (max-width: $break-lg) {
+      .card-content {
+        h2{
+          font-size: x-large;
+          line-height: 30px;
+        }
       }
     }
   }
@@ -538,12 +529,7 @@ body.no-scroll{
   @media (max-width: $tablet) {
     display: none;
   }
-
-  @media (min-width: $break-md) {
-    display: block;
-  }
-
-  @media (min-width: $break-lg) {
+  @media all and (min-width: $tablet) {
     display: block;
   }
 }
@@ -551,12 +537,7 @@ body.no-scroll{
   @media (max-width: $tablet) {
     display: block;
   }
-
-  @media (min-width: $break-md) {
-    display: none;
-  }
-
-  @media (min-width: $break-lg) {
+  @media all and (min-width: $tablet) {
     display: none;
   }
 }
