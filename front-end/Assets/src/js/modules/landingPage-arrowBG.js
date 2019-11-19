@@ -201,23 +201,22 @@
 			this.drawArrow();
 	}
 
-	var arrowInstance_array = [];
+		var arrowInstance_array = [];
 		$(".arrow-bg").each(function () {
 			var id = $(this).attr("id");
 			var position = $(this).attr("data-position");
 			var bool = Boolean($(this).data("bool"));
 			if(id != null && position != null && bool != null ){				
 				var arrowInstance = new CanvasBGArrowOuter(id, position, bool);
-				arrowInstance_array.push(arrowInstance);
-				
-			}	
-			
+				arrowInstance_array.push(arrowInstance);				
+			}				
 		});
 
 		$(window).resize(function() {				
 			if(arrowInstance_array.length > 0){				
-				for(i=0; i<=arrowInstance_array.length;i++){
-					setTimeout(arrowInstance_array[i].drawArrow());
+				for(i=0; i<arrowInstance_array.length;i++){
+					var objArrow = arrowInstance_array[i];
+					objArrow.drawArrow();
 				}	
 			}				
 		});	
