@@ -8,12 +8,19 @@ ResourceCenterResults = {
         this.$resultsInfo = $('.results-info');
         this.$resultsPage = $('.js-results-page');
         this.$rootPath = $('#rootPath').text();
-        //this.$resultPage = $('.result-page');
-        //this.$sorting = $('.rc-sort-select');
+        
+        //  pagination vars
         this.$currentPage = 0;
         this.$pageSize = $('#pageSize').text();
         this.$totalPages = 0;
+        this.$maxPages = 5; //  max pages to render
         this.$totalItems = 0;
+
+        this.$forwardMode = '';
+        //  from/to pages to show
+        this.$fromPage = 0;
+        this.$toGenerate = this.$maxPages;        
+
         //this.initFilters();
         this.bindEvents();
         //this.loadData();
@@ -54,10 +61,16 @@ ResourceCenterResults = {
             event.preventDefault();
             var page = $(this).text();
             if (page == '>') {
-              self.$currentPage++;  
+              self.$currentPage = +$('.result-page.last').first().text();
+            } else if (page == '<') {
+              self.$currentPage = +$('.result-page.first').first().text();
+              self.$currentPage -= 2;
             } else {
               self.$currentPage = page - 1;
+              self.$fromPage = +$('.result-page.first').first().text() - 1;
+              self.$toGenerate = +$('.result-page.last').first().text();
             }
+            self.$forwardMode = page;
             self.$container.trigger("loadDataEvent");
         });
     },
@@ -104,15 +117,32 @@ ResourceCenterResults = {
                 //  pagination data
                 self.$totalItems = contentResult.pagination.totalMatches;
                 self.$totalPages = contentResult.pagination.numberOfPages;
+                //  next pages action
+                if (self.$forwardMode == '<') {
+                    self.$fromPage = self.$currentPage < self.$maxPages ? 0 : self.$currentPage + 1 - self.$maxPages;
+                    self.$toGenerate = self.$fromPage + self.$maxPages;
+                }
+                //  previous pages action     
+                if (self.$forwardMode == '>') {
+                    self.$toGenerate = (self.$currentPage + self.$maxPages) < self.$totalPages ? self.$currentPage + self.$maxPages : self.$totalPages;
+                    self.$fromPage = self.$currentPage;
+                }
                 var startIndex = (self.$pageSize * self.$currentPage) + 1;
                 var resultSize = contentResult.results.length;
                 if (self.$totalItems > 0) {
                   self.$resultsInfo.text(self.formatString(self.$resultsInfo.data('template'), 
                     startIndex, startIndex + resultSize - 1, self.$totalItems));
-                  for (k = 0; k < self.$totalPages; k += 1) {
-                     self.$resultsPage.append('<span><a href="#" class="result-page ' + (self.$currentPage == k ? 'bold' : '') + '">' + (k+1) + '</a></span>'); 
+                  
+                  if (self.$fromPage > 0) {
+                    self.$resultsPage.append('<span><a class="result-page" href="#">' + '<' + '</a></span>'); 
                   }
-                  if (self.$currentPage < self.$totalPages - 1) {
+                  for (k = self.$fromPage; k < self.$toGenerate; k += 1) {
+                     self.$resultsPage.append('<span><a href="#" class="result-page ' + 
+                      (k + 1 < self.$toGenerate ? '' : 'last ') + 
+                      (k == self.$fromPage ? 'first ' : '') + 
+                      (self.$currentPage == k ? 'bold' : '') + '">' + (k+1) + '</a></span>'); 
+                  }
+                  if (self.$toGenerate < self.$totalPages - 1) {
                     self.$resultsPage.append('<span><a class="result-page" href="#">' + '>' + '</a></span>'); 
                   }
                   self.setPaginationEvents();
