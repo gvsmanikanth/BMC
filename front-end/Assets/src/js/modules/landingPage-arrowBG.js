@@ -202,21 +202,23 @@
 	}
 
 	var arrowInstance_array = [];
-
 		$(".arrow-bg").each(function () {
 			var id = $(this).attr("id");
 			var position = $(this).attr("data-position");
 			var bool = Boolean($(this).data("bool"));
-			if(id != null && position != null && bool != null ){
+			if(id != null && position != null && bool != null ){				
 				var arrowInstance = new CanvasBGArrowOuter(id, position, bool);
 				arrowInstance_array.push(arrowInstance);
+				
 			}	
 			
 		});
 
-		$(window).resize(function() {			
-			for(i=0; i<=arrowInstance_array.length;i++){
-				setTimeout(arrowInstance_array[i].drawArrow());
-			}	
+		$(window).resize(function() {				
+			if(arrowInstance_array.length > 0){				
+				for(i=0; i<=arrowInstance_array.length;i++){
+					setTimeout(arrowInstance_array[i].drawArrow());
+				}	
+			}				
 		});	
 }(jQuery));
