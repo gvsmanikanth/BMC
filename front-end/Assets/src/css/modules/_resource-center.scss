@@ -54,7 +54,18 @@
     }
 
     .list-group li.active {
-      border-right: solid;
+      //  mobile check
+      @media (max-width: $tablet) {
+        &::after {
+          content: "\2713";
+          position: absolute;
+          left: 92%;
+        }
+      }
+      //  desktop check
+      @media all and (min-width: $tablet) {
+        border-right: solid;
+      }
     }
 }
 
