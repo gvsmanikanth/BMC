@@ -463,8 +463,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         //  metadata
                         List<BmcMetadata> metadata = getMetadata(hit.getResource());
                         BmcMetadata contentType = getContentTypeMeta(metadata);
-                        String type = getContentTypeDisplayValue(contentType.getFirstValue());
-                        String linkType = getContentTypeActionValue(contentType.getFirstValue());
+                        String type = contentType != null ? getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                        String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
                                 lastModified, assetLink, thumbnail, type, linkType, metadata));
                     } catch (Exception e) {
