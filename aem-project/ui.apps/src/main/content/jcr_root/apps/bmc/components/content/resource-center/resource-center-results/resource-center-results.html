@@ -28,8 +28,8 @@
             <div class="rc-featured-card-col">
                 <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
-                    <div class="featured-card-container card-desktop">
-                        <div class="featured-card featured-card-left-panel bg-white" style="height: 310px;">
+                    <div class="featured-card-container">
+                        <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
                             <div class="card-header">
                                 <h3>${featuredCard.type}</h3>
                             </div>
@@ -44,28 +44,25 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="featured-card featured-card-right-panel ${properties.bgColor}" style="height: 310px;">
+                        <div class="featured-card featured-card-right-panel ${properties.bgColor} card-desktop" style="height: 310px;">
                             <div class="card-header">
                                 <div class="card-icon ic_${featuredCard.linkType}-white"></div>
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
                             <div class="featured-card-footer" style="padding-left: 0px;">
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                    <div data-sly-test="${featuredCard.linkType == 'play'}" data-sly-unwrap>
-                                        <span class="s-action">&#9658;</span>${'Play' @ i18n}
-                                    </div>
-                                    <div data-sly-test="${featuredCard.linkType == 'download'}" data-sly-unwrap>
-                                        <span class="s-action">&#10515;</span>${'Download' @ i18n}
-                                    </div>
-                                    <div data-sly-test="${featuredCard.linkType == 'view'}" data-sly-unwrap>
-                                        <span class="s-action">&#10095;</span>${'View' @ i18n}
-                                    </div>
+                                    <svg class="align-middle s-${featuredCard.linkType}-white">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                    </svg>
+                                    ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
+                                    ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
+                                    ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
                                 </span>
                             </div>
                         </div>
                     </div>
                     <!-- mobile featured card -->
-                    <div class="featured-card featured-card-right-panel card-mobile ${properties.bgColor}" style="height: 310px;">
+                    <div class="featured-card featured-card-right-panel ${properties.bgColor} card-mobile" style="height: 310px;">
                         <div class="card-header" style="background: url(${fbImg @ context='uri'}) no-repeat top left / cover;background-size: contain;min-height: 10%;">
                             <h3 class="text-white">${featuredCard.type}</h3>
                             <div class="card-icon ic_${featuredCard.linkType}-white"></div>
@@ -77,15 +74,12 @@
                         </div>
                         <div class="featured-card-footer" style="padding-left: 0px;">
                             <span class="card-footer-action" style="border-top-color:white;">
-                                <div data-sly-test="${featuredCard.linkType == 'play'}" data-sly-unwrap>
-                                    <span class="s-action">&#9658;</span>${'Play' @ i18n}
-                                </div>
-                                <div data-sly-test="${featuredCard.linkType == 'download'}" data-sly-unwrap>
-                                    <span class="s-action">&#10515;</span>${'Download' @ i18n}
-                                </div>
-                                <div data-sly-test="${featuredCard.linkType == 'view'}" data-sly-unwrap>
-                                    <span class="s-action">&#10095;</span>${'View' @ i18n}
-                                </div>
+                                <svg class="align-middle s-${featuredCard.linkType}-white">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                </svg>
+                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
+                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
+                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
                             </span>
                         </div>
                     </div>

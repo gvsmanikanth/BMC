@@ -29,9 +29,12 @@
                 </div>
                 <div class="card-footer">
                     <span class="card-footer-action">
-                        {{#ifCond linkType '===' "play"}}<span class="s-action">&#9658;</span>${'Play' @ i18n}{{/ifCond}}
-                        {{#ifCond linkType '===' "download"}}<span class="s-action">&#10515;</span>${'Download' @ i18n}{{/ifCond}}
-                        {{#ifCond linkType '===' "view"}}<span class="s-action">&#10095;</span>${'View' @ i18n}{{/ifCond}}
+                        <svg class="align-middle s-{{linkType}}">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                        </svg>
+                        {{#ifCond linkType '===' "play"}}${'Play' @ i18n}{{/ifCond}}
+                        {{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
+                        {{#ifCond linkType '===' "view"}}${'View' @ i18n}{{/ifCond}}
                     </span>
                 </div>
             </div>

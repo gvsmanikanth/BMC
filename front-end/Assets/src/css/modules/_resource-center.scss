@@ -414,6 +414,16 @@ body.no-scroll{
         .card-footer-action {
           transition: 0.3s linear;
           color: #fff !important;
+          //  white action icons
+          .s-download {
+            background-image: url('#{$imagesFolder}s-download-white.png');
+          }
+          .s-play {
+            background-image: url('#{$imagesFolder}s-play-white.png');
+          }
+          .s-view {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
         }
         .card-footer{
           transition: 0.3s linear;          
@@ -478,10 +488,52 @@ body.no-scroll{
     }
   }
 
-  //  cards icons
-  .ic_play {
-    background-image: url("ic_play.png");
+  //  cards actions icons
+  .s-download {
+    background-image: url('#{$imagesFolder}s-download.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.7rem;
+    height: 0.9rem;
   }
+  .s-play {
+    background-image: url('#{$imagesFolder}s-play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.0rem;
+    height: 1.2rem;
+  }
+  .s-view {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-download-white {
+    background-image: url('#{$imagesFolder}s-download-white.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem; 
+    height: 1.2rem;
+  }
+  .s-play-white {
+    background-image: url('#{$imagesFolder}s-play-white.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem; 
+    height: 1.2rem;
+  }
+  .s-view-white {
+    background-image: url('#{$imagesFolder}s-view-white.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem; 
+    height: 1.2rem;
+  }
+
+
+  //  cards header icons
   .ic_play-white {
     background-image: url("ic_play-white.png");
   }
