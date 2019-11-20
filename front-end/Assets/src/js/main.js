@@ -69,5 +69,6 @@ require("./vendor/aos.js");
 require("./modules/homepage-aos.js");
 //require("./vendor/jquery.slimscroll.min.js");
 //require("./vendor/jquery.fullPage.min.js");
-//require('./vendor/handlebars-v4.2.0.js');
+
+require('./modules/handlebarHelpers.js');
 require('./modules/resource-center.js');

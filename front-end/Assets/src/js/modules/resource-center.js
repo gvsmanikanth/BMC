@@ -127,6 +127,9 @@ ResourceCenterResults = {
                     self.$toGenerate = (self.$currentPage + self.$maxPages) < self.$totalPages ? self.$currentPage + self.$maxPages : self.$totalPages;
                     self.$fromPage = self.$currentPage;
                 }
+                if (self.$maxPages > self.$totalPages) {
+                  self.$toGenerate = self.$totalPages;
+                }
                 var startIndex = (self.$pageSize * self.$currentPage) + 1;
                 var resultSize = contentResult.results.length;
                 if (self.$totalItems > 0) {
@@ -185,9 +188,11 @@ ResourceCenterResults = {
     }
 };
 
-if ($('.rc-result-component').length) {
-    ResourceCenterResults.init();
-}
+$(function() {
+  if ($('.rc-result-component').length) {
+      ResourceCenterResults.init();
+  }
+});
 
 ResourceCenterFilters = {
 
@@ -469,6 +474,8 @@ ResourceCenterFilters = {
     }
 };
 
-if ($('.rc-filter-component').length) {
-    ResourceCenterFilters.init();
-}
+$(function() {
+  if ($('.rc-filter-component').length) {
+      ResourceCenterFilters.init();
+  }
+});

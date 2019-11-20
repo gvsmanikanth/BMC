@@ -17,6 +17,10 @@
       text-transform: uppercase; 
       font-weight: bold; 
       cursor: pointer;
+
+      @media (max-width: $break-md) {
+        font-size: small;
+      }
     }
 
     .list-group ul {
@@ -32,6 +36,10 @@
       margin-bottom: 0px;
       color: #29a5d6;
       cursor: pointer;
+
+      @media (max-width: $break-md) {
+        font-size: small;
+      }
     }
 
     .keyword-search input {
@@ -168,6 +176,10 @@
     background-size: 5px 5px, 5px 5px, 0px 0em;
     background-repeat: no-repeat;
     outline: none;
+
+    @media (max-width: $break-md) {
+      font-size: smaller;
+    }
   }
   /*For IE10+*/
   .rc-sort-select-wrapper select::-ms-expand {
@@ -190,6 +202,10 @@ body.no-scroll{
   background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
+
+  @media (max-width: $break-md) {
+    background-position: calc(100% - 20px) calc(1.5em - 5px), calc(100% - 15px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+  }
 }
 
 .rc-arrow-up {
@@ -197,6 +213,10 @@ body.no-scroll{
   background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
+
+  @media (max-width: $break-md) {
+    background-position: calc(100% - 20px) calc(1.5em - 5px), calc(100% - 15px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+  }
 }
 
 // Customized UI for Resource Center Cards
@@ -432,7 +452,7 @@ body.no-scroll{
         border-top-color:white;
       }
     }
-    @media (max-width: $break-lg) {
+    @media (max-width: $break-xl) {
       .card-content {
         h2{
           font-size: x-large;
