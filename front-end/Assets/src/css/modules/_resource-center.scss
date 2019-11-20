@@ -96,6 +96,19 @@
     color: #a7a9ab;
   }
 
+  .js-filter-title {
+    max-width: 80%;
+    @media (max-width: $laptop) {
+      max-width: 75%;
+    }
+    @media (max-width: $break-lg) {
+      max-width: 70%;
+    }
+    @media (max-width: $break-md) {
+      max-width: 65%;
+    }
+  }
+
   .badge-filter-title {
     margin-right: 2px;
     margin-left: 2px;
@@ -111,6 +124,7 @@
   }
 
   .reset-btn {
+    position: absolute;
     color: #177ba2;
     border-style: solid;
     border-width: 2px;
@@ -118,6 +132,8 @@
     font-size: initial;
     padding: 6px;
     cursor: pointer;
+    margin-left: -110px;
+    margin-top: -7px;
   }
 
   .submit-btn {
