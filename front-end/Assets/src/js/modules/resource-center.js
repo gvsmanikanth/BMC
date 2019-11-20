@@ -38,6 +38,7 @@ ResourceCenterResults = {
         this.showError();
         this.noResults();
         this.setVideoCardEvents();
+        this.setFeaturedCardEvents();
     },
 
     setClearEvents: function () {
@@ -185,7 +186,21 @@ ResourceCenterResults = {
         this.$container.on("showNoResultsMsgEvent", function() {
           self.$noResults.removeAttr('hidden');
         });
-    }
+    },
+
+    setFeaturedCardEvents: function() {
+        // hover effect desktop featured card
+        $('.featured-card-container').hover(function() {
+          var hoverColor = $('.featured-card-right-panel').css('background-color');
+          $('.featured-card-left-panel').css('background-color', hoverColor);
+          $('.featured-card-left-panel').css('background-color', hoverColor);
+          $('.featured-card-left-panel').find('.card-footer-action').css('color', hoverColor);
+        }, function() {
+          // on mouseout, reset the background colour
+          $('.featured-card-left-panel').css('background-color', 'white');
+          $('.featured-card-left-panel').find('.card-footer-action').css('color', 'white');
+        });
+    },
 };
 
 $(function() {

@@ -85,6 +85,7 @@
                                             <bmc_grey jcr:primaryType="nt:unstructured" text="BMC Grey" value="bg-bmc-grey" />
                                             <bmc_teal jcr:primaryType="nt:unstructured" text="BMC Teal" value="bg-bmc-teal" />
                                             <bmc_light_orange jcr:primaryType="nt:unstructured" text="BMC Light Orange" value="bg-light-orange" />
+                                            <gartner_blue jcr:primaryType="nt:unstructured" text="Gartner Blue" value="bg-gartner-blue" />
                                             <forrester_green jcr:primaryType="nt:unstructured" text="Forrester Green" value="bg-forrester-green" />
                                         </items>
                                     </bgcolor>

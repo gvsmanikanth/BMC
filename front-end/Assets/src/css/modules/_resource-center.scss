@@ -416,6 +416,26 @@ body.no-scroll{
       }
     }
   }
+  .featured-card-container:hover .featured-card-left-panel{
+    .card-header {
+      h3{
+        color: white;
+      }
+    }
+    .card-content {
+      h2{
+        color: white;
+      }
+      hr {
+       border-top: 2px solid white;
+       border-bottom: 2px solid white;
+      }
+    }
+    .card-footer-action {
+      transition: 0.3s linear;
+      border-top-color:white;
+    }
+  }
   .featured-card-right-panel{
     width: 40%;
     float: right;
@@ -432,104 +452,12 @@ body.no-scroll{
   }
   .featured-card-left-panel{
     width: 60%;
-    &:hover{
-      .card-header {
-        h3{
-          color: white;
-        }
-      }
-      .card-content {
-        h2{
-          color: white;
-        }
-        hr {
-         border-top: 2px solid white;
-         border-bottom: 2px solid white;
-        }
-      }
-      .card-footer-action {
-        transition: 0.3s linear;
-        border-top-color:white;
-      }
-    }
     @media (max-width: $break-xl) {
       .card-content {
         h2{
           font-size: x-large;
           line-height: 30px;
         }
-      }
-    }
-  }
-  .featured-card-bg-bmc-blue{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #3980b2;
-      .card-footer-action {
-        color: #3980b2 !important;
-      }
-    }
-  }
-  .featured-card-bg-bmc-mid-blue{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #0093c9;
-      .card-footer-action {
-        color: #0093c9 !important;
-      }
-    }
-  }
-  .featured-card-bg-bmc-green{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #7fbc00;
-      .card-footer-action {
-        color: #7fbc00 !important;
-      }
-    }
-  }
-  .featured-card-bg-bmc-mid-green{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #aacc07;
-      .card-footer-action {
-        color: #aacc07 !important;
-      }
-    }
-  }
-  .featured-card-bg-bmc-grey{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #414042;
-      .card-footer-action {
-        color: #414042 !important;
-      }
-    }
-  }
-  .featured-card-bg-bmc-teal{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #00a79d;
-      .card-footer-action {
-        color: #00a79d !important;
-      }
-    }
-  }
-  .featured-card-bg-light-orange{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #f98700;
-      .card-footer-action {
-        color: #f98700 !important;
-      }
-    }
-  }
-  .featured-card-bg-forrester-green{
-    @extend .featured-card-left-panel;
-    &:hover{
-      background: #16563F;
-      .card-footer-action {
-        color: #16563F !important;
       }
     }
   }
@@ -586,6 +514,9 @@ body.no-scroll{
 }
 .bg-light-orange{
   background-color: #f98700;
+}
+.bg-gartner-blue{
+  background-color: #006699;
 }
 .bg-forrester-green{
   background-color: #16563F;
