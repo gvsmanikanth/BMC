@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -98,6 +99,11 @@ public class ResourceServiceCachingImpl implements ResourceService {
             log.error("An error occurred. Fetching title from JCR", e);
             return baseImpl.getTitle(propertyName, propertyValue, resolver);
         }
+    }
+
+    @Override
+    public Map<String, String> getValues(String propertyName, ResourceResolver resolver) {
+        return baseImpl.getValues(propertyName, resolver);
     }
 
     public boolean isResourceTitleCacheStatsEnabled() {

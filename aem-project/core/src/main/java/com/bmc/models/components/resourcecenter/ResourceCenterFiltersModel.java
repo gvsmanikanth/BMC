@@ -2,6 +2,7 @@ package com.bmc.models.components.resourcecenter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -16,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.acs.commons.models.injectors.annotation.AemObject;
-import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.services.ResourceCenterService;
 import com.bmc.services.ResourceService;
 import com.day.cq.wcm.api.Page;
@@ -60,15 +60,8 @@ public class ResourceCenterFiltersModel {
 
             if (display && !preFilter) {
                 //  WEB-6594: all filter for this category, ignore the multi-picker options
-                BmcContentFilter filter = getResourceFilter(propertyName);
-                if (filter != null) {
-                    List<ContentFilterOption> options = new ArrayList<>();
-                    for (String propertyValue : filter.getOptions().keySet()) {
-                        options.add(new ContentFilterOption(propertyValue, 
-                                baseImpl.getTitle(propertyName, propertyValue, resourceResolver), propertyName));
-                    }
-                    filters.add(new ContentFilter(propertyName, label, display, options));
-                }
+                filters.add(new ContentFilter(propertyName, label, display,
+                        getContentFilterOptions(propertyName, resourceResolver)));
             }
             else if (propertyValues != null && (preFilter || display)) {
                 List<ContentFilterOption> options = new ArrayList<>();
@@ -86,13 +79,13 @@ public class ResourceCenterFiltersModel {
         }
     }
 
-    private BmcContentFilter getResourceFilter(String name) {
-        for (BmcContentFilter filter : resourceCenterService.getResourceFilters()) {
-            if (filter.getName().contains(name.replace("ic", ""))) {
-                return filter;
-            }
+    private List<ContentFilterOption> getContentFilterOptions(String name, ResourceResolver resolver) {
+        List<ContentFilterOption> options = new ArrayList<>();
+        Map<String, String> filterOptionsMap = baseImpl.getValues(name, resolver);
+        for (String propertyValue : filterOptionsMap.keySet()) {
+            options.add(new ContentFilterOption(propertyValue, filterOptionsMap.get(propertyValue), name));
         }
-        return null;
+        return options;
     }
 
     public List<ContentFilter> getFilters() {

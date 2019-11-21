@@ -1,7 +1,18 @@
 package com.bmc.services;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.lang.StringUtils;
-import org.apache.felix.scr.annotations.*;
+import org.apache.felix.scr.annotations.Activate;
+import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Properties;
+import org.apache.felix.scr.annotations.Property;
+import org.apache.felix.scr.annotations.Reference;
+import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -11,10 +22,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.day.cq.commons.jcr.JcrConstants;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 /**
  * TODO: Documentation
@@ -81,6 +88,22 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         return ResourceUtil.isNonExistingResource(resource)
                 ? propertyValue
                 : (String)resource.getValueMap().getOrDefault(name, defaultValue);
+    }
+
+    public Map<String, String> getValues(String propertyName, ResourceResolver resolver) {
+        if (!propertyPathMapping.containsKey(propertyName) || !propertyNameMapping.containsKey(propertyName)) {
+            log.debug("No mapping exists for property name {}", propertyName);
+            return new HashMap<String, String>();
+        }
+        Map<String, String> values = new HashMap<>();
+        String path = propertyPathMapping.get(propertyName);
+        Resource resource = resolver.resolve(path);
+        Iterator<Resource> newsItems = resource.getChildren().iterator();
+        while(newsItems.hasNext()){
+            Resource itemResource = newsItems.next();
+            values.put(itemResource.getName(), getTitle(propertyName, itemResource.getName(), resolver));
+        }
+        return values;
     }
 
     @Override

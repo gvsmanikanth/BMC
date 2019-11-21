@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import com.adobe.acs.commons.models.injectors.annotation.AemObject;
 import com.bmc.consts.JcrConsts;
+import com.bmc.consts.ResourceCenterConsts;
 import com.bmc.models.bmccontentapi.BmcContent;
 import com.bmc.models.bmccontentapi.BmcMetadata;
 import com.bmc.services.ResourceCenterService;
@@ -110,7 +111,7 @@ public class ResourceCenterFeaturedCardModel {
 
     private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
         for (BmcMetadata bmcMetadata : metadata) {
-            if ("ic-content-type".equals(bmcMetadata.getId())) {
+            if (ResourceCenterConsts.IC_CONTENT_TYPE.equals(bmcMetadata.getId())) {
                 return bmcMetadata;
             }
         }
