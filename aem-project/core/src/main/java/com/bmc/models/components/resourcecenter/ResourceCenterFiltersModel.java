@@ -16,6 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.acs.commons.models.injectors.annotation.AemObject;
+import com.bmc.models.bmccontentapi.BmcContentFilter;
+import com.bmc.services.ResourceCenterService;
 import com.bmc.services.ResourceService;
 import com.day.cq.wcm.api.Page;
 
@@ -26,6 +28,9 @@ public class ResourceCenterFiltersModel {
 
     @OSGiService
     private ResourceService baseImpl;
+
+    @OSGiService
+    private ResourceCenterService resourceCenterService;   
 
     @AemObject
     private Page currentPage;
@@ -52,7 +57,20 @@ public class ResourceCenterFiltersModel {
             String label = resource.getValueMap().get(propertyName + "-label", propertyName);
             Boolean preFilter = resource.getValueMap().get(propertyName + "-filter", false);
             Boolean display = resource.getValueMap().get(propertyName + "-display", false);
-            if (propertyValues != null && (preFilter || display)) {
+
+            if (display && !preFilter) {
+                //  WEB-6594: all filter for this category, ignore the multi-picker options
+                BmcContentFilter filter = getResourceFilter(propertyName);
+                if (filter != null) {
+                    List<ContentFilterOption> options = new ArrayList<>();
+                    for (String propertyValue : filter.getOptions().keySet()) {
+                        options.add(new ContentFilterOption(propertyValue, 
+                                baseImpl.getTitle(propertyName, propertyValue, resourceResolver), propertyName));
+                    }
+                    filters.add(new ContentFilter(propertyName, label, display, options));
+                }
+            }
+            else if (propertyValues != null && (preFilter || display)) {
                 List<ContentFilterOption> options = new ArrayList<>();
                 for (String propertyValue : propertyValues) {
                     options.add(new ContentFilterOption(propertyValue, 
@@ -66,6 +84,15 @@ public class ResourceCenterFiltersModel {
                 }
             }
         }
+    }
+
+    private BmcContentFilter getResourceFilter(String name) {
+        for (BmcContentFilter filter : resourceCenterService.getResourceFilters()) {
+            if (filter.getName().contains(name.replace("ic", ""))) {
+                return filter;
+            }
+        }
+        return null;
     }
 
     public List<ContentFilter> getFilters() {

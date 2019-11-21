@@ -352,7 +352,12 @@ ResourceCenterFilters = {
         var filters = new Map();
         //  prefiltered and filters
         $(".pre-filter-option").each(function () {
-            self.addFilterKeyValue(filters, $(this).data('name'), $(this).data('value'));
+            var filter = $(this).data('name');
+            //  determine if user clicks on some filter, it overrides the pre-filter
+            var overridePreFilter = $(".filter-checkbox-item").find('input[checked]').parent('[data-name="' + filter + '"]').length > 0;
+            if (!overridePreFilter) {
+              self.addFilterKeyValue(filters, filter, $(this).data('value'));
+            }
         });
         $(".filter-checkbox-item").find('input[checked]').each(function () {
             self.addFilterKeyValue(filters, $(this).parent().data('name'), $(this).data('name'));
