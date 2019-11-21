@@ -176,9 +176,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         if(resource.hasChildren()) {
             for(Resource child : resource.getChildren()) {
                 valueMap = child.getValueMap();
-                String text = valueMap.get("jcr:title") != null ? valueMap.get("jcr:title").toString(): "";
+                String text = valueMap.get("text") != null ? valueMap.get("text").toString(): "";
                 if(StringUtils.isEmpty(text)) {
-                	text = valueMap.get("text") != null ? valueMap.get("text").toString(): "";
+                	text = valueMap.get("jcr:title") != null ? valueMap.get("jcr:title").toString(): "";
                 }
                 options.put(child.getName(), text);
             }

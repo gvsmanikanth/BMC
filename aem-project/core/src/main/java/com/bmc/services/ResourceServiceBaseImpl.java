@@ -10,6 +10,8 @@ import org.osgi.service.cm.ConfigurationAdmin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.day.cq.commons.jcr.JcrConstants;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,15 +31,15 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "bmcdataservice";
 
     @Property(description = "Mapping of property names to their corresponding JCR paths and JCR property names",
-            value = { "product_interest, /content/bmc/resources/product-interests, jcr:title",
+            value = { "product_interest, /content/bmc/resources/product-interests, text",
             "product_line, /content/bmc/resources/product-lines, text",
-            "ic-content-type, /content/bmc/resources/intelligent-content-types, jcr:title",
-            "ic-topics, /content/bmc/resources/intelligent-content-topics, jcr:title",
-            "topics, /content/bmc/resources/topic, jcr:title",
-            "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, jcr:title",
-            "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona, jcr:title",
-            "ic-target-industry, /content/bmc/resources/intelligent-content-target-industry, jcr:title",
-            "ic-company-size, /content/bmc/resources/intelligent-content-company-size, jcr:title"
+            "ic-content-type, /content/bmc/resources/intelligent-content-types, text",
+            "ic-topics, /content/bmc/resources/intelligent-content-topics, text",
+            "topics, /content/bmc/resources/topic, text",
+            "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, text",
+            "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona, text",
+            "ic-target-industry, /content/bmc/resources/intelligent-content-target-industry, text",
+            "ic-company-size, /content/bmc/resources/intelligent-content-company-size, text"
     })
     static final String PROPERTY_MAPPING = "property.mapping";
     private Map<String, String> propertyPathMapping;
@@ -75,9 +77,10 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         String path = propertyPathMapping.get(propertyName) + "/" + propertyValue;
         String name = propertyNameMapping.get(propertyName);
         Resource resource = resolver.resolve(path);
+        String defaultValue = (String)resource.getValueMap().getOrDefault(JcrConstants.JCR_TITLE, propertyValue);
         return ResourceUtil.isNonExistingResource(resource)
                 ? propertyValue
-                : (String)resource.getValueMap().getOrDefault(name, propertyValue);
+                : (String)resource.getValueMap().getOrDefault(name, defaultValue);
     }
 
     @Override
