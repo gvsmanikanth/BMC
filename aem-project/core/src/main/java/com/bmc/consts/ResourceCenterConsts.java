@@ -49,6 +49,9 @@ public class ResourceCenterConsts {
     public static final String QUERY_PARAM_PAGE_IDX = "p.offset";
     public static final String QUERY_PARAM_RESULT_PER_PAGE = "p.limit";
 
+    public static final String IC_APP_INCLUSION = "ic-app-inclusion";
+    public static final String IC_CONTENT_TYPE = "ic-content-type";
+    
     /* sorting */
     public static final String QUERY_PARAM_ORDER_BY= "orderby";
     public static final String QUERY_PARAM_SORT_DIRECTION = "orderby.sort";
