@@ -129,16 +129,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     }
 
-    /************************************************************************************************************/
-    /*** common -------> *********************************************************/
-    private Map<String, String>  getBaseQueryParams(Map<String, String[]> urlParameters) {
-        Map<String, String> queryParamsMap = new HashMap<String, String> ();
-
-        // add default path
-        queryParamsMap.put("path", "/content/bmc/resources");
-
-        return queryParamsMap;
-    }
     
     /**
      * Adds necessary parameters to a map to search for resource filters
@@ -149,8 +139,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     	Map<String, String> queryParamsMap = new HashMap<String, String> ();
 
         // path and page for resources
-        queryParamsMap.putAll(getBaseQueryParams(null));
-
+    	queryParamsMap.put("path", "/content/bmc/resources");
+    	
         queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, "true");
         
         // Note: we return all the filters that are specified in the resource filter property list of this service
@@ -416,14 +406,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      */
     public Map<String, String> addResourceParamsToBuilder(Map<String, String[]> urlParameters) {
 
-        Map<String, String> queryParamsMap = getBaseQueryParams(urlParameters);
+    	Map<String, String> queryParamsMap = new HashMap<String, String> ();
         queryParamsMap.put("type", "cq:Page");
 
-        // should not have more than 1 rootPath param value
-        if(urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH) != null
-                && urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH).length == 1) {
-            queryParamsMap.put(ResourceCenterConstants.RC_QUERY_PARAM_PATH, urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH)[0]);
-        }
+        addPathFilter(urlParameters, queryParamsMap, 0);
+        
         // adding other url parameters into query parameters
         int predicateIndex = 1;
         predicateIndex = addSearchFilter(urlParameters, queryParamsMap, predicateIndex);
@@ -435,6 +422,39 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return queryParamsMap;
     }
 
+    
+    /**
+     * Builds search root path predicates
+     * 
+     * @param urlParameters
+     * @param queryParamsMap
+     * @param groupIndex
+     */
+    private void addPathFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int groupIndex) {
+    	
+        if(!urlParameters.containsKey(ResourceCenterConstants.RC_URL_PARAM_PATH)) {
+        	log.warn("Missing rootPath paramater");
+        	return;
+        }
+        
+        
+        String[] rootPathParameters = urlParameters.get(ResourceCenterConstants.RC_URL_PARAM_PATH);
+        if(rootPathParameters.length > 0 ) {
+        	String[] rootPaths = rootPathParameters[0].split(",");
+
+        	if(rootPaths.length > 1) {
+        		queryParamsMap.put(groupIndex + "_group.p.or", "true");
+        	}
+        	
+        	
+        	int i = 1;
+    		for(String rootPath : rootPaths) {
+    			queryParamsMap.put(groupIndex + "_group." + i++ + "_path", rootPath);
+    		}
+        
+        }
+    }
+    
     @Override
     public BmcContentResult getResourceResults(Map<String, String[]> urlParameters) {
         // add the necessary resource content parameters for query builder
@@ -464,11 +484,20 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
                         }
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                        
                         //  metadata
                         List<BmcMetadata> metadata = getMetadata(hit.getResource());
                         BmcMetadata contentType = getContentTypeMeta(metadata);
                         String type = contentType != null ? getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
+                        
+                        // set video ID
+                        
+                        if(linkType.equals("play") && assetLink == null) {
+                        	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
+                      
+                        }
+                        
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
                                 lastModified, assetLink, thumbnail, type, linkType, metadata));
                     } catch (Exception e) {
