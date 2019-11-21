@@ -6,9 +6,7 @@
 <sly data-sly-test.fbImg="${FeaturedCardBgImgChildProps.ChildProperties['fileReference']}"/>
 <sly data-sly-test.textColor="${fbImg ? 'white' : '#177ba2'}"/>
 
-<div data-sly-test="${!wcmmode.edit}" class="rc-result-component">
-    <text id="rootPath" hidden>${properties.rootPath}</text>
-    <text id="pageSize" hidden>${properties.pageSize}</text>
+<div data-sly-test="${!wcmmode.edit}" class="rc-result-component" data-root-path="${properties.rootPath}" data-page-size="${properties.pageSize}">
     <div class="container pb-4">
         <div class="rc-result-header filter-menu">
             <span class="results-info" data-template="${'Showing {1} - {2} of {3}' @ i18n}"></span>

@@ -1,7 +1,7 @@
 // put jQuery on the global namespace to access via the console and allow plugins to be dropped-in
 global.jQuery = require('jquery');
 global.$ = global.jQuery;
-
+global.Handlebars = require('./vendor/handlebars-v4.2.0.js');
 
 // 'js/jquery.min.js',
 
@@ -69,6 +69,5 @@ require("./vendor/aos.js");
 require("./modules/homepage-aos.js");
 //require("./vendor/jquery.slimscroll.min.js");
 //require("./vendor/jquery.fullPage.min.js");
-
 require('./modules/handlebarHelpers.js');
 require('./modules/resource-center.js');

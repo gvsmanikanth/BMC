@@ -7,11 +7,11 @@ ResourceCenterResults = {
         this.$noResults = $('.no-results');
         this.$resultsInfo = $('.results-info');
         this.$resultsPage = $('.js-results-page');
-        this.$rootPath = $('#rootPath').text();
+        this.$rootPath = this.$component.data('root-path');
         
         //  pagination vars
         this.$currentPage = 0;
-        this.$pageSize = $('#pageSize').text();
+        this.$pageSize = this.$component.data('page-size');
         this.$totalPages = 0;
         this.$maxPages = 5; //  max pages to render
         this.$totalItems = 0;
