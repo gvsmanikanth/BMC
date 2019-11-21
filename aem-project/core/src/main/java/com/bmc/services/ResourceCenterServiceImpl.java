@@ -282,7 +282,11 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             
-            int i = 1;
+        	// Build predicate for ic-app-inclusion
+        	String[] allowedInclusionValues = {"yes", "gate"};
+        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
+        	
+            int i = 2;
             
             // check if any of the supported properties are present in the URL
             for(String propertyName : baseImpl.getPropertyNames()) {
@@ -506,7 +510,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
         for (BmcMetadata bmcMetadata : metadata) {
-            if ("ic-content-type".equals(bmcMetadata.getId())) {
+            if (ResourceCenterConsts.IC_CONTENT_TYPE.equals(bmcMetadata.getId())) {
                 return bmcMetadata;
             }
         }
