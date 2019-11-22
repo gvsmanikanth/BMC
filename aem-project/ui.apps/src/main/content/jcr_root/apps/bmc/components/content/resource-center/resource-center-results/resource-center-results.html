@@ -4,7 +4,15 @@
 
 <sly data-sly-use.FeaturedCardBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='fb'}"/>
 <sly data-sly-test.fbImg="${FeaturedCardBgImgChildProps.ChildProperties['fileReference']}"/>
-<sly data-sly-test.textColor="${fbImg ? 'white' : '#177ba2'}"/>
+
+<style>
+  .featured-card-container:hover .featured-card-left-panel{
+    background-color: var(--${properties.bgColor @ context='styleString'});
+  }
+  .featured-card-container:hover .featured-card-left-panel .card-footer-action{
+    color: var(--${properties.bgColor @ context='styleString'}) !important;
+  }
+</style>
 
 <div data-sly-test="${!wcmmode.edit}" class="rc-result-component" data-root-path="${properties.rootPath}" data-page-size="${properties.pageSize}">
     <div class="container pb-4">

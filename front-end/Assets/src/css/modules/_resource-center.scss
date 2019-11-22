@@ -18,7 +18,7 @@
       font-weight: bold; 
       cursor: pointer;
 
-      @media (max-width: $break-md) {
+      @media (max-width: $break-lg) {
         font-size: small;
       }
     }
@@ -37,6 +37,9 @@
       color: #29a5d6;
       cursor: pointer;
 
+      @media (max-width: $break-lg) {
+        font-size: smaller;
+      }
       @media (max-width: $break-md) {
         font-size: small;
       }
@@ -219,8 +222,11 @@ body.no-scroll{
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
 
+  @media (max-width: $break-lg) {
+    background-position: calc(100% - 15px) calc(1.5em - 5px), calc(100% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+  }
   @media (max-width: $break-md) {
-    background-position: calc(100% - 20px) calc(1.5em - 5px), calc(100% - 15px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(100% - 10px) calc(1.5em - 5px), calc(100% - 5px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
 }
 
@@ -230,8 +236,11 @@ body.no-scroll{
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
 
+  @media (max-width: $break-lg) {
+    background-position: calc(100% - 15px) calc(1.5em - 5px), calc(100% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+  }
   @media (max-width: $break-md) {
-    background-position: calc(100% - 20px) calc(1.5em - 5px), calc(100% - 15px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(100% - 10px) calc(1.5em - 5px), calc(100% - 5px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
 }
 
@@ -561,33 +570,44 @@ body.no-scroll{
   padding-right: 20px;
 }
 
-//  BMC colors
+//  Resource center colors and backgrounds
+:root {
+  --bg-bmc-blue: #3980b2;
+  --bg-bmc-mid-blue: #0093c9;
+  --bg-bmc-green: #7fbc00;
+  --bg-bmc-mid-green: #aacc07;
+  --bg-bmc-grey: #414042;
+  --bg-bmc-teal: #00a79d;
+  --bg-light-orange: #f98700;
+  --bg-gartner-blue: #006699;
+  --bg-forrester-green: #16563F;
+}
 .bg-bmc-blue{
-  background-color: #3980b2;
+  background-color: var(--bg-bmc-blue);
 }
 .bg-bmc-mid-blue{
-  background-color: #0093c9;
+  background-color: var(--bg-bmc-mid-blue);
 }
 .bg-bmc-green{
-  background-color: #7fbc00;
+  background-color: var(--bg-bmc-green);
 }
 .bg-bmc-mid-green{
-  background-color: #aacc07;
+  background-color: var(--bg-bmc-mid-green);
 }
 .bg-bmc-grey{
-  background-color: #414042;
+  background-color: var(--bg-bmc-grey);
 }
 .bg-bmc-teal{
-  background-color: #00a79d;
+  background-color: var(--bg-bmc-teal);
 }
 .bg-light-orange{
-  background-color: #f98700;
+  background-color: var(--bg-light-orange);
 }
 .bg-gartner-blue{
-  background-color: #006699;
+  background-color: var(--bg-gartner-blue);
 }
 .bg-forrester-green{
-  background-color: #16563F;
+  background-color: var(--bg-forrester-green);
 }
 
 // Customized UI for Mobiles Resource Center Filters
