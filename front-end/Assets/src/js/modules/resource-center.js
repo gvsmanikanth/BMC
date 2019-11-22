@@ -79,6 +79,9 @@ ResourceCenterResults = {
             self.$forwardMode = page;
             self.$container.trigger("loadDataEvent");
         });
+        $('.bottom-paginator .result-page').click(function (event) {
+            $("html, body").animate({ scrollTop: $('.rc-filter-component').offset().top }, "slow");
+        });
     },
 
     setVideoCardEvents: function() {
