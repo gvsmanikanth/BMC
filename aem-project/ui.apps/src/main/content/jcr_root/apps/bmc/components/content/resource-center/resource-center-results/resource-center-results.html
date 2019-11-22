@@ -5,12 +5,22 @@
 <sly data-sly-use.FeaturedCardBgImgChildProps="${'com.bmc.components.utils.CompChildNodeProps' @ childNode='fb'}"/>
 <sly data-sly-test.fbImg="${FeaturedCardBgImgChildProps.ChildProperties['fileReference']}"/>
 
+<sly data-sly-test.fcBgColor="${properties.bgColor == 'bg-bmc-blue' ? '#3980b2' : ''}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-bmc-mid-blue' ? '#0093c9' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-bmc-green' ? '#7fbc00' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-bmc-mid-green' ? '#aacc07' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-bmc-grey' ? '#414042' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-bmc-teal' ? '#00a79d' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-light-orange' ? '#f98700' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-gartner-blue' ? '#006699' : fcBgColor}"/>
+<sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-forrester-green' ? '#16563F' : fcBgColor}"/>
+
 <style>
   .featured-card-container:hover .featured-card-left-panel{
-    background-color: var(--${properties.bgColor @ context='styleString'});
+    background-color: ${fcBgColor @ context='styleString'};
   }
   .featured-card-container:hover .featured-card-left-panel .card-footer-action{
-    color: var(--${properties.bgColor @ context='styleString'}) !important;
+    color: ${fcBgColor @ context='styleString'} !important;
   }
 </style>
 

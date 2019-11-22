@@ -223,10 +223,10 @@ body.no-scroll{
   background-repeat: no-repeat;
 
   @media (max-width: $break-lg) {
-    background-position: calc(100% - 15px) calc(1.5em - 5px), calc(100% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(99% - 14px) calc(1.5em - 5px), calc(99% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
   @media (max-width: $break-md) {
-    background-position: calc(100% - 10px) calc(1.5em - 5px), calc(100% - 5px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(99% - 10px) calc(1.5em - 5px), calc(99% - 6px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
 }
 
@@ -237,10 +237,10 @@ body.no-scroll{
   background-repeat: no-repeat;
 
   @media (max-width: $break-lg) {
-    background-position: calc(100% - 15px) calc(1.5em - 5px), calc(100% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(99% - 14px) calc(1.5em - 5px), calc(99% - 10px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
   @media (max-width: $break-md) {
-    background-position: calc(100% - 10px) calc(1.5em - 5px), calc(100% - 5px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
+    background-position: calc(99% - 10px) calc(1.5em - 5px), calc(99% - 6px) calc(1.5em - 5px), calc(100% - 2.5em) 0.5em;
   }
 }
 
@@ -571,43 +571,42 @@ body.no-scroll{
 }
 
 //  Resource center colors and backgrounds
-:root {
-  --bg-bmc-blue: #3980b2;
-  --bg-bmc-mid-blue: #0093c9;
-  --bg-bmc-green: #7fbc00;
-  --bg-bmc-mid-green: #aacc07;
-  --bg-bmc-grey: #414042;
-  --bg-bmc-teal: #00a79d;
-  --bg-light-orange: #f98700;
-  --bg-gartner-blue: #006699;
-  --bg-forrester-green: #16563F;
-}
+$bg-bmc-blue: #3980b2;
+$bg-bmc-mid-blue: #0093c9;
+$bg-bmc-green: #7fbc00;
+$bg-bmc-mid-green: #aacc07;
+$bg-bmc-grey: #414042;
+$bg-bmc-teal: #00a79d;
+$bg-light-orange: #f98700;
+$bg-gartner-blue: #006699;
+$bg-forrester-green: #16563F;
+
 .bg-bmc-blue{
-  background-color: var(--bg-bmc-blue);
+  background-color: $bg-bmc-blue;
 }
 .bg-bmc-mid-blue{
-  background-color: var(--bg-bmc-mid-blue);
+  background-color: $bg-bmc-mid-blue;
 }
 .bg-bmc-green{
-  background-color: var(--bg-bmc-green);
+  background-color: $bg-bmc-green;
 }
 .bg-bmc-mid-green{
-  background-color: var(--bg-bmc-mid-green);
+  background-color: $bg-bmc-mid-green;
 }
 .bg-bmc-grey{
-  background-color: var(--bg-bmc-grey);
+  background-color: $bg-bmc-grey;
 }
 .bg-bmc-teal{
-  background-color: var(--bg-bmc-teal);
+  background-color: $bg-bmc-teal;
 }
 .bg-light-orange{
-  background-color: var(--bg-light-orange);
+  background-color: $bg-light-orange;
 }
 .bg-gartner-blue{
-  background-color: var(--bg-gartner-blue);
+  background-color: $bg-gartner-blue;
 }
 .bg-forrester-green{
-  background-color: var(--bg-forrester-green);
+  background-color: $bg-forrester-green;
 }
 
 // Customized UI for Mobiles Resource Center Filters
