@@ -14,15 +14,16 @@
     - Parameters:
 
 ### general param
-    - [rootPath] A path filter to query in JCR. All results will come under rootPath
+    - [rootPath] Paths filter to query in JCR. Values should be comma-separated
         - single value
         - example: /bin/contentapi/content?rootPath=/content/bmc/us/en
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en/documents,/content/bmc/videos
     
 ### filter
     - [filter] filter results by returning only pages with matching filter value in the metadata.
-        - multi value
+        - multi value, comma-separated
         - filter values: all possible values can be found from response of /bin/contentapi/filters
-        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en&filter=ic-target-industry-272486674&filter=ic-topics-773791639
+        - example: /bin/contentapi/content?rootPath=/content/bmc/us/en/documents&ic-content-type=ic-type-196363946,ic-type-146731505,ic-type-185980791&ic-topics=ic-topics-017644695,ic-topics-594037608
 
 ### keyword
     - [keyword] search pages with the keywords that are within jcr title and jcr description
