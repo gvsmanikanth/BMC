@@ -19,7 +19,7 @@ ResourceCenterResults = {
         this.$forwardMode = '';
         //  from/to pages to show
         this.$fromPage = 0;
-        this.$toGenerate = this.$maxPages;        
+        this.$toGenerate = this.$maxPages;
 
         //this.initFilters();
         this.bindEvents();
@@ -53,6 +53,12 @@ ResourceCenterResults = {
             self.$errorCall.attr('hidden', true);
             self.$noResults.attr('hidden', true);
         });
+    },
+
+    clearPaginationVars: function () {
+        this.$currentPage = 0;
+        this.$fromPage = 0;
+        this.$toGenerate = this.$maxPages;
     },
 
     setPaginationEvents: function () {
@@ -222,7 +228,7 @@ ResourceCenterFilters = {
     setKeywordSearchEvent: function () {
         var self = this;
         this.$keywordSearch.on('keyup', function () {
-            ResourceCenterResults.$currentPage = 0;
+            ResourceCenterResults.clearPaginationVars();
             self.loadData();
         });
     },
@@ -237,7 +243,7 @@ ResourceCenterFilters = {
                   $('#checkbox-' + this.id).attr('checked', true);
                   $(this).addClass('active');
               }
-              ResourceCenterResults.$currentPage = 0;
+              ResourceCenterResults.clearPaginationVars();
               self.loadData();
               self.updateHeader();
         });
@@ -285,7 +291,7 @@ ResourceCenterFilters = {
             self.resetFilter();
             self.updateHeader();
             self.loadData();
-            ResourceCenterResults.$currentPage = 0;
+            ResourceCenterResults.clearPaginationVars();
         });
     },
 
@@ -296,7 +302,7 @@ ResourceCenterFilters = {
             var filterId = $(this).attr('data-name');
             $('#checkbox-' + filterId).attr('checked', false);
             $('#' + filterId).removeClass('active');
-            ResourceCenterResults.$currentPage = 0;
+            ResourceCenterResults.clearPaginationVars();
             self.updateHeader();
             self.loadData();
         });
@@ -323,7 +329,7 @@ ResourceCenterFilters = {
     setOrderByEvent: function () {
         var self = this;
         $('.rc-sort-select').change(function () {
-            ResourceCenterResults.$currentPage = 0;
+            ResourceCenterResults.clearPaginationVars();
             self.loadData();
         });
     },
