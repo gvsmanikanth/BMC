@@ -401,7 +401,7 @@ var bmcMeta = {
                                                                            <li>
                                                                               <input name="licenseAgreement" id="licenseAgreement" value="on" required="true" type="checkbox">
                                                                               <label for="licenseAgreement">
-                                                                              By checking this box, I agree to be bound by the terms of <a href="https://vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590" target="_blank">Online Trial Agreement</a>.
+                                                                              By checking this box, I agree to be bound by the terms of <a href="//vault.pactsafe.io/s/eb356a5c-459a-4d99-b734-d19e15e6e64e/legal.html?g=590" target="_blank">Online Trial Agreement</a>.
                                                                               </label><span class="error-text"></span>
                                                                            </li>
                                                                         </ol>
@@ -528,14 +528,41 @@ var bmcMeta = {
                   </section>
                </div>
                <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
-                  <section>
-                     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-                        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
-                           <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                  <div class="Customer">
+                     <div class="container" id="customerBanner" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(&quot;//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg&quot;);">
+                        <div class="layout-inner-wrap py2">
+                           <div class="md-flex flex flex-center full-bleed-two-column">
+                              <div class="flex-item col col-12 xs-col-6 pxr1 customer_lt aos-init aos-animate" data-aos-once="true" data-aos="fade-right">
+                                 <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
+                              </div>
+                              <div class="flex-item col col-12 xs-col-6 pxr1 text-center">
+                                 <div class="carousel-wrap">
+                                    <figure>
+                                       <img class="block1" data-src="//www.bmc.com/content/dam/bmc/home/benefits.png" alt="Benefits" src="//www.bmc.com/content/dam/bmc/home/benefits.png">
+                                    </figure>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </section>
+                     <div class="logos_sec">
+                        <div class="container">
+                           <div class="logos_blk">
+                              <ul>
+                                 <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry" src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png"></a></li>
+                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP" src="//www.bmc.com/content/dam/bmc/home/logo-sap.png"></a></li>
+                                 <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2" src="//www.bmc.com/content/dam/bmc/home/logoimg7.png"></a></li>
+                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau" src="//www.bmc.com/content/dam/bmc/home/logo-itau.png"></a></li>
+                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA" src="//www.bmc.com/content/dam/bmc/home/logo-dish.png"></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <section class="layout-full-bleed support-promo product-category-promo">
+                        <p class=" white promo-content">Ready to start a conversation? <a class="learn-more white" href="https://www.bmc.com/forms/contact-bmc.html?productInterest=all pl products" data-inc="1"><span>Talk to a BMC Expert</span></a></p>
+                     </section>
+                  </div>
+                  <!--  Customer -->
                </div>
             </section>
          </div>
