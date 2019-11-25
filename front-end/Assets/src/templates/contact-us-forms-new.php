@@ -527,8 +527,10 @@ var bmcMeta = {
                      </div>
                   </section>
                </div>
-               <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
-                  <div class="Customer">
+               
+            </section>
+            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+                  <div class="customer_section">
                      <div class="container" id="customerBanner" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(&quot;//www.bmc.com/content/dam/bmc/home/bagroundimg.jpg&quot;);">
                         <div class="layout-inner-wrap py2">
                            <div class="md-flex flex flex-center full-bleed-two-column">
@@ -549,11 +551,11 @@ var bmcMeta = {
                         <div class="container">
                            <div class="logos_blk">
                               <ul>
-                                 <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry" src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png"></a></li>
-                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP" src="//www.bmc.com/content/dam/bmc/home/logo-sap.png"></a></li>
-                                 <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2" src="//www.bmc.com/content/dam/bmc/home/logoimg7.png"></a></li>
-                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau" src="//www.bmc.com/content/dam/bmc/home/logo-itau.png"></a></li>
-                                 <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="//www.bmc.com/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA" src="//www.bmc.com/content/dam/bmc/home/logo-dish.png"></a></li>
+                                 <li class="imgDesp "><a class="" href="#." target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png" alt="Barry" src="//www.bmc.com/content/dam/bmc/home/logo-barryc.png"></a></li>
+                                 <li class="imgDesp"><a class="" href="#." target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-sap.png" alt="SAP" src="//www.bmc.com/content/dam/bmc/home/logo-sap.png"></a></li>
+                                 <li class="imgDesp small"><a class="" href="#." target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logoimg7.png" alt="O2" src="//www.bmc.com/content/dam/bmc/home/logoimg7.png"></a></li>
+                                 <li class="imgDesp"><a class="" href="#." target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-itau.png" alt="Itau" src="//www.bmc.com/content/dam/bmc/home/logo-itau.png"></a></li>
+                                 <li class="imgDesp"><a class="" href="#." target="_self"><img data-src="//www.bmc.com/content/dam/bmc/home/logo-dish.png" alt="DISA" src="//www.bmc.com/content/dam/bmc/home/logo-dish.png"></a></li>
                               </ul>
                            </div>
                         </div>
@@ -564,7 +566,6 @@ var bmcMeta = {
                   </div>
                   <!--  Customer -->
                </div>
-            </section>
          </div>
       </div>
    </div>
