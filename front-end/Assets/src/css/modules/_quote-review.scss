@@ -79,7 +79,7 @@
             .logo{
                 align-self: center;
                 img{
-                    width:100px;
+                    max-width:100px;
                 }
             } 
         }        
@@ -97,10 +97,16 @@
         line-height: 40px;
     }
     .owl-next{
-        right: 50px;
+        right: 20px;
+        @media (min-width: $break-sm) {
+            right: 30px;        
+        } 
     }
     .owl-prev{
-        left: 50px;
+        left: 20px;
+        @media (min-width: $break-sm) {
+            left: 30px;        
+        } 
     }
 }
 

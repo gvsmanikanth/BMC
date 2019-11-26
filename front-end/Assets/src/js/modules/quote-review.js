@@ -11,15 +11,20 @@
         navText: "<>",
         responsive:{
             0:{
+                stagePadding: 30,
                 items:1
+                
             },
             600:{
+                stagePadding: 50,
                 items:2
             },
             1000:{
+                stagePadding: 80,
                 items:3
             },
             1600:{
+                stagePadding: 100,
                 items:4
             },
             1800:{
