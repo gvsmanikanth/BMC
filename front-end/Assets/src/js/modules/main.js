@@ -550,7 +550,12 @@ function addFilterToArrayProtoype() {
 							newstateoptions += "<option value=\"" + data[i].Value + "\" disabled='disabled' selected='selected' >" + "State or Province" + "</option>";
 					}
 					else{
-						newstateoptions += "<option value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						if(data[i].gdpr == "true"){
+							newstateoptions += "<option data-gdpr=\"" + data[i].gdpr + "\" value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						}else{
+							newstateoptions += "<option value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						}
+						
 					}
 				}
 				
