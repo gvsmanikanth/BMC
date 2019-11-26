@@ -561,11 +561,11 @@ var bmcMeta = {
                         </div>
                      </div>
                      <section class="layout-full-bleed support-promo product-category-promo">
-                        <p class=" white promo-content">Ready to start a conversation? <a class="learn-more white" href="https://www.bmc.com/forms/contact-bmc.html?productInterest=all pl products" data-inc="1"><span>Talk to a BMC Expert</span></a></p>
+                        <p class=" white promo-content">Ready to start a conversation? <a id="talk_to_bmc" class="learn-more white" href="//www.bmc.com/forms/contact-bmc.html" data-inc="1"><span>Talk to a BMC Expert</span></a></p>
                      </section>
                   </div>
                   <!--  Customer -->
-               </div>
+            </div>
          </div>
       </div>
    </div>
@@ -573,6 +573,7 @@ var bmcMeta = {
 </div>
 
 <?php include_once 'php-inc/foot-plain.php'; ?>
+
 
 
                         
