@@ -97,13 +97,13 @@
         line-height: 40px;
     }
     .owl-next{
-        right: 20px;
+        right: 10px;
         @media (min-width: $break-sm) {
             right: 30px;        
         } 
     }
     .owl-prev{
-        left: 20px;
+        left: 10px;
         @media (min-width: $break-sm) {
             left: 30px;        
         } 
