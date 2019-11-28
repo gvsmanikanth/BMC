@@ -78,4 +78,4 @@ require('./modules/document_container.js');
 require('./modules/imageAlignment.js');
 require('./modules/arrowBG.js');
 require('./modules/customers-section.js');
-
+require('./modules/landingPage-arrowBG.js');
