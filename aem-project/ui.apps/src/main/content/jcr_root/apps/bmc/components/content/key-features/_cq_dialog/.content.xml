@@ -191,6 +191,12 @@
                                         value="btn btn-corporate"/>
                                 </items>
                             </backgroundColor>
+                            <checkboxText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldDescription="Enter - Explore Additional Resources&#xa;"
+                                fieldLabel="Check Box Text"
+                                name="./checkboxText"/>
                         </items>
                     </column>
                 </items>
