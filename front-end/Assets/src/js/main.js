@@ -78,4 +78,4 @@ require('./modules/document_container.js');
 require('./modules/imageAlignment.js');
 require('./modules/arrowBG.js');
 require('./modules/quote-review.js');
-
+require('./modules/landingPage-arrowBG.js');

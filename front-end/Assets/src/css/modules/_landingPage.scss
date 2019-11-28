@@ -1,67 +1,68 @@
-.arrow_bg_landing_page{
+
 
 
 // banner-caption Starts
-.product-category-header{
-	.bannerContent{
-		min-height: 570px;
-	}
-	.banner-caption{	
-		.helix-logo	{
-			img{
-				height:45px
-			}
-		}		
-		.block-title{	
-			font-size: 46px !important;
-			line-height: initial;
-			margin: 1rem 0;
-			font-weight: 600 !important;
-			color: #fff;
-			margin-bottom: 30px !important;
-			margin-top: 45px !important;
-			@media (max-width: $tablet) {
-				font-size:  2rem !important;
-				margin-bottom: 20px !important;
-				margin-top: 25px !important;
-			}
-		}
-		.block-text{
-			font-size: 25px;
-			color: #fff;
-			line-height: 1.8rem;
-			margin-bottom: 58px;
-			@media (max-width: $tablet) {
-				font-size: 18px;
-				margin-bottom: 38px;
-			}
-		}
-		.btn{
-			background: #F86E00;
-			border:none;    
-			font-size: 18px;
-			border-radius: 0;
-			border-width: 1px;	
-			// @media (min-width: 1400px) {
-			// 	font-size: 24px;
-			// }
-			&:hover{
-				background: color(darkOrange);	
-			}		
-		} 	
-			
-	}
-	.bannerContent .layout-inner-wrap .flex-item h1.block-title{
-		font-weight: 600 !important;
-	}	
+.landingPage-header-solutions{
+    .product-category-header{
+        .bannerContent{
+            min-height: 570px;
+        }
+        .banner-caption{	
+            .helix-logo	{
+                img{
+                    height:45px
+                }
+            }		
+            .block-title{	
+                font-size: 46px !important;
+                line-height: initial;
+                margin: 1rem 0;
+                font-weight: 600 !important;
+                color: #fff;
+                margin-bottom: 30px !important;
+                margin-top: 45px !important;
+                @media (max-width: $tablet) {
+                    font-size:  2rem !important;
+                    margin-bottom: 20px !important;
+                    margin-top: 25px !important;
+                }
+            }
+            .block-text{
+                font-size: 25px;
+                color: #fff;
+                line-height: 1.8rem;
+                margin-bottom: 58px;
+                @media (max-width: $tablet) {
+                    font-size: 18px;
+                    margin-bottom: 38px;
+                }
+            }
+            .btn{
+                background: #F86E00;
+                border:none;    
+                font-size: 18px;
+                border-radius: 0;
+                border-width: 1px;	
+                // @media (min-width: 1400px) {
+                // 	font-size: 24px;
+                // }
+                &:hover{
+                    background: color(darkOrange);	
+                }		
+            } 	
+                
+        }
+        .bannerContent .layout-inner-wrap .flex-item h1.block-title{
+            font-weight: 600 !important;
+        }	
+    }
 }
-	
 
 // banner-caption Ends
 
 // Welcome Section Starts
 
-	.welcome-section{
+    .landingPage-welcome-section{
 		padding: 4rem 3rem;
 		padding-top: 1rem;
 		@media (max-width: $tablet) {
@@ -118,7 +119,7 @@
 
 // Feature Section Starts
 
-	.feature-section{	
+    .landingPage-feature-section{	
 		padding: 4rem 0;
 		@media (max-width: $tablet) {
 			padding: 2rem 1rem;
@@ -218,7 +219,7 @@
 	
 	// Feature Section Ends
 
-	.simple-pullqoute{
+	.landingPage-simple-pullqoute{
 		padding: 4rem 1rem;
 		@media (max-width: $tablet) {
 			padding: 2rem 1rem;
@@ -304,9 +305,7 @@
 		}
 	}
 	
-
-
-	.section_50_50 {
+	.landingPage-section-50-50 {
 		.chat-img{
 			background: #FAFAFA;
 			padding: 50px 10px;
@@ -396,7 +395,7 @@
 
 	}
 
-	.direction-text{
+	.landingPage-direction-text{
 		padding: 0;
 		background: #fff;
 		text-align: center;
@@ -459,7 +458,7 @@
 
 		
 	}
-	.first-industry{
+	.landingPage-CTA-strip{
 		.content{
 			@media (min-width: $break-md) {
 				max-width: 80%;							
@@ -508,7 +507,7 @@
 
 	// product-list
 
-	.product-list{
+	.landingPage-product-list{
 		background-color: #fafafa;
 		padding: 5rem 0;
 		@media (max-width: $tablet) {
@@ -620,6 +619,4 @@
 		
 	}
 
-
-}
 	
