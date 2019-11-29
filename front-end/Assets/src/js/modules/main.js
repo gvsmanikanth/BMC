@@ -564,6 +564,12 @@ function addFilterToArrayProtoype() {
 					if($('#C_State_Prov').attr('type') == "text")
 					{
 						$('#C_State_Prov').parent().replaceWith("<div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' required></select></div>");
+						if($('#C_State_Prov').parent().attr('class').indexOf('decorator-select') > -1){
+							$("select[name^='C_State_Prov']").on('change', function() { 
+								stateStatus = $('option:selected', $("select[name^='C_State_Prov']")).data("gdpr"); 
+								checkSelection(stateStatus);
+							});
+						}
 					}
 					$('#C_State_Prov').children().remove().end().append(newstateoptions);
 					
