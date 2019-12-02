@@ -486,5 +486,12 @@
         margin-top: 0;
     }
 
+    .customer_section {
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            margin-top: -30px;
+        }
+    }
+   
+
 }
 

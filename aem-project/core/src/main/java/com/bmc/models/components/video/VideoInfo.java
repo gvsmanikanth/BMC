@@ -18,6 +18,7 @@ public class VideoInfo {
     public String getDescription() { return description; } @ValueMapValue private String description;
     public String getVideoId() { return videoId; } @ValueMapValue private String videoId;
     public String getVideoPath() { return videoPath; } @ValueMapValue private String videoPath;
+    public String getVideoLength(){ return videoLength; } @ValueMapValue private String videoLength;
 
     public String getModalClass() {
         return (type == VideoType.YouTube)

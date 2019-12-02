@@ -1,10 +1,10 @@
 <?php
    $pageTitle = 'DSOM New';
-   $bodyClass = 'full-width arrow_bg_landing_page';
+   $bodyClass = 'full-width';
    include_once 'php-inc/head.php';
    ?>
    
-   <div class="header-solutions header-solutions aem-GridColumn aem-GridColumn--default--12">
+   <div class="header-solutions landingPage-header-solutions aem-GridColumn aem-GridColumn--default--12">
 	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
 	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/landing-page-web-banner-chatbot.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-landing-page-web-banner-chatbot.jpg&quot;}}" 
 	   style="background-color:#002c8f;">
@@ -30,7 +30,7 @@
 	</div>
 	
 	<!--First and only -->
-	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 feature-section bg-boston-blue white text-center">
+	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 landingPage-feature-section bg-boston-blue white text-center">
 	   <section class="layout-inner-wrap" id="introducing_BMC_helix">
 			<div class="feature-head">
 					<h2 class="block-title">Introducing BMC Helix</h2>
@@ -64,7 +64,7 @@
 	
 	
 <!-- Basement to Boardroom -->
-<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
+<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 landingPage-section-50-50">
 	   <section class="bg-white top_padding_5rem">
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">
@@ -93,8 +93,8 @@
 
 
 
-	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap arrow-bg"  id="arrowBG1" > 
+	<div class="bg-white landingPage-direction-text text-center" >
+		<div class="layout-inner-wrap arrow-bg"  id="arrowBG1" data-position = "ltr" data-bool = "false" > 
 			<div class="content " > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				With BMC Helix, you can protect your systems and get access to data that helps improve your business.
@@ -104,7 +104,7 @@
 	</div>
 
 <!--Consumer-Grade Experience-->
-<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
+<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 landingPage-section-50-50">
 		<section class="bg-white">
 			<div class="layout-inner-wrap">
 				<div class="md-flex shuffled-wrap">
@@ -130,8 +130,8 @@
 		</section>
     </div>
 
-	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap arrow-bg"  id="arrowBG2"  > 
+	<div class="bg-white landingPage-direction-text text-center" >
+		<div class="layout-inner-wrap arrow-bg"  id="arrowBG2" data-position = "rtl" data-bool = "false" > 
 			<div class="content arrow-med-text" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				BMC Helix empowers end users across your&nbsp;enterprise.
@@ -141,7 +141,7 @@
     </div>
 
 	<!--Pervasive Intelligence-->
-	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 section_50_50">
+	<div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12 landingPage-section-50-50">
 	   <section class="bg-white" >
 		  <div class="layout-inner-wrap">
 			 <div class="md-flex">			 	
@@ -168,8 +168,8 @@
 	   </section>
     </div>
 
-	<div class="bg-white direction-text text-center" >
-		<div class="layout-inner-wrap  arrow-bg"  id="arrowBG3"> 
+	<div class="bg-white landingPage-direction-text text-center" >
+		<div class="layout-inner-wrap  arrow-bg"  id="arrowBG3"  data-position = "ltr" data-bool = "true" > 
 			<div class="content  small-arrow" > 
 				<h4 class="block-title subTitleBlock"><span class="lineStart" ></span>
 				
@@ -180,7 +180,7 @@
 	
 	
 	<!--Be first in your industry -->
-	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 first-industry  bg-boston-blue white text-center">
+	<div class="htmlarea aem-GridColumn aem-GridColumn--default--12 landingPage-CTA-strip  bg-boston-blue white text-center">
 		<div class="layout-inner-wrap">
 			<div class="content">
 				<h3>Be <i>first</i> in your industry with <strong>BMC Helix</strong> — the first and only intelligence-enriched, integrated service and operations platform</h3>
@@ -194,7 +194,7 @@
 
 	<!-- BMC Helix Solutions-->
 
-	<section class="product-list ">
+	<section class="landingPage-product-list ">
 		<div class=" layout-inner-wrap" id="product-list">			
 			<h2 class="h2-variation-1">Featured BMC Helix Products</h2>
 			<div class="flex-wrap flex-justify-center mb2">
