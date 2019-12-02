@@ -532,6 +532,7 @@ img {
 	.section-content.py4 {
 		max-width: 1440px;
 		padding: 2rem 1.55556rem;
+		display:-ms-flexbox;
 		margin:auto;
 		@include media(breakpointLarge){
 			padding:0;
