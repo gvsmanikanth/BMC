@@ -287,14 +287,13 @@ function addFilterToArrayProtoype() {
 		maxHeight: 540,
 		type: 'iframe',
 		width: 960
-	});
-
+	});	
 	$(".modal-inline").fancybox({
 		closeClick: false,
 		padding: 0,
 		margin: 20,
-		maxWidth: 960
-	});
+		maxWidth: 900
+	});	
 
 	$('a#myUrl').trigger('click');
 
