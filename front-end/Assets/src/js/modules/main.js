@@ -158,8 +158,7 @@ function addFilterToArrayProtoype() {
 			if ($('body').hasClass('form2')) {
 				$('#C_OptIn_group').parent().parent().hide();
 			}
-			var checkSelection = function(stateValue){
-				//var status = $('option:selected', this).attr('data-id');
+			var checkSelection = function(stateValue){ 
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
 				var stateValue = stateValue;
 				if(status == true || stateValue == true){
