@@ -161,7 +161,7 @@ function addFilterToArrayProtoype() {
 			var checkSelection = function(stateValue){ 
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
 				var stateValue = stateValue;
-				if(status == true || stateValue == true){
+				if(status == true || stateValue == true){ 
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
 						if ($('body').hasClass('form2')) {
