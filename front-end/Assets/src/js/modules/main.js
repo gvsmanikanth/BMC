@@ -188,10 +188,10 @@ function addFilterToArrayProtoype() {
 			}
 			
 			//Check on page load.
-			checkSelection(null);
+			checkSelection(null); 
 			 
 			$("select[name^='C_Country']").on('change', function() { 
-				checkSelection(null);
+				checkSelection(null); 
 			});
 			
 		}
