@@ -53,8 +53,8 @@ $(document).ready(function () {
            //$('.section-wrap').css('min-height', windowHeight-50);
 			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
 				$('.section-wrap').css({'height': windowHeight-50,'display':'-ms-flexbox'});
-			}
-			else{
+				$('.section-wrap.partners').css({'min-height': windowHeight-50,'height':'auto','display':'block'});
+			}else{
 				$('.section-wrap').css('min-height', windowHeight-50);
 			}
  
