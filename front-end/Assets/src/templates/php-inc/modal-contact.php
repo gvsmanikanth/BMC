@@ -8,8 +8,8 @@
 		</div>
 		<div class="contact-options">
 			<div class="flex-wrap">
-                <div class=" flex-item col-12 sm-col sm-col-6">
-                    <div class="content-box p2 m2 bg-white">
+                <div class="flex flex-item col-12 sm-col sm-col-6">
+                    <div class="content-box p2 bg-white">
                         <img src="/front-end/Assets/src/img/Icon_smarter_IT.svg" alt="">
                         <h3>Sales & Pricing</h3>
                         <hr>
@@ -17,8 +17,8 @@
                         <a href="#." class="btn">Contact Sales</a>
                     </div>                    
                 </div>    
-                <div class=" flex-item col-12 sm-col sm-col-6">
-                    <div class="content-box p2 m2 bg-white">
+                <div class="flex flex-item col-12 sm-col sm-col-6">
+                    <div class="content-box p2 bg-white">
                         <img src="/front-end/Assets/src/img/Icon_smarter_IT.svg" alt="">
                         <h3>Help & Support</h3>
                         <hr>

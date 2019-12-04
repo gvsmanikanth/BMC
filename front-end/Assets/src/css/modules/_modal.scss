@@ -24,6 +24,9 @@
 }
 
 .layout-contact-modal {
+  @media (max-width: $break-sm) {
+    padding-top: 70px;
+  }
 	@include box-sizing();
 	background: #fafafa;
 	border: none;	
@@ -54,7 +57,7 @@
 
 
 	}
-  .contact-modal-inner-wrap {
+  .contact-modal-inner-wrap {      
     @media (min-width: $break-sm) {
       display: flex;
       justify-content: center;
@@ -64,53 +67,83 @@
     height: 100%;
     font-weight: 400;
     @media (min-width: $break-md) {
-      max-width: 60%;
+      max-width: 820px;
     }
     hr {
-        border-top: 5px solid #F86E00;
-        max-width: 80px;
+        border-top: 4px solid #F86E01;
+        max-width: 78px;
         margin: 20px auto 30px 0;
     }
     .contact-options{
-      .btn{
-        background: #F86E00;
-        border-radius: 0;
-        border-color: #F86E00; 
-        margin: 0;     
-      }
-      .btn-transparent{
-        background: transparent; 
-        color: #F86E00;
-      }
       .content-box{
+        margin: 12px;
+        width: 100%;
         h3{
           font-weight: 400;
         }
+        p{
+          min-height: 50px;
+        }
+      }           
+      .btn{       
+        border-radius: 0;
+        border-color: #F86E01; 
+        margin: 0;    
+        background-color: #F86E01;
+        transition: 0.3s linear;	
+        &:hover{
+          background-color: #f83200;
+          border-color: #f83200; 
+          transition: 0.4s linear;
+        } 
       }
+      .btn-transparent{
+        background: linear-gradient(to right, #F86E01 50%, #ffffff 50%);
+        color: #F86E01;
+        background-size: 200% 100%;
+        background-position: right bottom;
+        &:hover{
+          color: #ffffff;
+          transition: 0.3s linear;		
+          background-position: left bottom;
+          border-color: #F86E01; 
+        }
+      }      
     }
     .contact-modal-header {
-      margin-left: 18px;
+      margin-left: 12px;
       h2{
         font-weight: 400;
+        font-size: 28px; 
         @media (min-width: $break-sm) {
-          font-size: 52px;        
-          line-height: 52px;
+          font-size: 50px;        
+          line-height: 68px;
         }        
       }
     }
     .modal-footer{
+      @media (max-width: $break-sm) {
+        text-align: left;
+        padding: 15px 0 30px 12px;
+      }
+      padding-top: 30px;
       h3{
         font-weight: 400;
       }
       .btn-transparent{
         margin-left: 20px;
+        @media (max-width: $break-sm) {
+          margin-left: 0;
+          display: inline-block;
+          margin-top: 10px;
+        }        
       }
     }
   }
 
 
     .modal-close {
-
+      color: #555557;
       position: absolute;
       right: em(8);
       top: em(20);
