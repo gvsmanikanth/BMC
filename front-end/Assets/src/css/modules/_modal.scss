@@ -67,22 +67,25 @@
     height: 100%;
     font-weight: 400;
     @media (min-width: $break-md) {
-      max-width: 820px;
+      max-width: 810px;
     }
     hr {
         border-top: 4px solid #F86E01;
         max-width: 78px;
-        margin: 20px auto 30px 0;
+        margin: 20px auto 20px 0;
     }
     .contact-options{
       .content-box{
         margin: 12px;
         width: 100%;
+        padding-top: 40px;
         h3{
-          font-weight: 400;
+          font-weight: 600;
         }
         p{
-          min-height: 50px;
+          @media (min-width: $break-sm) {
+            min-height: 50px;
+          }          
         }
       }           
       .btn{       
@@ -91,6 +94,10 @@
         margin: 0;    
         background-color: #F86E01;
         transition: 0.3s linear;	
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+    
         &:hover{
           background-color: #f83200;
           border-color: #f83200; 
@@ -115,6 +122,7 @@
       h2{
         font-weight: 400;
         font-size: 28px; 
+        margin-bottom: 10px;
         @media (min-width: $break-sm) {
           font-size: 50px;        
           line-height: 68px;
@@ -129,6 +137,7 @@
       padding-top: 30px;
       h3{
         font-weight: 400;
+        font-size: 24px;
       }
       .btn-transparent{
         margin-left: 20px;

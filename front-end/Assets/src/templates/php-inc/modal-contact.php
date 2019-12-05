@@ -10,7 +10,7 @@
 			<div class="flex-wrap">
                 <div class="flex flex-item col-12 sm-col sm-col-6">
                     <div class="content-box p2 bg-white">
-                        <img src="/front-end/Assets/src/img/Icon_smarter_IT.svg" alt="">
+                        <img src="/front-end/Assets/src/img/Grey_Sales Edge.svg" alt="">
                         <h3>Sales & Pricing</h3>
                         <hr>
                         <p>Speak to a rep about your business needs</p>
@@ -19,7 +19,7 @@
                 </div>    
                 <div class="flex flex-item col-12 sm-col sm-col-6">
                     <div class="content-box p2 bg-white">
-                        <img src="/front-end/Assets/src/img/Icon_smarter_IT.svg" alt="">
+                        <img src="/front-end/Assets/src/img/Customer_service_grey.svg" alt="">
                         <h3>Help & Support</h3>
                         <hr>
                         <p>See Our product support options</p>
