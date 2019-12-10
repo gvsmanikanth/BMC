@@ -103,6 +103,9 @@
           border-color: #f83200; 
           transition: 0.4s linear;
         } 
+        &:focus{
+          outline: none;
+        }
       }
       .btn-transparent{
         background: linear-gradient(to right, #F86E01 50%, #ffffff 50%);
