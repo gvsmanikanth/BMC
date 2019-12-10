@@ -6,22 +6,24 @@
 
         // If there is only three slides
         if (totalItems == 3) {
-            // Set loop option variable to false
-            var isLooped = false;
+            var noOfItems = 3;
             // Set nav option variable to false
             var isNav = false;
         } 
-        else {
-            // Set loop option variable to true
-            var isLooped = true;
-
-
-            // Set loop option variable to true
+        else if(totalItems == 4) {            
+            var noOfItems = 4;
+            if ($(window).width() >= 1600){	
+                var isNav = false;
+            }else{
+                var isNav = true;
+            }	
+            
+        }else{
             var isNav = true;
         }
         $('.owl-carousel-quote').owlCarousel({
             margin:30,
-            nav:isLooped,
+            nav:isNav,
             dots:false,
             touchDrag: true,
             mouseDrag: false,
@@ -35,12 +37,16 @@
             responsive:{
                 0:{
                     stagePadding: 30,
-                    items:1
+                    items:1,
+                    margin:20,
+                    nav:true
                     
                 },
                 600:{
                     stagePadding: 50,
-                    items:2
+                    items:2,
+                    margin:20,
+                    nav:true
                 },
                 1000:{
                     stagePadding: 80,
@@ -48,14 +54,10 @@
                 },
                 1600:{
                     stagePadding: 100,
-                    items:4
-                },
-                1800:{
-                    items:5
+                    items:noOfItems
                 }
             }
         })
-    }
-    
+    }     
 
 }(jQuery));
