@@ -34,7 +34,7 @@
                                 value="true"/>
                             <new-fields
                                 jcr:primaryType="nt:unstructured"
-                                jcr:title="Additional fields for Header solutions-II"
+                                jcr:title="Additional fields for Header Brand 2"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                 <items jcr:primaryType="nt:unstructured">
                                     <mobileHeaderImage
