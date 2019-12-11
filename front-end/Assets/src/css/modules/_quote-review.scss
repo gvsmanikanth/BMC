@@ -17,7 +17,7 @@
         }
         //  Using a Sprite
         .star-ratings-sprite {
-            background: url("/front-end/Assets/src/img/star-rating-sprite.png") repeat-x;
+            background: url("/content/dam/bmc/web-services/star-rating-sprite.png") repeat-x;
             font-size: 0;
             height: 21px;
             line-height: 0;
@@ -27,7 +27,7 @@
             margin: 0 auto 0 0;
             
             &-rating {
-            background: url("/front-end/Assets/src/img/star-rating-sprite.png") repeat-x;
+            background: url("/content/dam/bmc/web-services/star-rating-sprite.png") repeat-x;
             background-position: 0 100%;
             float: left;
             height: 21px;
