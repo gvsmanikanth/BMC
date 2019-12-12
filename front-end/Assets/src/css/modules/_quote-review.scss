@@ -1,7 +1,6 @@
 .quote-section{
     background-color: #fafafa;
     h2{
-        font-weight: 600;
         color: #414042;
     }
     padding: 50px 0;
@@ -14,6 +13,9 @@
         }         
         &:hover{
             box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+        }
+        p{
+            color: #555557;
         }
         //  Using a Sprite
         .star-ratings-sprite {
@@ -53,7 +55,7 @@
         .quote-footer{
             justify-content: space-between;
             @media (min-width: $break-sm) {
-                padding: 20px;   
+                padding: 30px;   
                 padding-bottom: 40px;   
             }
             position: absolute;
