@@ -103,5 +103,8 @@
             left: 30px;        
         } 
     }   
+    .owl-next.disabled, .owl-prev.disabled {
+        display: none !important;
+        }
 }
 
