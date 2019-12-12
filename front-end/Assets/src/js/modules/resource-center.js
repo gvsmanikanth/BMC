@@ -225,15 +225,20 @@ ResourceCenterFilters = {
     loadFiltersFromUrl: function () {
        
     	    var filterParams =  new Map();
-        	var queryString = window.location.href.split('#');
+    	    var url = window.location.href;
+    	    if(url.includes("#")) {
+    	    	var queryString = url.split('#');
+    	    	console.log('queryString ' + queryString);
+    	    	if(queryString && queryString.length > 1) {
             
-            queryString[1].split("&").forEach(function(part) {
-            	if(part) {
-                	var item = part.split("=");
-                	filterParams.set(item[0], item[1]);
-            	}
-              });
-            
+    	    		queryString[1].split("&").forEach(function(part) {
+        			if(part) {
+                		var item = part.split("=");
+                		filterParams.set(item[0], item[1]);
+            			}
+        			});
+    	    	}
+    	    }
             return filterParams;
        
     }, 
@@ -241,7 +246,6 @@ ResourceCenterFilters = {
     initFilters: function (filtersMap) {
         
     	filtersMap.forEach(function(value, key) {
-    	   console.log(key + ' = ' + value);
     	   
     	   value.split(",").forEach(function(item) {
     		   $(".filter-checkbox-item[data-name='" + key + "'] li#" + item).addClass('active')
@@ -260,16 +264,7 @@ ResourceCenterFilters = {
     	if(pageIndex) {
     		ResourceCenterResults.$currentPage = pageIndex;
     	}
-    	
-	    var filterParams =  new Map();;
-        var queryString = window.location.href.split('#');
-        
-        queryString[1].split("&").forEach(function(part) {
-            var item = part.split("=");
-            filterParams.set(item[0], item[1]);
-            
-          });
-        return filterParams;
+
         
     },
     bindEvents: function () {
