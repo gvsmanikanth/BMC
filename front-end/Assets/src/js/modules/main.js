@@ -158,10 +158,11 @@ function addFilterToArrayProtoype() {
 			if ($('body').hasClass('form2')) {
 				$('#C_OptIn_group').parent().parent().hide();
 			}
-			var checkSelection = function(){
-				//var status = $('option:selected', this).attr('data-id');
+
+			var checkSelection = function(stateValue){ 
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
-				if(status == true){
+				var stateValue = stateValue;
+				if(status == true || stateValue == true){ 
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
 						if ($('body').hasClass('form2')) {
@@ -187,10 +188,10 @@ function addFilterToArrayProtoype() {
 			}
 			
 			//Check on page load.
-			checkSelection();
+			checkSelection(null); 
 			 
 			$("select[name^='C_Country']").on('change', function() { 
-				checkSelection();
+				checkSelection(null); 
 			});
 			
 		}
@@ -563,6 +564,12 @@ function addFilterToArrayProtoype() {
 					if($('#C_State_Prov').attr('type') == "text")
 					{
 						$('#C_State_Prov').parent().replaceWith("<div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' required></select></div>");
+						if($('#C_State_Prov').parent().attr('class').indexOf('decorator-select') > -1){
+							$("select[name^='C_State_Prov']").on('change', function() { 
+								stateStatus = $('option:selected', $("select[name^='C_State_Prov']")).data("gdpr"); 
+								checkSelection(stateStatus);
+							});
+						}
 					}
 					$('#C_State_Prov').children().remove().end().append(newstateoptions);
 					
