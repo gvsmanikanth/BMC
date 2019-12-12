@@ -206,11 +206,13 @@ $(function() {
 ResourceCenterFilters = {
 
     init: function () {
+    	const filters = this.loadFiltersFromUrl();
+    	
         this.$component = $('.rc-filter-component');
         this.$keywordSearch= $('.keyword-search input');
         this.$filter = $('.filter-checkbox-item li');
         this.$resultContainer = $('#resultItemsContainer');
-        //this.initFilters();
+        this.initFilters(filters);
         this.bindEvents();
         this.loadData();
 
@@ -218,6 +220,50 @@ ResourceCenterFilters = {
         this.$resizeTimer;
     },
 
+    loadFiltersFromUrl: function () {
+       
+    	    var filterParams =  new Map();
+    	    var url = window.location.href;
+    	    if(url.includes("#")) {
+    	    	var queryString = url.split('#');
+    	    	if(queryString && queryString.length > 1) {
+            
+    	    		queryString[1].split("&").forEach(function(part) {
+        			if(part) {
+                		var item = part.split("=");
+                		filterParams.set(item[0], item[1]);
+            			}
+        			});
+    	    	}
+    	    }
+            return filterParams;
+       
+    }, 
+    
+    initFilters: function (filtersMap) {
+        
+    	filtersMap.forEach(function(value, key) {
+    	   
+    	   value.split(",").forEach(function(item) {
+    		   $(".filter-checkbox-item[data-name='" + key + "'] li#" + item).addClass('active')
+               $(".filter-checkbox-item[data-name='" + key + "'] input#checkbox-" + item).attr('checked', true);
+             });
+    	   
+    	});
+    	
+    	// init filters from map
+    	var sort = filtersMap.get("sortCriteria");
+    	if(sort) {
+    		$('.rc-sort-select').val(sort);
+    	}
+    	// init current page from 
+    	var pageIndex = filtersMap.get("pageIndex");
+    	if(pageIndex) {
+    		ResourceCenterResults.$currentPage = pageIndex;
+    	}
+
+        
+    },
     bindEvents: function () {
         this.setResetFilterClickEvent();
         this.setKeywordSearchEvent();
@@ -368,7 +414,7 @@ ResourceCenterFilters = {
               }
           }
         }
-        //  sortering
+        //  sorting
         var order = $( "#order_select option:selected" ).val();
         url += "&sortCriteria=" + order;
         
