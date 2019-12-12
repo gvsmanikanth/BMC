@@ -207,8 +207,6 @@ ResourceCenterFilters = {
 
     init: function () {
     	const filters = this.loadFiltersFromUrl();
-    	console.log('init');
-    	console.log(filters);
     	
         this.$component = $('.rc-filter-component');
         this.$keywordSearch= $('.keyword-search input');
@@ -228,7 +226,6 @@ ResourceCenterFilters = {
     	    var url = window.location.href;
     	    if(url.includes("#")) {
     	    	var queryString = url.split('#');
-    	    	console.log('queryString ' + queryString);
     	    	if(queryString && queryString.length > 1) {
             
     	    		queryString[1].split("&").forEach(function(part) {
