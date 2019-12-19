@@ -133,6 +133,7 @@
                         </embedded>
                     </embeddeds>
 
+                    <!-- WEB-6804 Removing ACS Commons COntent package and WCM Core Components from build package
                     <subPackages>
                         <subPackage>
                             <groupId>com.adobe.acs</groupId>
@@ -144,7 +145,7 @@
                             <artifactId>core.wcm.components.all</artifactId>
                             <filter>true</filter>
                         </subPackage>
-                    </subPackages>
+                    </subPackages>-->
 
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                     <properties>
