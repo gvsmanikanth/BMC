@@ -3,7 +3,6 @@
 	<div class="contact-modal-inner-wrap">
 		<div class="contact-modal-header">
 			<h2>Let us know how we can help</h2>
-            <p>This is some additional description for this area if needed</p>
 			<a href="#" class="modal-close"></a>
 		</div>
 		<div class="contact-options">
@@ -14,7 +13,7 @@
                         <h3>Sales & Pricing</h3>
                         <hr>
                         <p>Speak to a rep about your business needs</p>
-                        <a href="#." class="btn">Contact Sales</a>
+                        <a href="//www.bmc.com/forms/contact-bmc.html" class="btn learn-more">Contact Sales</a>
                     </div>                    
                 </div>    
                 <div class="flex flex-item col-12 sm-col sm-col-6">
@@ -22,13 +21,13 @@
                         <img src="/front-end/Assets/src/img/Customer_service_grey.svg" alt="">
                         <h3>Help & Support</h3>
                         <hr>
-                        <p>See Our product support options</p>
-                        <a href="#." class="btn">Find your local support contacts</a>
+                        <p>See our product support options</p>
+                        <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="btn learn-more">Contact Support</a>
                     </div>                    
                 </div>              
 			</div>
 			<div class="modal-footer text-center">
-				<h3>General inquiries and locations <a href="#." class="btn btn-transparent">Contact Us</a></h3>
+				<h3>General inquiries and locations <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="btn btn-transparent learn-more">Contact Us</a></h3>
 			</div>
 		</div>
 	</div>
