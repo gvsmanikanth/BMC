@@ -8,9 +8,50 @@ var bmcMeta = {
 		  "form": {
 		    "id": "22",
 		    "name": "FormTemplate1",
+		    "leadOffer": "Contact Me",
 		    "optIn": "true"
+		  },
+		  "page": {
+		    "contentId": "7851e34c-77f8-40ba-a71e-fe0bf3f01f73",
+		    "contentType": "form-landing-page-template2",
+		    "longName": "en-us:forms-start:contact-bmc3",
+		    "productCategories": "unknown",
+		    "productLineCategories": "unknown",
+		    "topicsCategories": "",
+		    "errorCode": "",
+		    "isPurl": "false",
+		    "modalOpen": {
+		      "evidon": false,
+		      "contact": false,
+		      "content": false,
+		      "supportAlerts": false,
+		      "salesChat": false,
+		      "qualtrics": false
+		    },
+		    "GeoIP": {
+		      "GeoIPRedirectExcluded": false,
+		      "GeoIPLanguageCode": ""
+		    },
+		    "ic": {
+		      "appInclusion": "no",
+		      "contentType": "",
+		      "weighting": "5",
+		      "contentMarketTopics": "",
+		      "buyerStage": "",
+		      "targetPersona": "",
+		      "sourcePublishDate": "",
+		      "targetIndustry": "",
+		      "companySize": ""
+		    }
+		  },
+		  "site": {
+		    "cultureCode": "en-us",
+		    "environment": "stage."
+		  },
+		  "user": {
+		    "sVi": ""
 		  }
-}
+		};
 </script>
 
 <section class="layout-wrapper">
@@ -76,270 +117,238 @@ var bmcMeta = {
 										<input aria-label="Business Phone" type="number" id="form-text-555295308" placeholder="Business Phone" name="C_BusPhone" />
 									</div>
 									<div class="cmp cmp-options aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-										<select name="C_Country" id="form-options-8025985" class="form-control"> 
-											<option selected disabled>Country</option>
-											<option value="AF">Afghanistan</option>
-											<option value="AL">Albania</option>
-											<option value="DZ">Algeria</option>
-											<option value="AS">American Samoa</option>
-											<option value="AD">Andorra</option>
-											<option value="AO">Angola</option>
-											<option value="AI">Anguilla</option>
-											<option value="AQ">Antarctica</option>
-											<option value="AG">Antigua and Barbuda</option>
-											<option value="AR">Argentina</option>
-											<option value="AM">Armenia</option>
-											<option value="AW">Aruba</option>
-											<option value="AU" data-gdpr="true">Australia</option>
-											<option value="AT" data-gdpr="true">Austria</option>
-											<option value="AZ">Azerbaijan</option>
-											<option value="BS">Bahamas</option>
-											<option value="BH">Bahrain</option>
-											<option value="BD">Bangladesh</option>
-											<option value="BB">Barbados</option>
-											<option value="BY">Belarus</option>
-											<option value="BE" data-gdpr="true">Belgium</option>
-											<option value="BZ">Belize</option>
-											<option value="BJ">Benin</option>
-											<option value="BM">Bermuda</option>
-											<option value="BT">Bhutan</option>
-											<option value="BO">Bolivia</option>
-											<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-											<option value="BA">Bosnia and Herzegovina</option>
-											<option value="BW">Botswana</option>
-											<option value="BV">Bouvet Island</option>
-											<option value="BR" data-gdpr="true">Brazil</option>
-											<option value="IO">British Indian Ocean Territory</option>
-											<option value="VG">British Virgin Islands</option>
-											<option value="BN">Brunei</option>
-											<option value="BG" data-gdpr="true">Bulgaria</option>
-											<option value="BF">Burkina Faso</option>
-											<option value="BI">Burundi</option>
-											<option value="KH">Cambodia</option>
-											<option value="CM">Cameroon</option>
-											<option value="CA" data-gdpr="true">Canada</option>
-											<option value="CV">Cape Verde</option>
-											<option value="KY">Cayman Islands</option>
-											<option value="CF">Central African Republic</option>
-											<option value="TD">Chad</option>
-											<option value="CL">Chile</option>
-											<option value="CN" data-gdpr="true">China</option>
-											<option value="CX">Christmas Island</option>
-											<option value="CC">Cocos Islands</option>
-											<option value="CO">Colombia</option>
-											<option value="KM">Comoros</option>
-											<option value="CG">Congo</option>
-											<option value="CK">Cook Islands</option>
-											<option value="CR">Costa Rica</option>
-											<option value="HR" data-gdpr="true">Croatia</option>
-											<option value="CU">Cuba</option>
-											<option value="CW">Curaçao</option>
-											<option value="CY" data-gdpr="true">Cyprus</option>
-											<option value="CZ" data-gdpr="true">Czech Republic</option>
-											<option value="CI">Côte d&#39;Ivoire</option>
-											<option value="DK" data-gdpr="true">Denmark</option>
-											<option value="DJ">Djibouti</option>
-											<option value="DM">Dominica</option>
-											<option value="DO">Dominican Republic</option>
-											<option value="EC">Ecuador</option>
-											<option value="EG">Egypt</option>
-											<option value="SV">El Salvador</option>
-											<option value="GQ">Equatorial Guinea</option>
-											<option value="ER">Eritrea</option>
-											<option value="EE" data-gdpr="true">Estonia</option>
-											<option value="ET">Ethiopia</option>
-											<option value="FK">Falkland Islands</option>
-											<option value="FO">Faroe Islands</option>
-											<option value="FJ">Fiji</option>
-											<option value="FI" data-gdpr="true">Finland</option>
-											<option value="FR" data-gdpr="true">France</option>
-											<option value="GF">French Guiana</option>
-											<option value="PF">French Polynesia</option>
-											<option value="TF">French Southern Territories</option>
-											<option value="GA">Gabon</option>
-											<option value="GM">Gambia</option>
-											<option value="GE">Georgia</option>
-											<option value="DE" data-gdpr="true">Germany</option>
-											<option value="GH">Ghana</option>
-											<option value="GI">Gibraltar</option>
-											<option value="GR" data-gdpr="true">Greece</option>
-											<option value="GL">Greenland</option>
-											<option value="GD">Grenada</option>
-											<option value="GP">Guadeloupe</option>
-											<option value="GU">Guam</option>
-											<option value="GT">Guatemala</option>
-											<option value="GG">Guernsey</option>
-											<option value="GN">Guinea</option>
-											<option value="GW">Guinea-Bissau</option>
-											<option value="GY">Guyana</option>
-											<option value="HT">Haiti</option>
-											<option value="HM">Heard Island And McDonald Islands</option>
-											<option value="HN">Honduras</option>
-											<option value="HK" data-gdpr="true">Hong Kong</option>
-											<option value="HU" data-gdpr="true">Hungary</option>
-											<option value="IS">Iceland</option>
-											<option value="IN" data-gdpr="true">India</option>
-											<option value="ID">Indonesia</option>
-											<option value="IR">Iran</option>
-											<option value="IQ">Iraq</option>
-											<option value="IE" data-gdpr="true">Ireland</option>
-											<option value="IM">Isle Of Man</option>
-											<option value="IL" data-gdpr="true">Israel</option>
-											<option value="IT" data-gdpr="true">Italy</option>
-											<option value="JM">Jamaica</option>
-											<option value="JP" data-gdpr="true">Japan</option>
-											<option value="JE">Jersey</option>
-											<option value="JO">Jordan</option>
-											<option value="KZ">Kazakhstan</option>
-											<option value="KE">Kenya</option>
-											<option value="KI">Kiribati</option>
-											<option value="KW">Kuwait</option>
-											<option value="KG">Kyrgyzstan</option>
-											<option value="LA">Laos</option>
-											<option value="LV" data-gdpr="true">Latvia</option>
-											<option value="LB">Lebanon</option>
-											<option value="LS">Lesotho</option>
-											<option value="LR">Liberia</option>
-											<option value="LY">Libya</option>
-											<option value="LI">Liechtenstein</option>
-											<option value="LT" data-gdpr="true">Lithuania</option>
-											<option value="LU" data-gdpr="true">Luxembourg</option>
-											<option value="MO">Macao</option>
-											<option value="MK">Macedonia</option>
-											<option value="MG">Madagascar</option>
-											<option value="MW">Malawi</option>
-											<option value="MY">Malaysia</option>
-											<option value="MV">Maldives</option>
-											<option value="ML">Mali</option>
-											<option value="MT" data-gdpr="true">Malta</option>
-											<option value="MH">Marshall Islands</option>
-											<option value="MQ">Martinique</option>
-											<option value="MR">Mauritania</option>
-											<option value="MU">Mauritius</option>
-											<option value="YT">Mayotte</option>
-											<option value="MX" data-gdpr="true">Mexico</option>
-											<option value="FM">Micronesia</option>
-											<option value="MD">Moldova</option>
-											<option value="MC">Monaco</option>
-											<option value="MN">Mongolia</option>
-											<option value="ME">Montenegro</option>
-											<option value="MS">Montserrat</option>
-											<option value="MA">Morocco</option>
-											<option value="MZ">Mozambique</option>
-											<option value="MM">Myanmar</option>
-											<option value="NA">Namibia</option>
-											<option value="NR">Nauru</option>
-											<option value="NP">Nepal</option>
-											<option value="NL" data-gdpr="true">Netherlands</option>
-											<option value="AN">Netherlands Antilles</option>
-											<option value="NC">New Caledonia</option>
-											<option value="NZ">New Zealand</option>
-											<option value="NI">Nicaragua</option>
-											<option value="NE">Niger</option>
-											<option value="NG">Nigeria</option>
-											<option value="NU">Niue</option>
-											<option value="NF">Norfolk Island</option>
-											<option value="KP">North Korea</option>
-											<option value="MP">Northern Mariana Islands</option>
-											<option value="NO">Norway</option>
-											<option value="OM">Oman</option>
-											<option value="PK">Pakistan</option>
-											<option value="PW">Palau</option>
-											<option value="PS">Palestine</option>
-											<option value="PA">Panama</option>
-											<option value="PG">Papua New Guinea</option>
-											<option value="PY">Paraguay</option>
-											<option value="PE">Peru</option>
-											<option value="PH">Philippines</option>
-											<option value="PN">Pitcairn</option>
-											<option value="PL" data-gdpr="true">Poland</option>
-											<option value="PT" data-gdpr="true">Portugal</option>
-											<option value="PR">Puerto Rico</option>
-											<option value="QA">Qatar</option>
-											<option value="RE">Reunion</option>
-											<option value="RO">Romania</option>
-											<option value="RU">Russia</option>
-											<option value="RW">Rwanda</option>
-											<option value="BL">Saint Barthélemy</option>
-											<option value="SH">Saint Helena</option>
-											<option value="KN">Saint Kitts And Nevis</option>
-											<option value="LC">Saint Lucia</option>
-											<option value="MF">Saint Martin</option>
-											<option value="PM">Saint Pierre And Miquelon</option>
-											<option value="VC">Saint Vincent And The Grenadines</option>
-											<option value="WS">Samoa</option>
-											<option value="SM">San Marino</option>
-											<option value="ST">Sao Tome And Principe</option>
-											<option value="SA">Saudi Arabia</option>
-											<option value="SN">Senegal</option>
-											<option value="RS">Serbia</option>
-											<option value="SC">Seychelles</option>
-											<option value="SL">Sierra Leone</option>
-											<option value="SG" data-gdpr="true">Singapore</option>
-											<option value="SX">Sint Maarten (Dutch part)</option>
-											<option value="SK" data-gdpr="true">Slovakia</option>
-											<option value="SI" data-gdpr="true">Slovenia</option>
-											<option value="SB">Solomon Islands</option>
-											<option value="SO">Somalia</option>
-											<option value="ZA" data-gdpr="true">South Africa</option>
-											<option value="GS">South Georgia And The South Sandwich Islands</option>
-											<option value="KR">South Korea</option>
-											<option value="SS">South Sudan</option>
-											<option value="ES" data-gdpr="true">Spain</option>
-											<option value="LK">Sri Lanka</option>
-											<option value="SD">Sudan</option>
-											<option value="SR">Suriname</option>
-											<option value="SJ">Svalbard And Jan Mayen</option>
-											<option value="SZ">Swaziland</option>
-											<option value="SE" data-gdpr="true">Sweden</option>
-											<option value="CH" data-gdpr="true">Switzerland</option>
-											<option value="SY">Syria</option>
-											<option value="TW" data-gdpr="true">Taiwan</option>
-											<option value="TJ">Tajikistan</option>
-											<option value="TZ">Tanzania</option>
-											<option value="TH">Thailand</option>
-											<option value="CD">The Democratic Republic Of Congo</option>
-											<option value="TL">Timor-Leste</option>
-											<option value="TG">Togo</option>
-											<option value="TK">Tokelau</option>
-											<option value="TO">Tonga</option>
-											<option value="TT">Trinidad and Tobago</option>
-											<option value="TN">Tunisia</option>
-											<option value="TR" data-gdpr="true">Turkey</option>
-											<option value="TM">Turkmenistan</option>
-											<option value="TC">Turks And Caicos Islands</option>
-											<option value="TV">Tuvalu</option>
-											<option value="VI">U.S. Virgin Islands</option>
-											<option value="UG">Uganda</option>
-											<option value="UA">Ukraine</option>
-											<option value="AE">United Arab Emirates</option>
-											<option value="GB" data-gdpr="true">United Kingdom</option>
-											<option value="US">United States</option>
-											<option value="UM">United States Minor Outlying Islands</option>
-											<option value="UY">Uruguay</option>
-											<option value="UZ">Uzbekistan</option>
-											<option value="VU">Vanuatu</option>
-											<option value="VA">Vatican</option>
-											<option value="VE">Venezuela</option>
-											<option value="VN">Vietnam</option>
-											<option value="WF">Wallis And Futuna</option>
-											<option value="EH">Western Sahara</option>
-											<option value="YE">Yemen</option>
-											<option value="ZM">Zambia</option>
-											<option value="ZW">Zimbabwe</option>
-											<option value="AX">Åland Islands</option>
-										</select>
+										<select name="C_Country" id="C_Country" class="form-control" required="true" data-error-hint="Required. Please add your Country.">
+                                                                           <option selected="" disabled="">Country</option>
+                                                                           <option value="USA">United States</option>
+                                                                           <option value="Canada" data-gdpr="true">Canada</option>
+                                                                           <option value="Afghanistan">Afghanistan</option>
+                                                                           <option value="Albania">Albania</option>
+                                                                           <option value="Algeria">Algeria</option>
+                                                                           <option value="American Samoa">American Samoa</option>
+                                                                           <option value="Andorra">Andorra</option>
+                                                                           <option value="Angola">Angola</option>
+                                                                           <option value="Anguilla">Anguilla</option>
+                                                                           <option value="Antarctica">Antarctica</option>
+                                                                           <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                                           <option value="Argentina">Argentina</option>
+                                                                           <option value="Aruba">Aruba</option>
+                                                                           <option value="Australia" data-gdpr="true">Australia</option>
+                                                                           <option value="Austria" data-gdpr="true">Austria</option>
+                                                                           <option value="Bahamas">Bahamas</option>
+                                                                           <option value="Bahrain">Bahrain</option>
+                                                                           <option value="Bangladesh">Bangladesh</option>
+                                                                           <option value="Barbados">Barbados</option>
+                                                                           <option value="Belarus">Belarus</option>
+                                                                           <option value="Belgium" data-gdpr="true">Belgium</option>
+                                                                           <option value="Belize">Belize</option>
+                                                                           <option value="Benin">Benin</option>
+                                                                           <option value="Bermuda">Bermuda</option>
+                                                                           <option value="Bhutan">Bhutan</option>
+                                                                           <option value="Bolivia">Bolivia</option>
+                                                                           <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                                                           <option value="Botswana">Botswana</option>
+                                                                           <option value="Bouvet Island">Bouvet Island</option>
+                                                                           <option value="Brazil" data-gdpr="true">Brazil</option>
+                                                                           <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                                           <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                                           <option value="Bulgaria" data-gdpr="true">Bulgaria</option>
+                                                                           <option value="Burkina Faso">Burkina Faso</option>
+                                                                           <option value="Burundi">Burundi</option>
+                                                                           <option value="Cambodia">Cambodia</option>
+                                                                           <option value="Cameroon">Cameroon</option>
+                                                                           <option value="Cape Verde">Cape Verde</option>
+                                                                           <option value="Cayman Islands">Cayman Islands</option>
+                                                                           <option value="Central African Republic">Central African Republic</option>
+                                                                           <option value="Chad">Chad</option>
+                                                                           <option value="Chile">Chile</option>
+                                                                           <option value="China" data-gdpr="true">China</option>
+                                                                           <option value="Christmas Island">Christmas Island</option>
+                                                                           <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                                                           <option value="Colombia">Colombia</option>
+                                                                           <option value="Comoros">Comoros</option>
+                                                                           <option value="Cook Islands">Cook Islands</option>
+                                                                           <option value="Costa Rica">Costa Rica</option>
+                                                                           <option value="Croatia" data-gdpr="true">Croatia</option>
+                                                                           <option value="Cyprus" data-gdpr="true">Cyprus</option>
+                                                                           <option value="CZECH Republic" data-gdpr="true">Czech Republic</option>
+                                                                           <option value="Denmark" data-gdpr="true">Denmark</option>
+                                                                           <option value="Djibouti">Djibouti</option>
+                                                                           <option value="Dominica">Dominica</option>
+                                                                           <option value="Dominican Republic">Dominican Republic</option>
+                                                                           <option value="East Timor">East Timor</option>
+                                                                           <option value="Ecuador">Ecuador</option>
+                                                                           <option value="Egypt">Egypt</option>
+                                                                           <option value="El Salvador">El Salvador</option>
+                                                                           <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                                           <option value="Eritrea">Eritrea</option>
+                                                                           <option value="Estonia" data-gdpr="true">Estonia</option>
+                                                                           <option value="Ethiopia">Ethiopia</option>
+                                                                           <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                                                           <option value="Faroe Islands">Faroe Islands</option>
+                                                                           <option value="Fiji">Fiji</option>
+                                                                           <option value="Finland" data-gdpr="true">Finland</option>
+                                                                           <option value="France" data-gdpr="true">France</option>
+                                                                           <option value="French Guiana">French Guiana</option>
+                                                                           <option value="French Polynesia">French Polynesia</option>
+                                                                           <option value="French Southern Territories">French Southern Territories</option>
+                                                                           <option value="Gabon">Gabon</option>
+                                                                           <option value="Gambia">Gambia</option>
+                                                                           <option value="Georgia">Georgia</option>
+                                                                           <option value="Germany" data-gdpr="true">Germany</option>
+                                                                           <option value="Ghana">Ghana</option>
+                                                                           <option value="Gibraltar">Gibraltar</option>
+                                                                           <option value="Greece" data-gdpr="true">Greece</option>
+                                                                           <option value="Greenland">Greenland</option>
+                                                                           <option value="Grenada">Grenada</option>
+                                                                           <option value="Guadeloupe">Guadeloupe</option>
+                                                                           <option value="Guam">Guam</option>
+                                                                           <option value="Guatemala">Guatemala</option>
+                                                                           <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                                           <option value="Guyana">Guyana</option>
+                                                                           <option value="Haiti">Haiti</option>
+                                                                           <option value="Heard and McDonald Islands">Heard Island and Mcdonald Islands</option>
+                                                                           <option value="Vatican City State">Holy See (Vatican City State)</option>
+                                                                           <option value="Honduras">Honduras</option>
+                                                                           <option value="Hong Kong" data-gdpr="true">Hong Kong</option>
+                                                                           <option value="Hungary" data-gdpr="true">Hungary</option>
+                                                                           <option value="Iceland">Iceland</option>
+                                                                           <option value="India" data-gdpr="true">India</option>
+                                                                           <option value="Indonesia">Indonesia</option>
+                                                                           <option value="Ireland" data-gdpr="true">Ireland</option>
+                                                                           <option value="Israel" data-gdpr="true">Israel</option>
+                                                                           <option value="Italy" data-gdpr="true">Italy</option>
+                                                                           <option value="Jamaica">Jamaica</option>
+                                                                           <option value="Japan" data-gdpr="true">Japan</option>
+                                                                           <option value="Jordan">Jordan</option>
+                                                                           <option value="Kazakhstan">Kazakhstan</option>
+                                                                           <option value="Kenya">Kenya</option>
+                                                                           <option value="Kiribati">Kiribati</option>
+                                                                           <option value="Korea, Republic of" data-gdpr="true">Korea, Republic of</option>
+                                                                           <option value="Kuwait">Kuwait</option>
+                                                                           <option value="Kyrgyzsta">Kyrgyzstan</option>
+                                                                           <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                                           <option value="Latvia" data-gdpr="true">Latvia</option>
+                                                                           <option value="Lebanon">Lebanon</option>
+                                                                           <option value="Lesotho">Lesotho</option>
+                                                                           <option value="Liechtenstein">Liechtenstein</option>
+                                                                           <option value="Lithuania" data-gdpr="true">Lithuania</option>
+                                                                           <option value="Luxembourg" data-gdpr="true">Luxembourg</option>
+                                                                           <option value="Macau">Macau</option>
+                                                                           <option value="Macedonia, the Former Yugosla">Macedonia, the Former Yugoslav Republic of</option>
+                                                                           <option value="Madagascar">Madagascar</option>
+                                                                           <option value="Malawi">Malawi</option>
+                                                                           <option value="Malaysia">Malaysia</option>
+                                                                           <option value="Maldives">Maldives</option>
+                                                                           <option value="Mali">Mali</option>
+                                                                           <option value="Malta" data-gdpr="true">Malta</option>
+                                                                           <option value="Marshall Islands">Marshall Islands</option>
+                                                                           <option value="Martinique">Martinique</option>
+                                                                           <option value="Mauritania">Mauritania</option>
+                                                                           <option value="Mauritius">Mauritius</option>
+                                                                           <option value="Mayotte">Mayotte</option>
+                                                                           <option value="Mexico" data-gdpr="true">Mexico</option>
+                                                                           <option value="Micronesia, Federated States o">Micronesia, Federated States of</option>
+                                                                           <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                                                           <option value="Monaco">Monaco</option>
+                                                                           <option value="Mongolia">Mongolia</option>
+                                                                           <option value="Montenegro">Montenegro</option>
+                                                                           <option value="Montserrat">Montserrat</option>
+                                                                           <option value="Morocco">Morocco</option>
+                                                                           <option value="Mozambique">Mozambique</option>
+                                                                           <option value="Namibia">Namibia</option>
+                                                                           <option value="Nauru">Nauru</option>
+                                                                           <option value="Nepal">Nepal</option>
+                                                                           <option value="Netherlands" data-gdpr="true">Netherlands</option>
+                                                                           <option value="Netherlands Antilles" data-gdpr="true">Netherlands Antilles</option>
+                                                                           <option value="New Caledonia">New Caledonia</option>
+                                                                           <option value="New Zealand">New Zealand</option>
+                                                                           <option value="Nicaragua">Nicaragua</option>
+                                                                           <option value="Niger">Niger</option>
+                                                                           <option value="Nigeria">Nigeria</option>
+                                                                           <option value="Niue">Niue</option>
+                                                                           <option value="Norfolk island">Norfolk Island</option>
+                                                                           <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                                           <option value="Norway">Norway</option>
+                                                                           <option value="Oman">Oman</option>
+                                                                           <option value="Pakistan">Pakistan</option>
+                                                                           <option value="Palau">Palau</option>
+                                                                           <option value="PS">Palestinian Territory, Occupied</option>
+                                                                           <option value="Panama">Panama</option>
+                                                                           <option value="Papua New Guinea">Papua New Guinea</option>
+                                                                           <option value="Paraguay">Paraguay</option>
+                                                                           <option value="Peru">Peru</option>
+                                                                           <option value="Philippines">Philippines</option>
+                                                                           <option value="Pitcairn">Pitcairn</option>
+                                                                           <option value="Poland" data-gdpr="true">Poland</option>
+                                                                           <option value="Portugal" data-gdpr="true">Portugal</option>
+                                                                           <option value="Puerto Rico">Puerto Rico</option>
+                                                                           <option value="Qatar">Qatar</option>
+                                                                           <option value="Reunion">Reunion</option>
+                                                                           <option value="Romania" data-gdpr="true">Romania</option>
+                                                                           <option value="Rwanda">Rwanda</option>
+                                                                           <option value="St Helena">Saint Helena</option>
+                                                                           <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                                           <option value="Saint Lucia">Saint Lucia</option>
+                                                                           <option value="St Pierre And Miquelon">Saint Pierre and Miquelon</option>
+                                                                           <option value="Saint Vincent and the Grenadi">Saint Vincent and the Grenadines</option>
+                                                                           <option value="Samoa">Samoa</option>
+                                                                           <option value="San Marino">San Marino</option>
+                                                                           <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                                           <option value="Saudi Arabia">Saudi Arabia</option>
+                                                                           <option value="Senegal">Senegal</option>
+                                                                           <option value="Serbia">Serbia</option>
+                                                                           <option value="Seychelles">Seychelles</option>
+                                                                           <option value="Singapore" data-gdpr="true">Singapore</option>
+                                                                           <option value="Slovak Republic" data-gdpr="true">Slovak Republic</option>
+                                                                           <option value="Slovenia" data-gdpr="true">Slovenia</option>
+                                                                           <option value="Solomon Islands">Solomon Islands</option>
+                                                                           <option value="South Africa" data-gdpr="true">South Africa</option>
+                                                                           <option value="South Georgia And The South Sa">South Georgia and the South Sandwich Islands</option>
+                                                                           <option value="Spain" data-gdpr="true">Spain</option>
+                                                                           <option value="Sri Lanka">Sri Lanka</option>
+                                                                           <option value="Suriname">Suriname</option>
+                                                                           <option value="SJ">Svalbard and Jan Mayen</option>
+                                                                           <option value="Swaziland">Swaziland</option>
+                                                                           <option value="Sweden" data-gdpr="true">Sweden</option>
+                                                                           <option value="Switzerland" data-gdpr="true">Switzerland</option>
+                                                                           <option value="Taiwan, Republic of China" data-gdpr="true">Taiwan</option>
+                                                                           <option value="Tajikistan">Tajikistan</option>
+                                                                           <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                                                           <option value="Thailand">Thailand</option>
+                                                                           <option value="East Timor">Timor-Leste</option>
+                                                                           <option value="Togo">Togo</option>
+                                                                           <option value="Tokelau">Tokelau</option>
+                                                                           <option value="Tonga">Tonga</option>
+                                                                           <option value="Trinidad &amp; Tobago">Trinidad and Tobago</option>
+                                                                           <option value="Tunisia">Tunisia</option>
+                                                                           <option value="Turkey" data-gdpr="true">Turkey</option>
+                                                                           <option value="Turkmenistan">Turkmenistan</option>
+                                                                           <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                                                           <option value="Tuvalu">Tuvalu</option>
+                                                                           <option value="Uganda">Uganda</option>
+                                                                           <option value="Ukraine">Ukraine</option>
+                                                                           <option value="United Arab Emirates">United Arab Emirates</option>
+                                                                           <option value="United Kingdom" data-gdpr="true">United Kingdom</option>
+                                                                           <option value="United States Minor Outlying I">United States Minor Outlying Islands</option>
+                                                                           <option value="Uruguay">Uruguay</option>
+                                                                           <option value="Vanuatu">Vanuatu</option>
+                                                                           <option value="Venezuela">Venezuela</option>
+                                                                           <option value="Vietnam">Vietnam</option>
+                                                                           <option value="Virgin Islands (British)">Virgin Islands, British</option>
+                                                                           <option value="Virgin Islands (US)">Virgin Islands, US</option>
+                                                                           <option value="Wallis and Futuna Islands">Wallis and Futuna</option>
+                                                                           <option value="Western Sahara">Western Sahara</option>
+                                                                           <option value="Yemen">Yemen</option>
+                                                                           <option value="Yugoslavia">Yugoslavia</option>
+                                                                           <option value="Zaire">Zaire</option>
+                                                                           <option value="Zambia">Zambia</option>
+                                                                        </select>
 									</div>
 									
 									<div class="cmp cmp-form-field aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-										<input aria-label="Address" type="text" id="form-text-2085808134" placeholder="Address" name="C_Address" />
+										<input type="text" id="C_State_Prov" name="C_State_Prov" data-error-hint="Required. Please add your State or Province." required="true">
 									</div>
-									<div class="cmp cmp-form-field aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-										<input aria-label="City" type="text" id="form-text-2076884824" placeholder="City" name="C_City" />
-									</div>
-									<div class="cmp cmp-form-field aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-										<input aria-label="State or Province (optional)" type="text" id="form-text-1478209253" placeholder="State or Province (optional)" name="C_State_Prov" />
-									</div>
+									
 									<div class="cmp cmp-options aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
 										<select name="C_Timeframe" id="form-options-485650997" class="form-control">
 											<option selected disabled>Timeframe</option>
@@ -398,16 +407,7 @@ var bmcMeta = {
 											</ol>
 										</div>
 									</div>
-									<div class="cmp cmp-options aem-GridColumn aem-GridColumn--default--12">
-										<div class="form-group radio">
-											<label for="C_Radio"><strong>Radio</strong></label>
-											<ol class="radio-list" id="C_Radio">
-												<li><input type="radio" name="C_Radio" id="C_Radio_Test" value="Test" checked /> <label for="C_Radio_Test"> test </label></li>
-												<li><input type="radio" name="C_Radio" id="C_Radio_Test1" value="Test1" /> <label for="C_Radio_Test1"> Test1 </label></li>
-												<li><input type="radio" name="C_Radio" id="C_Radio_Test2" value="Test2" /> <label for="C_Radio_Test2"> Test2 </label></li>
-											</ol>
-										</div>
-									</div>
+									
 									<div class="visible aem-GridColumn aem-GridColumn--default--12">
 										<input type="hidden" name="elqSiteID" value="1625229226" />
 									</div>
