@@ -831,12 +831,20 @@
 
 // header-emphasis
 .layout-full-bleed.header-emphasis{
-	background-color: color(mediumOrange);
-	padding: 2em 0;
+	background-color: color(vividBlue);
+	padding: 0;
 
 	h1 {
 		color: #fff;
 		margin: 0;
+		align-self: center;
+		width: 85%;
+	}
+	.img-wrap{
+		padding-top: 5px;
+		img{
+			max-height: 125px;
+		}
 	}
 }
 
