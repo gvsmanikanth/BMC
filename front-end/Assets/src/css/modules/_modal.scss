@@ -70,15 +70,27 @@
       max-width: 810px;
     }
     hr {
-        border-top: 4px solid #F86E01;
+        border: none;
         max-width: 78px;
         margin: 20px auto 20px 0;
+        height: 5px;
+        background: #F86E01;
     }
     .contact-options{
       .content-box{
         margin: 12px;
         width: 100%;
         padding-top: 40px;
+        transition: 0.3s linear;
+        &:hover{
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.21);
+          transition: 0.3s linear;
+          .btn{ 
+            background-color: #f83200;
+            border-color: #f83200; 
+            transition: 0.4s linear;
+          }
+        }
         h3{
           font-weight: 600;
         }
