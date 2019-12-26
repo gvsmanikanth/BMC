@@ -215,7 +215,7 @@ ResourceCenterFilters = {
         this.initFilters(filters);
         this.bindEvents();
         this.loadData();
-
+        this.updateHeader();
         // timer to prevent multiple resize events
         this.$resizeTimer;
     },
@@ -224,7 +224,7 @@ ResourceCenterFilters = {
        
     	    var filterParams =  new Map();
     	    var url = window.location.href;
-    	    if(url.includes("#")) {
+    	    if(url.indexOf("#") >= 0) {
     	    	var queryString = url.split('#');
     	    	if(queryString && queryString.length > 1) {
             
