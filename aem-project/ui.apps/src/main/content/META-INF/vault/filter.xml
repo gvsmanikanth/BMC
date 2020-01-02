@@ -3,6 +3,7 @@
     <filter root="/apps/bmc">
         <exclude pattern="/apps/bmc/i18n"/>
     </filter>  
+    <filter root="/apps/msm/bmc"/>
     <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
     <filter root="/apps/wcm/core/resources"/>
