@@ -130,6 +130,9 @@ a.white:focus,
         fill: color(darkBlue);
     }
 }
+.boston-blue {
+    color: color(boston-blue);
+}
 
 // Backgrounds
 .bg-transparent {
@@ -145,7 +148,9 @@ a.white:focus,
 .bg-white-hover:focus {
     background-color: #fff;
 }
-
+.bg-approxSnow {
+    background-color: color(approxSnow);
+}
 .bg-seashell {
     background-color: color(seashell);
 }

@@ -14,10 +14,11 @@
 	<!-- icon and tile color in hex # for Windows phones -->
 	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<script src="Assets/dist/head.js"></script>
+	<!-- <script src="Assets/dist/head.js"></script> -->
 	<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css"> -->
-
-	<link rel="stylesheet" media="all" href="Assets/dist/style.css">
+<link rel="stylesheet" href="//staging.bmc.com/etc/clientlibs/bmc/head.aee2ccc8d0dba1c50c3bdbffae796777.css" type="text/css">	
+<script type="text/javascript" src="//staging.bmc.com/etc/clientlibs/bmc/head.b46cc7f8ef174a1843809375a6b3080a.js"></script>
+	<!-- <link rel="stylesheet" media="all" href="Assets/dist/style.css"> -->
 
 	<!-- For everything else -->
 	<link rel="shortcut icon" href="Assets/dist/favicon.png">
