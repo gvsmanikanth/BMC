@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2019-11-07T20:38:38.358+05:30"
+        cq:lastModified="{Date}2020-01-07T23:21:10.641+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:38:54.649-04:00"
         cq:lastReplicatedBy="admin"
@@ -28,25 +28,27 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/structure/maincontentcontainer">
-                    <title
-                        jcr:created="{Date}2019-06-11T20:46:02.761-07:00"
+                    <customcontentcontain
+                        jcr:created="{Date}2019-06-04T16:12:54.622+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2019-06-11T20:46:02.761-07:00"
+                        jcr:lastModified="{Date}2019-06-04T16:15:41.537+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="MultiCloud | Resource Center"
-                        sling:resourceType="bmc/components/content/title"
-                        type="h1"/>
-                    <_100contentcontainer
-                        jcr:created="{Date}2019-04-04T15:52:59.957+05:30"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2019-04-04T15:52:59.957+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/structure/100contentcontainer">
+                        sling:resourceType="bmc/components/structure/customcontentcontainer"
+                        cssClassName="">
                         <center
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title
+                                jcr:created="{Date}2019-06-11T20:46:02.761-07:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2020-01-07T23:21:10.619+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="MultiCloud | Resource Center"
+                                sling:resourceType="bmc/components/content/title"
+                                className="boston-blue normal p1"
+                                type="h1"/>
                             <resource_center_filt
                                 jcr:created="{Date}2019-11-06T02:39:33.102+05:30"
                                 jcr:createdBy="admin"
@@ -102,7 +104,7 @@
                                 </results>
                             </resource_center_filt>
                         </center>
-                    </_100contentcontainer>
+                    </customcontentcontain>
                 </maincontentcontainer>
             </responsivegrid>
         </root>
