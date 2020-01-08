@@ -745,3 +745,19 @@ $bg-forrester-green: #16563F;
 .filter-search-overlay.on {
   display: block;
 }
+.rc-landing-page{
+  .layout-width-title {
+    max-width: 1440px;
+    margin: 0 auto;
+    @media all and (min-width: $break-md) {
+      padding: 55px;
+      padding-bottom: 33px;
+    }
+    padding: 30px;
+  }
+  form{
+    .bg-seashell{
+      background: #fafafa;
+    }
+  }
+}
