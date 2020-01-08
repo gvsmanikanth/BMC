@@ -35,7 +35,7 @@
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/structure/customcontentcontainer"
-                        cssClassName="">
+                        cssClassName="rc-landing-page bg-approxSnow">
                         <center
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -47,7 +47,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="MultiCloud | Resource Center"
                                 sling:resourceType="bmc/components/content/title"
-                                className="boston-blue normal p1"
+                                className="boston-blue normal layout-width-title"
                                 type="h1"/>
                             <resource_center_filt
                                 jcr:created="{Date}2019-11-06T02:39:33.102+05:30"
