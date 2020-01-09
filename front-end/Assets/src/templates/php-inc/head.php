@@ -15,7 +15,8 @@
 	<meta name="msapplication-TileImage" content="includes/touch-icon.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<script src="Assets/dist/head.js"></script>
-	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css">
+
+	<!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700,800" rel="stylesheet" type="text/css"> -->
 
 	<!-- <link rel="stylesheet" href="//www.bmc.com/etc/clientlibs/bmc/head.d79fdf67c19d0ad21f7a8f599116508e.css" type="text/css"> -->
 
