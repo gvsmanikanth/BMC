@@ -65,11 +65,13 @@ jQuery(function($){
 		$('.contact-bmc').click(function(e) {
 			e.preventDefault();
 			$('body').addClass('contact-modal-active');
+			$('body').css('overflow','hidden');
 		});
 
 		$('.modal-close, .layout-modal-overlay').click(function(e) {
 			e.preventDefault();
 			$('body').removeClass('contact-modal-active');
+			$('body').css('overflow','auto');
 		});
 
 		$('.layout-navigation-close').click(function(e) {
