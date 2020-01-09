@@ -28,11 +28,13 @@
 	             </sly>
 				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
-			<!-- WEB-4651 Get Pricing link locations START -->
-			<li class="navigation-pricing">
-				<a href="/forms/pricing-request.html" class="pricing-request"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
-			</li>
-			     <!-- WEB-4651 Get Pricing link locations END -->
+			<!-- WEB-6611 Removing Get Pricing Link for new Contact Modal STARTS -->
+				<!-- WEB-4651 Get Pricing link locations START -->
+					<!-- <li class="navigation-pricing">
+						<a href="/forms/pricing-request.html" class="pricing-request"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
+					</li>-->
+				<!-- WEB-4651 Get Pricing link locations END -->
+			<!-- WEB-6611 Removing Get Pricing Link for new Contact Modal ENDS -->
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
@@ -77,7 +79,8 @@
 
 <div id="lpButtonDiv2"></div>
 <div class="layout-modal-overlay"></div>
-<div class="layout-contact-modal">
+<!-- WEB-6611 - Remove old modal layout for contact | Starts -->
+<!-- <div class="layout-contact-modal">
    <div class="contact-modal-inner-wrap">
       <div class="contact-modal-header">
          <span class="modal-title">${'BMC Contact Options' @ i18n}</span>
@@ -87,9 +90,9 @@
          <p>${'Select the link below that best matches your interest.' @ i18n}</p>
          <ul>
             <li><a href="/forms/contact-bmc.html">${'Contact Sales' @ i18n}</a></li>
-            <!-- WEB-4651 Get Pricing link locations START -->
+            <!-- WEB-4651 Get Pricing link locations START 
             <li><a href="/forms/pricing-request.html">${'Request Pricing' @ i18n}</a></li>
-            <!-- WEB-4651 Get Pricing link locations END -->
+            <!-- WEB-4651 Get Pricing link locations END 
             <li id="liveagent_text_online" style="display:none;" class="desktop-only"><a href="javascript:void(0);">${'Chat with Sales' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'Contact Support' @ i18n}</a></li>
             <li><a href="/contacts-locations/contact-bmc.html">${'All Other Inquiries' @ i18n}</a></li>
@@ -98,8 +101,46 @@
          <a href="tel:1‑855‑834‑7487">1‑855‑834‑7487</a>
       </div>
    </div>
-   <!--/ contact-modal-inner-wrap -->			
+   <!--/ contact-modal-inner-wrap 			
+</div> -->
+<!-- WEB-6611 - Remove old modal layout for contact | Ends -->
+<!-- <div class="layout-modal-overlay"></div> -->
+<!-- WEB-6611 - Add new modal layout for contact | Starts -->
+<div class="layout-contact-modal">
+	<div class="contact-modal-inner-wrap">
+		<div class="contact-modal-header">
+			<h2>Let us know how we can help</h2>
+			<a href="#" class="modal-close"></a>
+		</div>
+		<div class="contact-options">
+			<div class="flex-wrap">
+                <div class="flex flex-item col-12 sm-col sm-col-6">
+                    <a href="//www.bmc.com/forms/contact-bmc.html" class="content-box p2 bg-white">
+                        <img src="/content/dam/bmc/collateral/bmc/grey-sales-edge.svg" alt="">
+                        <h3>Sales & Pricing</h3>
+                        <hr>
+                        <p>Speak to a rep about your business needs</p>
+                        <span class="btn learn-more">Contact Sales</span>
+                    </a>                    
+                </div>    
+                <div class="flex flex-item col-12 sm-col sm-col-6">
+                    <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="content-box p2 bg-white">
+                        <img src="/content/dam/bmc/collateral/bmc/customer-service-grey.svg" alt="">
+                        <h3>Help & Support</h3>
+                        <hr>
+                        <p>See our product support options</p>
+                        <span class="btn learn-more">Contact Support</span>  
+                    </a>                    
+                </div>              
+			</div>
+			<div class="modal-footer text-center">
+				<h3>General inquiries and locations <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="btn btn-transparent learn-more">Contact Us</a></h3>
+			</div>
+		</div>
+	</div>
+	<!--/ contact-modal-inner-wrap -->
 </div>
+<!-- WEB-6611 - Add new modal layout for contact | Ends -->
 <!--/ layout-contact-modal -->
 <div class="layout-country-modal">
    <div class="country-modal-inner-wrap">
@@ -168,5 +209,3 @@
    <!--/ contact-modal-inner-wrap -->						
 </div>
 <!--/ contact-modal-inner-wrap -->
-
-
