@@ -24,112 +24,172 @@
 }
 
 .layout-contact-modal {
+  @media (max-width: $break-md) {
+    padding-top: 70px;
+  }
 	@include box-sizing();
-	background: #fff;
-	border: solid 1px #ededed;
-	-webkit-box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
-	box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.15);
+	background: #fafafa;
+	border: none;	
 	opacity: 0;
-	max-height: 80%;
-	max-height: calc(100% - 2em);
+	max-height: 100%;
 	overflow: auto;
 	padding: em(20);
 	position: fixed;
 	right: -999em;
 	@include transition((property: opacity));
 	transition-delay: .25s;
-	top: 1em;
+	// top: 1em;
 	z-index: 1001;
-
-
-	ul {
-		list-style: none;
-		padding: 0;
-
-		a:after {
-			content: '\203A';
-			font-weight: normal;
-			padding-left: em(8);
-		}
-	}
-
-	a {
-		font-weight: 700;
-	}
-
 	.contact-modal-active & {
 		opacity: 1;
-		top: 50%;
-		left: 50%;
-		max-width: 90%;
+		top: 0;
+    left: 0;
+    right: 0;
+		max-width: 100%;
+    width: 100%;
+    height: 100%;
+		// // vertical center
+		// -webkit-transform: translate(-50%, -50%);
+		//     -ms-transform: translate(-50%, -50%);
+		//         transform: translate(-50%, -50%);
 
-		// vertical center
-		-webkit-transform: translate(-50%, -50%);
-		    -ms-transform: translate(-50%, -50%);
-		        transform: translate(-50%, -50%);
+		
 
-		@include media(breakpointLarge) {
-			max-height: none;
-			width: columns(4);
-		}
-
-
-	}
-
-	.contact-modal-header {
-
-		clear: both;
-
-		&:after {
-			clear: both;
-			content: '.';
-			display: table;
-			visibility: hidden;
-		}
-
-		h2 {
-			float: left;
-			@include font-size(22.5);
-			padding-right: em(24);
-
-			@include media(breakpointLarge) {
-				@include font-size(32);
-			}
-		}
-
-		// Added .modal-title class to replace h2 from contact modal popup. (BMC-481)
-		.modal-title{
-		   float:left;
-		   @include font-size(22.5);
-		   padding-right: em(24);
-		   color:#FE5000;
-       font-weight:800;
-       line-height: 1.1em;
-
-		   @include media(breakpointLarge) {
-          @include font-size(32);
-       }
-		}
 
 	}
+  .contact-modal-inner-wrap {      
+    @media (min-width: 1150px) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column; 
+    }       
+    margin: 0 auto;
+    height: 100%;
+    font-weight: 400;
+    @media (min-width: $break-md) {
+      max-width: 810px;
+    }
+    hr {
+        border: none;
+        max-width: 78px;
+        margin: 20px auto 20px 0;
+        height: 5px;
+        background: #F86E01;
+    }
+    .contact-options{
+      .content-box{
+        margin: 12px;
+        width: 100%;
+        padding-top: 40px;
+        transition: 0.3s linear;
+        color: inherit;
+        &:hover{
+          box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.21);
+          transition: 0.3s linear;
+          .btn{ 
+            background-color: #f83200;
+            border-color: #f83200; 
+            transition: 0.4s linear;
+          }
+        }
+         
+        & > img{          
+          @media (max-width: $break-sm) {
+            max-width: 60px;
+          } 
+        }
+        h3{
+          font-weight: 600;
+          font-size: 25px;
+        }
+        p{
+          @media (min-width: $break-sm) {
+            min-height: 50px;
+          }          
+        }
+      }           
+      .btn{       
+        border-radius: 0;
+        border-color: #F86E01; 
+        margin: 0;    
+        background-color: #F86E01;
+        transition: 0.3s linear;	
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+    
+        &:hover{
+          background-color: #f83200;
+          border-color: #f83200; 
+          transition: 0.4s linear;
+        } 
+        &:focus{
+          outline: #F86E01 thin dotted;
+        }
+      }
+      .btn-transparent{
+        background: linear-gradient(to right, #F86E01 50%, #ffffff 50%);
+        color: #F86E01;
+        background-size: 200% 100%;
+        background-position: right bottom;
+        &:hover{
+          color: #ffffff;
+          transition: 0.3s linear;		
+          background-position: left bottom;
+          border-color: #F86E01; 
+        }
+      }      
+    }
+    .contact-modal-header {
+      margin-left: 12px;
+      h2{
+        font-weight: 400;
+        font-size: 28px; 
+        margin-bottom: 10px;
+        line-height: 38px;
+        @media (min-width: $break-sm) {
+          font-size: 50px;        
+          line-height: 68px;
+        }        
+      }
+    }
+    .modal-footer{
+      @media (max-width: $break-sm) {
+        text-align: left;
+        padding: 15px 0 30px 12px;
+      }
+      padding-top: 30px;
+      h3{
+        font-weight: 400;
+        font-size: 24px;
+      }
+      .btn-transparent{
+        margin-left: 20px;        
+        @media (max-width: $break-sm) {
+          margin-left: 0;
+          display: block;
+          margin-top: 10px;
+          max-width: 130px;
+        }        
+      }
+    }
+  }
 
-	.modal-close {
 
-		position: absolute;
-		right: em(8);
-		top: em(20);
+    .modal-close {
+      color: #555557;
+      position: absolute;
+      right: em(8);
+      top: em(20);
 
-		&:before {
-			@include font-size(30);
-			@include icon();
-			content: '\e629';
-		}
-	}
+      &:before {
+        @include font-size(30);
+        @include icon();
+        content: '\e629';
+      }
+    }
 
-	.contact-modal-inner-wrap {
 
-	}
 
 }
 
@@ -239,9 +299,7 @@
     }
   }
   
-  .country-modal-inner-wrap {
-
-  }
+  
 
 }
 
