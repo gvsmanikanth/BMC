@@ -151,6 +151,11 @@
 		.scrolled-up &,
 		.scrolled-down &:hover 		{ opacity: 1; }
 	}
+	@media (max-width: $break-md) {
+		// WEB-6850 To enable scrolling on mobile devices for navigation
+		overflow: auto;
+		z-index: z(nav) + 200;
+	}
 }
 
 .layout-nav {
