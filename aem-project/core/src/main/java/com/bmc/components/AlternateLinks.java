@@ -65,9 +65,10 @@ public class AlternateLinks  extends WCMUsePojo {
         if (matcher.matches()) {
             hrefUri = matcher.group(4);
         }
-
-        String canonicalScheme = "http";
-
+        //WEB-6931 Canonical links to be pointing to https-- START
+        String canonicalScheme = "https";
+        //WEB-6931 Canonical links to be pointing to https-- END
+        
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
         String mappedResourcePath = getResourceResolver().map(resourcePath);
         Matcher canonicalMatcher = pattern.matcher(mappedResourcePath);
@@ -77,11 +78,14 @@ public class AlternateLinks  extends WCMUsePojo {
         if (canonicalMatcher.matches()) {
             canonicalPath = canonicalMatcher.group(4);
         }
+        /*Un-commenting this piece of code as Canonical links are no longer
+        http for international sites
+        WEB-6931 Code changes
         if(req.getServerName().contains("bmc.com")){
         	canonicalScheme = "https";
         }else{
         	canonicalScheme = "http";
-        }
+        }*/
         canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
         
         
