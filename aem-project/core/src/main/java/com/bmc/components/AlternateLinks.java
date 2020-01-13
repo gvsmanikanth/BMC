@@ -91,11 +91,13 @@ public class AlternateLinks  extends WCMUsePojo {
         
         // Build map of alternate locale links.
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
+        	/* WEB-6931 un-commenting condition for canonicalScheme http/https condition 
+        	 * if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
         		canonicalScheme = "https";
         	}else{
         		canonicalScheme = "http";
         	}
+        	*/
         	/*logger.info("link path before"+getRequest().getRequestPathInfo().getResourcePath()); */
         	if(!getRequest().getRequestPathInfo().getResourcePath().startsWith("/content/bmc/404/")) {
         		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
