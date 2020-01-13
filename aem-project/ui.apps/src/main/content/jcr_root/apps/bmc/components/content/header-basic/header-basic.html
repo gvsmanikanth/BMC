@@ -1,5 +1,14 @@
-<section class="${properties.isLargeText ? 'header-form-basic layout-full-bleed header-emphasis' : 'header-form-basic'}">
-    <div class="layout-inner-wrap">
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page"/>
+<sly data-sly-test.template="${page.templateName == 'products-solutions-landing'}">
+    <sly data-sly-test.flexClass="flex"/>
+    <sly data-sly-test.productLandingHeaderClass="header-product-landing"/>
+</sly>
+<sly data-sly-test.headerClass="header-form-basic"/>
+<sly data-sly-test=${properties.isLargeText}>
+	<sly data-sly-test.headerClass="${headerClass} layout-full-bleed header-emphasis"/>
+</sly>
+<section class="${headerClass} ${productLandingHeaderClass}">
+    <div class="layout-inner-wrap ${flexClass}">
         <h1>
             <span>
                 ${properties.headerText @ context='html'}
@@ -8,5 +17,10 @@
                 Enter Heading Text
             </span>
         </h1>
+        <sly data-sly-test="${template}">
+            <div class="img-wrap" >
+                <img alt="bmc-helix-logo"  border="0" src="//www.bmc.com/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
+            </div>
+        </sly>
     </div>
 </section>

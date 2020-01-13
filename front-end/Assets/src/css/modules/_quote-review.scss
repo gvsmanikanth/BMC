@@ -1,62 +1,52 @@
 .quote-section{
-    background-color: #fafafa;
+    background-color: #f1f1f1;
     h2{
-        font-weight: 600;
         color: #414042;
     }
     padding: 50px 0;
+    .owl-stage-outer{
+        padding: 20px 0;
+    }
     .quote {
         background: #fff;
         padding: 30px;
+        transition: 0.3s linear;
+        @media (max-width: $break-sm) {
+            padding: 20px;   
+            padding-bottom: 40px;   
+        }         
         &:hover{
             box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+            transition: 0.3s linear;
         }
-        .star {
-            position: relative;
+        p{
+            color: #555557;
+        }
+        //  Using a Sprite
+        .star-ratings-sprite {
+            background: url("/content/dam/bmc/solutions/star-rating-sprite.png") repeat-x;
+            font-size: 0;
+            height: 21px;
+            line-height: 0;
+            overflow: hidden;
+            text-indent: -999em;
+            width: 110px;
+            margin: 0 auto 0 0;
             
-            display: inline-block;
-            width: 0;
-            height: 0;
-            
-            margin-left: .9em;
-            margin-right: .9em;
-            margin-bottom: 1.2em;
-            
-            border-right:  .3em solid transparent;
-            border-bottom: .7em  solid #fe5000;
-            border-left:   .3em solid transparent;
-          
-            /* Controlls the size of the stars. */
-            font-size: 13px;
-            
-            &:before, &:after {
-              content: '';
-              
-              display: block;
-              width: 0;
-              height: 0;
-              
-              position: absolute;
-              top: .6em;
-              left: -1em;
-            
-              border-right:  1em solid transparent;
-              border-bottom: .7em  solid #fe5000;
-              border-left:   1em solid transparent;
-            
-              transform: rotate(-35deg);
+            &-rating {
+            background: url("/content/dam/bmc/web-services/star-rating-sprite.png") repeat-x;
+            background-position: 0 100%;
+            float: left;
+            height: 21px;
+            display:block;
             }
             
-            &:after {  
-              transform: rotate(35deg);
-            }
-          }
+        }
         h4{
             font-weight: 600;  
         }
         .more {
             font-size: 14px;
-            margin-left: 30px;
             display: inline-block;
             color: #fe5000;
             font-weight: 600;
@@ -69,7 +59,17 @@
         }
         .quote-footer{
             justify-content: space-between;
-            margin-top: 35px;
+            @media (min-width: $break-sm) {
+                padding: 30px;   
+                padding-bottom: 40px;   
+            }
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            width: 87%;
+            margin: 0;
             .info{
                 p {
                     margin: 0;
@@ -107,6 +107,9 @@
         @media (min-width: $break-sm) {
             left: 30px;        
         } 
+    }   
+    .owl-next.disabled, .owl-prev.disabled {
+        display: none !important;       
     }
 }
 

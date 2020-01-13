@@ -4,7 +4,15 @@
     margin-top: 20px;
     .fullbleed-blockquote {
         background-color: #fff;
-        color: #777;    
+        color: #39383a;    
         font-size: 24px;
+        padding: 40px 20px;
+        @media(min-width: $break-md) {
+            line-height: 40px; 
+            padding: 40px;
+        }       
+        cite {
+            font-size: 18px;
+        }
     }
 }
