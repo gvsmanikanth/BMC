@@ -758,13 +758,19 @@ $bg-forrester-green: #16563F;
     .bg-seashell{
       background: #fafafa;
     }
-    .layout-secondary{
+    .layout-secondary{      
       &:first-child {
         @media (max-width: 768px){
           padding: 0;
         }        
       }
-    }       
+      + .py2{
+        @media (max-width: 768px){
+          padding-top: 0;
+        }        
+      }
+    }
+         
   }
  
 }
