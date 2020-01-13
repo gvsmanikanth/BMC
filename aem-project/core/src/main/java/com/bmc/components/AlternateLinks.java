@@ -78,20 +78,20 @@ public class AlternateLinks  extends WCMUsePojo {
         if (canonicalMatcher.matches()) {
             canonicalPath = canonicalMatcher.group(4);
         }
-        /*Un-commenting this piece of code as Canonical links are no longer
-        http for international sites
-        WEB-6931 Code changes
+        /*  WEB-6931 Code changes 
+         * Commenting this piece of code as Canonical links are no longerhttp for international sites              
         if(req.getServerName().contains("bmc.com")){
         	canonicalScheme = "https";
         }else{
         	canonicalScheme = "http";
-        }*/
+        }
+        */
         canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
         
         
         // Build map of alternate locale links.
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	/* WEB-6931 un-commenting condition for canonicalScheme http/https condition 
+        	/* WEB-6931 Commenting out the condition for canonicalScheme http/https condition 
         	 * if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
         		canonicalScheme = "https";
         	}else{
