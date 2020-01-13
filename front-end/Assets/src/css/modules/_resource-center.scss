@@ -750,8 +750,7 @@ $bg-forrester-green: #16563F;
     max-width: 1440px;
     margin: 0 auto;
     @media all and (min-width: $break-md) {
-      padding: 55px;
-      padding-bottom: 33px;
+      padding: 55px 0px 33px 38px;
     }
     padding: 30px;
   }
@@ -759,5 +758,14 @@ $bg-forrester-green: #16563F;
     .bg-seashell{
       background: #fafafa;
     }
+    .layout-secondary{
+      &:first-child {
+        @media (max-width: 768px){
+          padding: 0;
+        }        
+      }
+    }       
   }
+ 
 }
+
