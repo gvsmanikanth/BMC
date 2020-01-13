@@ -136,10 +136,26 @@ public class BmcEduMeta {
         try {
 
             Iterator<Page> allCourses = resourcePage.getParent().listChildren();
+            //WEB-6897 Sorting the pages from JCR based on create date -- START
+            //Step1 :Collecting contents of iterator into a list
+			List<Page> allCourseslist = new ArrayList<Page>();
+			while (allCourses.hasNext()) {
+					allCourseslist.add(allCourses.next());
+					}
+			// Step 2 :Sort in descending order
+				Collections.sort(allCourseslist, new Comparator<Page>() {
+					public int compare(Page p1, Page p2) {
+						ValueMap v1 = p1.getProperties();
+						ValueMap v2 = p2.getProperties();
+						return ((GregorianCalendar) v2.getOrDefault("jcr:created","")).compareTo((GregorianCalendar )v1.getOrDefault("jcr:created",""));
+					}
+					});
+			// Creating an Iterator for sorted list.
+			Iterator<Page> sortedAllCourses=allCourseslist.iterator();
+			 //WEB-6897 Sorting the pages from JCR based on create date -- END
             int itemIndex = 0;
-
-            while (allCourses.hasNext()){
-                Page page = allCourses.next();
+            while (sortedAllCourses.hasNext()){
+                Page page = sortedAllCourses.next();
                 ListItems newItem = new ListItems();
                 List<String> roles = new ArrayList<>();
                 List<String> versions = new ArrayList<>();
