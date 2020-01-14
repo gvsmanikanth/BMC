@@ -146,7 +146,7 @@ public class BmcEduMeta {
 					allCourseslist.add(allCourses.next());
 					}		
 			// Step 2 :Create Comparator
-					 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSz");
+					 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 					 dateFormat.setTimeZone(resourcePage.getLastModified().getTimeZone());
 			        Collections.sort(allCourseslist,new Comparator<Page>() {			        	
 	                    public int compare(Page p1, Page p2) {
