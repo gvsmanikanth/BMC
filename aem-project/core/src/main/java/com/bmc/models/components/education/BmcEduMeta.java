@@ -139,44 +139,46 @@ public class BmcEduMeta {
         try {
 
             Iterator<Page> allCourses = resourcePage.getParent().listChildren();
-          //WEB-6897 Sorting the pages from JCR based on create date -- START
+            //WEB-6897 Sorting the pages from JCR based on create date -- START
             //Step1 :Collecting contents of iterator into a list
 			List<Page> allCourseslist = new ArrayList<Page>();
 			while (allCourses.hasNext()) {
 					allCourseslist.add(allCourses.next());
 					}		
-			// Step 2 :Sort in descending order
-			 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-	        Collections.sort(allCourseslist,new Comparator<Page>() {
-	        	
+			// Step 2 :Create Comparator
+					 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSz");
+					 dateFormat.setTimeZone(resourcePage.getLastModified().getTimeZone());
+			        Collections.sort(allCourseslist,new Comparator<Page>() {			        	
 	                    public int compare(Page p1, Page p2) {
-	                    	 Date convertedDatep1 = null;
-	                    	 Date convertedDatep2 = null;
-	                        Calendar calendarp1 = (Calendar)p1.getProperties().getOrDefault("jcr:created", "");              							
-							String   p1_createddate =  dateFormat.format(calendarp1.getTime()); 
-							
-							 try {
-								convertedDatep1 = dateFormat.parse(p1_createddate);
-							} catch (ParseException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							 calendarp1.setTime(convertedDatep1);				
-							Calendar calendarp2 = (Calendar)p2.getProperties().getOrDefault("jcr:created", "");							
-							String   p2_createddate =  dateFormat.format(calendarp2.getTime()); 
-							
-							try {
+	                   	 try {
+		                   		Date convertedDatep1 = null;
+		                    	Date convertedDatep2 = null;
+		                        Calendar calendarp1 = (Calendar)p1.getProperties().getOrDefault("jcr:created", "");              							
+								String   p1_createddate =  dateFormat.format(calendarp1.getTime()); 
+								convertedDatep1 = dateFormat.parse(p1_createddate);							
+								calendarp1.setTime(convertedDatep1);				
+								Calendar calendarp2 = (Calendar)p2.getProperties().getOrDefault("jcr:created", "");							
+								String   p2_createddate =  dateFormat.format(calendarp2.getTime()); 							
 								convertedDatep2 = dateFormat.parse(p2_createddate);
-							} catch (ParseException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							calendarp2.setTime(convertedDatep2);
-							//Sort in descending order
-	                        return (calendarp1.getTimeInMillis() > calendarp2.getTimeInMillis() ? -1 : 1);
-	                    }
-	                });
-			// Creating an Iterator for sorted list.
+								calendarp2.setTime(convertedDatep2);
+							//Step 3: Sort in descending order
+		                            if(calendarp1.getTimeInMillis() > calendarp2.getTimeInMillis())
+		                            {   
+		                                return -1;
+		                            }
+		                            else
+		                            {
+		                                return 1;
+		                            }
+			                    }
+			                     catch (ParseException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+			                   	return 0;
+			                    }
+			                   	});
+			// Step 4: Creating & passing an Iterator of sorted list.
 			Iterator<Page> sortedAllCourses=allCourseslist.iterator();
 			 //WEB-6897 Sorting the pages from JCR based on create date -- END
             int itemIndex = 0;
