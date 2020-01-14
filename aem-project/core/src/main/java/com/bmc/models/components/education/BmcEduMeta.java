@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -136,20 +139,43 @@ public class BmcEduMeta {
         try {
 
             Iterator<Page> allCourses = resourcePage.getParent().listChildren();
-            //WEB-6897 Sorting the pages from JCR based on create date -- START
+          //WEB-6897 Sorting the pages from JCR based on create date -- START
             //Step1 :Collecting contents of iterator into a list
 			List<Page> allCourseslist = new ArrayList<Page>();
 			while (allCourses.hasNext()) {
 					allCourseslist.add(allCourses.next());
-					}
+					}		
 			// Step 2 :Sort in descending order
-				Collections.sort(allCourseslist, new Comparator<Page>() {
-					public int compare(Page p1, Page p2) {
-						ValueMap v1 = p1.getProperties();
-						ValueMap v2 = p2.getProperties();
-						return ((GregorianCalendar) v2.getOrDefault("jcr:created","")).compareTo((GregorianCalendar )v1.getOrDefault("jcr:created",""));
-					}
-					});
+			 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+	        Collections.sort(allCourseslist,new Comparator<Page>() {
+	        	
+	                    public int compare(Page p1, Page p2) {
+	                    	 Date convertedDatep1 = null;
+	                    	 Date convertedDatep2 = null;
+	                        Calendar calendarp1 = (Calendar)p1.getProperties().getOrDefault("jcr:created", "");              							
+							String   p1_createddate =  dateFormat.format(calendarp1.getTime()); 
+							
+							 try {
+								convertedDatep1 = dateFormat.parse(p1_createddate);
+							} catch (ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							 calendarp1.setTime(convertedDatep1);				
+							Calendar calendarp2 = (Calendar)p2.getProperties().getOrDefault("jcr:created", "");							
+							String   p2_createddate =  dateFormat.format(calendarp2.getTime()); 
+							
+							try {
+								convertedDatep2 = dateFormat.parse(p2_createddate);
+							} catch (ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							calendarp2.setTime(convertedDatep2);
+							//Sort in descending order
+	                        return (calendarp1.getTimeInMillis() > calendarp2.getTimeInMillis() ? -1 : 1);
+	                    }
+	                });
 			// Creating an Iterator for sorted list.
 			Iterator<Page> sortedAllCourses=allCourseslist.iterator();
 			 //WEB-6897 Sorting the pages from JCR based on create date -- END
@@ -407,4 +433,6 @@ class ProductTypeCollection
 		}
 		return null;
 	}
+	
+	
 }
