@@ -253,295 +253,7 @@
                                                          </div>
                                                          <div id="resultItemsContainer">
                                                             <div class="resource-results">
-                                                               <div class="rc-card-row">
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/43/03/494303/494303.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Workload Archiving
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="/content/dam/bmc/solutions/Control-M+Supported+Platforms+and+Applications.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Supported Platforms and Applications
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/97/91/499791/499791.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 TrueSight Middleware Monitor
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/87/34/498734/498734.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-company-size="1000-4999" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M" data-ic-target-industry="Information Technology" data-ic-target-persona="Manager">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/89/36/488936/488936.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation|DevOps" data-topics="Automation" data-product_interest="Control-M Automation API">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Automation API
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/96/39/489639/489639.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation|DevOps" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Workbench
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/18/49/491849/491849.pdf" target="_blank" data-product_line="DSO" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="IT Operations Management" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Application Integrator
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/31/35/493135/493135.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M JCL Verify
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/89/35/488935/488935.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M Managed File Transfer">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Managed File Transfer
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/89/38/488938/488938.pdf" target="_blank" data-product_line="DBA" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M Workload Change Manager">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4></h4>
-                                                                              <div class="card-icon ic_" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Workload Change Manager
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-"></use>
-                                                                                 </svg>
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/28/89/492889/492889.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Competitive Comparisons" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Competitive Comparison</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Competitive Comparison: Control-M vs. Oozie and Hadoop Open Source Tools
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                                  <div class="rc-card-col">
-                                                                     <a href="http://documents.bmc.com/products/documents/49/10/494910/494910.pdf" target="_blank" data-product_line="DBA" data-ic-content-type="Datasheets" data-ic-buyer-stage="Buy" data-ic-topics="Business &amp; IT Automation" data-topics="Automation" data-product_interest="Control-M">
-                                                                        <div class="simple-card bg-white" style="height: 310px;">
-                                                                           <div class="card-header" style="">
-                                                                              <h4>Datasheet</h4>
-                                                                              <div class="card-icon ic_download" alt="" border="0"></div>
-                                                                           </div>
-                                                                           <div class="card-content">
-                                                                              <hr>
-                                                                              <h4>
-                                                                                 Control-M Conversion Tool
-                                                                              </h4>
-                                                                           </div>
-                                                                           <div class="card-footer">
-                                                                              <span class="card-footer-action">
-                                                                                 <svg class="align-middle s-download">
-                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-download"></use>
-                                                                                 </svg>
-                                                                                 Download
-                                                                              </span>
-                                                                           </div>
-                                                                        </div>
-                                                                     </a>
-                                                                  </div>
-                                                               </div>
+                                                               
                                                             </div>
                                                          </div>
                                                          <div class="rc-result-header-bottom">
@@ -567,8 +279,8 @@
                                                               {{else}}
                                                               <a href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
                                                               {{/ifCond}}
-                                                              <div class="simple-card bg-white" style="height: 310px;">
-                                                                  <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
+                                                              <div class="simple-card bg-white" style="min-height: 310px;">
+                                                                  <div class="card-header" style="{{#if thumbnail}}margin-top:127px;{{/if}}">
                                                                       <h4>{{type}}</h4>
                                                                       {{#if thumbnail}}
                                                                       <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
@@ -588,14 +300,30 @@
                                                                       </h4>
                                                                   </div>
                                                                   <div class="card-footer">
-                                                                      <span class="card-footer-action">
-                                                                          <svg class="align-middle s-{{linkType}}">
-                                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                                                                          </svg>
-                                                                          {{#ifCond linkType '===' "play"}}Play{{/ifCond}}
-                                                                          {{#ifCond linkType '===' "download"}}Download{{/ifCond}}
-                                                                          {{#ifCond linkType '===' "view"}}View{{/ifCond}}
-                                                                      </span>
+                                                                                                                                        
+                                                                      <div class="card-footer-action">
+                                                                        {{#ifCond linkType '===' "play"}}
+                                                                           {{#if videoLength}}
+                                                                              <span class="video-length">                                                                              
+                                                                                    {{videoLength}}                                                                               
+                                                                              </span>
+                                                                           {{/if}}  
+                                                                        {{/ifCond}} 
+                                                                        {{#if footerLogo}}                                                                           
+                                                                           <span class="card-footer-logo">
+                                                                              <img src="{{footerLogo}}" >
+                                                                           </span> 
+                                                                        {{/if}}
+                                                                        <span>
+                                                                           <svg class="align-middle s-{{linkType}}">
+                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                                                           </svg>
+                                                                           {{#ifCond linkType '===' "play"}}Play{{/ifCond}}
+                                                                           {{#ifCond linkType '===' "download"}}Download{{/ifCond}}
+                                                                           {{#ifCond linkType '===' "view"}}View{{/ifCond}}
+                                                                        </span>
+                                                                          
+                                                                      </div>
                                                                   </div>
                                                               </div>
                                                               </a>

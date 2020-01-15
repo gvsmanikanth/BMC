@@ -325,6 +325,7 @@ body.no-scroll{
         color: #29a5d6;
         float: left;
         padding-top: 1.25rem;
+        word-break: break-word;
       }
       h3{
         text-transform: uppercase;
@@ -401,6 +402,16 @@ body.no-scroll{
       }
       .s-action {
         padding-right: 5px;
+      }
+      .video-length {
+          float: left;
+      }
+      .card-footer-logo{
+        float: left;
+        img{
+          max-height: 40px;
+          display: inline-block;
+        }
       }
     }
     .featured-card-footer {
