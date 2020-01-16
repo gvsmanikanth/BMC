@@ -28,13 +28,11 @@
 	             </sly>
 				<a href="${secondaryCtaHref}"><span class="">${pageProperties.secondaryCtaText @ context='html',i18n}</span><span class="verticalBar">|</span></a>
 			</li>
-			<!-- WEB-6611 Removing Get Pricing Link for new Contact Modal STARTS -->
-				<!-- WEB-4651 Get Pricing link locations START -->
-					<!-- <li class="navigation-pricing">
-						<a href="/forms/pricing-request.html" class="pricing-request"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
-					</li>-->
-				<!-- WEB-4651 Get Pricing link locations END -->
-			<!-- WEB-6611 Removing Get Pricing Link for new Contact Modal ENDS -->
+			<!-- WEB-4651 Get Pricing link locations START -->
+				<li class="navigation-pricing">
+					<a href="/forms/pricing-request.html" class="pricing-request"><span class="scrollTextHide">${'Get Pricing' @ i18n}</span><span class="verticalBar">|</span></a>
+				</li>
+			<!-- WEB-4651 Get Pricing link locations END -->
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
@@ -115,7 +113,7 @@
 		<div class="contact-options">
 			<div class="flex-wrap">
                 <div class="flex flex-item col-12 sm-col sm-col-6">
-                    <a href="//www.bmc.com/forms/contact-bmc.html" class="content-box p2 bg-white">
+                    <a href="/forms/contact-bmc.html" class="content-box p2 bg-white">
                         <img src="/content/dam/bmc/collateral/bmc/grey-sales-edge.svg" alt="">
                         <h3>Sales & Pricing</h3>
                         <hr>
@@ -124,7 +122,7 @@
                     </a>                    
                 </div>    
                 <div class="flex flex-item col-12 sm-col sm-col-6">
-                    <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="content-box p2 bg-white">
+                    <a href="/contacts-locations/united-states.html" class="content-box p2 bg-white">
                         <img src="/content/dam/bmc/collateral/bmc/customer-service-grey.svg" alt="">
                         <h3>Help & Support</h3>
                         <hr>
@@ -134,7 +132,7 @@
                 </div>              
 			</div>
 			<div class="modal-footer text-center">
-				<h3>General inquiries and locations <a href="//www.bmc.com/contacts-locations/contact-bmc.html" class="btn btn-transparent learn-more">Contact Us</a></h3>
+				<h3>General inquiries and locations <a href="/contacts-locations/united-states.html" class="btn btn-transparent learn-more">Contact Us</a></h3>
 			</div>
 		</div>
 	</div>
