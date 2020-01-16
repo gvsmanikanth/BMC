@@ -304,15 +304,21 @@
                                                                       <div class="card-footer-action">
                                                                         {{#ifCond linkType '===' "play"}}
                                                                            {{#if videoLength}}
-                                                                              <span class="video-length">                                                                              
-                                                                                    {{videoLength}}                                                                               
+                                                                              <span class="video-length">     
+                                                                              <svg class="align-middle s-clock">
+                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                                                               </svg>{{videoLength}}                                                                               
                                                                               </span>
                                                                            {{/if}}  
                                                                         {{/ifCond}} 
-                                                                        {{#if footerLogo}}                                                                           
-                                                                           <span class="card-footer-logo">
-                                                                              <img src="{{footerLogo}}" >
-                                                                           </span> 
+                                                                        {{#if footerLogo}}  
+                                                                           {{#ifCond linkType '===' "play"}}   
+                                                                                                                                                   
+                                                                           {{else}}
+                                                                              <span class="card-footer-logo">
+                                                                                 <img src="{{footerLogo}}" >
+                                                                              </span> 
+                                                                           {{/ifCond}}                                                                                                                                                                                                                          
                                                                         {{/if}}
                                                                         <span>
                                                                            <svg class="align-middle s-{{linkType}}">

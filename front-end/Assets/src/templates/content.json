@@ -10,7 +10,7 @@
       "type": "Datasheet",
       "linkType": "download",
       "thumbnail": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
-      "footerLogo" : "https://staging.bmc.com/content/dam/bmc/forms/form-thumbnail-GartnerLogo.png",
+      "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
       "metadata": [
         {
           "id": "product_line",
@@ -55,7 +55,7 @@
       "linkType": "play",
       "videoLength": "",
       "thumbnail": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
-      "footerLogo" : "",
+      "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
       "metadata": [
         {
           "id": "product_line",
@@ -154,7 +154,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "",
-      "thumbnail": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
+      "thumbnail": "",
       "footerLogo" : "",
       "metadata": [
         {

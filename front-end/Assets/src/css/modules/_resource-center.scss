@@ -358,6 +358,7 @@ body.no-scroll{
         font-weight: 400;
         line-height: 25px;
         margin-bottom: 15px;
+        word-break: break-word;
       }
       h2 {
         color: #414042;
@@ -405,6 +406,9 @@ body.no-scroll{
       }
       .video-length {
           float: left;
+          .s-clock{
+            margin-right: 5px;
+          }
       }
       .card-footer-logo{
         float: left;
@@ -444,6 +448,9 @@ body.no-scroll{
           }
           .s-view {
             background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-clock {
+            background-image: url('#{$imagesFolder}s-clock-white.svg');         
           }
         }
         .card-footer{
@@ -551,6 +558,13 @@ body.no-scroll{
     background-size: contain;
     width: 1.5rem; 
     height: 1.2rem;
+  }
+  .s-clock {
+    background-image: url('#{$imagesFolder}s-clock-blue.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.0rem;
+    height: 1.2rem;    
   }
 
 
@@ -785,4 +799,3 @@ $bg-forrester-green: #16563F;
   }
  
 }
-
