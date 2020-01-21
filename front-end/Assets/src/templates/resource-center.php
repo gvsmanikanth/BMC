@@ -270,7 +270,8 @@
                                                          </div>
                                                       </div>
                                                    </div>
-                                                   <script id="resultItemsTemplate" type="text/x-handlebars-template"><div class="resource-results">
+                                                   <script id="resultItemsTemplate" type="text/x-handlebars-template">
+                                                      <div class="resource-results">
                                                       <div class="rc-card-row">
                                                           {{#each items}}
                                                           <div class="rc-card-col">
@@ -280,10 +281,10 @@
                                                               <a href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
                                                               {{/ifCond}}
                                                               <div class="simple-card bg-white" style="min-height: 310px;">
-                                                                  <div class="card-header" style="{{#if thumbnail}}margin-top:127px;{{/if}}">
+                                                                  <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
                                                                       <h4>{{type}}</h4>
-                                                                      {{#if thumbnail}}
-                                                                      <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
+                                                                      {{#if headerImage}}
+                                                                      <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
                                                                       </div>
                                                                       {{else}}
                                                                       <div class="card-icon ic_{{linkType}}" alt border="0"></div>
@@ -292,7 +293,7 @@
                                                                   <div class="card-content">
                                                                       <hr/>
                                                                       <h4>
-                                                                          {{#if thumbnail}}
+                                                                          {{#if headerImage}}
                                                                               {{{truncateText title 70}}}
                                                                           {{else}}
                                                                               {{{truncateText title 110}}}

@@ -9,7 +9,7 @@
       "assetLink": "http://www.youtube.com/embed/gPW9mMvjMBQ?autoplay\u003d1\u0026mute\u003d1",
       "type": "Datasheet",
       "linkType": "download",
-      "thumbnail": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
+      "headerImage": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
       "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
       "metadata": [
         {
@@ -54,7 +54,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "",
-      "thumbnail": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
+      "headerImage": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
       "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
       "metadata": [
         {
@@ -104,7 +104,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "03:25",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -154,7 +154,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -204,7 +204,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "01:25",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -244,7 +244,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "01:25",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -294,7 +294,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "02:15",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -344,7 +344,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "11:25",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
@@ -384,7 +384,7 @@
       "type": "Videos",
       "linkType": "play",
       "videoLength": "06:15",
-      "thumbnail": "",
+      "headerImage": "",
       "footerLogo" : "",
       "metadata": [
         {
