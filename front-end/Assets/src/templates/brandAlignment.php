@@ -232,7 +232,7 @@
                         </li>
                      </ul>
                      <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="r-tabs-anchor">Simplify Cloud Cost Management</a></div>
-                     <div id="tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="section bg-white r-tabs-panel r-tabs-state-active" style="display: block;">
+                     <div id="tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>
@@ -279,7 +279,7 @@
                         </div>
                      </div>
                      <div class="r-tabs-accordion-title"><a href="#tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="r-tabs-anchor">Simulate Migrations</a></div>
-                     <div id="tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="section bg-white r-tabs-state-default r-tabs-panel">
+                     <div id="tab-fbd559fa-7de8-4879-8007-56d51bf626da" class="section bg-seashell r-tabs-state-default r-tabs-panel">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>
@@ -319,7 +319,7 @@
                         </div>
                      </div>
                      <div class="r-tabs-accordion-title"><a href="#tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="r-tabs-anchor">Optimize Resources and Costs</a></div>
-                     <div id="tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="section bg-white r-tabs-state-default r-tabs-panel">
+                     <div id="tab-d590b7af-a611-4885-aab0-96b47de4beb7" class="section bg-seashell r-tabs-state-default r-tabs-panel">
                         <div class="section-content flex-tab">
                            <div class="section responsivegrid">
                               <section>

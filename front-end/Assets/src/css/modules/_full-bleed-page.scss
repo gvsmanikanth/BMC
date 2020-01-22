@@ -738,15 +738,12 @@
      
       
       &.r-tabs-state-active {
-       background-color:#fff;
-       border: 1px #fff solid;
+       background-color:#f1f1f1;
+       border: 1px #f1f1f1 solid;
        .r-tabs-anchor{
           border-top-right-radius: 0px;
           border-top-left-radius: 0px;
-        }
-        a{
-          background-color: transparent;
-        }
+        }        
       }
       
       a{
