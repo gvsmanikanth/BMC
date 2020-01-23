@@ -1,0 +1,120 @@
+.transparent {
+  position: absolute;
+  opacity: 0.00001;
+}
+
+.variations-quick-actions {
+  display: none;
+  margin: 10px 0;
+}
+
+.variations-buttons {
+  padding-bottom:15px;
+}
+
+.experience-fragment-variations {
+
+  ul {
+    display: table;
+    padding-left: 0;
+    border-collapse: collapse;
+    position: relative;
+    width: 100%;
+    margin: 0
+  }
+
+  li {
+    border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    list-style-type: none;
+    line-height: 18px;
+    font-size: 14px;
+    height:23px;
+    font-weight: 400;
+    color: #4b4b4b;
+    cursor: pointer;
+    display: table-row;
+    table-layout: fixed;
+    width: ~"calc(100% - 25px)";
+
+    .variation {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      display: block;
+    }
+
+    .variation-actions {
+      float: right;
+      margin-top: -20px;
+      margin-bottom: -15px;
+      margin-right: -20px;
+    }
+
+    .variation-title {
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      display: inline-block;
+
+      &.no-description {
+        /* Increase line-height for variations item without description or modification date */
+        line-height: 36px;
+      }
+      .coral-Icon {
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+        color: #d3d3d3;
+      }
+    }
+
+    i {
+      display: block;
+      color: #a2a2a2;
+      text-transform: initial;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 40px;
+    }
+
+    &.is-active {
+
+      span.variation-title {
+        color: #4178cd;
+        width: ~"calc(100% - 85px)";
+      }
+
+      .variations-quick-actions {
+        display: block;
+      }
+      .coral-Icon[icon="viewOn"] {
+        color: #4178cd;
+      }
+    }
+
+    /* List of actions not available for master variation */
+    &.main-variation {
+      .variations-quick-actions {
+        coral-selectlist-item[value="js-action-delete"],
+        coral-selectlist-item[value="js-action-rename"] {
+          display: none;
+        }
+      }
+    }
+
+    span.variation {
+      &:hover {
+        color: #4178cd;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.variations-listing {
+  .coral-Form-field {
+    border-bottom: 1px solid #e6e6e6;
+  }
+}

@@ -1,0 +1,3 @@
+#base=js
+assetFinder.xf.js
+dropController.xf.js

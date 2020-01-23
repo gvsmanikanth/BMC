@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Template picker"
+    sling:resourceType="granite/ui/components/coral/foundation/picker"
+    modeGroup="selection"
+    path="/"
+    selectionCount="${empty param.selectionCount ? &quot;single&quot; : param.selectionCount}"
+    targetCollection="#granite-ui-templatefield-picker-collection">
+    <views jcr:primaryType="nt:unstructured">
+        <card
+            granite:id="granite-ui-templatefield-picker-collection"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/masonry"
+            icon="viewCard"
+            limit="40"
+            modeGroup="selection"
+            path="/"
+            selectionCount="single"
+            selectionMode="true"
+            size="${empty requestPathInfo.selectors[1] ? '40' : requestPathInfo.selectors[1]}"
+            src="/libs/cq/experience-fragments/content/commons/templatepicker/views/card{.offset,limit}.html{+id}">
+            <datasource
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/components/admin/templatedatasource"
+                excludes="/libs/cq/experience-fragments(/.*)?"
+                itemResourceType="cq/gui/components/siteadmin/admin/createpagewizard/templatecard"
+                path="${empty requestPathInfo.suffix ? param.path : requestPathInfo.suffix}"
+                type="${empty param.type ? &quot;all&quot; : param.type}"/>
+        </card>
+    </views>
+</jcr:root>
