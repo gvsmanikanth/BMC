@@ -3,4 +3,4 @@
     jcr:description="BMC Redirect Page"
     jcr:primaryType="cq:Component"
     jcr:title="BMC Redirect Page"
-    sling:resourceSuperType="foundation/components/redirect"/>
+    sling:resourceSuperType="/apps/bmc/components/structure/page"/>
