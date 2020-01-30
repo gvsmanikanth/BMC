@@ -620,7 +620,7 @@ window.FilterList;
 						self.currPage = 1;
 						self.resetFiltersToDefaultValues();
 						window.location.hash = '#';
-						
+						$("#versionContainer").hide();
 					});
 		};
 		
