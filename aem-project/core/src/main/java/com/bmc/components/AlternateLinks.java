@@ -65,9 +65,10 @@ public class AlternateLinks  extends WCMUsePojo {
         if (matcher.matches()) {
             hrefUri = matcher.group(4);
         }
-
-        String canonicalScheme = "http";
-
+        //WEB-6931 Canonical links to be pointing to https-- START
+        String canonicalScheme = "https";
+        //WEB-6931 Canonical links to be pointing to https-- END
+        
         String resourcePath = getResource().getPath().replace("/jcr:content", "");
         String mappedResourcePath = getResourceResolver().map(resourcePath);
         Matcher canonicalMatcher = pattern.matcher(mappedResourcePath);
@@ -77,21 +78,26 @@ public class AlternateLinks  extends WCMUsePojo {
         if (canonicalMatcher.matches()) {
             canonicalPath = canonicalMatcher.group(4);
         }
+        /*  WEB-6931 Code changes 
+         * Commenting this piece of code as Canonical links are no longerhttp for international sites              
         if(req.getServerName().contains("bmc.com")){
         	canonicalScheme = "https";
         }else{
         	canonicalScheme = "http";
         }
+        */
         canonicalLink = canonicalScheme + "://" + req.getServerName() + canonicalPath;
         
         
         // Build map of alternate locale links.
         for (Map.Entry<String, String> entry : hrefLangMap.entrySet()) {
-        	if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
+        	/* WEB-6931 Commenting out the condition for canonicalScheme http/https condition 
+        	 * if(entry.getKey().equals("en-us") || entry.getKey().equals("x-default")){
         		canonicalScheme = "https";
         	}else{
         		canonicalScheme = "http";
         	}
+        	*/
         	/*logger.info("link path before"+getRequest().getRequestPathInfo().getResourcePath()); */
         	if(!getRequest().getRequestPathInfo().getResourcePath().startsWith("/content/bmc/404/")) {
         		alternateLinksMap.put(entry.getKey(), canonicalScheme + "://" + entry.getValue() + hrefUri);
