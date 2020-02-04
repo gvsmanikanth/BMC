@@ -22,7 +22,8 @@
 
 	a {
 		@include transition();
-		color: color(colorCorporateAction);
+		--color: color(colorCorporateAction);
+		color: #0093c9;
 
 		&:hover {
 			color: color(mediumOrange);
@@ -279,7 +280,7 @@
 
 	h5 {
 		@include font-size(19);
-		font-weight: 800;
+		font-weight: 400;
 		padding: 0;
 		color: #ffffff !important;
 

@@ -10,7 +10,7 @@
 	@include transition();
 	border-radius: $formElementBorderRadius;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 1px;
 	cursor: pointer;
 	display: inline-block;
 	margin: .7em .7em .7em 0;
@@ -70,8 +70,8 @@
 button,
 .btn {
 	@extend %button-config;
-	background-color: color(colorCorporateAction);
-	border-color: color(colorCorporateAction);
+	background-color: color(curious-blue);
+	border-color: color(curious-blue);
 	color: #fff;
 
 	&[disabled="disabled"] {
@@ -113,8 +113,9 @@ button,
 	/*color: #29a5d6; font-weight: bold; padding: .5em 1em .4em 1em; margin-right: 1.5em;*/
 	&.btn-blue {
     background-color: #ffffff;
-    border-color: #29a5d6;
-    color: #29a5d6;
+    border-color: color(curious-blue);
+    color: color(curious-blue);
+	border: 1px solid;
     
     &.icon-document {
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
@@ -146,6 +147,27 @@ button,
 	padding: em(10 , (context: 14)) em(14, (context: 14));
 }
 
+.btn.btn-secondary {
+	@extend %button-config;
+	--background-color: color(colorAction);
+	--border-color: color(colorAction);
+	background-color: #fff;
+	border-color: #fff;
+	color: #0093C9;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color(darkBlue);
+		border-color: color(darkBlue);
+		color: #fff;
+	}
+
+	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
+	@include media(breakpointExtraLarge) {
+		@include font-size(18);
+	}
+}
 .btn-secondary {
 	@extend %button-config;
 	background-color: color(colorAction);
@@ -155,8 +177,8 @@ button,
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: #0B8005;
-		border-color: #0B8005;
+		background-color: #0b8005;
+		border-color: #0b8005;
 		color: #fff;
 	}
 
@@ -169,8 +191,8 @@ button,
 .btn-secondary-corporate {
 	@extend %button-config;
 	background-color: transparent;
-	border-color: color(colorCorporateAction);
-	color: color(colorCorporateAction);
+	border-color: color(curious-blue);
+	color: color(curious-blue);
 
 	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
 	@include media(breakpointExtraLarge) {

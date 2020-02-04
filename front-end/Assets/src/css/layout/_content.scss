@@ -848,7 +848,7 @@
 		@include media(breakpointMedium) {
 			color: color(mediumOrange);
 			@include font-size(24);
-			font-weight: 800;
+			font-weight: 400;
 
 		}
 	}
@@ -857,7 +857,7 @@
 		@include media(breakpointMedium) {
 			color: color(colorCorporate);
 			@include font-size(20);
-			font-weight: 800;
+			font-weight: 400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
 		}
 	}
@@ -1279,7 +1279,7 @@
 .page-campaign-landing {
 	h1 {
 		@include font-size(30);
-		font-weight: 800;
+		font-weight: 400;
 
 		@include media(breakpointMedium) {
 			@include font-size(35);
@@ -1450,7 +1450,7 @@
 	h4,
 	h5 { color: #fff; font-weight:800; }
 
-	h1 { color: #fff; line-height:1.1em; letter-spacing:-.03em;  }
+	h1 { color: #fff; line-height:1.1em; letter-spacing:-.03em; font-weight:400; }
 
 	p { color: #fff; font-size:1.8rem; font-weight:400;  }
 
@@ -1495,6 +1495,7 @@
 	h4,
 	h5 { color: #fff; font-weight:800; }
 
+	h1 {font-weight:400; }
 	p { color: #fff; }
 
 	@include media(breakpointLarge) {
@@ -1514,6 +1515,7 @@
 	h3,
 	h4,
 	h5 { color: #fff; font-weight:800; }
+	h1 {font-weight:400; }
 
 	p { color: #fff; font-size:1.5rem;  }
 
@@ -1535,6 +1537,7 @@
 	h3,
 	h4,
 	h5 { color: #fff; font-weight:800; }
+	h1{font-weight:400;}
 
 	p { color: #fff; font-size:1.5rem;  }
 

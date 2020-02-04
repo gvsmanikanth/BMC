@@ -12,6 +12,13 @@
     <mediumgrey jcr:primaryType="nt:unstructured" text="Medium Grey" value="bg-corduroy" />
   */
 
+  .ctabar__ctaheader {
+     @include media(breakpointLarge) {
+      @include font-size(30);
+      margin-bottom: .25em;
+    }
+  }
+
   &.bg-ship-gray,
   &.bg-corduroy {
       color: #fff;
@@ -39,25 +46,27 @@
 
     .tagline {
       display: block;
-      @include font-size(30);
+      @include font-size(24);
       margin-bottom: .25em;
+	  @include media(breakpointLarge) {
+          @include font-size(30);
+        }
 
       p {
         font-size: inherit;
         margin-bottom: 0;
       }
     }
-    .ctabar__ctaheader {
-      display: none;
-    }
-
     .ctabar__buttonwrap-item {
       padding: 8px;
     }
   }
 
   .tagline {
-    @include font-size(30);
+    @include font-size(24);
+	@include media(breakpointLarge) {
+	  @include font-size(30);
+	}
   }
 
 

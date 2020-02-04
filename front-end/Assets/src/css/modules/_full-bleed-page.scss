@@ -104,9 +104,12 @@
   }
 
   .tagline {
-    @include font-size(30);
+    @include font-size(24);
     margin-top: .5em;
     text-align: center;
+	@include media(breakpointLarge) {
+	  @include font-size(30);
+	}
   }
 
 
@@ -230,7 +233,7 @@
 //DXP-1350 - KeyFeature - Heading font is large
 .key-features {
   h2{
-    color: #414042; 
+    color: color(abbey); 
     font-weight: normal; 
     margin: 0 0 1em 0; 
     text-align: left; 
@@ -325,8 +328,21 @@
   }
 
   li {
-    background: url("#{$imagesFolder}bg-summary-li.png") left 4px no-repeat;
-    padding-left:  em(35);
+    --background: url("#{$imagesFolder}bg-summary-li.png") left 4px no-repeat;
+    --padding-left:  em(35);
+	text-indent: -1.3em;
+	padding-left: 1.3em;
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.5rem;
+		-moz-border-radius: 7.5px;
+		-webkit-border-radius: 7.5px;
+		border-radius: 50%;
+		background-color: #fe5000;
+		margin-right: 0.74444em;
+	}
 
     .personna & {
       padding-left: em(35);
@@ -371,6 +387,7 @@
     display: inline-block;
     font-weight: bold;
     height: 34px;
+    color: color(curious-blue);
 
     &.icon-document {
       background: url("#{$imagesFolder}bg-resource-downloads-li.png") left 6px no-repeat;
@@ -466,10 +483,11 @@
       width: 18px;
 
       &.active {
-        background-color: color(mediumOrange);
+        --background-color: color(mediumOrange);
+        background-color: color(curious-blue);
       }
       &:hover {
-        background-color: color(mediumOrange);
+        background-color: color(curious-blue);
         opacity: .8;
       }
     }
@@ -604,7 +622,8 @@
     padding-bottom: 0px !important;
     
     h2 {
-      color: color(ship-gray);
+      --color: color(ship-gray);
+      color: color(abbey);
       font-weight: normal;
       margin: 0;
       text-align: center;
@@ -617,6 +636,8 @@
     color: #fff;
     text-align: center;
     padding:2em;
+    font-size: 32px;
+    font-weight: normal;
   }
   
   
@@ -700,8 +721,6 @@
            
       li {
       
-      border-top-right-radius: 4px;
-      border-top-left-radius: 4px;  
       display:flex;
       border-left: 1px solid color(sirocco);
       overflow:hidden;
@@ -713,18 +732,18 @@
       }
 
       @include media(breakpointLarge) {
-        @include font-size(20);
+        @include font-size(24); // changed from 20 to 18
       }
       
      
       
       &.r-tabs-state-active {
-       background-color: color(seashell);
-       border: 1px color(seashell) solid;
+       background-color:#f1f1f1;
+       border: 1px #f1f1f1 solid;
        .r-tabs-anchor{
           border-top-right-radius: 0px;
           border-top-left-radius: 0px;
-        }
+        }        
       }
       
       a{
@@ -987,7 +1006,8 @@
   padding-bottom: 3em;
   
   h2.resources-header {
-    color: color(ship-gray);
+    --color: color(ship-gray);
+    color:color(abbey);
     text-align: center;
 
     @include media(breakpointLarge) {
@@ -1015,7 +1035,7 @@
     }
 
     h2 {
-      color: color(ship-gray);
+      color: color(abbey);
       font-weight: normal;
       margin-bottom: 1.5em;
 		
@@ -1073,21 +1093,24 @@
 }
 
 .svg .icon-read:before {
-  @include svg-image(icon-read);
+  @include svg-image(icon-read_1);
+  height: 50px;
   width: 60px;
 }
 .svg .icon-watch:before {
-  @include svg-image(icon-watch);
-  height: 37px;
-  width: 62px;
+  @include svg-image(icon-experience_1);
+  --height: 37px;
+  --width: 62px;
+  height: 50px;
+  width: 60px;
 
-  @include media(breakpointExtraLarge) {
+  /*@include media(breakpointExtraLarge) {
     height: 47px;
     width: 97px;
-  }
+  }*/
 }
 .svg .icon-explore:before {
-  @include svg-image(icon-explore);
+  @include svg-image(icon-explore_1);
   height: 50px;
   width: 60px;
 }
@@ -1215,4 +1238,11 @@
    		}
    		
    	}
+}
+
+.bar{
+  .section-title {
+      color: #4f5a65;
+      font-weight: normal;
+  }
 }

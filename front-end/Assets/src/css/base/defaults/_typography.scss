@@ -11,7 +11,7 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
-		color: color(darkBlue);
+		color: color(boston-blue);
 	}
 }
 
@@ -59,7 +59,7 @@ p {
 
 h1 {
 	color: color(colorCorporate);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -85,7 +85,7 @@ h1 {
 
 h2 {
 	color: color(mediumOrange);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.1em;
 	margin: 1em 0 0.33em;
 
@@ -101,22 +101,22 @@ h2 {
 }
 
 h2 {
-	@include font-size(32);
+	@include font-size(30);
 
 	@include media(breakpointMedium) {
-		@include font-size(32);
-		font-weight: 800;
+		@include font-size(30);
+		font-weight: 400;
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(32);
+		@include font-size(30);
 	}
 }
 
 h3 {
 	color: color(colorCorporate);
 	@include font-size(18);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -159,11 +159,11 @@ h4 {
 	margin: 1em 0 0.33em;
 
 	@include media(breakpointMedium) {
-		@include font-size(22);
+		@include font-size(24);
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(24);
+		@include font-size(28);
 	}
 
 	&:first-child {
@@ -233,7 +233,7 @@ h6 {
 	&:hover,
 	&:active,
 	&:focus {
-		color: color(colorCorporateAction);
+		color: color(boston-blue);
 	}
 }
 
