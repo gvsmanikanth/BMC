@@ -145,7 +145,7 @@ include 'php-inc/svg.php';
                 </figure>
             </div>
             <div class="flex-item col col-12 xs-col-6" >
-               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
+               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Multi-Cloud Migration</h2>
                <h4 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
                   <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
