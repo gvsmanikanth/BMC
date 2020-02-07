@@ -1,14 +1,11 @@
 <section data-sly-use.TabsModel="com.bmc.models.components.tabs.TabsModel">
 <!--WEB-5944 White background in Tabs for CSS Brand alignment START -->
 <sly data-sly-test="${properties.iswhitebg}">
-	   <sly data-sly-test.bgColor="tab-white"></sly>
-	</sly>
-    <sly data-sly-test="${!properties.iswhitebg}">
-	   <sly data-sly-test.bgColor="bg-seashell"></sly>
+	   <sly data-sly-test.bgColor="tab-content-white"></sly>
 	</sly>
 <!--WEB-5944 White background in Tabs for CSS Brand alignment END -->
     <sly data-sly-test.TabID="${TabsModel.TabID}"/>
-    <div class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
+    <div class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ${bgColor}">
         <h2 class="m0 text-center white">${properties.headerText @ context = 'html'}</h2>
         <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table">
             <sly data-sly-list.tab="${TabsModel.tabs}">
@@ -37,7 +34,7 @@
 
         <sly data-sly-test="${!wcmmode.edit}">
             <sly data-sly-list.section="${TabsModel.TabItems}">
-                <div id="tab-${TabID[sectionList.index]}" class="section ${bgColor}" data-sly-test="${TabsModel.tabs[sectionList.index].tabTitle}">
+                <div id="tab-${TabID[sectionList.index]}" class="section bg-seashell" data-sly-test="${TabsModel.tabs[sectionList.index].tabTitle}">
                     <div class="section-content flex-tab">
                         <sly data-sly-resource="${section.path @ resourceType=section.resourceType, decorationTagName='div', cssClassName=section.cssClass}"></sly>
                     </div>
