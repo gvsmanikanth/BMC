@@ -216,11 +216,11 @@
                   </div>
                </section>
             </div>
-            <div class="tabs responsivegrid aem-GridColumn aem-GridColumn--default--12">
+            <div class="tabs responsivegrid aem-GridColumn aem-GridColumn--default--12"> 
                <section>
-                  <div class="tab-wrapper bg-corduroy  r-tabs">
+                  <div class="tab-wrapper bg-corduroy tab-content-white r-tabs">
                      <h2 class="m0 text-center white">Control your multi-cloud costs</h2>
-                     <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table r-tabs-nav">
+                     <ul class="tabs-nav bg-corduroy tab-content-white center-block overflow-none flex-table r-tabs-nav">
                         <li class="p2 flex-cell n-col-3 r-tabs-tab r-tabs-state-active">
                            <a class="white no-scroll r-tabs-anchor" href="#tab-c8a3b38a-2004-4bbe-88a8-fa876b9e1641" onclick="">Simplify Cloud Cost Management</a>
                         </li>
