@@ -785,6 +785,21 @@
   }
 }
 
+.tab-wrapper.tab-content-white{
+	.tabs-nav{
+		li.r-tabs-state-active{
+			background-color: #fff;
+			border: 1px #fff solid;
+			a{
+				background-color: #fff;
+			}
+		}
+	}
+	.r-tabs-panel.r-tabs-state-active {
+		background-color: #fff;
+	}
+}
+
 .no-flexbox .flex-table .flex-cell a{
         display:inline-block;
 }
