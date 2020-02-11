@@ -19,110 +19,96 @@
 <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
     
-    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><section class="wallpapered bar header-brand wallpaper" data-wallpaper-options="{&quot;source&quot;:&quot;/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg&quot;}">
-    <div class="offset-wrapper">
-        <div class="layout-inner-wrap">
-            <div class="offset-hero-medium banner -ribbon">
-                <div class="offset-hero-medium-inner-wrap">
-                    
-                    <h1>Partnerpedia</h1>
-                    
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-<div class="wallpaper-container"><div class="wallpaper-media wallpaper-image native" style="background-image: url(&quot;/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg&quot;); height: 435.609px; width: 1903px; left: 0px; top: -123.804px; opacity: 1;"><img alt="" src="/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg"></div></div></section></div>
-<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+    <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
 
     
     <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
         
         
-            <div class="75-25contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
+            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
     <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
      
-        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
     
     <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h2>
-    Welcome to BMC, the new home of Partnerpedia</h2>
+<h1 class="py3">
+            Supplier Payment Programs</h1>
+
+    
+
+</div>
+
+    
+</div></div>
+
+    
+   	</div>
+</section></div>
+
+        
+            <div class="dividers aem-GridColumn aem-GridColumn--default--12"><span class="divider"></span></div>
+
+        
+            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
+    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+     
+        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+
+<h4>E-invoicing</h4>
+<p>Electronic invoicing (or e-invoicing) completely removes paper from the invoicing process. In other words, no paper, no scanning, no OCR, just straight-through, touchless processing directly through BMC's accounts payable system.</p>
+<p><b>Benefits in using e-invoicing are:</b></p>
+<ul>
+<li><b>Secure and guaranteed invoice delivery</b> - invoices go straight into BMC's ERP system so they can't get lost in the mail</li>
+<li><b>Convenient online checking of invoice status</b> - from delivery through to payment</li>
+<li><b>Reduced processing times</b> - we receive your invoices faster which means we are able to pay you on time</li>
+<li><b>Instant invoice validation</b> - fewer delays due to missing information</li>
+<li><b>Any-to-any data formatting technology</b> - no additional software or hardware</li>
+<li><b>Higher processing transparency</b> - better cash flow management due to 24/7 access and reporting</li>
+<li><b>VAT compliant</b> - regardless of where invoices are sent from or received</li>
+<li><b>Easy and cost efficient</b> - send invoices at any time</li>
+</ul>
+<p>E-invoicing is available in Belgium, France, Germany, Ireland, Netherlands, Spain, United Kingdom, and United States. If you're an existing supplier with BMC, you can <a href="http://www.tungsten-network.com/customer-campaigns/BMC_new/" target="_blank">sign up for e-invoicing here</a>.</p>
+
 
     
 
 </div>
 <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
 
-<p>Parnerpedia products are now part of the BMC portfolio. As a leading provider of innovative IT management solutions, BMC enables you to empower your users while taking better control of apps, content, and devices across a wide range of platforms.</p>
+<h4>Purchasing Card</h4>
+<p>If your business accepts the American Express card, sign up for Purchasing Card (P-Card) payments and get paid faster than the traditional ACH and wire process.</p>
+<p>P-Card is available in Australia, Canada, France, Germany, India, The Netherlands, Spain, United Kingdom and United States.</p>
 
 
     
 
 </div>
-<div class="related-items-primary aem-GridColumn aem-GridColumn--default--12"><section class="mt3 py1">
-    <h2>Manage the mobile enterprise</h2>
-    
+<div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
 
-    
-        <h3>
-            <a href="http://staging.bmc.com/it-solutions/bmc-helix-digital-workplace.html" data-ic-weighting="5" data-product-interest="Helix Digital Workplace" data-ic-app-inclusion="no" data-product-line="DSM" data-topics="Service Management" target="_blank">BMC Helix Digital Workplace</a>
-        </h3>
-        <p>BMC Digital Workplace delivers one-click self-service to the products and services employees need to do their work.</p>
-    
-</section></div>
+<h4>Buyer Initiated Payments (BIP)</h4>
+<p>If your company doesn't accept American Express card payments, BMC has a BIP program. Best used by suppliers who regularly invoice, BIP allows the quickness of getting paid via American Express without having a credit card program. Suppliers can be enrolled in both the e-invoicing and BIP programs.</p>
+<p><b>Some advantages of enrolling in BIP are:</b></p>
+<ul>
+<li>Faster, automated direct payment</li>
+<li>Reduced credit liability exposure</li>
+<li>Consistent, predictable payments, and cash flow</li>
+<li>Eliminated security issues – No card account information provided</li>
+</ul>
 
-    
-</div></div>
-
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h3>
-    Know what to look for in a service brokering solution</h3>
 
     
 
-</div>
-<div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-left ">
-    
-			 
-                    
-               
-             
-
-    <a class="cmp-image--link " href="http://staging.bmc.com/forms/digital-workplace-for-dummies-ebook.html?productInterest=unknown" data-title="The Digital Workplace for Dummies" data-asset="/content/dam/bmc/collateral/bmc/form-tn-helix-dwp-dummies-guide.jpg" target="_blank" data-inc="1">
-            <img src="/content/bmc/us/en/it-solutions/brands/partnerpedia/_jcr_content/root/responsivegrid/maincontentcontainer/_75_25contentcontain/right/responsivegrid/image.img.jpg" alt="Learn how to design, launch, and optimize your digital workplace" title="The Digital Workplace for Dummies">
-    </a>
-
-<!-- WEB-6165 Replaces span with p for alignment issues -->
-
-    <p class="cmp-image--title"><a href="http://staging.bmc.com/forms/digital-workplace-for-dummies-ebook.html?productInterest=unknown" target="_blank" data-inc="2">The Digital Workplace for Dummies</a></p>
-
-
-
- 
-
-
-
-</div>
-
-    
 </div>
 
     
 </div></div>
 
     
-</div></div>
-
-	 
-    </div>
+   	</div>
 </section></div>
 
         
