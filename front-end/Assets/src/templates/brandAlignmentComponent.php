@@ -16,1136 +16,464 @@
 }
 </style>
 <?php include 'php-inc/svg.php'; ?>
-<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="header-solutions aem-GridColumn aem-GridColumn--default--12">
+<div id="backgroundImage" style="background-size: cover; background-repeat: repeat-y; background-position: center center; background-image: url(&quot;https://stage.cms.bmc.com/content/dam/bmc/home/mainbannerimg.jpeg&quot;);">
 
-
-
-<!-- /* If redesign */-->
-
-
-
-
-
-
-	
-	   
-	
-	
-	
-	
-    
-    
-    
-    
-
-	
-<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2   padding-bottom-0 wallpaper" data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;/content/dam/bmc/header-mobile-images/LightOrange-700x700px.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;/content/dam/bmc/solutions/banners/tbn-mainframe-ami.jpg&quot;}}" style="background-color:#FC7A00;">
- 	<div class="offset-wrapper flex-center ">
-		<div class="inner">
-			<div class="bannerContent flex-center">
-				<div class="layout-inner-wrap">
-					<div class="flex-item col col-12 md-col-6 sm-col-8 add-top-bottom-margin-110px">
-       						<h1 class="white">Automated Mainframe Intelligence (AMI)</h1>
-                            <h2>Run and reinvent your mainframe with intelligent automation</h2>
-                            <div class="button-wrapper">
-                                <a class=" btn btn-secondary learn-more mr1" href="https://communities.bmc.com/groups/bp-00057-automated-mainframe-intelligence" data-location="Top-CTA-Button-Area" target="_blank">
-                                    Join Friends of AMI
-                                    
-								</a>
-                                   
-                            </div>
-					</div>
-				</div>
-             </div>
-
-
-
-<!-- /* If not redesign */-->
-	
-
-<!--/* Asset bars and Orange bar common for both the designs */ -->
-			
-			
-			
-			
-			
-			    
-			
-
-			<div class="assetStrip">
+<section id="section0" class="js-content-center section-wrap-header sectionCommon wallpapered bar full-bleed-page-banner product-category-header product-category-header2 padding-bottom-0 banner-image-from-top wallpaper" style="background-position: center center; background-size: cover; height: 602px; min-height: 608px;">
+<div class="offset-wrapper flex-center js-content-center-item" style="margin-top: 1rem; margin-bottom: 1rem;">
+<div class="inner">
+<div class="bannerContent flex-center">
+<div class="layout-inner-wrap">
+<div class="flex-item col col-12 md-col-6 sm-col-8">
+<h1 class="white">Run Your Business as You Reinvent It</h1>
+<h2>Optimize core IT and enable innovation, <br>from mainframe to multi-cloud and beyond</h2>
+<div class="button-wrapper">
+<a href="/content/bmc/videos.html?vID=gPW9mMvjMBQ" target="_self" class="modal-youtube-video-player btn-secondary btn learn-more mr1">Find out how</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>	
+<div class="assetStrip assetStripBottom">
 				<div class="inner">
 					<div class="sm-flex flex-justify-center contentContainer">
-						 
-                        
-
-                        
-
-                            
-                        
-                        
-                        
-                        
-                        
-                            
-                        
-                        
-                        
-
-
-                        <a href="/content/bmc/videos.html?vID=E1GcUVS24vM" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
+						<a href="/forms/itsm-gartner-magic-quadrant.html" class="flex-item shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
-									<img src="/content/dam/bmc/solutions/icons/icon-video.png" alt="">
+									
+<img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
 									<div class="inner">
-										<h5>Customer testimonial:</h5>
-										<p>Financial Services Company Modernizes the Mainframe with BMC AMI (1:16)</p>
-										<p class="link">Watch now&nbsp;›</p>
+										<h5>Analyst report:</h5>
+										<p>Gartner Names BMC a Leader in the ITSM Magic Quadrant for the 6<sup>th</sup> Year in a Row!</p>
+										<p class="link">Read the report ›</p>
 									</div>
 								</div>
 							</div>
-						</a> 
-						 
-                        
-
-                        
-
-                            
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-                        
-
-
-                        <a href="http://staging.bmc.com/forms/mainframe-survey-results.html?productInterest=automated%20mainframe%20intelligence%20(ami)" class="flex-item sm-col-4   shadow-top assetStripItem" data-ic-weighting="5" data-ic-app-inclusion="no" data-inc="1">
-							<div class="inner assetTxt">
-								<div class="flex-center">
-									<img src="/content/dam/bmc/solutions/icons/icon-pdf.png" alt="">
-									<div class="inner">
-										<h5>BMC research:</h5>
-										<p>14th Annual Mainframe Survey Results</p>
-										<p class="link">Download now&nbsp;›</p>
-									</div>
-								</div>
-							</div>
-						</a> 
-						 
-                        
-
-                        
-
-                            
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                            
-                        
-
-
-                        <a href="http://staging.bmc.com/forms/bmc-ami-automated-mainframe-intelligence-demo.html?productInterest=automated%20mainframe%20intelligence%20(ami)" class="flex-item sm-col-4   shadow-top assetStripItem" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="gated" data-product-line="MV" data-inc="1">
-							<div class="inner assetTxt">
-								<div class="flex-center">
-									<img src="/content/dam/bmc/solutions/icons/icon-interactive.png" alt="">
-									<div class="inner">
-										<h5>Demo:</h5>
-										<p>BMC AMI (Automated Mainframe Intelligence)</p>
-										<p class="link">Try now&nbsp;›</p>
-									</div>
-								</div>
-							</div>
-						</a> 
-						
+						</a>
 					</div>
 				</div>
 			</div>
-</div></div><div class="wallpaper-container"><div class="wallpaper-media wallpaper-image wallpaper-responsive native" style="background-image: url(&quot;/content/dam/bmc/solutions/banners/tbn-mainframe-ami.jpg&quot;); height: 701.105px; width: 1903px; left: 0px; top: -52.0526px; opacity: 1;"><img alt="" src="/content/dam/bmc/solutions/banners/tbn-mainframe-ami.jpg"></div></div></section>
-</div>
-<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
-
-    
-    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
-        
-        
-            <div class="CTAbar responsivegrid aem-GridColumn aem-GridColumn--default--12">
-
-		
+<div class="wallpaper-container"></div></section>
 
 
-<section class="bg-seashell   ctabar">
-    <div class="layout-inner-wrap">
-        <div class="cta-content text-center">
-            
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="min-height: 672px;">
+      <div class="flex-item section-content py4 layout-inner-wrap"> 
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1">
+               <h2 class="firstHeading aos-init aos-animate" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay="100">You can't hit the reset button every time the market changes.</h2>
+                <p class="firstPara aos-init aos-animate" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay="200">You have to be ready to react while still ensuring continuity in service. You have to keep customers engaged while designing the new products and experiences they demand. BMC solutions help optimize your IT infrastructure, enabling a secure, cost-effective transition to the cloud and continued innovation across the enterprise.</p>
+			</div>
+            <div class="flex-item col col-12 xs-col-6 text-center aos-init aos-animate" data-aos-once="true" data-aos="fade-left">
+				<img class="mobile-only" data-src="/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation" src="https://stage.cms.bmc.com/content/dam/bmc/home/preview.png">
+               <figure class="desktop-only">
+				<!--<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/multi-cloud-anim-11/Run_and_Reinvent_FINAL.html">
+				</object>-->
+				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/multi-cloud-anim-11-24-FPS/Run_and_Reinvent_11282018.html">
+				</object>
+                </figure> 
 
-            <div class="tagline">
-                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                    
-                    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-
-<p>Automated Mainframe Intelligence (AMI) solutions from BMC draw on decades of expertise and innovation to leverage AI, machine learning, and predictive analytics to achieve a self-managing mainframe.</p>
-
-
-    
-
-</div>
-
-                    
-                </div>
             </div>
-
+         </div>
+      </div>
+   </section> 
+	
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section2" style="min-height: 672px;">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center aos-init aos-animate" data-aos-once="true" data-aos="fade-right">
+				<img class="mobile-only" data-src="/content/dam/bmc/home/migration.png" alt="Migration Animation" src="https://stage.cms.bmc.com/content/dam/bmc/home/migration.png">
+				<figure class="desktop-only">
+				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
+				</object>
+                </figure>
+            </div>
+            <div class="flex-item col col-12 xs-col-6">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init aos-animate">Multi-Cloud Management</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init aos-animate">Address key cloud challenges seamlessly and cost-effectively</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Assess needs, build a migration plan, and establish a governance model</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Forecast costs and optimize performance across hybrid environments</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Reduce risk with automated visibility and security</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/multi-cloud-management.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about multi-cloud management</a>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section3" style="min-height: 672px;">
+      <div class="flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Cost Control</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Optimize resource usage and cost across the enterprise and in the cloud</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Simulate migrations by selecting cloud resources and comparing costs to predict and manage cloud budgets</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Gain visibility into current and forecasted spend to optimize mainframe and enterprise infrastructure, software, and services costs</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Manage on-premises and cloud capacity to make the most of current and future resources</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/it-cost.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about cost control</a>
+            </div>
+            <div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left" data-aos-anchor="#section3">
+               <img data-src="/content/dam/bmc/home/cost-control-600x600.png" alt="Cost" class="xs-only" src="https://stage.cms.bmc.com/content/dam/bmc/home/cost-control-600x600.png">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
+								<img data-src="/content/dam/bmc/home/cost-control-600x600.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/cost-control-600x600.png">									
+							</figure>
+						</li>
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png">		
+							</figure>
+						</li>
+						<li data-slide="2" class="">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png">		
+							</figure>
+						</li>
+						 <div class="circle aos-init" data-percentage-right="0" data-percentage-top="52" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 52%;">
+							<span>Manage expenses to reduce costs</span>
+						</div>
+					</ul>
+					
+				</div>
+            </div>
            
-			
-			   
-			 
-			    
-			 
-			
-			
-			   
-			 
-			    
-			 
-			
-
-            <!-- two buttons, one or more with headers -->
-            
-
-            <!-- one or two buttons, no headers -->
-            
-                <div class="text-center">
-                    
-                    
-                </div>
-            
-
-        </div>
-    </div>
-</section>
-
-</div>
-
-        
-            <div class="50-50contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 50-50-layout layout-inner-wrap">
-     
-        <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="key-features aem-GridColumn aem-GridColumn--default--12">
-
-<section>
-    <h2 class="h2-variation-1">Key elements of a self-managing mainframe</h2>
-    <p>A truly self-managing mainframe isn’t just a patchwork of individual solutions. You need an end-to-end solution that is easy to implement and includes:</p>
-
-   <ul class="orange-tick-bullets">
-        <li><b>Multivariate analysis</b> applied simultaneously across multiple data sources to track anomalies</li>
-    
-        <li><b>Predictive analytics</b> driven by pattern analysis algorithms that detect anomalies and analyze their impact</li>
-    
-        <li><b>Root-cause analysis</b> enabled by rapid problem determination based on machine learning</li>
-    
-        <li><b>Prescribed remediation</b> based on prevailing conditions and events</li>
-    
-        <li><b>Intelligent automation</b> to keep the environment running securely and at peak efficiency</li>
-    
-        <li><b>Built-in domain expertise</b> so you can track the right KPIs without relying on in-house technical skills that might be scarce</li>
-    </ul>
+         </div>
+      </div>
+   </section>
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section4" style="min-height: 672px;">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+             <div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
+               <img data-src="/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" class="xs-only" src="https://stage.cms.bmc.com/content/dam/bmc/home/service-man1-device.png">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="active">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/service_management.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/service_management.png">
+							</figure>
+						</li>
+						 <div class="circle aos-init" data-percentage-right="70" data-percentage-top="15" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 70%; top: 15%;">
+							<span>Ensure optimal end-user experiences</span>
+						</div>
+					</ul>
+				</div>
+            </div>
+             
+            <div class="flex-item col col-12 xs-col-6">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Cognitive Service Management</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">More than 7,500 IT organizations trust BMC's world-class ITSM solutions</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Automate classification, assignment, and routing of incidents to transform the way services are delivered</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Employ virtual agents and chatbots to create a self-service experience that employees want to consume</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Leverage AI to embed predictive intelligence into applications during development</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/bmc-helix.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about service management</a>
+            </div>
+         </div>
+      </div>
+   </section>
    
-</section>
-</div>
-
-    
-</div></div>
-
-        <div class="responsivegrid equal-column aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="miniCarousel aem-GridColumn aem-GridColumn--default--12">
-
-<div class="carousel-wrap">
-	<ul class="carousel">
-			<li data-slide="0" class="active">
-                       <!-- Adding the conditions for the Image. -->
-                        
-                        <!-- Adding the conditions for the video player. -->
-						
-                            <figure>    
-                                <a class="modal-youtube-video-player" rel="carouselGroup-400375341" href="/content/bmc/videos.html?vID=-rvotup8bAA" target="_self" title="BMC AMI Overview (1:14) ">
-                                    <img src="/content/dam/bmc/solutions/screenshots/Future-Proof-Your-Business-900x516.jpg" alt="BMC AMI Overview (1:14) " title="BMC AMI Overview (1:14) " width="900" height="516" border="0"> 
-                                    <div class="carousel-icon icon-vid" data-percentage-right="43" data-percentage-top="50" style="right: 43%; background-position: 50% 50%;"></div> 
-                                </a>
-                                <figcaption>BMC AMI Overview (1:14) </figcaption>
-                            </figure>
-                         						
-                        </li> 
-	</ul>
-     
-       		   				
-	
-    </div>
-</div>
-
-    
-</div></div>
-
-    
-   </div>
-</section></div>
-
-        
-            <div class="tabs responsivegrid aem-GridColumn aem-GridColumn--default--12"><section>
-<!--WEB-5944 White background in Tabs for CSS Brand alignment START -->
-
-<!--WEB-5944 White background in Tabs for CSS Brand alignment END -->
-    
-    <div class="tab-wrapper bg-corduroy  r-tabs">
-        <h2 class="m0 text-center white">Achieve a self-managing mainframe with BMC AMI solutions</h2>
-        <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table r-tabs-nav">
-            
-                <li class="p2 flex-cell n-col-4 r-tabs-tab r-tabs-state-active">
-                <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
-                    <a class="white no-scroll r-tabs-anchor" href="#tab-9a5dab52-ee81-47c7-85ec-e2105497c774" onclick="" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="DBA|DM|DSM|ZSO" data-topics="Mainframe">BMC AMI for Security</a>
-                </li>
-            
-                <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
-                <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
-                    <a class="white no-scroll r-tabs-anchor" href="#tab-3cd432a8-f685-44f4-afe1-984a587740db" onclick="" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="DBA|DM|DSM|ZSO" data-topics="Mainframe">BMC AMI DevOps for Db2<sup>®</sup></a>
-                </li>
-            
-                <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
-                <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
-                    <a class="white no-scroll r-tabs-anchor" href="#tab-cb404381-0b0b-4790-9eb2-80f5a28e4842" onclick="" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="DBA|DM|DSM|ZSO" data-topics="Mainframe">BMC AMI for Systems</a>
-                </li>
-            
-                <li class="p2 flex-cell n-col-4 r-tabs-state-default r-tabs-tab">
-                <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
-                    <a class="white no-scroll r-tabs-anchor" href="#tab-d0108c0a-377c-400d-b23b-6146fe14299d" onclick="" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="DBA|DM|DSM|ZSO" data-topics="Mainframe">BMC AMI for Cost</a>
-                </li>
-            
-        </ul>
-
-        
-
-        
-            
-                <div class="r-tabs-accordion-title r-tabs-state-active"><a href="#tab-9a5dab52-ee81-47c7-85ec-e2105497c774" class="r-tabs-anchor">BMC AMI for Security</a></div><div id="tab-9a5dab52-ee81-47c7-85ec-e2105497c774" class="section bg-seashell r-tabs-panel r-tabs-state-active" style="display: block;">
-                    <div class="section-content flex-tab">
-                        <div class="section responsivegrid"><section>
-    <div class="layout-inner-wrap">
-        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-            
-            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h2>
-    Detect and stop security threats in real time</h2>
-
-    
-
-</div>
-<div class="33-66contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     	
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-center ">
-    
-			   
-             
-                 
-             
-
-    
-            <img src="/content/bmc/us/en/it-solutions/bmc-ami-automated-mainframe-intelligence/_jcr_content/root/responsivegrid/maincontentcontainer/tabs/section/_33_66contentcontain/left/image_copy.img.png" alt="BMC AMI for Security">
-    
-
-<!-- WEB-6165 Replaces span with p for alignment issues -->
-
-    
-
-
-
- 
-
-
-
-</div>
-
-    
-</div>
-
-    
-</div></div>
-
-        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--8">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-
-<p>Secure your most valuable IT asset and deliver on growing compliance requirements.</p>
-<ul class="orange-tick-bullets">
-<li>Get real-time alerting</li>
-<li>Monitor privileged user activity and enable automatic escalation</li>
-<li>Maintain regulatory compliance with a single audit trail</li>
-</ul>
-
-
-    
-
-</div>
-<div class="CTAbutton aem-GridColumn aem-GridColumn--default--12">
-
-<a class="aem--inline-block aem--no-grid btn learn-more " href="http://staging.bmc.com/it-solutions/bmc-ami-mainframe-security.html" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe">
-    
-    Explore BMC AMI for Security Solutions
-</a>
-</div>
-
-    
-</div></div>
-
-    
-    </div>
-</section></div>
-
-            
-        </div>
-    </div>
-</section>
-</div>
-
-                    </div>
-                </div>
-            
-                <div class="r-tabs-accordion-title"><a href="#tab-3cd432a8-f685-44f4-afe1-984a587740db" class="r-tabs-anchor">BMC AMI DevOps for Db2<sup>®</sup></a></div><div id="tab-3cd432a8-f685-44f4-afe1-984a587740db" class="section bg-seashell r-tabs-state-default r-tabs-panel">
-                    <div class="section-content flex-tab">
-                        <div class="section responsivegrid"><section>
-    <div class="layout-inner-wrap">
-        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-            
-            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h2>
-    Faster and more reliable application deployment on your mainframe</h2>
-
-    
-
-</div>
-<div class="33-66contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     	
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-center ">
-    
-			   
-             
-                 
-             
-
-    
-            <img src="/content/bmc/us/en/it-solutions/bmc-ami-automated-mainframe-intelligence/_jcr_content/root/responsivegrid/maincontentcontainer/tabs/section_1322606617/_33_66contentcontain/left/image.img.png" alt="BMC AMI Devops for Db2">
-    
-
-<!-- WEB-6165 Replaces span with p for alignment issues -->
-
-    
-
-
-
- 
-
-
-
-</div>
-
-    
-</div>
-
-    
-</div></div>
-
-        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--8">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-
-<p>Automatically integrate mainframe database changes into your agile application development process.</p>
-<ul class="orange-tick-bullets">
-<li>Provide self-service for application developers</li>
-<li>Improve the quality and efficiency of Db2 schema changes</li>
-<li>Mitigate risk through fully audited and transparent automation</li>
-</ul>
-
-
-    
-
-</div>
-<div class="CTAbutton aem-GridColumn aem-GridColumn--default--12">
-
-<a class="aem--inline-block aem--no-grid btn learn-more " href="http://staging.bmc.com/it-solutions/ami-devops.html" data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe">
-    
-    Explore BMC AMI DevOps for Db2<sup>®</sup>
-</a>
-</div>
-
-    
-</div></div>
-
-    
-    </div>
-</section></div>
-
-            
-        </div>
-    </div>
-</section>
-</div>
-
-                    </div>
-                </div>
-            
-                <div class="r-tabs-accordion-title"><a href="#tab-cb404381-0b0b-4790-9eb2-80f5a28e4842" class="r-tabs-anchor">BMC AMI for Systems</a></div><div id="tab-cb404381-0b0b-4790-9eb2-80f5a28e4842" class="section bg-seashell r-tabs-state-default r-tabs-panel">
-                    <div class="section-content flex-tab">
-                        <div class="section responsivegrid"><section>
-    <div class="layout-inner-wrap">
-        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-            
-            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h2>
-    See around the corner to detect and solve problems before they impact your business</h2>
-
-    
-
-</div>
-<div class="33-66contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     	
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-center ">
-    
-			   
-             
-                 
-             
-
-    
-            <img src="/content/bmc/us/en/it-solutions/bmc-ami-automated-mainframe-intelligence/_jcr_content/root/responsivegrid/maincontentcontainer/tabs/section_1502006046/_33_66contentcontain/left/image.img.png" alt="BMC AMI for Systems">
-    
-
-<!-- WEB-6165 Replaces span with p for alignment issues -->
-
-    
-
-
-
- 
-
-
-
-</div>
-
-    
-</div>
-
-    
-</div></div>
-
-        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--8">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-
-<p>Exploit intelligent automation to deliver on the promise of a self-managing mainframe.</p>
-<ul class="orange-tick-bullets">
-<li>Improve performance and availability with highly efficient resource usage</li>
-<li>Detect and resolve problems quickly using intelligent, proactive automation</li>
-<li>Increase staff efficiency with central administration</li>
-</ul>
-
-
-    
-
-</div>
-<div class="CTAbutton aem-GridColumn aem-GridColumn--default--12">
-
-<a class="aem--inline-block aem--no-grid btn learn-more " href="http://staging.bmc.com/it-solutions/mainview.html" data-ic-weighting="5" data-product-interest="Mainframe Systems Management" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe">
-    
-    Explore MainView Systems Management
-</a>
-</div>
-
-    
-</div></div>
-
-    
-    </div>
-</section></div>
-
-            
-        </div>
-    </div>
-</section>
-</div>
-
-                    </div>
-                </div>
-            
-                <div class="r-tabs-accordion-title"><a href="#tab-d0108c0a-377c-400d-b23b-6146fe14299d" class="r-tabs-anchor">BMC AMI for Cost</a></div><div id="tab-d0108c0a-377c-400d-b23b-6146fe14299d" class="section bg-seashell r-tabs-state-default r-tabs-panel">
-                    <div class="section-content flex-tab">
-                        <div class="section responsivegrid"><section>
-    <div class="layout-inner-wrap">
-        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-            
-            <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
-<h2>
-    Optimize hardware and software costs to increase the value of the mainframe</h2>
-
-    
-
-</div>
-<div class="33-66contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     	
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--4 layout-secondary">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-center ">
-    
-			   
-             
-                 
-             
-
-    
-            <img src="/content/bmc/us/en/it-solutions/bmc-ami-automated-mainframe-intelligence/_jcr_content/root/responsivegrid/maincontentcontainer/tabs/section_1257487555/_33_66contentcontain/left/image.img.png" alt="BMC AMI for Cost">
-    
-
-<!-- WEB-6165 Replaces span with p for alignment issues -->
-
-    
-
-
-
- 
-
-
-
-</div>
-
-    
-</div>
-
-    
-</div></div>
-
-        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--8">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
-
-<p>Implement a continuous, structured approach to achieve and maintain the lowest possible costs regardless of pricing model.</p>
-<ul class="orange-tick-bullets">
-<li>Provide analytics, insight, and control over cost drivers</li>
-<li>Predict and provide "what-if” analysis of future costs and workloads</li>
-<li>Empower early-in-career staff with cost intelligence</li>
-<li>Intelligently automate changes in workloads</li>
-</ul>
-
-
-    
-
-</div>
-<div class="CTAbutton aem-GridColumn aem-GridColumn--default--12">
-
-<a class="aem--inline-block aem--no-grid btn learn-more " href="http://staging.bmc.com/it-solutions/mlc-software-management.html" data-ic-weighting="5" data-product-interest="Mainframe MLC Cost Management" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe">
-    
-    Explore Mainframe Cost Optimization Solutions
-</a>
-</div>
-
-    
-</div></div>
-
-    
-    </div>
-</section></div>
-
-            
-        </div>
-    </div>
-</section>
-</div>
-
-                    </div>
-                </div>
-            
-        
-    </div>
-</section>
-</div>
-
-        
-            <div class="product-cards aem-GridColumn aem-GridColumn--default--12"><section class="wallpapered bg-white wallpaper product-cards"> 
- 	<div class="section" id="products"> 
-  		<div class="section-content py3"> 
-  			 <h2 class="h2-variation-1 text-center center-block">
-   				 BMC AMI Products and Solutions
-   			 <br>
-			 <span style="font-size: 1rem;">  </span>
- 			 </h2>
-   			 <div class="flex-wrap flex-justify-center mb2 js-eh"> 
-				
-				
-				
-				    
-				
-				 
-    			
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/bmc-ami-mainframe-security.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>BMC AMI for Security</h3> 
-								        <p>Automatically monitor and secure your mainframe data </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/ami-defender.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>BMC AMI Defender</h3> 
-								        <p>Provides up-to-the-second, cross-platform visibility into z/OS<sup>®</sup>, Db2<sup>®</sup>, and IMS<sup>TM</sup> security event data </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/ami-command-center.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>BMC AMI Command Center for Security</h3> 
-								        <p>Provides dashboard views, event message correlation, and text alerts of security events </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/ami-devops.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>BMC AMI DevOps for Db2<sup>®</sup></h3> 
-								        <p>Automatically integrate database changes on Db2<sup>®</sup> for z/OS<sup>®</sup> seamlessly into an agile application development process </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/bmc-ami-capacity-management.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Automated Mainframe Intelligence (AMI)" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>BMC AMI Capacity Management</h3> 
-								        <p>Optimize mainframe capacity performance with intelligence, automation, and out-of-the-box guided workflows </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/mainview.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Mainframe Systems Management" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>MainView Systems Management</h3> 
-								        <p>Proactive monitoring and problem resolution for peak mainframe performance </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-					<div class="flex flex-item col col-12 sm-col-12 md-col-6 lg-col-3">
-	     				<div class="card-wrap m2"> 
-	        				 	
-			                    
-			                        
-			                    
-			                    
-			                    
-			                    
-			                        
-			                    
-								<a href="http://staging.bmc.com/it-solutions/mlc-software-management.html" target="_self" class="p2 card tundora purchasing-col js-ehItem  " data-ic-weighting="5" data-product-interest="Mainframe MLC Cost Management" data-ic-app-inclusion="no" data-product-line="ZSO" data-topics="Mainframe" style="height: 405px;">
-								    <div class="card-content"> 
-								        <h3>Mainframe Cost Optimization</h3> 
-								        <p>Analytics, insight, and control over cost drivers to maintain the lowest possible costs regardless of pricing model </p> 
-								        <p class="text-center mb0"> <span class="btn text-center">Learn More &nbsp;›</span> </p> 
-							       	</div> 
-	       						</a> 
-	     			    </div> 
-	                </div> 
-   				
-  			</div>
- 	</div>
-</div></section>
-
-
-
-</div>
-
-        
-            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12"><section class="bg-seashell">
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="flexi-featured-analyst-blog aem-GridColumn aem-GridColumn--default--12"><section class="topcontent">
- 
-
-   <div class="layout-inner-wrap">
-      <div class="tagline"> Additional Resources</div>
-      <div class="sm-flex">
-	
-   				 
-					
-						
-					
-					
- 
-    			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			                        
-			        
-			        
-					
-			                        
-			        
-			        
-					<section>
-					   <a href="/content/bmc/videos.html?vID=a5f75gh4opc" class="modal-youtube-video-player">
-						  <figure>
-							 <img src="/content/dam/bmc/solutions/screenshots/maxresdefault-900x516.jpg" alt="Mainframe Matters: The Backbone of Digital Business (1:13)">
-								
-								<div class="carousel-icon icon-vid" data-percentage-right="25" data-percentage-top="0" style="right: 25%; background-position: 50% 0%;"></div>
-								
-						  </figure>
-						 Mainframe Matters: The Backbone of Digital Business (1:13)
-					   </a>
-					</section>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section5" style="min-height: 672px;">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Asset Visibility</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Discover all your hardware and software and the relationships between them</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Get fast, accurate, and secure asset discovery</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Map dependencies across assets and services in a single view</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Perform essential prevention and detection tasks</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/bmc-helix-discovery.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about asset visibility</a>
+            </div>
+			<div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left">
+              <img data-src="/content/dam/bmc/home/visibility_1.png" alt="Multi Cloud Visibility" class="xs-only" src="https://stage.cms.bmc.com/content/dam/bmc/home/visibility_1.png">
+			   <div class="carousel-wrap xs-max-hide">
+					<ul class="carousel">
+						<li data-slide="0" class="">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png">		
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png">	
+							</figure>
+						</li>						
+						<li data-slide="1" class="active">
+							<figure>
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png">	
+								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png">								
+							</figure>
+						</li>		
+						<div class="circle aos-init" data-percentage-right="0" data-percentage-top="0" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 0%;">
+							<span>Map assets quickly and accurately</span>
+						</div>
+					</ul>
 				</div>
-   			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			                        
-			        
-			        
-					
-			        
-			                        
-			        
-					<section>
-					   <a href="http://documents.bmc.com/products/documents/22/57/502257/502257.pdf" data-ic-weighting="5" data-ic-app-inclusion="no" data-topics="Mainframe" target="_blank">
-						  <figure>
-							 <img src="/content/dam/bmc/solutions/ami_sm_320x170.jpg" alt="BMC AMI (Automated Mainframe Intelligence)">
-								
-						  </figure>
-						 BMC AMI (Automated Mainframe Intelligence)
-					   </a>
-					</section>
-				</div>
-   			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			                        
-			        
-			        
-					
-			        
-			                        
-			        
-					<section>
-					   <a href="http://documents.bmc.com/products/documents/83/79/508379/508379.pdf" data-ic-weighting="5" data-ic-app-inclusion="no" data-ic-content-type="Infographics" data-topics="Mainframe" target="_blank">
-						  <figure>
-							 <img src="/content/dam/bmc/solutions/introducing-ami-v3.jpg" alt="Introducing Automated Mainframe Intelligence">
-								
-						  </figure>
-						 Introducing Automated Mainframe Intelligence
-					   </a>
-					</section>
-				</div>
-   			
+            </div>
+         </div>
       </div>
-   </div>
-</section>
+   </section>  
 
-
-
-
-
-
-
-
-
-
-
-</div>
-
-    
-</div></div>
-
-    
-   	</div>
-</section></div>
-
-        
-            <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
-    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
-     
-        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
-<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-    
-    <div class="flexi-featured-analyst-blog aem-GridColumn aem-GridColumn--default--12"><section class="topcontent">
- 
-
-   <div class="layout-inner-wrap">
-      <div class="tagline"> Featured Mainframe Blogs </div>
-      <div class="sm-flex">
-	
-   				 
-					
-						
-					
-					
- 
-    			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			        
-			                        
-			        
-					
-			        
-			                        
-			        
-					<section>
-					   <a href="/blogs/shaping-the-future-of-mainframe-management/">
-						  <figure>
-							 <img src="https://blogs.bmc.com/wp-content/uploads/2018/10/PuzzlePieces.Hands-639198068-700x400-300x171.jpg" alt="Shaping the Future of Mainframe Management">
-								
-						  </figure>
-						 Shaping the Future of Mainframe Management
-					   </a>
-					</section>
-				</div>
-   			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			        
-			                        
-			        
-					
-			        
-			                        
-			        
-					<section>
-					   <a href="/blogs/modernization-keeps-the-venerable-mainframe-humming-as-a-key-cog-of-business/">
-						  <figure>
-							 <img src="https://blogs.bmc.com/wp-content/uploads/2019/06/MF_Blog_700x400px.jpg" alt="Modernization Keeps the Venerable Mainframe Humming as a Key Cog of Business">
-								
-						  </figure>
-						 Modernization Keeps the Venerable Mainframe Humming as a Key Cog of Business
-					   </a>
-					</section>
-				</div>
-   			
-
-				<div class="flex-item sm-col-4 p2">
-					
-			        
-			        
-			                        
-			        
-					
-			        
-			                        
-			        
-					<section>
-					   <a href="/blogs/struggling-to-incorporate-the-mainframe-into-your-agile-development-process/">
-						  <figure>
-							 <img src="https://blogs.bmc.com/wp-content/uploads/2019/05/DevOps-vs-Agile-Whats-the-Difference-and-How-Are-They-Related_Final-700x400.png" alt="Struggling to Incorporate the Mainframe Into Your Agile Development Process? ">
-								
-						  </figure>
-						 Struggling to Incorporate the Mainframe Into Your Agile Development Process? 
-					   </a>
-					</section>
-				</div>
-   			
-      </div>
-   </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-    
-</div></div>
-
-    
-   	</div>
-</section></div>
-
-        
-            <div class="CTAbar responsivegrid aem-GridColumn aem-GridColumn--default--12">
-
-		
-
-
-<section class="bg-corduroy   ctabar">
-    <div class="layout-inner-wrap">
-        <div class="cta-content text-center">
-            <h2>Start implementing Automated Mainframe Intelligence today</h2>
-
-            <div class="tagline">
-                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                    
-                    
-                    
-                </div>
+   <!--Mahesh (no use of py4 class)-->
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section6" style="min-height: 672px;">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
+				<img class="mobile-only" data-src="/content/dam/bmc/home/performance.png" alt="Multi Cloud Performance" src="https://stage.cms.bmc.com/content/dam/bmc/home/performance.png">
+				<figure class="desktop-only">
+				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
+				</object>
+                </figure>
+            </div>
+            <div class="flex-item col col-12 xs-col-6">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Performance</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Monitor and manage integrated cloud and data center performance</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Monitor performance across your infrastructure in real time to deliver optimal user experiences</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Get rapid root cause analysis</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Ensure peak performance and availability for your mission-critical data, at lower cost</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/it-performance.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about performance</a>
             </div>
 
-           
-			
-			   
-			 
-			    
-			 
-			
-			
-			 
-			   
-			   
-			 
-			
+         </div>
+      </div>
+   </section>
+   <section class="flex flex-center section-wrap section1 sectionCommon" id="section7" style="min-height: 672px;">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+            <div class="flex-item col col-12 xs-col-6 pxr1 ">
+               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Automation</h2>
+               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Reinvent enterprise IT with intelligent automation</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Orchestrate data, workflows, applications, and infrastructure</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Centrally manage diverse systems to reduce repetitive tasks, solve problems quickly, and add ability to scale</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Automatically provision cloud servers and services, and future-proof your mainframe with AI, machine learning, and analytics</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/it-automation.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about automation</a>
+            </div>
+			<div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left">
+               <img data-src="/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" class="xs-only" src="https://stage.cms.bmc.com/content/dam/bmc/home/automation1.png">
+			   <div class="carousel-wrap xs-max-hide">
+				<ul class="carousel">
+					<li data-slide="0" class="">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png">
+						</figure>
+						
+					</li>
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png">
+						</figure>
+					</li>
+					<li data-slide="2" class="">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png">
+						</figure>
+					</li>
+					<div class="circle aos-init" data-percentage-right="3" data-percentage-top="4" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 3%; top: 4%;">
+						<span>Automate and orchestrate applications</span>
+					</div>
+				</ul>
+			</div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section class="flex flex-center section-wrap section2 sectionCommon" id="section8" style="min-height: 672px;">
+      <div class=" flex-item section-content py4 layout-inner-wrap">
+         <div class="md-flex flex flex-center full-bleed-two-column">
+			<div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
+               <img data-src="/content/dam/bmc/home/security-600x600.png" alt="Multi Cloud Security" class="xs-only" src="https://stage.cms.bmc.com/content/dam/bmc/home/security-600x600.png">
+			   <div class="carousel-wrap xs-max-hide">
+				<ul class="carousel">
+					<li data-slide="0" class="active">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png">
+							<img data-src="/content/dam/bmc/home/security-600x600.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516" src="https://stage.cms.bmc.com/content/dam/bmc/home/security-600x600.png">	
+						</figure>
+						
+					</li>
+					<!--
+					<li data-slide="1" class="active">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_screen_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+					</li>
+					<li data-slide="2" class="active">
+						<figure>
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
+							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_screen_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
+						</figure>
+					</li>
+					-->
 
-            <!-- two buttons, one or more with headers -->
-            
+					<div class="circle aos-init" data-percentage-right="0" data-percentage-top="11" data-aos="zoom-in" data-aos-once="true" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 11%;">
+						<span>Cloud security posture at-a-glance</span>
+					</div>
+				</ul>
+			</div>
 
-            <!-- one or two buttons, no headers -->
-            
-                <div class="text-center">
-                    
-                    <a class="btn learn-more" href="http://staging.bmc.com/forms/contact-bmc.html?productInterest=automated%20mainframe%20intelligence%20(ami)" data-ic-weighting="5" data-product-interest="Unknown" data-ic-app-inclusion="no" data-product-line="Unknown" data-inc="1">Contact BMC Sales</a>
-                </div>
-            
+            </div>
+            <div class="flex-item col col-12 xs-col-6 pxr1">
+               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Security</h2>
+               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Achieve security and compliance across the enterprise</h4>
+               <ul>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Find and fix security and compliance gaps automatically</p>
+                  </li> 
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init"> 
+                     <p>Ensure integrity of business-critical data</p>
+                  </li>
+                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
+                     <p>Be audit ready all the time</p>
+                  </li>
+               </ul>
+               <a href="/it-solutions/it-security.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about security</a>
+            </div>
+         </div>
+      </div>
+   </section>
 
+    <div class="partners sectionCommon section-wrap" id="section9" style="min-height: 672px;"> 
+        <div class="container aos-init" data-aos-once="true" data-aos="zoom-in">
+            <div class="partners_sec">
+                <h2>Strategic Cloud Partners</h2>
+                <ul>
+                    <li><img data-src="/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Network" src="https://stage.cms.bmc.com/content/dam/bmc/home/logoimg2.png"></li>
+                    <li><img data-src="/content/dam/bmc/home/Microsoft_Azure.svg" alt="Azure" src="https://stage.cms.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg"></li>
+                    <li><img data-src="/content/dam/bmc/home/logoimg3.svg" alt="Google Cloud Platform" src="https://stage.cms.bmc.com/content/dam/bmc/home/logoimg3.svg"></li>
+                </ul>
+            </div>
         </div>
     </div>
-</section>
-
+	
+   <div id="fp-nav" class="right" style="margin-top: -33.5px; display: block;">
+   <ul class="xs-max-hide">
+      <li id="click1" class="click">
+         <a class="active" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Run and Reinvent</div>
+      </li>
+      <li id="click2" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Multi-Cloud Management</div>
+      </li>
+      <li id="click3" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Cost</div>
+      </li>   
+	  <li id="click4" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Service Management</div>
+      </li> 
+	  <li id="click5" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Visibility</div>
+      </li> 
+	  <li id="click6" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Performance</div>
+      </li> 
+	  <li id="click7" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Automation</div>
+      </li>	 
+	  <li id="click8" class="click">
+         <a class="" target="_blank"><span></span></a>
+         <div class="fp-tooltip right">Security</div>
+      </li>
+   </ul>
 </div>
-
-        
-
-        
-    </section>
-</div>
-
+	<div class="Customer">
+        <div class="container" id="customerBanner" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(&quot;https://stage.cms.bmc.com/content/dam/bmc/home/bagroundimg.jpg&quot;);">
+            <div class="layout-inner-wrap py2">
+               <div class="md-flex flex flex-center full-bleed-two-column">
+					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt aos-init" data-aos-once="true" data-aos="fade-right">
+					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
+					</div>
+			
+					<div class="flex-item col col-12 xs-col-6 pxr1 text-center">
+						<div class="carousel-wrap">
+							<figure>
+								<img class="block1" data-src="/content/dam/bmc/home/benefits.png" alt="Benefits" src="https://stage.cms.bmc.com/content/dam/bmc/home/benefits.png">
+							</figure>
+						</div>
+					</div>
+				</div>
+            </div> 
+        </div>
+        <div class="logos_sec">
+            <div class="container">
+                <div class="logos_blk">
+                    <ul>
+                       <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="/content/dam/bmc/home/logo-barryc.png" alt="Barry" src="https://stage.cms.bmc.com/content/dam/bmc/home/logo-barryc.png"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="/content/dam/bmc/home/logo-sap.png" alt="SAP" src="https://stage.cms.bmc.com/content/dam/bmc/home/logo-sap.png"></a></li>
+                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="/content/dam/bmc/home/logoimg7.png" alt="O2" src="https://stage.cms.bmc.com/content/dam/bmc/home/logoimg7.png"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="/content/dam/bmc/home/logo-itau.png" alt="Itau" src="https://stage.cms.bmc.com/content/dam/bmc/home/logo-itau.png"></a></li>
+                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="/content/dam/bmc/home/logo-dish.png" alt="DISA" src="https://stage.cms.bmc.com/content/dam/bmc/home/logo-dish.png"></a></li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+	<div class="stories">
+        <div class="container">
+            <div class="stories_blk">		
+				<a class="learn-more" href="/customers/success-stories.html">All Success Stories</a>
+            </div>
+        </div>
+    </div>
     
-</div></div>
+    <div class="contact-us-large ">
+		<div class="contact-us_blk layout-inner-wrap">
+             <h2 data-aos-once="true" data-aos="zoom-out" class="aos-init">How can BMC help you be <em>first</em> in your industry?</h2>
+			 <a data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg learn-more aos-init" href="/forms/contact-bmc.html">Connect with BMC</a>
+        </div>
+    </div>
+</div>
 <?php include 'php-inc/foot.php'; ?>
