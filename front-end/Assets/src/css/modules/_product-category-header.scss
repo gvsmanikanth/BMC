@@ -171,7 +171,8 @@
 		}
 
 		h5 {
-			color: color(abbey);
+			--color: color(abbey);
+			color: #4f5a65;
 			font-size: 16px;
 			margin-bottom: 0;
 		}
@@ -214,7 +215,7 @@
 			p{
 				font-size: 16px;
 				margin-top:.25rem;
-				color: color(ship-gray);
+				--color: color(ship-gray);
 			}
 		}
 
@@ -308,7 +309,7 @@
 					p{
 						font-size: 18px;
 						margin-top:.25rem;
-						color:color(ship-gray);
+						--color:color(ship-gray);
 					}
 					.link{
 						font-size: 16px;

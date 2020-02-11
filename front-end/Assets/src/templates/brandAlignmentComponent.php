@@ -16,69 +16,121 @@
 }
 </style>
 <?php include 'php-inc/svg.php'; ?>
-<div class="supportcentral-faq aem-GridColumn aem-GridColumn--default--12"><section class="section bg-seashell">
-    <div class="section-content py4">
-        <div class="md-flex full-bleed-two-column">
-            <div class="flex-item col col-12 md-col-9 pxr1">
-                <h2>
-                    Common Support Questions
-                </h2>
-                <style>
-                      .accordion-html{
-                          border-bottom:1px solid #cacaca;
-                      }
-                      .accordion-html .accordion-item{
-                          border-top:1px solid #cacaca;
-                      }
-                </style>
-                <ul class="accordion-html accordion" style="margin-top: 2em; margin-right: 2em;">
-                    <li class="accordion-item"> <span id="faq-1" class="jump-to"></span> <a class="accordion-item-anchor" href="#faq-1"><span style="font-size: .8em; vertical-align: middle;">How do I Register and Subscribe to support?</span></a>
-                        <div class="accordion-item-content">
-                            <p>Visit www.bmc.com/support and click on the ‘Register' link in the grey bar at the top of the screen. Enter your details as required and wait for an email confirming your registration and subscription has been processed. You will receive an email with an activation link which you will have to click in order for your registration to be completed.</p>
-                        </div>
-                    </li>
-                    <li class="accordion-item"> <span id="faq-2" class="jump-to"></span> <a class="accordion-item-anchor" href="#faq-2"><span style="font-size: .8em; vertical-align: middle;">I don't know my support ID, how do I get it?</span></a>
-                        <div class="accordion-item-content">
-                            <p>This information is sent to the person(s) in your company who purchased your BMC&nbsp; products. The Support Contract ID information along with the PIN/Password is located on the Order Confirmation Document and the Order Delivery Document. This information is communicated via email in .pdf format. If you cannot locate the provided documents, please email <a href="mailto:Customer_Care@bmc.com" target="">Customer_Care@bmc.com</a> and include your full company name and the BMC products you are using.</p>
-                        </div>
-                    </li>
-                    <!-- Added changes to the support central guide Pdf URL as a part of DXP-1440 START -->
-                    <li class="accordion-item"> <span id="faq-3" class="jump-to"></span> <a class="accordion-item-anchor" href="#faq-3"><span style="font-size: .8em; vertical-align: middle;">How do I log new support Cases with BMC Customer Support?</span></a>
-                        <div class="accordion-item-content">
-                            <p>Visit www.bmc.com/support and click on the ‘Support Login’ button. From the Support Central page, click on the link ‘Submit New Case’ just under ‘Case Management’. Insert all necessary information on the case and click Submit. Please see the <a href="/content/dam/bmc/support/462510_BMC_Support_Central_User_Guide.pdf" target="_blank">Support Central User Guide</a> for further details.</p>
-                        </div>
-                    </li>                    
-                    <li class="accordion-item"> <span id="faq-4" class="jump-to"></span> <a class="accordion-item-anchor" href="#faq-4"><span style="font-size: .8em; vertical-align: middle;">How do I download products via the BMC EPD page?</span></a>
-                        <div class="accordion-item-content">
-                            <p>Visit www.bmc.com/support and click on the ‘Support Login’ button. From the Support Central page, click on the ‘Product Downloads, Patches and Fixes’ link and then select ‘Product Downloads (EPD)’. Please see the <a href="/content/dam/bmc/support/462510_BMC_Support_Central_User_Guide.pdf" target="_blank">Support Central User Guide</a> for further details.</p>
-                        </div>
-                    </li>
-                    <li class="accordion-item"> <span id="faq-5" class="jump-to"></span> <a class="accordion-item-anchor" href="#faq-5"><span style="font-size: .8em; vertical-align: middle;">I can't find a product on EPD, how can I get it added?</span></a>
-                        <div class="accordion-item-content">
-                            <p>Make sure you have added all relevant Support Contract IDs from your company to your profile. For further details see the <a href="/content/dam/bmc/support/462510_BMC_Support_Central_User_Guide.pdf" target="_blank">Support Central User Guide</a> or email <a href="mailto:Customer_Care@bmc.com" target="">Customer_Care@bmc.com</a>.</p>
-                        </div>
-                        <!-- END changes to DXP-1440 -->
-                    </li>
-                </ul>
-                <br> <a class="btn" href="/support/bmc-support-central-faq.html">View All FAQ ›</a> <a class="btn-secondary" href="https://communities.bmc.com/community/support/" target="_blank">Ask the Community ›</a> <br>
-            </div>
-            <div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0">
-                <section>
-                    <h3>Navigating Support Central (1:56)</h3>
-                    <figure>
-                        <a class="modal-video-player" href="/content/bmc/videos.html?vID=E2AvwInuI_A">
-                            <img src="/content/dam/bmc/support/navigating-support-central-thumb-2.jpg" alt="Video: Navigating Support Central (1:56)">
-                        </a>
-                    </figure>
-                    <div class="mobile">
-                        <a class="modal-video-player" href="/content/bmc/videos.html?vID=E2AvwInuI_A">
-                            Learn how to navigate Support Central
-                        </a>
-                    </div>
-                </section>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><section class="wallpapered bar header-brand wallpaper" data-wallpaper-options="{&quot;source&quot;:&quot;/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg&quot;}">
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap">
+            <div class="offset-hero-medium banner -ribbon">
+                <div class="offset-hero-medium-inner-wrap">
+                    
+                    <h1>Partnerpedia</h1>
+                    
+
+                    
+                </div>
             </div>
         </div>
     </div>
-</section>
+<div class="wallpaper-container"><div class="wallpaper-media wallpaper-image native" style="background-image: url(&quot;/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg&quot;); height: 435.609px; width: 1903px; left: 0px; top: -123.804px; opacity: 1;"><img alt="" src="/content/bmc/us/en/it-solutions/brands/partnerpedia/jcr%3acontent/root/responsivegrid/header_brand.img.jpg"></div></div></section></div>
+<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+    
+    <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+        
+        
+            <div class="75-25contentcontainer aem-GridColumn aem-GridColumn--default--12"><section>
+    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
+     
+        <div class="responsivegrid layout-primary aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+<h2>
+    Welcome to BMC, the new home of Partnerpedia</h2>
+
+    
+
 </div>
+<div class="cmp cmp-text aem-GridColumn aem-GridColumn--default--12">
+
+<p>Parnerpedia products are now part of the BMC portfolio. As a leading provider of innovative IT management solutions, BMC enables you to empower your users while taking better control of apps, content, and devices across a wide range of platforms.</p>
+
+
+    
+
+</div>
+<div class="related-items-primary aem-GridColumn aem-GridColumn--default--12"><section class="mt3 py1">
+    <h2>Manage the mobile enterprise</h2>
+    
+
+    
+        <h3>
+            <a href="http://staging.bmc.com/it-solutions/bmc-helix-digital-workplace.html" data-ic-weighting="5" data-product-interest="Helix Digital Workplace" data-ic-app-inclusion="no" data-product-line="DSM" data-topics="Service Management" target="_blank">BMC Helix Digital Workplace</a>
+        </h3>
+        <p>BMC Digital Workplace delivers one-click self-service to the products and services employees need to do their work.</p>
+    
+</section></div>
+
+    
+</div></div>
+
+        <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--3 layout-secondary">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
+<h3>
+    Know what to look for in a service brokering solution</h3>
+
+    
+
+</div>
+<div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><div class="cq-dd-image text-left ">
+    
+			 
+                    
+               
+             
+
+    <a class="cmp-image--link " href="http://staging.bmc.com/forms/digital-workplace-for-dummies-ebook.html?productInterest=unknown" data-title="The Digital Workplace for Dummies" data-asset="/content/dam/bmc/collateral/bmc/form-tn-helix-dwp-dummies-guide.jpg" target="_blank" data-inc="1">
+            <img src="/content/bmc/us/en/it-solutions/brands/partnerpedia/_jcr_content/root/responsivegrid/maincontentcontainer/_75_25contentcontain/right/responsivegrid/image.img.jpg" alt="Learn how to design, launch, and optimize your digital workplace" title="The Digital Workplace for Dummies">
+    </a>
+
+<!-- WEB-6165 Replaces span with p for alignment issues -->
+
+    <p class="cmp-image--title"><a href="http://staging.bmc.com/forms/digital-workplace-for-dummies-ebook.html?productInterest=unknown" target="_blank" data-inc="2">The Digital Workplace for Dummies</a></p>
+
+
+
+ 
+
+
+
+</div>
+
+    
+</div>
+
+    
+</div></div>
+
+    
+</div></div>
+
+	 
+    </div>
+</section></div>
+
+        
+
+        
+    </section>
+</div>
+
+    
+</div></div>
 <?php include 'php-inc/foot.php'; ?>

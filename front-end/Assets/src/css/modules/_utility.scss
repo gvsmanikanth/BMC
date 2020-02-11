@@ -1298,7 +1298,8 @@ a.white:focus,
 //WEB-568 - Added utitlity classes to change text color and remove padding from elements.
 
 .h2-variation-1 {
-      color: color(ship-gray);
+      --color: color(ship-gray);
+	  color: #4f5a65;
       font-weight: normal;
       margin: 0 0 1em 0;
       @include font-size(36);
