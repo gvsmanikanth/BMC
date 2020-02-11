@@ -103,7 +103,7 @@ h2 {
 }
 
 h2 {
-	@include font-size(30);
+	@include font-size(32);
 
 	@include media(breakpointMedium) {
 		@include font-size(30);
@@ -111,7 +111,7 @@ h2 {
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(30);
+		@include font-size(32);
 	}
 }
 
@@ -161,11 +161,11 @@ h4 {
 	margin: 1em 0 0.33em;
 
 	@include media(breakpointMedium) {
-		@include font-size(24);
+		@include font-size(22);
 	}
 
 	@include media(breakpointExtraLarge) {
-		@include font-size(28);
+		@include font-size(24);
 	}
 
 	&:first-child {
