@@ -23,10 +23,9 @@
 	a {
 		@include transition();
 		--color: color(colorCorporateAction);
-		color: #0093c9;
 
 		&:hover {
-			color: color(mediumOrange);
+			--color: color(mediumOrange);
 		}
 	}
 
