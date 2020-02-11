@@ -104,7 +104,7 @@
 		   @include font-size(22.5);
 		   padding-right: em(24);
 		   color:#FE5000;
-       font-weight:800;
+       font-weight:400;
        line-height: 1.1em;
 
 		   @include media(breakpointLarge) {
@@ -216,7 +216,7 @@
        @include font-size(22.5);
        padding-right: em(24);
        color:#FE5000; 
-       font-weight:800;
+       font-weight:400;
        line-height: 1.1em;
        
        @include media(breakpointLarge) {
