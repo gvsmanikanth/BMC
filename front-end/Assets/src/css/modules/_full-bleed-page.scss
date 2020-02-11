@@ -104,7 +104,7 @@
   }
 
   .tagline {
-    @include font-size(24);
+    @include font-size(30);
     margin-top: .5em;
     text-align: center;
 	@include media(breakpointLarge) {
@@ -733,7 +733,7 @@
       }
 
       @include media(breakpointLarge) {
-        @include font-size(24); // changed from 20 to 18
+        @include font-size(20); // changed from 20 to 18
       }
       
      
