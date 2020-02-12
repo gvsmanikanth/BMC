@@ -851,4 +851,10 @@ object{
 	}
 	
 }
+	.btn.btn-secondary{
+		color:#0093C9;
+		&:hover {
+			color:#fff;
+		}
+	}
 } 

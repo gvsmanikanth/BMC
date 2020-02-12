@@ -43,7 +43,12 @@
 
   &.bg-white,
   &.bg-seashell {
-
+	
+	h2 {
+        color: #4f5a65;
+        display: block;
+      }
+	  
     .tagline {
       display: block;
       @include font-size(24);
