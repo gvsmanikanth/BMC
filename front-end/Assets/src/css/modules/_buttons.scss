@@ -150,7 +150,7 @@ button,
 .btn.btn-secondary {
 	@extend %button-config;
 	background-color: #fff;
-    border-color: #29a5d6;
+    border-color: #046e96;
     color: #046e96;
 
 	&:hover,
@@ -167,7 +167,7 @@ button,
 	}
 }
 .btn-secondary {
-	@extend %button-config;
+	/*@extend %button-config;
 	background-color: color(colorAction);
 	border-color: color(colorAction);
 	color: #fff;
@@ -178,11 +178,19 @@ button,
 		background-color: #0b8005;
 		border-color: #0b8005;
 		color: #fff;
-	}
+	}*/
+	
+	@extend %button-config;
+	background-color: #fff;
+    border-color: #046e96;
+    color: #046e96;
 
-	// respond mixin is used here instead of inside %button-config to @extend bug of libsass
-	@include media(breakpointExtraLarge) {
-		@include font-size(18);
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: color(darkBlue);
+		border-color: color(darkBlue);
+		color: #fff;
 	}
 }
 
