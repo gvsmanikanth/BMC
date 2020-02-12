@@ -149,11 +149,9 @@ button,
 
 .btn.btn-secondary {
 	@extend %button-config;
-	--background-color: color(colorAction);
-	--border-color: color(colorAction);
 	background-color: #fff;
-	border-color: #fff;
-	color: #0093C9;
+    border-color: #29a5d6;
+    color: #046e96;
 
 	&:hover,
 	&:active,

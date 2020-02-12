@@ -333,14 +333,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12 16);
@@ -413,14 +413,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC 527 - Replaced em(12 16);
@@ -486,14 +486,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
@@ -585,14 +585,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
@@ -738,7 +738,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -750,7 +750,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -763,7 +763,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -776,7 +776,7 @@
 
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 
@@ -790,7 +790,7 @@
 
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -850,7 +850,7 @@
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 			font-weight: 400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
@@ -1397,13 +1397,13 @@
 
 	@include media(breakpointTiny) {
 		h1 {
-				color: color(colorCorporate);
+				color: #4f5a65;
 		}
 	}
 
 	@include media(breakpointSmall) {
 		h1 {
-				color: color(colorCorporate);
+				color: #4f5a65;
 		}
 	}
 
