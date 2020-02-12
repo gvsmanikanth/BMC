@@ -23,6 +23,15 @@
                                     fieldDescription="Enter the heading text"
                                     fieldLabel="Enter the heading text"
                                     name="./headerText"/>
+                                    <tabBgColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                fieldDescription="Check to render the Tab component with white background."
+                                name="./iswhitebg"
+                                text="White Background Tab"
+                                uncheckedValue="false"
+                                value="true"/>
                             <names jcr:primaryType="nt:unstructured"
                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                                    composite="{Boolean}true"
