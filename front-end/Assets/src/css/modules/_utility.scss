@@ -1514,12 +1514,12 @@ color: #213443;
 }
 
  //WEB-5910
-.h1-variation-large{     
+.h1-variation-large{      
     font-size: 2rem;
     line-height: 1.1;    
     @media only screen and (min-width: 48em){  
         font-size: 3rem;
-        font-weight: 800;
+        font-weight: 400;
     }   
     @media only screen and (min-width: 76.25em){
         font-size: 3.66667rem;
