@@ -10,19 +10,19 @@ $colors: (
 colorPrimary:			#fefefe,
 seashell: 				#f1f1f1,
 lightGrey:				#eeeeee,
-iron:							#e2e3e4,
-colorTertiary:		#e1e1e1,
-alto:							#e0e0e0,
+iron:					#e2e3e4,
+colorTertiary:		    #e1e1e1,
+alto:					#e0e0e0,
 mediumGrey:				#cacaca,
 aluminium:				#a7a9ac,
-gray:							#888,
+gray:					#888,
 sirocco: 					#6e6f6f,
 darkGrey:					#6c6c6c,
 corduroy:					#5b5c5c,
-abbey: 						#555557,
+abbey: 						#4f5a65,
 tundora: 					#413e41,
 ship-gray:				#414042,
-mine-shaft:				#333333,
+mine-shaft:				#4f5a65,
 black-lung:				#2a2a2a,
 colorSecondary:		#292929,
 
@@ -34,6 +34,7 @@ boston-blue: 			#3980b2,
 darkBlue:				#046e96,
 danube:					#5898d2,
 vividBlue:              #0093C9,
+pacific-blue:           #0093C9,
 lightTeal:				#57aa9b,
 keppel: 				#46ad9e,
 persian-green: 		#00a79d,
@@ -59,7 +60,7 @@ colorNavigationBar: 	tundora,		// light grey for navigation bar
 colorBase:				abbey,			// dark grey for body copy
 colorEmphasis:			black-lung,	// dark grey
 colorAction:			apple,			// light green
-colorCorporateAction: 	curious-blue,	// dark blue, similar to corporate blue
+colorCorporateAction: 	pacific-blue,	// dark blue, similar to corporate blue
 colorNavigationSecondary: #fcfcfc,
 colorNavigationLink: 	ship-gray, // default secondary navigation text
 colorNavigationEmphasis: #ebebeb, // navigation emphasis

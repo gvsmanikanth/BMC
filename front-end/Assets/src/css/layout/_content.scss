@@ -338,14 +338,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12 16);
@@ -418,14 +418,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC 527 - Replaced em(12 16);
@@ -491,14 +491,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
@@ -590,14 +590,14 @@
 
 	h3 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(18);
 			font-weight:400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
@@ -727,7 +727,7 @@
 	}
 
 	span {
-		font-weight:800;
+		font-weight:400;
 	}
 
 	ul {
@@ -743,7 +743,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -755,7 +755,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -768,7 +768,7 @@
 			}
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -781,7 +781,7 @@
 
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 
@@ -795,7 +795,7 @@
 
 		h4 {
 			font-size:1.1em;
-			color: color(colorCorporate);
+			color: #4f5a65;
 			}
 		margin-top: 0em;
 	}
@@ -848,16 +848,16 @@
 		@include media(breakpointMedium) {
 			color: color(mediumOrange);
 			@include font-size(24);
-			font-weight: 800;
+			font-weight: 400;
 
 		}
 	}
 
 	h4 {
 		@include media(breakpointMedium) {
-			color: color(colorCorporate);
+			color: #4f5a65;
 			@include font-size(20);
-			font-weight: 800;
+			font-weight: 400;
 			padding-top: em(12); //BMC-527 Replaced em(12 16)
 		}
 	}
@@ -1279,7 +1279,7 @@
 .page-campaign-landing {
 	h1 {
 		@include font-size(30);
-		font-weight: 800;
+		font-weight: 400;
 
 		@include media(breakpointMedium) {
 			@include font-size(35);
@@ -1402,13 +1402,13 @@
 
 	@include media(breakpointTiny) {
 		h1 {
-				color: color(colorCorporate);
+				color: #4f5a65;
 		}
 	}
 
 	@include media(breakpointSmall) {
 		h1 {
-				color: color(colorCorporate);
+				color: #4f5a65;
 		}
 	}
 
@@ -1448,9 +1448,9 @@
 	h2,
 	h3,
 	h4,
-	h5 { color: #fff; font-weight:800; }
+	h5 { color: #fff; font-weight:400; }
 
-	h1 { color: #fff; line-height:1.1em; letter-spacing:-.03em;  }
+	h1 { color: #fff; line-height:1.1em; letter-spacing:-.03em; font-weight:400; }
 
 	p { color: #fff; font-size:1.8rem; font-weight:400;  }
 
@@ -1493,8 +1493,9 @@
 	h2,
 	h3,
 	h4,
-	h5 { color: #fff; font-weight:800; }
+	h5 { color: #fff; font-weight:400; }
 
+	h1 {font-weight:400; }
 	p { color: #fff; }
 
 	@include media(breakpointLarge) {
@@ -1513,7 +1514,8 @@
 	h2,
 	h3,
 	h4,
-	h5 { color: #fff; font-weight:800; }
+	h5 { color: #fff; font-weight:400; }
+	h1 {font-weight:400; }
 
 	p { color: #fff; font-size:1.5rem;  }
 
@@ -1534,7 +1536,8 @@
 	h2,
 	h3,
 	h4,
-	h5 { color: #fff; font-weight:800; }
+	h5 { color: #fff; font-weight:400; }
+	h1{font-weight:400;}
 
 	p { color: #fff; font-size:1.5rem;  }
 
