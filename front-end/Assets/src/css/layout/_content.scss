@@ -1567,3 +1567,10 @@
 }
 
 // better AEM authoring experience
+.related-CTAs-list{
+	h3 {
+		@include media(breakpointMedium) {
+			@include font-size(24);
+		}
+	}
+}
