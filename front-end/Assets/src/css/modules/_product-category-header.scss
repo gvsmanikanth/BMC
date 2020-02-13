@@ -71,6 +71,16 @@
 			margin-bottom: 24px;
 		}
 	}
+	.modal-youtube-video-player.btn.btn-secondary{
+		svg {
+			fill: #046e96;
+		}
+		&:hover{
+			svg {
+				fill: #ffffff;
+			}			
+		}
+	}
 	.mr1 {
 		margin-right: .5rem;
 	}
