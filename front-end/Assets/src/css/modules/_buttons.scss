@@ -68,7 +68,7 @@
 }
 
 button,
-.btn {
+.btn, .btn-secondary {
 	@extend %button-config;
 	background-color: color(curious-blue);
 	border-color: color(curious-blue);
@@ -150,7 +150,7 @@ button,
 .btn.btn-secondary {
 	@extend %button-config;
 	background-color: #fff;
-    border-color: #046e96;
+    border-color: #ffffff;
     color: #046e96;
 
 	&:hover,
@@ -182,7 +182,7 @@ button,
 	
 	@extend %button-config;
 	background-color: #fff;
-    border-color: #046e96;
+    border-color: #ffffff;
     color: #046e96;
 
 	&:hover,
@@ -503,4 +503,10 @@ span {
 
 	}
 
+}
+
+
+// Form button specific css
+.form2 .cmp-form form .btn-secondary{
+	color: #ffffff;
 }

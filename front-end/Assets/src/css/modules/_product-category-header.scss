@@ -71,6 +71,16 @@
 			margin-bottom: 24px;
 		}
 	}
+	.modal-youtube-video-player.btn.btn-secondary{
+		svg {
+			fill: #046e96;
+		}
+		&:hover{
+			svg {
+				fill: #ffffff;
+			}			
+		}
+	}
 	.mr1 {
 		margin-right: .5rem;
 	}
@@ -108,7 +118,7 @@
 		z-index: 9;
 		width: 100%;
 		padding-bottom: 1rem;
-
+		border-bottom: 4px solid #fff;
 		@media screen and (min-width: 640px) {
 					padding-bottom: 0px;
 		}

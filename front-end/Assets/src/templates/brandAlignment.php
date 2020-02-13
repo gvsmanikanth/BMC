@@ -28,9 +28,13 @@
                            <h1 class="white">TrueSight Cloud Cost Control</h1>
                            <h2>Control multi-cloud costs</h2>
                            <div class="button-wrapper">
-                              <a class=" btn btn-secondary learn-more mr1" href="http://www.bmc.com/forms/truesight-cloud-cost-control-trial.html?productInterest=truesight cloud cost control" data-location="Top-CTA-Button-Area" data-inc="1">
+                              <!-- <a class=" btn btn-secondary learn-more mr1" href="http://www.bmc.com/forms/truesight-cloud-cost-control-trial.html?productInterest=truesight cloud cost control" data-location="Top-CTA-Button-Area" data-inc="1">
                               Start a free trial
-                              </a>
+                              </a> -->
+                              <a class="modal-youtube-video-player btn btn-secondary  mr1" href="/content/bmc/videos.html?vID=d8pMh5Cf5ac" data-location="Top-CTA-Button-Area">
+                                    Watch overview (2:14)                                    
+                                 <svg class="align-middle fill-white" height="1.2em" viewBox="0 0 100 100" style="padding-left: .5rem;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-VideoPlay"></use></svg>
+      								</a>
                            </div>
                         </div>
                      </div>
