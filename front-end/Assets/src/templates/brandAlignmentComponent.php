@@ -55,425 +55,174 @@
 			</div>
 <div class="wallpaper-container"></div></section>
 
-
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section1" style="min-height: 557px;">
-      <div class="flex-item section-content py4 layout-inner-wrap"> 
-         <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-center flex-item col col-12 xs-col-6 pxr1">
-               <h2 class="firstHeading aos-init aos-animate" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="top-bottom" data-aos-delay="100">You can't hit the reset button every time the market changes.</h2>
-                <p class="firstPara aos-init aos-animate" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom" data-aos-delay="200">You have to be ready to react while still ensuring continuity in service. You have to keep customers engaged while designing the new products and experiences they demand. BMC solutions help optimize your IT infrastructure, enabling a secure, cost-effective transition to the cloud and continued innovation across the enterprise.</p>
-			</div>
-            <div class="flex-item col col-12 xs-col-6 text-center aos-init aos-animate" data-aos-once="true" data-aos="fade-left">
-				<img class="mobile-only" data-src="/content/dam/bmc/home/preview.png" alt="Multi Cloud Animation" src="https://staging.bmc.com/content/dam/bmc/home/preview.png">
-               <figure class="desktop-only">
-				<!--<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/multi-cloud-anim-11/Run_and_Reinvent_FINAL.html">
-				</object>-->
-				<object id="EdgeID1" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/Run_and_Reinvent_10022019/Run_and_Reinvent_FINAL.html">
-				</object>
-                </figure> 
-
-            </div>
-         </div>
-      </div>
-   </section> 
-	
-   <section class="flex flex-center section-wrap section2 sectionCommon" id="section2" style="min-height: 557px;">
-      <div class="flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-center flex-item col col-12 xs-col-6 pxr1 text-center aos-init aos-animate" data-aos-once="true" data-aos="fade-right">
-				<img class="mobile-only" data-src="/content/dam/bmc/home/migration.png" alt="Migration Animation" src="https://staging.bmc.com/content/dam/bmc/home/migration.png">
-				<figure class="desktop-only">
-				<object id="EdgeID2" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/migration-anim/migration_animation_4.html">
-				</object>
-                </figure>
-            </div>
-            <div class="flex-item col col-12 xs-col-6">
-               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init aos-animate">Multi-Cloud Management</h2>
-               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init aos-animate">Address key cloud challenges seamlessly and cost-effectively</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init aos-animate">
-                     <p>Assess needs, build a migration plan, and establish a governance model</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init aos-animate">
-                     <p>Forecast costs and optimize performance across hybrid environments</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay="300" class="aos-init aos-animate">
-                     <p>Reduce risk with automated visibility and security</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/multi-cloud-management.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about multi-cloud management</a>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section3" style="min-height: 557px;">
-      <div class="flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Cost Control</h2>
-               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Optimize resource usage and cost across the enterprise and in the cloud</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Simulate migrations by selecting cloud resources and comparing costs to predict and manage cloud budgets</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Gain visibility into current and forecasted spend to optimize mainframe and enterprise infrastructure, software, and services costs</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Manage on-premises and cloud capacity to make the most of current and future resources</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/it-cost.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about cost control</a>
-            </div>
-            <div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left" data-aos-anchor="#section3">
-               <img data-src="/content/dam/bmc/home/cost-control-600x600.png" alt="Cost" class="xs-only" src="https://staging.bmc.com/content/dam/bmc/home/cost-control-600x600.png">
-			   <div class="carousel-wrap xs-max-hide">
-					<ul class="carousel">
-						<li data-slide="0" class="active">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
-								<img data-src="/content/dam/bmc/home/cost-control-600x600.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/cost-control-600x600.png">									
-							</figure>
-						</li>
-						<li data-slide="1" class="">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost__screen_2.png">		
-							</figure>
-						</li>
-						<li data-slide="2" class="">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png" alt="Cost" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_device.png">	
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png" alt="Cost" title="" class="screenImage" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/cost_screen_3.png">		
-							</figure>
-						</li>
-						 <div class="circle aos-init" data-percentage-right="0" data-percentage-top="52" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 52%;">
-							<span>Manage expenses to reduce costs</span>
-						</div>
-					</ul>
-					
-				</div>
-            </div>
-           
-         </div>
-      </div>
-   </section>
-   <section class="flex flex-center section-wrap section2 sectionCommon" id="section4" style="min-height: 557px;">
-      <div class=" flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-             <div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
-               <img data-src="/content/dam/bmc/home/service-man1-device.png" alt="Multi Cloud Service Management" class="xs-only" src="https://staging.bmc.com/content/dam/bmc/home/service-man1-device.png">
-			   <div class="carousel-wrap xs-max-hide">
-					<ul class="carousel">
-						<li data-slide="0" class="active">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/service_management.png" alt="Multi Cloud Service Management" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/service_management.png">
-							</figure>
-						</li>
-						 <div class="circle aos-init" data-percentage-right="70" data-percentage-top="15" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 70%; top: 15%;">
-							<span>Ensure optimal end-user experiences</span>
-						</div>
-					</ul>
-				</div>
-            </div>
-             
-            <div class="flex-item col col-12 xs-col-6">
-               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Cognitive Service Management</h2>
-               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">More than 7,500 IT organizations trust BMC's world-class ITSM solutions</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Automate classification, assignment, and routing of incidents to transform the way services are delivered</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Employ virtual agents and chatbots to create a self-service experience that employees want to consume</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Leverage AI to embed predictive intelligence into applications during development</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/bmc-helix.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about service management</a>
-            </div>
-         </div>
-      </div>
-   </section>
-   
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section5" style="min-height: 557px;">
-      <div class=" flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Asset Visibility</h2>
-               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Discover all your hardware and software and the relationships between them</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Get fast, accurate, and secure asset discovery</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Map dependencies across assets and services in a single view</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Perform essential prevention and detection tasks</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/bmc-helix-discovery.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about asset visibility</a>
-            </div>
-			<div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left">
-              <img data-src="/content/dam/bmc/home/visibility_1.png" alt="Multi Cloud Visibility" class="xs-only" src="https://staging.bmc.com/content/dam/bmc/home/visibility_1.png">
-			   <div class="carousel-wrap xs-max-hide">
-					<ul class="carousel">
-						<li data-slide="0" class="">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png">		
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_screen_1.png">	
-							</figure>
-						</li>						
-						<li data-slide="1" class="active">
-							<figure>
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png" alt="Multi Cloud Visibility" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility_device.png">	
-								<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png" alt="Multi Cloud Visibility" title="" class="screenImage" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/visibility__screen_2.png">								
-							</figure>
-						</li>		
-						<div class="circle aos-init" data-percentage-right="0" data-percentage-top="0" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 0%;">
-							<span>Map assets quickly and accurately</span>
-						</div>
-					</ul>
-				</div>
-            </div>
-         </div>
-      </div>
-   </section>  
-
-   <!--Mahesh (no use of py4 class)-->
-   <section class="flex flex-center section-wrap section2 sectionCommon" id="section6" style="min-height: 557px;">
-      <div class=" flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
-				<img class="mobile-only" data-src="/content/dam/bmc/home/performance.png" alt="Multi Cloud Performance" src="https://staging.bmc.com/content/dam/bmc/home/performance.png">
-				<figure class="desktop-only">
-				<object id="EdgeID3" type="text/html" width="100%" height="100%" data-dw-widget="Edge" data="/content/dam/bmc/edgeanim/cloud_guage_anim/cloud_guage_animation_4.html">
-				</object>
-                </figure>
-            </div>
-            <div class="flex-item col col-12 xs-col-6">
-               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Performance</h2>
-               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Monitor and manage integrated cloud and data center performance</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Monitor performance across your infrastructure in real time to deliver optimal user experiences</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Get rapid root cause analysis</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Ensure peak performance and availability for your mission-critical data, at lower cost</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/it-performance.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about performance</a>
-            </div>
-
-         </div>
-      </div>
-   </section>
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section7" style="min-height: 557px;">
-      <div class=" flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-            <div class="flex-item col col-12 xs-col-6 pxr1 ">
-               <h2 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Automation</h2>
-               <h4 data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Reinvent enterprise IT with intelligent automation</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Orchestrate data, workflows, applications, and infrastructure</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Centrally manage diverse systems to reduce repetitive tasks, solve problems quickly, and add ability to scale</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Automatically provision cloud servers and services, and future-proof your mainframe with AI, machine learning, and analytics</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/it-automation.html" data-aos-once="true" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about automation</a>
-            </div>
-			<div class="flex-item col col-12 xs-col-6 text-center aos-init" data-aos-once="true" data-aos="fade-left">
-               <img data-src="/content/dam/bmc/home/automation1.png" alt="Multi Cloud Automation" class="xs-only" src="https://staging.bmc.com/content/dam/bmc/home/automation1.png">
-			   <div class="carousel-wrap xs-max-hide">
-				<ul class="carousel">
-					<li data-slide="0" class="active">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_1.png">
-						</figure>
-						
-					</li>
-					<li data-slide="1" class="">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation__screen_2.png">
-						</figure>
-					</li>
-					<li data-slide="2" class="">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png" alt="Multi Cloud Automation" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_device.png">	
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png" alt="Multi Cloud Automation" title="" width="900" class="screenImage" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/automation_screen_3.png">
-						</figure>
-					</li>
-					<div class="circle aos-init" data-percentage-right="3" data-percentage-top="4" data-aos-once="true" data-aos="zoom-in" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 3%; top: 4%;">
-						<span>Automate and orchestrate applications</span>
-					</div>
-				</ul>
-			</div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section class="flex flex-center section-wrap section2 sectionCommon" id="section8" style="min-height: 557px;">
-      <div class=" flex-item section-content py4 layout-inner-wrap">
-         <div class="md-flex flex flex-center full-bleed-two-column">
-			<div class="flex-item col col-12 xs-col-6 pxr1 text-center aos-init" data-aos-once="true" data-aos="fade-right">
-               <img data-src="/content/dam/bmc/home/security-600x600.png" alt="Multi Cloud Security" class="xs-only" src="https://staging.bmc.com/content/dam/bmc/home/security-600x600.png">
-			   <div class="carousel-wrap xs-max-hide">
-				<ul class="carousel">
-					<li data-slide="0" class="active">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/bmc_homepage_phase2/security_device.png">
-							<img data-src="/content/dam/bmc/home/security-600x600.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516" src="https://staging.bmc.com/content/dam/bmc/home/security-600x600.png">	
-						</figure>
-						
-					</li>
-					<!--
-					<li data-slide="1" class="active">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_screen_2.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
-						</figure>
-					</li>
-					<li data-slide="2" class="active">
-						<figure>
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_device.png" alt="Multi Cloud Security" title="" width="900" border="0" height="516">	
-							<img data-src="/content/dam/bmc/home/bmc_homepage_phase2/security_screen_3.png" alt="Multi Cloud Security" title="" width="900" class="screenImage" border="0" height="516">		
-						</figure>
-					</li>
-					-->
-
-					<div class="circle aos-init" data-percentage-right="0" data-percentage-top="11" data-aos="zoom-in" data-aos-once="true" data-aos-delay="400" data-aos-easing="ease-out-cubic" data-aos-duration="1000" style="right: 0%; top: 11%;">
-						<span>Cloud security posture at-a-glance</span>
-					</div>
-				</ul>
-			</div>
-
-            </div>
-            <div class="flex-item col col-12 xs-col-6 pxr1">
-               <h2 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="100" class="aos-init">Security</h2>
-               <h4 data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200" class="aos-init">Achieve security and compliance across the enterprise</h4>
-               <ul>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Find and fix security and compliance gaps automatically</p>
-                  </li> 
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init"> 
-                     <p>Ensure integrity of business-critical data</p>
-                  </li>
-                  <li data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="300" class="aos-init">
-                     <p>Be audit ready all the time</p>
-                  </li>
-               </ul>
-               <a href="/it-solutions/it-security.html" data-aos-once="true" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="400" class="learn-more aos-init">Learn more about security</a>
-            </div>
-         </div>
-      </div>
-   </section>
-
-    <div class="partners sectionCommon section-wrap" id="section9" style="min-height: 557px;"> 
-        <div class="container aos-init" data-aos-once="true" data-aos="zoom-in">
-            <div class="partners_sec">
-                <h2>Strategic Cloud Partners</h2>
-                <ul>
-                    <li><img data-src="/content/dam/bmc/home/logoimg2.png" alt="Amazon Partner Network" src="https://staging.bmc.com/content/dam/bmc/home/logoimg2.png"></li>
-                    <li><img data-src="/content/dam/bmc/home/Microsoft_Azure.svg" alt="Azure" src="https://staging.bmc.com/content/dam/bmc/home/Microsoft_Azure.svg"></li>
-                    <li><img data-src="/content/dam/bmc/home/logoimg3.svg" alt="Google Cloud Platform" src="https://staging.bmc.com/content/dam/bmc/home/logoimg3.svg"></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-	
-   <div id="fp-nav" class="right" style="margin-top: -33.5px; display: none;">
-   <ul class="xs-max-hide">
-      <li id="click1" class="click">
-         <a class="active" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Run and Reinvent</div>
-      </li>
-      <li id="click2" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Multi-Cloud Management</div>
-      </li>
-      <li id="click3" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Cost</div>
-      </li>   
-	  <li id="click4" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Service Management</div>
-      </li> 
-	  <li id="click5" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Visibility</div>
-      </li> 
-	  <li id="click6" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Performance</div>
-      </li> 
-	  <li id="click7" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Automation</div>
-      </li>	 
-	  <li id="click8" class="click">
-         <a class="" target="_blank"><span></span></a>
-         <div class="fp-tooltip right">Security</div>
-      </li>
-   </ul>
 </div>
-	<div class="Customer">
-        <div class="container" id="customerBanner" style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(&quot;https://staging.bmc.com/content/dam/bmc/home/bagroundimg.jpg&quot;);">
-            <div class="layout-inner-wrap py2">
-               <div class="md-flex flex flex-center full-bleed-two-column">
-					<div class="flex-item col col-12 xs-col-6 pxr1 customer_lt aos-init" data-aos-once="true" data-aos="fade-right">
-					   <h2>See how BMC customers are transforming their businesses and succeeding in new and better ways.</h2>
-					</div>
-			
-					<div class="flex-item col col-12 xs-col-6 pxr1 text-center">
-						<div class="carousel-wrap">
-							<figure>
-								<img class="block1" data-src="/content/dam/bmc/home/benefits.png" alt="Benefits" src="https://staging.bmc.com/content/dam/bmc/home/benefits.png">
-							</figure>
-						</div>
-					</div>
-				</div>
-            </div> 
-        </div>
-        <div class="logos_sec">
-            <div class="container">
-                <div class="logos_blk">
-                    <ul>
-                       <li class="imgDesp "><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=MCeJtBl2dQ4" target="_self"><img data-src="/content/dam/bmc/home/logo-barryc.png" alt="Barry" src="https://staging.bmc.com/content/dam/bmc/home/logo-barryc.png"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=yq9g0S50w58" target="_self"><img data-src="/content/dam/bmc/home/logo-sap.png" alt="SAP" src="https://staging.bmc.com/content/dam/bmc/home/logo-sap.png"></a></li>
-                        <li class="imgDesp small"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=MBpzcyqsw-Y" target="_self"><img data-src="/content/dam/bmc/home/logoimg7.png" alt="O2" src="https://staging.bmc.com/content/dam/bmc/home/logoimg7.png"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=-THadSaX-ro" target="_self"><img data-src="/content/dam/bmc/home/logo-itau.png" alt="Itau" src="https://staging.bmc.com/content/dam/bmc/home/logo-itau.png"></a></li>
-                        <li class="imgDesp"><a class="video-play modal-youtube-video-player" href="/content/bmc/videos.html?vID=tJWqF2equog" target="_self"><img data-src="/content/dam/bmc/home/logo-dish.png" alt="DISA" src="https://staging.bmc.com/content/dam/bmc/home/logo-dish.png"></a></li> 
-                    </ul>
+<div class="htmlarea aem-GridColumn aem-GridColumn--default--12"><div class="conquest-page-wrapper conquest-page-wrapper-variation1">
+    <header class="layout-full-bleed conquest-header">
+        <div class="layout-inner-wrap">
+            <h1 class="heading-txt">3<sup>rd</sup> Annual IT Security and Operations Survey<br><span style="font-size: 0.8em; color: #444444;">Separating the Truths from the Myths in Cybersecurity</span></h1>
+            <div class="conquest-header-copy">
+                <div class="section-heading-wrapper">
+                    <h2 style="font-size: 2em;">From BMC and Ponemon Institute</h2>
+                    <p>As organizations attempt to move to multi-cloud environments and improve business agility, cybersecurity challenges can slow down growth. It’s important to understand what helps drive a good security posture, how to prevent or remediate risks, and how to overcome misconceptions about cybersecurity.</p>
+                    <p>Ponemon Institute, with sponsorship from BMC, conducted a study on <em>Separating the Truths
+from the Myths in Cybersecurity</em> to better understand the security myths that can be barriers to a more effective IT security function and to determine the truths that should be considered important for the overall security posture. In the context of this survey, cybersecurity truths are believed to be true, based on the actual experience of participants in this research. In contrast, cybersecurity myths are believed to be false or misstatements.</p>
+                    
+                    <p><a href="/forms/contact-a-secops-expert.html" data-inc="1">Speak with a BMC SecOps expert today</a></p>
+
                 </div>
             </div>
-        </div>
-    </div> 
-	<div class="stories">
-        <div class="container">
-            <div class="stories_blk">		
-				<a class="learn-more" href="/customers/success-stories.html">All Success Stories</a>
+            <div class="conquest-header-cta"> 
+                            <script>
+                       
+                         if (window.location.search.indexOf('cmp=lds') > -1) {
+                            document.write('<a href="/forms/DCACloud-SecOps-LDS-T1-ForbesInsightWP-Jan16.html?cid=em-ForbesWP_LDS_Jan2016-LR-03-f-01062016">');
+                        } 
+                        else if (window.location.search.indexOf('cmp=retargeting') > -1) {
+                            document.write('<a href="/forms/DCACloud-SecOps-Retargeting-ForbesInsightWP-Jan16.html?cid=rt-ForbesWP_Retarget_Jan2016-LR-03-f-01062016">');
+                        } 
+                       
+                        }
+                                               
+                        else {
+                            document.write('<a href="/forms/vulnerability-ponemon-survey-analyst-report.html">');
+                        }
+                </script>
+            
+            <img src="/content/dam/bmc/info/Ponemon-Report-254x329.jpg" alt="" style="    border-color: #F1F1F1;    border-width: 2px;    border-style: solid;">
+
+                <script>
+                        
+                        if (window.location.search.indexOf('cmp=lds') > -1) {
+                            document.write('<a href="/forms/DCACloud-SecOps-LDS-T1-ForbesInsightWP-Jan16.html?cid=em-ForbesWP_LDS_Jan2016-LR-03-f-01062016" class="btn-secondary">Download Ponemon Survey Results ›</a>');
+                        } 
+                        else if (window.location.search.indexOf('cmp=retargeting') > -1) {
+                            document.write('<a href="/forms/DCACloud-SecOps-Retargeting-ForbesInsightWP-Jan16.html?cid=rt-ForbesWP_Retarget_Jan2016-LR-03-f-01062016" class="btn-secondary">Download Ponemon Survey Results ›</a>');
+                        }
+                        
+                                              
+                        else {
+                            document.write('<a href=" /forms/vulnerability-ponemon-survey-analyst-report.html" class="btn-secondary">Download Ponemon Survey Results ›</a>');
+                        }
+                </script><a href=" /forms/vulnerability-ponemon-survey-analyst-report.html" class="btn-secondary" data-inc="1">Download Ponemon Survey Results ›</a>
+                
+                
             </div>
         </div>
-    </div>
-    
-    <div class="contact-us-large ">
-		<div class="contact-us_blk layout-inner-wrap">
-             <h2 data-aos-once="true" data-aos="zoom-out" class="aos-init">How can BMC help you be <em>first</em> in your industry?</h2>
-			 <a data-aos-once="true" data-aos="zoom-out" type="button" class="btn-lg learn-more aos-init" href="/forms/contact-bmc.html">Connect with BMC</a>
+    </header>
+
+
+</div>
+
+</div>
+<div class="CTAbar responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+		
+
+
+<section class="bg-seashell   ctabar">
+    <div class="layout-inner-wrap">
+        <div class="cta-content text-center">
+            
+
+            <div class="tagline">
+                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                    
+                    
+                    
+                </div>
+            </div>
+
+           
+			
+			   
+			 
+			    
+			 
+			
+			
+			   
+			 
+			    
+			 
+			
+
+            <!-- two buttons, one or more with headers -->
+            
+                <div class="ctabar__buttonwrap">
+                    <div class="flex-item ctabar__buttonwrap-item">
+                        <p class="ctabar__ctaheader">Start application mapping with BMC Helix Discovery</p>
+                        <a class="btn-secondary learn-more " href="http://staging.bmc.com/forms/bmc-discovery-free-trial-download.html?productInterest=helix%20discovery" data-ic-weighting="3" data-product-interest="Helix Discovery" data-ic-app-inclusion="gate" data-ic-target-persona="Director|Manager|IT Professional" data-product-line="DSM" data-ic-content-type="Trials" data-ic-topics="Multi-Cloud|Service Management" data-ic-buyer-stage="Buy" data-topics="Service Management" target="_blank" data-inc="2">Start a free trial</a>
+                    </div>
+                    <div class="flex-item ctabar__buttonwrap-item">
+                        <p class="ctabar__ctaheader">Let's talk about your needs</p>
+                        <a class="btn learn-more " href="http://staging.bmc.com/forms/contact-bmc.html?productInterest=helix%20discovery" data-ic-weighting="5" data-product-interest="Unknown" data-ic-app-inclusion="no" data-product-line="Unknown" target="_blank" data-inc="1">Contact BMC Sales</a>
+                    </div>
+                </div>
+            
+
+            <!-- one or two buttons, no headers -->
+            
+
         </div>
     </div>
+</section>
+
 </div>
+<div class="CTAbar responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+		
+
+
+<section class="bg-corduroy   ctabar">
+    <div class="layout-inner-wrap">
+        <div class="cta-content text-center">
+            <h2>Getting started with BMC Helix Discovery is easy</h2>
+
+            <div class="tagline">
+                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                    
+                    
+                    
+                </div>
+            </div>
+
+           
+			
+			   
+			 
+			    
+			 
+			
+			
+			   
+			 
+			    
+			 
+			
+
+            <!-- two buttons, one or more with headers -->
+            
+
+            <!-- one or two buttons, no headers -->
+            
+                <div class="text-center">
+                    <a class="btn-secondary learn-more" href="http://staging.bmc.com/forms/bmc-discovery-free-trial-download.html?productInterest=helix%20discovery" data-ic-weighting="3" data-product-interest="Helix Discovery" data-ic-app-inclusion="gate" data-ic-target-persona="Director|Manager|IT Professional" data-product-line="DSM" data-ic-content-type="Trials" data-ic-topics="Multi-Cloud|Service Management" data-ic-buyer-stage="Buy" data-topics="Service Management" target="_blank" data-inc="3">Start a free trial</a>
+                    <a class="btn learn-more" href="http://staging.bmc.com/forms/contact-bmc.html?productInterest=helix%20discovery" data-ic-weighting="5" data-product-interest="Unknown" data-ic-app-inclusion="no" data-product-line="Unknown" target="_blank" data-inc="2">Contact BMC Sales</a>
+                </div>
+            
+
+        </div>
+    </div>
+</section>
+
+</div>
+<nav class="product-finder-nav layout-inner-wrap">
+            <a class="btn btn-secondary" href="/it-solutions/free-product-trials.html" data-ic-weighting="5" data-product-interest="Unknown" data-ic-app-inclusion="no" data-product-line="XPL" data-topics="Service Management|Operations|Automation">Free Trials&nbsp;›</a>
+
+<a class="btn" href="/it-solutions/products-all.html" data-ic-weighting="5" data-product-interest="All PL Products" data-ic-app-inclusion="no" data-product-line="XPL" data-topics="Service Management|Operations|Mainframe|Automation">All Topics &amp; Products A-Z&nbsp;›</a>
+
+<a class="btn" data-form="" data-location="Top-Buttons" data-parent-id="289481851" href="https://stage.cms.bmc.com/forms/contact-bmc.html?productInterest=all%20pl%20products" data-ic-weighting="5" data-product-interest="Unknown" data-ic-app-inclusion="no" data-product-line="Unknown">Contact Sales&nbsp;›</a>
+
+
+        </nav>
 <?php include 'php-inc/foot.php'; ?>
