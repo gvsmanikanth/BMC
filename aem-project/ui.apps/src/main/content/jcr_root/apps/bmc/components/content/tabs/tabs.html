@@ -1,11 +1,17 @@
 <section data-sly-use.TabsModel="com.bmc.models.components.tabs.TabsModel">
+<!--WEB-5944 White background in Tabs for CSS Brand alignment START -->
+<sly data-sly-test="${properties.iswhitebg}">
+	   <sly data-sly-test.bgColor="tab-content-white"></sly>
+	</sly>
+<!--WEB-5944 White background in Tabs for CSS Brand alignment END -->
     <sly data-sly-test.TabID="${TabsModel.TabID}"/>
-    <div class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ">
+    <div class="${wcmmode.edit ? 'industry-tabs&#45;&#45;editing tab-wrapper bg-corduroy' : 'tab-wrapper bg-corduroy'} ${bgColor}">
         <h2 class="m0 text-center white">${properties.headerText @ context = 'html'}</h2>
         <ul class="tabs-nav bg-corduroy center-block overflow-none flex-table">
             <sly data-sly-list.tab="${TabsModel.tabs}">
                 <li class="p2 flex-cell n-col-${TabsModel.tabs.size}" data-sly-test="${tab.tabTitle}">
-                    <a class="white bold no-scroll" href="#tab-${TabID[tabList.index]}" onclick="">${tab.tabTitle @ context = 'html'}</a>
+                 <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
+                    <a class="white no-scroll" href="#tab-${TabID[tabList.index]}" onclick="">${tab.tabTitle @ context = 'html'}</a>
                 </li>
             </sly>
         </ul>

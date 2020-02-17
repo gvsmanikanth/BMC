@@ -132,7 +132,7 @@
 
 		&:hover,
 		&:active {
-			color: color(colorCorporateAction);
+			color: color(boston-blue);
 		}
 
 		&.link-view-all {
@@ -142,7 +142,7 @@
 
 			&:hover,
 			&:active {
-				color: darken(color(colorCorporateAction), 10);
+				color: color(colorCorporateAction);
 			}
 		}
 	}

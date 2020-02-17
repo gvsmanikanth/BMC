@@ -53,9 +53,12 @@
 	}
 
 	.truesight-tagline {
-		@include font-size(30);
+		@include font-size(24);
 		margin-top: .5em;
 		text-align: center;
+		@include media(breakpointLarge) {
+		  @include font-size(30);
+		}
 	}
 
 
@@ -577,21 +580,24 @@
 }
 
 .svg .truesight-icon-read:before {
-	background-image: url('icon-read.svg');
+	background-image: url('icon-read_1.svg');
+	height: 50px;
 	width: 60px;
 }
 .svg .truesight-icon-watch:before {
-	background-image: url('icon-watch.svg');
-	height: 37px;
-	width: 62px;
+	background-image: url('icon-watch_1.svg');
+	--height: 37px;
+	--width: 62px;
+	height: 50px;
+	width: 60px;
 
-	@include media(breakpointExtraLarge) {
+	/*@include media(breakpointExtraLarge) {
 		height: 47px;
 		width: 97px;
-	}
+	}*/
 }
 .svg .truesight-icon-explore:before {
-	background-image: url('icon-explore.svg');
+	background-image: url('icon-explore_1.svg');
 	height: 50px;
 	width: 60px;
 }
