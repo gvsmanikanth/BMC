@@ -325,9 +325,9 @@
 			@media (min-width: $break-md) {
 				max-width: 75%;
 			}			
-			li {
-				background: url(https://www.bmc.com/etc/clientlibs/bmc/head/bg-summary-li.png) left 4px no-repeat;
-			}
+			// li {
+			// 	--background: url(https://www.bmc.com/etc/clientlibs/bmc/head/bg-summary-li.png) left 4px no-repeat;
+			// }
 		}	
 		.btn{
 			border-radius: 0;
