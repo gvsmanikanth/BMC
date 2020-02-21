@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Customer Quote"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <html
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Header Text"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <compHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Enter Customer Quote Component Heading here"
+                                fieldLabel="Customer Quote Component Heading"
+                                name="./compHeading"
+                                required="{Boolean}true"
+                                value="Please enter customer quote heading here"/>
+                            <quoteItem
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                eaem-max-items="6"
+                                eaem-min-items="3"
+                                fieldDescription="Enter Minimum 3 items and Maximum 6 Items"
+                                fieldLabel="Customer Quote Items"
+                                validation="itemsCount">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    name="./quoteItem"
+                                    validation="itemCount"
+                                    wrapperClass="core-wcm-form-options-toggle-set">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <quoteTileRating
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                    class="rating"
+                                                    fieldDescription="Enter value in range 0-100. Each Star has a value of 20."
+                                                    fieldLabel="Quote Rating "
+                                                    name="./quoteTileRating"
+                                                    required="{Boolean}true"
+                                                    validation="ratingValue"/>
+                                                <quoteTileTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter Customer Quote Title here"
+                                                    fieldLabel="Quote Title"
+                                                    name="./quoteTileTitle"
+                                                    required="{Boolean}true"
+                                                    value="Please add customer quote title here"/>
+                                                <quoteTileDetails
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldDescription="Enter Customer Quote in detail here."
+                                                    fieldLabel="Quote Details"
+                                                    name="./quoteTileDetails"
+                                                    required="{Boolean}true"
+                                                    value="Please add description here"/>
+                                                <customerName
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter Customer Name here"
+                                                    fieldLabel="Customer Name"
+                                                    name="./customerName"
+                                                    required="{Boolean}true"
+                                                    value="Customer name here"/>
+                                                <customerDesignation
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldDescription="Enter Customer Designation here"
+                                                    fieldLabel="Customer Designation"
+                                                    name="./customerDesignation"
+                                                    required="{Boolean}true"
+                                                    value="Customer designation here"/>
+                                                <logoImagePath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Please select image path"
+                                                    fieldLabel="Select Logo Image Path"
+                                                    name="./logoImagePath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/dam"
+                                                    value="/content/dam/bmc/logos/third-party/ITCS-logo.png"/>
+                                                <quoteLink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Please Enter Customer Quote Link"
+                                                    fieldLabel="Quote Link"
+                                                    name="./quoteLink"
+                                                    required="{Boolean}true"
+                                                    value="Please enter quote link here"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </quoteItem>
+                        </items>
+                    </column>
+                </items>
+            </html>
+        </items>
+    </content>
+</jcr:root>
