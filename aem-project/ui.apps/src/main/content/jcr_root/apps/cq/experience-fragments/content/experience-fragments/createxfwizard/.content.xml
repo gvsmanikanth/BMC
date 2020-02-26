@@ -32,7 +32,7 @@
                     granite:id="createxf"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/form"
-                    action="/libs/cq/experience-fragments/content/experience-fragments/createxfwizard/jcr:content"
+                    action="/libs/cq/experience-fragments/content/v2/experience-fragments/createxfwizard/jcr:content"
                     foundationForm="{Boolean}true"
                     maximized="{Boolean}true"
                     method="post"
