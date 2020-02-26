@@ -31,9 +31,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select product to add"
                                                 fieldLabel="Education Products"
+                                                metadataName="EDUCATION_PRODUCTS"
                                                 multiple="true"
                                                 name="./education-products">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
@@ -44,9 +47,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select applicable version numbers"
                                                 fieldLabel="Version Numbers"
+                                                metadataName="EDUCATION_VERSION_NUMBERS"
                                                 multiple="true"
                                                 name="./education-version-numbers">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
@@ -57,9 +63,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select applicable roles"
                                                 fieldLabel="Education Broad Role"
+                                                metadataName="EDUCATION_BROAD_ROLES"
                                                 multiple="true"
                                                 name="./education-broad-roles">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
@@ -70,9 +79,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select applicable roles"
                                                 fieldLabel="Education Specific Role"
+                                                metadataName="EDUCATION_SPECIFIC_ROLES"
                                                 multiple="true"
                                                 name="./education-specific-role">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
@@ -83,9 +95,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select course delivery method"
                                                 fieldLabel="Course Delivery"
+                                                metadataName="COURSE_DELIVERY"
                                                 multiple="true"
                                                 name="./course-delivery">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
@@ -96,9 +111,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select course type"
                                                 fieldLabel="Course Type"
+                                                metadataName="EDUCATION_SPECIFIC_TYPES"
                                                 multiple="true"
                                                 name="./education-specific-types">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
