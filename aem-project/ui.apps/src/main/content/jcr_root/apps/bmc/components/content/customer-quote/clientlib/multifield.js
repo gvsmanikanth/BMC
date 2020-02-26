@@ -55,7 +55,7 @@ function checkRatingValue(form,ns){
     		count++;
 
         });
-    	if(count > 6 || count < 3){
+    	if((count > 0 && count < 3) || count > 6 ){
             isError=true;
             $items.css("border", "2px solid #FF0000");
             ns.ui.helpers.prompt({
