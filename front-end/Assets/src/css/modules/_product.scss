@@ -829,16 +829,52 @@
 	z-index:1;
 }
 
+
 // header-emphasis
 .layout-full-bleed.header-emphasis{
 	background-color: color(mediumOrange);
 	padding: 2em 0;
-
 	h1 {
 		color: #fff;
 		margin: 0;
 	}
 }
+
+// WEB-6677 update starts
+.layout-full-bleed.header-product-landing{
+	background-color: color(vividBlue);
+	padding: 0;
+	h1 {
+		color: #fff;
+		margin: 0;
+		align-self: center;
+		width: 85%;
+	}
+	.img-wrap{
+		padding-top: 5px;
+		img{
+			max-height: 125px;
+		}
+	}
+}
+.header-product-landing{
+	background-color: color(vividBlue);
+	padding: 0;
+	h1 {
+		color: #fff;
+		margin: 0;
+		align-self: center;
+		width: 85%;
+	}
+	.img-wrap{
+		padding-top: 5px;
+		img{
+			max-height: 125px;
+		}
+	}
+}
+
+// WEB-6677 update Ends
 
 .layout-full-bleed.product-finder-search {
 	background-color: color(seashell);
@@ -1155,7 +1191,7 @@
 					font-weight: 400;
 					text-align: center;
 					margin-bottom: 1em;
-					color: #414042
+					color: #4f5a65;
 				}
 			}
 		}

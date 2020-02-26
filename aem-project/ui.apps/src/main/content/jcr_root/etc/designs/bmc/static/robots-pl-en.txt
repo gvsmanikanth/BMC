@@ -52,6 +52,7 @@ Disallow: /support/reg
 Disallow: /info/dwdjosmhbn.html
 Disallow: /apps
 Disallow: /available
+Disallow: /test
 Disallow: *ty.PURL*
 Disallow: *?print*
 Sitemap: http://www.bmcsoftware.pl/sitemap.xml

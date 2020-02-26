@@ -53,7 +53,7 @@ include 'php-inc/svg.php';
 						<a href="http://www.bmc.com/info/LP-Demo-CTM.html" class="flex-item sm-col-4 shadow-top assetStripItem">
 							<div class="inner assetTxt">
 								<div class="flex-center">
-									<img src="//www.bmc.com/content/dam/bmc/images/Video_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
 									<div class="inner">
 										<h5>Demo:</h5>
 										<p>Customizable video</p>
@@ -65,7 +65,7 @@ include 'php-inc/svg.php';
 							<div class="inner assetTxt">
 								<div class="flex-center ">
 
-									<img src="//www.bmc.com/content/dam/bmc/images/Datasheet_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-read.png" alt="">
 									<div class="inner">
 										<h5>Datasheet:</h5>
 										<p>Control-M</p>
@@ -78,7 +78,7 @@ include 'php-inc/svg.php';
 							<div class="inner assetTxt">
 								<div class="flex-center">
 
-									<img src="//www.bmc.com/content/dam/bmc/images/AnalystReport_TEST.png" alt="">
+									<img src="//www.bmc.com/content/dam/bmc/solutions/icons/icon-explore.png" alt="">
 									<div class="inner">
 										<h5>Analyst report:</h5>
 										<p>Forrester's Total Economic Impact Study</p>
@@ -145,7 +145,7 @@ include 'php-inc/svg.php';
                 </figure>
             </div>
             <div class="flex-item col col-12 xs-col-6" >
-               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'><span class="smallHeading">Multi-Cloud</span>Migration</h2>
+               <h2 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='100'>Multi-Cloud Migration</h2>
                <h4 data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay='200'>Ensure your move to the cloud is painless</h4>
                <ul>
                   <li data-aos-once="true"  data-aos="fade-left" data-aos-anchor-placement="bottom-bottom" data-aos-delay='300'>
@@ -166,7 +166,7 @@ include 'php-inc/svg.php';
          </div>
       </div>
    </section>
-   <section class="flex flex-center section-wrap section1 sectionCommon" id="section3">
+   <section class="flex flex-center section-wrap sectionCommon section1" id="section3">
       <div class="flex-item section-content py4 layout-inner-wrap">
          <div class="md-flex flex flex-center full-bleed-two-column">
             <div class="flex-item col col-12 xs-col-6 pxr1">

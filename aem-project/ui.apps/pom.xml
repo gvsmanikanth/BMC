@@ -133,8 +133,13 @@
                         </embedded>
                     </embeddeds>
 
+<<<<<<< HEAD
                     <!-- WEB-6699 Removing ACS Commons and WCM Core Components from package build.
                      <subPackages>
+=======
+                    <!-- WEB-6804 Removing ACS Commons COntent package and WCM Core Components from build package
+                    <subPackages>
+>>>>>>> release/prod/4.1.8.2
                         <subPackage>
                             <groupId>com.adobe.acs</groupId>
                             <artifactId>acs-aem-commons-content</artifactId>
@@ -146,6 +151,7 @@
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>-->
+<<<<<<< HEAD
 					<!-- WEB-6761 Adding latest version of WCM Core Components from package build. -->
                      <subPackages>
                         <subPackage>
@@ -154,6 +160,9 @@
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
+=======
+
+>>>>>>> release/prod/4.1.8.2
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                     <properties>
                         <acHandling>merge_preserve</acHandling>
