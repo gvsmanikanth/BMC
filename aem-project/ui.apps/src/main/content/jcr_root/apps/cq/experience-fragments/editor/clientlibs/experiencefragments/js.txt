@@ -1,0 +1,13 @@
+#base=js
+
+
+# experience fragment component actions
+component/experiencefragments.js
+component/actions/actions.js
+component/actions/edit.xf.NEWTAB.js
+
+# editor integration
+editor/CQ.XF.js
+
+editor/actions/edit.EditableActions.XFCONVERT.js
+editor/actions/convert.js

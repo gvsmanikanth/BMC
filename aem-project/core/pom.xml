@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.bmc</groupId>
         <artifactId>DXP</artifactId>
-        <version>4.1.8</version>
+        <version>0.0.1_SNAPSHOT</version>
     </parent>
     <properties>
         <properties.basedir>${basedir}/../properties</properties.basedir>
@@ -167,9 +167,9 @@
                     <instructions>
                         <!-- Export packages that should be visible to other bundles and JSPs -->
                         <Export-Package>
-                            com.bmc.components,
-                            com.bmc.components.utils,
-                            com.bmc.models,
+                            com.bmc.components.*,
+                            com.bmc.components.utils.*,
+                            com.bmc.models.*,
                             {local-packages},
                             org.owasp.encoder,
                             org.json.simple,

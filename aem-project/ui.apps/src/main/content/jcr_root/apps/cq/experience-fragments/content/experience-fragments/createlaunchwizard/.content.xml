@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="AEM Experience Fragments | Create Launch"
+        sling:resourceType="granite/ui/components/coral/foundation/page">
+        <head jcr:primaryType="nt:unstructured">
+            <viewport
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/admin/page/viewport"/>
+            <favicon
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/page/favicon"/>
+            <clientlibs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/includeclientlibs"
+                categories="[coralui3,granite.ui.coral.foundation,cq.sites.createlaunch]"/>
+        </head>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/page/body">
+            <items jcr:primaryType="nt:unstructured">
+                <form
+                    granite:class="cq-sites-createlaunch-form"
+                    granite:comment="We set &quot;novalidate&quot; = true as the wizard is doing validation already, to avoid double validation"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form"
+                    action="/bin/wcmcommand"
+                    foundationForm="{Boolean}true"
+                    maximized="{Boolean}true"
+                    method="post"
+                    novalidate="{Boolean}true"
+                    style="vertical">
+                    <successresponse
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Success"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/responses/openprompt"
+                        open="/bin/wcmcommand?cmd=open&amp;_charset_=utf-8&amp;path={Path}"
+                        redirect="${empty param.redirect ? &quot;/aem/experience-fragments.html&quot; : param.redirect}${empty param.redirect ? granite:encodeURIPath(requestPathInfo.suffix) : &quot;&quot;}"
+                        text="The Launch was created."/>
+                    <items jcr:primaryType="nt:unstructured">
+                        <cmd
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                            name="cmd"
+                            value="createLaunch"/>
+                        <charset
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                            name="_charset_"
+                            value="utf-8"/>
+                        <wizard
+                            granite:class="cq-sites-createlaunch-wizard"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Create Launch"
+                            sling:resourceType="granite/ui/components/coral/foundation/wizard"
+                            cancelHref="${empty header.Referer ? granite:concat(&quot;/aem/experience-fragments.html&quot;, granite:encodeURIPath(requestPathInfo.suffix)) : header.Referer}">
+                            <items jcr:primaryType="nt:unstructured">
+                                <source
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Select Source"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    maximized="{Boolean}true"
+                                    name="srcPath"
+                                    required="{Boolean}true">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        foundation-validation-ui="none"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <default
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/actionbar">
+                                            <primary jcr:primaryType="nt:unstructured">
+                                                <create
+                                                    granite:class="foundation-picker-control"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/button"
+                                                    icon="add"
+                                                    text="Add Pages"
+                                                    title="Add Pages"
+                                                    variant="actionBar">
+                                                    <granite:data
+                                                        jcr:primaryType="nt:unstructured"
+                                                        foundation-picker-control-action="\{&quot;name&quot;:&quot;cq.sites.createlaunch.addpages&quot;,&quot;data&quot;:{}}"
+                                                        foundation-picker-control-src="/mnt/overlay/cq/gui/content/coral/common/form/pagefield/picker.html?root=%2Fcontent%2Fexperience-fragments&amp;selectionCount=multiple&amp;exclude=${granite:encodeURIComponent(&quot;/content/(catalogs|dam|launches|mac|publications|usergenerated|communities|community-components|community-templates|forms|projects|phonegap|mobileapps|entities|versionhistory)(/.*)?&quot;)}"/>
+                                                </create>
+                                                <deleteobject
+                                                    granite:class="foundation-collection-action foundation-collection-action-delete"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/collection/action"
+                                                    icon="delete"
+                                                    rel="cq-projects-admin-actions-delete-link-activator"
+                                                    text="Delete"
+                                                    title="Delete"
+                                                    toggle="modal"
+                                                    variant="actionBar"/>
+                                            </primary>
+                                        </default>
+                                        <field
+                                            granite:class="cq-sites-createlaunch-sourcecollection"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/table"
+                                            layoutId="table"
+                                            selectionCount="multiple"
+                                            selectionMode="row">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-mode-group="cq-common-admin-childfacets"/>
+                                            <columns jcr:primaryType="nt:unstructured">
+                                                <select
+                                                    jcr:primaryType="nt:unstructured"
+                                                    select="{Boolean}true"/>
+                                                <pagename
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Page Name"
+                                                    class="header-item-page-name"/>
+                                                <published
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Published"
+                                                    class="header-item-published"/>
+                                                <modifiedby
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Modified by"
+                                                    class="header-item-modifiedby"/>
+                                                <modifieddate
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Modified date"
+                                                    class="header-item-modifieddate"/>
+                                                <includesubpages
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Include subpages"
+                                                    class="header-item-includesubpages"/>
+                                            </columns>
+                                            <datasource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/common/wcm/datasources/childpages"/>
+                                        </field>
+                                    </items>
+                                    <parentConfig jcr:primaryType="nt:unstructured">
+                                        <next
+                                            granite:class="foundation-wizard-control"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            disabled="{Boolean}true"
+                                            text="Next"
+                                            variant="primary">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-wizard-control-action="next"/>
+                                        </next>
+                                    </parentConfig>
+                                </source>
+                                <properties
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Properties"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <properties
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                            margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <thumbnail
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/coral/common/wcm/pagethumbnail"
+                                                    class="cq-siteadmin-admin-createlaunch-thumbnail"
+                                                    forcePage="{Boolean}true"
+                                                    page="${empty param.item ? requestPathInfo.suffix : param.item}"/>
+                                                <fields
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Provide a name for your launch."
+                                                            fieldLabel="Launch Title"
+                                                            name="title"
+                                                            required="{Boolean}true"/>
+                                                        <page
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+                                                            fieldLabel="Create Launch"
+                                                            name="page"
+                                                            vertical="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <existing
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                                    checked="{Boolean}true"
+                                                                    text="with existing content"
+                                                                    value="copy"/>
+                                                                <new
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                                    text="using a new template to replace the page"
+                                                                    value="new"/>
+                                                            </items>
+                                                        </page>
+                                                        <liveCopy
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            checked="{Boolean}true"
+                                                            fieldDescription="Make the launch a Live Copy so every update of the source page will automatically be kept in sync with the corresponding launch page."
+                                                            name="isLiveCopy"
+                                                            text="Inherit source page live data"
+                                                            value="true"/>
+                                                        <sourceRolloutConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="sourceRolloutConfigs"
+                                                            value="/etc/msm/rolloutconfigs/pushonmodify"/>
+                                                        <sourceRolloutConfigShallow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="sourceRolloutConfigs"
+                                                            value="/etc/msm/rolloutconfigs/pushonmodifyshallow"/>
+                                                        <promoteRolloutConfig
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="promoteRolloutConfigs"
+                                                            value="/etc/msm/rolloutconfigs/launch"/>
+                                                        <liveDate
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                            displayedFormat="YYYY-MM-DD HH:mm"
+                                                            displayTimezoneMessage="{Boolean}true"
+                                                            fieldDescription="Select the date the launch is planned to be promoted on. To auto-promote and publish on this date, the launch must be marked production-ready."
+                                                            fieldLabel="Launch Date"
+                                                            minDate="today"
+                                                            name="liveDate"
+                                                            type="datetime"/>
+                                                        <hiddenSrcPath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                            name="srcPath"
+                                                            value="${param.source}">
+                                                            <granite:rendercondition
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/renderconditions/simple"
+                                                                expression="${not empty param.source}"/>
+                                                        </hiddenSrcPath>
+                                                    </items>
+                                                </fields>
+                                            </items>
+                                        </properties>
+                                    </items>
+                                    <parentConfig jcr:primaryType="nt:unstructured">
+                                        <next
+                                            granite:class="foundation-wizard-control"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            disabled="{Boolean}true"
+                                            text="Create"
+                                            type="submit"
+                                            variant="primary">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-wizard-control-action="next"/>
+                                        </next>
+                                    </parentConfig>
+                                </properties>
+                                <template
+                                    granite:class="cq-sites-createlaunch-template"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Select Template"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/advancedselect"
+                                    maximized="{Boolean}true"
+                                    name="template"
+                                    required="{Boolean}true">
+                                    <granite:data
+                                        jcr:primaryType="nt:unstructured"
+                                        foundation-validation-ui="none"/>
+                                    <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/masonry"
+                                        selectionCount="single"
+                                        selectionMode="{Boolean}true">
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/siteadmin/admin/templatedatasource"
+                                            itemResourceType="cq/gui/components/siteadmin/admin/createpagewizard/templatecard"
+                                            path="${requestPathInfo.suffix}"/>
+                                    </field>
+                                    <parentConfig jcr:primaryType="nt:unstructured">
+                                        <next
+                                            granite:class="foundation-wizard-control"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/button"
+                                            disabled="{Boolean}true"
+                                            text="Create"
+                                            type="submit"
+                                            variant="primary">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                foundation-wizard-control-action="next"/>
+                                        </next>
+                                    </parentConfig>
+                                </template>
+                            </items>
+                        </wizard>
+                    </items>
+                </form>
+            </items>
+        </body>
+    </jcr:content>
+</jcr:root>

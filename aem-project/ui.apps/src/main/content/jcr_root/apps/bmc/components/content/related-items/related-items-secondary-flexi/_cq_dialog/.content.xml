@@ -66,7 +66,6 @@
                                 fieldDescription="Description (HTML)"
                                 fieldLabel="Description"
                                 name="./description"/>
-                           
                             <listItems
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"

@@ -1,0 +1,68 @@
+<!--
+  * ADOBE CONFIDENTIAL
+  * __________________
+  *
+  * Copyright 2016 Adobe Systems Incorporated
+  * All Rights Reserved.
+  *
+  * NOTICE:  All information contained herein is, and remains
+  * the property of Adobe Systems Incorporated and its suppliers,
+  * if any.  The intellectual and technical concepts contained
+  * herein are proprietary to Adobe Systems Incorporated and its
+  * suppliers and are protected by trade secret or copyright law.
+  * Dissemination of this information or reproduction of this material
+  * is strictly forbidden unless prior written permission is obtained
+  * from Adobe Systems Incorporated.
+  ************************************************************************** -->
+<sly data-sly-use.item="com.adobe.cq.xf.ui.ExperienceFragmentConsoleItem" data-sly-use.helper="../viewhelper.js">
+    <coral-card variant = "${item.isFolder && 'inverted'}"
+            class="foundation-collection-navigator marker"
+            data-type="${item.resourceType}"
+            data-foundation-collection-navigator-href="${helper.navigatorHref}"
+            fixedwidth>
+        <coral-card-content>
+            <coral-card-context class="coral-Card-context" data-sly-test="${item.isFolder}">
+                ${'Folder' @ i18n, locale=request.locale}
+            </coral-card-context>
+            <coral-card-context class="coral-Card-context" data-sly-test="${item.isLiveCopy}">${'Live Copy' @ i18n, locale=request.locale}</coral-card-context>
+            <coral-card-title>
+                ${item.title}
+                <div class="foundation-collection-item-title" hidden>${resource.path}</div>
+            </coral-card-title>
+            <coral-card-asset class="card-type" style="background-color: white;">
+                <img data-sly-test="${!item.isFolder}" src="${item.path}.thumb.800.480.png"
+                     alt="${'Type icon' @ i18n, locale=request.locale}">
+            </coral-card-asset>
+            <coral-card-info data-sly-test="${item.isNew && !item.isFolder}}">
+                <coral-tag color="blue" class="u-coral-pullRight">${'New' @ i18n, locale=request.locale}</coral-tag>
+            </coral-card-info>
+            <coral-card-propertylist>
+                <coral-card-property icon="edit"
+                                     title="${'Modified' @ i18n, locale=request.locale}"
+                                     data-sly-test="${item.lastModified}">
+                    <time datetime="${item.lastModified.timeInMillis || 0}"
+                          data-sly-use.modified="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.lastModified, relativeFormat='r'}">
+                        ${modified.date}
+                    </time>
+                </coral-card-property>
+                <coral-card-property icon="globe" title="${'Published' @ i18n, locale=request.locale}"
+                                     data-sly-test="${item.publishedDate && !item.isFolder}">
+                    <time datetime="${item.publishedDate.timeInMillis || 0}"
+                          data-sly-use.published="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.publishedDate, relativeFormat='r'}">
+                        ${published.date}
+                    </time>
+                </coral-card-property>
+                <coral-card-property icon="globeRemove"
+                                     data-sly-test="${!item.publishedDate && !item.isFolder}">
+                    ${'Not published' @ i18n, locale=request.locale}
+                </coral-card-property>
+            </coral-card-propertylist>
+        </coral-card-content>
+    </coral-card>
+
+    <coral-quickactions data-sly-test="${helper.selectable}" target="_prev">
+        <coral-quickactions-item
+                class="foundation-collection-item-activator"
+                icon="check">${'Select' @ i18n, locale=request.locale}</coral-quickactions-item>
+    </coral-quickactions>
+</sly>

@@ -1,0 +1,47 @@
+<!--/*
+  ADOBE CONFIDENTIAL
+
+  Copyright 2016 Adobe Systems Incorporated
+  All Rights Reserved.
+
+  NOTICE:  All information contained herein is, and remains
+  the property of Adobe Systems Incorporated and its suppliers,
+  if any.  The intellectual and technical concepts contained
+  herein are proprietary to Adobe Systems Incorporated and its
+  suppliers and may be covered by U.S. and Foreign Patents,
+  patents in process, and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from Adobe Systems Incorporated.
+*/-->
+<sly data-sly-use.item="com.adobe.cq.xf.ui.ExperienceFragmentConsoleItem"/>
+<tr class="foundation-collection-item ${(item.folder || item.experienceFragmentRoot) && 'foundation-collection-navigator'}"
+    data-foundation-collection-item-id="${resource.path}" data-path="${resource.path}"
+    data-type="${item.resourceType}"
+    data-foundation-collection-navigator-href="/aem/experience-fragments.html${resource.path}"
+    data-timeline="true" is="coral-table-row" data-title="${item.title}">
+    <td is="coral-table-cell" coral-table-rowselect>
+        <coral-icon data-sly-test.needsFolderIcon="${item.folder}" class="foundation-collection-item-thumbnail" icon="folder"/>
+        <img data-sly-test="${!needsFolderIcon}" class="foundation-collection-item-thumbnail" src="${item.path}.thumb.128.128.png" alt="">
+    </td>
+    <td is="coral-table-cell" value="${item.title}">
+        ${item.title}
+    </td>
+    <td is="coral-table-cell" value="${item.lastModified.timeInMillis || 0}">
+        <time datetime="${item.lastModified.timeInMillis || 0}"
+              data-sly-use.modified="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.lastModified, relativeFormat='r'}">
+            ${modified.date}
+        </time>
+    </td>
+    <td is="coral-table-cell" value="${item.publishedDate.timeInMillis || 0}">
+        <time data-sly-test.published="${item.publishedDate}" datetime="${item.publishedDate.timeInMillis || 0}"
+              data-sly-use.published="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.publishedDate, relativeFormat='r'}">
+            ${published.date}
+        </time>
+        <span data-sly-test="${!published}" >${'Not published' @ i18n}</span>
+        <meta class="foundation-collection-quickactions" data-foundation-collection-quickactions-rel="${item.quickactionsRel @join=' '}">
+    </td>
+    <td is="coral-table-cell" alignment="right">
+        <button is="coral-button" variant="minimal" icon="dragHandle" coral-table-roworder></button>
+    </td>
+</tr>
