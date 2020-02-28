@@ -95,7 +95,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     /**
      * Restricted form fields
      * These fields are part of the authored form data and may not be submitted as part of the form post.
-     * Filter post data so these are not passed on when posted form submission to webmethods.
+     * BmcContentFilter post data so these are not passed on when posted form submission to webmethods.
      */
     private static final List<String> restrictedFormParameters;
     static {
