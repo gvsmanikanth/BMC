@@ -144,7 +144,7 @@
     <en_ca
         jcr:primaryType="nt:unstructured"
         country="Canada"
-        language="English"/>
+        language="English (Canada)"/>
     <en_gb
         jcr:primaryType="nt:unstructured"
         country="United Kingdom"
@@ -152,11 +152,11 @@
     <en_ie
         jcr:primaryType="nt:unstructured"
         country="Ireland"
-        language="English"/>
+        language="English (Ireland)"/>
     <en_in
         jcr:primaryType="nt:unstructured"
         country="India"
-        language="English"/>
+        language="English (India)"/>
     <en_nz
         jcr:primaryType="nt:unstructured"
         country="New Zealand"
@@ -168,7 +168,7 @@
     <en_za
         jcr:primaryType="nt:unstructured"
         country="South Africa"
-        language="English"/>
+        language="English (South Africa)"/>
     <es
         jcr:primaryType="nt:unstructured"
         country="*"
