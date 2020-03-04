@@ -1,6 +1,5 @@
 a {
-	--color: color(colorCorporateAction);
-	color: #046e96;
+	color: color(curious-blue);
 	text-decoration: none;
 	@include transition((property: color));
 	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
