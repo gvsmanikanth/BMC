@@ -333,7 +333,7 @@
     text-indent: -1.3em;
     padding-left: 1.3em;
     .btn, .btn-secondary, .learn-more, a{
-      text-indent: initial;
+      text-indent: 0px;
     }
     &:before {
       content: '';
