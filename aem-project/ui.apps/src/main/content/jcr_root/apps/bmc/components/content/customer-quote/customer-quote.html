@@ -1,8 +1,8 @@
 <style>
-.info {
+.quote-section .info {
     width: 65%;
 }
-.logo {
+.quote-section .logo {
     width: 35%;
 }
 @media (max-width: 640px){
@@ -11,35 +11,38 @@
 	}
 }
 </style>
-<section class="quote-section js-eh">
-	<div class="layout-inner-wrap">
-		<h2 class="text-center">${properties.compHeading}</h2><br>
-	</div>
-    <div class="owl-carousel-quote">
-        <sly data-sly-use.customerQuotes="com.bmc.models.CustomerQuoteModel">
-            <sly data-sly-list.head="${customerQuotes.quoteItem.listChildren}"> 
-                <div class="item">
-                    <a href="${head.quoteLink @ context='uri'}" target="_blank">
-                        <div class="quote js-ehItem">
-                            <div class="star-ratings-sprite" >
-                                <span style="width:${head.quoteTileRating @ context='html'}%; " class="star-ratings-sprite-rating"></span>
-                            </div>				
-                            <h4>${head.quoteTileTitle}</h4>
-                            <hr>
-                            <p>${head.quoteTileDetails} <span class="more">More</span></p>
-                            <div class="quote-footer flex-wrap">
-                                <div class="info">
-                                    <p><strong>${head.customerName}</strong></p>
-                                    <p>${head.customerDesignation}</p>
-                                </div>
-                                <div class="logo">
-                                    <img src="${head.logoImagePath}" alt="ITCS-logo" style="max-width:150px">
+<section class="quote-section js-eh ${properties.bgcolor}">
+	<div data-sly-test=${!properties.compHeading}>Add values in Dialog</div>
+	<div class="layout-wrapper">
+        <div class="layout-inner-wrap">
+            <h2 class="text-center">${properties.compHeading}</h2><br>
+        </div>
+        <div class="owl-carousel-quote">
+            <sly data-sly-use.customerQuotes="com.bmc.models.CustomerQuoteModel">
+                <sly data-sly-list.head="${customerQuotes.quoteItem.listChildren}"> 
+                    <div class="item">
+                        <a href="${head.quoteLink @ context='uri'}" target="_blank">
+                            <div class="quote js-ehItem">
+                                <div class="star-ratings-sprite" >
+                                    <span style="width:${head.quoteTileRating @ context='html'}%; " class="star-ratings-sprite-rating"></span>
+                                </div>				
+                                <h4>${head.quoteTileTitle}</h4>
+                                <hr>
+                                <p>${head.quoteTileDetails} <span class="more">More</span></p>
+                                <div class="quote-footer flex-wrap">
+                                    <div class="info">
+                                        <p><strong>${head.customerName}</strong></p>
+                                        <p>${head.customerDesignation}</p>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="${head.logoImagePath}" alt="ITCS-logo" style="max-width:150px">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div> 
-           </sly>
-        </sly>	   
+                        </a>
+                    </div> 
+               </sly>
+            </sly>	   
+        </div>
 	</div>
 </section>
