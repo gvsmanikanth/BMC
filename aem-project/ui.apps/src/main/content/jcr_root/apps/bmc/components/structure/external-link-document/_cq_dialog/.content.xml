@@ -358,6 +358,12 @@
                                                         value="inline"/>
                                                 </items>
                                             </documentDisplayType>
+                                            <documentTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the document title"
+                                                fieldLabel="Document Title"
+                                                name="./documentTitle"/>
                                         </items>
                                     </metadata>
                                 </items>

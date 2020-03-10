@@ -1,9 +1,3 @@
-<sly data-sly-test="${properties.documentTitle}">
-<sly data-sly-test.documentTitle="${properties.documentTitle}"/>
-</sly>
-<sly data-sly-test="${!properties.documentTitle}">
-<sly data-sly-test.documentTitle="${properties.pageTitle}"/>
-</sly>
 <sly data-sly-test="${properties.assetsHeadingPrefix}">
 <sly data-sly-test.assetsHeadingPrefix="${properties.assetsHeadingPrefix}"/>
 </sly>
@@ -13,4 +7,4 @@
 <sly data-sly-test="${!properties.customAssetHeading && !properties.assetsHeadingPrefix}">
 <sly data-sly-test.assetsHeadingPrefix="Document"/>
 </sly>
-Download ${documentTitle @ context = 'html'} ${assetsHeadingPrefix}
+ ${assetsHeadingPrefix}

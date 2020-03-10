@@ -4,10 +4,25 @@
 	<sly data-sly-test="${properties.documentType =='search'}">
 	  <sly data-sly-test.documentLink="${properties.linkAbstractorDAMAsset}"></sly>
 	</sly>
-
+<sly data-sly-test="${properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.documentTitle}"/>
+</sly>
+<sly data-sly-test="${!properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.pageTitle}"/>
+</sly>
 <sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
 
-<sly data-sly-resource="${'external-document-data' @ resourceType='bmc/components/content/external-document-data',addSelectors='header'}"></sly>
+<div class="page-campaign-landing">
+<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg'); background-position: top;">
+	<div class="layout-inner-wrap">
+		<div class="offset-hero-clear">
+			<div class="offset-hero-inner-wrap">
+                <h1 style="font-weight: normal;"> ${documentTitle @ context = 'html'}</h1>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
 <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
 <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
@@ -18,7 +33,7 @@
 				<a href="${documentLink}" alt="Download PDF" title="Download PDF" 
 				style="/*! display: inline-block; */" target="_blank" 
 				class="link-icon-resource-document mb2 text-right inline-block">  
-				<sly data-sly-resource="${'external-document-data' @ resourceType='bmc/components/content/external-document-data',addSelectors='title'}"></sly>
+				Download ${documentTitle @ context = 'html'}<sly data-sly-resource="${'external-document-data' @ resourceType='bmc/components/content/external-document-data',addSelectors='title'}"></sly>
 				</a>
 			</div>
 			<div class="md-flex full-bleed-two-column">
