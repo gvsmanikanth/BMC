@@ -341,6 +341,23 @@
                                                 defaultValue="external-document"
                                                 name="./linkAbstractor"
                                                 value="external-document"/>
+                                            <documentDisplayType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Choose the Document Container display type."
+                                                fieldLabel="Document Container display type."
+                                                name="./displayType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <item1
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Old view (Jump page)"
+                                                        value="default"/>
+                                                    <item2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Inline (New Layout)"
+                                                        value="inline"/>
+                                                </items>
+                                            </documentDisplayType>
                                         </items>
                                     </metadata>
                                 </items>

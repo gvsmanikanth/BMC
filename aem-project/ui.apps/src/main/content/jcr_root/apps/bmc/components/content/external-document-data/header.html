@@ -1,0 +1,17 @@
+<sly data-sly-test="${properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.documentTitle}"/>
+</sly>
+<sly data-sly-test="${!properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.pageTitle}"/>
+</sly>
+<div class="page-campaign-landing">
+<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg'); background-position: top;">
+	<div class="layout-inner-wrap">
+		<div class="offset-hero-clear">
+			<div class="offset-hero-inner-wrap">
+                <h1 style="font-weight: normal;"> ${documentTitle @ context = 'html'}</h1>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
