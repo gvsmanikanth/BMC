@@ -10,4 +10,7 @@
 <sly data-sly-test="${properties.customAssetHeading}">
 <sly data-sly-test.assetsHeadingPrefix="${properties.customAssetHeading}"/>
 </sly>
+<sly data-sly-test="${!properties.customAssetHeading && !properties.assetsHeadingPrefix}">
+<sly data-sly-test.assetsHeadingPrefix="Document"/>
+</sly>
 Download ${documentTitle @ context = 'html'} ${assetsHeadingPrefix}
