@@ -4,13 +4,8 @@
 	<sly data-sly-test="${properties.documentType =='search'}">
 	  <sly data-sly-test.documentLink="${properties.linkAbstractorDAMAsset}"></sly>
 	</sly>
-<sly data-sly-test="${properties.displayType == 'default'}">
-<sly data-sly-resource="${'video2' @ resourceType='bmc/components/structure/video2'}"></sly>
-</sly>
 
-<sly data-sly-test="${properties.displayType == 'inline'}">
 <sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
-
 
 <sly data-sly-resource="${'external-document-data' @ resourceType='bmc/components/content/external-document-data',addSelectors='header'}"></sly>
 <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
@@ -56,4 +51,3 @@ document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
 </div></div></section></div></section></div>
 <sly data-sly-include="/apps/bmc/components/structure/page/customfooterlibs.html" />
 <sly data-sly-resource="${'standardfooter' @ resourceType='bmc/components/structure/standardfooter'}"></sly>
-</sly>
