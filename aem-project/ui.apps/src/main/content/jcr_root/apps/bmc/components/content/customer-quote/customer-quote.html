@@ -11,7 +11,11 @@
 	}
 }
 </style>
-<section class="quote-section js-eh ${properties.bgcolor}">
+<sly data-sly-test.backGroundClass="bg-seashell"></sly>
+<sly data-sly-test="${properties.bgcolor}">
+	<sly data-sly-test.backGroundClass="${properties.bgcolor}"/>
+</sly>
+<section class="quote-section js-eh ${backGroundClass}">
 	<div data-sly-test=${!properties.compHeading}>Add values in Dialog</div>
 	<div class="layout-wrapper">
         <div class="layout-inner-wrap">
