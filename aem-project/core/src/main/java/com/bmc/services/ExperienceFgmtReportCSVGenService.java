@@ -85,8 +85,9 @@ public class ExperienceFgmtReportCSVGenService {
        
     private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 	
-    private String[] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date","Migration Content ID","Migration Content Name","Migration Content Type"
-    		,"Form Name","Form ID", "FieldSet References"};
+    private static String [] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date"
+		,"FieldSet References"};
+    	
 	
 	
 	 /*
@@ -155,18 +156,7 @@ public class ExperienceFgmtReportCSVGenService {
 							            		 for (Hit hit : result.getHits()) {
 							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 			Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);
-							            	 			if(fieldSetNode != null)
-							            	 			{
-							            	 				//field set values retrieval 
-							            	 				reportDataItem.setFieldSetAuthor(getPropertyValues(fieldSetNode, "author","author","author",session));
-								            	 			reportDataItem.setFormid(getPropertyValues(fieldSetNode, "formid","formid","formid",session));
-								            	 			reportDataItem.setFormname(getPropertyValues(fieldSetNode, "formname","formname","formname",session));
-								            	 			reportDataItem.setTitle(getPropertyValues(fieldSetNode, "title","title","title",session));
-								            	 			reportDataItem.setMigration_content_id(getPropertyValues(fieldSetNode, "migration_content_id","migration_content_id","migration_content_id",session));
-								            	 			reportDataItem.setMigration_content_name(getPropertyValues(fieldSetNode, "migration_content_name","migration_content_name","migration_content_name",session));
-								            	 			reportDataItem.setMigration_content_type(getPropertyValues(fieldSetNode, "migration_content_type","migration_content_type","migration_content_type",session));
-							            	 			}
+							            	 			Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);         	 			
 							            	 			reportDataItem.setExp_Fragment_Name(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
 							            	 			reportDataItem.setLastModifiedBy(getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
 							            	 			reportDataItem.setLastModifiedDate(getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
@@ -207,8 +197,9 @@ public class ExperienceFgmtReportCSVGenService {
 			for(int i=2;i<list.size();i++)
 			{
 				Integer count = i; 
-				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getExp_Fragment_Name(),list.get(i).getLastModifiedBy(),list.get(i).getLastModifiedDate(),list.get(i).getCreated_Date(),
-					 list.get(i).getMigration_content_id(),list.get(i).getMigration_content_name(),list.get(i).getMigration_content_type(),list.get(i).getFormname(),list.get(i).getFormid(),list.get(i).getReferencePaths()});			
+				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getExp_Fragment_Name(),
+						 list.get(i).getLastModifiedBy(),list.get(i).getLastModifiedDate(),list.get(i).getCreated_Date(),
+						 list.get(i).getReferencePaths()});			
 			}
 			
 			//Iterate over data and write to sheet
@@ -272,9 +263,25 @@ public class ExperienceFgmtReportCSVGenService {
 	     //For form fielsets and Customer Spptlight experience fargment
 	     map.put("property", "sling:resourceType"); //the property to check for
 	     map.put("property.operation", "equals"); // or like or like etc..
-	     map.put("property.value", "bmc/components/forms/field-set"); 	     
+	     map.put("property.value", "bmc/components/forms/field-set");
+	     map.put("property", "or");
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "bmc/components/content/customer-spotlight"); 	
+	     map.put("property", "or");
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "bmc/components/content/CTAbutton"); 	
+	     map.put("property", "or");
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "bmc/components/content/related-items/related-items-secondary"); 
+	     map.put("property", "or");
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "bmc/components/content/featured-asset"); 	
 	     return map;
-	     // can be done in map or with Query methods	    
+	     // can be done in map or with Query methods	        
 	 }
 	 
 	 /*
@@ -555,6 +562,8 @@ public class ExperienceFgmtReportCSVGenService {
          		 }
          		return node;
 	 }
+	 
+	
 }
 
 
