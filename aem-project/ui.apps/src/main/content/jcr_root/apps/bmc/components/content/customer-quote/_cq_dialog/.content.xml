@@ -23,14 +23,6 @@
                                 multiple="{Boolean}false"
                                 name="./bgcolor">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <transparent
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Transparent"
-                                        value=""/>
-                                    <white
-                                        jcr:primaryType="nt:unstructured"
-                                        text="White"
-                                        value="bg-white"/>
                                     <lightgrey
                                         jcr:primaryType="nt:unstructured"
                                         text="Light Grey"
