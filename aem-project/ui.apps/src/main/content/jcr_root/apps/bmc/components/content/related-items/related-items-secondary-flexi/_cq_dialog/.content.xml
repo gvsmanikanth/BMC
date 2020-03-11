@@ -75,10 +75,6 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                     name="./items">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
                                             jcr:primaryType="nt:unstructured"

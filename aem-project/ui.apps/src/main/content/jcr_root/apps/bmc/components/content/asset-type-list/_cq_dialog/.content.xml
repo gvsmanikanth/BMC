@@ -89,95 +89,95 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
                                                 value="Datasheets"/>
-                                             <white-paper
+                                            <white-paper
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White paper"
                                                 value="White paper"/>
-                                             <white-papers
+                                            <white-papers
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White papers"
                                                 value="White papers"/>
-                                             <solution-overview
+                                            <solution-overview
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overview"
                                                 value="Solution overview"/>
-                                             <solution-overviews
+                                            <solution-overviews
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overviews"
                                                 value="Solution overviews"/>
-                                             <solution-brief
+                                            <solution-brief
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution brief"
                                                 value="Solution brief"/>
-                                             <solution-briefs
+                                            <solution-briefs
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution briefs"
                                                 value="Solution briefs"/>
-                                             <analyst-research
+                                            <analyst-research
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Analyst research"
                                                 value="Analyst research"/>
-                                             <case-study
+                                            <case-study
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case study"
                                                 value="Case study"/>
-                                             <case-studies
+                                            <case-studies
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case studies"
                                                 value="Case studies"/>
-                                             <customer-story
+                                            <customer-story
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer story"
                                                 value="Customer story"/>
-                                             <customer-stories
+                                            <customer-stories
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer stories"
                                                 value="Customer stories"/>
-                                             <video
+                                            <video
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Video"
                                                 value="Video"/>
-                                             <videos
+                                            <videos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Videos"
                                                 value="Videos"/>
-                                             <demo
+                                            <demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demo"
                                                 value="Demo"/>
-                                             <demos
+                                            <demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demos"
                                                 value="Demos"/>
-                                             <on-demand-demo
+                                            <on-demand-demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demo"
                                                 value="On-demand demo"/>
-                                             <on-demand-demos
+                                            <on-demand-demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demos"
                                                 value="On-demand demos"/>
-                                             <webinar
+                                            <webinar
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinar"
                                                 value="Webinar"/>
-                                             <webinars
+                                            <webinars
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinars"
                                                 value="Webinars"/>
-                                             <e-book
+                                            <e-book
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Book"
                                                 value="E-Book"/>
-                                             <e-books
+                                            <e-books
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Books"
                                                 value="E-Books"/>
-                                             <infographic
+                                            <infographic
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographic"
                                                 value="Infographic"/>
-                                             <infographics
+                                            <infographics
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographics"
                                                 value="Infographics"/>
@@ -199,10 +199,6 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                             name="./assetLinks1"
                                             wrapperClass="core-wcm-form-options-toggle-set">
-                                            <layout
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                                method="absolute"/>
                                             <items jcr:primaryType="nt:unstructured">
                                                 <column
                                                     jcr:primaryType="nt:unstructured"
@@ -275,7 +271,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="none selected"
                                                 value=""/>
-                                             <datasheet
+                                            <datasheet
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheet"
                                                 value="Datasheet"/>
@@ -283,95 +279,95 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
                                                 value="Datasheets"/>
-                                             <white-paper
+                                            <white-paper
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White paper"
                                                 value="White paper"/>
-                                             <white-papers
+                                            <white-papers
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White papers"
                                                 value="White papers"/>
-                                             <solution-overview
+                                            <solution-overview
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overview"
                                                 value="Solution overview"/>
-                                             <solution-overviews
+                                            <solution-overviews
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overviews"
                                                 value="Solution overviews"/>
-                                             <solution-brief
+                                            <solution-brief
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution brief"
                                                 value="Solution brief"/>
-                                             <solution-briefs
+                                            <solution-briefs
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution briefs"
                                                 value="Solution briefs"/>
-                                             <analyst-research
+                                            <analyst-research
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Analyst research"
                                                 value="Analyst research"/>
-                                             <case-study
+                                            <case-study
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case study"
                                                 value="Case study"/>
-                                             <case-studies
+                                            <case-studies
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case studies"
                                                 value="Case studies"/>
-                                             <customer-story
+                                            <customer-story
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer story"
                                                 value="Customer story"/>
-                                             <customer-stories
+                                            <customer-stories
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer stories"
                                                 value="Customer stories"/>
-                                             <video
+                                            <video
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Video"
                                                 value="Video"/>
-                                             <videos
+                                            <videos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Videos"
                                                 value="Videos"/>
-                                             <demo
+                                            <demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demo"
                                                 value="Demo"/>
-                                             <demos
+                                            <demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demos"
                                                 value="Demos"/>
-                                             <on-demand-demo
+                                            <on-demand-demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demo"
                                                 value="On-demand demo"/>
-                                             <on-demand-demos
+                                            <on-demand-demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demos"
                                                 value="On-demand demos"/>
-                                             <webinar
+                                            <webinar
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinar"
                                                 value="Webinar"/>
-                                             <webinars
+                                            <webinars
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinars"
                                                 value="Webinars"/>
-                                             <e-book
+                                            <e-book
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Book"
                                                 value="E-Book"/>
-                                             <e-books
+                                            <e-books
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Books"
                                                 value="E-Books"/>
-                                             <infographic
+                                            <infographic
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographic"
                                                 value="Infographic"/>
-                                             <infographics
+                                            <infographics
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographics"
                                                 value="Infographics"/>
@@ -393,10 +389,6 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                             name="./assetLinks2"
                                             wrapperClass="core-wcm-form-options-toggle-set">
-                                            <layout
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                                method="absolute"/>
                                             <items jcr:primaryType="nt:unstructured">
                                                 <column
                                                     jcr:primaryType="nt:unstructured"
@@ -477,95 +469,95 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Datasheets"
                                                 value="Datasheets"/>
-                                             <white-paper
+                                            <white-paper
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White paper"
                                                 value="White paper"/>
-                                             <white-papers
+                                            <white-papers
                                                 jcr:primaryType="nt:unstructured"
                                                 text="White papers"
                                                 value="White papers"/>
-                                             <solution-overview
+                                            <solution-overview
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overview"
                                                 value="Solution overview"/>
-                                             <solution-overviews
+                                            <solution-overviews
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution overviews"
                                                 value="Solution overviews"/>
-                                             <solution-brief
+                                            <solution-brief
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution brief"
                                                 value="Solution brief"/>
-                                             <solution-briefs
+                                            <solution-briefs
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Solution briefs"
                                                 value="Solution briefs"/>
-                                             <analyst-research
+                                            <analyst-research
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Analyst research"
                                                 value="Analyst research"/>
-                                             <case-study
+                                            <case-study
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case study"
                                                 value="Case study"/>
-                                             <case-studies
+                                            <case-studies
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Case studies"
                                                 value="Case studies"/>
-                                             <customer-story
+                                            <customer-story
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer story"
                                                 value="Customer story"/>
-                                             <customer-stories
+                                            <customer-stories
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Customer stories"
                                                 value="Customer stories"/>
-                                             <video
+                                            <video
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Video"
                                                 value="Video"/>
-                                             <videos
+                                            <videos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Videos"
                                                 value="Videos"/>
-                                             <demo
+                                            <demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demo"
                                                 value="Demo"/>
-                                             <demos
+                                            <demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Demos"
                                                 value="Demos"/>
-                                             <on-demand-demo
+                                            <on-demand-demo
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demo"
                                                 value="On-demand demo"/>
-                                             <on-demand-demos
+                                            <on-demand-demos
                                                 jcr:primaryType="nt:unstructured"
                                                 text="On-demand demos"
                                                 value="On-demand demos"/>
-                                             <webinar
+                                            <webinar
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinar"
                                                 value="Webinar"/>
-                                             <webinars
+                                            <webinars
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Webinars"
                                                 value="Webinars"/>
-                                             <e-book
+                                            <e-book
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Book"
                                                 value="E-Book"/>
-                                             <e-books
+                                            <e-books
                                                 jcr:primaryType="nt:unstructured"
                                                 text="E-Books"
                                                 value="E-Books"/>
-                                             <infographic
+                                            <infographic
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographic"
                                                 value="Infographic"/>
-                                             <infographics
+                                            <infographics
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Infographics"
                                                 value="Infographics"/>
@@ -587,10 +579,6 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                             name="./assetLinks3"
                                             wrapperClass="core-wcm-form-options-toggle-set">
-                                            <layout
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/layouts/fixedcolumns"
-                                                method="absolute"/>
                                             <items jcr:primaryType="nt:unstructured">
                                                 <column
                                                     jcr:primaryType="nt:unstructured"
