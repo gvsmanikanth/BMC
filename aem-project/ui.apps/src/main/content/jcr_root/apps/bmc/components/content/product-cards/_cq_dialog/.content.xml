@@ -38,10 +38,6 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                     name="./cards">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
                                             jcr:primaryType="nt:unstructured"
@@ -72,7 +68,7 @@
                                     </items>
                                 </field>
                             </cards>
-                           <numberOfCards
+                            <numberOfCards
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                 fieldLabel="Number of cards per row. If none selected defaults to 4"
