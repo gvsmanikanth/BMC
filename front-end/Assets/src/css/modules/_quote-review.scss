@@ -74,6 +74,10 @@
             padding: 30px;
             width: 87%;
             margin: 0;
+            @media (max-width: $break-sm) {
+                padding: 25px;
+                width: 85%;  
+            }
             .info{
                 width: 65%;
                 p {
