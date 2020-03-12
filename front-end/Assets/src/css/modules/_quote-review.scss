@@ -16,7 +16,7 @@
         padding: 30px;
         transition: 0.3s linear;
         @media (max-width: $break-sm) {
-            padding: 20px;   
+            padding: 25px;   
             padding-bottom: 40px;   
         }         
         &:hover{
@@ -75,6 +75,7 @@
             width: 87%;
             margin: 0;
             .info{
+                width: 65%;
                 p {
                     margin: 0;
                     font-size: 14px;
@@ -82,11 +83,15 @@
             }
             .logo{
                 align-self: center;
+                width: 35%;
                 img{
                     max-width:100px;
                 }
             } 
-        }        
+        } 
+        .quoteShortDescription  {
+            min-height: 70px;
+        }       
     }
     .owl-next, .owl-prev {
         width: 40px;
