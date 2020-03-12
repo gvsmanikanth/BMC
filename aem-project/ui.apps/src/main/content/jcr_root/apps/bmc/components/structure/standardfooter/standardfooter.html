@@ -26,26 +26,35 @@
 	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
 		<sly data-sly-test="${!loggedIn}">
         <script type="text/javascript">
-        jQuery( document ).ready(function( $ ) {
-              $(function () {
-    
-                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/support/resources/support-search.html');
-    
-                 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
-                    var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
-                  if (query) {
-                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
-                  }
-                  });
-                 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
-                  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
-                    var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
-                  if (query) {
-                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
-                  }
-                  });
-             });     
-            });  
+        function deferWhileJQueryLoad(method) {
+            if (window.jQuery)
+                method();
+            else
+                setTimeout(function() { deferWhileJQueryLoad (method) }, 500);
+}
+				function initCoveoSearch(){
+				jQuery( document ).ready(function( $ ) {
+				$(function () {
+				  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/support/resources/support-search.html');
+				 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+				    var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+				  if (query) {
+				     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+				  }
+				  });
+				 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+				  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+				    var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+				  if (query) {
+				     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+				  }
+				  });
+				});     
+				}); 
+				}
+				
+				deferWhileJQueryLoad(initCoveoSearch)
+
         </script>
       </sly>
   <sly data-sly-test="${loggedIn}">
