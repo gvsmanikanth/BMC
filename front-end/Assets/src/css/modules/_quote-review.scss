@@ -83,12 +83,15 @@
             }
             .logo{
                 align-self: center;
-                width: 35%; 
+                width: 35%;
                 img{
                     max-width:100px;
                 }
             } 
-        }        
+        } 
+        .quoteShortDescription  {
+            min-height: 70px;
+        }       
     }
     .owl-next, .owl-prev {
         width: 40px;
