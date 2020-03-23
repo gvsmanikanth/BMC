@@ -11,7 +11,7 @@
             <sly data-sly-list.tab="${TabsModel.tabs}">
                 <li class="p2 flex-cell n-col-${TabsModel.tabs.size}" data-sly-test="${tab.tabTitle}">
                  <!-- Removed bold class from <a> tag as a part of WEB-4722 -->
-                    <a class="white no-scroll" href="#tab-${TabID[tabList.index]}" onclick="">${tab.tabTitle @ context = 'html'}</a>
+                    <a class="white no-scroll" href="#tab-${TabID[tabList.index]}" onclick=""><span>${tab.tabTitle @ context = 'html'}</span></a>
                 </li>
             </sly>
         </ul>
