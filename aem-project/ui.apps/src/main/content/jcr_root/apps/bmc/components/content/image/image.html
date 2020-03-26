@@ -15,7 +15,7 @@
        class="cmp-image--link ${cta.cssClass}"
        href="${linkURL}"
        data-title="${image.title || image.alt}" data-asset="${image.fileReference}">
-            <img src="${image.fileReference}"
+            <img src="${image.src}"
                  alt="${image.alt || (image.displayPopupTitle && image.title) || true}"
                  title="${image.displayPopupTitle && image.title}"/>
     </a>
