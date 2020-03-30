@@ -116,40 +116,49 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyOption="true"
                                                 emptyText="Select company size"
-                                                fieldLabel="Company Size"
+                                                fieldLabel="Company Size1"
+                                                metadataName="company-size"
                                                 multiple="false"
                                                 name="./companySize">
-                                                <items jcr:primaryType="nt:unstructured"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                             </company-size>
                                             <industries
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select industry to add"
                                                 fieldLabel="Industries"
+                                                metadataName="industry"
                                                 multiple="true"
                                                 name="./industries">
-                                                <items jcr:primaryType="nt:unstructured"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="industries"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                             </industries>
                                             <topics
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
                                                 fieldLabel="Topics"
+                                                metadataName="topic"
                                                 multiple="true"
                                                 name="./topics">
-                                                <items jcr:primaryType="nt:unstructured"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                             </topics>
                                         </items>
                                     </metadata>
