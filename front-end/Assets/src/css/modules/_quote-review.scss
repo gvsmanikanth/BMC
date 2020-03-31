@@ -11,18 +11,39 @@
     .owl-stage-outer{
         padding: 20px 0;
     }
-    .quote {
-        background: #fff;
-        padding: 30px;
-        transition: 0.3s linear;
-        @media (max-width: $break-sm) {
-            padding: 25px;   
-            padding-bottom: 40px;   
-        }         
-        &:hover{
-            box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
-            transition: 0.3s linear;
+    .owl-carousel{
+        .owl-stage {
+            display: flex;
+            .article-items {
+                display: flex;
+                flex: 1 0 auto;
+                height: 100%;                
+                position: relative;
+                background: #fff;
+                &:hover{
+                    box-shadow: 0 1px 4px 0 rgba(0,0,0,.12);
+                    transition: 0.3s linear;
+                }
+                .aticle-box {
+                    position: relative;
+                    overflow: hidden;
+                    /* margin-bottom: 80px; *//*This is optional*/
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+            }
         }
+    }
+    
+    
+        
+        
+    .quote {        
+        padding: 25px;
+        transition: 0.3s linear;
+        padding-bottom: 120px;  
+        height: 100%;           
         p{
             color: #555557;
         }
@@ -63,21 +84,11 @@
         }
         .quote-footer{
             justify-content: space-between;
-            @media (min-width: $break-sm) {
-                padding: 30px;   
-                padding-bottom: 40px;   
-            }
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            width: 87%;
-            margin: 0;
-            @media (max-width: $break-sm) {
-                padding: 25px;
-                width: 85%;  
-            }
+            bottom: 25px;
+            width: calc(100% - 50px);
+            padding: 0px;            
+            margin: 0;            
             .info{
                 width: 65%;
                 p {
