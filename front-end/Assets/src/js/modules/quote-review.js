@@ -34,6 +34,12 @@
                     
                 },
                 600:{
+                    stagePadding: 80,
+                    margin:20,
+                    items:1,
+                    nav:true
+                },
+                750:{
                     stagePadding: 50,
                     items:2,
                     margin:20,
