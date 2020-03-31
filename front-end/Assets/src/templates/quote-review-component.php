@@ -12,7 +12,7 @@
 	</div>
 	<div class="owl-carousel-quote">
 		<div class="item article-items">
-			<a href="//www.itcentralstation.com/product_reviews/bmc-truesight-operations-management-review-62335-by-paul-mercina" target="_blank" class="aticle-box">
+			<a href="//www.itcentralstation.com/product_reviews/bmc-truesight-operations-management-review-62335-by-paul-mercina" target="_blank" class="article-box">
 				<div class="quote ">
 					<div class="star-ratings-sprite"><span style="width:100%" class="star-ratings-sprite-rating"></span></div>
 					<h4>Monitors diverse set of hardware products from multiple manufacturers</h4>

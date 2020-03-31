@@ -2,7 +2,7 @@
 <sly data-sly-test="${properties.bgcolor}">
 	<sly data-sly-test.backGroundClass="${properties.bgcolor}"/>
 </sly>
-<section class="quote-section js-eh ${backGroundClass}">
+<section class="quote-section ${backGroundClass}">
 	<div data-sly-test=${!properties.compHeading}>Please enter customer quote heading here</div>
 	<div class="layout-inner-wrap">
         <div class="layout-inner-wrap">
@@ -11,9 +11,9 @@
         <div class="owl-carousel-quote">
             <sly data-sly-use.customerQuotes="com.bmc.models.CustomerQuoteModel">
                 <sly data-sly-list.head="${customerQuotes.quoteItem.listChildren}"> 
-                    <div class="item">
-                        <a href="${head.quoteLink @ context='uri'}" target="_blank">
-                            <div class="quote js-ehItem">
+                    <div class="item article-items">
+                        <a href="${head.quoteLink @ context='uri'}" target="_blank" class="article-box">
+                            <div class="quote">
                                 <div class="star-ratings-sprite" >
                                     <span style="width:${head.quoteTileRating @ context='html'}%; " class="star-ratings-sprite-rating"></span>
                                 </div>				
