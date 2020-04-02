@@ -415,7 +415,7 @@ public class ExperienceFgmtReportCSVGenService {
 	 
 	 public void clearData(String reportType)
 	 {
-		 if(reportType.equals("experienceFragment"))
+		 if(reportType.equals("experienceFragmentGeneric"))
 		 {
 			 list.clear();			
 		 }
