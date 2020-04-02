@@ -432,7 +432,7 @@ public class ExperienceFgmtReportCSVFormsService {
 	 
 	 public void clearData(String reportType)
 	 {
-		 if(reportType.equals("experienceFragment"))
+		 if(reportType.equals("experienceFragmentForms"))
 		 {
 			 list.clear();			
 		 }
