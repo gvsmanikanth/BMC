@@ -59,10 +59,9 @@ import org.apache.poi.ss.usermodel.Workbook;
         label = " CSV Generator Service for Form Data",
         description = "Helper Service to generate a CSV report",
         immediate = true)
-@Service(value=ExperienceFgmtReportCSVGenService.class)
+@Service(value=ExperienceFgmtReportCSVFormsService.class)
 
-public class ExperienceFgmtReportCSVGenService {
-
+public class ExperienceFgmtReportCSVFormsService {
 
 	/** Default log. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -85,10 +84,10 @@ public class ExperienceFgmtReportCSVGenService {
     private static  ArrayList<ExperienceFragmentReportDataItem> list = new ArrayList<ExperienceFragmentReportDataItem>();
        
     private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
-
 	
-    private String[] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date"
-    		,"FieldSet References"};
+    private String[] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date","Migration Content ID","Migration Content Name","Migration Content Type"
+    		,"Form Name","Form ID", "FieldSet References"};
+	
 	
 	 /*
 	    * Retrieves forms data from the JCR at /content/experience-fragments/bmc
@@ -97,19 +96,22 @@ public class ExperienceFgmtReportCSVGenService {
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport(Boolean report,String fileName,String folder) {
+	    public Workbook generateDataReport(boolean report, String fileName,String folder) {
+	    	logger.info("Inside the class generateDataReport--- START");
+	    	
 	    	try
 	    	{	    		
 	    		//Fetch the data from forms 
-	    			 list  = getJCRGenericData(folder);
+	    			 list  = getJCRData(folder);
 	             //If user selected a custom report -- generate the report and store it in the JCR
-	             
+	             if (report)
+	              {
 	            	 logger.info("If REport is true");
 	                  String damFileName = fileName +".xls" ;
 	                  workbook = write(); 	
 	                  
-	                             
-	    	}	     
+	              }	               
+	    	}	       
 	   catch(Exception e)
 	       {
 	        e.printStackTrace();
@@ -118,14 +120,19 @@ public class ExperienceFgmtReportCSVGenService {
 	   }
 	
 
-	/*
-     * getJCRGenericData()
+  	public String[] getTableNames()
+  	{
+  		return this.TableNames;
+  	}
+
+  	 /*
+     * getJCRData()
      * Returns a Arraylist of ExperienceFragmentReportDataItem object
      * This method fetches the data from the JCR using Query BUilder API 
      * IT takes the Root folder path as the only argument- Type-String
      * 
      */
-	public ArrayList<ExperienceFragmentReportDataItem> getJCRGenericData(String folder) {							 
+	public ArrayList<ExperienceFragmentReportDataItem> getJCRData(String folder) {							 
 						try 
 							{ 			
 								//Invoke the adaptTo method to create a Session 
@@ -148,17 +155,26 @@ public class ExperienceFgmtReportCSVGenService {
 							            		 for (Hit hit : result.getHits()) {
 							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 			//Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);         	 			
+							            	 			Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);
+							            	 			if(fieldSetNode != null)
+							            	 			{
+							            	 				//field set values retrieval 
+							            	 				reportDataItem.setFieldSetAuthor(getPropertyValues(fieldSetNode, "author","author","author",session));
+								            	 			reportDataItem.setFormid(getPropertyValues(fieldSetNode, "formid","formid","formid",session));
+								            	 			reportDataItem.setFormname(getPropertyValues(fieldSetNode, "formname","formname","formname",session));
+								            	 			reportDataItem.setTitle(getPropertyValues(fieldSetNode, "title","title","title",session));
+								            	 			reportDataItem.setMigration_content_id(getPropertyValues(fieldSetNode, "migration_content_id","migration_content_id","migration_content_id",session));
+								            	 			reportDataItem.setMigration_content_name(getPropertyValues(fieldSetNode, "migration_content_name","migration_content_name","migration_content_name",session));
+								            	 			reportDataItem.setMigration_content_type(getPropertyValues(fieldSetNode, "migration_content_type","migration_content_type","migration_content_type",session));
+							            	 			}
 							            	 			reportDataItem.setExp_Fragment_Name(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
 							            	 			reportDataItem.setLastModifiedBy(getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
 							            	 			reportDataItem.setLastModifiedDate(getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
 							            	 			reportDataItem.setCreated_Date(getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
 							            	 			reportDataItem.setExp_Fragment_URL(metadataProvider.getExperiencefgmtPath(reportDataNode));							            	 									            	 			
-							            	 			reportDataItem.setReferencePaths(getExpFragmentLinks(metadataProvider.getExperiencefgmtPath(reportDataNode), session));
-							            	 		
-							            	 			list.add(reportDataItem);
+							            	 			reportDataItem.setReferencePaths(getExpFragmentLinks(metadataProvider.getExperiencefgmtPath(reportDataNode), session));							            	 
+							            	 list.add(reportDataItem);
 						                 }
-							            		 
 						        logger.info("List Size of forms"+list.size());
 						        	
 						    }
@@ -170,6 +186,51 @@ public class ExperienceFgmtReportCSVGenService {
 	
 	 
   
+	/*
+     * write()
+     * Writes the data into the Excel file.
+     * 
+     * 
+     */		
+	 public Workbook write() throws IOException 
+	 {
+		 logger.info("Generating the Report");
+		//Blank workbook
+			XSSFWorkbook workbook = new XSSFWorkbook(); 
+			
+			//Create a blank sheet
+			XSSFSheet sheet = workbook.createSheet("ReportingData");
+			 
+			//This data needs to be written (Object[])
+			Map<String, Object[]> data = new TreeMap<String, Object[]>();
+			data.put("1", TableNames);					
+			for(int i=2;i<list.size();i++)
+			{
+				Integer count = i; 
+				 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getExp_Fragment_Name(),list.get(i).getLastModifiedBy(),list.get(i).getLastModifiedDate(),list.get(i).getCreated_Date(),
+					 list.get(i).getMigration_content_id(),list.get(i).getMigration_content_name(),list.get(i).getMigration_content_type(),list.get(i).getFormname(),list.get(i).getFormid(),list.get(i).getReferencePaths()});			
+			}
+			
+			//Iterate over data and write to sheet
+			Set<String> keyset = data.keySet();
+			int rownum = 0;
+			for (String key : keyset)
+			{
+			    Row row = sheet.createRow(rownum++);
+			    Object [] objArr = data.get(key);
+			    int cellnum = 0;
+			    for (Object obj : objArr)
+			    {
+			       Cell cell = row.createCell(cellnum++);
+			       if(obj instanceof String)
+			            cell.setCellValue((String)obj);
+			        else if(obj instanceof Integer)
+			            cell.setCellValue((Integer)obj);
+			    }
+			}
+			 return workbook;    
+	 }
+	 
 	
 	 /*
 	  * This method generates a custom Predicate based on user input.
@@ -193,88 +254,29 @@ public class ExperienceFgmtReportCSVGenService {
 	     // can be done in map or with Query methods	    
 	 }
 	 
-	
 	 /*
-	     * write()
-	     * Writes the data into the Excel file.
-	     * 
-	     * 
-	     */		
-		 public Workbook write() throws IOException 
-		 {
-			 logger.info("Generating the Report");
-			//Blank workbook
-				XSSFWorkbook workbook = new XSSFWorkbook(); 
-				
-				//Create a blank sheet
-				XSSFSheet sheet = workbook.createSheet("ReportingData");
-				 
-				//This data needs to be written (Object[])
-				Map<String, Object[]> data = new TreeMap<String, Object[]>();
-				data.put("1", TableNames);					
-				for(int i=2;i<list.size();i++)
-				{
-					Integer count = i; 
-					 data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getExp_Fragment_Name(),
-							 list.get(i).getLastModifiedBy(),list.get(i).getLastModifiedDate(),list.get(i).getCreated_Date(),
-							 list.get(i).getReferencePaths()});			
-				}
-				
-				//Iterate over data and write to sheet
-				Set<String> keyset = data.keySet();
-				int rownum = 0;
-				for (String key : keyset)
-				{
-				    Row row = sheet.createRow(rownum++);
-				    Object [] objArr = data.get(key);
-				    int cellnum = 0;
-				    for (Object obj : objArr)
-				    {
-				       Cell cell = row.createCell(cellnum++);
-				       if(obj instanceof String)
-				            cell.setCellValue((String)obj);
-				        else if(obj instanceof Integer)
-				            cell.setCellValue((Integer)obj);
-				    }
-				}
-				 return workbook;    
-		 }
-		 
-		 /*
-		  * This method generates a custom Predicate based on user input.
-		  */
-		 public Map<String,String> createQueryFielset(String folderSelection)
-		 {
-			 // create query description as hash map (simplest way, same as form post)
-		     Map<String, String> map = new HashMap<String, String>();	    
-		     // create query description as hash map (simplest way, same as form post)	                  
-		     map.put("path", folderSelection);
-		     map.put("type", "nt:unstructured");
-		     map.put("property.hits", "full");
-		     map.put("property.depth", "3");
-		     map.put("orderby", "@jcr:content/jcr:lastModified");
-		     map.put("p.offset", "0");
-		     map.put("p.limit", "1"); 	    
-		     map.put("property", "sling:resourceType"); //the property to check for
-		     map.put("property.operation", "equals"); // or like or like etc..
-		     map.put("property.value", "bmc/components/content/customer-spotlight"); 	
-		     map.put("property", "or");
-		     map.put("property", "sling:resourceType"); //the property to check for
-		     map.put("property.operation", "equals"); // or like or like etc..
-		     map.put("property.value", "bmc/components/content/CTAbutton"); 	
-		     map.put("property", "or");
-		     map.put("property", "sling:resourceType"); //the property to check for
-		     map.put("property.operation", "equals"); // or like or like etc..
-		     map.put("property.value", "bmc/components/content/related-items/related-items-secondary"); 
-		     map.put("property", "or");
-		     map.put("property", "sling:resourceType"); //the property to check for
-		     map.put("property.operation", "equals"); // or like or like etc..
-		     map.put("property.value", "bmc/components/content/featured-asset"); 	
-		     return map;
-		     // can be done in map or with Query methods	        
-		 }
-		  
-	
+	  * This method generates a custom Predicate based on user input.
+	  */
+	 public Map<String,String> createQueryFielset(String folderSelection)
+	 {
+		 // create query description as hash map (simplest way, same as form post)
+	     Map<String, String> map = new HashMap<String, String>();	    
+	     // create query description as hash map (simplest way, same as form post)	                  
+	     map.put("path", folderSelection);
+	     map.put("type", "nt:unstructured");
+	     map.put("property.hits", "full");
+	     map.put("property.depth", "3");
+	     map.put("orderby", "@jcr:content/jcr:lastModified");
+	     map.put("p.offset", "0");
+	     map.put("p.limit", "1"); 
+	     //For form fielsets and Customer Spptlight experience fargment
+	     map.put("property", "sling:resourceType"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "bmc/components/forms/field-set"); 	     
+	     return map;
+	     // can be done in map or with Query methods	    
+	 }
+	 
 	 /*
 	  * This method generates a custom Predicate based on user input.
 	  */
@@ -282,17 +284,32 @@ public class ExperienceFgmtReportCSVGenService {
 	 {
 		 // create query description as hash map (simplest way, same as form post)
 	     Map<String, String> map = new HashMap<String, String>();	    
-	     // create query description as hash map (simplest way, same as form post)	     
-	     map.put("path", "/content/bmc/us/en");
-	     map.put("fulltext", path);
+	     // create query description as hash map (simplest way, same as form post)
+	     
+	     map.put("path", "/content/bmc/language-masters/en");
+	     map.put("type", "cq:PageContent");
+	     map.put("contains", path);
+	     map.put("property.hits", "full");
+	     map.put("property.depth", "0");
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
 	     map.put("p.offset", "0");
-	     map.put("p.limit", "100"); 
+	     map.put("p.limit", "2000");
+	     //Adding Predicate to exclude thank-you pages
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-landing-page-template");
+	     //Adding Predicate to exclude thank-you pages
+	     map.put("property.operation", "or");
+	     map.put("property", "cq:template"); //the property to check for
+	     map.put("property.operation", "equals"); // or like or like etc..
+	     map.put("property.value", "/conf/bmc/settings/wcm/templates/form-landing-page-full-width");
+	     map.put("property.operation", "or");	    
+	     map.put("p.offset", "0");
+	     map.put("p.limit", "100");	     
 	     return map;
 	     // can be done in map or with Query methods
 	    
 	 }
-	 
 	 /*
 	  * createJSON()
 	  * This method generates a JSON from the list of FormReportDataItem. 
@@ -498,39 +515,25 @@ public class ExperienceFgmtReportCSVGenService {
 		}
 	 
 	 
-	
-	 
 	 private String getExpFragmentLinks(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
 	 {
-		 logger.info("JCR PATH"+jcrPath);
 		 List<String> propVals = new ArrayList<>();
 		 Map<String,String> map = createQueryReferences(jcrPath);
      	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
-          SearchResult result = query.getResult();
-          logger.info("RESULT"+result.toString());
-          if(!result.equals(null)){
-        	  logger.info("sdgsd"+result.getHits().toString());
+          SearchResult result = query.getResult();							            
          		 for (Hit hit : result.getHits()) {
-         			 logger.info("inside for");
          			Node node = hit.getResource().adaptTo(Node.class);
-         			if(node.equals(null))
-         			{
-         				logger.info("node is NULL");
-         			}
-         			else
-         			{
-         			logger.info("Node"+node.getPath().toString());
-         			
          			String propertyValue = node.getPath().toString();
          			//Converting canonical links to the actual URLs
-         			logger.info("PROPERTY VALUE "+propertyValue);         		
-         			propVals.add(propertyValue);      			         		 
+         			if (!propertyValue.equals(null))
+         			{
+         				propertyValue = propertyValue.replace("/jcr:content", ".html");
+         				propertyValue = propertyValue.replace("/content/bmc/language-masters/en", "https://www.bmc.com");
+         			}
+         			
+         			propVals.add(propertyValue);      			
          		 }
-         		 logger.info(String.join(",", propVals));
-         		
-	       }return (String.join(",", propVals));
-          }
-          else return "NO RESULT";
+         		return (String.join(",", propVals));
 	 }
 	 /*
 	  * The class which fetches the fieldSet from the actual jcr Data Node
