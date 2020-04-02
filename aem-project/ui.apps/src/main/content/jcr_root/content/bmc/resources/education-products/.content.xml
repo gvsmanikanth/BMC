@@ -31,11 +31,15 @@
     <education-products-177937656
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC (Helix) Discovery"
-      />  
+      />
     <education-products-112512823
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Platform (Innovation Suite)"
        />
+    <education-products-448146901
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Helix Business Workflows"
+        />
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Orchestration"
