@@ -17,5 +17,9 @@ public interface ResourceService extends ConfigurableService{
      * @return
      */
     String getTitle(String propertyName, String propertyValue, ResourceResolver resolver);
+    
+    Map<String, String> getValues(String propertyName, ResourceResolver resolver);
+
+    List<String> getPropertyNames();
 
 }
