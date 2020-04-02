@@ -88,7 +88,7 @@ public class ExperienceFgmtReportCSVGenService {
 
 	
     private String[] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date"
-    		,"FieldSet References"};
+    		,"References"};
 	
 	 /*
 	    * Retrieves forms data from the JCR at /content/experience-fragments/bmc
@@ -502,34 +502,23 @@ public class ExperienceFgmtReportCSVGenService {
 	 
 	 private String getExpFragmentLinks(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
 	 {
-		 logger.info("JCR PATH"+jcrPath);
+		
 		 List<String> propVals = new ArrayList<>();
 		 Map<String,String> map = createQueryReferences(jcrPath);
      	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
           SearchResult result = query.getResult();
-          logger.info("RESULT"+result.toString());
-          if(!result.equals(null)){
-        	  logger.info("sdgsd"+result.getHits().toString());
+         
+          if(!result.equals(null)){       	 
          		 for (Hit hit : result.getHits()) {
          			 logger.info("inside for");
          			Node node = hit.getResource().adaptTo(Node.class);
-         			if(node.equals(null))
-         			{
-         				logger.info("node is NULL");
-         			}
-         			else
-         			{
-         			logger.info("Node"+node.getPath().toString());
-         			
          			String propertyValue = node.getPath().toString();
-         			//Converting canonical links to the actual URLs
-         			logger.info("PROPERTY VALUE "+propertyValue);         		
+         			//Converting canonical links to the actual URLs         			         		
          			propVals.add(propertyValue);      			         		 
          		 }
-         		 logger.info(String.join(",", propVals));
          		
-	       }return (String.join(",", propVals));
-          }
+         		return (String.join(",", propVals));	
+	       }          
           else return "NO RESULT";
 	 }
 	 /*
