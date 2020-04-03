@@ -1,0 +1,39 @@
+<sly data-sly-test.backGroundClass="bg-seashell"></sly>
+<sly data-sly-test="${properties.bgcolor}">
+	<sly data-sly-test.backGroundClass="${properties.bgcolor}"/>
+</sly>
+<section class="quote-section ${backGroundClass}">
+	<div data-sly-test=${!properties.compHeading}>Please enter customer quote heading here</div>
+	<div class="layout-inner-wrap">
+        <div class="layout-inner-wrap">
+            <h2 class="text-center">${properties.compHeading}</h2><br>
+        </div>
+        <div class="owl-carousel-quote">
+            <sly data-sly-use.customerQuotes="com.bmc.models.CustomerQuoteModel">
+                <sly data-sly-list.head="${customerQuotes.quoteItem.listChildren}"> 
+                    <div class="item article-items">
+                        <a href="${head.quoteLink @ context='uri'}" target="_blank" class="article-box">
+                            <div class="quote">
+                                <div class="star-ratings-sprite" >
+                                    <span style="width:${head.quoteTileRating @ context='html'}%; " class="star-ratings-sprite-rating"></span>
+                                </div>				
+                                <h4>${head.quoteTileTitle}</h4>
+                                <hr>
+                                <div class="quoteShortDescription"><p>${head.quoteTileDetails} <span class="more">More</span></p></div>
+                                <div class="quote-footer flex-wrap">
+                                    <div class="info">
+                                        <p><strong>${head.customerName}</strong></p>
+                                        <p>${head.customerDesignation}</p>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="${head.logoImagePath}" alt="ITCS-logo" style="max-width:150px">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+               </sly>
+            </sly>	   
+        </div>
+	</div>
+</section>
