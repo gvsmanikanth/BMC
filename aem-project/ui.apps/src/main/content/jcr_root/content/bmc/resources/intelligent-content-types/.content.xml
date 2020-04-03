@@ -34,6 +34,9 @@
     <ic-type-654968417
             jcr:primaryType="nt:unstructured"
             jcr:title="Interactive Tools"/>
+    <ic-type-958935588
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Tech Note"/>
     <ic-type-920200003
             jcr:primaryType="nt:unstructured"
             jcr:title="Trials"/>
