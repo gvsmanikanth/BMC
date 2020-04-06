@@ -33,8 +33,8 @@
                                                         value="form"/>
                                                     <item3
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Experience Fragment Report"
-                                                        value="experienceFragment"/>
+                                                        text="Experience Fragment forms Report"
+                                                        value="experienceFragmentForms"/>
                                                     <item2
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Video Data Report."
@@ -67,6 +67,10 @@
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Document Containers"
                                                         value="document-containers"/>
+                                                    <item11
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Experience Fragment Report Generic"
+                                                        value="experienceFragmentGeneric"/>
                                                 </items>
                                             </reportType>
                                             <reportFileName
