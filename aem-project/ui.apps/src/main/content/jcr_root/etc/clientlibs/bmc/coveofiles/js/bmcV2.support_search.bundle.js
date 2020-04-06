@@ -91,12 +91,14 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -165,7 +167,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(2);
+var	fixUrls = __webpack_require__(4);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -500,7 +502,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports) {
 
 
@@ -595,14 +597,12 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "js/cultures/en.js";
 
 /***/ }),
-/* 4 */,
-/* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
@@ -620,11 +620,12 @@ module.exports = __webpack_require__.p + "js/cultures/en.js";
 /* 20 */,
 /* 21 */,
 /* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(24);
+var content = __webpack_require__(25);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -638,24 +639,24 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(1)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// extracted by mini-css-extract-plugin
 
-var content = __webpack_require__(26);
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(27);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -669,35 +670,35 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(1)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */
+/* 31 */,
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-__webpack_require__(32);
+__webpack_require__(5);
 __webpack_require__(33);
-__webpack_require__(23);
-module.exports = __webpack_require__(25);
+__webpack_require__(34);
+__webpack_require__(24);
+module.exports = __webpack_require__(26);
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -709,78 +710,88 @@ document.addEventListener('DOMContentLoaded', function () {
     anonymous: true
   });
   
-  Coveo.init(searchEl, {
-    externalComponents: [document.getElementById('searchbox')],
-    Analytics:{
-      searchHub: 'PublicSearch'
-    },
-    Searchbox:{
-      placeholder: 'Search BMC Support',
-      height:44
-    }
-  });
-
-  const globalSearchBoxItems = document.querySelectorAll('#supprt-search-input,#supportSearchBox');
-  globalSearchBoxItems.forEach(function (sbEl) {
-    const sbInputEl = sbEl.querySelector('input.CoveoQuerybox');
-    sbInputEl.setAttribute("placeholder", 'Search BMC Support');
-
-    Coveo.$$(sbEl).on("beforeRedirect", function (e, data) {
-      if(sbInputEl && sbInputEl.value) {
-        data.searchPageUri = data.searchPageUri + '?q=' + encodeURIComponent(sbInputEl.value);
-      }
+  if (searchEl) {
+    Coveo.init(searchEl, {
+      externalComponents: [document.getElementById('searchbox')],
+      Analytics:{
+        searchHub: 'PublicSearch'
+      },
+      Searchbox:{
+        placeholder: 'Search BMC Support',
+        height:44
+      },
+      ResultLink:{
+        alwaysOpenInNewWindow: true
+      },
     });
-    Coveo.initSearchbox(sbEl, '/support/resources/support-search.html');
-  });
 
-  Coveo.$$(searchEl).on('newResultDisplayed', function(e, args) {
-     if (args.result.raw.syssource.indexOf('Confluence') > -1){
-        if(!args.result.raw.syscontainsattachment) {
-            Coveo.$(args.item).find('.CoveoResultFolding').remove();
-            Coveo.$(args.item).find('.coveo-folding-footer').remove()
-        }
-     }
-     if (args.result.raw.syssource.indexOf('Communities') > -1){
-        if(!args.result.raw.jivecontainsattachment) {
-            Coveo.$(args.item).find('.CoveoResultFolding').remove();
-            Coveo.$(args.item).find('.coveo-folding-footer').remove()
-        }
-     }
-  });
-
-  Coveo.$$(searchEl).on('preprocessResults', function(e, args) {
-    args.results.results.forEach(function(r) { 
-      if(r.raw.sfsc_karecordtype__c == 'FAQ/Procedural') {
-            r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=FAQ";
-        } else if (r.raw.sfsc_karecordtype__c == 'Product/Service Description') {
-            r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=ProductDescription";
-        } else if (r.raw.sfsc_karecordtype__c == 'Solutions to a Product Problem') {
-            r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=Solution";
-        }
-    });
-  });
-
-   //Add analytics custom events    
-   Coveo.$$(searchEl).on('changeAnalyticsCustomData', function(e, args) {
-       if (args.type=='ClickEvent') {
-           const matchEl = document.querySelector("[href='"+args.metaObject.documentURL+"']");
-           if(matchEl){
-            const resultEl = Coveo.$$(matchEl).closest('.CoveoResult');
-            const result = resultEl ? resultEl.data('CoveoResult') : {};
-             if (result && result.raw.sfkbid) {
-                 args.metaObject.documentauthor = result.raw.sysauthor;
-             }
-           }
+    Coveo.$$(searchEl).on('newResultDisplayed', function(e, args) {
+       if (args.result.raw.syssource.indexOf('Confluence') > -1){
+          if(!args.result.raw.syscontainsattachment) {
+              Coveo.$(args.item).find('.CoveoResultFolding').remove();
+              Coveo.$(args.item).find('.coveo-folding-footer').remove()
+          }
        }
+       if (args.result.raw.syssource.indexOf('Communities') > -1){
+          if(!args.result.raw.jivecontainsattachment) {
+              Coveo.$(args.item).find('.CoveoResultFolding').remove();
+              Coveo.$(args.item).find('.coveo-folding-footer').remove()
+          }
+       }
+    });
+
+    Coveo.$$(searchEl).on('preprocessResults', function(e, args) {
+      args.results.results.forEach(function(r) { 
+        if(r.raw.sfsc_karecordtype__c == 'FAQ/Procedural') {
+              r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=FAQ";
+          } else if (r.raw.sfsc_karecordtype__c == 'Product/Service Description') {
+              r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=ProductDescription";
+          } else if (r.raw.sfsc_karecordtype__c == 'Solutions to a Product Problem') {
+              r.clickUri = supportcentralurl + "/sc_KnowledgeArticle?sfdcid=" + r.raw.sfkbid + "&type=Solution";
+          }
+      });
+    });
+
+     //Add analytics custom events    
+     Coveo.$$(searchEl).on('changeAnalyticsCustomData', function(e, args) {
+         if (args.type=='ClickEvent') {
+             const matchEl = document.querySelector("[href='"+args.metaObject.documentURL+"']");
+             if(matchEl){
+              const resultEl = Coveo.$$(matchEl).closest('.CoveoResult');
+              const result = resultEl ? resultEl.data('CoveoResult') : {};
+               if (result && result.raw.sfkbid) {
+                   args.metaObject.documentauthor = result.raw.sysauthor;
+               }
+             }
+         }
+     });
+  }
+
+   const globalSearchBoxItems = document.querySelectorAll('#supprt-search-input, #supportSearchBox');
+   globalSearchBoxItems.forEach(function (sbEl) {
+     
+     const sbInputEl = sbEl.querySelector('input.CoveoQuerybox');
+     if(sbInputEl) {
+      sbInputEl.setAttribute("placeholder", 'Search BMC Support');
+     }
+     
+     if( !searchEl || sbEl.id !== 'supprt-search-input'){
+      Coveo.$$(sbEl).on("beforeRedirect", function (e, data) {
+        if(sbInputEl && sbInputEl.value) {
+          data.searchPageUri = data.searchPageUri + '?q=' + encodeURIComponent(sbInputEl.value);
+        }
+      });
+      Coveo.initSearchbox(sbEl, '/support/resources/support-search.html');
+     }
    });
 });
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(34);
+var content = __webpack_require__(35);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -794,24 +805,24 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(1)(content, options);
+var update = __webpack_require__(3)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(35)(false);
+exports = module.exports = __webpack_require__(36)(false);
 // Module
 exports.push([module.i, ".CoveoResult .CoveoChatterThumbnail .coveo-chatter-thumbnail-img {\n  border-radius: 50%; }\n\n.CoveoResult .CoveoChatterThumbnail .coveo-chatter-thumbnail-placeholder {\n  text-align: center;\n  border-radius: 2px;\n  width: 30px;\n  height: 30px;\n  background-size: 30px 30px; }\n\n.CoveoResult .coveo-salesforce-thumbnail-container.coveo-salesforce-thumbnail-placeholder {\n  text-align: center; }\n\n.CoveoResult .coveo-salesforce-thumbnail-container.coveo-salesforce-thumbnail-placeholder > img.coveo-salesforce-thumbnail-img {\n  display: none; }\n\n.CoveoSearchInterface.coveo-chat-ended .CoveoResultActionsSendLiveAgent {\n  display: none; }\n\n.CoveoResultActionsMenu {\n  display: none;\n  position: relative;\n  height: 1.5rem;\n  right: 0;\n  border: 1px solid #ccc;\n  border-radius: 6px;\n  margin-top: -24px;\n  background: white; }\n  .CoveoResultActionsMenu .coveo-hidden {\n    display: none; }\n  .CoveoResultActionsMenu.coveo-menu-opened {\n    display: flex;\n    flex-flow: row nowrap;\n    justify-content: flex-end;\n    float: right; }\n  .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item {\n    height: initial;\n    padding: 0 8px;\n    margin: 0;\n    cursor: pointer;\n    position: relative;\n    border-left: 1px solid #ccc;\n    border-top-right-radius: inherit;\n    border-bottom-right-radius: inherit;\n    line-height: 1.5em; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item.coveo-hidden {\n      display: none; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item:not(.coveo-hidden):not([style*=\"display: none\"]) {\n      border-left: none; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item:not(.coveo-hidden):not([style*=\"display: none\"]) ~ .coveo-result-actions-menu-menu-item:not(.coveo-hidden):not([style*=\"display: none\"]) {\n      border-left: thin solid #bcc3ca; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item:first-child {\n      border: transparent;\n      border-top-left-radius: inherit;\n      border-bottom-left-radius: inherit; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item.CoveoAttachToCase span {\n      visibility: visible;\n      height: 100%; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item .coveo-icon-for-quickview-svg {\n      margin: 0; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item:hover {\n      background-color: #f3f2f2; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item svg {\n      height: 16px;\n      width: 16px;\n      fill: #1d4f76;\n      vertical-align: middle; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item.CoveoQuickview:hover .coveo-caption-for-icon {\n      /* reset the value to initial for the quickview so popperjs can work properly. */\n      bottom: initial; }\n      .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item.CoveoQuickview:hover .coveo-caption-for-icon:before {\n        border: transparent; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item:hover .coveo-caption-for-icon {\n      display: inline;\n      bottom: 30px;\n      transform: translateX(-50%);\n      left: 50%; }\n    .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item .coveo-caption-for-icon {\n      font-size: 12px;\n      display: none;\n      background: #263e55;\n      color: white;\n      border-radius: 2px;\n      padding: 6px 16px;\n      position: absolute;\n      white-space: nowrap;\n      z-index: 99; }\n      .CoveoResultActionsMenu .coveo-result-actions-menu-menu-item .coveo-caption-for-icon:before {\n        border: solid;\n        border-color: #263e55 transparent;\n        border-width: 7px 6px 0;\n        content: '';\n        position: absolute;\n        z-index: 99;\n        bottom: -6px;\n        top: initial;\n        left: calc(50% - 6px); }\n\n.CoveoResultActionsPostToFeed,\n.CoveoResultActionsSendEmail,\n.CoveoResultActionsSendLiveAgent,\n.CoveoResultQuickAction {\n  cursor: pointer;\n  position: relative;\n  margin: 0 0 0 .5em;\n  line-height: 1.5em;\n  text-align: center; }\n  .CoveoResultActionsPostToFeed svg,\n  .CoveoResultActionsSendEmail svg,\n  .CoveoResultActionsSendLiveAgent svg,\n  .CoveoResultQuickAction svg {\n    height: 16px;\n    width: 16px;\n    fill: #1d4f76;\n    vertical-align: middle; }\n  .CoveoResultActionsPostToFeed.coveo-hidden,\n  .CoveoResultActionsSendEmail.coveo-hidden,\n  .CoveoResultActionsSendLiveAgent.coveo-hidden,\n  .CoveoResultQuickAction.coveo-hidden {\n    display: none; }\n  .CoveoResultActionsPostToFeed > span,\n  .CoveoResultActionsSendEmail > span,\n  .CoveoResultActionsSendLiveAgent > span,\n  .CoveoResultQuickAction > span {\n    display: inline-block; }\n  .CoveoResultActionsPostToFeed:hover .coveo-caption-for-icon,\n  .CoveoResultActionsSendEmail:hover .coveo-caption-for-icon,\n  .CoveoResultActionsSendLiveAgent:hover .coveo-caption-for-icon,\n  .CoveoResultQuickAction:hover .coveo-caption-for-icon {\n    display: inline;\n    bottom: 26px;\n    transform: translateX(-50%);\n    left: 50%; }\n  .CoveoResultActionsPostToFeed .coveo-caption-for-icon,\n  .CoveoResultActionsSendEmail .coveo-caption-for-icon,\n  .CoveoResultActionsSendLiveAgent .coveo-caption-for-icon,\n  .CoveoResultQuickAction .coveo-caption-for-icon {\n    font-size: 12px;\n    display: none;\n    background: #263e55;\n    color: white;\n    border-radius: 2px;\n    padding: 6px 16px;\n    position: absolute;\n    white-space: nowrap;\n    z-index: 99; }\n    .CoveoResultActionsPostToFeed .coveo-caption-for-icon:before,\n    .CoveoResultActionsSendEmail .coveo-caption-for-icon:before,\n    .CoveoResultActionsSendLiveAgent .coveo-caption-for-icon:before,\n    .CoveoResultQuickAction .coveo-caption-for-icon:before {\n      border: solid;\n      border-color: #263e55 transparent;\n      border-width: 7px 6px 0;\n      content: '';\n      position: absolute;\n      z-index: 99;\n      bottom: -6px;\n      top: initial;\n      left: calc(50% - 6px); }\n\n/*\n* @param direction vertical or horizontal\n* @param position type of positioning to apply (relative/absolute)\n*/\n/*\n* @param $selector css selector on which to apply the icon. Can be '&' if the icon should be applied on the current element;\n* @param $size size of the icon to use\n*/\n@-webkit-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@-moz-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@-o-keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@keyframes coveo-spin {\n  from {\n    -webkit-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -webkit-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@-webkit-keyframes smooth-spin {\n  from {\n    transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg); } }\n\n@-moz-keyframes smooth-spin {\n  from {\n    transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg); } }\n\n@-o-keyframes smooth-spin {\n  from {\n    transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg); } }\n\n@keyframes smooth-spin {\n  from {\n    transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg); }\n  to {\n    transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg); } }\n\n.coveo-label {\n  color: black;\n  font-size: 1em;\n  font-weight: normal; }\n\n.coveo-content {\n  color: black;\n  font-size: 1em; }\n\n.coveo-link {\n  color: #004990;\n  text-decoration: none; }\n  .coveo-link:hover {\n    text-decoration: underline; }\n\n.coveo-user-actions-opened .CoveoUserActions {\n  display: block; }\n\n.coveo-user-actions-opened .coveo-main-section {\n  display: none; }\n\n.CoveoUserActions {\n  display: none;\n  margin-top: 10px;\n  max-width: 1200px;\n  padding: 0 1em;\n  border: 1px solid #b5c4cf;\n  background-color: #f7f8f9; }\n  .CoveoUserActions > h1 {\n    color: #004990;\n    font-size: 2em;\n    font-weight: bold;\n    margin: 0.5em 0; }\n  .CoveoUserActions .coveo-no-actions {\n    padding: 3em;\n    text-align: center; }\n  .CoveoUserActions .coveo-close {\n    display: inline-block;\n    width: 1em;\n    height: 1em;\n    text-align: right; }\n  .CoveoUserActions-opened .coveo-user-actions {\n    display: block; }\n  .CoveoUserActions-opened .coveo-main-section {\n    display: none; }\n\n.coveo-expandable-list {\n  padding-bottom: 1.5em; }\n  .coveo-expandable-list .coveo-title {\n    font-size: 1em;\n    font-weight: normal;\n    margin: 0 0 0.75em;\n    text-transform: uppercase; }\n  .coveo-expandable-list .coveo-list {\n    margin: 0;\n    padding: 0;\n    list-style-type: none; }\n    .coveo-expandable-list .coveo-list li .coveo-list-row {\n      display: flex; }\n      .coveo-expandable-list .coveo-list li .coveo-list-row a {\n        width: calc(100% - 24px);\n        margin-bottom: 7px; }\n      .coveo-expandable-list .coveo-list li .coveo-list-row .coveo-row-icon {\n        position: relative;\n        width: 24px; }\n        .coveo-expandable-list .coveo-list li .coveo-list-row .coveo-row-icon > svg {\n          position: absolute;\n          top: 2px;\n          height: 1em;\n          width: 1em; }\n  .coveo-expandable-list .coveo-more-less {\n    font-size: 0.9em;\n    border: 0;\n    padding: 0;\n    color: #004990;\n    text-decoration: underline;\n    font-weight: normal;\n    background-color: transparent;\n    cursor: pointer;\n    margin-top: 0.5em;\n    margin-left: 24px; }\n\n.coveo-user-activity {\n  margin-top: 1em;\n  background-color: #f7f8f9; }\n  .coveo-user-activity .coveo-header {\n    font-size: 1em;\n    padding-bottom: 2em;\n    display: flex;\n    flex-flow: row nowrap;\n    align-content: flex-start; }\n    .coveo-user-activity .coveo-header .coveo-cell {\n      margin-right: 2em; }\n      .coveo-user-activity .coveo-header .coveo-cell:last-child {\n        margin-right: 0em; }\n    .coveo-user-activity .coveo-header .coveo-data {\n      margin-top: 1em;\n      font-weight: bold; }\n  .coveo-user-activity .coveo-activity {\n    margin: 0;\n    padding: 0 0 1.5em 0;\n    list-style-type: none; }\n    .coveo-user-activity .coveo-activity .coveo-data {\n      font-weight: bold; }\n    .coveo-user-activity .coveo-activity .coveo-folded {\n      cursor: pointer;\n      border: 0;\n      border-top: thin solid #cfd9e0;\n      border-bottom: thin solid #cfd9e0;\n      padding: 0.5em 0;\n      text-align: center; }\n      .coveo-user-activity .coveo-activity .coveo-folded hr {\n        height: 0;\n        border: 0;\n        border-bottom: thin solid #cfd9e0;\n        overflow: visible; }\n        .coveo-user-activity .coveo-activity .coveo-folded hr .coveo-text {\n          position: relative;\n          top: -0.5em;\n          display: inline-block;\n          vertical-align: top;\n          line-height: 1em;\n          height: 1em;\n          padding: 0 0.5em;\n          background-color: #f7f8f9; }\n    .coveo-user-activity .coveo-activity .coveo-bubble {\n      height: 1.5em;\n      border-left: thin solid #004990;\n      margin-left: 0.5em; }\n    .coveo-user-activity .coveo-activity .coveo-click a {\n      cursor: pointer;\n      color: #004990;\n      word-wrap: break-word;\n      text-decoration: none; }\n      .coveo-user-activity .coveo-activity .coveo-click a:hover {\n        text-decoration: underline; }\n    .coveo-user-activity .coveo-activity .coveo-click,\n    .coveo-user-activity .coveo-activity .coveo-search,\n    .coveo-user-activity .coveo-activity .coveo-custom,\n    .coveo-user-activity .coveo-activity .coveo-view {\n      position: relative;\n      margin-left: 0.5em;\n      border-left: thin solid #004990;\n      padding-left: 1.5em; }\n      .coveo-user-activity .coveo-activity .coveo-click .coveo-icon,\n      .coveo-user-activity .coveo-activity .coveo-search .coveo-icon,\n      .coveo-user-activity .coveo-activity .coveo-custom .coveo-icon,\n      .coveo-user-activity .coveo-activity .coveo-view .coveo-icon {\n        position: absolute;\n        left: -0.75em;\n        top: -0.1em;\n        padding: 0;\n        height: 1.5em;\n        width: 1.5em; }\n        .coveo-user-activity .coveo-activity .coveo-click .coveo-icon > svg,\n        .coveo-user-activity .coveo-activity .coveo-search .coveo-icon > svg,\n        .coveo-user-activity .coveo-activity .coveo-custom .coveo-icon > svg,\n        .coveo-user-activity .coveo-activity .coveo-view .coveo-icon > svg {\n          height: 1.5em;\n          width: 1.5em; }\n      .coveo-user-activity .coveo-activity .coveo-click > div,\n      .coveo-user-activity .coveo-activity .coveo-search > div,\n      .coveo-user-activity .coveo-activity .coveo-custom > div,\n      .coveo-user-activity .coveo-activity .coveo-view > div {\n        padding-bottom: 0.5em; }\n      .coveo-user-activity .coveo-activity .coveo-click:last-child,\n      .coveo-user-activity .coveo-activity .coveo-search:last-child,\n      .coveo-user-activity .coveo-activity .coveo-custom:last-child,\n      .coveo-user-activity .coveo-activity .coveo-view:last-child {\n        padding-bottom: 0;\n        border-left: 0; }\n\n.coveo-accordion:first-child {\n  border-top: 0; }\n  .coveo-accordion:first-child .coveo-accordion-header {\n    border-top: 0; }\n\n.coveo-accordion-header {\n  cursor: pointer;\n  display: flex;\n  flex-flow: row nowrap;\n  align-content: center;\n  align-items: baseline;\n  justify-content: space-between;\n  border-top: 1px solid #b5c4cf;\n  padding: 1em 0; }\n  .coveo-accordion-header-title {\n    font-size: 1.5em;\n    font-weight: bold;\n    text-align: left;\n    width: auto; }\n  .coveo-accordion-header .coveo-arrow-down svg {\n    height: 1em;\n    fill: black;\n    transform: rotate(180deg);\n    width: 0.5em;\n    padding: 0.25em 0 0; }\n\n.coveo-accordion.coveo-folded .coveo-accordion-foldable {\n  display: none; }\n\n.coveo-accordion.coveo-folded .coveo-arrow-down svg {\n  transform: initial;\n  padding: 0 0 0.25em; }\n\n/**\n * Ensure base css for button is present.\n */\n.coveo-dropdown-header-wrapper {\n  width: 100%;\n  display: inline-flex;\n  flex-wrap: nowrap;\n  -webkit-box-pack: end;\n  justify-content: flex-end;\n  margin: 0px;\n  padding: 0px; }\n  .coveo-dropdown-header-wrapper .coveo-user-actions-dropdown-header {\n    border: thin solid #bcc3ca;\n    border-radius: 2px;\n    background-color: white; }\n  .coveo-dropdown-header-wrapper a {\n    margin-right: 10px; }\n  .coveo-dropdown-header-wrapper .coveo-dropdown-header {\n    font-size: 12px;\n    display: inline-block;\n    padding: 0 7px;\n    height: 22px;\n    font-weight: 700;\n    line-height: 20px;\n    letter-spacing: 0.09px;\n    vertical-align: middle;\n    white-space: normal;\n    color: #1d4f76;\n    cursor: pointer;\n    text-transform: uppercase; }\n    .coveo-dropdown-header-wrapper .coveo-dropdown-header p {\n      line-height: 16px; }\n    .coveo-dropdown-header-wrapper .coveo-dropdown-header * {\n      display: inline-block;\n      margin: 0; }\n\n/* hide after a query is made. */\n.coveo-after-initialization .coveo-hide-after-query {\n  display: none;\n  visibility: hidden; }\n\n/* show before a query is made. */\n.coveo-during-initialization .coveo-hide-after-query {\n  display: inherit;\n  visibility: inherit; }\n\n.CoveoResultsPreferences {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, sans-serif;\n  font-size: 15px;\n  color: #373737; }\n\n.CoveoResultsFiltersPreferences {\n  font-family: \"Lato\", \"Helvetica Neue\", Helvetica, Arial, sans-serif, sans-serif;\n  font-size: 15px;\n  color: #373737; }\n\n.coveo-modal-container.salesforce-quickview-modal-container .coveo-modal-body {\n  padding: 0; }\n  .coveo-modal-container.salesforce-quickview-modal-container .coveo-modal-body iframe {\n    border: transparent; }\n\n/* Override the salesforce clasic override of the list item margin (ML Facets see SFINT-2376). */\n.CoveoDynamicFacet li.coveo-dynamic-facet-value {\n  margin-left: 0; }\n", ""]);
 
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
