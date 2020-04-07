@@ -1,3 +1,4 @@
+<!-- WEB-6721 Modifications to Resource Center Template for UI changes START -->
 <div class="resource-results">
     <div class="rc-card-row">
         {{#each items}}
@@ -7,11 +8,11 @@
             {{else}}
             <a href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
             {{/ifCond}}
-            <div class="simple-card bg-white" style="height: 310px;">
-                <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
+            <div class="simple-card bg-white" style="min-height: 310px;">
+                <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
                     <h4>{{type}}</h4>
-                    {{#if thumbnail}}
-                    <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
+                    {{#if headerImage}}
+                    <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
                     </div>
                     {{else}}
                     <div class="card-icon ic_{{linkType}}" alt border="0"></div>
@@ -20,7 +21,7 @@
                 <div class="card-content">
                     <hr/>
                     <h4>
-                        {{#if thumbnail}}
+                        {{#if headerImage}}
                             {{{truncateText title 70}}}
                         {{else}}
                             {{{truncateText title 110}}}
@@ -28,18 +29,41 @@
                     </h4>
                 </div>
                 <div class="card-footer">
-                    <span class="card-footer-action">
+                                                                                    
+                    <div class="card-footer-action">
+                    {{#ifCond linkType '===' "play"}}
+                        {{#if videoLength}}
+                            <span class="video-length">     
+                            <svg class="align-middle s-clock">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                            </svg>{{videoLength}}                                                                               
+                            </span>
+                        {{/if}}  
+                    {{/ifCond}} 
+                    {{#if footerLogo}}  
+                        {{#ifCond linkType '===' "play"}}   
+                                                                                                
+                        {{else}}
+                            <span class="card-footer-logo">
+                                <img src="{{footerLogo}}" >
+                            </span> 
+                        {{/ifCond}}                                                                                                                                                                                                                          
+                    {{/if}}
+                    <span>
                         <svg class="align-middle s-{{linkType}}">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                         </svg>
                         {{#ifCond linkType '===' "play"}}${'Play' @ i18n}{{/ifCond}}
                         {{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
                         {{#ifCond linkType '===' "view"}}${'View' @ i18n}{{/ifCond}}
                     </span>
+                        
+                    </div>
                 </div>
             </div>
             </a>
         </div>
         {{/each}}
     </div>
-</div>
+    </div>
+<!-- WEB-6721 Modifications to Resource Center Template for UI changes END -->
