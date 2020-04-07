@@ -1,0 +1,221 @@
+.homepage-2020{
+    overflow: hidden;
+    margin: auto;
+    
+    .right-col{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 2010px) {
+            
+        }
+        @media (min-width: 3440px) {
+           
+        }
+        @media (min-height: 1440px) and (min-width: 3440px) {
+            /* CSS stuff */
+        }
+        @media (max-height: 745px) and (min-width: 3440px) {
+            flex-direction: row;
+        }
+    } 
+    .left-col{
+       order: 1;
+       background: #0BB2E8;
+       position: relative;
+       .loading-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #0BB2E8;
+            height: 100%;
+            z-index: 10;
+        }
+    }
+    .hpLearnMore{
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        display: inline-block;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 3px;
+        margin-top: 10px;    
+            
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: #FFF;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        &:hover:before {
+            visibility: visible;
+            width: 90%;
+        }
+        &::after {
+            content: "\a0\00203A";
+        }
+    }
+    .owl-carousel {   
+        height: 100%;
+        
+        .owl-stage-outer{
+            height: 100%;
+            .owl-stage{
+                height: 100%;
+                .owl-item{
+                    height: 100%;
+                }
+            }
+        }     
+        .owl-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            margin: auto;
+            .owl-dots{
+                text-align: center;
+                .owl-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin: 10px;
+                    background-color: rgba(255, 255, 255, 0.50);
+                }
+                .owl-dot.active{
+                    background-color: #fff;
+                }
+            }
+        }        
+        .item{     
+            height: 100%;
+            display: none;
+            @media (max-width: $break-md) {
+                min-height: 700px;
+            }
+            background-size: cover;
+            background-position: center center;       
+            .carouselCaption {
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+                right: 0;
+                width: calc(100% - 50px);
+                @media (min-width: $break-sm) {
+                    width: calc(80% - 50px);
+                    margin: 0 auto 0 0;
+                    left: 50px;
+                }
+                color: #fff;
+                margin: auto;
+                .hpIcon{
+                    max-height: 50px;
+                    width: auto;
+                }
+                h4 {
+                    font-size: 28px;
+                    color: #fff;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 20px;
+                    color: #fff; 
+                    small{
+                        font-size: 12px;  
+                        display: block;
+                        margin-top: 10px
+                    }
+                }
+            }
+        }  
+
+    }
+    .jumbotron {
+        padding: 30px 70px;
+        height: 55%;
+        @media (min-width: 1600px) {
+            padding: 70px;
+            height: 60%;
+        }
+        @media (min-width: 2010px) {
+            height: 100%;
+        }
+        .jTitle {
+            @media (min-width: 1600px) {
+                font-size: 70px;
+            }
+            font-weight: 800;
+            color: #383233;
+            font-size: 50px;
+            margin-bottom: 30px;
+            min-height: 165px;
+        }
+        .jHr{
+            hr {
+                border: none;
+                height: 5px;
+                background: #1DBDDE;
+                max-width: 112px;
+                margin: 0 auto 0 0;
+            }
+        }
+        .hpLearnMore {
+            color: #1DBDDE;
+            &::before {
+                background-color: #1DBDDE;
+            }
+        }
+    }
+    .homeCards{
+        height: 45%;
+        @media (min-width: 1600px) {
+            height: 40%;
+        }
+        @media (min-width: 2010px) {
+            height: 100%;
+        }
+        .sm-flex{
+            @media (min-width: 2010px) {
+                height: 100%;
+            }
+        }
+        .hcContent{
+            background-color: #1DBDDE;
+            padding: 40px;
+            background-size: cover;
+            background-position: center center;  
+            h3{
+                font-size: 28px;
+                font-weight: 700;
+                color: #fff;
+            }
+            p{
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+        .hcContent-green-bg{
+           
+        }
+        .hcContent-blue-bg{
+            
+        }
+    }
+    
+}
+
+
+
+
+.home {
+    background-color: #fff;
+}
