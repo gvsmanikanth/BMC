@@ -74,6 +74,10 @@
 	.modal-youtube-video-player.btn.btn-secondary{
 		svg {
 			fill: #046e96;
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+				max-width: 35px;
+			 }
+			 
 		}
 		&:hover{
 			svg {
