@@ -21,7 +21,7 @@
             navRewind: false,
             slideTransition: 'linear',
             stagePadding: 100,
-            autoplay:true,
+            autoplay:false,
             autoplayTimeout:3000,
             autoplayHoverPause:true,
             navText: "<>",
