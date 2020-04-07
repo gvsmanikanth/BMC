@@ -1,13 +1,21 @@
 .homepage-2020{
-    overflow: hidden;
     margin: auto;
+
+    .mobile-hidden {       
+        @media (max-width: $break-sm) {
+           display: none;
+        }
+    }
+    
+    
     
     .right-col{
         order: 2;
         display: flex;
         flex-direction: column;
-        @media (min-width: 2010px) {
-            
+
+        @media (min-width: $break-sm) {
+          
         }
         @media (min-width: 3440px) {
            
@@ -34,7 +42,7 @@
         }
     }
     .hpLearnMore{
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 600;
         color: #fff;
         display: inline-block;
@@ -60,6 +68,97 @@
         }
         &::after {
             content: "\a0\00203A";
+        }
+        @media (min-width: $break-sm) {
+            font-size: 16px;                    
+         }  
+    }
+    .jumbotron {
+        padding: 30px;
+        @media (min-width: $break-sm) {
+            padding: 30px 40px;
+        }
+        @media (min-width: $break-lg) {
+            padding: 30px 70px;
+        }
+        @media (min-width: 1600px) {
+            padding: 70px;
+        }
+        @media (min-width: 2010px) {
+            height: 100%;
+        }
+        .jTitle {
+            font-weight: 800;
+            color: #383233;
+            font-size: 34px;
+            margin-bottom: 30px;
+            @media (min-width: $break-sm) {
+               font-size: 50px;
+            }
+            @media (min-width: 1600px) {
+                font-size: 70px;
+            }
+            
+            
+        }
+        .jHr{
+            margin: 5px 15px 0 0;
+            hr {
+                border: none;
+                height: 5px;
+                background: #1DBDDE;
+                min-width: 53px;
+                max-width: 112px;
+                margin: 0 auto 0 0;                
+            }
+        }
+        .hpLearnMore {
+            color: #1DBDDE;
+            margin-top: 0;
+            &::before {
+                background-color: #1DBDDE;
+            }
+        }
+    }
+    .homeCards{
+        @media (min-width: 1600px) {
+            
+        }
+        @media (min-width: 2010px) {
+            height: 100%;
+        }
+        .sm-flex{
+            height: 100%;
+        }
+        .hcContent{
+            background-color: #1DBDDE;
+            padding: 30px;
+            background-size: cover;
+            background-position: center center;  
+            @media (min-width: $break-sm) {
+                padding: 40px;                   
+             } 
+            h3{
+                font-size: 18px;
+                font-weight: 700;
+                color: #fff;
+                @media (min-width: $break-sm) {
+                    font-size: 28px;                    
+                 }                
+            }
+            p{
+                font-size: 14px;
+                color: #fff;
+                @media (min-width: $break-sm) {
+                    font-size: 20px;                    
+                 }  
+            }
+        }
+        .hcContent-green-bg{
+           
+        }
+        .hcContent-blue-bg{
+            
         }
     }
     .owl-carousel {   
@@ -100,116 +199,57 @@
             height: 100%;
             display: none;
             @media (max-width: $break-md) {
-                min-height: 700px;
+               // min-height: 700px;
             }
             background-size: cover;
-            background-position: center center;       
-            .carouselCaption {
-                position: absolute;
-                bottom: 50px;
-                left: 0;
-                right: 0;
-                width: calc(100% - 50px);
-                @media (min-width: $break-sm) {
-                    width: calc(80% - 50px);
-                    margin: 0 auto 0 0;
-                    left: 50px;
+            background-position: center center;    
+            .car-flex{
+                justify-content: space-around;
+                flex-direction: column;
+                height: 100%;
+                .carousel-image{
+                    padding: 20px;
+                    img{
+                        width: auto;
+                        max-width: 100%;
+                        margin: 0 auto;
+                    }
                 }
-                color: #fff;
-                margin: auto;
-                .hpIcon{
-                    max-height: 50px;
-                    width: auto;
-                }
-                h4 {
-                    font-size: 28px;
+                .carouselCaption {
+                    position: relative;
+                    padding: 40px;
+                    @media (min-width: $break-sm) {
+                        margin: 0 auto 0 0;
+                        
+                    }
                     color: #fff;
-                    font-weight: 700;
-                }
-                p{
-                    font-size: 20px;
-                    color: #fff; 
-                    small{
-                        font-size: 12px;  
-                        display: block;
-                        margin-top: 10px
+                    margin: auto;
+                    .hpIcon{
+                        max-height: 50px;
+                        width: auto;
+                    }
+                    h4 {
+                        font-size: 28px;
+                        color: #fff;
+                        font-weight: 700;
+                    }
+                    p{
+                        font-size: 20px;
+                        color: #fff; 
+                        small{
+                            font-size: 12px;  
+                            display: block;
+                            margin-top: 10px
+                        }
                     }
                 }
             }
+            
         }  
 
     }
-    .jumbotron {
-        padding: 30px 70px;
-        height: 55%;
-        @media (min-width: 1600px) {
-            padding: 70px;
-            height: 60%;
-        }
-        @media (min-width: 2010px) {
-            height: 100%;
-        }
-        .jTitle {
-            @media (min-width: 1600px) {
-                font-size: 70px;
-            }
-            font-weight: 800;
-            color: #383233;
-            font-size: 50px;
-            margin-bottom: 30px;
-            min-height: 165px;
-        }
-        .jHr{
-            hr {
-                border: none;
-                height: 5px;
-                background: #1DBDDE;
-                max-width: 112px;
-                margin: 0 auto 0 0;
-            }
-        }
-        .hpLearnMore {
-            color: #1DBDDE;
-            &::before {
-                background-color: #1DBDDE;
-            }
-        }
-    }
-    .homeCards{
-        height: 45%;
-        @media (min-width: 1600px) {
-            height: 40%;
-        }
-        @media (min-width: 2010px) {
-            height: 100%;
-        }
-        .sm-flex{
-            @media (min-width: 2010px) {
-                height: 100%;
-            }
-        }
-        .hcContent{
-            background-color: #1DBDDE;
-            padding: 40px;
-            background-size: cover;
-            background-position: center center;  
-            h3{
-                font-size: 28px;
-                font-weight: 700;
-                color: #fff;
-            }
-            p{
-                font-size: 20px;
-                color: #fff;
-            }
-        }
-        .hcContent-green-bg{
-           
-        }
-        .hcContent-blue-bg{
-            
-        }
-    }
+    
+   
     
 }
 
