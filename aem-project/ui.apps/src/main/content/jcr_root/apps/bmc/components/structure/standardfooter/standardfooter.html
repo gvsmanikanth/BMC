@@ -22,7 +22,18 @@
             <li class="nav-tertiary-col">
                 <h4>Company</h4>
                 <ul data-sly-test="${footerCompanySet}" data-sly-list.footerCompany="${footerCompanySet.ChildResources}" class="meta">
-                    <li><a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${footerCompany.linkText == 'Select Region' ? 'icon-global' : ''}">${footerCompany.linkText @ context='html'}</a></li>
+                    <li>
+						<!--/* WEB-6783 MOdal window logic for feedback link START */--> 
+                        <sly data-sly-test="${footerCompany.linkText == 'Select Region'}">
+                               <sly data-sly-test.classValue="icon-global"></sly>
+                         </sly>
+                          <sly data-sly-test="${footerCompany.targetType == 'modal'}">
+                              <sly data-sly-test.classValue="modal-iframe"></sly>
+                         </sly>
+						<!--/* WEB-6783 MOdal window logic for feedback link END  */-->
+
+						<a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${classValue}">${footerCompany.linkText @ context='html'}</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-tertiary-col">
