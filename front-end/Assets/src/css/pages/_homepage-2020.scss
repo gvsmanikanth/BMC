@@ -1,4 +1,5 @@
 .homepage-2020{
+    $wideScreen		: 2440px;
     margin: auto;
 
     .mobile-hidden {       
@@ -17,14 +18,14 @@
         @media (min-width: $break-sm) {
           
         }
-        @media (min-width: 3440px) {
-           
+        @media (min-width: $wideScreen) {
+            flex-direction: row;
         }
         @media (min-height: 1440px) and (min-width: 3440px) {
             /* CSS stuff */
         }
         @media (max-height: 745px) and (min-width: 3440px) {
-            flex-direction: row;
+            
         }
     } 
     .left-col{
@@ -70,8 +71,17 @@
             content: "\a0\00203A";
         }
         @media (min-width: $break-sm) {
-            font-size: 16px;                    
+            font-size: 15px;                    
+         } 
+         @media (min-width: $break-lg) {
+            font-size: 13px;                    
          }  
+         @media (min-width: $desktop) {
+            font-size: 18px;                    
+         }
+         @media (min-width: $wideScreen) {
+            font-size: 24px;                    
+         }
     }
     .jumbotron {
         padding: 30px;
@@ -87,6 +97,10 @@
         @media (min-width: 2010px) {
             height: 100%;
         }
+        @media (min-width: $wideScreen) {
+            padding: 30px 70px;
+            height: 100%;
+        }
         .jTitle {
             font-weight: 800;
             color: #383233;
@@ -95,10 +109,12 @@
             @media (min-width: $break-sm) {
                font-size: 50px;
             }
-            @media (min-width: 1600px) {
+            @media (min-width: $desktop) {
                 font-size: 70px;
             }
-            
+            @media (min-width: $wideScreen) {
+                font-size: 90px;
+            }
             
         }
         .jHr{
@@ -112,6 +128,23 @@
                 margin: 0 auto 0 0;                
             }
         }
+        .jCont{
+            p{
+                font-size: 14px;
+                @media (min-width: $tablet) {
+                    font-size: 18px;
+                 }
+                 @media (min-width: $break-lg) {
+                    font-size: 15px;
+                }
+                 @media (min-width: $desktop) {
+                     font-size: 20px;
+                 }
+                 @media (min-width: $wideScreen) {
+                     font-size: 28px;
+                 }
+            }
+        }
         .hpLearnMore {
             color: #1DBDDE;
             margin-top: 0;
@@ -121,11 +154,12 @@
         }
     }
     .homeCards{
+        height: 100%;
         @media (min-width: 1600px) {
             
         }
         @media (min-width: 2010px) {
-            height: 100%;
+         
         }
         .sm-flex{
             height: 100%;
@@ -139,19 +173,39 @@
                 padding: 40px;                   
              } 
             h3{
-                font-size: 18px;
+                font-size: 17px;
                 font-weight: 700;
                 color: #fff;
-                @media (min-width: $break-sm) {
-                    font-size: 28px;                    
-                 }                
+                text-transform: uppercase;
+                @media (min-width: $tablet) {
+                    font-size: 18px;
+                }
+                @media (min-width: $break-lg) {
+                    font-size: 15px;
+                }
+                @media (min-width: $desktop) {
+                    font-size: 28px;
+                }
+                @media (min-width: $wideScreen) {
+                    font-size: 36px;
+                }
+                              
             }
             p{
                 font-size: 14px;
                 color: #fff;
-                @media (min-width: $break-sm) {
-                    font-size: 20px;                    
-                 }  
+                @media (min-width: $tablet) {
+                    font-size: 18px;
+                }
+                @media (min-width: $break-lg) {
+                    font-size: 15px;
+                }
+                @media (min-width: $desktop) {
+                    font-size: 20px;
+                }
+                @media (min-width: $wideScreen) {
+                    font-size: 24px;
+                }
             }
         }
         .hcContent-green-bg{
@@ -198,6 +252,7 @@
         .item{     
             height: 100%;
             display: none;
+            padding-bottom: 30px;
             @media (max-width: $break-md) {
                // min-height: 700px;
             }
@@ -207,35 +262,85 @@
                 justify-content: space-around;
                 flex-direction: column;
                 height: 100%;
+                @media (min-width: $break-sm) {
+                    flex-direction: row-reverse;
+                }
+                @media (min-width: $break-md) {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                @media (min-width: $wideScreen) {
+                    flex-direction: row-reverse;
+                }
+                              
                 .carousel-image{
                     padding: 20px;
+                    padding-bottom: 0;
+                    height: 50%;
                     img{
                         width: auto;
                         max-width: 100%;
                         margin: 0 auto;
+                        max-height: 380px;
                     }
                 }
                 .carouselCaption {
                     position: relative;
-                    padding: 40px;
+                    padding: 40px;                   
                     @media (min-width: $break-sm) {
                         margin: 0 auto 0 0;
-                        
+                    }
+                    @media (min-width: $break-lg) {
+                        padding-top: 0;
+                        max-width: 70%;
                     }
                     color: #fff;
                     margin: auto;
                     .hpIcon{
                         max-height: 50px;
                         width: auto;
+                        margin-bottom: 20px;
                     }
                     h4 {
-                        font-size: 28px;
+                        font-size: 17px;
                         color: #fff;
                         font-weight: 700;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        @media (min-width: $break-sm) {
+                            font-size: 20px;
+                        }
+                        @media (min-width: $tablet) {
+                            font-size: 24px;
+                        }
+                        @media (min-width: $break-lg) {
+                            font-size: 20px;
+                        }
+                        @media (min-width: $desktop) {
+                            font-size: 28px;
+                        }
+                        @media (min-width: $wideScreen) {
+                            font-size: 36px;
+                        }
                     }
                     p{
-                        font-size: 20px;
+                        font-size: 14px;
                         color: #fff; 
+                        @media (min-width: $break-sm) {
+                            font-size: 20px;
+                        }
+                        @media (min-width: $tablet) {
+                            font-size: 18px;
+                        }
+                        @media (min-width: $break-lg) {
+                            font-size: 15px;
+                        }
+                        @media (min-width: $desktop) {
+                            font-size: 20px;
+                        }
+                        @media (min-width: $wideScreen) {
+                            font-size: 24px;
+                        }
                         small{
                             font-size: 12px;  
                             display: block;
