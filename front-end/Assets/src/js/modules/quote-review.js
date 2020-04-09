@@ -47,7 +47,8 @@
                 },
                 1000:{
                     stagePadding: 80,
-                    items:2
+                    items:2,
+                    nav:true
                 },
                 1200:{
                     stagePadding: 80,
