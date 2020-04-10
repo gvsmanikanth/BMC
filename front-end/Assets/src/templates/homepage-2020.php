@@ -1,10 +1,10 @@
 <?php $pageTitle='BMC Home' ; $bodyClass='home page-home' ; include 'php-inc/head.php'; ?>
  <div class="homepage-2020 bg-white">   
-    <div class="md-flex">
+    <div class="md-flex dynHeight">
         <div class="flex-item md-col-7 right-col">
             <div class="jumbotron flex flex-center">
                 <div class="sm-flex">
-                    <div class="flex-item sm-col-7 lg-col-8">
+                    <div class="flex-item sm-col-7 lg-col-8 wide-ful-width">
                         <h2 class="jTitle">Become an Autonomous Digital Enterprise</h2>
                         <div class="flex">
                             <div class="flex-item md-col-4 jHr"><hr></div>
@@ -14,28 +14,39 @@
                             </div>
                         </div>
                     </div> 
-                    <div class="flex-item sm-col-5 lg-col-4 mobile-hidden"> 
-                        <img src="/front-end/Assets/src/img/homepage-2020/symbol.svg" alt="">
+                    <div class="flex-item sm-col-5 lg-col-4 mobile-hidden widescreen-hidden"> 
+                        <div class="penta" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/penta.svg');">
+                            <div class="round" style="background-image: url('/front-end/Assets/src/img/homepage-2020/round.svg');"></div>
+                        </div>
                     </div> 
                 </div>             
                 
             </div>
             <div class="homeCards">
                 <div class="sm-flex">
-                    <div class="flex-item sm-col-6 hcContent hcContent-green-bg"  style="background-image: url('/front-end/Assets/src/img/homepage-2020/green-texture.jpg');">
-                        <div class="">
-                            <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
-                            <h3>Automation everywhere</h3>
-                            <p>Intelligent automation across cloud, distributed systems, and mainframe.  </p>
-                            <a href="#." class="hpLearnMore">Learn More</a>
+                    
+                    <div class="flex-item sm-col-6  "  >
+                        <div class="box1-1"></div>
+		                <div class="box2-2"></div>
+                        <div class="hcContent hcContent-green-bg" style="background-image: url('/front-end/Assets/src/img/homepage-2020/greenbg.png');">
+                            <div class="cWrap">
+                                <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
+                                <h3>Automation everywhere</h3>
+                                <p>Intelligent automation across cloud, distributed systems, and mainframe.  </p>
+                                <a href="#." class="hpLearnMore">Learn More</a>
+                            </div>                            
                         </div>
                     </div>
-                    <div class="flex-item sm-col-6 hcContent hcContent-blue-bg"  style="background-image: url('/front-end/Assets/src/img/homepage-2020/blue-texture.jpg');">
-                        <div class="">
-                            <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="" class="hcIcon">
-                            <h3>Innovation in the cloud</h3>
-                            <p>Manage, operate, and services your critical IT and business operations with industry-leading SaaS solutions. </p>
-                            <a href="#." class="hpLearnMore">Learn More</a>
+                    <div class="flex-item sm-col-6 ">
+                        <div class="box1"></div>
+		                <div class="box2"></div>
+                        <div class="hcContent hcContent-blue-bg" style="background-image: url('/front-end/Assets/src/img/homepage-2020/bluebg.png');">
+                            <div class="cWrap">
+                                <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="" class="hcIcon">
+                                <h3>Innovation in the cloud</h3>
+                                <p>Manage, operate, and services your critical IT and business operations with industry-leading SaaS solutions. </p>
+                                <a href="#." class="hpLearnMore">Learn More</a>
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -49,9 +60,9 @@
                             <img src="/front-end/Assets/src/img/homepage-2020/News_image.png" alt="">
                         </div>    
                         <div class="carouselCaption">
-                            <img src="/front-end/Assets/src/img/homepage-2020/Frame.svg" alt="" class="hpIcon">
-                            <h4>Run Your Mainframe as You Reinvent It with BMC AMI </h4>
-                            <p>Deliver on the promise of the self-managing mainframe</p>
+                            <img src="/front-end/Assets/src/img/homepage-2020/Compuware_logo_700x137-002_2.svg" alt="" class="hpIcon">
+                            <h4>BMC signs definitive agreement to purchase Compuware</h4>
+                            <p>BMC to acquire Compuware, Combination brings mainframe to the mainstream as part of a modern IT infrastructure with a full-service solution integrating DevOps.</p>
                             <a href="#." class="hpLearnMore">Learn More</a>
                         </div>
                     </div>
@@ -60,7 +71,7 @@
                 <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
                     <div class="flex car-flex  flex-center">
                         <div class="carousel-image  mobile-hidden">    
-                            <img src="/front-end/Assets/src/img/homepage-2020/News_image.png" alt="">
+                            <img src="/front-end/Assets/src/img/homepage-2020/Chatbot_2s_300x261px.gif" alt="">
                         </div>    
                         <div class="carouselCaption">
                             <img src="/front-end/Assets/src/img/homepage-2020/control-m-icon.svg" alt="" class="hpIcon">

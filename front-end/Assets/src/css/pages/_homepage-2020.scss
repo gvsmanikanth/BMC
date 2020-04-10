@@ -152,6 +152,43 @@
                 background-color: #1DBDDE;
             }
         }
+        .widescreen-hidden{
+            @media (min-width: $wideScreen) {
+                display: none;
+             }
+        }
+        .wide-ful-width{
+            @media (min-width: $wideScreen) {
+                width: 100%;
+             }
+        }
+        .penta {
+            display: block;
+            position: relative;           
+            height: 238px;
+            width: 238px;
+            
+        }
+        
+        .round {
+            position: absolute;            
+            height: 145px;
+            width: 145px;
+            top: 56px;
+            left: 46px;
+            animation: rotate_round 27s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+        }
+        
+        @keyframes rotate_round {
+            0% {
+                transform: rotate(0deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
     }
     .homeCards{
         height: 100%;
@@ -163,14 +200,19 @@
         }
         .sm-flex{
             height: 100%;
+            .flex-item{
+                position: relative;
+                overflow: hidden;
+            }
         }
         .hcContent{
             background-color: #1DBDDE;
             padding: 30px;
             background-size: cover;
             background-position: center center;  
+            height: 100%;
             @media (min-width: $break-sm) {
-                padding: 40px;                   
+                padding: 35px;                   
              } 
             h3{
                 font-size: 17px;
@@ -208,12 +250,123 @@
                 }
             }
         }
-        .hcContent-green-bg{
-           
+        .box1 {
+            display: block;
+            position: absolute;
+            width: 260px;
+            height: 710px;
+            border-radius: 129.5px;
+            top: -28px;
+            left: -455px;
+            background-color: black;
+            transform: rotate(240deg);
+            z-index: 10;
+            background: linear-gradient(160deg, rgba(7,169,226,0) 0%, rgba(2,131,203,1) 30%, rgba(0,111,191,1) 100%);
+            animation: fly 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1000;
+            animation-delay: 2s;
         }
-        .hcContent-blue-bg{
-            
+        
+        .box2 {
+            display: block;
+            position: absolute;
+            width: 330px;
+            height: 990px;
+            border-radius: 200px;
+            top: 250px;
+            left: -458px;
+            background-color: black;
+            transform: rotate(240deg);
+            z-index: 10;
+            background: linear-gradient(160deg, rgba(7,169,226,0) 0%, rgba(2,131,203,1) 30%, rgba(0,111,191,1) 100%);
+            animation: fly1 8s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1000;
         }
+        
+        @keyframes fly {
+            0% {
+                top: -28px;
+                left: -455px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                top: -673px;
+                left: 680px;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fly1 {
+            0% {
+                top: 250px;
+                left: -458px;
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                top: -673px;
+                left: 1090px;
+                opacity: 0;
+            }
+        }
+        
+        .box1-1 {
+            display: block;
+            position: absolute;
+            width: 260px;
+            height: 710px;
+            border-radius: 129.5px;
+            top: -28px;
+            left: -455px;
+            background-color: black;
+            transform: rotate(240deg);
+            z-index: 10;
+            background: linear-gradient(160deg, rgba(127,188,0,0) 0%, rgba(129,189,0,1) 30%, rgba(127,188,0,1) 100%);
+            animation: fly 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1000;
+            animation-delay: 1s;
+        }
+        
+        .box2-2 {
+            display: block;
+            position: absolute;
+            width: 330px;
+            height: 990px;
+            border-radius: 200px;
+            top: 250px;
+            left: -458px;
+            background-color: black;
+            transform: rotate(240deg);
+            z-index: 10;
+            background: linear-gradient(160deg, rgba(127,188,0,0) 0%, rgba(129,189,0,1) 30%, rgba(127,188,0,1) 100%);
+            animation: fly1 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1000;
+        }
+        
+        .hcContent-green-bg, .hcContent-blue-bg {
+            z-index: 1;            
+        }
+        
+        .cWrap {
+            z-index: 105;
+            position: relative;
+        }
+      
     }
     .owl-carousel {   
         height: 100%;
@@ -276,12 +429,11 @@
                 .carousel-image{
                     padding: 20px;
                     padding-bottom: 0;
-                    height: 50%;
                     img{
                         width: auto;
                         max-width: 100%;
                         margin: 0 auto;
-                        max-height: 380px;
+                        max-height: 300px;
                     }
                 }
                 .carouselCaption {
@@ -292,6 +444,7 @@
                     }
                     @media (min-width: $break-lg) {
                         padding-top: 0;
+                        padding-bottom: 10px;
                         max-width: 70%;
                     }
                     color: #fff;
