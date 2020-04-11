@@ -35,7 +35,7 @@
                             <div class="cWrap">
                                 <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
                                 <h3>Automation everywhere</h3>
-                                <p class="widescreen-hidden">Intelligent automation across cloud, distributed systems, and mainframe.  </p>
+                                <p class="widescreen-hidden">Intelligent automation across cloud, distributed systems, and mainframe. </p>
                                 <a href="#." class="hpLearnMore">Learn More</a>
                             </div>                            
                         </div>
@@ -72,7 +72,7 @@
                     </div>
                     
                 </div>
-                <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
+                <!-- <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
                     <div class="flex car-flex  flex-center">
                         <div class="carousel-image  mobile-hidden">    
                             <img src="/front-end/Assets/src/img/homepage-2020/Chatbot_2s_300x261px.gif" alt="">
@@ -84,7 +84,7 @@
                             <a href="#." class="hpLearnMore">Learn More</a>
                         </div>
                     </div>    
-                </div>
+                </div> -->
                             
             </div>
             <div class="loading-placeholder"></div>

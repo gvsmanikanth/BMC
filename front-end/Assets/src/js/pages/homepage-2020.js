@@ -81,7 +81,7 @@
                  animateOut: 'fadeOut',
                  smartSpeed: 350,
                  items: 1, 
-                 dots: isDots 
+                 dots: isDots
                                  
              };
              var carousel = $('.owl-carousel-homepage');
