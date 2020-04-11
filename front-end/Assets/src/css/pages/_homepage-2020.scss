@@ -367,7 +367,10 @@
           
         .cWrap {
             z-index: 105;
-            position: relative;           
+            .hpLearnMore{
+                position: absolute;
+                bottom: 40px; 
+            }                    
         }
       
     }
@@ -420,20 +423,20 @@
                 }
                 @media (min-width: $break-md) {
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-between;
                 }               
                 @media (max-height: $smallLaptop) and (min-width: $tablet) {
                     flex-direction: row-reverse;
                 }
                               
                 .carousel-image{
-                    padding: 20px;
+                    padding: 20px 0 0 0;
                     padding-bottom: 0;
                     img{
                         width: auto;
                         max-width: 100%;
                         margin: 0 auto;
-                        max-height: 300px;
+                        max-height: 340px;
                     }
                 }
                 .carouselCaption {
@@ -443,8 +446,7 @@
                         margin: 0 auto 0 0;
                     }
                     @media (min-width: $break-lg) {
-                        padding-top: 0;
-                        padding-bottom: 10px;
+                        padding: 0 0 40px 40px;
                         max-width: 70%;
                     }
                     color: #fff;
