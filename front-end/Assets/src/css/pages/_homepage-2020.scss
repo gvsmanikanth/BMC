@@ -1,7 +1,11 @@
 .homepage-2020{
     $wideScreen		: 2440px;
-    margin: auto;
+    $smllestLaptop : 385px;
+    $smallLaptop: 529px;
+    $medLaptop : 750px;
 
+    margin: auto;
+    max-width: 1440px;
     .mobile-hidden {       
         @media (max-width: $break-sm) {
            display: none;
@@ -12,20 +16,11 @@
     
     .right-col{
         order: 2;
-        display: flex;
-        flex-direction: column;
-
-        @media (min-width: $break-sm) {
-          
-        }
-        @media (min-width: $wideScreen) {
-            flex-direction: row;
-        }
-        @media (min-height: 1440px) and (min-width: 3440px) {
-            /* CSS stuff */
-        }
-        @media (max-height: 745px) and (min-width: 3440px) {
-            
+        display: flex;       
+        flex-direction: column;          
+       
+        @media (max-height: $smallLaptop) and (min-width: $tablet){
+            flex-direction: row;            
         }
     } 
     .left-col{
@@ -75,13 +70,12 @@
          } 
          @media (min-width: $break-lg) {
             font-size: 13px;                    
-         }  
-         @media (min-width: $desktop) {
-            font-size: 18px;                    
-         }
-         @media (min-width: $wideScreen) {
-            font-size: 24px;                    
-         }
+         }         
+    }
+    .widescreen-hidden{
+        @media (max-height: $smallLaptop) and (min-width: $tablet) {
+            display: none;
+        }
     }
     .jumbotron {
         padding: 30px;
@@ -90,16 +84,10 @@
         }
         @media (min-width: $break-lg) {
             padding: 30px 70px;
-        }
-        @media (min-width: 1600px) {
-            padding: 70px;
-        }
-        @media (min-width: 2010px) {
-            height: 100%;
-        }
-        @media (min-width: $wideScreen) {
-            padding: 30px 70px;
-            height: 100%;
+        }               
+        @media (max-height: $smallLaptop) and (min-width: $tablet){
+            padding: 30px;
+            width: 40%;
         }
         .jTitle {
             font-weight: 800;
@@ -107,18 +95,19 @@
             font-size: 34px;
             margin-bottom: 30px;
             @media (min-width: $break-sm) {
-               font-size: 50px;
+               font-size: 44px;
             }
-            @media (min-width: $desktop) {
-                font-size: 70px;
-            }
-            @media (min-width: $wideScreen) {
-                font-size: 90px;
-            }
+            @media (max-height: $smallLaptop) and (min-width: $tablet) {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }                     
             
         }
         .jHr{
             margin: 5px 15px 0 0;
+            @media (max-height: $smallLaptop) and (min-width: $tablet) {
+                width: 100%;
+            }
             hr {
                 border: none;
                 height: 5px;
@@ -127,8 +116,19 @@
                 max-width: 112px;
                 margin: 0 auto 0 0;                
             }
+            .hpLearnMore{
+                display: none;
+                margin-top: 10px;
+                
+                 @media (max-height: $medLaptop) and (min-width: $tablet) {
+                    display: block;
+                }
+            }
         }
         .jCont{
+            @media (max-height: $medLaptop) and (min-width: $tablet) {
+                display: none;
+            }
             p{
                 font-size: 14px;
                 @media (min-width: $tablet) {
@@ -136,13 +136,7 @@
                  }
                  @media (min-width: $break-lg) {
                     font-size: 15px;
-                }
-                 @media (min-width: $desktop) {
-                     font-size: 20px;
-                 }
-                 @media (min-width: $wideScreen) {
-                     font-size: 28px;
-                 }
+                }                
             }
         }
         .hpLearnMore {
@@ -152,33 +146,27 @@
                 background-color: #1DBDDE;
             }
         }
-        .widescreen-hidden{
-            @media (min-width: $wideScreen) {
-                display: none;
-             }
-        }
-        .wide-ful-width{
-            @media (min-width: $wideScreen) {
-                width: 100%;
-             }
-        }
         .penta {
             display: block;
             position: relative;           
-            height: 238px;
-            width: 238px;
-            
+            height: 170px;
+            max-width: 170px;
+            background-repeat: no-repeat;
+            margin: 0 auto;            
         }
         
         .round {
-            position: absolute;            
-            height: 145px;
-            width: 145px;
-            top: 56px;
-            left: 46px;
-            animation: rotate_round 27s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1;
+            img{
+                position: relative;
+                height: 100%;
+                max-width: 110px;
+                top: 17px;
+                left: 31px;
+                animation: rotate_round 27s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+            }           
+           
         }
         
         @keyframes rotate_round {
@@ -192,12 +180,6 @@
     }
     .homeCards{
         height: 100%;
-        @media (min-width: 1600px) {
-            
-        }
-        @media (min-width: 2010px) {
-         
-        }
         .sm-flex{
             height: 100%;
             .flex-item{
@@ -210,7 +192,11 @@
             padding: 30px;
             background-size: cover;
             background-position: center center;  
-            height: 100%;
+            height: calc(100% - 70px);
+            @media (max-height: $smallLaptop) and (min-width: $tablet) {
+                align-items: center;
+            }
+             
             @media (min-width: $break-sm) {
                 padding: 35px;                   
              } 
@@ -225,11 +211,8 @@
                 @media (min-width: $break-lg) {
                     font-size: 15px;
                 }
-                @media (min-width: $desktop) {
-                    font-size: 28px;
-                }
-                @media (min-width: $wideScreen) {
-                    font-size: 36px;
+                @media (max-height: $smallLaptop) and (min-width: $tablet) {
+                    font-size: 20px;
                 }
                               
             }
@@ -242,12 +225,10 @@
                 @media (min-width: $break-lg) {
                     font-size: 15px;
                 }
-                @media (min-width: $desktop) {
-                    font-size: 20px;
+                @media (max-height: $medLaptop) and (min-width: $tablet) {
+                    display: none;
                 }
-                @media (min-width: $wideScreen) {
-                    font-size: 24px;
-                }
+                
             }
         }
         .box1 {
@@ -256,16 +237,13 @@
             width: 260px;
             height: 710px;
             border-radius: 129.5px;
-            top: -28px;
-            left: -455px;
+            top: -170px;
+            left: -280px;
             background-color: black;
             transform: rotate(240deg);
             z-index: 10;
             background: linear-gradient(160deg, rgba(7,169,226,0) 0%, rgba(2,131,203,1) 30%, rgba(0,111,191,1) 100%);
-            animation: fly 6s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1000;
-            animation-delay: 2s;
+          
         }
         
         .box2 {
@@ -274,15 +252,13 @@
             width: 330px;
             height: 990px;
             border-radius: 200px;
-            top: 250px;
-            left: -458px;
+            top: -60px;
+            left: 0;
             background-color: black;
             transform: rotate(240deg);
             z-index: 10;
             background: linear-gradient(160deg, rgba(7,169,226,0) 0%, rgba(2,131,203,1) 30%, rgba(0,111,191,1) 100%);
-            animation: fly1 8s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1000;
+           
         }
         
         @keyframes fly {
@@ -329,16 +305,15 @@
             width: 260px;
             height: 710px;
             border-radius: 129.5px;
-            top: -28px;
-            left: -455px;
+            top: -170px;
+            left: -280px;
             background-color: black;
             transform: rotate(240deg);
             z-index: 10;
             background: linear-gradient(160deg, rgba(127,188,0,0) 0%, rgba(129,189,0,1) 30%, rgba(127,188,0,1) 100%);
-            animation: fly 10s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1000;
-            animation-delay: 1s;
+            
+           
+           
         }
         
         .box2-2 {
@@ -347,24 +322,52 @@
             width: 330px;
             height: 990px;
             border-radius: 200px;
-            top: 250px;
-            left: -458px;
+            top: -60px;
+            left: 0;
             background-color: black;
             transform: rotate(240deg);
             z-index: 10;
             background: linear-gradient(160deg, rgba(127,188,0,0) 0%, rgba(129,189,0,1) 30%, rgba(127,188,0,1) 100%);
-            animation: fly1 20s;
-            animation-timing-function: linear;
-            animation-iteration-count: 1000;
+           
+          
+            
         }
         
         .hcContent-green-bg, .hcContent-blue-bg {
             z-index: 1;            
         }
-        
+        .hcContent-green-bg{
+            &:hover{
+                .box1-1, .box2-2{
+                    animation: fly 7s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: 1000;
+                   
+                   
+                } 
+                .box2-1 {                  
+                    animation-delay: 1s;
+                } 
+            }
+        }
+        .hcContent-blue-bg{
+            &:hover{
+                .box1, .box2{
+                    animation: fly 7s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: 1000;
+                   
+                   
+                } 
+                .box1 {                  
+                    animation-delay: 1s;
+                } 
+            }
+        }
+          
         .cWrap {
             z-index: 105;
-            position: relative;
+            position: relative;           
         }
       
     }
@@ -406,9 +409,6 @@
             height: 100%;
             display: none;
             padding-bottom: 30px;
-            @media (max-width: $break-md) {
-               // min-height: 700px;
-            }
             background-size: cover;
             background-position: center center;    
             .car-flex{
@@ -421,8 +421,8 @@
                 @media (min-width: $break-md) {
                     flex-direction: column;
                     justify-content: center;
-                }
-                @media (min-width: $wideScreen) {
+                }               
+                @media (max-height: $smallLaptop) and (min-width: $tablet) {
                     flex-direction: row-reverse;
                 }
                               
@@ -469,12 +469,6 @@
                         @media (min-width: $break-lg) {
                             font-size: 20px;
                         }
-                        @media (min-width: $desktop) {
-                            font-size: 28px;
-                        }
-                        @media (min-width: $wideScreen) {
-                            font-size: 36px;
-                        }
                     }
                     p{
                         font-size: 14px;
@@ -488,11 +482,8 @@
                         @media (min-width: $break-lg) {
                             font-size: 15px;
                         }
-                        @media (min-width: $desktop) {
-                            font-size: 20px;
-                        }
-                        @media (min-width: $wideScreen) {
-                            font-size: 24px;
+                        @media (max-height: $medLaptop) and (min-width: $tablet) {
+                            display: none;
                         }
                         small{
                             font-size: 12px;  
