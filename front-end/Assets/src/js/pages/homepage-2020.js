@@ -39,7 +39,7 @@
           var componentHeight = $(elementName).innerHeight();
           newComponent =  windowHeight - 125;
           $(elementName).css({'height': newComponent}); 
-          $(elementName).css({'min-height': componentHeight});            
+          //$(elementName).css({'min-height': componentHeight});            
    };
     
    function isMobileDevice(){
