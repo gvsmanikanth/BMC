@@ -33,12 +33,13 @@
     
 
     // full height
-    function setHeight_1() {
+    function setHeight_1(elementName) {
+        console.log(elementName);
         windowHeight = $(window).innerHeight();        
-          var componentHeight = $(".homepage-2020").innerHeight();
+          var componentHeight = $(elementName).innerHeight();
           newComponent =  windowHeight - 125;
-          $('.dynHeight').css({'height': newComponent}); 
-          $('.dynHeight').css({'min-height': componentHeight});            
+          $(elementName).css({'height': newComponent}); 
+          $(elementName).css({'min-height': componentHeight});            
    };
     
    function isMobileDevice(){
@@ -51,47 +52,16 @@
     return isMobile;
    }
    var isM = isMobileDevice();
-   console.log(isM);
     if(!isM){
-        setHeight_1();
+        setHeight_1(".dynHeight");
     }
    		  
 	$(window).resize(function() {
-        var isM = isMobileDevice();
-        console.log(isM);
+        var isM = isMobileDevice();       
         if(!isM){
-            setHeight_1();
-        }       
-        if($('.owl-carousel-homepage').length > 0 ){    
-            // Calculate number of Slides
-            var totalItems = $('.item').length;
-            // If there is only three slides
-            if (totalItems > 1) {
-             var isLoop = true;
-             var isDots = true;
-             } else {
-                 var isLoop = false;
-                 var isDots = false;
-             }         
-             var options = {
-                 touchDrag: true,
-                 mouseDrag: true,
-                 loop: isLoop,
-                 autoplay: true,
-                 animateOut: 'fadeOut',
-                 smartSpeed: 350,
-                 items: 1, 
-                 dots: isDots
-                                 
-             };
-             var carousel = $('.owl-carousel-homepage');
-             carousel.on({        
-                 'initialized.owl.carousel': function () {
-                     carousel.find('.item').show();
-                     $('.left-col').find('.loading-placeholder').hide();
-                 }        
-             }).owlCarousel(options);        
-         } 
+            setHeight_1(".dynHeight");
+        }  
+        
 	});
 
 }(jQuery));

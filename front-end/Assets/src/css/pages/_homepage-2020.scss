@@ -101,7 +101,7 @@
             font-size: 34px;
             margin-bottom: 30px;
             @media (min-width: $break-sm) {
-               font-size: 44px;
+               font-size: 42px;
             }
             @media (max-height: $smallLaptop) and (min-width: $tablet) {
                 font-size: 28px;
@@ -195,7 +195,7 @@
         }
         .hcContent{
             background-color: #1DBDDE;
-            padding: 30px;
+            padding: 40px 30px;
             background-size: cover;
             background-position: center center;  
             height: calc(100% - 70px);
@@ -374,8 +374,11 @@
         .cWrap {
             z-index: 105;
             .hpLearnMore{
-                position: absolute;
-                bottom: 30px; 
+                @media (min-width: $break-sm) {
+                    position: absolute;
+                    bottom: 30px;                 
+                 }
+               
             }                    
         }
       
