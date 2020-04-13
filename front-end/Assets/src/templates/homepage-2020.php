@@ -27,31 +27,33 @@
             <div class="homeCards">
                 <div class="sm-flex">
                     
-                    <div class="flex-item sm-col-6  "  >
-                        
-                        <div class="hcContent hcContent-green-bg flex flex-center " style="background-image: url('/front-end/Assets/src/img/homepage-2020/greenbg.png');">
-                        <div class="box1-1"></div>
-		                <div class="box2-2"></div>
-                            <div class="cWrap">
-                                <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
-                                <h3>Automation everywhere</h3>
-                                <p class="widescreen-hidden">Intelligent automation across cloud, distributed systems, and mainframe. </p>
-                                <a href="#." class="hpLearnMore">Learn More</a>
-                            </div>                            
-                        </div>
+                    <div class="flex-item sm-col-6  "  >     
+                        <a href="#.">                                      
+                            <div class="hcContent hcContent-green-bg flex flex-center " style="background-image: url('/front-end/Assets/src/img/homepage-2020/greenbg.png');">
+                            <div class="box1-1"></div>
+                            <div class="box2-2"></div>
+                                <div class="cWrap">
+                                    <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
+                                    <h3>Automation everywhere</h3>
+                                    <p class="widescreen-hidden">Intelligent automation across cloud, distributed systems, and mainframe. </p>
+                                    <span href="#." class="hpLearnMore">Learn More</span>
+                                </div>                            
+                            </div>
+                        </a>        
                     </div>
                     <div class="flex-item sm-col-6 ">
-                        
-                        <div class="hcContent hcContent-blue-bg flex flex-center " style="background-image: url('/front-end/Assets/src/img/homepage-2020/bluebg.png');">
-                            <div class="box1"></div>
-                            <div class="box2"></div>
-                            <div class="cWrap">
-                                <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="" class="hcIcon">
-                                <h3>Innovation in the cloud</h3>
-                                <p class="widescreen-hidden">Manage, operate, and services your critical IT and business operations with industry-leading SaaS solutions. </p>
-                                <a href="#." class="hpLearnMore">Learn More</a>
-                            </div>    
-                        </div>
+                        <a href="#.">  
+                            <div class="hcContent hcContent-blue-bg flex flex-center " style="background-image: url('/front-end/Assets/src/img/homepage-2020/bluebg.png');">
+                                <div class="box1"></div>
+                                <div class="box2"></div>
+                                <div class="cWrap">
+                                    <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="" class="hcIcon">
+                                    <h3>Innovation in the cloud</h3>
+                                    <p class="widescreen-hidden">Manage, operate, and services your critical IT and business operations with industry-leading SaaS solutions. </p>
+                                    <span href="#." class="hpLearnMore">Learn More</span>
+                                </div>    
+                            </div>
+                        </a>    
                     </div>
                 </div>
             </div>
