@@ -24,7 +24,7 @@
             animateOut: 'fadeOut',
             smartSpeed: 350,
             items: 1, 
-            dots: isDots            
+            dots: isDots                         
                             
         };
         var carousel = $('.owl-carousel-homepage');
@@ -51,19 +51,21 @@
           //$(elementName).css({'min-height': componentHeight});            
    };
     
-   var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches; 
+   var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches; 
     if(!isMobile){
         setHeight_1(".dynHeight",true);
     }else{
         setHeight_1(".dynHeight", false);
     }	  
 	$(window).resize(function() {
-        var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches;        
+        var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches;        
         if(!isMobile){
             setHeight_1(".dynHeight", true);
         }else{
             setHeight_1(".dynHeight", false);
         }  
+
+        
 	});
 
 }(jQuery));
