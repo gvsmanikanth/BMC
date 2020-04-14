@@ -39,7 +39,7 @@
 
     // full height
     function setHeight_1(elementName) {
-        var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches; 
+        var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches; 
         windowHeight = $(window).innerHeight();        
          // var componentHeight = $(elementName).innerHeight();
           newComponent =  windowHeight - 125;
