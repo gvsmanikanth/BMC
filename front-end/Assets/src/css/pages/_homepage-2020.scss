@@ -120,16 +120,19 @@
                font-size: 50px;
             }
             @media (max-height: 820px){
-                font-size: 46px;
+                font-size: 44px;
             }
             @media (max-height: 670px) and (min-width: $break-md) {
                 font-size: 36px;
             }
-            @media (max-height: $smallLaptop) and (min-width: $break-md) {
-                font-size: 28px;
-                margin-bottom: 10px;
-            }                     
-            @media (max-width: $break-sm) {
+            @media (max-height: 820px) and (max-width: 1160px){
+                font-size: 36px;
+            }  
+            @media (max-height: 820px) and (min-width: 1160px){
+                font-size: 44px;
+            }
+                             
+            @media (max-width: 340px) {
                 font-size: 36px;
              }
         }
@@ -175,7 +178,11 @@
                 @media (max-height: 800px ) and (min-width: $break-lg){
                     font-size: 15px;
                     margin-bottom: 15px;
-                }               
+                }  
+                @media  (max-width: 1180px) and (max-height: 710px)  {
+                    display: none;
+                }
+                             
             }
             &:hover{
                 .hpLearnMore:before {
@@ -263,6 +270,7 @@
             background-size: cover;
             background-position: center center;  
             height: calc(100% - 70px);
+            
             &:hover{
                 .hpLearnMore:before {
                     visibility: visible;
@@ -272,6 +280,14 @@
             @media (min-width: $break-sm) {
                 padding: 35px;                   
              } 
+             @media (max-height: 820px) and (max-width: 1160px){
+                padding: 25px; 
+                height: calc(100% - 50px);
+            }  
+            @media (max-height: 820px) and (min-width: 1160px){
+                padding: 20px; 
+                height: calc(100% - 40px);  
+            }
              @media (max-height: 800px) and (min-width: $break-lg){
                 padding: 20px; 
                 height: calc(100% - 40px);  
@@ -283,6 +299,10 @@
             @media (max-height: $smallLaptop) and (min-width: $break-md) {
                 align-items: center;
             }
+            @media (max-width: $break-md){
+                min-height: 200px;
+            }  
+            
              
             
              
@@ -319,9 +339,14 @@
                     font-size: 15px;
                 }                      
                
-                
+                @media  (max-width: 1180px) and (max-height: 750px)  {
+                    display: none;
+                }
                 @media (max-height: $medLaptop) and (min-width: $break-md) {
                     display: none;
+                }
+                @media  (max-width: 960px)  {
+                    display: block;
                 }
                 
             }
