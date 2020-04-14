@@ -38,34 +38,35 @@
     
 
     // full height
-    function setHeight_1(elementName, isSet) {
-        console.log(elementName);
+    function setHeight_1(elementName) {
+        var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches; 
         windowHeight = $(window).innerHeight();        
          // var componentHeight = $(elementName).innerHeight();
           newComponent =  windowHeight - 125;
-          if(isSet){
+          if(!isMobile){
             $(elementName).css({'height': newComponent}); 
           }else{
             $(elementName).css({'height': 'auto'}); 
           }          
           //$(elementName).css({'min-height': componentHeight});            
-   };
-    
-   var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches; 
-    if(!isMobile){
-        setHeight_1(".dynHeight",true);
-    }else{
-        setHeight_1(".dynHeight", false);
-    }	  
-	$(window).resize(function() {
-        var isMobile = window.matchMedia("only screen and (max-width: 1000px)").matches;        
-        if(!isMobile){
-            setHeight_1(".dynHeight", true);
-        }else{
-            setHeight_1(".dynHeight", false);
-        }  
+   };    
+   setHeight_1(".dynHeight");
 
-        
-	});
+	$(window).resize(function() {
+        setHeight_1(".dynHeight");
+        setHeight_mobile_carousel();
+    });
+
+    function setHeight_mobile_carousel() { 
+        var carFlex = $('.car-flex').innerHeight();        
+        var isspecificMobile = window.matchMedia("only screen and (max-width: 768px)").matches;        
+        if(!isspecificMobile){
+            $('.owl-carousel-homepage').css({'height': '100%'});
+        }else{
+            $('.owl-carousel-homepage').css({'height': carFlex});
+        }         
+                   
+   }; 
+   setHeight_mobile_carousel();
 
 }(jQuery));
