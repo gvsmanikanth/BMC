@@ -1,6 +1,6 @@
 (function ($document, $, ns) {
     "use strict";
-    $(document).on("click", ".cq-dialog-submit", function (e) {
+    $document.on("dialog-ready", ".cq-dialog-submit", function (e) {
         e.stopPropagation();
         e.preventDefault();
 		var $form = $(this).closest("form.foundation-form");
