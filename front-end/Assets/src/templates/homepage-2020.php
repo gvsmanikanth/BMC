@@ -1,6 +1,5 @@
 <?php $pageTitle='BMC Home' ; $bodyClass='home page-home ' ; include 'php-inc/head.php'; ?>
- <div class="full-width-bg">
-
+ <div class="full-width-bg" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/homeBg.png');">
  <div class="homepage-2020 bg-white">   
     <div class="md-flex dynHeight">
         <div class="flex-item md-col-7 right-col">
