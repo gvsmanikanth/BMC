@@ -1,10 +1,10 @@
 ;( function($) {
-    if($('.full-width-bg').length > 0 ){    
+    if($('.boxy-header-container').length > 0 ){    
         // initialising carousel
-        if($('.owl-carousel-homepage').length > 0 ){    
+        if($('.owl-carousel-boxy-header').length > 0 ){    
         // Calculate number of Slides
         var totalItems = $('.item').length;
-        var carousel = $('.owl-carousel-homepage');
+        var carousel = $('.owl-carousel-boxy-header');
         if (totalItems > 1) {
                 var isLoop = true;
                 var isDots = true;
@@ -57,9 +57,9 @@
             var carFlex = $('.car-flex').innerHeight();        
             var isspecificMobile = window.matchMedia("only screen and (max-width: 831px)").matches;        
             if(!isspecificMobile){
-                $('.owl-carousel-homepage').css({'height': '100%'});
+                $('.owl-carousel-boxy-header').css({'height': '100%'});
             }else{
-                $('.owl-carousel-homepage').css({'height': carFlex});
+                $('.owl-carousel-boxy-header').css({'height': carFlex});
             }         
                     
     }; 

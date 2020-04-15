@@ -1,6 +1,6 @@
 <?php $pageTitle='BMC Home' ; $bodyClass='home page-home ' ; include 'php-inc/head.php'; ?>
- <div class="full-width-bg" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/homeBg.png');">
-    <div class="homepage-2020 bg-white">   
+ <div class="boxy-header-container" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/homeBg.png');">
+    <div class="boxy-header bg-white">   
         <div class="md-flex dynHeight">
             <div class="flex-item md-col-7 right-col">
                 <div class="jumbotron flex flex-center">
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="flex-item md-col-5 left-col">            
-                <div class="owl-carousel-homepage">                              
+                <div class="owl-carousel-boxy-header">                              
                     <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
                         <div class="flex flex-center car-flex">
                             <div class="carousel-image  mobile-hidden">
