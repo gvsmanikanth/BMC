@@ -1,14 +1,15 @@
 ;( function($) {
 
+    // initialising carousel
     if($('.owl-carousel-homepage').length > 0 ){    
        // Calculate number of Slides
        var totalItems = $('.item').length;
-       // If there is only three slides
+       var carousel = $('.owl-carousel-homepage');
        if (totalItems > 1) {
-        var isLoop = true;
-        var isDots = true;
-        var isTouchDrag = true;
-        var isMouseDrag = true;
+            var isLoop = true;
+            var isDots = true;
+            var isTouchDrag = true;
+            var isMouseDrag = true;
         
         } else {
             var isLoop = false;
@@ -26,18 +27,18 @@
             items: 1, 
             dots: isDots                         
                             
-        };
-        var carousel = $('.owl-carousel-homepage');
+        };        
         carousel.on({        
             'initialized.owl.carousel': function () {
                 carousel.find('.item').show();
                 $('.left-col').find('.loading-placeholder').hide();
             }        
-        }).owlCarousel(options);        
+        });         
+        carousel.owlCarousel(options)
     } 
     
 
-    // full height
+    // Setting content as per window height
     function setHeight_1(elementName) {
         var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches; 
         windowHeight = $(window).innerHeight();        
@@ -52,14 +53,9 @@
    };    
    setHeight_1(".dynHeight");
 
-	$(window).resize(function() {
-        setHeight_1(".dynHeight");
-        setHeight_mobile_carousel();
-    });
-
     function setHeight_mobile_carousel() { 
         var carFlex = $('.car-flex').innerHeight();        
-        var isspecificMobile = window.matchMedia("only screen and (max-width: 768px)").matches;        
+        var isspecificMobile = window.matchMedia("only screen and (max-width: 831px)").matches;        
         if(!isspecificMobile){
             $('.owl-carousel-homepage').css({'height': '100%'});
         }else{
@@ -68,5 +64,11 @@
                    
    }; 
    setHeight_mobile_carousel();
+   
+   // Calling function son resize
+   $(window).resize(function() {
+        setHeight_1(".dynHeight");
+        setHeight_mobile_carousel();
+    });
 
 }(jQuery));

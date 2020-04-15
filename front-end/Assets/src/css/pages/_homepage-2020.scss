@@ -345,13 +345,18 @@
                 @media  (max-width: 1180px) and (max-height: 750px)  {
                     display: none;
                 }
+                @media  (min-width: 1180px) and (max-height: 750px)  {
+                    display: block;
+                }
                 @media (max-height: $medLaptop) and (min-width: $break-md) {
                     display: none;
                 }
-                @media  (max-width: 960px)  {
+                @media  (max-width: 960px)   {
                     display: block;
                 }
-                
+                @media  (min-width: 832px)  and (max-width: 960px)  {
+                    display: none;
+                }
             }
         }
         .box1 {
@@ -533,6 +538,9 @@
             right: 0;
             width: 100%;
             margin: auto;
+            @media (min-width: $break-lg) {
+                width: 40%;
+            }
             .owl-dots{
                 text-align: center;
                 .owl-dot {
@@ -550,7 +558,7 @@
         }        
         .item{     
             height: calc(100% - 30px);
-            display: none;
+            // display: none;
             padding-bottom: 30px;
             background-size: cover;
             background-position: center center; 
@@ -571,7 +579,7 @@
                 }
                 @media (min-width: $break-md) {
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: space-evenly;
                 }               
                 @media (max-height: $smallLaptop) and (min-width: $break-md) {
                     flex-direction: row-reverse;
@@ -582,6 +590,12 @@
                     padding: 20px 0 0 0;
                     padding-bottom: 0;
                     height: 50%;
+                    @media (max-height: $smallLaptop) and (min-width: $break-md) {
+                        width: 50%;
+                    }
+                    @media (max-width: 831px) {
+                        width: 50%;
+                    }
                     @media (min-height: 880px) {
                         height: 60%;
                     }  
@@ -593,7 +607,16 @@
                     }
                 }
                 .carouselCaption {
-                    padding: 40px;                   
+                    padding: 40px;  
+                    @media (max-height: $smallLaptop) and (min-width: $break-md) {
+                        width: 50%;
+                    }  
+                    @media (max-width: 831px) {
+                        width: 50%;
+                    }  
+                    @media (max-width: 639px) {
+                        width: 100%;
+                    }              
                     @media (min-width: $break-sm) {
                         margin: 0 auto 0 0;
                     }
@@ -692,7 +715,8 @@
 
 
 .home {
-    background-image: url('/content/dam/bmc/home/homeBg.png');
-    background-size: cover;
+    //background-image: url('/content/dam/bmc/home/homeBg.png');
+    background-image: url('/front-end/Assets/src/img/homepage-2020/homeBg.png');
+        background-size: cover;
     
 }

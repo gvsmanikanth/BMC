@@ -1,4 +1,6 @@
 <?php $pageTitle='BMC Home' ; $bodyClass='home page-home ' ; include 'php-inc/head.php'; ?>
+ <div class="full-width-bg">
+
  <div class="homepage-2020 bg-white">   
     <div class="md-flex dynHeight">
         <div class="flex-item md-col-7 right-col">
@@ -37,7 +39,7 @@
                                 <div class="box1"></div>
                                 <div class="box2"></div>
                                 <div class="cWrap">
-                                    <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="" class="hcIcon">
+                                    <img src="/front-end/Assets/src/img/homepage-2020/innovation-icon.png" alt="INNOVATION IN THE CLOUD-BMC" class="hcIcon">
                                     <h3>INNOVATION IN THE CLOUD</h3>
                                     <p class="widescreen-hidden">Manage, operate, and service your critical IT and business operations with industry-leading SaaS solutions.</p>
                                     <span class="hpLearnMore">Learn More</span>
@@ -51,7 +53,7 @@
                             <div class="box1-1"></div>
                             <div class="box2-2"></div>
                                 <div class="cWrap">
-                                    <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="" class="hcIcon">
+                                    <img src="/front-end/Assets/src/img/homepage-2020/automation-icon.png" alt="AUTOMATION EVERYWHERE-BMC" class="hcIcon">
                                     <h3>AUTOMATION EVERYWHERE</h3>
                                     <p class="widescreen-hidden">Apply intelligent automation across cloud, distributed systems, and mainframe. </p>
                                     <span class="hpLearnMore">Learn More</span>
@@ -68,11 +70,11 @@
                 <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
                     <div class="flex flex-center car-flex">
                         <div class="carousel-image  mobile-hidden">
-                            <img src="/front-end/Assets/src/img/homepage-2020/News_image.png" alt="">
+                            <img src="/front-end/Assets/src/img/homepage-2020/News_image.png" alt="bmc-acquire-compuware">
                         </div>    
                         <div class="carouselCaption">
                             <a href="//newsroom.bmc.com/news-releases/news-release-details/bmc-acquire-compuware">
-                                <img src="/front-end/Assets/src/img/homepage-2020/Compuware_logo_700x137-002_2.svg" alt="" class="hpIcon">
+                                <img src="/front-end/Assets/src/img/homepage-2020/Compuware_logo_700x137-002_2.svg" alt="bmc-acquire-compuware-icon" class="hpIcon">
                                 <h4>BMC SIGNS DEFINITIVE AGREEMENT TO PURCHASE COMPUWARE</h4>
                                 <p class="widescreen-hidden">The strategic combination of BMC and Compuware product portfolios will further drive innovation on the mainframe platform as part of a modern IT infrastructure.</p>
                                 <span class="hpLearnMore">Learn More</span>
@@ -82,14 +84,14 @@
                     </div>
                     
                 </div>
-                <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');">
+                <div class="item " style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png'); display:none;">
                     <div class="flex car-flex  flex-center">
                         <div class="carousel-image  mobile-hidden">    
-                            <img src="/front-end/Assets/src/img/homepage-2020/News_image.png" alt="">
+                            <img src="/front-end/Assets/src/img/homepage-2020/Covid-19_303x303.png" alt="COVID-19 RESOURCES">
                         </div>    
                         <div class="carouselCaption">    
                             <a href="//www.bmc.com/corporate/covid-19.html">
-                                <h4> COVID-19</h4>
+                                <h4> COVID-19 RESOURCES </h4>
                                 <p class="widescreen-hidden">BMC is prioritizing health and safety while helping to ensure business continuity and customer resiliency.</p>
                                 <span href="" class="hpLearnMore">Learn More</span>
                             </a>                                                   
@@ -98,9 +100,9 @@
                 </div>
                             
             </div>
-            <div class="loading-placeholder"></div>
+            <div class="loading-placeholder" style="background-image: url('/front-end/Assets/src/img/homepage-2020/Compuware_image_768x913_BG.png');"></div>
         </div>
     </div>    
  </div>   
- 
+ </div>
 <?php include 'php-inc/foot.php'; ?>
