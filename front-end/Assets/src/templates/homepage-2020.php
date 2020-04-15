@@ -1,5 +1,5 @@
 <?php $pageTitle='BMC Home' ; $bodyClass='home page-home ' ; include 'php-inc/head.php'; ?>
- <div class="boxy-header-container" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/homeBg.png');">
+ <div class="boxy-header-container" style=" background-image: url('/front-end/Assets/src/img/homepage-2020/Extension_BG_3440x1440.png');">
     <div class="boxy-header bg-white">   
         <div class="md-flex dynHeight">
             <div class="flex-item md-col-7 right-col">
