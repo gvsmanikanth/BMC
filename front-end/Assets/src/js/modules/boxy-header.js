@@ -35,23 +35,27 @@
                 }        
             });         
             carousel.owlCarousel(options)
-        } 
+    } 
         
 
         // Setting content as per window height
         function setHeight_1(elementName) {
-            var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches; 
-            windowHeight = $(window).innerHeight();        
+            var isMobile = window.matchMedia("only screen and (max-width: 960px)").matches;             
+            var windowHeight = $(window).innerHeight();        
             // var componentHeight = $(elementName).innerHeight();
-            newComponent =  windowHeight - 125;
+            var navHeight = 125;
+            if($('body').hasClass('scrolled-down') || $('body').hasClass('scrolled-up') ){
+                navHeight = 50;
+            }           
+            var newComponentHeight =  windowHeight - navHeight;
             if(!isMobile){
-                $(elementName).css({'height': newComponent}); 
+                $(elementName).css({'height': newComponentHeight}); 
             }else{
                 $(elementName).css({'height': 'auto'}); 
             }          
             //$(elementName).css({'min-height': componentHeight});            
-    };    
-    setHeight_1(".dynHeight");
+        };    
+        setHeight_1(".dynHeight");
 
         function setHeight_mobile_carousel() { 
             var carFlex = $('.car-flex').innerHeight();        
@@ -62,13 +66,13 @@
                 $('.owl-carousel-boxy-header').css({'height': carFlex});
             }         
                     
-    }; 
-    setHeight_mobile_carousel();
-    
-    // Calling function son resize
-    $(window).resize(function() {
-            setHeight_1(".dynHeight");
-            setHeight_mobile_carousel();
-        });
-    }
+         }; 
+        setHeight_mobile_carousel();
+        
+        // Calling function son resize
+        $(window).resize(function() {
+                setHeight_1(".dynHeight");
+                setHeight_mobile_carousel();
+            });
+        }
 }(jQuery));
