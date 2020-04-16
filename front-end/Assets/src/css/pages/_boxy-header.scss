@@ -50,7 +50,7 @@
             position: relative;
             padding-bottom: 3px;
             margin-top: 10px;    
-                
+            z-index: 105;    
             &::before {
                 content: "";
                 position: absolute;
@@ -102,11 +102,15 @@
                 position: relative;
             }
             @media (min-height: $smallLaptop) and (max-height: 900px){
+                height: calc(50% - 60px);
+            }
+            @media (min-height: 550px){
                 height: calc(55% - 60px);
             }
             @media (min-height: 901px){
                 height: calc(70% - 60px);
             }
+            
             .wide-ful-width{
                 @media (max-height: $smallLaptop) and (min-width: $break-md){
                     width: 100%;
@@ -124,18 +128,36 @@
                 @media (max-height: 820px){
                     font-size: 44px;
                 }
-                @media (max-height: 670px) and (min-width: $break-md) {
-                    font-size: 36px;
-                }
+               
                 @media (max-height: 820px) and (max-width: 1160px){
                     font-size: 36px;
+                    margin-bottom: 15px;
                 }  
                 @media (max-height: 820px) and (min-width: 1160px){
                     font-size: 44px;
                 }
-                                
+                @media (max-height: 670px) and (min-width: $break-md) {
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                    
+                }  
+                @media (min-height: 530px) and (min-width: 1024px){
+                    font-size: 40px;
+                } 
+                @media (min-height: 530px) and (min-width: 1410px){
+                    font-size: 48px;
+                }   
+                 @media (max-width: 500px) {
+                    margin-bottom: 30px;
+                }         
                 @media (max-width: 340px) {
                     font-size: 36px;
+                }
+                @media (max-height: 400px) {
+                    font-size: 28px;
+                }
+                @media (max-height: $smllestLaptop) {
+                    font-size: 26px;
                 }
             }
             .jHr{
@@ -227,10 +249,10 @@
             .round {
                 img{
                     position: relative;
-                    height: 145px;
-                    max-width: 110px;
-                    top: 17px;
-                    left: 31px;
+                    height: 110px;
+                    width: 110px;
+                    top: 35px;
+                    left: 30px;
                     animation: rotate_round 27s;
                     animation-timing-function: linear;
                     animation-iteration-count: 1;                
@@ -252,6 +274,9 @@
                 width: calc(100% + 1px);
             }       
             @media (min-height: $smallLaptop) and (max-height: 900px){
+                height: 50%;
+            }
+            @media (min-height: 550px){
                 height: 45%;
             }
             @media (min-height: 901px){
@@ -617,7 +642,8 @@
                             width: 50%;
                         }  
                         @media (max-width: 639px) {
-                            width: 100%;
+                            width: calc(100% - 40px);
+                            padding: 20px;
                         }              
                         @media (min-width: $break-sm) {
                             margin: 0 auto 0 0;

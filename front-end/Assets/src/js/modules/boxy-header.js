@@ -58,12 +58,12 @@
         setHeight_1(".dynHeight");
 
         function setHeight_mobile_carousel() { 
-            var carFlex = $('.car-flex').innerHeight();        
-            var isspecificMobile = window.matchMedia("only screen and (max-width: 831px)").matches;        
-            if(!isspecificMobile){
-                $('.owl-carousel-boxy-header').css({'height': '100%'});
+            var elementHeight = $('.car-flex').innerHeight();        
+            var isSpecificMobile = window.matchMedia("only screen and (max-width: 831px)").matches;        
+            if(!isSpecificMobile){
+                $('.car-flex').css('min-height', '100%');
             }else{
-                $('.owl-carousel-boxy-header').css({'height': carFlex});
+                $('.car-flex').css('min-height', elementHeight+'px');
             }         
                     
          }; 
