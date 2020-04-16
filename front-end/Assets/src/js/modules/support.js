@@ -274,18 +274,23 @@ var Support = Support || {};
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
 			
 			// "Last Updated" outputted format: MM/DD/YYYY HH:MM
-			var formattedLastUpdated = pad(rawLastUpdated.getDate())
+            var formattedLastUpdated = "";
+            var formattedCreated = "";
+            
+            if(rawLastUpdated != null){
+                formattedLastUpdated = pad(rawLastUpdated.getDate())
 										+ "-"
 										+ pad(months[rawLastUpdated.getMonth()]) 
 										+ "-"
 										+ rawLastUpdated.getFullYear();
-
-			var formattedCreated = pad(rawCreated.getDate())
+            }
+            if(rawCreated != null){
+                formattedCreated = pad(rawCreated.getDate())
 										+ "-"
 										+ pad(months[rawCreated.getMonth()])
 										+ "-"
 										+ rawCreated.getFullYear();
-			
+            }
 			return {
 				id: issue.Id,
 				caseNumber: issue.CaseNumber,
