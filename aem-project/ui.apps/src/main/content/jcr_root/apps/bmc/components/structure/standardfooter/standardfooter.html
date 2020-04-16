@@ -30,6 +30,9 @@
                           <sly data-sly-test="${footerCompany.targetType == 'modal'}">
                               <sly data-sly-test.classValue="modal-iframe"></sly>
                          </sly>
+                         <sly data-sly-test="${footerCompany.targetType != 'modal' && footerCompany.linkText != 'Select Region'}">
+                              <sly data-sly-test.classValue=""></sly>
+                         </sly>
 						<!--/* WEB-6783 MOdal window logic for feedback link END  */-->
 
 						<a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${classValue}">${footerCompany.linkText @ context='html'}</a>
