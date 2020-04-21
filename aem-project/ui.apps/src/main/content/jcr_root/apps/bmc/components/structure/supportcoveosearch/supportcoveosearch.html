@@ -22,54 +22,54 @@
 
 <div class="layout-inner-wrap">
 	<!-- WEB-7277 Changes added to Coveo Searchbox section START-->
-	<div id="search" class="CoveoSearchInterface" data-design="new" data-enable-history="true">
+  <div id="search" class="CoveoSearchInterface" data-design="new" data-enable-history="true">
 
-				  <div class="CoveoAnalytics" data-search-hub="PublicSearch" data-anonymous="true"></div>
-				  <div class="CoveoAnalyticsSuggestions"></div>
-				  <div class="CoveoFolding" data-field="@systopparent" data-tab="All,Confluence" data-parent-field="@syscontainsattachment" data-child-field="@sysisattachment" data-range="0" data-expand-expression="@sysisattachment (NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)" data-rearrange="date descending"></div>
-				  <div class="CoveoFoldingForThread" data-field="@jivefoldingid" data-tab="Communities" data-parent-field="@jivefoldingid" data-child-field="@jiveisattachment" data-range="0" data-rearrange="date descending"></div>
-				
-				  <div class="CoveoTriggers"></div>
-				  
-				  <div class="coveo-main-section">
-				    <div class="coveo-facet-column">
-				        <div class="CoveoFacet" data-title="YouTube Channel" data-field="@sysauthor" data-tab="bmc-yt-video"></div>  
-				<div class="CoveoFacet" data-title="Product Name" data-field="@bmcproductname" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-include-in-omnibox="false"></div>
-				<div class="CoveoFacet" data-title="Product Version" data-field="@bmcproductversion" data-depends-on="@bmcproductname" data-tab="KB"></div>
-				<div class="CoveoFacet" data-title="FileType" data-field="@sysfiletype" data-tab="All,Confluence,documents,bmc-yt-video"></div>
-				<div class="CoveoFacet" data-title="Type" data-field="@syscsitemtype" data-tab="Communities"></div>
-				<div class="CoveoFacet" data-title="Type" data-field="@commonobjecttype" data-allow-toggling-operator="true" data-tab="KB"></div>
-				<div class="CoveoFacet" data-title="Type" data-field="@objecttypename" data-allow-toggling-operator="true" data-tab="documents,One3"></div>
-				<div class="CoveoFacet" data-title="Year" data-field="@year" data-sort-criteria="AlphaDescending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS,bmc-yt-video"></div>
-				<div class="CoveoFacet" data-title="Month" data-field="@month" data-depends-on='@year' data-sort-criteria="AlphaAscending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS,bmc-yt-video"></div>
-				<div class="CoveoHierarchicalFacet" data-title="Case Category" data-level-start="1" data-tab="KB" data-field="@sfkbdccasecategorydelexpanded"></div>
-				    </div>
-				    <div class="coveo-results-column">
-				      <div class="coveo-tab-section">
-				          <div class="CoveoTab" data-id="All" data-caption="All" data-expression="((NOT @syssource=documents OR @uri=/Products OR @uri=/952) NOT(@objecttype=KBAttachment) NOT @sysfiletype=YouTubePlaylistItem NOT @sysfiletype=YouTubePlaylist) NOT((@sfscfaqproceduralisvisibleinpkb==false AND @sfscfaqproceduralBMCPartnerUserC==true) OR (@sfscproductservicedescriptionisvisibleinpkb==false AND @sfscproductservicedescriptionBMCPartnerUserC==true) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==false AND @sfscsolutionstoaproductproblemBMCPartnerUserC==true))"></div>
-				<div class="CoveoTab" data-id="KB" data-caption="Knowledge Base" data-icon="bmc-knowledge" data-expression="@sfkbid (NOT @syssource=SFADEV2) (@sfisvisibleinpkb=true @sfsc_visibility_partner_only__c=false)"></div>
-				<div class="CoveoTab" data-id="Confluence" data-caption="Documentation" data-icon="bmc-documentation" data-expression="(NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)(@syssource=confluence OR (@syssource=documents AND (@uri=/Products OR @uri=/952 OR @uri=/ctrlm8/ OR @uri=/ctrlm9/) NOT @sysisemptydocument)) "></div>
-				<div class="CoveoTab" data-id="Communities" data-caption="Communities" data-icon="bmc-community" data-expression="@syssource=communities"></div>
-				<div class="CoveoTab" data-id="bmccom" data-icon="bmc-mainlogo" data-caption="Support Central" data-expression="@syssource=Support @syssource=web"></div> 
-				<div class="CoveoTab" data-id="bmc-yt-video" data-icon="bmc-yt-video"  data-caption="Video" data-expression="@syssource=Video-bmc-docs @sysfiletype=YouTubeVideo"></div>  
-				      </div>
-				      <div class="CoveoBreadcrumb"></div>
-				      <div class="coveo-results-header">
-				        <div class="coveo-summary-section">
-				          <span class="CoveoQuerySummary"></span>
-				          <span class="CoveoQueryDuration"></span>
-				        </div>
-				        <div class="coveo-sort-section">
-				            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
-				            <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
-				        </div>
-				      </div>
-				      <div class="CoveoHiddenQuery"></div>
-				      <div class="CoveoDidYouMean"></div>
-				      <div class="CoveoErrorReport" data-pop-up="false"></div>
-				      <div class="CoveoResultList" data-auto-select-fields-to-include="false" data-layout="list">
-				        
-				<script id="Knowledge" class="result-template" type="text/html" data-field-sfkbid="">
+  <div class="CoveoAnalytics" data-search-hub="PublicSearch" data-anonymous="true"></div>
+  <div class="CoveoAnalyticsSuggestions"></div>
+  <div class="CoveoFolding" data-field="@systopparent" data-tab="All,Confluence" data-parent-field="@syscontainsattachment" data-child-field="@sysisattachment" data-range="0" data-expand-expression="@sysisattachment (NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)" data-rearrange="date descending"></div>
+  <div class="CoveoFoldingForThread" data-field="@jivefoldingid" data-tab="Communities" data-parent-field="@jivefoldingid" data-child-field="@jiveisattachment" data-range="0" data-rearrange="date descending"></div>
+
+  <div class="CoveoTriggers"></div>
+  
+  <div class="coveo-main-section">
+    <div class="coveo-facet-column">
+        <div class="CoveoFacet" data-title="YouTube Channel" data-field="@sysauthor" data-tab="bmc-yt-video"></div>  
+<div class="CoveoFacet" data-title="Product Name" data-field="@bmcproductname" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-include-in-omnibox="false"></div>
+<div class="CoveoFacet" data-title="Product Version" data-field="@bmcproductversion" data-depends-on="@bmcproductname" data-tab="KB"></div>
+<div class="CoveoFacet" data-title="FileType" data-field="@sysfiletype" data-tab="All,Confluence,documents,bmc-yt-video"></div>
+<div class="CoveoFacet" data-title="Type" data-field="@csitemtype" data-tab="Communities"></div>
+<div class="CoveoFacet" data-title="Type" data-field="@commonobjecttype" data-allow-toggling-operator="true" data-tab="KB"></div>
+<div class="CoveoFacet" data-title="Type" data-field="@objecttypename" data-allow-toggling-operator="true" data-tab="documents,One3"></div>
+<div class="CoveoFacet" data-title="Year" data-field="@year" data-sort-criteria="AlphaDescending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS,bmc-yt-video"></div>
+<div class="CoveoFacet" data-title="Month" data-field="@month" data-depends-on='@year' data-sort-criteria="AlphaAscending" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS,bmc-yt-video"></div>
+<div class="CoveoHierarchicalFacet" data-title="Case Category" data-level-start="1" data-tab="KB" data-field="@sfkbdccasecategorydelexpanded"></div>
+    </div>
+    <div class="coveo-results-column">
+      <div class="coveo-tab-section">
+          <div class="CoveoTab" data-id="All" data-caption="All" data-expression="((NOT @syssource=documents OR @uri=/Products OR @uri=/952) NOT(@objecttype=KBAttachment) NOT @sysfiletype=YouTubePlaylistItem NOT @sysfiletype=YouTubePlaylist) NOT((@sfscfaqproceduralisvisibleinpkb==false AND @sfscfaqproceduralBMCPartnerUserC==true) OR (@sfscproductservicedescriptionisvisibleinpkb==false AND @sfscproductservicedescriptionBMCPartnerUserC==true) OR (@sfscsolutionstoaproductproblemisvisibleinpkb==false AND @sfscsolutionstoaproductproblemBMCPartnerUserC==true))"></div>
+<div class="CoveoTab" data-id="KB" data-caption="Knowledge Base" data-icon="bmc-knowledge" data-expression="@sfkbid (NOT @syssource=SFADEV2) (@sfisvisibleinpkb=true @sfsc_visibility_partner_only__c=false)"></div>
+<div class="CoveoTab" data-id="Confluence" data-caption="Documentation" data-icon="bmc-documentation" data-expression="(NOT @sysfiletype==CFComment OR NOT @sysisemptydocument)(@syssource=confluence OR (@syssource=documents AND (@uri=/Products OR @uri=/952 OR @uri=/ctrlm8/ OR @uri=/ctrlm9/) NOT @sysisemptydocument)) "></div>
+<div class="CoveoTab" data-id="Communities" data-caption="Communities" data-icon="bmc-community" data-expression="@syssource=communities"></div>
+<div class="CoveoTab" data-id="bmccom" data-icon="bmc-mainlogo" data-caption="Support Central" data-expression="@syssource=Support @syssource=web"></div> 
+<div class="CoveoTab" data-id="bmc-yt-video" data-icon="bmc-yt-video"  data-caption="Video" data-expression="@syssource=Video-bmc-docs @sysfiletype=YouTubeVideo"></div>  
+      </div>
+      <div class="CoveoBreadcrumb"></div>
+      <div class="coveo-results-header">
+        <div class="coveo-summary-section">
+          <span class="CoveoQuerySummary"></span>
+          <span class="CoveoQueryDuration"></span>
+        </div>
+        <div class="coveo-sort-section">
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+            <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+        </div>
+      </div>
+      <div class="CoveoHiddenQuery"></div>
+      <div class="CoveoDidYouMean"></div>
+      <div class="CoveoErrorReport" data-pop-up="false"></div>
+      <div class="CoveoResultList" data-auto-select-fields-to-include="false" data-layout="list">
+        
+<script id="Knowledge" class="result-template" type="text/html" data-field-sfkbid="">
     <div class="coveo-result-frame">
     <div class="coveo-result-row">
         <div class="coveo-result-cell" style="width:25px;">
@@ -91,8 +91,8 @@
         </div>
     </div>
 </div>
-	</script>
-				<script id="Video" class="result-template" type="text/html" data-condition="raw.syssource.indexOf('YouTube - Video-bmc-docs') > -1" >
+</script>
+<script id="Video" class="result-template" type="text/html" data-condition="raw.syssource.indexOf('YouTube - Video-bmc-docs') > -1" >
     <div class="coveo-result-frame">
   <div class="coveo-result-row">
       <div class="coveo-result-cell" style="width:25px;">
@@ -115,8 +115,8 @@
       </div>
   </div>
 </div>
-	</script>
-				<script id="Jive" class="result-template" type="text/html" data-field-sysconnectortype="JiveCrawler">
+</script>
+<script id="Jive" class="result-template" type="text/html" data-field-sysconnectortype="JiveCrawler">
     <div class="coveo-result-frame coveo-email-result">
     <div class="coveo-result-row">
         <div class="coveo-result-cell" style="width:25px">
@@ -141,8 +141,8 @@
         </div>
     </div>
 </div>
-	</script>
-				<script id="Confluence" class="result-template" type="text/html" data-field-sysconnectortype="Confluence2Crawler">
+</script>
+<script id="Confluence" class="result-template" type="text/html" data-field-sysconnectortype="Confluence2Crawler">
     <div class="coveo-result-frame coveo-email-result">
     <div class="coveo-result-row">
         <div class="coveo-result-cell" style="width:25px">
@@ -166,8 +166,8 @@
         </div>
     </div>
 </div>
-	</script>
-				<script id="Documents" class="result-template" type="text/html" data-condition="raw.syssource.indexOf(&apos;documents.bmc.com&apos;) &gt; -1">
+</script>
+<script id="Documents" class="result-template" type="text/html" data-condition="raw.syssource.indexOf(&apos;documents.bmc.com&apos;) &gt; -1">
     <div class="coveo-result-frame">
     <div class="coveo-result-row">
         <div class="coveo-result-cell" style="width:25px;">
@@ -189,8 +189,8 @@
         </div>
     </div>
 </div>
-	</script>
-				<script id="Default" class="result-template" type="text/html">
+</script>
+<script id="Default" class="result-template" type="text/html">
     <div class="coveo-result-frame">
     <div class="coveo-result-row">
         <div class="coveo-result-cell" style="width:25px;">
@@ -212,8 +212,8 @@
         </div>
     </div>
 </div>
-	</script>
-				<script id="ChildResultConfluence" type="text/x-underscore-template">
+</script>
+<script id="ChildResultConfluence" type="text/x-underscore-template">
     {{ if (raw.sysfiletype == "CFComment" || raw.sysfiletype == "csmessage" )  { }}
     <a class="coveo-author" target="_blank" href="{{=clickUri}}">From: {{=raw.sysauthor}}</a>
     <span class="CoveoQuickview"></span>
@@ -226,14 +226,15 @@
             <a class='CoveoSalesforceResultLink' data-open-in-primary-tab='true'>{{=title?highlight(title, titleHighlights):clickUri}}</a>
             <div class="coveo-excerpt">{{= firstSentences }}</div>
         {{ } }}
-	</script>
-				
-				
-				      </div>
-				      <div class="CoveoPager" data-number-of-pages="10"></div>
-				    </div>
-				  </div>
-				</div>
-            </div>
+</script>
+
+
+      </div>
+      <div class="CoveoPager" data-number-of-pages="10"></div>
+    </div>
+  </div>
+</div>
+            </div>	
+
     <!-- WEB-7277 Changes added to Coveo Searchbox section START-->	
 </section>

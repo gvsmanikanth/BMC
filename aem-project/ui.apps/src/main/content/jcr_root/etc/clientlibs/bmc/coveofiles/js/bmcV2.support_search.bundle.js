@@ -95,10 +95,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -167,7 +164,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(4);
+var	fixUrls = __webpack_require__(3);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -502,7 +499,9 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 4 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports) {
 
 
@@ -597,6 +596,7 @@ module.exports = function (css) {
 
 
 /***/ }),
+/* 4 */,
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -621,11 +621,12 @@ module.exports = __webpack_require__.p + "js/cultures/en.js";
 /* 21 */,
 /* 22 */,
 /* 23 */,
-/* 24 */
+/* 24 */,
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(25);
+var content = __webpack_require__(26);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -639,24 +640,24 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(3)(content, options);
+var update = __webpack_require__(0)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// extracted by mini-css-extract-plugin
 
-var content = __webpack_require__(27);
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(28);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -670,20 +671,19 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(3)(content, options);
+var update = __webpack_require__(0)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */,
@@ -693,8 +693,8 @@ if(false) {}
 __webpack_require__(5);
 __webpack_require__(33);
 __webpack_require__(34);
-__webpack_require__(24);
-module.exports = __webpack_require__(26);
+__webpack_require__(25);
+module.exports = __webpack_require__(27);
 
 
 /***/ }),
@@ -718,7 +718,8 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       Searchbox:{
         placeholder: 'Search BMC Support',
-        height:44
+        height:44,
+        enableQuerySyntax: true
       },
       ResultLink:{
         alwaysOpenInNewWindow: true
@@ -805,7 +806,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(3)(content, options);
+var update = __webpack_require__(0)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
