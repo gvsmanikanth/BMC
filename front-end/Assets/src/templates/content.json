@@ -1,0 +1,423 @@
+{
+  "results": [
+    {
+      "index": 0,
+      "path": "/content/bmc/us/en/documents/datasheets/control-m-for-hadoop",
+      "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
+      "title": "Control-M for Hadoop",
+      "created": "2018-09-12T06:46:35.450-04:00",
+      "assetLink": "http://www.youtube.com/embed/gPW9mMvjMBQ?autoplay\u003d1\u0026mute\u003d1",
+      "type": "Datasheet",
+      "linkType": "download",
+      "headerImage": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
+      "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-146731505|ic-type-185980791",
+          "displayValue": "Datasheets|Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-603835750",
+          "displayValue": "Buy"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-017644695|ic-topics-594037608",
+          "displayValue": "Big Data|Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "414177221",
+          "displayValue": "Control-M for Hadoop"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "path": "/content/bmc/videos/work-with-your-datanotonyourdata",
+      "excerpt": "Improve service delivery and release more applications faster by eliminating manual operations and scripting. (1:15)",
+      "title": "993403_control_m_for_hadoop_rebrand_01",
+      "created": "2017-08-31T18:05:22.663-04:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dQU9HU34o5vs",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "",
+      "headerImage": "https://blogs.bmc.com/wp-content/uploads/2019/10/GettyImages-1072593766_1400x700px-375x195.jpg",
+      "footerLogo" : "https://staging.bmc.com/content/dam/bmc/web-services/Placeholder_110x25.png",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-453243382",
+          "displayValue": "Discover"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "path": "/content/bmc/videos/say-goodbye-to-weekendupgrades",
+      "excerpt": "",
+      "title": "Say goodbye to weekend upgrades",
+      "created": "2018-01-22T02:57:01.604-05:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dwCnncqCueak",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "03:25",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-453243382",
+          "displayValue": "Discover"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "path": "/content/bmc/videos/managed_file_transfers_a_key_ingredient_for_your_digital_business_transformation",
+      "excerpt": "",
+      "title": "Managed File Transfers: A Key Ingredient for your Digital Business Transformation",
+      "created": "2017-12-01T12:47:36.653-05:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dKfI3r50Qj5s",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-776139085",
+          "displayValue": "Explore"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "path": "/content/bmc/videos/devops-and-bmc-deliveringoptimizedbusinessresults",
+      "excerpt": "",
+      "title": "DevOps and BMC: Delivering Optimized Business Results",
+      "created": "2017-09-04T20:48:38.181-04:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dMJLIF16M90A",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "01:25",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608|ic-topics-636264560",
+          "displayValue": "Business \u0026 IT Automation|DevOps"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "path": "/content/bmc/videos/control-m-the-secretsaucetobigdatasuccess",
+      "excerpt": "quick time to market for big data projects. (2:24)",
+      "title": "Control-M: The Secret Sauce to Big Data Success",
+      "created": "2017-09-08T07:07:49.679-04:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dSF4572r-63c",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "01:25",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-776139085",
+          "displayValue": "Explore"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-017644695|ic-topics-594037608",
+          "displayValue": "Big Data|Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "path": "/content/bmc/videos/optimize-automate-workflows",
+      "excerpt": "",
+      "title": "See How To Optimize and Automate Workflows",
+      "created": "2018-05-24T04:02:44.101-04:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dKRCxRsF_yCM",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "02:15",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-776139085",
+          "displayValue": "Explore"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "path": "/content/bmc/videos/control-m-automationapi",
+      "excerpt": "",
+      "title": "Control-M Automation API",
+      "created": "2017-09-08T05:37:12.803-04:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003dMLepdCjCKpo",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "11:25",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608|ic-topics-636264560",
+          "displayValue": "Business \u0026 IT Automation|DevOps"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "path": "/content/bmc/videos/control-m-mft",
+      "excerpt": "",
+      "title": "Managed File Transfers: A Key Ingredient for your Digital Business Transformation",
+      "created": "2018-02-23T00:40:37.019-05:00",
+      "assetLink": "/content/bmc/videos.html?vID\u003d8HWVtW3-VTk",
+      "type": "Videos",
+      "linkType": "play",
+      "videoLength": "06:15",
+      "headerImage": "",
+      "footerLogo" : "",
+      "metadata": [
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "resultsPerPage": 12,
+    "numberOfPages": 1,
+    "totalMatches": 9
+  }
+}

@@ -1,0 +1,68 @@
+/*
+ *  Copyright 2016 Adobe Systems Incorporated
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+@xf-pinterest-red: #bd081c;
+@xf-pinterest-grey: #efefef;
+@xf-pinterest-darkgrey: #555;
+
+.xf-pin-body {
+  background: @xf-pinterest-grey;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding-top: 30px;
+
+  .xf-pin-content {
+    background: white;
+    width: 628px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 32px;
+  }
+
+  .xf-pin-buttons > {
+    margin-bottom: 15px;
+
+    .xf-pin-button {
+      color: @xf-pinterest-darkgrey;
+      display: inline-block;
+      background: @xf-pinterest-grey;
+      padding: 7px 14px;
+      border-radius: 5px;
+      &.xf-pin-red {
+        background: @xf-pinterest-red;
+        color: white;
+      }
+    }
+
+    .xf-pin-dots-container {
+      margin-left: 10px;
+      font-size: 0;
+      display: inline-block;
+
+      .xf-pin-dot {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin: 1px;
+        border-radius: 100%;
+        background: @xf-pinterest-darkgrey;
+      }
+    }
+  }
+}

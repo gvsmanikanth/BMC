@@ -59,7 +59,7 @@ import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.result.SearchResult;
 import com.day.cq.search.result.Hit; 
 import com.google.gson.Gson;
-import com.scene7.ipsapi.ReprocessAssetsJob;
+//import com.scene7.ipsapi.ReprocessAssetsJob;
 
 @Component(
         label = " CSV Generator Service for Categories Data",

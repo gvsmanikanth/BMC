@@ -1,0 +1,36 @@
+<!--****************************************************************************
+  * ADOBE CONFIDENTIAL
+  * __________________
+  *
+  * Copyright 2016 Adobe Systems Incorporated
+  * All Rights Reserved.
+  *
+  * NOTICE:  All information contained herein is, and remains
+  * the property of Adobe Systems Incorporated and its suppliers,
+  * if any.  The intellectual and technical concepts contained
+  * herein are proprietary to Adobe Systems Incorporated and its
+  * suppliers and are protected by trade secret or copyright law.
+  * Dissemination of this information or reproduction of this material
+  * is strictly forbidden unless prior written permission is obtained
+  * from Adobe Systems Incorporated.
+  ***************************************************************************-->
+
+<coral-card data-sly-use.item="${'com.adobe.cq.xf.ui.ExperienceFragmentConsoleItem'}"
+            class="editor-Card-asset card-asset cq-draggable u-coral-openHand"
+            draggable="true"
+            data-path="${item.path}"
+            data-asset-group="content"
+            data-asset-mimetype="text/html"
+            data-type="experiencefragment">
+    <coral-card-asset>
+        <img class="cq-dd-image" src="${item.path}.thumb.800.480.png"
+             alt="${'Type icon' @ i18n, locale=request.locale}">
+    </coral-card-asset>
+    <coral-card-info data-sly-test="${item.isNew}">
+        <coral-tag color="blue" class="u-coral-pullRight">${'New' @ i18n, locale=request.locale}</coral-tag>
+    </coral-card-info>
+    <coral-card-content>
+        <coral-card-title class="foundation-collection-item-title">${item.title}</coral-card-title>
+        <coral-card-context class="coral-Card-context">From ${item.parentXf.title}</coral-card-context>
+    </coral-card-content>
+</coral-card>
