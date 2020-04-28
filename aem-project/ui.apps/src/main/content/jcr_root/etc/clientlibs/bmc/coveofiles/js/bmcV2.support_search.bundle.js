@@ -759,7 +759,7 @@ document.addEventListener('DOMContentLoaded', function () {
              const matchEl = document.querySelector("[href='"+args.metaObject.documentURL+"']");
              if(matchEl){
               const resultEl = Coveo.$$(matchEl).closest('.CoveoResult');
-              const result = resultEl ? resultEl.data('CoveoResult') : {};
+              const result = resultEl ? resultEl['CoveoResult'] : {};
                if (result && result.raw.sfkbid) {
                    args.metaObject.documentauthor = result.raw.sysauthor;
                }

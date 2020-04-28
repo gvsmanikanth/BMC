@@ -22,7 +22,7 @@
 
 <div class="layout-inner-wrap">
 	<!-- WEB-7277 Changes added to Coveo Searchbox section START-->
-  <div id="search" class="CoveoSearchInterface" data-design="new" data-enable-history="true">
+               <div id="search" class="CoveoSearchInterface" data-design="new" data-enable-history="true">
 
   <div class="CoveoAnalytics" data-search-hub="PublicSearch" data-anonymous="true"></div>
   <div class="CoveoAnalyticsSuggestions"></div>
@@ -92,27 +92,64 @@
     </div>
 </div>
 </script>
-<script id="Video" class="result-template" type="text/html" data-condition="raw.syssource.indexOf('YouTube - Video-bmc-docs') > -1" >
+<script id="YtPlaylist" class="result-template" type="text/html" data-layout="list" data-field-ytplaylistid="">
+    <div class="coveo-result-frame">
+  <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+    <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+  </div>
+  <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+    <div class="coveo-result-row" style="margin-top:0;">
+      <div class="coveo-result-cell coveo-no-wrap" style="vertical-align:top;font-size:16px;">
+        <a class="CoveoResultLink"></a>
+      </div>
+      <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+        <div class="coveo-result-row">
+          <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+        </div>
+      </div>
+    </div>
+    <div class="coveo-result-row" style="margin-top:10px;">
+      <div class="coveo-result-cell">
+        <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="Type"></span>
+        <span class="dotSymbol"></span>
+        <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author"></span>
+        <span class="dotSymbol"></span>
+        <span class="CoveoFieldValue" data-field="@ytitemcount" data-text-caption="NumberOfVideos"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</script>
+<script id="YtVideo" class="result-template" type="text/html" data-layout="list" data-field-ytvideoid="">
     <div class="coveo-result-frame">
   <div class="coveo-result-row">
-      <div class="coveo-result-cell" style="width:25px;">
-      <span class="coveo-icon bmc-yt-video"></span>
+    <div class="coveo-result-cell" style="width:220px; padding-top:7px">
+      <span class="CoveoYouTubeThumbnail">
+      </span>
+    </div>
+    <div class="coveo-result-cell">
+      <div class="coveo-result-row">
+        <div class="coveo-result-cell">
+          <a class="CoveoResultLink"></a>
+        </div>
       </div>
-      <div class="coveo-result-cell">
-      <a class="CoveoResultLink"></a>
-      <span class="CoveoQuickview"></span>
+      <div class="coveo-result-row" style="margin-top:10px;">
+        <div class="coveo-result-cell">
+          <span class="CoveoExcerpt"></span>
+        </div>
       </div>
-      <div class="coveo-result-cell" style="width:120px; text-align:right;">
-      <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+      <div class="coveo-result-row" style="margin-top:10px;">
+        <div class="coveo-result-cell">
+          <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author"></span>
+          <span class="dotSymbol"></span>
+          <span class="CoveoFieldValue" data-field="@ytvideoduration" data-helper="timeSpan" data-helper-options-is-milliseconds="false" data-text-caption="Length"></span>
+          <span class="dotSymbol"></span>
+          <span class="CoveoFieldValue" data-field="@ytviewcount" data-text-caption="Views"></span>
+          <span class="dotSymbol"></span>
+          <span class="CoveoFieldValue" data-field="@date" data-text-caption="Updated on" data-helper="date" data-helper-options="{useLongDateFormat: 'true'}"></span>
+        </div>
       </div>
-  </div>
-  <div class="coveo-result-row">
-      <div class="coveo-result-cell" style="width:25px;">
-
-      </div>
-      <div class="coveo-result-cell" style="text-align:justify">
-      <span class="CoveoExcerpt"></span>
-      </div>
+    </div>
   </div>
 </div>
 </script>
@@ -190,6 +227,29 @@
     </div>
 </div>
 </script>
+<script id="Toc" class="result-template" type="text/x-underscore-template" data-field-documenttype="toc">
+    <div class="coveo-result-frame">
+    <div class="coveo-result-row">
+        <div class="coveo-result-cell" style="width:25px;">
+            <span class="coveo-icon bmc-documentation"></span>
+        </div>
+        <div class="coveo-result-cell">
+            <a class="CoveoResultLink"></a>
+            <span class="CoveoQuickview"></span>
+        </div>
+        <div class="coveo-result-cell" style="width:120px; text-align:right;">
+            <span class="CoveoFieldValue" data-field="@sysdate" data-helper="date"></span>
+        </div>
+    </div>
+    <div class="coveo-result-row">
+        <div class="coveo-result-cell" style="width:25px;">
+        </div>
+        <div class="coveo-result-cell" style="text-align:justify">
+            <span class="CoveoExcerpt"></span>
+        </div>
+    </div>
+</div>
+</script>
 <script id="Default" class="result-template" type="text/html">
     <div class="coveo-result-frame">
     <div class="coveo-result-row">
@@ -234,7 +294,7 @@
     </div>
   </div>
 </div>
-            </div>	
+            </div>
 
     <!-- WEB-7277 Changes added to Coveo Searchbox section START-->	
 </section>
