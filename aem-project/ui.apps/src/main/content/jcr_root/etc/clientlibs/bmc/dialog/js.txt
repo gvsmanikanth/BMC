@@ -2,4 +2,3 @@
 radiogroup-showhide.js
 resourcelist-button-names.js
 remove-browse-for-image.js
-show-hide-dialog-item.js
