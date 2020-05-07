@@ -24,7 +24,7 @@
                                         jcr:title="Metadata"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <topics-t
+                                            <topics
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
@@ -36,7 +36,7 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
-                                            </topics-t>
+                                            </topics>
                                         </items>
                                     </metadata>
                                 </items>
