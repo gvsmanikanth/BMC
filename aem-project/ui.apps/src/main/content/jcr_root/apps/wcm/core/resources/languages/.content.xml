@@ -205,7 +205,7 @@
     <es_es
         jcr:primaryType="nt:unstructured"
         country="Spain"
-        language="Spanish"/>
+        language="Spanish(Spain)"/>
     <es_gt
         jcr:primaryType="nt:unstructured"
         country="Guatemala"
@@ -217,7 +217,7 @@
     <es_mx
         jcr:primaryType="nt:unstructured"
         country="Mexico"
-        language="Spanish"/>
+        language="Spanish(Mexico)"/>
     <es_ni
         jcr:primaryType="nt:unstructured"
         country="Nicaragua"
