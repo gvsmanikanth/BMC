@@ -2,19 +2,19 @@
 <section class="support-section-container layout-full-bleed support-search">
 	<div class="layout-inner-wrap">
      <!-- WEB-7277 Changes added to Coveo Searchbox section START-->
-		 <div class="support-search-top">
-					  <h2 class="support-search-header">Search BMC Support</h2>
-					  <input type="hidden" value="answers" name="page" />
-					  <input type="hidden" value="y" name="startover" />
-					  <fieldset>
-					    <label for="supprt-search-input" class="accessibility">Search BMC Support</label>
-					    <div id="supprt-search-input">
-					      <div class="CoveoAnalytics" data-search-hub="PortalSearch"></div>
-					      <div id="searchbox" class="CoveoSearchbox" data-enable-omnibox="true"></div>
-					    </div>
-					  </fieldset>
-					  <a target="_blank" class="contextual-tooltip" title="Help" href="/support/support-guide-advanced-product-info.html#Search-the-Knowledge-Base">?</a>
-        </div>
+		    <div class="support-search-top">
+  					<h2 class="support-search-header">Search BMC Support</h2>
+  					<input type="hidden" value="answers" name="page" />
+  					<input type="hidden" value="y" name="startover" />
+  					<fieldset>
+    					<label for="supprt-search-input" class="accessibility">Search BMC Support</label>
+						<div id="supprt-search-input">
+						<div class="CoveoAnalytics" data-search-hub="PortalSearch"></div>
+						<div id="searchbox" class="CoveoSearchbox" data-enable-omnibox="true"></div>
+						</div>
+  					</fieldset>
+                 <a target="_blank" class="contextual-tooltip" title="Help" href="/support/support-guide-advanced-product-info.html#Search-the-Knowledge-Base">?</a>
+          </div>
      <!-- WEB-7277 Changes added to Coveo Searchbox section END -->  
   </div>
 </section>
@@ -34,7 +34,7 @@
   <div class="coveo-main-section">
     <div class="coveo-facet-column">
         <div class="CoveoFacet" data-title="YouTube Channel" data-field="@sysauthor" data-tab="bmc-yt-video"></div>  
-<div class="CoveoFacet" data-title="Product Name" data-field="@bmcproductname" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-include-in-omnibox="false"></div>
+<div class="CoveoFacet" data-title="Product Name" data-field="@bmcproductname" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-include-in-omnibox="false" data-use-wildcards-in-facet-search='true'></div>
 <div class="CoveoFacet" data-title="Product Version" data-field="@bmcproductversion" data-depends-on="@bmcproductname" data-tab="KB"></div>
 <div class="CoveoFacet" data-title="FileType" data-field="@sysfiletype" data-tab="All,Confluence,documents,bmc-yt-video"></div>
 <div class="CoveoFacet" data-title="Type" data-field="@csitemtype" data-tab="Communities"></div>
