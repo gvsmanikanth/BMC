@@ -52,8 +52,10 @@ Disallow: /support/reg
 Disallow: /info/dwdjosmhbn.html
 Disallow: /apps
 Disallow: /available
+Disallow: /test
 Disallow: *ty.PURL*
-Sitemap: http://www.bmc.com/sitemap.xml
+Disallow: *?print*
+Sitemap: https://www.bmc.com/sitemap.xml
 
 User-agent: Nutch
 Disallow: /

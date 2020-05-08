@@ -39,7 +39,9 @@ import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.bmc.services.CategoriesReportCSVGenService;
+import com.bmc.services.ContainersReportCSVGenSevice;
 import com.bmc.services.ExperienceFgmtReportCSVGenService;
+import com.bmc.services.ExperienceFgmtReportCSVFormsService;
 import com.bmc.services.FormsReportCSVGenService;
 import com.bmc.services.VideoReportCSVGenService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
@@ -101,8 +103,13 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	    private ExperienceFgmtReportCSVGenService expFgmtService;
 	    
 	    @Reference
+	    private ExperienceFgmtReportCSVFormsService expFgmtFormsService;
+	    
+	    @Reference
 	    private CategoriesReportCSVGenService categoriesService;
-	    	    
+	    
+	    @Reference
+	    private ContainersReportCSVGenSevice containersService;	    
 	    
 	     @Activate
 	     protected void activate(final Map<String, Object> config) {	    
@@ -139,12 +146,19 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	            	        excelDAMPath = formsService.writeExceltoDAM(workBook, fileName);
 	            	        formsService.clearData(reportType);
 	                		break;
-	                case "experienceFragment":
+	                case "experienceFragmentGeneric":
 	                	//Generate the report for forms 	                		
                 		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
             	        expFgmtService.clearData(reportType);
+	                    break;
+	                case "experienceFragmentForms":
+	                	//Generate the report for forms 	                		
+                		workBook = expFgmtFormsService.generateDataReport(true, fileName,reportLocation);               		                		
+            	        jsonDAMPath = expFgmtFormsService.writeJSONtoDAM(fileName);
+            	        excelDAMPath = expFgmtFormsService.writeExceltoDAM(workBook, fileName);
+            	        expFgmtFormsService.clearData(reportType);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
@@ -182,6 +196,20 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
             	        excelDAMPath = categoriesService.writeExceltoDAM(workBook, fileName);
             	        categoriesService.clearData(reportType);
 	                	break;
+	                case "document-containers":
+	                	//Generate the report for forms 	                		
+	                	workBook = containersService.generateDataReport(fileName,reportLocation);
+                		jsonDAMPath = containersService.writeJSONtoDAM(fileName);
+            	        excelDAMPath = containersService.writeExceltoDAM(workBook, fileName);
+            	        containersService.clearData(reportType);
+	                	break;
+	                case "external-link-containers":
+	                	//Generate the report for forms 	                		
+                		workBook = containersService.generateDataReport( fileName,reportLocation);
+                		jsonDAMPath = containersService.writeJSONtoDAM(fileName);
+            	        excelDAMPath = containersService.writeExceltoDAM(workBook, fileName);
+            	        containersService.clearData(reportType);
+	                	break;
 	                case "generic":
 	                	//Generate the report for forms 	                		
                 		
@@ -195,10 +223,10 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 				                outPrint.println("</head>"); 
 				                outPrint.println("<body>");
 				                outPrint.println("<h2>Links to the Reports. </h2>");
-				                outPrint.println("<h4>Download the report in excel Format from<a href='");
+				                outPrint.println("<h4>Download the report in excel Format from<a x-cq-linkchecker='skip' href='");
 				                outPrint.println(excelDAMPath);
 				                outPrint.println("'> here</a>.</h4>");
-				                outPrint.println("<h4>Download the report in JSON Format from<a href='");
+				                outPrint.println("<h4>Download the report in JSON Format from<a x-cq-linkchecker='skip' href='");
 				                outPrint.println(jsonDAMPath);
 				                outPrint.println("'> here</a>.</h4>");				  
 				                //outPrint.println(finalOutput);

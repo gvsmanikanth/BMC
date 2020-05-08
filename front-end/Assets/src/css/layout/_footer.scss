@@ -27,6 +27,13 @@
 	}
 	.layout-inner-wrap {
 		overflow: auto;
+		.nav-tertiary{
+			.nav-tertiary-col{
+				h4{
+					font-size:28px;
+				}
+			}
+		}
 	}
 }
 

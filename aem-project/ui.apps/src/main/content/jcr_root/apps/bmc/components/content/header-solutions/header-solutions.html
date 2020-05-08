@@ -19,12 +19,12 @@
 	<sly data-sly-use.HeaderSolutions="com.bmc.components.HeaderSolutions" />
     <sly data-sly-test.sectionAssetClass=""></sly>
     <sly data-sly-test.offsetAssetClass=""></sly>
-    <sly data-sly-test.bannerAssetClass=""></sly>
+    <!--/* WEB-6170 Added CSS class "flex-center" as default */-->
+    <sly data-sly-test.bannerAssetClass="flex-center"></sly>
 
 	<sly data-sly-test="${HeaderSolutions.assetBars.size == 0}">
 		<sly data-sly-test.sectionAssetClass="js-content-center"></sly>
     	<sly data-sly-test.offsetAssetClass="js-content-center-item"></sly>
-     	<sly data-sly-test.bannerAssetClass="flex-center"></sly>
 	</sly>
 <section
 	class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 ${properties.backgroundImagePosition} ${sectionAssetClass} padding-bottom-0"

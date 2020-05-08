@@ -290,7 +290,7 @@ $basePadding: rem(15); //multChange($baseFontSize/2);
 				padding: $basePadding*17 0 $basePadding*2.5 0;
 				h1 {
 					margin: 15px 0 20px 0;
-					font-weight: 700;
+					font-weight: 400;
 					line-height: 1.3em;
 					@include media(breakpointMedium) {
 						margin: 0;

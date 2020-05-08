@@ -25,6 +25,8 @@ $(document).ready(function () {
 		
 	//Set the height for all sections wraps equal.
    function setHeight() {
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE ");
           windowHeight = $(window).innerHeight();
     stripHeight = $(".assetStripBottom").innerHeight();
           var componentHeight = $(".js-content-center-item").innerHeight() + stripHeight + 30;
@@ -48,7 +50,13 @@ $(document).ready(function () {
                  $('.section-wrap-header').css('min-height', 500);
                  
                  $('.section-wrap-header.middle').css('min-height', 0);
-           $('.section-wrap').css('min-height', windowHeight-50);
+           //$('.section-wrap').css('min-height', windowHeight-50);
+			if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+				$('.section-wrap').css({'height': windowHeight-50,'display':'-ms-flexbox'});
+				$('.section-wrap.partners').css({'min-height': windowHeight-50,'height':'auto','display':'block'});
+			}else{
+				$('.section-wrap').css('min-height', windowHeight-50);
+			}
  
                if($(".ub-emb-bar-frame").length == 1){
                $('.arrow.bounce').css('bottom', '5.5rem');

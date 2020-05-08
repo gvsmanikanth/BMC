@@ -69,6 +69,10 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Self"
                                                             value="_self"/>
+                                                        <modal
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Modal View"
+                                                            value="modal"/>
                                                     </items>
                                                 </targetType>
                                             </items>

@@ -29,7 +29,7 @@
 	}
 
 	p {
-		color: color(colorCorporate);
+		color: #4f5a65;
 		font-size: 1.5em;
 		margin-bottom: 0.5em;
 
@@ -56,7 +56,7 @@
 	h2 {
 		display: inline-block;
 		font-size: 2em;
-		font-weight: 700;
+		font-weight: 400;
 		margin-top: 0.1em;
 	}
 
@@ -91,10 +91,10 @@
 
 .customer-story-landing-logo-blocks {
 	background-color: color(seashell);
-	margin-bottom: -1.5rem;
+	//margin-bottom: -1.5rem;
 	padding: 1.66667em 0;
 	@include media(breakpointMedium) {
-		margin-bottom: -4rem;
+		//margin-bottom: -4rem;
 		padding: 3.33333em 0;
 	}
 	.logo-blocks {

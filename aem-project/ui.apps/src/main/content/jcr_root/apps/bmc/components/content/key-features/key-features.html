@@ -24,8 +24,16 @@
                     </sly>
                 </a>
             </sly>
-            <a data-sly-test="${properties.aditionalResources}" href="#resources"
-               class="resource-downloads-a icon-documents">${'Explore Additional Resources' @ i18n} &nbsp;›</a>
+
+            <sly data-sly-test="${!properties.checkboxText}">
+                <a data-sly-test="${properties.aditionalResources}" href="#resources"
+                   class="resource-downloads-a icon-documents">${'Explore Additional Resources' @ i18n} &nbsp;›</a>
+				</sly>
+			<sly data-sly-test="${properties.checkboxText}">
+                    <a data-sly-test="${properties.aditionalResources}" href="#resources"
+                       class="resource-downloads-a icon-documents">${properties.checkboxText} &nbsp;›</a>
+               </sly>
+
         </li>
     </ul>
 </section>

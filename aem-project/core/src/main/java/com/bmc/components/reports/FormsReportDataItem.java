@@ -80,6 +80,58 @@ public class FormsReportDataItem {
 	
 	private String expFgmtPath;
 	
+	private String Creation_Date;
+	
+	private String Last_Modified_Date;
+	
+	private String Creation_By;
+	
+	private String Last_Modified_By;
+	
+	private String Last_Replication_Action;
+	
+	private String  Email_Subject__Line;
+	
+    private String BMC_Email_Notification_Recipient;
+	
+	private String Shared_Contact_List_ID;
+	
+	private String Program_Step_ID;
+	
+	public String getEmail_Subject__Line() {
+		return Email_Subject__Line;
+	}
+
+	public void setEmail_Subject__Line(String email_Subject__Line) {
+		Email_Subject__Line = email_Subject__Line;
+	}
+
+	public String getBMC_Email_Notification_Recipient() {
+		return BMC_Email_Notification_Recipient;
+	}
+
+	public void setBMC_Email_Notification_Recipient(String bMC_Email_Notification_Recipient) {
+		BMC_Email_Notification_Recipient = bMC_Email_Notification_Recipient;
+	}
+
+	public String getShared_Contact_List_ID() {
+		return Shared_Contact_List_ID;
+	}
+
+	public void setShared_Contact_List_ID(String shared_Contact_List_ID) {
+		Shared_Contact_List_ID = shared_Contact_List_ID;
+	}
+
+	public String getProgram_Step_ID() {
+		return Program_Step_ID;
+	}
+
+	public void setProgram_Step_ID(String program_Step_ID) {
+		Program_Step_ID = program_Step_ID;
+	}
+
+	
+	
 	public String getForm_type() {
 		return form_type;
 	}
@@ -387,6 +439,46 @@ public class FormsReportDataItem {
 
 	public void setExpFgmtPath(String expFgmtPath) {
 		this.expFgmtPath = expFgmtPath;
+	}
+
+	public String getCreation_Date() {
+		return Creation_Date;
+	}
+
+	public void setCreation_Date(String creation_Date) {
+		Creation_Date = creation_Date;
+	}
+
+	public String getLast_Modified_Date() {
+		return Last_Modified_Date;
+	}
+
+	public void setLast_Modified_Date(String last_Modified_Date) {
+		Last_Modified_Date = last_Modified_Date;
+	}
+
+	public String getCreation_By() {
+		return Creation_By;
+	}
+
+	public void setCreation_By(String creation_By) {
+		Creation_By = creation_By;
+	}
+
+	public String getLast_Modified_By() {
+		return Last_Modified_By;
+	}
+
+	public void setLast_Modified_By(String last_Modified_By) {
+		Last_Modified_By = last_Modified_By;
+	}
+
+	public String getLast_Replication_Action() {
+		return Last_Replication_Action;
+	}
+
+	public void setLast_Replication_Action(String last_Replication_Action) {
+		Last_Replication_Action = last_Replication_Action;
 	}
 
 

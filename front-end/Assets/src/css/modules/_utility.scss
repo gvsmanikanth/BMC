@@ -130,6 +130,9 @@ a.white:focus,
         fill: color(darkBlue);
     }
 }
+.boston-blue {
+    color: color(boston-blue);
+}
 
 // Backgrounds
 .bg-transparent {
@@ -145,14 +148,17 @@ a.white:focus,
 .bg-white-hover:focus {
     background-color: #fff;
 }
-
+.bg-approxSnow {
+    background-color: color(approxSnow);
+}
 .bg-seashell {
+    --background-color: color(seashell);
     background-color: color(seashell);
 }
 
 .bg-seashell-hover:hover,
 .bg-seashell-hover:focus {
-    background-color: color(seashell);
+    background-color: #ffffff;
 }
 
 .bg-iron {
@@ -176,6 +182,7 @@ a.white:focus,
 }
 
 .bg-corduroy {
+    --background-color: color(corduroy);
     background-color: color(corduroy);
 }
 
@@ -231,6 +238,9 @@ a.white:focus,
 .bg-viking {
     background-color: color(viking);
 }
+.bg-darkBlue {
+    background-color: color(darkBlue);
+}
 
 // Greens
 .bg-keppel {
@@ -241,6 +251,9 @@ a.white:focus,
 }
 .bg-conifer {
     background-color: color(conifer);
+}
+.bg-apple {
+    background-color: color(apple);
 }
 
 // Reds
@@ -1290,11 +1303,11 @@ a.white:focus,
 //WEB-568 - Added utitlity classes to change text color and remove padding from elements.
 
 .h2-variation-1 {
-      color: color(ship-gray);
+      --color: color(ship-gray);
+	  color: #4f5a65;
       font-weight: normal;
       margin: 0 0 1em 0;
       @include font-size(36);
-      font-weight: 500;
       line-height: 1.25;
 }
 
@@ -1305,6 +1318,13 @@ a.white:focus,
       color: #58595b;
 }
 
+.h1-variation-1{
+    font-size: 26px;    
+    letter-spacing: -2.3px;
+    @media (min-width: $break-md) {
+        font-size: 50px;
+    }
+}
 .padding-bottom-0{
     padding-bottom: 0em !important;
 }
@@ -1496,3 +1516,17 @@ color: #213443;
 .mt0-imp {
   margin-top:0 !important;
 }
+
+
+ //WEB-5910
+.h1-variation-large{     
+    font-size: 2rem;
+    line-height: 1.1;    
+    @media only screen and (min-width: 48em){  
+        font-size: 3rem;
+        font-weight: 400;
+    }   
+    @media only screen and (min-width: 76.25em){
+        font-size: 3.66667rem;
+    }
+  }

@@ -27,13 +27,15 @@
     <script data-sly-test.BmcMeta="${PageModel.bmcMetaJson}">
         var bmcMeta = ${BmcMeta @ context='unsafe'};
     </script>
+    <!-- WEB-7660 Added the closing sly tag to revert changes made under WEB-7642 -->
 </sly>
-
 
 <sly data-sly-use.runMode="com.bmc.models.RunModes"/>
 <sly data-sly-test ="${runmode.mode == 'prod'}">
   <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562.js"></script>
 </sly>
 <sly data-sly-test ="${runmode.mode != 'prod'}">
- <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
+ <!-- Commenting as the launch script is not working. <script src="//assets.adobedtm.com/launch-ENd55233e6d70340f8824b941811cebdbc-staging.min.js"></script> -->
+  <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
 </sly>
+

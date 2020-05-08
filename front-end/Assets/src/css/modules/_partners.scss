@@ -75,4 +75,8 @@
     }   
   }
 
+  //WEB-6836
+  .maincontentcontainer>.layout-full-bleed>.partner-list {
+      padding-bottom: 0 !important;
+  }
 
