@@ -6,6 +6,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="All Products"
         />
+        <education-products-126375736
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Control-M"
+    />
     <education-products-183047196
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix ITSM"/>
@@ -13,6 +17,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Digital Workplace"
        />
+        <education-products-177937656
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC (Helix) Discovery"
+      />
         <!-- WEB-5990 Category Update - Education Find Courses web page - PDWO00001223865 -->
     <education-products-186068589
         jcr:primaryType="nt:unstructured"
@@ -28,10 +36,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Client Management"
        />
-    <education-products-177937656
-        jcr:primaryType="nt:unstructured"
-        jcr:title="BMC (Helix) Discovery"
-      />
+   
     <education-products-112512823
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Platform (Innovation Suite)"
@@ -40,6 +45,20 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="BMC Helix Business Workflows"
         />
+        <!-- WEb-7680 PDWO00001256570 - Category Update - Education Find Courses web page -->
+        <education-products-185974075
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Helix Monitor"
+        />
+        <education-products-186464502
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Helix Optimize"
+        />
+        <education-products-186464502
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Helix Remediate"
+        />
+        <!-- END  -->
     <education-products-189140656
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Orchestration"
@@ -69,10 +88,7 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="TrueSight Network Automation"
        />  
-    <education-products-126375736
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Control-M"
-    />
+    
     <education-products-189020579
         jcr:primaryType="nt:unstructured"
         jcr:title="ITIL"
