@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          jcr:description="Vertical list of links to related pages, assets, or urls, with optional heading and link descriptions. For use in a page's secondary column. See http://www.bmc.com/web-services/pagelist.html."
-          jcr:primaryType="cq:Component"
-          jcr:title="Related Items: Secondary"
-          componentGroup="BMC.content"/>
+    jcr:description="Vertical list of links to related pages, assets, or urls, with optional heading and link descriptions. For use in a page's secondary column. See http://www.bmc.com/web-services/pagelist.html."
+    jcr:primaryType="cq:Component"
+    jcr:title="Related Items: Secondary"
+    componentGroup="BMC.content"/>

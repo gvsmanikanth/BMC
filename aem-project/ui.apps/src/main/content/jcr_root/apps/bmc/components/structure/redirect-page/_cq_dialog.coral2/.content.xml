@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Page"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[]">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <advanced jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section1 jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <redirect_permanent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="designs"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Redirect Type"
+                                                multiple="false"
+                                                name="./redirectPermanent">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <false
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="302"
+                                                        value="false"/>
+                                                    <true
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="301"
+                                                        value="true"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"
+                                                    cq-msm-lockable="redirectPermanent"/>
+                                            </redirect_permanent>
+                                            <redirect_permanent_type
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                                name="./redirectPermanent@TypeHint"
+                                                value="Boolean"/>
+                                        </items>
+                                    </section1>
+                                </items>
+                            </column>
+                        </items>
+                    </advanced>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

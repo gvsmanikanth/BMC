@@ -22,8 +22,8 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldDescription="Use Title case."
                                 fieldLabel="Title"
-                                value="Featured Blogs/Additional Resources"
-                                name="./title"/>
+                                name="./title"
+                                value="Featured Blogs/Additional Resources"/>
                             <blogs
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
@@ -34,10 +34,6 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
                                     name="./blogs">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
                                             jcr:primaryType="nt:unstructured"

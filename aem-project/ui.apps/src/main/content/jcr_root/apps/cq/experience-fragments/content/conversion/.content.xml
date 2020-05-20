@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Convert to experience fragment variation"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[cq.xf.editor.convertxf]"
+    referrer="${param.referrer}">
+    <content
+        granite:id="xf-switcher-form"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <action
+                        granite:class="cq-dialog-dropdown-showhide"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldDescription="The target of the conversion - a new Experience Fragment or an existing one"
+                        fieldLabel="Action"
+                        name="action">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            cq-dialog-dropdown-showhide-target=".list-option-action-showhide-target"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <createXf
+                                jcr:primaryType="nt:unstructured"
+                                text="Create a new Experience Fragment"
+                                value="createXf"/>
+                            <createVariation
+                                jcr:primaryType="nt:unstructured"
+                                text="Add to an existing Experience Fragment"
+                                value="createVariation"/>
+                        </items>
+                    </action>
+                    <wellCreateXf
+                        granite:class="hide list-option-action-showhide-target"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="createXf"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <parent
+                                granite:class="xf-required-toggle"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="The folder under which the Experience Fragments would be created"
+                                fieldLabel="Fragment path"
+                                filter="folder"
+                                forceSelection="false"
+                                multiple="false"
+                                name="xfParentPath"
+                                required="{Boolean}true"
+                                rootPath="/content/experience-fragments"/>
+                            <xftitle
+                                granite:class="xf-required-toggle"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="The title of the Experience Fragment"
+                                fieldLabel="Fragment title"
+                                name="pageTitle"
+                                required="{Boolean}true"/>
+                            <tags
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                                fieldDescription="The tags of the experience fragment"
+                                fieldLabel="Fragment tags"
+                                multiple="true"
+                                name="cq:tags"/>
+                        </items>
+                    </wellCreateXf>
+                    <wellCreateVariation
+                        granite:class="hide list-option-action-showhide-target"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        showhidetargetvalue="createVariation">
+                        <granite:data
+                            jcr:primaryType="nt:unstructured"
+                            showhidetargetvalue="createVariation"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <parent
+                                granite:class="xf-required-toggle"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/experience-fragments/editor/components/xffield"
+                                fieldDescription="The experience fragment that this variation will be created under"
+                                fieldLabel="Variation path"
+                                filter="xf"
+                                forceSelection="false"
+                                multiple="false"
+                                name="variationParentPath"
+                                required="{Boolean}true"
+                                rootPath="/content/experience-fragments"/>
+                        </items>
+                    </wellCreateVariation>
+                    <template
+                        granite:id="page-template"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldDescription="The template of the experience fragment variation"
+                        fieldLabel="Template"
+                        name="variantTemplate"
+                        pickerSrc="/mnt/overlay/cq/experience-fragments/content/commons/templatepicker.html?path=/content/experience-fragments&amp;type=custom"
+                        required="{Boolean}true"/>
+                    <variationTitle
+                        granite:id="variant-title"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldDescription="The title of the variation"
+                        fieldLabel="Variation title"
+                        name="variantTitle"
+                        required="{Boolean}true"/>
+                    <tags
+                        granite:id="variant-tags"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                        fieldDescription="The tags of the experience fragment variation"
+                        fieldLabel="Variation tags"
+                        multiple="true"
+                        name="variantTags"/>
+                    <componentPath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                        name="componentPaths"
+                        value="${param.componentPaths}"/>
+                </items>
+            </column>
+        </items>
+    </content>
+    <converter
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/experience-fragments/editor/components/converter"/>
+</jcr:root>

@@ -1,0 +1,91 @@
+<!--/*
+  ADOBE CONFIDENTIAL
+
+  Copyright 2016 Adobe Systems Incorporated
+  All Rights Reserved.
+
+  NOTICE:  All information contained herein is, and remains
+  the property of Adobe Systems Incorporated and its suppliers,
+  if any.  The intellectual and technical concepts contained
+  herein are proprietary to Adobe Systems Incorporated and its
+  suppliers and may be covered by U.S. and Foreign Patents,
+  patents in process, and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from Adobe Systems Incorporated.
+*/-->
+<sly data-sly-use.item="com.adobe.cq.xf.ui.ExperienceFragmentConsoleItem">
+    <coral-card variant = "${item.isFolder && 'inverted'}"
+            class="foundation-collection-navigator marker"
+            data-type="${item.resourceType}"
+            data-foundation-collection-navigator-href="${item.navigatorHref}"
+            fixedwidth>
+        <coral-card-content>
+            <coral-card-context class="coral-Card-context" data-sly-test="${item.isFolder}">
+                ${'Folder' @ i18n, locale=request.locale}
+            </coral-card-context>
+            <coral-card-context class="coral-Card-context" data-sly-test="${item.isLiveCopy}">${'Live Copy' @ i18n, locale=request.locale}</coral-card-context>
+            <coral-card-title>${item.title}</coral-card-title>
+            <coral-card-asset class="card-type" style="background-color: white;">
+                <img data-sly-test="${!item.isFolder}" src="${item.path}.thumb.800.480.png"
+                     alt="${'Type icon' @ i18n, locale=request.locale}">
+            </coral-card-asset>
+            <coral-card-info data-sly-test="${item.isNew && !item.isFolder}}">
+                <coral-tag color="blue" class="u-coral-pullRight">${'New' @ i18n, locale=request.locale}</coral-tag>
+            </coral-card-info>
+            <coral-card-propertylist>
+                <coral-card-property icon="edit"
+                                     title="${'Modified' @ i18n, locale=request.locale}"
+                                     data-sly-test="${item.lastModified}">
+                    <time datetime="${item.lastModified.timeInMillis || 0}"
+                          data-sly-use.modified="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.lastModified, relativeFormat='r'}">
+                        ${modified.date}
+                    </time>
+                </coral-card-property>
+                <coral-card-property icon="globe" title="${'Published' @ i18n, locale=request.locale}"
+                                     data-sly-test="${item.publishedDate && !item.isFolder}">
+                    <time datetime="${item.publishedDate.timeInMillis || 0}"
+                          data-sly-use.published="${'com.adobe.cq.xf.ui.DateFormatter' @ date=item.publishedDate, relativeFormat='r'}">
+                        ${published.date}
+                    </time>
+                </coral-card-property>
+                <coral-card-property icon="globeRemove"
+                                     data-sly-test="${!item.publishedDate && !item.isFolder}">
+                    ${'Not published' @ i18n, locale=request.locale}
+                </coral-card-property>
+            </coral-card-propertylist>
+        </coral-card-content>
+        <!--/* This meta tag is used by the console to check what actions are available for this card.
+             Used to render the actions when items are selected */-->
+        <meta class="foundation-collection-quickactions"
+              data-foundation-collection-quickactions-rel="${item.quickactionsRel.isEmpty ? 'none' : item.quickactionsRel @join=' '}">
+        </meta>
+    </coral-card>
+
+    <coral-quickactions target="_prev">
+        <coral-quickactions-item
+                class="foundation-collection-item-activator"
+                icon="check">${'Select' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item
+                type="anchor"
+                data-foundation-collection-action='{"action": "cq.wcm.open", "data": {"cookiePath":"${request.contextPath}/","href":"${request.contextPath}/bin/wcmcommand?cmd=open&_charset_=utf-8&path={item}"}}'
+                href="${request.contextPath}${item.viewPropertiesHref}"
+                icon="infoCircle">${'Properties' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item
+                class="foundation-collection-action"
+                data-sly-test="${!(item.isFolder || item.isExperienceFragmentRoot)}"
+                data-foundation-collection-action='{"action": "cq.wcm.open", "relScope":"item", "data" : {"href":"${request.contextPath}/bin/wcmcommand?cmd=open&_charset_=utf-8&path={item}"}}'
+                icon="edit">${'Open' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item icon="copy" class="foundation-collection-action" data-foundation-collection-action='{"action": "cq.wcm.copy"}'>${'Copy' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item icon="move" type="anchor" href="${request.contextPath}/libs/wcm/core/content/sites/movepagewizard.html${resource.parent.path}?item=${resource.path}&_charset_=utf-8">${'Move' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item
+                class="foundation-collection-action"
+                data-foundation-collection-action='{"action": "cq.wcm.publish", "data": {"referenceSrc": "${request.contextPath}/libs/cq/experience-fragments/content/commons/reference.json?_charset_=utf-8{&amp;path*}", "wizardSrc": "${request.contextPath}/libs/cq/experience-fragments/content/experience-fragments/publishxfwizard.html?_charset_=utf-8{&item*}"}}'
+                icon="globe">${'Publish' @ i18n, locale=request.locale}</coral-quickactions-item>
+        <coral-quickactions-item
+                data-sly-test="${item.isSocial}"
+                class="foundation-collection-action"
+                data-foundation-collection-action='{"action": "cq.wcm.open", "relScope":"item", "data" : {"href":"${request.contextPath}${item.viewPreviewHref}"}}'
+                icon="branch2">${'Social' @ i18n, locale=request.locale}</coral-quickactions-item>
+    </coral-quickactions>
+</sly>
