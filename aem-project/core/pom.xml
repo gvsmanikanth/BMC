@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.bmc</groupId>
         <artifactId>DXP</artifactId>
-        <version>0.0.1_SNAPSHOT</version>
+        <version>4.3.0</version>
     </parent>
     <properties>
         <properties.basedir>${basedir}/../properties</properties.basedir>
@@ -72,14 +72,14 @@
             <groupId>javax.jcr</groupId>
             <artifactId>jcr</artifactId>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit-addons</groupId>
-            <artifactId>junit-addons</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit-addons</groupId>
+			<artifactId>junit-addons</artifactId>
+		</dependency>
         <dependency>
             <groupId>com.adobe.aem</groupId>
             <artifactId>uber-jar</artifactId>
@@ -138,8 +138,7 @@
         	<groupId>org.apache.poi</groupId>
         	<artifactId>poi-ooxml</artifactId>
         	<version>3.16</version>
-    	</dependency>
-		<!-- WEB- 2437 Added Dependency for APache Poi workbook/report generation END -->
+    	</dependency>        
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -167,9 +166,9 @@
                     <instructions>
                         <!-- Export packages that should be visible to other bundles and JSPs -->
                         <Export-Package>
-                            com.bmc.components,
-                            com.bmc.components.utils,
-                            com.bmc.models,
+                            com.bmc.components.*,
+                            com.bmc.components.utils.*,
+                            com.bmc.models.*,
                             {local-packages},
                             org.owasp.encoder,
                             org.json.simple,

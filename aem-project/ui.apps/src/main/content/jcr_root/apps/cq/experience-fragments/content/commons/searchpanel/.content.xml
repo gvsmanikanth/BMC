@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/coral/common/admin/searchpanel"
+    predicatePath="experience-fragments/search/facets/experiencefragments">
+    <header
+        granite:rel="cq-common-admin-search-header"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <savedsearchesfield
+                granite:rel="cq-common-admin-savedsearch"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/autocomplete"
+                class="coral-Search--cqSearchPanel"
+                emptyText="Saved Searches"
+                forceSelection="{Boolean}true"
+                mode="contains"
+                multiple="{Boolean}false"
+                name="savedSearches">
+                <datasource
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/gui/components/coral/common/admin/searchpanel/savedsearchdatasource"
+                    searchHome="/home/users"/>
+                <options
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/autocomplete/list"/>
+            </savedsearchesfield>
+        </items>
+    </header>
+    <footer
+        granite:class="cq-common-admin-search-toolbar"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <cancelsearchactionbutton
+                granite:rel="cq-common-admin-search-toolbar-cancel-button cq-common-admin-search-toolbar-button"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                disabled="{Boolean}true"
+                text="Cancel"/>
+            <savesearchactionbutton
+                granite:rel="cq-common-admin-search-toolbar-save-button cq-common-admin-search-toolbar-button"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                disabled="{Boolean}true"
+                icon="filterAdd"
+                text="Save"
+                variant="primary"/>
+            <editsearchactionbutton
+                granite:rel="cq-common-admin-search-toolbar-edit-button"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/button"
+                block="{Boolean}true"
+                disabled="{Boolean}true"
+                text="Edit Saved Search"/>
+            <savedsearchinfopanel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/coral/common/admin/searchpanel/toolbar/infopanel"/>
+            <actiondialogs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/gui/components/coral/common/admin/searchpanel/toolbar/actiondialogs"/>
+        </items>
+    </footer>
+</jcr:root>

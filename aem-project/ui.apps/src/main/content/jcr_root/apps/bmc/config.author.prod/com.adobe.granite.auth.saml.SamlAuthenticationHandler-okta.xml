@@ -7,7 +7,7 @@
           defaultRedirectUrl="/aem/start.html"
           groupMembershipAttribute="SSOGROUPDN"
           handleLogout="{Boolean}false"
-          idpCertAlias="authentication-service#1502385167261"
+          idpCertAlias="certalias___1588785160291"
           idpHttpRedirect="{Boolean}false"
           idpUrl="https://bmc.okta.com/app/bmc_aemauthor_1/exk1c86cn2k1to2mi1d8/sso/saml"
           keyStorePassword="admin"
