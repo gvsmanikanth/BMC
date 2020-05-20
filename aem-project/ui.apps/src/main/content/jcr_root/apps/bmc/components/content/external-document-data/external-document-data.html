@@ -1,0 +1,8 @@
+<sly data-sly-test="${image.src}">
+ <img data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image" src="${image.src}" title="${image.alt @ context='html'}" alt="${image.alt @ context='html'}">
+</sly>
+<sly data-sly-test="${!image.src}">
+ <img  src="/content/dam/bmc/solutions/gartner-magic-quadrant-skyscraper-2017.png" title="Gartner Magic Quadrant" alt="Gartner Magic Quadrant">
+</sly>
+
+    

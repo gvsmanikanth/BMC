@@ -623,12 +623,14 @@
                         @media (max-width: 831px) {
                             width: 50%;
                         }
+
                         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
                             @media (min-width: $break-md) {                            
                                 width: 100%;
                             } 
                          }
                        
+
                         @media (min-height: 880px) {
                             height: 60%;
                         }  
@@ -654,11 +656,13 @@
                         @media (min-width: $break-sm) {
                             margin: 0 auto 0 0;
                         }
+
                         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
                             @media (min-width: $break-md) {                            
                                 width: calc(100% - 40px);
                             } 
                          }
+
                         @media (min-width: $break-lg) {
                             padding: 0 0 40px 40px;
                             max-width: 70%;
