@@ -701,6 +701,11 @@ module.exports = __webpack_require__(27);
 /* 33 */
 /***/ (function(module, exports) {
 
+// missing forEach on NodeList for IE11
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
  
   const searchEl = document.getElementById('search');
@@ -715,6 +720,9 @@ document.addEventListener('DOMContentLoaded', function () {
       externalComponents: [document.getElementById('searchbox')],
       Analytics:{
         searchHub: 'PublicSearch'
+      },
+      Facet:{
+        availableSorts: ["alphaascending", "alphadescending", "occurrences", "score" ]
       },
       Searchbox:{
         placeholder: 'Search BMC Support',
@@ -759,7 +767,7 @@ document.addEventListener('DOMContentLoaded', function () {
              const matchEl = document.querySelector("[href='"+args.metaObject.documentURL+"']");
              if(matchEl){
               const resultEl = Coveo.$$(matchEl).closest('.CoveoResult');
-              const result = resultEl ? resultEl.data('CoveoResult') : {};
+              const result = resultEl ? resultEl['CoveoResult'] : {};
                if (result && result.raw.sfkbid) {
                    args.metaObject.documentauthor = result.raw.sysauthor;
                }
