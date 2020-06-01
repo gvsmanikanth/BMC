@@ -213,7 +213,7 @@
                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                                     fieldDescription="Select Social Media Type"
                                                                     fieldLabel="Social Media"
-                                                                    name="./socialMediaType">
+                                                                    name="./soccMedsType">
                                                                     <items jcr:primaryType="nt:unstructured">
                                                                         <None
                                                                             jcr:primaryType="nt:unstructured"
