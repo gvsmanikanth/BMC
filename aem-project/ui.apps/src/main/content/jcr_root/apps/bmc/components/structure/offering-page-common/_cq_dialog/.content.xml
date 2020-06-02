@@ -28,7 +28,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
-                                                fieldLabel="Topics"
+                                                fieldLabel="Topics 2"
                                                 multiple="true"
                                                 name="./topics">
                                                 <items jcr:primaryType="nt:unstructured"/>
