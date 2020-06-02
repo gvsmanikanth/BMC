@@ -148,7 +148,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
-                                                fieldLabel="Topics"
+                                                fieldLabel="Topics 1"
                                                 metadataName="topic"
                                                 multiple="true"
                                                 name="./topics">
