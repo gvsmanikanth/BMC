@@ -28,10 +28,12 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
-                                                fieldLabel="Topics 2"
+                                                fieldLabel="Topics"
                                                 multiple="true"
                                                 name="./topics">
-                                                <items jcr:primaryType="nt:unstructured"/>
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"
