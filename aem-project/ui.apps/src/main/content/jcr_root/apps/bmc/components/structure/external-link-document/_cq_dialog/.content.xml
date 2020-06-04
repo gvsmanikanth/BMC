@@ -3,7 +3,9 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="ExternalLinkDocument"
     sling:resourceType="cq/gui/components/authoring/dialog"
+
     extraClientlibs="[core.wcm.components.image.v1.editor,external.document.dropdown]">
+
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
@@ -220,7 +222,7 @@
                                             </ic-target-persona>
                                             <ic-source-publish-date
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                                sling:resourceType="granite/ui/components/foundation/form/datepicker"
                                                 displayedFormat="MM-YYYY"
                                                 fieldDescription="Used to specify when the content was created, not when it was published in AEM"
                                                 fieldLabel="IC Source Publish Date (MM-YYYY)"
