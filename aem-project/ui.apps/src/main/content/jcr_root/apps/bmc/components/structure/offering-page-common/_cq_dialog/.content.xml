@@ -29,6 +29,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Select topic to add"
                                                 fieldLabel="Topics"
+                                                metadataName="topic"
                                                 multiple="true"
                                                 name="./topics">
                                                 <datasource
