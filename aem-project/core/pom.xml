@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.bmc</groupId>
         <artifactId>DXP</artifactId>
-        <version>0.0.1_SNAPSHOT</version>
+        <version>4.3.4</version>
     </parent>
     <properties>
         <properties.basedir>${basedir}/../properties</properties.basedir>
