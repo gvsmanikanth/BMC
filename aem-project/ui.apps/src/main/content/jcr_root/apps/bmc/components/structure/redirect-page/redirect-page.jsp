@@ -23,7 +23,7 @@
                      com.day.cq.wcm.foundation.ELEvaluator, com.day.cq.wcm.api.components.IncludeOptions" %><%
 %><%@include file="/libs/foundation/global.jsp" %><%
 
-%><cq:include script="init.jsp"/><%
+%><cq:include script="/libs/foundation/components/redirect/init.jsp"/><%
 
     // read the redirect target from the 'page properties'
     String location = properties.get("redirectTarget", "");

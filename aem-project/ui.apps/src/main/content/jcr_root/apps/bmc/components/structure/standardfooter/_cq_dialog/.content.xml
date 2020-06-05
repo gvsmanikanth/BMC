@@ -1,64 +1,78 @@
-<?xml version="1.0"
-        encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured"
-          jcr:title="Standard Footer Component"
-          sling:resourceType="cq/gui/components/authoring/dialog"
-          helpPath="">
-    <content jcr:primaryType="nt:unstructured"
-             sling:resourceType="granite/ui/components/foundation/container">
-        <layout jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs"
-                type="nav" />
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Standard Footer Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+            type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <footerCompany jcr:primaryType="nt:unstructured"
-                           jcr:title="Company"
-                           sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <footerCompany
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Company"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured"
-                                  sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                       acs-commons-nested="NODE_STORE"
-                                       name="./footerCompany">
-                                    <layout jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                            method="absolute" />
+                            <list
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="NODE_STORE"
+                                    name="./footerCompany">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <linkText jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                          fieldLabel="Link Text"
-                                                          name="./linkText" />
-                                                <linkPath jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                          fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                          required="{Boolean}true"
-                                                          rootPath="/content/bmc"
-                                                          name="./linkPath"
-                                                          fieldLabel="Link Path" />
-                                                <targetType jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/foundation/form/select"
-                                                            fieldLabel="Select target _type"
-                                                            multiple="{Boolean}false"
-                                                            name="./targetType">
+                                                <linkText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Link Text"
+                                                    name="./linkText"/>
+                                                <linkPath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                    fieldLabel="Link Path"
+                                                    name="./linkPath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/bmc"/>
+                                                <targetType
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="Select target _type"
+                                                    multiple="{Boolean}false"
+                                                    name="./targetType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <blank jcr:primaryType="nt:unstructured"
-                                                               text="Blank"
-                                                               value="_blank" />
-                                                        <self jcr:primaryType="nt:unstructured"
-                                                              text="Self"
-                                                              value="_self" />
+                                                        <blank
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Blank"
+                                                            value="_blank"/>
+                                                        <self
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Self"
+                                                            value="_self"/>
+                                                        <modal
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Modal View"
+                                                            value="modal"/>
                                                     </items>
                                                 </targetType>
                                             </items>
@@ -70,52 +84,63 @@
                     </column>
                 </items>
             </footerCompany>
-            <footerSupport jcr:primaryType="nt:unstructured"
-                           jcr:title="Support"
-                           sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <footerSupport
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Support"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured"
-                                  sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                       acs-commons-nested="NODE_STORE"
-                                       name="./footerSupport">
-                                    <layout jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                            method="absolute" />
+                            <list
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="NODE_STORE"
+                                    name="./footerSupport">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <linkText jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                          fieldLabel="Link Text"
-                                                          name="./linkText" />
-                                                <linkPath jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                          fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                          required="{Boolean}true"
-                                                          rootPath="/content/bmc"
-                                                          name="./linkPath"
-                                                          fieldLabel="Link Path" />
-
-                                                <targetType jcr:primaryType="nt:unstructured"
-                                                            sling:resourceType="granite/ui/components/foundation/form/select"
-                                                            fieldLabel="Select target _type"
-                                                            multiple="{Boolean}false"
-                                                            name="./targetType">
+                                                <linkText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Link Text"
+                                                    name="./linkText"/>
+                                                <linkPath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                    fieldLabel="Link Path"
+                                                    name="./linkPath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/bmc"/>
+                                                <targetType
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="Select target _type"
+                                                    multiple="{Boolean}false"
+                                                    name="./targetType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <blank jcr:primaryType="nt:unstructured"
-                                                               text="Blank"
-                                                               value="_blank" />
-                                                        <self jcr:primaryType="nt:unstructured"
-                                                              text="Self"
-                                                              value="_self" />
+                                                        <blank
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Blank"
+                                                            value="_blank"/>
+                                                        <self
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Self"
+                                                            value="_self"/>
                                                     </items>
                                                 </targetType>
                                             </items>
@@ -127,77 +152,94 @@
                     </column>
                 </items>
             </footerSupport>
-            <footerSocial jcr:primaryType="nt:unstructured"
-                          jcr:title="Social"
-                          sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <footerSocial
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Social"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured"
-                                  sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                       acs-commons-nested="NODE_STORE"
-                                       name="./footerSocial">
-                                    <layout jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                            method="absolute" />
+                            <list
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="NODE_STORE"
+                                    name="./footerSocial">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <linkText jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                          fieldLabel="Link Text"
-                                                          name="./linkText" />
-                                                <linkPath jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                          fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                          required="{Boolean}true"
-                                                          rootPath="/content/bmc"
-                                                          name="./linkPath"
-                                                          fieldLabel="Link Path" />
-                                                <socialMediaType jcr:primaryType="nt:unstructured"
-                                                                 sling:resourceType="granite/ui/components/foundation/form/select"
-                                                                 fieldLabel="Select Social Media Type"
-                                                                 multiple="{Boolean}false"
-                                                                 name="./soccMedsType">
+                                                <linkText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Link Text"
+                                                    name="./linkText"/>
+                                                <linkPath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                    fieldLabel="Link Path"
+                                                    name="./linkPath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/bmc"/>
+                                                <socialMediaType
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    fieldLabel="Select Social Media Type"
+                                                    multiple="{Boolean}false"
+                                                    name="./soccMedsType">
                                                     <items jcr:primaryType="nt:unstructured">
-                                                        <None jcr:primaryType="nt:unstructured"
-                                                                     text="None"
-                                                                     value="" />
-                                                        <Communities jcr:primaryType="nt:unstructured"
-                                                                     text="Communities"
-                                                                     value="social-communities" />
-                                                        <BMCBlogs jcr:primaryType="nt:unstructured"
-                                                                  text="BMC Blogs"
-                                                                  value="social-blogs nav-blog" />
-                                                        <Facebook jcr:primaryType="nt:unstructured"
-                                                                  text="Facebook"
-                                                                  value="social-facebook" />
-                                                        <Twitter jcr:primaryType="nt:unstructured"
-                                                                 text="Twitter"
-                                                                 value="social-twitter" />
-                                                        <YouTube jcr:primaryType="nt:unstructured"
-                                                                 text="YouTube"
-                                                                 value="social-youtube" />
-                                                        <LinkedIn jcr:primaryType="nt:unstructured"
-                                                                  text="LinkedIn"
-                                                                  value="social-linkedin" />
+                                                        <None
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="None"
+                                                            value=""/>
+                                                        <Communities
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Communities"
+                                                            value="social-communities"/>
+                                                        <BMCBlogs
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="BMC Blogs"
+                                                            value="social-blogs nav-blog"/>
+                                                        <Facebook
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Facebook"
+                                                            value="social-facebook"/>
+                                                        <Twitter
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Twitter"
+                                                            value="social-twitter"/>
+                                                        <YouTube
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="YouTube"
+                                                            value="social-youtube"/>
+                                                        <LinkedIn
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="LinkedIn"
+                                                            value="social-linkedin"/>
                                                         <Weibo
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Weibo"
-                                                            value="social-weibo"  /> 
-														<Wechat
+                                                            value="social-weibo"/>
+                                                        <Wechat
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Wechat"
                                                             value="social-wechat"/>
                                                     </items>
                                                 </socialMediaType>
-												<customCssClass
+                                                <customCssClass
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="granite/ui/components/foundation/form/textfield"
                                                     fieldLabel="Custom CSS Class"
@@ -211,49 +253,59 @@
                     </column>
                 </items>
             </footerSocial>
-            <footerLegal jcr:primaryType="nt:unstructured"
-                         jcr:title="Footer Legal"
-                         sling:resourceType="granite/ui/components/foundation/container">
-                <layout jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            <footerLegal
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Footer Legal"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
                 <items jcr:primaryType="nt:unstructured">
-                    <column jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/foundation/container">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <list jcr:primaryType="nt:unstructured"
-                                  sling:resourceType="granite/ui/components/foundation/form/multifield">
-                                <field jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                       acs-commons-nested="NODE_STORE"
-                                       name="./footerLegal">
-                                    <layout jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                            method="absolute" />
+                            <list
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="NODE_STORE"
+                                    name="./footerLegal">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
-                                        <column jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/container">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <linkText jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                          fieldLabel="Link Text"
-                                                          name="./linkText" />
-                                                <linkPath jcr:primaryType="nt:unstructured"
-                                                          sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                          fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
-                                                          required="{Boolean}true"
-                                                          rootPath="/content/bmc"
-                                                          name="./linkPath"
-                                                          fieldLabel="Link Path" />
+                                                <linkText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Link Text"
+                                                    name="./linkText"/>
+                                                <linkPath
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                    fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                                    fieldLabel="Link Path"
+                                                    name="./linkPath"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content/bmc"/>
                                             </items>
                                         </column>
                                     </items>
                                 </field>
                             </list>
-                            <copyright jcr:primaryType="nt:unstructured"
-                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
-                                       acs-commons-nested="NODE_STORE"
-                                       fieldLabel="Copyright Text"
-                                       name="./copyRightText" />
+                            <copyright
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                acs-commons-nested="NODE_STORE"
+                                fieldLabel="Copyright Text"
+                                name="./copyRightText"/>
                         </items>
                     </column>
                 </items>

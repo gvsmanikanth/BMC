@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Create variation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <template
+                        granite:id="page-template"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Template"
+                        name="template"
+                        pickerSrc="/mnt/overlay/cq/experience-fragments/content/commons/templatepicker.html${param.parentPath}"
+                        required="{Boolean}true"/>
+                    <title
+                        granite:id="variant-title"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Title"
+                        name="pageTitle"
+                        required="{Boolean}true"/>
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Name"
+                        name="pageName"
+                        validation="foundation.jcr.name"/>
+                    <description
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Description"
+                        name="./jcr:description"/>
+                    <tags
+                        granite:id="variant-tags"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                        fieldLabel="Variation tags"
+                        multiple="true"
+                        name="cq:tags"/>
+                    <parentPath
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                        name="parentPath"
+                        value="${param.parentPath}"/>
+                </items>
+            </column>
+        </items>
+    </content>
+    <creator
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="cq/experience-fragments/components/admin/creatpagewizard/page"/>
+</jcr:root>

@@ -14,6 +14,64 @@
    <link rel="stylesheet" href="/etc/clientlibs/bmc/coveofiles/css/bmcV2.support_search.bundle.min.css" type="text/css"/>
    <script src="/etc/clientlibs/bmc/coveofiles/js/bmcV2.support_search.bundle.min.js"></script>  
   <!--WEB-7277 Commenting code for Support Coveo changes START-->
+  
+  
+  <!-- <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.css @ categories='bmc.coveo'}" data-sly-unwrap />
+     <!--  ordered the files as it was showing jQuery error in publish mode 
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
+  	  <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
+      <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-custom.js"></script>
+       
+	<sly data-sly-test.loggedIn="${model.isLoggedIn}"/>
+		<sly data-sly-test="${!loggedIn}">
+        <script type="text/javascript">
+        jQuery( document ).ready(function( $ ) {
+              $(function () {
+    
+                  $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '/support/resources/support-search.html');
+    
+                 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+                 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+                  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+                    var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+                  if (query) {
+                     data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+                  }
+                  });
+             });     
+            });  
+        </script>
+      </sly>
+  <sly data-sly-test="${loggedIn}">
+    <script type="text/javascript">
+	jQuery( document ).ready(function( $ ) {
+	      $(function () {
+	     	 $('#supprt-search-input,#supportSearchBox').coveo('initSearchbox', '${model.searchPageUrl @ context="html"}');
+
+	     	 Coveo.$("#supprt-search-input").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supprt-search-input .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	     	 $('#supprt-search-input').find("input.CoveoQuerybox").attr("placeholder", 'Search BMC Support');
+			  Coveo.$("#supportSearchBox").on("beforeRedirect", function (e, data) {
+				var query=Coveo.$('#supportSearchBox .CoveoQuerybox').val()
+    		  if (query) {
+           		 data.searchPageUri = data.searchPageUri + '?q='+ encodeURIComponent(query);  
+    		  }
+			  });
+	   	 });     
+	    });  
+	</script>
+  </sly> -->
 </sly>
 <footer class="layout-footer">
     <nav class="layout-inner-wrap">
@@ -21,7 +79,21 @@
             <li class="nav-tertiary-col">
                 <h4>Company</h4>
                 <ul data-sly-test="${footerCompanySet}" data-sly-list.footerCompany="${footerCompanySet.ChildResources}" class="meta">
-                    <li><a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${footerCompany.linkText == 'Select Region' ? 'icon-global' : ''}">${footerCompany.linkText @ context='html'}</a></li>
+                    <li>
+						<!--/* WEB-6783 MOdal window logic for feedback link START */--> 
+                        <sly data-sly-test="${footerCompany.linkText == 'Select Region'}">
+                               <sly data-sly-test.classValue="icon-global"></sly>
+                         </sly>
+                          <sly data-sly-test="${footerCompany.targetType == 'modal'}">
+                              <sly data-sly-test.classValue="modal-iframe"></sly>
+                         </sly>
+                         <sly data-sly-test="${footerCompany.targetType != 'modal' && footerCompany.linkText != 'Select Region'}">
+                              <sly data-sly-test.classValue=""></sly>
+                         </sly>
+						<!--/* WEB-6783 MOdal window logic for feedback link END  */-->
+
+						<a href="${footerCompany.linkPath}" target="${footerCompany.targetType}" class="${classValue}">${footerCompany.linkText @ context='html'}</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-tertiary-col">

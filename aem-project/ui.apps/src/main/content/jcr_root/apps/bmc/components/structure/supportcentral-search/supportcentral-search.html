@@ -1,19 +1,19 @@
 <section class="support-section-container layout-full-bleed support-search">
     <div class="layout-inner-wrap">
-    <!-- WEB-7277 Support Coveo Search changes START -->
-         <div class="support-search-top">
-  					<h2 class="support-search-header">Search BMC Support</h2>
-  					<input type="hidden" value="answers" name="page" />
-  					<input type="hidden" value="y" name="startover" />
-  					<fieldset>
-    					<label for="supprt-search-input" class="accessibility">Search BMC Support</label>
-						<div id="supprt-search-input">
-						<div class="CoveoAnalytics" data-search-hub="PortalSearch"></div>
-						<div id="searchbox" class="CoveoSearchbox" data-enable-omnibox="true"></div>
-						</div>
-  					</fieldset>
-                 <a target="_blank" class="contextual-tooltip" title="Help" href="/support/support-guide-advanced-product-info.html#Search-the-Knowledge-Base">?</a>
-          </div>
-		  <!-- WEB-7277 Support Coveo Search changes END -->
+        <div class="support-search-top">
+            <h2 class="support-search-header">Search BMC Support</h2>
+            <fieldset>
+                <label for="supprt-search-input" class="accessibility">Search BMC Support</label>
+                <div id="supprt-search-input">
+                    <span class="CoveoAnalytics" data-search-hub="PortalSearch"></span>
+                    <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-syntax="false" data-enable-partial-match="true" data-partial-match-keywords="4" data-partial-match-threshold="50%" id="searchbox" placeholder="Search BMC Support"></div>
+                    <div class="CoveoAnalyticsSuggestions"></div>
+                    <!-- WEB-6229 Remove Product Facet (filter) available on Support Central webpage - Search BMC Support  
+                    <div class="CoveoFacet" data-field="@bmcproductname" data-include-in-omnibox="true" data-tab="All,Cases,KB,Confluence,bmccom,documents,Communities, APTS" data-title="Product Name"></div> -->
+                    </div>
+
+            </fieldset>
+            <a target="_blank" class="contextual-tooltip" title="Help" href="/support/support-guide-advanced-product-info.html#Search-the-Knowledge-Base">?</a>
+        </div>
     </div>
 </section>
