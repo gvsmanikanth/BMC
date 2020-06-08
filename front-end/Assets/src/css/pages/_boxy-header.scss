@@ -541,6 +541,9 @@
                         position: absolute;
                         bottom: 30px;                 
                     }
+                    @media (max-width: 1100px) and (min-height: 1200px) and (min-width: 831px){
+                        bottom: 50px;
+                    }
                 
                 }                    
             }
@@ -614,8 +617,7 @@
                     }
                                 
                     .carousel-image{
-                        padding: 20px 0 0 0;
-                        padding-bottom: 0;
+                        padding: 20px 15px 0px 15px;
                         height: 50%;
                         @media (max-height: $smallLaptop) and (min-width: $break-md) {
                             width: 50%;
@@ -694,6 +696,9 @@
                             @media (min-width: $break-lg) {
                                 position: absolute;
                                 bottom: 30px;
+                            }
+                            @media (max-width: 1100px) and (min-height: 1200px) and (min-width: 831px){
+                                bottom: 50px;
                             }
                             
                         }
