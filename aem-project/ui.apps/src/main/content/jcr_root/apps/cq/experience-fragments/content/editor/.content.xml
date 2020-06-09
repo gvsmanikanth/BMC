@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:primaryType="nt:unstructured"
+        jcr:title="AEM Sites Page Editor"
+        sling:resourceType="cq/gui/components/authoring/editors/core"
+        extraClientLibs="[cq.authoring.editor.sites.page,cq.authoring.editor.plugin.annotate,cq.authoring.editor.plugin.cfm,cq.authoring.editor.plugin.foundation,cq.authoring.editor.plugin.manuscript,cq.authoring.editor.plugin.dps,cq.authoring.editor.plugin.target,cq.authoring.editor.plugin.designimporter,cq.authoring.editor.plugin.msm,cq.authoring.editor.plugin.commerce,cq.authoring.editor.plugin.segment,cq.authoring.editor.plugin.campaign,cq.authoring.editor.plugin.mobile,cq.authoring.editor.plugin.screens,cq.authoring.editor.plugin.activitymap,cq.authoring.editor.sites.page.hook,cq.authoring.editor.hook,cq.authoring.editor.hook.assetfinder,cq.experiencefragments.authoring]">
+        <content jcr:primaryType="nt:unstructured">
+            <items/>
+        </content>
+        <sidepanels jcr:primaryType="nt:unstructured">
+            <edit
+                granite:class="js-SidePanel-content js-SidePanel-content--edit"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                        margin="{Boolean}true"
+                        maximized="{Boolean}true"
+                        orientation="vertical"
+                        size="L">
+                        <items jcr:primaryType="nt:unstructured">
+                            <includeAssetsTab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                path="/mnt/overlay/wcm/core/content/editor/jcr:content/sidepanels/edit/items/tabs/items/assetsTab"/>
+                            <includeComponentsTab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                path="/mnt/overlay/wcm/core/content/editor/jcr:content/sidepanels/edit/items/tabs/items/componentsTab"/>
+                            <variationsTab
+                                granite:class="sidepanel-tab sidepanel-tab-variations"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Variations"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <parentConfig
+                                    jcr:primaryType="nt:unstructured"
+                                    icon="branch2"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <title
+                                        granite:class="sidepanel-tab-title"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                                        text="Variations"/>
+                                    <actionsWrapper
+                                        granite:class="variations-buttons"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <actions
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/pulldown"
+                                                text="Create">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <create
+                                                        granite:id="AddVariation"
+                                                        granite:rel="cq-experiencefragments-admin-create-xf"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/collection/actionlink"
+                                                        icon="experience"
+                                                        text="Variation"/>
+                                                    <create-livecopy
+                                                        granite:id="AddLcVariation"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/collection/actionlink"
+                                                        icon="experience"
+                                                        text="Variation as live-copy"/>
+                                                </items>
+                                            </actions>
+                                        </items>
+                                    </actionsWrapper>
+                                    <variations
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/experience-fragments/components/admin/editor/variations"/>
+                                </items>
+                            </variationsTab>
+                        </items>
+                    </tabs>
+                </items>
+            </edit>
+            <empty
+                granite:class="js-SidePanel-content js-SidePanel-content--empty"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured"/>
+            </empty>
+        </sidepanels>
+    </jcr:content>
+</jcr:root>

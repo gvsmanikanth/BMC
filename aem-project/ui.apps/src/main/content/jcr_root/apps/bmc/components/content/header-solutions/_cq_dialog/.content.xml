@@ -265,10 +265,6 @@
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
                                     name="./assetBar"
                                     wrapperClass="core-wcm-form-options-toggle-set">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
                                     <items jcr:primaryType="nt:unstructured">
                                         <column
                                             jcr:primaryType="nt:unstructured"

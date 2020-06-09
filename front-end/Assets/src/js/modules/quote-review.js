@@ -2,23 +2,13 @@
     if($('.owl-carousel-quote').length > 0 ){
         // Calculate number of Slides
         var totalItems = $('.item').length;
-
-
         // If there is only three slides
-        if (totalItems == 3) {
+        if (totalItems <= 3) {
             var noOfItems = 3;
             // Set nav option variable to false
             var isNav = false;
         } 
-        else if(totalItems == 4) {            
-            var noOfItems = 4;
-            if ($(window).width() >= 1600){	
-                var isNav = false;
-            }else{
-                var isNav = true;
-            }	
-            
-        }else{
+        else{
             var isNav = true;
         }
         $('.owl-carousel-quote').owlCarousel({
@@ -31,7 +21,7 @@
             navRewind: false,
             slideTransition: 'linear',
             stagePadding: 100,
-            autoplay:true,
+            autoplay:false,
             autoplayTimeout:3000,
             autoplayHoverPause:true,
             navText: "<>",
@@ -44,6 +34,12 @@
                     
                 },
                 600:{
+                    stagePadding: 80,
+                    margin:20,
+                    items:1,
+                    nav:true
+                },
+                750:{
                     stagePadding: 50,
                     items:2,
                     margin:20,
@@ -51,11 +47,12 @@
                 },
                 1000:{
                     stagePadding: 80,
-                    items:3
+                    items:2,
+                    nav:true
                 },
-                1600:{
-                    stagePadding: 100,
-                    items:noOfItems
+                1200:{
+                    stagePadding: 80,
+                    items:3
                 }
             }
         })

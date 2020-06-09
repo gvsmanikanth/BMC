@@ -1,0 +1,35 @@
+<!--/*
+  * ADOBE CONFIDENTIAL
+  * __________________
+  *
+  * Copyright 2016 Adobe Systems Incorporated
+  * All Rights Reserved.
+  *
+  * NOTICE:  All information contained herein is, and remains
+  * the property of Adobe Systems Incorporated and its suppliers,
+  * if any.  The intellectual and technical concepts contained
+  * herein are proprietary to Adobe Systems Incorporated and its
+  * suppliers and are protected by trade secret or copyright law.
+  * Dissemination of this information or reproduction of this material
+  * is strictly forbidden unless prior written permission is obtained
+  * from Adobe Systems Incorporated.
+  **************************************************************************  */-->
+
+<div data-sly-use.data="${'com.adobe.cq.xf.ui.ExperienceFragmentStats'}" class="cq-experience-fragment-stats"
+     data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientLib.all @ categories='cq.experiencefragments.admin.properties.stats'}" />
+    <table class="coral-Table">
+        <tr class="coral-Table-row">
+            <td class="coral-Table-cell">${'Number of variants' @ i18n, locale=request.locale}:</td>
+            <td class="coral-Table-cell">${data.numberOfVariants}</td>
+        </tr>
+        <tr class="coral-Table-row">
+            <td class="coral-Table-cell">${'Number of web variants' @ i18n, locale=request.locale}:</td>
+            <td class="coral-Table-cell">${data.numberOfWebVariants}</td>
+        </tr>
+        <tr class="coral-Table-row">
+            <td class="coral-Table-cell">${'Number of pages using this fragment' @ i18n, locale=request.locale}</td>
+            <td class="coral-Table-cell">${data.usageCount}</td>
+        </tr>
+    </table>
+</div>

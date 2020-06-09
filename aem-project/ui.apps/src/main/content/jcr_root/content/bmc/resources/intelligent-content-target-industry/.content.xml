@@ -40,6 +40,9 @@
     <ic-target-industry-479651924
             jcr:primaryType="nt:unstructured"
             jcr:title="Manufacturing"/>
+    <ic-target-industry-284726378
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Services"/>
      <ic-target-industry-223456784
             jcr:primaryType="nt:unstructured"
             jcr:title="UnCategorized"/>

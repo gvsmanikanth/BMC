@@ -163,6 +163,13 @@
             dropDownDisplay="Yes"
             text="BMC Helix Business Workflows"
             value="Helix Business Workflows"/>
+    <!-- WEB-7427 -->
+    <_x0039_40894724
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Capacity Optimization"
+            dropDownDisplay="Yes"
+            text="BMC Helix Capacity Optimization"
+            value="Helix Capacity Optimization"/>
     <_x0034_99579858
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Client Management"
@@ -175,18 +182,18 @@
             dropDownDisplay="Yes"
             text="BMC Helix Cloud Cost"
             value="TrueSight Cloud Cost"/>
-    <_x0031_54177794
+    <!-- WEB-7454 <_x0031_54177794
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Cloud Operations"
             dropDownDisplay="Yes"
             text="BMC Helix Cloud Operations"
-            value="TrueSight Cloud Operations"/>
+            value="TrueSight Cloud Operations"/>-->
     <_x0036_77181073
             jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Cloud Security"
+            jcr:title="Helix Cloud Security"
             dropDownDisplay="Yes"
             text="BMC Helix Cloud Security"
-            value="TrueSight Cloud Security"/>
+            value="Helix Cloud Security"/>
     <_x0035_07778250
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Digital Workplace"
@@ -205,18 +212,46 @@
             dropDownDisplay="Yes"
             text="BMC Helix ITSM"
             value="Helix ITSM"/>
+    <!-- WEB-7427 -->
+    <_x0037_29047163
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Monitor"
+            dropDownDisplay="Yes"
+            text="BMC Helix Monitor"
+            value="Helix Monitor"/>
+    <!-- WEB-7427 -->
+    <_x0037_12964001
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Optimize"
+            dropDownDisplay="Yes"
+            text="BMC Helix Optimize"
+            value="Helix Optimize"/>
     <_x0038_66789680
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Platform"
             dropDownDisplay="Yes"
             text="BMC Helix Platform"
             value="Helix Platform"/>
+    <!-- WEB-7427 -->
+    <_x0037_04628531
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Remediate"
+            dropDownDisplay="Yes"
+            text="BMC Helix Remediate"
+            value="Helix Remediate"/>
     <_x0032_48677372
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Remedyforce"
             dropDownDisplay="Yes"
             text="BMC Helix Remedyforce"
             value="Helix Remedyforce"/>
+    <!-- WEB-7427 -->
+    <_x0037_03750021
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Vulnerability Management"
+            dropDownDisplay="Yes"
+            text="BMC Helix Vulnerability Management"
+            value="Helix Vulnerability Management"/>
     <_x0031_74236796
             jcr:primaryType="nt:unstructured"
             jcr:title="Mainframe Data Management for DB2"
@@ -320,7 +355,7 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Network Automation"
             dropDownDisplay="Yes"
-            text="TrueSight Network Automation"
+            text="TrueSight Automation for Networks"
             value="TrueSight Network Automation"/>
     <_x0031_13394324
             jcr:primaryType="nt:unstructured"
@@ -349,13 +384,13 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Server Automation"
             dropDownDisplay="Yes"
-            text="TrueSight Server Automation"
+            text="TrueSight Automation for Servers"
             value="TrueSight Server Automation"/>
     <_x0030_00918022
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Vulnerability Management"
             dropDownDisplay="Yes"
-            text="TrueSight Vulnerability Management"
+            text="TrueSight Vulnerability Management for Third-Party Applications"
             value="TrueSight Vulnerability Management"/>
 
 

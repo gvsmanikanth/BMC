@@ -27,7 +27,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <pactsafe.client.version>1.0.1</pactsafe.client.version>
-        <pactsafe.client.library>pactsafe-java-sdk</pactsafe.client.library>
+        <pactsafe.client.library>pactsafe-java-sdk</pactsafe.client.library>      
     </properties>
 
     <dependencyManagement>
@@ -110,7 +110,7 @@
                 <version>2.0</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
+			<dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.11</version>
@@ -137,7 +137,7 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.3.0</version>
+               <version>6.5.0</version>
                 <scope>provided</scope>
                 <classifier>apis</classifier>
             </dependency>
@@ -160,12 +160,12 @@
                 <scope>provided</scope>
             </dependency>
             <!-- Core components -->
-            <dependency>
-                <groupId>com.adobe.cq</groupId>
-                <artifactId>core.wcm.components.core</artifactId>
-                <version>1.0.0</version>
-                <scope>provided</scope>
-            </dependency>
+           <dependency>
+	            <groupId>com.adobe.cq</groupId>
+	            <artifactId>core.wcm.components.core</artifactId>
+	            <version>2.3.2</version>
+	            <scope>provided</scope> 
+        	</dependency>
             <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
@@ -195,7 +195,7 @@
                 <groupId>com.adobe.cq</groupId>
                 <artifactId>core.wcm.components.all</artifactId>
                 <type>zip</type>
-                <version>1.0.4</version>
+                <version>2.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.owasp.encoder</groupId>

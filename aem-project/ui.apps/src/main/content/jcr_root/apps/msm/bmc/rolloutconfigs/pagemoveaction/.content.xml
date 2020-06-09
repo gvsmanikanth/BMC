@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:defaultView="html"
+        cq:lastModified="{Date}2018-09-03T12:36:55.334-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/wcm/msm/templates/rolloutconfig"
+        cq:trigger="rollout"
+        jcr:lastModified="{Date}2018-09-03T12:36:55.333-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="PageMoveAction"
+        sling:resourceType="wcm/msm/components/rolloutconfig">
+        <PageMoveAction
+            jcr:primaryType="cq:LiveSyncAction"
+            enabled="true"/>
+    </jcr:content>
+</jcr:root>
