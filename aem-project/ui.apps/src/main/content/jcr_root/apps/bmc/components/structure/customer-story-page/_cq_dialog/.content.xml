@@ -116,7 +116,7 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyOption="true"
                                                 emptyText="Select company size"
-                                                fieldLabel="Company Size1"
+                                                fieldLabel="Company Size"
                                                 metadataName="company-size"
                                                 multiple="false"
                                                 name="./companySize">
