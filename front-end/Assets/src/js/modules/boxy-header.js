@@ -25,7 +25,8 @@
                 animateOut: 'fadeOut',
                 smartSpeed: 350,
                 items: 1, 
-                dots: isDots                         
+                dots: isDots,
+                autoplayHoverPause: true,                          
                                 
             };        
             carousel.on({        
