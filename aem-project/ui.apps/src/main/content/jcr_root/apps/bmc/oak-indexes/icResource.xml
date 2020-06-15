@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:oak="http://jackrabbit.apache.org/oak/ns/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="oak:Unstructured"
+    async="async"
+    compatVersion="{Long}2"
+    evaluatePathRestrictions="{Boolean}true"
+    includedPaths="[/content/bmc]"
+    type="lucene">
+    <indexRules jcr:primaryType="nt:unstructured">
+        <cq:Page jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <ictopics name="jcr:content/ic-topics" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+         		<ictargetindustry name="jcr:content/ic-target-industry" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icappinclusion name="jcr:content/ic-app-inclusion" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+                <iccontenttype name="jcr:content/ic-content-type" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<icbuyerstage name="jcr:content/ic-buyer-stage" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+            	<ictargetpersona name="jcr:content/ic-target-persona" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
+      		</properties>
+        </cq:Page>
+    </indexRules>
+</jcr:root>
