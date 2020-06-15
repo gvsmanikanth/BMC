@@ -84,5 +84,25 @@ jQuery( document ).ready(function( $ ) {
               }
           }
       });
+    //************************US53745 Context search Coveo ML*************************************************************************************/
+      Coveo.$('#search').on('buildingQuery', function (e, args) {
+          //var product = '';
+          //product = caseContext.product;
+                                  
+                                  //var productTeam = '';
+                                  var productFamily = '';
+                                  productFamily = caseContext.productFamily;
+                                  //productFamily = getProductFamily();
+                                  args.queryBuilder.addContext({
+                                                  //'product': caseContext.product,
+                                      'productFamily': caseContext.productFamily
+                                  });
+          if (product != '') {
+              args.queryBuilder.advancedExpression.add("$qre(expression:'@bmcproductname=\"" + product + "\"', modifier:60)");
+          }
+      });
+                  
+  //*******************************************************************************************************************************************/
+
 	});
 	

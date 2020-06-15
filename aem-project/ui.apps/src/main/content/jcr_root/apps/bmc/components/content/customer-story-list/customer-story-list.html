@@ -45,10 +45,12 @@
                             <div class="logo-area">
                                 <img src="${card.logoSrc}" alt="${card.logoAlt}" title="${card.title}"></img>
                             </div>
-                            <div class="copy">
-                                <h5>${card.title}</h5>
+                             <!-- /*Added fix for WEB-7208 by preety_kumari START */-->
+                           <div class="copy">
+                                <h5>${card.title @ context='html'}</h5>
                                 <p>
-                                    ${card.description}
+                                    ${card.description @ context='html'}
+                             <!--/* END */-->
                                 </p>
                             </div>
                         </div>
