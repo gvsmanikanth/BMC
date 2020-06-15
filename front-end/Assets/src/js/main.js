@@ -71,11 +71,17 @@ require("./modules/imageAlignment.js");
 require('./vendor/jquery.validate.input.js');
 //require("./vendor/jquery.slimscroll.min.js");
 //require("./vendor/jquery.fullPage.min.js");
+
 require('./modules/contact-form.js');
 require('./modules/document_container.js');
 require('./modules/imageAlignment.js');
 require('./modules/arrowBG.js');
+
 require('./modules/quote-review.js');
 require('./modules/customers-section.js');
 require('./modules/landingPage-arrowBG.js');
 require('./modules/boxy-header.js');
+
+require('./modules/handlebarHelpers.js');
+require('./modules/resource-center.js');
+
