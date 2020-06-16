@@ -12,6 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
@@ -34,7 +37,7 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public static final String RESOURCE_TITLE_CACHE_SIZE = "resource.title.cache.size";
     private long resourceTitleCacheSize;
 
-    @Property(label = "Resource Title Cache TTL", longValue = 300,
+    @Property(label = "Resource Title Cache TTL", longValue = 3,
             description = "Resource title cached item time to live (seconds)")
     public static final String RESOURCE_TITLE_CACHE_TTL = "resource.title.cache.ttl";
     private long resourceTitleCacheTtl;
@@ -98,6 +101,11 @@ public class ResourceServiceCachingImpl implements ResourceService {
         }
     }
 
+    @Override
+    public Map<String, String> getValues(String propertyName, ResourceResolver resolver) {
+        return baseImpl.getValues(propertyName, resolver);
+    }
+
     public boolean isResourceTitleCacheStatsEnabled() {
         return resourceTitleCacheStatsEnabled;
     }
@@ -109,5 +117,10 @@ public class ResourceServiceCachingImpl implements ResourceService {
     @Override
     public ConfigurationAdmin getConfigurationAdmin() {
         return configAdmin;
+    }
+
+    @Override
+    public List<String> getPropertyNames() {
+        return baseImpl.getPropertyNames();
     }
 }
