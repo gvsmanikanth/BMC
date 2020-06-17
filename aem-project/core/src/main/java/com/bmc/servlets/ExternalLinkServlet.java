@@ -19,12 +19,12 @@ import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.cq.sightly.SightlyWCMMode;
-import com.bmc.services.ExternalLinkRewriterService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
 import com.day.cq.wcm.api.WCMMode;
  
@@ -37,8 +37,9 @@ import com.day.cq.wcm.api.WCMMode;
  */ 
 @SlingServlet(methods = {"GET"}, 
 metatype = true,
-resourceTypes = {"bmc/components/structure/external-link-page"},
-extensions ={"html"})
+resourceTypes = {"bmc/components/structure/external-link-document"},
+extensions ={"html"},
+selectors = {"pdf"})
 public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
      private static final long serialVersionUID = 2598426539166789515L;
    
@@ -55,8 +56,6 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 
      private Session session;
      
-     @Reference
-     private ExternalLinkRewriterService dataService;
      
      @Reference
      private SlingSettingsService slingSettingsService;
@@ -67,17 +66,14 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      
      private Boolean isDocumentPDF;
      
-     private Boolean displayInline = false;
-     
      @Override
      protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
         
     	   try {
-    		   
-    			logger.info("START CLASS ----ExternalLinkServlet");           
-    			Node currentNode = request.getResource().adaptTo(Node.class);
-    			session = currentNode.getSession();
-    			String linkAbstractor = currentNode.getProperty("linkAbstractor").getValue().toString();
+    			logger.info("START CLASS ----ExternalLinkServlet");    			
+    			Node currentNode = request.getResource().adaptTo(Node.class);    			
+    			session = currentNode.getSession();    			
+    			String linkAbstractor = currentNode.getProperty("linkAbstractor").getValue().toString();    		
      			session.save();
      			for(PropertyIterator propeIterator = currentNode.getProperties() ; propeIterator.hasNext();)  
 				   {  
@@ -86,13 +82,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			        	{
 			        		linkAbstractorTarget = prop.getValue().toString();
 			        	}
-				        if(prop.getName().equalsIgnoreCase("displayType"))
-				        {
-				        	if(!prop.getValue().getString().equalsIgnoreCase("inline"))
-				        	{
-				        		displayInline = true;
-				        	}
-				        }
+				      
 				        if(linkAbstractor.equalsIgnoreCase("external-link"))
 				        {
 				        	
@@ -122,49 +112,37 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				   }
      							PrintWriter out = response.getWriter();
      							final WCMMode mode = WCMMode.fromRequest(request);	
-				        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---Start
-				        		// Only execute in Publish mode & Preview mode of Author environment.
-     							//WEB-5902 Added noIndex , follow meta tag 
-     							if(displayInline)
-     							{
-				     	       if ((mode == null || WCMMode.DISABLED.equals(mode)))
-				     	       {				     	    	  
+
+				     	      if ((mode == null || WCMMode.DISABLED.equals(mode)))
+				     	       {	
+				     	    	  // Jump page logic for publish mode.
 				     	    	   	out.println("<html><head>");
 				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");			                	
 				            		if(isDocumentPDF)
-			     	    	   		{				            			
+			     	    	   		{					            			
 			     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
-			     	    	   		}
+			     	    	   		}				            		
 				            		out.println("</head>");   
 				            		out.println("</html>");	 
 				     	       }else{
-				     	    	   //Will only show on Editor mode in author environment.
-				     	    	  logger.info("Inside 3");
-				     	    	out.println("<html><head>");			     	    	   
-				     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");
-			     	    		if(isDocumentPDF )
-		     	    	   		{
-			     	    			
-		     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
-		     	    	   		}
-			     	    		out.println("</head>");   
-				     	    	out.println("<body>");					     	       					     	       
-				        		out.println("<h1>External Link</h1>");
-				        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
-				        		out.println("</a><br>");
-				        		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");			                		
-				        		out.println("</body>");
-				        		out.println("</html>");	
-        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---End
-		}	
-     							}
+					     	    	 //Display in editor mode in author environment.
+					     	    	out.println("<html><head>");			     	    	   
+				     	    		out.println("</head>");   
+					     	    	out.println("<body>");					     	       					     	       
+					        		out.println("<h1>External Link</h1>");
+					        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
+					        		out.println("</a><br>");
+					        		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");			                		
+					        		out.println("</body>");
+					        		out.println("</html>");					        		
+				     	       }
+			            		logger.info("STOP CLASS ----ExternalLinkServlet");	
 		           		} catch (Exception e) {
 		           			logger.error(e.getMessage());
-		           		} finally {
-		           			if (session != null && session.isLive())
-		           				session.logout();
-		           					}
+		           		} 
      					}
+     
+     
      
      public boolean runModes()
      {
