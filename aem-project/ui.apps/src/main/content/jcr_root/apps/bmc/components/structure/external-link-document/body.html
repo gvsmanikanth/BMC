@@ -1,0 +1,73 @@
+<sly data-sly-test="${properties.displayType == 'default' || !properties.displayType}">
+<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
+</sly>
+<sly data-sly-test="${properties.displayType == 'inline'}">
+<sly data-sly-test="${properties.documentType == 'children'}">
+	   <sly data-sly-test.documentLink="${properties.linkAbstractorExternalAsset}"></sly>
+	</sly>
+	<sly data-sly-test="${properties.documentType =='search'}">
+	  <sly data-sly-test.documentLink="${properties.linkAbstractorDAMAsset}"></sly>
+	</sly>
+<sly data-sly-test="${properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.documentTitle}"/>
+</sly>
+<sly data-sly-test="${!properties.documentTitle}">
+<sly data-sly-test.documentTitle="${properties.pageTitle}"/>
+</sly>
+<sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
+
+<div class="page-campaign-landing">
+<section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg'); background-position: top;">
+	<div class="layout-inner-wrap">
+		<div class="offset-hero-clear">
+			<div class="offset-hero-inner-wrap">
+                <h1 style="font-weight: normal;"> ${properties.pageTitle @ context = 'html'}</h1>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+<div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
+<div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
+	<section class="bg-white">
+    	<div class="layout-inner-wrap">
+		<div class="aem-GridColumn aem-GridColumn--default--12">
+			<div class="text-right">
+				<a href="${documentLink}" alt="Download PDF" title="Download PDF" 
+				style="/*! display: inline-block; */" target="_blank" 
+				class="link-icon-resource-document mb2 text-right inline-block">  
+				Download PDF
+				</a>
+			</div>
+			<div class="md-flex full-bleed-two-column">
+				<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">
+					<sly data-sly-resource="${'experiencefragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"></sly>
+					</div>
+			<div class="flex-item col col-12">
+				<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
+					<embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;">
+				</div>
+			</div>
+	</div>
+
+
+
+<script>
+function getAvailableHeight() {
+    var actualHeight = window.innerHeight ||
+                      document.documentElement.clientHeight ||
+                      document.body.clientHeight ||
+                      document.body.offsetHeight;
+    return actualHeight;
+}
+
+var windowHeight = getAvailableHeight();
+document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
+</script>
+
+
+</div></div></section></div></section></div>
+<sly data-sly-include="/apps/bmc/components/structure/page/customfooterlibs.html" />
+<sly data-sly-resource="${'standardfooter' @ resourceType='bmc/components/structure/standardfooter'}"></sly>
+</sly>
