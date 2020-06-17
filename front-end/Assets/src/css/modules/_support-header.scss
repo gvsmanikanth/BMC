@@ -287,6 +287,9 @@ $menuBottomPadding: 1em;
 				color: darken(color(mediumOrange), 10%);
 			}
 		}
+		.support-header.expanded &{
+			color: #ffffff;
+		}
 	}
 
 	.support-header.expanded & {
