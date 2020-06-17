@@ -1,0 +1,30 @@
+<!--/* WEB-3358  Support Central Navigation Component START */-->
+<div data-sly-use.data="com.bmc.models.components.supportcentral.SupportCentralNavigationModel" class="support-menu-wrapper layout-inner-wrap">
+    <ul class="support-menu">
+	<sly data-sly-list.menuitem="${data.supportNavigation}">
+        <li data-sly-test="${menuitem.submenucount}" class="menu-item js-show-sub-trigger">
+            <a href="#" class="menu-anchor">
+            	<sly data-sly-test="${menuitem.tabTitle}">
+               		${menuitem.tabTitle @ context='html'}
+            	</sly>
+            </a>
+            <ul data-sly-list.item="${menuitem.submenuitems}" class="sub-menu">
+
+            	<sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=item.navigationPath}"></sly>
+				     <sly data-sly-test="${assetLink.href}">
+				          <sly data-sly-test.resolvedLink="${assetLink.href}"></sly>
+					 </sly>
+					 <sly data-sly-test="${!assetLink.href}">
+						 <sly data-sly-test.resolvedLink="${item.navigationPath}"></sly>
+					 </sly>
+                     <sly data-sly-test="${resolvedLink && item.navigationTitle}">
+                		<li class="sub-menu-item">
+                  			<a class="${item.className}" href="${resolvedLink}" target="${item.target}">${item.navigationTitle @ context='html'}</a>
+                 		</li>
+                    </sly>
+
+            </ul>
+        </li>
+    </ul></sly>
+</div>
+<!--/* WEB-3358  Support Central Navigation Component END*/-->

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2020-05-07T03:58:52.766-04:00"
+        cq:lastModifiedBy="vraskar@bmc.com"
+        cq:lastReplicated="{Date}2020-05-07T05:13:38.602-04:00"
+        cq:lastReplicatedBy="vraskar@bmc.com"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/bmc/settings/wcm/templates/support-central"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:uuid="365816a1-35d2-4da0-870f-82eea422e23d"
+        sling:resourceType="bmc/components/structure/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <supportcentral_heade
+                jcr:created="{Date}2017-06-17T12:50:36.473-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2020-04-01T08:43:15.977-04:00"
+                jcr:lastModifiedBy="mannalda@bmc.com"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-header-personalised"
+                tabs="[{&quot;tabTitle&quot;:&quot;My Support&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;https://communities.bmc.com/docs/DOC-40484&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;New Customer Orientation&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/issue-defect-management.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Case and Defect Management&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-profile.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;My Support Profile&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-licensing-passwords.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;License and Passwords&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/bmc-annual-support-offerings.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;All Support Offerings&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/support-maintenance-renewal.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Maintenance &amp; Invoice Queries&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/review-policies/bmc-customer-support-policies.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Customer Support Policies&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/create-modify-pn-subscription-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Favorite Products &amp; Alert Subscriptions&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}]},{&quot;tabTitle&quot;:&quot;Downloads &amp;amp; Products&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;/available/epd.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Downloads&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/supported-product-az-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Patches&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/productsupport&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Support&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/community/support/blog/2019/04/04/ftp-site-for-old-remedy-patches&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Remedy Heritage Patches&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/support/resources/mainframe-maintenance.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Mainframe Maintenance&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/support/resources/mainframe-installation.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Mainframe Installation&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/available/product-defects.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Defects&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/support/reg/esd-password.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;FTP Sites&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}]},{&quot;tabTitle&quot;:&quot;Resources&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;https://communities.bmc.com/community/covid-19&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;COVID-19 Resources&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}\,{&quot;url&quot;:&quot;/available/search-kb.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Knowledge Base&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/community/support/blog/2013/09/21/webinars-and-bmc-customer-support&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;\\&quot;Connect with\\&quot; Webinars&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/community/support/blog/2018/09/17/support-videos&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Support Videos&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/dashboard.action&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Documentation&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/supported-product-az-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Supported Products A-Z&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/corporate/product-security-and-quality.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Application Security&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://docs.bmc.com/docs/display/PRD/Home&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Parameter Reference Database&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/spac.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Product Compatibility&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/available/withdrawn-product-list.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Withdrawn Product List&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;https://communities.bmc.com/docs/DOC-98953&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Suggesting Ideas for Product Enhancements&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;&quot;}]},{&quot;tabTitle&quot;:&quot;Additional Support Centers&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;http://i.onbmc.com&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;BMC On Demand&quot;\,&quot;target&quot;:&quot;_blank&quot;\,&quot;target@Delete&quot;:&quot;_blank&quot;}\,{&quot;url&quot;:&quot;https://www.bladelogic.com/supportRedirect.jsp&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;BladeLogic (licensing\, forum) &quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}]},{&quot;tabTitle&quot;:&quot;Contact Support&quot;\,&quot;tabLinks&quot;:[{&quot;url&quot;:&quot;/contacts-locations/united-states.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;United States&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/contacts-locations/india.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;India&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/contacts-locations/united-kingdom.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;United Kingdom&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/contacts-locations/germany.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Germany&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/contacts-locations/canada.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Canada&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}\,{&quot;url&quot;:&quot;/contacts-locations/support-contacts.html&quot;\,&quot;class&quot;:&quot;&quot;\,&quot;title&quot;:&quot;Other Country&quot;\,&quot;target&quot;:&quot;_self&quot;\,&quot;target@Delete&quot;:&quot;_self&quot;}]}]"/>
+            <supportcentral_accou
+                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-accountinfo"/>
+            <supportcentral_news
+                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2020-05-07T03:58:52.753-04:00"
+                jcr:lastModifiedBy="vraskar@bmc.com"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-news"
+                communitiesLink="https://communities.bmc.com/community/support/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bblogpost%5D&amp;sortKey=contentstatus%5Bpublished%5D~creationDateDesc&amp;sortOrder=0">
+                <supportnewsdata jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Live now: A new Licensed Products application"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/05/04/live-now-a-new-licensed-products-application"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Free Education Webinars: COVID-19 Resources"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/04/24/free-education-webinars-covid-19-resources"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Special Discounts on Education Subscriptions"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/04/27/special-discounts-on-education-subscriptions"/>
+                    <item3
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Product Change Notification January 2020"
+                        supportURLLink="https://communities.bmc.com/docs/DOC-126139"/>
+                    <item4
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="BMC is announcing support for the IBM SMP/E RECEIVE ORDER command to deliver product maintenance and updates"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/12/18/bmc-is-announcing-support-for-the-ibm-smpe-receive-order-command-to-deliver-product-maintenance-and-updates"/>
+                    <item5
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="BMC Welcomes More Than 500 Customers to its Education Subscription Service"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/09/24/bmc-welcomes-more-than-500-customers-to-its-education-subscription-service"/>
+                    <item6
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="New Secure File Transfer (SFT) service for Customer Support"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/09/04/new-secure-file-transfer-sft-service-for-customer-support"/>
+                    <item7
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Quarterly Product Change Notification April 2019"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/05/24/quarterly-product-change-notification-april-2019"/>
+                    <item8
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Changes Coming to BMC Downloads (EPD)"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/10/31/changes-coming-to-bmc-downloads-epd"/>
+                    <item9
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Remedy Service Management Subscriptions are Now Available"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/25/bmc-education-introduces-our-latest-subscription-service-remedy-service-management-subscriptions-are-now-available"/>
+                    <item10
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Removing the Historical Cases Link from Support Central"
+                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/13/removing-the-historical-cases-link-from-support-central"/>
+                    <item11
+                        jcr:primaryType="nt:unstructured"
+                        supportNewsTitle="Test News"
+                        supportURLLink="https://google.com/"/>
+                </supportnewsdata>
+            </supportcentral_news>
+            <supportcentral_cases
+                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-cases"/>
+            <supportcentral_searc
+                jcr:created="{Date}2017-06-17T18:18:52.134-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-17T18:18:52.134-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-search"/>
+            <supportcentral_dashboard
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-dashboard"/>
+            <maincontentcontainer
+                jcr:created="{Date}2017-06-09T15:08:00.091-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-09T15:08:00.091-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/maincontentcontainer"
+                editable="{Boolean}true"/>
+            <supportcentral_getti
+                jcr:created="{Date}2017-06-25T09:55:25.283-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-25T09:55:25.283-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-gettingstarted"/>
+            <supportcentral_faq
+                jcr:created="{Date}2017-06-25T10:01:54.657-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-06-25T10:01:54.657-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-faq"/>
+            <standardfooter
+                jcr:created="{Date}2017-06-09T15:07:43.655-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-06T00:35:20.176-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/standardfooter">
+                <footerCompany jcr:primaryType="nt:unstructured">
+                    <_x0031_
+                        jcr:primaryType="nt:unstructured"
+                        linkPath="http://bmc.com"
+                        linkText="Test"
+                        targetType="_self"/>
+                </footerCompany>
+            </standardfooter>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

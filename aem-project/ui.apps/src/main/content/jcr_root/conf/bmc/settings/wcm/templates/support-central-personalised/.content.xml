@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2020-05-07T03:58:52.766-04:00"
+        cq:lastModifiedBy="vraskar@bmc.com"
+        cq:lastReplicated="{Date}2020-04-01T11:47:54.953-04:00"
+        cq:lastReplicatedBy="mannalda@bmc.com"
+        cq:lastReplicationAction="Activate"
+        cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Support Central Personalised"
+        status="enabled"/>
+</jcr:root>
