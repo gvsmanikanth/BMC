@@ -154,9 +154,9 @@
 						// Write the data into our global variable.
 						if(typeof (pagePartnerFilterMapping) !== "undefined"){
 							for(i= 0; i< bmcPartnersData.listItems.length; i++){
-								if(pagePartnerFilterMapping[bmcPartnersData.listItems[i].id]){
+								if(pagePartnerFilterMapping[bmcPartnersData.listItems[i].name]){
 
-									bmcPartnersData.listItems[i].partner_type = pagePartnerFilterMapping[bmcPartnersData.listItems[i].id];
+									bmcPartnersData.listItems[i].partner_type = pagePartnerFilterMapping[bmcPartnersData.listItems[i].name];
 								}else{
 									bmcPartnersData.listItems[i].partner_type = [1];
 								}
