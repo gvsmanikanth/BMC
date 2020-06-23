@@ -10,4 +10,12 @@
 	      searchPageUrl="https://bmcsites.force.com/casemgmt/sc_CoveoSearch"
    	      supportCentralUrl="https://bmcsites.force.com/casemgmt"
     	  supportCoveoAccessToken="bcc1686c-c3a0-4555-8a01-bef817f71daf"
+    	  
+    	  personalisationApiOauthUser = "authprovider"
+    	  personalisationApiOauthPass = "bmcT0k3n"
+    	  personalisationApiUser = "bmc"
+    	  personalisationApiPass = "d$0509v"
+    	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
+    	  oauthUrl="/oauth/token"
+    	  popularProductUrl="/v1/personalisation/content"
 />
