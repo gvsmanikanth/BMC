@@ -37,7 +37,7 @@ import com.day.cq.wcm.api.WCMMode;
  */ 
 @SlingServlet(methods = {"GET"}, 
 metatype = true,
-resourceTypes = {"bmc/components/structure/external-link-document"},
+resourceTypes = {"bmc/components/structure/external-link-document","bmc/components/structure/external-link-page"},
 extensions ={"html"},
 selectors = {"pdf"})
 public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
@@ -126,7 +126,13 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				            		out.println("</html>");	 
 				     	       }else{
 					     	    	 //Display in editor mode in author environment.
-					     	    	out.println("<html><head>");			     	    	   
+					     	    	out.println("<html><head>");
+					     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");
+				     	    		if(isDocumentPDF)
+			     	    	   		{
+			     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
+			     	    	   		}
+				     	    		out.println("</head>"); 
 				     	    		out.println("</head>");   
 					     	    	out.println("<body>");					     	       					     	       
 					        		out.println("<h1>External Link</h1>");

@@ -351,14 +351,14 @@
                                                 fieldLabel="Document Container display type."
                                                 name="./displayType">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <item1
+                                                <item1
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Old view (Jump page)"
-                                                        value="default"/>
+                                                        text="Display document Inline"
+                                                        value="inline"/>
                                                     <item2
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Inline (New Layout)"
-                                                        value="inline"/>
+                                                        text="Redirect to document"
+                                                        value="redirect"/>                                       
                                                 </items>
                                             </documentDisplayType>                                            
                                         </items>
