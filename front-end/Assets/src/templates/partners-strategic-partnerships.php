@@ -29,22 +29,22 @@ include 'php-inc/head.php';
 		
 	}
 	var pagePartnerFilterMapping = {
-		'Accenture': [2],
-		'Amazon Web Services': [3],
-		'ATOS': [2],	
-		'Capgemini': [2],	
-		'CGI': [2],	
-		'Cognizant': [2],	
-		'Dell': [1],	
-		'Fujitsu': [2],	
+		'Dell': [1],
 		'HCL': [1],	
-		'Infosys': [2],	
-		'LTI': [2],	
-		'Microsoft': [3],	
-		'NTT DATA': [2],	
-		'Tata': [2],	
 		'TechM': [1],
-		'Wipro': [1]
+		'Wipro': [1],
+		'Accenture': [2],
+		'ATOS': [2],
+		'Capgemini': [2],
+		'CGI': [2],
+		'Cognizant': [2],
+		'Fujitsu': [2],	
+		'Infosys': [2],	
+		'LTI': [2],			
+		'NTT DATA': [2],	
+		'Tata': [2],
+		'Amazon Web Services': [3],
+		'Microsoft': [3]	
 	}
     var bmcFilterConfig = {
         "pageType" : "list",
@@ -275,18 +275,7 @@ include 'php-inc/head.php';
     </div>
 </section>
 
-<style>
-	.partners-cards .block-title {
-    width: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #cacaca;
-    padding: .5rem;
-    clear: both;
-    margin-bottom: 20px;
-}
-</style>
+
 
 <?php
 include 'php-inc/foot.php';
