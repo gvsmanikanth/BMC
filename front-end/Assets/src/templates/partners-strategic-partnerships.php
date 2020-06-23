@@ -275,18 +275,7 @@ include 'php-inc/head.php';
     </div>
 </section>
 
-<style>
-	.partners-cards .block-title {
-    width: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #cacaca;
-    padding: .5rem;
-    clear: both;
-    margin-bottom: 20px;
-}
-</style>
+
 
 <?php
 include 'php-inc/foot.php';
