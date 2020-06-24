@@ -23,7 +23,7 @@
         }
         
         if(item.partner_type.length > 0){
-            itemHTML += '<strong>Partner Type:</strong><BR><span style="">'+self.getName("partner_type", item)+'</span><BR><BR>';
+           // itemHTML += '<strong>Partner Type:</strong><BR><span style="">'+self.getName("partner_type", item)+'</span><BR><BR>';
         }
         
         if(item.company_url.length > 0){
