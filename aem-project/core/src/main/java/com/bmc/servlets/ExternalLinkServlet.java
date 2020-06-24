@@ -74,7 +74,6 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
     			Node currentNode = request.getResource().adaptTo(Node.class);    			
     			session = currentNode.getSession();    			
     			String linkAbstractor = currentNode.getProperty("linkAbstractor").getValue().toString();    		
-     			session.save();
      			for(PropertyIterator propeIterator = currentNode.getProperties() ; propeIterator.hasNext();)  
 				   {  
 				        Property prop= propeIterator.nextProperty();
