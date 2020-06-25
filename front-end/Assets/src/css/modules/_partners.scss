@@ -40,6 +40,25 @@
       }
     }
   }
+  .block-title {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #cacaca;
+    padding: .5rem;
+    clear: both;
+    margin-bottom: 20px;
+    @media (max-width: $break-md) {
+      margin-left: 8px;
+      padding-left: 0;
+    }
+  }
+  .h2-variation-1{
+    @media (max-width: $break-md) {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .parnter-modal-details{
@@ -80,3 +99,17 @@
       padding-bottom: 0 !important;
   }
 
+
+  .partner-wrap {
+    clear: both;          
+     
+    @media(max-width: 1400px){
+      padding: 0 20px;
+      float: left;
+    }
+}
+.partner-list {
+  p.partner-lead {
+    padding: 0;
+  }
+}
