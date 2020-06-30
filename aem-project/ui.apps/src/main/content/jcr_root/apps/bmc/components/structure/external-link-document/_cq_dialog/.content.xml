@@ -365,14 +365,15 @@
                                                 fieldLabel="Document Container display type."
                                                 name="./displayType">
                                                 <items jcr:primaryType="nt:unstructured">
-                                                <item1
+                                                    <item1
                                                         jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
                                                         text="Display document Inline"
                                                         value="inline"/>
                                                     <item2
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Redirect to document"
-                                                        value="redirect"/>                                       
+                                                        value="redirect"/>
                                                 </items>
                                             </documentDisplayType>
                                         </items>
