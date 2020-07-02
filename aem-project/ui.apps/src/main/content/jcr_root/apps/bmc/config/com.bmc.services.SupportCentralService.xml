@@ -17,5 +17,5 @@
     	  personalisationApiPass = "d$0509v"
     	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
     	  oauthUrl="/oauth/token"
-    	  popularProductUrl="/v1/personalisation/content"
+    	  popularProductUrl="/v1/personalisation/contents"
 />
