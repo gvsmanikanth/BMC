@@ -11,7 +11,7 @@
         <sly data-sly-test.documentTitle="${properties.pageTitle}"/>
     </sly>
 
-<sly data-sly-test="${properties.displayType == 'redirect' || !properties.displayType || !'https' in documentLink}">
+<sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || !('https' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
 <sly data-sly-test="${properties.displayType == 'inline' && 'https' in documentLink}">
@@ -36,7 +36,7 @@
 				<section class="bg-white">
 					<div class="layout-inner-wrap">
 						<div class="aem-GridColumn aem-GridColumn--default--12">
-							<div class="text-right pyt3">
+							<div class="text-right pyt1">
 								<a href="${documentLink}" alt="Download PDF" title="Download PDF" 
 								style="/*! display: inline-block; */" target="_blank" 
 								class="link-icon-resource-document mb2 text-right inline-block">  
@@ -44,10 +44,8 @@
 								</a>
 							</div>
 							<div class="md-flex full-bleed-two-column">
-								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">
-									<a href="${documentLink}" alt="Download PDF" title="Download PDF" >
+								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">									
 										<sly data-sly-resource="${'experiencefragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"></sly>
-									</a>
 								</div>
 								<div class="flex-item col col-12">
 									<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
