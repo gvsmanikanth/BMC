@@ -860,6 +860,9 @@
 .header-product-landing{
 	background-color: color(vividBlue);
 	padding: 0;
+	.layout-inner-wrap.flex{
+		align-items: center;
+	}
 	h1 {
 		color: #fff;
 		margin: 0;
@@ -873,9 +876,9 @@
 			max-height: 125px;
 		}
 	}
-	.layout-inner-wrap.flex{
-		align-items: center;
-	}
+
+	
+	
 }
 
 // WEB-6677 update Ends
