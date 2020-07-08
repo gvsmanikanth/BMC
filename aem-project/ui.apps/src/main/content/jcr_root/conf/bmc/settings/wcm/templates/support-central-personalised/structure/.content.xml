@@ -32,72 +32,6 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-accountinfo"/>
-            <supportcentral_news
-                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2020-05-07T03:58:52.753-04:00"
-                jcr:lastModifiedBy="vraskar@bmc.com"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-news"
-                communitiesLink="https://communities.bmc.com/community/support/content?filterID=contentstatus%5Bpublished%5D~objecttype~objecttype%5Bblogpost%5D&amp;sortKey=contentstatus%5Bpublished%5D~creationDateDesc&amp;sortOrder=0">
-                <supportnewsdata jcr:primaryType="nt:unstructured">
-                    <item0
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Live now: A new Licensed Products application"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/05/04/live-now-a-new-licensed-products-application"/>
-                    <item1
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Free Education Webinars: COVID-19 Resources"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/04/24/free-education-webinars-covid-19-resources"/>
-                    <item2
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Special Discounts on Education Subscriptions"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2020/04/27/special-discounts-on-education-subscriptions"/>
-                    <item3
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Product Change Notification January 2020"
-                        supportURLLink="https://communities.bmc.com/docs/DOC-126139"/>
-                    <item4
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="BMC is announcing support for the IBM SMP/E RECEIVE ORDER command to deliver product maintenance and updates"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/12/18/bmc-is-announcing-support-for-the-ibm-smpe-receive-order-command-to-deliver-product-maintenance-and-updates"/>
-                    <item5
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="BMC Welcomes More Than 500 Customers to its Education Subscription Service"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/09/24/bmc-welcomes-more-than-500-customers-to-its-education-subscription-service"/>
-                    <item6
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="New Secure File Transfer (SFT) service for Customer Support"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/09/04/new-secure-file-transfer-sft-service-for-customer-support"/>
-                    <item7
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Quarterly Product Change Notification April 2019"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2019/05/24/quarterly-product-change-notification-april-2019"/>
-                    <item8
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Changes Coming to BMC Downloads (EPD)"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/10/31/changes-coming-to-bmc-downloads-epd"/>
-                    <item9
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Remedy Service Management Subscriptions are Now Available"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/25/bmc-education-introduces-our-latest-subscription-service-remedy-service-management-subscriptions-are-now-available"/>
-                    <item10
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Removing the Historical Cases Link from Support Central"
-                        supportURLLink="https://communities.bmc.com/community/support/blog/2018/09/13/removing-the-historical-cases-link-from-support-central"/>
-                    <item11
-                        jcr:primaryType="nt:unstructured"
-                        supportNewsTitle="Test News"
-                        supportURLLink="https://google.com/"/>
-                </supportnewsdata>
-            </supportcentral_news>
-            <supportcentral_cases
-                jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-17T13:36:47.741-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-cases"/>
             <supportcentral_searc
                 jcr:created="{Date}2017-06-17T18:18:52.134-07:00"
                 jcr:createdBy="admin"
@@ -108,28 +42,6 @@
             <supportcentral_dashboard
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-dashboard"/>
-            <maincontentcontainer
-                jcr:created="{Date}2017-06-09T15:08:00.091-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-09T15:08:00.091-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/maincontentcontainer"
-                editable="{Boolean}true"/>
-            <supportcentral_getti
-                jcr:created="{Date}2017-06-25T09:55:25.283-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-25T09:55:25.283-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-gettingstarted"/>
-            <supportcentral_faq
-                jcr:created="{Date}2017-06-25T10:01:54.657-07:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2017-06-25T10:01:54.657-07:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/supportcentral-faq"/>
             <standardfooter
                 jcr:created="{Date}2017-06-09T15:07:43.655-07:00"
                 jcr:createdBy="admin"
