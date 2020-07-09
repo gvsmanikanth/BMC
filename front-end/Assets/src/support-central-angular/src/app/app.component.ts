@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Widgets } from './models/widgets';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'support-central';
+  widgets: Widgets = window['psc'].widgets;
 }
