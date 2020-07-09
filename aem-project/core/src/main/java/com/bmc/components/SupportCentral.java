@@ -25,8 +25,54 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
         return allCasesUrl;
     }
 
-    private String newCaseUrl;
+    public String getCaseMgtmUrl() {
+		return caseMgtmUrl;
+	}
+
+	public String getDocumentationUrl() {
+		return documentationUrl;
+	}
+
+	public String getProductDownloadUrl() {
+		return productDownloadUrl;
+	}
+
+	public String getAskCommunitiesUrl() {
+		return askCommunitiesUrl;
+	}
+
+	public String getSupportVideosUrl() {
+		return supportVideosUrl;
+	}
+
+	public String getSupportedProductUrl() {
+		return supportedProductUrl;
+	}
+
+	public String getProductCompatiblityUrl() {
+		return productCompatiblityUrl;
+	}
+
+	public String getTrainingUrl() {
+		return trainingUrl;
+	}
+
+	public String getProductSupportUrl() {
+		return productSupportUrl;
+	}
+
+	private String newCaseUrl;
     private String allCasesUrl;
+    
+    private String caseMgtmUrl;
+    private String documentationUrl;
+    private String productDownloadUrl;
+    private String askCommunitiesUrl ;
+    private String supportVideosUrl ;
+    private String supportedProductUrl;
+    private String productCompatiblityUrl;
+    private String trainingUrl;
+    private String productSupportUrl ;
 
     SupportCentralService service;
 
@@ -35,6 +81,15 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
         service = getSlingScriptHelper().getService(SupportCentralService.class);
         allCasesUrl = service.getAllCasesUrl();
         newCaseUrl = service.getNewCaseUrl();
+        caseMgtmUrl= service.getCaseMgtmUrl();
+        documentationUrl= service.getDocumentationUrl();
+        productDownloadUrl= service.getProductDownloadUrl();
+        askCommunitiesUrl =service.getAskCommunitiesUrl();
+        supportVideosUrl = service.getSupportVideosUrl();
+        supportedProductUrl= service.getSupportedProductUrl();
+        productCompatiblityUrl=service.getProductCompatiblityUrl();
+        trainingUrl=service.getTrainingUrl();
+        productSupportUrl = service.getProductSupportUrl();
     }
 
     public Boolean getIsLoggedIn() { return !currentUserIsAnonymous(); }

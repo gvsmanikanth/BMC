@@ -4,7 +4,6 @@ import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.commons.osgi.PropertiesUtil;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,63 +48,67 @@ public class SupportCentralService {
     public String getSearchPageUrl() {
         return searchPageUrl;
     }
-    public String getPersonalisationApiOauthUser() {
+    
+    public String getCaseMgtmUrl() {
+		return caseMgtmUrl;
+	}
+
+	public String getDocumentationUrl() {
+		return documentationUrl;
+	}
+
+	public String getProductDownloadUrl() {
+		return productDownloadUrl;
+	}
+
+	public String getAskCommunitiesUrl() {
+		return askCommunitiesUrl;
+	}
+
+	public String getSupportVideosUrl() {
+		return supportVideosUrl;
+	}
+
+	public String getSupportedProductUrl() {
+		return supportedProductUrl;
+	}
+
+	public String getProductCompatiblityUrl() {
+		return productCompatiblityUrl;
+	}
+
+	public String getTrainingUrl() {
+		return trainingUrl;
+	}
+
+	public String getProductSupportUrl() {
+		return productSupportUrl;
+	}
+
+	public String getPersonalisationApiOauthUser() {
 		return personalisationApiOauthUser;
 	}
-
-	public void setPersonalisationApiOauthUser(String personalisationApiOauthUser) {
-		this.personalisationApiOauthUser = personalisationApiOauthUser;
-	}
-
 	public String getPersonalisationApiOauthPass() {
 		return personalisationApiOauthPass;
 	}
-
-	public void setPersonalisationApiOauthPass(String personalisationApiOauthPass) {
-		this.personalisationApiOauthPass = personalisationApiOauthPass;
-	}
-
 	public String getPersonalisationApiUser() {
 		return personalisationApiUser;
-	}
-
-	public void setPersonalisationApiUser(String personalisationApiUser) {
-		this.personalisationApiUser = personalisationApiUser;
 	}
 
 	public String getPersonalisationApiPass() {
 		return personalisationApiPass;
 	}
-
-	public void setPersonalisationApiPass(String personalisationApiPass) {
-		this.personalisationApiPass = personalisationApiPass;
-	}
-
 	public String getSupportCentralPersonalisationUrl() {
 		return supportCentralPersonalisationUrl;
 	}
-
-	public void setSupportCentralPersonalisationUrl(
-			String supportCentralPersonalisationUrl) {
-		this.supportCentralPersonalisationUrl = supportCentralPersonalisationUrl;
-	}
-
 	public String getOauthUrl() {
 		return oauthUrl;
 	}
-
-	public void setOauthUrl(String oauthUrl) {
-		this.oauthUrl = oauthUrl;
-	}
-
 	public String getPopularProductUrl() {
 		return popularProductUrl;
 	}
 
-	public void setPopularProductUrl(String popularProductUrl) {
-		this.popularProductUrl = popularProductUrl;
-	}
-    private String newCaseUrl;
+	private String newCaseUrl;
     private String allCasesUrl;
     private String apiBaseUrl;
     private String apiPath;
@@ -115,6 +118,16 @@ public class SupportCentralService {
     private String supportCoveoAccessToken;
     private String searchPageUrl;
 
+    private String caseMgtmUrl;
+    private String documentationUrl;
+    private String productDownloadUrl;
+    private String askCommunitiesUrl ;
+    private String supportVideosUrl ;
+    private String supportedProductUrl;
+    private String productCompatiblityUrl;
+    private String trainingUrl;
+    private String productSupportUrl ;
+    
     private String personalisationApiOauthUser ;
     private String personalisationApiOauthPass ;
     private String personalisationApiUser ;
@@ -134,6 +147,16 @@ public class SupportCentralService {
         supportCentralUrl = PropertiesUtil.toString(config.get("supportCentralUrl"), "");
         supportCoveoAccessToken = PropertiesUtil.toString(config.get("supportCoveoAccessToken"), "");
         searchPageUrl = PropertiesUtil.toString(config.get("searchPageUrl"), "");
+        
+        caseMgtmUrl= PropertiesUtil.toString(config.get("caseMgtmUrl"), "");
+        documentationUrl=PropertiesUtil.toString(config.get("documentationUrl"), "");
+        productDownloadUrl=PropertiesUtil.toString(config.get("productDownloadUrl"), "");
+        askCommunitiesUrl =PropertiesUtil.toString(config.get("askCommunitiesUrl"), "");
+        supportVideosUrl =PropertiesUtil.toString(config.get("supportVideosUrl"), "");
+        supportedProductUrl=PropertiesUtil.toString(config.get("supportedProductUrl"), "");
+        productCompatiblityUrl=PropertiesUtil.toString(config.get("productCompatiblityUrl"), "");
+        trainingUrl=PropertiesUtil.toString(config.get("trainingUrl"), "");
+        productSupportUrl =PropertiesUtil.toString(config.get("productSupportUrl"), "");
         
         personalisationApiOauthUser = PropertiesUtil.toString(config.get("personalisationApiOauthUser"), "");
         personalisationApiOauthPass = PropertiesUtil.toString(config.get("personalisationApiOauthPass"), "");

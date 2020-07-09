@@ -1,5 +1,19 @@
 <link rel="stylesheet" href="/etc/clientlibs/bmc/dashboard/css/styles.css">
-
+<sly data-sly-use.support="com.bmc.components.SupportCentral"></sly>
+<div>
+<ul>
+<li>Open Case : ${support.newCaseUrl}</li> 
+<li>List Cases : ${support.allCasesUrl}</li>
+<li>Manage Your Cases : ${support.caseMgtmUrl}</li>
+<li>Documentation : ${support.documentationUrl}</li> 
+<li>Product Downloads : ${support.productDownloadUrl}</li>
+<li>Ask the communitry : ${support.askCommunitiesUrl}</li>
+<li>Support Videos : ${support.supportVideosUrl}</li>
+<li>Supported Products : ${support.supportedProductUrl}</li> 
+<li>Product Compatiblity : ${support.productCompatiblityUrl}</li>
+<li>Get Training : ${support.trainingUrl}</li>
+<li>Product Support : ${support.productSupportUrl}</li>
+</div>
 <app-root></app-root>
 <script src="/etc/clientlibs/bmc/dashboard/js/runtime-es5.js" type="module"></script>
 <script src="/etc/clientlibs/bmc/dashboard/js/runtime-es5.js" nomodule defer></script>

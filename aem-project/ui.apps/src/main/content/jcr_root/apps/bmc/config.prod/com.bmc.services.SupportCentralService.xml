@@ -10,4 +10,23 @@
 	      searchPageUrl="https://bmcsites.force.com/casemgmt/sc_CoveoSearch"
    	      supportCentralUrl="https://bmcsites.force.com/casemgmt"
     	  supportCoveoAccessToken="bcc1686c-c3a0-4555-8a01-bef817f71daf"
+    	  
+    	  caseMgtmUrl="https://www.bmc.com/support/resources/issue-defect-management.html"
+		  documentationUrl="https://docs.bmc.com/docs/dashboard.action"
+		  productDownloadUrl="https://www.bmc.com/available/epd.html"
+		  askCommunitiesUrl = "https://communities.bmc.com/welcome"
+		  supportVideosUrl = "https://communities.bmc.com/community/support/blog/2018/09/17/support-videos"
+		  supportedProductUrl="https://www.bmc.com/available/supported-product-az-list.html"
+		  productCompatiblityUrl = "https://customerapps.bmc.com/spac/o/welcome.html"
+		  trainingUrl="https://www.bmc.com/education/training-and-certification.html"
+		  productSupportUrl ="https://docs.bmc.com/docs/productinfo"
+		  
+		  personalisationApiOauthUser = "authprovider"
+    	  personalisationApiOauthPass = "bmcT0k3n"
+    	  personalisationApiUser = "bmc"
+    	  personalisationApiPass = "d$0509v"
+    	  supportCentralPersonalisationUrl="https://webapi.bmc.com/personalisation"
+    	  oauthUrl="/oauth/token"
+    	  popularProductUrl="/v1/personalisation/contents"
+		  
 />
