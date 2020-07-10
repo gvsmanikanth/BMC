@@ -5,6 +5,7 @@ import com.bmc.mixins.UserInfoProvider;
 import com.bmc.mixins.UserInfoProvider_RequestCached;
 import com.bmc.models.UserInfo;
 import com.bmc.services.SupportCentralService;
+
 import org.apache.felix.scr.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,6 +61,31 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
 	public String getProductSupportUrl() {
 		return productSupportUrl;
 	}
+	
+	 public String getServicesConsultingUrl() {
+		return servicesConsultingUrl;
+	}
+
+	public String getStrategicServicesUrl() {
+		return strategicServicesUrl;
+	}
+	public String getBmcHelixServicesUrl() {
+		return bmcHelixServicesUrl;
+	}
+
+	public String getMainframeServicesUrl() {
+		return mainframeServicesUrl;
+	}
+
+	public String getImplServicesUrl() {
+		return implServicesUrl;
+	}
+	public String getManagedServicesUrl() {
+		return managedServicesUrl;
+	}
+	public String getEnhancedSupportServicesUrl() {
+		return enhancedSupportServicesUrl;
+	}
 
 	private String newCaseUrl;
     private String allCasesUrl;
@@ -73,7 +99,14 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
     private String productCompatiblityUrl;
     private String trainingUrl;
     private String productSupportUrl ;
-
+    private String servicesConsultingUrl;
+  	private String strategicServicesUrl;
+    private String bmcHelixServicesUrl ;
+    private String mainframeServicesUrl ;
+    private String implServicesUrl ;
+    private String managedServicesUrl;
+    private String enhancedSupportServicesUrl;
+      
     SupportCentralService service;
 
     @Override
@@ -90,6 +123,13 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
         productCompatiblityUrl=service.getProductCompatiblityUrl();
         trainingUrl=service.getTrainingUrl();
         productSupportUrl = service.getProductSupportUrl();
+        servicesConsultingUrl = service.getServicesConsultingUrl();
+      	strategicServicesUrl = service.getStrategicServicesUrl();
+        bmcHelixServicesUrl = service.getBmcHelixServicesUrl();
+        mainframeServicesUrl = service.getMainframeServicesUrl();
+        implServicesUrl = service.getImplServicesUrl();
+        managedServicesUrl = service.getManagedServicesUrl();
+        enhancedSupportServicesUrl = service.getEnhancedSupportServicesUrl();
     }
 
     public Boolean getIsLoggedIn() { return !currentUserIsAnonymous(); }

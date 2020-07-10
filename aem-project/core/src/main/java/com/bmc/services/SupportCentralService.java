@@ -84,6 +84,31 @@ public class SupportCentralService {
 	public String getProductSupportUrl() {
 		return productSupportUrl;
 	}
+	
+	 public String getServicesConsultingUrl() {
+		return servicesConsultingUrl;
+	}
+
+	public String getStrategicServicesUrl() {
+		return strategicServicesUrl;
+	}
+	public String getBmcHelixServicesUrl() {
+		return bmcHelixServicesUrl;
+	}
+
+	public String getMainframeServicesUrl() {
+		return mainframeServicesUrl;
+	}
+
+	public String getImplServicesUrl() {
+		return implServicesUrl;
+	}
+	public String getManagedServicesUrl() {
+		return managedServicesUrl;
+	}
+	public String getEnhancedSupportServicesUrl() {
+		return enhancedSupportServicesUrl;
+	}
 
 	public String getPersonalisationApiOauthUser() {
 		return personalisationApiOauthUser;
@@ -128,6 +153,14 @@ public class SupportCentralService {
     private String trainingUrl;
     private String productSupportUrl ;
     
+    private String servicesConsultingUrl;
+	private String strategicServicesUrl;
+    private String bmcHelixServicesUrl ;
+    private String mainframeServicesUrl ;
+    private String implServicesUrl ;
+    private String managedServicesUrl;
+    private String enhancedSupportServicesUrl;
+  		  
     private String personalisationApiOauthUser ;
     private String personalisationApiOauthPass ;
     private String personalisationApiUser ;
@@ -158,6 +191,14 @@ public class SupportCentralService {
         trainingUrl=PropertiesUtil.toString(config.get("trainingUrl"), "");
         productSupportUrl =PropertiesUtil.toString(config.get("productSupportUrl"), "");
         
+        servicesConsultingUrl= PropertiesUtil.toString(config.get("servicesConsultingUrl"), "");
+    	strategicServicesUrl= PropertiesUtil.toString(config.get("strategicServicesUrl"), "");
+        bmcHelixServicesUrl = PropertiesUtil.toString(config.get("bmcHelixServicesUrl"), "");
+        mainframeServicesUrl = PropertiesUtil.toString(config.get("mainframeServicesUrl"), "");
+        implServicesUrl = PropertiesUtil.toString(config.get("implServicesUrl"), "");
+        managedServicesUrl = PropertiesUtil.toString(config.get("managedServicesUrl"), "");
+        enhancedSupportServicesUrl = PropertiesUtil.toString(config.get("enhancedSupportServicesUrl"), "");
+        
         personalisationApiOauthUser = PropertiesUtil.toString(config.get("personalisationApiOauthUser"), "");
         personalisationApiOauthPass = PropertiesUtil.toString(config.get("personalisationApiOauthPass"), "");
         personalisationApiUser = PropertiesUtil.toString(config.get("personalisationApiUser"), "");
@@ -167,5 +208,6 @@ public class SupportCentralService {
         popularProductUrl = PropertiesUtil.toString(config.get("popularProductUrl"), "");
         		
     }
+
 
 }
