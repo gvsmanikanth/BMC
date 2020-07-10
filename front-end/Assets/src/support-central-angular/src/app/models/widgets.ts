@@ -9,5 +9,12 @@ export interface Widgets {
     supportedProducts: string,
     prdCompatibility: string,
     training: string,
-    prdSupport: string
+    prdSupport: string,
+    servicesConsulting : string,
+    strategicServices : string,
+    bmcHelixServices : string,
+    mainframeServices  : string,
+    implServices : string,
+    managedServices : string,
+    enhancedServices  : string
 }

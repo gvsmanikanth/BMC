@@ -9,13 +9,20 @@ export const environment = {
 window['psc'] = {
   widgets: {
     askCommunity: "https://communities.bmc.com/welcome",
+    bmcHelixServices: "https://stage.cms.bmc.com/it-services/bmc-helix-services.html",
     docs: "https://docs.bmc.com/docs/dashboard.action",
+    enhancedServices: "https://stage.cms.bmc.com/it-services/enhanced-support-services.html",
+    implServices: "https://stage.cms.bmc.com/it-services/implementation-services.html",
     listCase: "https://sfadev2-bmcsites.cs27.force.com/casemgmt/sc_CommunityHome",
+    mainframeServices: "https://stage.cms.bmc.com/it-services/mainframe-services-rsm-partners.html",
     manageCase: "https://stage.cms.bmc.com/support/resources/issue-defect-management.html",
+    managedServices: "https://stage.cms.bmc.com/it-services/managed-services.html",
     openCase: "https://sfadev2-bmcsites.cs27.force.com/casemgmt/apex/CreateNewCase",
-    prdCompatibility: "https://customerapps.bmc.com/spac/o/welcome.html",
+    prdCompatibility: "https://docs.bmc.com/docs/modeler/#/",
     prdDownloads: "https://stage.cms.bmc.com/available/epd.html",
     prdSupport: "https://docs.bmc.com/docs/productinfo",
+    servicesConsulting: "https://stage.cms.bmc.com/it-services/it-consulting-services.html",
+    strategicServices: "https://stage.cms.bmc.com/it-services/strategic-services.html",
     supportVideos: "https://communities.bmc.com/community/support/blog/2018/09/17/support-videos",
     supportedProducts: "https://stage.cms.bmc.com/available/supported-product-az-list.html",
     training: "https://stage.cms.bmc.com/education/training-and-certification.html"
