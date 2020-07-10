@@ -133,6 +133,14 @@ public class SupportCentralService {
 		return popularProductUrl;
 	}
 
+	public String getProductCount() {
+		return productCount;
+	}
+
+	public String getCommunityCount() {
+		return communityCount;
+	}
+
 	private String newCaseUrl;
     private String allCasesUrl;
     private String apiBaseUrl;
@@ -168,6 +176,9 @@ public class SupportCentralService {
     private String supportCentralPersonalisationUrl;
     private String oauthUrl;
     private String popularProductUrl;
+    private String productCount;
+    private String communityCount;
+    
     @Activate
     public void activate(Map<String, String> config) {
         newCaseUrl = PropertiesUtil.toString(config.get("newCaseUrl"), "");
@@ -205,7 +216,10 @@ public class SupportCentralService {
         personalisationApiPass = PropertiesUtil.toString(config.get("personalisationApiPass"), "");
         supportCentralPersonalisationUrl = PropertiesUtil.toString(config.get("supportCentralPersonalisationUrl"), "");
         oauthUrl = PropertiesUtil.toString(config.get("oauthUrl"), "");
-        popularProductUrl = PropertiesUtil.toString(config.get("popularProductUrl"), "");
+        popularProductUrl=PropertiesUtil.toString(config.get("popularProductUrl"), "");
+        productCount = PropertiesUtil.toString(config.get("productCount"), "");
+        communityCount = PropertiesUtil.toString(config.get("communityCount"), "");
+        
         		
     }
 

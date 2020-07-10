@@ -36,6 +36,8 @@
     	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
     	  oauthUrl="/oauth/token"
     	  popularProductUrl="/v1/personalisation/contents"
+    	  productCount = "5"
+    	  communityCount = "10"
 />
 
 		<!--<?xml version="1.0" encoding="UTF-8"?>-->

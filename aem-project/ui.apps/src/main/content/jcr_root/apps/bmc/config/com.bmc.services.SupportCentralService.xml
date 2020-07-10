@@ -27,9 +27,8 @@
 		  mainframeServicesUrl = "https://stage.cms.bmc.com/it-services/mainframe-services-rsm-partners.html"
 		  implServicesUrl = "https://stage.cms.bmc.com/it-services/implementation-services.html"
 		  managedServicesUrl = "https://stage.cms.bmc.com/it-services/managed-services.html"
-		  enhancedSupportServicesUrl = "https://stage.cms.bmc.com/it-services/enhanced-support-services.html"
-		  
-		  productSupportUrl ="https://docs.bmc.com/docs/productinfo"
+		  enhancedSupportServicesUrl = "https://stage.cms.bmc.com/it-services/enhanced-support-services.html"		  
+
 		  personalisationApiOauthUser = "authprovider"
     	  personalisationApiOauthPass = "bmcT0k3n"
     	  personalisationApiUser = "bmc"
@@ -37,4 +36,6 @@
     	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
     	  oauthUrl="/oauth/token"
     	  popularProductUrl="/v1/personalisation/contents"
+    	  productCount = "5"
+    	  communityCount = "10"
 />

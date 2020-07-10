@@ -47,18 +47,29 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 
 		UserInfo user = UserInfoProvider.withRequestCaching(request)
 				.getCurrentUserInfo();
-		// if (user != null && user.hasEmail()) {
-
+		String userEmail = null;
 		String accessToken = getAccessTokenClient();
 		logger.info(accessToken);
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create()
 				.build()) {
+	        String dataContentType = request.getParameter("content_type");
+
 			String baseUrl = service.getSupportCentralPersonalisationUrl();
 			String apiPath = service.getPopularProductUrl();
-			String apiUrl = baseUrl + apiPath + "?access_token=" + accessToken
-					+ "&product_count=10&content_type=KNOWLEDGE_ARTICLE";
+			int productCount = Integer.parseInt(service.getProductCount());
+			int communityCount = Integer.parseInt(service.getCommunityCount());
+			StringBuilder apiUrl = new StringBuilder();
+			apiUrl.append(baseUrl).append(apiPath).append("?access_token=").append(accessToken)
+					.append("&product_count=").append(productCount) 
+					.append("&community_count=").append(communityCount)
+					.append("&content_type=").append(dataContentType);
 
-			HttpGet httpGet = new HttpGet(apiUrl);
+
+			if (user != null && user.hasEmail()) {
+				apiUrl.append("user_id").append(user.getEmail());
+			}
+			
+			HttpGet httpGet = new HttpGet(apiUrl.toString());
 
 			System.out.println("executing request " + httpGet.getRequestLine());
 			HttpResponse response1 = httpClient.execute(httpGet);
@@ -82,12 +93,14 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 			String oauthApiPass = service.getPersonalisationApiOauthPass();
 			String apiUser = service.getPersonalisationApiUser();
 			String apiPass = service.getPersonalisationApiPass();
-			String apiUrl = baseUrl + apiPath
-					+ "?grant_type=password&password=" + apiPass + "&username="
-					+ apiUser;
+			
+			StringBuilder apiUrl = new StringBuilder();
+			
+			apiUrl = apiUrl.append(baseUrl).append(apiPath).append("?grant_type=password&password=").append(apiPass).append("&username=")
+					.append(apiUser);
 			String encoding = DatatypeConverter.printBase64Binary((oauthApiUser
 					+ ":" + oauthApiPass).getBytes("UTF-8"));
-			HttpPost httpPost = new HttpPost(apiUrl);
+			HttpPost httpPost = new HttpPost(apiUrl.toString());
 			httpPost.setHeader(HttpHeaders.AUTHORIZATION, "Basic " + encoding);
 
 			System.out
