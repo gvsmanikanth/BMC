@@ -27,7 +27,7 @@ import com.google.common.net.HttpHeaders;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-@SlingServlet(paths = "/bin/supporthomepage", methods = { "GET" })
+@SlingServlet(paths = "/bin/supportcentral/content", methods = { "GET" })
 public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -71,7 +71,7 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 			
 			HttpGet httpGet = new HttpGet(apiUrl.toString());
 
-			System.out.println("executing request " + httpGet.getRequestLine());
+			logger.info("Executing request to fetch personalisation content" + httpGet.getRequestLine());
 			HttpResponse response1 = httpClient.execute(httpGet);
 			HttpEntity entity = response1.getEntity();
 			String content = EntityUtils.toString(entity);
@@ -103,8 +103,7 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 			HttpPost httpPost = new HttpPost(apiUrl.toString());
 			httpPost.setHeader(HttpHeaders.AUTHORIZATION, "Basic " + encoding);
 
-			System.out
-					.println("executing request " + httpPost.getRequestLine());
+			logger.info("Executing request to fetch access token " + httpPost.getRequestLine());
 			HttpResponse response = httpClient.execute(httpPost);
 
 			// verify the valid error code first
