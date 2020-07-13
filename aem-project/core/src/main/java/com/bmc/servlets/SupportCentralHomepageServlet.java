@@ -66,7 +66,7 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 
 
 			if (user != null && user.hasEmail()) {
-				apiUrl.append("user_id").append(user.getEmail());
+				apiUrl.append("&user_id").append(user.getEmail());
 			}
 			
 			HttpGet httpGet = new HttpGet(apiUrl.toString());
