@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="sling:OsgiConfig"
-    searchPageUrl="https://sfaqa-bmcsites.cs34.force.com/casemgmt/sc_CoveoSearch"
-    supportCentralUrl="https://sfaqa-bmcsites.cs34.force.com/casemgmt"
-    supportCoveoAccessToken="3e2bedf9-5685-4cef-8b00-ee4e8704481c"/>
+    searchPageUrl="https://sfaqa-bmcsites.cs50.force.com/casemgmt/sc_CoveoSearch"
+    supportCentralUrl="https://sfaqa-bmcsites.cs50.force.com/casemgmt"
+    supportCoveoAccessToken="xx9a1d2ed9-0269-45e0-a214-79b0e9d434d7"/>
