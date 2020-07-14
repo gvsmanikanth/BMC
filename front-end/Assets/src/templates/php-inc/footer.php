@@ -6,7 +6,7 @@
 				<ul class="meta">
 
 					<li>
-						<a href="/corporate/about-bmc-software.html"  target="_self" >About BMC</a>
+						<a href="/corporate/about-bmc-software.html"  target="_self" >About BMC hi</a>
 					</li>
 
 					<li>
