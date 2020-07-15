@@ -11,10 +11,10 @@
         <sly data-sly-test.documentTitle="${properties.pageTitle}"/>
     </sly>
 
-<sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || !('https' in documentLink)}">
+<sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || ('http:' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
-<sly data-sly-test="${properties.displayType == 'inline' && 'https' in documentLink}">
+<sly data-sly-test="${properties.displayType == 'inline' && (('https' in documentLink)|| ('/content/dam' in documentLink))}">
 	<sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
 
     <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
@@ -45,7 +45,7 @@
 							</div>
 							<div class="md-flex full-bleed-two-column">
 								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">									
-										<sly data-sly-resource="${'experiencefragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"></sly>
+										<div data-sly-resource="${'experiencefragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"></div>                                   
 								</div>
 								<div class="flex-item col col-12">
 									<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
@@ -55,7 +55,7 @@
 							</div>
 			
 			
-			
+
 			<script>
 			function getAvailableHeight() {
 				var actualHeight = window.innerHeight ||
