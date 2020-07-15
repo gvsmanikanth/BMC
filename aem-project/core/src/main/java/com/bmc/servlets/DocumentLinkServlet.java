@@ -69,7 +69,8 @@ public class DocumentLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      @Override
      protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException, IOException {
         
-    	   try {  			
+    	   try { 
+    			logger.info("START CLASS ----DocumentLinkServlet");
     			Node currentNode = request.getResource().adaptTo(Node.class);    			
     			session = currentNode.getSession();
     			String documentType = currentNode.getProperty("documentType").getValue().toString();
@@ -134,12 +135,12 @@ public class DocumentLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				            		out.println("</html>");	 
 				     	       }
 				     	    	   
-			            		logger.info("STOP CLASS ----ExternalLinkServlet");	
+			            		logger.info("STOP CLASS ---- DocumentLinkServlet");	
 		           		} catch (Exception e) {
 		           			logger.error(e.getMessage());
 		           		} 
      					}
 
-     
+    
 }
 
