@@ -127,13 +127,6 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 		           			if (session != null && session.isLive())
 		           				session.logout();
 		           					}
-     					}
-     
-     public boolean runModes()
-     {
-    		Set<String> runmodes = slingSettingsService.getRunModes();	
-    		boolean isAuthor = runmodes.contains(Externalizer.PUBLISH);
-    		return isAuthor;
-     }
+     					}    
      
 }
