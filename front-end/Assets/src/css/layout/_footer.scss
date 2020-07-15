@@ -23,7 +23,7 @@
 
 		&:hover {
 			color: color(mediumOrange);
-		}
+		}		
 	}
 	.layout-inner-wrap {
 		overflow: auto;
@@ -31,7 +31,86 @@
 			.nav-tertiary-col{
 				h4{
 					font-size:28px;
+				}			
+			}
+			//added for Language Select box start
+			.nav-tertiary-col:last-child{
+				>div{
+					border-left:2px solid #a7a9ac;
+					padding-left:2em;
+					@media (max-width: $break-sm) {
+						border-left:none;
+						padding-left:0em;
+					}
+					@media (max-width:$break-md){
+						margin-top:2em;
+					}
+					li{
+					@include media(breakpointMedium) {
+						width:100%;
+					}}					
+				
+				#footer-country_dropdown, form{
+					padding:.8em 0em;					
+						.decorator-select {
+							background: transparent;
+							border: 2px solid #a7a9ac;
+							border-radius: 0px;
+							box-sizing: border-box;
+							display: inline-block;
+							height: em(42);
+							overflow: hidden;
+							position: relative;
+							width: 100%;
+							&:after {
+								content: url('#{$imagesFolder}select-arrow.png');
+								height: $inputHeight;
+								pointer-events: none;
+								position: absolute;
+								right: 0px;
+								top: 3px;
+								width: 29px;
+								z-index: (z(content)+1);							
+							}							
+							select{
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								-o-appearance: none;
+								background: #414042;
+								border: none;
+								box-sizing: border-box;
+								color: #fff;
+								display: block;
+								height: em(42);
+								padding: 1px 10px 6px 10px;
+								position: relative;
+								width: 100%;
+								outline: none;
+								&:focus{
+									border:none;
+									outline:none;
+								}
+								option, option:focus{
+									color:#fff;
+									border:none;
+									outline:none;
+								}
+							}
+							select::-ms-expand {
+								border: none;
+								display: none;
+							}					
+							select::-ms-value {background: none; color:#fff;}
+						}
 				}
+				label{
+					color:#a7a9ac;
+					font-size: 15px;
+					margin-bottom:5px;
+					font-weight:bold;
+				}
+			}
+			//added for Language Select box End
 			}
 		}
 	}

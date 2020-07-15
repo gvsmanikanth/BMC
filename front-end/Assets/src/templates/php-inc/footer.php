@@ -89,21 +89,34 @@
 				</ul>
 			</li>
 			<li class="nav-tertiary-col">
-				<h4>Search</h4>
-				<ul class="nav-supplemental meta">
-					<li>
-						<form action="/search/" class="search-site">
-							<fieldset>
-								<div class="search-input-m-glass">
-									<input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
-									<button></button>
-								</div>
-							</fieldset>
-						</form>
-					</li>
-				</ul>
+				<div>				
+					<ul class="nav-supplemental meta">
+						<li>
+							<form action="/search/" class="search-site">
+								<fieldset>
+									<label>Search BMC</label>
+									<div class="search-input-m-glass">
+										<input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
+										<button></button>
+									</div>
+								</fieldset>
+							</form>
+							<form id="footer-country_dropdown">
+								<fieldset>
+									<label>Choose your language</label>
+									<div class="search-input-m-glass">
+										<select name="sl-language" id="ft-sl-language">
+											<option>English</option>
+											<option>French</option>
+											<option>Italino</option>
+										</select>
+									</div>
+								</fieldset>
+							</form>
+						</li>
+					</ul>
+				</div>
 			</li>
-
 		</ul>
 	</nav>
 	<div class="layout-inner-wrap">
