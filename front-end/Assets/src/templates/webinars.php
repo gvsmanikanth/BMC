@@ -185,7 +185,7 @@ var bmcWebinarsData = {
 
 <section class="bg-white listCompLoader p2">
 	<div class="layout-inner-wrap py text-center">
-		<img src="http://media.cms.bmc.com/designimages/loading-indicator.gif" />
+		<img src="https://www.bmc.com/etc/clientlibs/bmc/head/loading-indicator.gif" />
 		<p>Loading...</p>
 	</div>
 </section>
