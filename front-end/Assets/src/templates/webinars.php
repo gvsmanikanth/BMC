@@ -46,22 +46,22 @@ var bmcWebinarsData = {
 			}, {
 				"id" : 1,
 				"name" : "Tradeshow",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/logos/bmc/Tradeshow_White.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-platform.png",
 				"cssClass" : "type1"	
 			}, {
 				"id" : 2,
 				"name" : "Seminar",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/logos/bmc/Seminars_White.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-cloud-cost.png",
 				"cssClass" : "type2"
 			}, {
 				"id" : 3,
 				"name" : "Live Webinar",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/logos/bmc/Webinars_White.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-discovery.png",
 				"cssClass" : "type3"
 			}, {
 				"id" : 4,
 				"name" : "User Group Event",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/logos/bmc/UserGroups_White.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-discovery.png",
 				"cssClass" : "type4"
 			}]
 		},
@@ -99,7 +99,7 @@ var bmcWebinarsData = {
 					{
 		        		"id" : 2,
 		        		"name" : "BMC Day",
-		        		"type" : [2],
+		        		"type" : [3],
 		        		"month" : [2],
 		        		"date" : "May, 9",
 		        		"location" : [1],
@@ -111,7 +111,7 @@ var bmcWebinarsData = {
 					{
 		        		"id" : 3,
 		        		"name" : "Control-M Tag",
-		        		"type" : [4],
+		        		"type" : [3],
 		        		"month" : [2],
 		        		"date" : "May, 10",
 		        		"location" : [3],
@@ -125,7 +125,7 @@ var bmcWebinarsData = {
 					{
 		        		"id" : 4,
 		        		"name" : "BMC Day",
-		        		"type" : [2],
+		        		"type" : [3],
 		        		"month" : [3],
 		        		"date" : "Jun, 5",
 		        		"location" : [2],
@@ -189,6 +189,7 @@ var bmcWebinarsData = {
 		<p>Loading...</p>
 	</div>
 </section>
+
 <section class="bg-approxSnow filterListContainer webinar-filters">
 	<div class="layout-inner-wrap">
 		<div class="filters">

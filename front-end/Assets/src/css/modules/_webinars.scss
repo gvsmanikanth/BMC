@@ -17,6 +17,9 @@
             }
         }
     }
+    .filters{
+        background: transparent;
+    }
 }
 
 // .webinars-cards {
@@ -111,7 +114,37 @@
 //         }
 //     }
 // }
+.webinars-cards {
+    .landingPage-product-list{
+        padding: 2rem 0;
+        .card{
+            padding-bottom: 60px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            .event-date{
+                margin-bottom: 0;
+                font-size: 14px;
+                color: #333;
+                font-weight: 600;
+            }
+        }
+        .card-content{
+            min-height: initial;
+            padding: 10px 0;
+            hr{
+                margin-bottom: 15px;
+            }
+        }
+        .sort-wrap {
+            margin-bottom: 30px;
+        }
+        
+    }    
 
+}
 .webinars-modal-details {
     display: none;
     .modal-logo-section {

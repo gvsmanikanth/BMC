@@ -16,19 +16,19 @@
 			var itemHTML = ''
 			
 			if(item.isModal){
-				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3"><a href="#'+item.id+'"  class="modal-inline guttor-width" style="height:100%">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a href="#'+item.id+'"  class="modal-inline guttor-width" style="height:100%">';
 				}
 			else{
-				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3"><a style="height:100%" href="' + item.url + '">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a style="height:100%"  class="guttor-width" href="' + item.url + '">';
 			}
 			
 			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
 			
-			itemHTML += '"><h5>' + self.getName("type", item)+'</h5>';
+			itemHTML += '"><div class=""><h5>' + self.getName("type", item)+'</h5><p class="event-date">' +item.date  + '</p></div>';
 			
 			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
 			
-			itemHTML+= '<p class="event-date">' +item.date  + '</p>';
+			itemHTML+= '<div class="card-content"><hr>';
 			
 			if(item["location-city"] != "")
 				itemHTML+= '<p class="event-location">' +  item["location-city"] +', ' +self.getName("location", item)+'</p>';
@@ -36,9 +36,9 @@
 				itemHTML+= '<p class="event-location">' + self.getName("location", item)+'</p>';
 			
 			//itemHTML+= '<p class="event-location">' +   + '</p>';
-			itemHTML+= '<h5 class="title">'+ item.name +'</h5>';
+			itemHTML+= '<h2 class="title">'+ item.name +'</h2></div>';
 					
-			itemHTML += '</div></a></div>';
+			itemHTML += '<div class="card-footer"><span class="learn-more">Register Now</span></div></div></a></div>';
 			
 			return itemHTML;
 		};
@@ -84,7 +84,7 @@
 						var arrMonths = self.filterListItemsBaseedOnCriteria(data,{month:j});
 						if(arrMonths.length > 0){
 							
-							htmlCardMarkup +="<h2>"+months[0].values[j].name+" </h2>";
+							htmlCardMarkup +="<div class='sort-wrap'><h2 class='h2-variation-1'>"+months[0].values[j].name+" </h2>";
 							htmlCardMarkup +="<div class='flex-wrap' >";
 							for(var i=0; i<arrMonths.length; i++){
 								var item = arrMonths[i];
@@ -94,7 +94,7 @@
 									htmlCardMarkup += htmlMarkup;
 								}
 							}
-							htmlCardMarkup += '</div>';
+							htmlCardMarkup += '</div></div>';
 						}
 					}
 				}
