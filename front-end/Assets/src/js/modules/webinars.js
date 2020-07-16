@@ -16,17 +16,17 @@
 			var itemHTML = ''
 			
 			if(item.isModal){
-				itemHTML = '<div class="flex-item js-ehItem"><a href="#'+item.id+'"  class="modal-inline" style="height:100%">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3"><a href="#'+item.id+'"  class="modal-inline guttor-width" style="height:100%">';
 				}
 			else{
-				itemHTML = '<div class="flex-item js-ehItem"><a style="height:100%" href="' + item.url + '">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3"><a style="height:100%" href="' + item.url + '">';
 			}
 			
-			itemHTML += '<div class=""><p class="event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
+			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
 			
-			itemHTML += '">' + self.getName("type", item)+'<span class="iconHolder">';
+			itemHTML += '"><h5>' + self.getName("type", item)+'</h5>';
 			
-			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></span></p>';
+			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
 			
 			itemHTML+= '<p class="event-date">' +item.date  + '</p>';
 			
@@ -83,7 +83,9 @@
 					for (var j=1; j<=months[0].values.length; j++){
 						var arrMonths = self.filterListItemsBaseedOnCriteria(data,{month:j});
 						if(arrMonths.length > 0){
-							htmlCardMarkup +="<h2>"+months[0].values[j].name+" </h2>"
+							
+							htmlCardMarkup +="<h2>"+months[0].values[j].name+" </h2>";
+							htmlCardMarkup +="<div class='flex-wrap' >";
 							for(var i=0; i<arrMonths.length; i++){
 								var item = arrMonths[i];
 								if (item) {
@@ -92,6 +94,7 @@
 									htmlCardMarkup += htmlMarkup;
 								}
 							}
+							htmlCardMarkup += '</div>';
 						}
 					}
 				}
@@ -113,7 +116,7 @@
 						strHTMLMarkup += '<div class="list-count text-center"><h5>'+(startIndex+1) +" - " + (startIndex + displayCount) + " of " + data.length + '<h5></div>';	
 					}	
 				}
-				strHTMLMarkup += '<div class="cards-4-col js-eh">';
+				strHTMLMarkup += '<div class="landingPage-product-list">';
 				strHTMLMarkup += htmlCardMarkup;
 				strHTMLMarkup += '</div>';
 				return strHTMLMarkup;

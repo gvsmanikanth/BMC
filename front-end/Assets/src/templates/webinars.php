@@ -183,13 +183,13 @@ var bmcWebinarsData = {
 
 
 
-<section class="bg-white listCompLoader p2">
+<section class="bg-approxSnow listCompLoader p2">
 	<div class="layout-inner-wrap py text-center">
 		<img src="https://www.bmc.com/etc/clientlibs/bmc/head/loading-indicator.gif" />
 		<p>Loading...</p>
 	</div>
 </section>
-<section class="bg-white filterListContainer webinar-filters">
+<section class="bg-approxSnow filterListContainer webinar-filters">
 	<div class="layout-inner-wrap">
 		<div class="filters">
 			<form action="#">
@@ -201,7 +201,7 @@ var bmcWebinarsData = {
 				</fieldset>
 			</form>
 		</div>
-		<div class="cards-wrapper webinars-cards"></div>
+		<div class="cards-wrapper webinars-cards "></div>
 	</div>
 </section>
 

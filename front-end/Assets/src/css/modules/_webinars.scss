@@ -19,98 +19,98 @@
     }
 }
 
-.webinars-cards {
-    @extend %cards-wrap;
-    h2 {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        text-align: left;
-        border-bottom: 1px solid #cacaca;
-        padding: .5rem;
-    }
-    .flex-justify-center {
-        justify-content: center;
-    }
-    .flex-item {
-        a {
-            display: block;
-            word-wrap: break-word;
-        }
-        p {
-            padding-left: 1em;
-            padding-right: 1em;
-            font-size: .85em;
-            --color: color(abbey);
-            line-height: 1.6em;
-        }
-        .event-type {
-            background-color: color(lightGrey);
-            padding-top: .5em;
-            padding-bottom: .5em;
-            min-height: 36px;
-            line-height: 36px;
-            .iconHolder {
-                float: right;
-                margin-top: 0.2em;
-            }
-            img {
-                width: 30px;
-                float: right;
-                margin-left: .5em;
-            }
-            &.type1 {
-                background-color: #1CA4D8;
-                color: white;
-            }
-            &.type2 {
-                background-color: #FF4F01;
-                color: white;
-            }
-            &.type3 {
-                background-color: #00A79F;
-                color: white;
-            }
-            &.type4 {
-                background-color: #00A79F;
-                color: white;
-            }
-            &.type5 {
-                background-color: #3980b2;
-                color: white;
-            }
-            &.type6 {
-                background-color: #d7df0f;
-                color: white;
-            }
-            &.type7 {
-                background-color: #414042;
-                color: white;
-            }
-        }
-        div {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        h5 {
-            font-size: 1em;
-            line-height: 1.6em;
-            color: #046e96;
-            margin: 0px;
-            font-weight: 400;
-            padding: 1em;
-        }
-        .event-date {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-        }
-        .event-location {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-        }
-    }
-}
+// .webinars-cards {
+//     @extend %cards-wrap;
+//     h2 {
+//         margin-left: 1rem;
+//         margin-right: 1rem;
+//         text-align: left;
+//         border-bottom: 1px solid #cacaca;
+//         padding: .5rem;
+//     }
+//     .flex-justify-center {
+//         justify-content: center;
+//     }
+//     .flex-item {
+//         a {
+//             display: block;
+//             word-wrap: break-word;
+//         }
+//         p {
+//             padding-left: 1em;
+//             padding-right: 1em;
+//             font-size: .85em;
+//             --color: color(abbey);
+//             line-height: 1.6em;
+//         }
+//         .event-type {
+//             background-color: color(lightGrey);
+//             padding-top: .5em;
+//             padding-bottom: .5em;
+//             min-height: 36px;
+//             line-height: 36px;
+//             .iconHolder {
+//                 float: right;
+//                 margin-top: 0.2em;
+//             }
+//             img {
+//                 width: 30px;
+//                 float: right;
+//                 margin-left: .5em;
+//             }
+//             &.type1 {
+//                 background-color: #1CA4D8;
+//                 color: white;
+//             }
+//             &.type2 {
+//                 background-color: #FF4F01;
+//                 color: white;
+//             }
+//             &.type3 {
+//                 background-color: #00A79F;
+//                 color: white;
+//             }
+//             &.type4 {
+//                 background-color: #00A79F;
+//                 color: white;
+//             }
+//             &.type5 {
+//                 background-color: #3980b2;
+//                 color: white;
+//             }
+//             &.type6 {
+//                 background-color: #d7df0f;
+//                 color: white;
+//             }
+//             &.type7 {
+//                 background-color: #414042;
+//                 color: white;
+//             }
+//         }
+//         div {
+//             height: 100%;
+//             display: flex;
+//             flex-direction: column;
+//         }
+//         h5 {
+//             font-size: 1em;
+//             line-height: 1.6em;
+//             color: #046e96;
+//             margin: 0px;
+//             font-weight: 400;
+//             padding: 1em;
+//         }
+//         .event-date {
+//             margin-bottom: 0.5rem;
+//             padding-left: 1rem;
+//         }
+//         .event-location {
+//             font-weight: bold;
+//             margin-bottom: 0.5rem;
+//             padding-left: 1rem;
+//         }
+//     }
+// }
 
 .webinars-modal-details {
     display: none;
