@@ -89,30 +89,32 @@
 				</ul>
 			</li>
 			<li class="nav-tertiary-col">
-				<div>				
+				<div class="searchLanguage">
 					<ul class="nav-supplemental meta">
 						<li>
 							<form action="/search/" class="search-site">
+							    <h4>Search BMC</h4>
 								<fieldset>
-									<label>Search BMC</label>
 									<div class="search-input-m-glass">
 										<input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
 										<button></button>
 									</div>
 								</fieldset>
 							</form>
-							<form id="footer-country_dropdown">
-								<fieldset>
-									<label>Choose your language</label>
-									<div class="search-input-m-glass">
-										<select name="sl-language" id="ft-sl-language">
-											<option>English</option>
-											<option>French</option>
-											<option>Italino</option>
-										</select>
-									</div>
-								</fieldset>
-							</form>
+							<div id="footer-country_dropdown">
+								<h4>Choose your language</h4>
+								<div class="search-input-m-glass">
+									<select name="sl-language" id="ft-sl-language" onchange="location=this.value">
+										<option value="https://www.bmc.com">English</option>
+										<option value="https://www.bmcsoftware.fr">French</option>
+										<option value="https://www.bmcsoftware.de">German</option>
+										<option value="https://www.bmcsoftware.cn">Chinese</option>
+										<option value="https://www.bmcsoftware.es">Spanish</option>
+										<option value="https://www.bmcsoftware.pt">Portuguese</option>
+										<option value="https://www.bmcsoftware.jp">Japanese</option>
+									</select>
+								</div>
+							<div>
 						</li>
 					</ul>
 				</div>

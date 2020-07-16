@@ -34,10 +34,10 @@
 				}			
 			}
 			//added for Language Select box start
-			.nav-tertiary-col:last-child{
-				>div{
+			.searchLanguage{				
 					border-left:2px solid #a7a9ac;
 					padding-left:2em;
+					
 					@media (max-width: $break-sm) {
 						border-left:none;
 						padding-left:0em;
@@ -51,7 +51,7 @@
 					}}					
 				
 				#footer-country_dropdown, form{
-					padding:.8em 0em;					
+					padding:.2em 0em .8em 0em;					
 						.decorator-select {
 							background: transparent;
 							border: 2px solid #a7a9ac;
@@ -86,15 +86,7 @@
 								position: relative;
 								width: 100%;
 								outline: none;
-								&:focus{
-									border:none;
-									outline:none;
-								}
-								option, option:focus{
-									color:#fff;
-									border:none;
-									outline:none;
-								}
+								
 							}
 							select::-ms-expand {
 								border: none;
@@ -103,13 +95,16 @@
 							select::-ms-value {background: none; color:#fff;}
 						}
 				}
-				label{
+				h4{
+					border-bottom:0px;
+					padding-top:1em;
+					padding-bottom:0px;
 					color:#a7a9ac;
 					font-size: 15px;
 					margin-bottom:5px;
 					font-weight:bold;
 				}
-			}
+			
 			//added for Language Select box End
 			}
 		}
