@@ -189,7 +189,7 @@ var bmcWebinarsData = {
 		<p>Loading...</p>
 	</div>
 </section>
-<section class="bg-white filterListContainer event-filters">
+<section class="bg-white filterListContainer webinar-filters">
 	<div class="layout-inner-wrap">
 		<div class="filters">
 			<form action="#">
@@ -201,11 +201,11 @@ var bmcWebinarsData = {
 				</fieldset>
 			</form>
 		</div>
-		<div class="cards-wrapper events-cards"></div>
+		<div class="cards-wrapper webinars-cards"></div>
 	</div>
 </section>
 
-<section class="section bg-white events-modal-details" id="">
+<section class="section bg-white webinars-modal-details" id="">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">Tradshow</p>
@@ -220,7 +220,7 @@ var bmcWebinarsData = {
 		</div>
 	</div>
 </section>
-<section class="section bg-white events-modal-details" id="1">
+<section class="section bg-white webinars-modal-details" id="1">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">	
@@ -245,7 +245,7 @@ var bmcWebinarsData = {
 		</div>
 	</div>
 </section>
-<section class="section bg-white events-modal-details" id="2">
+<section class="section bg-white webinars-modal-details" id="2">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">User Events, Tradeshows, Conferences</p>
@@ -268,7 +268,7 @@ var bmcWebinarsData = {
 		</div>
 	</div>
 </section>
-<section class="section bg-white events-modal-details" id="3">
+<section class="section bg-white webinars-modal-details" id="3">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">Seminars</p>
@@ -296,7 +296,7 @@ var bmcWebinarsData = {
 		</div>
 	</div>
 </section>
-<section class="section bg-white events-modal-details" id="5">
+<section class="section bg-white webinars-modal-details" id="5">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">Seminars</p>
@@ -320,7 +320,7 @@ var bmcWebinarsData = {
 	</div>
 </section>
 
-<section class="section bg-white events-modal-details" id="6">
+<section class="section bg-white webinars-modal-details" id="6">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">User Events, Tradeshows, Conferences</p>
@@ -343,7 +343,7 @@ var bmcWebinarsData = {
 		</div>
 	</div>
 </section>
-<section class="section bg-white events-modal-details" id="7">
+<section class="section bg-white webinars-modal-details" id="7">
 	<div class="lg-flex section p2">
 		<div class="flex-auto">
 			<p class="-sm mb0">User Events, Tradeshows, Conferences</p>
