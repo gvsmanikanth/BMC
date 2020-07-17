@@ -34,16 +34,30 @@
 				}			
 			}
 			//added for Language Select box start
-			.searchLanguage{				
-					border-left:2px solid #a7a9ac;
-					padding-left:2em;
-					
-					@media (max-width: $break-sm) {
+			.searchLanguage{
+					border-left:none;
+					padding-left:0em;
+					border-top:2px solid #a7a9ac;
+					margin-top:2em;
+
+					@include media(breakpointSmall) {
 						border-left:none;
 						padding-left:0em;
+						border-top:none;
+						margin-top:1em;
 					}
+					@include media(breakpointLarge) {
+						margin-top:0em;
+					}
+					@include media(breakpointExtraLarge) {
+						border-left:2px solid #a7a9ac;
+						padding-left:2em;
+						border-top:none;
+						margin-top:0em;
+					}
+					
 					@media (max-width:$break-md){
-						margin-top:2em;
+						//margin-top:2em;
 					}
 					li{
 					@include media(breakpointMedium) {
