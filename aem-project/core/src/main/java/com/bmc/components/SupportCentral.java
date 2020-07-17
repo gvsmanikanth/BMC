@@ -111,12 +111,14 @@ public class SupportCentral extends WCMUsePojo implements UserInfoProvider_Reque
 
     @Override
     public void activate() throws Exception {
+    	logger.info("Fetching OSGi configuration ...");
         service = getSlingScriptHelper().getService(SupportCentralService.class);
         allCasesUrl = service.getAllCasesUrl();
         newCaseUrl = service.getNewCaseUrl();
         caseMgtmUrl= service.getCaseMgtmUrl();
         documentationUrl= service.getDocumentationUrl();
         productDownloadUrl= service.getProductDownloadUrl();
+    	logger.info("Fetching productDownloadUrl OSGi configuration ...{}",productDownloadUrl);
         askCommunitiesUrl =service.getAskCommunitiesUrl();
         supportVideosUrl = service.getSupportVideosUrl();
         supportedProductUrl= service.getSupportedProductUrl();

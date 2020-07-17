@@ -4,6 +4,11 @@ import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.commons.osgi.PropertiesUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.bmc.components.SupportCentral;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +19,8 @@ import java.util.Map;
         immediate = true)
 @Service(value=SupportCentralService.class)
 public class SupportCentralService {
+
+    private static final Logger logger = LoggerFactory.getLogger(SupportCentralService.class);
 
     public String getNewCaseUrl() {
         return newCaseUrl;
@@ -181,6 +188,8 @@ public class SupportCentralService {
     
     @Activate
     public void activate(Map<String, String> config) {
+    	logger.info("Service Fetching OSGi configuration ...");
+
         newCaseUrl = PropertiesUtil.toString(config.get("newCaseUrl"), "");
         allCasesUrl = PropertiesUtil.toString(config.get("allCasesUrl"), "");
         apiBaseUrl = PropertiesUtil.toString(config.get("apiBaseUrl"), "");
@@ -195,6 +204,8 @@ public class SupportCentralService {
         caseMgtmUrl= PropertiesUtil.toString(config.get("caseMgtmUrl"), "");
         documentationUrl=PropertiesUtil.toString(config.get("documentationUrl"), "");
         productDownloadUrl=PropertiesUtil.toString(config.get("productDownloadUrl"), "");
+    	logger.info("Service Fetching productDownloadUrl OSGi configuration {}...",productDownloadUrl);
+
         askCommunitiesUrl =PropertiesUtil.toString(config.get("askCommunitiesUrl"), "");
         supportVideosUrl =PropertiesUtil.toString(config.get("supportVideosUrl"), "");
         supportedProductUrl=PropertiesUtil.toString(config.get("supportedProductUrl"), "");

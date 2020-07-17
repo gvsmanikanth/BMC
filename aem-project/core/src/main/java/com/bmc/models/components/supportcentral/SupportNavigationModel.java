@@ -9,9 +9,12 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import com.bmc.util.ValueMapFactory;
+
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
+
 import javax.jcr.Node;
 
 import org.apache.sling.api.resource.Resource;
@@ -38,6 +41,8 @@ import org.slf4j.Logger;
  * Author : samiksha_anvekar@bmc.com
  */
 public class SupportNavigationModel extends WCMUsePojo implements MultifieldDataProvider,UrlResolver {
+
+    private static final Logger logger = LoggerFactory.getLogger(SupportNavigationModel.class);
 
 	private ResourceResolver resourceResolver;
 	private Resource resource;
@@ -74,7 +79,7 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
 	private String templatePath = "/conf/bmc/settings/wcm/templates/support-central/structure/jcr:content/root/supportcentral_heade";
     @Override
     public void activate() throws Exception {
-    	
+    	logger.info("Fetching support navigation details "+ getResource());
     	resourceResolver = getResourceResolver();
     	 try {
     		 	Node currentNode = getResource().adaptTo(Node.class);     		 	
@@ -91,6 +96,8 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
                  }
                  else if(currentNode.getPath().toString().equals("/conf/bmc/settings/wcm/templates/support-central-personalised/structure/jcr:content/root/supportcentral_heade"))
                  {
+                 	logger.info("Creating support navigation details for personalised support central"+ templatePath);
+
                 	 this.resource = resourceResolver.getResource(templatePath);		   	    			
                  }
    	    		 
