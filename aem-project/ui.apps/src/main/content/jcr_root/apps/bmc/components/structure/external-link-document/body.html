@@ -9,8 +9,7 @@
     </sly>
     <sly data-sly-test="${!properties.documentTitle}">
         <sly data-sly-test.documentTitle="${properties.pageTitle}"/>
-    </sly>
-
+    </sly>      
 <sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || ('http:' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
@@ -45,8 +44,9 @@
 							</div>
 							<div class="md-flex full-bleed-two-column">
 								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">									
-										<div data-sly-resource="${'experiencefragment' @ resourceType='cq/experience-fragments/editor/components/experiencefragment'}"></div>                                   
-								</div>
+
+                                <sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
+                                </div>                              
 								<div class="flex-item col col-12">
 									<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
 										<embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;">
