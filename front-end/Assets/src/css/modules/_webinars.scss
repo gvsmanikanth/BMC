@@ -118,7 +118,7 @@
     .landingPage-product-list{
         padding: 2rem 0;
         .card{
-            padding-bottom: 60px;
+            padding-bottom: 50px;
         }
         .card-header {
             display: flex;
@@ -136,6 +136,9 @@
             padding: 10px 0;
             hr{
                 margin-bottom: 15px;
+            }
+            h2{
+                margin-bottom: 0;
             }
         }
         .sort-wrap {

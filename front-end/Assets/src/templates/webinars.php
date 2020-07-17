@@ -46,22 +46,22 @@ var bmcWebinarsData = {
 			}, {
 				"id" : 1,
 				"name" : "Tradeshow",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-platform.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
 				"cssClass" : "type1"	
 			}, {
 				"id" : 2,
 				"name" : "Seminar",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-cloud-cost.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
 				"cssClass" : "type2"
 			}, {
 				"id" : 3,
 				"name" : "Live Webinar",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-discovery.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
 				"cssClass" : "type3"
 			}, {
 				"id" : 4,
 				"name" : "User Group Event",
-				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-helix-discovery.png",
+				"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
 				"cssClass" : "type4"
 			}]
 		},
@@ -181,7 +181,21 @@ var bmcWebinarsData = {
 
 </script>
 
+<div class="cmp cmp-image aem-GridColumn aem-GridColumn--default--12"><section class="wallpapered bar header-brand" data-wallpaper-options='{"source":"//www.bmc.com/content/bmc/us/en/events/jcr%3acontent/root/responsivegrid/header_brand.img.jpg"}'>
+    <div class="offset-wrapper">
+        <div class="layout-inner-wrap">
+            <div class="offset-hero-medium banner -ribbon">
+                <div class="offset-hero-medium-inner-wrap">
+                    
+                    <h1>Upcoming Webinars</h1>                  
 
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
 
 <section class="bg-approxSnow listCompLoader p2">
 	<div class="layout-inner-wrap py text-center">
