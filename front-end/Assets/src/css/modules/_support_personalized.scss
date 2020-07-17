@@ -1,0 +1,25 @@
+// Module for Personalized Support Central (PSC is abbreviature) 
+
+.support-search.psc {
+	fieldset {
+		width: 93%;
+	}
+
+	
+}
+
+@media (max-width: 700px) {	
+	.support-search.psc {
+		fieldset {
+			width: 86%;
+		}
+	}	
+}
+
+@media (min-width: 440px) {
+	.support-search.psc {
+		.CoveoSearchInterface .CoveoSearchbox {
+			margin-right: 0px;
+		}
+	}
+}
