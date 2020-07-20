@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
 
 import com.bmc.mixins.UserInfoProvider;
 import com.bmc.models.UserInfo;
-import com.bmc.services.SupportCentralService;
+import com.bmc.services.NewSupportCentralService;
 import com.google.common.net.HttpHeaders;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -36,7 +36,7 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 			.getLogger(SupportCentralHomepageServlet.class);
 
 	@Reference
-	private SupportCentralService service;
+	private NewSupportCentralService service;
 
 	@Override
 	protected void doGet(SlingHttpServletRequest request,
