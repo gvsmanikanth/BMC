@@ -120,6 +120,7 @@ public class NewSupportCentral extends WCMUsePojo implements UserInfoProvider_Re
         productDownloadUrl= service.getProductDownloadUrl();
     	logger.info("Fetching productDownloadUrl OSGi configuration ...{}",productDownloadUrl);
         askCommunitiesUrl =service.getAskCommunitiesUrl();
+    	logger.info("Fetching askCommunitiesUrl OSGi configuration ...{}",askCommunitiesUrl);
         supportVideosUrl = service.getSupportVideosUrl();
         supportedProductUrl= service.getSupportedProductUrl();
         productCompatiblityUrl=service.getProductCompatiblityUrl();
@@ -130,6 +131,7 @@ public class NewSupportCentral extends WCMUsePojo implements UserInfoProvider_Re
         bmcHelixServicesUrl = service.getBmcHelixServicesUrl();
         mainframeServicesUrl = service.getMainframeServicesUrl();
         implServicesUrl = service.getImplServicesUrl();
+    	logger.info("Fetching implServicesUrl OSGi configuration ...{}",implServicesUrl);
         managedServicesUrl = service.getManagedServicesUrl();
         enhancedSupportServicesUrl = service.getEnhancedSupportServicesUrl();
     }

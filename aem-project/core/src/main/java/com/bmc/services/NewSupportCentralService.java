@@ -220,7 +220,8 @@ public class NewSupportCentralService {
         implServicesUrl = PropertiesUtil.toString(config.get("implServicesUrl"), "");
         managedServicesUrl = PropertiesUtil.toString(config.get("managedServicesUrl"), "");
         enhancedSupportServicesUrl = PropertiesUtil.toString(config.get("enhancedSupportServicesUrl"), "");
-        
+    	logger.info("Service Fetching enhancedSupportServicesUrl OSGi configuration {}...",enhancedSupportServicesUrl);
+
         personalisationApiOauthUser = PropertiesUtil.toString(config.get("personalisationApiOauthUser"), "");
         personalisationApiOauthPass = PropertiesUtil.toString(config.get("personalisationApiOauthPass"), "");
         personalisationApiUser = PropertiesUtil.toString(config.get("personalisationApiUser"), "");
@@ -231,6 +232,9 @@ public class NewSupportCentralService {
         productCount = PropertiesUtil.toString(config.get("productCount"), "");
         communityCount = PropertiesUtil.toString(config.get("communityCount"), "");
         
+    	logger.info("Service Fetching supportCentralPersonalisationUrl OSGi configuration {}...",supportCentralPersonalisationUrl);
+    	logger.info("Service Fetching productCount OSGi configuration {}...",productCount);
+
         		
     }
 
