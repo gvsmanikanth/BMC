@@ -27,7 +27,14 @@ public class ContainerReportDataItem {
 	private String Translation_Status;
 	private String Ic_weighting;
 	private String Last_replication_action;
+	private String displayType;
 	
+	public String getDisplayType() {
+		return displayType;
+	}
+	public void setDisplayType(String displayType) {
+		this.displayType = displayType;
+	}
 	/*
 	 * Getters and Setters for all data attributes
 	 */
