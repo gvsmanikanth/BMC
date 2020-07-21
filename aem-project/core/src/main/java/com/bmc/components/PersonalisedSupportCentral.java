@@ -7,16 +7,15 @@ import org.slf4j.LoggerFactory;
 import com.adobe.cq.sightly.WCMUsePojo;
 import com.bmc.mixins.UserInfoProvider_RequestCached;
 import com.bmc.models.UserInfo;
-import com.bmc.services.NewSupportCentralService;
-import com.bmc.services.SupportCentralService;
+import com.bmc.services.PersonalisedSupportCentralService;
 
 @Component (
-        label = "Support Central Component",
+        label = "Personalised Support Central Component",
         description = "Provides features for the Support Central section",
         immediate = true)
-public class NewSupportCentral extends WCMUsePojo implements UserInfoProvider_RequestCached {
+public class PersonalisedSupportCentral extends WCMUsePojo implements UserInfoProvider_RequestCached {
 
-    private static final Logger logger = LoggerFactory.getLogger(NewSupportCentral.class);
+    private static final Logger logger = LoggerFactory.getLogger(PersonalisedSupportCentral.class);
 
     public String getNewCaseUrl() {
         return newCaseUrl;
@@ -107,12 +106,12 @@ public class NewSupportCentral extends WCMUsePojo implements UserInfoProvider_Re
     private String managedServicesUrl;
     private String enhancedSupportServicesUrl;
       
-    NewSupportCentralService service;
+    PersonalisedSupportCentralService service;
 
     @Override
     public void activate() throws Exception {
     	logger.info("Fetching OSGi configuration ...");
-        service = getSlingScriptHelper().getService(NewSupportCentralService.class);
+        service = getSlingScriptHelper().getService(PersonalisedSupportCentralService.class);
         allCasesUrl = service.getAllCasesUrl();
         newCaseUrl = service.getNewCaseUrl();
         caseMgtmUrl= service.getCaseMgtmUrl();

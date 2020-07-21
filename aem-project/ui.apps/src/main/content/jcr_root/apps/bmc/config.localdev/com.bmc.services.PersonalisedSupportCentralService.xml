@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+		  jcr:primaryType="sling:OsgiConfig"
+		  newCaseUrl="https://sfaqa-bmcsites.cs22.force.com/casemgmt/apex/CreateNewCase"
+		  allCasesUrl="https://sfaqa-bmcsites.cs22.force.com/casemgmt/sc_CommunityHome"
+		  apiBaseUrl="https://ws-uat.bmc.com"
+		  apiUser="clicKu5eR"
+		  apiPass="c1icKU5Er"
+		  apiPath="/rest/BMC_SC/Contact/"
+		  searchPageUrl="https://sfaqa-bmcsites.cs22.force.com/casemgmt/sc_CoveoSearch"
+		  supportCentralUrl="https://sfaqa-bmcsites.cs22.force.com/casemgmt"
+		  supportCoveoAccessToken="3e2bedf9-5685-4cef-8b00-ee4e8704481c"
+		  caseMgtmUrl="https://stage.cms.bmc.com/support/resources/issue-defect-management.html"
+		  askCommunitiesUrl = "https://communities.bmc.com/welcome"
+		  productDownloadUrl="https://stage.cms.bmc.com/available/epd.html"
+		  documentationUrl="https://docs.bmc.com/docs/dashboard.action"
+		  productSupportUrl ="https://docs.bmc.com/docs/productinfo"
+		  trainingUrl="https://stage.cms.bmc.com/education/training-and-certification.html"
+		  productCompatiblityUrl = "https://docs.bmc.com/docs/modeler/#/"
+		  supportedProductUrl="https://stage.cms.bmc.com/available/supported-product-az-list.html"
+		  supportVideosUrl = "https://communities.bmc.com/community/support/blog/2018/09/17/support-videos"
+		  servicesConsultingUrl = "https://stage.cms.bmc.com/it-services/it-consulting-services.html"
+  		strategicServicesUrl = "https://stage.cms.bmc.com/it-services/strategic-services.html"
+		  bmcHelixServicesUrl = "https://stage.cms.bmc.com/it-services/bmc-helix-services.html"
+		  mainframeServicesUrl = "https://stage.cms.bmc.com/it-services/mainframe-services-rsm-partners.html"
+		  implServicesUrl = "https://stage.cms.bmc.com/it-services/implementation-services.html"
+		  managedServicesUrl = "https://stage.cms.bmc.com/it-services/managed-services.html"
+		  enhancedSupportServicesUrl = "https://stage.cms.bmc.com/it-services/enhanced-support-services.html"
+		  personalisationApiOauthUser = "authprovider"
+    	  personalisationApiOauthPass = "bmcT0k3n"
+    	  personalisationApiUser = "bmc"
+    	  personalisationApiPass = "d$0509v"
+    	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
+    	  oauthUrl="/oauth/token"
+    	  popularProductUrl="/v1/personalisation/contents"
+    	  productCount = "5"
+    	  communityCount = "10"
+/>
+
+		<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"-->
+          <!--jcr:primaryType="sling:OsgiConfig"-->
+          <!--newCaseUrl="https://bmcsites.force.com/casemgmt/apex/CreateNewCase"-->
+          <!--allCasesUrl="https://bmcsites.force.com/casemgmt/sc_CommunityHome"-->
+          <!--apiBaseUrl="https://ws-dev.bmc.com"-->
+          <!--apiUser="clicKu5er"-->
+          <!--apiPass="c1icKU5Er"-->
+          <!--apiPath="/rest/BMC_SC/Contact/"-->
+	      <!--searchPageUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CoveoSearch"-->
+   	      <!--supportCentralUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt"-->
+    	  <!--supportCoveoAccessToken="3e2bedf9-5685-4cef-8b00-ee4e8704481c"-->
+<!--/>-->

@@ -14,13 +14,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component(
-        label = "Support Central Service",
+        label = "Personalised Support Central Service",
         description = "Helper Service for Support Central",
         immediate = true)
-@Service(value=NewSupportCentralService.class)
-public class NewSupportCentralService {
+@Service(value=PersonalisedSupportCentralService.class)
+public class PersonalisedSupportCentralService {
 
-    private static final Logger logger = LoggerFactory.getLogger(NewSupportCentralService.class);
+    private static final Logger logger = LoggerFactory.getLogger(PersonalisedSupportCentralService.class);
 
     public String getNewCaseUrl() {
         return newCaseUrl;
