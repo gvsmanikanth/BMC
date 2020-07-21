@@ -90,7 +90,7 @@
 								-webkit-appearance: none;
 								-moz-appearance: none;
 								-o-appearance: none;
-								background: #414042;
+								background:transparent;
 								border: none;
 								box-sizing: border-box;
 								color: #fff;
@@ -100,13 +100,17 @@
 								position: relative;
 								width: 100%;
 								outline: none;
-								
+								option{
+									color:#383233;
+									background-color: #fff;
+								}
 							}
 							select::-ms-expand {
 								border: none;
 								display: none;
 							}					
-							select::-ms-value {background: none; color:#fff;}
+							select::-ms-value {background: transparent; color:#fff;}
+							select option::-ms-value { color:#383233;}
 						}
 				}
 				h4{
@@ -123,7 +127,7 @@
 			}
 		}
 	}
-}
+}	
 
 .footer-logo {
 	@include svg-image(Tagline-Logo-Lockup); 
