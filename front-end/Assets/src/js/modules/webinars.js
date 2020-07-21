@@ -16,10 +16,10 @@
 			var itemHTML = ''
 			
 			if(item.isModal){
-				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a href="#'+item.id+'"  class="modal-inline guttor-width" style="height:100%">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a id="webinar-'+ item.id +'" href="#'+item.id+'"  class="modal-inline guttor-width" style="height:100%">';
 				}
 			else{
-				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a style="height:100%"  class="guttor-width" href="' + item.url + '">';
+				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a id="webinar-'+ item.id +'" style="height:100%"  class="guttor-width" href="' + item.url + '">';
 			}
 			
 			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
@@ -146,7 +146,17 @@
 		// The render function will show the appropriate content of out page.
 		$(window).on('hashchange', function() {
 			if (isListPage()) {
-				filterListObject.render(decodeURIComponent(window.location.hash));
+				var pageUrl = decodeURIComponent(window.location.hash);
+				filterListObject.render(pageUrl);				
+				var webinarId = pageUrl.split('#details/');
+				if(webinarId.length > 1){
+					webinarId = webinarId[1].trim();
+					setTimeout(function(){
+						$("#webinar-" + webinarId).trigger('click');
+					},1500);
+    					
+				}
+				
 			};
 		});
 		
