@@ -14,8 +14,8 @@
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
 <sly data-sly-test="${properties.displayType == 'inline' && (('https' in documentLink)|| ('/content/dam' in documentLink))}">
-	<sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
-
+<sly data-sly-include="/apps/bmc/components/structure/page/customheaderlibs.html" />
+<sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
     <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
         <div class="layout-inner-wrap flex">
             <h1>
@@ -44,16 +44,19 @@
 							</div>
 							<div class="md-flex full-bleed-two-column">
 								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">									
-
                                 <sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
-                                </div>                              
+                                </div>                                   
 								<div class="flex-item col col-12">
-									<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
+                                <div data-sly-test="${wcmmode.edit}" id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
+                                	<div>Document Link : ${documentLink}</div>
+									<embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;">
+                                </div>  
+									<div data-sly-test="${wcmmode.disabled}" id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
 										<embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;">
 									</div>
 								</div>
 							</div>
-			
+
 			
 
 			<script>

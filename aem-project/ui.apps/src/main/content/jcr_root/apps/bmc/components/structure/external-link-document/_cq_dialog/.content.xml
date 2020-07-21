@@ -343,7 +343,7 @@
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                                 defaultValue="external-document"
                                                 name="./linkAbstractor"
-                                                value="external-document"/>
+                                                value="external-document"/>                                           
                                             <documentDisplayType
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
