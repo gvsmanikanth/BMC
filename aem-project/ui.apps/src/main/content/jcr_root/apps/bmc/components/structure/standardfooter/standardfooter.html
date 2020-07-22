@@ -10,9 +10,16 @@
            	var supportcentralurl = '${model.supportCentralUrl @ context="html"}';
 		    var supportCoveoAccessToken = '${model.supportCoveoAccessToken @ context="html"}';
    </script>
-   <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+   
+  <!-- WEB-7277 COVEO CUSTOM RESOURCES START -->
+   <link rel="stylesheet" href="/etc/clientlibs/bmc/coveofiles/css/bmcV2.support_search.bundle.min.css" type="text/css"/>
+   <script src="/etc/clientlibs/bmc/coveofiles/js/bmcV2.support_search.bundle.min.js"></script>  
+  <!--WEB-7277 Commenting code for Support Coveo changes START-->
+  
+  
+  <!-- <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientLib.css @ categories='bmc.coveo'}" data-sly-unwrap />
-     <!--  ordered the files as it was showing jQuery error in publish mode -->
+     <!--  ordered the files as it was showing jQuery error in publish mode 
       <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-searchbox.js"></script>
   	  <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/support-coveo-search.js"></script>
       <script type="text/javascript" src="/etc/clientlibs/bmc/coveofiles/js/search.js"></script>
@@ -65,7 +72,8 @@
 	   	 });     
 	    });  
 	</script>
-  </sly>
+  </sly> -->
+
 </sly>
 <footer class="layout-footer">
     <nav class="layout-inner-wrap">
@@ -102,14 +110,40 @@
                     <li><a href="${footerSocial.linkPath}" target="${footerSocial.targetType}" class="${footerSocial.soccMedsType} ${footerSocial.customCssClass}">${footerSocial.linkText @ context='html'}</a></li>
                 </ul>
             </li>
-            <li class="nav-tertiary-col">
+            <!-- WEB-8285 Starts -->
+            <!-- <li class="nav-tertiary-col">
                 <h4>Search BMC</h4>
                 <ul class="nav-supplemental meta">
                     <li>
-                        <sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
+
                     </li>
                 </ul>
-            </li>
+            </li> -->
+            <li class="nav-tertiary-col">
+				<div class="searchLanguage">
+					<ul class="nav-supplemental meta">
+						<li>
+							<sly data-sly-resource="${@resourceType='bmc/components/search/search-form'}" data-sly-unwrap/>
+							<div id="footer-country_dropdown">
+								<h4>Choose your language</h4>
+								<div class="search-input-m-glass">
+									<select name="sl-language" id="ft-sl-language" onchange="var win = window.open(this.value, '_blank');win.focus();this.selectedIndex=0;">
+									    <option selected disabled hidden>Select language</option>
+										<option value="https://www.bmc.com">English</option>
+										<option value="https://www.bmcsoftware.fr">French</option>
+										<option value="https://www.bmcsoftware.de">German</option>
+										<option value="https://www.bmcsoftware.cn">Chinese</option>
+										<option value="https://www.bmcsoftware.es">Spanish</option>
+										<option value="https://www.bmcsoftware.pt">Portuguese</option>
+										<option value="https://www.bmcsoftware.jp">Japanese</option>
+									</select>
+								</div>
+							<div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<!-- WEB-8285 Ends -->
         </ul>
     </nav>
     <div class="layout-inner-wrap">
