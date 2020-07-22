@@ -41,7 +41,7 @@ $menuBottomPadding: 1em;
 	}
 
 	&.expanded {
-		background-color: color(colorHeadingsProduct);
+		background-color: #333333;
 		padding-bottom: 1em;
 	}
 }
@@ -247,7 +247,7 @@ $menuBottomPadding: 1em;
 .support-header-heading {
 	@include box-sizing();
 	font-size: .7em;
-	font-weight: 600;
+	font-weight: 400;
 	margin-top: 0;
 	margin-bottom: 0;
 	text-align: center;
@@ -286,6 +286,9 @@ $menuBottomPadding: 1em;
 			&:active {
 				color: darken(color(mediumOrange), 10%);
 			}
+		}
+		.support-header.expanded &{
+			color: #ffffff;
 		}
 	}
 

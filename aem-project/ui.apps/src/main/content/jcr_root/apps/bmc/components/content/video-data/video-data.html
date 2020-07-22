@@ -4,6 +4,7 @@
     <li><strong>VID:</strong> ${video.videoId}</li>
     <li><strong>Title:</strong> ${video.title @ context = 'html'}</li>
     <li><strong>Description:</strong> ${video.description @ context = 'html'}</li>
+    <li><strong>Length:</strong> ${video.videoLength @ context = 'html'}</li>
 <sly data-sly-test="${video.isYouTube}">
     <li><strong>Overlay Text:</strong> ${video.overlayText}</li>
     <li><strong>Overlay URL:</strong> ${video.overlayUrl}</li>

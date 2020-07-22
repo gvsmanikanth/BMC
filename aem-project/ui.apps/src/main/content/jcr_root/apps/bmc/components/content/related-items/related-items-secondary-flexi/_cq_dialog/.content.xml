@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Related Items: Secondary Flexi"
     sling:resourceType="cq/gui/components/authoring/dialog"
@@ -17,99 +17,104 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <headingText
+                            <field
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                class="cq-dialog-dropdown-showhide"
-                                cq-dialog-dropdown-showhide-target=".custom-heading"
-                                fieldLabel="Heading"
-                                name="./headingText">
+                                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <option1
+                                    <headingText
+                                        granite:class="cq-dialog-dropdown-showhide"
                                         jcr:primaryType="nt:unstructured"
-                                        text="Custom"
-                                        value=""/>
-                                    <option2
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Associated products"
-                                        value="Associated products"/>
-                                    <option3
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Customer enablement"
-                                        value="Customer enablement"/>
-                                    <option4
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Related products"
-                                        value="Related products"/>
-                                    <option5
-                                        jcr:primaryType="nt:unstructured"
-                                        text="Related topics"
-                                        value="Related topics"/>
-                                </items>
-                            </headingText>
-                            <customerHeadingContainer
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/container"
-                                class="hide custom-heading"
-                                showhidetargetvalue="">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <customHeadingText
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldDescription="Enter a custom heading here"
-                                        name="./customHeadingText"/>
-                                </items>
-                            </customerHeadingContainer>
-                            <description
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                fieldDescription="Description (HTML)"
-                                fieldLabel="Description"
-                                name="./description"/>
-                           
-                            <listItems
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                composite="{Boolean}true"
-                                fieldLabel="List of Items">
-                                <field
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                                    name="./items">
-                                    <layout
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-                                        method="absolute"/>
-                                    <items jcr:primaryType="nt:unstructured">
-                                        <column
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="Heading"
+                                        name="./headingText">
+                                        <granite:data
                                             jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                            cq-dialog-dropdown-showhide-target=".custom-heading"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <option1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Custom"
+                                                value=""/>
+                                            <option2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Associated products"
+                                                value="Associated products"/>
+                                            <option3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Customer enablement"
+                                                value="Customer enablement"/>
+                                            <option4
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Related products"
+                                                value="Related products"/>
+                                            <option5
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Related topics"
+                                                value="Related topics"/>
+                                        </items>
+                                    </headingText>
+                                    <customerHeadingContainer
+                                        granite:class="hide custom-heading"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            showhidetargetvalue=""/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <customHeadingText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter a custom heading here"
+                                                name="./customHeadingText"/>
+                                        </items>
+                                    </customerHeadingContainer>
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                        fieldDescription="Description (HTML)"
+                                        fieldLabel="Description"
+                                        name="./description"/>
+                                    <listItems
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true"
+                                        fieldLabel="List of Items">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                            name="./items">
                                             <items jcr:primaryType="nt:unstructured">
-                                                <overrrideTitle
+                                                <column
                                                     jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                                    fieldDescription="Use Title case."
-                                                    fieldLabel="Override Title (optional)"
-                                                    name="./overrideTitle"/>
-                                                <overrideDescription
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                                    fieldDescription="Use sentence case."
-                                                    fieldLabel="overrideDescription (Optional)"
-                                                    name="./overrideDescription"/>
-                                                <pagePath
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                    fieldDescription="Please enter the relative URL(Ex: /forms/..) or with https:// or http://"
-                                                    fieldLabel="Page path"
-                                                    name="./pagePath"
-                                                    required="{Boolean}true"
-                                                    rootPath="/content/bmc"/>
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <overrrideTitle
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Use Title case."
+                                                            fieldLabel="Override Title (optional)"
+                                                            name="./overrideTitle"/>
+                                                        <overrideDescription
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                            fieldDescription="Use sentence case."
+                                                            fieldLabel="overrideDescription (Optional)"
+                                                            name="./overrideDescription"/>
+                                                        <pagePath
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                            fieldDescription="Please enter the relative URL(Ex: /forms/..) or with https:// or http://"
+                                                            fieldLabel="Page path"
+                                                            name="./pagePath"
+                                                            required="{Boolean}true"
+                                                            rootPath="/content/bmc"/>
+                                                    </items>
+                                                </column>
                                             </items>
-                                        </column>
-                                    </items>
-                                </field>
-                            </listItems>
+                                        </field>
+                                    </listItems>
+                                </items>
+                            </field>
                         </items>
                     </column>
                 </items>

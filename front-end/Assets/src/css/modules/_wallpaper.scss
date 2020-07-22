@@ -107,7 +107,7 @@
 
 		@include media(breakpointMedium) {
 			@include font-size(32);
-			font-weight: 800;
+			font-weight: 400;
 		}
 
 		@include media(breakpointExtraLarge) {

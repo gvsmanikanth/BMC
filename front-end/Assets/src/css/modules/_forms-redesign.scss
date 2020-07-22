@@ -87,7 +87,7 @@
                 text-transform: uppercase;
                 border: none;
                 border-radius: 0;
-                max-width: 210px;
+                max-width: 250px;
                 margin: 15px auto;
                 display: block;
                 + p{
@@ -145,7 +145,7 @@
                         right: 0;
                         top: 1px;
                         width: 54px;
-                        z-index: 105;
+                        z-index: 19;
                         font-family: 'icomoon';
                         text-align: center;
                         border-left: 1px solid #ccc;
@@ -485,6 +485,13 @@
     .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
         margin-top: 0;
     }
+
+    .customer_section {
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            margin-top: -30px;
+        }
+    }
+   
 
 }
 

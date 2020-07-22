@@ -1,0 +1,37 @@
+<!--/* ***************************************************************************
+  * ADOBE CONFIDENTIAL
+  * __________________
+  *
+  * Copyright 2016 Adobe Systems Incorporated
+  * All Rights Reserved.
+  *
+  * NOTICE:  All information contained herein is, and remains
+  * the property of Adobe Systems Incorporated and its suppliers,
+  * if any.  The intellectual and technical concepts contained
+  * herein are proprietary to Adobe Systems Incorporated and its
+  * suppliers and are protected by trade secret or copyright law.
+  * Dissemination of this information or reproduction of this material
+  * is strictly forbidden unless prior written permission is obtained
+  * from Adobe Systems Incorporated.
+  ************************************************************************** */-->
+<div data-sly-use.variations="variations.js" class="experience-fragment-variations">
+    <ul data-sly-list.var="${variations}" class="variations-list">
+        <li class="variation-list-item ${var.isActive ? 'is-active': '' }" data-variation-path="${var.path}"
+            data-variation-title="${var.name}" data-variation-ismaster="${var.isMaster}">
+                <span class="variation">
+                    <span class="variation-title" title="${var.name}">
+                        <coral-icon icon="viewOn" size="S" aria-label="view on"></coral-icon>
+                        ${var.name}
+                    </span>
+                    <span class="variation-actions">
+                         <coral-buttongroup class="variations-quick-actions" name="button-group">
+                             <button is="coral-button" data-action-id="js-action-rename" variant="quiet"
+                                     icon="edit" iconSize="S"></button>
+                             <button is="coral-button" data-action-id="js-action-delete" variant="quiet"
+                                     icon="delete" iconSize="S"></button>
+                         </coral-buttongroup>
+                    </span>
+            </span>
+        </li>
+    </ul>
+</div>

@@ -41,6 +41,7 @@ import org.slf4j.LoggerFactory;
 import com.bmc.services.CategoriesReportCSVGenService;
 import com.bmc.services.ContainersReportCSVGenSevice;
 import com.bmc.services.ExperienceFgmtReportCSVGenService;
+import com.bmc.services.ExperienceFgmtReportCSVFormsService;
 import com.bmc.services.FormsReportCSVGenService;
 import com.bmc.services.VideoReportCSVGenService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
@@ -102,6 +103,9 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	    private ExperienceFgmtReportCSVGenService expFgmtService;
 	    
 	    @Reference
+	    private ExperienceFgmtReportCSVFormsService expFgmtFormsService;
+	    
+	    @Reference
 	    private CategoriesReportCSVGenService categoriesService;
 	    
 	    @Reference
@@ -142,12 +146,19 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	            	        excelDAMPath = formsService.writeExceltoDAM(workBook, fileName);
 	            	        formsService.clearData(reportType);
 	                		break;
-	                case "experienceFragment":
+	                case "experienceFragmentGeneric":
 	                	//Generate the report for forms 	                		
                 		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);               		                		
             	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
             	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
             	        expFgmtService.clearData(reportType);
+	                    break;
+	                case "experienceFragmentForms":
+	                	//Generate the report for forms 	                		
+                		workBook = expFgmtFormsService.generateDataReport(true, fileName,reportLocation);               		                		
+            	        jsonDAMPath = expFgmtFormsService.writeJSONtoDAM(fileName);
+            	        excelDAMPath = expFgmtFormsService.writeExceltoDAM(workBook, fileName);
+            	        expFgmtFormsService.clearData(reportType);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		

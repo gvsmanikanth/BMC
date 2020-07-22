@@ -1,0 +1,115 @@
+ .customer_section {
+		h2 {
+			font-size: 24px;
+			line-height: 34px;
+			color: #fff;
+			padding: 0 0 20px;
+			min-height: auto;
+			font-weight: 300;
+			@include media(breakpointMedium){
+				font-size: 32px;
+				line-height: 36px;
+				margin: 0; 
+				padding: 0;
+			}
+			@include media(breakpointLarge){
+				font-size: 40px;
+				line-height: 48px;
+				margin: 0;
+				padding: 0;
+				font-weight: 300;
+			}
+		}				
+		
+		
+		.block1{
+			width:80%;
+			@include media(breakpointMedium){
+				width:75%;
+			}
+			
+		}
+		
+
+
+
+		.clear {
+			clear: both;
+			font-size: 1px;
+			line-height: 1px;
+			display: block;
+			height: 0;
+		}
+		.logos_sec {
+			background: #414042;
+			padding: 0;
+		}
+		.logos_blk {
+			text-align: center;
+			position: relative;
+			ul {
+				padding: 0;
+				margin: 0;
+				li {
+					@include media(breakpointMedium){
+						display: block;
+					}
+					@include media(breakpointLarge){
+						display: inline-block;;
+					}
+					padding: 54px 85px;
+					display: block;
+					vertical-align: middle;
+					--min-height: 225px;
+					padding: 54px 116px;
+					--margin: 0 14px;
+				    margin-bottom: 0em;
+					position: relative;
+					cursor:auto;
+					&:hover {
+						background: transparent;
+                        overflow:visible;
+                        a{
+                            cursor: auto;
+                        }
+					}
+					a {
+						display: inline-block;
+						img {
+							position: absolute;
+							top: 50%;
+							transform: translateY(-50%);
+							-o-transform: translateY(-50%);
+							-ms-transform: translateY(-50%);
+							-moz-transform: translateY(-50%);
+							-webkit-transform: translateY(-50%);
+							left: 0;
+							margin: 0 auto;
+							text-align: center;
+							right: 0;
+							max-height: 140px;
+						}
+					}
+				}
+				li.small img{
+					width:80px;
+				}
+				.hover {
+					background: #fe5000;
+				}
+			}
+        }
+        .support-promo{
+            background-color: #126CC3;
+            .promo-content {
+                padding: 2rem 1rem !important;
+                font-size: 30px;
+                @media (min-width: $break-sm) {
+                    font-size: 36px;	
+                }
+                
+            }
+        }
+        
+
+	}

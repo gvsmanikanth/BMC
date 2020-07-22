@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -136,10 +139,38 @@ public class BmcEduMeta {
         try {
 
             Iterator<Page> allCourses = resourcePage.getParent().listChildren();
+          //WEB-6897 Sorting the pages from JCR based on create date -- START
+            //Step1 :Collecting contents of iterator into a list
+			List<Page> allCourseslist = new ArrayList<Page>();
+			while (allCourses.hasNext()) {				
+				Page page = allCourses.next();
+				allCourseslist.add(page);
+				  logger.trace("DATA *********"+page.getProperties().get("cq:lastModified", "")+" - "+page.getPath());
+				
+					}
+			//Step 2: Sort order definition.
+			        Collections.sort(allCourseslist,new Comparator<Page>() {			        	
+	                    public int compare(Page p1, Page p2) {	                    		
+								String   s1 =  p1.getProperties().get("cq:lastModified", ""); 																					
+								String   s2 =  p2.getProperties().get("cq:lastModified", ""); 
+							//Step 3: Sort in descending order
+								 int comparator =  s1.compareTo(s2);
+								 if(comparator < 0)
+								 {
+									 return -1;
+								 }else if(comparator >0)
+								 {
+									 return 1;
+								 }else return 0;
+			                    }
+			                   	});
+			        Collections.reverse(allCourseslist);
+			// Step 4: Creating & passing an Iterator of sorted list.
+			        Iterator<Page> sortedAllCourses=allCourseslist.iterator();			
+			 //WEB-6897 Sorting the pages from JCR based on create date -- END
             int itemIndex = 0;
-
-            while (allCourses.hasNext()){
-                Page page = allCourses.next();
+            while (sortedAllCourses.hasNext()){
+                Page page = sortedAllCourses.next();
                 ListItems newItem = new ListItems();
                 List<String> roles = new ArrayList<>();
                 List<String> versions = new ArrayList<>();
@@ -391,4 +422,6 @@ class ProductTypeCollection
 		}
 		return null;
 	}
+	
+	
 }

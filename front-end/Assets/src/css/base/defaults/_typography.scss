@@ -1,5 +1,5 @@
 a {
-	color: color(colorCorporateAction);
+	color: color(curious-blue);
 	text-decoration: none;
 	@include transition((property: color));
 	//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
@@ -11,7 +11,8 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
-		color: color(darkBlue);
+		--color: color(boston-blue);
+		color: #046eb1;
 	}
 }
 
@@ -58,8 +59,8 @@ p {
 }
 
 h1 {
-	color: color(colorCorporate);
-	font-weight: 800;
+	color: #4f5a65;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -75,7 +76,7 @@ h1 {
 
 	@include media(breakpointMedium) {
 		@include font-size(54);
-		font-weight: 800;
+		font-weight: 400; 
 	}
 
 	@include media(breakpointExtraLarge) {
@@ -85,7 +86,7 @@ h1 {
 
 h2 {
 	color: color(mediumOrange);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.1em;
 	margin: 1em 0 0.33em;
 
@@ -96,7 +97,7 @@ h2 {
 	.timestamp {
 		font-weight:400;
 		font-size:0.8em;
-		color:#414042;
+		color:#4f5a65;
 	}
 }
 
@@ -104,8 +105,8 @@ h2 {
 	@include font-size(32);
 
 	@include media(breakpointMedium) {
-		@include font-size(32);
-		font-weight: 800;
+		@include font-size(30);
+		font-weight: 400;
 	}
 
 	@include media(breakpointExtraLarge) {
@@ -114,9 +115,9 @@ h2 {
 }
 
 h3 {
-	color: color(colorCorporate);
+	color: #4f5a65;
 	@include font-size(18);
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -133,17 +134,17 @@ h3 {
 	a {
 		@include font-size(26);
 		@include transition((property: color));
-		color: color(colorCorporateAction);
+		--color: color(colorCorporateAction);
 		line-height:1.1em;
 		letter-spacing:-.03em;
 		text-decoration: none;
 		//text-shadow: 1px 1px 1px rgba(241,93,34,0.07); // #FED can help font-smoothing in some browsers
 
-		&:hover,
+		/*&:hover,
 		&:active,
 		&:focus {
 			color: color(darkBlue);
-		}
+		}*/
 
 		&:after {
 			content:" \00203A";
@@ -153,8 +154,8 @@ h3 {
 
 h4 {
 	@include font-size(20);
-	color: color(colorCorporate);
-	font-weight: 800;
+	color: #4f5a65;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -172,8 +173,8 @@ h4 {
 }
 
 h5 {
-	color: color(colorCorporate);
-	font-weight: 800;
+	color: #4f5a65;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: .5em 0 0.33em;
 
@@ -183,8 +184,8 @@ h5 {
 }
 
 h6 {
-	color: color(colorCorporate);
-	font-weight: 800;
+	color: #4f5a65;
+	font-weight: 400;
 	line-height: 1.2;
 	margin: 1em 0 0.33em;
 
@@ -233,7 +234,7 @@ h6 {
 	&:hover,
 	&:active,
 	&:focus {
-		color: color(colorCorporateAction);
+		color: color(boston-blue);
 	}
 }
 
@@ -244,7 +245,7 @@ h6 {
 }
 
 .opening-text {
-	color: color(colorCorporate);
+	color: #4f5a65;
 	font-weight: 400;
 	line-height: 1.2;
 	margin-bottom: .33em;

@@ -1,6 +1,6 @@
 %conquest-section {
 
-	color: color(colorCorporate);
+	color: #4f5a65;
 
 	h3 {
 		color: color(colorHeadings);
@@ -9,6 +9,7 @@
 	.btn-secondary {
 		background-color: color(mediumOrange);
 		border-color: color(mediumOrange);
+		color:#fff;
 
 		&:hover {
 			background-color: darken(color(mediumOrange), 10%);
@@ -303,7 +304,7 @@
 		}
 
 		&.conquest-table-cell-topic {
-			h3 { color: color(colorCorporate); }
+			h3 { color: #4f5a65; }
 		}
 
 		&.conquest-table-cell-bmc {
@@ -421,8 +422,8 @@
       font-size: .75em;
       margin-bottom: -.5em; 
       display: block;
-      font-weight: 800;
-      color: #424043;
+      font-weight: 400;
+      color: #414042;
     }
     
     @media (max-width: 1200px) {.offertype {font-size: 1em;} }

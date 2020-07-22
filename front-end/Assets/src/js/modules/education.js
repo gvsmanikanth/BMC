@@ -280,6 +280,30 @@
 
 		};
 		
+		EduCourseList.prototype.initializeFilters = function() {
+					var self = this;
+					
+					self.filteringOptions.forEach(function(item) {
+						var selector = "#" + item.name;
+						self.popupateFilters($(selector), item.values, item.name);
+					});
+					
+					//Assign event listner
+					var selects = $('.filters select');
+					selects.change(function(e) {
+						var that = $(this);
+						self.onFilterSelect(that);
+					});
+					
+					var reset = $(".resetBtn");
+					reset.click(function(e){
+						self.currPage = 1;
+						self.resetFiltersToDefaultValues();
+						window.location.hash = '#';
+						$("#versionContainer").hide();
+					});
+		};
+		
 		EduCourseList.prototype.updateFilterCount = function() {
 			
 			var self = this;

@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured"
-          jcr:title="Regional Offices" sling:resourceType="cq/gui/components/authoring/dialog"
-          mode="edit">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Regional Offices"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
     <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/foundation/container">
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
             <regionalWebsite
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                    jcr:title="Regional Website">
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Regional Website"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                 <items jcr:primaryType="nt:unstructured">
                     <text
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                            fieldLabel="Link Text"
-                            name="./regionalWebsiteText"/>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Link Text"
+                        name="./regionalWebsiteText"/>
                     <url
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                            fieldLabel="URL"
-                            name="./regionalWebsiteURL"/>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="URL"
+                        name="./regionalWebsiteURL"/>
                 </items>
             </regionalWebsite>
             <regionalOffices
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
-                    jcr:title="Regional Offices">
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Regional Offices"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                 <items jcr:primaryType="nt:unstructured">
                     <text
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                            fieldDescription="When checked, regional offices are grouped according to their 'group' properties."
-                            text="Should group offices"
-                            name="./groupOffices"
-                            value="{Boolean}true"/>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                        fieldDescription="When checked, regional offices are grouped according to their 'group' properties."
+                        name="./groupOffices"
+                        text="Should group offices"
+                        value="{Boolean}true"/>
                 </items>
             </regionalOffices>
         </items>

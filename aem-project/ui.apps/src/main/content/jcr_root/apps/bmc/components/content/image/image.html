@@ -20,14 +20,16 @@
                  title="${image.displayPopupTitle && image.title}"/>
     </a>
 
-
+<!-- WEB-6165 Replaces span with p for alignment issues -->
 <sly data-sly-test="${!properties.isDecorative && properties.imageverticalPosition != 'align_bottom'}">
-    <span class="cmp-image--title" data-sly-test="${properties.showCaptionAsHyperLink && image.title}"><a class="${cta.cssClass}" href="${linkURL}">${image.title}</a></span>
+    <p class="cmp-image--title" data-sly-test="${properties.showCaptionAsHyperLink && image.title}"><a class="${cta.cssClass}" href="${linkURL}">${image.title}</a></p>
 </sly>
-<!--/*
+
+<!--/* WEB-6661 fix for Image caption issue START */-->
 <sly data-sly-test="${properties.isDecorative}">
-    <span class="cmp-image--title" data-sly-test="${image.title}">${image.title}</span>
-</sly> */-->
+    <p class="cmp-image--title" data-sly-test="${image.title}">${image.title}</p>
+</sly> 
+<!--/*  WEB-6661 fix for Image caption issue END  */-->
 
 
 </div>

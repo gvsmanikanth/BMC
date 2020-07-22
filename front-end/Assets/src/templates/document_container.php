@@ -8,28 +8,27 @@
 
 <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-      <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
-         <div class="page-campaign-landing">
-            <section class="layout-full-bleed layout-full-bleed-image" style="background-image: url('https://author.cms.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg'); background-position: top;">
-               <div class="layout-inner-wrap">
-                  <div class="offset-hero-clear">
-                     <div class="offset-hero-inner-wrap">
-                        <h1>BMC Helix Remedy Datasheet</h1>
-                     </div>
-                  </div>
-               </div>
-            </section>
-         </div>
-      </div>
+   <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
+        <div class="layout-inner-wrap flex">
+            <h1>
+                <span>
+                    Control-M for Big Data
+                </span>            
+            </h1>        
+                <div class="img-wrap">
+                    <img alt="bmc-helix-logo" border="0" src="//www.bmc.com/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
+                </div>        
+        </div>
+    </section>
       <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
          <section class="aem-Grid aem-Grid--12 aem-Grid--default--12  layout-full-bleed">
             <div class="100contentcontainer aem-GridColumn aem-GridColumn--default--12">
-               <section>
+               <section class="bg-white">
                   <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
                      <div class="responsivegrid aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--12">
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                            <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
-                              <div class="text-right">
+                              <div class="text-right pyt1">
                                  <a href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download Remedy 9 Datasheet</a>
                               </div>
                               <div class="md-flex full-bleed-two-column">

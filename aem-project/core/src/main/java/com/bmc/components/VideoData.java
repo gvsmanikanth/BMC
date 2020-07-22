@@ -44,6 +44,7 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     public String getDescription() { return description; }
     public String getOverlayText() { return overlayText; }
     public String getOverlayUrl() { return overlayUrl; }
+    public String getVideoLength() { return videoLength; }
     public String getDamThumbnailPath() { return thumbnailPath; }
     public NameValuePair[] getDamRenditions() { return (damRenditions == null) ? new NameValuePair[0] : damRenditions; }
     private boolean isValid;
@@ -56,6 +57,7 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     private String overlayText = "";
     private String overlayUrl = "";
     private String thumbnailPath = "";
+    private String videoLength ="";
     private NameValuePair[] damRenditions;
 
     @Override
@@ -73,8 +75,9 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
         title = info.getTitle();
         description = info.getDescription();
         videoId = info.getVideoId();
+        videoLength = info.getVideoLength();
         isValid = false;
-
+        
         switch (type) {
             case YouTube:
                 ValueMap map = resource.getValueMap();

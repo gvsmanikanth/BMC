@@ -158,10 +158,11 @@ function addFilterToArrayProtoype() {
 			if ($('body').hasClass('form2')) {
 				$('#C_OptIn_group').parent().parent().hide();
 			}
-			var checkSelection = function(){
-				//var status = $('option:selected', this).attr('data-id');
+
+			var checkSelection = function(stateValue){ 
 				var status = $('option:selected', $("select[name^='C_Country']")).data("gdpr"); 
-				if(status == true){
+				var stateValue = stateValue;
+				if(status == true || stateValue == true){ 
 					if($("#C_OptIn_group").css('display') == "none"){
 						$("#C_OptIn_group").show();
 						if ($('body').hasClass('form2')) {
@@ -187,10 +188,10 @@ function addFilterToArrayProtoype() {
 			}
 			
 			//Check on page load.
-			checkSelection();
+			checkSelection(null); 
 			 
 			$("select[name^='C_Country']").on('change', function() { 
-				checkSelection();
+				checkSelection(null); 
 			});
 			
 		}
@@ -287,14 +288,13 @@ function addFilterToArrayProtoype() {
 		maxHeight: 540,
 		type: 'iframe',
 		width: 960
-	});
-
+	});	
 	$(".modal-inline").fancybox({
 		closeClick: false,
 		padding: 0,
 		margin: 20,
-		maxWidth: 960
-	});
+		maxWidth: 900
+	});	
 
 	$('a#myUrl').trigger('click');
 
@@ -549,7 +549,12 @@ function addFilterToArrayProtoype() {
 							newstateoptions += "<option value=\"" + data[i].Value + "\" disabled='disabled' selected='selected' >" + "State or Province" + "</option>";
 					}
 					else{
-						newstateoptions += "<option value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						if(data[i].gdpr == "true"){
+							newstateoptions += "<option data-gdpr=\"" + data[i].gdpr + "\" value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						}else{
+							newstateoptions += "<option value=\"" + data[i].Value + "\">" + data[i].Text + "</option>";
+						}
+						
 					}
 				}
 				
@@ -558,13 +563,26 @@ function addFilterToArrayProtoype() {
 					if($('#C_State_Prov').attr('type') == "text")
 					{
 						$('#C_State_Prov').parent().replaceWith("<div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' required></select></div>");
+						if($('#C_State_Prov').parent().attr('class').indexOf('decorator-select') > -1){
+							$("select[name^='C_State_Prov']").on('change', function() { 
+								stateStatus = $('option:selected', $("select[name^='C_State_Prov']")).data("gdpr"); 
+								checkSelection(stateStatus);
+							});
+						}
 					}
 					$('#C_State_Prov').children().remove().end().append(newstateoptions);
 					
 				}else{
 					if($('#C_State_Prov').attr('type') == "text")
 					{
-						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");					
+						/*State change GDPR enable*/
+						$('#C_State_Prov').parent().replaceWith('<div class="cmp cmp-options aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--12 aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--offset--phone--0 aem-GridColumn--offset--default--0">'+"<label>State or Province</label><div class='decorator-select'><select id='C_State_Prov' name='C_State_Prov' data-error-hint='Required. Please add your state' required></select></div><span class='error-text'></span>" + "</div>");	
+						if($('#C_State_Prov').parent().attr('class').indexOf('decorator-select') > -1){ 
+							$("select[name^='C_State_Prov']").on('change', function() {
+								stateStatus = $('option:selected', $("select[name^='C_State_Prov']")).data("gdpr"); 
+								checkSelection(stateStatus);
+							});
+						}
 						$inputs = $('form').find('input, textarea, select'),
 						$inputs.validateInputs();  
 					}
