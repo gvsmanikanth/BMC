@@ -30,14 +30,14 @@ import com.day.cq.wcm.api.WCMMode;
  
 /*
  * WEB-2392 & WEB-2360
- * Servlet class for the External-link & Document-link template page component.
+ * Servlet class for the External-link template page component.
  * Created by samiksha_anvekar@bmc.com
  * Date-9/Aug/2017, modified - 15/03/2018
  * START
  */ 
 @SlingServlet(methods = {"GET"}, 
 metatype = true,
-resourceTypes = {"bmc/components/structure/external-link-page","bmc/components/structure/external-link-document"},
+resourceTypes = {"bmc/components/structure/external-link-page"},
 extensions ={"html"})
 public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllMethodsServlet {
      private static final long serialVersionUID = 2598426539166789515L;
@@ -85,56 +85,23 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 			        		linkAbstractorTarget = prop.getValue().toString();
 			        	}
 				        if(linkAbstractor.equalsIgnoreCase("external-link"))
-				        {
-				        	
-				        	
+				        {				        	
 				        	if(prop.getName().equalsIgnoreCase("linkAbstractorExternalURL"))
 				        	{
-				        		linkAbstractorExternalURL = prop.getValue().getString();
-			        		
+				        		linkAbstractorExternalURL = prop.getValue().getString();			        		
 				        	}
-				        }
-				        else if(linkAbstractor.equalsIgnoreCase("external-document"))
-				        {
-				        	
-				        	
-				        	if(prop.getName().equalsIgnoreCase("linkAbstractorDAMAsset"))
-				        	{
-				        		linkAbstractorExternalURL = prop.getValue().getString();
-				        	}
-				        		else if(prop.getName().equalsIgnoreCase("linkAbstractorExternalAsset"))
-				        	{
-				        			linkAbstractorExternalURL = prop.getValue().getString();
-				        			isDocumentPDF = true;
-				        	}
-				        
-				        }
-			        	 
+				        }				      			        	 
 				   }
      							PrintWriter out = response.getWriter();
      							final WCMMode mode = WCMMode.fromRequest(request);	
 				        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---Start
 				        		// Only execute in Publish mode & Preview mode of Author environment.
      							//WEB-5902 Added noIndex , follow meta tag 
-				     	       if ((mode == null || WCMMode.DISABLED.equals(mode)))
-				     	       {
-				     	    	   	out.println("<html><head>");
-				            		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");			                	
-				            		if(isDocumentPDF)
-			     	    	   		{
-			     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
-			     	    	   		}
-				            		out.println("</head>");   
-				            		out.println("</html>");	 
-				     	       }else{
-				     	    	   //Will only show on Editor mode in author environment.
+				     	       
+				     	       if(WCMMode.EDIT.equals(mode)) {
+				     	    	//Will only show on Editor mode in author environment.
 				     	    	out.println("<html><head>");			     	    	   
-				     	    	out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");
-			     	    		if(isDocumentPDF)
-		     	    	   		{
-		     	    	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
-		     	    	   		}
-			     	    		out.println("</head>");   
+				     	    	out.println("</head>");   
 				     	    	out.println("<body>");					     	       					     	       
 				        		out.println("<h1>External Link</h1>");
 				        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
@@ -142,22 +109,24 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				        		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");			                		
 				        		out.println("</body>");
 				        		out.println("</html>");	
-        		//WEB-4184 Adding WCCMode specific show/hide of jump page logic ---End
-		}	
+				        		
+							}else 
+							{
+						    	out.println("<html><head>");
+					    		out.println("<meta http-equiv='refresh' content=\"0;URL='"+linkAbstractorExternalURL+"'\">");			                	
+					    		if(isDocumentPDF)
+					 	   		{
+					 	   			out.println("<link rel=\"canonical\" href=\""+linkAbstractorExternalURL+"\"/>");
+					 	   		}
+					    		out.println("</head>");   
+					    		out.println("</html>");	 
+						       }
 		           		} catch (Exception e) {
 		           			logger.error(e.getMessage());
 		           		} finally {
 		           			if (session != null && session.isLive())
 		           				session.logout();
 		           					}
-     					}
-     
-     public boolean runModes()
-     {
-    		Set<String> runmodes = slingSettingsService.getRunModes();	
-    		boolean isAuthor = runmodes.contains(Externalizer.PUBLISH);
-    		return isAuthor;
-     }
+     					}    
      
 }
-
