@@ -28,6 +28,67 @@ public class ContainerReportDataItem {
 	private String Ic_weighting;
 	private String Last_replication_action;
 	private String displayType;
+	private String IC_Type;
+	
+	
+	
+	
+	public String getIC_Type() {
+		return IC_Type;
+	}
+	public void setIC_Type(String iC_Type) {
+		IC_Type = iC_Type;
+	}
+	public String getIC_topic() {
+		return IC_topic;
+	}
+	public void setIC_topic(String iC_topic) {
+		IC_topic = iC_topic;
+	}
+	public String getIC_Buyer_stage() {
+		return IC_Buyer_stage;
+	}
+	public void setIC_Buyer_stage(String iC_Buyer_stage) {
+		IC_Buyer_stage = iC_Buyer_stage;
+	}
+	public String getIC_target_Persona() {
+		return IC_target_Persona;
+	}
+	public void setIC_target_Persona(String iC_target_Persona) {
+		IC_target_Persona = iC_target_Persona;
+	}
+	public String getIC_Source_Publish_Date() {
+		return IC_Source_Publish_Date;
+	}
+	public void setIC_Source_Publish_Date(String iC_Source_Publish_Date) {
+		IC_Source_Publish_Date = iC_Source_Publish_Date;
+	}
+	public String getIC_Target_Industry() {
+		return IC_Target_Industry;
+	}
+	public void setIC_Target_Industry(String iC_Target_Industry) {
+		IC_Target_Industry = iC_Target_Industry;
+	}
+	public String getIC_Company_Size() {
+		return IC_Company_Size;
+	}
+	public void setIC_Company_Size(String iC_Company_Size) {
+		IC_Company_Size = iC_Company_Size;
+	}
+	public String getXF_Path() {
+		return XF_Path;
+	}
+	public void setXF_Path(String xF_Path) {
+		XF_Path = xF_Path;
+	}
+	private String IC_topic;
+	private String IC_Buyer_stage;
+	private String IC_target_Persona;
+	private String IC_Source_Publish_Date;
+	private String IC_Target_Industry;
+	private String IC_Company_Size;
+	private String XF_Path;
+	
 	
 	public String getDisplayType() {
 		return displayType;

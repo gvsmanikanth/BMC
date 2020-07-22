@@ -73,10 +73,11 @@ public class ContainersReportCSVGenSevice {
 	
     private static  ArrayList<ContainerReportDataItem> document_list = new ArrayList<ContainerReportDataItem>();
        
-    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
+    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry",
+    		"ic-content-type","ic-topics","ic-buyer-stage","ic-target-persona","ic-target-industry","ic-company-size"};
 	
     private String[] TableNames = {"Page title","Page URL","Page Created Date","Page Created By","Page Last Modified date","Page Last modified by","Page URL ResourceName","Product Interest","Product line","Ic App Inclusion","Ic App Wieghting",
-			"Topics","Document Link Type","Document Link URL","Document display Type","Translation status","Document References"};
+			"Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size","Document Link Type","Document Link URL","Document display Type","XF Link","Translation status","Document References"};
     
     
     /*
@@ -149,12 +150,18 @@ public class ContainersReportCSVGenSevice {
 								            	 			reportDataItem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic", session));
 											            	reportDataItem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
 											            	reportDataItem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));		            	
-											            	//reportDataItem.setLast_replication_action(getPropertyValues(reportDataNode, "cq:lastReplicationAction", "cq:lastReplicationAction", "cq:lastReplicationAction", session));
+											            	reportDataItem.setIC_Type(getPropertyValues(reportDataNode, "ic-content-type","jcr:title","intelligent-content-types", session));
+											            	reportDataItem.setIC_topic(getPropertyValues(reportDataNode, "ic-topics","jcr:title","intelligent-content-topics", session));
+											            	reportDataItem.setIC_Buyer_stage(getPropertyValues(reportDataNode, "ic-buyer-stage","jcr:title","intelligent-content-buyer-stage", session));
+											            	reportDataItem.setIC_target_Persona(getPropertyValues(reportDataNode, "ic-target-persona","jcr:title","intelligent-content-target-persona", session));
+											            	reportDataItem.setIC_Source_Publish_Date(getPropertyValues(reportDataNode, "ic-source-publish-date","ic-source-publish-date","ic-source-publish-date", session));
+											            	reportDataItem.setIC_Target_Industry(getPropertyValues(reportDataNode, "ic-target-industry","jcr:title","intelligent-content-target-industry", session));
+											            	reportDataItem.setIC_Company_Size(getPropertyValues(reportDataNode, "ic-company-size","jcr:title","intelligent-content-company-size", session));
 											            	reportDataItem.setTranslation_Status(getPropertyValues(reportDataNode, "translation-status", "translation-status", "translation-status", session));						            	 									            	 			
-								            	 			reportDataItem.setStatus(getPropertyValues(reportDataNode, "status","status","status",session));
 								            	 			reportDataItem.setDocument_link_type(getPropertyValues(reportDataNode, "documentType","documentType","documentType",session));
 								            	 			reportDataItem.setPage_Type(getPropertyValues(reportDataNode, "linkAbstractor","stlinkAbstractoratus","linkAbstractor",session));
 								            	 			reportDataItem.setDisplayType(getPropertyValues(reportDataNode, "displayType","displayType","displayType",session));
+								            	 			reportDataItem.setXF_Path(getPropertyValues(reportDataNode, "fragmentPath","fragmentPath","fragmentPath",session));
 								            	 			if(reportDataItem.getDocument_link_type().equals("search"))
 								            	 			{
 								            	 			reportDataItem.setDocument_url(getPropertyValues(reportDataNode, "linkAbstractorDAMAsset","linkAbstractorDAMAsset","linkAbstractorDAMAsset",session));
@@ -192,12 +199,14 @@ public class ContainersReportCSVGenSevice {
 				Map<String, Object[]> data = new TreeMap<String, Object[]>();			
 				data.put("1", TableNames);					
 				for(int i=2;i<document_list.size();i++)
-				{
+				{					
 					Integer count = i;					
 					 data.put(count.toString(), new Object[] {							 
-					     document_list.get(i).getCMS_Title(),document_list.get(i).getPage_URL(),document_list.get(i).getCreation_Date(),document_list.get(i).getCreation_By(),document_list.get(i).getLast_Modified_Date(),document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),
-					     document_list.get(i).getProduct_Line(),document_list.get(i).getIc_app_inclusion(),document_list.get(i).getIc_weighting(),document_list.get(i).getTopics(),
-					     document_list.get(i).getPage_Type(),document_list.get(i).getDocument_url(),document_list.get(i).getDisplayType(),document_list.get(i).getTranslation_Status(),document_list.get(i).getReferencePaths()
+					     document_list.get(i).getCMS_Title(),document_list.get(i).getPage_URL(),document_list.get(i).getCreation_Date(),document_list.get(i).getCreation_By(),document_list.get(i).getLast_Modified_Date(),
+					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),document_list.get(i).getIc_app_inclusion(),
+					     document_list.get(i).getIc_weighting(),document_list.get(i).getTopics(),document_list.get(i).getIC_Type(),document_list.get(i).getIC_topic(), document_list.get(i).getIC_Buyer_stage(), document_list.get(i).getIC_target_Persona(), 
+					     document_list.get(i).getIC_Source_Publish_Date(),document_list.get(i).getIC_Target_Industry(),document_list.get(i).getIC_Company_Size(),document_list.get(i).getPage_Type(),document_list.get(i).getDocument_url(),
+					     document_list.get(i).getDisplayType(),document_list.get(i).getXF_Path(),document_list.get(i).getTranslation_Status(),document_list.get(i).getReferencePaths()
 							 });			
 				}
 				
