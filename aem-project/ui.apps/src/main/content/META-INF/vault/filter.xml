@@ -99,5 +99,5 @@
     <filter root="/oak:index/textLucene" />
     <filter root="/oak:index/vidLucene" />
     
-    <filter root="/conf/bmc/settings/wcm/templates/support-central-personalised" mode="merge"/> 
+    <filter root="/conf/bmc/settings/wcm/templates/support-central-personalised" mode="replace"/> 
 </workspaceFilter>
