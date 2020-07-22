@@ -9,10 +9,21 @@
 		WebinarList.prototype = Object.create(FilterList.prototype);
 
 		WebinarList.prototype.getListItemHTML = function(item) { 
+			var currentDate = new Date();
+			var webinarDate = new Date(item.date);
+			var ctaBtn = "Register Now";
+			
+
 			var self = this;
 			
 			var type = self.getName("type", item);
-			
+
+			//setiing webinar date text and cta text as per webinar date
+			if(webinarDate < currentDate ){
+				var ctaBtn = "Watch Now";
+				var webinarDate = "On demand";
+			}
+
 			var itemHTML = ''
 			
 			if(item.isModal){
@@ -24,21 +35,22 @@
 			
 			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
 			
-			itemHTML += '"><div class=""><h5>' + self.getName("type", item)+'</h5><p class="event-date">' +item.date  + '</p></div>';
+			itemHTML += '"><div class=""><h5>' + self.getName("type", item)+'</h5></div>';
 			
 			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
 			
-			itemHTML+= '<div class="card-content"><hr>';
+			itemHTML+= '<div class="card-content"><hr><p class="event-date">' + webinarDate  + '</p>';
 			
-			if(item["location-city"] != "")
-				itemHTML+= '<p class="event-location">' +  item["location-city"] +', ' +self.getName("location", item)+'</p>';
-			else
-				itemHTML+= '<p class="event-location">' + self.getName("location", item)+'</p>';
+			// if(item["location-city"] != "")
+			// 	itemHTML+= '<p class="event-location">' +  item["location-city"] +', ' +self.getName("location", item)+'</p>';
+			// else
+			// 	itemHTML+= '<p class="event-location">' + self.getName("location", item)+'</p>';
 			
 			//itemHTML+= '<p class="event-location">' +   + '</p>';
 			itemHTML+= '<h2 class="title">'+ item.name +'</h2></div>';
+			
 					
-			itemHTML += '<div class="card-footer"><span class="learn-more">Register Now</span></div></div></a></div>';
+			itemHTML += '<div class="card-footer"><span class="learn-more">'+ ctaBtn +'</span></div></div></a></div>';
 			
 			return itemHTML;
 		};
@@ -161,7 +173,7 @@
 		});
 		
 		$(window).on('load', function() {
-			
+			$(".filters").addClass("pageLoad");
 			$('.filterListContainer').each(function(i, filterContainer) {
 				var filterList = null,
 				    list = null;
