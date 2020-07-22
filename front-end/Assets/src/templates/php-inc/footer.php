@@ -104,8 +104,8 @@
 							<div id="footer-country_dropdown">
 								<h4>Choose your language</h4>
 								<div class="search-input-m-glass">
-									<select name="sl-language" id="ft-sl-language" onchange="var win = window.open(this.value, '_blank');win.focus();">
-									    <option selected disabled>Select language</option>
+									<select name="sl-language" id="ft-sl-language" onchange="var win = window.open(this.value, '_blank');win.focus();this.selectedIndex=0;">
+									    <option selected disabled hidden>Select language</option>
 										<option value="https://www.bmc.com">English</option>
 										<option value="https://www.bmcsoftware.fr">French</option>
 										<option value="https://www.bmcsoftware.de">German</option>
