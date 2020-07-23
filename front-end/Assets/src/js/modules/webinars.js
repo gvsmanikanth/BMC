@@ -12,16 +12,24 @@
 			var currentDate = new Date();
 			var webinarDate = new Date(item.date);
 			var ctaBtn = "Register Now";
-			
-
+			var monthDay = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+			var weekDay = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+			var day = webinarDate.getDate();	
+			var dayName = weekDay[webinarDate.getDay()];
+			var monthName = monthDay[webinarDate.getMonth()];
+			var year = webinarDate.getFullYear();
+			var hour = webinarDate.getHours();
+			var minute = webinarDate.getMinutes(); 	
 			var self = this;
-			
+					
 			var type = self.getName("type", item);
 
 			//setiing webinar date text and cta text as per webinar date
 			if(webinarDate < currentDate ){
 				var ctaBtn = "Watch Now";
 				var webinarDate = "On demand";
+			}else{
+				webinarDate = dayName + ", " + day + " "+ monthName +" "+ year +" "+ hour +":"+ minute + " " + item.timeStamp;  
 			}
 
 			var itemHTML = ''
@@ -39,7 +47,7 @@
 			
 			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
 			
-			itemHTML+= '<div class="card-content"><hr><p class="event-date">' + webinarDate  + '</p>';
+			itemHTML+= '<div class="card-content"><hr><p class="event-date">' + webinarDate + '</p>';
 			
 			// if(item["location-city"] != "")
 			// 	itemHTML+= '<p class="event-location">' +  item["location-city"] +', ' +self.getName("location", item)+'</p>';

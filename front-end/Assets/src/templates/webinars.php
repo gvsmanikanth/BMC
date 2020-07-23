@@ -59,13 +59,7 @@ var bmcWebinarsData = {
 					"name" : "Business & IT Automation",
 					"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
 					"cssClass" : "type3"
-				}, {
-					"id" : 4,
-					"name" : "Cost Reduction & IT Optimization",
-					"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
-					"cssClass" : "type4"
-				},
-				{
+				},{
 					"id" : 4,
 					"name" : "Cost Reduction & IT Optimization",
 					"iconURL" : "https://www.bmc.com/content/dam/bmc/solutions/icons/icon-video.png",
@@ -113,13 +107,13 @@ var bmcWebinarsData = {
 					"name" : "All Months"
 				}, {
 					"id" : 1,
-					"name" : "Dec 2020"
+					"name" : "This Month"
 				}, {
 					"id" : 2,
-					"name" : "Nov 2020"
+					"name" : "This Quarter"
 				}, {
 					"id" : 3,
-					"name" : "June 2020"
+					"name" : "On Demand"
 				}]
 			},
 		],
@@ -130,7 +124,8 @@ var bmcWebinarsData = {
 		        		"name" : "BMC Webinar – Brazil: A Chave Para se Tornar Digital: Pensar nas Pessoas!",
 		        		"type" : [3],
 		        		"month" : [1],
-						"date" : "December 18, 2020 23:15:30 GMT+07:00",
+						"date" : "July 28, 2020 01:15:00",
+						"timeStamp" : "IST",
 		        		"location" : [4],
 		        		"location-city": "",
 		        		"url" : "http://www.bmcsoftware.com.br/forms/key-to-becoming-digital-itsm-webinar-apr2017.html?cid=em-DSM_Webinar_Brazil_INV1-JM-04-f-04182017&cc=em&elqcid=2477&sfcid=70114000002Xtgd&emid=2749",
@@ -143,7 +138,8 @@ var bmcWebinarsData = {
 		        		"name" : "BMC Day",
 		        		"type" : [3],
 		        		"month" : [1],
-						"date" : "December 9, 2020 23:15:30 GMT+07:00",
+						"date" : "July 30, 2020 01:15:00",
+						"timeStamp" : "IST",
 		        		"location" : [1],
 		        		"location-city": "Boston",
 		        		"url" : "http://bmcdays.bmc.com/boston/",
@@ -156,7 +152,8 @@ var bmcWebinarsData = {
 		        		"name" : "Control-M Tag",
 		        		"type" : [3],
 		        		"month" : [2],
-						"date" : "November 10, 2020 23:15:30 GMT+07:00",
+						"date" : "August 10, 2020 01:15:00",
+						"timeStamp" : "IST",
 		        		"location" : [3],
 		        		"location-city": "Frankfurt-Niederrad",
 		        		"url" : "http://www.bmcsoftware.de/forms/control-m-day-frankfurt.html?cid=em-WLA_UserGroup_Frankfurt_MAY17_Email-AS-02",
@@ -170,8 +167,9 @@ var bmcWebinarsData = {
 		        		"id" : 4,
 		        		"name" : "BMC Day",
 		        		"type" : [3],
-		        		"month" : [3],
-						"date" : "June 5, 2020 23:15:30 GMT+07:00",
+		        		"month" : [2],
+						"date" : "August 17, 2020 23:15:30",
+						"timeStamp" : "IST",
 		        		"location" : [2],
 		        		"location-city": "Toronto Ontario",
 		        		"url" : "http://bmcdays.bmc.com/toronto/",
@@ -185,8 +183,8 @@ var bmcWebinarsData = {
 		        		"name" : "Exchange Federal",
 		        		"type" : [2],
 		        		"month" : [3],
-						"date" : "June 7, 2020 23:15:30 GMT+07:00",
-						
+						"date" : "May 7, 2020 23:15:30",
+						"timeStamp" : "IST",
 		        		"location" : [1],
 		        		"location-city": "Washington, D.C.",
 		        		"url" : "https://www.eiseverywhere.com/ereg/newreg.php?eventid=225963&reference=BMC",
@@ -200,7 +198,8 @@ var bmcWebinarsData = {
 		        		"name" : "AFCEA Defensive Cyber Operations Symposium 2017",
 		        		"type" : [1],
 		        		"month" : [3],
-						"date" : "June 13, 2020 23:15:30 GMT+07:00",
+						"date" : "May 13, 2020 23:15:30",
+						"timeStamp" : "IST",
 		        		"location" : [1],
 		        		"location-city": "Maryland",
 		        		"url" : "http://events.afcea.org//AFCEACyberOps17/Public/Content.aspx?ID=61250",
@@ -212,7 +211,8 @@ var bmcWebinarsData = {
 		        		"name" : "MainView RoundTable 2017",
 		        		"type" : [4],
 		        		"month" : [3],
-						"date" : "Jun 19, 2020 23:15:30 GMT+07:00",
+						"date" : "May 19, 2020 23:15:30",
+						"timeStamp" : "IST",
 		        		"location" : [8],
 		        		"location-city": "Frankfurt-Niederrad",
 		        		"url" : "http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02",
@@ -228,53 +228,34 @@ var bmcWebinarsData = {
 </script>
 
 <div class="header-solutions header-solutions aem-GridColumn aem-GridColumn--default--12">
-	   <section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
-	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/header-mobile-images/landing-page-web-banner-chatbot.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-landing-page-web-banner-chatbot.jpg&quot;}}" 
-	   style="background-color:#002c8f;">
-		  <div class="offset-wrapper flex-center js-content-center-item"> 
-			 <div class="inner">
-				<div class="bannerContent flex-center ">
-				   <div class="layout-inner-wrap">
-					  <div class="flex-item col col-12 lg-col-4 md-col-5 sm-col-8 add-top-bottom-margin-82px">
-						 <div class="banner-caption">
-							<div class="helix-logo">
-								<img class="" src="https://www.bmc.com/content/dam/bmc/logos/bmc/logo-bmc-helix.svg"> 
+	<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
+	    data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg&quot;}}" 
+	   style="background-color:#0091DD;">
+		<div class="offset-wrapper flex-center">
+			<div class="inner">
+				<div class="bannerContent flex-center">
+					<div class="inner">
+						<h1 class="white">Webinars</h1>
+						<h2>Explore upcoming and on-demand webinars </h2>
+						<div class="text-center resource-hub-trials-cards">
+							<div class="filters">
+								<form action="#">
+									<fieldset>
+										<ol>
+											<li><select id="type"></select></li>
+											<li><select id="month"></select></li>
+										</ol>
+									</fieldset>
+								</form>
 							</div>
-							<h1 class="block-title">Know the Unknowns</h1>
-							<p class="block-text">Pervasive intelligence to see around corners for your operations and service management</p>
-							<a href="#introducing_BMC_helix" class="btn learn-more ">Meet BMC Helix</a>							
-						 </div>
-					  </div>
-				   </div>
-				</div>
-			 </div>
-		  </div>
-	   </section>
-	</div>
-<section class="wallpapered bar full-bleed-page-banner product-category-header padding-bottom-0" data-wallpaper-options='{source:https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg}' style="background-color:#0091DD">
-	<div class="offset-wrapper flex-center">
-		<div class="inner">
-			<div class="bannerContent flex-center">
-				<div class="inner">
-					<h1 class="white">Webinars</h1>
-					<h2>Some subheading for webinar page </h2>
-					<div class="text-center resource-hub-trials-cards">
-						<div class="filters">
-							<form action="#">
-								<fieldset>
-									<ol>
-										<li><select id="type"></select></li>
-										<li><select id="month"></select></li>
-									</ol>
-								</fieldset>
-							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</div>
+
 <section class="bg-approxSnow listCompLoader p2">
 	<div class="layout-inner-wrap py text-center">
 		<img src="https://www.bmc.com/etc/clientlibs/bmc/head/loading-indicator.gif" />
