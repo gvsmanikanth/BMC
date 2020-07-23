@@ -98,7 +98,8 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
                  {
                  	logger.info("Creating support navigation details for personalised support central"+ templatePath);
 
-                	 this.resource = resourceResolver.getResource(templatePath);		   	    			
+                	 this.resource = resourceResolver.getResource(templatePath);	
+                	 logger.info("Fetching support navigation details for personalised support central {}", this.resource);
                  }
    	    		 
    	    		supportNavigation = mapMultiFieldJsonObjects("tabs",this::getSupportNavigationItems);
@@ -114,7 +115,8 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
     */
     private MenuItem getSupportNavigationItems(ValueMap map) {
     	
-        String tabTitle = map.get("tabTitle", "");           
+        String tabTitle = map.get("tabTitle", "");       
+        logger.info("SupportNavigationItems tabTitle : {}",tabTitle);
         ValueMap[] subMenuItems = map.get("tabLinks", ValueMap[].class);
         ArrayList<SupportNavigationItem> items = new ArrayList<SupportNavigationItem>();
         if (subMenuItems == null)
@@ -126,6 +128,7 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
             String url = subMenuItems[i].get("url", "");
             String className = subMenuItems[i].get("class", String.class);
             String target = subMenuItems[i].get("target", String.class);
+            logger.info(SupportNavigation subMenuItems : {}",title);
             items.add(new SupportNavigationItem(title, url ,className,target));
         }
                 	
