@@ -128,7 +128,7 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
             String url = subMenuItems[i].get("url", "");
             String className = subMenuItems[i].get("class", String.class);
             String target = subMenuItems[i].get("target", String.class);
-            logger.info(SupportNavigation subMenuItems : {}",title);
+            logger.info("SupportNavigation subMenuItems : {}",title);
             items.add(new SupportNavigationItem(title, url ,className,target));
         }
                 	
