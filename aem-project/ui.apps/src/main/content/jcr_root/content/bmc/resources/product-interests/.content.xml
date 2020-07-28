@@ -254,10 +254,10 @@
             value="Helix Vulnerability Management"/>
     <_x0031_74236796
             jcr:primaryType="nt:unstructured"
-            jcr:title="AMI Data for DB2"
+            jcr:title="AMI Data for Db2"
             dropDownDisplay="Yes"
-            text="BMC AMI Data for DB2"
-            value="AMI Data for DB2"/>
+            text="BMC AMI Data for Db2"
+            value="AMI Data for Db2"/>
     <_x0031_80034581
             jcr:primaryType="nt:unstructured"
             jcr:title="AMI Data for IMS"
