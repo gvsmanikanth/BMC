@@ -200,17 +200,16 @@
 						for(j= 0; j < bmcWebinarsData.listItems.length; j++){
 							var webDate = new Date(bmcWebinarsData.listItems[j].date);
 							var modalID = bmcWebinarsData.listItems[j].id;
+							$("#" + modalID +" .modalDate").html("<strong>Date:</strong> " + bmcWebinarsData.listItems[j].date + " " + bmcWebinarsData.listItems[j].timeStamp);
 							if(webDate < currDate ){
 								bmcWebinarsData.listItems[j].month[i] = 2;
-
 								// updating modal: changing register now button to watch now and removing date
 								$("#" + modalID +" a.btn.btn-primary-with-border").text('Watch Now');
-								$("#" + modalID +" .modalDate").text('');
 
 							}else{
 								bmcWebinarsData.listItems[j].month[i] = 1;
-								// updating modal: Adding date from JSON
-							//	$("#" + modalID +" .modalDate").html("<strong>Date : </strong>" + bmcWebinarsData.listItems[j].date + " " + bmcWebinarsData.listItems[j].timeStamp);
+								// updating modal: Adding date from JSON	
+
 							}						
 
 						}
