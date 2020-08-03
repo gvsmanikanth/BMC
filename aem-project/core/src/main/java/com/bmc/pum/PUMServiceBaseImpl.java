@@ -41,7 +41,7 @@ public class PUMServiceBaseImpl implements PUMService {
                     "www.bmcsoftware.cn, /content/bmc/language-masters/zh",
                     "www.bmcsoftware.de, /content/bmc/language-masters/de",
                     "www.bmcsoftware.es, /content/bmc/language-masters/es", "www.bmcsoftware.fr, /content/bmc/language-masters/fr",
-                    "www.bmcsoftware.jp, /content/bmc/language-masters/ja", "www.bmcsoftware.kr, /content/bmc/language-masters/en",
+                    "www.bmcsoftware.jp, /content/bmc/language-masters/ja", 
                     "www.bmcsoftware.pt, /content/bmc/language-masters/pt"})
     static final String DOMAIN_MAPPING = "pum.domain.mapping";
     private Map domainMapping;
