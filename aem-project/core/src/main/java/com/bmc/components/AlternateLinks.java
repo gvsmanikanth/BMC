@@ -35,7 +35,7 @@ public class AlternateLinks  extends WCMUsePojo {
        // put("en-il", "www.bmcsoftware.co.il");
        // put("it-it", "www.bmcsoftware.it");
         put("jp", "www.bmcsoftware.jp");
-        put("kr", "www.bmcsoftware.kr");
+       // put("kr", "www.bmcsoftware.kr");
        // put("en-nl", "www.bmcsoftware.nl");
        // put("en-pl", "www.bmcsoftware.pl");
        // put("pt-br", "www.bmcsoftware.com.br");
