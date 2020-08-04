@@ -17,6 +17,7 @@
     	</sly>
         <p data-sly-test.path="${properties.redirectTarget}" class="cq-redirect-notice">This page redirects to <a href="${path @ context = 'uri'}">${path}</a></p>
         <sly data-sly-include="body.socialmedia_begin.html"></sly>
+        <sly data-sly-include="svg-definitions.html"></sly>
  		<sly data-sly-include="body.html"></sly>      
         <sly data-sly-call="${footer.footer @ page = page}"></sly>
         <sly data-sly-include="body.socialmedia_end.html"></sly>
