@@ -38,14 +38,7 @@ function selectLanguageonLoad(){
 }
 
 $('#ft-sl-language').on('change', function() {
-   var ua = navigator.userAgent.toLowerCase(); 
-   if (ua.indexOf('safari') != -1) { 
-     if (ua.indexOf('chrome') > -1) {
-        window.open(this.value, '_blank'); // Chrome
-     } else { window.open(this.value, '_self');}
-  //} // Safari
-    } else { window.open(this.value, '_blank');}    //other 
-    
+    window.open(this.value, '_self');
     selectLanguageonLoad();// set selected Language
   });
 }(jQuery));
