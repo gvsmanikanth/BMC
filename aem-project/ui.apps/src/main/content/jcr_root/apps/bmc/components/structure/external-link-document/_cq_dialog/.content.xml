@@ -343,7 +343,21 @@
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
                                                 defaultValue="external-document"
                                                 name="./linkAbstractor"
-                                                value="external-document"/>                                           
+                                                value="external-document"/>
+                                            <footerLogo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Please pick the DAM asset for footer logo image."
+                                                fieldLabel="Footer logo"
+                                                name="./footerLogo"
+                                                rootPath="/content/dam/bmc/logos"/>
+                                            <headerImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                fieldDescription="Please pick the DAM asset for the header image."
+                                                fieldLabel="Document header image"
+                                                name="./headerImage"
+                                                rootPath="/content/dam/bmc"/>
                                             <documentDisplayType
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
