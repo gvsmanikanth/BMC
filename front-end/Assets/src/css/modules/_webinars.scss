@@ -1,35 +1,41 @@
+
 .webinars-cards {
-.landingPage-product-list{
-    padding: 2rem 0;
-    .card{
-        padding-bottom: 50px;
-    }
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        .event-date{
-            margin-bottom: 0;
-            font-size: 14px;
-            color: #333;
-            font-weight: 600;
+    .landingPage-product-list{
+        padding: 2rem 0;
+        .card{
+            padding-bottom: 50px;
         }
-    }
-    .card-content{
-        min-height: initial;
-        padding: 10px 0;
-        hr{
+        .card-header {
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 15px;
+            .event-date{
+                margin-bottom: 0;
+                font-size: 14px;
+                color: #333;
+                font-weight: 600;
+            }
         }
-        h2{
-            margin-bottom: 0;
+        .card-content{
+            min-height: initial;
+            padding: 10px 0;
+            hr{
+                margin-bottom: 15px;
+            }
+            h2{
+                margin-bottom: 0;
+            }
         }
-    }
-    .sort-wrap {
-        margin-bottom: 30px;
-    }
-    
-}    
+        .card-header {
+            h5 {
+                margin-right: 5px;
+            }
+        }
+        .sort-wrap {
+            margin-bottom: 30px;
+        }
+        
+    }   
 
 }
 .webinars-modal-details {
@@ -68,6 +74,27 @@ display: none;
         background: transparent;
         ol{
             justify-content: center;
+              
         }
     }
 }
+
+
+
+
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+        .resource-hub-trials-cards{
+        max-width: 900px;
+                margin: 0 auto;
+                
+        }
+        .resource-hub-trials-cards ol{
+            width: 100%;  
+        }
+        .resource-hub-trials-cards ol li{
+            float: left;
+        }
+    }}
+
+ 

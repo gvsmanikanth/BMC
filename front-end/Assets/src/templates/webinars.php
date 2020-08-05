@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'BMC Home';
-$bodyClass = 'resource-hub';
+$bodyClass = 'resource-hub webinar-page';
 include 'php-inc/head.php';
 ?>
 	<script>
@@ -110,7 +110,7 @@ include 'php-inc/head.php';
 						},
 						{
 							"id" : 2,
-							"name" : "BMC Day",
+							"name" : "BMC Day - Boston",
 							"type" : [3],
 							"month" : [0],
 							"date" : "July 30, 2020 01:15:00",
@@ -134,7 +134,7 @@ include 'php-inc/head.php';
 						,
 						{
 							"id" : 4,
-							"name" : "BMC Day",
+							"name" : "BMC Day - Toronto",
 							"type" : [3],
 							"month" : [0],
 							"date" : "August 17, 2020 23:15:30",
@@ -225,10 +225,24 @@ include 'php-inc/head.php';
 	<section class="section bg-white webinars-modal-details" id="1">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">	Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
+				<h2 class="section-title -sm mb1 mt1">2017 AFCEA West Show</h2>
+				<div class="-sm modalDate"><b>Date :</b> 21 FEB 4:37 AM - 23 FEB 4:37 AM</div>
+				<div class="-sm mt0"><b>Event URL:</b> <a class="word-wrap-break-word" target="_blank" href="http://www.westconference.org/West17/Public/Enter.aspx">http://www.westconference.org/West17/Public/Enter.aspx</a></div>
+				<div class="-sm mt0"><b>Language :</b> English</div>
+				<div class="-sm mt2">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
+				<div class="-sm"><b>BMC will be in booth # 1551</b>
+				<div><button class="btn btn-primary-with-border">Register Now &rsaquo;</button></div>
+			</div>
+		</div>
+	</section>
+	<section class="section bg-white webinars-modal-details" id="2">
+		<div class="lg-flex section p2">
+			<div class="flex-auto">
+				<p class="-sm mb0"  id="webinar-type">	Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">BMC Day - Boston</h2>
 				<div class="-sm modalDate"><b>Date :</b> 09 May 9:00 AM - 7:00 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:heather_tomlinson@bmc.com">Heather Tomlinson</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:heather_tomlinson@bmc.com">Heather Tomlinson</a></div>
 				<div class="-sm mt0"><b>Language :</b> English</div>	
 				<div class="-sm mt0"><b>More Info :</b> <a class="word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/boston/">Agenda</a></div>
 				<div class="-sm mt2">BMC Day 2017 in Boston is coming soon. Join BMC technical experts and your peers for this valuable IT management event. With insightful keynotes, educational sessions, and networking, BMC Day offers you the information, best practices, and training you need for digital IT success.</p>
@@ -243,13 +257,13 @@ include 'php-inc/head.php';
 			</div>
 		</div>
 	</section>
-	<section class="section bg-white webinars-modal-details" id="2">
+	<section class="section bg-white webinars-modal-details" id="3">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">Control-M Tag Frankfurt</h2>
 				<div class="-sm modalDate" ><b>Date :</b> 10 May 10:00 AM - 5:00 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:andrea_schula@bmc.com">Andrea Schula</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:andrea_schula@bmc.com">Andrea Schula</a></div>
 				<div class="-sm mt0"><b>Language :</b> German (german)</div>
 				<div class="-sm mt0"><b>More Info :</b> <a class="word-wrap-break-word" target="_blank" href="http://media.cms.bmc.com/documents/Agenda+BMC+Control-M+Tag+2017_Frankfurt.pdf">Agenda</a></div>
 				<div class="-sm mt2">Der Control-M Tag findet am 10. Mai 2017 in Frankfurt statt.</p>
@@ -259,14 +273,14 @@ include 'php-inc/head.php';
 				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/control-m-day-frankfurt.html?cid=em-WLA_UserGroup_Frankfurt_MAY17_Email-AS-02">Register Now &rsaquo;</a></div>	
 			</div>
 		</div>
-	</section>
-	<section class="section bg-white webinars-modal-details" id="3">
+	</section>	
+	<section class="section bg-white webinars-modal-details" id="4">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">BMC Day - Toronto</h2>
 				<div class="-sm modalDate"><b>Date :</b> 5 Jun 9:00 AM - 7:00 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:heather_tomlinson@bmc.com">Heather Tomlinson</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:heather_tomlinson@bmc.com">Heather Tomlinson</a></div>
 				<div class="-sm mt0"><b>Language :</b> English</div>
 				<div class="-sm mt0"><b>More Info :</b> <a class="word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/toronto/">Agenda</a></div>
 				<div class="-sm mt2">Join technical experts and peers at BMC Day, a global IT management event series where IT professionals will learn about the latest BMC products and solutions that enable their innovation, their careers, and their companies.</p>
@@ -281,28 +295,14 @@ include 'php-inc/head.php';
 				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/toronto/">Register Now &rsaquo;</a></div>	
 			</div>
 		</div>
-	</section>
-	<section class="section bg-white webinars-modal-details" id="4">
-		<div class="lg-flex section p2">
-			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
-				<h2 class="section-title -sm mb1 mt1">2017 AFCEA West Show</h2>
-				<div class="-sm modalDate"><b>Date :</b> 21 FEB 4:37 AM - 23 FEB 4:37 AM</div>
-				<div class="-sm mt0"><b>Event URL:</b> <a class="word-wrap-break-word" target="_blank" href="http://www.westconference.org/West17/Public/Enter.aspx">http://www.westconference.org/West17/Public/Enter.aspx</a></div>
-				<div class="-sm mt0"><b>Language :</b> English</div>
-				<div class="-sm mt2">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
-				<div class="-sm"><b>BMC will be in booth # 1551</b>
-				<div><button class="btn btn-primary-with-border">Register Now &rsaquo;</button></div>
-			</div>
-		</div>
-	</section>
+	</section>	
 	<section class="section bg-white webinars-modal-details" id="5">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">Exchange Federal</h2>
 				<div class="-sm modalDate"><b>Date :</b> 7 Jun 7:30 AM - 6:00 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:kimberly_vanderwende@bmc.com">Kim Van Der Wende</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:kimberly_vanderwende@bmc.com">Kim Van Der Wende</a></div>
 				<div class="-sm mt0"><b>Language :</b> English</div>
 				<div class="-sm mt2">You're invited to attend the Digital Enterprise Management event on June 7th in Washington, D.C.</p>
 				<div class="-sm mt2">At this free one-day event you'll hear thought-leaders from government and industry as they explore how to future-proof the federal enterprise. They'll discuss how agencies need to reduce the complexity of the digital enterprise, strengthen their management processes and free up resources for innovation through the use of automation.</p>
@@ -315,10 +315,10 @@ include 'php-inc/head.php';
 	<section class="section bg-white webinars-modal-details" id="6">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">AFCEA Defensive Cyber Operations Symposium 2017</h2>
 				<div class="-sm modalDate"><b>Date :</b> 13 Jun 5:00 AM - 15 Jun 1:30 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:kimberly_vanderwende@bmc.com">Kim Van Der Wende</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:kimberly_vanderwende@bmc.com">Kim Van Der Wende</a></div>
 				<div class="-sm mt0"><b>Language :</b> English</div>
 				<div class="-sm mt2">Cyber operations are a challenging mission for the U.S. Defense Department and government community that builds, operates and defends networks. Cyber leaders and warriors must continually evolve to adapt to future innovations and develop and leverage cutting-edge tools and technologies.</p>
 				<div class="-sm mt2">To support this effort, AFCEA’s Defensive Cyber Operations Symposium provides an ethical forum where government and industry will focus on “Connect and Protect.” Participants will discuss requirements and solutions to ensure that the networks within DoD are adaptive, resilient and effective across a range of uses and against diverse threats. Leveraging innovative technology, advancing cybersecurity and building new relationships are topics experts will examine in depth.</p>
@@ -331,10 +331,10 @@ include 'php-inc/head.php';
 	<section class="section bg-white webinars-modal-details" id="7">
 		<div class="lg-flex section p2">
 			<div class="flex-auto">
-				<p class="-sm mb0">Live Webinar</p>
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
 				<h2 class="section-title -sm mb1 mt1">MainView RoundTable 2017</h2>
 				<div class="-sm modalDate"><b>Date :</b> 19 Jun 11:30 AM - 20 Jun 3:15 PM</div>
-				<div class="-sm mt0"><b>Contact</b> <a href="mailto:andrea_schula@bmc.com">Andrea Schula</a></div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:andrea_schula@bmc.com">Andrea Schula</a></div>
 				<div class="-sm mt0"><b>Language :</b> German (german)</div>
 				<div class="-sm mt0"><b>More Info :</b> <a class="word-wrap-break-word" target="_blank" href="http://media.cms.bmc.com/documents/Agenda+Mainview+RoundTable+2017.pdf">Agenda</a></div>
 				<div class="-sm mt2">Der MainView RoundTable bietet Ihnen als MainView Anwender ein Forum, sich mit anderen Usern auszutauschen sowie von BMC zu erfahren, was es Neues im Bereich MainView gibt.</p>
