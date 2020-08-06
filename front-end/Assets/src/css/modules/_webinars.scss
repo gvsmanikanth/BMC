@@ -1,100 +1,106 @@
 
-.webinars-cards {
-    .landingPage-product-list{
-        padding: 2rem 0;
-        .card{
-            padding-bottom: 50px;
+.webinar-page{
+    .webinars-cards {
+        .landingPage-product-list{
+            padding: 2rem 0;
+            .card{
+                padding-bottom: 30px;
+            }
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                .event-date{
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    color: #333;
+                }
+            }
+            .card-content{
+                min-height: initial;
+                padding: 10px 0;
+                hr{
+                    margin-bottom: 15px;
+                }
+                h2{
+                    margin-bottom: 0;
+                }
+            }
+            .card-header {
+                h5 {
+                    margin-right: 5px;
+                }
+                img {
+                    height: 45px;
+                    margin-top: -10px;
+                }
+            }
+            .sort-wrap {
+                margin-bottom: 30px;
+            }
+            
+        }   
+    
+    }
+    .webinars-modal-details {
+    display: none;
+    .modal-logo-section {
+        text-align: center;
+        img {
+            height: auto;
+            width: 100%;
+            max-width: 200px;
         }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            .event-date{
-                margin-bottom: 0;
-                font-size: 14px;
-                color: #333;
-                font-weight: 600;
+        .links {
+            text-align: left;
+        }
+        span {
+            padding-right: 1em;
+        }
+    }
+    .modal-content {
+        .section-header {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .section-content {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        @media (min-width: $break-md) {
+            padding-left: 2rem;
+        }
+    }
+    }
+    
+    .webinar-filters-wrap {   
+        .filters{
+            background: transparent;
+            ol{
+                justify-content: center;
+                  
             }
         }
-        .card-content{
-            min-height: initial;
-            padding: 10px 0;
-            hr{
-                margin-bottom: 15px;
+    }
+    
+    
+    
+    
+        @media not all and (min-resolution:.001dpcm)
+        { @supports (-webkit-appearance:none) {
+            .resource-hub-trials-cards{
+            max-width: 900px;
+                    margin: 0 auto;
+                    
             }
-            h2{
-                margin-bottom: 0;
+            .resource-hub-trials-cards ol{
+                width: 100%;  
             }
-        }
-        .card-header {
-            h5 {
-                margin-right: 5px;
+            .resource-hub-trials-cards ol li{
+                float: left;
             }
+        }}
+    
+        .fancybox-overlay{
+            z-index: 2147483647;
         }
-        .sort-wrap {
-            margin-bottom: 30px;
-        }
-        
-    }   
-
 }
-.webinars-modal-details {
-display: none;
-.modal-logo-section {
-    text-align: center;
-    img {
-        height: auto;
-        width: 100%;
-        max-width: 200px;
-    }
-    .links {
-        text-align: left;
-    }
-    span {
-        padding-right: 1em;
-    }
-}
-.modal-content {
-    .section-header {
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-    .section-content {
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-    @media (min-width: $break-md) {
-        padding-left: 2rem;
-    }
-}
-}
-
-.webinar-filters-wrap {   
-    .filters{
-        background: transparent;
-        ol{
-            justify-content: center;
-              
-        }
-    }
-}
-
-
-
-
-    @media not all and (min-resolution:.001dpcm)
-    { @supports (-webkit-appearance:none) {
-        .resource-hub-trials-cards{
-        max-width: 900px;
-                margin: 0 auto;
-                
-        }
-        .resource-hub-trials-cards ol{
-            width: 100%;  
-        }
-        .resource-hub-trials-cards ol li{
-            float: left;
-        }
-    }}
-
- 

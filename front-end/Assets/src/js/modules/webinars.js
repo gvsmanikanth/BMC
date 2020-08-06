@@ -43,21 +43,14 @@
 			
 			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
 			
-			itemHTML += '"><div class=""><h5>' + self.getName("type", item)+'</h5></div>';
+			itemHTML += '"><div class=""><p class="event-date">' + webinarDate + '</p></div>';
 			
 			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
 			
-			itemHTML+= '<div class="card-content"><hr><p class="event-date">' + webinarDate + '</p>';
+			itemHTML+= '<div class="card-content"><hr>';
 			
-			// if(item["location-city"] != "")
-			// 	itemHTML+= '<p class="event-location">' +  item["location-city"] +', ' +self.getName("location", item)+'</p>';
-			// else
-			// 	itemHTML+= '<p class="event-location">' + self.getName("location", item)+'</p>';
-			
-			//itemHTML+= '<p class="event-location">' +   + '</p>';
 			itemHTML+= '<h2 class="title">'+ item.name +'</h2></div>';
 			
-					
 			itemHTML += '<div class="card-footer"><span class="learn-more">'+ ctaBtn +'</span></div></div></a></div>';
 			
 			return itemHTML;

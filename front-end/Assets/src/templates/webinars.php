@@ -172,6 +172,28 @@ include 'php-inc/head.php';
 							"url" : "http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02",
 							"isModal" : true,
 							"cssClass":"modal-inline"
+						},
+						{
+							"id": 2752,
+							"name": "The Helix Differentiation",
+							"type": [3],
+							"month": [0],
+							"date": "August 25, 2020 10:00:00",
+							"timeStamp" : "BST",
+							"url": "",
+							"isModal": true,
+							"cssClass": "modal-inline"
+						},
+						{
+							"id": 2111,
+							"name": "Building the bridge between Development and Operations",
+							"type": [3],
+							"month": [8],
+							"date": "August 06, 2020 16:00:00",
+							"timeStamp" : "BST",
+							"url": "",
+							"isModal": true,
+							"cssClass": "modal-inline"
 						},			
 						
 						]
@@ -341,6 +363,53 @@ include 'php-inc/head.php';
 				<div class="-sm mt2">Themen sind u. a. MainView Roadmap, MLC Kostenreduzierung, MainView Infrastructure, MainView for Java Environments, Neues vom Kundensupport, Tipps & Tricks, BMC's Common Vendor Install Project sowie MainView AutoOPERATOR.</p>
 				<div class="-sm mt2">Wir freuen uns auf Sie!</p>			
 				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register Now &rsaquo;</a></div>	
+			</div>
+		</div>
+	</section>
+	<section class="section bg-white webinars-modal-details" id="2752">
+		<div class="lg-flex section p2">
+			<div class="flex-auto">
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
+				<h2 class="section-title -sm mb1 mt1">The Helix Differentiation</h2>
+				<div class="-sm modalDate"><b>Date :</b> 19 Jun 11:30 AM - 20 Jun 3:15 PM</div>
+				<div class="-sm mt0"><b>Contact Company : </b>BMC Software</div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:Andy_Walker@bmc.com">Andy Walker</a></div>
+				<div class="-sm mt2">
+					<p>When selecting a vendor with whom to transition to a SaaS model you are embarking upon a partnership.</p>
+					<p>This session will explore the Service aspects of Helix and why we firmly believe that BMC is the partner you should commit to for your Service Management and Service Operations platform.</p>
+					<p>In this webinar we will discuss the SaaS Service Description associated with BMC Helix, including: </p>
+					<ol>
+						<li>Data Centre Architecture</li>
+						<li>High Availability and Disaster Recovery</li>
+						<li>Service Delivery and Operations</li>
+						<li>SLAs and Service Levels and Support Hours</li>
+						<li>The Business Relationship Manager role</li>	
+					</ol>	   							
+				<div>		
+				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register Now &rsaquo;</a></div>	
+			</div>
+		</div>
+	</section>
+	<section class="section bg-white webinars-modal-details" id="2111">
+		<div class="lg-flex section p2">
+			<div class="flex-auto">
+				<p class="-sm mb0"  id="webinar-type">Live Webinar</p>
+				<h2 class="section-title -sm mb1 mt1">Building the bridge between Development and Operations</h2>
+				<div class="-sm modalDate"><b>Date :</b> 19 Jun 11:30 AM - 20 Jun 3:15 PM</div>
+				<div class="-sm mt0"><b>Contact Company : </b>BMC Software</div>
+				<div class="-sm mt0"><b>Contact :</b> <a href="mailto:karanvir_attwal@bmc.com">Karanvir Attwal</a></div>
+				<div class="-sm mt2">
+					<p>Traditionally IT Ops has always maintained full control and access to Control-M. This approach usually results in a lot of rework at the end of the release cycle and jobs are tested in Control-M for the very first time in or right before production. Since IT Ops has full control over Control-M the only way for developers to request new workflows in Control-M or modify existing ones is to rely on a request mechanism like opening service desk tickets, which leads to a lot of back and forth between Dev and Ops to clarify the requirements.</p>
+					<p>With Control-M Automation API we move our product into the pre-production world where Developers/Engineers can define their jobs as-code earlier in the SDLC. This allows them to spend more time coding the business value of the application as opposed to spending time on operational instrumentation. The job definitions become a part of the continuous integration/continuous delivery (CI/CD) pipeline and will move through the process as an application code artefact. Jobs defined go through the testing phase as well to ensure that there are no gaps.</p>
+					<ul>
+						<li>Control-M operates within your existing delivery toolchain, so all its powerful capabilities are immediately accessible via familiar interfaces.</li>
+						<li>Jobs-as-Code supports the DevOps best practice of including all application components in the SDLC, including job scheduling flows.</li>
+						<li>Our Jobs-as-Code approach provides easy access to application workflow orchestration that delivers robust operational visibility with predictive analysis for the earliest possible warning of potential SLA breaches.</li>
+						<li>Jobs-as-Code is a modern approach to automating complex application integration and operational instrumentation using a DevOps approach.</li>
+					</ul>	   
+								
+				<div>		
+				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="https://register.gotowebinar.com/register/5465988268856742158">Register Now &rsaquo;</a></div>	
 			</div>
 		</div>
 	</section>
