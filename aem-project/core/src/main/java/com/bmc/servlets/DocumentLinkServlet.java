@@ -105,8 +105,7 @@ public class DocumentLinkServlet extends org.apache.sling.api.servlets.SlingAllM
      							PrintWriter out = response.getWriter();
      							final WCMMode mode = WCMMode.fromRequest(request);	
      							if(linkAbstractorExternalURL.contains("pdf"))
-     							{
-     								;
+     							{     								
      								isDocumentPDF = true;
      							}
      							
