@@ -2,12 +2,16 @@
     &{
         min-height: 400px;
         margin-bottom: 30px;
+        display:flex;
     }
     .tile-block {
         & {
             display:flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
+            max-height: 500px;
+            overflow: auto;
+            padding-bottom: 15px;
         }
         .tile {
            & {
@@ -62,6 +66,16 @@
                    color: #00A79D;
                }
            }
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .container {
+        .tile-block {
+            max-height: none;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
         }
     }
 }

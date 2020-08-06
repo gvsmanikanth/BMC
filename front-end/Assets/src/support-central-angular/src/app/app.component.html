@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="tile-block">
+  <div class="tile-block" [@openCloseTiles]="isExtendedOpen ? 'closed' : 'open'">
     <a class="tile" [href]="widgets.manageCase">
       <div class="tile-left"></div>
       <div class="tile-center">
@@ -26,7 +26,7 @@
         <span class="d-icon-angle_right"></span>
       </div>
     </a>
-    <a class="tile" [href]="widgets.prdDownloads">
+    <div class="tile" (click)="toggleExtended()" [routerLink]="['epd-widget']">
       <div class="tile-left"></div>
       <div class="tile-center">
         <h3>Product Downloads</h3>
@@ -35,10 +35,10 @@
       <div class="tile-right">
         <span class="d-icon-download"></span>
       </div>
-      <div class="tile-arrow">
+      <a class="tile-arrow" [href]="widgets.prdDownloads">
         <span class="d-icon-angle_right"></span>
-      </div>
-    </a>
+      </a>
+    </div>
     <a class="tile" [href]="widgets.docs">
       <div class="tile-left"></div>
       <div class="tile-center">
@@ -130,5 +130,8 @@
         <span class="d-icon-angle_right"></span>
       </div>
     </a>
+  </div>
+  <div [@openCloseRouter]="isExtendedOpen ? 'open' : 'closed'">
+    <router-outlet *ngIf="isExtendedOpen"></router-outlet>
   </div>
 </div>
