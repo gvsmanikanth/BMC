@@ -75,6 +75,7 @@
   </sly> -->
 
 </sly>
+<sly data-sly-use.runmode="com.bmc.models.RunModes"/>
 <footer class="layout-footer">
     <nav class="layout-inner-wrap">
         <ul class="nav-tertiary">
@@ -128,14 +129,25 @@
 								<h4>Choose your language</h4>
 								<div class="search-input-m-glass">
 									<select name="sl-language" id="ft-sl-language">
-                                        <option value="https://www.bmc.com">English</option>
-                                        <option value="https://www.bmcsoftware.fr">Française</option>
-                                        <option value="https://www.bmcsoftware.de">Deutsche</option>
-                                        <option value="https://www.bmcsoftware.cn">中文</option>
-                                        <option value="https://www.bmcsoftware.es">Española</option>
-                                        <option value="https://www.bmcsoftware.pt">Portuguesa</option>
-                                        <option value="https://www.bmcsoftware.jp">日本人</option>
-                                    </select>
+                                        <sly data-sly-test ="${runmode.mode == 'prod'}">
+											<option value="//www.bmc.com" data-language="en">English</option>
+											<option value="//www.bmcsoftware.fr" data-language="fr">Française</option>
+											<option value="//www.bmcsoftware.de" data-language="de">Deutsche</option>
+											<option value="//www.bmcsoftware.cn" data-language="zh">中文</option>
+											<option value="//www.bmcsoftware.es" data-language="es">Española</option>
+											<option value="//www.bmcsoftware.pt" data-language="pt">Portuguesa</option>
+											<option value="//www.bmcsoftware.jp" data-language="ja">日本人</option>
+										</sly>
+										<sly data-sly-test ="${runmode.mode != 'prod'}">
+											<option value="//staging.bmc.com" data-language="en">English</option>
+											<option value="//staging.bmcsoftware.fr" data-language="fr">Française</option>
+											<option value="//staging.bmcsoftware.de" data-language="de">Deutsche</option>
+											<option value="//staging.bmcsoftware.cn" data-language="zh">中文</option>
+											<option value="//staging.bmcsoftware.es" data-language="es">Española</option>
+											<option value="//staging.bmcsoftware.pt" data-language="pt">Portuguesa</option>
+											<option value="//staging.bmcsoftware.jp" data-language="ja">日本人</option>
+										</sly>
+									</select>
 								</div>
 							<div>
 						</li>
