@@ -4,36 +4,18 @@
   });
   
 function selectLanguageonLoad(){    
-    ccode = bmcMeta.site.cultureCode; 
+    ccode = bmcMeta.site.cultureCode;
+     var index=0;
     if(ccode!=undefined){
-        //alert(ccode);  
-        var lang= ccode.split("-");
-            if(lang[0]!="en")
-            {
-            switch (lang[0]) {
-              case "fr":
-                $("#ft-sl-language").prop('selectedIndex',1);
-                break;
-              case "de":
-                $("#ft-sl-language").prop('selectedIndex',2);
-                break;
-              case "zh":
-                $("#ft-sl-language").prop('selectedIndex',3);
-                break;
-              case "es":
-                $("#ft-sl-language").prop('selectedIndex',4);
-                break;
-              case "pt":
-                $("#ft-sl-language").prop('selectedIndex',5);
-                break;
-              case "ja":
-                $("#ft-sl-language").prop('selectedIndex',6);
-                break;
-              default:
-                $("#ft-sl-language").prop('selectedIndex',0);
-                break;
-                }
-            }
+      var lang= ccode.split("-");
+      var languageOption=$("#ft-sl-language > option");
+      languageOption.each(function(){
+         var optionValue = $(this).data('language');         
+         if(lang[0]==optionValue){
+            $("#ft-sl-language").prop('selectedIndex',index);
+         }
+         index++;
+        });
       }
 }
 
