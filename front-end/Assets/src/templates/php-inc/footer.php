@@ -105,13 +105,13 @@
 								<h4>Choose your language</h4>
 								<div class="search-input-m-glass">
 								<select name="sl-language" id="ft-sl-language">
-										<option value="https://www.bmc.com" data-language="en">English</option>
-										<option value="https://www.bmcsoftware.fr" data-language="fr">Française</option>
-										<option value="https://www.bmcsoftware.de" data-language="de">Deutsche</option>
-										<option value="https://www.bmcsoftware.cn" data-language="zh">中文</option>
-										<option value="https://www.bmcsoftware.es" data-language="es">Española</option>
-										<option value="https://www.bmcsoftware.pt" data-language="pt">Portuguesa</option>
-										<option value="https://www.bmcsoftware.jp" data-language="ja">日本人</option>
+										<option value="//www.bmc.com" data-language="en">English</option>
+										<option value="//www.bmcsoftware.fr" data-language="fr">Française</option>
+										<option value="//www.bmcsoftware.de" data-language="de">Deutsche</option>
+										<option value="//www.bmcsoftware.cn" data-language="zh">中文</option>
+										<option value="//www.bmcsoftware.es" data-language="es">Española</option>
+										<option value="//www.bmcsoftware.pt" data-language="pt">Portuguesa</option>
+										<option value="//www.bmcsoftware.jp" data-language="ja">日本人</option>
 									</select>
 								</div>
 							<div>

@@ -13,6 +13,7 @@ function selectLanguageonLoad(){
          var optionValue = $(this).data('language');         
          if(lang[0]==optionValue){
             $("#ft-sl-language").prop('selectedIndex',index);
+            return false;
          }
          index++;
         });
