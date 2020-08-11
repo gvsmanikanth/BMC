@@ -254,7 +254,7 @@ include 'php-inc/head.php';
 				<div class="-sm mt0"><b>Language :</b> English</div>
 				<div class="-sm mt2">After joining the company in 1988 as a sales executive, Beauchamp rose rapidly through the BMC ranks. During his tenure, he has led key business initiatives, including research and development, strategic marketing and corporate development. Named CEO in 2001, Beauchamp led BMC's highly successful transformation from a mainframe tools vendor to the company that delivers the industry's most strategic enterprise management and automation solutions, enabling customers to automate IT and prove their business value.</p>
 				<div class="-sm"><b>BMC will be in booth # 1551</b>
-				<div><button class="btn btn-primary-with-border">Register Now &rsaquo;</button></div>
+				<div><button class="btn btn-primary-with-border learn-more">Register now</button></div>
 			</div>
 		</div>
 	</section>
@@ -275,7 +275,7 @@ include 'php-inc/head.php';
 				</ul>
 				<div class="-sm mt2">Learn how to get the most from your current BMC products and find out about innovations on the horizon. Register today!</p>
 					
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/boston/">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more" target="_blank" href="http://bmcdays.bmc.com/boston/">Register now</a></div>	
 			</div>
 		</div>
 	</section>
@@ -292,7 +292,7 @@ include 'php-inc/head.php';
 				<div class="-sm mt2">Er bietet Ihnen als Control-M Anwender ein Forum, sich mit anderen Usern aus der Region auszutauschen sowie von BMC zu erfahren, was es Neues im Bereich Control-M gibt.</p>
 				<div class="-sm mt2">Neben Erfahrungsberichten, Tipps & Tricks und Vorträgen zu Themen wie Roadmap, Automation API & MFT, Control-M for SAP etc., haben wir auch genügend Zeit für Diskussionen eingeplant.</p>
 				<div class="-sm mt2">Wir freuen uns auf Sie!</p>			
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/control-m-day-frankfurt.html?cid=em-WLA_UserGroup_Frankfurt_MAY17_Email-AS-02">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more learn-more" target="_blank" href="http://www.bmcsoftware.de/forms/control-m-day-frankfurt.html?cid=em-WLA_UserGroup_Frankfurt_MAY17_Email-AS-02">Register now</a></div>	
 			</div>
 		</div>
 	</section>	
@@ -314,7 +314,7 @@ include 'php-inc/head.php';
 				<li>Connect: Interact both onsite and online with peers, BMC experts, and IT vendors to expand their personal networks and build their social capital.</li>
 				<li>Advance: Deepen their understanding of the trends and technologies necessary for digital IT success.</li>
 				</ul>			
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/toronto/">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more" target="_blank" href="http://bmcdays.bmc.com/toronto/">Register now</a></div>	
 			</div>
 		</div>
 	</section>	
@@ -330,7 +330,7 @@ include 'php-inc/head.php';
 				<div class="-sm mt2">At this free one-day event you'll hear thought-leaders from government and industry as they explore how to future-proof the federal enterprise. They'll discuss how agencies need to reduce the complexity of the digital enterprise, strengthen their management processes and free up resources for innovation through the use of automation.</p>
 				<div class="-sm mt2">Attend this event to gain a better understanding of how to position your agency to meet future unanticipated requirements, with the ability to pivot quickly and effortlessly.</p>
 				<div class="-sm mt2">Reserve your seat today!</p>			
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="https://www.eiseverywhere.com/ereg/newreg.php?eventid=225963&reference=BMC">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="https://www.eiseverywhere.com/ereg/newreg.php?eventid=225963&reference=BMC">Register now</a></div>	
 			</div>
 		</div>
 	</section>
@@ -346,7 +346,7 @@ include 'php-inc/head.php';
 				<div class="-sm mt2">To support this effort, AFCEA’s Defensive Cyber Operations Symposium provides an ethical forum where government and industry will focus on “Connect and Protect.” Participants will discuss requirements and solutions to ensure that the networks within DoD are adaptive, resilient and effective across a range of uses and against diverse threats. Leveraging innovative technology, advancing cybersecurity and building new relationships are topics experts will examine in depth.</p>
 				<div class="-sm mt2"><b>Stop by booth 466 to speak with someone at BMC</b></p>
 				<div class="-sm mt2"><b>Exhibit Hours</b> </br>Tuesday,  June 13 | 5:00 PM – 7:00 PM </br>Wednesday,  June 14 | 8:00 AM – 4:00 PM </br>Thursday,  June 15 | 8:00 AM – 1:30 PM</p>
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://events.afcea.org//AFCEACyberOps17/Public/Content.aspx?ID=61250">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://events.afcea.org//AFCEACyberOps17/Public/Content.aspx?ID=61250">Register now</a></div>	
 			</div>
 		</div>
 	</section>
@@ -362,7 +362,7 @@ include 'php-inc/head.php';
 				<div class="-sm mt2">Der MainView RoundTable bietet Ihnen als MainView Anwender ein Forum, sich mit anderen Usern auszutauschen sowie von BMC zu erfahren, was es Neues im Bereich MainView gibt.</p>
 				<div class="-sm mt2">Themen sind u. a. MainView Roadmap, MLC Kostenreduzierung, MainView Infrastructure, MainView for Java Environments, Neues vom Kundensupport, Tipps & Tricks, BMC's Common Vendor Install Project sowie MainView AutoOPERATOR.</p>
 				<div class="-sm mt2">Wir freuen uns auf Sie!</p>			
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register now</a></div>	
 			</div>
 		</div>
 	</section>
@@ -386,7 +386,7 @@ include 'php-inc/head.php';
 						<li>The Business Relationship Manager role</li>	
 					</ol>	   							
 				<div>		
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more" target="_blank" href="http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02">Register now</a></div>	
 			</div>
 		</div>
 	</section>
@@ -409,7 +409,7 @@ include 'php-inc/head.php';
 					</ul>	   
 								
 				<div>		
-				<div><a class="btn btn-primary-with-border word-wrap-break-word" target="_blank" href="https://register.gotowebinar.com/register/5465988268856742158">Register Now &rsaquo;</a></div>	
+				<div><a class="btn btn-primary-with-border word-wrap-break-word learn-more" target="_blank" href="https://register.gotowebinar.com/register/5465988268856742158">Register now</a></div>	
 			</div>
 		</div>
 	</section>
