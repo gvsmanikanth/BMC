@@ -88,7 +88,10 @@
 				var htmlCardMarkup = "";
 				var strHTMLMarkup = '';
 				
-				
+				// Message for no data found
+				if(data.length == 0){
+					htmlCardMarkup = '<h3 class="text-center">'+ bmcFilterConfig.noResultFoundMessage +'</h3>';
+				}	
 				//Get all featured items
 				
 				var months = self.filterListItemsBaseedOnCriteria(self.filteringOptions,{name:"month"});

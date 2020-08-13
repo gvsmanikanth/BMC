@@ -10,9 +10,10 @@ include 'php-inc/head.php';
 		"maxPagesToDisplay" : 5,
 		"paginationType" : "onPagination", //"onPagination" ,"onScroll"
 		"showMatchCountInDropdown" : false,
-		"noResultFoundMessage" : "Sorry, no courses could be found with your search criteria, please adjust and try again",
+		"noResultFoundMessage" : "No webinars match your current selection.",
 		"filterListObject" : null,
-		"showDisplayCount": false
+		"showDisplayCount": false,
+		
 	};
 
 	var bmcWebinarsData = {	
