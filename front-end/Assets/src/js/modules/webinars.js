@@ -27,7 +27,7 @@
 			//setiing webinar date text and cta text as per webinar date
 			if(webinarDate < currentDate ){
 				var ctaBtn = "Watch now";
-				var webinarDate = "On demand";
+				var webinarDate = "On Demand";
 			}else{
 				webinarDate = dayName + ", " + day + " "+ monthName +" "+ year +" "+ hour +":"+ minute + " " + item.timeStamp;  
 			}
@@ -129,7 +129,7 @@
 					{
 						strHTMLMarkup += '<div class="list-count text-center"><h5>'+(startIndex+1) +" - " + (startIndex + displayCount) + " of " + data.length + '<h5></div>';	
 					}	
-				}
+				} 
 				strHTMLMarkup += '<div class="landingPage-product-list">';
 				strHTMLMarkup += htmlCardMarkup;
 				strHTMLMarkup += '</div>';

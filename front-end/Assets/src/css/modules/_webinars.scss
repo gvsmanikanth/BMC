@@ -95,12 +95,22 @@
             .resource-hub-trials-cards ol{
                 width: 100%;  
             }
+            
             .resource-hub-trials-cards ol li{
                 float: left;
             }
         }}
     
-        .fancybox-overlay{
-            z-index: 2147483647;
+       
+        .resource-hub-trials-cards {
+            ol {
+                li{
+                    @media (max-width: $break-md) {
+                        float: none;
+                    }
+                }
+            }
         }
+        
+                
 }
