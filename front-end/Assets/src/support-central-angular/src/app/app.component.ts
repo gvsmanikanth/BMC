@@ -10,10 +10,12 @@ import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
   animations: [
     trigger('openCloseRouter', [
       state('open', style({
-        width: '70%'
+        width: '70%',
+        opacity: '1'
       })),
       state('closed', style({
-        width:'0'
+        width:'0',
+        opacity: '0'
       })),
       transition('closed => open', [
         animate('0.2s 0.3s')
@@ -48,10 +50,10 @@ import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
         ]),
       ]),
       transition('open => closed', [
-        query('.tile', style({
-          'margin-bottom': '210px'
-        })),
         group([
+          query('.tile', animate('0.3s ease', style({
+            'margin-bottom': '210px'
+          }))),
           query('.tile:nth-child(3n+2)', animate('0.3s ease', style({
             transform: 'translate(-108%, 138%)'
           }))),
