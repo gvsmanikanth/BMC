@@ -1,0 +1,23 @@
+/* References */
+
+#references {
+    margin-top: 0.5rem;
+}
+
+#references .list {
+    padding: 0.8rem;
+    padding-top: 0;
+}
+
+#references .list .select {
+    width: 1rem;
+}
+
+#references .list .image {
+    width: 2.375rem;
+    height: 1.875rem;
+}
+
+#schedule {
+    min-height: 500px;
+}
