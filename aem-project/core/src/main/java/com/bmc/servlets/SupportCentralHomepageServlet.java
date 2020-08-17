@@ -27,7 +27,7 @@ import com.google.common.net.HttpHeaders;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-@SlingServlet(paths = "/bin/supportcentral/content", methods = { "GET" })
+@SlingServlet(paths = "/bin/supportcentralcontent", methods = { "GET" }) 
 public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 
 	private static final long serialVersionUID = 1L;
