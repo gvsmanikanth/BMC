@@ -574,4 +574,8 @@
         jcr:primaryType="nt:unstructured"
         country="Singapore"
         language="English"/>
+    <ja_jp
+        jcr:primaryType="nt:unstructured"
+        country="Japan"
+        language="Japanese"/>
 </jcr:root>
