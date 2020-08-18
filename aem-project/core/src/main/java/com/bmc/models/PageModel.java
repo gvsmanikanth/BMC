@@ -230,10 +230,14 @@ public class PageModel {
         String[] ic_target_persona = resourcePage.getContentResource().getValueMap().get("ic-target-persona", new String[] {});
         String ic_target_persona_list = Arrays.stream(ic_target_persona).map(s -> getIC_target_persona_Value(s)).collect(Collectors.joining("|"));
         String ic_source_publish_date ="";
-        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
-        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
-        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
+        try
+        {
+	        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
+	        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
+	        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
         }
+        }catch(ClassCastException e)
+        {e.printStackTrace();}
         String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
         String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
         
