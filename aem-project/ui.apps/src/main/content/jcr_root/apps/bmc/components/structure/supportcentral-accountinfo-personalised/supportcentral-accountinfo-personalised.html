@@ -1,0 +1,26 @@
+<section class="layout-full-bleed support-account-container"
+data-sly-use.support="com.bmc.components.SupportCentral">
+    <div class="account-actions-wrapper acccount-user-wrapper">
+        <div class="layout-inner-wrap">
+            <sly data-sly-test.loggedIn="${support.isLoggedIn}">
+            <ul class="account-user">
+                <li class="welcome"><span>Welcome ${support.userInfo.firstName} ${support.userInfo.lastName}</span></li>
+            </ul>
+            </sly>
+            <ul class="account-actions">
+                <sly data-sly-test="${loggedIn}">
+                <!--/* WEB-3150 Update header for Support pages START */-->
+                <li class="action"><a href="/available/manage-support-ids.html">Manage Support IDs</a></li>
+                <!--/* WEB-3150 Update header for Support pages END */-->
+                <li class="action"><a href="/available/edit-profile.html?c=n">Edit Profile</a></li>
+                <li class="action"><a href="/available/ssologout.html">Logout</a></li>
+                </sly>
+                <sly data-sly-test="${!loggedIn}">
+                <li class="action"><a href="/available/redesign-support-login.html">Login</a></li>
+                <li class="action"><a href="/available/register-now.html?c=n">Register</a></li>
+                </sly>
+                <li class="action"><a class="alerts icon-caution js-fancyDialog" href="#">Alerts</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
