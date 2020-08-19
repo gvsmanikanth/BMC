@@ -26,6 +26,8 @@
 		  implServicesUrl = "https://www.bmc.com/it-services/implementation-services.html"
 		  managedServicesUrl = "https://www.bmc.com/it-services/managed-services.html"
 		  enhancedSupportServicesUrl = "https://www.bmc.com/it-services/enhanced-support-services.html"
+		  customerOrientationUrl = "http://bmc.com/new"
+		  supportGuideUrl = "https://www.bmc.com/support/resources/support-guide-getting-started.html#Register-on-Support-Central"
 		  personalisationApiOauthUser = "authprovider"
     	  personalisationApiOauthPass = "bmcT0k3n"
     	  personalisationApiUser = "bmc"
@@ -33,7 +35,9 @@
     	  supportCentralPersonalisationUrl="https://webapi.bmc.com/personalisation"
     	  oauthUrl="/oauth/token"
     	  popularProductUrl="/v1/personalisation/contents"
+    	  userTotalCountUrl="/v1/users/total-count"
     	  productCount = "5"
     	  communityCount = "10"
+    	  userscoreThreshold = "50"
     	  
 />

@@ -117,6 +117,14 @@ public class PersonalisedSupportCentralService {
 		return enhancedSupportServicesUrl;
 	}
 
+	public String getCustomerOrientationUrl() {
+		return customerOrientationUrl;
+	}
+
+	public String getSupportGuideUrl() {
+		return supportGuideUrl;
+	}
+
 	public String getPersonalisationApiOauthUser() {
 		return personalisationApiOauthUser;
 	}
@@ -139,6 +147,10 @@ public class PersonalisedSupportCentralService {
 	public String getPopularProductUrl() {
 		return popularProductUrl;
 	}
+	
+	public String getUserTotalCountUrl() {
+		return userTotalCountUrl;
+	}
 
 	public String getProductCount() {
 		return productCount;
@@ -146,6 +158,10 @@ public class PersonalisedSupportCentralService {
 
 	public String getCommunityCount() {
 		return communityCount;
+	}
+
+    public String getUserscoreThreshold() {
+		return userscoreThreshold;
 	}
 
 	private String newCaseUrl;
@@ -175,7 +191,9 @@ public class PersonalisedSupportCentralService {
     private String implServicesUrl ;
     private String managedServicesUrl;
     private String enhancedSupportServicesUrl;
-  		  
+    private String customerOrientationUrl;
+	private String supportGuideUrl;
+	
     private String personalisationApiOauthUser ;
     private String personalisationApiOauthPass ;
     private String personalisationApiUser ;
@@ -183,10 +201,13 @@ public class PersonalisedSupportCentralService {
     private String supportCentralPersonalisationUrl;
     private String oauthUrl;
     private String popularProductUrl;
-    private String productCount;
+    private String userTotalCountUrl;
+	
+	private String productCount;
     private String communityCount;
+    private String userscoreThreshold;
     
-    @Activate
+	@Activate
     public void activate(Map<String, String> config) {
     	logger.info("Service Fetching OSGi configuration ...");
 
@@ -221,7 +242,9 @@ public class PersonalisedSupportCentralService {
         managedServicesUrl = PropertiesUtil.toString(config.get("managedServicesUrl"), "");
         enhancedSupportServicesUrl = PropertiesUtil.toString(config.get("enhancedSupportServicesUrl"), "");
     	logger.info("Service Fetching enhancedSupportServicesUrl OSGi configuration {}...",enhancedSupportServicesUrl);
-
+    	customerOrientationUrl = PropertiesUtil.toString(config.get("customerOrientationUrl"), "");
+    	supportGuideUrl = PropertiesUtil.toString(config.get("supportGuideUrl"), "");
+        
         personalisationApiOauthUser = PropertiesUtil.toString(config.get("personalisationApiOauthUser"), "");
         personalisationApiOauthPass = PropertiesUtil.toString(config.get("personalisationApiOauthPass"), "");
         personalisationApiUser = PropertiesUtil.toString(config.get("personalisationApiUser"), "");
@@ -229,9 +252,10 @@ public class PersonalisedSupportCentralService {
         supportCentralPersonalisationUrl = PropertiesUtil.toString(config.get("supportCentralPersonalisationUrl"), "");
         oauthUrl = PropertiesUtil.toString(config.get("oauthUrl"), "");
         popularProductUrl=PropertiesUtil.toString(config.get("popularProductUrl"), "");
+        userTotalCountUrl = PropertiesUtil.toString(config.get("userTotalCountUrl"),"");
         productCount = PropertiesUtil.toString(config.get("productCount"), "");
         communityCount = PropertiesUtil.toString(config.get("communityCount"), "");
-        
+        userscoreThreshold = PropertiesUtil.toString(config.get("userscoreThreshold"), "");
     	logger.info("Service Fetching supportCentralPersonalisationUrl OSGi configuration {}...",supportCentralPersonalisationUrl);
     	logger.info("Service Fetching productCount OSGi configuration {}...",productCount);
 
