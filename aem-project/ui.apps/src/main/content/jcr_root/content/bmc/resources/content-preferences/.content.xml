@@ -70,7 +70,13 @@
         text="Mainframe DB2 Database Management"/>
     <Mainframe_MLC_Cost_Management
         jcr:primaryType="nt:unstructured"
-        text="Mainframe MLC Cost Management"/>
+        text="Mainframe Cost Management"/>
+    <Mainframe_DevOps
+            jcr:primaryType="nt:unstructured"
+            text="Mainframe DevOps"/>
+    <Mainframe_AIOps
+            jcr:primaryType="nt:unstructured"
+            text="Mainframe AIOps"/>
     <Mainframe_Systems_Management
         jcr:primaryType="nt:unstructured"
         text="Mainframe Systems Management"/>

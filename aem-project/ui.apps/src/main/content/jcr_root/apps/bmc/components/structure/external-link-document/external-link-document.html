@@ -1,0 +1,27 @@
+<!--/* WEB-8348 Adding structural changes to DC */-->
+<!DOCTYPE html>
+<html data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" class="no-js" lang="${page.language}"
+      data-sly-use.head="head.html"
+      data-sly-use.footer="footer.html">
+<head data-sly-call="${head.head @ page = page}"></head>
+<body class="${properties.bodyClass}">
+<sly data-sly-use.runMode="com.bmc.models.RunModes"/>
+    	<sly data-sly-test ="${runmode.mode == 'prod'}">
+	    	<!-- Google Tag Manager (noscript) -->
+	    	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2H82WG"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	    	<!-- End Google Tag Manager (noscript) -->
+    	</sly>
+    	<sly data-sly-test ="${runmode.mode != 'prod'}">
+    		<!-- Google Tag Manager (noscript) -->
+    		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2H82WG&gtm_auth=dyTGni97Ha-kcAIGUZj2aA&gtm_preview=env-4&gtm_cookies_win=x"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    		<!-- End Google Tag Manager (noscript) -->
+    	</sly>
+        <p data-sly-test.path="${properties.redirectTarget}" class="cq-redirect-notice">This page redirects to <a href="${path @ context = 'uri'}">${path}</a></p>
+        <sly data-sly-include="body.socialmedia_begin.html"></sly>
+        <sly data-sly-include="svg-definitions.html"></sly>
+ 		<sly data-sly-include="body.html"></sly>      
+        <sly data-sly-call="${footer.footer @ page = page}"></sly>
+        <sly data-sly-include="body.socialmedia_end.html"></sly>
+        <sly data-sly-resource="${'.' @ resourceType='bmc/components/structure/server-context'}"></sly>
+        </body>
+        </html>
