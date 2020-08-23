@@ -1,0 +1,51 @@
+.tile {
+    & {
+     cursor: pointer;
+     color: #313538;
+     text-decoration: none;
+     display: flex;
+     border-radius: 5px;
+     box-shadow: 0 3px 4px rgba(0,0,0,.14), 0 9px 10px rgba(0,0,0,.06);;
+    } 
+    .tile-left {
+         background-color: #4E5154;
+         width: 3%;
+         border-radius: 5px 0 0 5px;
+         margin-right: 3%;
+    }
+    .tile-center {
+        & {
+            width: 67%;
+            font-size: 12px;
+        }
+        h3 {
+         font-weight: normal;
+         margin-top: 15px;
+         margin-bottom: 5px;
+        }
+    }
+    .tile-right{
+        & {
+            width: 20%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        span {
+             font-size: 50px;
+             color: #4E5154;
+        }
+    }
+    .tile-arrow {
+        & {
+            width: 10%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        span {
+            font-size: 40px;
+            color: #00A79D;
+        }
+    }
+ }

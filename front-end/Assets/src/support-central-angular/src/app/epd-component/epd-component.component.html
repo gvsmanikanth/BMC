@@ -1,19 +1,21 @@
 <div class="extended-widget-container">
     <div class="extended-widget-header">
-      <h2>Downloads</h2>
-      <adapt-search placeholder="Search for more products"></adapt-search>
+      <div class="top-section">
+        <h2>Product Downloads</h2><a class="external-app-link" [href]="widgets.prdDownloads">Go to the Download Center</a>
+      </div>
+      <div class="description">Quick downloads based on your preferences and product popularity</div>
     </div>
-    <div class="extended-widget-content">
-      <adapt-accordion>
-        <adapt-accordion-tab [isOpen]="true" title="Product 1">
-          <app-tabs2></app-tabs2>
-        </adapt-accordion-tab>
-        <adapt-accordion-tab title="Product 2">
-          <app-tabs2></app-tabs2>
-        </adapt-accordion-tab>
-        <adapt-accordion-tab title="Product 3">
-          <app-tabs2></app-tabs2>
-        </adapt-accordion-tab>
-      </adapt-accordion>
+    <div class="extended-widget-body">
+      <app-epd-product *ngFor="let product of epdService.products" [product]="product"></app-epd-product>
+      <div class="epd-legend">
+        <span class="legend">
+          <span class="legend-item" style="background-color: rgb(126, 199, 35);">&nbsp;&nbsp;</span>
+          Available 
+        </span>
+        <span class="legend">
+          <span class="legend_item" style="background-color: rgb(246, 210, 120);">&nbsp;&nbsp;</span> 
+        Support Only 
+        </span>
+      </div>
     </div>
 </div>

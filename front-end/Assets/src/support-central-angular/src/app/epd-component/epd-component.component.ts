@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EPDService } from '../shared/services/epd.service';
 
 @Component({
   selector: 'app-epd-component',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EpdComponentComponent implements OnInit {
 
-  constructor() { }
+  widgets = window['psc'].widgets;
+
+  loggedIn = false;
+
+  constructor(public epdService: EPDService) { }
 
   ngOnInit() {
+    this.epdService.getProducts();
   }
 
 }

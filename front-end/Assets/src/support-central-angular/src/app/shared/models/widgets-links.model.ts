@@ -1,4 +1,4 @@
-export interface Widgets {
+export interface WidgetsLinks {
     openCase: string,
     listCase: string,
     manageCase:  string,

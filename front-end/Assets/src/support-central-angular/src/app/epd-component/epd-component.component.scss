@@ -4,10 +4,44 @@
     min-height: 500px;
     padding: 20px 30px;
     margin: auto;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgba(0,0,0,.16);
 }
 
 .extended-widget-header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #7C7F81;
+    .top-section {
+        & {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        h2 {
+            font-weight: normal;
+            margin: 10px 0 10px 20px;
+        }
+        .external-app-link {
+            font-weight: 600;
+        }
+    }
+    .description {
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+    
+}
+
+.epd-legend {
+  & {
+      font-size: 11px;
+      padding-left: 20px;
+      margin-top: 10px;
+  }
+    .legend {
+        & {
+            margin-right: 6px;
+        }
+        .legend-item {
+        border-radius: 3px;
+        }
+    }
 }

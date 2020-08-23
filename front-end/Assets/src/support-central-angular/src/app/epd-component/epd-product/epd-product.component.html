@@ -1,0 +1,7 @@
+<div class="epd-product">
+    <h4>{{product.productName}}</h4>
+    <div class="epd-versions-container">
+      <a class="epd-version" [attr.data-version-status]="deeplink.versionStatus" *ngFor="let deeplink of product.deeplinks.slice(0, shownVersions)" [href]="deeplink.deeplink" target="_blank">{{deeplink.versionSmartNumber | epdVersion}}<span class="d-icon-angle_right"></span></a>
+      <a *ngIf="truncated" class="epd-truncate" tabindex="0" (click)="showMore()">Show more</a>
+    </div>
+</div>

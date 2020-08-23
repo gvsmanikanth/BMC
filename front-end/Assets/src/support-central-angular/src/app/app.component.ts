@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Widgets } from './models/widgets';
+import { WidgetsLinks } from './shared/models/widgets-links.model';
 import { trigger, state, style, transition, animate, query, stagger, group } from '@angular/animations';
-import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
+import { widgets }  from "./shared/data/widgets";
+import { Widget } from './shared/models/widget.model';
 
 @Component({
   selector: 'app-root',
@@ -34,16 +35,16 @@ import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
       transition('closed => open', [
         animate('0.01s 0.2s'),
         group([
-          query('.tile', animate('0s 0.2s', style({
+          query('app-tile', animate('0s 0.2s', style({
             'margin-bottom': '210px'
           }))),
-          query('.tile:nth-child(3n+2)', animate('0s 0.2s', style({
+          query('app-tile:nth-child(3n+2)', animate('0s 0.2s', style({
             transform: 'translate(-108%, 138%)'
           }))),
-          query('.tile:nth-child(3n+3)', animate('0s 0.2s', style({
+          query('app-tile:nth-child(3n+3)', animate('0s 0.2s', style({
             transform: 'translate(-216%, 276%)'
           }))),
-          query('.tile', animate('0.3s 0.2s', style({
+          query('app-tile', animate('0.3s 0.2s', style({
             transform: 'translate(0, 0)',
             'margin-bottom': '0'
           }))),
@@ -51,13 +52,13 @@ import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
       ]),
       transition('open => closed', [
         group([
-          query('.tile', animate('0.3s ease', style({
+          query('app-tile', animate('0.3s ease', style({
             'margin-bottom': '210px'
           }))),
-          query('.tile:nth-child(3n+2)', animate('0.3s ease', style({
+          query('app-tile:nth-child(3n+2)', animate('0.3s ease', style({
             transform: 'translate(-108%, 138%)'
           }))),
-          query('.tile:nth-child(3n+3)', animate('0.3s ease', style({
+          query('app-tile:nth-child(3n+3)', animate('0.3s ease', style({
             transform: 'translate(-216%, 276%)'
           }))),
         ])
@@ -66,13 +67,17 @@ import { AdaptDeviceDetectionService } from '@bmc-ux/adapt-angular';
   ]
 })
 export class AppComponent implements OnInit{
-  constructor (private deviceDetectionService: AdaptDeviceDetectionService) {}
-  widgets: Widgets = window['psc'].widgets;
+  constructor () {}
+  widgetLinks: WidgetsLinks = window['psc'].widgets;
+  widgets: Widget[] = widgets;
   isExtendedOpen = false;
   ngOnInit () {
-
+    widgets.forEach((widget)=> {
+      widget.href = this.widgetLinks[widget.id];
+    })
   }
   toggleExtended() {
+    console.log('extended')
     this.isExtendedOpen = !this.isExtendedOpen;
   }
 }

@@ -1,0 +1,27 @@
+<a class="tile" *ngIf="widget.routerLink" [routerLink]=[widget.routerLink] (click)="checkExtended()">
+    <div class="tile-left"></div>
+    <div class="tile-center">
+      <h3>{{widget.title}}</h3>
+      <div>{{widget.description}}</div>
+    </div>
+    <div class="tile-right">
+      <span [ngClass]="widget.icon"></span>
+    </div>
+    <a class="tile-arrow" [href]="widget.href">
+      <span class="d-icon-angle_right"></span>
+    </a>
+</a>
+<a class="tile" [href]="widget.href" *ngIf="!widget.routerLink">
+  <div class="tile-left"></div>
+  <div class="tile-center">
+    <h3>{{widget.title}}</h3>
+    <div>{{widget.description}}</div>
+  </div>
+  <div class="tile-right">
+    <span [ngClass]="widget.icon"></span>
+  </div>
+  <div class="tile-arrow">
+    <span class="d-icon-angle_right"></span>
+  </div>
+</a>
+
