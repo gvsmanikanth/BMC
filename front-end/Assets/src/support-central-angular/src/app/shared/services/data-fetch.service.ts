@@ -13,6 +13,7 @@ export class DataFetchService {
         if (window.location.href.indexOf('localhost:4200') !== -1) {
             return Promise.resolve(products)
         }
+        
         return this.http.get('/bin/supportcentral/content?content_type=PRODUCT_DOWNLOAD').toPromise()
     }
 
