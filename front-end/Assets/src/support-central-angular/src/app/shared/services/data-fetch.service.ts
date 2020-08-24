@@ -14,7 +14,7 @@ export class DataFetchService {
             return Promise.resolve(products)
         }
         
-        return this.http.get('/bin/supportcentral/content?content_type=PRODUCT_DOWNLOAD').toPromise()
+        return this.http.get('/bin/supportcentralcontent?content_type=PRODUCT_DOWNLOAD').toPromise()
     }
 
 }
