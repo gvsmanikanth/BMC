@@ -36,9 +36,11 @@
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">${'Contact BMC' @ i18n}</span><span class="verticalBar">|</span></a>
 			</li>
-            <li class="navigation-country">
+            <!-- WEB-8285 Starts - Remove globe icon from header -->
+            <!-- <li class="navigation-country">
                 <a href="#" class="select-country"><span class="hideInDesktop md-hide  lg-hide">${'Worldwide (English)' @ i18n}</span><span class="verticalBar">|</span></a>
-            </li>
+            </li> -->
+			<!-- WEB-8285 Ends -->
 			<li class="navigation-search js-navigation-search searchIcon desktop-only">
 				<span class="navigation_search_link"></span>
 			</li>
@@ -140,7 +142,8 @@
 </div>
 <!-- WEB-6611 - Add new modal layout for contact | Ends -->
 <!--/ layout-contact-modal -->
-<div class="layout-country-modal">
+<!--/* WEB-8348 - Remove country modal layout- Intl FP Reduction | Starts */-->
+<!--/*<div class="layout-country-modal">
    <div class="country-modal-inner-wrap">
       <div class="country-modal-header">							
          <span class="modal-title">${'Select Country/Region' @ i18n}</span>
@@ -203,7 +206,8 @@
             </ul>
          </div>
       </section>
+   </div>*/-->
+   <!--/* WEB-8348 - Remove country modal layout- Intl FP Reduction | Ends */-->
+   <!--/ contact-modal-inner-wrap -->
    </div>
-   <!--/ contact-modal-inner-wrap -->						
-</div>
 <!--/ contact-modal-inner-wrap -->

@@ -71,10 +71,10 @@
 			</li>
 			<li class="navigation-contact">
 				<a href="#" class="contact-bmc"><span class="scrollTextHide">Contact BMC</span><span class="verticalBar">|</span></a>
-			</li>
+			</li><!--
 			<li class="navigation-country">
                 <a href="#" class="select-country"><span class="hideInDesktop md-hide  lg-hide">Worldwide (English)</span><span class="verticalBar">|</span></a>
-            </li>
+            </li>-->
 			<li class="navigation-search js-navigation-search searchIcon desktop-only">
 				<!--<span class="navigation_search_link"></span>-->
 			</li>

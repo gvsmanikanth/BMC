@@ -36,22 +36,13 @@ public class PUMServiceBaseImpl implements PUMService {
     private TreeMap<String, PUMPlugin> plugins = new TreeMap<>();
 
     @Property(description = "Mapping of domains to JCR content paths",
-            value = { "fr.bmcsoftware.ca, /content/bmc/ca/fr", "www.bmc.com, /content/bmc/us/en",
-                    "www.bmcsoftware.at, /content/bmc/at/de", "www.bmcsoftware.ca, /content/bmc/ca/en",
-                    "www.bmcsoftware.ch, /content/bmc/ch/de", "www.bmcsoftware.cn, /content/bmc/cn/zh",
-                    "www.bmcsoftware.co.il, /content/bmc/il/en", "www.bmcsoftware.co.za, /content/bmc/za/en",
-                    "www.bmcsoftware.com.ar, /content/bmc/ar/es", "www.bmcsoftware.com.au, /content/bmc/au/en",
-                    "www.bmcsoftware.com.br, /content/bmc/br/pt", "www.bmcsoftware.com.tr, /content/bmc/tr/en",
-                    "www.bmcsoftware.de, /content/bmc/de/de", "www.bmcsoftware.dk, /content/bmc/dk/en",
-                    "www.bmcsoftware.es, /content/bmc/es/es", "www.bmcsoftware.fr, /content/bmc/fr/fr",
-                    "www.bmcsoftware.gr, /content/bmc/gr/en", "www.bmcsoftware.hk, /content/bmc/hk/en",
-                    "www.bmcsoftware.in, /content/bmc/in/en", "www.bmcsoftware.it, /content/bmc/it/en",
-                    "www.bmcsoftware.jp, /content/bmc/jp/ja", "www.bmcsoftware.kr, /content/bmc/kr/en",
-                    "www.bmcsoftware.mx, /content/bmc/mx/es", "www.bmcsoftware.nl, /content/bmc/nl/en",
-                    "www.bmcsoftware.pl, /content/bmc/pl/en", "www.bmcsoftware.pt, /content/bmc/pt/pt",
-                    "www.bmcsoftware.ru, /content/bmc/ru/en", "www.bmcsoftware.sa, /content/bmc/sa/en",
-                    "www.bmcsoftware.sg, /content/bmc/sg/en", "www.bmcsoftware.tw, /content/bmc/tw/en",
-                    "www.bmcsoftware.uk, /content/bmc/uk/en"})
+    		value = {  "www.bmc.com, /content/bmc/language-masters/en",
+                    
+                    "www.bmcsoftware.cn, /content/bmc/language-masters/zh",
+                    "www.bmcsoftware.de, /content/bmc/language-masters/de",
+                    "www.bmcsoftware.es, /content/bmc/language-masters/es", "www.bmcsoftware.fr, /content/bmc/language-masters/fr",
+                    "www.bmcsoftware.jp, /content/bmc/language-masters/ja", 
+                    "www.bmcsoftware.pt, /content/bmc/language-masters/pt"})
     static final String DOMAIN_MAPPING = "pum.domain.mapping";
     private Map domainMapping;
 

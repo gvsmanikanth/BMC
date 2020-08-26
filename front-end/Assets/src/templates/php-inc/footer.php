@@ -6,7 +6,7 @@
 				<ul class="meta">
 
 					<li>
-						<a href="/corporate/about-bmc-software.html"  target="_self" >About BMC</a>
+						<a href="/corporate/about-bmc-software.html"  target="_self" >About BMC hi</a>
 					</li>
 
 					<li>
@@ -89,21 +89,36 @@
 				</ul>
 			</li>
 			<li class="nav-tertiary-col">
-				<h4>Search</h4>
-				<ul class="nav-supplemental meta">
-					<li>
-						<form action="/search/" class="search-site">
-							<fieldset>
+				<div class="searchLanguage">
+					<ul class="nav-supplemental meta">
+						<li>
+							<form action="/search/" class="search-site">
+							    <h4>Search BMC</h4>
+								<fieldset>
+									<div class="search-input-m-glass">
+										<input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
+										<button></button>
+									</div>
+								</fieldset>
+							</form>
+							<div id="footer-country_dropdown">
+								<h4>Choose your language</h4>
 								<div class="search-input-m-glass">
-									<input type="text" maxlength="2048" name="q" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-input-m-glass" placeholder="Search" value="" aria-label="Search" aria-haspopup="false" role="combobox" aria-autocomplete="both" dir="ltr" spellcheck="false">
-									<button></button>
+								<select name="sl-language" id="ft-sl-language">
+										<option value="//www.bmc.com" data-language="en">English</option>
+										<option value="//www.bmcsoftware.fr" data-language="fr">Française</option>
+										<option value="//www.bmcsoftware.de" data-language="de">Deutsche</option>
+										<option value="//www.bmcsoftware.cn" data-language="zh">中文</option>
+										<option value="//www.bmcsoftware.es" data-language="es">Española</option>
+										<option value="//www.bmcsoftware.pt" data-language="pt">Portuguesa</option>
+										<option value="//www.bmcsoftware.jp" data-language="ja">日本人</option>
+									</select>
 								</div>
-							</fieldset>
-						</form>
-					</li>
-				</ul>
+							<div>
+						</li>
+					</ul>
+				</div>
 			</li>
-
 		</ul>
 	</nav>
 	<div class="layout-inner-wrap">

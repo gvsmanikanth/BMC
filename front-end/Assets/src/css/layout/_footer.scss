@@ -23,7 +23,7 @@
 
 		&:hover {
 			color: color(mediumOrange);
-		}
+		}		
 	}
 	.layout-inner-wrap {
 		overflow: auto;
@@ -31,11 +31,103 @@
 			.nav-tertiary-col{
 				h4{
 					font-size:28px;
+				}			
+			}
+			//added for Language Select box start
+			.searchLanguage{
+					border-left:none;
+					padding-left:0em;
+					border-top:2px solid #a7a9ac;
+					margin-top:2em;
+
+					@include media(breakpointSmall) {
+						border-left:none;
+						padding-left:0em;
+						border-top:none;
+						margin-top:1em;
+					}
+					@include media(breakpointLarge) {
+						margin-top:0em;
+					}
+					@include media(breakpointExtraLarge) {
+						border-left:2px solid #a7a9ac;
+						padding-left:2em;
+						border-top:none;
+						margin-top:0em;
+					}
+					
+					@media (max-width:$break-md){
+						//margin-top:2em;
+					}
+					li{
+					@include media(breakpointMedium) {
+						width:100%;
+					}}					
+				
+				#footer-country_dropdown, form{
+					padding:.2em 0em .8em 0em;					
+						.decorator-select {
+							background: transparent;
+							border: 2px solid #a7a9ac;
+							border-radius: 0px;
+							box-sizing: border-box;
+							display: inline-block;
+							height: em(42);
+							overflow: hidden;
+							position: relative;
+							width: 100%;
+							&:after {
+								content: url('#{$imagesFolder}select-arrow.png');
+								height: $inputHeight;
+								pointer-events: none;
+								position: absolute;
+								right: 0px;
+								top: 3px;
+								width: 29px;
+								z-index: (z(content)+1);							
+							}							
+							select{
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								-o-appearance: none;
+								background:transparent;
+								border: none;
+								box-sizing: border-box;
+								color: #fff;
+								display: block;
+								height: em(42);
+								padding: 1px 10px 6px 10px;
+								position: relative;
+								width: 100%;
+								outline: none;
+								option{
+									color:#383233;
+									background-color: #fff;
+								}
+							}
+							select::-ms-expand {
+								border: none;
+								display: none;
+							}					
+							select::-ms-value {background: transparent; color:#fff;}
+							select option::-ms-value { color:#383233;}
+						}
 				}
+				h4{
+					border-bottom:0px;
+					padding-top:1em;
+					padding-bottom:0px;
+					color:#a7a9ac;
+					font-size: 15px;
+					margin-bottom:5px;
+					font-weight:bold;
+				}
+			
+			//added for Language Select box End
 			}
 		}
 	}
-}
+}	
 
 .footer-logo {
 	@include svg-image(Tagline-Logo-Lockup); 
