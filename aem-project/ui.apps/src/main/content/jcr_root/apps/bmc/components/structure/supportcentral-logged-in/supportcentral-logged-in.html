@@ -1,0 +1,19 @@
+<sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral"></sly>
+  <sly data-sly-test.loggedIn="${support.isLoggedIn}">
+      <sly data-sly-test.loggedIn="${support.isNewUser}">
+        <div align="center">
+            <h3>Is this first time to login support central? <button small class="btn" onclick="myFunction()">YES </button> </h3>
+            <div id="newUser" style="display: none;">
+                 <h2>Explore BMC resources</h2>
+                 <h5>Start With the <a href="${support.supportGuideUrl}">Support Central Users Guide/PDF</a><h5>
+                <button small class="btn" onclick="window.location.href='${support.customerOrientationUrl}';" type="button">New Customer Orientation ></button>
+            </div>
+        </div>
+      </sly>
+  </sly>
+</sly>
+<script>
+  function myFunction() {
+  document.getElementById("newUser").style.display = "block";
+}
+</script>

@@ -1,0 +1,17 @@
+<sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
+  <sly data-sly-test.loggdIn="${support.isLoggedIn}">       
+      <sly data-sly-test.newuser="${!support.isNewUser}">  
+        <div span style="padding-right:120px;">
+          <button small class="btn" style="float:right" onclick="window.location.href='${support.customerOrientationUrl}';" type="button">New Customer Orientation ></button>
+        </div>
+      </sly>
+  </sly>
+
+       <sly data-sly-test.loggdIn="${!support.isLoggedIn}">
+          <div span style="padding-left:140px;">
+            <h2>Explore BMC resources</h2>
+               Start With the <a href="${support.supportGuideUrl}">Support Central User's Guide/PDF</a></br>
+            <button small class="btn" onclick="window.location.href='${support.customerOrientationUrl}';" type="button">New Customer Orientation</button>
+          </div>
+       </sly>
+  </sly>
