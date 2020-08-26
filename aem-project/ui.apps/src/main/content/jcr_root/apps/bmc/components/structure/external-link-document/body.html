@@ -16,16 +16,13 @@
 </sly>
 <sly data-sly-test="${properties.displayType == 'inline' && (('https' in documentLink)|| ('/content/dam' in documentLink))}">
 <sly data-sly-resource="${'standardheader' @ resourceType='bmc/components/structure/standardheader'}"></sly>
-    <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
+    <section class="document-container-header header-form-basic layout-full-bleed header-emphasis header-product-landing">
         <div class="layout-inner-wrap flex">
             <h1>
                 <span>
                     ${properties.pageTitle @ context = 'html'}
                 </span>            
-            </h1>        
-                <div class="img-wrap">
-                    <img alt="bmc-helix-logo" border="0" src="/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
-                </div>        
+            </h1>                            
         </div>
     </section>
     
