@@ -10,14 +10,7 @@
    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
    <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
         <div class="layout-inner-wrap flex">
-            <h1>
-                <span>
-                    Control-M for Big Data
-                </span>            
-            </h1>        
-                <div class="img-wrap">
-                    <img alt="bmc-helix-logo" border="0" src="//www.bmc.com/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
-                </div>        
+            <h1>Control-M for Big Data</h1>                
         </div>
     </section>
       <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
