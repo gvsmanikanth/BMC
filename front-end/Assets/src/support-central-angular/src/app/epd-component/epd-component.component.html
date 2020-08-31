@@ -5,7 +5,7 @@
       </div>
       <div class="description">Quick downloads based on your preferences and product popularity</div>
     </div>
-    <div class="extended-widget-body">
+    <div class="extended-widget-body" [ngBusy]="epdService.busyConfig">
       <app-epd-product *ngFor="let product of epdService.products" [product]="product"></app-epd-product>
       <div class="epd-legend">
         <span class="legend">

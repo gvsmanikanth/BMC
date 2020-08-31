@@ -17,7 +17,7 @@ export class TileComponent implements OnInit {
 
   checkExtended() {
     if (this.widget.routerLink != null) {
-      this.widget.isExtended = true;
+      this.widget.isExtended = !this.widget.isExtended;
       this.extended.emit(true);
     } else {
       this.widget.isExtended = false;

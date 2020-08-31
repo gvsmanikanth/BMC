@@ -4,7 +4,7 @@ import { NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule } from '@bmc-ux/adapt-angular';
 import { RouterModule, Routes } from '@angular/router';
 import { EpdComponentComponent } from './epd-component/epd-component.component';
 import { EPDService } from './shared/services/epd.service';
@@ -36,6 +36,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AdaptBusyModule,
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),

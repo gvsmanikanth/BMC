@@ -9,7 +9,7 @@
             display:flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            max-height: 600px;
+            max-height: 610px;
             overflow: auto;
             padding-bottom: 15px;
         }
@@ -20,23 +20,59 @@
                 min-height: 80px;
                 margin-top: 30px;
             }
-            &.extended {
+            &.extended ::ng-deep {
+                .tile-left {
+                    background-color: #f86e00;
+                }
+                .tile-right span {
+                    color:  #f86e00;
+                }
             }
            
         }
     }
     .widget-container {
-        max-height: 600px;
+        max-height: 630px;
         overflow: auto;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .container {
+        &{
+            flex-direction: column;
+        }
         .tile-block {
             max-height: none;
             flex-direction: column;
             flex-wrap: nowrap;
             align-items: center;
+        }
+        .mobile-tile-block {
+            & {
+                display: flex;
+                max-height: none;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-around;
+            }
+            app-tile {
+                & {
+                    min-width: 300px;
+                    width: 30%;
+                    min-height: 80px;
+                    margin-top: 30px;
+                }
+                &.extended ::ng-deep {
+                    .tile-left {
+                        background-color: #f86e00;
+                    }
+                    .tile-right span {
+                        color:  #f86e00;
+                    }
+                }
+               
+            }
         }
     }
 }
