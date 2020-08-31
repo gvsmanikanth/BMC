@@ -1,9 +1,9 @@
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
-
+ <sly data-sly-test.loggdIn="${support.isLoggedIn}">
       <sly data-sly-test.newuser="${!support.isNewUser}">  
         <div span style="padding-right:120px;">
          <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
-
+ </sly>
   
   </sly>
 
