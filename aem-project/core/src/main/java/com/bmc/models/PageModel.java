@@ -27,8 +27,10 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 
 /**
@@ -233,11 +235,28 @@ public class PageModel {
         try
         {
 	        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
-	        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
-	        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
+	        	logger.info("TYPE "+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().toString());
+	        	if (resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().equals(String.class))
+	        	{
+	        		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MMM HH:mm:SS Z");	        		
+	        		logger.info("STRING"+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date"));
+	    			Date date = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date", new Date());
+	    			logger.info("date "+date.toString());
+	    			ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(toCalendar(date).getTime());
+	    			logger.info("IC Source Publish Date "+ic_source_publish_date.toString());
+	        		
+	        	}else
+	        	{
+	        		Date date = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date", new Date());
+	        		logger.info("date "+date.toString());
+	        		ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(toCalendar(date).getTime());
+	        		logger.info("IC Source Publish Date "+ic_source_publish_date.toString());
+	        	}	        		        	       
         }
         }catch(ClassCastException e)
         {e.printStackTrace();}
+        catch(Exception p)
+        {p.printStackTrace();}
         String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
         String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
         
@@ -434,4 +453,10 @@ public class PageModel {
         String code = (String) resolvedPage.getProperties().getOrDefault("jcr:language", "");
         return code.replace("_","-");
     }
+    
+    public static Calendar toCalendar(Date date){ 
+		  Calendar cal = Calendar.getInstance();
+		  cal.setTime(date);
+		  return cal;
+    	}
 }
