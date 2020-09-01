@@ -22,7 +22,7 @@
 <!-- Serve one icon for all Apple devices -->
 <link rel="apple-touch-icon-precomposed" href="/etc/clientlibs/bmc/head/touch-icon.png">
 
-<sly data-sly-test="${wcmmode.disabled}">
+<!-- <sly data-sly-test="${wcmmode.disabled}"> -->
     <sly data-sly-use.PageModel="com.bmc.models.PageModel"/>
     <script data-sly-test.BmcMeta="${PageModel.bmcMetaJson}">
         var bmcMeta = ${BmcMeta @ context='unsafe'};
