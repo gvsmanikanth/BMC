@@ -35,7 +35,9 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
     public String getTemplate() {
         return getCurrentPage().getPath();
     }
+    <!--/* Adding exception handling to the class as a part of WEB-8492 */-->
     public Boolean getIsSupportPage() {
+    	try{    	
     	logger.info("templateName"+getResourcePage().getTemplate().getName());
     	Page resourcePage = getResourcePage();
     	if(resourcePage.getTemplate().getName().equals("support-central")
@@ -44,6 +46,10 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
     		return true;
     	}else{
     	return false;
+    	}
+    	}catch(Exception e)
+    	{
+    		e.printStackTrace();
     	}
     }
     public Boolean getIsLoggedIn() { return !currentUserIsAnonymous(); }
