@@ -51,6 +51,7 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
     	{
     		e.printStackTrace();
     	}
+    	return false;
     }
     public Boolean getIsLoggedIn() { return !currentUserIsAnonymous(); }
 }
