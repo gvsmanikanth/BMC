@@ -9,17 +9,3 @@ front-end/Assets/dist
 front-end/documentation
 front-end/php-inc
 front-end/includes
-aem-project/core/.classpath
-aem-project/core/.settings/org.eclipse.core.resources.prefs
-aem-project/core/.settings/org.eclipse.jdt.core.prefs
-aem-project/core/.settings/org.eclipse.m2e.core.prefs
-aem-project/core/.settings/org.eclipse.wst.common.project.facet.core.xml
-aem-project/ui.apps/.classpath
-aem-project/ui.apps/.settings/org.apache.sling.ide.eclipse-core.prefs
-aem-project/ui.apps/.settings/org.eclipse.core.resources.prefs
-aem-project/ui.apps/.settings/org.eclipse.jdt.core.prefs
-aem-project/ui.apps/.settings/org.eclipse.m2e.core.prefs
-aem-project/ui.apps/.settings/org.eclipse.wst.common.component
-aem-project/ui.apps/.settings/org.eclipse.wst.common.project.facet.core.xml
-aem-project/ui.apps/.settings/org.eclipse.wst.validation.prefs
-aem-project/ui.apps/src/main/content/jcr_root/META-INF/MANIFEST.MF
