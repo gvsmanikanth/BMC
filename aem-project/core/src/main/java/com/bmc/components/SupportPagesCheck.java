@@ -40,7 +40,8 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
     	Page resourcePage = getResourcePage();
     	if(resourcePage.getTemplate().getName().equals("support-central")
                 || resourcePage.getTemplate().getName().equals("support-search")
-                || resourcePage.getTemplate().getName().equals("bmc-support-template")){
+                || resourcePage.getTemplate().getName().equals("bmc-support-template")
+                || resourcePage.getTemplate().getName().equals("support-central-personalised")){
     		return true;
     	}else{
     	return false;
