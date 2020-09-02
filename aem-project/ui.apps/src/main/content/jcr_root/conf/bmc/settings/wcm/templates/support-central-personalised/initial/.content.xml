@@ -5,7 +5,7 @@
         cq:lastReplicated="{Date}2017-10-14T04:39:04.662-04:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
-        cq:template="/conf/bmc/settings/wcm/templates/support-central-personalised"
+        cq:template="/conf/bmc/settings/wcm/templates/support-central"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/page"
         bodyClass="section-support support-central">

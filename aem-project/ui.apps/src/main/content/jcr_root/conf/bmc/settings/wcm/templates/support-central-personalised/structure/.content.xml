@@ -8,7 +8,7 @@
         cq:lastReplicated="{Date}2020-05-07T05:13:38.602-04:00"
         cq:lastReplicatedBy="vraskar@bmc.com"
         cq:lastReplicationAction="Activate"
-        cq:template="/conf/bmc/settings/wcm/templates/support-central-personalised"
+        cq:template="/conf/bmc/settings/wcm/templates/support-central"
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
