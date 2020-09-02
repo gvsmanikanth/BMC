@@ -35,7 +35,7 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
     public String getTemplate() {
         return getCurrentPage().getPath();
     }
-    <!--/* Adding exception handling to the class as a part of WEB-8492 */-->
+    /* Adding exception handling to the class as a part of WEB-8492 */
     public Boolean getIsSupportPage() {
     	try{    	
     	logger.info("templateName"+getResourcePage().getTemplate().getName());
