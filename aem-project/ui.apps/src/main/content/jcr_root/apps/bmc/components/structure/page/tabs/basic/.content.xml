@@ -89,6 +89,12 @@
                                 allowBulkEdit="{Boolean}true"
                                 cq-msm-lockable="showBreadcrumbs"/>
                         </showbreadcrumbs>
+                        <bodyClass
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Add body CSS classes here."
+                            fieldLabel="Body Class"
+                            name="./bodyClass"/>
                     </items>
                 </title>
                 <moretitles
