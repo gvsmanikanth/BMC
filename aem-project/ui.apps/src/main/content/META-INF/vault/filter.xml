@@ -37,10 +37,15 @@
     <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/form-event-thank-you" mode="merge"/>
 
-	  <filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
-
-
+	  	<filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
+    	<filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
+		<!-- WEB-8402 Not able to select XF variation from picker START -->
+		 <filter root="/conf/bmc/settings/wcm/templates/support-experience-fragment-template" mode="merge"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-additional-support" mode="merge"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-base-template" mode="merge"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset" mode="merge"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="merge"/>
+		 <!-- WEB-8402 Not able to select XF variation from picker  END -->    
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
    
     <filter root="/etc/clientlibs/bmc"/>
