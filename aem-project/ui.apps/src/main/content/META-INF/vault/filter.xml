@@ -39,16 +39,16 @@
 	  	<filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
     	<filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
 		<!-- WEB-8402 Not able to select XF variation from picker START -->
-		 <filter root="/conf/bmc/settings/wcm/templates/support-experience-fragment-template" mode="merge"/>
-		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-additional-support" mode="merge"/>
-		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-base-template" mode="merge"/>
-		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset" mode="merge"/>
-		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="merge"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/support-experience-fragment-template" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-additional-support" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-base-template" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="replace"/>
 		 <!-- WEB-8402 Not able to select XF variation from picker  END -->    
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
    
     <filter root="/etc/clientlibs/bmc"/>
-
+replace
     <filter root="/etc/designs/bmc">
         <include pattern="/etc/designs/bmc"/>
         <include pattern="/etc/designs/bmc/jcr:content"/>
