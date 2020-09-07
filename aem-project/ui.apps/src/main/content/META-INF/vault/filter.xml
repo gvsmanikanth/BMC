@@ -47,7 +47,7 @@
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
    
     <filter root="/etc/clientlibs/bmc"/>
-replace
+
     <filter root="/etc/designs/bmc">
         <include pattern="/etc/designs/bmc"/>
         <include pattern="/etc/designs/bmc/jcr:content"/>
