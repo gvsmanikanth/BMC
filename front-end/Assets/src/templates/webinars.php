@@ -105,7 +105,7 @@ include 'php-inc/head.php';
 						"date" : "July 28, 2020 01:15:00",
 						"timeStamp" : "IST",		        		
 						"url" : "http://www.bmcsoftware.com.br/forms/key-to-becoming-digital-itsm-webinar-apr2017.html?cid=em-DSM_Webinar_Brazil_INV1-JM-04-f-04182017&cc=em&elqcid=2477&sfcid=70114000002Xtgd&emid=2749",
-						"isModal" : true,
+						"isModal" : false,
 						"cssClass":"modal-inline"
 					},
 					{
