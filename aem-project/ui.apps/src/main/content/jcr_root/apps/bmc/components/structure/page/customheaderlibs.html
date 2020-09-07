@@ -22,22 +22,23 @@
 <!-- Serve one icon for all Apple devices -->
 <link rel="apple-touch-icon-precomposed" href="/etc/clientlibs/bmc/head/touch-icon.png">
 
-<sly data-sly-test="${wcmmode.disabled}">
+
     <sly data-sly-use.PageModel="com.bmc.models.PageModel"/>
     <script data-sly-test.BmcMeta="${PageModel.bmcMetaJson}">
         var bmcMeta = ${BmcMeta @ context='unsafe'};
     </script>
     <!-- WEB-7660 Added the closing sly tag to revert changes made under WEB-7642 -->
-</sly>
 
-<!-- WEB-7277 COVEO FRAMEWORK RESOURCES START -->
+<sly data-sly-use.model="com.bmc.components.SupportPagesCheck"/>
+<sly data-sly-test="${model.isSupportPage}">
+<!--/* WEB-7277 COVEO FRAMEWORK RESOURCES START */-->
   <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/CoveoJsSearch.js"></script>
   <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/cultures/en.js"></script>
   <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/templates/templatesNew.js"></script>
 
   <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.8521/css/CoveoFullSearchNewDesign.css" />
-  <!-- WEB-7277 COVEO FRAMEWORK RESOURCES END -->
-  
+  <!--/* WEB-7277 COVEO FRAMEWORK RESOURCES END */-->
+</sly>  
 <sly data-sly-use.runMode="com.bmc.models.RunModes"/>
 <sly data-sly-test ="${runmode.mode == 'prod'}">
   <script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562.js"></script>
