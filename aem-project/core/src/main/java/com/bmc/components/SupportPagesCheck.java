@@ -42,6 +42,7 @@ public class SupportPagesCheck extends WCMUsePojo implements UserInfoProvider_Re
                 || resourcePage.getTemplate().getName().equals("support-search")
                 || resourcePage.getTemplate().getName().equals("bmc-support-template")
                 || resourcePage.getTemplate().getName().equals("support-central-personalised")){
+    		logger.info("This is Support Page:" + resourcePage.getTemplate().getName()); 
     		return true;
     	}else{
     	return false;
