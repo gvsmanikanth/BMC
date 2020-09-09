@@ -49,7 +49,11 @@ public class PersonalisedSupportCentralService {
     public String getSupportCentralUrl() {
         return supportCentralUrl;
     }
-    public String getSupportCoveoAccessToken() {
+    public String getIssuePath() {
+		return issuePath;
+	}
+
+	public String getSupportCoveoAccessToken() {
         return supportCoveoAccessToken;
     }
     public String getSearchPageUrl() {
@@ -171,6 +175,7 @@ public class PersonalisedSupportCentralService {
     private String apiUser;
     private String apiPass;
     private String supportCentralUrl;
+    private String issuePath;
     private String supportCoveoAccessToken;
     private String searchPageUrl;
 
@@ -219,6 +224,8 @@ public class PersonalisedSupportCentralService {
         apiPass = PropertiesUtil.toString(config.get("apiPass"), "");
         /*Support central Coveo search variables*/
         supportCentralUrl = PropertiesUtil.toString(config.get("supportCentralUrl"), "");
+        issuePath = PropertiesUtil.toString(config.get("issuePath"), "");
+
         supportCoveoAccessToken = PropertiesUtil.toString(config.get("supportCoveoAccessToken"), "");
         searchPageUrl = PropertiesUtil.toString(config.get("searchPageUrl"), "");
         

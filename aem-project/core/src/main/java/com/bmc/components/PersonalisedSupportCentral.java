@@ -29,6 +29,14 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private static final Logger logger = LoggerFactory
 			.getLogger(PersonalisedSupportCentral.class);
 
+	public String getSupportCentralUrl() {
+		return supportCentralUrl;
+	}
+
+	public String getIssuePath() {
+		return issuePath;
+	}
+
 	public String getNewCaseUrl() {
 		return newCaseUrl;
 	}
@@ -109,6 +117,8 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		return supportGuideUrl;
 	}
 
+	private String supportCentralUrl;
+	private String issuePath;
 	private String newCaseUrl;
 	private String allCasesUrl;
 
