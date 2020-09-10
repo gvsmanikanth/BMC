@@ -149,6 +149,8 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		logger.info("Fetching OSGi configuration ...");
 		service = getSlingScriptHelper().getService(
 				PersonalisedSupportCentralService.class);
+		issuePath = service.getIssuePath();
+		supportCentralUrl = service.getSupportCentralUrl();
 		allCasesUrl = service.getAllCasesUrl();
 		newCaseUrl = service.getNewCaseUrl();
 		caseMgtmUrl = service.getCaseMgtmUrl();
