@@ -29,6 +29,11 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -236,22 +241,11 @@ public class PageModel {
         {
 	        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
 	        	logger.info("TYPE "+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().toString());
-	        	if (resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().equals(String.class))
-	        	{
-	        		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MMM HH:mm:SS Z");	        		
-	        		logger.info("STRING"+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date"));
-	    			Date date = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date", new Date());
-	    			logger.info("date "+date.toString());
-	    			ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(toCalendar(date).getTime());
-	    			logger.info("IC Source Publish Date "+ic_source_publish_date.toString());
-	        		
-	        	}else
-	        	{
+	        		//Changed logic to use java.time API instead of java.util.time
 	        		Date date = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date", new Date());
-	        		logger.info("date "+date.toString());
-	        		ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(toCalendar(date).getTime());
-	        		logger.info("IC Source Publish Date "+ic_source_publish_date.toString());
-	        	}	        		        	       
+	        		ZonedDateTime zdt = dateToNewDate(date);
+	        		ic_source_publish_date = zdt.format(DateTimeFormatter.ofPattern("MM-YYYY"));
+	        		logger.info("IC Source Publish Date "+ic_source_publish_date.toString());	        	      		        	       
         }
         }catch(ClassCastException e)
         {e.printStackTrace();}
@@ -454,9 +448,22 @@ public class PageModel {
         return code.replace("_","-");
     }
     
-    public static Calendar toCalendar(Date date){ 
-		  Calendar cal = Calendar.getInstance();
-		  cal.setTime(date);
-		  return cal;
-    	}
+   
+    /*
+     * Method name dateToNewDate()
+     * Converts the old java.util.Date object to the new Date Time
+     * parameter java.util Date object
+     * returns java.time Date object
+     */
+    private static ZonedDateTime dateToNewDate(Date date) {
+    	
+        Instant instant = date.toInstant();
+
+        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.systemDefault());
+        LocalDateTime dateTime = zonedDateTime.toLocalDateTime();     
+        logger.info("java.util.Calendar      = " + date);
+        logger.info("java.time.LocalDateTime = " + dateTime);
+        logger.info("java.time.zonedDateTime     = " + zonedDateTime);
+       return zonedDateTime;
+    }
 }
