@@ -2,7 +2,7 @@
       
 		//Education Class
 		function WebinarList(filterContainer, filterList, list) {
-			var self = this;
+			var self = this;					
 			FilterList.call(this, filterContainer, filterList, list);
 		}
 
@@ -103,6 +103,8 @@
 							
 							htmlCardMarkup +="<div class='sort-wrap'><h2 class='h2-variation-1'>"+months[0].values[j].name+" </h2>";
 							htmlCardMarkup +="<div class='flex-wrap' >";
+							tempArrMonth = self.filterListItemsBaseedOnDate(arrMonths, months[0].values[j].id);	
+							arrMonths = tempArrMonth;
 							for(var i=0; i<arrMonths.length; i++){
 								var item = arrMonths[i];
 								if (item) {
@@ -141,6 +143,17 @@
 		
 		WebinarList.prototype.constructor = WebinarList;
 
+		// Filter data by most recent item
+		WebinarList.prototype.filterListItemsBaseedOnDate = function(arr, pid) {
+				console.log(arr);
+				if(pid == 1){
+					var sortedActivities = arr.slice().sort((a, b) => new Date(a.date) - new Date(b.date))
+				}else{
+					var sortedActivities = arr.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
+				}
+				
+				return sortedActivities;
+		}
 		//End Class
 		
 		//Function detects the list page
@@ -190,7 +203,9 @@
 					}
 					if (bmcWebinarsData.listItems) {
 						// Write the data into our global variable.
+						
 						list = bmcWebinarsData.listItems;
+						
 						// Adding id to month filter 
 						var currDate = new Date();
 						for(j= 0; j < bmcWebinarsData.listItems.length; j++){
@@ -216,6 +231,7 @@
 
 				if (isListPage() && filterList && list) {
 					filterListObject = new WebinarList(filterContainer, filterList, list);
+
 					filterListObject.initializeFilters();
 					$('.filterListContainer').show();
 					$('.listCompLoader').hide();

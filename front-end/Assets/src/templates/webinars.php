@@ -113,7 +113,7 @@ include 'php-inc/head.php';
 						"name" : "BMC Day - Boston",
 						"type" : [3],
 						"month" : [0],
-						"date" : "July 30, 2020 01:15:00",
+						"date" : "October 12, 2020 01:15:00",
 						"timeStamp" : "IST",		        		
 						"url" : "http://bmcdays.bmc.com/boston/",
 						"isModal" : true,
@@ -162,28 +162,29 @@ include 'php-inc/head.php';
 						"url" : "http://events.afcea.org//AFCEACyberOps17/Public/Content.aspx?ID=61250",
 						"isModal" : true,
 						"cssClass":"modal-inline"
-					},{
-						"id" : 7,
-						"name" : "MainView RoundTable 2017",
-						"type" : [4],
-						"month" : [0],
-						"date" : "September 19, 2020 23:15:30",
-						"timeStamp" : "IST",
-						"url" : "http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02",
-						"isModal" : true,
-						"cssClass":"modal-inline"
 					},
 					{
 						"id": 2752,
 						"name": "The Helix Differentiation",
 						"type": [3],
 						"month": [0],
-						"date": "August 25, 2020 10:00:00",
+						"date": "September 19, 2020 10:00:00",
 						"timeStamp" : "BST",
 						"url": "",
 						"isModal": true,
 						"cssClass": "modal-inline"
+					},{
+						"id" : 7,
+						"name" : "MainView RoundTable 2017",
+						"type" : [4],
+						"month" : [0],
+						"date" : "September 12, 2020 23:15:30",
+						"timeStamp" : "IST",
+						"url" : "http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02",
+						"isModal" : true,
+						"cssClass":"modal-inline"
 					},
+					
 					{
 						"id": 2111,
 						"name": "Building the bridge between Development and Operations",
@@ -201,7 +202,7 @@ include 'php-inc/head.php';
 </script>
 
 <div class="header-solutions header-solutions aem-GridColumn aem-GridColumn--default--12">
-	<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 banner-image-from-top js-content-center padding-bottom-0 "
+	<section class="wallpapered bar full-bleed-page-banner product-category-header product-category-header2 js-content-center padding-bottom-0 "
 		data-wallpaper-options="{&quot;source&quot;:{&quot;fallback&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg&quot;,&quot;(min-width: 640px)&quot;: &quot;https://www.bmc.com/content/dam/bmc/solutions/banners/tbn-corporate-free-trial.jpg&quot;}}" 
 	style="background-color:#0091DD;">
 		<div class="offset-wrapper flex-center">
