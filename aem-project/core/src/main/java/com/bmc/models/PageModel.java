@@ -36,6 +36,7 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -239,13 +240,13 @@ public class PageModel {
         String ic_source_publish_date ="";
         try
         {
-	        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
+        	if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
 	        	logger.info("TYPE "+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().toString());
 	        		//Changed logic to use java.time API instead of java.util.time
-	        		Date date = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date", new Date());
-	        		ZonedDateTime zdt = dateToNewDate(date);
-	        		ic_source_publish_date = zdt.format(DateTimeFormatter.ofPattern("MM-YYYY"));
-	        		logger.info("IC Source Publish Date "+ic_source_publish_date.toString());	        	      		        	       
+	        	GregorianCalendar myGregorianCalendar = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date",new GregorianCalendar());
+				ZonedDateTime zdt = myGregorianCalendar.toZonedDateTime();
+				ic_source_publish_date = zdt.format(DateTimeFormatter.ofPattern("MM-YYYY"));
+				logger.info("IC Source Publish Date "+ic_source_publish_date.toString());      	      		        	       
         }
         }catch(ClassCastException e)
         {e.printStackTrace();}
