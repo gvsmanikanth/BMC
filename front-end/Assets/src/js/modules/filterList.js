@@ -151,7 +151,7 @@ window.FilterList;
 		};
 
 		FilterList.prototype.renderErrorPage = function(error) {
-			console.log(error);
+			//console.log(error);
 		}
 
 		// Navigation
