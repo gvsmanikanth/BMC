@@ -7,7 +7,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Manage Your Cases",
         description: "Submit cases and track progress",
-        routerLink: null,
+        routerLink: 'manage-case',
         icon: "d-icon-list_check"
     },
     {

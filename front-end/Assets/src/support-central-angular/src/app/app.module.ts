@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
@@ -14,11 +14,21 @@ import { EpdProductComponent } from './epd-component/epd-product/epd-product.com
 import { TileComponent } from './tile/tile.component';
 import { DataFetchService } from './shared/services/data-fetch.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CaseManagementComponent } from './case-management/case-management.component';
+import { CaseManageService } from './shared/services/case-manage.service';
+import { AdaptGridModule } from '@bmc-ux/adapt-grid';
+import { AgGridModule } from 'ag-grid-angular';
+import { DateCellComponent } from './case-management/date-cell/date-cell.component';
+import { CaseIdCellComponent } from './case-management/case-id-cell/case-id-cell.component';
 
 const appRoutes: Routes = [
   {
     path: 'epd-widget',
     component: EpdComponentComponent
+  },
+  {
+    path: 'manage-case',
+    component: CaseManagementComponent
   }
 ]
 
@@ -28,7 +38,10 @@ const appRoutes: Routes = [
     EpdComponentComponent,
     EPDVersionPipe,
     EpdProductComponent,
-    TileComponent
+    TileComponent,
+    CaseManagementComponent,
+    DateCellComponent,
+    CaseIdCellComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +53,18 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),
-    AdaptSwitcherModule
+    AdaptSwitcherModule,
+    AdaptGridModule.forRoot(),
+    AgGridModule.withComponents([])
   ],
   providers: [
     DataFetchService,
-    EPDService
+    EPDService,
+    CaseManageService
+  ],
+  entryComponents: [
+    DateCellComponent,
+    CaseIdCellComponent
   ],
   bootstrap: [AppComponent]
 })

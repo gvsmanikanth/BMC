@@ -2,26 +2,14 @@
 
 .support-search.psc {
 	fieldset {
-		width: 93%;
+		width: 100%;
 	}
-
-	
-}
-
-@media (max-width: 1600px) {
-	.support-search.psc {
-		fieldset {
-			width: 92%;
-		}
+	.contextual-tooltip {
+		right: -15px;
+		left: unset;
+		top: 20px;
+		position: absolute;
 	}
-}
-
-@media (max-width: 700px) {	
-	.support-search.psc {
-		fieldset {
-			width: 86%;
-		}
-	}	
 }
 
 @media (min-width: 440px) {

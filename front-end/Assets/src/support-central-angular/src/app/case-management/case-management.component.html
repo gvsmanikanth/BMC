@@ -1,0 +1,24 @@
+<div class="extended-widget-container">
+    <div class="extended-widget-header">
+        <div class="top-section">
+            <h2>Manage Your Cases</h2><a class="external-app-link" [href]="widgets.casemgmt">Go to Case Management</a>
+        </div>
+        <div class="description">Here are latest opened cases</div>
+    </div>
+    <div class="extended-widget-body" [ngBusy]="caseService.busyConfig">
+        <a [href]="caseService.widgetLinks.openCase" class="btn btn-primary">Submit New Case</a>
+        <a [href]="caseService.widgetLinks.listCase" class="btn btn-secondary">View All Cases</a>
+        <adapt-grid
+            [columnDefs]="columnDefs"
+            [rowData]="caseService.cases"
+            [bordered]="true"
+            (gridReady)="onGridReady($event)"
+            [frameworkComponents]="frameworkComponents"
+            [paginationPageSize]="9"
+            [suppressDragLeaveHidesColumns]="true"
+            [enableColResize]="true" 
+            [enableSorting]="true"
+            [pagination]="true" 
+        ></adapt-grid>
+    </div>
+</div>

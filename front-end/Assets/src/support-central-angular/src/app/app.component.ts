@@ -22,7 +22,7 @@ import { Widget } from './shared/models/widget.model';
     ]),
     trigger('openCloseRouter', [
       state('open', style({
-        width: '70%',
+        width: '67%',
         opacity: '1'
       })),
       state('closed', style({
@@ -49,10 +49,10 @@ import { Widget } from './shared/models/widget.model';
           query('app-tile', animate('0s 0.2s', style({
             'margin-bottom': '210px'
           }))),
-          query('app-tile:nth-child(3n+2)', animate('0s 0.2s', style({
+          query('app-tile:nth-child(3n+2)', animate('0s 0.2s ease', style({
             transform: 'translate(-108%, 138%)'
           }))),
-          query('app-tile:nth-child(3n+3)', animate('0s 0.2s', style({
+          query('app-tile:nth-child(3n+3)', animate('0s 0.2s ease', style({
             transform: 'translate(-216%, 276%)'
           }))),
           query('app-tile', animate('0.3s 0.2s', style({
@@ -80,6 +80,7 @@ import { Widget } from './shared/models/widget.model';
 export class AppComponent implements OnInit, AfterViewInit{
   mobile = false;
   widgetLinks: WidgetsLinks = window['psc'].widgets;
+  userLoggedIn = window['psc'].user.loggedIn === "true";
   widgets: Widget[] = widgets;
   isExtendedOpen = false;
   openedWidget: number = widgets.length;
@@ -92,6 +93,11 @@ export class AppComponent implements OnInit, AfterViewInit{
   ngOnInit () {
     widgets.forEach((widget)=> {
       widget.href = this.widgetLinks[widget.id];
+      if (widget.id === "manageCase") {
+        if (!this.userLoggedIn) {
+          widget.routerLink = null;
+        }
+      }
     })
     this.cdr.detectChanges()
   }
@@ -113,14 +119,31 @@ export class AppComponent implements OnInit, AfterViewInit{
     if (this.isExtendedOpen) {
       this.openedWidget = widgets.length;
     } else {
-      this.openedWidget = index + 1;
+      this.openedWidget = index;
     }
     this.isExtendedOpen = !this.isExtendedOpen;
     this.cdr.detectChanges()
   }
 
-  toggleExtended() {
-    console.log('extended')
-    this.isExtendedOpen = !this.isExtendedOpen;
+  toggleExtended(index) {
+    if (this.openedWidget === index) {
+      this.isExtendedOpen = false;
+      this.openedWidget = widgets.length;
+    } else {
+      this.isExtendedOpen = true;
+      if (this.openedWidget !== this.widgets.length) {
+        this.widgets[this.openedWidget].isExtended = false;
+      }
+      this.openedWidget = index;
+    }
+    
+  }
+
+  closeWidgets() {
+    this.isExtendedOpen = false;
+    this.openedWidget = this.widgets.length;
+    this.widgets.forEach((widget) => {
+      widget.isExtended = false;
+    })
   }
 }

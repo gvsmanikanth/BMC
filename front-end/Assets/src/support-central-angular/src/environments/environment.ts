@@ -25,7 +25,11 @@ window['psc'] = {
     strategicServices: "https://stage.cms.bmc.com/it-services/strategic-services.html",
     supportVideos: "https://communities.bmc.com/community/support/blog/2018/09/17/support-videos",
     supportedProducts: "https://stage.cms.bmc.com/available/supported-product-az-list.html",
-    training: "https://stage.cms.bmc.com/education/training-and-certification.html"
+    training: "https://stage.cms.bmc.com/education/training-and-certification.html",
+    caseDetailUrl: "https://bmcsites.force.com/casemgmt/SC_CaseDetailPage?CaseId="
+  },
+  user: {
+    loggedIn: 'true'
   }
 };
 

@@ -1,0 +1,60 @@
+
+.extended-widget-header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #7C7F81;
+    .top-section {
+        & {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        h2 {
+            font-weight: normal;
+            margin: 10px 0 10px 20px;
+        }
+        .external-app-link {
+            font-weight: 600;
+        }
+    }
+    .description {
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+    
+}
+.extended-widget-body {
+    margin-left: 20px;
+    .btn {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+    .btn.btn-secondary {
+        color: #313538;
+        background-color: #f9f9fa;
+        border-color: #d5d5dc;
+        border-top-color: rgb(213, 213, 220);
+        border-right-color: rgb(213, 213, 220);
+        border-bottom-color: rgb(213, 213, 220);
+        border-left-color: rgb(213, 213, 220);
+        padding: .5rem 1rem;
+        font-size: .8125rem;
+    }
+    .btn.btn-secondary:hover{
+        color: #313538;
+        background-color: #d5d5dc;
+        border-color: #bebec9;
+    }
+}
+
+adapt-grid ::ng-deep adapt-grid-pagination {
+    margin: auto;
+    margin-top: 5px;
+}
+
+adapt-grid.adapt-grid {
+    min-height: 440px;
+}
+
+adapt-grid ::ng-deep div.ag-root-wrapper.ag-layout-normal.ag-ltr {
+    border: none;
+}

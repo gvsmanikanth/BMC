@@ -10,3 +10,17 @@ html body {
 app-root {
     font-size: .8125rem;
 }
+
+.extended-widget-container {
+    max-width: 1300px;
+    min-height: 500px;
+    padding: 20px 5px 10px 10px;
+    margin: auto;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .extended-widget-container {
+        padding: 20px 5px;
+    }
+}

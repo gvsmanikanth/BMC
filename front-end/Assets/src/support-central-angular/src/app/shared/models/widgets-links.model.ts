@@ -17,4 +17,5 @@ export interface WidgetsLinks {
     implServices : string,
     managedServices : string,
     enhancedServices  : string
+    caseDetailUrl: string
 }

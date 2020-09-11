@@ -23,6 +23,9 @@
 		enhancedServices  : "${support.enhancedSupportServicesUrl @ context='scriptString'}",
 		caseDetailUrl  : "${support.caseDetailUrl @ context='scriptString'}"
     };
+    psc.user = {
+      loggedIn: "${support.isLoggedIn @ context='scriptString'}"
+    }
 </script>
 
 <app-root></app-root>
