@@ -144,16 +144,21 @@
 		WebinarList.prototype.constructor = WebinarList;
 
 		// Filter data by most recent item
+		
 		WebinarList.prototype.filterListItemsBaseedOnDate = function(arr, pid) {
 				console.log(arr);
 				if(pid == 1){
-					var sortedActivities = arr.slice().sort((a, b) => new Date(a.date) - new Date(b.date))
+					var sortedActivities = arr.slice().sort(function (a, b){ 
+						return new Date(a.date) - new Date(b.date)
+					});
 				}else{
-					var sortedActivities = arr.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
-				}
-				
+					var sortedActivities = arr.slice().sort(function (a, b){  
+						return new Date(b.date) - new Date(a.date)});
+				}				
 				return sortedActivities;
-		}
+		} 
+
+
 		//End Class
 		
 		//Function detects the list page
