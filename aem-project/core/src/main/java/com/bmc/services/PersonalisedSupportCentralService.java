@@ -34,7 +34,11 @@ public class PersonalisedSupportCentralService {
         return apiBaseUrl;
     }
 
-    public String getApiPath() {
+    public String getCaseDetailUrl() {
+		return caseDetailUrl;
+	}
+
+	public String getApiPath() {
         return apiPath;
     }
 
@@ -46,14 +50,7 @@ public class PersonalisedSupportCentralService {
         return apiPass;
     }
 
-    public String getSupportCentralUrl() {
-        return supportCentralUrl;
-    }
-    public String getIssuePath() {
-		return issuePath;
-	}
-
-	public String getSupportCoveoAccessToken() {
+    public String getSupportCoveoAccessToken() {
         return supportCoveoAccessToken;
     }
     public String getSearchPageUrl() {
@@ -174,8 +171,7 @@ public class PersonalisedSupportCentralService {
     private String apiPath;
     private String apiUser;
     private String apiPass;
-    private String supportCentralUrl;
-    private String issuePath;
+    private String caseDetailUrl;
     private String supportCoveoAccessToken;
     private String searchPageUrl;
 
@@ -223,8 +219,7 @@ public class PersonalisedSupportCentralService {
         apiUser = PropertiesUtil.toString(config.get("apiUser"), "");
         apiPass = PropertiesUtil.toString(config.get("apiPass"), "");
         /*Support central Coveo search variables*/
-        supportCentralUrl = PropertiesUtil.toString(config.get("supportCentralUrl"), "");
-        issuePath = PropertiesUtil.toString(config.get("issuePath"), "");
+        caseDetailUrl = PropertiesUtil.toString(config.get("caseDetailUrl"), "");
 
         supportCoveoAccessToken = PropertiesUtil.toString(config.get("supportCoveoAccessToken"), "");
         searchPageUrl = PropertiesUtil.toString(config.get("searchPageUrl"), "");

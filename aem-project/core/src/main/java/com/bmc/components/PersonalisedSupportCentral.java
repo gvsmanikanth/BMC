@@ -29,14 +29,10 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private static final Logger logger = LoggerFactory
 			.getLogger(PersonalisedSupportCentral.class);
 
-	public String getSupportCentralUrl() {
-		return supportCentralUrl;
+	public String getCaseDetailUrl() {
+		return caseDetailUrl;
 	}
-
-	public String getIssuePath() {
-		return issuePath;
-	}
-
+	 
 	public String getNewCaseUrl() {
 		return newCaseUrl;
 	}
@@ -121,7 +117,7 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private String issuePath;
 	private String newCaseUrl;
 	private String allCasesUrl;
-
+	private String caseDetailUrl;
 	private String caseMgtmUrl;
 	private String documentationUrl;
 	private String productDownloadUrl;
@@ -149,8 +145,7 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		logger.info("Fetching OSGi configuration ...");
 		service = getSlingScriptHelper().getService(
 				PersonalisedSupportCentralService.class);
-		issuePath = service.getIssuePath();
-		supportCentralUrl = service.getSupportCentralUrl();
+		caseDetailUrl = service.getCaseDetailUrl();
 		allCasesUrl = service.getAllCasesUrl();
 		newCaseUrl = service.getNewCaseUrl();
 		caseMgtmUrl = service.getCaseMgtmUrl();
