@@ -1,15 +1,82 @@
 .document_container{
-        #pdfReader{
-            border: 1px solid black; width: 100%;
-            embed{
-                width: 100%;
-                height: 100%;
-            }
-        }
+    #pdfReader{
+        border: 1px solid black; width: 100%;
+        embed{
+            width: 100%;
+            height: 100%;
+        }        
+    }
     .header-form-basic.header-emphasis{
         h1{
             font-size: 1.7rem;
             width:100%;
+        }
+    }
+    #mobilebtn{
+        display: none;
+    }
+    //@media only screen and (max-width: $tablet) and (min-width: $mobile){
+    /*
+        @media (max-width: $mobile) {
+        #pdfReader{
+            border: none;
+            display: none;
+        }
+        #mobilebtn{
+            display: block;
+            width:271px;
+            //width: 75%;
+            max-width:500px;
+            margin: auto;
+            margin-bottom:20px;
+        }
+        #desktopbtn{
+            display: none;
+        }
+        
+        .full-bleed-two-column .layout-secondary img, .full-bleed-two-column .layout-secondary-flex-item img
+        {            
+            width: 100%;
+          //  max-width:350px;
+            margin: auto;
+        }
+        .full-bleed-two-column .layout-secondary, .full-bleed-two-column .layout-secondary-flex-item{
+            padding-right: 0px;
+            width: 100%;
+            //max-width:350px; 
+            margin:auto;
+        }
+    }
+    */
+    @media (max-width: $break-md) {
+        #pdfReader{
+            border: none;
+            display: none;
+        }
+        #mobilebtn{
+            display: block;
+            width:271px;
+            //width: 75%;
+            max-width:400px;
+            margin: auto;
+            margin-bottom:20px;
+        }
+        #desktopbtn{
+            display: none;
+        }
+        
+        .full-bleed-two-column .layout-secondary img, .full-bleed-two-column .layout-secondary-flex-item img
+        {            
+            width: auto;
+          //  max-width:350px;
+            margin: auto;
+        }
+        .full-bleed-two-column .layout-secondary, .full-bleed-two-column .layout-secondary-flex-item{
+            padding-right: 0px;
+            width: 100%;
+            //max-width:350px; 
+            margin:auto;
+            text-align:center;
         }
     }
 }
