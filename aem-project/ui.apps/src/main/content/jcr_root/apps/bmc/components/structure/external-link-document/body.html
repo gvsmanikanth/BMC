@@ -1,16 +1,22 @@
 <!--/* WEB-8348 Adding structural changes to DC */-->
 <sly data-sly-test="${properties.documentType == 'children'}">
 	   <sly data-sly-test.documentLink="${properties.linkAbstractorExternalAsset}"></sly>
-	</sly>
-	<sly data-sly-test="${properties.documentType =='search'}">
+</sly>
+<sly data-sly-test="${properties.documentType =='search'}">
 	  <sly data-sly-test.documentLink="${properties.linkAbstractorDAMAsset}"></sly>
-	</sly>
-    <sly data-sly-test="${properties.documentTitle}">
+</sly>
+<sly data-sly-test="${properties.documentTitle}">
         <sly data-sly-test.documentTitle="${properties.documentTitle}"/>
-    </sly>
-    <sly data-sly-test="${!properties.documentTitle}">
+</sly>
+<sly data-sly-test="${!properties.documentTitle}">
         <sly data-sly-test.documentTitle="${properties.pageTitle}"/>
-    </sly>      
+</sly>  
+<sly data-sly-test="${properties.docTypePrefix}">
+        <sly data-sly-test.documentPrefix="${properties.docTypePrefix}:"/>
+</sly>
+<sly data-sly-test="${properties.docTypePrefix == 'custom'}">
+        <sly data-sly-test.documentPrefix="${properties.customPrefix}:"/>
+</sly>  
 <sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || ('http:' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
@@ -20,7 +26,7 @@
         <div class="layout-inner-wrap flex">
             <h1>
                 <span>
-                    ${properties.pageTitle @ context = 'html'}
+                	${documentPrefix}${properties.pageTitle @ context = 'html'}
                 </span>            
             </h1>        
                 <div class="img-wrap">
