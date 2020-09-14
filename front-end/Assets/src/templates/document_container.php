@@ -22,7 +22,9 @@
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                            <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
                               <div class="text-right pyt1">
-                                 <a id="mobilebtn"  href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="btn btnPrimary mb2 inline-block">Download PDF</a> 
+                                 <a id="mobilebtn"  href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="btn btnPrimary mb2 inline-block">
+                                 <span><img src="/front-end/Assets/src/img/pdf.svg" alt="Gartner Magic Quadrant"></span><br/>
+                                 <span class="learn-more">Download PDF</span></a> 
                                  <a id="desktopbtn" href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download PDF</a>
                               </div>
                               <div class="md-flex full-bleed-two-column">
@@ -33,7 +35,7 @@
                                     <div id="pdfReader">
                                        <embed src="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" type="application/pdf"  internalinstanceid="21">
                                     </div>
-                                 </div>
+                                 </div> 
                               </div>
                            </div>
                         </div>
