@@ -32,7 +32,7 @@
     	  personalisationApiOauthPass = "bmcT0k3n"
     	  personalisationApiUser = "bmc"
     	  personalisationApiPass = "d$0509v"
-    	  supportCentralPersonalisationUrl="https://webapiiut.bmc.com/personalisation"
+    	  supportCentralPersonalisationUrl="https://webapiqa.bmc.com/personalisation"
     	  oauthUrl="/oauth/token"
     	  popularProductUrl="/v1/personalisation/contents"
     	  userTotalCountUrl="/v1/users/total-count"
