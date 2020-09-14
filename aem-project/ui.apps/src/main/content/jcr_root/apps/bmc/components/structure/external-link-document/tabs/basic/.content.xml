@@ -164,7 +164,7 @@
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/heading"
                                     level="{Long}4"
-                                    text="Custom Document Prefix:"/>
+                                    text="Custom prefix override:"/>
                                 <well
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/well">
@@ -173,7 +173,7 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                             fieldDescription="Enter the custom prefix"
-                                            fieldLabel="Custom Prefix."
+                                            fieldLabel="Custom prefix."
                                             name="./customPrefix"/>
                                     </items>
                                 </well>
