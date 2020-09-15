@@ -15,6 +15,9 @@
     #mobilebtn{
         display: none;
     }
+    .link-icon-resource-document{
+        background-position:-2px 0px;
+    }
 
 // All Mobile deivecs and Tab Landscape and Portrait start
     @media (max-width: $break-md) {
