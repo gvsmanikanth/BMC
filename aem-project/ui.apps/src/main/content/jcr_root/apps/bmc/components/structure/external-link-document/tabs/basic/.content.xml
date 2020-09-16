@@ -86,8 +86,8 @@
                                     value=""/>
                                 <Analyst_x0020_Research
                                     jcr:primaryType="nt:unstructured"
-                                    text="Analyst research"
-                                    value="Analyst research"/>
+                                    text="Analyst Research"
+                                    value="Analyst Research"/>
                                 <Article_x0020_Blog
                                     jcr:primaryType="nt:unstructured"
                                     text="Article/Blog"
@@ -103,8 +103,8 @@
                                     value="custom"/>
                                 <Customer_x0020_Story
                                     jcr:primaryType="nt:unstructured"
-                                    text="Customer story"
-                                    value="Customer story"/>
+                                    text="Customer Story"
+                                    value="Customer Story"/>
                                 <DataSheet
                                     jcr:primaryType="nt:unstructured"
                                     text="Datasheet"
@@ -147,8 +147,8 @@
                                     value="Webinar"/>
                                 <White_x0020_paper
                                     jcr:primaryType="nt:unstructured"
-                                    text="White paper"
-                                    value="White paper"/>
+                                    text="White Paper"
+                                    value="White Paper"/>
                             </items>
                         </docTypePrefix>
                         <setChildren
