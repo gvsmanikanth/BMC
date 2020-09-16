@@ -20,6 +20,9 @@ import { AdaptGridModule } from '@bmc-ux/adapt-grid';
 import { AgGridModule } from 'ag-grid-angular';
 import { DateCellComponent } from './case-management/date-cell/date-cell.component';
 import { CaseIdCellComponent } from './case-management/case-id-cell/case-id-cell.component';
+import { DocsComponent } from './docs/docs.component';
+import { DocsService } from './shared/services/docs.service';
+import { DocsProductComponent } from './docs/docs-product/docs-product.component';
 
 const appRoutes: Routes = [
   {
@@ -29,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'manage-case',
     component: CaseManagementComponent
+  },
+  {
+    path: 'docs',
+    component: DocsComponent
   }
 ]
 
@@ -41,7 +48,9 @@ const appRoutes: Routes = [
     TileComponent,
     CaseManagementComponent,
     DateCellComponent,
-    CaseIdCellComponent
+    CaseIdCellComponent,
+    DocsComponent,
+    DocsProductComponent
   ],
   imports: [
     BrowserModule,
@@ -55,12 +64,15 @@ const appRoutes: Routes = [
     }),
     AdaptSwitcherModule,
     AdaptGridModule.forRoot(),
-    AgGridModule.withComponents([])
+    AgGridModule.withComponents([]),
+    AdaptAccordionModule,
+    AdaptTabsModule.forRoot()
   ],
   providers: [
     DataFetchService,
     EPDService,
-    CaseManageService
+    CaseManageService,
+    DocsService
   ],
   entryComponents: [
     DateCellComponent,

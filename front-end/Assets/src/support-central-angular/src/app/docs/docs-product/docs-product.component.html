@@ -1,0 +1,10 @@
+<adapt-tabset [type]="'pills'">
+    <adapt-tab-panel *ngFor="let version of product.versionProduct" [adapt-tab-title]="version.productVersionSmartNo | epdVersion">
+        <div *ngFor="let detail of version.itemDetails" class="version-detail">
+            <div>
+                <a [href]="detail.filePath" target="_blank">{{detail.itemName}}</a>
+            </div>
+            <div>{{detail.itemDescription}}</div>
+        </div>
+    </adapt-tab-panel>
+</adapt-tabset>

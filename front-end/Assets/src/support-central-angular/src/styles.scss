@@ -7,7 +7,7 @@ html body {
     box-sizing: content-box;
 }
 
-support-chat-now {
+.support-chat-now {
     box-sizing: content-box;
 }
 
@@ -23,8 +23,52 @@ app-root {
     position: relative;
 }
 
+.extended-widget-header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #7C7F81;
+    .top-section {
+        & {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        h2 {
+            font-weight: normal;
+            margin: 10px 0 10px 20px;
+        }
+        .external-app-link {
+            font-weight: 600;
+        }
+    }
+    .description {
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+    
+}
+
+.adapt-tabs-controls {
+    margin-bottom: 0px;
+}
+
+.card-header .card-title {
+    font-size: 0.8125rem;
+    color: #313538;
+}
+
 @media (max-width: 1200px) {
     .extended-widget-container {
         padding: 20px 5px;
+    }
+}
+
+@media (max-width: 500px) {
+    .extended-widget-header {
+        .top-section {
+            flex-direction: column;
+            .external-app-link {
+                margin-left: 20px;
+            }
+        }
     }
 }

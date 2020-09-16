@@ -34,7 +34,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Documentation",
         description: "Access online technical documentation",
-        routerLink: null,
+        routerLink: 'docs',
         icon: "d-icon-file_text_o"
     },
     {

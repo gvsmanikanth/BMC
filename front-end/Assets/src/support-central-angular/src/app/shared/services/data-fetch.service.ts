@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { cases } from '../data/cases';
+import { docs } from '../data/docs';
 import { products } from '../data/products';
 import { Case } from '../models/case/case.model';
+import { DocsProduct } from '../models/docs/docs-product.model';
 import { EPDProduct } from '../models/epd/epd-product.model';
 
 @Injectable()
@@ -27,6 +29,16 @@ export class DataFetchService {
         return this.http.get('/bin/supportcases').toPromise().then((response: any) => {
             return response.Cases;
         })
+    }
+
+    getDocsProducts(): Promise<DocsProduct[]> {
+        if (window.location.href.indexOf('localhost:4200') !== -1) {
+            return Promise.resolve(docs)
+        }
+
+        return this.http.get('/bin/supportcentralcontent?content_type=DOCUMENTATION').toPromise().then((response:DocsProduct[]) => {
+           return response
+        });
     }
 
 }

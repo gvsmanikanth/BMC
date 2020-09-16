@@ -115,15 +115,6 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.cdr.detectChanges();
   }
 
-  openMobileWidget(index) {
-    if (this.isExtendedOpen) {
-      this.openedWidget = widgets.length;
-    } else {
-      this.openedWidget = index;
-    }
-    this.isExtendedOpen = !this.isExtendedOpen;
-    this.cdr.detectChanges()
-  }
 
   toggleExtended(index) {
     if (this.openedWidget === index) {
@@ -136,6 +127,7 @@ export class AppComponent implements OnInit, AfterViewInit{
       }
       this.openedWidget = index;
     }
+    this.cdr.detectChanges()
     
   }
 

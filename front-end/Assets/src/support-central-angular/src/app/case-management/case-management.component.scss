@@ -1,27 +1,4 @@
 
-.extended-widget-header {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #7C7F81;
-    .top-section {
-        & {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        h2 {
-            font-weight: normal;
-            margin: 10px 0 10px 20px;
-        }
-        .external-app-link {
-            font-weight: 600;
-        }
-    }
-    .description {
-        margin-left: 20px;
-        margin-bottom: 5px;
-    }
-    
-}
 .extended-widget-body {
     margin-left: 20px;
     .btn {

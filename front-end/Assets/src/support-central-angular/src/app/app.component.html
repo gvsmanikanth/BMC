@@ -9,13 +9,13 @@
 </div>
 <div *ngIf="mobile" class="container">
   <div class="mobile-tile-block">
-    <app-tile *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="openMobileWidget(i)"></app-tile>
+    <app-tile *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
   </div>
   <div *ngIf="isExtendedOpen" @openCloseMobile class="mobile-widget-container">
     <div class="router-container"><router-outlet></router-outlet></div>
     <div class="close-action"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
   </div>
   <div class="mobile-tile-block">
-    <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = $index" [widget]="widget"  (extended)="openMobileWidget(i + openedWidget + 1)"></app-tile>
+    <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"  (extended)="toggleExtended(i + openedWidget + 1)"></app-tile>
   </div>
 </div>
