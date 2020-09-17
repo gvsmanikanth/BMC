@@ -37,7 +37,8 @@
 								 target="_blank" class="btn btnPrimary mb2 inline-block">
     								<span><img src="/content/dam/bmc/home/pdf.svg" alt="PDF download icon"></span><br/>
     								<span class="learn-more">Download PDF</span>
-    							</a>     						
+    							</a>
+    						</div>     						
 							<div class="md-flex full-bleed-two-column">
 								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 pxr1">									
                                 <sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
@@ -62,10 +63,11 @@
 			document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
 			
 			</script>    
-					</div>
-				</div>
+		 </div>
+		</div>
 	</section>
   </div>
 </section>
 </div>
 <sly data-sly-resource="${'standardfooter' @ resourceType='bmc/components/structure/standardfooter'}"></sly>
+</sly>
