@@ -254,28 +254,46 @@
             value="Helix Vulnerability Management"/>
     <_x0031_74236796
             jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe Data Management for DB2"
+            jcr:title="AMI Data for Db2"
             dropDownDisplay="Yes"
-            text="Mainframe Data Management for DB2"
-            value="Mainframe Data Management for DB2"/>
+            text="BMC AMI Data for Db2"
+            value="AMI Data for Db2"/>
     <_x0031_80034581
             jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe Data Management for IMS"
+            jcr:title="AMI Data for IMS"
             dropDownDisplay="Yes"
-            text="Mainframe Data Management for IMS"
-            value="Mainframe Data Management for IMS"/>
+            text="BMC AMI Data for IMS"
+            value="AMI Data for IMS"/>
+    <_x0031_04284812
+            jcr:primaryType="nt:unstructured"
+            jcr:title="AMI DevOps"
+            dropDownDisplay="Yes"
+            text="BMC AMI DevOps"
+            value="AMI DevOps"/>
+    <_x0031_57264732
+            jcr:primaryType="nt:unstructured"
+            jcr:title="AMI AIOps"
+            dropDownDisplay="Yes"
+            text="BMC AMI AIOps"
+            value="AMI AIOps"/>
+    <_x0031_7300673
+            jcr:primaryType="nt:unstructured"
+            jcr:title="AMI Security"
+            dropDownDisplay="Yes"
+            text="BMC AMI Security"
+            value="AMI Security"/>
     <_x0034_38283521
             jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe MLC Cost Management"
+            jcr:title="AMI Cost"
             dropDownDisplay="Yes"
-            text="Mainframe MLC Cost Management"
-            value="Mainframe MLC Cost Management"/>
+            text="BMC AMI Cost"
+            value="AMI Cost"/>
     <_x0037_88612595
             jcr:primaryType="nt:unstructured"
-            jcr:title="Mainframe Systems Management"
+            jcr:title="AMI Operations"
             dropDownDisplay="Yes"
-            text="Mainframe Systems Management (MainView)"
-            value="Mainframe Systems Management"/>
+            text="BMC AMI Operations"
+            value="AMI Operations"/>
     <_x0031_33164715
             jcr:primaryType="nt:unstructured"
             jcr:title="MyIT Service Broker"

@@ -1,0 +1,33 @@
+coral-buttongroup.cq-common-replication-type-group {
+    width: 100%;
+
+    [is=coral-button] {
+        display: block;
+        text-align: left;
+        width: 100%;
+
+        + [is=coral-button] {
+            margin-left: 0;
+        }
+
+        &:first-of-type {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:last-of-type {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+.cq-common-admin-publication-workflows section.info-section {
+    background-color: #ECECEC;
+    padding: 0 .625rem 1.625rem .625rem;
+    border: .0625rem solid #E3E3E3;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 1.625rem 0 0 0;
+}
