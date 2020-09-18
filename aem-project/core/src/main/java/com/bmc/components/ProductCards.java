@@ -30,7 +30,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
     @Override
     public void activate() throws Exception {
         try {
-        	// iterate through the multifield card and fetch its page properties
+            // iterate through the multifield card and fetch its page properties
             ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("cards").listIterator();
             productCards = new ArrayList<>();
             while (pagePathsNodes.hasNext()) {
@@ -39,28 +39,32 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 productCard.put("pagePath", childPage.getValueMap().get("pagePath").toString());
                 Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
                 if (page != null){
-                	ValueMap pageMap = page.getProperties();
-                	 productCard.put("title", pageMap.getOrDefault("navTitle","").toString());
-                	 productCard.put("description", pageMap.getOrDefault("short_description","").toString());
+                    ValueMap pageMap = page.getProperties();
+                    productCard.put("title", pageMap.getOrDefault("navTitle","").toString());
+                    productCard.put("description", pageMap.getOrDefault("short_description","").toString());
                 }
-               // override title and description
-               if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
-            	   productCard.put("title", childPage.getValueMap().get("overrideTitle").toString());
-           		}
-               if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
-            	   productCard.put("description", childPage.getValueMap().get("overrideDescription").toString());
-           		}
+                // override title and description
+                if(childPage.getValueMap().get("overrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
+                    productCard.put("title", childPage.getValueMap().get("overrideTitle").toString());
+                }
+                if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
+                    productCard.put("description", childPage.getValueMap().get("overrideDescription").toString());
+                }
+                if(childPage.getValueMap().get("imagePath") != null && !childPage.getValueMap().get("imagePath").toString().trim().isEmpty()){
+                    productCard.put("imagePath", childPage.getValueMap().get("imagePath").toString());
+                }
+
                 productCards.add(productCard);
             }
-            
-          
+
+
         } catch (Exception e){
             logger.error("Error Getting Product cards:", e);
         }
-       
+
     }
-  
-   
+
+
     public List<HashMap> getProductCards() {
         return productCards;
     }
