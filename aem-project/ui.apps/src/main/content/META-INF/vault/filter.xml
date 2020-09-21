@@ -59,7 +59,7 @@
 
     <filter root="/etc/notification/email"/>
 
-    <filter root="/etc/map.publish" mode="update"/>
+    <filter root="/etc/map.publish"/>
 
     <filter root="/content/bmc/auth"/>
     <filter root="/content/bmc/resources/training-locations">

@@ -23,10 +23,15 @@
 <link rel="apple-touch-icon-precomposed" href="/etc/clientlibs/bmc/head/touch-icon.png">
 
 
+     <!--/* WEB-8771 and WEB-8722 - Handled the special scenario for Videos and Templates separately and merged below together in one statement */-->
+  
+   <sly data-sly-test="${wcmmode.disabled || ('/content/bmc/videos.html' in request.requestURL.toString)}">
     <sly data-sly-use.PageModel="com.bmc.models.PageModel"/>
     <script data-sly-test.BmcMeta="${PageModel.bmcMetaJson}">
         var bmcMeta = ${BmcMeta @ context='unsafe'};
     </script>
+    </sly>
+    
     <!-- WEB-7660 Added the closing sly tag to revert changes made under WEB-7642 -->
 
 <sly data-sly-use.model="com.bmc.components.SupportPagesCheck"/>
