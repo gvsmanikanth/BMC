@@ -50,6 +50,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
                     productCard.put("description", childPage.getValueMap().get("overrideDescription").toString());
                 }
+                // WEB-8367 Added Image Field
                 if(childPage.getValueMap().get("imagePath") != null && !childPage.getValueMap().get("imagePath").toString().trim().isEmpty()){
                     productCard.put("imagePath", childPage.getValueMap().get("imagePath").toString());
                 }

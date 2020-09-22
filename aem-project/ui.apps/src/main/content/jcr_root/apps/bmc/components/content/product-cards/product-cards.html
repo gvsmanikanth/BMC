@@ -1,3 +1,4 @@
+<!--/* WEB-8367 Added Image field & Updated new html markup  */-->
 <section class="landingPage-product-list" data-sly-use.productSet="com.bmc.components.ProductCards">
 	<div class=" layout-inner-wrap" id="product-list">
 		<h2 class="h2-variation-1">${properties.title @ context='html'}</h2>
@@ -9,7 +10,7 @@
 			<sly data-sly-test="${properties.numberOfCards == '4'}">
 				<sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
 			</sly>
-			<!--/*Iterate through the cards  */-->
+			<!--/*  Iterate through the cards  */-->
 			<sly data-sly-list.card="${productSet.productCards}">
 				<div class="flex flex-item ${assetClass}">
 					<sly data-sly-use.productLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=card.pagePath}"></sly>
