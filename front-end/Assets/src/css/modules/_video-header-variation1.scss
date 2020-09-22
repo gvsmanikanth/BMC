@@ -1,7 +1,11 @@
 .video-hero-header-variation1 {
 	.hero {
 		position: relative;
-		text-align: center;
+        text-align: center;
+        background-image: none;
+        overflow: auto;
+        padding-bottom: 0;
+        padding-top: 0;
 	}
 	.hero-content {
 		@include box-sizing(border-box);
