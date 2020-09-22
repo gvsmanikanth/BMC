@@ -1,0 +1,128 @@
+.video-hero-header-variation1 {
+	.hero {
+		position: relative;
+		text-align: center;
+	}
+	.hero-content {
+		@include box-sizing(border-box);
+        background-color: transparent;
+		color: #fff;
+		padding: 2rem;
+        width: 100%;
+        min-height: 400px;
+		@media (min-width: $break-sm) {
+            padding: 5rem 1rem;
+            min-height: 500px;
+		}
+		@media (min-width: $break-lg) {
+            
+		}
+		
+		.videoInstructions{
+			color: color(mediumOrange);
+			font-weight:800;
+		}
+	
+		.videoIcon{
+			width:100px;
+		}
+	
+		&.transparent-bg{
+			background-color: rgba(0,0,0,0);
+		}
+	
+		&.bg-alpha-45{
+			background-color: rgba(0,0,0,.45);
+        }
+        span.link-icon-play {
+            display: inline-block;
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+        span.link-icon-play:before {
+            color: #fff;
+            display: block;
+            font-size: 35px;
+            margin: 0;
+            transition: color .3s linear;
+            @media(max-width : 767px){
+                font-size: 22px;
+            }
+        }
+        .btn-orange-trans{
+            font-size: 24px;
+            padding: 12px 40px;
+        }
+        .btn-orange-trans {
+            background: transparent;
+            border: 2px solid #fe5000;
+            border-radius: 7px;
+            color: #fff;
+            @media(max-width : 767px){
+                font-size: 18px;
+                padding: 10px 30px;
+            }
+        }
+        .btn-orange-trans:hover {
+            background: transparent;
+            color: #fe5000;
+            border-color: #fe5000;
+        }
+        .btn-orange-trans:hover span.link-icon-play:before{
+            color: #fe5000;
+            transition: color .3s linear;
+        }
+        .hero-content-wrap{
+            max-width: 1024px;
+            margin: 0 auto;
+            a{
+                color: #fff;
+            }
+            h3{
+                font-size: 32px;
+                color: #fff;
+                @media(max-width : 767px){
+                    font-size: 21px;
+                }
+            }
+            h2{
+                color: #fff;
+                font-weight: 700;
+            }
+            
+        }
+	}
+	.hero-image {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+		&:before {
+			content: '';
+			display: block;
+
+			.vidbg-box{
+            width: 650px;
+            height: 338px;
+      }
+		}
+		img {
+			@media (max-width: 1279px) {
+				height: 100%;
+				max-width: none;
+			}
+			@media (min-width: 1280px) {
+				height: auto;
+				width: 100%;
+			}
+		}
+		&.xs-only {
+			--background-image: url("#{$imagesFolder}careers-header.jpg");
+			background-position: center;
+			background-size: cover;
+		}
+		
+	}
+}
