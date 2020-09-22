@@ -104,4 +104,101 @@
         </div>    
     </div>   
  </div>
+
+<div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+     <div class="video-hero-header videoHeaderBig">
+        <section class="hero flex-col">
+            <div class="hero-image xs-only" style="background-image: url(//www.bmc.com/content/dam/bmc/header-mobile-images/ade-a-game-video-mobile-banner.jpg);">
+            </div>
+            <div class="hero-image video xs-max-hide">
+                <div class="vidbg-box" style="width: 100%; height: 100%; position: relative; z-index: 1;" data-vidbg-bg="webm://www.bmc.com/content/dam/bmc/migration/video/a-game-header-video_doNotTrack.webm, mp4://www.bmc.com/content/dam/bmc/migration/video/a-game-header-video_doNotTrack.mp4, poster://www.bmc.com/content/dam/bmc/info/ade-a-game-video-thumbail.jpg" data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3"></div>
+            </div>
+            <div class="hero-content flex flex-center" >
+                <div class="hero-content-wrap">                        
+                    <h1 class="ha mb2 strongWeight">The A-Game is business at its best.</h1>
+                    <h3 class="h3 mb3">We call this the Autonomous Digital Enterprise.</h3>
+                    <!-- <div class="p2 bolder">Watch the video to learn more about BMC (1:35)</div> -->
+                    <div class="text-center">
+                        <a href="//www.bmc.com/content/bmc/videos.html?vID=DBD7lCLaAQ4" target="_self" class="modal-youtube-video-player" alt="Welcome to the A-Game">                   
+                            <span class="btn btn-orange-trans">Watch & Learn<span class="link-icon-play"></span></span>
+                        </a>
+                    </div>                        
+                </div>                 
+            </div>
+        </section>
+    </div>
+</div> 
+       
+<style>
+   
+    .videoHeaderBig .hero-content{
+        min-height: 400px;
+    }
+    @media(min-width : 1024px){
+      .videoHeaderBig .hero-content{
+        min-height: 500px;
+      }
+   }
+    .videoHeaderBig .hero-content-wrap{
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    .videoHeaderBig .hero-content-wrap a {
+      color: #fff;
+   }
+   .videoHeaderBig h3.h3 {
+    font-size: 32px;
+    color: #fff;
+   }
+   .videoHeaderBig h1 {
+      color: #fff;
+      font-weight: 700;
+   }
+   span.link-icon-play {
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle;
+   }
+   span.link-icon-play:before {
+      color: #fff;
+      display: block;
+      font-size: 35px;
+      margin: 0;
+      transition: color .3s linear;
+   }
+   .videoHeaderBig .btn-orange-trans{
+      font-size: 24px;
+      padding: 12px 40px;
+   }
+   .btn-orange-trans {
+        background: transparent;
+        border: 2px solid #fe5000;
+        border-radius: 7px;
+        color: #fff;
+    }
+    .btn-orange-trans:hover {
+        background: transparent;
+        color: #fe5000;
+        border-color: #fe5000;
+    }
+   .videoHeaderBig .btn-orange-trans:hover span.link-icon-play:before{
+     color: #fe5000;
+     transition: color .3s linear;
+   }
+   .videoHeaderBig.video-hero-header .hero-content{
+       background-color: transparent;
+   }
+   @media(max-width : 767px){
+      .videoHeaderBig h3.h3 {
+         font-size: 21px;
+         }
+         .videoHeaderBig .btn-orange-trans {
+            font-size: 18px;
+            padding: 10px 30px;
+         }
+         span.link-icon-play:before {
+            font-size: 22px;
+         }
+   }
+</style>
 <?php include 'php-inc/foot.php'; ?>
