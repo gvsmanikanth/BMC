@@ -1,7 +1,10 @@
 <!--/* WEB-8367 Added Image field & Updated new html markup  */-->
 <section class="landingPage-product-list" data-sly-use.productSet="com.bmc.components.ProductCards">
 	<div class=" layout-inner-wrap" id="product-list">
-		<h2 class="h2-variation-1">${properties.title @ context='html'}</h2>
+		<div class="text-center">
+			<h2 class="h2-variation-1">${properties.title @ context='html'}</h2>
+			<h3 >${properties.subTitle @ context='html'}</h3>
+		</div>
 		<div class="flex-wrap flex-justify-center mb2">
 			<sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
 			<sly data-sly-test="${properties.numberOfCards == '3'}">
