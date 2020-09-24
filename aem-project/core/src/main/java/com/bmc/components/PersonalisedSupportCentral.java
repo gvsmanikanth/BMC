@@ -112,7 +112,13 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	public String getSupportGuideUrl() {
 		return supportGuideUrl;
 	}
+	public String getSupportGuidePDFUrl() {
+		return supportGuidePDFUrl;
+	}
 
+	public String getAmigoProgramUrl() {
+		return amigoProgramUrl;
+	}
 	private String supportCentralUrl;
 	private String issuePath;
 	private String newCaseUrl;
@@ -136,6 +142,8 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private String enhancedSupportServicesUrl;
 	private String customerOrientationUrl;
 	private String supportGuideUrl;
+	private String supportGuidePDFUrl;
+	private String amigoProgramUrl;
 	private String userscoreThreshold;
 	
 	PersonalisedSupportCentralService service;
@@ -172,6 +180,8 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		enhancedSupportServicesUrl = service.getEnhancedSupportServicesUrl();
 		customerOrientationUrl = service.getCustomerOrientationUrl();
 		supportGuideUrl = service.getSupportGuideUrl();
+		supportGuidePDFUrl = service.getSupportGuidePDFUrl();
+		amigoProgramUrl = service.getAmigoProgramUrl();
 		userscoreThreshold=service.getUserscoreThreshold();
 	}
 

@@ -126,6 +126,14 @@ public class PersonalisedSupportCentralService {
 		return supportGuideUrl;
 	}
 
+	public String getSupportGuidePDFUrl() {
+		return supportGuidePDFUrl;
+	}
+
+	public String getAmigoProgramUrl() {
+		return amigoProgramUrl;
+	}
+
 	public String getPersonalisationApiOauthUser() {
 		return personalisationApiOauthUser;
 	}
@@ -194,7 +202,8 @@ public class PersonalisedSupportCentralService {
     private String enhancedSupportServicesUrl;
     private String customerOrientationUrl;
 	private String supportGuideUrl;
-	
+	private String supportGuidePDFUrl;
+	private String amigoProgramUrl;
     private String personalisationApiOauthUser ;
     private String personalisationApiOauthPass ;
     private String personalisationApiUser ;
@@ -246,7 +255,8 @@ public class PersonalisedSupportCentralService {
     	logger.info("Service Fetching enhancedSupportServicesUrl OSGi configuration {}...",enhancedSupportServicesUrl);
     	customerOrientationUrl = PropertiesUtil.toString(config.get("customerOrientationUrl"), "");
     	supportGuideUrl = PropertiesUtil.toString(config.get("supportGuideUrl"), "");
-        
+		supportGuidePDFUrl = PropertiesUtil.toString(config.get("supportGuidePDFUrl"), "");
+		amigoProgramUrl= PropertiesUtil.toString(config.get("amigoProgramUrl"), "");
         personalisationApiOauthUser = PropertiesUtil.toString(config.get("personalisationApiOauthUser"), "");
         personalisationApiOauthPass = PropertiesUtil.toString(config.get("personalisationApiOauthPass"), "");
         personalisationApiUser = PropertiesUtil.toString(config.get("personalisationApiUser"), "");
