@@ -55,6 +55,7 @@ Disallow: /available
 Disallow: /test
 Disallow: *ty.PURL*
 Disallow: *?print*
+Disallow: /offering-micros
 Sitemap: https://www.bmc.com/sitemap.xml
 
 User-agent: Nutch
