@@ -1,0 +1,134 @@
+.orion-global{
+    font-size: 16px;
+    line-height: 26px;
+    h1, h2, h3{
+        font-weight: 400;    
+    }
+    h1{
+        font-size: 36px;
+        line-height: 48px;
+    }
+    h2{
+        font-size: 26px;
+        line-height: 36px;
+    }
+    h3{
+        font-size: 22px;
+        line-height: 32px;
+    }
+    @media(min-width:$break-sm){
+        font-size: 18px;
+        line-height: 28px;
+        h1{
+            font-size: 50px;
+            line-height: 66px;
+        }
+        h2{
+            font-size: 36px;
+            line-height: 46px;
+        }
+        h3{
+            font-size: 26px;
+            line-height: 36px;
+        }
+    }
+    .btn-gradient{
+        background: rgb(249,135,0);
+        background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(254,80,0,1) 100%);
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: 0.3s linear;
+        &:hover{
+            background: rgb(249,135,0);
+            background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%); 
+            transition: 0.3s linear;         
+        }
+    }
+    .btn-form{
+        @extend .btn-gradient;
+        border-radius: 0px;
+    }
+    .sp-large-container{
+        max-width: 1920px;
+        margin: auto;
+        position: relative;
+    }
+    
+}
+
+.splashpage-banner{
+    background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-dark.svg);
+    background-color: #fff;
+    background-position: center 68%;
+    padding: 4rem 0;
+    @media(min-width:$break-sm){
+        padding: 4rem 0 10rem 0;
+    } 
+    
+    .text-white{
+        color: #fff;
+        h1, h2, h3, p{
+            color: #fff;
+        }
+    }
+    .splashpage-banner-content{
+        max-width: 900px;
+        margin: auto;
+    }
+}
+
+.video-feature{
+    background-color: #fff;
+    padding: 4rem 0;
+    .video-feature-bg{
+        background-image: url(#{$imagesFolder}splashPage/half-circle-shape.svg);   
+        padding-top: 100px;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    .video-hero-header {
+        max-width: 1076px;
+        margin: 0 auto;
+    }
+    h2{
+        color: #002C8F;
+        margin-bottom: 50px;
+        margin-top: 0;
+    }
+    .sp-divider{
+        margin: 0 auto 40px auto;
+    }
+    .hero{
+        z-index: 1;
+    }
+    .hero-content{
+        height: 550px;
+        background: transparent;
+        .sp-video-icon{
+            max-width: 141px;
+            margin: auto;
+        }
+        a.modal-youtube-video-player {
+            display: block;
+            width: 100%;
+        }
+    }   
+    
+}
+
+
+.split-form{
+    background-color: #fff;    
+    padding: 4rem;
+    @media(min-width:$break-sm){
+        padding-top: 11rem;
+    }    
+    .sp-form-wrap{
+        background-image: url(#{$imagesFolder}splashPage/split-form-blob.svg); 
+        background-repeat: no-repeat;
+        background-position: top right; 
+       
+    }
+   
+}
