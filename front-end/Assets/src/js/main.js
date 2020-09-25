@@ -12,6 +12,7 @@ require('./vendor/jquery.validate.js');
 require('./vendor/jquery.floatlabels.js');
 require('./vendor/jquery.externalLink.js');
 require('./vendor/jquery.productInterest.js');//WEB-2626
+require('./vendor/rellax.js');
 require('./modules/sifter.js');
 require('./modules/sift-generator.js'); 
 require('./vendor/jquery.fancybox.js'); 
@@ -82,3 +83,6 @@ require('./modules/boxy-header.js');
 require('./modules/webinars.js');
 require('./modules/language-selector.js');
 require('./modules/splashPage.js');
+
+
+
