@@ -39,6 +39,8 @@
         border-radius: 4px;
         font-size: 14px;
         transition: 0.3s linear;
+        font-weight: 700;
+        padding: 10px 17px;
         &:hover{
             background: rgb(249,135,0);
             background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%); 
@@ -54,38 +56,76 @@
         margin: auto;
         position: relative;
     }
-    
-}
-
-.splashpage-banner{
-    background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-dark.svg);
-    background-color: #fff;
-    background-position: center 68%;
-    padding: 4rem 0;
-    @media(min-width:$break-sm){
-        padding: 4rem 0 10rem 0;
-    } 
-    
-    .text-white{
-        color: #fff;
-        h1, h2, h3, p{
-            color: #fff;
+    .mobileOnly{
+        display: block;
+        @media(min-width:$break-sm){
+            display: none;
         }
     }
-    .splashpage-banner-content{
-        max-width: 900px;
-        margin: auto;
-    }
+    
 }
+.splashpage-banner-wrap{
+    background-color: #fff;
+    .blob-light-blue{
+        background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-light.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 71%;
+    }
+    .splashpage-banner{
+        background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-dark.svg);        
+        background-position: 40% 68%;
+        padding: 2rem 0 6rem 0;        
+        @media(min-width:$break-sm){
+            padding: 4rem 0 14rem 0;
+        } 
+        .animated-line {
+            max-width: 100%;
+            padding-bottom: 30px;
+        }
+        
+        .text-white{
+            color: #fff;
+            h1, h2, h3, p{
+                color: #fff;
+            }
+        }
+        h1{
+            margin-bottom: 30px;
+            @media(min-width:$break-sm){
+                margin-bottom: 40px;
+            } 
+            span{
+                color: #2BD4EE;
+            }
+        }
+        h3 {
+            margin-top: 0;
+        }
+        .btn-gradient{
+            @media(min-width:$break-sm){
+                margin-top: 40px;
+            } 
+        }
+        .splashpage-banner-content{
+            max-width: 900px;
+            margin: auto;
+            @media(min-width:$break-sm){
+               text-align: center;
+            } 
+        }
+    }
+
+}
+
 
 .video-feature{
     background-color: #fff;
-    padding: 4rem 0;
+    padding: 1rem 0 1.8rem 0;
     .video-feature-bg{
         background-image: url(#{$imagesFolder}splashPage/half-circle-shape.svg);   
         padding-top: 100px;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: center 5%;
     }
     .video-hero-header {
         max-width: 1076px;
@@ -103,11 +143,20 @@
         z-index: 1;
     }
     .hero-content{
-        height: 550px;
+        height: 300px;
         background: transparent;
+        @media(min-width:$break-sm){
+            height: 350px;
+        } 
+        @media(min-width:$break-sm){
+            height: 550px;
+        } 
         .sp-video-icon{
-            max-width: 141px;
+            max-width: 100px;
             margin: auto;
+            @media(min-width:$break-md){
+                max-width: 141px;
+            } 
         }
         a.modal-youtube-video-player {
             display: block;
@@ -120,15 +169,39 @@
 
 .split-form{
     background-color: #fff;    
-    padding: 4rem;
-    @media(min-width:$break-sm){
-        padding-top: 11rem;
-    }    
+    padding: 4rem 0; 
+    .layout-inner-wrap{
+        padding: 0;
+    } 
     .sp-form-wrap{
         background-image: url(#{$imagesFolder}splashPage/split-form-blob.svg); 
         background-repeat: no-repeat;
-        background-position: top right; 
+        background-size: cover;        
+        background-repeat: no-repeat;
+        background-position: 0 -40px;
+        padding-top: 100px;
+        padding-right: 30px;
+        padding-left: 20px;
+        @media(min-width:$break-sm){
+            padding-top: 100px;
+            padding-right: 50px;
+            background-position: 60px -55px;
+        } 
+        @media(min-width:$break-md){
+            padding-right: 100px;
+        } 
+        iframe {
+            width: 100%;
+            min-height: 685px;
+            border: none;
+        }
        
+    }
+    .split-form-image{
+        text-align: center;
+        @media(min-width:$break-sm){
+            padding-top: 100px;
+        }         
     }
    
 }
