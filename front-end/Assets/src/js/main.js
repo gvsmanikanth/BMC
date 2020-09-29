@@ -8,6 +8,7 @@ require('./vendor/jquery.appendAround.js');
 require('./vendor/jquery.serializeObject.js');
 require('./vendor/jquery.autocomplete.js');
 require('./vendor/jquery.cookie.js');
+require('./vendor/jquery.validateEmail.js');
 require('./vendor/jquery.validate.js');
 require('./vendor/jquery.floatlabels.js');
 require('./vendor/jquery.externalLink.js');
@@ -71,6 +72,7 @@ require("./modules/imageAlignment.js");
 require('./vendor/jquery.validate.input.js');
 //require("./vendor/jquery.slimscroll.min.js");
 //require("./vendor/jquery.fullPage.min.js");
+
 require('./modules/contact-form.js');
 require('./modules/document_container.js');
 require('./modules/imageAlignment.js');

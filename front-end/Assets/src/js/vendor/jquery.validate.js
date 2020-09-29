@@ -279,6 +279,11 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					else {
 						$form.submit();						
 					}
+					
+					if($formEmailValidation){
+						console.log("emailValidationType = " + $formEmailValidation.getEmailType())
+					}
+					
 					//fired Event2 on form submit
 					if(_satellite){
 						_satellite.track("form_completion");
