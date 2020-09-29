@@ -13,6 +13,7 @@ require('./vendor/jquery.floatlabels.js');
 require('./vendor/jquery.externalLink.js');
 require('./vendor/jquery.productInterest.js');//WEB-2626
 require('./vendor/rellax.js');
+require('./vendor/lottie.js');
 require('./modules/sifter.js');
 require('./modules/sift-generator.js'); 
 require('./vendor/jquery.fancybox.js'); 
