@@ -280,13 +280,15 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						$form.submit();						
 					}
 					
-					if($formEmailValidation){
-						console.log("emailValidationType = " + $formEmailValidation.getEmailType())
-					}
-					
 					//fired Event2 on form submit
-					if(_satellite){
-						_satellite.track("form_completion");
+					
+					if($formEmailValidation){
+						if($formEmailValidation.isEmailEligibleForAnalyticsTracking()){
+							if(_satellite){
+								_satellite.track("form_completion");
+							}
+						} 
+						
 					}
 				}
 				else {
