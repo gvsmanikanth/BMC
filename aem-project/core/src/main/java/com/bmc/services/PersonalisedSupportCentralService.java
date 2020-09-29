@@ -173,6 +173,10 @@ public class PersonalisedSupportCentralService {
 		return userscoreThreshold;
 	}
 
+	public String getSupportNavigationUrl() {
+		return supportNavigationUrl;
+	}
+
 	private String newCaseUrl;
     private String allCasesUrl;
     private String apiBaseUrl;
@@ -216,7 +220,7 @@ public class PersonalisedSupportCentralService {
 	private String productCount;
     private String communityCount;
     private String userscoreThreshold;
-    
+    private String supportNavigationUrl;
 	@Activate
     public void activate(Map<String, String> config) {
     	logger.info("Service Fetching OSGi configuration ...");
@@ -268,6 +272,8 @@ public class PersonalisedSupportCentralService {
         productCount = PropertiesUtil.toString(config.get("productCount"), "");
         communityCount = PropertiesUtil.toString(config.get("communityCount"), "");
         userscoreThreshold = PropertiesUtil.toString(config.get("userscoreThreshold"), "");
+        supportNavigationUrl=PropertiesUtil.toString(config.get("supportNavigationUrl"), "");
+
     	logger.info("Service Fetching supportCentralPersonalisationUrl OSGi configuration {}...",supportCentralPersonalisationUrl);
     	logger.info("Service Fetching productCount OSGi configuration {}...",productCount);
 

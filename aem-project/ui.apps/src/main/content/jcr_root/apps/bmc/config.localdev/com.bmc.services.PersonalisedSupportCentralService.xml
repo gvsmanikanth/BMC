@@ -41,18 +41,5 @@
     	  productCount = "5"
     	  communityCount = "10"
     	  userscoreThreshold = "50"
+    	  supportNavigationUrl="https://webapiiut.bmc.com/www/supportcentralnavigation"
 />
-
-		<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"-->
-          <!--jcr:primaryType="sling:OsgiConfig"-->
-          <!--newCaseUrl="https://bmcsites.force.com/casemgmt/apex/CreateNewCase"-->
-          <!--allCasesUrl="https://bmcsites.force.com/casemgmt/sc_CommunityHome"-->
-          <!--apiBaseUrl="https://ws-dev.bmc.com"-->
-          <!--apiUser="clicKu5er"-->
-          <!--apiPass="c1icKU5Er"-->
-          <!--apiPath="/rest/BMC_SC/Contact/"-->
-	      <!--searchPageUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt/sc_CoveoSearch"-->
-   	      <!--supportCentralUrl="http://sfaqa-bmcsites.cs91.force.com/casemgmt"-->
-    	  <!--supportCoveoAccessToken="3e2bedf9-5685-4cef-8b00-ee4e8704481c"-->
-<!--/>-->

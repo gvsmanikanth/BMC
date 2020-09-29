@@ -1,39 +1,29 @@
 package com.bmc.models.components.supportcentral;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import com.bmc.util.ValueMapFactory;
-
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ValueMap;
 
 import javax.jcr.Node;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import com.bmc.components.ResourcesList.Item;
-import com.bmc.components.utils.GetResouceByPath;
 import com.bmc.mixins.MultifieldDataProvider;
 import com.bmc.mixins.UrlResolver;
 import com.bmc.models.url.LinkInfo;
-import com.bmc.models.url.UrlInfo;
-import com.bmc.models.url.UrlType;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
-
-import org.slf4j.Logger;
+import com.bmc.services.PersonalisedSupportCentralService;
+import com.bmc.util.ValueMapFactory;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /*
  * Added the POJO class for SUpport Central Navigation component.
@@ -94,15 +84,14 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
                  {
                 	 this.resource = resourceResolver.getResource(templatePath);		   	    			
                  }
-                 else if(currentNode.getPath().toString().equals("/conf/bmc/settings/wcm/templates/support-central-personalised/structure/jcr:content/root/supportcentral_heade"))
+   	    		 supportNavigation = mapMultiFieldJsonObjects("tabs",this::getSupportNavigationItems);
+
+                 if(currentNode.getPath().toString().equals("/conf/bmc/settings/wcm/templates/support-central-personalised/structure/jcr:content/root/supportcentral_heade"))
                  {
                  	logger.info("Creating support navigation details for personalised support central"+ templatePath);
-
-                	 this.resource = resourceResolver.getResource(templatePath);	
-                	 logger.info("Fetching support navigation details for personalised support central {}", this.resource);
+                 	supportNavigation = getSupportNavigationHeader();
                  }
-   	    		 
-   	    		supportNavigation = mapMultiFieldJsonObjects("tabs",this::getSupportNavigationItems);
+
          } catch (Exception e) {
              LOGGER.error("Error while generating resource",e);
          }  
@@ -134,6 +123,46 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
                 	
         return new MenuItem(tabTitle,items);        
     }
+    
+	private List<MenuItem> getSupportNavigationHeader() {
+		PersonalisedSupportCentralService service = getSlingScriptHelper()
+				.getService(PersonalisedSupportCentralService.class);
+		List<MenuItem> supportNavigation = new ArrayList<>();
+		try (CloseableHttpClient httpClient = HttpClientBuilder.create()
+				.build()) {
+			HttpGet httpGet = new HttpGet(
+					service.getSupportNavigationUrl());
+			logger.info("Executing request to fetch support navigation header url "
+					+ httpGet.getRequestLine());
+			HttpResponse response = httpClient.execute(httpGet);
+
+			// verify the valid error code first
+			int statusCode = response.getStatusLine().getStatusCode();
+
+			if (statusCode == 200) {
+				String jsonString = EntityUtils.toString(response.getEntity());
+				SupportNavigationDetails supportNavigationDetails = new ObjectMapper()
+						.readValue(jsonString, SupportNavigationDetails.class);
+				for (TabDetails tab : supportNavigationDetails
+						.getHeaderNavigation().getTabs()) {
+					ArrayList<SupportNavigationItem> items = new ArrayList<>();
+
+					for (TabLinkDetails link : tab.getTabLinks()) {
+						SupportNavigationItem submenuItem = new SupportNavigationItem(
+								link.getTitle(), link.getUrl(),
+								link.getClass_(), link.getTarget());
+						items.add(submenuItem);
+					}
+					MenuItem menu = new MenuItem(tab.getTabTitle(), items);
+					supportNavigation.add(menu);
+				}
+			}
+		} catch (Exception e) {
+            LOGGER.error("Error while generating support navigation header",e);
+		}
+		return supportNavigation;
+	}
+
     
     
     private LinkInfo getResourceLinkInfo(ValueMap map) {

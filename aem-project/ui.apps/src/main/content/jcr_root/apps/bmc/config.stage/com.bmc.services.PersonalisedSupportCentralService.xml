@@ -41,5 +41,6 @@
     	  productCount = "5"
     	  communityCount = "10"
     	  userscoreThreshold = "50"
-/>
+    	  supportNavigationUrl="https://webapiiut.bmc.com/www/supportcentralnavigation"
+ />
 
