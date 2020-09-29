@@ -175,10 +175,18 @@
             height: 550px;
         } 
         .sp-video-icon{
-            max-width: 100px;
+            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
+            width: 100px;
+            height: 100px;
             margin: auto;
+            transition: 0.3s linear;
+            &:hover{
+                background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
+                transition: 0.3s linear;  
+            }
             @media(min-width:$break-md){
-                max-width: 141px;
+                width: 141px;
+                height: 141px;
             } 
         }
         a.modal-youtube-video-player {
@@ -193,7 +201,7 @@
 .split-form{
     background-color: #fff;  
     @media(min-width: $break-md){
-        padding: 4rem 0; 
+        padding: 0 0 2rem 0; 
     }      
     .layout-inner-wrap{
         padding: 0;
@@ -235,7 +243,7 @@
     }
     div#splitFormAnimation {
         position: absolute;
-        top: 20%;
+        top: 30%;
         left: 0;
         right: 0;
         z-index: 0;

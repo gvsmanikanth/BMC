@@ -41,7 +41,7 @@
                 </div>
                 <div class="hero-content flex flex-center">
                     <a href="/content/bmc/videos.html?vID=JOrfbJA5PrU" target="_self" class="modal-youtube-video-player" title="We're a great place to work">
-                        <img class="mb2 sp-video-icon" src="Assets/src/img/splashPage/icons/svg-colored/play-circle-orangegradient.svg">
+                        <div class="sp-video-icon"></div>
                     </a>              
                 </div>
             </section>
@@ -61,7 +61,7 @@
             </div>
             <div class="flex-item md-col-7 sp-form-wrap">
                 <div class=""> 
-                    <iframe id="spIframe" src="https://staging.bmc.com/forms/helix-control-m-iframe.html" onload="setIframeHeight(this.id)"></iframe>
+                    <iframe id="spIframe" src="/front-end/splash-form.php" onload="setIframeHeight(this.id)"></iframe>
                 </div>
             </div>
         </div>
