@@ -18,7 +18,7 @@
 					</li>
 
 					<li>
-						<a href="http://watch.bmc.com"  target="_self" >On-demand Webinars</a>
+						<a href="http://watch.bmc.com"  target="_self" >Webinars</a>
 					</li>
 
 					<li>

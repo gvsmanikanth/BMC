@@ -7,4 +7,5 @@
           automationEmailEnabled="{Boolean}true"
           automationEmailRecipients="[businessautomation@bmc.com]"
           automationEmailCCRecipients="[cmsdev@bmc.com,webforms@bmc.com]"
+          mkdenialURL="forms/thank-you"
 />

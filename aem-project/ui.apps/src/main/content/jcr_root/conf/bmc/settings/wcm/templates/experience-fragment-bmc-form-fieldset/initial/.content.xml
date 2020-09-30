@@ -2,7 +2,11 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastReplicated="{Date}2017-10-14T04:39:04.101-04:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset"
+        cq:xfVariantType="web"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/xfpage">
         <root
