@@ -4,7 +4,7 @@
       data-sly-use.head="head.html"
       data-sly-use.footer="footer.html">
 <head data-sly-call="${head.head @ page = page}"></head>
-<body class="${properties.bodyClass} document_container">
+<body class="${properties.bodyClass}">
 <sly data-sly-use.runMode="com.bmc.models.RunModes"/>
     	<sly data-sly-test ="${runmode.mode == 'prod'}">
 	    	<!-- Google Tag Manager (noscript) -->

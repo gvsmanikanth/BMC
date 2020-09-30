@@ -79,5 +79,4 @@ require('./modules/quote-review.js');
 require('./modules/customers-section.js');
 require('./modules/landingPage-arrowBG.js');
 require('./modules/boxy-header.js');
-require('./modules/webinars.js');
 require('./modules/language-selector.js');

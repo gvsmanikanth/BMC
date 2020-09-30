@@ -1,22 +1,16 @@
 <!--/* WEB-8348 Adding structural changes to DC */-->
 <sly data-sly-test="${properties.documentType == 'children'}">
 	   <sly data-sly-test.documentLink="${properties.linkAbstractorExternalAsset}"></sly>
-</sly>
-<sly data-sly-test="${properties.documentType =='search'}">
+	</sly>
+	<sly data-sly-test="${properties.documentType =='search'}">
 	  <sly data-sly-test.documentLink="${properties.linkAbstractorDAMAsset}"></sly>
-</sly>
-<sly data-sly-test="${properties.documentTitle}">
+	</sly>
+    <sly data-sly-test="${properties.documentTitle}">
         <sly data-sly-test.documentTitle="${properties.documentTitle}"/>
-</sly>
-<sly data-sly-test="${!properties.documentTitle}">
+    </sly>
+    <sly data-sly-test="${!properties.documentTitle}">
         <sly data-sly-test.documentTitle="${properties.pageTitle}"/>
-</sly>  
-<sly data-sly-test="${properties.docTypePrefix}">
-        <sly data-sly-test.documentPrefix="${properties.docTypePrefix}:"/>
-</sly>
-<sly data-sly-test="${properties.docTypePrefix == 'custom'}">
-        <sly data-sly-test.documentPrefix="${properties.customPrefix}:"/>
-</sly>  
+    </sly>      
 <sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || ('http:' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
@@ -25,8 +19,13 @@
     <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
         <div class="layout-inner-wrap flex">
             <h1>
-                	${documentPrefix} ${properties.pageTitle @ context = 'html'}           
-            </h1>                              
+                <span>
+                    ${properties.pageTitle @ context = 'html'}
+                </span>            
+            </h1>        
+                <div class="img-wrap">
+                    <img alt="bmc-helix-logo" border="0" src="/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
+                </div>        
         </div>
     </section>
     
@@ -37,18 +36,14 @@
 					<div class="layout-inner-wrap">
 						<div class="aem-GridColumn aem-GridColumn--default--12">
 							<div class="text-right pyt1">
-								<a id="desktopbtn" href="${documentLink}" alt="Download PDF" title="Download PDF" 
-								target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download PDF
+								<a href="${documentLink}" alt="Download PDF" title="Download PDF" 
+								style="/*! display: inline-block; */" target="_blank" 
+								class="link-icon-resource-document mb2 text-right inline-block">  
+								Download PDF
 								</a>
-								<!--/* WEB-8522 Mobile view update */-->
-								<a id="mobilebtn"  href="${documentLink}" alt="Download PDF" title="Download PDF" 
-								 target="_blank" class="btn btnPrimary mb2 inline-block">
-    								<span><img src="/content/dam/bmc/home/pdf.svg" alt="PDF download icon"/></span><br/>
-    								<span class="learn-more">Download PDF</span>
-    							</a>
-    						</div>     						
+							</div>
 							<div class="md-flex full-bleed-two-column">
-								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 pxr1">									
+								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">									
                                 <sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
                                 </div>                                   
 								<div class="flex-item col col-12">                                 
@@ -57,7 +52,9 @@
 									</div>
 								</div>
 							</div>
+
 			
+
 			<script>
 			function getAvailableHeight() {
 				var actualHeight = window.innerHeight ||
@@ -71,11 +68,10 @@
 			document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
 			
 			</script>    
-		 </div>
-		</div>
+					</div>
+				</div>
 	</section>
   </div>
 </section>
 </div>
 <sly data-sly-resource="${'standardfooter' @ resourceType='bmc/components/structure/standardfooter'}"></sly>
-</sly>

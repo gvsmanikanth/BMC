@@ -4,11 +4,10 @@
     <jcr:content
         cq:lastModified="{Date}2017-07-27T16:36:54.730-07:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2017-10-14T04:39:03.409-04:00"
+        cq:lastReplicated="{Date}2017-07-27T16:39:10.040-07:00"
         cq:lastReplicatedBy="admin"
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/experience-fragment-additional-support"
-        cq:xfVariantType="web"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/xfpage">
         <root

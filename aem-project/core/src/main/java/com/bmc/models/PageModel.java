@@ -27,16 +27,8 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 
 /**
@@ -240,18 +232,12 @@ public class PageModel {
         String ic_source_publish_date ="";
         try
         {
-        	if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
-	        	logger.info("TYPE "+resourcePage.getContentResource().getValueMap().get("ic-source-publish-date").getClass().toString());
-	        		//Changed logic to use java.time API instead of java.util.time
-	        	GregorianCalendar myGregorianCalendar = resourcePage.getContentResource().getValueMap().get("ic-source-publish-date",new GregorianCalendar());
-				ZonedDateTime zdt = myGregorianCalendar.toZonedDateTime();
-				ic_source_publish_date = zdt.format(DateTimeFormatter.ofPattern("MM-YYYY"));
-				logger.info("IC Source Publish Date "+ic_source_publish_date.toString());      	      		        	       
+	        if(resourcePage.getContentResource().getValueMap().get("ic-source-publish-date") != null){
+	        Calendar calendar = (Calendar) resourcePage.getProperties().getOrDefault("ic-source-publish-date", "");
+	        ic_source_publish_date =  new SimpleDateFormat("MM-YYYY").format(calendar.getTime());
         }
         }catch(ClassCastException e)
         {e.printStackTrace();}
-        catch(Exception p)
-        {p.printStackTrace();}
         String[] ic_target_industry = resourcePage.getContentResource().getValueMap().get("ic-target-industry", new String[] {});
         String ic_target_industry_list = Arrays.stream(ic_target_industry).map(s -> getIC_target_industry_Value(s)).collect(Collectors.joining("|"));
         
@@ -447,24 +433,5 @@ public class PageModel {
 
         String code = (String) resolvedPage.getProperties().getOrDefault("jcr:language", "");
         return code.replace("_","-");
-    }
-    
-   
-    /*
-     * Method name dateToNewDate()
-     * Converts the old java.util.Date object to the new Date Time
-     * parameter java.util Date object
-     * returns java.time Date object
-     */
-    private static ZonedDateTime dateToNewDate(Date date) {
-    	
-        Instant instant = date.toInstant();
-
-        ZonedDateTime zonedDateTime = instant.atZone(ZoneId.systemDefault());
-        LocalDateTime dateTime = zonedDateTime.toLocalDateTime();     
-        logger.info("java.util.Calendar      = " + date);
-        logger.info("java.time.LocalDateTime = " + dateTime);
-        logger.info("java.time.zonedDateTime     = " + zonedDateTime);
-       return zonedDateTime;
     }
 }

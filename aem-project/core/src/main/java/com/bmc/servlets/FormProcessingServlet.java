@@ -67,7 +67,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
     private String serviceUrl = "";
     private String elqSiteID = "";
     private int timeout = 5000;
-    private String mkDenialUrl = "";
 
     private String[] honeyPotFields = {"Address3", "Surname"};
 
@@ -147,7 +146,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
         automationEmailEnabled = PropertiesUtil.toBoolean(config.get("automationEmailEnabled"), false);
         automationEmailRecipients = PropertiesUtil.toStringArray(config.get("automationEmailRecipients"));
         automationEmailCCRecipients = PropertiesUtil.toStringArray(config.get("automationEmailCCRecipients"));
-        mkDenialUrl = PropertiesUtil.toString(config.get("mkdenialURL"), null);
     }
 
     @Override
@@ -160,8 +158,6 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
         String purlPage = form.getNodeProperty(JCR_PURL_PAGE_URL);
         String redirectPage = form.getNodeProperty(PURL_REDIRECT_PAGE);
-        
-        String currentFormParentPage = request.getResourceResolver().adaptTo(PageManager.class).getContainingPage(request.getResource()).getAbsoluteParent(3).getPath();
 
         Boolean honeyPotFailure = false;
         for (String honeyPotField : honeyPotFields) {
@@ -206,7 +202,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 
             if (!form.isValid) {
                 String selector = (form.validationError.equals("Service Not Available")) ? ".mk-unavailable" : ".mk-denied";
-                purlPage = resourceResolver.map(currentFormParentPage).replace(".html", "")+ mkDenialUrl + selector + ".html";
+                purlPage = resourceResolver.map(purlPage).replace(".html", "") + selector + ".html";
             }
             if(form.properties.get("activePURLRedirect").equals("true")){
             	response.sendRedirect(form.properties.get(PURL_PAGE_URL));

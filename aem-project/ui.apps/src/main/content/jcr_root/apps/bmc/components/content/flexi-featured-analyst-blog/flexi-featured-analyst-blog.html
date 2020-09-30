@@ -1,10 +1,7 @@
-<section class="topcontent Flexi-FeatureImg" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
+<section class="topcontent" data-sly-use.blogSet="com.bmc.components.FlexiFeaturedAnalystOrBlog">
  <h2 data-sly-test="${(wcmmode.edit || wcmmode.design) && !(properties.title || blogSet.blogs.size > 0)}">[Featured Blogs/Additional Resources]</h2>
 
-  <!--/*WEB-8166 - Fix for Additional resources not fetching video icon */--> 
-        <!--/*<div class="layout-inner-wrap">*/--> 
-   <!--/*WEB-8166c - Added back If condition to not load layout inner wrapper class for case of 4 videos as FED removed dependency from css */--> 
-  <div class="${properties.numberOfBlogs == '3' ? 'layout-inner-wrap' : ''}">
+   <div class="${properties.numberOfBlogs == '3' ? 'layout-inner-wrap' : ''}">
       <div class="tagline"> ${properties.title @ context='html'}</div>
       <div class="sm-flex">
 	
@@ -48,3 +45,14 @@
       </div>
    </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
