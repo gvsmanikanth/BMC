@@ -398,9 +398,9 @@
             margin-top: 0;
         }
     }    
-    .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--6:last-child {
-        width: 100%;
-        padding: 0;
+    .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12:last-child {
+        width: 100% !important;
+        padding: 0 !important;
     }
     .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap {
         padding: 0;
