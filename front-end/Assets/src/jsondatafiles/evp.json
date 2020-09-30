@@ -7,5 +7,5 @@
 		"Testing" : "^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\\.)?[a-zA-Z]+\\.)?(aem-test.com|verticurl.com|click-test.com|email.tst|4tmtest.com|integrate-test.com|integrate.com|test.com)$",
 		"Spammers":"(^.*qq.com.*$)|(^.*mailinator.*$)|(^.*unsub.*$)"
 	},
-	"advanceReportingEnabled":false
+	"advanceReportingEnabled":true
 }
