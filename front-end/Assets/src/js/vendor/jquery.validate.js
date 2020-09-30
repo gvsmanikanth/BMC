@@ -281,14 +281,17 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					}
 					
 					//fired Event2 on form submit
-					
 					if($formEmailValidation){
 						if($formEmailValidation.isEmailEligibleForAnalyticsTracking()){
 							if(_satellite){
 								_satellite.track("form_completion");
 							}
 						} 
-						
+					}
+					else{
+						if(_satellite){
+							_satellite.track("form_completion");
+						}
 					}
 				}
 				else {

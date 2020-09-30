@@ -1,11 +1,14 @@
 (function($) {
 	$.fn.validateEmail = function() {
 		var $this = this,
-			$form = $(this)
-			patternDetected = null;	
-			validationType = null;	
-
-		$this.patterns = {
+			$form = $(this),
+			patternDetected = null,
+			validationType = null;
+			
+			$this.patterns = null;
+			$this.advanceReportingEnabled = true;
+		
+		var defaultValidationPatterns = {
 			'BMC' : "^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(bmc.com|compuware.com)$",
 			'Competitor' : "^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(absyss.fr|adventnet.com|altiris.com|appian.com|appworx.com|aprisma.com|arandasoft.com|Argent.com|asg.com|automic.com|avagotech.com|axiossystems.com|badgernt.com|bdna.com|betahg.com|bigfix.com|biosinto.com|broadcom.com|brocade.com|ca.com|capgroup.com|capitalgroup.com|capitalgroupuk.com|cdbsoftware.com|centennial-software.com|chef.com|cherwell.com|cirba.com|cybermation.com|datadirect.com|efecte.com|embarcadero.com|emc.com|emite.com|epicor.com|franciscopartners.com|frontrange.com|gvtc.com|heightsfinanical.com|helpstar.co.uk|helpstar.com|hornbill.com|hp.com|hpe.com|hyperformix.com|ibm.com|iet-solutions.com|infra.com.au|ipswitch.com|isilog.com|kaseya.com|knova.com|landesk.com|macro4.com|managedobjects.com|manageengine.com|marval.co.uk|matrix42.com|matrix42.de|mercury.com|metron.co.uk|microfocus.com|micromuse.com|microsoft.com|midcountrybank.com|midcountryfinanical.com|mobius.com|moniforce.com|mro.com|mtechIT.com|mxg.com|n-able.com|nagios.org|neonsystems.com|netiq.com|netuitive.com|newscale.com|nimsoft.com|novell.com|oblicore.com|ogsconsult.com|opnet.com|opsware.com|oracle.com|orsyp.com|peregrine.com|pg-de.de|pioneerservices.com|platespin.com|pssoft.com|pullelabs.com|quest.com|questsoftware.com|redwood.com|rightnow.com|rocketsoftware.com|sas.com|serena.com|service-now.com|servicenow.com|smatechnologies.com|softwaresa.com|solarwinds.com|solution-labs.com|staffandline.com|sun.com|sunrisesoftware.co.uk|swisslife.ch|symantec.com|teamquest.com|techexcel.com|tidalsoftware.com|topdesk.com|touchpaper.com|tripwire.com|uc4.com|unipress.co.uk|urbancode.com|veritas.com|vmturbo.com|vmware.com|waveset.com|wilytech.com|zcostmanagement.com|zenoss.com|zit-consulting.com|chef.io)$",
 			'Personal' : "^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(10minutemail.com|aol.com|aventuremail.com|caramail.lycos.fr|comcast.net|computermail.net|doaramail.com|dodgeit.com|emailaccount.com|e-mailanywhere.com|eo.yifan.net|everymail.com|fastmail.fm|flashmail.com|fuzzmail.com|gmail.com|godmail.com|gurlmail.com|hotmail.com|hotmaail.com|hotmail.co.jp|hotmail.co.uk|hotmail.de|hotmial.com|hushmail.com|icqumail.com|katchup.co.nz|kaxy.com|lycos.co.kr|lycos.com|mail.com|mail.excite.com|mail.indiatimes.com|mail.lycos.com|mail2web.com|mail2world.com|mailandnews.com|mailinator.com|mauimail.com|meowmail.com|muchomail.com|MyPersonalEmail.com|myrealbox.com|nameplanet.com|netaddress.com|orgoo.com|personal.ro|pookmail.com|postmaster.co.uk|postmaster.infor.aol.com|prontomail.com|returnreceipt.com|thedoghousemail.com|walla.com|webmail.earthlink.net|webmail.juno.com|wongfaye.com|yahoo.com|yahoo.co.uk|yaho.com.ar|yahoo.ca|yahoo.co.in|yahoo.co.jp|yahoo.co.kr|yahoo.de|yahoo.es|yahoo.fr|yahoo.it|zzn.com|outlook.com|icloud.com|me.com|mac.com|msn.com)$",
@@ -15,11 +18,44 @@
 		};
 		
 		
+		var fname = "";
+		//Assemble file name for state JSON
+		var uri = window.location.toString(); 
+		if (uri.indexOf("localhost") > 0) {
+			fname = '/front-end/Assets/src/jsondatafiles/evp.json';
+		}
+		else{
+			fname = '/etc/designs/bmc/email/evp.json';
+		}
+		
+		
+		$.getJSON(fname, function(data) {
+			if(data)
+			{
+				console.log("Email Validation json request Success - Object Loaded from Server");
+				if(data.validationPatterns){
+					$this.patterns = data.validationPatterns;
+				}
+				
+				$this.advanceReportingEnabled = data.advanceReportingEnabled;
+			}
+		})
+		.fail(function (e) {
+			console.log("Email Validation json request Failed - Object Loaded as default");
+			$this.patterns = defaultValidationPatterns;
+		});	//EO Fail
+		
+		
 		this.isEmailEligibleForAnalyticsTracking = function(){
 			 
 			var inputValue = $this.val();
 			var returnValue = true;
-			var isLeadGen = $('#leadgen');
+			var isLeadGen = ($('#leadgen').length > 0)?true:false;
+			var templateType = null;
+			
+			if (bmcMeta && bmcMeta.page && bmcMeta.page.contentType){
+				templateType = bmcMeta.page.contentType;
+			}
 		
 			patternDetected = null;
 			validationType = $this.data('validation-type')
@@ -32,11 +68,14 @@
 				}
 			}
 			
-			console.log(" isLeadGen " + isLeadGen);
-			console.log(" patternDetected " + patternDetected);
+			console.log("isLeadGen =" + isLeadGen);
+			console.log("patternDetected =" + patternDetected);
+			console.log("templateType =" + templateType)
 			
-			if(patternDetected && isLeadGen.length>0){
-				returnValue = false;
+			if(templateType != "form-landing-page-full-width" && isLeadGen && $this.advanceReportingEnabled){
+				if(patternDetected != null){
+					returnValue = false;
+				}
 			}
 			
 			return returnValue;
@@ -45,8 +84,12 @@
 		return this;
 	};	
 	
-	$formEmailValidation = $('form input[type="email"]'),
-    $formEmailValidation.validateEmail();   
+	
+	$formEmailValidation = $('form input[type="email"]')
+	
+	if($formEmailValidation.length > 0){
+    	$formEmailValidation.validateEmail();   
+	}
 
 }) (jQuery);
 
