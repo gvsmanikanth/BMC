@@ -32,6 +32,7 @@
             line-height: 36px;
         }
     }
+   
     .btn-gradient{
         background: rgb(249,135,0);
         background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(254,80,0,1) 100%);
@@ -42,14 +43,19 @@
         font-weight: 700;
         padding: 10px 17px;
         &:hover{
-            background: rgb(249,135,0);
+            background: rgb(249,135,0) ;
             background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%); 
             transition: 0.3s linear;         
         }
     }
-    .btn-form{
+    .btn-secondary{
         @extend .btn-gradient;
         border-radius: 0px;
+        padding: 14px 45px;
+        &:hover{
+            background: rgb(249,135,0) !important;
+            background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%)!important;    
+        }
     }
     .sp-large-container{
         max-width: 1920px;
@@ -219,7 +225,8 @@
             background-size: 600px;
             background-position: 120% 64%;
             padding: 50px 0 50px 0;
-        }  
+        }
+          
     }      
     .sp-form-wrap{       
         z-index: 1;    
@@ -252,6 +259,100 @@
             display: block;
         } 
         
+    }
+   
+}
+
+
+
+.iframeFormPage{
+    padding-top: 0 !important;
+    background: #fff;
+    header, footer, nav {
+        display: none;
+        height: 0;
+    }
+    
+    .cmp-form form {  
+        background: #fff;
+        width: auto;
+        border-top: none;
+        margin: 0 !important;
+        padding: 3em;
+           
+        fieldset:not(#foo)  {
+            label{
+                font-size: 14px;
+                font-weight: 700;
+                color: #414042;
+            }
+            .error-text {
+                min-height: 18px;
+                display: block;
+                font-size: 12px;
+            }
+            .aem-GridColumn--default--6 {
+                display: inline-block;
+                float: left !important;
+                width: calc(50% - 20px);
+                vertical-align: top;
+                
+            }  
+            input[type="text"],  input[type="number"],  input[type="password"],  input[type="email"],  input[type="tel"],  textarea, .decorator-select{
+                border-color: #1A98FF;
+                border-width: 1px;
+            } 
+            .validation-error-redesign, .validation-error{
+                border-color: #ff0000 !important;
+                border-width: 1px;
+            }
+            .form-group.checkbox li label{
+                font-weight: 400;
+                color: #75777A;
+            }
+            input[type="text"]:focus, input[type="text"]:focus,  input[type="number"]:focus,  input[type="password"]:focus,  input[type="email"]:focus,  input[type="tel"]:focus,  textarea:focus{
+                background: rgba(26, 152, 255, 0.1);
+            }
+            .focus-border::after{
+                background: rgba(26, 152, 255, 0.1);
+            }
+            .decorator-select{
+                .validation-error-redesign{
+                    border-color: #ff0000;
+                    border-width: 1px;
+                }
+                &:after{
+                    top: 0;
+                    height: 46px;
+                }
+            }
+            .decorator-select.validation-error-redesign{
+                    border-color: #ff0000;
+                    border-width: 1px;                
+            }
+                  
+        }
+        a{
+            font-weight: 700;
+            color: #1A98FF;
+        }
+        p{
+            color: #75777A;
+        }
+    }
+    .cmp-title{
+        h2{
+        color: #002C8F;
+        font-size: 26px;
+        line-height: 36px;
+            @media(min-width:$break-sm){
+                font-size: 36px;
+                line-height: 46px;
+            } 
+        }
+        p{
+            margin-bottom: 0;
+        }
     }
    
 }
