@@ -172,24 +172,29 @@
         z-index: 1;
     }
     .hero-content{
-        height: 300px;
+        height: 180px;
         background: transparent;
         @media(min-width:$break-sm){
-            height: 350px;
+            height: 300px;
         } 
-        @media(min-width:$break-sm){
+        @media(min-width:$break-md){
             height: 550px;
         } 
         .sp-video-icon{
             background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             margin: auto;
             transition: 0.3s linear;
+            background-repeat: no-repeat;
             &:hover{
                 background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
                 transition: 0.3s linear;  
             }
+            @media(min-width:$break-sm){
+                width: 100px;
+                height: 100px;
+            } 
             @media(min-width:$break-md){
                 width: 141px;
                 height: 141px;
@@ -226,13 +231,19 @@
             background-position: 120% 64%;
             padding: 50px 0 50px 0;
         }
+        @media(max-width: 640px){
+            background-position: 0 40%;
+        }
           
     }      
     .sp-form-wrap{       
-        z-index: 1;    
-        padding: 0 75px 0 40px;  
-        @media(max-width: $break-md){
+        z-index: 1;           
+        padding: 70px 25px 0 25px;
+        @media(min-width: $break-sm){
             padding: 100px 40px 0 40px;
+        }
+        @media(min-width: $break-md){
+            padding: 0 75px 0 40px; 
         } 
         iframe {
             width: 100%;
@@ -243,10 +254,7 @@
        
     }
     .split-form-image{
-        text-align: center;
-        @media(min-width:$break-sm){
-           
-        }         
+        text-align: center;       
     }
     div#splitFormAnimation {
         position: absolute;
@@ -278,7 +286,10 @@
         width: auto;
         border-top: none;
         margin: 0 !important;
-        padding: 1rem;
+        padding: 1.2rem;
+        @media(min-width:$break-sm){
+            padding: 1rem 3rem 3rem 3rem;
+        } 
            
         fieldset:not(#foo)  {
             label{
@@ -311,10 +322,6 @@
                 border-color: #ff0000 !important;
                 border-width: 1px;
             }
-            .form-group.checkbox li label{
-                font-weight: 400;
-                color: #75777A;
-            }
             input[type="text"]:focus, input[type="text"]:focus,  input[type="number"]:focus,  input[type="password"]:focus,  input[type="email"]:focus,  input[type="tel"]:focus,  textarea:focus{
                 background: rgba(26, 152, 255, 0.1);
             }
@@ -335,6 +342,34 @@
                     border-color: #ff0000;
                     border-width: 1px;                
             }
+            .form-group.checkbox{
+                li{
+                    label {
+                        font-weight: 400;
+                        color: #75777A;
+                        font-size: 16px;
+                        &::before{
+                            content: '';
+                            color: #1A98FF;
+                            font-weight: 700;
+                            border: 2px solid #1A98FF;
+                            height: 20px;
+                            width: 20px;
+                            padding: 0;
+                            margin: 0 10px 0 0px;
+                            display: inline-block;
+                            box-shadow: 0 0 0 2px #ffffff;
+                            
+                        }
+                    }
+                } 
+            }
+            input[type="checkbox"]:checked + label:before{
+                content: url(#{$imagesFolder}splashPage/icons/svg-colored/checkmark-white.svg);
+                background-color: #002C8F;
+                border: 2px solid #ffffff;
+                box-shadow: 0 0 0 2px #1A98FF;
+            } 
                   
         }
         a{
@@ -365,6 +400,9 @@
     }    
     .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--6:last-child {
         width: 100%;
+        padding: 0;
+    }
+    .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap {
         padding: 0;
     }
    

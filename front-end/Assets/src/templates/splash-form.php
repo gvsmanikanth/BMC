@@ -323,7 +323,7 @@
                               <span class="submit-btn-wrap">
                               <button type="SUBMIT" class="btn-secondary" name="SIGN ME UP" value="SIGN ME UP">SIGN ME UP</button>
                               </span>        
-                              <p>By providing my contact information, I have read and agreed to BMC’s policy regarding <a href="/legal/personal-information.html">Personal Information</a>.<br /></p>
+                              <p>By registering for this offer you are confirming that you have read and greed to <a href="/legal/personal-information.html">BMC’s Privacy Policy.</a>.<br /></p>
                               <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
                               <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
                               <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>
