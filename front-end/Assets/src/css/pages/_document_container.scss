@@ -1,11 +1,68 @@
 .document_container{
-    .maincontentcontainer{
-        #pdfReader{
-            border: 1px solid black; width: 100%;
-            embed{
-                width: 100%;
-                height: 100%;
-            }
+    #pdfReader{
+        border: 1px solid black; width: 100%;
+        embed{
+            width: 100%;
+            height: 100%;
+        }        
+    }
+    .header-form-basic.header-emphasis{
+        h1{
+            font-size: 1.7rem;
+            width:100%;
         }
     }
+    #mobilebtn{
+        display: none;
+    }
+    .link-icon-resource-document{
+        background-position:-2px 0px;
+    }
+
+// All Mobile deivecs and Tab Landscape and Portrait start
+    @media (max-width: $break-md) {
+        #pdfReader{
+            border: none;
+            display: none;
+        }
+        .header-product-landing .layout-inner-wrap.flex{
+            text-align:center;
+       }
+        .header-form-basic.header-emphasis{
+            h1{
+                font-size: 1.7rem;
+                
+                width:100%;
+            }
+        }
+        #mobilebtn{
+            display: block;
+            //width:260px;
+            width: 80%;
+            max-width:260px;
+            margin: auto;
+            margin-bottom:40px;
+            margin-top:30px;
+            padding:20px;
+        }
+        #desktopbtn{
+            display: none;
+        }
+        
+        .full-bleed-two-column .layout-secondary img, .full-bleed-two-column .layout-secondary-flex-item img
+        {            
+            width: auto;
+          //  max-width:350px;
+            margin: auto;
+        }
+        .full-bleed-two-column .layout-secondary, .full-bleed-two-column .layout-secondary-flex-item{
+            padding-right: 0px;
+            width: 100%;
+            //max-width:350px; 
+            margin:auto;
+            text-align:center;
+        }
+    }
+    // All Mobile deivecs and Tab Landscape and Portrait start
+
 }
