@@ -278,7 +278,7 @@
         width: auto;
         border-top: none;
         margin: 0 !important;
-        padding: 3em;
+        padding: 1rem;
            
         fieldset:not(#foo)  {
             label{
@@ -296,6 +296,11 @@
                 float: left !important;
                 width: calc(50% - 20px);
                 vertical-align: top;
+                padding-right: 20px;
+                @media(max-width:$break-sm){
+                    width: 100%;
+                    padding-right: 0;
+                } 
                 
             }  
             input[type="text"],  input[type="number"],  input[type="password"],  input[type="email"],  input[type="tel"],  textarea, .decorator-select{
@@ -338,21 +343,26 @@
         }
         p{
             color: #75777A;
-        }
-    }
-    .cmp-title{
-        h2{
-        color: #002C8F;
-        font-size: 26px;
-        line-height: 36px;
-            @media(min-width:$break-sm){
-                font-size: 36px;
-                line-height: 46px;
-            } 
-        }
-        p{
             margin-bottom: 0;
         }
+        .cmp-title{
+            h2{
+            color: #002C8F;
+            font-size: 26px;
+            line-height: 36px;
+                @media(min-width:$break-sm){
+                    font-size: 36px;
+                    line-height: 46px;
+                } 
+            }
+            p{
+                margin-bottom: 0;
+            }
+        }
+    }    
+    .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--6:last-child {
+        width: 100%;
+        padding: 0;
     }
    
 }
