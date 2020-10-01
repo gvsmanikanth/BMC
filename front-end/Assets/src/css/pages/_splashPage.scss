@@ -155,6 +155,9 @@
         padding-top: 60px;
         background-repeat: no-repeat;
         background-position: center top;
+        .vidbg-overlay {
+            background: transparent !important;
+        }
     }
     .video-hero-header {
         max-width: 1076px;
@@ -406,4 +409,13 @@
         padding: 0;
     }
    
+}
+
+.orion-page-fancybox{
+    .fancybox-close{
+        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
+        &:hover{
+            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);
+        }
+    }  
 }
