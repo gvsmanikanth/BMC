@@ -242,6 +242,7 @@
     .sp-form-wrap{       
         z-index: 1;           
         padding: 70px 25px 0 25px;
+        position: relative;
         @media(min-width: $break-sm){
             padding: 100px 40px 0 40px;
         }
@@ -314,7 +315,9 @@
                 margin-bottom: 8px;
             }
             .error-text {
-                min-height: 15px;
+                @media(min-width:$break-sm){
+                    min-height: 15px;
+                }                
                 display: block;
                 font-size: 12px;
             }
