@@ -34,6 +34,7 @@
         <div class="video-hero-header">
             <img src="Assets/src/img/splashPage/sp-divider.png" alt="" class="sp-divider" >
             <h2 >The experts are talking about what’s to come…</h2>
+           <!--
             <section class="hero flex-col">
                 <div class="hero-image xs-only" style="background-image: url(Assets/src/img/splashPage/video-bg-mobile.jpg);"></div>
                 <div class="hero-image video xs-max-hide">
@@ -45,6 +46,15 @@
                     </a>              
                 </div>
             </section>
+            -->
+            <div class="center-block">
+				<div id="youtube_JOrfbJA5PrU" class="youtube-video inline-youtube-video-player">
+					<div id="JOrfbJA5PrU" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg.jpg" data-src="JOrfbJA5PrU" data-autoplay=0 data-fullscreen=0></div>
+					<p id="youtubeOverlay_JOrfbJA5PrU" class="youtubeOverlay">
+						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
+					</p>
+				</div>
+			</div>
         </div>
     </div>    
 </section>

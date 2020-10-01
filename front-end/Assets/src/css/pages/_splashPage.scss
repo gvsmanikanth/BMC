@@ -427,6 +427,27 @@
    
 }
 
+.sp-video-icon-global{
+            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            transition: 0.3s linear;
+            background-repeat: no-repeat;
+            &:hover{
+                background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
+                transition: 0.3s linear;  
+            }
+            @media(min-width:$break-sm){
+                width: 100px;
+                height: 100px;
+            } 
+            @media(min-width:$break-md){
+                width: 141px;
+                height: 141px;
+            } 
+        }
+
 .orion-page-fancybox{
     .fancybox-close{
         background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
