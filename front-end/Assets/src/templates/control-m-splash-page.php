@@ -60,7 +60,7 @@
                 </div>                
             </div>
             <div class="flex-item md-col-7 sp-form-wrap">
-                <div class=""> 
+                <div class="iframe-wrap"> 
                     <iframe id="spIframe" src="/front-end/splash-form.php" onload="setIframeHeight(this.id)"></iframe>
                 </div>
             </div>

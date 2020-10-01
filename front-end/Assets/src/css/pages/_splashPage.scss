@@ -250,9 +250,13 @@
         } 
         iframe {
             width: 100%;
-            min-height: 400px;
+            height: 724px;
             border: none;
             border-radius: 26px;
+            overflow: hidden;
+        }
+        .iframe-wrap{
+            background: #fff;
         }
        
     }
@@ -279,13 +283,16 @@
 .iframeFormPage{
     padding-top: 0 !important;
     background: #fff;
+    overflow: hidden;
     header, footer, nav {
         display: none;
         height: 0;
     }
     
+    
     .cmp-form form {  
         background: #fff;
+        color: #75777A;
         width: auto;
         border-top: none;
         margin: 0 !important;
@@ -295,13 +302,18 @@
         } 
            
         fieldset:not(#foo)  {
+            
+            @media(min-width:$break-sm){
+                margin-right: -20px;
+            } 
             label{
                 font-size: 14px;
                 font-weight: 700;
                 color: #414042;
+                margin-bottom: 8px;
             }
             .error-text {
-                min-height: 18px;
+                min-height: 15px;
                 display: block;
                 font-size: 12px;
             }
@@ -382,6 +394,7 @@
         p{
             color: #75777A;
             margin-bottom: 0;
+            font-size: 16px;
         }
         .cmp-title{
             h2{
@@ -395,10 +408,9 @@
             }
             p{
                 margin-bottom: 0;
+                font-size: 13px;
+                color: #414042;
             }
-        }
-        .btn-secondary{
-            margin-top: 0;
         }
     }    
     .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12:last-child {
@@ -414,6 +426,7 @@
 .orion-page-fancybox{
     .fancybox-close{
         background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
+        
         &:hover{
             background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);
         }
