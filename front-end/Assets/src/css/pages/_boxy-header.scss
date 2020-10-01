@@ -419,8 +419,8 @@
             
             @keyframes fly {
                 0% {
-                    top: -28px;
-                    left: -455px;
+                    top: -170px;
+                    left: -280px;
                     opacity: 1;
                 }
                 70% {
@@ -438,8 +438,8 @@
             
             @keyframes fly1 {
                 0% {
-                    top: 250px;
-                    left: -458px;
+                    top: -60px;
+                    left: 0;
                     opacity: 1;
                 }
                 70% {
@@ -493,43 +493,31 @@
             }
             .hcContent-green-bg{
                 &:hover{
-                    .box1-1, .box2-2{
-                        animation: fly 7s;
+                    .box1-1{
+                        animation: fly 6s;
                         animation-timing-function: linear;
-                        animation-iteration-count: 1000;                  
-                    
+                        animation-iteration-count: 1000;                                
                     } 
-                    .box1-1 {             
-                    
-                        width: 55%;
-                        height: 710px;
-                    } 
-                    .box2-2 {                  
-                        width: 50%;
-                        margin-top: 45%;
-                        left: 100%;
-                    } 
+                    .box2-2{
+                        animation: fly1 6s;
+                        animation-timing-function: linear;
+                        animation-iteration-count: 1000;                                
+                    }               
 
                 
                 }
             }
             .hcContent-blue-bg{
                 &:hover{
-                    .box1, .box2{
-                        animation: fly 7s;
+                    .box1{
+                        animation: fly 6s;
                         animation-timing-function: linear;
-                        animation-iteration-count: 1000;
-                    
-                    
+                        animation-iteration-count: 1000;                                       
                     } 
-                    .box1 {             
-                    
-                        width: 45%;
-                    } 
-                    .box2 {                  
-                        width: 50%;
-                        margin-top: 45%;
-                        left: 100%;
+                    .box2{
+                        animation: fly1 6s;
+                        animation-timing-function: linear;
+                        animation-iteration-count: 1000;                            
                     } 
                 }
             }
