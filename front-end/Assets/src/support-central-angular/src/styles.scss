@@ -38,6 +38,10 @@ app-root {
         }
         .external-app-link {
             font-weight: 600;
+            color: white;
+            &:hover {
+                color: white
+            }
         }
     }
     .description {

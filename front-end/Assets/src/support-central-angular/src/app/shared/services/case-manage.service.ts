@@ -6,7 +6,7 @@ import { DataFetchService } from './data-fetch.service';
 @Injectable()
 export class CaseManageService {
 
-  cases: Case[] = null;
+  cases: Case[] = [];
 
   widgetLinks: WidgetsLinks = window['psc'].widgets;
 
@@ -21,7 +21,7 @@ export class CaseManageService {
   constructor(private dataFetch: DataFetchService) { }
 
   getCases() {
-    this.dataFetch.getCases().then((cases) => {
+    return this.dataFetch.getCases().then((cases) => {
       this.cases = cases;
       console.log(cases);
       this.busyConfig.busy = false;

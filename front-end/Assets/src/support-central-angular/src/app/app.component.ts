@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { WidgetsLinks } from './shared/models/widgets-links.model';
 import { trigger, state, style, transition, animate, query, stagger, group, animateChild } from '@angular/animations';
 import { widgets }  from "./shared/data/widgets";
@@ -78,6 +78,9 @@ import { Widget } from './shared/models/widget.model';
   ]
 })
 export class AppComponent implements OnInit, AfterViewInit{
+
+  @ViewChild('tileBlock', { static: false }) tileBlock;
+
   mobile = false;
   widgetLinks: WidgetsLinks = window['psc'].widgets;
   userLoggedIn = window['psc'].user.loggedIn === "true";
@@ -128,7 +131,13 @@ export class AppComponent implements OnInit, AfterViewInit{
       this.openedWidget = index;
     }
     this.cdr.detectChanges()
-    
+    setTimeout(() => {
+      let el = document.getElementById("tile" + index);
+      if (el) {
+       let top = el.offsetTop;
+       this.tileBlock.nativeElement.scrollTop = top;
+      }
+    },600);
   }
 
   closeWidgets() {

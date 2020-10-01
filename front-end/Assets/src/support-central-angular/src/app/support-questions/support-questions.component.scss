@@ -1,0 +1,10 @@
+.extended-widget-body {
+    & {
+        margin-left: 20px;
+    }
+    adapt-pagination ::ng-deep {
+        .pagination {
+            justify-content: center;
+        }
+    }
+}

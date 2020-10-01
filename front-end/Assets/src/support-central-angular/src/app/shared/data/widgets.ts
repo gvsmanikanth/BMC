@@ -92,5 +92,14 @@ export const widgets: Widget[] = [
         description: "Get help with all aspects of your digital journey",
         routerLink: null,
         icon: "d-icon-service_desk"
+    },
+    {
+        id: "supportQuestions",
+        href: null,
+        isExtended: false,
+        title: "Common Support Questions",
+        description: "See frequently asked questions",
+        routerLink: 'support-question',
+        icon: "d-icon-question_circle_o"
     }
 ]

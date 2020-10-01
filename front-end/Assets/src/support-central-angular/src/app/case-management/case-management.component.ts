@@ -1,8 +1,6 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { GridApi } from 'ag-grid-community';
+import { Component, OnInit } from '@angular/core';
+import { Case } from '../shared/models/case/case.model';
 import { CaseManageService } from '../shared/services/case-manage.service';
-import { CaseIdCellComponent } from './case-id-cell/case-id-cell.component';
-import { DateCellComponent } from './date-cell/date-cell.component';
 
 @Component({
   selector: 'app-case-management',
@@ -12,33 +10,18 @@ import { DateCellComponent } from './date-cell/date-cell.component';
 export class CaseManagementComponent implements OnInit {
 
   widgets = window['psc'].widgets;
-  gridApi: GridApi = null;
-  frameworkComponents = null;
-  columnDefs = [
-    { headerName: 'Case Number', field: 'CaseNumber', cellRenderer: 'caseIdRenderer', width: 140 },
-    { headerName: 'Subject', field: 'Subject', width: 120 },
-    { headerName: 'Product', field: 'ProductName', width: 120 },
-    { headerName: 'Created', field: 'CreatedDate', cellRenderer: 'dateCellRenderer', width: 150 },
-    { headerName: 'Modified', field: 'LastModifiedDate', cellRenderer: 'dateCellRenderer', width: 150 },
-    { headerName: 'Status', field: 'Status'},
+  casesChunk: Case[] = [];
 
-  ]
-
-  constructor(public caseService: CaseManageService, private cdr: ChangeDetectorRef) {
-    this.frameworkComponents = {
-      dateCellRenderer: DateCellComponent,
-      caseIdRenderer: CaseIdCellComponent
-    }
-   }
+  constructor(public caseService: CaseManageService) { }
 
   ngOnInit() {
-    this.caseService.getCases()
+    this.caseService.getCases().then(() => {
+      this.casesChunk = this.caseService.cases.slice(0,4);
+    })
   }
 
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridApi.sizeColumnsToFit();
-    this.cdr.detectChanges();
+  paginate(event) {
+    this.casesChunk = this.caseService.cases.slice(event.first, event.first + +event.rows);
   }
 
 }

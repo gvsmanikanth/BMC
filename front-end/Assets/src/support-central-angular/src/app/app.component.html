@@ -1,6 +1,6 @@
 <div *ngIf="!mobile" class="container">
-  <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles]="isExtendedOpen ? 'closed' : 'open'">
-    <app-tile *ngFor="let widget of widgets, let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+  <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles]="isExtendedOpen ? 'closed' : 'open'" #tileBlock>
+    <app-tile *ngFor="let widget of widgets, let i = index" [id]="'tile' + i" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
   </div>
   <div class="widget-container" [@openCloseRouter]="isExtendedOpen ? 'open' : 'closed'">
     <router-outlet *ngIf="isExtendedOpen"></router-outlet>

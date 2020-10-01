@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule } from '@bmc-ux/adapt-angular';
 import { RouterModule, Routes } from '@angular/router';
 import { EpdComponentComponent } from './epd-component/epd-component.component';
 import { EPDService } from './shared/services/epd.service';
@@ -14,15 +14,14 @@ import { EpdProductComponent } from './epd-component/epd-product/epd-product.com
 import { TileComponent } from './tile/tile.component';
 import { DataFetchService } from './shared/services/data-fetch.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CaseManagementComponent } from './case-management/case-management.component';
 import { CaseManageService } from './shared/services/case-manage.service';
-import { AdaptGridModule } from '@bmc-ux/adapt-grid';
-import { AgGridModule } from 'ag-grid-angular';
-import { DateCellComponent } from './case-management/date-cell/date-cell.component';
-import { CaseIdCellComponent } from './case-management/case-id-cell/case-id-cell.component';
 import { DocsComponent } from './docs/docs.component';
 import { DocsService } from './shared/services/docs.service';
 import { DocsProductComponent } from './docs/docs-product/docs-product.component';
+import { CaseManagementComponent } from './case-management/case-management.component';
+import { SupportQuestionsService } from './shared/services/support-questions/support-questions.service';
+import { SupportQuestionsComponent } from './support-questions/support-questions.component';
+import { QuestionComponent } from './support-questions/question/question.component';
 
 const appRoutes: Routes = [
   {
@@ -36,6 +35,9 @@ const appRoutes: Routes = [
   {
     path: 'docs',
     component: DocsComponent
+  },{
+    path: 'support-question',
+    component: SupportQuestionsComponent
   }
 ]
 
@@ -47,10 +49,10 @@ const appRoutes: Routes = [
     EpdProductComponent,
     TileComponent,
     CaseManagementComponent,
-    DateCellComponent,
-    CaseIdCellComponent,
     DocsComponent,
-    DocsProductComponent
+    DocsProductComponent,
+    SupportQuestionsComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,20 +65,16 @@ const appRoutes: Routes = [
       useHash: true
     }),
     AdaptSwitcherModule,
-    AdaptGridModule.forRoot(),
-    AgGridModule.withComponents([]),
     AdaptAccordionModule,
-    AdaptTabsModule.forRoot()
+    AdaptTabsModule.forRoot(),
+    AdaptPaginationModule
   ],
   providers: [
     DataFetchService,
     EPDService,
     CaseManageService,
-    DocsService
-  ],
-  entryComponents: [
-    DateCellComponent,
-    CaseIdCellComponent
+    DocsService,
+    SupportQuestionsService
   ],
   bootstrap: [AppComponent]
 })

@@ -21,17 +21,41 @@
         background-color: #d5d5dc;
         border-color: #bebec9;
     }
-}
-
-adapt-grid ::ng-deep adapt-grid-pagination {
-    margin: auto;
-    margin-top: 5px;
-}
-
-adapt-grid.adapt-grid {
-    min-height: 440px;
-}
-
-adapt-grid ::ng-deep div.ag-root-wrapper.ag-layout-normal.ag-ltr {
-    border: none;
+    .case {
+        border-radius: 5px;
+        box-shadow: 0 3px 4px rgba(0,0,0,.14), 0 9px 10px rgba(0,0,0,.06);
+        padding: 10px 5px 10px 15px;
+        margin-bottom: 15px;
+        h4 {
+            & {
+                margin: 2px 0px 5px;
+                position: relative;
+                padding-right: 160px;
+            }
+            .product-name {
+                margin-left: 10px;
+            }
+            .status {
+                position: absolute;
+                right: 10px;
+                top: 0px;
+            }
+        }
+        .subject {
+            margin-bottom: 5px;
+        }
+        .dates {
+            display: flex;
+            font-size: 10px;
+            span:last-child {
+                margin-left: 20px;
+            }
+        }
+        
+    }
+    adapt-pagination ::ng-deep {
+        .pagination {
+            justify-content: center;
+        }
+    }
 }

@@ -1,0 +1,11 @@
+<div class="question">
+    <div class="left"><span class="lightbulb d-icon-lightbulb_o"></span></div>
+    <div class="center">
+        <h4><a target="_blank" [href]="question.linkToKA">{{question.title}}</a></h4>
+        <div class="summary" *ngIf="question.summary">
+            {{(question.summary.length > 80 && !truncated) ? question.summary.slice(0,80) + '...' : question.summary}}
+            <a tabindex="0" class="truncate" (click)="toggleTruncate()" *ngIf="(question.summary.length > 80)">Show {{ truncated ? 'less': 'more'}}</a>
+            </div>
+        <div class="dates"><span>Created: {{question.sfcreateddate | date: 'dd-MMM-yyyy'}}</span></div>
+    </div>
+</div> 
