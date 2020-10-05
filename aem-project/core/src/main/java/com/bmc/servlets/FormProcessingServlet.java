@@ -287,7 +287,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                             URLEncoder.encode(name, charset),
                             URLEncoder.encode(value, charset));
                 } catch (UnsupportedEncodingException e) {
-                    logger.error(e.getMessage());
+                    logger.error("Unsupported Encoding Exception Occured : "+e);
                 }
                 return "";
             }
@@ -302,7 +302,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                     URL url = new URL(serviceUrl);
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setDoOutput(true);
-                    connection.setInstanceFollowRedirects(true);
+                    connection.setInstanceFollowRedirects(false);
                     connection.setRequestMethod("POST");
                     connection.setConnectTimeout(timeout);
                     connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
@@ -327,7 +327,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         logger.error("Form data failed to post to webmethods server. URL: " + serviceUrl + " Data: " + data);
                     }
                 } catch (Exception e) {
-                    logger.error(e.getMessage());
+                    logger.error("Exception occured in getting response : "+e);
                     try {
                         status = connection.getResponseCode();
                         logger.trace("Response Status: " + status);
@@ -340,7 +340,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                             logger.info("Error Response: " + responseBody);
                         }
                     } catch (IOException e1) {
-                        logger.error(e1.getMessage());
+                        logger.error("IO Exception Occured in getting error stream : "+e1);
                     }
                 } finally {
                     if (connection != null) {
@@ -462,7 +462,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                 if (node.hasProperty(property))
                     value = node.getProperty(property).getString();
             } catch (RepositoryException e) {
-                logger.error(e.getMessage());
+                logger.error("Repository Exception occured : "+e);
             }
             logger.trace(property + ": " + value);
             return value;
@@ -568,7 +568,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
 	                        				   }
 	                        			}
                         			}catch(Exception e){
-                        				logger.error(e.getMessage());
+                        				logger.error("Exception occured while creating activePURLPattern : "+e);
                         			}
                         	}
                         	logger.info("request parameter value of activePURLPattern"+activePURLPattern.toString().replaceAll("[${}]*", ""));
@@ -592,7 +592,7 @@ public class FormProcessingServlet extends SlingAllMethodsServlet {
                         String timeStamp = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss").format(new Date());
                         properties.put("form_submitdate", timeStamp);
                     } catch (RepositoryException e) {
-                        logger.error("Form has no experience fragment.");
+                        logger.error("Repository exception. Form has no experience fragment : "+e);
                     }
                     return properties;
                 }
