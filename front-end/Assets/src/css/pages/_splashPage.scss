@@ -290,7 +290,17 @@
         display: none;
         height: 0;
     }
-    
+    h1{
+        font-size: 26px;
+        line-height: 36px;        
+        @media(min-width:$break-sm){
+            font-size: 36px;
+            line-height: 46px;
+        }
+        span.black {
+            color: #002C8F;
+        }
+    }
     
     .cmp-form form {  
         background: #fff;
@@ -423,18 +433,7 @@
     }
     .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap {
         padding: 0;
-    }
-    h1{
-        font-size: 26px;
-        line-height: 36px;
-        span.black {
-            color: #002C8F;
-        }
-        @media(min-width:$break-sm){
-            font-size: 36px;
-            line-height: 46px;
-        }
-    }
+    }     
     
    
 }
