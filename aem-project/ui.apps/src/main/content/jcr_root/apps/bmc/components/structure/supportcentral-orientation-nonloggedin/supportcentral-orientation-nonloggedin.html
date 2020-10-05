@@ -1,17 +1,29 @@
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
- <sly data-sly-test.loggdIn="${support.isLoggedIn}">
-      <sly data-sly-test.newuser="${!support.isNewUser}">  
-        <div span style="padding-right:120px;">
-         <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
- </sly>
-  
-  </sly>
-
-       <sly data-sly-test.loggdIn="${!support.isLoggedIn}">
-          <div class="container">
-            <h2>Explore BMC resources</h2>
-               Start with the <a href="${support.supportGuideUrl}">Support Central User's Guide / PDF</a></br>
-            <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
-          </div>
-       </sly>
-  </sly>
+	<sly data-sly-test.loggdIn="${support.isLoggedIn}">
+		<sly data-sly-test.newuser="${!support.isNewUser}">  
+        	<div span style="padding-right:120px;">
+         	<a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
+ 		</sly>
+  	</sly>
+    <div class="container">
+    	<div class="row">
+            <div class="col-4">
+            	<h2>Upgrade Assistance</h2>
+                BMC assisted Migration Offering</br>
+                <a class="btn learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
+            </div>
+            <div class="col-4">
+            	<h2>Support Central User Guide</h2>
+                Learn more about BMC support Resources</br>
+                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn learn-more">Online Guide</a>
+            </div>
+            <sly data-sly-test.loggdIn="${!support.isLoggedIn}">
+                <div class="col-4 psc-o-checklist">
+                    <h2>Explore BMC resources</h2>
+                    Get familiarity with BMC resources</br>
+                    <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
+                </div>
+            </sly>
+         </div>
+     </div>
+</sly>
