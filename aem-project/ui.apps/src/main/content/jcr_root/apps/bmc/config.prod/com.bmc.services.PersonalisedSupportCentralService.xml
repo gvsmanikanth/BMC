@@ -38,7 +38,7 @@
     	  oauthUrl="/oauth/token"
     	  popularProductUrl="/v1/personalisation/contents"
     	  userTotalCountUrl="/v1/users/total-count"
-    	  productCount = "5"
+    	  productCount = "15"
     	  communityCount = "10"
     	  userscoreThreshold = "50"
     	  supportNavigationUrl="https://webapi.bmc.com/www/supportcentralnavigation"
