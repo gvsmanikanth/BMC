@@ -3,7 +3,56 @@
 	$bodyClass = 'form2 orion-global iframeFormPage ';
 	include 'php-inc/head.php';
 ?>
-
+<script type="text/javascript">
+var bmcMeta = {
+		  "form": {
+		    "id": "22",
+		    "name": "FormTemplate1",
+		    "leadOffer": "splash page",
+		    "optIn": "true"
+		  },
+		  "page": {
+		    "contentId": "7851e34c-77f8-40ba-a71e-fe0bf3f01f73",
+		    "contentType": "form-landing-page-template2",
+		    "longName": "en-us:forms-start:contact-bmc3",
+		    "productCategories": "unknown",
+		    "productLineCategories": "unknown",
+		    "topicsCategories": "",
+		    "errorCode": "",
+		    "isPurl": "false",
+		    "modalOpen": {
+		      "evidon": false,
+		      "contact": false,
+		      "content": false,
+		      "supportAlerts": false,
+		      "salesChat": false,
+		      "qualtrics": false
+		    },
+		    "GeoIP": {
+		      "GeoIPRedirectExcluded": false,
+		      "GeoIPLanguageCode": ""
+		    },
+		    "ic": {
+		      "appInclusion": "no",
+		      "contentType": "",
+		      "weighting": "5",
+		      "contentMarketTopics": "",
+		      "buyerStage": "",
+		      "targetPersona": "",
+		      "sourcePublishDate": "",
+		      "targetIndustry": "",
+		      "companySize": ""
+		    }
+		  },
+		  "site": {
+		    "cultureCode": "en-us",
+		    "environment": "stage."
+		  },
+		  "user": {
+		    "sVi": ""
+		  }
+		};
+</script>
 
 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
    <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
@@ -323,7 +372,7 @@
                               <span class="submit-btn-wrap">
                               <button type="SUBMIT" class="btn-secondary" name="SIGN ME UP" value="SIGN ME UP">SIGN ME UP</button>
                               </span>        
-                              <p>By registering for this offer you are confirming that you have read and greed to <a href="/legal/personal-information.html">BMC’s Privacy Policy.</a>.<br /></p>
+                              <p>By registering for this offer you are confirming that you have read and greed to <a href="/legal/personal-information.html" target="_blank">BMC’s Privacy Policy.</a>.<br /></p>
                               <input type="hidden" id="C_Lead_Rating_Override1" name="C_Lead_Rating_Override1" value=""/>
                               <input type="hidden" id="Email_Source" name="Email_Source" value=""/>
                               <input type="hidden" id="elqCustomerGUID" name="elqCustomerGUID" value=""/>

@@ -132,6 +132,10 @@
                 left: 1.55556rem;
                 right: 0;
                 max-width: 29%;
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    top: 0px;
+                    max-height: 90px;
+                 }
              }  
              @media(min-width:$break-lg){
                 max-width: 35%;
@@ -280,7 +284,7 @@
    
 }
 
-
+// Iframe Form specific CSS
 
 .iframeFormPage{
     padding-top: 0 !important;
@@ -290,17 +294,8 @@
         display: none;
         height: 0;
     }
-    h1{
-        font-size: 26px;
-        line-height: 36px;        
-        @media(min-width:$break-sm){
-            font-size: 36px;
-            line-height: 46px;
-        }
-        span.black {
-            color: #002C8F;
-        }
-    }
+    
+    
     
     .cmp-form form {  
         background: #fff;
@@ -367,7 +362,7 @@
                     height: 46px;
                 }
             }
-            .decorator-select.validation-error-redesign{
+            .decorator-select.validation-error-redesign, .decorator-select.validation-error{
                     border-color: #ff0000;
                     border-width: 1px;                
             }
@@ -377,6 +372,9 @@
                         font-weight: 400;
                         color: #75777A;
                         font-size: 16px;
+                        position: relative;
+                        padding-left: 35px;
+                        display: block;
                         &::before{
                             content: '';
                             color: #1A98FF;
@@ -388,7 +386,9 @@
                             margin: 0 10px 0 0px;
                             display: inline-block;
                             box-shadow: 0 0 0 2px #ffffff;
-                            
+                            position: absolute;
+                            left: 0;
+                            top: 2px;                            
                         }
                     }
                 } 
@@ -438,26 +438,27 @@
    
 }
 
+// Video Icon on inline videos- Global CSS 
 .sp-video-icon-global{
-            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
-            width: 70px;
-            height: 70px;
-            margin: auto;
-            transition: 0.3s linear;
-            background-repeat: no-repeat;
-            &:hover{
-                background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
-                transition: 0.3s linear;  
-            }
-            @media(min-width:$break-sm){
-                width: 100px;
-                height: 100px;
-            } 
-            @media(min-width:$break-md){
-                width: 141px;
-                height: 141px;
-            } 
-        }
+    background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    transition: 0.3s linear;
+    background-repeat: no-repeat;
+    &:hover{
+        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
+        transition: 0.3s linear;  
+    }
+    @media(min-width:$break-sm){
+        width: 100px;
+        height: 100px;
+    } 
+    @media(min-width:$break-md){
+        width: 141px;
+        height: 141px;
+    } 
+}
 
 .orion-page-fancybox{
     .fancybox-close{
@@ -467,6 +468,22 @@
             background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);
         }
     }  
+}
+
+
+// Orion Thank page css
+.orion-thankyou{
+    h1{
+        font-size: 26px;
+        line-height: 36px;        
+        @media(min-width:$break-sm){
+            font-size: 36px;
+            line-height: 46px;
+        }
+        span.black {
+            color: #002C8F;
+        }
+    }
 }
 
 

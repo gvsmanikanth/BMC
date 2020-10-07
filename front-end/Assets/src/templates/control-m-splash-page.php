@@ -45,15 +45,28 @@
         </div>
     </div>    
 </section>
+<div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+   <section class="section bg-seashell">
+      <div class="section-content px3">
+         <div class="video-container-wrapper -restrict-width-on-desktop bg-transparent center-block px3">
+            <div class="video aem-GridColumn aem-GridColumn--default--12">
+               <figure>
+                  <div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player mb2">
+                     <div id="KvL1x6ZSNsc" class="youtubePlayer" data-src="KvL1x6ZSNsc" data-autoplay="0" data-fullscreen="1"></div>
+                  </div>
+               </figure>
+            </div>
+         </div>
+      </div>
+   </section>
+</div>
 
 <section class="split-form orion-global">     
     <div class="sp-large-container sp-form">        
         <div class="md-flex layout-inner-wrap">
             <div class="flex-item md-col-5">
                 <div class="split-form-image">
-                    <img src="Assets/src/img/splashPage/split-form-image.png" alt="" data-aos="fade-right"
-            data-aos-easing="linear"
-            data-aos-duration="10">
+                    <img src="Assets/src/img/splashPage/split-form-image.png" alt="">
                 </div>                
             </div>
             <div class="flex-item md-col-7 sp-form-wrap">
@@ -115,7 +128,7 @@
 		$(window).scroll(function(){
 		 self = this;
 		  if (self.elementInView('#splitFormAnimation')){
-			  setTimeout(function() { window.formAnimation.play() }, 1000);
+			  setTimeout(function() { window.formAnimation.play() }, 1500);
 		  }
 		});
 	}

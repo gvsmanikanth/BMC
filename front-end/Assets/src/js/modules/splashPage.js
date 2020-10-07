@@ -37,8 +37,12 @@
             setIframeHeight('spIframe');
             $(window).resize(function(){
                 setIframeHeight('spIframe');
-            });
-        });        
+            }); 
+            $("#spIframe").contents().find("#C_Country").change(function(){ 
+                setIframeHeight('spIframe');  
+            });           
+        });
+                      
     }
 
     

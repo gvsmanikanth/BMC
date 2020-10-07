@@ -94,8 +94,8 @@ XT.yt = {
 						)
 					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center;" ><div class="sp-video-icon-global"></div>'));
 				
-				overlay.parent().append(this.$thumbnail);
-				
+				//overlay.parent().append(this.$thumbnail);
+				$('.youtubePlayer').after(this.$thumbnail);
 				var self = this;
 				this.$thumbnail.on('click', function(e){
 					e.preventDefault();
