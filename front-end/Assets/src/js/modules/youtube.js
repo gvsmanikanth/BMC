@@ -78,30 +78,37 @@ XT.yt = {
 			overlay.hide();
 			
 			if(p_customView == "highResImage-CustomPlayIcon"){
-				
-				var videoBGImageURL = "";
-				if(p_videobgimg != null && p_videobgimg != undefined && p_videobgimg != ""){
-					videoBGImageURL = p_videobgimg;
-				}else{
-					videoBGImageURL = 'http://i.ytimg.com/vi/'+ videoUrl + '/maxresdefault.jpg';
-				}
-				this.$thumbnail = $('<a />')
+                var backgroundVideoContainer = $('#youtube_'+videoUrl+'.inline-youtube-video-player');
+                if(backgroundVideoContainer.length > 0){
+                    var videoBGImageURL = "";
+                    if(p_videobgimg != null && p_videobgimg != undefined && p_videobgimg != ""){
+                        videoBGImageURL = p_videobgimg;
+                    }else{
+                        videoBGImageURL = 'http://i.ytimg.com/vi/'+ videoUrl + '/maxresdefault.jpg';
+                    }
+                    this.$thumbnail = $('<a />')
 					.attr({'href': 'javascript:void(0)'})
 					.addClass('yt-hd-thumbnail')
 					.append(
-						$('<img style="max-height:100%; max-widht:100%"/>').attr(
+						$('<img style="max-height:100%; max-width:100%"/>').attr(
 							{'src': videoBGImageURL }
 						)
 					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center;" ><div class="sp-video-icon-global"></div>'));
+                
+                    if(overlay.length > 0){
+                        overlay.parent().append(this.$thumbnail);
+                    }else{
+                        backgroundVideoContainer.append(this.$thumbnail);
+                    }
+                    var self = this;
+                    this.$thumbnail.on('click', function(e){
+                        e.preventDefault();
+                        self.$thumbnail.hide();
+                        player.playVideo();
+                    });
+                }                             
 				
-				//overlay.parent().append(this.$thumbnail);
-				$('.youtubePlayer').after(this.$thumbnail);
-				var self = this;
-				this.$thumbnail.on('click', function(e){
-					e.preventDefault();
-					self.$thumbnail.hide();
-					player.playVideo();
-				});
+				
 			}
 		   
 

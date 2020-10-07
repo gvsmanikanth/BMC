@@ -35,9 +35,9 @@
             <img src="Assets/src/img/splashPage/sp-divider.png" alt="" class="sp-divider" >
             <h2 >The experts are talking about what’s to come…</h2>
             <div class="center-block">
-				<div id="youtube_JOrfbJA5PrU" class="youtube-video inline-youtube-video-player">
-					<div id="JOrfbJA5PrU" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="JOrfbJA5PrU" data-autoplay=0 data-fullscreen=0></div>
-					<p id="youtubeOverlay_JOrfbJA5PrU" class="youtubeOverlay">
+				<div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player">
+					<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
+					<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
 						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
 					</p>
 				</div>
@@ -51,8 +51,8 @@
          <div class="video-container-wrapper -restrict-width-on-desktop bg-transparent center-block px3">
             <div class="video aem-GridColumn aem-GridColumn--default--12">
                <figure>
-                  <div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player mb2">
-                     <div id="KvL1x6ZSNsc" class="youtubePlayer" data-src="KvL1x6ZSNsc" data-autoplay="0" data-fullscreen="1"></div>
+                  <div id="youtube_xDAJ1mqNOtc" class="youtube-video inline-youtube-video-player mb2">
+                     <div id="xDAJ1mqNOtc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-src="xDAJ1mqNOtc" data-autoplay="0" data-fullscreen="1"  ></div>
                   </div>
                </figure>
             </div>
@@ -60,6 +60,9 @@
       </div>
    </section>
 </div>
+
+
+
 
 <section class="split-form orion-global">     
     <div class="sp-large-container sp-form">        
