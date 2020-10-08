@@ -449,6 +449,9 @@
     margin: auto;
     transition: 0.3s linear;
     background-repeat: no-repeat;
+    .preloadHoverImage{
+        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
+    }
     &:hover{
         background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
         transition: 0.3s linear;  

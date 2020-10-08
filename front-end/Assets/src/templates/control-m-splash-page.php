@@ -19,7 +19,7 @@
                     <h1>Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
                     <h3>Engineered from market leading technology.</h3>
                     <h3>Available where you need it, when you need it.</h3>                   
-                    <a href="#." class="btn btn-gradient">Keep Me Informed</a>
+                    <a href="#spIframe" class="btn btn-gradient">Keep Me Informed</a>
                 </div>
                 
                 
@@ -27,6 +27,7 @@
         </div>         
     </div>
 </section>
+
 
 
 <section class="video-feature text-center orion-global">
@@ -39,8 +40,8 @@
 					<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
 					<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
 						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
-					</p>
-				</div>
+					</p>                                                                       
+				</div>                
 			</div>
         </div>
     </div>    

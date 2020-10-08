@@ -93,7 +93,7 @@ XT.yt = {
 						$('<img style="max-height:100%; max-width:100%"/>').attr(
 							{'src': videoBGImageURL }
 						)
-					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center;" ><div class="sp-video-icon-global"></div>'));
+					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; background: rgb(0, 0, 0, 13%);" ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>'));
                 
                     if(overlay.length > 0){
                         overlay.parent().append(this.$thumbnail);
