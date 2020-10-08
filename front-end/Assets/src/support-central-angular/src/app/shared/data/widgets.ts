@@ -16,7 +16,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Ask The Community",
         description: "Share insights, solve problems...",
-        routerLink: null,
+        routerLink: 'community',
         icon: "d-icon-users"
     },
     {

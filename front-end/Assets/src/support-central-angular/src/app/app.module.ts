@@ -22,6 +22,9 @@ import { CaseManagementComponent } from './case-management/case-management.compo
 import { SupportQuestionsService } from './shared/services/support-questions/support-questions.service';
 import { SupportQuestionsComponent } from './support-questions/support-questions.component';
 import { QuestionComponent } from './support-questions/question/question.component';
+import { CommunityComponent } from './community/community.component';
+import { CommunityService } from './shared/services/community/community.service';
+import { CommunityProductComponent } from './community/community-product/community-product.component';
 
 const appRoutes: Routes = [
   {
@@ -35,9 +38,14 @@ const appRoutes: Routes = [
   {
     path: 'docs',
     component: DocsComponent
-  },{
+  },
+  {
     path: 'support-question',
     component: SupportQuestionsComponent
+  },
+  {
+    path: 'community',
+    component: CommunityComponent
   }
 ]
 
@@ -53,6 +61,8 @@ const appRoutes: Routes = [
     DocsProductComponent,
     SupportQuestionsComponent,
     QuestionComponent,
+    CommunityComponent,
+    CommunityProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +84,8 @@ const appRoutes: Routes = [
     EPDService,
     CaseManageService,
     DocsService,
-    SupportQuestionsService
+    SupportQuestionsService,
+    CommunityService
   ],
   bootstrap: [AppComponent]
 })

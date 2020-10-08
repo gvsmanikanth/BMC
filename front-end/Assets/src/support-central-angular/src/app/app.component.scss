@@ -14,8 +14,19 @@
             padding-bottom: 15px;
             padding-right:3px;
         }
-        &.extended app-tile:last-child {
-            margin: 30px 0px;
+        &.extended  {
+            app-tile {
+                &:last-child {
+                    margin: 30px 0px;
+                }
+                & ::ng-deep {
+                    .tile-right span {
+                        color: #4E5154;
+                    }
+                }
+            }
+            
+            
         }
         app-tile {
             & {

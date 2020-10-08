@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { cases } from '../data/cases';
+import { askCommunities } from '../data/communitiesQuestions';
 import { docs } from '../data/docs';
 import { products } from '../data/products';
 import { questions } from '../data/questions';
 import { Case } from '../models/case/case.model';
+import { AskCommunityProduct } from '../models/communities/ask-communities.model';
 import { DocsProduct } from '../models/docs/docs-product.model';
 import { EPDProduct } from '../models/epd/epd-product.model';
 import { SupportQuestion } from '../models/questions/question.model';
@@ -50,6 +52,16 @@ export class DataFetchService {
 
         return this.http.get('/bin/supportcentralcontent?content_type=FAQ_SUPPORT').toPromise().then((response:any) => {
            return response.details
+        });
+    }
+
+    getCommunitiesQuestions(): Promise<AskCommunityProduct[]> {
+        if (window.location.href.indexOf('localhost:4200') !== -1) {
+            return Promise.resolve(askCommunities);
+        }
+
+        return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITES').toPromise().then((response:AskCommunityProduct[]) => {
+           return response
         });
     }
 
