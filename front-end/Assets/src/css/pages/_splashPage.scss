@@ -156,7 +156,7 @@
     padding: 1rem 0 1.8rem 0;
     .video-feature-bg{
         background-image: url(#{$imagesFolder}splashPage/half-circle-shape.svg);   
-        padding-top: 60px;
+        padding-top: 20px;
         background-repeat: no-repeat;
         background-position: center top;
         .vidbg-overlay {
@@ -173,46 +173,12 @@
         margin-top: 0;
     }
     .sp-divider{
-        margin: 0 auto 40px auto;
-    }
-    .hero{
-        z-index: 1;
-    }
-    // .hero-content{
-    //     height: 180px;
-    //     background: transparent;
-    //     @media(min-width:$break-sm){
-    //         height: 300px;
-    //     } 
-    //     @media(min-width:$break-md){
-    //         height: 550px;
-    //     } 
-    //     .sp-video-icon{
-    //         background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
-    //         width: 70px;
-    //         height: 70px;
-    //         margin: auto;
-    //         transition: 0.3s linear;
-    //         background-repeat: no-repeat;
-    //         &:hover{
-    //             background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
-    //             transition: 0.3s linear;  
-    //         }
-    //         @media(min-width:$break-sm){
-    //             width: 100px;
-    //             height: 100px;
-    //         } 
-    //         @media(min-width:$break-md){
-    //             width: 141px;
-    //             height: 141px;
-    //         } 
-    //     }
-    //     a.modal-youtube-video-player {
-    //         display: block;
-    //         width: 100%;
-    //     }
-    // }   
-    
+        margin: 40px auto;
+        border: none;
+        background-color: #2BD4EE;
+        height: 1px;
+        max-width: 100px;
+    }   
 }
 
 

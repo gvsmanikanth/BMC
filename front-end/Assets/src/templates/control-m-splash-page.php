@@ -33,7 +33,7 @@
 <section class="video-feature text-center orion-global">
     <div class="layout-inner-wrap video-feature-bg ">        
         <div class="video-hero-header">
-            <img src="Assets/src/img/splashPage/sp-divider.png" alt="" class="sp-divider" >
+            <hr class="sp-divider">
             <h2 >The experts are talking about what’s to come…</h2>
             <div class="center-block">
 				<div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player">
