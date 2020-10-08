@@ -51,8 +51,8 @@ include 'php-inc/head.php';
 		<div class="section-content p3">
 			<div class="video-container-wrapper -restrict-width-on-desktop bg-transparent center-block px3">
 				<h2 class="h2-variation-1 text-center">Video: Fast Track Digital Business (1:00)</h2>
-				<div id="youtube_G_DV_pX5ldQ" class="youtube-video inline-youtube-video-player">
-					<div id="G_DV_pX5ldQ" class="youtubePlayer" data-src="G_DV_pX5ldQ" data-autoplay=0 data-fullscreen=0></div>
+				<div id="youtube_G_DV_pX5ldQ" class="youtube-video inline-youtube-video-player" >
+					<div id="G_DV_pX5ldQ" class="youtubePlayer" data-src="G_DV_pX5ldQ" data-autoplay=0 data-fullscreen=0 data-customview="highResImage-CustomPlayIcon"></div>
 					<p id="youtubeOverlay_G_DV_pX5ldQ" class="youtubeOverlay">
 						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
 					</p>
