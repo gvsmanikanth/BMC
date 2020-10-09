@@ -1,13 +1,20 @@
 <adapt-tabset [type]="'pills'">
     <adapt-tab-panel icon="d-icon-comment_question_o" adapt-tab-title="Questions">
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="question" *ngFor="let question of questions.slice(0,5)"><div class="d-icon-check_circle_o"></div><a [href]="question.link"  [innerHTML]="question.titleName"></a></div>
+            </div>
+            <div class="col-md-6">
+                <div class="question" *ngFor="let question of questions.slice(5)"><div class="d-icon-check_circle_o"></div><a [href]="question.link" [innerHTML]="question.titleName"></a></div>
+            </div>
+        </div>
     </adapt-tab-panel>
-    <adapt-tab-panel adapt-tab-title="Blog posts">
+    <adapt-tab-panel icon="d-icon-note_pencil" adapt-tab-title="Blog posts">
     </adapt-tab-panel>
-    <adapt-tab-panel adapt-tab-title="Discussions">
+    <adapt-tab-panel icon="d-icon-comment_text" adapt-tab-title="Discussions">
     </adapt-tab-panel>
-    <adapt-tab-panel adapt-tab-title="Documents">
+    <adapt-tab-panel icon="d-icon-file_text_o" adapt-tab-title="Documents">
     </adapt-tab-panel>
-    <adapt-tab-panel adapt-tab-title="Ideas">
+    <adapt-tab-panel icon="d-icon-lightbulb_o" adapt-tab-title="Ideas">
     </adapt-tab-panel>
 </adapt-tabset>

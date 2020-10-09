@@ -7,6 +7,6 @@
     </div>
     <div class="extended-widget-body" [ngBusy]="questionsService.busyConfig">
         <app-question *ngFor="let question of questionsChunk" [question]="question"></app-question>
-        <adapt-pagination rows="4" [totalRecords]="questionsService.questions.length" (onPageChange)="paginate($event)"></adapt-pagination>
+        <adapt-pagination rows="4" *ngIf="questionsService.questions.length" [totalRecords]="questionsService.questions.length" (onPageChange)="paginate($event)"></adapt-pagination>
     </div>
 </div>

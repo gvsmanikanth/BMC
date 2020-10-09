@@ -17,6 +17,7 @@ export class DocsService {
   constructor(private dataFetch: DataFetchService) { }
 
   loadDocs() {
+    if (this.docs) return Promise.resolve();
     this.dataFetch.getDocsProducts().then((docs) => {
       this.docs = docs;
       this.busyConfig.busy = false;

@@ -3,6 +3,7 @@
         min-height: 400px;
         margin-bottom: 30px;
         display:flex;
+        position: relative;
     }
     .tile-block {
         & {
@@ -55,12 +56,25 @@
     }
     .close-action {
         margin-top: 17px;
+        position: absolute;
+        top: -6px;
+        right: -13px;
         span {
             font-size: 30px;
             opacity: 0.6;
             cursor: pointer;
             &:hover {
                 opacity: 1;
+            }
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        .tile-block{
+            app-tile {
+                min-width: 440px;
             }
         }
     }

@@ -14,6 +14,7 @@ export class SupportQuestionsService {
   constructor(private dataFetch: DataFetchService) { }
 
   getQuestions() {
+    if (this.questions.length) return Promise.resolve();
     return this.dataFetch.getQuestions().then((response) => {
               this.questions = response;
               this.busyConfig.busy = false;

@@ -60,7 +60,7 @@ export class DataFetchService {
             return Promise.resolve(askCommunities);
         }
 
-        return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITES').toPromise().then((response:AskCommunityProduct[]) => {
+        return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITIES').toPromise().then((response:AskCommunityProduct[]) => {
            return response
         });
     }

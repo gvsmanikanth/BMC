@@ -15,6 +15,6 @@
             <div class="subject">{{case.Subject}}</div>
             <div class="dates"><span>Created: {{case.CreatedDate | date: 'dd-MMM-yyyy'}}</span><span>Modified: {{case.LastModifiedDate | date: 'dd-MMM-yyyy'}}</span></div>
         </div>
-        <adapt-pagination rows="4" [totalRecords]="caseService.cases.length" (onPageChange)="paginate($event)"></adapt-pagination>
+        <adapt-pagination *ngIf="caseService.cases.length" rows="4" [totalRecords]="caseService.cases.length" (onPageChange)="paginate($event)"></adapt-pagination>
     </div>
 </div>

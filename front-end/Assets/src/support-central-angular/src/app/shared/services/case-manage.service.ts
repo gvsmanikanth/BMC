@@ -21,6 +21,8 @@ export class CaseManageService {
   constructor(private dataFetch: DataFetchService) { }
 
   getCases() {
+    this.busyConfig.busy = true;
+    this.cases = [];
     return this.dataFetch.getCases().then((cases) => {
       this.cases = cases;
       console.log(cases);

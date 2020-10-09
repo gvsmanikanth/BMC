@@ -22,7 +22,7 @@ import { Widget } from './shared/models/widget.model';
     ]),
     trigger('openCloseRouter', [
       state('open', style({
-        width: '67%',
+        width: '70%',
         opacity: '1'
       })),
       state('closed', style({

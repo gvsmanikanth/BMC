@@ -16,6 +16,7 @@ export class EPDService {
     }
 
     getProducts() {
+        if (this.products) return Promise.resolve();
         return  this.dataFetch.getEpdProducts().then((products:EPDProduct[]) => {
             this.products = products;
             this.busyConfig.busy = false;
