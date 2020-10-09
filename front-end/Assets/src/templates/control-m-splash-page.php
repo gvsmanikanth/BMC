@@ -16,9 +16,9 @@
                         <img src="Assets/src/img/splashPage/animatedLines/splashpage-banner-animation.svg" alt="" class="animated-line mobileOnly">                        
                         <img src="Assets/src/img/splashPage/bmc-helix-controlm-logo-semireversed.svg" alt="">
                     </div>
-                    <h1 data-aos="fade-up">Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
-                    <h3 data-aos="fade-up">Engineered from market leading technology.</h3>
-                    <h3 data-aos="fade-up" >Available where you need it, when you need it.</h3>                   
+                    <h1>Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
+                    <h3>Engineered from market leading technology.</h3>
+                    <h3>Available where you need it, when you need it.</h3>                   
                     <a href="#spIframe" class="btn btn-gradient" data-aos="fade-up">Keep Me Informed</a>
                 </div>
                 
