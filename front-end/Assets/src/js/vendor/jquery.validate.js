@@ -273,6 +273,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			.promise()
 			.done(function() {
 				if ($form.data('valid')) {
+					
 					if (ajaxForm) {
 						submitValidAjaxForm();
 					}
@@ -280,7 +281,17 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						$form.submit();						
 					}
 					
+					var emailCategory = 0;
+					if($formEmailValidation){
+						 emailCategory = $formEmailValidation.getEmailCategory();
+					}
+					
+					if(_satellite){
+						_satellite.track("form_completion", {email_category: emailCategory, Description:'Email Type'});
+					}
+					
 					//fired Event2 on form submit
+					/*
 					if($formEmailValidation){
 						if($formEmailValidation.isEmailEligibleForAnalyticsTracking()){
 							if(_satellite){
@@ -292,12 +303,21 @@ if($('#leadgen') || $('#nonleadgen'))	{
 						if(_satellite){
 							_satellite.track("form_completion");
 						}
-					}
+					}*/
+					
+					
+					
 				}
 				else {
 					scrollToInvalid();
+					var emailCategory = 0;
+					
+					if($formEmailValidation){
+						 emailCategory = $formEmailValidation.getEmailCategory();
+					}
+					
 					if(_satellite){
-						_satellite.track("form_error");
+						_satellite.track("form_error", {email_category: emailCategory, Description:'Email Type'});
 					} 
 				}
 			});
