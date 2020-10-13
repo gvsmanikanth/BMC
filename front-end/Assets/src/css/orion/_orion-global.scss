@@ -458,4 +458,22 @@
     }
 }
 
+//Orion CallOut
+.orionCallout {
+    background-color: white;
+    padding-top: 64px;
+    .callout-topline {
+        margin: 32px auto 0px auto;
+        border: none;
+        background-color: #2BD4EE;
+        height: 1px;
+        max-width: 650px;
+    }
+    h3 {
+        margin: 32px auto 64px auto;
+        text-align: left;
+        color: #2BD4EE;
+        max-width: 650px;
+    }
+}
 
