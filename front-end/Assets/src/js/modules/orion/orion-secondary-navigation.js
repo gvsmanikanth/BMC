@@ -1,5 +1,8 @@
 (function($) { // Begin jQuery
-    $(function() { // DOM ready
+    $(function() { // DOM ready      
+    if($('.orion-seconday-nav').length > 0){
+      $('body').addClass('orion-body');
+   
       // If a link has a dropdown, add sub menu toggle.
       $('.orion-seconday-nav .nav-wrap ul li a:not(:only-child)').click(function(e) {
         $(this).siblings('.nav-dropdown').toggle();
@@ -23,5 +26,28 @@
       $('.orion-seconday-nav  #nav-toggle').on('click', function() {
         this.classList.toggle('active');
       });
+
+
+      // Sticky nav implimentation  
+        stickyNav = $(".orion-seconday-nav");
+        navHeight = stickyNav.height();
+        stickyNav.scrollspy({
+          min: 100,
+         // max: 100 + navHeight,
+          onEnter: function(element, position) {
+            stickyNav.addClass('fixed');
+            $('.layout-navigation').hide();
+            $('.layout-header').hide();
+          },
+          onLeave: function(element, position) {
+            console.log("in leave "+position.top);
+            stickyNav.removeClass('fixed');
+            $('.layout-navigation').show();
+            $('.layout-header').show();
+          }
+        });
+
+
+      }
     }); // end DOM ready
   })(jQuery); // end jQuery
