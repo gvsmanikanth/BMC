@@ -13,48 +13,28 @@
 			<div class="nav-wrap">
 				<div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
 				<ul class="nav-list">
+					<li><a href="#">Features</a></li>					
 					<li>
-					<a href="#">Home</a>
+						<a href="#">Use Cases</a>
+						<ul class="nav-dropdown">
+							<li><a href="#">Fraud Detection</a></li>
+							<li><a href="#">Targeted Advertising</a></li>
+							<li><a href="#">Predictive Maintenance</a></li>
+							<li><a href="#">Supply Chain Management</a></li>
+							<li><a href="#">Strategic Pricing</a></li>
+							<li><a href="#">Financial Close</a></li>
+						</ul>
 					</li>
-					<li>
-					<a href="#">About</a>
-					</li>
-					<li>
-					<a href="#">Services</a>
-					<ul class="nav-dropdown">
-						<li>
-						<a href="#">Web Design</a>
-						</li>
-						<li>
-						<a href="#">Web Development</a>
-						</li>
-						<li>
-						<a href="#">Graphic Design</a>
-						</li>
-					</ul>
-					</li>
-					<li>
-					<a href="#">Pricing</a>
-					</li>
-					<li>
-					<a href="#">Portfolio</a>
-					<ul class="nav-dropdown">
-						<li>
-						<a href="#">Web Design</a>
-						</li>
-						<li>
-						<a href="#">Web Development</a>
-						</li>
-						<li>
-						<a href="#">Graphic Design</a>
-						</li>
-					</ul>
-					</li>
-					<li>
-					<a href="#">Contact</a>
-					</li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Integrations</a></li>
+					<li><a href="#">Support</a></li>
+					<li><a href="#">Resources</a></li>
 				</ul>
+				<div class="nav-cta">
+					<a href="#" class="btn">Watch a Demo</a>
+				</div>
 			</div>
+			
 		</div>
 	</section>
 </div>
@@ -66,5 +46,7 @@
 <!--Header Component Start -->
 	<h1 style="min-height:400px;     margin: 0;" class="bg-white">test test test</h1>
 <!--Header Component End -->
+
+
 
 <?php include 'php-inc/foot.php'; ?>
