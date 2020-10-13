@@ -459,3 +459,33 @@
 }
 
 
+//Orion Split-content
+.orion-split-content {
+    padding: 30px 0px;
+    .button-bullet {
+        padding: 0px;
+    }
+    .button-set {
+        padding: 0px;
+    }
+    .split-part-2 {
+        padding-top: 45px;
+    }
+    .imageContainer {
+        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+        padding: 60px 0px;
+        background-position: center 70%;
+        background-size: 700px;
+        text-align: center;
+    }
+    @media only screen and (min-width:0) and (max-width: 360px) {
+        .imageContainer {
+            background-size: 450px;
+        }
+    }
+    @media only screen and (min-width:768px) and (max-width: 1024px) {
+        .imageContainer {
+            background-size: 580px;
+        }
+    }
+}
