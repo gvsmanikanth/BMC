@@ -1,0 +1,301 @@
+.orion-seconday-nav{
+    // Navigation Variables
+    $nav-height: 60px;
+    $nav-background: #414042;
+    $nav-font-color: #ffffff;
+    $link-hover-color: #29a5d6;
+
+    float: left;
+    width: 100%;
+    clear: both;
+    
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    // Outer navigation wrapper
+    .orion-navigation {
+        background: $nav-background;
+        position: relative;
+        width: 100%;
+        float: left;
+        clear: both;
+    }
+
+    
+
+    // Logo and branding
+    .orion-brand {
+        position: absolute;
+        left: 35px;
+        font-size: 1.4em;
+        top: 11px;
+        z-index: 10;
+        a,
+        a:visited {
+            color: $nav-font-color;
+            text-decoration: none;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: #1A98FF;
+            border-radius: 15px;
+            padding: 6px 20px;
+            outline: none;
+            &:hover{
+                background-color: #ffffff;
+                color: $link-hover-color;
+            }
+            @media (min-width:$break-md) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // Container with no padding for navbar
+    .nav-container {
+        position: relative;
+    }
+
+    // Navigation 
+    .nav-wrap {
+        float: left;
+        margin-top: 46px;
+        width: 100%;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+            float: left;
+            position: relative;
+            margin: 0;
+                a,
+                a:visited, a:focus {
+                    display: block;
+                    padding: 13px 15px;
+                    background: $nav-background;
+                    color: $nav-font-color;
+                    text-decoration: none;
+                    outline: none; 
+                    font-size: 16px;
+                    @media(min-width: $break-md){                                            
+                        padding: 13px 10px;
+                    }   
+                    @media(min-width: $break-lg){  
+                        font-size: 18px;                         
+                        padding: 13px 15px;
+                    }               
+                    &:not(:only-child):after {
+                        display: inline-block;
+                        padding: 0 4px;
+                        content: '';
+                        transition: 0.4s linear;
+                        background-image: url(#{$imagesFolder}orion/nav-dropdown.svg);
+                        width: 5px;
+                        height: 8px;
+                        background-repeat: no-repeat;
+                        background-position: center center;                        
+                        right: 0;
+                        position: absolute;
+                        top: 22px;
+                        @media(min-width: $break-md){                           
+                            right: -7px;
+                            position: relative;
+                            top: auto;
+                        }
+
+                    }
+                    &:before{
+                        content: '';
+                        height: 1px;
+                        background: #75777A;
+                        width: 100%;
+                        display: block;
+                        position: absolute;
+                        bottom: 0;                    
+                        left: 0;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        transform: rotate(180deg); 
+                        transition: 0.3s linear;  
+                        @media(min-width: $break-md){                           
+                            background: transparent;
+                            height: 8px;
+                            transition: 0.3s linear;
+                        }                                        
+                    }
+                    &:hover {                        
+                        &:before{
+                            background-color: #75777A;
+                        }  
+                    }
+                                      
+                } 
+                &.activePage a{
+                    color: #1A98FF;
+                    &:before{
+                        background: #1A98FF;
+                        height: 8px;
+                    }
+                }
+                .dropdownSelected{
+                    @extend a,a:visited;
+                    &:before{
+                        background-color:#75777A !important;
+                    } 
+                    &:hover, &:focus {                       
+                        color: #fff;
+                        outline: none;
+                    }
+                    &:not(:only-child):after {
+                        transform: rotate(180deg);                       
+                        transition: 0.4s linear;
+                    }
+                    
+                }
+                
+                // Dropdown list
+                ul li {
+                    min-width: 190px;
+                    position: relative;
+                    a, a:focus {
+                        line-height: 20px;
+                        font-size: 16px !important;
+                        padding: 12px 30px;
+                        &:before{
+                            height: 1px;
+                            @media screen and (min-width: $break-md) {
+                                height: 0px;
+                            }
+                        }
+                        &:hover {
+                            color: $link-hover-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-cta{ 
+        margin-top: 20px;       
+        @media (min-width:$break-md) {
+            float: right;
+            margin-top: -30px;
+        }
+        .btn{
+            color: #F98700;
+            background: #fff;
+            font-size: 14px;
+            border-color: #707070;
+            border-radius: 4px;
+            font-weight: 700;
+            padding: 10px 16px 10px 16px;
+            width: 91%;
+            @media (min-width:$break-md) {
+                width: auto;
+            }
+            &:hover{
+                background: linear-gradient(90deg, #1a98ff, #002c8f);
+                color: #ffffff;
+            }
+        }
+    }
+
+    // Dropdown list binds to JS toggle event
+    .nav-dropdown {
+        position: absolute;
+        display: none;
+        z-index: 1;        
+        @media screen and (min-width: $break-md) {
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+            padding: 15px 0 !important;
+            left: -20px;
+        }
+        min-width: 300px;
+        background-color: $nav-background;        
+        padding-left: 30px;
+    }
+
+    /* Mobile orion-navigation */
+
+    // Binds to JS Toggle
+    .nav-mobile {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $nav-background;
+        height: $nav-height;
+        width: $nav-height;
+    }
+    @media only screen and (max-width: 833px) {
+        // Hamburger nav visible on mobile only
+        .nav-mobile {
+            display: block;
+        }
+        .nav-wrap {
+            width: 100%;
+            padding: 50px 0 15px;
+            margin-top: 0;
+            float: none;
+            ul {
+                display: none;
+                padding-top: 20px;
+                li {
+                    float: none;
+                    a, a:focus {
+                    padding: 15px 0;
+                    line-height: 20px;
+                    }
+                    ul li a, ul li a:focus {
+                    padding: 13px 0;
+                    }
+                }
+            }
+            .nav-cta{
+                display: none;
+            }
+        }
+        .nav-dropdown {
+            position: static;
+            padding-left: 30px !important;
+            padding-top: 0 !important;
+        }
+    }
+    @media screen and (min-width: $break-md) {
+        .nav-list {
+            display: block !important;
+        }
+    }
+    
+    #nav-toggle {
+        position: absolute;
+        left: 10px;
+        top: 18px;
+        cursor: pointer;
+        padding: 10px 35px 16px 0px;
+        span {
+            cursor: pointer;
+            height: 15px;
+            width: 25px;
+            position: absolute;
+            display: block;
+            content: '';
+            transition: all 300ms ease-in-out;
+            background-image: url(#{$imagesFolder}orion/angle-down.svg); 
+            background-repeat: no-repeat;
+            transform: rotate(180deg); 
+            transition: 0.4s linear;
+        }
+        &.active span {
+                transform: rotate(0deg); 
+                transition: 0.4s linear;              
+        }
+    }
+
+}
