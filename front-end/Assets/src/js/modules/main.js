@@ -320,6 +320,10 @@ function addFilterToArrayProtoype() {
 					resizePlayer();
 		}, false);
 
+	// WEB-9024 	
+	$(window).resize(function(){
+		resizePlayer();
+	});	
 	function resizePlayer(){
 		//Get all video objects in page
 		//For Flash Video
