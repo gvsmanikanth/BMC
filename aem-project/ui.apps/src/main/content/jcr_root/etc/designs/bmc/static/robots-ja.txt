@@ -54,9 +54,11 @@ Disallow: /apps
 Disallow: /available
 Disallow: /test
 Disallow: *ty.PURL*
-Disallow: *?print*
 Disallow: /offering-micros
-Sitemap: http://www.bmcsoftware.jp/sitemap.xml
+Disallow: */wp-json/wp/v2/*
+Disallow: */_jcr_content/root/*
+Disallow: */language-masters/*
+Sitemap: https://www.bmcsoftware.jp/sitemap.xml
 
 User-agent: Nutch
 Disallow: /
@@ -70,7 +72,7 @@ Disallow: /
 User-agent: sukibot_heritrix
 Disallow: /
 
-User-agent: AhrefsBot 
+User-agent: AhrefsBot
 Crawl-Delay: 2
 
 User-agent: netEstate NE Crawler
@@ -78,6 +80,3 @@ Disallow: /
 
 User-agent: dotbot
 Disallow: /
-
-
-
