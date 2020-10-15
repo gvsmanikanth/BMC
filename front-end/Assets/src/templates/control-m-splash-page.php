@@ -19,7 +19,7 @@
                     <h1>Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
                     <h3>Engineered from market leading technology.</h3>
                     <h3>Available where you need it, when you need it.</h3>                   
-                    <a href="#spIframe" class="btn btn-gradient">Keep Me Informed</a>
+                    <a href="#spIframe" class="btn btn-gradient" data-aos="fade-up">Keep Me Informed</a>
                 </div>
                 
                 
