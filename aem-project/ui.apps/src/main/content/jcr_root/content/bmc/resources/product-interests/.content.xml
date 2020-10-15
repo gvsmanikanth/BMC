@@ -194,6 +194,12 @@
             dropDownDisplay="Yes"
             text="BMC Helix Cloud Security"
             value="Helix Cloud Security"/>
+    <_x0033_96588812
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Control-M"
+            dropDownDisplay="Yes"
+            text="BMC Helix Control-M"
+            value="Helix Control-M"/>
     <_x0035_07778250
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Digital Workplace"
