@@ -46,6 +46,9 @@ XT.yt = {
 	     	var videoUrl = $(video).find('.youtubePlayer').data("src");
 	     	var p_autoplay = $(video).find('.youtubePlayer').data("autoplay");
 	     	var p_fullscreen = $(video).find('.youtubePlayer').data("fullscreen");
+			var p_customView = $(video).find('.youtubePlayer').data("customview");
+			var p_videobgimg = $(video).find('.youtubePlayer').data("videobgimg");
+			
 		    var playerAPIID = "ytplayer_"+videoUrl;
 		    window.YT = window.YT || {};
 		    if (typeof window.YT.Player === 'function') {
@@ -70,15 +73,50 @@ XT.yt = {
                 
 		        count++;
 		    }
-		    
-		    var overlay = $('#youtubeOverlay_'+videoUrl);
-		   	overlay.hide();
+
+			var overlay = $('#youtubeOverlay_'+videoUrl);	
+			overlay.hide();
+			
+			if(p_customView == "highResImage-CustomPlayIcon"){
+                var backgroundVideoContainer = $('#youtube_'+videoUrl+'.inline-youtube-video-player');
+                if(backgroundVideoContainer.length > 0){
+                    var videoBGImageURL = "";
+                    if(p_videobgimg != null && p_videobgimg != undefined && p_videobgimg != ""){
+                        videoBGImageURL = p_videobgimg;
+                    }else{
+                        videoBGImageURL = 'http://i.ytimg.com/vi/'+ videoUrl + '/maxresdefault.jpg';
+                    }
+                    this.$thumbnail = $('<a />')
+					.attr({'href': 'javascript:void(0)'})
+					.addClass('yt-hd-thumbnail')
+					.append(
+						$('<img style="max-height:100%; max-width:100%"/>').attr(
+							{'src': videoBGImageURL }
+						)
+					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; background: rgb(0, 0, 0, 13%);" ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>'));
+                
+                    if(overlay.length > 0){
+                        overlay.parent().append(this.$thumbnail);
+                    }else{
+                        backgroundVideoContainer.append(this.$thumbnail);
+                    }
+                    var self = this;
+                    this.$thumbnail.on('click', function(e){
+                        e.preventDefault();
+                        self.$thumbnail.hide();
+                        player.playVideo();
+                    });
+                }                             
+				
+				
+			}
+		   
 
 	    });
 	},
 
     onPlayerReady: function(e) {
-     
+    
     },
 
     onPlayerStateChange: function (e) {

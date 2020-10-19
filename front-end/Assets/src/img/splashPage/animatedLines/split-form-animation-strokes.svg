@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1890.327" height="350.191" viewBox="0 0 1890.327 350.191">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-width: 6px;
+      }
+
+      .cls-1, .cls-3 {
+        stroke: #d2d7d9;
+      }
+
+      .cls-1 {
+        stroke-dasharray: 6 16;
+      }
+
+      .cls-2 {
+        stroke: #2bd4ee;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-4 {
+        fill: #2bd4ee;
+      }
+    </style>
+  </defs>
+  <g id="Group_660" data-name="Group 660" transform="translate(-17.966 -1447.735)">
+    <path id="Path_545" data-name="Path 545" class="cls-1" d="M1095.667,161.222c47.8,7.993,95.095,18.339,141.023,30.826q48.779,13.263,96.613,29.768,217.411,74.928,429.788,162.716" transform="translate(-1077.206 1289.472)"/>
+    <path id="Path_545-2" data-name="Path 545" class="cls-2" d="M2849.595,325.029c55.839-23.417,100.78-44.853,131.8-59.6" transform="translate(-1077.206 1329.472)"/>
+    <path id="Path_545-3" data-name="Path 545" class="cls-3" d="M1391.924,242.294q187.4,66.342,371.167,142.238c153.566,63.26,297.75,81.3,462.56,80.917,182.282-.414,354.413-42.706,491.977-90" transform="translate(-1077.206 1329.472)"/>
+    <circle id="Ellipse_390" data-name="Ellipse 390" class="cls-4" cx="10" cy="10" r="10" transform="translate(287 1556)"/>
+    <path id="Path_545-4" data-name="Path 545" class="cls-3" d="M2225.65,465.449c338.923-.77,642.753-146.316,755.851-200.069" transform="translate(-1077.206 1289.472)"/>
+  </g>
+</svg>
