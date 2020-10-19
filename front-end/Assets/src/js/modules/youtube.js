@@ -126,7 +126,9 @@ XT.yt = {
         var videoID = videoData.video_id;
         var overlayStrip = $("#youtube_"+videoID+"_customBackground");
         overlayStrip.find('.videoName').text(videoTitle);
-        overlayStrip.find('.videoDuration').text(videoLength);
+        var vMinutes = Math.floor(videoLength % 3600 / 60);
+        var vSeconds = Math.floor(videoLength % 3600 % 60);
+        overlayStrip.find('.videoDuration').text(vMinutes + ":" + vSeconds);
 
     },
     

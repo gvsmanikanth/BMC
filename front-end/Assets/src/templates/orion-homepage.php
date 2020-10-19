@@ -49,22 +49,23 @@
 
 <!--Header Component Start -->
 <section class="splashpage-banner-wrap orion-global orion-homepage-banner">
-    <div class="sp-large-container blob-light-blue rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");' data-rellax-speed="3" >
+    <div class="sp-large-container blob-light-blue rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");'  >
 		
-		<div class="splashpage-banner " >			
+		<div class="splashpage-banner rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
             <div class="layout-inner-wrap">
                 <div id="lottie" class="desktopOnly"></div>
                 <div class="splashpage-banner-content text-white ">
                     <div class="bannerLogo" >
-                        <img src="Assets/src/img/splashPage/animatedLines/splashpage-banner-animation.svg" alt="" class="animated-line mobileOnly">                        
-                        <img src="Assets/src/img/splashPage/bmc-helix-controlm-logo-semireversed.svg" alt="">
+                       <img src="Assets/src/img/splashPage/bmc-helix-controlm-logo-semireversed.svg" alt="">
                     </div>
                     <h1>Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
                     <h3>Engineered from market leading technology.</h3>
-                    <h3>Available where you need it, when you need it.</h3>                   
-                    <a href="#spIframe" class="btn btn-gradient" data-aos="fade-up">Keep Me Informed</a>
-                </div>                           
-            </div> 
+                    <h3>Available where you need it, when you need it.</h3>      
+				</div> 
+				<div class="orion-banner-anim-lines">
+					<img src="Assets/src/img/orion/home-animated-lines.svg" alt="" >
+				</div>                          
+			</div> 						
         </div>         
     </div>
 </section>
@@ -87,5 +88,65 @@
         </div>
     </div>    
 </section>
+
+
+<!--Header Component End -->
+<section class="video-feature text-center orion-global">
+    <div class="layout-inner-wrap">        
+        <div class=""> 
+			<h2 >Eliminate the chaos and Elevate your IT</h2>
+			<div class="sm-flex div-px1">
+				<div class="flex-item md-col-4 px1">
+					<div class="video-portal">
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
+							<div class="video-img">
+								<img src="Assets/src/img/orion/splitcontent.png" alt="">
+								<div class="video-overlay"><span class="play-icon"></span></div>
+							</div>
+						</a>
+						<div class="caption">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex-item md-col-4 px1">
+					<div class="video-portal">
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
+							<div class="video-img">
+								<img src="Assets/src/img/orion/splitcontent.png" alt="">
+								<div class="video-overlay"><span class="play-icon"></span></div>
+							</div>
+						</a>
+						<div class="caption">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>
+					</div> 
+				</div>
+				<div class="flex-item md-col-4 px1">
+					
+					<div class="video-portal">
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
+							<div class="video-img">
+								<img src="Assets/src/img/orion/splitcontent.png" alt="">
+								<div class="video-overlay"><span class="play-icon"></span></div>
+							</div>
+						</a>
+						<div class="caption">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+        </div>
+    </div>    
+</section>
+
+
+	
 
 <?php include 'php-inc/foot.php'; ?>

@@ -16,6 +16,9 @@
         font-size: 22px;
         line-height: 32px;
     }
+    h4{
+        font-size: 16px; 
+    }
     @media(min-width:$break-sm){
         font-size: 18px;
         line-height: 28px;
@@ -30,6 +33,9 @@
         h3{
             font-size: 26px;
             line-height: 36px;
+        }
+        h4{
+            font-size: 18px; 
         }
     }
    
@@ -73,6 +79,10 @@
         @media(min-width:$break-sm){
             display: block;
         }
+    }
+    .div-px1{
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
     }
     
 }
@@ -159,10 +169,10 @@
         background-image: url(#{$imagesFolder}splashPage/half-circle-shape.svg);   
         padding-top: 20px;
         background-repeat: no-repeat;
-        background-position: center top;
-        .vidbg-overlay {
-            background: transparent !important;
-        }
+        background-position: center top;        
+    }
+    .vidbg-overlay {
+        background: transparent !important;
     }
     .video-hero-header {
         max-width: 960px;
@@ -514,13 +524,13 @@
 
 }
 
-.orion-homepage-banner{  
-   
-        .splashpage-banner-wrap .splashpage-banner {            
-            padding: 3rem 0 10rem 0px;
-        }
+.orion-homepage-banner{   
+    .splashpage-banner {            
+        padding: 3rem 0 10rem 0px;
+        background-position: center 100%;
+    }
     .blob-light-blue{
-        background-position: center 105%;
+        background-position: center 100%;
         padding: 0;
     }
     
@@ -534,13 +544,71 @@
     bottom: 0;
     color: #fff;
     .or-overlay-wrap{
-        padding: 20px;
+        padding: 10px;
+        @media(min-width:$break-sm){
+            font-size: 20px;
+        }
         p {
             margin: 0;
             color: #fff;
-            font-size: 18px;
+            font-size: 16px;
             display: block;
+            @media(min-width:$break-sm){
+                font-size: 18px;
+            }
         }
     }
     
+}
+
+
+//video-portal
+.video-portal{
+    margin-bottom: 20px;
+    .video-img{
+        position: relative;
+        .video-overlay {
+            position: absolute;
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0; 
+            display: flex;
+            align-items: center;
+
+            .play-icon{
+                background-image: url(#{$imagesFolder}orion/play-circle-orangegradient.svg); 
+                margin: 0 auto;
+                width: 101px;
+                height: 101px;
+                box-shadow: 13px 20px 44px 0 rgba(13, 16, 32, 0.2);
+                border-radius: 50%;
+                transition: 0.5s linear;
+                display: block;
+                background-repeat: no-repeat;
+                z-index: 1;
+                &:hover{ 
+                    background-image: url(#{$imagesFolder}orion/play-circle-bluegradient.svg); 
+                    transition: 0.5s linear;
+                }
+            }         
+        }        
+    }
+    .caption {
+        text-align: left;
+        background: #002C8F;
+        padding: 10px;
+        color: #fff;
+        padding: 20px;
+        h4{
+            color: #fff;
+         }
+         p  {
+             color: #fff;
+             margin: 0;
+         }
+    }  
+     
 }
