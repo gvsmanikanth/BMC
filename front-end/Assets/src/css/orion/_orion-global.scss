@@ -514,29 +514,33 @@
 
 }
 
-.orion-homepage-banner{
-    .clip-svg-wrap {
-        text-align: center;
-        svg {
-            // max-width: 100%;
+.orion-homepage-banner{  
+   
+        .splashpage-banner-wrap .splashpage-banner {            
+            padding: 3rem 0 10rem 0px;
         }
-    }
-    .splashpage-banner{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background-image: none;
-        display: flex;
-        align-items: center;
-        padding: 0;
-    }
     .blob-light-blue{
-        background-position: 100% -20px;
+        background-position: center 105%;
         padding: 0;
+    }
+    
+}
+
+.or-overlay {
+    position: absolute;
+    text-align: left;
+    background: #002C8F;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    .or-overlay-wrap{
+        padding: 20px;
+        p {
+            margin: 0;
+            color: #fff;
+            font-size: 18px;
+            display: block;
+        }
     }
     
 }

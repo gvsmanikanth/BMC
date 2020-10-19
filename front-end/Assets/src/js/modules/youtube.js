@@ -86,14 +86,17 @@ XT.yt = {
                     }else{
                         videoBGImageURL = 'http://i.ytimg.com/vi/'+ videoUrl + '/maxresdefault.jpg';
                     }
-                    this.$thumbnail = $('<a />')
+                    this.$thumbnail = $('<a id="youtube_'+videoUrl+'_customBackground" />')
 					.attr({'href': 'javascript:void(0)'})
 					.addClass('yt-hd-thumbnail')
 					.append(
 						$('<img style="max-height:100%; max-width:100%"/>').attr(
 							{'src': videoBGImageURL }
 						)
-					).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; background: rgb(0, 0, 0, 13%);" ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>'));
+                    ).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; background: rgb(0, 0, 0, 13%);" ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>')
+                    ).append(
+                        $('<div class="or-overlay"><div class="or-overlay-wrap"><p class="videoName"><p/><p class="videoDuration"></p></div></div>')
+                    );
                 
                     if(overlay.length > 0){
                         overlay.parent().append(this.$thumbnail);
@@ -116,9 +119,17 @@ XT.yt = {
 	},
 
     onPlayerReady: function(e) {
-    
-    },
+        console.log(e);
+        var videoTitle = e.target.getVideoData().title;
+        var videoLength = e.target.getDuration();
+        var videoData = e.target.getVideoData();
+        var videoID = videoData.video_id;
+        var overlayStrip = $("#youtube_"+videoID+"_customBackground");
+        overlayStrip.find('.videoName').text(videoTitle);
+        overlayStrip.find('.videoDuration').text(videoLength);
 
+    },
+    
     onPlayerStateChange: function (e) {
         var player = e.target;
         var videoData = player.getVideoData();
@@ -134,16 +145,30 @@ XT.yt = {
         var elapsed = e.target.getCurrentTime();
         var duration = e.target.getDuration();
         var eventsArray = XT.yt.eventsFired[videoID].events;
-        
+        var hideShowOverlay = function(pState) {
+            var overlayPlayIcon = $("#youtube_"+videoID+"_customBackground");
+                if(pState == true){
+                    if (isDesktop()) {
+                        overlay.show();
+                    }      
+                             
+                    overlayPlayIcon.show("slow","linear");
+                }else{
+                    if (isDesktop()) {
+                        overlay.hide();
+                    }                     
+                    overlayPlayIcon.hide("slow","linear");
+                }            
+           
+        }
         //events switch
         switch (e.data) {
             
             case YT.PlayerState.PLAYING:
                 
                 //if overlay is visible, hide when playing
-                if (overlay.is(':visible')) {
-                    overlay.hide();
-                }
+                hideShowOverlay(false);
+                
                 
                 if (XT.yt.firstPlay) {
                     //link tracking
@@ -181,9 +206,8 @@ XT.yt = {
             
             case YT.PlayerState.ENDED:
                 //show overlay on end 
-                if (isDesktop()) {
-                    overlay.show();
-                }
+                
+                hideShowOverlay(true);
                 
                 //reset firstPlay to true
                 XT.yt.firstPlay = true;
@@ -209,8 +233,11 @@ XT.yt = {
                 break;
             
             case YT.PlayerState.PAUSED:
+                //show overlay on pause
+                hideShowOverlay(true);
     
                 //link tracking
+                
                 s.prop6=videoName;
                 s.eVar6=s.prop6;
                 s.eVar7="BMC Media Player";
@@ -220,10 +247,7 @@ XT.yt = {
                 s.tl(this,"o","Video - YouTube - Pause");
                 
                 
-                //show overlay on pause
-                if (isDesktop()) {
-                    overlay.show();
-                }
+                
                 
                 break;
             default:
@@ -232,7 +256,7 @@ XT.yt = {
     
         //do something on video ends
         if(e.data === YT.PlayerState.ENDED){
-            overlay.show();
+            hideShowOverlay(true);
         }
     
     },
@@ -242,40 +266,40 @@ XT.yt = {
         
         var percent = Math.round(counter/total * 100);
         var eventsArray = XT.yt.eventsFired[videoID].events;
+            if (percent === 25 && eventsArray.indexOf("25%") === -1) {
+                s.prop6=videoName;
+                s.eVar6=s.prop6;
+                s.eVar7="BMC Media Player";
+                s.eVar27="1:M:0-25";
+                s.events="event21="+counter+",event24,event27";
+                s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
+                s.linkTrackEvents="event21,event24,event27";
+                s.tl(this,"o","Video - YouTube - 25%");
+                eventsArray.push("25%");
+            }
+            if (percent === 50 && eventsArray.indexOf("50%") === -1) {
+                s.prop6=videoName;
+                s.eVar6=s.prop6;
+                s.eVar7="BMC Media Player";
+                s.eVar27="2:M:25-50";
+                s.events="event21="+counter+",event25,event27";
+                s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
+                s.linkTrackEvents="event21,event25,event27";
+                s.tl(this,"o","Video - YouTube - 50%");
+                eventsArray.push("50%");
+            }
+            if (percent === 75 && eventsArray.indexOf("75%") === -1) {
+                s.prop6=videoName;
+                s.eVar6=s.prop6;
+                s.eVar7="BMC Media Player";
+                s.eVar27="3:M:50-75";
+                s.events="event21="+counter+",event26,event27";
+                s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
+                s.linkTrackEvents="event21,event26,event27";
+                s.tl(this,"o","Video - YouTube - 75%");
+                eventsArray.push("75%");
+            }
         
-        if (percent === 25 && eventsArray.indexOf("25%") === -1) {
-            s.prop6=videoName;
-            s.eVar6=s.prop6;
-            s.eVar7="BMC Media Player";
-            s.eVar27="1:M:0-25";
-            s.events="event21="+counter+",event24,event27";
-            s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
-            s.linkTrackEvents="event21,event24,event27";
-            s.tl(this,"o","Video - YouTube - 25%");
-            eventsArray.push("25%");
-        }
-        if (percent === 50 && eventsArray.indexOf("50%") === -1) {
-            s.prop6=videoName;
-            s.eVar6=s.prop6;
-            s.eVar7="BMC Media Player";
-            s.eVar27="2:M:25-50";
-            s.events="event21="+counter+",event25,event27";
-            s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
-            s.linkTrackEvents="event21,event25,event27";
-            s.tl(this,"o","Video - YouTube - 50%");
-            eventsArray.push("50%");
-        }
-        if (percent === 75 && eventsArray.indexOf("75%") === -1) {
-            s.prop6=videoName;
-            s.eVar6=s.prop6;
-            s.eVar7="BMC Media Player";
-            s.eVar27="3:M:50-75";
-            s.events="event21="+counter+",event26,event27";
-            s.linkTrackVars="events,prop6,eVar6,eVar7,eVar27";
-            s.linkTrackEvents="event21,event26,event27";
-            s.tl(this,"o","Video - YouTube - 75%");
-            eventsArray.push("75%");
-        }
     },
 
     onPlayerStop: function(){
