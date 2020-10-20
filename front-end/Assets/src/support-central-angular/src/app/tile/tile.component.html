@@ -1,27 +1,28 @@
-<a class="tile" *ngIf="widget.routerLink" [routerLink]=[widget.routerLink] (click)="checkExtended()">
+<a class="tile" *ngIf="widget.routerLink" [href]="widget.href" target="_blank">
     <div class="tile-left"></div>
+    <div class="tile-right">
+      <span [ngClass]="widget.icon"></span>
+    </div>
     <div class="tile-center">
       <h3>{{widget.title}}</h3>
       <div>{{widget.description}}</div>
     </div>
-    <div class="tile-right">
-      <span [ngClass]="widget.icon"></span>
-    </div>
-    <a class="tile-arrow" [href]="widget.href" target="_blank">
-      <span class="d-icon-angle_right"></span>
+    <a class="tile-arrow" [routerLink]=[widget.routerLink] (click)="checkExtended($event)">
+      <span *ngIf="!widget.isExtended" class="d-icon-move_expand"></span>
+      <span *ngIf="widget.isExtended" class="d-icon-undo"></span>
     </a>
 </a>
 <a class="tile" [href]="widget.href" *ngIf="!widget.routerLink" target="_blank">
   <div class="tile-left"></div>
+  <div class="tile-right">
+    <span [ngClass]="widget.icon"></span>
+  </div>
   <div class="tile-center">
     <h3>{{widget.title}}</h3>
     <div>{{widget.description}}</div>
   </div>
-  <div class="tile-right">
-    <span [ngClass]="widget.icon"></span>
-  </div>
   <div class="tile-arrow">
-    <span class="d-icon-angle_right"></span>
+    <span class="d-icon-link_adapt"></span>
   </div>
 </a>
 

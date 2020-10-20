@@ -15,7 +15,8 @@ export class TileComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkExtended() {
+  checkExtended(event) {
+    event.stopPropagation();
     if (this.widget.routerLink != null) {
       this.widget.isExtended = !this.widget.isExtended;
       this.extended.emit(true);

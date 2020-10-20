@@ -10,6 +10,7 @@ import { SupportQuestionsService } from '../shared/services/support-questions/su
 export class SupportQuestionsComponent implements OnInit {
 
   questionsChunk: SupportQuestion[] = null;
+  widgets = window['psc'].widgets;
 
   constructor(public questionsService: SupportQuestionsService) { }
 
