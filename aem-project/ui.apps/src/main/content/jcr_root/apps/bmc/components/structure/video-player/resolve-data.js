@@ -11,8 +11,9 @@ use(function() {
          overlayText = 'LINK-'+overlayText+'-LINK'; 
     }
 
-    overlayText = overlayText.replace('LINK-', "<a id='overlayLink' href='" + overlayUrl + "'>");
-    overlayText = overlayText.replace('-LINK', '</a>');
+  overlayText = overlayText.replace('LINK-', "<a id='overlayLink' target='_top' href='" + overlayUrl + "'>");
+  overlayText = overlayText.replace('-LINK', '</a>');
+  
     return {        
         overlayText:  overlayText
     };
