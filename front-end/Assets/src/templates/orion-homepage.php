@@ -195,7 +195,7 @@
             <div>
                 <h2>Ready to peek under the hood?</h2>
                 <p>Schedule a demo to get a look at all that Control-M SaaS has to offer, from its easy visual workflow orchestration designer to its lightning fast deployments.</p>
-                <a href="#" class="btn">Watch a Demo</a>
+                <a href="#" class="btn-octa">Watch a Demo</a>
             </div>
         </div>
     </div>    

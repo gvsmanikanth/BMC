@@ -514,27 +514,22 @@
             h2{
                 color: #fff;
                 margin-bottom:20px;
+            }
+            .btn-octa{
+                color: #1A98FF;
+                background: #fff;
+                font-size: 14px;
+                border-color: #707070;
+                border-radius: 4px;
+                font-weight: 700;
+                padding: 10px 16px 10px 16px;  
+                &:hover{
+                    background: linear-gradient(90deg, #1a98ff, #002c8f);
+                    color: #ffffff;
                 }
-        .btn{
-            color: #F98700;
-            background: #fff;
-            font-size: 14px;
-            border-color: #707070;
-            border-radius: 4px;
-            font-weight: 700;
-            padding: 10px 16px 10px 16px;
-        @media(min-width:$break-md)
-        {
-                width: auto;
-        }
-        &:hover{
-            background: linear-gradient(90deg, #1a98ff, #002c8f);
-            color: #ffffff;
-        }
-    }
-    }
-        
-    }
-        
+            }
+            
+        }        
+    }        
 }
 
