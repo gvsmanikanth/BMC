@@ -88,6 +88,7 @@
 }
 .splashpage-banner-wrap{
     background-color: #fff;
+    overflow: hidden;
     .blob-light-blue{
         background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-light.svg);
         background-repeat: no-repeat;
@@ -160,38 +161,6 @@
     }
 
 }
-
-
-.video-feature{
-    background-color: #fff;
-    padding: 1rem 0 1.8rem 0;
-    .video-feature-bg{
-        background-image: url(#{$imagesFolder}splashPage/half-circle-shape.svg);   
-        padding-top: 20px;
-        background-repeat: no-repeat;
-        background-position: center top;        
-    }
-    .vidbg-overlay {
-        background: transparent !important;
-    }
-    .video-hero-header {
-        max-width: 960px;
-        margin: 0 auto;
-    }
-    h2{
-        color: #002C8F;
-        margin-bottom: 50px;
-        margin-top: 0;
-    }
-    .sp-divider{
-        margin: 40px auto;
-        border: none;
-        background-color: #2BD4EE;
-        height: 1px;
-        max-width: 100px;
-    }   
-}
-
 
 .split-form{
     background-color: #fff;  
@@ -418,40 +387,6 @@
    
 }
 
-// Video Icon on inline videos- Global CSS 
-.sp-video-icon-global{
-    background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-orangegradient.svg); 
-    width: 70px;
-    height: 70px;
-    margin: auto;
-    transition: 0.3s linear;
-    background-repeat: no-repeat;
-    .preloadHoverImage{
-        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
-    }
-    &:hover{
-        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/play-circle-bluegradient.svg); 
-        transition: 0.3s linear;  
-    }
-    @media(min-width:$break-sm){
-        width: 100px;
-        height: 100px;
-    } 
-    @media(min-width:$break-md){
-        width: 141px;
-        height: 141px;
-    } 
-}
-
-.orion-page-fancybox{
-    .fancybox-close{
-        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
-        
-        &:hover{
-            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);
-        }
-    }  
-}
 
 
 // Orion Thank page css
@@ -534,81 +469,4 @@
         padding: 0;
     }
     
-}
-
-.or-overlay {
-    position: absolute;
-    text-align: left;
-    background: #002C8F;
-    width: 100%;
-    bottom: 0;
-    color: #fff;
-    .or-overlay-wrap{
-        padding: 10px;
-        @media(min-width:$break-sm){
-            font-size: 20px;
-        }
-        p {
-            margin: 0;
-            color: #fff;
-            font-size: 16px;
-            display: block;
-            @media(min-width:$break-sm){
-                font-size: 18px;
-            }
-        }
-    }
-    
-}
-
-
-//video-portal
-.video-portal{
-    margin-bottom: 20px;
-    .video-img{
-        position: relative;
-        .video-overlay {
-            position: absolute;
-            background: rgba(0,0,0,0.8);
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0; 
-            display: flex;
-            align-items: center;
-
-            .play-icon{
-                background-image: url(#{$imagesFolder}orion/play-circle-orangegradient.svg); 
-                margin: 0 auto;
-                width: 101px;
-                height: 101px;
-                box-shadow: 13px 20px 44px 0 rgba(13, 16, 32, 0.2);
-                border-radius: 50%;
-                transition: 0.5s linear;
-                display: block;
-                background-repeat: no-repeat;
-                z-index: 1;
-                &:hover{ 
-                    background-image: url(#{$imagesFolder}orion/play-circle-bluegradient.svg); 
-                    transition: 0.5s linear;
-                }
-            }         
-        }        
-    }
-    .caption {
-        text-align: left;
-        background: #002C8F;
-        padding: 10px;
-        color: #fff;
-        padding: 20px;
-        h4{
-            color: #fff;
-         }
-         p  {
-             color: #fff;
-             margin: 0;
-         }
-    }  
-     
 }

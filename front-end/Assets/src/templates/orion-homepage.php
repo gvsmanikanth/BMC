@@ -61,10 +61,7 @@
                     <h1>Enterprise automation and orchestration built <span>for the cloud.</span>  </h1>
                     <h3>Engineered from market leading technology.</h3>
                     <h3>Available where you need it, when you need it.</h3>      
-				</div> 
-				<div class="orion-banner-anim-lines">
-					<img src="Assets/src/img/orion/home-animated-lines.svg" alt="" >
-				</div>                          
+				</div>                        
 			</div> 						
         </div>         
     </div>
@@ -94,7 +91,8 @@
 <section class="video-feature text-center orion-global">
     <div class="layout-inner-wrap">        
         <div class=""> 
-			<h2 >Eliminate the chaos and Elevate your IT</h2>
+			<h2 class="mb1">Eliminate the chaos and Elevate your IT</h2>
+			<p>Watch Ian and Robby’s ITOps Adventures.</p>
 			<div class="sm-flex div-px1">
 				<div class="flex-item md-col-4 px1">
 					<div class="video-portal">

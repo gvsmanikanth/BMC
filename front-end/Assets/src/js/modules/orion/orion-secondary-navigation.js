@@ -32,9 +32,10 @@
         stickyNav = $(".orion-seconday-nav");
         navHeight = stickyNav.height();
         stickyNav.scrollspy({
-          min: 100,
-         // max: 100 + navHeight,
+          min: navHeight,
+          max: 10000,
           onEnter: function(element, position) {
+            console.log("in enter "+position.top);
             stickyNav.addClass('fixed');
             $('.layout-navigation').hide();
             $('.layout-header').hide();
