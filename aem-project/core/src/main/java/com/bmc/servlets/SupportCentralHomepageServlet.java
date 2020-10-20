@@ -53,6 +53,7 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create()
 				.build()) {
 	        String dataContentType = request.getParameter("content_type");
+	        String smartNumber = request.getParameter("smart_number");
 
 			String baseUrl = service.getSupportCentralPersonalisationUrl();
 			String apiPath = service.getPopularProductUrl();
@@ -64,9 +65,12 @@ public class SupportCentralHomepageServlet extends SlingSafeMethodsServlet {
 					.append("&community_count=").append(communityCount)
 					.append("&content_type=").append(dataContentType);
 
+			if (dataContentType.startsWith("COMMUNITY_")) {
+				apiUrl.append("&product_base_smart_no=").append(smartNumber);
+			}
 
 			if (user != null && user.hasEmail()) {
-				apiUrl.append("&user_id").append(user.getEmail());
+				apiUrl.append("&user_id=").append(user.getEmail());
 			}
 			
 			HttpGet httpGet = new HttpGet(apiUrl.toString());
