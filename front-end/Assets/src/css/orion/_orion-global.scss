@@ -84,6 +84,10 @@
         margin-left: -0.5rem;
         margin-right: -0.5rem;
     }
+    .orion-block-title{
+        color: #002C8F;
+        margin-bottom: 20px;
+    }
     
 }
 .splashpage-banner-wrap{
@@ -411,15 +415,15 @@
     .callout-topline {
         margin: 32px auto 0px auto;
         border: none;
-        background-color: #2BD4EE;
+        background-color: #1A98FF;
         height: 1px;
-        max-width: 650px;
+        max-width: 900px;
     }
-    h3 {
+    h2 {
         margin: 32px auto 64px auto;
         text-align: left;
-        color: #2BD4EE;
-        max-width: 650px;
+        color: #1A98FF;
+        max-width: 900px;
     }
 }
 
@@ -492,11 +496,9 @@
             height: 100%;
             width: 100%;
             content: "";
-            transition: transform .8s ease-in-out;
-            transition: transform .8s ease-in-out, -webkit-transform .8s ease-in-out;
+            transition: transform 3s ease-in-out;
         }
         .image-bop:hover {
-        -webkit-transform: rotate(-5deg);
                 transform: rotate(-5deg);
                 overflow:hidden;
         }

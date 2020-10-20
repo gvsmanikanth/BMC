@@ -66,9 +66,9 @@
         </div>         
     </div>
 </section>
-
-	
 <!--Header Component End -->
+	
+<!--video-feature Component start -->
 <section class="video-feature text-center orion-global">
     <div class="layout-inner-wrap video-feature-bg ">        
         <div class="video-hero-header">
@@ -79,15 +79,58 @@
 					<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
 					<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
 						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
-					</p>                                                                       
+					</p>   
+					<div class="caption">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>                                                                    
 				</div>                
 			</div>
         </div>
     </div>    
 </section>
 
+<!--orionCallout Component start -->
+<section class="orionCallout text-align-center">
+    <div class="layout-inner-wrap">
+		<div>
+			<hr class="callout-topline">
+			<h2>BMC Helix Control-M integrates, automates and orchestrates complex data and application workflows
+				across highly heterogeneous environments.</h2>
+		</div>
+    </div>    
+</section>
 
-<!--Header Component End -->
+<!--orion-split-content Component start -->
+<section class="orion-split-content bg-white orion-global">
+	<div class="layout-inner-wrap">		
+		<div class="two-up">	
+			<div class="imageContainer">
+				<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content"></img>
+			</div>		
+      	</div>
+      	<div class="two-up split-part-2">
+			<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+			<ul class="orange-tick-bullets">
+				<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools 
+				</li>
+				<li>Eliminate unreliable delivery of critical business services</li>
+				<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
+				<li>Simplify the adoption of new technologies into your technology ecosystem </li>
+				<li>And much more!</li>
+			</ul>
+			<ul class="button-set">
+				<li>					
+					<a class="btn btn-gradient" href="#" >See all features&nbsp;&#8250;</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+
+<!-- video-feature Component starts -->
 <section class="video-feature text-center orion-global">
     <div class="layout-inner-wrap">        
         <div class=""> 
@@ -140,6 +183,20 @@
 				</div>
 			</div>
 			
+        </div>
+    </div>    
+</section>
+<div class="bg-white " style="min-height: 100px"></div>
+
+<section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
+    <div class="layout-inner-wrap banner-area">
+        <div class="image-bop"></div>  
+        <div class="text-center content-banner">
+            <div>
+                <h2>Ready to peek under the hood?</h2>
+                <p>Schedule a demo to get a look at all that Control-M SaaS has to offer, from its easy visual workflow orchestration designer to its lightning fast deployments.</p>
+                <a href="#" class="btn">Watch a Demo</a>
+            </div>
         </div>
     </div>    
 </section>
