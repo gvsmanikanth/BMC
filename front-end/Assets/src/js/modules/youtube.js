@@ -93,9 +93,7 @@ XT.yt = {
 						$('<img style="max-height:100%; max-width:100%"/>').attr(
 							{'src': videoBGImageURL }
 						)
-                    ).append($('<div style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; background: rgb(0, 0, 0, 13%);" ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>')
-                    ).append(
-                        $('<div class="or-overlay"><div class="or-overlay-wrap"><p class="videoName"><p/><p class="videoDuration"></p></div></div>')
+                    ).append($('<div class="overlay-wrap" style="position: absolute;width: 100%;height: 100%;top: 0px;display: flex;align-items: center; " ><div class="sp-video-icon-global"><div class="preloadHoverImage" style="display:none"> </div></div>')
                     );
                 
                     if(overlay.length > 0){
@@ -119,16 +117,9 @@ XT.yt = {
 	},
 
     onPlayerReady: function(e) {
-        console.log(e);
-        var videoTitle = e.target.getVideoData().title;
-        var videoLength = e.target.getDuration();
-        var videoData = e.target.getVideoData();
-        var videoID = videoData.video_id;
-        var overlayStrip = $("#youtube_"+videoID+"_customBackground");
-        overlayStrip.find('.videoName').text(videoTitle);
-        var vMinutes = Math.floor(videoLength % 3600 / 60);
-        var vSeconds = Math.floor(videoLength % 3600 % 60);
-        overlayStrip.find('.videoDuration').text(vMinutes + ":" + vSeconds);
+        //console.log('player ready');
+        //player.playVideo(); //start the video
+        //player.setVolume(1); //set volume to 1 (accepts 0-100)
 
     },
     

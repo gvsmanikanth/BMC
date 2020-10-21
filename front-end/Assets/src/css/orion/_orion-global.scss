@@ -468,10 +468,45 @@
     .splashpage-banner {            
         padding: 3rem 0 10rem 0px;
         background-position: center 100%;
+        animation-name: bounce-dark-blue-background;
+        animation-timing-function: ease-in-out;
+        animation-duration: 12s;
+        animation-iteration-count: infinite;
     }
     .blob-light-blue{
         background-position: center 100%;
         padding: 0;
+        animation-name: bounce-light-blue-background;
+        animation-timing-function: ease-in-out;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    div#homeBannerAnimation {
+        position: relative;
+        width: 100%;
+        bottom: -50px;
+    }
+    @keyframes bounce-light-blue-background {
+        from {
+            background-position: center 100%;
+        }
+        50% {
+            background-position: center 150%;
+        }
+        to {
+            background-position: center 100%;
+        }
+    }
+    @keyframes bounce-dark-blue-background {
+        from {
+            background-position: center 110%;
+        }
+        50% {
+            background-position: center 100%;
+        }
+        to {
+            background-position: center 110%;
+        }
     }
     
 }
