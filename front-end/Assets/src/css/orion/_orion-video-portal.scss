@@ -28,6 +28,21 @@
         height: 1px;
         max-width: 100px;
     }   
+    .caption {
+        text-align: left;
+        background: #002C8F;
+        padding: 10px;
+        color: #fff;
+        padding: 20px;
+        h4{
+            color: #fff;
+         }
+         p  {
+             color: #fff;
+             margin: 0;
+         }
+    }  
+    
 }
 // Video Icon on inline videos- Global CSS 
 .sp-video-icon-global{
@@ -53,7 +68,14 @@
         height: 141px;
     } 
 }
-
+.overlay-wrap{
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.3s linear;
+    &:hover {
+        background: transparent;
+        transition: 0.3s linear;
+    }
+}
 .orion-page-fancybox{
     .fancybox-close{
         background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
@@ -64,35 +86,17 @@
     }  
 }
 
-.or-overlay {
-    position: absolute;
-    text-align: left;
-    background: #002C8F;
-    width: 100%;
-    bottom: 0;
-    color: #fff;
-    .or-overlay-wrap{
-        padding: 10px;
-        @media(min-width:$break-sm){
-            font-size: 20px;
-        }
-        p {
-            margin: 0;
-            color: #fff;
-            font-size: 16px;
-            display: block;
-            @media(min-width:$break-sm){
-                font-size: 18px;
-            }
-        }
-    }
-    
-}
 
 //video-portal
 .video-portal{
+   
     margin-bottom: 20px;
-    
+    .img-div{
+        display: flex;
+        img{
+            width: 100%;
+        }
+    }
     .video-img{
         position: relative;
         .video-overlay {
@@ -110,8 +114,8 @@
             .play-icon{
                 background-image: url(#{$imagesFolder}orion/play-circle-orangegradient.svg); 
                 margin: 0 auto;
-                width: 101px;
-                height: 101px;
+                width: 70px;
+                height: 70px;
                 box-shadow: 13px 20px 44px 0 rgba(13, 16, 32, 0.2);
                 border-radius: 50%;
                 transition: 0.5s linear;
@@ -121,6 +125,14 @@
                     background-image: url(#{$imagesFolder}orion/play-circle-bluegradient.svg); 
                     transition: 0.5s linear;
                 }
+                @media(min-width:$break-md){
+                    width: 80px;
+                    height: 80px;
+                } 
+                @media(min-width:$break-lg){
+                    width: 101px;
+                    height: 101px;
+                } 
             }         
         } 
         &:hover {
@@ -131,19 +143,8 @@
         }
 
     }
-    .caption {
-        text-align: left;
-        background: #002C8F;
-        padding: 10px;
-        color: #fff;
-        padding: 20px;
-        h4{
-            color: #fff;
-         }
-         p  {
-             color: #fff;
-             margin: 0;
-         }
-    }  
+    .caption{
+        @extend .caption;
+    }
      
 }

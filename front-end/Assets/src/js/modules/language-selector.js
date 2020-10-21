@@ -3,7 +3,8 @@
     selectLanguageonLoad();
   });
   
-function selectLanguageonLoad(){    
+function selectLanguageonLoad(){ 
+  if(typeof(bmcMeta) != "undefined"){   
     ccode = bmcMeta.site.cultureCode;
      var index=0;
     if(ccode!=undefined){
@@ -16,8 +17,9 @@ function selectLanguageonLoad(){
             return false;
          }
          index++;
-        });
-      }
+      });
+    }
+  }    
 }
 
 $('#ft-sl-language').on('change', function() {

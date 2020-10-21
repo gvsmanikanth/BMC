@@ -79,8 +79,12 @@
 					<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
 					<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
 						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
-					</p>                                                                       
-				</div>                
+					</p>					                                                                          
+				</div>  
+				<div class="caption">
+					<h4> <strong>BMC Helix – The Future of Service and Operations Management</strong></h4>
+					<p>1:47</p>
+				</div>              
 			</div>
         </div>
     </div>    
@@ -94,49 +98,53 @@
 			<h2 class="mb1">Eliminate the chaos and Elevate your IT</h2>
 			<p>Watch Ian and Robby’s ITOps Adventures.</p>
 			<div class="sm-flex div-px1">
-				<div class="flex-item md-col-4 px1">
+				<div class="flex-item md-col-4 px1">					
 					<div class="video-portal">
-						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
-							<div class="video-img">
-								<img src="Assets/src/img/orion/splitcontent.png" alt="">
+						<div class="video-img">
+							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+								<div class="img-div">
+									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
-							</div>
-						</a>
+							</a>
+						</div>
 						<div class="caption">
 							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
 							<p>1:45</p>
 						</div>
 					</div>
 				</div>
-				<div class="flex-item md-col-4 px1">
+				<div class="flex-item md-col-4 px1">					
 					<div class="video-portal">
-						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
-							<div class="video-img">
-								<img src="Assets/src/img/orion/splitcontent.png" alt="">
+						<div class="video-img">
+							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+								<div class="img-div">
+									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
-							</div>
-						</a>
-						<div class="caption">
-							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
-							<p>1:45</p>
+							</a>
 						</div>
-					</div> 
-				</div>
-				<div class="flex-item md-col-4 px1">
-					
-					<div class="video-portal">
-						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">
-							<div class="video-img">
-								<img src="Assets/src/img/orion/splitcontent.png" alt="">
-								<div class="video-overlay"><span class="play-icon"></span></div>
-							</div>
-						</a>
 						<div class="caption">
 							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
 							<p>1:45</p>
 						</div>
 					</div>
-
+				</div>
+				<div class="flex-item md-col-4 px1">					
+					<div class="video-portal">
+						<div class="video-img">
+							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+								<div class="img-div">
+									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+								</div>
+								<div class="video-overlay"><span class="play-icon"></span></div>
+							</a>
+						</div>
+						<div class="caption">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			
