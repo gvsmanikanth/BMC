@@ -1,0 +1,39 @@
+
+.portal-cards{
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: 0.3s linear;
+    margin: 10px;
+    a{
+        display: block;
+        &:focus {
+            outline: none;
+        }
+    }
+    &:hover{
+        border-color: #1A98FF;
+        transition: 0.3s linear;
+        h4 {
+            border-color: #1A98FF;
+        }
+    }
+    .icon-div{
+        img {
+            max-height: 62px;
+        }
+    }
+    h4 {
+        color: #1A98FF;
+        border-bottom: 2px solid #F98700;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    p{
+        color: #75777A;
+        margin-bottom: 0;
+    }
+
+}
+

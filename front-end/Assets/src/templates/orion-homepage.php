@@ -130,16 +130,93 @@
 	</div>
 </section>
 
+<!-- 3 up portal cards section started -->
 
+<section class="orion-global bg-white text-center py3">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
+		<p>Watch Ian and Robby’s ITOps Adventures.</p>
+		<div class="flex-wrap flex-justify-center mb2">
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Predictive Maintenance</h4>
+						<p>Optimize, automate, and orchestrate your predictive maintenance data pipeline.</p>
+					</a>
+				</div>
+			</div>		
+			
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Strategic Pricing</h4>
+						<p>Maintain your competitive edge through automation and orchestrating your pricing applications.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Omni-Channel Logistics</h4>
+						<p>Manage, track and optimize your value chain end-to-end and eliminate downtime and schedule delays.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Fraud Detection</h4>
+						<p>Eliminate manual processes and lag times to ensure your fraud investigators they need at their fingertips.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Targeted Advertising </h4>
+						<p>Utilize automation to gain new insights into your customers’ buying behaviors.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4>Financial Close</h4>
+						<p>Automate your financial close process to ensure accuracy, completeness and timeliness every time.</p>
+					</a>
+				</div>
+			</div>
+
+		</div>		
+	</div>	
+</section>
 
 <!-- video-feature Component starts -->
-<section class="video-feature text-center orion-global">
+<section class=" orion-global bg-white text-center">
     <div class="layout-inner-wrap">         
         <div class=""> 
-			<h2 class="mb1">Eliminate the chaos and Elevate your IT</h2>
+			<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
 			<p>Watch Ian and Robby’s ITOps Adventures.</p>
-			<div class="sm-flex div-px1">
-				<div class="flex-item md-col-4 px1">					
+			<div class="flex-wrap flex-justify-center mb2">
+				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
 					<div class="video-portal">
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
@@ -149,13 +226,13 @@
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
-						<div class="caption">
+						<div class="caption text-left">
 							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
 							<p>1:45</p>
 						</div>
 					</div>
 				</div>
-				<div class="flex-item md-col-4 px1">					
+				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
 					<div class="video-portal">
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
@@ -165,13 +242,13 @@
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
-						<div class="caption">
+						<div class="caption text-left">
 							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
 							<p>1:45</p>
 						</div>
 					</div>
 				</div>
-				<div class="flex-item md-col-4 px1">					
+				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
 					<div class="video-portal">
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
@@ -181,7 +258,7 @@
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
-						<div class="caption">
+						<div class="caption text-left">
 							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
 							<p>1:45</p>
 						</div>
@@ -207,9 +284,8 @@
     </div>    
 </section>
 
-<script>
-	
-function deferlootieAnimFunction(method) {
+<script>	
+	function deferlootieAnimFunction(method) {
         if (window.jQuery){
             if (window.lottie){
                method();
@@ -245,7 +321,7 @@ function deferlootieAnimFunction(method) {
 			  setTimeout(function() { window.HomeBannerAnimInit.play() }, 1000);
 		  }
 		});
-	} 
+		} 
 	deferlootieAnimFunction(lootieAnimInit)
 </script>
 <?php include 'php-inc/foot.php'; ?>
