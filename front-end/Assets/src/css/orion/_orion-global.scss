@@ -515,28 +515,25 @@
     overflow: hidden;
     min-height:400px;
     .banner-area{        
-        //width: 100%;
-        position: relative;
+         position: relative;
         .image-bop{
             position: absolute;
+            z-index:5;
             background: url(orion/CTA-blob.svg) no-repeat;
             padding: 50px 0px;
-            background-size: content;
+            background-size: 100%;
             background-position: center center;
-            transform: rotate(5deg);
             text-align: center;
             height: 100%;
             width: 100%;
-            content: "";
-            transition: transform .8s ease-in-out;
-            transition: transform .8s ease-in-out, -webkit-transform .8s ease-in-out;
-        }
+            transition: transform 2s ease-in-out;
+                }
         .image-bop:hover {
-        -webkit-transform: rotate(-5deg);
-                transform: rotate(-5deg);
-                overflow:hidden;
+            transform: rotate(-5deg);
         }
         .content-banner{
+            position: relative;
+            z-index:6;
             padding: 88px 0px;
             color: #fff;
             display: flex;
@@ -549,25 +546,23 @@
                 color: #fff;
                 margin-bottom:20px;
                 }
-        .btn{
-            color: #F98700;
-            background: #fff;
-            font-size: 14px;
-            border-color: #707070;
-            border-radius: 4px;
-            font-weight: 700;
-            padding: 10px 16px 10px 16px;
+        .btn-octa{
+            color: #1A98FF;
+            background: #fff;
+            font-size: 14px;
+            border-color: #707070;
+            border-radius: 4px;
+            font-weight: 700;
+            padding: 10px 16px 10px 16px;
         @media(min-width:$break-md)
         {
-                width: auto;
+            width:auto;
         }
         &:hover{
-            background: linear-gradient(90deg, #1a98ff, #002c8f);
-            color: #ffffff;
+            background: linear-gradient(90deg, #1a98ff, #002c8f);
+            color: #ffffff;
         }
     }
-    }
-        
-    }
-        
+    }   
+    }        
 }
