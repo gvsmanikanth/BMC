@@ -134,8 +134,8 @@
 
 <section class="orion-global bg-white text-center py3">
 	<div class="layout-inner-wrap">
-		<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
-		<p>Watch Ian and Robby’s ITOps Adventures.</p>
+		<h2 class="orion-block-title mb1">No limits, endless possibilities </h2>
+		<p>Here’s just a few of the ways BMC Helix Control-M helps companies automate and orchestrate complex and critical workflows today.</p>
 		<div class="flex-wrap flex-justify-center mb2">
 			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
 				<div class="portal-cards">
@@ -143,7 +143,7 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Predictive Maintenance</h4>
+						<h4 class="learn-more">Predictive Maintenance</h4>
 						<p>Optimize, automate, and orchestrate your predictive maintenance data pipeline.</p>
 					</a>
 				</div>
@@ -155,7 +155,7 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Strategic Pricing</h4>
+						<h4 class="learn-more">Strategic Pricing</h4>
 						<p>Maintain your competitive edge through automation and orchestrating your pricing applications.</p>
 					</a>
 				</div>
@@ -166,7 +166,7 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Omni-Channel Logistics</h4>
+						<h4 class="learn-more">Omni-Channel Logistics</h4>
 						<p>Manage, track and optimize your value chain end-to-end and eliminate downtime and schedule delays.</p>
 					</a>
 				</div>
@@ -177,7 +177,7 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Fraud Detection</h4>
+						<h4 class="learn-more">Fraud Detection</h4>
 						<p>Eliminate manual processes and lag times to ensure your fraud investigators they need at their fingertips.</p>
 					</a>
 				</div>
@@ -188,7 +188,7 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Targeted Advertising </h4>
+						<h4 class="learn-more">Targeted Advertising </h4>
 						<p>Utilize automation to gain new insights into your customers’ buying behaviors.</p>
 					</a>
 				</div>
@@ -199,7 +199,74 @@
 						<div class="icon-div">
 							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
 						</div>
-						<h4>Financial Close</h4>
+						<h4 class="learn-more">Financial Close</h4>
+						<p>Automate your financial close process to ensure accuracy, completeness and timeliness every time.</p>
+					</a>
+				</div>
+			</div>
+
+		</div>		
+	</div>	
+</section>
+
+<!-- portal cards section with curve background started -->
+
+<section class="orion-global bg-white text-center py3 portal-with-background">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb3">Explore Additional Use Cases </h2>
+		<div class="flex-wrap flex-justify-center mb2">
+				
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4 class="learn-more">Strategic Pricing</h4>
+						<p>Maintain your competitive edge through automation and orchestrating your pricing applications.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4 class="learn-more">Omni-Channel Logistics</h4>
+						<p>Manage, track and optimize your value chain end-to-end and eliminate downtime and schedule delays.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4 class="learn-more">Fraud Detection</h4>
+						<p>Eliminate manual processes and lag times to ensure your fraud investigators they need at their fingertips.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4 class="learn-more">Targeted Advertising </h4>
+						<p>Utilize automation to gain new insights into your customers’ buying behaviors.</p>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="icon-div">
+							<img src="Assets/src/img/orion/icon-placeholder.svg" alt="" height="62px">
+						</div>
+						<h4 class="learn-more">Financial Close</h4>
 						<p>Automate your financial close process to ensure accuracy, completeness and timeliness every time.</p>
 					</a>
 				</div>
@@ -210,7 +277,7 @@
 </section>
 
 <!-- video-feature Component starts -->
-<section class=" orion-global bg-white text-center">
+<section class=" orion-global bg-white text-center mb3">
     <div class="layout-inner-wrap">         
         <div class=""> 
 			<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
