@@ -516,36 +516,45 @@
 //Orion CTA.
 .orion-CTA-banner{
     background-color: #FE5000;
-    overflow: hidden;
-    min-height:400px;
+    overflow: hidden;    
+    &:hover{
+        .image-bop {
+            @media(min-width:$break-sm){
+                transform: rotate(-5deg);
+            }             
+        }
+    }    
     .banner-area{        
          position: relative;
-        .image-bop{
+        .image-blob{
             position: absolute;
             z-index:5;
             background: url(orion/CTA-blob.svg) no-repeat;
-            padding: 50px 0px;
-            background-size: 100%;
+            background-size: cover;
             background-position: center center;
             text-align: center;
             height: 100%;
             width: 100%;
             transition: transform 2s ease-in-out;
-                }
-        .image-bop:hover {
-            transform: rotate(-5deg);
-        }
+            min-height: 500px;
+            top: -50px;
+            left: 0;
+            right: 0;
+            }
+        
         .content-banner{
             position: relative;
             z-index:6;
-            padding: 88px 0px;
+            padding: 20px;
             color: #fff;
             display: flex;
             align-items: center;
-            @media(min-width:$break-md){
+            margin:auto;
+            min-height:360px;
+            @media(min-width:$break-sm){
                 max-width: 680px;
             }           
-            margin:auto;
+           
             h2{
                 color: #fff;
                 margin-bottom:20px;
@@ -557,14 +566,13 @@
                 border-color: #707070;
                 border-radius: 4px;
                 font-weight: 700;
-                padding: 10px 16px 10px 16px;  
+                padding: 10px 16px 10px 16px;            
                 &:hover{
                     background: linear-gradient(90deg, #1a98ff, #002c8f);
                     color: #ffffff;
                 }
             }
-            
-        }        
+        }   
     }        
 }
 
