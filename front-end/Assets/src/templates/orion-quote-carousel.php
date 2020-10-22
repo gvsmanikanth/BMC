@@ -4,93 +4,47 @@
 	include 'php-inc/head.php';
 ?>
 
-<section class="quote-section orion-global" style="Background-color:#fff;">
-<div class="headingcustomer">
-    <div class="line" style="border:none; background-color:#2BD4EE; height:1px; width:80%; margin: 0px auto 0px auto;"></div>       
-    <h2 class="text-center">What Our Customers Say</h2>
-</div>    
-<div class="orion-quote-carousel">        
-            <div class="item orion-cta">
-                <div class="gradientMask"></div>
-                <div class="quote">
-                    <div class="star-wrap">
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>				
-                    <h4>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h4>
-                    <div class="quote-footer flex-wrap">
-                        <div class="info">
-                            <p><strong>Most Interesting Analyst In The World</strong></p>
-                            <p>Firm Yet To Be Named</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item orion-cta">
-            <div class="gradientMask"></div>
-                <div class="quote ">
-                    <div class="star-wrap">
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>				
-                    <h4>Control-M made my life easier. I don’t know how else to live. I now would like to write my life story of how I came across BMC’s amazing product.</h4>
-                    <div class="quote-footer flex-wrap">
-                        <div class="info">
-                            <p><strong>Anthony Stark</strong></p>
-                            <p>CEO of Stark Industries and Hero of the Universe</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item orion-cta">
-            <div class="gradientMask" ></div>
-                <div class="quote ">
-                    <div class="star-wrap">
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>				
-                    <h4>This is the best SaaS product that has Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h4>
-                    <div class="quote-footer flex-wrap">
-                        <div class="info">
-                            <p><strong>Most Interesting Analyst In The World</strong></p>
-                            <p>Firm Yet To Be Named</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item orion-cta">
-            <div class="gradientMask" ></div>
-                <div class="quote ">
-                    <div class="star-wrap">
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>				
-                    <h4>This is the best SaaS product that has Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h4>
-                    <div class="quote-footer flex-wrap">
-                        <div class="info">
-                            <p><strong>Most Interesting Analyst In The World</strong></p>
-                            <p>Firm Yet To Be Named</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item orion-cta">
-            <div class="gradientMask" ></div>
-                <div class="quote ">
-                    <div class="star-wrap">
-                        <span class="star"></span>
-                        <span class="star"></span>
-                    </div>				
-                    <h4>This is the best SaaS product that has Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h4>
-                    <div class="quote-footer flex-wrap">
-                        <div class="info">
-                            <p><strong>Most Interesting Analyst In The World</strong></p>
-                            <p>Firm Yet To Be Named</p>
-                        </div>
+<section class="orion-quote-section orion-global" style="Background-color:#fff;">
+    <div class="layout-inner-wrap">
+        <div class="headingcustomer">        
+            <h2 class="text-center orion-block-title">What Our Customers Say</h2><hr>
+        </div>    
+        <div class="orion-quote-carousel">        
+            <div class="item orion-cta">            
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
                     </div>
                 </div>
             </div> 
+            <!-- item end -->
+            <div class="item orion-cta">
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- item end -->
+            <div class="item orion-cta">
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- item end -->
+
+            
         </div>
+    </div>
+   
 </section>
 <!--
 <div class="htmlarea aem-GridColumn aem-GridColumn--default--12"><div class="htmlarea aem-GridColumn aem-GridColumn--default--12">

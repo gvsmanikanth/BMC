@@ -569,111 +569,70 @@
 }
 
 // Orion Quote Carousel
-.quote-section{
+.orion-quote-section{
     .headingcustomer{
         padding:60px 30px;
-           h2{background-color:#fff;
-              margin: -24px auto;
-              width: 500px;
-            }
+        text-align: center;
+        h2{
+            background-color: #fff;
+            display: inline-block;
+            margin:  0 auto;
+            padding: 0 30px;
+        }
+        hr{
+            border: none;
+            background-color: #2BD4EE;
+            height: 1px;
+            margin: -20px auto 0 auto;
+        }
     }
     .orion-quote-carousel{
         background: url(#{$imagesFolder}orion/orion-cta-bg.svg) no-repeat;
         padding: 50px 0px;
         background-position: center 10%;
+        background-size: 700px;
+        text-align:center;  
         @media(max-width:$break-md){
             background-size:300px;
         }
-        background-size: 700px;
-        text-align:center;    
-        .owl-prev{
-            left:15%;
-            background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
+        .item{
+            .quote{
+                max-width: 650px;
+                margin: 0 auto;
+                padding: 50px 0 0 0;
+                h3{
+                    color: #1A98FF;  
+                    font-weight: 700;
+                }
+                .info {
+                    margin-top: 30px;
+                    p {
+                        margin: 0;
+                    }
+                }
+            }            
+             
+        }
+        .owl-prev, .owl-next { 
+            position: absolute;
             height:60px;
-            width:60px;
-            top:40%;
-            @media(max-width:$break-md){
-                left:3%;
-            }
+            width:60px;               
+            top:30%;
+        }
+        .owl-prev{
+            background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
+            left:5%;  
         }
         .owl-next{
-            height: 60px;
-            width: 60px;
-            right: 15%;
-            top:40%;
-            background: url(#{$imagesFolder}orion/owl-next-btn.svg) no-repeat scroll 0px 0px;
-            @media(max-width:$break-md){
-                right:3%;
-                height:60px;
-                width: 60px;
-            }
+            background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
+            right: 5%;
+            transform: rotate(180deg);
         }
-        
-        .item{
-            width:300px!important;
-            @media(min-width:$break-md){
-                width:700px!important;
-            } 
-        }
-        .owl-stage-outer{
-            .active {
-                width:700px!important;
-                .orion-cta{
-                    opacity:1;
-                    .gradientMask{
-                        display:none;
-                    } 
-                }
-        }
-    }
-        .orion-cta{
-            margin-right:0px;
-            @media(max-width:$break-md){
-                margin-left:10px;
-            }
-            //width: 100%;
-            margin-left:28%;
-            margin-right:0px!important;
-            opacity:0.5;
-            .gradientMask{
-                @media(max-width:$break-md){
-                    display:none;
-                }
-                width:300px; 
-                height:370px; 
-                top:0px; 
-                position:absolute;
-                display: block;
-                background-color:#fff;
-                -webkit-mask-image: linear-gradient(to right, transparent 1%, black 60%);
-                mask-image: linear-gradient(to right, transparent 1%, black 60%);
-            }
-            .quote{
-                padding-bottom:0px;
-            }
-            h4{
-                color: #1A98FF;
-                font-size:1.6em;
-                margin:0px;
-                line-height:36px;
-                @media(max-width:$break-md){
-                    font-size:1em;
-                    line-height:20px;
-                }
-            }
-            .quote-footer{  
-                bottom:auto;
-                padding-top:20px;
-                position: relative;
-                width: calc(100% - 0px);
-                .info{
-                    margin:auto;
-                    width:100%;
-                }
-            }
-        }
+
+
         .owl-controls{
             .owl-dots{
+                margin-top: 30px;
                 .owl-dot{
                     display: inline-block;
                     margin:5px;
@@ -693,28 +652,29 @@
                 }
             }
         }
+
+        .owl-stage-outer{
+            position: relative;
+            &:after {
+                content: '';
+                background-color: rgba(255, 255, 255,  0.8);
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &:before {
+                content: '';
+                background-color: rgba(255, 255, 255,  0.8);
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+        }
+
     }
 }
-
-/*
-img {
-  width: 150px;
-  mask-image: -webkit-gradient(linear, left top, right bottom, 
-            color-stop(0.00,  rgba(0,0,0,1)),
-            color-stop(0.35,  rgba(0,0,0,1)),
-            color-stop(0.50,  rgba(0,0,0,0)),
-            color-stop(0.65,  rgba(0,0,0,0)),
-            color-stop(1.00,  rgba(0,0,0,0)));
-}
-.mask1 {
-    -webkit-mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
-    mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
-  }
-
-body {
-  padding: 20px;
-}
-<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="" />
-
-
-*/
