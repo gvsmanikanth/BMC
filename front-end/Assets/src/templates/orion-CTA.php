@@ -5,8 +5,8 @@
 ?>
 
 <section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
-<div class="banner-area">
-    <div class="image-bop"></div>  
+    <div class="banner-area layout-inner-wrap">
+    <div class="image-blob"></div>  
     <div class="text-center content-banner">
         <div>
             <h2>Ready to peek under the hood?</h2>
