@@ -12,10 +12,10 @@
         }
     }
     &:hover{
-        border-color: #1A98FF;
+        border-color: #29a5d6;
         transition: 0.3s linear;
         h4 {
-            border-color: #1A98FF;
+           // border-color: #1A98FF;
         }
     }
     .icon-div{
@@ -24,8 +24,8 @@
         }
     }
     h4 {
-        color: #1A98FF;
-        border-bottom: 2px solid #F98700;
+        color: #29a5d6;
+       // border-bottom: 2px solid #F98700;
         display: inline-block;
         margin-bottom: 15px;
         font-weight: 700;
@@ -37,3 +37,15 @@
 
 }
 
+
+.portal-with-background{
+    background-image: url(#{$imagesFolder}orion/portalcards-bg.svg);
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 60px 0 60px 0;
+    @media(min-width:$break-sm){
+        background-size: cover;
+        padding: 80px 0 80px 0;
+    }
+}
