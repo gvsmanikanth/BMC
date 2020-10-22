@@ -529,7 +529,7 @@
         .image-blob{
             position: absolute;
             z-index:5;
-            background: url(orion/CTA-blob.svg) no-repeat;
+            background: url(#{$imagesFolder}orion/CTA-blob.svg) no-repeat;
             background-size: cover;
             background-position: center center;
             text-align: center;
@@ -576,3 +576,113 @@
     }        
 }
 
+// Orion Quote Carousel
+.orion-quote-section{
+    .headingcustomer{
+        padding:60px 30px;
+        text-align: center;
+        h2{
+            background-color: #fff;
+            display: inline-block;
+            margin:  0 auto;
+            padding: 0 30px;
+        }
+        hr{
+            border: none;
+            background-color: #2BD4EE;
+            height: 1px;
+            margin: -20px auto 0 auto;
+        }
+    }
+    .orion-quote-carousel{
+        background: url(#{$imagesFolder}orion/orion-cta-bg.svg) no-repeat;
+        padding: 50px 0px;
+        background-position: center 10%;
+        background-size: 700px;
+        text-align:center;  
+        @media(max-width:$break-md){
+            background-size:300px;
+        }
+        .item{
+            .quote{
+                max-width: 650px;
+                margin: 0 auto;
+                padding: 50px 0 0 0;
+                h3{
+                    color: #1A98FF;  
+                    font-weight: 700;
+                }
+                .info {
+                    margin-top: 30px;
+                    p {
+                        margin: 0;
+                    }
+                }
+            }            
+             
+        }
+        .owl-prev, .owl-next { 
+            position: absolute;
+            height:60px;
+            width:60px;               
+            top:30%;
+        }
+        .owl-prev{
+            background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
+            left:5%;  
+        }
+        .owl-next{
+            background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
+            right: 5%;
+            transform: rotate(180deg);
+        }
+
+
+        .owl-controls{
+            .owl-dots{
+                margin-top: 30px;
+                .owl-dot{
+                    display: inline-block;
+                    margin:5px;
+                    span{
+                        background-color:#a7a9ac;
+                        width:10px;
+                        height:10px;
+                        border-radius: 50%;
+                        display: inline-block;
+                        border:none;
+                    }
+                }
+                .owl-dot.active{
+                    span{
+                        background-color:#FE5000;
+                    }
+                }
+            }
+        }
+
+        .owl-stage-outer{
+            position: relative;
+            &:after {
+                content: '';
+                background-color: rgba(255, 255, 255,  0.8);
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &:before {
+                content: '';
+                background-color: rgba(255, 255, 255,  0.8);
+                width: 20%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+        }
+
+    }
+}
