@@ -461,6 +461,9 @@
 
 //Orion Split-content
 .orion-split-content {
+    .flex-wrap{
+        width:auto;
+    }
     padding: 30px 0px;
     .button-bullet {
         padding: 0px;
