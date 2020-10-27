@@ -78,12 +78,10 @@
 }
 .orion-page-fancybox{
     .fancybox-close{
-        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);
-        
+        background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);        
         &:hover{
-            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-blue.svg);
-        }
-    }  
+            background-image: url(#{$imagesFolder}splashPage/icons/svg-colored/plus-close-circle-orangegradient.svg);      }
+        } 
 }
 
 
