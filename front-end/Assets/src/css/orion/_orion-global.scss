@@ -574,7 +574,7 @@
         padding: 50px 0px;
         background-position: center 10%;
         background-size: 700px;
-        text-align:center;  
+        text-align:center;
         @media(max-width:$break-md){
             background-size:300px;
         }
@@ -713,5 +713,52 @@
     }
     to {
         background-position: center 100%;
+    }
+}
+//Orion Split-content-video
+.orion-split-content-video {
+    padding: 30px 0px;
+    .button-bullet {
+        padding: 0px;
+    }
+    .button-set {
+        padding: 0px;
+    }
+    .split-part-2 {
+        padding-top: 125px;
+    }
+    .imageContainer {
+        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+        padding: 70px 0px;
+        background-position: center 70%;
+        background-size: 860px;
+        text-align: center;
+    }
+    .video-portal{
+        margin:0px;
+    }
+    @media only screen and (min-width:0) and (max-width: 360px) {
+        .imageContainer {
+            background-size: 520px;
+        }
+        .split-part-2 {
+            padding-top: 10px;
+        }
+    }
+    @media only screen and (min-width:360px) and (max-width: 768px) {
+        .imageContainer {
+            background-size: 550px;
+        }
+        .split-part-2 {
+            padding-top: 10px;
+        }
+    }
+    @media only screen and (min-width:768px) and (max-width: 1024px) {
+        .imageContainer {
+            background-size: 912px;
+        }
+        .split-part-2 {
+            padding-top: 10px;
+        }
     }
 }
