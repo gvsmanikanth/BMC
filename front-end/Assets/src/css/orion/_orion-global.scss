@@ -143,16 +143,17 @@
 				font-weight: 800;
 				position: relative;
 				display: inline-block;
+				&:after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					border-bottom: 1px solid #2BD4EE;
+					width: 100vw;
+					margin: 0 20px;
+					left: 100%;
+				}
 			}
-			:after {
-				content: '';
-				position: absolute;
-				top: 50%;
-				border-bottom: 1px solid #2BD4EE;
-				width: 100vw;
-				margin: 0 20px;
-				left: 100%;
-			}
+			
 		}
 		.anchor-banner-menu {
 			padding: 0;
@@ -164,7 +165,7 @@
 					font-size: 0.889;
 					font-weight: 800;
 					padding-right: 45px;
-					:hover{
+					&:hover{
 						color: #002C8F;
 					}
 				}

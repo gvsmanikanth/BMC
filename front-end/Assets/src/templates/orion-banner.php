@@ -14,18 +14,18 @@
                     <h2>Integrations</h2>
                     <p class="anchor-banner-title"><span>Jump to an integration</span></p>
 					<ul class="anchor-banner-menu">
-						<li><a>Platform</a></li>
-						<li><a>SAP</a></li>
-						<li><a>Informatica</a></li>
-						<li><a>Databases</a></li>
-						<li><a>AWS</a></li>
-						<li><a>Managed File Transfer</a></li>
-						<li><a>Microsoft Azure</a></li>
-						<li><a>Hadoop</a></li>
-						<li><a>Robotic Process Automation (RPA)</a></li>
-						<li><a>Lorum Ipsum</a></li>
-						<li><a>Lorum Ipsum</a></li>
-						<li><a>Lorum Ipsum</a></li>
+						<li><a href="#">Platform</a></li>
+						<li><a href="#">SAP</a></li>
+						<li><a href="#">Informatica</a></li>
+						<li><a href="#">Databases</a></li>
+						<li><a href="#">AWS</a></li>
+						<li><a href="#">Managed File Transfer</a></li>
+						<li><a href="#">Microsoft Azure</a></li>
+						<li><a href="#">Hadoop</a></li>
+						<li><a href="#">Robotic Process Automation (RPA)</a></li>
+						<li><a href="#">Lorum Ipsum</a></li>
+						<li><a href="#">Lorum Ipsum</a></li>
+						<li><a href="#">Lorum Ipsum</a></li>
 					</ul>
 				</div>     
 			</div> 			  				
