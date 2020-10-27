@@ -91,7 +91,6 @@
     }
     
 }
-/*new*/
 .anchor-banner-wrap{
     background-color: #fff;
     overflow: hidden;
@@ -130,19 +129,38 @@
         h2{
             margin-bottom: 40px;
 			font-size: 2rem;
+			line-height:1em;
 			color: #002C8F;
+			
             @media(min-width:$break-md){
 				font-size: 4rem;
+				margin-bottom: 60px;
             } 
         }
-
+		.anchor-banner-title {
+			overflow: hidden;
+			span {
+				font-weight: 800;
+				position: relative;
+				display: inline-block;
+			}
+			:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				border-bottom: 1px solid #2BD4EE;
+				width: 100vw;
+				margin: 0 20px;
+				left: 100%;
+			}
+		}
 		.anchor-banner-menu {
 			padding: 0;
 			li {
 				float: left;
 				list-style: none;
 				a {
-					color: #1A98FF;/*change color*/
+					color: #1A98FF;
 					font-size: 0.889;
 					font-weight: 800;
 					padding-right: 45px;
@@ -183,7 +201,6 @@
 	
 }
 
-/*end new*/
 .splashpage-banner-wrap{
     background-color: #fff;
     overflow: hidden;

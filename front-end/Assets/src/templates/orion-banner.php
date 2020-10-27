@@ -12,7 +12,7 @@
             <div class="layout-inner-wrap">
                 <div class="anchor-banner-content text-black ">
                     <h2>Integrations</h2>
-                    <p><strong>Jump to an integration</strong></p>
+                    <p class="anchor-banner-title"><span>Jump to an integration</span></p>
 					<ul class="anchor-banner-menu">
 						<li><a>Platform</a></li>
 						<li><a>SAP</a></li>
