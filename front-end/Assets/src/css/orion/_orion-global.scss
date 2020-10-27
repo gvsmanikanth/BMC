@@ -697,14 +697,14 @@
     .button-set {
         padding: 0px;
     }
-    .split-part-2 {
-        padding-top: 125px;
+    .layout-inner-wrap{
+        margin:auto;
     }
     .imageContainer {
         background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
         padding: 70px 0px;
         background-position: center 70%;
-        background-size: 860px;
+        background-size: 760px;
         text-align: center;
     }
     .video-portal{
@@ -712,26 +712,14 @@
     }
     @media only screen and (min-width:0) and (max-width: 360px) {
         .imageContainer {
-            background-size: 520px;
-        }
-        .split-part-2 {
-            padding-top: 10px;
+            background-size: 530px;
         }
     }
     @media only screen and (min-width:360px) and (max-width: 768px) {
-        .imageContainer {
-            background-size: 550px;
-        }
-        .split-part-2 {
-            padding-top: 10px;
-        }
     }
     @media only screen and (min-width:768px) and (max-width: 1024px) {
         .imageContainer {
-            background-size: 912px;
-        }
-        .split-part-2 {
-            padding-top: 10px;
+            background-size: 760px;
         }
     }
 }
