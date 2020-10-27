@@ -1,18 +1,18 @@
 (function( $ ){
     var rellax = new Rellax('.rellax'); 
-    // $( window ).load(function() {
-    //     setTimeout(function(){
-    //         if($('.video-feature')){
-    //             $('.fancybox-overlay').addClass('orion-page-fancybox');
-    //         }       
-    //     }, 1000);
-    // });
+    $( window ).load(function() {
+        setTimeout(function(){
+            if($('.orion-global .modal-image')){
+                $('.fancybox-overlay').addClass('orion-page-fancybox');
+            }       
+        }, 1000);
+    });
         
-    // $('.video-feature .sp-video-icon').click(function(){
-    //     setTimeout(function(){
-    //         $('.fancybox-overlay').addClass('orion-page-fancybox');
-    //     }, 1000);        
-    // });
+    $('.orion-global .modal-image').click(function(){
+        setTimeout(function(){
+            $('.fancybox-overlay').addClass('orion-page-fancybox');
+        }, 1000);        
+    });
 
     if($('#spIframe')){
         $('#spIframe').load(function(){  

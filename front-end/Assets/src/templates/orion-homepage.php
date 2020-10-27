@@ -108,7 +108,12 @@
 	<div class="layout-inner-wrap">		
 		<div class="two-up">	
 			<div class="imageContainer">
-				<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content"></img>
+				<a href="Assets/src/img/orion/home-banner-placeholder.png" class="modal-image">
+					<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content" />
+					<div class="image-modal-overlay ">
+						<img src="Assets/src/img/orion/zoom-cyan.svg" />
+					</div>
+				</a>							
 			</div>		
       	</div>
       	<div class="two-up split-part-2">
@@ -129,6 +134,8 @@
 		</div>
 	</div>
 </section>
+
+
 
 <!-- 3 up portal cards section started -->
 
@@ -601,6 +608,41 @@
 			
         </div>
     </div>    
+</section>
+
+
+
+<section class="orion-split-content bg-white orion-global">
+	<div class="layout-inner-wrap">
+		<div class="flex-wrap flex-justify-center mb2 ">
+			<div class="flex flex-item col-12 md-col-6 ">	
+				<div class="">
+					<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+					<ul class="orange-tick-bullets">
+						<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools 
+						</li>
+						<li>Eliminate unreliable delivery of critical business services</li>
+						<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
+						<li>Simplify the adoption of new technologies into your technology ecosystem </li>
+						<li>And much more!</li>
+					</ul>
+					<ul class="button-set">
+						<li>					
+							<a class="btn btn-gradient" href="#" >See all features&nbsp;&#8250;</a>
+						</li>
+					</ul>
+				</div>			
+			</div>
+			<div class="flex flex-item col-12 md-col-6 ">		
+				<a href="Assets/src/img/orion/home-banner-placeholder.png" class="modal-image">
+					<img class="" src="Assets/src/img/orion/splitcontent.png" alt="" title="split-content" />
+					<div class="image-modal-overlay ">
+						<img src="Assets/src/img/orion/zoom-cyan.svg" />
+					</div>
+				</a>			
+			</div>
+		</div>
+	</div>		
 </section>
 <div class="bg-white " style="min-height: 50px"></div>
 
