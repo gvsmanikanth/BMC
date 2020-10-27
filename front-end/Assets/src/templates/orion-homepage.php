@@ -322,6 +322,224 @@
 	</div>	
 </section>
 
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Platform</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap flex-justify-center mb2">
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+						
+
+		</div>		
+	</div>	
+</section>
+
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">SAP</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap flex-justify-center mb2">
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-6 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards">
+					<a href="#.">
+						<div class="portal-logo"><img src="Assets/src/img/orion/bmc-helix-controlm-logo.svg" alt=""></div>
+					</a>
+				</div>
+			</div>
+			<!-- col -->
+						
+
+		</div>		
+	</div>	
+</section>
+
+
+
 <!-- video-feature Component starts -->
 <section class=" orion-global bg-white text-center ">
     <div class="layout-inner-wrap">         

@@ -1,10 +1,14 @@
 
 .portal-cards{
-    padding: 20px;
+    padding: 10px;
     border: 1px solid transparent;
     border-radius: 20px;
     transition: 0.3s linear;
     margin: 10px;
+    width: 100%;
+    @media(min-width:$break-sm){
+        padding: 20px;
+    }
     a{
         display: block;
         &:focus {
@@ -33,6 +37,14 @@
     p{
         color: #75777A;
         margin-bottom: 0;
+    }
+    .portal-logo {
+        img{
+            width: 100%;
+        }
+        @media(min-width:$break-sm){
+            padding: 10px;
+        }
     }
 
 }
