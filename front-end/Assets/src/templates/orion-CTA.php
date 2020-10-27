@@ -4,9 +4,9 @@
 	include 'php-inc/head.php';
 ?>
 
-<section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
+<section class="orion-CTA-banner  orion-global" style="background-color:#FE5000;">
     <div class="banner-area layout-inner-wrap">
-    <div class="image-blob"></div>  
+    <div class="image-blob animate-CTA-banner"></div>  
     <div class="text-center content-banner">
         <div>
             <h2>Ready to peek under the hood?</h2>

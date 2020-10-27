@@ -512,20 +512,13 @@
 //Orion CTA.
 .orion-CTA-banner{
     background-color: #FE5000;
-    overflow: hidden;    
-    &:hover{
-        .image-bop {
-            @media(min-width:$break-sm){
-                transform: rotate(-5deg);
-            }             
-        }
-    }    
+    overflow: hidden;       
     .banner-area{        
          position: relative;
         .image-blob{
             position: absolute;
             z-index:5;
-            background: url(orion/CTA-blob.svg) no-repeat;
+            background: url(#{$imagesFolder}orion/CTA-blob.svg) no-repeat;
             background-size: cover;
             background-position: center center;
             text-align: center;
@@ -570,4 +563,27 @@
             }
         }   
     }        
+}
+
+.animate-CTA-banner{
+    &:hover{
+        @media(min-width:$break-sm){
+        animation-name: CTA-animate-banner;
+        animation-timing-function: ease-in-out;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;    
+        }
+    }
+}
+@keyframes CTA-animate-banner {
+    from {
+    
+            transform: rotate(0deg);
+    }
+    50% {
+            transform: rotate(-5deg);
+        }
+    to {
+            transform: rotate(0deg);
+    }
 }
