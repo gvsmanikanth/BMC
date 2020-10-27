@@ -91,6 +91,99 @@
     }
     
 }
+/*new*/
+.anchor-banner-wrap{
+    background-color: #fff;
+    overflow: hidden;
+	
+    .anchor-banner-orange-blob {
+        background-image: url(#{$imagesFolder}splashPage/banner-orange-blob.png);
+        background-repeat: no-repeat;
+		padding: 0;
+        animation-name: bounce-orange-blob;
+        animation-timing-function: ease-in-out;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+		background-size: 90% auto;
+        background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 100% 0;
+			background-size: 60% auto;
+        } 
+    }
+    .anchor-banner{
+        background-image: url(#{$imagesFolder}splashPage/banner-blue-blob.png);        
+		padding: 100px 0 40px 0;
+        background-repeat: no-repeat;
+		animation-name: bounce-blue-blob;
+        animation-timing-function: ease-in-out;
+        animation-duration: 12s;
+        animation-iteration-count: infinite;
+		background-size: 80% auto;
+		background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 90% 0;
+			background-size: 50% auto;
+			padding: 100px 0;
+        } 
+        
+        h2{
+            margin-bottom: 40px;
+			font-size: 2rem;
+			color: #002C8F;
+            @media(min-width:$break-md){
+				font-size: 4rem;
+            } 
+        }
+
+		.anchor-banner-menu {
+			padding: 0;
+			li {
+				float: left;
+				list-style: none;
+				a {
+					color: #1A98FF;/*change color*/
+					font-size: 0.889;
+					font-weight: 800;
+					padding-right: 45px;
+					:hover{
+						color: #002C8F;
+					}
+				}
+			}
+		}
+        .layout-inner-wrap{
+            position: relative;
+        }
+       
+    }
+
+    @keyframes bounce-orange-blob {
+        from {
+            background-position-y: -10%;
+        }
+        50% {
+            background-position-y: 0;
+        }
+        to {
+            background-position-y: -10%;
+        }
+    }
+    @keyframes bounce-blue-blob {
+        from {
+            background-position-y: 0;
+        }
+        50% {
+            background-position-y: -10%;
+        }
+        to {
+            background-position-y: 0;
+        }
+    }
+	
+}
+
+/*end new*/
 .splashpage-banner-wrap{
     background-color: #fff;
     overflow: hidden;
