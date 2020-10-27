@@ -25,11 +25,14 @@
                     stagePadding: 30,
                     items:1,
                 },
-                750:{
-                    stagePadding: 30,
+                832:{
+                    stagePadding: 130,
                     items:1,
                 },
                 1000:{
+                    stagePadding: 150,
+                },
+                1200:{
                     stagePadding: 300,
                 }
             }

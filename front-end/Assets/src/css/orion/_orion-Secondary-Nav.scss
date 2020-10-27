@@ -15,7 +15,7 @@
         left: 0;
         right: 0;
         width: 100%;
-        z-index: 1;
+        z-index: 10;
     }
 
     // Outer navigation wrapper
@@ -42,7 +42,7 @@
             text-decoration: none;
             text-decoration: none;
             font-size: 16px;
-            background-color: #1A98FF;
+            background-color: #29a5d6;
             border-radius: 15px;
             padding: 6px 20px;
             outline: none;
@@ -137,9 +137,9 @@
                                       
                 } 
                 &.activePage a{
-                    color: #1A98FF;
+                    color: #29a5d6;
                     &:before{
-                        background: #1A98FF;
+                        background: #29a5d6;
                         height: 8px;
                     }
                 }
@@ -234,7 +234,7 @@
         height: $nav-height;
         width: $nav-height;
     }
-    @media only screen and (max-width: 833px) {
+    @media only screen and (max-width: 831px) {
         // Hamburger nav visible on mobile only
         .nav-mobile {
             display: block;

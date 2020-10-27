@@ -49,9 +49,9 @@
 
 <!--Header Component Start -->
 <section class="splashpage-banner-wrap orion-global orion-homepage-banner">
-    <div class="sp-large-container blob-light-blue rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");'  >
+    <div class="sp-large-container blob-light-blue rellax animate-back-banner" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");'  >
 		
-		<div class="splashpage-banner rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
+		<div class="splashpage-banner rellax animate-front-banner" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
             <div class="layout-inner-wrap">
                 <div id="lottie" class="desktopOnly"></div>
                 <div class="splashpage-banner-content text-white ">
@@ -209,6 +209,52 @@
 	</div>	
 </section>
 
+<!-- quote carousel started -->
+
+<section class="orion-quote-section orion-global" style="Background-color:#fff;">
+    <div class="layout-inner-wrap">
+        <div class="headingcustomer">        
+            <h2 class="text-center orion-block-title">What Our Customers Say</h2><hr>
+        </div>    
+        <div class="orion-quote-carousel">        
+            <div class="item orion-cta">            
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- item end -->
+            <div class="item orion-cta">
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- item end -->
+            <div class="item orion-cta">
+                <div class="quote">            				
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <div class="info">
+                        <p><strong>Most Interesting Analyst In The World</strong></p>
+                        <p>Firm Yet To Be Named</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- item end -->
+
+            
+        </div>
+    </div>
+   
+</section>
+
+
 <!-- portal cards section with curve background started -->
 
 <section class="orion-global bg-white text-center py3 portal-with-background">
@@ -277,13 +323,15 @@
 </section>
 
 <!-- video-feature Component starts -->
-<section class=" orion-global bg-white text-center mb3">
+<section class=" orion-global bg-white text-center ">
     <div class="layout-inner-wrap">         
         <div class=""> 
 			<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
 			<p>Watch Ian and Robby’s ITOps Adventures.</p>
+			<img src="Assets/src/img/orion/play-circle-bluegradient.svg" alt="" class="preload-img">	
 			<div class="flex-wrap flex-justify-center mb2">
-				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
+				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
+								
 					<div class="video-portal">
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
@@ -336,17 +384,16 @@
         </div>
     </div>    
 </section>
-<div class="bg-white " style="min-height: 100px"></div>
+<div class="bg-white " style="min-height: 50px"></div>
 
 <section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
-    <div class="layout-inner-wrap banner-area">
-        <div class="image-bop"></div>  
-        <div class="text-center content-banner">
-            <div>
-                <h2>Ready to peek under the hood?</h2>
-                <p>Schedule a demo to get a look at all that Control-M SaaS has to offer, from its easy visual workflow orchestration designer to its lightning fast deployments.</p>
-                <a href="#" class="btn-octa">Watch a Demo</a>
-            </div>
+    <div class="banner-area layout-inner-wrap">
+    <div class="image-blob"></div>  
+    <div class="text-center content-banner">
+        <div>
+            <h2>Ready to peek under the hood?</h2>
+            <p>Schedule a demo to get a look at all that Control-M SaaS has to offer, from its easy visual workflow orchestration designer to its lightning fast deployments.</p>
+            <a href="#" class="btn-octa">Watch a Demo</a>
         </div>
     </div>    
 </section>

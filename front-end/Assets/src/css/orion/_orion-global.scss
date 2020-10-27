@@ -469,46 +469,21 @@
     .splashpage-banner {            
         padding: 3rem 0 10rem 0px;
         background-position: center 100%;
-        animation-name: bounce-dark-blue-background;
-        animation-timing-function: ease-in-out;
-        animation-duration: 12s;
-        animation-iteration-count: infinite;
+        
     }
     .blob-light-blue{
         background-position: center 100%;
-        padding: 0;
-        animation-name: bounce-light-blue-background;
-        animation-timing-function: ease-in-out;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
+        padding: 0;        
     }
     div#homeBannerAnimation {
         position: relative;
-        width: 100%;
+        width: 200%;
         bottom: -50px;
-    }
-    @keyframes bounce-light-blue-background {
-        from {
-            background-position: center 100%;
-        }
-        50% {
-            background-position: center 150%;
-        }
-        to {
-            background-position: center 100%;
+        @media(min-width:$break-sm){
+            width: 100%;
         }
     }
-    @keyframes bounce-dark-blue-background {
-        from {
-            background-position: center 110%;
-        }
-        50% {
-            background-position: center 100%;
-        }
-        to {
-            background-position: center 110%;
-        }
-    }
+   
     
 }
 
@@ -518,7 +493,7 @@
     background-color: #FE5000;
     overflow: hidden;    
     &:hover{
-        .image-bop {
+        .image-blob {
             @media(min-width:$break-sm){
                 transform: rotate(-5deg);
             }             
@@ -623,18 +598,31 @@
         }
         .owl-prev, .owl-next { 
             position: absolute;
-            height:60px;
-            width:60px;               
-            top:30%;
+            height:44px;
+            width:44px;               
+            top:auto;
+            background-size: 44px !important;
+            @media(min-width:$break-md){
+                top:30%;
+                height:60px;
+                width:60px;
+                background-size: 60px !important;
+            } 
         }
         .owl-prev{
             background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
-            left:5%;  
+            left:0; 
+            @media(min-width:$break-md){
+                left:5%; 
+            } 
         }
         .owl-next{
             background: url(#{$imagesFolder}orion/owl-prev-btn.svg) no-repeat scroll 0 0;
-            right: 5%;
+            right: 0;
             transform: rotate(180deg);
+            @media(min-width:$break-md){
+                right: 5%;
+            } 
         }
 
 
@@ -663,26 +651,67 @@
 
         .owl-stage-outer{
             position: relative;
+            &:after,  &:before {                               
+                @media(min-width:$break-md){ 
+                    content: '';                   
+                    background-color: rgba(255, 255, 255,  0.8);
+                    width: 15%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                @media(min-width: 1200px){
+                    width: 24%;
+                }
+            }
             &:after {
-                content: '';
-                background-color: rgba(255, 255, 255,  0.8);
-                width: 20%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                right: 0;
+                right: 0;                        
             }
             &:before {
-                content: '';
-                background-color: rgba(255, 255, 255,  0.8);
-                width: 20%;
-                height: 100%;
-                position: absolute;
-                top: 0;
                 left: 0;
                 z-index: 1;
             }
         }
 
+    }
+}
+
+
+
+.animate-front-banner{
+    animation-name: front-banner-animate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+.animate-back-banner{
+    animation-name: back-banner-animate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes front-banner-animate {
+    from {
+        background-position: center 110%;
+    }
+    50% {
+        background-position: center 100%;
+    }
+    to {
+        background-position: center 110%;
+    }
+}
+
+@keyframes back-banner-animate {
+    from {
+        background-position: center 100%;
+    }
+    50% {
+        background-position: center 150%;
+    }
+    to {
+        background-position: center 100%;
     }
 }
