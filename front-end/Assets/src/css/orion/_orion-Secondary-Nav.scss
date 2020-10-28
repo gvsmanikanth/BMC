@@ -139,8 +139,10 @@
                 &.activePage a{
                     color: #29a5d6;
                     &:before{
-                        background: #29a5d6;
-                        height: 8px;
+                        @media(min-width: $break-md){                           
+                            background: #29a5d6;
+                            height: 8px;
+                        }                        
                     }
                 }
                 .dropdownSelected{
