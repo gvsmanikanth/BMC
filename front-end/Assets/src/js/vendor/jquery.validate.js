@@ -317,7 +317,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					}
 					
 					if(_satellite){
-						_satellite.track("form_error", {email_category: emailCategory, Description:'Email Type'});
+						_satellite.track("form_error", {'e_cat': emailCategory, 'Description':'e-type'});
 					} 
 				}
 			});
