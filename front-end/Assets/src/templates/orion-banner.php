@@ -4,11 +4,14 @@
 	include 'php-inc/head.php';
 ?>
 
-<!--Header Component Start -->
-<section class="bg-white anchor-banner-wrap orion-global orion-anchor-banner">
-    <div class="sp-large-container anchor-banner-orange-blob rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/banner-orange-blob.png");'  >
+<!--Anchor Banner Component Start -->
+<!--base and variant 1: set 'blob-small' class on 'anchor-banner' and 'blob-large' class on 'anchor-banner-back-blob -->
+<!--variant 2: set 'blob-small' class on 'anchor-banner-back-blob' and 'blob-large' class on 'anchor-banner -->
+<!--to remove animation, remove 'blob-animate' class from 'anchor-banner-wrap'-->
+<section class="bg-white anchor-banner-wrap orion-global orion-anchor-banner blob-animate">
+    <div class="sp-large-container anchor-banner-back-blob blob-small rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-2-orange-cropped.svg");'  >
 		
-		<div class="anchor-banner rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/banner-blue-blob.png");'  >			
+		<div class="anchor-banner blob-large rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-2-cyan-cropped.svg");'  >			
             <div class="layout-inner-wrap">
                 <div class="anchor-banner-content text-black ">
                     <h2>Integrations</h2>
@@ -32,7 +35,10 @@
         </div>         
     </div>
 </section>
-<!--Header Component End -->
+<!--Anchor Banner Component End -->
+
+
+
 
 
 <div class="bg-white " style="min-height: 64px"></div>

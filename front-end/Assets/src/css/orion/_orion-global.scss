@@ -94,44 +94,46 @@
 .anchor-banner-wrap{
     background-color: #fff;
     overflow: hidden;
-	
-    .anchor-banner-orange-blob {
-        background-image: url(#{$imagesFolder}splashPage/banner-orange-blob.png);
-        background-repeat: no-repeat;
+	.blob-large{
+		background-size: 200% auto;
+		@media(min-width:$break-sm){
+			background-size: 90% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 60% auto;
+		}
+	}
+	.blob-small{
+		background-size: 180% auto;
+		@media(min-width:$break-sm){
+			background-size: 80% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 50% auto;
+        }
+		
+	}
+	.anchor-banner-back-blob {
+		background-repeat: no-repeat;
 		padding: 0;
-        animation-name: bounce-orange-blob;
-        animation-timing-function: ease-in-out;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
-		background-size: 90% auto;
-        background-position: 50% 0;
+		background-position: 50% 0;
 		@media(min-width:$break-md){
 			background-position: 100% 0;
-			background-size: 60% auto;
-        } 
-    }
+		}
+	}
     .anchor-banner{
-        background-image: url(#{$imagesFolder}splashPage/banner-blue-blob.png);        
-		padding: 100px 0 40px 0;
-        background-repeat: no-repeat;
-		animation-name: bounce-blue-blob;
-        animation-timing-function: ease-in-out;
-        animation-duration: 12s;
-        animation-iteration-count: infinite;
-		background-size: 80% auto;
+		background-repeat: no-repeat;
+		padding: 145px 0 40px 0;
 		background-position: 50% 0;
 		@media(min-width:$break-md){
 			background-position: 90% 0;
-			background-size: 50% auto;
 			padding: 100px 0;
-        } 
-        
+		}
         h2{
             margin-bottom: 40px;
 			font-size: 2rem;
 			line-height:1em;
 			color: #002C8F;
-			
             @media(min-width:$break-md){
 				font-size: 4rem;
 				margin-bottom: 60px;
@@ -153,7 +155,6 @@
 					left: 100%;
 				}
 			}
-			
 		}
 		.anchor-banner-menu {
 			padding: 0;
@@ -174,26 +175,42 @@
         .layout-inner-wrap{
             position: relative;
         }
-       
     }
-
-    @keyframes bounce-orange-blob {
+	&.blob-animate {
+		.anchor-banner-back-blob {
+			animation-name: bounce-back-blob;
+			animation-timing-function: linear;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			background-position-y: -10px;
+			@media(min-width:$break-md){
+				background-position-y: -5%;
+			}
+		}
+		.anchor-banner{
+			animation-name: bounce-front-blob;
+			animation-timing-function: linear;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+		}
+	}
+    @keyframes bounce-back-blob {
         from {
-            background-position-y: -10%;
+            background-position-y: -5%;
         }
         50% {
             background-position-y: 0;
         }
         to {
-            background-position-y: -10%;
+            background-position-y: -5%;
         }
     }
-    @keyframes bounce-blue-blob {
+    @keyframes bounce-front-blob {
         from {
             background-position-y: 0;
         }
         50% {
-            background-position-y: -10%;
+            background-position-y: -5%;
         }
         to {
             background-position-y: 0;
