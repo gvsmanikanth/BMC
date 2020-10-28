@@ -31,20 +31,23 @@
       // Sticky nav implimentation  
         stickyNav = $(".orion-seconday-nav");
         navHeight = stickyNav.height();
+        navHeight = navHeight + 75;
         stickyNav.scrollspy({
-          min: navHeight,
+          min: 125,
           max: 10000,
           onEnter: function(element, position) {
             console.log("in enter "+position.top);
             stickyNav.addClass('fixed');
             $('.layout-navigation').hide();
             $('.layout-header').hide();
+            $('body').css('top', navHeight);
           },
           onLeave: function(element, position) {
             console.log("in leave "+position.top);
             stickyNav.removeClass('fixed');
             $('.layout-navigation').show();
             $('.layout-header').show();
+            $('body').css('top', '0');
           }
         });
 
