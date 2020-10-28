@@ -71,24 +71,22 @@
 	
 <!--video-feature Component start -->
 <section class="video-feature text-center orion-global">
-    <div class="layout-inner-wrap video-feature-bg ">        
-        <div class="video-hero-header">
-            <hr class="sp-divider">
-            <h2 >The experts are talking about what’s to come…</h2>
-            <div class="center-block">
-				<div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player">
-					<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
-					<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
-						Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
-					</p>					                                                                          
-				</div>  
-				<div class="caption">
-					<h4> <strong>BMC Helix – The Future of Service and Operations Management</strong></h4>
-					<p>1:47</p>
-				</div>        
+    <div class="layout-inner-wrap video-feature-bg "> 
+		<hr class="sp-divider ">
+		<h2 class="orion-block-title mb3" >The experts are talking about what’s to come…</h2>
+		<div class="center-block video-hero-header">
+			<div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player">
+				<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-videobgimg="Assets/src/img/splashPage/video-bg1.jpg" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
+				<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
+					Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
+				</p>					                                                                          
+			</div>  
+			<div class="caption">
+				<h4> <strong>BMC Helix – The Future of Service and Operations Management</strong></h4>
+				<p>1:47</p>
+			</div>        
 
-			</div>
-        </div>
+		</div>        
     </div>    
 </section>
 
@@ -216,7 +214,23 @@
 	</div>	
 </section>
 
+
+<!-- Asset feature section started -->
+<section class="video-feature text-center orion-global">
+    <div class="layout-inner-wrap video-feature-bg ">
+		<hr class="sp-divider">
+		<h2 class="orion-block-title mb2">Orchestrating Predictive Maintenance</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dunt ut labore et dolore magna aliqua. </p>
+		<div class="max-width-1016">
+			<img src="Assets/src/img/orion/assetfeature-placeholder.png" alt="">
+		</div>		
+    </div>    
+</section>
+
+
+
 <!-- quote carousel started -->
+
 
 <section class="orion-quote-section orion-global" style="Background-color:#fff;">
     <div class="layout-inner-wrap">
