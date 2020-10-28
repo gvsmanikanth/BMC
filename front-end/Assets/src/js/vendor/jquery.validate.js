@@ -283,11 +283,14 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					
 					var emailCategory = 0;
 					if($formEmailValidation){
-						 emailCategory = $formEmailValidation.getEmailCategory();
+						emailCategory = $formEmailValidation.getEmailCategory();
+						if(typeof bmcMeta !== 'undefined' && bmcMeta.hasOwnProperty("user")){
+							bmcMeta.user["e_cat"] = emailCategory;
+						}
 					}
 					
 					if(_satellite){
-						_satellite.track("form_completion", {email_category: emailCategory, Description:'Email Type'});
+						_satellite.track("form_completion", {'e_cat': emailCategory});
 					}
 					
 					//fired Event2 on form submit
@@ -317,7 +320,7 @@ if($('#leadgen') || $('#nonleadgen'))	{
 					}
 					
 					if(_satellite){
-						_satellite.track("form_error", {'e_cat': emailCategory, 'Description':'e-type'});
+						_satellite.track("form_error");
 					} 
 				}
 			});
