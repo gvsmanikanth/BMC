@@ -118,6 +118,130 @@
     }
     
 }
+.anchor-banner-wrap{
+    background-color: #fff;
+    overflow: hidden;
+	.blob-large{
+		background-size: 200% auto;
+		@media(min-width:$break-sm){
+			background-size: 90% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 60% auto;
+		}
+	}
+	.blob-small{
+		background-size: 180% auto;
+		@media(min-width:$break-sm){
+			background-size: 80% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 50% auto;
+        }
+		
+	}
+	.anchor-banner-back-blob {
+		background-repeat: no-repeat;
+		padding: 0;
+		background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 100% 0;
+		}
+	}
+    .anchor-banner{
+		background-repeat: no-repeat;
+		padding: 145px 0 40px 0;
+		background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 90% 0;
+			padding: 100px 0;
+		}
+        h2{
+            margin-bottom: 40px;
+			font-size: 2rem;
+			line-height:1em;
+			color: #002C8F;
+            @media(min-width:$break-md){
+				font-size: 4rem;
+				margin-bottom: 60px;
+            } 
+        }
+		.anchor-banner-title {
+			overflow: hidden;
+			span {
+				font-weight: 800;
+				position: relative;
+				display: inline-block;
+				&:after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					border-bottom: 1px solid #2BD4EE;
+					width: 100vw;
+					margin: 0 20px;
+					left: 100%;
+				}
+			}
+		}
+		.anchor-banner-menu {
+			padding: 0;
+			li {
+				float: left;
+				list-style: none;
+				a {
+					font-size: 0.889;
+					font-weight: 800;
+					padding-right: 45px;
+				}
+			}
+		}
+        .layout-inner-wrap{
+            position: relative;
+        }
+    }
+	&.blob-animate {
+		.anchor-banner-back-blob {
+			animation-name: bounce-back-blob;
+			animation-timing-function: linear;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			background-position-y: -10px;
+			@media(min-width:$break-md){
+				background-position-y: -5%;
+			}
+		}
+		.anchor-banner{
+			animation-name: bounce-front-blob;
+			animation-timing-function: linear;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+		}
+	}
+    @keyframes bounce-back-blob {
+        from {
+            background-position-y: -5%;
+        }
+        50% {
+            background-position-y: 0;
+        }
+        to {
+            background-position-y: -5%;
+        }
+    }
+    @keyframes bounce-front-blob {
+        from {
+            background-position-y: 0;
+        }
+        50% {
+            background-position-y: -5%;
+        }
+        to {
+            background-position-y: 0;
+        }
+    }
+	
+}
+
 .splashpage-banner-wrap{
     background-color: #fff;
     overflow: hidden;
