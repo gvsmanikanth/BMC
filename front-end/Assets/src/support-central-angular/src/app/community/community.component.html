@@ -9,7 +9,7 @@
     <div class="extended-widget-body" [ngBusy]="communityService.busyConfig">
         <adapt-accordion>
             <adapt-accordion-tab *ngFor="let product of communityService.askCommunity, let i = index" [title]="product.productName" [isOpen]="i === 0">
-                <app-community-product [details]="product.communityDetails"></app-community-product>
+                <app-community-product [details]="product.communityDetails" [smartNumber]="product.productBaseSmartNo"></app-community-product>
             </adapt-accordion-tab>
         </adapt-accordion>
     </div>

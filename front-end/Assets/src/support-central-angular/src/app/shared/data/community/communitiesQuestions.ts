@@ -1,4 +1,4 @@
-import { AskCommunityProduct } from "../models/communities/ask-communities.model";
+import { AskCommunityProduct } from "../../models/communities/ask-communities.model";
 
 export const askCommunities: AskCommunityProduct[] = [
   {
