@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/bmc"/>  
+    <filter root="/apps/bmc">
+        <exclude pattern="/apps/bmc/config.author.stage/com.adobe.granite.auth.saml.SamlAuthenticationHandler-okta"/>
+        <exclude pattern="/apps/bmc/config.publish1.stage/com.adobe.granite.auth.saml.SamlAuthenticationHandler-okta"/>
+        <exclude pattern="/apps/bmc/config.publish2.stage/com.adobe.granite.auth.saml.SamlAuthenticationHandler-okta"/>
+    </filter>
     <filter root="/apps/msm/bmc"/>
     <filter root="/apps/cq/gui"/>
     <filter root="/apps/sling/servlet"/>
