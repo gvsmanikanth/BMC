@@ -56,7 +56,9 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	public String getAskCommunitiesUrl() {
 		return askCommunitiesUrl;
 	}
-
+	public String getSupportQuestionUrl(){
+		return supportQuestionUrl;
+	}
 	public String getSupportVideosUrl() {
 		return supportVideosUrl;
 	}
@@ -119,8 +121,6 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	public String getAmigoProgramUrl() {
 		return amigoProgramUrl;
 	}
-	private String supportCentralUrl;
-	private String issuePath;
 	private String newCaseUrl;
 	private String allCasesUrl;
 	private String caseDetailUrl;
@@ -128,6 +128,7 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private String documentationUrl;
 	private String productDownloadUrl;
 	private String askCommunitiesUrl;
+	private String supportQuestionUrl;
 	private String supportVideosUrl;
 	private String supportedProductUrl;
 	private String productCompatiblityUrl;
@@ -144,7 +145,6 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 	private String supportGuideUrl;
 	private String supportGuidePDFUrl;
 	private String amigoProgramUrl;
-	private String userscoreThreshold;
 	
 	PersonalisedSupportCentralService service;
 
@@ -164,6 +164,7 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		askCommunitiesUrl = service.getAskCommunitiesUrl();
 		logger.info("Fetching askCommunitiesUrl OSGi configuration ...{}",
 				askCommunitiesUrl);
+		supportQuestionUrl = service.getSupportQuestionUrl();
 		supportVideosUrl = service.getSupportVideosUrl();
 		supportedProductUrl = service.getSupportedProductUrl();
 		productCompatiblityUrl = service.getProductCompatiblityUrl();
@@ -182,7 +183,6 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		supportGuideUrl = service.getSupportGuideUrl();
 		supportGuidePDFUrl = service.getSupportGuidePDFUrl();
 		amigoProgramUrl = service.getAmigoProgramUrl();
-		userscoreThreshold=service.getUserscoreThreshold();
 	}
 
 	public Boolean getIsLoggedIn() {

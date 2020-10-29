@@ -73,6 +73,10 @@ public class PersonalisedSupportCentralService {
 		return askCommunitiesUrl;
 	}
 
+	public String getSupportQuestionUrl(){
+		return supportQuestionUrl;
+	}
+	
 	public String getSupportVideosUrl() {
 		return supportVideosUrl;
 	}
@@ -191,6 +195,7 @@ public class PersonalisedSupportCentralService {
     private String documentationUrl;
     private String productDownloadUrl;
     private String askCommunitiesUrl ;
+    private String supportQuestionUrl;
     private String supportVideosUrl ;
     private String supportedProductUrl;
     private String productCompatiblityUrl;
@@ -243,6 +248,7 @@ public class PersonalisedSupportCentralService {
     	logger.info("Service Fetching productDownloadUrl OSGi configuration {}...",productDownloadUrl);
 
         askCommunitiesUrl =PropertiesUtil.toString(config.get("askCommunitiesUrl"), "");
+        supportQuestionUrl = PropertiesUtil.toString(config.get("supportQuestionUrl"),"");
         supportVideosUrl =PropertiesUtil.toString(config.get("supportVideosUrl"), "");
         supportedProductUrl=PropertiesUtil.toString(config.get("supportedProductUrl"), "");
         productCompatiblityUrl=PropertiesUtil.toString(config.get("productCompatiblityUrl"), "");

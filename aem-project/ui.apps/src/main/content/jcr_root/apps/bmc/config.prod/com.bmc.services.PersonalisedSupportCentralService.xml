@@ -12,6 +12,7 @@
    	      supportCoveoAccessToken="xx22f4c9e1-1567-4f84-a34e-1d603995893b"
     	  caseMgtmUrl="https://www.bmc.com/support/resources/issue-defect-management.html"
 		  askCommunitiesUrl = "https://communities.bmc.com/welcome"
+		  supportQuestionUrl = "https://communities.bmc.com/community/support/"
 		  productDownloadUrl="https://www.bmc.com/available/epd.html"
 		  documentationUrl="https://docs.bmc.com/docs/dashboard.action"
 		  productSupportUrl ="https://docs.bmc.com/docs/productinfo"
