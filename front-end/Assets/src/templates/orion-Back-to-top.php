@@ -4,6 +4,7 @@
 	include 'php-inc/head.php';
 ?>
 <style>
+  /*
 #backtotop {
   display: none;
   position: fixed;
@@ -13,14 +14,18 @@
   border: none;
   outline: none;
   cursor: pointer;
-}</style>
+}
+*/</style>
 
-
+<!-- Back to Top icon start and button which shown on scroll to bottom -->
 <a onclick="backtotopFunction()" id="backtotop" title="Go to top"><img src="Assets/src/img/orion/back-to-top.svg"></a>
+<!-- Back to Top icon End -->
 
+
+<!-- dummy Content for testing start-->
 <div style="background-color:black;color:white;padding:30px">Scroll Down</div>
-<div style="background-color:lightgrey;padding:30px 30px 2500px">scroll to top Example 
-  <strong>when the user starts to scroll the page</strong>.</div>
+<div style="background-color:lightgrey;padding:30px 30px 2500px">scroll to top Example <strong>when the user starts to scroll the page</strong>.</div>
+  <!-- dummy Content for testing End -->
 
 <script>
 //Get the button
