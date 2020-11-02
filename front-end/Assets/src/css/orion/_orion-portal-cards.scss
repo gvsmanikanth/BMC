@@ -1,13 +1,15 @@
 
 .portal-cards{
     padding: 10px;
-    border: 1px solid transparent;
+    border: 1px solid #dedede;
     border-radius: 20px;
     transition: 0.3s linear;
     margin: 10px;
     width: 100%;
+    transition: color 0.3s linear;
     @media(min-width:$break-sm){
         padding: 20px;
+        border: 1px solid transparent;
     }
     a{
         display: block;
@@ -16,10 +18,11 @@
         }
     }
     &:hover{
-        border-color: #29a5d6;
+        border-color: #046eb1;
         transition: 0.3s linear;
         h4 {
-           // border-color: #1A98FF;
+           color: #046eb1;
+           transition: color 0.3s linear;
         }
     }
     .icon-div{
@@ -29,7 +32,7 @@
     }
     h4 {
         color: #29a5d6;
-       // border-bottom: 2px solid #F98700;
+        transition: color 0.3s linear;
         display: inline-block;
         margin-bottom: 15px;
         font-weight: 700;
