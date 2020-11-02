@@ -1,19 +1,19 @@
 <?php
-	$pageTitle = 'Anchor Banner w Links - v1';
+	$pageTitle = 'Banner w Links - v1';
 	$bodyClass = 'splashPage';
 	include 'php-inc/head.php';
 ?>
 
 <!--Orion Banner - V1 Component Start -->
 
-<section class="bg-white orion-global orion-banner-v2	">
+<section class="bg-white orion-global orion-banner orion-banner-v1	">
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							
                 <div class="flex flex-item col-12 sm-col-7">	
                     <div class="">
-                        <h1>Support</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1>Predictive Maintenance</h1>
+                        <p>Optimize, automate, and orchestrate your predictive maintenance data pipeline to stay ahead of the competition and eliminate unplanned downtime.</p>
                     </div>							
                 </div>
                 <div class="flex flex-item col-12 sm-col-5">	
@@ -22,16 +22,16 @@
             </div>     
         </div> 
         <div class="blob-container">        
-            <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-2-cyan.svg");' >		
-                <div class="blob-masked rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-2-blue.svg");'  >
-                </div>         
+            <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
+                       
             </div>
+            <div class="blob-masked rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-orange.svg");'  >
+            </div> 
         </div>
     </div>	
     
 </section>
 <!--Anchor Banner Component End -->
-
 
 
 
