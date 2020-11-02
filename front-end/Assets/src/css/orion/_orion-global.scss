@@ -801,7 +801,18 @@
         font-size:1em;
     }
     hr{
-        margin-bottom:30px;
+        margin-bottom:40px;
         margin-top:20px;
     }
+    .upper-section{
+      h3{
+          margin-top: 50px;
+      }  
+    }
+    @media(min-width:$break-md){ 
+        .upper-section{
+            width:60%;
+        }
+    }
+    
 }

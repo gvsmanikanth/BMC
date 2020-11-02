@@ -6,7 +6,7 @@
 
 <section class="horizontal-list section bg-white">
 	<div class="section-content py4">
-      <div style="width:60%">
+      <div class="upper-section">
           <h2 class="orion-block-title">Control-M SaaS turns Predictive Maintenance from arduous chore to enjoyable delight.</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <h3>Headline connecting benefit to a challenge</h3>
