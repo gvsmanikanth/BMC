@@ -827,7 +827,9 @@ function addFilterToArrayProtoype() {
 	
 
 //WEB-2197 - Link behavior of picked items - same, separate, or modal window
-$("a").externalLink({fileTypes:".doc,.pdf,/documents/"});
+//WEB-9158 - Do not open /documents/ link in new window
+//$("a").externalLink({fileTypes:".doc,.pdf,/documents/"});
+$("a").externalLink({fileTypes:".doc,.pdf"});
 $("a").productInterest();//WEB-2626
 
 
