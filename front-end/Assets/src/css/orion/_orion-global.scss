@@ -804,6 +804,7 @@
         margin-bottom:40px;
         margin-top:20px;
     }
+
     .upper-section{
       h3{
           margin-top: 50px;
@@ -827,3 +828,7 @@
     outline: none;
     cursor: pointer;
   }
+
+  .orion-body .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+    margin-top: 0px;
+}
