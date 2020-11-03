@@ -14,7 +14,7 @@
 <section class="splashpage-banner-wrap orion-global orion-homepage-banner">
     <div class="sp-large-container blob-light-blue rellax animate-back-banner" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");'  >
 		
-		<div class="splashpage-banner rellax animate-front-banner" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
+		<div class="splashpage-banner rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
             <div class="layout-inner-wrap">
                 <div id="lottie" class="desktopOnly"></div>
                 <div class="splashpage-banner-content text-white ">
