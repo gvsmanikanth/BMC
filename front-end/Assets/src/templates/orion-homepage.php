@@ -11,11 +11,10 @@
 
 
 <!--Header Component Start -->
-<section class="splashpage-banner-wrap orion-global orion-homepage-banner">
-    <div class="sp-large-container blob-light-blue rellax animate-back-banner" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/home-banner-blob-blue.svg");'  >
-		
-		<div class="splashpage-banner rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/homebanner-blob.png");'  >			
-            <div class="layout-inner-wrap">
+<section class="splashpage-banner-wrap orion-global orion-homepage-banner" >
+    <div class="sp-large-container blob-light-blue rellax animate-back-banner" data-rellax-speed="3" style='background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221881.848%22%20height%3D%22783.967%22%20viewBox%3D%220%200%201881.848%20783.967%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20.cls-1%20%7B%0A%20%20%20%20%20%20%20%20fill%3A%20url(%23linear-gradient)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22linear-gradient%22%20x1%3D%220.039%22%20y1%3D%220.153%22%20x2%3D%220.871%22%20y2%3D%220.963%22%20gradientUnits%3D%22objectBoundingBox%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%232bd4ee%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231a98ff%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20id%3D%22Path_2406%22%20data-name%3D%22Path%202406%22%20class%3D%22cls-1%22%20d%3D%22M3805.655%2C1257.643c-5.044-63.51-7.508-137.257-40.151-193.276-23.089-.105-73.687%2C20.633-81.215%2C20.633H2064.554c-5.067%2C0-83.065-14.358-85.553-1.005-4.042%2C21.7-12.8%2C43.99-17.653%2C65.933q-8.493%2C38.424-15.193%2C77.215-13.4%2C77.553-19.537%2C156.129c-6.205%2C79.5%2C5.764%2C152.109%2C39.942%2C225%2C27.363%2C58.361%2C65.6%2C113.159%2C116.492%2C153.374%2C39.887%2C31.521%2C87.766%2C53.21%2C138.84%2C56.888a223.274%2C223.274%2C0%2C0%2C0%2C22.788.483%2C228.723%2C228.723%2C0%2C0%2C0%2C91.913-22.61c24.372-7.666%2C48.622-15.779%2C73.785-20.567%2C95.165-18.11%2C205.32-3.052%2C293.3%2C35.89%2C40.476%2C17.92%2C80.107%2C30.387%2C124.607%2C34.7%2C130.346%2C12.634%2C262.933-41.886%2C400.82-40.766%2C41.459.183%2C82.547%2C5.442%2C123.309%2C12.652%2C42.428%2C7.505%2C64.214%2C15.647%2C93.729%2C17.379a249.991%2C249.991%2C0%2C0%2C0%2C52.3%2C3.921c64.852-1.965%2C127-29.1%2C172.012-75.919%2C49.252-51.232%2C76.868-125.719%2C95.044-193.159%2C24.452-90.73%2C42.062-190.4%2C41.373-284.554Q3806.772%2C1271.635%2C3805.655%2C1257.643Z%22%20transform%3D%22translate(-1925.049%20-1064.367)%22%2F%3E%0A%3C%2Fsvg%3E%0A"); '  >		
+		<div class="splashpage-banner rellax" data-rellax-speed="-3" id="orion-home-front-banner" style='background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221747.156%22%20height%3D%22871.591%22%20viewBox%3D%220%200%201747.156%20871.591%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20.cls-1%20%7B%0A%20%20%20%20%20%20%20%20fill%3A%20url(%23linear-gradient)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22linear-gradient%22%20x1%3D%220.547%22%20y1%3D%220.991%22%20x2%3D%220.577%22%20y2%3D%220.115%22%20gradientUnits%3D%22objectBoundingBox%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23002c8f%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23000760%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cpath%20id%3D%22Subtraction_21%22%20data-name%3D%22Subtraction%2021%22%20class%3D%22cls-1%22%20d%3D%22M777.04%2C1862.73c-1.416%2C0-2.848-.007-4.256-.02-19.094-.181-37.427-1.134-54.489-2.834a457.711%2C457.711%2C0%2C0%2C1-49.775-7.639%2C372.023%2C372.023%2C0%2C0%2C1-45.726-12.772%2C335.815%2C335.815%2C0%2C0%2C1-42.341-18.233%2C341.64%2C341.64%2C0%2C0%2C1-39.62-24.02%2C390.564%2C390.564%2C0%2C0%2C1-37.564-30.137A493.188%2C493.188%2C0%2C0%2C1%2C467.1%2C1730.5c-11.7-13.079-23.623-27.665-35.444-43.352-23.1-30.209-43.213-65.762-59.767-105.671a605.641%2C605.641%2C0%2C0%2C1-21.158-59.937c-6.008-20.3-11.141-41.381-15.255-62.662-4.065-21.028-7.19-42.52-9.287-63.88-2.087-21.263-3.183-42.658-3.255-63.591a615.249%2C615.249%2C0%2C0%2C1%2C2.842-61.8%2C521.459%2C521.459%2C0%2C0%2C1%2C9-58.493c9.212-45.119%2C17.622-81.492%2C26.467-114.469%2C10.538-39.294%2C21.738-73.8%2C34.238-105.506H2068c1.3%2C18.594%2C2%2C37.605%2C2.073%2C56.5.071%2C18.641-.467%2C37.673-1.6%2C56.568-1.115%2C18.642-2.835%2C37.643-5.115%2C56.476-2.249%2C18.589-5.1%2C37.507-8.48%2C56.229-3.335%2C18.488-7.27%2C37.271-11.694%2C55.827-4.372%2C18.338-9.337%2C36.933-14.756%2C55.27-5.359%2C18.132-11.3%2C36.489-17.667%2C54.558-6.3%2C17.878-13.168%2C35.942-20.425%2C53.691-7.972%2C19.177-16.4%2C37.935-25.036%2C55.753-9.008%2C18.579-18.48%2C36.6-28.151%2C53.576-10.07%2C17.671-20.615%2C34.653-31.343%2C50.473-11.155%2C16.45-22.8%2C32.075-34.609%2C46.442a516.292%2C516.292%2C0%2C0%2C1-37.952%2C41.485%2C423.84%2C423.84%2C0%2C0%2C1-41.369%2C35.6%2C355.931%2C355.931%2C0%2C0%2C1-44.862%2C28.789c-7.8%2C4.194-15.8%2C8.081-23.765%2C11.551-8.1%2C3.526-16.4%2C6.723-24.666%2C9.5a318.2%2C318.2%2C0%2C0%2C1-31.8%2C8.476c-10.477%2C2.233-21.592%2C4.084-33.034%2C5.5a560.806%2C560.806%2C0%2C0%2C1-69.2%2C3.866c-19.135%2C0-40.44-.724-65.132-2.215-22.068-1.332-44.9-3.15-66.99-4.908l-2.224-.177-.021%2C0c-21.253-1.691-45.342-3.608-69.173-5.017-25.965-1.535-48.676-2.281-69.43-2.281-21.1%2C0-40.363.747-58.889%2C2.284-17.61%2C1.395-35.447%2C3.574-54.532%2C6.662-16.988%2C2.748-34.569%2C6.157-53.748%2C10.42-35.6%2C7.914-71.246%2C17.605-105.717%2C26.977h-.005c-19.873%2C5.4-40.423%2C10.99-60.556%2C16.12-22.55%2C5.746-42.278%2C10.323-60.31%2C13.992-21.607%2C4.4-41.328%2C7.622-60.289%2C9.862-10.265%2C1.213-20.428%2C2.141-30.207%2C2.758C797.073%2C1862.4%2C786.883%2C1862.73%2C777.04%2C1862.73Z%22%20transform%3D%22translate(-322.927%20-991.139)%22%2F%3E%0A%3C%2Fsvg%3E"); '  >			
+            <div class="layout-inner-wrap" >
                 <div id="lottie" class="desktopOnly"></div>
                 <div class="splashpage-banner-content text-white ">
                     <div class="bannerLogo" >
@@ -40,7 +39,7 @@
 		<div class="center-block video-hero-header">
 			<div id="youtube_KvL1x6ZSNsc" class="youtube-video inline-youtube-video-player">
 				<div id="KvL1x6ZSNsc" class="youtubePlayer" data-customview="highResImage-CustomPlayIcon" data-src="KvL1x6ZSNsc" data-autoplay=0 data-fullscreen=0></div>
-				<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay">
+				<p id="youtubeOverlay_KvL1x6ZSNsc" class="youtubeOverlay desktopOnly">
 					Find out how BMC can help you. <a id='overlayLink' href='http://www.bmc.com/forms/ESM_ContactCenter_ContactRequest_BMCcom_EN_Jan2014.html'>Contact a sales rep ›</a>
 				</p>					                                                                          
 			</div>  
@@ -674,5 +673,12 @@
 		});
 		} 
 	deferlootieAnimFunction(lootieAnimInit)
+
+	// added for banner image on load of image
+    function loadImageBanner(){
+		var bgdiv = document.getElementById('orion-home-front-banner');
+		bgdiv.style.backgroundImage = "url('Assets/src/img/orion/homebanner-blob.png')";
+	}
 </script>
+<img src="Assets/src/img/orion/homebanner-blob.png" onload="loadImageBanner()" width="0" height="0">
 <?php include 'php-inc/foot.php'; ?>

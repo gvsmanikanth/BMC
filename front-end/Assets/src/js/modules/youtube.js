@@ -97,7 +97,7 @@ XT.yt = {
                     );
                 
                     if(overlay.length > 0){
-                        overlay.parent().append(this.$thumbnail);
+                        overlay.before(this.$thumbnail);
                     }else{
                         backgroundVideoContainer.append(this.$thumbnail);
                     }
