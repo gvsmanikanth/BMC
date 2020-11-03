@@ -45,6 +45,18 @@
                       
     }
 
+
+    // Adding Active Navigation Class Based on URL
+    $(function(){
+        var current = location.pathname;
+        $('.orion-seconday-nav .nav-list li a').each(function(){
+            var $this = $(this);
+            // if the current path is like this link, make it active
+            if($this.attr('href').indexOf(current) !== -1){
+                $this.parent().addClass('activePage');
+            }
+        })
+    })
     
     
    

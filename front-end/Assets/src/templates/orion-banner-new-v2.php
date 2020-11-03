@@ -1,7 +1,8 @@
 <?php
 	$pageTitle = 'Anchor Banner w Links - v1';
 	$bodyClass = 'splashPage';
-	include 'php-inc/head.php';
+    include 'php-inc/head.php';
+    include 'php-inc/orion-secondary-navigation.php';
 ?>
 
 <!--Orion Banner - V1 Component Start -->
