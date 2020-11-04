@@ -63,57 +63,52 @@
     </div>    
 </section>
 
-<!--orion-split-content Component start -->
+<!--orion-split-content with cloud background Component start -->
 <section class="orion-split-content bg-white orion-global">
-<div class="layout-inner-wrap">
-	<div class="flex-wrap  mb2">
-		<div class="flex flex-item col-12 md-col-6 mb2">
-			<div class="">
+	<div class="layout-inner-wrap">
+		<div class="flex-wrap  mb2">
+			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
 				<div class="imageContainer">
 					<a href="https://www.bmc.com/content/dam/bmc/solutions/banners/banner-placeholder.png" class="modal-image">
-                        <img class="" src="https://www.bmc.com/content/dam/bmc/solutions/screenshots/split-content.png" alt="split-content" title="split-content" />
-                        <div class="image-modal-overlay ">
-                            <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/zoom-cyan.svg" />
-                        </div>
-                    </a>
+						<img class="" src="https://www.bmc.com/content/dam/bmc/solutions/screenshots/split-content.png" alt="split-content" title="split-content" />
+						<div class="image-modal-overlay ">
+							<img src="https://www.bmc.com/content/dam/bmc/solutions/icons/zoom-cyan.svg" />
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="flex flex-item col-12 lg-col-7 flex-center">
+				<div class="split-text-content">
+					<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+					<ul class="orange-tick-bullets">
+						<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools</li>
+						<li>Eliminate unreliable delivery of critical business services</li>
+						<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
+						<li>Simplify the adoption of new technologies into your technology ecosystem </li>
+						<li>And much more!</li>
+					</ul>
+					<div class="button-set">
+						<a class="btn btn-gradient" href="/it-solutions/bmc-helix-control-m-features.html">See all features&nbsp;›</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="flex flex-item col-12 md-col-6 flex-center">
-			<div class="">
-				<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
-				<ul class="orange-tick-bullets">
-					<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools</li>
-					<li>Eliminate unreliable delivery of critical business services</li>
-					<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
-					<li>Simplify the adoption of new technologies into your technology ecosystem </li>
-					<li>And much more!</li>
-				</ul>
-				<div class="button-set">
-					<a class="btn btn-gradient" href="/it-solutions/bmc-helix-control-m-features.html">See all features&nbsp;›</a>
-				</div>
-			</div>
-		</div>
-  </div>
-  </div>
+  	</div>
 </section>
+<!--orion-split-content with cloud background Component ends -->
 
-
-<!--orion-split-content withoud cloud bg Component start -->
+<!--orion-split-content without cloud background Component start -->
 
 <section class="orion-split-content bg-white orion-global">
 	<div class="layout-inner-wrap">
 		<div class="flex-wrap mb2">		
-			<div class="flex flex-item col-12 md-col-6 mb2">
-				<div class="">
-					<div class="imageContainer-no-cloud-bg">
-						<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content"></img>
-					</div>
-				</div>
-				<!--<img class="" src="Assets/src/img/orion/splitcontent.png" alt="" title="split-content">-->
+			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
+				<div class="imageContainer-no-cloud-bg">
+					<img class="" src="Assets/src/img/orion/splitimage-placeholder.png" alt="split-content" title="split-content"></img>
+				</div>				
 			</div>
-			<div class="flex flex-item col-12 md-col-6 flex-center">
-				<div class="">
+			<div class="flex flex-item col-12 lg-col-7 flex-center">
+				<div class="split-text-content">
 					<h4 class="block-tag mb2"><strong>Documentation</strong></h4>
 					<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
 					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et</p>
@@ -125,6 +120,52 @@
 		</div>
 	</div>
 </section>
+<!--orion-split-content without cloud background Component ends -->
+
+
+
+<!--orion-split-content  video Component start -->
+<section class="orion-split-content orion-split-content-video bg-white orion-global">
+	<div class="layout-inner-wrap">
+		<div class="flex-wrap  mb2">
+			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
+				<div class="imageContainer" background>
+					<div class="video-portal">
+						<div class="video-img">
+							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+								<div class="img-div">
+									<img src="Assets/src/img/orion/splitcontent.png" alt="">
+								</div>
+								<div class="video-overlay"><span class="play-icon"></span></div>
+							</a>
+						</div>
+						<div class="caption text-left">
+							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+							<p>1:45</p>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="flex flex-item col-12 lg-col-7 flex-center">
+				<div class="split-text-content">
+					<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+					<ul class="orange-tick-bullets">
+						<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools</li>
+						<li>Eliminate unreliable delivery of critical business services</li>
+						<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
+						<li>Simplify the adoption of new technologies into your technology ecosystem </li>
+						<li>And much more!</li>
+					</ul>
+					<div class="button-set">
+						<a class="btn btn-gradient" href="/it-solutions/bmc-helix-control-m-features.html">See all features&nbsp;›</a>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+</section>
+<!--orion-split-content with cloud background Component ends -->
+
 
 
 <!-- 3 up portal cards section started -->
