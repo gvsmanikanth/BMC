@@ -17,9 +17,6 @@ import javax.jcr.query.qom.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Provides Video Data Component properties (components/content/video-data) for Use
@@ -33,9 +30,12 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     private static final String VID_PROPERTY= "vID";
     private static final String DAM_PATH_PROPERTY= "damVideoPath";
 
+
+
     public boolean getIsValid() { return isValid; }
     public String getVideoPath() { return videoPath; }
     public boolean getUseModal() { return useModal; }
+    public Boolean getLearnMore () { return learnMore; }
     public boolean getIsYouTube() { return (type == VideoType.YouTube); }
     public boolean getIsDam() { return (type == VideoType.Dam); }
     public String getTypeName() { return type.toString(); }
@@ -58,6 +58,7 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     private String overlayUrl = "";
     private String thumbnailPath = "";
     private String videoLength ="";
+    private Boolean learnMore;
     private NameValuePair[] damRenditions;
 
     @Override
@@ -83,6 +84,7 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
                 ValueMap map = resource.getValueMap();
                 overlayText = map.get("overlayText", "");
                 overlayUrl = StringHelper.resolveHref(map.get("overlayUrl", "")).orElse("");
+                learnMore = map.get("learnMore",false);
                 isValid = !videoId.isEmpty();
                 break;
             case Dam:

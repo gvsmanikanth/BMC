@@ -117,6 +117,13 @@
                                 fieldDescription="Length(Duration) of the video in Minutes."
                                 fieldLabel="Video Length."
                                 name="./videoLength"/>
+                            <learnMore
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="When checked, the overlay text will be appended with '›'."
+                                name="./learnMore"
+                                text="Append '›' to the Overlay text?"
+                                value="{Boolean}true"/>
                         </items>
                     </column>
                 </items>

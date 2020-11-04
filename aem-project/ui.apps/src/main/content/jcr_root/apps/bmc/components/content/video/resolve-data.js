@@ -2,6 +2,7 @@
 use(function() {
     var overlayUrl = this.video.overlayUrl;       
     var overlayText = this.video.overlayText;
+    var learnMore = this.video.learnMore;   
 
 	  //WEB-8912 Video Component - Overlay URL/Text Enhancements
   	if (overlayUrl.isEmpty() || overlayText.isEmpty()) {
@@ -11,9 +12,15 @@ use(function() {
 
          overlayText = 'LINK-'+overlayText+'-LINK'; 
     }
+    //WEB-9202 Video Component Enhancements
+    if(learnMore == true)
+    {
+    	learnMore = 'learn-more';
+    }else {
+   		 learnMore = '';
+    }
 
-
-    overlayText = overlayText.replace('LINK-', "<a id='overlayLink' target='_top' href='" + overlayUrl + "'>");
+    overlayText = overlayText.replace('LINK-', "<a id='overlayLink' target='_top' href='" + overlayUrl + "' class = '"+ learnMore +"'>");
     overlayText = overlayText.replace('-LINK', '</a>');
     
     return {        
