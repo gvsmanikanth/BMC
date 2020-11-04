@@ -587,41 +587,6 @@
     }
 }
 
-//Orion Split-content
-.orion-split-content {
-    .flex-wrap{
-        width:auto;
-    }
-    padding: 30px 0px;
-    .button-bullet {
-        padding: 0px;
-    }
-    .button-set {
-        padding: 0px;
-    }
-    .split-part-2 {
-        padding-top: 45px;
-    }
-    .imageContainer {
-        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
-        padding: 60px 0px;
-        background-position: center 70%;
-        background-size: 700px;
-        text-align: center;
-    }
-    @media only screen and (min-width:0) and (max-width: 360px) {
-        .imageContainer {
-            background-size: 450px;
-        }
-    }
-    @media only screen and (min-width:768px) and (max-width: 1024px) {
-        .imageContainer {
-            background-size: 580px;
-        }
-    }
-}
-
-
 .clearfix{
     clear:both;
 
@@ -767,41 +732,7 @@
     }
 }
 
-//Orion Split-content-video
-.orion-split-content-video {
-    padding: 30px 0px;
-    .button-bullet {
-        padding: 0px;
-    }
-    .button-set {
-        padding: 0px;
-    }
-    .layout-inner-wrap{
-        margin:auto;
-    }
-    .imageContainer {
-        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
-        padding: 70px 0px;
-        background-position: center 70%;
-        background-size: 760px;
-        text-align: center;
-    }
-    .video-portal{
-        margin:0px;
-    }
-    @media only screen and (min-width:0) and (max-width: 360px) {
-        .imageContainer {
-            background-size: 530px;
-        }
-    }
-    @media only screen and (min-width:360px) and (max-width: 768px) {
-    }
-    @media only screen and (min-width:768px) and (max-width: 1024px) {
-        .imageContainer {
-            background-size: 760px;
-        }
-    }
-}
+
 .horizontal-list{
 
     h5{
@@ -853,6 +784,8 @@
   .orion-body .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
     margin-top: 0px;
 }
+
+
 // product-list
 
 .resource-card-list{
@@ -899,7 +832,7 @@
                 color: #fff !important;
             }
             .card-footer{
-                transition: 0.3s linear;					
+                transition: 0.3s linear;                    
                 padding-right: 20px;
                 background-position: left bottom;
             }
@@ -942,7 +875,7 @@
                 background: #1a98ff;
             }
         }
-        .card-footer{	
+        .card-footer{   
             margin-top: 50px;
             text-align: right;
             padding-bottom: 10px;
@@ -961,7 +894,7 @@
             .learn-more {
                 color: #3980B2;
                 font-size: 0.9rem;
-                display: block;				
+                display: block;             
                 transition: 0.3s linear;
                 border-top: 1px solid #3980B2;
                 padding-top: 10px;
@@ -977,3 +910,4 @@
     }
     
 }
+
