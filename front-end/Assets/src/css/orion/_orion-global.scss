@@ -821,12 +821,21 @@
 #backtotop {
     display: none;
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     right: 30px;
     z-index: 99;
     border: none;
     outline: none;
     cursor: pointer;
+    font-size: 14px;
+    color: #1A98FF;
+    width: 58px;
+    background: #fff;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px;
+    filter: drop-shadow(3px 4px 1px #cccccc6e);
+    border-radius: 4px;
   }
 
   .orion-body .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {

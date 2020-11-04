@@ -176,7 +176,7 @@
 	</div>	
 </section>
 
-
+<a  id="backtotop" title="Go to top">Back to Top</a>
 <!-- Asset feature section started -->
 <section class="video-feature text-center orion-global">
     <div class="layout-inner-wrap video-feature-bg ">
