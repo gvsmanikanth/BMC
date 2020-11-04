@@ -44,12 +44,8 @@
 //Orion Split-content-video
 .orion-split-content-video {
     padding: 30px 0px;
-    .imageContainer {
-        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
-        padding: 70px 0px;
-        background-position: center 70%;
+    .imageContainer {        
         background-size: 760px;
-        text-align: center;
     }
     .video-portal{
         margin:0px;

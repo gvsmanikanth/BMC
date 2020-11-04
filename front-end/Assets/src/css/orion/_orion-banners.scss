@@ -103,9 +103,11 @@
 			}
         }
         .orion-banner-right-image {
-            position: absolute;
-            right: 10%;
-            top: 20px;
+            @media(min-width:$break-sm){
+                position: absolute;
+                right: 10%;
+                top: 20px;
+            }            
         }
     }
     
