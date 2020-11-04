@@ -40,7 +40,13 @@
             line-height: 26px;
         }
     }
-   
+    padding: 30px 0;
+    @media(min-width:$break-sm){
+        padding: 40px 0;
+    }
+    @media(min-width:$break-md){
+        padding: 64px 0;
+    }
     .btn-gradient{
         background: rgb(249,135,0);
         background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(254,80,0,1) 100%);
@@ -88,6 +94,7 @@
     }
     .orion-block-title{
         color: #002C8F;
+        margin-top: 0;
     }
     .modal-image{
         position: relative;
@@ -245,6 +252,7 @@
 .splashpage-banner-wrap{
     background-color: #fff;
     overflow: hidden;
+    padding: 0;
     .blob-light-blue{
         background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-light.svg);
         background-repeat: no-repeat;
@@ -645,7 +653,8 @@
 //Orion CTA.
 .orion-CTA-banner{
     background-color: #FE5000;
-    overflow: hidden;       
+    overflow: hidden;     
+    padding: 0;  
     .banner-area{        
          position: relative;
         .image-blob{

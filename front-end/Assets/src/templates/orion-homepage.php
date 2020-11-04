@@ -65,36 +65,66 @@
 
 <!--orion-split-content Component start -->
 <section class="orion-split-content bg-white orion-global">
-	<div class="layout-inner-wrap">		
-		<div class="two-up">	
-			<div class="imageContainer">
-				<a href="Assets/src/img/orion/home-banner-placeholder.png" class="modal-image">
-					<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content" />
-					<div class="image-modal-overlay ">
-						<img src="Assets/src/img/orion/zoom-cyan.svg" />
+<div class="layout-inner-wrap">
+	<div class="flex-wrap  mb2">
+		<div class="flex flex-item col-12 md-col-6 mb2">
+			<div class="">
+				<div class="imageContainer">
+					<a href="https://www.bmc.com/content/dam/bmc/solutions/banners/banner-placeholder.png" class="modal-image">
+                        <img class="" src="https://www.bmc.com/content/dam/bmc/solutions/screenshots/split-content.png" alt="split-content" title="split-content" />
+                        <div class="image-modal-overlay ">
+                            <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/zoom-cyan.svg" />
+                        </div>
+                    </a>
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-item col-12 md-col-6 flex-center">
+			<div class="">
+				<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+				<ul class="orange-tick-bullets">
+					<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools</li>
+					<li>Eliminate unreliable delivery of critical business services</li>
+					<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
+					<li>Simplify the adoption of new technologies into your technology ecosystem </li>
+					<li>And much more!</li>
+				</ul>
+				<div class="button-set">
+					<a class="btn btn-gradient" href="/it-solutions/bmc-helix-control-m-features.html">See all features&nbsp;›</a>
+				</div>
+			</div>
+		</div>
+  </div>
+  </div>
+</section>
+
+
+<!--orion-split-content withoud cloud bg Component start -->
+
+<section class="orion-split-content bg-white orion-global">
+	<div class="layout-inner-wrap">
+		<div class="flex-wrap mb2">		
+			<div class="flex flex-item col-12 md-col-6 mb2">
+				<div class="">
+					<div class="imageContainer-no-cloud-bg">
+						<img class="" src="Assets/src/img/orion/splitcontent.png" alt="split-content" title="split-content"></img>
 					</div>
-				</a>							
-			</div>		
-      	</div>
-      	<div class="two-up split-part-2">
-			<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
-			<ul class="orange-tick-bullets">
-				<li><strong></strong>Orchestrate applications across multiple clouds/on-prem without relying on disparate tools 
-				</li>
-				<li>Eliminate unreliable delivery of critical business services</li>
-				<li>Deliver business agility by integrating into any DevOps automation tool chain with ‘as-Code’ interfaces </li>
-				<li>Simplify the adoption of new technologies into your technology ecosystem </li>
-				<li>And much more!</li>
-			</ul>
-			<ul class="button-set">
-				<li>					
-					<a class="btn btn-gradient" href="#" >See all features&nbsp;&#8250;</a>
-				</li>
-			</ul>
+				</div>
+				<!--<img class="" src="Assets/src/img/orion/splitcontent.png" alt="" title="split-content">-->
+			</div>
+			<div class="flex flex-item col-12 md-col-6 flex-center">
+				<div class="">
+					<h4 class="block-tag mb2"><strong>Documentation</strong></h4>
+					<h2 class="orion-block-title">With BMC Helix Control-M You Can:</h2>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et</p>
+					<div class="button-set">
+						<a class="btn btn-gradient" href="#">See all features&nbsp;›</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-
 
 
 <!-- 3 up portal cards section started -->
@@ -620,11 +650,10 @@
 		</div>
 	</div>		
 </section>
-<div class="bg-white " style="min-height: 50px"></div>
 
-<section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
+<section class="orion-CTA-banner  orion-global" style="background-color:#FE5000;">
     <div class="banner-area layout-inner-wrap">
-    <div class="image-blob"></div>  
+    <div class="image-blob animate-CTA-banner"></div>  
     <div class="text-center content-banner">
         <div>
             <h2>Ready to peek under the hood?</h2>

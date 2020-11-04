@@ -1,5 +1,6 @@
 .orion-banner{   
     overflow: hidden;
+    padding: 0;
     .layout-inner-wrap{
         z-index: 10;
         position: relative;
@@ -100,7 +101,12 @@
 					padding-right: 45px;
 				}
 			}
-		}
+        }
+        .orion-banner-right-image {
+            position: absolute;
+            right: 10%;
+            top: 20px;
+        }
     }
     
     @keyframes bounce-blob-hidden {

@@ -18,7 +18,9 @@
                     </div>							
                 </div>
                 <div class="flex flex-item col-12 sm-col-5">	
-                    
+                    <div class="orion-banner-right-image">
+                        <img src="Assets/src/img/orion/usecase-placeholder.png" alt="">
+                    </div>
                 </div>					                    
             </div>     
         </div> 
