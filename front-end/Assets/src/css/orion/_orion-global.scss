@@ -540,6 +540,7 @@
             align-items: center;
             margin:auto;
             min-height:360px;
+            pointer-events: none;
             @media(min-width:$break-sm){
                 max-width: 680px;
             }           
@@ -554,6 +555,7 @@
                 font-size: 14px;
                 border-color: #707070;
                 border-radius: 4px;
+                pointer-events: visible;
                 font-weight: 700;
                 padding: 10px 16px 10px 16px;            
                 &:hover{
