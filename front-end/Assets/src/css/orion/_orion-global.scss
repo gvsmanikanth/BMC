@@ -95,6 +95,7 @@
     .orion-block-title{
         color: #002C8F;
         margin-top: 0;
+        margin-bottom: 20px;
     }
     .modal-image{
         position: relative;
@@ -774,11 +775,11 @@
     cursor: pointer;
     font-size: 14px;
     color: #1A98FF;
-    width: 58px;
+    width: 48px;
     background: #fff;
     text-align: center;
     font-weight: 700;
-    padding: 5px;
+    padding: 10px;
     filter: drop-shadow(3px 4px 1px #cccccc6e);
     border-radius: 4px;
   }
@@ -791,125 +792,18 @@
 // product-list
 
 .resource-card-list{
-    background-color: #fafafa;
-    padding: 5rem 0;
-    @media (max-width: $tablet) {
-        padding: 2rem 0;
-    }
-    .h2-variation-1 {
-        margin-bottom: 15px;
-        margin-left: 15px;
-        @media (max-width: $tablet) {
-            font-size: 1.7rem;
-        }
-        @media (max-width: 400px) {
-            margin-left: 0;
-        }
-    }
-    h5{
-        font-weight: 700;
-        margin-top:10px;
-        color:#1a98ff;
-        float:left;
-    }
-    .guttor-width{
-        margin: 15px;
-        width: 100%;
-        @media (max-width: 400px) {
-            margin: 15px 0;
-        }
-    }
     .card{
-        padding: 24px;
-        padding-bottom: 0px;
-        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
-        transition: 0.3s linear;
-        padding-bottom: 80px;
-        &:hover{
-            box-shadow: none;
-            background: #ebf2f7;
-            transition: 0.3s linear;
-            .learn-more {
-                transition: 0.3s linear;
-                color: #fff !important;
-            }
-            .card-footer{
-                transition: 0.3s linear;                    
-                padding-right: 20px;
-                background-position: left bottom;
-            }
+        h2{
+            line-height: 26px;  
+            font-size: 20px !important;       
         }
-        .card-header{
-            h4{
-                font-size: 12px;
-                font-weight: 600;
-                text-transform: uppercase;
-                color: #0091DD;
-                float: left;
-                
-            }
-            img{
-                float: right;
-                height: 50px;
-                margin-top: -10px;
-            }
-        }
-        .card-content{
-            clear: both;
-            min-height: 150px;
-            h2 {
-                font-size: 20px;
-                color: #414042;
-                font-weight: 400;
-                margin-bottom: 15px;
-                line-height:30px;
-            }
-            p {
-                color: #414042;
-                font-size: 0.9rem;
-            }
-            hr {
-                border-bottom: 2px solid #3980B2;
-                max-width: 50px;
-                margin: 0 auto 0 0;
-                border: none;
-                height: 3px;
-                background: #1a98ff;
-            }
-        }
-        .card-footer{   
-            margin-top: 50px;
-            text-align: right;
-            padding-bottom: 10px;
-            background: linear-gradient(to right, #3980B2 50%, white 50%);
-            background-size: 200% 100%;
-            background-position: right bottom;
-            //transition: all .5s ease-out;
-            margin: 0 -1px 0 -1px;
-            padding-left: 20px;
-            padding-right: 20px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            
-            .learn-more {
-                color: #3980B2;
-                font-size: 0.9rem;
-                display: block;             
-                transition: 0.3s linear;
-                border-top: 1px solid #3980B2;
-                padding-top: 10px;
-                font-weight: 600;
-            }
-        }
-
-    }
-    .flex{
-        @media (max-width: 601px) {
-            width: 100%;
+        h5{
+            font-weight: 700;
+            margin-top:10px;
+            color:#3980B2;
+            float:left;
         }
     }
-    
+         
 }
 

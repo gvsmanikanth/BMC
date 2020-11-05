@@ -129,7 +129,7 @@
 	<div class="layout-inner-wrap">
 		<div class="flex-wrap  mb2">
 			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
-				<div class="imageContainer" background>
+				<div class="imageContainer" >
 					<div class="video-portal">
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
