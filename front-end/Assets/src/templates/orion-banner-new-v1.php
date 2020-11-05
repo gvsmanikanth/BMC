@@ -41,7 +41,7 @@
 <section class="landingPage-product-list orion-global resource-card-list">
     <div class=" layout-inner-wrap">          
         <h2 class="orion-block-title">Analyst Research</h2>
-        <div class="flex-wrap flex-justify-center mb2">
+        <div class="flex-wrap flex-justify-center mb2 rem-lr-spacing">
             <div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3">
                 <a href="/it-solutions/bmc-helix-itsm.html" class="guttor-width">
                     <div class="card bg-white">
