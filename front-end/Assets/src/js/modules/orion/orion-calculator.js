@@ -78,7 +78,6 @@
 			var selEnvironmentPriceTable = _self.priceTable[pEnvType];
 			var baseExecutions = selEnvironmentPriceTable.baseExecutions;
 			
-	
 			objEnv.envType = pEnvType;
 			objEnv.quantity = quantity;
 			objEnv.baseEx = baseExecutions;
@@ -88,7 +87,6 @@
 				var thisID = 1;
 				for(var i=0;i<=_self.environments.length;i++){
 					if(!_self.environments[thisID]){
-						console.log('no env with the id '+thisID+' exists yet. So use this ID. ID sent is '+pID);
 						_self.environments[thisID] = objEnv;
 						break;
 					}
@@ -98,11 +96,12 @@
 				//if pID sent, set to that ID
 				_self.environments[pID] = objEnv;
 			}
-				
 		};
 		
-		//remove environment
-		//TOADD
+		this.removeEnvironments = function(pID){
+			_self = this;
+			delete _self.environments[pID];
+		};
 		
 		this.getTotalCost = function(){
 			_self = this;
@@ -112,7 +111,7 @@
 			   totalCost += _self.getPriceForExecution(item.envType, item.quantity);
 			});
 				
-			console.log("total Cost = " + totalCost);
+			//console.log("total Cost = " + totalCost);
 			return totalCost;
 		};
 		
@@ -172,6 +171,9 @@
 	}else{
 		objOrionCalc.addEnvironments("prod",dailyExecutions,0);
 	}
+	
+	//objOrionCalc.removeEnvironments(1);
+	//objOrionCalc.addEnvironments("nonProd",dailyExecutions);
 
 	updateCalc(objOrionCalc);
 	
