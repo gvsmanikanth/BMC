@@ -138,15 +138,32 @@
                     }
                                       
                 } 
-                &.activePage a{
-                    color: #29a5d6;
-                    &:before{
-                        @media(min-width: $break-md){                           
-                            background: #29a5d6;
-                            height: 8px;
-                        }                        
+                &.activePage{
+                    a{
+                        color: #29a5d6;                    
+                        &:before{
+                            @media(min-width: $break-md){                           
+                                background: #29a5d6;
+                                height: 8px;
+                            }                        
+                        }                    
                     }
+                    ul li {
+                        a{
+                            color: #ffffff;
+                            &:before{
+                                @media(min-width: $break-md){    
+                                    height: 0;
+                                }                        
+                            }
+                        }
+                        &.activePage a{
+                            color: #29a5d6;
+                        } 
+                    }
+                    
                 }
+                
                 .dropdownSelected{
                     @extend a,a:visited;
                     &:before{

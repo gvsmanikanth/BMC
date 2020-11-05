@@ -48,6 +48,28 @@
         }
       });
 
+         // Adding Active Navigation Class Based on URL
+      if($('.orion-seconday-nav').length > 0){
+        var current = location.pathname;
+        $('.orion-seconday-nav .nav-list li ').each(function(){
+                    
+            var $this = $(this);
+            $this.children('a').each(function(){
+                // if the current path is like this link, make it active
+                if($(this).attr('href').indexOf(current) !== -1){
+                    $(this).parent().addClass('activePage');
+                }
+            });
+            $this.children('ul li a').each(function(){
+                // if the current path is like this link, make it active
+                if($(this).attr('href').indexOf(current) !== -1){
+                    $(this).parent().addClass('activePage');
+                    $(this).parent().parent().parent().addClass('activePage');
+                }
+            });
+            
+        })
+    } 
 
     }
   }); // end DOM ready

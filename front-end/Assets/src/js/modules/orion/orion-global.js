@@ -46,17 +46,7 @@
     }
 
 
-    // Adding Active Navigation Class Based on URL
-    if($('.orion-seconday-nav').length > 0){
-        var current = location.pathname;
-        $('.orion-seconday-nav .nav-list li a').each(function(){
-            var $this = $(this);
-            // if the current path is like this link, make it active
-            if($this.attr('href').indexOf(current) !== -1){
-                $this.parent().addClass('activePage');
-            }
-        })
-    }  
+  
     
     // Back to top CTA Code starts
      //Check to see if the window is top if not then display button
@@ -72,6 +62,20 @@
     $('#backtotop').click(function(){
         $('html, body').animate({scrollTop : 0},1000);
         return false;
+    });
+
+
+    //content accordian script
+
+    $(".orion_show_hide").on("click", function () {
+        var txt = $(this).parent().children(".acordian-content").is(':visible') ? 'Read More +' : 'Read Less x';
+        // var txt = $(".acordian-content").is(':visible') ? 'Read More +' : 'Read Less x';
+
+        $(this).text(txt);
+
+        $(this).prev('.acordian-content').slideToggle(500);
+        
+        
     });
    
     

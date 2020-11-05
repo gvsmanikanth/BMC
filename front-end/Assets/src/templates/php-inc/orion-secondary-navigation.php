@@ -11,20 +11,20 @@
 				<ul class="nav-list">
 					<li><a href="/front-end/orion-homepage.php">Features</a></li>					
 					<li>
-						<a href="#">Use Cases</a>
+						<a href="javascript:void(0)">Use Cases</a>
 						<ul class="nav-dropdown">
 							<li><a href="#">Fraud Detection</a></li>
 							<li><a href="#">Targeted Advertising</a></li>
 							<li><a href="/front-end/orion-banner-new-v1.php">Predictive Maintenance</a></li>
-							<li><a href="#">Supply Chain Management</a></li>
+							<li><a href="/front-end/orion-banner-new-v2.php">Supply Chain Management</a></li>
 							<li><a href="#">Strategic Pricing</a></li>
 							<li><a href="#">Financial Close</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Pricing</a></li>
-					<li><a href="/front-end/orion-banner-new-v3.php">Integrations</a></li>
-					<li><a href="/front-end/orion-banner-new-v2.php">Support</a></li>
-					<li><a href="/front-end/orion-banner-new-v4.php">Resources</a></li>
+					<li><a href="/front-end/orion-anchor-banner-new-v1.php">Integrations</a></li>
+					<li><a href="/front-end/orion-anchor-banner-new-v2.php">Support</a></li>
+					<li><a href="/front-end/orion-anchor-banner-new-v3.php">Resources</a></li>
 				</ul>
 				<div class="nav-cta">
 					<a href="#" class="btn">Watch a Demo</a>
