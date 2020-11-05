@@ -70,7 +70,7 @@
 			return totalCost;
 		};
 		
-		this.addEnvironments = function(pID,pEnvType, quantity){
+		this.addEnvironments = function(pEnvType, quantity,pID){
 			_self = this;
 			var objEnv = new Object();
 			
@@ -83,8 +83,26 @@
 			objEnv.quantity = quantity;
 			objEnv.baseEx = baseExecutions;
 			
-			_self.environments[pID] = objEnv;
+			if(!pID && pID !== 0){
+				//if no pID sent, increment up to the next available number
+				var thisID = 1;
+				for(var i=0;i<=_self.environments.length;i++){
+					if(!_self.environments[thisID]){
+						console.log('no env with the id '+thisID+' exists yet. So use this ID. ID sent is '+pID);
+						_self.environments[thisID] = objEnv;
+						break;
+					}
+					thisID++;
+				}
+			}else{
+				//if pID sent, set to that ID
+				_self.environments[pID] = objEnv;
+			}
+				
 		};
+		
+		//remove environment
+		//TOADD
 		
 		this.getTotalCost = function(){
 			_self = this;
@@ -110,9 +128,9 @@
 	console.log(objOrionCalc.getPriceForExecution("nonProd",4000))
 	
 	
-	objOrionCalc.addEnvironments(1,"prod",5000)
-	objOrionCalc.addEnvironments(2,"nonProd",2000)
-	objOrionCalc.addEnvironments(3,"nonProd",1000)
+	objOrionCalc.addEnvironments("prod",5000,1)
+	objOrionCalc.addEnvironments("nonProd",2000,2)
+	objOrionCalc.addEnvironments("nonProd",1000,3)
 	objOrionCalc.getTotalCost()*/
 		
 	var tally = document.getElementById("tally");
@@ -120,23 +138,23 @@
 	var slider = document.getElementById("prodExecutions");
 	var updateCalc = function(estimateObj={}){
 		
+		localStorage.setItem("OrionCalculator",JSON.stringify(estimateObj));
+		
 		//Prod Totals
 		tally.innerHTML = estimateObj.getTotalCost();
 		
-		var baseQuantity = estimateObj.environments[1].baseEx;
-		var quantity = estimateObj.environments[1].quantity;
+		var baseQuantity = estimateObj.environments[0].baseEx;
+		var quantity = estimateObj.environments[0].quantity;
 		prodEx.innerHTML = quantity+baseQuantity;
 		startPlan.innerHTML = quantity+baseQuantity;
 		prodCost.innerHTML = estimateObj.getPriceForExecution('prod',quantity);
 		prodBase.innerHTML = baseQuantity;
-		
-		localStorage.setItem("OrionCalculator",JSON.stringify(estimateObj));
 	};
 	
 	//set initial tally
 	var dailyExecutions = parseInt(slider.value);
 	var objOrionCalc = new OrionCalculator();
-	//get obj in localStorage if exists
+	//get obj in localStorage if exists and pass environments to it
 	var estimateObjOrig = localStorage.getItem("OrionCalculator");
 	if(estimateObjOrig){
 		estimateObjOrig = JSON.parse(localStorage.getItem("OrionCalculator"));
@@ -144,16 +162,15 @@
 		for (x in estimateObjOrig.environments){
 			var thisEnv = estimateObjOrig.environments[x];
 			if(thisEnv){
-				objOrionCalc.addEnvironments(x,thisEnv.envType,thisEnv.quantity);
-				if(x==1){
+				objOrionCalc.addEnvironments(thisEnv.envType,thisEnv.quantity,x);
+				if(x==0){
 					slider.value = thisEnv.quantity;
 				}
 			}
 		}
-
 		
 	}else{
-		objOrionCalc.addEnvironments(1,"prod",dailyExecutions);
+		objOrionCalc.addEnvironments("prod",dailyExecutions,0);
 	}
 
 	updateCalc(objOrionCalc);
@@ -161,7 +178,7 @@
 	// Update the current slider value 
 	slider.oninput = function() {
 		dailyExecutions = parseInt(this.value);
-		objOrionCalc.addEnvironments(1,"prod",dailyExecutions);
+		objOrionCalc.addEnvironments("prod",dailyExecutions,0);
 		updateCalc(objOrionCalc);
 	};
 		
