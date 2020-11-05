@@ -2,7 +2,7 @@
 // Orion Quote Carousel
 .orion-quote-section{
     .headingcustomer{
-        padding:60px 30px;
+        padding:0px 30px 60px 30px;
         text-align: center;
         h2{
             background-color: #fff;
@@ -19,7 +19,7 @@
     }
     .orion-quote-carousel{
         background: url(#{$imagesFolder}orion/orion-cta-bg.svg) no-repeat;
-        padding: 50px 0px;
+        padding: 30px 0px  0px 0px;
         background-position: center 10%;
         background-size: 700px;
         text-align:center;

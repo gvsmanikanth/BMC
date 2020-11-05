@@ -45,7 +45,7 @@
         padding: 40px 0;
     }
     @media(min-width:$break-md){
-        padding: 64px 0;
+        padding: 60px 0;
     }
     .btn-gradient{
         background: rgb(249,135,0);
@@ -88,9 +88,14 @@
             display: block;
         }
     }
+    
     .div-px1{
         margin-left: -0.5rem;
         margin-right: -0.5rem;
+    }
+    .rem-lr-spacing{
+        margin-left: -15px;
+        margin-right: -15px;
     }
     .orion-block-title{
         color: #002C8F;
