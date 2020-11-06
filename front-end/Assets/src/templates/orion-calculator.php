@@ -141,8 +141,7 @@
 			
 				<div class="orion-tabs-static text-center flex-item col-4">
 					<div class="tallybox">
-						<p>Start Plan: <span id="startPlan"></span> executions</p>
-						<hr/>
+						<ul id="tallyBreakdown"></ul>
 						<p>Start Plan Total Annual Estimate</p>
 						<h2 id="tally">0.00</h2>
 						<p>Contact Sales</p>

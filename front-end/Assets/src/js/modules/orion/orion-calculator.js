@@ -96,6 +96,12 @@
 				//if pID sent, set to that ID
 				_self.environments[pID] = objEnv;
 			}
+			
+			var data = {};
+			data.environments = _self.environments;
+			data.priceTable = _self.priceTable;
+			localStorage.setItem("OrionCalculator",JSON.stringify(data));
+			
 		};
 		
 		this.removeEnvironments = function(pID){
@@ -132,22 +138,41 @@
 	objOrionCalc.addEnvironments("nonProd",1000,3)
 	objOrionCalc.getTotalCost()*/
 		
-	var tally = document.getElementById("tally");
-	var prodCost = document.getElementById("prodCost"),prodEx = document.getElementById("prodEx"),prodStart = document.getElementById("startPlan"),prodBase = document.getElementById("prodBase");
 	var slider = document.getElementById("prodExecutions");
+	
 	var updateCalc = function(estimateObj={}){
+		//console.log(estimateObj);
+		var tally = document.getElementById("tally"),prodCost = document.getElementById("prodCost"),prodEx = document.getElementById("prodEx"),prodBase = document.getElementById("prodBase"),baseQuantity = estimateObj.environments[0].baseEx,quantity = parseInt(estimateObj.environments[0].quantity);
 		
-		localStorage.setItem("OrionCalculator",JSON.stringify(estimateObj));
-		
-		//Prod Totals
 		tally.innerHTML = estimateObj.getTotalCost();
-		
-		var baseQuantity = estimateObj.environments[0].baseEx;
-		var quantity = estimateObj.environments[0].quantity;
 		prodEx.innerHTML = quantity+baseQuantity;
-		startPlan.innerHTML = quantity+baseQuantity;
 		prodCost.innerHTML = estimateObj.getPriceForExecution('prod',quantity);
 		prodBase.innerHTML = baseQuantity;
+
+		//loop through each non-prod and create listing in non-prod, totals box, and reviews
+		var x;
+		var tallyBreakdown = document.getElementById("tallyBreakdown");
+		for (x in estimateObj.environments){
+			var thisEnv = estimateObj.environments[x];
+			if(thisEnv){
+				var list = document.createElement("li");
+				var thisPrice = estimateObj.getPriceForExecution(thisEnv.envType,thisEnv.quantity);
+				switch(thisEnv.envType){
+					case "prod":
+						tallyBreakdown.innerHTML = "";//reset list
+						list.innerHTML = "<strong>Start Plan</strong>: "+thisPrice;
+						break;
+					case "nonProd":
+						list.innerHTML = "<strong>NonProd "+x+"</strong>: "+thisPrice;
+						break;
+					default:
+				}
+				
+				tallyBreakdown.appendChild(list);
+			}
+
+		}
+		
 	};
 	
 	//set initial tally
@@ -169,12 +194,11 @@
 		}
 		
 	}else{
-		objOrionCalc.addEnvironments("prod",dailyExecutions,0);
+		objOrionCalc.addEnvironments("prod",slider.value,0);
 	}
 	
 	//objOrionCalc.removeEnvironments(1);
-	//objOrionCalc.addEnvironments("nonProd",dailyExecutions);
-
+	//objOrionCalc.addEnvironments("nonProd",slider.value);//test
 	updateCalc(objOrionCalc);
 	
 	// Update the current slider value 
