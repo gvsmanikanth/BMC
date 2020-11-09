@@ -97,6 +97,15 @@
         margin-left: -15px;
         margin-right: -15px;
     }
+    .remove-top-padding{
+        padding-top: 0;
+    }
+    .remove-bottom-padding{
+        padding-bottom: 0;
+    }
+    .remove-margin-12px{
+        margin: 0 -12px;      
+    }
     .orion-block-title{
         color: #002C8F;
         margin-top: 0;
@@ -797,6 +806,8 @@
 // product-list
 
 .resource-card-list{
+    background-color: #ffffff;
+    
     .card{
         h2{
             line-height: 26px;  
