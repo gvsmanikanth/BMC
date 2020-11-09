@@ -16,8 +16,8 @@
                         <h1>Integrations</h1>
                         <p class="anchor-banner-title"><span>Jump to an integration</span></p>
                         <ul class="anchor-banner-menu">
-                            <li><a href="#">Platform</a></li>
-                            <li><a href="#">SAP</a></li>
+                            <li><a href="#analyst">Platform</a></li>
+                            <li><a href="#sap">SAP</a></li>
                             <li><a href="#">Informatica</a></li>
                             <li><a href="#">Databases</a></li>
                             <li><a href="#">AWS</a></li>
@@ -46,9 +46,76 @@
 <!--Anchor Banner Component End -->
 
 
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3" id="sap">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Managed File Transfer</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+					<a href="#." class="brand-name">FTPS</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">SFTP</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS S3</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">SQL Server Integration Services (SSIS)</a>
+				</div>
+			</div>
+            <!-- col -->            						
+
+		</div>		
+	</div>	
+</section>
 
 
-<div class="bg-white " style="min-height: 64px"></div>
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3" id="analyst">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">AWS</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+					<a href="#." class="brand-name">AWS Batch</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Lambda</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Step Functions</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Step Functions</a>
+				</div>
+			</div>
+            <!-- col -->            						
+
+		</div>			
+	</div>	
+</section>
 
 <section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
     <div class="layout-inner-wrap banner-area">
