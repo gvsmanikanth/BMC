@@ -18,20 +18,21 @@
         background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
         padding: 60px 0px;
         background-position: center 70%;
-        background-size: 700px;
+        background-size: 550px;
         text-align: center;
-    }
-
-    @media only screen and (min-width:0) and (max-width: 360px) {
-        .imageContainer {
+        @media only screen and (min-width:0) and (max-width: 360px) {
             background-size: 450px;
         }
-    }
-    @media only screen and (min-width:768px) and (max-width: 1024px) {
-        .imageContainer {
+        @media only screen and (min-width:768px) and (max-width: 1024px) {
             background-size: 580px;
         }
+        @media only screen and (min-width:$break-lg) {
+            background-size: 700px;
+        }
+
     }
+
+  
     .split-text-content{
         @media(min-width:$break-lg){            
             padding-left: 60px;
