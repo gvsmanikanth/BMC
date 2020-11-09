@@ -1699,10 +1699,10 @@
                 jcr:primaryType="nt:unstructured"
                 text="Romania"
                 value="Romania"/>
-            <_x0035_09602268
+           <_x0035_09602268
                 jcr:primaryType="nt:unstructured"
                 text="Russian Federation"
-                value="Russian Federation"/>
+                value="Russian Federation"/>                
             <_x0036_91683988
                 jcr:primaryType="nt:unstructured"
                 text="Rwanda"
