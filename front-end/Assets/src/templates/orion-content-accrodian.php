@@ -5,6 +5,77 @@
     include 'php-inc/orion-secondary-navigation.php';
 ?>
 
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Managed File Transfer</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+					<a href="#." class="brand-name">FTPS</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">SFTP</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS S3</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">SQL Server Integration Services (SSIS)</a>
+				</div>
+			</div>
+            <!-- col -->            						
+
+		</div>		
+	</div>	
+</section>
+
+
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left py3">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">AWS</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+					<a href="#." class="brand-name">AWS Batch</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Lambda</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Step Functions</a>
+				</div>
+			</div>
+			<!-- col -->
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<div class="portal-cards portal-cards-text">
+                    <a href="#." class="brand-name">AWS Step Functions</a>
+				</div>
+			</div>
+            <!-- col -->            						
+
+		</div>			
+	</div>	
+</section>
+
 <section class="orion-split-content content-at-left bg-white orion-global">
 	<div class="layout-inner-wrap">
         <div class="flex-wrap ">		
@@ -180,4 +251,7 @@
         </div> 
 	</div>
 </section>
+
+
+
 <?php include 'php-inc/foot.php'; ?>

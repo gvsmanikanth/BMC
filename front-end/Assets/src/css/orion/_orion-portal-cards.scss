@@ -4,7 +4,7 @@
     border: 1px solid #dedede;
     border-radius: 20px;
     transition: 0.3s linear;
-    margin: 10px;
+    margin: 12px;
     width: 100%;
     transition: color 0.3s linear;
     @media(min-width:$break-sm){
@@ -46,10 +46,24 @@
             width: 100%;
         }
         @media(min-width:$break-sm){
-            padding: 10px;
+            padding: 5px;
         }
     }
-
+    &.portal-cards-text{
+        border: 1px solid #BDBDBD;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+        &:hover{
+            border-color: #046eb1;
+            transition: 0.3s linear;
+            }
+        a{
+            margin: auto;
+        }    
+    }
+    
 }
 
 
