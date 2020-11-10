@@ -63,12 +63,7 @@
             }
             
         }
-        &.resources-banner{
-            @media (min-width: $break-lg) {
-                right: 0;
-                top: -60px;            
-            }
-        }
+           
     }	
 	
     .orion-banner-content{
@@ -141,6 +136,30 @@
         }
     }
 
+    @keyframes bounce-blob-hidden-anchor {
+        from {
+           top : -10px;
+        }
+        50% {
+            top : 5px;
+        }
+        to {
+            top : -10px;
+        }
+    }
+    @keyframes bounce-blob-masked-anchor {
+        from {
+            top : -10px;
+        }
+        50% {
+            top : 5px;
+        }
+        to {
+            top : -10px;
+           
+        }
+    }
+
     // blob position wise variation
      
     &.orion-banner-v1{
@@ -150,5 +169,39 @@
             }
         }
        
-    }	
+    }
+    &.resources-banner{
+        .blob-container{
+            @media (min-width: $break-lg) {
+                right: 0;
+                top: -60px;            
+            }
+        }        
+    }    
+    &.use-cases-banner{
+        overflow: visible;
+        .blob-container{
+            @media (min-width: $break-lg) {
+                top: -10px;   
+                right: -15%;            
+            }
+            .blob-hidden {
+                @media (min-width: $break-lg) {      
+                    background-position: 100% 135%;
+                    right: 130px;
+                    top: 0px;   
+                    animation-name: bounce-blob-hidden-anchor;
+                }
+            } 
+            .blob-masked {
+                @media (min-width: $break-lg) {  
+                    animation-name: bounce-blob-masked-anchor;    
+                    background-position: 100% 100%;
+                    right: 0;
+                    top: 0px;   
+                }                
+            } 
+        }                        
+
+    }
 }

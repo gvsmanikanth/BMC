@@ -30,7 +30,7 @@
                 </div>				                    
             </div>     
         </div> 
-        <div class="blob-container">        
+        <div class="blob-container resources-banner">        
             <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-2-cyan.svg");' >		
                        
             </div>

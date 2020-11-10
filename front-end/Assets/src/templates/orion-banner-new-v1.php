@@ -7,7 +7,7 @@
 
 <!--Orion Banner - V1 Component Start -->
 
-<section class="bg-white orion-global orion-banner orion-banner-v1	">
+<section class="bg-white orion-global orion-banner use-cases-banner	">
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							
@@ -24,7 +24,7 @@
                 </div>					                    
             </div>     
         </div> 
-        <div class="blob-container">        
+        <div class="blob-container ">        
             <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
                        
             </div>
