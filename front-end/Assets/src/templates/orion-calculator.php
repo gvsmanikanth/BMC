@@ -26,7 +26,7 @@
 						<div class="slidecontainer">
 							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
-								<option value="500"></option>
+								<option class="marker" value="500">.5K</option>
 								<option class="marker" value="1000">1K</option>
 								<option value="1500"></option>
 								<option class="marker" value="2000">2K</option>
@@ -38,7 +38,7 @@
 								<option class="marker" value="5000">5K</option>
 								<option value="5500"></option>
 								<option class="marker" value="6000">6K</option>
-								<option value="6500"></option>
+								<option class="marker" value="6500">6.5K</option>
 							</datalist>
 						
 						</div>
@@ -97,9 +97,7 @@
 						<p>*This estimate does not include this and that and those.</p>
 						
 						<div id="reviewItemsWrap">
-							
-							
-							
+						<!--
 							<h3>Production Additional Daily Executions</h3>
 							<p>1,000 Daily Executions</p>
 							<p>$9,600</p>
@@ -137,10 +135,10 @@
 									<p>View additional transaction pricing</p>
 								</div>
 								<p><a href="#">Cancel</a> <a href="#">Save Changes</a></p>
-							</div>
+							</div> -->
 						</div>
 						
-						<button type="button" id="addEnv">Add an Environment</button>
+						<button type="button" id="addEnvReviewTab">Add an Environment</button>
 						<div class="nav"><button type="button" data-nav="back">Back</button></div>
 					</div>
 				</div>

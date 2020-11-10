@@ -70,44 +70,67 @@
 			return totalCost;
 		};
 		
-		this.addEnvironments = function(pEnvType, quantity,pID){
-			_self = this;
-			var objEnv = new Object();
+		this.addEnvironments = function(pEnvType, quantity,pID,pObject){
 			
-			//Select Environment
-			var selEnvironmentPriceTable = _self.priceTable[pEnvType];
-			var baseExecutions = selEnvironmentPriceTable.baseExecutions;
-			
-			objEnv.envType = pEnvType;
-			objEnv.quantity = quantity;
-			objEnv.baseEx = baseExecutions;
-			
-			if(!pID && pID !== 0){
-				//if no pID sent, increment up to the next available number
-				var thisID = 1;
-				for(var i=0;i<=_self.environments.length;i++){
-					if(!_self.environments[thisID]){
-						_self.environments[thisID] = objEnv;
-						break;
-					}
-					thisID++;
+				_self = this;
+				
+				
+				if(pObject && pObject.deleted) {
+					_self.environments[pID] = pObject;
 				}
-			}else{
-				//if pID sent, set to that ID
-				_self.environments[pID] = objEnv;
-			}
+				else if(!pID && pID !== 0){
+					var objEnv = new Object();
+				
+					//Select Environment
+					var selEnvironmentPriceTable = _self.priceTable[pEnvType];
+					var baseExecutions = selEnvironmentPriceTable.baseExecutions;
+					
+					objEnv.envType = pEnvType;
+					objEnv.quantity = quantity;
+					objEnv.baseEx = baseExecutions;
+					
+					//if no pID sent, increment up to the next available number
+	//				var thisID = 1;
+	//				for(var i=0;i<=_self.environments.length;i++){
+	//					if(!_self.environments[thisID]){
+	//						_self.environments[thisID] = objEnv;
+	//						break;
+	//					}
+	//					thisID++;
+	//				}
+	
+					_self.environments[_self.environments.length] = objEnv;
+					
+				}else{
+					//if pID sent, set to that ID
+					
+					var objEnv = new Object();
+				
+					//Select Environment
+					var selEnvironmentPriceTable = _self.priceTable[pEnvType];
+					var baseExecutions = selEnvironmentPriceTable.baseExecutions;
+					
+					objEnv.envType = pEnvType;
+					objEnv.quantity = quantity;
+					objEnv.baseEx = baseExecutions;
+					
+					_self.environments[pID] = objEnv;
+				}
+				
+				
+				var data = {};
+				data.environments = _self.environments;
+				data.priceTable = _self.priceTable;
+				localStorage.setItem("OrionCalculator",JSON.stringify(data));
 			
-			var data = {};
-			data.environments = _self.environments;
-			data.priceTable = _self.priceTable;
-			localStorage.setItem("OrionCalculator",JSON.stringify(data));
 			
 		};
 		
 		this.removeEnvironments = function(pID){
 			console.log('in function: '+pID);
 			_self = this;
-			delete _self.environments[pID];
+			//delete _self.environments[pID];
+			_self.environments[pID] = {"deleted":true};
 			var data = {};
 			data.environments = _self.environments;
 			data.priceTable = _self.priceTable;
@@ -119,7 +142,9 @@
 			var totalCost = 0;
 			
 			_self.environments.forEach(function(item, index){
-			   totalCost += _self.getPriceForExecution(item.envType, item.quantity);
+			   if(item && !item.deleted)	{
+			   	totalCost += _self.getPriceForExecution(item.envType, item.quantity);
+			   }
 			});
 				
 			return totalCost;
@@ -171,7 +196,7 @@
 		for (x in CalculatorLocal.environments){
 			var thisEnv = CalculatorLocal.environments[x];
 			if(thisEnv){
-				Calculator.addEnvironments(thisEnv.envType,thisEnv.quantity,x);
+				Calculator.addEnvironments(thisEnv.envType,thisEnv.quantity,x,thisEnv);
 				if(x==0){
 					slider.value = thisEnv.quantity;
 				}
@@ -208,78 +233,88 @@
 		var reviewsWrap = document.getElementById("reviewItemsWrap");
 		reviewsWrap.innerHTML = "";//reset list
 
+		var nonProdDisplayCount = 1;
 		
 		var y;
 		for(y in Calculator.environments){
 			var thisEnv = Calculator.environments[y];
-			var list = document.createElement("li");
-			var nonProdItems = document.createElement("div");
-			var prodItems = document.createElement("div");
-			var nonProdItemsContent = "";
-			var prodItemsContent = "";
-			var thisPrice = Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity);
-			var maxProdSelection = 6500;
-			var maxNonProdSelection = 19000;
-
-			switch(thisEnv.envType){//can be refactored without the switch
-				case "prod":
-					//prod
-					prodItems.className = "prodItem";
-					prodItems.setAttribute('data-env','prod'+y);
-					prodItemsContent = "";
-					prodItemsContent = "<h3>Production Test Environment</h3><p>Select Daily Execution Amount</p>";
-					prodItemsContent += "<div class='slidecontainer'>";
-					prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-					for(var i=500;i<=maxNonProdSelection;i+=500){
-						if(i==1000||i==5000){
-							var label = i.toString().replace(/000$/,'');
-							prodItemsContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
-						}else{
-							prodItemsContent  += "<option>"+i+"</option>";
+			if(!thisEnv.deleted){
+				var list = document.createElement("li");
+				var nonProdItems = document.createElement("div");
+				var prodItems = document.createElement("div");
+				var nonProdItemsContent = "";
+				var prodItemsContent = "";
+				var thisPrice = Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity);
+				var maxProdSelection = 6500;
+				var maxNonProdSelection = 19000;
+				
+				
+	
+				switch(thisEnv.envType){//can be refactored without the switch
+					case "prod":
+						//prod
+						prodItems.className = "prodItem";
+						prodItems.setAttribute('data-env','prod'+y);
+						prodItemsContent = "";
+						prodItemsContent = "<h3>Production Test Environment</h3><p>Select Daily Execution Amount</p>";
+						prodItemsContent += "<div class='slidecontainer'>";
+						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						for(var i=500;i<=maxNonProdSelection;i+=500){
+							if(i==1000||i==5000){
+								var label = i.toString().replace(/000$/,'');
+								prodItemsContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
+							}else{
+								prodItemsContent  += "<option>"+i+"</option>";
+							}
 						}
-					}
-					prodItemsContent += "</datalist></div>";
-					prodItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
-					//tallybox
-					list.innerHTML = "<strong>Start Plan</strong>: "+thisPrice;
-					break;
-				case "nonProd":
-					//update tallybox
-					list.innerHTML = "<strong>NonProd "+y+"</strong>: "+thisPrice;
-					//nonProd
-					nonProdItems.className = "nonProdItem";
-					nonProdItems.setAttribute('data-env','nonProd'+y);
-					nonProdItemsContent = "<h3>Non-Production Test Environment - "+y+"</h3><p>Select Daily Execution Amount</p>";
-					nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
-					nonProdItemsContent += "<div class='slidecontainer'>";
-					nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-					for(var k=500;k<=maxNonProdSelection;k+=500){
-						if(k==1000||k==5000||k==10000||k==15000||k==19000){
-							var labelk = k.toString().replace(/000$/,'');
-							nonProdItemsContent  += "<option value="+k+" class='marker'>"+labelk+"k</option>";
-						}else{
-							nonProdItemsContent  += "<option>"+k+"</option>";
+						prodItemsContent += "</datalist></div>";
+						prodItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
+						//tallybox
+						list.innerHTML = "<strong>Start Plan</strong>: "+thisPrice;
+						break;
+					case "nonProd":
+						//update tallybox
+						list.innerHTML = "<strong>NonProd "+nonProdDisplayCount+"</strong>: "+thisPrice;
+						//nonProd
+						nonProdItems.className = "nonProdItem";
+						nonProdItems.setAttribute('data-env','nonProd'+y);
+						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p>Select Daily Execution Amount</p>";
+						nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
+						nonProdItemsContent += "<div class='slidecontainer'>";
+						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						for(var k=500;k<=maxNonProdSelection;k+=500){
+							if(k==1000||k==5000||k==10000||k==15000||k==19000){
+								var labelk = k.toString().replace(/000$/,'');
+								nonProdItemsContent  += "<option value="+k+" class='marker'>"+labelk+"k</option>";
+							}else{
+								nonProdItemsContent  += "<option>"+k+"</option>";
+							}
 						}
-					}
-					nonProdItemsContent += "</datalist></div>";
-					nonProdItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
-					break;
-				default:
-			}
+						nonProdItemsContent += "</datalist></div>";
+						nonProdItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
+						nonProdDisplayCount++;
+						break;
+					default:
+				}
 			
-			if(prodItemsContent){
-				console.log(prodItemsContent);
-				prodItems.innerHTML=prodItemsContent+nonProdItemsContent;//not working yet
-				reviewsWrap.appendChild(prodItems);
-			}
-			//append to parent
-			if(nonProdItemsContent){
-				nonProdItems.innerHTML = nonProdItemsContent;
-				nonProdWrap.appendChild(nonProdItems);
-			}
 			
-			if(list){
-				tallyBreakdown.appendChild(list);
+				if(prodItemsContent){
+					console.log(prodItemsContent);
+					prodItems.innerHTML=prodItemsContent;//not working yet
+					reviewsWrap.appendChild(prodItems);
+				}
+				//append to parent
+				if(nonProdItemsContent){
+					nonProdItems.innerHTML = nonProdItemsContent;
+					nonProdWrap.appendChild(nonProdItems);
+					
+					var clnReviewNonProd = nonProdItems.cloneNode(true);
+					reviewsWrap.appendChild(clnReviewNonProd);
+				}
+				
+				if(list){
+					tallyBreakdown.appendChild(list);
+				}
 			}
 		}
 		
@@ -321,6 +356,15 @@
 		Calculator.addEnvironments("nonProd",1000);
 		updateCalculator(Calculator);
 	};
+	
+	//Add an environment
+	var addEnvButton = document.getElementById("addEnvReviewTab");
+	addEnvButton.onclick = function(){
+		Calculator.addEnvironments("nonProd",1000);
+		updateCalculator(Calculator);
+	};
+	
+	
 	
 	//delete 
 	document.addEventListener('click',deleteEvent);
