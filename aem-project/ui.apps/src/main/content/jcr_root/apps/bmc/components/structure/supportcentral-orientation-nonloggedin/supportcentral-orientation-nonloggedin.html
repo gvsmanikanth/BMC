@@ -1,10 +1,4 @@
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
-	<sly data-sly-test.loggdIn="${support.isLoggedIn}">
-		<sly data-sly-test.newuser="${!support.isNewUser}">  
-        	<div>
-         	<a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
- 		</sly>
-  	</sly>
     <div class="container">
     	<div class="row">
             <div class="col-4 psc-fs-12">
@@ -17,7 +11,7 @@
                 Learn more about BMC support Resources<br>
                 <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn learn-more">Online Guide</a>
             </div>
-            <sly data-sly-test.loggdIn="${!support.isLoggedIn}">
+            <sly data-sly-test.loggdIn="${!support.isLoggedIn || !support.isNewUser}">
                 <div class="col-4 pl-6 psc-o-checklist psc-fs-12">
                     <h3>Explore BMC resources</h3>
                     Get familiarity with BMC resources<br>

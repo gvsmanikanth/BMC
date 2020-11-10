@@ -16,8 +16,8 @@
         </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-note_pencil" adapt-tab-title="Blog posts">
-        <div class="row" [ngBusy]="busyConfigBlog">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigBlog">
                 <div class="question" *ngFor="let blog of blogs.slice(0,5)">
                     <div class="d-icon-note_pencil"></div><a [href]="blog.link"
                         [innerHTML]="blog.titleName"></a>
@@ -32,8 +32,8 @@
         </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-comment_text" adapt-tab-title="Discussions">
-        <div class="row" [ngBusy]="busyConfigDicsussion">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigDicsussion">
                 <div class="question" *ngFor="let discussion of discussions.slice(0,5)">
                     <div class="d-icon-comment_text"></div><a [href]="discussion.link"
                         [innerHTML]="discussion.titleName"></a>
@@ -48,8 +48,8 @@
         </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-file_text_o" adapt-tab-title="Documents">
-        <div class="row" [ngBusy]="busyConfigDocs">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigDocs">
                 <div class="question" *ngFor="let document of documents.slice(0,5)">
                     <div class="d-icon-file_text_o"></div><a [href]="document.link"
                         [innerHTML]="document.titleName"></a>
@@ -64,8 +64,8 @@
         </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-lightbulb_o" adapt-tab-title="Ideas">
-        <div class="row" [ngBusy]="busyConfigIdea">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigIdea">
                 <div class="question" *ngFor="let idea of ideas.slice(0,5)">
                     <div class="d-icon-lightbulb_o"></div><a [href]="idea.link"
                         [innerHTML]="idea.titleName"></a>
