@@ -41,6 +41,17 @@
 					&.active{
 						display: block;
 					}
+					
+					#nonProdItemsWrap {
+						.nonProdItem{
+							border: 1px solid #002C8F;
+							border-radius: 10px;
+							padding: 30px;
+							margin-bottom: 30px;
+						}
+						
+					}
+					
 				}
 			}
 			.orion-tabs-static {
@@ -63,7 +74,7 @@
 	
 	
 .slidecontainer {
-	width: 100%; /* Width of the outside container */
+	width: 100%; 
   }
   
   /* The slider itself */
@@ -96,7 +107,7 @@
 	cursor: pointer; /* Cursor on hover */
   }
   
- // .slider::-moz-range-thumb {
+// .slider::-moz-range-thumb {
 //	width: 25px; /* Set a specific slider handle width */
 //	height: 25px; /* Slider handle height */
 //	background: #4CAF50; /* Green background */
@@ -133,28 +144,14 @@ option {
 	justify-content: center;
 	height: 42px;
 	align-items: end;
-	//background-image: url(tick.png);
 	height: 4ex;
 	background-position-y: -15px;
 	background-position-x: center;
-	//z-index: -1;
 	margin-top: -100%;
 	&.marker{
 		margin-top: 0;
 	}
 }
 
-/*option {
-    width: 2ex;
-    display: flex;
-    justify-content: center;
-    height: 42px;
-    align-items: end;
-    //background-image: url(tick.png);
-    height: 4ex;
-    background-position-y: -15px;
-    background-position-x: center;
-    z-index: -1;
-}*/
 	
 }

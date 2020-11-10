@@ -24,7 +24,7 @@
 						<h3>Choose Additional Daily Execution Amount</h3>
 						<p>You can add groups of executions to your base package (500) as needed, up to 6500 additional executions. If you need more than 6500 daily executions, you should consider our Enterprise Plan.</p>
 						<div class="slidecontainer">
-							<input type="range" min="500" max="6500" value="500" class="slider" id="prodExecutions" step="500" list="steplist">
+							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
 								<option>500</option>
 								<option class="marker" value="1000">1k</option>
@@ -50,14 +50,14 @@
 						<div class="infobox">
 							<p>View additional transaction pricing</p>
 						</div>
-						<div class="nav"><a href="#">Next</a></div>
+						<div class="nav"><button type="button" data-nav="next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
 						<h3>Non-Production Environment</h3>
 						<p>You must purchase a Production Environment in order to purchase a Non-Production Environment. You can add more than one Non-Production Environment with variable daily execution amounts. </p>
 						<div>
 							<p>Annual Base Price:</p>
-							<h3>$19,000</h3>
+							<h3 id="nonProdBaseCost"></h3>
 						</div>
 						<div>
 							<p><strong>Includes</strong></p>
@@ -68,30 +68,22 @@
 							<p>**Severity 1 is not supported on nonproduction environments</p>
 						</div>
 						
-						<div>
-							<h3>Non-Production Test Environment - 1</h3>
-							<p>Select Daily Execution Amount</p>
-							<p>[slider]</p>
-							<div class="total">
-								<p>Total Executions (including base 500)</p>
-								<p>1000</p>
-							</div>
-							<div class="infobox">
-								<p>View additional transaction pricing</p>
-							</div>
+						<div id="nonProdItemsWrap">
+							<!--items-->
 						</div>
 	
-						<p><a href="#">Add an Environment</a></p>
-	
-	
-						<div class="nav"><a href="#">Back</a><a href="#">Next</a></div>
+						<button type="button" id="addEnv">Add an Environment</button>
+						<div class="nav"><button type="button" data-nav="back">Back</button><button type="button" data-nav="next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="3" class="tab-body">
 						<h3>Review Your Estimate</h3>
 						<p>Text that could explain what the user is seeing, if needed. This text has an asterisk that leads to the disclaimer text below*</p>
 						<p>*This estimate does not include this and that and those.</p>
 						
-						<div>
+						<div id="reviewItemsWrap">
+							
+							
+							
 							<h3>Production Additional Daily Executions</h3>
 							<p>1,000 Daily Executions</p>
 							<p>$9,600</p>
@@ -132,10 +124,8 @@
 							</div>
 						</div>
 						
-						<p><a href="#">Add an Environment</a></p>
-	
-	
-						<div class="nav"><a href="#">Back</a><a href="#">Next</a></div>
+						<button type="button" id="addEnv">Add an Environment</button>
+						<div class="nav"><button type="button" data-nav="back">Back</button></div>
 					</div>
 				</div>
 			
