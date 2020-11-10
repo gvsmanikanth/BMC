@@ -14,12 +14,12 @@
 		<p>Get an idea of what the cost would be for your solution. When you talk to an expert, they will help you get an exact cost.</p>
 		<div class="orion-tabs-wrapper">
 			<div class="orion-tabs-nav flex">
-				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h3><span>01</span> Daily Executions</h3></div>
-				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h3><span>02</span> Non-Production</h3></div>
-				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h3><span>03</span> Review</h3></div>
+				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h4><strong><span>01</span> Daily Executions</strong></h4></div>
+				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h4><strong><span>02</span> Non-Production</strong></h4></div>
+				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h4><strong><span>03</span> Review</strong></h4></div>
 			</div>
 			<div class="orion-tabs-body-wrapper flex">
-				<div class="orion-tabs-body flex-item col-8">
+				<div class="orion-tabs-body flex-item col-9">
 					<div data-orion-tab-body="1" class="tab-body active">
 						<h3>Choose Additional Daily Execution Amount</h3>
 						<p>You can add groups of executions to your base package (500) as needed, up to 6500 additional executions. If you need more than 6500 daily executions, you should consider our Enterprise Plan.</p>
@@ -129,14 +129,14 @@
 					</div>
 				</div>
 			
-				<div class="orion-tabs-static text-center flex-item col-4">
+				<div class="orion-tabs-static text-center flex-item col-3">
 					<div class="tallybox">
 						<ul id="tallyBreakdown"></ul>
 						<p>Start Plan Total Annual Estimate</p>
 						<h2 id="tally">0.00</h2>
-						<p>Contact Sales</p>
-						<p>Need help deciding? Get in touch with our specialists.</p>
+						<a href="#0" class="btn btn-gradient">Contact Sales</a>						
 					</div>
+					<p>Need help deciding? <a href="#0">Get in touch</a> with our specialists.</p>
 				</div>
 			</div>
 			
