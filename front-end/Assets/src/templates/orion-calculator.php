@@ -26,19 +26,20 @@
 						<div class="slidecontainer">
 							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
-								<option>500</option>
-								<option class="marker" value="1000">1k</option>
-								<option>1500</option>
-								<option>2000</option>
-								<option>2500</option>
-								<option>3000</option>
-								<option>3500</option>
-								<option>4000</option>
-								<option>4500</option>
-								<option class="marker" value="5000">5k</option>
-								<option>5500</option>
-								<option>6000</option>
-								<option>6500</option>
+								<option class="marker" value="0" disable="true">0</option>
+								<option class="marker" value="500">0.5K</option>
+								<option class="marker" value="1000">1K</option>
+								<option class="marker" value="1500">1.5K</option>
+								<option class="marker" value="2000">2K</option>
+								<option class="marker" value="2500">2.5K</option>
+								<option class="marker" value="3000">3K</option>
+								<option class="marker" value="3500">3.5K</option>
+								<option class="marker" value="4000">4K</option>
+								<option class="marker" value="4500">4.5K</option>
+								<option class="marker" value="5000">5K</option>
+								<option class="marker" value="5500">5.5K</option>
+								<option class="marker" value="6000">6K</option>
+								<option class="marker" value="6500">6.5K</option>
 							</datalist>
 						
 						</div>
