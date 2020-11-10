@@ -43,30 +43,46 @@
 							</datalist>
 						
 						</div>
-						<div class="total">
-							<p>Total Executions (including base <span id="prodBase"></span>)</p>
-							<p><span id="prodEx"></span></p>
-							<p>Total Cost <span id="prodCost"></span></p>
-						</div>
-						<div class="infobox">
-							<p>View additional transaction pricing</p>
-						</div>
+						<div class="flex-wrap">
+							<div  class="flex-item col-12 md-col-6">
+								<div class="total">
+									<div class="total-left">
+										<p>Total Executions (including base <span id="prodBase"></span>) </p>	
+										<p><strong><span id="prodEx"></span></strong></p>									
+									</div>
+									<div class="total-right">
+										<p>Total Cost </p>
+										<p><strong><span id="prodCost"></span></strong></p>
+									</div>
+									
+								</div>
+							</div>
+							<div class="flex-item col-12 md-col-6">
+								<div class="infobox">
+									<p><a href="#">View additional transaction pricing</a></p>
+								</div>
+							</div>
+						</div>		
+						
 						<div class="nav"><button type="button" data-nav="next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
 						<h3>Non-Production Environment</h3>
 						<p>You must purchase a Production Environment in order to purchase a Non-Production Environment. You can add more than one Non-Production Environment with variable daily execution amounts. </p>
-						<div>
-							<p>Annual Base Price:</p>
-							<h3 id="nonProdBaseCost"></h3>
-						</div>
-						<div>
-							<p><strong>Includes</strong></p>
-							<ul>
-								<li>500 Daily Executions</li>
-								<li>BMC's industry leading Continuous Support**</li>
-							</ul>
-							<p>**Severity 1 is not supported on nonproduction environments</p>
+						
+						<div class="flex-wrap ">
+							<div class="flex-item col-12 md-col-4 ">
+								<h4>Annual Base Price:</h4>
+								<h3 id="nonProdBaseCost"></h3>
+							</div>
+							<div class="flex-item col-12 md-col-8 ">
+								<h4><strong>Includes</strong></h4>
+								<ul class="orange-tick-bullets">
+									<li>500 Daily Executions</li>
+									<li>BMC's industry leading Continuous Support**</li>
+								</ul>
+								<p>**Severity 1 is not supported on nonproduction environments</p>
+							</div>
 						</div>
 						
 						<div id="nonProdItemsWrap">
@@ -135,9 +151,9 @@
 						<ul id="tallyBreakdown"></ul>
 						<p>Start Plan Total Annual Estimate</p>
 						<h2 id="tally">0.00</h2>
-						<a href="#0" class="btn btn-gradient">Contact Sales</a>						
+						<a href="#" class="btn btn-gradient">Contact Sales</a>						
 					</div>
-					<p>Need help deciding? <a href="#0">Get in touch</a> with our specialists.</p>
+					<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
 				</div>
 			</div>
 			

@@ -12,7 +12,9 @@
 					span {
 						background: #eee;
 						display: inline-block;
-						padding: 5px;
+						padding: 9px;
+						vertical-align: middle;
+						margin-right: 15px;
 					}
 					&:hover {
 							cursor: pointer;
@@ -41,6 +43,9 @@
 					&.active{
 						display: block;
 					}
+					h3{
+						color: #002C8F;
+					}
 					
 					#nonProdItemsWrap {
 						.nonProdItem{
@@ -51,7 +56,40 @@
 						}
 						
 					}
-					
+					.total{
+						background: #EEEEEE;
+						padding: 10px;
+						font-size: 14px;
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+						p{
+							font-size: 14px;
+							margin: 0;
+						}
+						.total-right{
+							width: 30%;
+							text-align: right;
+							border-left: 1px solid #BDBDBD;
+						}
+						
+					}
+					.infobox {
+						text-align: right;
+						display: flex;
+						align-items: flex-end;
+						height: 100%;
+						width: 100%;
+						
+						
+						p{
+							font-size: 14px;
+							margin: 0 0 0 auto;
+						}
+					}
+					.nav{
+						margin: 40px 0 20px 0;
+					}
 				}
 			}
 			.orion-tabs-static {
@@ -97,6 +135,7 @@
 	
 .slidecontainer {
 	width: 100%; 
+	margin: 40px 0 20px 0;
   }
   
   /* The slider itself */
