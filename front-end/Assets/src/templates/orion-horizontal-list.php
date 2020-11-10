@@ -82,7 +82,7 @@ a.tooltip span
 								</div>
               </div>-->
               <div class="orion_tooltip">
-                <div class="Tooltip-window">Lorem ipsum dolar sit amet Lorem ipsum dolar sit amet</div>
+                <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
               </div>
               </h3>
           </div>

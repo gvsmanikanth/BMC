@@ -828,9 +828,10 @@
       z-index:10;
       display:none; 
       padding:20px;
-      width:500px;
+      min-width:300px;
+      max-width:500px;
       border-radius: 5px;
-      //max-width:500px;
+      font-size:16px;
       }
     &:hover .Tooltip-window {
         display:block;
@@ -838,17 +839,24 @@
         bottom: 30px;
         left: 50%;
         color:#fff;  
-        background:#000; 
-        transform: translateX(-50%); 
-    }
-    &:hover .Tooltip-window:after{
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -10px;
-        border-width: 10px;
-        border-style: solid;
-        border-color: #000 transparent transparent transparent;
-    }
+        background:#414042;        
+        transform: translateX(-50%);
+        &:after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #414042 transparent transparent transparent;
+        } 
+        a{
+            font-size:16px;
+            &:after{
+            content:none;
+            
+            }
+        }
+    }   
 }
