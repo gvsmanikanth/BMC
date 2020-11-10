@@ -125,6 +125,16 @@
 			return totalCost;
 		};
 		
+		this.updateEnvironment = function(e){
+			var thisSlider = event.target;
+			var ID = event.target.getAttribute('data-id');
+			var env = event.target.getAttribute('data-env');
+			dailyExecutions = parseInt(thisSlider.value);
+			Calculator.addEnvironments(env,dailyExecutions, ID);
+			updateCalculator(Calculator);
+		};
+
+		
 
 		
 	};
@@ -151,7 +161,7 @@
 	
 	//Calc Instance
 	var Calculator = new OrionCalculator();
-	
+	window.calculator = Calculator;
 	
 	//get obj in localStorage if exists and pass environments to it
 	var CalculatorLocal = localStorage.getItem("OrionCalculator");
@@ -219,7 +229,7 @@
 					prodItemsContent = "";
 					prodItemsContent = "<h3>Production Test Environment</h3><p>Select Daily Execution Amount</p>";
 					prodItemsContent += "<div class='slidecontainer'>";
-					prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' type='range' min='500' max='"+maxProdSelection+"' value='500' class='slider' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+					prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 					for(var i=500;i<=maxNonProdSelection;i+=500){
 						if(i==1000||i==5000){
 							var label = i.toString().replace(/000$/,'');
@@ -242,7 +252,7 @@
 					nonProdItemsContent = "<h3>Non-Production Test Environment - "+y+"</h3><p>Select Daily Execution Amount</p>";
 					nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
 					nonProdItemsContent += "<div class='slidecontainer'>";
-					nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' type='range' min='500' max='"+maxNonProdSelection+"' value='500' class='slider' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+					nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 					for(var k=500;k<=maxNonProdSelection;k+=500){
 						if(k==1000||k==5000||k==10000||k==15000||k==19000){
 							var labelk = k.toString().replace(/000$/,'');
