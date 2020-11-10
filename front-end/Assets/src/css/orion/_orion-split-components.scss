@@ -54,6 +54,7 @@
         }       
 
     }
+    
 }
 
 
@@ -130,5 +131,13 @@
             color: #046eb1;
         }
     }
+
+    .flex-wrap{
+        .flex.flex-item:first-child{
+            @media(min-width:$break-lg){            
+                order: initial !important;
+            }
+        }
+    }     
     
 }
