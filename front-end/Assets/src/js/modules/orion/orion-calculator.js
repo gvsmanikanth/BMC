@@ -135,6 +135,7 @@
 			_self = this;
 			//delete _self.environments[pID];
 			_self.environments[pID] = {"deleted":true};
+			
 			var data = {};
 			data.environments = _self.environments;
 			data.priceTable = _self.priceTable;
@@ -152,7 +153,6 @@
 			});
 			
 			if(format){
-				//totalCost = .totalCost.replace(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/,".00");
 				totalCost = totalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}
 			
@@ -206,6 +206,7 @@
 			var thisEnv = CalculatorLocal.environments[x];
 			if(thisEnv){
 				Calculator.addEnvironments(thisEnv.envType,thisEnv.quantity,x,thisEnv);
+				
 				if(x==0){
 					slider.value = thisEnv.quantity;
 				}
@@ -254,14 +255,45 @@
 				var nonProdItemsContent = "";
 				var prodItemsContent = "";
 				var thisPrice = "$"+Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
+				var thisQuantity = thisEnv.quantity;
+				var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
 				var maxNonProdSelection = 19000;
 				
 				
-	
+				//refactoring. No rush. Don't delete.
+				/*
+				var maxSelection = thisType==nonProd?19000:6500;
+				var markers = {'prod':[1000,5000],'nonProd':[1000,5000,10000,15000,19000]};
+				var item = document.createElement("div");
+				item.className = "item";
+				item.setAttribute("data-env",thisEnv.envType+y);
+				var itemContent = "";
+				itemContent = "<h3>"+(thisType==nonProd?"Non-":"")+"Production Test Environment" + (thisType==nonProd?"-"+nonProdDisplayCount:"") + "</h3>";
+				itemContent += "<p>Select Daily Execution Amount</p>";
+				itemContent += "<div class='slidecontainer'>";
+				itemContent += "<input data-id='"+y+"'  data-env='"+thisType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisQuantity+"' class='slider' id='"thisType+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+				
+				for(var i=500;i<=maxSelection;i+=500){	
+					if(markers[thisType].includes(i)){
+						var label = i.toString().replace(/000$/,'');
+						itemContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
+					}else{
+						itemContent  += "<option>"+i+"</option>";
+					}
+				}
+				itemContent += "</datalist></div>";
+				itemContent += "<p>Quantity: "+thisQuantity+"</p><p>This price: "+thisPrice+"</p>";
+						
+				//tallybox
+				list.innerHTML = "<strong>"+thisType?"Start Plan:":"NonProd "+nonProdDisplayCount+"</strong>: "+thisQuantityFormatted + " executions";
+				//end refactor
+				*/
+				
+				
 				switch(thisEnv.envType){//can be refactored without the switch
 					case "prod":
-						//prod
 						prodItems.className = "prodItem";
 						prodItems.setAttribute('data-env','prod'+y);
 						prodItemsContent = "";
@@ -279,11 +311,11 @@
 						prodItemsContent += "</datalist></div>";
 						prodItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
 						//tallybox
-						list.innerHTML = "<strong>Start Plan</strong>: "+thisPrice;
+						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
 					case "nonProd":
 						//update tallybox
-						list.innerHTML = "<strong>NonProd "+nonProdDisplayCount+"</strong>: "+thisPrice;
+						list.innerHTML = "<strong>NonProd "+nonProdDisplayCount+"</strong>: "+thisQuantityFormatted + " executions";
 						//nonProd
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
@@ -341,12 +373,7 @@
 		Calculator.addEnvironments("prod",dailyExecutions,0);
 		updateCalculator(Calculator);
 	};
-	
-	/*var sliders = document.querySelectorAll('.slidecontainer input.slider');
-	for(slider in sliders){
-		var thisSlider = '';
-	}*/
-	
+
 	//slider 
 	document.addEventListener('oninput',sliderInput);
 	function sliderInput(){
@@ -360,6 +387,7 @@
 	}
 	
 	//Add an environment
+	//TODO: Scroll up to focus on new item upon creation
 	var addEnvButton = document.getElementById("addEnv");
 	addEnvButton.onclick = function(){
 		Calculator.addEnvironments("nonProd",1000);
@@ -375,7 +403,8 @@
 	
 	
 	
-	//delete 
+	//delete
+	//TODO: Scroll up to last remaining item in list upon deletion
 	document.addEventListener('click',deleteEvent);
 	function deleteEvent(){
 		if(!event.target.matches('.delete')) return;
