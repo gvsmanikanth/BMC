@@ -1,0 +1,226 @@
+.orion-calculator{
+    background-color: #fff;
+	
+	.orion-tabs-wrapper {
+		.orion-tabs-nav{
+			border-bottom: 1px solid #BDBDBD;
+			.tab-nav {
+				
+				h4{
+					padding: 35px 0;
+					color: #75777A;
+					span {
+						background: #E5E5E5;
+						display: inline-block;
+						padding: 10px;
+						line-height: 1em;
+						vertical-align: middle;
+						margin-right: 15px;
+					}
+					&:hover {
+							cursor: pointer;
+							color: #000;
+					}
+				}
+				
+				&.active {
+					h4 {
+						color: #002C8F;
+						span {
+							background: #2BD4EE;
+						}
+					}
+					
+				}
+				
+			}
+		}
+		.orion-tabs-body-wrapper{
+			.orion-tabs-body {
+				.tab-body {
+					display: none;
+					padding: 30px 0;
+					margin-right: 30px;
+					&.active{
+						display: block;
+					}
+					h3{
+						color: #002C8F;
+					}
+					
+					#nonProdItemsWrap, #reviewItemsWrap {
+						.nonProdItem, .prodItem{
+							border: 1px solid #002C8F;
+							border-radius: 10px;
+							padding: 30px;
+							margin-bottom: 30px;
+							position:relative;
+							
+							.delete{
+								position: absolute;
+							    top: 15px;
+							    right: 20px; 
+							}
+						}
+						
+					}
+					.total{
+						background: #EEEEEE;
+						padding: 10px;
+						font-size: 14px;
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+						p{
+							font-size: 14px;
+							margin: 0;
+						}
+						.total-right{
+							width: 30%;
+							text-align: right;
+							border-left: 1px solid #BDBDBD;
+						}
+						
+					}
+					.infobox {
+						text-align: right;
+						display: flex;
+						align-items: flex-end;
+						height: 100%;
+						width: 100%;
+						
+						
+						p{
+							font-size: 14px;
+							margin: 0 0 0 auto;
+						}
+					}
+					.nav{
+						margin: 40px 0 20px 0;
+					}
+				}
+			}
+			.orion-tabs-static {
+				.tallybox {
+					padding: 30px;
+					background: #002C8F;
+					margin: 15px 0;
+					color: #fff;
+					font-size: 14px;
+					ul{
+						list-style: none;
+						text-align: left;
+						padding: 0;
+						margin-top: 0;
+						li{
+							border-bottom: 1px solid rgba(26, 152, 255, 0.5);
+							padding-bottom: 5px;
+							font-size: 14px;
+							margin-bottom: 8px;
+						}
+					}
+					p{
+						font-size: 14px;
+						margin-bottom: 10px;
+					}
+					
+					#tally{
+						color: #fff;
+						font-weight: 800;
+						margin-top: 0;
+					}
+					.btn-gradient {
+						width: 70%;
+						margin: 10px auto;
+					}
+				}
+			}
+		}
+		
+		
+	}
+	
+	
+.slidecontainer {
+	width: 100%; 
+	margin: 40px 0 20px 0;
+  }
+  
+  /* The slider itself */
+  .slider {
+	//-webkit-appearance: none;  /* Override default CSS styles */
+	//appearance: none;
+	width: 100%; /* Full-width */
+	height: 15px;
+	border-radius: 5px;  
+	background: orange; /* Grey background */
+	//outline: none; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	border-radius: 50%;
+	background: #4CAF50; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+  }
+  
+// .slider::-moz-range-thumb {
+//	width: 25px; /* Set a specific slider handle width */
+//	height: 25px; /* Slider handle height */
+//	background: #4CAF50; /* Green background */
+//	cursor: pointer; /* Cursor on hover */
+  //}
+ /* input[type="range"]::-moz-range-track {
+	padding: 0 10px;
+	background: repeating-linear-gradient(to right, 
+	  #ccc, 
+	  #ccc 10%, 
+	  #000 10%, 
+	  #000 11%, 
+	  #ccc 11%, 
+	  #ccc 20%);
+  }*/
+	
+input[type="range"] {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+datalist {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+   // margin-top: -23px;
+    //padding-top: 0px;
+	font-size: 12px;
+	overflow: hidden;
+}
+option {
+	width: 2ex;
+	display: flex;
+	justify-content: center;
+	height: 42px;
+	align-items: end;
+	height: 4ex;
+	background-position-y: -15px;
+	background-position-x: center;
+	margin-top: -100%;
+	&.marker{
+		margin-top: 0;
+	}
+}
+
+	
+}
