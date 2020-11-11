@@ -151,10 +151,10 @@
 	//-webkit-appearance: none;  /* Override default CSS styles */
 	//appearance: none;
 	width: 100%; /* Full-width */
-	height: 15px;
+	height: 5px;
 	border-radius: 5px;  
-	background: orange; /* Grey background */
-	//outline: none; /* Remove outline */
+	background: #4CAF50; /* Grey background */
+	outline: none; /* Remove outline */
 	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
 	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
 	transition: opacity .2s;
@@ -162,7 +162,7 @@
   
   /* Mouse-over effects */
   .slider:hover {
-	opacity: 1; /* Fully shown on mouse-over */
+	opacity: 0; /* Fully shown on mouse-over */
   }
   
   /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -182,7 +182,8 @@
 //	background: #4CAF50; /* Green background */
 //	cursor: pointer; /* Cursor on hover */
   //}
- /* input[type="range"]::-moz-range-track {
+/*
+ input[type="range"]::-moz-range-track {
 	padding: 0 10px;
 	background: repeating-linear-gradient(to right, 
 	  #ccc, 
@@ -221,6 +222,178 @@ option {
 		margin-top: 0;
 	}
 }
+
+.range-slider {
+  display: inline-block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 15px;
+  & > input {
+    opacity: 0;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    margin-top: 80px;
+    -webkit-appearance: none;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      z-index: 100;
+      position: relative;
+      width: 50px;
+      height: 30px;
+      -webkit-border-radius: 10px;
+    }
+  }
+  & > span.slider-container {
+    display: inline-block;
+    min-height: 110px;
+    display: inline-block;
+    position: absolute;
+    top: 70px;
+    left: -8px;
+    right: 46px;
+    z-index: 3;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    & > span.prod {
+        background-color: #BDBDBD;
+		
+		background-image:  linear-gradient(90deg, transparent, transparent calc((100% / 12 * 1) - 2px), white calc(100% / 12 * 1), transparent calc(100% / 12 * 1)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 2) - 2px), white calc(100% / 12 * 2), transparent calc(100% / 12 * 2)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 3) - 2px), white calc(100% / 12 * 3), transparent calc(100% / 12 * 3)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 4) - 2px), white calc(100% / 12 * 4), transparent calc(100% / 12 * 4)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 5) - 2px), white calc(100% / 12 * 5), transparent calc(100% / 12 * 5)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 6) - 2px), white calc(100% / 12 * 6), transparent calc(100% / 12 * 6)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 7) - 2px), white calc(100% / 12 * 7), transparent calc(100% / 12 * 7)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 8) - 2px), white calc(100% / 12 * 8), transparent calc(100% / 12 * 8)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 9) - 2px), white calc(100% / 12 * 9), transparent calc(100% / 12 * 9)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 10) - 2px), white calc(100% / 12 * 10), transparent calc(100% / 12 * 10)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 11) - 2px), white calc(100% / 12 * 11), transparent calc(100% / 12 * 11)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 12 * 12) - 2px), white calc(100% / 12 * 12), transparent calc(100% / 12 * 12))
+		;
+	    -webkit-transform: translate3d(0, 0, 0);
+	    transform: translate3d(0, 0, 0);
+
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+        left: 10px;
+        right: -42px;
+        height: 11px;
+        overflow: hidden;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        & > span {
+          background: linear-gradient(90deg,#2BD4EE 0%, #1A98FF 100%);
+          display: inline-block;
+          float: left;
+          height: 11px;
+          width: 0%;
+        }
+      }
+	  & > span.nonProd {
+        background-color: #BDBDBD;
+		
+		background-image:  linear-gradient(90deg, transparent, transparent calc((100% / 37 * 1) - 2px), white calc(100% / 37 * 1), transparent calc(100% / 37 * 1)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 2) - 2px), white calc(100% / 37 * 2), transparent calc(100% / 37 * 2)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 3) - 2px), white calc(100% / 37 * 3), transparent calc(100% / 37 * 3)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 4) - 2px), white calc(100% / 37 * 4), transparent calc(100% / 37 * 4)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 5) - 2px), white calc(100% / 37 * 5), transparent calc(100% / 37 * 5)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 6) - 2px), white calc(100% / 37 * 6), transparent calc(100% / 37 * 6)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 7) - 2px), white calc(100% / 37 * 7), transparent calc(100% / 37 * 7)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 8) - 2px), white calc(100% / 37 * 8), transparent calc(100% / 37 * 8)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 9) - 2px), white calc(100% / 37 * 9), transparent calc(100% / 37 * 9)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 10) - 2px), white calc(100% / 37 * 10), transparent calc(100% / 37 * 10)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 11) - 2px), white calc(100% / 37 * 11), transparent calc(100% / 37 * 11)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 12) - 2px), white calc(100% / 37 * 12), transparent calc(100% / 37 * 12)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 13) - 2px), white calc(100% / 37 * 13), transparent calc(100% / 37 * 13)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 14) - 2px), white calc(100% / 37 * 14), transparent calc(100% / 37 * 14)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 15) - 2px), white calc(100% / 37 * 15), transparent calc(100% / 37 * 15)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 16) - 2px), white calc(100% / 37 * 16), transparent calc(100% / 37 * 16)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 17) - 2px), white calc(100% / 37 * 17), transparent calc(100% / 37 * 17)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 18) - 2px), white calc(100% / 37 * 18), transparent calc(100% / 37 * 18)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 19) - 2px), white calc(100% / 37 * 19), transparent calc(100% / 37 * 19)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 20) - 2px), white calc(100% / 37 * 20), transparent calc(100% / 37 * 20)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 21) - 2px), white calc(100% / 37 * 21), transparent calc(100% / 37 * 21)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 22) - 2px), white calc(100% / 37 * 22), transparent calc(100% / 37 * 22)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 23) - 2px), white calc(100% / 37 * 23), transparent calc(100% / 37 * 23)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 24) - 2px), white calc(100% / 37 * 24), transparent calc(100% / 37 * 24)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 25) - 2px), white calc(100% / 37 * 25), transparent calc(100% / 37 * 25)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 26) - 2px), white calc(100% / 37 * 26), transparent calc(100% / 37 * 26)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 27) - 2px), white calc(100% / 37 * 27), transparent calc(100% / 37 * 27)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 28) - 2px), white calc(100% / 37 * 28), transparent calc(100% / 37 * 28)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 29) - 2px), white calc(100% / 37 * 29), transparent calc(100% / 37 * 29)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 30) - 2px), white calc(100% / 37 * 30), transparent calc(100% / 37 * 30)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 31) - 2px), white calc(100% / 37 * 31), transparent calc(100% / 37 * 31)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 32) - 2px), white calc(100% / 37 * 32), transparent calc(100% / 37 * 32)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 33) - 2px), white calc(100% / 37 * 33), transparent calc(100% / 37 * 33)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 34) - 2px), white calc(100% / 37 * 34), transparent calc(100% / 37 * 34)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 35) - 2px), white calc(100% / 37 * 35), transparent calc(100% / 37 * 35)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 36) - 2px), white calc(100% / 37 * 36), transparent calc(100% / 37 * 36)),
+		linear-gradient(90deg, transparent, transparent calc((100% / 37 * 37) - 2px), white calc(100% / 37 * 37), transparent calc(100% / 37 * 37))
+		
+		;
+	    -webkit-transform: translate3d(0, 0, 0);
+	    transform: translate3d(0, 0, 0);
+
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+        left: 10px;
+        right: -42px;
+        height: 11px;
+        overflow: hidden;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        & > span {
+          background: linear-gradient(90deg,#2BD4EE 0%, #1A98FF 100%);
+          display: inline-block;
+          float: left;
+          height: 11px;
+          width: 0%;
+        }
+      }
+      & > span.bar-btn {
+        display: inline-block;
+        position: absolute;
+        width: 46px;
+        height: 30px;
+        padding-top: 30px;
+        font-weight: bold;
+        text-align: center;
+        background: #fff;
+		color:#1A98FF;
+        left: -25px;
+        top: -65px;
+ 
+        &:after {
+          content: "";
+          border: 3px solid #1A98FF;
+          background-color: white;
+          border-radius: 20px;
+          width: 25px;
+          height: 25px;
+          display: inline-block;
+          position: absolute;
+          left: 8px;
+          top: 65px;
+          z-index: 3;
+        }
+        
+      }
+
+    }
+}
+
+
 
 	
 }

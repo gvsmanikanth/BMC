@@ -1,5 +1,44 @@
 ;( function($) {
     if($(".orion-calculator").length > 0 ){
+	
+	$.fn.rangeslider = function(options) {
+		  var obj = this;
+		  var defautValue = obj.attr("value");
+		  var environment = obj.data("env");
+		  obj.wrap("<span class='range-slider'></span>");
+		  if(environment == "nonProd"){
+			obj.after("<span class='slider-container'><span class='bar nonProd'><span></span></span><span class='bar-btn'><span>0</span></span></span>");
+		  }else{
+		  	obj.after("<span class='slider-container'><span class='bar prod'><span></span></span><span class='bar-btn'><span>0</span></span></span>");
+		  }
+		  //obj.attr("oninput", "updateSlider(this)");
+		  //window.updateSlider(this);
+
+		  var value = obj.val();
+		  var min = obj.attr("min");
+		  var max = obj.attr("max");
+		  var range = Math.round(max - min);
+		  var percentage = Math.round((value - min) * 100 / range);
+		  var nextObj = obj.next();
+		  nextObj.find("span.bar-btn").css("left", percentage + "%");
+		  nextObj.find("span.bar > span").css("width", percentage + "%");
+		  nextObj.find("span.bar-btn > span").text("+"+value);
+	
+		  return obj;
+		};
+		
+		window.updateSlider = function (passObj) {
+		  var obj = $(passObj);
+		  var value = obj.val();
+		  var min = obj.attr("min");
+		  var max = obj.attr("max");
+		  var range = Math.round(max - min);
+		  var percentage = Math.round((value - min) * 100 / range);
+		  var nextObj = obj.next();
+		  nextObj.find("span.bar-btn").css("left", percentage + "%");
+		  nextObj.find("span.bar > span").css("width", percentage + "%");
+		  nextObj.find("span.bar-btn > span").text("+"+value);
+		};
 		
 	//model
 	var OrionCalculator = function(){
@@ -343,7 +382,6 @@
 					//console.log(prodItemsContent);
 					prodItems.innerHTML=prodItemsContent; //+ '<div id="nonProdReviewItemsWrap">';//not working yet
 					reviewsWrap.appendChild(prodItems);
-					
 				}
 				//append to parent
 				if(nonProdItemsContent){
@@ -358,6 +396,10 @@
 				if(list){
 					tallyBreakdown.appendChild(list);
 				}
+				
+				$(".slider").each(function(item, index){
+				   $(index).rangeslider();
+				});
 			}
 		}
 		
