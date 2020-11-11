@@ -1,20 +1,82 @@
-<adapt-tabset [type]="'pills'">
+<adapt-tabset [type]="'pills'" (tab-active-changed)="tabChanged($event)">
     <adapt-tab-panel icon="d-icon-comment_question_o" adapt-tab-title="Questions">
         <div class="row">
             <div class="col-md-6">
-                <div class="question" *ngFor="let question of questions.slice(0,5)"><div class="d-icon-check_circle_o"></div><a [href]="question.link"  [innerHTML]="question.titleName"></a></div>
+                <div class="question" *ngFor="let question of questions.slice(0,5)">
+                    <div class="d-icon-check_circle_o"></div><a [href]="question.link"
+                        [innerHTML]="question.titleName"></a>
+                </div>
             </div>
             <div class="col-md-6">
-                <div class="question" *ngFor="let question of questions.slice(5)"><div class="d-icon-check_circle_o"></div><a [href]="question.link" [innerHTML]="question.titleName"></a></div>
+                <div class="question" *ngFor="let question of questions.slice(5)">
+                    <div class="d-icon-check_circle_o"></div><a [href]="question.link"
+                        [innerHTML]="question.titleName"></a>
+                </div>
             </div>
         </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-note_pencil" adapt-tab-title="Blog posts">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigBlog">
+                <div class="question" *ngFor="let blog of blogs.slice(0,5)">
+                    <div class="d-icon-note_pencil"></div><a [href]="blog.link"
+                        [innerHTML]="blog.titleName"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="question" *ngFor="let blog of blogs.slice(5)">
+                    <div class="d-icon-note_pencil"></div><a [href]="blog.link"
+                        [innerHTML]="blog.titleName"></a>
+                </div>
+            </div>
+        </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-comment_text" adapt-tab-title="Discussions">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigDicsussion">
+                <div class="question" *ngFor="let discussion of discussions.slice(0,5)">
+                    <div class="d-icon-comment_text"></div><a [href]="discussion.link"
+                        [innerHTML]="discussion.titleName"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="question" *ngFor="let discussion of discussions.slice(5)">
+                    <div class="d-icon-comment_text"></div><a [href]="discussion.link"
+                        [innerHTML]="discussion.titleName"></a>
+                </div>
+            </div>
+        </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-file_text_o" adapt-tab-title="Documents">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigDocs">
+                <div class="question" *ngFor="let document of documents.slice(0,5)">
+                    <div class="d-icon-file_text_o"></div><a [href]="document.link"
+                        [innerHTML]="document.titleName"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="question" *ngFor="let document of documents.slice(5)">
+                    <div class="d-icon-file_text_o"></div><a [href]="document.link"
+                        [innerHTML]="document.titleName"></a>
+                </div>
+            </div>
+        </div>
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-lightbulb_o" adapt-tab-title="Ideas">
+        <div class="row">
+            <div class="col-md-6" [ngBusy]="busyConfigIdea">
+                <div class="question" *ngFor="let idea of ideas.slice(0,5)">
+                    <div class="d-icon-lightbulb_o"></div><a [href]="idea.link"
+                        [innerHTML]="idea.titleName"></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="question" *ngFor="let idea of ideas.slice(5)">
+                    <div class="d-icon-lightbulb_o"></div><a [href]="idea.link"
+                        [innerHTML]="idea.titleName"></a>
+                </div>
+            </div>
+        </div>
     </adapt-tab-panel>
 </adapt-tabset>

@@ -26,7 +26,8 @@ window['psc'] = {
     supportVideos: "https://communities.bmc.com/community/support/blog/2018/09/17/support-videos",
     supportedProducts: "https://stage.cms.bmc.com/available/supported-product-az-list.html",
     training: "https://stage.cms.bmc.com/education/training-and-certification.html",
-    caseDetailUrl: "https://bmcsites.force.com/casemgmt/SC_CaseDetailPage?CaseId="
+    caseDetailUrl: "https://bmcsites.force.com/casemgmt/SC_CaseDetailPage?CaseId=",
+    supportQuestionUrl: "https://communities.bmc.com/community/support/"
   },
   user: {
     loggedIn: 'true'

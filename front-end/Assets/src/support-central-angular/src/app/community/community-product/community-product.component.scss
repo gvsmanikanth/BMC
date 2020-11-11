@@ -5,3 +5,11 @@
         margin-right: 10px;
     }
 }
+
+.row {
+    position: relative;
+}
+
+adapt-tabset ::ng-deep .nav-link-icon{
+    display: inline;
+}
