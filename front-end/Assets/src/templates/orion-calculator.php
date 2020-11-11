@@ -63,7 +63,7 @@
 							</div>
 						</div>		
 						
-						<div class="nav"><button type="button" data-nav="next">Next</button></div>
+						<div class="nav"><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
 						<h3>Non-Production Environment</h3>
@@ -72,7 +72,7 @@
 						<div class="flex-wrap ">
 							<div class="flex-item col-12 md-col-4 ">
 								<h4>Annual Base Price:</h4>
-								<h3 id="nonProdBaseCost"></h3>
+								<h3 id="nonProdBaseCost" class="big-price-text"></h3>
 							</div>
 							<div class="flex-item col-12 md-col-8 ">
 								<h4><strong>Includes</strong></h4>
@@ -80,16 +80,17 @@
 									<li>500 Daily Executions</li>
 									<li>BMC's industry leading Continuous Support**</li>
 								</ul>
-								<p>**Severity 1 is not supported on nonproduction environments</p>
+								<p><small>**Severity 1 is not supported on nonproduction environments</small></p>
 							</div>
 						</div>
+						
 						
 						<div id="nonProdItemsWrap">
 							<!--items-->
 						</div>
 	
-						<button type="button" id="addEnv">Add an Environment</button>
-						<div class="nav"><button type="button" data-nav="back">Back</button><button type="button" data-nav="next">Next</button></div>
+						<button type="button" id="addEnv"  class="btn-level2-addEnv">Add an Environment</button>
+						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="3" class="tab-body">
 						<h3>Review Your Estimate</h3>
@@ -138,8 +139,8 @@
 							</div> -->
 						</div>
 						
-						<button type="button" id="addEnvReviewTab">Add an Environment</button>
-						<div class="nav"><button type="button" data-nav="back">Back</button></div>
+						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add an Environment</button>
+						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><a href="#." class="btn btn-gradient ml1">Next: Contact Sales</a></div>
 					</div>
 				</div>
 			
