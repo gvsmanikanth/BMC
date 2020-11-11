@@ -11,7 +11,11 @@
 		  }else{
 		  	obj.after("<span class='slider-container'><span class='bar prod'><span></span></span><span class='bar-btn'><span>0</span></span></span>");
 		  }
-		  //obj.attr("oninput", "updateSlider(this)");
+		  
+		  if (options = "addUpdateEvent"){
+			obj.attr("oninput", "updateSlider(this)");
+		  }
+		  //
 		  //window.updateSlider(this);
 
 		  var value = obj.val();
@@ -338,7 +342,7 @@
 						prodItemsContent = "";
 						prodItemsContent = "<h3>Production Test Environment</h3><p>Select Daily Execution Amount</p>";
 						prodItemsContent += "<div class='slidecontainer'>";
-						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var i=500;i<=maxNonProdSelection;i+=500){
 							if(i==1000||i==5000){
 								var label = i.toString().replace(/000$/,'');
@@ -361,7 +365,7 @@
 						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p>Select Daily Execution Amount</p>";
 						nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
 						nonProdItemsContent += "<div class='slidecontainer'>";
-						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=500;k<=maxNonProdSelection;k+=500){
 							if(k==1000||k==5000||k==10000||k==15000||k==19000){
 								var labelk = k.toString().replace(/000$/,'');
@@ -397,7 +401,7 @@
 					tallyBreakdown.appendChild(list);
 				}
 				
-				$(".slider").each(function(item, index){
+				$(".sliderNew").each(function(item, index){
 				   $(index).rangeslider();
 				});
 			}
@@ -511,6 +515,10 @@
 		};
 		
 	}
+	
+	$(".slider.prodSlider").each(function(item, index){
+	   $(index).rangeslider("addUpdateEvent");
+	});
 }     
 
 }(jQuery));

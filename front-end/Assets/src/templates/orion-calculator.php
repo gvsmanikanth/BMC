@@ -24,7 +24,7 @@
 						<h3>Choose Additional Daily Execution Amount</h3>
 						<p>You can add groups of executions to your base package (500) as needed, up to 6500 additional executions. If you need more than 6500 daily executions, you should consider our Enterprise Plan.</p>
 						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider" id="prodExecutions" step="500" list="steplist">
+							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
 								<option value="500"></option>
 								<option class="marker" value="1000">1k</option>
