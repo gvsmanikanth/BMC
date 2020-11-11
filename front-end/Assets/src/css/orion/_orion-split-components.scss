@@ -96,11 +96,12 @@
             height: 1px;
             background: #2BD4EE;
             width: 24%;
-            margin: 10px auto 10px 0;
+            margin: 10px auto 24px 0;
         }
         .text-block {
             @media(min-width:$break-lg){            
                 padding-right: 20px;
+                margin-bottom: 27px;
             }
             
         }
