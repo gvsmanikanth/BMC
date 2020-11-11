@@ -340,7 +340,7 @@
 						prodItems.className = "prodItem";
 						prodItems.setAttribute('data-env','prod'+y);
 						prodItemsContent = "";
-						prodItemsContent = "<h3>Production Test Environment</h3><p>Select Daily Execution Amount</p>";
+						prodItemsContent = "<h3>Production Test Environment</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
 						prodItemsContent += "<div class='slidecontainer'>";
 						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var i=500;i<=maxNonProdSelection;i+=500){
@@ -352,7 +352,9 @@
 							}
 						}
 						prodItemsContent += "</datalist></div>";
-						prodItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap '>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
+						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						nonProdItemsContent += "<div class='edit-btn'>Edit</div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
@@ -362,7 +364,7 @@
 						//nonProd
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
-						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p>Select Daily Execution Amount</p>";
+						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
 						nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
 						nonProdItemsContent += "<div class='slidecontainer'>";
 						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
@@ -375,7 +377,9 @@
 							}
 						}
 						nonProdItemsContent += "</datalist></div>";
-						nonProdItemsContent += "<p>Quantity: "+thisEnv.quantity+"</p><p>This price: "+thisPrice+"</p>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div> nonProdItemsContent += <div class='edit-btn'>Edit</div>";
+						
 						nonProdDisplayCount++;
 						break;
 					default:

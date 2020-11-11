@@ -47,10 +47,20 @@
 					h3{
 						color: #002C8F;
 					}
+					.big-price-text {
+						color: #414042;
+						font-weight: 700;
+						font-size: 26px;
+						margin-top: 10px;
+						margin-bottom: 30px;
+						@media(min-width:$break-md){
+							font-size: 36px;
+						} 
+					}
 					
 					#nonProdItemsWrap, #reviewItemsWrap {
 						.nonProdItem, .prodItem{
-							border: 1px solid #002C8F;
+							border: 1px solid #1A98FF;
 							border-radius: 10px;
 							padding: 30px;
 							margin-bottom: 30px;
@@ -59,7 +69,12 @@
 							.delete{
 								position: absolute;
 							    top: 15px;
-							    right: 20px; 
+								right: 20px; 
+								cursor: pointer;
+								color: #1A98FF;
+								&:hover{
+									color: #F98700;									
+								}
 							}
 						}
 						
@@ -99,6 +114,9 @@
 						margin: 40px 0 20px 0;
 					}
 				}
+				.daily-execution-wrap {
+					justify-content: space-between;
+				}
 			}
 			.orion-tabs-static {
 				.tallybox {
@@ -134,6 +152,88 @@
 						margin: 10px auto;
 					}
 				}
+			}
+			#nonProdItemsWrap{
+				.daily-execution-wrap{
+					display: none
+				}
+				.slidecontainer, .cale-subTitle{
+					display: block;
+				}
+				.totolExecutions{
+					display: flex;
+				}
+			}
+			#reviewItemsWrap{
+				.daily-execution-wrap{
+					display: flex;
+				}
+				.totolExecutions, .slidecontainer, .cale-subTitle{
+					display: none;
+				}
+			}
+		}
+
+		.btn-level2 {
+			background: transparent;
+			color: #1A98FF;
+			border: none;
+			font-size: 16px;
+			font-weight: 700;
+			padding-left: 0;
+			transition: 0.3s linear;
+			border: none;
+		
+			&.btn-level2-prev{
+				&:before{
+					content: url(#{$imagesFolder}orion/arrow.png);
+					background: #1A98FF;
+					border-radius: 50%;
+					width: 30px;
+					height: 30px;
+					display: inline-block;
+					line-height: 30px;
+					margin-left: 10px;
+					transition: 0.3s linear;
+					margin-right: 10px;
+					transform: rotate(180deg);
+				}
+				&:hover{
+					&:before{
+						background: linear-gradient(90deg, #1a98ff 0%, #002c8f 100%);
+						transition: 0.3s linear;
+					}
+				}
+			}
+			&.btn-level2-next{
+				&:after{
+					content: url(#{$imagesFolder}orion/arrow.png);
+					background: #1A98FF;
+					border-radius: 50%;
+					width: 30px;
+					height: 30px;
+					display: inline-block;
+					line-height: 30px;
+					margin-left: 10px;
+					transition: 0.3s linear;
+				}
+				&:hover{
+					&:after{
+						background: linear-gradient(90deg, #1a98ff 0%, #002c8f 100%);
+						transition: 0.3s linear;
+					}
+				}
+			}
+		}
+		.btn-level2-addEnv {
+			background-color: #002C8F;
+			border-color: #002C8F;
+			color: #fff;
+			border: none;
+			&:before{
+				content: url(#{$imagesFolder}orion/plus-orion.png);
+				vertical-align: middle;
+    			margin-right: 10px;				
 			}
 		}
 		
