@@ -340,15 +340,17 @@
 			
 			
 				if(prodItemsContent){
-					console.log(prodItemsContent);
-					prodItems.innerHTML=prodItemsContent;//not working yet
+					//console.log(prodItemsContent);
+					prodItems.innerHTML=prodItemsContent; //+ '<div id="nonProdReviewItemsWrap">';//not working yet
 					reviewsWrap.appendChild(prodItems);
+					
 				}
 				//append to parent
 				if(nonProdItemsContent){
 					nonProdItems.innerHTML = nonProdItemsContent;
 					nonProdWrap.appendChild(nonProdItems);
 					
+					//var reviewsNonProdWrap = document.getElementById("nonProdReviewItemsWrap");
 					var clnReviewNonProd = nonProdItems.cloneNode(true);
 					reviewsWrap.appendChild(clnReviewNonProd);
 				}

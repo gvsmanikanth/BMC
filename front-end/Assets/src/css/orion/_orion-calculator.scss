@@ -48,12 +48,19 @@
 						color: #002C8F;
 					}
 					
-					#nonProdItemsWrap {
-						.nonProdItem{
+					#nonProdItemsWrap, #reviewItemsWrap {
+						.nonProdItem, .prodItem{
 							border: 1px solid #002C8F;
 							border-radius: 10px;
 							padding: 30px;
 							margin-bottom: 30px;
+							position:relative;
+							
+							.delete{
+								position: absolute;
+							    top: 15px;
+							    right: 20px;
+							}
 						}
 						
 					}
