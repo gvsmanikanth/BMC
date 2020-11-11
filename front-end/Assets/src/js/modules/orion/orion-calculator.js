@@ -47,7 +47,7 @@
 		
 		//Function to calculate based on envionment and number of executions
 		// getPriceForExecution("prod",6000) --> Return value = 98900
-		this.getPriceForExecution = function(pEnvironment, pExecutions){
+		this.getPriceForExecution = function(pEnvironment, pExecutions, format=false){
 			var _self = this;
 			//Select Environment
 			var selEnvironmentPriceTable = _self.priceTable[pEnvironment];
@@ -65,6 +65,10 @@
 					totalCost += multiplicationFactor * executionRange[i].price;
 					remainingExecutions -= multiplicationFactor*executionRange[i].quantity;
 				}
+			}
+			
+			if(format){
+				totalCost = totalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			}
 			
 			return totalCost;
@@ -99,7 +103,7 @@
 	//					thisID++;
 	//				}
 	
-					_self.environments[_self.environments.length] = objEnv;
+					_self.environments[_self.environments.length] = objEnv;//test
 					
 				}else{
 					//if pID sent, set to that ID
@@ -127,7 +131,7 @@
 		};
 		
 		this.removeEnvironments = function(pID){
-			console.log('in function: '+pID);
+			///console.log('in function: '+pID);
 			_self = this;
 			//delete _self.environments[pID];
 			_self.environments[pID] = {"deleted":true};
@@ -137,7 +141,7 @@
 			localStorage.setItem("OrionCalculator",JSON.stringify(data));
 		};
 		
-		this.getTotalCost = function(){
+		this.getTotalCost = function(format=false){
 			_self = this;
 			var totalCost = 0;
 			
@@ -146,7 +150,12 @@
 			   	totalCost += _self.getPriceForExecution(item.envType, item.quantity);
 			   }
 			});
-				
+			
+			if(format){
+				//totalCost = .totalCost.replace(/^\$?([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(.[0-9][0-9])?$/,".00");
+				totalCost = totalCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			
 			return totalCost;
 		};
 		
@@ -220,11 +229,11 @@
 		var nonProdBaseCost = document.getElementById("nonProdBaseCost");
 		
 		//load values
-		tally.innerHTML = Calculator.getTotalCost();
+		tally.innerHTML = "$"+Calculator.getTotalCost(true);
 		prodEx.innerHTML = quantity+baseQuantity;
-		prodCost.innerHTML = Calculator.getPriceForExecution('prod',quantity);
+		prodCost.innerHTML = "$"+Calculator.getPriceForExecution('prod',quantity,true);
 		prodBase.innerHTML = baseQuantity;
-		nonProdBaseCost.innerHTML = Calculator.priceTable.nonProd.basePrice;
+		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		
 		//reset
 		tallyBreakdown.innerHTML = "";//reset list
@@ -244,7 +253,7 @@
 				var prodItems = document.createElement("div");
 				var nonProdItemsContent = "";
 				var prodItemsContent = "";
-				var thisPrice = Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity);
+				var thisPrice = "$"+Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
 				var maxProdSelection = 6500;
 				var maxNonProdSelection = 19000;
 				
