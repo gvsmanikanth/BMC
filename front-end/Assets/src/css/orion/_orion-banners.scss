@@ -180,12 +180,49 @@
     }    
     &.use-cases-banner{
         overflow: visible;
+        .orion-banner-content {
+            padding: 10px 0 30px 0;
+            @media (min-width: $break-sm) {
+                padding: 100px 0 30px 0;        
+            }
+            .flex.flex-item:first-child{
+                order: 2;
+                @media (min-width: $break-sm) {
+                    order: initial;          
+                }
+            }
+            .orion-banner-right-image{
+                img{
+                    max-height: 192px;
+                    @media (min-width: $break-sm) {  
+                        max-height: initial;          
+                    }
+                }
+            }
+        }
         .blob-container{
+            right: 0;   
+            @media (min-width: $break-sm) {  
+                right: -40%;            
+            }
             @media (min-width: $break-lg) {
                 top: -10px;   
                 right: -15%;            
             }
+            @media (min-width: 1600px) {  
+                right: -5%;            
+            }
+            @media (min-width: 1800px) {
+                right: 0;           
+            }
             .blob-hidden {
+                background-size: 650px;
+                background-position: 75% -70px;
+                @media (min-width: $break-sm) {  
+                    background-size: auto;
+                    background-position: 100% 135%;
+                }
+                
                 @media (min-width: $break-lg) {      
                     background-position: 100% 135%;
                     right: 130px;
@@ -194,6 +231,10 @@
                 }
             } 
             .blob-masked {
+                background-size: 650px;
+                @media (min-width: $break-sm) {  
+                    background-size: auto;
+                }
                 @media (min-width: $break-lg) {  
                     animation-name: bounce-blob-masked-anchor;    
                     background-position: 100% 100%;

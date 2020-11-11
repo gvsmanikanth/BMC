@@ -25,10 +25,10 @@
             </div>     
         </div> 
         <div class="blob-container ">        
-            <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
+            <div class=" blob-hidden rellax" data-rellax-speed="2" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
                        
             </div>
-            <div class="blob-masked rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-orange.svg");'  >
+            <div class="blob-masked rellax" data-rellax-speed="-2" style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-orange.svg");'  >
             </div> 
         </div>
     </div>	

@@ -6,32 +6,32 @@
 ?>
 
 <!-- Logo portal section started -->
-<section class="orion-global bg-white text-left py3">
+<section class="orion-global bg-white text-left">
 	<div class="layout-inner-wrap">
 		<h2 class="orion-block-title mb1">Managed File Transfer</h2>
 		<p>Select a brand to get access to their documentation</p>
 		<div class="flex-wrap remove-margin-12px">
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
 				<div class="portal-cards portal-cards-text">
-					<a href="#." class="brand-name">FTPS</a>
+					<a href="#." class="brand-name"><strong>FTPS</strong></a>
 				</div>
 			</div>
 			<!-- col -->
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
 				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">SFTP</a>
+                    <a href="#." class="brand-name"><strong>SFTP</strong></a>
 				</div>
 			</div>
 			<!-- col -->
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
 				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">AWS S3</a>
+                    <a href="#." class="brand-name"><strong>AWS S3</strong></a>
 				</div>
 			</div>
 			<!-- col -->
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
 				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">SQL Server Integration Services (SSIS)</a>
+                    <a href="#." class="brand-name"><strong>SQL Server Integration Services (SSIS)</strong></a>
 				</div>
 			</div>
             <!-- col -->            						
@@ -42,7 +42,7 @@
 
 
 <!-- Logo portal section started -->
-<section class="orion-global bg-white text-left py3">
+<section class="orion-global bg-white text-left ">
 	<div class="layout-inner-wrap">
 		<h2 class="orion-block-title mb1">AWS</h2>
 		<p>Select a brand to get access to their documentation</p>
