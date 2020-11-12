@@ -143,14 +143,17 @@
 					</div>
 				</div>
 			
-				<div class="orion-tabs-static text-center flex-item col-12 sm-col-4 md-col-3">
-					<div class="tallybox">
-						<ul id="tallyBreakdown"></ul>
-						<p>Start Plan Total Annual Estimate</p>
-						<h2 id="tally">0.00</h2>
-						<a href="#" class="btn btn-gradient">Contact Sales</a>						
+				<div class="orion-tabs-static text-center flex-item col-12 sm-col-4 md-col-3" > 
+					<div  id="calc-sidebar">
+						<div class="tallybox">
+							<ul id="tallyBreakdown"></ul>
+							<p>Start Plan Total Annual Estimate</p>
+							<h2 id="tally">0.00</h2>
+							<a href="#" class="btn btn-gradient">Contact Sales</a>						
+						</div>
+						<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
 					</div>
-					<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
+				
 				</div>
 			</div>
 			
@@ -160,7 +163,6 @@
 </section>
 
 
-<div class="bg-white " style="min-height: 64px"></div>
 
 <section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
     <div class="layout-inner-wrap banner-area">
@@ -174,4 +176,5 @@
         </div>
     </div>    
 </section>
+
 <?php include 'php-inc/foot.php'; ?>
