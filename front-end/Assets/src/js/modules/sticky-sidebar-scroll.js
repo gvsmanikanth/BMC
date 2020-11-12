@@ -179,7 +179,7 @@
 			var lengthFromPageEnd = docHeight - EleTabWrap.height() - offset.top;
 			var isdesktop = window.matchMedia("only screen and (min-width: 768px)").matches; 
 			if(isdesktop){
-				$.stickysidebarscroll("#calc-sidebar",{offset: {top: 20, bottom: lengthFromPageEnd}});
+				$.stickysidebarscroll("#calc-sidebar",{offset: {top: 80, bottom: lengthFromPageEnd}});
 			}
 			
 		});	
