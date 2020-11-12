@@ -10,13 +10,13 @@
 		
 		
 		<!--tab new-->
-		<h2>Estimate Your Cost</h2>
+		<h2 class="orion-block-title mb1">Estimate Your Cost</h2>
 		<p>Get an idea of what the cost would be for your solution. When you talk to an expert, they will help you get an exact cost.</p>
 		<div class="orion-tabs-wrapper">
 			<div class="orion-tabs-nav flex-wrap">
-				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h4><strong><span>01</span> Daily Executions</strong></h4></div>
-				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h4><strong><span>02</span> Non-Production</strong></h4></div>
-				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h4><strong><span>03</span> Review</strong></h4></div>
+				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h4><strong><span class="stepNo">01</span> <span class="envName">Daily Executions<span></strong></h4></div>
+				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">02</span> <span class="envName">Non-Production<span></strong></h4></div>
+				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">03</span> <span class="envName">Review</strong><span></h4></div>
 			</div>
 			<div class="orion-tabs-body-wrapper flex-wrap">
 				<div class="orion-tabs-body flex-item col-12 sm-col-8 md-col-9">
@@ -69,13 +69,13 @@
 						<p>You must purchase a Production Environment in order to purchase a Non-Production Environment. You can add more than one Non-Production Environment with variable daily execution amounts. </p>
 						
 						<div class="flex-wrap ">
-							<div class="flex-item col-12 md-col-4 ">
+							<div class="flex-item col-12 md-col-7 lg-col-4">
 								<h4>Annual Base Price:</h4>
 								<h3 id="nonProdBaseCost" class="big-price-text"></h3>
 							</div>
-							<div class="flex-item col-12 md-col-8 ">
+							<div class="flex-item col-12 md-col-5 lg-col-4">
 								<h4><strong>Includes</strong></h4>
-								<ul class="orange-tick-bullets">
+								<ul class="blue-check-list">
 									<li>500 Daily Executions</li>
 									<li>BMC's industry leading Continuous Support**</li>
 								</ul>

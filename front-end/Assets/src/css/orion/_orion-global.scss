@@ -1,6 +1,7 @@
 .orion-global{
     font-size: 16px;
     line-height: 26px;
+    color: #75777A;
     h1, h2, h3{
         font-weight: 400;    
     }
@@ -115,6 +116,26 @@
     .max-width-1016{
         max-width: 1016px;
         margin: 0 auto;
+    }
+    .blue-check-list{
+        margin: 10px 0;
+        padding: 0;
+        list-style: none;
+        li{
+            &::before{
+                content: url(#{$imagesFolder}orion/checkmark-navyblue.svg);
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background-color: #2BD4EE;
+                margin-right: 0.74444em;
+                text-align: center;
+                padding: 5px;
+                line-height: 13px;
+                vertical-align: middle;
+            }
+        }  
     }
     
 }
