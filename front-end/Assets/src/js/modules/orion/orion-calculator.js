@@ -352,9 +352,9 @@
 							}
 						}
 						prodItemsContent += "</datalist></div>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap '>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
-						nonProdItemsContent += "<div class='edit-btn'>Edit</div>";
+						prodItemsContent += "<div class='edit-btn'>Edit</div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
@@ -378,7 +378,7 @@
 						}
 						nonProdItemsContent += "</datalist></div>";
 						nonProdItemsContent += "<div class='totolExecutions flex-wrap'>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
-						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div> nonProdItemsContent += <div class='edit-btn'>Edit</div>";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div><div class='edit-btn'>Edit</div>";
 						
 						nonProdDisplayCount++;
 						break;

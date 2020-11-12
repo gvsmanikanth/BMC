@@ -57,7 +57,11 @@
 							font-size: 36px;
 						} 
 					}
-					
+					#nonProdItemsWrap {
+						.edit-btn {
+							display: none;
+						}
+					}
 					#nonProdItemsWrap, #reviewItemsWrap {
 						.nonProdItem, .prodItem{
 							border: 1px solid #1A98FF;
@@ -322,7 +326,7 @@ option {
 	margin-top: -100%;
 	color: #75777A;
 	&.marker{
-		margin-top: 10px;
+		margin-top: 0px;
 		font-weight: 800;
 	}
 }
@@ -334,7 +338,6 @@ option {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  padding-bottom: 15px;
   & > input {
     opacity: 0;
     width: 100%;
