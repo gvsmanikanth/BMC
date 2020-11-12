@@ -45,7 +45,6 @@
                       
     }
 
-
   
     
     // Back to top CTA Code starts
@@ -76,8 +75,7 @@
         $(this).prev('.acordian-content').slideToggle(500);
         
         
-    });
-   
+    });   
 
     // example usevar div = document.querySelector('div');var divOffset = offset(div);console.log(divOffset.left, divOffset.top);
 
