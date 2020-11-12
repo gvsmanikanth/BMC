@@ -137,16 +137,6 @@
 					objEnv.envType = pEnvType;
 					objEnv.quantity = quantity;
 					objEnv.baseEx = baseExecutions;
-					
-					//if no pID sent, increment up to the next available number
-	//				var thisID = 1;
-	//				for(var i=0;i<=_self.environments.length;i++){
-	//					if(!_self.environments[thisID]){
-	//						_self.environments[thisID] = objEnv;
-	//						break;
-	//					}
-	//					thisID++;
-	//				}
 	
 					_self.environments[_self.environments.length] = objEnv;//test
 					
@@ -210,7 +200,10 @@
 			var env = event.target.getAttribute('data-env');
 			dailyExecutions = parseInt(thisSlider.value);
 			Calculator.addEnvironments(env,dailyExecutions, ID);
-			updateCalculator(Calculator);
+			
+			if($(event.target).parent().parent().parent().parent().attr('id') != "reviewItemsWrap"){
+				updateCalculator(Calculator);
+			}
 		};
 
 		
@@ -265,7 +258,7 @@
 	
 	
 	
-	function updateCalculator(Calculator){
+	function updateCalculator(Calculator, option){
 		var tally = document.getElementById("tally");
 		var prodCost = document.getElementById("prodCost");
 		var prodEx = document.getElementById("prodEx");
@@ -295,6 +288,7 @@
 			var thisEnv = Calculator.environments[y];
 			if(!thisEnv.deleted){
 				var list = document.createElement("li");
+				
 				var nonProdItems = document.createElement("div");
 				var prodItems = document.createElement("div");
 				var nonProdItemsContent = "";
@@ -306,45 +300,14 @@
 				var maxProdSelection = 6500;
 				var maxNonProdSelection = 19000;
 				
-				
-				//refactoring. No rush. Don't delete.
-				/*
-				var maxSelection = thisType==nonProd?19000:6500;
-				var markers = {'prod':[1000,5000],'nonProd':[1000,5000,10000,15000,19000]};
-				var item = document.createElement("div");
-				item.className = "item";
-				item.setAttribute("data-env",thisEnv.envType+y);
-				var itemContent = "";
-				itemContent = "<h3>"+(thisType==nonProd?"Non-":"")+"Production Test Environment" + (thisType==nonProd?"-"+nonProdDisplayCount:"") + "</h3>";
-				itemContent += "<p>Select Daily Execution Amount</p>";
-				itemContent += "<div class='slidecontainer'>";
-				itemContent += "<input data-id='"+y+"'  data-env='"+thisType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisQuantity+"' class='slider' id='"thisType+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-				
-				for(var i=500;i<=maxSelection;i+=500){	
-					if(markers[thisType].includes(i)){
-						var label = i.toString().replace(/000$/,'');
-						itemContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
-					}else{
-						itemContent  += "<option>"+i+"</option>";
-					}
-				}
-				itemContent += "</datalist></div>";
-				itemContent += "<p>Quantity: "+thisQuantity+"</p><p>This price: "+thisPrice+"</p>";
-						
-				//tallybox
-				list.innerHTML = "<strong>"+thisType?"Start Plan:":"NonProd "+nonProdDisplayCount+"</strong>: "+thisQuantityFormatted + " executions";
-				//end refactor
-				*/
-				
-				
 				switch(thisEnv.envType){//can be refactored without the switch
 					case "prod":
 						prodItems.className = "prodItem";
 						prodItems.setAttribute('data-env','prod'+y);
 						prodItemsContent = "";
-						prodItemsContent = "<h3>Production Test Environment</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
-						prodItemsContent += "<div class='slidecontainer'>";
-						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						prodItemsContent = "<h3>Production Test Environment</h3>";
+						prodItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
+						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var i=500;i<=maxNonProdSelection;i+=500){
 							if(i==1000||i==5000){
 								var label = i.toString().replace(/000$/,'');
@@ -353,10 +316,10 @@
 								prodItemsContent  += "<option>"+i+"</option>";
 							}
 						}
-						prodItemsContent += "</datalist></div>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
+						prodItemsContent += "</datalist>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
-						prodItemsContent += "<div class='edit-btn'>Edit</div>";
+						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn'>Cancel</span><span class='save-btn'>Save changes</span></div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
@@ -366,10 +329,10 @@
 						//nonProd
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
-						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
-						nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
-						nonProdItemsContent += "<div class='slidecontainer'>";
-						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3>";
+						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>x</div>";
+						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
+						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=500;k<=maxNonProdSelection;k+=500){
 							if(k==1000||k==5000||k==10000||k==15000||k==19000){
 								var labelk = k.toString().replace(/000$/,'');
@@ -378,11 +341,12 @@
 								nonProdItemsContent  += "<option>"+k+"</option>";
 							}
 						}
-						nonProdItemsContent += "</datalist></div>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap'>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
-						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div><div class='edit-btn'>Edit</div>";
-						
+						nonProdItemsContent += "</datalist>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn'>Cancel</span><span class='save-btn'>Save changes</span></div>";
 						nonProdDisplayCount++;
+						
 						break;
 					default:
 				}
@@ -407,11 +371,15 @@
 					tallyBreakdown.appendChild(list);
 				}
 				
-				$(".sliderNew").each(function(item, index){
-				   $(index).rangeslider();
-				});
 			}
+			
+			
+				
 		}
+		
+		$(".sliderNew").each(function(item, index){
+		   $(index).rangeslider("addUpdateEvent");
+		});
 		
 	}
 
@@ -437,9 +405,29 @@
 		var env = event.target.getAttribute('data-env');
 		dailyExecutions = parseInt(thisSlider.value);
 		Calculator.addEnvironments(env,dailyExecutions, ID);
-		updateCalculator(Calculator);
+		//updateCalculator(Calculator);
 	}
 	
+	document.addEventListener('click',editClick);
+	function editClick(){
+		if(!(event.target.matches('.edit-btn') || event.target.matches('.cancel-btn') || event.target.matches('.save-btn'))){
+			return;
+		}
+		
+		if(event.target.matches('.edit-btn')){
+		   $(event.target).parent().find(".slidecontainer").toggle();
+		   $(event.target).parent().find(".cancel-save-btn").toggle();
+ 		   $(event.target).parent().find(".daily-execution-wrap").toggle();
+		   $(event.target).parent().find(".edit-btn").toggle();
+		   //$(".slidecontainer[data-nonprod="+thisID+"]").toggle();	
+		}
+		else{
+		$(event.target).parent().parent().find(".slidecontainer").toggle();
+		   $(event.target).parent().parent().find(".cancel-save-btn").toggle();
+ 		   $(event.target).parent().parent().find(".daily-execution-wrap").toggle();
+		   $(event.target).parent().parent().find(".edit-btn").toggle();
+		}
+	}
 	//Add an environment
 	//TODO: Scroll up to focus on new item upon creation
 	var addEnvButton = document.getElementById("addEnv");
@@ -491,6 +479,8 @@
 		thisContent.className += " active";
 		var headerHeight = document.querySelector('nav.layout-navigation').offsetHeight;
 		window.scroll({top: findPos(thisTab)-headerHeight,left:0,behavior:'smooth'});
+		
+		updateCalculator(Calculator);
 	}
 	var navTabs = document.querySelectorAll(".orion-tabs-nav .tab-nav");
 	for(var i=0;i<navTabs.length;i++){
@@ -525,6 +515,7 @@
 	$(".slider.prodSlider").each(function(item, index){
 	   $(index).rangeslider("addUpdateEvent");
 	});
+	
 }     
 
 }(jQuery));
