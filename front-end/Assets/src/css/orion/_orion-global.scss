@@ -832,14 +832,16 @@
       width:100vw;
       min-width:200px;
       @media(min-width:$break-md){ 
-        max-width: 300px;
+        max-width: 400px;
         font-size:16px!important;
         padding:20px;
+        line-height:20px;
       }
-      max-width:150px;
+      max-width:200px;
       border-radius: 5px;
       font-size:12px!important;
       font-weight:400;
+      line-height:16px;
       }
       
     &:hover .Tooltip-window {
