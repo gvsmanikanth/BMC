@@ -119,10 +119,14 @@
 				}
 			}
 			.orion-tabs-static {
+				p {
+					font-size: 16px;
+					line-height: 1.5em;
+				}
 				.tallybox {
 					padding: 30px;
 					background: #002C8F;
-					margin: 15px 0;
+					margin: 30px 0;
 					color: #fff;
 					font-size: 14px;
 					ul{
@@ -243,7 +247,7 @@
 	
 .slidecontainer {
 	width: 100%; 
-	margin: 40px 0 20px 0;
+	margin-top: 40px;
   }
   
   /* The slider itself */
@@ -303,10 +307,9 @@ datalist {
     display: flex;
     width: 100%;
     justify-content: space-between;
-   // margin-top: -23px;
-    //padding-top: 0px;
-	font-size: 12px;
+	font-size: 14px;
 	overflow: hidden;
+	font-weight: 800;
 }
 option {
 	width: 2ex;
@@ -318,8 +321,10 @@ option {
 	background-position-y: -15px;
 	background-position-x: center;
 	margin-top: -100%;
+	color: #75777A;
 	&.marker{
-		margin-top: 0;
+		margin-top: 10px;
+		font-weight: 800;
 	}
 }
 
@@ -336,7 +341,7 @@ option {
     width: 100%;
     position: relative;
     z-index: 5;
-    margin-top: 80px;
+    margin-top: 60px;
     -webkit-appearance: none;
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
@@ -473,6 +478,7 @@ option {
 		color:#1A98FF;
         left: -25px;
         top: -65px;
+		font-size: 14px;
  
         &:after {
           content: "";
