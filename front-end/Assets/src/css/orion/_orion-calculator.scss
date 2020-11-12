@@ -36,6 +36,7 @@
 			}
 		}
 		.orion-tabs-body-wrapper{
+			border-bottom: 1px solid #BDBDBD;
 			.orion-tabs-body {
 				.tab-body {
 					&[data-orion-tab-body="1"]{
@@ -46,7 +47,7 @@
 						
 					}
 					display: none;
-					padding: 30px 0;
+					padding: 30px 0 0 0;
 					margin-right: 30px;
 					&.active{
 						display: block;
