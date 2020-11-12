@@ -4,12 +4,15 @@
 	.orion-tabs-wrapper {
 		.orion-tabs-nav{
 			border-bottom: 1px solid #BDBDBD;
+			justify-content: space-between;
 			.tab-nav {
-				
+				@media(max-width:700px){
+					width: auto;
+				} 
 				h4{
 					padding: 35px 0;
 					color: #75777A;
-					span {
+					span.stepNo {
 						background: #E5E5E5;
 						display: inline-block;
 						padding: 10px;
@@ -21,13 +24,25 @@
 							cursor: pointer;
 							color: #000;
 					}
+					.envName {
+						display: none;
+						@media(min-width:700px){
+							display: inline-block;
+						} 						
+					}
 				}
 				
 				&.active {
 					h4 {
 						color: #002C8F;
-						span {
+						span.stepNo {
 							background: #2BD4EE;
+						}
+						.envName {
+							display: inline-block;
+							@media(min-width:700px){
+								display: inline-block;
+							} 						
 						}
 					}
 					
@@ -47,8 +62,11 @@
 						
 					}
 					display: none;
-					padding: 30px 0 0 0;
+					padding: 30px 0 0 0;					
 					margin-right: 30px;
+					@media(min-width:$break-md){
+						padding-right: 50px;
+					} 
 					&.active{
 						display: block;
 					}
@@ -72,9 +90,10 @@
 						}
 					}
 					#nonProdItemsWrap {
-						.edit-btn {
+						.edit-btn, .cancel-save-btn {
 							display: none;
 						}
+						
 					}
 					#nonProdItemsWrap, #reviewItemsWrap {
 						.nonProdItem, .prodItem{
@@ -99,35 +118,40 @@
 							
 							h3{
 								font-size: 22px;
-								font-weight: 800;
+								font-weight: 700;
 								border-bottom: 1px solid #BDBDBD;
 								margin-bottom: 25px;
 								padding-bottom: 10px;
 							}
 							.cale-subTitle {
 								font-size: 18px;
-								font-weight: 800;
+								font-weight: 700;
 								margin-bottom: 0;
+								color: #414042;
 							}
 						}
 						
 					}
 					.total{
 						background: #EEEEEE;
-						padding: 10px;
 						font-size: 14px;
 						display: flex;
 						justify-content: space-between;
 						width: 100%;
+						color: #414042;
 						p{
 							font-size: 14px;
 							margin: 0;
 							line-height: 1.5em;
 						}
+						.total-left{
+							padding: 10px;
+						}
 						.total-right{
 							width: 30%;
 							text-align: right;
-							border-left: 1px solid #BDBDBD;
+							border-left: 1px solid #BDBDBD;						
+							padding: 10px;
 						}
 						
 					}
@@ -141,7 +165,10 @@
 						
 						p{
 							font-size: 14px;
-							margin: 0 0 0 auto;
+							margin: 15px auto 0 auto;
+							@media(min-width:$break-md){
+								margin: 0 0 0 auto;
+							} 
 						}
 					}
 					.nav{
@@ -182,7 +209,7 @@
 					
 					#tally{
 						color: #fff;
-						font-weight: 800;
+						font-weight: 700;
 						margin-top: 0;
 					}
 					.btn-gradient {
@@ -209,6 +236,9 @@
 				.slidecontainer{
 					display: none;
 				}
+				.cancel-save-btn {
+					display: none;
+				}
 			}
 		}
 
@@ -220,6 +250,7 @@
 			font-weight: 700;
 			transition: 0.3s linear;
 			border: none;
+			font-weight: 600;
 			&:focus{
 				outline: none;
 			}
@@ -277,6 +308,31 @@
     			margin-right: 10px;				
 			}
 		}
+		.edit-btn {
+			color: #1A98FF;
+			font-size: 16px;
+			font-weight: 700;
+			padding: 10px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		
+		.cancel-save-btn  {
+			span{
+				padding: 10px;
+				display: inline-block;
+				font-size: 16px;
+				font-weight: 700;
+				cursor: pointer;
+			}			
+			.save-btn{
+				color: #1A98FF;
+			}
+			.cancel-btn {
+				margin-right: 20px;
+			}
+		}
+		
 		
 		
 	}
@@ -345,7 +401,7 @@ datalist {
     justify-content: space-between;
 	font-size: 14px;
 	overflow: hidden;
-	font-weight: 800;
+	font-weight: 700;
 }
 option {
 	width: 2ex;
@@ -360,7 +416,7 @@ option {
 	color: #75777A;
 	&.marker{
 		margin-top: 0px;
-		font-weight: 800;
+		font-weight: 700;
 	}
 }
 
