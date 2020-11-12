@@ -82,7 +82,7 @@
     // example usevar div = document.querySelector('div');var divOffset = offset(div);console.log(divOffset.left, divOffset.top);
 
 // Tooltip pointer position
-$("div.orion_tooltip").hover(function() {
+$("span.orion_tooltip").hover(function() {
     $(this).orionTooltip();
   });
   
