@@ -43,7 +43,7 @@
 		  nextObj.find("span.bar-btn").css("left", percentage + "%");
 		  nextObj.find("span.bar > span").css("width", percentage + "%");
 		  nextObj.find("span.bar-btn > span").text("+"+value);
-		  
+		 
 		};
 		
 	//model
@@ -160,7 +160,7 @@
 				var data = {};
 				data.environments = _self.environments;
 				data.priceTable = _self.priceTable;
-				localStorage.setItem("OrionCalculator",JSON.stringify(data));
+				//localStorage.setItem("OrionCalculator",JSON.stringify(data));
 			
 			
 		};
@@ -174,7 +174,7 @@
 			var data = {};
 			data.environments = _self.environments;
 			data.priceTable = _self.priceTable;
-			localStorage.setItem("OrionCalculator",JSON.stringify(data));
+			//localStorage.setItem("OrionCalculator",JSON.stringify(data));
 		};
 		
 		this.getTotalCost = function(format=false){
@@ -204,8 +204,35 @@
 			if($(event.target).parent().parent().parent().parent().attr('id') != "reviewItemsWrap"){
 				updateCalculator(Calculator);
 			}
+			else{
+				//updateCalculator(Calculator,$(event.target).parent().parent().parent().find(".edit-btn"));
+				updateCalculator(Calculator,ID);
+			}
 		};
 
+		//document.addEventListener('click',editClick);
+		
+		this.editClick = function(e){
+			
+			if(!($(e).hasClass("edit-btn") || $(e).hasClass("cancel-btn") || $(e).hasClass("save-btn"))){
+				return;
+			}
+			
+			if($(e).hasClass("edit-btn")){
+			   $(e).parent().find(".slidecontainer").toggle();
+			   $(e).parent().find(".cancel-save-btn").toggle();
+	 		   $(e).parent().find(".daily-execution-wrap").toggle();
+			   $(e).parent().find(".edit-btn").toggle();
+			   //$(".slidecontainer[data-nonprod="+thisID+"]").toggle();	
+			}
+			else{
+			   $(e).parent().parent().find(".slidecontainer").toggle();
+			   $(e).parent().parent().find(".cancel-save-btn").toggle();
+	 		   $(e).parent().parent().find(".daily-execution-wrap").toggle();
+			   $(e).parent().parent().find(".edit-btn").toggle();
+			}
+			
+		}
 		
 
 		
@@ -236,7 +263,8 @@
 	window.calculator = Calculator;
 	
 	//get obj in localStorage if exists and pass environments to it
-	var CalculatorLocal = localStorage.getItem("OrionCalculator");
+	//var CalculatorLocal = localStorage.getItem("OrionCalculator");
+	CalculatorLocal =null;
 	if(CalculatorLocal){
 		CalculatorLocal = JSON.parse(localStorage.getItem("OrionCalculator"));
 		var x;
@@ -258,7 +286,7 @@
 	
 	
 	
-	function updateCalculator(Calculator, option){
+	function updateCalculator(Calculator, componentID){
 		var tally = document.getElementById("tally");
 		var prodCost = document.getElementById("prodCost");
 		var prodEx = document.getElementById("prodEx");
@@ -308,7 +336,7 @@
 						prodItemsContent = "<h3>Production Test Environment</h3>";
 						prodItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
 						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-						for(var i=500;i<=maxNonProdSelection;i+=500){
+						for(var i=500;i<=maxProdSelection;i+=500){
 							if(i==1000||i==5000){
 								var label = i.toString().replace(/000$/,'');
 								prodItemsContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
@@ -319,7 +347,7 @@
 						prodItemsContent += "</datalist>";
 						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
-						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn'>Cancel</span><span class='save-btn'>Save changes</span></div>";
+						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
@@ -344,7 +372,7 @@
 						nonProdItemsContent += "</datalist>";
 						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
 						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
-						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn'>Cancel</span><span class='save-btn'>Save changes</span></div>";
+						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn' onclick='window.calculator.editClick(this)'><span class='cancel-btn'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
 						
 						break;
@@ -381,6 +409,20 @@
 		   $(index).rangeslider("addUpdateEvent");
 		});
 		
+		if(componentID){
+			console.log(componentID);
+			if(componentID == 0){
+				var refToFindBtn = $("#reviewItemsWrap [data-env='prod"+componentID+"']").find(".edit-btn");
+			}
+			else{
+				var refToFindBtn = $("#reviewItemsWrap [data-env='nonProd"+componentID+"']").find(".edit-btn");
+			}
+			
+			if(refToFindBtn){
+				refToFindBtn.click();
+			}
+		}
+		
 	}
 
 	//TESTING
@@ -408,26 +450,7 @@
 		//updateCalculator(Calculator);
 	}
 	
-	document.addEventListener('click',editClick);
-	function editClick(){
-		if(!(event.target.matches('.edit-btn') || event.target.matches('.cancel-btn') || event.target.matches('.save-btn'))){
-			return;
-		}
-		
-		if(event.target.matches('.edit-btn')){
-		   $(event.target).parent().find(".slidecontainer").toggle();
-		   $(event.target).parent().find(".cancel-save-btn").toggle();
- 		   $(event.target).parent().find(".daily-execution-wrap").toggle();
-		   $(event.target).parent().find(".edit-btn").toggle();
-		   //$(".slidecontainer[data-nonprod="+thisID+"]").toggle();	
-		}
-		else{
-		$(event.target).parent().parent().find(".slidecontainer").toggle();
-		   $(event.target).parent().parent().find(".cancel-save-btn").toggle();
- 		   $(event.target).parent().parent().find(".daily-execution-wrap").toggle();
-		   $(event.target).parent().parent().find(".edit-btn").toggle();
-		}
-	}
+	
 	//Add an environment
 	//TODO: Scroll up to focus on new item upon creation
 	var addEnvButton = document.getElementById("addEnv");
