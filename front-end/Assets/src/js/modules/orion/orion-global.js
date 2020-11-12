@@ -78,5 +78,24 @@
         
     });
    
-    
+
+    // example usevar div = document.querySelector('div');var divOffset = offset(div);console.log(divOffset.left, divOffset.top);
+
+// Tooltip pointer position
+$("div.orion_tooltip").hover(function() {
+    $(this).orionTooltip();
+  });
+  
+  $.fn.orionTooltip = function(options) {
+    var obj = this;
+    var winwidth=$(window).width();
+    var winHeight=$(window).height();
+        var mWPointer = $(this).offset().left; //get the left offset of the element
+        var mHPointer = $(this).offset().top;
+        if(mWPointer<=(winwidth/3)){
+          $(this).addClass("pointer_leftbottom");
+        }else if(mWPointer>=(winwidth-winwidth/3)){
+          $(this).addClass("pointer_rightbottom");
+        }
+  };
 }( jQuery ));

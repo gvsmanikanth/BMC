@@ -3,66 +3,29 @@
 	$bodyClass = '';
 	include 'php-inc/head.php';
 ?>
-<!--
-<style>
-a.tooltip {
-  outline:none; 
-  position: relative;
-  background-image:url("Assets/src/img/orion/info.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  height:20px;
-  width:20px;
-  }
-a.tooltip strong {line-height:30px;}
-a.tooltip:hover {text-decoration:none; cursor: help;} 
-a.tooltip div {
-    z-index:10;
-    display:none; 
-    padding:20px;
-    width:100%;
-    max-width:500px;
-    
-}
-a.tooltip:hover div {
-  display:block;
-  position:absolute;
-  bottom: 30px;
-  left: 50%;
-  color:#fff;
-  max-width:500px;  
-  background:#000;  
-  -webkit-transform: translateX(-50%);
-}
-a.tooltip:hover div div{
-  max-width:500px;
-}
-a.tooltip:hover div:after{
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #000 transparent transparent transparent;
-}
-
-/*CSS3 extras*/
-/*
-a.tooltip span
-{
-    border-radius:5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-
-    -moz-box-shadow: 1px 1px 8px #CCC;
-    -webkit-box-shadow: 1px 1px 8px #CCC;
-    box-shadow: 1px 1px 8px #CCC;
-}
-*/
-</style>
--->
+<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() { 
+  $("div.orion_tooltip").hover(function() {
+        console.log("hover");
+        $(this).orionTooltip();
+      });
+      
+      $.fn.orionTooltip = function(options) {
+        var obj = this;
+        var winwidth=$(window).width();
+           // var relX = event.pageX - $(this).offset().left;
+            var eTop = $(this).offset().left; //get the offset left of the element
+           // console.log(eTop - $(window).scrollLeft());
+            //console.log(winwidth); //position of the ele w.r.t window
+            if(eTop<=(winwidth/3)){
+              $(this).addClass("pointer_leftbottom");
+            }else if(eTop>=(winwidth-winwidth/3)){
+              $(this).addClass("pointer_rightbottom");
+            }
+      };
+  });
+</script>-->
 <section class="horizontal-list section bg-white">
 	<div class="section-content py4">
       <div class="upper-section">
@@ -73,21 +36,17 @@ a.tooltip span
       </div>
       <hr>
       <div class="md-flex full-bleed-two-column">
-          <div class="flex-item col col-12 md-col-4 pxr1 ">
+          <div class="flex-item col col-12 md-col-4 pxr1">
               <h3>Headline connecting benefit to a challenge
-              <!--<div class="tooltip-wrapper">i
-								<div class="tooltip">
-									<h5>I am Title</h5>
-									<p>I am alert Message</p>
-								</div>
-              </div>-->
               <div class="orion_tooltip">
                 <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
               </div>
               </h3>
           </div>
           <div class="flex-item col col-12 md-col-8 pxr1">
-              <h5>Elaborate with a list</h5>
+              <h5>Elaborate with a list<div class="orion_tooltip">
+                <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
+              </div></h5>
               <div class="flex-item col col-12 md-col-6 pxr1">
                   <ul class="orange-tick-bullets">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -97,6 +56,9 @@ a.tooltip span
                   </ul>
               </div>
               <div class="flex-item col col-12 md-col-6 pxr1">
+              <h5>Elaborate with a list<div class="orion_tooltip">
+                <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
+              </div></h5>
                   <ul class="orange-tick-bullets">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                     <li>Lorem ipsum dolor sit amet</li>
