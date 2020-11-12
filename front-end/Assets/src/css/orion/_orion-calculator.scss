@@ -38,6 +38,13 @@
 		.orion-tabs-body-wrapper{
 			.orion-tabs-body {
 				.tab-body {
+					&[data-orion-tab-body="1"]{
+						.btn-level2{
+							margin-right: 0;
+							padding-right: 0;
+						}
+						
+					}
 					display: none;
 					padding: 30px 0;
 					margin-right: 30px;
@@ -56,6 +63,12 @@
 						@media(min-width:$break-md){
 							font-size: 36px;
 						} 
+					}
+					.orange-tick-bullets {
+						margin-bottom: 24px;
+						li {
+							margin-bottom: 10px;
+						}
 					}
 					#nonProdItemsWrap {
 						.edit-btn {
@@ -93,6 +106,7 @@
 						p{
 							font-size: 14px;
 							margin: 0;
+							line-height: 1.5em;
 						}
 						.total-right{
 							width: 30%;
@@ -188,11 +202,12 @@
 			border: none;
 			font-size: 16px;
 			font-weight: 700;
-			padding-left: 0;
 			transition: 0.3s linear;
 			border: none;
 		
 			&.btn-level2-prev{
+				margin-left:0;
+				padding-left: 0;
 				&:before{
 					content: url(#{$imagesFolder}orion/arrow.png);
 					background: #1A98FF;
