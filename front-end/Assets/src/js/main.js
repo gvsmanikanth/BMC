@@ -87,3 +87,4 @@ require('./modules/orion/orion-global.js');
 require('./modules/orion/orion-secondary-navigation.js');
 require('./modules/orion/orion-quote-carousel.js');
 require('./modules/orion/orion-calculator.js');
+require('./modules/sticky-sidebar-scroll.js');
