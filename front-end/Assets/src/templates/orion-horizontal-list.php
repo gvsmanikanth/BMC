@@ -32,21 +32,23 @@
           <h2 class="orion-block-title">Control-M SaaS turns Predictive Maintenance from arduous chore to enjoyable delight.</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <h3>Headline connecting benefit to a challenge</h3>
-          <p>Elaborate on how Control-M SaaS helps alleviate this challenge in the item copy.</p>
+          <p>Elaborate on how Control-M SaaS helps alleviate this challenge in the item copy.<span class="orion_tooltip">
+                <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
+</span></p>
       </div>
       <hr>
       <div class="md-flex full-bleed-two-column">
           <div class="flex-item col col-12 md-col-4 pxr1">
               <h3>Headline connecting benefit to a challenge
-              <div class="orion_tooltip">
+              <span class="orion_tooltip">
                 <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
-              </div>
+</span>
               </h3>
           </div>
           <div class="flex-item col col-12 md-col-8 pxr1">
-              <h5>Elaborate with a list<div class="orion_tooltip">
+              <h5>Elaborate with a list<span class="orion_tooltip">
                 <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
-              </div></h5>
+</span></h5>
               <div class="flex-item col col-12 md-col-6 pxr1">
                   <ul class="orange-tick-bullets">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -56,9 +58,9 @@
                   </ul>
               </div>
               <div class="flex-item col col-12 md-col-6 pxr1">
-              <h5>Elaborate with a list<div class="orion_tooltip">
+              <h5>Elaborate with a list<span class="orion_tooltip">
                 <span class="Tooltip-window">Lorem ipsum dolar sit <a href="#">Test Link</a> amet Lorem ipsum dolar sit amet</span>
-              </div></h5>
+</span></h5>
                   <ul class="orange-tick-bullets">
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                     <li>Lorem ipsum dolor sit amet</li>
