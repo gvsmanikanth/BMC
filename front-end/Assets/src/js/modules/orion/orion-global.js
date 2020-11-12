@@ -68,7 +68,7 @@
     //content accordian script
 
     $(".orion_show_hide").on("click", function () {
-        var txt = $(this).parent().children(".acordian-content").is(':visible') ? 'Read More +' : 'Read Less x';
+        var txt = $(this).parent().children(".acordian-content").is(':visible') ? 'Read More +' : 'Read less x';
         // var txt = $(".acordian-content").is(':visible') ? 'Read More +' : 'Read Less x';
 
         $(this).text(txt);
