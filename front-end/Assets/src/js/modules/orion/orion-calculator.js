@@ -12,7 +12,7 @@
 		  	obj.after("<span class='slider-container'><span class='bar prod'><span></span></span><span class='bar-btn'><span>0</span></span></span>");
 		  }
 		  
-		  if (options = "addUpdateEvent"){
+		  if (options == "addUpdateEvent"){
 			obj.attr("oninput", "updateSlider(this)");
 		  }
 		  //
@@ -34,6 +34,7 @@
 		window.updateSlider = function (passObj) {
 		  var obj = $(passObj);
 		  var value = obj.val();
+		  window.calculator.updateEnvironment(value);
 		  var min = obj.attr("min");
 		  var max = obj.attr("max");
 		  var range = Math.round(max - min);
@@ -42,6 +43,7 @@
 		  nextObj.find("span.bar-btn").css("left", percentage + "%");
 		  nextObj.find("span.bar > span").css("width", percentage + "%");
 		  nextObj.find("span.bar-btn > span").text("+"+value);
+		  
 		};
 		
 	//model
