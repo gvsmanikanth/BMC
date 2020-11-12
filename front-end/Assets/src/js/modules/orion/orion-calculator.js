@@ -342,9 +342,9 @@
 						prodItems.className = "prodItem";
 						prodItems.setAttribute('data-env','prod'+y);
 						prodItemsContent = "";
-						prodItemsContent = "<h3>Production Test Environment</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
-						prodItemsContent += "<div class='slidecontainer'>";
-						prodItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						prodItemsContent = "<h3>Production Test Environment</h3>";
+						prodItemsContent += "<div class='slidecontainer' id='sliderContainerID_"+y+"'>";
+						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var i=500;i<=maxNonProdSelection;i+=500){
 							if(i==1000||i==5000){
 								var label = i.toString().replace(/000$/,'');
@@ -353,10 +353,10 @@
 								prodItemsContent  += "<option>"+i+"</option>";
 							}
 						}
-						prodItemsContent += "</datalist></div>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
+						prodItemsContent += "</datalist>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-4'><div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
-						prodItemsContent += "<div class='edit-btn'>Edit</div>";
+						prodItemsContent += "<div class='edit-btn' id='editBtn_"+y+"'>Edit</div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
 						break;
@@ -366,10 +366,10 @@
 						//nonProd
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
-						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3><p class='cale-subTitle'>Select Daily Execution Amount</p>";
+						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3>";
 						nonProdItemsContent += "<div  data-nonprod='"+y+"' class='delete'>x</div>";
-						nonProdItemsContent += "<div class='slidecontainer'>";
-						nonProdItemsContent += "<input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						nonProdItemsContent += "<div class='slidecontainer' id='sliderContainerID_"+y+"'>";
+						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=500;k<=maxNonProdSelection;k+=500){
 							if(k==1000||k==5000||k==10000||k==15000||k==19000){
 								var labelk = k.toString().replace(/000$/,'');
@@ -378,10 +378,10 @@
 								nonProdItemsContent  += "<option>"+k+"</option>";
 							}
 						}
-						nonProdItemsContent += "</datalist></div>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap'>    <div  class='flex-item col-12 md-col-4'>        <div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	";
-						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div><div class='edit-btn'>Edit</div>";
-						
+						nonProdItemsContent += "</datalist>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-4'><div class='total'><div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						nonProdItemsContent += "<div class='edit-btn' id='editBtn_"+y+"'>Edit</div>";
 						nonProdDisplayCount++;
 						break;
 					default:
@@ -410,6 +410,9 @@
 				$(".sliderNew").each(function(item, index){
 				   $(index).rangeslider();
 				});
+				
+				
+				
 			}
 		}
 		
@@ -440,6 +443,13 @@
 		updateCalculator(Calculator);
 	}
 	
+	document.addEventListener('click',editClick);
+	function editClick(){
+		if(!event.target.matches('.edit-btn')) return;
+		   var id = event.target.id;
+		   id = id.split("_")[1];
+		   $("#sliderContainerID_"+String(id)).toggle();	
+	}
 	//Add an environment
 	//TODO: Scroll up to focus on new item upon creation
 	var addEnvButton = document.getElementById("addEnv");
@@ -525,6 +535,7 @@
 	$(".slider.prodSlider").each(function(item, index){
 	   $(index).rangeslider("addUpdateEvent");
 	});
+	
 }     
 
 }(jQuery));
