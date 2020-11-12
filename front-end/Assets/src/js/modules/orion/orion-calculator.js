@@ -15,9 +15,7 @@
 		  if (options == "addUpdateEvent"){
 			obj.attr("oninput", "updateSlider(this)");
 		  }
-		  //
-		  //window.updateSlider(this);
-
+		  
 		  var value = obj.val();
 		  var min = obj.attr("min");
 		  var max = obj.attr("max");
@@ -46,7 +44,6 @@
 		 
 		};
 		
-	//model
 	var OrionCalculator = function(){
 		this.environments = [];
 		this.priceTable = {
@@ -93,6 +90,9 @@
 		//Function to calculate based on envionment and number of executions
 		// getPriceForExecution("prod",6000) --> Return value = 98900
 		this.getPriceForExecution = function(pEnvironment, pExecutions, format=false){
+			if(typeof(pEnvironment) == 'undefined' ){
+				return 0;
+			}
 			var _self = this;
 			//Select Environment
 			var selEnvironmentPriceTable = _self.priceTable[pEnvironment];
@@ -406,7 +406,8 @@
 		}
 		
 		$(".sliderNew").each(function(item, index){
-		   $(index).rangeslider("addUpdateEvent");
+		   //$(index).rangeslider("addUpdateEvent");
+			$(index).rangeslider();
 		});
 		
 		if(componentID){
@@ -429,9 +430,10 @@
 	//OrionCalculator.removeEnvironments(1);
 	//OrionCalculator.addEnvironments("nonProd",slider.value);//test
 
-	updateCalculator(Calculator);
+	//updateCalculator(Calculator);
 	
 	// Update the current slider value 
+	
 	slider.oninput = function() {
 		dailyExecutions = parseInt(this.value);
 		Calculator.addEnvironments("prod",dailyExecutions,0);
