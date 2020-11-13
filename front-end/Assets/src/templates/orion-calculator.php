@@ -45,11 +45,11 @@
 							<div  class="flex-item col-12 md-col-6">
 								<div class="total">
 									<div class="total-left">
-										<p>Total Executions (including base <span id="prodBase"></span>) </p>	
+										<p>Executions (including base <span id="prodBase"></span>) </p>	
 										<p><strong><span id="prodEx"></span></strong></p>									
 									</div>
 									<div class="total-right">
-										<p>Total Cost </p>
+										<p>Cost </p>
 										<p><strong><span id="prodCost"></span></strong></p>
 									</div>
 									
@@ -97,45 +97,7 @@
 						<p>*This estimate does not include this and that and those.</p>
 						
 						<div id="reviewItemsWrap">
-						<!--
-							<h3>Production Additional Daily Executions</h3>
-							<p>1,000 Daily Executions</p>
-							<p>$9,600</p>
-							<p><a href="#">Edit</a></p>
-							
-							<div class="open-edit">
-								<p>Select Daily Execution Amount</p>
-								<p>[slider]</p>
-								<div class="total">
-									<p>Total Executions (including base 500)</p>
-									<p>1000</p>
-								</div>
-								<div class="infobox">
-									<p>View additional transaction pricing</p>
-								</div>
-								<p><a href="#">Cancel</a> <a href="#">Save Changes</a></p>
-							</div>
-							
-						</div>
-	
-						<div>
-							<h3>Non-Production Test Environment - 1 <a href="#">X</a></h3>
-							<p>1,000 Daily Executions</p>
-							<p>$9,600</p>
-							<p><a href="#">Edit</a></p>
-							
-							<div class="open-edit">
-								<p>Select Daily Execution Amount</p>
-								<p>[slider]</p>
-								<div class="total">
-									<p>Total Executions (including base 500)</p>
-									<p>1000</p>
-								</div>
-								<div class="infobox">
-									<p>View additional transaction pricing</p>
-								</div>
-								<p><a href="#">Cancel</a> <a href="#">Save Changes</a></p>
-							</div> -->
+						<!--Items-->
 						</div>
 						
 						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add an Environment</button>

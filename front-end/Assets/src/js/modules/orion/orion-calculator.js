@@ -291,16 +291,7 @@
 		var prodCost = document.getElementById("prodCost");
 		var prodEx = document.getElementById("prodEx");
 		var prodBase = document.getElementById("prodBase");
-		var baseQuantity = Calculator.environments[0].baseEx;
-		var quantity = parseInt(Calculator.environments[0].quantity);
 		var nonProdBaseCost = document.getElementById("nonProdBaseCost");
-		
-		//load values
-		tally.innerHTML = "$"+Calculator.getTotalCost(true);
-		prodEx.innerHTML = quantity+baseQuantity;
-		prodCost.innerHTML = "$"+Calculator.getPriceForExecution('prod',quantity,true);
-		prodBase.innerHTML = baseQuantity;
-		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		
 		//reset
 		tallyBreakdown.innerHTML = "";//reset list
@@ -311,18 +302,34 @@
 
 		var nonProdDisplayCount = 1;
 		
+		
+		//daily executions tab
+		var baseQuantity = Calculator.environments[0].baseEx;
+		var quantity = parseInt(Calculator.environments[0].quantity);
+		//load values
+		tally.innerHTML = "$"+Calculator.getTotalCost(true);
+		prodEx.innerHTML = quantity+baseQuantity;
+		prodCost.innerHTML = "$"+Calculator.getPriceForExecution('prod',quantity,true);
+		prodBase.innerHTML = baseQuantity;
+		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		//end move
+		
+		tally.innerHTML = "$"+Calculator.getTotalCost(true);
+		
+		
+		
 		var y;
 		for(y in Calculator.environments){
 			var thisEnv = Calculator.environments[y];
 			if(!thisEnv.deleted){
-				var list = document.createElement("li");
 				
+				var list = document.createElement("li");
 				var nonProdItems = document.createElement("div");
 				var prodItems = document.createElement("div");
 				var nonProdItemsContent = "";
 				var prodItemsContent = "";
 				var thisPrice = "$"+Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
-				var thisQuantity = thisEnv.quantity;
+				var thisQuantity = thisEnv.quantity+thisEnv.baseEx;
 				var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
@@ -333,7 +340,7 @@
 						prodItems.className = "prodItem";
 						prodItems.setAttribute('data-env','prod'+y);
 						prodItemsContent = "";
-						prodItemsContent = "<h3>Production Test Environment</h3>";
+						prodItemsContent = "<h3>Production Environment</h3>";
 						prodItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
 						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var i=500;i<=maxProdSelection;i+=500){
@@ -345,7 +352,7 @@
 							}
 						}
 						prodItemsContent += "</datalist>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
 						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						//tallybox
@@ -357,7 +364,7 @@
 						//nonProd
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
-						nonProdItemsContent = "<h3>Non-Production Test Environment - "+nonProdDisplayCount+"</h3>";
+						nonProdItemsContent = "<h3>Non-Production Environment - "+nonProdDisplayCount+"</h3>";
 						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>x</div>";
 						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
 						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
@@ -370,7 +377,7 @@
 							}
 						}
 						nonProdItemsContent += "</datalist>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Total Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Total Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
 						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
 						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn' onclick='window.calculator.editClick(this)'><span class='cancel-btn'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
