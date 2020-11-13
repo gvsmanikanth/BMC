@@ -17,6 +17,7 @@
 		  }
 		  
 		  var value = obj.val();
+		  var valueFormatted = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		  var min = obj.attr("min");
 		  var max = obj.attr("max");
 		  var range = Math.round(max - min);
@@ -24,7 +25,7 @@
 		  var nextObj = obj.next();
 		  nextObj.find("span.bar-btn").css("left", percentage + "%");
 		  nextObj.find("span.bar > span").css("width", percentage + "%");
-		  nextObj.find("span.bar-btn > span").text("+"+value);
+		  nextObj.find("span.bar-btn > span").text("+"+valueFormatted);
 	
 		  return obj;
 		};
@@ -32,6 +33,7 @@
 		window.updateSlider = function (passObj) {
 		  var obj = $(passObj);
 		  var value = obj.val();
+		  var valueFormatted = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		  window.calculator.updateEnvironment(value);
 		  var min = obj.attr("min");
 		  var max = obj.attr("max");
@@ -40,7 +42,7 @@
 		  var nextObj = obj.next();
 		  nextObj.find("span.bar-btn").css("left", percentage + "%");
 		  nextObj.find("span.bar > span").css("width", percentage + "%");
-		  nextObj.find("span.bar-btn > span").text("+"+value);
+		  nextObj.find("span.bar-btn > span").text("+"+valueFormatted);
 		 
 		};
 		
@@ -308,16 +310,14 @@
 		var quantity = parseInt(Calculator.environments[0].quantity);
 		//load values
 		tally.innerHTML = "$"+Calculator.getTotalCost(true);
-		prodEx.innerHTML = quantity+baseQuantity;
+		prodEx.innerHTML = (quantity+baseQuantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		prodCost.innerHTML = "$"+Calculator.getPriceForExecution('prod',quantity,true);
 		prodBase.innerHTML = baseQuantity;
 		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		//end move
 		
 		tally.innerHTML = "$"+Calculator.getTotalCost(true);
-		
-		
-		
+	
 		var y;
 		for(y in Calculator.environments){
 			var thisEnv = Calculator.environments[y];
@@ -352,8 +352,8 @@
 							}
 						}
 						prodItemsContent += "</datalist>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
-						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions (including base 500)</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
+						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
 						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						//tallybox
 						list.innerHTML = "<strong>Start Plan</strong>: "+thisQuantityFormatted + " executions";
@@ -377,8 +377,8 @@
 							}
 						}
 						nonProdItemsContent += "</datalist>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisEnv.quantity+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
-						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisEnv.quantity+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
 						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn' onclick='window.calculator.editClick(this)'><span class='cancel-btn'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
 						
