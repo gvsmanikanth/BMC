@@ -329,7 +329,7 @@
 				var nonProdItemsContent = "";
 				var prodItemsContent = "";
 				var thisPrice = "$"+Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
-				var thisQuantity = thisEnv.quantity+thisEnv.baseEx;
+				var thisQuantity = parseInt(thisEnv.quantity)+parseInt(thisEnv.baseEx);
 				var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
@@ -342,8 +342,8 @@
 						prodItemsContent = "";
 						prodItemsContent = "<h3>Production Environment</h3>";
 						prodItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
-						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-						for(var i=500;i<=maxProdSelection;i+=500){
+						prodItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						for(var i=0;i<=maxProdSelection;i+=500){
 							if(i==1000||i==5000){
 								var label = i.toString().replace(/000$/,'');
 								prodItemsContent  += "<option value="+i+" class='marker'>"+label+"k</option>";
@@ -352,7 +352,7 @@
 							}
 						}
 						prodItemsContent += "</datalist>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions (including base 500)</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
 						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						//tallybox
@@ -367,8 +367,8 @@
 						nonProdItemsContent = "<h3>Non-Production Environment - "+nonProdDisplayCount+"</h3>";
 						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>x</div>";
 						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
-						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='500' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
-						for(var k=500;k<=maxNonProdSelection;k+=500){
+						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						for(var k=0;k<=maxNonProdSelection;k+=500){
 							if(k==1000||k==5000||k==10000||k==15000||k==19000){
 								var labelk = k.toString().replace(/000$/,'');
 								nonProdItemsContent  += "<option value="+k+" class='marker'>"+labelk+"k</option>";
