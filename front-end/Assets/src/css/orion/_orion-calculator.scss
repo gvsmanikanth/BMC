@@ -184,12 +184,13 @@
 					font-size: 16px;
 					line-height: 1.5em;
 				}
-				.tallybox {
+				#tallybox {
 					padding: 30px;
 					background: #002C8F;
 					margin: 30px 0;
 					color: #fff;
 					font-size: 14px;
+					
 					ul{
 						list-style: none;
 						text-align: left;
@@ -206,8 +207,10 @@
 						font-size: 14px;
 						margin-bottom: 10px;
 					}
-					
-					#tally{
+					#tallyCustom {
+						display: none;
+					}
+					h2 {
 						color: #fff;
 						font-weight: 700;
 						margin-top: 0;

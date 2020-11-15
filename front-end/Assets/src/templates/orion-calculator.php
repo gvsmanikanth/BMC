@@ -108,11 +108,19 @@
 			
 				<div class="orion-tabs-static text-center flex-item col-12 sm-col-4 md-col-3" > 
 					<div  id="calc-sidebar">
-						<div class="tallybox">
-							<ul id="tallyBreakdown"></ul>
-							<p>Start Plan Total Annual Estimate</p>
-							<h2 id="tally">0.00</h2>
-							<a href="#" class="btn btn-gradient">Contact Sales</a>						
+						<div id="tallybox">
+							<div id="tallyCustom">
+								<p><strong>Plans above +6,500</strong></p>
+								<h2>Custom</h2>
+								<p>Plans above +6,500 are better served with an enterprise-level plan. Please contact us for more information.</p>
+								<a href="#" class="btn btn-gradient">Contact Sales</a>
+							</div>
+							<div id="tallyTotals">
+								<ul id="tallyBreakdown"></ul>
+								<p>Start Plan Total Annual Estimate</p>
+								<h2 id="tally">0.00</h2>
+								<a href="#" class="btn btn-gradient">Contact Sales</a>
+							</div>
 						</div>
 						<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
 					</div>
