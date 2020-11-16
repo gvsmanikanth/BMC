@@ -91,7 +91,7 @@
 		
 		//Function to calculate based on envionment and number of executions
 		// getPriceForExecution("prod",6000) --> Return value = 98900
-		this.getPriceForExecution = function(pEnvironment, pExecutions, format=false){
+		this.getPriceForExecution = function(pEnvironment, pExecutions, format){
 			if(typeof(pEnvironment) == 'undefined' ){
 				return 0;
 			}
@@ -107,7 +107,7 @@
 			
 			for(var i=0;i<executionRange.length; i++){
 				
-				if(pExecutions => executionRange[i].quantity){
+				if(pExecutions >= executionRange[i].quantity){
 					multiplicationFactor = Math.floor(remainingExecutions/executionRange[i].quantity);
 					totalCost += multiplicationFactor * executionRange[i].price;
 					remainingExecutions -= multiplicationFactor*executionRange[i].quantity;
@@ -179,7 +179,7 @@
 			//localStorage.setItem("OrionCalculator",JSON.stringify(data));
 		};
 		
-		this.getTotalCost = function(format=false){
+		this.getTotalCost = function(format){
 			_self = this;
 			var totalCost = 0;
 			
@@ -222,6 +222,11 @@
 			if(!($(e).hasClass("edit-btn") || $(e).hasClass("cancel-btn") || $(e).hasClass("save-btn"))){
 				return;
 			}
+			
+			$(".slidecontainer").hide()
+			$(".cancel-save-btn").hide()
+			$(".daily-execution-wrap").hide()
+			$(".edit-btn").hide()
 			
 			if($(e).hasClass("edit-btn")){
 			   $(e).parent().find(".slidecontainer").toggle();
