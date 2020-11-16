@@ -592,30 +592,30 @@
 	</div>	
 </section>
 
-
-
-<!-- video-feature Component starts -->
+<!-- video Portal Component starts - Video Portal -->
 <section class=" orion-global bg-white text-center ">
     <div class="layout-inner-wrap">         
         <div class=""> 
 			<h2 class="orion-block-title mb1">Eliminate the chaos and Elevate your IT</h2>
 			<p>Watch Ian and Robby’s ITOps Adventures.</p>
-			<img src="Assets/src/img/orion/play-circle-bluegradient.svg" alt="" class="preload-img">	
-			<div class="flex-wrap flex-justify-center mb2">
+			<img src="/content/dam/bmc/solutions/icons/play-circle-bluegradient.svg" alt="" class="preload-img">	
+			<div class="flex-wrap flex-justify-center mb2 js-eh">
 				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
 								
 					<div class="video-portal">
 						<div class="video-img">
-							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+							<a href="/content/bmc/videos.html?vID=UmLuLx_Rbkw" class="modal-youtube-video-player play-btn">							
 								<div class="img-div">
-									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+									<img src="https://www.bmc.com/content/dam/bmc/solutions/eliminate-chaos-elevate-your-it-392x250.jpg" alt="">
 								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
 						<div class="caption text-left">
-							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
-							<p>1:45</p>
+							<div class="js-ehItem">
+								<h4> <strong>Jobs-as-Code</strong></h4>
+								<p>0:44</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -624,14 +624,16 @@
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
 								<div class="img-div">
-									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+									<img src="https://www.bmc.com/content/dam/bmc/solutions/icons/video-cover-placeholder.png" alt="">
 								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
 						<div class="caption text-left">
-							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
-							<p>1:45</p>
+							<div class="js-ehItem">
+								<h4> <strong>Application Workflows Running on time, every time</strong></h4>
+								<p>(x:xx)</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -640,14 +642,16 @@
 						<div class="video-img">
 							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
 								<div class="img-div">
-									<img src="Assets/src/img/orion/video-cover-placeholder.png" alt="">
+									<img src="https://www.bmc.com/content/dam/bmc/solutions/icons/video-cover-placeholder.png" alt="">
 								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
 							</a>
 						</div>
 						<div class="caption text-left">
-							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
-							<p>1:45</p>
+							<div class="js-ehItem">
+								<h4> <strong>Application Workflow Orchestration SaaS-style </strong></h4>
+								<p>(x:xx)</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -656,6 +660,11 @@
         </div>
     </div>    
 </section>
+<!-- video Portal Component Ends - Video Portal -->
+
+	
+
+
 
 
 
