@@ -206,6 +206,9 @@
 			if($(event.target).parent().parent().parent().parent().attr('id') != "reviewItemsWrap"){
 				updateCalculator(Calculator);
 			}
+			else if($(event.target).attr("id") == "prodExecutions"){
+				tallyBox(Calculator);
+			}
 			else{
 				//updateCalculator(Calculator,$(event.target).parent().parent().parent().find(".edit-btn"));
 				updateCalculator(Calculator,ID);
@@ -364,6 +367,8 @@
 		prodBase.innerHTML = baseQuantity;
 		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+		tallyBox(Calculator);
+		
 		var y;
 		for(y in Calculator.environments){
 			var thisEnv = Calculator.environments[y];
@@ -379,8 +384,6 @@
 				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
 				var maxNonProdSelection = 19000;
-				
-				tallyBox(Calculator);
 				
 				switch(thisEnv.envType){//can be refactored without the switch
 					case "prod":
