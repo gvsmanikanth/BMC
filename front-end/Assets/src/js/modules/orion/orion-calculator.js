@@ -272,12 +272,11 @@
 	CalculatorLocal =null;
 	if(CalculatorLocal){
 		CalculatorLocal = JSON.parse(localStorage.getItem("OrionCalculator"));
-		var x;
-		for (x in CalculatorLocal.environments){
+		//for (x in CalculatorLocal.environments){
+		for(var x=0; x<CalculatorLocal.environments.length; x++){ 
 			var thisEnv = CalculatorLocal.environments[x];
 			if(thisEnv){
 				Calculator.addEnvironments(thisEnv.envType,thisEnv.quantity,x,thisEnv);
-				
 				if(x==0){
 					slider.value = thisEnv.quantity;
 				}
@@ -306,8 +305,12 @@
 	function tallyBox(Calculator){
 		
 		customTally(Calculator.environments[0]);
+		$("#tallyBreakdown").children().remove()
+		 
+		var nonDeletedEnvCount = 0;
 		
-		for(var x in Calculator.environments){
+		//for(var x in Calculator.environments){
+		for(var x=0; x<Calculator.environments.length; x++){	
 			var env = Calculator.environments[x];
 			
 			//update values if changed
@@ -317,7 +320,8 @@
 				var listValue = "<strong>Start Plan:</strong> "+quantity;
 			
 				if(env.envType ==="nonProd"){
-					listValue = "<strong>NonProd"+x+":</strong> "+quantity;
+					nonDeletedEnvCount++;
+					listValue = "<strong>NonProd"+nonDeletedEnvCount+":</strong> "+quantity;
 				}
 				
 				//if already exists, update value only
@@ -327,7 +331,8 @@
 						$("#tallyBreakdown li.prodID"+x).html(listValue);
 					}
 					
-				}else{
+				}
+				else{
 					$("#tallyBreakdown").append("<li class='prodID"+x+"'>"+listValue+"</li>");
 				}
 				
@@ -355,7 +360,7 @@
 		var reviewsWrap = document.getElementById("reviewItemsWrap");
 		reviewsWrap.innerHTML = "";//reset list
 
-		var nonProdDisplayCount = $("#tallyBreakdown li").length;
+		var nonProdDisplayCount = 1//$("#tallyBreakdown li").length;
 
 		//daily executions tab
 		var baseQuantity = Calculator.environments[0].baseEx;
@@ -370,7 +375,8 @@
 		tallyBox(Calculator);
 		
 		var y;
-		for(y in Calculator.environments){
+		//for(y in Calculator.environments){
+		for(var y=0; y<calculator.environments.length; y++){
 			var thisEnv = Calculator.environments[y];
 			if(!thisEnv.deleted){
 				
