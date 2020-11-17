@@ -840,6 +840,13 @@
             margin-top:10px;
             color:#3980B2;
             float:left;
+            width:80%;
+        }
+    }
+    @media(max-width:$break-sm){
+        .rem-lr-spacing{
+            margin-left: 0px;
+            margin-right: 0px;
         }
     }
 }
@@ -857,7 +864,7 @@
     height:20px;
     width:20px;
     margin-left:10px;
-    &:hover {text-decoration:none; cursor: help;} 
+    &:hover {text-decoration:none;} 
     .Tooltip-window {
       z-index:10;
       display:none; 
