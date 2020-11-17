@@ -1,6 +1,8 @@
 ;( function($) {
     if($(".orion-calculator").length > 0 ){
 	
+	var orignalEditValue = null;
+	
 	$.fn.rangeslider = function(options) {
 		  var obj = this;
 		  var defautValue = obj.attr("value");
@@ -223,12 +225,24 @@
 			   $(e).parent().find(".cancel-save-btn").toggle();
 	 		   $(e).parent().find(".daily-execution-wrap").toggle();
 			   $(e).parent().find(".edit-btn").toggle();
+			   
+			   window.orignalEditValue = $(e).parent().find("input").val();
+				
 			}
 			else{
+			   
+				if($(e).hasClass("cancel-btn")){
+					if(window.orignalEditValue != null)
+						$(e).parent().find("input").val(window.orignalEditValue).trigger("oninput");
+				}
+
+
 			   $(e).parent().parent().find(".slidecontainer").toggle();
 			   $(e).parent().parent().find(".cancel-save-btn").toggle();
 	 		   $(e).parent().parent().find(".daily-execution-wrap").toggle();
 			   $(e).parent().parent().find(".edit-btn").toggle();
+			   
+ 			   window.orignalEditValue = null;
 			}
 			
 		}
@@ -484,15 +498,18 @@
 		});
 		
 		if(componentID){
+			var refToBox = null;
 			if(componentID == 0){
-				var refToFindBtn = $("#reviewItemsWrap [data-env='prod"+componentID+"']").find(".edit-btn");
+				 refToBox = $("#reviewItemsWrap [data-env='prod"+componentID+"']")
 			}
 			else{
-				var refToFindBtn = $("#reviewItemsWrap [data-env='nonProd"+componentID+"']").find(".edit-btn");
+				refToBox = $("#reviewItemsWrap [data-env='nonProd"+componentID+"']")				
 			}
-			if(refToFindBtn){
-				refToFindBtn.click();
-			}
+			
+			refToBox.parent().find(".slidecontainer").toggle();
+			refToBox.parent().find(".cancel-save-btn").toggle();
+ 			refToBox.parent().find(".daily-execution-wrap").toggle();
+			refToBox.parent().find(".edit-btn").toggle();
 		}
 		
 		tallyBox(Calculator);
