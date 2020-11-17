@@ -30,11 +30,12 @@
 		  return obj;
 		};
 		
-		window.updateSlider = function (passObj) {
+		window.updateSlider = function (passObj,option) {
 		  var obj = $(passObj);
 		  var value = obj.val();
 		  var valueFormatted = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		  window.calculator.updateEnvironment(value);
+		  if(option != "noUpdageEnvionmnet")
+		  	window.calculator.updateEnvironment(value);
 		  var min = obj.attr("min");
 		  var max = obj.attr("max");
 		  var range = Math.round(max - min);
@@ -42,8 +43,7 @@
 		  var nextObj = obj.next();
 		  nextObj.find("span.bar-btn").css("left", percentage + "%");
 		  nextObj.find("span.bar > span").css("width", percentage + "%");
-		  nextObj.find("span.bar-btn > span").text("+"+valueFormatted);
-		 
+		  nextObj.find("span.bar-btn > span").text("+"+valueFormatted);				
 		};
 		
 	var OrionCalculator = function(){
@@ -213,10 +213,10 @@
 				return;
 			}
 			
-			$(".slidecontainer").hide()
-			$(".cancel-save-btn").hide()
-			$(".daily-execution-wrap").hide()
-			$(".edit-btn").hide()
+			//$(".slidecontainer").hide()
+			//$(".cancel-save-btn").hide()
+			//$(".daily-execution-wrap").hide()
+			//$(".edit-btn").hide()
 			
 			if($(e).hasClass("edit-btn")){
 			   $(e).parent().find(".slidecontainer").toggle();
@@ -259,13 +259,13 @@
 				$("#tallyCustom").show();
 				
 				$("#tallyTotals,[data-orion-tab-body='1'] .total-right").hide();
-				//$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").hide();
+				$('#reviewItemsWrap').find("[data-env=prod0] .total-right").hide();
 			}
 		}else{
 			if($("#tallyCustom").is(":visible")){
 				$("#tallyCustom").hide();
 				$("#tallyTotals, [data-orion-tab-body='1'] .total-right").show();
-				//$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").show();
+				$('#reviewItemsWrap').find("[data-env=prod0] .total-right").show();
 			}
 		}
 		
@@ -391,7 +391,7 @@
 		prodBase.innerHTML = baseQuantity;
 		nonProdBaseCost.innerHTML = "$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-		tallyBox(Calculator);
+		//tallyBox(Calculator);
 		
 		for(var y=0; y<calculator.environments.length; y++){
 			var thisEnv = Calculator.environments[y];
@@ -407,6 +407,7 @@
 				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
 				var maxNonProdSelection = 19500;
+			
 				
 				switch(thisEnv.envType){//can be refactored without the switch
 					case "prod":
@@ -428,6 +429,9 @@
 						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'>            <div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
 						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
 						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
+						
+						$(".slider.prodSlider").val(thisEnv.quantity);
+						window.updateSlider($(".slider.prodSlider")[0],"noUpdageEnvionmnet")
 						
 						break;
 					case "nonProd":
@@ -459,6 +463,8 @@
 				if(prodItemsContent){
 					prodItems.innerHTML=prodItemsContent; 
 					reviewsWrap.appendChild(prodItems);
+					
+					
 				}
 				//append to parent
 				if(nonProdItemsContent){
@@ -488,6 +494,8 @@
 				refToFindBtn.click();
 			}
 		}
+		
+		tallyBox(Calculator);
 		
 	}
 
