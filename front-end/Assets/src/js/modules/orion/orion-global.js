@@ -106,10 +106,10 @@ $("span.orion_tooltip").hover(function() {
 		if(winHeight/2 >= mHPointer){
 			console.log("align to bottom")
 			$(this).addClass("tooltip_pointer_bottom");
-		}else{
+		}/*else{
 			console.log("align to top")
 			$(this).addClass("tooltip_pointer_top");
-		}
+		}*/
 		
   };
 }( jQuery ));
