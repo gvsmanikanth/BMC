@@ -24,8 +24,9 @@
 						<h3>Choose Additional Daily Execution Amount</h3>
 						<p>You can add groups of executions to your base package (500) as needed, up to 6500 additional executions. If you need more than 6500 daily executions, you should consider our Enterprise Plan.</p>
 						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="500" max="6500" value="500" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
+							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="500" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
+								<option value="0"></option>
 								<option value="500"></option>
 								<option class="marker" value="1000">1k</option>
 								<option value="1500"></option>
@@ -45,11 +46,11 @@
 							<div  class="flex-item col-12 md-col-6">
 								<div class="total">
 									<div class="total-left">
-										<p>Total Executions (including base <span id="prodBase"></span>) </p>	
+										<p>Executions (including base <span id="prodBase"></span>) </p>	
 										<p><strong><span id="prodEx"></span></strong></p>									
 									</div>
 									<div class="total-right">
-										<p>Total Cost </p>
+										<p>Cost </p>
 										<p><strong><span id="prodCost"></span></strong></p>
 									</div>
 									
@@ -97,45 +98,7 @@
 						<p>*This estimate does not include this and that and those.</p>
 						
 						<div id="reviewItemsWrap">
-						<!--
-							<h3>Production Additional Daily Executions</h3>
-							<p>1,000 Daily Executions</p>
-							<p>$9,600</p>
-							<p><a href="#">Edit</a></p>
-							
-							<div class="open-edit">
-								<p>Select Daily Execution Amount</p>
-								<p>[slider]</p>
-								<div class="total">
-									<p>Total Executions (including base 500)</p>
-									<p>1000</p>
-								</div>
-								<div class="infobox">
-									<p>View additional transaction pricing</p>
-								</div>
-								<p><a href="#">Cancel</a> <a href="#">Save Changes</a></p>
-							</div>
-							
-						</div>
-	
-						<div>
-							<h3>Non-Production Test Environment - 1 <a href="#">X</a></h3>
-							<p>1,000 Daily Executions</p>
-							<p>$9,600</p>
-							<p><a href="#">Edit</a></p>
-							
-							<div class="open-edit">
-								<p>Select Daily Execution Amount</p>
-								<p>[slider]</p>
-								<div class="total">
-									<p>Total Executions (including base 500)</p>
-									<p>1000</p>
-								</div>
-								<div class="infobox">
-									<p>View additional transaction pricing</p>
-								</div>
-								<p><a href="#">Cancel</a> <a href="#">Save Changes</a></p>
-							</div> -->
+						<!--Items-->
 						</div>
 						
 						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add an Environment</button>
@@ -145,11 +108,19 @@
 			
 				<div class="orion-tabs-static text-center flex-item col-12 sm-col-4 md-col-3" > 
 					<div  id="calc-sidebar">
-						<div class="tallybox">
-							<ul id="tallyBreakdown"></ul>
-							<p>Start Plan Total Annual Estimate</p>
-							<h2 id="tally">0.00</h2>
-							<a href="#" class="btn btn-gradient">Contact Sales</a>						
+						<div id="tallybox">
+							<div id="tallyCustom">
+								<p><strong>Plans above +6,500</strong></p>
+								<h2>Custom</h2>
+								<p>Plans above +6,500 are better served with an enterprise-level plan. Please contact us for more information.</p>
+								<a href="#" class="btn btn-gradient">Contact Sales</a>
+							</div>
+							<div id="tallyTotals">
+								<ul id="tallyBreakdown"></ul>
+								<p>Start Plan Total Annual Estimate</p>
+								<h2 id="tally">0.00</h2>
+								<a href="#" class="btn btn-gradient">Contact Sales</a>
+							</div>
 						</div>
 						<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
 					</div>
