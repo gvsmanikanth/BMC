@@ -13,6 +13,9 @@
     @media(min-width:$break-lg){
         padding: 20px;
     }
+    @media(max-width:$break-sm){
+        padding: 20px;
+    }
     a{
         display: block;
         &:focus {

@@ -40,10 +40,10 @@
         }
         .blob-hidden{ 
             @media(min-width:$break-lg){
-                animation-name: bounce-blob-hidden;
-                animation-timing-function: linear;
-                animation-duration: 8s;
-                animation-iteration-count: infinite; 
+                // animation-name: bounce-blob-hidden;
+                // animation-timing-function: linear;
+                // animation-duration: 8s;
+                // animation-iteration-count: infinite; 
             }
             @media(min-width:1600px){
                 right: auto; 
@@ -56,10 +56,10 @@
                 right: 50px;
             }
             @media(min-width:$break-lg){
-                animation-name: bounce-blob-masked;
-                animation-timing-function: linear;
-                animation-duration: 10s;
-                animation-iteration-count: infinite;
+                // animation-name: bounce-blob-masked;
+                // animation-timing-function: linear;
+                // animation-duration: 10s;
+                // animation-iteration-count: infinite;
             }
             
         }
@@ -228,7 +228,7 @@
                     background-position: 100% 135%;
                     right: 130px;
                     top: 0px;   
-                    animation-name: bounce-blob-hidden-anchor;
+                    // animation-name: bounce-blob-hidden-anchor;
                 }
             } 
             .blob-masked {
@@ -238,7 +238,7 @@
                     background-position: 10% 135%;
                 }
                 @media (min-width: $break-lg) {  
-                    animation-name: bounce-blob-masked-anchor;    
+                    // animation-name: bounce-blob-masked-anchor;    
                     background-position: 100% 100%;
                     right: 0;
                     top: 0px;   
