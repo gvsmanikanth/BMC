@@ -8,8 +8,10 @@
     width: 100%;
     transition: color 0.3s linear;
     @media(min-width:$break-sm){
-        padding: 20px;
         border: 1px solid transparent;
+    }
+    @media(min-width:$break-lg){
+        padding: 20px;
     }
     a{
         display: block;

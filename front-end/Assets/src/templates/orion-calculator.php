@@ -73,7 +73,7 @@
 								<h4>Annual Base Price:</h4>
 								<h3 id="nonProdBaseCost" class="big-price-text"></h3>
 							</div>
-							<div class="flex-item col-12 md-col-5 lg-col-4">
+							<div class="flex-item col-12 md-col-5 lg-col-8">
 								<h4><strong>Includes</strong></h4>
 								<ul class="blue-check-list">
 									<li>500 Daily Executions</li>
