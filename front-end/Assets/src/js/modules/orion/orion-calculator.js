@@ -233,7 +233,13 @@
 			   
 				if($(e).hasClass("cancel-btn")){
 					if(window.orignalEditValue != null)
-						$(e).parent().find("input").val(window.orignalEditValue).trigger("oninput");
+						//$(e).parent().parent().find("input").val(window.orignalEditValue)//.trigger("onchange");
+						//updateCalculator(Calculator,ID);
+						var elementId = $(e).parent().parent().find("input").data("id");
+						var elementEnvironment = $(e).parent().parent().find("input").data("env");
+						
+						Calculator.addEnvironments(elementEnvironment,window.orignalEditValue,elementId);
+						updateCalculator(Calculator);
 				}
 
 
