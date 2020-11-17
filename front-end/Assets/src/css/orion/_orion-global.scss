@@ -872,24 +872,26 @@
             
             }
         }
-    }   
-}
-.pointer_leftbottom {
-    &:hover .Tooltip-window{
-        left: 90%;
-        transform: translateX(-13%);
-        &:after{
-            left: 10%;  
-        } 
     }
+	
+	&.tooltip_pointer_left{
+	    &:hover .Tooltip-window{
+	        left: 90%;
+	        transform: translateX(-13%);
+	        &:after{
+	            left: 10%;  
+	        } 
+	    }
+	}
+	
+	&.tooltip_pointer_right {
+		    &:hover .Tooltip-window{
+		        left: 10%;
+		        transform: translateX(-87%);
+		        &:after{
+		            left: 90%;  
+		        } 
+		    }
+	}   
 }
 
-.pointer_rightbottom {
-    &:hover .Tooltip-window{
-        left: 10%;
-        transform: translateX(-87%);
-        &:after{
-            left: 90%;  
-        } 
-    }
-}

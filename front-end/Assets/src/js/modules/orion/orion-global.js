@@ -90,12 +90,26 @@ $("span.orion_tooltip").hover(function() {
     var obj = this;
     var winwidth=$(window).width();
     var winHeight=$(window).height();
-        var mWPointer = $(this).offset().left; //get the left offset of the element
-        var mHPointer = $(this).offset().top;
+		
+		var rect = this[0].getBoundingClientRect();
+		//console.log(rect.top, rect.right, rect.bottom, rect.left);
+		
+        var mWPointer = rect.left; //get the left offset of the element
+        var mHPointer = rect.top;
+
         if(mWPointer<=(winwidth/3)){
-          $(this).addClass("pointer_leftbottom");
+          $(this).addClass("tooltip_pointer_left");
         }else if(mWPointer>=(winwidth-winwidth/3)){
-          $(this).addClass("pointer_rightbottom");
+          $(this).addClass("tooltip_pointer_right");
         }
+
+		if(winHeight/2 >= mHPointer){
+			console.log("align to bottom")
+			$(this).addClass("tooltip_pointer_bottom");
+		}else{
+			console.log("align to top")
+			$(this).addClass("tooltip_pointer_top");
+		}
+		
   };
 }( jQuery ));
