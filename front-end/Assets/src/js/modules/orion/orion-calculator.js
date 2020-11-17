@@ -80,7 +80,7 @@
 						}    
 					],
 				"basePrice" : 19000,
-				"baseExecutions" : 0,
+				"baseExecutions" : 500,
 			}
 		};
 		
@@ -124,8 +124,7 @@
 		this.addEnvironments = function(pEnvType, quantity,pID,pObject){
 			
 				_self = this;
-				
-				
+
 				if(pObject && pObject.deleted) {
 					_self.environments[pID] = pObject;
 				}
@@ -144,7 +143,6 @@
 					
 				}else{
 					//if pID sent, set to that ID
-					
 					var objEnv = new Object();
 				
 					//Select Environment
@@ -162,21 +160,16 @@
 				var data = {};
 				data.environments = _self.environments;
 				data.priceTable = _self.priceTable;
-				//localStorage.setItem("OrionCalculator",JSON.stringify(data));
-			
 			
 		};
 		
 		this.removeEnvironments = function(pID){
-			///console.log('in function: '+pID);
 			_self = this;
-			//delete _self.environments[pID];
 			_self.environments[pID] = {"deleted":true};
 			
 			var data = {};
 			data.environments = _self.environments;
 			data.priceTable = _self.priceTable;
-			//localStorage.setItem("OrionCalculator",JSON.stringify(data));
 		};
 		
 		this.getTotalCost = function(format){
@@ -210,13 +203,10 @@
 				tallyBox(Calculator);
 			}
 			else{
-				//updateCalculator(Calculator,$(event.target).parent().parent().parent().find(".edit-btn"));
 				updateCalculator(Calculator,ID);
 			}
 		};
 
-		//document.addEventListener('click',editClick);
-		
 		this.editClick = function(e){
 			
 			if(!($(e).hasClass("edit-btn") || $(e).hasClass("cancel-btn") || $(e).hasClass("save-btn"))){
@@ -233,7 +223,6 @@
 			   $(e).parent().find(".cancel-save-btn").toggle();
 	 		   $(e).parent().find(".daily-execution-wrap").toggle();
 			   $(e).parent().find(".edit-btn").toggle();
-			   //$(".slidecontainer[data-nonprod="+thisID+"]").toggle();	
 			}
 			else{
 			   $(e).parent().parent().find(".slidecontainer").toggle();
@@ -244,24 +233,8 @@
 			
 		}
 		
-
-		
 	};
-	
-	/*var Calculator = new OrionCalculator()
-	console.log(Calculator.getPriceForExecution("prod",500))
-	console.log(Calculator.getPriceForExecution("prod",1500))
-	console.log(Calculator.getPriceForExecution("prod",4000))
-	
-	console.log(Calculator.getPriceForExecution("nonProd",500))
-	console.log(Calculator.getPriceForExecution("nonProd",1500))
-	console.log(Calculator.getPriceForExecution("nonProd",4000))
-	
-	
-	Calculator.addEnvironments("prod",5000,1)
-	Calculator.addEnvironments("nonProd",2000,2)
-	Calculator.addEnvironments("nonProd",1000,3)
-	Calculator.getTotalCost()*/
+
 	
 	//PROD TAB
 	var slider = document.getElementById("prodExecutions");
@@ -271,53 +244,41 @@
 	//Calc Instance
 	var Calculator = new OrionCalculator();
 	window.calculator = Calculator;
-	
-	//get obj in localStorage if exists and pass environments to it
-	//var CalculatorLocal = localStorage.getItem("OrionCalculator");
-	CalculatorLocal =null;
-	if(CalculatorLocal){
-		CalculatorLocal = JSON.parse(localStorage.getItem("OrionCalculator"));
-		//for (x in CalculatorLocal.environments){
-		for(var x=0; x<CalculatorLocal.environments.length; x++){ 
-			var thisEnv = CalculatorLocal.environments[x];
-			if(thisEnv){
-				Calculator.addEnvironments(thisEnv.envType,thisEnv.quantity,x,thisEnv);
-				if(x==0){
-					slider.value = thisEnv.quantity;
-				}
-			}
-		}
-		
-	}else{
-		Calculator.addEnvironments("prod",slider.value,0);
-	}
+	Calculator.addEnvironments("prod",slider.value,0);
 
 	function customTally(prodQuantity){
+		console.log('customTally');
+		$( "table" ).on( "click", "td", function() {
+			$( this ).toggleClass( "chosen" );
+		  });
+		
 		if(prodQuantity.quantity>=6500){
+			console.log('greater than 7000');
 			if($("#tallyCustom").is(":hidden")){
+				console.log('is hidden');
 				$("#tallyCustom").show();
-				$("#tallyTotals,[data-orion-tab-body='1'] .total-right,[data-env='prod0'] .total-right").hide();
+				
+				$("#tallyTotals,[data-orion-tab-body='1'] .total-right").hide();
+				//$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").hide();
 			}
-			
 		}else{
 			if($("#tallyCustom").is(":visible")){
 				$("#tallyCustom").hide();
-				$("#tallyTotals,[data-orion-tab-body='1'] .total-right,[data-env='prod0'] .total-right").show();
+				$("#tallyTotals, [data-orion-tab-body='1'] .total-right").show();
+				//$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").show();
 			}
 		}
+		
 	}
 	
 	function tallyBox(Calculator){
-		
 		customTally(Calculator.environments[0]);
 		$("#tallyBreakdown").children().remove()
 		 
 		var nonDeletedEnvCount = 0;
 		
-		//for(var x in Calculator.environments){
 		for(var x=0; x<Calculator.environments.length; x++){	
 			var env = Calculator.environments[x];
-			
 			//update values if changed
 			if(!env.deleted){
 				
@@ -326,21 +287,18 @@
 			
 				if(env.envType ==="nonProd"){
 					nonDeletedEnvCount++;
-					listValue = "<strong>NonProd"+nonDeletedEnvCount+":</strong> "+quantity;
+					listValue = "<strong>Non-Prod "+nonDeletedEnvCount+":</strong> "+quantity;
 				}
 				
 				//if already exists, update value only
 				if($("#tallyBreakdown li.prodID"+x).length){
-					//if has changed
 					if($("#tallyBreakdown li.prodID"+x).html() !== listValue){
 						$("#tallyBreakdown li.prodID"+x).html(listValue);
 					}
-					
 				}
 				else{
 					$("#tallyBreakdown").append("<li class='prodID"+x+"'>"+listValue+"</li>");
 				}
-				
 			}
 		}
 		
@@ -349,28 +307,84 @@
 		if($("#tally").html() !== "$"+price){
 			$("#tally").html("$"+price);
 		}
-
 	}
 	
+	//new (partially build. not being used yet)
+	function updateCalculator2(Calculator,componentID){
+		var nonProdDisplayCount = 1;
+		
+		var baseQuantity = Calculator.environments[0].baseEx;
+		var quantity = parseInt(Calculator.environments[0].quantity);
+		
+		$("#prodEX").html((quantity+baseQuantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		$("#prodCost").html("$"+Calculator.getPriceForExecution('prod',quantity,true));
+		$("#prodBase").html(Calculator.environments[0].baseEx);
+		$("#nonProdBaseCost").html("$"+Calculator.priceTable.nonProd.basePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+		
+		tallyBox(Calculator);
+		
+		for(var y=0; y<calculator.environments.length; y++){
+			var thisEnv = Calculator.environments[y];
+			var envType = thisEnv.envType;
+			
+			if(!thisEnv.deleted){
+				var thisPrice = Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
+				var thisQuantity = parseInt(thisEnv.quantity)+parseInt(thisEnv.baseEx);
+				var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				var thisType = thisEnv.envType;
+				var maxSelection = (thisType == "prod" ? 6500 : 19500);
+				//var maxNonProdSelection = 19500;
+				
+				var item  = "<div class='prodItem' data-env='"+y+"'>";
+				item += "<h3>"+(envType == "prod"?"Production Environment":"Non-Production Environment - "+nonProdDisplayCount) +"</h3>";
+				item += "<div class='slidecontainer' data-nonprod='"+y+"'>";
+				item += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='prod"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+				
+				for(var i=0;i<=maxSelection;i+=500){
+					var label = i.toString().replace(/000$/,'');
+					if(envType == "prod"){
+						if(i==1000||i==5000){
+							item  += "<option value="+i+" class='marker'>"+label+"k</option>";
+						}else{
+							item  += "<option>"+i+"</option>";
+						}
+					}else{
+						if(k==1000||k==5000||k==10000||k==15000||k==19000){
+							item  += "<option value="+k+" class='marker'>"+labelk+"k</option>";
+						}else{
+							item  += "<option>"+k+"</option>";
+						}
+					}
+				}
+				
+				item += "</datalist>";
+			
+				item += "</div></div>";
+				
+				
+				$("#nonProdItemsWrap").append(item);
+				$("#reviewItemsWrap").append(item);
+			}
+		}
+		
+	}
 	
+	//original
 	function updateCalculator(Calculator, componentID){
 		var prodCost = document.getElementById("prodCost");
 		var prodEx = document.getElementById("prodEx");
 		var prodBase = document.getElementById("prodBase");
 		var nonProdBaseCost = document.getElementById("nonProdBaseCost");
-		
-		//reset
 		var nonProdWrap = document.getElementById("nonProdItemsWrap");
 		nonProdWrap.innerHTML = "";//reset list
 		var reviewsWrap = document.getElementById("reviewItemsWrap");
 		reviewsWrap.innerHTML = "";//reset list
 
-		var nonProdDisplayCount = 1//$("#tallyBreakdown li").length;
+		var nonProdDisplayCount = 1;
 
 		//daily executions tab
 		var baseQuantity = Calculator.environments[0].baseEx;
 		var quantity = parseInt(Calculator.environments[0].quantity);
-		//load values
 
 		prodEx.innerHTML = (quantity+baseQuantity).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		prodCost.innerHTML = "$"+Calculator.getPriceForExecution('prod',quantity,true);
@@ -379,8 +393,6 @@
 
 		tallyBox(Calculator);
 		
-		var y;
-		//for(y in Calculator.environments){
 		for(var y=0; y<calculator.environments.length; y++){
 			var thisEnv = Calculator.environments[y];
 			if(!thisEnv.deleted){
@@ -394,7 +406,7 @@
 				var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 				var thisType = thisEnv.envType;
 				var maxProdSelection = 6500;
-				var maxNonProdSelection = 19000;
+				var maxNonProdSelection = 19500;
 				
 				switch(thisEnv.envType){//can be refactored without the switch
 					case "prod":
@@ -413,8 +425,8 @@
 							}
 						}
 						prodItemsContent += "</datalist>";
-						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'>            <div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
-						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						prodItemsContent += "<div class='totolExecutions flex-wrap '><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'>            <div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div>	</div>";
+						prodItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
 						prodItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						
 						break;
@@ -434,8 +446,8 @@
 							}
 						}
 						nonProdItemsContent += "</datalist>";
-						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-4'><div class='total'><div class='total-left'>                <p>Executions</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-8'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
-						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>"+thisPrice+"</div></div>";
+						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'><div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
+						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
 						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn' onclick='window.calculator.editClick(this)'><span class='cancel-btn'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
 
@@ -466,24 +478,18 @@
 		});
 		
 		if(componentID){
-			console.log(componentID);
 			if(componentID == 0){
 				var refToFindBtn = $("#reviewItemsWrap [data-env='prod"+componentID+"']").find(".edit-btn");
 			}
 			else{
 				var refToFindBtn = $("#reviewItemsWrap [data-env='nonProd"+componentID+"']").find(".edit-btn");
 			}
-			
 			if(refToFindBtn){
 				refToFindBtn.click();
 			}
 		}
 		
 	}
-
-	//TESTING
-	//OrionCalculator.removeEnvironments(1);
-	//OrionCalculator.addEnvironments("nonProd",slider.value);//test
 
 	updateCalculator(Calculator);
 
@@ -502,19 +508,10 @@
 	
 	//Add an environment
 	//TODO: Scroll up to focus on new item upon creation
-	var addEnvButton = document.getElementById("addEnv");
-	addEnvButton.onclick = function(){
-		Calculator.addEnvironments("nonProd",1000);
+	$('.btn-level2-addEnv').click(function(){
+		Calculator.addEnvironments("nonProd",0);
 		updateCalculator(Calculator);
-	};
-	
-	//Add an environment
-	var addEnvButton = document.getElementById("addEnvReviewTab");
-	addEnvButton.onclick = function(){
-		Calculator.addEnvironments("nonProd",1000);
-		updateCalculator(Calculator);
-	};
-	
+	});
 	
 	
 	//delete
@@ -551,7 +548,6 @@
 		thisContent.className += " active";
 		var headerHeight = document.querySelector('nav.layout-navigation').offsetHeight;
 		window.scroll({top: findPos(thisTab)-headerHeight,left:0,behavior:'smooth'});
-		
 		updateCalculator(Calculator);
 	}
 	var navTabs = document.querySelectorAll(".orion-tabs-nav .tab-nav");

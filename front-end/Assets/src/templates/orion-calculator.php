@@ -24,7 +24,7 @@
 						<h3>Choose Additional Daily Execution Amount</h3>
 						<p>You can add groups of executions to your base package (500) as needed, up to 6500 additional executions. If you need more than 6500 daily executions, you should consider our Enterprise Plan.</p>
 						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="500" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
+							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
 							<datalist id="steplist">
 								<option value="0"></option>
 								<option value="500"></option>
@@ -86,10 +86,10 @@
 						
 						
 						<div id="nonProdItemsWrap">
-							<!--items-->
+							<!--Items-->
 						</div>
 	
-						<button type="button" id="addEnv"  class="btn-level2-addEnv">Add an Environment</button>
+						<button type="button" id="addEnv"  class="btn-level2-addEnv">Add a Non-Prod Environment</button>
 						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="3" class="tab-body">
@@ -101,7 +101,7 @@
 						<!--Items-->
 						</div>
 						
-						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add an Environment</button>
+						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add a Non-Prod Environment</button>
 						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><a href="#." class="btn btn-gradient ml1">Next: Contact Sales</a></div>
 					</div>
 				</div>
@@ -110,9 +110,9 @@
 					<div  id="calc-sidebar">
 						<div id="tallybox">
 							<div id="tallyCustom">
-								<p><strong>Plans above +6,500</strong></p>
+								<p><strong>Plans above +7,000</strong></p>
 								<h2>Custom</h2>
-								<p>Plans above +6,500 are better served with an enterprise-level plan. Please contact us for more information.</p>
+								<p>Plans above +7,000 are better served with an enterprise-level plan. Please contact us for more information.</p>
 								<a href="#" class="btn btn-gradient">Contact Sales</a>
 							</div>
 							<div id="tallyTotals">
