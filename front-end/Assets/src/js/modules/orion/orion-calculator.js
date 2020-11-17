@@ -472,7 +472,7 @@
 						nonProdItemsContent += "</datalist>";
 						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'><div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
 						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
-						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn' onclick='window.calculator.editClick(this)'><span class='cancel-btn'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
+						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
 
 						break;
@@ -508,14 +508,14 @@
 			if(componentID == 0){
 				 refToBox = $("#reviewItemsWrap [data-env='prod"+componentID+"']")
 			}
-			else{
+			else if(componentID != null){
 				refToBox = $("#reviewItemsWrap [data-env='nonProd"+componentID+"']")				
 			}
 			
-			refToBox.parent().find(".slidecontainer").toggle();
-			refToBox.parent().find(".cancel-save-btn").toggle();
- 			refToBox.parent().find(".daily-execution-wrap").toggle();
-			refToBox.parent().find(".edit-btn").toggle();
+			refToBox.find(".slidecontainer").toggle();
+			refToBox.find(".cancel-save-btn").toggle();
+ 			refToBox.find(".daily-execution-wrap").toggle();
+			refToBox.find(".edit-btn").toggle();
 		}
 		
 		tallyBox(Calculator);
