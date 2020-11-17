@@ -274,19 +274,21 @@
 		
 		if(prodQuantity.quantity>=6500){
 			console.log('greater than 7000');
-			if($("#tallyCustom").is(":hidden")){
+			//if($("#tallyCustom").is(":hidden")){
 				console.log('is hidden');
 				$("#tallyCustom").show();
 				
 				$("#tallyTotals,[data-orion-tab-body='1'] .total-right").hide();
 				$('#reviewItemsWrap').find("[data-env=prod0] .total-right").hide();
-			}
+				$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").hide();
+			//}
 		}else{
-			if($("#tallyCustom").is(":visible")){
+			//if($("#tallyCustom").is(":visible")){
 				$("#tallyCustom").hide();
 				$("#tallyTotals, [data-orion-tab-body='1'] .total-right").show();
 				$('#reviewItemsWrap').find("[data-env=prod0] .total-right").show();
-			}
+				$('#reviewItemsWrap').find("[data-env=prod0] .ex-right").show();
+			//}
 		}
 		
 	}
@@ -580,6 +582,8 @@
 		var headerHeight = document.querySelector('nav.layout-navigation').offsetHeight;
 		window.scroll({top: findPos(thisTab)-headerHeight,left:0,behavior:'smooth'});
 		updateCalculator(Calculator);
+		
+		//tallyBox(Calculator);
 	}
 	var navTabs = document.querySelectorAll(".orion-tabs-nav .tab-nav");
 	for(var i=0;i<navTabs.length;i++){
@@ -618,4 +622,5 @@
 }     
 
 }(jQuery));
+
 
