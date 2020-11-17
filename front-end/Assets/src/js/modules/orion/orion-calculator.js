@@ -460,7 +460,7 @@
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
 						nonProdItemsContent = "<h3>Non-Production Environment - "+nonProdDisplayCount+"</h3>";
-						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>x</div>";
+						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>Delete</div>";
 						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
 						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=0;k<=maxNonProdSelection;k+=500){
