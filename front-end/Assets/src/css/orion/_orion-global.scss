@@ -814,8 +814,9 @@
     background: #fff;
     text-align: center;
     font-weight: 700;
-    padding: 10px;
-    filter: drop-shadow(3px 4px 1px #cccccc6e);
+    padding: 10px;    
+    //filter: drop-shadow(3px 4px 1px #cccccc6e);
+    box-shadow: 3px 4px 5px #888;
     border-radius: 4px;
   }
 
