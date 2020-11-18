@@ -12,9 +12,11 @@
 		<p>Select a brand to get access to their documentation</p>
 		<div class="flex-wrap remove-margin-12px">
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-					<a href="#." class="brand-name"><strong>FTPS</strong></a>
-				</div>
+                <a href="#." class="brand-name">
+                    <div class="portal-cards portal-cards-text">
+                        <strong>FTPS</strong>
+                    </div>
+                </a>
 			</div>
 			<!-- col -->
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	

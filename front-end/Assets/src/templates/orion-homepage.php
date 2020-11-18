@@ -603,31 +603,34 @@
 				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">	
 								
 					<div class="video-portal">
-						<div class="video-img">
-							<a href="/content/bmc/videos.html?vID=UmLuLx_Rbkw" class="modal-youtube-video-player play-btn">							
-								<div class="img-div">
-									<img src="https://www.bmc.com/content/dam/bmc/solutions/eliminate-chaos-elevate-your-it-392x250.jpg" alt="">
-								</div>
-								<div class="video-overlay"><span class="play-icon"></span></div>
-							</a>
-						</div>
-						<div class="caption text-left">
-							<div class="js-ehItem">
-								<h4> <strong>Jobs-as-Code</strong></h4>
-								<p>0:44</p>
+						<a href="/content/bmc/videos.html?vID=UmLuLx_Rbkw" class="modal-youtube-video-player play-btn">	
+							<div class="video-img">
+														
+									<div class="img-div">
+										<img src="https://www.bmc.com/content/dam/bmc/solutions/eliminate-chaos-elevate-your-it-392x250.jpg" alt="">
+									</div>
+									<div class="video-overlay"><span class="play-icon"></span></div>
+								
 							</div>
-						</div>
+							<div class="caption text-left">
+								<div class="js-ehItem">
+									<h4> <strong>Jobs-as-Code</strong></h4>
+									<p>0:44</p>
+								</div>
+							</div>
+						</a>
 					</div>
 				</div>
 				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
 					<div class="video-portal">
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">	
 						<div class="video-img">
-							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+													
 								<div class="img-div">
 									<img src="https://www.bmc.com/content/dam/bmc/solutions/icons/video-cover-placeholder.png" alt="">
 								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
-							</a>
+							
 						</div>
 						<div class="caption text-left">
 							<div class="js-ehItem">
@@ -635,17 +638,19 @@
 								<p>(x:xx)</p>
 							</div>
 						</div>
+						</a>
 					</div>
 				</div>
 				<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 ">						
 					<div class="video-portal">
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">	
 						<div class="video-img">
-							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
+													
 								<div class="img-div">
 									<img src="https://www.bmc.com/content/dam/bmc/solutions/icons/video-cover-placeholder.png" alt="">
 								</div>
 								<div class="video-overlay"><span class="play-icon"></span></div>
-							</a>
+							
 						</div>
 						<div class="caption text-left">
 							<div class="js-ehItem">
@@ -653,6 +658,7 @@
 								<p>(x:xx)</p>
 							</div>
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>

@@ -131,12 +131,7 @@
                 } 
             }         
         } 
-        &:hover {
-            .video-overlay {
-                background: transparent;
-                transition: 0.3s linear;
-            }       
-        }
+        
 
     }
     .caption {
@@ -153,6 +148,12 @@
              margin: 0;
          }
     } 
+    &:hover {
+            .video-overlay {
+                background: transparent;
+                transition: 0.3s linear;
+            }       
+        }
      
 }
 
