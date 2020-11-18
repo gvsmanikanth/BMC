@@ -1,0 +1,71 @@
+// Pricing cards
+.pricing-section{
+    background-image: url(#{$imagesFolder}orion/portalcards-bg.svg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    .div-px1{
+        @media(max-width:641px){
+            margin: 0;
+        }       
+    }
+}
+
+
+.pricing-card {
+    padding: 38px 25px;
+    border: 1px solid #1A98FF;
+    margin: 0px 0px 20px 0px;
+    @media(min-width:$break-sm){
+        margin: 0px 15px 0px 15px;
+    }
+    @media(min-width:$break-lg){
+        padding: 60px 80px;
+    }
+    h2 {
+        color: #002C8F;
+        margin-bottom: 30px;
+        font-size: 26px;
+        @media(min-width:$break-lg){
+            font-size: 36px;
+        }
+    }
+    p {
+        margin-bottom: 0;
+    }
+    h4 {
+        font-weight: 700;
+    }
+    .plan-price {
+        font-size: 50px;
+        font-weight: 700;
+        margin: 20px 0 30px 0;
+        color: #414042;
+        font-size: 32px;
+        @media(min-width:$break-lg){
+            font-size: 50px;
+        }
+    }
+    .btn {
+        margin: 10px 0 30px 0;
+        width: calc(100% - 30px);
+        @media(min-width:$break-lg){
+            width: calc(100% - 60px);
+        }
+    }
+    .orion-global .blue-check-list {
+        margin: 15px 0;
+    }
+    .pricing-footer{
+        p  {
+            margin-left: 20px;
+        }        
+    }
+    hr {
+        border: none;
+        height: 1px;
+        background-color: #bdbdbd;
+        margin: 20px 0;
+    }
+}
