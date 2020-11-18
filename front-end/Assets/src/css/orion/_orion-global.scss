@@ -139,6 +139,22 @@
         max-width: 1016px;
         margin: 0 auto;
     }
+    .horizontal-list{
+        .big-price-text {
+            color: #414042;
+            font-weight: 700;
+            font-size: 26px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            @media(min-width:$break-md){
+                font-size: 36px;
+            } 
+        }
+    }
+    
+    
+}
+.pricing-horizontal-list{
     .blue-check-list{
         margin: 10px 0;
         padding: 0;
@@ -159,7 +175,20 @@
             }
         }  
     }
-    
+    .btn-gradient{
+        margin-bottom: 30px;
+    }
+    h3{
+        color: #002C8F;
+        font-weight:700;
+    }
+    .big-price-text{
+        color: #414042;
+        font-weight: 700;
+        font-size: 36px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
 }
 .anchor-banner-wrap{
     background-color: #fff;
