@@ -128,21 +128,23 @@
 <section class="orion-split-content orion-split-content-video bg-white orion-global">
 	<div class="layout-inner-wrap">
 		<div class="flex-wrap  mb2">
-			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
+			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center ">
 				<div class="imageContainer" >
 					<div class="video-portal">
-						<div class="video-img">
-							<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">							
-								<div class="img-div">
-									<img src="Assets/src/img/orion/splitcontent.png" alt="">
-								</div>
-								<div class="video-overlay"><span class="play-icon"></span></div>
-							</a>
-						</div>
-						<div class="caption text-left">
-							<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
-							<p>1:45</p>
-						</div>
+						<a href="/content/bmc/videos.html?vID=MJLIF16M90A" class="modal-youtube-video-player play-btn">	
+							<div class="video-img">
+														
+									<div class="img-div">
+										<img src="Assets/src/img/orion/splitcontent.png" alt="">
+									</div>
+									<div class="video-overlay"><span class="play-icon"></span></div>
+								
+							</div>
+							<div class="caption text-left ">
+								<h4> <strong>Jobs-as-Code/Paint by Numbers</strong></h4>
+								<p>1:45</p>
+							</div>
+						</a>
 					</div>
 				</div>				
 			</div>
