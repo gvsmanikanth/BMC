@@ -37,6 +37,14 @@
                 }
             }
             
+        });
+
+        $('.orion-quote-carousel li').on('mouseenter',function(e){
+            $(this).closest('.owl-carousel').trigger('play.owl.autoplay');
+        })
+            
+        $('.orion-quote-carousel li').on('mouseleave',function(e){
+            $(this).closest('.owl-carousel').trigger('stop.owl.autoplay');
         })
     }     
 

@@ -20,7 +20,7 @@
     .orion-quote-carousel{
         background: url(#{$imagesFolder}orion/orion-cta-bg.svg) no-repeat;
         padding: 30px 0px  0px 0px;
-        background-position: center 10%;
+        background-position: center top;
         background-size: 700px;
         text-align:center;
         @media(max-width:$break-md){
@@ -36,7 +36,10 @@
             .quote{
                 max-width: 650px;
                 margin: 0 auto;
-                padding: 50px 20px 0 20px;
+                padding: 10px 20px 0 20px;
+                @media(min-width:$break-md){
+                    padding: 40px 20px 0 20px;
+                }
                 h3{
                     color: #1A98FF;  
                     font-weight: 700;

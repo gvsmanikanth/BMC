@@ -285,7 +285,7 @@
             <!-- item end -->
             <div class="item orion-cta">
                 <div class="quote">            				
-                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
+                    <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product. </h3>
                     <div class="info">
                         <p><strong>Most Interesting Analyst In The World</strong></p>
                         <p>Firm Yet To Be Named</p>
