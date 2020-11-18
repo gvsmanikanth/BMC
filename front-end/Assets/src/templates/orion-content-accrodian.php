@@ -1,6 +1,6 @@
 <?php
-	$pageTitle = 'BMC Control-M Splash Page';
-	$bodyClass = 'splashPage';
+	$pageTitle = 'content accordian';
+	$bodyClass = '';
     include 'php-inc/head.php';
     include 'php-inc/orion-secondary-navigation.php';
 ?>
@@ -12,31 +12,29 @@
 		<p>Select a brand to get access to their documentation</p>
 		<div class="flex-wrap remove-margin-12px">
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-                <a href="#." class="brand-name">
-                    <div class="portal-cards portal-cards-text">
-                        <strong>FTPS</strong>
-                    </div>
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>FTPS</strong></div>
                 </a>
 			</div>
-			<!-- col -->
-			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name"><strong>SFTP</strong></a>
-				</div>
+            <!-- col -->
+            <div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>SFTP</strong></div>
+                </a>
 			</div>
-			<!-- col -->
-			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name"><strong>AWS S3</strong></a>
-				</div>
+            <!-- col -->
+            <div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>AWS S3</strong></div>
+                </a>
 			</div>
-			<!-- col -->
-			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name"><strong>SQL Server Integration Services (SSIS)</strong></a>
-				</div>
+            <!-- col -->
+            <div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>SQL Server Integration Services (SSIS)</strong></div>
+                </a>
 			</div>
-            <!-- col -->            						
+            <!-- col -->        						
 
 		</div>		
 	</div>	
@@ -49,30 +47,30 @@
 		<h2 class="orion-block-title mb1">AWS</h2>
 		<p>Select a brand to get access to their documentation</p>
 		<div class="flex-wrap remove-margin-12px">
+            <div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>AWS Batch</strong></div>
+                </a>
+			</div>
+            <!-- col -->     
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-					<a href="#." class="brand-name">AWS Batch</a>
-				</div>
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>AWS Lambda</strong></div>
+                </a>
+			</div>
+            <!-- col -->     
+			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>AWS Step Functions</strong></div>
+                </a>
 			</div>
 			<!-- col -->
 			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">AWS Lambda</a>
-				</div>
+				<a class="portal-cards portal-cards-text"  href="#.">
+					<div class="brand-name"><strong>AWS Lambda</strong></div>
+                </a>
 			</div>
-			<!-- col -->
-			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">AWS Step Functions</a>
-				</div>
-			</div>
-			<!-- col -->
-			<div class="flex flex-item col-12 sm-col-4 md-col-3 lg-col-2 ">	
-				<div class="portal-cards portal-cards-text">
-                    <a href="#." class="brand-name">AWS Step Functions</a>
-				</div>
-			</div>
-            <!-- col -->            						
+			<!-- col -->       						
 
 		</div>			
 	</div>	
