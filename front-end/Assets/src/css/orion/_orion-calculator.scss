@@ -59,6 +59,24 @@
 		}
 		.orion-tabs-body-wrapper{
 			border-bottom: 1px solid #BDBDBD;
+			
+			#orion-calculator-nav-wrap {
+				width: 100%;
+				display: block;
+			}
+			#orion-calculator-nav {
+				@media(max-width:$break-sm){
+					position: fixed;
+					background: rgba(255,255,255,1);
+					width:100%;
+					left: 0;
+					bottom:  0;
+					text-align: center;
+					z-index: 1000;
+				}	
+			} 
+			
+			
 			.orion-tabs-body {
 				.tab-body {
 					&[data-orion-tab-body="1"]{
@@ -69,10 +87,12 @@
 						
 					}
 					display: none;
-					padding: 30px 0 0 0;					
-					margin-right: 30px;
+					padding: 0;
 					@media(min-width:$break-md){
 						padding-right: 50px;
+					}
+					@media(min-width:$break-sm){
+						padding-right: 30px;
 					} 
 					&.active{
 						display: block;
@@ -227,6 +247,8 @@
 						color: #fff;
 						font-weight: 700;
 						margin-top: 0;
+						font-size: 1.5rem;
+						line-height: 1.8rem;
 					}
 					.btn-gradient {
 						width: 70%;

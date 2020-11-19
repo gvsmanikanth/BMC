@@ -544,6 +544,31 @@
 	}
 
 	updateCalculator(Calculator);
+	
+	//device sticky nav
+	$.fn.isOnScreen = function(){
+		var element = this.get(0);
+		var bounds = element.getBoundingClientRect();
+		return bounds.top < window.innerHeight && bounds.bottom > 0;
+	}
+
+	var notdesktop = window.matchMedia("only screen and (max-width: 768px)").matches;
+	var orionNav = $('#orion-calculator-nav');
+	var navWrap = $("#orion-calculator-nav-wrap");
+	var tabsWrap = $(".orion-tabs-wrapper");
+	
+	if(notdesktop){
+		$(window).scroll(function(){
+			if(tabsWrap.isOnScreen() && !navWrap.isOnScreen()){
+				orionNav.css('position','fixed');
+				navWrap.css('height',orionNav.outerHeight()+'px');
+			}else{
+				orionNav.css('position','relative');
+				navWrap.css('height',"auto");
+			}
+			
+		});
+	}
 
 	//slider 
 	document.addEventListener('oninput',sliderInput);

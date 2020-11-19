@@ -123,7 +123,7 @@
 				
 				</div>
 				
-				<div id="orion-calculator-nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev" style="display: none;">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button><a href="#." class="btn btn-gradient ml1 orion-contact" style="display: none;">Next: Contact Sales</a></div>
+				<div id="orion-calculator-nav-wrap"><div id="orion-calculator-nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev" style="display: none;">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button><a href="#." class="btn btn-gradient ml1 orion-contact" style="display: none;">Next: Contact Sales</a></div></div>
 				
 			</div>
 			
