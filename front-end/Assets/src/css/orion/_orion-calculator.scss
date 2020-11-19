@@ -88,6 +88,7 @@
 					}
 					display: none;
 					padding: 0;
+					padding-top: 40px;
 					@media(min-width:$break-md){
 						padding-right: 50px;
 					}
@@ -99,6 +100,7 @@
 					}
 					h3{
 						color: #002C8F;
+						font-size: 36px;
 					}
 					.big-price-text {
 						color: #414042;
@@ -184,7 +186,7 @@
 							width: 30%;
 							text-align: right;
 							border-left: 1px solid #BDBDBD;						
-							padding: 10px;
+							margin: 10px;
 						}
 						
 					}
@@ -303,7 +305,7 @@
 					height: 30px;
 					display: inline-block;
 					line-height: 30px;
-					margin-left: 10px;
+					//margin-left: 10px;
 					transition: 0.3s linear;
 					margin-right: 10px;
 					transform: rotate(180deg);
@@ -326,6 +328,7 @@
 					line-height: 30px;
 					margin-left: 10px;
 					transition: 0.3s linear;
+					
 				}
 				&:hover{
 					&:after{
@@ -334,6 +337,7 @@
 					}
 				}
 			}
+			padding-left:0px;
 		}
 		.btn-level2-addEnv {
 			background-color: #002C8F;
@@ -397,7 +401,7 @@
   /* Mouse-over effects */
   .slider:hover {
 	opacity: 0; /* Fully shown on mouse-over */
-	
+	cursor:pointer;
   }
   
   /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
