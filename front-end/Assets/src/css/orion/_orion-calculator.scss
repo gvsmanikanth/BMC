@@ -10,15 +10,22 @@
 					width: auto;
 				} 
 				h4{
-					padding: 35px 0;
+					padding: 16px 0;
 					color: #75777A;
+					@media(min-width:$break-sm){
+							padding: 35px 0;
+					} 
 					span.stepNo {
 						background: #E5E5E5;
 						display: inline-block;
-						padding: 10px;
+						padding: 5px;
 						line-height: 1em;
 						vertical-align: middle;
-						margin-right: 15px;
+						margin-right: 5px;
+						@media(min-width:$break-sm){
+							padding: 10px;
+							margin-right:15px;
+						} 
 					}
 					&:hover {
 							cursor: pointer;
@@ -52,6 +59,24 @@
 		}
 		.orion-tabs-body-wrapper{
 			border-bottom: 1px solid #BDBDBD;
+			
+			#orion-calculator-nav-wrap {
+				width: 100%;
+				display: block;
+			}
+			#orion-calculator-nav {
+				@media(max-width:$break-sm){
+					position: fixed;
+					background: rgba(255,255,255,1);
+					width:100%;
+					left: 0;
+					bottom:  0;
+					text-align: center;
+					z-index: 1000;
+				}	
+			} 
+			
+			
 			.orion-tabs-body {
 				.tab-body {
 					&[data-orion-tab-body="1"]{
@@ -62,10 +87,12 @@
 						
 					}
 					display: none;
-					padding: 30px 0 0 0;					
-					margin-right: 30px;
+					padding: 0;
 					@media(min-width:$break-md){
 						padding-right: 50px;
+					}
+					@media(min-width:$break-sm){
+						padding-right: 30px;
 					} 
 					&.active{
 						display: block;
@@ -95,7 +122,7 @@
 						}
 						
 					}
-					#nonProdItemsWrap, #reviewItemsWrap {
+					#nonProdItemsWrap,#reviewItemsWrap {
 						.nonProdItem, .prodItem{
 							border: 1px solid #1A98FF;
 							border-radius: 10px;
@@ -104,13 +131,12 @@
 							position:relative;
 							
 							.delete{
-								position: absolute;
-							    top: 15px;
-								right: 20px; 
+								margin-top: 30px;
 								cursor: pointer;
-								color: #1A98FF;
+								color: #75777A;
 								font-family: Arial, sans-serif;
-								font-size: 18px;
+								font-size: 16px;
+								font-weight: 800;
 								&:hover{
 									color: #F98700;									
 								}
@@ -132,6 +158,13 @@
 						}
 						
 					}
+					#reviewItemsWrap {
+						.delete {
+							display: inline-block;
+							margin-right: 30px;
+						}
+					}
+					
 					.total{
 						background: #EEEEEE;
 						font-size: 14px;
@@ -214,6 +247,8 @@
 						color: #fff;
 						font-weight: 700;
 						margin-top: 0;
+						font-size: 1.5rem;
+						line-height: 1.8rem;
 					}
 					.btn-gradient {
 						width: 70%;

@@ -81,7 +81,7 @@
 								<option value="3500"></option>
 								<option value="4000"></option>
 								<option value="4500"></option>
-								<option class="marker" value="5000">5K</option>
+								<option class="marker" value="5000">5k</option>
 								<option value="5500"></option>
 								<option value="6000"></option>
 								<option value="6500"></option>
@@ -107,8 +107,6 @@
 								</div>
 							</div>
 						</div>		
-						
-						<div class="nav"><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
 						<h3>Non-Production Environment</h3>
@@ -130,24 +128,23 @@
 						</div>
 						
 						
-						<div id="nonProdItemsWrap">
+						<div id="nonProdItemsWrap" class="itemWrap">
 							<!--Items-->
 						</div>
 	
 						<button type="button" id="addEnv"  class="btn-level2-addEnv">Add a Non-Prod Environment</button>
-						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button></div>
 					</div>
 					<div data-orion-tab-body="3" class="tab-body">
 						<h3>Review Your Estimate</h3>
 						<p>Text that could explain what the user is seeing, if needed. This text has an asterisk that leads to the disclaimer text below*</p>
 						<p>*This estimate does not include this and that and those.</p>
 						
-						<div id="reviewItemsWrap">
+						<div id="reviewItemsWrap" class="itemWrap">
 						<!--Items-->
 						</div>
 						
 						<button type="button" id="addEnvReviewTab" class="btn-level2-addEnv">Add a Non-Prod Environment</button>
-						<div class="nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev">Back</button><a href="#." class="btn btn-gradient ml1">Next: Contact Sales</a></div>
+						
 					</div>
 				</div>
 			
@@ -155,9 +152,8 @@
 					<div  id="calc-sidebar">
 						<div id="tallybox">
 							<div id="tallyCustom">
-								<p><strong>Plans above +7,000</strong></p>
-								<h2>Custom</h2>
-								<p>Plans above +7,000 are better served with an enterprise-level plan. Please contact us for more information.</p>
+								<h2>Custom Plan Recommended</h2>
+								<p>If you need more than 6,500 daily executions, we recommend our Scale Plan. Please contact us to learn more.</p>
 								<a href="#" class="btn btn-gradient">Contact Sales</a>
 							</div>
 							<div id="tallyTotals">
@@ -171,6 +167,9 @@
 					</div>
 				
 				</div>
+				
+				<div id="orion-calculator-nav-wrap"><div id="orion-calculator-nav"><button type="button" data-nav="back" class="btn-level2 btn-level2-prev" style="display: none;">Back</button><button type="button" data-nav="next" class="btn-level2 btn-level2-next">Next</button><a href="#." class="btn btn-gradient ml1 orion-contact" style="display: none;">Next: Contact Sales</a></div></div>
+				
 			</div>
 			
 		</div>
