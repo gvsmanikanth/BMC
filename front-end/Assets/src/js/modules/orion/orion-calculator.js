@@ -477,7 +477,6 @@
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
 						nonProdItemsContent = "<h3>Non-Production Environment - "+nonProdDisplayCount+"</h3>";
-						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>Delete</div>";
 						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
 						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=0;k<=maxNonProdSelection;k+=500){
@@ -492,6 +491,7 @@
 						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'><div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
 						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
 						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
+						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>Delete</div>";
 						nonProdDisplayCount++;
 
 						break;
@@ -560,7 +560,7 @@
 	$('.btn-level2-addEnv').click(function(){
 		Calculator.addEnvironments("nonProd",0);
 		updateCalculator(Calculator);
-		scrollTo($('.tab-body.active .itemWrap > div').last(),1000);
+		//scrollTo($('.tab-body.active .itemWrap > div').last(),1000);
 	});
 	
 	
@@ -605,7 +605,7 @@
 		activeBody.className = activeBody.className.replace(/\active\b/g, "");
 		thisTab.className += " active";
 		thisContent.className += " active";
-		scrollTo(thisTab,2000);
+		scrollTo(thisTab,1000);
 		updateCalculator(Calculator);
 		showNav();
 	}
