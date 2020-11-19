@@ -102,7 +102,7 @@
 						}
 						
 					}
-					#nonProdItemsWrap {
+					#nonProdItemsWrap,#reviewItemsWrap {
 						.nonProdItem, .prodItem{
 							border: 1px solid #1A98FF;
 							border-radius: 10px;
@@ -139,44 +139,11 @@
 						
 					}
 					#reviewItemsWrap {
-						.nonProdItem, .prodItem{
-							border: 1px solid #1A98FF;
-							border-radius: 10px;
-							padding: 30px;
-							margin-bottom: 30px;
-							position:relative;
-							
-							.delete{
-								position: absolute;
-							    top: 15px;
-								right: 20px; 
-								cursor: pointer;
-								color: #1A98FF;
-								font-family: Arial, sans-serif;
-								font-size: 18px;
-								&:hover{
-									color: #F98700;									
-								}
-							}
-							
-							h3{
-								font-size: 22px;
-								font-weight: 700;
-								border-bottom: 1px solid #BDBDBD;
-								margin-bottom: 25px;
-								padding-bottom: 10px;
-							}
-							.cale-subTitle {
-								font-size: 18px;
-								font-weight: 700;
-								margin-bottom: 0;
-								color: #414042;
-							}
+						.delete {
+							display: inline-block;
+							margin-right: 30px;
 						}
-						
 					}
-					
-					
 					
 					.total{
 						background: #EEEEEE;

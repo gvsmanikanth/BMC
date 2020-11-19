@@ -107,9 +107,8 @@
 					<div  id="calc-sidebar">
 						<div id="tallybox">
 							<div id="tallyCustom">
-								<p><strong>Plans above +7,000</strong></p>
-								<h2>Custom</h2>
-								<p>Plans above +7,000 are better served with an enterprise-level plan. Please contact us for more information.</p>
+								<h2>Custom Plan Recommended</h2>
+								<p>If you need more than 6,500 daily executions, we recommend our Scale Plan. Please contact us to learn more.</p>
 								<a href="#" class="btn btn-gradient">Contact Sales</a>
 							</div>
 							<div id="tallyTotals">

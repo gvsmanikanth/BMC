@@ -81,7 +81,7 @@
 							"price": 4550
 						}    
 					],
-				"basePrice" : 19000,
+				"basePrice" : 19900,
 				"baseExecutions" : 500,
 			}
 		};
@@ -225,6 +225,7 @@
 			   $(e).parent().find(".cancel-save-btn").toggle();
 	 		   $(e).parent().find(".daily-execution-wrap").toggle();
 			   $(e).parent().find(".edit-btn").toggle();
+			   $(e).parent().find(".delete").toggle();
 			   
 			   window.orignalEditValue = $(e).parent().find("input").val();
 				
@@ -247,6 +248,7 @@
 			   $(e).parent().parent().find(".cancel-save-btn").toggle();
 	 		   $(e).parent().parent().find(".daily-execution-wrap").toggle();
 			   $(e).parent().parent().find(".edit-btn").toggle();
+			   $(e).parent().parent().find(".delete").toggle();
 			   
  			   window.orignalEditValue = null;
 			}
@@ -476,9 +478,9 @@
 					case "nonProd":
 						nonProdItems.className = "nonProdItem";
 						nonProdItems.setAttribute('data-env','nonProd'+y);
-						nonProdItemsContent = "<h3>Non-Production Environment - "+nonProdDisplayCount+"</h3>";
+						nonProdItemsContent = "<h3>Non-Production Environment "+nonProdDisplayCount+"</h3>";
 						nonProdItemsContent += "<div class='slidecontainer' data-nonprod='"+y+"'>";
-						nonProdItemsContent += "<p class='cale-subTitle'>Select Daily Execution Amount</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
+						nonProdItemsContent += "<p class='cale-subTitle'>Select Additional Daily Executions</p><input data-id='"+y+"'  data-env='"+thisEnv.envType+"' onchange='window.calculator.updateEnvironment(this.value)' type='range' min='0' max='"+maxNonProdSelection+"' value='"+thisEnv.quantity+"' class='slider sliderNew' id='nonProd"+y+"' step='500' list='step"+y+"'><datalist id='step"+y+"'>";
 						for(var k=0;k<=maxNonProdSelection;k+=500){
 							if(k==1000||k==5000||k==10000||k==15000||k==19000){
 								var labelk = k.toString().replace(/000$/,'');
@@ -490,8 +492,7 @@
 						nonProdItemsContent += "</datalist>";
 						nonProdItemsContent += "<div class='totolExecutions flex-wrap'><div  class='flex-item col-12 md-col-7 lg-col-6'><div class='total'><div class='total-left'>                <p>Executions (including base "+thisEnv.baseEx+")</p>	                <p><strong>"+thisQuantityFormatted+"</strong></p>									            </div>            <div class='total-right'>                <p>Cost </p>                <p><strong>$"+thisPrice+"</strong></p>            </div>                    </div>    </div>   <div class='flex-item col-12 md-col-5 lg-col-6'><div class='infobox'><p><a href='#'>View additional transaction pricing</a></p></div></div></div></div>	";
 						nonProdItemsContent += "<div class='daily-execution-wrap flex-wrap'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
-						nonProdItemsContent += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
-						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>Delete</div>";
+						nonProdItemsContent += "<div data-nonprod='"+y+"' class='delete'>Delete</div><div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div> <div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 						nonProdDisplayCount++;
 
 						break;
@@ -535,6 +536,7 @@
 			refToBox.find(".cancel-save-btn").toggle();
  			refToBox.find(".daily-execution-wrap").toggle();
 			refToBox.find(".edit-btn").toggle();
+			refToBox.find(".delete").toggle();
 		}
 		
 		tallyBox(Calculator);
