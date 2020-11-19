@@ -25,6 +25,7 @@
                     <h3>Available where you need it, when you need it.</h3>      
 				</div>     
 				<div id="homeBannerAnimation" ></div>
+				<img src="Assets/src/img/orion/home-animated-lines.svg" alt="">
 			</div> 			  				
         </div>         
     </div>

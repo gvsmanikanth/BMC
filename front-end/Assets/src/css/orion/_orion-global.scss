@@ -875,13 +875,17 @@
             margin-top:10px;
             color:#3980B2;
             float:left;
-            width: 75%;
+            width: 70%;
         }
     }
     @media(max-width:$break-sm){
         .rem-lr-spacing{
             margin-left: 0px;
             margin-right: 0px;
+        }
+        .guttor-width{
+            margin-left:2px;
+            margin-right:2px;
         }
     }
 }

@@ -51,7 +51,13 @@
                     order: 2;
                 }
             }
-        }       
+        } 
+        .imageContainer-no-cloud-bg {
+            @media(min-width:$break-lg){            
+                margin-left: auto;
+            }
+            
+        }      
 
     }
     
@@ -88,7 +94,8 @@
         padding: 20px;
         margin-top: 20px;
         @media(min-width:$break-md){            
-            padding: 40px;
+            padding: 48px 40px 28px 40px;
+
         }
         
         hr.short-blue-hr {

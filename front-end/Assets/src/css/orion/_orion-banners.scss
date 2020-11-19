@@ -20,7 +20,7 @@
         @media(min-width:$break-lg){
             right: -30%;
             top: 0;  
-            max-height: initial;
+            max-height: none;
         }
         @media(min-width:1200px){
             right: -20%;
@@ -142,7 +142,7 @@
             .flex.flex-item:first-child{
                 order: 2;
                 @media (min-width: $break-sm) {
-                    order: initial;          
+                    order: 0;          
                 }
             }
             .orion-banner-right-image{
@@ -206,7 +206,7 @@
             max-height: 220px;
             
             @media(min-width:$break-lg){
-                max-height: initial;
+                max-height: none;
                 top: 0;   
             }
             
@@ -230,6 +230,15 @@
         }   
              
     }  
+    &.support-banner{
+        .blob-container{
+            top:0;
+            @media (max-width: 641px) {                      
+                max-height: 160px;
+            }
+        }   
+             
+    } 
     
   
     @keyframes bounce-blob-hidden {
