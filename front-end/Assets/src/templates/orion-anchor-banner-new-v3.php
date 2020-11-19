@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = 'Anchor Banner w Links - v4';
+	$pageTitle = 'orion-anchor-banner-new-v3';
 	$bodyClass = 'splashPage';
     include 'php-inc/head.php';
     include 'php-inc/orion-secondary-navigation.php';
@@ -7,13 +7,13 @@
 
 <!--Orion Banner - V1 Component Start -->
 
-<section class="bg-white orion-global orion-banner	">
+<section class="bg-white orion-global orion-banner anchor-banner features-banner	">
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							
                 <div class="flex flex-item col-12 sm-col-12">	
                     <div class="">
-                        <h1>Resources</h1>
+                        <h1>Features</h1>
                         <p class="anchor-banner-title"><span>Jump to a Category</span></p>
                         <ul class="anchor-banner-menu">
                             <li><a href="#">Analyst Research</a></li>
@@ -31,10 +31,10 @@
             </div>     
         </div> 
         <div class="blob-container">        
-            <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-3-orange.svg");' >		
+            <div class=" blob-hidden" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-3-orange.svg");' >		
                        
             </div>
-            <div class="blob-masked rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-3-blue.svg");'  >
+            <div class="blob-masked" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-3-blue.svg");'  >
             </div> 
         </div>
     </div>	

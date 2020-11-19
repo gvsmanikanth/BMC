@@ -6,7 +6,7 @@ $(function() {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 			// Added condition for Orion header as fixed header height is different
 			if($('.orion-seconday-nav').length > 0){
-				var fixedHeaderHeight = $('.orion-seconday-nav').height();
+				var fixedHeaderHeight = $('.orion-seconday-nav').height() + $('.layout-header').height();
 			}else{
 				var fixedHeaderHeight = $('.layout-header').height();
 			}

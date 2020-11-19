@@ -692,7 +692,8 @@
     overflow: hidden;     
     padding: 0;  
     .banner-area{        
-         position: relative;
+        position: relative;
+        display:flex;
         .image-blob{
             position: absolute;
             z-index:5;

@@ -1,5 +1,5 @@
 <?php
-	$pageTitle = 'Anchor Banner w Links - v3';
+	$pageTitle = 'orion-anchor-banner-new-v1';
 	$bodyClass = 'splashPage';
     include 'php-inc/head.php';
     include 'php-inc/orion-secondary-navigation.php';
@@ -7,7 +7,7 @@
 
 <!--Orion Banner - V1 Component Start -->
 
-<section class="bg-white orion-global orion-banner	">
+<section class="bg-white orion-global orion-banner anchor-banner">
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							
@@ -33,11 +33,11 @@
                 </div>				                    
             </div>     
         </div> 
-        <div class="blob-container">        
-            <div class=" blob-hidden rellax" data-rellax-speed="3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-1-orange.svg");' >		
+        <div class="blob-container ">        
+            <div class=" blob-hidden " style='background-image: url("Assets/src/img/orion/anchorbanner-variation-1-orange.svg");' >		
                        
             </div>
-            <div class="blob-masked rellax" data-rellax-speed="-3" style='background-image: url("Assets/src/img/orion/anchorbanner-variation-1-blue.svg");'  >
+            <div class="blob-masked " style='background-image: url("Assets/src/img/orion/anchorbanner-variation-1-blue.svg");'  >
             </div> 
         </div>
     </div>	
