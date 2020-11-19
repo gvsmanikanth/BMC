@@ -1,12 +1,10 @@
 (function( $ ){
-    var rellax = new Rellax('.rellax'); 
-    $( window ).load(function() {
-        setTimeout(function(){
-            if($('.orion-global .modal-image')){
-                $('.fancybox-overlay').addClass('orion-page-fancybox');
-            }       
+    //var rellax = new Rellax('.rellax'); 
+    if($('.orion-global .modal-image')){
+        setTimeout(function(){            
+            $('.fancybox-overlay').addClass('orion-page-fancybox');               
         }, 1000);
-    });
+    }
         
     $('.orion-global .modal-image').click(function(){
         setTimeout(function(){
@@ -80,7 +78,7 @@
     // example usevar div = document.querySelector('div');var divOffset = offset(div);console.log(divOffset.left, divOffset.top);
 
 // Tooltip pointer position
-$("span.orion_tooltip").hover(function() {
+ $("span.orion_tooltip").hover(function() {
     $(this).orionTooltip();
   });
   

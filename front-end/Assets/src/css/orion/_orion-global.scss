@@ -720,6 +720,9 @@
             margin:auto;
             min-height:360px;
             pointer-events: none;
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                pointer-events: auto; 
+            }
             @media(min-width:$break-sm){
                 max-width: 680px;
             }           
