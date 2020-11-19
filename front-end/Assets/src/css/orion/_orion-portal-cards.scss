@@ -73,7 +73,10 @@
             }
         a{
             margin: auto;
-        }    
+        }   
+        &:focus{
+            outline: none;
+        } 
     }
     
 }
