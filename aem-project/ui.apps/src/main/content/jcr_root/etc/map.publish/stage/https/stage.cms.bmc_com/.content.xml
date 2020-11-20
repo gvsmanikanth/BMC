@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    cq:lastReplicated="{Date}2020-08-12T13:27:42.229Z"
+    cq:lastReplicated="{Date}2020-10-28T08:04:06.207Z"
     cq:lastReplicatedBy="admin"
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
-    sling:internalRedirect="[/content/bmc/us/en.html]"
+    sling:internalRedirect="[/content/bmc/language-masters/en.html]"
     sling:match="stage.cms.bmc.com/$"/>

@@ -5,7 +5,7 @@
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
     jcr:primaryType="sling:Mapping"
-    sling:internalRedirect="[/content/bmc/language-masters/en]">
+    sling:internalRedirect="[/content/bmc/us/en]">
     <redirect/>
     <content_reverse/>
     <content_reverse_nohtml/>
