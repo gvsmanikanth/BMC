@@ -88,7 +88,7 @@
     var winHeight=$(window).height();
 		
 		var rect = this[0].getBoundingClientRect();
-		//console.log(rect.top, rect.right, rect.bottom, rect.left);
+		console.log(rect.top, rect.right, rect.bottom, rect.left);
 		
         var mWPointer = rect.left; //get the left offset of the element
         var mHPointer = rect.top;

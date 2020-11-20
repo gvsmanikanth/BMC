@@ -156,6 +156,8 @@
         padding: 0;
         list-style: none;
         li{
+            position: relative;
+            padding-left: 35px;
             &::before{
                 content: url(#{$imagesFolder}orion/checkmark-navyblue.svg);
                 display: inline-block;
@@ -168,11 +170,27 @@
                 padding: 5px;
                 line-height: 13px;
                 vertical-align: middle;
+                position: absolute;
+                left: 0;
+                top: 1px;
             }
         }  
     }
-    
+    .ieonly{
+        display: none;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            display: block;
+         }
+
+    }
+    // div#homeBannerAnimation {
+    //     display: block;
+    //     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    //         display: none;
+    //      }
+    // }
 }
+
 .pricing-horizontal-list{    
     .btn-gradient{
         margin-bottom: 30px;
@@ -856,11 +874,16 @@
     padding: 10px;    
     box-shadow: 1px 2px 4px #000000;
     border-radius: 4px;
-  }
-
-  .orion-body .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
-    margin-top: 0px;
 }
+.orion-body{
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+        margin-top: 0px;
+    }
+    .experiencefragment.aem-GridColumn.aem-GridColumn--default--12 {
+        padding-bottom: 0 !important;
+    }
+}
+ 
 
 
 // product-list
