@@ -103,13 +103,37 @@
 							</div>
 							<div class="flex-item col-12 md-col-6">
 								<div class="infobox">
-									<p><a href="#">View additional transaction pricing</a></p>
+									<p><a href="#">View additional transaction pricing</a>
+										
+									</p>
 								</div>
 							</div>
 						</div>		
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
-						<h3>Non-Production Environment</h3>
+						<h3>Non-Production Environment <span class="orion_tooltip">
+											<span class="Tooltip-window">
+												<table class="tooltip_table" style="width:100%">
+													<tbody><tr>
+														<th>ADDITIONAL DAILY</th>
+														<th>PRICE</th>
+													</tr>
+													<tr>
+														<td>500</td>
+														<td>$9,100</td>
+													</tr>
+													<tr>
+														<td>1000</td>
+														<td>$14,650</td>
+													</tr>
+													<tr>
+														<td>2,000</td>
+														<td>$23,300</td>
+													</tr>
+													</tbody>
+												</table>
+											</span>
+										</span></h3>
 						<p>You must purchase a Production Environment in order to purchase a Non-Production Environment. You can add more than one Non-Production Environment with variable daily execution amounts. </p>
 						
 						<div class="flex-wrap ">

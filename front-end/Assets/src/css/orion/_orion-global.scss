@@ -999,5 +999,29 @@
 	        } 
 	    }
 	}  */ 
+
+    .tooltip_table{
+        border-collapse: collapse;
+        color:#fff;
+        font-size:14px;
+        padding: 10px;
+        background:none;
+        text-align:left;
+        th,td{
+            border-collapse: collapse;
+            color:#fff;
+            font-size:14px;
+            padding: 10px;
+            background:none;
+            text-align:left;
+        }
+        th{
+            border-bottom: 1px solid #1A98FF;                            
+            font-weight:700;
+        }
+        td{
+            border-bottom: 1px solid #75777A;
+        }
+    }
 }
 
