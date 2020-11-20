@@ -143,7 +143,7 @@
 							</div>
 							<div class="flex-item col-12 md-col-6">
 								<div class="infobox">
-									<p>View additional transaction pricing	</p>
+									<p>View bundle pricing for executions	</p>
 									<span class="orion_tooltip">
                                         <span class="Tooltip-window">
                                                                                 
