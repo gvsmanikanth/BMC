@@ -603,11 +603,17 @@
 	
 	//scroll to last item in ative tab
 	//behaves a little odd on new item
-	function scrollTo(select,speed,offset=0){
+	function scrollTo(select,speed,offset){
+		
+		if(!offset){
+			var offset = 0;
+		}
+		
 		$([document.documentElement, document.body]).animate({
 			scrollTop: $(select).offset().top - offset
 		}, speed);
 	}
+
 
 	//tabs
 	function hasClass(element, clsName) {
