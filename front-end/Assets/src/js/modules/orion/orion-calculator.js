@@ -300,11 +300,11 @@
 			if(!env.deleted){
 				
 				var quantity = (parseInt(env.quantity)+env.baseEx).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-				var listValue = "<strong>Start Plan:</strong> "+quantity;
+				var listValue = "<strong>Production:</strong> "+quantity + " daily executions";
 			
 				if(env.envType ==="nonProd"){
 					nonDeletedEnvCount++;
-					listValue = "<strong>Non-Prod "+nonDeletedEnvCount+":</strong> "+quantity;
+					listValue = "<strong>Non-Prod "+nonDeletedEnvCount+":</strong> "+quantity + " daily executions";
 				}
 				
 				//if already exists, update value only
