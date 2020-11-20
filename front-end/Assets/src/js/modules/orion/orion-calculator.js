@@ -560,10 +560,10 @@
 	if(notdesktop){
 		$(window).scroll(function(){
 			if(tabsWrap.isOnScreen() && !navWrap.isOnScreen()){
-				orionNav.css('position','fixed');
+				orionNav.css({'position':'fixed','padding-left':'30px'});
 				navWrap.css('height',orionNav.outerHeight()+'px');
 			}else{
-				orionNav.css('position','relative');
+				orionNav.css({'position':'relative','padding-left':'0'});
 				navWrap.css('height',"auto");
 			}
 			
@@ -603,10 +603,9 @@
 	
 	//scroll to last item in ative tab
 	//behaves a little odd on new item
-	function scrollTo(select,speed){
-		var headerHeight = $('nav.layout-navigation').outerHeight();
+	function scrollTo(select,speed,offset=0){
 		$([document.documentElement, document.body]).animate({
-			scrollTop: $(select).offset().top
+			scrollTop: $(select).offset().top - offset
 		}, speed);
 	}
 
@@ -632,7 +631,12 @@
 		activeBody.className = activeBody.className.replace(/\active\b/g, "");
 		thisTab.className += " active";
 		thisContent.className += " active";
-		scrollTo(thisTab,1000);
+		
+		var headerHeight = $('nav.layout-navigation').outerHeight();
+		if($('.orion-seconday-nav.fixed').length){
+			headerHeight = $('.orion-seconday-nav.fixed').outerHeight();
+		}
+		scrollTo(thisTab,1000,headerHeight);
 		updateCalculator(Calculator);
 		showNav();
 	}
