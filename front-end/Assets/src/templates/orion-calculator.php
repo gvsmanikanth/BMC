@@ -163,7 +163,7 @@
 								<a href="#" class="btn btn-gradient">Contact Sales</a>
 							</div>
 						</div>
-						<p>Need help deciding? <a href="#">Get in touch</a> with our specialists.</p>
+						<p>Need help deciding? <strong><a href="#">Get in touch</a></strong> with our specialists.</p>
 					</div>
 				
 				</div>
