@@ -71,9 +71,16 @@
 					width:100%;
 					left: 0;
 					bottom:  0;
-					text-align: center;
-					z-index: 10;
-				}	
+					text-align: left;
+					z-index: 9;
+					padding-left: 20px;
+				}
+				.btn-gradient.orion-contact{
+					@media(max-width:$break-sm){
+						padding: 7px 10px;
+						margin-left: 0;
+					} 
+				}
 			} 
 			
 			
@@ -125,7 +132,30 @@
 						.edit-btn, .cancel-save-btn {
 							display: none;
 						}
-						
+						.daily-execution-wrap{
+							display: none
+						}
+						.slidecontainer, .cale-subTitle{
+							display: block;
+						}
+						.totolExecutions{
+							display: flex;
+						}
+					}
+					#reviewItemsWrap{
+						.daily-execution-wrap{
+							display: flex;
+						}
+						.slidecontainer{
+							display: none;
+						}
+						.cancel-save-btn {
+							display: none;
+						}
+						.delete {
+							display: inline-block;
+							margin-right: 30px;
+						}
 					}
 					#nonProdItemsWrap,#reviewItemsWrap {
 						.nonProdItem, .prodItem{
@@ -173,13 +203,6 @@
 						}
 						
 					}
-					#reviewItemsWrap {
-						.delete {
-							display: inline-block;
-							margin-right: 30px;
-						}
-					}
-					
 					.total{
 						background: #EEEEEE;
 						font-size: 14px;
@@ -281,39 +304,21 @@
 					}
 				}
 			}
-			#nonProdItemsWrap{
-				.daily-execution-wrap{
-					display: none
-				}
-				.slidecontainer, .cale-subTitle{
-					display: block;
-				}
-				.totolExecutions{
-					display: flex;
-				}
-			}
-			#reviewItemsWrap{
-				.daily-execution-wrap{
-					display: flex;
-				}
-				.slidecontainer{
-					display: none;
-				}
-				.cancel-save-btn {
-					display: none;
-				}
-			}
 		}
 
+		//btns
 		.btn-level2 {
 			background: transparent;
 			color: #1A98FF;
 			border: none;
-			font-size: 16px;
+			font-size: 14px;
 			font-weight: 700;
 			transition: 0.3s linear;
 			border: none;
 			font-weight: 600;
+			@media(min-width:$break-sm){
+				font-size: 16px;
+			} 
 			&:focus{
 				outline: none;
 			}
@@ -398,10 +403,11 @@
 				margin-right: 20px;
 			}
 		}
-		
-		
-		
 	}
+	
+	
+	
+	
 	
 	
 .slidecontainer {
