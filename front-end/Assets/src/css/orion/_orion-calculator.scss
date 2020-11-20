@@ -177,7 +177,7 @@
 								font-size: 16px;
 								font-weight: 700;
 								&:hover{
-									//color: #F98700;									
+									color: #002C8F;							
 								}
 							}
 							
@@ -388,6 +388,9 @@
 			padding-top: 10px;
 			display: inline-block;
 			cursor: pointer;
+			&:hover{
+				color: #002C8F;
+			}
 		}
 		
 		.cancel-save-btn  {
@@ -400,9 +403,15 @@
 			}			
 			.save-btn{
 				color: #1A98FF;
+				&:hover{
+					color: #002C8F;
+				}
 			}
 			.cancel-btn {
 				margin-right: 20px;
+				&:hover{
+					color: #002C8F;
+				}
 			}
 		}
 	}
