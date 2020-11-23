@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule, AdaptEmptyStateModule, AdaptSelectModule } from '@bmc-ux/adapt-angular';
 import { RouterModule, Routes } from '@angular/router';
 import { EpdComponentComponent } from './epd-component/epd-component.component';
 import { EPDService } from './shared/services/epd.service';
@@ -25,6 +25,8 @@ import { QuestionComponent } from './support-questions/question/question.compone
 import { CommunityComponent } from './community/community.component';
 import { CommunityService } from './shared/services/community/community.service';
 import { CommunityProductComponent } from './community/community-product/community-product.component';
+import { TileVer2Component } from './tile-ver2/tile.component';
+import { TileVer3Component } from './tile-ver3/tile.component';
 
 const appRoutes: Routes = [
   {
@@ -56,6 +58,8 @@ const appRoutes: Routes = [
     EPDVersionPipe,
     EpdProductComponent,
     TileComponent,
+    TileVer2Component,
+    TileVer3Component,
     CaseManagementComponent,
     DocsComponent,
     DocsProductComponent,
@@ -71,11 +75,13 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     AdaptBusyModule,
+    AdaptEmptyStateModule,
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),
     AdaptSwitcherModule,
     AdaptAccordionModule,
+    AdaptSelectModule,
     AdaptTabsModule.forRoot(),
     AdaptPaginationModule
   ],

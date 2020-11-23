@@ -64,6 +64,31 @@ app-root {
     color: #313538;
 }
 
+.btn {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.btn.btn-secondary.btn-sm {
+    color: #313538;
+    background-color: #f9f9fa;
+    border-color: #d5d5dc;
+    border-top-color: rgb(213, 213, 220);
+    border-right-color: rgb(213, 213, 220);
+    border-bottom-color: rgb(213, 213, 220);
+    border-left-color: rgb(213, 213, 220);
+    padding: .375rem .75rem;
+    font-size: .75rem;
+    line-height: 1.5385;
+    border-radius: .125rem;
+    margin-bottom: 15px;
+}
+.btn.btn-secondary:hover{
+    color: #313538;
+    background-color: #d5d5dc;
+    border-color: #bebec9;
+}
+
 @media (max-width: 1200px) {
     .extended-widget-container {
         padding: 20px 5px;

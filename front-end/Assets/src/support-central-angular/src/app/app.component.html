@@ -1,6 +1,31 @@
-<div *ngIf="!mobile" class="container">
-  <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles]="isExtendedOpen ? 'closed' : 'open'" #tileBlock>
-    <app-tile *ngFor="let widget of widgets, let i = index" [id]="'tile' + i" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+<adapt-select [single]="true" [options]="viewOptions" [(ngModel)]="viewVersion"></adapt-select>
+  <div *ngIf="viewVersion[0] === 0">
+    <div *ngIf="!mobile" class="container">
+    <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles]="isExtendedOpen ? 'closed' : 'open'" #tileBlock>
+      <app-tile *ngFor="let widget of widgets, let i = index" [id]="'tile' + i" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+    </div>
+    <div class="widget-container" [@openCloseRouter]="isExtendedOpen ? 'open' : 'closed'">
+      <router-outlet *ngIf="isExtendedOpen"></router-outlet>
+    </div>
+    <div class="close-action" *ngIf="isExtendedOpen"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
+  </div>
+  <div *ngIf="mobile" class="container">
+    <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
+      <app-tile *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+    </div>
+    <div *ngIf="isExtendedOpen" @openCloseMobile class="mobile-widget-container">
+      <div class="router-container"><router-outlet></router-outlet></div>
+      <div class="close-action"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
+    </div>
+    <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
+      <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"  (extended)="toggleExtended(i + openedWidget + 1)"></app-tile>
+    </div>
+  </div>
+</div>
+<div *ngIf="viewVersion[0] === 1">
+  <div *ngIf="!mobile" class="container">
+  <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles2]="isExtendedOpen ? 'closed' : 'open'" #tileBlock>
+    <app-tile-2 *ngFor="let widget of widgets, let i = index" [id]="'tile' + i" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile-2>
   </div>
   <div class="widget-container" [@openCloseRouter]="isExtendedOpen ? 'open' : 'closed'">
     <router-outlet *ngIf="isExtendedOpen"></router-outlet>
@@ -9,13 +34,37 @@
 </div>
 <div *ngIf="mobile" class="container">
   <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
-    <app-tile *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+    <app-tile-2 *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile-2>
   </div>
   <div *ngIf="isExtendedOpen" @openCloseMobile class="mobile-widget-container">
     <div class="router-container"><router-outlet></router-outlet></div>
     <div class="close-action"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
   </div>
   <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
-    <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"  (extended)="toggleExtended(i + openedWidget + 1)"></app-tile>
+    <app-tile-2 *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"  (extended)="toggleExtended(i + openedWidget + 1)"></app-tile-2>
   </div>
+</div>
+</div>
+<div *ngIf="viewVersion[0] === 2">
+  <div *ngIf="!mobile" class="container">
+  <div class="tile-block" [ngClass]="{'extended': isExtendedOpen}"  [@openCloseTiles3]="isExtendedOpen ? 'closed' : 'open'" #tileBlock>
+    <app-tile-3 *ngFor="let widget of widgets, let i = index" [id]="'tile' + i" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile-3>
+  </div>
+  <div class="widget-container" [@openCloseRouter]="isExtendedOpen ? 'open' : 'closed'">
+    <router-outlet *ngIf="isExtendedOpen"></router-outlet>
+  </div>
+  <div class="close-action" *ngIf="isExtendedOpen"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
+</div>
+<div *ngIf="mobile" class="container">
+  <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
+    <app-tile-3 *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget" [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile-3>
+  </div>
+  <div *ngIf="isExtendedOpen" @openCloseMobile class="mobile-widget-container">
+    <div class="router-container"><router-outlet></router-outlet></div>
+    <div class="close-action"><span class="d-icon-cross" (click)="closeWidgets()"></span></div>
+  </div>
+  <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
+    <app-tile-3 *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"  (extended)="toggleExtended(i + openedWidget + 1)"></app-tile-3>
+  </div>
+</div>
 </div>

@@ -10,6 +10,7 @@
     <div class="extended-widget-body" [ngBusy]="caseService.busyConfig">
         <a [href]="caseService.widgetLinks.openCase" class="btn btn-primary">Submit New Case</a>
         <a [href]="caseService.widgetLinks.listCase" class="btn btn-secondary">View All Cases</a>
+        <adapt-empty-state type="objects" label="You don't have any open cases." *ngIf="casesChunk.length === 0"></adapt-empty-state>
         <div *ngFor="let case of casesChunk" class="case">
             <h4><a [href]="caseService.widgetLinks.caseDetailUrl + case.Id">{{case.CaseNumber}}</a><span class="product-name">{{case.ProductName}}</span><span class="status">{{case.Status}}</span></h4>
             <div class="subject">{{case.Subject}}</div>

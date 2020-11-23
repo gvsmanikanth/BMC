@@ -1,0 +1,43 @@
+<a class="tile" *ngIf="widget.routerLink" target="_blank">
+    <div class="tile-left"></div>
+    <div class="tile-body">
+      <div class="top">
+        <div class="tile-right">
+          <span [ngClass]="widget.icon"></span>
+        </div>
+        <div class="tile-center">
+          <h3>{{widget.title}}</h3>
+          <div>{{widget.description}}</div>
+        </div>
+      </div>
+      <div class="bottom">
+        <a class="btn btn-secondary btn-sm" [href]="widget.href">General view</a>
+        <a class="btn btn-primary btn-sm" [routerLink]=[widget.routerLink] (click)="checkExtended($event)">Personalized view</a>
+      </div>
+    </div>
+    <!-- <a class="tile-arrow" [routerLink]=[widget.routerLink] (click)="checkExtended($event)">
+      <span *ngIf="!widget.isExtended" class="d-icon-move_expand"></span>
+      <span *ngIf="widget.isExtended" class="d-icon-undo"></span>
+    </a> -->
+</a>
+<a class="tile" [href]="widget.href" *ngIf="!widget.routerLink" target="_blank">
+  <div class="tile-left"></div>
+    <div class="tile-body">
+      <div class="top">
+        <div class="tile-right">
+          <span [ngClass]="widget.icon"></span>
+        </div>
+        <div class="tile-center">
+          <h3>{{widget.title}}</h3>
+          <div>{{widget.description}}</div>
+        </div>
+      </div>
+      <div class="bottom">
+        <a class="btn btn-secondary btn-sm" [href]="widget.href">General view</a>
+      </div>
+    </div>
+  <!-- <div class="tile-arrow">
+    <span class="d-icon-link_adapt"></span>
+  </div> -->
+</a>
+

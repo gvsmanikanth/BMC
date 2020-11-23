@@ -10,7 +10,7 @@ import { CaseManageService } from '../shared/services/case-manage.service';
 export class CaseManagementComponent implements OnInit {
 
   widgets = window['psc'].widgets;
-  casesChunk: Case[] = [];
+  casesChunk: Case[] = null;
 
   constructor(public caseService: CaseManageService) { }
 

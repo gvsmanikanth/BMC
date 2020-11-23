@@ -74,6 +74,84 @@ import { Widget } from './shared/models/widget.model';
           }))),
         ])
       ])
+    ]),
+    trigger('openCloseTiles2', [
+      state('open', style({
+        width: '100%'
+      })),
+      state('closed', style({
+        width:'30%'
+      })),
+      transition('closed => open', [
+        animate('0.01s 0.2s'),
+        group([
+          query('app-tile-2', animate('0s 0.2s', style({
+            'margin-bottom': '210px'
+          }))),
+          query('app-tile-2:nth-child(3n+2)', animate('0s 0.2s ease', style({
+            transform: 'translate(-108%, 138%)'
+          }))),
+          query('app-tile-2:nth-child(3n+3)', animate('0s 0.2s ease', style({
+            transform: 'translate(-216%, 276%)'
+          }))),
+          query('app-tile-2', animate('0.3s 0.2s', style({
+            transform: 'translate(0, 0)',
+            'margin-bottom': '0'
+          }))),
+        ]),
+      ]),
+      transition('open => closed', [
+        group([
+          query('app-tile-2', animate('0.3s ease', style({
+            'margin-bottom': '210px'
+          }))),
+          query('app-tile-2:nth-child(3n+2)', animate('0.3s ease', style({
+            transform: 'translate(-108%, 138%)'
+          }))),
+          query('app-tile-2:nth-child(3n+3)', animate('0.3s ease', style({
+            transform: 'translate(-216%, 276%)'
+          }))),
+        ])
+      ])
+    ]),
+    trigger('openCloseTiles3', [
+      state('open', style({
+        width: '100%'
+      })),
+      state('closed', style({
+        width:'30%'
+      })),
+      transition('closed => open', [
+        animate('0.01s 0.2s'),
+        group([
+          query('app-tile-3', animate('0s 0.2s', style({
+            'margin-bottom': '210px'
+          }))),
+          query('app-tile-3:nth-child(3n+2)', animate('0s 0.2s ease', style({
+            transform: 'translate(-108%, 138%)'
+          }))),
+          query('app-tile-3:nth-child(3n+3)', animate('0s 0.2s ease', style({
+            transform: 'translate(-216%, 276%)'
+          }))),
+          query('app-tile-3', animate('0.3s 0.2s', style({
+            transform: 'translate(0, 0)',
+            'margin-bottom': '0'
+          }))),
+        ]),
+      ]),
+      transition('open => closed', [
+        group([
+          query('app-tile-3', animate('0.3s ease', style({
+            'margin-bottom': '210px'
+          }))),
+          query('app-tile-3:nth-child(3n+2)', animate('0.3s ease', style({
+            transform: 'translate(-108%, 138%)'
+          }))),
+          query('app-tile-3:nth-child(3n+3)', animate('0.3s ease', style({
+            transform: 'translate(-216%, 276%)'
+          }))),
+        ])
+      ])
     ])
   ]
 })
@@ -87,6 +165,23 @@ export class AppComponent implements OnInit, AfterViewInit{
   widgets: Widget[] = widgets;
   isExtendedOpen = false;
   openedWidget: number = widgets.length;
+
+  viewOptions = [
+    {
+      id: 0,
+      name: 'Version 1'
+    },
+    {
+      id: 1,
+      name: 'Version 2'
+    },
+    {
+      id:2,
+      name: 'Version 3'
+    }
+  ]
+  viewVersion = [0];
+
   constructor (private cdr: ChangeDetectorRef) {}
   @HostListener("window:resize", [])
   onResize() {

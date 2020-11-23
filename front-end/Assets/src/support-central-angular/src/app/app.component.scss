@@ -1,9 +1,16 @@
+adapt-select {
+    width: 70%;
+    margin-left: 15%;
+}
+
 .container {
     &{
         min-height: 400px;
         margin-bottom: 30px;
         display:flex;
         position: relative;
+        padding-right: 12px;
+        padding-left: 12px;
     }
     .tile-block {
         & {
@@ -14,6 +21,7 @@
             overflow: auto;
             padding-bottom: 15px;
             padding-right:3px;
+            padding-left: 3px;
         }
         &.extended  {
             app-tile {
@@ -49,6 +57,48 @@
             }
            
         }
+        app-tile-2 {
+            & {
+                min-width: 300px;
+                width: 30%;
+                min-height: 80px;
+                margin-top: 30px;
+            }
+            &.extended ::ng-deep {
+                .tile-left {
+                    background-color: #f86e00;
+                    width:3%;
+                }
+                .tile-right span {
+                    color:  #f86e00;
+                }
+            }
+            &:last-child {
+                margin-right: 35%;
+            }
+           
+        }
+        app-tile-3 {
+            & {
+                min-width: 300px;
+                width: 30%;
+                min-height: 80px;
+                margin-top: 30px;
+            }
+            &.extended ::ng-deep {
+                .tile-left {
+                    background-color: #f86e00;
+                    width:3%;
+                }
+                .tile-right span {
+                    color:  #f86e00;
+                }
+            }
+            &:last-child {
+                margin-right: 35%;
+            }
+           
+        }
     }
     .widget-container {
         max-height: 630px;
@@ -69,6 +119,7 @@
         }
     }
 }
+
 
 @media (min-width: 1600px) {
     .container {
