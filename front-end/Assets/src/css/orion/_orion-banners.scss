@@ -135,7 +135,7 @@
     &.use-cases-banner{
         overflow: visible;
         .orion-banner-content {
-            padding: 40px 0 30px 0;
+            padding: 230px 0 30px 0;  
             @media (min-width: $break-sm) {
                 padding: 100px 0 30px 0;        
             }
@@ -156,14 +156,18 @@
         }
         .blob-container{
             right: 0;   
-            top:-10px;
+            top:-70px;
+            min-height: 280px; 
             @media (min-width: $break-sm) {  
-                right: -40%;            
+                right: -25%;            
+            }
+            @media (min-width: $break-md) {
+                top: -100px;   
+                right: -26%;    
+                min-height: 380px;       
             }
             @media (min-width: $break-lg) {
-                top: -10px;   
-                right: -15%;     
-                min-height: 320px;       
+                right: -15%;   
             }
             @media (min-width: 1600px) {  
                 right: -5%;            
@@ -172,25 +176,34 @@
                 right: 0;           
             }
             .blob-hidden {
-                background-size: auto;
-                background-position: 100% bottom;
-                @media (min-width: $break-sm) {                    
-                   
+                background-size: cover;
+                background-position: 60% bottom;
+                right: auto;
+                top: -45px;
+                @media (min-width: $break-sm) { 
+                    background-size: contain;
+                    background-position: 100% bottom;
+                    top: auto;
                 }                
-                @media (min-width: $break-lg) {  
+                @media (min-width: $break-md) { 
+                    background-size: auto;
+                    right: auto; 
                     background-position: 100% 135%;   
-                    right: 130px;
-                    top: 0px;   
+                    top: -10px;   
                     // animation-name: bounce-blob-hidden-anchor;
                 }
             } 
             .blob-masked {                
-                background-size: auto;
-                background-position: 100% bottom;
+                background-size: cover;
+                background-position: 65% bottom;
+                @media (min-width: 410px) {  
+                    background-position: 100% bottom; 
+                }
                 @media (min-width: $break-sm) {  
+                    background-size: auto;
                     background-position: 100% bottom;
                 }
-                @media (min-width: $break-lg) {  
+                @media (min-width: $break-md) {  
                     // animation-name: bounce-blob-masked-anchor;    
                     background-position: 100% 100%;
                     right: 0;
@@ -208,7 +221,8 @@
             @media(min-width:$break-lg){
                 max-height: none;
                 top: 0;   
-            }
+                right: -50px;  
+            }            
             
         }        
     }   
@@ -236,8 +250,18 @@
             @media (max-width: 641px) {                      
                 max-height: 160px;
             }
+            
         }   
              
+    } 
+    &.integration-banner{
+        .blob-container{           
+            .blob-masked{                
+                @media(max-width:1025px){
+                    top: 30px;  
+                }
+            }
+        }            
     } 
     
   
