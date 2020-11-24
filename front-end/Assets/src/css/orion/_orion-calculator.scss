@@ -260,54 +260,67 @@
 				}
 			}
 			.orion-tabs-static {
-				p {
-					font-size: 16px;
-					line-height: 1.5em;
-					a{
-						//border-bottom: 1px solid #F98700;
-					}
-				}
-				#tallybox {
-					padding: 30px;
-					background: #002C8F;
-					margin: 30px 0;
-					color: #fff;
-					font-size: 14px;
+				#calc-sidebar {
+					position: relative;
+					max-width: 100%;
+					right: 0;
+					top: 0;
+					transition: top .20s linear;
 					
-					ul{
-						list-style: none;
-						text-align: left;
-						padding: 0;
-						margin-top: 0;
-						li{
-							border-bottom: 1px solid rgba(26, 152, 255, 0.5);
-							padding-bottom: 5px;
-							font-size: 14px;
-							margin-bottom: 8px;
+					@media(min-width:$break-sm){
+						//position: absolute;
+					} 
+					
+					p {
+						font-size: 16px;
+						line-height: 1.5em;
+						a{
+							//border-bottom: 1px solid #F98700;
 						}
 					}
-					p{
-						font-size: 14px;
-						margin-bottom: 10px;
-						&.disclaimer {
-							font-size: 12px;
-						}
-					}
-					#tallyCustom {
-						display: none;
-					}
-					h2 {
+					#tallybox {
+						padding: 30px;
+						background: #002C8F;
+						margin: 30px 0;
 						color: #fff;
-						font-weight: 700;
-						margin-top: 0;
-						font-size: 1.5rem;
-						line-height: 1.8rem;
-					}
-					.btn-gradient {
-						width: 70%;
-						margin: 10px auto;
+						font-size: 14px;
+						
+						ul{
+							list-style: none;
+							text-align: left;
+							padding: 0;
+							margin-top: 0;
+							li{
+								border-bottom: 1px solid rgba(26, 152, 255, 0.5);
+								padding-bottom: 5px;
+								font-size: 14px;
+								margin-bottom: 8px;
+							}
+						}
+						p{
+							font-size: 14px;
+							margin-bottom: 10px;
+							&.disclaimer {
+								font-size: 12px;
+							}
+						}
+						#tallyCustom {
+							display: none;
+						}
+						h2 {
+							color: #fff;
+							font-weight: 700;
+							margin-top: 0;
+							font-size: 1.5rem;
+							line-height: 1.8rem;
+						}
+						.btn-gradient {
+							width: 70%;
+							margin: 10px auto;
+						}
 					}
 				}
+				
 			}
 		}
 
