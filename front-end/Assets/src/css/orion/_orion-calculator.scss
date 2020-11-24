@@ -419,14 +419,16 @@
 	.slidecontainer {
 		width: 100%;
 		
-		datalist {
+		.steplist {
 			display: flex;
 			width: 100%;
 			justify-content: space-between;
 			font-size: 14px;
 			overflow: hidden;
 			font-weight: 700;
-			option {
+			margin-top: -20px;
+			
+			& > span {
 				width: 2ex;
 				display: flex;
 				justify-content: center;

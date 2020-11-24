@@ -111,23 +111,24 @@
 						<h3>Choose Additional Daily Executions </h3>
 						<p>Need more executions for your Start Package? We’ve got you covered. Our Start Plan comes with 500 daily executions, but you can add up to 6000 additional daily executions. If you need more than 6500 total daily executions, contact our Sales experts to learn more about our customizable Scale Plan.</p>
 						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" class="slider prodSlider" id="prodExecutions" step="500" list="steplist">
-							<datalist id="steplist">
-								<option value="0"></option>
-								<option value="500"></option>
-								<option class="marker" value="1000">1k</option>
-								<option value="1500"></option>
-								<option value="2000"></option>
-								<option value="2500"></option>
-								<option value="3000"></option>
-								<option value="3500"></option>
-								<option value="4000"></option>
-								<option value="4500"></option>
-								<option class="marker" value="5000">5k</option>
-								<option value="5500"></option>
-								<option value="6000"></option>
-								<option value="6500"></option>
-							</datalist>
+							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" class="slider prodSlider" id="prodExecutions" step="500" >
+							
+							<div class="steplist">
+								<span data-value="0"></span>
+								<span data-value="500"></span>
+								<span class="marker" data-value="1000">1k</span>
+								<span data-value="1500"></span>
+								<span data-value="2000"></span>
+								<span data-value="2500"></span>
+								<span data-value="3000"></span>
+								<span data-value="3500"></span>
+								<span data-value="4000"></span>
+								<span data-value="4500"></span>
+								<span class="marker" data-value="5000">5k</span>
+								<span data-value="5500"></span>
+								<span data-value="6000"></span>
+								<span data-value="6500"></span>
+							</div>
 						</div>
 						<div class="flex-wrap" style="overflow: visible;">
 							<div  class="flex-item col-12 md-col-6">
