@@ -133,7 +133,6 @@
        
     }
     &.use-cases-banner{
-        overflow: visible;
         .orion-banner-content {
             padding: 230px 0 30px 0;  
             @media (min-width: $break-sm) {
@@ -189,7 +188,7 @@
                     background-size: auto;
                     right: auto; 
                     background-position: 100% 135%;   
-                    top: -10px;   
+                    top: -20px;   
                     // animation-name: bounce-blob-hidden-anchor;
                 }
             } 
@@ -208,7 +207,7 @@
                     // animation-name: bounce-blob-masked-anchor;    
                     background-position: 100% 100%;
                     right: 0;
-                    top: 0px;   
+                    top: -15px;   
                 }     
                 @media (min-width: $break-lg) {  
                     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

@@ -30,6 +30,9 @@
         @media only screen and (min-width:$break-lg) {
             background-size: 700px;
         }
+       .modal-image{
+           display: block;
+       }
 
     }
 
@@ -62,6 +65,10 @@
         }      
 
     }
+    .imageContainer-no-cloud-bg {
+        width: 100%;
+        
+    } 
     
 }
 
