@@ -56,13 +56,13 @@
             var $this = $(this);
             $this.children('a').each(function(){
                 // if the current path is like this link, make it active
-                if($(this).attr('href').indexOf(current) !== -1){
+                if(current.indexOf($(this).attr('href')) !== -1){
                     $(this).parent().addClass('activePage');
                 }
             });
             $this.children('ul li a').each(function(){
                 // if the current path is like this link, make it active
-                if($(this).attr('href').indexOf(current) !== -1){
+                if(current.indexOf($(this).attr('href')) !== -1){
                     $(this).parent().addClass('activePage');
                     $(this).parent().parent().parent().addClass('activePage');
                 }
