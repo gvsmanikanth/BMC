@@ -521,6 +521,7 @@
 		
 		$(".sliderNew").each(function(item, index){
 			$(index).rangeslider();
+			$(index).on("change", updateAdobeAnalyticsSliderInteraction);
 		});
 		
 		if(componentID){
@@ -622,6 +623,27 @@
 		Calculator.addEnvironments(env,dailyExecutions, ID);
 		updateCalculator(Calculator);
 	}
+	
+	$(".prodSlider").on("change",updateAdobeAnalyticsSliderInteraction);
+	
+	function updateAdobeAnalyticsSliderInteraction(){
+		//console.log("orion_slider_interaction_custom_event");
+		if(!event.target.matches('.slidecontainer input.slider')) return;
+		if(_satellite){
+			_satellite.track("orion_slider_interaction_custom_event");
+		}
+	}
+	
+	
+	$(".btn-level2-addEnv").on("click",updateAdobeAnalyticsAddNewEnvironmentInteraction);
+	
+	function updateAdobeAnalyticsAddNewEnvironmentInteraction(){
+		//console.log("orion_add_new_environment_custom_event");	
+		if(typeof(_satellite) != "undefined"){
+			_satellite.track("orion_add_new_environment_custom_event");
+		}
+	}
+	
 	
 	
 	//Add an environment
