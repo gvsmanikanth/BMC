@@ -17,20 +17,22 @@
                         <p>Optimize, automate, and orchestrate your predictive maintenance data pipeline to stay ahead of the competition and eliminate unplanned downtime.</p>
                     </div>							
                 </div>
-                <div class="flex flex-item col-12 sm-col-6 lg-col-5">	
+                <!-- <div class="flex flex-item col-12 sm-col-6 lg-col-5">	
                     <div class="orion-banner-right-image">
                         <img src="Assets/src/img/orion/usecase-placeholder.png" alt="">
                     </div>
-                </div>					                    
-            </div>     
-        </div> 
-        <div class="blob-container ">        
-            <div class=" blob-hidden " style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
-                       
-            </div>
-            <div class="blob-masked " style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-orange.svg");'  >
+                </div>					                     -->
+                <div class="blob-container ">        
+                    <div class=" blob-hidden " style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
+                            
+                    </div>
+                    <div class="blob-masked " style='background-image: url("Assets/src/img/orion/financial-close-blobbanner.svg");'  >
+                    </div> 
+                </div> 
             </div> 
-        </div>
+               
+        </div> 
+        
     </div>	
     
 </section>
