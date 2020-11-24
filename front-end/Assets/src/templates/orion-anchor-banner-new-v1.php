@@ -7,7 +7,7 @@
 
 <!--Orion Banner - V1 Component Start -->
 
-<section class="bg-white orion-global orion-banner anchor-banner">
+<section class="bg-white orion-global orion-banner anchor-banner integration-banner">
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							

@@ -255,7 +255,14 @@
              
     } 
     &.integration-banner{
-        .blob-container{           
+        .blob-container{
+            max-height: 190px;            
+            @media(min-width:$break-sm){
+                max-height: 220px;
+            }       
+            @media(min-width:$break-lg){
+                max-height: none;
+            }       
             .blob-masked{                
                 @media(max-width:1025px){
                     top: 30px;  
