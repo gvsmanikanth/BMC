@@ -545,33 +545,20 @@
 
 	updateCalculator(Calculator);
 	
-	function headerHeight(){
-		var headerHeight = $('nav.layout-navigation').outerHeight();
-		if($('.orion-seconday-nav.fixed').length){
-			headerHeight = $('.orion-seconday-nav.fixed').outerHeight();
-		}
-		return headerHeight;
-	}
-	
 	//device sticky nav
 	$.fn.isOnScreen = function(){
 		var element = this.get(0);
 		var bounds = element.getBoundingClientRect();
 		return bounds.top < window.innerHeight && bounds.bottom > 0;
 	}
+
+	var notdesktop = window.matchMedia("only screen and (max-width: 768px)").matches;
+	var orionNav = $('#orion-calculator-nav');
+	var navWrap = $("#orion-calculator-nav-wrap");
+	var tabsWrap = $(".orion-tabs-wrapper");
 	
-	
-	function fixedPos(){
-		var notdesktop = window.matchMedia("only screen and (max-width: 768px)").matches;
-		var orionNav = $('#orion-calculator-nav');
-		var navWrap = $("#orion-calculator-nav-wrap");
-		var tabsWrap = $(".orion-tabs-wrapper");
-		var tabsToggle = $('.orion-tabs-nav');
-		if(notdesktop){
-			//reset if device
-			$('#calc-sidebar').css({'top':'0'});
-			
-			//nav
+	if(notdesktop){
+		$(window).scroll(function(){
 			if(tabsWrap.isOnScreen() && !navWrap.isOnScreen()){
 				orionNav.css({'position':'fixed','padding-left':'30px'});
 				navWrap.css('height',orionNav.outerHeight()+'px');
@@ -580,24 +567,9 @@
 				navWrap.css('height',"auto");
 			}
 			
-		}else{
-			var staticTab = $('.orion-tabs-static');
-			var sidebar = $('#calc-sidebar');
-			var staticTabTop = staticTab.position().top;
-			var sidebarHeight = sidebar.outerHeight();
-			var staticTabHeight = staticTab.outerHeight();
-			var lowerLimit = staticTabHeight-sidebarHeight;
-			var windowPos = $(window).scrollTop();
-			var x = windowPos-staticTabTop;
-			
-			if(tabsWrap.isOnScreen() && !tabsToggle.isOnScreen() && x<=lowerLimit){
-				sidebar.css({'top':x+'px'});
-			}
-		}
+		});
 	}
-	$(window).on('scroll resize orientationchange load',el,function(e){
-		fixedPos();
-	});
+
 	
 			
 	//slider 
@@ -617,7 +589,6 @@
 	$('.btn-level2-addEnv').click(function(){
 		Calculator.addEnvironments("nonProd",0);
 		updateCalculator(Calculator);
-		fixedPos();
 		//scrollTo($('.tab-body.active .itemWrap > div').last(),1000);
 	});
 	
@@ -629,7 +600,7 @@
 		thisID = event.target.getAttribute('data-nonprod');
 		Calculator.removeEnvironments(thisID);
 		updateCalculator(Calculator);
-		fixedPos();
+		
 	}
 	
 	//scroll to last item in ative tab
@@ -668,7 +639,12 @@
 		activeBody.className = activeBody.className.replace(/\active\b/g, "");
 		thisTab.className += " active";
 		thisContent.className += " active";
-		scrollTo(thisTab,1000,headerHeight());
+		
+		var headerHeight = $('nav.layout-navigation').outerHeight();
+		if($('.orion-seconday-nav.fixed').length){
+			headerHeight = $('.orion-seconday-nav.fixed').outerHeight();
+		}
+		scrollTo(thisTab,1000,headerHeight);
 		updateCalculator(Calculator);
 		showNav();
 	}
