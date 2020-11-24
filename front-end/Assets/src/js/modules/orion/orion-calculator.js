@@ -563,7 +563,7 @@
 	var isFixScrollPositionCalled = false;
 	
 	function fixedPos(){
-		var notdesktop = window.matchMedia("only screen and (max-width: 768px)").matches;
+		var notdesktop = window.matchMedia("only screen and (max-width: 640px)").matches;
 		var orionNav = $('#orion-calculator-nav');
 		var navWrap = $("#orion-calculator-nav-wrap");
 		var tabsWrap = $(".orion-tabs-wrapper");
