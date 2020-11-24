@@ -146,7 +146,7 @@
 							</div>
 							<div class="flex-item col-12 md-col-6">
 								<div class="infobox">									
-                                    <p>View bundle pricing for executions </p>
+                                    <p>Execution pack pricing </p>
                                     <span class="orion_tooltip">
                                         <span class="Tooltip-window">
                                                                                 
@@ -164,7 +164,7 @@
                                                     <td>$14,650</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>2,000</td>
+                                                    <td>2000</td>
                                                     <td>$23,300</td>
                                                 </tr>
                                                 </tbody>
@@ -229,6 +229,7 @@
 								<p>Start Plan Total Annual Estimate</p>
 								<h2 id="tally">0.00</h2>
 								<a href="/forms/contact-bmc.html" class="btn btn-gradient">Contact Sales</a>
+								<p class="disclaimer">Estimate does not include services fees.</p>
 							</div>
 						</div>
 						<p>Need help deciding? <a href="/forms/contact-bmc.html">Get in touch</a> with our specialists.</p>
