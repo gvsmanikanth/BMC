@@ -560,6 +560,7 @@
 		return bounds.top < window.innerHeight && bounds.bottom > 0;
 	}
 	
+	var isFixScrollPositionCalled = false;
 	
 	function fixedPos(){
 		var notdesktop = window.matchMedia("only screen and (max-width: 768px)").matches;
@@ -567,6 +568,7 @@
 		var navWrap = $("#orion-calculator-nav-wrap");
 		var tabsWrap = $(".orion-tabs-wrapper");
 		var tabsToggle = $('.orion-tabs-nav');
+		var orionCalulator = $("#pricing-calculator .stepNo")
 		if(notdesktop){
 			//reset if device
 			$('#calc-sidebar').css({'top':'0'});
@@ -588,15 +590,24 @@
 			var staticTabHeight = staticTab.outerHeight();
 			var lowerLimit = staticTabHeight-sidebarHeight;
 			var windowPos = $(window).scrollTop();
-			var x = windowPos-staticTabTop;
+			var x = windowPos-staticTabTop + 50;
 			
-			if(tabsWrap.isOnScreen() && !tabsToggle.isOnScreen() && x<=lowerLimit){
+			if(orionCalulator.isOnScreen()){
+				sidebar.css({'top':0+'px'});
+			}else
+			if(tabsWrap.isOnScreen() && x<=lowerLimit){
 				sidebar.css({'top':x+'px'});
 			}
 		}
+		
+		isFixScrollPositionCalled = false;
 	}
+	
+	
 	$(window).on('scroll resize orientationchange load',function(e){
-		fixedPos();
+		if(!isFixScrollPositionCalled){
+			setTimeout(function() {isFixScrollPositionCalled = true; fixedPos();}, 500);
+		}
 	});
 	
 			
