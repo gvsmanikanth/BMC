@@ -196,6 +196,7 @@
             .blob-masked {                
                 background-size: cover;
                 background-position: 65% bottom;
+               
                 @media (min-width: 410px) {  
                     background-position: 100% bottom; 
                 }
@@ -208,7 +209,22 @@
                     background-position: 100% 100%;
                     right: 0;
                     top: 0px;   
-                }                
+                }     
+                @media (min-width: $break-lg) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 250px;
+                     } 
+                }   
+                @media (min-width: 1200px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 300px;
+                     } 
+                }  
+                @media (min-width: 1400px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 400px;
+                     } 
+                }            
             } 
         }                        
 
