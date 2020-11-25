@@ -14,32 +14,47 @@
     .button-set {
         padding: 0px;
     }
-    .imageContainer {
-        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
-        padding: 60px 0px;
-        background-position: center 70%;
-        background-size: 550px;
-        text-align: center;
-        width: 100%;
-        max-width: 560px;
-        @media(min-width:$break-lg){            
-            max-width: auto;
 
-        }
-        @media only screen and (min-width:0) and (max-width: 360px) {
-            background-size: 450px;
-        }
-        @media only screen and (min-width:768px) and (max-width: 1024px) {
-            background-size: 580px;
-        }
-        @media only screen and (min-width:$break-lg) {
-            background-size: 700px;
-        }
-       .modal-image{
-           display: block;
-       }
-
-    }
+	
+	
+	.imageContainer{
+		background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+		padding: 60px 0px;
+		background-position:center 75%;
+		background-size:120%; 
+		text-align: center;
+		@media only screen and (min-width:830px) and (max-width: 960px){ 
+			background-position:center 90%;
+		}
+	} 
+	
+//
+//    .imageContainer {
+//        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+//        padding: 60px 0px;
+//        background-position: center 70%;
+//        background-size: 550px;
+//        text-align: center;
+//        width: 100%;
+//        max-width: 560px;
+//        @media(min-width:$break-lg){            
+//            max-width: auto;
+//
+//        }
+//        @media only screen and (min-width:0) and (max-width: 360px) {
+//            background-size: 450px;
+//        }
+//        @media only screen and (min-width:768px) and (max-width: 1024px) {
+//            background-size: 580px;
+//        }
+//        @media only screen and (min-width:$break-lg) {
+//            background-size: 700px;
+//        }
+//       .modal-image{
+//           display: block;
+//       }
+//
+//    }
 
   
     .split-text-content{
