@@ -442,6 +442,10 @@
 			overflow: hidden;
 			font-weight: 700;
 			margin-top: -20px;
+			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {				
+				margin-top: -40px;
+				margin-bottom: 20px;
+			 }
 			
 			& > span {
 				width: 2ex;
@@ -515,7 +519,9 @@
 				  ;
 				  -webkit-transform: translate3d(0, 0, 0);
 				  transform: translate3d(0, 0, 0);
-		  
+				  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+					background-image:none;
+				 }
 				  display: inline-block;
 				  position: absolute;
 				  z-index: 1;
@@ -580,7 +586,9 @@
 				  ;
 				  -webkit-transform: translate3d(0, 0, 0);
 				  transform: translate3d(0, 0, 0);
-		  
+				  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+					background-image:none;
+				 }
 				  display: inline-block;
 				  position: absolute;
 				  z-index: 1;
