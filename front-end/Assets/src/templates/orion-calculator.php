@@ -101,9 +101,9 @@
 		<p>Interested in the Start Plan? Use the calculator below to estimate your Start Plan costs. Our Sales experts can then help you refine your costs when you're ready to chat with them.</p>
 		<div class="orion-tabs-wrapper">
 			<div class="orion-tabs-nav flex-wrap">
-				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h4><strong><span class="stepNo">01</span> <span class="envName">Daily Executions<span></strong></h4></div>
-				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">02</span> <span class="envName">Non-Production<span></strong></h4></div>
-				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">03</span> <span class="envName">Review</strong><span></h4></div>
+				<div data-orion-tab-nav="1" class="tab-nav flex-item col-4 active"><h4><strong><span class="stepNo">01</span> <span class="envName">Daily Executions</span></strong></h4></div>
+				<div data-orion-tab-nav="2" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">02</span> <span class="envName">Non-Production</span></strong></h4></div>
+				<div data-orion-tab-nav="3" class="tab-nav flex-item col-4"><h4><strong><span class="stepNo">03</span> <span class="envName">Review</span></strong></h4></div>
 			</div>
 			<div class="orion-tabs-body-wrapper flex-wrap">
 				<div class="orion-tabs-body flex-item col-12 sm-col-8 md-col-9">
@@ -111,7 +111,7 @@
 						<h3>Choose Additional Daily Executions </h3>
 						<p>Need more executions for your Start Package? We’ve got you covered. Our Start Plan comes with 500 daily executions, but you can add up to 6000 additional daily executions. If you need more than 6500 total daily executions, contact our Sales experts to learn more about our customizable Scale Plan.</p>
 						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" class="slider prodSlider" id="prodExecutions" step="500" >
+							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" onchange="window.calculator.updateEnvironment(this.value)" class="slider prodSlider" id="prodExecutions" step="500" >
 							
 							<div class="steplist">
 								<span data-value="0"></span>

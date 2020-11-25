@@ -22,17 +22,17 @@
                         <img src="Assets/src/img/orion/usecase-placeholder.png" alt="">
                     </div>
                 </div>					                     -->
-                <div class="blob-container ">        
+                
+            </div> 
+            
+        </div> 
+        <div class="blob-container ">        
                     <div class=" blob-hidden " style='background-image: url("Assets/src/img/orion/simplebanner-variation-1-cyan.svg");' >		
                             
                     </div>
                     <div class="blob-masked " style='background-image: url("Assets/src/img/orion/financial-close-blobbanner.svg");'  >
                     </div> 
                 </div> 
-            </div> 
-            
-        </div> 
-     
         
     </div>	
     

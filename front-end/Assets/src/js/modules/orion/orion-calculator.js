@@ -16,6 +16,7 @@
 		  
 		  if (options == "addUpdateEvent"){
 			obj.attr("oninput", "updateSlider(this)");
+			//obj.attr("onchange", "window.calculator.updateEnvironment(this.value)");
 		  }
 		  
 		  var value = obj.val();
@@ -615,7 +616,8 @@
 	//slider 
 	document.addEventListener('oninput',sliderInput);
 	function sliderInput(){
-		if(!event.target.matches('.slidecontainer input.slider')) return;
+		//if(!event.target.matches('.slidecontainer input.slider')) return;
+		if(!($(event.target).hasClass('slider'))) return ;
 		var thisSlider = event.target;
 		var ID = event.target.getAttribute('data-id');
 		var env = event.target.getAttribute('data-env');
@@ -632,7 +634,8 @@
 	
 	function updateAdobeAnalyticsSliderInteraction(){
 		//console.log("orion_slider_interaction_custom_event");
-		if(!event.target.matches('.slidecontainer input.slider')) return;
+		//if(!event.target.matches('.slidecontainer input.slider')) return;
+		if(!($(event.target).hasClass('slider'))) return ;
 		
 		if(sliderFirstInteraction){
 			if(typeof(_satellite) != "undefined"){
@@ -670,7 +673,7 @@
 	//delete
 	document.addEventListener('click',deleteEvent);
 	function deleteEvent(){
-		if(!event.target.matches('.delete')) return;
+		if(!($(event.target).hasClass('.delete'))) return ;
 		thisID = event.target.getAttribute('data-nonprod');
 		Calculator.removeEnvironments(thisID);
 		updateCalculator(Calculator);

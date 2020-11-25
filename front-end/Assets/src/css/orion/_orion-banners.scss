@@ -223,7 +223,12 @@
                     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
                         background-position-x: 400px;
                      } 
-                }            
+                }   
+                @media (min-width: 1700px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 550px;
+                     } 
+                }         
             } 
         }                        
 
