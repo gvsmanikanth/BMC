@@ -1,0 +1,96 @@
+
+.portal-cards{
+    padding: 10px;
+    border: 1px solid #dedede;
+    border-radius: 20px;
+    transition: 0.3s linear;
+    margin: 12px;
+    width: 100%;
+    transition: color 0.3s linear;
+    cursor: pointer;
+    @media(min-width:$break-sm){
+        border: 1px solid transparent;
+    }
+    @media(min-width:$break-lg){
+        padding: 20px;
+    }
+    @media(max-width:$break-sm){
+        padding: 20px;
+    }
+    a{
+        display: block;
+        &:focus {
+            outline: none;
+        }
+    }
+    &:hover{
+        border-color: #046eb1;
+        transition: 0.3s linear;
+        h4 {
+           color: #046eb1;
+           transition: color 0.3s linear;
+        }
+    }
+    .icon-div{
+        img {
+            max-height: 62px;
+        }
+    }
+    h4 {
+        color: #29a5d6;
+        transition: color 0.3s linear;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    p{
+        color: #75777A;
+        margin-bottom: 0;
+    }
+    .portal-logo {
+        img{
+            width: 100%;
+        }
+        @media(min-width:$break-sm){
+            padding: 5px;
+        }
+    }
+    .brand-name{
+        margin: auto;
+    }
+    &.portal-cards-text{
+        border: 1px solid #BDBDBD;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+        &:hover{
+            border-color: #046eb1;
+            transition: 0.3s linear;
+            a{
+                color: #046eb1;
+            }
+            }
+        a{
+            margin: auto;
+        }   
+        &:focus{
+            outline: none;
+            border-color: #046eb1;
+        } 
+    }
+    
+}
+
+
+.portal-with-background{
+    background-image: url(#{$imagesFolder}orion/portalcards-bg.svg);
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 60px 0 60px 0;
+    @media(min-width:$break-sm){
+        background-size: cover;
+        padding: 80px 0 80px 0;
+    }
+}
