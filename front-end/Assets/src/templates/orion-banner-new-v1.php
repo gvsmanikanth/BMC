@@ -11,10 +11,10 @@
     <div class="sp-large-container">        
         <div class="layout-inner-wrap">
             <div class="flex-wrap orion-banner-content flex-center ">							
-                <div class="flex flex-item col-12 sm-col-6 lg-col-6">	
+                <div class="flex flex-item col-12 sm-col-6 lg-col-7">	
                     <div class="">
                         <h1>Predictive Maintenance</h1>
-                        <p>Optimize, automate, and orchestrate your predictive maintenance data pipeline to stay ahead of the competition and eliminate unplanned downtime.</p>
+                        <p>Stay ahead of the competition and eliminate unplanned downtime with data pipeline orchestration</p>
                     </div>							
                 </div>
                 <!-- <div class="flex flex-item col-12 sm-col-6 lg-col-5">	
