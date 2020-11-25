@@ -28,25 +28,41 @@
     });
 
 
-    // Sticky nav implimentation  
+      // Sticky nav implimentation  
       stickyNav = $(".orion-seconday-nav");
-      //navHeight = stickyNav.height();
+      
+	  navHeight = $(".layout-header").height();
+	  
+	  if($(".layout-navigation").height() <=75){
+		navHeight += 50; 
+	  }
+	  if($(".layout-header").height() <70){
+		navHeight = 30; 
+	  }
+
+      navHeight += $("#consent_blackbar").height();
+
+
       stickyNav.scrollspy({
-        min: 75,
+        min: navHeight,
         max: 10000,
         onEnter: function(element, position) {
           stickyNav.addClass('fixed');
-          $('.layout-navigation').css('visibility', 'hidden');
-          $('.layout-header').css('visibility', 'hidden');
-          $('body').css('top', 50);
+		  $('.layout-header').hide();
+          $('.layout-navigation').hide();
+          //$('.layout-navigation').css('visibility', 'hidden');
+          //$('.layout-header').css('visibility', 'hidden');
+          $('body').css('top', navHeight);
         },
         onLeave: function(element, position) {
           stickyNav.removeClass('fixed');
-          $('.layout-navigation').css('visibility', 'visible');
-          $('.layout-header').css('visibility', 'visible');
+		  $('.layout-header').show();
+          $('.layout-navigation').show();
+          //$('.layout-navigation').css('visibility', 'visible');
+          //$('.layout-header').css('visibility', 'visible');
           $('body').css('top', '0');
         }
-      });
+       });
 
          // Adding Active Navigation Class Based on URL
       if($('.orion-seconday-nav').length > 0){

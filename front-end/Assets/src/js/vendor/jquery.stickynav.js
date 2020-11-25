@@ -41,7 +41,7 @@ $window.on('scroll', function() {
 	// scrolling down
 	else if (scrollAmount > windowPosition) {
 		// don't apply scrolled- states to body on support central
-		if (!$body.hasClass('support-central')) {
+		if (!$body.hasClass('support-central') && !($(".orion-seconday-nav").length > 0)) {
 			$body
 				.addClass('scrolled-down')
 				.removeClass('scrolled-up')
@@ -55,7 +55,7 @@ $window.on('scroll', function() {
 	// scrolling up
 	else {
 		// don't apply scrolled- states to body on support central
-		if (!$body.hasClass('support-central')) {
+		if (!$body.hasClass('support-central') && !($(".orion-seconday-nav").length > 0)) {
 		$body
 			.addClass('scrolled-up')
 			.removeClass('scrolled-down')
