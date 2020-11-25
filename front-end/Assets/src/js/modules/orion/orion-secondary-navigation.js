@@ -28,7 +28,11 @@
     });
 
 
-    // Sticky nav implimentation  
+	window.addEventListener("scroll", onFirstScroll);
+	
+	function onFirstScroll(){
+		
+	  // Sticky nav implimentation  
       stickyNav = $(".orion-seconday-nav");
       
 	  navHeight = $(".layout-header").height();
@@ -41,7 +45,6 @@
 	  }
 
       navHeight += $("#consent_blackbar").height();
-
 
       stickyNav.scrollspy({
         min: navHeight,
@@ -65,6 +68,12 @@
           $('body').css('top', '0');
         }
       });
+
+	  window.removeEventListener("scroll", onFirstScroll);
+
+	}
+
+    
 
          // Adding Active Navigation Class Based on URL
       if($('.orion-seconday-nav').length > 0){
