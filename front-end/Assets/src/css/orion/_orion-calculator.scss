@@ -231,17 +231,23 @@
 						
 					}
 					.infobox {
-						text-align: right;
-						display: flex;
-						align-items: flex-end;
+						text-align: center;
+						display: block;
+						padding: 10px 0;
 						height: 100%;
 						width: 100%;
-						
+						@media(min-width:$break-md){
+							display: flex;
+							padding: 0;							
+						   align-items: flex-end;
+						   text-align: right;
+						}
 						
 						p{
-							font-size: 14px;
-							margin: 15px auto 0 auto;
+							font-size: 14px;							
 							line-height: 18px;
+							margin:  0 auto;
+							display: inline-block;
 							@media(min-width:$break-md){
 								margin: 0 0 0 auto;
 							}

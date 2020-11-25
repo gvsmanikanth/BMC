@@ -28,7 +28,7 @@
     });
 
 
-      // Sticky nav implimentation  
+    // Sticky nav implimentation  
       stickyNav = $(".orion-seconday-nav");
       
 	  navHeight = $(".layout-header").height();
@@ -48,21 +48,23 @@
         max: 10000,
         onEnter: function(element, position) {
           stickyNav.addClass('fixed');
-		  $('.layout-header').hide();
+		  //$('.layout-header').hide();
           $('.layout-navigation').hide();
+		  $("#consent_blackbar").hide();
           //$('.layout-navigation').css('visibility', 'hidden');
           //$('.layout-header').css('visibility', 'hidden');
           $('body').css('top', navHeight);
         },
         onLeave: function(element, position) {
           stickyNav.removeClass('fixed');
-		  $('.layout-header').show();
+		  //$('.layout-header').show();
           $('.layout-navigation').show();
+          $("#consent_blackbar").show();
           //$('.layout-navigation').css('visibility', 'visible');
           //$('.layout-header').css('visibility', 'visible');
           $('body').css('top', '0');
         }
-       });
+      });
 
          // Adding Active Navigation Class Based on URL
       if($('.orion-seconday-nav').length > 0){
