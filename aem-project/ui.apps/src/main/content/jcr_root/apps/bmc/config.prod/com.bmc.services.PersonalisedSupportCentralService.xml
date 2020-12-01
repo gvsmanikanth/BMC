@@ -12,7 +12,7 @@
    	      supportCoveoAccessToken="xx22f4c9e1-1567-4f84-a34e-1d603995893b"
     	  caseMgtmUrl="https://www.bmc.com/support/resources/issue-defect-management.html"
 		  askCommunitiesUrl = "https://community.bmc.com/"
-		  supportQuestionUrl = "https://community.bmc.com/"
+		  supportQuestionUrl = "https://community.bmc.com/s/topic/0TO3n000000WfBMGA0/bmc-customer-support-community"
 		  productDownloadUrl="https://www.bmc.com/support/resources/product-downloads.html"
 		  documentationUrl="https://docs.bmc.com/docs/dashboard.action"
 		  productSupportUrl ="https://docs.bmc.com/docs/productinfo"
