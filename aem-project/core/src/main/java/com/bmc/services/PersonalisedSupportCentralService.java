@@ -161,6 +161,22 @@ public class PersonalisedSupportCentralService {
 		return popularProductUrl;
 	}
 	
+	public String getCommunitiesNewsUrl() {
+		return communitiesNewsUrl;
+	}
+
+	public void setCommunitiesNewsUrl(String communitiesNewsUrl) {
+		this.communitiesNewsUrl = communitiesNewsUrl;
+	}
+
+	public String getNewsCount() {
+		return newsCount;
+	}
+
+	public void setNewsCount(String newsCount) {
+		this.newsCount = newsCount;
+	}
+
 	public String getUserTotalCountUrl() {
 		return userTotalCountUrl;
 	}
@@ -221,7 +237,8 @@ public class PersonalisedSupportCentralService {
     private String oauthUrl;
     private String popularProductUrl;
     private String userTotalCountUrl;
-	
+    private String communitiesNewsUrl;
+    private String newsCount;
 	private String productCount;
     private String communityCount;
     private String userscoreThreshold;
@@ -274,6 +291,8 @@ public class PersonalisedSupportCentralService {
         supportCentralPersonalisationUrl = PropertiesUtil.toString(config.get("supportCentralPersonalisationUrl"), "");
         oauthUrl = PropertiesUtil.toString(config.get("oauthUrl"), "");
         popularProductUrl=PropertiesUtil.toString(config.get("popularProductUrl"), "");
+        communitiesNewsUrl = PropertiesUtil.toString(config.get("communitiesNewsUrl"),"");
+        newsCount = PropertiesUtil.toString(config.get("newsCount"),"");
         userTotalCountUrl = PropertiesUtil.toString(config.get("userTotalCountUrl"),"");
         productCount = PropertiesUtil.toString(config.get("productCount"), "");
         communityCount = PropertiesUtil.toString(config.get("communityCount"), "");
