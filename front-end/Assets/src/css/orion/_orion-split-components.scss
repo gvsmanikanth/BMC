@@ -1,0 +1,185 @@
+//Orion Split-content
+.orion-split-content {
+    .flex-wrap{
+        .flex-justify-center{
+            justify-content: flex-start;
+            @media(min-width:$break-lg){ 
+                justify-content: center;
+            }            
+        }
+    }
+    .button-bullet {
+        padding: 0px;
+    }
+    .button-set {
+        padding: 0px;
+    }
+
+	
+	
+	.imageContainer{
+		background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+		padding: 60px 0px;
+		background-position:center 75%;
+		background-size:120%; 
+        text-align: center;
+        max-width: 560px;
+       @media(min-width:$break-lg){            
+           max-width: none;
+
+       }
+		@media only screen and (min-width:830px) and (max-width: 960px){ 
+			background-position:center 90%;
+		}
+	} 
+	
+//
+//    .imageContainer {
+//        background: url(#{$imagesFolder}orion/splitcontent-bg.svg) no-repeat;
+//        padding: 60px 0px;
+//        background-position: center 70%;
+//        background-size: 550px;
+//        text-align: center;
+//        width: 100%;
+//        max-width: 560px;
+//        @media(min-width:$break-lg){            
+//            max-width: none;
+//
+//        }
+//        @media only screen and (min-width:0) and (max-width: 360px) {
+//            background-size: 450px;
+//        }
+//        @media only screen and (min-width:768px) and (max-width: 1024px) {
+//            background-size: 580px;
+//        }
+//        @media only screen and (min-width:$break-lg) {
+//            background-size: 700px;
+//        }
+//       .modal-image{
+//           display: block;
+//       }
+//
+//    }
+
+  
+    .split-text-content{
+        @media(min-width:$break-lg){            
+            padding-left: 60px;
+        }
+    }
+    &.content-at-left{
+        .split-text-content{
+            @media(min-width:$break-lg){            
+                padding-left: 0px;
+                padding-right: 60px;
+            }
+        }
+        .flex-wrap{
+            .flex.flex-item:first-child{
+                @media(min-width:$break-lg){            
+                    order: 2;
+                }
+            }
+        } 
+        .imageContainer-no-cloud-bg {
+            width: 100%;
+            @media(min-width:$break-lg){            
+                margin-left: auto;
+            }
+            
+        }      
+
+    }
+    .imageContainer-no-cloud-bg {
+        width: 100%;
+        
+    } 
+    
+}
+
+
+
+//Orion Split-content-video
+.orion-split-content-video {
+    padding: 30px 0px;
+    .imageContainer {        
+        background-size: 760px;
+    }
+    .video-portal{
+        margin:0px;
+    }
+    @media only screen and (min-width:0) and (max-width: 360px) {
+        .imageContainer {
+            background-size: 530px;
+        }
+    }
+    @media only screen and (min-width:768px) and (max-width: 1024px) {
+        .imageContainer {
+            background-size: 760px;
+        }
+    }
+}
+
+.orion-content-accrodian{  
+    padding: 15px 0 15px 0;
+    .acordian-content{
+        display: none;
+        background-color: #EEEEEE;
+        padding: 20px;
+        margin-top: 20px;
+        @media(min-width:$break-md){            
+            padding: 48px 40px 28px 40px;
+
+        }
+        
+        hr.short-blue-hr {
+            border: none;
+            height: 1px;
+            background: #2BD4EE;
+            width: 24%;
+            margin: 10px auto 24px 0;
+        }
+        .text-block {
+            @media(min-width:$break-lg){            
+                padding-right: 20px;
+                margin-bottom: 27px;
+            }
+            
+        }
+    }
+    .orion_show_hide { 
+        display: block;  
+        position: relative;
+        width: 100%;
+        overflow:hidden;
+        color: #29a5d6;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        margin: 0;
+        padding: 10px 0;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: calc(100% - 20px);
+            height: 100%;
+            margin-right: -100%;
+            border-bottom: 1px solid #BDBDBD;
+            top: -5px;
+            position: relative;
+            left: 20px;
+        } 
+        &:hover{
+            color: #046eb1;
+        }
+    }
+
+    .flex-wrap{
+        .flex.flex-item:first-child{
+            @media(min-width:$break-lg){            
+                order: initial !important;
+            }
+        }
+    }     
+    
+}

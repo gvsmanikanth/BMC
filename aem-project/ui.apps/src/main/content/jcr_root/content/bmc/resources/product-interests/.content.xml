@@ -218,6 +218,12 @@
             dropDownDisplay="Yes"
             text="BMC Helix ITSM"
             value="Helix ITSM"/>
+    <_x0037_94729560
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Knowledge Management"
+            dropDownDisplay="Yes"
+            text="BMC Helix Knowledge Management by ComAround"
+            value="Helix Knowledge Management"/>
     <!-- WEB-7427 -->
     <_x0037_29047163
             jcr:primaryType="nt:unstructured"
