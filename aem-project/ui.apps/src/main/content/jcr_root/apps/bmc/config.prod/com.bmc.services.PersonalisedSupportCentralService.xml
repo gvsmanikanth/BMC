@@ -40,7 +40,7 @@
     	  popularProductUrl="/v1/personalisation/contents"
     	  userTotalCountUrl="/v1/users/total-count"
     	  communitiesNewsUrl="/v1/communities/news"
-    	  newsCount="10"
+    	  newsCount="6"
     	  productCount = "15"
     	  communityCount = "10"
     	  userscoreThreshold = "50"
