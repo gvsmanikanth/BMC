@@ -94,10 +94,10 @@ export const widgets: Widget[] = [
         icon: "d-icon-service_desk"
     },
     {
-        id: "supportQuestions",
+        id: "supportQuestionUrl",
         href: null,
         isExtended: false,
-        title: "Common Support Questions",
+        title: "Frequently asked questions",
         description: "See frequently asked questions",
         routerLink: 'support-question',
         icon: "d-icon-question_circle_o"

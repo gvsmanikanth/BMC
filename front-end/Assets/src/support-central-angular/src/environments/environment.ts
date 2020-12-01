@@ -8,7 +8,7 @@ export const environment = {
 
 window['psc'] = {
   widgets: {
-    askCommunity: "https://communities.bmc.com/welcome",
+    askCommunity: "https://community.bmc.com/",
     bmcHelixServices: "https://stage.cms.bmc.com/it-services/bmc-helix-services.html",
     docs: "https://docs.bmc.com/docs/dashboard.action",
     enhancedServices: "https://stage.cms.bmc.com/it-services/enhanced-support-services.html",
@@ -27,7 +27,7 @@ window['psc'] = {
     supportedProducts: "https://stage.cms.bmc.com/available/supported-product-az-list.html",
     training: "https://stage.cms.bmc.com/education/training-and-certification.html",
     caseDetailUrl: "https://bmcsites.force.com/casemgmt/SC_CaseDetailPage?CaseId=",
-    supportQuestionUrl: "https://communities.bmc.com/community/support/"
+    supportQuestionUrl: "https://community.bmc.com/"
   },
   user: {
     loggedIn: 'true'

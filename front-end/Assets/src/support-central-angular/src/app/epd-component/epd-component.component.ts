@@ -9,8 +9,7 @@ import { EPDService } from '../shared/services/epd.service';
 export class EpdComponentComponent implements OnInit {
 
   DESCRIPTION_LOGGED_IN = 'Suggested downloads based on your favorite products and recent activity';
-
-  DESCRIPTION_NON_LOGGED_IN = 'Popular downloads'
+  DESCRIPTION_NON_LOGGED_IN = 'Suggested downloads based on product popularity'
   widgets = window['psc'].widgets;
   user = window['psc'].user;
 
