@@ -93,10 +93,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="ITIL"
        />
-  	 <education-products-187351378
+  	<!-- <education-products-187351378
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Database Automation"
-       />
+       /> -->
     <education-products-175672617
         jcr:primaryType="nt:unstructured"
         jcr:title="Cloud Life Cycle Management"
@@ -123,6 +123,12 @@
    <education-products-138131082
         jcr:primaryType="nt:unstructured"
         jcr:title="Track-It!"/>
+    <education-products-138131083
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Knowledge-Centered Service (KCS)"/>
+    <education-products-138131084
+            jcr:primaryType="nt:unstructured"
+            jcr:title="BMC Helix Knowledge Management"/>
    
    <!--  <education-products-186068586
         jcr:primaryType="nt:unstructured"
