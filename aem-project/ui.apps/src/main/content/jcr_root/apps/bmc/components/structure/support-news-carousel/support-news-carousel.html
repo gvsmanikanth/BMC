@@ -1,0 +1,12 @@
+support central new carousal
+
+<sly data-sly-use.news="com.bmc.models.components.supportnewscarousel.NewsCarouselModel">
+    ${news.newsResults.body.status} </br>
+    <sly data-sly-list.obj="${news.newsResults.body.data}">
+        ${obj.titleName}</br>
+        ${obj.link}</br>
+        ${obj.details @ context='html'}</br>
+        ${obj.lastModifiedDate}</br>
+----------------------------------------------------</br></br>
+    </sly>
+</sly>

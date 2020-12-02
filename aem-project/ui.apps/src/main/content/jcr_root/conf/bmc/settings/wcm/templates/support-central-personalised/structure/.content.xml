@@ -45,6 +45,9 @@
             <supportcentral_dashboard
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-dashboard"/>
+            <supportcentral-news
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/support-news-carousel"/>
             <supportcentral_orientation_nonloggedin
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-orientation-nonloggedin"/>
