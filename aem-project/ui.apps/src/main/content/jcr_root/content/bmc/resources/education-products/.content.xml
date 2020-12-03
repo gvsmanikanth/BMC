@@ -36,7 +36,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Client Management"
        />
-   
+    <education-products-138131084
+        jcr:primaryType="nt:unstructured"
+        jcr:title="BMC Helix Knowledge Management"
+       />
     <education-products-112512823
         jcr:primaryType="nt:unstructured"
         jcr:title="BMC Helix Platform (Innovation Suite)"
@@ -123,12 +126,10 @@
    <education-products-138131082
         jcr:primaryType="nt:unstructured"
         jcr:title="Track-It!"/>
-    <education-products-138131083
-            jcr:primaryType="nt:unstructured"
-            jcr:title="Knowledge-Centered Service (KCS)"/>
-    <education-products-138131084
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BMC Helix Knowledge Management"/>
+   <education-products-138131083
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Knowledge-Centered Service (KCS)"/>
+
    
    <!--  <education-products-186068586
         jcr:primaryType="nt:unstructured"
