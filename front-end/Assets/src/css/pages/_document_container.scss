@@ -65,4 +65,26 @@
     }
     // All Mobile deivecs and Tab Landscape and Portrait start
 
+    .documentContainer-iframe{
+        display: flex;
+        flex-direction: column-reverse;
+        @media (min-width: $break-md) {
+            display: flex;
+            flex-direction: unset;
+        }
+        @media (max-width: $break-md) {
+            #pdfReader{
+                border: 1px solid black;
+                display: block;
+                margin-bottom: 40px;
+            }
+        }
+        .layout-secondary-flex-item{           
+            @media (min-width: $break-md) {
+                padding-right: 2rem;
+                width: 25%;
+                margin:0;
+            }
+        }
+    }
 }
