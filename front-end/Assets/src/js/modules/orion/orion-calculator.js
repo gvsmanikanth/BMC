@@ -288,8 +288,13 @@
 				sidebar.css({'top':0+'px'});
 			}else
 			if(tabsWrap.isOnScreen() && x<=lowerLimit){
-				sidebar.css({'top':x+'px'});
+				if(x <= 0){
+					sidebar.css({'top':0+'px'});
+				}else{
+					sidebar.css({'top':x+'px'});
+				}
 			}
+			
 		}
 		
 		isFixScrollPositionCalled = false;
