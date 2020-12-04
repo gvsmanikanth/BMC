@@ -157,52 +157,54 @@
 							margin-right: 30px;
 						}
 					}
-					#nonProdItemsWrap,#reviewItemsWrap {
-						.nonProdItem, .prodItem{
-							border: 1px solid #1A98FF;
-							border-radius: 10px;
-							padding: 20px;
-							margin-bottom: 20px;
-							position:relative;
-							@media(min-width:$break-sm){
-								padding: 30px;
-								margin-bottom: 30px;
-							} 
-							
-							.delete{
-								margin-top: 30px;
-								cursor: pointer;
-								color: #75777A;
-								//font-family: Arial, sans-serif;
-								font-size: 16px;
-								font-weight: 700;
-								&:hover{
-									color: #002C8F;							
-								}
-							}
-							
-							h3{
-								font-size: 20px;
-								font-weight: 700;
-								border-bottom: 1px solid #BDBDBD;
-								margin-bottom: 25px;
-								padding-bottom: 10px;
-								@media(min-width:$break-sm){
-									font-size:22px;
-								} 
-							}
-							.cale-subTitle {
-								font-size: 16px;
-								font-weight: 700;
-								margin-bottom: 0;
-								color: #414042;
-								@media(min-width:$break-sm){
-									font-size:18px;
-								} 
+					.nonProdItem, .prodItem{
+						border: 1px solid #1A98FF;
+						border-radius: 10px;
+						padding: 20px;
+						margin-bottom: 20px;
+						position:relative;
+						@media(min-width:$break-sm){
+							padding: 30px;
+							margin-bottom: 30px;
+						} 
+						&.main {
+							border: none;
+							padding:  0;
+							margin: 0;
+						}
+						.delete{
+							margin-top: 30px;
+							cursor: pointer;
+							color: #75777A;
+							//font-family: Arial, sans-serif;
+							font-size: 16px;
+							font-weight: 700;
+							&:hover{
+								color: #002C8F;							
 							}
 						}
 						
+						h3{
+							font-size: 20px;
+							font-weight: 700;
+							border-bottom: 1px solid #BDBDBD;
+							margin-bottom: 25px;
+							padding-bottom: 10px;
+							@media(min-width:$break-sm){
+								font-size:22px;
+							} 
+						}
+						.cale-subTitle {
+							font-size: 16px;
+							font-weight: 700;
+							margin-bottom: 0;
+							color: #414042;
+							@media(min-width:$break-sm){
+								font-size:18px;
+							} 
+						}
 					}
+					
 					.total{
 						background: #EEEEEE;
 						font-size: 14px;
