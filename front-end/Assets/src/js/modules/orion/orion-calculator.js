@@ -357,6 +357,8 @@
 				else{
 					$("#tallyBreakdown").append("<li class='prodID"+x+"'>"+listValue+"</li>");
 				}
+			}else {
+				$("#tallyBreakdown li.prodID"+x).remove();
 			}
 		}
 		
@@ -506,7 +508,6 @@
 		if(!isFixScrollPositionCalled){
 			setTimeout(function() {isFixScrollPositionCalled = true; fixedPos();}, 500);
 		}
-		
 	}
 	
 	//scroll to last item in active tab
