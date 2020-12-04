@@ -255,12 +255,14 @@
 	
 	//fixed position sidebar and footer
 		function fixedPos(){
+		
+		//NOTE: improve notdesktop logic
 		var notdesktop = window.matchMedia("only screen and (max-width: 640px)").matches;
 		var orionNav = $('#orion-calculator-nav');
 		var navWrap = $("#orion-calculator-nav-wrap");
 		var tabsWrap = $(".orion-tabs-wrapper");
 		var tabsToggle = $('.orion-tabs-nav');
-		var orionCalulator = $("#pricing-calculator .stepNo")
+		var orionCalculator = $("#pricing-calculator .stepNo")
 		if(notdesktop){
 			//reset if device
 			$('#calc-sidebar').css({'top':'0'});
@@ -282,17 +284,20 @@
 			var staticTabHeight = staticTab.outerHeight();
 			var lowerLimit = staticTabHeight-sidebarHeight;
 			var windowPos = $(window).scrollTop();
-			var x = windowPos-staticTabTop + 50;
+			var x = windowPos-staticTabTop;
+			var xBottom = 
+			var top = '30px';
 			
-			if(orionCalulator.isOnScreen()){
-				sidebar.css({'top':0+'px'});
-			}else
-			if(tabsWrap.isOnScreen() && x<=lowerLimit){
+			if(orionCalculator.isOnScreen()){
+				sidebar.css({'top':top});
+			}else if(tabsWrap.isOnScreen()&&x<=lowerLimit){
 				if(x <= 0){
-					sidebar.css({'top':0+'px'});
+					sidebar.css({'top':top,});
 				}else{
 					sidebar.css({'top':x+'px'});
 				}
+			}else{
+				sidebar.css({'top':top});
 			}
 			
 		}
