@@ -111,11 +111,11 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         }else if(propertyName.equals ("ic-target-persona"))
         {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as PersonaList
-           values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_COMPANY_SIZE_CUSTOM_LIST));
+           values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_PERSONAS_CUSTOM_LIST));
         }else if(propertyName.equals ("ic-company-size"))
         {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as companySizeList
-            values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_PERSONAS_CUSTOM_LIST));
+            values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_COMPANY_SIZE_CUSTOM_LIST));
         }else if(propertyName.equals ("ic-buyer-stage"))
         {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as BuyerStagesList
