@@ -32,5 +32,9 @@ public class ResourceCenterConstants {
     public static final String QUERY_PARAM_PROP_VAL = "property.value";
     public static final String QUERY_PARAM_PROP_OPERATION ="property.operation";
     public static final String QUERY_PARAM_PROP_OPERATION_LIKE = "like";
+    //WEB-9267 New FIlters SOrting list for search filter parameters.
+    public static final String[] IC_BUYER_STAGES_CUSTOM_LIST = new String[]{"All", "Discover", "Explore", "Engage", "Buy"};;
+    public static final String [] IC_PERSONAS_CUSTOM_LIST = new String[]{"All", "C-Level", "Vice President", "Director", "Manager", "IT Professional", "Business Professional (non-IT)"};
+    public static final String []IC_COMPANY_SIZE_CUSTOM_LIST = new String[]{"All","5000+","1000-4999","1-999"};
 
 }
