@@ -138,15 +138,15 @@
 		
 		//update value if necesary
 		function updateCalculatedValueForCard(pSlider,ID,pEnv,dailyExecutions){
-			var quantity = Calculator.environments[ID].quantity + 500;
+			var quantity = parseInt(Calculator.environments[ID].quantity) + 500;
 			var envType = Calculator.environments[ID].envType;
 			var calculatedPrice = Calculator.getPriceForExecution(envType,Calculator.environments[ID].quantity,"formatted");
 			
 			var reftoExecutionbox = $(".prodItem[data-env='"+envType+ID+"']");
 			reftoExecutionbox.find(".total-left p:last-child").html("<strong>"+quantity+"</strong>");
 			reftoExecutionbox.find(".total-right p:last-child").html("<strong>$"+calculatedPrice+"</strong>");
-			reftoExecutionbox.find(".daily-execution-wrap .ex-left").html("<strong>"+quantity+"</strong>");
-			reftoExecutionbox.find(".daily-execution-wrap .ex-right").html("<strong>$"+calculatedPrice+"</strong>");
+			reftoExecutionbox.find(".daily-execution-wrap .ex-left").html("<span>"+quantity+"  Daily Executions</span>");
+			reftoExecutionbox.find(".daily-execution-wrap .ex-right").html("<span>$"+calculatedPrice+"</span>");
 			//set slider value for other than current tabs
 			for(var i=0;i<reftoExecutionbox.length;i++){
 				reftoExecutionbox[i].querySelector('.slider').value = dailyExecutions;
@@ -170,12 +170,16 @@
 			   
 				if($(e).hasClass("cancel-btn")){
 					if(window.orignalEditValue != null)
-						//$(e).parent().parent().find("input").val(window.orignalEditValue)//.trigger("onchange");
+						
 						//updateCalculator(Calculator,ID);
 						var elementId = $(e).parent().parent().find("input").data("id");
 						var elementEnvironment = $(e).parent().parent().find("input").data("env");
 						
 						Calculator.addEnvironments(elementEnvironment,window.orignalEditValue,elementId);
+						
+						//$(e).parent().parent().find("input").val(window.orignalEditValue);
+						updateCalculatedValueForCard($(e).parent().parent().find("input"),elementId,elementEnvironment,window.orignalEditValue);
+						
 						updateCalculator(Calculator);
 				}
 			   $(e).parent().parent().find(".slidecontainer").toggle();
@@ -310,7 +314,6 @@
 			setTimeout(function() {isFixScrollPositionCalled = true; fixedPos();}, 500);
 		}
 	});
-
 		
 	////tally
 	//custom screen in tallybox
@@ -429,9 +432,11 @@
 
 					//collapsed
 					item += "<div class='daily-execution-wrap flex-wrap' style='overflow: visible;'><div class='ex-left'>"+thisQuantityFormatted+" Daily Executions</div><div class='ex-right'>$"+thisPrice+"</div></div>";
+
 					if(envType != "prod"){
 						item += "<div data-nonprod='"+y+"' class='delete'>Delete</div>";
 					}
+
 					item += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 	
 					item += "</div>";//prodItem 
@@ -445,7 +450,6 @@
 		
 		$(".sliderNew").each(function(item, index){
 			$(index).rangeslider("addUpdateEvent");
-			$(index).on("change", updateAdobeAnalyticsSliderInteraction);
 		});
 		
 		if(componentID){
@@ -572,6 +576,7 @@
 	/*$(".slider.prodSlider").each(function(item, index){
 	   $(index).rangeslider("addUpdateEvent");
 	});*/
+
 	
 	//Get calculator Instance
 	var Calculator = new OrionCalculator();
