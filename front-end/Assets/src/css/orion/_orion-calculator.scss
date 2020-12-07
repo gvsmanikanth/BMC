@@ -514,7 +514,7 @@
 			  box-sizing: border-box;
 			  & > span.prod {
 				  background-color: #BDBDBD;
-				  
+				  cursor: pointer;
 				  background-image:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 13 * 1) - 2px), white calc(100% / 13 * 1), rgba(255,255,255,0) calc(100% / 13 * 1)),
 				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 13 * 2) - 2px), white calc(100% / 13 * 2), rgba(255,255,255,0) calc(100% / 13 * 2)),
 				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 13 * 3) - 2px), white calc(100% / 13 * 3), rgba(255,255,255,0) calc(100% / 13 * 3)),
@@ -555,7 +555,7 @@
 				}
 				& > span.nonProd {
 				  background-color: #BDBDBD;
-				  
+				  cursor: pointer;
 				  background-image:  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 1) - 2px), white calc(100% / 38 * 1), rgba(255,255,255,0) calc(100% / 38 * 1)),
 				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 2) - 2px), white calc(100% / 38 * 2), rgba(255,255,255,0) calc(100% / 38 * 2)),
 				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 3) - 2px), white calc(100% / 38 * 3), rgba(255,255,255,0) calc(100% / 38 * 3)),
@@ -633,6 +633,7 @@
 				  left: -25px;
 				  top: -65px;
 				  font-size: 14px;
+				  cursor:pointer;
 		   
 				  &:after {
 					content: "";
@@ -646,6 +647,7 @@
 					left: 8px;
 					top: 65px;
 					z-index: 3;
+					cursor:pointer;
 				  }
 				  
 				}

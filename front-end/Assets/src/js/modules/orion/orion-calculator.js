@@ -285,7 +285,6 @@
 			var lowerLimit = staticTabHeight-sidebarHeight;
 			var windowPos = $(window).scrollTop();
 			var x = windowPos-staticTabTop;
-			var xBottom = 
 			var top = '30px';
 			
 			if(orionCalculator.isOnScreen()){
