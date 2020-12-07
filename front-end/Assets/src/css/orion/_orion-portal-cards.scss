@@ -80,8 +80,81 @@
         } 
     }
     
+    
 }
-
+.portal-section-tpad-remove{
+    padding-top: 5px;
+    @media(min-width: $break-sm){      
+        padding-top: 10px;     
+    }
+    @media(min-width: $break-md){     
+        padding-top: 20px;      
+    }
+}
+.portal-logo-wrap{
+    @extend.portal-cards;
+    text-align: center;
+    width: 100%;
+    margin: 12px;
+    border: none;
+    text-align: center;
+    padding: 0;
+    cursor: auto;
+    display: flex;
+    align-items: center;  
+    margin-bottom: 15px; 
+    @media(min-width: $break-sm){
+        display: block;
+        align-items: normal;  
+        margin-bottom: 30px;       
+    }
+    @media(min-width: $break-md){     
+        margin-bottom: 40px;       
+    }
+    &:hover{
+        .portal-cards{
+            border-color: #29a5d6;
+            transition: 0.3s linear;            
+        }
+        .brand-title{
+            a{
+                color: #29a5d6;  
+            }
+        }
+    }    
+    .portal-cards{
+        border: 1px solid #BDBDBD;
+        padding: 0;
+        margin: 0;
+        width: 60%;
+        @media(min-width: $break-sm){
+            width: auto;
+        }
+        .brand-image {
+            padding: 10px;
+            @media(min-width:$break-lg){
+                padding: 20px;
+            }            
+        }        
+    }
+    .brand-title{ 
+        width: 40%;
+        text-align: left;
+        padding-left: 20px;
+        margin: 0;  
+        @media(min-width: $break-sm){
+            width: auto;
+            text-align: center;
+            padding-left: 0;
+            margin: 15px 0 0 0;       
+        }        
+        a{
+            color: #75777A;  
+        }
+    }
+   
+    
+}
 
 .portal-with-background{
     background-image: url(#{$imagesFolder}orion/portalcards-bg.svg);

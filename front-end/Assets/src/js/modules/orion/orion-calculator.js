@@ -673,7 +673,7 @@
 	//delete
 	document.addEventListener('click',deleteEvent);
 	function deleteEvent(){
-		if(!($(event.target).hasClass('.delete'))) return ;
+		if(!($(event.target).hasClass('delete'))) return ;
 		thisID = event.target.getAttribute('data-nonprod');
 		Calculator.removeEnvironments(thisID);
 		updateCalculator(Calculator);

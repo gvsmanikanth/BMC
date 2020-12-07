@@ -44,10 +44,209 @@
     
 </section>
 <!--Anchor Banner Component End -->
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left " id="sap">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Managed File Transfer</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ftps-sftp-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">FTPS</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ftps-sftp-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">SFTP</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/aws-s3-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">AWS S3</a></h4>
+				</div>				
+			</div>
+			<!-- col -->      
+			  						
 
+		</div>		
+	</div>	
+</section>
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left portal-section-tpad-remove " >
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1" id="aws">AWS</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/aws-batch-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">AWS Batch</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/aws-lambda-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">AWS Lambda</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/aws-step-functions-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">AWS Step Functions</a></h4>
+				</div>				
+			</div>
+			<!-- col -->     
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/aws-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">AWS</a></h4>
+				</div>				
+			</div>
+			<!-- col -->     
+			  						
+
+		</div>		
+	</div>	
+</section>
 
 <!-- Logo portal section started -->
-<section class="orion-global bg-white text-left py3" id="sap">
+<section class="orion-global bg-white text-left portal-section-tpad-remove" id="sap">
+	<div class="layout-inner-wrap">
+		<h2 class="orion-block-title mb1">Databases</h2>
+		<p>Select a brand to get access to their documentation</p>
+		<div class="flex-wrap remove-margin-12px">
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ms-sql-ssis-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">SQL Server Integration Services (SSIS) </a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/sap-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">SAP</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/oracle-sql-database-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">Oracle SQL</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ms-sql-ssis-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">Microsoft MSSQL</a></h4>
+				</div>				
+			</div>
+			<!-- col -->   
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/postgre-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">PostgreSQL</a></h4>
+				</div>				
+			</div>
+			<!-- col -->   
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ibm-db2-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">DB2</a></h4>
+				</div>				
+			</div>
+			<!-- col -->   
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/oracle-sql-database-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">Oracle SQL</a></h4>
+				</div>				
+			</div>
+			<!-- col -->    
+			<div class="flex flex-item col-12 sm-col-3 md-col-3 lg-col-2 ">	
+				<div class="portal-logo-wrap">
+					<div class="portal-cards">
+						<a href="#." class="brand-image">
+							<img src="Assets/src/img/orion/ms-sql-ssis-logo.png" alt="">						
+						</a>					
+					</div>
+					<h4 class="brand-title"><a href="#.">Microsoft MSSQL</a></h4>
+				</div>				
+			</div>
+			<!-- col --> 
+			  						
+
+		</div>		
+	</div>	
+</section>
+
+<!-- Logo portal section started -->
+<section class="orion-global bg-white text-left portal-section-tpad-remove" id="sap">
 	<div class="layout-inner-wrap">
 		<h2 class="orion-block-title mb1">Managed File Transfer</h2>
 		<p>Select a brand to get access to their documentation</p>
