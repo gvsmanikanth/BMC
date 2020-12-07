@@ -70,11 +70,19 @@
         flex-direction: column-reverse;
         @media (min-width: $break-md) {
             display: flex;
-            flex-direction: unset;
+            flex-direction: row;
         }
+        #doc-iframe-container{
+            border: none; 
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+       
         @media (max-width: $break-md) {
-            #pdfReader{
-                border: 1px solid black;
+            #doc-iframe-container{
+                border: none;
                 display: block;
                 margin-bottom: 40px;
             }
