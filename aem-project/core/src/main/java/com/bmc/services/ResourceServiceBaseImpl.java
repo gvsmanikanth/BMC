@@ -143,27 +143,40 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         use Collections. sort to sort the list and
         reconstruct the Map back from the sorted list
      */
-    public Map<String, String> sortPropertyNamesAlphabeticaly(Map<String, String> values)
-    {
-        ArrayList<String> list = new ArrayList<>();
-        Map<String,String> sortedMap = new LinkedHashMap<> ();
-        for (Map.Entry<String, String> entry : values.entrySet()) {
-            list.add(entry.getValue());
-        }
-        Collections.sort(list, new Comparator<String>() {
-            public int compare(String str, String str1) {
-                return (str).compareTo(str1);
+    public Map<String, String> sortPropertyNamesAlphabeticaly (Map<String, String> values) {
+            ArrayList<String> list = new ArrayList<> ();
+            Map<String, String> sortedMap = new LinkedHashMap<> ();
+        try {
+            for (Map.Entry<String, String> entry : values.entrySet ()) {
+                list.add (entry.getValue ());
             }
-        });
-        for (String str : list) {
-            for (Map.Entry<String, String> entry : values.entrySet()) {
-                if (entry.getValue().equals(str)) {
-                    sortedMap.put(entry.getKey(), str);
+            if(list.contains("All")){
+                // Add "All" as the first character in filter
+                list.remove (list.indexOf ("All"));
+                list.add(0,"All");
+                Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
+            }else
+            {
+                Collections.sort (list, new RCFilterComparator ());
+            }
+
+            for (String str : list) {
+                for (Map.Entry<String, String> entry : values.entrySet ()) {
+                    if (entry.getValue ().equals (str)) {
+                        sortedMap.put (entry.getKey (), str);
+                    }
                 }
             }
+
+        } catch (NullPointerException ex) {
+            log.error ("BMC ERROR : NullPointerException occured :" + ex.getMessage ());
+        } catch (Exception e) {
+            log.error ("BMC ERROR: Exception occurred :" + e.getMessage ());
         }
         return sortedMap;
     }
+
+
 
     /*
     Method name : getCustomSortList()
@@ -208,10 +221,23 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
      */
     public static String getPropertyOptionIfFound(List <String> list, String value){
         for(String optionValue : list){
-            if(optionValue.equals(value)){
+            if(optionValue.equalsIgnoreCase(value)){
                 return optionValue;
             }
         }
         return null;
     }
+
+    /*
+    Method name : RCFilterComparator
+    returns : String
+    Explanation :  comparator that compares String alphabetically
+    */
+    public class RCFilterComparator implements Comparator<String> {
+        public int compare (String str, String str1) {
+            return (str).compareTo (str1);
+        }
+    }
+
+    
 }
