@@ -619,6 +619,12 @@
 				width: 100%;
 			}
 		}
+		//WEB-8368
+		.flex-wrap{
+			.flex{
+				display: flex;
+			}
+		}
 		
 	}
 
