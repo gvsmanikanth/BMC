@@ -1,21 +1,27 @@
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
     <div class="container">
-    	<div class="row">
-            <div class="col-4 psc-fs-12">
-            	<h3>Upgrade Assistance</h3>
-                BMC assisted Migration Offering<br>
-                <a class="btn learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
+    	<div class="psc-orientation-checklist">
+            <div class="psc-fs-12">
+            	<div>
+	            	<h3>Upgrade Assistance</h3>
+	                BMC assisted Migration Offering<br>
+	                <a class="btn learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
+            	</div>
             </div>
-            <div class="col-4 pl-4 psc-fs-12">
-            	<h3>Support Central User Guide</h3>
-                Learn more about BMC support Resources<br>
-                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn learn-more">Online Guide</a>
+            <div class="psc-fs-12">
+            	<div>
+	            	<h3>Support Central User Guide</h3>
+	                Learn more about BMC support Resources<br>
+	                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn learn-more">Online Guide</a>
+            	</div>
             </div>
             <sly data-sly-test.loggdIn="${!support.isLoggedIn || !support.isNewUser}">
-                <div class="col-4 pl-6 psc-o-checklist psc-fs-12">
-                    <h3>Explore BMC resources</h3>
-                    Get familiarity with BMC resources<br>
-                    <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
+                <div class="psc-o-checklist psc-fs-12">
+	                 <div>
+	                    <h3>Explore BMC resources</h3>
+	                    Get familiar with BMC resources<br>
+	                    <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
+               		</div>
                 </div>
             </sly>
          </div>

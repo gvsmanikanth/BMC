@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Case } from '../shared/models/case/case.model';
 import { CaseManageService } from '../shared/services/case-manage.service';
+import { StateService } from '../shared/services/state.service';
 
 @Component({
   selector: 'app-case-management',
@@ -9,10 +10,9 @@ import { CaseManageService } from '../shared/services/case-manage.service';
 })
 export class CaseManagementComponent implements OnInit {
 
-  widgets = window['psc'].widgets;
   casesChunk: Case[] = null;
 
-  constructor(public caseService: CaseManageService) { }
+  constructor(public caseService: CaseManageService, public state: StateService) { }
 
   ngOnInit() {
     this.caseService.getCases().then(() => {

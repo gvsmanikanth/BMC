@@ -2,9 +2,9 @@
     <div class="extended-widget-header">
         <div class="top-section">
             <h2>Ask The Community</h2>
-            <a class="external-app-link btn btn-primary" [href]="widgets.askCommunity" target="_blank">Go to the Community</a>
+            <a class="external-app-link btn btn-primary" [href]="state.widgets.askCommunity" target="_blank">Go to the Community</a>
         </div>
-        <div class="description">{{widgetDescription}}</div>
+        <div class="description">{{ state.hasUserActivity ? widgetDescription : DESCRIPTION_NON_LOGGED_IN}}</div>
     </div>
     <div class="extended-widget-body" [ngBusy]="communityService.busyConfig">
         <adapt-accordion>

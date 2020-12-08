@@ -5,17 +5,17 @@ export const widgets: Widget[] = [
         id: "manageCase",
         href: null,
         isExtended: false,
-        title: "Manage Your Cases",
+        title: "Case Management",
         description: "Submit cases and track progress",
         routerLink: 'manage-case',
-        icon: "d-icon-list_check"
+        icon: "d-icon-toolbox"
     },
     {
         id: "askCommunity",
         href: null,
         isExtended: false,
-        title: "Ask The Community",
-        description: "Share insights, solve problems...",
+        title: "Community",
+        description: "Blogs, questions, discussions and ideas",
         routerLink: 'community',
         icon: "d-icon-users"
     },
@@ -24,7 +24,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Product Downloads",
-        description: "Find the latest product downloads...",
+        description: "",
         routerLink: "epd-widget",
         icon: "d-icon-download"
     },
@@ -33,7 +33,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Documentation",
-        description: "Access online technical documentation",
+        description: "",
         routerLink: 'docs',
         icon: "d-icon-file_text_o"
     },
@@ -42,9 +42,9 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Product Support",
-        description: "Everything you need on one page.",
+        description: "Everything you need on one page",
         routerLink: null,
-        icon: "d-icon-laptop_server_search"
+        icon: "d-icon-wrench"
 
     },
     {
@@ -52,7 +52,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Get Training",
-        description: "Choose among role specific training...",
+        description: "Choose among role specific training",
         routerLink: null,
         icon: "d-icon-training_room"
     },
@@ -63,7 +63,7 @@ export const widgets: Widget[] = [
         title: "Architecture Compatibility Modeler",
         description: "Check if your products are supported",
         routerLink: null,
-        icon: "d-icon-puzzle"
+        icon: "d-icon-monitor_gear_puzzle"
 
     },
     {
@@ -71,7 +71,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Supported Products",
-        description: "Find product support status, dates...",
+        description: "Find product support status, dates",
         routerLink: null,
         icon: "d-icon-case_wrench"
     },
@@ -91,13 +91,13 @@ export const widgets: Widget[] = [
         title: "Services & Consulting",
         description: "Get help with all aspects of your digital journey",
         routerLink: null,
-        icon: "d-icon-service_desk"
+        icon: "d-icon-hands_gear"
     },
     {
         id: "supportQuestionUrl",
         href: null,
         isExtended: false,
-        title: "Frequently asked questions",
+        title: "Frequently Asked Questions",
         description: "See frequently asked questions",
         routerLink: 'support-question',
         icon: "d-icon-question_circle_o"

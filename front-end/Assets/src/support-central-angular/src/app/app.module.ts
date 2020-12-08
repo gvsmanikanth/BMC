@@ -27,6 +27,7 @@ import { CommunityService } from './shared/services/community/community.service'
 import { CommunityProductComponent } from './community/community-product/community-product.component';
 import { TileVer2Component } from './tile-ver2/tile.component';
 import { TileVer3Component } from './tile-ver3/tile.component';
+import { StateService } from './shared/services/state.service';
 
 const appRoutes: Routes = [
   {
@@ -91,7 +92,8 @@ const appRoutes: Routes = [
     CaseManageService,
     DocsService,
     SupportQuestionsService,
-    CommunityService
+    CommunityService,
+    StateService
   ],
   bootstrap: [AppComponent]
 })

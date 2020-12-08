@@ -951,7 +951,57 @@ var Support = Support || {};
 			adapterManager.init();
 		}
 	};
+	
+	//Personalized Support Central Feature Start
+	Support.PersonalizedNewsCarousel = {
+		animate: function ({timing, draw, duration}) {
 
+			let start = performance.now();
+	  
+			requestAnimationFrame(function animate(time) {
+			  // timeFraction goes from 0 to 1
+			  let timeFraction = (time - start) / duration;
+			  if (timeFraction > 1) timeFraction = 1;
+	  
+			  // calculate the current animation state
+			  let progress = timing(timeFraction)
+	  
+			  draw(progress); // draw it
+	  
+			  if (timeFraction < 1) {
+				requestAnimationFrame(animate);
+			  }
+	  
+			});
+		  },
+		  smoothScroll: function (element, from, to) {
+			Support.PersonalizedNewsCarousel.animate({
+			  duration: 800,
+			  timing(timeFraction) {
+				return timeFraction < 0.5 ? 2 * timeFraction * timeFraction : 1 - Math.pow(-2 * timeFraction + 2, 2) / 2;
+			  },
+			  draw(progress) {
+				let scrollPos = from + ((to - from) * progress)
+				element.scroll(scrollPos, 0)
+			  }
+			})
+		  },
+		  init: function () {
+			let rightArrow = document.querySelector('.psc-news .right-news-arrow');
+			let leftArrow = document.querySelector('.psc-news .left-news-arrow');
+			rightArrow.addEventListener('click', function (e) {
+			  let newsContainer = document.querySelector('.psc-news .news-container-wrapper');
+			  let newsArticle = document.querySelector('.psc-news .news-list .news-block');
+			  Support.PersonalizedNewsCarousel.smoothScroll(newsContainer, newsContainer.scrollLeft, newsContainer.scrollLeft + newsArticle.offsetWidth + newsArticle.offsetWidth / 6)
+			})
+			leftArrow.addEventListener('click', function (e) {
+			  let newsContainer = document.querySelector('.psc-news .news-container-wrapper');
+			  let newsArticle = document.querySelector('.psc-news .news-list .news-block');
+			  Support.PersonalizedNewsCarousel.smoothScroll(newsContainer, newsContainer.scrollLeft, newsContainer.scrollLeft - (newsArticle.offsetWidth + newsArticle.offsetWidth / 6))
+			})
+		  }
+	}
+	//Personalized Support Central Feature END
 	Support.MobileToggleHeader = {
 
 		baseHeight: null,
@@ -1051,6 +1101,7 @@ var Support = Support || {};
 		Support.Menu.init();
 		Support.MobileToggleHeader.init();
 		Support.SlideInSupportChatButton.init();
+		Support.PersonalizedNewsCarousel.init();
 	}
 
 	$(init);

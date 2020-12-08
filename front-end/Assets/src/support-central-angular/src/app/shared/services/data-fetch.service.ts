@@ -14,10 +14,12 @@ import { AskCommunityProduct } from '../models/communities/ask-communities.model
 import { DocsProduct } from '../models/docs/docs-product.model';
 import { EPDProduct } from '../models/epd/epd-product.model';
 import { SupportQuestion } from '../models/questions/question.model';
+import { StateService } from './state.service';
 
 @Injectable()
 export class DataFetchService {
-    constructor (private http: HttpClient) {
+
+    constructor (private http: HttpClient, private state: StateService) {
 
     }
 
@@ -26,7 +28,10 @@ export class DataFetchService {
             return Promise.resolve(products)
         }
         
-        return this.http.get('/bin/supportcentralcontent?content_type=PRODUCT_DOWNLOAD').toPromise()
+        return this.http.get('/bin/supportcentralcontent?content_type=PRODUCT_DOWNLOAD').toPromise().then((response: any) => {
+            this.state.hasUserActivity = response.metaData.hasUserActivity;
+            return response.productList;
+        })
     }
 
     getCases(): Promise<Case[]> {
@@ -35,7 +40,11 @@ export class DataFetchService {
         }
         
         return this.http.get('/bin/supportcases').toPromise().then((response: any) => {
-            return response.Cases;
+            if (response.Cases) {
+                return response.Cases;
+            } else {
+                return [];
+            }
         })
     }
 
@@ -44,8 +53,9 @@ export class DataFetchService {
             return Promise.resolve(docs)
         }
 
-        return this.http.get('/bin/supportcentralcontent?content_type=DOCUMENTATION').toPromise().then((response:DocsProduct[]) => {
-           return response
+        return this.http.get('/bin/supportcentralcontent?content_type=DOCUMENTATION').toPromise().then((response:any) => {
+            this.state.hasUserActivity = response.metaData.hasUserActivity;
+            return response.productList;
         });
     }
 
@@ -55,7 +65,8 @@ export class DataFetchService {
         }
 
         return this.http.get('/bin/supportcentralcontent?content_type=FAQ_SUPPORT').toPromise().then((response:any) => {
-           return response.details
+            this.state.hasUserActivity = response.metaData.hasUserActivity;
+            return response.productList.details;
         });
     }
 
@@ -64,8 +75,9 @@ export class DataFetchService {
             return Promise.resolve(askCommunities);
         }
 
-        return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITIES').toPromise().then((response:AskCommunityProduct[]) => {
-           return response
+        return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITIES').toPromise().then((response:any) => {
+            this.state.hasUserActivity = response.metaData.hasUserActivity;
+            return response.productList;
         });
     }
 
