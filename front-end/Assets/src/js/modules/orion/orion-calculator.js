@@ -293,14 +293,14 @@
 			
 			if(orionCalculator.isOnScreen()){
 				sidebar.css({'top':top});
-			}else if(tabsWrap.isOnScreen()&&x<=lowerLimit){
+			}else{
 				if(x <= 0){
 					sidebar.css({'top':top,});
+				}else if(x >= lowerLimit){
+					sidebar.css({'top':lowerLimit+'px'});
 				}else{
 					sidebar.css({'top':x+'px'});
 				}
-			}else{
-				sidebar.css({'top':top});
 			}
 			
 		}
