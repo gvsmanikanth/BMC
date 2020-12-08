@@ -439,9 +439,12 @@
 
 					item += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 	
-					item += "</div>";//prodItem 
-				
-					$("#nonProdItemsWrap").append(item);
+					item += "</div>";//prodItem
+					
+					if(envType!="prod"){
+						$("#nonProdItemsWrap").append(item);
+					}
+					
 					$("#reviewItemsWrap").append(item);
 				}
 				nonProdDisplayCount++;
