@@ -476,6 +476,26 @@
 		tallyBox(Calculator);
 	}
 	
+	//reshuffle nonProd numbers
+	function renumber(Calculator){
+		var nonProdDisplayCount = 1;
+		
+		for(var i=0; i<Calculator.environments.length; i++){
+			var thisEnv = Calculator.environments[i];
+			var envType = thisEnv.envType;
+			
+			if(!thisEnv.deleted && envType == "nonProd"){
+				
+				if($("#nonProdItemsWrap .prodItem[data-env='"+envType+i+"']").length || $("#reviewItemsWrap .prodItem[data-env='"+envType+i+"']").length){
+					$(".prodItem[data-env='"+envType+i+"'] h3").html("Non-Production Environment "+nonProdDisplayCount);
+				}
+
+				nonProdDisplayCount++;
+			}
+		}
+		
+	}
+	
 	////analytics
 	function updateAdobeAnalyticsSliderInteraction(){
 		if(!($(event.target).hasClass('slider'))) return ;
@@ -521,6 +541,7 @@
 		if(!isFixScrollPositionCalled){
 			setTimeout(function() {isFixScrollPositionCalled = true; fixedPos();}, 500);
 		}
+		renumber(Calculator);
 	}
 	
 	//scroll to last item in active tab
