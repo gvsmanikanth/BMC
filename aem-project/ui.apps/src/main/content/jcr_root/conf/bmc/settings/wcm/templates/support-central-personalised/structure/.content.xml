@@ -32,6 +32,9 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-accountinfo-personalised"/>
+            <supportcentral_emp_behavior
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/supportcentral-internal-emp-behavior"/>
             <supportcentral_orientation_loggedin
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-orientation-loggedin"/>
@@ -45,9 +48,6 @@
             <supportcentral_dashboard
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-dashboard"/>
-            <supportcentral-news
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="bmc/components/structure/support-news-carousel"/>
             <supportcentral_orientation_nonloggedin
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-orientation-nonloggedin"/>
