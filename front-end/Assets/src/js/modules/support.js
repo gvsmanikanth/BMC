@@ -954,6 +954,21 @@ var Support = Support || {};
 	
 	//Personalized Support Central Feature Start
 	Support.PersonalizedNewsCarousel = {
+		isOnPersonalizedSupportLandingPage: function() {
+
+			if (typeof bmcMeta.page !== 'undefined'
+				&& typeof bmcMeta.page.longName === 'string') {
+			
+				var pathCheck = /supportcentralpersonalized/; //DXP-812
+				
+				if (bmcMeta.page.longName.match(pathCheck) !== null) {
+					return true;
+				}
+			}
+
+			// catch-all default
+			return false;
+		},
 		animate: function ({timing, draw, duration}) {
 
 			let start = performance.now();
@@ -987,8 +1002,18 @@ var Support = Support || {};
 			})
 		  },
 		  init: function () {
+			if(!Support.PersonalizedNewsCarousel.isOnPersonalizedSupportLandingPage()) {
+				return;
+			}
+			let news = document.querySelectorAll('.psc-news .news-block');
 			let rightArrow = document.querySelector('.psc-news .right-news-arrow');
 			let leftArrow = document.querySelector('.psc-news .left-news-arrow');
+			news.forEach((element) => {
+				let body = element.querySelector('.news-body');
+				let link = element.querySelector('h3 a').attributes.href.value;
+				body.innerHTML = body.innerText.slice(0,130) + '<a href="' + link + '">...</a>';
+				body.classList.remove('not-trimmed');
+			})
 			rightArrow.addEventListener('click', function (e) {
 			  let newsContainer = document.querySelector('.psc-news .news-container-wrapper');
 			  let newsArticle = document.querySelector('.psc-news .news-list .news-block');

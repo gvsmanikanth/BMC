@@ -58,6 +58,7 @@
 	}
 
 	.news-block {
+		position: relative;
 		min-width: 30%;
 		max-width: 30%;
 		margin-right: 5%;
@@ -66,7 +67,16 @@
 			0 9px 10px rgba(0, 0, 0, 0.06);
 		border-radius: 5px;
 		padding: 10px 20px;
-		& p {
+		.news-body {
+			font-size: 12px;
+			&.not-trimmed {
+				display: none;
+			}
+		}
+		.news-date {
+			position: absolute;
+			right: 8px;
+			bottom: 5px;
 			font-size: 12px;
 		}
 	}
