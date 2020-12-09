@@ -155,6 +155,7 @@
 
 		//edit env
 		this.editClick = function(e){
+			
 			if(!($(e).hasClass("edit-btn") || $(e).hasClass("cancel-btn") || $(e).hasClass("save-btn"))){
 				return;
 			}
@@ -385,8 +386,9 @@
 			var envType = thisEnv.envType;
 			
 			if(!thisEnv.deleted){
-				//if item not exists
-				if(!$("#nonProdItemsWrap .prodItem[data-env='"+envType+y+"']").length && !$("#nonProdItemsWrap .prodItem[data-env='"+envType+y+"']").length){
+				
+				//item not exists
+				if(!$("#nonProdItemsWrap .prodItem[data-env='"+envType+y+"']").length && !$("#reviewItemsWrap .prodItem[data-env='"+envType+y+"']").length){
 					var thisPrice = Calculator.getPriceForExecution(thisEnv.envType,thisEnv.quantity,true);
 					var thisQuantity = parseInt(thisEnv.quantity)+parseInt(thisEnv.baseEx);
 					var thisQuantityFormatted = thisQuantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -440,7 +442,7 @@
 					item += "<div class='edit-btn' data-nonprod='"+y+"' id='editBtn_"+y+"' onclick='window.calculator.editClick(this)'>Edit</div><div class='cancel-save-btn'><span class='cancel-btn' onclick='window.calculator.editClick(this)'>Cancel</span><span class='save-btn' onclick='window.calculator.editClick(this)'>Save changes</span></div>";
 	
 					item += "</div>";//prodItem
-					
+
 					if(envType!="prod"){
 						$("#nonProdItemsWrap").append(item);
 					}
