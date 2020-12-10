@@ -959,9 +959,13 @@ var Support = Support || {};
 			if (typeof bmcMeta.page !== 'undefined'
 				&& typeof bmcMeta.page.longName === 'string') {
 			
-				var pathCheck = /supportcentralpersonalized/; //DXP-812
+				var pathCheck = /supportcentralpersonalized/,
+					otherPathCheck = /support-central-redesign/;
+
 				
-				if (bmcMeta.page.longName.match(pathCheck) !== null) {
+				if (
+					bmcMeta.page.longName.match(pathCheck) !== null 
+					|| bmcMeta.page.longName.match(otherPathCheck) !== null) {
 					return true;
 				}
 			}
