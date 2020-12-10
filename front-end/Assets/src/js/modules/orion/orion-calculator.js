@@ -12,14 +12,15 @@
 			"prod" : {
 				"executionRange" : [
 						{
-							"quantity": 500,
-							"price": 9100
+							"quantity": 2000,
+							"price": 23300
+							
 						},{
 							"quantity": 1000,
 							"price": 14560
 						},{
-							"quantity": 2000,
-							"price": 23300
+							"quantity": 500,
+							"price": 9100
 						}
 					],
 				"basePrice" : 29000,
@@ -29,14 +30,14 @@
 			"nonProd" : {
 				"executionRange" : [
 						{
-							"quantity": 500,
-							"price": 4550
+							"quantity": 2000,
+							"price": 11650
 						},{
 							"quantity": 1000,
 							"price": 7280
 						},{
-							"quantity": 2000,
-							"price": 11650
+							"quantity": 500,
+							"price": 4550
 						}
 					],
 				"basePrice" : 19900,
