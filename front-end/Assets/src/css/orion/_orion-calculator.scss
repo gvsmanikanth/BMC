@@ -445,7 +445,7 @@
 
 	.slidecontainer {
 		width: 100%;
-		
+		::-ms-tooltip { display: none; }
 		.steplist {
 			display: flex;
 			width: 100%;
@@ -453,12 +453,12 @@
 			font-size: 14px;
 			overflow: hidden;
 			font-weight: 700;
-			margin-top: -20px;
+			margin-top: 0px;
 			@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {				
-				margin-top: -40px;
+				margin-top: -20px;
 				margin-bottom: 20px;
 			 }
-			
+			 
 			& > span {
 				width: 2ex;
 				display: flex;
@@ -489,7 +489,7 @@
 			  width: 100%;
 			  position: relative;
 			  z-index: 5;
-			  margin-top: 85px;
+			  margin-top: 70px;
 			  cursor: pointer;
 			  -webkit-appearance: none;
 			  &::-webkit-slider-thumb {

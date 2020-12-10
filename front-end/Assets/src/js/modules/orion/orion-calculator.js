@@ -205,8 +205,12 @@
 		var obj = this;
 		
 		if (options == "addUpdateEvent"){
-		  obj.attr("oninput", "updateSlider(this)");
+		  //obj.attr("oninput", "updateSlider(this)");
+		  $(this).on('input change', function(){
+			  updateSlider(this);
+		  });	  
 		}
+		
 		
 		var value = obj.val();
 		var valueFormatted = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -620,7 +624,7 @@
 	});
 	
 	//slider
-	document.addEventListener('oninput',sliderInput);
+	//document.addEventListener('oninput',sliderInput);
 	
 	//fire anaytics
 	$(".prodSlider").on("change",updateAdobeAnalyticsSliderInteraction);
