@@ -125,6 +125,15 @@
 			width: 100%;
 		}
 	}
+	.psc-news  {
+		.left-news-arrow {
+			left: -10px;
+		}
+	
+		.right-news-arrow {
+			right: -10px;
+		}
+	}
 }
 
 @media (max-width: 1200px) and (min-width: 800px) {

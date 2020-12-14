@@ -25,8 +25,6 @@ import { QuestionComponent } from './support-questions/question/question.compone
 import { CommunityComponent } from './community/community.component';
 import { CommunityService } from './shared/services/community/community.service';
 import { CommunityProductComponent } from './community/community-product/community-product.component';
-import { TileVer2Component } from './tile-ver2/tile.component';
-import { TileVer3Component } from './tile-ver3/tile.component';
 import { StateService } from './shared/services/state.service';
 
 const appRoutes: Routes = [
@@ -59,8 +57,6 @@ const appRoutes: Routes = [
     EPDVersionPipe,
     EpdProductComponent,
     TileComponent,
-    TileVer2Component,
-    TileVer3Component,
     CaseManagementComponent,
     DocsComponent,
     DocsProductComponent,

@@ -17,7 +17,7 @@ adapt-select {
             display:flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            max-height: 610px;
+            max-height: 650px;
             overflow: auto;
             padding-bottom: 15px;
             padding-right:3px;
@@ -35,50 +35,8 @@ adapt-select {
                 }
             }
             
-            
         }
         app-tile {
-            & {
-                min-width: 300px;
-                width: 30%;
-                min-height: 80px;
-                margin-top: 30px;
-            }
-            &.extended ::ng-deep {
-                .tile-left {
-                    background-color: #f86e00;
-                }
-                .tile-right span {
-                    color:  #f86e00;
-                }
-            }
-            &:last-child {
-                margin-right: 35%;
-            }
-           
-        }
-        app-tile-2 {
-            & {
-                min-width: 300px;
-                width: 30%;
-                min-height: 80px;
-                margin-top: 30px;
-            }
-            &.extended ::ng-deep {
-                .tile-left {
-                    background-color: #f86e00;
-                    width:3%;
-                }
-                .tile-right span {
-                    color:  #f86e00;
-                }
-            }
-            &:last-child {
-                margin-right: 35%;
-            }
-           
-        }
-        app-tile-3 {
             & {
                 min-width: 300px;
                 width: 30%;
@@ -101,7 +59,7 @@ adapt-select {
         }
     }
     .widget-container {
-        max-height: 630px;
+        max-height: 700px;
         overflow: auto;
     }
     .close-action {
