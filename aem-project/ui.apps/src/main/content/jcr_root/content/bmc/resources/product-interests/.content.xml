@@ -65,6 +65,14 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Cognitive Service Management"
             dropDownDisplay="No"/>
+    <!--  WEB-9502 Starts -->
+    <_x0032_44922277
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Compuware"
+            dropDownDisplay="Yes"
+            text="BMC Compuware"
+            value="Compuware"/>
+    <!--  WEB-9502 Ends -->
     <!--  WEB-5295 -->
     <_x0032_15078746
             jcr:primaryType="nt:unstructured"
@@ -296,10 +304,10 @@
             value="AMI Security"/>
     <_x0034_38283521
             jcr:primaryType="nt:unstructured"
-            jcr:title="AMI Cost"
+            jcr:title="AMI Cost &amp; Capacity Management"
             dropDownDisplay="Yes"
-            text="BMC AMI Cost"
-            value="AMI Cost"/>
+            text="BMC AMI Cost &amp; Capacity Management"
+            value="AMI Cost &amp; Capacity Management"/>
     <_x0037_88612595
             jcr:primaryType="nt:unstructured"
             jcr:title="AMI Operations"
