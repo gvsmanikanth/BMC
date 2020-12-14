@@ -40,6 +40,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(BlogServlet.class);
     private String base = "";
     private String hostName = "";
+    private String pressCDNUrl = "";
 
     // Don't run forever no matter what configuration says
     private static final int MAX_RETRY_ATTEMPTS = 100;
@@ -68,6 +69,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         maxRetryAttempts = Math.min(maxRetryAttempts, MAX_RETRY_ATTEMPTS);
         retryDelay = PropertiesUtil.toInteger(config.get("retryDelay"), 0);
         timeout = PropertiesUtil.toInteger(config.get("timeout"), 30000);
+        pressCDNUrl = PropertiesUtil.toString(config.get("pressCdnUrl"),null);
     }
 
     @Override
@@ -203,12 +205,18 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     }
 
     private String processLinks(String source) {
-        String replace = hostName + "/blogs";
-        String exclude = base + "/wp-content";
-        String token = "{EXCLUDE_PATH}";
-        String processed = source.replace(exclude, token);
-        processed = processed.replace(base, replace);
-        processed = processed.replace(token, exclude);
+        String host = hostName.substring(hostName.lastIndexOf('/')+1);
+        String baseURL = base.substring(base.lastIndexOf('/')+1);
+        String replace = host + "/blogs";
+        String exclude1 = baseURL + "/wp-content";
+        String exclude2 = pressCDNUrl + "/wp-content";
+        String token1 = "BASE_EXCLUDE_PATH";
+        String token2 = "CDN_EXCLUDE_PATH";
+        String processed = source.replaceAll(exclude1, token1);
+        processed = processed.replaceAll(exclude2,token2);
+        processed = processed.replaceAll(baseURL, replace);
+        processed = processed.replaceAll(token1, exclude1);
+        processed = processed.replaceAll(token2,exclude1);
         return processed;
     }
 
