@@ -41,6 +41,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private String base = "";
     private String hostName = "";
     private String pressCDNUrl = "";
+    private String serverName = "";
 
     // Don't run forever no matter what configuration says
     private static final int MAX_RETRY_ATTEMPTS = 100;
@@ -54,7 +55,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private int status = -1;
 
     private int timeout = 30000;
-    
+
     @Reference
     private RequestResponseFactory requestResponseFactory;
 
@@ -80,6 +81,9 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                     request.getServerName(),
                     request.getServerPort(),
                     request.getContextPath()).toString();
+            serverName = request.getServerName();
+            logger.info("hostname: "+hostName);
+            logger.info("server name : "+serverName);
         } catch (MalformedURLException e) {
             // Fallback on prod BMC if URL error is encountered.
             hostName = "http://www.bmc.com";
@@ -129,7 +133,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                     logger.error(ex.getMessage());
                 }
         	}else{
-        	
+
             response.setCharacterEncoding(StandardCharsets.UTF_8.name());
             response.setContentType("text/html");
             response.getWriter().append(processed);
@@ -207,16 +211,18 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private String processLinks(String source) {
         String host = hostName.substring(hostName.lastIndexOf('/')+1);
         String baseURL = base.substring(base.lastIndexOf('/')+1);
-        String replace = host + "/blogs";
+        String replace = serverName + "/blogs";
         String exclude1 = baseURL + "/wp-content";
         String exclude2 = pressCDNUrl + "/wp-content";
         String token1 = "BASE_EXCLUDE_PATH";
         String token2 = "CDN_EXCLUDE_PATH";
+        logger.info("replace value : "+replace);
         String processed = source.replaceAll(exclude1, token1);
         processed = processed.replaceAll(exclude2,token2);
         processed = processed.replaceAll(baseURL, replace);
         processed = processed.replaceAll(token1, exclude1);
         processed = processed.replaceAll(token2,exclude1);
+        logger.info(processed);
         return processed;
     }
 
