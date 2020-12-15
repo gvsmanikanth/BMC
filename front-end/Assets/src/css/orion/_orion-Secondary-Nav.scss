@@ -139,8 +139,7 @@
                                       
                 } 
                 &.activePage{
-                    a{
-                        color: #29a5d6;                    
+                    a{                
                         &:before{
                             @media(min-width: $break-md){                           
                                 background: #29a5d6;
