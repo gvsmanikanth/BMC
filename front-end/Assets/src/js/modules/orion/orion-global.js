@@ -78,6 +78,17 @@
     // example usevar div = document.querySelector('div');var divOffset = offset(div);console.log(divOffset.left, divOffset.top);
 
 // Tooltip pointer position
+var tooltips = $('span.orion_tooltip');
+if(tooltips.length){
+	tooltips.each(function(){
+		var pattern = /&nbsp;<span class="orion_tooltip/g;
+		var thisParent = $(this).parent().html();
+		if(!pattern.test(thisParent)){
+			$(this).parent().html(thisParent.replace(/\s?<span class="orion_tooltip/g,'&nbsp;<span class="orion_tooltip'));
+		}
+	});
+}
+
  $("span.orion_tooltip").hover(function() {
     $(this).orionTooltip();
   });
@@ -88,7 +99,7 @@
     var winHeight=$(window).height();
 		
 		var rect = this[0].getBoundingClientRect();
-		console.log(rect.top, rect.right, rect.bottom, rect.left);
+		//console.log(rect.top, rect.right, rect.bottom, rect.left);
 		
         var mWPointer = rect.left; //get the left offset of the element
         var mHPointer = rect.top;
@@ -100,10 +111,10 @@
         }
 
 		if(winHeight/2 >= mHPointer){
-			console.log("align to bottom")
+			//console.log("align to bottom");
 			$(this).addClass("tooltip_pointer_bottom");
 		}else{
-			$(this).removeClass("tooltip_pointer_bottom")
+			$(this).removeClass("tooltip_pointer_bottom");
 		}
 		
   };
