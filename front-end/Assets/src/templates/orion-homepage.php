@@ -104,7 +104,7 @@
 	<div class="layout-inner-wrap">
 		<div class="flex-wrap mb2">		
 			<div class="flex flex-item col-12 lg-col-5 mb2 flex-justify-center">
-				<div class="imageContainer-no-cloud-bg">
+				<div class="imageContainer-no-cloud-bg border-grey">
 					<img class="" src="Assets/src/img/orion/splitimage-placeholder.png" alt="split-content" title="split-content"></img>
 				</div>				
 			</div>

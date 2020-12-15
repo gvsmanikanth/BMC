@@ -93,7 +93,12 @@
     .imageContainer-no-cloud-bg {
         width: 100%;
         
-    } 
+    }
+	.border-grey {
+		img {
+			border: 1px solid #ddd;
+		}
+	}
     
 }
 
