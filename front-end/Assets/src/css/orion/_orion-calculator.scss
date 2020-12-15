@@ -169,7 +169,7 @@
 						} 
 						&.main {
 							border: none;
-							padding:  0;
+							padding:  0 20px;
 							margin: 0;
 						}
 						.delete{
@@ -504,11 +504,12 @@
 			& > span.slider-container {
 			  display: inline-block;
 			  min-height: 110px;
+			  width: 100%;
 			  display: inline-block;
 			  position: absolute;
 			  top: 70px;
-			  left: -8px;
-			  right: 46px;
+			  left: 0;
+			  right: 0;
 			  z-index: 3;
 			  -webkit-box-sizing: border-box;
 			  -moz-box-sizing: border-box;
@@ -538,15 +539,15 @@
 				  position: absolute;
 				  z-index: 1;
 				  top: 12px;
-				  left: 10px;
-				  right: -42px;
+				  left: 0;
+				  right: 0;
 				  height: 11px;
 				  overflow: hidden;
 				  -webkit-border-radius: 10px;
 				  -moz-border-radius: 10px;
 				  border-radius: 10px;
 				  & > span {
-					background: linear-gradient(90deg,#2BD4EE 0%, #1A98FF 100%);
+					background: linear-gradient(90deg,#2BD4EE 0%, #1A98FF 100%); 
 					display: inline-block;
 					float: left;
 					height: 11px;
@@ -555,44 +556,45 @@
 				}
 				& > span.nonProd {
 				  background-color: #BDBDBD;
-				  background-image:  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 1) - 2px), white calc(100% / 38 * 1), rgba(255,255,255,0) calc(100% / 38 * 1)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 2) - 2px), white calc(100% / 38 * 2), rgba(255,255,255,0) calc(100% / 38 * 2)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 3) - 2px), white calc(100% / 38 * 3), rgba(255,255,255,0) calc(100% / 38 * 3)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 4) - 2px), white calc(100% / 38 * 4), rgba(255,255,255,0) calc(100% / 38 * 4)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 5) - 2px), white calc(100% / 38 * 5), rgba(255,255,255,0) calc(100% / 38 * 5)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 6) - 2px), white calc(100% / 38 * 6), rgba(255,255,255,0) calc(100% / 38 * 6)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 7) - 2px), white calc(100% / 38 * 7), rgba(255,255,255,0) calc(100% / 38 * 7)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 8) - 2px), white calc(100% / 38 * 8), rgba(255,255,255,0) calc(100% / 38 * 8)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 9) - 2px), white calc(100% / 38 * 9), rgba(255,255,255,0) calc(100% / 38 * 9)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 10) - 2px), white calc(100% / 38 * 10), rgba(255,255,255,0) calc(100% / 38 * 10)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 11) - 2px), white calc(100% / 38 * 11), rgba(255,255,255,0) calc(100% / 38 * 11)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 12) - 2px), white calc(100% / 38 * 12), rgba(255,255,255,0) calc(100% / 38 * 12)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 13) - 2px), white calc(100% / 38 * 13), rgba(255,255,255,0) calc(100% / 38 * 13)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 14) - 2px), white calc(100% / 38 * 14), rgba(255,255,255,0) calc(100% / 38 * 14)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 15) - 2px), white calc(100% / 38 * 15), rgba(255,255,255,0) calc(100% / 38 * 15)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 16) - 2px), white calc(100% / 38 * 16), rgba(255,255,255,0) calc(100% / 38 * 16)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 17) - 2px), white calc(100% / 38 * 17), rgba(255,255,255,0) calc(100% / 38 * 17)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 18) - 2px), white calc(100% / 38 * 18), rgba(255,255,255,0) calc(100% / 38 * 18)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 19) - 2px), white calc(100% / 38 * 19), rgba(255,255,255,0) calc(100% / 38 * 19)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 20) - 2px), white calc(100% / 38 * 20), rgba(255,255,255,0) calc(100% / 38 * 20)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 21) - 2px), white calc(100% / 38 * 21), rgba(255,255,255,0) calc(100% / 38 * 21)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 22) - 2px), white calc(100% / 38 * 22), rgba(255,255,255,0) calc(100% / 38 * 22)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 23) - 2px), white calc(100% / 38 * 23), rgba(255,255,255,0) calc(100% / 38 * 23)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 24) - 2px), white calc(100% / 38 * 24), rgba(255,255,255,0) calc(100% / 38 * 24)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 25) - 2px), white calc(100% / 38 * 25), rgba(255,255,255,0) calc(100% / 38 * 25)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 26) - 2px), white calc(100% / 38 * 26), rgba(255,255,255,0) calc(100% / 38 * 26)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 27) - 2px), white calc(100% / 38 * 27), rgba(255,255,255,0) calc(100% / 38 * 27)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 28) - 2px), white calc(100% / 38 * 28), rgba(255,255,255,0) calc(100% / 38 * 28)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 29) - 2px), white calc(100% / 38 * 29), rgba(255,255,255,0) calc(100% / 38 * 29)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 30) - 2px), white calc(100% / 38 * 30), rgba(255,255,255,0) calc(100% / 38 * 30)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 31) - 2px), white calc(100% / 38 * 31), rgba(255,255,255,0) calc(100% / 38 * 31)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 32) - 2px), white calc(100% / 38 * 32), rgba(255,255,255,0) calc(100% / 38 * 32)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 33) - 2px), white calc(100% / 38 * 33), rgba(255,255,255,0) calc(100% / 38 * 33)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 34) - 2px), white calc(100% / 38 * 34), rgba(255,255,255,0) calc(100% / 38 * 34)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 35) - 2px), white calc(100% / 38 * 35), rgba(255,255,255,0) calc(100% / 38 * 35)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 36) - 2px), white calc(100% / 38 * 36), rgba(255,255,255,0) calc(100% / 38 * 36)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 37) - 2px), white calc(100% / 38 * 37), rgba(255,255,255,0) calc(100% / 38 * 37)),
-				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 38 * 38) - 2px), white calc(100% / 38 * 38), rgba(255,255,255,0) calc(100% / 38 * 38))
+				  background-image:  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 1) - 2px), white calc(100% / 39 * 1), rgba(255,255,255,0) calc(100% / 39 * 1)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 2) - 2px), white calc(100% / 39 * 2), rgba(255,255,255,0) calc(100% / 39 * 2)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 3) - 2px), white calc(100% / 39 * 3), rgba(255,255,255,0) calc(100% / 39 * 3)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 4) - 2px), white calc(100% / 39 * 4), rgba(255,255,255,0) calc(100% / 39 * 4)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 5) - 2px), white calc(100% / 39 * 5), rgba(255,255,255,0) calc(100% / 39 * 5)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 6) - 2px), white calc(100% / 39 * 6), rgba(255,255,255,0) calc(100% / 39 * 6)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 7) - 2px), white calc(100% / 39 * 7), rgba(255,255,255,0) calc(100% / 39 * 7)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 8) - 2px), white calc(100% / 39 * 8), rgba(255,255,255,0) calc(100% / 39 * 8)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 9) - 2px), white calc(100% / 39 * 9), rgba(255,255,255,0) calc(100% / 39 * 9)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 10) - 2px), white calc(100% / 39 * 10), rgba(255,255,255,0) calc(100% / 39 * 10)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 11) - 2px), white calc(100% / 39 * 11), rgba(255,255,255,0) calc(100% / 39 * 11)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 12) - 2px), white calc(100% / 39 * 12), rgba(255,255,255,0) calc(100% / 39 * 12)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 13) - 2px), white calc(100% / 39 * 13), rgba(255,255,255,0) calc(100% / 39 * 13)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 14) - 2px), white calc(100% / 39 * 14), rgba(255,255,255,0) calc(100% / 39 * 14)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 15) - 2px), white calc(100% / 39 * 15), rgba(255,255,255,0) calc(100% / 39 * 15)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 16) - 2px), white calc(100% / 39 * 16), rgba(255,255,255,0) calc(100% / 39 * 16)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 17) - 2px), white calc(100% / 39 * 17), rgba(255,255,255,0) calc(100% / 39 * 17)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 18) - 2px), white calc(100% / 39 * 18), rgba(255,255,255,0) calc(100% / 39 * 18)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 19) - 2px), white calc(100% / 39 * 19), rgba(255,255,255,0) calc(100% / 39 * 19)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 20) - 2px), white calc(100% / 39 * 20), rgba(255,255,255,0) calc(100% / 39 * 20)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 21) - 2px), white calc(100% / 39 * 21), rgba(255,255,255,0) calc(100% / 39 * 21)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 22) - 2px), white calc(100% / 39 * 22), rgba(255,255,255,0) calc(100% / 39 * 22)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 23) - 2px), white calc(100% / 39 * 23), rgba(255,255,255,0) calc(100% / 39 * 23)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 24) - 2px), white calc(100% / 39 * 24), rgba(255,255,255,0) calc(100% / 39 * 24)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 25) - 2px), white calc(100% / 39 * 25), rgba(255,255,255,0) calc(100% / 39 * 25)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 26) - 2px), white calc(100% / 39 * 26), rgba(255,255,255,0) calc(100% / 39 * 26)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 27) - 2px), white calc(100% / 39 * 27), rgba(255,255,255,0) calc(100% / 39 * 27)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 28) - 2px), white calc(100% / 39 * 28), rgba(255,255,255,0) calc(100% / 39 * 28)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 29) - 2px), white calc(100% / 39 * 29), rgba(255,255,255,0) calc(100% / 39 * 29)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 30) - 2px), white calc(100% / 39 * 30), rgba(255,255,255,0) calc(100% / 39 * 30)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 31) - 2px), white calc(100% / 39 * 31), rgba(255,255,255,0) calc(100% / 39 * 31)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 32) - 2px), white calc(100% / 39 * 32), rgba(255,255,255,0) calc(100% / 39 * 32)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 33) - 2px), white calc(100% / 39 * 33), rgba(255,255,255,0) calc(100% / 39 * 33)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 34) - 2px), white calc(100% / 39 * 34), rgba(255,255,255,0) calc(100% / 39 * 34)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 35) - 2px), white calc(100% / 39 * 35), rgba(255,255,255,0) calc(100% / 39 * 35)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 36) - 2px), white calc(100% / 39 * 36), rgba(255,255,255,0) calc(100% / 39 * 36)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 37) - 2px), white calc(100% / 39 * 37), rgba(255,255,255,0) calc(100% / 39 * 37)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 38) - 2px), white calc(100% / 39 * 38), rgba(255,255,255,0) calc(100% / 39 * 38)),
+				  linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0) calc((100% / 39 * 39) - 2px), white calc(100% / 39 * 39), rgba(255,255,255,0) calc(100% / 39 * 39))
 				  
 				  ;
 				  -webkit-transform: translate3d(0, 0, 0);
@@ -604,8 +606,8 @@
 				  position: absolute;
 				  z-index: 1;
 				  top: 12px;
-				  left: 10px;
-				  right: -42px;
+				  left: 0;
+				  right: 0;
 				  height: 11px;
 				  overflow: hidden;
 				  -webkit-border-radius: 10px;
@@ -622,7 +624,7 @@
 				& > span.bar-btn {
 				  display: inline-block;
 				  position: absolute;
-				  width: 46px;
+				  width: 60px;
 				  height: 30px;
 				  padding-top: 30px;
 				  font-weight: bold;
@@ -633,6 +635,7 @@
 				  top: -65px;
 				  font-size: 14px;
 				  cursor:pointer;
+				  margin-left: -30px;
 		   
 				  &:after {
 					content: "";
@@ -643,7 +646,7 @@
 					height: 25px;
 					display: inline-block;
 					position: absolute;
-					left: 8px;
+					left: 15px;//8px;
 					top: 65px;
 					z-index: 3;
 					cursor:pointer;

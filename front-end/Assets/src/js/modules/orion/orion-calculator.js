@@ -229,18 +229,16 @@
 	//update slider
 	window.updateSlider = function (passObj,option) {
 		var obj = $(passObj);
+		var nextObj = obj.next();
 		var value = obj.val();
 		var valueFormatted = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		if(option != "noUpdageEnvionmnet")
 			window.calculator.updateEnvironment(value);
-		var min = obj.attr("min");
 		var max = obj.attr("max");
-		var range = Math.round(max - min);
-		var percentage = Math.round((value - min) * 100 / range);
-		var nextObj = obj.next();
-		nextObj.find("span.bar-btn").css("left", percentage + "%");
+		var percentage = (value * 100 / max);
+		nextObj.find("span.bar-btn ").css("left", percentage + "%");
 		nextObj.find("span.bar > span").css("width", percentage + "%");
-		nextObj.find("span.bar-btn > span").text("+"+valueFormatted);				
+		nextObj.find("span.bar-btn > span").text("+"+valueFormatted);			
 	};
 	
 	//slider
