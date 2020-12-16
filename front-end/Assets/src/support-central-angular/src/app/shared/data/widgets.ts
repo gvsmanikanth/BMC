@@ -51,7 +51,7 @@ export const widgets: Widget[] = [
         id: "training",
         href: null,
         isExtended: false,
-        title: "Get Training",
+        title: "Training & Certification",
         description: "Choose among role specific training",
         routerLink: null,
         icon: "d-icon-training_room"
@@ -70,8 +70,8 @@ export const widgets: Widget[] = [
         id: "supportedProducts",
         href: null,
         isExtended: false,
-        title: "Supported Products",
-        description: "Find product support status, dates",
+        title: "Product Catalog",
+        description: "Product support status and lifecycle dates",
         routerLink: null,
         icon: "d-icon-case_wrench"
     },
@@ -79,7 +79,7 @@ export const widgets: Widget[] = [
         id: "supportVideos",
         href: null,
         isExtended: false,
-        title: "Support Videos",
+        title: "How-to Videos",
         description: "View support video solutions",
         routerLink: null,
         icon: "d-icon-right-attachment_video_adapt"
