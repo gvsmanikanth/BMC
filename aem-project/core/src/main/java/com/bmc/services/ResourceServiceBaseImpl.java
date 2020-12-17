@@ -121,6 +121,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as BuyerStagesList
             values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_BUYER_STAGES_CUSTOM_LIST));
         }
+        //WEB-6680 Removes unwanted filter values.
+       removeFilterOptions(values);
         return values;
     }
 
@@ -239,5 +241,20 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         }
     }
 
-    
+    /*
+    Method name :removeFilterOptions()
+    returns :Map<String, String>
+    Explanation : Removes unwanted filter options from Property filters, as defined in property mapping
+    unwantedFilterOptions.
+     */
+    public  Map<String, String> removeFilterOptions( Map<String, String> values)
+    {
+        for (Map.Entry<String, String> entry : values.entrySet()) {
+            String value2 = getPropertyOptionIfFound (Arrays.asList(ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), entry.getValue ());
+            log.info ("Value "+value2);
+                values.entrySet ().removeIf (e ->(value2 != null));
+            //unsortedList.add(entry.getValue());
+        }
+        return values;
+    }
 }
