@@ -95,7 +95,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         String src = base + path;
         // WEB-3745: Blog Search
         if(request.getParameter("s") != null && request.getParameter("s") != ""){
-        	src = base + path + "?s="+URLEncoder.encode(request.getParameter("s"));
+            src = base + path + "?s="+URLEncoder.encode(request.getParameter("s"));
         }
         String source = "";
         logger.info("Loading URL: " + src);
@@ -114,30 +114,30 @@ public class BlogServlet extends SlingSafeMethodsServlet {
             response.setStatus(status);
         }
         try {
-        	if(status == 404){
-        		try{
-        		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-                response.setContentType("text/html");
-                //response.getWriter().append("404");
-                String path = "/content/bmc/404.html";
-                HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
-                WCMMode.DISABLED.toRequest(req);
+            if(status == 404){
+                try{
+                    response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                    response.setContentType("text/html");
+                    //response.getWriter().append("404");
+                    String path = "/content/bmc/404.html";
+                    HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
+                    WCMMode.DISABLED.toRequest(req);
 
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                HttpServletResponse resp = requestResponseFactory.createResponse(out);
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    HttpServletResponse resp = requestResponseFactory.createResponse(out);
 
-                requestProcessor.processRequest(req, resp, request.getResourceResolver());
-                String html = out.toString();
-                response.getWriter().append(html);
-        		} catch (IOException|ServletException ex) {
+                    requestProcessor.processRequest(req, resp, request.getResourceResolver());
+                    String html = out.toString();
+                    response.getWriter().append(html);
+                } catch (IOException|ServletException ex) {
                     logger.error(ex.getMessage());
                 }
-        	}else{
+            }else{
 
-            response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            response.setContentType("text/html");
-            response.getWriter().append(processed);
-        	}
+                response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                response.setContentType("text/html");
+                response.getWriter().append(processed);
+            }
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
@@ -198,8 +198,15 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private String processSource(String source) {
         String processed;
         processed = stripRefresh(source);
+        processed = stripEscapeChracters(source);
         processed = processLinks(processed);
         return processed;
+    }
+
+    private String stripEscapeChracters(String source) {
+        Pattern p = Pattern.compile("\\\\/",
+                Pattern.CASE_INSENSITIVE);
+        return p.matcher(source).replaceAll("/");
     }
 
     private String stripRefresh(String source) {
@@ -209,7 +216,6 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     }
 
     private String processLinks(String source) {
-        String host = hostName.substring(hostName.lastIndexOf('/')+1);
         String baseURL = base.substring(base.lastIndexOf('/')+1);
         String replace = serverName + "/blogs";
         String exclude1 = baseURL + "/wp-content";
