@@ -158,7 +158,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             } else {
                 Collections.sort (list, new RCFilterComparator ());
             }
-
+            log.info("ORDERED LIST"+list.toString ());
             for (String str : list) {
                 for (Map.Entry<String, String> entry : values.entrySet ()) {
                     if (entry.getValue ().equals (str)) {
@@ -192,14 +192,14 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         if (unsortedList != null && ! unsortedList.isEmpty () && orderList != null && ! orderList.isEmpty ()) {
 
             for (String value : orderList) {
-                log.info("Value "+value);
                 Boolean found = getPropertyOptionIfFound (unsortedList, value); // search for the item on the list by ID
-                Boolean NotFound = getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), value);
-                if (found && !NotFound) sortedList.add (value);       // if found add to sorted list
-                unsortedList.remove (value);        // remove added item
+                //Boolean NotFound = getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), value);
+                if (found) sortedList.add (value);       // if found & no unwanted values add to sorted list
+                    unsortedList.remove (value);        // remove added item
             }
             //sortedList.addAll(unsortedList);        // append the reaming items on the unsorted list to new sorted list
         }
+        log.info ("ORDERED LIST "+orderList.toString ());
         for (String str : sortedList) {
             for (Map.Entry<String, String> entry : values.entrySet ()) {
                 if (entry.getValue ().equals (str)) {
