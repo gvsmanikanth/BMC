@@ -21,7 +21,8 @@
             <div class="flex-item col sm-col-6 col-12 md-col-6 pxr1">
                <h5>Includes:</h5>
                <ul class="blue-check-list">
-                  <li>500 daily executions</li>
+                  <li>500 daily executions<span class="orion_tooltip">
+    <span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></li>
                   <li>Option to add up to 6500 daily executions*</li>
                   <li>BMC's Industry leading Continuous Support </li>
                </ul>

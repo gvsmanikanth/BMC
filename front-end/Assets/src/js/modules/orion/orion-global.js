@@ -84,7 +84,7 @@ if(tooltips.length){
 		var pattern = /&nbsp;<span class="orion_tooltip/g;
 		var thisParent = $(this).parent().html();
 		if(!pattern.test(thisParent)){
-			$(this).parent().html(thisParent.replace(/\s?<span class="orion_tooltip/g,'&nbsp;<span class="orion_tooltip'));
+			$(this).parent().html(thisParent.replace(/\s*(<span class="orion_tooltip.*?">)/g,"&nbsp;$1<span class='inner'>&nbsp;</span>"));
 		}
 	});
 }
