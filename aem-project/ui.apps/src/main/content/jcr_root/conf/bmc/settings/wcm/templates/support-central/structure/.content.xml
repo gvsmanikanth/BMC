@@ -35,6 +35,9 @@
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bmc/components/structure/supportcentral-news"/>
+            <supportcentral_banner
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/supportcentral-banner"/>
             <supportcentral_cases
                     jcr:created="{Date}2017-06-17T13:36:47.741-07:00"
                     jcr:createdBy="admin"
