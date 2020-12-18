@@ -72,11 +72,11 @@
         jcr:primaryType="nt:unstructured"
         text="Mainframe Cost Management"/>
     <Mainframe_DevOps
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe DevOps"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe DevOps"/>
     <Mainframe_AIOps
-            jcr:primaryType="nt:unstructured"
-            text="Mainframe AIOps"/>
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe AIOps"/>
     <Mainframe_Systems_Management
         jcr:primaryType="nt:unstructured"
         text="Mainframe Systems Management"/>
@@ -92,4 +92,15 @@
     <BMC_AMI_for_Security_Mgmt
         jcr:primaryType="nt:unstructured"
         text="BMC AMI for Security Mgmt"/>
+        <!--  WEB-9525 Starts-Compuware Migration - AEM Form Value Changes | Added 3 New Values to Content Preferences -->
+    <Mainframe_AppDev
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe AppDev"/>
+    <Mainframe_Services
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe Services"/>
+    <Mainframe_Testing
+        jcr:primaryType="nt:unstructured"
+        text="Mainframe Testing"/>
+        <!--  WEB-9525 Ends -->
 </jcr:root>
