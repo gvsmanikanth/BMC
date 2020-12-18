@@ -17,6 +17,9 @@
         if(document.getElementById("pdfReader")){
             document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
         }
+        if(document.getElementById("doc-iframe-container")){
+            document.getElementById("doc-iframe-container").style.height = (windowHeight - 80) + "px";
+        }
         
 
     }

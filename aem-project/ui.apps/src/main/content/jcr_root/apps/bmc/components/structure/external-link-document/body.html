@@ -16,7 +16,12 @@
 </sly>
 <sly data-sly-test="${properties.docTypePrefix == 'custom'}">
         <sly data-sly-test.documentPrefix="${properties.customPrefix}:"/>
-</sly>  
+</sly> 
+<sly data-sly-test="${documentLink}" data-sly-unwrap>
+	<sly data-sly-test.isdocumentPDF="${('pdf' in documentLink) || ('PDF' in documentLink)}"/>
+</sly>
+
+
 <sly data-sly-test="${(properties.displayType == 'redirect') || (!properties.displayType) || ('http:' in documentLink)}">
 	<sly data-sly-resource="${ @ resourceType ='bmc/components/structure/external-link-document',addSelectors='pdf'}"></sly>
 </sly>
@@ -36,41 +41,46 @@
 				<section class="bg-white">
 					<div class="layout-inner-wrap">
 						<div class="aem-GridColumn aem-GridColumn--default--12">
-							<div class="text-right pyt1">
-								<a id="desktopbtn" href="${documentLink}" alt="Download PDF" title="Download PDF" 
-								target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download PDF
-								</a>
-								<!--/* WEB-8522 Mobile view update */-->
-								<a id="mobilebtn"  href="${documentLink}" alt="Download PDF" title="Download PDF" 
-								 target="_blank" class="btn btnPrimary mb2 inline-block">
-    								<span><img src="/content/dam/bmc/home/pdf.svg" alt="PDF download icon"/></span><br/>
-    								<span class="learn-more">Download PDF</span>
-    							</a>
-    						</div>     						
-							<div class="md-flex full-bleed-two-column">
-								<div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 pxr1">									
-                                <sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
-                                </div>                                   
-								<div class="flex-item col col-12">                                 
-									<div id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
-										<embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;"/>
-									</div>
+								<div class="text-right pyt2">
+                                        <a data-sly-test="${isdocumentPDF}" id="desktopbtn" href="${documentLink}" alt="Download PDF" title="Download PDF" 
+                                        target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download PDF
+                                        </a>
+                                        	<!--/* WEB-8522 Mobile view update */-->
+                                        <a data-sly-test="${isdocumentPDF}" id="mobilebtn"  href="${documentLink}" alt="Download PDF" title="Download PDF" 
+                                         target="_blank" class="btn btnPrimary mb2 inline-block">
+                                            <span><img src="/content/dam/bmc/home/pdf.svg" alt="PDF download icon"/></span><br/>
+                                            <span class="learn-more">Download PDF</span>
+                                        </a>	
+								</div>
+
+							<div class="md-flex full-bleed-two-column ${isdocumentPDF ? '' : 'documentContainer-iframe'}">                            
+								<div data-sly-test="${properties.fragmentPath}" class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 pxr1">									
+                                	<sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
+                                </div>
+
+								<div class="flex-item col col-12">                                	
+                                        <div data-sly-test="${isdocumentPDF}" class="docContainerWrap" id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
+                                            <embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;"/>
+                                        </div>                                   
+                                      	<div data-sly-test="${!isdocumentPDF}" class="docContainerWrap" id="doc-iframe-container" >
+               								<iframe src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;"> </iframe>
+            							</div>
 								</div>
 							</div>
 			
 			<script>
-			function getAvailableHeight() {
-				var actualHeight = window.innerHeight ||
-								  document.documentElement.clientHeight ||
-								  document.body.clientHeight ||
-								  document.body.offsetHeight;
-				return actualHeight;
-			}
-			
-			var windowHeight = getAvailableHeight();
-			document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
-			
-			</script>    
+                 function getAvailableHeight() {
+                    var actualHeight = window.innerHeight ||
+                                   document.documentElement.clientHeight ||
+                                   document.body.clientHeight ||
+                                   document.body.offsetHeight;
+                    return actualHeight;
+                 }
+                 
+                 var windowHeight = getAvailableHeight();
+                 document.getElementsByClassName("docContainerWrap")[0].style.height = (windowHeight - 80) + "px";
+
+      		</script>    
 		 </div>
 		</div>
 	</section>
