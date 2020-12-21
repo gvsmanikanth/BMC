@@ -32,6 +32,12 @@
 	font-size: 12px;
 }
 
+.support-message-box.psc-promo {
+	p {
+		border-color: #F86e00;
+	}
+}
+
 @media (min-width: 440px) {
 	.support-search.psc {
 		.CoveoSearchInterface .CoveoSearchbox {

@@ -26,6 +26,7 @@ import { CommunityComponent } from './community/community.component';
 import { CommunityService } from './shared/services/community/community.service';
 import { CommunityProductComponent } from './community/community-product/community-product.component';
 import { StateService } from './shared/services/state.service';
+import { ServicesAndConsultingComponent } from './services-and-consulting/services-and-consulting.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +48,10 @@ const appRoutes: Routes = [
   {
     path: 'community',
     component: CommunityComponent
+  },
+  {
+    path: 'sac',
+    component: ServicesAndConsultingComponent
   }
 ]
 
@@ -64,6 +69,7 @@ const appRoutes: Routes = [
     QuestionComponent,
     CommunityComponent,
     CommunityProductComponent,
+    ServicesAndConsultingComponent,
   ],
   imports: [
     BrowserModule,
