@@ -22,7 +22,8 @@
     <!--<filter root="/conf/bmc/settings/wcm/templates/course-template" mode="replace"/>-->
     <!--<filter root="/conf/bmc/settings/wcm/templates/products-all" mode="merge"/>-->
 	 <!-- WEB-6185 RC Template START -->
-		<filter root="/conf/bmc/settings/wcm/templates/resource-center-template" mode="replace"/>   	
+		<filter root="/conf/bmc/settings/wcm/templates/resource-center-template" mode="replace"/>
+    <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>
     <!-- WEB-6185 RC Template END -->
     <!-- WEB-4924 Forms redesign new templates START -->
     <!-- WEB-5345 remove merge and add replace. -->
@@ -100,5 +101,5 @@
     <filter root="/oak:index/textLucene" />
     <filter root="/oak:index/vidLucene" />
     
-    <filter root="/conf/bmc/settings/wcm/templates/support-central-personalised" mode="replace"/> 
+    <filter root="/conf/bmc/settings/wcm/templates/support-central-personalised" mode="merge"/>
 </workspaceFilter>
