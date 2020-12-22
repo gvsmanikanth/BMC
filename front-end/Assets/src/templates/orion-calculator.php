@@ -110,71 +110,62 @@
 					<div data-orion-tab-body="1" class="tab-body active">
 						<h3>Choose Additional Daily Executions </h3>
 						<p>Need more executions for your Start Package? We’ve got you covered. Our Start Plan comes with 500 daily executions, but you can add up to 6000 additional daily executions. If you need more than 6500 total daily executions, contact our Sales experts to learn more about our customizable Scale Plan.</p>
-						<div class="slidecontainer">
-							<input data-env="prod" data-id="0" type="range" min="0" max="6500" value="0" onchange="window.calculator.updateEnvironment(this.value)" class="slider prodSlider" id="prodExecutions" step="500" >
-							
-							<div class="steplist">
-								<span data-value="0"></span>
-								<span data-value="500"></span>
-								<span class="marker" data-value="1000">1k</span>
-								<span data-value="1500"></span>
-								<span data-value="2000"></span>
-								<span data-value="2500"></span>
-								<span data-value="3000"></span>
-								<span data-value="3500"></span>
-								<span data-value="4000"></span>
-								<span data-value="4500"></span>
-								<span class="marker" data-value="5000">5k</span>
-								<span data-value="5500"></span>
-								<span data-value="6000"></span>
-								<span data-value="6500"></span>
+						
+						
+						<div class="prodItem main" data-env="prod0">
+							<div class="slidecontainer" data-nonprod="0">
+								<span class='range-slider'>
+									<input data-id="0" data-env="prod" onchange="window.calculator.updateEnvironment(this.value)" type="range" min="0" max="6500" value="0" class="slider sliderNew" id="prod0" step="500" oninput="updateSlider(this)">
+									<span class='slider-container'>
+										<span class='bar prod'><span></span></span>
+										<span class='bar-btn'><span>0</span></span>
+									</span>
+								</span>
+								<div class="steplist">
+									<span>0</span>
+									<span>500</span>
+									<span value="1000" class="marker">1k</span>
+									<span>1500</span>
+									<span>2000</span>
+									<span>2500</span>
+									<span>3000</span>
+									<span>3500</span>
+									<span>4000</span>
+									<span>4500</span>
+									<span value="5000" class="marker">5k</span>
+									<span>5500</span>
+									<span>6000</span>
+									<span>6500</span>
+								</div>
+								<div class="totolExecutions flex-wrap " style="overflow: visible;">
+									<div class="flex-item col-12 md-col-7 lg-col-6">
+										<div class="total">
+											<div class="total-left">
+												<p>Executions (including base 500)</p>
+												<p><strong>500</strong></p>
+											</div>
+											<div class="total-right">
+												<p>Cost </p>
+												<p><strong>$29,000</strong></p>
+											</div>
+										</div>
+									</div>
+									<div class="flex-item col-12 lg-col-6">
+										<div class="infobox">
+											<p>Execution pack pricing </p>
+											<span class="orion_tooltip"><span class="Tooltip-window">
+												<table class="tooltip_table" style="width:100%"><tbody>
+													<tr><th>ADDITIONAL DAILY EXECUTION PACKS</th><th>PRICE</th></tr>
+													<tr><td>500</td><td>$9,100</td></tr>
+													<tr><td>1000</td><td>$14,560</td></tr>
+													<tr><td>2000</td><td>$23,300</td></tr>
+												</tbody></table>
+											</span></span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="flex-wrap" style="overflow: visible;">
-							<div  class="flex-item col-12 md-col-6">
-								<div class="total">
-									<div class="total-left">
-										<p>Executions (including base <span id="prodBase"></span>) </p>	
-										<p><strong><span id="prodEx"></span></strong></p>									
-									</div>
-									<div class="total-right">
-										<p>Cost </p>
-										<p><strong><span id="prodCost"></span></strong></p>
-									</div>
-									
-								</div>
-							</div>
-							<div class="flex-item col-12 md-col-6">
-								<div class="infobox">									
-                                    <p>Execution pack pricing </p>
-                                    <span class="orion_tooltip">
-                                        <span class="Tooltip-window">
-                                                                                
-                                            <table class="tooltip_table" style="width:100%">
-                                                <tbody><tr>
-                                                    <th>ADDITIONAL DAILY EXECUTION PACKS</th>
-                                                    <th>PRICE</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>500</td>
-                                                    <td>$9,100</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1000</td>
-                                                    <td>$14,650</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2000</td>
-                                                    <td>$23,300</td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </span>
-                                    </span>                                    
-                                   
-								</div>
-							</div>
-						</div>		
 					</div>
 					<div data-orion-tab-body="2" class="tab-body">
 						<h3>Non-Production Environments</h3>
