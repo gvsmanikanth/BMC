@@ -475,13 +475,20 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 if(resource != null){
                     try {
                         Node parentNode = hit.getNode().getParent();
+                        Node node = hit.getNode();
                         String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
                         String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        String assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                        if(assetLink == null && hit.getNode().hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
-                        	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                        String gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getString() : "non-gated";
+                        String assetLink = "";
+                        if(gatedAsset.equals("gate") && node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH)){
+                            assetLink = node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString();
+                        }else {
+                            assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
+                            if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
+                                assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                            }
                         }
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         

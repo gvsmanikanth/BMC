@@ -67,9 +67,15 @@ public class ResourceCenterFeaturedCardModel {
                 String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                 String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
                 String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
-                String assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                if(assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
-                    assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                String gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getString() : "non-gated";
+                String assetLink = "";
+                if(gatedAsset.equals("gate") && node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH)){
+                    assetLink = node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString();
+                }else {
+                    assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
+                    if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
+                        assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                    }
                 }
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
