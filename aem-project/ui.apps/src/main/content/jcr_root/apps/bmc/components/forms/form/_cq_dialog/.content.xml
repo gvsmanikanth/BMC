@@ -27,7 +27,7 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <elqProductInterest
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         dataPath="/content/bmc/resources/product-interests"
                                         fieldDescription="Eloqua Product Interest"
                                         fieldLabel="Eloqua Product Interest"
