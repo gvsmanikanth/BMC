@@ -49,11 +49,21 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-dashboard"/>
             <supportcentral-news
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bmc/components/structure/support-news-carousel"/>
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/support-news-carousel"/>
             <supportcentral_orientation_nonloggedin
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bmc/components/structure/supportcentral-orientation-nonloggedin"/>
+            <responsivegrid
+                jcr:created="{Date}2020-12-22T10:47:07.146+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2020-12-22T10:47:07.146+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
             <standardfooter
                 jcr:created="{Date}2017-06-09T15:07:43.655-07:00"
                 jcr:createdBy="admin"
