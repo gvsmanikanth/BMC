@@ -953,6 +953,21 @@ var Support = Support || {};
 	};
 	
 	//Personalized Support Central Feature Start
+
+	Support.Banner = {
+		init: function () {
+			if (!Support.Helpers.isOnSupportLandingPage) {
+				return
+			}
+			let button = document.querySelector('.psc-banner-close-button');
+			if (button) {
+				button.addEventListener('click', function () {
+					document.querySelector('.support-promo.support-message-box.psc-promo').style.display = 'none';
+				})
+			}
+		}
+	}
+
 	Support.PersonalizedNewsCarousel = {
 		isOnPersonalizedSupportLandingPage: function() {
 
@@ -973,7 +988,7 @@ var Support = Support || {};
 			// catch-all default
 			return false;
 		},
-		animate: function ({timing, draw, duration}) {
+		animate: function (timing, draw, duration) {
 
 			let start = performance.now();
 	  
@@ -994,16 +1009,16 @@ var Support = Support || {};
 			});
 		  },
 		  smoothScroll: function (element, from, to) {
-			Support.PersonalizedNewsCarousel.animate({
-			  duration: 800,
-			  timing(timeFraction) {
-				return timeFraction < 0.5 ? 2 * timeFraction * timeFraction : 1 - Math.pow(-2 * timeFraction + 2, 2) / 2;
-			  },
-			  draw(progress) {
-				let scrollPos = from + ((to - from) * progress)
-				element.scroll(scrollPos, 0)
-			  }
-			})
+			Support.PersonalizedNewsCarousel.animate(
+				function (timeFraction) {
+					return timeFraction < 0.5 ? 2 * timeFraction * timeFraction : 1 - Math.pow(-2 * timeFraction + 2, 2) / 2;
+				},
+				function (progress) {
+					let scrollPos = from + ((to - from) * progress)
+					element.scroll(scrollPos, 0)
+				},
+			  	800
+			)
 		  },
 		  init: function () {
 			if(!Support.PersonalizedNewsCarousel.isOnPersonalizedSupportLandingPage()) {
@@ -1012,7 +1027,7 @@ var Support = Support || {};
 			let news = document.querySelectorAll('.psc-news .news-block');
 			let rightArrow = document.querySelector('.psc-news .right-news-arrow');
 			let leftArrow = document.querySelector('.psc-news .left-news-arrow');
-			news.forEach((element) => {
+			news.forEach(function (element) {
 				let body = element.querySelector('.news-body');
 				let link = element.querySelector('h3 a').attributes.href.value;
 				body.innerHTML = body.innerText.slice(0,130) + '<a href="' + link + '">...</a>';
@@ -1131,6 +1146,7 @@ var Support = Support || {};
 		Support.MobileToggleHeader.init();
 		Support.SlideInSupportChatButton.init();
 		Support.PersonalizedNewsCarousel.init();
+		Support.Banner.init();
 	}
 
 	$(init);

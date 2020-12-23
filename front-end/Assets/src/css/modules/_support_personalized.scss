@@ -35,7 +35,16 @@
 .support-message-box.psc-promo {
 	p {
 		border-color: #F86e00;
+		position: relative;
 	}
+}
+
+.psc-banner-close-button {
+	position: absolute;
+	font-size: 30px;
+	top: -9px;
+	right: 4px;
+	cursor: pointer;
 }
 
 @media (min-width: 440px) {
