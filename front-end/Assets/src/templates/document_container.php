@@ -10,14 +10,7 @@
    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
    <section class="header-form-basic layout-full-bleed header-emphasis header-product-landing">
         <div class="layout-inner-wrap flex">
-            <h1>
-                <span>
-                    Control-M for Big Data
-                </span>            
-            </h1>        
-                <div class="img-wrap">
-                    <img alt="bmc-helix-logo" border="0" src="//www.bmc.com/content/dam/bmc/logos/bmc/bmc-helix-logo.png">
-                </div>        
+            <h1>Control-M for Big Data</h1>                
         </div>
     </section>
       <div class="maincontentcontainer responsivegrid aem-GridColumn aem-GridColumn--default--12">
@@ -29,17 +22,20 @@
                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
                            <div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
                               <div class="text-right pyt1">
-                                 <a href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download Remedy 9 Datasheet</a>
+                                 <a id="mobilebtn"  href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="btn btnPrimary mb2 inline-block">
+                                 <span><img src="/front-end/Assets/src/img/pdf.svg" alt="Gartner Magic Quadrant"></span><br/>
+                                 <span class="learn-more">Download PDF</span></a> 
+                                 <a id="desktopbtn" href="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" alt="Download PDF" title="Download PDF" target="_blank" class="link-icon-resource-document mb2 text-right inline-block">Download PDF</a>
                               </div>
                               <div class="md-flex full-bleed-two-column">
-                                 <div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 desktop-only pxr1">
-                                    <img src="https://author.cms.bmc.com/content/dam/bmc/solutions/gartner-magic-quadrant-skyscraper-2017.png" alt="Gartner Magic Quadrant">
-                                 </div>
+                                    <div class="flex-item col col-12 md-col-3 layout-secondary-flex-item padding-bottom-0 pxr1">
+                                       <img src="/front-end/Assets/src/img/gartner-magic-quadrant-skyscraper-2017.png" alt="Gartner Magic Quadrant">
+                                    </div>
                                  <div class="flex-item col col-12">
                                     <div id="pdfReader">
                                        <embed src="//documents.bmc.com/products/documents/54/80/465480/465480.pdf" type="application/pdf"  internalinstanceid="21">
                                     </div>
-                                 </div>
+                                 </div> 
                               </div>
                            </div>
                         </div>

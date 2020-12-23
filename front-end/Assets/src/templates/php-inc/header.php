@@ -42,6 +42,7 @@
   }
 };
 </script>
+
 <header class="layout-header">
 	<div class="layout-inner-wrap">
 		<a href="#" class="layout-navigation-open"></a>

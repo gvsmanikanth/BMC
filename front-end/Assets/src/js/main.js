@@ -9,10 +9,13 @@ require('./vendor/jquery.appendAround.js');
 require('./vendor/jquery.serializeObject.js');
 require('./vendor/jquery.autocomplete.js');
 require('./vendor/jquery.cookie.js');
+require('./vendor/jquery.validateEmail.js');
 require('./vendor/jquery.validate.js');
 require('./vendor/jquery.floatlabels.js');
 require('./vendor/jquery.externalLink.js');
 require('./vendor/jquery.productInterest.js');//WEB-2626
+require('./vendor/rellax.js');
+require('./vendor/lottie.js');
 require('./modules/sifter.js');
 require('./modules/sift-generator.js'); 
 require('./vendor/jquery.fancybox.js'); 
@@ -81,7 +84,10 @@ require('./modules/quote-review.js');
 require('./modules/customers-section.js');
 require('./modules/landingPage-arrowBG.js');
 require('./modules/boxy-header.js');
-require('./modules/handlebarHelpers.js');
-require('./modules/resource-center.js');
-require('./modules/language-selector.js');
 
+require('./modules/webinars.js');
+require('./modules/language-selector.js');
+require('./modules/orion/orion-global.js');
+require('./modules/orion/orion-secondary-navigation.js');
+require('./modules/orion/orion-quote-carousel.js');
+require('./modules/orion/orion-calculator.js');

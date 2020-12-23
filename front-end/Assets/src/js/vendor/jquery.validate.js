@@ -273,19 +273,52 @@ if($('#leadgen') || $('#nonleadgen'))	{
 			.promise()
 			.done(function() {
 				if ($form.data('valid')) {
+					
 					if (ajaxForm) {
 						submitValidAjaxForm();
 					}
 					else {
 						$form.submit();						
 					}
-					//fired Event2 on form submit
-					if(_satellite){
-						_satellite.track("form_completion");
+					
+					var emailCategory = 0;
+					if($formEmailValidation){
+						emailCategory = $formEmailValidation.getEmailCategory();
+						if(typeof bmcMeta !== 'undefined' && bmcMeta.hasOwnProperty("user")){
+							bmcMeta.user["e_cat"] = emailCategory;
+						}
 					}
+					
+					if(_satellite){
+						_satellite.track("form_completion", {'e_cat': emailCategory});
+					}
+					
+					//fired Event2 on form submit
+					/*
+					if($formEmailValidation){
+						if($formEmailValidation.isEmailEligibleForAnalyticsTracking()){
+							if(_satellite){
+								_satellite.track("form_completion");
+							}
+						} 
+					}
+					else{
+						if(_satellite){
+							_satellite.track("form_completion");
+						}
+					}*/
+					
+					
+					
 				}
 				else {
 					scrollToInvalid();
+					var emailCategory = 0;
+					
+					if($formEmailValidation){
+						 emailCategory = $formEmailValidation.getEmailCategory();
+					}
+					
 					if(_satellite){
 						_satellite.track("form_error");
 					} 

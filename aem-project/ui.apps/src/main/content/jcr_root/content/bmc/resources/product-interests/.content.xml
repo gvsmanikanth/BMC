@@ -65,6 +65,14 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Cognitive Service Management"
             dropDownDisplay="No"/>
+    <!--  WEB-9502 Starts -->
+    <_x0032_44922277
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Compuware"
+            dropDownDisplay="Yes"
+            text="BMC Compuware"
+            value="Compuware"/>
+    <!--  WEB-9502 Ends -->
     <!--  WEB-5295 -->
     <_x0032_15078746
             jcr:primaryType="nt:unstructured"
@@ -194,6 +202,12 @@
             dropDownDisplay="Yes"
             text="BMC Helix Cloud Security"
             value="Helix Cloud Security"/>
+    <_x0033_96588812
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Control-M"
+            dropDownDisplay="Yes"
+            text="BMC Helix Control-M"
+            value="Helix Control-M"/>
     <_x0035_07778250
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Digital Workplace"
@@ -212,6 +226,12 @@
             dropDownDisplay="Yes"
             text="BMC Helix ITSM"
             value="Helix ITSM"/>
+    <_x0037_94729560
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Knowledge Management"
+            dropDownDisplay="Yes"
+            text="BMC Helix Knowledge Management by ComAround"
+            value="Helix Knowledge Management"/>
     <!-- WEB-7427 -->
     <_x0037_29047163
             jcr:primaryType="nt:unstructured"
@@ -284,10 +304,10 @@
             value="AMI Security"/>
     <_x0034_38283521
             jcr:primaryType="nt:unstructured"
-            jcr:title="AMI Cost"
+            jcr:title="AMI Cost &amp; Capacity Management"
             dropDownDisplay="Yes"
-            text="BMC AMI Cost"
-            value="AMI Cost"/>
+            text="BMC AMI Cost &amp; Capacity Management"
+            value="AMI Cost &amp; Capacity Management"/>
     <_x0037_88612595
             jcr:primaryType="nt:unstructured"
             jcr:title="AMI Operations"

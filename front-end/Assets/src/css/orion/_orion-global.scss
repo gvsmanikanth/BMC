@@ -1,0 +1,1048 @@
+.orion-global{
+    font-size: 16px;
+    line-height: 26px;
+    color: #75777A;
+    h1, h2, h3{
+        font-weight: 400;    
+    }
+    h1{
+        font-size: 36px;
+        line-height: 48px;
+    }
+    h2{
+        font-size: 26px;
+        line-height: 36px;
+    }
+    h3{
+        font-size: 22px;
+        line-height: 32px;
+    }
+    h4{
+        font-size: 16px; 
+        line-height: 20px;
+    }
+    @media(min-width:$break-sm){
+        font-size: 18px;
+        line-height: 28px;
+        h1{
+            font-size: 50px;
+            line-height: 66px;
+        }
+        h2{
+            font-size: 36px;
+            line-height: 46px;
+        }
+        h3{
+            font-size: 26px;
+            line-height: 36px;
+        }
+        h4{
+            font-size: 18px; 
+            line-height: 26px;
+        }
+    }
+    padding: 30px 0;
+    @media(min-width:$break-sm){
+        padding: 40px 0;
+    }
+    @media(min-width:$break-md){
+        padding: 60px 0;
+    }
+    .btn-gradient{
+        background: rgb(249,135,0);
+        background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(254,80,0,1) 100%);
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: 0.3s linear;
+        font-weight: 700;
+        padding: 10px 17px;
+        &:hover{
+            background: rgb(249,135,0) ;
+            background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%); 
+            transition: 0.3s linear;         
+        }
+    }
+    .btn-secondary{
+        @extend .btn-gradient;
+        border-radius: 0px;
+        padding: 14px 45px;
+        &:hover{
+            background: rgb(249,135,0) !important;
+            background: linear-gradient(90deg, rgba(249,135,0,1) 0%, rgba(238,169,8,1) 100%)!important;    
+        }
+    }
+    .sp-large-container{
+        max-width: 1920px;
+        margin: auto;
+        position: relative;
+    }
+    .mobileOnly{
+        display: block;
+        @media(min-width:$break-sm){
+            display: none;
+        }
+    }
+    .desktopOnly{
+        display: none;
+        @media(min-width:$break-sm){
+            display: block;
+        }
+    }
+    
+    .div-px1{
+        margin-left: -0.5rem;
+        margin-right: -0.5rem;
+    }
+    .rem-lr-spacing{
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .remove-top-padding{
+        padding-top: 0;
+    }
+    .remove-bottom-padding{
+        padding-bottom: 0;
+    }
+    .remove-margin-12px{
+        margin: 0 -12px;      
+    }
+    .orion-block-title{
+        color: #002C8F;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .modal-image{
+        position: relative;
+        display: inline-table;
+        &:hover{
+            .image-modal-overlay img{
+                transform: scale3d(1.5, 1.5, 1.5);
+                transition: 0.8s linear;
+            }
+            
+        }
+        .image-modal-overlay {
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            display: block;
+            text-align: center;
+            padding: 10px;
+            img{
+                transition: 0.8s linear;
+            }
+           
+        }
+    }
+    .max-width-1016{
+        max-width: 1016px;
+        margin: 0 auto;
+    }
+    .horizontal-list{
+        .big-price-text {
+            color: #414042;
+            font-weight: 700;
+            font-size: 26px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            @media(min-width:$break-md){
+                font-size: 36px;
+            } 
+        }
+    }
+    .blue-check-list{
+        margin: 10px 0;
+        padding: 0;
+        list-style: none;
+        li{
+            position: relative;
+            padding-left: 35px;
+            &::before{
+                content: url(#{$imagesFolder}orion/checkmark-navyblue.svg);
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background-color: #2BD4EE;
+                margin-right: 0.74444em;
+                text-align: center;
+                padding: 5px;
+                line-height: 13px;
+                vertical-align: middle;
+                position: absolute;
+                left: 0;
+                top: 1px;
+            }
+        }  
+    }
+    .ieonly{
+        display: none;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            display: block;
+         }
+
+    }
+    // div#homeBannerAnimation {
+    //     display: block;
+    //     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    //         display: none;
+    //      }
+    // }
+}
+
+.pricing-horizontal-list{    
+    .btn-gradient{
+        margin-bottom: 30px;
+    }
+    h3{
+        color: #002C8F;
+        font-weight:700;
+        font-size:22px;
+        @media(min-width:$break-md){
+			font-size: 26px;
+		}
+    }
+    .big-price-text{
+        color: #414042;
+        font-weight: 700;
+        font-size: 26px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        @media(min-width:$break-md){
+			font-size: 36px;
+		}
+    }
+}
+.anchor-banner-wrap{
+    background-color: #fff;
+    overflow: hidden;
+	.blob-large{
+		background-size: 200% auto;
+		@media(min-width:$break-sm){
+			background-size: 90% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 60% auto;
+		}
+	}
+	.blob-small{
+		background-size: 180% auto;
+		@media(min-width:$break-sm){
+			background-size: 80% auto;
+        }
+		@media(min-width:$break-md){
+			background-size: 50% auto;
+        }
+		
+	}
+	.anchor-banner-back-blob {
+		background-repeat: no-repeat;
+		padding: 0;
+		background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 100% 0;
+		}
+	}
+    .anchor-banner{
+		background-repeat: no-repeat;
+		padding: 145px 0 40px 0;
+		background-position: 50% 0;
+		@media(min-width:$break-md){
+			background-position: 90% 0;
+			padding: 100px 0;
+		}
+        h2{
+            margin-bottom: 40px;
+			font-size: 2rem;
+			line-height:1em;
+			color: #002C8F;
+            @media(min-width:$break-md){
+				font-size: 4rem;
+				margin-bottom: 60px;
+            } 
+        }
+		.anchor-banner-title {
+			overflow: hidden;
+			span {
+				font-weight: 800;
+				position: relative;
+				display: inline-block;
+				&:after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					border-bottom: 1px solid #2BD4EE;
+					width: 100vw;
+					margin: 0 20px;
+					left: 100%;
+				}
+			}
+		}
+		.anchor-banner-menu {
+			padding: 0;
+			li {
+				float: left;
+				list-style: none;
+				a {
+					font-size: 0.889;
+					font-weight: 800;
+					padding-right: 45px;
+				}
+			}
+		}
+        .layout-inner-wrap{
+            position: relative;
+        }
+    }
+	&.blob-animate {
+		.anchor-banner-back-blob {
+			animation-name: bounce-back-blob;
+			animation-timing-function: linear;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			background-position-y: -10px;
+			@media(min-width:$break-md){
+				background-position-y: -5%;
+			}
+		}
+		.anchor-banner{
+			animation-name: bounce-front-blob;
+			animation-timing-function: linear;
+			animation-duration: 12s;
+			animation-iteration-count: infinite;
+		}
+	}
+    @keyframes bounce-back-blob {
+        from {
+            background-position-y: -5%;
+        }
+        50% {
+            background-position-y: 0;
+        }
+        to {
+            background-position-y: -5%;
+        }
+    }
+    @keyframes bounce-front-blob {
+        from {
+            background-position-y: 0;
+        }
+        50% {
+            background-position-y: -5%;
+        }
+        to {
+            background-position-y: 0;
+        }
+    }
+	
+}
+
+.splashpage-banner-wrap{
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0;
+    .blob-light-blue{
+        background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-light.svg);
+        background-repeat: no-repeat;
+        background-position: 50% 73%;
+    }
+    .splashpage-banner{
+        background-image: url(#{$imagesFolder}splashPage/splashpage-banner-blob-dark.svg);        
+        background-position: 40% 70%;
+        padding: 2rem 0 6rem 0;    
+        background-repeat: no-repeat;    
+        @media(min-width:$break-sm){
+            padding: 4rem 0 10rem 0;
+        } 
+        .animated-line {
+            max-width: 100%;
+            padding-bottom: 30px;
+        }
+        
+        .text-white{
+            color: #fff;
+            h1, h2, h3, p{
+                color: #fff;
+            }
+        }
+        h1{
+            margin-bottom: 30px;
+            @media(min-width:$break-sm){
+                margin-bottom: 40px;
+            } 
+            span{
+                color: #2BD4EE;
+            }
+        }
+        h3 {
+            margin-top: 0;
+        }
+        .btn-gradient{
+            @media(min-width:$break-sm){
+                margin-top: 40px;
+            } 
+        }
+        .splashpage-banner-content{
+            max-width: 900px;
+            margin: auto;
+            @media(min-width:$break-sm){
+               text-align: center;
+            } 
+        }
+        div#lottie{
+            @media(min-width:$break-sm){
+                position: absolute;
+                top: 20px;
+                left: 1.55556rem;
+                right: 0;
+                max-width: 29%;
+                @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                    top: 0px;
+                    max-height: 90px;
+                 }
+             }  
+             @media(min-width:$break-lg){
+                max-width: 35%;
+             } 
+          
+        }
+        .layout-inner-wrap{
+            position: relative;
+        }
+       
+    }
+
+}
+
+.split-form{
+    background-color: #fff;  
+    @media(min-width: $break-md){
+        padding: 0 0 2rem 0; 
+    }      
+    .layout-inner-wrap{
+        padding: 0;
+    }
+    .sp-form{
+        background-image: url(#{$imagesFolder}splashPage/split-form-blob.svg); 
+        background-repeat: no-repeat;
+        background-position: 98% 13px;
+        padding: 140px 0 100px 0;
+        background-size: 600px;
+        @media(min-width:1199px){
+            background-size: 800px;
+        }  
+        @media(max-width: 833px){
+            background-size: 600px;
+            background-position: 120% 64%;
+            padding: 50px 0 50px 0;
+        }
+        @media(max-width: 640px){
+            background-position: 0 40%;
+        }
+          
+    }      
+    .sp-form-wrap{       
+        z-index: 1;           
+        padding: 70px 25px 0 25px;
+        position: relative;
+        @media(min-width: $break-sm){
+            padding: 100px 40px 0 40px;
+        }
+        @media(min-width: $break-md){
+            padding: 0 75px 0 40px; 
+        } 
+        iframe {
+            width: 100%;
+            height: 724px;
+            border: none;
+            border-radius: 26px;
+            overflow: hidden;
+        }
+        .iframe-wrap{
+            background: #fff;
+            border-radius: 26px;
+        }
+       
+    }
+    .split-form-image{
+        text-align: center;       
+    }
+    div#splitFormAnimation {
+        position: absolute;
+        top: 35%;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        display: none;
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            top: 42%;
+         }
+        @media(min-width:$break-md){
+            display: block;
+        } 
+        
+    }
+   
+}
+
+// Iframe Form specific CSS
+
+.iframeFormPage{
+    padding-top: 0 !important;
+    background: #fff;
+    overflow: hidden;
+    header, footer, nav {
+        display: none;
+        height: 0;
+    }
+    
+    
+    
+    .cmp-form form {  
+        background: #fff;
+        color: #75777A;
+        width: auto;
+        border-top: none;
+        margin: 0 !important;
+        padding: 1.2rem;
+        @media(min-width:$break-sm){
+            padding: 1rem 3rem 3rem 3rem;
+        } 
+           
+        fieldset:not(#foo)  {
+            
+            @media(min-width:$break-sm){
+                margin-right: -20px;
+            } 
+            label{
+                font-size: 14px;
+                font-weight: 700;
+                color: #414042;
+                margin-bottom: 8px;
+            }
+            .error-text {
+                @media(min-width:$break-sm){
+                    min-height: 15px;
+                }                
+                display: block;
+                font-size: 12px;
+            }
+            .aem-GridColumn--default--6 {
+                display: inline-block;
+                float: left !important;
+                width: calc(50% - 20px);
+                vertical-align: top;
+                padding-right: 20px;
+                @media(max-width:$break-sm){
+                    width: 100%;
+                    padding-right: 0;
+                } 
+                
+            }  
+            input[type="text"],  input[type="number"],  input[type="password"],  input[type="email"],  input[type="tel"],  textarea, .decorator-select{
+                border-color: #1A98FF;
+                border-width: 1px;
+            } 
+            .validation-error-redesign, .validation-error{
+                border-color: #ff0000 !important;
+                border-width: 1px;
+            }
+            input[type="text"]:focus, input[type="text"]:focus,  input[type="number"]:focus,  input[type="password"]:focus,  input[type="email"]:focus,  input[type="tel"]:focus,  textarea:focus{
+                background: rgba(26, 152, 255, 0.1);
+            }
+            .focus-border::after{
+                background: rgba(26, 152, 255, 0.1);
+            }
+            .decorator-select{
+                .validation-error-redesign{
+                    border-color: #ff0000;
+                    border-width: 1px;
+                }
+                &:after{
+                    top: 0;
+                    height: 46px;
+                }
+            }
+            .decorator-select.validation-error-redesign, .decorator-select.validation-error{
+                    border-color: #ff0000;
+                    border-width: 1px;                
+            }
+            .form-group.checkbox{
+                li{
+                    label {
+                        font-weight: 400;
+                        color: #75777A;
+                        font-size: 16px;
+                        position: relative;
+                        padding-left: 35px;
+                        display: block;
+                        &::before{
+                            content: '';
+                            color: #1A98FF;
+                            font-weight: 700;
+                            border: 2px solid #1A98FF;
+                            height: 20px;
+                            width: 20px;
+                            padding: 0;
+                            margin: 0 10px 0 0px;
+                            display: inline-block;
+                            box-shadow: 0 0 0 2px #ffffff;
+                            position: absolute;
+                            left: 0;
+                            top: 2px;                            
+                        }
+                    }
+                } 
+            }
+            input[type="checkbox"]:checked + label:before{
+                content: url(#{$imagesFolder}splashPage/icons/svg-colored/checkmark-white.svg);
+                background-color: #002C8F;
+                border: 2px solid #ffffff;
+                box-shadow: 0 0 0 2px #1A98FF;
+            } 
+                  
+        }
+        a{
+            font-weight: 700;
+            color: #1A98FF;
+        }
+        p{
+            color: #75777A;
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+        .cmp-title{
+            h2{
+            color: #002C8F;
+            font-size: 26px;
+            line-height: 36px;
+                @media(min-width:$break-sm){
+                    font-size: 36px;
+                    line-height: 46px;
+                } 
+            }
+            p{
+                margin-bottom: 0;
+                font-size: 13px;
+                color: #414042;
+            }
+        }
+    }    
+    .responsivegrid.equal-column.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--default--12:last-child {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .aem-Grid.aem-Grid--12.aem-Grid--default--12.layout-inner-wrap {
+        padding: 0;
+    }     
+    
+   
+}
+
+
+
+// Orion Thank page css
+.orion-thankyou{
+    h1{
+        font-size: 26px;
+        line-height: 36px;        
+        @media(min-width:$break-sm){
+            font-size: 36px;
+            line-height: 46px;
+        }
+        span.black {
+            color: #002C8F;
+        }
+    }
+}
+
+//Orion CallOut
+.orionCallout {
+    background-color: white;
+    padding-top: 64px;
+    .callout-topline {
+        margin: 32px auto 0px auto;
+        border: none;
+        background-color: #1A98FF;
+        height: 1px;
+        max-width: 900px;
+    }
+    h2 {
+        margin: 32px auto 64px auto;
+        text-align: left;
+        color: #1A98FF;
+        max-width: 900px;
+    }
+}
+
+.clearfix{
+    clear:both;
+
+}
+
+.orion-homepage-banner{   
+    .splashpage-banner {            
+        padding: 3rem 0 10rem 0px;
+        background-position: center 100%;
+        
+    }
+    .blob-light-blue{
+        background-position: 0 100%;
+        padding: 0;        
+    }
+    div#homeBannerAnimation {
+        position: relative;
+        width: 200%;
+        bottom: -50px;
+        @media(min-width:$break-sm){
+            width: 100%;
+        }
+    }
+   
+    
+}
+
+
+//Orion CTA.
+.orion-CTA-banner{
+    background-color: #FE5000;
+    overflow: hidden;     
+    padding: 0;  
+    .banner-area{        
+        position: relative;
+        display:flex;
+        .image-blob{
+            position: absolute;
+            z-index:5;
+            background: url(#{$imagesFolder}orion/CTA-blob.svg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            transition: transform 2s ease-in-out;
+            min-height: 500px;
+            top: -50px;
+            left: 0;
+            right: 0;
+            }
+        
+        .content-banner{
+            position: relative;
+            z-index:6;
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            margin:auto;
+            min-height:360px;
+            pointer-events: none;
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                pointer-events: auto; 
+            }
+            @media(min-width:$break-sm){
+                max-width: 680px;
+            }           
+           
+            h2{
+                color: #fff;
+                margin-bottom:20px;
+            }
+            .btn-octa{
+                color: #1A98FF;
+                background: #fff;
+                font-size: 14px;
+                border-color: #707070;
+                border-radius: 4px;
+                pointer-events: visible;
+                font-weight: 700;
+                padding: 10px 16px 10px 16px;            
+                &:hover{
+                    background: linear-gradient(90deg, #1a98ff, #002c8f);
+                    color: #ffffff;
+                }
+            }
+        }   
+    }        
+}
+
+.animate-CTA-banner{
+    &:hover{
+        @media(min-width:$break-sm){
+        animation-name: CTA-animate-banner;
+        animation-timing-function: ease-in-out;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;    
+        }
+    }
+}
+@keyframes CTA-animate-banner {
+    from {
+    
+            transform: rotate(0deg);
+    }
+    50% {
+            transform: rotate(-5deg);
+        }
+    to {
+            transform: rotate(0deg);
+    }
+}
+
+.animate-front-banner{
+    animation-name: front-banner-animate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+.animate-back-banner{
+    animation-name: back-banner-animate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes front-banner-animate {
+    from {
+        background-position: center 110%;
+    }
+    50% {
+        background-position: center 100%;
+    }
+    to {
+        background-position: center 110%;
+    }
+}
+
+@keyframes back-banner-animate {
+    from {
+        background-position: center 100%;
+    }
+    50% {
+        background-position: center 150%;
+    }
+    to {
+        background-position: center 100%;
+    }
+}
+
+
+.horizontal-list{
+
+    h5{
+        font-weight:700;
+        margin-bottom:20px;
+        font-size:1em;
+    }
+    hr{
+        margin-bottom:40px;
+        margin-top:20px;
+    }
+
+    .upper-section{
+      h3{
+          margin-top: 50px;
+      }  
+    }
+    @media(min-width:$break-md){ 
+        .upper-section{
+            width:60%;
+        }
+    }
+    
+}
+//Orion back to top css
+#backtotop {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    @media(min-width:$break-md){ 
+        bottom: 30px;
+    }    
+    left: 0px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1A98FF;
+    width: 48px;
+    background: #fff;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;    
+    box-shadow: 1px 2px 4px #000000;
+    border-radius: 4px;
+}
+.orion-body{
+    .maincontentcontainer > .layout-full-bleed > *:first-child > *:not([class*="bg-"]) {
+        margin-top: 0px;
+    }
+    .experiencefragment.aem-GridColumn.aem-GridColumn--default--12 {
+        padding-bottom: 0 !important;
+    }
+}
+ 
+
+
+// product-list
+
+.resource-card-list{
+    background-color: #ffffff;
+    
+    .card{
+        h2{
+            line-height: 26px;  
+            font-size: 20px !important;       
+        }
+        h5{
+            font-weight: 600;
+            margin-top:10px;
+            color:#3980B2;
+            float:left;
+            width: 70%;
+        }
+    }
+    @media(max-width:$break-sm){
+        .rem-lr-spacing{
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .guttor-width{
+            margin-left:2px;
+            margin-right:2px;
+        }
+    }
+}
+
+
+/* Tooltip container */
+.orion_tooltip {
+    outline:none; 
+    position: relative;
+    background-image:url(#{$imagesFolder}orion/info.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline;
+	padding: 10px;
+	line-height:20px;
+    &:hover {text-decoration:none;cursor:pointer;} 
+    .Tooltip-window {
+      z-index:10;
+      display:none; 
+      padding:10px;
+      width:100vw;
+      min-width:200px;
+      @media(min-width:$break-md){ 
+        max-width: 400px;
+        font-size:16px!important;
+        padding:20px;
+        line-height:20px;
+      }
+      max-width:200px;
+      border-radius: 5px;
+      font-size:12px!important;
+      font-weight:400;
+      line-height:16px;
+      }
+      
+    &:hover .Tooltip-window {
+        display:block;
+        position:absolute;
+        bottom: 30px;
+        left: 50%;
+        color:#fff;  
+        background:#414042;        
+        transform: translateX(-50%);
+        &:after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #414042 transparent transparent transparent;
+        } 
+        a{
+            @media(min-width:$break-md){ 
+                font-size:16px!important;
+            }
+            font-size:12px;
+            &:after{
+            content:none;
+            
+            }
+        }
+    }
+	
+	&.tooltip_pointer_left{
+	    &:hover .Tooltip-window{
+	        left: 90%;
+	        transform: translateX(-13%);
+	        &:after{
+                margin-left: -7px;
+	            left: 10%;  
+	        } 
+	    }
+	}
+	
+	&.tooltip_pointer_right {
+        &:hover .Tooltip-window{
+            left: 10%;
+            transform: translateX(-87%);
+            &:after{
+                margin-left: -14px;
+                left: 90%;  
+            } 
+        }
+    }
+    &.tooltip_pointer_bottom{
+	    &:hover .Tooltip-window{
+            bottom:auto;            
+	        top: 30px;
+	        &:after{
+                transform: rotate(180deg);
+                top: -20px;
+                border-width: 10px;
+                border-style: solid;
+                border-color: #414042 transparent transparent transparent;
+                  
+	        } 
+	    }
+    }
+   /* &.tooltip_pointer_top{
+	    &:hover .Tooltip-window{            
+	        bottom: 30px;
+	        &:after{
+	            top: 100%;  
+	        } 
+	    }
+	}  */ 
+
+    .tooltip_table{
+        border-collapse: collapse;
+        color:#fff;
+        font-size:14px;
+        padding: 10px;
+        background:none;
+        text-align:left;
+        th,td{
+            border-collapse: collapse;
+            color:#fff;
+            font-size:14px;
+            padding: 10px;
+            background:none;
+            text-align:left;
+        }
+        th{
+            border-bottom: 1px solid #1A98FF;                            
+            font-weight:700;
+        }
+        td{
+            border-bottom: 1px solid #75777A;
+        }
+    }
+}
+

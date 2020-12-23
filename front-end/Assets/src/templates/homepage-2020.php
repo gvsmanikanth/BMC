@@ -104,4 +104,28 @@
         </div>    
     </div>   
  </div>
+
+<div class="htmlarea aem-GridColumn aem-GridColumn--default--12">
+     <div class="video-hero-header-variation1">
+        <section class="hero flex-col">
+            <div class="hero-image xs-only" style="background-image: url(//www.bmc.com/content/dam/bmc/header-mobile-images/ade-a-game-video-mobile-banner.jpg);">
+            </div>
+            <div class="hero-image video xs-max-hide">
+                <div class="vidbg-box" style="width: 100%; height: 100%; position: relative; z-index: 1;" data-vidbg-bg="webm://www.bmc.com/content/dam/bmc/migration/video/a-game-header-video_doNotTrack.webm, mp4://www.bmc.com/content/dam/bmc/migration/video/a-game-header-video_doNotTrack.mp4, poster://www.bmc.com/content/dam/bmc/info/ade-a-game-video-thumbail.jpg" data-vidbg-options="loop: true, muted: true, overlay: true, overlayColor: #000, overlayAlpha: 0.3"></div>
+            </div>
+            <div class="hero-content flex flex-center" >
+                <div class="hero-content-wrap">                        
+                    <h2 class="ha mb2 strongWeight">The A-Game is business at its best.</h2>
+                    <h3 class="h3 mb3">We call this the Autonomous Digital Enterprise.</h3>                    
+                    <div class="text-center">
+                        <a href="/content/bmc/videos.html?vID=DBD7lCLaAQ4" target="_self" class="modal-youtube-video-player" alt="Welcome to the A-Game">                   
+                            <span class="btn btn-orange-trans">Watch & Learn<span class="link-icon-play"></span></span>
+                        </a>
+                    </div>                        
+                </div>                 
+            </div>
+        </section>
+    </div>
+</div> 
+
 <?php include 'php-inc/foot.php'; ?>

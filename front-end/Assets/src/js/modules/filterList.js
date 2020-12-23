@@ -150,7 +150,9 @@ window.FilterList;
 
 		};
 
-		
+		FilterList.prototype.renderErrorPage = function(error) {
+			//console.log(error);
+		}
 
 		// Navigation
 
@@ -170,7 +172,11 @@ window.FilterList;
 					self.filters = {};
 					self.updateDisplayList(self.list);
 				},
-
+				'#details' : function() {				
+					
+					self.filters = {};
+					self.updateDisplayList(self.list);
+				},
 				// Page with filtered list
 				'#filter' : function() {
 					// Grab the string after the '#filter/' keyword. Call the filtering function.
@@ -193,7 +199,8 @@ window.FilterList;
 					}
 					
 					self.renderFilterResults(self.filters, self.list);
-				}
+				},
+
 			};
 
 			// Execute the needed function depending on the url keyword (stored in temp).
@@ -202,7 +209,10 @@ window.FilterList;
 			}
 			// If the keyword isn't listed in the above - render the error page.
 			else {
-				self.renderErrorPage();
+				self.filters = {};
+				self.updateDisplayList(self.list);
+				self.renderErrorPage("filter not defined");
+				
 			}
 
 		};

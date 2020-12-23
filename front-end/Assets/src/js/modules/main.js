@@ -320,6 +320,10 @@ function addFilterToArrayProtoype() {
 					resizePlayer();
 		}, false);
 
+	// WEB-9024 	
+	$(window).resize(function(){
+		resizePlayer();
+	});	
 	function resizePlayer(){
 		//Get all video objects in page
 		//For Flash Video
@@ -338,8 +342,10 @@ function addFilterToArrayProtoype() {
 						player.fp_css('screen', {height: (player_height) + 'px', top: 0});
 			} else { // for html5 player
 				div = player.childNodes[0];
-				div.style.height = "100%";
-				div.style.width = "100%";
+				if(div.style){
+					div.style.height = "100%";
+					div.style.width = "100%";
+				}				
 			}
 		});
 		
@@ -821,7 +827,9 @@ function addFilterToArrayProtoype() {
 	
 
 //WEB-2197 - Link behavior of picked items - same, separate, or modal window
-$("a").externalLink({fileTypes:".doc,.pdf,/documents/"});
+//WEB-9158 - Do not open /documents/ link in new window
+//$("a").externalLink({fileTypes:".doc,.pdf,/documents/"});
+$("a").externalLink({fileTypes:".doc,.pdf"});
 $("a").productInterest();//WEB-2626
 
 

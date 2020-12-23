@@ -1,0 +1,342 @@
+.orion-banner{   
+    overflow: hidden;
+    padding: 0;
+    .layout-inner-wrap{
+        z-index: 2;
+        position: relative;
+    }
+    .blob-container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -120px;        
+        right: -40%;
+        z-index: 1;
+        max-height: 250px;
+       
+        @media(min-width:$break-md){
+            right: -30%;            
+        }
+        @media(min-width:$break-lg){
+            right: -30%;
+            top: 0;  
+            max-height: none;
+        }
+        @media(min-width:1200px){
+            right: -20%;
+        }
+        @media(min-width:1200px){
+            right: -10%;
+        }
+        @media(min-width:1600px){
+            right: 0;
+        }
+        .blob-hidden, .blob-masked{
+            background-repeat: no-repeat;
+            background-position: 100% bottom;              
+            position: absolute;
+            z-index: 1056;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+            @media(min-width:$break-lg){
+                background-size: auto;            
+                background-position: 100% -160px; 
+                top: -80px;
+            }
+        }
+        .blob-hidden{ 
+            @media(min-width:$break-lg){
+                // animation-name: bounce-blob-hidden;
+                // animation-timing-function: linear;
+                // animation-duration: 8s;
+                // animation-iteration-count: infinite; 
+            }
+            @media(min-width:1600px){
+                right: auto; 
+            }
+            
+            
+        }
+        .blob-masked{            
+            @media(min-width:$break-md){
+                right: 50px;
+            }
+            @media(min-width:$break-lg){
+                // animation-name: bounce-blob-masked;
+                // animation-timing-function: linear;
+                // animation-duration: 10s;
+                // animation-iteration-count: infinite;
+            }
+            
+        }
+           
+    }	
+	
+    .orion-banner-content{
+        padding: 100px 0 30px 0;
+        @media(min-width:$break-sm){
+			padding: 100px 0;
+        }
+        h1{
+            color: #002C8F;
+        }
+        .anchor-banner-title {
+			overflow: hidden;
+			span {
+				font-weight: 800;
+				position: relative;
+				display: inline-block;
+				&:after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					border-bottom: 1px solid #2BD4EE;
+					width: 100vw;
+					margin: 0 20px;
+					left: 100%;
+				}
+			}
+		}
+		.anchor-banner-menu {
+			padding: 0;
+			li {
+				float: left;
+				list-style: none;
+				a {
+					font-size: 16px;
+					font-weight: 700;
+					margin-right: 45px;
+				}
+			}
+        }
+        .orion-banner-right-image {
+            @media(min-width:$break-sm){
+                position: absolute;
+                right: 10%;
+                top: 20px;
+            }            
+        }
+    }
+    
+ 
+
+    // blob position wise variation
+     
+    &.orion-banner-v1{
+        .blob-hidden{
+            @media(min-width:$break-md){
+                right: 150px;
+            }
+        }
+       
+    }
+    &.use-cases-banner{
+        .orion-banner-content {
+            padding: 230px 0 30px 0;  
+            @media (min-width: $break-sm) {
+                padding: 100px 0 30px 0;        
+            }
+            .flex.flex-item:first-child{
+                order: 2;
+                @media (min-width: $break-sm) {
+                    order: 0;          
+                }
+            }
+            .orion-banner-right-image{
+                img{
+                    max-height: 192px;
+                    @media (min-width: $break-md) {  
+                        max-height: 240px;          
+                    }
+                }
+            }
+        }
+        .blob-container{
+            right: 0;   
+            top:-70px;
+            min-height: 280px; 
+            @media (min-width: $break-sm) {  
+                right: -25%;            
+            }
+            @media (min-width: $break-md) {
+                top: -100px;   
+                right: -26%;    
+                min-height: 380px;       
+            }
+            @media (min-width: $break-lg) {
+                right: -15%;   
+            }
+            @media (min-width: 1600px) {  
+                right: -5%;            
+            }
+            @media (min-width: 1800px) {
+                right: 0;           
+            }
+            .blob-hidden {
+                background-size: cover;
+                background-position: 60% bottom;
+                right: auto;
+                top: -45px;
+                @media (min-width: $break-sm) { 
+                    background-size: contain;
+                    background-position: 100% bottom;
+                    top: auto;
+                }                
+                @media (min-width: $break-md) { 
+                    background-size: auto;
+                    right: auto; 
+                    background-position: 100% 135%;   
+                    top: -20px;   
+                    // animation-name: bounce-blob-hidden-anchor;
+                }
+            } 
+            .blob-masked {                
+                background-size: cover;
+                background-position: 65% bottom;
+               
+                @media (min-width: 410px) {  
+                    background-position: 100% bottom; 
+                }
+                @media (min-width: $break-sm) {  
+                    background-size: auto;
+                    background-position: 100% bottom;
+                }
+                @media (min-width: $break-md) {  
+                    // animation-name: bounce-blob-masked-anchor;    
+                    background-position: 100% 100%;
+                    right: 0;
+                    top: -15px;   
+                }     
+                @media (min-width: $break-lg) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 250px;
+                     } 
+                }   
+                @media (min-width: 1200px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 300px;
+                     } 
+                }  
+                @media (min-width: 1400px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 400px;
+                     } 
+                }   
+                @media (min-width: 1700px) {  
+                    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                        background-position-x: 550px;
+                     } 
+                }         
+            } 
+        }                        
+
+    }
+    &.anchor-banner{
+        .blob-container{
+            right: 0;           
+            max-height: 220px;
+            
+            @media(min-width:$break-lg){
+                max-height: none;
+                top: 0;   
+                right: -50px;  
+            }            
+            
+        }        
+    }   
+    &.resources-banner{
+        .blob-container{
+            @media(min-width:$break-lg){
+                top: -60px;   
+            }
+        }   
+             
+    }  
+    &.features-banner{
+        .blob-container{
+            .blob-masked {   
+                @media (max-width: 1025px) {                      
+                    top: -20px;   
+                }
+            }
+        }   
+             
+    }  
+    &.support-banner{
+        .blob-container{
+            top:0;
+            @media (max-width: 641px) {                      
+                max-height: 160px;
+            }
+            
+        }   
+             
+    } 
+    &.integration-banner{
+        .blob-container{
+            max-height: 190px;            
+            @media(min-width:$break-sm){
+                max-height: 220px;
+            }       
+            @media(min-width:$break-lg){
+                max-height: none;
+            }       
+            .blob-masked{                
+                @media(max-width:1025px){
+                    top: 30px;  
+                }
+            }
+        }            
+    } 
+    
+  
+    @keyframes bounce-blob-hidden {
+        from {
+           top : -80px;
+        }
+        50% {
+            top : -70px;
+        }
+        to {
+            top : -80px;
+        }
+    }
+    @keyframes bounce-blob-masked {
+        from {
+            top : -80px;
+        }
+        50% {
+            top : -60px;
+        }
+        to {
+            top : -80px;
+           
+        }
+    }
+
+    @keyframes bounce-blob-hidden-anchor {
+        from {
+           top : -10px;
+        }
+        50% {
+            top : 5px;
+        }
+        to {
+            top : -10px;
+        }
+    }
+    @keyframes bounce-blob-masked-anchor {
+        from {
+            top : -10px;
+        }
+        50% {
+            top : 5px;
+        }
+        to {
+            top : -10px;
+           
+        }
+    }
+}

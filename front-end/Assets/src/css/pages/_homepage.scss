@@ -38,7 +38,7 @@
 
 	// hero
 	.hero {
-		background-image:url(#{$imagesFolder}hero-mobile.jpg);//url('2016/homepage/hero-mobile.jpg');
+		//background-image:url(#{$imagesFolder}hero-mobile.jpg);//url('2016/homepage/hero-mobile.jpg');
 		background-position: center;
 		background-size: cover;
 		color: #fff;
@@ -75,7 +75,7 @@
 	// 640px
 	@media (min-width: $break-sm) {
 		.hero {
-			background-image:url(#{$imagesFolder}hero.jpg);//url('2016/homepage/hero.jpg');
+			//background-image:url(#{$imagesFolder}hero.jpg);//url('2016/homepage/hero.jpg');
 			overflow: hidden;
 			padding-bottom: 200px;
 			padding-top: 80px;

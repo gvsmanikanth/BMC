@@ -2,9 +2,14 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc">
         <exclude pattern="/apps/bmc/i18n"/>
-    </filter>  
+        <exclude pattern="/apps/bmc/config.author.stage/(.*)"/>
+        <exclude pattern="/apps/bmc/config.publish1.stage/(.*)"/>
+        <exclude pattern="/apps/bmc/config.publish2.stage/(.*)"/>
+        <exclude pattern="/apps/bmc/config.stage/(.*)"/>
+    </filter>
     <filter root="/apps/msm/bmc"/>
-    <filter root="/apps/cq/gui"/>
+    <!--EXCLUDING CQ GUI FROM BUILD TO PREVENT OVERRIDE CQ NODE ON PROD  -->
+    <!--<filter root="/apps/cq/gui"/>-->
     <filter root="/apps/sling/servlet"/>
     <filter root="/apps/wcm/core/content/sites"/>
     <filter root="/apps/wcm/core/resources"/>
@@ -38,10 +43,15 @@
     <filter root="/conf/bmc/settings/wcm/templates/form-event-page-template" mode="merge"/>
     <filter root="/conf/bmc/settings/wcm/templates/form-event-thank-you" mode="merge"/>
 
-	  <filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
-    <filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
-
-
+	  	<filter root="/conf/bmc/settings/wcm/templates/external-document" mode="merge"/>
+    	<filter root="/conf/bmc/settings/wcm/template-types/document-link-page" mode="merge"/>
+		<!-- WEB-8402 Not able to select XF variation from picker START -->
+		 <filter root="/conf/bmc/settings/wcm/templates/support-experience-fragment-template" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-additional-support" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-base-template" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-bmc-form-fieldset" mode="replace"/>
+		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="replace"/>
+		 <!-- WEB-8402 Not able to select XF variation from picker  END -->    
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
    
     <filter root="/etc/clientlibs/bmc"/>
@@ -57,7 +67,7 @@
 
     <filter root="/etc/notification/email"/>
 
-    <filter root="/etc/map.publish" mode="update"/>
+    <filter root="/etc/map.publish"/>
 
     <filter root="/content/bmc/auth"/>
     <filter root="/content/bmc/resources/training-locations">
