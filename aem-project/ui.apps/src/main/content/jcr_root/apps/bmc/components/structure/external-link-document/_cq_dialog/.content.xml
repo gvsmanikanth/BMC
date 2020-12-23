@@ -97,44 +97,36 @@
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
                                             </topics>
-                                            <ic-app-inclusion
+                                            <resource-center-inclusion
                                                 cq:showOnCreate="{Boolean}true"
                                                 granite:class="cq-dialog-dropdown-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                emptyText="Intelligent Content App Inclusion"
-                                                fieldLabel="IC App Inclusion"
-                                                name="./ic-app-inclusion">
+                                                emptyText="Resource Center Inclusion"
+                                                fieldLabel="Resource Center Inclusion"
+                                                name="./rc-inclusion">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-dropdown-showhide-target=".gate-form-fieldset-showhide-target"/>
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <item1
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="No"
-                                                        value="no"/>
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Yes (not gated)"
-                                                        value="yes"/>
-                                                    <item3
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Gate"
-                                                        value="gate"/>
-                                                    <item4
                                                         granite:hide="${cqDesign.disableChildren}"
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="Gated"
-                                                        value="gated"/>
+                                                        text="Yes (Gated)"
+                                                        value="{Boolean}true"/>
+                                                    <item2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="No( non-gated)"
+                                                        value="{Boolean}false"/>
                                                 </items>
-                                            </ic-app-inclusion>
+                                            </resource-center-inclusion>
                                             <setFormFieldSet
                                                 granite:class="hide gate-form-fieldset-showhide-target foundation-layout-util-vmargin"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    showhidetargetvalue="gated"/>
+                                                    showhidetargetvalue="true"/>
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <heading
                                                         granite:class="coral-Heading coral-Heading--4"
