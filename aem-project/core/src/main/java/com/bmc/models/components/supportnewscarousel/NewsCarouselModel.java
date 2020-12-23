@@ -1,6 +1,4 @@
 package com.bmc.models.components.supportnewscarousel;
-import com.bmc.mixins.UserInfoProvider;
-import com.bmc.models.UserInfo;
 import com.bmc.services.PersonalisedSupportCentralService;
 import com.google.common.net.HttpHeaders;
 import com.google.gson.Gson;
@@ -19,15 +17,9 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.xml.bind.DatatypeConverter;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 @Model(adaptables={Resource.class,SlingHttpServletRequest.class})
@@ -42,22 +34,13 @@ public class NewsCarouselModel {
     private PersonalisedSupportCentralService service;
 
     private String content;
-    private List<NewsItem> news;
     private String statusCode;
 
-    Map<String, String> map = new HashMap<String, String>();
-    Map<String, String> map1 = new HashMap<String, String>();
-    List<Map<String, String>> test;
     NewsResults newsResults;
 
     @PostConstruct
     protected void init() {
-        String responseBody = null;
-        InputStream stream;
-        HttpURLConnection connection = null;
 
-        UserInfo user = UserInfoProvider.withRequestCaching(request)
-                .getCurrentUserInfo();
         String accessToken = getAccessTokenClient();
         logger.info(accessToken);
         try (CloseableHttpClient httpClient = HttpClientBuilder.create()
@@ -85,7 +68,6 @@ public class NewsCarouselModel {
             e.printStackTrace();
         }
     }
-
 
     private String getAccessTokenClient() {
         String accessToken = null;
@@ -131,16 +113,8 @@ public class NewsCarouselModel {
         return content;
     }
 
-    public List<NewsItem> getNews() {
-        return news;
-    }
-
     public String getStatusCode() {
         return statusCode;
-    }
-
-    public List<Map<String, String>> getTest() {
-        return test;
     }
 
     public NewsResults getNewsResults() {
