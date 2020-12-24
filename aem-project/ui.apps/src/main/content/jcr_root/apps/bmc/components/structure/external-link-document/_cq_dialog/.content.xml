@@ -97,13 +97,12 @@
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
                                             </topics>
-                                            <resource-center-inclusion
-                                                cq:showOnCreate="{Boolean}true"
-                                                granite:class="cq-dialog-dropdown-showhide"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Resource Center Inclusion"
-                                                name="./ic-app-inclusion">
+                                            <ic-app-inclusion
+                                                    cq:showOnCreate="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Resource Center Inclusion"
+                                                    name="./ic-app-inclusion">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-dropdown-showhide-target=".gate-form-fieldset-showhide-target"/>
@@ -118,7 +117,7 @@
                                                         text="No(non-gated)"
                                                         value="{Boolean}false"/>
                                                 </items>
-                                            </resource-center-inclusion>
+                                            </ic-app-inclusion>
                                             <setFormFieldSet
                                                 granite:class="hide gate-form-fieldset-showhide-target foundation-layout-util-vmargin"
                                                 jcr:primaryType="nt:unstructured"
