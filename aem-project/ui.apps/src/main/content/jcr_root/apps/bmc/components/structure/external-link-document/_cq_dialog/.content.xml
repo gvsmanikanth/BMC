@@ -302,7 +302,7 @@
                                                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                                                 fieldDescription="Enter the Gated asset form Pathfield"
                                                                 fieldLabel="Gate form path."
-                                                                name="./ic-app-form-path"
+                                                                name="./rc-form-path"
                                                                 rootPath="/content/bmc/language-masters/en/forms"/>
                                                         </items>
                                                     </well>
