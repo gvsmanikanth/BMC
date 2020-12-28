@@ -255,14 +255,6 @@
 								text-align: center;
 							} 
 						}
-						// WEB-9417 
-						.orion_tooltip {
-							@media(min-width:$break-md){
-								padding-bottom: 0;
-								line-height: 10px;
-							}							
-							margin-left: 5px;
-						}
 					}
 					.nav{
 						margin: 40px 0 20px 0;
