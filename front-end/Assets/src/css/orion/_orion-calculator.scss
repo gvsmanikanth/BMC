@@ -257,10 +257,6 @@
 						}
 						// WEB-9417 
 						.orion_tooltip {
-							@media(min-width:$break-md){
-								padding-bottom: 0;
-								line-height: 10px;
-							}							
 							margin-left: 5px;
 						}
 					}
@@ -268,14 +264,15 @@
 						margin: 40px 0 20px 0;
 					}
 					// WEB-9417 
-					.nonProdItem{						
+					&:first-child{						
 						.orion_tooltip {
 							@media(min-width:$break-md){
-								padding-bottom: 10px;
-								line-height: 20px;
-							}		
+								padding-bottom: 0;
+								line-height: 10px;
+							}			
 						}
 					}
+					
 				}
 				.daily-execution-wrap {
 					justify-content: space-between;
