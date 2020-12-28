@@ -21,7 +21,7 @@
 							<li><a href="#">Financial Close</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Pricing</a></li>
+					<li><a href="/front-end/orion-calculator.php">Pricing</a></li>
 					<li><a href="/front-end/orion-anchor-banner-new-v1.php">Integrations</a></li>
 					<li><a href="/front-end/orion-anchor-banner-new-v2.php">Support</a></li>
 					<li><a href="/front-end/orion-anchor-banner-new-v3.php">Resources</a></li>

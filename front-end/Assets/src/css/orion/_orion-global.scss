@@ -924,7 +924,7 @@
     background-image:url(#{$imagesFolder}orion/info.png);
     background-repeat: no-repeat;
     background-position: center center;
-    display: inline;
+    display: inline-block;
 	padding: 10px;
 	line-height:20px;
     &:hover {text-decoration:none;cursor:pointer;} 

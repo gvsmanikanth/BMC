@@ -2,52 +2,14 @@
 	$pageTitle = 'Calculator';
 	$bodyClass = 'splashPage';
 	include 'php-inc/head.php';
+	include 'php-inc/orion-secondary-navigation.php';
 ?>
 
-<!--Navigation Component Ends -->
-
-<div class="orion-seconday-nav">
-	<section class="orion-navigation">
-		<div class="nav-container layout-inner-wrap">
-			<div class="orion-brand">
-				<a href="#"><strong>BMC Helix</strong> Control-M</a>
-			</div>
-			<div class="nav-wrap">
-				<div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
-				<ul class="nav-list">
-					<li class="activePage"><a href="#">Features</a></li>					
-					<li>
-						<a href="#">Use Cases</a>
-						<ul class="nav-dropdown">
-							<li><a href="#">Fraud Detection</a></li>
-							<li><a href="#">Targeted Advertising</a></li>
-							<li><a href="#">Predictive Maintenance</a></li>
-							<li><a href="#">Supply Chain Management</a></li>
-							<li><a href="#">Strategic Pricing</a></li>
-							<li><a href="#">Financial Close</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Integrations</a></li>
-					<li><a href="#">Support</a></li>
-					<li><a href="#">Resources</a></li>
-				</ul>
-				<div class="nav-cta">
-					<a href="#" class="btn">Watch a Demo</a>
-				</div>
-			</div>
-			
-		</div>
-	</section>
-</div>
-<div class="clearfix" ></div>
-
-<!--Navigation Component Ends -->
 
 <!--Orion pricing cards component Start -->
 <section class="orion-global bg-white text-center pricing-section">
     <div class="layout-inner-wrap">
-        <h2 class="orion-block-title ">Our Plans </h2>
+        <h2 class="orion-block-title ">Our Plans <span class="orion_tooltip tooltip_pointer_right"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></h2>
         <p class="mb3">Text that will explain that these are our base plans and they can be added upon by going to our calculator.</p>
         <div class="flex-wrap text-left div-px1">
             <div class="flex flex-item col-12 sm-col-6">	
@@ -61,8 +23,7 @@
                         <li>500 daily executions</li>
                         <li>Option to add up to 6500 daily executions*</li>
                         <li>BMC’s industry-leading Continuous Support
-						<span class="orion_tooltip tooltip_pointer_right"><span class="inner"></span>
-    		<span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span>
+						<span class="orion_tooltip tooltip_pointer_right"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span>
 						</li>
                     </ul>
                     <p><small>*If you need more than 6500 daily executions, you should consider our Enterprise Plan</small></p>
