@@ -7,8 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import com.day.cq.replication.ReplicationStatus;
+import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
@@ -56,6 +59,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private ResourceResolverFactory resourceResolverFactory;
     private ResourceResolver resourceResolver;
     private Session session;
+
+    @Reference
+    private Replicator replicator;
 
     // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
     @Property(
@@ -230,8 +236,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * @param propertyName
      * @param values
      * @param queryParamsMap
-     * @param predicateIndex
-     */
+     * @param groupIndex
+     * */
+
     private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
     
     	queryParamsMap.put(groupIndex + "_group.p.or", "true");
@@ -273,8 +280,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         try {
             
         	// Build predicate for ic-app-inclusion
-        	String[] allowedInclusionValues = {"yes", "gate"};
-        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
+        	String[] allowedInclusionValues = {"true"};
+        	buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
         	
             int i = 2;
             
@@ -480,10 +487,15 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        String gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getString() : "non-gated";
+                        Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                        String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = "";
-                        if(gatedAsset.equals("gate") && node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH)){
-                            assetLink = node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString();
+                        if(gatedAsset && formPath != null && isFormActive(formPath)){
+                            if(!formPath.endsWith(".html")) {
+                                assetLink = formPath + ".html";
+                            }else {
+                                assetLink = formPath;
+                            }
                         }else {
                             assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
                             if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
@@ -519,6 +531,22 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
 
         return contentResult;
+    }
+
+    private boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        String propertyValue;
+        try {
+            if (gatedAssetFormPath != null) {
+                ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
+                if(status.isActivated()){
+                    isActive = true;
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {

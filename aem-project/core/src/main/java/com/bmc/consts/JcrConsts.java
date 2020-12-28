@@ -12,7 +12,6 @@ public class JcrConsts {
     public static final String DESCRIPTION = "jcr:content/jcr:description";
     public static final String CONTENT_TYPE = "jcr:content/ic-content-type";
     public static final String THUMBNAIL = "jcr:content/thumbnail";
-    public static final String GATED_ASSET = "jcr:content/ic-app-inclusion";
-    public static final String GATED_ASSET_FORM_PATH = "jcr:content/ic-app-form-path";
-
+    public static final String GATED_ASSET = "jcr:content/rc-inclusion";
+    public static final String GATED_ASSET_FORM_PATH = "jcr:content/rc-form-path";
 }

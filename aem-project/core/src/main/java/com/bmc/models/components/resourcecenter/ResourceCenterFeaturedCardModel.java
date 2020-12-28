@@ -7,8 +7,12 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.jcr.Node;
+import javax.jcr.Session;
 
+import com.day.cq.replication.ReplicationStatus;
+import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -56,6 +60,10 @@ public class ResourceCenterFeaturedCardModel {
     private BmcContent card;
     private Map<String, String> analiticData;
 
+    @Reference
+    private Replicator replicator;
+    private Session session;
+
     @PostConstruct
     public void init() {
         try {
@@ -67,10 +75,15 @@ public class ResourceCenterFeaturedCardModel {
                 String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                 String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
                 String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
-                String gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getString() : "non-gated";
+                Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                 String assetLink = "";
-                if(gatedAsset.equals("gate") && node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH)){
-                    assetLink = node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString();
+                if(gatedAsset && formPath != null && isFormActive(formPath)){
+                    if(!formPath.endsWith(".html")) {
+                        assetLink = formPath + ".html";
+                    }else {
+                        assetLink = formPath;
+                    }
                 }else {
                     assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
                     if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
@@ -90,6 +103,22 @@ public class ResourceCenterFeaturedCardModel {
             log.error("An exception has occured while adding hit to response with resource: " + path
                     + " with error: " + e.getMessage(), e);
         }
+    }
+
+    private boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        String propertyValue;
+        try {
+            if (gatedAssetFormPath != null) {
+                ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
+                if(status.isActivated()){
+                    isActive = true;
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
