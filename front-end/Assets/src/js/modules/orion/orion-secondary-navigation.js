@@ -73,28 +73,8 @@
 
 	}
 
-  if($('.orion-seconday-nav').length > 0){
-    var current = location.pathname;
-    for(var i = 0; i < $('.orion-seconday-nav .nav-list li ').length; i++) {  
-        var lilist = $('.orion-seconday-nav .nav-list li ')[i];
-        var elementList = $(lilist).children('a');//querySelectorAll("a");
-        //var elementList = $('.orion-seconday-nav .nav-list li')[i];
-        var innerElementList=$(lilist).children('ul li a');
-        //var innerElementList=$('.orion-seconday-nav .nav-list li ul li')[i];
-        for(var j = 0; j < elementList.length; j++) {
-            if($(elementList[j]).attr('href') !== -1){
-                $(elementList[j]).parent().addClass('activePage');
-            }   
-        }
-        for(var k = 0; k < innerElementList.length; k++){
-            if($(innerElementList[k]).attr('href') !== -1){
-                $(innerElementList[k]).parent().addClass('activePage');
-                $(innerElementList[k]).parent().parent().parent().addClass('activePage');
-            }
-        }       
-    }
-} 
-/* commenting this code as this is not working in IE11 Added above without "each"
+    
+
          // Adding Active Navigation Class Based on URL
       if($('.orion-seconday-nav').length > 0){
         var current = location.pathname;
@@ -117,7 +97,7 @@
             
         })
     } 
-*/
+
     }
   }); // end DOM ready
 })(jQuery); // end jQuery
