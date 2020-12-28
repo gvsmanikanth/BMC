@@ -60,7 +60,10 @@
                     <ul class="blue-check-list">
                         <li>500 daily executions</li>
                         <li>Option to add up to 6500 daily executions*</li>
-                        <li>BMC’s industry-leading Continuous Support</li>
+                        <li>BMC’s industry-leading Continuous Support
+						<span class="orion_tooltip tooltip_pointer_right"><span class="inner"></span>
+    		<span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span>
+						</li>
                     </ul>
                     <p><small>*If you need more than 6500 daily executions, you should consider our Enterprise Plan</small></p>
                 </div>
