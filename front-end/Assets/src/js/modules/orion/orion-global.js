@@ -89,10 +89,13 @@ if(tooltips.length){
 	});
 }
 
- $("span.orion_tooltip").hover(function() {
+$("span.orion_tooltip").hover(function() {
     $(this).orionTooltip();
-  });
-  
+});
+//  WEB-9471, added code for dynamic envionment addition
+$(document).on( 'mouseenter', '.orion_tooltip', function(){
+    $(this).orionTooltip();
+});
   $.fn.orionTooltip = function(options) {
     var obj = this;
     var winwidth=$(window).width();
