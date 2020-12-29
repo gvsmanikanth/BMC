@@ -27,7 +27,11 @@
                         {{/if}}
                     </h4>
                 </div>
-                <div class="card-footer">
+                {{#ifCond linkType '===' ""}}
+                    <div class="card-footer rc-no-text">
+                {{else}}
+                    <div class="card-footer">
+                {{/ifCond}}
                     <span class="card-footer-action">
                         <svg class="align-middle s-{{linkType}}">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
