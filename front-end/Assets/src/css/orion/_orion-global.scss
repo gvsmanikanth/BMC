@@ -925,6 +925,9 @@
     background-repeat: no-repeat;
     background-position: center center;
     display: inline-block;
+    @media(min-width:$break-sm) and (max-width:$break-lg) { 
+        display: inline;
+    }
 	padding: 10px;
 	line-height:20px;
     &:hover {text-decoration:none;cursor:pointer;} 
