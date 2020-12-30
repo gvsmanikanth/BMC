@@ -37,7 +37,7 @@ public class PUMServiceCachingImpl implements PUMService {
     public static final String CONTENT_RESOURCE_CACHE_SIZE = "content.resource.cache.size";
     private long contentResourceCacheSize;
 
-    @Property(label = "Content Resource Cache TTL", longValue = 300,
+    @Property(label = "Content Resource Cache TTL", longValue = 3,
             description = "Content resource cached item time to live (seconds)")
     public static final String CONTENT_RESOURCE_CACHE_TTL = "content.resource.cache.ttl";
     private long contentResourceCacheTtl;
