@@ -94,7 +94,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-291550317, Webinar, view",
             "ic-type-546577064, White Paper, download",
             "ic-type-188743546, UnCategorized, view",
-            "ic-type-958935588, Tech Note, view",
+            "ic-type-958935588, Tech Note, download",
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
