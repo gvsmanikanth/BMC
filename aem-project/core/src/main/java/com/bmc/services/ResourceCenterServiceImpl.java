@@ -534,8 +534,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return contentResult;
     }
 
-    @Override
-    public boolean isFormActive(String gatedAssetFormPath) {
+
+    private boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
         String propertyValue;
         try {
