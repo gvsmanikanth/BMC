@@ -38,4 +38,6 @@ public interface ResourceCenterService extends ConfigurableService  {
     String getContentTypeDisplayValue(String contentType);
 
     String getContentTypeActionValue(String contentType);
+
+    boolean isFormActive(String gatedAssetFormPath);
 }

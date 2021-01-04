@@ -78,7 +78,7 @@ public class ResourceCenterFeaturedCardModel {
                 Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                 String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                 String assetLink = "";
-                if(gatedAsset && formPath != null && isFormActive(formPath)){
+                if(gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)){
                     if(!formPath.endsWith(".html")) {
                         assetLink = formPath + ".html";
                     }else {
@@ -103,22 +103,6 @@ public class ResourceCenterFeaturedCardModel {
             log.error("An exception has occured while adding hit to response with resource: " + path
                     + " with error: " + e.getMessage(), e);
         }
-    }
-
-    private boolean isFormActive(String gatedAssetFormPath) {
-        Boolean isActive = false;
-        String propertyValue;
-        try {
-            if (gatedAssetFormPath != null) {
-                ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
-                if(status.isActivated()){
-                    isActive = true;
-                }
-            }
-        }catch(Exception e){
-            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
-        }
-        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
