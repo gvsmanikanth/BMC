@@ -543,6 +543,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
                 if(status.isActivated()){
                     isActive = true;
+                }else{
+                    log.info("BMCINFO : Form is not active : "+gatedAssetFormPath);
                 }
             }
         }catch(Exception e){
