@@ -14,4 +14,5 @@ public class JcrConsts {
     public static final String THUMBNAIL = "jcr:content/thumbnail";
     public static final String GATED_ASSET = "jcr:content/rc-inclusion";
     public static final String GATED_ASSET_FORM_PATH = "jcr:content/rc-form-path";
+    public static final String JCR_CREATION = "jcr:content/jcr:created";
 }

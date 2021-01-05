@@ -1,9 +1,6 @@
 package com.bmc.models.components.resourcecenter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 import javax.jcr.Node;
@@ -22,6 +19,7 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,6 +61,9 @@ public class ResourceCenterFeaturedCardModel {
     @Reference
     private Replicator replicator;
     private Session session;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
 
     @PostConstruct
     public void init() {
@@ -107,12 +108,24 @@ public class ResourceCenterFeaturedCardModel {
 
     private boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
-        String propertyValue;
+        Set<String> runmodes = slingSettingsService.getRunModes();
         try {
             if (gatedAssetFormPath != null) {
-                ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
-                if(status.isActivated()){
-                    isActive = true;
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
+                }else{
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
                 }
             }
         }catch(Exception e){

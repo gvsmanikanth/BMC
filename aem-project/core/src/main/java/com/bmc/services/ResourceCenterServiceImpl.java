@@ -1,15 +1,12 @@
 package com.bmc.services;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import com.bmc.models.RunModes;
 import com.day.cq.replication.ReplicationStatus;
 import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
@@ -23,6 +20,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.settings.SlingSettingsService;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -59,6 +57,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private ResourceResolverFactory resourceResolverFactory;
     private ResourceResolver resourceResolver;
     private Session session;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
 
     @Reference
     private Replicator replicator;
@@ -537,14 +538,24 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     private boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
-        String propertyValue;
+        Set<String> runmodes = slingSettingsService.getRunModes();
         try {
             if (gatedAssetFormPath != null) {
-                ReplicationStatus status=replicator.getReplicationStatus(session, gatedAssetFormPath);
-                if(status.isActivated()){
-                    isActive = true;
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
                 }else{
-                    log.info("BMCINFO : Form is not active : "+gatedAssetFormPath);
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
                 }
             }
         }catch(Exception e){
