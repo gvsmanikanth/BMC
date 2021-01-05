@@ -146,8 +146,11 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         ArrayList<String> list = new ArrayList<> ();
         Map<String, String> sortedMap = new LinkedHashMap<> ();
         try {
-            for (Map.Entry<String, String> entry : values.entrySet ()) {
+            /*for (Map.Entry<String, String> entry : values.entrySet ()) {
                 if (! getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), entry.getValue ()))
+                    list.add (entry.getValue ());
+            }*/
+            for (Map.Entry<String, String> entry : values.entrySet ()) {
                     list.add (entry.getValue ());
             }
             if (list.contains ("All")) {
