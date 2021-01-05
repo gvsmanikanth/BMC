@@ -30,7 +30,7 @@ import com.day.cq.commons.jcr.JcrConstants;
 })
 public class ResourceServiceBaseImpl implements ConfigurableService, ResourceService {
 
-    private static final Logger log = LoggerFactory.getLogger (ResourceServiceBaseImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(ResourceServiceBaseImpl.class);
 
     private static final String SERVICE_ACCOUNT_IDENTIFIER = "bmcdataservice";
 
@@ -57,80 +57,81 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     private ConfigurationAdmin configAdmin;
 
     @Activate
-    protected void activate (final Map<String, Object> props) {
-        this.propertyPathMapping = toMap ((String[]) props.get (PROPERTY_MAPPING));
-        this.propertyNameMapping = toMap ((String[]) props.get (PROPERTY_MAPPING), 0, 2);
+    protected void activate(final Map<String, Object> props) {
+        this.propertyPathMapping = toMap((String[]) props.get(PROPERTY_MAPPING));
+        this.propertyNameMapping = toMap((String[]) props.get(PROPERTY_MAPPING), 0, 2);
     }
 
     /**
      * TODO: Documentation
-     *
      * @param propertyName
      * @param propertyValue
      * @param resolver
      * @return
      */
-    public String getTitle (String propertyName, String propertyValue, ResourceResolver resolver) {
-        if (! propertyPathMapping.containsKey (propertyName) || ! propertyNameMapping.containsKey (propertyName)) {
-            log.debug ("No mapping exists for property name {}", propertyName);
+    public String getTitle(String propertyName, String propertyValue, ResourceResolver resolver) {
+        if (!propertyPathMapping.containsKey(propertyName) || !propertyNameMapping.containsKey(propertyName)) {
+            log.debug("No mapping exists for property name {}", propertyName);
             return propertyValue;
         }
-        if (StringUtils.isEmpty (propertyValue)) {
-            log.debug ("No mapping exists for property value {}", propertyValue);
+        if (StringUtils.isEmpty(propertyValue)) {
+            log.debug("No mapping exists for property value {}", propertyValue);
             return propertyValue;
         }
 
-        String path = propertyPathMapping.get (propertyName) + "/" + propertyValue;
-        String name = propertyNameMapping.get (propertyName);
-        Resource resource = resolver.resolve (path);
-        String defaultValue = (String) resource.getValueMap ().getOrDefault (JcrConstants.JCR_TITLE, propertyValue);
-        return ResourceUtil.isNonExistingResource (resource)
+        String path = propertyPathMapping.get(propertyName) + "/" + propertyValue;
+        String name = propertyNameMapping.get(propertyName);
+        Resource resource = resolver.resolve(path);
+        String defaultValue = (String)resource.getValueMap().getOrDefault(JcrConstants.JCR_TITLE, propertyValue);
+        return ResourceUtil.isNonExistingResource(resource)
                 ? propertyValue
-                : (String) resource.getValueMap ().getOrDefault (name, defaultValue);
+                : (String)resource.getValueMap().getOrDefault(name, defaultValue);
     }
 
-    public Map<String, String> getValues (String propertyName, ResourceResolver resolver) {
-        if (! propertyPathMapping.containsKey (propertyName) || ! propertyNameMapping.containsKey (propertyName)) {
-            log.debug ("No mapping exists for property name {}", propertyName);
-            return new HashMap<String, String> ();
+    public Map<String, String> getValues(String propertyName, ResourceResolver resolver) {
+        if (!propertyPathMapping.containsKey(propertyName) || !propertyNameMapping.containsKey(propertyName)) {
+            log.debug("No mapping exists for property name {}", propertyName);
+            return new HashMap<String, String>();
         }
-        List<String> results = new ArrayList ();
-        Map<String, String> values = new HashMap<> ();
-        String path = propertyPathMapping.get (propertyName);
-        Resource resource = resolver.resolve (path);
-        Iterator<Resource> newsItems = resource.getChildren ().iterator ();
-        while (newsItems.hasNext ()) {
-            Resource itemResource = newsItems.next ();
-            values.put (itemResource.getName (), getTitle (propertyName, itemResource.getName (), resolver));
+        List<String> results = new ArrayList();
+        Map<String, String> values = new HashMap<>();
+        String path = propertyPathMapping.get(propertyName);
+        Resource resource = resolver.resolve(path);
+        Iterator<Resource> newsItems = resource.getChildren().iterator();
+        while(newsItems.hasNext()){
+            Resource itemResource = newsItems.next();
+            values.put(itemResource.getName(), getTitle(propertyName, itemResource.getName(), resolver));
         }
         //WEB-9267 Filters Arrange Category and Category Values.
-        if ((propertyName.equals ("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals ("ic-target-industry"))
-                || (propertyName.equals ("ic-content-type")) || (propertyName.equals ("topics")) || (propertyName.equals ("product_interest"))) {
+        if ((propertyName.equals("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals("ic-target-industry"))
+                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("product_interest")))
+        {
             //Sorts the Values in Jcr:title aplhabetically
             values = sortPropertyNamesAlphabeticaly (values);
-        } else if (propertyName.equals ("ic-target-persona")) {
+        }else if(propertyName.equals ("ic-target-persona"))
+        {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as PersonaList
-            values = getCustomSortList (values, Arrays.asList (ResourceCenterConstants.IC_PERSONAS_CUSTOM_LIST));
-        } else if (propertyName.equals ("ic-company-size")) {
+            values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_PERSONAS_CUSTOM_LIST));
+        }else if(propertyName.equals ("ic-company-size"))
+        {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as companySizeList
-            values = getCustomSortList (values, Arrays.asList (ResourceCenterConstants.IC_COMPANY_SIZE_CUSTOM_LIST));
-        } else if (propertyName.equals ("ic-buyer-stage")) {
+            values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_COMPANY_SIZE_CUSTOM_LIST));
+        }else if(propertyName.equals ("ic-buyer-stage"))
+        {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as BuyerStagesList
-            values = getCustomSortList (values, Arrays.asList (ResourceCenterConstants.IC_BUYER_STAGES_CUSTOM_LIST));
+            values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_BUYER_STAGES_CUSTOM_LIST));
         }
-        //WEB-6680 Removes unwanted filter values.
-
         return values;
     }
 
     @Override
-    public ConfigurationAdmin getConfigurationAdmin () {
+    public ConfigurationAdmin getConfigurationAdmin() {
         return configAdmin;
     }
 
     @Override
-    public List<String> getPropertyNames () {
-        return new ArrayList<String> (propertyPathMapping.keySet ());
+    public List<String> getPropertyNames() {
+        return new ArrayList<String>(propertyPathMapping.keySet());
     }
 
     /*
@@ -146,22 +147,19 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         ArrayList<String> list = new ArrayList<> ();
         Map<String, String> sortedMap = new LinkedHashMap<> ();
         try {
-            /*for (Map.Entry<String, String> entry : values.entrySet ()) {
-                if (! getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), entry.getValue ()))
-                    list.add (entry.getValue ());
-            }*/
             for (Map.Entry<String, String> entry : values.entrySet ()) {
-                    list.add (entry.getValue ());
+                list.add (entry.getValue ());
             }
-            if (list.contains ("All")) {
+            if(list.contains("All")){
                 // Add "All" as the first character in filter
                 list.remove (list.indexOf ("All"));
-                list.add (0, "All");
-                Collections.sort (list.subList (1, list.size ()), new RCFilterComparator ());
-            } else {
+                list.add(0,"All");
+                Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
+            }else
+            {
                 Collections.sort (list, new RCFilterComparator ());
             }
-            log.info("ORDERED LIST"+list.toString ());
+
             for (String str : list) {
                 for (Map.Entry<String, String> entry : values.entrySet ()) {
                     if (entry.getValue ().equals (str)) {
@@ -179,6 +177,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     }
 
 
+
     /*
     Method name : getCustomSortList()
     Returns : Map<String,String>
@@ -187,33 +186,32 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     it does this by looking up the each value in the arraylist against the values in the HashMap
     to create a sorted list.
      */
-    public static Map<String, String> getCustomSortList (Map<String, String> values, List<String> orderList) {
-        ArrayList<String> unsortedList = new ArrayList<> ();
-        ArrayList<String> sortedList = new ArrayList ();
-        Map<String, String> sortedMap = new LinkedHashMap<> ();
+    public static Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
+        ArrayList<String> unsortedList = new ArrayList<>();
+        ArrayList<String> sortedList = new ArrayList();
+        Map<String,String> sortedMap = new LinkedHashMap<> ();
+        for (Map.Entry<String, String> entry : values.entrySet()) {
+            unsortedList.add(entry.getValue());
+        }
+        if(unsortedList!=null && !unsortedList.isEmpty() && orderList!=null && !orderList.isEmpty()){
 
-        if (unsortedList != null && ! unsortedList.isEmpty () && orderList != null && ! orderList.isEmpty ()) {
-
-            for (String value : orderList) {
-                Boolean found = getPropertyOptionIfFound (unsortedList, value); // search for the item on the list by ID
-                //Boolean NotFound = getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), value);
-                if (found) sortedList.add (value);       // if found & no unwanted values add to sorted list
-                    unsortedList.remove (value);        // remove added item
+            for(String value : orderList){
+                String found= getPropertyOptionIfFound(unsortedList, value); // search for the item on the list by ID
+                if(found!=null)sortedList.add(found);       // if found add to sorted list
+                unsortedList.remove(found);        // remove added item
             }
             //sortedList.addAll(unsortedList);        // append the reaming items on the unsorted list to new sorted list
         }
-        log.info ("ORDERED LIST "+orderList.toString ());
         for (String str : sortedList) {
-            for (Map.Entry<String, String> entry : values.entrySet ()) {
-                if (entry.getValue ().equals (str)) {
-                    sortedMap.put (entry.getKey (), str);
+            for (Map.Entry<String, String> entry : values.entrySet()) {
+                if (entry.getValue().equals(str)) {
+                    sortedMap.put(entry.getKey(), str);
                 }
             }
         }
         return sortedMap;
 
     }
-
     /*
     Method name : getPropertyOptionIfFound
     returns : String
@@ -221,13 +219,13 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     Explanation : helper class to lookup each value in List against the provided value
     and return the value once found.
      */
-    public static Boolean getPropertyOptionIfFound (List<String> list, String value) {
-        for (String optionValue : list) {
-            if (optionValue.equalsIgnoreCase (value)) {
-                return true;
+    public static String getPropertyOptionIfFound(List <String> list, String value){
+        for(String optionValue : list){
+            if(optionValue.equalsIgnoreCase(value)){
+                return optionValue;
             }
         }
-        return false;
+        return null;
     }
 
     /*
@@ -241,33 +239,5 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         }
     }
 
-    /*
-    Method name :removeFilterOptions()
-    returns :Map<String, String>
-    Explanation : Removes unwanted filter options from Property filters, as defined in property mapping
-    unwantedFilterOptions.
-     */
-    /*public  Map<String, String> removeFilterOptions( Map<String, String> values) {
-        try {
-            for (Map.Entry<String, String> entry : values.entrySet ()) {
-                String value2 = getPropertyOptionIfFound (Arrays.asList (ResourceCenterConstants.UNWANTED_FILTER_OPTIONS), entry.getValue ());
-                log.info ("Value " + value2);
-                if (value2 != null) {
-                    log.info ("INSIDE @");
-                    values.remove (entry.getValue ());
-                }
-                // values.entrySet ().removeIf (e ->(value2 != null));
-                //unsortedList.add(entry.getValue());
-            }
-            log.info ("inside @@");
-        } catch (NullPointerException ex) {
-            log.info ("Exception Occured" + ex.getMessage ());
-        } catch (Exception er) {
-            log.info ("Exception Occured" + er.getMessage ());
-        }
-        return values;
-    }
-
-     */
 
 }
