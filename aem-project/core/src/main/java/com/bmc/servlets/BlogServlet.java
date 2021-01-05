@@ -221,17 +221,25 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         String exclude1 = baseURL + "/wp-content";
         String exclude2 = pressCDNUrl + "/wp-content";
         String exclude3 = baseURL + "/youtube-video-page";
+        String exclude4 = baseURL + "/wp-includes";
+        String exclude5 = pressCDNUrl + "/wp-includes";
         String token1 = "BASE_EXCLUDE_PATH";
         String token2 = "CDN_EXCLUDE_PATH";
         String token3 = "YT_EXCLUDE_PATH";
+        String token4 = "BASE_INCLUDE_PATH";
+        String token5 = "CDN_INCLUDE_PATH";
         logger.info("replace value : "+replace);
         String processed = source.replaceAll(exclude1, token1);
         processed = processed.replaceAll(exclude2,token2);
         processed = processed.replaceAll(exclude3,token3);
+        processed = processed.replaceAll(exclude4,token4);
+        processed = processed.replaceAll(exclude5,token5);
         processed = processed.replaceAll(baseURL, replace);
         processed = processed.replaceAll(token1, exclude1);
         processed = processed.replaceAll(token2,exclude2);
         processed = processed.replaceAll(token3,exclude3);
+        processed = processed.replaceAll(token4,exclude4);
+        processed = processed.replaceAll(token5,exclude5);
         logger.info(processed);
         return processed;
     }
