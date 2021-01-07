@@ -555,6 +555,9 @@ body.no-scroll{
   .ic_view-white {
     background-image: url("ic_view-white.png");
   }
+  .ic_play {
+    background-image: url("#{$imagesFolder}ic_play.png");
+  }
 }
 
 .text-white {
