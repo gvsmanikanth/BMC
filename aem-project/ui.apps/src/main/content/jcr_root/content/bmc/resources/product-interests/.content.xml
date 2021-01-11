@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="cq:Page">
-    <jcr:content jcr:primaryType="cq:PageContent"/>
+    <!-- SAFE DELETE WEB-8776  <jcr:content jcr:primaryType="cq:PageContent"/> -->
     <caption
             jcr:primaryType="nt:unstructured"
             disabled="true"
