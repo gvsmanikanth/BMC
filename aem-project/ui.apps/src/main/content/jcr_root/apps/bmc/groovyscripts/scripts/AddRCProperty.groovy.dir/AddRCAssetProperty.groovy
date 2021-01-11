@@ -1,6 +1,7 @@
 /*This method queries the JCR to check if all DCs have rc0inclucion=true ,
 * if yes it adds a new property asset-inclusion of type Boolean
-* with default value = false ( non gated) \
+* with default value = false ( non gated).
+* If rc-form-path is not null , asset-inlusion is set to Boolean true.
 * Author : Samiksha Anvekar*/
 def buildQuery(page, propertyName, propertyValue) {
     def queryManager = session.workspace.queryManager;
@@ -23,13 +24,23 @@ count = 0;
 result.nodes.each {
     String nodePath = it.path;
     Boolean prop = false;
-    if(!it.get('rc-inclusion').equals(null)){
-        it.setProperty('asset-inclusion',prop);
-        count++;
+    Boolean prop1 = true;
+    if(!it.get('rc-inclusion').equals(null))
+    {
+        if(!it.get('rc-form-path').equals(null))
+        {
+            it.setProperty('asset-inclusion',prop1);
+            count++;
+            println 'Node with Form Path =' + nodePath + ' with property = ' + it.get('asset-inclusion');
 
+        } else
+        {
+            it.setProperty('asset-inclusion',prop);
+            count++;
+            println 'Node Path = ' + nodePath + ' with property = ' + it.get('asset-inclusion');
+        }
     }
-
-    session.save();
+    //  session.save();
 }
 println 'Total no Of Results found : ' + result.nodes.size();
 println 'Number of Results Updated : ' + count;
