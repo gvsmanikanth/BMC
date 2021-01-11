@@ -5,6 +5,7 @@
  
     // If a link has a dropdown, add sub menu toggle.
     $('.orion-seconday-nav .nav-wrap ul li a:not(:only-child)').click(function(e) {
+      e.preventDefault();
       $(this).siblings('.nav-dropdown').toggle();
       $(this).toggleClass('dropdownSelected');
       // Close one dropdown when selecting another
