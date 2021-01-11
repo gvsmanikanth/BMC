@@ -30,7 +30,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
     @Override
     public void activate() throws Exception {
         try {
-            // iterate through the multifield card and fetch its page properties
+            //iterate through the multifield card and fetch its page properties
             ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("cards").listIterator();
             productCards = new ArrayList<>();
             while (pagePathsNodes.hasNext()) {
@@ -50,7 +50,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 if(childPage.getValueMap().get("overrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
                     productCard.put("description", childPage.getValueMap().get("overrideDescription").toString());
                 }
-                // WEB-8367 Added Image Field
+                // WEB-8367 Added Image Field and handled the case of the image not existing.
                 if(childPage.getValueMap().get("imagePath") != null && !childPage.getValueMap().get("imagePath").toString().trim().isEmpty()){
                     productCard.put("imagePath", childPage.getValueMap().get("imagePath").toString());
                 }

@@ -1,4 +1,4 @@
-<!--/* WEB-8367 Added Image field & Updated new html markup  */-->
+<!--/* WEB-8367 Added authorable field for the header image & Updated the  new html markup  */-->
 <section class="landingPage-product-list" data-sly-use.productSet="com.bmc.components.ProductCards">
 	<div class=" layout-inner-wrap" id="product-list">
 		<div class="text-center">
@@ -6,14 +6,15 @@
 			<h3 >${properties.subTitle @ context='html'}</h3>
 		</div>
 		<div class="flex-wrap flex-justify-center mb2">
-			<sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
+            <!--/*  WEB-8367 Added Fix for Card layout in Landscape  */-->
+			<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
 			<sly data-sly-test="${properties.numberOfCards == '3'}">
-				<sly data-sly-test.assetClass="sm-col sm-col-12 md-col-4"></sly>
+				<sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
 			</sly>
 			<sly data-sly-test="${properties.numberOfCards == '4'}">
-				<sly data-sly-test.assetClass="col col-12 sm-col-12 md-col-6 lg-col-3"></sly>
+				<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
 			</sly>
-			<!--/*  Iterate through the cards  */-->
+			<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 			<sly data-sly-list.card="${productSet.productCards}">
 				<div class="flex flex-item ${assetClass}">
 					<sly data-sly-use.productLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=card.pagePath}"></sly>
