@@ -17,19 +17,19 @@
         position: absolute;
         right: 10px;
         top: 0;
+        cursor: pointer;
       }
       &.rc-arrow-up{
         background-image: none;
         &::before{
-          content: "-";
-          right: 14px;
+          content: '\2212';
           top: 0px;
         }
       }
       &.rc-arrow-down{
         background-image: none;
         &::before{
-          content: "+";
+          content: '\002B';
         }
       }    
 
