@@ -22,7 +22,7 @@
 			var minute = (webinarDate.getMinutes()<10?'0':'') + webinarDate.getMinutes();	
 			var self = this;
 					
-			var type = self.getName("type", item);
+			var type = self.getName("topic", item);
 
 			//setiing webinar date text and cta text as per webinar date
 			if(webinarDate < currentDate ){
@@ -41,11 +41,11 @@
 				itemHTML = '<div class="flex flex-item col-12 sm-col sm-col-6 md-col-4 lg-col-3 mb2"><a id="webinar-'+ item.id +'" style="height:100%"  class="guttor-width" href="' + item.url + '">';
 			}
 			
-			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("type",item)[0].cssClass;
+			itemHTML += '<div class="card bg-white"><div class="card-header event-type '+ self.getFilterObjectForItem("topic",item)[0].cssClass;
 			
 			itemHTML += '"><div class=""><p class="event-date">' + webinarDate + '</p></div>';
 			
-			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("type",item)[0].iconURL+'"></img></div>';
+			itemHTML+='<img class="featuredIcon" src="'+self.getFilterObjectForItem("topic",item)[0].iconURL+'"></img></div>';
 			
 			itemHTML+= '<div class="card-content"><hr>';
 			
@@ -94,16 +94,16 @@
 				}	
 				//Get all featured items
 				
-				var months = self.filterListItemsBaseedOnCriteria(self.filteringOptions,{name:"month"});
-				if(months && months.length > 0)
+				var type = self.filterListItemsBaseedOnCriteria(self.filteringOptions,{name:"type"});
+				if(type && type.length > 0)
 				{
-					for (var j=1; j<=months[0].values.length; j++){
-						var arrMonths = self.filterListItemsBaseedOnCriteria(data,{month:j});
+					for (var j=1; j<=type[0].values.length; j++){
+						var arrMonths = self.filterListItemsBaseedOnCriteria(data,{type:j});
 						if(arrMonths.length > 0){
 							
-							htmlCardMarkup +="<div class='sort-wrap'><h2 class='h2-variation-1'>"+months[0].values[j].name+" </h2>";
+							htmlCardMarkup +="<div class='sort-wrap'><h2 class='h2-variation-1'>"+type[0].values[j].name+" </h2>";
 							htmlCardMarkup +="<div class='flex-wrap' >";
-							tempArrMonth = self.filterListItemsBaseedOnDate(arrMonths, months[0].values[j].id);	
+							tempArrMonth = self.filterListItemsBaseedOnDate(arrMonths, type[0].values[j].id);	
 							arrMonths = tempArrMonth;
 							for(var i=0; i<arrMonths.length; i++){
 								var item = arrMonths[i];
@@ -211,21 +211,23 @@
 						
 						list = bmcWebinarsData.listItems;
 						
-						// Adding id to month filter 
+						// Adding id to type filter 
 						var currDate = new Date();
 						for(j= 0; j < bmcWebinarsData.listItems.length; j++){
 							var webDate = new Date(bmcWebinarsData.listItems[j].date);
 							var modalID = bmcWebinarsData.listItems[j].id;
 							$("#" + modalID +" .modalDate").html("<strong>Date :</strong> " + bmcWebinarsData.listItems[j].date + " " + bmcWebinarsData.listItems[j].timeStamp);
 							if(webDate < currDate ){
-								bmcWebinarsData.listItems[j].month[i] = 2;
+								bmcWebinarsData.listItems[j].type[i] = 2;
 								// updating modal: changing register now button to watch now and removing date
 								$("#" + modalID +" a.btn.btn-primary-with-border").text('Watch now');
 								$("#" + modalID +" #webinar-type").text('Webinar');
+								$("#" + modalID +" .modalDate").css('display', 'none');
+								
 								
 
 							}else{
-								bmcWebinarsData.listItems[j].month[i] = 1;
+								bmcWebinarsData.listItems[j].type[i] = 1;
 								// updating modal: Adding date from JSON	
 
 							}						

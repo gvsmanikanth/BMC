@@ -19,7 +19,7 @@ include 'php-inc/head.php';
 	var bmcWebinarsData = {	
 		"filterCriteria" : [			
 			{
-				"name" : "type",
+				"name" : "topic",
 				"values" : [{
 					"id" : 0,
 					"name" : "All Topics",
@@ -82,7 +82,7 @@ include 'php-inc/head.php';
 				}]
 			},
 			{
-				"name" : "month",
+				"name" : "type",
 				"values" : [{
 					"id" : 0,
 					"name" : "All Webinars"
@@ -100,8 +100,8 @@ include 'php-inc/head.php';
 					{
 						"id" : 1,
 						"name" : "BMC Webinar – Brazil: A Chave Para se Tornar Digital: Pensar nas Pessoas!",
-						"type" : [3],
-						"month" : [0],
+						"topic" : [3],
+						"type" : [0],
 						"date" : "July 28, 2020 01:15:00",
 						"timeStamp" : "IST",		        		
 						"url" : "http://www.bmcsoftware.com.br/forms/key-to-becoming-digital-itsm-webinar-apr2017.html?cid=em-DSM_Webinar_Brazil_INV1-JM-04-f-04182017&cc=em&elqcid=2477&sfcid=70114000002Xtgd&emid=2749",
@@ -111,8 +111,8 @@ include 'php-inc/head.php';
 					{
 						"id" : 2,
 						"name" : "BMC Day - Boston",
-						"type" : [3],
-						"month" : [0],
+						"topic" : [3],
+						"type" : [0],
 						"date" : "October 12, 2020 01:15:00",
 						"timeStamp" : "IST",		        		
 						"url" : "http://bmcdays.bmc.com/boston/",
@@ -122,8 +122,8 @@ include 'php-inc/head.php';
 					{
 						"id" : 3,
 						"name" : "Control-M Tag",
-						"type" : [3],
-						"month" : [0],
+						"topic" : [3],
+						"type" : [0],
 						"date" : "August 10, 2020 01:15:00",
 						"timeStamp" : "IST",
 						"url" : "http://www.bmcsoftware.de/forms/control-m-day-frankfurt.html?cid=em-WLA_UserGroup_Frankfurt_MAY17_Email-AS-02",
@@ -135,8 +135,8 @@ include 'php-inc/head.php';
 					{
 						"id" : 4,
 						"name" : "BMC Day - Toronto",
-						"type" : [3],
-						"month" : [0],
+						"topic" : [3],
+						"type" : [0],
 						"date" : "August 17, 2020 23:15:30",
 						"timeStamp" : "IST",
 						"url" : "http://bmcdays.bmc.com/toronto/",
@@ -145,9 +145,9 @@ include 'php-inc/head.php';
 					},{
 						"id" : 5,
 						"name" : "Exchange Federal",
-						"type" : [2],
-						"month" : [0],
-						"date" : "May 7, 2020 23:15:30",
+						"topic" : [2],
+						"type" : [0],
+						"date" : "May 7, 202 23:15:30",
 						"timeStamp" : "IST",
 						"url" : "https://www.eiseverywhere.com/ereg/newreg.php?eventid=225963&reference=BMC",
 						"isModal" : true,
@@ -155,9 +155,9 @@ include 'php-inc/head.php';
 					},	{
 						"id" : 6,
 						"name" : "AFCEA Defensive Cyber Operations Symposium 2017",
-						"type" : [1],
-						"month" : [0],
-						"date" : "May 13, 2020 23:15:30",
+						"topic" : [1],
+						"type" : [0],
+						"date" : "May 13, 2021 23:15:30",
 						"timeStamp" : "IST",
 						"url" : "http://events.afcea.org//AFCEACyberOps17/Public/Content.aspx?ID=61250",
 						"isModal" : true,
@@ -166,8 +166,8 @@ include 'php-inc/head.php';
 					{
 						"id": 2752,
 						"name": "The Helix Differentiation",
-						"type": [3],
-						"month": [0],
+						"topic": [3],
+						"type": [0],
 						"date": "September 19, 2020 10:00:00",
 						"timeStamp" : "BST",
 						"url": "",
@@ -176,8 +176,8 @@ include 'php-inc/head.php';
 					},{
 						"id" : 7,
 						"name" : "MainView RoundTable 2017",
-						"type" : [4],
-						"month" : [0],
+						"topic" : [4],
+						"type" : [0],
 						"date" : "September 12, 2020 23:15:30",
 						"timeStamp" : "IST",
 						"url" : "http://www.bmcsoftware.de/forms/mainview-roundtable-frankfurt-jun2017-registration.html?cid=em-ZSO_MainView_RoundTable_Frankfurt_JUN2017_Email-AS-02",
@@ -188,8 +188,8 @@ include 'php-inc/head.php';
 					{
 						"id": 2111,
 						"name": "Building the bridge between Development and Operations",
-						"type": [3],
-						"month": [8],
+						"topic": [3],
+						"type": [2],
 						"date": "August 06, 2020 16:00:00",
 						"timeStamp" : "BST",
 						"url": "",
@@ -216,8 +216,8 @@ include 'php-inc/head.php';
 								<form action="#">
 									<fieldset>
 										<ol>
+											<li><select id="topic"></select></li>
 											<li><select id="type"></select></li>
-											<li><select id="month"></select></li>
 										</ol>
 									</fieldset>
 								</form>
