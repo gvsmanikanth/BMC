@@ -493,16 +493,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = "";
                         if(gatedAsset && formPath != null && isFormActive(formPath)){
-                            if(!formPath.endsWith(".html")) {
-                                assetLink = formPath + ".html";
-                            }else {
-                                assetLink = formPath;
-                            }
+                            assetLink = formPath;
                         }else {
-                            assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                            if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
-                                assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
-                            }
+                            assetLink = path;
+                        }
+                        if(!assetLink.contains(".html")){
+                            assetLink = assetLink + ".html";
                         }
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
@@ -514,7 +510,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         
                         // set video ID
                         
-                        if(linkType.equals("play") && assetLink == null) {
+                        if(linkType.equals("play")) {
                         	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
                       
                         }

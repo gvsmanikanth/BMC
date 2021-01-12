@@ -80,17 +80,14 @@ public class ResourceCenterFeaturedCardModel {
                 String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                 String assetLink = "";
                 if(gatedAsset && formPath != null && isFormActive(formPath)){
-                    if(!formPath.endsWith(".html")) {
-                        assetLink = formPath + ".html";
-                    }else {
-                        assetLink = formPath;
-                    }
+                    assetLink = formPath;
                 }else {
-                    assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                    if (assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK)) {
-                        assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
-                    }
+                    assetLink = path;
                 }
+                if(!assetLink.contains(".html")){
+                    assetLink = assetLink + ".html";
+                }
+
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
