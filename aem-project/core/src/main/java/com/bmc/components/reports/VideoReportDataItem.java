@@ -1,7 +1,7 @@
 package com.bmc.components.reports;
 
 public class VideoReportDataItem {
-	
+
 	private String Page_Path;
 	public String getPage_Path() {
 		return Page_Path;
@@ -105,25 +105,20 @@ public class VideoReportDataItem {
 	private String Description;
 	private String typeId;
 	private String navTitle;
+	//WEB-7929 AEM Video Report ENhancement
 	private String LastReplicationAction;
+
+	public String getLastReplicatedDate () {
+		return lastReplicatedDate;
+	}
+
+	public void setLastReplicatedDate (String lastReplicatedDate) {
+		this.lastReplicatedDate = lastReplicatedDate;
+	}
+
+	private String lastReplicatedDate;
 	private String templateType;
-	private String overlayURL;	
-	private String ic_app_inclusion;
-	public String getIc_app_inclusion() {
-		return ic_app_inclusion;
-	}
-	public void setIc_app_inclusion(String ic_app_inclusion) {
-		this.ic_app_inclusion = ic_app_inclusion;
-	}
-	public String getIc_weighting() {
-		return ic_weighting;
-	}
-	public void setIc_weighting(String ic_weighting) {
-		this.ic_weighting = ic_weighting;
-	}
-	private String ic_weighting;
-	
-	
+	private String overlayURL;
 	public String getOverlayURL() {
 		return overlayURL;
 	}
@@ -137,6 +132,6 @@ public class VideoReportDataItem {
 		this.overlayText = overlayText;
 	}
 	private String overlayText;
-	
+
 
 }
