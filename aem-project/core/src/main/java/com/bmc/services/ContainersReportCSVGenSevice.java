@@ -177,7 +177,7 @@ public class ContainersReportCSVGenSevice {
 															 }
 															 reportDataItem.setRc_inclusion (getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion",session));
 															 reportDataItem.setAsset_inclusion (getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion",session));
-															 reportDataItem.setRc_form_path (getPropertyValues(reportDataNode, "rc_form_path","rc_form_path","rc_form_path",session));
+															 reportDataItem.setRc_form_path (getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path",session));
 														 	//WEB-9640 AEM Reports -DC Report Enhancement 2 -- END
 														 	if(reportDataItem.getDocument_link_type().equals("search"))
 																	{
