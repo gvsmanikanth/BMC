@@ -7,6 +7,7 @@
       margin: 0; /* Remove margins */
       //WEB-6665
       background-image: none;
+      position: relative;
       &::before{
         content: '+';
         padding: 10px;
