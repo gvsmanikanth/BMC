@@ -146,7 +146,6 @@
 		// Filter data by most recent item
 		
 		WebinarList.prototype.filterListItemsBaseedOnDate = function(arr, pid) {
-				console.log(arr);
 				if(pid == 1){
 					var sortedActivities = arr.slice().sort(function (a, b){ 
 						return new Date(a.date) - new Date(b.date)

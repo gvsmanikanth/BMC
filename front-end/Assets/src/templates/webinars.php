@@ -268,7 +268,7 @@ include 'php-inc/head.php';
 			<div class="-sm mt0"><b>Language :</b> English</div>	
 			<div class="-sm mt0"><b>More Info :</b> <a class="word-wrap-break-word" target="_blank" href="http://bmcdays.bmc.com/boston/">Agenda</a></div>
 			<div class="-sm mt2">BMC Day 2017 in Boston is coming soon. Join BMC technical experts and your peers for this valuable IT management event. With insightful keynotes, educational sessions, and networking, BMC Day offers you the information, best practices, and training you need for digital IT success.</p>
-			<ul>
+			<ul class="orange-tick-bullets">
 			<li>Learn: Discover new strategies and solutions to address IT challenges and drive the digital transformation of your organization.</li>
 			<li>Connect: Interact onsite and online with peers, BMC experts, and IT vendors to expand your professional networks.</li>
 			<li>Advance: Deepen your understanding of the trends and technologies necessary for digital IT success.</li>
