@@ -8,6 +8,9 @@
       //WEB-6665
       background-image: none;
       position: relative;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        cursor: pointer;
+      }
       &::before{
         content: '+';
         padding: 10px;
