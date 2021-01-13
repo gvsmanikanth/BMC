@@ -84,9 +84,6 @@ public class ResourceCenterFeaturedCardModel {
                 }else {
                     assetLink = path;
                 }
-                if(!assetLink.contains(".html")){
-                    assetLink = assetLink + ".html";
-                }
 
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
