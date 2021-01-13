@@ -1,3 +1,4 @@
+package apps.bmc.groovyscripts.scripts
 /* This Groovy SCript queries the JCR to check if all Videos under /content/bmc/videos ,
 * adds rc-inclusion = true & asset-inclusion for all the 22 videos provided
 * and rc-inclusion = false for others
