@@ -18,7 +18,18 @@
 			var dayName = weekDay[webinarDate.getDay()];
 			var monthName = monthDay[webinarDate.getMonth()];
 			var year = webinarDate.getFullYear();
+			
 			var hour = webinarDate.getHours();
+			console.log(hour);
+			hour = (hour+24)%24;
+			console.log("after coversion "+hour); 
+			var mid='am';
+			if(hour==0){ //At 00 hours we need to show 12 am
+				hour=12;
+			}else if(hour>12){
+				hour=hour%12;
+				mid='pm';
+			}
 			var minute = (webinarDate.getMinutes()<10?'0':'') + webinarDate.getMinutes();	
 			var self = this;
 					
@@ -29,7 +40,7 @@
 				var ctaBtn = "Watch now";
 				var webinarDate = "On Demand";
 			}else{
-				webinarDate = dayName + ", " + day + " "+ monthName +" "+ year +" "+ hour +":"+ minute + " " + item.timeStamp;  
+				webinarDate = dayName + ", " + day + " "+ monthName +" "+ year +" "+ hour +":"+ minute + " " + mid + " " + item.timeStamp;  
 			}
 
 			var itemHTML = ''
