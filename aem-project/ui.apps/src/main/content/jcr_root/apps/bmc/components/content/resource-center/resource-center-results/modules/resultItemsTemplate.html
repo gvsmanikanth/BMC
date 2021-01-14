@@ -5,8 +5,7 @@
             {{#ifCond linkType '===' "play"}}
                 <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
             {{else}}
-                <sly data-sly-use.assetLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=assetLink}"></sly>
-                <a href="{{assetLink.href}}" target="_blank" {{{analyticsAttributes}}}>
+                <a href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
             {{/ifCond}}
             <div class="simple-card bg-white" style="height: 310px;">
                 <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
