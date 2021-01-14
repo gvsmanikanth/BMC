@@ -497,9 +497,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         }else {
                             assetLink = path;
                         }
-                        if(!assetLink.contains(".html")){
-                            assetLink = assetLink + ".html";
-                        }
+
+                        assetLink = resourceResolver.map(assetLink);
+
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
                         //  metadata
