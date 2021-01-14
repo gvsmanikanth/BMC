@@ -105,17 +105,28 @@ public class VideoReportDataItem {
 	private String Description;
 	private String typeId;
 	private String navTitle;
-	//WEB-7929 AEM Video Report ENhancement
+	//WEB-7929 AEM Video Report ENhancement-START
 	private String LastReplicationAction;
-
+	private String referencePaths;
+	private Boolean rc_inclusion;
+	private Boolean asset_inclusion;
+	public Boolean getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (Boolean asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public Boolean getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (Boolean rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+	public String getReferencePaths() {
+		return referencePaths;
+	}
+	public void setReferencePaths(String referencePaths) {
+		this.referencePaths = referencePaths;
+	}
+	//WEB-7929 AEM Video Report ENhancement-END
 	public String getLastReplicatedDate () {
 		return lastReplicatedDate;
 	}
-
 	public void setLastReplicatedDate (String lastReplicatedDate) {
 		this.lastReplicatedDate = lastReplicatedDate;
 	}
-
 	private String lastReplicatedDate;
 	private String templateType;
 	private String overlayURL;

@@ -5,22 +5,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
-import javax.jcr.Session;
-import javax.jcr.Value;
+import javax.jcr.*;
 
+import com.bmc.components.utils.ReportsMetaDataProvider;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -74,9 +63,11 @@ public class VideoReportCSVGenService {
 
 	private static  ArrayList<VideoReportDataItem> list = new ArrayList<VideoReportDataItem>();
 
+	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
+
 	private String[] TableNames = {"Video Page Path","Name","Type","Modified Date","Modified By",
-			"Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video",
-			"Overlay URL","Overlay Text","Last Replicated Date","Last Replication action"};
+			"Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","RC Inclusion","Asset Inclusion",
+			"Overlay URL","Overlay Text","Last Replicated Date","Last Replication action","References"};
 
 	/*
 	 * Retrieves forms data from the JCR at /content/bmc/videos
@@ -150,6 +141,7 @@ public class VideoReportCSVGenService {
 					if (formDataNode.hasNode ("video-data")) {
 						Node formVideoData = formDataNode.getNode ("video-data");
 						String PagePath = formDataNode.getPath ().replace ("/jcr:content", "");
+						reportDataItem.setReferencePaths(getVideoReferences (PagePath,session));
 						reportDataItem.setPage_Path (PagePath);
 						for (PropertyIterator propeIterator1 = formVideoData.getProperties (); propeIterator1.hasNext (); ) {
 							Property prop = propeIterator1.nextProperty ();
@@ -191,7 +183,12 @@ public class VideoReportCSVGenService {
 								if (! prop.getValue ().equals (null)) reportDataItem.setLastReplicationAction (prop.getValue ().getString ());
 							} else if (prop.getName ().equalsIgnoreCase ("cq:lastReplicated")) {
 								if (! prop.getValue ().equals (null)) reportDataItem.setLastReplicatedDate (prop.getValue ().getString ());
+							}else if (prop.getName ().equalsIgnoreCase ("rc-inclusion")) {
+								if (! prop.getValue ().equals (null)) reportDataItem.setRc_inclusion (prop.getValue ().getBoolean ());
+							}else if (prop.getName ().equalsIgnoreCase ("asset-inclusion")) {
+								if (! prop.getValue ().equals (null)) reportDataItem.setAsset_inclusion (prop.getValue ().getBoolean ());
 							}
+
 
 						}
 					}
@@ -234,8 +231,9 @@ public class VideoReportCSVGenService {
 			data.put(count.toString(), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getTypeId (),
 					list.get(i).getModified_Date(),list.get(i).getModified_By(),
 					list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
-					list.get(i).getDescription(),list.get(i).getOverlayURL(),list.get(i).getOverlayText(),
-					list.get(i).getLastReplicatedDate (),list.get(i).getLastReplicationAction ()});
+					list.get(i).getDescription(),list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
+					list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getLastReplicatedDate (),
+					list.get(i).getLastReplicationAction (), list.get(i).getReferencePaths ()});
 			logger.info("Added the data item "+count+" to the report");
 		}
 		logger.info("Creating the EXCEL sheet");
@@ -411,5 +409,39 @@ public class VideoReportCSVGenService {
 		String date = dateFormat.format(today).replace("/", "_");
 		date = date.replace(":", "_");
 		return  date.replace(" ", "_"); //2016/11/16 12:08:43
+	}
+	/*
+	 * This method generates a custom Predicate based on user input.
+	 */
+	public Map<String,String> createQueryReferences(String path) {
+		// create query description as hash map (simplest way, same as form post)
+		Map<String, String> map = new HashMap<String, String> ();
+		// create query description as hash map (simplest way, same as form post)
+		map.put ("path", "/content/bmc/language-masters");
+		map.put ("fulltext", path);
+		map.put ("property.hits", "full");
+		map.put ("property.depth", "10");
+		return map;
+		// can be done in map or with Query methods
+	}
+		/*
+		Query Manager API call to fetch references for each Video path into the JCR
+		 */
+		private String getVideoReferences(String path,Session session) throws RepositoryException,PathNotFoundException
+	{
+		List<String> propVals = new ArrayList<>();
+		Map<String,String> map = createQueryReferences(path);
+		Query query = builder.createQuery(PredicateGroup.create(map), session);
+		SearchResult result = query.getResult();
+		for (Hit hit : result.getHits()) {
+			Node node = hit.getResource().adaptTo(Node.class);
+			String propertyValue = node.getPath().toString();
+			if (!propertyValue.equals(null))
+			{
+				propertyValue = propertyValue.substring(0, propertyValue.indexOf("/jcr:content"));
+			}
+			propVals.add(propertyValue);
+		}
+		return (String.join(",", propVals));
 	}
 }
