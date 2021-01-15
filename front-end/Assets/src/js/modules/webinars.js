@@ -5,25 +5,23 @@
 			var self = this;					
 			FilterList.call(this, filterContainer, filterList, list);
 		}
-
+		
 		WebinarList.prototype = Object.create(FilterList.prototype);
 
 		WebinarList.prototype.getListItemHTML = function(item) { 
-			var currentDate = new Date();
-			var webinarDate = new Date(item.date);
-			var ctaBtn = "Register now";
 			var monthDay = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
 			var weekDay = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+			var mid='am';
+			var currentDate = new Date();
+			var webinarDate = new Date(item.date);
+			var ctaBtn = "Register now";			
 			var day = webinarDate.getDate();	
 			var dayName = weekDay[webinarDate.getDay()];
 			var monthName = monthDay[webinarDate.getMonth()];
-			var year = webinarDate.getFullYear();
-			
+			var year = webinarDate.getFullYear();			
 			var hour = webinarDate.getHours();
-			console.log(hour);
-			hour = (hour+24)%24;
-			console.log("after coversion "+hour); 
-			var mid='am';
+			var modalID = item.id;
+			hour = (hour+24)%24;			
 			if(hour==0){ //At 00 hours we need to show 12 am
 				hour=12;
 			}else if(hour>12){
@@ -42,7 +40,8 @@
 			}else{
 				webinarDate = dayName + ", " + day + " "+ monthName +" "+ year +" "+ hour +":"+ minute + " " + mid + " " + item.timeStamp;  
 			}
-
+			
+			$("#" + modalID +" .modalDate").html("<strong>Date :</strong> " + webinarDate );
 			var itemHTML = ''
 			
 			if(item.isModal){
@@ -226,16 +225,12 @@
 						for(j= 0; j < bmcWebinarsData.listItems.length; j++){
 							var webDate = new Date(bmcWebinarsData.listItems[j].date);
 							var modalID = bmcWebinarsData.listItems[j].id;
-							$("#" + modalID +" .modalDate").html("<strong>Date :</strong> " + bmcWebinarsData.listItems[j].date + " " + bmcWebinarsData.listItems[j].timeStamp);
 							if(webDate < currDate ){
 								bmcWebinarsData.listItems[j].type[i] = 2;
 								// updating modal: changing register now button to watch now and removing date
 								$("#" + modalID +" a.btn.btn-primary-with-border").text('Watch now');
 								$("#" + modalID +" #webinar-type").text('Webinar');
-								$("#" + modalID +" .modalDate").css('display', 'none');
-								
-								
-
+								$("#" + modalID +" .modalDate").css('display', 'none');										
 							}else{
 								bmcWebinarsData.listItems[j].type[i] = 1;
 								// updating modal: Adding date from JSON	
