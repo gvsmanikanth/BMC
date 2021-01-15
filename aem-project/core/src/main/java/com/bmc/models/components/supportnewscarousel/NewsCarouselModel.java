@@ -54,6 +54,7 @@ public class NewsCarouselModel {
                     .append("&count=").append(newsCount) ;
 
             HttpGet httpGet = new HttpGet(apiUrl.toString());
+            logger.info("News Carousel Api Url: " + apiUrl.toString());
 
             logger.info("Executing request to fetch news content" + httpGet.getRequestLine());
             HttpResponse response1 = httpClient.execute(httpGet);
@@ -62,6 +63,12 @@ public class NewsCarouselModel {
 
             Gson gson = new Gson();
             newsResults = gson.fromJson(content, NewsResults.class);
+
+            logger.info("Response status code: " + newsResults.getStatusCode());
+            if("OK".equals(newsResults.getStatusCode()))
+            {
+                logger.info("Final News Count :" + newsResults.getBody().getData().size());
+            }
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
