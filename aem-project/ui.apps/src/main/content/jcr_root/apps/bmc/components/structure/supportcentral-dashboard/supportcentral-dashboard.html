@@ -30,6 +30,16 @@
 </script>
 
 <app-root></app-root>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-38WV2ZDKPB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-38WV2ZDKPB', {
+	   'custom_map': {'dimension<1>': 'login status'}}
+	  );
+</script>
 <script src="/etc/clientlibs/bmc/dashboard/js/runtime.js" defer></script>
 <script src="/etc/clientlibs/bmc/dashboard/js/polyfills-es5.js" nomodule defer></script>
 <script src="/etc/clientlibs/bmc/dashboard/js/polyfills.js" defer></script>
