@@ -80,7 +80,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "How-to Videos",
-        description: "View support video solutions",
+        description: "YouTube support channels",
         routerLink: null,
         icon: "psc-icon-how_to_videos"
     },
@@ -97,8 +97,8 @@ export const widgets: Widget[] = [
         id: "supportQuestionUrl",
         href: null,
         isExtended: false,
-        title: "Frequently Asked Questions",
-        description: "See frequently asked questions",
+        title: "Common Support Questions",
+        description: "Frequently asked questions",
         routerLink: 'support-question',
         icon: "d-icon-question_circle_o"
     }

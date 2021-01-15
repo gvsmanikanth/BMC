@@ -1014,8 +1014,8 @@ var Support = Support || {};
 					return timeFraction < 0.5 ? 2 * timeFraction * timeFraction : 1 - Math.pow(-2 * timeFraction + 2, 2) / 2;
 				},
 				function (progress) {
-					let scrollPos = from + ((to - from) * progress)
-					element.scroll(scrollPos, 0)
+					let scrollPos = from + ((to - from) * progress);
+					element.scrollLeft = scrollPos;
 				},
 			  	800
 			)
@@ -1030,7 +1030,11 @@ var Support = Support || {};
 			news.forEach(function (element) {
 				let body = element.querySelector('.news-body');
 				let link = element.querySelector('h3 a').attributes.href.value;
-				body.innerHTML = body.innerText.slice(0,130) + '<a href="' + link + '">...</a>';
+				if (body.innerText.length > 130) {
+					body.innerHTML = body.innerText.slice(0,130) + '<a href="' + link + '">...</a>';
+				} else {
+					body.innerHTML = body.innerText;
+				}
 				body.classList.remove('not-trimmed');
 			})
 			rightArrow.addEventListener('click', function (e) {

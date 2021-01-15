@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Case } from '../models/case/case.model';
 import { WidgetsLinks } from '../models/widgets-links.model';
 import { DataFetchService } from './data-fetch.service';
+import { GoogleAnalyticsService } from './google-analytics.service';
 
 @Injectable()
 export class CaseManageService {
@@ -18,7 +19,10 @@ export class CaseManageService {
     message: 'Loading'
 }
 
-  constructor(private dataFetch: DataFetchService) { }
+  constructor(
+    private dataFetch: DataFetchService,
+    private ga: GoogleAnalyticsService
+  ) {}
 
   getCases() {
     this.busyConfig.busy = true;
@@ -27,8 +31,9 @@ export class CaseManageService {
       this.cases = cases;
       console.log(cases);
       this.busyConfig.busy = false;
-    }).catch(() => {
+    }).catch((error) => {
       this.busyConfig.busy = false;
+      this.ga.catchError(error);
     })
   }
 }

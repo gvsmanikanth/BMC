@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DocsService } from '../shared/services/docs.service';
+import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 import { StateService } from '../shared/services/state.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class DocsComponent implements OnInit {
 
   widgetDescription = null;
 
-  constructor(public docsService: DocsService, public state: StateService) { }
+  constructor(
+    public docsService: DocsService, 
+    public state: StateService,
+    private ga: GoogleAnalyticsService
+  ) { }
 
   ngOnInit() {
     this.docsService.loadDocs();
@@ -25,4 +30,11 @@ export class DocsComponent implements OnInit {
     }
   }
 
+  sendDocumentation(name: string) {
+    this.ga.sendEvent('click', name, 'open resourse');
+  }
+
+  sendAccordion(name: string) {
+    this.ga.sendEvent('accordion', name, 'Documentation');
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Case } from '../shared/models/case/case.model';
 import { CaseManageService } from '../shared/services/case-manage.service';
+import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 import { StateService } from '../shared/services/state.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class CaseManagementComponent implements OnInit {
 
   casesChunk: Case[] = null;
 
-  constructor(public caseService: CaseManageService, public state: StateService) { }
+  constructor(
+    public caseService: CaseManageService, 
+    public state: StateService,
+    private ga: GoogleAnalyticsService
+  ) { }
 
   ngOnInit() {
     this.caseService.getCases().then(() => {
@@ -22,6 +27,22 @@ export class CaseManagementComponent implements OnInit {
 
   paginate(event) {
     this.casesChunk = this.caseService.cases.slice(event.first, event.first + +event.rows);
+    this.ga.sendEvent('click', 'case managment', 'pagination');
   }
 
+  sendCaseManagment(name: string) {
+    this.ga.sendEvent('widget click', name, 'open resourse');
+  } 
+
+  submitCase() {
+    this.ga.sendEvent('submit', 'case managment', 'new case');
+  }
+
+  getViews() {
+    this.ga.sendEvent('view click', 'case managment', 'all cases');
+  }
+
+  sendCase(caseNumber: string, caseName: string) {
+    this.ga.sendEvent('case click', caseNumber, caseName);
+  }
 }

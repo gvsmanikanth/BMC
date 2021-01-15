@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommunityService } from '../shared/services/community/community.service';
+import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 import { StateService } from '../shared/services/state.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class CommunityComponent implements OnInit {
 
   widgetDescription = null;
 
-  constructor(public communityService: CommunityService, public state: StateService) { }
+  constructor(
+    public communityService: CommunityService, 
+    public state: StateService,
+    private ga: GoogleAnalyticsService
+  ) { }
 
   ngOnInit() {
     this.communityService.getAskCommunity();
@@ -23,6 +28,14 @@ export class CommunityComponent implements OnInit {
     } else {
       this.widgetDescription = this.DESCRIPTION_NON_LOGGED_IN
     }
+  }
+
+  sendCommunity(name: string) {
+    this.ga.sendEvent('widget click', name, 'open resourse');
+  }
+
+  sendAccordion(name: string) {
+    this.ga.sendEvent('accordion', name, 'community');
   }
 
 }

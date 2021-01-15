@@ -1,4 +1,4 @@
-<a class="tile" *ngIf="widget.routerLink" [href]="widget.href" target="_blank">
+<a class="tile" *ngIf="widget.routerLink" [href]="widget.href" target="_blank" (click)="sendTileClicks(widget.title)">
     <div class="tile-left"></div>
     <div class="tile-body">
       <div class="tile-right">
@@ -14,7 +14,7 @@
       <span *ngIf="widget.isExtended" class="d-icon-undo"></span>
     </a>
 </a>
-<a class="tile no-extend" [href]="widget.href" *ngIf="!widget.routerLink" target="_blank">
+<a class="tile no-extend" [href]="widget.href" *ngIf="!widget.routerLink" target="_blank" (click)="sendTileClicks(widget.title)">
   <div class="tile-left"></div>
   <div class="tile-body">
     <div class="tile-right">

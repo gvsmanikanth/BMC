@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Widget } from '../shared/models/widget.model';
+import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 
 @Component({
   selector: 'app-tile',
@@ -10,7 +11,7 @@ export class TileComponent implements OnInit {
   @Input() widget: Widget;
   @Output() extended: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() { }
+  constructor(private ga: GoogleAnalyticsService) { }
 
   ngOnInit() {
   }
@@ -20,9 +21,14 @@ export class TileComponent implements OnInit {
     if (this.widget.routerLink != null) {
       this.widget.isExtended = !this.widget.isExtended;
       this.extended.emit(true);
+      this.ga.sendEvent('open', this.widget.title, 'personalize view');
     } else {
       this.widget.isExtended = false;
     }
+  }
+
+  sendTileClicks(title) {
+    this.ga.sendEvent('widget click', title, 'open resourse');
   }
 
 }
