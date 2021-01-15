@@ -79,7 +79,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-621970361, Customer Story, download",
             "ic-type-146731505, Datasheet, download",
              // WEB-9208 Add Demo Container Card capabilities to Resource Center.
-            "ic-type-464000615, Demo, play",
+            "ic-type-464000615, Demo, demo",
             "ic-type-165669365, E-book, download",
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",

@@ -32,14 +32,11 @@
                         <svg class="align-middle s-{{linkType}}">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                         </svg>
-                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center START*/ -->
-                        {{#ifCond type '===' "Demo" }}${'Start' @ i18n}
-                        {{else}}
                         {{#ifCond linkType '===' "play"}}${'Play' @ i18n}{{/ifCond}}
-						{{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
+                        {{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
                         {{#ifCond linkType '===' "view"}}${'View' @ i18n}{{/ifCond}}
-                        {{/ifCond}}
-                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center END */ -->
+                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
+                        {{#ifCond linkType '===' "demo"}}${'Start' @ i18n}{{/ifCond}}
                     </span>
                 </div>
             </div>
