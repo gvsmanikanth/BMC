@@ -33,7 +33,7 @@
     </adapt-tab-panel>
     <adapt-tab-panel icon="d-icon-comment_text" adapt-tab-title="Discussions">
         <div class="row">
-            <div class="col-md-6" [ngBusy]="busyConfigDicsussion">
+            <div class="col-md-6" [ngBusy]="busyConfigDiscussion">
                 <div class="question" *ngFor="let discussion of discussions.slice(0,5)">
                     <div class="d-icon-comment_text"></div><a [href]="discussion.link"
                         [innerHTML]="discussion.titleName"></a>
