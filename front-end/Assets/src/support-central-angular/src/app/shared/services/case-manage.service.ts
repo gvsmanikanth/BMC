@@ -33,7 +33,7 @@ export class CaseManageService {
       this.busyConfig.busy = false;
     }).catch((error) => {
       this.busyConfig.busy = false;
-      this.ga.catchError(error);
+      this.ga.catchError(`case-managment ${error.message}`);
     })
   }
 }

@@ -27,7 +27,8 @@ export class DocsService {
       this.busyConfig.busy = false;
     }).catch((error) => {
       this.busyConfig.busy = false;
-      this.ga.catchError(error);
+      console.log(error);
+      this.ga.catchError(`docs ${error.message}`);
     })
   }
 }
