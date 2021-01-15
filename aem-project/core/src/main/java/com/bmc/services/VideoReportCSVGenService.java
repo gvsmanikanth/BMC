@@ -184,9 +184,9 @@ public class VideoReportCSVGenService {
 							} else if (prop.getName ().equalsIgnoreCase ("cq:lastReplicated")) {
 								if (! prop.getValue ().equals (null)) reportDataItem.setLastReplicatedDate (prop.getValue ().getString ());
 							}else if (prop.getName ().equalsIgnoreCase ("rc-inclusion")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setRc_inclusion (prop.getValue ().getBoolean ());
+								if (! prop.getValue ().equals (null)) reportDataItem.setRc_inclusion (prop.getValue ().getString ());
 							}else if (prop.getName ().equalsIgnoreCase ("asset-inclusion")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setAsset_inclusion (prop.getValue ().getBoolean ());
+								if (! prop.getValue ().equals (null)) reportDataItem.setAsset_inclusion (prop.getValue ().getString ());
 							}
 
 
@@ -195,7 +195,7 @@ public class VideoReportCSVGenService {
 					list.add (reportDataItem);
 				}
 			}
-			logger.info("List Size of forms"+list.size());
+			logger.info("List Size of Videos : "+list.size());
 			//WEB-7929 AEM Video Report ENhancement END
 
 

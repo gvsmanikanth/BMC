@@ -108,12 +108,12 @@ public class VideoReportDataItem {
 	//WEB-7929 AEM Video Report ENhancement-START
 	private String LastReplicationAction;
 	private String referencePaths;
-	private Boolean rc_inclusion;
-	private Boolean asset_inclusion;
-	public Boolean getAsset_inclusion () { return asset_inclusion; }
-	public void setAsset_inclusion (Boolean asset_inclusion) { this.asset_inclusion = asset_inclusion; }
-	public Boolean getRc_inclusion () { return rc_inclusion; }
-	public void setRc_inclusion (Boolean rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+	private String rc_inclusion;
+	private String asset_inclusion;
+	public String getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public String getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
 	public String getReferencePaths() {
 		return referencePaths;
 	}
