@@ -24,7 +24,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Product Downloads",
-        description: "",
+        description: "Latest product downloads, patches & installation tools",
         routerLink: "epd-widget",
         icon: "d-icon-download"
     },
@@ -33,7 +33,7 @@ export const widgets: Widget[] = [
         href: null,
         isExtended: false,
         title: "Documentation",
-        description: "",
+        description: "Online technical documentation",
         routerLink: 'docs',
         icon: "d-icon-file_text_o"
     },
@@ -60,10 +60,10 @@ export const widgets: Widget[] = [
         id: "prdCompatibility",
         href: null,
         isExtended: false,
-        title: "Architecture Compatibility Modeler",
-        description: "Check if your products are supported",
+        title: "Product Compatibility",
+        description: "Check product compatibility with platforms and databases",
         routerLink: null,
-        icon: "d-icon-monitor_gear_puzzle"
+        icon: "psc-icon-compatibility_modeler"
 
     },
     {
@@ -73,7 +73,7 @@ export const widgets: Widget[] = [
         title: "Product Catalog",
         description: "Product support status and lifecycle dates",
         routerLink: null,
-        icon: "d-icon-case_wrench"
+        icon: "psc-icon-az_listing"
     },
     {
         id: "supportVideos",
@@ -82,13 +82,13 @@ export const widgets: Widget[] = [
         title: "How-to Videos",
         description: "View support video solutions",
         routerLink: null,
-        icon: "d-icon-right-attachment_video_adapt"
+        icon: "psc-icon-how_to_videos"
     },
     {
         id: "servicesConsulting",
         href: null,
         isExtended: false,
-        title: "Services & Consulting",
+        title: "Services and Consulting",
         description: "Get help with all aspects of your digital journey",
         routerLink: 'sac',
         icon: "d-icon-hands_gear"

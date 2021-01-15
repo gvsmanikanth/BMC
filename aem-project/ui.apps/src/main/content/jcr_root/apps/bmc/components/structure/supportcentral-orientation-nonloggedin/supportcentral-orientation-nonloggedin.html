@@ -5,14 +5,14 @@
             	<div>
 	            	<h3>Upgrade Assistance</h3>
 	                BMC assisted Migration Offering<br>
-	                <a class="btn learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
+	                <a class="btn btn-primary learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
             	</div>
             </div>
             <div class="psc-fs-12">
             	<div>
 	            	<h3>Support Central User Guide</h3>
-	                Learn more about BMC support Resources<br>
-	                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn learn-more">Online Guide</a>
+	                Learn more about BMC support resources<br>
+	                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn btn-secondary learn-more">Online Guide</a>
             	</div>
             </div>
             <sly data-sly-test.loggdIn="${!support.isLoggedIn || !support.isNewUser}">
@@ -20,7 +20,7 @@
 	                 <div>
 	                    <h3>Explore BMC resources</h3>
 	                    Get familiar with BMC resources<br>
-	                    <a href=${support.customerOrientationUrl} target="_blank" class="btn learn-more">New Customer Orientation</a>
+	                    <a href=${support.customerOrientationUrl} target="_blank" class="btn btn-primary learn-more">New Customer Orientation</a>
                		</div>
                 </div>
             </sly>

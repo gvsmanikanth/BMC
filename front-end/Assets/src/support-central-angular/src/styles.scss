@@ -1,4 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "psc-adapt";
+  src: url("./icomoon.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="psc-icon-"]:before {
+  font-family: "psc-adapt";
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  vertical-align: baseline;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: rotate(0.001deg);
+  display: inline-block;
+}
+
+.psc-icon-compatibility_modeler:before {
+  content: "\25d8";
+}
+
+.psc-icon-az_listing:before {
+  content: "\2955";
+}
+
+.psc-icon-how_to_videos:before {
+  content: "\25a2";
+}
+
+.psc-icon-personalization:before {
+  content: "\2b94";
+}
+
 html body {
   font-size: inherit;
 }

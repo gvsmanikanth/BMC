@@ -5,10 +5,10 @@
             border-radius: 5px;
         }
         .tile-right {
-            width: 24%;
+            width: 21%;
         }
         .tile-center {
-            width: 74%;
+            width: 77%;
         }
     }
     & {
@@ -36,7 +36,7 @@
     }
     .tile-center {
         & {
-            width: 67%;
+            width: 75%;
             font-size: 12px;
         }
         h3 {
@@ -48,7 +48,7 @@
     .tile-right{
         & {
             // width: 11%; //1-st variant
-            width: 30%; //2-nd
+            width: 25%; //2-nd
             display: flex;
             justify-content: space-around;
             padding-top: 9px;
@@ -83,9 +83,8 @@
             background-color: #F9F9FA;
         }
         span {
-            font-size: 25px;
-            color:#00A79D; //2-nd variant
-            // color: white;
+            font-size: 40px;
+            color:#00A79D;
         }
     }
  }

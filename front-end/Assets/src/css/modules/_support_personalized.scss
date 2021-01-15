@@ -17,25 +17,31 @@
 		display: flex;
 	}
 	& > div {
-		width: 33%;
+		width: 30%;
 		display: flex;
-	}
-	& > div:nth-child(2) {
 		justify-content: center;
+		margin-right:5%;
 	}
 	& > div:nth-child(3) {
-		justify-content: flex-end;
+		margin-right: 0;
 	}
 }
 
 .psc-fs-12 {
 	font-size: 12px;
+	.btn.btn-secondary {
+		font-size: 13px;
+		padding: .5rem 1rem;
+		margin-right: 15px;
+		margin-bottom: 15px;
+	}
 }
 
 .support-message-box.psc-promo {
 	p {
-		border-color: #F86e00;
+		border-color: #3CB6CE;
 		position: relative;
+		box-shadow: 0 3px 6px rgba(0,0,0,.16);
 	}
 }
 
