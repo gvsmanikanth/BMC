@@ -223,14 +223,6 @@
                         </_50_50contentcontain>
                     </maincontentcontainer>
                 </customcontentcontain>
-                <experiencefragment
-                        jcr:created="{Date}2019-12-11T05:56:12.805-05:00"
-                        jcr:createdBy="ropandit@bmc.com"
-                        jcr:lastModified="{Date}2019-12-11T05:56:40.189-05:00"
-                        jcr:lastModifiedBy="ropandit@bmc.com"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
-                        fragmentPath="/content/experience-fragments/bmc/language-masters/en/forms2/social-proof-and-talk-to-expert/social-proof-and-talk-to-expert"/>
             </responsivegrid>
         </root>
     </jcr:content>
