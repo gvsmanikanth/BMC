@@ -54,6 +54,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
+
     private ResourceResolver resourceResolver;
     private Session session;
 
@@ -87,7 +88,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-185980791, Videos, play",
             "ic-type-291550317, Webinar, view",
             "ic-type-546577064, White Paper, download",
-            "ic-type-188743546, UnCategorized, view"
+            "ic-type-188743546, UnCategorized, view",
+             "ic-type-196378596, All, view"
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
@@ -226,13 +228,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     /**
      * Build group predicates
-     * 
+     * WEB-9267 Changed the datatype of values from String[] to list<String>
      * @param propertyName
      * @param values
      * @param queryParamsMap
-     * @param predicateIndex
      */
-    private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
+    private void buildGroupPredicate(String propertyName, List<String> values, Map<String, String> queryParamsMap, int groupIndex) {
     
     	queryParamsMap.put(groupIndex + "_group.p.or", "true");
     	
@@ -252,7 +253,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * rootPath=/content/bmc/us/en/documents
      * &ic-content-type=ic-type-196363946,ic-type-146731505&ic-topics=ic-topics-017644695,ic-topics-594037608
      * &sortCriteria=modified&resultsPerPage=10&pageIndex=0
-     * 
+     * //WEB-9267 Adds "All" or "All PL Products" as default.
      * 1_group.p.or=true
 	 * 1_group.1_property.value=ic-type-196363946
      * 1_group.1_property=jcr:content/ic-content-type
@@ -271,30 +272,29 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      */
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-            
         	// Build predicate for ic-app-inclusion
         	String[] allowedInclusionValues = {"yes", "gate"};
-        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
-        	
+        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
             int i = 2;
-            
             // check if any of the supported properties are present in the URL
+            //WEB-9267 Added "All" & "All PL Products" to all filter category- START
             for(String propertyName : baseImpl.getPropertyNames()) {
             	if(urlParameters.containsKey(propertyName)) {
-            		
             		String[] filterValues = urlParameters.get(propertyName);
-            		String[] values = filterValues[0].split(",");
-            		
+                    List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
+                    if(propertyName.equals ("product_interest")) values.add("All PL Products");
+                    else values.add("All");
+                    log.info ("BMC INFO : Filter property list"+Arrays.asList (values));
             		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
             	}
+                //WEB-9267 Added "All" & "All PL Products" to all filter category- END
             }
-            
-
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
         }
         return predicateIndex;
     }
+
 
     private String buildKeywordValuePredicate( Integer index) {
         StringBuilder queryPredicate = new StringBuilder();

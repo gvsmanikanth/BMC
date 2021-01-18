@@ -153,7 +153,10 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             if(list.contains("All")){
                 // Add "All" as the first character in filter
                 list.remove (list.indexOf ("All"));
-                list.add(0,"All");
+                Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
+            }else if (list.contains ("All PL Products"))
+            {
+                list.remove (list.indexOf ("All PL Products"));
                 Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
             }else
             {
