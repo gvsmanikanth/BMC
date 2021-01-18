@@ -433,6 +433,9 @@ body.no-scroll{
           .s-view {
             background-image: url('#{$imagesFolder}s-view-white.png');
           }
+		  .s-demo {
+			background-image: url("#{$imagesFolder}s-play-white.png");
+			}
         }
         .card-footer{
           transition: 0.3s linear;          
