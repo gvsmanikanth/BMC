@@ -168,4 +168,9 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     public String getContentTypeActionValue(String contentType) {
         return baseImpl.getContentTypeActionValue(contentType);
     }
+
+    @Override
+    public String getAllFilterValue (String contentType) {
+        return null;
+    }
 }

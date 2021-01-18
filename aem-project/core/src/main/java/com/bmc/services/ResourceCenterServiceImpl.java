@@ -93,6 +93,23 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
+
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters
+    // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
+    @Property(
+            description = "Mappings of 'All' property values for Resource Center Filters",
+            value = {
+                    "ic-topics ,ic-topics-357652163",
+                    "ic-types,ic-type-196378596",
+                    "ic-buyer-stage,ic-buyer-stage-453243562",
+                    "ic-target-persona,ic-target-persona-567887231",
+                    "ic-target-industry,ic-target-industry-289456374",
+                    "ic-company-size,ic-company-size-398345671",
+                    "product-interests,189379811"
+            })
+    private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resourcecenter.all.filter.mapping";
+    private Map<String, String> allFiltersValueMapping;
+
     private List<String> resourceFiltersList;
 
     private Map<String, String> contentTypeValueMapping;
@@ -114,7 +131,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
-
+        this.allFiltersValueMapping = toMap ((String[]) props.get(RESOURCE_ALL_FILTER_VALUE_MAPPING));
         this.contentTypeValueMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING));
         this.contentTypeActionMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING), 0, 2);
 
@@ -253,7 +270,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * rootPath=/content/bmc/us/en/documents
      * &ic-content-type=ic-type-196363946,ic-type-146731505&ic-topics=ic-topics-017644695,ic-topics-594037608
      * &sortCriteria=modified&resultsPerPage=10&pageIndex=0
-     * //WEB-9267 Adds "All" or "All PL Products" as default.
+     * //WEB-9267 Adds "All" or "All PL Products" as default to all search filters.
      * 1_group.p.or=true
 	 * 1_group.1_property.value=ic-type-196363946
      * 1_group.1_property=jcr:content/ic-content-type
@@ -282,12 +299,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             	if(urlParameters.containsKey(propertyName)) {
             		String[] filterValues = urlParameters.get(propertyName);
                     List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
-                    if(propertyName.equals ("product_interest")) values.add("All PL Products");
-                    else values.add("All");
-                    log.info ("BMC INFO : Filter property list"+Arrays.asList (values));
+                    log.info ("BMC INFO : Filter property "+propertyName+" values added to list"+Arrays.asList (values));
+                    String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
+                    if(!type.equals (null))values.add (type);
             		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
             	}
-                //WEB-9267 Added "All" & "All PL Products" to all filter category- END
+                //WEB-9267 Added "All" & "All PL Products" to all filter category - END
             }
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
@@ -579,5 +596,14 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             return contentType;
         }
         return contentTypeActionMapping.get(contentType);
+    }
+
+    @Override
+    public String getAllFilterValue (String filterValue) {
+        if (!allFiltersValueMapping.containsKey(filterValue)) {
+            log.debug("No mapping exists for content type {}", filterValue);
+            return filterValue;
+        }
+        return allFiltersValueMapping.get(filterValue);
     }
 }
