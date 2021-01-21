@@ -600,13 +600,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/control-m-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/it-solutions/automation-orchestration.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -888,13 +882,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/bmc-helix-discovery-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/documents/datasheets/bmc-helix-discovery-and-apptio.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -1368,13 +1356,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/documents/e-book/see-how-mainview-has-transformed-mainframe-systems-management.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+   <url>
     <loc>https://www.bmcsoftware.de/it-solutions/bmc-ami-database-administration-db2.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -1512,13 +1494,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/mainview-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/documents/datasheets/bmc-helix-premier-success.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -1830,13 +1806,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/truesight-operations-management-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+   <url>
     <loc>https://www.bmcsoftware.de/legal/export-compliance.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -2208,13 +2178,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/forms/bmc-helix-service-management-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/customers/railinc.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -2574,13 +2538,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/forms/bmc-helix-digital-workplace-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/forms/overcome-itsm-challenges-with-ai-aberdeen-report.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -2922,13 +2880,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/bmc-helix-remedyforce-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+   <url>
     <loc>https://www.bmcsoftware.de/documents/datasheets/truesight-operations-management.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -3888,13 +3840,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/documents/datasheets/company-automates-mainframe-management-with-bmc.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/documents/case-study/veterans-general.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -4602,13 +4548,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.bmcsoftware.de/info/r4-mlc-demo.html</loc>
-    <lastmod>2021-01-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+    <url>
     <loc>https://www.bmcsoftware.de/documents/datasheets/bmc-helix-control-m.html</loc>
     <lastmod>2021-01-04</lastmod>
     <changefreq>monthly</changefreq>
