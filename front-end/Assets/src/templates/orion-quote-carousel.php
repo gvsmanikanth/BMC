@@ -9,7 +9,7 @@
         <div class="headingcustomer">        
             <h2 class="text-center orion-block-title">What Our Customers Say</h2><hr>
         </div>    
-        <div class="orion-quote-carousel">        
+        <div class="orion-quote-carousel" data-autoplay="true">        
             <div class="item orion-cta">            
                 <div class="quote">            				
                     <h3>This is the best SaaS product that has ever hit the market. Every other SaaS product only dreams of ever being as fabulous as BMC Helix Control-M product.</h3>
