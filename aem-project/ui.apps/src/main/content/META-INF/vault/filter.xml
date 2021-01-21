@@ -2,9 +2,10 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/bmc">
         <exclude pattern="/apps/bmc/i18n"/>
-        <exclude pattern="/apps/bmc/config.author.stage/(.*)"/>
-        <exclude pattern="/apps/bmc/config.publish1.stage/(.*)"/>
-        <exclude pattern="/apps/bmc/config.publish2.stage/(.*)"/>
+        <!--REVERTING FILTER TO PUSH CODE CHNAGES FOR WEB-9624 SSO AEM STAGE INTEGRATION  -->
+        <!--<exclude pattern="/apps/bmc/config.author.stage/(.*)"/> -->
+        <!--<exclude pattern="/apps/bmc/config.publish1.stage/(.*)"/> -->
+        <!--<exclude pattern="/apps/bmc/config.publish2.stage/(.*)"/> -->
         <exclude pattern="/apps/bmc/config.stage/(.*)"/>
     </filter>
     <filter root="/apps/msm/bmc"/>
