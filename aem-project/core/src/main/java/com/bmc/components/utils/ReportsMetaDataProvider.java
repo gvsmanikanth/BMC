@@ -13,7 +13,10 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/*
+Helper class for the reporting solution.
+AUthor : Samiksha Anvekar
+ */
 public class ReportsMetaDataProvider {
 
 	/** Default log. */

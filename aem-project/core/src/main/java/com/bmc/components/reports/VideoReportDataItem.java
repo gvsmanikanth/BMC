@@ -1,7 +1,7 @@
 package com.bmc.components.reports;
 
 public class VideoReportDataItem {
-	
+
 	private String Page_Path;
 	public String getPage_Path() {
 		return Page_Path;
@@ -105,25 +105,31 @@ public class VideoReportDataItem {
 	private String Description;
 	private String typeId;
 	private String navTitle;
+	//WEB-7929 AEM Video Report ENhancement-START
 	private String LastReplicationAction;
+	private String referencePaths;
+	private String rc_inclusion;
+	private String asset_inclusion;
+	public String getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public String getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+	public String getReferencePaths() {
+		return referencePaths;
+	}
+	public void setReferencePaths(String referencePaths) {
+		this.referencePaths = referencePaths;
+	}
+	//WEB-7929 AEM Video Report ENhancement-END
+	public String getLastReplicatedDate () {
+		return lastReplicatedDate;
+	}
+	public void setLastReplicatedDate (String lastReplicatedDate) {
+		this.lastReplicatedDate = lastReplicatedDate;
+	}
+	private String lastReplicatedDate;
 	private String templateType;
-	private String overlayURL;	
-	private String ic_app_inclusion;
-	public String getIc_app_inclusion() {
-		return ic_app_inclusion;
-	}
-	public void setIc_app_inclusion(String ic_app_inclusion) {
-		this.ic_app_inclusion = ic_app_inclusion;
-	}
-	public String getIc_weighting() {
-		return ic_weighting;
-	}
-	public void setIc_weighting(String ic_weighting) {
-		this.ic_weighting = ic_weighting;
-	}
-	private String ic_weighting;
-	
-	
+	private String overlayURL;
 	public String getOverlayURL() {
 		return overlayURL;
 	}
@@ -137,6 +143,6 @@ public class VideoReportDataItem {
 		this.overlayText = overlayText;
 	}
 	private String overlayText;
-	
+
 
 }
