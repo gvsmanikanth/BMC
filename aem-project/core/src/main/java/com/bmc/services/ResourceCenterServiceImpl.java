@@ -80,22 +80,22 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
 
     @Property(description = "Mapping of content types to their correspondig display values and action type",
-            value = { "ic-type-196363946, Analyst Research, download",
+            value = { "ic-type-196363946, Analyst Research, view",
             "ic-type-353700740, Article/Blog, view",
-            "ic-type-790775692, Competitive Comparison, download",
-            "ic-type-621970361, Customer Story, download",
-            "ic-type-146731505, Datasheet, download",
+            "ic-type-790775692, Competitive Comparison, view",
+            "ic-type-621970361, Customer Story, view",
+            "ic-type-146731505, Datasheet, view",
             "ic-type-464000615, Demo, view",
-            "ic-type-165669365, E-book, download",
+            "ic-type-165669365, E-book, view",
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
             "ic-type-920200003, Trial, view",
             "ic-type-185980791, Videos, play",
             "ic-type-291550317, Webinar, view",
-            "ic-type-546577064, White Paper, download",
+            "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
-            "ic-type-958935588, Tech Note, download",
+            "ic-type-958935588, Tech Note, view"
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
@@ -510,7 +510,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         
                         // set video ID
                         
-                        if(linkType.equals("play")) {
+                        if(linkType.equals("play") && !gatedAsset) {
                         	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
                       
                         }
