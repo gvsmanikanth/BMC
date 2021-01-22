@@ -85,7 +85,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-790775692, Competitive Comparison, view",
             "ic-type-621970361, Customer Story, view",
             "ic-type-146731505, Datasheet, view",
-            "ic-type-464000615, Demo, view",
+            "ic-type-464000615, Demo, demo",
             "ic-type-165669365, E-book, view",
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
@@ -95,7 +95,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-291550317, Webinar, view",
             "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
-            "ic-type-958935588, Tech Note, view"
+            "ic-type-958935588, Tech Note, view",
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
