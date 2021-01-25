@@ -1,6 +1,7 @@
 <?php
 	$pageTitle = 'orion homepage';
 	$bodyClass = '';
+	$enableDTM = 'true';
 	include 'php-inc/head.php';
 	include 'php-inc/orion-secondary-navigation.php';
 ?>

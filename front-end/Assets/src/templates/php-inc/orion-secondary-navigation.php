@@ -11,7 +11,7 @@
 				<ul class="nav-list">
 					<li><a href="/front-end/orion-homepage.php">Features</a></li>					
 					<li>
-						<a href="javascript:void(0)">Use Cases</a>
+						<span class="dropdown-link" >Use Cases</span>
 						<ul class="nav-dropdown">
 							<li><a href="#">Fraud Detection</a></li>
 							<li><a href="#">Targeted Advertising</a></li>

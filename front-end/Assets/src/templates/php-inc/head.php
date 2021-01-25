@@ -29,8 +29,8 @@
 	<?php
 	if (isset($enableDTM) && $enableDTM == true) { 
 		?>
-		<!--dtm library-->
-		<script src="//assets.adobedtm.com/e4bb86ac0ef46215a117e82e4f945d2ba5c51004/satelliteLib-a925cb12a4a094b106a634edce1965b5765b4562-staging.js"></script>
+		<!--Launch library-->
+		<script src="//assets.adobedtm.com/26bc0d698f39/acfed7179c9d/launch-298981ad97b4-development.min.js" ></script>
 		<!--sample bmc meta from view-source:http://dev.www.bmc.com/it-solutions/cmsdev_offering.html-->
 		<script>
 			var bmcMeta= {

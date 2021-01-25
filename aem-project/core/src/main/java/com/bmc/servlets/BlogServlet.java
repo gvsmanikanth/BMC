@@ -40,6 +40,8 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private static final Logger logger = LoggerFactory.getLogger(BlogServlet.class);
     private String base = "";
     private String hostName = "";
+    private String pressCDNUrl = "";
+    private String serverName = "";
 
     // Don't run forever no matter what configuration says
     private static final int MAX_RETRY_ATTEMPTS = 100;
@@ -53,7 +55,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private int status = -1;
 
     private int timeout = 30000;
-    
+
     @Reference
     private RequestResponseFactory requestResponseFactory;
 
@@ -68,6 +70,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         maxRetryAttempts = Math.min(maxRetryAttempts, MAX_RETRY_ATTEMPTS);
         retryDelay = PropertiesUtil.toInteger(config.get("retryDelay"), 0);
         timeout = PropertiesUtil.toInteger(config.get("timeout"), 30000);
+        pressCDNUrl = PropertiesUtil.toString(config.get("pressCdnUrl"),null);
     }
 
     @Override
@@ -78,6 +81,9 @@ public class BlogServlet extends SlingSafeMethodsServlet {
                     request.getServerName(),
                     request.getServerPort(),
                     request.getContextPath()).toString();
+            serverName = request.getServerName();
+            logger.info("hostname: "+hostName);
+            logger.info("server name : "+serverName);
         } catch (MalformedURLException e) {
             // Fallback on prod BMC if URL error is encountered.
             hostName = "http://www.bmc.com";
@@ -89,7 +95,7 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         String src = base + path;
         // WEB-3745: Blog Search
         if(request.getParameter("s") != null && request.getParameter("s") != ""){
-        	src = base + path + "?s="+URLEncoder.encode(request.getParameter("s"));
+            src = base + path + "?s="+URLEncoder.encode(request.getParameter("s"));
         }
         String source = "";
         logger.info("Loading URL: " + src);
@@ -108,30 +114,30 @@ public class BlogServlet extends SlingSafeMethodsServlet {
             response.setStatus(status);
         }
         try {
-        	if(status == 404){
-        		try{
-        		response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-                response.setContentType("text/html");
-                //response.getWriter().append("404");
-                String path = "/content/bmc/404.html";
-                HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
-                WCMMode.DISABLED.toRequest(req);
+            if(status == 404){
+                try{
+                    response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                    response.setContentType("text/html");
+                    //response.getWriter().append("404");
+                    String path = "/content/bmc/404.html";
+                    HttpServletRequest req = requestResponseFactory.createRequest("GET", path);
+                    WCMMode.DISABLED.toRequest(req);
 
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                HttpServletResponse resp = requestResponseFactory.createResponse(out);
+                    ByteArrayOutputStream out = new ByteArrayOutputStream();
+                    HttpServletResponse resp = requestResponseFactory.createResponse(out);
 
-                requestProcessor.processRequest(req, resp, request.getResourceResolver());
-                String html = out.toString();
-                response.getWriter().append(html);
-        		} catch (IOException|ServletException ex) {
+                    requestProcessor.processRequest(req, resp, request.getResourceResolver());
+                    String html = out.toString();
+                    response.getWriter().append(html);
+                } catch (IOException|ServletException ex) {
                     logger.error(ex.getMessage());
                 }
-        	}else{
-        	
-            response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-            response.setContentType("text/html");
-            response.getWriter().append(processed);
-        	}
+            }else{
+
+                response.setCharacterEncoding(StandardCharsets.UTF_8.name());
+                response.setContentType("text/html");
+                response.getWriter().append(processed);
+            }
         } catch (IOException e) {
             logger.error(e.getMessage());
         }
@@ -192,8 +198,15 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private String processSource(String source) {
         String processed;
         processed = stripRefresh(source);
+        processed = stripEscapeChracters(source);
         processed = processLinks(processed);
         return processed;
+    }
+
+    private String stripEscapeChracters(String source) {
+        Pattern p = Pattern.compile("\\\\/",
+                Pattern.CASE_INSENSITIVE);
+        return p.matcher(source).replaceAll("/");
     }
 
     private String stripRefresh(String source) {
@@ -203,12 +216,31 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     }
 
     private String processLinks(String source) {
-        String replace = hostName + "/blogs";
-        String exclude = base + "/wp-content";
-        String token = "{EXCLUDE_PATH}";
-        String processed = source.replace(exclude, token);
-        processed = processed.replace(base, replace);
-        processed = processed.replace(token, exclude);
+        String baseURL = base.substring(base.lastIndexOf('/')+1);
+        String replace = serverName + "/blogs";
+        String exclude1 = baseURL + "/wp-content";
+        String exclude2 = pressCDNUrl + "/wp-content";
+        String exclude3 = baseURL + "/youtube-video-page";
+        String exclude4 = baseURL + "/wp-includes";
+        String exclude5 = pressCDNUrl + "/wp-includes";
+        String token1 = "BASE_EXCLUDE_PATH";
+        String token2 = "CDN_EXCLUDE_PATH";
+        String token3 = "YT_EXCLUDE_PATH";
+        String token4 = "BASE_INCLUDE_PATH";
+        String token5 = "CDN_INCLUDE_PATH";
+        logger.info("replace value : "+replace);
+        String processed = source.replaceAll(exclude1, token1);
+        processed = processed.replaceAll(exclude2,token2);
+        processed = processed.replaceAll(exclude3,token3);
+        processed = processed.replaceAll(exclude4,token4);
+        processed = processed.replaceAll(exclude5,token5);
+        processed = processed.replaceAll(baseURL, replace);
+        processed = processed.replaceAll(token1, exclude1);
+        processed = processed.replaceAll(token2,exclude2);
+        processed = processed.replaceAll(token3,exclude3);
+        processed = processed.replaceAll(token4,exclude4);
+        processed = processed.replaceAll(token5,exclude5);
+        logger.info(processed);
         return processed;
     }
 
