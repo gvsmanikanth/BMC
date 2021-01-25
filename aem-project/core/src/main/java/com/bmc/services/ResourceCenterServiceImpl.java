@@ -1,14 +1,14 @@
 package com.bmc.services;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import com.bmc.models.RunModes;
+import com.day.cq.replication.ReplicationStatus;
+import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
@@ -20,6 +20,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.settings.SlingSettingsService;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -57,6 +58,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private ResourceResolver resourceResolver;
     private Session session;
 
+    @Reference
+    private SlingSettingsService slingSettingsService;
+
+    @Reference
+    private Replicator replicator;
+
     // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
     @Property(
         description = "JCR Node Names of Resource Center Filters",
@@ -73,22 +80,23 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
 
     @Property(description = "Mapping of content types to their correspondig display values and action type",
-            value = { "ic-type-196363946, Analyst Research, download",
+            value = { "ic-type-196363946, Analyst Research, view",
             "ic-type-353700740, Article/Blog, view",
-            "ic-type-790775692, Competitive Comparison, download",
-            "ic-type-621970361, Customer Story, download",
-            "ic-type-146731505, Datasheet, download",
-             // WEB-9208 Add Demo Container Card capabilities to Resource Center.
+            "ic-type-790775692, Competitive Comparison, view",
+            "ic-type-621970361, Customer Story, view",
+            "ic-type-146731505, Datasheet, view",
+            // WEB-9208 Add Demo Container Card capabilities to Resource Center.
             "ic-type-464000615, Demo, demo",
-            "ic-type-165669365, E-book, download",
+            "ic-type-165669365, E-book, view",
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
             "ic-type-920200003, Trial, view",
             "ic-type-185980791, Videos, play",
             "ic-type-291550317, Webinar, view",
-            "ic-type-546577064, White Paper, download",
-            "ic-type-188743546, UnCategorized, view"
+            "ic-type-546577064, White Paper, view",
+            "ic-type-188743546, UnCategorized, view",
+            "ic-type-958935588, Tech Note, view",
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
@@ -231,8 +239,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * @param propertyName
      * @param values
      * @param queryParamsMap
-     * @param predicateIndex
-     */
+     * @param groupIndex
+     * */
+
     private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
     
     	queryParamsMap.put(groupIndex + "_group.p.or", "true");
@@ -274,8 +283,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         try {
             
         	// Build predicate for ic-app-inclusion
-        	String[] allowedInclusionValues = {"yes", "gate"};
-        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
+        	String[] allowedInclusionValues = {"true"};
+        	buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
         	
             int i = 2;
             
@@ -476,14 +485,22 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 if(resource != null){
                     try {
                         Node parentNode = hit.getNode().getParent();
+                        Node node = hit.getNode();
                         String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
                         String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        String assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                        if(assetLink == null && hit.getNode().hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
-                        	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                        Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                        String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                        String assetLink = "";
+                        if(gatedAsset && formPath != null && isFormActive(formPath)){
+                            assetLink = formPath;
+                        }else {
+                            assetLink = path;
                         }
+
+                        assetLink = resourceResolver.map(assetLink);
+
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
                         //  metadata
@@ -494,9 +511,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         
                         // set video ID
                         
-                        if(linkType.equals("play") && assetLink == null) {
-                        	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
-                      
+                        if(linkType.equals("play")) {
+                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
                         }
                         
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
@@ -513,6 +529,35 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
 
         return contentResult;
+    }
+
+
+    private boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        Set<String> runmodes = slingSettingsService.getRunModes();
+        try {
+            if (gatedAssetFormPath != null) {
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
+                }else{
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
