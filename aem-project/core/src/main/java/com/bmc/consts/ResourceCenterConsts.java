@@ -50,6 +50,7 @@ public class ResourceCenterConsts {
     public static final String QUERY_PARAM_RESULT_PER_PAGE = "p.limit";
 
     public static final String IC_APP_INCLUSION = "ic-app-inclusion";
+    public static final String RC_INCLUSION = "rc-inclusion";
     public static final String IC_CONTENT_TYPE = "ic-content-type";
     
     /* sorting */
