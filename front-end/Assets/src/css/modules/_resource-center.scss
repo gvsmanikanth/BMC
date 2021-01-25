@@ -1,11 +1,42 @@
 // Customized UI for Resource Center Filters
 .rc-filter-panel-group {
-    background-color: #fff;
-
+    background-color: #fff;    
     .heading-group ul {
       list-style-type: none; /* Remove bullets */
       padding: 0; /* Remove padding */
       margin: 0; /* Remove margins */
+      //WEB-6665
+      background-image: none;
+      position: relative;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        cursor: pointer;
+      }
+      &::before{
+        content: '+';
+        padding: 10px;
+        color: #29a5d6;
+        display: inline-block;        
+        font-size: 22px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        cursor: pointer;
+      }
+      &.rc-arrow-up{
+        background-image: none;
+        &::before{
+          content: '\2212';
+          top: 0px;
+        }
+      }
+      &.rc-arrow-down{
+        background-image: none;
+        &::before{
+          content: '\002B';
+        }
+      }    
+
     }
   
     .heading-group li {
@@ -92,6 +123,10 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: initial;
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 16px;
+     }
   }
 
   .empty-filter {
@@ -133,6 +168,10 @@
     border-width: 2px;
     font-weight: bold;
     font-size: initial;
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 16px;
+     }
     padding: 6px;
     cursor: pointer;
     margin-left: -110px;
@@ -183,7 +222,10 @@
     background: white;
     text-transform: uppercase;
     font-size: initial;
-
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 15px;
+     }
     padding-right: 2.0em;
     padding-left: 0.5em;
     -webkit-appearance: none;
@@ -762,4 +804,7 @@ $bg-forrester-green: #16563F;
 }
 .filter-search-overlay.on {
   display: block;
+}
+.rc-no-text {
+  max-height: 43px;
 }
