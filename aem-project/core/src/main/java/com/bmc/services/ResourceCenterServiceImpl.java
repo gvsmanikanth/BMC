@@ -510,9 +510,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         
                         // set video ID
                         
-                        if(linkType.equals("play") && !gatedAsset) {
-                        	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
-                      
+                        if(linkType.equals("play")) {
+                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
                         }
                         
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,

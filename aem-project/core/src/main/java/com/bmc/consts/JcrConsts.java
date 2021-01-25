@@ -15,4 +15,6 @@ public class JcrConsts {
     public static final String GATED_ASSET = "jcr:content/asset-inclusion";
     public static final String GATED_ASSET_FORM_PATH = "jcr:content/rc-form-path";
     public static final String JCR_CREATION = "jcr:content/jcr:created";
+    public static final String VIDEO_ID_PATH = "jcr:content/video-data/vID";
+    public static final String VIDEO_PAGE_PATH = "/content/bmc/videos.html?vID=";
 }
