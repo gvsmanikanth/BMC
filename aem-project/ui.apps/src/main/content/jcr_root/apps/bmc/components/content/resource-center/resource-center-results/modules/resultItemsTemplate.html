@@ -35,6 +35,8 @@
                         {{#ifCond linkType '===' "play"}}${'Play' @ i18n}{{/ifCond}}
                         {{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
                         {{#ifCond linkType '===' "view"}}${'View' @ i18n}{{/ifCond}}
+                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
+                        {{#ifCond linkType '===' "demo"}}${'Start' @ i18n}{{/ifCond}}
                     </span>
                 </div>
             </div>

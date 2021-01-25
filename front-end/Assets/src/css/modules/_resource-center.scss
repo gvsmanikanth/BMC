@@ -433,6 +433,9 @@ body.no-scroll{
           .s-view {
             background-image: url('#{$imagesFolder}s-view-white.png');
           }
+		  .s-demo {
+			background-image: url("#{$imagesFolder}s-play-white.png");
+			}
         }
         .card-footer{
           transition: 0.3s linear;          
@@ -512,6 +515,13 @@ body.no-scroll{
     width: 1.0rem;
     height: 1.2rem;
   }
+  .s-demo {
+    background-image: url('#{$imagesFolder}s-play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.0rem;
+    height: 1.2rem;
+  }
   .s-view {
     background-image: url('#{$imagesFolder}s-view.png');
     background-repeat: no-repeat;
@@ -554,6 +564,15 @@ body.no-scroll{
   }
   .ic_view-white {
     background-image: url("ic_view-white.png");
+  }
+  .ic_play {
+    background-image: url("#{$imagesFolder}ic_play.png");
+  }
+  .ic_demo {
+    background-image: url("#{$imagesFolder}ic_play.png");
+  }
+  .ic_view {
+    background-image: url("#{$imagesFolder}ic_view.png");
   }
 }
 
