@@ -8,7 +8,7 @@ export const widgets: Widget[] = [
         title: "Case Management",
         description: "Submit cases and track progress",
         routerLink: 'manage-case',
-        icon: "d-icon-toolbox"
+        icon: "psc-icon-case_management"
     },
     {
         id: "askCommunity",
@@ -17,7 +17,7 @@ export const widgets: Widget[] = [
         title: "Community",
         description: "Blogs, questions, discussions and ideas",
         routerLink: 'community',
-        icon: "d-icon-users"
+        icon: "psc-icon-community"
     },
     {
         id: "prdDownloads",
@@ -26,7 +26,7 @@ export const widgets: Widget[] = [
         title: "Product Downloads",
         description: "Latest product downloads, patches & installation tools",
         routerLink: "epd-widget",
-        icon: "d-icon-download"
+        icon: "psc-icon-downloads"
     },
     {
         id: "docs",
@@ -35,7 +35,7 @@ export const widgets: Widget[] = [
         title: "Documentation",
         description: "Online technical documentation",
         routerLink: 'docs',
-        icon: "d-icon-file_text_o"
+        icon: "psc-icon-documentation"
     },
     {
         id: "prdSupport",
@@ -44,7 +44,7 @@ export const widgets: Widget[] = [
         title: "Product Support",
         description: "Everything you need on one page",
         routerLink: null,
-        icon: "d-icon-wrench"
+        icon: "psc-icon-product_support"
 
     },
     {
@@ -54,7 +54,7 @@ export const widgets: Widget[] = [
         title: "Training & Certification",
         description: "Choose among role specific training",
         routerLink: null,
-        icon: "d-icon-training_room"
+        icon: "psc-icon-training_cartification"
     },
     {
         id: "prdCompatibility",
@@ -63,7 +63,7 @@ export const widgets: Widget[] = [
         title: "Product Compatibility",
         description: "Check product compatibility with platforms and databases",
         routerLink: null,
-        icon: "psc-icon-compatibility_modeler"
+        icon: "psc-icon-product_compatibility"
 
     },
     {
@@ -73,7 +73,7 @@ export const widgets: Widget[] = [
         title: "Product Catalog",
         description: "Product support status and lifecycle dates",
         routerLink: null,
-        icon: "psc-icon-az_listing"
+        icon: "psc-icon-product_catalog"
     },
     {
         id: "supportVideos",
@@ -91,7 +91,7 @@ export const widgets: Widget[] = [
         title: "Services and Consulting",
         description: "Get help with all aspects of your digital journey",
         routerLink: 'sac',
-        icon: "d-icon-hands_gear"
+        icon: "psc-icon-services_consulting"
     },
     {
         id: "supportQuestionUrl",
@@ -100,6 +100,6 @@ export const widgets: Widget[] = [
         title: "Common Support Questions",
         description: "Frequently asked questions",
         routerLink: 'support-question',
-        icon: "d-icon-question_circle_o"
+        icon: "psc-icon-faq"
     }
 ]

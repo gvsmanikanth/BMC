@@ -1,15 +1,22 @@
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral">
     <div class="container">
+    	<h1 class="psc-section-heading">Other resources</h1>
     	<div class="psc-orientation-checklist">
             <div class="psc-fs-12">
-            	<div>
+            	<div class="psc-checklist-left">
+            		<span class="psc-icon-upgrade_assisstance"></span>
+            	</div>
+            	<div class="psc-checklist-right">
 	            	<h3>Upgrade Assistance</h3>
 	                BMC Assisted Migration Offering<br>
 	                <a class="btn btn-primary learn-more" target="_blank" href=${support.amigoProgramUrl}>AMIGO program</a>
             	</div>
             </div>
             <div class="psc-fs-12">
-            	<div>
+            	<div class="psc-checklist-left">
+            		<span class="psc-icon-user_guide"></span>
+            	</div>
+            	<div class="psc-checklist-right">
 	            	<h3>Support Central User Guide</h3>
 	                Learn more about BMC support resources<br>
 	                <a target="_blank" class="btn learn-more" href=${support.supportGuidePDFUrl}>PDF</a><a href=${support.supportGuideUrl} target="_blank" class="btn btn-secondary learn-more">Online Guide</a>
@@ -17,7 +24,10 @@
             </div>
             <sly data-sly-test.loggdIn="${!support.isLoggedIn || !support.isNewUser}">
                 <div class="psc-o-checklist psc-fs-12">
-	                 <div>
+	                 <div class="psc-checklist-left">
+	            		<span class="psc-icon-explore_resources"></span>
+	            	</div>
+            		<div class="psc-checklist-right">
 	                    <h3>Explore BMC Resources</h3>
 	                    Get familiar with BMC resources<br>
 	                    <a href=${support.customerOrientationUrl} target="_blank" class="btn btn-primary learn-more">New Customer Orientation</a>

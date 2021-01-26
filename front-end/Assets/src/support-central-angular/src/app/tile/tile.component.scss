@@ -5,10 +5,10 @@
             border-radius: 5px;
         }
         .tile-right {
-            width: 21%;
+            width: 20%;
         }
         .tile-center {
-            width: 77%;
+            width: 78%;
         }
     }
     & {
@@ -28,7 +28,7 @@
     }
     .tile-body {
         display:flex;
-        width: 82%;
+        width: 83%;
         &:hover {
             background-color: #F9F9FA;
         }
@@ -38,25 +38,31 @@
         & {
             width: 75%;
             font-size: 12px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         h3 {
          font-weight: normal;
-         margin-top: 15px;
+         margin-top: 0px;
          margin-bottom: 5px;
         }
     }
     .tile-right{
         & {
             // width: 11%; //1-st variant
-            width: 25%; //2-nd
+            width: 24%; //2-nd
             display: flex;
             justify-content: space-around;
-            padding-top: 9px;
+            align-items: center;
+            background-color: #F86e00;
+            border-radius: 5px 0 0 5px;
         }
         span {
             //  font-size: 20px;// 1st-variant
              font-size: 34px; //2-nd
-             color:  #f86e00;
+             color:  white;
         }
     }
     .tile-arrow {
@@ -68,7 +74,7 @@
             // border-radius: 25px; //1-st variant
             height: auto;
             min-height: 77px; // 2-nd variant
-            width: 18%; // 2-nd variant
+            width: 17%; // 2-nd variant
             right: 0; // 2-nd variant
             font-size: 14px;
             // box-shadow: 0 3px 4px rgba(0, 0, 0, 0.14), 0 9px 10px rgba(0, 0, 0, 0.06);
