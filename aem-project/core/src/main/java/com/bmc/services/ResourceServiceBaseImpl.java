@@ -150,29 +150,20 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             for (Map.Entry<String, String> entry : values.entrySet ()) {
                 list.add (entry.getValue ());
             }
-            if(list.contains("All")){
-                // Add "All" as the first character in filter
-                list.remove (list.indexOf ("All"));
-                Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
-            }else if (list.contains ("All PL Products"))
-            {
-                list.remove (list.indexOf ("All PL Products"));
-                Collections.sort (list.subList (1,list.size ()), new RCFilterComparator ());
-            }else
-            {
-                Collections.sort (list, new RCFilterComparator ());
-            }
-
+            if(list.contains("All"))  list.remove (list.indexOf ("All"));
+            else if (list.contains("All PL Products"))list.remove (list.indexOf ("All PL Products"));
+            //Applying alphabetical custom sort using the RCFiltercomparator
+            Collections.sort (list, new RCFilterComparator ());
+            //Putting back the sorted list
             for (String str : list) {
                 for (Map.Entry<String, String> entry : values.entrySet ()) {
-                    if (entry.getValue ().equals (str)) {
+                    if (entry.getValue ().equalsIgnoreCase (str)) {
                         sortedMap.put (entry.getKey (), str);
                     }
                 }
             }
-
         } catch (NullPointerException ex) {
-            log.error ("BMC ERROR : NullPointerException occured :" + ex.getMessage ());
+            log.error ("BMC ERROR : NullPointerException occurred :" + ex.getMessage ());
         } catch (Exception e) {
             log.error ("BMC ERROR: Exception occurred :" + e.getMessage ());
         }
@@ -203,7 +194,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                 if(found!=null)sortedList.add(found);       // if found add to sorted list
                 unsortedList.remove(found);        // remove added item
             }
-            //sortedList.addAll(unsortedList);        // append the reaming items on the unsorted list to new sorted list
         }
         for (String str : sortedList) {
             for (Map.Entry<String, String> entry : values.entrySet()) {
@@ -215,6 +205,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         return sortedMap;
 
     }
+
     /*
     Method name : getPropertyOptionIfFound
     returns : String
@@ -234,7 +225,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     /*
     Method name : RCFilterComparator
     returns : String
-    Explanation :  comparator that compares String alphabetically
+    Explanation :  Custom comparator that compares String alphabetically.
     */
     public class RCFilterComparator implements Comparator<String> {
         public int compare (String str, String str1) {
