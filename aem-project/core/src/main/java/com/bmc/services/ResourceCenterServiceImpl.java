@@ -100,7 +100,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             description = "Mappings of 'All' property values for Resource Center Filters",
             value = {
                     "ic-topics ,ic-topics-357652163",
-                    "ic-types,ic-type-196378596",
+                    "ic-content-type,ic-type-196378596",
                     "ic-buyer-stage,ic-buyer-stage-453243562",
                     "ic-target-persona,ic-target-persona-567887231",
                     "ic-target-industry,ic-target-industry-289456374",
