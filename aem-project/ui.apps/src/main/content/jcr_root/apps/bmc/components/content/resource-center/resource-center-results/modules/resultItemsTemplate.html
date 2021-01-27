@@ -28,7 +28,26 @@
                     </h4>
                 </div>
                 <div class="card-footer">
-                    <span class="card-footer-action">
+                    <div class="card-footer-action">
+                        {{#ifCond linkType '===' "play"}}
+                        {{#if videoLength}}
+                        <span class="video-length">
+                            <svg class="align-middle s-clock">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                            </svg>{{videoLength}}
+                            </span>
+                        {{/if}}
+                        {{/ifCond}}
+                        {{#if footerLogo}}
+                        {{#ifCond linkType '===' "play"}}
+
+                        {{else}}
+                        <span class="card-footer-logo">
+                                <img src="{{footerLogo}}" >
+                            </span>
+                        {{/ifCond}}
+                        {{/if}}
+                        <span class="card-footer-action">
                         <svg class="align-middle s-{{linkType}}">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                         </svg>
@@ -38,8 +57,9 @@
                     </span>
                 </div>
             </div>
-            </a>
         </div>
+    </a>
+    </div>
         {{/each}}
     </div>
 </div>
