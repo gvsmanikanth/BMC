@@ -55,6 +55,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
+
     private ResourceResolver resourceResolver;
     private Session session;
 
@@ -97,8 +98,26 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
             "ic-type-958935588, Tech Note, view",
+             "ic-type-196378596, All, view"
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
+
+
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters START
+    // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
+    @Property(
+            description = "Mappings of 'All'  property values for Resource Center Filters",
+            value = {
+                    "ic-topics ,ic-topics-357652163",
+                    "ic-content-type,ic-type-196378596",
+                    "ic-buyer-stage,ic-buyer-stage-453243562",
+                    "ic-target-persona,ic-target-persona-567887231",
+                    "ic-target-industry,ic-target-industry-289456374",
+                    "ic-company-size,ic-company-size-398345671"
+            })
+    private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resource.center.all.filter.mapping";
+    private Map<String, String> allFiltersValueMapping;
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters END
 
     private List<String> resourceFiltersList;
 
@@ -121,7 +140,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
-
+        this.allFiltersValueMapping = toMap ((String[]) props.get(RESOURCE_ALL_FILTER_VALUE_MAPPING));
         this.contentTypeValueMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING));
         this.contentTypeActionMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING), 0, 2);
 
@@ -235,15 +254,14 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     /**
      * Build group predicates
-     * 
+     * WEB-9267 Changed the datatype of values from String[] to list<String>
      * @param propertyName
      * @param values
      * @param queryParamsMap
      * @param groupIndex
      * */
 
-    private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
-    
+    private void buildGroupPredicate(String propertyName, List<String> values, Map<String, String> queryParamsMap, int groupIndex) {
     	queryParamsMap.put(groupIndex + "_group.p.or", "true");
     	
     	int i = 1;
@@ -262,7 +280,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * rootPath=/content/bmc/us/en/documents
      * &ic-content-type=ic-type-196363946,ic-type-146731505&ic-topics=ic-topics-017644695,ic-topics-594037608
      * &sortCriteria=modified&resultsPerPage=10&pageIndex=0
-     * 
+     * //WEB-9267 Adds "All" or "All PL Products" as default to all search filters.
      * 1_group.p.or=true
 	 * 1_group.1_property.value=ic-type-196363946
      * 1_group.1_property=jcr:content/ic-content-type
@@ -281,30 +299,29 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      */
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-            
         	// Build predicate for ic-app-inclusion
-        	String[] allowedInclusionValues = {"true"};
-        	buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
-        	
+
+        	String[] allowedInclusionValues = {"yes", "gate"};
+        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
             int i = 2;
-            
             // check if any of the supported properties are present in the URL
+            //WEB-9267 Added "All" & "All PL Products" to all filter category- START
             for(String propertyName : baseImpl.getPropertyNames()) {
             	if(urlParameters.containsKey(propertyName)) {
-            		
             		String[] filterValues = urlParameters.get(propertyName);
-            		String[] values = filterValues[0].split(",");
-            		
+                    List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
+                    String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
+                    if(!type.equals (null))values.add (type);
             		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
             	}
+                //WEB-9267 Added "All" & "All PL Products" to all filter category - END
             }
-            
-
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
         }
         return predicateIndex;
     }
+
 
     private String buildKeywordValuePredicate( Integer index) {
         StringBuilder queryPredicate = new StringBuilder();
@@ -625,5 +642,19 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             return contentType;
         }
         return contentTypeActionMapping.get(contentType);
+    }
+
+    /*
+    Maps the filterValues for filters containing "All" field to its metadata value,
+    For product-interest "All PL Products" filter passes the filter value.
+     */
+    @Override
+    public String getAllFilterValue (String filterValue) {
+        if(filterValue.equalsIgnoreCase ("product_interest"))return ResourceCenterConstants.PRODUCT_INTEREST_ALl_VALUE;
+        else if (!allFiltersValueMapping.containsKey(filterValue)) {
+            log.debug("No mapping exists for content type {}", filterValue);
+            return "";
+        }
+        return allFiltersValueMapping.get(filterValue);
     }
 }
