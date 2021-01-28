@@ -94,21 +94,21 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
 
 
-    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters START
     // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
     @Property(
-            description = "Mappings of 'All' property values for Resource Center Filters",
+            description = "Mappings of 'All'  property values for Resource Center Filters",
             value = {
                     "ic-topics ,ic-topics-357652163",
                     "ic-content-type,ic-type-196378596",
                     "ic-buyer-stage,ic-buyer-stage-453243562",
                     "ic-target-persona,ic-target-persona-567887231",
                     "ic-target-industry,ic-target-industry-289456374",
-                    "ic-company-size,ic-company-size-398345671",
-                    "product-interest,189379811"
+                    "ic-company-size,ic-company-size-398345671"
             })
-    private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resourcecenter.all.filter.mapping";
+    private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resource.center.all.filter.mapping";
     private Map<String, String> allFiltersValueMapping;
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters END
 
     private List<String> resourceFiltersList;
 
@@ -299,7 +299,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             	if(urlParameters.containsKey(propertyName)) {
             		String[] filterValues = urlParameters.get(propertyName);
                     List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
-                    log.info ("BMC INFO : Filter property "+propertyName+" values added to list"+Arrays.asList (values));
                     String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
                     if(!type.equals (null))values.add (type);
             		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
@@ -598,11 +597,16 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return contentTypeActionMapping.get(contentType);
     }
 
+    /*
+    Maps the filterValues for filters containing "All" field to its metadata value,
+    For product-interest "All PL Products" filter passes the filter value.
+     */
     @Override
     public String getAllFilterValue (String filterValue) {
-        if (!allFiltersValueMapping.containsKey(filterValue)) {
+        if(filterValue.equalsIgnoreCase ("product_interest"))return ResourceCenterConstants.PRODUCT_INTEREST_ALl_VALUE;
+        else if (!allFiltersValueMapping.containsKey(filterValue)) {
             log.debug("No mapping exists for content type {}", filterValue);
-            return filterValue;
+            return "";
         }
         return allFiltersValueMapping.get(filterValue);
     }
