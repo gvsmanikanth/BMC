@@ -300,10 +300,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      */
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-        	// Build predicate for ic-app-inclusion
-
-        	String[] allowedInclusionValues = {"yes", "gate"};
-        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
+        	// Build predicate for rc-inclusion
+        	 String[] allowedInclusionValues = {"true"};
+            buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
             int i = 2;
             // check if any of the supported properties are present in the URL
             //WEB-9267 Added "All" & "All PL Products" to all filter category- START
