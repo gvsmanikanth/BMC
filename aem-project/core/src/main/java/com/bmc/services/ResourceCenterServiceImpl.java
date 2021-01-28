@@ -105,7 +105,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                     "ic-target-persona,ic-target-persona-567887231",
                     "ic-target-industry,ic-target-industry-289456374",
                     "ic-company-size,ic-company-size-398345671",
-                    "product-interests,189379811"
+                    "product-interest,189379811"
             })
     private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resourcecenter.all.filter.mapping";
     private Map<String, String> allFiltersValueMapping;
