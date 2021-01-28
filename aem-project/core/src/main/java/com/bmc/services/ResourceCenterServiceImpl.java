@@ -281,9 +281,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
             
-        	// Build predicate for ic-app-inclusion
-        	String[] allowedInclusionValues = {"true"};
-        	buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
+        	// Build predicate for rc-inclusion
+        	 String[] allowedInclusionValues = {"true"};
+        	 buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
         	
             int i = 2;
             
