@@ -51,6 +51,7 @@ public class ThankYouValidator extends WCMUsePojo {
 
     public void getTokenIsValid() {
         Page page = getCurrentPage();
+        // WEB-9311 Call this section only for Actual Pages and Ignore for Editable Templates
         if(page.getPath().startsWith("/content")){
             Page formPage = page.getParent();
             String id = (String) formPage.getProperties().get("contentId");
