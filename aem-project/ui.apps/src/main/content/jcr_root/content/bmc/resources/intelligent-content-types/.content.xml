@@ -10,6 +10,11 @@
     <ic-type-353700740
             jcr:primaryType="nt:unstructured"
             jcr:title="Articles/Blogs"/>
+    <!--/* WEB-9828 Add Case Study IC type START */-->
+    <ic-type-702371987
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Case Study"/>
+    <!--/* WEB-9828 Add Case Study IC type END */-->
     <ic-type-790775692
             jcr:primaryType="nt:unstructured"
             jcr:title="Competitive Comparisons"/>
