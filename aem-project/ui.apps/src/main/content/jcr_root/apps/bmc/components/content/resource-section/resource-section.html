@@ -8,7 +8,7 @@
 		<div class="flex-wrap flex-justify-center mb2">
             <!--/*  Handle layout of cards in Landscape  */-->
 			<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
-			<sly data-sly-test="${properties.numberOfCards == '8'}">
+			<sly data-sly-test="${properties.numberOfCards == '3'}">
 				<sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
 			</sly>
 			<sly data-sly-test="${properties.numberOfCards == '4'}">
@@ -24,18 +24,24 @@
 					<sly data-sly-test="${!productLink.href}">
 						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 					</sly>
-					<a class="guttor-width" href="${resolvedLink}">
-						<div class="card bg-white">
+					<a href="${resolvedLink}">
+						<div class="simple-card bg-white">
 							<div class="card-header">
-								<img alt="" src="${card.rcCardsImagePath}">
+								<h4></h4>
+								<div class="card-icon ic_${productSet.contentType}" alt="" border="0"></div>
 							</div>
 							<div class="card-content">
 								<hr>
-								<h2>${card.title  @ context='html'}</h2>
+								<h4>${card.title  @ context='html'}</h4>
 								<p>${card.description  @ context='html'}</p>
 							</div>
 							<div class="card-footer">
-								<span class="learn-more">${'Learn more' @ i18n}</span>
+								<span class="card-footer-action">
+									<svg class="align-middle s-${productSet.contentType}">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${productSet.contentType}"></use>
+									</svg>
+									${'productSet.contentType' @ i18n}
+								</span>
 							</div>
 						</div>
 					</a>
@@ -43,7 +49,7 @@
 			</sly>
 		</div>
 	</div>
-     <p data-sly-test="${data.cta.text && data.cta.href}" class="text-center">
-        <a class="btn ${data.cta.cssClass}" href="${data.cta.href}">${data.cta.text @ context='html'} &nbsp;�</a>
+     <p data-sly-test="${properties.ctaText && properties.ctaPath}" class="text-center">
+        <a class="btn ${properties.cssClass}" href="${properties.ctaPath}">${properties.ctaText @ context='html'} &nbsp;�</a>
     </p>
 </section>

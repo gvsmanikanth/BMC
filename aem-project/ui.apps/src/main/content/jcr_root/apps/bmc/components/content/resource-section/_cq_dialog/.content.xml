@@ -121,6 +121,13 @@
                                                 fieldLabel="CTA Path"
                                                 name="./ctaPath"
                                                 rootPath="/content"/>
+                                             <ctaClass
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldDescription="Add custom Class name here"
+                                                fieldLabel="CSS Class"
+                                                name="./cssClass"
+                                                rootPath="/content"/> 
                                         </items>
                                     </column>
                                 </items>

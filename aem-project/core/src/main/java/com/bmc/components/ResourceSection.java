@@ -27,7 +27,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     protected List<HashMap> resourceSectionCards;
 
-
+    private  String contentType;
     @Override
     public void activate() throws Exception {
         try {
@@ -37,25 +37,39 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
             while (pagePathsNodes.hasNext()) {
                 Resource childPage = pagePathsNodes.next();
                 resourceSection = new HashMap<>();
-                resourceSection.put("pagePath", childPage.getValueMap().get("pagePath").toString());
-                Page page = this.getResourceProvider().getPage(childPage.getValueMap().get("pagePath").toString());
+                String pagePath = childPage.getValueMap().get("pagePath").toString();
+                String cardTitle = "";
+                String cardDescription = "";
+                String cardIconPath = "";
+                Page page = this.getResourceProvider().getPage(pagePath);
                 if (page != null){
                     ValueMap pageMap = page.getProperties();
-                    resourceSection.put("rcTitle", pageMap.getOrDefault("navTitle","").toString());
-                    resourceSection.put("description", pageMap.getOrDefault("short_description","").toString());
+                    cardTitle = pageMap.getOrDefault("navTitle","").toString();
+                    cardDescription = pageMap.getOrDefault("short_description","").toString();
+                    contentType = pageMap.getOrDefault("ic-content-type","").toString();
+                }
+                if(contentType.equalsIgnoreCase("ic-type-185980791")){
+                    contentType = "play";
+                }else{
+                    contentType = "view";
                 }
                 // override title and description
-                if(childPage.getValueMap().get("rcOverrideTitle") != null && !childPage.getValueMap().get("overrideTitle").toString().trim().isEmpty()){
-                	resourceSection.put("title", childPage.getValueMap().get("overrideTitle").toString());
+                if(childPage.getValueMap().get("overrideTitle") != null){
+                    cardTitle = childPage.getValueMap().get("overrideTitle").toString();
                 }
-                if(childPage.getValueMap().get("rcOverrideDescription") != null  && !childPage.getValueMap().get("overrideDescription").toString().trim().isEmpty()){
-                	resourceSection.put("description", childPage.getValueMap().get("overrideDescription").toString());
+                if(childPage.getValueMap().get("overrideDescription") != null){
+                    cardDescription = childPage.getValueMap().get("overrideDescription").toString();
                 }
-                // Handle the case of the image not existing.
-                if(childPage.getValueMap().get("rcCardsImagePath") != null && !childPage.getValueMap().get("rcCardsImagePath").toString().trim().isEmpty()){
-                	resourceSection.put("rcCardsImagePath", childPage.getValueMap().get("rcCardsImagePath").toString());
+                if(childPage.getValueMap().get("rcCardsImagePath") != null){
+                    cardIconPath = childPage.getValueMap().get("rcCardsImagePath").toString();
                 }
 
+                resourceSection.put("title", cardTitle);
+                resourceSection.put("pagePath", pagePath);
+                resourceSection.put("description", cardDescription);
+                resourceSection.put("rcCardsImagePath", cardIconPath);
+
+                // Handle the case of the image not existing.
                 resourceSectionCards.add(resourceSection);
             }
 
@@ -66,9 +80,12 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     }
 
-
-    public List<HashMap> getProductCards() {
+    public List<HashMap> getResourceSectionCards() {
         return resourceSectionCards;
+    }
+
+    public String getContentType(){
+        return contentType;
     }
 }
 
