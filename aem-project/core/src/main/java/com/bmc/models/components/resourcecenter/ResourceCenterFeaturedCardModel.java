@@ -79,6 +79,9 @@ public class ResourceCenterFeaturedCardModel {
                 Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                 String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                 String assetLink = "";
+                String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : null;;
+                String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : null;
+                String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : null;
                 if(gatedAsset && formPath != null && isFormActive(formPath)){
                     assetLink = formPath;
                 }else {
@@ -93,7 +96,7 @@ public class ResourceCenterFeaturedCardModel {
                 BmcMetadata contentType = getContentTypeMeta(metadata);
                 String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
                 String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
-                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
+                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, headerImage, footerLogo, videoLength, metadata);
                 analiticData = buildAnaliticData();
             }
         } catch (Exception e) {

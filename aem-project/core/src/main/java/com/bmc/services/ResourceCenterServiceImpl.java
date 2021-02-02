@@ -510,6 +510,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = "";
+                        String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : null;;
+                        String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : null;
+                        String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : null;
                         if(gatedAsset && formPath != null && isFormActive(formPath)){
                             assetLink = formPath;
                         }else {
@@ -533,7 +536,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         }
                         
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, type, linkType, metadata));
+                                lastModified, assetLink, thumbnail, type, linkType, headerImage, footerLogo, videoLength, metadata));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
