@@ -164,7 +164,7 @@
 
   .reset-btn {
     position: absolute;
-    color: #a7a9ab;
+    color: #0093C9;
     border-style: solid;
     border-width: 2px;
     font-weight: bold;
@@ -177,6 +177,9 @@
     cursor: pointer;
     margin-left: -110px;
     margin-top: -7px;
+    &:hover{
+      color: #046eb1;
+    }
   }
 
   .submit-btn {
