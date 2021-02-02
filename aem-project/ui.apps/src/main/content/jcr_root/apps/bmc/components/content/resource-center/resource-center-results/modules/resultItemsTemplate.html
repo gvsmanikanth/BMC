@@ -8,10 +8,10 @@
             <a href="{{assetLink}}" target="_blank" {{{analyticsAttributes}}}>
             {{/ifCond}}
             <div class="simple-card bg-white" style="height: 310px;">
-                <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
+                <div class="card-header" style="{{#if headerImage}}margin-top:35%;{{/if}}">
                     <h4>{{type}}</h4>
-                    {{#if thumbnail}}
-                    <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
+                    {{#if headerImage}}
+                    <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
                     </div>
                     {{else}}
                     <div class="card-icon ic_{{linkType}}" alt border="0"></div>
@@ -20,7 +20,7 @@
                 <div class="card-content">
                     <hr/>
                     <h4>
-                        {{#if thumbnail}}
+                        {{#if headerImage}}
                             {{{truncateText title 70}}}
                         {{else}}
                             {{{truncateText title 110}}}
@@ -44,10 +44,10 @@
                         {{else}}
                         <span class="card-footer-logo">
                                 <img src="{{footerLogo}}" >
-                            </span>
+                        </span>
                         {{/ifCond}}
                         {{/if}}
-                        <span class="card-footer-action">
+                        <span>
                         <svg class="align-middle s-{{linkType}}">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                         </svg>
