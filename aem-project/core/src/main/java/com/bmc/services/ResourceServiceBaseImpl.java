@@ -96,7 +96,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "MyIT Service Broker",
                     "Release Lifecycle Management",
                     "All",
-                    "All PL Products"
+                    "All PL Products",
+                    "Product Interest"
             })
     static final String UNWANTED_FILTER_MAPPING = "unwanted.filterOptions.mapping";
     private List<String> unwantedFilterMapping;

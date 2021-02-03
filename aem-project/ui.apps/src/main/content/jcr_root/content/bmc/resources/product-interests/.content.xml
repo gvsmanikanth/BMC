@@ -93,9 +93,10 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Application Integrator"
             dropDownDisplay="No"/><!-- WEB-5296 -->
+    <!-- WEB-6680 Renaming Product interest title-->
     <_x0035_66639210
             jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M Automation API"
+            jcr:title="Control-M and DevOps"
             dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0036_37969887
             jcr:primaryType="nt:unstructured"
@@ -159,9 +160,10 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="FootPrints Service Core"
             dropDownDisplay="No"/>
+    <!-- WEB-6680 Renaming Product interest title-->
     <_x0038_46325100
             jcr:primaryType="nt:unstructured"
-            jcr:title="Helix"
+            jcr:title="BMC Helix"
             dropDownDisplay="No"
     />
     <!-- WEB-5296 -->
@@ -358,12 +360,13 @@
             dropDownDisplay="No"
     />
     <!-- WEB-5294 -->
+    <!-- WEB-6680 Renaming Product interest title-->
     <_x0030_04182175
             jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Capacity Optimization"
+            jcr:title="BMC Helix Capacity optimization"
             dropDownDisplay="Yes"
-            text="TrueSight Capacity Optimization"
-            value="TrueSight Capacity Optimization"/>
+            text="BMC Helix Capacity optimization"
+            value="BMC Helix Capacity optimization"/>
 
     <_x0031_55163094
             jcr:primaryType="nt:unstructured"
