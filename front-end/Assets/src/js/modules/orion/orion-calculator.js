@@ -635,6 +635,7 @@
 		Calculator.addEnvironments("nonProd",0);
 		updateCalculator(Calculator);
 		fixedPos();
+		$(".sliderNew").on("change",updateAdobeAnalyticsSliderInteraction);
 	});
 	
 	//delete event listener
