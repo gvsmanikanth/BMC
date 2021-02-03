@@ -350,7 +350,7 @@ body.no-scroll{
     }
     .card-content{
       clear: both;
-      min-height: 191px;
+      min-height: 160px;
       h4 {
         color: #414042;
         font-weight: 400;
@@ -414,8 +414,9 @@ body.no-scroll{
   }
 
   //  simple cards
-  .simple-card{
+  .simple-card{	
     @extend .card;
+	min-height: 310px;
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
