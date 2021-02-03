@@ -29,28 +29,27 @@
                             </h4>
                         </div>
                         <div class="card-footer">
-                            <div class="card-footer-logo">
-                                {{#ifCond linkType '===' "play"}}
-                                {{#if videoLength}}
-                                <span class="video-length">
-                            <svg class="align-middle s-clock">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
-                            </svg>{{videoLength}}
-                            </span>
-                                {{/if}}
-                                {{/ifCond}}
-                                {{#if footerLogo}}
-                                {{#ifCond linkType '===' "play"}}
-
-                                {{else}}
-                                <span>
-                                <img src="{{footerLogo}}">
-                            </span>
-                                {{/ifCond}}
-                                {{/if}}
-                            </div>
                             <!-- WEB-6793 Added new fields for RC Cards END -->
                             <span class="card-footer-action">
+                                    <div class="card-footer-logo">
+                                    {{#ifCond linkType '===' "play"}}
+                                    {{#if videoLength}}
+                                    <span class="video-length">
+                                        <svg class="align-middle s-clock">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                        </svg>{{videoLength}}
+                                    </span>
+                                        {{/if}}
+                                        {{/ifCond}}
+                                        {{#if footerLogo}}
+                                        {{#ifCond linkType '===' "play"}}
+                                        {{else}}
+                                    <span>
+                                        <img src="{{footerLogo}}">
+                                    </span>
+                                    {{/ifCond}}
+                                    {{/if}}
+                                </div>
                                 <svg class="align-middle s-{{linkType}}">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                                 </svg>
