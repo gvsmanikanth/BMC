@@ -360,13 +360,12 @@
             dropDownDisplay="No"
     />
     <!-- WEB-5294 -->
-    <!-- WEB-6680 Renaming Product interest title-->
     <_x0030_04182175
             jcr:primaryType="nt:unstructured"
-            jcr:title="BMC Helix Capacity optimization"
+            jcr:title="TrueSight Capacity Optimization"
             dropDownDisplay="Yes"
-            text="BMC Helix Capacity optimization"
-            value="BMC Helix Capacity optimization"/>
+            text="TrueSight Capacity Optimization"
+            value="TrueSight Capacity Optimization"/>
 
     <_x0031_55163094
             jcr:primaryType="nt:unstructured"
