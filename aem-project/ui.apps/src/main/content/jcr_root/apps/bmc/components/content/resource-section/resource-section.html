@@ -1,37 +1,39 @@
 <!--/* WEB-9670 Componentization for Resource Section  */-->
-<section class="landingPage-product-list" data-sly-use.productSet="com.bmc.components.ResourceSection">
-	<div class=" layout-inner-wrap" id="product-list">
+<section class="gutter-width" data-sly-use.productSet="com.bmc.components.ResourceSection">
+	<div class="resource-results">
 		<div class="text-center">
 			<h2 class="h2-variation-1">${properties.rcTitle @ context='html'}</h2>
 			<h3 >${properties.rcSubTitle @ context='html'}</h3>
 		</div>
-		<div class="flex-wrap flex-justify-center mb2">
-            <!--/*  Handle layout of cards in Landscape  */-->
+		<div class="rc-card-row">
+            <!--/*  Handle layout of cards in Landscape
 			<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
 			<sly data-sly-test="${properties.numberOfCards == '3'}">
 				<sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
 			</sly>
 			<sly data-sly-test="${properties.numberOfCards == '4'}">
 				<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
-			</sly>
+			</sly> */-->
 			<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 			<sly data-sly-list.card="${productSet.resourceSectionCards}">
-				<div class="flex flex-item ${assetClass}">
-					<sly data-sly-use.productLink="${'com.bmc.components.utils.LinkGenerator' @ urlPath=card.pagePath}"></sly>
-					<sly data-sly-test="${productLink.href}">
-						<sly data-sly-test.resolvedLink="${productLink.href}"></sly>
-					</sly>
-					<sly data-sly-test="${!productLink.href}">
+				<div class="rc-card-col">
+
+					<sly data-sly-test="${productSet.contentType == 'play'}">
 						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+						<sly data-sly-test.anchorCSS="rc-card-modal-youtube-video-player"/>
 					</sly>
-					<a href="${resolvedLink}">
+					<sly data-sly-test="${productSet.contentType != 'play'}">
+						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+						<sly data-sly-test.anchorCSS=""/>
+					</sly>
+					<a class="${anchorCSS}" href="${resolvedLink}">
 						<div class="simple-card bg-white">
 							<div class="card-header">
 								<h4></h4>
 								<div class="card-icon ic_${productSet.contentType}" alt="" border="0"></div>
 							</div>
 							<div class="card-content">
-								<hr>
+								<hr/>
 								<h4>${card.title  @ context='html'}</h4>
 								<p>${card.description  @ context='html'}</p>
 							</div>
@@ -40,7 +42,9 @@
 									<svg class="align-middle s-${productSet.contentType}">
 										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${productSet.contentType}"></use>
 									</svg>
-									${'productSet.contentType' @ i18n}
+									${productSet.contentType == 'play' ? 'Play' : '' @ i18n}
+									${productSet.contentType == 'view' ? 'View' : '' @ i18n}
+									${productSet.contentType == 'start' ? 'Start' : '' @ i18n}
 								</span>
 							</div>
 						</div>
@@ -50,6 +54,6 @@
 		</div>
 	</div>
      <p data-sly-test="${properties.ctaText && properties.ctaPath}" class="text-center">
-        <a class="btn ${properties.cssClass}" href="${properties.ctaPath}">${properties.ctaText @ context='html'} &nbsp;�</a>
+        <a class="btn ${properties.cssClass}" href="${properties.ctaPath}">${properties.ctaText @ context='unsafe'}</a>
     </p>
 </section>

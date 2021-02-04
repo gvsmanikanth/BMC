@@ -1,6 +1,7 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +15,10 @@ import org.slf4j.Logger;
 import org.apache.sling.api.resource.ValueMap;
 import com.bmc.mixins.MetadataInfoProvider_RequestCached;
 
+import javax.inject.Inject;
+import javax.jcr.Node;
+import javax.jcr.Session;
+
 
 /**
  * WEB-9670 ResourceSection class is a class backing the ResourceSection component.
@@ -23,11 +28,19 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     private static final Logger logger = LoggerFactory.getLogger(ResourceSection.class);
 
+    @Inject
+    private Resource resource;
+
+    @OSGiService
+    private Session session;
+
     protected HashMap<String,String> resourceSection;
 
     protected List<HashMap> resourceSectionCards;
 
     private  String contentType;
+
+    private Boolean isVideo = false;
     @Override
     public void activate() throws Exception {
         try {
@@ -50,7 +63,10 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 }
                 if(contentType.equalsIgnoreCase("ic-type-185980791")){
                     contentType = "play";
-                }else{
+                    pagePath = getVideoPath(pagePath);
+                }else if(contentType.equalsIgnoreCase("ic-type-464000615")){
+                    contentType = "start";
+                }else {
                     contentType = "view";
                 }
                 // override title and description
@@ -86,6 +102,25 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     public String getContentType(){
         return contentType;
+    }
+
+    public String getVideoPath(String pagePath){
+        String videoPath = "";
+        String videoId = "";
+        try{
+            if(pagePath != null){
+                Node videoNode = session.getNode(pagePath);
+                if(videoNode != null){
+                    videoId = videoNode.getNode("jcr:content").getNode("video-data").getProperty("vID").getString();
+                }
+            }
+        }catch (Exception e){
+            e.getMessage();
+        }
+        if(videoId != null){
+            videoPath = "/content/bmc/videos.html?vID="+videoId;
+        }
+        return videoPath;
     }
 }
 
