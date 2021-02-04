@@ -926,7 +926,8 @@
     background-position: center center;
 	display:inline;
 	padding: 10px;
-	line-height:20px;
+    line-height:20px;
+    font-size: 16px;
 	&:before {content:"\00a0";padding-left: 10px;}
     &:hover {text-decoration:none;cursor:pointer;} 
     .Tooltip-window {
@@ -1065,7 +1066,6 @@
         }
     }
 }
-.orion-block-title  .orion_tooltip{
-    display:inline-block;
+.orion-block-title  .orion_tooltip, h2 .orion_tooltip, h3 .orion_tooltip{
+    vertical-align: middle;
 }
-

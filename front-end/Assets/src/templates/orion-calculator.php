@@ -9,7 +9,7 @@
 <!--Orion pricing cards component Start -->
 <section class="orion-global bg-white text-center pricing-section">
     <div class="layout-inner-wrap">
-        <h2 class="orion-block-title ">Our Plans <span class="orion_tooltip tooltip_pointer_right"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></h2>
+        <h2 class="orion-block-title ">Our Plans <span class="orion_tooltip tooltip_pointer_right mb1"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></h2>
         <p class="mb3">Text that will explain that these are our base plans and they can be added upon by going to our calculator.</p>
         <div class="flex-wrap text-left div-px1">
             <div class="flex flex-item col-12 sm-col-6">	
