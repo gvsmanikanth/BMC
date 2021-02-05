@@ -50,12 +50,12 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Business Workflows"
             dropDownDisplay="No"/>
-    <_x0032_44922076
+    <!--DELETE PRODUCT WEB-6680 <_x0032_44922076
             jcr:primaryType="nt:unstructured"
             jcr:title="Cloud Lifecycle Management"
             dropDownDisplay="Yes"
             text="Cloud Lifecycle Management"
-            value="Cloud Lifecycle Management"/>
+            value="Cloud Lifecycle Management"/>-->
     <_x0039_81173424
             jcr:primaryType="nt:unstructured"
             jcr:title="CMDB"
@@ -93,7 +93,7 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Application Integrator"
             dropDownDisplay="No"/><!-- WEB-5296 -->
-    <!-- WEB-6680 Renaming Product interest title-->
+    <!-- WEB-6680 Renaming Control-M Automation API to  Control-M and DevOps-->
     <_x0035_66639210
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M and DevOps"
@@ -102,9 +102,10 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Batch Impact Manager"
             dropDownDisplay="No"/><!-- WEB-5296 -->
+    <!-- WEB-6680 Changed name Control-M for Hadoop to Control-M for DevOps  -->
     <_x0034_14177221
             jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M for Hadoop"
+            jcr:title="Control-M for DevOps"
             dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0032_65389868
             jcr:primaryType="nt:unstructured"
@@ -160,7 +161,7 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="FootPrints Service Core"
             dropDownDisplay="No"/>
-    <!-- WEB-6680 Renaming Product interest title-->
+    <!-- WEB-6680 Renaming Product interest Helix to BMC Helix-->
     <_x0038_46325100
             jcr:primaryType="nt:unstructured"
             jcr:title="BMC Helix"

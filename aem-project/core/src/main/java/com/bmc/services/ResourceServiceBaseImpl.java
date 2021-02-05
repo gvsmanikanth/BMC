@@ -70,7 +70,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "Track-It!",
                     "TrueSight AppVisibility",
                     "TrueSight Capacity Optimization",
-                    "TrueSight Cloud Cost",
                     "TrueSight Cloud Cost Control",
                     "TrueSight Infrastructure",
                     "TrueSight Middleware",
