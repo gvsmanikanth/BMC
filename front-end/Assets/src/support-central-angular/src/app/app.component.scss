@@ -143,6 +143,9 @@ adapt-select {
     .container {
         .tile-block {
             justify-content: space-around;
+            app-tile:last-child {
+                margin-right: 33.5%;
+            }
         }
     }
 }
@@ -151,6 +154,9 @@ adapt-select {
     .container {
         .tile-block {
             justify-content: space-around;
+            app-tile:last-child {
+                margin-right: 33.5%;
+            }
         }
     }
 }

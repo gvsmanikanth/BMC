@@ -3,7 +3,14 @@
       <div class="top-section">
         <h2>Product Downloads</h2><a class="external-app-link btn btn-primary" [href]="state.widgets.prdDownloads" target="_blank">Go to the Download Center</a>
       </div>
-      <div class="description"  *ngIf="state.hasUserActivity !== null">{{state.hasUserActivity ? widgetDescription : DESCRIPTION_NON_LOGGED_IN}}</div>
+      <div class="description"  *ngIf="state.hasUserActivity !== null">{{state.hasUserActivity ? widgetDescription : DESCRIPTION_NON_LOGGED_IN}}
+        <a *ngIf="state.user.loggedIn === 'true'"
+          href="https://www.bmc.com/available/create-modify-pn-subscription-list.html" class="ml-3"
+          adaptPopover="Click here to edit your favorite Products and alert subscription"
+          [triggers]="'mouseover:mouseout'">
+          <span class="d-icon-pencil_adapt"></span>
+        </a>
+      </div>
     </div>
     <div class="extended-widget-body" [ngBusy]="epdService.busyConfig">
       <app-epd-product *ngFor="let product of epdService.products" [product]="product"></app-epd-product>
@@ -13,7 +20,7 @@
           Available 
         </span>
         <span class="legend">
-          <span class="legend_item" style="background-color: rgb(246, 210, 120);">&nbsp;&nbsp;</span> 
+          <span class="legend-item" style="background-color: rgb(246, 210, 120);">&nbsp;&nbsp;</span> 
         Support Only 
         </span>
       </div>

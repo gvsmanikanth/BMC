@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule, AdaptEmptyStateModule, AdaptSelectModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule, AdaptEmptyStateModule, AdaptSelectModule, AdaptPopoverModule } from '@bmc-ux/adapt-angular';
 import { RouterModule, Routes } from '@angular/router';
 import { EpdComponentComponent } from './epd-component/epd-component.component';
 import { EPDService } from './shared/services/epd.service';
@@ -86,7 +86,8 @@ const appRoutes: Routes = [
     AdaptAccordionModule,
     AdaptSelectModule,
     AdaptTabsModule.forRoot(),
-    AdaptPaginationModule
+    AdaptPaginationModule,
+    AdaptPopoverModule
   ],
   providers: [
     DataFetchService,

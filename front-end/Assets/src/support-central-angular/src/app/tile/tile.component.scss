@@ -20,6 +20,7 @@
      border-radius: 5px;
      box-shadow: 0 3px 4px rgba(0,0,0,.14), 0 9px 10px rgba(0,0,0,.06);
      min-height: 80px;
+     background: white;
     } 
     .tile-left {
          background-color: #4E5154;
@@ -29,6 +30,7 @@
     .tile-body {
         display:flex;
         width: 83%;
+        min-height: 80px;
         &:hover {
             background-color: #F9F9FA;
         }
@@ -73,7 +75,7 @@
             // width: 45px;
             // border-radius: 25px; //1-st variant
             height: auto;
-            min-height: 77px; // 2-nd variant
+            min-height: 80px; // 2-nd variant
             width: 17%; // 2-nd variant
             right: 0; // 2-nd variant
             font-size: 14px;
@@ -90,7 +92,7 @@
         }
         span {
             font-size: 40px;
-            color:#00A79D;
+            color:#29A5D6;
         }
     }
  }
