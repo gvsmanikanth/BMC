@@ -3,19 +3,18 @@
  */
 package com.bmc.servlets;
 
-import com.adobe.acs.commons.util.ParameterUtil;
-import com.bmc.services.SiteMapXMLService;
-
 import java.io.IOException;
 import java.net.URI;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Map;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -25,23 +24,25 @@ import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.osgi.framework.Constants;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.adobe.acs.commons.util.ParameterUtil;
+import com.bmc.services.SiteMapXMLService;
+import com.day.cq.commons.Externalizer;
 import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap;
 import com.day.cq.commons.inherit.InheritanceValueMap;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageFilter;
 import com.day.cq.wcm.api.PageManager;
 
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference; 
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
-
 @Component(service = Servlet.class,
 property = {
 		Constants.SERVICE_DESCRIPTION + "= Page XML SiteMap Servlet",
 		"sling.servlet.methods=" + HttpConstants.METHOD_GET,
-		"sling.servlet.resourceTypes=bmc/components/structure/ad-hoc-page",
-		"sling.servlet.selectors=" + "bmc-sitemap",
+		"sling.servlet.paths=/bin/bmcsitemap",
 		"sling.servlet.extensions=" + "xml"
 })
 
@@ -59,16 +60,21 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 	private transient SiteMapXMLService siteMapXMLService;
 
 	private static final String NS = "http://www.sitemaps.org/schemas/sitemap/0.9";
+
+	@Reference
+	private transient Externalizer externalizer;
+
 	private String[] excludeFromSiteMapProperty;
 
 	private Map<String, String> urlRewrites;
 
+	private String[] urlIgnorePattern;
+
 	private String[] ignorePatterns;
 	private String[] excludedPageTemplates;
-
 	private String hostname;
 	private int portnumber;
-
+	private String scmaa;
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
 			throws ServletException, IOException {
@@ -76,16 +82,14 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 		this.urlRewrites = ParameterUtil.toMap(siteMapXMLService.getUrlRewrites(), ":");
 		this.ignorePatterns = siteMapXMLService.getUrlIgnorePattern();
 		this.excludedPageTemplates = siteMapXMLService.getExcludeTemplates();
-
 		this.hostname=request.getServerName();
 		this.portnumber=request.getServerPort();
-
+		this.scmaa=request.getScheme().toString();
 		response.setContentType(request.getResponseContentType());
 		ResourceResolver resourceResolver = request.getResourceResolver();
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 		if(pageManager != null) {
 			Page page = pageManager.getContainingPage(request.getResource());
-
 			XMLOutputFactory outputFactory = XMLOutputFactory.newFactory();
 			try {
 				XMLStreamWriter stream = outputFactory.createXMLStreamWriter(response.getWriter());
@@ -93,7 +97,7 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 				stream.writeStartElement("", "urlset", NS);
 				stream.writeNamespace("", NS);
 
-				for (Iterator<Page> children = page.listChildren(new PageFilter(false, true), true); children.hasNext();) {
+				for (Iterator<Page> children = page.getParent().listChildren(new PageFilter(false, true), true); children.hasNext();) {
 					write(children.next(), stream, resourceResolver);
 				}
 				stream.writeEndElement();
@@ -158,16 +162,19 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 			return;
 		}
 		String loc="";
+		//this.slingSettingsService.getRunModes().contains("publish")||this.slingSettingsService.getRunModes().contains("author")
 		if(this.hostname.equals("localhost")) {
-			loc="http://localhost:"+this.portnumber+getshortenURL(page.getPath())+".html";
+			loc=this.scmaa+"://localhost:"+this.portnumber+getshortenURL(page.getPath())+".html";
 		}else {
-			loc=this.hostname+getshortenURL(page.getPath())+".html";
+			loc=this.scmaa+"://"+this.hostname+getshortenURL(page.getPath())+".html";
 		}
+		//loc = externalizer.externalLink(resolver, this.externalizerdomain, String.format("%s.html", page.getPath()));
+		//String loc = externalizer.publishLink(resolver, String.format("%s.html", pagepath));
 		if(StringUtils.isBlank(applyUrlIgnore(loc))) {
 			return;
 		}
 		stream.writeStartElement(NS, "url");
-		loc = applyUrlRewrites(loc);
+		//loc = applyUrlRewrites(loc);
 		writeElement(stream, "loc", loc);
 		Calendar calendarObj = page.getLastModified();
 		if (null != calendarObj) {
@@ -186,6 +193,7 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 		boolean flag = false;
 		if(this.excludeFromSiteMapProperty != null){
 			for(String pageProperty : this.excludeFromSiteMapProperty){
+				log.info(page.getProperties().get("jcr:title")+":::::::::::"+page.getProperties().get(pageProperty, Boolean.FALSE));
 				flag = flag || page.getProperties().get(pageProperty, Boolean.FALSE);
 			}
 		}
