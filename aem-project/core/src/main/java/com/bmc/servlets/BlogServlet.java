@@ -21,7 +21,6 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.net.URLEncoder;
-import java.io.UnsupportedEncodingException;
 
 import java.io.ByteArrayOutputStream;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
@@ -29,7 +28,6 @@ import com.day.cq.wcm.api.WCMMode;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.sling.engine.SlingRequestProcessor;
-import org.apache.sling.settings.SlingSettingsService;
 import org.apache.felix.scr.annotations.Reference;
 
 import javax.servlet.ServletException;
@@ -198,17 +196,18 @@ public class BlogServlet extends SlingSafeMethodsServlet {
     private String processSource(String source) {
         String processed;
         processed = stripRefresh(source);
-        processed = stripEscapeChracters(source);
+        processed = stripEscapeCharacters(processed);
         processed = processLinks(processed);
         return processed;
     }
 
-    private String stripEscapeChracters(String source) {
+    // Replacing escape characters in form of \/ from the response body and replace with / to handle hostname replacement is happening at correct place.
+    private String stripEscapeCharacters(String source) {
         Pattern p = Pattern.compile("\\\\/",
                 Pattern.CASE_INSENSITIVE);
         return p.matcher(source).replaceAll("/");
     }
-
+    // Remove meta refresh tag from the response in order to stop infinite page re-load
     private String stripRefresh(String source) {
         Pattern p = Pattern.compile("<meta.+http-equiv=\"refresh\"[^>]+>",
                 Pattern.CASE_INSENSITIVE);
@@ -228,19 +227,18 @@ public class BlogServlet extends SlingSafeMethodsServlet {
         String token3 = "YT_EXCLUDE_PATH";
         String token4 = "BASE_INCLUDE_PATH";
         String token5 = "CDN_INCLUDE_PATH";
-        logger.info("replace value : "+replace);
-        String processed = source.replaceAll(exclude1, token1);
-        processed = processed.replaceAll(exclude2,token2);
-        processed = processed.replaceAll(exclude3,token3);
-        processed = processed.replaceAll(exclude4,token4);
-        processed = processed.replaceAll(exclude5,token5);
-        processed = processed.replaceAll(baseURL, replace);
-        processed = processed.replaceAll(token1, exclude1);
-        processed = processed.replaceAll(token2,exclude2);
-        processed = processed.replaceAll(token3,exclude3);
-        processed = processed.replaceAll(token4,exclude4);
-        processed = processed.replaceAll(token5,exclude5);
-        logger.info(processed);
+        String processed = source.replace(exclude1, token1);
+        processed = processed.replace(exclude2, token2);
+        processed = processed.replace(exclude3, token3);
+        processed = processed.replace(exclude4, token4);
+        processed = processed.replace(exclude5, token5);
+        processed = processed.replace(baseURL, replace);
+        processed = processed.replace(token1, exclude1);
+        processed = processed.replace(token2, exclude2);
+        processed = processed.replace(token3, exclude3);
+        processed = processed.replace(token4, exclude4);
+        processed = processed.replace(token5, exclude5);
+        logger.info("BMCINFO: Processed Response is : "+processed);
         return processed;
     }
 
