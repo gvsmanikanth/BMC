@@ -25,30 +25,6 @@
                                         jcr:title="Metadata"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <hide-from-sitemap
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                name="./hidefromsitemap"
-                                                renderReadOnly="{Boolean}true"
-                                                text="Hide page from site map"
-                                                value="true">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-msm-lockable="Hide page from site map"/>
-                                            </hide-from-sitemap>
-                                            <hideAllChildPages
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                name="./hideAllChildPages"
-                                                renderReadOnly="{Boolean}true"
-                                                text="Hide all child Pages from sitemap"
-                                                value="true">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-msm-lockable="Hide all child Pages from sitemap"/>
-                                            </hideAllChildPages>
 											<product-interest
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/select"
