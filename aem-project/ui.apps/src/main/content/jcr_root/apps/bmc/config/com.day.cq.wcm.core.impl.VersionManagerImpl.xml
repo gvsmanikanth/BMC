@@ -7,4 +7,4 @@
     versionmanager.maxNumberVersions="{Long}10"
     versionmanager.minNumberVersions="{Long}10"
     versionmanager.purgePaths="[/content/bmc]"
-    versionmanager.purgingEnabled="{Boolean}true"/>
+    versionmanager.purgingEnabled="{Boolean}false"/>
