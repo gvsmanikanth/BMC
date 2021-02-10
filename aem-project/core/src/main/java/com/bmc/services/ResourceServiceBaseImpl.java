@@ -78,7 +78,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "Release Lifecycle Management",
                     "All",
                     "All PL Products",
-                    "Product Interest"
+                    "Product Interest",
+                    "Customer Stories"
             })
     static final String UNWANTED_FILTER_MAPPING = "unwanted.filterOptions.mapping";
     private List<String> unwantedFilterMapping;
