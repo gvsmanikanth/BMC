@@ -258,6 +258,10 @@
 						// WEB-9417 
 						.orion_tooltip {
 							margin-left: 5px;
+							@media(min-width:$break-md){
+								padding-bottom: 0;
+								line-height: 10px;
+							}	
 						}
 					}
 					.nav{
