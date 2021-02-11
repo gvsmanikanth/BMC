@@ -63,7 +63,7 @@
         }
         span {
             //  font-size: 20px;// 1st-variant
-             font-size: 50px; //2-nd
+             font-size: 34px; //2-nd
              color:  white;
         }
     }
@@ -95,14 +95,4 @@
             color:#29A5D6;
         }
     }
- }
-
- @media (max-width: 1200px) {
-     .tile {
-        .tile-right {
-            span {
-                font-size: 40px;
-            }
-        }
-     }
  }
