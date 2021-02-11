@@ -15,6 +15,7 @@ import com.bmc.mixins.MetadataInfoProvider_RequestCached;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
 
@@ -26,9 +27,6 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     private static final Logger logger = LoggerFactory.getLogger(ResourceSection.class);
 
-    @Inject
-    private Resource resource;
-
     protected HashMap<String,String> resourceSection;
 
     protected List<HashMap<String,String>> resourceSectionCards;
@@ -36,6 +34,8 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
     @Override
     public void activate() throws Exception {
         try {
+            ResourceResolver resourceResolver = getResourceResolver();
+            Session session = resourceResolver.adaptTo(Session.class);
             //iterate through the multifield  Resource Section Cards and fetch its page properties
             ListIterator<Resource> pagePathsNodes = getMultiFieldNodes("resourceCards").listIterator();
             resourceSectionCards = new ArrayList<>();
@@ -47,20 +47,17 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 String cardDescription = "";
                 String cardIconPath = "";
                 String contentType = "";
+                String contentTypeText = "";
                 Page page = this.getResourceProvider().getPage(pagePath);
                 if (page != null){
                     ValueMap pageMap = page.getProperties();
-                    cardTitle = pageMap.getOrDefault("navTitle","").toString();
+                    cardTitle = pageMap.getOrDefault("jcr:title","").toString();
                     cardDescription = pageMap.getOrDefault("short_description","").toString();
                     contentType = pageMap.getOrDefault("ic-content-type","").toString();
+                    contentTypeText = getContentTypeText(contentType,session);
                 }
-                if(contentType.equalsIgnoreCase("ic-type-185980791")){
-                    contentType = "play";
-                    pagePath = getVideoPath(pagePath);
-                }else if(contentType.equalsIgnoreCase("ic-type-464000615")){
-                    contentType = "start";
-                }else {
-                    contentType = "view";
+                if(contentTypeText.equalsIgnoreCase("Videos")){
+                    pagePath = getVideoPath(pagePath,session);
                 }
                 // override title and description
                 if(childPage.getValueMap().get("overrideTitle") != null){
@@ -78,6 +75,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 resourceSection.put("description", cardDescription);
                 resourceSection.put("rcCardsImagePath", cardIconPath);
                 resourceSection.put("contentType", contentType);
+                resourceSection.put("contentText",contentTypeText);
                 // Handle the case of the image not existing.
                 resourceSectionCards.add(resourceSection);
             }
@@ -88,16 +86,30 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
         }
 
     }
-
+    public String getContentTypeText(String contentType,Session session){
+        String contentTypeText = "";
+        try {
+            String contentTypePath = "/content/bmc/resources/intelligent-content-types";
+            Node rootNode = session.getNode(contentTypePath);
+            if(rootNode != null){
+                Node icNode = rootNode.getNode(contentType);
+                if(icNode != null && icNode.hasProperty("jcr:title")){
+                    contentTypeText = icNode.getProperty("jcr:title").getString();
+                }
+            }
+        }catch (RepositoryException e){
+            logger.error("BMCERROR : session not available." +e);
+        }
+        return contentTypeText;
+    }
     public List<HashMap<String,String>> getResourceSectionCards() {
         return resourceSectionCards;
     }
 
-    public String getVideoPath(String pagePath){
+    public String getVideoPath(String pagePath,Session session){
         String videoPath = "";
         String videoID = "";
-        ResourceResolver resourceResolver = getResourceResolver();
-        Session session = resourceResolver.adaptTo(Session.class);
+
         try{
             if(pagePath != null && session != null){
                 Node videoNode = session.getNode(pagePath);

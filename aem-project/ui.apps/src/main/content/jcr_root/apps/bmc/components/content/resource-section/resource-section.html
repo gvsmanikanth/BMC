@@ -17,19 +17,32 @@
 			<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 			<sly data-sly-list.card="${productSet.resourceSectionCards}">
 				<div class="rc-card-col">
-					<sly data-sly-test="${card.contentType == 'play'}">
+
+					<sly data-sly-test="${card.contentText == 'Videos'}">
 						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 						<sly data-sly-test.anchorCSS="rc-card-modal-youtube-video-player"/>
+						<sly data-sly-test.cardIcon="play"/>
+						<sly data-slt-test.cardCTA="Play"/>
 					</sly>
-					<sly data-sly-test="${card.contentType != 'play'}">
+					<sly data-sly-test="${card.contentText == 'Demos'}">
 						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 						<sly data-sly-test.anchorCSS=""/>
+						<sly data-sly-test.cardIcon="play"/>
+						<sly data-slt-test.cardCTA="Start"/>
 					</sly>
+					<sly data-sly-test="${card.contentText != 'Videos' && card.contentText != 'Demos'}">
+						<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+						<sly data-sly-test.anchorCSS=""/>
+						<sly data-sly-test.cardIcon="view"/>
+						<sly data-slt-test.cardCTA="View"/>
+					</sly>
+
+
 					<a class="${anchorCSS}" href="${resolvedLink}">
 						<div class="simple-card bg-white">
 							<div class="card-header">
-								<h4></h4>
-								<div class="card-icon ic_${card.contentType}" alt="" border="0"></div>
+								<h4>${card.contentText}</h4>
+								<div class="card-icon ic_${cardIcon}" alt="" border="0"></div>
 							</div>
 							<div class="card-content">
 								<hr/>
@@ -38,12 +51,10 @@
 							</div>
 							<div class="card-footer">
 								<span class="card-footer-action">
-									<svg class="align-middle s-${card.contentType}">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${productSet.contentType}"></use>
+									<svg class="align-middle s-${cardIcon}">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${cardIcon}"></use>
 									</svg>
-									${card.contentType == 'play' ? 'Play' : '' @ i18n}
-									${card.contentType == 'view' ? 'View' : '' @ i18n}
-									${card.contentType == 'start' ? 'Start' : '' @ i18n}
+									${cardCTA @ i18n}
 								</span>
 							</div>
 						</div>
