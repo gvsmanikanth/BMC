@@ -59,3 +59,20 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .extended-widget-body {
+        .case {
+            h4 {
+                padding-right: 0px;
+                a {
+                    display: block;
+                }
+                .product-name {
+                    margin-left: 0px;
+                }
+            }
+        }
+    }  
+}
+

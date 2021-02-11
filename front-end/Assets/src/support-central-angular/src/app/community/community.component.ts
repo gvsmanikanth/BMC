@@ -10,7 +10,7 @@ import { StateService } from '../shared/services/state.service';
 })
 export class CommunityComponent implements OnInit {
 
-  DESCRIPTION_LOGGED_IN = 'Suggested Community content based on your favorite products and recent activity';
+  DESCRIPTION_LOGGED_IN = 'Suggested community content based on your favorite products and recent activity';
   DESCRIPTION_NON_LOGGED_IN = 'Suggested community content based on product popularity'
 
   widgetDescription = null;
