@@ -9,6 +9,6 @@ export class StateService {
   hasUserActivity: boolean = null;
 
   constructor(private ga: GoogleAnalyticsService) { 
-    window['gtag']('config', 'G-38WV2ZDKPB', {'login status': this.user.loggedIn});
+    window['gtag']('config', 'UA-114788512-5', {'login status': this.user.loggedIn});
   }
 }
