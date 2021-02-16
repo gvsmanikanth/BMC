@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -26,7 +27,6 @@ public class BMCSitemapService {
 		this.excludeFromSiteMapProperty = siteMapXMLService.getExcludeProperty();
 		this.excludedPageTemplates = siteMapXMLService.getExcludeTemplates();
 		List<SitemapModel> sitemapmodellist = new ArrayList<SitemapModel>();
-		List<Map<String, String>> finalProductList = new ArrayList<Map<String, String>>();
 		if (pageManager != null) {
 			for (Iterator<Resource> children = htmlpath.listChildren(); children.hasNext();) {
 				SitemapModel sitemapModel = new SitemapModel();
@@ -41,9 +41,9 @@ public class BMCSitemapService {
 				}
 				sitemapModel.setSitemapsectiontitle(provalue.get("sitemapsectiontitle", String.class));
 				sitemapModel.setSubsitemapsectiontitle(provalue.get("subsitemapsectiontitle", String.class));
-				sitemapModel.setSitemapsectionmap(details);
+				Map<String, String> sortdetails = new TreeMap<String, String>(details);
+				sitemapModel.setSitemapsectionmap(sortdetails);
 				sitemapmodellist.add(sitemapModel);
-				finalProductList.add(details);
 			}
 		}
 		return sitemapmodellist;
