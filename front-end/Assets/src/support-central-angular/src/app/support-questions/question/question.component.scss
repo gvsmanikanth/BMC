@@ -1,0 +1,39 @@
+.question {
+    & {
+        display: flex;
+        border-radius: 5px;
+        box-shadow: 0 3px 4px rgba(0,0,0,.14), 0 9px 10px rgba(0,0,0,.06);
+        padding: 10px 5px 10px 15px;
+        margin-bottom: 15px;
+    }
+    .left {
+        & {
+            width: 30px;
+            padding-top: 10px;
+        }
+        .lightbulb {
+            color: #f86e00;
+            margin-right: 10px;
+            font-size: 16px;
+            
+        }
+    }
+    .center {
+        h4 {
+            margin: 10px 0 5px;
+        }
+        .dates {
+            margin-top: 5px;
+        }
+        .summary {
+            .truncate {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .dates {
+        font-size: 10px;
+        display: flex
+    }
+}

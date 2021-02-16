@@ -1,0 +1,162 @@
+adapt-select {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.container {
+    &{
+        min-height: 400px;
+        margin-bottom: 30px;
+        display:flex;
+        position: relative;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+    .tile-block {
+        & {
+            display:flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-height: 650px;
+            overflow: auto;
+            padding-bottom: 15px;
+            padding-right:3px;
+            padding-left: 3px;
+        }
+        &.extended  {
+            app-tile {
+                &:last-child {
+                    margin: 30px 0px;
+                }
+                & ::ng-deep {
+                    .tile-right {
+                        background-color: white;
+                    }
+                    .tile-right span {
+                        color: #4E5154;
+                    }
+                }
+            }
+            
+        }
+        app-tile {
+            & {
+                min-width: 300px;
+                width: 30%;
+                min-height: 80px;
+                margin-top: 30px;
+            }
+            &.extended ::ng-deep {
+                .tile-right {
+                    background-color: #f86e00;
+                }
+                .tile-right span {
+                    color:  white;
+                }
+            }
+            &:last-child {
+                margin-right: 35%;
+            }
+           
+        }
+    }
+    .widget-container {
+        max-height: 700px;
+        overflow: auto;
+    }
+    .close-action {
+        margin-top: 17px;
+        position: absolute;
+        top: -6px;
+        right: -13px;
+        span {
+            font-size: 30px;
+            opacity: 0.6;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1600px) {
+    .container {
+        .tile-block{
+            app-tile {
+                min-width: 440px;
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .container {
+        &{
+            flex-direction: column;
+        }
+        .tile-block {
+            max-height: none;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .mobile-tile-block {
+            & {
+                display: flex;
+                max-height: none;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-around;
+            }
+            app-tile {
+                & {
+                    min-width: 300px;
+                    width: 30%;
+                    min-height: 80px;
+                    margin-top: 30px;
+                }
+                &.extended ::ng-deep {
+                    .tile-right {
+                        background-color: #f86e00;
+                    }
+                    .tile-right span {
+                        color:  white;
+                    }
+                }
+               
+            }
+        }
+        .mobile-widget-container {
+            & {
+                display: flex;
+            }
+            .router-container {
+                width: 95%;
+            }
+        }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .container {
+        .tile-block {
+            justify-content: space-around;
+            app-tile:last-child {
+                margin-right: 33.5%;
+            }
+        }
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    .container {
+        .tile-block {
+            justify-content: space-around;
+            app-tile:last-child {
+                margin-right: 33.5%;
+            }
+        }
+    }
+}

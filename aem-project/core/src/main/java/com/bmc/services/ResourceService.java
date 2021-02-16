@@ -26,3 +26,4 @@ public interface ResourceService extends ConfigurableService{
     List<String> getPropertyNames();
 
 }
+

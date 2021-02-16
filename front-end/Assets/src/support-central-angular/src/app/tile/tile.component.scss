@@ -1,0 +1,98 @@
+.tile {
+    &.no-extend {
+        .tile-body {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .tile-right {
+            width: 20%;
+        }
+        .tile-center {
+            width: 78%;
+        }
+    }
+    & {
+     position:relative;
+     cursor: pointer;
+     color: #313538;
+     text-decoration: none;
+     display: flex;
+     border-radius: 5px;
+     box-shadow: 0 3px 4px rgba(0,0,0,.14), 0 9px 10px rgba(0,0,0,.06);
+     min-height: 80px;
+     background: white;
+    } 
+    .tile-left {
+         background-color: #4E5154;
+         width: 0%;
+         border-radius: 5px 0 0 5px;
+    }
+    .tile-body {
+        display:flex;
+        width: 83%;
+        min-height: 80px;
+        &:hover {
+            background-color: #F9F9FA;
+        }
+        border-radius: 5px 0 0 5px;
+    }
+    .tile-center {
+        & {
+            width: 75%;
+            font-size: 12px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h3 {
+         font-weight: normal;
+         margin-top: 0px;
+         margin-bottom: 5px;
+        }
+    }
+    .tile-right{
+        & {
+            // width: 11%; //1-st variant
+            width: 24%; //2-nd
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #F86e00;
+            border-radius: 5px 0 0 5px;
+        }
+        span {
+            //  font-size: 20px;// 1st-variant
+             font-size: 34px; //2-nd
+             color:  white;
+        }
+    }
+    .tile-arrow {
+        & {
+            // bottom: 10px; //1-st variant
+            // right: 10px;// 1-st variant
+            // height: 45px;
+            // width: 45px;
+            // border-radius: 25px; //1-st variant
+            height: auto;
+            min-height: 80px; // 2-nd variant
+            width: 17%; // 2-nd variant
+            right: 0; // 2-nd variant
+            font-size: 14px;
+            // box-shadow: 0 3px 4px rgba(0, 0, 0, 0.14), 0 9px 10px rgba(0, 0, 0, 0.06);
+            // background-color: #f86e00; //1-st variant
+            display: flex;
+            border-radius: 0 5px 5px 0;
+            justify-content: space-around;
+            align-items: center;
+            border-left: 1px solid #D6D7D8;
+        }
+        &:hover {
+            background-color: #F9F9FA;
+        }
+        span {
+            font-size: 40px;
+            color:#29A5D6;
+        }
+    }
+ }
