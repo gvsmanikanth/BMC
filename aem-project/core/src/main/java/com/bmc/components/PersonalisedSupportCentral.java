@@ -159,11 +159,7 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		caseMgtmUrl = service.getCaseMgtmUrl();
 		documentationUrl = service.getDocumentationUrl();
 		productDownloadUrl = service.getProductDownloadUrl();
-		logger.info("Fetching productDownloadUrl OSGi configuration ...{}",
-				productDownloadUrl);
 		askCommunitiesUrl = service.getAskCommunitiesUrl();
-		logger.info("Fetching askCommunitiesUrl OSGi configuration ...{}",
-				askCommunitiesUrl);
 		supportQuestionUrl = service.getSupportQuestionUrl();
 		supportVideosUrl = service.getSupportVideosUrl();
 		supportedProductUrl = service.getSupportedProductUrl();
@@ -175,8 +171,6 @@ public class PersonalisedSupportCentral extends WCMUsePojo implements
 		bmcHelixServicesUrl = service.getBmcHelixServicesUrl();
 		mainframeServicesUrl = service.getMainframeServicesUrl();
 		implServicesUrl = service.getImplServicesUrl();
-		logger.info("Fetching implServicesUrl OSGi configuration ...{}",
-				implServicesUrl);
 		managedServicesUrl = service.getManagedServicesUrl();
 		enhancedSupportServicesUrl = service.getEnhancedSupportServicesUrl();
 		customerOrientationUrl = service.getCustomerOrientationUrl();

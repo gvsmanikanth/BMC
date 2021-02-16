@@ -262,7 +262,6 @@ public class PersonalisedSupportCentralService {
         caseMgtmUrl= PropertiesUtil.toString(config.get("caseMgtmUrl"), "");
         documentationUrl=PropertiesUtil.toString(config.get("documentationUrl"), "");
         productDownloadUrl=PropertiesUtil.toString(config.get("productDownloadUrl"), "");
-    	logger.info("Service Fetching productDownloadUrl OSGi configuration {}...",productDownloadUrl);
 
         askCommunitiesUrl =PropertiesUtil.toString(config.get("askCommunitiesUrl"), "");
         supportQuestionUrl = PropertiesUtil.toString(config.get("supportQuestionUrl"),"");
@@ -279,7 +278,6 @@ public class PersonalisedSupportCentralService {
         implServicesUrl = PropertiesUtil.toString(config.get("implServicesUrl"), "");
         managedServicesUrl = PropertiesUtil.toString(config.get("managedServicesUrl"), "");
         enhancedSupportServicesUrl = PropertiesUtil.toString(config.get("enhancedSupportServicesUrl"), "");
-    	logger.info("Service Fetching enhancedSupportServicesUrl OSGi configuration {}...",enhancedSupportServicesUrl);
     	customerOrientationUrl = PropertiesUtil.toString(config.get("customerOrientationUrl"), "");
     	supportGuideUrl = PropertiesUtil.toString(config.get("supportGuideUrl"), "");
 		supportGuidePDFUrl = PropertiesUtil.toString(config.get("supportGuidePDFUrl"), "");
@@ -299,10 +297,6 @@ public class PersonalisedSupportCentralService {
         userscoreThreshold = PropertiesUtil.toString(config.get("userscoreThreshold"), "");
         supportNavigationUrl=PropertiesUtil.toString(config.get("supportNavigationUrl"), "");
 
-    	logger.info("Service Fetching supportCentralPersonalisationUrl OSGi configuration {}...",supportCentralPersonalisationUrl);
-    	logger.info("Service Fetching productCount OSGi configuration {}...",productCount);
-
-        		
     }
 
 

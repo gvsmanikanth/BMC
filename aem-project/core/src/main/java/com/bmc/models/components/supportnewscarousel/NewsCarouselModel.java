@@ -56,7 +56,6 @@ public class NewsCarouselModel {
             HttpGet httpGet = new HttpGet(apiUrl.toString());
             logger.info("BMCINFO: News Carousel Api Url: " + apiUrl.toString());
 
-            logger.info("BMCINFO: Executing request to fetch news content" + httpGet.getRequestLine());
             HttpResponse response1 = httpClient.execute(httpGet);
             HttpEntity entity = response1.getEntity();
             content = EntityUtils.toString(entity);

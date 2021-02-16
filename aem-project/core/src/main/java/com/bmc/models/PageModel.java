@@ -311,7 +311,7 @@ public class PageModel {
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
             UserInfo user = UserInfoProvider.withRequestCaching(request).getCurrentUserInfo();
-            logger.info("BMCINFO: Setting Bmc Meta Info :" + templateName);
+            logger.debug("BMCINFO: Setting Bmc Meta Info :" + templateName);
             if (user != null && !user.isAnonymous() && user.hasEmail()) {
                 bmcMeta.getUser().updateFromUserInfo(user);
                 bmcMeta.getUser().setSupportAuthenticated(true);
