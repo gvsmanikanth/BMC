@@ -100,10 +100,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic Database Automation"
        /> -->
-    <education-products-175672617
+    <!--  SAFE DELETE WEB-9606 <education-products-175672617
         jcr:primaryType="nt:unstructured"
         jcr:title="Cloud Life Cycle Management"
-      />
+      /> -->
    
    <!--  <education-products-188549682
         jcr:primaryType="nt:unstructured"

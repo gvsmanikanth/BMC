@@ -245,6 +245,13 @@ ResourceCenterFilters = {
     	filtersMap.forEach(function(value, key) {
     	   
     	   value.split(",").forEach(function(item) {
+               // WEB 6785 start
+                var activeGroup = $(".filter-checkbox-item[data-name='" + key + "'] li#" + item).parent().parent();
+                var activeGroupLable = activeGroup.parent().siblings();
+                $(activeGroup).find(".filter-checkbox-item").css( "display", "block" );
+                $(activeGroupLable).find("ul.list-group-item").removeClass('rc-arrow-down');
+                $(activeGroupLable).find("ul.list-group-item").addClass('rc-arrow-up');
+              // WEB 6785 End
     		   $(".filter-checkbox-item[data-name='" + key + "'] li#" + item).addClass('active')
                $(".filter-checkbox-item[data-name='" + key + "'] input#checkbox-" + item).attr('checked', true);
              });
@@ -448,7 +455,13 @@ ResourceCenterFilters = {
 
     loadData: function () {
         var self = this,
-            path = this.buildUrl();
+        path = this.buildUrl();
+        // var target = window.location.origin;
+		// if(target.indexOf("localhost")!= -1){
+        //     path = 'http://localhost/front-end/Assets/src/templates/content.json';
+        // }else{ 
+        //     path = this.buildUrl();           
+        // }
         $.ajax({
             url: path,
             type: 'GET',
@@ -531,11 +544,21 @@ ResourceCenterFilters = {
             $(".filter-search-overlay").css("right","0px");
             $('.rc-filter-panel-group').addClass('mb2');
         });
+    },
+    // WEB 6785 start
+    setFilterVisibility : function () {
+        if($('.rc-filter-panel-group').length > 0){
+            $('.child-filter .filter-checkbox-item').css('display', 'none');
+            $('.rc-filter-panel-group ul.list-group-item.parent-filter').removeClass('rc-arrow-up');
+            $('.rc-filter-panel-group ul.list-group-item.parent-filter').addClass('rc-arrow-down');
+        }
     }
+    // WEB 6785 end
 };
 
 $(function() {
   if ($('.rc-filter-component').length) {
+      ResourceCenterFilters.setFilterVisibility();
       ResourceCenterFilters.init();
   }
 });

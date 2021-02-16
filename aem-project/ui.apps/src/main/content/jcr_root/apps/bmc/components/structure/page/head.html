@@ -64,8 +64,11 @@
     <meta data-sly-test.description="${properties.meta_description}" name="description" content="${description}"/>
     <meta data-sly-test.templateName="${page.templateName}" name="template" content="${templateName}"/>
     <!--/* WEB-5625 Conditional indexing for thank-you pages on forms START */-->
-	<meta data-sly-test="${(templateName == 'form-thank-you') || (templateName == 'form-thank-you2')}" name="robots" content="noindex, nofollow">
-	<meta data-sly-test="${(templateName != 'form-thank-you2') && (templateName != 'form-thank-you')}" name="robots" content="index, follow"> 
+    <!--/* WEB-9728 Updated logic for non indexing of non prod pages START */-->
+    <sly data-sly-use.runmode="com.bmc.models.RunModes" />
+    <meta data-sly-test="${(runmode.mode != 'prod') || (templateName == 'form-thank-you') || (templateName == 'form-thank-you2')}" name="robots" content="noindex, nofollow" >
+    <meta data-sly-test="${(runmode.mode == 'prod') && (templateName != 'form-thank-you2') && (templateName != 'form-thank-you')}" name="robots" content="index, follow">
+    <!--/* WEB-9728 Updated logic for non indexing of non prod pages END */-->
     <!--/* WEB-5625 Conditional indexing for thank-you pages on forms END */-->
     <sly data-sly-include="head.socialmedia.html"></sly>
     <sly data-sly-include="customheaderlibs.html"></sly>

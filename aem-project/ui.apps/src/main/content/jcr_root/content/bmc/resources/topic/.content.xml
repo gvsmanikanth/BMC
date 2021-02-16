@@ -19,4 +19,9 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="Automation"
         />
+        <!-- WEB-9267 Adding All to Topics dropdown -->
+        <topic-186635858
+                jcr:primaryType="nt:unstructured"
+                jcr:title="All"
+        />
 </jcr:root>

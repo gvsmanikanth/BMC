@@ -2,7 +2,7 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="cq:Page">
-    <jcr:content jcr:primaryType="cq:PageContent"/>
+    <!-- SAFE DELETE WEB-8776  <jcr:content jcr:primaryType="cq:PageContent"/> -->
     <caption
             jcr:primaryType="nt:unstructured"
             disabled="true"
@@ -23,11 +23,11 @@
             dropDownDisplay="Yes"
             text="Automated Mainframe Intelligence (AMI)"
             value="Automated Mainframe Intelligence (AMI)"/>
-    <_x0033_30402112
-            jcr:primaryType="nt:unstructured"
-            jcr:title="BCA"
-            dropDownDisplay="No"/>
-    <!-- WEB-5296 -->
+    <!-- WEB-9675 SAFE DELETE <_x0033_30402112
+           jcr:primaryType="nt:unstructured"
+           jcr:title="BCA"
+           dropDownDisplay="No"/> -->
+   <!-- WEB-5296 -->
     <_x0037_03588770
             jcr:primaryType="nt:unstructured"
             jcr:title="Bladelogic Database Automation"
@@ -41,11 +41,11 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="BladeLogic UCS Royalty (Cisco)"
         dropDownDisplay="No"/>-->
-    <_x0037_67365114
+    <!-- WEB-9675 SAFE DELETE <_x0037_67365114
             jcr:primaryType="nt:unstructured"
             jcr:title="Bladelogic Middleware Automation"
             dropDownDisplay="No"
-    />
+    /> -->
     <_x0037_43511112
             jcr:primaryType="nt:unstructured"
             jcr:title="Business Workflows"
@@ -129,25 +129,25 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="DB2 NGT"
             dropDownDisplay="No"/>
-    <_x0036_91273051
+    <!-- WEB-9675 SAFE DELETE  <_x0036_91273051
             jcr:primaryType="nt:unstructured"
             jcr:title="DSM Marketzone"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <!-- WEB-5295 -->
-    <_x0031_26581011
+    <!-- WEB-9675 SAFE DELETE <_x0031_26581011
             jcr:primaryType="nt:unstructured"
             jcr:title="DSO Marketzone"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <_x0037_32296000
             jcr:primaryType="nt:unstructured"
             jcr:title="Education Services"
             dropDownDisplay="No"/>
-    <_x0033_60899534
+    <!-- WEB-9675 SAFE DELETE <_x0033_60899534
             jcr:primaryType="nt:unstructured"
             jcr:title="Education Services"
             dropDownDisplay="Yes"
             text="Education &amp; Services"
-            value="Education Services"/>
+            value="Education Services"/> -->
     <!-- WEB-5296 -->
     <_x0031_96956382
             jcr:primaryType="nt:unstructured"
@@ -155,10 +155,10 @@
             dropDownDisplay="No"
     /><!-- WEB-5295 -->
 
-    <_x0034_08630474
+    <!-- WEB-9675 SAFE DELETE <_x0034_08630474
             jcr:primaryType="nt:unstructured"
             jcr:title="FootPrints Service Core"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <_x0038_46325100
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix"
@@ -314,10 +314,10 @@
             dropDownDisplay="Yes"
             text="BMC AMI Operations"
             value="AMI Operations"/>
-    <_x0031_33164715
+    <!-- WEB-9675 SAFE DELETE <_x0031_33164715
             jcr:primaryType="nt:unstructured"
             jcr:title="MyIT Service Broker"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <_x0034_72046068
             jcr:primaryType="nt:unstructured"
             jcr:title="Release Lifecycle Management"
@@ -328,30 +328,30 @@
             dropDownDisplay="Yes"
             text="Remedy (On Prem)"
             value="Remedy"/>
-    <_x0038_61753444
+    <!-- WEB-9675 SAFE DELETE <_x0038_61753444
             jcr:primaryType="nt:unstructured"
             jcr:title="SaaS MyIT"
             dropDownDisplay="No"/>
     <_x0038_91064966
             jcr:primaryType="nt:unstructured"
             jcr:title="SaaS Remedyforce"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <_x0039_23900731
             jcr:primaryType="nt:unstructured"
             jcr:title="Track-It!"
             dropDownDisplay="No"
     />
     <!-- WEB-5295 -->
-    <_x0039_85393383
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight APM"
-            dropDownDisplay="No"
-    />
-    <_x0033_84220394
-            jcr:primaryType="nt:unstructured"
-            jcr:title="TrueSight Application Management"
-            dropDownDisplay="No"/>
-    <!-- WEB-5295 -->
+    <!-- WEB-9675 SAFE DELETE  <_x0039_85393383
+             jcr:primaryType="nt:unstructured"
+             jcr:title="TrueSight APM"
+             dropDownDisplay="No"
+     />
+     <_x0033_84220394
+             jcr:primaryType="nt:unstructured"
+             jcr:title="TrueSight Application Management"
+             dropDownDisplay="No"/> -->
+     <!-- WEB-5295 -->
     <_x0035_76550803
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight AppVisibility"
@@ -380,11 +380,11 @@
             jcr:title="TrueSight Intelligence"
             dropDownDisplay="No"
     />
-    <_x0032_04033756
+    <!-- WEB-9675 SAFE DELETE  <_x0032_04033756
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Intelligence"
             dropDownDisplay="No"
-    />
+    /> -->
     <_x0037_40355219
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Middleware"
@@ -557,10 +557,10 @@
         jcr:primaryType="nt:unstructured"
         jcr:title="SaaS Remedy HR Case Mgmt"
         dropDownDisplay="No"/>-->
-    <_x0038_18409632
+    <!-- WEB-9675 SAFE DELETE  <_x0038_18409632
             jcr:primaryType="nt:unstructured"
             jcr:title="TrueSight Vulnerability Management"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
     <!-- SAFE DELETE <_x0036_79964557
         jcr:primaryType="nt:unstructured"
         jcr:title="SDE"
@@ -578,10 +578,10 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Unknown"
             dropDownDisplay="No"/>
-    <_x0031_40086823
+    <!-- WEB-9675 SAFE DELETE <_x0031_40086823
             jcr:primaryType="nt:unstructured"
             jcr:title="WLA MarketZone"
-            dropDownDisplay="No"/>
+            dropDownDisplay="No"/> -->
 
     <_x0031_99147377
             jcr:primaryType="nt:unstructured"
