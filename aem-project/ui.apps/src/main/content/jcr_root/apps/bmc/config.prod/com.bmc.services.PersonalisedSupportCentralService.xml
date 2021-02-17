@@ -28,7 +28,7 @@
 		  managedServicesUrl = "https://www.bmc.com/it-services/managed-services.html"
 		  enhancedSupportServicesUrl = "https://www.bmc.com/it-services/enhanced-support-services.html"
 		  customerOrientationUrl = "http://bmc.com/new"
-		  supportGuideUrl = "https://www.bmc.com/support/resources/support-guide-getting-started.html#Register-on-Support-Central"
+		  supportGuideUrl = "https://www.bmc.com/support/resources/support-guide-getting-started.html"
 		  supportGuidePDFUrl = "https://documents.bmc.com/products/documents/12/67/521267/521267.pdf"
 		  amigoProgramUrl= "https://www.bmc.com/support/resources/amigo_program_overview.html"
 		  personalisationApiOauthUser = "authprovider"
