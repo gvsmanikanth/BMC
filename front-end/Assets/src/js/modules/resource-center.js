@@ -456,12 +456,12 @@ ResourceCenterFilters = {
     loadData: function () {
         var self = this,
         path = this.buildUrl();
-        // var target = window.location.origin;
-		// if(target.indexOf("localhost")!= -1){
-        //     path = 'http://localhost/front-end/Assets/src/templates/content.json';
-        // }else{ 
-        //     path = this.buildUrl();           
-        // }
+        var target = window.location.origin;
+		if(target.indexOf("localhost")!= -1){
+            path = 'http://localhost/front-end/Assets/src/templates/content.json';
+        }else{ 
+            path = this.buildUrl();           
+        }
         $.ajax({
             url: path,
             type: 'GET',
@@ -561,4 +561,64 @@ $(function() {
       ResourceCenterFilters.setFilterVisibility();
       ResourceCenterFilters.init();
   }
+});
+
+
+// Load More code for filters
+jQuery(document).ready(function ($) {      
+    $(function () {
+        var x = 12; //Number of filters to display                  
+        var filterGroupCount = $('.rc-filter-panel-group').length; 
+        for(i=2; i<=filterGroupCount+2; i++){
+            var listName  = $('.rc-filter-panel-group:nth-child('+ i +')');
+            var item      = listName.find('.child-filter .filter-checkbox-item');
+            var itemCount = item.length;
+            item.slice(x, itemCount).css({'display': 'none'});
+            if(itemCount > x){
+                if(listName.find('.readMore').length < 1 ){
+                    $('.rc-filter-panel-group:nth-child('+ i +') .child-filter').append('<span class="readMore">Load more </span><span class="readLess">Show less</span>');                              
+                }            
+                if(listName.find('.rc-arrow-up').length > 0){
+                    listName.find('.readMore').css('display', 'block');                        
+                }else{
+                    listName.find('.readMore').css('display', 'none');
+                }                
+            }            
+        }
+        
+        
+        $('.readMore').on('click', function (e) {
+            e.preventDefault();
+            var itemCount = $(this).parent().find('.filter-checkbox-item').length;
+            $(this).parent().find('.filter-checkbox-item').slice(0, itemCount).css({'display': 'block'});
+            var readMore = $(this).parent().find('.readMore');
+            var readLess = $(this).parent().find('.readLess');
+            readMore.css('display', 'none');
+            readLess.css('display', 'block');
+        });
+
+        $('.readLess').on('click', function (e) {
+            e.preventDefault();
+            var itemCount = $(this).parent().find('.filter-checkbox-item').length;
+            $(this).parent().find('.filter-checkbox-item').slice(x, itemCount).css({'display': 'none' });
+            var readMore = $(this).parent().find('.readMore');
+            var readLess = $(this).parent().find('.readLess');
+            readMore.css('display', 'block');
+            readLess.css('display', 'none');
+        });   
+        $('.heading-group').on('click', function (e) {
+            e.preventDefault();  
+            var list =   $(this).parent().find('.filter-checkbox-item');    
+            var itemCount = list.length;
+            list.slice(x, itemCount).css({'display': 'none'});
+            if($(this).find('.rc-arrow-up').length > 0){
+                $(this).parent().find('.readMore').css('display', 'block');                
+            }else{
+                $(this).parent().find('.readMore').css('display', 'none');
+                $(this).parent().find('.readLess').css('display', 'none');
+            }
+            
+        });            
+    });
+    
 });

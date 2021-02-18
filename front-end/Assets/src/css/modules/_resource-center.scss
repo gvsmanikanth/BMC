@@ -109,6 +109,33 @@
         border-right: solid;
       }
     }
+    .readMore, .readLess {
+      cursor: pointer;
+      display: none;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 0px;
+      border-top: none;
+      color: #29a5d6;
+      &:hover{
+        color: #046eb1;
+      }
+      &:after{
+        font-family: icomoon;
+        padding: 5px;
+        vertical-align: middle;
+      }     
+    }  
+    .readMore{
+      &:after{
+        content: $iconArrowDown;
+      }
+    }
+    .readLess{
+      &:after{
+        content: $iconArrowUp;
+      }
+    } 
 }
 
 .rc-filter-header {
