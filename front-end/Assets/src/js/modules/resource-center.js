@@ -601,6 +601,12 @@ jQuery(document).ready(function ($) {
             e.preventDefault();
             var itemCount = $(this).parent().find('.filter-checkbox-item').length;
             $(this).parent().find('.filter-checkbox-item').slice(x, itemCount).css({'display': 'none' });
+            // The viewport is greater than 767 pixels wide
+            if(window.matchMedia("(min-width: 767px)").matches){                
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(this).parent().find('.filter-checkbox-item').parent().parent().parent().offset().top - 50
+                }, 2000);
+            }             
             var readMore = $(this).parent().find('.readMore');
             var readLess = $(this).parent().find('.readLess');
             readMore.css('display', 'block');
