@@ -38,7 +38,7 @@
                                             fieldDescription="Select Path"
                                             fieldLabel="HTML Path"
                                             name="./htmlpath"
-                                            rootPath="/content/bmc/language-masters"/>
+                                            rootPath="/content/bmc"/>
                                     </items>
                                 </column>
                             </items>
