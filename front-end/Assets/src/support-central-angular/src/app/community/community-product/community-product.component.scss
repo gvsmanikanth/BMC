@@ -1,0 +1,15 @@
+.question {
+    margin-top: 10px;
+    display: flex;
+    div {
+        margin-right: 10px;
+    }
+}
+
+.row {
+    position: relative;
+}
+
+adapt-tabset ::ng-deep .nav-link-icon{
+    display: inline;
+}

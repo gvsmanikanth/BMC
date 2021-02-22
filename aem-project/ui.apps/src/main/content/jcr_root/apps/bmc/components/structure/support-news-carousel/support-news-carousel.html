@@ -1,0 +1,23 @@
+<div class="container psc-news">
+	<h1 class="psc-section-heading">Support news</h1>
+    <div class="left-news-arrow">
+      <span class="d-icon-angle_left"></span>
+    </div>
+    <div class="news-container-wrapper">
+      <div class="news-list">
+	      <sly data-sly-use.news="com.bmc.models.components.supportnewscarousel.NewsCarouselModel">
+			    <sly data-sly-list.obj="${news.newsResults.body.data}">
+				    <div class="news-block">
+			          <h3><a href="${obj.link}">${obj.titleName}</a></h3>
+			          <div class="news-body not-trimmed">${obj.details @ context='html'}</div>
+			          <div class="news-date-block"><span class="news-date">${obj.lastModifiedDate}</span></div> 
+			        </div>
+			    </sly>
+			</sly>
+      </div>
+    </div>
+    <div class="right-news-arrow">
+      <span class="d-icon-angle_right"></span>
+    </div>
+    
+ </div>

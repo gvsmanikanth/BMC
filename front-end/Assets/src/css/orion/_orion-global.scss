@@ -924,9 +924,11 @@
     background-image:url(#{$imagesFolder}orion/info.png);
     background-repeat: no-repeat;
     background-position: center center;
-    display: inline;
+	display:inline;
 	padding: 10px;
-	line-height:20px;
+    line-height:20px;
+    font-size: 16px;
+	&:before {content:"\00a0";padding-left: 10px;}
     &:hover {text-decoration:none;cursor:pointer;} 
     .Tooltip-window {
       z-index:10;
@@ -945,12 +947,15 @@
       font-size:12px!important;
       font-weight:400;
       line-height:16px;
+		&:before {
+			content:"\00a0";
+		}
       }
       
     &:hover .Tooltip-window {
         display:block;
         position:absolute;
-        bottom: 30px;
+        bottom: 40px;
         left: 50%;
         color:#fff;  
         background:#414042;        
@@ -961,6 +966,7 @@
             top: 100%;
             left: 50%;
             margin-left: -10px;
+			margin-top: -1px;
             border-width: 10px;
             border-style: solid;
             border-color: #414042 transparent transparent transparent;
@@ -981,30 +987,45 @@
 	    &:hover .Tooltip-window{
 	        left: 90%;
 	        transform: translateX(-13%);
+			@media(max-width:$break-md){
+			left: 80%;
+			}
 	        &:after{
                 margin-left: -7px;
-	            left: 10%;  
+	            left: 8.3%;
+				@media(max-width:$break-md) {
+					margin-left: -7px;
+					left: 6%;
+				}
 	        } 
 	    }
 	}
 	
 	&.tooltip_pointer_right {
         &:hover .Tooltip-window{
-            left: 10%;
+            left: 0%;
             transform: translateX(-87%);
+			@media(max-width:$break-md){
+				left: 20%;
+			}
             &:after{
                 margin-left: -14px;
-                left: 90%;  
+                left: 92.5%;
+				@media(max-width:$break-md){
+					margin-left: -14px;
+					left: 94%;
+				}
             } 
         }
     }
     &.tooltip_pointer_bottom{
 	    &:hover .Tooltip-window{
             bottom:auto;            
-	        top: 30px;
+	        top: 40px;
 	        &:after{
                 transform: rotate(180deg);
-                top: -20px;
+                top: -19px;
+				margin-top: 0;
                 border-width: 10px;
                 border-style: solid;
                 border-color: #414042 transparent transparent transparent;
@@ -1045,4 +1066,6 @@
         }
     }
 }
-
+.orion-block-title  .orion_tooltip, h2 .orion_tooltip, h3 .orion_tooltip{
+    vertical-align: middle;
+}
