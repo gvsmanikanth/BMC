@@ -576,7 +576,7 @@ jQuery(document).ready(function ($) {
             item.slice(x, itemCount).css({'display': 'none'});
             if(itemCount > x){
                 if(listName.find('.readMore').length < 1 ){
-                    $('.rc-filter-panel-group:nth-child('+ i +') .child-filter').append('<span class="readMore">Load more </span><span class="readLess">Show less</span>');                              
+                    $('.rc-filter-panel-group:nth-child('+ i +') .child-filter').append('<span class="readMore">Show more </span><span class="readLess">Show less</span>');                              
                 }            
                 if(listName.find('.rc-arrow-up').length > 0){
                     listName.find('.readMore').css('display', 'block');                        
