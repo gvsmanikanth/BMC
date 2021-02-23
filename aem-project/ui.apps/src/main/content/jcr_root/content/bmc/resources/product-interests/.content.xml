@@ -178,6 +178,14 @@
             dropDownDisplay="Yes"
             text="BMC Helix Capacity Optimization"
             value="Helix Capacity Optimization"/>
+    <!--  WEB-9881 Starts -->
+    <_x0032_00918044
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Chatbot"
+            dropDownDisplay="Yes"
+            text="BMC Helix Chatbot"
+            value="Helix Chatbot"/>
+    <!--  WEB-9881 Ends -->
     <_x0034_99579858
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Client Management"
