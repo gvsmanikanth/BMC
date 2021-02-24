@@ -29,8 +29,11 @@
 <sly data-sly-test="${properties.resourceCtaPath}">
 	<sly data-sly-use.resourceCTA="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.resourceCtaPath}"></sly>
 	  <sly data-sly-test="${resourceCTA.href}">
-			   <sly data-sly-test.resourceCTAPath="${resourceCTA.href}"></sly>
-			 </sly> 
+          <sly data-sly-test.resourceCTAPath="${resourceCTA.href}"></sly>
+      </sly>
+        <sly data-sly-test="${!resourceCTA.href}">
+            <sly data-sly-test.resourceCTAPath="${properties.resourceCtaPath}"></sly>
+        </sly>
 </sly>
 <sly data-sly-test="${!properties.resourceCtaPath}">
 	  <sly data-sly-test.resourceCtaPath="#resources"></sly>
