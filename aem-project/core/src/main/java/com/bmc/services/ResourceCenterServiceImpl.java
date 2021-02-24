@@ -550,8 +550,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return contentResult;
     }
 
-
-    private boolean isFormActive(String gatedAssetFormPath) {
+    @Override
+    public boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
         Set<String> runmodes = slingSettingsService.getRunModes();
         try {
@@ -579,30 +579,36 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return isActive;
     }
 
-    private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
+    @Override
+    public List<BmcMetadata> getMetadata(Resource resource) {
         List<BmcMetadata> metadata = new ArrayList<>();
-        Node node = resource.adaptTo(Node.class);
-        for (String property : baseImpl.getPropertyNames()) {
-            if(node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
-                javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
-                if (prop.isMultiple()) {
-                    String displayValues = "";
-                    for (int i = 0; i < prop.getValues().length; i++) {
-                        displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
-                                        resource.getResourceResolver());
+        try {
+            Node node = resource.adaptTo(Node.class);
+            for (String property : baseImpl.getPropertyNames()) {
+                if (node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
+                    javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
+                    if (prop.isMultiple()) {
+                        String displayValues = "";
+                        for (int i = 0; i < prop.getValues().length; i++) {
+                            displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
+                                    resource.getResourceResolver());
+                        }
+                        metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
+                    } else {
+                        String propValue = prop.getValue().getString();
+                        metadata.add(new BmcMetadata(property, propValue,
+                                baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
                     }
-                    metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
-                } else {
-                    String propValue = prop.getValue().getString();
-                    metadata.add(new BmcMetadata(property, propValue,
-                            baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
                 }
             }
+        }catch (Exception e){
+            log.error("BMCERROR : Exception Occurred while trying to get metadata values " +e);
         }
         return metadata;
     }
 
-    private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+    @Override
+    public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
         for (BmcMetadata bmcMetadata : metadata) {
             if (ResourceCenterConsts.IC_CONTENT_TYPE.equals(bmcMetadata.getId())) {
                 return bmcMetadata;
