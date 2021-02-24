@@ -78,8 +78,13 @@ public class ResourceCenterFeaturedCardModel {
                     //  metadata
                     List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
                     BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
-                    String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
-                    String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
+                    String type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                    String linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
+
+                    // set video ID
+                    if(linkType.equals("play")) {
+                        assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
+                    }
                     card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
                     analiticData = buildAnaliticData();
                 }else{
