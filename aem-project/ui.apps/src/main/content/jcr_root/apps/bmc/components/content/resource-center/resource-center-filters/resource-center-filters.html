@@ -1,14 +1,13 @@
 <div data-sly-test="${wcmmode.edit}">[ Edit ${component.title} Component ]</div>
 <sly data-sly-use.helper="${'com.bmc.models.components.resourcecenter.ResourceCenterFiltersModel'}"></sly>
  <!--/* WEB-9669 Hide the filter section if no filter display  */-->
-    <sly data-sly-test="${!helper.filter}">
+    <sly data-sly-test="${!helper.filters}">
         <sly data-sly-test.aemGridColumn="aem-GridColumn--default--12"></sly>
         <sly data-sly-test.cssClass="col-4-layout"></sly>
     </sly>
     <sly data-sly-test="${helper.filters}">
         <sly data-sly-test.aemGridColumn="aem-GridColumn--default--9"></sly>
     </sly>
-
 
 <div class="rc-filter-component">
     <sly data-sly-list.item="${helper.preFilters}">
