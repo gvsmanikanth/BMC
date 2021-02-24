@@ -647,14 +647,6 @@ body.no-scroll{
   .ic_view {
     background-image: url("#{$imagesFolder}ic_view.png");
   }
-  &.col-4-layout{
-    .rc-card-col {    
-      @media (min-width: $break-lg) {
-        flex: 0 0 25%;
-        max-width:25%;
-      }
-    }
-  }
   
 }
 
@@ -880,3 +872,11 @@ $bg-forrester-green: #16563F;
 .rc-no-text {
   max-height: 43px;
 } 
+.col-4-layout{
+  .rc-card-col {    
+    @media (min-width: $break-lg) {
+      flex: 0 0 25%;
+      max-width:25%;
+    }
+  }
+}
