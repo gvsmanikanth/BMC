@@ -181,7 +181,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     to create a sorted list.
      */
 
-    public static Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
+    public  Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
         ArrayList<String> unsortedList = new ArrayList<>();
         ArrayList<String> sortedList = new ArrayList();
         Map<String,String> sortedMap = new LinkedHashMap<> ();
