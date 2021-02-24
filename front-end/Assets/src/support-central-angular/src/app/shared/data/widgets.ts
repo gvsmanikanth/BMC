@@ -100,6 +100,7 @@ export const widgets: Widget[] = [
         title: "Common Support Questions",
         description: "Frequently asked questions",
         routerLink: 'support-question',
-        icon: "psc-icon-faq"
+        icon: "psc-icon-faq",
+        personalized: true
     }
 ]
