@@ -57,29 +57,34 @@ public class ResourceCenterFeaturedCardModel {
                 Resource resource = resourceResolver.getResource(path);
                 Node node = resource.adaptTo(Node.class);
                 Node parentNode = node.getParent();
-                String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : resource.getPath();
-                String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
-                String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
-                String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
-                Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
-                String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
-                String assetLink = "";
-                if(gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)){
-                    assetLink = formPath;
-                }else {
-                    assetLink = path;
+                Boolean isRCIncluded = node.hasProperty(JcrConsts.RC_INCLUSION) ? node.getProperty(JcrConsts.RC_INCLUSION).getBoolean() : false;
+                if(isRCIncluded) {
+                    String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT) ? parentNode.getPath() : resource.getPath();
+                    String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                    String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
+                    String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
+                    Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                    String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                    String assetLink = "";
+                    if (gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)) {
+                        assetLink = formPath;
+                    } else {
+                        assetLink = path;
+                    }
+
+                    assetLink = resourceResolver.map(assetLink);
+
+                    String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                    //  metadata
+                    List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
+                    BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
+                    String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
+                    String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
+                    card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
+                    analiticData = buildAnaliticData();
+                }else{
+                    card = null;
                 }
-
-                assetLink = resourceResolver.map(assetLink);
-
-                String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
-                //  metadata
-                List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
-                BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
-                String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
-                String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
-                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
-                analiticData = buildAnaliticData();
             }
         } catch (Exception e) {
             log.error("An exception has occured while adding hit to response with resource: " + path
