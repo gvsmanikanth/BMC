@@ -8,30 +8,30 @@
 			</div>
 			<div class="rc-card-row p1 py2">
 				<!--/*  Handle layout of cards in Landscape
-                                               <sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
-                                               <sly data-sly-test="${properties.numberOfCards == '3'}">
-                                                              <sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
-                                               </sly>
-                                               <sly data-sly-test="${properties.numberOfCards == '4'}">
-                                                              <sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
-                                               </sly> */-->
+				   <sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
+				   <sly data-sly-test="${properties.numberOfCards == '3'}">
+								  <sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
+				   </sly>
+				   <sly data-sly-test="${properties.numberOfCards == '4'}">
+								  <sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
+				   </sly> */-->
 				<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 				<sly data-sly-list.card="${productSet.resourceSectionCards}">
 					<div class="rc-card-col" style="padding-bottom:20px">
 
-						<sly data-sly-test="${card.contentText == 'Videos'}">
+						<sly data-sly-test="${card.contentText == 'play'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.anchorCSS="modal-video-player"/>
 							<sly data-sly-test.cardIcon="play"/>
 							<sly data-sly-test.cardCTA="Play"/>
 						</sly>
-						<sly data-sly-test="${card.contentText == 'Demos'}">
+						<sly data-sly-test="${card.contentText == 'demo'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.anchorCSS=""/>
 							<sly data-sly-test.cardIcon="play"/>
 							<sly data-sly-test.cardCTA="Start"/>
 						</sly>
-						<sly data-sly-test="${card.contentText != 'Videos' && card.contentText != 'Demos'}">
+						<sly data-sly-test="${card.contentText != 'play' && card.contentText != 'demo'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.anchorCSS=""/>
 							<sly data-sly-test.cardIcon="view"/>
@@ -42,7 +42,7 @@
 						<a class="${anchorCSS}" href="${resolvedLink}">
 							<div class="simple-card bg-white">
 								<div class="card-header">
-									<h4>${card.contentText}</h4>
+									<h4>${card.contentType}</h4>
 									<div class="card-icon ic_${cardIcon}" alt="" border="0"></div>
 								</div>
 								<div class="card-content">

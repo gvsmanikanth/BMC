@@ -1,7 +1,12 @@
 package com.bmc.components;
 
 import com.adobe.cq.sightly.WCMUsePojo;
+import com.bmc.consts.JcrConsts;
+import com.bmc.models.bmccontentapi.BmcContent;
+import com.bmc.models.bmccontentapi.BmcMetadata;
+import com.bmc.services.ResourceCenterService;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.osgi.service.component.annotations.Reference;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
@@ -31,9 +36,13 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
     protected List<HashMap<String,String>> resourceSectionCards;
 
+    //@Reference
+    //ResourceCenterService resourceCenterService;
+
     @Override
     public void activate() throws Exception {
         try {
+            ResourceCenterService resourceCenterService = getSlingScriptHelper().getService(ResourceCenterService.class);
             ResourceResolver resourceResolver = getResourceResolver();
             Session session = resourceResolver.adaptTo(Session.class);
             //iterate through the multifield  Resource Section Cards and fetch its page properties
@@ -45,20 +54,50 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 String pagePath = childPage.getValueMap().get("pagePath").toString();
                 String cardTitle = "";
                 String cardDescription = "";
-                String cardIconPath = "";
-                String contentType = "";
-                String contentTypeText = "";
-                Page page = this.getResourceProvider().getPage(pagePath);
-                if (page != null){
-                    ValueMap pageMap = page.getProperties();
-                    cardTitle = pageMap.getOrDefault("jcr:title","").toString();
-                    cardDescription = pageMap.getOrDefault("short_description","").toString();
-                    contentType = pageMap.getOrDefault("ic-content-type","").toString();
-                    contentTypeText = getContentTypeText(contentType,session);
+                String videoLength = "";
+                String type = "";
+                String linkType = "";
+                String assetLink = "";
+                String headerImage = "";
+                String footerLogo = "";
+                if(pagePath != null){
+                    Resource resource = resourceResolver.getResource(pagePath);
+                    Node node = resource.adaptTo(Node.class);
+                    Node parentNode = node.getParent();
+                    Boolean isRCIncluded = node.hasProperty(JcrConsts.RC_INCLUSION) ? node.getProperty(JcrConsts.RC_INCLUSION).getBoolean() : false;
+                    if(isRCIncluded) {
+                        String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT) ? parentNode.getPath() : resource.getPath();
+                        cardTitle = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                        Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                        String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                        videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
+                        headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
+                        footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
+
+                        if (gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)) {
+                            assetLink = formPath;
+                        } else {
+                            assetLink = path;
+                        }
+
+                        assetLink = resourceResolver.map(assetLink);
+
+                        String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                        //  metadata
+                        List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
+                        BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
+
+                        type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                        linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
+
+                        // set video ID
+                        if(linkType.equals("play")) {
+                            assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
+                        }
+
+                    }
                 }
-                if(contentTypeText.equalsIgnoreCase("Videos")){
-                    pagePath = getVideoPath(pagePath,session);
-                }
+
                 // override title and description
                 if(childPage.getValueMap().get("overrideTitle") != null){
                     cardTitle = childPage.getValueMap().get("overrideTitle").toString();
@@ -66,71 +105,26 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 if(childPage.getValueMap().get("overrideDescription") != null){
                     cardDescription = childPage.getValueMap().get("overrideDescription").toString();
                 }
-                if(childPage.getValueMap().get("rcCardsImagePath") != null){
-                    cardIconPath = childPage.getValueMap().get("rcCardsImagePath").toString();
-                }
 
                 resourceSection.put("title", cardTitle);
-                resourceSection.put("pagePath", pagePath);
+                resourceSection.put("pagePath", assetLink);
                 resourceSection.put("description", cardDescription);
-                resourceSection.put("rcCardsImagePath", cardIconPath);
-                resourceSection.put("contentType", contentType);
-                resourceSection.put("contentText",contentTypeText);
+                resourceSection.put("contentType", type);
+                resourceSection.put("contentText",linkType);
+                resourceSection.put("videoLength", videoLength);
+                resourceSection.put("headerImage", headerImage);
+                resourceSection.put("footerLogo",footerLogo);
                 // Handle the case of the image not existing.
                 resourceSectionCards.add(resourceSection);
             }
-
-
         } catch (Exception e){
             logger.error("Error Getting Resource Section Cards:", e);
         }
+    }
 
-    }
-    public String getContentTypeText(String contentType,Session session){
-        String contentTypeText = "";
-        try {
-            String contentTypePath = "/content/bmc/resources/intelligent-content-types";
-            Node rootNode = session.getNode(contentTypePath);
-            if(rootNode != null){
-                Node icNode = rootNode.getNode(contentType);
-                if(icNode != null && icNode.hasProperty("jcr:title")){
-                    contentTypeText = icNode.getProperty("jcr:title").getString();
-                }
-            }
-        }catch (RepositoryException e){
-            logger.error("BMCERROR : session not available." +e);
-        }
-        return contentTypeText;
-    }
     public List<HashMap<String,String>> getResourceSectionCards() {
         return resourceSectionCards;
     }
 
-    public String getVideoPath(String pagePath,Session session){
-        String videoPath = "";
-        String videoID = "";
-
-        try{
-            if(pagePath != null && session != null){
-                Node videoNode = session.getNode(pagePath);
-                if(videoNode != null && videoNode.hasNode("jcr:content")){
-                    Node videoContent = videoNode.getNode("jcr:content");
-                    if(videoContent.hasNode("video-data")){
-                        Node videoData = videoContent.getNode("video-data");
-                        if(videoData.hasProperty("vID")){
-                            videoID = videoData.getProperty("vID").getString();
-                        }
-                    }
-
-                }
-            }
-        }catch (Exception e){
-            e.getMessage();
-        }
-        if(videoID != null){
-            videoPath = "/content/bmc/videos.html?vID="+videoID;
-        }
-        return videoPath;
-    }
 }
 
