@@ -2,7 +2,7 @@ package com.bmc.models.sitemap;
 
 import java.util.Map;
 
-public class SitemapModel {
+public class SitemapModel implements Comparable{
 	String sitemapsectiontitle;
 	String subsitemapsectiontitle;
 	String title;
@@ -39,5 +39,8 @@ public class SitemapModel {
 	public void setSubsitemapsectiontitle(String subsitemapsectiontitle) {
 		this.subsitemapsectiontitle = subsitemapsectiontitle;
 	}
-
+	
+    public int compareTo(Object o) {
+         return this.getTitle().compareTo(((SitemapModel) o).getTitle());
+    }
 }
