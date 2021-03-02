@@ -561,7 +561,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }else if(type.equalsIgnoreCase("Webinar")) {
             ctaText = "Register";
         }else if(type.equalsIgnoreCase("Trial")){
-            ctaText = "Watch now";
+            ctaText = "Try now";
         }else if (type.equalsIgnoreCase("Videos")){
             ctaText = "Play";
         }else{

@@ -2,7 +2,7 @@
     <div class="rc-card-row">
         {{#each items}}
         <div class="rc-card-col">
-            {{#ifCond linkType '===' "play"}}
+            {{#ifCond type '===' "Videos"}}
                 <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" {{{analyticsAttributes}}}>
             {{else}}
                 <a href="{{assetLink}}" {{{analyticsAttributes}}}>
@@ -10,12 +10,16 @@
             <div class="simple-card bg-white" style="height: 310px;">
                 <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
                     <h4>{{type}}</h4>
-                    {{#if thumbnail}}
-                    <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
-                    </div>
+                    {{#ifCond type '===' "Trial"}}
+                        <div class="card-icon ic_trial" alt border="0"></div>
                     {{else}}
-                    <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                    {{/if}}
+                        {{#if thumbnail}}
+                            <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
+                            </div>
+                        {{else}}
+                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
+                        {{/if}}
+                    {{/ifCond}}
                 </div>
                 <div class="card-content">
                     <hr/>
@@ -34,14 +38,19 @@
                 {{/ifCond}}
                     <span class="card-footer-action">
                         {{#ifCond type '===' "Trial"}}
-                            <span class="learn-more">{{ctaText}}</span>
+                            <svg class="align-middle s-view">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
                         {{else}}
-                            <svg class="align-middle s-{{linkType}}">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                            </svg>
-                           {{ctaText}}
+                            {{#ifCond type '===' "Webinar"}}
+                                <svg class="align-middle s-view">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                            {{else}}
+                                <svg class="align-middle s-{{linkType}}">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                            {{/ifCond}}
                         {{/ifCond}}
-
+                        </svg>
+                        {{ctaText}}
                     </span>
                 </div>
             </div>

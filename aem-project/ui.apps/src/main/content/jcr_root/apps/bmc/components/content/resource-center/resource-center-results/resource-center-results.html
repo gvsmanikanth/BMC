@@ -15,6 +15,10 @@
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-gartner-blue' ? '#006699' : fcBgColor}"/>
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-forrester-green' ? '#16563F' : fcBgColor}"/>
 
+<sly data-sly-test.headerIcon="${featuredCard.type == 'Trial' ? 'trial' : featuredCard.linkType}"/>
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Trial' ? 'view' : featuredCard.linkType}"/>
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Webinar' ? 'view' : footerIcon}"/>
+
 <style>
   .featured-card-container:hover .featured-card-left-panel{
     background-color: ${fcBgColor @ context='styleString'};
@@ -42,7 +46,7 @@
         </div>
         <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
             <div class="rc-featured-card-col">
-                <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
+                <a class="${featuredCard.type == 'Videos' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
                     <div class="featured-card-container">
                         <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
@@ -62,17 +66,15 @@
                         </div>
                         <div class="featured-card featured-card-right-panel ${properties.bgColor} card-desktop" style="height: 310px;">
                             <div class="card-header">
-                                <div class="card-icon ic_${featuredCard.linkType}-white"></div>
+                                <div class="card-icon ic_${headerIcon}-white"></div>
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
                             <div class="featured-card-footer" style="padding-left: 0px;">
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                    <svg class="align-middle s-${featuredCard.linkType}-white">
+                                    <svg class="align-middle s-${footerIcon}-white">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                                     </svg>
-                                    ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                    ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                    ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                    ${featuredCard.ctaText @ i18n}
                                 </span>
                             </div>
                         </div>
@@ -81,7 +83,7 @@
                     <div class="featured-card featured-card-right-panel ${properties.bgColor} card-mobile" style="height: 310px;">
                         <div class="card-header" style="background: url(${fbImg @ context='uri'}) no-repeat top left / cover;background-size: contain;min-height: 10%;">
                             <h3 class="text-white">${featuredCard.type}</h3>
-                            <div class="card-icon ic_${featuredCard.linkType}-white"></div>
+                            <div class="card-icon ic_${headerIcon}-white"></div>
                         </div>
                         <div class="card-content">
                             <hr/>
@@ -90,12 +92,10 @@
                         </div>
                         <div class="featured-card-footer" style="padding-left: 0px;">
                             <span class="card-footer-action" style="border-top-color:white;">
-                                <svg class="align-middle s-${featuredCard.linkType}-white">
+                                <svg class="align-middle s-${footerIcon}-white">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                                 </svg>
-                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                ${featuredCard.ctaText @ i18n}
                             </span>
                         </div>
                     </div>
