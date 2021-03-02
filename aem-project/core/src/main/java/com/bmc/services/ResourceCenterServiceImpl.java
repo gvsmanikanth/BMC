@@ -94,9 +94,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
-            "ic-type-920200003, Trial, view",
+            "ic-type-920200003, Trial, play",
             "ic-type-185980791, Videos, play",
-            "ic-type-291550317, Webinar, view",
+            "ic-type-291550317, Webinar, play",
             "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
             "ic-type-958935588, Tech Note, view",
@@ -512,6 +512,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = "";
+
                         if(gatedAsset && formPath != null && isFormActive(formPath)){
                             assetLink = formPath;
                         }else {
@@ -527,15 +528,17 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         BmcMetadata contentType = getContentTypeMeta(metadata);
                         String type = contentType != null ? getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
-                        
+                        String ctaText = type != null ? generateCTA(type) : "";
                         // set video ID
                         
-                        if(linkType.equals("play")) {
+                        if(type.equalsIgnoreCase("Videos")) {
                         	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
                         }
-                        
+                        if(type.equalsIgnoreCase("Webinar")){
+                            assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                        }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, type, linkType, metadata));
+                                lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText));
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -550,6 +553,22 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return contentResult;
     }
 
+    @Override
+    public String generateCTA(String type) {
+        String ctaText = "";
+        if(type.equalsIgnoreCase("Demo")){
+            ctaText = "Start";
+        }else if(type.equalsIgnoreCase("Webinar")) {
+            ctaText = "Register";
+        }else if(type.equalsIgnoreCase("Trial")){
+            ctaText = "Watch now";
+        }else if (type.equalsIgnoreCase("Videos")){
+            ctaText = "Play";
+        }else{
+            ctaText = "View";
+        }
+        return ctaText;
+    }
 
     private boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;

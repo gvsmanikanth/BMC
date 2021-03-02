@@ -93,7 +93,8 @@ public class ResourceCenterFeaturedCardModel {
                 BmcMetadata contentType = getContentTypeMeta(metadata);
                 String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
                 String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
-                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata);
+                String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText);
                 analiticData = buildAnaliticData();
             }
         } catch (Exception e) {

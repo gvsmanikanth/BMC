@@ -65,7 +65,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
 
     @Reference(target = "(" + SERVICE_TYPE + "=base)")
     private ResourceCenterService baseImpl;
-    
+
     @Reference
     private ConfigurationAdmin configAdmin;
 
@@ -74,7 +74,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
         this.resourceTitleCacheSize = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_SIZE), 5000);
         this.resourceTitleCacheTtl = PropertiesUtil.toLong(context.getProperties().get(RESOURCE_TITLE_CACHE_TTL), 300);
         this.resourceTitleCacheStatsEnabled = PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
-        this.resourceTitleCacheFlush= PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_FLUSH), false);
+        this.resourceTitleCacheFlush = PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_FLUSH), false);
 
         CacheBuilder cacheBuilder = CacheBuilder.newBuilder()
                 .maximumSize(resourceTitleCacheSize)
@@ -95,7 +95,6 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     }
 
 
-
     public Cache<String, Optional<BmcContentResult>> getContentCache() {
         return contentCache;
     }
@@ -105,22 +104,22 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
         return configAdmin;
     }
 
-	@Override
-	public List<BmcContentFilter> getResourceFilters() {
-		return baseImpl.getResourceFilters();
-	}
+    @Override
+    public List<BmcContentFilter> getResourceFilters() {
+        return baseImpl.getResourceFilters();
+    }
 
-	@Override
-	public String getResourceFiltersJSON() {
-        if(!isApiOn())
+    @Override
+    public String getResourceFiltersJSON() {
+        if (!isApiOn())
             return ResourceCenterConsts.API_OFF_RESPONSE;
-		return baseImpl.getResourceFiltersJSON();
-	}
+        return baseImpl.getResourceFiltersJSON();
+    }
 
-	@Override
-	public BmcContentResult getResourceResults(Map<String, String[]> parameters) {
+    @Override
+    public BmcContentResult getResourceResults(Map<String, String[]> parameters) {
 
-		try {
+        try {
             if (parameters == null || parameters.isEmpty()) {
                 log.debug("Invalid input {} {} {}. Returning null", parameters);
                 return null;
@@ -134,29 +133,28 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
             log.error("An error occurred. Fetching title from JCR", e);
             return baseImpl.getResourceResults(parameters);
         }
-	}
+    }
 
-	@Override
-	public String getResourceResultsJSON(Map<String, String[]> parameters) {
-        if(!isApiOn())
+    @Override
+    public String getResourceResultsJSON(Map<String, String[]> parameters) {
+        if (!isApiOn())
             return ResourceCenterConsts.API_OFF_RESPONSE;
-		return JsonSerializer.serialize(getResourceResults(parameters));
-	}
-	
-	private String generatekey(Map<String, String[]> parameters) {
-		String result = parameters.entrySet().stream()
+        return JsonSerializer.serialize(getResourceResults(parameters));
+    }
+
+    private String generatekey(Map<String, String[]> parameters) {
+        String result = parameters.entrySet().stream()
                 .filter(Objects::nonNull)
                 .map(map -> Arrays.toString(map.getValue()))
                 .collect(Collectors.joining());
-		
-		return result;
-	}
+
+        return result;
+    }
 
     @Override
     public boolean isApiOn() {
         return baseImpl.isApiOn();
     }
-
 
 
     @Override
@@ -170,7 +168,12 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     }
 
     @Override
-    public String getAllFilterValue (String contentType) {
+    public String getAllFilterValue(String contentType) {
         return null;
+    }
+
+    @Override
+    public String generateCTA(String contentType) {
+        return baseImpl.generateCTA(contentType);
     }
 }

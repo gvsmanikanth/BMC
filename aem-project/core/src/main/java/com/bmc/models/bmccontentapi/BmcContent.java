@@ -15,9 +15,10 @@ public class BmcContent {
     private String type;
     private String linkType;
     private List<BmcMetadata> metadata;
+    private String ctaText;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, String type, String linkType, List<BmcMetadata> metadata) {
+            String assetLink, String thumbnail, String type, String linkType, List<BmcMetadata> metadata, String ctaText) {
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -29,6 +30,7 @@ public class BmcContent {
         this.metadata = metadata;
         this.type = type;
         this.linkType = linkType;
+        this.ctaText = ctaText;
     }
 
     public long getIndex() {
@@ -118,4 +120,8 @@ public class BmcContent {
     public void setMetadata(List<BmcMetadata> metadata) {
         this.metadata = metadata;
     }
+
+    public String getCtaText() { return ctaText; }
+
+    public void setCtaText(String ctaText) { this.ctaText = ctaText; }
 }
