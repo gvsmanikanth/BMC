@@ -442,6 +442,13 @@ body.no-scroll{
           background-position: left bottom;
         }
       }
+      // WEB-6793
+      .card-footer-logo {
+          padding: 6px 0;
+          img{
+              vertical-align: middle;
+          }
+      }
   }
 
   //  featured card
