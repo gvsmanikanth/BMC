@@ -362,6 +362,7 @@
                                             <rc-inclusion
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Should be &quot;Yes&quot; if this asset/page needs to be included in Resource center."
                                                 fieldLabel="Resource center Inclusion"
                                                 name="./rc-inclusion">
                                                 <items jcr:primaryType="nt:unstructured">
@@ -380,6 +381,7 @@
                                                 granite:class="cq-dialog-dropdown-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Should be &quot;Yes&quot;/&quot;No&quot; if this asset/page  needs to be gated/non-gated respectively."
                                                 fieldLabel="Asset Gated/Un-gated"
                                                 name="./asset-inclusion">
                                                 <granite:data
@@ -400,7 +402,8 @@
                                             <rc-form-path
                                                 granite:class="hide gate-form-fieldset-showhide-target foundation-layout-util-vmargin"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                fieldDescription="Enter the form gate path for the asset.">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     showhidetargetvalue="true"/>
