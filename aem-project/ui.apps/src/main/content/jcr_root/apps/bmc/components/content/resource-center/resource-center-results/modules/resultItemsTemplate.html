@@ -30,7 +30,6 @@
                         </div>
                         <div class="card-footer">
                             <!-- WEB-6793 Added new fields for RC Cards END -->
-                            <span class="card-footer-action">
                                     <div class="card-footer-logo">
                                     {{#ifCond linkType '===' "play"}}
                                     {{#if videoLength}}
@@ -50,6 +49,7 @@
                                     {{/ifCond}}
                                     {{/if}}
                                 </div>
+                            <span class="card-footer-action">
                                 <svg class="align-middle s-{{linkType}}">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
                                 </svg>
