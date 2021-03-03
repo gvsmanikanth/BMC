@@ -296,7 +296,6 @@ body.no-scroll{
   flex-wrap: wrap;
   padding-top: 15px;
   margin-right: -20px;
-
   .rc-featured-card-col {
     flex: 0 0 100%;
     box-sizing: border-box;
@@ -648,6 +647,7 @@ body.no-scroll{
   .ic_view {
     background-image: url("#{$imagesFolder}ic_view.png");
   }
+  
 }
 
 .text-white {
@@ -872,6 +872,15 @@ $bg-forrester-green: #16563F;
 .rc-no-text {
   max-height: 43px;
 } 
+
+.col-4-layout{
+  .rc-card-col {    
+    @media (min-width: $break-lg) {
+      flex: 0 0 25%;
+      max-width:25%;
+    }
+  }
+
 #rc-featured-card {
   display: none;
   padding-top: 15px;
