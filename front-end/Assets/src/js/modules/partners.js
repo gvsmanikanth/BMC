@@ -63,7 +63,7 @@
                 for (var j=1; j<=partner_types[0].values.length; j++){
                     var arrPartnerType = self.filterListItemsBaseedOnCriteria(data,{partner_type:j});
                     if(arrPartnerType.length > 0){
-                        htmlCardMarkup +="<div class='partner-wrap'><h2 class='block-title h2-variation-1'>"+partner_types[0].values[j].name+" </h2>"
+                        htmlCardMarkup +="<div class='partner-wrap' id='"+partner_types[0].values[j].name.replace(/[\W_]/g, '-')+"'><h2 class='block-title h2-variation-1'>"+partner_types[0].values[j].name+" </h2>"
                         for(var i=0; i<arrPartnerType.length; i++){
                             var item = arrPartnerType[i];
                             if (item) {

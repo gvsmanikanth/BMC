@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/etc/clientlibs/bmc/dashboard/css/styles.css">
+<sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral"></sly>
+<script>
+	window.psc = {};
+    psc.widgets = {
+		openCase: "${support.newCaseUrl @ context='scriptString'}",
+        listCase: "${support.allCasesUrl @ context='scriptString'}",
+        manageCase:  "${support.caseMgtmUrl @ context='scriptString'}",
+        docs: "${support.documentationUrl @ context='scriptString'}",
+        prdDownloads: "${support.productDownloadUrl @ context='scriptString'}",
+        askCommunity: "${support.askCommunitiesUrl @ context='scriptString'}",
+        supportQuestionUrl:"${support.supportQuestionUrl @ context='scriptString'}",
+        supportVideos: "${support.supportVideosUrl @ context='scriptString'}",
+        supportedProducts: "${support.supportedProductUrl @ context='scriptString'}",
+        prdCompatibility: "${support.productCompatiblityUrl @ context='scriptString'}",
+        training: "${support.trainingUrl @ context='scriptString'}",
+		prdSupport: "${support.productSupportUrl @ context='scriptString'}",
+		servicesConsulting : "${support.servicesConsultingUrl @ context='scriptString'}",
+		strategicServices : "${support.strategicServicesUrl @ context='scriptString'}",
+		bmcHelixServices : "${support.bmcHelixServicesUrl @ context='scriptString'}",
+		mainframeServices  : "${support.mainframeServicesUrl @ context='scriptString'}",
+		implServices : "${support.implServicesUrl @ context='scriptString'}",
+		managedServices : "${support.managedServicesUrl @ context='scriptString'}",
+		enhancedServices  : "${support.enhancedSupportServicesUrl @ context='scriptString'}",
+		caseDetailUrl  : "${support.caseDetailUrl @ context='scriptString'}"
+    };
+    psc.user = {
+      loggedIn: "${support.isLoggedIn @ context='scriptString'}"
+    }
+</script>
+
+<app-root></app-root>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114788512-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-114788512-5', {
+	   'custom_map': {'dimension<1>': 'login status'}}
+	  );
+</script>
+<script src="/etc/clientlibs/bmc/dashboard/js/runtime.js" defer></script>
+<script src="/etc/clientlibs/bmc/dashboard/js/polyfills-es5.js" nomodule defer></script>
+<script src="/etc/clientlibs/bmc/dashboard/js/polyfills.js" defer></script>
+<script src="/etc/clientlibs/bmc/dashboard/js/main.js" defer></script>
+<script src="/etc/clientlibs/bmc/dashboard/js/GAnalytics.js" defer></script>

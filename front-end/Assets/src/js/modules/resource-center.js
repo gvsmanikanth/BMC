@@ -374,7 +374,9 @@ ResourceCenterFilters = {
         this.setCloseFilterClickEvent();
         if ($('.js-filter-title span').size() > 0) {
           $('.empty-filter').attr('hidden', true);
+          $('#rc-featured-card').hide();
         } else {
+          $('#rc-featured-card').show();
           $('.empty-filter').removeAttr('hidden');
         }
         //  mobile selected filters count

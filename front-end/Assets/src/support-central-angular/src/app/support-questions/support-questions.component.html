@@ -1,0 +1,13 @@
+<div class="extended-widget-container">
+    <div class="extended-widget-header">
+        <div class="top-section">
+            <h2>Common Support Questions</h2>
+            <a class="external-app-link btn btn-primary" [href]="state.widgets.supportQuestionUrl" target="_blank">Ask the Community</a>
+        </div>
+        <div class="description">Frequently asked questions</div>
+    </div>
+    <div class="extended-widget-body" [ngBusy]="questionsService.busyConfig">
+        <app-question *ngFor="let question of questionsChunk" [question]="question"></app-question>
+        <adapt-pagination rows="4" *ngIf="questionsService.questions.length" [totalRecords]="questionsService.questions.length" (onPageChange)="paginate($event)"></adapt-pagination>
+    </div>
+</div>
