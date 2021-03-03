@@ -456,12 +456,12 @@ ResourceCenterFilters = {
     loadData: function () {
         var self = this,
         path = this.buildUrl();
-        var target = window.location.origin;
-		if(target.indexOf("localhost")!= -1){
-            path = 'http://localhost/front-end/Assets/src/templates/content.json';
-        }else{ 
-            path = this.buildUrl();           
-        }
+        // var target = window.location.origin;
+		// if(target.indexOf("localhost")!= -1){
+        //     path = 'http://localhost/front-end/Assets/src/templates/content.json';
+        // }else{ 
+        //     path = this.buildUrl();           
+        // }
         $.ajax({
             url: path,
             type: 'GET',
