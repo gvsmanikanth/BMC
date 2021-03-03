@@ -13,11 +13,13 @@
                             <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
                                 <div class="cmp cmp-title aem-GridColumn aem-GridColumn--default--12">
                                     <h1 class="boston-blue normal layout-width-title ha">
-                                        MultiCloud | Resource Center
+                                        Control-M Resources
                                     </h1>
                                 </div>
                                 <div class="resource-center-filters aem-GridColumn aem-GridColumn--default--12">
                                     <div class="rc-filter-component">
+                                        <data class="pre-filter-option" data-name="product_line" data-value="135765208" hidden></data>
+
                                         <form>
                                             <section class="bg-seashell">
                                                 <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 layout-inner-wrap">
@@ -43,52 +45,6 @@
                                                                             <!-- keyword search -->
 
                                                                             <!-- filters -->
-
-                                                                            <div class="rc-filter-panel-group mb2">
-                                                                                <div class="heading-group">
-                                                                                    <ul class="list-group-item list-group-item-action parent-filter rc-arrow-up" data-name="product_line">
-                                                                                        <li class="list-group-item list-group-item-action">Product Lines</li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                                <div class="list-group">
-                                                                                    <ul class="child-filter">
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="135765208">DBA</li>
-                                                                                            <input id="checkbox-135765208" type="checkbox" hidden data-name="135765208" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="854236502">DSM</li>
-                                                                                            <input id="checkbox-854236502" type="checkbox" hidden data-name="854236502" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="509328107">DSO</li>
-                                                                                            <input id="checkbox-509328107" type="checkbox" hidden data-name="509328107" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="890648529">STG</li>
-                                                                                            <input id="checkbox-890648529" type="checkbox" hidden data-name="890648529" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="397155614">Unknown</li>
-                                                                                            <input id="checkbox-397155614" type="checkbox" hidden data-name="397155614" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="793542354">XPL</li>
-                                                                                            <input id="checkbox-793542354" type="checkbox" hidden data-name="793542354" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_line">
-                                                                                            <li id="786762196">ZSO</li>
-                                                                                            <input id="checkbox-786762196" type="checkbox" hidden data-name="786762196" />
-                                                                                        </div>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
 
                                                                             <div class="rc-filter-panel-group mb2">
                                                                                 <div class="heading-group">
@@ -209,11 +165,6 @@
                                                                                             <li id="ic-topics-773791639">Service Management</li>
                                                                                             <input id="checkbox-ic-topics-773791639" type="checkbox" hidden data-name="ic-topics-773791639" />
                                                                                         </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="ic-topics">
-                                                                                            <li id="ic-topics-773792749">UnCategorized</li>
-                                                                                            <input id="checkbox-ic-topics-773792749" type="checkbox" hidden data-name="ic-topics-773792749" />
-                                                                                        </div>
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
@@ -303,6 +254,11 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
+                                                                                            <li id="846325100">BMC Helix</li>
+                                                                                            <input id="checkbox-846325100" type="checkbox" hidden data-name="846325100" />
+                                                                                        </div>
+
+                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="940824846">BMC Helix Business Workflows</li>
                                                                                             <input id="checkbox-940824846" type="checkbox" hidden data-name="940824846" />
                                                                                         </div>
@@ -383,23 +339,8 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="703588770">Bladelogic Database Automation</li>
-                                                                                            <input id="checkbox-703588770" type="checkbox" hidden data-name="703588770" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="743511112">Business Workflows</li>
-                                                                                            <input id="checkbox-743511112" type="checkbox" hidden data-name="743511112" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="981173424">CMDB</li>
                                                                                             <input id="checkbox-981173424" type="checkbox" hidden data-name="981173424" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="244922076">Cloud Lifecycle Management</li>
-                                                                                            <input id="checkbox-244922076" type="checkbox" hidden data-name="244922076" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
@@ -413,28 +354,8 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="861762869">Control-D</li>
-                                                                                            <input id="checkbox-861762869" type="checkbox" hidden data-name="861762869" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="163366495">Control-M</li>
                                                                                             <input id="checkbox-163366495" type="checkbox" hidden data-name="163366495" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="164411013">Control-M Application Integrator</li>
-                                                                                            <input id="checkbox-164411013" type="checkbox" hidden data-name="164411013" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="566639210">Control-M Automation API</li>
-                                                                                            <input id="checkbox-566639210" type="checkbox" hidden data-name="566639210" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="637969887">Control-M Batch Impact Manager</li>
-                                                                                            <input id="checkbox-637969887" type="checkbox" hidden data-name="637969887" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
@@ -443,33 +364,13 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="753538028">Control-M Self Service</li>
-                                                                                            <input id="checkbox-753538028" type="checkbox" hidden data-name="753538028" />
+                                                                                            <li id="566639210">Control-M and DevOps</li>
+                                                                                            <input id="checkbox-566639210" type="checkbox" hidden data-name="566639210" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="589742557">Control-M Workload Change Manager</li>
-                                                                                            <input id="checkbox-589742557" type="checkbox" hidden data-name="589742557" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="414177221">Control-M for Hadoop</li>
+                                                                                            <li id="414177221">Control-M for DevOps</li>
                                                                                             <input id="checkbox-414177221" type="checkbox" hidden data-name="414177221" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="265389868">Control-M for SAP</li>
-                                                                                            <input id="checkbox-265389868" type="checkbox" hidden data-name="265389868" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="704248823">DB2 Lob Master</li>
-                                                                                            <input id="checkbox-704248823" type="checkbox" hidden data-name="704248823" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="949842808">DB2 NGT</li>
-                                                                                            <input id="checkbox-949842808" type="checkbox" hidden data-name="949842808" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
@@ -483,33 +384,8 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="846325100">Helix</li>
-                                                                                            <input id="checkbox-846325100" type="checkbox" hidden data-name="846325100" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="caption">Product Interest</li>
-                                                                                            <input id="checkbox-caption" type="checkbox" hidden data-name="caption" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="472046068">Release Lifecycle Management</li>
-                                                                                            <input id="checkbox-472046068" type="checkbox" hidden data-name="472046068" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="601439928">Remedy (On Prem)</li>
                                                                                             <input id="checkbox-601439928" type="checkbox" hidden data-name="601439928" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="923900731">Track-It!</li>
-                                                                                            <input id="checkbox-923900731" type="checkbox" hidden data-name="923900731" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="576550803">TrueSight AppVisibility</li>
-                                                                                            <input id="checkbox-576550803" type="checkbox" hidden data-name="576550803" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
@@ -528,23 +404,8 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="155163094">TrueSight Cloud Cost Control</li>
-                                                                                            <input id="checkbox-155163094" type="checkbox" hidden data-name="155163094" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="178280437">TrueSight Infrastructure</li>
-                                                                                            <input id="checkbox-178280437" type="checkbox" hidden data-name="178280437" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="481296265">TrueSight Intelligence</li>
                                                                                             <input id="checkbox-481296265" type="checkbox" hidden data-name="481296265" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="740355219">TrueSight Middleware</li>
-                                                                                            <input id="checkbox-740355219" type="checkbox" hidden data-name="740355219" />
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
@@ -558,28 +419,8 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="323972721">TrueSight Pulse</li>
-                                                                                            <input id="checkbox-323972721" type="checkbox" hidden data-name="323972721" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
                                                                                             <li id="000918022">TrueSight Vulnerability Management for Third-Party Applications</li>
                                                                                             <input id="checkbox-000918022" type="checkbox" hidden data-name="000918022" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="uncategorized">Uncategorized</li>
-                                                                                            <input id="checkbox-uncategorized" type="checkbox" hidden data-name="uncategorized" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="893850432">Unknown</li>
-                                                                                            <input id="checkbox-893850432" type="checkbox" hidden data-name="893850432" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="product_interest">
-                                                                                            <li id="199147377">XPL</li>
-                                                                                            <input id="checkbox-199147377" type="checkbox" hidden data-name="199147377" />
                                                                                         </div>
                                                                                     </ul>
                                                                                 </div>
@@ -654,11 +495,6 @@
                                                                                         </div>
 
                                                                                         <div class="filter-checkbox-item" data-name="ic-target-industry">
-                                                                                            <li id="ic-target-industry-223456784">UnCategorized</li>
-                                                                                            <input id="checkbox-ic-target-industry-223456784" type="checkbox" hidden data-name="ic-target-industry-223456784" />
-                                                                                        </div>
-
-                                                                                        <div class="filter-checkbox-item" data-name="ic-target-industry">
                                                                                             <li id="ic-target-industry-261207621">Utilities-Oil-Gas-Energy</li>
                                                                                             <input id="checkbox-ic-target-industry-261207621" type="checkbox" hidden data-name="ic-target-industry-261207621" />
                                                                                         </div>
@@ -719,6 +555,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="aem-GridColumn--phone--12 aem-GridColumn--default--9 aem-GridColumn layout-secondary py2" style="float: left;  clear: none; width: 75%;">
                                                         <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 panel-group">
                                                             <div>
@@ -744,14 +581,14 @@
                                                                 <div class="resource-center-results aem-GridColumn aem-GridColumn--default--12">
                                                                     <style>
                                                                         .featured-card-container:hover .featured-card-left-panel {
-                                                                            background-color: #00a79d;
+                                                                            background-color: #3980b2;
                                                                         }
                                                                         .featured-card-container:hover .featured-card-left-panel .card-footer-action {
-                                                                            color: #00a79d !important;
+                                                                            color: #3980b2 !important;
                                                                         }
                                                                     </style>
 
-                                                                    <div class="rc-result-component" data-root-path="/content/bmc/language-masters/en/documents" data-page-size="25">
+                                                                    <div class="rc-result-component" data-root-path="/content/bmc/language-masters/en/documents,/content/bmc/videos" data-page-size="10">
                                                                         <div class="container pb-4">
                                                                             <div class="rc-result-header filter-menu">
                                                                                 <span class="results-info" data-template="Showing {1} - {2} of {3}"></span>
@@ -767,96 +604,7 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="rc-card-row"  style="padding: 0px;">
-                                                                                <div class="rc-featured-card-col" id="rc-featured-card">
-                                                                                    <a
-                                                                                        href="/content/bmc/language-masters/en/documents/datasheets/control-m-conversion-tool"
-                                                                                        target="_blank"
-                                                                                        data-product_line="DBA"
-                                                                                        data-ic-target-persona="Manager"
-                                                                                        data-ic-target-industry="All"
-                                                                                        data-ic-company-size="All"
-                                                                                        data-product_interest="Control-M"
-                                                                                        data-ic-content-type="Datasheets"
-                                                                                        data-ic-topics="Business &amp; IT Automation"
-                                                                                        data-ic-buyer-stage="Buy"
-                                                                                        data-topics="Automation"
-                                                                                    >
-                                                                                        <!-- desktop featured card -->
-                                                                                        <div class="featured-card-container">
-                                                                                            <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
-                                                                                                <div class="card-header">
-                                                                                                    <h3>Datasheet</h3>
-                                                                                                </div>
-                                                                                                <div class="card-content">
-                                                                                                    <hr />
-                                                                                                    <h2>
-                                                                                                        Conversion Tool
-                                                                                                    </h2>
-                                                                                                </div>
-                                                                                                <div class="featured-card-footer" style="padding-right: 0px;">
-                                                                                                    <span class="card-footer-action" style="font-size: large; color: white;">
-                                                                                                        Action
-                                                                                                    </span>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="featured-card featured-card-right-panel bg-bmc-teal card-desktop" style="height: 310px;">
-                                                                                                <div class="card-header">
-                                                                                                    <div class="card-icon ic_view-white"></div>
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="card-content"
-                                                                                                    style="
-                                                                                                        background: url(/content/dam/bmc/logos/third-party/CloudComplianceExplained4KeysforSuccess_Final-700x400-300x171.jpg) no-repeat center
-                                                                                                            center / cover;
-                                                                                                        background-size: contain;
-                                                                                                        min-height: 50%;
-                                                                                                    "
-                                                                                                ></div>
-                                                                                                <div class="featured-card-footer" style="padding-left: 0px;">
-                                                                                                    <span class="card-footer-action" style="border-top-color: white;">
-                                                                                                        <svg class="align-middle s-view-white">
-                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view-white"></use>
-                                                                                                        </svg>
 
-                                                                                                        View
-                                                                                                    </span>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <!-- mobile featured card -->
-                                                                                        <div class="featured-card featured-card-right-panel bg-bmc-teal card-mobile" style="height: 310px;">
-                                                                                            <div
-                                                                                                class="card-header"
-                                                                                                style="
-                                                                                                    background: url(/content/dam/bmc/logos/third-party/CloudComplianceExplained4KeysforSuccess_Final-700x400-300x171.jpg) no-repeat top left /
-                                                                                                        cover;
-                                                                                                    background-size: contain;
-                                                                                                    min-height: 10%;
-                                                                                                "
-                                                                                            >
-                                                                                                <h3 class="text-white">Datasheet</h3>
-                                                                                                <div class="card-icon ic_view-white"></div>
-                                                                                            </div>
-                                                                                            <div class="card-content">
-                                                                                                <hr />
-                                                                                                <h4 class="text-white">
-                                                                                                    Conversion Tool
-                                                                                                </h4>
-                                                                                            </div>
-                                                                                            <div class="featured-card-footer" style="padding-left: 0px;">
-                                                                                                <span class="card-footer-action" style="border-top-color: white;">
-                                                                                                    <svg class="align-middle s-view-white">
-                                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view-white"></use>
-                                                                                                    </svg>
-
-                                                                                                    View
-                                                                                                </span>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
                                                                             <div id="resultItemsContainer"></div>
                                                                             <div class="rc-result-header-bottom">
                                                                                 <div style="float: right;">
@@ -868,7 +616,7 @@
                                                                                 <p>No results found. Try adjusting your filters.</p>
                                                                             </div>
                                                                             <div class="error-call mt2" hidden>
-                                                                                <p>Something went wrong.</p>
+                                                                                <p>Something went wrong.............</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -879,48 +627,69 @@
                                                                                 {{#each items}}
                                                                                 <div class="rc-card-col">
                                                                                     {{#ifCond linkType '===' "play"}}
-                                                                                        <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
-                                                                                    {{else}}
-                                                                                        <a href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
-                                                                                    {{/ifCond}}
-                                                                                    <div class="simple-card bg-white" style="height: 310px;">
-                                                                                        <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
-                                                                                            <h4>{{type}}</h4>
-                                                                                            {{#if thumbnail}}
-                                                                                            <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
-                                                                                            </div>
-                                                                                            {{else}}
-                                                                                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                                                                                            {{/if}}
-                                                                                        </div>
-                                                                                        <div class="card-content">
-                                                                                            <hr/>
-                                                                                            <h4>
-                                                                                                {{#if thumbnail}}
-                                                                                                    {{{truncateText title 70}}}
-                                                                                                {{else}}
-                                                                                                    {{{truncateText title 110}}}
-                                                                                                {{/if}}
-                                                                                            </h4>
-                                                                                        </div>
-                                                                                        {{#ifCond linkType '===' ""}}
-                                                                                            <div class="card-footer rc-no-text">
+                                                                                    <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
                                                                                         {{else}}
-                                                                                            <div class="card-footer">
-                                                                                        {{/ifCond}}
-                                                                                            <span class="card-footer-action">
-                                                                                                <svg class="align-middle s-{{linkType}}">
-                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                                                                                                </svg>
-                                                                                                {{#ifCond linkType '===' "play"}}Play{{/ifCond}}
-                                                                                                {{#ifCond linkType '===' "download"}}Download{{/ifCond}}
-                                                                                                {{#ifCond linkType '===' "view"}}View{{/ifCond}}
-                                                                                                <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
-                                                                                                {{#ifCond linkType '===' "demo"}}Start{{/ifCond}}
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    </a>
+                                                                                        <a href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
+                                                                                            {{/ifCond}}
+                                                                                            <div class="simple-card bg-white">
+                                                                                                <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
+                                                                                                    <h4>{{type}}</h4>
+                                                                                                    {{#if headerImage}}
+                                                                                                    <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
+                                                                                                    </div>
+                                                                                                    {{else}}
+                                                                                                    <div class="card-icon ic_{{linkType}}" alt border="0"></div>
+                                                                                                    {{/if}}
+                                                                                                </div>
+                                                                                                <div class="card-content">
+                                                                                                    <hr/>
+                                                                                                    <h4>
+                                                                                                        {{#if headerImage}}
+                                                                                                        {{{truncateText title 70}}}
+                                                                                                        {{else}}
+                                                                                                        {{{truncateText title 110}}}
+                                                                                                        {{/if}}
+                                                                                                    </h4>
+                                                                                                </div>
+                                                                                                {{#ifCond linkType '===' ""}}
+                                                                                                    <div class="card-footer rc-no-text">
+                                                                                                {{else}}
+                                                                                                    <div class="card-footer">
+                                                                                                {{/ifCond}}
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards END -->
+                                                                                                    <span class="card-footer-action">
+                                                                                                            <div class="card-footer-logo">
+                                                                                                                {{#ifCond linkType '===' "play"}}
+                                                                                                                {{#if videoLength}}
+                                                                                                                <span class="video-length">
+                                                                                                                    <svg class="align-middle s-clock">
+                                                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                                                                                                    </svg>{{videoLength}}
+                                                                                                                </span>
+                                                                                                                    {{/if}}
+                                                                                                                    {{/ifCond}}
+                                                                                                                    {{#if footerLogo}}
+                                                                                                                    {{#ifCond linkType '===' "play"}}
+                                                                                                                    {{else}}
+                                                                                                                <span>
+                                                                                                                    <img src="{{footerLogo}}"/>
+                                                                                                                </span>
+                                                                                                                {{/ifCond}}
+                                                                                                                {{/if}}
+                                                                                                            </div>
+                                                                                                        <svg class="align-middle s-{{linkType}}">
+                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                                                                                        </svg>
+                                                                                                        {{#ifCond linkType '===' "play"}}Play{{/ifCond}}
+                                                                                                        {{#ifCond linkType '===' "download"}}Download{{/ifCond}}
+                                                                                                        {{#ifCond linkType '===' "view"}}View{{/ifCond}}
+                                                                                                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
+                                                                                                        {{#ifCond linkType '===' "demo"}}Start{{/ifCond}}
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </a>
                                                                                 </div>
                                                                                 {{/each}}
                                                                             </div>
@@ -942,5 +711,6 @@
             </section>
         </div>
     </div>
-</div
+</div>
+
 <?php include_once 'php-inc/foot.php'; ?>
