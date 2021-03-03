@@ -511,15 +511,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
-                        String assetLink = "";
-
-                        if(gatedAsset && formPath != null && isFormActive(formPath)){
-                            assetLink = formPath;
-                        }else {
-                            assetLink = path;
-                        }
-
-                        assetLink = resourceResolver.map(assetLink);
+                        String assetLink = path;
 
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
@@ -530,12 +522,17 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
                         String ctaText = type != null ? generateCTA(type) : "";
                         // set video ID
-                        
                         if(type.equalsIgnoreCase("Videos")) {
                         	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
                         }
                         if(type.equalsIgnoreCase("Webinar")){
                             assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                        }
+                        if(gatedAsset && formPath != null && isFormActive(formPath)){
+                            assetLink = formPath;
+                        }
+                        if(!assetLink.startsWith("http")){
+                            assetLink = resourceResolver.map(assetLink);
                         }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
                                 lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText));

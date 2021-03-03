@@ -78,15 +78,7 @@ public class ResourceCenterFeaturedCardModel {
                 String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
                 Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                 String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
-                String assetLink = "";
-                if(gatedAsset && formPath != null && isFormActive(formPath)){
-                    assetLink = formPath;
-                }else {
-                    assetLink = path;
-                }
-
-                assetLink = resourceResolver.map(assetLink);
-
+                String assetLink = path;
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
@@ -94,6 +86,15 @@ public class ResourceCenterFeaturedCardModel {
                 String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
                 String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
                 String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                if(type.equalsIgnoreCase("Webinar")){
+                    assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                }
+                if(gatedAsset && formPath != null && isFormActive(formPath)){
+                    assetLink = formPath;
+                }
+                if (!assetLink.startsWith("http")) {
+                    assetLink = resourceResolver.map(assetLink);
+                }
                 card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText);
                 analiticData = buildAnaliticData();
             }
