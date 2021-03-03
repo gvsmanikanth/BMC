@@ -1,0 +1,13 @@
+<sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral"></sly>
+  <sly data-sly-test.loggedIn="${support.isLoggedIn}">
+      <sly data-sly-test.loggedIn="${support.isNewUser}">
+        <div align="center" style="margin-top:20px;">
+            <h3>Is this your first time using Support Central?</h3>
+            <div id="newUser">
+                <a href=${support.customerOrientationUrl} target="_blank" class="btn btn-primary learn-more">Explore orientation checklist</a>
+                
+            </div>
+        </div>
+      </sly>
+  </sly>
+</sly>

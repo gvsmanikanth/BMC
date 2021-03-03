@@ -81,18 +81,23 @@
 var tooltips = $('span.orion_tooltip');
 if(tooltips.length){
 	tooltips.each(function(){
-		var pattern = /&nbsp;<span class="orion_tooltip/g;
+		var patternInner = /class='inner'/g;
 		var thisParent = $(this).parent().html();
-		if(!pattern.test(thisParent)){
-			$(this).parent().html(thisParent.replace(/\s*(<span class="orion_tooltip.*?">)/g,"&nbsp;$1<span class='inner'>&nbsp;</span>"));
+		//if inner element not already in place, add it
+		if(!patternInner.test(thisParent)){
+			//clear preceding spaces and add an innner span to create width on an inline element
+			$(this).parent().html(thisParent.replace(/\s*(<span class="orion_tooltip.*?">)/g,"$1<span class='inner'></span>"));
 		}
 	});
 }
 
- $("span.orion_tooltip").hover(function() {
+$("span.orion_tooltip").hover(function() {
     $(this).orionTooltip();
-  });
-  
+});
+//  WEB-9471, added code for dynamic envionment addition
+$(document).on( 'mouseenter', '.orion_tooltip', function(){
+    $(this).orionTooltip();
+});
   $.fn.orionTooltip = function(options) {
     var obj = this;
     var winwidth=$(window).width();

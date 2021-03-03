@@ -1,0 +1,21 @@
+.sac-link {
+    & {
+        display: flex;
+        border-radius: 5px;
+        box-shadow: 0 3px 4px rgba(0, 0, 0, 0.14), 0 9px 10px rgba(0, 0, 0, 0.06);
+        padding: 10px 5px 10px 15px;
+        margin-bottom: 15px;
+    }
+    .left img {
+        height: 80px;
+    }
+    .center {
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        h2 {
+            margin-top: 10px;
+        }
+        
+    }
+}

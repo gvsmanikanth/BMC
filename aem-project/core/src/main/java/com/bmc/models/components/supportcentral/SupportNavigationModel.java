@@ -89,6 +89,8 @@ public class SupportNavigationModel extends WCMUsePojo implements MultifieldData
                  {
                 	 this.resource = resourceResolver.getResource(templatePath);		   	    			
                  }
+                 
+   	    		 
    	    		supportNavigation = mapMultiFieldJsonObjects("tabs",this::getSupportNavigationItems);
          } catch (Exception e) {
              LOGGER.error("Error while generating resource",e);

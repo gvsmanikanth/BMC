@@ -2,52 +2,14 @@
 	$pageTitle = 'Calculator';
 	$bodyClass = 'splashPage';
 	include 'php-inc/head.php';
+	include 'php-inc/orion-secondary-navigation.php';
 ?>
 
-<!--Navigation Component Ends -->
-
-<div class="orion-seconday-nav">
-	<section class="orion-navigation">
-		<div class="nav-container layout-inner-wrap">
-			<div class="orion-brand">
-				<a href="#"><strong>BMC Helix</strong> Control-M</a>
-			</div>
-			<div class="nav-wrap">
-				<div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
-				<ul class="nav-list">
-					<li class="activePage"><a href="#">Features</a></li>					
-					<li>
-						<a href="#">Use Cases</a>
-						<ul class="nav-dropdown">
-							<li><a href="#">Fraud Detection</a></li>
-							<li><a href="#">Targeted Advertising</a></li>
-							<li><a href="#">Predictive Maintenance</a></li>
-							<li><a href="#">Supply Chain Management</a></li>
-							<li><a href="#">Strategic Pricing</a></li>
-							<li><a href="#">Financial Close</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Integrations</a></li>
-					<li><a href="#">Support</a></li>
-					<li><a href="#">Resources</a></li>
-				</ul>
-				<div class="nav-cta">
-					<a href="#" class="btn">Watch a Demo</a>
-				</div>
-			</div>
-			
-		</div>
-	</section>
-</div>
-<div class="clearfix" ></div>
-
-<!--Navigation Component Ends -->
 
 <!--Orion pricing cards component Start -->
 <section class="orion-global bg-white text-center pricing-section">
     <div class="layout-inner-wrap">
-        <h2 class="orion-block-title ">Our Plans </h2>
+        <h2 class="orion-block-title ">Our Plans <span class="orion_tooltip tooltip_pointer_right mb1"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></h2>
         <p class="mb3">Text that will explain that these are our base plans and they can be added upon by going to our calculator.</p>
         <div class="flex-wrap text-left div-px1">
             <div class="flex flex-item col-12 sm-col-6">	
@@ -60,7 +22,9 @@
                     <ul class="blue-check-list">
                         <li>500 daily executions</li>
                         <li>Option to add up to 6500 daily executions*</li>
-                        <li>BMC’s industry-leading Continuous Support</li>
+                        <li>BMC’s industry-leading Continuous Support
+						<span class="orion_tooltip tooltip_pointer_right"><span class="Tooltip-window">Execution: a scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span>
+						</li>
                     </ul>
                     <p><small>*If you need more than 6500 daily executions, you should consider our Enterprise Plan</small></p>
                 </div>
@@ -236,7 +200,132 @@
 		
 	</div>
 </section>
-
+<section class="horizontal-list section bg-white orion-global">
+   <div class="section-content">
+      <div class="upper-section">
+         <h2 class="orion-block-title">Pricing Model</h2>
+         <p>BMC Helix Control-M is a SaaS solution that provides you with the ability to pay for only what you need. Learn more about our offerings below. </p>
+      </div>
+      <hr>
+	  <!-- Item 1 -->
+      <div class="md-flex full-bleed-two-column pricing-horizontal-list">
+         <div class="flex-item col col-12 md-col-4 pxr1">
+            <h3>Production Environment: Start Plan</h3>
+            <h4>Annual Base Price:</h4>
+            <h3 id="nonProdBaseCost" class="big-price-text">$29,000</h3>
+            <a class="btn btn-gradient" href="/forms/contact-bmc.html">Contact Sales</a>
+         </div>
+         <div class="flex-item col col-12 md-col-8 pxr1">
+            <div class="flex-item col sm-col-6 col-12 md-col-6 pxr1">
+               <h5>Includes:</h5>
+               <ul class="blue-check-list">
+                  <li>500 daily executions*<span class="orion_tooltip">
+    <span class="Tooltip-window">Execution: scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions.</span></span></li>
+                  <li>Option to add up to 6,500 daily executions**</li>
+                  <li>BMC's industry-leading Continuous Support</li>
+               </ul>
+			   <p><small>*Executions are measured on a monthly basis and are based on a daily average. Customers exceeding 25,000 executions in a single day will be required to purchase an additional production instance to accommodate this volume.</small></p>
+               <p><small>**If you need more than 6,500 daily executions, contact our Sales experts to discuss the benefits of the Scale Plan.</small></p>
+            </div>
+            <div class="flex-item sm-col-6 col col-12 md-col-6 pxr1">
+               <h5>Additional Executions</h5>
+               <p>Add more executions to your Start Plan package in packs of 500, 1000, or 2000. Mix and match execution packs to meet your needs. </p>
+               <ul class="blue-check-list">
+                  <li>2000 additional daily executions: $23,300</li>
+                  <li>1000 additional daily executions: $14,560</li>
+                  <li>500 additional daily executions: $9,100</li>
+               </ul>
+			      
+            </div>
+         </div>
+      </div>
+      <hr>
+	 <!-- Item 2 -->
+      <div class="md-flex full-bleed-two-column pricing-horizontal-list">
+         <div class="flex-item col col-12 md-col-4 pxr1">
+            <h3>Production Environment: Scale Plan</h3>
+            <h4>Contact Sales for pricing details </h4>
+     
+            <a class="btn btn-gradient" href="/forms/contact-bmc.html">Contact Sales</a>
+         </div>
+         <div class="flex-item col col-12 md-col-8 pxr1">
+            <div class="flex-item col sm-col-6 col-12 md-col-6 pxr1">
+               <h5>Includes:</h5>
+               <ul class="blue-check-list">
+                  <li>Customizable daily execution* packages starting at 6,500 daily executions<span class="orion_tooltip">
+    <span class="Tooltip-window">Execution: scheduled job executed by the application. A single job may be “executed” multiple times per day and includes failed and successful job executions. </span></span> </li>
+                  <li>BMC's industry-leading Continuous Support </li>
+               </ul>
+			   <p><small>*Executions are measured on a monthly basis and are based on a daily average. Customers exceeding 25,000 executions in a single day will be required to purchase an additional production instance to accommodate this volume.</small></p>
+            </div>
+            <div class="flex-item sm-col-6 col col-12 md-col-6 pxr1">
+               <img src="https://www.bmc.com/content/dam/bmc/solutions/icons/icon-support-blue.svg"></img>
+               <h5>Contact us so we can help you build the right plan to meet your company's needs.</h5>
+            
+			</div>
+         </div>
+      </div>
+	  <hr>
+	 <!-- Item 3 -->
+	  <div class="md-flex full-bleed-two-column pricing-horizontal-list">
+         <div class="flex-item col col-12 md-col-4 pxr1">
+            <h3>Non-Production Environments</h3>
+            <h4>Annual Base Price:</h4>
+            <h3 id="nonProdBaseCost" class="big-price-text">$19,900</h3>
+            <a class="btn btn-gradient" href="/forms/contact-bmc.html">Contact Sales</a>
+			<p><small>You must purchase a production instance in order to purchase a non-production instance.</small></p>
+         </div>
+         <div class="flex-item col col-12 md-col-8 pxr1">
+            <div class="flex-item col sm-col-6 col-12 md-col-6 pxr1">
+               <h5>Includes:</h5>
+               <ul class="blue-check-list">
+                  <li>500 daily executions<span class="orion_tooltip">
+    <span class="Tooltip-window">Executions are measured separately from production</span></span></li>
+                  <li>One persistent non-production environment and one sandbox environment </li>
+                  <li class="px1">BMC's industry-leading Continuous Support <span class="orion_tooltip"><span class="Tooltip-window">No support for severity 1 issues.</span></span></li>
+               </ul>
+            
+            </div>
+            <div class="flex-item sm-col-6 col col-12 md-col-6 pxr1">
+               <h5>Additional Executions</h5>
+               <p>Add more executions to your non-production environments in packs of 500, 1000, or 2000. Mix and match execution packs to meet your needs.  </p>
+               <ul class="blue-check-list">
+                  <li>2000 additional daily executions: $11,650</li>
+                  <li>1000 additional daily executions: $7,280</li>
+                  <li>500 additional daily executions: $4,550</li>
+               </ul>
+			  
+            </div>
+         </div>
+      </div>
+	  
+	   <hr>
+	 <!-- Item 3 -->
+	  
+	  <div class="md-flex full-bleed-two-column pricing-horizontal-list">
+         <div class="flex-item col col-12 md-col-4 pxr1">
+            <h3>Sandbox Environments </h3>
+            <h4>Annual Base Price:</h4>
+            <h3 id="nonProdBaseCost" class="big-price-text">$12,000</h3>
+            <a class="btn btn-gradient" href="/forms/contact-bmc.html">Contact Sales</a>
+			<p><small>You must purchase a production and non-production instance in order to purchase additional sandbox instances.</small> </p>
+         </div>
+         <div class="flex-item col col-12 md-col-8 pxr1">
+            <div class="flex-item col sm-col-6 col-12 md-col-6 pxr1">
+               <h5>Includes:</h5>
+               <ul class="blue-check-list">
+                  <li>20,000 daily executions</li>
+                  <li>Fresh sand added weekly Data wiped weekly<span class="orion_tooltip"><span class="Tooltip-window">Data wiped weekly</span></span></li>
+                  <li class="px1">BMC's industry-leading Continuous Support<span class="orion_tooltip"><span class="Tooltip-window">No support for severity 1 issues.</span></span></li>
+               </ul>
+            
+            </div>
+           
+         </div>
+      </div>
+	   
+   </div>  
+</section>
 <section class="orion-CTA-banner orion-global" style="background-color:#FE5000;">
     <div class="layout-inner-wrap banner-area">
         <div class="image-bop"></div>  
