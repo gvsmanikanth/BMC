@@ -345,6 +345,7 @@
                         sling:resourceType="granite/ui/components/coral/foundation/include"
                         path="/mnt/override/apps/bmc/components/structure/page/tabs/advanced"/>
                     <resourceCenter
+                        cq:showOnCreate="{Boolean}false"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Resource Center"
                         sling:orderBefore="thumbnail"
