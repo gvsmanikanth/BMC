@@ -456,12 +456,12 @@ ResourceCenterFilters = {
     loadData: function () {
         var self = this,
         path = this.buildUrl();
-        // var target = window.location.origin;
-		// if(target.indexOf("localhost")!= -1){
-        //     path = 'http://localhost/front-end/Assets/src/templates/content.json';
-        // }else{ 
-        //     path = this.buildUrl();           
-        // }
+        var target = window.location.origin;
+		if(target.indexOf("localhost")!= -1){
+            path = 'http://localhost/front-end/Assets/src/templates/content.json';
+        }else{ 
+            path = this.buildUrl();           
+        }
         $.ajax({
             url: path,
             type: 'GET',
@@ -552,21 +552,10 @@ ResourceCenterFilters = {
             $('.rc-filter-panel-group ul.list-group-item.parent-filter').removeClass('rc-arrow-up');
             $('.rc-filter-panel-group ul.list-group-item.parent-filter').addClass('rc-arrow-down');
         }
-    }
+    },
     // WEB 6785 end
-};
-
-$(function() {
-  if ($('.rc-filter-component').length) {
-      ResourceCenterFilters.setFilterVisibility();
-      ResourceCenterFilters.init();
-  }
-});
-
-
-// Load More code for filters
-jQuery(document).ready(function ($) {      
-    $(function () {
+    // Load More code for filters - WEB-6686
+    rcReadMore: function (){        
         var x = 12; //Number of filters to display                  
         var filterGroupCount = $('.rc-filter-panel-group').length; 
         for(i=2; i<=filterGroupCount+2; i++){
@@ -624,7 +613,14 @@ jQuery(document).ready(function ($) {
                 $(this).parent().find('.readLess').css('display', 'none');
             }
             
-        });            
-    });
-    
+        }); 
+    }
+};
+
+$(function() {
+  if ($('.rc-filter-component').length) {
+      ResourceCenterFilters.setFilterVisibility();
+      ResourceCenterFilters.init();
+      ResourceCenterFilters.rcReadMore();
+  }
 });
