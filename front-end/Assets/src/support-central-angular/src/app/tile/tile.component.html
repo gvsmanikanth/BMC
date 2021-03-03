@@ -26,7 +26,7 @@
     </div>
   </div>
 </a>
-<a class="tile no-extend" [routerLink]=[widget.routerLink] (click)="checkExtended($event)" *ngIf="widget.routerLink && widget.personalized" (click)="sendTileClicks(widget.title)">
+<a class="tile" [routerLink]=[widget.routerLink] (click)="checkExtended($event)" [ngClass]="{'no-extend': !widget.isExtended}" *ngIf="widget.routerLink && widget.personalized" (click)="sendTileClicks(widget.title)">
   <div class="tile-left"></div>
   <div class="tile-body">
     <div class="tile-right">

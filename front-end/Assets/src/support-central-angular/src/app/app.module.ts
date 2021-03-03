@@ -27,6 +27,7 @@ import { CommunityService } from './shared/services/community/community.service'
 import { CommunityProductComponent } from './community/community-product/community-product.component';
 import { StateService } from './shared/services/state.service';
 import { ServicesAndConsultingComponent } from './services-and-consulting/services-and-consulting.component';
+import { GuidedTourComponent } from './guided-tour/guided-tour.component';
 
 const appRoutes: Routes = [
   {
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
     CommunityComponent,
     CommunityProductComponent,
     ServicesAndConsultingComponent,
+    GuidedTourComponent,
   ],
   imports: [
     BrowserModule,

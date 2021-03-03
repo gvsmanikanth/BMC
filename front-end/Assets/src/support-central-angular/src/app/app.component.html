@@ -12,7 +12,7 @@
 <div *ngIf="mobile" class="container">
   <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
     <app-tile *ngFor="let widget of widgets.slice(0, openedWidget + 1), let i = index" [widget]="widget"
-      [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)"></app-tile>
+      [ngClass]="{'extended': widget.isExtended}" (extended)="toggleExtended(i)" [id]="'tile' + i"></app-tile>
   </div>
   <div *ngIf="isExtendedOpen" @openCloseMobile class="mobile-widget-container">
     <div class="router-container">
@@ -22,6 +22,7 @@
   </div>
   <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
     <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"
-      (extended)="toggleExtended(i + openedWidget + 1)"></app-tile>
+      (extended)="toggleExtended(i + openedWidget + 1)" [id]="'tile' + i + openedWidget + 1" ></app-tile>
   </div>
 </div>
+<app-guided-tour></app-guided-tour>

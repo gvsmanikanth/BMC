@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { CommunityService } from '../shared/services/community/community.service';
 import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 import { StateService } from '../shared/services/state.service';
@@ -8,7 +8,7 @@ import { StateService } from '../shared/services/state.service';
   templateUrl: './community.component.html',
   styleUrls: ['./community.component.scss']
 })
-export class CommunityComponent implements OnInit {
+export class CommunityComponent implements OnInit, OnDestroy {
 
   DESCRIPTION_LOGGED_IN = 'Suggested community content based on your favorite products and recent activity';
   DESCRIPTION_NON_LOGGED_IN = 'Suggested community content based on product popularity'
@@ -28,6 +28,7 @@ export class CommunityComponent implements OnInit {
     } else {
       this.widgetDescription = this.DESCRIPTION_NON_LOGGED_IN
     }
+    this.state.communitiesOpened$.next(true);
   }
 
   sendCommunity(name: string) {
@@ -38,4 +39,7 @@ export class CommunityComponent implements OnInit {
     this.ga.sendEvent('accordion', name, 'community');
   }
 
+  ngOnDestroy () {
+    this.state.communitiesOpened$.next(false);
+  }
 }
