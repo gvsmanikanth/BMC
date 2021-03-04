@@ -102,10 +102,10 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Batch Impact Manager"
             dropDownDisplay="No"/><!-- WEB-5296 -->
-    <!-- WEB-6680 Changed name Control-M for Hadoop to Control-M for DevOps  -->
+    <!-- WEB-6680 Changed name Control-M for Hadoop to Control-M for Bigdata  -->
     <_x0034_14177221
             jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M for DevOps"
+            jcr:title="Control-M for Big Data"
             dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0032_65389868
             jcr:primaryType="nt:unstructured"

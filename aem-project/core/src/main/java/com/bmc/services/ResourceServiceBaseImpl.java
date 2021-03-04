@@ -79,7 +79,10 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "All",
                     "All PL Products",
                     "Product Interest",
-                    "Customer Stories"
+                    "Customer Stories",
+                    "Footprints Service Core",
+                    "Articles/Blogs",
+                    "Events"
             })
     static final String UNWANTED_FILTER_MAPPING = "unwanted.filterOptions.mapping";
     private List<String> unwantedFilterMapping;
