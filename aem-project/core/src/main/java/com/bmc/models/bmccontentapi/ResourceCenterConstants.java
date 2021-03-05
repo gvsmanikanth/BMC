@@ -37,4 +37,5 @@ public class ResourceCenterConstants {
     public static final String [] IC_PERSONAS_CUSTOM_LIST = new String[]{"C-Level", "Vice President", "Director", "Manager", "IT Professional", "Business Professional (non-IT)"};
     public static final String [] IC_COMPANY_SIZE_CUSTOM_LIST = new String[]{"5000+","1000-4999","1-999"};
     public static final String PRODUCT_INTEREST_ALl_VALUE = "189379811";
+    public static final String [] FILTERS_CUSTOM_LIST = new String[] {"ic-content-type","product_interest","ic-topics","ic-target-industry","ic-company-size","ic-target-persona","ic-buyer-stage","topics"};
 }

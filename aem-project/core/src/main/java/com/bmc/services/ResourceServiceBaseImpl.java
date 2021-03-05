@@ -180,7 +180,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     it does this by looking up the each value in the arraylist against the values in the HashMap
     to create a sorted list.
      */
-    public static Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
+
+    public  Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
         ArrayList<String> unsortedList = new ArrayList<>();
         ArrayList<String> sortedList = new ArrayList();
         Map<String,String> sortedMap = new LinkedHashMap<> ();
@@ -213,7 +214,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     Explanation : helper class to lookup each value in List against the provided value
     and return the value once found.
      */
-    public static String getPropertyOptionIfFound(List <String> list, String value){
+    public String getPropertyOptionIfFound(List <String> list, String value){
         for(String optionValue : list){
             if(optionValue.equalsIgnoreCase(value)){
                 return optionValue;
