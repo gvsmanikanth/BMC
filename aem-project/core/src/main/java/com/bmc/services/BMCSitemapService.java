@@ -90,12 +90,20 @@ public class BMCSitemapService {
 	}
 	private boolean isHiddenParentFolder(Page page) {
 
+		boolean flag = false;
 		try {
-			InheritanceValueMap inheritedProp = new HierarchyNodeInheritanceValueMap(page.getContentResource());
-			return inheritedProp.getInherited("hideAllChildPages", false);
+			boolean isProperty=page.getProperties().get("hideAllChildPages", false);
+			if(!isProperty) {
+				InheritanceValueMap inheritedProp = new HierarchyNodeInheritanceValueMap(page.getContentResource());
+				flag = flag || inheritedProp.getInherited("hideAllChildPages", false);
+				
+			}
+			
 		}catch(Exception e) {
+			log.error("Error getting hideAllChildPages Property from parent pages {}" , e.getMessage());
 			return false;
 		}
+		return flag;
 	}
 	private boolean isHiddenByPageTemplate(Page page) {
 		boolean flag = false;
