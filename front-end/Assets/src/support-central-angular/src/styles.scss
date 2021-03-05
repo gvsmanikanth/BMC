@@ -217,3 +217,18 @@ div.introjs-tooltip {
   width: 400px;
   max-width: 400px;
 }
+
+@media(max-width: 500px) {
+  div.introjs-tooltip {
+    width: 95vw;
+    max-width: 500px;
+    margin-left: 0!important;
+    left: 0!important;
+  }
+  div.introjs-tooltipReferenceLayer {
+    left: 2vw!important;
+  }
+  div.introjs-arrow {
+    display: none!important;
+  }
+}

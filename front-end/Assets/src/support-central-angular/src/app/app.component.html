@@ -22,7 +22,7 @@
   </div>
   <div class="mobile-tile-block" [ngClass]="{'extended': isExtendedOpen}">
     <app-tile *ngFor="let widget of widgets.slice(openedWidget + 1), let i = index" [widget]="widget"
-      (extended)="toggleExtended(i + openedWidget + 1)" [id]="'tile' + i + openedWidget + 1" ></app-tile>
+      (extended)="toggleExtended(i + openedWidget + 1)" [id]="'tile' + (i + +openedWidget + 1)" ></app-tile>
   </div>
 </div>
 <app-guided-tour></app-guided-tour>
