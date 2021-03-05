@@ -80,7 +80,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "All PL Products",
                     "Product Interest",
                     "Customer Stories",
-                    "Footprints Service Core",
+                    "FootPrints Service Core",
                     "Articles/Blogs",
                     "Events"
             })
