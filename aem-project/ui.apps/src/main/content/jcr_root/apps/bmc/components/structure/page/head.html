@@ -66,8 +66,12 @@
     <!--/* WEB-5625 Conditional indexing for thank-you pages on forms START */-->
     <!--/* WEB-9728 Updated logic for non indexing of non prod pages START */-->
     <sly data-sly-use.runmode="com.bmc.models.RunModes" />
-    <meta data-sly-test="${(runmode.mode != 'prod') || (templateName == 'form-thank-you') || (templateName == 'form-thank-you2')}" name="robots" content="noindex, nofollow" >
-    <meta data-sly-test="${(runmode.mode == 'prod') && (templateName != 'form-thank-you2') && (templateName != 'form-thank-you')}" name="robots" content="index, follow">
+    <sly data-sly-use.multiItems="com.bmc.models.sitemap.SitemapMetaProperty">
+     <meta data-sly-test="${ (multiItems.pageproperty) || (multiItems.pagetemplate)||(multiItems.parentproperty)}" name="robots" content="noindex, nofollow" >
+     <meta data-sly-test="${ (!multiItems.pageproperty) && (!multiItems.pagetemplate)&&(!multiItems.parentproperty)}" name="robots" content="index, follow">
+    </sly>
+    <!--/*<meta data-sly-test="${(runmode.mode != 'prod') || (templateName == 'form-thank-you') || (templateName == 'form-thank-you2')}" name="robots" content="noindex, nofollow" >
+    <meta data-sly-test="${(runmode.mode == 'prod') && (templateName != 'form-thank-you2') && (templateName != 'form-thank-you')}" name="robots" content="index, follow"> */-->
     <!--/* WEB-9728 Updated logic for non indexing of non prod pages END */-->
     <!--/* WEB-5625 Conditional indexing for thank-you pages on forms END */-->
     <sly data-sly-include="head.socialmedia.html"></sly>
