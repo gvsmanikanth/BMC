@@ -83,9 +83,13 @@ public class ResourceCenterFeaturedCardModel {
                 //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
                 BmcMetadata contentType = getContentTypeMeta(metadata);
-                String type = resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue());
-                String linkType = resourceCenterService.getContentTypeActionValue(contentType.getFirstValue());
+                String type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                String linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
                 String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+
+                if(type.equalsIgnoreCase("Videos")) {
+                    assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
+                }
                 if(type.equalsIgnoreCase("Webinar")){
                     assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
                 }

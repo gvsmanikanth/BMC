@@ -523,7 +523,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String ctaText = type != null ? generateCTA(type) : "";
                         // set video ID
                         if(type.equalsIgnoreCase("Videos")) {
-                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
+                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
                         }
                         if(type.equalsIgnoreCase("Webinar")){
                             assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
