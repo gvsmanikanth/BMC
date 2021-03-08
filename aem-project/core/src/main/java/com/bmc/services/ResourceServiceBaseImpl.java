@@ -76,14 +76,14 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "XPL",
                     "TrueSight Pulse",
                     "Release Lifecycle Management",
-                    "TrueSight Intelligence",
                     "All",
                     "All PL Products",
                     "Product Interest",
                     "Customer Stories",
                     "FootPrints Service Core",
                     "Articles/Blogs",
-                    "Events"
+                    "Events",
+                    "TrueSight Intelligence"
             })
     static final String UNWANTED_FILTER_MAPPING = "unwanted.filterOptions.mapping";
     private List<String> unwantedFilterMapping;
