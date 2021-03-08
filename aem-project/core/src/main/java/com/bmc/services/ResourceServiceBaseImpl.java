@@ -76,6 +76,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "XPL",
                     "TrueSight Pulse",
                     "Release Lifecycle Management",
+                    "TrueSight Intelligence",
                     "All",
                     "All PL Products",
                     "Product Interest",
