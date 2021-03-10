@@ -15,7 +15,6 @@
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-gartner-blue' ? '#006699' : fcBgColor}"/>
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-forrester-green' ? '#16563F' : fcBgColor}"/>
 
-<sly data-sly-test.headerIcon="${featuredCard.type == 'Trial' ? 'trial' : featuredCard.linkType}"/>
 <sly data-sly-test.footerIcon="${featuredCard.type == 'Trial' ? 'view' : featuredCard.linkType}"/>
 <sly data-sly-test.footerIcon="${featuredCard.type == 'Webinar' ? 'view' : footerIcon}"/>
 
@@ -83,7 +82,7 @@
                     <div class="featured-card featured-card-right-panel ${properties.bgColor} card-mobile" style="height: 310px;">
                         <div class="card-header" style="background: url(${fbImg @ context='uri'}) no-repeat top left / cover;background-size: contain;min-height: 10%;">
                             <h3 class="text-white">${featuredCard.type}</h3>
-                            <div class="card-icon ic_${headerIcon}-white"></div>
+                            <div class="card-icon ic_${featuredCard.linkType}-white"></div>
                         </div>
                         <div class="card-content">
                             <hr/>

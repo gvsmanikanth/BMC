@@ -94,7 +94,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
-            "ic-type-920200003, Trial, play",
+            "ic-type-920200003, Trial, trial",
             "ic-type-185980791, Videos, play",
             "ic-type-291550317, Webinar, play",
             "ic-type-546577064, White Paper, view",

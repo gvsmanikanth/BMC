@@ -10,16 +10,12 @@
             <div class="simple-card bg-white" style="height: 310px;">
                 <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
                     <h4>{{type}}</h4>
-                    {{#ifCond type '===' "Trial"}}
-                        <div class="card-icon ic_trial" alt border="0"></div>
+                    {{#if thumbnail}}
+                        <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
+                        </div>
                     {{else}}
-                        {{#if thumbnail}}
-                            <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
-                            </div>
-                        {{else}}
-                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                        {{/if}}
-                    {{/ifCond}}
+                        <div class="card-icon ic_{{linkType}}" alt border="0"></div>
+                    {{/if}}
                 </div>
                 <div class="card-content">
                     <hr/>
