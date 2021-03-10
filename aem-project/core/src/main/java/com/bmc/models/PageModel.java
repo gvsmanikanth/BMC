@@ -219,8 +219,9 @@ public class PageModel {
         
         String[] topics = resourcePage.getContentResource().getValueMap().get("topics", new String[] {});
         String topicsList = Arrays.stream(topics).map(s -> getTopicsValue(s)).collect(Collectors.joining("|"));
-      
-        String ic_app_inclusion = resourcePage.getProperties().getOrDefault("ic-app-inclusion","").toString();
+
+        //WEB-9765 Removing redundant IC Fields
+        //String ic_app_inclusion = resourcePage.getProperties().getOrDefault("ic-app-inclusion","").toString();
         //String ic_app_inclusion_list = Arrays.stream(ic_app_inclusion).map(s -> getIC_app_inclusion_Value(s)).collect(Collectors.joining("|"));
         
         String[] ic_content_type = resourcePage.getContentResource().getValueMap().get("ic-content-type", new String[] {});
@@ -262,8 +263,8 @@ public class PageModel {
         bmcMeta.getPage().setProductCategories(productsList);
         bmcMeta.getPage().setProductLineCategories(linesList);
         bmcMeta.getPage().setTopicsCategories(topicsList);
-        
-        bmcMeta.getPage().getIc().setAppInclusion(ic_app_inclusion);
+        //WEB-9765 Removing redundant IC Fields.
+        //bmcMeta.getPage().getIc().setAppInclusion(ic_app_inclusion);
         bmcMeta.getPage().getIc().setContentType(ic_content_type_list);
         bmcMeta.getPage().getIc().setWeighting(ic_weighting);
         bmcMeta.getPage().getIc().setContentMarketTopics(ic_topics_list);

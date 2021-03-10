@@ -92,7 +92,8 @@ public class FormsReportCSVGenService {
 
     
     private String[] TableNames = {"Page URL","Page Created Date","Page Created By","Page Last Modified date","Page Last modified by","Last Replication Action","Form Type","Business Unit","Form Action","Form Action Type","Email Subject Line","BMC Email Notification Recipient","Shared Contact List ID","Program Step ID",
-    		"EmailID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner ID","Contact me ","Experience Fragment path"};
+    		"Email ID","Eloqua Campaign Id","Campaign ID","External Asset Name","External Asset Type","External Asset Activity","Force Opt in","Content Preferences","PURL Page URL","Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line","LMA License","Lead Offer Most Recent","AWS Trial",
+			"Assign to Owner ID","Contact me","Experience Fragment path","RC Inclusion","Asset Inclusion","Rc Form Path"};
 	
 	 /*
 	  	* generateReport()
@@ -212,6 +213,11 @@ public class FormsReportCSVGenService {
 								            	 formDataitem.setBMC_Email_Notification_Recipient(getPropertyValues(formNode, "recipient","recipient","recipient",session));
 								            	 formDataitem.setShared_Contact_List_ID(getPropertyValues(formNode, "sharedlistid","sharedlistid","sharedlistid",session));
 								            	 formDataitem.setProgram_Step_ID(getPropertyValues(formNode, "programstepid","programstepid","programstepid",session));
+												//WEB-9765 Adding RC fields and removing redundant IC field -- START.
+												// reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+												formDataitem.setRc_inclusion (getPropertyValues(formJcrNode, "rc-inclusion","rc-inclusion","rc-inclusion", session));
+												formDataitem.setAsset_inclusion (getPropertyValues(formJcrNode, "asset-inclusion","asset-inclusion","asset-inclusion", session));
+												formDataitem.setRc_form_path (getPropertyValues(formJcrNode, "rc-form-path","rc-form-path","rc-form-path", session));
 								            	 list.add(formDataitem);
 						                 
 						                 }
@@ -254,7 +260,8 @@ public class FormsReportCSVGenService {
 				list.get(i).getEmail_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getCampaign_ID(),list.get(i).getExternal_Asset_Name(),list.get(i).getExternal_Asset_Type(),
 				list.get(i).getExternal_Activity(),list.get(i).getForceOptIn(),list.get(i).getForm_Content_Preferences(),list.get(i).getPageURL(),
 				list.get(i).getActivePURLPattern(),list.get(i).getActivePURLRedirect(),list.get(i).getProduct_Interest(),list.get(i).getProduct_Line(),list.get(i).getLMA_License(),
-				list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getAWS_trial(), list.get(i).getC_Assign_to_Owner(), list.get(i).getC_Contact_Me1(),list.get(i).getExpFgmtPath()});
+				list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getAWS_trial(), list.get(i).getC_Assign_to_Owner(), list.get(i).getC_Contact_Me1(),list.get(i).getExpFgmtPath(),
+				list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),list.get(i).getRc_form_path () });
 			}
 			 logger.info("Creating the EXCEL sheet");
 			//Iterate over data and write to sheet
