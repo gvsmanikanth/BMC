@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DocsService } from '../shared/services/docs.service';
 import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
 import { StateService } from '../shared/services/state.service';
@@ -8,7 +8,7 @@ import { StateService } from '../shared/services/state.service';
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.scss']
 })
-export class DocsComponent implements OnInit {
+export class DocsComponent implements OnInit, OnDestroy {
 
   DESCRIPTION_LOGGED_IN = 'Suggested documentation based on your favorite products and recent activity';
   DESCRIPTION_NON_LOGGED_IN = 'Suggested documentation based on product popularity'
@@ -23,6 +23,7 @@ export class DocsComponent implements OnInit {
 
   ngOnInit() {
     this.docsService.loadDocs();
+    this.state.documentationOpened$.next(true);
     if (this.state.user.loggedIn === 'true') {
       this.widgetDescription = this.DESCRIPTION_LOGGED_IN
     } else {
@@ -36,5 +37,9 @@ export class DocsComponent implements OnInit {
 
   sendAccordion(name: string) {
     this.ga.sendEvent('accordion', name, 'Documentation');
+  }
+
+  ngOnDestroy() {
+    this.state.documentationOpened$.next(false);
   }
 }
