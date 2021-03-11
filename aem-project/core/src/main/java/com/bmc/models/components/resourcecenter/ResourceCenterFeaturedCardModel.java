@@ -68,39 +68,44 @@ public class ResourceCenterFeaturedCardModel {
     @PostConstruct
     public void init() {
         try {
+
             if (path != null) {
                 Resource resource = resourceResolver.getResource(path);
-                Node node = resource.adaptTo(Node.class);
-                Node parentNode = node.getParent();
-                String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : resource.getPath();
-                String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
-                String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
-                String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
-                Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
-                String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
-                String assetLink = path;
-                String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
-                //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
                 BmcMetadata contentType = getContentTypeMeta(metadata);
-                String type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
-                String linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
-                String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                if(contentType != null) {
+                    Node node = resource.adaptTo(Node.class);
+                    Node parentNode = node.getParent();
+                    String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT) ? parentNode.getPath() : resource.getPath();
+                    String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                    String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
+                    String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
+                    Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                    String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                    String assetLink = path;
+                    String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                    //  metadata
+                    String type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                    String linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
+                    String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
 
-                if(type.equalsIgnoreCase("Videos")) {
-                    assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
+                    if (type.equalsIgnoreCase("Videos")) {
+                        assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
+                    }
+                    if (type.equalsIgnoreCase("Webinar")) {
+                        assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                    }
+                    if (gatedAsset && formPath != null && isFormActive(formPath)) {
+                        assetLink = formPath;
+                    }
+                    if (!assetLink.startsWith("http")) {
+                        assetLink = resourceResolver.map(assetLink);
+                    }
+                    card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata, ctaText);
+                    analiticData = buildAnaliticData();
+                }else{
+                    log.info("BMCINFO : IC Content Type value not set for the path : "+path+". Card will be ignored!");
                 }
-                if(type.equalsIgnoreCase("Webinar")){
-                    assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
-                }
-                if(gatedAsset && formPath != null && isFormActive(formPath)){
-                    assetLink = formPath;
-                }
-                if (!assetLink.startsWith("http")) {
-                    assetLink = resourceResolver.map(assetLink);
-                }
-                card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText);
-                analiticData = buildAnaliticData();
             }
         } catch (Exception e) {
             log.error("An exception has occured while adding hit to response with resource: " + path
