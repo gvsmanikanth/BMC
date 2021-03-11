@@ -627,9 +627,9 @@
                                                                                 {{#each items}}                                                                                
                                                                                 <div class="rc-card-col">                                                                                           
                                                                                     {{#ifCond type '===' "Videos"}}
-                                                                                    <a class="rc-card-modal-youtube-video-player {{isVideoModal assetLink}}" href="{{assetLink}}" target="{{addTarget assetLink}}" {{{analyticsAttributes}}}>
+                                                                                    <a class="{{isVideoModal assetLink}}" href="{{assetLink}}" target="{{addTarget assetLink}}" {{{analyticsAttributes}}}>
                                                                                         {{else}}
-                                                                                        <a href="{{assetLink}}" target="{{addTarget assetLink}}" class="{{isVideoModal assetLink}}"  {{{analyticsAttributes}}}>
+                                                                                        <a href="{{assetLink}}" target="{{addTarget assetLink}}" {{{analyticsAttributes}}}>
                                                                                             {{/ifCond}}
                                                                                             <div class="simple-card bg-white">
                                                                                                 <!-- WEB-6793 Added new fields for RC Cards START -->

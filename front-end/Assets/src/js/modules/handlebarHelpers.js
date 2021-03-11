@@ -28,7 +28,7 @@ HandlebarHelpers = {
             return HandlebarHelpers.truncateText(text, chars);
         });
         Handlebars.registerHelper('isVideoModal', function(assetLink) {              
-            return (assetLink.includes('?vID=')) ? 'modal-youtube-video-player' : '';                               
+            return (assetLink.includes('?vID=')) ? 'rc-card-modal-youtube-video-player' : '';                               
         });
         Handlebars.registerHelper("addTarget", function(url) {                   
             var extValid = new RegExp('/'+window.location.host+'/');
