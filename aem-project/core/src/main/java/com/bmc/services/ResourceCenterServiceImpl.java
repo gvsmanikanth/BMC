@@ -265,8 +265,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * */
 
     private void buildGroupPredicate(String propertyName, List<String> values, Map<String, String> queryParamsMap, int groupIndex) {
-    	queryParamsMap.put(groupIndex + "_group.p.or", "true");
-    	
+    	if(propertyName.equalsIgnoreCase(ResourceCenterConsts.RC_INCLUSION))
+        {
+            queryParamsMap.put(groupIndex + "_group.p.and", "true");
+        }else{
+            queryParamsMap.put(groupIndex + "_group.p.or", "true");
+        }
     	int i = 1;
 		for(String value : values) {
 			// Example: 1_group.1_property=jcr:content/ic-content-type
@@ -303,8 +307,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
         	// Build predicate for rc-inclusion
-        	 String[] allowedInclusionValues = {"true"};
+            String[] allowedInclusionValues = {"true"};
             buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
+            //remove empty ic-content-types from result set
+            if(urlParameters.get(ResourceCenterConsts.IC_CONTENT_TYPE) == null){
+                buildContentTypePredicates(queryParamsMap,predicateIndex);
+            }
             int i = 2;
             // check if any of the supported properties are present in the URL
             //WEB-9267 Added "All" & "All PL Products" to all filter category- START
@@ -420,6 +428,19 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
         
         return predicateIndex;
+    }
+
+    /**
+     * @param queryParamsMap
+     * @param groupIndex
+     * @return
+     */
+    private void buildContentTypePredicates(Map<String, String> queryParamsMap, int groupIndex) {
+        int i = 2;
+        // Example: 1_group.1_property=jcr:content/ic-content-type
+        queryParamsMap.put(groupIndex + "_group." + i + "_property", "jcr:content/" + ResourceCenterConsts.IC_CONTENT_TYPE);
+        // Exampe: 1_group.1_property.value=ic-type-196363946
+        queryParamsMap.put(groupIndex + "_group." + i + "_property.operation", ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_EXISTS);
     }
 
     /**
