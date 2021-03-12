@@ -616,7 +616,16 @@ ResourceCenterFilters = {
             }
             
         }); 
+    },
+
+    addVideoModalClass: function (){
+        if ($('#rc-featured-card-link').length > 0) {
+            var cardLink = $('#rc-featured-card-link').attr('href');
+            var className = (cardLink.includes('?vID=')) ? 'rc-card-modal-youtube-video-player' : ''
+            $('#rc-featured-card-link').addClass(className);
+        }        
     }
+    
 };
 
 $(function() {
@@ -624,5 +633,6 @@ $(function() {
       ResourceCenterFilters.setFilterVisibility();
       ResourceCenterFilters.init();
       ResourceCenterFilters.rcReadMore();
+      ResourceCenterFilters.addVideoModalClass();
   }
 });
