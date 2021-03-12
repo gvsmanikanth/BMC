@@ -2,11 +2,7 @@
     <div class="rc-card-row">
         {{#each items}}
         <div class="rc-card-col">
-            {{#ifCond type '===' "Videos"}}
-                <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" {{{analyticsAttributes}}}>
-            {{else}}
-                <a href="{{assetLink}}" {{{analyticsAttributes}}}>
-            {{/ifCond}}
+            <a class="{{isVideoModel assetLink}}" target="{{addTarget assetLink}}"href="{{assetLink}}" {{{analyticsAttributes}}}>
             <div class="simple-card bg-white" style="height: 310px;">
                 <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
                     <h4>{{type}}</h4>

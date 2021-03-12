@@ -45,7 +45,7 @@
         </div>
         <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
             <div class="rc-featured-card-col">
-                <a class="${featuredCard.type == 'Videos' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
+                <a id="rc-featured-card-link" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
                     <div class="featured-card-container">
                         <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
@@ -65,7 +65,7 @@
                         </div>
                         <div class="featured-card featured-card-right-panel ${properties.bgColor} card-desktop" style="height: 310px;">
                             <div class="card-header">
-                                <div class="card-icon ic_${headerIcon}-white"></div>
+                                <div class="card-icon ic_${featuredCard.linkType}-white"></div>
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
                             <div class="featured-card-footer" style="padding-left: 0px;">
