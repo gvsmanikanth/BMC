@@ -25,6 +25,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
+import com.bmc.consts.ReportsConsts;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -71,45 +72,39 @@ public class ExperienceFgmtReportCSVGenService {
 	@Reference
 	private ResourceResolverFactory resolverFactory;
 	 
-	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
+	private ReportsMetaDataProvider metaDataProvider = new ReportsMetaDataProvider();
 	
 	private  Workbook workbook;
 	
 	@Reference
     private QueryBuilder builder;
-	
-	
-	private String DAM_LOCATION = "/content/dam/bmc/reports/";
 
 	
     private static  ArrayList<ExperienceFragmentReportDataItem> list = new ArrayList<ExperienceFragmentReportDataItem>();
-       
-    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
 
-	
-    private String[] TableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date"
-    		,"References"};
-	
+
 	 /*
 	    * Retrieves forms data from the JCR at /content/experience-fragments/bmc
 	    * The filter argument specifies one of the following values:
-	    *    
+	    *
 	    *
 	    * The report argument specifies whether to generate a custom report based on the Result Set
 	    */
-	    public Workbook generateDataReport(Boolean report,String fileName,String folder) {
+	    public Workbook generateDataReport(Boolean isReportEnabled,String fileName,String folderName) {
 	    	try
-	    	{	    		
-	    		//Fetch the data from forms 
-	    			 list  = getJCRGenericData(folder);
-	             //If user selected a custom report -- generate the report and store it in the JCR
-	             
-	            	 logger.info("If REport is true");
-	                  String damFileName = fileName +".xls" ;
-	                  workbook = write(); 	
-	                  
-	                             
-	    	}	     
+	    	{
+					String damFileName = fileName +".xls" ;
+					if(folderName.contains ("forms"))
+					{
+						list = fetchXFFormsJCRData (folderName);
+						if (isReportEnabled) workbook = writeToWorkBook2 ();
+					}
+					else
+					{
+						list = fetchXFGenericJCRData (folderName);
+						if (isReportEnabled) workbook = writeToWorkBook1 ();
+					}
+	    	}
 	   catch(Exception e)
 	       {
 	        e.printStackTrace();
@@ -125,9 +120,10 @@ public class ExperienceFgmtReportCSVGenService {
      * IT takes the Root folder path as the only argument- Type-String
      * 
      */
-	public ArrayList<ExperienceFragmentReportDataItem> getJCRGenericData(String folder) {							 
+	public ArrayList<ExperienceFragmentReportDataItem> fetchXFGenericJCRData(String folder) {
 						try 
-							{ 			
+							{
+								logger.info("FOLDER NAME "+folder);
 								//Invoke the adaptTo method to create a Session 
 								Map<String, Object> param = new HashMap<String, Object>();
 								param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
@@ -135,35 +131,35 @@ public class ExperienceFgmtReportCSVGenService {
 								try {
 										resourceResolver = resolverFactory.getServiceResourceResolver(param);									
 									} catch (Exception e) {
-											logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+											logger.error("BMC ERROR : Report ResourceResolverFactory Error: " + e.getMessage());
 									}
 								Session session = resourceResolver.adaptTo(Session.class); 													
 								Resource resource = resourceResolver.getResource(folder);														
 								if(resource != null)
 									    {
 							    		
-							        	Map<String,String> map = createQuery(folder);
+							        	Map<String,String> map = createQuery (folder);
 							        	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
 							             SearchResult result = query.getResult();							            
 							            		 for (Hit hit : result.getHits()) {
 							            			 ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();  
 							            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);
-							            	 			//Node fieldSetNode = getExpFragmentFieldSet(metadataProvider.getExperiencefgmtPath(reportDataNode), session);         	 			
-							            	 			reportDataItem.setExp_Fragment_Name(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
-							            	 			reportDataItem.setLastModifiedBy(getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
-							            	 			reportDataItem.setLastModifiedDate(getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
-							            	 			reportDataItem.setCreated_Date(getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
-							            	 			reportDataItem.setExp_Fragment_URL(metadataProvider.getExperiencefgmtPath(reportDataNode));							            	 									            	 			
-							            	 			reportDataItem.setReferencePaths(getExpFragmentLinks(metadataProvider.getExperiencefgmtPath(reportDataNode), session));
+							            	 			//Node fieldSetNode = getExpFragmentFieldSet(metaDataProvider.getExperiencefgmtPath(reportDataNode), session);         	 			
+							            	 			reportDataItem.setExp_Fragment_Name(metaDataProvider.getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
+							            	 			reportDataItem.setLastModifiedBy(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
+							            	 			reportDataItem.setLastModifiedDate(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
+							            	 			reportDataItem.setCreated_Date(metaDataProvider.getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
+							            	 			reportDataItem.setExp_Fragment_URL(metaDataProvider.getExperiencefgmtPath(reportDataNode));
+							            	 			reportDataItem.setReferencePaths(getExpFragmentLinks(metaDataProvider.getExperiencefgmtPath(reportDataNode), session));
 							            	 		
 							            	 			list.add(reportDataItem);
 						                 }
 							            		 
-						        logger.info("List Size of forms"+list.size());
+						        logger.info("BMC INFO : Total no of XF found are "+list.size());
 						        	
 						    }
 					
-					}catch(Exception ex){ex.printStackTrace();}
+					}catch(Exception ex){logger.error("BMC Error : Error occurred while fetching JCR Data "+ex);}
 						//set the values to the careers Data item and return.
 					return list;
 		}
@@ -200,18 +196,15 @@ public class ExperienceFgmtReportCSVGenService {
 	     * 
 	     * 
 	     */		
-		 public Workbook write() throws IOException 
+		 public Workbook writeToWorkBook1() throws IOException
 		 {
-			 logger.info("Generating the Report");
-			//Blank workbook
-				XSSFWorkbook workbook = new XSSFWorkbook(); 
-				
+				XSSFWorkbook workbook = new XSSFWorkbook();
 				//Create a blank sheet
 				XSSFSheet sheet = workbook.createSheet("ReportingData");
 				 
 				//This data needs to be written (Object[])
 				Map<String, Object[]> data = new TreeMap<String, Object[]>();
-				data.put("1", TableNames);					
+				data.put("1", ReportsConsts.XFReportTableNames);
 				for(int i=2;i<list.size();i++)
 				{
 					Integer count = i; 
@@ -239,7 +232,8 @@ public class ExperienceFgmtReportCSVGenService {
 				}
 				 return workbook;    
 		 }
-		 
+
+
 		 /*
 		  * This method generates a custom Predicate based on user input.
 		  */
@@ -251,10 +245,10 @@ public class ExperienceFgmtReportCSVGenService {
 		     map.put("path", folderSelection);
 		     map.put("type", "nt:unstructured");
 		     map.put("property.hits", "full");
-		     map.put("property.depth", "3");
+		     map.put("property.depth", "5");
 		     map.put("orderby", "@jcr:content/jcr:lastModified");
 		     map.put("p.offset", "0");
-		     map.put("p.limit", "1"); 	    
+		     map.put("p.limit", "1000");
 		     map.put("property", "sling:resourceType"); //the property to check for
 		     map.put("property.operation", "equals"); // or like or like etc..
 		     map.put("property.value", "bmc/components/content/customer-spotlight"); 	
@@ -273,8 +267,29 @@ public class ExperienceFgmtReportCSVGenService {
 		     return map;
 		     // can be done in map or with Query methods	        
 		 }
-		  
-	
+
+	/*
+	 * This method generates a custom Predicate based on user input.
+	 */
+	public Map<String,String> createFormFielset(String folderSelection)
+	{
+		// create query description as hash map (simplest way, same as form post)
+		Map<String, String> map = new HashMap<String, String>();
+		// create query description as hash map (simplest way, same as form post)
+		map.put("path", folderSelection);
+		map.put("type", "nt:unstructured");
+		map.put("property.hits", "full");
+		map.put("property.depth", "3");
+		map.put("orderby", "@jcr:content/jcr:lastModified");
+		map.put("p.offset", "0");
+		map.put("p.limit", "1");
+		//For form fielsets and Customer Spptlight experience fargment
+		map.put("property", "sling:resourceType"); //the property to check for
+		map.put("property.operation", "equals"); // or like or like etc..
+		map.put("property.value", "bmc/components/forms/field-set");
+		return map;
+		// can be done in map or with Query methods
+	}
 	 /*
 	  * This method generates a custom Predicate based on user input.
 	  */
@@ -283,7 +298,7 @@ public class ExperienceFgmtReportCSVGenService {
 		 // create query description as hash map (simplest way, same as form post)
 	     Map<String, String> map = new HashMap<String, String>();	    
 	     // create query description as hash map (simplest way, same as form post)	     
-	     map.put("path", "/content/bmc/us/en");
+	     map.put("path", "/content/bmc/language-masters");
 	     map.put("fulltext", path);
 	     map.put("orderby", "@jcr:content/jcr:lastModified");
 	     map.put("p.offset", "0");
@@ -292,7 +307,8 @@ public class ExperienceFgmtReportCSVGenService {
 	     // can be done in map or with Query methods
 	    
 	 }
-	 
+
+
 	 /*
 	  * createJSON()
 	  * This method generates a JSON from the list of FormReportDataItem. 
@@ -317,9 +333,10 @@ public class ExperienceFgmtReportCSVGenService {
 	  * AssetManager API is used to carry the DAM save.
 	  */
 	 public String writeExceltoDAM(Workbook workbook,String reportName)throws IOException{
-			logger.info("Saving the file in the DAM");
+		 	String filename = reportName+"_" + metaDataProvider.getCurrentDate ()+".xls";
 			//Invoke the adaptTo method to create a Session 
 			Map<String, Object> param = new HashMap<String, Object>();
+			String newFile = null;
 			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
 			ResourceResolver resourceResolver = null;
 			try {
@@ -328,7 +345,6 @@ public class ExperienceFgmtReportCSVGenService {
 			catch (Exception e) {
 					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
 					}
-				String filename = getFileName(reportName)+".xls";			    
 			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 			  
 			    try {
@@ -336,7 +352,7 @@ public class ExperienceFgmtReportCSVGenService {
 			        workbook.write(bos);
 			        byte[] barray = bos.toByteArray();
 			        InputStream is = new ByteArrayInputStream(barray);
-			        String newFile = DAM_LOCATION + filename;
+			        newFile = ReportsConsts.REPORT_DAM_LOCATION + filename;
 				    Asset excelAsset = manager.createAsset(newFile, is, "application/vnd.ms-excel", true);	
 				    if(excelAsset != null) {
 				    	
@@ -347,7 +363,7 @@ public class ExperienceFgmtReportCSVGenService {
 			    } catch (IOException e) {
 			        e.printStackTrace();
 			    }
-				return DAM_LOCATION+filename;
+				return newFile;
 
 		   	   
 	 	}
@@ -361,7 +377,7 @@ public class ExperienceFgmtReportCSVGenService {
 	  */
 	 public String writeJSONtoDAM(String reportName) throws IOException
 	 	{
-		 logger.info("Saving the file in the DAM");
+			String filename = reportName+"_" + metaDataProvider.getCurrentDate ()+".json";
 			//Invoke the adaptTo method to create a Session 
 			Map<String, Object> param = new HashMap<String, Object>();
 			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
@@ -371,136 +387,139 @@ public class ExperienceFgmtReportCSVGenService {
 				} 
 			catch (Exception e) {
 					logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
-					}
-			String filename = getFileName(reportName)+".json";			 			 
+					}				
 			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
-			   InputStream isStream = 
+			   	InputStream isStream = 
 					   new ByteArrayInputStream(createJSON().getBytes());
 
-			    Asset excelAsset = manager.createAsset(DAM_LOCATION + filename, isStream, "application/json", true);
+			    Asset excelAsset = manager.createAsset(ReportsConsts.REPORT_DAM_LOCATION + filename, isStream, "application/json", true);
 		
 	 	    if(excelAsset != null)
 	 	    {
-	 	    	return DAM_LOCATION+filename;
+	 	    	return ReportsConsts.REPORT_DAM_LOCATION+filename;
 	 	    }
 	 	    else
 	 	    {
-	 		return null;
+	 			return null;
 	 	    } 
 	 	}
-		
-	
 
-	public String getFileName(String reportName)
-		{
-		 
-			return reportName+"_" +getCurrentDate();
-		}
-	
-	/*
-	 * getCurrentDate()
-	 * The current Date and Time is returned.
-	 * SimpleDateFormat is used.
-	 * 
-	 */
-	 public String getCurrentDate()
-		 {
-			 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-			 Date today = Calendar.getInstance().getTime();  
-			 String date = dateFormat.format(today).replace("/", "_");
-			 date = date.replace(":", "_");
-			return  date.replace(" ", "_"); //2016/11/16 12:08:43
-		 }
-		
-	 
 	 public void clearData(String reportType)
 	 {
-		 if(reportType.equals("experienceFragmentGeneric"))
-		 {
-			 list.clear();			
-		 }
+		 if(reportType.equals("experienceFragmentGeneric")) list.clear();
+		else if(reportType.equals("experienceFragmentForms")) list.clear();
 	 }
-	 
-	 
-	 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException ,PathNotFoundException{
-		  
-		   if (node.hasProperty(propertyName)) {
-	   
-	        Property prop = node.getProperty(propertyName);
-	        Value[] values;
-	        List<String> propVals = new ArrayList<>();
-	        List<String> updatedPropVals = new ArrayList<>();
-	        // This check is necessary to ensure a multi-valued field is applied...
-	        if (prop.isMultiple()) {
-	            values = prop.getValues();
-	            for(Value v : values) {		            	
-	            	propVals.add(v.getString());
-              }
-	        
-	            for(String v : propVals) {
-	            	if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
-	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
-	            	try
-	            	{
-	    			 v = session.getNode(nodeName).getProperty(propertyValue).getString();
-	            	}catch(PathNotFoundException pn)
-	            	{
-	            		v = "";
-	            	}
-	            	}else
-	            	{ v = v.toString();}
-	    			 if(prop.isMultiple()){							        				 
-	            		  updatedPropVals.add(v);
-	            	  }
-	            }
-	        }	   
-	         else {
-	            values = new Value[1];
-	            values[0] = prop.getValue();
-	            if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
-	            {
-	            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
-	            	String nodeValue = null;
-	            	try
-	            	{
-	            	nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
-	            	}catch(PathNotFoundException ex){
-	            		nodeValue = "";
-	            	}		            	
-	            	updatedPropVals.add(nodeValue);
-	            }else{
-	            updatedPropVals.add(prop.getValue().toString());
-	            }
-	        }
-	       
-	        return (String.join(",", updatedPropVals));
-	    }
 
-	    return "";
-	    
-	}
-	 
-	 public boolean stringContainsNumber( String s )
-	 {
-	     return Pattern.compile( "[0-9]" ).matcher( s ).find();
-	 }
-	 
-	 public static boolean stringContainsItemFromList(String inputStr) {
-		 
-		 for(int i =0; i < resourceItems.length; i++)
-		    {
-		        if(inputStr.contains(resourceItems[i]))
-		        {
-		            return true;
-		        }
-		    }
-		    return false;
+
+	/*
+	 * fetchXFFormsJCRData()
+	 * Returns a Arraylist of ExperienceFragmentReportDataItem object
+	 * This method fetches the data from the JCR using Query BUilder API
+	 * IT takes the Root folder path as the only argument- Type-String
+	 *
+	 */
+	public ArrayList<ExperienceFragmentReportDataItem> fetchXFFormsJCRData(String folder) {
+		try
+		{
+			//Invoke the adaptTo method to create a Session
+			Map<String, Object> param = new HashMap<String, Object>();
+			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+			ResourceResolver resourceResolver = null;
+			try {
+				resourceResolver = resolverFactory.getServiceResourceResolver(param);
+			} catch (Exception e) {
+				logger.error("BMC ERROR : Report ResourceResolverFactory Error: " + e.getMessage());
+			}
+			Session session = resourceResolver.adaptTo(Session.class);
+			Resource resource = resourceResolver.getResource(folder);
+			if(resource != null)
+			{
+
+				Map<String,String> map = createQuery(folder);
+				Query query = builder.createQuery(PredicateGroup.create(map), session);
+				SearchResult result = query.getResult();
+				for (Hit hit : result.getHits()) {
+					ExperienceFragmentReportDataItem  reportDataItem = new ExperienceFragmentReportDataItem();
+					Node reportDataNode = hit.getResource().adaptTo(Node.class);
+					Node fieldSetNode = getExpFragmentFieldSet(metaDataProvider.getExperiencefgmtPath(reportDataNode), session,"form");
+					if(fieldSetNode != null)
+					{
+						//field set values retrieval
+						reportDataItem.setFieldSetAuthor(metaDataProvider.getPropertyValues(fieldSetNode, "author","author","author",session));
+						reportDataItem.setFormid(metaDataProvider.getPropertyValues(fieldSetNode, "formid","formid","formid",session));
+						reportDataItem.setFormname(metaDataProvider.getPropertyValues(fieldSetNode, "formname","formname","formname",session));
+						reportDataItem.setTitle(metaDataProvider.getPropertyValues(fieldSetNode, "title","title","title",session));
+						reportDataItem.setMigration_content_id(metaDataProvider.getPropertyValues(fieldSetNode, "migration_content_id","migration_content_id","migration_content_id",session));
+						reportDataItem.setMigration_content_name(metaDataProvider.getPropertyValues(fieldSetNode, "migration_content_name","migration_content_name","migration_content_name",session));
+						reportDataItem.setMigration_content_type(metaDataProvider.getPropertyValues(fieldSetNode, "migration_content_type","migration_content_type","migration_content_type",session));
+					}
+					reportDataItem.setExp_Fragment_Name(metaDataProvider.getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
+					reportDataItem.setLastModifiedBy(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
+					reportDataItem.setLastModifiedDate(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
+					reportDataItem.setCreated_Date(metaDataProvider.getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
+					reportDataItem.setExp_Fragment_URL(metaDataProvider.getExperiencefgmtPath(reportDataNode));
+					reportDataItem.setReferencePaths(getExpFragmentLinks (metaDataProvider.getExperiencefgmtPath(reportDataNode), session));
+					list.add(reportDataItem);
+				}
+				logger.info("BMC INFO : Total no of forms Item found"+list.size());
+
+			}
+
+		}catch(Exception ex){
+			logger.error( "BMC ERROR : Error occurred while fetching JCR Data "+ex);
 		}
-	 
-	 
-	
-	 
-	 private String getExpFragmentLinks(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
+		//set the values to the careers Data item and return.
+		return list;
+	}
+
+
+
+	/*
+	 * write()
+	 * Writes the data into the Excel file.
+	 *
+	 *
+	 */
+	public Workbook writeToWorkBook2() throws IOException
+	{
+			//Blank workbook
+			XSSFWorkbook workbook = new XSSFWorkbook();
+			//Create a blank sheet
+			XSSFSheet sheet = workbook.createSheet("ReportingData");
+			//This data needs to be written (Object[])
+			Map<String, Object[]> data = new TreeMap<String, Object[]>();
+			data.put("1", ReportsConsts.XFFormsReportTableNames);
+			for(int i=2;i<list.size();i++)
+			{
+				Integer count = i;
+				data.put(count.toString(), new Object[] {list.get(i).getExp_Fragment_URL(),list.get(i).getExp_Fragment_Name(),list.get(i).getLastModifiedBy(),list.get(i).getLastModifiedDate(),list.get(i).getCreated_Date(),
+						list.get(i).getMigration_content_id(),list.get(i).getMigration_content_name(),list.get(i).getMigration_content_type(),list.get(i).getFormname(),list.get(i).getFormid(),list.get(i).getReferencePaths()});
+			}
+
+			//Iterate over data and write to sheet
+			Set<String> keyset = data.keySet();
+			int rownum = 0;
+			for (String key : keyset)
+			{
+				Row row = sheet.createRow(rownum++);
+				Object [] objArr = data.get(key);
+				int cellnum = 0;
+				for (Object obj : objArr)
+				{
+					Cell cell = row.createCell(cellnum++);
+					if(obj instanceof String)
+						cell.setCellValue((String)obj);
+					else if(obj instanceof Integer)
+						cell.setCellValue((Integer)obj);
+				}
+			}
+			return workbook;
+	}
+
+
+
+
+	private String getExpFragmentLinks(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
 	 {
 		
 		 List<String> propVals = new ArrayList<>();
@@ -510,7 +529,6 @@ public class ExperienceFgmtReportCSVGenService {
          
           if(!result.equals(null)){       	 
          		 for (Hit hit : result.getHits()) {
-         			 logger.info("inside for");
          			Node node = hit.getResource().adaptTo(Node.class);
          			String propertyValue = node.getPath().toString();
          			//Converting canonical links to the actual URLs         			         		
@@ -521,17 +539,22 @@ public class ExperienceFgmtReportCSVGenService {
 	       }          
           else return "NO RESULT";
 	 }
+
+
 	 /*
 	  * The class which fetches the fieldSet from the actual jcr Data Node
 	  * Input Parameters - String jcrNodePath , Session object.
 	  * returns a Node object.
 	  */
-	 private Node getExpFragmentFieldSet(String jcrNodePath,Session session) throws RepositoryException ,PathNotFoundException
+	 private Node getExpFragmentFieldSet(String jcrNodePath,Session session,String reportType) throws RepositoryException ,PathNotFoundException
 	 {
 
 		 Node node = null;
-		 Map<String,String> map = createQueryFielset(jcrNodePath);
-     	Query query = builder.createQuery(PredicateGroup.create(map), session);	             
+		 Map<String,String> map;
+		 if(reportType.equalsIgnoreCase ("Form"))
+			 map = createFormFielset(jcrNodePath);
+     	else  map = createQueryFielset(jcrNodePath);
+     		Query query = builder.createQuery(PredicateGroup.create(map), session);
           SearchResult result = query.getResult();							            
          		 for (Hit hit : result.getHits()) {
          			 if (result.getHits().size() == 1)

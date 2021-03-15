@@ -1,5 +1,8 @@
 package com.bmc.components.reports;
 
+import com.bmc.models.bmcmeta.ICMeta;
+import com.bmc.models.bmcmeta.PageMeta;
+
 public class VideoReportDataItem {
 
 	private String Page_Path;
@@ -144,5 +147,104 @@ public class VideoReportDataItem {
 	}
 	private String overlayText;
 
+	public String getIC_topic () {
+		return IC_topic;
+	}
+
+	public void setIC_topic (String IC_topic) {
+		this.IC_topic = IC_topic;
+	}
+
+	public String getIC_Buyer_stage () {
+		return IC_Buyer_stage;
+	}
+
+	public void setIC_Buyer_stage (String IC_Buyer_stage) {
+		this.IC_Buyer_stage = IC_Buyer_stage;
+	}
+
+	public String getIC_target_Persona () {
+		return IC_target_Persona;
+	}
+
+	public void setIC_target_Persona (String IC_target_Persona) {
+		this.IC_target_Persona = IC_target_Persona;
+	}
+
+	public String getIC_Source_Publish_Date () {
+		return IC_Source_Publish_Date;
+	}
+
+	public void setIC_Source_Publish_Date (String IC_Source_Publish_Date) {
+		this.IC_Source_Publish_Date = IC_Source_Publish_Date;
+	}
+
+	public String getIC_Target_Industry () {
+		return IC_Target_Industry;
+	}
+
+	public void setIC_Target_Industry (String IC_Target_Industry) {
+		this.IC_Target_Industry = IC_Target_Industry;
+	}
+
+	public String getIC_Company_Size () {
+		return IC_Company_Size;
+	}
+
+	public void setIC_Company_Size (String IC_Company_Size) {
+		this.IC_Company_Size = IC_Company_Size;
+	}
+
+	public String getIc_weighting () {
+		return Ic_weighting;
+	}
+
+	public void setIc_weighting (String ic_weighting) {
+		Ic_weighting = ic_weighting;
+	}
+
+	public String getIC_Content_Type () {
+		return IC_Content_Type;
+	}
+
+	public void setIC_Content_Type (String IC_Content_Type) {
+		this.IC_Content_Type = IC_Content_Type;
+	}
+
+	public String getTopics () {
+		return Topics;
+	}
+
+	public void setTopics (String topics) {
+		Topics = topics;
+	}
+
+	public String getProduct () {
+		return Product;
+	}
+
+	public void setProduct (String product) {
+		Product = product;
+	}
+
+	public String getProduct_Line () {
+		return Product_Line;
+	}
+
+	public void setProduct_Line (String product_Line) {
+		Product_Line = product_Line;
+	}
+
+	private String IC_topic;
+	private String IC_Buyer_stage;
+	private String IC_target_Persona;
+	private String IC_Source_Publish_Date;
+	private String IC_Target_Industry;
+	private String IC_Company_Size;
+	private String Ic_weighting;
+	private String IC_Content_Type;
+	private String Topics;
+	private String Product;
+	private String Product_Line;
 
 }
