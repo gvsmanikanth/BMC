@@ -53,6 +53,9 @@
 		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="replace"/>
 		 <!-- WEB-8402 Not able to select XF variation from picker  END -->    
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
+	  
+    <!--Template for Sitemap XML -->  
+    <filter root="/conf/bmc/settings/wcm/templates/bmc-site-map-xml" mode="merge"/>	  
    
     <filter root="/etc/clientlibs/bmc"/>
 

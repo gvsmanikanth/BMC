@@ -54,7 +54,7 @@ public class BMCSitemapService {
 						 * if(childlevel==pchildren.next().getDepth()) {
 						 * getPagePropertyValue(pchildren.next(), details); }
 						 */
-						
+
 					}
 				}
 				sitemapModel.setSitemapsectiontitle(provalue.get("sitemapsectiontitle", String.class));
@@ -66,7 +66,7 @@ public class BMCSitemapService {
 		}
 		return sitemapmodellist;
 	}
-	
+
 	private Map<String, String> getPagePropertyValue(Page page, Map<String, String> details) {
 		if (isHiddenByPageProperty(page)|| isHiddenByPageTemplate(page)||isHiddenParentFolder(page)) {
 			return details;
@@ -78,33 +78,35 @@ public class BMCSitemapService {
 	private boolean isHiddenByPageProperty(Page page) {
 		boolean flag = false;
 		try {
-		if (this.excludeFromSiteMapProperty != null) {
-			for (String pageProperty : this.excludeFromSiteMapProperty) {
-				flag = flag || page.getProperties().get(pageProperty, Boolean.FALSE);
+			if (this.excludeFromSiteMapProperty != null) {
+				for (String pageProperty : this.excludeFromSiteMapProperty) {
+					flag = flag || page.getProperties().get(pageProperty, Boolean.FALSE);
+				}
 			}
-		}
 		}catch(Exception e) {
 			log.error("exception in "+e.getLocalizedMessage());
 		}
 		return flag;
 	}
 	private boolean isHiddenParentFolder(Page page) {
-
 		boolean flag = false;
 		try {
-			boolean isProperty=page.getProperties().get("hideAllChildPages", false);
-			if(!isProperty) {
-				InheritanceValueMap inheritedProp = new HierarchyNodeInheritanceValueMap(page.getContentResource());
-				flag = flag || inheritedProp.getInherited("hideAllChildPages", false);
-				
+			Page parentPage=page.getParent();
+			while(true){			
+				flag=flag||parentPage.getProperties().get("hideAllChildPages", false);
+				if(flag||page.getDepth()==4){
+					break;
+				}
+				parentPage=parentPage.getParent();
 			}
-			
+
 		}catch(Exception e) {
 			log.error("Error getting hideAllChildPages Property from parent pages {}" , e.getMessage());
 			return false;
 		}
 		return flag;
 	}
+
 	private boolean isHiddenByPageTemplate(Page page) {
 		boolean flag = false;
 		if(this.excludedPageTemplates != null){
