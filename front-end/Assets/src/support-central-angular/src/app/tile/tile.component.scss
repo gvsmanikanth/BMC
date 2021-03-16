@@ -22,6 +22,9 @@
      min-height: 80px;
      background: white;
     } 
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgb(0 167 157 / 65%);
+    }
     .tile-left {
          background-color: #4E5154;
          width: 0%;
@@ -40,7 +43,7 @@
         & {
             width: 75%;
             font-size: 12px;
-            padding-left: 10px;
+            padding: 5px 0 5px 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;

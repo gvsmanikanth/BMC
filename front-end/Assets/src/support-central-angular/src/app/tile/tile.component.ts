@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Widget } from '../shared/models/widget.model';
 import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
+import { StateService } from '../shared/services/state.service';
 
 @Component({
   selector: 'app-tile',
@@ -11,9 +12,20 @@ export class TileComponent implements OnInit {
   @Input() widget: Widget;
   @Output() extended: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private ga: GoogleAnalyticsService) { }
+  LOGGED_IN_POPOVER_TEXT = "Personalized view";
+
+  GUEST_USER_POPOVER_TEXT = "Popular products";
+
+  iconPopoverText = 'Hello';
+
+  constructor(private state: StateService, private ga: GoogleAnalyticsService) { }
 
   ngOnInit() {
+    if (this.state.user.loggedIn === 'true') {
+      this.iconPopoverText = this.LOGGED_IN_POPOVER_TEXT;
+    } else {
+      this.iconPopoverText = this.GUEST_USER_POPOVER_TEXT;
+    }
   }
 
   checkExtended(event) {

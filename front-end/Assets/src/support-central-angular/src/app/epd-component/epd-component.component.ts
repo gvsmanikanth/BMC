@@ -10,7 +10,7 @@ import { StateService } from '../shared/services/state.service';
 export class EpdComponentComponent implements OnInit, OnDestroy {
 
   DESCRIPTION_LOGGED_IN = 'Suggested downloads based on your favorite products and recent activity';
-  DESCRIPTION_NON_LOGGED_IN = 'Suggested downloads based on product popularity'
+  DESCRIPTION_NON_LOGGED_IN = 'Suggested downloads based on product popularity.'
 
   widgetDescription = null;
 

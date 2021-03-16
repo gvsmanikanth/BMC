@@ -9,7 +9,7 @@
         <div>{{widget.description}}</div>
       </div>
     </div>
-    <a class="tile-arrow" [routerLink]=[widget.routerLink] (click)="checkExtended($event)">
+    <a class="tile-arrow" [routerLink]=[widget.routerLink] (click)="checkExtended($event)" [adaptTooltip]="iconPopoverText">
       <span *ngIf="!widget.isExtended" class="psc-icon-personalization"></span>
       <span *ngIf="widget.isExtended" class="d-icon-undo"></span>
     </a>

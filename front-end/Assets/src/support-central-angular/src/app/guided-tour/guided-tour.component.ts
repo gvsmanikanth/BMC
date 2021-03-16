@@ -388,11 +388,11 @@ export class GuidedTourComponent implements OnInit {
       element:'#feedbackTab',
       intro: 'If you have feedback for us about this new support homepage, please click here.'
     });//25
-    this.intro.onbeforechange(function (step){
+    this.intro.onbeforechange(function (){
       if (!this._introItems.length || this._currentStep >= this._introItems.length) {
         return true
-      } //in case it`s skipping start step or fix to keyboard control (IDK why it became broken)
-      if (this._introItems[this._currentStep].preChange) {
+      } //in case it`s skipping start step or fix to keyboard control (IDK why it`s broken);
+      if (this._introItems[this._currentStep].preChange) { // Now it is called on nextStep as _currentStep is set for next step;
         return this._introItems[this._currentStep].preChange(this._introItems[this._currentStep], this);
       } else {
         return true;
@@ -421,7 +421,7 @@ export class GuidedTourComponent implements OnInit {
       {
         steps: [
           { 
-            intro: 'Welcome to the new BMC Support Central homepage.'
+            intro: 'Welcome to the new BMC Support Central homepage.',
           }, //1
           {
             element: '.account-actions-wrapper .layout-inner-wrap',
@@ -433,18 +433,13 @@ export class GuidedTourComponent implements OnInit {
     this.intro.addStep({
       element: '.psc-o-checklist .learn-more',
         intro: 'If you are a new user, the orientation checklist is a great place to start.'
-    })//3
-    this.intro.onbeforechange(function (step){
-      if (this._introItems[this._currentStep].preChange) {
-        return this._introItems[this._currentStep].preChange(this._introItems[this._currentStep], this);
-      } else {
-        return true;
-      }
-    });
+    });//3
+
     this.intro.addStep({
       element: '#searchbox',
       intro: 'Use the search box to find answers to your questions.'
     });//4
+
     this.intro.addStep({
       element: '#tile1 .tile-arrow',
       intro: 'Click here to open the community widget.',
@@ -479,7 +474,7 @@ export class GuidedTourComponent implements OnInit {
       intro: 'Click a tab to go to a particular content type.',
       preChange: (step, ctx) => {
         if (!this.communitiesOpened) {
-          this.intro.goToStepNumber(6);
+          this.intro.goToStepNumber(5);
           --ctx._currentStep;
           return false;
         } else {
@@ -497,7 +492,7 @@ export class GuidedTourComponent implements OnInit {
       intro: 'Click on another product in the list to see that product\'s community content.',
       preChange: (step, ctx) => {
         if (!this.communitiesOpened) {
-          this.intro.goToStepNumber(6);
+          this.intro.goToStepNumber(5);
           --ctx._currentStep;
           return false;
         } else {
@@ -516,7 +511,7 @@ export class GuidedTourComponent implements OnInit {
       position: 'left',
       preChange: (step, ctx) => {
         if (!this.communitiesOpened) {
-          this.intro.goToStepNumber(6);
+          this.intro.goToStepNumber(5);
           --ctx._currentStep;
           return false;
         } else {
@@ -687,6 +682,17 @@ export class GuidedTourComponent implements OnInit {
       element:'#feedbackTab',
       intro: 'If you have feedback for us about this new support homepage, please click here.'
     });//22
+    this.intro.onbeforechange(function (step){
+      console.log(this._currentStep, this);
+      if (!this._introItems.length || this._currentStep >= this._introItems.length) {
+        return true
+      } //in case it`s skipping start step or fix to keyboard control (IDK why it`s broken)
+      if (this._introItems[this._currentStep].preChange) {
+        return this._introItems[this._currentStep].preChange(this._introItems[this._currentStep], this);
+      } else {
+        return true;
+      }
+    });
     this.intro.onexit(() => {
       this.tourRunning = false;
       if(!!loginButton) {

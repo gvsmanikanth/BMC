@@ -88,7 +88,7 @@ export const widgets: Widget[] = [
         id: "servicesConsulting",
         href: null,
         isExtended: false,
-        title: "Services and Consulting",
+        title: "Services & Consulting",
         description: "Get help with all aspects of your digital journey",
         routerLink: 'sac',
         icon: "psc-icon-services_consulting"

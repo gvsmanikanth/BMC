@@ -13,6 +13,7 @@
                 [triggers]="'mouseover:mouseout'">
                 <span class="d-icon-pencil_adapt"></span>
             </a>
+            <span *ngIf="state.user.loggedIn === 'false'">Please <a href="/available/supportlogin.html">log in</a> to see your personalized view.</span>
         </div>
     </div>
     <div class="extended-widget-body" [ngBusy]="communityService.busyConfig">
