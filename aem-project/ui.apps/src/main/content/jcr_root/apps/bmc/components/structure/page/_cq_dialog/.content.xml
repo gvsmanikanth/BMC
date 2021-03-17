@@ -369,13 +369,13 @@
                                                 <items jcr:primaryType="nt:unstructured">
                                                     <item1
                                                         jcr:primaryType="nt:unstructured"
-                                                        text="YES"
-                                                        value="{Boolean}true"/>
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
                                                         selected="{Boolean}true"
                                                         text="NO"
                                                         value="{Boolean}false"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="YES"
+                                                            value="{Boolean}true"/>
                                                 </items>
                                             </rc-inclusion>
                                             <asset-inclusion
@@ -389,12 +389,12 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-dropdown-showhide-target=".gate-form-fieldset-showhide-target"/>
                                                 <items jcr:primaryType="nt:unstructured">
-                                                    <item2
+                                                    <item1
                                                         jcr:primaryType="nt:unstructured"
                                                         selected="{Boolean}true"
                                                         text="Not gated"
                                                         value="{Boolean}false"/>
-                                                    <item1
+                                                    <item2
                                                         jcr:primaryType="nt:unstructured"
                                                         text="Gated"
                                                         value="{Boolean}true"/>
@@ -425,7 +425,7 @@
                                                                 fieldDescription="Enter the Gated asset form Pathfield"
                                                                 fieldLabel="Gate form path."
                                                                 name="./rc-form-path"
-                                                                rootPath="/content/bmc/language-masters/en/forms"/>
+                                                                rootPath="/content/bmc"/>
                                                         </items>
                                                     </well>
                                                 </items>
@@ -444,6 +444,18 @@
                                                 fieldLabel="Footer logo"
                                                 name="./footerLogo"
                                                 rootPath="/content/dam/bmc/logos"/>
+                                            <rc-inclusionTypeHint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                ignoreData="{Boolean}true"
+                                                name="./rc-inclusion@TypeHint"
+                                                value="Boolean"/>
+                                            <asset-inclusionTypeHint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
+                                                ignoreData="{Boolean}true"
+                                                name="./asset-inclusion@TypeHint"
+                                                value="Boolean"/>
                                         </items>
                                     </resourceCenter>
                                 </items>
