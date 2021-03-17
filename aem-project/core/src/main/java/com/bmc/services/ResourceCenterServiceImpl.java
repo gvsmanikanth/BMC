@@ -1,14 +1,14 @@
 package com.bmc.services;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import com.bmc.models.RunModes;
+import com.day.cq.replication.ReplicationStatus;
+import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
@@ -20,6 +20,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.settings.SlingSettingsService;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -54,8 +55,15 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     // Resolver needed to adapt to Session for QueryBuilder
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
+
     private ResourceResolver resourceResolver;
     private Session session;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
+
+    @Reference
+    private Replicator replicator;
 
     // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
     @Property(
@@ -73,23 +81,46 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private static final String RESOURCE_FILTERS_LIST = "resourcecenter.filters.list";
 
     @Property(description = "Mapping of content types to their correspondig display values and action type",
-            value = { "ic-type-196363946, Analyst Research, download",
+            value = { "ic-type-196363946, Analyst Research, view",
             "ic-type-353700740, Article/Blog, view",
-            "ic-type-790775692, Competitive Comparison, download",
-            "ic-type-621970361, Customer Story, download",
-            "ic-type-146731505, Datasheet, download",
-            "ic-type-464000615, Demo, view",
-            "ic-type-165669365, E-book, download",
+            "ic-type-790775692, Competitive Comparison, view",
+            "ic-type-621970361, Customer Story, view",
+            "ic-type-146731505, Datasheet, view",
+            // WEB-9208 Add Demo Container Card capabilities to Resource Center.
+            "ic-type-464000615, Demo, demo",
+            //WEB-9828 Add Case Study IC type
+            "ic-type-702371987, Case Study, view",
+            "ic-type-165669365, E-book, view",
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
             "ic-type-920200003, Trial, view",
             "ic-type-185980791, Videos, play",
             "ic-type-291550317, Webinar, view",
-            "ic-type-546577064, White Paper, download",
-            "ic-type-188743546, UnCategorized, view"
+            "ic-type-546577064, White Paper, view",
+            "ic-type-188743546, UnCategorized, view",
+            "ic-type-958935588, Tech Note, view",
+             "ic-type-196378596, All, view"
     })
     static final String CONTENT_TYPE_MAPPING = "content.type.name.mapping";
+
+
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters START
+    // Configurable List of Resource BmcContentFilter Node Names (Appended to Resource Path listed above)
+    @Property(
+            description = "Mappings of 'All'  property values for Resource Center Filters",
+            value = {
+                    "ic-topics ,ic-topics-357652163",
+                    "ic-content-type,ic-type-196378596",
+                    "ic-buyer-stage,ic-buyer-stage-453243562",
+                    "ic-target-persona,ic-target-persona-567887231",
+                    "ic-target-industry,ic-target-industry-289456374",
+                    "ic-company-size,ic-company-size-398345671",
+                    "topics,topic-186635858"
+            })
+    private static final String RESOURCE_ALL_FILTER_VALUE_MAPPING = "resource.center.all.filter.mapping";
+    private Map<String, String> allFiltersValueMapping;
+    //WEB-9267 Adds "All" or "All PL Products" as default to all search filters END
 
     private List<String> resourceFiltersList;
 
@@ -112,7 +143,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         this.resourceCenterApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(RESOURCE_TITLE_CACHE_STATS_ENABLED), false);
 
         resourceFiltersList = Arrays.asList( (String[]) props.get(RESOURCE_FILTERS_LIST));
-
+        this.allFiltersValueMapping = toMap ((String[]) props.get(RESOURCE_ALL_FILTER_VALUE_MAPPING));
         this.contentTypeValueMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING));
         this.contentTypeActionMapping = toMap((String[]) props.get(CONTENT_TYPE_MAPPING), 0, 2);
 
@@ -226,14 +257,14 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     /**
      * Build group predicates
-     * 
+     * WEB-9267 Changed the datatype of values from String[] to list<String>
      * @param propertyName
      * @param values
      * @param queryParamsMap
-     * @param predicateIndex
-     */
-    private void buildGroupPredicate(String propertyName, String[] values, Map<String, String> queryParamsMap, int groupIndex) {
-    
+     * @param groupIndex
+     * */
+
+    private void buildGroupPredicate(String propertyName, List<String> values, Map<String, String> queryParamsMap, int groupIndex) {
     	queryParamsMap.put(groupIndex + "_group.p.or", "true");
     	
     	int i = 1;
@@ -252,7 +283,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * rootPath=/content/bmc/us/en/documents
      * &ic-content-type=ic-type-196363946,ic-type-146731505&ic-topics=ic-topics-017644695,ic-topics-594037608
      * &sortCriteria=modified&resultsPerPage=10&pageIndex=0
-     * 
+     * //WEB-9267 Adds "All" or "All PL Products" as default to all search filters.
      * 1_group.p.or=true
 	 * 1_group.1_property.value=ic-type-196363946
      * 1_group.1_property=jcr:content/ic-content-type
@@ -271,30 +302,28 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      */
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
-            
-        	// Build predicate for ic-app-inclusion
-        	String[] allowedInclusionValues = {"yes", "gate"};
-        	buildGroupPredicate(ResourceCenterConsts.IC_APP_INCLUSION, allowedInclusionValues, queryParamsMap, 1);
-        	
+        	// Build predicate for rc-inclusion
+        	 String[] allowedInclusionValues = {"true"};
+            buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
             int i = 2;
-            
             // check if any of the supported properties are present in the URL
+            //WEB-9267 Added "All" & "All PL Products" to all filter category- START
             for(String propertyName : baseImpl.getPropertyNames()) {
             	if(urlParameters.containsKey(propertyName)) {
-            		
             		String[] filterValues = urlParameters.get(propertyName);
-            		String[] values = filterValues[0].split(",");
-            		
+                    List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
+                    String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
+                    if(!type.equals (null))values.add (type);
             		buildGroupPredicate(propertyName, values, queryParamsMap, i++);
             	}
+                //WEB-9267 Added "All" & "All PL Products" to all filter category - END
             }
-            
-
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
         }
         return predicateIndex;
     }
+
 
     private String buildKeywordValuePredicate( Integer index) {
         StringBuilder queryPredicate = new StringBuilder();
@@ -475,14 +504,22 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                 if(resource != null){
                     try {
                         Node parentNode = hit.getNode().getParent();
+                        Node node = hit.getNode();
                         String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
                         String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        String assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                        if(assetLink == null && hit.getNode().hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
-                        	assetLink = hit.getNode().getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                        Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                        String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                        String assetLink = "";
+                        if(gatedAsset && formPath != null && isFormActive(formPath)){
+                            assetLink = formPath;
+                        }else {
+                            assetLink = path;
                         }
+
+                        assetLink = resourceResolver.map(assetLink);
+
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
                         //  metadata
@@ -493,9 +530,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         
                         // set video ID
                         
-                        if(linkType.equals("play") && assetLink == null) {
-                        	assetLink = hit.getNode().hasProperty("jcr:content/video-data/vID") ? "/content/bmc/videos.html?vID=" + hit.getNode().getProperty("jcr:content/video-data/vID").getString() : "";
-                      
+                        if(linkType.equals("play")) {
+                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
                         }
                         
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
@@ -512,6 +548,35 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
 
         return contentResult;
+    }
+
+
+    private boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        Set<String> runmodes = slingSettingsService.getRunModes();
+        try {
+            if (gatedAssetFormPath != null) {
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
+                }else{
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
@@ -579,5 +644,19 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             return contentType;
         }
         return contentTypeActionMapping.get(contentType);
+    }
+
+    /*
+    Maps the filterValues for filters containing "All" field to its metadata value,
+    For product-interest "All PL Products" filter passes the filter value.
+     */
+    @Override
+    public String getAllFilterValue (String filterValue) {
+        if(filterValue.equalsIgnoreCase ("product_interest"))return ResourceCenterConstants.PRODUCT_INTEREST_ALl_VALUE;
+        else if (!allFiltersValueMapping.containsKey(filterValue)) {
+            log.debug("No mapping exists for content type {}", filterValue);
+            return "";
+        }
+        return allFiltersValueMapping.get(filterValue);
     }
 }

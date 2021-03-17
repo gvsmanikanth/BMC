@@ -306,12 +306,12 @@ public class PageModel {
                 e.printStackTrace();
             }
         }
-
-        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search")) {
+        if (templateName.equals("bmc-support-template") || templateName.equals("support-central") || templateName.equals("support-search") ||  templateName.equals("support-central-personalised") ) {
             bmcMeta.initSupport();
             bmcMeta.getSupport().setEnableAlerts(true);
             bmcMeta.getSupport().setAlertsUrl("/bin/servicesupport.json");
             UserInfo user = UserInfoProvider.withRequestCaching(request).getCurrentUserInfo();
+            logger.debug("BMCINFO: Setting Bmc Meta Info :" + templateName);
             if (user != null && !user.isAnonymous() && user.hasEmail()) {
                 bmcMeta.getUser().updateFromUserInfo(user);
                 bmcMeta.getUser().setSupportAuthenticated(true);

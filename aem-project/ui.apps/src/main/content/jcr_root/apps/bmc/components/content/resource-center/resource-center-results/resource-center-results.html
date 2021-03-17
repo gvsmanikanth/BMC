@@ -40,8 +40,9 @@
                 </div>
             </div>
         </div>
-        <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
-            <div class="rc-featured-card-col">
+        <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding: 0px;">
+            <!--/* WEB-6757- added id to toggle feature card */--> 
+            <div class="rc-featured-card-col"  id="rc-featured-card">
                 <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
                     <div class="featured-card-container">

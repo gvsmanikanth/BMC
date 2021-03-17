@@ -93,7 +93,7 @@
                                                 jcr:primaryType="nt:unstructured"
                                                 fieldLabel="Included Values"
                                                 emptyText="Intelligent Content Type"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 multiple="{Boolean}true"
                                                 name="./ic-content-type"
                                                 dataPath="/content/bmc/resources/intelligent-content-types">
@@ -153,7 +153,7 @@
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 fieldLabel="Included Values"
                                                 emptyText="Intelligent Content Buyer Stage"
                                                 multiple="{Boolean}true"
@@ -215,7 +215,7 @@
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 fieldLabel="Included Values"
                                                 emptyText="Intelligent Content Target Persona"
                                                 multiple="{Boolean}true"
@@ -278,7 +278,7 @@
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 fieldLabel="Included Values"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Intelligent Content Topic"
                                                 multiple="{Boolean}true"
                                                 name="./ic-topics"
@@ -339,7 +339,7 @@
                                             <options
                                                 jcr:primaryType="nt:unstructured"
                                                 fieldLabel="Included Values"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Core Topic"
                                                 multiple="true"
                                                 metadataName="topic"
@@ -462,7 +462,7 @@
                                             </filterLabel>
                                             <options
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 name="./product_interest"
                                                 fieldLabel="Included Values"
                                                 useNameAsValue="true"
@@ -528,7 +528,7 @@
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 fieldLabel="Included Values"
                                                 emptyText="IC Target Industry"
                                                 multiple="{Boolean}true"
@@ -590,7 +590,7 @@
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 fieldLabel="Included Values"
                                                 emptyText="IC Company Size"
                                                 multiple="{Boolean}true"

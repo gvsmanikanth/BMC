@@ -92,6 +92,10 @@
                                     jcr:primaryType="nt:unstructured"
                                     text="Article/Blog"
                                     value="Article/Blog"/>
+                                <Case_x0020_Study
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Case Study"
+                                    value="Case Study"/>
                                 <Competitive_x0020_Comparison
                                     jcr:primaryType="nt:unstructured"
                                     text="Competitive Comparison"

@@ -1,0 +1,16 @@
+<section class="layout-full-bleed py1 sitemap">
+	<div class="layout-inner-wrap">
+		<h1 class="h1">${currentPage.pageTitle}</h1>
+		<span class="lastSeen">Last Updated: ${properties['jcr:lastModified'].getTime.toString}</span>
+		<div data-sly-use.multiItems="com.bmc.models.sitemap.SitemapProductlist">
+			<div data-sly-list.prolist="${multiItems.htmlsitemap}" data-sly-unwrap>	
+			<h3 class="h2">${prolist.sitemapsectiontitle}</h3>
+            <h4 class="h4">${prolist.subsitemapsectiontitle}</h4>
+            <hr/>
+				<ul class="mb4"  data-sly-list="${prolist.sitemapsectionmap.keySet.iterator}">
+					<li><a href="${prolist.sitemapsectionmap[item]}"> ${item}</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

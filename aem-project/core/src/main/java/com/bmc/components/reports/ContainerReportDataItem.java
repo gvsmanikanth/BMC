@@ -29,10 +29,26 @@ public class ContainerReportDataItem {
 	private String Last_replication_action;
 	private String displayType;
 	private String IC_Type;
-	
-	
-	
-	
+	//WEB-9640 & WEB-9134 AEM Reports -DC Report Enhancement  --START
+	private String rc_inclusion;
+	private String asset_inclusion;
+	private String rc_form_path;
+	private String publish_status;
+	private String asset_prefix;
+	private String pageID;
+	public String getPublish_status () { return publish_status; }
+	public void setPublish_status (String publish_status) { this.publish_status = publish_status; }
+	public String getAsset_prefix () { return asset_prefix; }
+	public void setAsset_prefix (String asset_prefix) { this.asset_prefix = asset_prefix; }
+	public String getPageID () { return pageID; }
+	public void setPageID (String pageID) { this.pageID = pageID; }
+	public String getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public String getRc_form_path () { return rc_form_path; }
+	public void setRc_form_path (String rc_form_path) { this.rc_form_path = rc_form_path; }
+	public String getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+	//WEB-9640 & WEB-9134 AEM Reports -DC Report Enhancement  -- END
 	public String getIC_Type() {
 		return IC_Type;
 	}

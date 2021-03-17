@@ -1,18 +1,49 @@
 // Customized UI for Resource Center Filters
 .rc-filter-panel-group {
-    background-color: #fff;
-
+    background-color: #fff;    
     .heading-group ul {
       list-style-type: none; /* Remove bullets */
       padding: 0; /* Remove padding */
       margin: 0; /* Remove margins */
+      //WEB-6665
+      background-image: none;
+      position: relative;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        cursor: pointer;
+      }
+      &::before{
+        content: '+';
+        padding: 10px;
+        color: #29a5d6;
+        display: inline-block;        
+        font-size: 22px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        cursor: pointer;
+      }
+      &.rc-arrow-up{
+        background-image: none;
+        &::before{
+          content: '\2212';
+          top: 0px;
+        }
+      }
+      &.rc-arrow-down{
+        background-image: none;
+        &::before{
+          content: '\002B';
+        }
+      }    
+
     }
   
     .heading-group li {
       border: 1px solid #ddd; /* Add a thin border to each list item */
       margin-top: -1px; /* Prevent double borders */
       /*background-color: #f6f6f6; /* Add a grey background color */
-      padding: 12px; /* Add some padding */
+      padding: 15px; /* Add some padding */
       margin-bottom: 0px;
       text-transform: uppercase; 
       font-weight: bold; 
@@ -32,7 +63,7 @@
     .list-group li {
       border: 1px solid #ddd; /* Add a thin border to each list item */
       margin-top: -1px; /* Prevent double borders */
-      padding: 12px; /* Add some padding */
+      padding: 15px; /* Add some padding */
       margin-bottom: 0px;
       color: #29a5d6;
       cursor: pointer;
@@ -78,6 +109,33 @@
         border-right: solid;
       }
     }
+    .readMore, .readLess {
+      cursor: pointer;
+      display: none;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 0px;
+      border-top: none;
+      color: #29a5d6;
+      &:hover{
+        color: #046eb1;
+      }
+      &:after{
+        font-family: icomoon;
+        padding: 5px;
+        vertical-align: middle;
+      }     
+    }  
+    .readMore{
+      &:after{
+        content: $iconArrowDown;
+      }
+    }
+    .readLess{
+      &:after{
+        content: $iconArrowUp;
+      }
+    } 
 }
 
 .rc-filter-header {
@@ -85,13 +143,17 @@
   margin-top: -1px; /* Prevent double borders */
   padding: 12px; /* Add some padding */
   margin-bottom: 0px;
-  color: #177ba2;
+  color: #3980b2;
   background: white;
 
   .header-label {
     text-transform: uppercase;
     font-weight: bold;
     font-size: initial;
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 16px;
+     }
   }
 
   .empty-filter {
@@ -124,19 +186,27 @@
     border-radius: 10rem;
     color: #29a5d6;
     border: 1px solid #29a5d6;
+    margin-top: 0;
   }
 
   .reset-btn {
     position: absolute;
-    color: #177ba2;
+    color: #0093C9;
     border-style: solid;
     border-width: 2px;
     font-weight: bold;
     font-size: initial;
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 16px;
+     }
     padding: 6px;
     cursor: pointer;
     margin-left: -110px;
     margin-top: -7px;
+	&:hover{	
+      color: #046eb1;	
+    }
   }
 
   .submit-btn {
@@ -183,7 +253,10 @@
     background: white;
     text-transform: uppercase;
     font-size: initial;
-
+    //WEB-6696
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      font-size: 15px;
+     }
     padding-right: 2.0em;
     padding-left: 0.5em;
     -webkit-appearance: none;
@@ -250,7 +323,6 @@ body.no-scroll{
   flex-wrap: wrap;
   padding-top: 15px;
   margin-right: -20px;
-
   .rc-featured-card-col {
     flex: 0 0 100%;
     box-sizing: border-box;
@@ -324,6 +396,7 @@ body.no-scroll{
         color: #29a5d6;
         float: left;
         padding-top: 1.25rem;
+        word-break: break-word;
       }
       h3{
         text-transform: uppercase;
@@ -357,6 +430,7 @@ body.no-scroll{
         font-weight: 400;
         line-height: 25px;
         margin-bottom: 15px;
+        word-break: break-word;
       }
       h2 {
         color: #414042;
@@ -374,6 +448,9 @@ body.no-scroll{
         max-width: 40px;
         margin: 0 0 auto 0;
         text-align: left;
+        background: #3980B2;
+        border: none;
+        height: 4px;
       }
     }
     .card-footer{ 
@@ -401,6 +478,19 @@ body.no-scroll{
       }
       .s-action {
         padding-right: 5px;
+      }
+      .video-length {
+        float: left;
+        .s-clock{
+          margin-right: 5px;
+        }
+      }
+      .card-footer-logo{
+        float: left;
+        img{
+          max-height: 40px;
+          display: inline-block;
+        }
       }
     }
     .featured-card-footer {
@@ -434,6 +524,12 @@ body.no-scroll{
           }
           .s-view {
             background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-clock {
+            background-image: url('#{$imagesFolder}s-clock-white.svg');         
+          }
+          .s-demo {
+            background-image: url("#{$imagesFolder}s-play-white.png");
           }
         }
         .card-footer{
@@ -471,8 +567,8 @@ body.no-scroll{
         color: white;
       }
       hr {
-       border-top: 2px solid white;
-       border-bottom: 2px solid white;
+        background: #fff;
+        border: none;
       }
     }
     .card-footer-action {
@@ -521,6 +617,13 @@ body.no-scroll{
     width: 1.0rem;
     height: 1.2rem;
   }
+  .s-demo {
+    background-image: url('#{$imagesFolder}s-play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.0rem;
+    height: 1.2rem;
+  }
   .s-view {
     background-image: url('#{$imagesFolder}s-view.png');
     background-repeat: no-repeat;
@@ -549,6 +652,13 @@ body.no-scroll{
     width: 1.5rem; 
     height: 1.2rem;
   }
+  .s-clock {
+    background-image: url('#{$imagesFolder}s-clock-blue.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.0rem;
+    height: 1.2rem;    
+  }
 
 
   //  cards header icons
@@ -564,6 +674,16 @@ body.no-scroll{
   .ic_view-white {
     background-image: url("ic_view-white.png");
   }
+  .ic_play {
+    background-image: url("#{$imagesFolder}ic_play.png");
+  }
+  .ic_demo {
+    background-image: url("#{$imagesFolder}ic_play.png");
+  }
+  .ic_view {
+    background-image: url("#{$imagesFolder}ic_view.png");
+  }
+  
 }
 
 .text-white {
@@ -752,4 +872,54 @@ $bg-forrester-green: #16563F;
 }
 .filter-search-overlay.on {
   display: block;
+}
+
+
+.rc-landing-page{
+    .layout-width-title {
+      max-width: 1440px;
+      margin: 0 auto;
+      @media all and (min-width: $break-md) {
+        padding: 55px 0px 33px 38px;
+      }
+      padding: 30px;
+    }
+    form{
+      .bg-seashell{
+        background: #fafafa;
+      }
+      .layout-secondary{      
+        &:first-child {
+          @media (max-width: 768px){
+            padding: 0;
+          }        
+        }
+        + .py2{
+          @media (max-width: 768px){
+            padding-top: 0;
+          }        
+        }
+      }
+           
+    }
+   
+  }
+ 
+.rc-no-text {
+  max-height: 43px;
+} 
+
+.col-4-layout{
+  .rc-card-col {    
+    @media (min-width: $break-lg) {
+      flex: 0 0 25%;
+      max-width:25%;
+    }
+  }
+  }
+
+#rc-featured-card {
+  display: none;
+  padding-top: 15px;
+  padding-right: 20px;
 }

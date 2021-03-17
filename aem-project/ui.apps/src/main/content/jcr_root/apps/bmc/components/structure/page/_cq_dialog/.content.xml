@@ -25,7 +25,7 @@
                                         jcr:title="Metadata"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <product-interest
+											<product-interest
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/select"
                                                 dataPath="/content/bmc/resources/product-interests"
@@ -241,6 +241,7 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"/>
                                             </ic-company-size>
+											
                                         </items>
                                     </metadata>
                                 </items>

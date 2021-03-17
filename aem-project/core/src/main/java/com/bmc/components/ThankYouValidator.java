@@ -51,26 +51,29 @@ public class ThankYouValidator extends WCMUsePojo {
 
     public void getTokenIsValid() {
         Page page = getCurrentPage();
-        Page formPage = page.getParent();
-        String id = (String) formPage.getProperties().get("contentId");
-        SlingHttpServletRequest request = getRequest();
-        String[] selectors = request.getRequestPathInfo().getSelectors();
-        List<String> list = Arrays.asList(selectors);
-        if (list.contains("mk-unavailable") ||
-                list.contains("mk-denied")) {
-            return;
-        }
-        SightlyWCMMode mode = getWcmMode();
-        Set<String> runModes = getSlingScriptHelper().getService(SlingSettingsService.class).getRunModes();
-        logger.info(mode.toString());
-        Boolean isValid = Arrays.asList(selectors).contains("PURL" + id);
-        if (!isValid && mode.isDisabled() && runModes.contains("publish")) {
-            try {
-                String url = getResourceResolver().map(formPage.getPath()) + ".html";
-                logger.info("url: " + url);
-                getResponse().sendRedirect(url);
-            } catch (IOException e) {
-                logger.error(e.getMessage());
+        // WEB-9311 Call this section only for Actual Pages and Ignore for Editable Templates
+        if(page.getPath().startsWith("/content")){
+            Page formPage = page.getParent();
+            String id = (String) formPage.getProperties().get("contentId");
+            SlingHttpServletRequest request = getRequest();
+            String[] selectors = request.getRequestPathInfo().getSelectors();
+            List<String> list = Arrays.asList(selectors);
+            if (list.contains("mk-unavailable") ||
+                    list.contains("mk-denied")) {
+                return;
+            }
+            SightlyWCMMode mode = getWcmMode();
+            Set<String> runModes = getSlingScriptHelper().getService(SlingSettingsService.class).getRunModes();
+            logger.info(mode.toString());
+            Boolean isValid = Arrays.asList(selectors).contains("PURL" + id);
+            if (!isValid && mode.isDisabled() && runModes.contains("publish")) {
+                try {
+                    String url = getResourceResolver().map(formPage.getPath()) + ".html";
+                    logger.info("url: " + url);
+                    getResponse().sendRedirect(url);
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
             }
         }
     }

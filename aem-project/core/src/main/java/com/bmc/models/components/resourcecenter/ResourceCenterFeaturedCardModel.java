@@ -1,14 +1,15 @@
 package com.bmc.models.components.resourcecenter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 import javax.jcr.Node;
+import javax.jcr.Session;
 
+import com.day.cq.replication.ReplicationStatus;
+import com.day.cq.replication.Replicator;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.felix.scr.annotations.Reference;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -18,6 +19,7 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,6 +58,13 @@ public class ResourceCenterFeaturedCardModel {
     private BmcContent card;
     private Map<String, String> analiticData;
 
+    @Reference
+    private Replicator replicator;
+    private Session session;
+
+    @Reference
+    private SlingSettingsService slingSettingsService;
+
     @PostConstruct
     public void init() {
         try {
@@ -67,10 +76,17 @@ public class ResourceCenterFeaturedCardModel {
                 String title = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                 String created = node.hasProperty(JcrConsts.CREATION) ? node.getProperty(JcrConsts.CREATION).getString() : null;
                 String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? node.getProperty(JcrConsts.MODIFIED).getString() : null;
-                String assetLink = node.hasProperty(JcrConsts.EXTERNAL_ASSET_LINK) ? node.getProperty(JcrConsts.EXTERNAL_ASSET_LINK).getString() : null;
-                if(assetLink == null && node.hasProperty(JcrConsts.DAM_ASSET_LINK) ) {
-                    assetLink = node.getProperty(JcrConsts.DAM_ASSET_LINK).getString();
+                Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                String assetLink = "";
+                if(gatedAsset && formPath != null && isFormActive(formPath)){
+                    assetLink = formPath;
+                }else {
+                    assetLink = path;
                 }
+
+                assetLink = resourceResolver.map(assetLink);
+
                 String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                 //  metadata
                 List<BmcMetadata> metadata = getMetadata(resource);
@@ -84,6 +100,34 @@ public class ResourceCenterFeaturedCardModel {
             log.error("An exception has occured while adding hit to response with resource: " + path
                     + " with error: " + e.getMessage(), e);
         }
+    }
+
+    private boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        Set<String> runmodes = slingSettingsService.getRunModes();
+        try {
+            if (gatedAssetFormPath != null) {
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
+                }else{
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 
     private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
