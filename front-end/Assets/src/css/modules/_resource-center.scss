@@ -537,7 +537,23 @@ body.no-scroll{
           transition: 0.3s linear;          
           //padding-right: 20px;
           background-position: left bottom;
+          .card-footer-logo {
+            color: #fff;
+          }
         }
+      }
+      // WEB-6793
+      .card-footer-logo {
+        padding: 10px 0;
+        font-size: 15px;
+        color: #3980B2;
+        font-weight: 600;
+        .video-length {
+            font-size: 15px;
+        }
+          img{
+              vertical-align: middle;
+          }
       }
   }
 
