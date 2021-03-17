@@ -513,6 +513,9 @@ body.no-scroll{
         .card-footer {
           transition: 0.3s linear;
           color: #fff !important;
+          .card-footer-action{
+            color: #fff;
+          }
           //  white action icons
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
