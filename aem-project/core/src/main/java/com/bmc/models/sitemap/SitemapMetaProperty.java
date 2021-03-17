@@ -45,8 +45,8 @@ public class SitemapMetaProperty {
 
 	public boolean getPagetemplate() {
 		hiddenbyPage = false;
-		if (siteMapXMLService.getExcludeProperty() != null) {
-			for (String pageTemplate : siteMapXMLService.getExcludeProperty()) {
+		if (siteMapXMLService.getExcludeTemplates()!= null) {
+			for (String pageTemplate : siteMapXMLService.getExcludeTemplates()) {
 				hiddenbyPage = hiddenbyPage
 						|| products.getValueMap().get("cq:template", StringUtils.EMPTY).equalsIgnoreCase(pageTemplate);
 			}
