@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    versionpurge.maxAgeDays="{Long}180"
+    versionpurge.maxVersions="{Long}3"
+    versionpurge.minVersions="{Long}3"
+    versionpurge.paths="[/content/bmc/language-masters/en/it-solutions,/content/bmc/language-masters/de/it-solutions,/content/bmc/language-masters/fr/it-solutions,/content/bmc/language-masters/pt/it-solutions,/content/bmc/language-masters/es/it-solutions,/content/bmc/language-masters/ja/it-solutions,/content/bmc/language-masters/zh/it-solutions]"
+    versionpurge.recursive="{Boolean}true"/>
