@@ -256,6 +256,7 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"/>
                                             </ic-company-size>
+                                            <!-- WEB-10038 Removed Rc fields from the Video Page Template -->
                                         </items>
                                     </metadata>
                                 </items>

@@ -362,6 +362,7 @@
                                                         value="redirect"/>
                                                 </items>
                                             </documentDisplayType>
+                                            <!-- WEB-10038 Removed Rc fields from the DC Template -->
                                             <fragmentpath
                                                 granite:id="xfPicker"
                                                 jcr:primaryType="nt:unstructured"
