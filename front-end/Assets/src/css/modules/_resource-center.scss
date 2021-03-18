@@ -109,6 +109,33 @@
         border-right: solid;
       }
     }
+    .readMore, .readLess {
+      cursor: pointer;
+      display: none;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 0px;
+      border-top: none;
+      color: #29a5d6;
+      &:hover{
+        color: #046eb1;
+      }
+      &:after{
+        font-family: icomoon;
+        padding: 5px;
+        vertical-align: middle;
+      }     
+    }  
+    .readMore{
+      &:after{
+        content: $iconArrowDown;
+      }
+    }
+    .readLess{
+      &:after{
+        content: $iconArrowUp;
+      }
+    } 
 }
 
 .rc-filter-header {
@@ -296,7 +323,6 @@ body.no-scroll{
   flex-wrap: wrap;
   padding-top: 15px;
   margin-right: -20px;
-
   .rc-featured-card-col {
     flex: 0 0 100%;
     box-sizing: border-box;
@@ -484,9 +510,12 @@ body.no-scroll{
         box-shadow: none;
         background: #ebf2f7;
         transition: 0.3s linear;
-        .card-footer-action {
+        .card-footer {
           transition: 0.3s linear;
           color: #fff !important;
+          .card-footer-action{
+            color: #fff;
+          }
           //  white action icons
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
@@ -508,7 +537,23 @@ body.no-scroll{
           transition: 0.3s linear;          
           //padding-right: 20px;
           background-position: left bottom;
+          .card-footer-logo {
+            color: #fff;
+          }
         }
+      }
+      // WEB-6793
+      .card-footer-logo {
+        padding: 10px 0;
+        font-size: 15px;
+        color: #3980B2;
+        font-weight: 600;
+        .video-length {
+            font-size: 15px;
+        }
+          img{
+              vertical-align: middle;
+          }
       }
   }
 
@@ -621,8 +666,8 @@ body.no-scroll{
     background-image: url('#{$imagesFolder}s-clock-blue.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;    
+    width: 1.1rem;
+    height: 1.1rem;    
   }
 
 
@@ -648,6 +693,13 @@ body.no-scroll{
   .ic_view {
     background-image: url("#{$imagesFolder}ic_view.png");
   }
+  .ic_trial {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_trial-white {
+    background-image: url("#{$imagesFolder}icon-interactive-white.png");
+  }
+  
 }
 
 .text-white {
@@ -872,3 +924,18 @@ $bg-forrester-green: #16563F;
 .rc-no-text {
   max-height: 43px;
 } 
+
+.col-4-layout{
+  .rc-card-col {    
+    @media (min-width: $break-lg) {
+      flex: 0 0 25%;
+      max-width:25%;
+    }
+  }
+  }
+
+#rc-featured-card {
+  display: none;
+  padding-top: 15px;
+  padding-right: 20px;
+}

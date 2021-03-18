@@ -25,5 +25,7 @@ public interface ResourceService extends ConfigurableService{
 
     List<String> getPropertyNames();
 
+    String getPropertyOptionIfFound(List <String> list, String value);
+
 }
 

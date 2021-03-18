@@ -6,7 +6,7 @@
         <!--<exclude pattern="/apps/bmc/config.author.stage/(.*)"/> -->
         <!--<exclude pattern="/apps/bmc/config.publish1.stage/(.*)"/> -->
         <!--<exclude pattern="/apps/bmc/config.publish2.stage/(.*)"/> -->
-        <exclude pattern="/apps/bmc/config.stage/(.*)"/>
+       <!-- <exclude pattern="/apps/bmc/config.stage/(.*)"/>-->
     </filter>
     <filter root="/apps/msm/bmc"/>
     <!--EXCLUDING CQ GUI FROM BUILD TO PREVENT OVERRIDE CQ NODE ON PROD  -->
@@ -30,6 +30,12 @@
 	 <!-- WEB-6185 RC Template START -->
 		<filter root="/conf/bmc/settings/wcm/templates/resource-center-template" mode="replace"/>
  <!--  <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
+    <!-- WEB-6185 RC Template END -->
+    <!-- WEB-10037 Webinars and Trials  -->
+    <filter root="/conf/bmc/settings/wcm/templates/webinars" mode="replace"/>
+    <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="replace"/>
+    <filter root="/conf/bmc/settings/wcm/templates-types/external-link-page" mode="replace"/>
+    <!--  <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
     <!-- WEB-6185 RC Template END -->
     <!-- WEB-4924 Forms redesign new templates START -->
     <!-- WEB-5345 remove merge and add replace. -->
