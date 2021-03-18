@@ -1,12 +1,15 @@
 <h2>Video Data</h2>
 <ul data-sly-use.video="com.bmc.components.VideoData">
+    <sly data-sly-test="video.learnMore">
+        <sly data-sly-test.className="learn-more"></sly>
+     </sly>
     <li><strong>Type:</strong> ${video.typeName}</li>
     <li><strong>VID:</strong> ${video.videoId}</li>
     <li><strong>Title:</strong> ${video.title @ context = 'html'}</li>
     <li><strong>Description:</strong> ${video.description @ context = 'html'}</li>
     <li><strong>Length:</strong> ${video.videoLength @ context = 'html'}</li>
 <sly data-sly-test="${video.isYouTube}">
-    <li><strong>Overlay Text:</strong> ${video.overlayText}</li>
+    <li class ="${className}"><strong>Overlay Text:</strong> ${video.overlayText}</li>
     <li><strong>Overlay URL:</strong> ${video.overlayUrl}</li>
 </sly>
 </ul>

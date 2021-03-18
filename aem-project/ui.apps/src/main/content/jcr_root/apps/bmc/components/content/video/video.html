@@ -1,6 +1,9 @@
 <sly data-sly-use.video="com.bmc.components.VideoData"></sly>
+<sly data-sly-test="${video.videoLength}">
+    <sly data-sly-test.videoLength="(${video.videoLength @ context = 'html'})"></sly>
+</sly>
 <figure data-sly-test="${video.isValid && !video.useModal}" data-sly-use.resolved="${'resolve-data.js' @ video=video }">
-    <h2 data-sly-test="${video.title != ''}">Video: ${video.title @ context = 'html'}</h2>
+    <h2 data-sly-test="${video.title != ''}">Video: ${video.title @ context = 'html'} ${videoLength}</h2>
     <p data-sly-test="${video.description != ''}">${video.description @ context = 'html'}</p>
     <div data-sly-test="${video.isYouTube}" id="youtube_${video.videoId}" class="youtube-video inline-youtube-video-player">
         <div id="${video.videoId}" class="youtubePlayer" data-src="${video.videoId}" data-autoplay=0 data-fullscreen=1></div>
@@ -17,10 +20,10 @@
     <strong>Video:</strong>
     <ul class="plain">
         <li data-sly-test="${video.isYouTube}">
-            <a class="modal-youtube-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title @ context = 'html'} &nbsp;›</a>
+            <a class="modal-youtube-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title @ context = 'html'} ${videoLength} &nbsp;›</a>
         </li>
         <li data-sly-test="${!video.isYouTube}">
-            <a class="modal-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title @ context = 'html'} &nbsp;›</a>
+            <a class="modal-video-player" target="_self" href="/content/bmc/videos.html?vID=${video.videoId}">${video.title @ context = 'html'} ${videoLength} &nbsp;›</a>
         </li>
     </ul>
 </div>
