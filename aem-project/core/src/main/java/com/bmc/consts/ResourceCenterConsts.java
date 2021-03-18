@@ -44,6 +44,8 @@ public class ResourceCenterConsts {
     /* matching mode */
     public static final String QUERY_PARAM_PROP_OPERATION = "property.operation";
     public static final String QUERY_PARAM_PROP_OPERATION_LIKE = "like";
+    public static final String QUERY_PARAM_PROP_OPERATION_EXISTS = "exists";
+
 
     /* pagination */
     public static final String QUERY_PARAM_PAGE_IDX = "p.offset";
