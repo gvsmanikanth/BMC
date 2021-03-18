@@ -30,7 +30,7 @@ window['psc'] = {
     supportQuestionUrl: "https://community.bmc.com/s/topic/0TO3n000000WfBMGA0/bmc-customer-support-community"
   },
   user: {
-    loggedIn: 'false'
+    loggedIn: 'true'
   }
 };
 

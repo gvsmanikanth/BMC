@@ -28,6 +28,9 @@ import { CommunityProductComponent } from './community/community-product/communi
 import { StateService } from './shared/services/state.service';
 import { ServicesAndConsultingComponent } from './services-and-consulting/services-and-consulting.component';
 import { GuidedTourComponent } from './guided-tour/guided-tour.component';
+import { ProductCompatibilityComponent } from './product-compatibility/product-compatibility.component';
+import { ProductCompatibilityService } from './shared/services/product-compatibility/product-compatibility.service';
+import { CompatibilityProductComponent } from './product-compatibility/compatibility-product/compatibility-product.component';
 
 const appRoutes: Routes = [
   {
@@ -53,6 +56,10 @@ const appRoutes: Routes = [
   {
     path: 'sac',
     component: ServicesAndConsultingComponent
+  },
+  {
+    path: 'compatibility',
+    component: ProductCompatibilityComponent
   }
 ]
 
@@ -72,6 +79,8 @@ const appRoutes: Routes = [
     CommunityProductComponent,
     ServicesAndConsultingComponent,
     GuidedTourComponent,
+    ProductCompatibilityComponent,
+    CompatibilityProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +109,8 @@ const appRoutes: Routes = [
     DocsService,
     SupportQuestionsService,
     CommunityService,
-    StateService
+    StateService,
+    ProductCompatibilityService
   ],
   bootstrap: [AppComponent]
 })

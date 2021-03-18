@@ -376,6 +376,7 @@ export class GuidedTourComponent implements OnInit {
       element:'.support-chat-now',
       intro: 'If you don\'t find an answer to your questions, please use the chat function.',
       preChange: (step, ctx) => {
+        window.scrollTo(0,0);
         if (step.element.style.display === 'none') {
           this.intro.nextStep();
           ++ctx._currentStep;
@@ -386,7 +387,11 @@ export class GuidedTourComponent implements OnInit {
     });//24
     this.intro.addStep({
       element:'#feedbackTab',
-      intro: 'If you have feedback for us about this new support homepage, please click here.'
+      intro: 'If you have feedback for us about this new support homepage, please click here.',
+      preChange: () => {
+        window.scrollTo(0,0);
+        return true;
+      }
     });//25
     this.intro.onbeforechange(function (){
       if (!this._introItems.length || this._currentStep >= this._introItems.length) {
@@ -670,6 +675,7 @@ export class GuidedTourComponent implements OnInit {
       element:'.support-chat-now',
       intro: 'If you don\'t find an answer to your questions, please use the chat function.',
       preChange: (step, ctx) => {
+        window.scrollTo(0,0);
         if (step.element.style.display === 'none') {
           this.intro.nextStep();
           ++ctx._currentStep;
@@ -680,7 +686,11 @@ export class GuidedTourComponent implements OnInit {
     });//21
     this.intro.addStep({
       element:'#feedbackTab',
-      intro: 'If you have feedback for us about this new support homepage, please click here.'
+      intro: 'If you have feedback for us about this new support homepage, please click here.',
+      preChange: () => {
+        window.scrollTo(0,0);
+        return true;
+      }
     });//22
     this.intro.onbeforechange(function (step){
       console.log(this._currentStep, this);

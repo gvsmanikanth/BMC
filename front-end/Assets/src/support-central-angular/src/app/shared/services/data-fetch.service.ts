@@ -6,11 +6,13 @@ import { discussion } from '../data/community/community-discussion';
 import { communityDocs } from '../data/community/community-docs';
 import { idea } from '../data/community/community-idea';
 import { post } from '../data/community/community-post';
+import { compatibility } from '../data/compatibility';
 import { docs } from '../data/docs';
 import { products } from '../data/products';
 import { questions } from '../data/questions';
 import { Case } from '../models/case/case.model';
 import { AskCommunityProduct } from '../models/communities/ask-communities.model';
+import { CompatibilityProduct } from '../models/compatibility/compatibility-product';
 import { DocsProduct } from '../models/docs/docs-product.model';
 import { EPDProduct } from '../models/epd/epd-product.model';
 import { SupportQuestion } from '../models/questions/question.model';
@@ -54,6 +56,16 @@ export class DataFetchService {
         }
 
         return this.http.get('/bin/supportcentralcontent?content_type=DOCUMENTATION').toPromise().then((response:any) => {
+            this.state.hasUserActivity = response.metaData.hasUserActivity;
+            return response.productList;
+        });
+    }
+
+    getCompatibility() : Promise<CompatibilityProduct[]> {
+        if (window.location.href.indexOf('localhost:4200') !== -1) {
+            return Promise.resolve(compatibility)
+        }
+        return this.http.get('/bin/supportcentralcontent?content_type=PRODUCT_COMPATIBLITY').toPromise().then((response:any) => {
             this.state.hasUserActivity = response.metaData.hasUserActivity;
             return response.productList;
         });

@@ -62,7 +62,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Product Compatibility",
         description: "Check product compatibility with platforms and databases",
-        routerLink: null,
+        routerLink: 'compatibility',
         icon: "psc-icon-product_compatibility"
 
     },

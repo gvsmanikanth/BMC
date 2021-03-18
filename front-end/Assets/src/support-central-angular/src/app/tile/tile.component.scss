@@ -8,7 +8,9 @@
             width: 20%;
         }
         .tile-center {
-            width: 78%;
+            width: 80%;
+            border-top: 1px solid #D6D7D8;
+            border-top-right-radius: 5px;
         }
     }
     & {
@@ -41,12 +43,13 @@
     }
     .tile-center {
         & {
-            width: 75%;
+            width: 76%;
             font-size: 12px;
             padding: 5px 0 5px 10px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border-top: 1px solid #D6D7D8;
         }
         h3 {
          font-weight: normal;
@@ -89,6 +92,7 @@
             justify-content: space-around;
             align-items: center;
             border-left: 1px solid #D6D7D8;
+            border-top: 1px solid #D6D7D8;
         }
         &:hover {
             background-color: #F9F9FA;

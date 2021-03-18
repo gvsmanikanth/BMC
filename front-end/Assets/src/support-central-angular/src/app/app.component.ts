@@ -117,6 +117,10 @@ export class AppComponent implements OnInit, AfterViewInit{
         if (!this.userLoggedIn) {
           widget.routerLink = null;
         }
+      } else if (widget.id === "prdCompatibility") {
+        if (!this.userLoggedIn) {
+          widget.routerLink = null;
+        }
       }
     })
     this.cdr.detectChanges()

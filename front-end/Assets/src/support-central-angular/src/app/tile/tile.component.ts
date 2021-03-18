@@ -23,6 +23,9 @@ export class TileComponent implements OnInit {
   ngOnInit() {
     if (this.state.user.loggedIn === 'true') {
       this.iconPopoverText = this.LOGGED_IN_POPOVER_TEXT;
+      if (this.widget.id === "servicesConsulting") {
+        this.iconPopoverText = null;
+      }
     } else {
       this.iconPopoverText = this.GUEST_USER_POPOVER_TEXT;
     }
