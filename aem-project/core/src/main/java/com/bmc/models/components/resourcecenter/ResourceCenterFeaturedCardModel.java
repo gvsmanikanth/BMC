@@ -62,7 +62,7 @@ public class ResourceCenterFeaturedCardModel {
     private Replicator replicator;
     private Session session;
 
-    @Reference
+    @OSGiService
     private SlingSettingsService slingSettingsService;
 
     @PostConstruct
