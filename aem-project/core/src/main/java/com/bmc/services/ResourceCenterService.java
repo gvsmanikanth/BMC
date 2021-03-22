@@ -40,4 +40,6 @@ public interface ResourceCenterService extends ConfigurableService  {
     String getContentTypeActionValue(String contentType);
     //WEB-9267 Filters - Arrange Category and Category Values
     String getAllFilterValue(String contentType);
+
+    String generateCTA(String contentType);
 }

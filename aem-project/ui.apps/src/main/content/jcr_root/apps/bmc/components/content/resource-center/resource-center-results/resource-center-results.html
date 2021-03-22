@@ -15,6 +15,9 @@
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-gartner-blue' ? '#006699' : fcBgColor}"/>
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-forrester-green' ? '#16563F' : fcBgColor}"/>
 
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Trial' ? 'view' : featuredCard.linkType}"/>
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Webinar' ? 'view' : footerIcon}"/>
+
 <style>
   .featured-card-container:hover .featured-card-left-panel{
     background-color: ${fcBgColor @ context='styleString'};
@@ -40,10 +43,9 @@
                 </div>
             </div>
         </div>
-        <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding: 0px;">
-            <!--/* WEB-6757- added id to toggle feature card */--> 
+      <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding: 0px;">
             <div class="rc-featured-card-col"  id="rc-featured-card">
-                <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
+                <a id="rc-featured-card-link" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
                     <div class="featured-card-container">
                         <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
@@ -68,12 +70,10 @@
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
                             <div class="featured-card-footer" style="padding-left: 0px;">
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                    <svg class="align-middle s-${featuredCard.linkType}-white">
+                                    <svg class="align-middle s-${footerIcon}-white">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                                     </svg>
-                                    ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                    ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                    ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                    ${featuredCard.ctaText @ i18n}
                                 </span>
                             </div>
                         </div>
@@ -91,12 +91,10 @@
                         </div>
                         <div class="featured-card-footer" style="padding-left: 0px;">
                             <span class="card-footer-action" style="border-top-color:white;">
-                                <svg class="align-middle s-${featuredCard.linkType}-white">
+                                <svg class="align-middle s-${footerIcon}-white">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                                 </svg>
-                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                ${featuredCard.ctaText @ i18n}
                             </span>
                         </div>
                     </div>
