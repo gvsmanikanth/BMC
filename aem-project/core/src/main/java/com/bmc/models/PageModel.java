@@ -25,7 +25,7 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,9 +34,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 
 /**
@@ -73,6 +70,8 @@ public class PageModel {
     private String bmcMetaJson;
     private Gson gson;
 
+    private Map<String,String> swiftTypeMetaMap = new HashMap<String, String>();
+
     @PostConstruct
     protected void init() {
         ValueMap map = resource.getValueMap();
@@ -97,7 +96,7 @@ public class PageModel {
 
         // called here so that page long name can be set and can change if TY page is requested
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
-
+        createSwifTypeMeta();
         BmcMeta bmcMeta = gatherAnalytics();
         gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
@@ -448,8 +447,8 @@ public class PageModel {
         String code = (String) resolvedPage.getProperties().getOrDefault("jcr:language", "");
         return code.replace("_","-");
     }
-    
-   
+
+
     /*
      * Method name dateToNewDate()
      * Converts the old java.util.Date object to the new Date Time
@@ -466,5 +465,37 @@ public class PageModel {
         logger.info("java.time.LocalDateTime = " + dateTime);
         logger.info("java.time.zonedDateTime     = " + zonedDateTime);
        return zonedDateTime;
+    }
+
+    public Map<String, String> getSwiftTypeMetaMap() {
+        return swiftTypeMetaMap;
+    }
+
+    public void createSwifTypeMeta(){
+        swiftTypeMetaMap.put("source",getPageLanguage());
+        String pageTaxonomyPath = resourcePage.getAbsoluteParent(4).getPath();
+        String taxonomy = pageTaxonomyPath.substring(pageTaxonomyPath.lastIndexOf("/")+1);
+        String value = "";
+        if(taxonomy.equalsIgnoreCase("education")){
+            value = "education";
+        }else if(taxonomy.equalsIgnoreCase("it-solutions")){
+            value = "productsSolutions";
+        }else if(taxonomy.equalsIgnoreCase("it-services")){
+            value = "services";
+        }else if(taxonomy.equalsIgnoreCase("forms")){
+            value = "forms";
+        }
+        if(value != null && !value.equals("")) {
+            swiftTypeMetaMap.put("category", value);
+        }
+    }
+
+    private String getPageLanguage(){
+        String language = "";
+        Page resolvedPage = resourcePage.getAbsoluteParent(3);
+        if (resolvedPage == null)
+            resolvedPage = resourcePage;
+        language = resolvedPage.getLanguage().toString().split("_")[0];
+        return language;
     }
 }
