@@ -473,7 +473,11 @@ public class PageModel {
 
     public void createSwifTypeMeta(){
         swiftTypeMetaMap.put("source",getPageLanguage());
-        String pageTaxonomyPath = resourcePage.getAbsoluteParent(4).getPath();
+        Page taxonomyPage = resourcePage.getAbsoluteParent(4);
+        if(taxonomyPage == null){
+            taxonomyPage = resourcePage;
+        }
+        String pageTaxonomyPath = taxonomyPage.getPath();
         String taxonomy = pageTaxonomyPath.substring(pageTaxonomyPath.lastIndexOf("/")+1);
         String value = "";
         if(taxonomy.equalsIgnoreCase("education")){
