@@ -8,7 +8,6 @@
           assertionConsumerServiceURL=""
           signatureMethod="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"
           digestMethod="http://www.w3.org/2001/04/xmlenc#sha256"
-          clockTolerance="{Integer}60"
           defaultGroups="[bmc-everyone]"
           defaultRedirectUrl="/"
           groupMembershipAttribute="SSOGROUPDN"
