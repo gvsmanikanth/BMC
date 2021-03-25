@@ -10,7 +10,8 @@
             <a *ngIf="state.user.loggedIn === 'true'"
                 href="https://www.bmc.com/available/create-modify-pn-subscription-list.html" class="ml-3"
                 adaptPopover="Click here to edit your favorite Products and alert subscription"
-                [triggers]="'mouseover:mouseout'">
+                [triggers]="'mouseover:mouseout'"
+                target="_blank">
                 <span class="d-icon-pencil_adapt"></span>
             </a>
             <span *ngIf="state.user.loggedIn === 'false'">Please <a href="/available/supportlogin.html">log in</a> to see your personalized view.</span>

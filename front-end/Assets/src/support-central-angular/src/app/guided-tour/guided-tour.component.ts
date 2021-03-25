@@ -224,7 +224,7 @@ export class GuidedTourComponent implements OnInit {
     });//12
     this.intro.addStep({
       element:'.tab-container .nav-pills',
-      intro: 'Click a tab to go to a particular content type.',
+      intro: 'Click on any tab to go to a particular community content type.',
       preChange: (step, ctx) => {
         if (!this.communitiesOpened) {
           this.intro.goToStepNumber(10);
@@ -362,11 +362,11 @@ export class GuidedTourComponent implements OnInit {
     });//20
     this.intro.addStep({
       element:'.psc-news .news-container-wrapper',
-      intro: 'Here you can see the latest support news and features.Click on any one news card to read the news in detail.'
+      intro: 'Here you can see the latest support news and features. Click on any news item to read the news in detail.'
     });//21
     this.intro.addStep({
       element:'.psc-orientation-checklist .psc-fs-12:first-child .psc-checklist-right',
-      intro: 'If you are upgrading a BMC product, please click here & read about the Amigo program.'
+      intro: 'If you are upgrading a BMC product, please click here to learn about the Amigo program.'
     });//22
     this.intro.addStep({
       element:'.psc-orientation-checklist .psc-fs-12:nth-child(2) .psc-checklist-right',
@@ -531,7 +531,7 @@ export class GuidedTourComponent implements OnInit {
     });//9
     this.intro.addStep({
       element:'#tile2 .tile-arrow',
-      intro: 'Click here to open a personalized view of Product downloads.',
+      intro: 'Click here to open Product downloads widget.',
       position: 'left',
       preChange: (step, ctx) =>  {
         let element = document.querySelector('#tile2 .tile-arrow');

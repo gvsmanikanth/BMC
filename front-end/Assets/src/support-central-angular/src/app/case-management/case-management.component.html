@@ -8,11 +8,11 @@
         <div class="description">Your most recent support cases</div>
     </div>
     <div class="extended-widget-body" [ngBusy]="caseService.busyConfig">
-        <a [href]="caseService.widgetLinks.openCase" class="btn btn-primary" (click)="submitCase()">Submit New Case</a>
-        <a [href]="caseService.widgetLinks.listCase" class="btn btn-secondary" (click)="getViews()">View All Cases</a>
+        <a [href]="caseService.widgetLinks.openCase" class="btn btn-primary" target="_blank" (click)="submitCase()">Submit New Case</a>
+        <a [href]="caseService.widgetLinks.listCase" class="btn btn-secondary" target="_blank" (click)="getViews()">View All Cases</a>
         <adapt-empty-state type="objects" label="No cases found" *ngIf="casesChunk.length === 0"></adapt-empty-state>
         <div *ngFor="let case of casesChunk" class="case">
-            <h4><a [href]="caseService.widgetLinks.caseDetailUrl + case.Id" (click)="sendCase(case.CaseNumber, case.ProductName)">{{case.CaseNumber}}</a><span class="product-name">{{case.ProductName}}</span><span class="status">{{case.Status}}</span></h4>
+            <h4><a [href]="caseService.widgetLinks.caseDetailUrl + case.Id" target="_blank" (click)="sendCase(case.CaseNumber, case.ProductName)">{{case.CaseNumber}}</a><span class="product-name">{{case.ProductName}}</span><span class="status">{{case.Status}}</span></h4>
             <div class="subject">{{case.Subject}}</div>
             <div class="dates"><span>Created: {{case.CreatedDate | date: 'dd-MMM-yyyy'}}</span><span>Modified: {{case.LastModifiedDate | date: 'dd-MMM-yyyy'}}</span></div>
         </div>
