@@ -15,8 +15,8 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
 <template data-sly-template.head="${ @ page }" data-sly-use.headlibRenderer="headlibs.html"
           data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <sly data-sly-test.isHomePage="${properties.homePage}">
         <title>${properties['browserTitle'] || currentPage.title || resource.name}</title>
         <meta name="google-site-verification" content="7FGS9HcYo7XLesfesSP-tQAHPt4qy3Bw10JFU4tQI4w" />
@@ -67,8 +67,8 @@
     <!--/* WEB-9728 Updated logic for non indexing of non prod pages START */-->
     <sly data-sly-use.runmode="com.bmc.models.RunModes" />
     <sly data-sly-use.multiItems="com.bmc.models.sitemap.SitemapMetaProperty">
-     <meta data-sly-test="${ (multiItems.pageproperty) || (multiItems.pagetemplate)||(multiItems.parentproperty)}" name="robots" content="noindex, follow" >
-     <meta data-sly-test="${ (!multiItems.pageproperty) && (!multiItems.pagetemplate)&&(!multiItems.parentproperty)}" name="robots" content="index, follow">
+     <meta data-sly-test="${(runmode.mode != 'prod')||(multiItems.pageproperty) || (multiItems.pagetemplate)||(multiItems.parentproperty)}" name="robots" content="noindex, follow" >
+     <meta data-sly-test="${(runmode.mode == 'prod')&&(!multiItems.pageproperty) && (!multiItems.pagetemplate)&&(!multiItems.parentproperty)}" name="robots" content="index, follow">
     </sly>
     <!--/*<meta data-sly-test="${(runmode.mode != 'prod') || (templateName == 'form-thank-you') || (templateName == 'form-thank-you2')}" name="robots" content="noindex, nofollow" >
     <meta data-sly-test="${(runmode.mode == 'prod') && (templateName != 'form-thank-you2') && (templateName != 'form-thank-you')}" name="robots" content="index, follow"> */-->
