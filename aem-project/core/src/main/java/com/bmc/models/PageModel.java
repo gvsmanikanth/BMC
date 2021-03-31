@@ -25,7 +25,7 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,9 +34,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 
 /**
@@ -97,7 +94,6 @@ public class PageModel {
 
         // called here so that page long name can be set and can change if TY page is requested
         setContentType(getTemplateName(formatPageType(resourcePage.getProperties().get("cq:template", ""))));
-
         BmcMeta bmcMeta = gatherAnalytics();
         gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.IDENTITY)
@@ -448,8 +444,8 @@ public class PageModel {
         String code = (String) resolvedPage.getProperties().getOrDefault("jcr:language", "");
         return code.replace("_","-");
     }
-    
-   
+
+
     /*
      * Method name dateToNewDate()
      * Converts the old java.util.Date object to the new Date Time

@@ -50,7 +50,7 @@ public class SearchResultsModel {
         if (resolvedPage == null)
             resolvedPage = currentPage;
 
-        return resolvedPage.getLanguage().toString().replace("_","-");
+        return resolvedPage.getLanguage().toString().split("_")[0];
     }
 
     public String getPageLocale() {
