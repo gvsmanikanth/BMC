@@ -5,6 +5,8 @@ import java.util.Map;
 
 import com.bmc.models.bmccontentapi.BmcContentFilter;
 import com.bmc.models.bmccontentapi.BmcContentResult;
+import com.bmc.models.bmccontentapi.BmcMetadata;
+import org.apache.sling.api.resource.Resource;
 
 public interface ResourceCenterService extends ConfigurableService  {
 
@@ -42,4 +44,11 @@ public interface ResourceCenterService extends ConfigurableService  {
     String getAllFilterValue(String contentType);
 
     String generateCTA(String contentType);
+
+    boolean isFormActive(String path);
+
+    List<BmcMetadata> getMetadata(Resource resource);
+
+    BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata);
+
 }

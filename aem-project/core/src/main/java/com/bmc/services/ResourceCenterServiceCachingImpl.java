@@ -9,6 +9,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import com.bmc.models.bmccontentapi.BmcMetadata;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
@@ -16,6 +17,7 @@ import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
 import org.apache.jackrabbit.oak.commons.PropertiesUtil;
+import org.apache.sling.api.resource.Resource;
 import org.osgi.service.cm.ConfigurationAdmin;
 import org.osgi.service.component.ComponentContext;
 import org.slf4j.Logger;
@@ -175,5 +177,20 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     @Override
     public String generateCTA(String contentType) {
         return baseImpl.generateCTA(contentType);
+    }
+
+
+    public boolean isFormActive(String path) {
+        return false;
+    }
+
+    @Override
+    public List<BmcMetadata> getMetadata(Resource resource) {
+        return null;
+    }
+
+    @Override
+    public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+        return null;
     }
 }
