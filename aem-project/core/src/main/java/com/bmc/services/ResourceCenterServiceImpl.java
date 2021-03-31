@@ -533,6 +533,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = path;
+                        String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
+                        String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
+                        String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
 
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
@@ -556,7 +559,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                             assetLink = resourceResolver.map(assetLink);
                         }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, type, linkType, metadata,ctaText));
+                                lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
+
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);

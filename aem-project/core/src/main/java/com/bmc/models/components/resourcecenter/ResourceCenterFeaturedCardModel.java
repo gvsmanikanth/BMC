@@ -75,6 +75,9 @@ public class ResourceCenterFeaturedCardModel {
                     String type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                     String linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
                     String ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                    String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";
+                    String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
+                    String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
 
                     if (type.equalsIgnoreCase("Videos")) {
                         assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
@@ -88,7 +91,7 @@ public class ResourceCenterFeaturedCardModel {
                     if (!assetLink.startsWith("http")) {
                         assetLink = resourceResolver.map(assetLink);
                     }
-                    card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, type, linkType, metadata, ctaText);
+                    card = new BmcContent(0, path, title, title, created, lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText);
                     analiticData = buildAnaliticData();
                 }else{
                     log.info("BMCINFO : IC Content Type value not set for the path : "+path+". Card will be ignored!");
