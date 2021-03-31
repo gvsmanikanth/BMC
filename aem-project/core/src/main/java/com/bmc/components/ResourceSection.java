@@ -60,6 +60,8 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 String assetLink = "";
                 String headerImage = "";
                 String footerLogo = "";
+                String ctaText = "";
+
                 if(pagePath != null){
                     Resource resource = resourceResolver.getResource(pagePath);
                     Node node = resource.adaptTo(Node.class);
@@ -67,21 +69,26 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                     Boolean isRCIncluded = node.hasProperty(JcrConsts.RC_INCLUSION) ? node.getProperty(JcrConsts.RC_INCLUSION).getBoolean() : false;
                     if(isRCIncluded) {
                         String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT) ? parentNode.getPath() : resource.getPath();
+                        assetLink = path;
                         cardTitle = node.hasProperty(JcrConsts.TITLE) ? node.getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
                         headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
                         footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
-
+                        ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                        if(type.equalsIgnoreCase("Videos")) {
+                            assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
+                        }
+                        if(type.equalsIgnoreCase("Webinar")){
+                            assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                        }
                         if (gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)) {
                             assetLink = formPath;
-                        } else {
-                            assetLink = path;
                         }
-
-                        assetLink = resourceResolver.map(assetLink);
-
+                        if(!assetLink.startsWith("http")){
+                            assetLink = resourceResolver.map(assetLink);
+                        }
                         String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         //  metadata
                         List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
@@ -90,10 +97,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                         type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                         linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
 
-                        // set video ID
-                        if(linkType.equals("play")) {
-                            assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
-                        }
+                        // RC Inclusion and IC TYpe must be selected
 
                     }
                 }
@@ -114,6 +118,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 resourceSection.put("videoLength", videoLength);
                 resourceSection.put("headerImage", headerImage);
                 resourceSection.put("footerLogo",footerLogo);
+                resourceSection.put("cardCTAText",ctaText);
                 // Handle the case of the image not existing.
                 resourceSectionCards.add(resourceSection);
             }
@@ -127,4 +132,3 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
     }
 
 }
-
