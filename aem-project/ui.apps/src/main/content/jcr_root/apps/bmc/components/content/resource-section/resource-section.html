@@ -18,7 +18,7 @@
 				<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 				<sly data-sly-list.card="${productSet.resourceSectionCards}">
 					<div class="rc-card-col" style="padding-bottom:20px">
-						<sly data-sly-test.anchorCSS="${card.contentType == 'Videos' ? 'modal-video-player' : ''}"/>
+						<sly data-sly-test.anchorCSS="${card.isVideoType == 'true' ? 'modal-video-player' : ''}"/>
 						<sly data-sly-test="${card.contentType == 'Videos'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
@@ -31,16 +31,19 @@
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="view"/>
 						</sly>
-
+						<sly data-sly-test.styleCss=""/>
+						<sly data-sly-test="${card.headerImage }">
+							<sly data-sly-test.styleCss="margin-top:127px"/>
+						</sly>
 
 						<a class="${anchorCSS}" href="${resolvedLink}">
 							<div class="simple-card bg-white">
-								<div class="card-header">
+								<div class="card-header" style="${styleCss @ context='unsafe'}">
 									<h4>${card.contentType}</h4>
 
-									<div data-sly-test="${card.headerImage}" class="card-thumbnail" style="background: url('${card.headerImage}') no-repeat center center / cover;">
+									<div data-sly-test="${card.headerImage != ''}" class="card-thumbnail" style="background: url(${card.headerImage @ context='uri'}) no-repeat center center / cover;">
 									</div>
-									<div data-sly-test="${!card.headerImage}" class="card-icon ic_${cardIcon}" alt="" border="0"></div>
+									<div data-sly-test="${card.headerImage == ''}" class="card-icon ic_${cardIcon}" alt="" border="0"></div>
 								</div>
 								<div class="card-content">
 									<hr/>

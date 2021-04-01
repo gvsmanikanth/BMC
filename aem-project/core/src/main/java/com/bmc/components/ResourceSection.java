@@ -61,7 +61,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 String headerImage = "";
                 String footerLogo = "";
                 String ctaText = "";
-
+                String isVideo = "false";
                 if(pagePath != null){
                     Resource resource = resourceResolver.getResource(pagePath);
                     Node node = resource.adaptTo(Node.class);
@@ -76,7 +76,12 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                         videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
                         headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
                         footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
-                        ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                        List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
+                        BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
+
+                        type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
+                        linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
+                        
                         if(type.equalsIgnoreCase("Videos")) {
                             assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
                         }
@@ -91,14 +96,13 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                         }
                         String thumbnail = node.hasProperty(JcrConsts.THUMBNAIL) ? node.getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         //  metadata
-                        List<BmcMetadata> metadata = resourceCenterService.getMetadata(resource);
-                        BmcMetadata contentType = resourceCenterService.getContentTypeMeta(metadata);
 
-                        type = contentType != null ? resourceCenterService.getContentTypeDisplayValue(contentType.getFirstValue()) : "";
-                        linkType = contentType != null ? resourceCenterService.getContentTypeActionValue(contentType.getFirstValue()) : "";
 
                         // RC Inclusion and IC TYpe must be selected
-
+                        ctaText = type != null ? resourceCenterService.generateCTA(type) : "";
+                        if(assetLink.contains("vID")){
+                            isVideo = "true";
+                        }
                     }
                 }
 
@@ -119,6 +123,8 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 resourceSection.put("headerImage", headerImage);
                 resourceSection.put("footerLogo",footerLogo);
                 resourceSection.put("cardCTAText",ctaText);
+                resourceSection.put("isVideoType",isVideo);
+
                 // Handle the case of the image not existing.
                 resourceSectionCards.add(resourceSection);
             }
