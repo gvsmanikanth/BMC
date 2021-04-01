@@ -4,8 +4,8 @@
       data-sly-use.head="head.html"
       data-sly-use.footer="footer.html">
 <!--/* WEB-10037 Added for Resource Center */-->
-<sly data-sly-test="${page.templateName == 'resource-center-template'}"><!-- This resource center was made possible through the determination of Santosh Dodke. We couldn't have done it without you. Thanks for everything.--></sly>
-<head data-sly-call="${head.head @ page = page}"></head>
+<sly data-sly-test="${page.templateName == 'resource-center-template'}"><!-- This resource center was made possible through the determination of S.D. We couldn't have done it without you. Thanks for everything.--></sly>
+    <head data-sly-call="${head.head @ page = page}"></head>
     <body class="${properties.bodyClass}">
         <p data-sly-test.path="${properties.redirectTarget}" class="cq-redirect-notice">This page redirects to <a href="${path @ context = 'uri'}">${path}</a></p>
         <sly data-sly-include="body.socialmedia_begin.html"></sly>

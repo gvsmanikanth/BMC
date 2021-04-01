@@ -2,32 +2,53 @@
     <div class="rc-card-row">
         {{#each items}}
         <div class="rc-card-col">
-            <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}"href="{{assetLink}}" {{{analyticsAttributes}}}>
-            <div class="simple-card bg-white" style="height: 310px;">
-                <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
-                    <h4>{{type}}</h4>
-                    {{#if thumbnail}}
-                        <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
-                        </div>
-                    {{else}}
-                        <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                    {{/if}}
-                </div>
-                <div class="card-content">
-                    <hr/>
-                    <h4>
-                        {{#if thumbnail}}
-                            {{{truncateText title 70}}}
+            <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
+                <div class="simple-card bg-white">
+                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                    <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
+                        <h4>{{type}}</h4>
+                        {{#if headerImage}}
+                            <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
+                            </div>
                         {{else}}
-                            {{{truncateText title 110}}}
+                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
                         {{/if}}
-                    </h4>
-                </div>
-                {{#ifCond linkType '===' ""}}
-                    <div class="card-footer rc-no-text">
-                {{else}}
-                    <div class="card-footer">
-                {{/ifCond}}
+                    </div>
+                    <div class="card-content">
+                        <hr/>
+                        <h4>
+                            {{#if headerImage}}
+                                {{{truncateText title 70}}}
+                            {{else}}
+                                {{{truncateText title 110}}}
+                            {{/if}}
+                        </h4>
+                    </div>
+                    {{#ifCond linkType '===' ""}}
+                        <div class="card-footer rc-no-text">
+                    {{else}}
+                        <div class="card-footer">
+                    {{/ifCond}}
+                    <div class="card-footer-logo">
+                        {{#ifCond type '===' "Videos"}}
+                            {{#if videoLength}}
+                                <span class="video-length">
+                                    <svg class="align-middle s-clock">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                    </svg>{{videoLength}}
+                                </span>
+                            {{/if}}
+                        {{/ifCond}}
+                        {{#if footerLogo}}
+                            {{#ifCond type '===' "Videos"}}
+                            {{else}}
+                                <span>
+                                    <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                </span>
+                            {{/ifCond}}
+                        {{/if}}
+                    </div>
+                    <!--/* WEB-6793 Added new fields for RC Cards END */-->
                     <span class="card-footer-action">
                         {{#ifCond type '===' "Trial"}}
                             <svg class="align-middle s-view">
@@ -45,7 +66,7 @@
                         {{ctaText}}
                     </span>
                 </div>
-            </div>
+                </div>
             </a>
         </div>
         {{/each}}
