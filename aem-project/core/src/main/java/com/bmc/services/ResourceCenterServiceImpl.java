@@ -592,7 +592,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return ctaText;
     }
 
-
+    @Override
     public boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
         Set<String> runmodes = slingSettingsService.getRunModes();

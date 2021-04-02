@@ -179,7 +179,7 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
         return baseImpl.generateCTA(contentType);
     }
 
-
+    @Override
     public boolean isFormActive(String path) {
         return false;
     }
