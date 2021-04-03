@@ -16,9 +16,13 @@ public class BmcContent {
     private String linkType;
     private List<BmcMetadata> metadata;
     private String ctaText;
+    private String headerImage;
+    private String footerLogo;
+    private String videoLength;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, String type, String linkType, List<BmcMetadata> metadata, String ctaText) {
+            String assetLink, String thumbnail, List<BmcMetadata> metadata, String type, String linkType, String headerImage, String footerLogo, String videoLength, String ctaText) {
+
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
@@ -31,6 +35,9 @@ public class BmcContent {
         this.type = type;
         this.linkType = linkType;
         this.ctaText = ctaText;
+        this.headerImage = headerImage;
+        this.footerLogo = footerLogo;
+        this.videoLength = videoLength;
     }
 
     public long getIndex() {
@@ -124,4 +131,16 @@ public class BmcContent {
     public String getCtaText() { return ctaText; }
 
     public void setCtaText(String ctaText) { this.ctaText = ctaText; }
+
+    public String getHeaderImage() { return headerImage; }
+
+    public void setHeaderImage(String headerImage) { this.headerImage = headerImage; }
+
+    public String getFooterLogo() { return footerLogo; }
+
+    public void setFooterLogo(String footerLogo) { this.footerLogo = footerLogo; }
+
+    public String getVideoLength() { return videoLength; }
+
+    public void setVideoLength(String videoLength) { this.videoLength = videoLength; }
 }
