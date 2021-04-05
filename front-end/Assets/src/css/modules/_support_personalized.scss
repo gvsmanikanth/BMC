@@ -90,6 +90,13 @@
 	}
 }
 
+.psc-dashboard-loader.container {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 455px;
+}
+
 .psc-news {
 	.psc-section-heading {
 		margin-left: 15px;

@@ -31,35 +31,52 @@ import { GuidedTourComponent } from './guided-tour/guided-tour.component';
 import { ProductCompatibilityComponent } from './product-compatibility/product-compatibility.component';
 import { ProductCompatibilityService } from './shared/services/product-compatibility/product-compatibility.service';
 import { CompatibilityProductComponent } from './product-compatibility/compatibility-product/compatibility-product.component';
+import { WidgetGuard } from './shared/guards/widget.guard';
+import { EmptyComponent } from './empty/empty.component';
 
 const appRoutes: Routes = [
+  { 
+    path: '',
+    component: EmptyComponent
+  },
   {
     path: 'epd-widget',
-    component: EpdComponentComponent
+    component: EpdComponentComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'manage-case',
-    component: CaseManagementComponent
+    component: CaseManagementComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'docs',
-    component: DocsComponent
+    component: DocsComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'support-question',
-    component: SupportQuestionsComponent
+    component: SupportQuestionsComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'community',
-    component: CommunityComponent
+    component: CommunityComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'sac',
-    component: ServicesAndConsultingComponent
+    component: ServicesAndConsultingComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'compatibility',
-    component: ProductCompatibilityComponent
+    component: ProductCompatibilityComponent,
+    canActivate: [WidgetGuard]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ]
 
@@ -81,6 +98,7 @@ const appRoutes: Routes = [
     GuidedTourComponent,
     ProductCompatibilityComponent,
     CompatibilityProductComponent,
+    EmptyComponent,
   ],
   imports: [
     BrowserModule,

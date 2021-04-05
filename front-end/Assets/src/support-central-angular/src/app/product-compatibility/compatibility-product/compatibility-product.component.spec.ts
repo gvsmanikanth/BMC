@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { compatibility } from 'src/app/shared/data/compatibility';
+import { EPDVersionPipe } from 'src/app/shared/pipes/version.pipe';
 
 import { CompatibilityProductComponent } from './compatibility-product.component';
 
@@ -8,7 +10,10 @@ describe('CompatibilityProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CompatibilityProductComponent ]
+      declarations: [ 
+        CompatibilityProductComponent,
+        EPDVersionPipe
+       ]
     })
     .compileComponents();
   }));
@@ -16,6 +21,7 @@ describe('CompatibilityProductComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CompatibilityProductComponent);
     component = fixture.componentInstance;
+    component.product = compatibility[1];
     fixture.detectChanges();
   });
 

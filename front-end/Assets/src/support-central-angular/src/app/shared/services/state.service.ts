@@ -14,6 +14,10 @@ export class StateService {
   productDownloadsOpened$ = new BehaviorSubject<boolean>(false);
   documentationOpened$ = new BehaviorSubject<boolean>(false);
 
+  communitiesDownloaded$ = new BehaviorSubject<boolean>(false);
+  productDownloadsDownloaded$ = new BehaviorSubject<boolean>(false);
+  documentationDownloaded$ = new BehaviorSubject<boolean>(false);
+
   constructor(private ga: GoogleAnalyticsService) { 
     window['gtag']('config', 'UA-114788512-5', {'login status': this.user.loggedIn});
   }

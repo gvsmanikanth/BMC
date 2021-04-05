@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../shared/services/state.service';
 import * as introJs from 'intro.js/intro.js'
-import { Subject } from 'rxjs';
-import {takeUntil} from 'rxjs/operators'
+import { Observable, Subject } from 'rxjs';
+import {debounceTime, take, takeUntil, takeWhile} from 'rxjs/operators'
 
 @Component({
   selector: 'app-guided-tour',
@@ -15,46 +15,58 @@ export class GuidedTourComponent implements OnInit {
   
   caseOpened = false;
   communitiesOpened = false;
+  communitiesLoaded = false;
   downloadsOpened = false;
+  downloadsLoaded = false;
   documentationOpened = false;
+  documentationLoaded = false;
   unsubscribeObs$ = new Subject();
+  skipStep$ = new Subject();
   tourRunning = false;
+  tourPaused = false;
   intro = introJs();
 
   ngOnInit() {
     this.state.caseManagementOpened$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
       this.caseOpened = value;
-      // if (value && this.tourRunning) {
-      //   setTimeout(() => {
-      //     console.log(this.intro);
-      //     this.intro.nextStep();
-      //   }, 800)
-      // }
+      if (this.tourRunning) {
+        this.skipStep$.next();
+      }
     });
     this.state.communitiesOpened$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
       this.communitiesOpened = value;
-      // if (value && this.tourRunning) {
-      //   setTimeout(() => {
-      //     this.intro.nextStep();
-      //   }, 800)
-      // }
+      if (this.tourRunning) {
+        this.skipStep$.next();
+      }
     });
     this.state.productDownloadsOpened$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
       this.downloadsOpened = value;
-      // if (value && this.tourRunning) {
-      //   setTimeout(() => {
-      //     this.intro.nextStep();
-      //   }, 800)
-      // }
+      if (this.tourRunning) {
+        this.skipStep$.next();
+      }
     });
     this.state.documentationOpened$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
       this.documentationOpened = value;
-      // if (value && this.tourRunning) {
-      //   setTimeout(() => {
-      //     this.intro.nextStep();
-      //   }, 800)
-      // }
+      if (this.tourRunning) {
+        this.skipStep$.next();
+      }
     });
+    this.state.communitiesDownloaded$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
+      this.communitiesLoaded = value;
+    })
+    this.state.documentationDownloaded$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
+      this.documentationLoaded = value;
+    })
+    this.state.productDownloadsDownloaded$.pipe(takeUntil(this.unsubscribeObs$)).subscribe((value) => {
+      this.downloadsLoaded = value;
+    })
+
+    this.skipStep$.pipe(debounceTime(200), takeUntil(this.unsubscribeObs$)).subscribe(() => {
+      setTimeout(() => {
+        this.intro.nextStep();
+      }, 600)
+    })
+
     if (this.state.user.loggedIn === 'true') {
       let lastTimeGuestTourStarted = localStorage.getItem('guidedTour');
       if (lastTimeGuestTourStarted) {
@@ -79,6 +91,7 @@ export class GuidedTourComponent implements OnInit {
 
   loggedInUserTour(skipFirstStep: boolean) {
     this.tourRunning = true;
+    let self = this;
     this.intro.setOptions(
       {
         steps: [
@@ -199,6 +212,9 @@ export class GuidedTourComponent implements OnInit {
           if (!!element) {
             step.element = element;
             step.position = 'bottom';
+            if (!this.communitiesLoaded) {
+              this.pauseIntro(step, 11, this.state.communitiesDownloaded$);
+            }
             return true;
           } 
         }
@@ -302,6 +318,9 @@ export class GuidedTourComponent implements OnInit {
           if (!!element) {
             step.element = element;
             step.position = 'bottom';
+            if (!this.downloadsLoaded) {
+              this.pauseIntro(step, 17, this.state.productDownloadsDownloaded$);
+            }
             return true;
           }
         }
@@ -394,6 +413,9 @@ export class GuidedTourComponent implements OnInit {
       }
     });//25
     this.intro.onbeforechange(function (){
+      if (self.tourPaused) {
+        return false;
+      }
       if (!this._introItems.length || this._currentStep >= this._introItems.length) {
         return true
       } //in case it`s skipping start step or fix to keyboard control (IDK why it`s broken);
@@ -405,6 +427,7 @@ export class GuidedTourComponent implements OnInit {
     });
     this.intro.onexit(() => {
       this.tourRunning = false;
+      this.tourPaused = false;
     })
     this.intro.start();
     if (skipFirstStep) {
@@ -415,6 +438,7 @@ export class GuidedTourComponent implements OnInit {
 
   guestUserTour () {
     this.tourRunning = true;
+    let self = this;
     function resumeAfterLogin():void {
       localStorage.setItem('guidedTour', new Date().getTime().toString());
     };
@@ -465,12 +489,15 @@ export class GuidedTourComponent implements OnInit {
           ++ctx._currentStep;
           return false;
         } else {
-          let element = document.querySelector('.extended-widget-body');
-          if (!!element) {
-            step.element = element;
-            step.position = 'bottom';
-            return true;
-          } 
+            let element = document.querySelector('.extended-widget-body');
+            if (!!element) {
+              step.element = element;
+              step.position = 'bottom';
+              if (!this.communitiesLoaded) {
+                this.pauseIntro(step, 6, this.state.communitiesDownloaded$);
+              }
+              return true;
+            }
         }
       }
     });//6
@@ -530,89 +557,6 @@ export class GuidedTourComponent implements OnInit {
       }
     });//9
     this.intro.addStep({
-      element:'#tile2 .tile-arrow',
-      intro: 'Click here to open Product downloads widget.',
-      position: 'left',
-      preChange: (step, ctx) =>  {
-        let element = document.querySelector('#tile2 .tile-arrow');
-        if (!!element) {
-          step.element = element;
-          return true;
-        } 
-      }
-    });//10
-    this.intro.addStep({
-      element:'.extended-widget-body',
-      intro: 'You are now seeing the 5 most popular BMC products.',
-      preChange: (step, ctx) => {
-        if (!this.downloadsOpened) {
-          this.intro.goToStepNumber(15);
-          ++ctx._currentStep;
-          return false;
-        } else {
-          let element = document.querySelector('.extended-widget-body');
-          if (!!element) {
-            step.element = element;
-            step.position = 'bottom';
-            return true;
-          }
-        }
-      }
-    });//11
-    this.intro.addStep({
-      element:'app-epd-product:first-child .epd-version:first-child',
-      intro: 'You can click here to go straight to this product version\'s download page.',
-      preChange: (step, ctx) => {
-        if (!this.downloadsOpened) {
-          this.intro.goToStepNumber(10);
-          --ctx._currentStep;
-          return false;
-        } else {
-          let element = document.querySelector('app-epd-product:first-child .epd-version:first-child');
-          if (!!element) {
-            step.element = element;
-            step.position = 'bottom';
-            return true;
-          }
-        }
-      }
-    });//12
-    this.intro.addStep({
-      element:'.extended-widget-header .external-app-link',
-      intro: 'Clicking here will lead to the full download center.',
-      preChange: (step, ctx) => {
-        if (!this.downloadsOpened) {
-          this.intro.goToStepNumber(10);
-          --ctx._currentStep;
-          return false;
-        } else {
-          let element = document.querySelector('.extended-widget-header .external-app-link');
-          if (!!element) {
-            step.element = element;
-            step.position = 'bottom';
-            return true;
-          }
-        }
-      }
-    });//13
-    this.intro.addStep({
-      element:'#tile2 .tile-arrow',
-      intro: 'Click here to exit the Product Downloads widget and go back to the homepage.',
-      preChange: (step, ctx) => {
-        if (!this.downloadsOpened) {
-          this.intro.goToStepNumber(10);
-          --ctx._currentStep;
-          return false;
-        } else {
-          let element = document.querySelector('#tile2 .tile-arrow');
-          if (!!element) {
-            step.element = element;
-            return true;
-          }
-        }
-      }
-    });//14
-    this.intro.addStep({
       element: '#tile3 .tile-arrow',
       intro: 'Click on the \'personalized view\' icon of the Documentation widget in the widget list to view popular product documentation.',
       preChange: (step, ctx) =>  {
@@ -622,13 +566,13 @@ export class GuidedTourComponent implements OnInit {
           return true;
         } 
       }
-    });//15
+    });//10
     this.intro.addStep({
       element: '.extended-widget-body',
       intro: 'You are now seeing the 5 most popular BMC products & their documentation.',
       preChange: (step, ctx) => {
         if (!this.documentationOpened) {
-          this.intro.goToStepNumber(18);
+          this.intro.goToStepNumber(13);
           ++ctx._currentStep;
           return false;
         } else {
@@ -636,17 +580,20 @@ export class GuidedTourComponent implements OnInit {
           if (!!element) {
             step.element = element;
             step.position = 'bottom';
+            if (!this.documentationLoaded) {
+              this.pauseIntro(step, 11, this.state.documentationDownloaded$)
+            }
             return true;
           }
         }
       }
-    });//16
+    });//11
     this.intro.addStep({
       element: '.extended-widget-header .external-app-link',
       intro: 'Clicking here will lead to the full documentation website.',
       preChange: (step, ctx) => {
         if (!this.documentationOpened) {
-          this.intro.goToStepNumber(15);
+          this.intro.goToStepNumber(10);
           --ctx._currentStep;
           return false;
         } else {
@@ -658,19 +605,19 @@ export class GuidedTourComponent implements OnInit {
           }
         }
       }
-    });//17
+    });//12
     this.intro.addStep({
       element:'.psc-news .news-container-wrapper',
-      intro: 'Here you can see the latest support news and features. Click on any news item to read the news in detail..'
-    });//18
+      intro: 'Here you can see the latest support news and features. Click on any news item to read the news in detail.'
+    });//13
     this.intro.addStep({
       element:'.psc-orientation-checklist .psc-fs-12:first-child .psc-checklist-right',
       intro: 'If you are upgrading a BMC product, please click here to learn about the Amigo program.'
-    });//19
+    });//14
     this.intro.addStep({
       element:'.psc-orientation-checklist .psc-fs-12:nth-child(2) .psc-checklist-right',
       intro: 'You can click here to view the Support Central user guide in PDF format or online.'
-    });//20
+    });//15
     this.intro.addStep({
       element:'.support-chat-now',
       intro: 'If you don\'t find an answer to your questions, please use the chat function.',
@@ -683,7 +630,7 @@ export class GuidedTourComponent implements OnInit {
         } 
         return true;
       }
-    });//21
+    });//16
     this.intro.addStep({
       element:'#feedbackTab',
       intro: 'If you have feedback for us about this new support homepage, please click here.',
@@ -691,9 +638,11 @@ export class GuidedTourComponent implements OnInit {
         window.scrollTo(0,0);
         return true;
       }
-    });//22
+    });//17
     this.intro.onbeforechange(function (step){
-      console.log(this._currentStep, this);
+      if (self.tourPaused) {
+        return false;
+      }
       if (!this._introItems.length || this._currentStep >= this._introItems.length) {
         return true
       } //in case it`s skipping start step or fix to keyboard control (IDK why it`s broken)
@@ -705,11 +654,32 @@ export class GuidedTourComponent implements OnInit {
     });
     this.intro.onexit(() => {
       this.tourRunning = false;
+      this.tourPaused = false;
       if(!!loginButton) {
         loginButton.removeEventListener('click', resumeAfterLogin);
       }
     })
     this.intro.start();
+  }
+
+  pauseIntro(step: any, resumeStepNumber: number, exitClause: Observable<boolean>) { //Intro do not allow add steps while running, so I am replacing step with loading html, and then back
+    let previousStep = {...step};
+    this.tourPaused = true;
+    step.intro = '<div class="psc-tour-loading-text"><span class="psc-loading-icon"></span>Please wait...</div>';
+    step.position = "floating";
+    step.element = document.querySelector('.introjsFloatingElement');
+    let buttons: HTMLElement = document.querySelector('.introjs-tooltipbuttons');
+    buttons.style.display = 'none';
+    exitClause.pipe(takeWhile((e) => !e, true)).subscribe((value) => { //subscribe while widget isn`t loaded.
+      if (value) {
+        buttons.style.display = 'block';
+        step.intro = previousStep.intro;
+        this.tourPaused = false;
+        setTimeout(() => {
+          this.intro.goToStepNumber(resumeStepNumber);
+        }, 300)
+      }
+    })
   }
 
 

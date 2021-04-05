@@ -84,7 +84,11 @@ export class DataFetchService {
 
     getCommunitiesQuestions(): Promise<AskCommunityProduct[]> {
         if (window.location.href.indexOf('localhost:4200') !== -1) {
-            return Promise.resolve(askCommunities);
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(askCommunities)
+                }, 7000)
+            })
         }
 
         return this.http.get('/bin/supportcentralcontent?content_type=ASK_COMMUNITIES').toPromise().then((response:any) => {

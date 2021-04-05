@@ -214,6 +214,33 @@ body a:hover {
 
 //introJS guided tours
 
+.psc-tour-loading-text {
+  text-align: center;
+}
+
+.psc-loading-icon:before {
+  position: relative;
+  display: inline-block;
+  top: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0;
+  border-radius: 50%;
+  content: "";
+  left: -7px;
+  opacity: 1;
+  -webkit-transition: left .25s ease-in-out;
+  -o-transition: left .25s ease-in-out;
+  transition: left .25s ease-in-out;
+  -webkit-animation: .6s linear infinite spin-360,.25s ease-in-out forwards dissolve-in;
+  animation: .6s linear infinite spin-360,.25s ease-in-out forwards dissolve-in;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #313538 #d5d5dc #d5d5dc;
+}
+
 div.introjs-tooltip {
   width: 400px;
   max-width: 400px;

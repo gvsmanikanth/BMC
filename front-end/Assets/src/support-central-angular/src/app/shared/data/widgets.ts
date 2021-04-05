@@ -25,7 +25,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Product Downloads",
         description: "Latest product downloads, patches & installation tools",
-        routerLink: "epd-widget",
+        routerLink: 'epd-widget',
         icon: "psc-icon-downloads"
     },
     {
