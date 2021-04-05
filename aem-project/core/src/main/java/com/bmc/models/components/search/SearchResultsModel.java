@@ -105,11 +105,9 @@ public class SearchResultsModel {
                 values.add("education");
             }
             else if(labelParam.equals("blogs")){
-                fieldName = "category";
                 values.add("blogs");
             }
             else if(labelParam.equals("exchange")){
-               
                 values.add("exchange");
             } else {
                 values.addAll(Arrays.asList(pageLocale,"newsroom","exchange"));
