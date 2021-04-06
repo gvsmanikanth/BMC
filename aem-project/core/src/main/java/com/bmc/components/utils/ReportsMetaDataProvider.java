@@ -1,5 +1,6 @@
 package com.bmc.components.utils;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -10,6 +11,7 @@ import java.util.regex.Pattern;
 import javax.jcr.*;
 
 import com.bmc.consts.ReportsConsts;
+import com.google.gson.Gson;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -266,5 +268,22 @@ public class ReportsMetaDataProvider {
 		String date = dateFormat.format(today).replace("/", "_");
 		date = date.replace(":", "_");
 		return  date.replace(" ", "_"); //2016/11/16 12:08:43
+	}
+
+	/*
+	 * createJSON()
+	 * This method generates a JSON from the list of FormREportDataItem.
+	 */
+	public static String createJSON (ArrayList list)
+	{
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+		if(!json.equals(null))
+		{
+			return json;
+		}else
+		{
+			return null;
+		}
 	}
 }

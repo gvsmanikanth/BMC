@@ -89,7 +89,7 @@ public class VideoReportCSVGenService {
 		}
 		catch(Exception e)
 		{
-			logger.info("BMC ERROR : Error occurred while executing report "+e );
+			logger.info("BMC ERROR : Error occurred while executing report "+e.getMessage () );
 		}
 		return workbook;
 	}
@@ -113,7 +113,7 @@ public class VideoReportCSVGenService {
 				resourceResolver = resolverFactory.getServiceResourceResolver(param);
 
 			} catch (Exception e) {
-				logger.error("BMC ERROR : ResourceResolverFactory would not be fetched " + e);
+				logger.error("BMC ERROR : ResourceResolverFactory would not be fetched " + e.getMessage ());
 			}
 			Session session = resourceResolver.adaptTo(Session.class);
 			Resource resource = resourceResolver.getResource(reportLocation);
@@ -170,7 +170,7 @@ public class VideoReportCSVGenService {
 			//WEB-7929 AEM Video Report ENhancement END
 		}catch(Exception e)
 		{
-			logger.error("BMC ERROR : Error occurred while fetching Video data from JCR "+e);
+			logger.error("BMC ERROR : Error occurred while fetching Video data from JCR "+e.getMessage ());
 			}
 		//set the values to the careers Data item and return.
 		return list;
@@ -254,22 +254,7 @@ public class VideoReportCSVGenService {
 		// can be done in map or with Query methods
 
 	}
-	/*
-	 * createJSON()
-	 * This method generates a JSON from the list of FormREportDataItem.
-	 */
-	public String createJSON()
-	{
-		Gson gson = new Gson();
-		String json = gson.toJson(list);
-		if(!json.equals(null))
-		{
-			return json;
-		}else
-		{
-			return null;
-		}
-	}
+
 
 	/*
 	 * writeExceltoDAM()
@@ -335,7 +320,7 @@ public class VideoReportCSVGenService {
 		String filename = reportName+"_" + metadataProvider.getCurrentDate()+".json";
 		AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 		InputStream isStream =
-				new ByteArrayInputStream(createJSON().getBytes());
+				new ByteArrayInputStream(ReportsMetaDataProvider.createJSON(list).getBytes());
 
 		Asset excelAsset = manager.createAsset(ReportsConsts.REPORT_DAM_LOCATION + filename, isStream, "application/json", true);
 
@@ -365,7 +350,7 @@ public class VideoReportCSVGenService {
 		map.put ("path", "/content/bmc/language-masters");
 		map.put ("fulltext", path);
 		map.put ("property.hits", "full");
-		map.put ("property.depth", "10");
+		map.put ("property.depth", "100");
 		return map;
 		// can be done in map or with Query methods
 	}

@@ -311,23 +311,7 @@ public class FormsReportCSVGenService {
 	     // can be done in map or with Query methods
 	    
 	 }
-	 
-	 /*
-	  * createJSON()
-	  * This method generates a JSON from the list of FormREportDataItem. 
-	  */
-	 public String createJSON()
-	 {
-		 Gson gson = new Gson();
-		 String json = gson.toJson(list);
-		 if(!json.equals(null))
-		 {
-			 return json;
-		 }else
-		 {
-			 return null;
-		 }
-	 }
+
 	 
 	 /*
 	  * writeExceltoDAM()
@@ -394,7 +378,7 @@ public class FormsReportCSVGenService {
 			String filename = reportName+"_" +metaDataProvider.getCurrentDate() +".json";
 			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 			   InputStream isStream = 
-					   new ByteArrayInputStream(createJSON().getBytes());
+					   new ByteArrayInputStream(ReportsMetaDataProvider.createJSON(list).getBytes());
 
 			    Asset excelAsset = manager.createAsset(ReportsConsts.REPORT_DAM_LOCATION + filename, isStream, "application/json", true);
 		

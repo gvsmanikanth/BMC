@@ -552,38 +552,14 @@ public class CategoriesReportCSVGenService {
 	  * createJSON()
 	  * This method generates a JSON from the list of FormREportDataItem. 
 	  */
-	 public String createJSON(String reportType)
-	 {
-		 Gson gson = new Gson();
-		 String json = null;
-		 if(reportType.equals("it-solutions"))
-			 {
-				 json = gson.toJson(list);
-				 logger.info(json);
-			 }else if(reportType.equals("education-courses"))
-			 {
-				 json = gson.toJson(list2);
-				 logger.info(json);
-			 }else if(reportType.equals("sticky-headers"))
-			 {
-				json = gson.toJson(list3);
-				logger.info(json);
-			 }
-			 else if(reportType.equals("customers"))
-			 {
-				json = gson.toJson(list4);
-				logger.info(json);
-			 }
-			 if(!json.equals(null))
-			 {
-				 return json;
-			 }else
-			 {
-				 return null;
-			 }
-			 
+	 public String createJSON(String reportType) {
+
+		 if (reportType.equals ("it-solutions")) return ReportsMetaDataProvider.createJSON (list);
+		 else if (reportType.equals ("education-courses")) return ReportsMetaDataProvider.createJSON (list2);
+		 else if (reportType.equals ("sticky-headers")) return ReportsMetaDataProvider.createJSON (list3);
+		 else if (reportType.equals ("customers")) return ReportsMetaDataProvider.createJSON (list4);
+		else return null;
 	 }
-	 
 	 
 	 /*
 	  * writeExceltoDAM()

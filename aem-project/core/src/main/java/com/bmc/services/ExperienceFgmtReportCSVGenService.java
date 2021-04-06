@@ -308,24 +308,6 @@ public class ExperienceFgmtReportCSVGenService {
 	    
 	 }
 
-
-	 /*
-	  * createJSON()
-	  * This method generates a JSON from the list of FormReportDataItem. 
-	  */
-	 public String createJSON()
-	 {
-		 Gson gson = new Gson();
-		 String json = gson.toJson(list);
-		 if(!json.equals(null))
-		 {
-			 return json;
-		 }else
-		 {
-			 return null;
-		 }
-	 }
-	 
 	 /*
 	  * writeExceltoDAM()
 	  * This method writes the excel workbook into the DAM at a specified/predefined location. 
@@ -390,7 +372,7 @@ public class ExperienceFgmtReportCSVGenService {
 					}				
 			    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 			   	InputStream isStream = 
-					   new ByteArrayInputStream(createJSON().getBytes());
+					   new ByteArrayInputStream(ReportsMetaDataProvider.createJSON(list).getBytes());
 
 			    Asset excelAsset = manager.createAsset(ReportsConsts.REPORT_DAM_LOCATION + filename, isStream, "application/json", true);
 		
