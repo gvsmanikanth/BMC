@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2021-04-08T17:43:02.339+05:30"
+        cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2017-10-14T04:39:08.482-04:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
+        cq:template="/conf/bmc/settings/wcm/templates/success-service"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="bmc/components/structure/service-catalog"
+        ic-app-inclusion="no"
+        ic-weighting="5"
+        service-types="Advisory"
+        translation-status="Choose Translation status"/>
+</jcr:root>
