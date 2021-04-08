@@ -453,7 +453,7 @@ export class GuidedTourComponent implements OnInit {
             intro: 'Welcome to the new BMC Support Central homepage.',
           }, //1
           {
-            element: '.psc-account-actions .layout-inner-wrap',
+            element: '.psc-account-actions',
             intro: 'You can log in or register for a fully personalized experience or continue this tour as a guest user.'
           } //2
         ]
