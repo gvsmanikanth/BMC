@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <_x0031_-1
+        jcr:primaryType="nt:unstructured"
+        text="1:1"/>
+    <_x0032_-2
+        jcr:primaryType="nt:unstructured"
+        text="2:2"/>
+    <_x0033_-3
+        jcr:primaryType="nt:unstructured"
+        text="3:3"/>
+    <_x0034_-5
+        jcr:primaryType="nt:unstructured"
+        text="4:5"/>
+    <_x0035_-10
+        jcr:primaryType="nt:unstructured"
+        text="5:10"/>
+    <_x0036_-25
+        jcr:primaryType="nt:unstructured"
+        text="6:25"/>
+    <_x0037_-50
+        jcr:primaryType="nt:unstructured"
+        text="7:50"/>
+</jcr:root>
