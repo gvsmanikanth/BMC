@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-    <_x0031_-1
+    <credits-1
         jcr:primaryType="nt:unstructured"
-        text="1:1"/>
-    <_x0032_-2
+        text="1"/>
+    <credits-2
         jcr:primaryType="nt:unstructured"
-        text="2:2"/>
-    <_x0033_-3
+        text="2"/>
+    <credits-3
         jcr:primaryType="nt:unstructured"
-        text="3:3"/>
-    <_x0034_-5
+        text="3"/>
+    <credits-4
         jcr:primaryType="nt:unstructured"
-        text="4:5"/>
-    <_x0035_-10
+        text="5"/>
+    <credits-5
         jcr:primaryType="nt:unstructured"
-        text="5:10"/>
-    <_x0036_-25
+        text="10"/>
+    <credits-6
         jcr:primaryType="nt:unstructured"
-        text="6:25"/>
-    <_x0037_-50
+        text="25"/>
+    <credits-7
         jcr:primaryType="nt:unstructured"
-        text="7:50"/>
+        text="50"/>
 </jcr:root>
