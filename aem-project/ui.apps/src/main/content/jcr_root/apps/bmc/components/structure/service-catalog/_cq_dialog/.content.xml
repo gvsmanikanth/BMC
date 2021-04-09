@@ -21,7 +21,7 @@
                                 <items jcr:primaryType="nt:unstructured">
                                     <sucessServicePage
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Success Story Pages"
+                                        jcr:title="Success Story Page"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
                                         <items jcr:primaryType="nt:unstructured">
                                             <service-type
