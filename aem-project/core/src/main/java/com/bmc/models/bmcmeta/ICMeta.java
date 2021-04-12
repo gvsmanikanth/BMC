@@ -21,15 +21,15 @@ public class ICMeta {
 
 
 
+
 	//WEB-9765 Removing IC App Inclusion from the list of IC fields
-	//private String appInclusion="";
-	private Boolean rcInclusion;
-	public Boolean getRcInclusion () {
-		return rcInclusion;
+	private String appInclusion="";
+	public String getAppInclusion () {
+		return appInclusion;
 	}
 
-	public void setRcInclusion (Boolean rcInclusion) {
-		this.rcInclusion = rcInclusion;
+	public void setAppInclusion (String appInclusion) {
+		this.appInclusion = appInclusion;
 	}
 	private String contentType="";
 	private String weighting="";
