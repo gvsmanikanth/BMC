@@ -9,7 +9,7 @@
         cq:lastReplicationAction="Activate"
         cq:template="/conf/bmc/settings/wcm/templates/success-service"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="bmc/components/structure/service-catalog"
+        sling:resourceType="bmc/components/structure/success-service"
         ic-app-inclusion="no"
         ic-weighting="5"
         service-types="Advisory"

@@ -2,11 +2,11 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2021-04-08T17:43:02.342+05:30"
+        cq:lastModified="{Date}2021-04-08T21:00:47.350+05:30"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:description="Service Catalog"
         jcr:primaryType="cq:PageContent"
         jcr:title="Success Service"
-        status="draft"/>
+        status="enabled"/>
 </jcr:root>
