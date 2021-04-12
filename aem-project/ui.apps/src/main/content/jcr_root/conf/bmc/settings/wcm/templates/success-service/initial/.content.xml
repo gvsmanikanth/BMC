@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2021-04-08T17:43:02.339+05:30"
+        cq:lastModified="{Date}2021-04-12T21:24:02.689+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2017-10-14T04:39:08.482-04:00"
         cq:lastReplicatedBy="admin"
@@ -10,8 +10,335 @@
         cq:template="/conf/bmc/settings/wcm/templates/success-service"
         jcr:primaryType="cq:PageContent"
         sling:resourceType="bmc/components/structure/success-service"
+        availability="Active"
+        credits="credits-1"
         ic-app-inclusion="no"
         ic-weighting="5"
-        service-types="Advisory"
-        translation-status="Choose Translation status"/>
+        service-types="Advisory &amp; Planning"
+        translation-status="Choose Translation status">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2017-07-19T16:08:19.955-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-19T16:08:24.563-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <header_form
+                    jcr:created="{Date}2017-08-23T17:54:14.830-04:00"
+                    jcr:createdBy="dtayeh"
+                    jcr:lastModified="{Date}2017-08-23T17:54:14.830-04:00"
+                    jcr:lastModifiedBy="dtayeh"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/content/header-form">
+                    <maincontentcontainer
+                        jcr:created="{Date}2017-07-17T15:41:38.037-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-07-17T15:41:38.037-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/structure/maincontentcontainer">
+                        <breadcrumbs
+                            jcr:created="{Date}2021-04-08T18:49:43.861Z"
+                            jcr:createdBy="kallen@bmc.com"
+                            jcr:lastModified="{Date}2021-04-08T18:50:02.255Z"
+                            jcr:lastModifiedBy="kallen@bmc.com"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/navigation/breadcrumbs"
+                            hideCurrent="false"
+                            showHidden="false"
+                            startLevel="5"/>
+                        <header_form
+                            jcr:created="{Date}2021-03-23T09:39:29.121Z"
+                            jcr:createdBy="mannalda"
+                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/header-form"
+                            headerText="Helix Business Workflows Starter Service&#xd;&#xa;&lt;h3>25 CREDITS&lt;/h3>">
+                            <bg
+                                jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                                jcr:lastModifiedBy="mannalda"
+                                jcr:primaryType="nt:unstructured"
+                                fileReference="/content/dam/bmc/web-services/Placeholder-1900x700png.png"/>
+                            <img
+                                jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                                jcr:lastModifiedBy="mannalda"
+                                jcr:primaryType="nt:unstructured"/>
+                        </header_form>
+                        <ctabar
+                            jcr:created="{Date}2021-04-08T18:40:36.066Z"
+                            jcr:createdBy="aviner@bmc.com"
+                            jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
+                            jcr:lastModifiedBy="aviner@bmc.com"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/CTAbar"
+                            addClass="false"
+                            bgcolor="bg-seashell">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                        </ctabar>
+                        <_100contentcontainer
+                            jcr:created="{Date}2021-03-23T09:43:15.338Z"
+                            jcr:createdBy="mannalda"
+                            jcr:lastModified="{Date}2021-03-23T09:43:15.338Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/structure/100contentcontainer">
+                            <center
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <title
+                                    jcr:created="{Date}2021-03-23T09:43:22.717Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-03-23T17:49:51.688Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="What you get"
+                                    sling:resourceType="bmc/components/content/title"
+                                    className="h2-variation-1 pyt2 mb2"
+                                    type="h2"/>
+                                <text
+                                    jcr:created="{Date}2021-03-23T09:43:59.828Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-03-23T17:58:34.554Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"
+                                    text="&lt;p>BMC Services will perform the following activities:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Run a workshop to provide Customer with an overview of DWPA&lt;/li>&#xa;&lt;li>Configure user roles, banners, and catalog sections in DWPA&lt;/li>&#xa;&lt;li>Configure up to 5 Simple Services that can be requested by end users from BMC Digital Workplace&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p style=&quot;margin-left: 40px;&quot;>One of five (5) Simple Services may include one (1) of the in-scope integrations&lt;/p>&#xa;&lt;p style=&quot;margin-left: 40px;&quot;>A Simple Service is composed of one (1) fulfilment ticket, up to eight (8) questions, up to one (1) entitlement and no approvals&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Assist the customer with configuration of one (1) integration from the &lt;a href=&quot;https://docs.bmc.com/docs/digitalworkplaceadvanced/1911/service-connector-capabilities-891488999.html&quot; target=&quot;_blank&quot;>avaiable options&lt;/a>&lt;/li>&#xa;&lt;li>Configure DWPA in 3 environments: Dev, QA, and Production&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>Customer will be responsible for:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Conducting functional testing&lt;/li>&#xa;&lt;/ul>&#xa;"
+                                    textIsRich="true"/>
+                            </center>
+                        </_100contentcontainer>
+                        <_100contentcontainer_740555715
+                            jcr:created="{Date}2021-03-23T09:51:13.606Z"
+                            jcr:createdBy="mannalda"
+                            jcr:lastModified="{Date}2021-03-23T09:51:23.060Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/structure/100contentcontainer"
+                            bgcolor="bg-seashell">
+                            <center
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <title
+                                    jcr:created="{Date}2021-03-23T09:51:29.470Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-03-23T17:44:45.062Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Pre-requisites"
+                                    sling:resourceType="bmc/components/content/title"
+                                    className="h2-variation-1 pyt2 mb2"
+                                    type="h2"/>
+                                <text
+                                    jcr:created="{Date}2021-03-23T09:51:49.843Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-03-23T17:59:41.312Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"
+                                    text="&lt;p>Customer has existing Foundation Data loaded. Foundation data is data required for the application to function properly and is defined as Companies, Organizations, Sites and Location Structures, Support Organizations and Groups, People (includes group memberships, application permissions and functional roles), Operational Services Catalog, and Software Catalog.&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                            </center>
+                        </_100contentcontainer_740555715>
+                        <_100contentcontainer_1639779510
+                            jcr:created="{Date}2021-03-23T11:29:22.949Z"
+                            jcr:createdBy="mannalda"
+                            jcr:lastModified="{Date}2021-03-23T11:29:22.949Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/structure/100contentcontainer">
+                            <center
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/responsivegrid">
+                                <title
+                                    jcr:created="{Date}2021-03-23T11:29:40.705Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-03-23T17:50:00.285Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Additional information"
+                                    sling:resourceType="bmc/components/content/title"
+                                    className="h2-variation-1 pyt2 mb2"
+                                    type="h2"/>
+                                <text
+                                    jcr:created="{Date}2021-03-23T11:29:29.121Z"
+                                    jcr:createdBy="mannalda"
+                                    jcr:lastModified="{Date}2021-04-08T21:10:39.873Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/text"
+                                    text="&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Estimated Duration: 4 weeks&lt;/li>&#xa;&lt;li>Related Product: Helix Digital Workplace Advanced&lt;/li>&#xa;&lt;li>Service Type: Deployment&lt;/li>&#xa;&lt;li>Related Success Path: Unified Service Catalog&lt;br>&#xa;&lt;/li>&#xa;&lt;li>Availability: Active&lt;/li>&#xa;&lt;li>Success Service Code:&amp;nbsp;HelixDWPAStarterSvc_1.0&lt;/li>&#xa;&lt;li>Date Last Updated: 04/2021&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                                <ctabar
+                                    jcr:created="{Date}2021-04-08T18:52:23.445Z"
+                                    jcr:createdBy="kallen@bmc.com"
+                                    jcr:lastModified="{Date}2021-04-08T18:52:23.445Z"
+                                    jcr:lastModifiedBy="kallen@bmc.com"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="bmc/components/content/CTAbar"/>
+                            </center>
+                        </_100contentcontainer_1639779510>
+                    </maincontentcontainer>
+                </header_form>
+                <maincontentcontainer
+                    jcr:created="{Date}2017-07-17T15:41:38.037-07:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2017-07-17T15:41:38.037-07:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bmc/components/structure/maincontentcontainer">
+                    <breadcrumbs
+                        jcr:created="{Date}2021-04-08T18:49:43.861Z"
+                        jcr:createdBy="kallen@bmc.com"
+                        jcr:lastModified="{Date}2021-04-08T18:50:02.255Z"
+                        jcr:lastModifiedBy="kallen@bmc.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/navigation/breadcrumbs"
+                        hideCurrent="false"
+                        showHidden="false"
+                        startLevel="5"/>
+                    <header_form
+                        jcr:created="{Date}2021-03-23T09:39:29.121Z"
+                        jcr:createdBy="mannalda"
+                        jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                        jcr:lastModifiedBy="mannalda"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/header-form"
+                        headerText="Helix Business Workflows Starter Service&#xd;&#xa;&lt;h3>25 CREDITS&lt;/h3>">
+                        <bg
+                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"
+                            fileReference="/content/dam/bmc/web-services/Placeholder-1900x700png.png"/>
+                        <img
+                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
+                            jcr:lastModifiedBy="mannalda"
+                            jcr:primaryType="nt:unstructured"/>
+                    </header_form>
+                    <ctabar
+                        jcr:created="{Date}2021-04-08T18:40:36.066Z"
+                        jcr:createdBy="aviner@bmc.com"
+                        jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
+                        jcr:lastModifiedBy="aviner@bmc.com"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/content/CTAbar"
+                        addClass="false"
+                        bgcolor="bg-seashell">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bmc/components/content/text"
+                            text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                            textIsRich="true"/>
+                    </ctabar>
+                    <_100contentcontainer
+                        jcr:created="{Date}2021-03-23T09:43:15.338Z"
+                        jcr:createdBy="mannalda"
+                        jcr:lastModified="{Date}2021-03-23T09:43:15.338Z"
+                        jcr:lastModifiedBy="mannalda"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/structure/100contentcontainer">
+                        <center
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title
+                                jcr:created="{Date}2021-03-23T09:43:22.717Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-03-23T17:49:51.688Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="What you get"
+                                sling:resourceType="bmc/components/content/title"
+                                className="h2-variation-1 pyt2 mb2"
+                                type="h2"/>
+                            <text
+                                jcr:created="{Date}2021-03-23T09:43:59.828Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-03-23T17:58:34.554Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>BMC Services will perform the following activities:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Run a workshop to provide Customer with an overview of DWPA&lt;/li>&#xa;&lt;li>Configure user roles, banners, and catalog sections in DWPA&lt;/li>&#xa;&lt;li>Configure up to 5 Simple Services that can be requested by end users from BMC Digital Workplace&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p style=&quot;margin-left: 40px;&quot;>One of five (5) Simple Services may include one (1) of the in-scope integrations&lt;/p>&#xa;&lt;p style=&quot;margin-left: 40px;&quot;>A Simple Service is composed of one (1) fulfilment ticket, up to eight (8) questions, up to one (1) entitlement and no approvals&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Assist the customer with configuration of one (1) integration from the &lt;a href=&quot;https://docs.bmc.com/docs/digitalworkplaceadvanced/1911/service-connector-capabilities-891488999.html&quot; target=&quot;_blank&quot;>avaiable options&lt;/a>&lt;/li>&#xa;&lt;li>Configure DWPA in 3 environments: Dev, QA, and Production&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>Customer will be responsible for:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Conducting functional testing&lt;/li>&#xa;&lt;/ul>&#xa;"
+                                textIsRich="true"/>
+                        </center>
+                    </_100contentcontainer>
+                    <_100contentcontainer_740555715
+                        jcr:created="{Date}2021-03-23T09:51:13.606Z"
+                        jcr:createdBy="mannalda"
+                        jcr:lastModified="{Date}2021-03-23T09:51:23.060Z"
+                        jcr:lastModifiedBy="mannalda"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/structure/100contentcontainer"
+                        bgcolor="bg-seashell">
+                        <center
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title
+                                jcr:created="{Date}2021-03-23T09:51:29.470Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-03-23T17:44:45.062Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pre-requisites"
+                                sling:resourceType="bmc/components/content/title"
+                                className="h2-variation-1 pyt2 mb2"
+                                type="h2"/>
+                            <text
+                                jcr:created="{Date}2021-03-23T09:51:49.843Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-03-23T17:59:41.312Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>Customer has existing Foundation Data loaded. Foundation data is data required for the application to function properly and is defined as Companies, Organizations, Sites and Location Structures, Support Organizations and Groups, People (includes group memberships, application permissions and functional roles), Operational Services Catalog, and Software Catalog.&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                        </center>
+                    </_100contentcontainer_740555715>
+                    <_100contentcontainer_1639779510
+                        jcr:created="{Date}2021-03-23T11:29:22.949Z"
+                        jcr:createdBy="mannalda"
+                        jcr:lastModified="{Date}2021-03-23T11:29:22.949Z"
+                        jcr:lastModifiedBy="mannalda"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/structure/100contentcontainer">
+                        <center
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <title
+                                jcr:created="{Date}2021-03-23T11:29:40.705Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-03-23T17:50:00.285Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Additional information"
+                                sling:resourceType="bmc/components/content/title"
+                                className="h2-variation-1 pyt2 mb2"
+                                type="h2"/>
+                            <text
+                                jcr:created="{Date}2021-03-23T11:29:29.121Z"
+                                jcr:createdBy="mannalda"
+                                jcr:lastModified="{Date}2021-04-08T21:10:39.873Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Estimated Duration: 4 weeks&lt;/li>&#xa;&lt;li>Related Product: Helix Digital Workplace Advanced&lt;/li>&#xa;&lt;li>Service Type: Deployment&lt;/li>&#xa;&lt;li>Related Success Path: Unified Service Catalog&lt;br>&#xa;&lt;/li>&#xa;&lt;li>Availability: Active&lt;/li>&#xa;&lt;li>Success Service Code:&amp;nbsp;HelixDWPAStarterSvc_1.0&lt;/li>&#xa;&lt;li>Date Last Updated: 04/2021&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                            <ctabar
+                                jcr:created="{Date}2021-04-08T18:52:23.445Z"
+                                jcr:createdBy="kallen@bmc.com"
+                                jcr:lastModified="{Date}2021-04-08T18:52:23.445Z"
+                                jcr:lastModifiedBy="kallen@bmc.com"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/CTAbar"/>
+                        </center>
+                    </_100contentcontainer_1639779510>
+                </maincontentcontainer>
+            </responsivegrid>
+        </root>
+    </jcr:content>
 </jcr:root>

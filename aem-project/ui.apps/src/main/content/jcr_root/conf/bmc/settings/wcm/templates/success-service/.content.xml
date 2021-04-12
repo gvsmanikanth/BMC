@@ -2,8 +2,11 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2021-04-08T21:00:47.350+05:30"
+        cq:lastModified="{Date}2021-04-12T21:24:02.689+05:30"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2021-04-12T21:24:20.906+05:30"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         cq:templateType="/conf/bmc/settings/wcm/template-types/empty-page"
         jcr:description="Service Catalog"
         jcr:primaryType="cq:PageContent"

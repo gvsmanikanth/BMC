@@ -11,7 +11,32 @@
         sling:resourceType="bmc/components/structure/success-service">
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <standardheader
+                jcr:created="{Date}2017-07-12T11:22:04.151-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-12T11:22:04.151-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/standardheader"/>
+            <responsivegrid
+                jcr:created="{Date}2017-07-12T11:22:13.248-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-12T11:22:13.248-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <standardfooter
+                jcr:created="{Date}2017-07-12T11:22:24.997-07:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2017-07-12T11:22:24.997-07:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bmc/components/structure/standardfooter"/>
+        </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
                 <phone
