@@ -106,13 +106,11 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                     }
                 }
 
-                // override title and description
-                if(childPage.getValueMap().get("overrideTitle") != null){
-                    cardTitle = childPage.getValueMap().get("overrideTitle").toString();
+                // override title 
+                if(childPage.getValueMap().get("rcOverrideTitle") != null){
+                    cardTitle = childPage.getValueMap().get("rcOverrideTitle").toString();
                 }
-                if(childPage.getValueMap().get("overrideDescription") != null){
-                    cardDescription = childPage.getValueMap().get("overrideDescription").toString();
-                }
+                
 
                 resourceSection.put("title", cardTitle);
                 resourceSection.put("pagePath", assetLink);
