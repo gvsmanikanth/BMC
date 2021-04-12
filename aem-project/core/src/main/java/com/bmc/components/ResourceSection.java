@@ -53,7 +53,6 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 resourceSection = new HashMap<>();
                 String pagePath = childPage.getValueMap().get("pagePath").toString();
                 String cardTitle = "";
-                String cardDescription = "";
                 String videoLength = "";
                 String type = "";
                 String linkType = "";
@@ -112,9 +111,8 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 }
                 
 
-                resourceSection.put("title", cardTitle);
+                resourceSection.put("title", cardTitle.trim());
                 resourceSection.put("pagePath", assetLink);
-                resourceSection.put("description", cardDescription);
                 resourceSection.put("contentType", type);
                 resourceSection.put("contentText",linkType);
                 resourceSection.put("videoLength", videoLength);
