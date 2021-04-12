@@ -37,6 +37,9 @@
     <filter root="/conf/bmc/settings/wcm/templates-types/external-link-page" mode="replace"/>
     <!--  <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
     <!-- WEB-6185 RC Template END -->
+    <!-- WEB-10106 Success Service Template START -->
+		<filter root="/conf/bmc/settings/wcm/templates/success-service" mode="replace"/>
+    <!-- WEB-10106 Success Service Template END -->
     <!-- WEB-4924 Forms redesign new templates START -->
     <!-- WEB-5345 remove merge and add replace. -->
 		<filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="replace"/>
@@ -103,8 +106,13 @@
 	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
 	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
 	
+	<filter root="/content/bmc/resources/service-types" mode="replace"/>
+	<filter root="/content/bmc/resources/no-of-credits" mode="replace"/>
+	
     <filter root="/content/bmc/bmc-macros" mode="replace"/>
-     <filter root="/content/bmc/fw-bmc-macros" mode="replace"/>
+    <filter root="/content/bmc/fw-bmc-macros" mode="replace"/>
+     
+     
     
     <!--<filter root="/content/experience-fragments/bmc" mode="merge" />-->
     <!--<filter root="/content/bmc/videos" mode="update" />-->
