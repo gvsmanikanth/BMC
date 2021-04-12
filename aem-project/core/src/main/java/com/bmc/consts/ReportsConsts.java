@@ -9,10 +9,11 @@ public class ReportsConsts {
             "course-delivery","industry",
             "ic-content-type","ic-topics","ic-buyer-stage","ic-target-persona","ic-target-industry","ic-company-size"};
 
+    //WEB-9969 AEM Report - Video Report to include Metadata details
     public static final String[] VideoTableNames = {"Video Page Path","Name","Type","Modified Date","Modified By",
-            "Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","RC Inclusion","Asset Inclusion","Product Interest","Product line","Ic App Wieghting",
-            "Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size",
-            "Overlay URL","Overlay Text","Last Replicated Date","Last Replication action","References"};
+            "Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","Overlay URL","Overlay Text","RC Inclusion","Asset Inclusion","RC Form Path ","Header Image Path","Footer Logo Path","Product Interest","Product line","Ic App Wieghting",
+            "Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size"
+            ,"Last Replicated Date","Last Replication action","References"};
 
     // public static String[] resourceItems = {"product_interest","productLine1","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
    public static final String[] DocumentContainersTableNames = {"Page title","Page URL","Page Created Date","Page Created By","Publish/Unpublish Status","Page ID","Page Last Modified date","Page Last modified by",

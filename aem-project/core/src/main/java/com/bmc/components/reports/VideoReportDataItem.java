@@ -111,8 +111,37 @@ public class VideoReportDataItem {
 	//WEB-7929 AEM Video Report ENhancement-START
 	private String LastReplicationAction;
 	private String referencePaths;
+	//WEB-9969 AEM Report - Video Report to include Metadata details
 	private String rc_inclusion;
 	private String asset_inclusion;
+	private String footerLogo;
+
+	public String getRc_form_path () {
+		return rc_form_path;
+	}
+
+	public void setRc_form_path (String rc_form_path) {
+		this.rc_form_path = rc_form_path;
+	}
+
+	private String rc_form_path;
+	public String getFooterLogo () {
+		return footerLogo;
+	}
+
+	public void setFooterLogo (String footerLogo) {
+		this.footerLogo = footerLogo;
+	}
+
+	public String getHeaderImage () {
+		return headerImage;
+	}
+
+	public void setHeaderImage (String headerImage) {
+		this.headerImage = headerImage;
+	}
+
+	private String headerImage;
 	public String getAsset_inclusion () { return asset_inclusion; }
 	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
 	public String getRc_inclusion () { return rc_inclusion; }

@@ -133,10 +133,12 @@ public class VideoReportCSVGenService {
 							reportDataItem.setReferencePaths(getVideoReferences (PagePath,session));
 							reportDataItem.setPage_Path (PagePath);
 							reportDataItem.setvID (metadataProvider.getPropertyValues(videoData, "vID","vID", "vID",session));
-							reportDataItem.setvID (metadataProvider.getPropertyValues(videoData, "damVideoPath","damVideoPath", "damVideoPath",session));
+							if(reportDataItem.getvID ().equals ("")) {
+								reportDataItem.setvID (metadataProvider.getPropertyValues (videoData, "damVideoPath", "damVideoPath", "damVideoPath", session));
+							}
 							reportDataItem.setTitle_of_the_Video (metadataProvider.getPropertyValues(videoData, "title","title", "title",session));
 							reportDataItem.setTypeId (metadataProvider.getPropertyValues(videoData, "typeId","typeId", "typeId",session));
-							reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayURL","overlayURL", "overlayURL",session));
+							reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayUrl","overlayUrl", "overlayUrl",session));
 							reportDataItem.setOverlayText (metadataProvider.getPropertyValues(videoData, "overlayText","overlayText", "overlayText",session));
 							reportDataItem.setDescription (metadataProvider.getPropertyValues(videoData, "description","description", "description",session));
 					}
@@ -152,6 +154,9 @@ public class VideoReportCSVGenService {
 						reportDataItem.setRc_inclusion (metadataProvider.getPropertyValues (videoJCRNode, "rc-inclusion", "rc-inclusion", "rc-inclusion", session));
 						reportDataItem.setAsset_inclusion (metadataProvider.getPropertyValues (videoJCRNode, "asset-inclusion", "asset-inclusion", "asset-inclusion", session));
 						// WEB-9969 Adding IC Meta data for Videos
+						reportDataItem.setRc_form_path (metadataProvider.getPropertyValues(videoJCRNode, "rc-form-path","rc-form-path","rc-form-path",session));
+						reportDataItem.setHeaderImage (metadataProvider.getPropertyValues(videoJCRNode, "headerImage","headerImage","headerImage",session));
+						reportDataItem.setFooterLogo (metadataProvider.getPropertyValues(videoJCRNode, "footerLogo","footerLogo","footerLogo",session));
 						reportDataItem.setIc_weighting (metadataProvider.getPropertyValues (videoJCRNode, "ic-weighting", "jcr:title", "ic-weighting", session));
 						reportDataItem.setIC_Content_Type (metadataProvider.getPropertyValues (videoJCRNode, "ic-content-type", "jcr:title", "intelligent-content-types", session));
 						reportDataItem.setIC_topic (metadataProvider.getPropertyValues (videoJCRNode, "ic-topics", "jcr:title", "intelligent-content-topics", session));
@@ -195,15 +200,15 @@ public class VideoReportCSVGenService {
 		data.put("1", ReportsConsts.VideoTableNames);
 		for(int i=2;i<list.size();i++)
 		{
+			//WEB-9969 AEM Report - Video Report to include Metadata details
 			data.put(Integer.toString (i), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getTypeId (),
-					list.get(i).getModified_Date(),list.get(i).getModified_By(),
-					list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
-					list.get(i).getDescription(),list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
-					list.get(i).getProduct (),list.get(i).getProduct_Line (),list.get(i).getIc_weighting (),
-					list.get(i).getTopics (),list.get(i).getIC_Content_Type (),list.get(i).getIC_topic (),list.get(i).getIC_Buyer_stage (),
-					list.get(i).getIC_target_Persona (),list.get(i).getIC_Source_Publish_Date (), list.get(i).getIC_Target_Industry (),
-					list.get(i).getIC_Company_Size (), list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getLastReplicatedDate (),
-					list.get(i).getLastReplicationAction (), list.get(i).getReferencePaths ()});
+					list.get(i).getModified_Date(),list.get(i).getModified_By(), list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
+					list.get(i).getDescription(),list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
+					list.get(i).getRc_form_path (),list.get(i).getHeaderImage (),list.get(i).getFooterLogo (), list.get(i).getProduct (),list.get(i).getProduct_Line (),
+					list.get(i).getIc_weighting (), list.get(i).getTopics (),list.get(i).getIC_Content_Type (),
+					list.get(i).getIC_topic (),list.get(i).getIC_Buyer_stage (), list.get(i).getIC_target_Persona (),list.get(i).getIC_Source_Publish_Date (),
+					list.get(i).getIC_Target_Industry (), list.get(i).getIC_Company_Size (), list.get(i).getLastReplicatedDate (), list.get(i).getLastReplicationAction (),
+					list.get(i).getReferencePaths ()});
 		}
 		//Iterate over data and write to sheet
 		Set<String> keyset = data.keySet();
@@ -355,10 +360,10 @@ public class VideoReportCSVGenService {
 		// create query description as hash map (simplest way, same as form post)
 		Map<String, String> map = new HashMap<> ();
 		// create query description as hash map (simplest way, same as form post)
-		map.put ("path", "/content/bmc/language-masters");
+		map.put ("path", "/content/bmc");
 		map.put ("fulltext", path);
 		map.put ("property.hits", "full");
-		map.put ("property.depth", "100");
+		map.put ("property.depth", "1000");
 		return map;
 		// can be done in map or with Query methods
 	}
