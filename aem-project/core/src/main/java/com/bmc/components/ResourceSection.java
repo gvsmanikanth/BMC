@@ -85,7 +85,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                         if(type.equalsIgnoreCase("Videos")) {
                             assetLink = node.hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + node.getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
                         }
-                        if(type.equalsIgnoreCase("Webinar")){
+                        if(type.equalsIgnoreCase("Webinars")){
                             assetLink = node.hasProperty(JcrConsts.EXTERNAL_LINK) ? node.getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
                         }
                         if (gatedAsset && formPath != null && resourceCenterService.isFormActive(formPath)) {
