@@ -193,4 +193,10 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
     public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
         return null;
     }
+
+    @Override
+    public boolean checkIfFormIsTrial (String template,String type)
+    {
+        return false;
+    }
 }

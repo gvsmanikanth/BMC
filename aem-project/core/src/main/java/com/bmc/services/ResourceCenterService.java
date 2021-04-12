@@ -51,4 +51,6 @@ public interface ResourceCenterService extends ConfigurableService  {
 
     BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata);
 
+    boolean checkIfFormIsTrial (String template,String type);
+
 }
