@@ -8,13 +8,13 @@
         selected="true"
         text="Advisory &amp; Planning"
         value="Advisory &amp; Planning"/>
-    <deploy
+    <deployment
         jcr:primaryType="nt:unstructured"
-        jcr:title="Deploy"/>
-    <use-cases
+        jcr:title="Deployment"/>
+    <technical-assistance
         jcr:primaryType="nt:unstructured"
-        jcr:title="Use Cases"/>
-    <support-and-operations
+        jcr:title="Technical Assistance"/>
+    <education
         jcr:primaryType="nt:unstructured"
-        jcr:title="Support &amp; Operations"/>
+        jcr:title="Education"/>
 </jcr:root>
