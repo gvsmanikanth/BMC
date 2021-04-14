@@ -71,7 +71,7 @@
     <!--/* WEB-10136 - Add Swiftype specific meta tags -- Start */-->
     <sly data-sly-use.pageModel="com.bmc.models.bmcmeta.MetaTagModel">
         <sly data-sly-list.content="${pageModel.swiftTypeMetaMap}">
-            <meta class="swiftype" name="${content}" data-type="string" content="${pageModel.swiftTypeMetaMap[content]}" />
+            <meta class="swiftype" name="${content}" data-type="enum" content="${pageModel.swiftTypeMetaMap[content]}" />
         </sly>
     </sly>
     <!--/* WEB-10136 - Add Swiftype specific meta tags -- End */-->
