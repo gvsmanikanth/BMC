@@ -715,15 +715,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     WEB-10046 Restrict the RC inclusion via form only for Trials lead type.
      */
     @Override
-    public boolean checkIfFormIsTrial (String template,String type){
-        try {
-            while (template != null && type != null) {
-                if (template.contains ("form") && ! type.equalsIgnoreCase ("Trials")) return false;
-            }
-        }catch (Exception e)
+    public boolean checkIfFormIsTrial (String template,String type)throws Exception{
+        if ((template.contains ("form")) && !(type.equalsIgnoreCase ("Trial"))) {
+            return false;
+        } else
         {
-            log.error ("BMC Error : Exception occured"+e.getMessage ());
+            return true;
         }
-        return true;
     }
 }
