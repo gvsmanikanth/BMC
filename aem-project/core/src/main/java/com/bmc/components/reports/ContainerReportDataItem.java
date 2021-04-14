@@ -17,7 +17,6 @@ public class ContainerReportDataItem {
 	private String Meta_Description;
 	private String Short_Description;
 	private String description;
-	private String ic_app_inclusion;
 	private String jcr_path;
 	private String product_interest;
 	private String url_resource_name;
@@ -231,12 +230,6 @@ public class ContainerReportDataItem {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public String getIc_app_inclusion() {
-		return ic_app_inclusion;
-	}
-	public void setIc_app_inclusion(String ic_app_inclusion) {
-		this.ic_app_inclusion = ic_app_inclusion;
 	}
 	public String getJcr_path() {
 		return jcr_path;
