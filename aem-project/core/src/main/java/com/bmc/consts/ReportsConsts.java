@@ -11,7 +11,7 @@ public class ReportsConsts {
 
     //WEB-9969 AEM Report - Video Report to include Metadata details
     public static final String[] VideoTableNames = {"Video Page Path","Name","Type","Modified Date","Modified By",
-            "Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","Overlay URL","Overlay Text","RC Inclusion","Asset Inclusion","RC Form Path ","Header Image Path","Footer Logo Path","Product Interest","Product line","Ic App Wieghting",
+            "Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","Overlay URL","Overlay Text","RC Inclusion","Asset Inclusion","RC Form Path ","Header Image Path","Footer Logo Path","Video Length","Product Interest","Product line","Ic App Wieghting",
             "Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size"
             ,"Last Replicated Date","Last Replication action","References"};
 

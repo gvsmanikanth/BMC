@@ -115,20 +115,23 @@ public class VideoReportDataItem {
 	private String rc_inclusion;
 	private String asset_inclusion;
 	private String footerLogo;
+	private String videoLength;
+	private String headerImage;
+	private String rc_form_path;
+	public String getVideoLength () { return videoLength; }
+	public void setVideoLength (String videoLength) { this.videoLength = videoLength; }
 
 	public String getRc_form_path () {
 		return rc_form_path;
 	}
-
 	public void setRc_form_path (String rc_form_path) {
 		this.rc_form_path = rc_form_path;
 	}
 
-	private String rc_form_path;
+
 	public String getFooterLogo () {
 		return footerLogo;
 	}
-
 	public void setFooterLogo (String footerLogo) {
 		this.footerLogo = footerLogo;
 	}
@@ -136,12 +139,11 @@ public class VideoReportDataItem {
 	public String getHeaderImage () {
 		return headerImage;
 	}
-
 	public void setHeaderImage (String headerImage) {
 		this.headerImage = headerImage;
 	}
 
-	private String headerImage;
+
 	public String getAsset_inclusion () { return asset_inclusion; }
 	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
 	public String getRc_inclusion () { return rc_inclusion; }
