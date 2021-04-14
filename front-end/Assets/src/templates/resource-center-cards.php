@@ -604,7 +604,62 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-
+                                                                            <div class="rc-card-row" style="padding: 0px; width:100%">
+             
+                                                                                <div class="rc-featured-card-col" id="rc-featured-card" style="display: block;">
+                                                                                    <a id="rc-featured-card-link" href="https://register.gotowebinar.com/register/476557339418208779" data-ic-content-type="Webinars" target="_blank">
+                                                                                        <!-- desktop featured card -->
+                                                                                        <div class="featured-card-container">
+                                                                                            <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
+                                                                                                <div class="card-header">
+                                                                                                    <h3>Webinar</h3>
+                                                                                                </div>
+                                                                                                <div class="card-content">
+                                                                                                    <hr>
+                                                                                                    <h2>
+                                                                                                        Helix innovation in 20.08 &amp; 21.02</h2>
+                                                                                                </div>
+                                                                                                <div class="featured-card-footer" style="padding-right: 0px;">
+                                                                                                    <span class="card-footer-action" style="font-size: large;color: white;">
+                                                                                                        Action
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="featured-card featured-card-right-panel bg-bmc-green card-desktop" style="height: 310px;">
+                                                                                                <div class="card-header">
+                                                                                                    <div class="card-icon ic_play-white"></div>
+                                                                                                </div>
+                                                                                                <div class="card-content" style="background: url(https://stage.cms.bmc.com/content/dam/projects/bmc/rc-v5v6-on-rectangle-5.png) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
+                                                                                                <div class="featured-card-footer" style="padding-left: 0px;">
+                                                                                                    <span class="card-footer-action" style="border-top-color:white;">
+                                                                                                        <span class="learn-more-v1">Register</span>                                                                                                        
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!-- mobile featured card -->
+                                                                                        <div class="featured-card featured-card-right-panel bg-bmc-green card-mobile" style="height: 310px;">
+                                                                                            <div class="card-header" style="background: url(https://stage.cms.bmc.com/content/dam/projects/bmc/rc-v5v6-on-rectangle-5.png) no-repeat top left / cover;background-size: contain;min-height: 10%;">
+                                                                                                <h3 class="text-white">Webinar</h3>
+                                                                                                <div class="card-icon ic_play-white"></div>
+                                                                                            </div>
+                                                                                            <div class="card-content">
+                                                                                                <hr>
+                                                                                                <h4 class="text-white">
+                                                                                                    Helix innovation in 20.08 &amp; 21.02</h4>
+                                                                                            </div>
+                                                                                            <div class="featured-card-footer" style="padding-left: 0px;">
+                                                                                                <span class="card-footer-action" style="border-top-color:white;">
+                                                                                                    <svg class="align-middle s-view-white">
+                                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play-white"></use>
+                                                                                                    </svg>
+                                                                                                    Register
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
                                                                             <div id="resultItemsContainer">
                                                                                 <div class="resource-results">
                                                                                     <div class="rc-card-row" style="width:100%">
@@ -633,7 +688,7 @@
                                                                                                     <div class="card-footer">
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <div class="card-footer-action">
-                                                                                                        <span class="learn-more">View</span>                                                                                                        
+                                                                                                        <span class="learn-more-v1">View</span>                                                                                                        
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -671,7 +726,7 @@
                                                                                                         </div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Start</span>                                                                                                            
+                                                                                                            <span class="learn-more-v1">Start</span>                                                                                                            
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -707,7 +762,7 @@
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Start</span>
+                                                                                                            <span class="learn-more-v1">Start</span>
                                                                                                             
                                                                                                         </div>
                                                                                                     </div>
@@ -732,7 +787,7 @@
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Register</span>                                                                                                            
+                                                                                                            <span class="learn-more-v1">Register</span>                                                                                                            
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -757,7 +812,7 @@
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Try now</span>                                                                                                            
+                                                                                                            <span class="learn-more-v1">Try now</span>                                                                                                            
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -799,7 +854,7 @@
                                                                                                         </div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Play</span>
+                                                                                                            <span class="learn-more-v1">Play</span>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -834,7 +889,7 @@
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <span class="card-footer-action">
-                                                                                                            <span class="learn-more">Play</span>                                                                                                            
+                                                                                                            <span class="learn-more-v1">Play</span>                                                                                                            
                                                                                                         </span>
                                                                                                     </div>
                                                                                                 </div>
@@ -859,7 +914,7 @@
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
-                                                                                                            <span class="learn-more">Play</span>                                                                                                            
+                                                                                                            <span class="learn-more-v1">Play</span>                                                                                                            
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>

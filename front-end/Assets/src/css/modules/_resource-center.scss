@@ -460,21 +460,27 @@ body.no-scroll{
       background-position: right bottom;
       //transition: all .5s ease-out;
       margin: 0 -1px 0 -1px;
-      padding-left: 20px;
-      padding-right: 20px;
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+      padding: 10px 10px;
+      border-top: 1px solid #3980B2;
+      align-items: center;
       .card-footer-action {
         color: #3980B2;
         display: block;
         text-transform: uppercase;
-        font-size: smaller;
         font-weight: 600;
         transition: .3s linear;
-        border-top: 1px solid #3980B2;
         padding: 10px;
+        border-top: none;
+        padding: 0;
+        font-size: 15px;
       }
       .s-action {
         padding-right: 5px;
@@ -487,6 +493,9 @@ body.no-scroll{
       }
       .card-footer-logo{
         float: left;
+        padding: 0;
+        font-size: 15px;
+        font-weight: 600;
         img{
           max-height: 40px;
           display: inline-block;
@@ -507,7 +516,7 @@ body.no-scroll{
   //  simple cards
   .simple-card{
     @extend .card;
-	min-height: 240px;
+	  min-height: 240px;
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
@@ -600,6 +609,9 @@ body.no-scroll{
     }
     @media (max-width: $break-md) {
       width: 100%;
+    }
+    .featured-card-footer{
+      justify-content: center;
     }
   }
   .featured-card-left-panel{
@@ -940,4 +952,19 @@ $bg-forrester-green: #16563F;
   display: none;
   padding-top: 15px;
   padding-right: 20px;
+}
+.learn-more-v1{
+  padding-right: 15px;
+  position: relative;
+  &:after {
+    content: "\a0\00203A";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 15px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 1px;
+    right: 0;
+  }
 }
