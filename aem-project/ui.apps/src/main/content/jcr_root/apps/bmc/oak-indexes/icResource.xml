@@ -11,7 +11,6 @@
             <properties jcr:primaryType="nt:unstructured">
                 <ictopics name="jcr:content/ic-topics" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
          		<ictargetindustry name="jcr:content/ic-target-industry" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
-            	<icappinclusion name="jcr:content/ic-app-inclusion" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
                 <iccontenttype name="jcr:content/ic-content-type" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
             	<icbuyerstage name="jcr:content/ic-buyer-stage" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>
             	<ictargetpersona name="jcr:content/ic-target-persona" propertyIndex="{Boolean}true" jcr:primaryType="nt:unstructured"/>

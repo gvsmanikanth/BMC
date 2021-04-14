@@ -624,12 +624,12 @@
                                                                     <script id="resultItemsTemplate" type="text/x-handlebars-template">
                                                                         <div class="resource-results">
                                                                             <div class="rc-card-row">
-                                                                                {{#each items}}
-                                                                                <div class="rc-card-col">
-                                                                                    {{#ifCond linkType '===' "play"}}
-                                                                                    <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
+                                                                                {{#each items}}                                                                                
+                                                                                <div class="rc-card-col">                                                                                           
+                                                                                    {{#ifCond type '===' "Videos"}}
+                                                                                    <a class="{{isVideoModal assetLink}}" href="{{assetLink}}" target="{{addTarget assetLink}}" {{{analyticsAttributes}}}>
                                                                                         {{else}}
-                                                                                        <a href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
+                                                                                        <a href="{{assetLink}}" target="{{addTarget assetLink}}" {{{analyticsAttributes}}}>
                                                                                             {{/ifCond}}
                                                                                             <div class="simple-card bg-white">
                                                                                                 <!-- WEB-6793 Added new fields for RC Cards START -->
@@ -639,7 +639,7 @@
                                                                                                     <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
                                                                                                     </div>
                                                                                                     {{else}}
-                                                                                                    <div class="card-icon ic_{{linkType}}" alt border="0"></div>
+                                                                                                        <div class="card-icon ic_{{linkType}}" alt border="0"></div>
                                                                                                     {{/if}}
                                                                                                 </div>
                                                                                                 <div class="card-content">
@@ -657,36 +657,42 @@
                                                                                                 {{else}}
                                                                                                     <div class="card-footer">
                                                                                                 {{/ifCond}}
-                                                                                                    <!-- WEB-6793 Added new fields for RC Cards END -->
-                                                                                                    <span class="card-footer-action">
-                                                                                                            <div class="card-footer-logo">
-                                                                                                                {{#ifCond linkType '===' "play"}}
-                                                                                                                {{#if videoLength}}
-                                                                                                                <span class="video-length">
-                                                                                                                    <svg class="align-middle s-clock">
-                                                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
-                                                                                                                    </svg>{{videoLength}}
-                                                                                                                </span>
-                                                                                                                    {{/if}}
-                                                                                                                    {{/ifCond}}
-                                                                                                                    {{#if footerLogo}}
-                                                                                                                    {{#ifCond linkType '===' "play"}}
-                                                                                                                    {{else}}
-                                                                                                                <span>
-                                                                                                                    <img src="{{footerLogo}}"/>
-                                                                                                                </span>
-                                                                                                                {{/ifCond}}
-                                                                                                                {{/if}}
-                                                                                                            </div>
-                                                                                                        <svg class="align-middle s-{{linkType}}">
-                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                                                                                                        </svg>
-                                                                                                        {{#ifCond linkType '===' "play"}}Play{{/ifCond}}
-                                                                                                        {{#ifCond linkType '===' "download"}}Download{{/ifCond}}
-                                                                                                        {{#ifCond linkType '===' "view"}}View{{/ifCond}}
-                                                                                                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
-                                                                                                        {{#ifCond linkType '===' "demo"}}Start{{/ifCond}}
-                                                                                                    </span>
+                                                                                                <!-- WEB-6793 Added new fields for RC Cards END -->
+                                                                                                <div class="card-footer-logo">
+                                                                                                    {{#ifCond type '===' "Videos"}}
+                                                                                                        {{#if videoLength}}
+                                                                                                        <span class="video-length">
+                                                                                                                <svg class="align-middle s-clock">
+                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                                                                                                </svg>{{videoLength}}
+                                                                                                            </span>
+                                                                                                        {{/if}}
+                                                                                                    {{/ifCond}}
+                                                                                                    {{#if footerLogo}}
+                                                                                                        {{#ifCond type '===' "Videos"}}
+                                                                                                        {{else}}
+                                                                                                            <span>
+                                                                                                                <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                                                                                            </span>
+                                                                                                        {{/ifCond}}
+                                                                                                    {{/if}}
+                                                                                                </div>
+                                                                                                <span class="card-footer-action">
+                                                                                                    {{#ifCond type '===' "Trial"}}
+                                                                                                        <svg class="align-middle s-view">
+                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
+                                                                                                    {{else}}
+                                                                                                        {{#ifCond type '===' "Webinar"}}
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                        {{else}}
+                                                                                                            <svg class="align-middle s-{{linkType}}">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                                                                                        {{/ifCond}}
+                                                                                                    {{/ifCond}}
+                                                                                                    </svg>
+                                                                                                    {{ctaText}}
+                                                                                                </span>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </a>
