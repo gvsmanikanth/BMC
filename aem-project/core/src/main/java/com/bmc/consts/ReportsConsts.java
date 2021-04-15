@@ -17,7 +17,7 @@ public class ReportsConsts {
 
     // public static String[] resourceItems = {"product_interest","productLine1","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry"};
    public static final String[] DocumentContainersTableNames = {"Page title","Page URL","Page Created Date","Page Created By","Publish/Unpublish Status","Page ID","Page Last Modified date","Page Last modified by",
-            "Page URL ResourceName","Product Interest","Product line","Ic App Inclusion","Ic App Wieghting",
+            "Page URL ResourceName","Product Interest","Product line","Ic App Wieghting",
            "Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)",
             "IC Target Industry","IC Company Size","RC Inclusion","Asset Inclusion","Form Gate Path",
             "Document Link Type","Document Link URL", "Document display Type","Asset Prefix","XF Link",
@@ -35,7 +35,7 @@ public class ReportsConsts {
 
     public static final String[] ITSolutionsTableNames = {"CMS Title","URL Resource Name","JCR Path",
             "Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest",
-            "Meta Description","Short Description","Description(Reusable)", "Ic app inclusion","Ic_weighting"
+            "Meta Description","Short Description","Description(Reusable)","Ic_weighting"
             ,"Creation Date"};
 
     public static final String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
@@ -46,7 +46,7 @@ public class ReportsConsts {
 
     public static final String[] CustomersList = {"ID","Creation_Date","Page URL","URL Resource Name","Page Title","Industry","Topics",
             "URL_Resource_Name","Card Title","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
-            "IC App Inclusion","IC Weighting","Meta Description"};
+            "IC Weighting","Meta Description"};
 
     public static final String[] XFFormsReportTableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date","Migration Content ID","Migration Content Name","Migration Content Type"
             ,"Form Name","Form ID", "FieldSet References"};
