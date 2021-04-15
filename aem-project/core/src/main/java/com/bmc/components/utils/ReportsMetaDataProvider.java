@@ -1,14 +1,17 @@
 package com.bmc.components.utils;
 
+import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
-import javax.jcr.Node;
-import javax.jcr.Property;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.Value;
+import javax.jcr.*;
 
+import com.bmc.consts.ReportsConsts;
+import com.google.gson.Gson;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -176,5 +179,111 @@ public class ReportsMetaDataProvider {
 		}
 		
 	}
-	
+
+	public  String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException , PathNotFoundException {
+
+		if (node.hasProperty(propertyName)) {
+
+			Property prop = node.getProperty(propertyName);
+			Value[] values;
+			List<String> propVals = new ArrayList<>();
+			List<String> updatedPropVals = new ArrayList<>();
+			// This check is necessary to ensure a multi-valued field is applied...
+			if (prop.isMultiple()) {
+				values = prop.getValues();
+				for(Value v : values) {
+					propVals.add(v.getString());
+				}
+
+				for(String v : propVals) {
+					if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
+						String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
+						try
+						{
+							v = session.getNode(nodeName).getProperty(propertyValue).getString();
+						}catch(PathNotFoundException pn)
+						{
+							v = "";
+						}
+					}else
+					{ v = v.toString();}
+					if(prop.isMultiple()){
+						updatedPropVals.add(v);
+					}
+				}
+			}
+			else {
+				values = new Value[1];
+				values[0] = prop.getValue();
+				if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
+				{
+					String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
+					String nodeValue = null;
+					try
+					{
+						nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
+					}catch(PathNotFoundException ex){
+						nodeValue = "";
+					}
+					updatedPropVals.add(nodeValue);
+				}else{
+					updatedPropVals.add(prop.getValue().toString());
+				}
+			}
+
+			return (String.join(",", updatedPropVals));
+		}
+
+		return "";
+
+	}
+
+	public boolean stringContainsNumber( String s )
+	{
+		return Pattern.compile( "[0-9]" ).matcher( s ).find();
+	}
+
+	public static boolean stringContainsItemFromList(String inputStr) {
+
+		for(int i = 0; i < ReportsConsts.resourceItems.length; i++)
+		{
+			if(inputStr.contains(ReportsConsts.resourceItems[i]))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * getCurrentDate()
+	 * The current Date and Time is returned.
+	 * SimpleDateFormat is used.
+	 *
+	 */
+	public String getCurrentDate()
+	{
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date today = Calendar.getInstance().getTime();
+		String date = dateFormat.format(today).replace("/", "_");
+		date = date.replace(":", "_");
+		return  date.replace(" ", "_"); //2016/11/16 12:08:43
+	}
+
+	/*
+	 * createJSON()
+	 * This method generates a JSON from the list of FormREportDataItem.
+	 */
+	public static String createJSON (ArrayList list)
+	{
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+		if(!json.equals(null))
+		{
+			return json;
+		}else
+		{
+			return null;
+		}
+	}
 }
