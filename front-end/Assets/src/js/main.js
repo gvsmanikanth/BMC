@@ -80,10 +80,12 @@ require('./modules/contact-form.js');
 require('./modules/document_container.js');
 require('./modules/imageAlignment.js');
 require('./modules/arrowBG.js');
+
 require('./modules/quote-review.js');
 require('./modules/customers-section.js');
 require('./modules/landingPage-arrowBG.js');
 require('./modules/boxy-header.js');
+
 require('./modules/webinars.js');
 require('./modules/language-selector.js');
 require('./modules/orion/orion-global.js');
@@ -92,3 +94,4 @@ require('./modules/orion/orion-quote-carousel.js');
 require('./modules/orion/orion-calculator.js');
 require('./modules/handlebarHelpers.js');
 require('./modules/resource-center.js');
+require('./vendor/jquery.stickyBar.js');

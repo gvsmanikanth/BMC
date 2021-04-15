@@ -94,8 +94,7 @@
                                         jcr:lastModifiedBy="admin"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="bmc/components/content/resource-center/resource-center-results"
-                                        pageSize="10"
-                                        path="/content/bmc/us/en/documents/datasheets/control-m-for-hadoop">
+                                        pageSize="10">
                                         <fb
                                             jcr:lastModified="{Date}2019-11-07T20:36:11.795+05:30"
                                             jcr:lastModifiedBy="admin"

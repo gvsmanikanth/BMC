@@ -97,32 +97,6 @@
                                                     allowBulkEdit="{Boolean}true"
                                                     cq-msm-lockable="topics"/>
                                             </topics>
-                                            <ic-app-inclusion
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                                emptyText="Intelligent Content App Inclusion"
-                                                fieldLabel="IC App Inclusion"
-                                                name="./ic-app-inclusion">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="No"
-                                                        value="no"/>
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Yes (not gated)"
-                                                        value="yes"/>
-                                                    <item3
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Gate"
-                                                        value="gate"/>
-                                                    <item4
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Gated"
-                                                        value="gated"/>
-                                                </items>
-                                            </ic-app-inclusion>
                                             <ic-content-type
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
@@ -259,73 +233,6 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"/>
                                             </ic-company-size>
-                                            <rc-inclusion
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Resource center Inclusion"
-                                                name="./rc-inclusion">
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item1
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="YES"
-                                                        value="{Boolean}true"/>
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
-                                                        selected="{Boolean}true"
-                                                        text="NO"
-                                                        value="{Boolean}false"/>
-                                                </items>
-                                            </rc-inclusion>
-                                            <asset-inclusion
-                                                granite:class="cq-dialog-dropdown-showhide"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Asset Gated/Un-gated"
-                                                name="./asset-inclusion">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-dropdown-showhide-target=".gate-form-fieldset-showhide-target"/>
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <item2
-                                                        jcr:primaryType="nt:unstructured"
-                                                        selected="{Boolean}true"
-                                                        text="Not gated"
-                                                        value="{Boolean}false"/>
-                                                    <item1
-                                                        jcr:primaryType="nt:unstructured"
-                                                        text="Gated"
-                                                        value="{Boolean}true"/>
-                                                </items>
-                                            </asset-inclusion>
-                                            <rc-form-path
-                                                granite:class="hide gate-form-fieldset-showhide-target foundation-layout-util-vmargin"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/container">
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    showhidetargetvalue="true"/>
-                                                <items jcr:primaryType="nt:unstructured">
-                                                    <heading
-                                                        granite:class="coral-Heading coral-Heading--4"
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
-                                                        level="{Long}4"
-                                                        text="Enter Form Path:"/>
-                                                    <well
-                                                        jcr:primaryType="nt:unstructured"
-                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
-                                                        <items jcr:primaryType="nt:unstructured">
-                                                            <parentPage
-                                                                jcr:primaryType="nt:unstructured"
-                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                                                fieldDescription="Enter the Gated asset form Pathfield"
-                                                                fieldLabel="Gate form path."
-                                                                name="./rc-form-path"
-                                                                rootPath="/content/bmc/language-masters/en/forms"/>
-                                                        </items>
-                                                    </well>
-                                                </items>
-                                            </rc-form-path>
                                             <listFrom
                                                 granite:class="cq-dialog-dropdown-showhide"
                                                 jcr:primaryType="nt:unstructured"
@@ -429,6 +336,7 @@
                                                         value="redirect"/>
                                                 </items>
                                             </documentDisplayType>
+                                            <!-- WEB-10038 Removed Rc fields from the DC Template -->
                                             <fragmentpath
                                                 granite:id="xfPicker"
                                                 jcr:primaryType="nt:unstructured"

@@ -1,0 +1,17 @@
+
+
+.epd-legend {
+  & {
+      font-size: 11px;
+      padding-left: 20px;
+      margin-top: 10px;
+  }
+    .legend {
+        & {
+            margin-right: 6px;
+        }
+        .legend-item {
+        border-radius: 3px;
+        }
+    }
+}

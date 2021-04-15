@@ -1,0 +1,32 @@
+<a class="tile" *ngIf="widget.routerLink" [href]="widget.href" target="_blank" (click)="sendTileClicks(widget.title)">
+    <div class="tile-left"></div>
+    <div class="tile-body">
+      <div class="tile-right">
+        <span [ngClass]="widget.icon"></span>
+      </div>
+      <div class="tile-center">
+        <h3>{{widget.title}}</h3>
+        <div>{{widget.description}}</div>
+      </div>
+    </div>
+    <a class="tile-arrow" [routerLink]=[widget.routerLink] (click)="checkExtended($event)">
+      <span *ngIf="!widget.isExtended" class="psc-icon-personalization"></span>
+      <span *ngIf="widget.isExtended" class="d-icon-undo"></span>
+    </a>
+</a>
+<a class="tile no-extend" [href]="widget.href" *ngIf="!widget.routerLink" target="_blank" (click)="sendTileClicks(widget.title)">
+  <div class="tile-left"></div>
+  <div class="tile-body">
+    <div class="tile-right">
+      <span [ngClass]="widget.icon"></span>
+    </div>
+    <div class="tile-center">
+      <h3>{{widget.title}}</h3>
+      <div>{{widget.description}}</div>
+    </div>
+  </div>
+  <!-- <div class="tile-arrow">
+    <span class="d-icon-link_adapt"></span>
+  </div> -->
+</a>
+

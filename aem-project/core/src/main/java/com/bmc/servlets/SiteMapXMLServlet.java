@@ -162,19 +162,15 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 			return;
 		}
 		String loc="";
-		//this.slingSettingsService.getRunModes().contains("publish")||this.slingSettingsService.getRunModes().contains("author")
 		if(this.hostname.equals("localhost")) {
 			loc=this.scmaa+"://localhost:"+this.portnumber+getshortenURL(page.getPath())+".html";
 		}else {
 			loc=this.scmaa+"://"+this.hostname+getshortenURL(page.getPath())+".html";
 		}
-		//loc = externalizer.externalLink(resolver, this.externalizerdomain, String.format("%s.html", page.getPath()));
-		//String loc = externalizer.publishLink(resolver, String.format("%s.html", pagepath));
 		if(StringUtils.isBlank(applyUrlIgnore(loc))) {
 			return;
 		}
 		stream.writeStartElement(NS, "url");
-		//loc = applyUrlRewrites(loc);
 		writeElement(stream, "loc", loc);
 		Calendar calendarObj = page.getLastModified();
 		if (null != calendarObj) {
@@ -193,7 +189,6 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 		boolean flag = false;
 		if(this.excludeFromSiteMapProperty != null){
 			for(String pageProperty : this.excludeFromSiteMapProperty){
-				log.info(page.getProperties().get("jcr:title")+":::::::::::"+page.getProperties().get(pageProperty, Boolean.FALSE));
 				flag = flag || page.getProperties().get(pageProperty, Boolean.FALSE);
 			}
 		}
@@ -201,7 +196,6 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 	}
 
 	private boolean isHiddenParentFolder(Page page) {
-
 		try {
 			InheritanceValueMap inheritedProp = new HierarchyNodeInheritanceValueMap(page.getContentResource());
 			return inheritedProp.getInherited("hideAllChildPages", false);

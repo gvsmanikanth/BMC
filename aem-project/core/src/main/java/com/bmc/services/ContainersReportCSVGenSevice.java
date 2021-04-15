@@ -76,7 +76,7 @@ public class ContainersReportCSVGenSevice {
     private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry",
     		"ic-content-type","ic-topics","ic-buyer-stage","ic-target-persona","ic-target-industry","ic-company-size"};
 	
-    private String[] TableNames = {"Page title","Page URL","Page Created Date","Page Created By","Publish/Unpublish Status","Page ID","Page Last Modified date","Page Last modified by","Page URL ResourceName","Product Interest","Product line","Ic App Inclusion","Ic App Wieghting",
+    private String[] TableNames = {"Page title","Page URL","Page Created Date","Page Created By","Publish/Unpublish Status","Page ID","Page Last Modified date","Page Last modified by","Page URL ResourceName","Product Interest","Product line","Ic App Wieghting",
 			"Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size","RC Inclusion","Asset Inclusion","Form Gate Path","Document Link Type","Document Link URL",
 			"Document display Type","Asset Prefix","XF Link","Translation status","Document References"};
     
@@ -149,7 +149,7 @@ public class ContainersReportCSVGenSevice {
 								            	 			reportDataItem.setProduct_Line(getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
 								            	 			reportDataItem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
 								            	 			reportDataItem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic", session));
-											            	reportDataItem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+											            	//reportDataItem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
 											            	reportDataItem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));		            	
 											            	reportDataItem.setIC_Type(getPropertyValues(reportDataNode, "ic-content-type","jcr:title","intelligent-content-types", session));
 											            	reportDataItem.setIC_topic(getPropertyValues(reportDataNode, "ic-topics","jcr:title","intelligent-content-topics", session));
@@ -166,7 +166,7 @@ public class ContainersReportCSVGenSevice {
 														    //WEB-9640 & WEB-9134AEM Reports -DC Report Enhancement 2 -- START
 														  	reportDataItem.setPublish_status (getPropertyValues(reportDataNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
 														 	reportDataItem.setPageID (getPropertyValues(reportDataNode, "contentId","contentId","contentId",session));
-														//Conditional case for Asset prefix
+															//Conditional case for Asset prefix
 															 if(reportDataNode.hasProperty ("docTypePrefix")) {
 															 String assetPrefix = getPropertyValues (reportDataNode, "docTypePrefix", "docTypePrefix", "docTypePrefix", session);
 															 if (assetPrefix.equals ("custom")) {
@@ -220,7 +220,7 @@ public class ContainersReportCSVGenSevice {
 					Integer count = i;					
 					 data.put(count.toString(), new Object[] {							 
 					     document_list.get(i).getCMS_Title(),document_list.get(i).getPage_URL(),document_list.get(i).getCreation_Date(),document_list.get(i).getCreation_By(),document_list.get(i).getPublish_status (),document_list.get(i).getPageID (),document_list.get(i).getLast_Modified_Date(),
-					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),document_list.get(i).getIc_app_inclusion(),
+					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),
 					     document_list.get(i).getIc_weighting(),document_list.get(i).getTopics(),document_list.get(i).getIC_Type(),document_list.get(i).getIC_topic(), document_list.get(i).getIC_Buyer_stage(), document_list.get(i).getIC_target_Persona(),
 					     document_list.get(i).getIC_Source_Publish_Date(),document_list.get(i).getIC_Target_Industry(),document_list.get(i).getIC_Company_Size(), document_list.get(i).getRc_inclusion (),document_list.get(i).getAsset_inclusion (),
 						document_list.get(i).getRc_form_path (), document_list.get(i).getPage_Type(),document_list.get(i).getDocument_url(),

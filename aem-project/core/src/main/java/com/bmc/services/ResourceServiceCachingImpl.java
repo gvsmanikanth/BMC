@@ -123,4 +123,9 @@ public class ResourceServiceCachingImpl implements ResourceService {
     public List<String> getPropertyNames() {
         return baseImpl.getPropertyNames();
     }
+
+    @Override
+    public String getPropertyOptionIfFound (List<String> list, String value) {
+        return baseImpl.getPropertyOptionIfFound (list,value); }
+
 }

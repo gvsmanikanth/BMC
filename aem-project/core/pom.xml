@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.bmc</groupId>
         <artifactId>DXP</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>4.7.3</version>
     </parent>
     <properties>
         <properties.basedir>${basedir}/../properties</properties.basedir>
@@ -36,8 +36,7 @@ https://mvnrepository.com/artifact/org.osgi/org.osgi.service.metatype.annotation
     <artifactId>org.osgi.service.metatype.annotations</artifactId>
     <version>1.3.0</version>
     <scope>provided</scope>
-</dependency> -->
-       
+</dependency> -->    
        <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>osgi.annotation</artifactId>
@@ -272,6 +271,11 @@ https://mvnrepository.com/artifact/org.osgi/org.osgi.service.metatype.annotation
         <!-- ======================= -->
         <!-- END Testing dependencies -->
         <!-- ======================= -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.10</version>
+		</dependency>
     </dependencies>
 
     <!-- ====================================================================== -->

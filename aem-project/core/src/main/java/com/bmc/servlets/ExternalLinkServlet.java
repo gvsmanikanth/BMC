@@ -72,7 +72,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
         
     	   try {
     		   
-    			logger.info("START CLASS ----ExternalLinkServlet");           
+    			logger.debug("BMC DEBUG : Logger for ExternalLinkServlet");
     			Node currentNode = request.getResource().adaptTo(Node.class);
     			session = currentNode.getSession();
     			String linkAbstractor = currentNode.getProperty("linkAbstractor").getValue().toString();
@@ -103,7 +103,7 @@ public class ExternalLinkServlet extends org.apache.sling.api.servlets.SlingAllM
 				     	    	out.println("<html><head>");			     	    	   
 				     	    	out.println("</head>");   
 				     	    	out.println("<body>");					     	       					     	       
-				        		out.println("<h1>External Link</h1>");
+				        		out.println("<h1>Link Container </h1>");
 				        		out.println("<h3>Destination :  <a href='"+linkAbstractorExternalURL+"'>"+linkAbstractorExternalURL+"</h3>");
 				        		out.println("</a><br>");
 				        		out.println("<h3> Target :  "+linkAbstractorTarget+"</h3>");			                		
