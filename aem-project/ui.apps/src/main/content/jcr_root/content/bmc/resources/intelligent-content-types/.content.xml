@@ -39,9 +39,10 @@
     <ic-type-654968417
             jcr:primaryType="nt:unstructured"
             jcr:title="Interactive Tools"/>
+    <!--/* WEB-10010 renaming Tech note to plural. */-->
     <ic-type-958935588
             jcr:primaryType="nt:unstructured"
-            jcr:title="Tech Note"/>
+            jcr:title="Tech Notes"/>
     <ic-type-920200003
             jcr:primaryType="nt:unstructured"
             jcr:title="Trials"/>

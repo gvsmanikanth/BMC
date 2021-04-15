@@ -2,6 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
           excludeProperty="[hidefromsitemap]"
-		  excludeTemplates="[]"
+		  excludeTemplates="[/conf/bmc/settings/wcm/templates/form-thank-you2,/conf/bmc/settings/wcm/templates/form-thank-you]"
 		  urlRewrites="[]"
 		  urlIgnorePattern="[]"/>

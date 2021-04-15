@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js youtube-video-modal-container" lang="en">
 <sly data-sly-use.video="com.bmc.components.VideoData"></sly>
+<sly data-sly-test="${video.videoLength}">
+    <sly data-sly-test.videoLength="(${video.videoLength @ context = 'html'})"></sly>
+</sly>
 <head>
-    <title>Video: ${video.title}</title>
+    <title>Video: ${video.title}${videoLength}</title>
     <sly data-sly-include="/apps/bmc/components/structure/page/customheaderlibs.html" />
 </head>
 <body class="video-modal">

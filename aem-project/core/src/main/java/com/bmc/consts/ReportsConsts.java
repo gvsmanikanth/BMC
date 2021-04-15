@@ -23,6 +23,7 @@ public class ReportsConsts {
             "Document Link Type","Document Link URL", "Document display Type","Asset Prefix","XF Link",
             "Translation status","Document References"};
 
+
     public static final String[] FormsTableNames = {"Page URL","Page Created Date","Page Created By",
             "Page Last Modified date","Page Last modified by","Last Replication Action","Form Type",
             "Business Unit","Form Action","Form Action Type","Email Subject Line",
@@ -31,22 +32,23 @@ public class ReportsConsts {
             "External Asset Activity","Force Opt in","Content Preferences","PURL Page URL",
             "Active PURL Pattern","ACtive PURL Redirect","Product Interest","Product Line",
             "LMA License","Lead Offer Most Recent","AWS Trial","Assign to Owner ID","Contact me "
-            ,"Experience Fragment path"};
+            ,"Experience Fragment path","RC Inclusion","Asset Inclusion","Rc Form Path"};
 
     public static final String[] ITSolutionsTableNames = {"CMS Title","URL Resource Name","JCR Path",
             "Migration Content Type","Migration Content URL","Topics","Product Lines","Product Interest",
-            "Meta Description","Short Description","Description(Reusable)","Ic_weighting"
-            ,"Creation Date"};
+            "Meta Description","Short Description","Description(Reusable)", "Ic_weighting"
+            ,"Creation Date","RC Inclusion","Asset Inclusion","RC Form Path"};
 
     public static final String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
             ,"Course Duration","Last Modified By","Last Modified Date","Last Replication Action",
-            "Translation Status"};
+            "Translation Status","RC Inclusion","Asset Inclusion","RC Form Path"};
 
     public static final String[] TableStickyHeaders = {"JCR Title","JCR Path","secondaryCTAHref","secondaryCTAText","Template Type"};
 
     public static final String[] CustomersList = {"ID","Creation_Date","Page URL","URL Resource Name","Page Title","Industry","Topics",
             "URL_Resource_Name","Card Title","Card Description","Card Logo Src","Card Secondary Link Text", "Card Secondary Link URL",
-            "IC Weighting","Meta Description"};
+        "IC Weighting","Meta Description","RC Inclusion","Asset Inclusion","RC Form Path"};
+
 
     public static final String[] XFFormsReportTableNames = {"Experience Fragment URL","Experience Fragment Name","Last Modified By","Last Modified Date","Created Date","Migration Content ID","Migration Content Name","Migration Content Type"
             ,"Form Name","Form ID", "FieldSet References"};

@@ -8,7 +8,7 @@
 
     <groupId>com.bmc</groupId>
     <artifactId>DXP</artifactId>
-	  <version>0.0.1-SNAPSHOT</version>
+    <version>4.7.3</version>
     <packaging>pom</packaging>
 
     <name>BMC DXP - Reactor Project</name>
@@ -34,12 +34,12 @@
     <dependencyManagement>
         <dependencies>
         <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations -->
-			<dependency>
-			    <groupId>org.osgi</groupId>
-			    <artifactId>org.osgi.service.component.annotations</artifactId>
-			    <version>1.4.0</version>
-			    <scope>provided</scope>
-			</dependency>			        
+<dependency>
+    <groupId>org.osgi</groupId>
+    <artifactId>org.osgi.service.component.annotations</artifactId>
+    <version>1.4.0</version>
+    <scope>provided</scope>
+</dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>

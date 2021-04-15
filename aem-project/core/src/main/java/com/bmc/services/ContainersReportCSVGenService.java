@@ -75,7 +75,6 @@ public class ContainersReportCSVGenService {
     private static  ArrayList<ContainerReportDataItem> document_list = new ArrayList<ContainerReportDataItem>();
        
 
-
     
     
     /*
@@ -140,7 +139,7 @@ public class ContainersReportCSVGenService {
 								            	 			reportDataItem.setProduct_Line(metadataProvider.getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
 								            	 			reportDataItem.setCMS_Title(metadataProvider.getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
 								            	 			reportDataItem.setTopics(metadataProvider.getPropertyValues(reportDataNode, "topics","jcr:title","topic", session));
-											            	reportDataItem.setIc_app_inclusion(metadataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+											            	//reportDataItem.setIc_app_inclusion(metadataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
 											            	reportDataItem.setIc_weighting(metadataProvider.getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
 											            	reportDataItem.setIC_Type(metadataProvider.getPropertyValues(reportDataNode, "ic-content-type","jcr:title","intelligent-content-types", session));
 											            	reportDataItem.setIC_topic(metadataProvider.getPropertyValues(reportDataNode, "ic-topics","jcr:title","intelligent-content-topics", session));
@@ -210,7 +209,7 @@ public class ContainersReportCSVGenService {
 					Integer count = i;					
 					 data.put(count.toString(), new Object[] {							 
 					     document_list.get(i).getCMS_Title(),document_list.get(i).getPage_URL(),document_list.get(i).getCreation_Date(),document_list.get(i).getCreation_By(),document_list.get(i).getPublish_status (),document_list.get(i).getPageID (),document_list.get(i).getLast_Modified_Date(),
-					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),document_list.get(i).getIc_app_inclusion(),
+					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),
 					     document_list.get(i).getIc_weighting(),document_list.get(i).getTopics(),document_list.get(i).getIC_Type(),document_list.get(i).getIC_topic(), document_list.get(i).getIC_Buyer_stage(), document_list.get(i).getIC_target_Persona(),
 					     document_list.get(i).getIC_Source_Publish_Date(),document_list.get(i).getIC_Target_Industry(),document_list.get(i).getIC_Company_Size(), document_list.get(i).getRc_inclusion (),document_list.get(i).getAsset_inclusion (),
 						document_list.get(i).getRc_form_path (), document_list.get(i).getPage_Type(),document_list.get(i).getDocument_url(),

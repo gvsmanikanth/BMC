@@ -31,6 +31,12 @@
 		<filter root="/conf/bmc/settings/wcm/templates/resource-center-template" mode="replace"/>
  <!--  <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
     <!-- WEB-6185 RC Template END -->
+    <!-- WEB-10037 Webinars and Trials  -->
+    <filter root="/conf/bmc/settings/wcm/templates/webinars" mode="replace"/>
+    <filter root="/conf/bmc/settings/wcm/templates/external-link" mode="replace"/>
+    <filter root="/conf/bmc/settings/wcm/templates-types/external-link-page" mode="replace"/>
+    <!--  <filter root="/conf/bmc/settings/wcm/templates/support-central" mode="replace"/>-->
+    <!-- WEB-6185 RC Template END -->
     <!-- WEB-4924 Forms redesign new templates START -->
     <!-- WEB-5345 remove merge and add replace. -->
 		<filter root="/conf/bmc/settings/wcm/templates/form-thank-you2" mode="replace"/>
@@ -54,6 +60,9 @@
 		 <filter root="/conf/bmc/settings/wcm/templates/experience-fragment-customer-spotlight" mode="replace"/>
 		 <!-- WEB-8402 Not able to select XF variation from picker  END -->    
 	  <filter root="/conf/bmc/settings/wcm/templates/offering-micro-item" mode="replace"/>
+	  
+    <!--Template for Sitemap XML -->  
+    <filter root="/conf/bmc/settings/wcm/templates/bmc-site-map-xml" mode="merge"/>	  
    
     <filter root="/etc/clientlibs/bmc"/>
 

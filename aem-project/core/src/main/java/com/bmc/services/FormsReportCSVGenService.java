@@ -192,6 +192,11 @@ public class FormsReportCSVGenService {
 								            	 formDataitem.setActionTYpe(metaDataProvider.getPropertyValues(formNode, "actionType","actionType","actionType",session));
 								            	 formDataitem.setEmail_ID(metaDataProvider.getPropertyValues(formNode, "emailid","emailid","emailid",session));
 								            	//Additional properties added from WEB-6060
+													//WEB-9765 Adding RC fields and removing redundant IC field -- START.
+													// reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+													formDataitem.setRc_inclusion (metaDataProvider.getPropertyValues(formJcrNode, "rc-inclusion","rc-inclusion","rc-inclusion", session));
+													formDataitem.setAsset_inclusion (metaDataProvider.getPropertyValues(formJcrNode, "asset-inclusion","asset-inclusion","asset-inclusion", session));
+													formDataitem.setRc_form_path (metaDataProvider.getPropertyValues(formJcrNode, "rc-form-path","rc-form-path","rc-form-path", session));
 								            	 formDataitem.setEmail_Subject__Line(metaDataProvider.getPropertyValues(formNode, "emailSubjectLine","emailSubjectLine","emailSubjectLine",session));
 								            	 formDataitem.setBMC_Email_Notification_Recipient(metaDataProvider.getPropertyValues(formNode, "recipient","recipient","recipient",session));
 								            	 formDataitem.setShared_Contact_List_ID(metaDataProvider.getPropertyValues(formNode, "sharedlistid","sharedlistid","sharedlistid",session));
@@ -234,7 +239,8 @@ public class FormsReportCSVGenService {
 				list.get(i).getEmail_ID(),list.get(i).getEloqua_Campaign_ID(),list.get(i).getCampaign_ID(),list.get(i).getExternal_Asset_Name(),list.get(i).getExternal_Asset_Type(),
 				list.get(i).getExternal_Activity(),list.get(i).getForceOptIn(),list.get(i).getForm_Content_Preferences(),list.get(i).getPageURL(),
 				list.get(i).getActivePURLPattern(),list.get(i).getActivePURLRedirect(),list.get(i).getProduct_Interest(),list.get(i).getProduct_Line(),list.get(i).getLMA_License(),
-				list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getAWS_trial(), list.get(i).getC_Assign_to_Owner(), list.get(i).getC_Contact_Me1(),list.get(i).getExpFgmtPath()});
+				list.get(i).getC_Lead_Offer_Most_Recent1(),list.get(i).getAWS_trial(), list.get(i).getC_Assign_to_Owner(), list.get(i).getC_Contact_Me1(),list.get(i).getExpFgmtPath(),
+				list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),list.get(i).getRc_form_path () });
 			}
 
 			//Iterate over data and write to sheet

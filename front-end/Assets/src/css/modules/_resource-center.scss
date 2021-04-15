@@ -1,6 +1,6 @@
 // Customized UI for Resource Center Filters
 .rc-filter-panel-group {
-    background-color: #fff;    
+    background-color: #fff;
     .heading-group ul {
       list-style-type: none; /* Remove bullets */
       padding: 0; /* Remove padding */
@@ -15,7 +15,7 @@
         content: '+';
         padding: 10px;
         color: #29a5d6;
-        display: inline-block;        
+        display: inline-block;
         font-size: 22px;
         font-weight: bold;
         position: absolute;
@@ -35,18 +35,18 @@
         &::before{
           content: '\002B';
         }
-      }    
+      }
 
     }
-  
+
     .heading-group li {
       border: 1px solid #ddd; /* Add a thin border to each list item */
       margin-top: -1px; /* Prevent double borders */
       /*background-color: #f6f6f6; /* Add a grey background color */
       padding: 15px; /* Add some padding */
       margin-bottom: 0px;
-      text-transform: uppercase; 
-      font-weight: bold; 
+      text-transform: uppercase;
+      font-weight: bold;
       cursor: pointer;
 
       @media (max-width: $break-lg) {
@@ -124,8 +124,8 @@
         font-family: icomoon;
         padding: 5px;
         vertical-align: middle;
-      }     
-    }  
+      }
+    }
     .readMore{
       &:after{
         content: $iconArrowDown;
@@ -135,7 +135,7 @@
       &:after{
         content: $iconArrowUp;
       }
-    } 
+    }
 }
 
 .rc-filter-header {
@@ -204,8 +204,8 @@
     cursor: pointer;
     margin-left: -110px;
     margin-top: -7px;
-	&:hover{	
-      color: #046eb1;	
+	&:hover{
+      color: #046eb1;
     }
   }
 
@@ -330,14 +330,14 @@ body.no-scroll{
     img, figcaption {
       @include box-sizing();
     }
-    
+
     figcaption {
       padding: 1em 1em 0em;
     }
 
     img {
       width: 100%;
-      
+
     }
 
     // Customized media queries for cards
@@ -410,7 +410,7 @@ body.no-scroll{
         background-repeat: no-repeat;
         background-size: 100%;
         float: right;
-        width: 35px; 
+        width: 35px;
         height: 50px;
       }
       .card-thumbnail{
@@ -423,7 +423,8 @@ body.no-scroll{
     }
     .card-content{
       clear: both;
-      min-height: 191px;
+      min-height: 160px;
+	  margin-bottom: 60px;
       h4 {
         color: #414042;
         font-weight: 400;
@@ -452,7 +453,7 @@ body.no-scroll{
         height: 4px;
       }
     }
-    .card-footer{ 
+    .card-footer{
       text-align: right;
       background: linear-gradient(to right, #3980B2 50%, white 50%);
       background-size: 200% 100%;
@@ -506,13 +507,17 @@ body.no-scroll{
   //  simple cards
   .simple-card{
     @extend .card;
+	min-height: 240px;
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
         transition: 0.3s linear;
-        .card-footer-action {
+        .card-footer {
           transition: 0.3s linear;
           color: #fff !important;
+          .card-footer-action{
+            color: #fff;
+          }
           //  white action icons
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
@@ -524,17 +529,33 @@ body.no-scroll{
             background-image: url('#{$imagesFolder}s-view-white.png');
           }
           .s-clock {
-            background-image: url('#{$imagesFolder}s-clock-white.svg');         
+            background-image: url('#{$imagesFolder}s-clock-white.svg');
           }
           .s-demo {
             background-image: url("#{$imagesFolder}s-play-white.png");
           }
         }
         .card-footer{
-          transition: 0.3s linear;          
+          transition: 0.3s linear;
           //padding-right: 20px;
           background-position: left bottom;
+          .card-footer-logo {
+            color: #fff;
+          }
         }
+      }
+      // WEB-6793
+      .card-footer-logo {
+        padding: 10px 0px 0px 0px;
+        font-size: 15px;
+        color: #3980B2;
+        font-weight: 600;
+        .video-length {
+            font-size: 15px;
+        }
+          img{
+              vertical-align: middle;
+          }
       }
   }
 
@@ -626,29 +647,29 @@ body.no-scroll{
     background-image: url('#{$imagesFolder}s-download-white.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 1.5rem; 
+    width: 1.5rem;
     height: 1.2rem;
   }
   .s-play-white {
     background-image: url('#{$imagesFolder}s-play-white.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 1.5rem; 
+    width: 1.5rem;
     height: 1.2rem;
   }
   .s-view-white {
     background-image: url('#{$imagesFolder}s-view-white.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 1.5rem; 
+    width: 1.5rem;
     height: 1.2rem;
   }
   .s-clock {
     background-image: url('#{$imagesFolder}s-clock-blue.svg');
     background-repeat: no-repeat;
-    background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;    
+    background-size: 90%;
+    width: 20px;
+    height: 20px;
   }
 
 
@@ -674,11 +695,17 @@ body.no-scroll{
   .ic_view {
     background-image: url("#{$imagesFolder}ic_view.png");
   }
-  
+  .ic_trial {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_trial-white {
+    background-image: url("#{$imagesFolder}icon-interactive-white.png");
+  }
+
 }
 
 .text-white {
-  color: white !important;  
+  color: white !important;
 }
 .pr-0 {
   padding-right: 0px;
@@ -812,7 +839,7 @@ $bg-forrester-green: #16563F;
             font-family: "icomoon";
             content: $iconCloseX;
             color: #177ba2;
-            font-size: 1.2rem; 
+            font-size: 1.2rem;
             cursor:pointer;
           }
         }
@@ -854,7 +881,7 @@ $bg-forrester-green: #16563F;
   @include media(breakpointMedium){
     top: 0rem;
   }
-  @include media(breakpointLarge){ 
+  @include media(breakpointLarge){
     top: 0rem;
   }
 }
@@ -879,29 +906,29 @@ $bg-forrester-green: #16563F;
       .bg-seashell{
         background: #fafafa;
       }
-      .layout-secondary{      
+      .layout-secondary{
         &:first-child {
           @media (max-width: 768px){
             padding: 0;
-          }        
+          }
         }
         + .py2{
           @media (max-width: 768px){
             padding-top: 0;
-          }        
+          }
         }
       }
-           
+
     }
-   
+
   }
- 
+
 .rc-no-text {
   max-height: 43px;
-} 
+}
 
 .col-4-layout{
-  .rc-card-col {    
+  .rc-card-col {
     @media (min-width: $break-lg) {
       flex: 0 0 25%;
       max-width:25%;
@@ -913,4 +940,54 @@ $bg-forrester-green: #16563F;
   display: none;
   padding-top: 15px;
   padding-right: 20px;
+}
+
+
+//service catalog html WEB-10110
+.service-catalog-results{
+  .rc-card-row{
+    .rc-card-col {
+      padding-bottom: 20px;
+    }
+    .card-content{
+      h4{
+        color: #414042;
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+      padding: 10px 20px;
+      border-top: none;      
+      font-size: 15px;
+      .card-footer-action {
+          border-top: none;
+          padding: 0;
+          font-size: 15px;
+      }
+      .card-footer-logo {
+        padding: 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      hr{
+        background: #3980B2;
+        margin: auto;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        max-width: 90%;
+        border: none;
+        height: 1px;
+      }
+    }
+  }   
+
 }

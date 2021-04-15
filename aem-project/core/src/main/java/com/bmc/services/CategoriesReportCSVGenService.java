@@ -230,7 +230,12 @@ public class CategoriesReportCSVGenService {
 							            	reportDataitem.setProduct_Interest(metaDataProvider.getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
 							            	reportDataitem.setProduct_Line(metaDataProvider.getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
 							            	reportDataitem.setCMS_Title(metaDataProvider.getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
-							            	reportDataitem.setIc_app_inclusion(metaDataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+											//WEB-9765 Adding RC fields and removing redundant IC field -- START.
+											// reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+											reportDataitem.setRc_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion", session));
+											reportDataitem.setAsset_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion", session));
+											reportDataitem.setRc_form_path (metaDataProvider.getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path", session));
+											//WEB-9765 Adding RC fields and removing redundant IC field -- END.
 							            	reportDataitem.setIc_weighting(metaDataProvider.getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
 							            	reportDataitem.setLast_modified_Date(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModified", "cq:lastModified", "cq:lastModified", session));
 							            	reportDataitem.setLast_modified_by(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastModifiedBy", "cq:lastModifiedBy", "cq:lastModifiedBy", session));
@@ -292,7 +297,12 @@ public class CategoriesReportCSVGenService {
 					            	   reportDataitem.setCardSecondaryLinkText(metaDataProvider.getPropertyValues(reportDataNode, "cardSecondaryLinkText","jcr:title","cardSecondaryLinkText",session));
 					            	   reportDataitem.setCardSecondaryLinkUrl(metaDataProvider.getPropertyValues(reportDataNode, "cardSecondaryLinkUrl","jcr:title","cardSecondaryLinkUrl",session));
 					            	   reportDataitem.setLanguage(metaDataProvider.getPropertyValues(reportDataNode, "Language","jcr:title","Language",session));
-					            	   reportDataitem.setIc_app_inclusion(metaDataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+										 //WEB-9765 Adding RC fields and removing redundant IC field -- START.
+										 // reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+										 reportDataitem.setRc_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion", session));
+										 reportDataitem.setAsset_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion", session));
+										 reportDataitem.setRc_form_path (metaDataProvider.getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path", session));
+										 //WEB-9765 Adding RC fields and removing redundant IC field -- END.
 					            	   reportDataitem.setIc_weighting(metaDataProvider.getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
 					            	   reportDataitem.setURL_Resource_Name(metaDataProvider.getURLResourceName(metaDataProvider.getJCR_Path(reportDataNode)));
 					            	   reportDataitem.setPage_URL(metaDataProvider.getJCR_Path(reportDataNode));
@@ -346,7 +356,12 @@ public class CategoriesReportCSVGenService {
 										            	 reportDataitem.setDescription(metaDataProvider.getPropertyValues(reportDataNode, "jcr:description","jcr:title","short_description", session));
 										            	 reportDataitem.setContent_Type(metaDataProvider.getPropertyValues(reportDataNode, "migration_content_type","jcr:title","migration_content_type", session));
 										            	 reportDataitem.setPage_Type(metaDataProvider.getPropertyValues(reportDataNode, "Page Type","jcr:title","Page Type",session));
-										            	 reportDataitem.setIc_app_inclusion(metaDataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+													 //WEB-9765 Adding RC fields and removing redundant IC field -- START.
+													 // reportDataitem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+													 reportDataitem.setRc_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion", session));
+													 reportDataitem.setAsset_inclusion (metaDataProvider.getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion", session));
+													 reportDataitem.setRc_form_path (metaDataProvider.getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path", session));
+													 //WEB-9765 Adding RC fields and removing redundant IC field -- END.
 										            	 reportDataitem.setIc_weighting(metaDataProvider.getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
 										            	 reportDataitem.setCreation_Date(metaDataProvider.getPropertyValues(reportDataNode, "cq:lastReplicated", "jcr:title","cq:lastReplicated",session));
 										            	 reportDataitem.setPage_URL(metaDataProvider.getPropertyValues(reportDataNode, "migration_content_url", "jcr:title","cq:lastReplicated",session));
@@ -377,8 +392,8 @@ public class CategoriesReportCSVGenService {
 				Integer count = i; 
 				
 			data.put(count.toString(), new Object[] {list.get(i).getCMS_Title(),list.get(i).getUrl_resource_name(),list.get(i).getJcr_path(),list.get(i).getContent_Type(),list.get(i).getPage_URL()
-				,list.get(i).getTopics(),list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getMeta_Description(),list.get(i).getShort_Description(),list.get(i).getDescription(),
-									list.get(i).getIc_app_inclusion(),list.get(i).getIc_weighting(),list.get(i).getCreation_Date()});
+				,list.get(i).getTopics(),list.get(i).getProduct_Line(),list.get(i).getProduct_interest(),list.get(i).getMeta_Description(),list.get(i).getShort_Description(),list.get(i).getDescription()
+									,list.get(i).getIc_weighting(),list.get(i).getCreation_Date(),list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),list.get(i).getRc_form_path ()});
 		
 			}
 			//Blank workbook
@@ -418,9 +433,10 @@ public class CategoriesReportCSVGenService {
 				Integer count = i; 		
 			data.put(count.toString(), new Object[] {list2.get(i).getPage_Name(),list2.get(i).getJcr_path(),list2.get(i).getURLResourceName(),list2.get(i).getCMS_Title(),list2.get(i).getProduct_Interest(),
 									list2.get(i).getProduct_Line(),list2.get(i).getEducation_broad_roles(),list2.get(i).getEducation_products(),
-									list2.get(i).getEducation_specific_roles(),list2.get(i).getEducation_version_numbers(),list2.get(i).getIc_app_inclusion(),
+									list2.get(i).getEducation_specific_roles(),list2.get(i).getEducation_version_numbers(),
 									list2.get(i).getIc_weighting(),list2.get(i).getCourse_Delivery(),list2.get(i).getCourse_Type(),
-									list2.get(i).getCourse_Duration(),list2.get(i).getLast_modified_by(),list2.get(i).getLast_modified_Date(),list2.get(i).getLast_replication_action(),list2.get(i).getTranslation_Status()});
+									list2.get(i).getCourse_Duration(),list2.get(i).getLast_modified_by(),list2.get(i).getLast_modified_Date(),list2.get(i).getLast_replication_action(),list2.get(i).getTranslation_Status(),
+									list2.get(i).getRc_inclusion (),list2.get(i).getAsset_inclusion (),list2.get(i).getRc_form_path ()});
 			}
 			//Blank workbook
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
@@ -498,8 +514,9 @@ public class CategoriesReportCSVGenService {
 			data.put(count.toString(), new Object[] {list4.get(i).getID() ,list4.get(i).getCreation_Date(),
 				list4.get(i).getPage_URL(),list4.get(i).getURL_Resource_Name(),list4.get(i).getCMS_Title(),list4.get(i).getIndustry(),list4.get(i).getTopics(),
 				list4.get(i).getURL_Resource_Name(),list4.get(i).getCardTitle(),list4.get(i).getCardDescription(),
-				list4.get(i).getCardLogoSrc(),list4.get(i).getCardSecondaryLinkText(),list4.get(i).getCardSecondaryLinkUrl(),
-				list4.get(i).getIc_app_inclusion(),list4.get(i).getIc_weighting(),list4.get(i).getMeta_description()});
+				list4.get(i).getCardLogoSrc(),list4.get(i).getCardSecondaryLinkText(),list4.get(i).getCardSecondaryLinkUrl()
+				,list4.get(i).getIc_weighting(),list4.get(i).getMeta_description(),list4.get(i).getRc_inclusion (),list4.get(i).getAsset_inclusion (),
+					list4.get(i).getRc_form_path ()});
 			}
 
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
