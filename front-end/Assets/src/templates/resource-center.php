@@ -648,11 +648,9 @@
                                                                                             </h4>
                                                                                         </div>
                                                                                         {{#ifCond linkType '===' ""}}
-                                                                                            <div class="card-footer rc-no-text">
-                                                                                                <hr>
+                                                                                            <div class="card-footer rc-no-text">                                                                                                
                                                                                         {{else}}
-                                                                                            <div class="card-footer">
-                                                                                                <hr>
+                                                                                            <div class="card-footer">                                                                                                
                                                                                         {{/ifCond}}
                                                                                                 <div class="card-footer-logo">
                                                                                                         {{#ifCond type '===' "Videos"}}
@@ -673,7 +671,7 @@
                                                                                                             {{/ifCond}}
                                                                                                         {{/if}}
                                                                                                 </div>
-                                                                                                
+                                                                                                <hr>
                                                                                                 <div class="card-footer-action">                                                                                                      
                                                                                                     <span  class="learn-more-v1" >{{ctaText}}</span>      
                                                                                                         

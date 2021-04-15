@@ -472,6 +472,9 @@ body.no-scroll{
       border-top: none;
       align-items: center;
       min-height: 30px;
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        height: 30px;
+     }
       hr{
         background: #3980B2;
         border: none;
