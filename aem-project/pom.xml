@@ -34,12 +34,12 @@
     <dependencyManagement>
         <dependencies>
         <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations -->
-			<dependency>
-			    <groupId>org.osgi</groupId>
-			    <artifactId>org.osgi.service.component.annotations</artifactId>
-			    <version>1.4.0</version>
-			    <scope>provided</scope>
-			</dependency>			        
+<dependency>
+    <groupId>org.osgi</groupId>
+    <artifactId>org.osgi.service.component.annotations</artifactId>
+    <version>1.4.0</version>
+    <scope>provided</scope>
+</dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
