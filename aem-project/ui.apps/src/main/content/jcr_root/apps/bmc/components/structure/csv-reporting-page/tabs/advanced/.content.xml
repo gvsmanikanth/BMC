@@ -28,7 +28,7 @@
                                 <item3
                                     jcr:primaryType="nt:unstructured"
                                     text="Experience Fragment Report"
-                                    value="experienceFragment"/>
+                                    value="experienceFragmentGeneric"/>
                                 <item2
                                     jcr:primaryType="nt:unstructured"
                                     text="Video Data Report."
@@ -51,12 +51,16 @@
                                     value="status-router"/>
                                 <item8
                                     jcr:primaryType="nt:unstructured"
-                                    text="Generic Report"
-                                    value="generic"/>
+                                    text="FORM XF Report"
+                                    value="experienceFragmentForms"/>
                                 <item9
                                     jcr:primaryType="nt:unstructured"
                                     text="Customers Report"
                                     value="customers"/>
+                                <item10
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Document Containers Report"
+                                        value="document-containers"/>
                             </items>
                         </reportType>
                         <reportFileName
