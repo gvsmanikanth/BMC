@@ -257,10 +257,28 @@
 								text-align: center;
 							} 
 						}
+						// WEB-9417 
+						.orion_tooltip {
+							margin-left: 5px;
+							@media(min-width:$break-md){
+								padding-bottom: 0;
+								line-height: 10px;
+							}	
+						}
 					}
 					.nav{
 						margin: 40px 0 20px 0;
 					}
+					// WEB-9417 
+					&:first-child{						
+						.orion_tooltip {
+							@media(min-width:$break-md){
+								padding-bottom: 0;
+								line-height: 10px;
+							}			
+						}
+					}
+					
 				}
 				.daily-execution-wrap {
 					justify-content: space-between;

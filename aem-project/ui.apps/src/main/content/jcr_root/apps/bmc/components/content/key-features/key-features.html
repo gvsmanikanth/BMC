@@ -25,15 +25,29 @@
                 </a>
             </sly>
 
+<!--/* WEB-9895 Added conditional logic to determine href for Explore Additional Resources - START */-->
+<sly data-sly-test="${properties.resourceCtaPath}">
+	<sly data-sly-use.resourceCTA="${'com.bmc.components.utils.LinkGenerator' @ urlPath=properties.resourceCtaPath}"></sly>
+	  <sly data-sly-test="${resourceCTA.href}">
+          <sly data-sly-test.resourceCTAPath="${resourceCTA.href}"></sly>
+      </sly>
+        <sly data-sly-test="${!resourceCTA.href}">
+            <sly data-sly-test.resourceCTAPath="${properties.resourceCtaPath}"></sly>
+        </sly>
+</sly>
+<sly data-sly-test="${!properties.resourceCtaPath}">
+	  <sly data-sly-test.resourceCtaPath="#resources"></sly>
+</sly>
+
             <sly data-sly-test="${!properties.checkboxText}">
-                <a data-sly-test="${properties.aditionalResources}" href="#resources"
+                <a data-sly-test="${properties.aditionalResources}" href="${resourceCTAPath}"
                    class="resource-downloads-a icon-documents">${'Explore Additional Resources' @ i18n} &nbsp;›</a>
 				</sly>
 			<sly data-sly-test="${properties.checkboxText}">
-                    <a data-sly-test="${properties.aditionalResources}" href="#resources"
+                    <a data-sly-test="${properties.aditionalResources}" href="${resourceCTAPath}"
                        class="resource-downloads-a icon-documents">${properties.checkboxText} &nbsp;›</a>
                </sly>
-
+<!--/* WEB-9895 Added conditional logic to determine href for Explore Additional Resources -- END */-->
         </li>
     </ul>
 </section>

@@ -189,6 +189,13 @@
                                 fieldDescription="Enter - Explore Additional Resources&#xa;"
                                 fieldLabel="Check Box Text"
                                 name="./checkboxText"/>
+                            <resourceCTAPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldDescription="Use the path picker to select a page within the site or enter a URL beginning with http:"
+                                fieldLabel="CTA Path for Additional Resources"
+                                name="./resourceCtaPath"
+                                rootPath="/content"/>
                         </items>
                     </column>
                 </items>

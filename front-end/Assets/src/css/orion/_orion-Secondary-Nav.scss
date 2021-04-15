@@ -44,16 +44,20 @@
             text-decoration: none;
             text-decoration: none;
             font-size: 16px;
-            background-color: #29a5d6;
+            background-color: transparent;
             border-radius: 15px;
-            padding: 6px 20px;
+            padding: 6px 0px;
             outline: none;
             &:hover{
-                background-color: #ffffff;
+                //background-color: #ffffff;
                 color: $link-hover-color;
             }
             @media (min-width:$break-md) {
                 font-size: 18px;
+                padding: 6px 3px;
+            }
+            @media (min-width:$break-lg) {
+                padding: 6px 8px;
             }
         }
     }

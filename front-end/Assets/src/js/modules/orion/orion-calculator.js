@@ -625,7 +625,7 @@
 	//document.addEventListener('oninput',sliderInput);
 	
 	//fire anaytics
-	$(".prodSlider").on("change",updateAdobeAnalyticsSliderInteraction);
+	$(".sliderNew").on("change",updateAdobeAnalyticsSliderInteraction);
 	var sliderFirstInteraction = true;
 	var addNewEnvironmentFirstInteraction = true;
 	$(".btn-level2-addEnv").on("click",updateAdobeAnalyticsAddNewEnvironmentInteraction);
@@ -635,6 +635,7 @@
 		Calculator.addEnvironments("nonProd",0);
 		updateCalculator(Calculator);
 		fixedPos();
+		$(".sliderNew").on("change",updateAdobeAnalyticsSliderInteraction);
 	});
 	
 	//delete event listener

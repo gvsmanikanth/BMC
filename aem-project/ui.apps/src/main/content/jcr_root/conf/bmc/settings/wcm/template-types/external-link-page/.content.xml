@@ -2,8 +2,11 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
+        cq:lastReplicated="{Date}2017-10-14T04:39:09.769-04:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         jcr:description="Template for BMC External Link Service Configurations"
         jcr:primaryType="cq:PageContent"
-        jcr:title="External Link "
+        jcr:title="Link Container"
         status="enabled"/>
 </jcr:root>

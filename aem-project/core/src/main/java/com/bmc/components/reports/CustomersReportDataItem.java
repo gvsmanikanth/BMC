@@ -22,19 +22,19 @@ public class CustomersReportDataItem {
 		private String cardLogoSrc;
 		private String cardSecondaryLinkText;
 		private String cardSecondaryLinkUrl;
-		private String ic_app_inclusion;
 		private String cardTitle;
 		private String meta_description;
-		
-		
-		
-		
-		public String getIc_app_inclusion() {
-			return ic_app_inclusion;
-		}
-		public void setIc_app_inclusion(String ic_app_inclusion) {
-			this.ic_app_inclusion = ic_app_inclusion;
-		}
+		//WEB-9765 Resource center inclusion fields.
+		private String rc_inclusion;
+		private String asset_inclusion;
+		private String rc_form_path;
+		public String getAsset_inclusion () { return asset_inclusion; }
+		public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+		public String getRc_form_path () { return rc_form_path; }
+		public void setRc_form_path (String rc_form_path) { this.rc_form_path = rc_form_path; }
+		public String getRc_inclusion () { return rc_inclusion; }
+		public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+
 		public String getIc_weighting() {
 			return ic_weighting;
 		}

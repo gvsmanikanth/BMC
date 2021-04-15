@@ -1,11 +1,10 @@
 package com.bmc.models.components.resourcecenter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import javax.annotation.PostConstruct;
 
+import com.bmc.models.bmccontentapi.ResourceCenterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -77,6 +76,7 @@ public class ResourceCenterFiltersModel {
                 }
             }
         }
+        filters = getOrderedContentFilters(filters);
     }
 
     private List<ContentFilterOption> getContentFilterOptions(String name, ResourceResolver resolver) {
@@ -94,5 +94,40 @@ public class ResourceCenterFiltersModel {
 
     public List<ContentFilterOption> getPreFilters() {
         return preFiltersOption;
+    }
+
+    /*
+    Method name : getOrderedContentFilters()
+    Returns     : List<ContentFilters> (The unsorted filters object list)
+    Parameters  : List<ContentFilters> (The unsorted filters object list)
+    Explanation : Sorts a value in a ContentFilter object , based on a list
+                defined in ResourceCenterConstants ,it does this by looking up the each
+                value in the arraylist against the values in the List<ContentFilters>
+                to create a sorted list.
+    Ticket      : WEB-9805
+     */
+    private List<ContentFilter> getOrderedContentFilters(List<ContentFilter> filters)
+    {
+        ArrayList<ContentFilter> list = new ArrayList<ContentFilter>();
+        ArrayList<String> unsortedList = new ArrayList<>();
+        ArrayList<String> sortedList = new ArrayList();
+        filters.forEach (Filter -> unsortedList.add (Filter.getName ()));
+
+        if(unsortedList!=null && !unsortedList.isEmpty()){
+            for(String value : Arrays.asList (ResourceCenterConstants.FILTERS_CUSTOM_LIST)){
+                String found= baseImpl.getPropertyOptionIfFound(unsortedList, value); // search for the item on the list by ID
+                if(found!=null)sortedList.add(found);       // if found add to sorted list
+                unsortedList.remove(found);        // remove added item
+            }
+        }
+        for (String str : sortedList) {
+            for (ContentFilter contentFilter : filters) {
+                if(contentFilter.getName ().equals (str))
+                {
+                    list.add (contentFilter);
+                }
+            }
+        }
+        return list;
     }
 }

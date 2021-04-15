@@ -85,4 +85,3 @@ jQuery( document ).ready(function( $ ) {
           }
       });
 	});
-	

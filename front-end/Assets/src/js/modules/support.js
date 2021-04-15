@@ -951,7 +951,105 @@ var Support = Support || {};
 			adapterManager.init();
 		}
 	};
+	
+	//Personalized Support Central Feature Start
 
+	Support.Banner = {
+		init: function () {
+			if (!Support.Helpers.isOnSupportLandingPage) {
+				return null
+			}
+			var buttonNode = document.querySelector('.psc-banner-close-button');
+			if (!!buttonNode) {
+				buttonNode.addEventListener('click', function () {
+					document.querySelector('.support-promo.support-message-box.psc-promo').style.display = 'none';
+				})
+			}
+		}
+	}
+
+	Support.PersonalizedNewsCarousel = {
+		isOnPersonalizedSupportLandingPage: function() {
+
+			if (typeof bmcMeta.page !== 'undefined'
+				&& typeof bmcMeta.page.longName === 'string') {
+			
+				var pathCheck = /supportcentralpersonalized/,
+					otherPathCheck = /support-central-redesign/;
+
+				
+				if (
+					bmcMeta.page.longName.match(pathCheck) !== null 
+					|| bmcMeta.page.longName.match(otherPathCheck) !== null) {
+					return true;
+				}
+			}
+
+			// catch-all default
+			return false;
+		},
+		animate: function (timing, draw, duration) {
+
+			var start = performance.now();
+	  
+			requestAnimationFrame(function animate(time) {
+			  // timeFraction goes from 0 to 1
+			  var timeFraction = (time - start) / duration;
+			  if (timeFraction > 1) timeFraction = 1;
+	  
+			  // calculate the current animation state
+			  var progress = timing(timeFraction)
+	  
+			  draw(progress); // draw it
+	  
+			  if (timeFraction < 1) {
+				requestAnimationFrame(animate);
+			  }
+	  
+			});
+		  },
+		  smoothScroll: function (element, from, to) {
+			Support.PersonalizedNewsCarousel.animate(
+				function (timeFraction) {
+					return timeFraction < 0.5 ? 2 * timeFraction * timeFraction : 1 - Math.pow(-2 * timeFraction + 2, 2) / 2;
+				},
+				function (progress) {
+					var scrollPos = from + ((to - from) * progress);
+					element.scrollLeft = scrollPos;
+				},
+			  	800
+			)
+		  },
+		  init: function () {
+			if(!Support.PersonalizedNewsCarousel.isOnPersonalizedSupportLandingPage()) {
+				return;
+			}
+			var news = document.querySelectorAll('.psc-news .news-block');
+			var rightArrow = document.querySelector('.psc-news .right-news-arrow');
+			var leftArrow = document.querySelector('.psc-news .left-news-arrow');
+			news.forEach(function (element) {
+				var body = element.querySelector('.news-body');
+				var link = element.querySelector('h3 a').attributes.href.value;
+				if (body.innerText.length > 130) {
+					body.innerHTML = body.innerText.slice(0,130) + '<a href="' + link + '">...</a>';
+				} else {
+					body.innerHTML = body.innerText;
+				}
+				body.classList.remove('not-trimmed');
+			})
+			rightArrow.addEventListener('click', function (e) {
+			  var newsContainer = document.querySelector('.psc-news .news-container-wrapper');
+			  var newsArticle = document.querySelector('.psc-news .news-list .news-block');
+			  Support.PersonalizedNewsCarousel.smoothScroll(newsContainer, newsContainer.scrollLeft, newsContainer.scrollLeft + newsArticle.offsetWidth + newsArticle.offsetWidth / 6)
+			})
+			leftArrow.addEventListener('click', function (e) {
+			  var newsContainer = document.querySelector('.psc-news .news-container-wrapper');
+			  var newsArticle = document.querySelector('.psc-news .news-list .news-block');
+			  Support.PersonalizedNewsCarousel.smoothScroll(newsContainer, newsContainer.scrollLeft, newsContainer.scrollLeft - (newsArticle.offsetWidth + newsArticle.offsetWidth / 6))
+			})
+		  }
+	}
+	//Personalized Support Central Feature END
 	Support.MobileToggleHeader = {
 
 		baseHeight: null,
@@ -1051,6 +1149,8 @@ var Support = Support || {};
 		Support.Menu.init();
 		Support.MobileToggleHeader.init();
 		Support.SlideInSupportChatButton.init();
+		Support.PersonalizedNewsCarousel.init();
+		Support.Banner.init();
 	}
 
 	$(init);

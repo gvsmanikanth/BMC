@@ -260,6 +260,11 @@ include 'php-inc/head.php';
     <div class="layout-inner-wrap">
 		<p class="partner-lead py2">BMC has formed partnerships with leading technology companies worldwide to deliver added value to our shared customers.</p>
 		<h2>   See who we work with around the world</h2>   
+		<ul class="list-inline">
+			<li><a href="#Strategic-GOSI-Partners"> Strategic-GOSI-Partners</a></li>
+			<li><a href="#Other-GOSI-Partners">Other-GOSI-Partners</a></li>
+			<li><a href="#Strategic-Technical-Alliances">Strategic-Technical-Alliances</a></li>
+		</ul>
 	</div>
     <section class="bg-white listCompLoader">
         <div class="layout-inner-wrap py3 text-center">
