@@ -468,9 +468,21 @@ body.no-scroll{
       display: flex;
       justify-content: space-between;
       line-height: 18px;
-      padding: 10px 10px;
-      border-top: 1px solid #3980B2;
+      padding: 10px 20px;
+      border-top: none;
       align-items: center;
+      min-height: 30px;
+      hr{
+        background: #3980B2;
+        border: none;
+        height: 1px;
+        position: absolute;
+        top: 0px;
+        width: 90%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
       .card-footer-action {
         color: #3980B2;
         display: block;
@@ -509,6 +521,11 @@ body.no-scroll{
         color:white;
         font-size: large;
         text-align: center;
+      }
+      .learn-more-v1{
+        &:after {
+          font-size: 34px;
+        }
       }
     }
   }

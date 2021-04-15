@@ -649,8 +649,10 @@
                                                                                         </div>
                                                                                         {{#ifCond linkType '===' ""}}
                                                                                             <div class="card-footer rc-no-text">
+                                                                                                <hr>
                                                                                         {{else}}
                                                                                             <div class="card-footer">
+                                                                                                <hr>
                                                                                         {{/ifCond}}
                                                                                                 <div class="card-footer-logo">
                                                                                                         {{#ifCond type '===' "Videos"}}
@@ -672,22 +674,10 @@
                                                                                                         {{/if}}
                                                                                                 </div>
                                                                                                 
-                                                                                                <span class="card-footer-action">
-                                                                                                        {{#ifCond type '===' "Trial"}}
-                                                                                                            <svg class="align-middle s-view">
-                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
-                                                                                                        {{else}}
-                                                                                                            {{#ifCond type '===' "Webinar"}}
-                                                                                                                <svg class="align-middle s-view">
-                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
-                                                                                                            {{else}}
-                                                                                                                <svg class="align-middle s-{{linkType}}">
-                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                                                                                                            {{/ifCond}}
-                                                                                                        {{/ifCond}}
-                                                                                                            </svg>
-                                                                                                        {{ctaText}}
-                                                                                                </span>
+                                                                                                <div class="card-footer-action">                                                                                                      
+                                                                                                    <span  class="learn-more-v1" >{{ctaText}}</span>      
+                                                                                                        
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                 </a>

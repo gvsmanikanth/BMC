@@ -686,6 +686,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <div class="card-footer-action">
                                                                                                         <span class="learn-more-v1">View</span>                                                                                                        
@@ -719,6 +720,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo">
                                                                                                             <span class="f-logo">
                                                                                                                 <img src="https://stage.cms.bmc.com/content/dam/bmc/logos/bmc/bmc-control-m.png" style="max-height: 30px;" />
@@ -759,6 +761,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
@@ -784,6 +787,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
@@ -809,6 +813,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
@@ -844,6 +849,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo">
                                                                                                             <span class="video-length">
                                                                                                                 <svg class="align-middle s-clock">
@@ -886,6 +892,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <span class="card-footer-action">
@@ -911,6 +918,7 @@
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
+                                                                                                        <hr>
                                                                                                         <div class="card-footer-logo"></div>
 
                                                                                                         <div class="card-footer-action">
