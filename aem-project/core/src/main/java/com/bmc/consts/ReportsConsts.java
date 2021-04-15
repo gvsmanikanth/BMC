@@ -39,7 +39,7 @@ public class ReportsConsts {
             "Meta Description","Short Description","Description(Reusable)", "Ic_weighting"
             ,"Creation Date","RC Inclusion","Asset Inclusion","RC Form Path"};
 
-    public static final String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic app inclusion","Ic_weighting","Course Delivery","Course Type"
+    public static final String[] EducationReportTableNames = {"Page Name","Page URL","URL Resource Name","CMS Page Title","Product Interest","Product Line","Education broad roles","Education Products","Eduction specific roles","Education version numbers","Ic_weighting","Course Delivery","Course Type"
             ,"Course Duration","Last Modified By","Last Modified Date","Last Replication Action",
             "Translation Status","RC Inclusion","Asset Inclusion","RC Form Path"};
 
