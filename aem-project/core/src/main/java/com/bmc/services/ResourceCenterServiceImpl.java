@@ -708,5 +708,5 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
         return allFiltersValueMapping.get(filterValue);
     }
-    
+
 }

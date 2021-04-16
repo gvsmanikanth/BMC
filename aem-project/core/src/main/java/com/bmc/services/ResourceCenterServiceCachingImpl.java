@@ -194,9 +194,4 @@ public class ResourceCenterServiceCachingImpl implements ResourceCenterService {
         return null;
     }
 
-    @Override
-    public boolean checkIfFormIsTrial (String template,String type)
-    {
-        return false;
-    }
 }
