@@ -559,11 +559,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         if(!assetLink.startsWith("http")){
                             assetLink = resourceResolver.map(assetLink);
                         }
-                        if(checkIfFormIsTrial (template,type))
-                        {
                             resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
                                     lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
-                        }
+
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -710,17 +708,5 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
         return allFiltersValueMapping.get(filterValue);
     }
-
-    /*
-    WEB-10046 Restrict the RC inclusion via form only for Trials lead type.
-     */
-    @Override
-    public boolean checkIfFormIsTrial (String template,String type)throws Exception{
-        if ((template.contains ("form")) && !(type.equalsIgnoreCase ("Trial"))) {
-            return false;
-        } else
-        {
-            return true;
-        }
-    }
+    
 }
