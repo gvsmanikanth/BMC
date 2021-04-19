@@ -19,8 +19,18 @@ import java.util.HashMap;
  */
 public class ICMeta {
 
-	
+
+
+
+	//WEB-9765 Removing IC App Inclusion from the list of IC fields
 	private String appInclusion="";
+	public String getAppInclusion () {
+		return appInclusion;
+	}
+
+	public void setAppInclusion (String appInclusion) {
+		this.appInclusion = appInclusion;
+	}
 	private String contentType="";
 	private String weighting="";
 	private String contentMarketTopics="";
@@ -29,15 +39,7 @@ public class ICMeta {
 	private String sourcePublishDate="";
 	private String targetIndustry="";
 	private String companySize="";
-	
-   
-	    public String getAppInclusion() {
-	        return appInclusion;
-	    }
 
-	    public void setAppInclusion(String appInclusion) {
-	    	this.appInclusion = appInclusion;
-	    }
 	    
 	    public String getContentType() {
 	        return contentType;

@@ -22,6 +22,7 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
 
+import com.bmc.consts.ReportsConsts;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -48,15 +49,15 @@ import com.day.cq.search.result.SearchResult;
 import com.google.gson.Gson;
 
 @Component(
-        label = " CSV Generator Service for Conatainers report",
+        label = " CSV Generator Service for Containers report",
         description = "Helper Service to generate a CSV report",
         immediate = true)
-@Service(value=ContainersReportCSVGenSevice.class)
-public class ContainersReportCSVGenSevice {
+@Service(value=ContainersReportCSVGenService.class)
+public class ContainersReportCSVGenService {
 	/** Default log. */
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 	     
-	//Inject a Sling ResourceResolverFactory
+	//Inject a Sling ResourceResolverFactory;
 	@Reference
 	private ResourceResolverFactory resolverFactory;
 	 
@@ -73,12 +74,7 @@ public class ContainersReportCSVGenSevice {
 	
     private static  ArrayList<ContainerReportDataItem> document_list = new ArrayList<ContainerReportDataItem>();
        
-    private static String[] resourceItems = {"product_interest","product_line","topics","education-version-numbers","education-specific-role","education-specific-types","education-products","education-broad-roles","course-delivery","industry",
-    		"ic-content-type","ic-topics","ic-buyer-stage","ic-target-persona","ic-target-industry","ic-company-size"};
-	
-    private String[] TableNames = {"Page title","Page URL","Page Created Date","Page Created By","Publish/Unpublish Status","Page ID","Page Last Modified date","Page Last modified by","Page URL ResourceName","Product Interest","Product line","Ic App Inclusion","Ic App Wieghting",
-			"Topics","IC Type","IC Topic","IC Buyer Stage","IC Target Persona","IC Source Publish Date (MM-YYYY)","IC Target Industry","IC Company Size","RC Inclusion","Asset Inclusion","Form Gate Path","Document Link Type","Document Link URL",
-			"Document display Type","Asset Prefix","XF Link","Translation status","Document References"};
+
     
     
     /*
@@ -91,10 +87,9 @@ public class ContainersReportCSVGenSevice {
 	    public Workbook generateDataReport(String fileName,String folder) {    	
 	    	try
 	    			{		    			    			    	 
-	    			 	document_list  = getJCRData(folder);
-	    			 	logger.info("Report file location"+folder);
+	    			 	document_list  = fetchContainersJCRData (folder);
 	    			 	String damFileName = fileName +".xls" ;
-			            workbook = write(); 		                  			              	               
+			            workbook = writetoWorkbook ();
 
 	    			}
 				   catch(Exception e)
@@ -103,20 +98,15 @@ public class ContainersReportCSVGenSevice {
 				       }
 				       return workbook;
 				   }
-    
-	    public String[] getTableNames()
-	  	{
-	  		return this.TableNames;
-	  	}
 
 	  	 /*
 	     * getJCRData()
-	     * Returns a Arraydocument_list of ExperienceFragmentReportDataItem object
+	     * Returns a Array document_list of ExperienceFragmentReportDataItem object
 	     * This method fetches the data from the JCR using Query BUilder API 
 	     * IT takes the Root folder path as the only argument- Type-String
 	     * 
 	     */
-		public ArrayList<ContainerReportDataItem> getJCRData(String folder) {							 
+		public ArrayList<ContainerReportDataItem> fetchContainersJCRData(String folder) {
 							try 
 								{ 			
 									//Invoke the adaptTo method to create a Session 								
@@ -126,7 +116,7 @@ public class ContainersReportCSVGenSevice {
 									try {										
 											resourceResolver = resolverFactory.getServiceResourceResolver(param);											
 										} catch (Exception e) {
-												logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+										logger.error("BMC ERROR : Report ResourceResolverFactory Error: " + e.getMessage());
 										}
 									Session session = resourceResolver.adaptTo(Session.class); 													
 									Resource resource = resourceResolver.getResource(folder);														
@@ -138,55 +128,55 @@ public class ContainersReportCSVGenSevice {
 								            		 for (Hit hit : result.getHits()) {
 								            			 ContainerReportDataItem  reportDataItem = new ContainerReportDataItem();  
 								            	 			Node reportDataNode = hit.getResource().adaptTo(Node.class);			            	 				
-								            	 			reportDataItem.setCMS_Title(getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
+								            	 			reportDataItem.setCMS_Title(metadataProvider.getPropertyValues(reportDataNode, "jcr:title","jcr:title","jcr:title",session));
 								            	 			reportDataItem.setPage_URL(metadataProvider.getJCR_Path(reportDataNode));
-								            	 			reportDataItem.setLast_Modified_By(getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
-								            	 			reportDataItem.setLast_Modified_Date(getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
-								            	 			reportDataItem.setCreation_Date(getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
-								            	 			reportDataItem.setCreation_By(getPropertyValues(reportDataNode, "jcr:createdBy","jcr:createdBy","jcr:createdBy",session));
+								            	 			reportDataItem.setLast_Modified_By(metadataProvider.getPropertyValues(reportDataNode, "cq:lastModifiedBy","cq:lastModifiedBy","cq:lastModifiedBy",session));
+								            	 			reportDataItem.setLast_Modified_Date(metadataProvider.getPropertyValues(reportDataNode, "cq:lastModified","cq:lastModified","cq:lastModified",session));
+								            	 			reportDataItem.setCreation_Date(metadataProvider.getPropertyValues(reportDataNode, "jcr:created","jcr:created","jcr:created",session));
+								            	 			reportDataItem.setCreation_By(metadataProvider.getPropertyValues(reportDataNode, "jcr:createdBy","jcr:createdBy","jcr:createdBy",session));
 								            	 			reportDataItem.setUrl_resource_name(metadataProvider.getURLResourceName(metadataProvider.getJCR_Path(reportDataNode)));
-								            	 			reportDataItem.setProduct_interest(getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
-								            	 			reportDataItem.setProduct_Line(getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
-								            	 			reportDataItem.setCMS_Title(getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
-								            	 			reportDataItem.setTopics(getPropertyValues(reportDataNode, "topics","jcr:title","topic", session));
-											            	reportDataItem.setIc_app_inclusion(getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
-											            	reportDataItem.setIc_weighting(getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));		            	
-											            	reportDataItem.setIC_Type(getPropertyValues(reportDataNode, "ic-content-type","jcr:title","intelligent-content-types", session));
-											            	reportDataItem.setIC_topic(getPropertyValues(reportDataNode, "ic-topics","jcr:title","intelligent-content-topics", session));
-											            	reportDataItem.setIC_Buyer_stage(getPropertyValues(reportDataNode, "ic-buyer-stage","jcr:title","intelligent-content-buyer-stage", session));
-											            	reportDataItem.setIC_target_Persona(getPropertyValues(reportDataNode, "ic-target-persona","jcr:title","intelligent-content-target-persona", session));
-											            	reportDataItem.setIC_Source_Publish_Date(getPropertyValues(reportDataNode, "ic-source-publish-date","ic-source-publish-date","ic-source-publish-date", session));
-											            	reportDataItem.setIC_Target_Industry(getPropertyValues(reportDataNode, "ic-target-industry","jcr:title","intelligent-content-target-industry", session));
-											            	reportDataItem.setIC_Company_Size(getPropertyValues(reportDataNode, "ic-company-size","jcr:title","intelligent-content-company-size", session));
-											            	reportDataItem.setTranslation_Status(getPropertyValues(reportDataNode, "translation-status", "translation-status", "translation-status", session));						            	 									            	 			
-								            	 			reportDataItem.setDocument_link_type(getPropertyValues(reportDataNode, "documentType","documentType","documentType",session));
-								            	 			reportDataItem.setPage_Type(getPropertyValues(reportDataNode, "linkAbstractor","stlinkAbstractoratus","linkAbstractor",session));
-								            	 			reportDataItem.setDisplayType(getPropertyValues(reportDataNode, "displayType","displayType","displayType",session));
-								            	 			reportDataItem.setXF_Path(getPropertyValues(reportDataNode, "fragmentPath","fragmentPath","fragmentPath",session));
+								            	 			reportDataItem.setProduct_interest(metadataProvider.getPropertyValues(reportDataNode, "product_interest","jcr:title","product-interests",session));
+								            	 			reportDataItem.setProduct_Line(metadataProvider.getPropertyValues(reportDataNode, "product_line","text","product-lines",session));
+								            	 			reportDataItem.setCMS_Title(metadataProvider.getPropertyValues(reportDataNode, "pageTitle","jcr:title","pageTitle",session));
+								            	 			reportDataItem.setTopics(metadataProvider.getPropertyValues(reportDataNode, "topics","jcr:title","topic", session));
+											            	//reportDataItem.setIc_app_inclusion(metadataProvider.getPropertyValues(reportDataNode, "ic-app-inclusion","jcr:title","ic-app-inclusion", session));
+											            	reportDataItem.setIc_weighting(metadataProvider.getPropertyValues(reportDataNode, "ic-weighting","jcr:title","ic-weighting", session));
+											            	reportDataItem.setIC_Type(metadataProvider.getPropertyValues(reportDataNode, "ic-content-type","jcr:title","intelligent-content-types", session));
+											            	reportDataItem.setIC_topic(metadataProvider.getPropertyValues(reportDataNode, "ic-topics","jcr:title","intelligent-content-topics", session));
+											            	reportDataItem.setIC_Buyer_stage(metadataProvider.getPropertyValues(reportDataNode, "ic-buyer-stage","jcr:title","intelligent-content-buyer-stage", session));
+											            	reportDataItem.setIC_target_Persona(metadataProvider.getPropertyValues(reportDataNode, "ic-target-persona","jcr:title","intelligent-content-target-persona", session));
+											            	reportDataItem.setIC_Source_Publish_Date(metadataProvider.getPropertyValues(reportDataNode, "ic-source-publish-date","ic-source-publish-date","ic-source-publish-date", session));
+											            	reportDataItem.setIC_Target_Industry(metadataProvider.getPropertyValues(reportDataNode, "ic-target-industry","jcr:title","intelligent-content-target-industry", session));
+											            	reportDataItem.setIC_Company_Size(metadataProvider.getPropertyValues(reportDataNode, "ic-company-size","jcr:title","intelligent-content-company-size", session));
+											            	reportDataItem.setTranslation_Status(metadataProvider.getPropertyValues(reportDataNode, "translation-status", "translation-status", "translation-status", session));
+								            	 			reportDataItem.setDocument_link_type(metadataProvider.getPropertyValues(reportDataNode, "documentType","documentType","documentType",session));
+								            	 			reportDataItem.setPage_Type(metadataProvider.getPropertyValues(reportDataNode, "linkAbstractor","stlinkAbstractoratus","linkAbstractor",session));
+								            	 			reportDataItem.setDisplayType(metadataProvider.getPropertyValues(reportDataNode, "displayType","displayType","displayType",session));
+								            	 			reportDataItem.setXF_Path(metadataProvider.getPropertyValues(reportDataNode, "fragmentPath","fragmentPath","fragmentPath",session));
 														    //WEB-9640 & WEB-9134AEM Reports -DC Report Enhancement 2 -- START
-														  	reportDataItem.setPublish_status (getPropertyValues(reportDataNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
-														 	reportDataItem.setPageID (getPropertyValues(reportDataNode, "contentId","contentId","contentId",session));
+														  	reportDataItem.setPublish_status (metadataProvider.getPropertyValues(reportDataNode, "cq:lastReplicationAction","cq:lastReplicationAction","cq:lastReplicationAction",session));
+														 	reportDataItem.setPageID (metadataProvider.getPropertyValues(reportDataNode, "contentId","contentId","contentId",session));
 														//Conditional case for Asset prefix
 															 if(reportDataNode.hasProperty ("docTypePrefix")) {
-															 String assetPrefix = getPropertyValues (reportDataNode, "docTypePrefix", "docTypePrefix", "docTypePrefix", session);
+															 String assetPrefix = metadataProvider.getPropertyValues (reportDataNode, "docTypePrefix", "docTypePrefix", "docTypePrefix", session);
 															 if (assetPrefix.equals ("custom")) {
-															reportDataItem.setAsset_prefix (getPropertyValues (reportDataNode, "customPrefix", "customPrefix", "customPrefix", session));
+															reportDataItem.setAsset_prefix (metadataProvider.getPropertyValues (reportDataNode, "customPrefix", "customPrefix", "customPrefix", session));
 															 } else {
-															 reportDataItem.setAsset_prefix (getPropertyValues (reportDataNode, "docTypePrefix", "docTypePrefix", "docTypePrefix", session));
+															 reportDataItem.setAsset_prefix (metadataProvider.getPropertyValues (reportDataNode, "docTypePrefix", "docTypePrefix", "docTypePrefix", session));
 															 }
 															 }
-															 reportDataItem.setRc_inclusion (getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion",session));
-															 reportDataItem.setAsset_inclusion (getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion",session));
-															 reportDataItem.setRc_form_path (getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path",session));
+															 reportDataItem.setRc_inclusion (metadataProvider.getPropertyValues(reportDataNode, "rc-inclusion","rc-inclusion","rc-inclusion",session));
+															 reportDataItem.setAsset_inclusion (metadataProvider.getPropertyValues(reportDataNode, "asset-inclusion","asset-inclusion","asset-inclusion",session));
+															 reportDataItem.setRc_form_path (metadataProvider.getPropertyValues(reportDataNode, "rc-form-path","rc-form-path","rc-form-path",session));
 														 	//WEB-9640 AEM Reports -DC Report Enhancement 2 -- END
 														 	if(reportDataItem.getDocument_link_type().equals("search"))
 																	{
-																	reportDataItem.setDocument_url(getPropertyValues(reportDataNode, "linkAbstractorDAMAsset","linkAbstractorDAMAsset","linkAbstractorDAMAsset",session));
-																	}else{reportDataItem.setDocument_url(getPropertyValues(reportDataNode, "linkAbstractorExternalAsset","linkAbstractorExternalAsset","linkAbstractorExternalAsset",session));}
+																	reportDataItem.setDocument_url(metadataProvider.getPropertyValues(reportDataNode, "linkAbstractorDAMAsset","linkAbstractorDAMAsset","linkAbstractorDAMAsset",session));
+																	}else{reportDataItem.setDocument_url(metadataProvider.getPropertyValues(reportDataNode, "linkAbstractorExternalAsset","linkAbstractorExternalAsset","linkAbstractorExternalAsset",session));}
 								            	 			reportDataItem.setReferencePaths(getContainerReferences(metadataProvider.getExperiencefgmtPath(reportDataNode), session));									            	 			
-								            	 document_list.add(reportDataItem);
+								            	 			document_list.add(reportDataItem);
 							                 }
-							        logger.info("Size of forms"+document_list.size());
+							        logger.info("BMC INFO : No of form items "+document_list.size());
 							        	
 							    }
 						
@@ -203,9 +193,8 @@ public class ContainersReportCSVGenSevice {
 	     * 
 	     * 
 	     */		
-		 public Workbook write() throws IOException 
+		 public Workbook writetoWorkbook() throws IOException
 		 {
-			 logger.info("Generating the Report");
 			//Blank workbook
 				XSSFWorkbook workbook = new XSSFWorkbook(); 
 				
@@ -214,13 +203,13 @@ public class ContainersReportCSVGenSevice {
 				 
 				//This data needs to be written (Object[])
 				Map<String, Object[]> data = new TreeMap<String, Object[]>();			
-				data.put("1", TableNames);					
+				data.put("1", ReportsConsts.DocumentContainersTableNames);
 				for(int i=2;i<document_list.size();i++)
 				{
 					Integer count = i;					
 					 data.put(count.toString(), new Object[] {							 
 					     document_list.get(i).getCMS_Title(),document_list.get(i).getPage_URL(),document_list.get(i).getCreation_Date(),document_list.get(i).getCreation_By(),document_list.get(i).getPublish_status (),document_list.get(i).getPageID (),document_list.get(i).getLast_Modified_Date(),
-					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),document_list.get(i).getIc_app_inclusion(),
+					     document_list.get(i).getLast_Modified_By(),document_list.get(i).getUrl_resource_name(),document_list.get(i).getProduct_interest(),document_list.get(i).getProduct_Line(),
 					     document_list.get(i).getIc_weighting(),document_list.get(i).getTopics(),document_list.get(i).getIC_Type(),document_list.get(i).getIC_topic(), document_list.get(i).getIC_Buyer_stage(), document_list.get(i).getIC_target_Persona(),
 					     document_list.get(i).getIC_Source_Publish_Date(),document_list.get(i).getIC_Target_Industry(),document_list.get(i).getIC_Company_Size(), document_list.get(i).getRc_inclusion (),document_list.get(i).getAsset_inclusion (),
 						document_list.get(i).getRc_form_path (), document_list.get(i).getPage_Type(),document_list.get(i).getDocument_url(),
@@ -282,24 +271,7 @@ public class ContainersReportCSVGenSevice {
 		     // can be done in map or with Query methods
 		    
 		 }
-		 
-		 
-		 /*
-		  * createJSON()
-		  * This method generates a JSON from the list of FormReportDataItem. 
-		  */
-		 public String createJSON()
-		 {
-			 Gson gson = new Gson();
-			 String json = gson.toJson(document_list);
-			 if(!json.equals(null))
-			 {
-				 return json;
-			 }else
-			 {
-				 return null;
-			 }
-		 }
+
 		 /*
 		  * writeExceltoDAM()
 		  * This method writes the excel workbook into the DAM at a specified/predefined location. 
@@ -307,7 +279,7 @@ public class ContainersReportCSVGenSevice {
 		  * AssetManager API is used to carry the DAM save.
 		  */
 		 public String writeExceltoDAM(Workbook workbook,String reportName)throws IOException{
-				logger.info("Saving the file in the DAM");
+				logger.info("BMC INFO : Saving the file "+ reportName+" in the DAM");
 				//Invoke the adaptTo method to create a Session 
 				Map<String, Object> param = new HashMap<String, Object>();
 				param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
@@ -318,7 +290,7 @@ public class ContainersReportCSVGenSevice {
 				catch (Exception e) {
 						logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
 						}
-					String filename = getFileName(reportName)+".xls";			    
+					String filename = reportName+"_" + metadataProvider.getCurrentDate()+".xls";
 				    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 				  
 				    try {
@@ -335,7 +307,7 @@ public class ContainersReportCSVGenSevice {
 					        return null;
 					    } 
 				    } catch (IOException e) {
-				        e.printStackTrace();
+				        logger.error ("BMC ERROR : Error occurred"+e);
 				    }
 					return DAM_LOCATION+filename;
 
@@ -351,7 +323,7 @@ public class ContainersReportCSVGenSevice {
 		  */
 		 public String writeJSONtoDAM(String reportName) throws IOException
 		 	{
-			 logger.info("Saving the file in the DAM");
+				logger.info("BMC INFO : Saving the JSON file "+ reportName+" in the DAM");
 				//Invoke the adaptTo method to create a Session 
 				Map<String, Object> param = new HashMap<String, Object>();
 				param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
@@ -362,10 +334,10 @@ public class ContainersReportCSVGenSevice {
 				catch (Exception e) {
 						logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
 						}
-				String filename = getFileName(reportName)+".json";			 			 
+				String filename = reportName+"_" + metadataProvider.getCurrentDate()+".json";
 				    AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
 				   InputStream isStream = 
-						   new ByteArrayInputStream(createJSON().getBytes());
+						   new ByteArrayInputStream(ReportsMetaDataProvider.createJSON(document_list).getBytes());
 
 				    Asset excelAsset = manager.createAsset(DAM_LOCATION + filename, isStream, "application/json", true);
 			
@@ -378,113 +350,13 @@ public class ContainersReportCSVGenSevice {
 		 		return null;
 		 	    } 
 		 	}
-			
-		
 
-		public String getFileName(String reportName)
-			{
-			 
-				return reportName+"_" +getCurrentDate();
-			}
-		
-		/*
-		 * getCurrentDate()
-		 * The current Date and Time is returned.
-		 * SimpleDateFormat is used.
-		 * 
-		 */
-		 public String getCurrentDate()
-			 {
-				 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-				 Date today = Calendar.getInstance().getTime();  
-				 String date = dateFormat.format(today).replace("/", "_");
-				 date = date.replace(":", "_");
-				return  date.replace(" ", "_"); //2016/11/16 12:08:43
-			 }
-			
 		 
 		 public void clearData(String reportType)
 		 {
-			 if(reportType.equals("document-containers"))
-			 {
-				 document_list.clear();			
-			 }
+			 if(reportType.equals("document-containers")) document_list.clear();
 		 }
-		 
-		 
-		 private String getPropertyValues(Node node, String propertyName,String propertyValue,String resourceName,Session session) throws RepositoryException ,PathNotFoundException{
-			  
-			   if (node.hasProperty(propertyName)) {
-		   
-		        Property prop = node.getProperty(propertyName);
-		        Value[] values;
-		        List<String> propVals = new ArrayList<>();
-		        List<String> updatedPropVals = new ArrayList<>();
-		        // This check is necessary to ensure a multi-valued field is applied...
-		        if (prop.isMultiple()) {
-		            values = prop.getValues();
-		            for(Value v : values) {		            	
-		            	propVals.add(v.getString());
-	              }
-		        
-		            for(String v : propVals) {
-		            	if(stringContainsNumber(v) && stringContainsItemFromList(propertyName)){
-		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + v.toString();
-		            	try
-		            	{
-		    			 v = session.getNode(nodeName).getProperty(propertyValue).getString();
-		            	}catch(PathNotFoundException pn)
-		            	{
-		            		v = "";
-		            	}
-		            	}else
-		            	{ v = v.toString();}
-		    			 if(prop.isMultiple()){							        				 
-		            		  updatedPropVals.add(v);
-		            	  }
-		            }
-		        }	   
-		         else {
-		            values = new Value[1];
-		            values[0] = prop.getValue();
-		            if((stringContainsItemFromList(propertyName))&&(stringContainsNumber(values[0].toString())))
-		            {
-		            	String nodeName = "/content/bmc/resources/" + resourceName + "/" + values[0].toString();
-		            	String nodeValue = null;
-		            	try
-		            	{
-		            	nodeValue = session.getNode(nodeName).getProperty(propertyValue).getString();
-		            	}catch(PathNotFoundException ex){
-		            		nodeValue = "";
-		            	}		            	
-		            	updatedPropVals.add(nodeValue);
-		            }else{
-		            updatedPropVals.add(prop.getValue().toString());
-		            }
-		        }
-		       
-		        return (String.join(",", updatedPropVals));
-		    }
 
-		    return "";
-		    
-		}
-		 public boolean stringContainsNumber( String s )
-		 {
-		     return Pattern.compile( "[0-9]" ).matcher( s ).find();
-		 }
-		 
-		 public static boolean stringContainsItemFromList(String inputStr) {
-			 
-			 for(int i =0; i < resourceItems.length; i++)
-			    {
-			        if(inputStr.contains(resourceItems[i]))
-			        {
-			            return true;
-			        }
-			    }
-			    return false;
-			}
 		 
 		 private String getContainerReferences(String jcrPath,Session session) throws RepositoryException ,PathNotFoundException
 		 {

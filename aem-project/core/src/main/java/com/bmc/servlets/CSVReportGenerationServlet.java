@@ -1,30 +1,11 @@
 package com.bmc.servlets;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.rmi.ServerException;
-import com.adobe.cq.sightly.SightlyWCMMode;
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
-import javax.jcr.PathNotFoundException;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
-import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import com.day.cq.wcm.api.WCMMode;
 import org.apache.felix.scr.annotations.Activate;
@@ -39,9 +20,8 @@ import org.apache.sling.engine.SlingRequestProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.bmc.services.CategoriesReportCSVGenService;
-import com.bmc.services.ContainersReportCSVGenSevice;
+import com.bmc.services.ContainersReportCSVGenService;
 import com.bmc.services.ExperienceFgmtReportCSVGenService;
-import com.bmc.services.ExperienceFgmtReportCSVFormsService;
 import com.bmc.services.FormsReportCSVGenService;
 import com.bmc.services.VideoReportCSVGenService;
 import com.day.cq.contentsync.handler.util.RequestResponseFactory;
@@ -101,15 +81,13 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	    
 	    @Reference
 	    private ExperienceFgmtReportCSVGenService expFgmtService;
-	    
-	    @Reference
-	    private ExperienceFgmtReportCSVFormsService expFgmtFormsService;
+
 	    
 	    @Reference
 	    private CategoriesReportCSVGenService categoriesService;
 	    
 	    @Reference
-	    private ContainersReportCSVGenSevice containersService;	    
+	    private ContainersReportCSVGenService containersService;
 	    
 	     @Activate
 	     protected void activate(final Map<String, Object> config) {	    
@@ -155,14 +133,14 @@ public class CSVReportGenerationServlet extends org.apache.sling.api.servlets.Sl
 	                    break;
 	                case "experienceFragmentForms":
 	                	//Generate the report for forms 	                		
-                		workBook = expFgmtFormsService.generateDataReport(true, fileName,reportLocation);               		                		
-            	        jsonDAMPath = expFgmtFormsService.writeJSONtoDAM(fileName);
-            	        excelDAMPath = expFgmtFormsService.writeExceltoDAM(workBook, fileName);
-            	        expFgmtFormsService.clearData(reportType);
+                		workBook = expFgmtService.generateDataReport(true, fileName,reportLocation);
+            	        jsonDAMPath = expFgmtService.writeJSONtoDAM(fileName);
+            	        excelDAMPath = expFgmtService.writeExceltoDAM(workBook, fileName);
+						expFgmtService.clearData(reportType);
 	                    break;
 	                case "video":
 	                	//Generate the report for forms 	                		
-                		workBook = videoService.generateDataReport(true,fileName);               			                		
+                		workBook = videoService.generateDataReport(true,fileName,reportLocation);
             	        jsonDAMPath = videoService.writeJSONtoDAM(fileName);
             	        excelDAMPath = videoService.writeExceltoDAM(workBook, fileName);
             	        videoService.clearData(reportType);

@@ -51,4 +51,5 @@ public interface ResourceCenterService extends ConfigurableService  {
 
     BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata);
 
+
 }

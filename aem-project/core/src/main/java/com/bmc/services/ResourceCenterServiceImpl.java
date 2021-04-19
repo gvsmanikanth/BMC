@@ -545,6 +545,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String type = contentType != null ? getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
                         String ctaText = type != null ? generateCTA(type) : "";
+                        String template = node.hasProperty(JcrConsts.TEMPLATE) ? node.getProperty(JcrConsts.TEMPLATE).getString() : "";
                         // set video ID
                         if(type.equalsIgnoreCase("Videos")) {
                         	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
@@ -558,8 +559,8 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         if(!assetLink.startsWith("http")){
                             assetLink = resourceResolver.map(assetLink);
                         }
-                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
+                            resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
+                                    lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
 
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
@@ -707,4 +708,5 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
         return allFiltersValueMapping.get(filterValue);
     }
+
 }

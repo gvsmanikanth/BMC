@@ -4,12 +4,12 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.jcr.*;
 
 import com.bmc.components.utils.ReportsMetaDataProvider;
+import com.bmc.consts.ReportsConsts;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.Service;
@@ -28,14 +28,12 @@ import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.result.Hit;
 import com.day.cq.search.result.SearchResult;
-import com.google.gson.Gson;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.usermodel.Workbook;
 
 @Component(
 		label = " CSV Generator Service for Videos Data",
@@ -57,17 +55,12 @@ public class VideoReportCSVGenService {
 	@Reference
 	private QueryBuilder builder;
 
-	private static final String BASE = "/content/bmc/videos";
 
-	private String DAM_LOCATION = "/content/dam/bmc/reports/";
+	private static  ArrayList<VideoReportDataItem> list = new ArrayList<> ();
 
-	private static  ArrayList<VideoReportDataItem> list = new ArrayList<VideoReportDataItem>();
+	//Helper class for reports
+	private final ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
 
-	private ReportsMetaDataProvider metadataProvider = new ReportsMetaDataProvider();
-
-	private String[] TableNames = {"Video Page Path","Name","Type","Modified Date","Modified By",
-			"Replicated By","vID/DAMVideoPath","Title of the Video","Description of the video","RC Inclusion","Asset Inclusion",
-			"Overlay URL","Overlay Text","Last Replicated Date","Last Replication action","References"};
 
 	/*
 	 * Retrieves forms data from the JCR at /content/bmc/videos
@@ -76,35 +69,27 @@ public class VideoReportCSVGenService {
 	 *
 	 * The report argument specifies whether to generate a custom report based on the Result Set
 	 */
-	public Workbook generateDataReport( boolean b,String fileName) {
-		logger.info("Inside the class generateDataReport--- START");
-
+	public Workbook generateDataReport (boolean reportisEnabled, String fileName , String reportLocation) {
 		try
 		{
 			//Fetch the data from forms
-			list  = getJCRData();
-			//If user selected a custom report -- generate the report and store it in the JCR
-			if (b)
+			list  = fetchVideoJCRData(reportLocation);
+			if (reportisEnabled && (!reportLocation.isEmpty ()))
 			{
-				logger.info("If REport is true");
-				String damFileName = fileName +".xls" ;
+				if(fileName == null)
+					workbook = writeToWorkBook("Video Report");
+				else
 				//WriteExcel formsReport = new WriteExcel();
-				workbook = write();
-
+				workbook = writeToWorkBook(fileName);
 			}
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			logger.info("BMC ERROR : Error occurred while executing report "+e.getMessage () );
 		}
 		return workbook;
 	}
 
-
-	public String[] getTableNames()
-	{
-		return this.TableNames;
-	}
 
 	/*
 	 * getJCRData()
@@ -113,97 +98,91 @@ public class VideoReportCSVGenService {
 	 * IT takes the Root folder path as the only argument- Type-String
 	 *
 	 */
-	public ArrayList<VideoReportDataItem> getJCRData() {
+	public ArrayList<VideoReportDataItem> fetchVideoJCRData(String reportLocation) {
 		try
 		{
 			//Invoke the adaptTo method to create a Session
-			Map<String, Object> param = new HashMap<String, Object>();
+			Map<String, Object> param = new HashMap<> ();
 			param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
 			ResourceResolver resourceResolver = null;
 			try {
 				resourceResolver = resolverFactory.getServiceResourceResolver(param);
 
 			} catch (Exception e) {
-				logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+				logger.error("BMC ERROR : ResourceResolverFactory would not be fetched " + e.getMessage ());
 			}
-			Session session = resourceResolver.adaptTo(Session.class);
-			Resource resource = resourceResolver.getResource(BASE);
+			Session session = null;
+			Resource resource = null;
+			if (resourceResolver != null) {
+				session = resourceResolver.adaptTo(Session.class);
+				resource = resourceResolver.getResource(reportLocation);
+			}
 			if(resource != null)
 			{
-				Map<String,String> map = createQuery();
+				Map<String,String> map = createQueryPredicates(reportLocation);
 				Query query = builder.createQuery(PredicateGroup.create(map), session);
 				SearchResult result = query.getResult();
 				for (Hit hit : result.getHits()) {
 					VideoReportDataItem reportDataItem = new VideoReportDataItem ();
-					Node formDataNode = hit.getResource ().adaptTo (Node.class);
+					Node videoJCRNode = hit.getResource ().adaptTo (Node.class);
 					//Fetch video data specific properties.
 					//WEB-7929 AEM Video Report ENhancement START
-					if (formDataNode.hasNode ("video-data")) {
-						Node formVideoData = formDataNode.getNode ("video-data");
-						String PagePath = formDataNode.getPath ().replace ("/jcr:content", "");
-						reportDataItem.setReferencePaths(getVideoReferences (PagePath,session));
-						reportDataItem.setPage_Path (PagePath);
-						for (PropertyIterator propeIterator1 = formVideoData.getProperties (); propeIterator1.hasNext (); ) {
-							Property prop = propeIterator1.nextProperty ();
-							if (! prop.getDefinition ().isMultiple ()) {
-								if (prop.getName ().equalsIgnoreCase ("vID")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setvID (prop.getValue ().toString ());
-								} else if (prop.getName ().equalsIgnoreCase ("damVideoPath")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setvID (prop.getValue ().toString ());
-								} else if (prop.getName ().equalsIgnoreCase ("title")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setTitle_of_the_Video (prop.getValue ().getString ());
-								} else if (prop.getName ().equalsIgnoreCase ("typeId")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setTypeId (prop.getValue ().getString ());
-								} else if (prop.getName ().equalsIgnoreCase ("overlayURL")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setOverlayURL (prop.getValue ().getString ());
-								} else if (prop.getName ().equalsIgnoreCase ("overlayText")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setOverlayText (prop.getValue ().getString ());
-								} else if (prop.getName ().equalsIgnoreCase ("description")) {
-									if (! prop.getValue ().equals (null)) reportDataItem.setDescription (prop.getValue ().getString ());
-								}
-
+					if (videoJCRNode != null && videoJCRNode.hasNode ("video-data")) {
+							Node videoData = videoJCRNode.getNode ("video-data");
+							String PagePath = videoJCRNode.getPath ().replace ("/jcr:content", "");
+							reportDataItem.setReferencePaths(getVideoReferences (PagePath,session));
+							reportDataItem.setPage_Path (PagePath);
+							reportDataItem.setvID (metadataProvider.getPropertyValues(videoData, "vID","vID", "vID",session));
+							if(reportDataItem.getvID ().equals ("")) {
+								reportDataItem.setvID (metadataProvider.getPropertyValues (videoData, "damVideoPath", "damVideoPath", "damVideoPath", session));
 							}
-						}
+							reportDataItem.setTitle_of_the_Video (metadataProvider.getPropertyValues(videoData, "title","title", "title",session));
+							reportDataItem.setTypeId (metadataProvider.getPropertyValues(videoData, "typeId","typeId", "typeId",session));
+							reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayUrl","overlayUrl", "overlayUrl",session));
+							reportDataItem.setOverlayText (metadataProvider.getPropertyValues(videoData, "overlayText","overlayText", "overlayText",session));
+							reportDataItem.setDescription (metadataProvider.getPropertyValues(videoData, "description","description", "description",session));
+							reportDataItem.setVideoLength (metadataProvider.getPropertyValues(videoData, "videoLength","videoLength", "videoLength",session));
+
 					}
-					//Fetch Page specific properties.
-					for (PropertyIterator propeIterator = formDataNode.getProperties (); propeIterator.hasNext (); ) {
-						Property prop = propeIterator.nextProperty ();
-						if (! prop.getDefinition ().isMultiple ()) {
-							if (prop.getName ().equalsIgnoreCase ("cq:lastModifiedBy")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setModified_By (prop.getValue ().getString ());
-							} else if (prop.getName ().equalsIgnoreCase ("cq:lastModified")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setModified_Date (prop.getValue ().getString ());
-							}else if (prop.getName ().equalsIgnoreCase ("cq:lastReplicatedBy")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setPublished_By (prop.getValue ().getString ());
-							} else if (prop.getName ().equalsIgnoreCase ("jcr:title")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setPage_Title (prop.getValue ().getString ());
-							} else if (prop.getName ().equalsIgnoreCase ("pageTitle")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setNavTitle (prop.getValue ().getString ());
-							} else if (prop.getName ().equalsIgnoreCase ("cq:lastReplicationAction")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setLastReplicationAction (prop.getValue ().getString ());
-							} else if (prop.getName ().equalsIgnoreCase ("cq:lastReplicated")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setLastReplicatedDate (prop.getValue ().getString ());
-							}else if (prop.getName ().equalsIgnoreCase ("rc-inclusion")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setRc_inclusion (prop.getValue ().getString ());
-							}else if (prop.getName ().equalsIgnoreCase ("asset-inclusion")) {
-								if (! prop.getValue ().equals (null)) reportDataItem.setAsset_inclusion (prop.getValue ().getString ());
-							}
-
-
-						}
+							//Fetch Page specific properties.
+					if (videoJCRNode != null) {
+						reportDataItem.setModified_By (metadataProvider.getPropertyValues (videoJCRNode, "cq:lastModifiedBy", "cq:lastModifiedBy", "cq:lastModifiedBy", session));
+						reportDataItem.setModified_Date (metadataProvider.getPropertyValues (videoJCRNode, "cq:lastModified", "cq:lastModified", "cq:lastModified", session));
+						reportDataItem.setPublished_By (metadataProvider.getPropertyValues (videoJCRNode, "cq:lastReplicatedBy", "cq:lastReplicatedBy", "cq:lastReplicatedBy", session));
+						reportDataItem.setPage_Title (metadataProvider.getPropertyValues (videoJCRNode, "jcr:title", "jcr:title", "jcr:title", session));
+						reportDataItem.setNavTitle (metadataProvider.getPropertyValues (videoJCRNode, "pageTitle", "pageTitle", "pageTitle", session));
+						reportDataItem.setLastReplicationAction (metadataProvider.getPropertyValues (videoJCRNode, "cq:lastReplicationAction", "cq:lastReplicationAction", "cq:lastReplicationAction", session));
+						reportDataItem.setLastReplicatedDate (metadataProvider.getPropertyValues (videoJCRNode, "cq:lastReplicated", "cq:lastReplicated", "cq:lastReplicated", session));
+						reportDataItem.setRc_inclusion (metadataProvider.getPropertyValues (videoJCRNode, "rc-inclusion", "rc-inclusion", "rc-inclusion", session));
+						reportDataItem.setAsset_inclusion (metadataProvider.getPropertyValues (videoJCRNode, "asset-inclusion", "asset-inclusion", "asset-inclusion", session));
+						// WEB-9969 Adding IC Meta data for Videos
+						reportDataItem.setRc_form_path (metadataProvider.getPropertyValues(videoJCRNode, "rc-form-path","rc-form-path","rc-form-path",session));
+						reportDataItem.setHeaderImage (metadataProvider.getPropertyValues(videoJCRNode, "headerImage","headerImage","headerImage",session));
+						reportDataItem.setFooterLogo (metadataProvider.getPropertyValues(videoJCRNode, "footerLogo","footerLogo","footerLogo",session));
+						reportDataItem.setIc_weighting (metadataProvider.getPropertyValues (videoJCRNode, "ic-weighting", "jcr:title", "ic-weighting", session));
+						reportDataItem.setIC_Content_Type (metadataProvider.getPropertyValues (videoJCRNode, "ic-content-type", "jcr:title", "intelligent-content-types", session));
+						reportDataItem.setIC_topic (metadataProvider.getPropertyValues (videoJCRNode, "ic-topics", "jcr:title", "intelligent-content-topics", session));
+						reportDataItem.setIC_Buyer_stage (metadataProvider.getPropertyValues (videoJCRNode, "ic-buyer-stage", "jcr:title", "intelligent-content-buyer-stage", session));
+						reportDataItem.setIC_target_Persona (metadataProvider.getPropertyValues (videoJCRNode, "ic-target-persona", "jcr:title", "intelligent-content-target-persona", session));
+						reportDataItem.setIC_Source_Publish_Date (metadataProvider.getPropertyValues (videoJCRNode, "ic-source-publish-date", "ic-source-publish-date", "ic-source-publish-date", session));
+						reportDataItem.setIC_Target_Industry (metadataProvider.getPropertyValues (videoJCRNode, "ic-target-industry", "jcr:title", "intelligent-content-target-industry", session));
+						reportDataItem.setIC_Company_Size (metadataProvider.getPropertyValues (videoJCRNode, "ic-company-size", "jcr:title", "intelligent-content-company-size", session));
+						reportDataItem.setProduct (metadataProvider.getPropertyValues (videoJCRNode, "product_interest", "jcr:title", "product-interests", session));
+						reportDataItem.setProduct_Line (metadataProvider.getPropertyValues (videoJCRNode, "product_line", "text", "product-lines", session));
+						reportDataItem.setTopics (metadataProvider.getPropertyValues (videoJCRNode, "topics", "jcr:title", "topic", session));
 					}
 					list.add (reportDataItem);
 				}
 			}
-			logger.info("List Size of Videos : "+list.size());
+			logger.info("BMC INFO : Total List of Videos Pages found: "+list.size());
 			//WEB-7929 AEM Video Report ENhancement END
-
-
-		}catch(Exception e){e.printStackTrace();}
+		}catch(Exception e)
+		{
+			logger.error("BMC ERROR : Error occurred while fetching Video data from JCR "+e.getMessage ());
+			}
 		//set the values to the careers Data item and return.
 		return list;
 	}
-
 
 
 	/*
@@ -212,31 +191,27 @@ public class VideoReportCSVGenService {
 	 *
 	 *
 	 */
-	public Workbook write() throws IOException
-	{
-		logger.info("Generating the Report");
+	public Workbook writeToWorkBook(String fileName) {
+		logger.info("BMC INFO : Generating the Video Report"+ fileName);
 		//Blank workbook
 		XSSFWorkbook workbook = new XSSFWorkbook();
-
 		//Create a blank sheet
-		XSSFSheet sheet = workbook.createSheet("Video Data Report");
-
+		XSSFSheet sheet = workbook.createSheet(fileName);
 		//This data needs to be written (Object[])
-		Map<String, Object[]> data = new TreeMap<String, Object[]>();
-		data.put("1", TableNames);
+		Map<String, Object[]> data = new TreeMap<> ();
+		data.put("1", ReportsConsts.VideoTableNames);
 		for(int i=2;i<list.size();i++)
 		{
-			Integer count = i;
-
-			data.put(count.toString(), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getTypeId (),
-					list.get(i).getModified_Date(),list.get(i).getModified_By(),
-					list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
-					list.get(i).getDescription(),list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
-					list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getLastReplicatedDate (),
-					list.get(i).getLastReplicationAction (), list.get(i).getReferencePaths ()});
-			logger.info("Added the data item "+count+" to the report");
+			//WEB-9969 AEM Report - Video Report to include Metadata details
+			data.put(Integer.toString (i), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getTypeId (),
+					list.get(i).getModified_Date(),list.get(i).getModified_By(), list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
+					list.get(i).getDescription(),list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
+					list.get(i).getRc_form_path (),list.get(i).getHeaderImage (),list.get(i).getFooterLogo (), list.get(i).getVideoLength (),list.get(i).getProduct (),list.get(i).getProduct_Line (),
+					list.get(i).getIc_weighting (), list.get(i).getTopics (),list.get(i).getIC_Content_Type (),
+					list.get(i).getIC_topic (),list.get(i).getIC_Buyer_stage (), list.get(i).getIC_target_Persona (),list.get(i).getIC_Source_Publish_Date (),
+					list.get(i).getIC_Target_Industry (), list.get(i).getIC_Company_Size (), list.get(i).getLastReplicatedDate (), list.get(i).getLastReplicationAction (),
+					list.get(i).getReferencePaths ()});
 		}
-		logger.info("Creating the EXCEL sheet");
 		//Iterate over data and write to sheet
 		Set<String> keyset = data.keySet();
 		int rownum = 0;
@@ -261,12 +236,12 @@ public class VideoReportCSVGenService {
 	/*
 	 * This method generates a custom Predicate based on user input.
 	 */
-	public Map<String,String> createQuery()
-	{
+	public Map<String,String> createQueryPredicates (String reportLocation) {
 		// create query description as hash map (simplest way, same as form post)
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map;
+		map = new HashMap<> ();
 		// create query description as hash map (simplest way, same as form post)
-		map.put("path", BASE);
+		map.put("path", reportLocation);
 		map.put("type", "cq:PageContent");
 		map.put("property.hits", "full");
 		map.put("property.depth", "4");
@@ -285,22 +260,7 @@ public class VideoReportCSVGenService {
 		// can be done in map or with Query methods
 
 	}
-	/*
-	 * createJSON()
-	 * This method generates a JSON from the list of FormREportDataItem.
-	 */
-	public String createJSON()
-	{
-		Gson gson = new Gson();
-		String json = gson.toJson(list);
-		if(!json.equals(null))
-		{
-			return json;
-		}else
-		{
-			return null;
-		}
-	}
+
 
 	/*
 	 * writeExceltoDAM()
@@ -308,40 +268,43 @@ public class VideoReportCSVGenService {
 	 * The workbook is passed into a ByteArrayOutputStream to be converted to a byte Array.
 	 * AssetManager API is used to carry the DAM save.
 	 */
-	public String writeExceltoDAM(Workbook workbook,String reportName)throws IOException{
-		logger.info("Saving the file in the DAM");
+	public String writeExceltoDAM(Workbook workbook,String reportName) {
+		String result = null;
+		logger.info ("BMC INFO : Saved  the report " + reportName + " in the DAM");
 		//Invoke the adaptTo method to create a Session
-		Map<String, Object> param = new HashMap<String, Object>();
-		param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
+		Map<String, Object> param = new HashMap<> ();
+		param.put (ResourceResolverFactory.SUBSERVICE, "reportsService");
 		ResourceResolver resourceResolver = null;
 		try {
-			resourceResolver = resolverFactory.getServiceResourceResolver(param);
+			resourceResolver = resolverFactory.getServiceResourceResolver (param);
+		} catch (Exception e) {
+			logger.error ("BMC ERROR : Report ResourceResolverFactory Error: " + e.getMessage ());
 		}
-		catch (Exception e) {
-			logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
+		String filename = reportName + "_" + metadataProvider.getCurrentDate () + ".xls";
+		AssetManager manager = null;
+		if (resourceResolver != null) {
+			manager = resourceResolver.adaptTo (AssetManager.class);
 		}
-		String filename = getFileName(reportName)+".xls";
-		AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
-
+		String newFile;
 		try {
-			ByteArrayOutputStream bos = new ByteArrayOutputStream();
-			workbook.write(bos);
-			byte[] barray = bos.toByteArray();
-			InputStream is = new ByteArrayInputStream(barray);
-			String newFile = DAM_LOCATION + filename;
-			Asset excelAsset = manager.createAsset(newFile, is, "application/vnd.ms-excel", true);
-			if(excelAsset != null) {
+			ByteArrayOutputStream bos = new ByteArrayOutputStream ();
+			workbook.write (bos);
+			byte[] barray = bos.toByteArray ();
+			InputStream is = new ByteArrayInputStream (barray);
+			newFile = ReportsConsts.REPORT_DAM_LOCATION + filename;
+			Asset excelAsset = null;
+			if (manager != null) {
+				excelAsset = manager.createAsset (newFile, is, "application/vnd.ms-excel", true);
+			}
+			if (excelAsset != null) {
 
-				return newFile;
-			} else {
-				return null;
+				result = newFile;
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace ();
 		}
-		return DAM_LOCATION+filename;
 
-
+		return result;
 	}
 
 	/*
@@ -351,11 +314,10 @@ public class VideoReportCSVGenService {
 	 * AssetManager API is used to carry the DAM save.
 	 *
 	 */
-	public String writeJSONtoDAM(String reportName) throws IOException
-	{
-		logger.info("Saving the file in the DAM");
+	public String writeJSONtoDAM(String reportName) {
+		logger.info("BMC INFO : Saved  the JSON  "+ reportName +" in the DAM");
 		//Invoke the adaptTo method to create a Session
-		Map<String, Object> param = new HashMap<String, Object>();
+		Map<String, Object> param = new HashMap<> ();
 		param.put(ResourceResolverFactory.SUBSERVICE, "reportsService");
 		ResourceResolver resourceResolver = null;
 		try {
@@ -364,16 +326,22 @@ public class VideoReportCSVGenService {
 		catch (Exception e) {
 			logger.error("Report ResourceResolverFactory Error: " + e.getMessage());
 		}
-		String filename = getFileName(reportName)+".json";
-		AssetManager manager = resourceResolver.adaptTo(AssetManager.class);
+		String filename = reportName+"_" + metadataProvider.getCurrentDate()+".json";
+		AssetManager manager = null;
+		if (resourceResolver != null) {
+			manager = resourceResolver.adaptTo(AssetManager.class);
+		}
 		InputStream isStream =
-				new ByteArrayInputStream(createJSON().getBytes());
+				new ByteArrayInputStream(Objects.requireNonNull (ReportsMetaDataProvider.createJSON (list)).getBytes());
 
-		Asset excelAsset = manager.createAsset(DAM_LOCATION + filename, isStream, "application/json", true);
+		Asset excelAsset = null;
+		if (manager != null) {
+			excelAsset = manager.createAsset(ReportsConsts.REPORT_DAM_LOCATION + filename, isStream, "application/json", true);
+		}
 
 		if(excelAsset != null)
 		{
-			return DAM_LOCATION+filename;
+			return ReportsConsts.REPORT_DAM_LOCATION+filename;
 		}
 		else
 		{
@@ -383,61 +351,38 @@ public class VideoReportCSVGenService {
 
 	public void clearData(String reportType)
 	{
-		if(reportType.equals("video"))
-		{
-			list.clear();
-		}
+		if(reportType.equals("video")) list.clear();
 	}
 
 
-	public String getFileName(String reportName)
-	{
-
-		return reportName+"_" +getCurrentDate();
-	}
-
-	/*
-	 * getCurrentDate()
-	 * The current Date and Time is returned.
-	 * SimpleDateFormat is used.
-	 *
-	 */
-	public String getCurrentDate()
-	{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date today = Calendar.getInstance().getTime();
-		String date = dateFormat.format(today).replace("/", "_");
-		date = date.replace(":", "_");
-		return  date.replace(" ", "_"); //2016/11/16 12:08:43
-	}
 	/*
 	 * This method generates a custom Predicate based on user input.
 	 */
 	public Map<String,String> createQueryReferences(String path) {
 		// create query description as hash map (simplest way, same as form post)
-		Map<String, String> map = new HashMap<String, String> ();
+		Map<String, String> map = new HashMap<> ();
 		// create query description as hash map (simplest way, same as form post)
-		map.put ("path", "/content/bmc/language-masters");
+		map.put ("path", "/content/bmc");
 		map.put ("fulltext", path);
 		map.put ("property.hits", "full");
-		map.put ("property.depth", "10");
+		map.put ("property.depth", "1000");
 		return map;
 		// can be done in map or with Query methods
 	}
+
+
 		/*
 		Query Manager API call to fetch references for each Video path into the JCR
 		 */
-		private String getVideoReferences(String path,Session session) throws RepositoryException,PathNotFoundException
-	{
+		private String getVideoReferences(String path,Session session) throws RepositoryException {
 		List<String> propVals = new ArrayList<>();
 		Map<String,String> map = createQueryReferences(path);
 		Query query = builder.createQuery(PredicateGroup.create(map), session);
 		SearchResult result = query.getResult();
 		for (Hit hit : result.getHits()) {
 			Node node = hit.getResource().adaptTo(Node.class);
-			String propertyValue = node.getPath().toString();
-			if (!propertyValue.equals(null))
-			{
+			String propertyValue = node != null ? node.getPath () : null;
+			if (propertyValue != null) {
 				propertyValue = propertyValue.substring(0, propertyValue.indexOf("/jcr:content"));
 			}
 			propVals.add(propertyValue);

@@ -203,7 +203,6 @@ public final class SiteMapXMLServlet extends SlingSafeMethodsServlet {
 				InheritanceValueMap inheritedProp = new HierarchyNodeInheritanceValueMap(page.getContentResource());
 				flag = flag || inheritedProp.getInherited("hideAllChildPages", false);
 			}
-			
 		}catch(Exception e) {
 			log.error("Error getting hideAllChildPages Property from parent pages {}" , e.getMessage());
 			return false;
