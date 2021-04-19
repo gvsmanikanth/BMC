@@ -27,6 +27,10 @@
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
 						</sly>
+						<sly data-sly-test="${card.contentType == 'Webinar'}">
+							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+							<sly data-sly-test.cardIcon="play"/>
+						</sly>
 						<sly data-sly-test="${card.contentText != 'play' && card.contentText != 'demo'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="view"/>
