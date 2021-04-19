@@ -39,22 +39,6 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     allowBulkEdit="{Boolean}true"/>
                                             </service-type>
-                                            <no-of-credits
-                                                cq:showOnCreate="{Boolean}true"
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                                dataPath="/content/bmc/resources/no-of-credits"
-                                                emptyText="Select no of credits to add"
-                                                fieldLabel="No Of Credits"
-                                                multiple="{Boolean}false"
-                                                name="./credits">
-                                                <datasource
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
-                                                <granite:data
-                                                    jcr:primaryType="nt:unstructured"
-                                                    allowBulkEdit="{Boolean}true"/>
-                                            </no-of-credits>
                                             <availability
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
@@ -73,6 +57,14 @@
                                                         value="Inactive"/>
                                                 </items>
                                             </availability>
+                                            <text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Enter the no of credits here"
+                                                fieldLabel="No Of Credits"
+                                                max="100"
+                                                min="1"
+                                                name="./credits"/>
                                         </items>
                                     </sucessServicePage>
                                 </items>
