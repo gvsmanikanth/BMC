@@ -49,22 +49,12 @@
                         {{/if}}
                     </div>
                     <!--/* WEB-6793 Added new fields for RC Cards END */-->
-                    <span class="card-footer-action">
-                        {{#ifCond type '===' "Trial"}}
-                            <svg class="align-middle s-view">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
-                        {{else}}
-                            {{#ifCond type '===' "Webinar"}}
-                                <svg class="align-middle s-view">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
-                            {{else}}
-                                <svg class="align-middle s-{{linkType}}">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                            {{/ifCond}}
-                        {{/ifCond}}
-                        </svg>
-                        {{ctaText}}
-                    </span>
+                    <!--/* WEB-10350 Removed Svg definitions and added learn-more span - STARt */-->
+                    <hr>
+                    <div class="card-footer-action">
+                        <span class="learn-more-v1">{{ctaText}}</span>
+                    </div>
+                     <!--/* WEB-10350 Removed Svg definitions and added learn-more span - END */-->
                 </div>
                 </div>
             </a>
