@@ -14,7 +14,7 @@
       &::before{
         content: '+';
         padding: 10px;
-        color: #29a5d6;
+        color: #046eb1;
         display: inline-block;
         font-size: 22px;
         font-weight: bold;
@@ -65,7 +65,7 @@
       margin-top: -1px; /* Prevent double borders */
       padding: 15px; /* Add some padding */
       margin-bottom: 0px;
-      color: #29a5d6;
+      color: #046eb1;
       cursor: pointer;
 
       @media (max-width: $break-lg) {
@@ -82,16 +82,16 @@
     }
     .keyword-search input {
       &::-webkit-input-placeholder {
-        color: #29a5d6;
+        color: #046eb1;
       }
       &:-ms-input-placeholder {
-        color: #29a5d6;
+        color: #046eb1;
       }
       &::-ms-input-placeholder {
-        color: #29a5d6;
+        color: #046eb1;
       }
       &::placeholder {
-        color: #29a5d6;
+        color: #046eb1;
       }
     }
 
@@ -116,7 +116,7 @@
       padding: 15px;
       margin-bottom: 0px;
       border-top: none;
-      color: #29a5d6;
+      color: #046eb1;
       &:hover{
         color: #046eb1;
       }
@@ -143,7 +143,7 @@
   margin-top: -1px; /* Prevent double borders */
   padding: 12px; /* Add some padding */
   margin-bottom: 0px;
-  color: #3980b2;
+  color: #046eb1;
   background: white;
 
   .header-label {
@@ -158,7 +158,7 @@
 
   .empty-filter {
     font-size: smaller;
-    color: #a7a9ab;
+    color: #666666;
   }
 
   .js-filter-title {
@@ -184,8 +184,8 @@
     padding-right: 1em;
     padding-left: 1em;
     border-radius: 10rem;
-    color: #29a5d6;
-    border: 1px solid #29a5d6;
+    color: #046eb1;
+    border: 1px solid #046eb1;
     margin-top: 0;
   }
 
@@ -194,7 +194,7 @@
     color: #0093C9;
     border-style: solid;
     border-width: 2px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: initial;
     //WEB-6696
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -245,10 +245,11 @@
   .result-page {
     padding: 5px;
     font-size: small;
+    color: #046eb1;
   }
 
   .rc-sort-select {
-    color: #29a5d6 !important;
+    color: #046eb1 !important;
     border: 0px;
     background: white;
     text-transform: uppercase;
@@ -263,7 +264,7 @@
     -moz-appearance: none;
     -o-appearance: none;
 
-    background-image: linear-gradient(45deg, transparent 50%, #29a5d6 50%), linear-gradient(135deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+    background-image: linear-gradient(45deg, transparent 50%, #046eb1 50%), linear-gradient(135deg, #046eb1 50%, transparent 50%), linear-gradient(#ccc, #ccc);
     background-position: calc(100% - 20px) calc(0.5em + 1px), calc(100% - 15px) calc(0.5em + 1px), calc(100% - 2.5em) 0.5em;
     background-size: 5px 5px, 5px 5px, 0px 0em;
     background-repeat: no-repeat;
@@ -290,7 +291,7 @@ body.no-scroll{
 
 
 .rc-arrow-down {
-  background-image: linear-gradient(45deg, transparent 50%, #29a5d6 50%), linear-gradient(135deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+  background-image: linear-gradient(45deg, transparent 50%, #046eb1 50%), linear-gradient(135deg, #046eb1 50%, transparent 50%), linear-gradient(#ccc, #ccc);
   background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
@@ -304,7 +305,7 @@ body.no-scroll{
 }
 
 .rc-arrow-up {
-  background-image: linear-gradient(135deg, transparent 50%, #29a5d6 50%), linear-gradient(45deg, #29a5d6 50%, transparent 50%), linear-gradient(#ccc, #ccc);
+  background-image: linear-gradient(135deg, transparent 50%, #046eb1 50%), linear-gradient(45deg, #046eb1 50%, transparent 50%), linear-gradient(#ccc, #ccc);
   background-position: calc(100% - 20px) calc(1.5em + 1px), calc(100% - 15px) calc(1.5em + 1px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 0px 0em;
   background-repeat: no-repeat;
@@ -393,7 +394,7 @@ body.no-scroll{
         text-transform: uppercase;
         font-weight: bold;
         font-size: small;
-        color: #29a5d6;
+        color: #414042;
         float: left;
         padding-top: 1.25rem;
         word-break: break-word;
@@ -402,7 +403,7 @@ body.no-scroll{
         text-transform: uppercase;
         font-weight: bold;
         font-size: smaller;
-        color: #29a5d6;
+        color: #046eb1;
         float: left;
         padding-top: 1.25rem;
       }
@@ -535,7 +536,7 @@ body.no-scroll{
   //  simple cards
   .simple-card{
     @extend .card;
-	  min-height: 240px;
+	  min-height: 280px;
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
@@ -749,7 +750,7 @@ body.no-scroll{
 }
 
 //  Resource center colors and backgrounds
-$bg-bmc-blue: #3980b2;
+$bg-bmc-blue: #046eb1;
 $bg-bmc-mid-blue: #0093c9;
 $bg-bmc-green: #7fbc00;
 $bg-bmc-mid-green: #aacc07;
