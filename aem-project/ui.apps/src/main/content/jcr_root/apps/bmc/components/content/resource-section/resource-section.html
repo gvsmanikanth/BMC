@@ -18,7 +18,7 @@
 				<!--/*  Iterate through the cards for the multifield and fetch page properties  */-->
 				<sly data-sly-list.card="${productSet.resourceSectionCards}">
 					<div class="rc-card-col" style="padding-bottom:20px">
-						<sly data-sly-test.anchorCSS="${card.isVideoType == 'true' ? 'modal-video-player' : ''}"/>
+						<sly data-sly-test.anchorCSS="${card.isVideoType == 'true' ? 'modal-youtube-video-player' : ''}"/>
 						<sly data-sly-test="${card.contentType == 'Videos'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
