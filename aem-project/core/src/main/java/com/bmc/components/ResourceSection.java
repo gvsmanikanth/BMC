@@ -124,7 +124,7 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
 
                 // Handle the case of the image not existing.
                 //WEB-10041 Added conditional logic to only allow Cards with Valid RC Inclusion & ContentTYpe
-                if(type!=null && isRCIncluded) {
+                if(isRCIncluded && (!type.equals (""))) {
                     resourceSectionCards.add (resourceSection);
                 }else {
                     logger.info("BMC INFO : Please add  RC Inclusion or IC Content Type to the resource at path :"+pagePath.toString ());
