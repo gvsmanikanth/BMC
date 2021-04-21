@@ -719,6 +719,7 @@
                                                                                                         <h4>
                                                                                                             QADemoExample
                                                                                                         </h4>
+                                                                                                        <p>Some test teext Some test teext Some test teext</p>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
                                                                                                         <div class="card-footer-logo">
@@ -844,6 +845,7 @@
                                                                                                         <h4>
                                                                                                             Control-M: The Secret Sauce to Big Data Success
                                                                                                         </h4>
+                                                                                                        <p>Some test teext Some test teext Some test teext</p>
                                                                                                     </div>
                                                                                                     <div class="card-footer">
                                                                                                         <div class="card-footer-logo">
