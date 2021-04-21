@@ -476,15 +476,14 @@ body.no-scroll{
         height: 30px;
      }
       hr{
-        background: #3980B2;
-        border: none;
-        height: 1px;
         position: absolute;
-        top: 0px;
-        width: 90%;
+        top: 0px;        
         left: 0;
         right: 0;
         margin: auto;
+        border-bottom: 1px solid #3980B2;
+        border-top: none;
+        width: 90%;
       }
       .card-footer-action {
         color: #3980B2;
