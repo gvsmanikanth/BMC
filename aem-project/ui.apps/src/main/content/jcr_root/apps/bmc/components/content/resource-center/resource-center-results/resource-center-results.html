@@ -69,12 +69,11 @@
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
                             <div class="featured-card-footer" style="padding-left: 0px;">
+                                <!--/* WEB-10350 Removed Svg definitions and added learn-more span - STARt */-->
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                    <svg class="align-middle s-${footerIcon}-white">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
-                                    </svg>
-                                    ${featuredCard.ctaText @ i18n}
+                                     <span class="learn-more-v1"> ${featuredCard.ctaText @ i18n}</span>
                                 </span>
+                                <!--/* WEB-10350 Removed Svg definitions and added learn-more span - END */-->
                             </div>
                         </div>
                     </div>
@@ -91,10 +90,11 @@
                         </div>
                         <div class="featured-card-footer" style="padding-left: 0px;">
                             <span class="card-footer-action" style="border-top-color:white;">
+                                 <!--/* WEB-10350 Removed Svg definitions and added learn-more span - STARt */-->
                                 <svg class="align-middle s-${footerIcon}-white">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                      <span class="learn-more-v1"> ${featuredCard.ctaText @ i18n}</span>
                                 </svg>
-                                ${featuredCard.ctaText @ i18n}
+                               <!--/* WEB-10350 Removed Svg definitions and added learn-more span - END */-->
                             </span>
                         </div>
                     </div>
