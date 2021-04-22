@@ -2,109 +2,74 @@
   "results": [
     {
       "index": 0,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-workload-archiving",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/migrate-to-bmc-helix-optimize",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Workload Archiving",
-      "created": "2020-07-23T09:09:14.589Z",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-workload-archiving.html",
-      "type": "Datasheet",
+      "title": "Migrate to BMC Helix Optimize",
+      "created": "2020-02-26T10:45:30.306-05:00",
+      "assetLink": "https://stage.cms.bmc.com/forms/contact-bmc.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
+          "value": "509328107",
+          "displayValue": "DSO"
         },
         {
           "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "ic-topics-542365023|ic-topics-319795973",
+          "displayValue": "Cost Reduction \u0026 IT Optimization|IT Operations Management"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635828",
+          "displayValue": "Operations"
         },
         {
           "id": "product_interest",
-          "value": "163366495",
-          "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "712964001",
+          "displayValue": "BMC Helix Optimize"
         }
       ],
-      "headerImage": "",
-      "footerLogo": "",
+      "headerImage": "https://stage.cms.bmc.com/content/dam/bmc/education/350x210-SolutionProviders.jpg",
+      "footerLogo": "https://stage.cms.bmc.com/content/dam/bmc/logos/bmc/bmc-control-m.png",
       "videoLength": "",
       "ctaText": "View"
     },
     {
       "index": 1,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-supported-platforms-and-applications",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/why-migrate-to-bmc-helix-service-management",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Supported Platforms and Applications",
-      "created": "2018-09-12T06:51:17.795-04:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-supported-platforms-and-applications.html",
-      "type": "Datasheet",
+      "title": "Why Migrate to BMC Helix Service Management",
+      "created": "2020-02-28T02:46:12.037-05:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/why-migrate-to-bmc-helix-service-management.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
-        },
-        {
-          "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "854236502",
+          "displayValue": "DSM"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635808",
+          "displayValue": "Service Management"
         },
         {
           "id": "product_interest",
-          "value": "163366495",
-          "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "762200338",
+          "displayValue": "BMC Helix ITSM"
         }
       ],
       "headerImage": "",
@@ -114,28 +79,59 @@
     },
     {
       "index": 2,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-automation-api",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/why-migrate-to-bmc-helix-experience",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Automation API",
-      "created": "2020-07-23T08:50:10.273Z",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-automation-api.html",
-      "type": "Datasheet",
+      "title": "Why Migrate to BMC Helix Experience",
+      "created": "2020-03-02T01:51:20.895-05:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/why-migrate-to-bmc-helix-experience.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
+        },
+        {
+          "id": "product_line",
+          "value": "854236502",
+          "displayValue": "DSM"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635808",
+          "displayValue": "Service Management"
+        },
+        {
+          "id": "product_interest",
+          "value": "507778250",
+          "displayValue": "BMC Helix Digital Workplace"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "View"
+    },
+    {
+      "index": 3,
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/control-m-and-kubernetes",
+      "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
+      "title": "Control-M and Kubernetes ",
+      "created": "2020-07-01T15:59:39.384Z",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/control-m-and-kubernetes.html",
+      "type": "Tech Note",
+      "linkType": "view",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
           "value": "135765208",
           "displayValue": "DBA"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
         },
         {
           "id": "ic-topics",
@@ -149,74 +145,8 @@
         },
         {
           "id": "product_interest",
-          "value": "566639210",
-          "displayValue": "Control-M and DevOps"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
-        }
-      ],
-      "headerImage": "",
-      "footerLogo": "",
-      "videoLength": "",
-      "ctaText": "View"
-    },
-    {
-      "index": 3,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-workload-automation-for-informatica",
-      "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Workload Automation for Informatica",
-      "created": "2020-01-31T05:41:54.748-05:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-workload-automation-for-informatica.html",
-      "type": "Datasheet",
-      "linkType": "view",
-      "metadata": [
-        {
-          "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
-        },
-        {
-          "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
-        },
-        {
-          "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
-        },
-        {
-          "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
-        },
-        {
-          "id": "product_interest",
           "value": "163366495",
           "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
         }
       ],
       "headerImage": "",
@@ -226,28 +156,23 @@
     },
     {
       "index": 4,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-workbench",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/control-m-and-kubernetes-introduction",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Workbench",
-      "created": "2018-09-12T06:51:19.318-04:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-workbench.html",
-      "type": "Datasheet",
+      "title": "Control-M and Kubernetes: Introduction",
+      "created": "2020-03-05T06:10:07.763-05:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/control-m-and-kubernetes-introduction.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
           "value": "135765208",
           "displayValue": "DBA"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
         },
         {
           "id": "ic-topics",
@@ -272,18 +197,18 @@
     },
     {
       "index": 5,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-on-the-cloud",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/mongodb-workloads-with-control-m",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Multi-Cloud Orchestration",
-      "created": "2020-07-23T09:00:50.260Z",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-on-the-cloud.html",
-      "type": "Datasheet",
+      "title": "MongoDB Workloads with Control-\u0026hairsp;M",
+      "created": "2020-03-05T06:07:36.633-05:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/mongodb-workloads-with-control-m.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
@@ -291,39 +216,19 @@
           "displayValue": "DBA"
         },
         {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
-        },
-        {
           "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "ic-topics-594037608|ic-topics-636264560",
+          "displayValue": "Business \u0026 IT Automation|DevOps"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635828",
+          "displayValue": "Operations"
         },
         {
           "id": "product_interest",
           "value": "163366495",
           "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
         }
       ],
       "headerImage": "",
@@ -333,48 +238,38 @@
     },
     {
       "index": 6,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-application-integrator",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/performance-monitoring-for-truesight",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Application Integrator",
-      "created": "2020-07-23T08:41:22.077Z",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-application-integrator.html",
-      "type": "Datasheet",
+      "title": "Performance Monitoring for TrueSight",
+      "created": "2020-04-21T11:46:53.440-04:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/performance-monitoring-for-truesight.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
+          "value": "509328107",
+          "displayValue": "DSO"
         },
         {
           "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "ic-topics-319795973",
+          "displayValue": "IT Operations Management"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635828",
+          "displayValue": "Operations"
         },
         {
           "id": "product_interest",
-          "value": "163366495|164411013",
-          "displayValue": "Control-M|Control-M Application Integrator"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "113394324",
+          "displayValue": "TrueSight Operations Management"
         }
       ],
       "headerImage": "",
@@ -384,58 +279,38 @@
     },
     {
       "index": 7,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-output-management-web-access",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/whats-new-bmc-helix-cloud-security",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Output Management Web Access",
-      "created": "2019-01-16T10:19:48.962-05:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-output-management-web-access.html",
-      "type": "Datasheet",
+      "title": "BMC Helix Cloud Security",
+      "created": "2020-04-21T10:14:59.814-04:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/whats-new-bmc-helix-cloud-security.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
+          "value": "509328107",
+          "displayValue": "DSO"
         },
         {
           "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "ic-topics-319795973",
+          "displayValue": "IT Operations Management"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635828",
+          "displayValue": "Operations"
         },
         {
           "id": "product_interest",
-          "value": "163366495",
-          "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "846325100",
+          "displayValue": "BMC Helix"
         }
       ],
       "headerImage": "",
@@ -445,58 +320,38 @@
     },
     {
       "index": 8,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-output-management",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/why-migrate-to-bmc-helix-discovery",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Output Management",
-      "created": "2019-01-16T10:19:46.132-05:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-output-management.html",
-      "type": "Datasheet",
+      "title": "Why Migrate to BMC Helix Discovery",
+      "created": "2020-03-02T06:09:30.462-05:00",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/why-migrate-to-bmc-helix-discovery.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
         },
         {
           "id": "product_line",
-          "value": "135765208",
-          "displayValue": "DBA"
-        },
-        {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
+          "value": "854236502",
+          "displayValue": "DSM"
         },
         {
           "id": "ic-topics",
-          "value": "ic-topics-594037608",
-          "displayValue": "Business \u0026 IT Automation"
+          "value": "ic-topics-773791639",
+          "displayValue": "Service Management"
         },
         {
           "id": "topics",
-          "value": "topic-186635848",
-          "displayValue": "Automation"
+          "value": "topic-186635808|topic-186635828",
+          "displayValue": "Service Management|Operations"
         },
         {
           "id": "product_interest",
-          "value": "163366495",
-          "displayValue": "Control-M"
-        },
-        {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
-          "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "145457443",
+          "displayValue": "BMC Helix Discovery"
         }
       ],
       "headerImage": "",
@@ -506,18 +361,136 @@
     },
     {
       "index": 9,
-      "path": "/content/bmc/language-masters/en/documents/datasheets/control-m-workload-automation-for-databases",
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/why-migrate-to-bmc-helix-monitor",
       "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
-      "title": "Control-M Workload Automation for Databases",
-      "created": "2020-01-30T10:01:05.405-05:00",
-      "assetLink": "https://stage.cms.bmc.com/documents/datasheets/control-m-workload-automation-for-databases.html",
-      "type": "Datasheet",
+      "title": "Why Migrate to BMC Helix Monitor?",
+      "created": "2020-12-09T15:09:37.705Z",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/why-migrate-to-bmc-helix-monitor.html",
+      "type": "Tech Note",
       "linkType": "view",
       "metadata": [
         {
           "id": "ic-content-type",
-          "value": "ic-type-146731505",
-          "displayValue": "Datasheets"
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
+        },
+        {
+          "id": "product_line",
+          "value": "854236502",
+          "displayValue": "DSM"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-319795973|ic-topics-773791639",
+          "displayValue": "IT Operations Management|Service Management"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635808|topic-186635828",
+          "displayValue": "Service Management|Operations"
+        },
+        {
+          "id": "product_interest",
+          "value": "729047163",
+          "displayValue": "BMC Helix Monitor"
+        }
+      ],
+      "headerImage": "https://stage.cms.bmc.com/content/dam/bmc/guides/ITIL_ITSL_Blog_700x400_03242015-320x170.png",
+      "footerLogo": "https://stage.cms.bmc.com/content/dam/bmc/logos/bmc/bmc-remedy-horizontal-2.png",
+      "videoLength": "",
+      "ctaText": "View"
+    },
+    {
+      "index": 10,
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/ready-for-business-a-modern-mainframe-requires-intelligent-management",
+      "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
+      "title": "Ready for Business A Modern Mainframe Requires Intelligent Management",
+      "created": "2020-12-09T15:09:37.607Z",
+      "assetLink": "https://stage.cms.bmc.com/documents/tech-notes/ready-for-business-a-modern-mainframe-requires-intelligent-management.html",
+      "type": "Tech Note",
+      "linkType": "view",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
+        },
+        {
+          "id": "product_line",
+          "value": "786762196",
+          "displayValue": "ZSO"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635838",
+          "displayValue": "Mainframe"
+        },
+        {
+          "id": "product_interest",
+          "value": "157264732",
+          "displayValue": "BMC AMI AIOps"
+        }
+      ],
+      "headerImage": "https://stage.cms.bmc.com/content/dam/bmc/it-services/photographic-image/pho-managed-services-applications-ms.jpg",
+      "footerLogo": "https://stage.cms.bmc.com/content/dam/bmc/logos/bmc/exchange-logo.png",
+      "videoLength": "",
+      "ctaText": "View"
+    },
+    {
+      "index": 11,
+      "path": "https://stage.cms.bmc.com/content/bmc/language-masters/en/documents/tech-notes/migrate-to-bmc-helix",
+      "excerpt": "This service is temporarily unavailable. Please try again later.\u0026nbsp;",
+      "title": "Migrate to BMC Helix",
+      "created": "2020-02-28T04:05:36.960-05:00",
+      "assetLink": "https://stage.cms.bmc.com/forms/7-key-requirements-for-multi-cloud-discovery-ebook.html",
+      "type": "Tech Note",
+      "linkType": "view",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-958935588",
+          "displayValue": "Tech Notes"
+        },
+        {
+          "id": "product_line",
+          "value": "854236502|509328107",
+          "displayValue": "DSM|DSO"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-319795973|ic-topics-093281075|ic-topics-539896252",
+          "displayValue": "IT Operations Management|Multi-Cloud|Security \u0026 Compliance"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635808|topic-186635828",
+          "displayValue": "Service Management|Operations"
+        },
+        {
+          "id": "product_interest",
+          "value": "893850432",
+          "displayValue": "Unknown"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "View"
+    },
+    {
+      "index": 12,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/devops-and-bmc-deliveringoptimizedbusinessresults",
+      "excerpt": "",
+      "title": "DevOps and BMC: Delivering Optimized Business Results",
+      "created": "2017-09-12T06:12:54.465-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dMJLIF16M90A",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
         },
         {
           "id": "product_line",
@@ -525,14 +498,101 @@
           "displayValue": "DBA"
         },
         {
-          "id": "ic-company-size",
-          "value": "ic-company-size-398345671",
-          "displayValue": "All"
+          "id": "ic-topics",
+          "value": "ic-topics-594037608|ic-topics-636264560",
+          "displayValue": "Business \u0026 IT Automation|DevOps"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "Play"
+    },
+    {
+      "index": 13,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/control-m-the-secretsaucetobigdatasuccess",
+      "excerpt": "quick time to market for big data projects. (2:24)",
+      "title": "Control-M: The Secret Sauce to Big Data Success",
+      "created": "2017-09-11T14:04:48.851-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dSF4572r-63c",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
         },
         {
           "id": "ic-buyer-stage",
-          "value": "ic-buyer-stage-603835750",
-          "displayValue": "Buy"
+          "value": "ic-buyer-stage-776139085",
+          "displayValue": "Explore"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-017644695|ic-topics-594037608",
+          "displayValue": "Big Data|Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "2:24",
+      "ctaText": "Play"
+    },
+    {
+      "index": 14,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/optimize-automate-workflows",
+      "excerpt": "",
+      "title": "See How To Optimize and Automate Workflows",
+      "created": "2018-05-24T04:08:21.938-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dKRCxRsF_yCM",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-776139085",
+          "displayValue": "Explore"
         },
         {
           "id": "ic-topics",
@@ -550,25 +610,206 @@
           "displayValue": "Control-M"
         },
         {
-          "id": "ic-target-industry",
-          "value": "ic-target-industry-289456374",
-          "displayValue": "All"
-        },
-        {
           "id": "ic-target-persona",
-          "value": "ic-target-persona-184295142",
-          "displayValue": "Manager"
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
         }
       ],
       "headerImage": "",
       "footerLogo": "",
       "videoLength": "",
-      "ctaText": "View"
+      "ctaText": "Play"
+    },
+    {
+      "index": 15,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/control-m-mft",
+      "excerpt": "",
+      "title": "Managed File Transfers: A Key Ingredient for your Digital Business Transformation",
+      "created": "2018-03-06T02:33:46.543-05:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dzrg1Y5DX5As",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-594037608",
+          "displayValue": "Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "Play"
+    },
+    {
+      "index": 16,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/control-m-discover-workflow-mainframes",
+      "excerpt": "",
+      "title": "Control-M: Discover How To Ensure Stable Workflow Processes for Mainframes",
+      "created": "2018-05-24T04:22:16.415-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dTEvuaX3gbvY",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "Play"
+    },
+    {
+      "index": 17,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/don-t-get-sidetrackedbywhatsinyourdevopsblindspot",
+      "excerpt": "",
+      "title": "Don’t get sidetracked by what’s in your DevOps blind spot",
+      "created": "2017-09-11T14:04:50.774-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dbXaqDm3rCr4",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "product_line",
+          "value": "397155614",
+          "displayValue": "Unknown"
+        },
+        {
+          "id": "ic-buyer-stage",
+          "value": "ic-buyer-stage-453243382",
+          "displayValue": "Discover"
+        },
+        {
+          "id": "product_interest",
+          "value": "uncategorized",
+          "displayValue": "Uncategorized"
+        },
+        {
+          "id": "ic-target-persona",
+          "value": "ic-target-persona-184295142|ic-target-persona-587583944",
+          "displayValue": "Manager|IT Professional"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "1:52",
+      "ctaText": "Play"
+    },
+    {
+      "index": 18,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/managing-hadoop-workflowstheeasyway",
+      "excerpt": "",
+      "title": "Managing Hadoop Workflows the EASY way",
+      "created": "2017-09-11T14:04:48.770-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dsEMWlAQthwc",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        },
+        {
+          "id": "product_line",
+          "value": "135765208",
+          "displayValue": "DBA"
+        },
+        {
+          "id": "ic-topics",
+          "value": "ic-topics-017644695|ic-topics-594037608",
+          "displayValue": "Big Data|Business \u0026 IT Automation"
+        },
+        {
+          "id": "topics",
+          "value": "topic-186635848",
+          "displayValue": "Automation"
+        },
+        {
+          "id": "product_interest",
+          "value": "163366495",
+          "displayValue": "Control-M"
+        }
+      ],
+      "headerImage": "",
+      "footerLogo": "",
+      "videoLength": "7:28",
+      "ctaText": "Play"
+    },
+    {
+      "index": 19,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/learn-how-mainframemlccostsarecalculated",
+      "excerpt": "See how MLC costs are calculated and how BMC solutions help you manage them.",
+      "title": "Learn How Mainframe MLC Costs are Calculated ",
+      "created": "2017-09-11T14:04:30.506-04:00",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003dqPIKPP6dewo",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        }
+      ],
+      "headerImage": "https://stage.cms.bmc.com/content/dam/bmc/education/350x210-SolutionProviders.jpg",
+      "footerLogo": "",
+      "videoLength": "3:20",
+      "ctaText": "Play"
+    },
+    {
+      "index": 20,
+      "path": "https://stage.cms.bmc.com/content/bmc/videos/examples/bring-IT-to-life",
+      "excerpt": "",
+      "title": "Test - Bring IT to Life",
+      "created": "2021-04-20T08:38:27.450Z",
+      "assetLink": "https://stage.cms.bmc.com/content/bmc/videos.html?vID\u003duO9yph3-u4I",
+      "type": "Videos",
+      "linkType": "play",
+      "metadata": [
+        {
+          "id": "ic-content-type",
+          "value": "ic-type-185980791",
+          "displayValue": "Videos"
+        }
+      ],
+      "headerImage": "https://stage.cms.bmc.com/content/dam/bmc/customers/BofC-header-image1.jpg",
+      "footerLogo": "",
+      "videoLength": "",
+      "ctaText": "Play"
     }
   ],
   "pagination": {
-    "resultsPerPage": 10,
-    "numberOfPages": 11,
-    "totalMatches": 106
+    "resultsPerPage": 50,
+    "numberOfPages": 1,
+    "totalMatches": 21
   }
 }

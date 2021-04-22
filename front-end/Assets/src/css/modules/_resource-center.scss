@@ -118,7 +118,7 @@
       border-top: none;
       color: #046eb1;
       &:hover{
-        color: #046eb1;
+        color: #0093C9;
       }
       &:after{
         font-family: icomoon;
@@ -191,7 +191,7 @@
 
   .reset-btn {
     position: absolute;
-    color: #0093C9;
+    color: #046EB1;
     border-style: solid;
     border-width: 2px;
     font-weight: 600;
@@ -203,9 +203,10 @@
     padding: 6px;
     cursor: pointer;
     margin-left: -110px;
-    margin-top: -7px;
-	&:hover{
-      color: #046eb1;
+    margin-top: -5px;
+    font-size: 14px;
+	&:hover{	
+      color: #0093C9;	
     }
   }
 
@@ -246,6 +247,10 @@
     padding: 5px;
     font-size: small;
     color: #046eb1;
+	cursor: pointer;
+    &.bold{
+      cursor: default;
+    }
   }
 
   .rc-sort-select {
@@ -254,6 +259,8 @@
     background: white;
     text-transform: uppercase;
     font-size: initial;
+	font-size: 14px;
+    cursor: pointer;
     //WEB-6696
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       font-size: 15px;
@@ -266,9 +273,10 @@
 
     background-image: linear-gradient(45deg, transparent 50%, #046eb1 50%), linear-gradient(135deg, #046eb1 50%, transparent 50%), linear-gradient(#ccc, #ccc);
     background-position: calc(100% - 20px) calc(0.5em + 1px), calc(100% - 15px) calc(0.5em + 1px), calc(100% - 2.5em) 0.5em;
-    background-size: 5px 5px, 5px 5px, 0px 0em;
+    background-size: 5px 5px, 6px 6px, 0px 0em;
     background-repeat: no-repeat;
     outline: none;
+	text-align: right;
 
     @media (max-width: $break-md) {
       font-size: smaller;
@@ -403,7 +411,7 @@ body.no-scroll{
         text-transform: uppercase;
         font-weight: bold;
         font-size: smaller;
-        color: #046eb1;
+        color: #414042;
         float: left;
         padding-top: 1.25rem;
       }
@@ -546,6 +554,9 @@ body.no-scroll{
           color: #fff !important;
           .card-footer-action{
             color: #fff;
+			}
+          svg{
+            transition: 0.3s linear;
           }
           //  white action icons
           .s-download {
@@ -573,9 +584,14 @@ body.no-scroll{
           }
         }
       }
+	  .card-footer{
+        svg{
+          transition: 0.3s linear;
+        }
+      }
       // WEB-6793
       .card-footer-logo {
-        padding: 10px 0px 0px 0px;
+        padding: 10px 0px;
         font-size: 15px;
         color: #3980B2;
         font-weight: 600;
@@ -586,6 +602,13 @@ body.no-scroll{
               vertical-align: middle;
           }
       }
+	  .card-footer-action{
+        display: flex;
+        align-items: center;
+        svg{
+          margin-left: 6px;          
+        }
+      }     
   }
 
   //  featured card
@@ -674,6 +697,7 @@ body.no-scroll{
     background-size: contain;
     width: 0.6rem;
     height: 0.7rem;
+	margin-bottom: 2px;
   }
   .s-download-white {
     background-image: url('#{$imagesFolder}s-download-white.png');
@@ -973,6 +997,65 @@ $bg-forrester-green: #16563F;
   padding-top: 15px;
   padding-right: 20px;
 }
+
+//service catalog html WEB-10110
+.service-catalog-results{
+  .rc-card-row{
+    .rc-card-col {
+      padding-bottom: 20px;
+    }
+    .card-content{
+      h4{
+        color: #414042;
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      line-height: 18px;
+      padding: 10px 20px;
+      border-top: none;      
+      font-size: 15px;
+      .card-footer-action {
+          border-top: none;
+          padding: 0;
+          font-size: 15px;
+      }
+      .card-footer-logo {
+        padding: 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      hr{
+        background: #3980B2;
+        margin: auto;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        max-width: 90%;
+        border: none;
+        height: 1px;
+      }
+    }
+  }   
+}
+// resource-section WEB-9670
+.resource-section {
+  .rc-card-col {
+    .card-content{
+      h4{
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 .learn-more-v1{
   padding-right: 15px;
   position: relative;

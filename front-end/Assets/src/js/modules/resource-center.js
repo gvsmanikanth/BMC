@@ -375,9 +375,11 @@ ResourceCenterFilters = {
         if ($('.js-filter-title span').size() > 0) {
           $('.empty-filter').attr('hidden', true);
           $('#rc-featured-card').hide();
+		   $('.rc-filter-header').addClass('filter-selected');
         } else {
           $('#rc-featured-card').show();
           $('.empty-filter').removeAttr('hidden');
+		  $('.rc-filter-header').removeClass('filter-selected');
         }
         //  mobile selected filters count
         var count = $(".filter-checkbox-item").find('input[checked]').length;
