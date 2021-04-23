@@ -19,21 +19,31 @@
 				<sly data-sly-list.card="${productSet.resourceSectionCards}">
 					<div class="rc-card-col" style="padding-bottom:20px">
 						<sly data-sly-test.anchorCSS="${card.isVideoType == 'true' ? 'modal-youtube-video-player' : ''}"/>
-						<sly data-sly-test="${card.contentType == 'Videos'}">
+						<sly data-sly-test="${card.contentType == 'Video'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
+                            <sly data-sly-test.ctaIcon="play"/>
 						</sly>
 						<sly data-sly-test="${card.contentText == 'demo'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
+                            <sly data-sly-test.ctaIcon="view"/>
 						</sly>
 						<sly data-sly-test="${card.contentType == 'Webinar'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="play"/>
+                            <sly data-sly-test.ctaIcon="view"/>
 						</sly>
-						<sly data-sly-test="${card.contentText != 'play' && card.contentText != 'demo'}">
+                        <sly data-sly-test="${card.contentType == 'Trial'}">
+							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
+							<sly data-sly-test.cardIcon="trial "/>
+                            <sly data-sly-test.ctaIcon="view"/>
+						</sly>
+						<sly data-sly-test="${card.contentText != 'play' && card.contentText != 'demo' && card.contentText != 'trial'}">
 							<sly data-sly-test.resolvedLink="${card.pagePath}"></sly>
 							<sly data-sly-test.cardIcon="view"/>
+                            <sly data-sly-test.ctaIcon="view"/>
+
 						</sly>
 						<sly data-sly-test.styleCss=""/>
 						<sly data-sly-test="${card.headerImage }">
@@ -65,12 +75,14 @@
                                         	<img  data-sly-test="${card.footerLogo && card.contentText != 'play'}" src="${card.footerLogo}" style="max-height:30px;">
                                     	</span>
 									</div>
-									<span class="card-footer-action">
-										<svg class="align-middle s-${cardIcon}">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${cardIcon}"></use>
+                                    <hr>
+                                    <div class="card-footer-action">
+                                    ${card.cardCTAText @ i18n}
+										<svg class="align-middle s-${ctaIcon}">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${ctaIcon}"></use>
 										</svg>
-										${card.cardCTAText @ i18n}
-									</span>
+
+									</div>
 								</div>
 							</div>
 						</a>
