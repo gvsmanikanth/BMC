@@ -191,7 +191,7 @@
 
   .reset-btn {
     position: absolute;
-    color: #046EB1;
+    color: #666666;
     border-style: solid;
     border-width: 2px;
     font-weight: 600;
@@ -204,10 +204,7 @@
     cursor: pointer;
     margin-left: -110px;
     margin-top: -5px;
-    font-size: 14px;
-	&:hover{	
-      color: #0093C9;	
-    }
+    font-size: 14px;	 
   }
 
   .submit-btn {
@@ -222,6 +219,14 @@
     color: black;
     float: right;
     margin-top: 5px;
+  }
+  &.filter-selected{
+    .reset-btn{
+      color: #046EB1;
+      &:hover{	
+        color: #0093C9;	
+      }
+    }
   }
 }
 
