@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Resource Center Result Component"
     sling:resourceType="cq/gui/components/authoring/dialog">
@@ -9,14 +9,14 @@
         <items jcr:primaryType="nt:unstructured">
             <tabs
                 jcr:primaryType="nt:unstructured"
-                maximized="{Boolean}true"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
                     <tab-0
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Config"
-                        margin="{Boolean}true"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -33,19 +33,18 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
                                             fieldLabel="Root Path"
                                             name="./rootPath"
-                                            rootPath="/content/bmc">
-                                        </field>
+                                            rootPath="/content/bmc"/>
                                     </pathsFilter>
                                     <pageSize
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
                                         fieldDescription="Defaults to 10 resources."
                                         fieldLabel="Page Size"
-                                        value="{Long}10"
                                         max="{Long}100"
                                         min="{Long}1"
                                         multiple="{Boolean}true"
-                                        name="./pageSize"/>
+                                        name="./pageSize"
+                                        value="{Long}10"/>
                                     <noResultsLabel
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="/libs/granite/ui/components/coral/foundation/form/textfield"
@@ -58,6 +57,28 @@
                                         fieldDescription="Default Value: Oops, please try again. It looks like we may be experiencing some technical issues"
                                         fieldLabel="Error Label"
                                         name="./errorLabel"/>
+                                    <category
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        emptyText="Select category"
+                                        fieldLabel="Category"
+                                        name="./category">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <item1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Resource Center"
+                                                value="Resource Center"/>
+                                            <item2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Service Catalog"
+                                                value="Service Catalog"/>
+                                            <item3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Newsroom"
+                                                value="Newsroom"/>
+                                        </items>
+                                    </category>
                                 </items>
                             </column>
                         </items>
@@ -65,8 +86,8 @@
                     <tab-1
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Featured Card"
-                        margin="{Boolean}true"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <featuredCard
                                 jcr:primaryType="nt:unstructured"
@@ -85,15 +106,42 @@
                                         multiple="{Boolean}false"
                                         name="./bgColor">
                                         <items jcr:primaryType="nt:unstructured">
-                                            <bmc_blue jcr:primaryType="nt:unstructured" text="BMC Blue" value="bg-bmc-blue" />
-                                            <bmc_mid_blue jcr:primaryType="nt:unstructured" text="BMC Midblu" value="bg-bmc-mid-blue" />
-                                            <bmc_green jcr:primaryType="nt:unstructured" text="BMC Green" value="bg-bmc-green" />
-                                            <bmc_mid_green jcr:primaryType="nt:unstructured" text="BMC MidGreen" value="bg-bmc-mid-green" />
-                                            <bmc_grey jcr:primaryType="nt:unstructured" text="BMC Grey" value="bg-bmc-grey" />
-                                            <bmc_teal jcr:primaryType="nt:unstructured" text="BMC Teal" value="bg-bmc-teal" />
-                                            <bmc_light_orange jcr:primaryType="nt:unstructured" text="BMC Light Orange" value="bg-light-orange" />
-                                            <gartner_blue jcr:primaryType="nt:unstructured" text="Gartner Blue" value="bg-gartner-blue" />
-                                            <forrester_green jcr:primaryType="nt:unstructured" text="Forrester Green" value="bg-forrester-green" />
+                                            <bmc_blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Blue"
+                                                value="bg-bmc-blue"/>
+                                            <bmc_mid_blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Midblu"
+                                                value="bg-bmc-mid-blue"/>
+                                            <bmc_green
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Green"
+                                                value="bg-bmc-green"/>
+                                            <bmc_mid_green
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC MidGreen"
+                                                value="bg-bmc-mid-green"/>
+                                            <bmc_grey
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Grey"
+                                                value="bg-bmc-grey"/>
+                                            <bmc_teal
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Teal"
+                                                value="bg-bmc-teal"/>
+                                            <bmc_light_orange
+                                                jcr:primaryType="nt:unstructured"
+                                                text="BMC Light Orange"
+                                                value="bg-light-orange"/>
+                                            <gartner_blue
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Gartner Blue"
+                                                value="bg-gartner-blue"/>
+                                            <forrester_green
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Forrester Green"
+                                                value="bg-forrester-green"/>
                                         </items>
                                     </bgcolor>
                                     <backgroundImage
