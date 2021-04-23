@@ -60,8 +60,8 @@
                                     <category
                                         cq:showOnCreate="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/select"
-                                        emptyText="Select category"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        emptyText="Select Category"
                                         fieldLabel="Category"
                                         name="./category">
                                         <items jcr:primaryType="nt:unstructured">
