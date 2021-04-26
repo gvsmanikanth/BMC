@@ -400,7 +400,7 @@ body.no-scroll{
   }
 
   .card{
-    padding: 24px;
+    padding: 20px;
     padding-bottom: 0px;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
     transition: 0.3s linear;
@@ -500,7 +500,7 @@ body.no-scroll{
         margin: auto;
         border-bottom: 1px solid #3980B2;
         border-top: none;
-        width: 90%;
+        width: calc(100% - 40px);
       }
       .card-footer-action {
         color: #3980B2;
