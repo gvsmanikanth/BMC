@@ -619,10 +619,10 @@
                                                                                                     <h2>
                                                                                                         Helix innovation in 20.08 &amp; 21.02</h2>
                                                                                                 </div>
-                                                                                                <div class="featured-card-footer" style="padding-right: 0px;">
-                                                                                                    <span class="card-footer-action" style="font-size: large;color: white;">
+                                                                                                <div class="featured-card-footer" style="">
+                                                                                                    <div class="card-footer-action" style="font-size: large;color: white;">
                                                                                                         Action
-                                                                                                    </span>
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="featured-card featured-card-right-panel bg-bmc-green card-desktop" style="height: 310px;">
@@ -630,9 +630,12 @@
                                                                                                     <div class="card-icon ic_play-white"></div>
                                                                                                 </div>
                                                                                                 <div class="card-content" style="background: url(https://stage.cms.bmc.com/content/dam/projects/bmc/rc-v5v6-on-rectangle-5.png) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
-                                                                                                <div class="featured-card-footer" style="padding-left: 0px;">
+                                                                                                <div class="featured-card-footer" style="">
                                                                                                     <span class="card-footer-action" style="border-top-color:white;">
-                                                                                                        <span class="learn-more-v1">Register</span>                                                                                                        
+                                                                                                        Register
+                                                                                                        <svg class="align-middle s-view-white">
+                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play-white"></use>
+                                                                                                        </svg>                                                                                                                                                                                                  
                                                                                                     </span>
                                                                                                 </div>
                                                                                             </div>
@@ -648,12 +651,12 @@
                                                                                                 <h4 class="text-white">
                                                                                                     Helix innovation in 20.08 &amp; 21.02</h4>
                                                                                             </div>
-                                                                                            <div class="featured-card-footer" style="padding-left: 0px;">
-                                                                                                <span class="card-footer-action" style="border-top-color:white;">
+                                                                                            <div class="featured-card-footer" style="">
+                                                                                                <span class="card-footer-action" style="border-top-color:white;"> 
+                                                                                                    Register                                                                                                                                                                                                   
                                                                                                     <svg class="align-middle s-view-white">
                                                                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play-white"></use>
-                                                                                                    </svg>
-                                                                                                    Register
+                                                                                                    </svg>                                                                                                    
                                                                                                 </span>
                                                                                             </div>
                                                                                         </div>

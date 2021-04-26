@@ -532,11 +532,16 @@ body.no-scroll{
     }
     .featured-card-footer {
       @extend .card-footer;
+      display: block;
       background: none;
+      padding: 0 20px 0 20px;
+      line-height: normal;
       .card-footer-action {
         color:white;
         font-size: large;
-        text-align: center;
+        text-align: center;        
+        border-top: 1px solid #3980B2;
+        padding: 10px;
       }
       .learn-more-v1{
         &:after {
@@ -624,6 +629,22 @@ body.no-scroll{
         padding-top: 2.25rem;
       }
     }
+    .featured-card-footer{
+      svg{
+        margin-left: 6px;
+      }
+    }
+    &.card-mobile{
+      .card-content{
+        hr{
+          border: none;
+          background: #fff;
+        }
+      } 
+      .featured-card-footer{
+        padding-left: 20px;
+      }
+    }
   }
   .featured-card-container:hover .featured-card-left-panel{
     .card-header {
@@ -660,6 +681,7 @@ body.no-scroll{
     }
     .featured-card-footer{
       justify-content: center;
+      padding-left: 0;
     }
   }
   .featured-card-left-panel{
@@ -671,6 +693,9 @@ body.no-scroll{
           line-height: 30px;
         }
       }
+    }
+    .featured-card-footer{
+      padding-right: 0;
     }
   }
 
