@@ -197,6 +197,7 @@
     border-width: 2px;
     font-weight: 600;
     font-size: initial;
+    pointer-events: none;
     //WEB-6696
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       font-size: 16px;
@@ -225,6 +226,7 @@
     .reset-btn{
       color: #046EB1;
       cursor: pointer;
+      pointer-events: auto;
       &:hover{	
         color: #0093C9;	
       }
