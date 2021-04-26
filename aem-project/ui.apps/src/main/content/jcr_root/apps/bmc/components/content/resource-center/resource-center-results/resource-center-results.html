@@ -57,7 +57,7 @@
                                 <h2 data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=95}">
                                     ${truncateText.finalText}</h2>
                             </div>
-                            <div class="featured-card-footer" style="padding-right: 0px;">
+                            <div class="featured-card-footer">
                                 <span class="card-footer-action" style="font-size: large;color: white;">
                                     <div data-sly-unwrap>Action</div>
                                 </span>
@@ -68,12 +68,16 @@
                                 <div class="card-icon ic_${featuredCard.linkType}-white"></div>
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
-                            <div class="featured-card-footer" style="padding-left: 0px;">
-                                <!--/* WEB-10350 Removed Svg definitions and added learn-more span - STARt */-->
+                            <div class="featured-card-footer" >
+                                <!--/* WEB-10350 changed Svg position  - STARt */-->
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                     <span class="learn-more-v1"> ${featuredCard.ctaText @ i18n}</span>
+                                     ${featuredCard.ctaText @ i18n}
+                                     <svg class="align-middle s-${footerIcon}-white">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                    </svg>   
                                 </span>
-                                <!--/* WEB-10350 Removed Svg definitions and added learn-more span - END */-->
+                                
+                                <!--/*WEB-10350 changed Svg position  - END */-->
                             </div>
                         </div>
                     </div>
@@ -88,13 +92,14 @@
                             <h4 class="text-white" data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=95}">
                                 ${truncateText.finalText}</h4>
                         </div>
-                        <div class="featured-card-footer" style="padding-left: 0px;">
+                        <div class="featured-card-footer" >
                             <span class="card-footer-action" style="border-top-color:white;">
-                                 <!--/* WEB-10350 Removed Svg definitions and added learn-more span - STARt */-->
+                                 <!--/* WEB-10350 changed Svg position  - STARt */-->                    
+                                ${featuredCard.ctaText @ i18n}
                                 <svg class="align-middle s-${footerIcon}-white">
-                                      <span class="learn-more-v1"> ${featuredCard.ctaText @ i18n}</span>
-                                </svg>
-                               <!--/* WEB-10350 Removed Svg definitions and added learn-more span - END */-->
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
+                                </svg> 
+                               <!--/* WEB-10350 changed Svg position  - END */-->
                             </span>
                         </div>
                     </div>
