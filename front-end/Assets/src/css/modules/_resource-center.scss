@@ -150,6 +150,7 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: initial;
+    font-size: 14px;
     //WEB-6696
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       font-size: 16px;
@@ -201,7 +202,7 @@
       font-size: 16px;
      }
     padding: 6px;
-    cursor: pointer;
+    cursor: auto;
     margin-left: -110px;
     margin-top: -5px;
     font-size: 14px;	 
@@ -223,6 +224,7 @@
   &.filter-selected{
     .reset-btn{
       color: #046EB1;
+      cursor: pointer;
       &:hover{	
         color: #0093C9;	
       }
