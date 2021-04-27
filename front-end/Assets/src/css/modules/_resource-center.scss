@@ -479,7 +479,7 @@ body.no-scroll{
       background-size: 200% 102%;
       background-position: right bottom;
       //transition: all .5s ease-out;      
-      margin: 0px;
+      margin: 0px -1px 0 -1px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -494,8 +494,7 @@ body.no-scroll{
       min-height: 50px;
       box-sizing: border-box;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        height: 50px;
-        margin: 0px -1px 0 -1px;
+        height: 50px;        
      }
       hr{
         position: absolute;
@@ -505,10 +504,7 @@ body.no-scroll{
         margin: auto;
         border-bottom: 1px solid #3980B2;
         border-top: none;
-        width: calc(100% - 40px);
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          width: calc(100% - 42px);
-       }
+        width: calc(100% - 42px);
       }
       .card-footer-action {
         color: #3980B2;
