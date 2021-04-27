@@ -406,6 +406,7 @@ body.no-scroll{
     padding-bottom: 0px;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
     transition: 0.3s linear;
+    box-sizing: border-box;
     .card-header{
       h4{
         text-transform: uppercase;
@@ -473,12 +474,11 @@ body.no-scroll{
       }
     }
     .card-footer{
-      text-align: right;
       background: linear-gradient(to right, #3980B2 50%, white 50%);
-      background-size: 200% 100%;
+      background-size: 200% 102%;
       background-position: right bottom;
-      //transition: all .5s ease-out;
-      margin: 0 -1px 0 -1px;
+      //transition: all .5s ease-out;      
+      margin: 0px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -490,9 +490,11 @@ body.no-scroll{
       padding: 10px 20px;
       border-top: none;
       align-items: center;
-      min-height: 30px;
+      min-height: 50px;
+      box-sizing: border-box;
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        height: 30px;
+        height: 50px;
+        margin: 0px -1px 0 -1px;
      }
       hr{
         position: absolute;
@@ -503,6 +505,9 @@ body.no-scroll{
         border-bottom: 1px solid #3980B2;
         border-top: none;
         width: calc(100% - 40px);
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          width: calc(100% - 42px);
+       }
       }
       .card-footer-action {
         color: #3980B2;

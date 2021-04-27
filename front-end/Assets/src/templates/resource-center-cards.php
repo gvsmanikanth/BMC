@@ -663,7 +663,7 @@
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <div id="resultItemsContainer">
+                                                                            <div id="resultItemsContainer1">
                                                                                 <div class="resource-results">
                                                                                     <div class="rc-card-row" style="width:100%">
                                                                                         <div class="rc-card-col">
@@ -688,12 +688,13 @@
                                                                                                             Case Study: Raymond James
                                                                                                         </h4>
                                                                                                     </div>
-                                                                                                    <div class="card-footer">
-                                                                                                        
+                                                                                                    <div class="card-footer">                                                                                                        
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                        <span class="learn-more-v1">View</span>                                                                                                        
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -731,8 +732,10 @@
                                                                                                             </span>
                                                                                                         </div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Start</span>                                                                                                            
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -767,9 +770,10 @@
                                                                                                     <div class="card-footer">                                                                                                        
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Start</span>
-                                                                                                            
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -792,8 +796,10 @@
                                                                                                     <div class="card-footer">
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Register</span>                                                                                                            
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -817,8 +823,10 @@
                                                                                                     <div class="card-footer">
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Try now</span>                                                                                                            
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -860,8 +868,10 @@
                                                                                                             </span>
                                                                                                         </div>
                                                                                                         <hr>
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Play</span>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -922,8 +932,10 @@
                                                                                                         <div class="card-footer-logo"></div>
                                                                                                         <hr>
 
-                                                                                                        <div class="card-footer-action">
-                                                                                                            <span class="learn-more-v1">Play</span>                                                                                                            
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
