@@ -94,7 +94,7 @@
 			<div class="assetStrip">
 				<div class="inner">
 				   <div class="sm-flex flex-justify-center contentContainer">
-					  <a href="/content/bmc/videos.html?vID=y7kJPKvD9e4" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
+					  <a href="http://www.bmc.com/content/bmc/videos.html?vID=y7kJPKvD9e4" class="flex-item sm-col-4 modal-youtube-video-player shadow-top assetStripItem">
 						 <div class="inner assetTxt">
 							<div class="flex-center">
 							   <img src="/content/dam/bmc/solutions/icons/icon-experience.png" alt="">
