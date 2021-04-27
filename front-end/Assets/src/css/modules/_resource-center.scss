@@ -433,7 +433,7 @@ body.no-scroll{
         height: 50px;
       }
       .card-thumbnail{
-        height: 8.4rem;
+        height: 130px;
         left: 0;
         position: absolute;
         top: 0;
@@ -561,7 +561,7 @@ body.no-scroll{
   //  simple cards
   .simple-card{
     @extend .card;
-	  min-height: 280px;
+	  min-height: 310px;
     &:hover{
         box-shadow: none;
         background: #ebf2f7;

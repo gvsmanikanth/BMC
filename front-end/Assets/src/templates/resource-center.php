@@ -628,7 +628,7 @@
                                                                                 <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
                                                                                     <div class="simple-card bg-white">
                                                                                         <!-- WEB-6793 Added new fields for RC Cards START -->
-                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
+                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
                                                                                             <h4>{{type}}</h4>
                                                                                             {{#if headerImage}}
                                                                                                 <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
@@ -643,7 +643,7 @@
                                                                                                 {{#if headerImage}}
                                                                                                     {{{truncateText title 70}}}
                                                                                                 {{else}}
-                                                                                                    {{{truncateText title 110}}}
+                                                                                                    {{{truncateText title 140}}}
                                                                                                 {{/if}}
                                                                                             </h4>
                                                                                         </div>
