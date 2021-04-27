@@ -22,6 +22,30 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
+                                    <category
+                                        cq:showOnCreate="{Boolean}true"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        emptyText="Select Category"
+                                        fieldDescription="Please select the required config category to display the result cards"
+                                        fieldLabel="Category"
+                                        name="./category">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <item1
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="{Boolean}true"
+                                                text="Resource Center"
+                                                value="Resource Center"/>
+                                            <item2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Service Catalog"
+                                                value="Service Catalog"/>
+                                            <item3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Newsroom"
+                                                value="Newsroom"/>
+                                        </items>
+                                    </category>
                                     <pathsFilter
                                         cq:showOnCreate="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
@@ -57,28 +81,6 @@
                                         fieldDescription="Default Value: Oops, please try again. It looks like we may be experiencing some technical issues"
                                         fieldLabel="Error Label"
                                         name="./errorLabel"/>
-                                    <category
-                                        cq:showOnCreate="{Boolean}true"
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                        emptyText="Select Category"
-                                        fieldLabel="Category"
-                                        name="./category">
-                                        <items jcr:primaryType="nt:unstructured">
-                                            <item1
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Resource Center"
-                                                value="Resource Center"/>
-                                            <item2
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Service Catalog"
-                                                value="Service Catalog"/>
-                                            <item3
-                                                jcr:primaryType="nt:unstructured"
-                                                text="Newsroom"
-                                                value="Newsroom"/>
-                                        </items>
-                                    </category>
                                 </items>
                             </column>
                         </items>
