@@ -479,7 +479,7 @@ body.no-scroll{
       background-size: 200% 102%;
       background-position: right bottom;
       //transition: all .5s ease-out;      
-      margin: 0px -1px 0 -1px;
+      margin: 0px -3px 0 -3px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -488,7 +488,7 @@ body.no-scroll{
       display: flex;
       justify-content: space-between;
       line-height: 18px;
-      padding: 10px 20px;
+      padding: 10px 23px;
       border-top: none;
       align-items: center;
       min-height: 50px;
@@ -504,7 +504,9 @@ body.no-scroll{
         margin: auto;
         border-bottom: 1px solid #3980B2;
         border-top: none;
-        width: calc(100% - 44px);
+        width: calc(100% - 46px);
+        border-left: 0px;
+        border-right: 0px;
       }
       .card-footer-action {
         color: #3980B2;
