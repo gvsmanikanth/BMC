@@ -159,13 +159,13 @@ public class SuccessCatalogServiceCachingImpl implements SuccessCatalogService {
 
 
     @Override
-    public String getContentTypeDisplayValue(String contentType) {
-        return baseImpl.getContentTypeDisplayValue(contentType);
+    public String getServiceTypeDisplayValue(String contentType) {
+        return baseImpl.getServiceTypeDisplayValue(contentType);
     }
 
     @Override
-    public String getContentTypeActionValue(String contentType) {
-        return baseImpl.getContentTypeActionValue(contentType);
+    public String getServiceTypeActionValue(String contentType) {
+        return baseImpl.getServiceTypeActionValue(contentType);
     }
 
     @Override
@@ -184,7 +184,7 @@ public class SuccessCatalogServiceCachingImpl implements SuccessCatalogService {
     }
 
     @Override
-    public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+    public BmcMetadata getServiceTypeMeta(List<BmcMetadata> metadata) {
         return null;
     }
 

@@ -26,13 +26,13 @@ public interface SuccessCatalogService extends ConfigurableService{
 
     List<BmcMetadata> getMetadata(Resource resource);
 
-    BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata);
+    BmcMetadata getServiceTypeMeta(List<BmcMetadata> metadata);
 
     boolean isApiOn();
 
-    String getContentTypeDisplayValue(String contentType);
+    String getServiceTypeDisplayValue(String contentType);
 
-    String getContentTypeActionValue(String contentType);
+    String getServiceTypeActionValue(String contentType);
 
     boolean isFormActive(String path);
 }

@@ -2,6 +2,7 @@ package com.bmc.services;
 
 import com.bmc.consts.JcrConsts;
 import com.bmc.consts.ResourceCenterConsts;
+import com.bmc.consts.SuccessCatalogConsts;
 import com.bmc.models.bmccontentapi.*;
 import com.bmc.pum.PUMService;
 import com.bmc.util.JsonSerializer;
@@ -67,17 +68,28 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                     "service-types",
                     "credit-range",
                     "availability"
-    })
+            })
     private static final String SC_FILTERS_LIST = "catalog.filters.list";
 
-    @Reference
+    @Property(description = "Mapping of content types to their correspondig display values and action type",
+            value = { "advisory_and_planning, Advisory & Planning, play",
+                    "deployment, Deployment, play",
+                    "technical-assistance, Technical Assistance, play",
+                    "education, Education, play"
+            })
+    static final String SERVICE_TYPE_MAPPING = "service.type.name.mapping";
+
+    @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=successbase)")
     private ResourceService baseImpl;
+
+
 
     @Activate
     protected void activate(final Map<String, Object> props, ComponentContext context) {
 
         scFiltersList = Arrays.asList( (String[]) props.get(SC_FILTERS_LIST));
-
+        this.catalogTypeValueMapping = toMap((String[]) props.get(SERVICE_TYPE_MAPPING));
+        this.catalogTypeActionMapping = toMap((String[]) props.get(SERVICE_TYPE_MAPPING), 0, 2);
         // set auth info as "bmcdataservice" -> defined under /apps/home/users/system
         Map<String, Object> authInfo = new HashMap<>();
         authInfo.put(ResourceResolverFactory.SUBSERVICE, "bmcdataservice");
@@ -366,7 +378,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             String[] allowedInclusionValues = {"true"};
             buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
             //remove empty ic-content-types from result set
-            if(urlParameters.get(ResourceCenterConsts.SERVICE_TYPE) == null){
+            if(urlParameters.get(SuccessCatalogConsts.SERVICE_TYPE) == null){
                 buildContentTypePredicates(queryParamsMap,predicateIndex);
             }
             int i = 2;
@@ -428,7 +440,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     private void buildContentTypePredicates(Map<String, String> queryParamsMap, int groupIndex) {
         int i = 2;
         // Example: 1_group.1_property=jcr:content/ic-content-type
-        queryParamsMap.put(groupIndex + "_group." + i + "_property", "jcr:content/" + ResourceCenterConsts.SERVICE_TYPE);
+        queryParamsMap.put(groupIndex + "_group." + i + "_property", "jcr:content/" + SuccessCatalogConsts.SERVICE_TYPE);
         // Exampe: 1_group.1_property.value=ic-type-196363946
         queryParamsMap.put(groupIndex + "_group." + i + "_property.operation", ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_EXISTS);
     }
@@ -461,25 +473,15 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = path;
-                        String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
-                        String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
-                        String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
-
-                        String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
+                        String serviceCredits = node.hasProperty(JcrConsts.SERVICE_CREDITS) ? node.getProperty(JcrConsts.SERVICE_CREDITS).getString() : "";
 
                         //  metadata
                         List<BmcMetadata> metadata = getMetadata(hit.getResource());
-                        BmcMetadata contentType = getContentTypeMeta(metadata);
-                        String type = "";
-                        String linkType = "";
+                        BmcMetadata serviceType = getServiceTypeMeta(metadata);
+                        String type = serviceType != null ? getServiceTypeDisplayValue(serviceType.getFirstValue()) : "";
+                        String linkType = serviceType != null ? getServiceTypeActionValue(serviceType.getFirstValue()) : "";
                         String ctaText = type != null ? generateCTA(type) : "";
-                        // set video ID
-                        if(type.equalsIgnoreCase("Videos")) {
-                            assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
-                        }
-                        if(type.equalsIgnoreCase("Webinar")){
-                            assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
-                        }
+
                         if(gatedAsset && formPath != null){
                             assetLink = formPath;
                         }
@@ -487,7 +489,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                             assetLink = resourceResolver.map(assetLink);
                         }
                         resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
+                                lastModified, assetLink, metadata, type, linkType, serviceCredits, ctaText));
 
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
@@ -520,18 +522,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
 
     @Override
     public String generateCTA(String type) {
-        String ctaText = "";
-        if(type.equalsIgnoreCase("Demo")){
-            ctaText = "Start";
-        }else if(type.equalsIgnoreCase("Webinar")) {
-            ctaText = "Register";
-        }else if(type.equalsIgnoreCase("Trial")){
-            ctaText = "Try now";
-        }else if (type.equalsIgnoreCase("Videos")){
-            ctaText = "Play";
-        }else{
-            ctaText = "View";
-        }
+        String ctaText = "LEARN MORE";
         return ctaText;
     }
 
@@ -564,9 +555,9 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     }
 
     @Override
-    public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+    public BmcMetadata getServiceTypeMeta(List<BmcMetadata> metadata) {
         for (BmcMetadata bmcMetadata : metadata) {
-            if (ResourceCenterConsts.IC_CONTENT_TYPE.equals(bmcMetadata.getId())) {
+            if (SuccessCatalogConsts.SERVICE_TYPE.equals(bmcMetadata.getId())) {
                 return bmcMetadata;
             }
         }
@@ -574,12 +565,21 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     }
 
     @Override
-    public String getContentTypeDisplayValue(String contentType) {
-        return "";
+    public String getServiceTypeDisplayValue(String contentType) {
+        if (!catalogTypeValueMapping.containsKey(contentType)) {
+            log.debug("No mapping exists for content type {}", contentType);
+            return contentType;
+        }
+        return catalogTypeValueMapping.get(contentType);
     }
+
     @Override
-    public String getContentTypeActionValue(String contentType) {
-        return "";
+    public String getServiceTypeActionValue(String serviceType) {
+        if (!catalogTypeActionMapping.containsKey(serviceType)) {
+            log.debug("No mapping exists for service type {}", serviceType);
+            return serviceType;
+        }
+        return catalogTypeActionMapping.get(serviceType);
     }
 
     @Override

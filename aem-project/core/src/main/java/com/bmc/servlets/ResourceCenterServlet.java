@@ -53,9 +53,9 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
             case RESOURCES_METHOD:
                 getResourceResults(request, response);
                 break;
-             default:
-                 response.sendError(404);
-                 break;
+            default:
+                response.sendError(404);
+                break;
         }
     }
 

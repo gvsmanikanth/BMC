@@ -8,65 +8,73 @@
                     <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
                         <h4>{{type}}</h4>
                         {{#if headerImage}}
-                            <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
-                            </div>
+                        <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
+                        </div>
                         {{else}}
-                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
+                        <div class="card-icon ic_{{linkType}}" alt border="0"></div>
                         {{/if}}
                     </div>
                     <div class="card-content">
                         <hr/>
                         <h4>
                             {{#if headerImage}}
-                                {{{truncateText title 70}}}
+                            {{{truncateText title 70}}}
                             {{else}}
-                                {{{truncateText title 110}}}
+                            {{{truncateText title 110}}}
                             {{/if}}
                         </h4>
                     </div>
                     {{#ifCond linkType '===' ""}}
-                        <div class="card-footer rc-no-text">
-                    {{else}}
+                    <div class="card-footer rc-no-text">
+                        {{else}}
                         <div class="card-footer">
-                    {{/ifCond}}
-                    <div class="card-footer-logo">
-                        {{#ifCond type '===' "Videos"}}
-                            {{#if videoLength}}
+                            {{/ifCond}}
+                            <div class="card-footer-logo">
+                                {{#ifCond type '===' "Videos"}}
+                                {{#if videoLength}}
                                 <span class="video-length">
                                     <svg class="align-middle s-clock">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
                                     </svg>{{videoLength}}
                                 </span>
-                            {{/if}}
-                        {{/ifCond}}
-                        {{#if footerLogo}}
-                            {{#ifCond type '===' "Videos"}}
-                            {{else}}
+                                {{/if}}
+                                {{/ifCond}}
+
+                                {{#if serviceCredits}}
+                                <span>{{serviceCredits}}</span>
+                                {{else}}
+                                {{#if footerLogo}}
+                                {{#ifCond type '===' "Videos"}}
+                                {{else}}
                                 <span>
-                                    <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
-                                </span>
-                            {{/ifCond}}
-                        {{/if}}
-                    </div>
-                    <!--/* WEB-6793 Added new fields for RC Cards END */-->
-                    <span class="card-footer-action">
-                        {{#ifCond type '===' "Trial"}}
-                            <svg class="align-middle s-view">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
-                        {{else}}
-                            {{#ifCond type '===' "Webinar"}}
+                                        <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                    </span>
+                                {{/ifCond}}
+                                {{/if}}
+                                {{/if}}
+                            </div>
+                            <!--/* WEB-6793 Added new fields for RC Cards END */-->
+                            <!--/* WEB-10350 Added CTAText at the begining of Svg definitions- STARt */-->
+                            <hr>
+                            <div class="card-footer-action">
+                                {{ctaText}}
+                                {{#ifCond type '===' "Trial"}}
                                 <svg class="align-middle s-view">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
-                            {{else}}
-                                <svg class="align-middle s-{{linkType}}">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                            {{/ifCond}}
-                        {{/ifCond}}
-                        </svg>
-                        {{ctaText}}
-                    </span>
-                </div>
-                </div>
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
+                                    {{else}}
+                                    {{#ifCond type '===' "Webinar"}}
+                                    <svg class="align-middle s-view">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                        {{else}}
+                                        <svg class="align-middle s-{{linkType}}">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                            {{/ifCond}}
+                                            {{/ifCond}}
+                                        </svg>
+                            </div>
+                            <!--/* WEB-10350  - END */-->
+                        </div>
+                    </div>
             </a>
         </div>
         {{/each}}

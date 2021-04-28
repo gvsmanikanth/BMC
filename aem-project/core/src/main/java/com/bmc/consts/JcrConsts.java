@@ -7,6 +7,7 @@ public class JcrConsts {
     public static final String CREATION = "jcr:created";
     public static final String MODIFIED = "cq:lastModified";
     public static final String PRIMARY_TYPE = "jcr:primaryType";
+    public static final String TEMPLATE = "jcr:content/cq:template";
     public static final String EXTERNAL_ASSET_LINK = "jcr:content/linkAbstractorExternalAsset";
     public static final String DAM_ASSET_LINK = "jcr:content/linkAbstractorDAMAsset";
     public static final String DESCRIPTION = "jcr:content/jcr:description";
@@ -17,9 +18,12 @@ public class JcrConsts {
     public static final String JCR_CREATION = "jcr:content/jcr:created";
     public static final String VIDEO_ID_PATH = "jcr:content/video-data/vID";
     public static final String VIDEO_PAGE_PATH = "/content/bmc/videos.html?vID=";
-    public static final String EXTERNAL_LINK = "jcr:content/linkAbstractorExternalURL";
-    public static final String RC_INCLUSION = "jcr:content/rc-inclusion";
     public static final String HEADER_IMAGE = "jcr:content/headerImage";
     public static final String FOOTER_LOGO = "jcr:content/footerLogo";
     public static final String VIDEO_LENGTH = "jcr:content/video-data/videoLength";
+    public static final String RC_INCLUSION = "jcr:content/rc-inclusion";
+    public static final String EXTERNAL_LINK = "jcr:content/linkAbstractorExternalURL";
+    public static final String SERVICE_CREDITS = "jcr:content/credits";
+
+
 }
