@@ -61,11 +61,12 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 String footerLogo = "";
                 String ctaText = "";
                 String isVideo = "false";
+                Boolean isRCIncluded = null;
                 if(pagePath != null){
                     Resource resource = resourceResolver.getResource(pagePath);
                     Node node = resource.adaptTo(Node.class);
                     Node parentNode = node.getParent();
-                    Boolean isRCIncluded = node.hasProperty(JcrConsts.RC_INCLUSION) ? node.getProperty(JcrConsts.RC_INCLUSION).getBoolean() : false;
+                    isRCIncluded = node.hasProperty(JcrConsts.RC_INCLUSION) ? node.getProperty(JcrConsts.RC_INCLUSION).getBoolean() : false;
                     if(isRCIncluded) {
                         String path = resource.getPath().endsWith(JcrConsts.JCR_CONTENT) ? parentNode.getPath() : resource.getPath();
                         assetLink = path;
@@ -122,7 +123,12 @@ public class ResourceSection extends WCMUsePojo implements MultifieldDataProvide
                 resourceSection.put("isVideoType",isVideo);
 
                 // Handle the case of the image not existing.
-                resourceSectionCards.add(resourceSection);
+                //WEB-10041 Added conditional logic to only allow Cards with Valid RC Inclusion & ContentTYpe
+                if(isRCIncluded && (!type.equals (""))) {
+                    resourceSectionCards.add (resourceSection);
+                }else {
+                    logger.info("BMC INFO : Please add  RC Inclusion or IC Content Type to the resource at path :"+pagePath.toString ());
+                }
             }
         } catch (Exception e){
             logger.error("Error Getting Resource Section Cards:", e);
