@@ -375,9 +375,11 @@ ResourceCenterFilters = {
         if ($('.js-filter-title span').size() > 0) {
           $('.empty-filter').attr('hidden', true);
           $('#rc-featured-card').hide();
+		   $('.rc-filter-header').addClass('filter-selected');
         } else {
           $('#rc-featured-card').show();
           $('.empty-filter').removeAttr('hidden');
+		  $('.rc-filter-header').removeClass('filter-selected');
         }
         //  mobile selected filters count
         var count = $(".filter-checkbox-item").find('input[checked]').length;
@@ -617,12 +619,13 @@ ResourceCenterFilters = {
             
         }); 
     },
-
+  
     addVideoModalClass: function (){
         if ($('#rc-featured-card-link').length > 0) {
             var cardLink = $('#rc-featured-card-link').attr('href');
-            var className = (cardLink.includes('?vID=')) ? 'rc-card-modal-youtube-video-player' : '';
-            $('#rc-featured-card-link').addClass(className);
+            if(cardLink && (cardLink.indexOf('?vID=') >= 0)){
+                $('#rc-featured-card-link').addClass('rc-card-modal-youtube-video-player');
+            }                
         }        
     }
     

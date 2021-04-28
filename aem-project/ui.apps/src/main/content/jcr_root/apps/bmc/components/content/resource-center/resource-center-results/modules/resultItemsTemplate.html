@@ -5,7 +5,7 @@
             <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
                 <div class="simple-card bg-white">
                     <!-- WEB-6793 Added new fields for RC Cards START -->
-                    <div class="card-header" style="{{#if headerImage}}margin-top:127px;{{/if}}">
+                    <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
                         <h4>{{type}}</h4>
                         {{#if headerImage}}
                             <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
@@ -20,7 +20,7 @@
                             {{#if headerImage}}
                                 {{{truncateText title 70}}}
                             {{else}}
-                                {{{truncateText title 110}}}
+                                {{{truncateText title 140}}}
                             {{/if}}
                         </h4>
                     </div>
@@ -49,7 +49,10 @@
                         {{/if}}
                     </div>
                     <!--/* WEB-6793 Added new fields for RC Cards END */-->
-                    <span class="card-footer-action">
+                    <!--/* WEB-10350 Added CTAText at the begining of Svg definitions- STARt */-->
+                    <hr>
+                    <div class="card-footer-action">
+                        {{ctaText}}
                         {{#ifCond type '===' "Trial"}}
                             <svg class="align-middle s-view">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
@@ -63,8 +66,8 @@
                             {{/ifCond}}
                         {{/ifCond}}
                         </svg>
-                        {{ctaText}}
-                    </span>
+                    </div>
+                     <!--/* WEB-10350  - END */-->
                 </div>
                 </div>
             </a>
