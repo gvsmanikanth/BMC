@@ -95,8 +95,6 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
                 resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
             }else if(category.equals("sc")){
                 resourceResultsJsonStr = successCatalogService.getResourceResultsJSON(parameters);
-            }else if(category.equals("news")){
-                resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
             }
             if(resourceResultsJsonStr != null) {
                 response.getWriter().write(resourceResultsJsonStr);
