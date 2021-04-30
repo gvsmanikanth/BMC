@@ -98,7 +98,7 @@ public class SuccessCatalogServiceBaseImpl implements ConfigurableService, Resou
         //WEB-6680 Mapping for removing all the unwanted filter options -END
         //WEB-9267 Filters Arrange Category and Category Values.
         if ((propertyName.equals("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals("ic-target-industry"))
-                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("product_interest")))
+                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("credits-range")) || (propertyName.equals("service-type")) || (propertyName.equals("product_interest")))
         {
             //Sorts the Values in Jcr:title aplhabetically
             values = sortPropertyNamesAlphabeticaly (values);

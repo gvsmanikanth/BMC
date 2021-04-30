@@ -65,9 +65,9 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             description = "JCR Node Names of Success Catalog Filters",
             value = {
                     "product-lines",
-                    "service-types",
-                    "credit-range",
-                    "availability"
+                    "service-type",
+                    "credits-range"
+                    
             })
     private static final String SC_FILTERS_LIST = "catalog.filters.list";
 
