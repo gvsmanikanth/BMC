@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
-    <advisory_and_planning
+    <advisory-and-planning
         jcr:primaryType="nt:unstructured"
         jcr:title="Advisory &amp; Planning"
         defaultValue="Advisory &amp; Planning"
         selected="true"
         text="Advisory &amp; Planning"
-        value="Advisory &amp; Planning"/>
+        value="advisory-and-planning"/>
     <deployment
         jcr:primaryType="nt:unstructured"
         jcr:title="Deployment"/>
