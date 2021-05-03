@@ -105,7 +105,9 @@
 	<filter root="/content/bmc/resources/industry" mode="replace"/>
 	<filter root="/content/bmc/resources/product-interests" mode="replace"/>
 	<filter root="/content/bmc/resources/product-lines" mode="replace"/>
-	
+	<!-- WEB-10341 Resource Center Filter enhancement for Service Catalog START -->
+	<filter root="/content/bmc/resources/credits-range" mode="replace"/>
+	<!-- WEB-10341 Resource Center Filter enhancement for Service Catalog END -->
     <filter root="/content/bmc/bmc-macros" mode="replace"/>
      <filter root="/content/bmc/fw-bmc-macros" mode="replace"/>
     
