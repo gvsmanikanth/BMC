@@ -9,7 +9,7 @@
             <!--/*  WEB-8367 Added Fix for Card layout in Landscape  */-->
 			<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
 			<sly data-sly-test="${properties.numberOfCards == '3'}">
-				<sly data-sly-test.assetClass="sm-col sm-col-6 md-col-4"></sly>
+				<sly data-sly-test.assetClass="col-12 sm-col sm-col-6 md-col-4 lg-col-3"></sly>
 			</sly>
 			<sly data-sly-test="${properties.numberOfCards == '4'}">
 				<sly data-sly-test.assetClass="col col-12 sm-col-6 md-col-6 lg-col-3"></sly>
@@ -35,7 +35,12 @@
 								<p>${card.description  @ context='html'}</p>
 							</div>
 							<div class="card-footer">
-								<span class="learn-more">${'Learn more' @ i18n}</span>
+								<span data-sly-test="${card.customCtaText}" class="learn-more">
+                                	${card.customCtaText @ context='html', i18n}
+                                </span>
+                                <span data-sly-test="${card.ctaText != 'custom'}" class="learn-more">
+                                	${card.ctaText @ context='html', i18n}
+                                </span>
 							</div>
 						</div>
 					</a>

@@ -70,6 +70,55 @@
                                                     name="./pagePath"
                                                     required="{Boolean}true"
                                                     rootPath="/content/bmc"/>
+                                                <callToActionText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldDescription="Select a call to action."
+                                                    fieldLabel="Call to Action Text"
+                                                    multiple="{Boolean}false"
+                                                    name="./ctaText"
+                                                    wrapperClass="core-wcm-form-options-toggle">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <noneselected
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="none selected"
+                                                            value="custom"/>
+                                                        <download-e-book
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Download e-book"
+                                                            value="Download e-book"/>
+                                                        <downloadNow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Download now"
+                                                            value="Download now"/>
+                                                        <downloadReport
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Download report"
+                                                            value="Download report"/>
+                                                        <readTheStory
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Read the story"
+                                                            value="Read the story"/>
+                                                        <registerToView
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Register to view"
+                                                            value="Register to view"/>
+                                                        <tryNow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Try now"
+                                                            value="Try now"/>
+                                                        <watchNow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Watch now"
+                                                            value="Watch now"/>
+                                                    </items>
+                                                </callToActionText>
+                                                <customCtaText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="If 'none selected' above, then enter custom text. Use sentence case."
+                                                    fieldLabel="Custom CTA Text (optional)"
+                                                    name="./customCtaText"/>
                                             </items>
                                         </column>
                                     </items>
