@@ -588,7 +588,7 @@
                                                                         }
                                                                     </style>
 
-                                                                    <div class="rc-result-component" data-root-path="/content/bmc/language-masters/en/documents,/content/bmc/videos" data-page-size="10">
+                                                                    <div class="rc-result-component" data-root-path="https://stage.cms.bmc.com/content/bmc/language-masters/en/documents,https://stage.cms.bmc.com/content/bmc/videos" data-page-size="10">
                                                                         <div class="container pb-4">
                                                                             <div class="rc-result-header filter-menu">
                                                                                 <span class="results-info" data-template="Showing {1} - {2} of {3}"></span>
@@ -604,8 +604,347 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="rc-card-row" style="padding: 0px; width:100%">
+             
+                                                                                <div class="rc-featured-card-col" id="rc-featured-card" style="display: block;">
+                                                                                    <a id="rc-featured-card-link" href="https://register.gotowebinar.com/register/476557339418208779" data-ic-content-type="Webinars" target="_blank">
+                                                                                        <!-- desktop featured card -->
+                                                                                        <div class="featured-card-container">
+                                                                                            <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
+                                                                                                <div class="card-header">
+                                                                                                    <h3>Webinar</h3>
+                                                                                                </div>
+                                                                                                <div class="card-content">
+                                                                                                    <hr>
+                                                                                                    <h2>
+                                                                                                        Helix innovation in 20.08 &amp; 21.02</h2>
+                                                                                                </div>
+                                                                                                <div class="featured-card-footer" style="">
+                                                                                                    <div class="card-footer-action" style="font-size: large;color: white;">
+                                                                                                        Action
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="featured-card featured-card-right-panel bg-bmc-green card-desktop" style="height: 310px;">
+                                                                                                <div class="card-header">
+                                                                                                    <div class="card-icon ic_play-white"></div>
+                                                                                                </div>
+                                                                                                <div class="card-content" style="background: url(https://stage.cms.bmc.com/content/dam/projects/bmc/rc-v5v6-on-rectangle-5.png) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
+                                                                                                <div class="featured-card-footer" style="">
+                                                                                                    <span class="card-footer-action" style="border-top-color:white;">
+                                                                                                        Register
+                                                                                                        <svg class="align-middle s-view-white">
+                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play-white"></use>
+                                                                                                        </svg>                                                                                                                                                                                                  
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!-- mobile featured card -->
+                                                                                        <div class="featured-card featured-card-right-panel bg-bmc-green card-mobile" style="height: 310px;">
+                                                                                            <div class="card-header" style="background: url(https://stage.cms.bmc.com/content/dam/projects/bmc/rc-v5v6-on-rectangle-5.png) no-repeat top left / cover;background-size: contain;min-height: 10%;">
+                                                                                                <h3 class="text-white">Webinar</h3>
+                                                                                                <div class="card-icon ic_play-white"></div>
+                                                                                            </div>
+                                                                                            <div class="card-content">
+                                                                                                <hr>
+                                                                                                <h4 class="text-white">
+                                                                                                    Helix innovation in 20.08 &amp; 21.02</h4>
+                                                                                            </div>
+                                                                                            <div class="featured-card-footer" style="">
+                                                                                                <span class="card-footer-action" style="border-top-color:white;"> 
+                                                                                                    Register                                                                                                                                                                                                   
+                                                                                                    <svg class="align-middle s-view-white">
+                                                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-play-white"></use>
+                                                                                                    </svg>                                                                                                    
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div id="resultItemsContainer1">
+                                                                                <div class="resource-results">
+                                                                                    <div class="rc-card-row" style="width:100%">
+                                                                                        <div class="rc-card-col">
+                                                                                            <a
+                                                                                                class=""
+                                                                                                target="_self"
+                                                                                                href="https://stage.cms.bmc.com/documents/case-study/control-m-raymond-james-financial.html"
+                                                                                                data-ic-content-type="Case Studies"
+                                                                                                data-product_line="DBA"
+                                                                                                data-topics="Automation"
+                                                                                                data-product_interest="Control-M"
+                                                                                            >
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Case Study</h4>
+                                                                                                        <div class="card-icon ic_view" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            Case Study: Raymond James
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">                                                                                                        
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a
+                                                                                                class=""
+                                                                                                target="_self"
+                                                                                                href="https://stage.cms.bmc.com/documents/demos/QADemoExample.html"
+                                                                                                data-ic-content-type="Demos"
+                                                                                                data-ic-buyer-stage="Buy"
+                                                                                                data-ic-topics="Big Data"
+                                                                                                data-topics="Mainframe"
+                                                                                                data-product_interest="Automated Mainframe Intelligence (AMI)"
+                                                                                                data-ic-target-persona="C-Level"
+                                                                                            >
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="margin-top: 127px;">
+                                                                                                        <h4>Demo</h4>
+                                                                                                        <div class="card-thumbnail" style="background: url('https://stage.cms.bmc.com/content/dam/bmc/education/350x210-SolutionProviders.jpg') no-repeat center center / cover;"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            QADemoExample
+                                                                                                        </h4>
+                                                                                                        <p>Some test teext Some test teext Some test teext</p>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo">
+                                                                                                            <span class="f-logo">
+                                                                                                                <img src="https://stage.cms.bmc.com/content/dam/bmc/logos/bmc/bmc-control-m.png" style="max-height: 30px;" />
+                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a
+                                                                                                class=""
+                                                                                                target="_self"
+                                                                                                href="https://stage.cms.bmc.com/documents/demos/document-container-demos-test-page.html"
+                                                                                                data-ic-content-type="Demos"
+                                                                                                data-ic-company-size="1-999"
+                                                                                                data-ic-buyer-stage="Buy"
+                                                                                                data-ic-topics="Big Data"
+                                                                                                data-topics="Mainframe"
+                                                                                                data-product_interest="Automated Mainframe Intelligence (AMI)"
+                                                                                                data-ic-target-industry="Information Technology"
+                                                                                                data-ic-target-persona="Vice President"
+                                                                                            >
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Demo</h4>
+                                                                                                        <div class="card-icon ic_demo" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            Document Container Demos Test
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">                                                                                                        
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a class="" target="_self" href="https://stage.cms.bmc.com/documents/test/test-webinar.html" data-ic-content-type="Webinars" data-product_interest="Control-M">
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Webinar</h4>
+                                                                                                        <div class="card-icon ic_play" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            (DC) Introducing Control-M 20
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
 
-                                                                            <div id="resultItemsContainer"></div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a class="" target="_self" href="https://stage.cms.bmc.com/forms/control-m-trial.html" data-ic-content-type="Trials" data-product_interest="Control-M">
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Trial</h4>
+                                                                                                        <div class="card-icon ic_trial" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            (DC) Control-M Trial
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a
+                                                                                                class="rc-card-modal-youtube-video-player"
+                                                                                                target="_self"
+                                                                                                href="https://stage.cms.bmc.com/content/bmc/videos.html?vID=SF4572r-63c"
+                                                                                                data-ic-content-type="Videos"
+                                                                                                data-product_line="DBA"
+                                                                                                data-ic-buyer-stage="Explore"
+                                                                                                data-ic-topics="Big Data|Business &amp; IT Automation"
+                                                                                                data-topics="Automation"
+                                                                                                data-product_interest="Control-M"
+                                                                                                data-ic-target-persona="Manager|IT Professional"
+                                                                                            >
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Videos</h4>
+                                                                                                        <div class="card-icon ic_play" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            Control-M: The Secret Sauce to Big Data Success
+                                                                                                        </h4>
+                                                                                                        <p>Some test teext Some test teext Some test teext</p>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo">
+                                                                                                            <span class="video-length">
+                                                                                                                <svg class="align-middle s-clock">
+                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                                                                                                </svg>
+                                                                                                                2:24
+                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                        <hr>
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <div class="rc-card-col">
+                                                                                            <a
+                                                                                                class="rc-card-modal-youtube-video-player"
+                                                                                                target="_self"
+                                                                                                href="https://stage.cms.bmc.com/content/bmc/videos.html?vID=KRCxRsF_yCM"
+                                                                                                data-ic-content-type="Videos"
+                                                                                                data-product_line="DBA"
+                                                                                                data-ic-buyer-stage="Explore"
+                                                                                                data-ic-topics="Business &amp; IT Automation"
+                                                                                                data-topics="Automation"
+                                                                                                data-product_interest="Control-M"
+                                                                                                data-ic-target-persona="Manager|IT Professional"
+                                                                                            >
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="">
+                                                                                                        <h4>Videos</h4>
+                                                                                                        <div class="card-icon ic_play" alt="" border="0"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            See How To Optimize and Automate Workflows
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+
+                                                                                                        <div class="card-footer-action">
+                                                                                                            <span class="learn-more-v1">Play</span>                                                                                                            
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+
+                                                                                        <div class="rc-card-col">
+                                                                                            <a class="rc-card-modal-youtube-video-player" target="_self" href="https://stage.cms.bmc.com/content/bmc/videos.html?vID=uO9yph3-u4I" data-ic-content-type="Videos">
+                                                                                                <div class="simple-card bg-white">
+                                                                                                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                                                                                                    <div class="card-header" style="margin-top: 127px;">
+                                                                                                        <h4>Videos</h4>
+                                                                                                        <div class="card-thumbnail" style="background: url('https://stage.cms.bmc.com/content/dam/bmc/customers/BofC-header-image1.jpg') no-repeat center center / cover;"></div>
+                                                                                                    </div>
+                                                                                                    <div class="card-content">
+                                                                                                        <hr />
+                                                                                                        <h4>
+                                                                                                            Test - Bring IT to Life
+                                                                                                        </h4>
+                                                                                                    </div>
+                                                                                                    <div class="card-footer">
+                                                                                                        <div class="card-footer-logo"></div>
+                                                                                                        <hr>
+
+                                                                                                        <div class="card-footer-action">View
+                                                                                                            <svg class="align-middle s-view">
+                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                                                                                                            </svg>                                                                                                   
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                             <div class="rc-result-header-bottom">
                                                                                 <div style="float: right;">
                                                                                     <span class="pages-info">Results Page</span>
@@ -620,81 +959,6 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-
-                                                                    <script id="resultItemsTemplate" type="text/x-handlebars-template"><div class="resource-results">
-                                                                        <div class="rc-card-row">
-                                                                            {{#each items}}
-                                                                            <div class="rc-card-col">
-                                                                                <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
-                                                                                    <div class="simple-card bg-white">
-                                                                                        <!-- WEB-6793 Added new fields for RC Cards START -->
-                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
-                                                                                            <h4>{{type}}</h4>
-                                                                                            {{#if headerImage}}
-                                                                                                <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
-                                                                                                </div>
-                                                                                            {{else}}
-                                                                                                <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                                                                                            {{/if}}
-                                                                                        </div>
-                                                                                        <div class="card-content">
-                                                                                            <hr/>
-                                                                                            <h4>
-                                                                                                {{#if headerImage}}
-                                                                                                    {{{truncateText title 70}}}
-                                                                                                {{else}}
-                                                                                                    {{{truncateText title 140}}}
-                                                                                                {{/if}}
-                                                                                            </h4>
-                                                                                        </div>
-                                                                                        {{#ifCond linkType '===' ""}}
-                                                                                            <div class="card-footer rc-no-text">                                                                                                
-                                                                                        {{else}}
-                                                                                            <div class="card-footer">                                                                                                
-                                                                                        {{/ifCond}}
-                                                                                                <div class="card-footer-logo">
-                                                                                                        {{#ifCond type '===' "Videos"}}
-                                                                                                            {{#if videoLength}}
-                                                                                                                <span class="video-length">
-                                                                                                                        <svg class="align-middle s-clock">
-                                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
-                                                                                                                        </svg>{{videoLength}}
-                                                                                                                    </span>
-                                                                                                            {{/if}}
-                                                                                                        {{/ifCond}}
-                                                                                                        {{#if footerLogo}}
-                                                                                                            {{#ifCond type '===' "Videos"}}
-                                                                                                            {{else}}
-                                                                                                                <span>
-                                                                                                                        <img src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}"/>
-                                                                                                                </span>
-                                                                                                            {{/ifCond}}
-                                                                                                        {{/if}}
-                                                                                                </div>
-                                                                                                <hr>
-                                                                                                <div class="card-footer-action">
-                                                                                                    {{ctaText}}
-                                                                                                    {{#ifCond type '===' "Trial"}}
-                                                                                                        <svg class="align-middle s-view">
-                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
-                                                                                                    {{else}}
-                                                                                                        {{#ifCond type '===' "Webinar"}}
-                                                                                                            <svg class="align-middle s-view">
-                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
-                                                                                                        {{else}}
-                                                                                                            <svg class="align-middle s-{{linkType}}">
-                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
-                                                                                                        {{/ifCond}}
-                                                                                                    {{/ifCond}}
-                                                                                                    </svg>                                                                                                   
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                </a>
-                                                                            </div>
-                                                                            {{/each}}
-                                                                        </div>
-                                                                    </div></script>
                                                                 </div>
                                                             </div>
                                                         </div>
