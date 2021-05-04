@@ -28,22 +28,22 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         emptyText="Select Category"
                                         fieldDescription="Please select the required config category to display the result cards"
-                                        fieldLabel="Category"
-                                        name="./category">
+                                        fieldLabel="Resource Category"
+                                        name="./resource-category">
                                         <items jcr:primaryType="nt:unstructured">
                                             <item1
                                                 jcr:primaryType="nt:unstructured"
                                                 selected="{Boolean}true"
                                                 text="Resource Center"
-                                                value="Resource Center"/>
+                                                value="rc"/>
                                             <item2
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Service Catalog"
-                                                value="Service Catalog"/>
+                                                value="sc"/>
                                             <item3
                                                 jcr:primaryType="nt:unstructured"
                                                 text="Newsroom"
-                                                value="Newsroom"/>
+                                                value="news"/>
                                         </items>
                                     </category>
                                     <pathsFilter
