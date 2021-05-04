@@ -84,7 +84,7 @@
                      <h1 class="white">About BMC</h1>
                      <h2>Run your business as you reinvent it with software, solutions, and services to help master modern IT</h2>
                      <div class="button-wrapper">
-                        <a class="modal-youtube-video-player btn btn-secondary  mr1" href="/content/bmc/videos.html?vID=gPW9mMvjMBQ" data-location="Top-CTA-Button-Area">
+                        <a class="modal-youtube-video-player btn btn-secondary  mr1" href="http://localhost/bmc.com/front-end/youtube-video-modal.php?vID=gPW9mMvjMBQ" data-location="Top-CTA-Button-Area">
                         Watch video (0:50)
                         </a>
                      </div>
