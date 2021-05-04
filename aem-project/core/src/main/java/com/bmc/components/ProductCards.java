@@ -54,12 +54,8 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 if(childPage.getValueMap().get("imagePath") != null && !childPage.getValueMap().get("imagePath").toString().trim().isEmpty()){
                     productCard.put("imagePath", childPage.getValueMap().get("imagePath").toString());
                 }
-                if(childPage.getValueMap().get("ctaText") != null && !childPage.getValueMap().get("ctaText").toString().trim().isEmpty()){
-                    productCard.put("ctaText", childPage.getValueMap().get("ctaText").toString());
-                }
-                if(childPage.getValueMap().get("customCtaText") != null && !childPage.getValueMap().get("customCtaText").toString().trim().isEmpty()){
-                    productCard.put("customCtaText", childPage.getValueMap().get("customCtaText").toString());
-                }
+                    productCard.put("ctaText", getCtaText(childPage,"ctaText", "customCtaText"));
+
 
                 productCards.add(productCard);
             }
@@ -71,6 +67,18 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
 
     }
 
+    //set custom text value if ctaText dropdown is none selected
+    private String getCtaText(Resource childPage,String ctaText, String customCtaText){
+
+        if(childPage.getValueMap().get("ctaText").toString().equals("custom") && (!childPage.getValueMap().get("customCtaText").toString().trim().isEmpty())) {
+            return childPage.getValueMap().get("customCtaText").toString();
+        } else if(!childPage.getValueMap().get("ctaText").toString().equals("custom")){
+            return childPage.getValueMap().get("ctaText").toString();
+        } else {
+            return null;
+        }
+
+    }
 
     public List<HashMap> getProductCards() {
         return productCards;

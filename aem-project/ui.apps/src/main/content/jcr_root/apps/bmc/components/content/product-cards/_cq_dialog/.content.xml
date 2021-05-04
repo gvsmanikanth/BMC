@@ -95,6 +95,14 @@
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Download report"
                                                             value="Download report"/>
+                                                        <explore
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Explore"
+                                                            value="Explore"/>
+                                                        <learnMore
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Learn more"
+                                                            value="Learn more"/>
                                                         <readTheStory
                                                             jcr:primaryType="nt:unstructured"
                                                             text="Read the story"

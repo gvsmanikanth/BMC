@@ -35,12 +35,9 @@
 								<p>${card.description  @ context='html'}</p>
 							</div>
 							<div class="card-footer">
-								<span data-sly-test="${card.customCtaText}" class="learn-more">
-                                	${card.customCtaText @ context='html', i18n}
-                                </span>
-                                <span data-sly-test="${card.ctaText != 'custom'}" class="learn-more">
+								<span data-sly-test="${card.ctaText}" class="learn-more">
                                 	${card.ctaText @ context='html', i18n}
-                                </span>
+                                </span>                                
 							</div>
 						</div>
 					</a>
