@@ -67,7 +67,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
 
     }
 
-    //set custom text value if ctaText dropdown is none selected
+    //WEB-9846 set custom text value if ctaText dropdown is none selected, else default = Learn More is used.
     private String getCtaText(Resource childPage,String ctaText, String customCtaText){
 
         if(childPage.getValueMap().get("ctaText").toString().equals("custom") && (!childPage.getValueMap().get("customCtaText").toString().trim().isEmpty())) {
@@ -75,7 +75,7 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
         } else if(!childPage.getValueMap().get("ctaText").toString().equals("custom")){
             return childPage.getValueMap().get("ctaText").toString();
         } else {
-            return null;
+            return "Learn more";
         }
 
     }
