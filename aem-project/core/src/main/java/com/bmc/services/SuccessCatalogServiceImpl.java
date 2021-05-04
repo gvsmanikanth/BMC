@@ -586,7 +586,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
 
     @Override
     public boolean isApiOn() {
-        return false;
+        return true;
     }
 
     @Override

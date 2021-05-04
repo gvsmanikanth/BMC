@@ -135,7 +135,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     @Reference
     private ConfigurationAdmin configAdmin;
 
-    @Reference
+    @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=base)")
     private ResourceService baseImpl;
 
     @Activate
