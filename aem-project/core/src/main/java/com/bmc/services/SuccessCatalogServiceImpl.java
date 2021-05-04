@@ -66,7 +66,9 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             value = {
                     "product-lines",
                     "service-type",
-                    "credits-range"
+                    "credits-range",
+                    "availibility"
+                    
                     
             })
     private static final String SC_FILTERS_LIST = "catalog.filters.list";
