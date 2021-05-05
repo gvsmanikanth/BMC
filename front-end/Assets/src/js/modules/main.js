@@ -263,10 +263,13 @@ function addFilterToArrayProtoype() {
 					preload: false
 				},
 				// Added for WEB-9481
-				afterClose : function(){	
+				afterClose : function(){
+					
 					function removeURLParameter(url, parameter) {
-						var urlparts = url.split('#');   
-						if (urlparts.length >= 2) {
+						var urlparts = url.split('#'); 
+						if(urlparts == url)
+                            return '';  
+						else if (urlparts.length >= 2) {
 					
 							var prefix = encodeURIComponent(parameter) + '=';
 							var pars = urlparts[1].split(/[&;]/g);
@@ -279,13 +282,17 @@ function addFilterToArrayProtoype() {
 								}
 							}
 					
-							return (pars.length > 0 ? pars.join('&') : '');
-						}
+							return (pars.length > 0 ? '#' + pars.join('&') : '');
+						}					
+
 						return url;
 					}
-					let tempUrl = removeURLParameter(window.location.href, 'vID');
+					let tempUrl = removeURLParameter('window.location.href', 'vID');
 					let finalHash = removeURLParameter(tempUrl, 'vType');
-					window.location.hash = finalHash;
+					
+					//Changing the url in the addressbar
+					history.pushState("", document.title, window.location.pathname + finalHash);
+					
 				}
 
 		    });
