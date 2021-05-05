@@ -267,13 +267,8 @@
     border: 0px;
     background: white;
     text-transform: uppercase;
-    font-size: initial;
-	font-size: 14px;
+	  font-size: 14px;
     cursor: pointer;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 15px;
-     }
     padding-right: 2.0em;
     padding-left: 0.5em;
     -webkit-appearance: none;
