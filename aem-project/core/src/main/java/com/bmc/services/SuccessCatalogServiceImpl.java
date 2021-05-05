@@ -72,10 +72,10 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     private static final String SC_FILTERS_LIST = "catalog.filters.list";
 
     @Property(description = "Mapping of content types to their correspondig display values and action type",
-            value = { "advisory_and_planning, Advisory & Planning, play",
-                    "deployment, Deployment, play",
-                    "technical-assistance, Technical Assistance, play",
-                    "education, Education, play"
+            value = { "advisory-and-planning, Advisory & Planning, advisory",
+                    "deployment, Deployment, deploy",
+                    "technical-assistance, Technical Assistance, technical",
+                    "education, Education, education"
             })
     static final String SERVICE_TYPE_MAPPING = "service.type.name.mapping";
 
