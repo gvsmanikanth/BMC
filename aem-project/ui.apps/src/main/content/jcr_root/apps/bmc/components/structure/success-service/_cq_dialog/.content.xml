@@ -31,7 +31,7 @@
                                                 emptyText="Select service type "
                                                 fieldLabel="Service Type"
                                                 multiple="{Boolean}false"
-                                                name="./service-types">
+                                                name="./service-type">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
