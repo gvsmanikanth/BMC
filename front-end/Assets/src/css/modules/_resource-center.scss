@@ -451,6 +451,35 @@ body.no-scroll{
         margin-bottom: 15px;
         word-break: break-word;
         font-size: 18px;
+        display: block;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 !important;
+        -webkit-line-clamp: 3;
+        height: calc(25px * 3);
+        @supports (-webkit-line-clamp: 1) { 
+          height:auto;
+        }
+        
+        
+        &::after{
+          content: '...';
+          text-align: right;
+          bottom: 0;
+          right: 0;
+          width: 25%;
+          display: block;
+          position: absolute;
+          height: 25px;
+          background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+          @supports (-webkit-line-clamp: 1) {
+            display: none !important;
+          }
+        }
       }
       h2 {
         color: #414042;

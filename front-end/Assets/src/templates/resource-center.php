@@ -640,11 +640,17 @@
                                                                                         <div class="card-content">
                                                                                             <hr/>
                                                                                             <h4>
+                                                                                                <!-- ie11
+                                                                                                linclamp do not support 
                                                                                                 {{#if headerImage}}
-                                                                                                    {{{truncateText title 70}}}
+                                                                                                    {{{truncateText title 77}}}
                                                                                                 {{else}}
                                                                                                     {{{truncateText title 140}}}
                                                                                                 {{/if}}
+
+                                                                                                CSS fix
+                                                                                                other browser -->
+                                                                                                {{title}}
                                                                                             </h4>
                                                                                         </div>
                                                                                         {{#ifCond linkType '===' ""}}
