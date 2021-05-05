@@ -29,7 +29,7 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
     @Reference(target = "(" + ResourceCenterService.SERVICE_TYPE + "=caching)")
     private ResourceCenterService resourceCenterService;
 
-    @Reference(target = "(" + ResourceCenterService.SERVICE_TYPE + "=caching)")
+    @Reference
     private SuccessCatalogService successCatalogService;
 
     @Override

@@ -95,7 +95,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
             "ic-type-920200003, Trial, trial",
-            "ic-type-185980791, Videos, play",
+            "ic-type-185980791, Video, play",
             "ic-type-291550317, Webinar, play",
             "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
@@ -546,7 +546,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
                         String ctaText = type != null ? generateCTA(type) : "";
                         // set video ID
-                        if(type.equalsIgnoreCase("Videos")) {
+                        if(type.equalsIgnoreCase("Video")) {
                         	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
                         }
                         if(type.equalsIgnoreCase("Webinar")){
@@ -584,7 +584,7 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             ctaText = "Register";
         }else if(type.equalsIgnoreCase("Trial")){
             ctaText = "Try now";
-        }else if (type.equalsIgnoreCase("Videos")){
+        }else if (type.equalsIgnoreCase("Video")){
             ctaText = "Play";
         }else{
             ctaText = "View";

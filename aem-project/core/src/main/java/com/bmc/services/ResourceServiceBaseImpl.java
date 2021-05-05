@@ -44,7 +44,10 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "ic-company-size, /content/bmc/resources/intelligent-content-company-size, text",
                     "ic-target-persona, /content/bmc/resources/intelligent-content-target-persona, text",
                     "ic-buyer-stage, /content/bmc/resources/intelligent-content-buyer-stage, text",
-                    "topics, /content/bmc/resources/topic, text"
+                    "topics, /content/bmc/resources/topic, text",
+                    "service-type, /content/bmc/resources/service-types, text",
+                    "credits-range, /content/bmc/resources/credits-range, text",
+                    "availability, /content/bmc/resources/availability, text"
             })
     static final String PROPERTY_MAPPING = "property.mapping";
     /*
@@ -154,7 +157,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         //WEB-6680 Mapping for removing all the unwanted filter options -END
         //WEB-9267 Filters Arrange Category and Category Values.
         if ((propertyName.equals("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals("ic-target-industry"))
-                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("product_interest")))
+                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("credits-range")) || (propertyName.equals("availability")) || (propertyName.equals("service-type")) || (propertyName.equals("product_interest")))
         {
             //Sorts the Values in Jcr:title aplhabetically
             values = sortPropertyNamesAlphabeticaly (values);

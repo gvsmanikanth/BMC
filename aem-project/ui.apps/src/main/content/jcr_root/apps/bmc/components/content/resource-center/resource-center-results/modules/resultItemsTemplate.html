@@ -30,7 +30,7 @@
                         <div class="card-footer">
                             {{/ifCond}}
                             <div class="card-footer-logo">
-                                {{#ifCond type '===' "Videos"}}
+                                {{#ifCond type '===' "Video"}}
                                 {{#if videoLength}}
                                 <span class="video-length">
                                     <svg class="align-middle s-clock">
@@ -41,10 +41,10 @@
                                 {{/ifCond}}
 
                                 {{#if serviceCredits}}
-                                <span>{{serviceCredits}}</span>
+                                <span>{{serviceCredits}} Credits</span>
                                 {{else}}
                                 {{#if footerLogo}}
-                                {{#ifCond type '===' "Videos"}}
+                                {{#ifCond type '===' "Video"}}
                                 {{else}}
                                 <span>
                                         <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">

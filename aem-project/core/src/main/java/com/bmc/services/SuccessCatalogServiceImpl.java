@@ -67,9 +67,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                     "product-lines",
                     "service-type",
                     "credits-range",
-                    "availibility"
-                    
-                    
+                    "availability"
             })
     private static final String SC_FILTERS_LIST = "catalog.filters.list";
 
@@ -81,7 +79,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             })
     static final String SERVICE_TYPE_MAPPING = "service.type.name.mapping";
 
-    @Reference(target = "(" + ResourceService.SERVICE_TYPE + "=successbase)")
+    @Reference
     private ResourceService baseImpl;
 
 
@@ -390,8 +388,8 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                 if(urlParameters.containsKey(propertyName)) {
                     String[] filterValues = urlParameters.get(propertyName);
                     List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
-                    String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
-                    if(!type.equals (null))values.add (type);
+                    //String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
+                    //if(!type.equals (null))values.add (type);
                     buildGroupPredicate(propertyName, values, queryParamsMap, i++);
                 }
                 //WEB-9267 Added "All" & "All PL Products" to all filter category - END
