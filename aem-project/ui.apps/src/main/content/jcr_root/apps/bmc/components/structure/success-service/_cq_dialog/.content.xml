@@ -64,10 +64,10 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
                                                 fieldDescription="Enter the no of credits here"
                                                 fieldLabel="No Of Credits"
-                                                max="{Long}100"
-                                                min="{Long}1"
+                                                max="{Long}200"
+                                                min="{Long}0"
                                                 name="./credits"
-                                                value="{Long}1"/>
+                                                step="0.5"/>
                                         </items>
                                     </sucessServicePage>
                                 </items>
