@@ -8,4 +8,6 @@ public class SuccessCatalogConsts {
 
     public static final String SERVICE_CREDITS = "credits";
 
+    public static final String CREDIT_RANGE = "credits-range";
+
 }

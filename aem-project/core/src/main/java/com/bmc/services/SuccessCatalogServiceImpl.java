@@ -386,11 +386,17 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             //WEB-9267 Added "All" & "All PL Products" to all filter category- START
             for(String propertyName : baseImpl.getPropertyNames()) {
                 if(urlParameters.containsKey(propertyName)) {
-                    String[] filterValues = urlParameters.get(propertyName);
-                    List<String> values =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
-                    //String type = propertyName != null ? getAllFilterValue (propertyName.toString ()) : "";
-                    //if(!type.equals (null))values.add (type);
-                    buildGroupPredicate(propertyName, values, queryParamsMap, i++);
+                    if(propertyName.equalsIgnoreCase(SuccessCatalogConsts.CREDIT_RANGE)){
+                        int upperBound = 0;
+                        int lowerBound = 0;
+                        String[] filterValues = urlParameters.get(SuccessCatalogConsts.CREDIT_RANGE);
+                        List<String> rangeValues =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
+                        buildRangePredicates(queryParamsMap,rangeValues,i++);
+                    }else{
+                        String[] filterValues = urlParameters.get(propertyName);
+                        List<String> values = new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
+                        buildGroupPredicate(propertyName, values, queryParamsMap, i++);
+                    }
                 }
                 //WEB-9267 Added "All" & "All PL Products" to all filter category - END
             }
@@ -430,6 +436,30 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             }
 
         }
+    }
+
+    /**
+     * @param queryParamsMap
+     * @param groupIndex
+     * @return
+     */
+    private void buildRangePredicates(Map<String, String> queryParamsMap, List<String> rangeValues,int groupIndex) {
+        queryParamsMap.put(groupIndex + "_group.p.or", "true");
+        String lowerBound = "";
+        String upperBound = "";
+        int i = 1;
+        for(String rangeValue : rangeValues) {
+            String[] range = rangeValue.split("-");
+            lowerBound = range[0];
+            upperBound = range[1];
+            queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP , "jcr:content/" + SuccessCatalogConsts.SERVICE_CREDITS);
+            queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER , lowerBound);
+            queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER_OP , ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER_OP_VAL);
+            queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_UPPER, upperBound);
+            queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_UPPER_OP, ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_UPPER_OP_VAL);
+            i++;
+        }
+
     }
 
     /**
