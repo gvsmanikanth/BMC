@@ -22,14 +22,14 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <resource-category
+                                    <resourceCategory
                                         cq:showOnCreate="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                         emptyText="Select Category"
                                         fieldDescription="Please select the required config category to display the result cards"
                                         fieldLabel="Resource Category"
-                                        name="./resource-category">
+                                        name="./resourceCategory">
                                         <items jcr:primaryType="nt:unstructured">
                                             <item1
                                                 jcr:primaryType="nt:unstructured"
@@ -45,7 +45,7 @@
                                                 text="Newsroom"
                                                 value="news"/>
                                         </items>
-                                    </resource-category>
+                                    </resourceCategory>
                                     <pathsFilter
                                         cq:showOnCreate="{Boolean}true"
                                         jcr:primaryType="nt:unstructured"
