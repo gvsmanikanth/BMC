@@ -30,7 +30,8 @@
                         <div class="card-footer">
                     {{/ifCond}}
                     <div class="card-footer-logo">
-                        {{#ifCond type '===' "Videos"}}
+                        <!--/* WEB-10621 Changed Sightly logic for Video - START */-->
+                        {{#ifCond type '===' "Video"}}
                             {{#if videoLength}}
                                 <span class="video-length">
                                     <svg class="align-middle s-clock">
@@ -40,7 +41,8 @@
                             {{/if}}
                         {{/ifCond}}
                         {{#if footerLogo}}
-                            {{#ifCond type '===' "Videos"}}
+                            {{#ifCond type '===' "Video"}}
+                        <!--/* WEB-10621 Changed Sightly logic for Video - END */-->
                             {{else}}
                                 <span>
                                     <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
