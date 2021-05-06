@@ -24,35 +24,35 @@
                             {{/if}}
                         </h4>
                     </div>
-                    {{#ifCond linkType '===' ""}}
-                    <div class="card-footer rc-no-text">
-                        {{else}}
-                        <div class="card-footer">
-                            {{/ifCond}}
-                            <div class="card-footer-logo">
-                                {{#ifCond type '===' "Video"}}
-                                {{#if videoLength}}
-                                <span class="video-length">
-                                    <svg class="align-middle s-clock">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
-                                    </svg>{{videoLength}}
-                                </span>
-                                {{/if}}
-                                {{/ifCond}}
-
-                                {{#if serviceCredits}}
-                                <span>{{serviceCredits}} Credits</span>
-                                {{else}}
-                                {{#if footerLogo}}
-                                {{#ifCond type '===' "Video"}}
-                                {{else}}
-                                <span>
-                                        <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
-                                    </span>
-                                {{/ifCond}}
-                                {{/if}}
-                                {{/if}}
-                            </div>
+                     {{#ifCond linkType '===' ""}}
+	                    <div class="card-footer rc-no-text">
+	                        {{else}}
+	                        <div class="card-footer">
+	                            {{/ifCond}}
+	                            <div class="card-footer-logo">
+	                                {{#ifCond type '===' "Video"}}
+	                                {{#if videoLength}}
+	                                <span class="video-length">
+	                                    <svg class="align-middle s-clock">
+	                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+	                                    </svg>{{videoLength}}
+	                                </span>
+	                                {{/if}}
+	                                {{/ifCond}}
+	
+	                                {{#if serviceCredits}}
+	                                <span>{{serviceCredits}} Credits</span>
+	                                {{else}}
+	                                {{#if footerLogo}}
+	                                {{#ifCond type '===' "Video"}}
+	                                {{else}}
+	                                <span>
+	                                        <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+	                                    </span>
+	                                {{/ifCond}}
+	                                {{/if}}
+	                                {{/if}}
+	                            </div>
                             <!--/* WEB-6793 Added new fields for RC Cards END */-->
                             <!--/* WEB-10350 Added CTAText at the begining of Svg definitions- STARt */-->
                             <hr>
