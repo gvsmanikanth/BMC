@@ -732,9 +732,9 @@
                                             </options>
                                         </items>
                                     </service-type>
-                                    <availibility
+                                    <availability
                                         jcr:primaryType="nt:unstructured"
-                                        jcr:title="Availibility"
+                                        jcr:title="Availability"
                                         sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
@@ -792,7 +792,7 @@
                                                     allowBulkEdit="{Boolean}true"/>
                                             </options>
                                         </items>
-                                    </availibility>
+                                    </availability>
                                 </items>
                             </column>
                         </items>
