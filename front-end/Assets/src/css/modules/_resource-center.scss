@@ -151,10 +151,6 @@
     font-weight: bold;
     font-size: initial;
     font-size: 14px;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 16px;
-     }
   }
 
   .empty-filter {
@@ -198,10 +194,6 @@
     font-weight: 600;
     font-size: initial;
     pointer-events: none;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 16px;
-     }
     padding: 6px;
     cursor: auto;
     margin-left: -110px;
