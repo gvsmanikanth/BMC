@@ -157,7 +157,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         //WEB-6680 Mapping for removing all the unwanted filter options -END
         //WEB-9267 Filters Arrange Category and Category Values.
         if ((propertyName.equals("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals("ic-target-industry"))
-                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("credits-range")) || (propertyName.equals("availability")) || (propertyName.equals("service-type")) || (propertyName.equals("product_interest")))
+                || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("availability")) || (propertyName.equals("service-type")) || (propertyName.equals("product_interest")))
         {
             //Sorts the Values in Jcr:title aplhabetically
             values = sortPropertyNamesAlphabeticaly (values);
@@ -173,7 +173,10 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         {
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as BuyerStagesList
             values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_BUYER_STAGES_CUSTOM_LIST));
+        }else if (propertyName.equals ("credits-range")){
+        	values = getCustomSortList(values,Arrays.asList(ResourceCenterConstants.CREDITS_RANGE_CUSTOM_LIST));
         }
+        
 
         return values;
     }
