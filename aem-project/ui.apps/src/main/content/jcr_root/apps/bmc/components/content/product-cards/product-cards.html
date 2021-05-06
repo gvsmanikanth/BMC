@@ -35,13 +35,14 @@
 								<p>${card.description  @ context='html'}</p>
 							</div>
 							<div class="card-footer">
-								<!--/* WEB-9846 Product Cards component enhancement */-->
+								<!--/* WEB-9846 Product Cards component enhancement START */-->
 								<span data-sly-test="${card.ctaText}" class="learn-more">
                                 	${card.ctaText @ context='html', i18n}
                                 </span>
 								<span data-sly-test="${!card.ctaText}" class="learn-more">
                                 	${'Learn more' @ i18n}
                                 </span>
+                                <!--/* WEB-9846 Product Cards component enhancement END */-->
 							</div>
 						</div>
 					</a>
