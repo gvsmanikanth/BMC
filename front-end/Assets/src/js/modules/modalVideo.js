@@ -41,8 +41,7 @@
 						preload: false
 					},
 					// Added for WEB-9481
-					afterClose : function(){
-						
+					afterClose : function(){						
 						function removeURLParameter(url, parameter) {
 							var urlparts = url.split('#'); 
 							if(urlparts == url)
@@ -65,8 +64,7 @@
 	
 							return url;
 						}
-						let tempUrl = removeURLParameter('window.location.href', 'vID');
-						let finalHash = removeURLParameter(tempUrl, 'vType');
+						let finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
 						
 						//Changing the url in the addressbar
 						history.pushState("", document.title, window.location.pathname + finalHash);
@@ -101,6 +99,8 @@
 				if (hashValue[1])
 					window.location.hash = hashValue[1]+"&vType=yt";
 		});
+		
 	});
+		
 
 })(jQuery);

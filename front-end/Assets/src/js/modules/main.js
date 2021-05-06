@@ -287,8 +287,7 @@ function addFilterToArrayProtoype() {
 
 						return url;
 					}
-					let tempUrl = removeURLParameter('window.location.href', 'vID');
-					let finalHash = removeURLParameter(tempUrl, 'vType');
+					let finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
 					
 					//Changing the url in the addressbar
 					history.pushState("", document.title, window.location.pathname + finalHash);
