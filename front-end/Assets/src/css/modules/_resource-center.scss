@@ -534,6 +534,18 @@ body.no-scroll{
           .s-demo {
             background-image: url("#{$imagesFolder}s-play-white.png");
           }
+          .s-advisory {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-deploy {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-technical {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-education {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
         }
         .card-footer{
           transition: 0.3s linear;
@@ -670,6 +682,34 @@ body.no-scroll{
     background-size: 90%;
     width: 20px;
     height: 20px;
+  }
+  .s-advisory {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-deploy {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-technical {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-education {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
   }
 
 
