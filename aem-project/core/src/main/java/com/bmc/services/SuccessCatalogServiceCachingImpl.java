@@ -169,11 +169,6 @@ public class SuccessCatalogServiceCachingImpl implements SuccessCatalogService {
     }
 
     @Override
-    public String getAllFilterValue(String contentType) {
-        return null;
-    }
-
-    @Override
     public boolean isFormActive(String path) {
         return false;
     }
