@@ -38,7 +38,10 @@ HandlebarHelpers = {
             var extValid = new RegExp('/'+window.location.host+'/');
             var contentPath = new RegExp('\/content\/bmc\/'); 
             return ((extValid.test(url) || contentPath.test(url)) ? '_self' :'_blank' );                               
-         });
+        });
+        Handlebars.registerHelper("checkLineClampSupport", function() {    
+           return Modernizr.csslineclamp;                                     
+        });
     },
 
     truncateText: function (pText, pChars) {

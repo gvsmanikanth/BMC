@@ -640,17 +640,15 @@
                                                                                         <div class="card-content">
                                                                                             <hr/>
                                                                                             <h4>
-                                                                                                <!-- ie11
-                                                                                                linclamp do not support 
-                                                                                                {{#if headerImage}}
-                                                                                                    {{{truncateText title 77}}}
-                                                                                                {{else}}
-                                                                                                    {{{truncateText title 140}}}
-                                                                                                {{/if}}
-
-                                                                                                CSS fix
-                                                                                                other browser -->
-                                                                                                {{title}}
+                                                                                                {{#ifCond checkLineClampSupport '!==' true}}                                                                                               
+                                                                                                    {{#if headerImage}}
+                                                                                                        {{{truncateText title 80}}}
+                                                                                                    {{else}}
+                                                                                                        {{{truncateText title 150}}}
+                                                                                                    {{/if}}
+                                                                                                {{else}}  
+                                                                                                    {{title}}                                                                                            
+                                                                                                {{/ifCond}}                                                                                             
                                                                                             </h4>
                                                                                         </div>
                                                                                         {{#ifCond linkType '===' ""}}

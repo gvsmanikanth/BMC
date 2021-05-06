@@ -17,11 +17,16 @@
                     <div class="card-content">
                         <hr/>
                         <h4>
-                            {{#if headerImage}}
-                                {{{truncateText title 70}}}
-                            {{else}}
-                                {{{truncateText title 140}}}
-                            {{/if}}
+                            <!-- WEB-10490 Added css lineclamp proerty for default browser and truncatetext method for IE11  -->
+                            {{#ifCond checkLineClampSupport '!==' true}}                                                                                               
+                                {{#if headerImage}}
+                                    {{{truncateText title 75}}}
+                                {{else}}
+                                    {{{truncateText title 140}}}
+                                {{/if}}
+                            {{else}}  
+                                {{title}}                                                                                            
+                            {{/ifCond}}  
                         </h4>
                     </div>
                     {{#ifCond linkType '===' ""}}
