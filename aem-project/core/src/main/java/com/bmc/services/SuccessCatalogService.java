@@ -20,8 +20,6 @@ public interface SuccessCatalogService extends ConfigurableService{
 
     String getResourceResultsJSON(Map<String, String[]> parameters);
 
-    String getAllFilterValue(String contentType);
-
     String generateCTA(String contentType);
 
     List<BmcMetadata> getMetadata(Resource resource);

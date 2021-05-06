@@ -19,7 +19,7 @@ public class BmcContent {
     private String footerLogo;
     private String videoLength;
     private String serviceCredits;
-
+    private String description;
     private String ctaText;
 
     public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified,
@@ -43,13 +43,14 @@ public class BmcContent {
 
     }
 
-    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified,
+    public BmcContent(long index, String path, String excerpt, String title, String description, String created, String lastModified,
                       String assetLink, List<BmcMetadata> metadata, String type, String linkType, String serviceCredits, String ctaText) {
 
         this.index = index;
         this.path = path;
         this.excerpt = excerpt;
         this.title = title;
+        this.description = description;
         this.created = created;
         this.lastModified = lastModified;
         this.assetLink = assetLink;
@@ -167,5 +168,9 @@ public class BmcContent {
     public String getServiceCredits() { return serviceCredits; }
 
     public void setServiceCredits(String serviceCredits) { this.serviceCredits = serviceCredits; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
 
 }

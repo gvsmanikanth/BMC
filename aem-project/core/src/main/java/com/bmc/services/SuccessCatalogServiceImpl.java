@@ -6,6 +6,7 @@ import com.bmc.consts.SuccessCatalogConsts;
 import com.bmc.models.bmccontentapi.*;
 import com.bmc.pum.PUMService;
 import com.bmc.util.JsonSerializer;
+import com.day.cq.replication.ReplicationStatus;
 import com.day.cq.replication.Replicator;
 import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
@@ -56,7 +57,6 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     private ConfigurationAdmin configAdmin;
 
     private List<String> scFiltersList;
-    private Map<String, String> allFiltersValueMapping;
     private Map<String, String> catalogTypeValueMapping;
     private Map<String, String> catalogTypeActionMapping;
     private boolean resourceCenterApiSwitch;
@@ -383,22 +383,16 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             }
             int i = 2;
             // check if any of the supported properties are present in the URL
-            //WEB-9267 Added "All" & "All PL Products" to all filter category- START
             for(String propertyName : baseImpl.getPropertyNames()) {
                 if(urlParameters.containsKey(propertyName)) {
+                    String[] filterValues = urlParameters.get(propertyName);
+                    List<String> rangeValues =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
                     if(propertyName.equalsIgnoreCase(SuccessCatalogConsts.CREDIT_RANGE)){
-                        int upperBound = 0;
-                        int lowerBound = 0;
-                        String[] filterValues = urlParameters.get(SuccessCatalogConsts.CREDIT_RANGE);
-                        List<String> rangeValues =  new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
                         buildRangePredicates(queryParamsMap,rangeValues,i++);
                     }else{
-                        String[] filterValues = urlParameters.get(propertyName);
-                        List<String> values = new ArrayList<String>(Arrays.asList(filterValues[0].split(",")));
-                        buildGroupPredicate(propertyName, values, queryParamsMap, i++);
+                        buildGroupPredicate(propertyName, rangeValues, queryParamsMap, i++);
                     }
                 }
-                //WEB-9267 Added "All" & "All PL Products" to all filter category - END
             }
         } catch (Exception e) {
             log.error("An exception had occured in addSearchFilter function with error: " + e.getMessage(), e);
@@ -497,11 +491,13 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                         Node parentNode = hit.getNode().getParent();
                         Node node = hit.getNode();
                         String path = hit.getPath().endsWith(JcrConsts.JCR_CONTENT)? parentNode.getPath() : hit.getPath();
-                        String title = hit.getNode().hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
-                        String created = hit.getNode().hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
-                        String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
-                        Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
-                        String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
+                        String title = node.hasProperty(JcrConsts.TITLE) ? hit.getNode().getProperty(JcrConsts.TITLE).getString() : parentNode.getName();
+                        String description = node.hasNode(JcrConsts.DESCRIPTION) ? node.getProperty(JcrConsts.DESCRIPTION).getString() : null;
+                        String created = node.hasProperty(JcrConsts.CREATION) ? hit.getNode().getProperty(JcrConsts.CREATION).getString() : null;
+                        String lastModified = node.hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
+                        //Commented Gated/UnGated Logic
+                        //Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
+                        //String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
                         String assetLink = path;
                         String serviceCredits = node.hasProperty(JcrConsts.SERVICE_CREDITS) ? node.getProperty(JcrConsts.SERVICE_CREDITS).getString() : "";
 
@@ -512,13 +508,15 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
                         String linkType = serviceType != null ? getServiceTypeActionValue(serviceType.getFirstValue()) : "";
                         String ctaText = type != null ? generateCTA(type) : "";
 
-                        if(gatedAsset && formPath != null){
+                        // Commented Gated/Ungated logic
+                        /*if(gatedAsset && formPath != null && isFormActive(formPath)){
                             assetLink = formPath;
-                        }
+                        }*/
+
                         if(!assetLink.startsWith("http")){
                             assetLink = resourceResolver.map(assetLink);
                         }
-                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
+                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, description, created,
                                 lastModified, assetLink, metadata, type, linkType, serviceCredits, ctaText));
 
                     } catch (Exception e) {
@@ -540,15 +538,6 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
         return JsonSerializer.serialize(getResourceResults(parameters));
     }
 
-    @Override
-    public String getAllFilterValue(String filterValue) {
-        if(filterValue.equalsIgnoreCase ("product_interest"))return ResourceCenterConstants.PRODUCT_INTEREST_ALl_VALUE;
-        else if (!allFiltersValueMapping.containsKey(filterValue)) {
-            log.debug("No mapping exists for content type {}", filterValue);
-            return "";
-        }
-        return allFiltersValueMapping.get(filterValue);
-    }
 
     @Override
     public String generateCTA(String type) {
@@ -618,7 +607,31 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     }
 
     @Override
-    public boolean isFormActive(String path) {
-        return false;
+    public boolean isFormActive(String gatedAssetFormPath) {
+        Boolean isActive = false;
+        Set<String> runmodes = slingSettingsService.getRunModes();
+        try {
+            if (gatedAssetFormPath != null) {
+                if(runmodes.contains("author")) {
+
+                    ReplicationStatus status = replicator.getReplicationStatus(session, gatedAssetFormPath);
+                    if (status.isActivated()) {
+                        isActive = true;
+                    } else {
+                        log.info("BMCINFO : Form is not active on author : " + gatedAssetFormPath);
+                    }
+                }else{
+                    Node formNode = session.getNode(gatedAssetFormPath);
+                    if(formNode != null && formNode.hasProperty(JcrConsts.JCR_CREATION)){
+                        isActive = true;
+                    }else{
+                        log.info("BMCINFO : Form is not present on publisher : " + gatedAssetFormPath);
+                    }
+                }
+            }
+        }catch(Exception e){
+            log.error("BMCERROR : Form node not available for path "+ gatedAssetFormPath +": "+e);
+        }
+        return isActive;
     }
 }
