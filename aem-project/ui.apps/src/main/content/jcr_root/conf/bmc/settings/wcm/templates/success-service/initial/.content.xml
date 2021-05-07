@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2021-04-15T12:31:27.119+05:30"
+        cq:lastModified="{Date}2021-05-07T15:26:12.406+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2021-04-21T20:41:49.793+05:30"
         cq:lastReplicatedBy="admin"
@@ -42,7 +42,7 @@
                         cq:lastReplicationAction="Activate"
                         jcr:created="{Date}2021-04-08T18:49:43.861Z"
                         jcr:createdBy="kallen@bmc.com"
-                        jcr:lastModified="{Date}2021-04-15T12:31:27.115+05:30"
+                        jcr:lastModified="{Date}2021-05-05T19:48:32.056+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:mixinTypes="[cq:ReplicationStatus]"
                         jcr:primaryType="nt:unstructured"
@@ -50,37 +50,40 @@
                         hideCurrent="false"
                         showHidden="false"
                         startLevel="5"/>
-                    <header_form
-                        jcr:created="{Date}2021-03-23T09:39:29.121Z"
-                        jcr:createdBy="mannalda"
-                        jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                        jcr:lastModifiedBy="mannalda"
+                    <header_simple
+                        jcr:created="{Date}2021-05-05T19:45:53.323+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/content/header-form"
-                        headerText="Helix Business Workflows Starter Service&#xd;&#xa;&lt;h3>25 CREDITS&lt;/h3>">
+                        sling:resourceType="bmc/components/content/header-simple"
+                        headerText="Service Name "
+                        subHeading="00 CREDITS">
                         <bg
-                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                            jcr:lastModifiedBy="mannalda"
+                            jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             fileReference="/content/dam/bmc/web-services/Placeholder-1900x700png.png"/>
                         <img
-                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                            jcr:lastModifiedBy="mannalda"
+                            jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"/>
-                    </header_form>
+                    </header_simple>
                     <ctabar
                         jcr:created="{Date}2021-04-08T18:40:36.066Z"
                         jcr:createdBy="aviner@bmc.com"
-                        jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
-                        jcr:lastModifiedBy="aviner@bmc.com"
+                        jcr:lastModified="{Date}2021-05-05T19:51:09.739+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/CTAbar"
                         addClass="false"
                         bgcolor="bg-seashell">
                         <text
+                            jcr:lastModified="{Date}2021-05-05T19:49:59.113+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/text"
-                            text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                            text="&lt;p>Service highlights.&lt;/p>&#xa;"
                             textIsRich="true"/>
                     </ctabar>
                     <_50_50contentcontain
@@ -96,12 +99,24 @@
                             <key_features
                                 jcr:created="{Date}2017-07-23T13:03:05.320-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-23T13:03:05.320-07:00"
+                                jcr:lastModified="{Date}2021-05-05T20:09:35.449+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="Key features Subheading"
-                                headerTitle="Key features Heading"/>
+                                headerSubTitle="BMC will perform the following:"
+                                headerTitle="What you get:">
+                                <keyFeatureSet jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                </keyFeatureSet>
+                            </key_features>
                         </left>
                         <right
                             jcr:primaryType="nt:unstructured"
@@ -109,27 +124,43 @@
                             <key_features
                                 jcr:created="{Date}2017-07-23T13:03:05.320-07:00"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-23T13:03:05.320-07:00"
+                                jcr:lastModified="{Date}2021-05-07T15:26:00.743+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="Key features Subheading"
-                                headerTitle="Key features Heading"/>
+                                headerSubTitle="BMC will perform the following:"
+                                headerTitle="What you get:">
+                                <keyFeatureSet jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        featureBullet="lorem ipsum"/>
+                                </keyFeatureSet>
+                            </key_features>
                         </right>
                     </_50_50contentcontain>
                     <Copy_x0020_of_x0020_ctabar
                         jcr:created="{Date}2021-04-08T18:40:36.066Z"
                         jcr:createdBy="aviner@bmc.com"
-                        jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
-                        jcr:lastModifiedBy="aviner@bmc.com"
+                        jcr:lastModified="{Date}2021-05-07T15:21:23.671+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/CTAbar"
                         addClass="false"
-                        bgcolor="bg-seashell">
+                        bgcolor="bg-corduroy"
+                        primaryCTAtext="Contact Customer Concierge"
+                        primaryCTAURL="/content/bmc/language-masters/en/forms/success-concierge">
                         <text
+                            jcr:lastModified="{Date}2021-05-05T20:01:48.491+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/text"
-                            text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                            text="&lt;p>Service Highlights..&lt;/p>&#xa;"
                             textIsRich="true"/>
                     </Copy_x0020_of_x0020_ctabar>
                 </maincontentcontainer>
