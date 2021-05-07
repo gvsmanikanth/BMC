@@ -628,7 +628,7 @@
                                                                                 <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
                                                                                     <div class="simple-card bg-white {{#if headerImage}} card-with-header{{/if}}">
                                                                                         <!-- WEB-6793 Added new fields for RC Cards START -->
-                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
+                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:87px;{{/if}}">
                                                                                             <h4>{{type}}</h4>
                                                                                             {{#if headerImage}}
                                                                                                 <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
