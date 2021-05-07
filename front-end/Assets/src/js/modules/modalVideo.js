@@ -44,9 +44,10 @@
 					afterClose : function(){						
 						function removeURLParameter(url, parameter) {
 							var urlparts = url.split('#'); 
-							if(urlparts == url)
-								return '';  
-							else if (urlparts.length >= 2) {
+							/*if(urlparts == url)
+								return url;  
+							else */
+							if (urlparts.length >= 2) {
 						
 								var prefix = encodeURIComponent(parameter) + '=';
 								var pars = urlparts[1].split(/[&;]/g);
@@ -66,9 +67,9 @@
 						}
 						let finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
 						
-						//Changing the url in the addressbar
-						history.pushState("", document.title, window.location.pathname + finalHash);
-						
+						if(finalHash != window.location.href){
+							history.replaceState("", document.title, window.location.pathname + finalHash);	
+						}						
 					}
 			    });
 
