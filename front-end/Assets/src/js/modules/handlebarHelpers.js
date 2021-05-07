@@ -39,8 +39,12 @@ HandlebarHelpers = {
             var contentPath = new RegExp('\/content\/bmc\/'); 
             return ((extValid.test(url) || contentPath.test(url)) ? '_self' :'_blank' );                               
         });
-        Handlebars.registerHelper("checkLineClampSupport", function() {    
-           return Modernizr.csslineclamp;                                     
+        Handlebars.registerHelper("checkLineClampSupport", function(title, chars) {   
+            if(Modernizr.csslineclamp){
+                return title;
+            }else{
+                return HandlebarHelpers.truncateText(title, chars);
+            }                                        
         });
     },
 

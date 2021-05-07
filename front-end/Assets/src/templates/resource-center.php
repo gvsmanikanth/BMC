@@ -626,7 +626,7 @@
                                                                             {{#each items}}
                                                                             <div class="rc-card-col">
                                                                                 <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
-                                                                                    <div class="simple-card bg-white">
+                                                                                    <div class="simple-card bg-white {{#if headerImage}} card-with-header{{/if}}">
                                                                                         <!-- WEB-6793 Added new fields for RC Cards START -->
                                                                                         <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
                                                                                             <h4>{{type}}</h4>
@@ -639,16 +639,12 @@
                                                                                         </div>
                                                                                         <div class="card-content">
                                                                                             <hr/>
-                                                                                            <h4>
-                                                                                                {{#ifCond checkLineClampSupport '!==' true}}                                                                                               
-                                                                                                    {{#if headerImage}}
-                                                                                                        {{{truncateText title 80}}}
-                                                                                                    {{else}}
-                                                                                                        {{{truncateText title 150}}}
-                                                                                                    {{/if}}
-                                                                                                {{else}}  
-                                                                                                    {{title}}                                                                                            
-                                                                                                {{/ifCond}}                                                                                             
+                                                                                            <h4>                            
+                                                                                                {{#if headerImage}}
+                                                                                                    {{checkLineClampSupport title 80}} 
+                                                                                                {{else}}
+                                                                                                     {{checkLineClampSupport title 150}} 
+                                                                                                {{/if}}                                                                                                                                                                                                                                                        
                                                                                             </h4>
                                                                                         </div>
                                                                                         {{#ifCond linkType '===' ""}}

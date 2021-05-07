@@ -18,15 +18,11 @@
                         <hr/>
                         <h4>
                             <!-- WEB-10490 Added css lineclamp proerty for default browser and truncatetext method for IE11  -->
-                            {{#ifCond checkLineClampSupport '!==' true}}                                                                                               
-                                {{#if headerImage}}
-                                    {{{truncateText title 75}}}
-                                {{else}}
-                                    {{{truncateText title 140}}}
-                                {{/if}}
-                            {{else}}  
-                                {{title}}                                                                                            
-                            {{/ifCond}}  
+                            {{#if headerImage}}
+                                {{checkLineClampSupport title 80}} 
+                            {{else}}
+                                {{checkLineClampSupport title 150}} 
+                            {{/if}}   
                         </h4>
                     </div>
                     {{#ifCond linkType '===' ""}}

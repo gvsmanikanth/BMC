@@ -460,7 +460,7 @@ body.no-scroll{
           overflow: hidden;
           text-overflow: ellipsis;
           padding: 0 !important;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 6;
         }
       }
       h2 {
@@ -569,6 +569,7 @@ body.no-scroll{
         }
       }
     }
+    
   }
 
   //  simple cards
@@ -639,6 +640,18 @@ body.no-scroll{
           margin-left: 6px;          
         }
       }     
+  }
+
+  // card-with-header
+  .card-with-header{
+    @extend .card;
+    .card-content{
+      h4{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+    }
   }
 
   //  featured card
