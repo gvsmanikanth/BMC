@@ -751,12 +751,12 @@
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
                                                 fieldDescription="Ticking to display this filter on the resource page."
-                                                name="./availibility-display"
+                                                name="./availability-display"
                                                 text="Display this filter on the resource page"
                                                 value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
-                                                    cq-dialog-showhide-target=".ic-content-type-label"/>
+                                                    cq-dialog-showhide-target=".availability-label"/>
                                             </display>
                                             <filterLabel
                                                 granite:class="ic-content-type-label"
@@ -772,7 +772,7 @@
                                                         emptyText="Availibility"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        name="./availibility-label"/>
+                                                        name="./availability-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
