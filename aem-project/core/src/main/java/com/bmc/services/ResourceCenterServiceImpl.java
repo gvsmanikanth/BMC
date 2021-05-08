@@ -161,29 +161,6 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
 
     }
 
-    
-    /**
-     * Adds necessary parameters to a map to search for resource filters
-     *
-     */
-    private Map<String, String>  addFilterParamsToBuilder() {
-
-    	Map<String, String> queryParamsMap = new HashMap<String, String> ();
-
-        // path and page for resources
-    	queryParamsMap.put("path", "/content/bmc/resources");
-    	
-        queryParamsMap.put(ResourceCenterConsts.QUERY_PARAM_GROUP_OR, "true");
-        
-        // Note: we return all the filters that are specified in the resource filter property list of this service
-        // add each node name to the predicate group
-        for(int i = 1; i <= resourceFiltersList.size(); i++) {
-            queryParamsMap.put("group." + i + "_nodename", resourceFiltersList.get(i-1));
-        }
-        
-        return queryParamsMap;
-    }
-
     @Override
     public List<BmcContentFilter> getResourceFilters() {
 

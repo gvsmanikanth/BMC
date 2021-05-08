@@ -10,4 +10,7 @@ public class SuccessCatalogConsts {
 
     public static final String CREDIT_RANGE = "credits-range";
 
+    public static final String SUCCESS_CATALOG_QUERY_API_PROP_NAME = "successcatalog.switch";
+
+    public static final String SUCCESS_CATALOG_CTA = "LEARN MORE";
 }

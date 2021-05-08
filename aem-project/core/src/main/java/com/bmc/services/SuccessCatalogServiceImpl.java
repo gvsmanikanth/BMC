@@ -58,12 +58,12 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
     private List<String> scFiltersList;
     private Map<String, String> catalogTypeValueMapping;
     private Map<String, String> catalogTypeActionMapping;
-    private boolean resourceCenterApiSwitch;
+    private boolean successCatalogApiSwitch;
 
     @Property(
             description = "JCR Node Names of Success Catalog Filters",
             value = {
-                    "product-lines",
+                    "product-interests",
                     "service-type",
                     "credits-range",
                     "availability"
@@ -78,12 +78,16 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
             })
     static final String SERVICE_TYPE_MAPPING = "service.type.name.mapping";
 
+    @Property(label = "Success Catalog Query API switch", boolValue = false,
+            description = "Success Catalog Query API switch")
+    public static final String SUCCESS_CATALOG_CACHE_STATS_ENABLED = SuccessCatalogConsts.SUCCESS_CATALOG_QUERY_API_PROP_NAME;
+
     @Reference
     private ResourceService baseImpl;
 
     @Activate
     protected void activate(final Map<String, Object> props, ComponentContext context) {
-
+        this.successCatalogApiSwitch = org.apache.jackrabbit.oak.commons.PropertiesUtil.toBoolean(context.getProperties().get(SUCCESS_CATALOG_CACHE_STATS_ENABLED), false);
         scFiltersList = Arrays.asList( (String[]) props.get(SC_FILTERS_LIST));
         this.catalogTypeValueMapping = toMap((String[]) props.get(SERVICE_TYPE_MAPPING));
         this.catalogTypeActionMapping = toMap((String[]) props.get(SERVICE_TYPE_MAPPING), 0, 2);
@@ -205,8 +209,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
 
     @Override
     public String generateCTA(String type) {
-        String ctaText = "LEARN MORE";
-        return ctaText;
+        return SuccessCatalogConsts.SUCCESS_CATALOG_CTA;
     }
 
     @Override
@@ -267,7 +270,7 @@ public class SuccessCatalogServiceImpl implements  SuccessCatalogService{
 
     @Override
     public boolean isApiOn() {
-        return true;
+        return successCatalogApiSwitch;
     }
 
     @Override
