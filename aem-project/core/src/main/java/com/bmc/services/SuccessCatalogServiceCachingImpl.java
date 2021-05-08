@@ -185,7 +185,7 @@ public class SuccessCatalogServiceCachingImpl implements SuccessCatalogService {
 
 
     public String generateCTA(String contentType) {
-        return baseImpl.generateCTA (contentType);
+        return baseImpl.generateCTA(contentType);
     }
 
 }

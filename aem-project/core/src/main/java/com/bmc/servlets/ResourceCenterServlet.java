@@ -1,7 +1,6 @@
 package com.bmc.servlets;
 
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
-import com.bmc.pum.PUMService;
 import com.bmc.services.ResourceCenterService;
 import com.bmc.services.SuccessCatalogService;
 import org.apache.felix.scr.annotations.Reference;
@@ -29,7 +28,7 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
     @Reference(target = "(" + ResourceCenterService.SERVICE_TYPE + "=caching)")
     private ResourceCenterService resourceCenterService;
 
-    @Reference
+    @Reference(target = "(" + SuccessCatalogService.SERVICE_TYPE + "=caching)")
     private SuccessCatalogService successCatalogService;
 
     @Override
@@ -105,5 +104,4 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         response.sendError(404);
 
     }
-
 }
