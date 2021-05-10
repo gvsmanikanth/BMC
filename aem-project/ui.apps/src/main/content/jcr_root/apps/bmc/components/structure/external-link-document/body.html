@@ -58,7 +58,8 @@
                                 	<sly data-sly-test=${properties.fragmentPath} data-sly-resource="${@path=properties.fragmentPath, selectors='content', wcmmode='disabled'}"></sly>
                                 </div>
 
-								<div class="flex-item col col-12">                                	
+								<!--/* WEB - 10035 Start */-->
+								<div class="flex-item col col-12">
                                         <div data-sly-test="${isdocumentPDF}" class="docContainerWrap" id="pdfReader" style="height: 530px; border: 1px solid black; width: 100%;">
                                             <embed src="${documentLink}" type="application/pdf" style="width: 100%; height:100%;"/>
                                         </div>                                   
@@ -67,6 +68,7 @@
             							</div>
 								</div>
 							</div>
+							   <!--/* WEB - 10035 End */-->
 			
 			<script>
                  function getAvailableHeight() {
@@ -78,8 +80,9 @@
                  }
                  
                  var windowHeight = getAvailableHeight();
+                 <!--/* WEB - 10035 Start */-->
                  document.getElementsById("pdfReader").style.height = (windowHeight - 80) + "px";
-
+                 <!--/* WEB - 10035 End */-->
       		</script>    
 		 </div>
 		</div>
