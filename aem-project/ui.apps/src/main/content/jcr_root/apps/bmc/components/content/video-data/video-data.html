@@ -9,8 +9,9 @@
     <li><strong>Title:</strong> ${video.title @ context = 'html'}</li>
     <li><strong>Description:</strong> ${video.description @ context = 'html'}</li>
     <li><strong>Length:</strong> ${video.videoLength @ context = 'html'}</li>
+<!-- WEB-10377 Removing OverlayText and overlayURL feature
 <sly data-sly-test="${video.isYouTube}">
     <li class ="${className}"><strong>Overlay Text:</strong> ${video.overlayText @ context = 'html'}</li>
     <li><strong>Overlay URL:</strong> ${video.overlayUrl}</li>
-</sly>
+</sly>-->
 </ul>
