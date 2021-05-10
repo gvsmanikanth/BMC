@@ -9,13 +9,10 @@
     <sly data-sly-include="/apps/bmc/components/structure/page/customheaderlibs.html" />
 </head>
 <body class="video-modal">
-<sly data-sly-test="${video.isValid}" data-sly-use.resolved="${'resolve-data.js' @ video=video }">
+<sly data-sly-test="${video.isValid}">
     <div data-sly-test="${video.isYouTube}" class="bg-transparent center-block">
         <div id="youtube_${video.videoId}" class="youtube-video inline-youtube-video-player">
             <div id="${video.videoId}" class="youtubePlayer" data-src="${video.videoId}" data-autoplay=1 data-fullscreen=1></div>
-            <p id="youtubeOverlay_${video.videoId}" class="youtubeOverlay">
-                ${resolved.overlayText @ context='html'}
-            </p>
         </div>
     </div>
     <video data-sly-test="${video.isDam}" autoplay controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">
