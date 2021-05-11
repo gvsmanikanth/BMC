@@ -42,30 +42,8 @@
 					},
 					// Added for WEB-9481
 					afterClose : function(){						
-						function removeURLParameter(url, parameter) {
-							var urlparts = url.split('#'); 
-							/*if(urlparts == url)
-								return url;  
-							else */
-							if (urlparts.length >= 2) {
 						
-								var prefix = encodeURIComponent(parameter) + '=';
-								var pars = urlparts[1].split(/[&;]/g);
-						
-								//reverse iteration
-								for (var i = pars.length; i-- > 0;) {    
-									//idiom for string.startsWith
-									if (pars[i].lastIndexOf(prefix, 0) !== -1) {  
-										pars.splice(i, 1);
-									}
-								}
-						
-								return (pars.length > 0 ? '#' + pars.join('&') : '');
-							}					
-	
-							return url;
-						}
-						let finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
+						var finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
 						
 						if(finalHash != window.location.href){
 							history.replaceState("", document.title, window.location.pathname + finalHash);	
@@ -97,8 +75,18 @@
 
 		$('.modal-youtube-video-player').on('click', function(e) {
 				var hashValue = this.href.split("?");
-				if (hashValue[1])
-					window.location.hash = hashValue[1]+"&vType=yt";
+				
+				if (hashValue[1]){
+					//Remove vid and vtype from hash
+					var finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
+						
+					if(finalHash != window.location.href){
+						history.replaceState("", document.title, window.location.pathname + finalHash +'&'+hashValue[1]+"&vType=yt");	
+					}	
+					else
+						window.location.hash = hashValue[1]+"&vType=yt";
+				}
+					
 		});
 		
 	});
