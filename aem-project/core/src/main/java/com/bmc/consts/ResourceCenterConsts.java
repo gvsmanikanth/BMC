@@ -44,12 +44,13 @@ public class ResourceCenterConsts {
     /* matching mode */
     public static final String QUERY_PARAM_PROP_OPERATION = "property.operation";
     public static final String QUERY_PARAM_PROP_OPERATION_LIKE = "like";
+    public static final String QUERY_PARAM_PROP_OPERATION_EXISTS = "exists";
+
 
     /* pagination */
     public static final String QUERY_PARAM_PAGE_IDX = "p.offset";
     public static final String QUERY_PARAM_RESULT_PER_PAGE = "p.limit";
 
-    public static final String IC_APP_INCLUSION = "ic-app-inclusion";
     public static final String RC_INCLUSION = "rc-inclusion";
     public static final String IC_CONTENT_TYPE = "ic-content-type";
     

@@ -27,6 +27,18 @@ HandlebarHelpers = {
         Handlebars.registerHelper('truncateText', function (text, chars) {
             return HandlebarHelpers.truncateText(text, chars);
         });
+        Handlebars.registerHelper('isVideoModal', function(assetLink) {     
+            if(assetLink.indexOf('?vID=') >= 0){
+                return 'rc-card-modal-youtube-video-player';
+            }else{
+                return '';
+            }                                          
+        });
+        Handlebars.registerHelper("addTarget", function(url) {                   
+            var extValid = new RegExp('/'+window.location.host+'/');
+            var contentPath = new RegExp('\/content\/bmc\/'); 
+            return ((extValid.test(url) || contentPath.test(url)) ? '_self' :'_blank' );                               
+         });
     },
 
     truncateText: function (pText, pChars) {

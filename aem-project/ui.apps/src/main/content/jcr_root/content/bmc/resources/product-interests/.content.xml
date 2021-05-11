@@ -50,12 +50,12 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Business Workflows"
             dropDownDisplay="No"/>
-    <_x0032_44922076
+    <!--DELETE PRODUCT WEB-6680 <_x0032_44922076
             jcr:primaryType="nt:unstructured"
             jcr:title="Cloud Lifecycle Management"
             dropDownDisplay="Yes"
             text="Cloud Lifecycle Management"
-            value="Cloud Lifecycle Management"/>
+            value="Cloud Lifecycle Management"/>-->
     <_x0039_81173424
             jcr:primaryType="nt:unstructured"
             jcr:title="CMDB"
@@ -93,17 +93,19 @@
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Application Integrator"
             dropDownDisplay="No"/><!-- WEB-5296 -->
+    <!-- WEB-6680 Renaming Control-M Automation API to  Control-M and DevOps-->
     <_x0035_66639210
             jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M Automation API"
+            jcr:title="Control-M and DevOps"
             dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0036_37969887
             jcr:primaryType="nt:unstructured"
             jcr:title="Control-M Batch Impact Manager"
             dropDownDisplay="No"/><!-- WEB-5296 -->
+    <!-- WEB-6680 Changed name Control-M for Hadoop to Control-M for Bigdata  -->
     <_x0034_14177221
             jcr:primaryType="nt:unstructured"
-            jcr:title="Control-M for Hadoop"
+            jcr:title="Control-M for Big Data"
             dropDownDisplay="No"/><!-- WEB-5296 -->
     <_x0032_65389868
             jcr:primaryType="nt:unstructured"
@@ -158,10 +160,11 @@
     <!-- WEB-9675 SAFE DELETE <_x0034_08630474
             jcr:primaryType="nt:unstructured"
             jcr:title="FootPrints Service Core"
-            dropDownDisplay="No"/> -->
+            dropDownDisplay="No"/>-->
+    <!-- WEB-6680 Renaming Product interest Helix to BMC Helix -->
     <_x0038_46325100
             jcr:primaryType="nt:unstructured"
-            jcr:title="Helix"
+            jcr:title="BMC Helix"
             dropDownDisplay="No"
     />
     <!-- WEB-5296 -->
@@ -178,6 +181,14 @@
             dropDownDisplay="Yes"
             text="BMC Helix Capacity Optimization"
             value="Helix Capacity Optimization"/>
+    <!--  WEB-9881 Starts -->
+    <_x0032_00918044
+            jcr:primaryType="nt:unstructured"
+            jcr:title="Helix Chatbot"
+            dropDownDisplay="Yes"
+            text="BMC Helix Chatbot"
+            value="Helix Chatbot"/>
+    <!--  WEB-9881 Ends -->
     <_x0034_99579858
             jcr:primaryType="nt:unstructured"
             jcr:title="Helix Client Management"

@@ -97,6 +97,28 @@ public class FormsReportDataItem {
 	private String Shared_Contact_List_ID;
 	
 	private String Program_Step_ID;
+	//WEB-9765 Resource center inclusion fields.
+	private String rc_inclusion;
+
+	private String asset_inclusion;
+
+	private String rc_form_path;
+
+	private String ic_weighting;
+
+
+	public String getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public String getRc_form_path () { return rc_form_path; }
+	public void setRc_form_path (String rc_form_path) { this.rc_form_path = rc_form_path; }
+	public String getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
+	public String getIc_weighting() {
+		return ic_weighting;
+	}
+	public void setIc_weighting(String ic_weighting) {
+		this.ic_weighting = ic_weighting;
+	}
 	
 	public String getEmail_Subject__Line() {
 		return Email_Subject__Line;

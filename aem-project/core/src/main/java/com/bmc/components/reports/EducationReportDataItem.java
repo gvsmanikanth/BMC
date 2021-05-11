@@ -21,13 +21,23 @@ public class EducationReportDataItem {
 	private String education_specific_types;
 	private String education_version_numbers;
 	private String education_specific_roles;
-	private String ic_app_inclusion;
 	private String ic_weighting;
 	private String course_Delivery;
 	private String jcr_path;
 	private String course_Type;
 	private String course_Duration;
 	private String last_modified_by;
+
+	//WEB-9765 Resource center inclusion fields.
+	private String rc_inclusion;
+	private String asset_inclusion;
+	private String rc_form_path;
+	public String getAsset_inclusion () { return asset_inclusion; }
+	public void setAsset_inclusion (String asset_inclusion) { this.asset_inclusion = asset_inclusion; }
+	public String getRc_form_path () { return rc_form_path; }
+	public void setRc_form_path (String rc_form_path) { this.rc_form_path = rc_form_path; }
+	public String getRc_inclusion () { return rc_inclusion; }
+	public void setRc_inclusion (String rc_inclusion) { this.rc_inclusion = rc_inclusion; }
 	public String getLast_modified_by() {
 		return last_modified_by;
 	}
@@ -75,14 +85,7 @@ public class EducationReportDataItem {
 	public void setCourse_Duration(String course_Duration) {
 		this.course_Duration = course_Duration;
 	}
-	
-	
-	public String getIc_app_inclusion() {
-		return ic_app_inclusion;
-	}
-	public void setIc_app_inclusion(String ic_app_inclusion) {
-		this.ic_app_inclusion = ic_app_inclusion;
-	}
+
 	public String getIc_weighting() {
 		return ic_weighting;
 	}

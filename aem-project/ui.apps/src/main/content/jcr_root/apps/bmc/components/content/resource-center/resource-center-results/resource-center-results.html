@@ -15,6 +15,9 @@
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-gartner-blue' ? '#006699' : fcBgColor}"/>
 <sly data-sly-test.fcBgColor="${!fcBgColor && properties.bgColor == 'bg-forrester-green' ? '#16563F' : fcBgColor}"/>
 
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Trial' ? 'view' : featuredCard.linkType}"/>
+<sly data-sly-test.footerIcon="${featuredCard.type == 'Webinar' ? 'view' : footerIcon}"/>
+
 <style>
   .featured-card-container:hover .featured-card-left-panel{
     background-color: ${fcBgColor @ context='styleString'};
@@ -40,9 +43,9 @@
                 </div>
             </div>
         </div>
-        <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding-right: 20px;">
-            <div class="rc-featured-card-col">
-                <a class="${featuredCard.linkType == 'play' ? 'rc-card-modal-youtube-video-player' : ''}" href="${featuredCard.assetLink}" target="_blank" data-sly-attribute="${helper.analiticData}">
+      <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding: 0px;">
+            <div class="rc-featured-card-col"  id="rc-featured-card">
+                <a id="rc-featured-card-link" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
                     <div class="featured-card-container">
                         <div class="featured-card featured-card-left-panel bg-white card-desktop" style="height: 310px;">
@@ -54,7 +57,7 @@
                                 <h2 data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=95}">
                                     ${truncateText.finalText}</h2>
                             </div>
-                            <div class="featured-card-footer" style="padding-right: 0px;">
+                            <div class="featured-card-footer">
                                 <span class="card-footer-action" style="font-size: large;color: white;">
                                     <div data-sly-unwrap>Action</div>
                                 </span>
@@ -65,15 +68,16 @@
                                 <div class="card-icon ic_${featuredCard.linkType}-white"></div>
                             </div>
                             <div class="card-content" style="background: url(${fbImg @ context='uri'}) no-repeat center center / cover;background-size: contain;min-height: 50%;"></div>
-                            <div class="featured-card-footer" style="padding-left: 0px;">
+                            <div class="featured-card-footer" >
+                                <!--/* WEB-10350 changed Svg position  - STARt */-->
                                 <span class="card-footer-action" style="border-top-color:white;">
-                                    <svg class="align-middle s-${featuredCard.linkType}-white">
+                                     ${featuredCard.ctaText @ i18n}
+                                     <svg class="align-middle s-${footerIcon}-white">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
-                                    </svg>
-                                    ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                    ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                    ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                    </svg>   
                                 </span>
+                                
+                                <!--/*WEB-10350 changed Svg position  - END */-->
                             </div>
                         </div>
                     </div>
@@ -88,14 +92,14 @@
                             <h4 class="text-white" data-sly-use.truncateText="${'/apps/bmc/components/content/resource-center/resource-center-results/truncateText.js' @ text=featuredCard.title, chars=95}">
                                 ${truncateText.finalText}</h4>
                         </div>
-                        <div class="featured-card-footer" style="padding-left: 0px;">
+                        <div class="featured-card-footer" >
                             <span class="card-footer-action" style="border-top-color:white;">
-                                <svg class="align-middle s-${featuredCard.linkType}-white">
+                                 <!--/* WEB-10350 changed Svg position  - STARt */-->                    
+                                ${featuredCard.ctaText @ i18n}
+                                <svg class="align-middle s-${footerIcon}-white">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
-                                </svg>
-                                ${featuredCard.linkType == 'play' ? 'Play' : '' @ i18n}
-                                ${featuredCard.linkType == 'download' ? 'Download' : '' @ i18n}
-                                ${featuredCard.linkType == 'view' ? 'View' : '' @ i18n}
+                                </svg> 
+                               <!--/* WEB-10350 changed Svg position  - END */-->
                             </span>
                         </div>
                     </div>

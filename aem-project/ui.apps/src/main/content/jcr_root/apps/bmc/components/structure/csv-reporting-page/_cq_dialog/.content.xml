@@ -12,6 +12,10 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
                         path="/mnt/override/apps/bmc/components/structure/csv-reporting-page/tabs/basic"/>
+                    <advanced
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="/mnt/override/apps/bmc/components/structure/csv-reporting-page/tabs/advanced"/>
                 </items>
             </tabs>
         </items>

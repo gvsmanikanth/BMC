@@ -94,9 +94,9 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
             "ic-type-828555634, Event, view",
             "ic-type-343858909, Infographic, view",
             "ic-type-654968417, Interactive Tool, view",
-            "ic-type-920200003, Trial, view",
-            "ic-type-185980791, Videos, play",
-            "ic-type-291550317, Webinar, view",
+            "ic-type-920200003, Trial, trial",
+            "ic-type-185980791, Video, play",
+            "ic-type-291550317, Webinar, play",
             "ic-type-546577064, White Paper, view",
             "ic-type-188743546, UnCategorized, view",
             "ic-type-958935588, Tech Note, view",
@@ -265,8 +265,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
      * */
 
     private void buildGroupPredicate(String propertyName, List<String> values, Map<String, String> queryParamsMap, int groupIndex) {
-    	queryParamsMap.put(groupIndex + "_group.p.or", "true");
-    	
+    	if(propertyName.equalsIgnoreCase(ResourceCenterConsts.RC_INCLUSION))
+        {
+            queryParamsMap.put(groupIndex + "_group.p.and", "true");
+        }else{
+            queryParamsMap.put(groupIndex + "_group.p.or", "true");
+        }
     	int i = 1;
 		for(String value : values) {
 			// Example: 1_group.1_property=jcr:content/ic-content-type
@@ -303,8 +307,12 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     private int addSearchFilter(Map<String, String[]> urlParameters, Map<String, String> queryParamsMap, int predicateIndex) {
         try {
         	// Build predicate for rc-inclusion
-        	 String[] allowedInclusionValues = {"true"};
+            String[] allowedInclusionValues = {"true"};
             buildGroupPredicate(ResourceCenterConsts.RC_INCLUSION, Arrays.asList(allowedInclusionValues), queryParamsMap, 1);
+            //remove empty ic-content-types from result set
+            if(urlParameters.get(ResourceCenterConsts.IC_CONTENT_TYPE) == null){
+                buildContentTypePredicates(queryParamsMap,predicateIndex);
+            }
             int i = 2;
             // check if any of the supported properties are present in the URL
             //WEB-9267 Added "All" & "All PL Products" to all filter category- START
@@ -423,6 +431,19 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
     }
 
     /**
+     * @param queryParamsMap
+     * @param groupIndex
+     * @return
+     */
+    private void buildContentTypePredicates(Map<String, String> queryParamsMap, int groupIndex) {
+        int i = 2;
+        // Example: 1_group.1_property=jcr:content/ic-content-type
+        queryParamsMap.put(groupIndex + "_group." + i + "_property", "jcr:content/" + ResourceCenterConsts.IC_CONTENT_TYPE);
+        // Exampe: 1_group.1_property.value=ic-type-196363946
+        queryParamsMap.put(groupIndex + "_group." + i + "_property.operation", ResourceCenterConsts.QUERY_PARAM_PROP_OPERATION_EXISTS);
+    }
+
+    /**
      * Adds necessary parameters to a map to search for resources.
      *
      * Possible Parameters - rootPath,
@@ -511,14 +532,10 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         String lastModified = hit.getNode().hasProperty(JcrConsts.MODIFIED) ? hit.getNode().getProperty(JcrConsts.MODIFIED).getString() : null;
                         Boolean gatedAsset = node.hasProperty(JcrConsts.GATED_ASSET) ? node.getProperty(JcrConsts.GATED_ASSET).getBoolean() : false;
                         String formPath = node.hasProperty(JcrConsts.GATED_ASSET_FORM_PATH) ? node.getProperty(JcrConsts.GATED_ASSET_FORM_PATH).getString() : null;
-                        String assetLink = "";
-                        if(gatedAsset && formPath != null && isFormActive(formPath)){
-                            assetLink = formPath;
-                        }else {
-                            assetLink = path;
-                        }
-
-                        assetLink = resourceResolver.map(assetLink);
+                        String assetLink = path;
+                        String videoLength = node.hasProperty(JcrConsts.VIDEO_LENGTH) ? node.getProperty(JcrConsts.VIDEO_LENGTH).getString() : "";;
+                        String headerImage = node.hasProperty(JcrConsts.HEADER_IMAGE) ? node.getProperty(JcrConsts.HEADER_IMAGE).getString() : "";
+                        String footerLogo = node.hasProperty(JcrConsts.FOOTER_LOGO) ? node.getProperty(JcrConsts.FOOTER_LOGO).getString() : "";
 
                         String thumbnail = hit.getNode().hasProperty(JcrConsts.THUMBNAIL) ? hit.getNode().getProperty(JcrConsts.THUMBNAIL).getString() : null;
                         
@@ -527,15 +544,24 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
                         BmcMetadata contentType = getContentTypeMeta(metadata);
                         String type = contentType != null ? getContentTypeDisplayValue(contentType.getFirstValue()) : "";
                         String linkType = contentType != null ? getContentTypeActionValue(contentType.getFirstValue()) : "";
-                        
+                        String ctaText = type != null ? generateCTA(type) : "";
+                        String template = node.hasProperty(JcrConsts.TEMPLATE) ? node.getProperty(JcrConsts.TEMPLATE).getString() : "";
                         // set video ID
-                        
-                        if(linkType.equals("play")) {
-                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : "";
+                        if(type.equalsIgnoreCase("Video")) {
+                        	assetLink = hit.getNode().hasProperty(JcrConsts.VIDEO_ID_PATH) ? JcrConsts.VIDEO_PAGE_PATH + hit.getNode().getProperty(JcrConsts.VIDEO_ID_PATH).getString() : assetLink;
                         }
-                        
-                        resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
-                                lastModified, assetLink, thumbnail, type, linkType, metadata));
+                        if(type.equalsIgnoreCase("Webinar")){
+                            assetLink = hit.getNode().hasProperty(JcrConsts.EXTERNAL_LINK) ? hit.getNode().getProperty(JcrConsts.EXTERNAL_LINK).getString() : assetLink;
+                        }
+                        if(gatedAsset && formPath != null && isFormActive(formPath)){
+                            assetLink = formPath;
+                        }
+                        if(!assetLink.startsWith("http")){
+                            assetLink = resourceResolver.map(assetLink);
+                        }
+                            resourceContentList.add(new BmcContent(hit.getIndex(), path, hit.getExcerpt(), title, created,
+                                    lastModified, assetLink, thumbnail, metadata, type, linkType, headerImage, footerLogo, videoLength, ctaText));
+
                     } catch (Exception e) {
                         log.error("An exception has occured while adding hit to response with resource: " + hit.getPath()
                                 + " with error: " + e.getMessage(), e);
@@ -550,8 +576,25 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return contentResult;
     }
 
+    @Override
+    public String generateCTA(String type) {
+        String ctaText = "";
+        if(type.equalsIgnoreCase("Demo")){
+            ctaText = "Start";
+        }else if(type.equalsIgnoreCase("Webinar")) {
+            ctaText = "Register";
+        }else if(type.equalsIgnoreCase("Trial")){
+            ctaText = "Try now";
+        }else if (type.equalsIgnoreCase("Video")){
+            ctaText = "Play";
+        }else{
+            ctaText = "View";
+        }
+        return ctaText;
+    }
 
-    private boolean isFormActive(String gatedAssetFormPath) {
+    @Override
+    public boolean isFormActive(String gatedAssetFormPath) {
         Boolean isActive = false;
         Set<String> runmodes = slingSettingsService.getRunModes();
         try {
@@ -579,30 +622,36 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         return isActive;
     }
 
-    private List<BmcMetadata> getMetadata(Resource resource) throws Exception {
+    @Override
+    public List<BmcMetadata> getMetadata(Resource resource) {
         List<BmcMetadata> metadata = new ArrayList<>();
-        Node node = resource.adaptTo(Node.class);
-        for (String property : baseImpl.getPropertyNames()) {
-            if(node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
-                javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
-                if (prop.isMultiple()) {
-                    String displayValues = "";
-                    for (int i = 0; i < prop.getValues().length; i++) {
-                        displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
-                                        resource.getResourceResolver());
+        try {
+            Node node = resource.adaptTo(Node.class);
+            for (String property : baseImpl.getPropertyNames()) {
+                if (node.hasProperty(JcrConsts.JCR_CONTENT + "/" + property)) {
+                    javax.jcr.Property prop = node.getProperty(JcrConsts.JCR_CONTENT + "/" + property);
+                    if (prop.isMultiple()) {
+                        String displayValues = "";
+                        for (int i = 0; i < prop.getValues().length; i++) {
+                            displayValues += (i == 0 ? "" : "|") + baseImpl.getTitle(property, prop.getValues()[i].toString(),
+                                    resource.getResourceResolver());
+                        }
+                        metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
+                    } else {
+                        String propValue = prop.getValue().getString();
+                        metadata.add(new BmcMetadata(property, propValue,
+                                baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
                     }
-                    metadata.add(new BmcMetadata(property, StringUtils.join(prop.getValues(), '|'), displayValues));
-                } else {
-                    String propValue = prop.getValue().getString();
-                    metadata.add(new BmcMetadata(property, propValue,
-                            baseImpl.getTitle(property, propValue, resource.getResourceResolver())));
                 }
             }
+        }catch (Exception e){
+            log.error("BMCERROR : Exception Occurred while trying to get metadata values " +e);
         }
         return metadata;
     }
 
-    private BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
+    @Override
+    public BmcMetadata getContentTypeMeta(List<BmcMetadata> metadata) {
         for (BmcMetadata bmcMetadata : metadata) {
             if (ResourceCenterConsts.IC_CONTENT_TYPE.equals(bmcMetadata.getId())) {
                 return bmcMetadata;
@@ -659,4 +708,5 @@ public class ResourceCenterServiceImpl implements ConfigurableService, ResourceC
         }
         return allFiltersValueMapping.get(filterValue);
     }
+
 }

@@ -2,48 +2,74 @@
     <div class="rc-card-row">
         {{#each items}}
         <div class="rc-card-col">
-            {{#ifCond linkType '===' "play"}}
-                <a class="rc-card-modal-youtube-video-player" href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
-            {{else}}
-                <a href="{{assetLink}}" target="_self" {{{analyticsAttributes}}}>
-            {{/ifCond}}
-            <div class="simple-card bg-white" style="height: 310px;">
-                <div class="card-header" style="{{#if thumbnail}}margin-top:35%;{{/if}}">
-                    <h4>{{type}}</h4>
-                    {{#if thumbnail}}
-                    <div class="card-thumbnail" style="background: url('{{thumbnail}}') no-repeat center center / cover;">
-                    </div>
-                    {{else}}
-                    <div class="card-icon ic_{{linkType}}" alt border="0"></div>
-                    {{/if}}
-                </div>
-                <div class="card-content">
-                    <hr/>
-                    <h4>
-                        {{#if thumbnail}}
-                            {{{truncateText title 70}}}
+            <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
+                <div class="simple-card bg-white">
+                    <!-- WEB-6793 Added new fields for RC Cards START -->
+                    <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
+                        <h4>{{type}}</h4>
+                        {{#if headerImage}}
+                            <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
+                            </div>
                         {{else}}
-                            {{{truncateText title 110}}}
+                            <div class="card-icon ic_{{linkType}}" alt border="0"></div>
                         {{/if}}
-                    </h4>
-                </div>
-                {{#ifCond linkType '===' ""}}
-                    <div class="card-footer rc-no-text">
-                {{else}}
-                    <div class="card-footer">
-                {{/ifCond}}
-                    <span class="card-footer-action">
-                        <svg class="align-middle s-{{linkType}}">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                    </div>
+                    <div class="card-content">
+                        <hr/>
+                        <h4>
+                            {{#if headerImage}}
+                                {{{truncateText title 70}}}
+                            {{else}}
+                                {{{truncateText title 140}}}
+                            {{/if}}
+                        </h4>
+                    </div>
+                    {{#ifCond linkType '===' ""}}
+                        <div class="card-footer rc-no-text">
+                    {{else}}
+                        <div class="card-footer">
+                    {{/ifCond}}
+                    <div class="card-footer-logo">
+                        {{#ifCond type '===' "Videos"}}
+                            {{#if videoLength}}
+                                <span class="video-length">
+                                    <svg class="align-middle s-clock">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                    </svg>{{videoLength}}
+                                </span>
+                            {{/if}}
+                        {{/ifCond}}
+                        {{#if footerLogo}}
+                            {{#ifCond type '===' "Videos"}}
+                            {{else}}
+                                <span>
+                                    <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                </span>
+                            {{/ifCond}}
+                        {{/if}}
+                    </div>
+                    <!--/* WEB-6793 Added new fields for RC Cards END */-->
+                    <!--/* WEB-10350 Added CTAText at the begining of Svg definitions- STARt */-->
+                    <hr>
+                    <div class="card-footer-action">
+                        {{ctaText}}
+                        {{#ifCond type '===' "Trial"}}
+                            <svg class="align-middle s-view">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
+                        {{else}}
+                            {{#ifCond type '===' "Webinar"}}
+                                <svg class="align-middle s-view">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
+                            {{else}}
+                                <svg class="align-middle s-{{linkType}}">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                            {{/ifCond}}
+                        {{/ifCond}}
                         </svg>
-                        {{#ifCond linkType '===' "play"}}${'Play' @ i18n}{{/ifCond}}
-                        {{#ifCond linkType '===' "download"}}${'Download' @ i18n}{{/ifCond}}
-                        {{#ifCond linkType '===' "view"}}${'View' @ i18n}{{/ifCond}}
-                        <!-- /* WEB-9208 Add Demo Container Card capabilities to Resource Center */ -->
-                        {{#ifCond linkType '===' "demo"}}${'Start' @ i18n}{{/ifCond}}
-                    </span>
+                    </div>
+                     <!--/* WEB-10350  - END */-->
                 </div>
-            </div>
+                </div>
             </a>
         </div>
         {{/each}}

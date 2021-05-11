@@ -1,0 +1,140 @@
+.stickyBar {
+    position: fixed;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;   
+    display: none; 
+    background: linear-gradient(rgb(0, 44, 143), rgb(0, 44, 143));
+    .stickyBar-wrap {
+        max-width: 960px;
+        margin: 0 auto;        
+        vertical-align: middle;
+        padding: 0.1rem 0;
+        opacity: 0.9;  
+        padding: 20px;
+        text-align: center;
+        @media (min-width: 767px) {
+            display: flex;
+            align-content: space-between;            
+            justify-content: space-between; 
+            text-align:inherit;  
+        }
+        .content {
+            color: #fff;
+            position: inherit;
+            padding: 0 20px;
+            align-self: center;
+            p {
+                margin: 0;
+            }
+            .heading {
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                @media (min-width: 960px) {
+                    font-size: 18px;
+                }
+            }
+            .subHeading {
+                color: #fff;
+                line-height: 18px;
+                font-size: 14px;
+                @media (min-width: 960px) {
+                    font-size: 16px;
+                }
+                width: auto;
+                span {
+                    color: #ff5000;
+                    font-weight: bold;
+                }
+            }            
+        }
+        .logo {
+            align-self: center;
+            img {
+                max-width: 160px;
+                min-width: 140px;
+                margin: auto;
+                @media (min-width: 960px) {
+                    max-width: 200px;
+                    min-width: 155px;
+                }
+            }
+        }
+        .cta {
+            position: relative;
+            border: 1px solid #fff;
+            color: #fff;
+           
+            font-weight: 600;
+            margin-top: 0;
+            padding: 6px 10px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            min-width: 100px;
+            font-size: 14px;
+            @media (min-width: 960px) {
+                font-size: 16px;
+                padding: 6px 16px;
+            }
+           a {
+                color: #fff;
+                text-decoration: none;
+            }            
+        }  
+        .stickyBar-wrap-item {
+            display: block;
+            padding: 0 0 10px 0;
+            align-self: center;
+            @media (min-width: 960px) {
+                padding: 0 20px;
+            }
+        }
+        .cta-wrap{
+            @media (max-width: 1050px) and (min-width: 767px) {
+                padding-right: 40px;
+            }
+        }
+        
+    }      
+    .close-stickyBar {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        color: #525151;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 15px;
+        top: 15px;        
+        text-align: center;
+        transition: transform 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
+        cursor: pointer;
+        align-self: center;
+        padding: 3px;
+        margin-top: 0rem;       
+        color: #fff; 
+        &:hover{
+            background-color: #fff;
+            transform: scale(1.2);
+            color: #525151;
+            transition: 0.3s linear;
+        }
+        &::before{
+            content: "x";
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 20px;
+            margin: 0 auto;
+            left: 0;
+            font-size: 19px;
+            
+        }
+    }  
+    
+}

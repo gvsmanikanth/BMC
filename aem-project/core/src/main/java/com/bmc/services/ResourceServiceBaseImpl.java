@@ -47,6 +47,49 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
                     "topics, /content/bmc/resources/topic, text"
             })
     static final String PROPERTY_MAPPING = "property.mapping";
+    /*
+    WEB-6680 Mapping for removing all the unwanted filter options -START
+     */
+    @Property(description = "List of unwanted filters to be removed from the display of filterOptions",
+            value = {"Select Technologies",
+                    "UnCategorized",
+                    "jcr:content",
+                    "None Selected",
+                    "Unknown",
+                    "Bladelogic Database Automation",
+                    "Business Workflows",
+                    "Cloud Lifecycle Management",
+                    "Control-D",
+                    "Control-M Application Integrator",
+                    "Control-M Batch Impact Manager",
+                    "Control-M for SAP",
+                    "Control-M Self Service",
+                    "Control-M Workload Change Manager",
+                    "DB2 Lob Master",
+                    "DB2 NGT",
+                    "Track-It!",
+                    "TrueSight AppVisibility",
+                    "TrueSight Cloud Cost Control",
+                    "TrueSight Infrastructure",
+                    "TrueSight Middleware",
+                    "Uncategorized",
+                    "XPL",
+                    "TrueSight Pulse",
+                    "Release Lifecycle Management",
+                    "All",
+                    "All PL Products",
+                    "Product Interest",
+                    "Customer Stories",
+                    "FootPrints Service Core",
+                    "Articles/Blogs",
+                    "Events",
+                    "TrueSight Intelligence"
+            })
+    static final String UNWANTED_FILTER_MAPPING = "unwanted.filterOptions.mapping";
+    private List<String> unwantedFilterMapping;
+    /*
+    WEB-6680 Mapping for removing all the unwanted filter options -END
+     */
     private Map<String, String> propertyPathMapping;
     private Map<String, String> propertyNameMapping = new LinkedHashMap<> ();
 
@@ -58,6 +101,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
 
     @Activate
     protected void activate(final Map<String, Object> props) {
+        unwantedFilterMapping = Arrays.asList( (String[]) props.get(UNWANTED_FILTER_MAPPING));
         this.propertyPathMapping = toMap((String[]) props.get(PROPERTY_MAPPING));
         this.propertyNameMapping = toMap((String[]) props.get(PROPERTY_MAPPING), 0, 2);
     }
@@ -100,8 +144,14 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         Iterator<Resource> newsItems = resource.getChildren().iterator();
         while(newsItems.hasNext()){
             Resource itemResource = newsItems.next();
-            values.put(itemResource.getName(), getTitle(propertyName, itemResource.getName(), resolver));
+            //WEB-6680 Mapping for removing all the unwanted filter options -START
+            String propertyTitle = getTitle(propertyName, itemResource.getName(), resolver);
+            if(!getUnwantedFilterValue (propertyTitle))
+            {
+                values.put(itemResource.getName(), propertyTitle);
+            }
         }
+        //WEB-6680 Mapping for removing all the unwanted filter options -END
         //WEB-9267 Filters Arrange Category and Category Values.
         if ((propertyName.equals("product_line")) || (propertyName.equals ("ic-topics")) || (propertyName.equals("ic-target-industry"))
                 || (propertyName.equals("ic-content-type")) || (propertyName.equals("topics")) || (propertyName.equals("product_interest")))
@@ -121,6 +171,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             // Sorts the value for Target Persona propety name , based on a fixed predefined list defined in constants as BuyerStagesList
             values =  getCustomSortList(values,Arrays.asList(ResourceCenterConstants.IC_BUYER_STAGES_CUSTOM_LIST));
         }
+
         return values;
     }
 
@@ -150,8 +201,6 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
             for (Map.Entry<String, String> entry : values.entrySet ()) {
                 list.add (entry.getValue ());
             }
-            if(list.contains("All"))  list.remove (list.indexOf ("All"));
-            else if (list.contains("All PL Products"))list.remove (list.indexOf ("All PL Products"));
             //Applying alphabetical custom sort using the RCFiltercomparator
             Collections.sort (list, new RCFilterComparator ());
             //Putting back the sorted list
@@ -180,7 +229,8 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     it does this by looking up the each value in the arraylist against the values in the HashMap
     to create a sorted list.
      */
-    public static Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
+
+    public  Map <String,String> getCustomSortList(Map <String,String> values, List<String> orderList){
         ArrayList<String> unsortedList = new ArrayList<>();
         ArrayList<String> sortedList = new ArrayList();
         Map<String,String> sortedMap = new LinkedHashMap<> ();
@@ -213,7 +263,7 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
     Explanation : helper class to lookup each value in List against the provided value
     and return the value once found.
      */
-    public static String getPropertyOptionIfFound(List <String> list, String value){
+    public String getPropertyOptionIfFound(List <String> list, String value){
         for(String optionValue : list){
             if(optionValue.equalsIgnoreCase(value)){
                 return optionValue;
@@ -233,5 +283,14 @@ public class ResourceServiceBaseImpl implements ConfigurableService, ResourceSer
         }
     }
 
-
+    /*
+        Maps the filterValues for filters containing unwanted values,
+         */
+    public Boolean getUnwantedFilterValue (String filterValue) {
+        if (unwantedFilterMapping.contains (filterValue)) {
+            log.debug("Mapping exists for content type {}", filterValue);
+            return true;
+        }
+        return false;
+    }
 }
