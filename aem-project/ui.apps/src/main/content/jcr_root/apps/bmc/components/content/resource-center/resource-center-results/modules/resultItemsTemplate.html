@@ -41,7 +41,7 @@
 	                                {{/ifCond}}
 	
 	                                {{#if serviceCredits}}
-	                                <span>{{serviceCredits}} Credits</span>
+	                                    <span>{{displayCredits serviceCredits}}</span>
 	                                {{else}}
 	                                {{#if footerLogo}}
 	                                {{#ifCond type '===' "Video"}}

@@ -23,6 +23,10 @@ HandlebarHelpers = {
                 return options.inverse(this);
             }
         });
+		
+		Handlebars.registerHelper('displayCredits', function (credits) {
+            return HandlebarHelpers.displayCredits(credits);
+        });
 
         Handlebars.registerHelper('truncateText', function (text, chars) {
             return HandlebarHelpers.truncateText(text, chars);
@@ -70,7 +74,26 @@ HandlebarHelpers = {
             }
         }
         return finalText;
-    }
+    },
+	
+	displayCredits: function(credits){
+		var serviceCredits = credits;
+		var credit = '';
+		var suffix = ' Credits';
+		if(serviceCredits){
+			var creditVal = serviceCredits.split(".");
+			if(creditVal.length > 1 && creditVal[1] == '0'){
+				credit = creditVal[0];
+			}else{
+				credit = serviceCredits;
+			}
+		}
+		if(serviceCredits == '1' || serviceCredits == '0' || serviceCredits == '0.5'){
+			suffix = ' Credit';
+		}
+			
+		return credit + suffix;
+	}
 };
     
 $(function() {
