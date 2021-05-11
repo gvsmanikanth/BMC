@@ -62,12 +62,13 @@
                                                 jcr:mixinTypes="[cq:ReplicationStatus]"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/numberfield"
-                                                fieldDescription="Enter the no of credits here"
+                                                fieldDescription="Enter the no of credits here "
                                                 fieldLabel="No Of Credits"
                                                 max="{Long}200"
                                                 min="{Long}0"
                                                 name="./credits"
-                                                step="0.5"/>
+                                                step="0.5"
+                                                value=""/>
                                             <creditsTypeHint
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/foundation/form/hidden"
