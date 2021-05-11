@@ -2,6 +2,9 @@ html {
 	font: #{$baseFontPercentage}/#{$baseLineHeight} $baseFontFamily;
 	font-weight: $baseFontWeight;
 }
+*{
+	scrollbar-color: #cdcdcd #f0f0f0;
+  }
 
 body {
 	background: color(colorCorporate);
