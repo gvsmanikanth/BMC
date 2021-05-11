@@ -151,10 +151,6 @@
     font-weight: bold;
     font-size: initial;
     font-size: 14px;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 16px;
-     }
   }
 
   .empty-filter {
@@ -198,10 +194,6 @@
     font-weight: 600;
     font-size: initial;
     pointer-events: none;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 16px;
-     }
     padding: 6px;
     cursor: auto;
     margin-left: -110px;
@@ -267,13 +259,8 @@
     border: 0px;
     background: white;
     text-transform: uppercase;
-    font-size: initial;
-	font-size: 14px;
+	  font-size: 14px;
     cursor: pointer;
-    //WEB-6696
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      font-size: 15px;
-     }
     padding-right: 2.0em;
     padding-left: 0.5em;
     -webkit-appearance: none;
@@ -285,11 +272,7 @@
     background-size: 5px 5px, 6px 6px, 0px 0em;
     background-repeat: no-repeat;
     outline: none;
-	text-align: right;
-
-    @media (max-width: $break-md) {
-      font-size: smaller;
-    }
+	  text-align: right;
   }
   /*For IE10+*/
   .rc-sort-select-wrapper select::-ms-expand {
@@ -813,7 +796,7 @@ body.no-scroll{
 }
 
 //  Resource center colors and backgrounds
-$bg-bmc-blue: #046eb1;
+$bg-bmc-blue: #3980b2;
 $bg-bmc-mid-blue: #0093c9;
 $bg-bmc-green: #7fbc00;
 $bg-bmc-mid-green: #aacc07;
