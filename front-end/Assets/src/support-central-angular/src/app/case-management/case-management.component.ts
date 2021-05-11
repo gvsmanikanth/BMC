@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Case } from '../shared/models/case/case.model';
 import { CaseManageService } from '../shared/services/case-manage.service';
 import { GoogleAnalyticsService } from '../shared/services/google-analytics.service';
@@ -9,7 +9,7 @@ import { StateService } from '../shared/services/state.service';
   templateUrl: './case-management.component.html',
   styleUrls: ['./case-management.component.scss']
 })
-export class CaseManagementComponent implements OnInit {
+export class CaseManagementComponent implements OnInit, OnDestroy {
 
   casesChunk: Case[] = null;
 
@@ -22,7 +22,8 @@ export class CaseManagementComponent implements OnInit {
   ngOnInit() {
     this.caseService.getCases().then(() => {
       this.casesChunk = this.caseService.cases.slice(0,4);
-    })
+    });
+    this.state.caseManagementOpened$.next(true);
   }
 
   paginate(event) {
@@ -44,5 +45,9 @@ export class CaseManagementComponent implements OnInit {
 
   sendCase(caseNumber: string, caseName: string) {
     this.ga.sendEvent('case click', caseNumber, caseName);
+  }
+
+  ngOnDestroy () {
+    this.state.caseManagementOpened$.next(false);
   }
 }

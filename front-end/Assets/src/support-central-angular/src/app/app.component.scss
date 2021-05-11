@@ -131,6 +131,7 @@ adapt-select {
         .mobile-widget-container {
             & {
                 display: flex;
+                position: relative;
             }
             .router-container {
                 width: 95%;

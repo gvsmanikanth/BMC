@@ -1,0 +1,13 @@
+.psc-guided-tour {
+    position: fixed;
+    bottom: 27rem;
+    font-size: 20px;
+    right: 0;
+    transform-origin: 100% 100% 0;
+    transform: rotate(-90deg);
+    padding: 7px 13px;
+    background: #D6D7D8;
+    z-index: 1000000;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}

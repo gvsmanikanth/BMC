@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule, AdaptEmptyStateModule, AdaptSelectModule, AdaptPopoverModule } from '@bmc-ux/adapt-angular';
+import { AdaptButtonModule, AdaptSearchModule, AdaptTabsModule, AdaptAccordionModule, AdaptSwitcherModule, AdaptBusyModule, AdaptPaginationModule, AdaptEmptyStateModule, AdaptSelectModule, AdaptPopoverModule, AdaptTooltipModule, AdaptFocusTrackerModule } from '@bmc-ux/adapt-angular';
 import { RouterModule, Routes } from '@angular/router';
 import { EpdComponentComponent } from './epd-component/epd-component.component';
 import { EPDService } from './shared/services/epd.service';
@@ -27,31 +27,56 @@ import { CommunityService } from './shared/services/community/community.service'
 import { CommunityProductComponent } from './community/community-product/community-product.component';
 import { StateService } from './shared/services/state.service';
 import { ServicesAndConsultingComponent } from './services-and-consulting/services-and-consulting.component';
+import { GuidedTourComponent } from './guided-tour/guided-tour.component';
+import { ProductCompatibilityComponent } from './product-compatibility/product-compatibility.component';
+import { ProductCompatibilityService } from './shared/services/product-compatibility/product-compatibility.service';
+import { CompatibilityProductComponent } from './product-compatibility/compatibility-product/compatibility-product.component';
+import { WidgetGuard } from './shared/guards/widget.guard';
+import { EmptyComponent } from './empty/empty.component';
 
 const appRoutes: Routes = [
+  { 
+    path: '',
+    component: EmptyComponent
+  },
   {
     path: 'epd-widget',
-    component: EpdComponentComponent
+    component: EpdComponentComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'manage-case',
-    component: CaseManagementComponent
+    component: CaseManagementComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'docs',
-    component: DocsComponent
+    component: DocsComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'support-question',
-    component: SupportQuestionsComponent
+    component: SupportQuestionsComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'community',
-    component: CommunityComponent
+    component: CommunityComponent,
+    canActivate: [WidgetGuard]
   },
   {
     path: 'sac',
-    component: ServicesAndConsultingComponent
+    component: ServicesAndConsultingComponent,
+    canActivate: [WidgetGuard]
+  },
+  {
+    path: 'compatibility',
+    component: ProductCompatibilityComponent,
+    canActivate: [WidgetGuard]
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ]
 
@@ -70,6 +95,10 @@ const appRoutes: Routes = [
     CommunityComponent,
     CommunityProductComponent,
     ServicesAndConsultingComponent,
+    GuidedTourComponent,
+    ProductCompatibilityComponent,
+    CompatibilityProductComponent,
+    EmptyComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +116,9 @@ const appRoutes: Routes = [
     AdaptSelectModule,
     AdaptTabsModule.forRoot(),
     AdaptPaginationModule,
-    AdaptPopoverModule
+    AdaptPopoverModule,
+    AdaptTooltipModule,
+    AdaptFocusTrackerModule
   ],
   providers: [
     DataFetchService,
@@ -96,7 +127,8 @@ const appRoutes: Routes = [
     DocsService,
     SupportQuestionsService,
     CommunityService,
-    StateService
+    StateService,
+    ProductCompatibilityService
   ],
   bootstrap: [AppComponent]
 })

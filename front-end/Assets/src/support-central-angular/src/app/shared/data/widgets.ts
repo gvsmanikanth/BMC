@@ -25,7 +25,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Product Downloads",
         description: "Latest product downloads, patches & installation tools",
-        routerLink: "epd-widget",
+        routerLink: 'epd-widget',
         icon: "psc-icon-downloads"
     },
     {
@@ -62,7 +62,7 @@ export const widgets: Widget[] = [
         isExtended: false,
         title: "Product Compatibility",
         description: "Check product compatibility with platforms and databases",
-        routerLink: null,
+        routerLink: 'compatibility',
         icon: "psc-icon-product_compatibility"
 
     },
@@ -88,7 +88,7 @@ export const widgets: Widget[] = [
         id: "servicesConsulting",
         href: null,
         isExtended: false,
-        title: "Services and Consulting",
+        title: "Services & Consulting",
         description: "Get help with all aspects of your digital journey",
         routerLink: 'sac',
         icon: "psc-icon-services_consulting"
@@ -100,6 +100,7 @@ export const widgets: Widget[] = [
         title: "Common Support Questions",
         description: "Frequently asked questions",
         routerLink: 'support-question',
-        icon: "psc-icon-faq"
+        icon: "psc-icon-faq",
+        personalized: true
     }
 ]
