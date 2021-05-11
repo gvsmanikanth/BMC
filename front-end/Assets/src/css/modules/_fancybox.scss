@@ -38,7 +38,8 @@
 }
 
 .fancybox-opened {
-	z-index: 8030;
+	//z-index: 8030;
+	z-index:2147483647; //WEB-10340
 }
 
 .fancybox-opened .fancybox-skin {
@@ -185,12 +186,18 @@
 	overflow: hidden;
 	position: absolute;
 	top: 0;
-	z-index: 2147483647;
+	z-index: 2147483546; 
 
 	.no-rgba & {
 		background: rgb(0, 0, 0);
 	}
 }
+// Added for WEB-10340 Start
+
+div#drift-frame-controller {
+	z-index: 2147483445 !important;
+}
+// Added for WEB-10340 End
 
 .fancybox-overlay-fixed {
 	bottom: 0;
