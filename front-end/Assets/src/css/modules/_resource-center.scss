@@ -360,6 +360,10 @@ body.no-scroll{
         display: none;
       }
     }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      flex-basis: auto;
+      width: 100%;
+    }
   }
 
   .rc-card-col {
