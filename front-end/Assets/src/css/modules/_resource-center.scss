@@ -443,7 +443,7 @@ body.no-scroll{
     .card-content{
       clear: both;
       //min-height: 160px;
-	  margin-bottom: 60px;
+	    margin-bottom: 60px;
       h4 {
         color: #414042;
         font-weight: 400;
@@ -513,7 +513,6 @@ body.no-scroll{
         display: block;
         text-transform: uppercase;
         font-weight: 600;
-        transition: .3s linear;
         padding: 10px;
         border-top: none;
         padding: 0;
@@ -550,7 +549,7 @@ body.no-scroll{
         font-size: large;
         text-align: center;        
         border-top: 1px solid #3980B2;
-        padding: 10px;
+        padding: 10px;        
       }
       .learn-more-v1{
         &:after {
@@ -572,26 +571,27 @@ body.no-scroll{
           transition: 0.3s linear;
           color: #fff !important;
           .card-footer-action{
-            color: #fff;
-			}
-          svg{
-            transition: 0.3s linear;
-          }
-          //  white action icons
+            color: #fff;            
+            transition-delay: 0.25s;
+			    }
+          
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
           }
-          .s-play {
-            background-image: url('#{$imagesFolder}s-play-white.png');
+          .s-play, .s-demo, .s-view{
+            transition-delay:0.3s;
+          }
+          .s-clock{
+            transition-delay:0s;
+          }
+          .s-play, .s-demo  {  
+            background-position: 0 -30px;
           }
           .s-view {
-            background-image: url('#{$imagesFolder}s-view-white.png');
+            background-position: -60px -30px;    
           }
           .s-clock {
-            background-image: url('#{$imagesFolder}s-clock-white.svg');
-          }
-          .s-demo {
-            background-image: url("#{$imagesFolder}s-play-white.png");
+            background-position: -30px -30px;
           }
         }
         .card-footer{
@@ -605,7 +605,8 @@ body.no-scroll{
       }
 	  .card-footer{
         svg{
-          transition: 0.3s linear;
+          //transition: 0.3s linear;
+          transition: 0s background-position;
         }
       }
       // WEB-6793
@@ -709,35 +710,30 @@ body.no-scroll{
   }
 
   //  cards actions icons
+  .s-play, .s-demo, .s-view, .s-clock{
+    background-image: url('#{$imagesFolder}rc-icons.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;  
+  }
+  .s-play, .s-demo  {  
+    background-position: 0 0;
+  }
+  .s-view {
+    background-position: -60px 0px;    
+    margin-left: 0px !important;
+  }
+  .s-clock {
+    background-position: -30px 0;
+  }
   .s-download {
     background-image: url('#{$imagesFolder}s-download.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 0.7rem;
     height: 0.9rem;
-  }
-  .s-play {
-    background-image: url('#{$imagesFolder}s-play.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;
-  }
-  .s-demo {
-    background-image: url('#{$imagesFolder}s-play.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;
-  }
-  .s-view {
-    background-image: url('#{$imagesFolder}s-view.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 0.6rem;
-    height: 0.7rem;
-	margin-bottom: 2px;
-  }
+  }  
   .s-download-white {
     background-image: url('#{$imagesFolder}s-download-white.png');
     background-repeat: no-repeat;
@@ -753,19 +749,13 @@ body.no-scroll{
     height: 1.2rem;
   }
   .s-view-white {
-    background-image: url('#{$imagesFolder}s-view-white.png');
+    background-image: url('#{$imagesFolder}s-view-white.png');    
     background-repeat: no-repeat;
     background-size: contain;
     width: 1.5rem;
     height: 1.2rem;
   }
-  .s-clock {
-    background-image: url('#{$imagesFolder}s-clock-blue.svg');
-    background-repeat: no-repeat;
-    background-size: 90%;
-    width: 20px;
-    height: 20px;
-  }
+  
 
 
   //  cards header icons
