@@ -577,6 +577,19 @@ body.no-scroll{
   .simple-card{
     @extend .card;
 	  min-height: 300px;
+    .card-content {
+      p {
+        @supports (-webkit-line-clamp: 1) { 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          position: relative; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0 !important;
+          -webkit-line-clamp: 6;
+        }
+      }
+    }
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
@@ -647,11 +660,12 @@ body.no-scroll{
   .card-with-header{
     @extend .card;
     .card-content{
-      h4{
+      h4, p{
         @supports (-webkit-line-clamp: 1) { 
           -webkit-line-clamp: 3;
         }
       }
+      
     }
   }
 
@@ -678,6 +692,9 @@ body.no-scroll{
       .featured-card-footer{
         padding-left: 20px;
       }
+    }
+    .card-icon{
+      height: 50px;
     }
   }
   .featured-card-container:hover .featured-card-left-panel{
@@ -821,6 +838,13 @@ body.no-scroll{
   .ic_trial-white {
     background-image: url("#{$imagesFolder}icon-interactive-white.png");
   }
+  .ic_webpage {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  .ic_webpage-white {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  
 
 }
 
