@@ -578,7 +578,7 @@ body.no-scroll{
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
           }
-          .s-play, .s-demo, .s-view{
+          .s-play, .s-demo, .s-view, .s-webpage {
             transition-delay:0.3s;
           }
           .s-clock{
@@ -587,7 +587,7 @@ body.no-scroll{
           .s-play, .s-demo  {  
             background-position: 0 -30px;
           }
-          .s-view {
+          .s-view, .s-webpage  {
             background-position: -60px -30px;    
           }
           .s-clock {
@@ -710,7 +710,7 @@ body.no-scroll{
   }
 
   //  cards actions icons
-  .s-play, .s-demo, .s-view, .s-clock{
+  .s-play, .s-demo, .s-view, .s-clock, .s-webpage {
     background-image: url('#{$imagesFolder}rc-icons.png');
     background-repeat: no-repeat;
     width: 20px;
@@ -720,7 +720,7 @@ body.no-scroll{
   .s-play, .s-demo  {  
     background-position: 0 0;
   }
-  .s-view {
+  .s-view, .s-webpage  {
     background-position: -60px 0px;    
     margin-left: 0px !important;
   }
