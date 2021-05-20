@@ -966,7 +966,7 @@
 			}
 		}
 
-		/*> *:last-child:not(.cmp-breadcrumb) {
+		> *:last-child:not(.cmp-breadcrumb) {
 			padding-bottom: rem(30);
 			@include media(breakpointLarge) {
 				padding-bottom: rem(60);
@@ -979,7 +979,7 @@
 		> .aem-Grid-newComponent:last-child {
 			padding-bottom: 0;
 			margin-bottom: 0;
-		}*/
+		}
 	}
 }
 
