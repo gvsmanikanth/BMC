@@ -290,12 +290,9 @@ function addFilterToArrayProtoype() {
 					
 					var finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
 					if(finalHash != window.location.href){
-							if((finalHash == ""))
-								window.history.back();
-					
-							else{							
-								history.replaceState("", document.title, window.location.pathname + finalHash);
-							}
+						
+						history.replaceState("", document.title, window.location.pathname + finalHash);
+							
 					}
 					
 				}
