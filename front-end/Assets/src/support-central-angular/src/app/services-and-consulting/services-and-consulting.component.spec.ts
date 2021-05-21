@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StateService } from '../shared/services/state.service';
 
 import { ServicesAndConsultingComponent } from './services-and-consulting.component';
 
@@ -8,7 +9,8 @@ describe('ServicesAndConsultingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ServicesAndConsultingComponent ]
+      declarations: [ ServicesAndConsultingComponent ],
+      providers: [ StateService ]
     })
     .compileComponents();
   }));

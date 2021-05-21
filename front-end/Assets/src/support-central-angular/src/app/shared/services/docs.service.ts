@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DocsProduct } from '../models/docs/docs-product.model';
 import { DataFetchService } from './data-fetch.service';
 import { GoogleAnalyticsService } from './google-analytics.service';
+import { StateService } from './state.service';
 
 @Injectable()
 export class DocsService {
@@ -17,6 +18,7 @@ export class DocsService {
 
   constructor(
     private dataFetch: DataFetchService,
+    private state: StateService,
     private ga: GoogleAnalyticsService
   ) {}
 
@@ -25,10 +27,12 @@ export class DocsService {
     this.dataFetch.getDocsProducts().then((docs) => {
       this.docs = docs;
       this.busyConfig.busy = false;
+      this.state.documentationDownloaded$.next(true);
     }).catch((error) => {
       this.busyConfig.busy = false;
       console.log(error);
       this.ga.catchError(`docs ${error.message}`);
+      this.state.documentationDownloaded$.next(true);
     })
   }
 }

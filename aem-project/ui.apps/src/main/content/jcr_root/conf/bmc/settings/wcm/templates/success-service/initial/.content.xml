@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2021-04-15T12:31:27.119+05:30"
+        cq:lastModified="{Date}2021-05-11T20:35:49.559+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2021-04-21T20:41:49.793+05:30"
         cq:lastReplicatedBy="admin"
@@ -42,7 +42,7 @@
                         cq:lastReplicationAction="Activate"
                         jcr:created="{Date}2021-04-08T18:49:43.861Z"
                         jcr:createdBy="kallen@bmc.com"
-                        jcr:lastModified="{Date}2021-04-15T12:31:27.115+05:30"
+                        jcr:lastModified="{Date}2021-05-05T19:48:32.056+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:mixinTypes="[cq:ReplicationStatus]"
                         jcr:primaryType="nt:unstructured"
@@ -50,86 +50,114 @@
                         hideCurrent="false"
                         showHidden="false"
                         startLevel="5"/>
-                    <header_form
-                        jcr:created="{Date}2021-03-23T09:39:29.121Z"
-                        jcr:createdBy="mannalda"
-                        jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                        jcr:lastModifiedBy="mannalda"
+                    <header_simple
+                        jcr:created="{Date}2021-05-05T19:45:53.323+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bmc/components/content/header-form"
-                        headerText="Helix Business Workflows Starter Service&#xd;&#xa;&lt;h3>25 CREDITS&lt;/h3>">
+                        sling:resourceType="bmc/components/content/header-simple"
+                        headerText="Service Name "
+                        subHeading="00 CREDITS">
                         <bg
-                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                            jcr:lastModifiedBy="mannalda"
+                            jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             fileReference="/content/dam/bmc/web-services/Placeholder-1900x700png.png"/>
                         <img
-                            jcr:lastModified="{Date}2021-03-23T12:10:18.067Z"
-                            jcr:lastModifiedBy="mannalda"
+                            jcr:lastModified="{Date}2021-05-07T15:14:08.747+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"/>
-                    </header_form>
+                    </header_simple>
                     <ctabar
                         jcr:created="{Date}2021-04-08T18:40:36.066Z"
                         jcr:createdBy="aviner@bmc.com"
-                        jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
-                        jcr:lastModifiedBy="aviner@bmc.com"
+                        jcr:lastModified="{Date}2021-05-05T19:51:09.739+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/CTAbar"
                         addClass="false"
                         bgcolor="bg-seashell">
                         <text
+                            jcr:lastModified="{Date}2021-05-05T19:49:59.113+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/text"
-                            text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                            text="&lt;p>Service highlights.&lt;/p>&#xa;"
                             textIsRich="true"/>
                     </ctabar>
                     <_50_50contentcontain
-                        jcr:created="{Date}2017-08-23T17:56:30.073-04:00"
-                        jcr:createdBy="dtayeh"
-                        jcr:lastModified="{Date}2017-08-23T17:56:30.073-04:00"
-                        jcr:lastModifiedBy="dtayeh"
+                        jcr:created="{Date}2021-04-30T15:44:55.122Z"
+                        jcr:createdBy="mannalda@bmc.com"
+                        jcr:lastModified="{Date}2021-04-30T15:44:55.122Z"
+                        jcr:lastModifiedBy="mannalda@bmc.com"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/structure/50-50contentcontainer">
                         <left
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
                             <key_features
-                                jcr:created="{Date}2017-07-23T13:03:05.320-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-23T13:03:05.320-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:created="{Date}2021-05-11T08:56:47.383Z"
+                                jcr:createdBy="mannalda@bmc.com"
+                                jcr:lastModified="{Date}2021-05-11T09:59:43.180Z"
+                                jcr:lastModifiedBy="mannalda@bmc.com"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="Key features Subheading"
-                                headerTitle="Key features Heading"/>
+                                headerSubTitle="&lt;p>BMC will perform the following:&lt;/p>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;ul style=&quot;list-style-type: none;&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;b>Deliverables:&lt;/b> Using BMC’s standard methodology and templates, the following Deliverables are in scope for this project and will be delivered:&lt;/p>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>Construction Document&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;b>Completion Criteria: &lt;/b>BMC will have completed these Consulting Services when the in-scope Consulting Services have been completed and the Deliverables have been delivered to the Customer Project Manager.&lt;/p>&#xd;&#xa;"
+                                headerTitle="What you get:"/>
                         </left>
                         <right
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
                             <key_features
-                                jcr:created="{Date}2017-07-23T13:03:05.320-07:00"
-                                jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-07-23T13:03:05.320-07:00"
-                                jcr:lastModifiedBy="admin"
+                                jcr:created="{Date}2021-05-11T08:59:39.251Z"
+                                jcr:createdBy="mannalda@bmc.com"
+                                jcr:lastModified="{Date}2021-05-11T09:00:42.933Z"
+                                jcr:lastModifiedBy="mannalda@bmc.com"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="Key features Subheading"
-                                headerTitle="Key features Heading"/>
+                                headerSubTitle="&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h2>Additional information:&lt;/h2>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>Estimated Duration: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>In-scope Product: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Service Type: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Availability: Available&lt;/li>&#xd;&#xa;&lt;li>Success Service Code:&amp;nbsp;lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Date Last Updated: MM/DD/YYYY&lt;/li>&#xd;&#xa;&lt;/ul>"
+                                headerTitle="Pre-requisites:"/>
                         </right>
                     </_50_50contentcontain>
+                    <_100contentcontainer
+                        jcr:created="{Date}2021-05-11T15:54:21.682+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-05-11T15:54:21.682+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bmc/components/structure/100contentcontainer">
+                        <center
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/responsivegrid">
+                            <text
+                                jcr:created="{Date}2021-05-11T20:34:53.457+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-05-11T20:35:49.552+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;p>lorem ipsum&amp;nbsp;&lt;/p>&#xa;"
+                                textIsRich="true"/>
+                        </center>
+                    </_100contentcontainer>
                     <Copy_x0020_of_x0020_ctabar
                         jcr:created="{Date}2021-04-08T18:40:36.066Z"
                         jcr:createdBy="aviner@bmc.com"
-                        jcr:lastModified="{Date}2021-04-08T18:40:36.066Z"
-                        jcr:lastModifiedBy="aviner@bmc.com"
+                        jcr:lastModified="{Date}2021-05-07T15:21:23.671+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/CTAbar"
                         addClass="false"
-                        bgcolor="bg-seashell">
+                        bgcolor="bg-corduroy"
+                        primaryCTAtext="Contact Customer Concierge"
+                        primaryCTAURL="/content/bmc/language-masters/en/forms/success-concierge">
                         <text
+                            jcr:lastModified="{Date}2021-05-05T20:01:48.491+05:30"
+                            jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bmc/components/content/text"
-                            text="&lt;p>BMC Helix Digital Workplace Advanced (DWPA) allows service catalog administrators to design services that external systems fulfill and that can be requested by end users from BMC Digital Workplace. Services previously made available to employees in separate catalogs can also be unified in a single service catalog. This service provides configuration of BMC Helix Digital Workplace Advanced for up to five (5) simple services. One of the five (5) simple services may include one (1) in-scope integration.&lt;/p>&#xa;"
+                            text="&lt;p>Service Highlights..&lt;/p>&#xa;"
                             textIsRich="true"/>
                     </Copy_x0020_of_x0020_ctabar>
                 </maincontentcontainer>

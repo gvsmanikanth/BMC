@@ -6,4 +6,5 @@ export interface Widget {
     description: string
     routerLink: string
     icon: string
+    personalized?: boolean
 }

@@ -4,13 +4,13 @@
             <div class="col-md-6">
                 <div class="question" *ngFor="let question of questions.slice(0,5)">
                     <div class="d-icon-check_circle_o"></div><a [href]="question.link"
-                        [innerHTML]="question.titleName"></a>
+                        [innerHTML]="question.titleName" target="_blank"></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="question" *ngFor="let question of questions.slice(5)">
                     <div class="d-icon-check_circle_o"></div><a [href]="question.link"
-                        [innerHTML]="question.titleName"></a>
+                        [innerHTML]="question.titleName" target="_blank"></a>
                 </div>
             </div>
         </div>
@@ -20,13 +20,13 @@
             <div class="col-md-6" [ngBusy]="busyConfigBlog">
                 <div class="question" *ngFor="let blog of blogs.slice(0,5)">
                     <div class="d-icon-note_pencil"></div><a [href]="blog.link"
-                        [innerHTML]="blog.titleName"></a>
+                        [innerHTML]="blog.titleName" target="_blank"></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="question" *ngFor="let blog of blogs.slice(5)">
                     <div class="d-icon-note_pencil"></div><a [href]="blog.link"
-                        [innerHTML]="blog.titleName"></a>
+                        [innerHTML]="blog.titleName" target="_blank"></a>
                 </div>
             </div>
         </div>
@@ -36,13 +36,13 @@
             <div class="col-md-6" [ngBusy]="busyConfigDiscussion">
                 <div class="question" *ngFor="let discussion of discussions.slice(0,5)">
                     <div class="d-icon-comment_text"></div><a [href]="discussion.link"
-                        [innerHTML]="discussion.titleName"></a>
+                        [innerHTML]="discussion.titleName" target="_blank"></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="question" *ngFor="let discussion of discussions.slice(5)">
                     <div class="d-icon-comment_text"></div><a [href]="discussion.link"
-                        [innerHTML]="discussion.titleName"></a>
+                        [innerHTML]="discussion.titleName" target="_blank"></a>
                 </div>
             </div>
         </div>
@@ -52,13 +52,13 @@
             <div class="col-md-6" [ngBusy]="busyConfigDocs">
                 <div class="question" *ngFor="let document of documents.slice(0,5)">
                     <div class="d-icon-file_text_o"></div><a [href]="document.link"
-                        [innerHTML]="document.titleName"></a>
+                        [innerHTML]="document.titleName" target="_blank"></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="question" *ngFor="let document of documents.slice(5)">
                     <div class="d-icon-file_text_o"></div><a [href]="document.link"
-                        [innerHTML]="document.titleName"></a>
+                        [innerHTML]="document.titleName" target="_blank"></a>
                 </div>
             </div>
         </div>
@@ -68,13 +68,13 @@
             <div class="col-md-6" [ngBusy]="busyConfigIdea">
                 <div class="question" *ngFor="let idea of ideas.slice(0,5)">
                     <div class="d-icon-lightbulb_o"></div><a [href]="idea.link"
-                        [innerHTML]="idea.titleName"></a>
+                        [innerHTML]="idea.titleName" target="_blank"></a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="question" *ngFor="let idea of ideas.slice(5)">
                     <div class="d-icon-lightbulb_o"></div><a [href]="idea.link"
-                        [innerHTML]="idea.titleName"></a>
+                        [innerHTML]="idea.titleName" target="_blank"></a>
                 </div>
             </div>
         </div>
