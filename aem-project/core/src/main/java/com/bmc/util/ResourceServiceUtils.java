@@ -332,6 +332,11 @@ public class ResourceServiceUtils {
             String[] range = rangeValue.split("-");
             lowerBound = range[0];
             upperBound = range[1];
+            double tempLowerBound =Double.parseDouble(lowerBound);
+            if(tempLowerBound>0)
+            {
+            lowerBound =Double.toString(tempLowerBound-0.5);
+            }
             queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP , "jcr:content/" + SuccessCatalogConsts.SERVICE_CREDITS);
             queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER , lowerBound);
             queryParamsMap.put(groupIndex + "_group." + i + ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER_OP , ResourceCenterConstants.QUERY_PARAM_RANGE_PROP_LOWER_OP_VAL);
