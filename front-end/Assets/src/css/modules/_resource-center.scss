@@ -453,7 +453,7 @@ body.no-scroll{
         font-size: 18px;
         display: block;
         margin-bottom: 5px;
-             
+        margin-top: 0px;
         @supports (-webkit-line-clamp: 1) { 
           display: -webkit-box;
           -webkit-box-orient: vertical;
@@ -478,7 +478,7 @@ body.no-scroll{
         border-top: 2px solid #3980B2;
         border-bottom: 2px solid #3980B2;
         max-width: 40px;
-        margin: 0 0 auto 0;
+        margin: 0 0 18px 0;
         text-align: left;
         background: #3980B2;
         border: none;
@@ -658,6 +658,18 @@ body.no-scroll{
 
   // card-with-header
   .card-with-header{
+    @extend .card;
+    .card-content{
+      h4, p{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+      
+    }
+  }
+  // card-with-description
+  .card-with-description{
     @extend .card;
     .card-content{
       h4, p{
