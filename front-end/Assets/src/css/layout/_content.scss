@@ -966,20 +966,23 @@
 			}
 		}
 
-		/*> *:last-child:not(.cmp-breadcrumb) {
+		> *:last-child:not(.cmp-breadcrumb) {
 			padding-bottom: rem(30);
 			@include media(breakpointLarge) {
 				padding-bottom: rem(60);
 			}			
 		}
 
+		/* WEB - 10533  Added customcontentcontainer*/
 		> .pullquote:last-child,
 		> .CTAbar:last-child,
 		> .htmlarea:last-child,
-		> .aem-Grid-newComponent:last-child {
+		> .aem-Grid-newComponent:last-child,
+		> .customcontentcontainer:last-child  {
 			padding-bottom: 0;
 			margin-bottom: 0;
-		}*/
+		}
+		
 	}
 }
 
