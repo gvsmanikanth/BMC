@@ -653,6 +653,14 @@ body.no-scroll{
         svg{
           margin-left: 6px;          
         }
+      } 
+      .card-thumbnail-logo {
+        display: flex;
+        justify-content: center;
+        img{
+          align-self: center;
+          max-height: 100%;
+        }
       }     
   }
 
