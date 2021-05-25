@@ -964,6 +964,13 @@ $bg-forrester-green: #16563F;
 
 
 .rc-landing-page{
+  
+   /* WEB - 10533 Added Padding */ 
+    padding-bottom: rem(30);
+    @include media(breakpointLarge) {
+      padding-bottom: rem(60);
+    }	
+
     .layout-width-title {
       max-width: 1440px;
       margin: 0 auto;
