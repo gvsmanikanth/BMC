@@ -27,7 +27,7 @@
   }
 </style>
 
-<div data-sly-test="${!wcmmode.edit}" class="rc-result-component" data-root-path="${properties.rootPath}" data-page-size="${properties.pageSize}">
+<div data-sly-test="${!wcmmode.edit}" class="rc-result-component" data-category="${properties.resourceCategory}" data-root-path="${properties.rootPath}" data-page-size="${properties.pageSize}">
     <div class="container pb-4">
         <div class="rc-result-header filter-menu">
             <span class="results-info" data-template="${'Showing {1} - {2} of {3}' @ i18n}"></span>
@@ -45,7 +45,9 @@
         </div>
 
         <div data-sly-test="${featuredCard}" class="rc-card-row" style="padding: 0px;">
-            <!--/* WEB-6757- added id to toggle feature card */--> 
+
+            <!--/* WEB-6757- added id to toggle feature card */-->
+
             <div class="rc-featured-card-col"  id="rc-featured-card">
                 <a id="rc-featured-card-link" href="${featuredCard.assetLink}" data-sly-attribute="${helper.analiticData}">
                     <!-- desktop featured card -->
@@ -78,7 +80,6 @@
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-${featuredCard.linkType}-white"></use>
                                     </svg>   
                                 </span>
-                                
                                 <!--/*WEB-10350 changed Svg position  - END */-->
                             </div>
                         </div>

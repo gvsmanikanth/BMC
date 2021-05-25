@@ -606,6 +606,18 @@ body.no-scroll{
           .s-clock {
             background-position: -30px -30px;
           }
+          .s-advisory {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-deploy {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-technical {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-education {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
         }
         .card-footer{
           transition: 0.3s linear;
@@ -808,9 +820,47 @@ body.no-scroll{
     width: 1.5rem;
     height: 1.2rem;
   }
+<<<<<<< .merge_file_a13644
 
   
   
+=======
+  .s-clock {
+    background-image: url('#{$imagesFolder}s-clock-blue.svg');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    width: 20px;
+    height: 20px;
+  }
+  .s-advisory {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-deploy {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-technical {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-education {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+>>>>>>> .merge_file_a24664
 
 
   //  cards header icons
@@ -841,6 +891,7 @@ body.no-scroll{
   .ic_trial-white {
     background-image: url("#{$imagesFolder}icon-interactive-white.png");
   }
+<<<<<<< .merge_file_a13644
   .ic_webpage {
     background-image: url("#{$imagesFolder}ic_webpage.png");
   }
@@ -848,6 +899,20 @@ body.no-scroll{
     background-image: url("#{$imagesFolder}ic_webpage.png");
   }
   
+=======
+  .ic_advisory {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_deploy {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_technical {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_education {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+>>>>>>> .merge_file_a24664
 
 }
 

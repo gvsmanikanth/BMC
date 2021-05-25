@@ -25,7 +25,7 @@ public class ResourceCenterConstants {
 
     public static final String RC_QUERY_PARAM_PROP_OPERATION = "property.operation";
     public static final String RC_QUERY_PARAM_PROP_OPERATION_LIKE = "like";
-    
+
     public static final String QUERY_PARAM_PAGE_IDX = "p.offset";
     public static final String QUERY_PARAM_RESULT_PER_PAGE = "p.limit";
     public static final String QUERY_PARAM_PROP = "property";
@@ -36,6 +36,19 @@ public class ResourceCenterConstants {
     public static final String[] IC_BUYER_STAGES_CUSTOM_LIST = new String[]{ "Discover", "Explore", "Engage", "Buy"};;
     public static final String [] IC_PERSONAS_CUSTOM_LIST = new String[]{"C-Level", "Vice President", "Director", "Manager", "IT Professional", "Business Professional (non-IT)"};
     public static final String [] IC_COMPANY_SIZE_CUSTOM_LIST = new String[]{"5000+","1000-4999","1-999"};
+    public static final String [] CREDITS_RANGE_CUSTOM_LIST = new String[]{"0-10","11-25","26-50","51-100","100+"};
     public static final String PRODUCT_INTEREST_ALl_VALUE = "189379811";
-    public static final String [] FILTERS_CUSTOM_LIST = new String[] {"ic-content-type","product_interest","ic-topics","ic-target-industry","ic-company-size","ic-target-persona","ic-buyer-stage","topics"};
+    public static final String [] FILTERS_CUSTOM_LIST = new String[] {"ic-content-type","service-type","product_interest","ic-topics","ic-target-industry","ic-company-size","ic-target-persona","ic-buyer-stage","topics","credits-range","availability"};
+
+    public static final String QUERY_PARAM_RANGE_PROP = "_rangeproperty.property";
+    public static final String QUERY_PARAM_RANGE_PROP_LOWER = "_rangeproperty.lowerBound";
+    public static final String QUERY_PARAM_RANGE_PROP_LOWER_OP = "_rangeproperty.lowerOperation";
+    public static final String QUERY_PARAM_RANGE_PROP_LOWER_OP_VAL = ">=";
+    public static final String QUERY_PARAM_RANGE_PROP_UPPER = "_rangeproperty.upperBound";
+    public static final String QUERY_PARAM_RANGE_PROP_UPPER_OP = "_rangeproperty.upperOperation";
+    public static final String QUERY_PARAM_RANGE_PROP_UPPER_OP_VAL = "<=";
+
+
+
+
 }

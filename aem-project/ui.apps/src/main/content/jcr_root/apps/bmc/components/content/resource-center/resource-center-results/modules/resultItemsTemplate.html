@@ -41,14 +41,19 @@
                                 </span>
                             {{/if}}
                         {{/ifCond}}
-                        {{#if footerLogo}}
-                            {{#ifCond type '===' "Video"}}
-                        <!--/* WEB-10621 Changed Sightly logic for Video - END */-->
-                            {{else}}
-                                <span>
-                                    <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
-                                </span>
-                            {{/ifCond}}
+
+                        {{#if serviceCredits}}
+                            <span>{{displayCredits serviceCredits}}</span>
+                        {{else}}
+                            {{#if footerLogo}}
+                                {{#ifCond type '===' "Video"}}
+                            <!--/* WEB-10621 Changed Sightly logic for Video - END */-->
+                                {{else}}
+                                    <span>
+                                        <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                    </span>
+                                {{/ifCond}}
+                            {{/if}}
                         {{/if}}
                     </div>
                     <!--/* WEB-6793 Added new fields for RC Cards END */-->

@@ -8,7 +8,7 @@ ResourceCenterResults = {
         this.$resultsInfo = $('.results-info');
         this.$resultsPage = $('.js-results-page');
         this.$rootPath = this.$component.data('root-path');
-        
+        this.$category = this.$component.data('category');
         //  pagination vars
         this.$currentPage = 0;
         this.$pageSize = this.$component.data('page-size');
@@ -432,9 +432,11 @@ ResourceCenterFilters = {
         //  pagination
         var pageSize = ResourceCenterResults.$pageSize;
         var pageIndex = ResourceCenterResults.$currentPage;
+		var category = ResourceCenterResults.$category;
+		
         url += "&resultsPerPage=" + pageSize;
         url += "&pageIndex=" + pageIndex;
-
+		url += "&category=" + category; 
         // change url
         history.replaceState(null, null, '#' + url);
 
@@ -460,12 +462,7 @@ ResourceCenterFilters = {
     loadData: function () {
         var self = this,
         path = this.buildUrl();
-        // var target = window.location.origin;
-		// if(target.indexOf("localhost")!= -1){
-        //     path = 'http://localhost/front-end/Assets/src/templates/content.json';
-        // }else{ 
-        //     path = this.buildUrl();           
-        // }
+        //path = "http://localhost/front-end/Assets/src/templates/content.json";
         $.ajax({
             url: path,
             type: 'GET',
