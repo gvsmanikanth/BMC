@@ -138,8 +138,10 @@ public class VideoReportCSVGenService {
 							}
 							reportDataItem.setTitle_of_the_Video (metadataProvider.getPropertyValues(videoData, "title","title", "title",session));
 							reportDataItem.setTypeId (metadataProvider.getPropertyValues(videoData, "typeId","typeId", "typeId",session));
-							reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayUrl","overlayUrl", "overlayUrl",session));
-							reportDataItem.setOverlayText (metadataProvider.getPropertyValues(videoData, "overlayText","overlayText", "overlayText",session));
+							//WEB-10377 Remove the overlayText and overlayUrl feature from Videos --START
+							// reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayUrl","overlayUrl", "overlayUrl",session));
+							//reportDataItem.setOverlayText (metadataProvider.getPropertyValues(videoData, "overlayText","overlayText", "overlayText",session));
+							//WEB-10377 Remove the overlayText and overlayUrl feature from Videos --END
 							reportDataItem.setDescription (metadataProvider.getPropertyValues(videoData, "description","description", "description",session));
 							reportDataItem.setVideoLength (metadataProvider.getPropertyValues(videoData, "videoLength","videoLength", "videoLength",session));
 
@@ -205,7 +207,7 @@ public class VideoReportCSVGenService {
 			//WEB-9969 AEM Report - Video Report to include Metadata details
 			data.put(Integer.toString (i), new Object[] {list.get(i).getPage_Path(), list.get(i).getPage_Title(),list.get(i).getTypeId (),
 					list.get(i).getModified_Date(),list.get(i).getModified_By(), list.get(i).getPublished_By(),list.get(i).getvID(),list.get(i).getTitle_of_the_Video(),
-					list.get(i).getDescription(),list.get(i).getOverlayURL(),list.get(i).getOverlayText(), list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
+					list.get(i).getDescription(), list.get(i).getRc_inclusion (),list.get(i).getAsset_inclusion (),
 					list.get(i).getRc_form_path (),list.get(i).getHeaderImage (),list.get(i).getFooterLogo (), list.get(i).getVideoLength (),list.get(i).getProduct (),list.get(i).getProduct_Line (),
 					list.get(i).getIc_weighting (), list.get(i).getTopics (),list.get(i).getIC_Content_Type (),
 					list.get(i).getIC_topic (),list.get(i).getIC_Buyer_stage (), list.get(i).getIC_target_Persona (),list.get(i).getIC_Source_Publish_Date (),

@@ -163,20 +163,6 @@ public class VideoReportDataItem {
 	}
 	private String lastReplicatedDate;
 	private String templateType;
-	private String overlayURL;
-	public String getOverlayURL() {
-		return overlayURL;
-	}
-	public void setOverlayURL(String overlayURL) {
-		this.overlayURL = overlayURL;
-	}
-	public String getOverlayText() {
-		return overlayText;
-	}
-	public void setOverlayText(String overlayText) {
-		this.overlayText = overlayText;
-	}
-	private String overlayText;
 
 	public String getIC_topic () {
 		return IC_topic;

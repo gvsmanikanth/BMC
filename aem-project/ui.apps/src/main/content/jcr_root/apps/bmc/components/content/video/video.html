@@ -2,14 +2,11 @@
 <sly data-sly-test="${video.videoLength}">
     <sly data-sly-test.videoLength="(${video.videoLength @ context = 'html'})"></sly>
 </sly>
-<figure data-sly-test="${video.isValid && !video.useModal}" data-sly-use.resolved="${'resolve-data.js' @ video=video }">
+<figure data-sly-test="${video.isValid && !video.useModal}">
     <h2 data-sly-test="${video.title != ''}">Video: ${video.title @ context = 'html'} ${videoLength}</h2>
     <p data-sly-test="${video.description != ''}">${video.description @ context = 'html'}</p>
     <div data-sly-test="${video.isYouTube}" id="youtube_${video.videoId}" class="youtube-video inline-youtube-video-player">
         <div id="${video.videoId}" class="youtubePlayer" data-src="${video.videoId}" data-autoplay=0 data-fullscreen=1></div>
-        <p id="youtubeOverlay_${video.videoId}" class="youtubeOverlay">
-            ${resolved.overlayText @ context='html'}
-        </p>
     </div>
     <video data-sly-test="${video.isDam}" controls poster="${video.damThumbnailPath}" data-sly-list.item="${video.damRenditions}">
         <source src="${item.name}" type="${item.value}">
