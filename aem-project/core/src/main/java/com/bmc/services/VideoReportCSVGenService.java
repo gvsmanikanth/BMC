@@ -138,9 +138,10 @@ public class VideoReportCSVGenService {
 							}
 							reportDataItem.setTitle_of_the_Video (metadataProvider.getPropertyValues(videoData, "title","title", "title",session));
 							reportDataItem.setTypeId (metadataProvider.getPropertyValues(videoData, "typeId","typeId", "typeId",session));
-							//WEB-10377 Remove the overlayText and overlayUrl feature from Videos
+							//WEB-10377 Remove the overlayText and overlayUrl feature from Videos --START
 							// reportDataItem.setOverlayURL (metadataProvider.getPropertyValues(videoData, "overlayUrl","overlayUrl", "overlayUrl",session));
 							//reportDataItem.setOverlayText (metadataProvider.getPropertyValues(videoData, "overlayText","overlayText", "overlayText",session));
+							//WEB-10377 Remove the overlayText and overlayUrl feature from Videos --END
 							reportDataItem.setDescription (metadataProvider.getPropertyValues(videoData, "description","description", "description",session));
 							reportDataItem.setVideoLength (metadataProvider.getPropertyValues(videoData, "videoLength","videoLength", "videoLength",session));
 
