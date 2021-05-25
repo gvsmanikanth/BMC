@@ -3,6 +3,7 @@ import { WidgetsLinks } from './shared/models/widgets-links.model';
 import { trigger, state, style, transition, animate, query, stagger, group, animateChild } from '@angular/animations';
 import { widgets }  from "./shared/data/widgets";
 import { Widget } from './shared/models/widget.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -88,23 +89,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   isExtendedOpen = false;
   openedWidget: number = widgets.length;
 
-  viewOptions = [
-    {
-      id: 0,
-      name: 'Version 1'
-    },
-    {
-      id: 1,
-      name: 'Version 2'
-    },
-    {
-      id:2,
-      name: 'Version 3'
-    }
-  ]
-  viewVersion = [0];
-
-  constructor (private cdr: ChangeDetectorRef) {}
+  constructor (private cdr: ChangeDetectorRef, private router: Router) {}
   @HostListener("window:resize", [])
   onResize() {
     this.detectScreenSize();
@@ -113,7 +98,9 @@ export class AppComponent implements OnInit, AfterViewInit{
   ngOnInit () {
     widgets.forEach((widget)=> {
       widget.href = this.widgetLinks[widget.id];
-      if (widget.id === "manageCase") {
+      if (  widget.id === "manageCase" ||
+          widget.id === "prdCompatibility" ||
+          widget.id === "prdDownloads") {
         if (!this.userLoggedIn) {
           widget.routerLink = null;
         }
@@ -163,5 +150,6 @@ export class AppComponent implements OnInit, AfterViewInit{
     this.widgets.forEach((widget) => {
       widget.isExtended = false;
     })
+    this.router.navigateByUrl('/')
   }
 }

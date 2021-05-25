@@ -54,6 +54,12 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
                 if(childPage.getValueMap().get("imagePath") != null && !childPage.getValueMap().get("imagePath").toString().trim().isEmpty()){
                     productCard.put("imagePath", childPage.getValueMap().get("imagePath").toString());
                 }
+                if(childPage.getValueMap().get("ctaText") != null && !childPage.getValueMap().get("ctaText").toString().trim().isEmpty()){
+                    productCard.put("ctaText", getCtaText(childPage,"ctaText", "customCtaText"));
+                }
+
+
+
 
                 productCards.add(productCard);
             }
@@ -65,6 +71,17 @@ public class ProductCards extends WCMUsePojo implements MultifieldDataProvider, 
 
     }
 
+    //WEB-9846 set custom text value if ctaText dropdown is none selected, else default = Learn More is used.
+    private String getCtaText(Resource childPage,String ctaText, String customCtaText) {
+
+        if (childPage.getValueMap().get("ctaText").toString().equals("custom") && (childPage.getValueMap().get("customCtaText") != null))
+                return childPage.getValueMap().get("customCtaText").toString();
+            else if (!childPage.getValueMap().get("ctaText").toString().equals("custom")) {
+                return childPage.getValueMap().get("ctaText").toString();
+            } else {
+                return null;
+            }
+    }
 
     public List<HashMap> getProductCards() {
         return productCards;

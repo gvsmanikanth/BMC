@@ -973,13 +973,16 @@
 			}			
 		}
 
+		/* WEB - 10533  Added customcontentcontainer*/
 		> .pullquote:last-child,
 		> .CTAbar:last-child,
 		> .htmlarea:last-child,
-		> .aem-Grid-newComponent:last-child {
+		> .aem-Grid-newComponent:last-child,
+		> .customcontentcontainer:last-child  {
 			padding-bottom: 0;
 			margin-bottom: 0;
 		}
+		
 	}
 }
 
@@ -1578,4 +1581,11 @@
 			@include font-size(24);
 		}
 	}
+}
+
+// WEB-9846
+.small-container {
+	max-width: 1080px;
+	width: auto;
+	margin: 0 auto;
 }

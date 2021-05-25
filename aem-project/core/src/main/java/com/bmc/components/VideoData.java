@@ -42,8 +42,9 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     public String getVideoId() { return videoId; }
     public String getTitle() { return title; }
     public String getDescription() { return description; }
+    /* WEB-10377 Remove the overlayText and overlayUrl feature from Videos
     public String getOverlayText() { return overlayText; }
-    public String getOverlayUrl() { return overlayUrl; }
+    public String getOverlayUrl() { return overlayUrl; }*/
     public String getVideoLength() { return videoLength; }
     public String getDamThumbnailPath() { return thumbnailPath; }
     public NameValuePair[] getDamRenditions() { return (damRenditions == null) ? new NameValuePair[0] : damRenditions; }
@@ -54,8 +55,9 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
     private String videoId = "";
     private String title = "";
     private String description = "";
+    /* WEB-10377 Remove the overlayText and overlayUrl feature from Videos
     private String overlayText = "";
-    private String overlayUrl = "";
+    private String overlayUrl = "";*/
     private String thumbnailPath = "";
     private String videoLength ="";
     private Boolean learnMore;
@@ -82,8 +84,9 @@ public class VideoData extends WCMUsePojo implements ResourceProvider, VideoInfo
         switch (type) {
             case YouTube:
                 ValueMap map = resource.getValueMap();
+                /* WEB-10377 Remove the overlayText and overlayUrl feature from Videos
                 overlayText = map.get("overlayText", "");
-                overlayUrl = StringHelper.resolveHref(map.get("overlayUrl", "")).orElse("");
+                overlayUrl = StringHelper.resolveHref(map.get("overlayUrl", "")).orElse("");*/
                 learnMore = map.get("learnMore",false);
                 isValid = !videoId.isEmpty();
                 break;

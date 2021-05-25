@@ -1,3 +1,4 @@
+<link rel="preload" href="/etc/clientlibs/bmc/dashboard/css/icomoon.woff" as="font" crossorigin="anonymous">
 <link rel="stylesheet" href="/etc/clientlibs/bmc/dashboard/css/styles.css">
 <sly data-sly-use.support="com.bmc.components.PersonalisedSupportCentral"></sly>
 <script>
@@ -29,7 +30,14 @@
     }
 </script>
 
-<app-root></app-root>
+<app-root>
+	<div class="container psc-dashboard-loader">
+		<div class="loader-container">       
+	            <div class="loader-app"></div>
+	            <h1 class="loader-app-title">Loading</h1>
+	    </div>
+	</div>
+</app-root>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114788512-5"></script>
 <script>

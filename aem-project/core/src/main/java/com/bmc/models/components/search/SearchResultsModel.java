@@ -82,10 +82,7 @@ public class SearchResultsModel {
 
         HashMap<String, Object> valueMap = new HashMap<>();
 
-            if(labelParam.equals("news")){
-                values.add("newsroom");
-            }
-            else if(labelParam.equals("corporate")){
+            if(labelParam.equals("corporate")){
                 values.add(getPageLocale());
             }
             else if(labelParam.equals("productsSolutions")){
@@ -110,7 +107,7 @@ public class SearchResultsModel {
             else if(labelParam.equals("exchange")){
                 values.add("exchange");
             } else {
-                values.addAll(Arrays.asList(pageLocale,"newsroom","exchange"));
+                values.addAll(Arrays.asList(pageLocale,"exchange","blogs"));
             }
 
             valueMap.put("values", values);
@@ -122,7 +119,7 @@ public class SearchResultsModel {
         	String page = "page";
             String fieldName = "source";
             String type = "or";
-            values.addAll(Arrays.asList(pageLocale,"newsroom","exchange"));
+            values.addAll(Arrays.asList(pageLocale,"blogs","exchange"));
             valueMap.put("values", values);
             valueMap.put("type", type);
             setQueryParams(page, fieldName, valueMap);

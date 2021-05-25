@@ -1162,6 +1162,7 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
   
   //Added to detect transition
    Modernizr.addTest('csstransitions',testAllProps('transition'));
+   Modernizr.addTest('csslineclamp',testAllProps('line-clamp'));
   
   
     /*>>webforms*/
