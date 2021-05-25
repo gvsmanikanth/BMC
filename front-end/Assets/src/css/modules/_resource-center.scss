@@ -412,11 +412,11 @@ body.no-scroll{
         background-repeat: no-repeat;
         background-size: 100%;
         float: right;
-        width: 35px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
       }
       .card-thumbnail{
-        height: 130px;
+        height: 110px;
         left: 0;
         position: absolute;
         top: 0;
@@ -434,6 +434,18 @@ body.no-scroll{
         margin-bottom: 15px;
         word-break: break-word;
         font-size: 18px;
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        @supports (-webkit-line-clamp: 1) { 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          position: relative; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0 !important;
+          -webkit-line-clamp: 6;
+        }
       }
       h2 {
         color: #414042;
@@ -449,7 +461,7 @@ body.no-scroll{
         border-top: 2px solid #3980B2;
         border-bottom: 2px solid #3980B2;
         max-width: 40px;
-        margin: 0 0 auto 0;
+        margin: 0 0 18px 0;
         text-align: left;
         background: #3980B2;
         border: none;
@@ -540,12 +552,26 @@ body.no-scroll{
         }
       }
     }
+    
   }
 
   //  simple cards
   .simple-card{
     @extend .card;
-	  min-height: 310px;
+	  min-height: 300px;
+    .card-content {
+      p {
+        @supports (-webkit-line-clamp: 1) { 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          position: relative; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0 !important;
+          -webkit-line-clamp: 6;
+        }
+      }
+    }
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
@@ -611,7 +637,44 @@ body.no-scroll{
         svg{
           margin-left: 6px;          
         }
+      } 
+      .card-thumbnail-logo {       
+        img{
+          max-height: 100%;
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: calc(100% - 20px);
+        }
       }     
+  }
+
+  // card-with-header
+  .card-with-header{
+    @extend .card;
+    .card-content{
+      h4, p{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+      
+    }
+  }
+  // card-with-description
+  .card-with-description{
+    @extend .card;
+    .card-content{
+      h4, p{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+      
+    }
   }
 
   //  featured card
@@ -637,6 +700,9 @@ body.no-scroll{
       .featured-card-footer{
         padding-left: 20px;
       }
+    }
+    .card-icon{
+      height: 50px;
     }
   }
   .featured-card-container:hover .featured-card-left-panel{
@@ -771,6 +837,13 @@ body.no-scroll{
   .ic_trial-white {
     background-image: url("#{$imagesFolder}icon-interactive-white.png");
   }
+  .ic_webpage {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  .ic_webpage-white {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  
 
 }
 
