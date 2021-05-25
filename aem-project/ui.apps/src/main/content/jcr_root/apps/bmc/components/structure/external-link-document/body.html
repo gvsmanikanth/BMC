@@ -81,7 +81,9 @@
                  
                  var windowHeight = getAvailableHeight();
                  <!--/* WEB - 10772 Fixed the syntax Error on DCs START */-->
-                 document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
+                 if(document.getElementById("pdfReader")){
+                 	document.getElementById("pdfReader").style.height = (windowHeight - 80) + "px";
+                 }
                  <!--/* WEB - 10772 End */-->
       		</script>    
 		 </div>
