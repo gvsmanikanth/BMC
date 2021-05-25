@@ -39,6 +39,15 @@
 			        centerOnScroll : true,
 					iframe: {
 						preload: false
+					},
+					// Added for WEB-9481
+					afterClose : function(){						
+						
+						var finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
+						
+						if(finalHash != window.location.href){
+							history.replaceState("", document.title, window.location.pathname + finalHash);	
+						}						
 					}
 			    });
 
@@ -66,9 +75,21 @@
 
 		$('.modal-youtube-video-player').on('click', function(e) {
 				var hashValue = this.href.split("?");
-				if (hashValue[1])
-					window.location.hash = hashValue[1]+"&vType=yt";
+				
+				if (hashValue[1]){
+					//Remove vid and vtype from hash
+					var finalHash = removeURLParameter(removeURLParameter(window.location.href, 'vID'), 'vType');
+						
+					if(finalHash != window.location.href){
+						history.replaceState("", document.title, window.location.pathname + finalHash +'&'+hashValue[1]+"&vType=yt");	
+					}	
+					else
+						window.location.hash = hashValue[1]+"&vType=yt";
+				}
+					
 		});
+		
 	});
+		
 
 })(jQuery);
