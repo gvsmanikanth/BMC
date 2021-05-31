@@ -973,13 +973,16 @@
 			}			
 		}
 
+		/* WEB - 10533  Added customcontentcontainer*/
 		> .pullquote:last-child,
 		> .CTAbar:last-child,
 		> .htmlarea:last-child,
-		> .aem-Grid-newComponent:last-child {
+		> .aem-Grid-newComponent:last-child,
+		> .customcontentcontainer:last-child  {
 			padding-bottom: 0;
 			margin-bottom: 0;
 		}
+		
 	}
 }
 

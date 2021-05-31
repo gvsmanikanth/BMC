@@ -60,6 +60,9 @@ public class ResourceCenterConsts {
     public static final String QUERY_PARAM_SORT_ASC = "asc";
     public static final String QUERY_PARAM_SORT_DESC = "desc";
 
+    public static final String SERVICE_TYPE = "service-type";
+
+
     //sorting
 
 

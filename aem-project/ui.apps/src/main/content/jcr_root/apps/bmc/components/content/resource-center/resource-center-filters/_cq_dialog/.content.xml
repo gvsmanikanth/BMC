@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     jcr:title="Resource Center Filter Component"
     sling:resourceType="cq/gui/components/authoring/dialog">
@@ -9,14 +9,14 @@
         <items jcr:primaryType="nt:unstructured">
             <tabs
                 jcr:primaryType="nt:unstructured"
-                maximized="{Boolean}true"
-                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
                 <items jcr:primaryType="nt:unstructured">
                     <tab-0
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Config"
-                        margin="{Boolean}true"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -26,9 +26,9 @@
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                         defaultChecked="{Boolean}true"
+                                        fieldDescription="Ticking to enabled keyword search."
                                         name="./keywordSearch"
                                         text="Enable Search"
-                                        fieldDescription="Ticking to enabled keyword search."
                                         value="{Boolean}true"/>
                                 </items>
                             </column>
@@ -36,9 +36,9 @@
                     </tab-0>
                     <tab-1
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Filters"
-                        margin="{Boolean}true"
-                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        jcr:title="Common IC Filters"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
@@ -47,33 +47,33 @@
                                     <ic-content-type
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Content Types"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-content-type-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-content-type-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-content-type-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-content-type-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-content-type-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -81,22 +81,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Content Types"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Content Types"
-                                                        name="./ic-content-type-label">
-                                                    </label>
+                                                        name="./ic-content-type-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                fieldLabel="Included Values"
-                                                emptyText="Intelligent Content Type"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                dataPath="/content/bmc/resources/intelligent-content-types"
+                                                emptyText="Intelligent Content Type"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-content-type"
-                                                dataPath="/content/bmc/resources/intelligent-content-types">
+                                                name="./ic-content-type">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -109,33 +108,33 @@
                                     <ic-buyer-stage
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Buyer Stages"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-buyer-stage-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-buyer-stage-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-buyer-stage-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-buyer-stage-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-buyer-stage-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -143,22 +142,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Buyer Stages"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Buyer Stages"
-                                                        name="./ic-buyer-stage-label">
-                                                    </label>
+                                                        name="./ic-buyer-stage-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Included Values"
+                                                dataPath="/content/bmc/resources/intelligent-content-buyer-stage"
                                                 emptyText="Intelligent Content Buyer Stage"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-buyer-stage"
-                                                dataPath="/content/bmc/resources/intelligent-content-buyer-stage">
+                                                name="./ic-buyer-stage">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -171,33 +169,33 @@
                                     <ic-target-persona
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Target Personas"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-target-persona-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-target-persona-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-target-persona-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-target-persona-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-target-persona-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -205,22 +203,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Target Personas"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Target Personas"
-                                                        name="./ic-target-persona-label">
-                                                    </label>
+                                                        name="./ic-target-persona-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Included Values"
+                                                dataPath="/content/bmc/resources/intelligent-content-target-persona"
                                                 emptyText="Intelligent Content Target Persona"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-target-persona"
-                                                dataPath="/content/bmc/resources/intelligent-content-target-persona">
+                                                name="./ic-target-persona">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -233,33 +230,33 @@
                                     <ic-topics
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Topics"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-topics-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-topics-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-topics-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-topics-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-topics-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -267,22 +264,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Topics"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Topics"
-                                                        name="./ic-topics-label">
-                                                    </label>
+                                                        name="./ic-topics-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
-                                                fieldLabel="Included Values"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                dataPath="/content/bmc/resources/intelligent-content-topics"
                                                 emptyText="Intelligent Content Topic"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-topics"
-                                                dataPath="/content/bmc/resources/intelligent-content-topics">
+                                                name="./ic-topics">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -295,33 +291,33 @@
                                     <topics
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Core Topics"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./topics-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./topics-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".topics-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="topics-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="topics-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -329,20 +325,19 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Core Topics"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Core Topics"
-                                                        name="./topics-label">
-                                                    </label>
+                                                        name="./topics-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 jcr:primaryType="nt:unstructured"
-                                                fieldLabel="Included Values"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
                                                 emptyText="Core Topic"
-                                                multiple="true"
+                                                fieldLabel="Included Values"
                                                 metadataName="topic"
+                                                multiple="true"
                                                 name="./topics">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
@@ -357,33 +352,33 @@
                                     <product-lines
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Product Lines"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./product_line-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./product_line-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".product-lines-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="product-lines-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="product-lines-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -391,21 +386,20 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Product Lines"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Product Lines"
-                                                        name="./product_line-label">
-                                                    </label>
+                                                        name="./product_line-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Included Values"
+                                                dataPath="/content/bmc/resources/product-lines"
                                                 emptyText="Product Line"
-                                                name="./product_line"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                dataPath="/content/bmc/resources/product-lines">
+                                                name="./product_line">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="/apps/bmc/components/forms/datasource/selectoptions"/>
@@ -419,33 +413,33 @@
                                     <product-interest
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Products"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./product_interest-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./product_interest-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".product-interest-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="product-interest-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="product-interest-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -453,24 +447,23 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Products"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Products"
-                                                        name="./product_interest-label">
-                                                    </label>
+                                                        name="./product_interest-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                name="./product_interest"
-                                                fieldLabel="Included Values"
-                                                useNameAsValue="true"
+                                                dataPath="/content/bmc/resources/product-interests"
                                                 emptyText="Product"
-                                                textProperty="textEmpty"
-                                                valueProperty="valueEmpty"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                dataPath="/content/bmc/resources/product-interests">
+                                                name="./product_interest"
+                                                textProperty="textEmpty"
+                                                useNameAsValue="true"
+                                                valueProperty="valueEmpty">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -484,33 +477,33 @@
                                     <ic-target-industry
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Industries"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-target-industry-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-target-industry-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-target-industry-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-target-industry-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-target-industry-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -518,22 +511,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Industries"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Industries"
-                                                        name="./ic-target-industry-label">
-                                                    </label>
+                                                        name="./ic-target-industry-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Included Values"
+                                                dataPath="/content/bmc/resources/intelligent-content-target-industry"
                                                 emptyText="IC Target Industry"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-target-industry"
-                                                dataPath="/content/bmc/resources/intelligent-content-target-industry">
+                                                name="./ic-target-industry">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -546,33 +538,33 @@
                                     <ic-company-size
                                         jcr:primaryType="nt:unstructured"
                                         jcr:title="Company Size"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
                                         <items jcr:primaryType="nt:unstructured">
                                             <filter
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
                                                 name="./ic-company-size-filter"
                                                 text="Filter on this category"
-                                                fieldDescription="Ticking to explicity filtered this category."
                                                 value="{Boolean}true"/>
                                             <display
+                                                granite:class="cq-dialog-showhide"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
                                                 defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
                                                 name="./ic-company-size-display"
                                                 text="Display this filter on the resource page"
-                                                fieldDescription="Ticking to display this filter on the resource page."
-                                                value="{Boolean}true"
-                                                granite:class="cq-dialog-showhide">
+                                                value="{Boolean}true">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target=".ic-company-size-label"/>
                                             </display>
                                             <filterLabel
+                                                granite:class="ic-company-size-label"
                                                 jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/section"
-                                                granite:class="ic-company-size-label">
+                                                sling:resourceType="granite/ui/components/foundation/section">
                                                 <granite:data
                                                     jcr:primaryType="nt:unstructured"
                                                     cq-dialog-showhide-target-value="true"/>
@@ -580,22 +572,21 @@
                                                     <label
                                                         jcr:primaryType="nt:unstructured"
                                                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Company Size"
                                                         fieldDescription="Display Filter Label on the resource page"
                                                         fieldLabel="Display Filter Label"
-                                                        emptyText="Company Size"
-                                                        name="./ic-company-size-label">
-                                                    </label>
+                                                        name="./ic-company-size-label"/>
                                                 </items>
                                             </filterLabel>
                                             <options
                                                 cq:showOnCreate="{Boolean}true"
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                                                fieldLabel="Included Values"
+                                                dataPath="/content/bmc/resources/intelligent-content-company-size"
                                                 emptyText="IC Company Size"
+                                                fieldLabel="Included Values"
                                                 multiple="{Boolean}true"
-                                                name="./ic-company-size"
-                                                dataPath="/content/bmc/resources/intelligent-content-company-size">
+                                                name="./ic-company-size">
                                                 <datasource
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
@@ -609,6 +600,203 @@
                             </column>
                         </items>
                     </tab-1>
+                    <tab-2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Success Service Filters"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <credits-range
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Credits Range"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <filter
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
+                                                name="./credits-range-filter"
+                                                text="Filter on this category"
+                                                value="{Boolean}true"/>
+                                            <display
+                                                granite:class="cq-dialog-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
+                                                name="./credits-range-display"
+                                                text="Display this filter on the resource page"
+                                                value="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target=".credits-range-label"/>
+                                            </display>
+                                            <filterLabel
+                                                granite:class="credits-range-label"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/section">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target-value="true"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <label
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Credits Range"
+                                                        fieldDescription="Display Filter Label on the resource page"
+                                                        fieldLabel="Display Filter Label"
+                                                        name="./credits-range-label"/>
+                                                </items>
+                                            </filterLabel>
+                                            <options
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                dataPath="/content/bmc/resources/credits-range"
+                                                emptyText="Credits Range"
+                                                fieldLabel="Included Values"
+                                                multiple="{Boolean}true"
+                                                name="./credits-range">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"/>
+                                            </options>
+                                        </items>
+                                    </credits-range>
+                                    <service-type
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Service Type"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <filter
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
+                                                name="./service-type-filter"
+                                                text="Filter on this category"
+                                                value="{Boolean}true"/>
+                                            <display
+                                                granite:class="cq-dialog-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
+                                                name="./service-type-display"
+                                                text="Display this filter on the resource page"
+                                                value="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target=".service-type-label"/>
+                                            </display>
+                                            <filterLabel
+                                                granite:class="service-type-label"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/section">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target-value="true"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <label
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Service Type"
+                                                        fieldDescription="Display Filter Label on the resource page"
+                                                        fieldLabel="Display Filter Label"
+                                                        name="./service-type-label"/>
+                                                </items>
+                                            </filterLabel>
+                                            <options
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                dataPath="/content/bmc/resources/service-types"
+                                                emptyText="Service Type"
+                                                fieldLabel="Included Values"
+                                                multiple="{Boolean}true"
+                                                name="./service-type">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"/>
+                                            </options>
+                                        </items>
+                                    </service-type>
+                                    <availability
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Availability"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/collapsible">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <filter
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to explicity filtered this category."
+                                                name="./availability-filter"
+                                                text="Filter on this category"
+                                                value="{Boolean}true"/>
+                                            <display
+                                                granite:class="cq-dialog-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                defaultChecked="{Boolean}false"
+                                                fieldDescription="Ticking to display this filter on the resource page."
+                                                name="./availability-display"
+                                                text="Display this filter on the resource page"
+                                                value="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target=".availability-label"/>
+                                            </display>
+                                            <filterLabel
+                                                granite:class="ic-content-type-label"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/section">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-showhide-target-value="true"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <label
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        emptyText="Availibility"
+                                                        fieldDescription="Display Filter Label on the resource page"
+                                                        fieldLabel="Display Filter Label"
+                                                        name="./availability-label"/>
+                                                </items>
+                                            </filterLabel>
+                                            <options
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                dataPath="/content/bmc/resources/availability"
+                                                emptyText="Availability"
+                                                fieldLabel="Included Values"
+                                                multiple="{Boolean}true"
+                                                name="./availability">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="bmc/components/forms/datasource/selectoptions"/>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    allowBulkEdit="{Boolean}true"/>
+                                            </options>
+                                        </items>
+                                    </availability>
+                                </items>
+                            </column>
+                        </items>
+                    </tab-2>
                 </items>
             </tabs>
         </items>

@@ -1,8 +1,8 @@
 package com.bmc.servlets;
 
 import com.bmc.models.bmccontentapi.ResourceCenterConstants;
-import com.bmc.pum.PUMService;
 import com.bmc.services.ResourceCenterService;
+import com.bmc.services.SuccessCatalogService;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -28,6 +28,9 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
     @Reference(target = "(" + ResourceCenterService.SERVICE_TYPE + "=caching)")
     private ResourceCenterService resourceCenterService;
 
+    @Reference(target = "(" + SuccessCatalogService.SERVICE_TYPE + "=caching)")
+    private SuccessCatalogService successCatalogService;
+
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
 
@@ -49,9 +52,9 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
             case RESOURCES_METHOD:
                 getResourceResults(request, response);
                 break;
-             default:
-                 response.sendError(404);
-                 break;
+            default:
+                response.sendError(404);
+                break;
         }
     }
 
@@ -85,10 +88,13 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         String resourceResultsJsonStr = null;
 
         if(parameters != null) {
-
+            String category = parameters.get("category")[0];
             // invoke an OSGi service method getResourceResultsJSON(Map<String, String[]>)
-            resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
-
+            if(category.equalsIgnoreCase("rc")) {
+                resourceResultsJsonStr = resourceCenterService.getResourceResultsJSON(parameters);
+            }else if(category.equals("sc")){
+                resourceResultsJsonStr = successCatalogService.getResourceResultsJSON(parameters);
+            }
             if(resourceResultsJsonStr != null) {
                 response.getWriter().write(resourceResultsJsonStr);
                 return;
@@ -98,5 +104,4 @@ public class ResourceCenterServlet extends SlingSafeMethodsServlet {
         response.sendError(404);
 
     }
-
 }

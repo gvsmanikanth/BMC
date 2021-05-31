@@ -15,13 +15,15 @@ public class BmcContent {
     private String type;
     private String linkType;
     private List<BmcMetadata> metadata;
-    private String ctaText;
     private String headerImage;
     private String footerLogo;
     private String videoLength;
+    private String serviceCredits;
+    private String description;
+    private String ctaText;
 
-    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified, 
-            String assetLink, String thumbnail, List<BmcMetadata> metadata, String type, String linkType, String headerImage, String footerLogo, String videoLength, String ctaText) {
+    public BmcContent(long index, String path, String excerpt, String title, String created, String lastModified,
+                      String assetLink, String thumbnail, List<BmcMetadata> metadata, String type, String linkType, String headerImage, String footerLogo, String videoLength, String ctaText) {
 
         this.index = index;
         this.path = path;
@@ -34,10 +36,29 @@ public class BmcContent {
         this.metadata = metadata;
         this.type = type;
         this.linkType = linkType;
-        this.ctaText = ctaText;
         this.headerImage = headerImage;
         this.footerLogo = footerLogo;
         this.videoLength = videoLength;
+        this.ctaText = ctaText;
+
+    }
+
+    public BmcContent(long index, String path, String excerpt, String title, String description, String created, String lastModified,
+                      String assetLink, List<BmcMetadata> metadata, String type, String linkType, String serviceCredits, String ctaText) {
+
+        this.index = index;
+        this.path = path;
+        this.excerpt = excerpt;
+        this.title = title;
+        this.description = description;
+        this.created = created;
+        this.lastModified = lastModified;
+        this.assetLink = assetLink;
+        this.metadata = metadata;
+        this.type = type;
+        this.linkType = linkType;
+        this.serviceCredits = serviceCredits;
+        this.ctaText = ctaText;
     }
 
     public long getIndex() {
@@ -128,10 +149,6 @@ public class BmcContent {
         this.metadata = metadata;
     }
 
-    public String getCtaText() { return ctaText; }
-
-    public void setCtaText(String ctaText) { this.ctaText = ctaText; }
-
     public String getHeaderImage() { return headerImage; }
 
     public void setHeaderImage(String headerImage) { this.headerImage = headerImage; }
@@ -143,4 +160,17 @@ public class BmcContent {
     public String getVideoLength() { return videoLength; }
 
     public void setVideoLength(String videoLength) { this.videoLength = videoLength; }
+
+    public String getCtaText() { return ctaText; }
+
+    public void setCtaText(String ctaText) { this.ctaText = ctaText; }
+
+    public String getServiceCredits() { return serviceCredits; }
+
+    public void setServiceCredits(String serviceCredits) { this.serviceCredits = serviceCredits; }
+
+    public String getDescription() { return description; }
+
+    public void setDescription(String description) { this.description = description; }
+
 }

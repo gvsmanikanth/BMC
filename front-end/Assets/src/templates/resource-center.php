@@ -622,79 +622,105 @@
                                                                     </div>
 
                                                                     <script id="resultItemsTemplate" type="text/x-handlebars-template"><div class="resource-results">
+                                                                    <div class="resource-results">
                                                                         <div class="rc-card-row">
                                                                             {{#each items}}
                                                                             <div class="rc-card-col">
                                                                                 <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
-                                                                                    <div class="simple-card bg-white">
+                                                                                    <div class="simple-card bg-white {{#if headerImage}} card-with-header{{/if}} {{#if description}} card-with-description{{/if}}">
                                                                                         <!-- WEB-6793 Added new fields for RC Cards START -->
-                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
+                                                                                        <div class="card-header" style="{{#if headerImage}}margin-top:87px;{{/if}}">
                                                                                             <h4>{{type}}</h4>
                                                                                             {{#if headerImage}}
-                                                                                                <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
-                                                                                                </div>
+                                                                                                {{#if thumbnailLogo}}
+                                                                                                    <div class="card-thumbnail card-thumbnail-logo">
+                                                                                                        <img src="{{headerImage}}" alt="{{title}}" />
+                                                                                                    </div>
+                                                                                                {{else}}
+                                                                                                    <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
+                                                                                                    </div>
+                                                                                                {{/if}}
                                                                                             {{else}}
                                                                                                 <div class="card-icon ic_{{linkType}}" alt border="0"></div>
                                                                                             {{/if}}
                                                                                         </div>
                                                                                         <div class="card-content">
                                                                                             <hr/>
-                                                                                            <h4>
-                                                                                                {{#if headerImage}}
-                                                                                                    {{{truncateText title 70}}}
+                                                                                            {{#if headerImage}}
+                                                                                                {{#if thumbnailLogo}}
                                                                                                 {{else}}
-                                                                                                    {{{truncateText title 140}}}
+                                                                                                    <h4>{{checkLineClampSupport title 80}}</h4>
                                                                                                 {{/if}}
-                                                                                            </h4>
-                                                                                        </div>
-                                                                                        {{#ifCond linkType '===' ""}}
-                                                                                            <div class="card-footer rc-no-text">                                                                                                
-                                                                                        {{else}}
-                                                                                            <div class="card-footer">                                                                                                
-                                                                                        {{/ifCond}}
+                                                                                            {{else}}
+                                                                                                <h4>{{checkLineClampSupport title 150}}</h4>
+                                                                                            {{/if}}
+                                                                                            {{#if description}}
+                                                                                                    <p>
+                                                                                                        {{#if headerImage}}
+                                                                                                            {{checkLineClampSupport description 80}}
+                                                                                                        {{else}}
+                                                                                                            {{checkLineClampSupport description 150}}
+                                                                                                        {{/if}}
+                                                                                                    </p>
+                                                                                                {{/if}}
+                                                                                            </div>
+                                                                                            {{#ifCond linkType '===' ""}}
+                                                                                                <div class="card-footer rc-no-text">
+                                                                                            {{else}}
+                                                                                                <div class="card-footer">
+                                                                                            {{/ifCond}}
                                                                                                 <div class="card-footer-logo">
-                                                                                                        {{#ifCond type '===' "Videos"}}
+                                                                                                        {{#ifCond type '===' "Video"}}
                                                                                                             {{#if videoLength}}
-                                                                                                                <span class="video-length">
-                                                                                                                        <svg class="align-middle s-clock">
-                                                                                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
-                                                                                                                        </svg>{{videoLength}}
-                                                                                                                    </span>
+                                                                                                            <span class="video-length">
+                                                                                                                <svg class="align-middle s-clock">
+                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-clock"></use>
+                                                                                                                </svg>{{videoLength}}
+                                                                                                            </span>
                                                                                                             {{/if}}
                                                                                                         {{/ifCond}}
-                                                                                                        {{#if footerLogo}}
-                                                                                                            {{#ifCond type '===' "Videos"}}
-                                                                                                            {{else}}
-                                                                                                                <span>
-                                                                                                                        <img src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}"/>
-                                                                                                                </span>
-                                                                                                            {{/ifCond}}
-                                                                                                        {{/if}}
-                                                                                                </div>
-                                                                                                <hr>
-                                                                                                <div class="card-footer-action">
-                                                                                                    {{ctaText}}
-                                                                                                    {{#ifCond type '===' "Trial"}}
+                                                                            
+                                                                                                        {{#if serviceCredits}}
+                                                                                                                <span>{{displayCredits serviceCredits}}</span>
+                                                                                                        {{else}}
+                                                                                                                {{#if footerLogo}}
+                                                                                                                    {{#ifCond type '===' "Video"}}
+                                                                                                                {{else}}
+                                                                                                                    <span>
+                                                                                                                            <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                                                                                                        </span>
+                                                                                                                    {{/ifCond}}
+                                                                                                                {{/if}}
+                                                                                                            {{/if}}
+                                                                                                        </div>
+                                                                                                    <!--/* WEB-6793 Added new fields for RC Cards END */-->
+                                                                                                    <!--/* WEB-10350 Added CTAText at the begining of Svg definitions- STARt */-->
+                                                                                                    <hr>
+                                                                                                    <div class="card-footer-action">
+                                                                                                        {{ctaText}}
+                                                                                                        {{#ifCond type '===' "Trial"}}
                                                                                                         <svg class="align-middle s-view">
                                                                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{view}}"></use>
-                                                                                                    {{else}}
-                                                                                                        {{#ifCond type '===' "Webinar"}}
-                                                                                                            <svg class="align-middle s-view">
+                                                                                                            {{else}}
+                                                                                                                {{#ifCond type '===' "Webinar"}}
+                                                                                                        <svg class="align-middle s-view">
                                                                                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-view"></use>
-                                                                                                        {{else}}
-                                                                                                            <svg class="align-middle s-{{linkType}}">
-                                                                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                                                                                                {{else}}
+                                                                                                                <svg class="align-middle s-{{linkType}}">
+                                                                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-{{linkType}}"></use>
+                                                                                                            {{/ifCond}}
                                                                                                         {{/ifCond}}
-                                                                                                    {{/ifCond}}
-                                                                                                    </svg>                                                                                                   
-                                                                                                </div>
+                                                                                                        </svg>
                                                                                             </div>
+                                                                                            <!--/* WEB-10350  - END */-->
                                                                                         </div>
-                                                                                </a>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                {{/each}}
                                                                             </div>
-                                                                            {{/each}}
                                                                         </div>
-                                                                    </div></script>
+                                                                    </script>
                                                                 </div>
                                                             </div>
                                                         </div>

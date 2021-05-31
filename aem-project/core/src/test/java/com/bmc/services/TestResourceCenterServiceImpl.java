@@ -16,6 +16,7 @@ import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.Session;
 
+import com.bmc.util.ResourceServiceUtils;
 import org.apache.jackrabbit.commons.JcrUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -50,6 +51,8 @@ public class TestResourceCenterServiceImpl  {
 
     @Spy
     ResourceCenterServiceImpl service = new ResourceCenterServiceImpl();
+    @Mock
+    ResourceService baseImpl;
 
     @Mock
     ResourceResolverFactory mockResolverFactory;
@@ -109,7 +112,7 @@ public class TestResourceCenterServiceImpl  {
 
     @Test
     public void testResourceParamBuilder() throws Exception {
-        Map<String, String> queryParamsMap = service.addResourceParamsToBuilder(urlParameters);
+        Map<String, String> queryParamsMap = ResourceServiceUtils.addResourceParamsToBuilder(urlParameters,baseImpl);
 
         assertNotNull(queryParamsMap);
         assertTrue(!queryParamsMap.isEmpty());

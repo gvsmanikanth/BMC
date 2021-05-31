@@ -3,9 +3,9 @@
         {{#each items}}
         <div class="rc-card-col">
             <a class="{{isVideoModal assetLink}}" target="{{addTarget assetLink}}" href="{{assetLink}}" {{{analyticsAttributes}}}>
-                <div class="simple-card bg-white">
+                <div class="simple-card bg-white {{#if headerImage}} card-with-header{{/if}}">
                     <!-- WEB-6793 Added new fields for RC Cards START -->
-                    <div class="card-header" style="{{#if headerImage}}margin-top:107px;{{/if}}">
+                    <div class="card-header" style="{{#if headerImage}}margin-top:87px;{{/if}}">
                         <h4>{{type}}</h4>
                         {{#if headerImage}}
                             <div class="card-thumbnail" style="background: url('{{headerImage}}') no-repeat center center / cover;">
@@ -17,11 +17,12 @@
                     <div class="card-content">
                         <hr/>
                         <h4>
+                            <!-- WEB-10490 Added css lineclamp proerty for default browser and truncatetext method for IE11  -->
                             {{#if headerImage}}
-                                {{{truncateText title 70}}}
+                                {{checkLineClampSupport title 80}} 
                             {{else}}
-                                {{{truncateText title 140}}}
-                            {{/if}}
+                                {{checkLineClampSupport title 150}} 
+                            {{/if}}   
                         </h4>
                     </div>
                     {{#ifCond linkType '===' ""}}
@@ -40,14 +41,19 @@
                                 </span>
                             {{/if}}
                         {{/ifCond}}
-                        {{#if footerLogo}}
-                            {{#ifCond type '===' "Video"}}
-                        <!--/* WEB-10621 Changed Sightly logic for Video - END */-->
-                            {{else}}
-                                <span>
-                                    <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
-                                </span>
-                            {{/ifCond}}
+
+                        {{#if serviceCredits}}
+                            <span>{{displayCredits serviceCredits}}</span>
+                        {{else}}
+                            {{#if footerLogo}}
+                                {{#ifCond type '===' "Video"}}
+                            <!--/* WEB-10621 Changed Sightly logic for Video - END */-->
+                                {{else}}
+                                    <span>
+                                        <img  src="{{footerLogo}}" style="{{#if footerLogo}}max-height:30px;{{/if}}">
+                                    </span>
+                                {{/ifCond}}
+                            {{/if}}
                         {{/if}}
                     </div>
                     <!--/* WEB-6793 Added new fields for RC Cards END */-->

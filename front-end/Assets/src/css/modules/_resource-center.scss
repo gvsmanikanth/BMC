@@ -360,6 +360,10 @@ body.no-scroll{
         display: none;
       }
     }
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      flex-basis: auto;
+      width: 100%;
+    }
   }
 
   .rc-card-col {
@@ -412,11 +416,11 @@ body.no-scroll{
         background-repeat: no-repeat;
         background-size: 100%;
         float: right;
-        width: 35px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
       }
       .card-thumbnail{
-        height: 130px;
+        height: 110px;
         left: 0;
         position: absolute;
         top: 0;
@@ -426,7 +430,7 @@ body.no-scroll{
     .card-content{
       clear: both;
       //min-height: 160px;
-	  margin-bottom: 60px;
+	    margin-bottom: 60px;
       h4 {
         color: #414042;
         font-weight: 400;
@@ -434,6 +438,18 @@ body.no-scroll{
         margin-bottom: 15px;
         word-break: break-word;
         font-size: 18px;
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 0px;
+        @supports (-webkit-line-clamp: 1) { 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          position: relative; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0 !important;
+          -webkit-line-clamp: 6;
+        }
       }
       h2 {
         color: #414042;
@@ -449,7 +465,7 @@ body.no-scroll{
         border-top: 2px solid #3980B2;
         border-bottom: 2px solid #3980B2;
         max-width: 40px;
-        margin: 0 0 auto 0;
+        margin: 0 0 18px 0;
         text-align: left;
         background: #3980B2;
         border: none;
@@ -496,7 +512,6 @@ body.no-scroll{
         display: block;
         text-transform: uppercase;
         font-weight: 600;
-        transition: .3s linear;
         padding: 10px;
         border-top: none;
         padding: 0;
@@ -533,7 +548,7 @@ body.no-scroll{
         font-size: large;
         text-align: center;        
         border-top: 1px solid #3980B2;
-        padding: 10px;
+        padding: 10px;        
       }
       .learn-more-v1{
         &:after {
@@ -541,12 +556,26 @@ body.no-scroll{
         }
       }
     }
+    
   }
 
   //  simple cards
   .simple-card{
     @extend .card;
-	  min-height: 310px;
+	  min-height: 300px;
+    .card-content {
+      p {
+        @supports (-webkit-line-clamp: 1) { 
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          position: relative; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          padding: 0 !important;
+          -webkit-line-clamp: 6;
+        }
+      }
+    }
     &:hover{
         box-shadow: none;
         background: #ebf2f7;
@@ -555,26 +584,39 @@ body.no-scroll{
           transition: 0.3s linear;
           color: #fff !important;
           .card-footer-action{
-            color: #fff;
-			}
-          svg{
-            transition: 0.3s linear;
-          }
-          //  white action icons
+            color: #fff;            
+            transition-delay: 0.25s;
+			    }
+          
           .s-download {
             background-image: url('#{$imagesFolder}s-download-white.png');
           }
-          .s-play {
-            background-image: url('#{$imagesFolder}s-play-white.png');
+          .s-play, .s-demo, .s-view, .s-webpage {
+            transition-delay:0.3s;
           }
-          .s-view {
-            background-image: url('#{$imagesFolder}s-view-white.png');
+          .s-clock{
+            transition-delay:0s;
+          }
+          .s-play, .s-demo  {  
+            background-position: 0 -30px;
+          }
+          .s-view, .s-webpage  {
+            background-position: -60px -30px;    
           }
           .s-clock {
-            background-image: url('#{$imagesFolder}s-clock-white.svg');
+            background-position: -30px -30px;
           }
-          .s-demo {
-            background-image: url("#{$imagesFolder}s-play-white.png");
+          .s-advisory {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-deploy {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-technical {
+            background-image: url('#{$imagesFolder}s-view-white.png');
+          }
+          .s-education {
+            background-image: url('#{$imagesFolder}s-view-white.png');
           }
         }
         .card-footer{
@@ -588,7 +630,8 @@ body.no-scroll{
       }
 	  .card-footer{
         svg{
-          transition: 0.3s linear;
+          //transition: 0.3s linear;
+          transition: 0s background-position;
         }
       }
       // WEB-6793
@@ -610,7 +653,44 @@ body.no-scroll{
         svg{
           margin-left: 6px;          
         }
+      } 
+      .card-thumbnail-logo {       
+        img{
+          max-height: 100%;
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: calc(100% - 20px);
+        }
       }     
+  }
+
+  // card-with-header
+  .card-with-header{
+    @extend .card;
+    .card-content{
+      h4, p{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+      
+    }
+  }
+  // card-with-description
+  .card-with-description{
+    @extend .card;
+    .card-content{
+      h4, p{
+        @supports (-webkit-line-clamp: 1) { 
+          -webkit-line-clamp: 3;
+        }
+      }
+      
+    }
   }
 
   //  featured card
@@ -619,6 +699,9 @@ body.no-scroll{
     .card-header{
       h3{
         padding-top: 2.25rem;
+      }
+      .card-icon{
+        background-size: contain;
       }
     }
     .featured-card-footer{
@@ -636,6 +719,9 @@ body.no-scroll{
       .featured-card-footer{
         padding-left: 20px;
       }
+    }
+    .card-icon{
+      height: 50px;
     }
   }
   .featured-card-container:hover .featured-card-left-panel{
@@ -692,35 +778,30 @@ body.no-scroll{
   }
 
   //  cards actions icons
+  .s-play, .s-demo, .s-view, .s-clock, .s-webpage {
+    background-image: url('#{$imagesFolder}rc-icons.png');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;  
+  }
+  .s-play, .s-demo  {  
+    background-position: 0 0;
+  }
+  .s-view, .s-webpage  {
+    background-position: -60px 0px;    
+    margin-left: 0px !important;
+  }
+  .s-clock {
+    background-position: -30px 0;
+  }
   .s-download {
     background-image: url('#{$imagesFolder}s-download.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 0.7rem;
     height: 0.9rem;
-  }
-  .s-play {
-    background-image: url('#{$imagesFolder}s-play.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;
-  }
-  .s-demo {
-    background-image: url('#{$imagesFolder}s-play.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 1.0rem;
-    height: 1.2rem;
-  }
-  .s-view {
-    background-image: url('#{$imagesFolder}s-view.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 0.6rem;
-    height: 0.7rem;
-	margin-bottom: 2px;
-  }
+  }  
   .s-download-white {
     background-image: url('#{$imagesFolder}s-download-white.png');
     background-repeat: no-repeat;
@@ -736,18 +817,40 @@ body.no-scroll{
     height: 1.2rem;
   }
   .s-view-white {
-    background-image: url('#{$imagesFolder}s-view-white.png');
+    background-image: url('#{$imagesFolder}s-view-white.png');    
     background-repeat: no-repeat;
     background-size: contain;
     width: 1.5rem;
     height: 1.2rem;
   }
-  .s-clock {
-    background-image: url('#{$imagesFolder}s-clock-blue.svg');
+
+  .s-advisory {
+    background-image: url('#{$imagesFolder}s-view.png');
     background-repeat: no-repeat;
-    background-size: 90%;
-    width: 20px;
-    height: 20px;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-deploy {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-technical {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
+  }
+  .s-education {
+    background-image: url('#{$imagesFolder}s-view.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 0.6rem;
+    height: 0.7rem;
   }
 
 
@@ -778,6 +881,25 @@ body.no-scroll{
   }
   .ic_trial-white {
     background-image: url("#{$imagesFolder}icon-interactive-white.png");
+  }
+  .ic_webpage {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  .ic_webpage-white {
+    background-image: url("#{$imagesFolder}ic_webpage.png");
+  }
+  
+  .ic_advisory {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_deploy {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_technical {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
+  }
+  .ic_education {
+    background-image: url("#{$imagesFolder}icon-interactive.png");
   }
 
 }
@@ -972,6 +1094,13 @@ $bg-forrester-green: #16563F;
 
 
 .rc-landing-page{
+  
+   /* WEB - 10533 Added Padding */ 
+    padding-bottom: rem(30);
+    @include media(breakpointLarge) {
+      padding-bottom: rem(60);
+    }	
+
     .layout-width-title {
       max-width: 1440px;
       margin: 0 auto;

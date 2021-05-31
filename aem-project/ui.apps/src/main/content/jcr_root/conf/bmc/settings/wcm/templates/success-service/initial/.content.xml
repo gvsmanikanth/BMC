@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2021-05-11T20:35:49.559+05:30"
+        cq:lastModified="{Date}2021-05-13T18:19:05.385+05:30"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2021-04-21T20:41:49.793+05:30"
         cq:lastReplicatedBy="admin"
@@ -96,28 +96,28 @@
                         <left
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
-                            <key_features
-                                jcr:created="{Date}2021-05-11T08:56:47.383Z"
-                                jcr:createdBy="mannalda@bmc.com"
-                                jcr:lastModified="{Date}2021-05-11T09:59:43.180Z"
-                                jcr:lastModifiedBy="mannalda@bmc.com"
+                            <text
+                                jcr:created="{Date}2021-05-13T18:17:43.735+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-05-13T18:18:01.185+05:30"
+                                jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="&lt;p>BMC will perform the following:&lt;/p>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;ul style=&quot;list-style-type: none;&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;b>Deliverables:&lt;/b> Using BMC’s standard methodology and templates, the following Deliverables are in scope for this project and will be delivered:&lt;/p>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>Construction Document&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;b>Completion Criteria: &lt;/b>BMC will have completed these Consulting Services when the in-scope Consulting Services have been completed and the Deliverables have been delivered to the Customer Project Manager.&lt;/p>&#xd;&#xa;"
-                                headerTitle="What you get:"/>
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;h2>What you get:&lt;/h2>&#xa;&lt;p>BMC will perform the following:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;ul style=&quot;list-style-type: none;&quot;>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;/ul>&#xa;&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>&lt;b>Deliverables: &lt;/b>Using BMC’s standard methodology and templates, the following Deliverables are in scope for this project and will be delivered:&lt;/p>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Construction Document&lt;/li>&#xa;&lt;/ul>&#xa;&lt;p>&lt;b>Completion Criteria: &lt;/b>BMC will have completed these Consulting Services when the in-scope Consulting Services have been completed and the Deliverables have been delivered to the Customer Project Manager.&lt;/p>&#xa;"
+                                textIsRich="true"/>
                         </left>
                         <right
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="wcm/foundation/components/responsivegrid">
-                            <key_features
-                                jcr:created="{Date}2021-05-11T08:59:39.251Z"
-                                jcr:createdBy="mannalda@bmc.com"
-                                jcr:lastModified="{Date}2021-05-11T09:00:42.933Z"
-                                jcr:lastModifiedBy="mannalda@bmc.com"
+                            <text
+                                jcr:created="{Date}2021-05-13T18:18:42.954+05:30"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2021-05-13T18:18:58.894+05:30"
+                                jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="bmc/components/content/key-features"
-                                headerSubTitle="&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>lorem ipsum&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h2>Additional information:&lt;/h2>&#xd;&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xd;&#xa;&lt;li>Estimated Duration: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>In-scope Product: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Service Type: lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Availability: Available&lt;/li>&#xd;&#xa;&lt;li>Success Service Code:&amp;nbsp;lorem ipsum&lt;/li>&#xd;&#xa;&lt;li>Date Last Updated: MM/DD/YYYY&lt;/li>&#xd;&#xa;&lt;/ul>"
-                                headerTitle="Pre-requisites:"/>
+                                sling:resourceType="bmc/components/content/text"
+                                text="&lt;h2>Pre-requisites:&lt;/h2>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;li>lorem ipsum&lt;/li>&#xa;&lt;/ul>&#xa;&lt;h2>Additional information:&lt;/h2>&#xa;&lt;ul class=&quot;orange-tick-bullets&quot;>&#xa;&lt;li>Estimated Duration: lorem ipsum&lt;/li>&#xa;&lt;li>In-scope Product: lorem ipsum&lt;/li>&#xa;&lt;li>Service Type: lorem ipsum&lt;/li>&#xa;&lt;li>Availability: Available&lt;/li>&#xa;&lt;li>Success Service Code:&amp;nbsp;lorem ipsum&lt;/li>&#xa;&lt;li>Date Last Updated: MM/DD/YYYY&lt;/li>&#xa;&lt;/ul>&#xa;"
+                                textIsRich="true"/>
                         </right>
                     </_50_50contentcontain>
                     <_100contentcontainer
@@ -144,12 +144,13 @@
                     <Copy_x0020_of_x0020_ctabar
                         jcr:created="{Date}2021-04-08T18:40:36.066Z"
                         jcr:createdBy="aviner@bmc.com"
-                        jcr:lastModified="{Date}2021-05-07T15:21:23.671+05:30"
+                        jcr:lastModified="{Date}2021-05-13T18:17:02.714+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bmc/components/content/CTAbar"
                         addClass="false"
                         bgcolor="bg-corduroy"
+                        headerText="Getting Started Is Easy"
                         primaryCTAtext="Contact Customer Concierge"
                         primaryCTAURL="/content/bmc/language-masters/en/forms/success-concierge">
                         <text

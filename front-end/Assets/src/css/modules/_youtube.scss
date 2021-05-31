@@ -7,13 +7,14 @@
 }
 
 .youtube-video{
-  
   @include aspect-ratio(960, 480);
   background-color: black;
   height:100%;
   
+  /* WEB-10377 - Commented after the feature is depricated
+  
   .youtubeOverlay{
-    background:rgba(0, 0, 0, 0.7) ;
+    background:rgba(0, 0, 0, 0.95) ;
     padding: 5px;
     position: absolute;
     bottom: 0; 
@@ -24,15 +25,16 @@
     display:none;
     
     @include media(breakpointMedium) {
-      font-size: 1rem;
-      bottom: 15%; 
+      font-size: 1.5rem;
+      bottom: 42%; 
       padding: 20px;
+
     }
     
     @include media(breakpointLarge) {
       font-size: 1.5rem;
-      bottom: 15%;
+      bottom: 35%;
       padding: 20px; 
     }
-  }
+  }*/
 }
